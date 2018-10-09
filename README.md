@@ -6,5 +6,7 @@ The **Adobe Experience Platform SDK** is required to power Adobe's Experience Cl
 
 To start implementing the SDK, you'll need to first create a mobile property in Adobe Experience Platform Launch. You'll setup configuration required by the **Mobile Core** and any **Extensions** you add, and then publish the configuration into an **Environment**. When you implement the SDK in your app, you'll reference the Environment to get going.
 
+{% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" %}
+
 
 

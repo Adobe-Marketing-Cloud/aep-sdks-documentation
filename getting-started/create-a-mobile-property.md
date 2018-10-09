@@ -2,13 +2,13 @@
 
 Creating and configuring a mobile property is simple. Follow these steps to begin:
 
-### Create a new mobile property
+## Create a new mobile property
 
 1. Click **New Property**
 2. Create a new property by providing a name and selecting **Mobile** as the platform. If required, you may change [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status)and **HTTPS** settings later.
 3. Find the new property in the **Properties** list and click to open it.
 
-### Setup Extensions
+## Setup Extensions
 
 1. Setup **Extensions**
    1. Go to the **Extensions** tab. You should see that **Mobile Core** and **Profile** extensions are installed by default.  
@@ -28,7 +28,7 @@ Creating and configuring a mobile property is simple. Follow these steps to begi
 Not sure on what extensions you need? Checkout the extensions listed in the **Using Mobile Extensions** section.
 {% endhint %}
 
-### Publish Configuration
+## Publish Configuration
 
 Publish configuration In this step, you'll create library of changes and then deploy the library to a **Development Environment**.
 
@@ -44,4 +44,8 @@ The configuration contained in the library will then be deployed to the Developm
 {% hint style="info" %}
 Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production Environments** using the rest of the publishing workflow. Please see \(link-to publishing-to-stage/prod-here\)**.**
 {% endhint %}
+
+## Watch Video
+
+{% embed url="https://youtu.be/xBWYFUKAoyo" %}
 
