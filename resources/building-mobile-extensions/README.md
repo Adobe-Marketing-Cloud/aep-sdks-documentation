@@ -28,7 +28,7 @@ Here are the naming rules for extensions:
 
 ## Extension Architecture
 
-![](https://github.com/Adobe-Marketing-Cloud/reactor-user-docs/tree/5ba02dd958441ab9339a8a62b8352c7e21bd0938/extension-reference/mobile/build-your-own-extension/.gitbook/assets/external-module-layer-cake.png)
+![](../../.gitbook/assets/external-module-layer-cake.png)
 
 ### Error Handling
 
