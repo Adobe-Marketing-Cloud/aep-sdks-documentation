@@ -9,6 +9,10 @@ The Adobe Experience Platform SDK is available via Cocoapods and Gradle.
 
 The necessary dependencies and initialization code can be copied from the pop-up to the app project.
 
+{% hint style="info" %}
+The recommended approach to integrating the SDK is to use Cocoapods or Gradle. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 {% hint style="warning" %}
