@@ -72,3 +72,73 @@ Identity.syncIdentifier(identifiers);
 {% endtab %}
 {% endtabs %}
 
+## Append Visitor Data to a URL
+
+{% tabs %}
+{% tab title="Android" %}
+## appendVisitorInfoForURL {#appendvisitorinfoforurl}
+
+Appends Adobe visitor data to a URL string. If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the url string that is returned in the [AdobeCallback](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#adobecallback) instance:
+
+* The `adobe_mc` attribute is an URL encoded list containing:
+  * Experience Cloud ID \(ECID\)
+  * Experience Cloud Org ID
+  * A timestamp taken when this request was made
+* The optional adobe\_aa\_vid attribute is the URL encoded Analytics Custom Visitor ID, if available
+
+### **Syntax** {#syntax-3}
+
+```java
+public static void appendVisitorInfoForURL(final String baseURL, final AdobeCallback<String> callback);
+```
+
+### **Example** {#example-3}
+
+```java
+Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    @Override    public void call(String urlWithAdobeVisitorInfo) {        //handle the new URL here        //For example, open the URL on the device browser        //        Intent i = new Intent(Intent.ACTION_VIEW);        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        startActivity(i);    }});
+```
+
+##   {#getidentifiers}
+{% endtab %}
+
+{% tab title="iOS" %}
+## appendToURL {#appendtourl}
+
+Appends Adobe visitor data to a URL.
+
+If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the url string that is returned via the callback:
+
+* The adobe\_mc attribute is an URL encoded list containing:
+  * Experience Cloud ID \(ECID\)
+  * Experience Cloud Org ID
+  * A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
+
+### **Syntax** {#syntax-3}
+
+```objectivec
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
+```
+
+### **Examples** {#examples-3}
+
+#### Objective-C {#objective-c-3}
+
+```objectivec
+NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
+[ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
+// handle the appended url here}
+];
+```
+
+#### Swift {#swift-3}
+
+```swift
+ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
+    // handle the appended url here
+
+});
+```
+{% endtab %}
+{% endtabs %}
+
