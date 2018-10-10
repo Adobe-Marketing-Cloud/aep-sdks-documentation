@@ -83,5 +83,96 @@ While synching with integration codes are fully supported, Experience Cloud SDK 
 | Windows 8​ | Supported | Unsupported |
 | Blackberry​ | Supported | Unsupported |
 
+## API footprint
+| 4x SDK | Experience Platform SDK | Extension/Framework | Notes |
+| :--- | :--- | :--- | :--- |
+| version | extensionVersion | All | each extension has and returns its own version |
+| privacyStatus | getPrivacyStatus: | ACPCore |  |
+| setPrivacyStatus: | setPrivacyStatus: | ACPCore |  |
+| lifetimeValue | - | na | Should be kept in UserProfile, need an API to retrieve UserProfile values |
+| userIdentifier | getUserIdentifier: | na | VID |
+| setUserIdentifier: | setUserIdentifier: | na | VID |
+| setPushIdentifier: | setPushIdentifier: | ACPCore |  |
+| setAdvertisingIdentifier: | setAdvertisingIdentifier: | ACPCore |  |
+| debugLogging | ? | ACPCore | Do we need a getter? |
+| setDebugLogging: | setLogLevel: | ACPCore |  |
+| collectLifecycleData | lifecycleStart: | ACPCore |  |
+| collectLifecycleDataWithAdditionalData: | lifecycleStart: | ACPCore |  |
+|  | lifecycleStop: | ACPCore |  |
+| keepLifecycleSessionAlive | n/a | na |  |
+| overrideConfigPath: | configureWithFileInPath: | ACPCore |  |
+|  | configureWithAppId: | ACPCore |  |
+|  | updateConfiguration: | ACPCore |  |
+| setAppGroup: | setAppGroup: | ACPCore | extension support, needed for iOS and extension binary |
+| setAppExtensionType: | + | na | extension support, needed for iOS and extension binary |
+| syncSettings: | + | na | watch support, needed for iOS and watchOS |
+| installWatch | n/a | na | watch support, watch only |
+| installTVMLHooks: | n/a | na | tv support only, tv only |
+| registerAdobeDataCallback: | n/a | na |  |
+| trackState:data: | trackState:data: | ACPCore |  |
+| trackAction:data: | trackAction:data: | ACPCore |  |
+| trackActionFromBackground: | n/a | na |  |
+| trackLocation:data: | ? | na | Are we supporting "TrackLocation", or waiting for Places? |
+| trackBeacon:data: | ? | na | iOS only - same question as for "TrackLocation" |
+| trackingClearCurrentBeacon | ? | na | iOS only |
+| trackPushMessageClickThrough: | trackNotificationResponse: | ACPAcquisition |  |
+| trackLocalNotificationClickThrough: | trackNotificationResponse: | ACPAcquisition |  |
+"| trackAdobeDeepLink: | trackAdobeDeeplink: or 
+collectLaunchInfo: | ??? |  |"
+| trackLifetimeValueIncrease:data: | + | na |  |
+| trackCoordinateSpace:data: | n/a | na |  |
+| trackTimedActionStart:data: | n/a | na |  |
+| trackTimedActionUpdate:data: | n/a | na |  |
+| trackTimedActionEnd:logic: | n/a | na |  |
+| trackingTimedActionExists: | n/a | na |  |
+| trackingIdentifier | getTrackingIdentifier: | ACPAnalytics | AID |
+| trackingSendQueuedHits | sendQueuedHits | ACPAnalytics |  |
+| trackingClearQueue | clearQueue | ACPAnalytics |  |
+| trackingGetQueueSize | getQueueSize: | ACPAnalytics |  |
+| acquisitionCampaignStartForApp:data: | acquisitionCampaignStart:withData: | na |  |
+|  | getDeferredDeeplinkUrl: | na | need this because we don't have adobeDataCallback any longer |
+| targetPrefetchObjectWithName:mboxParameters: | prefetchObjectWithName:mboxParameters: | ACPTarget |  |
+| targetRequestObjectWithName:defaultContent:mboxParameters:callback: | requestObjectWithName:defaultContent:mboxParameters:callback: | ACPTarget |  |
+| targetPrefetchContent:withProfileParameters:callback: | prefetchContent:withProfileParameters:callback: | ACPTarget |  |
+| targetLoadRequests:withProfileParameters: | loadRequests:withProfileParameters: | ACPTarget |  |
+| targetPrefetchClearCache | prefetchClearCache | ACPTarget |  |
+| targetLoadRequest:callback: | n/a | na |  |
+| targetLoadRequestWithName:defaultContent:profileParameters:orderParameters:mboxParameters:callback: | n/a | na |  |
+| targetLoadRequestWithName:defaultContent:profileParameters:orderParameters:mboxParameters:requestLocationParameters:callback: | n/a | na |  |
+| targetCreateRequestWithName:defaultContent:parameters: | n/a | na |  |
+| targetCreateOrderConfirmRequestWithName:orderId:orderTotal:productPurchasedId:parameters: | n/a | na |  |
+| targetThirdPartyID | getThirdPartyId: | ACPTarget |  |
+| targetSetThirdPartyID: | setThirdPartyId: | ACPTarget |  |
+| targetPcID | n/a | na |  |
+| targetSessionID | n/a | na |  |
+|  | getTntId: | ACPTarget | this method is a replacement/combination of pcid and sessionid |
+| targetClearCookies | resetExperience | ACPTarget |  |
+"| targetEnterPreviewModeWithDeepLink: | trackAdobeDeeplink: or 
+collectLaunchInfo: | ACPTarget | iOS only |"
+| targetPreviewRestartDeeplink: | setPreviewRestartDeeplink: | ACPTarget | iOS only |
+| audienceVisitorProfile | getVisitorProfile: | ACPAudience |  |
+| audienceSetDpid:dpuuid: | audienceSetDpid:Dpuuid: | na |  |
+| audienceDpid | audienceGetDpid: | na |  |
+| audienceDpuuid | audienceGetDpuuid: | na |  |
+| audienceSignalWithData:callback: | signalWithData:callback: | ACPAudience |  |
+| audienceReset | reset | ACPAudience |  |
+| visitorMarketingCloudID | getMarketingCloudId: | ACPIdentity | MID/ECID |
+| visitorSyncIdentifiers: | syncIdentifiers: | ACPIdentity |  |
+| visitorSyncIdentifiers:authenticationState: | syncIdentifiers:authentication: | ACPIdentity |  |
+| visitorSyncIdentifiersWithType:identifier:authenticationState: | syncIdentifier:identifier:authentication: | ACPIdentity |  |
+| visitorGetIDs | getIdentifiers: | ACPIdentity |  |
+| visitorAppendToURL: | appendToUrl:withCallback: | ACPIdentity |  |
+| visitorGetUrlVariablesAsync: | + | na | Added in 4.16.0 |
+| collectPII: | collectPii: | ACPCore |  |
+| getAllIdentifiersAsync: | + | ACPCore | Added for GDPR (4.15.0) |
+| registerURLSessionConfigurationCallback: | + | na | To be released in 4.17.0 |
+|  | downloadRules |  |  |
+|  | registerExtension:withName:withVersion:error: |  |  |
+|  | updateUserAttributes: |  |  |
+|  | updateUserAttribute:withValue: |  |  |
+|  | removeUserAttribute: |  |  |
+|  |  |  |  |
+| media* | n/a |  | media methods not supported in v5 |
+
 
 
