@@ -37,7 +37,13 @@
 ## Building Mobile Extensions
 
 * [Overview](building-mobile-extensions/overview.md)
+* [Clearing Shared States](building-mobile-extensions/clearing-shared-states.md)
+* [Dispatching Extension Events](building-mobile-extensions/dispatching-extension-events.md)
+* [Event Listeners](building-mobile-extensions/event-listeners.md)
 * [Event Processing](building-mobile-extensions/event-processing.md)
+* [Rules Interaction](building-mobile-extensions/rules-interaction.md)
+* [Monitor Shared States](building-mobile-extensions/monitor-shared-states.md)
+* [Request Shared State](building-mobile-extensions/request-shared-state.md)
 
 ## Resources
 
