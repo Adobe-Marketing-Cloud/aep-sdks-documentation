@@ -30,9 +30,6 @@ The Experience Platform SDK automatically performs migration tasks as required t
 This client-side, SDK upgrade does not affect in-progess marketing campaigns, reporting, or other app activities configured in Adobe Experience Cloud solutions.
 {% endhint %}
 
-* Steve - V4 keys will be changed V5 - start new doc on "SDK footprint and keys" 
-* Jiabin - if you modifiy NSUserDefaults or SharedPreferences - need to mention database files
-
 ## Further reading
 
 * See [Experience Cloud vs. 4x SDK functionality comparison](aepvs4x.md) 

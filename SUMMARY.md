@@ -34,8 +34,6 @@
   * [Profile API References](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles Event Reference](using-mobile-extensions/profile/profiles-event-reference.md)
 
-## Building Mobile Extensions
-
 ## Resources
 
 * [Upgrading to AEP SDK](resources/upgradring-to-aep/README.md)
