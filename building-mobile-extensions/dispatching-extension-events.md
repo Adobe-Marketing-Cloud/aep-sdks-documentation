@@ -1,2 +1,0 @@
-# Dispatching Extension Events
-
