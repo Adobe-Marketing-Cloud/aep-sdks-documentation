@@ -13,18 +13,40 @@ Retrieves the Analytics tracking identifier generated for this app/device instan
 
 #### Syntax
 
-```text
- public static void  getTrackingIdentifier(final AdobeCallback<String> callback)
+```java
+public static void  getTrackingIdentifier(final AdobeCallback<String> callback);
 ```
 
-#### **Example**
+#### Example
 
-```text
-AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {    @Override    public void call(final String trackingIdentifier) {        // check the trackingIdentifier value    }};Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
+```java
+Analytics.getTrackingIdentifier(new AdobeCallback<String>() {    
+    @Override    
+    public void call(final String trackingIdentifier) {        
+        // check the trackingIdentifier value    
+    }
+});
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
+#### Objective-C
+
+### getTrackingIdentifier
+
+#### Syntax
+
+```objective-c
++ (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
+```
+
+#### Example
+
+```objective-c
+[ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
+    // check trackingIdentifier parameter for the value
+}];
+```
 
 {% endtab %}
 {% endtabs %}
@@ -41,18 +63,34 @@ Sends all queued hits to Analytics, regardless of the current hit batch settings
 
 #### **Syntax**
 
-```text
-public static void sendQueuedHits()
+```java
+public static void sendQueuedHits();
 ```
 
 #### **Example**
 
-```text
+```java
 Analytics.sendQueuedHits();
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
+
+#### Objective-C
+
+### sendQueuedHits
+
+#### Syntax
+
+```objective-c
++ (void) sendQueuedHits;
+```
+
+#### Example
+
+```objective-c
+[ACPAnalytics sendQueuedHits];
+```
 
 {% endtab %}
 {% endtabs %}
@@ -70,22 +108,40 @@ Retrieves the total number of Analytics hits In the tracking queue.
 #### Syntax
 
 ```java
- public static void getQueueSize(final AdobeCallback<Long> callback)
+public static void getQueueSize(final AdobeCallback<Long> callback);
 ```
 
 #### Example
 
 ```java
 Analytics.getQueueSize(new AdobeCallback<Long>() {
-            @Override
-            public void call(final Long queueSize) {
-                // handle the queueSize
-            }
-        });
+    @Override
+    public void call(final Long queueSize) {
+        // handle the queueSize
+    }
+});
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
+
+#### Objective-C
+
+### getQueueSize
+
+#### Syntax
+
+```objective-c
++ (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
+```
+
+#### Example
+
+```objective-c
+[ACPAnalytics getQueueSize:^(NSUInteger queueSize) {
+    // check queueSize parameter for value
+}];
+```
 
 {% endtab %}
 {% endtabs %}
