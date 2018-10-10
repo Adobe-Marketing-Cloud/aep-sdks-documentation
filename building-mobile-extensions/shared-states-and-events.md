@@ -17,7 +17,7 @@ A module that receives an event for which it is listening \(for example, when An
 
 Here is an illustration of the workflow:
 
-![](https://github.com/Adobe-Marketing-Cloud/acp-sdks-documentation/tree/76ecef4bd522484f60bf46ede2ed028389db2329/.gitbook/assets/shared-state-lifecycle.png)
+![](../../../.gitbook/assets/shared-state-lifecycle.png)
 
-For a complete list of the events and shared states, see [Events and Shared States](https://github.com/Adobe-Marketing-Cloud/acp-sdks-documentation/tree/76ecef4bd522484f60bf46ede2ed028389db2329/building-mobile-extensions/events/README.md).
+For a complete list of the events and shared states, see [Events and Shared States](events/).
 
