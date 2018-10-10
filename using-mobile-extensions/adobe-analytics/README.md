@@ -20,6 +20,8 @@ How to find report suite IDs? See [Report Suites](https://marketing.adobe.com/re
 
 Provide one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be comma-separated with no space between. _For example: rsid1,rsid2_.
 
+<hr>
+
 #### **Tracking Server**
 
 {% hint style="info" %}
@@ -27,6 +29,8 @@ What's a tracking server and where to find it? See [populating Tracking Servers]
 {% endhint %}
 
 Provide the tracking domain to which all Analytics requests should be made. 
+
+<hr>
 
 #### **Offline Enabled**
 
@@ -44,13 +48,17 @@ When checked, Analytics hits are queued while the device is offline and sent lat
 If you currently send mobile SDK data to a report suite that also collects data from web JavaScript, you might need to set up a separate report suite for mobile data or include a custom timestamp on all JavaScript hits that use the`s.timestamp`variable. Please contact Customer Care for more information.
 {% endhint %}
 
+<hr>
+
 #### Audience Manager Forwarding
 
 {% hint style="info" %}
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you have setup Analytics server-side forwarding to Audience Manager, then check this setting. When this setting is enabled, all SDK requests to Analytics servers are made with a response code of **10** to ensure that Analytics traffic is forwarded to Audience Manager**.**
+If you have setup Analytics server-side forwarding to Audience Manager, then check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10** to ensure that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
+
+<hr>
 
 #### Backdate Previous Session Info
 
@@ -60,6 +68,8 @@ Enable this setting only with report suite\(s\) that are timestamp enabled.
 
 Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
 
+<hr>
+
 #### Batch Limit
 
 This setting creates a threshold number of hits to be sent in consecutive calls. For example, this setting is set to 10, each Analytics hit before the 10th hit will be stored in the queue. When the 10th hit comes in, all 10 hits will be sent to Analytics, consecutively.
@@ -68,7 +78,9 @@ This setting creates a threshold number of hits to be sent in consecutive calls.
 If you're batching hits \(that is, you're setting a value greater than 0\) then ensure that [Offline Enabled](./#offline-enabled) is also checked.
 {% endhint %}
 
-Default value for this setting is 0, which means that hit batching disabled and all hits will be immediately sent to Analytics as they are generated.
+The default value for this setting is 0, which means that hit batching is disabled and all hits will be immediately sent to Analytics as they are generated.
+
+<hr>
 
 ## Add Analytics to your app
 
@@ -88,10 +100,9 @@ Default value for this setting is 0, which means that hit batching disabled and 
 #### Objective-C
 
 1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-2. Import the Analytics extension:
+2. Import the Analytics extension (and its dependency, the Identity extension):
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
 #import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
@@ -128,7 +139,7 @@ public class MobileApp extends Application {
 {% tab title="iOS" %}
 #### Objective-C
 
-In your app's`didFinishLaunchingWithOptions` , register the Analytics extension:
+In your app's`application:didFinishLaunchingWithOptions:` method, register the Analytics and Identity extensions:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -154,7 +165,7 @@ trackState API will report the View State as **Page Name**, and state views are 
 {% endhint %}
 
 {% hint style="info" %}
-trackAction API will report the Action as ?
+trackAction API will report the Action as an **event**, and will not increment your page views in Analytics.
 {% endhint %}
 
 ## Integrations with Experience Cloud solutions and services
