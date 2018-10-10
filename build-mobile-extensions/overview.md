@@ -4,9 +4,9 @@ description: Building Adobe Experience Platform Mobile Extensions
 
 # Overview
 
-## Introduction for Mobile SDK Extensions
+## Overview on building SDK extensions
 
-The Adobe Experience Platform SDKs have been architected to be both modular and extensible. Vendors, Partners and Customers can create extensions that when enabled, can augment an application's functionality. Managing solution integrations as SDK extensions brings a number of benefits to the customer, such as the ability to use a single tag for SDK events, rather than having to tag each event multiple times for each solution that data needs to be sent to. 
+The Adobe Experience Platform SDK is architected to be both modular and extensible. Adobe solutions, customers, and partners may choose to create extensions that when enabled, can augment an application's functionality. Managing solution integrations as SDK extensions brings a number of benefits to the customer, such as the ability to use a single tag for SDK events, rather than having to tag each event multiple times for each solution that data needs to be sent to. 
 
 To support customer-specific features, and allow for the greatest flexibility, the goal is to provide an interface for customers to integrate with the Adobe Experience Platform SDKs at a much lower level. This interface allows customers to define extensions, which are similar in capabilities to the extensions that Adobe Launch has written for our internal services. We are going to follow an open model, so that these extensions will have access to all of the events and data to which the Adobe Experience Platform SDK code also has access.
 
@@ -14,7 +14,7 @@ Extensions allow customers to extend the Adobe Experience Platform SDKs with the
 
 ![Adobe Experience Platform Mobile Core Event Hub](../.gitbook/assets/screen-shot-2018-10-05-at-1.11.31-pm.png)
 
-## Composition of a Mobile Extension {#namespace-conventions}
+## Composition of an SDK extension {#namespace-conventions}
 
 ![](../.gitbook/assets/screen-shot-2018-10-05-at-1.50.13-pm.png)
 
@@ -61,63 +61,15 @@ Before you build an extension, complete the following tasks:
 
 * Ensure that you have already included the Adobe Experience Platform SDKs in your project.
 
-## Implementing an Adobe Cloud Platform SDK Extension {#implementing-an-adobe-cloud-platform-sdk-extension}
+## Creating an SDK extension {#implementing-an-adobe-cloud-platform-sdk-extension}
 
-To create a simple extension, complete the following procedures in the order in which they are listed:
+To create a simple extension, follow these steps:
 
-### A. **Create an Extension Class** {#a-create-an-extension-class}
+### **Create an Extension Class** {#a-create-an-extension-class}
 
-The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class that any extensions must derive from. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you will have the opportunity to extend the Adobe Cloud Platform SDKs functionality by registering event listeners, or by setting a default shared state that other modules can access.
-
-#### **iOS** {#ios}
-
-The `ACPExtension` class has the following method that you must override:
-
-* `name`, which returns the name of the extension. Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension#namespace-conventions). The name that you use to register cannot conflict with other registered extensions or Adobe internal modules.
-
-  **Tip**: All Adobe module names are prefixed with com.adobe.module and are considered reserved.
-
-The `ACPExtension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
-
-* `version`, which returns a version string for your extension. The version string is only used for logging and is currently not validated for formatting.
-* `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Cloud Platform SDK unregisters your extension. Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
-* `unexpectedError`, which allows you log additional information when the Adobe Cloud Platform SDKs encounter an error that could not be returned immediately from a call into the SDK. An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on. This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member. **Tip**: The ACPExtension class provides access to the `ACPExtensionApi` interface through the API member.
-
-#### **iOS code example** {#ios-code-example}
-
-1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
-2. Name this class `MyExtension` and ensure that this class is a member of `ACPExtension`.
-
-**Tip**: In the example below, the methods that are available for overriding are displayed.
-
-**MyExtension.h**
-
-```text
-import "ACPExtension.h"@interface MyExtension: ACPExtension {}   (void) unexpectedError: (nonnull NSError*) error;   (void) onUnregister;@end
-```
-
-1. At a minimum, you must provide an implementation for the `init` and `name` methods.
-
-   **MyExtension.m**
-
-   ```text
-    #import "MyExtension.h" @implementation MyExtension  - (nullable NSString*) name {     return @"com.myCompany.myExtension";   }  - (instancetype) init {    if (self= [super init]) {    // your extension code goes here    }     return self;   } @end
-   ```
-
-2. The default implementation of onUnregister must be called if you decide to override the `init` method.
-
-   ```text
-       - (void) onUnregister     [super onUnregister];     // your extension code goes here     }
-   ```
-
-3. The default implementation of `unexpectedError` will log an error message using `NSLog`.
-
-   ```text
-    - (void) unexpectedError { [super unexpectedError]; //your detailed logging code goes here }
-   ```
-
-#### **Android** {#android}
+{% tabs %}
+{% tab title="Android" %}
+The `Extension` class is the base class that any SDK extensions must derive from. The base `constructor` \(Android\) of your extension class is where you will have the opportunity to extend the SDK functionality by registering event listeners, or by setting a default shared state that other modules can access.
 
 The `Extension` class has the following method that you must override:
 
@@ -141,11 +93,101 @@ The `Extension` class has the following methods that you can optionally override
 
 #### **Android code example** {#android-code-example}
 
-```text
-import com.adobe.marketing.mobile.*;class MyExtension extends Extension {​    public MyExtension(final ExtensionApi extensionApi) {        super(extensionApi);    }​    @Override    public String getName() {        return "my.company.com";    }​    @Override    public void onUnregistered() {        // this method will be called when the extension is unregistered from the         // Event Hub in order for you to perform the necessary cleanup    }}
+```java
+import com.adobe.marketing.mobile.*;
+class MyExtension extends Extension {
+
+    public MyExtension(final ExtensionApi extensionApi) {
+        super(extensionApi);
+    }
+
+    @Override
+    public String getName() {
+        return "my.company.com";
+    }
+
+    @Override
+    public void onUnregistered() {
+        // this method will be called when the extension is unregistered from the 
+        // Event Hub in order for you to perform the necessary cleanup
+    }
+}
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+The `ACPExtension`class is the base class that any iOS SDK extensions must derive from. The `init` method of your extension class is where you will have the opportunity to extend the SDK's functionality by registering event listeners, or by setting a default shared state that other modules can access.
+
+The `ACPExtension` class has the following method that you must override:
+
+* `name`, which returns the name of the extension. Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension#namespace-conventions). The name that you use to register cannot conflict with other registered extensions or Adobe internal modules.
+
+  **Tip**: All Adobe module names are prefixed with com.adobe.module and are considered reserved.
+
+The `ACPExtension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
+
+* `version`, which returns a version string for your extension. The version string is only used for logging and is currently not validated for formatting.
+* `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Cloud Platform SDK unregisters your extension. Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
+* `unexpectedError`, which allows you log additional information when the Adobe Cloud Platform SDKs encounter an error that could not be returned immediately from a call into the SDK. An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on. This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member. **Tip**: The ACPExtension class provides access to the `ACPExtensionApi` interface through the API member.
+
+#### **iOS code example** {#ios-code-example}
+
+1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
+2. Name this class `MyExtension` and ensure that this class is a member of `ACPExtension`.
+
+**Tip**: In the example below, the methods that are available for overriding are displayed.
+
+**MyExtension.h**
+
+```objectivec
+import "ACPExtension.h"
+@interface MyExtension: ACPExtension {}
+   (void) unexpectedError: (nonnull NSError*) error;
+   (void) onUnregister;
+@end
 ```
 
-### B. **Registering your Extension** {#b-registering-your-extension}
+1. At a minimum, you must provide an implementation for the `init` and `name` methods.
+
+   **MyExtension.m**
+
+   ```objectivec
+   #import "MyExtension.h"
+    @implementation MyExtension
+     - (nullable NSString*) name {
+        return @"com.myCompany.myExtension";
+      }
+     - (instancetype) init {
+       if (self= [super init]) {
+       // your extension code goes here
+       }
+        return self;
+      }
+    @end
+   ```
+
+2. The default implementation of onUnregister must be called if you decide to override the `init` method.
+
+   ```objectivec
+   - (void) onUnregister
+        [super onUnregister];
+        // your extension code goes here
+        }
+   ```
+
+3. The default implementation of `unexpectedError` will log an error message using `NSLog`.
+
+   ```objectivec
+   - (void) unexpectedError {
+    [super unexpectedError];
+    //your detailed logging code goes here
+    }
+   ```
+{% endtab %}
+{% endtabs %}
+
+### **Registering your extension** {#b-registering-your-extension}
 
 After creating your extension class, you can register it by using the `ACPCore` method `registerExtension`. Some registration errors, such as undefined names, name conflicts, or type checking issues, occur immediately. Other errors might occur asynchronously and are reported through the `unexpectedError` callback before the extension is unregistered.
 
@@ -157,21 +199,51 @@ During registration, the extension class that you passed will be used by the Ado
 {% tab title="iOS" %}
 A convenient place to register your extension on iOS is in the `AppDelegate didFinishLaunchingWithOptions` method.
 
-```text
-#import "ACPMobileMarketing.h"#import "MyExtension.h"@implementation AppDelegate-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {NSError* error = nil;if ([ACPMarketingMobileCore registerExtension: [MyExtension class] error: &error]) {    NSLog(@"MyExtension was registered");  }  else {    NSLog(@"Error registering MyExtension: %@ %d", [error domain], (int)[error code]);  }}@end
+```objectivec
+#import "ACPMobileMarketing.h"
+#import "MyExtension.h"
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+NSError* error = nil;
+if ([ACPMarketingMobileCore registerExtension: [MyExtension class] error: &error]) {
+    NSLog(@"MyExtension was registered");
+  }
+  else {
+    NSLog(@"Error registering MyExtension: %@ %d", [error domain], (int)[error code]);
+  }
+}
+@end
 ```
 {% endtab %}
 
 {% tab title="Android" %}
 A convenient place to register your extension on Android is in the `onCreate` method of your activity.
 
-```text
-import com.adobe.marketing.mobile.MobileCore;import com.adobe.marketing.mobile.ExtensionErro
+```java
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.ExtensionError;
+import com.adobe.marketing.mobile.ExtensionErrorCallback;
+...
+@Override
+public void onCreate() {
+    super.onCreate();
+    MobileCore.setApplication(this);
+
+    ExtensionErrorCallback<ExtensionError> errorCallback = new ExtensionErrorCallback<ExtensionError>() {
+        @Override
+        public void error(final ExtensionError extensionError) {
+            Log.e("Extensions", String.format("An error occurred while registering the MyCustomExtension %d %s", extensionError.getErrorCode(), extensionError.getErrorName()));
+            }
+        };
+    if (!MobileCore.registerExtension(MyCustomExtension.class, errorCallback)) {
+        Log.e("Extensions", "Failed to register the MyCustomExtension extension");
+    }
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-### C. **Unregistering your Extension** {#c-unregistering-your-extension}
+### **Unregister your extension** {#c-unregistering-your-extension}
 
 If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` in the `ACPExtensionApi`. This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
@@ -195,7 +267,7 @@ Synchronous errors are caught outside the Adobe Cloud Platform SDK and might occ
 
 #### Asynchronous Errors {#asynchronous-errors}
 
-Asynchronous errors caught in the Adobe Experience Platform SDKs are rare. When they occur, the error is handled with a callback function, which might be called back on a different thread.
+Asynchronous errors caught in the SDK are rare. When they occur, the error is handled with a callback function, which might be called back on a different thread.
 
 Asynchronous errors might occur for the following reasons:
 
