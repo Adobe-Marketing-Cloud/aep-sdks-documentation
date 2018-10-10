@@ -1,7 +1,3 @@
----
-description: Building Adobe Experience Platform Mobile Extensions
----
-
 # Overview
 
 ## Overview on building SDK extensions

@@ -145,7 +145,7 @@ After successful configuration, you'll see the Experience Cloud ID generated and
 ## Enable lifecycle metrics
 
 {% hint style="warning" %}
-This section shows how to start collecting lifecycle metrics. Setup [Analytics](../mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
+This section shows how to start collecting lifecycle metrics. Setup [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
 {% endhint %}
 
 Lifecycle metrics are valuable, out-of-the-box information about your app user.  These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics.
@@ -264,7 +264,7 @@ Pause Lifecycle data collection when your app has entered the background:
 {% endtab %}
 {% endtabs %}
 
-See [Lifecycle Metrics](../mobile-extensions/mobile-core/lifecycle/), for complete usage reference.
+See [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/), for complete usage reference.
 
 ## Track screens & user actions
 
@@ -273,7 +273,7 @@ You may use the following screen and action tracking APIs in order to start meas
 Actions are events that occur in your app. Use this API to track and measure an action - each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
-This section shows how to start tracking app screens and user actions. Setup [Analytics](../mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
+This section shows how to start tracking app screens and user actions. Setup [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
 {% endhint %}
 
 ### Track user actions
@@ -340,5 +340,5 @@ MobileCore.trackState("homePage", additionalContextData);
 {% endtab %}
 {% endtabs %}
 
-See [Mobile Core API Reference](../mobile-extensions/mobile-core/mobile-core-api-reference.md), for complete usage reference.
+See [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md), for complete usage reference.
 
