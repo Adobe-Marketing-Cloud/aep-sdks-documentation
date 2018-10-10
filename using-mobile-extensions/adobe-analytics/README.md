@@ -20,17 +20,13 @@ How to find report suite IDs? See [Report Suites](https://marketing.adobe.com/re
 
 Provide one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be comma-separated with no space between. _For example: rsid1,rsid2_.
 
-<hr>
-
 #### **Tracking Server**
 
 {% hint style="info" %}
 What's a tracking server and where to find it? See [populating Tracking Servers](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
 {% endhint %}
 
-Provide the tracking domain to which all Analytics requests should be made. 
-
-<hr>
+Provide the tracking domain to which all Analytics requests should be made.
 
 #### **Offline Enabled**
 
@@ -38,17 +34,15 @@ Provide the tracking domain to which all Analytics requests should be made.
 Do you need offline tracking? See [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
 {% endhint %}
 
-When checked, Analytics hits are queued while the device is offline and sent later when the device is online. Your report suite must be timestamp-enabled to use offline tracking. 
+When checked, Analytics hits are queued while the device is offline and sent later when the device is online. Your report suite must be timestamp-enabled to use offline tracking.
 
 {% hint style="danger" %}
- If your report suite is timestamp enabled, this setting must be checked. If not, this setting must remain unchecked. If this setting is not configured correctly, data will be lost. If you're not sure that your report suite is timestamp enabled, contact Customer Care**.**
+If your report suite is timestamp enabled, this setting must be checked. If not, this setting must remain unchecked. If this setting is not configured correctly, data will be lost. If you're not sure that your report suite is timestamp enabled, contact Customer Care**.**
 {% endhint %}
 
 {% hint style="info" %}
 If you currently send mobile SDK data to a report suite that also collects data from web JavaScript, you might need to set up a separate report suite for mobile data or include a custom timestamp on all JavaScript hits that use the`s.timestamp`variable. Please contact Customer Care for more information.
 {% endhint %}
-
-<hr>
 
 #### Audience Manager Forwarding
 
@@ -56,9 +50,7 @@ If you currently send mobile SDK data to a report suite that also collects data 
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you have setup Analytics server-side forwarding to Audience Manager, then check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10** to ensure that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
-
-<hr>
+If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures ****Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
 #### Backdate Previous Session Info
 
@@ -67,8 +59,6 @@ Enable this setting only with report suite\(s\) that are timestamp enabled.
 {% endhint %}
 
 Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
-
-<hr>
 
 #### Batch Limit
 
@@ -80,12 +70,8 @@ If you're batching hits \(that is, you're setting a value greater than 0\) then 
 
 The default value for this setting is 0, which means that hit batching is disabled and all hits will be immediately sent to Analytics as they are generated.
 
-<hr>
-
 ## Add Analytics to your app
 
-{% tabs %}
-{% tab title="Android" %}
 #### Java
 
 1. Add the Analytics extension to your project using the app's Gradle file.
@@ -94,20 +80,16 @@ The default value for this setting is 0, which means that hit batching is disabl
    ```java
    import com.adobe.marketing.mobile.*;
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
 #### Objective-C
 
 1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-2. Import the Analytics extension (and its dependency, the Identity extension):
+2. Import the Analytics extension \(and its dependency, the Identity extension\):
 
 ```objectivec
 #import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Register Analytics with Mobile Core
 
