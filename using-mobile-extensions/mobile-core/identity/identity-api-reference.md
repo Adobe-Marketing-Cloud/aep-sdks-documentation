@@ -265,3 +265,201 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 {% endtab %}
 {% endtabs %}
 
+## Set an Advertising Identifier
+
+{% tabs %}
+{% tab title="Android" %}
+### setAdvertisingIdentifier
+
+This API is part of the MobileCore extension. Adobe Identity extension supports the API, and sets the advertising identifier in the SDK.
+
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+Remember the following information:
+
+* If the Adobe Cloud Platform SDK is configured with `identity.adidEnabled` set to `false`, then the advertising identifier is not set or stored.
+* If the current SDK privacy status is `optedout`, then the advertising identifier is not set.
+
+### **Syntax** {#syntax-6}
+
+```java
+public static void setAdvertisingIdentifier(final String advertisingIdentifier);
+```
+
+### **Example** {#example-6}
+
+```java
+MobileCore.setAdvertisingIdentifier("advertising_identifier");
+```
+
+##   {#setpushidentifier}
+{% endtab %}
+
+{% tab title="iOS" %}
+### setAdvertisingIdentifier
+
+This API is part of the ACPCore extension. Adobe Identity extension supports the API and sets the advertising identifier in the SDK.
+
+If the IDFA was set in the SDK, the IDFA will be sent in lifecycle. It can also be accessed in Signals \(Postbacks\). This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+Remember the following information:
+
+* If the Adobe Experience Cloud Platform SDKs is configured with `identity.adidEnabled` set to `false`, the advertising identifier is not set or stored.
+* If the current SDK privacy status is `optedout`, the advertising identifier is not set.
+
+### **Syntax** {#syntax-6}
+
+```objectivec
++ (void) setAdvertisingIdentifier: (nullable NSString*) adId;
+```
+
+### **Examples** {#examples-6}
+
+#### Objective-C {#objective-c-6}
+
+```objectivec
+[ACPCore setAdvertisingIdentifier:@"AdvertisingId"];
+```
+
+#### Swift {#swift-6}
+
+```swift
+ACPCore.setAdvertisingIdentifier("AdvertisingId")
+```
+{% endtab %}
+{% endtabs %}
+
+## Set the Push Identifier
+
+{% tabs %}
+{% tab title="Android" %}
+### setPushIdentifier
+
+This API is part of the MobileCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
+
+### **Syntax** {#syntax-7}
+
+```java
+public static void setPushIdentifier(final String pushIdentifier);
+```
+
+### **Example** {#example-7}
+
+```java
+//Retrieve the token from either GCM or FCM, and pass it to the SDK
+MobileCore.setPushIdentifier(token);
+```
+
+##   {#identity-service-classes}
+{% endtab %}
+
+{% tab title="iOS" %}
+### setPushIdentifier
+
+This API is part of the ACPCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
+
+### **Syntax** {#syntax-7}
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+### **Examples** {#examples-7}
+
+#### Objective-C {#objective-c-7}
+
+```objectivec
+// Set the deviceToken that the APNS has assigned to the device
+[ACPCore setPushIdentifier:deviceToken];
+```
+
+#### Swift {#swift-7}
+
+```swift
+// Set the deviceToken that the APNs has assigned to the device
+ACPCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+{% endtabs %}
+
+## Identity Service Classes
+
+{% tabs %}
+{% tab title="Android" %}
+Here are the service classes for Identity in Android:
+
+### AdobeCallback {#adobecallback}
+
+This class provides the interface to receive results when the async APIs perform the requested action. For more information about these methods, see [Identity Service methods in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#identity-service-methods-in-android).
+
+```java
+public interface AdobeCallback<T> {    
+    void call(final T value);
+}
+```
+
+### VisitorID {#visitorid}
+
+An identifier to be used with the Experience Cloud Visitor ID Service.
+
+```java
+public class VisitorID {    
+     //Constructor    
+     public VisitorID(String idOrigin, String idType, String id, VisitorID.AuthenticationState authenticationState);​    
+     
+     public VisitorID.AuthenticationState getAuthenticationState();​    
+     
+     public final String getId();​    
+     
+     public final String getIdOrigin();​    
+     
+     public final String getIdType();​​
+     
+}
+```
+
+### AuthenticationState {#authenticationstate}
+
+Used to indicate the authentication state for the current `VisitorID`.
+
+```java
+public enum AuthenticationState {        
+       UNKNOWN,        
+       AUTHENTICATED,        
+       LOGGED_OUT;
+}
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### ACPMobileVisitorId
+
+An identifier to be used with the Experience Cloud Visitor ID Service.
+
+Contains the origin, the type, a value, and the authentication state of the visitor ID.
+
+```objectivec
+@interface ACPMobileVisitorId : NSObject​
+
+@property(nonatomic, strong, nullable) NSString* idOrigin;
+@property(nonatomic, strong, nullable) NSString* idType;
+@property(nonatomic, strong, nullable) NSString* identifier;
+@property(nonatomic, readwrite) ACPMobileVisitorAuthenticationState authenticationState;​
+
+@end
+```
+
+### ACPMobileVisitorAuthenticationState {#acpmobilevisitorauthenticationstate}
+
+Used to indicate the authentication state for the current `VisitorID`.
+
+```objectivec
+typedef NS_ENUM(NSUInteger, 
+    ADBMobileVisitorAuthenticationState) {    
+    ACPMobileVisitorAuthenticationStateUnknown          = 0,    
+    ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
+    ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
+```
+{% endtab %}
+{% endtabs %}
+
