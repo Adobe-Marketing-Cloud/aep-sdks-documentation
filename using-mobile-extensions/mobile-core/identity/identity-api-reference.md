@@ -154,7 +154,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 
 {% tabs %}
 {% tab title="Android" %}
-## getIdentifiers {#getidentifiers}
+### getIdentifiers
 
 Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
 
@@ -299,8 +299,6 @@ public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 ```java
 MobileCore.setAdvertisingIdentifier("advertising_identifier");
 ```
-
-##   {#setpushidentifier}
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -357,8 +355,6 @@ public static void setPushIdentifier(final String pushIdentifier);
 //Retrieve the token from either GCM or FCM, and pass it to the SDK
 MobileCore.setPushIdentifier(token);
 ```
-
-##   {#identity-service-classes}
 {% endtab %}
 
 {% tab title="iOS" %}
