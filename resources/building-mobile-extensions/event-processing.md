@@ -30,7 +30,7 @@ The event hub is the core data structure to which the SDK extensions and other c
 
 The event hub is responsible for receiving events that are dispatched by the application or by the extensions, processing events, and dispatching these events to registered listeners. The event hub is accessed from the application and from the extensions by using the `MobileCore` API that is exposed in the SDK. The application dispatches events indirectly, by calling API methods that cause events to be dispatched in the Adobe Platform SDKs. The extensions and internal modules dispatch events directly by calling into the event hub.
 
-![](/Users/chetan/Desktop/event-dispatch-flow-1280-6560ee4b-0.png)
+![](https://github.com/Adobe-Marketing-Cloud/acp-sdks-documentation/tree/88bedb7ddb635a28d9520312147e1e1a55acc568/Users/chetan/Desktop/event-dispatch-flow-1280-6560ee4b-0.png)
 
 ## Order of Event Processing
 

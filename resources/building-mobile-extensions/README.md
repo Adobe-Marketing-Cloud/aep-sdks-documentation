@@ -2,7 +2,7 @@
 description: This information can help you understand how to build your own extension.
 ---
 
-# Build your own Extension
+# Building Mobile Extensions
 
 To support customer-specific features, and allow for the greatest flexibility, the goal is to provide an interface for customers to integrate with the Adobe Cloud Platform SDKs at a much lower level. This interface allows customers to define extensions, which are similar in capabilities to the extensions that Adobe Launch has written for our internal services. We are going to follow an open model, so that these extensions will have access to all of the events and data to which the Adobe Cloud Platform SDK code also has access.
 
