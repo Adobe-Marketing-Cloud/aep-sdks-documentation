@@ -18,9 +18,6 @@ Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or l
 You should see a pop-up similar to the following:
 
 ![](../.gitbook/assets/android.png)
-
-1. Create MainActivity.java in the app.
-2. Add `MobileCore.configureWithAppID("PASTE_APP_ID_HERE");`
 {% endtab %}
 
 {% tab title="Objective C" %}
@@ -31,9 +28,6 @@ You should see a pop-up similar to the following:
 You should see a pop-up similar to the following:
 
 ![](../.gitbook/assets/obj-c.png)
-
-1. In Xcode, open AppDelegate.swift \(Swift\) or AppDelegate.m \(Objective-C\)
-2. Under `didFinishLaunchingWithOptions`, add:`[ACPCore configureWithAppId:@"PASTE_APP_ID_HERE"];`
 {% endtab %}
 
 {% tab title="Swift" %}
@@ -44,9 +38,6 @@ You should see a pop-up similar to the following:
 You should see a pop-up similar to the following:
 
 ![](../.gitbook/assets/swift.png)
-
-1. In Xcode, open AppDelegate.swift \(Swift\) or AppDelegate.m \(Objective-C\)
-2. Under `didFinishLaunchingWithOptions`, add:`ADBMobileMarketing.configure(withAppId: "YOUR_APP_ID")`
 {% endtab %}
 {% endtabs %}
 
