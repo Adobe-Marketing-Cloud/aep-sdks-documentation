@@ -95,10 +95,18 @@ public static void appendVisitorInfoForURL(final String baseURL, final AdobeCall
 ### **Example** {#example-3}
 
 ```java
-Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    @Override    public void call(String urlWithAdobeVisitorInfo) {        //handle the new URL here        //For example, open the URL on the device browser        //        Intent i = new Intent(Intent.ACTION_VIEW);        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        startActivity(i);    }});
+Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
+    @Override    
+    public void call(String urlWithAdobeVisitorInfo) {        
+        //handle the new URL here        
+        //For example, open the URL on the device browser        
+        //        
+        Intent i = new Intent(Intent.ACTION_VIEW);        
+        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        
+        startActivity(i);    
+    }
+});
 ```
-
-##   {#getidentifiers}
 {% endtab %}
 
 {% tab title="iOS" %}
