@@ -4,9 +4,9 @@
 
 ## Getting Started
 
-* [Setup a Mobile Property](getting-started/create-a-mobile-property.md)
+* [Set Up a Mobile Property](getting-started/create-a-mobile-property.md)
 * [Get the SDK](getting-started/get-the-sdk.md)
-* [Initialize SDK & setup tracking](getting-started/initialize-the-sdk.md)
+* [Initialize the SDK and Set up Tracking](getting-started/initialize-the-sdk.md)
 * [Next Steps](getting-started/next-steps.md)
 
 ## Using Mobile Extensions

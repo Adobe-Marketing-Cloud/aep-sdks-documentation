@@ -1,6 +1,6 @@
-# Initialize SDK & setup tracking
+# Initialize the SDK and Set up Tracking
 
-### Configure SDK with Launch Environment ID
+## Configure SDK with the Launch Environment ID
 
 To initialize the SDK, you'll first need to configure the SDK with the Environment ID from Launch.
 
@@ -37,7 +37,7 @@ Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
 {% endhint %}
 
-### Enable debug logging
+## Enable debug logging
 
 Debug logging is optional and helps you ensure that the SDK is working as intended. Below is a table that explains the levels of logging available and when they may be used:
 
@@ -79,7 +79,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 {% endtab %}
 {% endtabs %}
 
-### Enable Experience Cloud Identity service
+## Enable the Experience Cloud Identity service
 
 The Experience Cloud ID service provides a universal visitor ID across Experience Cloud solutions and is pre-requisite for most implementations. 
 
@@ -273,7 +273,7 @@ Pause Lifecycle data collection when your app has entered the background:
 
 See [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/), for complete usage reference.
 
-## Track screens & user actions
+## Track screens and user actions
 
 You may use the following screen and action tracking APIs in order to start measuring your user's engagement with your app.
 
