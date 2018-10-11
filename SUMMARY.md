@@ -38,8 +38,8 @@
 
 ## Resources
 
-* [Upgrading to AEP SDK](resources/upgradring-to-aep/README.md)
-  * [AEP vs. 4x SDK](resources/upgradring-to-aep/aepvs4x.md)
+* [Upgrading to AEP SDK](resources/upgrading-to-aep/README.md)
+  * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x.md)
 * [Building Mobile Extensions](resources/building-mobile-extensions/README.md)
   * [Event Processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared States and Events](resources/building-mobile-extensions/shared-states-and-events.md)
