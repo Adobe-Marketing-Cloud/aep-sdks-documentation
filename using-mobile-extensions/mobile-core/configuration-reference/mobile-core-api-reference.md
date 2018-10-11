@@ -70,7 +70,7 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Track app states & views
+## Track app states and views
 
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API may be called.. This method sends an Analytics state tracking hit with optional context data.
 
