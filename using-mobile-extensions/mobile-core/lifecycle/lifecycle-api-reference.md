@@ -167,7 +167,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 {% endtab %}
 {% endtabs %}
 
-## Tracking App Crashes in 
+## Tracking App Crashes 
 
 ## Android
 
@@ -181,7 +181,7 @@ When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleS
 To ensure accurate crash reporting, you must call `lifecyclePause()` in the `onPause` method of each activity.  For more information about the Android activity lifecycle, see [Activities](https://developer.android.com/guide/components/activities/). 
 {% endhint %}
 
-#### **Causes of false crash reporting**
+### **Causes of false crash reporting**
 
 * If you are debugging by using an IDE, such as Android Studio, and launching the app again from the IDE while the app is in the foreground causes a crash.
 
@@ -189,7 +189,7 @@ To ensure accurate crash reporting, you must call `lifecyclePause()` in the `onP
 
 * If the previous foreground Activity of your app is moved to the background and does not call `MobileCore.lifecyclePause()`in `onPause`, and your app is manually closed or killed by the operating system, the next launch results in a crash.
 
-#### **Handling fragments**
+### **Handling fragments**
 
 Fragments have application lifecycle events that are similar to Activities. However, a fragment cannot be active without being attached to an Activity.
 {% endtab %}

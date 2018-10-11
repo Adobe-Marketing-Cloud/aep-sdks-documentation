@@ -1,6 +1,6 @@
 # Target API Reference
 
-## Get custom visitor IDs
+## Get Custom Visitor IDs
 
 Use this API to get the custom visitor ID for Target.
 
@@ -61,7 +61,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 {% endtab %}
 {% endtabs %}
 
-## Set custom visitor IDs
+## Set Custom Visitor IDs
 
 Use this API to set custom visitor IDs for Target. 
 
@@ -73,13 +73,13 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 ### setThirdPartyId
 
-### Syntax
+#### Syntax
 
 ```java
 public static void setThirdPartyId(final String thirdPartyId)
 ```
 
-### Example
+#### Example
 
 ```java
 Target.setThirdPartyId("third-party-id");
@@ -194,23 +194,21 @@ Target.getTntId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-## getTntId {#gettntid}
+### getTntId
 
 Gets the Target user identifier. The callback will be invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
 
 Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `rResetExperience` API is called.
 
-### Syntax {#syntax-3}
+#### Syntax
 
 ```objectivec
 + (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
 ```
 
-### **Examples** {#examples-3}
+#### **Examples**
 
-Here are some examples in Objective-C and Swift:
-
-#### **Objective-C** {#objective-c-3}
+**Objective-C**
 
 ```objectivec
 [ACPTarget getTntId:^(NSString *tntId){
@@ -218,7 +216,7 @@ Here are some examples in Objective-C and Swift:
 }];
 ```
 
-#### **Swift** {#swift-2}
+**Swift**
 
 ```swift
 ACPTarget.getTntId({tntId in
@@ -377,7 +375,7 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 {% endtab %}
 {% endtabs %}
 
-## Send mbox click notification
+## Send an mbox Click Notification
 
 Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target.
 
@@ -387,7 +385,7 @@ Sends a click notification to configured Target server for a prefetched or regul
 
 Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target. If notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests` indicating that the mbox was viewed.
 
-#### Syntax:
+#### Syntax
 
 ```java
 public static void locationClicked(final String mboxName,
@@ -433,13 +431,13 @@ Target.locationClicked("cartLocation", mboxParameters, productParameters, orderP
 
 Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target. If notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests` indicating that the mbox was viewed.
 
-### Syntax: {#syntax-5}
+#### Syntax
 
 ```objectivec
 + (void) locationClickedWithName: (nonnull NSString*) name mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters productParameters: (nullable NSDictionary<NSString*, NSString*>*) productParameters orderParameters: (nullable NSDictionary*) orderParameters profileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters;
 ```
 
-### Example {#example-1}
+#### Example
 
 ```objectivec
 // Define Mbox parameters
@@ -647,8 +645,6 @@ The following method can be used to create an instance of a Target prefetch obje
 + (nonnull instancetype) prefetchObjectWithName: (nonnull NSString*) name
                                  mboxParameters: (nullable NSDictionary*) mboxParamete
 ```
-
-##   {#acptargetrequestobject}
 {% endtab %}
 {% endtabs %}
 

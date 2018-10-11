@@ -12,14 +12,14 @@ Allows you to create/update a batch of user profile attributes:
 * If the attribute exists, the value will be updated.
 * A null attribute value removes the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void updateUserAttribute(String attributeName, 
                                        Object attributeValue)
 ```
 
-**Example**
+#### **Example**
 
 ```java
 UserProfile.updateUserAttribute("username", "Will Smith");
@@ -37,13 +37,13 @@ Allows you to create/update a batch of user profile attributes:
 * If the attribute already exists, then the value will be updated.
 * A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void updateUserAttributes(Map<String, Object> attributeMap)
 ```
 
-**Example**
+#### **Example**
 
 ```java
 HashMap<String, Object> profileMap = new HashMap<>();
@@ -54,7 +54,7 @@ UserProfile.updateUserAttributes(profileMap);
 {% endtab %}
 
 {% tab title="iOS" %}
-### updateUserAttribute {#updateuserattribute}
+### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
 
@@ -64,13 +64,13 @@ Remember the following information:
 * If the attribute already exists, then the value will be updated.
 * A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 + (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
 ```
 
-**Examples**
+#### **Examples**
 
 Here is an example in Objective-C:
 
@@ -99,13 +99,13 @@ Allows to create/update a batch of user profile attributes:
 
 A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```text
 + (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
 ```
 
-**Examples**
+#### **Examples**
 
 Here is an example in Objective-C:
 
@@ -135,13 +135,13 @@ Removes the given attribute name.
 {% tab title="Android" %}
 ### **removeUserAttribute**
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void removeUserAttribute(String attributeName)
 ```
 
-**Example**
+#### **Example**
 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
@@ -153,13 +153,13 @@ UserProfile.removeUserAttribute("itemsAddedToCart");
 
 Removes the user profile attribute for the given key.
 
-**Syntax**
+#### **Syntax**
 
 ```objectivec
 + (void) removeUserAttribute: (nonnull NSString*) key
 ```
 
-**Examples**
+#### **Examples**
 
 Here is an example in Objective-C:
 

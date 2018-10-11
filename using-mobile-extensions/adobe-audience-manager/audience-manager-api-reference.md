@@ -74,7 +74,7 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_
 {% endtab %}
 {% endtabs %}
 
-## Reset identifiers & profiles
+## Reset Identifiers and Profiles
 
 This API helps you reset the Audience Manager UUID and purges the current visitor profile.
 
@@ -117,7 +117,7 @@ Audience.reset();
 [ACPAudience reset];
 ```
 
-**Example in Swift**
+**Swift**
 
 ```swift
 // swift
@@ -161,13 +161,15 @@ Audience.getVisitorProfile(visitorProfileCallback);
 
 On iOS, the visitor profile is saved in `NSUserDefaults`.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-**Example in Objective-C**
+#### **Example**
+
+**Objective-C**
 
 ```objectivec
 // objective-c
@@ -176,7 +178,7 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 }];
 ```
 
-**Example in Swift**
+**Swift**
 
 ```swift
 // swift
