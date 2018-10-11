@@ -68,7 +68,7 @@ Identity.syncIdentifier(identifiers);
 {% endtab %}
 
 {% tab title="iOS" %}
-## syncIdentifer {#syncidentifer}
+## syncIdentifier {#syncidentifier}
 
 Updates the provided customer ID with the Adobe Experience Cloud ID Service.
 
@@ -223,7 +223,7 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 // handle the appended url here}
-];
+}];
 ```
 
 #### Swift {#swift-3}
