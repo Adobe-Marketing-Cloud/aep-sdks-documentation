@@ -67,13 +67,13 @@ Identity.syncIdentifier(identifiers);
 {% endtab %}
 
 {% tab title="iOS" %}
-## syncIdentifier {#syncidentifier}
+### syncIdentifier
 
 Updates the provided customer ID with the Adobe Experience Cloud ID Service.
 
 This API synchronizes the provided customer identifier type key and value with the provided [authentication state](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-ios#adbmobilevisitorauthenticationstate) to the Adobe Experience Cloud ID Service. If this customer ID type exists in the service, this type is updated with the new ID and authentication state. Otherwise a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-### **Syntax** {#syntax}
+#### **Syntax**
 
 ```objectivec
 + (void) syncIdentifier: (nonnull NSString*) identifierType             
@@ -81,15 +81,15 @@ This API synchronizes the provided customer identifier type key and value with t
          authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
 ```
 
-### **Examples** {#examples}
+#### **Examples**
 
-#### Objective-C {#objective-c}
+**Objective-C**
 
 ```objectivec
 [ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
 ```
 
-#### Swift {#swift}
+**Swift**
 
 ```swift
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
@@ -103,22 +103,22 @@ This API synchronizes the provided customer identifiers to the Adobe Experience 
 
 **Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
 
-### **Syntax** {#syntax-1}
+#### **Syntax**
 
 ```objectivec
 + (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
 ```
 
-### **Examples** {#examples-1}
+#### **Examples**
 
-#### Objective-C {#objective-c-1}
+**Objective-C**
 
 ```objectivec
 NSDictionary *ids = @{@"idType":@"idValue"};
 [ACPIdentity syncIdentifiers:ids];
 ```
 
-#### Swift {#swift-1}
+**Swift**
 
 ```swift
 let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];
@@ -133,23 +133,23 @@ This API synchronizes the provided customer identifiers to the Adobe Experience 
 
 **Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
 
-### **Syntax** {#syntax-2}
+### **Syntax**
 
 ```objectivec
 + (void) syncIdentifiers: (nullable NSDictionary*) identifiers          
          authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
 ```
 
-### **Examples** {#examples-2}
+### **Examples**
 
-#### Objective-C {#objective-c-2}
+**Objective-C**
 
 ```objectivec
 NSDictionary *ids = @{@"idType":@"idValue"};
 [ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
 ```
 
-#### Swift {#swift-2}
+**Swift**
 
 ```swift
 let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];ACPIdentity.syncIdentifiers(identifiers, authentication: 
@@ -208,15 +208,15 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
   * A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
 
-### **Syntax** {#syntax-3}
+#### **Syntax**
 
 ```objectivec
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
 ```
 
-### **Examples** {#examples-3}
+#### **Examples**
 
-#### Objective-C {#objective-c-3}
+**Objective-C**
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -225,7 +225,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-#### Swift {#swift-3}
+**Swift**
 
 ```swift
 ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
@@ -270,15 +270,15 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 
 Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
 
-### **Syntax** {#syntax-4}
+#### **Syntax**
 
 ```objectivec
 + (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
 ```
 
-### **Examples** {#examples-4}
+#### **Examples**
 
-#### Objective-C {#objective-c-4}
+**Objective-C**
 
 ```objectivec
 [ACPIdentity getIdentifiers:^(NSArray<ACPMobileVisitorId *> * _Nullable retrievedVisitorIds) {    
@@ -286,7 +286,7 @@ Returns all customer identifiers which were previously synced with the Adobe Exp
     }];
 ```
 
-#### Swift {#swift-4}
+**Swift**
 
 ```swift
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
@@ -331,15 +331,15 @@ Retrieves the Adobe Experience Cloud Visitor ID from the Adobe Experience Cloud 
 
 The Experience Cloud ID is generated at initial launch and is stored and used from that point. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
-### **Syntax** {#syntax-5}
+#### **Syntax**
 
 ```objectivec
 + (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
 ```
 
-### **Examples** {#examples-5}
+#### **Examples**
 
-#### Objective-C {#objective-c-5}
+**Objective-C**
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
@@ -347,7 +347,7 @@ The Experience Cloud ID is generated at initial launch and is stored and used fr
 }];
 ```
 
-#### Swift {#swift-5}
+**Swift**
 
 ```swift
 ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
@@ -397,21 +397,21 @@ Remember the following information:
 * If the Adobe Experience Cloud Platform SDKs is configured with `identity.adidEnabled` set to `false`, the advertising identifier is not set or stored.
 * If the current SDK privacy status is `optedout`, the advertising identifier is not set.
 
-### **Syntax** {#syntax-6}
+#### **Syntax**
 
 ```objectivec
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 
-### **Examples** {#examples-6}
+#### **Examples**
 
-#### Objective-C {#objective-c-6}
+**Objective-C**
 
 ```objectivec
 [ACPCore setAdvertisingIdentifier:@"AdvertisingId"];
 ```
 
-#### Swift {#swift-6}
+**Swift**
 
 ```swift
 ACPCore.setAdvertisingIdentifier("AdvertisingId")
@@ -446,22 +446,22 @@ MobileCore.setPushIdentifier(token);
 
 This API is part of the ACPCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
-### **Syntax** {#syntax-7}
+#### **Syntax**
 
 ```objectivec
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
 
-### **Examples** {#examples-7}
+#### **Examples**
 
-#### Objective-C {#objective-c-7}
+**Objective-C**
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
 [ACPCore setPushIdentifier:deviceToken];
 ```
 
-#### Swift {#swift-7}
+**Swift**
 
 ```swift
 // Set the deviceToken that the APNs has assigned to the device

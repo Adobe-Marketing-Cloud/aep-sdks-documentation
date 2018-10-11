@@ -6,7 +6,7 @@ Lifecycle metrics are valuable, out-of-the-box information about your app user. 
 This section shows how to start collecting lifecycle metrics. Setup [Analytics](https://aep-sdks.gitbook.io/docs/mobile-extensions/adobe-analytics) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
 {% endhint %}
 
-## Lifecycle start & pause
+## Lifecycle Start and Pause
 
 {% tabs %}
 {% tab title="Android" %}
