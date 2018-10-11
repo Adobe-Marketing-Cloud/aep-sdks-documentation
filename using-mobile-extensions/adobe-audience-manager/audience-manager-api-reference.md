@@ -1,6 +1,6 @@
 # Audience Manager API Reference
 
-## Send signals to Audience Manager
+## Send Signals to Audience Manager
 
 Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to initial signal call.  The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
@@ -50,7 +50,9 @@ On iOS, UUID is persisted in `NSUserDefaults`.
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-**Example in Objective-C**
+#### **Examples** 
+
+**Objective-C**
 
 ```objectivec
 // objective-c
@@ -61,7 +63,7 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 
 ```
 
-**Example in Swift**
+**Swift**
 
 ```swift
 // swift
@@ -106,7 +108,9 @@ Audience.reset();
 + (void) reset;
 ```
 
-**Example in Objective-C**
+#### **Examples**
+
+**Objective-C**
 
 ```objectivec
 // objective-c

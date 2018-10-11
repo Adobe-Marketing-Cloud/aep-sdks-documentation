@@ -130,8 +130,10 @@ You may pass additional data to lifecycle on app launch, app resume, both, or ne
 
 {% tabs %}
 {% tab title="Android" %}
-{% hint style="warning" %}
+**Java**
 
+{% hint style="warning" %}
+You need to add this code only in your main activity and any other activity, from which, your app may be launched.
 {% endhint %}
 
 ```java
@@ -142,12 +144,6 @@ public void onResume() {
     MobileCore.lifecycleStart(additionalContextData);
 }
 ```
-
-**Java**
-
-{% hint style="warning" %}
-You need to add this code only in your main activity and any other activity, from which, your app may be launched.
-{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}

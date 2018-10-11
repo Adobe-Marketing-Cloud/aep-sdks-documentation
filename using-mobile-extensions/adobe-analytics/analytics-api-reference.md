@@ -1,6 +1,6 @@
 # Analytics API Reference
 
-## Get tracking identifier {#gettrackingidentifier}
+## Get the Tracking Identifier {#gettrackingidentifier}
 
 Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch.The ID is preserved between app upgrades and is removed when the app is uninstalled.  
 
@@ -11,14 +11,21 @@ Retrieves the Analytics tracking identifier generated for this app/device instan
 
 #### Syntax
 
-```text
- public static void  getTrackingIdentifier(final AdobeCallback<String> callback)
+```java
+ public static void
+   getTrackingIdentifier(final AdobeCallback<String> callback)
 ```
 
 #### **Example**
 
-```text
-AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {    @Override    public void call(final String trackingIdentifier) {        // check the trackingIdentifier value    }};Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
+```java
+AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
+    @Override
+    public void call(final String trackingIdentifier) {
+        // check the trackingIdentifier value    
+    }
+};
+Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
 ```
 {% endtab %}
 
@@ -27,13 +34,13 @@ AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
 
 Retrieves the analytics tracking identifier.
 
-### Syntax {#syntax-4}
+#### Syntax
 
 ```objectivec
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
 ```
 
-### Example {#example-4}
+#### Example
 
 Here are examples in Objective-C and Swift:
 
@@ -54,7 +61,7 @@ ACPAnalytics.getTrackingIdentifier({trackingIdentifier in
 {% endtab %}
 {% endtabs %}
 
-## Send queued hits {#sendqueuedhits}
+## Send Queued Hits {#sendqueuedhits}
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -82,13 +89,13 @@ Regardless of how many hits are currently queued, this method forces the library
 
 **Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
 
-### Syntax {#syntax-5}
+#### Syntax
 
 ```objectivec
 + (void) sendQueuedHits;
 ```
 
-### Example {#example-5}
+#### Example
 
 Here are examples in Objective-C and Swift:
 
@@ -106,7 +113,7 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Get queue size {#sendqueuedhits}
+## Get the Queue Size {#sendqueuedhits}
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
@@ -137,7 +144,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 Forces the library to send all queued hits regardless of the current batch options.
 
-### Syntax {#syntax-3}
+#### Syntax
 
 Here are examples in Objective-C and Swift:
 
@@ -145,7 +152,7 @@ Here are examples in Objective-C and Swift:
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 ```
 
-### Example {#example-3}
+#### Example
 
 Here are examples in Objective-C and Swift:
 
