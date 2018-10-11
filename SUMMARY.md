@@ -12,14 +12,15 @@
 ## Using Mobile Extensions
 
 * [Mobile Core](using-mobile-extensions/mobile-core/README.md)
-  * [Configuration Methods Reference](using-mobile-extensions/mobile-core/configuration-reference.md)
-  * [Mobile Core API Reference](using-mobile-extensions/mobile-core/mobile-core-api-reference.md)
-  * [Rules Engine Reference](using-mobile-extensions/mobile-core/rules-engine-reference.md)
+  * [Configuration Methods Reference](using-mobile-extensions/mobile-core/configuration-reference/README.md)
+    * [Mobile Core API Reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md)
+    * [Rules Engine Reference](using-mobile-extensions/mobile-core/configuration-reference/rules-engine-reference.md)
   * [Identity](using-mobile-extensions/mobile-core/identity/README.md)
     * [Identity API Reference](using-mobile-extensions/mobile-core/identity/identity-api-reference.md)
     * [Identity Event Reference](using-mobile-extensions/mobile-core/identity/identity-event-reference.md)
   * [Lifecycle](using-mobile-extensions/mobile-core/lifecycle/README.md)
     * [Lifecycle API Reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md)
+    * [Lifecycle Event Reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-event-reference.md)
   * [Signals](using-mobile-extensions/mobile-core/signals/README.md)
     * [Signals Extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)

@@ -110,7 +110,7 @@ See [Audience Manager API Reference](audience-manager-api-reference.md)
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |

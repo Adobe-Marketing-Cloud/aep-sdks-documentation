@@ -140,7 +140,7 @@ In order to automatically report on the application lifecycle details in Analyti
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the [track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs from the Mobile Core.
+To track mobile app states and actions in Adobe Analytics, implement the [track app actions](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-actions) and [track app states](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views) APIs from the Mobile Core.
 
 {% hint style="info" %}
 trackState API will report the View State as **Page Name**, and state views are reported as **Page View** in Analytics.
@@ -166,7 +166,7 @@ For more information on collecting video analytics, see [Heartbeat Video Measure
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 <table>
   <thead>

@@ -116,7 +116,7 @@ NSMutableDictionary *updatedConfig = [NSMutableDictionary dictionary];
 
 ### Using bundled file configuration
 
-To serve various use cases, you may also choose to include a bundled JSON configuration file in your app package to replace or complement using the [Launch environment ID](configuration-reference.md#launch-environment-id) approach.
+To serve various use cases, you may also choose to include a bundled JSON configuration file in your app package to replace or complement using the [Launch environment ID](./#launch-environment-id) approach.
 
 To download the JSON configuration file use the following URL:
 

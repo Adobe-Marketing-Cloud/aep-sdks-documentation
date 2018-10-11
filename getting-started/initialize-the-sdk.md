@@ -347,5 +347,5 @@ MobileCore.trackState("homePage", additionalContextData);
 {% endtab %}
 {% endtabs %}
 
-See [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md), for complete usage reference.
+See [Mobile Core API Reference](../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md), for complete usage reference.
 

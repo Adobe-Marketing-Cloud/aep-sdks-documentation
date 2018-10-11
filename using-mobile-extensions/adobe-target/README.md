@@ -319,7 +319,7 @@ To see the performance of your Target activities for certain segments you can se
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Description |
 | :--- | :--- |
