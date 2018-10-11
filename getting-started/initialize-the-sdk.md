@@ -34,7 +34,7 @@ Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endtabs %}
 
 {% hint style="info" %}
-Using Launch Integration? Then the environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
+Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
 {% endhint %}
 
 ### Enable debug logging
