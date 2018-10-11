@@ -16,7 +16,6 @@ This API synchronizes the provided customer identifier type key and value with t
 public static void syncIdentifier(final String identifierType,
                                       final String identifier,
                                       final VisitorID.AuthenticationState authenticationState);
-
 ```
 
 **Example**
@@ -355,8 +354,6 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
     // handle the retrieved Id here    
 }
 ```
-
-##   {#setadvertisingidentifier}
 {% endtab %}
 {% endtabs %}
 
@@ -497,15 +494,15 @@ An identifier to be used with the Experience Cloud Visitor ID Service.
 public class VisitorID {    
      //Constructor    
      public VisitorID(String idOrigin, String idType, String id, VisitorID.AuthenticationState authenticationState);​    
-     
+
      public VisitorID.AuthenticationState getAuthenticationState();​    
-     
+
      public final String getId();​    
-     
+
      public final String getIdOrigin();​    
-     
+
      public final String getIdType();​​
-     
+
 }
 ```
 
