@@ -12,8 +12,6 @@ For more information on UUID and other Audience Manager identifiers, see [Index 
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
-
 ### **signalWithData**
 
 On Android, the UUID is persisted in `SharedPreferences`.
@@ -41,8 +39,6 @@ Audience.signalWithData(traits, visitorProfileCallback);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### signalWithData
 
 On iOS, UUID is persisted in `NSUserDefaults`.
@@ -54,7 +50,7 @@ On iOS, UUID is persisted in `NSUserDefaults`.
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-#### **Example**
+**Example in Objective-C**
 
 ```objectivec
 // objective-c
@@ -64,6 +60,8 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 }];
 
 ```
+
+**Example in Swift**
 
 ```swift
 // swift
@@ -84,8 +82,6 @@ For more information on UUID, DPID, DPUUID and other Audience Manager identifier
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
-
 ### **reset**
 
 #### **Syntax**
@@ -102,8 +98,6 @@ Audience.reset();
 {% endtab %}
 
 {% tab title="iOS" %}
-#### **Objective-C**
-
 ### **reset**
 
 #### **Syntax**
@@ -112,12 +106,14 @@ Audience.reset();
 + (void) reset;
 ```
 
-#### **Example**
+**Example in Objective-C**
 
 ```objectivec
 // objective-c
 [ACPAudience reset];
 ```
+
+**Example in Swift**
 
 ```swift
 // swift
@@ -132,8 +128,6 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### getVisitorProfile
 
 On Android, the visitor profile is saved in `SharedPreferences`.
@@ -159,8 +153,6 @@ Audience.getVisitorProfile(visitorProfileCallback);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### getVisitorProfile
 
 On iOS, the visitor profile is saved in `NSUserDefaults`.
@@ -171,7 +163,7 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-**Experience**
+**Example in Objective-C**
 
 ```objectivec
 // objective-c
@@ -179,6 +171,8 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
   // your customized code
 }];
 ```
+
+**Example in Swift**
 
 ```swift
 // swift
