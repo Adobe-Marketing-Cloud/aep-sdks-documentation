@@ -10,7 +10,7 @@ This API synchronizes the provided customer identifier type key and value with t
 {% tab title="Android" %}
 ### syncidentifier
 
-**Syntax**
+#### **Syntax**
 
 ```text
 public static void syncIdentifier(final String identifierType,
@@ -18,7 +18,7 @@ public static void syncIdentifier(final String identifierType,
                                       final VisitorID.AuthenticationState authenticationState);
 ```
 
-**Example**
+#### **Example**
 
 ```java
 Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHENTICATED);
@@ -28,14 +28,14 @@ Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHE
 
 **Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void syncIdentifiers(final Map<String, String> identifiers,
                                        final VisitorID.AuthenticationState authenticationState)
 ```
 
-**Example**
+#### **Example**
 
 ```java
 Map<String, String> identifiers = new HashMap<String, String>();
@@ -51,13 +51,13 @@ These IDs are preserved between app upgrades, are saved and restored during the 
 
 **Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void syncIdentifiers(final Map<String, String> identifiers);
 ```
 
-**Example**
+#### **Example**
 
 ```java
 Map<String, String> identifiers = new HashMap<String, String>();
@@ -172,13 +172,13 @@ Appends Adobe visitor data to a URL string. If the provided URL is null or empty
   * A timestamp taken when this request was made
 * The optional adobe\_aa\_vid attribute is the URL encoded Analytics Custom Visitor ID, if available
 
-### **Syntax** {#syntax-3}
+#### **Syntax**
 
 ```java
 public static void appendVisitorInfoForURL(final String baseURL, final AdobeCallback<String> callback);
 ```
 
-### **Example** {#example-3}
+#### **Example**
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -246,13 +246,13 @@ Returns all customer identifiers which were previously synced with the Adobe Exp
 
 The values are returned through the [AdobeCallback](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#adobecallback).
 
-### **Syntax** {#syntax-4}
+#### **Syntax**
 
 ```java
 public static void getIdentifiers(final AdobeCallback<List<VisitorID>> callback);
 ```
 
-### **Example** {#example-4}
+#### **Example**
 
 ```java
 Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {    
@@ -306,13 +306,13 @@ Retrieves the Experience Cloud ID from the Experience Cloud ID Service.
 
 The Experience Cloud ID is generated at initial launch and is stored and used from that point forward. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#adobecallback).
 
-### **Syntax** {#syntax-5}
+#### **Syntax**
 
 ```java
 public static void getExperienceCloudId(final AdobeCallback<String> callback);
 ```
 
-### **Example** {#example-5}
+#### **Example**
 
 ```java
 Identity.getExperienceCloudId(new AdobeCallback<String>() {    
@@ -372,13 +372,13 @@ Remember the following information:
 * If the Adobe Cloud Platform SDK is configured with `identity.adidEnabled` set to `false`, then the advertising identifier is not set or stored.
 * If the current SDK privacy status is `optedout`, then the advertising identifier is not set.
 
-### **Syntax** {#syntax-6}
+#### **Syntax**
 
 ```java
 public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 ```
 
-### **Example** {#example-6}
+#### **Example**
 
 ```java
 MobileCore.setAdvertisingIdentifier("advertising_identifier");
@@ -427,13 +427,13 @@ ACPCore.setAdvertisingIdentifier("AdvertisingId")
 
 This API is part of the MobileCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
-### **Syntax** {#syntax-7}
+#### **Syntax**
 
 ```java
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-### **Example** {#example-7}
+#### **Example**
 
 ```java
 //Retrieve the token from either GCM or FCM, and pass it to the SDK

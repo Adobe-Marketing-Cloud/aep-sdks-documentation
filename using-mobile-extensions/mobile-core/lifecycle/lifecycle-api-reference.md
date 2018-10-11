@@ -10,8 +10,6 @@ This section shows how to start collecting lifecycle metrics. Setup [Analytics](
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 Import the Lifecycle framework:
 
 ```java
@@ -132,10 +130,8 @@ You may pass additional data to lifecycle on app launch, app resume, both, or ne
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 {% hint style="warning" %}
-You need to add this code only in your main activity and any other activity, from which, your app may be launched.
+
 {% endhint %}
 
 ```java
@@ -146,6 +142,12 @@ public void onResume() {
     MobileCore.lifecycleStart(additionalContextData);
 }
 ```
+
+**Java**
+
+{% hint style="warning" %}
+You need to add this code only in your main activity and any other activity, from which, your app may be launched.
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -169,14 +171,14 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 {% endtab %}
 {% endtabs %}
 
-## Tracking App Crashes in Android
+## Tracking App Crashes in 
+
+## Android
 
 If your app is terminated without having first been backgrounded, the SDK an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle **false** crashes ****or **ungraceful** closes**.**
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleStart(additionalContextData)` in the `OnResume` method of each activity. In the `onPause` method, a call is made to `MobileCore.lifecyclePause()`. In the `MobileCore.lifecyclePause()` method, a flag is set to indicate a graceful exit. When the app is launched again or resumed, `MobileCore.lifecycleStart(additionalContextData)` checks this flag. If the app did not exit successfully as determined by the flag status, an `a.CrashEvent` context data is sent with the next call, and a crash event is reported.
 
 {% hint style="info" %}
