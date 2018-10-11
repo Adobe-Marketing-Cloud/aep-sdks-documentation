@@ -68,7 +68,94 @@ Identity.syncIdentifier(identifiers);
 {% endtab %}
 
 {% tab title="iOS" %}
-### synchidentifier
+## syncIdentifer {#syncidentifer}
+
+Updates the provided customer ID with the Adobe Experience Cloud ID Service.
+
+This API synchronizes the provided customer identifier type key and value with the provided [authentication state](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-ios#adbmobilevisitorauthenticationstate) to the Adobe Experience Cloud ID Service. If this customer ID type exists in the service, this type is updated with the new ID and authentication state. Otherwise a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+
+### **Syntax** {#syntax}
+
+```objectivec
++ (void) syncIdentifier: (nonnull NSString*) identifierType             
+             identifier: (nonnull NSString*) identifier
+         authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
+```
+
+### **Examples** {#examples}
+
+#### Objective-C {#objective-c}
+
+```objectivec
+[ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
+```
+
+#### Swift {#swift}
+
+```swift
+ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
+```
+
+## syncIdentifiers {#syncidentifiers}
+
+Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
+
+This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, it is updated with the new ID value and [authentication state](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-ios#adbmobilevisitorauthenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+
+**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+### **Syntax** {#syntax-1}
+
+```objectivec
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
+```
+
+### **Examples** {#examples-1}
+
+#### Objective-C {#objective-c-1}
+
+```objectivec
+NSDictionary *ids = @{@"idType":@"idValue"};
+[ACPIdentity syncIdentifiers:ids];
+```
+
+#### Swift {#swift-1}
+
+```swift
+let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];
+ACPIdentity.syncIdentifiers(identifiers)
+```
+
+## syncIdentifiers \(overloaded\) {#syncidentifiers-overloaded}
+
+Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
+
+This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, the customer ID is updated with the new ID value and [authentication state](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-ios#adbmobilevisitorauthenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+
+**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+### **Syntax** {#syntax-2}
+
+```objectivec
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers          
+         authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
+```
+
+### **Examples** {#examples-2}
+
+#### Objective-C {#objective-c-2}
+
+```objectivec
+NSDictionary *ids = @{@"idType":@"idValue"};
+[ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
+```
+
+#### Swift {#swift-2}
+
+```swift
+let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];ACPIdentity.syncIdentifiers(identifiers, authentication: 
+ACPMobileVisitorAuthenticationState.authenticated)
+```
 {% endtab %}
 {% endtabs %}
 
