@@ -310,8 +310,36 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Objective-C" %}
+### trackAction
 
+#### Syntax
+
+```csharp
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```c
+ [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+### trackAction
+
+#### Syntax
+
+```c
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```c
+ACPCore.trackAction("action name", data: ["key": "value"])
+```
 {% endtab %}
 {% endtabs %}
 
@@ -342,8 +370,36 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Objective-C" %}
+### trackState
 
+#### Syntax
+
+```c
+ + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```c
+ [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+### trackState
+
+#### Syntax
+
+```c
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```c
+ACPCore.trackState("state name", data: ["key": "value"])
+```
 {% endtab %}
 {% endtabs %}
 
