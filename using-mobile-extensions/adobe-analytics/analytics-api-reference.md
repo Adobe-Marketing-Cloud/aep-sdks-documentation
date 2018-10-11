@@ -7,8 +7,6 @@ Retrieves the Analytics tracking identifier generated for this app/device instan
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### getTrackingIdentifier
 
 #### Syntax
@@ -25,7 +23,34 @@ AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
+### getTrackingIdentifier
 
+Retrieves the analytics tracking identifier.
+
+### Syntax {#syntax-4}
+
+```objectivec
++ (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
+```
+
+### Example {#example-4}
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
+    // use returned tracking id    
+    NSLog(@"Tracking ID : %@", trackingIdentifier);}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getTrackingIdentifier({trackingIdentifier in    
+// use returned tracking id}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -35,8 +60,6 @@ Sends all queued hits to Analytics, regardless of the current hit batch settings
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### sendQueuedHits
 
 #### **Syntax**
@@ -53,7 +76,33 @@ Analytics.sendQueuedHits();
 {% endtab %}
 
 {% tab title="iOS" %}
+### sendQueuedHits
 
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+### Syntax {#syntax-5}
+
+```objectivec
++ (void) sendQueuedHits;
+```
+
+### Example {#example-5}
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics sendQueuedHits];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.sendQueuedHits()
+```
 {% endtab %}
 {% endtabs %}
 
@@ -63,8 +112,6 @@ Retrieves the total number of Analytics hits In the tracking queue.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### getQueueSize
 
 #### Syntax
@@ -86,7 +133,35 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 {% endtab %}
 
 {% tab title="iOS" %}
+### getQueueSize
 
+Forces the library to send all queued hits regardless of the current batch options.
+
+### Syntax {#syntax-3}
+
+Here are examples in Objective-C and Swift:
+
+```objectivec
++ (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
+```
+
+### Example {#example-3}
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    // use queue size}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getQueueSize({queueSize in    
+     // use queue size   
+})
+```
 {% endtab %}
 {% endtabs %}
 
