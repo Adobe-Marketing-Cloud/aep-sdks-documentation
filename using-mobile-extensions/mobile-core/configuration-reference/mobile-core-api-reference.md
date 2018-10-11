@@ -33,7 +33,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Objective-C" %}
 #### Objective-C
 
 ### trackAction
@@ -41,13 +41,31 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 #### Syntax
 
 ```objectivec
-[ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
 ```objectivec
+ [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
+```
+{% endtab %}
 
+{% tab title="Swift" %}
+#### Swift
+
+### trackAction
+
+#### Syntax
+
+```swift
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```swift
+ACPCore.trackAction("action name", data: ["key": "value"])
 ```
 {% endtab %}
 {% endtabs %}
@@ -81,8 +99,40 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="Objective-C" %}
+#### Objective-C
 
+### trackState
+
+#### Syntax
+
+```objectivec
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```objectivec
+ [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+#### Swift
+
+### trackState
+
+#### Syntax
+
+```objectivec
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
+```
+
+#### Example
+
+```swift
+ACPCore.trackState("state name", data: ["key": "value"])
+```
 {% endtab %}
 {% endtabs %}
 
