@@ -87,6 +87,7 @@
       * [Events Handled by the User Profile](resources/building-mobile-extensions/events-and-shared-states/user-profile/events-handled-by-the-user-profile.md)
       * [Events Dispatched by the User Profile](resources/building-mobile-extensions/events-and-shared-states/user-profile/events-dispatched-by-the-user-profile.md)
       * [Shared State](resources/building-mobile-extensions/events-and-shared-states/user-profile/shared-state.md)
+  * [Building the Launch Extension Interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
 * [Frequently Asked Questions](resources/frequently-asked-questions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [Release Notes](resources/release-notes.md)
