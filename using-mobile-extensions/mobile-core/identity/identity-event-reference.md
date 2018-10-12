@@ -36,7 +36,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**Append to URL request**
+Append to URL request
 
 ```json
 {
@@ -46,7 +46,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**Sync identifiers request**
+Sync identifiers request
 
 ```json
 {
@@ -60,13 +60,13 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**Experience Cloud ID request**
+Experience Cloud ID request
 
 There are no key-value pairs for this event.
 
 #### Event Data Example
 
-**Identifiers request**
+Identifiers request
 
 There are no key-value pairs for this event.
 
@@ -96,7 +96,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**Set Advertising Identifier request**
+Set Advertising Identifier request
 
 ```json
 {
@@ -106,7 +106,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**Set Push Identifier request**
+Set Push Identifier request
 
 ```json
 {
@@ -148,7 +148,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**When all identifiers, blob and location hint are populated**
+When all identifiers, blob and location hint are populated
 
 ```json
 {
@@ -174,7 +174,7 @@ Here are the key-value pairs in this event:
 
 #### Event Data Example
 
-**The result for the appendToUrl request**
+The result for the appendToUrl request
 
 ```json
 {
