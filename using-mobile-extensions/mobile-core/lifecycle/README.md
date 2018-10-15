@@ -86,7 +86,7 @@ The Lifecycle framework provides valuable information about your user's current 
 
     [ACPCore start:^{
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+            if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateBackground) {
                 [ACPCore lifecycleStart:nil];
             }
         }];
