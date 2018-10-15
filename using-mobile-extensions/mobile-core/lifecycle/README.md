@@ -76,7 +76,7 @@ The Lifecycle framework provides valuable information about your user's current 
 
 {% tab title="iOS" %}
 1. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions
-2. Add the `lifecycleStart` and 'lifecyclePause' methods to the delegate methods following the sample code:
+2. Add the `lifecycleStart` and `lifecyclePause` methods to the delegate methods following the sample code:
 
 ```objectivec
 
