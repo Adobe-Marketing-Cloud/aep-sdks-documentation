@@ -76,14 +76,46 @@ The Lifecycle framework provides valuable information about your user's current 
 
 {% tab title="iOS" %}
 1. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions
+2. Add the `lifecycleStart` and 'lifecyclePause' methods to the delegate methods following the sample code:
 
 ```objectivec
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-​
-  // Override point for customization after application launch.
-  return YES;
+    
+    [ACPLifecycle registerExtension];
+
+    [ACPCore start:^{
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+                [ACPCore lifecycleStart:nil];
+            }
+        }];
+    }];
+    
+    return YES;
 }
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [ACPCore lifecyclePause];
+}
+
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [ACPCore lifecycleStart:nil];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+    [ACPCore lifecycleStart:nil];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application{
+    [ACPCore lifecyclePause];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application{
+    [ACPCore lifecyclePause];
+}
+
 ```
 {% endtab %}
 {% endtabs %}
