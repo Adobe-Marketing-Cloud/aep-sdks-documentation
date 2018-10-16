@@ -131,7 +131,7 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove User Attribute**
+## **Remove a User Attribute**
 
 Removes the given attribute name.
 
@@ -149,7 +149,7 @@ public static void removeUserAttribute(String attributeName)
 
 #### **Example**
 
-Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
+A retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
