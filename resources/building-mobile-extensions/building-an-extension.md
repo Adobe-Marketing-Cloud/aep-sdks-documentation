@@ -154,25 +154,27 @@ After creating your extension class, you can register it by using the `ACPCore` 
 
 **Tip**: Registration can be completed any time after the app is launched.
 
-During registration, the extension class that you passed will be used by the Adobe Cloud Platform SDKs to instantiate an instance that will be retained until the extension is unregistered.
+During registration, the extension class that you passed will be used by the Adobe Cloud Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
 
-#### **iOS**
+#### iOS
 
-A convenient place to register your extension on iOS is in the `AppDelegate didFinishLaunchingWithOptions` method.
+A convenient place to register your extension on iOS is in your AppDelegate's `application:didFinishLaunchingWithOptions:` method.
 
 ```objectivec
-#import "ACPMobileMarketing.h"
+#import <ACPCore_iOS/ACPCore_iOS.h>
 #import "MyExtension.h"
+
 @implementation AppDelegate
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-NSError* error = nil;
-if ([ACPMarketingMobileCore registerExtension: [MyExtension class] error: &error]) {
-    NSLog(@"MyExtension was registered");
-  }
-  else {
-    NSLog(@"Error registering MyExtension: %@ %d", [error domain], (int)[error code]);
-  }
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSError *error = nil;
+    if ([ACPCore registerExtension:[MyExtension class] error:&error]) {
+        NSLog(@"MyExtension was registered");
+    } else {
+        NSLog(@"Error registering MyExtension: %@ %d", [error domain], (int)[error code]);
+    }
 }
+
 @end
 ```
 
