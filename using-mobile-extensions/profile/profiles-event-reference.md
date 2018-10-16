@@ -85,8 +85,8 @@ The event is used to share the user profile with the other extension. This event
 
 #### Data Payload Definition
 
-| **Key**         | **Value Type**            | **Optional** | **Description**                                              |
-| :-------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
+| **Key**   | **Value Type**  | **Optional** | **Description**                                              |
+| :-- | :-- | :-- | :-- |
 | userprofiledata | Map&lt;String, Object&gt; | no           | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes (the most updated copy). The consumers of this data may replace the existing user profile copy that they may have with this copy. |
 
 #### 
