@@ -6,7 +6,7 @@
 {% tab title="Android" %}
 ### **updateUserAttribute**
 
-Allows you to create/update a batch of user profile attributes:
+Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
 
 * If the attribute does not exist, it will be created.
 * If the attribute exists, the value will be updated.
@@ -20,6 +20,8 @@ public static void updateUserAttribute(String attributeName,
 ```
 
 #### **Example**
+
+You want to update `username` of a user obtained in the log in page :
 
 ```java
 UserProfile.updateUserAttribute("username", "Will Smith");
@@ -44,6 +46,8 @@ public static void updateUserAttributes(Map<String, Object> attributeMap)
 ```
 
 #### **Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
 
 ```java
 HashMap<String, Object> profileMap = new HashMap<>();
@@ -72,6 +76,8 @@ Remember the following information:
 
 #### **Examples**
 
+You want to update `username` of a user obtained in the log in page:
+
 Here is an example in Objective-C:
 
 ```text
@@ -82,8 +88,6 @@ Here is an example in Swift:
 
 ```java
 ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
-updateUserAttributes
-
 ```
 
 ### updateUserAttributes
@@ -127,13 +131,15 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove User Attributes**
+## **Remove User Attribute**
 
 Removes the given attribute name.
 
 {% tabs %}
 {% tab title="Android" %}
 ### **removeUserAttribute**
+
+Removes the user profile attribute for the given key.
 
 #### **Syntax**
 
@@ -142,6 +148,8 @@ public static void removeUserAttribute(String attributeName)
 ```
 
 #### **Example**
+
+Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
@@ -160,6 +168,8 @@ Removes the user profile attribute for the given key.
 ```
 
 #### **Examples**
+
+Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 Here is an example in Objective-C:
 
