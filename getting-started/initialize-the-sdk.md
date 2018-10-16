@@ -19,7 +19,7 @@ _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or 
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. In Xcode, open AppDelegate.m
+1. In Xcode, open AppDelegate.swift
 2. Under `didFinishLaunchingWithOptions`, add:`[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];`
 {% endtab %}
 

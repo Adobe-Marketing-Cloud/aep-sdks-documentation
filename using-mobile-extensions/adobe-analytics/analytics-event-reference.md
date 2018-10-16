@@ -132,7 +132,7 @@ Here is an example of event data for Track request
 {    "action": "clicked add button",    "state":"cart page",    "contextdata":{        "key1" : "value1",        "key2" : "value2"    },    "trackinternal": false}
 ```
 
-#### Event Data Example {#event-data-example-1}
+#### Event Data Example Example {#event-data-example-example}
 
 **Send all Analytics Hits Request**
 
@@ -140,7 +140,7 @@ Here is an example of event data for Track request
 {    "forcekick": true}
 ```
 
-#### Event Data Example {#event-data-example-2}
+#### Event Data Example {#event-data-example-1}
 
 **Clear All the Analytics Hits Request**
 
@@ -148,7 +148,7 @@ Here is an example of event data for Track request
 {    "clearhitsqueue": true}
 ```
 
-#### Event Data Example {#event-data-example-3}
+#### Event Data Example {#event-data-example-2}
 
 **Get Queue Size Request**
 
