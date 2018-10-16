@@ -86,6 +86,7 @@ The Lifecycle framework provides valuable information about your user's current 
     [ACPLifecycle registerExtension];
 
     [ACPCore start:^{
+        // dispatch on the main thread, as `[[UIApplication sharedApplication]` has to be 
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
             if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateBackground) {
                 [ACPCore lifecycleStart:nil];
@@ -103,18 +104,6 @@ The Lifecycle framework provides valuable information about your user's current 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [ACPCore lifecycleStart:nil];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application{
-    [ACPCore lifecycleStart:nil];
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application{
-    [ACPCore lifecyclePause];
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application{
-    [ACPCore lifecyclePause];
 }
 
 ```
