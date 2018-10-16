@@ -79,9 +79,25 @@ The event is used to share the user profile with the other extension. This event
 
 | Key | Value Type | Optional | Description |
 | :--- | :--- | :--- | :--- |
-|Map | Map | No | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes (the most updated copy). he consumers of this data may replace the existing user profile copy that they may have with this copy. |
 
-Here is a code sample for the ```USER_PROFILE : RESPONSE_PROFILE``` event:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Map</th>
+      <th style="text-align:left">Map</th>
+      <th style="text-align:left">No</th>
+      <th style="text-align:left">
+        <p>A map of all the user profile attributes and the attribute values.</p>
+        <p>This map will contain all the user profile attributes (the most updated
+          copy).</p>
+        <p>The consumers of this data may replace the existing user profile copy
+          that they may have with this copy.</p>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
 
 ```text
 {
