@@ -1,6 +1,10 @@
 # Set Up a Mobile Property
 
-To create and configure a mobile property, complete the following steps: 
+To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps: 
+
+{% hint style="info" %}
+Having trouble creating a mobile property or need access to Launch? See [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide.
+{% endhint %}
 
 ## Create a new mobile property
 
@@ -48,4 +52,8 @@ Testing can be done using the configuration in the Development environment. Late
 ## Watch the Video
 
 {% embed url="https://youtu.be/xBWYFUKAoyo" %}
+
+## Further Reading
+
+* See [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide to learn more about getting access to Launch
 
