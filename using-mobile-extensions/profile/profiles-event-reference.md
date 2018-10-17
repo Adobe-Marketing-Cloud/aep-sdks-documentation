@@ -14,7 +14,7 @@ This event will be generated when an `updateUserAttribute` call is made by the S
 
 | **Event Type**                  | **Event Source**                     | **Paired** | **Paired Event** |
 | ------------------------------- | ------------------------------------ | ---------- | ---------------- |
-| com.adobe.eventType.userProfile | com.adobe.eventSource.requestProfile | No         | N/A              |
+| com.adobe.eventType.userProfile | com.adobe.eventSource.requestProfile | No         |                  |
 
 #### Data Payload Definition
 
