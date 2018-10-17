@@ -12,9 +12,9 @@ This event will be generated when an `updateUserAttribute` call is made by the S
 
 #### Event Details
 
-| **Event Type**                  | **Event Source**                     | **Paired** | **Paired Event** |
-| ------------------------------- | ------------------------------------ | ---------- | ---------------- |
-| com.adobe.eventType.userProfile | com.adobe.eventSource.requestProfile | No         |                  |
+| **Event Type** | **Event Source** | **Paired** | **Paired Event** |
+| :--- | :--- | :--- | :--- |
+| com.adobe.eventType.userProfile | com.adobe.eventSource.requestProfile | No |  |
 
 #### Data Payload Definition
 
@@ -42,7 +42,6 @@ Here is a code sample of the `USER_PROFILE : REQUEST_PROFILE` event:
                      }
                 }
 }
-
 ```
 
 ### USERPROFILE : REQUEST\_RESET
@@ -68,14 +67,11 @@ Here is a code sample of the `USERPROFILE : REQUEST_RESET` event:
                 "userprofileremovekey": "userName"
                }
 }
-
 ```
 
 ## Events Dispatched
 
 Here are the events that are dispatched by the Profile extension:
-
-
 
 ### USER\_PROFILE : RESPONSE\_PROFILE
 
@@ -83,14 +79,11 @@ The event is used to share the user profile with the other extension. This event
 
 #### Data Payload Definition
 
-| **Key**         | **Value Type**            | **Optional** | **Description**                                              |
-| :-------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
-| userprofiledata | Map&lt;String, Object&gt; | no           | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes (the most updated copy). The consumers of this data may replace the existing user profile copy that they may have with this copy. |
-
-#### 
+| **Key** | **Value Type** | **Optional** | **Description** |
+| :--- | :--- | :--- | :--- |
+| userprofiledata | Map&lt;String, Object&gt; | no | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes \(the most updated copy\). The consumers of this data may replace the existing user profile copy that they may have with this copy. |
 
 Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
-
 
 ```text
 {
@@ -108,21 +101,16 @@ Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
 }
 ```
 
-
-
 ## Shared State
 
-**EXTENSION_NAME**: `com.adobe.module.userProfile`
+**EXTENSION\_NAME**: `com.adobe.module.userProfile`
 
 The Profile extension shared state is created in the following situations:
 
-- **On Initialization:** After the extension is initialized, it will update the shared state by reading the previously set value from persistence.
-- **On Every UserProfile Attribute Create/Update:** The Shared state is updated whenever there is a change in the user attribute data either from public API or by other triggers (Rules Engine).
+* **On Initialization:** After the extension is initialized, it will update the shared state by reading the previously set value from persistence.
+* **On Every UserProfile Attribute Create/Update:** The Shared state is updated whenever there is a change in the user attribute data either from public API or by other triggers \(Rules Engine\).
 
-#### 
+| **Key** | **Value Type** | **Optional** | **Description** |
+| :--- | :--- | :--- | :--- |
+| userprofiledata | Map&lt;String, Object&gt; | no | Map containing all the key-value pairs of the user profile attributes. |
 
-| **Key**         | **Value Type**            | **Optional** | **Description**                                              |
-| :-------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
-| userprofiledata | Map&lt;String, Object&gt; | no           | Map containing all the key-value pairs of the user profile attributes. |
-
-#### 
