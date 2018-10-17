@@ -8,7 +8,13 @@ Here are the events that are handled by the Profile extension:
 
 The event is used to put a user profile attribute update action on the Event Hub. This will be consumed by the [User Profile](https://wiki.corp.adobe.com/display/ADMSMobile/V5+Module+-+User+Profile) module.
 
-This event will be generated iwhen an `updateUserAttribute` call is made by the SDK client.
+This event will be generated when an `updateUserAttribute` call is made by the SDK client.
+
+#### Event Details
+
+| **Event Type**                  | **Event Source**                     | **Paired** | **Paired Event** |
+| ------------------------------- | ------------------------------------ | ---------- | ---------------- |
+| com.adobe.eventType.userProfile | com.adobe.eventSource.requestProfile | No         |                  |
 
 #### Data Payload Definition
 
@@ -16,9 +22,9 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| userprofileupdatekey | Map&lt;String, Object&gt; | no | A map of all the attributes and the attribute values that the client wants to update/add to the User Profile that is managed by the Adobe Cloud Platform SDK. An existing attribute name will end up updating the attribute in the SDK, and a new attribute name will add a new attribute to the profile.The value of an attribute can be null, in which case the attribute will be deleted from the profileCurrently supported object types are String, Integer, Double, Boolean, Map and VectorAll the other types will be ignored while processing. |
+| userprofileupdatekey | Map&lt;String, Object&gt; | no | A map of all the attributes and the attribute values that the client wants to update/add to the User Profile that is managed by the Adobe Cloud Platform SDK. An existing attribute name will update the attribute in the SDK, and a new attribute name will add a new attribute to the profile. When the value of an attribute is null, the attribute will be deleted from the profile. Currently supported object types are String, Integer, Double, Boolean, Map and Vector. All the other types will be ignored while processing. |
 
-#### Example
+#### Event Data Example
 
 Here is a code sample of the `USER_PROFILE : REQUEST_PROFILE` event:
 
@@ -77,11 +83,14 @@ The event is used to share the user profile with the other extension. This event
 
 #### Data Payload Definition
 
-| Key | Value Type | Optional | Description |
-| :--- | :--- | :--- | :--- |
-| Map | Map | No | A map of all the user profile attributes and the attribute values.This map will contain all the user profile attributes (the most updated copy).The consumers of this data may replace the existing user profile copy that they may have with this copy. |
+| **Key**         | **Value Type**            | **Optional** | **Description**                                              |
+| :-------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
+| userprofiledata | Map&lt;String, Object&gt; | no           | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes (the most updated copy). The consumers of this data may replace the existing user profile copy that they may have with this copy. |
+
+#### 
 
 Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
+
 
 ```text
 {
@@ -89,10 +98,31 @@ Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
     EventType : "com.adobe.eventType.userProfile",
     EventSource : "com.adobe.eventSource.responseProfile",
     EventData: {
+          "userprofiledata":
+               {
                 "userName": "John Doe"
                  "creditPoints": 255,
                  "isPaidUser": true
                }
+          }
 }
 ```
 
+
+
+## Shared State
+
+**EXTENSION_NAME**: `com.adobe.module.userProfile`
+
+The Profile extension shared state is created in the following situations:
+
+- **On Initialization:** After the extension is initialized, it will update the shared state by reading the previously set value from persistence.
+- **On Every UserProfile Attribute Create/Update:** The Shared state is updated whenever there is a change in the user attribute data either from public API or by other triggers (Rules Engine).
+
+#### 
+
+| **Key**         | **Value Type**            | **Optional** | **Description**                                              |
+| :-------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
+| userprofiledata | Map&lt;String, Object&gt; | no           | Map containing all the key-value pairs of the user profile attributes. |
+
+#### 
