@@ -58,7 +58,13 @@ If you set up Analytics server-side forwarding to Audience Manager, check this s
 Enable this setting only with report suite\(s\) that are timestamp enabled.
 {% endhint %}
 
-Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
+Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length. 
+
+When enabled, the SDK will backdate the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they happened. One hit will be backdated on every new launch of the application.
+
+For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
+
+When disabled, the Adobe SDK will attach the session info to the current lifecycle.
 
 #### Batch Limit
 
