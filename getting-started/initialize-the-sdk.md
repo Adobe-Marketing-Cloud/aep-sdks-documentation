@@ -4,6 +4,10 @@
 
 To initialize the SDK, you'll first need to configure the SDK with the Environment ID from Launch.
 
+{% hint style="info" %}
+To find your Environment ID, navigate to Environments tab in Launch, and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon corresponding to the environment you are setting up.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 {% hint style="warning" %}
