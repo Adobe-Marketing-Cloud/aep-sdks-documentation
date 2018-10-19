@@ -172,3 +172,122 @@ ACPAnalytics.getQueueSize({queueSize in
 {% endtab %}
 {% endtabs %}
 
+
+
+## Set the Custom Visitor Identifier {#setcustomidentifier}
+
+Sets the analytics custom visitor identifier.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### setCustomVistorIdentifier
+
+#### Syntax
+
+```java
+ public static void setCustomVistorIdentifier(final String visitorIdentifier)
+```
+
+#### Example
+
+```java
+Analytics.setCustomVistorIdentifier("custom_identifier");
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### setCustomVistorIdentifier
+
+#### Syntax
+
+Here are examples in Objective-C and Swift:
+
+```objectivec
++ (void) setCustomVistorIdentifier: (nonnull NSString*) visitorIdentifier;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics setCustomVistorIdentifier:@"custom_identifier"];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.setCustomVistorIdentifier("custom_identifier")
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Get the Custom Visitor Identifier  {#getcustomidentifier}
+
+Sets the analytics custom visitor identifier.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### getCustomVisitorIdentifier
+
+#### Syntax
+
+```java
+ public static String getCustomVisitorIdentifier(final AdobeCallback<String> callback)
+```
+
+#### Example
+
+```java
+Analytics.getCustomVisitorIdentifier(new AdobeCallback<String>() {
+            @Override
+            public void call(final String visitorIdentifier) {
+                // handle the visitorIdentifier
+            }
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### getCustomVisitorIdentifier
+
+#### Syntax
+
+Here are examples in Objective-C and Swift:
+
+```objectivec
++ (void) getCustomVistorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getCustomVistorIdentifier:^(NSString visitorIdentifier) {
+    // use visitorIdentifier
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getCustomVistorIdentifier({visitorIdentifier in    
+     // use visitorIdentifier  
+})
+```
+
+{% endtab %}
+{% endtabs %}
+
