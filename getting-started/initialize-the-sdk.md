@@ -221,7 +221,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift
+#### Objective-C
 
 Import the Lifecycle framework:
 
@@ -251,14 +251,6 @@ Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFini
 }
 ```
 
-```swift
-// Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    ACPCore.lifecycleStart(nil)
-    return true
-}
-```
-
 Pause Lifecycle data collection when your app has entered the background:
 
 ```objectivec
@@ -267,6 +259,38 @@ Pause Lifecycle data collection when your app has entered the background:
      [ACPCore lifecyclePause];
  }
 ```
+
+#### Swift
+
+Import the Lifecycle framework:
+
+```swift
+import ACPLifecycle_iOS
+```
+
+Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ACPLifecycle.registerExtension();
+​  // Override point for customization after application launch.
+  return true;
+}
+```
+
+Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+
+```swift
+// Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+ACPCore.start {
+    ACPCore.lifecycleStart(nil);
+}
+    return true
+}
+```
+
+Pause Lifecycle data collection when your app has entered the background:
 
 ```swift
 // Swift
