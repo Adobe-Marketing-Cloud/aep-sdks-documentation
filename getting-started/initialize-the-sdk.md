@@ -33,7 +33,7 @@ Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
 1. In Xcode, open AppDelegate.swift
-2. Under `didFinishLaunchingWithOptions`, add:`ADBMobileMarketing.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")`
+2. Under `didFinishLaunchingWithOptions`, add:`ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")`
 {% endtab %}
 {% endtabs %}
 
