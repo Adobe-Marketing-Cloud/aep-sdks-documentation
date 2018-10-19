@@ -8,9 +8,8 @@ While on web or other platforms, there may be use cases where this framework may
 
 To get started with Identity, complete the following steps:
 
-1. Configure the **Identity Extension** in **Launch**.
-2. Add the **Identity Extension** to your app.
-3. Implement Target APIs to complete the following tasks:
+1. Add the **Identity** framework to your app \(the Identiy framework comes pre-bundled as part of Mobile Core\).
+2. Implement SDK APIs to complete the following tasks:
    1. Update customer IDs
    2. Appends Adobe visitor data to a URL string
    3. Return customer IDs
@@ -34,7 +33,7 @@ To get started with Identity, complete the following steps:
 **Objective-C**
 
 1. Add the library to your project
-2. Import the library \(Obj-C\):
+2. Import the library:
 
    `#import <ACPIdentity_iOS/ACPIdentity_iOS.h>`
 {% endtab %}

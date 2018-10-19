@@ -95,7 +95,9 @@ Ensure that you have the right Experience Cloud Org ID in the Mobile Core settin
 {% tab title="Android" %}
 Import the Identity framework into your project:
 
-`import com.adobe.marketing.mobile.*;`
+```java
+import com.adobe.marketing.mobile.*;
+```
 
 Register the framework with Mobile Core:
 
@@ -118,7 +120,7 @@ public class MobiletApp extends Application {
 {% tab title="Objective-C" %}
 Add the Identity framework \(contained within **Core**\) into your project
 
-```text
+```objectivec
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
 
@@ -136,8 +138,8 @@ Register the Identity framework with the **Core**
 {% tab title="Swift" %}
 Add the Identity framework \(contained within **Core**\) into your bridging header
 
-```text
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+```swift
+import ACPLifecycle_iOS
 ```
 
 Register the Identity framework with the **Core**
