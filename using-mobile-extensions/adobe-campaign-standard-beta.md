@@ -102,7 +102,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Setup push messaging
 
-
+Instructions to setup your app with push messaging are coming soon.
 
 ### Tracking for push & in-app messaging
 
