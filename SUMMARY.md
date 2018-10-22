@@ -35,6 +35,7 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API References](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles Event Reference](using-mobile-extensions/profile/profiles-event-reference.md)
+* [Adobe Campaign Standard \(Beta\)](using-mobile-extensions/adobe-campaign-standard-beta.md)
 
 ## Resources
 
