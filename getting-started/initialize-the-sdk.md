@@ -88,12 +88,14 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 The Experience Cloud ID service provides a universal visitor ID across Experience Cloud solutions and is pre-requisite for most implementations. 
 
 {% hint style="info" %}
-Ensure that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
+Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 Import the Identity framework into your project:
+
+#### Java
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -117,14 +119,24 @@ public class MobiletApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-Add the Identity framework \(contained within **Core**\) into your project
+{% tab title="iOS" %}
+Add the Identity framework into your project
+
+#### Objective-C
 
 ```objectivec
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
 
-Register the Identity framework with the **Core**
+#### Swift
+
+```swift
+import ACPIdentity_iOS
+```
+
+Register the Identity framework with Mobile Core
+
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -133,16 +145,8 @@ Register the Identity framework with the **Core**
   return YES;
 }
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
-Add the Identity framework \(contained within **Core**\) into your bridging header
-
-```swift
-import ACPLifecycle_iOS
-```
-
-Register the Identity framework with the **Core**
+#### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
