@@ -78,24 +78,35 @@ The default value for this setting is 0, which means that hit batching is disabl
 
 ## Add Analytics to your app
 
+{% tabs %}
+{% tab title="Android" %}
+Add the Analytics extension to your project using the app's Gradle file.
+
 #### Java
 
-1. Add the Analytics extension to your project using the app's Gradle file.
-2. Import the Analytics extension in your application's main activity.
+1. Import the Analytics extension in your application's main activity.
 
-   ```java
-   import com.adobe.marketing.mobile.*;
-   ```
+```java
+import com.adobe.marketing.mobile.*;
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
 
 #### Objective-C
 
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-2. Import the Analytics extension \(and its dependency, the Identity extension\):
-
 ```objectivec
 #import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
+
+#### Swift
+
+```swift
+import ACPAnalytics_iOS
+```
+{% endtab %}
+{% endtabs %}
 
 ### Register Analytics with Mobile Core
 
@@ -125,17 +136,26 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Analytics and Identity extensions:
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPIdentity registerExtension];
     [ACPAnalytics registerExtension];
-​
   // Override point for customization after application launch.
   return YES;
+ }
+```
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ ACPAnalytics.registerExtension();
+ // Override point for customization after application launch. 
+ return true;
+}
 ```
 {% endtab %}
 {% endtabs %}
