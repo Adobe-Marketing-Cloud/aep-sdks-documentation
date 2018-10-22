@@ -359,18 +359,17 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 
 ## Set an Advertising Identifier
 
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
+
+{% hint style="info" %}
+If identity.adidEnabled set to false, then the advertising identifier is not set or stored. Also, if the current SDK privacy status is optedout, then the advertising identifier is not set.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ### setAdvertisingIdentifier
-
-This API is part of the MobileCore extension. Adobe Identity extension supports the API, and sets the advertising identifier in the SDK.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
-
-Remember the following information:
-
-* If the Adobe Cloud Platform SDK is configured with `identity.adidEnabled` set to `false`, then the advertising identifier is not set or stored.
-* If the current SDK privacy status is `optedout`, then the advertising identifier is not set.
 
 #### **Syntax**
 
@@ -388,14 +387,7 @@ MobileCore.setAdvertisingIdentifier("advertising_identifier");
 {% tab title="iOS" %}
 ### setAdvertisingIdentifier
 
-This API is part of the ACPCore extension. Adobe Identity extension supports the API and sets the advertising identifier in the SDK.
-
-If the IDFA was set in the SDK, the IDFA will be sent in lifecycle. It can also be accessed in Signals \(Postbacks\). This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
-
-Remember the following information:
-
-* If the Adobe Experience Cloud Platform SDKs is configured with `identity.adidEnabled` set to `false`, the advertising identifier is not set or stored.
-* If the current SDK privacy status is `optedout`, the advertising identifier is not set.
+#### **Objective C**
 
 #### **Syntax**
 
@@ -403,9 +395,7 @@ Remember the following information:
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 
-#### **Examples**
-
-**Objective-C**
+Examples
 
 ```objectivec
 [ACPCore setAdvertisingIdentifier:@"AdvertisingId"];
@@ -421,11 +411,11 @@ ACPCore.setAdvertisingIdentifier("AdvertisingId")
 
 ## Set the Push Identifier
 
+This API sets the device token for push notifications in the SDK. If the current SDK privacy status is optedout, the push identifier is not set.
+
 {% tabs %}
 {% tab title="Android" %}
 ### setPushIdentifier
-
-This API is part of the MobileCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
 #### **Syntax**
 
@@ -444,24 +434,20 @@ MobileCore.setPushIdentifier(token);
 {% tab title="iOS" %}
 ### setPushIdentifier
 
-This API is part of the ACPCore extension. Adobe Identity extension supports the API, and sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
-
-#### **Syntax**
+#### **Objective-C**
 
 ```objectivec
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
 
-#### **Examples**
-
-**Objective-C**
+Example
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
 [ACPCore setPushIdentifier:deviceToken];
 ```
 
-**Swift**
+#### **Swift**
 
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
@@ -474,8 +460,6 @@ ACPCore.setPushIdentifier(deviceToken)
 
 {% tabs %}
 {% tab title="Android" %}
-Here are the service classes for Identity in Android:
-
 ### AdobeCallback <a id="adobecallback"></a>
 
 This class provides the interface to receive results when the async APIs perform the requested action. For more information about these methods, see [Identity Service methods in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#identity-service-methods-in-android).
