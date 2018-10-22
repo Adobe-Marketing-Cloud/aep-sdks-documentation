@@ -18,13 +18,26 @@ _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or 
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
 {% endtab %}
 
-{% tab title="Objective C" %}
+{% tab title="iOS" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. In Xcode, open AppDelegate.swift
-2. Under `didFinishLaunchingWithOptions`, add:`[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];`
+#### Objective-C
+
+In Xcode, find your `didFinishLaunchingWithOptions`located in AppDelegate.h and add:
+
+```objectivec
+[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+```
+
+#### Swift
+
+In Xcode, find your `didFinishLaunchingWithOptions` located in AppDelegate.swift and add:
+
+```swift
+ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
+```
 {% endtab %}
 
 {% tab title="Swift" %}
@@ -231,7 +244,6 @@ Import the Lifecycle framework:
 
 ```objectivec
 #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPCore_iOS/ACPCore_iOS.h>
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
