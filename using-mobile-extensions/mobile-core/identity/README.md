@@ -1,6 +1,6 @@
 # Identity
 
-The Identity framework enables your app with Adobe's Experience Cloud ID service. This service helps with the synchronization of Adobe and other customer identifiers. 
+The Identity framework is bundled with [Mobile Core](../) and enables your app with Adobe's Experience Cloud ID service. This service helps with the synchronization of Adobe and other customer identifiers. 
 
 {% hint style="danger" %}
 While on web or other platforms, there may be use cases where this framework may not be required, implementation of this SDK framework on mobile apps is required.
@@ -8,7 +8,7 @@ While on web or other platforms, there may be use cases where this framework may
 
 To get started with Identity, complete the following steps:
 
-1. Add the **Identity** framework to your app \(the Identiy framework comes pre-bundled as part of Mobile Core\).
+1. Add the **Identity** framework to your app
 2. Implement SDK APIs to complete the following tasks:
    1. Update customer IDs
    2. Appends Adobe visitor data to a URL string
@@ -21,21 +21,29 @@ To get started with Identity, complete the following steps:
 
 {% tabs %}
 {% tab title="Android" %}
+Import the library**:**
+
 **Java**
 
-1. Add the library to your project
-2. Import the library:
-
-   `import com.adobe.marketing.mobile.*;`
+```java
+import com.adobe.marketing.mobile.*;
+```
 {% endtab %}
 
 {% tab title="iOS" %}
+Import the library:
+
 **Objective-C**
 
-1. Add the library to your project
-2. Import the library:
+```objectivec
+#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+```
 
-   `#import <ACPIdentity_iOS/ACPIdentity_iOS.h>`
+#### Swift
+
+```swift
+import ACPIdentity_iOS
+```
 {% endtab %}
 {% endtabs %}
 
@@ -72,33 +80,33 @@ Experience Cloud Organization IDs uniquely identify each client company in the A
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
-
 Register Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-```text
+**Objective-C**
+
+```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [ACPIdentity registerExtension];
-​
   // Override point for customization after application launch.
   return YES;
 }
-
 ```
 
-Verify that the app configuration contains the experienceCloud org:
+#### Swift
 
-```text
-"experienceCloud.org" : "YOUR-MCORG-ID"
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  ACPIdentity.registerExtension();
+  // Override point for customization after application launch.
+  return true;
+}
 ```
-
-Experience Cloud organization IDs uniquely identify each client company in the Adobe Experience Cloud and are similar to the following value:
-
-`016D5C175213CCA80A490D05@AdobeOrg`
 {% endtab %}
 {% endtabs %}
 
-**Important:** You must include `@AdobeOrg`.
+{% hint style="info" %}
+Experience Cloud organization IDs uniquely identify each client company in the Adobe Experience Cloud and are similar to the following value:`016D5C175213CCA80A490D05@AdobeOrg`. The trailing `@AdobeOrg` is required.
+{% endhint %}
 
 After the configuration is complete, an Experience Cloud ID will be generated and, where applicable, be included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, will continue to be sent with each hit.  
 

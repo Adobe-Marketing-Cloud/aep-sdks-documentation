@@ -84,15 +84,15 @@ If you have the **Analytics** extension setup, this API will increment page view
 
  In Android, trackState is typically called each time a new activity is loaded
 
-### trackState {#trackstate}
+### trackState <a id="trackstate"></a>
 
-#### **Syntax** {#syntax-1}
+#### **Syntax** <a id="syntax-1"></a>
 
 ```text
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example {#example-1}
+#### Example <a id="example-1"></a>
 
 ```text
 Map<String, String> additionalContextData = new HashMap<String, String>();         additionalContextData.put("customKey", "value");         MobileCore.trackState("homePage", additionalContextData);

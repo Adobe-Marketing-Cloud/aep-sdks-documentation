@@ -23,7 +23,7 @@ Here are the key-value pairs in this event:
 | action | String | No | Represents the lifecycle action type and can be one of these values: `start`/`pause` |
 | additionalcontextdata | Map | Yes | Map containing the user supplied context data. |
 
-### Data Sample - Start Lifecycle Request {#data-sample-start-lifecycle-request}
+### Data Sample - Start Lifecycle Request <a id="data-sample-start-lifecycle-request"></a>
 
 Here is an example of event data for Lifecycle start request
 
@@ -31,7 +31,7 @@ Here is an example of event data for Lifecycle start request
 {    "action": "start",    "additionalcontextdata":{        "key1" : "value1",        "key2" : "value2"    }}
 ```
 
-### Data Sample - Pause Lifecycle Request {#data-sample-pause-lifecycle-request}
+### Data Sample - Pause Lifecycle Request <a id="data-sample-pause-lifecycle-request"></a>
 
 ```text
 {    "action": "pause"}

@@ -64,7 +64,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift {#objective-c-and-swift}
+#### Objective-C & Swift <a id="objective-c-and-swift"></a>
 
 Import the Lifecycle framework:
 
@@ -229,7 +229,7 @@ iOS uses system notifications that allow developers to track and respond to diff
 {% endtab %}
 {% endtabs %}
 
-## Implementing global lifecycle callbacks {#implementing-global-lifecycle-callbacks}
+## Implementing global lifecycle callbacks <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 

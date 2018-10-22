@@ -24,15 +24,15 @@ The unique environment ID provided by Launch can be configured with the SDK usin
 {% tab title="Android" %}
 #### Java
 
-### configureWithAppID {#configurewithappid}
+### configureWithAppID <a id="configurewithappid"></a>
 
-#### Syntax {#syntax-2}
+#### Syntax <a id="syntax-2"></a>
 
 ```java
 void configureWithAppID(final String appId)
 ```
 
-#### Example {#example-2}
+#### Example <a id="example-2"></a>
 
 ```java
 MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
@@ -42,15 +42,15 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% tab title="iOS" %}
 #### Objective-C
 
-### configureWithAppID {#syntax-1}
+### configureWithAppID <a id="syntax-1"></a>
 
-### Syntax {#syntax-1}
+### Syntax <a id="syntax-1"></a>
 
 ```objectivec
 + (void) configureWithAppId: (NSString* __nullable) appid;
 ```
 
-### Example {#example-1}
+### Example <a id="example-1"></a>
 
 ```objectivec
 [ACPCore configureWithAppId :@"1423ae38-8385-8963-8693-28375403491d"];
@@ -76,13 +76,13 @@ Keys not found on current configuration, will be added when this method is follo
 
 ### updateConfiguration
 
-#### Syntax {#syntax-3}
+#### Syntax <a id="syntax-3"></a>
 
 ```java
 void updateConfiguration(final Map configMap);
 ```
 
-#### Example {#example-3}
+#### Example <a id="example-3"></a>
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
@@ -133,15 +133,15 @@ To pass in a bundled path and file name:
 {% tab title="Android" %}
 #### Java
 
-### configureWithFileInPath {#configurewithfileinpath}
+### configureWithFileInPath <a id="configurewithfileinpath"></a>
 
-#### Syntax {#syntax-1}
+#### Syntax <a id="syntax-1"></a>
 
 ```java
 void configureWithFileInPath(final String filePath)
 ```
 
-#### Example {#example-1}
+#### Example <a id="example-1"></a>
 
 ```java
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");

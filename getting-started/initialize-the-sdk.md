@@ -321,17 +321,17 @@ You must call this API when an event that you want to track, occurs. In addition
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java {#java}
+#### Java <a id="java"></a>
 
-### trackAction {#trackaction}
+### trackAction <a id="trackaction"></a>
 
-#### Syntax {#syntax}
+#### Syntax <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example {#example}
+#### Example <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -383,15 +383,15 @@ States represent screens or views in your app. Each time a new state is displaye
 
  In Android, trackState is typically called each time a new activity is loaded
 
-### trackState {#trackstate}
+### trackState <a id="trackstate"></a>
 
-#### **Syntax** {#syntax-1}
+#### **Syntax** <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example {#example-1}
+#### Example <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         

@@ -26,7 +26,7 @@ To programmatically set the privacy status for the app user:
 {% tab title="Android" %}
 #### Java
 
-### setPrivacyStatus {#setprivacystatus}
+### setPrivacyStatus <a id="setprivacystatus"></a>
 
 You may set privacy status to one of the following values, see table above for expected behavior:
 
@@ -34,13 +34,13 @@ You may set privacy status to one of the following values, see table above for e
 * `MobilePrivacyStatus.OPT_OUT`
 * `MobilePrivacyStatus.UNKNOWN`
 
-#### Syntax {#syntax-4}
+#### Syntax <a id="syntax-4"></a>
 
 ```java
 public static void setPrivacyStatus(final MobilePrivacyStatus privacyStatus);
 ```
 
-#### Example {#example-4}
+#### Example <a id="example-4"></a>
 
 ```java
 MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
@@ -58,13 +58,13 @@ You may set privacy status to one of the following values, see table above for e
 * `ACPMobilePrivacyStatusOptOut` 
 * `ACPMobilePrivacyStatusUnknown`
 
-### Syntax {#syntax-4}
+### Syntax <a id="syntax-4"></a>
 
 ```objectivec
 + (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
 ```
 
-### Example {#example-4}
+### Example <a id="example-4"></a>
 
 ```objectivec
 [ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn
@@ -96,7 +96,7 @@ Enum representation of privacy status correspond to the following status:
 void getPrivacyStatus(final AdobeCallback callback);
 ```
 
-#### Example {#example-5}
+#### Example <a id="example-5"></a>
 
 ```objectivec
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
