@@ -53,6 +53,10 @@ Here is the code sample to register the Identity extension:
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
+You may do the following after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
+
 ```java
 public class MobiletApp extends Application {
 @Override
@@ -67,16 +71,6 @@ super.onCreate();
   }
 }
 ```
-
-Verify that the app configuration contains the experienceCloud org:
-
-```text
-"experienceCloud.org" : "YOUR-MCORG-ID"
-```
-
-Experience Cloud Organization IDs uniquely identify each client company in the Adobe Experience Cloud. Here an example value of `YOUR-MCORG-ID`:
-
-`016D5C175213CCA80A490D05@AdobeOrg`
 {% endtab %}
 
 {% tab title="iOS" %}
