@@ -29,13 +29,13 @@
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
   * [Audience Manager API Reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
   * [Audience Manager Event Reference](using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md)
+* [Adobe Campaign Standard \(Beta\)](using-mobile-extensions/adobe-campaign-standard-beta.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Target API Reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target Event Reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API References](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles Event Reference](using-mobile-extensions/profile/profiles-event-reference.md)
-* [Adobe Campaign Standard \(Beta\)](using-mobile-extensions/adobe-campaign-standard-beta.md)
 
 ## Resources
 

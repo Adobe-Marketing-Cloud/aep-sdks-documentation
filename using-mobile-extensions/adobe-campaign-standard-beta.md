@@ -1,7 +1,7 @@
 # Adobe Campaign Standard \(Beta\)
 
 {% hint style="warning" %}
-This extension is considered beta functionality and is available in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, please see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
+This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, please see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
 {% endhint %}
 
 ## Configure Campaign Standard Extension in Launch
