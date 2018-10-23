@@ -1,7 +1,7 @@
 # Adobe Campaign Standard \(Beta\)
 
 {% hint style="warning" %}
-This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, please see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
+This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
 {% endhint %}
 
 ## Configure Campaign Standard Extension in Launch
@@ -10,7 +10,7 @@ This extension is considered beta functionality and is available only in Launch'
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
 3. Provide extension settings \(see [Configure Analytics Extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#configure-analytics-extension)\)
 4. Click **Save**.
-5. Follow the publishing process, to update SDK configuration
+5. Follow the publishing process to update SDK configuration
 
 ### Configure Campaign Standard Extension
 
@@ -22,22 +22,30 @@ This extension is considered beta functionality and is available only in Launch'
 Trying to find your ACS endpoint URLs? Contact your beta program manager.
 {% endhint %}
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments.
+Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
+
+{% hint style="warning" %}
+For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://`.
+{% endhint %}
 
 #### pKey
 
 A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to connect your Launch mobile property with an Adobe Campaign Standard mobile app. When the connection is made, pKeys will be automatically generated, per Campaign Standard instance, and configured here for successful validation.
 
 {% hint style="info" %}
-How to connect Launch mobile property with your Campaign Standard mobile app? See Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign) for more information.
+Need help connecting your Launch mobile property with your Campaign Standard mobile app? See Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign) for more information.
 {% endhint %}
 
 #### MCIAS Endpoint
 
+{% hint style="info" %}
+Trying to find your MCIAS endpoint URL? Contact your beta program manager.
+{% endhint %}
+
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
-{% hint style="info" %}
-How to find your MCIAS endpoint URL? Contact your beta program manager.
+{% hint style="warning" %}
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://`.
 {% endhint %}
 
 #### Request Timeout
@@ -100,19 +108,23 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-### Setup push messaging
+### Set up push messaging
 
 Instructions to setup your app with push messaging are coming soon.
 
-### Tracking for push & in-app messaging
+### Tracking for push and in-app messaging
 
-See Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#configuring-your-application-in-adobe-launch) for more information on setting up tracking postbacks for push and in-app messaging.
+For more information about setting up tracking postbacks for push and in-app messaging, see the Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign).
 
 ## Deleting mobile properties in Launch
+
+{% hint style="danger" %}
+Deleting your property in Launch may cause disruption to any recurring push and in-app messaging activities.
+{% endhint %}
+
+If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by selecting the **Remove from ACS** button. See the [ACS user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application) for more information.
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
-
-If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you may review your mobile property status in Adobe Campaign Standard and ensure that it shows an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by selecting the **Remove from ACS** button. See the [ACS user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application) for more information.
 
