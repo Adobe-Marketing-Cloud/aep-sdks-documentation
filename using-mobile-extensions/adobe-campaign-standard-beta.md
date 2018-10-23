@@ -14,18 +14,18 @@ This extension is considered beta functionality and is available only in Launch'
 
 ### Configure Campaign Standard Extension
 
-![Adobe Campaign Standard Extension Configuration](../.gitbook/assets/screen-shot-2018-10-21-at-9.28.39-pm.png)
+![](../.gitbook/assets/campaign-extension-config.png)
 
 #### ACS Endpoints
 
 {% hint style="info" %}
-Trying to find your ACS endpoint URLs? Contact your beta program manager.
+Trying to find your ACS endpoint URLs? Contact your beta manager.
 {% endhint %}
 
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
 
 {% hint style="warning" %}
-For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://`.
+For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`
 {% endhint %}
 
 #### pKey
@@ -39,18 +39,18 @@ Need help connecting your Launch mobile property with your Campaign Standard mob
 #### MCIAS Endpoint
 
 {% hint style="info" %}
-Trying to find your MCIAS endpoint URL? Contact your beta program manager.
+Trying to find your MCIAS endpoint URL? Contact your beta manager.
 {% endhint %}
 
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://`.
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://`, and this URL must end with a forward slash. 
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out.
+Time in seconds to wait for a response from the in-app messaging service, before timing out. The minimum timeout is 5 seconds.
 
 ## Add Campaign Standard to your app
 
@@ -64,12 +64,14 @@ This beta extension is currently available only for iOS development.
 This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead, as the instructions below indicate.
 {% endhint %}
 
+![](../.gitbook/assets/acs-beta-pods.png)
+
 Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCampaignBeta'
-pod 'ACPCoreBeta'
-pod 'ACPUserProfileBeta'
+pod 'ACPCoreBeta', '1.0.2beta'
+pod 'ACPCampaignBeta', '1.0.2beta'
+pod 'ACPUserProfileBeta', '1.0.1beta'
 ```
 
 or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
