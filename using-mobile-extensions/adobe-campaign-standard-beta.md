@@ -4,11 +4,15 @@
 This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
 {% endhint %}
 
+{% hint style="info" %}
+**Before** you install or configure the Campaign Standard extension, we strongly recommend that you read the _Getting Started_ section in this guide. 
+{% endhint %}
+
 ## Configure Campaign Standard Extension in Launch
 
 1. In Launch's Integration environment, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
-3. Provide extension settings \(see Configure Campaign Standard Extension\).
+3. Provide extension settings \(see [Configure Campaign Standard Extension](adobe-campaign-standard-beta.md#configure-campaign-standard-extension)\).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration
 
@@ -45,12 +49,12 @@ Trying to find your MCIAS endpoint URL? Contact your beta manager.
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. 
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, [https://mcias-va7.cloud.adobe.io/mcias/](https://mcias-va7.cloud.adobe.io/mcias/).
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out. The minimum timeout is 5 seconds.
+Time in seconds to wait for a response from the in-app messaging service, before timing out. The minimum timeout value is 5 seconds.
 
 ## Add Campaign Standard to your app
 
