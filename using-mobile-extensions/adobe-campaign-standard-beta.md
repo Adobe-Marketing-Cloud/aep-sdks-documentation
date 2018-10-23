@@ -8,7 +8,7 @@ This extension is considered beta functionality and is available only in Launch'
 
 1. In Launch's Integration environment, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
-3. Provide extension settings \(see [Configure Analytics Extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#configure-analytics-extension)\)
+3. Provide extension settings \(see Configure Campaign Standard Extension\).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration
 
@@ -45,7 +45,7 @@ Trying to find your MCIAS endpoint URL? Contact your beta manager.
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://`, and this URL must end with a forward slash. 
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. 
 {% endhint %}
 
 #### Request Timeout
