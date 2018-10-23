@@ -49,12 +49,12 @@ Trying to find your MCIAS endpoint URL? Contact your beta manager.
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, [https://mcias-va7.cloud.adobe.io/mcias/](https://mcias-va7.cloud.adobe.io/mcias/).
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, `https://mcias-va7.cloud.adobe.io/mcias/`.
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out. The minimum timeout value is 5 seconds.
+Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
 
 ## Add Campaign Standard to your app
 
