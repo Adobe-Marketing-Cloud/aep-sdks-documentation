@@ -6,19 +6,21 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 In the following example, the extension is setting a default state in the `init` method.
 
-```objectivec
+```objective-c
 - (nullable instancetype) init {
-    NSDictionary* newEventData = // construct some JSON
+    // construct data to be shared in a JSON format
+    NSDictionary* newEventData =
     @{@"customData":@{
-        @"customElement":@{
-              @"customInt":@(0xDEADBEEF),
-            @"customString":@"test"
-         }
-    }};
-    NSError error = nil; 
-    if (![self.api setSharedEventState:newEventData event:nil error:&error]) {
+              @"customElement":@{
+                      @"customInt":@125,
+                      @"customString":@"example"
+                      }
+              }};
+    NSError* error = nil;
+    if (![self.api setSharedEventState:newEventData event:nil error:&error] && error) {
         NSLog(@"Error setting default shared state %@:%ld", [error domain], [error code]);
     }
+    ...
 }
 ```
 

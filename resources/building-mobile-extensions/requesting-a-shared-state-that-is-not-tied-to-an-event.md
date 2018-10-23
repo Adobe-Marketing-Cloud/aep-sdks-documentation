@@ -6,13 +6,13 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 ## iOS
 
-```objectivec
+```objective-c
 - (void) onUnregister {
-  NSString* configuration = [self.extension.api
-  getSharedEventState:@"com.adobe.module.configuration" event:nil];
-  if(configuration) {
-    NSLog(@"The configuration when onUnregister was called was \n:%@", configuration);
-  }
+    NSError* error = nil;
+    NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];
+    if (configurationSharedState) {
+        NSLog(@"The configuration when onUnregister was called was \n:%@", configurationSharedState);
+    }
 }
 ```
 

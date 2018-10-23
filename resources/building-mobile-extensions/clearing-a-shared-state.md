@@ -7,16 +7,16 @@ Shared states will persist for the life of the application context, which result
 
 **Warning**: You cannot store a user’s personally identifiable information in the shared state.
 
-To allow you to manage identifiers, an API is available that clears all of the existing shared state for your extension without impacting other extensions. The following examples shows you how to call this API in your `onUnregister` call and ensure a clean slate:
+To allow you to manage identifiers, an API is available that clears all of the existing shared state for your extension without impacting other extensions. The following examples shows you how to call this API in your `onUnregister` (iOS) / `onUnregistered` (Android) method and ensure a clean state:
 
 ## iOS
 
-```objectivec
+```objective-c
 - (void) onUnregister {
-  NSError* error = nil;
-  if (![self.api clearSharedEventStates:&error]) {  
-     NSLog(@"Error clearing shared states for extension: %@ %d", [error domain], (int)[error code]);
-  }
+    NSError* error = nil;
+    if (![self.api clearSharedEventStates:&error] && error) {
+        NSLog(@"Error clearing shared states for extension: %@ %ld", [error domain], [error code]);
+    }
 }
 ```
 
