@@ -54,7 +54,7 @@ Time in seconds to wait for a response from the in-app messaging service, before
 
 ## Add Campaign Standard to your app
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This beta extension is currently available only for iOS development.
 {% endhint %}
 
