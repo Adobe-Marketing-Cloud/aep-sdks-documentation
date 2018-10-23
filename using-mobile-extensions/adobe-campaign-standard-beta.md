@@ -138,7 +138,37 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Set up push messaging
 
-Instructions to setup your app with push messaging are coming soon.
+After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, you will need to set the push token using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+
+{% tabs %}
+{% tab title="iOS" %}
+### setPushIdentifier
+
+#### Objective-C
+
+#### Syntax
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+#### Example
+
+```objectivec
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  // Set the deviceToken that the APNS has assigned to the device
+  [ACPCore setPushIdentifier:deviceToken];
+  //...
+}
+```
+
+#### Swift
+
+```swift
+ACPCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+{% endtabs %}
 
 ### Tracking for push and in-app messaging
 
