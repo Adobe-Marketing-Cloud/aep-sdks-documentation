@@ -23,22 +23,22 @@ In the example below, a custom event called `MyCustomEvent` is created with cust
 
 To create events in iOS, you must first import `ACPExtensionEvent.h` from the `ACPCore` framework:
 
-```objective-c
+```text
 #import "ACPCore_iOS/ACPExtensionEvent.h"
 ...
 NSError* error = nil;
 NSDictionary* eventData = @{
-			@"id" : @"clickid53",
-			@"localTemp": @72.6,
-			@"pageClicks" : @23,
-			@"pageOrder" : @[@1,@2,@3,@4]
+            @"id" : @"clickid53",
+            @"localTemp": @72.6,
+            @"pageClicks" : @23,
+            @"pageOrder" : @[@1,@2,@3,@4]
 };
-ACPExtensionEvent* newEvent = [ACPExtensionEvent extensionEventWithName:@"MyCustomEvent" 		 type:@"com.myCompany.eventType.custom"
-		source:@"com.myCompany.eventSource.custom" 
-		data:eventData
-		error:&error];
+ACPExtensionEvent* newEvent = [ACPExtensionEvent extensionEventWithName:@"MyCustomEvent"          type:@"com.myCompany.eventType.custom"
+        source:@"com.myCompany.eventSource.custom" 
+        data:eventData
+        error:&error];
 if (error) {
-	NSLog(@"Error constructing new event %@:%ld", [error domain], [error code]);
+    NSLog(@"Error constructing new event %@:%ld", [error domain], [error code]);
 }
 ```
 
@@ -69,17 +69,17 @@ Event newEvent = new Event.Builder("MyCustomEvent",
 
 After creating your event, dispatch it by using the `ACPCore` \(iOS\) / `MobileCore` \(Android\) method `dispatchEvent`. A typical place to dispatch an event is in an event listener.
 
-In some cases, you may need to dispatch an event from one of your public APIs or application methods in order to trigger an internal flow in your own extension or in other Adobe extension. 
+In some cases, you may need to dispatch an event from one of your public APIs or application methods in order to trigger an internal flow in your own extension or in other Adobe extension.
 
 #### iOS
 
-```objective-c
+```text
 #import "ACPCore_iOS/ACPExtensionEvent.h"
 
 - (IBAction) loginButtonClicked:(id)sender {
     // construct the event to dispatch (see above)
     ACPExtensionEvent* newEvent = ...;
-    
+
     // dispatch the event
     NSError* error = nil;
     if (![ACPCore dispatchEvent:newEvent error:&error] && error) {
@@ -127,37 +127,37 @@ Here is an example of how to implement this:
 
 You can have this code in a ViewController class or in one of your extensions public API classes:
 
-```objective-c
+```text
 // how to dispatch a paired event with an associated response callback
 NSError *eventError = nil;
 ACPExtensionEvent *event = [ACPExtensionEvent 
 extensionEventWithName:@"Dispatch Request Event with Callback"
-				  type:@"com.myCompany.eventType.custom"
-				source:@"com.myCompany.eventSource.request"
+                  type:@"com.myCompany.eventType.custom"
+                source:@"com.myCompany.eventSource.request"
                   data:@{}
                  error:&eventError];
 
 if (!event && eventError) {
-	NSLog(@"An error occurred while constructing event '%@': %ld", event.eventName, [eventError code]);
+    NSLog(@"An error occurred while constructing event '%@': %ld", event.eventName, [eventError code]);
     return;
 }
-    
+
 // dispatch the event and handle the callback
 NSError *dispatchError = nil;
 if ([ACPCore dispatchEventWithResponseCallback:event responseCallback:^(ACPExtensionEvent * _Nonnull responseEvent) {
-	NSLog(@"Response event received, with type %@, source %@ and data %@", responseEvent.eventType, responseEvent.eventSource, responseEvent.eventData);
+    NSLog(@"Response event received, with type %@, source %@ and data %@", responseEvent.eventType, responseEvent.eventSource, responseEvent.eventData);
         // process event data
 } error:&dispatchError]) {
-	NSLog(@"Dispatched a paired request event '%@'", event.eventName);
+    NSLog(@"Dispatched a paired request event '%@'", event.eventName);
 } else if (dispatchError) {
-	NSLog(@"An error occurred dispatching event '%@': %ld", event.eventName, [dispatchError code]);
+    NSLog(@"An error occurred dispatching event '%@': %ld", event.eventName, [dispatchError code]);
 }
 ...
 ```
 
 Register a listener for this event type and source in MyExtension.m:
 
-```objective-c
+```text
 // register a listener for a the request event type and source
 - (instancetype) init {
     if (self = [super init]) {
@@ -166,25 +166,25 @@ Register a listener for this event type and source in MyExtension.m:
                              eventType:@"com.myCompany.eventType.custom"
                            eventSource:@"com.myCompany.eventSource.request"
                                  error:&error]) {
-       		NSLog(@"MyExtensionListener successfully registered for request events");
- 		} else if (error) {
-    		NSLog(@"There was an error registering MyExtensionListener: %ld", [error code]);
- 		}
+               NSLog(@"MyExtensionListener successfully registered for request events");
+         } else if (error) {
+            NSLog(@"There was an error registering MyExtensionListener: %ld", [error code]);
+         }
 ...
 }
 ```
 
 Dispatch a response event when the request is received in the `hear` method of your Listener in MyListener.m:
 
-```objective-c
+```text
 - (void) hear: (nonnull ACPExtensionEvent*) event {
     NSError *dispatchError = nil;
     NSDictionary* responseData = @{@"responsekey": @"responsevalue"};
     ACPExtensionEvent* responseEvent = [ACPExtensionEvent 
-    extensionEventWithName:@"Paired Response Event"                                                                      					   type:@"com.myCompany.eventType.custom"                                                                        					 source:@"com.myCompany.eventSource.response"
-					  data:responseData
-					 error:&dispatchError];
-    
+    extensionEventWithName:@"Paired Response Event"                                                                                             type:@"com.myCompany.eventType.custom"                                                                                             source:@"com.myCompany.eventSource.response"
+                      data:responseData
+                     error:&dispatchError];
+
     // sending a paired response event for the request event
     if ([ACPCore dispatchResponseEvent:responseEvent requestEvent:event error:&dispatchError]) {
         NSLog(@"Dispatched response event with data '%@'", responseData);

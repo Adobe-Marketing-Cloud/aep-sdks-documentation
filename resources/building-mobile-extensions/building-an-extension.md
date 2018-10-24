@@ -73,19 +73,19 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
    **MyExtension.m**
 
-   ```objective-c
+   ```text
    #import "MyExtension.h"
-   
+
    @implementation MyExtension
    - (nullable NSString*) name {
-   	return @"com.myCompany.myExtension";
+       return @"com.myCompany.myExtension";
    }
-   
+
    - (instancetype) init {
-   	if (self = [super init]) {
-       	// register your listeners here
+       if (self = [super init]) {
+           // register your listeners here
        }
-       
+
        return self;
    }
    @end
@@ -93,19 +93,19 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
 2. The default implementation of onUnregister must be called if you decide to override the `init` method.
 
-   ```objective-c
+   ```text
    - (void) onUnregister {
-   	[super onUnregister];
+       [super onUnregister];
        // your cleanup code goes here
    }
    ```
 
 3. The default implementation of `unexpectedError` will log an error message using `NSLog`.
 
-   ```objective-c
+   ```text
    - (void) unexpectedError:(NSError *)error {
-   	[super unexpectedError];
-    	//your error handling code goes here
+       [super unexpectedError];
+        //your error handling code goes here
    }
    ```
 
@@ -179,12 +179,12 @@ A convenient place to register your extension on iOS is in your AppDelegate's `a
     } else {
         NSLog(@"Error registering MyExtension: %@ %d", [error domain], (int)[error code]);
     }
-   
+
     ... // register other extensions
     [ACPCore start:^{
-    	dispatch_async(dispatch_get_main_queue(), ^{
-        	// SDK was initialized
-     	});
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // SDK was initialized
+         });
     }];
     return YES;
 }
@@ -220,13 +220,13 @@ public void onCreate() {
 
 ### C. **Unregistering your Extension**
 
-If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` in the `ACPExtensionApi` (iOS) / `ExtensionApi` (Android). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
+If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` in the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
 **Tip**: If you retained a reference to the extension instance \(for example by storing `self` or `this` in a static variable\), this is where you should clean it up.
 
 #### iOS
 
-```objective-c
+```text
 [self.api unregisterExtension];
 ```
 

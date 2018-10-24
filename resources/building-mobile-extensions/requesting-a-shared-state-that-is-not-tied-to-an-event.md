@@ -6,7 +6,7 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 ## iOS
 
-```objective-c
+```text
 - (void) onUnregister {
     NSError* error = nil;
     NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];

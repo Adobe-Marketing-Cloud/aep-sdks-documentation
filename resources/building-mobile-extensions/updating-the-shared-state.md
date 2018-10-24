@@ -4,7 +4,7 @@ Extensions set a shared state by creating an event data that the extensions want
 
 ## iOS
 
-```objective-c
+```text
 - (void) hear: (nonnull ACPExtensionEvent*) event {
     // construct the data to be shared in a JSON format
     NSDictionary* newEventData =

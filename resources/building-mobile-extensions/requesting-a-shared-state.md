@@ -6,7 +6,7 @@ The example below shows a typical scenario where shared state is requested. In t
 
 ### iOS
 
-```objective-c
+```text
 - (void) hear: (ACPExtensionEvent*) event {
     NSError* error = nil;
     NSDictionary* configurationSharedState = [[[self extension] api] getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
@@ -48,9 +48,9 @@ See the configuration event data example here: [Sample JSON file](https://launch
 
 `com.adobe.module.target`, which is available after receiving a shared state update event where `eventData["stateowner"]=com.adobe.module.target`.
 
-**Note**: A shared state can be `nil` at some point in time, which means that it is in a pending state. If this case occurs, a new shared state update event will be sent when the shared state was updated with valid information. 
+**Note**: A shared state can be `nil` at some point in time, which means that it is in a pending state. If this case occurs, a new shared state update event will be sent when the shared state was updated with valid information.
 
-For example, while sending a network request and waiting for the server response, in order to notify other extensions that the operation is not complete, an extension will set a `nil` shared state and then update it when the server response is received. 
+For example, while sending a network request and waiting for the server response, in order to notify other extensions that the operation is not complete, an extension will set a `nil` shared state and then update it when the server response is received.
 
 **Important**: Do not request and rely on any shared states that are not documented, because their implementation might change.
 

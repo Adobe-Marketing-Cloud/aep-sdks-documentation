@@ -6,25 +6,24 @@ When handling an event in the event listener, take into consideration that the `
 
 Here are some additional rules to remember for event listeners:
 
-- You can listen to an event by registering your listener class with an event source and an event type.  The Adobe Experience Platform SDKs will create an instance of your listener class and retain it as long as your extension is registered.
-- When an event that you are listening for occurs, the `hear` method on the appropriate instance of your listener class will be called.
-- You can register multiple listeners, but each listener instance only listens for one source/type pair.
-- One listener class might be used to listen for multiple events, but you will need to check the details of the event you are passed on each call to the `hear` method.
-- All registered listeners are released when the extension is unregistered.
+* You can listen to an event by registering your listener class with an event source and an event type.  The Adobe Experience Platform SDKs will create an instance of your listener class and retain it as long as your extension is registered.
+* When an event that you are listening for occurs, the `hear` method on the appropriate instance of your listener class will be called.
+* You can register multiple listeners, but each listener instance only listens for one source/type pair.
+* One listener class might be used to listen for multiple events, but you will need to check the details of the event you are passed on each call to the `hear` method.
+* All registered listeners are released when the extension is unregistered.
 
 ## Creating your event listener
 
 ### **iOS**
 
-1. In Xcode create a new file from the `Cocoa Touch Class` template and save it in your project. 
-
+1. In Xcode create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
 
    The `MyExtensionListener.m` file will contain your extension interface declaration and will import `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
 
 **MyExtensionListener.h**
 
-```objective-c
+```text
 #import <ACPCore_iOS/ACPExtensionListener.h>
 #import <ACPCore_iOS/ACPExtensionEvent.h>
 
@@ -37,17 +36,17 @@ Here are some additional rules to remember for event listeners:
 
 **MyExtensionListener.m**
 
-```objective-c
+```text
 #import "MyExtensionListener.h"
 #import "MyExtension.h"
 
 @implementation MyExtensionListener 
     - (void) hear:(ACPExtensionEvent *)event {
-		MyExtension* parentExtension = [self getParentExtension];
-    	if (parentExtension == nil) {
-        	NSLog(@"The parent extension was nil, skipping event");
-        	return;
-    	}
+        MyExtension* parentExtension = [self getParentExtension];
+        if (parentExtension == nil) {
+            NSLog(@"The parent extension was nil, skipping event");
+            return;
+        }
 
         [parentExtension handleEvent:event];
 }
@@ -183,7 +182,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.h**
 
-```objective-c
+```text
 #import <ACPCore_iOS/ACPExtension.h>
 #import <ACPCore_iOS/ACPExtensionEvent.h>
 
@@ -196,7 +195,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.m**
 
-```objective-c
+```text
 #import "MyExtension.h"
 #import "MyExtensionListener.h"
 
@@ -205,7 +204,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 - (instancetype) init {
     if (self = [super init]) {
         NSError *error = nil;
-        
+
         // register a listener for configuration events
         if ([self.api registerListener:[MyExtensionListener class]
                              eventType:@"com.adobe.eventType.hub"
@@ -216,7 +215,7 @@ In iOS the event listeners are registered using the `registerListener` method of
             NSLog(@"An error occured while registering MyExtensionListener, error code: %ld", [error code]);
         }
     }
-    
+
     return self;
 }
 
@@ -287,7 +286,7 @@ If you need to listen for all the events received and broadcasted by the Event H
 
 ### **iOS**
 
-```objective-c
+```text
 #import "MyExtension.h"
 #import "MyExtensionWildcardListener.h"
 
@@ -330,3 +329,4 @@ public class MyExtension extends Extension {
     ...
 }
 ```
+

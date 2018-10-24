@@ -6,7 +6,7 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 In the following example, the extension is setting a default state in the `init` method.
 
-```objective-c
+```text
 - (nullable instancetype) init {
     // construct data to be shared in a JSON format
     NSDictionary* newEventData =
