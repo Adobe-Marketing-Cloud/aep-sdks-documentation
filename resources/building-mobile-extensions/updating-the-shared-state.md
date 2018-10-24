@@ -4,17 +4,18 @@ Extensions set a shared state by creating an event data that the extensions want
 
 ## iOS
 
-```objectivec
+```objective-c
 - (void) hear: (nonnull ACPExtensionEvent*) event {
-    NSDictionary* newEventData = // construct some JSON
-      @{@"customData":@{
-        @"customElement":@{
-            @"customInt":@(0xDEADBEEF),
-            @"customString":@"test"
-        }
-      }};
-      NSError* error = nil;
-    if (![self.extension.api setSharedEventState:newEventData event:event error:&error]) {
+    // construct the data to be shared in a JSON format
+    NSDictionary* newEventData =
+    @{@"customData":@{
+              @"customElement":@{
+                      @"customInt":@125,
+                      @"customString":@"example"
+                      }
+              }};
+    NSError* error = nil;
+    if (![self.extension.api setSharedEventState:newEventData event:event error:&error] && error) {
         NSLog(@"Error setting shared state %@:%ld", [error domain], [error code]);
     }
 }
