@@ -34,7 +34,7 @@ For this beta extension, these endpoints URLs should be entered in **without** a
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to connect your Launch mobile property with an Adobe Campaign Standard mobile app. When the connection is made, pKeys will be automatically generated, per Campaign Standard instance, and configured here for successful validation.
+A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
 
 {% hint style="info" %}
 Need help connecting your Launch mobile property with your Campaign Standard mobile app? See Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign) for more information.
