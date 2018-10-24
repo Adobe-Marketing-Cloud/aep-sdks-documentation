@@ -9,10 +9,10 @@ Having trouble creating a mobile property or need access to Launch? See [Launch 
 ## Create a new mobile property
 
 1. Click **New Property**
-2. Create a new property by providing a name and selecting **Mobile** as the platform. If required, you may change [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status)and **HTTPS** settings later.
+2. Create a new property by providing a name and selecting **Mobile** as the platform.  If required, you may change [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status)and **HTTPS** settings later.
 3. Find the new property in the **Properties** list and click to open it.
 
-## Setup Extensions
+## Set up Extensions
 
 1. Setup **Extensions**
    1. Go to the **Extensions** tab. You should see that **Mobile Core** and **Profile** extensions are installed by default.  
