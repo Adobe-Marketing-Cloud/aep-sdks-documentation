@@ -1,12 +1,8 @@
-# Adobe Campaign Classic \(Beta\)
-
-{% hint style="warning" %}
-This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment.
-{% endhint %}
+# Adobe Campaign Classic
 
 ## Configure Campaign Classic Extension in Launch
 
-1. In Launch's Integration environment, click the **Extensions** tab.
+1. In Launch click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension and click **Install**.
 3. Provide extension settings \(see screen capture below\)
 4. Click **Save**.
@@ -14,10 +10,10 @@ This extension is considered beta functionality and is available only in Launch'
 
 ### Configure Campaign Classic Extension
 
-![ACC-configure-extension](../.gitbook/assets/ACC-configure-extension.png)
+![ACC-configure-extension](../../.gitbook/assets/ACC-configure-extension.png)
 
 {% hint style="info" %}
-Trying to find your ACC registration or tracking endpoint URLs? Contact your beta program manager.
+Trying to find your ACC registration or tracking endpoint URLs? Contact your program manager.
 {% endhint %}
 
 #### Registration Endpoints
@@ -44,7 +40,7 @@ Time in seconds to wait for a response from the registration endpoint before tim
 
 {% tabs %}
 {% tab title="Android" %}
-Add the **beta** Campaign Classic extension to your project using the app's Gradle file.
+Add the Campaign Classic extension to your project using the app's Gradle file.
 
 #### Java
 
@@ -57,20 +53,17 @@ import com.adobe.marketing.mobile.CampaignClassic;
 {% endtab %}
 
 {% tab title="iOS" %}
-{% hint style="warning" %}
-This **beta** Campaign Classic extension requires the [Mobile Core](mobile-core/) **beta** extension. If you are using other versions of the Mobile Core library, use the beta version instead, as the instructions below indicate.
-{% endhint %}
 
-Add the Campaign Classic and [Mobile Core](mobile-core/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
+Add the Campaign Classic and [Mobile Core](mobile-core/) libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCampaignClassicBeta', '1.0.0beta'
-pod 'ACPCoreBeta', '1.0.2beta'
+pod 'ACPCampaignClassic', '1.0.0'
+pod 'ACPCore', '1.0.2'
 ```
 
-or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore) and [Campaign Classic](update to campaign classic beta location) beta extensions found in Github.
+or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore) and [Campaign Classic](update to campaign classic beta location) extensions found in Github.
 
-In Xcode, import the Mobile Core beta and Campaign Classic beta extensions:
+In Xcode, import the Mobile Core and Campaign Classic extensions:
 
 #### Objective-C
 
