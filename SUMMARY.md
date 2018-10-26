@@ -26,6 +26,8 @@
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API Reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics Event Reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
+* [Adobe Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
+  * [Media API Reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
   * [Audience Manager API Reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
   * [Audience Manager Event Reference](using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md)
