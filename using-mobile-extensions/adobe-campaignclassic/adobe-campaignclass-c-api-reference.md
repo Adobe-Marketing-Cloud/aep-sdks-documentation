@@ -8,9 +8,7 @@
 
 {% tab title="Android" %}
 
-Follow [Google's instruct
-
-ions](https://firebase.google.com/docs/cloud-messaging/android/client) to get your app ready to handle push notifications. Once you receive the FCM SDK registration token, you will need to send that token along with the device information to Campaign Classic using the registerDevice API.
+Follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client) to get your app ready to handle push notifications. Once you receive the FCM SDK registration token, you will need to send that token along with the device information to Campaign Classic using the registerDevice API.
 
 ### registerDevice
 
@@ -21,7 +19,7 @@ The registerDevice API will register a device with your Campaign Classic registr
 #### Syntax
 
 ```java
-public static void registerDevice(final String deviceToken, final String userKey, final Map<String, Object> additionalParams, final AdobeCallback<Boolean> callback)
+public static void registerDevice(final String token, final String userKey, final Map<String, Object> additionalParams, final AdobeCallback<Boolean> callback)
 ```
 
 #### Example
@@ -137,7 +135,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 		// Check if message contains a data payload.
 		if (remoteMessage.getData().size() > 0) {
 			System.out.println("Message data payload: " + remoteMessage.getData());
-            // Send the tracking info for message received
+            // Build the additional parameter map
+            // then send the tracking info for message received
             String broadlogId = remoteMessage.getMessageId();
         	String deliveryId = remoteMessage.getFrom();
             Map<String,String> trackInfo = new HashMap<>();
@@ -216,9 +215,11 @@ public void onResume() {
 		Map<String,String> trackInfo = new HashMap<>();
 		for (String key : getIntent().getExtras().keySet()) {
 			Object value = getIntent().getExtras().get(key);
-			if(key.equals("broadlogid")){
+            // extract broadlog id
+			if(key.equals("_mId")){
 				trackInfo.put(key, value.toString());
-			}else if(key.equals("deliveryid")){
+            // extract delivery id
+			}else if(key.equals("_dId")){
 				trackInfo.put(key, value.toString());
 			}
 		}

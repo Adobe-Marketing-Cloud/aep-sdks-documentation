@@ -44,10 +44,11 @@ Add the Campaign Classic extension to your project using the app's Gradle file.
 
 #### Java
 
-1. Import the CampaignClassic extension in your application's main activity.
+1. Import the CampaignClassic and Lifecycle extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.CampaignClassic;
+import com.adobe.marketing.mobile.Lifecycle;
 ```
 
 {% endtab %}
@@ -58,10 +59,11 @@ Add the Campaign Classic and [Mobile Core](mobile-core/) libraries to your proje
 
 ```text
 pod 'ACPCampaignClassic', '1.0.0'
+pod 'ACPLifecycle', '1.0.0'
 pod 'ACPCore', '1.0.2'
 ```
 
-or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore) and [Campaign Classic](update to campaign classic beta location) extensions found in Github.
+or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2b-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) extensions found in Github.
 
 In Xcode, import the Mobile Core and Campaign Classic extensions:
 
@@ -89,7 +91,7 @@ import ACPLifecycle_iOS
 
 {% tab title="Android" %}
 
-In the App's OnCreate method register the Campaign Classic extension:
+In the App's OnCreate method register the Campaign Classic and Lifecycle extension:
 
 ```java
 public class CampaignClassicTestApp extends Application {
@@ -102,6 +104,7 @@ public class CampaignClassicTestApp extends Application {
 
 		try {
 			CampaignClassic.registerExtension();
+            Lifecycle.registerExtension();
 			MobileCore.start(null);
 		} catch (Exception e) {
 			Log.e("CampaignClassicTestApp", e.getMessage());
@@ -114,7 +117,7 @@ public class CampaignClassicTestApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Classic extension:
+In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extension:
 
 #### Objective-C
 
