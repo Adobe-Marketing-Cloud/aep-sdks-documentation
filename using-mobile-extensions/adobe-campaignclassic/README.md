@@ -6,7 +6,7 @@
 2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension and click **Install**.
 3. Provide extension settings \(see screen capture below\)
 4. Click **Save**.
-5. Follow the publishing process to update SDK configuration
+5. Follow the publishing process to update the SDK configuration
 
 ### Configure Campaign Classic Extension
 
@@ -18,7 +18,7 @@ Trying to find your ACC registration or tracking endpoint URLs? Contact your pro
 
 #### Registration Endpoints
 
-Provide registration endpoint URL\(s\) for your Campaign Classic instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
+Provide registration endpoint URL\(s\) for your Campaign Classic instances. You can specify up to three unique endpoints for your development, staging, and production environments. 
 
 #### Tracking Endpoints
 
@@ -26,11 +26,11 @@ Provide tracking endpoint URL\(s\) for your Campaign Classic instances. Like the
 
 #### Integration Key (iOS)
 
-You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service containing iOS applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installation_steps_for_Windows__Installing_the_client_console.html). For more information on where to find the integration key, please see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installation_steps_for_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
 
 #### Integration Key (Android)
 
-Specify up to three unique Android integration keys for your development, staging, and production environments. Similar to iOS, Android integration keys are generated after creating a service containing Android applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installation_steps_for_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+Specify up to three unique Android integration keys for your development, staging, and production environments. Similar to iOS, Android integration keys are generated after creating a service that contains Android applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installation_steps_for_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
 
 #### Request Timeout
 
@@ -63,7 +63,7 @@ pod 'ACPLifecycle', '1.0.0'
 pod 'ACPCore', '1.0.0'
 ```
 
-or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2b-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) extensions found in Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2b-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) extensions found in Github.
 
 In Xcode, import the Mobile Core and Campaign Classic extensions:
 
@@ -145,7 +145,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+If you need to update SDK configuration, programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 <table>
   <thead>
@@ -177,13 +177,13 @@ If you need to update SDK configuration, programmatically, use the following inf
     <tr>
       <td style="text-align:left">__dev__campaignclassic.trackingServer</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the development environment tracking server which receives tracking requests. 
+      <td style="text-align:left">Sets the development environment tracking server, which receives tracking requests. 
       </td>
     </tr>
     <tr>
       <td style="text-align:left">__dev__campaignclassic.ios.integrationKey</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the development environment iOS mobile app integration key which links the app to a specific iOS application campaign on Adobe Campaign Classic.
+      <td style="text-align:left">Sets the development environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic.
       </td>
     </tr>
 <tr>
@@ -195,50 +195,50 @@ If you need to update SDK configuration, programmatically, use the following inf
 <tr>
       <td style="text-align:left">__stage__campaignclassic.marketingServer</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the staging environment marketing server which receives registration requests.
+      <td style="text-align:left">Sets the staging environment marketing server, which receives registration requests.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">__stage__campaignclassic.trackingServer</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the staging environment tracking server which receives tracking requests. 
+      <td style="text-align:left">Sets the staging environment tracking server, which receives tracking requests. 
       </td>
     </tr>
     <tr>
       <td style="text-align:left">__stage__campaignclassic.ios.integrationKey</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the staging environment iOS mobile app integration key which links the app to a specific iOS application campaign on Adobe Campaign Classic.
+      <td style="text-align:left">Sets the staging environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic.
       </td>
     </tr>
 <tr>
       <td style="text-align:left">__stage__campaignclassic.android.integrationKey</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the staging environment Android mobile app integration key which links the app to a specific Android application campaign on Adobe Campaign Classic.
+      <td style="text-align:left">Sets the staging environment Android mobile app integration key, which links the app to a specific Android application campaign on Adobe Campaign Classic.
       </td>
     </tr>
 </tr>
 <tr>
       <td style="text-align:left">campaignclassic.marketingServer</td>
       <td style="text-align:left">Yes</td>
-      <td style="text-align:left">Sets the production environment marketing server which receives registration requests.
+      <td style="text-align:left">Sets the production environment marketing server, which receives registration requests.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">campaignclassic.trackingServer</td>
       <td style="text-align:left">Yes</td>
-      <td style="text-align:left">Sets the production environment tracking server which receives tracking requests. 
+      <td style="text-align:left">Sets the production environment tracking server, which receives tracking requests. 
       </td>
     </tr>
     <tr>
       <td style="text-align:left">campaignclassic.ios.integrationKey</td>
       <td style="text-align:left">Yes</td>
-      <td style="text-align:left">Sets the production environment iOS mobile app integration key which links the app to a specific iOS application campaign on Adobe Campaign Classic.
+      <td style="text-align:left">Sets the production environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic.
       </td>
     </tr>
 <tr>
       <td style="text-align:left">campaignclassic.android.integrationKey</td>
       <td style="text-align:left">Yes</td>
-      <td style="text-align:left">Sets the production environment Android mobile app integration key which links the app to a specific Android application campaign on Adobe Campaign Classic.
+      <td style="text-align:left">Sets the production environment Android mobile app integration key, which links the app to a specific Android application campaign on Adobe Campaign Classic.
       </td>
     </tr>
   </tbody>
