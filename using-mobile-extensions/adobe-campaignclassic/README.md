@@ -22,7 +22,7 @@ Provide registration endpoint URL\(s\) for your Campaign Classic instances. You 
 
 #### Tracking Endpoints
 
-Provide tracking endpoint URL\(s\) for your Campaign Classic instances. Like the registration URL's, you may specify up to three unique endpoints for your development, staging, and production environments. 
+Provide tracking endpoint URL\(s\) for your Campaign Classic instances. Like the registration URL's, you can specify up to three unique endpoints for your development, staging, and production environments. 
 
 #### Integration Key (iOS)
 
