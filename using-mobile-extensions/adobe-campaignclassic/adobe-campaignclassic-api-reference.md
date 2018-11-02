@@ -12,7 +12,7 @@ Follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/
 
 ### registerDevice
 
-The registerDevice API will register a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter along with a user key that identifies the user such as an email address or login name. It can also be given a Map of custom key value pairs that you want to associate with the registration. Lastly, a boolean value is returned in the callback which signals whether the registration was sucessful.
+The registerDevice API will register a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies the user such as an email address or login name. It can also be given a Map of custom key value pairs that you want to associate with the registration. As a result, a boolean value is returned in the callback which signals whether the registration was sucessful.
 
 #### Java
 
@@ -59,11 +59,11 @@ public void onNewToken(String token) {
 
 {% tab title="iOS" %}
 
-Follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications. Once you receive the APNS token, you will need to send that token along with the device information to Campaign Classic using the registerDevice API.
+Follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications. Once you receive the APNS token, you will need to send that token with the device information to Campaign Classic using the registerDevice API.
 
 ### registerDevice
 
-The registerDevice API will register a device with your Campaign Classic registration server. It takes the APNS token as a parameter along with a user key that identifies the user such as an email address or login name. It can also be given a dictionary of custom key value pairs that you want to associate with the registration. Lastly, a boolean value is returned in the callback which signals whether the registration was sucessful.
+The registerDevice API will register a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies the user, such as an email address or login name. It can also be given a dictionary of custom key value pairs that you want to associate with the registration. As a result, a boolean value is returned in the callback which signals whether the registration was sucessful.
 
 #### Objective-C
 
@@ -78,12 +78,12 @@ The registerDevice API will register a device with your Campaign Classic registr
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   // Set the deviceToken that the APNS has assigned to the device
-  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:      	@"Adobe", @"brand", nil];
-  [params setObject: [NSNumber numberWithInt:12345] forKey: @"testNum"];
-  [params setObject: [NSNumber numberWithBool:YES]  forKey: @"testBool"];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:      	@"John", @"name", nil];
+  [params setObject: [NSNumber numberWithInt:12345] forKey: @"serial"];
+  [params setObject: [NSNumber numberWithBool:YES]  forKey: @"premium"];
     
-[ACPCampaignClassic registerDevice:deviceToken userKey:@"user@gmail.com" additionalParams:params callback:^(BOOL success) {
-	NSLog(@"Status: %d", success);
+[ACPCampaignClassic registerDevice:deviceToken userKey:@"johndoe@gmail.com" additionalParams:params callback:^(BOOL success) {
+	NSLog(@"Registration Status: %d", success);
 }
 ```
 
@@ -105,7 +105,7 @@ Adobe Campaign Classic has two additional API used for tracking push messages re
 
 ### trackNotificationReceive
 
-The trackNotificationReceive API should be called after a push message has been received in the app. On iOS it takes a dictionary as a parameter and the dictionary should contain the message id and delivery id retrieved from the received push message. On Android, the API takes a map containing the same message id and delivery id received from the push message.
+The trackNotificationReceive API should be called after a push message has been received in the app. On iOS it takes a dictionary as a parameter, and the dictionary should contain the message ID and delivery ID retrieved from the received push message. On Android, the API takes a map containing the same message ID and delivery ID received from the push message.
 
 {% tabs %}
 
@@ -182,7 +182,7 @@ ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
 
 ### trackNotificationClick
 
-The trackNotificationClick API should be called after a push message has been opened by the user and clickedthrough it to launch the app. Similar to the trackNotificationReceive API, It takes a dictionary as a parameter and the dictionary should contain the message id and delivery id retrieved from the push message which was clickedthrough. On Android, the API takes a map containing the same message id and delivery id received from the push message clickthrough.
+The trackNotificationClick API should be called after a push message has been opened by the user and clickedthrough it to launch the app. Similar to the trackNotificationReceive API, it takes a dictionary as a parameter, and the dictionary should contain the message ID and delivery ID retrieved from the push message which was clickedthrough. On Android, the API takes a map containing the same message ID and delivery ID received from the push message clickthrough.
 
 {% tabs %}
 
