@@ -6,7 +6,7 @@
 2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension and click **Install**.
 3. Provide extension settings \(see screen capture below\)
 4. Click **Save**.
-5. Follow the publishing process to update the SDK configuration
+5. Follow the publishing process to update the SDK configuration.
 
 ### Configure Campaign Classic Extension
 
@@ -171,7 +171,7 @@ If you need to update SDK configuration, programmatically, use the following inf
     <tr>
       <td style="text-align:left">__dev__campaignclassic.marketingServer</td>
       <td style="text-align:left">No</td>
-      <td style="text-align:left">Sets the development environment marketing server which receives registration requests.
+      <td style="text-align:left">Sets the development environment marketing server, which receives registration requests.
       </td>
     </tr>
     <tr>
