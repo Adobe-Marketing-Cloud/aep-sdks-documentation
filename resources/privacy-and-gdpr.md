@@ -144,18 +144,16 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
 
 The following SDK identities \(as applicable\) are locally stored:
 
-| Identifiers |
-| :--- |
-| Company Context - IMS Org IDs |
-| Experience Cloud ID \(MID\) |
-| User IDs |
-| Integration codes \(ADID, push IDs\) |
-| Data source IDs \(DPID, DPUUID\) |
-| Analytics IDs \(AVID, AID, VID, and associated RSIDs\) |
-| Target legacy IDs \(TNTID, TNT3rdpartyID\) |
-| Audience Manager ID \(UUID\) |
+* Company Context - IMS Org IDs
+* Experience Cloud ID \(MID\)
+* User IDs
+* Integration codes \(ADID, push IDs\)
+* Data source IDs \(DPID, DPUUID\)
+* Analytics IDs \(AVID, AID, VID, and associated RSIDs\)
+* Target legacy IDs \(TNTID, TNT3rdpartyID\)
+* Audience Manager ID \(UUID\)
 
-To retrieve data, as a JSON string, from the SDKs and send this data to your servers, use the following:
+To retrieve data as a JSON string from the SDKs, and send this data to your servers, use the following:
 
 {% hint style="warning" %}
 You must call the API below and retrieve identities stored in the SDK, **before** the user opts-out.
@@ -202,7 +200,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% endtab %}
 {% endtabs %}
 
-## Configuration Keys
+## Configuration keys
 
 If you need to update SDK configuration, programmatically, please use the following information to change your privacy configuration values. For more information, [Configuration Methods Reference](../using-mobile-extensions/mobile-core/configuration-reference/#update-configuration).
 
