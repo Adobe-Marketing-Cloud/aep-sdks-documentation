@@ -14,6 +14,19 @@ To find your Environment ID, navigate to Environments tab in Launch, and click o
 _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**_
 {% endhint %}
 
+#### Ensure app permissions
+
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider and record offline tracking calls:
+
+To add these permissions, add the following lines to your AndroidManifest.xml file, which is located in the application project directory:
+
+```markup
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+#### Java
+
 1. Create MainActivity.java in the app.
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
 {% endtab %}
