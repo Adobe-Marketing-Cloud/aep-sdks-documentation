@@ -204,7 +204,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 ## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your privacy configuration values. For more information, [Configuration Methods Reference](../using-mobile-extensions/mobile-core/configuration-reference/#update-configuration).
+To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration Methods Reference](../using-mobile-extensions/mobile-core/configuration-reference/#update-configuration).
 
 | Key | Description |
 | :--- | :--- |
