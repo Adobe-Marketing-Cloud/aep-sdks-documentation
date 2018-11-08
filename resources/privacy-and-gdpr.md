@@ -1,14 +1,14 @@
 # Privacy and GDPR
 
-The Adobe Experience Platform SDK gives you controls to manage consent and privacy obligations under the European Union's General Data Protection Regulation \(GDPR\). Developers may retrieve locally stored identities and set opt status flags for data collection and transmission.
+The Adobe Experience Platform SDK gives you controls to manage consent and privacy obligations under the European Union's General Data Protection Regulation \(GDPR\). Developers can retrieve locally stored identities and set opt status flags for data collection and transmission.
 
-Before instrumenting these controls, be sure to read Adobe's [GDPR documentation](https://www.adobe.io/apis/cloudplatform/gdpr.html).
+Before implementing these controls, read Adobe's [GDPR documentation](https://www.adobe.io/apis/cloudplatform/gdpr.html).
 
 When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions \(for example, as set out in your agreement with Adobe\). As a data controller, you can use the Adobe Cloud Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
 
-## Set & get privacy status
+## Set and get privacy status
 
-You may set a privacy status to ensure collection of data suits your users' preferences.
+You can set a privacy status to ensure collection of data suits your user's preferences.
 
 | Exp**ected Behavior** | Opt In | Opt Out | Opt Unknown |
 | :--- | :--- | :--- | :--- |
@@ -28,11 +28,13 @@ To programmatically set the privacy status for the app user:
 
 ### setPrivacyStatus <a id="setprivacystatus"></a>
 
-You may set privacy status to one of the following values, see table above for expected behavior:
+You can set the privacy status to one of the following values: , 
 
 * `MobilePrivacyStatus.OPT_IN`
 * `MobilePrivacyStatus.OPT_OUT`
 * `MobilePrivacyStatus.UNKNOWN`
+
+To understand the expected behavior, see the _Set and get privacy status_ table above.
 
 #### Syntax <a id="syntax-4"></a>
 
@@ -72,7 +74,7 @@ You may set privacy status to one of the following values, see table above for e
 {% endtab %}
 {% endtabs %}
 
-You may also, programmatically, view current privacy status by using the following:
+You can also, programmatically, view the current privacy status by using the following:
 
 {% hint style="info" %}
 This API returns an enum representation of the privacy status for the user.
@@ -145,7 +147,7 @@ The following SDK identities \(as applicable\) are locally stored:
 | Identifiers |
 | :--- |
 | Company Context - IMS Org IDs |
-| Experience Cloud ID \(ECID\) |
+| Experience Cloud ID \(MID\) |
 | User IDs |
 | Integration codes \(ADID, push IDs\) |
 | Data source IDs \(DPID, DPUUID\) |
@@ -153,7 +155,7 @@ The following SDK identities \(as applicable\) are locally stored:
 | Target legacy IDs \(TNTID, TNT3rdpartyID\) |
 | Audience Manager ID \(UUID\) |
 
-To retrieve data, as a JSON string, from the SDKs, and send this data to your servers, use the following:
+To retrieve data, as a JSON string, from the SDKs and send this data to your servers, use the following:
 
 {% hint style="warning" %}
 You must call the API below and retrieve identities stored in the SDK, **before** the user opts-out.
