@@ -54,11 +54,13 @@ MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
 
 ### setPrivacyStatus
 
-You may set privacy status to one of the following values, see table above for expected behavior:
+You can set privacy status to one of the following values:
 
 * `ACPMobilePrivacyStatusOptIn`
 * `ACPMobilePrivacyStatusOptOut` 
 * `ACPMobilePrivacyStatusUnknown`
+
+To understand the expected behavior, see the _Set and get privacy status_ table above.
 
 ### Syntax <a id="syntax-4"></a>
 
