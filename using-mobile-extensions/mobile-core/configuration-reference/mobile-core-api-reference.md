@@ -82,7 +82,7 @@ If you have the **Analytics** extension setup, this API will increment page view
 {% tab title="Android" %}
 #### Java
 
- In Android, trackState is typically called each time a new activity is loaded
+ In Android, trackState is typically called each time a new Activity is loaded
 
 ### trackState <a id="trackstate"></a>
 
@@ -140,11 +140,11 @@ ACPCore.trackState("state name", data: ["key": "value"])
 
 ## Collect launch information
 
-You can provide the user info to the SDK from various launch points in your application. 
+You can provide the user information to the SDK from various launch points in your application. 
 
 {% hint style="info" %}
 
-If **Analytics** extension is enabled in your SDK, the collection of this launch data will result in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
+If the **Analytics** extension is enabled in your SDK, the collection of this launch data will result in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
 {% endhint %}
 
 {% tabs %}
@@ -157,15 +157,15 @@ In Android, you can collect data from the Activity or the context to be used lat
 The `collectLaunchInfo` API marshals the Activity instance and extracts the intent data or extras. It should be called to support the following use cases:
 
 - Tracking Deep Link click-throughs
-  - Update `AndroidManifest.xml` to support intent-filter in the activity with the intended action and type of data.
-  - Handle the intent in the activity.
+  - Update `AndroidManifest.xml` to support the intent filter in the Activity with the intended action and type of data.
+  - Handle the intent in the Activity.
   - Pass the Activity with deepLink intent to SDK in `collectLaunchInfo`
 - Tracking Push Message click-through
-  - Push message data must be added to the Intent used to open target activity on click-through.
-  - The data can be added in intent extras which is then collected by SDK when the target activity is passed in `collectLaunchInfo`.
+  - Push message data must be added to the intent used to open target Activity on click-through.
+  - The data can be added in intent extras, which is then collected by SDK when the target Activity is passed in `collectLaunchInfo`.
 - Tracking Local Notification click-through
   - Add manifest-declared broadcast receiver ` <receiver android:name=".LocalNotificationHandler" />`  in your application.
-  - Pass notifications activity reference in `collectLaunchInfo`. 
+  - Pass notifications Activity reference in `collectLaunchInfo`. 
 
 ### collectLaunchInfo  <a id="collectLaunchInfo"></a>
 
