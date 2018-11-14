@@ -1,10 +1,10 @@
 # Release notes
 
-## 1.0.0 - 2018-09-27
+## September 27, 2018
 
-### AEP SDKs go live!
+### Adobe Experience Platform SDKs are live!
 
-* 1.0.0 versions released for Mobile Core, Analytics, Audience Manager, Adobe Target Extensions
+* Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
 
 
 
