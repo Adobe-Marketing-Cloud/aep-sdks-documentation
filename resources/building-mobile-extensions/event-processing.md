@@ -1,4 +1,4 @@
-# Event Processing
+# Event processing
 
 An event is composed of the following information:
 

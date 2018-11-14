@@ -1,4 +1,4 @@
-# Initialize the SDK and Set up Tracking
+# Initialize the SDK and set up tracking
 
 ## Configure SDK with the Launch Environment ID
 

@@ -1,4 +1,4 @@
-# Events Handled by Adobe Audience Manager
+# Events handled by Adobe Audience Manager
 
 
 

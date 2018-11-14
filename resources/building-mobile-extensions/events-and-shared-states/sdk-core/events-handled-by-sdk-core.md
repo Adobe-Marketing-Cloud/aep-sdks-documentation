@@ -1,4 +1,4 @@
-# Events Handled by SDK Core
+# Events handled by SDK Core
 
 
 

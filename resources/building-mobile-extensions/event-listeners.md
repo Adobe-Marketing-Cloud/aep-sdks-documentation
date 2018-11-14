@@ -1,4 +1,4 @@
-# Listening for Events
+# Listening for events
 
 A common use case is to add an event listener to get notifications for events that occur in the Adobe Experience Platform SDK. The main location to add an event listener is in the `init` method, although you can add listeners by using other callbacks later. You can add the logic that you want executed when an event occurs, and for which you have a listener, in the `hear` method of your listener class.
 

@@ -1,4 +1,4 @@
-# Events Dispatched by the Rules Engine
+# Events dispatched by the Rules Engine
 
 
 

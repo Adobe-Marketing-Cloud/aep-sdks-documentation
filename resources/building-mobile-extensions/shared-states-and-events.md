@@ -1,4 +1,4 @@
-# Shared States and Events
+# Shared states and events
 
 A shared state is composed of the following:
 

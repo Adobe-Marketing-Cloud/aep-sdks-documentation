@@ -1,4 +1,4 @@
-# Rules Engine Reference
+# Rules Engine reference
 
 ## Key definitions
 

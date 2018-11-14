@@ -1,4 +1,4 @@
-# Updating the Shared State
+# Updating the shared state
 
 Extensions set a shared state by creating an event data that the extensions want to save and by calling `setSharedEventState` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\) interface that is available through the `ACPExtension` \(iOS\) / `Extension` \(Android\) parent class. Extensions can only set their own state, so the name that is used is the same as your extension \(for example, _com.exampleCompany.extension_\). This name is also the name that other extensions need to use when requesting your shared state.
 

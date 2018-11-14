@@ -1,4 +1,4 @@
-# Set Up a Mobile Property
+# Set up a mobile property
 
 To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps: 
 

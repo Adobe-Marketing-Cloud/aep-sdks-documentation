@@ -1,4 +1,4 @@
-# Audience Manager Event Reference
+# Audience Manager event reference
 
 ## Events Handled
 

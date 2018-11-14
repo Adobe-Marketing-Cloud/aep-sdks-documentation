@@ -1,4 +1,4 @@
-# Release Notes
+# Release notes
 
 ## 1.0.0 - 2018-09-27
 

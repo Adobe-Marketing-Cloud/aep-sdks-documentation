@@ -1,4 +1,4 @@
-# Configuration Methods Reference
+# Configuration methods reference
 
 ## SDK Configuration
 

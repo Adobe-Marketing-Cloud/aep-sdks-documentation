@@ -1,4 +1,4 @@
-# Events Dispatched by Lifecycle
+# Events dispatched by Lifecycle
 
 
 

@@ -1,4 +1,4 @@
-# Building an Extension
+# Building an extension
 
 ## Prerequisites to Building an Extension
 

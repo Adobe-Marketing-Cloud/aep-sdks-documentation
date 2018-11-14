@@ -1,4 +1,4 @@
-# Identity Event Reference
+# Identity event reference
 
 ## Events Handled
 
