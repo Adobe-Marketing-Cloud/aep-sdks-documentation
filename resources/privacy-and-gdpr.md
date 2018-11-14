@@ -28,7 +28,7 @@ To programmatically set the privacy status for the app user:
 
 ### setPrivacyStatus <a id="setprivacystatus"></a>
 
-You can set the privacy status to one of the following values: , 
+You can set the privacy status to one of the following values: 
 
 * `MobilePrivacyStatus.OPT_IN`
 * `MobilePrivacyStatus.OPT_OUT`
@@ -76,10 +76,10 @@ To understand the expected behavior, see the _Set and get privacy status_ table 
 {% endtab %}
 {% endtabs %}
 
-You can also, programmatically, view the current privacy status by using the following:
+You can also programmatically view the current privacy status by using the following:
 
 {% hint style="info" %}
-This API returns an enum representation of the privacy status for the user.
+The following API returns an enum representation of the privacy status for the user.
 {% endhint %}
 
 {% tabs %}
@@ -88,7 +88,7 @@ This API returns an enum representation of the privacy status for the user.
 
 ### getPrivacyStatus
 
-Enum representation of privacy status correspond to the following status:
+The enum representation of the privacy status that corresponds to the following statuses:
 
 * `MobilePrivacyStatus.OPT_IN`
 * `MobilePrivacyStatus.OPT_OUT`
@@ -117,7 +117,7 @@ MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
 
 ### getPrivacyStatus
 
-Enum representation of privacy status correspond to the following status:
+The enum representation of the privacy status that corresponds to the following statuses:
 
 * `ACPMobilePrivacyStatusOptIn` 
 * `ACPMobilePrivacyStatusOptOut`
