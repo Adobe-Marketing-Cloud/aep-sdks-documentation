@@ -190,6 +190,64 @@ If you want to share the Analytics Data with Adobe Audience Manager, you can ena
 
 For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
 
+## Event Serialization
+
+As event serialization is not supported by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&events", "event1:12341234");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add events
+cdata.put("&&events", "event1:12341234");
+
+// send a tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("Action Name", cdata);
+// trackState example:
+MobileCore.trackState("State Name", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"eventN:serial number" forKey:@"&&events"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add events
+[contextData setObject:@"event1:12341234" forKey:@"&&events"];
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+[ACPCore trackAction:@"Action Name" data:contextData];
+// trackState example:
+[ACPCore trackState:@"State Name" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
 ## Configuration Keys
 
 If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
