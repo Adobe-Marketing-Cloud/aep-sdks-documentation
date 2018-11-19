@@ -2,11 +2,13 @@
 
 ## Configure Campaign Classic Extension in Launch
 
-1. In Launch click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension and click **Install**.
-3. Provide extension settings \(see screen capture below\)
+1. In Launch, click the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension, and click **Install**.
+3. Type in the settings for your extension.
 4. Click **Save**.
-5. Follow the publishing process to update the SDK configuration.
+5. Complete the publishing process to update the SDK configuration.
+   
+   For more information about publishing, see [Publishing](https://docs.adobelaunch.com/publishing).
 
 ### Configure Campaign Classic Extension
 
@@ -44,7 +46,7 @@ Add the Campaign Classic extension to your project using the app's Gradle file.
 
 #### Java
 
-1. Import the CampaignClassic and Lifecycle extension in your application's main activity.
+1. Import the CampaignClassic and Lifecycle extension in to your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.CampaignClassic;
@@ -55,7 +57,7 @@ import com.adobe.marketing.mobile.Lifecycle;
 
 {% tab title="iOS" %}
 
-Add the Campaign Classic and [Mobile Core](mobile-core/) libraries to your project. You'll need to add the following pods to your `Podfile`:
+2. Add the Campaign Classic and [Mobile Core](mobile-core/) libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
 pod 'ACPCampaignClassic', '1.0.0'
@@ -65,7 +67,7 @@ pod 'ACPCore', '1.0.0'
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2b-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) extensions found in Github.
 
-In Xcode, import the Mobile Core and Campaign Classic extensions:
+3. In Xcode, import the Mobile Core and Campaign Classic extensions:
 
 #### Objective-C
 
