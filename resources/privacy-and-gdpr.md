@@ -14,6 +14,7 @@ You can set a privacy status to ensure collection of data suits your user's pref
 | :--- | :--- | :--- | :--- |
 | **Analytics** | Hits are sent | Hits not sent | Hits queued |
 | **Audience** **Manager** | Signals, ID syncs are sent | Signals, ID syncs not sent | Syncs queued |
+| **Campaign Classic** | User data stored, calls are sent | User data cleared, calls not sent | User data stored, calls not sent |
 | **Target** | Mbox requests are sent | Mbox requests not sent | Mbox requests queued |
 
 {% hint style="info" %}
