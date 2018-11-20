@@ -1,6 +1,6 @@
-# Upgrading to AEP SDK
+# Upgrading to the Adobe Experience Platform SDKs
 
-This page contains a checklist that you may consider as you decide to upgrade to the Adobe Experience Platform SDK. 
+This page contains a checklist that you may consider as you decide to upgrade to the Experience Platform SDKs. 
 
 {% hint style="danger" %}
 **The Experience Platform SDK contains breaking changes from the 4x SDK**. In addition to changed APIs, the new SDK includes new APIs as well as deprecation of APIs such as timed action and milestone media video tracking.
@@ -8,9 +8,9 @@ This page contains a checklist that you may consider as you decide to upgrade to
 
 ### Important considerations
 
-The Adobe Experience Platform SDK has experienced significant architectural re-design and comes with a major paradigm shift in terms of how customers may implement and leverage SDK functionality. The following checklist should help you understand some of these changes and what's required to move forward:
+The Experience Platform SDK has experienced significant architectural re-design and comes with a major paradigm shift in terms of how customers may implement and leverage SDK functionality. The following checklist should help you understand some of these changes and what's required to move forward:
 
-1. The new Adobe Experience Platform SDK introduces the notion of a [Mobile Core](../../using-mobile-extensions/mobile-core/) and constituent extensions. The Mobile Core contains core SDK functionality required for all implementations that require Adobe and/or third-party extensions.
+1. The new Experience Platform SDKs introduce the notion of a [Mobile Core](../../using-mobile-extensions/mobile-core/) and constituent extensions. The Mobile Core contains core SDK functionality required for all implementations that require Adobe and/or third-party extensions.
 2. Mobile Core and extensions are configured in Launch within a mobile property. When published, Launch hosts this property configuration and makes it for your SDK implementation.
 3. You get to decide what SDK extensions to add, configure, and ultimately include in your app project - giving you the flexibility to customize your implementations. Note, however, certain extensions depend on others for proper functioning - these are documented where applicable.
 4. We recommend easing your build process by leveraging dependency managers we support such as Gradle for Android and Cocoapods for iOS. Launch provides inline instructions and specs to help you with this process. 
