@@ -1,6 +1,6 @@
 # Adobe Experience Platform SDKs vs. 4x SDK
 
-Comparison tables of the differences between the new Experience Platform SDKs and the 4x SDK are provided for your convenience.
+The following tables provide information about the differences between the new Experience Platform SDKs and the 4x SDKs:
 
 ## Functionality support
 
