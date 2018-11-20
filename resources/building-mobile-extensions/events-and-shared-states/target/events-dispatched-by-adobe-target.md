@@ -1,4 +1,4 @@
-# Events Dispatched by Adobe Target
+# Events dispatched by Adobe Target
 
 
 

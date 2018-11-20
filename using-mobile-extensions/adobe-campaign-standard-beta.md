@@ -1,5 +1,9 @@
 # Adobe Campaign Standard \(Beta\)
 
+{% hint style="info" %}
+**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and Adobe Campaign Standard [mobile user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html). 
+{% endhint %}
+
 {% hint style="warning" %}
 This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see Campaign Standard's [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html) or contact your beta program manager.
 {% endhint %}
@@ -8,29 +12,29 @@ This extension is considered beta functionality and is available only in Launch'
 
 1. In Launch's Integration environment, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
-3. Provide extension settings \(see [Configure Analytics Extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#configure-analytics-extension)\)
+3. Provide extension settings \(see [Configure Campaign Standard Extension](adobe-campaign-standard-beta.md#configure-campaign-standard-extension)\).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration
 
 ### Configure Campaign Standard Extension
 
-![Adobe Campaign Standard Extension Configuration](../.gitbook/assets/screen-shot-2018-10-21-at-9.28.39-pm.png)
+![](../.gitbook/assets/campaign-extension-config.png)
 
 #### ACS Endpoints
 
 {% hint style="info" %}
-Trying to find your ACS endpoint URLs? Contact your beta program manager.
+Trying to find your ACS endpoint URLs? Contact your beta manager.
 {% endhint %}
 
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
 
 {% hint style="warning" %}
-For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://`.
+For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`
 {% endhint %}
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to connect your Launch mobile property with an Adobe Campaign Standard mobile app. When the connection is made, pKeys will be automatically generated, per Campaign Standard instance, and configured here for successful validation.
+A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
 
 {% hint style="info" %}
 Need help connecting your Launch mobile property with your Campaign Standard mobile app? See Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign) for more information.
@@ -39,18 +43,18 @@ Need help connecting your Launch mobile property with your Campaign Standard mob
 #### MCIAS Endpoint
 
 {% hint style="info" %}
-Trying to find your MCIAS endpoint URL? Contact your beta program manager.
+Trying to find your MCIAS endpoint URL? Contact your beta manager.
 {% endhint %}
 
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://`.
+For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, `https://mcias-va7.cloud.adobe.io/mcias/`.
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out.
+Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
 
 ## Add Campaign Standard to your app
 
@@ -64,12 +68,14 @@ This beta extension is currently available only for iOS development.
 This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead, as the instructions below indicate.
 {% endhint %}
 
+![](../.gitbook/assets/acs-beta-pods.png)
+
 Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCampaignBeta'
-pod 'ACPCoreBeta'
-pod 'ACPUserProfileBeta'
+pod 'ACPCoreBeta', '1.0.2beta'
+pod 'ACPCampaignBeta', '1.0.2beta'
+pod 'ACPUserProfileBeta', '1.0.1beta'
 ```
 
 or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
@@ -180,7 +186,7 @@ For more information about setting up tracking postbacks for push and in-app mes
 Deleting your property in Launch may cause disruption to any recurring push and in-app messaging activities.
 {% endhint %}
 
-If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by selecting the **Remove from ACS** button. See the [ACS user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application) for more information.
+If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by selecting the **Remove from ACS** button. See the [Campaign Standard user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application) for more information.
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.

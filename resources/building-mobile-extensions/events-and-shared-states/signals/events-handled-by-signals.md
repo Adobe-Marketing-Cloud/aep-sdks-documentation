@@ -1,4 +1,4 @@
-# Events Handled by Signals
+# Events handled by Signals
 
 
 

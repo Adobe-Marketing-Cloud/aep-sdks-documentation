@@ -1,4 +1,4 @@
-# Lifecycle API Reference
+# Lifecycle API reference
 
 Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics. 
 

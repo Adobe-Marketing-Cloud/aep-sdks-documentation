@@ -1,4 +1,4 @@
-# Initialize the SDK and Set up Tracking
+# Initialize the SDK and set up tracking
 
 ## Configure SDK with the Launch Environment ID
 
@@ -13,6 +13,19 @@ To find your Environment ID, navigate to Environments tab in Launch, and click o
 {% hint style="warning" %}
 _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**_
 {% endhint %}
+
+#### Ensure app permissions
+
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider and record offline tracking calls:
+
+To add these permissions, add the following lines to your AndroidManifest.xml file, which is located in the application project directory:
+
+```markup
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+#### Java
 
 1. Create MainActivity.java in the app.
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
@@ -98,7 +111,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ## Enable the Experience Cloud Identity service
 
-The Experience Cloud ID service provides a universal visitor ID across Experience Cloud solutions and is pre-requisite for most implementations. 
+The Experience Cloud ID service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations. 
 
 {% hint style="info" %}
 Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).

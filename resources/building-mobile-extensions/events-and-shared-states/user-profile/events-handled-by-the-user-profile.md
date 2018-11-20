@@ -1,4 +1,4 @@
-# Events Handled by the User Profile
+# Events handled by the User Profile
 
 
 

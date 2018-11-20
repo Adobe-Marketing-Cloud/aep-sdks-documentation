@@ -1,4 +1,4 @@
-# Events Dispatched by Adobe Analytics
+# Events dispatched by Adobe Analytics
 
 
 

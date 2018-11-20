@@ -1,4 +1,4 @@
-# Building the Launch Extension Interface
+# Building the Launch Extension interface
 
 ## Prerequisites
 

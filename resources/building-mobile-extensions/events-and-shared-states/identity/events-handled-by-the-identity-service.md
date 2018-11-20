@@ -1,4 +1,4 @@
-# Events Handled by the Identity Service
+# Events handled by the Identity Service
 
 
 

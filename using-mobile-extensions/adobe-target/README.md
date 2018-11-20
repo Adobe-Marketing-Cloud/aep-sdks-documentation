@@ -19,7 +19,7 @@ To get started with **Target**, follow these steps:
 2. On the Installed tab, locate the Adobe Target extension and click **Configure**.
 3. Provide your **Target** client code.
 4. Optionally, provide your Environment ID.
-5. Provide a timeout value.
+5. Set the timeout value to 5s or greater.
 6. Click **Save**.
 7. Follow the publishing process, to update SDK configuration
 

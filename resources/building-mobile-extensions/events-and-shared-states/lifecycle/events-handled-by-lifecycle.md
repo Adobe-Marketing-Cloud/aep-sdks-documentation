@@ -1,4 +1,4 @@
-# Events Handled by Lifecycle
+# Events handled by Lifecycle
 
 
 

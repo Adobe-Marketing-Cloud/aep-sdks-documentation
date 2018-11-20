@@ -1,4 +1,4 @@
-# Analytics Event Reference
+# Analytics event reference
 
 ## Internal Events for Adobe Analytics
 

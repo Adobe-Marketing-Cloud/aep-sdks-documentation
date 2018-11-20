@@ -1,4 +1,4 @@
-# Next Steps
+# Next steps
 
 Now that you've initialized the SDK and the **Mobile Core**, you can now start implementing **Extensions** that will help you use Adobe Experience Cloud or third-party vendor functionality in your apps.
 

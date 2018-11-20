@@ -1,4 +1,4 @@
-# Profiles Event Reference
+# Profiles event reference
 
 ## Events Handled
 

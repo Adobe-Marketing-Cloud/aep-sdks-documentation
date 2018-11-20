@@ -1,4 +1,4 @@
-# Target API Reference
+# Target API reference
 
 ## Get Custom Visitor IDs
 

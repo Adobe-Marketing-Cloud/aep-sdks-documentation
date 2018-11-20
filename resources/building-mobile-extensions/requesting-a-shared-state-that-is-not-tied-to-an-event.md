@@ -1,4 +1,4 @@
-# Requesting a Shared State that is Not Tied to an Event
+# Requesting a shared state that is not tied to an event
 
 Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) parameter to the `getSharedEventState` method. If no state is available, the SDK returns the latest available shared state or a null value.
 
@@ -6,13 +6,13 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 ## iOS
 
-```objectivec
+```text
 - (void) onUnregister {
-  NSString* configuration = [self.extension.api
-  getSharedEventState:@"com.adobe.module.configuration" event:nil];
-  if(configuration) {
-    NSLog(@"The configuration when onUnregister was called was \n:%@", configuration);
-  }
+    NSError* error = nil;
+    NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];
+    if (configurationSharedState) {
+        NSLog(@"The configuration when onUnregister was called was \n:%@", configurationSharedState);
+    }
 }
 ```
 

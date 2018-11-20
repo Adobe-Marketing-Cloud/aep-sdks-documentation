@@ -1,4 +1,4 @@
-# Requesting a Shared State
+# Requesting a shared state
 
 Extensions request shared states by using the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\) interface that is available in the `ACPExtension` \(iOS\) / `Extension` \(Android\) parent class. Extensions can request any of the publicly documented shared states, noting any prerequisites on timing. Generally, a shared state request occurs when an event listener, and the event that was heard, are passed when responding to an event listener callback. This ensures that the state you get back is synchronized with other events in flight at the same time. When your extension dispatches its own events or updates its shared data in response to an event, this synchronization is becomes extremely important.
 
@@ -6,12 +6,13 @@ The example below shows a typical scenario where shared state is requested. In t
 
 ### iOS
 
-```objectivec
-- (void) hear: (nonnull ACPExtensionEvent*) event {
-  NSString* configuration = [self.extension.api getSharedEventState:@"com.adobe.module.configuration" event:event];
-  if(configuration) {
-    NSLog(@"The configuration when event \"%@\" was sent was:\n%@", [event eventName], configuration);
-  }
+```text
+- (void) hear: (ACPExtensionEvent*) event {
+    NSError* error = nil;
+    NSDictionary* configurationSharedState = [[[self extension] api] getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
+    if (configurationSharedState) {
+        NSLog(@"The configuration when event \"%@\" was sent was:\n%@", event.eventName, configurationSharedState);
+    }
 }
 ```
 
@@ -45,7 +46,11 @@ See the configuration event data example here: [Sample JSON file](https://launch
 
 `com.adobe.module.identity`, which is available after receiving a shared state update event where `eventData["stateowner"]=com.adobe.module.identity`.
 
-`com.adobe.target`, which is available after receiving a shared state update event where `eventData["stateowner"]=com.adobe.module.target`.
+`com.adobe.module.target`, which is available after receiving a shared state update event where `eventData["stateowner"]=com.adobe.module.target`.
+
+**Note**: A shared state can be `nil` at some point in time, which means that it is in a pending state. If this case occurs, a new shared state update event will be sent when the shared state was updated with valid information.
+
+For example, while sending a network request and waiting for the server response, in order to notify other extensions that the operation is not complete, an extension will set a `nil` shared state and then update it when the server response is received.
 
 **Important**: Do not request and rely on any shared states that are not documented, because their implementation might change.
 
