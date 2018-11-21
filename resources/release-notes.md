@@ -4,6 +4,21 @@
 
 The Adobe Campaign Classic extension version 1.0.0 is now available!
 
+This extension enables the delivery and tracking of push notifications to mobile app users from Adobe Campaign Classic.
+
+{% hint style="info" %}
+This extension is only for Adobe Campaign Classic and will not work with Adobe Campaign Standard.
+{% endhint %}
+
+#### Key Features
+
+In this release, you can:
+
+* Send push tokens with information about the user and the device to Adobe Campaign Classic so that users can enable push messaging to mobile app users who opt in to notifications.
+* Send additional custom profile data to Adobe Campaign Classic, which allows personalized push notifications.
+* Track the receipt of push messages \(impressions\) in Android apps and silent notifications in iOS apps.
+* Track when users click on push notifications.
+
 ## November 16, 2018
 
 The following updates were made to the Mobile Core extension:
