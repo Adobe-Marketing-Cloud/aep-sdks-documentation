@@ -1,6 +1,6 @@
-# Upgrading to the Adobe Experience Platform SDKs
+# Upgrading to AEP SDK
 
-This page contains a checklist that you may consider as you decide to upgrade to the Experience Platform SDKs. 
+This page contains a checklist that you may consider as you decide to upgrade to the Experience Platform SDKs.
 
 {% hint style="danger" %}
 **The Experience Platform SDK contains breaking changes from the 4x SDK**. In addition to changed APIs, the new SDK includes new APIs as well as deprecation of APIs such as timed action and milestone media video tracking.
