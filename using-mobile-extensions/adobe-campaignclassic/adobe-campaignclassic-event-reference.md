@@ -62,12 +62,6 @@ The `trackNotificationClick` API parameters are also sent in the event, as descr
 
 The data property in this event is used by each extension to modify its current settings. Each extension is responsible for reading out the part of the data property for which it is concerned.
 
-This event will be generated in the following scenarios:
-
-* Initial configuration requested by the customer.
-* Configuration modified \(remote update or local developer action\).
-* In response to a configuration request event with the `config.getData` data key.
-
 For more information on the data payload definition in this event, see the [Configuration Keys](./README.md/#configuration-keys) section.
 
 #### Data Payload Definition <a id="data-payload-definition-2"></a>

@@ -22,9 +22,13 @@ Trying to find your ACC registration or tracking endpoint URLs? Contact your pro
 
 Provide registration endpoint URL\(s\) for your Campaign Classic instances. You can specify up to three unique endpoints for your development, staging, and production environments. 
 
+{% hint style="warning" %} For this extension, the registration endpoint URLs should be entered **without** a prefixing `https://.` {% endhint %}
+
 #### Tracking Endpoints
 
 Provide tracking endpoint URL\(s\) for your Campaign Classic instances. Like the registration URL's, you can specify up to three unique endpoints for your development, staging, and production environments. 
+
+{% hint style="warning" %} For this extension, the tracking endpoint URLs should be entered **without** a prefixing `https://.` {% endhint %}
 
 #### Integration Key (iOS)
 
@@ -36,17 +40,18 @@ Specify up to three unique Android integration keys for your development, stagin
 
 #### Request Timeout
 
-Time, in seconds, to wait for a response from the registration or tracking endpoint before timing out.
+Time, in seconds, to wait for a response from the registration or tracking endpoint before timing out. The SDK default timeout value is 30 seconds.
 
 ## Add Campaign Classic to your app
 
 {% tabs %}
 {% tab title="Android" %}
-Add the Campaign Classic extension to your project using the app's Gradle file.
 
 #### Java
 
-Import the CampaignClassic and Lifecycle extension in to your application's main activity.
+1. Add the Campaign Classic extension to your project using the app's Gradle file.
+
+2. Import the CampaignClassic and Lifecycle extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.CampaignClassic;
@@ -57,7 +62,7 @@ import com.adobe.marketing.mobile.Lifecycle;
 
 {% tab title="iOS" %}
 
-Add the Campaign Classic and [Mobile Core](../mobile-core/) libraries to your project. You'll need to add the following pods to your `Podfile`:
+1. Add the Campaign Classic and [Mobile Core](../mobile-core/) libraries to your project. You will need to add the following pods to your `Podfile`:
 
 ```text
 pod 'ACPCampaignClassic', '1.0.0'
@@ -65,9 +70,9 @@ pod 'ACPLifecycle', '1.0.0'
 pod 'ACPCore', '1.0.1'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) extensions found in Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
 
-In Xcode project, import the Mobile Core and Campaign Classic extensions:
+2. In Xcode project, import Mobile Core and Campaign Classic extensions:
 
 #### Objective-C
 
@@ -93,7 +98,7 @@ import ACPLifecycle_iOS
 
 {% tab title="Android" %}
 
-In the App's OnCreate method register the Campaign Classic and Lifecycle extensions:
+In your App's `OnCreate` method register the Campaign Classic and Lifecycle extensions:
 
 ```java
 public class CampaignClassicTestApp extends Application {
@@ -119,7 +124,8 @@ public class CampaignClassicTestApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extension:
+
+In your App's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
 
 #### Objective-C
 
