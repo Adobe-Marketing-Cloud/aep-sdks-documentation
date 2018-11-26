@@ -19,6 +19,10 @@ In this release, you can:
 * Track the receipt of push messages \(impressions\) in Android apps and silent notifications in iOS apps.
 * Track when users click on push notifications.
 
+Here is some additional information:
+
+This extension is an alternative to the stand-alone Campaign Classic SDK. It allows Experience Platform SDK users to enable push messaging from Campaign Classic without installing the Campaign Classic SDK separately.
+
 ## November 16, 2018
 
 The following updates were made to the Mobile Core extension:
