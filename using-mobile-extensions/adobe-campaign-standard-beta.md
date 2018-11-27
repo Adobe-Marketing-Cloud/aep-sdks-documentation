@@ -178,7 +178,7 @@ ACPCore.setPushIdentifier(deviceToken)
 
 ### Tracking for push and in-app messaging
 
-For more information about setting up tracking postbacks for push and in-app messaging, see the Campaign Standard [user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#setting-up-your-adobe-launch-application-in-adobe-campaign).
+For more information about setting up tracking postbacks for push and in-app messaging, see [Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#step-3--create-rules-for-in-app-tracking-postback) and [Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#step-4--create-rules-for-push-notifications-tracking-postback).
 
 ## Deleting mobile properties in Launch
 

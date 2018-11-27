@@ -46,7 +46,7 @@ Publish configuration In this step, you'll create library of changes and then de
 The configuration contained in the library will then be deployed to the Development environment and the library will show under the Submitted section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production Environments** using the rest of the publishing workflow. Please see Launch's [publishing states](https://docs.adobelaunch.com/publishing/approval-workflow#library-state)**.**
+Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production Environments** using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/publishing/approval-workflow#library-state)**.**
 {% endhint %}
 
 ## Watch the Video
