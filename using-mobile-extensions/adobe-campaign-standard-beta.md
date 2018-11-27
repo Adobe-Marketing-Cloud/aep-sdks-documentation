@@ -186,7 +186,7 @@ For more information about setting up tracking postbacks for push and in-app mes
 Deleting your property in Launch may cause disruption to any recurring push and in-app messaging activities.
 {% endhint %}
 
-If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by selecting the **Remove from ACS** button. For more information, see the [Campaign Standard user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application).
+If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by clicking the **Remove from ACS** button. For more information, see the [Campaign Standard user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html#deleting-your-adobe-launch-application).
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
