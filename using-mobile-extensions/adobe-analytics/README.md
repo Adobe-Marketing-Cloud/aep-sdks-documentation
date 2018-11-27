@@ -190,6 +190,78 @@ If you want to share the Analytics Data with Adobe Audience Manager, you can ena
 
 For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
 
+## Set Products Variable
+
+As _products_ variable cannot be set by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable - see [Implementing a Merchandising Variable](https://marketing.adobe.com/resources/help/en_US/sc/implement/var_merchandising_impl.html) for more detail on this variable.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+Analytics.trackAction("purchase", cdata);
+// trackState example:
+Analytics.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"Category;Product;Quantity;Price[,Category;Product;Quantity;Price]" forKey:@"&&products"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+[contextData setObject:@";Running Shoes;1;69.95,;Running Socks;10;29.99" forKey:@"&&products"];
+[contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
+[contextData setObject:@"1" forKey:@"m.purchase"];
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+[ADBMobile trackAction:@"purchase" data:contextData];
+// trackState example:
+[ADBMobile trackState:@"Order Confirmation" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
+![Example Network Request](../../.gitbook/assets/products-bloodhound.png)
+
+{% hint style="info" %}
+You do not need to map the products variable with processing rules as it will be set directly on the image request by the SDK.
+{% endhint %}
+
 ## Event Serialization
 
 As event serialization is not supported by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
