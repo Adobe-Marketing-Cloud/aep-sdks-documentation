@@ -137,10 +137,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
    ACPUserProfile.registerExtension();
   // Override point for customization after application launch.
   return true;
-
-ACPCore.configure(withAppId: "launch-ENde2ebe1a7fe947b6b99b273edeb752a7-development")
-        ACPCampaign.registerExtension()
-        ACPIdentity.registerExtension()
 }
 ```
 {% endtab %}
