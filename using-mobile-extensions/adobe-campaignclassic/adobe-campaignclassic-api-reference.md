@@ -6,11 +6,11 @@
 
 {% tabs %}
 {% tab title="Android" %}
-Follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client) to get your app ready to handle push notifications. After you receive the FCM SDK registration token, you need to send that token with the device information to Campaign Classic using the `registerDevice` API.
+To get your app ready to handle push notifications, follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the FCM SDK registration token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 
 ### registerDevice
 
-The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
+The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
 
 #### Java
 
@@ -50,11 +50,11 @@ public void onNewToken(String token) {
 {% endtab %}
 
 {% tab title="iOS" %}
-Follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications. Once you receive the APNS token, you will need to send that token with the device information to Campaign Classic using the registerDevice API.
+To get your app ready to handle push notifications, follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1). After you receive the APNS token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 
 ### registerDevice
 
-The registerDevice API will register a device with your Campaign Classic registration server. It takes the APNS token as a parameter alonng with a user key that identifies a user, such as an email address or login name. You may also provide a Map of custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback which signals whether the registration was successful.
+The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
 
 #### Objective-C
 
