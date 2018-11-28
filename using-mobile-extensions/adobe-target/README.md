@@ -23,6 +23,10 @@ To get started with **Target**, follow these steps:
 6. Click **Save**.
 7. Follow the publishing process, to update SDK configuration
 
+{% hint style="info" %}
+You can find your Target client code by going to the Setup tab and selecting Implementation on the left menu. Under Implementation Method, you can click "Edit at.js Settings" to pop-up a window that contains the client code.
+{% endhint %}
+
 ## Add Target to your app
 
 {% tabs %}
