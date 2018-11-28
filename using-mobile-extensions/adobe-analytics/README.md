@@ -220,9 +220,9 @@ cdata.put("myapp.purchaseid", "1234567890");
 
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
-Analytics.trackAction("purchase", cdata);
+MobileCore.trackAction("purchase", cdata);
 // trackState example:
-Analytics.trackState("Order Confirmation", cdata);
+MobileCore.trackState("Order Confirmation", cdata);
 ```
 {% endtab %}
 
@@ -249,9 +249,9 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
-[ADBMobile trackAction:@"purchase" data:contextData];
+[ACPCore trackAction:@"purchase" data:contextData];
 // trackState example:
-[ADBMobile trackState:@"Order Confirmation" data:contextData];
+[ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
 {% endtab %}
 {% endtabs %}
@@ -289,9 +289,9 @@ cdata.put("myapp.purchaseid", "1234567890");
  
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
-Analytics.trackAction("purchase", cdata);
+MobileCore.trackAction("purchase", cdata);
 // trackState example:
-Analytics.trackState("Order Confirmation", cdata);
+MobileCore.trackState("Order Confirmation", cdata);
 ```
 {% endtab %}
 
@@ -313,9 +313,9 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
  
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
-[ADBMobile trackAction:@"purchase" data:contextData];
+[ACPCore trackAction:@"purchase" data:contextData];
 // trackState example:
-[ADBMobile trackState:@"Order Confirmation" data:contextData];
+[ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
 {% endtab %}
 {% endtabs %}
