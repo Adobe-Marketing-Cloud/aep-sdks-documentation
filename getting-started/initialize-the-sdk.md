@@ -275,7 +275,9 @@ Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFini
 // Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
   [ACPLifecycle registerExtension];
-  [ACPCore lifecycleStart]; 
+  [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+    }];
   return YES; 
 }
 ```
