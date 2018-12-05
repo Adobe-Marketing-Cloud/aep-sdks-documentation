@@ -8,6 +8,12 @@ The following updates were made to all extensions:
 
 * All ACP frameworks now properly run on 32-bit devices.
 
+## November 30, 2018
+
+The following changes were made in iOS version 1.0.2:
+
+* Minor bug fixes
+
 ## November 20, 2018
 
 The Adobe Campaign Classic extension version 1.0.0 is now available!
