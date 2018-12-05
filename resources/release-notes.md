@@ -10,7 +10,7 @@ The following updates were made to all extensions:
 
 ## November 30, 2018
 
-The following changes were made in iOS version 1.0.2:
+The following changes were made to the Mobile Core extension in iOS version 1.0.2:
 
 * Minor bug fixes
 
