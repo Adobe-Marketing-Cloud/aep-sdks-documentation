@@ -1,5 +1,13 @@
 # Release notes
 
+## November 30, 2018
+
+The following updates were made to the Mobile Core extension:
+
+**iOS version 1.0.2**
+
+* Minor bug fixes.
+
 ## November 20, 2018
 
 The Adobe Campaign Classic extension version 1.0.0 is now available!
