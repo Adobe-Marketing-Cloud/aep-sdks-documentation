@@ -4,7 +4,7 @@
 
 The following updates were made to the Mobile Core extension in iOS version 1.1.1:
 
-* Fixed a bug where the `deviceToken` conversion was incorrect in some situations
+* Fixed a bug where the `deviceToken` conversion was incorrect in some situations.
 
 ## December 4, 2018
 
