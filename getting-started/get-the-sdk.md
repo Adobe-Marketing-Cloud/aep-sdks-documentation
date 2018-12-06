@@ -45,6 +45,10 @@ You should see a pop-up similar to the following:
 {% endtab %}
 {% endtabs %}
 
+### Watch the Video
+
+[https://youtu.be/K99NwR6Y08E](https://youtu.be/K99NwR6Y08E)
+
 ### Further Reading
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)

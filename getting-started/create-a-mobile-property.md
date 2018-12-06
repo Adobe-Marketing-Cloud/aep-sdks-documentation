@@ -51,7 +51,7 @@ Testing can be done using the configuration in the Development environment. Late
 
 ## Watch the Video
 
-{% embed url="https://youtu.be/xBWYFUKAoyo" %}
+{% embed url="https://youtu.be/xBWYFUKAoyo" caption="Video: Creating Mobile Properties in Experience Platform Launch" %}
 
 ## Further Reading
 
