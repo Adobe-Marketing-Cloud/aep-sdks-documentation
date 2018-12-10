@@ -47,7 +47,7 @@ You should see a pop-up similar to the following:
 
 ### Watch the Video
 
-[https://youtu.be/K99NwR6Y08E](https://youtu.be/K99NwR6Y08E)
+{% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
 ### Further Reading
 
