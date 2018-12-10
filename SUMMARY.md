@@ -58,7 +58,7 @@
   * [Monitoring shared states](resources/building-mobile-extensions/monitoring-shared-states.md)
   * [Clearing a shared state](resources/building-mobile-extensions/clearing-a-shared-state.md)
   * [Building the Launch Extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
-  * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
+  * [Interacting with rules](building-mobile-extensions/interacting-with-rules.md)
 * [Frequently asked questions](resources/frequently-asked-questions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [Release notes](resources/release-notes.md)
