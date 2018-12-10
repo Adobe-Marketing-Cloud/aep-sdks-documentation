@@ -2,11 +2,11 @@
 
 Rules are defined in the Launch interface and can include `data elements`, `events`, `conditions` and `actions` provided by extensions.
 
-## Publishing rules support to Launch
+## Publishing rules support for Launch
 
 Your extension should publish the rules support it provides to Launch. This is done via the `extension.json` file in your extensions base directory.
 
-### Publishing data elements supported
+### Publishing supported data elements
 
 Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).
 
@@ -25,7 +25,7 @@ Data elements can be supported by publishing the shared state keys that you want
     },
 ```
 
-### Publishing conditions supported
+### Publishing supported conditions
 
 Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).  
 
@@ -58,7 +58,7 @@ Here is an example:
     }],
 ```
 
-### Publishing actions supported
+### Publishing supported actions
 
 Conditions can be supported by publishing the events that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).  
 
