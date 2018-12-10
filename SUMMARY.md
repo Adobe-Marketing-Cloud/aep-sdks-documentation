@@ -46,7 +46,7 @@
   * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
-  * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
+  
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)
   * [Building an extension](resources/building-mobile-extensions/building-an-extension.md)
   * [Listening for events](resources/building-mobile-extensions/event-listeners.md)
@@ -58,6 +58,7 @@
   * [Monitoring shared states](resources/building-mobile-extensions/monitoring-shared-states.md)
   * [Clearing a shared state](resources/building-mobile-extensions/clearing-a-shared-state.md)
   * [Building the Launch Extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
+  * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
 * [Frequently asked questions](resources/frequently-asked-questions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [Release notes](resources/release-notes.md)
