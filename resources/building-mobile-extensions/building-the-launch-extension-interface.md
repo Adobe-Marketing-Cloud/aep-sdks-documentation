@@ -30,7 +30,7 @@ To build the Launch extension interface, complete the following steps:
 
    This step loads a simulated Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and so on.
 
-5. Run `npx @adobe/reactor-package`.
+5. Run `npx @adobe/reactor-packager`.
 
    This step creates a zip file of your finished Launch extension.
 
