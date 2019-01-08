@@ -19,7 +19,7 @@ Rules and their associated assets will be delivered as a standard ZIP archive, w
 
 ## File Delivery
 
-Delivery will happen by using a request from the Adobe Cloud Platform SDKs to a list of static endpoints that are defined as part of the SDK configuration. The SDK supports token expansions on this endpoint, which allows the injection of ECIDs and property IDs into the request.
+Delivery will happen by using a request from the Adobe Experience Platform SDKs to a list of static endpoints that are defined as part of the SDK configuration. The SDK supports token expansions on this endpoint, which allows the injection of ECIDs and property IDs into the request.
 
 This request is a conditional `GET` and occurs by default at the start of each new session.
 
@@ -112,7 +112,7 @@ To avoid collisions, special key prefixes always start with `~` to differentiate
 | ~type | ~type | Reads `eventType` from the triggering event. |
 | ~source | ~source | Reads `eventSource` from the triggering event. |
 | ~timestampu | ~timestampu | Reads the current device time in epoch format \(seconds since epoch\). |
-| ~sdkver | ~sdkver | Reads the current Adobe Cloud Platform SDKs version string. |
+| ~sdkver | ~sdkver | Reads the current Adobe Experience Platform SDKs version string. |
 | ~cachebust | ~cachebust | Generates a random number to be used for cache busting. |
 | ~all\_url | ~all\_url | Contains all data in the Event object and is encoded in the `url` format. |
 | ~all\_json | ~all\_json | Contains all data in the Event object that is encoded in the `json` format. |
@@ -386,7 +386,7 @@ Since the Rules Engine can support multiple end-point URLs from where to fetch r
 }
 ```
 
-The Adobe Cloud Platform SDKs process the URLs based on the order in which they are specified. Both endpoints are URLs that point to a zipped rules collection that contains a _rules.json_ file, an asset folder that contains images, and HTMLs that are used by the rules.
+The Adobe Experience Platform SDKs process the URLs based on the order in which they are specified. Both endpoints are URLs that point to a zipped rules collection that contains a _rules.json_ file, an asset folder that contains images, and HTMLs that are used by the rules.
 
 After downloading and extracting rules, the contents of this compressed file are stored in the cache. To trigger an update/download of the rules, see [Rules Engine Methods in Android](https://github.com/jiabingeng/sdk-v5-docs/tree/ece930399ffb1a7605b3aa13ed0e6633c8a8a481/rules-engine/rules-api-in-android.md) or [Rules Engine Methods in iOS](https://github.com/jiabingeng/sdk-v5-docs/tree/ece930399ffb1a7605b3aa13ed0e6633c8a8a481/rules-engine/rules-api-in-ios.md).
 

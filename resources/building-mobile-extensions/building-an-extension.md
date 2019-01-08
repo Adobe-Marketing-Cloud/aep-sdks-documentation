@@ -255,7 +255,7 @@ Some registration errors, such as undefined names, name conflicts, or type check
 
 {% endtabs %}
 
-#### **C. **Unregistering your Extension
+#### C. Unregistering your Extension
 
 If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
