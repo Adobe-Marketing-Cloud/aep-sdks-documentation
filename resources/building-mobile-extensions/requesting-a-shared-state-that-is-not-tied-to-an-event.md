@@ -4,17 +4,8 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 **Tip:** The caller must be careful to account for null values being passed back.
 
-## iOS
-
-```text
-- (void) onUnregister {
-    NSError* error = nil;
-    NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];
-    if (configurationSharedState) {
-        NSLog(@"The configuration when onUnregister was called was \n:%@", configurationSharedState);
-    }
-}
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ## Android
 
@@ -34,3 +25,21 @@ public void onUnregistered() {
 }
 ```
 
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+## iOS
+
+```text
+- (void) onUnregister {
+    NSError* error = nil;
+    NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];
+    if (configurationSharedState) {
+        NSLog(@"The configuration when onUnregister was called was \n:%@", configurationSharedState);
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}

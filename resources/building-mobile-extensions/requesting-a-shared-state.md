@@ -4,17 +4,8 @@ Extensions request shared states by using the `ACPExtensionApi` \(iOS\) / `Exten
 
 The example below shows a typical scenario where shared state is requested. In this scenario, a previously registered event listener is called, and the implementation gets the latest configuration shared state passing the current event as context.
 
-### iOS
-
-```text
-- (void) hear: (ACPExtensionEvent*) event {
-    NSError* error = nil;
-    NSDictionary* configurationSharedState = [[[self extension] api] getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
-    if (configurationSharedState) {
-        NSLog(@"The configuration when event \"%@\" was sent was:\n%@", event.eventName, configurationSharedState);
-    }
-}
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ### Android
 
@@ -33,6 +24,25 @@ public void hear(final Event event) {
     ...
 }
 ```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+### iOS
+
+```objective-c
+- (void) hear: (ACPExtensionEvent*) event {
+    NSError* error = nil;
+    NSDictionary* configurationSharedState = [[[self extension] api] getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
+    if (configurationSharedState) {
+        NSLog(@"The configuration when event \"%@\" was sent was:\n%@", event.eventName, configurationSharedState);
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
 
 ## Public Shared State Constants
 

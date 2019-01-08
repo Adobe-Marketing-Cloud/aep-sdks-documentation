@@ -2,24 +2,8 @@
 
 Extensions set a shared state by creating an event data that the extensions want to save and by calling `setSharedEventState` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\) interface that is available through the `ACPExtension` \(iOS\) / `Extension` \(Android\) parent class. Extensions can only set their own state, so the name that is used is the same as your extension \(for example, _com.exampleCompany.extension_\). This name is also the name that other extensions need to use when requesting your shared state.
 
-## iOS
-
-```text
-- (void) hear: (nonnull ACPExtensionEvent*) event {
-    // construct the data to be shared in a JSON format
-    NSDictionary* newEventData =
-    @{@"customData":@{
-              @"customElement":@{
-                      @"customInt":@125,
-                      @"customString":@"example"
-                      }
-              }};
-    NSError* error = nil;
-    if (![self.extension.api setSharedEventState:newEventData event:event error:&error] && error) {
-        NSLog(@"Error setting shared state %@:%ld", [error domain], [error code]);
-    }
-}
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ## Android
 
@@ -45,3 +29,28 @@ public void hear(final Event event) {
 }
 ```
 
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+## iOS
+
+```objective-c
+- (void) hear: (nonnull ACPExtensionEvent*) event {
+    // construct the data to be shared in a JSON format
+    NSDictionary* newEventData =
+    @{@"customData":@{
+              @"customElement":@{
+                      @"customInt":@125,
+                      @"customString":@"example"
+                      }
+              }};
+    NSError* error = nil;
+    if (![self.extension.api setSharedEventState:newEventData event:event error:&error] && error) {
+        NSLog(@"Error setting shared state %@:%ld", [error domain], [error code]);
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
