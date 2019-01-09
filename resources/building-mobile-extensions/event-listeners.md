@@ -123,7 +123,7 @@ public class MyExtension extends Extension {
 
 ### **iOS**
 
-1. In Xcode create a new file from the `Cocoa Touch Class` template and save it in your project.
+1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
 
    The `MyExtensionListener.m` file will contain your extension interface declaration and will import `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
@@ -191,7 +191,7 @@ The following example calls the listeners hear method when a change to the Adobe
 
 ### **Android**
 
-Event listeners in Android are registered using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. This example show registering the listener from your extension contructor.
+Event listeners in Android are registered using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. The following example shows how to register the listener from your extension constructor.
 
 ```java
 import com.adobe.marketing.mobile.Extension;
@@ -300,7 +300,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 ## Registering a Wildcard Listener
 
-If you need to listen for all the events received and broadcasted by the Event Hub, you can register a wildcard listener by using the `registerWildcardListener` API.
+To listen for all events that are received and broadcasted by the Event Hub, you can register a wildcard listener by using the `registerWildcardListener` API.
 
 {% hint style="warning" %}
 

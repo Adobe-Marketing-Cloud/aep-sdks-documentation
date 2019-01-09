@@ -79,7 +79,7 @@ if (error) {
 
 After creating your event, dispatch it by using the `ACPCore` \(iOS\) / `MobileCore` \(Android\) method `dispatchEvent`. A typical place to dispatch an event is in an event listener.
 
-In some cases, you may need to dispatch an event from one of your public APIs or application methods in order to trigger an internal flow in your own extension or in other Adobe extension.
+In some cases, you might need to dispatch an event from one of your public APIs or application methods to trigger an internal flow in your extension or another Adobe extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -139,7 +139,7 @@ public void loginButtonClicked() {
 
 If you need to use a request `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) as a trigger, and you have a callback to be called when the response paired event is sent, you can use the `dispatchEventWithResponseCallback` API from `ACPCore` \(iOS\) / `MobileCore` \(Android\). Then, the paired response event should be sent using the `dispatchResponseEvent` API.
 
-**Tip:** Paired events are usually used for set/get operations where you need to be notified about a response event outside of your extension code.
+**Tip:** Paired events are usually used for set/get operations where you need to be notified about a response event outside your extension code.
 
 Here is an example of how to implement this:
 
