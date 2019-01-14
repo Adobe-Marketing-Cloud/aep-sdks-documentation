@@ -1,4 +1,4 @@
-# Monitoring Shared States
+# Monitoring shared states
 
 To monitor changes to a shared state, register an event listener by using `registerListener` API. You will need to pass a `com.adobe.eventType.hub` event type and a `com.adobe.eventSource.sharedState` event source. This listener will now be called when the shared state changes for any extension. To check an extension’s or an internal module’s shared state, you must check the `stateowner` key in the event data.
 

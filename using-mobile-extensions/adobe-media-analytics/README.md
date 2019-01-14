@@ -48,9 +48,7 @@ Enables or Disables Media SDK logs.
 This should be disabled for your production application.
 {% endhint %}
 
-
-
-## Add Media Analytics to your app
+### Add Media Analytics to your app
 
 {% hint style="info" %}
 This extension requires [Adobe Analytics Extension](../adobe-analytics/README.md) extension. You must also add the analytics extension to your launch property and configure them.

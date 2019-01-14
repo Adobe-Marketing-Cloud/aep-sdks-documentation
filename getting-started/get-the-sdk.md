@@ -45,6 +45,10 @@ You should see a pop-up similar to the following:
 {% endtab %}
 {% endtabs %}
 
+### Watch the Video
+
+{% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
+
 ### Further Reading
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)

@@ -1,25 +1,25 @@
 # AEP vs. 4x SDK
 
-Comparison tables of the differences between the new Adobe Experience Platform and 4x SDK are provided for your convenience.
+The following tables provide information about the differences between the new Experience Platform SDKs and the 4x SDKs:
 
 ## Functionality support
 
 ### Core functionality
 
-| Functionality | Version 4 SDK | Experience Platform SDK |
+| Functionality | Version 4 SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
-| Modular SDK, Adobe & 3rd-party extensions | No | Yes |
+| Modular SDK, Adobe and third-party extensions | No | Yes |
 | Server-side configuration | No | Yes |
 | Programmatic configuration | No | Yes |
 | Bundled configuration | Yes | Yes |
 | Configuration management in Launch | No | Yes |
 | Lifecycle metrics | Yes | Yes |
 | Experience Cloud ID service | Yes | Yes |
-| Privacy & GDPR framework | Yes | Yes |
+| Privacy and GDPR framework | Yes | Yes |
 
 ### Adobe Analytics
 
-| Functionality | Version 4 SDK | Experience Platform SDK |
+| Functionality | Version 4 SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | App screens & user actions tracking | Yes | Yes |
 | Offline tracking | Yes | Yes |
@@ -41,25 +41,25 @@ Comparison tables of the differences between the new Adobe Experience Platform a
 | Push Messaging | Yes | Support coming |
 | In-app Messaging | Yes | Support coming |
 | Marketing/Acquisition Links | Yes | Support coming |
-| Geo location & beacon tracking | Yes | Support coming |
+| Geo location and beacon tracking | Yes | Support coming |
 | Geo points-of-interest management | Yes | Support coming |
 
 ### Adobe Audience Manager
 
-| Functionality | 4x SDK | Experience Platform SDK |
+| Functionality | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | Send signals to Audience Manager | Yes | Yes |
-| Reset identifiers & profiles | Yes | Yes |
+| Reset identifiers and profiles | Yes | Yes |
 | Return visitor profiles | Yes | Yes |
 | DPID/DPUUID synching | Yes | No |
 
 {% hint style="warning" %}
-While synching with integration codes are fully supported, Experience Cloud SDK does not offer synch support with integration codes. The use of DPID/DPUUID are not supported.
+Although synching with integration codes is fully supported, the Experience Cloud SDKs do not offer synch support with integration codes. The use of DPID/DPUUID are not supported.
 {% endhint %}
 
 ### Adobe Target
 
-| Functionality | 4x SDK | Experience Platform SDK |
+| Functionality | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | A/B, Multivariate Testing, Offers | Yes | Yes |
 | Offer pre-fetch | Yes | Yes |
@@ -68,14 +68,14 @@ While synching with integration codes are fully supported, Experience Cloud SDK 
 
 ## OS/platform support
 
-| Platform | 4x SDK | Experience Platform SDK |
+| Platform | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | Android | Supported | Supported |
 | Android Wear​ | Supported | _Support coming_ |
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | Supported |
 | Apple tvOS​ | Supported | Supported |
-| React Native \(iOS & Android\) | Unsupported | Supported |
+| React Native \(iOS & Android\) | Unsupported | _Support coming_ |
 | Unity \(iOS & Android\)​ | Supported | _Support coming_ |
 | Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
 | PhoneGap \(iOS & Android\)​ | Supported | _Support coming_ |

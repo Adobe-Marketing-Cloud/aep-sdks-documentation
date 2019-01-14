@@ -1,4 +1,4 @@
-# Updating a Shared State that is Not Tied to an Event
+# Updating a shared state that is not tied to an event
 
 Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) parameter to the `setSharedEventState` method. The Adobe Cloud Platform SDKs will set the state to be the latest available state for this extension. This process ensures that new events will see this state, but events that are already in flight will have access to the older state if necessary.
 

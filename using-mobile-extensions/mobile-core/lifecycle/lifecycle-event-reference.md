@@ -1,4 +1,4 @@
-# Lifecycle Event Reference
+# Lifecycle event reference
 
 ## Events Handled by Lifecycle
 

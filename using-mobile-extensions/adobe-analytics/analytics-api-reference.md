@@ -1,4 +1,4 @@
-# Analytics API Reference
+# Analytics API reference
 
 ## Get the Tracking Identifier <a id="gettrackingidentifier"></a>
 
@@ -55,8 +55,10 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-ACPAnalytics.getTrackingIdentifier({trackingIdentifier in    
-// use returned tracking id}
+ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
+            //use returned tracking id
+            print(trackingIdentifier!)
+        }
 ```
 {% endtab %}
 {% endtabs %}

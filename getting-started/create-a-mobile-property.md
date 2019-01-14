@@ -1,4 +1,4 @@
-# Set Up a Mobile Property
+# Set up a mobile property
 
 To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps: 
 
@@ -21,7 +21,7 @@ Having trouble creating a mobile property or need access to Launch? See [Launch 
 
       ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm%20%282%29.png)
 
-      1. Provide your Experience Cloud Org ID. This is a required identifier for your Experience Cloud Organization. This is typically, a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
+      1. Provide your Experience Cloud Org ID. \(by default this value is auto-populated  using the currently signed-in Organization ID\). This is a required identifier for your Experience Cloud Organization. This is typically, a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
       2. Optionally, provide your Experience Cloud ID Server. This is an optional server value which will be used to send Visitor ID Service network requests to a custom endpoint.
       3. Optionally, change the **Session Timeout** value. A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before we consider an launch a new Lifecycle session.
 
@@ -46,12 +46,12 @@ Publish configuration In this step, you'll create library of changes and then de
 The configuration contained in the library will then be deployed to the Development environment and the library will show under the Submitted section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production Environments** using the rest of the publishing workflow. Please see Launch's [publishing states](https://docs.adobelaunch.com/publishing/approval-workflow#library-state)**.**
+Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production Environments** using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/publishing/approval-workflow#library-state)**.**
 {% endhint %}
 
 ## Watch the Video
 
-{% embed url="https://youtu.be/xBWYFUKAoyo" %}
+{% embed url="https://youtu.be/xBWYFUKAoyo" caption="Video: Creating Mobile Properties in Experience Platform Launch" %}
 
 ## Further Reading
 

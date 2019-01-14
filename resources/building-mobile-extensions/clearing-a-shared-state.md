@@ -1,4 +1,4 @@
-# Clearing a Shared State
+# Clearing a shared state
 
 Shared states will persist for the life of the application context, which results in the following potential concerns:
 
