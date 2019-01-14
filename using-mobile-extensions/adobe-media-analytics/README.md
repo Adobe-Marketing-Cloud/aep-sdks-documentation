@@ -18,15 +18,11 @@
 This is different from your Analytics tracking server.
 {% endhint %}
 
-Provide the tracking domain to which all Media heartbeat requests should be made.
+Provide the tracking server to which all media tracking data should be sent.
 
 #### **Channel**
 
 Channel name property.
-
-{% hint style="tip" %}
-In analytics dashboard you can group metrics for all media views that occur within any channel.
-{% endhint %}
 
 #### **Online Video Provider**
 
@@ -34,11 +30,11 @@ Name of the online platform through which content gets distributed.
 
 #### **Player Name**
 
-Name of the media player in use (e.g., "AVPlayer", "Native Player", "Custom Player")
+Name of the media player in use (e.g., "AVPlayer", "Native Player", "Custom Player").
 
 #### **Application Version**
 
-The version of the media player app/SDK.
+The version of the media player application/SDK.
 
 #### **Debug Logging**
 
@@ -51,12 +47,12 @@ This should be disabled for your production application.
 ### Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires [Adobe Analytics Extension](../adobe-analytics/README.md) extension. You must also add the analytics extension to your launch property and configure them.
+This extension requires [Adobe Analytics Extension](../adobe-analytics/README.md) extension to function properly. You should add and correctly configure the analytics extension to your launch property.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-Add the Analytics extension to your project using the app's Gradle file.
+Add the Media extension to your project using the app's Gradle file.
 
 #### Java
 
@@ -104,13 +100,11 @@ public class MobileApp extends Application {
       MobileCore.setApplication(this);
 
       try {
-          //Register Media with Mobile Core
-          Media.registerExtension();
-          //Register Dependent extensions
+          Media.registerExtension();  //Register Media with Mobile Core
           Analytics.registerExtension();
           Identity.registerExtension();
       } catch (Exception e) {
-          //Log the exception
+
       }
   }
 }
@@ -125,13 +119,9 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //Register Media with Mobile Core
-    [ACPMedia registerExtension];
-    //Register Dependent extensions
+    [ACPMedia registerExtension];  //Register Media with Mobile Core
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
-
-    //Override point for customization after application launch.
     return YES;
   }
 ```
@@ -140,13 +130,9 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    //Register Media with Mobile Core
-    ACPMedia.registerExtension();
-    //Register Dependent extensions
+    ACPMedia.registerExtension();  //Register Media with Mobile Core
     ACPAnalytics.registerExtension();
     ACPIdentity.registerExtension();
-
-    //Override point for customization after application launch. 
     return true;
 }
 ```
@@ -156,52 +142,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Media configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">media.trackingServer</td>
-      <td style="text-align:left">Yes</td>
-      <td style="text-align:left">See <a href="./#tracking-server">Tracking Server</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">media.channel</td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#channel">Channel</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">media.ovp</td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#online-video-provider">Online Video Provider</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">media.playerName</td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#player-name">Player Name</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">media.appVersion</td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#application-version">Application Version</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">media.debugLogging</td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#debug-logging">Debug Logging</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Key                  | Required | Description                                           |
+|----------------------|----------|-------------------------------------------------------|
+| media.trackingServer |    Yes   | [See Tracking Server](./#tracking-server)             |
+| media.channel        |    No    | [See Channel](./#channel)                             |
+| media.ovp            |    No    | [See Online Video Provider](./#online-video-provider) |
+| media.playerName     |    No    | [See Player Name](./#player-name)                     |
+| media.appVersion     |    No    | [See Application Version](./#application-version)     |
+| media.debugLogging   |    No    | [See Debug Logging](./#debug-logging)                 |
