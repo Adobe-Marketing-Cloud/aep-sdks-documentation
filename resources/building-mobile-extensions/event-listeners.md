@@ -126,7 +126,7 @@ public class MyExtension extends Extension {
 1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
 
-   The `MyExtensionListener.m` file will contain your extension interface declaration and will import `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
+   The `MyExtensionListener.m` file contains your extension interface declaration and imports `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
 
 **MyExtensionListener.h**
 
@@ -178,7 +178,7 @@ public class MyExtension extends Extension {
 
 ### What can you do in your event handler?
 
-Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This will allow you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore`\(iOS\) or `MobileCore` \(Android\). This will allow you to dispatch events and receive responses.
+Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This will allow you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore`\(iOS\) or `MobileCore` \(Android\). This reference will allow you to dispatch events and receive responses.
 
 ## Registering your event listener
 

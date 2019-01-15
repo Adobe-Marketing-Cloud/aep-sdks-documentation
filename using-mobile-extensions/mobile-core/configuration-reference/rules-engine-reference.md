@@ -19,9 +19,9 @@ Rules and their associated assets will be delivered as a standard ZIP archive, w
 
 ## File Delivery
 
-Delivery will happen by using a request from the Adobe Experience Platform SDKs to a list of static endpoints that are defined as part of the SDK configuration. The SDK supports token expansions on this endpoint, which allows the injection of ECIDs and property IDs into the request.
+File delivery occurs by using a request from the Adobe Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The SDKs support token expansions on this endpoint, which allows the injection of ECIDs and property IDs into the request.
 
-This request is a conditional `GET` and occurs by default at the start of each new session.
+This request is a conditional `GET` and occurs by default at the start of each new application session.
 
 ### rules.json format
 
@@ -89,7 +89,7 @@ A Group-type condition contains an array of conditions, which makes the conditio
 | :--- | :--- | :--- |
 | Equals | eq | string, number |
 | Not Equals | ne | string, number |
-| Exists | eq | string, number |
+| Exists | ex | no value required |
 | Not Exists | ne | string, number |
 | Greater Than | gt | number |
 | Greater Than or Equals | ge | number |
