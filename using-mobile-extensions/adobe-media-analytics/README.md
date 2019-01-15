@@ -4,7 +4,7 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension and click **Install**.
-3. Provide extension settings \(see [Configure Media Analytics Extension](./#configure-media-analytics-extension)\)
+3. Provide extension settings \(see [Configure Media Analytics Extension](#configure-media-analytics-extension)\)
 4. Click **Save**.
 5. Follow the publishing process, to update SDK configuration
 
@@ -146,9 +146,9 @@ If you need to update SDK configuration, programmatically, please use the follow
 
 | Key                  | Required | Description                                           |
 |----------------------|----------|-------------------------------------------------------|
-| media.trackingServer |    Yes   | [See Tracking Server](./#tracking-server)             |
-| media.channel        |    No    | [See Channel](./#channel)                             |
-| media.ovp            |    No    | [See Online Video Provider](./#online-video-provider) |
-| media.playerName     |    No    | [See Player Name](./#player-name)                     |
-| media.appVersion     |    No    | [See Application Version](./#application-version)     |
-| media.debugLogging   |    No    | [See Debug Logging](./#debug-logging)                 |
+| media.trackingServer |    Yes   | [See Tracking Server](#tracking-server)             |
+| media.channel        |    No    | [See Channel](#channel)                             |
+| media.ovp            |    No    | [See Online Video Provider](#online-video-provider) |
+| media.playerName     |    No    | [See Player Name](#player-name)                     |
+| media.appVersion     |    No    | [See Application Version](#application-version)     |
+| media.debugLogging   |    No    | [See Debug Logging](#debug-logging)                 |

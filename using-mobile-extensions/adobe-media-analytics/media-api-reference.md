@@ -72,8 +72,8 @@ Create an instance of Media object.
 | name          | Media name                    | Yes      |
 | mediaId       | Media unique identifier       | Yes      |
 | length        | Media length                  | Yes      |
-| streamType    | [Stream type](./#stream-type) | Yes      |
-| mediaType     | [Media type](./#media-type)   | Yes      |
+| streamType    | [Stream type](#stream-type) | Yes      |
+| mediaType     | [Media type](#media-type)   | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -658,6 +658,214 @@ TBD
 {% endtab %}
 {% endtabs %}
 
+## trackError
+
+TBD
+
+{% tabs %}
+{% tab title="Android" %}
+### trackError
+
+#### Syntax
+
+```java
+public void trackError(String errorId);
+```
+
+#### Example
+
+```java 
+_tracker.trackError("errorId");
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### trackError
+
+#### Syntax
+
+```objectivec
+- (void) trackError: (NSString* _Nonnull) errorId;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[_tracker trackError:@"errorId"];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+{% endtab %}
+{% endtabs %}
+
+## trackEvent
+
+TBD
+
+{% tabs %}
+{% tab title="Android" %}
+### trackEvent
+
+#### Syntax
+
+```java
+  public void trackEvent(Media.Event event, Map<String, Object> info, Map<String, String> contextData) {
+```
+
+#### Example
+
+```java
+_tracker.trackEvent(Media.Event.BufferStart, null, null);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### trackEvent
+
+#### Syntax
+
+```objectivec
+  - (void) trackEvent: (ACPMediaEvent) event info: (NSDictionary* _Nullable) info data:
+    (NSDictionary* _Nullable) data;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+{% endtab %}
+{% endtabs %}
+
+## updateCurrentPlayhead
+
+Method to update current playhead.
+
+
+| Variable Name | Description|
+|---------------|------------|
+| time          | Current position of the playhead. For VOD, value is specified in seconds from the beginning of the media item. For live streaming, return playhead position if available or the current UTC time in seconds otherwise. |
+
+{% tabs %}
+{% tab title="Android" %}
+### updateCurrentPlayhead
+
+#### Syntax
+
+```java
+public void updateCurrentPlayhead(double time);
+```
+
+#### Example
+
+```java 
+_tracker.updateCurrentPlayhead(1);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### updateCurrentPlayhead
+
+#### Syntax
+
+```objectivec
+- (void) updateCurrentPlayhead: (double) time;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[_tracker updateCurrentPlayhead: 1];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+{% endtab %}
+{% endtabs %}
+
+## updateQoEObject
+
+Method to update current QoS information.
+
+
+| Variable Name | Description|
+|---------------|------------|
+| qoeObject     | Map instance containing current QoS information. This method can be called multiple times during a playback session. Player implementation must always return the most recently available QoS data. |
+
+{% tabs %}
+{% tab title="Android" %}
+### updateQoEObject
+
+#### Syntax
+
+```java
+public void updateQoEObject(Map<String, Object> qoeObject);
+```
+
+#### Example
+
+```java 
+TBD
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### updateQoEObject
+
+#### Syntax
+
+```objectivec
+- (void) updateQoEObject: (NSDictionary* _Nonnull) qoeObject;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+TBD
+```
+
+**Swift**
+
+```swift
+TBD
+```
+{% endtab %}
+{% endtabs %}
+
+
 # Media Constants
 
 ## Media Type
@@ -925,6 +1133,154 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyPlacementId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeySiteId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
+
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Media Events
+
+This defines the type of a tracking event.
+
+{% tabs %}
+{% tab title="Android" %}
+```java 
+
+  /**
+  * These enumeration values define the type of a tracking event
+  */
+  
+  public enum Event {
+    /**
+     * Constant defining event type for AdBreak start
+     */
+    AdBreakStart,
+
+    /**
+     * Constant defining event type for AdBreak complete
+     */
+    AdBreakComplete,
+
+    /**
+     * Constant defining event type for Ad start
+     */
+    AdStart,
+
+    /**
+     * Constant defining event type for Ad complete
+     */
+    AdComplete,
+
+    /**
+     * Constant defining event type for Ad skip
+     */
+    AdSkip,
+
+    /**
+     * Constant defining event type for Chapter start
+     */
+    ChapterStart,
+
+    /**
+     * Constant defining event type for Chapter complete
+     */
+    ChapterComplete,
+
+    /**
+     * Constant defining event type for Chapter skip
+     */
+    ChapterSkip,
+
+    /**
+     * Constant defining event type for Seek start
+     */
+    SeekStart,
+
+    /**
+     * Constant defining event type for Seek complete
+     */
+    SeekComplete,
+
+    /**
+     * Constant defining event type for Buffer start
+     */
+    BufferStart,
+
+    /**
+     * Constant defining event type for Buffer complete
+     */
+    BufferComplete,
+
+    /**
+     * Constant defining event type for change in Bitrate
+     */
+    BitrateChange,
+  }
+
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```objectivec
+
+/**
+ * These enumeration values define the type of a tracking event
+ */
+typedef NS_ENUM(NSInteger, ACPMediaEvent) {
+    /**
+     * Constant defining event type for AdBreak start
+     */
+    ACPMediaEventAdBreakStart,
+    /**
+     * Constant defining event type for AdBreak complete
+     */
+    ACPMediaEventAdBreakComplete,
+    /**
+     * Constant defining event type for Ad start
+     */
+    ACPMediaEventAdStart,
+    /**
+     * Constant defining event type for Ad complete
+     */
+    ACPMediaEventAdComplete,
+    /**
+     * Constant defining event type for Ad skip
+     */
+    ACPMediaEventAdSkip,
+    /**
+     * Constant defining event type for Chapter start
+     */
+    ACPMediaEventChapterStart,
+    /**
+     * Constant defining event type for Chapter complete
+     */
+    ACPMediaEventChapterComplete,
+    /**
+     * Constant defining event type for Chapter skip
+     */
+    ACPMediaEventChapterSkip,
+    /**
+     * Constant defining event type for Seek start
+     */
+    ACPMediaEventSeekStart,
+    /**
+     * Constant defining event type for Seek complete
+     */
+    ACPMediaEventSeekComplete,
+    /**
+     * Constant defining event type for Buffer start
+     */
+    ACPMediaEventBufferStart,
+    /**
+     * Constant defining event type for Buffer complete
+     */
+    ACPMediaEventBufferComplete,
+    /**
+     * Constant defining event type for change in Bitrate
+     */
+    ACPMediaEventBitrateChange,
+};
 
 ```
 
