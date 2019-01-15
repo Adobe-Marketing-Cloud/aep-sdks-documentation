@@ -4,32 +4,8 @@ To monitor changes to a shared state, register an event listener by using `regis
 
 In the example below, you can find the listener that is being registered in the extension’s `init` method and the listener implementation where the shared state check is happening. The extension is checking for changes to the `com.adobe.module.configuration` shared state.
 
-## iOS
-
-### **MyExtension.m**
-
-```text
-- (instancetype) init {
-    NSError* error = nil;
-    if ([self.api registerListener: [MyExtensionListener class] eventType:@"com.adobe.eventType.hub" eventSource:@"com.adobe.eventSource.sharedState" error:&error]) {  
-        NSLog(@"MyExtensionListener was registered");
-   } else if (error) {  
-           NSLog(@"An error occured while registering MyExtensionListener: %ld", [error code]);
-    }
-}
-```
-
-### MyExtensionListener.m
-
-```text
-- (void) hear:(ACPExtensionEvent *)event {
-    NSDictionary* eventDataDict = event.eventData;
-    NSString* stateowner = [eventDataDict objectForKey:@"stateowner"];
-    if (stateowner && [stateowner isEqualToString:@"com.adobe.module.configuration"]) {  
-        // do something with the updated configuration information
-      }
-}
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ## Android
 
@@ -66,3 +42,36 @@ public void hear(final Event event) {
 }
 ```
 
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+## iOS
+
+### **MyExtension.m**
+
+```objective-c
+- (instancetype) init {
+    NSError* error = nil;
+    if ([self.api registerListener: [MyExtensionListener class] eventType:@"com.adobe.eventType.hub" eventSource:@"com.adobe.eventSource.sharedState" error:&error]) {  
+        NSLog(@"MyExtensionListener was registered");
+   } else if (error) {  
+           NSLog(@"An error occured while registering MyExtensionListener: %ld", [error code]);
+    }
+}
+```
+
+### MyExtensionListener.m
+
+```objective-c
+- (void) hear:(ACPExtensionEvent *)event {
+    NSDictionary* eventDataDict = event.eventData;
+    NSString* stateowner = [eventDataDict objectForKey:@"stateowner"];
+    if (stateowner && [stateowner isEqualToString:@"com.adobe.module.configuration"]) {  
+        // do something with the updated configuration information
+      }
+}
+```
+
+{% endtab %}
+{% endtabs %}

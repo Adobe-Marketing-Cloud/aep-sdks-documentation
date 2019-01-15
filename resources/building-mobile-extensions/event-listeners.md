@@ -14,57 +14,8 @@ Here are some additional rules to remember for event listeners:
 
 ## Creating your event listener
 
-### **iOS**
-
-1. In Xcode create a new file from the `Cocoa Touch Class` template and save it in your project.
-2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
-
-   The `MyExtensionListener.m` file will contain your extension interface declaration and will import `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
-
-**MyExtensionListener.h**
-
-```text
-#import <ACPCore_iOS/ACPExtensionListener.h>
-#import <ACPCore_iOS/ACPExtensionEvent.h>
-
-@interface MyExtensionListener : ACPExtensionListener
-    - (void) hear:(ACPExtensionEvent *)event;
-@end
-```
-
-1. At a minimum, you must provide an implementation for the hear method.  
-
-**MyExtensionListener.m**
-
-```text
-#import "MyExtensionListener.h"
-#import "MyExtension.h"
-
-@implementation MyExtensionListener 
-    - (void) hear:(ACPExtensionEvent *)event {
-        MyExtension* parentExtension = [self getParentExtension];
-        if (parentExtension == nil) {
-            NSLog(@"The parent extension was nil, skipping event");
-            return;
-        }
-
-        [parentExtension handleEvent:event];
-}
-
-/**
- * Returns the parent extension that owns this listener
- */
-- (MyExtension*) getParentExtension {
-    MyExtension* parentExtension = nil;
-    if ([[self extension] isKindOfClass:MyExtension.class]) {
-        parentExtension = (MyExtension*) [self extension];
-    }
-
-    return parentExtension;
-}
-
-@end
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ### **Android**
 
@@ -166,15 +117,121 @@ public class MyExtension extends Extension {
 }
 ```
 
-## What can you do in your event handler?
+{% endtab %}
 
-Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This will allow you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore`\(iOS\) or `MobileCore` \(Android\). This will allow you to dispatch events and receive responses.
+{% tab title="Objective-C" %}
+
+### **iOS**
+
+1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
+2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
+
+   The `MyExtensionListener.m` file contains your extension interface declaration and imports `ACPExtensionListener.h`. In the example below, the methods that are available for overriding are also displayed:
+
+**MyExtensionListener.h**
+
+```objective-c
+#import <ACPCore_iOS/ACPExtensionListener.h>
+#import <ACPCore_iOS/ACPExtensionEvent.h>
+
+@interface MyExtensionListener : ACPExtensionListener
+    - (void) hear:(ACPExtensionEvent *)event;
+@end
+```
+
+1. At a minimum, you must provide an implementation for the hear method.  
+
+**MyExtensionListener.m**
+
+```objective-c
+#import "MyExtensionListener.h"
+#import "MyExtension.h"
+
+@implementation MyExtensionListener 
+    - (void) hear:(ACPExtensionEvent *)event {
+        MyExtension* parentExtension = [self getParentExtension];
+        if (parentExtension == nil) {
+            NSLog(@"The parent extension was nil, skipping event");
+            return;
+        }
+
+        [parentExtension handleEvent:event];
+}
+
+/**
+ * Returns the parent extension that owns this listener
+ */
+- (MyExtension*) getParentExtension {
+    MyExtension* parentExtension = nil;
+    if ([[self extension] isKindOfClass:MyExtension.class]) {
+        parentExtension = (MyExtension*) [self extension];
+    }
+
+    return parentExtension;
+}
+
+@end
+```
+
+{% endtab %}
+{% endtabs %}
+
+### What can you do in your event handler?
+
+Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This will allow you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore`\(iOS\) or `MobileCore` \(Android\). This reference will allow you to dispatch events and receive responses.
 
 ## Registering your event listener
 
 You can register your listener class by using the init method as in the example below. In the `hear` method, you can access the registered extensions instance by using the extension property. This step can be useful to maintain state in your extension or when you need to access to the `ACPExtensionApi` interface that the extension can also access.
 
 The following example calls the listeners hear method when a change to the Adobe Experience Platform SDKs configuration occurs.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### **Android**
+
+Event listeners in Android are registered using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. The following example shows how to register the listener from your extension constructor.
+
+```java
+import com.adobe.marketing.mobile.Extension;
+import com.adobe.marketing.mobile.ExtensionApi;
+
+public class MyExtension extends Extension {
+
+    public MyExtension(final ExtensionApi moduleApi) {
+        super(moduleApi);
+
+        ExtensionErrorCallback<ExtensionError> errorCallback = new ExtensionErrorCallback<ExtensionError>() {
+            @Override
+            public void error(final ExtensionError extensionError) {
+                // something went wrong, the listener couldn't be registered
+            }
+        };
+        getApi().registerEventListener("com.adobe.eventType.hub",
+                "com.adobe.eventSource.sharedState", MyListener.class, errorCallback);
+    }
+
+    @Override
+    public final String getName() {
+        return "my.company";
+    }
+
+    @Override
+    public final String getVersion() {
+        return "1.0.0";
+    }
+
+    @Override
+    public final void onUnregistered() {
+        // extension unregistered successfully - perform cleanup
+    }
+}
+```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
 
 ### **iOS**
 
@@ -195,7 +252,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.m**
 
-```text
+```objective-c
 #import "MyExtension.h"
 #import "MyExtensionListener.h"
 
@@ -238,74 +295,21 @@ In iOS the event listeners are registered using the `registerListener` method of
 @end
 ```
 
-### **Android**
-
-Event listeners in Android are registered using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. This example show registering the listener from your extension contructor.
-
-```java
-import com.adobe.marketing.mobile.Extension;
-import com.adobe.marketing.mobile.ExtensionApi;
-
-public class MyExtension extends Extension {
-
-    public MyExtension(final ExtensionApi moduleApi) {
-        super(moduleApi);
-
-        ExtensionErrorCallback<ExtensionError> errorCallback = new ExtensionErrorCallback<ExtensionError>() {
-            @Override
-            public void error(final ExtensionError extensionError) {
-                // something went wrong, the listener couldn't be registered
-            }
-        };
-        getApi().registerEventListener("com.adobe.eventType.hub",
-                "com.adobe.eventSource.sharedState", MyListener.class, errorCallback);
-    }
-
-    @Override
-    public final String getName() {
-        return "my.company";
-    }
-
-    @Override
-    public final String getVersion() {
-        return "1.0.0";
-    }
-
-    @Override
-    public final void onUnregistered() {
-        // extension unregistered successfully - perform cleanup
-    }
-}
-```
+{% endtab %}
+{% endtabs %}
 
 ## Registering a Wildcard Listener
 
-If you need to listen for all the events received and broadcasted by the Event Hub, you can register a wildcard listener by using the `registerWildcardListener` API.
+To listen for all events that are received and broadcasted by the Event Hub, you can register a wildcard listener by using the `registerWildcardListener` API.
+
+{% hint style="warning" %}
 
 **Important**: The `hear` method of this listener can be called often, and you should not do intensive processing on the same thread. We strongly recommended that you use your own thread executor for any processing that you do in this listener. This way, the Event Hub is not blocked, and the listener is not unregistered if it takes too long.
 
-### **iOS**
+{% endhint %}
 
-```text
-#import "MyExtension.h"
-#import "MyExtensionWildcardListener.h"
-
-@implementation MyExtension
-
--(instancetype) init {
-    if (self = [super init]) {        
-        NSError* error = nil;
-        if ([[self api] registerWildcardListener:[MyExtensionWildcardListener class] 
-                                             error:&error]) {
-            NSLog(@"MyExtensionWildcardListener successfully registered");
-        } else if (error) {
-            NSLog(@"An error occurred while registering MyExtensionWildcardListener, error code: %ld", [error code]);
-        }
-    }
-
-    return self;
-}
-```
+{% tabs %}
+{% tab title="Android" %}
 
 ### **Android**
 
@@ -330,3 +334,32 @@ public class MyExtension extends Extension {
 }
 ```
 
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+### **iOS**
+
+```objective-c
+#import "MyExtension.h"
+#import "MyExtensionWildcardListener.h"
+
+@implementation MyExtension
+
+-(instancetype) init {
+    if (self = [super init]) {        
+        NSError* error = nil;
+        if ([[self api] registerWildcardListener:[MyExtensionWildcardListener class] 
+                                             error:&error]) {
+            NSLog(@"MyExtensionWildcardListener successfully registered");
+        } else if (error) {
+            NSLog(@"An error occurred while registering MyExtensionWildcardListener, error code: %ld", [error code]);
+        }
+    }
+
+    return self;
+}
+```
+
+{% endtab %}
+{% endtabs %}
