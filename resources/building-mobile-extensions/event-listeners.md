@@ -16,7 +16,6 @@ Here are some additional rules to remember for event listeners:
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### **Android**
 
 Create a new Java class for your listener, extend the base class `ExtensionListener` and implement the required constructor and hear method. You can also override the `getParentExtension` method in order to retrieve your custom extension class instead of the base `Extension` class.
@@ -116,11 +115,9 @@ public class MyExtension extends Extension {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ### **iOS**
 
 1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
@@ -130,7 +127,7 @@ public class MyExtension extends Extension {
 
 **MyExtensionListener.h**
 
-```objective-c
+```text
 #import <ACPCore_iOS/ACPExtensionListener.h>
 #import <ACPCore_iOS/ACPExtensionEvent.h>
 
@@ -143,7 +140,7 @@ public class MyExtension extends Extension {
 
 **MyExtensionListener.m**
 
-```objective-c
+```text
 #import "MyExtensionListener.h"
 #import "MyExtension.h"
 
@@ -172,7 +169,6 @@ public class MyExtension extends Extension {
 
 @end
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -188,7 +184,6 @@ The following example calls the listeners hear method when a change to the Adobe
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### **Android**
 
 Event listeners in Android are registered using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. The following example shows how to register the listener from your extension constructor.
@@ -228,11 +223,9 @@ public class MyExtension extends Extension {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ### **iOS**
 
 In iOS the event listeners are registered using the `registerListener` method of the `ACPExtensionApi` interface. You can access this interface by using the `api` property in `ACPExtension`.
@@ -252,7 +245,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.m**
 
-```objective-c
+```text
 #import "MyExtension.h"
 #import "MyExtensionListener.h"
 
@@ -294,7 +287,6 @@ In iOS the event listeners are registered using the `registerListener` method of
 }
 @end
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -303,14 +295,11 @@ In iOS the event listeners are registered using the `registerListener` method of
 To listen for all events that are received and broadcasted by the Event Hub, you can register a wildcard listener by using the `registerWildcardListener` API.
 
 {% hint style="warning" %}
-
 **Important**: The `hear` method of this listener can be called often, and you should not do intensive processing on the same thread. We strongly recommended that you use your own thread executor for any processing that you do in this listener. This way, the Event Hub is not blocked, and the listener is not unregistered if it takes too long.
-
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### **Android**
 
 ```java
@@ -333,14 +322,12 @@ public class MyExtension extends Extension {
     ...
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ### **iOS**
 
-```objective-c
+```text
 #import "MyExtension.h"
 #import "MyExtensionWildcardListener.h"
 
@@ -360,6 +347,6 @@ public class MyExtension extends Extension {
     return self;
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

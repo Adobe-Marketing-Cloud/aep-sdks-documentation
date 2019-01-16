@@ -30,14 +30,14 @@ The rules.json will consist of a root level json object that contains the follow
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
 | Version | version | number | **Required**. Version number of the rules.json file format. Should be an integer that increments by 1 for each format change, and the initial version will be 1. |
-| Rules | rules | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](). |
+| Rules | rules | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](rules-engine-reference.md). |
 
 ## Rule Object Definition
 
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | condition | object | **Required**. Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group condition or a Matcher condition. Group conditions contain a logic type, and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root level condition for a rule. This condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](). |
-| Action | consequences | array | **Required**. Array of Consequence Objects, each containing the details for the associated consequence that will be executed if the associated condition evalutes to `true`. For more information, see [Consequence Object Definition](). |
+| Condition | condition | object | **Required**. Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group condition or a Matcher condition. Group conditions contain a logic type, and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root level condition for a rule. This condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](rules-engine-reference.md). |
+| Action | consequences | array | **Required**. Array of Consequence Objects, each containing the details for the associated consequence that will be executed if the associated condition evalutes to `true`. For more information, see [Consequence Object Definition](rules-engine-reference.md). |
 
 ## Condition Object Definition
 
@@ -198,7 +198,7 @@ The consequences section of a rule lists the file names of each consequence obje
 | **Friendly Name** | **Key    Value** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
 | Identifier | id | string | String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence Type | type | string | A Consequence Type from the [Consequences Type]() table. |
+| Consequence Type | type | string | A Consequence Type from the [Consequences Type](rules-engine-reference.md) table. |
 | Consequence Details | detail | object | JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence Types
@@ -206,14 +206,14 @@ The consequences section of a rule lists the file names of each consequence obje
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
 | Analytics | an | Sends data to Analytics |  |
-| In-App Message | iam | In-App Message | [In-App Consequence Detail Defintion]() |
-| Postback | pb | Send Postback\(s\) | [Postback Consequence Detail Definition]() |
-| PII | pii | Sync Pii | [Sync PII Consequence Detail Definition]() |
-| Open URL | url | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | [Open URL Consequence Detail Definition]() |
+| In-App Message | iam | In-App Message | [In-App Consequence Detail Defintion](rules-engine-reference.md) |
+| Postback | pb | Send Postback\(s\) | [Postback Consequence Detail Definition](rules-engine-reference.md) |
+| PII | pii | Sync Pii | [Sync PII Consequence Detail Definition](rules-engine-reference.md) |
+| Open URL | url | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | [Open URL Consequence Detail Definition](rules-engine-reference.md) |
 | Callback | cb | Calls a customer-defined method. |  |
 | Target | tar | Send a request to Target with location information to enrich the User's profile. |  |
 | Audience Manager | aam | Send a request to Audience Manager with location information to enrich the User's profile. |  |
-| Client Side Profile | csp | Create/Delete operations against the Client-Side Profile. | [Profile Consequence Detail Definition]() |
+| Client Side Profile | csp | Create/Delete operations against the Client-Side Profile. | [Profile Consequence Detail Definition](rules-engine-reference.md) |
 | Generate Event | event | Generate a raw event on the event hub. |  |
 
 ## rules.json Examples

@@ -95,7 +95,7 @@ This API synchronizes the provided customer identifier type key and value with t
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
 ```
 
-## syncIdentifiers <a id="syncidentifiers"></a>
+## syncIdentifiers  <a id="syncidentifiers"></a>
 
 Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
@@ -125,7 +125,7 @@ let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"
 ACPIdentity.syncIdentifiers(identifiers)
 ```
 
-## syncIdentifiers \(overloaded\) <a id="syncidentifiers-overloaded"></a>
+## syncIdentifiers \(overloaded\)  <a id="syncidentifiers-overloaded"></a>
 
 Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
@@ -460,7 +460,7 @@ ACPCore.setPushIdentifier(deviceToken)
 
 {% tabs %}
 {% tab title="Android" %}
-### AdobeCallback <a id="adobecallback"></a>
+### AdobeCallback  <a id="adobecallback"></a>
 
 This class provides the interface to receive results when the async APIs perform the requested action. For more information about these methods, see [Identity Service methods in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#identity-service-methods-in-android).
 
@@ -470,7 +470,7 @@ public interface AdobeCallback<T> {
 }
 ```
 
-### VisitorID <a id="visitorid"></a>
+### VisitorID  <a id="visitorid"></a>
 
 An identifier to be used with the Experience Cloud Visitor ID Service.
 
@@ -490,7 +490,7 @@ public class VisitorID {
 }
 ```
 
-### AuthenticationState <a id="authenticationstate"></a>
+### AuthenticationState  <a id="authenticationstate"></a>
 
 Used to indicate the authentication state for the current `VisitorID`.
 
@@ -521,7 +521,7 @@ Contains the origin, the type, a value, and the authentication state of the visi
 @end
 ```
 
-### ACPMobileVisitorAuthenticationState <a id="acpmobilevisitorauthenticationstate"></a>
+### ACPMobileVisitorAuthenticationState  <a id="acpmobilevisitorauthenticationstate"></a>
 
 Used to indicate the authentication state for the current `VisitorID`.
 

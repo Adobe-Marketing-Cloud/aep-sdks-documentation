@@ -1,7 +1,7 @@
 # Adobe Campaign Standard \(Beta\)
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and Adobe Campaign Standard [mobile user guide](https://helpx.adobe.com/campaign/standard/administration/using/configuring-a-mobile-application-using-sdk-v5.html). 
+**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx-internal.corp.adobe.com/content/help/en/campaign/kb/configuring-app-sdk.html). 
 {% endhint %}
 
 {% hint style="warning" %}
@@ -78,7 +78,7 @@ pod 'ACPCampaignBeta', '1.0.2beta'
 pod 'ACPUserProfileBeta', '1.0.1beta'
 ```
 
-or you may manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
 
 In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile extensions:
 

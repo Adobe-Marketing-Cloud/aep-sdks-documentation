@@ -6,7 +6,6 @@ The example below shows a typical scenario where shared state is requested. In t
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Android
 
 ```java
@@ -24,14 +23,12 @@ public void hear(final Event event) {
     ...
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ### iOS
 
-```objective-c
+```text
 - (void) hear: (ACPExtensionEvent*) event {
     NSError* error = nil;
     NSDictionary* configurationSharedState = [[[self extension] api] getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
@@ -40,7 +37,6 @@ public void hear(final Event event) {
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

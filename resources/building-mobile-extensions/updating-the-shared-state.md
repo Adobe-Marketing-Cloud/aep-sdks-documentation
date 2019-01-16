@@ -4,7 +4,6 @@ Extensions set a shared state by creating an event data that the extensions save
 
 {% tabs %}
 {% tab title="Android" %}
-
 ## Android
 
 ```java
@@ -28,14 +27,12 @@ public void hear(final Event event) {
     ...
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ## iOS
 
-```objective-c
+```text
 - (void) hear: (nonnull ACPExtensionEvent*) event {
     // construct the data to be shared in a JSON format
     NSDictionary* newEventData =
@@ -51,6 +48,6 @@ public void hear(final Event event) {
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

@@ -6,7 +6,6 @@ Here, extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(An
 
 {% tabs %}
 {% tab title="Android" %}
-
 ## Android
 
 ```java
@@ -24,11 +23,9 @@ public void onUnregistered() {
     ...
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ## iOS
 
 ```text
@@ -40,6 +37,6 @@ public void onUnregistered() {
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

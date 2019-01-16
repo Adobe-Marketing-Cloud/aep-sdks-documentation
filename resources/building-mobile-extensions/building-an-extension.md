@@ -35,12 +35,11 @@ The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class tha
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### **Android**
 
 The `Extension` class has the following method that you must override:
 
-- `getName`, which returns the name of the extension.
+* `getName`, which returns the name of the extension.
 
   Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see Namespace Conventions. The name that you use to register cannot conflict with other registered extensions or Adobe internal modules.
 
@@ -48,10 +47,10 @@ The `Extension` class has the following method that you must override:
 
 The `Extension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
 
-- `getVersion`, which returns a version string for your extension. The version string is only used for logging and is currently not validated for formatting.
-- `onUnregistered`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
-- `onUnexpectedError`, which allows you log additional information when the Adobe Experience Cloud Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-- `getApi` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on. This method can be used at any time after the extension registration is complete. It may also be used by your listeners by calling  `super.getParentExtension().getApi()`.
+* `getVersion`, which returns a version string for your extension. The version string is only used for logging and is currently not validated for formatting.
+* `onUnregistered`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
+* `onUnexpectedError`, which allows you log additional information when the Adobe Experience Cloud Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `getApi` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on. This method can be used at any time after the extension registration is complete. It may also be used by your listeners by calling  `super.getParentExtension().getApi()`.
 
 **Tip**: The `Extension` class provides access to the `ExtensionApi` interface through the `getApi` member.
 
@@ -77,11 +76,9 @@ class MyExtension extends Extension {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 #### **iOS**
 
 The `ACPExtension` class has the following method that you must override:
@@ -93,15 +90,12 @@ The `ACPExtension` class has the following method that you must override:
 
 The `ACPExtension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
 
-* `version`, which returns a version string for your extension.    The version string is only used for logging and is currently not validated for formatting. 
+* `version`, which returns a version string for your extension. The version string is only used for logging and is currently not validated for formatting.
+* `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension. Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
+* `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK. An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on. This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.
 
-* `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.    Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or by throwing an exception.
-
-* `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.    An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-
-* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.
-
-  **Tip**: The ACPExtension class provides access to the `ACPExtensionApi` interface through the API member.  
+  **Tip**: The ACPExtension class provides access to the `ACPExtensionApi` interface through the API member.
 
 #### **iOS code example**
 
@@ -127,7 +121,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
    **MyExtension.m**
 
-   ```objective-c
+   ```text
    #import "MyExtension.h"
 
    @implementation MyExtension
@@ -147,7 +141,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
 2. The default implementation of onUnregister must be called if you decide to override the `init` method.
 
-   ```objective-c
+   ```text
    - (void) onUnregister {
        [super onUnregister];
        // your cleanup code goes here
@@ -156,34 +150,29 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
 3. The default implementation of `unexpectedError` will log an error message using `NSLog`.
 
-   ```objective-c
+   ```text
    - (void) unexpectedError:(NSError *)error {
        [super unexpectedError];
         // your error handling code goes here
    }
    ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### B. **Registering your Extension**
 
-After creating your extension class, you can register it by using the `ACPCore` (iOS) or `MobileCore` (Android) method `registerExtension`. During registration, the extension class that you passed will be used by the Adobe Experience Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
+After creating your extension class, you can register it by using the `ACPCore` \(iOS\) or `MobileCore` \(Android\) method `registerExtension`. During registration, the extension class that you passed will be used by the Adobe Experience Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
 
 **Tip**: Registration can be completed any time after the app is launched.
 
 {% tabs %}
 {% tab title="Android" %}
-
-#### Android 
+#### Android
 
 A convenient place to register your extension on Android is in the `onCreate` method of your activity.
 
 {% hint style="info" %}
-
 Some registration errors, such as sending a null extension class as parameter, are synchronous and occur immediately. Other errors like undefined names, name conflicts, or type checking issues, might occur asynchronously and are reported through the `onUnexpectedError` callback before the extension is unregistered.
-
 {% endhint %}
 
 ```java
@@ -205,24 +194,20 @@ public void onCreate() {
     if (!MobileCore.registerExtension(MyCustomExtension.class, errorCallback)) {
         Log.e("Extensions", "Failed to register the MyCustomExtension extension");
     }
-    
+
     ...
     MobileCore.start(null);
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 #### iOS
 
 A convenient place to register your extension on iOS is in your AppDelegate's `application:didFinishLaunchingWithOptions:` method.
 
 {% hint style="info" %}
-
 Some registration errors, such as undefined names, name conflicts, or type checking issues, occur immediately. Other errors might occur asynchronously and are reported through the `unexpectedError` callback before the extension is unregistered.
-
 {% endhint %}
 
 ```objectivec
@@ -250,9 +235,7 @@ Some registration errors, such as undefined names, name conflicts, or type check
 
 @end
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 #### C. Unregistering your Extension
@@ -263,23 +246,19 @@ If your extension does not need to be active at all times, you can unregister yo
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Example
 
 ```java
 getApi().unregisterExtension();
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 #### Example
 
-```objective-c
+```text
 [self.api unregisterExtension];
 ```
-
 {% endtab %}
-
 {% endtabs %}
+

@@ -11,7 +11,6 @@ To allow you to manage identifiers, an API is available that clears all of the e
 
 {% tabs %}
 {% tab title="Android" %}
-
 ## Android
 
 ```java
@@ -26,11 +25,9 @@ public void onUnregistered() {
     getApi().clearSharedEventStates(errorCallback);
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ## iOS
 
 ```text
@@ -41,6 +38,6 @@ public void onUnregistered() {
     }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

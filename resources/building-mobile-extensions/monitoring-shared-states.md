@@ -6,7 +6,6 @@ In the example below, you can find the listener that is being registered in the 
 
 {% tabs %}
 {% tab title="Android" %}
-
 ## Android
 
 ### MyExtension.java
@@ -41,16 +40,14 @@ public void hear(final Event event) {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Objective-C" %}
-
 ## iOS
 
 ### **MyExtension.m**
 
-```objective-c
+```text
 - (instancetype) init {
     NSError* error = nil;
     if ([self.api registerListener: [MyExtensionListener class] eventType:@"com.adobe.eventType.hub" eventSource:@"com.adobe.eventSource.sharedState" error:&error]) {  
@@ -63,7 +60,7 @@ public void hear(final Event event) {
 
 ### MyExtensionListener.m
 
-```objective-c
+```text
 - (void) hear:(ACPExtensionEvent *)event {
     NSDictionary* eventDataDict = event.eventData;
     NSString* stateowner = [eventDataDict objectForKey:@"stateowner"];
@@ -72,6 +69,6 @@ public void hear(final Event event) {
       }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+
