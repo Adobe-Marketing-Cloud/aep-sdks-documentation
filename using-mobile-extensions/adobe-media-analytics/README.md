@@ -4,9 +4,9 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension and click **Install**.
-3. Provide extension settings \(see [Configure Media Analytics Extension](#configure-media-analytics-extension)\)
+3. Provide extension settings \(see [Configure Media Analytics Extension](#configure-media-analytics-extension)\).
 4. Click **Save**.
-5. Follow the publishing process, to update SDK configuration
+5. Follow the publishing process to update your SDK configuration.
 
 ### **Configure Media Analytics Extension**
 
@@ -38,7 +38,7 @@ The version of the media player application/SDK.
 
 #### **Debug Logging**
 
-Enables or Disables Media SDK logs.
+Enables or disables Media SDK logs.
 
 {% hint style="danger" %}
 This should be disabled for your production application.
@@ -47,7 +47,7 @@ This should be disabled for your production application.
 ### Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires [Adobe Analytics Extension](../adobe-analytics/README.md) extension to function properly. You should add and correctly configure the analytics extension to your launch property.
+This extension requires the [Adobe Analytics Extension](../adobe-analytics/README.md). You must add the Analytics extension to your Launch property, and make sure the extension is configured correctly.
 {% endhint %}
 
 {% tabs %}
@@ -65,7 +65,7 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPMedia'`
+Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPMedia'`.
 
 #### Objective-C
 
@@ -89,7 +89,7 @@ import ACPMedia_iOS
 
 #### Java
 
-You may do the following after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
+To register media with Mobile Core, call the `setApplication()` method in `onCreate()`, then call setup methods, as shown in this sample:
 
 ```java
 public class MobileApp extends Application {
@@ -113,7 +113,7 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
+In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
 #### Objective-C
 
@@ -129,7 +129,8 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 #### Swift
 
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+func application(_ application: UIApplication, 
+                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ACPMedia.registerExtension();  //Register Media with Mobile Core
     ACPAnalytics.registerExtension();
     ACPIdentity.registerExtension();
@@ -142,13 +143,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Media configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+If you need to update your SDK configuration programmatically, please use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key                  | Required | Description                                           |
 |----------------------|----------|-------------------------------------------------------|
-| media.trackingServer |    Yes   | [See Tracking Server](#tracking-server)             |
-| media.channel        |    No    | [See Channel](#channel)                             |
-| media.ovp            |    No    | [See Online Video Provider](#online-video-provider) |
-| media.playerName     |    No    | [See Player Name](#player-name)                     |
-| media.appVersion     |    No    | [See Application Version](#application-version)     |
-| media.debugLogging   |    No    | [See Debug Logging](#debug-logging)                 |
+| `media.trackingServer` |    Yes   | [See Tracking Server](#tracking-server)             |
+| `media.channel`        |    No    | [See Channel](#channel)                             |
+| `media.ovp`            |    No    | [See Online Video Provider](#online-video-provider) |
+| `media.playerName`     |    No    | [See Player Name](#player-name)                     |
+| `media.appVersion`     |    No    | [See Application Version](#application-version)     |
+| `media.debugLogging`   |    No    | [See Debug Logging](#debug-logging)                 |
