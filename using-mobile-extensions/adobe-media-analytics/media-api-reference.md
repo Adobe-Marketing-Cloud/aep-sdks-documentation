@@ -8,7 +8,7 @@ Creates a media tracker instance that tracks the playback session.
 {% tab title="Android" %}
 ### createTracker
 
-The callback will be invoked to return the created tracker instance, or in case of error, `null` is returned.
+The callback will be invoked to return the created tracker instance. If an error occurs, `null` is returned.
 
 #### Syntax
 
@@ -32,7 +32,7 @@ AdobeCallback<MediaTracker> createdClb = new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 ### createTracker
 
-The callback will be invoked to return the created tracker instance, or in case of error, `nil` is returned.
+The callback will be invoked to return the created tracker instance. If an error occurs, `nil` is returned.
 
 #### Syntax
 
@@ -40,7 +40,7 @@ The callback will be invoked to return the created tracker instance, or in case 
 +(void) createTracker: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
 ```
 
-#### Example
+#### Examples
 
 Here are examples in Objective-C and Swift:
 
@@ -298,7 +298,10 @@ Returns a HashMap instance that contains information about the chapter.
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createChapterObject(String name, Long position, Double length, Double startTime);
+public static HashMap<String, Object> createChapterObject(String name, 
+                                                          Long position, 
+                                                          Double length, 
+                                                          Double startTime);
 ```
 
 #### Example
@@ -368,7 +371,10 @@ Returns a HashMap instance that contains information about the quality of experi
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createQoEObject(Long bitrate, Double startupTime, Double fps, Long droppedFrames);
+public static HashMap<String, Object> createQoEObject(Long bitrate, 
+                                                      Double startupTime, 
+                                                      Double fps, 
+                                                      Long droppedFrames);
 ```
 
 #### Example
@@ -726,7 +732,10 @@ TBD
 #### Syntax
 
 ```java
-  public void trackEvent(Media.Event event, Map<String, Object> info, Map<String, String> contextData) {
+  public void trackEvent(Media.Event event, 
+                         Map<String, 
+                         Object> info, 
+                         Map<String, String> contextData) 
 ```
 
 #### Example
@@ -772,7 +781,7 @@ Method to update current playhead.
 
 | Variable Name | Description|
 |---------------|------------|
-| `time`        | Current position of the playhead. For VOD, value is specified in seconds from the beginning of the media item. For live streaming, return playhead position if available or the current UTC time in seconds otherwise. |
+| `time`        | Current position of the playhead. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
