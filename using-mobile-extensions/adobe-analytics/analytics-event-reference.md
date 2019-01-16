@@ -87,10 +87,10 @@ This event is a request to do processing on the analytics hits queue and can be 
 
 The Analytics extension receives this event with the following keys, and the extension processes the keys accordingly:
 
-* `action`/`state` - gets the analytics request object and processes the hit.
-* `clearhitsqueue` - Clears the analytics hit database.
-* `forcekick` - force kicks all the hits in database.
-* `getqueuesize` - Event comes with pairID. Analytics module return the count of the current queued hits in database to the associated one time listener.
+* `action`/`state` - gets the Analytics request data and processes the hit.
+* `clearhitsqueue` - clears the Analytics hit database.
+* `forcekick` - sends all the hits in database.
+* `getqueuesize` - retrieves the current number of queued hits in the database; this is a paired event associated with a response callback.
 
 **Tip**: The keys are optional, but there should be at least one key specified at a time \(action/state/contextdata\) for the hit to be processed.
 
