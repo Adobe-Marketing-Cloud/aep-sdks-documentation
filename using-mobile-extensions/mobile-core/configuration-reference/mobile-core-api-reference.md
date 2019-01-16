@@ -33,7 +33,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 #### Objective-C
 
 ### trackAction
@@ -49,9 +49,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```objectivec
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
 #### Swift
 
 ### trackAction
@@ -99,7 +97,7 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 #### Objective-C
 
 ### trackState
@@ -115,9 +113,7 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 ```objectivec
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
 #### Swift
 
 ### trackState
@@ -132,6 +128,68 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 
 ```swift
 ACPCore.trackState("state name", data: ["key": "value"])
+```
+{% endtab %}
+{% endtabs %}
+
+## Collect PII
+
+This API enables the SDK to collect sensitive or PII data. 
+
+{% hint style="warning" %}
+While this API enables the collection of sensitive data, no data is actually sent to any Adobe endpoint or 3rd party endpoint. To send the data to an endpoint, you may use a postback of PII type.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+### collectPii
+
+#### Syntax
+
+```java
+public static void collectPII(final Map<String, String> piiData);
+```
+
+#### Example
+
+```java
+Map<String, String> data = new HashMap<String, String>();
+data.put("firstname", "customer");
+//The rule to trigger a PII needs to be setup for this call
+//to result in a network send
+MobileCore.collectPII(data);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+### collectPii
+
+#### Syntax
+
+```objectivec
++ (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
+```
+
+#### Example
+
+```objectivec
+[ACPCore collectPii:data:@{@"key1" : "@value1",
+                           @"key2" : "@value2"
+                           }];
+```
+
+#### Swift
+
+### collectPii
+
+#### Syntax
+
+```swift
+ACPCore.collectPii(data: [String : String])
 ```
 {% endtab %}
 {% endtabs %}

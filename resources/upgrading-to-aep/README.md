@@ -18,7 +18,7 @@ The Experience Platform SDK has experienced significant architectural re-design 
 ## Upgrade checklist
 
 1. Begin with [Getting Started](../../getting-started/create-a-mobile-property.md) section, ensure you are appropriately provisioned for Launch
-2. Ensure all required SDK APIs you currently use are available in the new SDK \(see [AEP vs. 4x SDK](aepvs4x.md) \)
+2. Ensure all required SDK APIs you currently use are available in the new SDK \(see [AEP vs. 4x SDK](aepvs4x/) \)
 3. Note that Experience Platform SDK supports iOS versions 10+, Android 4+ \(API 14+\)
 4. If implementing Analytics, use [Analytics processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) to map variables/rules
 
@@ -32,6 +32,6 @@ This client-side, SDK upgrade does not affect in-progess marketing campaigns, re
 
 ## Further reading
 
-* See [Experience Cloud vs. 4x SDK functionality comparison](aepvs4x.md) 
+* See [Experience Cloud vs. 4x SDK functionality comparison](aepvs4x/) 
 * Visit and ask questions on our [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to get quick, thorough responses
 
