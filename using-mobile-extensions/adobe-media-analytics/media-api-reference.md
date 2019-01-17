@@ -2,13 +2,13 @@
 
 ## Create Media Tracker
 
-Creates media tracker instance to track the playback session.
+Creates a media tracker instance that tracks the playback session.
 
 {% tabs %}
 {% tab title="Android" %}
 ### createTracker
 
-The callback will be invoked to return the created tracker instance, or in case of error, `null` is returned.
+The callback will be invoked to return the created tracker instance. If an error occurs, `null` is returned.
 
 #### Syntax
 
@@ -32,7 +32,7 @@ AdobeCallback<MediaTracker> createdClb = new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 ### createTracker
 
-The callback will be invoked to return the created tracker instance, or in case of error, `nil` is returned.
+The callback will be invoked to return the created tracker instance. If an error occurs, `nil` is returned.
 
 #### Syntax
 
@@ -40,7 +40,7 @@ The callback will be invoked to return the created tracker instance, or in case 
 +(void) createTracker: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
 ```
 
-#### Example
+#### Examples
 
 Here are examples in Objective-C and Swift:
 
@@ -65,33 +65,41 @@ ACPMedia.createTracker({mediaTracker in
 
 ## Create Media Object
 
-Create an instance of Media object.
+Creates an instance of the Media object.
 
-| Variable Name | Description                   | Required |
-|---------------|-------------------------------|----------|
-| name          | Media name                    | Yes      |
-| mediaId       | Media unique identifier       | Yes      |
-| length        | Media length                  | Yes      |
-| streamType    | [Stream type](#stream-type) | Yes      |
-| mediaType     | [Media type](#media-type)   | Yes      |
+| Variable Name  | Description                  | Required |
+|----------------|------------------------------|:--------:|
+| `name`         | Media name                   | Yes      |
+| `mediaId`      | Media unique identifier      | Yes      |
+| `length`       | Media length                 | Yes      |
+| `streamType`   | [Stream type](#stream-type)  | Yes      |
+| `mediaType`    | [Media type](#media-type)    | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### createMediaObject
 
-Returns a HashMap instance which contains information about the media.
+Returns a HashMap instance that contains information about the media.
 
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createMediaObject(String name, String mediaId, Double length, String streamType, MediaType mediaType);
+public static HashMap<String, Object> createMediaObject(String name, 
+                                                        String mediaId, 
+                                                        Double length, 
+                                                        String streamType, 
+                                                        MediaType mediaType);
 ```
 
 #### Example
 
 ```java
-HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name", "video-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
+HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name", 
+                                                            "video-id", 
+                                                            60D, 
+                                                            MediaConstants.StreamType.VOD, 
+                                                            Media.MediaType.Video);
 ```
 
 {% endtab %}
@@ -100,7 +108,7 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name", "video
 
 ### createMediaObjectWithName
 
-Returns a NSDictionary instance which contains information about the media.
+Returns an NSDictionary instance that contains information about the media.
 
 #### Syntax
 
@@ -136,20 +144,20 @@ TBD
 
 ## Create AdBreak Object
 
-Create an instance of AdBreak object.
+Creates an instance of the AdBreak object.
 
 | Variable Name | Description                                                              | Required |
-|---------------|--------------------------------------------------------------------------|----------|
-| name          | Ad break name such as pre-roll, mid-roll, and post-roll.                 | Yes      |
-| position      | The number position of the ad break within the content, starting with 1. | Yes      |
-| startTime     | Playhead value at the start of the ad break.                             | Yes      |
+|---------------|--------------------------------------------------------------------------|:--------:|
+| `name`        | Ad break name such as pre-roll, mid-roll, and post-roll.                 | Yes      |
+| `position`    | The number position of the ad break within the content, starting with 1. | Yes      |
+| `startTime`   | Playhead value at the start of the ad break.                             | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### createAdBreakObject
 
-Returns a HashMap instance which contains information about the adbreak.
+Returns a HashMap instance that contains information about the ad break.
 
 #### Syntax
 
@@ -169,7 +177,7 @@ HashMap<String, Object> adBreakInfo = Media.createAdBreakObject("adbreak-name", 
 
 ### createAdBreakObjectWithName
 
-Returns a NSDictionary instance which contains information about the adbreak.
+Returns an NSDictionary instance that contains information about the ad break.
 
 #### Syntax
 
@@ -187,8 +195,8 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
-                                                         position: 1,
-                                                        startTime: 0];
+                                                           position: 1,
+                                                          startTime: 0];
 ```
 
 **Swift**
@@ -202,21 +210,21 @@ TBD
 
 ## Create Ad Object
 
-Create an instance of Ad object.
+Creates an instance of the Ad object.
 
 | Variable Name | Description                                                         | Required |
-|---------------|---------------------------------------------------------------------|----------|
-| name          | Friendly name of the ad.                                            | Yes      |
-| adId          | Unique identifier for the ad.                                       | Yes      |
-| position      | The number position of the ad within the ad break, starting with 1. | Yes      |
-| length        | Ad length                                                           | Yes      |
+|---------------|---------------------------------------------------------------------|:--------:|
+| `name`        | Friendly name of the ad.                                            | Yes      |
+| `adId`        | Unique identifier for the ad.                                       | Yes      |
+| `position`    | The number position of the ad within the ad break, starting with 1. | Yes      |
+| `length`      | Ad length                                                           | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### createAdObject
 
-Returns a HashMap instance which contains information about the ad.
+Returns a HashMap instance that contains information about the ad.
 
 #### Syntax
 
@@ -236,7 +244,7 @@ HashMap<String, Object> adInfo = Media.createAdObject("ad-name", "ad-id", 1L, 15
 
 ### createAdObjectWithName
 
-Returns a NSDictionary instance which contains information about the ad.
+Returns an NSDictionary instance that contains information about the ad.
 
 #### Syntax
 
@@ -255,9 +263,9 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
-                                                        adId: @"ad-id"
-                                                    position: 1,
-                                                      length: 15];
+                                                     adId: @"ad-id"
+                                                 position: 1,
+                                                   length: 15];
 ```
 
 **Swift**
@@ -271,26 +279,29 @@ TBD
 
 ## Create Chapter Object
 
-Create an instance of Chapter object.
+Creates an instance of the Chapter object.
 
 | Variable Name | Description        | Required |
-|---------------|--------------------|----------|
-| name          | Chapter name       | Yes      |
-| position      | Chapter position   | Yes      |
-| length        | Chapter length     | Yes      |
-| startTime     | Chapter start time | Yes      |
+|---------------|--------------------|:--------:|
+| `name`        | Chapter name       | Yes      |
+| `position`    | Chapter position   | Yes      |
+| `length`      | Chapter length     | Yes      |
+| `startTime`   | Chapter start time | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### createChapterObject
 
-Returns a HashMap instance which contains information about the chapter.
+Returns a HashMap instance that contains information about the chapter.
 
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createChapterObject(String name, Long position, Double length, Double startTime);
+public static HashMap<String, Object> createChapterObject(String name, 
+                                                          Long position, 
+                                                          Double length, 
+                                                          Double startTime);
 ```
 
 #### Example
@@ -305,7 +316,7 @@ HashMap<String, Object> chapterInfo = Media.createChapterObject("chapter-name", 
 
 ### createChapterObjectWithName
 
-Returns a NSDictionary instance which contains information about the chapter.
+Returns an NSDictionary instance that contains information about the chapter.
 
 #### Syntax
 
@@ -324,9 +335,9 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
-                                                      position: 1
-                                                        length: 60,
-                                                     startTime: 0];
+                                                           position: 1
+                                                             length: 60,
+                                                          startTime: 0];
 ```
 
 **Swift**
@@ -340,27 +351,30 @@ TBD
 
 ## Create QoE Object
 
-Create an instance of QoE object.
+Creates an instance of the QoE object.
 
 
-| Variable Name | Description              | Required |
-|---------------|--------------------------|----------|
-| bitrate       | Current bitrate          | Yes      |
-| startupTime   | Startup time             | Yes      |
-| fps           | FPS value                | Yes      |
-| droppedFrames | Number of dropped frames | Yes      |
+| Variable Name   | Description              | Required |
+|-----------------|--------------------------|:--------:|
+| `bitrate`       | Current bitrate          | Yes      |
+| `startupTime`   | Startup time             | Yes      |
+| `fps`           | FPS value                | Yes      |
+| `droppedFrames` | Number of dropped frames | Yes      |
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### createQoEObject
 
-Returns a HashMap instance which contains information about the quality of experience.
+Returns a HashMap instance that contains information about the quality of experience.
 
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createQoEObject(Long bitrate, Double startupTime, Double fps, Long droppedFrames);
+public static HashMap<String, Object> createQoEObject(Long bitrate, 
+                                                      Double startupTime, 
+                                                      Double fps, 
+                                                      Long droppedFrames);
 ```
 
 #### Example
@@ -375,7 +389,7 @@ HashMap<String, Object> qoeInfo = Media.createQoEObject(10000000L, 2D, 23D, 10D)
 
 ### createQoEObjectWithBitrate
 
-Returns a NSDictionary instance which contains information about the quality of experience.
+Returns an NSDictionary instance that contains information about the quality of experience.
 
 #### Syntax
 
@@ -718,7 +732,10 @@ TBD
 #### Syntax
 
 ```java
-  public void trackEvent(Media.Event event, Map<String, Object> info, Map<String, String> contextData) {
+  public void trackEvent(Media.Event event, 
+                         Map<String, 
+                         Object> info, 
+                         Map<String, String> contextData) 
 ```
 
 #### Example
@@ -764,7 +781,7 @@ Method to update current playhead.
 
 | Variable Name | Description|
 |---------------|------------|
-| time          | Current position of the playhead. For VOD, value is specified in seconds from the beginning of the media item. For live streaming, return playhead position if available or the current UTC time in seconds otherwise. |
+| `time`        | Current position of the playhead. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -818,7 +835,7 @@ Method to update current QoS information.
 
 | Variable Name | Description|
 |---------------|------------|
-| qoeObject     | Map instance containing current QoS information. This method can be called multiple times during a playback session. Player implementation must always return the most recently available QoS data. |
+| `qoeObject`   | Map instance containing current QoS information. This method can be called multiple times during a playback session. Player implementation must always return the most recently available QoS data. |
 
 {% tabs %}
 {% tab title="Android" %}
