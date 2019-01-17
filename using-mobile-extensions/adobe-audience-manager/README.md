@@ -44,12 +44,14 @@ To get started with **Audience Manager**, follow these steps:
 2. Import the Audience and Identity library:
 
    ```text
-    #import <ACPCore_iOS/ACPCore_iOS.h> #import <ACPAudience_iOS/ACPAudience_iOS.h> #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+    #import "ACPCore.h"
+    #import "ACPAudience.h"
+    #import "ACPIdentity"
    ```
 
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
-{% endtab %}
-{% endtabs %}
+   {% endtab %}
+   {% endtabs %}
 
 ### Register Audience Manager with Mobile Core
 
@@ -81,8 +83,20 @@ public void onCreate() {
 
 
 
-```text
-public class AudiencetApp extends Application {​ @Override public void onCreate() {     super.onCreate();     MobileCore.setApplication(this);​     try {         Audience.registerExtension();         Identity.registerExtension();     } catch (Exception e) {         //Log the exception     } }}
+```java
+public class AudiencetApp extends Application 
+{​ 
+	@Override public void onCreate() {     
+		super.onCreate();     
+		MobileCore.setApplication(this);​     
+		try {         
+			Audience.registerExtension();
+			Identity.registerExtension();     
+		} catch (Exception e) {         
+		//Log the exception     
+		} 
+	}
+}
 ```
 {% endtab %}
 

@@ -49,7 +49,8 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 [ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
     // use returned tracking id    
-    NSLog(@"Tracking ID : %@", trackingIdentifier);}];
+    NSLog(@"Tracking ID : %@", trackingIdentifier);
+}];
 ```
 
 **Swift**
@@ -58,7 +59,7 @@ Here are examples in Objective-C and Swift:
 ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
             //use returned tracking id
             print(trackingIdentifier!)
-        }
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -161,7 +162,9 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    // use queue size}];
+[ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    
+    // use queue size
+}];
 ```
 
 **Swift**
