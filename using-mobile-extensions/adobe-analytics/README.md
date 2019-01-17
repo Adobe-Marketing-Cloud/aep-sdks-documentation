@@ -78,24 +78,35 @@ The default value for this setting is 0, which means that hit batching is disabl
 
 ## Add Analytics to your app
 
+{% tabs %}
+{% tab title="Android" %}
+Add the Analytics extension to your project using the app's Gradle file.
+
 #### Java
 
-1. Add the Analytics extension to your project using the app's Gradle file.
-2. Import the Analytics extension in your application's main activity.
+1. Import the Analytics extension in your application's main activity.
 
-   ```java
-   import com.adobe.marketing.mobile.*;
-   ```
+```java
+import com.adobe.marketing.mobile.*;
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
 
 #### Objective-C
 
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-2. Import the Analytics extension \(and its dependency, the Identity extension\):
-
 ```objectivec
 #import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
+
+#### Swift
+
+```swift
+import ACPAnalytics_iOS
+```
+{% endtab %}
+{% endtabs %}
 
 ### Register Analytics with Mobile Core
 
@@ -125,17 +136,26 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Analytics and Identity extensions:
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPIdentity registerExtension];
     [ACPAnalytics registerExtension];
-​
   // Override point for customization after application launch.
   return YES;
+ }
+```
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ ACPAnalytics.registerExtension();
+ // Override point for customization after application launch. 
+ return true;
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -169,6 +189,194 @@ If you want to share the Analytics Data with Adobe Audience Manager, you can ena
 ### Video Analytics
 
 For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+
+## Set Products Variable
+
+As _products_ variable cannot be set by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable - see [Implementing a Merchandising Variable](https://marketing.adobe.com/resources/help/en_US/sc/implement/var_merchandising_impl.html) for more detail on this variable.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"Category;Product;Quantity;Price[,Category;Product;Quantity;Price]" forKey:@"&&products"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+[contextData setObject:@";Running Shoes;1;69.95,;Running Socks;10;29.99" forKey:@"&&products"];
+[contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
+[contextData setObject:@"1" forKey:@"m.purchase"];
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+[ACPCore trackAction:@"purchase" data:contextData];
+// trackState example:
+[ACPCore trackState:@"Order Confirmation" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
+![Example Network Request](../../.gitbook/assets/products-bloodhound.png)
+
+{% hint style="info" %}
+You do not need to map the products variable with processing rules as it will be set directly on the image request by the SDK.
+{% endhint %}
+
+### Set Products variable with merchandising eVars and product-specific events
+
+Here is an example of the products variable with Merchandising eVars and product-specific events.
+
+{% hint style="info" %}
+If you trigger a product-specific event by using the `&&products` variable, you must also set that event in the `&&events` variable. If you do not set that event, it is filtered out during processing.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+ 
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&events", "event1");
+cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+ 
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Example
+
+```objectivec
+/create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+ 
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+[contextData setObject:@"event1" forKey:@"&&events"];
+[contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"];
+[contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
+[contextData setObject:@"1" forKey:@"m.purchase"];
+ 
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+[ACPCore trackAction:@"purchase" data:contextData];
+// trackState example:
+[ACPCore trackState:@"Order Confirmation" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
+## Event Serialization
+
+As event serialization is not supported by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&events", "event1:12341234");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add events
+cdata.put("&&events", "event1:12341234");
+
+// send a tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("Action Name", cdata);
+// trackState example:
+MobileCore.trackState("State Name", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"eventN:serial number" forKey:@"&&events"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add events
+[contextData setObject:@"event1:12341234" forKey:@"&&events"];
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+[ACPCore trackAction:@"Action Name" data:contextData];
+// trackState example:
+[ACPCore trackState:@"State Name" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
 
 ## Configuration Keys
 

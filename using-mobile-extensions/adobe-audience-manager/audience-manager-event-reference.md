@@ -1,4 +1,4 @@
-# Audience Manager Event Reference
+# Audience Manager event reference
 
 ## Events Handled
 
@@ -74,7 +74,7 @@ For more details about this event, see [Events Dispatched by Analytics - Analyti
 
 
 
-## Events Dispatched {#audience-manager-content-response}
+## Events Dispatched <a id="audience-manager-content-response"></a>
 
 ### Audience Manager Content Response
 

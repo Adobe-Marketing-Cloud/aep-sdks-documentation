@@ -1,6 +1,6 @@
-# Analytics API Reference
+# Analytics API reference
 
-## Get the Tracking Identifier {#gettrackingidentifier}
+## Get the Tracking Identifier <a id="gettrackingidentifier"></a>
 
 Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch.The ID is preserved between app upgrades and is removed when the app is uninstalled.  
 
@@ -55,13 +55,15 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-ACPAnalytics.getTrackingIdentifier({trackingIdentifier in    
-// use returned tracking id}
+ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
+            //use returned tracking id
+            print(trackingIdentifier!)
+        }
 ```
 {% endtab %}
 {% endtabs %}
 
-## Send Queued Hits {#sendqueuedhits}
+## Send Queued Hits <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -113,7 +115,7 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Get the Queue Size {#sendqueuedhits}
+## Get the Queue Size <a id="sendqueuedhits"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 

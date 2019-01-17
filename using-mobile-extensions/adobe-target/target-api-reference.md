@@ -1,4 +1,4 @@
-# Target API Reference
+# Target API reference
 
 ## Get Custom Visitor IDs
 
@@ -33,17 +33,17 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 
 Gets the custom visitor ID for Target. The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `nil` is returned.
 
-### Syntax {#syntax}
+### Syntax <a id="syntax"></a>
 
 ```objectivec
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
-### Examples {#examples}
+### Examples <a id="examples"></a>
 
 Here are the examples in Objective C and Swift:
 
-#### **Objective C** {#objective-c}
+#### **Objective C** <a id="objective-c"></a>
 
 ```objectivec
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
@@ -51,7 +51,7 @@ Here are the examples in Objective C and Swift:
 }];
 ```
 
-#### **Swift** {#swift}
+#### **Swift** <a id="swift"></a>
 
 ```swift
 ACPTarget.getThirdPartyId({thirdPartyID in
@@ -91,17 +91,17 @@ Target.setThirdPartyId("third-party-id");
 
 Sets the custom visitor ID for Target. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
-### Syntax {#syntax-1}
+### Syntax <a id="syntax-1"></a>
 
 ```objectivec
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
-### Examples {#examples-1}
+### Examples <a id="examples-1"></a>
 
 Here are some examples in Objective-C and Swift:
 
-#### **Objective-C** {#objective-c-1}
+#### **Objective-C** <a id="objective-c-1"></a>
 
 ```objectivec
 [ACPTarget setThirdPartyId:@"third-party-id"];
@@ -139,23 +139,23 @@ Target.resetExperience();
 {% tab title="iOS" %}
 ### resetExperience
 
-### Syntax {#syntax-2}
+### Syntax <a id="syntax-2"></a>
 
 ```objectivec
 + (void) resetExperience;
 ```
 
-### Examples {#examples-2}
+### Examples <a id="examples-2"></a>
 
 Here are some examples in Objective-C and Swift:
 
-#### **Objective-C** {#objective-c-2}
+#### **Objective-C** <a id="objective-c-2"></a>
 
 ```objectivec
 [ACPTarget resetExperience];
 ```
 
-#### **Swift** {#swift-1}
+#### **Swift** <a id="swift-1"></a>
 
 ```swift
 ACPTarget.resetExperience()

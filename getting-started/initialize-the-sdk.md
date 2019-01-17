@@ -1,4 +1,4 @@
-# Initialize the SDK and Set up Tracking
+# Initialize the SDK and set up tracking
 
 ## Configure SDK with the Launch Environment ID
 
@@ -14,17 +14,43 @@ To find your Environment ID, navigate to Environments tab in Launch, and click o
 _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**_
 {% endhint %}
 
+#### Ensure app permissions
+
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider and record offline tracking calls:
+
+To add these permissions, add the following lines to your AndroidManifest.xml file, which is located in the application project directory:
+
+```markup
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+#### Java
+
 1. Create MainActivity.java in the app.
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
 {% endtab %}
 
-{% tab title="Objective C" %}
+{% tab title="iOS" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. In Xcode, open AppDelegate.swift
-2. Under `didFinishLaunchingWithOptions`, add:`[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];`
+#### Objective-C
+
+In Xcode, find your `didFinishLaunchingWithOptions`located in AppDelegate.h and add:
+
+```objectivec
+[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+```
+
+#### Swift
+
+In Xcode, find your `didFinishLaunchingWithOptions` located in AppDelegate.swift and add:
+
+```swift
+ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
+```
 {% endtab %}
 
 {% tab title="Swift" %}
@@ -85,17 +111,21 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ## Enable the Experience Cloud Identity service
 
-The Experience Cloud ID service provides a universal visitor ID across Experience Cloud solutions and is pre-requisite for most implementations. 
+The Experience Cloud ID service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations. 
 
 {% hint style="info" %}
-Ensure that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
+Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 Import the Identity framework into your project:
 
-`import com.adobe.marketing.mobile.*;`
+#### Java
+
+```java
+import com.adobe.marketing.mobile.*;
+```
 
 Register the framework with Mobile Core:
 
@@ -115,14 +145,24 @@ public class MobiletApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-Add the Identity framework \(contained within **Core**\) into your project
+{% tab title="iOS" %}
+Add the Identity framework into your project
 
-```text
+#### Objective-C
+
+```objectivec
 #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
 ```
 
-Register the Identity framework with the **Core**
+#### Swift
+
+```swift
+import ACPIdentity_iOS
+```
+
+Register the Identity framework with Mobile Core
+
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -131,16 +171,8 @@ Register the Identity framework with the **Core**
   return YES;
 }
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
-Add the Identity framework \(contained within **Core**\) into your bridging header
-
-```text
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
-```
-
-Register the Identity framework with the **Core**
+#### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -219,13 +251,12 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift
+#### Objective-C
 
 Import the Lifecycle framework:
 
 ```objectivec
 #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPCore_iOS/ACPCore_iOS.h>
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
@@ -244,16 +275,10 @@ Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFini
 // Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
   [ACPLifecycle registerExtension];
-  [ACPCore lifecycleStart]; 
+  [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+    }];
   return YES; 
-}
-```
-
-```swift
-// Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    ACPCore.lifecycleStart(nil)
-    return true
 }
 ```
 
@@ -265,6 +290,38 @@ Pause Lifecycle data collection when your app has entered the background:
      [ACPCore lifecyclePause];
  }
 ```
+
+#### Swift
+
+Import the Lifecycle framework:
+
+```swift
+import ACPLifecycle_iOS
+```
+
+Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ACPLifecycle.registerExtension();
+​  // Override point for customization after application launch.
+  return true;
+}
+```
+
+Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+
+```swift
+// Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+ACPCore.start {
+    ACPCore.lifecycleStart(nil);
+}
+    return true
+}
+```
+
+Pause Lifecycle data collection when your app has entered the background:
 
 ```swift
 // Swift
@@ -295,17 +352,17 @@ You must call this API when an event that you want to track, occurs. In addition
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java {#java}
+#### Java <a id="java"></a>
 
-### trackAction {#trackaction}
+### trackAction <a id="trackaction"></a>
 
-#### Syntax {#syntax}
+#### Syntax <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example {#example}
+#### Example <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -357,15 +414,15 @@ States represent screens or views in your app. Each time a new state is displaye
 
  In Android, trackState is typically called each time a new activity is loaded
 
-### trackState {#trackstate}
+### trackState <a id="trackstate"></a>
 
-#### **Syntax** {#syntax-1}
+#### **Syntax** <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example {#example-1}
+#### Example <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
