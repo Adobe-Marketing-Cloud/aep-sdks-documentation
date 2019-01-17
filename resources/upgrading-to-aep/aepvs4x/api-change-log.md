@@ -18,7 +18,7 @@ For more information, see [Audience Manager Extension API Reference](../../../us
 
 | 4x SDK \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Notes |
 | :--- | :--- |
-| audienceSetDpid:dpuuid: | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
+| _audienceSetDpid:dpuuid:_ | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
 | _audienceDpid_ | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
 | _audienceDpuuid_ | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
 
