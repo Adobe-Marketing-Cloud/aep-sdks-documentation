@@ -51,6 +51,8 @@ Import the Target and Identity library.
    #import "ACPCore.h"
    #import "ACPTarget.h"
    #import "ACPIdentity.h"
+   #import "ACPTargetRequestObject.h"
+   #import "ACPTargetPrefetchObject.h"
    ```
 
 #### Swift
@@ -59,6 +61,8 @@ Import the Target and Identity library.
    #import ACPCore
    #import ACPTarget
    #import ACPIdentity
+   #import "ACPTargetRequestObject.h"
+   #import "ACPTargetPrefetchObject.h"
    ```
 {% endtab %}
 {% endtabs %}
