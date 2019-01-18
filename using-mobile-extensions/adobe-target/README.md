@@ -48,9 +48,9 @@ You can find your Target client code by going to the Setup tab and selecting Imp
 2. Import the Target and Identity library. 
 
    ```objectivec
-   #import <ACPCore_iOS/ACPCore_iOS.h>
-   #import <ACPTarget_iOS/ACPTarget_iOS.h>
-   #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+   #import "ACPCore.h"
+   #import "ACPTarget.h"
+   #import "ACPIdentity.h"
    ```
 
 #### Swift

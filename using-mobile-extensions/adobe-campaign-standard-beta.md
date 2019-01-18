@@ -85,12 +85,12 @@ In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile exten
 #### Objective-C
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
-#import <ACPCampaign_iOS/ACPCampaign_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
-#import <ACPSignal_iOS/ACPSignal_iOS.h>
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPUserProfile_iOS/ACPUserProfile.h>
+#import "ACPCore.h"
+#import "ACPCampaign.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+#import "ACPLifecycle.h"
+#import "ACPUserProfile.h"
 ```
 
 #### Swift

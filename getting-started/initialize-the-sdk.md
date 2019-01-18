@@ -256,7 +256,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+#import  "ACPLifecycle.h"
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
@@ -296,7 +296,7 @@ Pause Lifecycle data collection when your app has entered the background:
 Import the Lifecycle framework:
 
 ```swift
-import ACPLifecycle_iOS
+import ACPLifecycle
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:

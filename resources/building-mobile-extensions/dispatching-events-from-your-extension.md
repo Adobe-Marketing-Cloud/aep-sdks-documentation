@@ -51,7 +51,7 @@ Event newEvent = new Event.Builder("MyCustomEvent",
 To create events in iOS, you must first import `ACPExtensionEvent.h` from the `ACPCore` framework:
 
 ```text
-#import "ACPCore_iOS/ACPExtensionEvent.h"
+#import "ACPExtensionEvent.h"
 ...
 NSError* error = nil;
 NSDictionary* eventData = @{
@@ -111,7 +111,7 @@ public void loginButtonClicked() {
 #### iOS
 
 ```text
-#import "ACPCore_iOS/ACPExtensionEvent.h"
+#import "ACPExtensionEvent.h"
 
 - (IBAction) loginButtonClicked:(id)sender {
     // construct the event to dispatch (see above)

@@ -36,13 +36,13 @@ Import the library:
 **Objective-C**
 
 ```objectivec
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import  "ACPIdentity.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPIdentity_iOS
+import ACPIdentity
 ```
 {% endtab %}
 {% endtabs %}

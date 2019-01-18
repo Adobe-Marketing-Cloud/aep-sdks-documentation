@@ -33,7 +33,8 @@ To add the Profile extension to your app:
 2. Import the UserProfile and Identity library.   
 
 ```text
-   #import <ACPCore_iOS/ACPCore_iOS.h>#import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
+   #import "ACPCore.h"
+   #import "ACPUserProfile.h"
 ```
 
 ### Swift

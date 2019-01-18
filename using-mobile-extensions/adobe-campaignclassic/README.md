@@ -77,17 +77,17 @@ or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing
 #### Objective-C
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
-#import <ACPCampaignClassic_iOS/ACPCampaignClassic_iOS.h>
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+#import "ACPCore.h"
+#import "ACPCampaignClassic.h"
+#import "ACPLifecycle.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPCore_iOS
-import ACPCampaign_iOS
-import ACPLifecycle_iOS
+import ACPCore
+import ACPCampaign
+import ACPLifecycle
 ```
 {% endtab %}
 {% endtabs %}

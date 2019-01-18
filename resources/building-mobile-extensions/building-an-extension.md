@@ -107,7 +107,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 **MyExtension.h**
 
 ```objectivec
-#import <ACPCore_iOS/ACPExtension.h>
+#import "ACPExtension.h"
 
 @interface MyExtension : ACPExtension
 - (nullable NSString*) name;
@@ -211,7 +211,7 @@ Some registration errors, such as undefined names, name conflicts, or type check
 {% endhint %}
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
+#import "ACPCore.h"
 #import "MyExtension.h"
 
 @implementation AppDelegate

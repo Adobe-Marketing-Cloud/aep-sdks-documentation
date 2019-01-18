@@ -97,13 +97,13 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 #### Objective-C
 
 ```objectivec
-#import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
+#import "ACPAnalytics.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPAnalytics_iOS
+import ACPAnalytics
 ```
 {% endtab %}
 {% endtabs %}
