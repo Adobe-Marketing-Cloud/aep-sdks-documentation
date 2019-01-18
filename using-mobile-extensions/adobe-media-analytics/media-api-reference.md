@@ -198,7 +198,7 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
-                                                           position: 1,
+                                                           position: 1
                                                           startTime: 0];
 ```
 
@@ -268,7 +268,7 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
                                                      adId: @"ad-id"
-                                                 position: 1,
+                                                 position: 1
                                                    length: 15];
 ```
 
@@ -340,7 +340,7 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
                                                            position: 1
-                                                             length: 60,
+                                                             length: 60
                                                           startTime: 0];
 ```
 
@@ -413,7 +413,7 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
                                                    startupTime: 2
-                                                           fps: 23,
+                                                           fps: 23
                                                  droppedFrames: 10];
 ```
 
@@ -451,8 +451,6 @@ public void trackSessionStart(Map<String, Object> mediaInfo, Map<String, String>
 
 ```java
 HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
-//Set to true if this is a resume playback scenario (not starting from playhead 0)
-//				mediaObject.put(MediaConstants.MediaObjectKey.RESUMED, true);
 
 HashMap<String, String> mediaMetadata = new HashMap<String, String>();
 // Standard metadata keys provided by adobe.
@@ -809,13 +807,10 @@ Method to track media events.
 ```java
 // AdStart
   HashMap<String, Object> adObject = Media.createAdObject("ad-name", "ad-id", 1L, 15D);
-  NSMutableDictionary* adMetadata = [[NSMutableDictionary alloc] init];
-
-
   HashMap<String, String> adMetadata = new HashMap<String, String>();
-	// Standard metadata keys provided by adobe.
-	adMetadata.put(MediaConstants.AdMetadataKeys.ADVERTISER, "Sample Advertiser");
-	adMetadata.put(MediaConstants.AdMetadataKeys.CAMPAIGN_ID, "Sample Campaign");
+  // Standard metadata keys provided by adobe.
+  adMetadata.put(MediaConstants.AdMetadataKeys.ADVERTISER, "Sample Advertiser");
+  adMetadata.put(MediaConstants.AdMetadataKeys.CAMPAIGN_ID, "Sample Campaign");
   // Custom metadata keys
   adMetadata.put("affiliate", "Sample affiliate");
   _tracker.trackEvent(Media.Event.AdStart, adObject, adMetadata);
@@ -849,26 +844,27 @@ Method to track media events.
 
 ```java
 // BufferStart
-_tracker.trackEvent(Media.Event.BufferStart, null, null);
+  _tracker.trackEvent(Media.Event.BufferStart, null, null);
 
 // BufferComplete
-_tracker.trackEvent(Media.Event.BufferComplete, null, null);
+  _tracker.trackEvent(Media.Event.BufferComplete, null, null);
 
 // SeekStart
-_tracker.trackEvent(Media.Event.SeekStart, null, null);
+  _tracker.trackEvent(Media.Event.SeekStart, null, null);
 
 // SeekComplete
-_tracker.trackEvent(Media.Event.SeekComplete, null, null);
+  _tracker.trackEvent(Media.Event.SeekComplete, null, null);
 ```
 
 #### Tracking Bitrate change
 
 ```java
-HashMap<String, Object> qoeObject = Media.createQoEObject(2000000L, 2D, 25D, 10D);
-_tracker.updateQoEObject(qoeObject);
+// If the new bitrate value is available provide it to the tracker.
+  HashMap<String, Object> qoeObject = Media.createQoEObject(2000000L, 2D, 25D, 10D);
+  _tracker.updateQoEObject(qoeObject);
 
 // Bitrate change
-_heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
+  _heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
 ```
 
 {% endtab %}
@@ -898,7 +894,6 @@ Here are examples in Objective-C and Swift:
 
 // AdBreakComplete
   [_tracker trackEvent:ACPMediaEventAdBreakComplete mediaObject:nil data:nil];
-
 ```
 
 **Swift**
@@ -906,11 +901,10 @@ Here are examples in Objective-C and Swift:
 ```swift
 // AdBreakStart
   let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
-   _tracker.trackEvent(ACPMediaEvent.adBreakStart, mediaObject: adBreakObject, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.adBreakStart, mediaObject: adBreakObject, data: nil)
 
 // AdBreakComplete
   _tracker.trackEvent(ACPMediaEvent.adBreakComplete, mediaObject: nil, data: nil)
-
 ```
 
 #### Tracking Ads
@@ -929,6 +923,7 @@ Here are examples in Objective-C and Swift:
   [adMetadata setObject:@"Sample Campaign" forKey:ACPAdMetadataKeyCampaignId];
   // Custom metadata keys
   [adMetadata setObject:@"Sample affiliate" forKey:@"affiliate"];
+  
   [_tracker trackEvent:ACPMediaEventAdStart mediaObject:adObject data:adMetadata];
 
 // AdComplete
@@ -948,9 +943,11 @@ Here are examples in Objective-C and Swift:
   var adMetadata = [ACPAdMetadataKeyAdvertiser: "Sample Advertiser", ACPAdMetadataKeyCampaignId: "Sample Campaign"]
   // Custom metadata keys
   adMetadata["affiliate"] = "Sample affiliate"
+  
+  _tracker.trackEvent(ACPMediaEvent.adStart, mediaObject: adObject, data: adMetadata)
 
 // AdComplete
-  [_tracker.trackEvent(ACPMediaEvent.adComplete, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.adComplete, mediaObject: nil, data: nil)
 
 // AdSkip
   _tracker.trackEvent(ACPMediaEvent.adSkip, mediaObject: nil, data: nil)
@@ -991,7 +988,7 @@ Here are examples in Objective-C and Swift:
   _tracker.trackEvent(ACPMediaEvent.chapterComplete, mediaObject: nil, data: nil)
 
 // ChapterSkip
-  tracker.trackEvent(ACPMediaEvent.chapterSkip, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.chapterSkip, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Playback events
@@ -1002,32 +999,32 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 // BufferStart
-[_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
 
 // BufferComplete
-[_tracker trackEvent:ACPMediaEventBufferComplete info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventBufferComplete info:nil data:nil];
 
 // SeekStart
-[_tracker trackEvent:ACPMediaEventSeekStart info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventSeekStart info:nil data:nil];
 
 // SeekComplete
-[_tracker trackEvent:ACPMediaEventSeekComplete info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventSeekComplete info:nil data:nil];
 ```
 
 **Swift**
 
 ```swift
 // BufferStart
-tracker.trackEvent(ACPMediaEvent.bufferStart, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.bufferStart, mediaObject: nil, data: nil)
 
 // BufferComplete
-_tracker.trackEvent(ACPMediaEvent.bufferComplete, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.bufferComplete, mediaObject: nil, data: nil)
 
 // SeekStart
-_tracker.trackEvent(ACPMediaEvent.seekStart, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.seekStart, mediaObject: nil, data: nil)
 
 // SeekComplete
-_tracker.trackEvent(ACPMediaEvent.seekComplete, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.seekComplete, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Bitrate change
@@ -1038,23 +1035,22 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 // If the new bitrate value is available provide it to the tracker.
-NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
-[_tracker updateQoEObject:qoeObject];
+  NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
+  [_tracker updateQoEObject:qoeObject];
 
 // Bitrate change
-[_tracker trackEvent:ACPMediaEventBitrateChange info:nil data:nil];
-
+  [_tracker trackEvent:ACPMediaEventBitrateChange info:nil data:nil];
 ```
 
 **Swift**
 
 ```swift
 // If the new bitrate value is available provide it to the tracker.
-let qoeObject = ACPMedia.createQoEObject(withBitrate: 2000000, startupTime: 2, fps: 25, droppedFrames: 10)
-_tracker.updateQoEObject(qoeObject)
+  let qoeObject = ACPMedia.createQoEObject(withBitrate: 2000000, startupTime: 2, fps: 25, droppedFrames: 10)
+  _tracker.updateQoEObject(qoeObject)
 
 // Bitrate change
-_tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
+  _tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
 ```
 
 {% endtab %}
@@ -1595,7 +1591,7 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 
 ## Media Resume
 
-Constant to denote the current tracking session is resuming a previosly closed session. This information must be provided when starting a tracking session.
+Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
