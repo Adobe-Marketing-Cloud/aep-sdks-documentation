@@ -426,7 +426,12 @@ TBD
 
 ## trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance.
+Track the intention to start playback. This starts a tracking session on the media tracker instance. See also [Media Resume](#media-resume)
+
+| Variable Name | Description                                                                                                                                                                 | Required |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|
+| `mediaInfo`   | Media Information created using [createMediaObject](#createMediaObject)                                                                                                     |    Yes   |
+| `contextData` | Optional Media context data. Use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants) for standard metadata keys. |    No    |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -441,7 +446,7 @@ public void trackSessionStart(Map<String, Object> mediaInfo, Map<String, String>
 #### Example
 
 ```java 
-_tracker.trackSessionStart(mediaInfo, mediaMetadata);
+TBD
 ```
 
 {% endtab %}
@@ -462,7 +467,18 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[_tracker trackSessionStart:mediaObject data:videoMetadata];
+NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
+
+NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
+// Standard metadata keys provided by adobe.
+[mediaMetadata setObject:@"Sample show" forKey:ACPVideoMetadataKeyShow];
+[mediaMetadata setObject:@"Sample Season" forKey:ACPVideoMetadataKeySeason];
+
+// Custom metadata keys
+[mediaMetadata setObject:@"false" forKey:@"isUserLoggedIn"];
+[mediaMetadata setObject:@"Sample TV station" forKey:@"tvStation"];
+
+[_tracker trackSessionStart:mediaObject data:mediaMetadata];
 ```
 
 **Swift**
@@ -475,7 +491,7 @@ TBD
 
 ## trackPlay
 
-TBD
+Track media play or resume after a previous pause.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -522,10 +538,9 @@ TBD
 {% endtab %}
 {% endtabs %}
 
-
 ## trackPause
 
-TBD
+Track media pause.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -575,7 +590,7 @@ TBD
 
 ## trackComplete
 
-TBD
+Track media complete. Call this method only when the media has been completly viewed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -625,7 +640,7 @@ TBD
 
 ## trackSessionEnd
 
-TBD
+Track the end of a viewing session. Call this method even if the user does not view the media to completion.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -674,7 +689,11 @@ TBD
 
 ## trackError
 
-TBD
+Track an error in media playback.
+
+| Variable Name | Description       | Required |
+|---------------|-------------------|:--------:|
+| `errorId`     | Error Information |    Yes   |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -718,12 +737,19 @@ Here are examples in Objective-C and Swift:
 ```swift
 TBD
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ## trackEvent
 
-TBD
+Method to track media events.
+
+| Variable Name | Description                                                                                                                                                                                                                                                                                                                           |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `event `      | [Media event]#(media-events)                                                                                                                                                                                                                                                                                                          |
+| `info`        | For AdBreakStart, AdBreak information created using [Create AdBreak Object](#create-adbreak-object).<br> For AdStart, Ad information created using [Create Ad Object](#create-ad-object).<br> For ChapterStart, Chapter information created using [Create Chapter Object](#create-chapter-object).<br> Not required for other events. |
+| `data`        | Optional context data only for AdStart and ChapterStart. Not required for other events.                                                                                                                                                                                                                                               |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -735,13 +761,40 @@ TBD
   public void trackEvent(Media.Event event, 
                          Map<String, 
                          Object> info, 
-                         Map<String, String> contextData) 
+                         Map<String, String> data) 
 ```
 
-#### Example
+#### Examples
 
-```java
-_tracker.trackEvent(Media.Event.BufferStart, null, null);
+
+#### Tracking AdBreaks
+
+```java 
+TBD
+```
+
+#### Tracking Ads
+
+```java 
+TBD
+```
+
+#### Tracking Chapters
+
+```java 
+TBD
+```
+
+#### Tracking Playback events
+
+```java 
+TBD
+```
+
+#### Tracking Bitrate change
+
+```java 
+TBD
 ```
 
 {% endtab %}
@@ -756,14 +809,22 @@ _tracker.trackEvent(Media.Event.BufferStart, null, null);
     (NSDictionary* _Nullable) data;
 ```
 
-#### Example
+#### Examples
+
+#### Tracking AdBreaks
 
 Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
 ```objectivec
-[_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
+// AdBreakStart
+  NSDictionary* adBreakObject = [ACPMedia createAdBreakObjectWithName:@"adbreak-name" position:1 startTime:0];
+  [_tracker trackEvent:ACPMediaEventAdBreakStart mediaObject:adBreakObject data:nil];
+
+// AdBreakComplete
+  [_tracker trackEvent:ACPMediaEventAdBreakComplete mediaObject:nil data:nil];
+    
 ```
 
 **Swift**
@@ -771,17 +832,125 @@ Here are examples in Objective-C and Swift:
 ```swift
 TBD
 ```
+
+#### Tracking Ads
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+// AdStart
+  NSDictionary* adObject = [ACPMedia createAdObjectWithName:@"ad-name" adId:@"ad-id" position:1 length:15];
+  NSMutableDictionary* adMetadata = [[NSMutableDictionary alloc] init];
+
+  // Standard metadata keys provided by adobe.
+  [adMetadata setObject:@"Sample Advertiser" forKey:ACPAdMetadataKeyAdvertiser];
+  [adMetadata setObject:@"Sample Campaign" forKey:ACPAdMetadataKeyCampaignId];
+  // Custom metadata keys
+  [adMetadata setObject:@"Sample affiliate" forKey:@"affiliate"];
+  [_tracker trackEvent:ACPMediaEventAdStart mediaObject:adObject data:adMetadata];
+
+// AdComplete
+  [_tracker trackEvent:ACPMediaEventAdComplete mediaObject:nil data:nil];
+
+// AdSkip
+  [_tracker trackEvent:ACPMediaEventAdSkip mediaObject:nil data:nil];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+
+#### Tracking Chapters
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+// ChapterStart
+  NSDictionary* chapterObject = [ACPMedia createChapterObjectWithName:@"chapter-name" position:1 length:30 startTime:0];
+
+  NSMutableDictionary *chapterMetadata = [[NSMutableDictionary alloc] init];
+  [chapterMetadata setObject:@"Sample segment type" forKey:@"segmentType"];
+
+  [_tracker trackEvent:ACPMediaEventChapterStart mediaObject:chapterObject data:chapterMetadata];
+
+// ChapterComplete
+[_tracker trackEvent:ACPMediaEventChapterComplete mediaObject:nil    data:nil];
+
+// ChapterSkip
+[_tracker trackEvent:ACPMediaEventChapterSkip mediaObject:nil    data:nil];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+
+#### Tracking Playback events
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+// BufferStart
+[_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
+
+// BufferComplete
+[_tracker trackEvent:ACPMediaEventBufferComplete info:nil data:nil];
+
+// SeekStart
+[_tracker trackEvent:ACPMediaEventSeekStart info:nil data:nil];
+
+// SeekComplete
+[_tracker trackEvent:ACPMediaEventSeekComplete info:nil data:nil];
+```
+
+**Swift**
+
+```swift
+TBD
+```
+
+#### Tracking Bitrate change
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+// If the new bitrate value is available provide it to the tracker.
+NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
+[_tracker updateQoEObject:qoeObject];
+
+// Bitrate change
+[_tracker trackEvent:ACPMediaEventBitrateChange info:nil data:nil];
+
+```
+
+**Swift**
+
+```swift
+TBD
+```
+
 {% endtab %}
 {% endtabs %}
 
+
 ## updateCurrentPlayhead
 
-Method to update current playhead.
-
+Provide media tracker with current media playhead. For accurate tracking, call this multiple times whenever playhead changes.
 
 | Variable Name | Description|
 |---------------|------------|
-| `time`        | Current position of the playhead. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
+| `time`        | Current playhead in seconds. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -830,12 +999,12 @@ TBD
 
 ## updateQoEObject
 
-Method to update current QoS information.
+Provide media tracker with current QoE information. For accurate tracking, call this multiple times whenever the media player provides updated QoE information.
 
 
 | Variable Name | Description|
 |---------------|------------|
-| `qoeObject`   | Map instance containing current QoS information. This method can be called multiple times during a playback session. Player implementation must always return the most recently available QoS data. |
+| `qoeObject`   | Current QoE information created using [Create QoE Object](#create-qoe-object)|
 
 {% tabs %}
 {% tab title="Android" %}
@@ -871,7 +1040,8 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-TBD
+NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:1000000 startupTime:2 fps:25 droppedFrames:10];
+[_tracker updateQoEObject:qoeObject];
 ```
 
 **Swift**
@@ -1301,5 +1471,66 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 
 ```
 
+{% endtab %}
+{% endtabs %}
+
+## Media Resume
+
+Constant to denote the current tracking session is resuming a previosly closed session. This information must be provided when starting a tracking session.
+
+{% tabs %}
+{% tab title="Android" %}
+### Media Resume
+
+#### Syntax
+
+```java
+public static final class MediaObjectKey {
+
+    /**
+     * Constant defining explicit media resumed property. Set this to true on MediaObject if resuming a previously closed session.
+    */
+    public static final String RESUMED;
+}
+```
+
+#### Example
+
+```java 
+TBD
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### Media Resume
+
+#### Syntax
+
+```objectivec
+  FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
+
+// Attach media resumed information.
+NSMutableDictionary *obj  = [mediaObject mutableCopy];
+[obj setObject:@YES forKey:ACPMediaKeyMediaResumed];
+
+[_tracker trackSessionStart:obj data:nil];
+```
+
+**Swift**
+
+```swift
+TBD
+```
 {% endtab %}
 {% endtabs %}
