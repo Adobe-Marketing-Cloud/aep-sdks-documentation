@@ -84,8 +84,7 @@ public void onCreate() {
 
 
 ```java
-public class AudiencetApp extends Application 
-{​ 
+public class AudienceApp extends Application {​ 
 	@Override public void onCreate() {     
 		super.onCreate();     
 		MobileCore.setApplication(this);​     
@@ -93,7 +92,7 @@ public class AudiencetApp extends Application
 			Audience.registerExtension();
 			Identity.registerExtension();     
 		} catch (Exception e) {         
-		//Log the exception     
+			//Log the exception     
 		} 
 	}
 }
