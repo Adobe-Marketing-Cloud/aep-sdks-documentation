@@ -1,7 +1,7 @@
 # Adobe Campaign Standard \(Beta\)
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx-internal.corp.adobe.com/content/help/en/campaign/kb/configuring-app-sdk.html). 
+**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html). 
 {% endhint %}
 
 {% hint style="warning" %}
@@ -37,7 +37,7 @@ For this beta extension, these endpoints URLs should be entered in **without** a
 A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
 
 {% hint style="info" %}
-Need help connecting your Launch mobile property with your Campaign Standard mobile app? For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx-internal.corp.adobe.com/content/help/en/campaign/kb/configuring-app-sdk.html).
+Need help connecting your Launch mobile property with your Campaign Standard mobile app? For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 {% endhint %}
 
 #### MCIAS Endpoint
@@ -186,7 +186,7 @@ For more information about setting up tracking postbacks for push and in-app mes
 Deleting your property in Launch may cause disruption to any recurring push and in-app messaging activities.
 {% endhint %}
 
-If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by clicking the **Remove from ACS** button. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx-internal.corp.adobe.com/content/help/en/campaign/kb/configuring-app-sdk.html)
+If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by clicking the **Remove from ACS** button. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
