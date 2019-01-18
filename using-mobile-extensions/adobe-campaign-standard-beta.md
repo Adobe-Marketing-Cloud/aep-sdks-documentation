@@ -5,7 +5,7 @@
 {% endhint %}
 
 {% hint style="warning" %}
-This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx-internal.corp.adobe.com/content/help/en/campaign/kb/configuring-app-sdk.html) or contact your beta program manager.
+This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) or contact your beta program manager.
 {% endhint %}
 
 ## Configure Campaign Standard Extension in Launch
