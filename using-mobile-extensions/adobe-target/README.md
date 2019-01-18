@@ -56,9 +56,9 @@ Import the Target and Identity library.
 #### Swift
 
    ```swift
-   #import "ACPCore"
-   #import "ACPTarget"
-   #import "ACPIdentity"
+   #import ACPCore
+   #import ACPTarget
+   #import ACPIdentity
    ```
 {% endtab %}
 {% endtabs %}
