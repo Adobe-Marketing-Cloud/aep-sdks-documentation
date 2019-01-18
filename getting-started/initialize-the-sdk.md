@@ -151,13 +151,13 @@ Add the Identity framework into your project
 #### Objective-C
 
 ```objectivec
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import "ACPIdentity.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPIdentity_iOS
+import ACPIdentity
 ```
 
 Register the Identity framework with Mobile Core

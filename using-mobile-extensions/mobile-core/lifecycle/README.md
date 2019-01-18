@@ -19,8 +19,8 @@ The Lifecycle framework provides valuable information about your user's current 
 1. Import the library:
 
 ```objectivec
- #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h> 
- #import <ACPCore_iOS/ACPCore_iOS.h>
+ #import "ACPLifecycle.h"
+ #import "ACPCore.h"
 ```
 {% endtab %}
 {% endtabs %}
