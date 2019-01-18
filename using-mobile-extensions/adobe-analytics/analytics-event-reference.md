@@ -164,10 +164,10 @@ This event will be generated the `analyticsGetTrackingIdentifier` public API cal
 
 On receiving the analytics identity request event, Analytics module completes one of the following tasks:
 
-* Checks the persistence for the saved aid and vid.
+* Checks the persistence for the saved AID and VID.
 * If `nil`, creates a sync network request to the analytic server to retrieve aid.
 
-Dispatches an Analytics Identity Response Event with the aid and vid value.
+Dispatches an Analytics Identity Response Event with the AID and VID value.
 
 #### Data Payload Definition  <a id="data-payload-definition-1"></a>
 
