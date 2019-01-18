@@ -85,20 +85,20 @@ Returns a HashMap instance that contains information about the media.
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createMediaObject(String name, 
-                                                        String mediaId, 
-                                                        Double length, 
-                                                        String streamType, 
+public static HashMap<String, Object> createMediaObject(String name,
+                                                        String mediaId,
+                                                        Double length,
+                                                        String streamType,
                                                         MediaType mediaType);
 ```
 
 #### Example
 
 ```java
-HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name", 
-                                                            "video-id", 
-                                                            60D, 
-                                                            MediaConstants.StreamType.VOD, 
+HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
+                                                            "video-id",
+                                                            60D,
+                                                            MediaConstants.StreamType.VOD,
                                                             Media.MediaType.Video);
 ```
 
@@ -129,7 +129,7 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
                                                         mediaId: @"video-id"
-                                                         length: 60,
+                                                         length: 60
                                                      streamType: ACPMediaStreamTypeVod
                                                       mediaType: ACPMediaTypeVideo];
 ```
@@ -137,7 +137,10 @@ NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
 **Swift**
 
 ```swift
-TBD
+let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "video-id",
+                                               length: Double(60),
+                                           streamType: ACPMediaStreamTypeVod,
+                                            mediaType:ACPMediaType.video)
 ```
 {% endtab %}
 {% endtabs %}
@@ -168,7 +171,7 @@ public static HashMap<String, Object> createAdBreakObject(String name, Long posi
 #### Example
 
 ```java
-HashMap<String, Object> adBreakInfo = Media.createAdBreakObject("adbreak-name", 1L, 0D);
+HashMap<String, Object> adBreakObject = Media.createAdBreakObject("adbreak-name", 1L, 0D);
 ```
 
 {% endtab %}
@@ -195,14 +198,15 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
-                                                           position: 1,
+                                                           position: 1
                                                           startTime: 0];
 ```
 
 **Swift**
 
 ```swift
-TBD
+let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
+
 ```
 
 {% endtab %}
@@ -264,14 +268,14 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
                                                      adId: @"ad-id"
-                                                 position: 1,
+                                                 position: 1
                                                    length: 15];
 ```
 
 **Swift**
 
 ```swift
-TBD
+let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
 ```
 
 {% endtab %}
@@ -298,9 +302,9 @@ Returns a HashMap instance that contains information about the chapter.
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createChapterObject(String name, 
-                                                          Long position, 
-                                                          Double length, 
+public static HashMap<String, Object> createChapterObject(String name,
+                                                          Long position,
+                                                          Double length,
                                                           Double startTime);
 ```
 
@@ -336,14 +340,14 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
                                                            position: 1
-                                                             length: 60,
+                                                             length: 60
                                                           startTime: 0];
 ```
 
 **Swift**
 
 ```swift
-TBD
+let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", position: 1, length: 60, startTime: 0)
 ```
 
 {% endtab %}
@@ -371,9 +375,9 @@ Returns a HashMap instance that contains information about the quality of experi
 #### Syntax
 
 ```java
-public static HashMap<String, Object> createQoEObject(Long bitrate, 
-                                                      Double startupTime, 
-                                                      Double fps, 
+public static HashMap<String, Object> createQoEObject(Long bitrate,
+                                                      Double startupTime,
+                                                      Double fps,
                                                       Long droppedFrames);
 ```
 
@@ -409,14 +413,14 @@ Here are examples in Objective-C and Swift:
 ```objectivec
 NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
                                                    startupTime: 2
-                                                           fps: 23,
+                                                           fps: 23
                                                  droppedFrames: 10];
 ```
 
 **Swift**
 
 ```swift
-TBD
+let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, fps: 23, droppedFrames: 10)
 ```
 
 {% endtab %}
@@ -445,8 +449,19 @@ public void trackSessionStart(Map<String, Object> mediaInfo, Map<String, String>
 
 #### Example
 
-```java 
-TBD
+```java
+HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
+
+HashMap<String, String> mediaMetadata = new HashMap<String, String>();
+// Standard metadata keys provided by adobe.
+mediaMetadata.put(MediaConstants.VideoMetadataKeys.EPISODE, "Sample Episode");
+mediaMetadata.put(MediaConstants.VideoMetadataKeys.SHOW, "Sample Show");
+
+// Custom metadata keys
+mediaMetadata.put("isUserLoggedIn", "false");
+mediaMetadata.put("tvStation", "Sample TV Station");
+
+_tracker.trackSessionStart(mediaInfo, videoMetadata);
 ```
 
 {% endtab %}
@@ -472,7 +487,7 @@ NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" me
 NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
 // Standard metadata keys provided by adobe.
 [mediaMetadata setObject:@"Sample show" forKey:ACPVideoMetadataKeyShow];
-[mediaMetadata setObject:@"Sample Season" forKey:ACPVideoMetadataKeySeason];
+[mediaMetadata setObject:@"Sample season" forKey:ACPVideoMetadataKeySeason];
 
 // Custom metadata keys
 [mediaMetadata setObject:@"false" forKey:@"isUserLoggedIn"];
@@ -484,7 +499,16 @@ NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
 **Swift**
 
 ```swift
-TBD
+let mediaObject = ACPMedia.createMediaObject(withName: "media-name", mediaId: "media-id", length: 60, streamType: ACPMediaStreamTypeVod, mediaType:ACPMediaType.video)
+
+// Standard metadata keys provided by adobe.      
+var mediaMetadata = [ACPVideoMetadataKeyShow: "Sample show", ACPVideoMetadataKeySeason: "Sample season"]
+
+// Custom metadata keys      
+mediaMetadata["isUserLoggedIn"] = "false"
+mediaMetadata["tvStation"] = "Sample TV station"
+
+_tracker.trackSessionStart(mediaObject, data: mediaMetadata)
 ```
 {% endtab %}
 {% endtabs %}
@@ -505,7 +529,7 @@ public void trackPlay();
 
 #### Example
 
-```java 
+```java
 _tracker.trackPlay();
 ```
 
@@ -533,7 +557,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.trackPlay()
 ```
 {% endtab %}
 {% endtabs %}
@@ -554,7 +578,7 @@ public void trackPause();
 
 #### Example
 
-```java 
+```java
 _tracker.trackPause();
 ```
 
@@ -582,7 +606,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.trackPause()
 ```
 {% endtab %}
 {% endtabs %}
@@ -604,7 +628,7 @@ public void trackComplete();
 
 #### Example
 
-```java 
+```java
 _tracker.trackComplete();
 ```
 
@@ -632,7 +656,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.trackComplete()
 ```
 {% endtab %}
 {% endtabs %}
@@ -654,7 +678,7 @@ public void trackSessionEnd();
 
 #### Example
 
-```java 
+```java
 _tracker.trackSessionEnd();
 ```
 
@@ -682,7 +706,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.trackSessionEnd()
 ```
 {% endtab %}
 {% endtabs %}
@@ -707,7 +731,7 @@ public void trackError(String errorId);
 
 #### Example
 
-```java 
+```java
 _tracker.trackError("errorId");
 ```
 
@@ -735,7 +759,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.trackError("errorId")
 ```
 
 {% endtab %}
@@ -758,10 +782,10 @@ Method to track media events.
 #### Syntax
 
 ```java
-  public void trackEvent(Media.Event event, 
-                         Map<String, 
-                         Object> info, 
-                         Map<String, String> data) 
+  public void trackEvent(Media.Event event,
+                         Map<String,
+                         Object> info,
+                         Map<String, String> data)
 ```
 
 #### Examples
@@ -769,32 +793,78 @@ Method to track media events.
 
 #### Tracking AdBreaks
 
-```java 
-TBD
+```java
+// AdBreakStart
+  HashMap<String, Object> adBreakObject = Media.createAdBreakObject("adbreak-name", 1L, 0D);
+  _tracker.trackEvent(Media.Event.AdBreakStart, adBreakObject, null);
+
+// AdBreakComplete
+  _tracker.trackEvent(Media.Event.AdBreakComplete, null, null);
 ```
 
 #### Tracking Ads
 
-```java 
-TBD
+```java
+// AdStart
+  HashMap<String, Object> adObject = Media.createAdObject("ad-name", "ad-id", 1L, 15D);
+  HashMap<String, String> adMetadata = new HashMap<String, String>();
+  // Standard metadata keys provided by adobe.
+  adMetadata.put(MediaConstants.AdMetadataKeys.ADVERTISER, "Sample Advertiser");
+  adMetadata.put(MediaConstants.AdMetadataKeys.CAMPAIGN_ID, "Sample Campaign");
+  // Custom metadata keys
+  adMetadata.put("affiliate", "Sample affiliate");
+  _tracker.trackEvent(Media.Event.AdStart, adObject, adMetadata);
+
+// AdComplete
+  _tracker.trackEvent(Media.Event.AdComplete, null, null);
+
+// AdSkip
+  _tracker.trackEvent(Media.Event.AdSkip, null, null);
 ```
 
 #### Tracking Chapters
 
-```java 
-TBD
+```java
+// ChapterStart
+  HashMap<String, Object> chapterObject = Media.createChapterObject("chapter-name", 1L, 60D, 0D);
+
+  HashMap<String, String> chapterMetadata = new HashMap<String, String>();
+  chapterMetadata.put("segmentType", "Sample segment type");
+
+  _tracker.trackEvent(Media.Event.ChapterStart, chapterDataInfo, chapterMetadata);
+
+// ChapterComplete
+  _tracker.trackEvent(Media.Event.ChapterComplete, null, null);
+
+// ChapterSkip
+  _tracker.trackEvent(Media.Event.ChapterSkip, null, null);
 ```
 
 #### Tracking Playback events
 
-```java 
-TBD
+```java
+// BufferStart
+  _tracker.trackEvent(Media.Event.BufferStart, null, null);
+
+// BufferComplete
+  _tracker.trackEvent(Media.Event.BufferComplete, null, null);
+
+// SeekStart
+  _tracker.trackEvent(Media.Event.SeekStart, null, null);
+
+// SeekComplete
+  _tracker.trackEvent(Media.Event.SeekComplete, null, null);
 ```
 
 #### Tracking Bitrate change
 
-```java 
-TBD
+```java
+// If the new bitrate value is available provide it to the tracker.
+  HashMap<String, Object> qoeObject = Media.createQoEObject(2000000L, 2D, 25D, 10D);
+  _tracker.updateQoEObject(qoeObject);
+
+// Bitrate change
+  _heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
 ```
 
 {% endtab %}
@@ -824,13 +894,17 @@ Here are examples in Objective-C and Swift:
 
 // AdBreakComplete
   [_tracker trackEvent:ACPMediaEventAdBreakComplete mediaObject:nil data:nil];
-    
 ```
 
 **Swift**
 
 ```swift
-TBD
+// AdBreakStart
+  let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
+  _tracker.trackEvent(ACPMediaEvent.adBreakStart, mediaObject: adBreakObject, data: nil)
+
+// AdBreakComplete
+  _tracker.trackEvent(ACPMediaEvent.adBreakComplete, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Ads
@@ -849,6 +923,7 @@ Here are examples in Objective-C and Swift:
   [adMetadata setObject:@"Sample Campaign" forKey:ACPAdMetadataKeyCampaignId];
   // Custom metadata keys
   [adMetadata setObject:@"Sample affiliate" forKey:@"affiliate"];
+  
   [_tracker trackEvent:ACPMediaEventAdStart mediaObject:adObject data:adMetadata];
 
 // AdComplete
@@ -861,7 +936,21 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+// AdStart
+  let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
+
+  // Standard metadata keys provided by adobe.    
+  var adMetadata = [ACPAdMetadataKeyAdvertiser: "Sample Advertiser", ACPAdMetadataKeyCampaignId: "Sample Campaign"]
+  // Custom metadata keys
+  adMetadata["affiliate"] = "Sample affiliate"
+  
+  _tracker.trackEvent(ACPMediaEvent.adStart, mediaObject: adObject, data: adMetadata)
+
+// AdComplete
+  _tracker.trackEvent(ACPMediaEvent.adComplete, mediaObject: nil, data: nil)
+
+// AdSkip
+  _tracker.trackEvent(ACPMediaEvent.adSkip, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Chapters
@@ -880,16 +969,26 @@ Here are examples in Objective-C and Swift:
   [_tracker trackEvent:ACPMediaEventChapterStart mediaObject:chapterObject data:chapterMetadata];
 
 // ChapterComplete
-[_tracker trackEvent:ACPMediaEventChapterComplete mediaObject:nil    data:nil];
+  [_tracker trackEvent:ACPMediaEventChapterComplete mediaObject:nil    data:nil];
 
 // ChapterSkip
-[_tracker trackEvent:ACPMediaEventChapterSkip mediaObject:nil    data:nil];
+  [_tracker trackEvent:ACPMediaEventChapterSkip mediaObject:nil    data:nil];
 ```
 
 **Swift**
 
 ```swift
-TBD
+// ChapterStart
+  let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", position: 1, length: 60, startTime: 0)
+  let chapterMetadata = ["Sample segment type": "segmentType"];
+
+  _tracker.trackEvent(ACPMediaEvent.chapterStart, mediaObject: chapterObject, data: chapterMetadata)
+
+// ChapterComplete
+  _tracker.trackEvent(ACPMediaEvent.chapterComplete, mediaObject: nil, data: nil)
+
+// ChapterSkip
+  _tracker.trackEvent(ACPMediaEvent.chapterSkip, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Playback events
@@ -900,22 +999,32 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 // BufferStart
-[_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
 
 // BufferComplete
-[_tracker trackEvent:ACPMediaEventBufferComplete info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventBufferComplete info:nil data:nil];
 
 // SeekStart
-[_tracker trackEvent:ACPMediaEventSeekStart info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventSeekStart info:nil data:nil];
 
 // SeekComplete
-[_tracker trackEvent:ACPMediaEventSeekComplete info:nil data:nil];
+  [_tracker trackEvent:ACPMediaEventSeekComplete info:nil data:nil];
 ```
 
 **Swift**
 
 ```swift
-TBD
+// BufferStart
+  _tracker.trackEvent(ACPMediaEvent.bufferStart, mediaObject: nil, data: nil)
+
+// BufferComplete
+  _tracker.trackEvent(ACPMediaEvent.bufferComplete, mediaObject: nil, data: nil)
+
+// SeekStart
+  _tracker.trackEvent(ACPMediaEvent.seekStart, mediaObject: nil, data: nil)
+
+// SeekComplete
+  _tracker.trackEvent(ACPMediaEvent.seekComplete, mediaObject: nil, data: nil)
 ```
 
 #### Tracking Bitrate change
@@ -926,18 +1035,22 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 // If the new bitrate value is available provide it to the tracker.
-NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
-[_tracker updateQoEObject:qoeObject];
+  NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
+  [_tracker updateQoEObject:qoeObject];
 
 // Bitrate change
-[_tracker trackEvent:ACPMediaEventBitrateChange info:nil data:nil];
-
+  [_tracker trackEvent:ACPMediaEventBitrateChange info:nil data:nil];
 ```
 
 **Swift**
 
 ```swift
-TBD
+// If the new bitrate value is available provide it to the tracker.
+  let qoeObject = ACPMedia.createQoEObject(withBitrate: 2000000, startupTime: 2, fps: 25, droppedFrames: 10)
+  _tracker.updateQoEObject(qoeObject)
+
+// Bitrate change
+  _tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
 ```
 
 {% endtab %}
@@ -964,7 +1077,7 @@ public void updateCurrentPlayhead(double time);
 
 #### Example
 
-```java 
+```java
 _tracker.updateCurrentPlayhead(1);
 ```
 
@@ -992,7 +1105,7 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-TBD
+_tracker.updateCurrentPlayhead(1)
 ```
 {% endtab %}
 {% endtabs %}
@@ -1018,8 +1131,9 @@ public void updateQoEObject(Map<String, Object> qoeObject);
 
 #### Example
 
-```java 
-TBD
+```java
+HashMap<String, Object> qoeObject = Media.createQoEObject(1000000L, 2D, 25D, 10D);
+_tracker.updateQoEObject(qoeObject);
 ```
 
 {% endtab %}
@@ -1047,7 +1161,8 @@ NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:1000000 startupTi
 **Swift**
 
 ```swift
-TBD
+let qoeObject = ACPMedia.createQoEObject(withBitrate: 1000000, startupTime: 2, fps: 25, droppedFrames: 10)
+_tracker.updateQoEObject(qoeObject)
 ```
 {% endtab %}
 {% endtabs %}
@@ -1061,7 +1176,7 @@ This defines the type of a media that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 public enum MediaType {
     /**
     * Constant defining media type for Video streams
@@ -1100,7 +1215,7 @@ This defines the stream type of the content that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 public static final class StreamType {
     /**
     * Constant defining stream type for VOD streams
@@ -1179,7 +1294,7 @@ This defines the standard metadata keys for video streams.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 
 /**
  * These constant strings define standard video metadata keys.
@@ -1244,7 +1359,7 @@ This defines the standard metadata keys for audio streams.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 
 /**
  * These constant strings define standard audio metadata keys.
@@ -1288,7 +1403,7 @@ This defines the standard metadata keys for ads.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 
 /**
  * These constant strings define standard metadata keys for ads.
@@ -1332,12 +1447,12 @@ This defines the type of a tracking event.
 
 {% tabs %}
 {% tab title="Android" %}
-```java 
+```java
 
   /**
   * These enumeration values define the type of a tracking event
   */
-  
+
   public enum Event {
     /**
      * Constant defining event type for AdBreak start
@@ -1476,7 +1591,7 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 
 ## Media Resume
 
-Constant to denote the current tracking session is resuming a previosly closed session. This information must be provided when starting a tracking session.
+Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1496,8 +1611,13 @@ public static final class MediaObjectKey {
 
 #### Example
 
-```java 
-TBD
+```java
+HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
+
+// Attach media resumed information.
+mediaObject.put(MediaConstants.MediaObjectKey.RESUMED, true);
+
+_heartbeat.trackSessionStart(mediaObject, null);
 ```
 
 {% endtab %}
@@ -1530,7 +1650,12 @@ NSMutableDictionary *obj  = [mediaObject mutableCopy];
 **Swift**
 
 ```swift
-TBD
+var mediaObject = ACPMedia.createMediaObject(withName: "media-name", mediaId: "media-id", length: 60, streamType: ACPMediaStreamTypeVod, mediaType:ACPMediaType.video)
+
+// Attach media resumed information.
+mediaObject[ACPMediaKeyMediaResumed] = true
+
+_tracker.trackSessionStart(mediaObject, data: nil)
 ```
 {% endtab %}
 {% endtabs %}
