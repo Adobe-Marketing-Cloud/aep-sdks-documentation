@@ -14,6 +14,7 @@
 * [Mobile Core](using-mobile-extensions/mobile-core/README.md)
   * [Configuration methods reference](using-mobile-extensions/mobile-core/configuration-reference/README.md)
     * [Mobile Core API Reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md)
+    * [Mobile Core Event Reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-event-reference.md)
     * [Rules Engine reference](using-mobile-extensions/mobile-core/configuration-reference/rules-engine-reference.md)
   * [Identity](using-mobile-extensions/mobile-core/identity/README.md)
     * [Identity API Reference](using-mobile-extensions/mobile-core/identity/identity-api-reference.md)

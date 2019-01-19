@@ -80,7 +80,7 @@ If you have the **Analytics** extension setup, this API will increment page view
 {% tab title="Android" %}
 #### Java
 
- In Android, trackState is typically called each time a new activity is loaded
+ In Android, trackState is typically called each time a new Activity is loaded
 
 ### trackState <a id="trackstate"></a>
 
@@ -193,6 +193,72 @@ ACPCore.collectPii(data: [String : String])
 ```
 {% endtab %}
 {% endtabs %}
+
+## Collect launch information
+
+You can provide the user information to the SDK from various launch points in your application.
+
+{% hint style="info" %}
+
+If the **Analytics** extension is enabled in your SDK, the collection of this launch data will result in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message. {% endhint %}
+
+{% tabs %} {% tab title="Android" %}
+
+Coming soon
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Objective-C
+
+This method should be called to support the following use cases:
+
+- Tracking Deep Link click-throughs
+  - From `application:didFinishLaunchingWithOptions`
+  - Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+- Tracking Push Message click-through
+  - From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+
+### collectLaunchInfo
+
+#### Syntax
+
+```objective-c
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+#### Example
+
+```objective-c
+ [ACPCore collectLaunchInfo:launchOptions];
+```
+
+#### Swift
+
+This method should be called to support the following use cases:
+
+- Tracking Deep Link click-throughs
+  - From `application(_:didFinishLaunchingWithOptions:)`
+  - Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+- Tracking Push Message click-through
+  - From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+
+### collectLaunchInfo
+
+#### Syntax
+
+```swift
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+#### Example
+
+```swift
+ACPCore.collectLaunchInfo(userInfo)
+```
+
+{% endtab %} {% endtabs %}
 
 ## Further Reading
 
