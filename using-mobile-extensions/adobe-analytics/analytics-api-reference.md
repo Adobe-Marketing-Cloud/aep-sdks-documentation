@@ -1,4 +1,4 @@
-# Analytics API Reference
+# Analytics API reference
 
 ## Get the Tracking Identifier <a id="gettrackingidentifier"></a>
 

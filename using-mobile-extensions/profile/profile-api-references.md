@@ -1,4 +1,4 @@
-# Profile API References
+# Profile API references
 
 ## Update User Attributes
 

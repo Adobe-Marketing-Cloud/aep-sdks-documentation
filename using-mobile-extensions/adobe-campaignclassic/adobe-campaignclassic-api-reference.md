@@ -1,18 +1,16 @@
-# Campaign Classic API Reference
+# Campaign Classic API reference
 
 ## registerDevice API
 
 ### Registering a user's device with Campaign Classic
 
 {% tabs %}
-
 {% tab title="Android" %}
-
-Follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client) to get your app ready to handle push notifications. Once you receive the FCM SDK registration token, you will need to send that token along with the device information to Campaign Classic using the registerDevice API.
+To get your app ready to handle push notifications, follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the FCM SDK registration token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 
 ### registerDevice
 
-The registerDevice API will register a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies the user such as an email address or login name. It can also be given a Map of custom key value pairs that you want to associate with the registration. As a result, a boolean value is returned in the callback which signals whether the registration was sucessful.
+The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
 
 #### Java
 
@@ -25,52 +23,45 @@ public static void registerDevice(final String token, final String userKey, fina
 #### Example
 
 ```java
-/**
- * Called if InstanceID token is updated. This may occur if the security of
- * the previous token had been compromised. Note that this is called when the InstanceID token
- * is initially generated so this is where you would retrieve the token.
- */
 @Override
 public void onNewToken(String token) {
-    Log.d(TAG, "Refreshed token: " + token);
+    Log.d("TestApp", "Refreshed token: " + token);
 
     // If you want to send messages to this application instance or
-    // manage this apps subscriptions on the server side, send the
+    // manage this app's subscriptions on the server side, send the
     // Instance ID token to your app server.
     if (token != null) {
-				System.out.println("FCM SDK registration token received : " + token);
+                Log.d("TestApp", "FCM SDK registration token received : " + token);
                 // Create a map of additional paramters
                 Map<String, Object> additionalParams = new HashMap<String, Object>();
-            	additionalParams.put("testNum", 12345);
-            	additionalParams.put("testBool", true);
-            	additionalParams.put("brand", "Adobe");
+                additionalParams.put("name", "John");
+                additionalParams.put("serial", 12345);
+                additionalParams.put("premium", true);
                 // Send the registration info
-				CampaignClassic.registerDevice(token, "user@gmail.com", 					 			additionalParams,new AdobeCallback<Boolean>() {
-					@Override
-					public void call(final Boolean status) {
-						Log.w(TAG, "Status: " + status;
-					}
-				});
-  	}
+                CampaignClassic.registerDevice(token, "johndoe@gmail.com",                                  additionalParams,new AdobeCallback<Boolean>() {
+                    @Override
+                    public void call(final Boolean status) {
+                        Log.d("TestApp", "Registration Status: " + status);
+                    }
+                });
+      }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-Follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications. Once you receive the APNS token, you will need to send that token with the device information to Campaign Classic using the registerDevice API.
+To get your app ready to handle push notifications, follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1). After you receive the APNS token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 
 ### registerDevice
 
-The registerDevice API will register a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies the user, such as an email address or login name. It can also be given a dictionary of custom key value pairs that you want to associate with the registration. As a result, a boolean value is returned in the callback which signals whether the registration was sucessful.
+The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
 
 #### Objective-C
 
 #### Syntax
 
 ```objectivec
-+ (void) registerDevice: (nonnull NSData*) token userKey: (nonnull NSString*) userKey additionalParams: (nullable NSDictionary*) additionalParams callback: (nullable void (^) (BOOL success)) callback;
++ (void) registerDevice: (nonnull NSData*) token userKey: (nullable NSString*) userKey additionalParams: (nullable NSDictionary*) additionalParams callback: (nullable void (^) (BOOL success)) callback;
 ```
 
 #### Example
@@ -78,12 +69,12 @@ The registerDevice API will register a device with your Campaign Classic registr
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   // Set the deviceToken that the APNS has assigned to the device
-  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:      	@"John", @"name", nil];
+  NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:          @"John", @"name", nil];
   [params setObject: [NSNumber numberWithInt:12345] forKey: @"serial"];
   [params setObject: [NSNumber numberWithBool:YES]  forKey: @"premium"];
-    
+
 [ACPCampaignClassic registerDevice:deviceToken userKey:@"johndoe@gmail.com" additionalParams:params callback:^(BOOL success) {
-	NSLog(@"Registration Status: %d", success);
+    NSLog(@"Registration Status: %d", success);
 }
 ```
 
@@ -91,25 +82,22 @@ The registerDevice API will register a device with your Campaign Classic registr
 
 ```swift
 ACPCampaignClassic.registerDevice(deviceToken, userKey: userKey, additionalParams: additionalParams, callback: {(_ success: Bool?) -> Void in
-            NSLog("Status: %d", success)                                                                                                                        })
+            NSLog("Registration Status: %d", success)                                                                                                                        })
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## trackNotification API
 
-### Tracking for push message receive and clickthrough
+### Tracking push notifications
 
-Adobe Campaign Classic has two additional API used for tracking push messages received and push messages clicked.
-
-### trackNotificationReceive
-
-The trackNotificationReceive API should be called after a push message has been received in the app. On iOS it takes a dictionary as a parameter, and the dictionary should contain the message ID and delivery ID retrieved from the received push message. On Android, the API takes a map containing the same message ID and delivery ID received from the push message.
+Adobe Campaign Classic has two additional APIs used for tracking push message receive and opening.
 
 {% tabs %}
-
 {% tab title="Android" %}
+### trackNotificationReceive
+
+The `trackNotificationClick` API sends the clicked push notification tracking information to the configured Adobe Campaign Classic server. If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Java
 
@@ -123,33 +111,29 @@ public static void trackNotificationReceive(final Map<String, String> trackInfo)
 
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.d("TestApp", "Receive message from: " + remoteMessage.getFrom());
+        Map<String,String> payloadData = message.getData();
 
-	private NotificationManager notifManager;
-	private Activity testActivity;
-
-	@Override
-	public void onMessageReceived(RemoteMessage remoteMessage) {
-
-		System.out.println("From: " + remoteMessage.getFrom());
-
-		// Check if message contains a data payload.
-		if (remoteMessage.getData().size() > 0) {
-			System.out.println("Message data payload: " + remoteMessage.getData());
-            // Build the additional parameter map
-            // then send the tracking info for message received
-            String broadlogId = remoteMessage.getMessageId();
-        	String deliveryId = remoteMessage.getFrom();
+        // Check if message contains data payload.
+        if (payloadData.size() > 0) {
             Map<String,String> trackInfo = new HashMap<>();
-        	trackInfo.put("broadlogid", broadlogId);
-        	trackInfo.put("deliveryid", deliveryId);
-        	CampaignClassic.trackNotificationReceieve(trackInfo);
-	}
+            trackInfo.put("_mId", payloadData.get("_mId"));
+            trackInfo.put("_dId", payloadData.get("_dId"));
+
+            // Send the tracking information for message received
+            CampaignClassic.trackNotificationReceive(trackInfo);
+        }
+    }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
+### trackNotificationReceive
+
+The `trackNotificationClick API` sends clicked push notification tracking information to the configured Adobe Campaign Classic server. You might pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Objective-C
 
@@ -162,12 +146,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 #### Example
 
 ```objectivec
-// Invoked when a notification is delivered to a foreground application (TrackReceive)
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    NSLog(@"User Info : %@",notification.request.content.userInfo);
-    // call trackNotificationReceive API to send receive information
-[ACPCampaignClassic trackNotificationReceive:notification.request.content.userInfo];
-completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)launchOptions fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
+{
+    if ( launchOptions) NSLog(@"launchOptions: %@", [launchOptions description]);
+    // Tracking silent push notification receive
+    if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
+        NSLog(@"Silent Push Notification");
+        [ACPCampaignClassic trackNotificationReceive:launchOptions];
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 ```
 
@@ -176,17 +163,14 @@ completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAu
 ```swift
 ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
 ```
-
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="Android" %}
 ### trackNotificationClick
 
-The trackNotificationClick API should be called after a push message has been opened by the user and clickedthrough it to launch the app. Similar to the trackNotificationReceive API, it takes a dictionary as a parameter, and the dictionary should contain the message ID and delivery ID retrieved from the push message which was clickedthrough. On Android, the API takes a map containing the same message ID and delivery ID received from the push message clickthrough.
-
-{% tabs %}
-
-{% tab title="Android" %}
+The `trackNotificationClick` API sends notification tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked. If `trackInfo` is null, or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Java
 
@@ -201,36 +185,34 @@ public static void trackNotificationClick(final Map<String, String> trackInfo)
 ```java
 @Override
 public void onResume() {
-	super.onResume();
-	App.setAppContext(this.getApplicationContext());
-	App.setCurrentActivity(this);
-    // ...
-	// omitted other functionality that may be present in the onResume method
-    // ...
-    // The broadlog and delivery id can be passed in the intent extras.
-    // This is assuming that you extract the broadlog and delivery id from the
-	// received push message and are including it in the intent (intent.putExtra())
+    super.onResume();
+    // Perform any other app related tasks 
+    // The messageId (_mId) and deliveryId (_dId) can be passed in the intent extras.
+    // This is assuming you extract the messageId and deliveryId from the
+    // received push message and are including it in the intent (intent.putExtra())
     // of the displayed notification.
-	if (getIntent().getExtras() != null) {
-		Map<String,String> trackInfo = new HashMap<>();
-		for (String key : getIntent().getExtras().keySet()) {
-			Object value = getIntent().getExtras().get(key);
-            // extract broadlog id
-			if(key.equals("_mId")){
-				trackInfo.put(key, value.toString());
-            // extract delivery id
-			}else if(key.equals("_dId")){
-				trackInfo.put(key, value.toString());
-			}
-		}
-		CampaignClassic.trackNotificationClick(trackInfo);
-	}
+
+    Bundle extras = getIntent().getExtras();
+    if (extras != null) {
+        String deliveryId = extras.getString("_dId");
+        String messageId = extras.getString("_mId");
+        if (deliveryId != null && messageId != null) {
+            Map<String,String> trackInfo = new HashMap<>();
+            trackInfo.put("_mId", messageId);
+            trackInfo.put("_dId", deliveryId);
+
+            // Send the tracking information for message opening
+            CampaignClassic.trackNotificationClick(trackInfo);
+        }
+    }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
+### trackNotificationClick
+
+The `trackNotificationClick` API sends notification tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked, which may result in the application being opened. You might pass the `launchOptions` that was received before opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Objective-C
 
@@ -243,10 +225,11 @@ public void onResume() {
 #### Example
 
 ```objectivec
-// Indicates which action was selected by the user for a given notification.
--(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler
+{
     NSLog(@"User Info : %@",response.notification.request.content.userInfo);
-[ACPCampaignClassic trackNotificationClick:response.notification.request.content.userInfo];
+    // Track action selected by the user for a given notification
+    [ACPCampaignClassic             trackNotificationClick:response.notification.request.content.userInfo];
 completionHandler();
 }
 ```
@@ -256,6 +239,6 @@ completionHandler();
 ```swift
 ACPCampaignClassic.trackNotificationClick(trackInfo[String:String])
 ```
-
 {% endtab %}
 {% endtabs %}
+

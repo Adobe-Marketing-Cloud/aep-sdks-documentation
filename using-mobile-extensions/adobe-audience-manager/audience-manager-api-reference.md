@@ -1,4 +1,4 @@
-# Audience Manager API Reference
+# Audience Manager API reference
 
 ## Send Signals to Audience Manager
 
