@@ -70,13 +70,13 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 #### Objective-C
 
 ```objectivec
-#import <ACPMedia_iOS/ACPMedia_iOS.h>
+#import <ACPMedia.h>
 ```
 
 #### Swift
 
 ```swift
-import ACPMedia_iOS
+import ACPMedia
 ```
 
 {% endtab %}
