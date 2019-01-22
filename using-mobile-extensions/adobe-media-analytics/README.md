@@ -3,7 +3,7 @@
 ## **Configure Media Analytics Extension in Launch**
 
 1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension and click **Install**.
+2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
 3. Provide extension settings \(see [Configure Media Analytics Extension](#configure-media-analytics-extension)\).
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
@@ -47,7 +47,7 @@ This should be disabled for your production application.
 ### Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires the [Adobe Analytics Extension](../adobe-analytics/README.md). You must add the Analytics extension to your Launch property, and make sure the extension is configured correctly.
+This extension requires the [Adobe Analytics Extension](../adobe-analytics/README.md). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
 {% tabs %}
@@ -143,7 +143,7 @@ func application(_ application: UIApplication,
 
 ## Configuration Keys
 
-If you need to update your SDK configuration programmatically, please use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key                  | Required | Description                                           |
 |----------------------|----------|-------------------------------------------------------|
