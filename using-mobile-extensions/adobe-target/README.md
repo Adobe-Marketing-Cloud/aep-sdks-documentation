@@ -317,6 +317,26 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% endtab %}
 {% endtabs %}
 
+The `collectLaunchInfo` API is used to enter visual preview mode. After visual preview mode is enabled, a red colored floating button is displayed on the app screen which can be pressed to easily re-enter visual preview mode.
+
+{% tabs %}
+
+{% tab title="iOS" %}
+
+#### Syntax
+
+`+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;`
+
+#### **Objective-C Example**
+
+`[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
+
+#### **Swift Example**
+
+`ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget")`
+{% endtab %}
+{% endtabs %}
+
 ## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 To see the performance of your Target activities for certain segments you can set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html)
