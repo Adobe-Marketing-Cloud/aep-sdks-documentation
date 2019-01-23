@@ -200,7 +200,7 @@ You can provide the user information to the SDK from various launch points in yo
 
 {% hint style="info" %}
 
-If the **Analytics** extension is enabled in your SDK, the collection of this launch data will result in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message. {% endhint %}
+If the **Analytics** extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message. {% endhint %}
 
 {% tabs %} {% tab title="Android" %}
 
@@ -260,7 +260,7 @@ ACPCore.collectLaunchInfo(userInfo)
 
 {% endtab %} {% endtabs %}
 
-## Further Reading
+## Additional Reading
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
 
