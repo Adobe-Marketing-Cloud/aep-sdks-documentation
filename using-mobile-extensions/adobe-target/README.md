@@ -317,7 +317,7 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% endtab %}
 {% endtabs %}
 
-The `collectLaunchInfo` API is used to enter visual preview mode. After visual preview mode is enabled, a red colored floating button is displayed on the app screen which can be pressed to easily re-enter visual preview mode.
+The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
 
 {% tabs %}
 
