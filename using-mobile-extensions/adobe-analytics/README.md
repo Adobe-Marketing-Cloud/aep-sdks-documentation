@@ -97,13 +97,13 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 #### Objective-C
 
 ```objectivec
-#import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
+#import "ACPAnalytics.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPAnalytics_iOS
+import ACPAnalytics
 ```
 {% endtab %}
 {% endtabs %}
@@ -143,8 +143,8 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPAnalytics registerExtension];
-  // Override point for customization after application launch.
-  return YES;
+  	// Override point for customization after application launch.
+  	return YES;
  }
 ```
 
