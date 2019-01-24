@@ -97,13 +97,17 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 #### Objective-C
 
 ```objectivec
+#import "ACPCore.h"
 #import "ACPAnalytics.h"
+#import "ACPIdentity.h"
 ```
 
 #### Swift
 
 ```swift
+import ACPCore
 import ACPAnalytics
+import ACPIdentity
 ```
 {% endtab %}
 {% endtabs %}
@@ -118,12 +122,12 @@ You may do the following after calling the `setApplication()` method in the `onC
 
 ```java
 public class MobileApp extends Application {
-​
+
  @Override
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-​
+	 MobileCore.ConfigureWithAppId("yourAppId");
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
@@ -142,7 +146,10 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"yourAppId"];
     [ACPAnalytics registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPCore start:nil];
   	// Override point for customization after application launch.
   	return YES;
  }
@@ -152,7 +159,10 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
- ACPAnalytics.registerExtension();
+ ACPCore.configure(withAppId: "yourAppId")   
+ ACPAnalytics.registerExtension()
+ ACPIdentity.registerExtension()
+ ACPCore.start(nil)
  // Override point for customization after application launch. 
  return true;
 }
@@ -176,7 +186,7 @@ trackState API will report the View State as **Page Name**, and state views are 
 trackAction API will report the Action as an **event**, and will not increment your page views in Analytics.
 {% endhint %}
 
-## Integrations with Experience Cloud solutions and services
+## Integrations with Experience Platform solutions and services
 
 ### Analytics for Target \(A4T\)
 
@@ -184,11 +194,11 @@ To see the performance of your Target activities for certain segments you can se
 
 ### Server-side forwarding with Audience Manager
 
-If you want to share the Analytics Data with Adobe Audience Manager, you can enable this in Launch UI in the Analytics extension, by selecting “Audience Manager Forwarding” option and installing the Audience Manager extension. For more details, please consult the [Audience Manager](https://docs.adobelaunch.com/~/edit/drafts/-LO-ar3DEDAsqJmfCW3k/extension-reference/mobile/audience-manager) section.
+To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select **Audience Manager Forwarding** and install the Audience Manager extension. For more information, go to the [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) section.
 
 ### Video Analytics
 
-For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+For more information on collecting video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
 
 ## Set Products Variable
 
@@ -301,7 +311,7 @@ MobileCore.trackState("Order Confirmation", cdata);
 #### Example
 
 ```objectivec
-/create a context data dictionary
+//create a context data dictionary
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
  
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
