@@ -1,4 +1,4 @@
-# Profile API References
+# Profile API references
 
 ## Update User Attributes
 
@@ -6,20 +6,22 @@
 {% tab title="Android" %}
 ### **updateUserAttribute**
 
-Allows you to create/update a batch of user profile attributes:
+Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
 
 * If the attribute does not exist, it will be created.
 * If the attribute exists, the value will be updated.
 * A null attribute value removes the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void updateUserAttribute(String attributeName, 
                                        Object attributeValue)
 ```
 
-**Example**
+#### **Example**
+
+You want to update `username` of a user obtained in the log in page :
 
 ```java
 UserProfile.updateUserAttribute("username", "Will Smith");
@@ -37,13 +39,15 @@ Allows you to create/update a batch of user profile attributes:
 * If the attribute already exists, then the value will be updated.
 * A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 public static void updateUserAttributes(Map<String, Object> attributeMap)
 ```
 
-**Example**
+#### **Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
 
 ```java
 HashMap<String, Object> profileMap = new HashMap<>();
@@ -54,7 +58,7 @@ UserProfile.updateUserAttributes(profileMap);
 {% endtab %}
 
 {% tab title="iOS" %}
-### updateUserAttribute {#updateuserattribute}
+### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
 
@@ -64,13 +68,15 @@ Remember the following information:
 * If the attribute already exists, then the value will be updated.
 * A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 + (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
 ```
 
-**Examples**
+#### **Examples**
+
+You want to update `username` of a user obtained in the log in page:
 
 Here is an example in Objective-C:
 
@@ -82,8 +88,6 @@ Here is an example in Swift:
 
 ```java
 ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
-updateUserAttributes
-
 ```
 
 ### updateUserAttributes
@@ -99,13 +103,15 @@ Allows to create/update a batch of user profile attributes:
 
 A null attribute value will remove the attribute.
 
-**Syntax**
+#### **Syntax**
 
 ```text
 + (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
 ```
 
-**Examples**
+#### **Examples**
+
+You want to update `username, usertype` of a user obtained in the log in page :
 
 Here is an example in Objective-C:
 
@@ -127,7 +133,7 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove User Attributes**
+## **Remove a User Attribute**
 
 Removes the given attribute name.
 
@@ -135,13 +141,17 @@ Removes the given attribute name.
 {% tab title="Android" %}
 ### **removeUserAttribute**
 
-**Syntax**
+Removes the user profile attribute for the given key.
+
+#### **Syntax**
 
 ```java
 public static void removeUserAttribute(String attributeName)
 ```
 
-**Example**
+#### **Example**
+
+A retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
@@ -153,13 +163,15 @@ UserProfile.removeUserAttribute("itemsAddedToCart");
 
 Removes the user profile attribute for the given key.
 
-**Syntax**
+#### **Syntax**
 
 ```objectivec
 + (void) removeUserAttribute: (nonnull NSString*) key
 ```
 
-**Examples**
+#### **Examples**
+
+Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 Here is an example in Objective-C:
 

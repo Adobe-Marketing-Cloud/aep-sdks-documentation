@@ -1,6 +1,6 @@
-# Audience Manager API Reference
+# Audience Manager API reference
 
-## Send signals to Audience Manager
+## Send Signals to Audience Manager
 
 Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to initial signal call.  The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
@@ -12,8 +12,6 @@ For more information on UUID and other Audience Manager identifiers, see [Index 
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
-
 ### **signalWithData**
 
 On Android, the UUID is persisted in `SharedPreferences`.
@@ -41,8 +39,6 @@ Audience.signalWithData(traits, visitorProfileCallback);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### signalWithData
 
 On iOS, UUID is persisted in `NSUserDefaults`.
@@ -54,7 +50,9 @@ On iOS, UUID is persisted in `NSUserDefaults`.
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-#### **Example**
+#### **Examples** 
+
+**Objective-C**
 
 ```objectivec
 // objective-c
@@ -65,6 +63,8 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 
 ```
 
+**Swift**
+
 ```swift
 // swift
 ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_ response: [AnyHashable: Any]?) -> Void in
@@ -74,7 +74,7 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_
 {% endtab %}
 {% endtabs %}
 
-## Reset identifiers & profiles
+## Reset Identifiers and Profiles
 
 This API helps you reset the Audience Manager UUID and purges the current visitor profile.
 
@@ -84,8 +84,6 @@ For more information on UUID, DPID, DPUUID and other Audience Manager identifier
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
-
 ### **reset**
 
 #### **Syntax**
@@ -102,8 +100,6 @@ Audience.reset();
 {% endtab %}
 
 {% tab title="iOS" %}
-#### **Objective-C**
-
 ### **reset**
 
 #### **Syntax**
@@ -112,12 +108,16 @@ Audience.reset();
 + (void) reset;
 ```
 
-#### **Example**
+#### **Examples**
+
+**Objective-C**
 
 ```objectivec
 // objective-c
 [ACPAudience reset];
 ```
+
+**Swift**
 
 ```swift
 // swift
@@ -132,8 +132,6 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### getVisitorProfile
 
 On Android, the visitor profile is saved in `SharedPreferences`.
@@ -159,19 +157,19 @@ Audience.getVisitorProfile(visitorProfileCallback);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### getVisitorProfile
 
 On iOS, the visitor profile is saved in `NSUserDefaults`.
 
-**Syntax**
+#### **Syntax**
 
 ```java
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-**Experience**
+#### **Example**
+
+**Objective-C**
 
 ```objectivec
 // objective-c
@@ -179,6 +177,8 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
   // your customized code
 }];
 ```
+
+**Swift**
 
 ```swift
 // swift

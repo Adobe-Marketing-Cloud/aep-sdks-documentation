@@ -18,36 +18,45 @@ To get started with the Profile extension:
 
 To add the Profile extension to your app:
 
-{% tabs %}
-{% tab title="Android" %}
+### Java
+
 1. Add the UserProfile library to your project using the app's gradle file.
 2. Import the UserProfile library \(and any other SDK library\) in your application's main activity.
 
    ```text
    import com.adobe.marketing.mobile.*;
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
+### Objective-C
+
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
 2. Import the UserProfile and Identity library.   
 
+```objective-c
+   #import "ACPCore.h"
+   #import "ACPUserProfile.h"
+```
 
-   ```text
-   #import <ACPCore_iOS/ACPCore_iOS.h>#import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
-   ```
+### Swift
 
-   If you are building in Swift, this step is co
-{% endtab %}
-{% endtabs %}
+```swift
+   import ACPCore
+   import ACPUserProfile
+```
+
+### 
+
+
 
 ## Register the Profile Extension
 
 {% tabs %}
 {% tab title="Android" %}
-**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity. For more details, see [Initial Configuration](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/configuration-methods-in-android)​
+### Java
 
-1. The UserProfile extensions must be registered with the SDK core before calling any Target API.
+**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity. For more details, see [Initial Configuration](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/configuration-methods-in-android)
+
+1. The UserProfile extension must be registered with the SDK core before calling any UserProfile API.
 
    This may be done after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
 
@@ -70,6 +79,8 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
+### Objective-C
+
 **Required**: You must complete the following steps in the app before calling other UserProfile APIs.
 
 1. In your app's `didFinishLaunchingWithOptions` function register the UserProfile extension.
@@ -82,9 +93,7 @@ public class MobileApp extends Application {
 }
 ```
 
-##  {#additional-information}
+### Swift
 {% endtab %}
 {% endtabs %}
-
-##   {#additional-information}
 

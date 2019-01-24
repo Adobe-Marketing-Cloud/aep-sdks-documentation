@@ -26,7 +26,7 @@ Provide one or more report suite identifiers to which the Analytics data should 
 What's a tracking server and where to find it? See [populating Tracking Servers](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
 {% endhint %}
 
-Provide the tracking domain to which all Analytics requests should be made. 
+Provide the tracking domain to which all Analytics requests should be made.
 
 #### **Offline Enabled**
 
@@ -34,10 +34,10 @@ Provide the tracking domain to which all Analytics requests should be made.
 Do you need offline tracking? See [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
 {% endhint %}
 
-When checked, Analytics hits are queued while the device is offline and sent later when the device is online. Your report suite must be timestamp-enabled to use offline tracking. 
+When checked, Analytics hits are queued while the device is offline and sent later when the device is online. Your report suite must be timestamp-enabled to use offline tracking.
 
 {% hint style="danger" %}
- If your report suite is timestamp enabled, this setting must be checked. If not, this setting must remain unchecked. If this setting is not configured correctly, data will be lost. If you're not sure that your report suite is timestamp enabled, contact Customer Care**.**
+If your report suite is timestamp enabled, this setting must be checked. If not, this setting must remain unchecked. If this setting is not configured correctly, data will be lost. If you're not sure that your report suite is timestamp enabled, contact Customer Care**.**
 {% endhint %}
 
 {% hint style="info" %}
@@ -50,7 +50,7 @@ If you currently send mobile SDK data to a report suite that also collects data 
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you have setup Analytics server-side forwarding to Audience Manager, then check this setting. When this setting is enabled, all SDK requests to Analytics servers are made with a response code of **10** to ensure that Analytics traffic is forwarded to Audience Manager**.**
+If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures ****Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
 #### Backdate Previous Session Info
 
@@ -58,7 +58,13 @@ If you have setup Analytics server-side forwarding to Audience Manager, then che
 Enable this setting only with report suite\(s\) that are timestamp enabled.
 {% endhint %}
 
-Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
+Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length. 
+
+When enabled, the SDK will backdate the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they happened. One hit will be backdated on every new launch of the application.
+
+For instance, if this setting is checked, Lifecycle session information or crash events will be backdated to one second after the last hit was sent. If unchecked, Lifecycle data will be attached to the first hit of the subsequent session.
+
+When disabled, the Adobe SDK will attach the session info to the current lifecycle.
 
 #### Batch Limit
 
@@ -68,32 +74,40 @@ This setting creates a threshold number of hits to be sent in consecutive calls.
 If you're batching hits \(that is, you're setting a value greater than 0\) then ensure that [Offline Enabled](./#offline-enabled) is also checked.
 {% endhint %}
 
-Default value for this setting is 0, which means that hit batching disabled and all hits will be immediately sent to Analytics as they are generated.
+The default value for this setting is 0, which means that hit batching is disabled and all hits will be immediately sent to Analytics as they are generated.
 
 ## Add Analytics to your app
 
 {% tabs %}
 {% tab title="Android" %}
+Add the Analytics extension to your project using the app's Gradle file.
+
 #### Java
 
-1. Add the Analytics extension to your project using the app's Gradle file.
-2. Import the Analytics extension in your application's main activity.
+1. Import the Analytics extension in your application's main activity.
 
-   ```java
-   import com.adobe.marketing.mobile.*;
-   ```
+```java
+import com.adobe.marketing.mobile.*;
+```
 {% endtab %}
 
 {% tab title="iOS" %}
+Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
+
 #### Objective-C
 
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-2. Import the Analytics extension:
-
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
-#import <ACPAnalytics_iOS/ACPAnalytics_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import "ACPCore.h"
+#import "ACPAnalytics.h"
+#import "ACPIdentity.h"
+```
+
+#### Swift
+
+```swift
+import ACPCore
+import ACPAnalytics
+import ACPIdentity
 ```
 {% endtab %}
 {% endtabs %}
@@ -108,12 +122,12 @@ You may do the following after calling the `setApplication()` method in the `onC
 
 ```java
 public class MobileApp extends Application {
-​
+
  @Override
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-​
+	 MobileCore.ConfigureWithAppId("yourAppId");
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
@@ -126,17 +140,32 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-In your app's`didFinishLaunchingWithOptions` , register the Analytics extension:
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPIdentity registerExtension];
+    [ACPCore configureWithAppId:@"yourAppId"];
     [ACPAnalytics registerExtension];
-​
-  // Override point for customization after application launch.
-  return YES;
+    [ACPIdentity registerExtension];
+    [ACPCore start:nil];
+  	// Override point for customization after application launch.
+  	return YES;
+ }
+```
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+ ACPCore.configure(withAppId: "yourAppId")   
+ ACPAnalytics.registerExtension()
+ ACPIdentity.registerExtension()
+ ACPCore.start(nil)
+ // Override point for customization after application launch. 
+ return true;
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -147,17 +176,17 @@ In order to automatically report on the application lifecycle details in Analyti
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the [track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs from the Mobile Core.
+To track mobile app states and actions in Adobe Analytics, implement the [track app actions](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-actions) and [track app states](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views) APIs from the Mobile Core.
 
 {% hint style="info" %}
 trackState API will report the View State as **Page Name**, and state views are reported as **Page View** in Analytics.
 {% endhint %}
 
 {% hint style="info" %}
-trackAction API will report the Action as ?
+trackAction API will report the Action as an **event**, and will not increment your page views in Analytics.
 {% endhint %}
 
-## Integrations with Experience Cloud solutions and services
+## Integrations with Experience Platform solutions and services
 
 ### Analytics for Target \(A4T\)
 
@@ -165,15 +194,203 @@ To see the performance of your Target activities for certain segments you can se
 
 ### Server-side forwarding with Audience Manager
 
-If you want to share the Analytics Data with Adobe Audience Manager, you can enable this in Launch UI in the Analytics extension, by selecting “Audience Manager Forwarding” option and installing the Audience Manager extension. For more details, please consult the [Audience Manager](https://docs.adobelaunch.com/~/edit/drafts/-LO-ar3DEDAsqJmfCW3k/extension-reference/mobile/audience-manager) section.
+To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select **Audience Manager Forwarding** and install the Audience Manager extension. For more information, go to the [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) section.
 
 ### Video Analytics
 
-For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+For more information on collecting video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
+
+## Set Products Variable
+
+As _products_ variable cannot be set by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable - see [Implementing a Merchandising Variable](https://marketing.adobe.com/resources/help/en_US/sc/implement/var_merchandising_impl.html) for more detail on this variable.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"Category;Product;Quantity;Price[,Category;Product;Quantity;Price]" forKey:@"&&products"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+[contextData setObject:@";Running Shoes;1;69.95,;Running Socks;10;29.99" forKey:@"&&products"];
+[contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
+[contextData setObject:@"1" forKey:@"m.purchase"];
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+[ACPCore trackAction:@"purchase" data:contextData];
+// trackState example:
+[ACPCore trackState:@"Order Confirmation" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
+![Example Network Request](../../.gitbook/assets/products-bloodhound.png)
+
+{% hint style="info" %}
+You do not need to map the products variable with processing rules as it will be set directly on the image request by the SDK.
+{% endhint %}
+
+### Set Products variable with merchandising eVars and product-specific events
+
+Here is an example of the products variable with Merchandising eVars and product-specific events.
+
+{% hint style="info" %}
+If you trigger a product-specific event by using the `&&products` variable, you must also set that event in the `&&events` variable. If you do not set that event, it is filtered out during processing.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+ 
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&events", "event1");
+cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+ 
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+ 
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+[contextData setObject:@"event1" forKey:@"&&events"];
+[contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"];
+[contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
+[contextData setObject:@"1" forKey:@"m.purchase"];
+ 
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+[ACPCore trackAction:@"purchase" data:contextData];
+// trackState example:
+[ACPCore trackState:@"Order Confirmation" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
+
+## Event Serialization
+
+As event serialization is not supported by processing rules, you'll need the following syntax in context data parameters to set serialized events directly on the hits sent to Analytics.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("&&events", "event1:12341234");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add events
+cdata.put("&&events", "event1:12341234");
+
+// send a tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("Action Name", cdata);
+// trackState example:
+MobileCore.trackState("State Name", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+[contextData setObject:@"eventN:serial number" forKey:@"&&events"];
+```
+
+#### Example
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add events
+[contextData setObject:@"event1:12341234" forKey:@"&&events"];
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+[ACPCore trackAction:@"Action Name" data:contextData];
+// trackState example:
+[ACPCore trackState:@"State Name" data:contextData];
+```
+{% endtab %}
+{% endtabs %}
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Analytics configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 <table>
   <thead>

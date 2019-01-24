@@ -1,4 +1,4 @@
-# Target Event Reference
+# Target event reference
 
 ## Events handled
 

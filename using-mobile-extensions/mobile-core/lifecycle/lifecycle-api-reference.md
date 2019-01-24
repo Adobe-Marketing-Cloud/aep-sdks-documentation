@@ -1,4 +1,4 @@
-# Lifecycle API Reference
+# Lifecycle API reference
 
 Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics. 
 
@@ -6,12 +6,10 @@ Lifecycle metrics are valuable, out-of-the-box information about your app user. 
 This section shows how to start collecting lifecycle metrics. Setup [Analytics](https://aep-sdks.gitbook.io/docs/mobile-extensions/adobe-analytics) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
 {% endhint %}
 
-## Lifecycle start & pause
+## Lifecycle Start and Pause
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 Import the Lifecycle framework:
 
 ```java
@@ -66,14 +64,20 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift {#objective-c-and-swift}
+#### Objective-C & Swift <a id="objective-c-and-swift"></a>
 
 Import the Lifecycle framework:
 
 ```objectivec
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPCore_iOS/ACPCore_iOS.h>
+#import "ACPLifecycle.h"
+#import "ACPCore.h" 
 ```
+
+```swift
+import ACPCore   // In swift ACPCore includes ACPLifecycle 
+```
+
+
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
 
@@ -132,7 +136,7 @@ You may pass additional data to lifecycle on app launch, app resume, both, or ne
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 {% hint style="warning" %}
 You need to add this code only in your main activity and any other activity, from which, your app may be launched.
@@ -169,21 +173,21 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 {% endtab %}
 {% endtabs %}
 
-## Tracking App Crashes in Android
+## Tracking App Crashes 
+
+## Android
 
 If your app is terminated without having first been backgrounded, the SDK an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle **false** crashes ****or **ungraceful** closes**.**
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleStart(additionalContextData)` in the `OnResume` method of each activity. In the `onPause` method, a call is made to `MobileCore.lifecyclePause()`. In the `MobileCore.lifecyclePause()` method, a flag is set to indicate a graceful exit. When the app is launched again or resumed, `MobileCore.lifecycleStart(additionalContextData)` checks this flag. If the app did not exit successfully as determined by the flag status, an `a.CrashEvent` context data is sent with the next call, and a crash event is reported.
 
 {% hint style="info" %}
 To ensure accurate crash reporting, you must call `lifecyclePause()` in the `onPause` method of each activity.  For more information about the Android activity lifecycle, see [Activities](https://developer.android.com/guide/components/activities/). 
 {% endhint %}
 
-#### **Causes of false crash reporting**
+### **Causes of false crash reporting**
 
 * If you are debugging by using an IDE, such as Android Studio, and launching the app again from the IDE while the app is in the foreground causes a crash.
 
@@ -191,7 +195,7 @@ To ensure accurate crash reporting, you must call `lifecyclePause()` in the `onP
 
 * If the previous foreground Activity of your app is moved to the background and does not call `MobileCore.lifecyclePause()`in `onPause`, and your app is manually closed or killed by the operating system, the next launch results in a crash.
 
-#### **Handling fragments**
+### **Handling fragments**
 
 Fragments have application lifecycle events that are similar to Activities. However, a fragment cannot be active without being attached to an Activity.
 {% endtab %}
@@ -231,7 +235,7 @@ iOS uses system notifications that allow developers to track and respond to diff
 {% endtab %}
 {% endtabs %}
 
-## Implementing global lifecycle callbacks {#implementing-global-lifecycle-callbacks}
+## Implementing global lifecycle callbacks <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 

@@ -11,7 +11,7 @@ To get started with **Audience Manager**, follow these steps:
    2. Send signals to Audience Manager
    3. Reset Audience Manager identifiers, visitor profiles
 
-## Configuring the Audience Manager Extension in Adobe Launch {#configuring-the-audience-manager-extension-in-adobe-launch}
+## Configuring the Audience Manager Extension in Adobe Launch <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
@@ -44,12 +44,14 @@ To get started with **Audience Manager**, follow these steps:
 2. Import the Audience and Identity library:
 
    ```text
-    #import <ACPCore_iOS/ACPCore_iOS.h> #import <ACPAudience_iOS/ACPAudience_iOS.h> #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+    #import "ACPCore.h"
+    #import "ACPAudience.h"
+    #import "ACPIdentity.h"
    ```
 
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
-{% endtab %}
-{% endtabs %}
+   {% endtab %}
+   {% endtabs %}
 
 ### Register Audience Manager with Mobile Core
 
@@ -79,11 +81,6 @@ public void onCreate() {
 }
 ```
 
-
-
-```text
-public class AudiencetApp extends Application {​ @Override public void onCreate() {     super.onCreate();     MobileCore.setApplication(this);​     try {         Audience.registerExtension();         Identity.registerExtension();     } catch (Exception e) {         //Log the exception     } }}
-```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -110,7 +107,7 @@ See [Audience Manager API Reference](audience-manager-api-reference.md)
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |

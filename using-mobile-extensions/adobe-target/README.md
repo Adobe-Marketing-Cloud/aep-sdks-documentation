@@ -11,7 +11,7 @@ To get started with **Target**, follow these steps:
    2. Prefetch offers
    3. Enter visual preview mode
 
-## Configure Target Extension in Launch {#configuring-the-adobe-target-extension-in-adobe-launch}
+## Configure Target Extension in Launch <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
 
@@ -19,9 +19,13 @@ To get started with **Target**, follow these steps:
 2. On the Installed tab, locate the Adobe Target extension and click **Configure**.
 3. Provide your **Target** client code.
 4. Optionally, provide your Environment ID.
-5. Provide a timeout value.
+5. Set the timeout value to 5s or greater.
 6. Click **Save**.
 7. Follow the publishing process, to update SDK configuration
+
+{% hint style="info" %}
+You can find your Target client code by going to the Setup tab and selecting Implementation on the left menu. Under Implementation Method, you can click "Edit at.js Settings" to pop-up a window that contains the client code.
+{% endhint %}
 
 ## Add Target to your app
 
@@ -38,20 +42,26 @@ To get started with **Target**, follow these steps:
 {% endtab %}
 
 {% tab title="iOS" %}
+Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
 #### Objective-C
 
-1. Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
-2. Import the Target and Identity library. 
+Import the Target and Identity library. 
 
    ```objectivec
-   #import <ACPCore_iOS/ACPCore_iOS.h>
-   #import <ACPTarget_iOS/ACPTarget_iOS.h>
-   #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+   #import "ACPCore.h"
+   #import "ACPTarget.h"
+   #import "ACPIdentity.h"
+   #import "ACPTargetRequestObject.h"
+   #import "ACPTargetPrefetchObject.h"
    ```
 
 #### Swift
 
-Update the bridging header
+   ```swift
+   #import ACPCore
+   #import ACPTarget
+   #import ACPIdentity
+   ```
 {% endtab %}
 {% endtabs %}
 
@@ -99,9 +109,17 @@ public class TargetApp extends Application {
 
 #### Swift
 {% endtab %}
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    ACPTarget.registerExtension()
+    ACPIdentity.registerExtension()
+    // Override point for customization after application launch. 
+    return true;
+}
+```
 {% endtabs %}
 
-## Prefetch offers {#integrating-adobe-target-with-analytics-a-4-t}
+## Prefetch offers <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 The SDK can minimize the number of times it reaches out to Target servers in order to fetch offers by caching server responses. When this feature is enabled, offer content will be retrieved and cached during the prefetch call. This content will be retrieved from the cache for all future calls that contain cached content for the specified **mbox** name. This "prefetch" process reduces offer load time, network calls made to Target servers, and even provides for Target to be notified which **mbox** was visited by the mobile app user.
 
@@ -275,7 +293,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 {% endtabs %}
 
-## Visual preview {#integrating-adobe-target-with-analytics-a-4-t}
+## Visual preview <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device without requiring a specialized testing setup.
 
@@ -313,13 +331,13 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% endtab %}
 {% endtabs %}
 
-## Target with Analytics \(A4T\) {#integrating-adobe-target-with-analytics-a-4-t}
+## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 To see the performance of your Target activities for certain segments you can set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html)
 
 ## Configuration Keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference.md#update-configuration).
+If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Description |
 | :--- | :--- |

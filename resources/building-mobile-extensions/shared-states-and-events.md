@@ -1,4 +1,4 @@
-# Shared States and Events
+# Shared states and events
 
 A shared state is composed of the following:
 
@@ -17,7 +17,7 @@ A module that receives an event for which it is listening \(for example, when An
 
 Here is an illustration of the workflow:
 
-![](https://github.com/Adobe-Marketing-Cloud/acp-sdks-documentation/tree/88bedb7ddb635a28d9520312147e1e1a55acc568/.gitbook/assets/shared-state-lifecycle.png)
+![](../../.gitbook/assets/shared-state-lifecycle.png)
 
 For a complete list of the events and shared states, see [Events and Shared States](https://github.com/Adobe-Marketing-Cloud/acp-sdks-documentation/tree/88bedb7ddb635a28d9520312147e1e1a55acc568/building-mobile-extensions/events/README.md).
 
