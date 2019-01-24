@@ -103,8 +103,6 @@ import ACPLifecycle_iOS
 import ACPSignal_iOS
 import ACPUserProfile_iOS
 ```
-ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer
-
 {% endtab %}
 {% endtabs %}
 

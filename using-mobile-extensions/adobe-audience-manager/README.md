@@ -81,11 +81,6 @@ public void onCreate() {
 }
 ```
 
-
-
-```text
-public class AudiencetApp extends Application {​ @Override public void onCreate() {     super.onCreate();     MobileCore.setApplication(this);​     try {         Audience.registerExtension();         Identity.registerExtension();     } catch (Exception e) {         //Log the exception     } }}
-```
 {% endtab %}
 
 {% tab title="iOS" %}

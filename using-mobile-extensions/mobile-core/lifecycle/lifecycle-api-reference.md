@@ -70,10 +70,14 @@ Import the Lifecycle framework:
 
 ```objectivec
 #import "ACPLifecycle.h"
-#import "ACPCore.h"
+#import "ACPCore.h" 
 ```
 
- Note : ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer. 
+```swift
+import ACPCore   // In swift ACPCore includes ACPLifecycle 
+```
+
+
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
 

@@ -157,7 +157,7 @@ Add the Identity framework into your project
 #### Swift
 
 ```swift
-import ACPIdentity
+import ACPCore
 ```
 
 Register the Identity framework with Mobile Core
@@ -293,7 +293,7 @@ Pause Lifecycle data collection when your app has entered the background:
 
 #### Swift
 
-Import the Mobile Core framework, this includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension :
+In swift, ACPCore includes ACPLifecycle :
 
 ```swift
 import ACPCore

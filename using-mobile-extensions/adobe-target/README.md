@@ -55,8 +55,12 @@ You can find your Target client code by going to the Setup tab and selecting Imp
 
 #### Swift
 
-Update the bridging header
-{% endtab %}
+```swift
+import ACPCore
+import ACPTarget
+```
+
+#### {% endtab %}
 {% endtabs %}
 
 ### Register Target with Mobile Core

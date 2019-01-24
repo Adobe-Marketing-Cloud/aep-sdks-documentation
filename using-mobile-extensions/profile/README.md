@@ -32,14 +32,21 @@ To add the Profile extension to your app:
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
 2. Import the UserProfile and Identity library.   
 
-```text
+```objective-c
    #import "ACPCore.h"
    #import "ACPUserProfile.h"
 ```
 
 ### Swift
 
-If you are building in Swift, this step is co
+```swift
+   import ACPCore
+   import ACPUserProfile
+```
+
+### 
+
+
 
 ## Register the Profile Extension
 

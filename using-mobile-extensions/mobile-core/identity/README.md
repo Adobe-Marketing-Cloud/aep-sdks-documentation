@@ -41,11 +41,11 @@ Import the library:
 
 #### Swift
 
+In swift, the  ACPCore includes ACPIdentity :
+
 ```swift
 import ACPCore
 ```
- Note : ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer. 
-
 {% endtab %}
 {% endtabs %}
 
