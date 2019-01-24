@@ -14,7 +14,7 @@ To allow you to manage identifiers, an API is available that clears all of the e
 ## Android
 
 ```java
-																																													@Override
+@Override
 public void onUnregistered() {
     ExtensionErrorCallback<ExtensionError> errorCallback = new ExtensionErrorCallback<ExtensionError>() {
         @Override
