@@ -186,7 +186,7 @@ trackState API will report the View State as **Page Name**, and state views are 
 trackAction API will report the Action as an **event**, and will not increment your page views in Analytics.
 {% endhint %}
 
-## Integrations with Experience Cloud solutions and services
+## Integrations with Experience Platform solutions and services
 
 ### Analytics for Target \(A4T\)
 
@@ -194,7 +194,7 @@ To see the performance of your Target activities for certain segments you can se
 
 ### Server-side forwarding with Audience Manager
 
-If you want to share the Analytics Data with Adobe Audience Manager, you can enable this in Launch UI in the Analytics extension, by selecting “Audience Manager Forwarding” option and installing the Audience Manager extension. For more details, please consult the [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) section.
+To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select **Audience Manager Forwarding** and install the Audience Manager extension. For more information, go to the [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) section.
 
 ### Video Analytics
 
