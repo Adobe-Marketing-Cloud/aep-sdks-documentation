@@ -2,7 +2,7 @@
 
 ## Internal Events for Adobe Analytics
 
-In addition to the Analytics hits that are sent as a result of the track call, the Adobe Experience Platform SDKs also tracks some internal events that are based on the communication with other extensions.
+In addition to the Analytics hits that are sent as a result of the track call, the Adobe Experience Platform SDKs also track some internal events that are based on the communication with other extensions.
 
 Here is a list of the events by extension:
 
