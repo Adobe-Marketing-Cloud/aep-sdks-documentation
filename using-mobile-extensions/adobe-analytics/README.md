@@ -143,8 +143,8 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPAnalytics registerExtension];
-  // Override point for customization after application launch.
-  return YES;
+  	// Override point for customization after application launch.
+  	return YES;
  }
 ```
 

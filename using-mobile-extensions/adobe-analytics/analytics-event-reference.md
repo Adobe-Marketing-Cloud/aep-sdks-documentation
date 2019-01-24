@@ -158,16 +158,16 @@ Here is an example of event data for Track request
 
 ### Analytics Request Identity  <a id="analytics-request-identity"></a>
 
-This event is responsible for fetching the Analytics tracking identifier \(AID\) from the Analytics extension.
+This event is responsible for fetching the Analytics tracking identifier \(AID\) and custom visitor identifier (VID) from the Analytics extension.
 
 This event will be generated the `analyticsGetTrackingIdentifier` public API call.
 
 On receiving the analytics identity request event, Analytics module completes one of the following tasks:
 
-* Checks the persistence for the saved aid.
+* Checks the persistence for the saved AID and VID.
 * If `nil`, creates a sync network request to the analytic server to retrieve aid.
 
-Dispatches an Analytics Identity Response Event with the aid value
+Dispatches an Analytics Identity Response Event with the AID and VID value.
 
 #### Data Payload Definition  <a id="data-payload-definition-1"></a>
 
@@ -409,10 +409,11 @@ Here is the definition of the key-value pairs in this event:
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | aid | String | No | The analytics tracking identifier value |
+| vid | String | Yes | The custsom visitor identifier value |
 
 #### Event Data Example
 
 ```text
-{    "aid" : "aidValue"}
+{    "aid" : "aidValue", "vid": "vidValue"}
 ```
 

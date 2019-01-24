@@ -29,7 +29,7 @@ The following tables provide information about the differences between the new E
 | Video heartbeats | Yes | _Support coming_ |
 | Lifetime value | Yes | Yes, use Profile extension |
 | Server-side forwarding - Audience Manager | Yes | Yes |
-| Set/get custom visitor ID \(vid or s.vid\) | Yes | No |
+| Set/get custom visitor ID \(vid or s.vid\) | Yes | Yes |
 
 ### Adobe Analytics - Mobile Services / Mobile Add-on
 
