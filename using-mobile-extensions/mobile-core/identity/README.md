@@ -42,8 +42,10 @@ Import the library:
 #### Swift
 
 ```swift
-import ACPIdentity
+import ACPCore
 ```
+ Note : ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer. 
+
 {% endtab %}
 {% endtabs %}
 

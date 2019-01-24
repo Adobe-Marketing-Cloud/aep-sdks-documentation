@@ -293,10 +293,10 @@ Pause Lifecycle data collection when your app has entered the background:
 
 #### Swift
 
-Import the Lifecycle framework:
+Import the Mobile Core framework, this includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension :
 
 ```swift
-import ACPLifecycle
+import ACPCore
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:

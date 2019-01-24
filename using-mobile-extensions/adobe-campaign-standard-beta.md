@@ -73,9 +73,9 @@ This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) a
 Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCoreBeta', '1.0.2beta'
-pod 'ACPCampaignBeta', '1.0.2beta'
-pod 'ACPUserProfileBeta', '1.0.1beta'
+pod 'ACPCore
+pod 'pod 'ACPCampaignClassic' 
+pod 'ACPUserProfile'
 ```
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
@@ -98,11 +98,10 @@ In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile exten
 ```swift
 import ACPCore
 import ACPCampaign
-import ACPIdentity
-import ACPLifecycle
-import ACPSignal
 import ACPUserProfile
 ```
+ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer
+
 {% endtab %}
 {% endtabs %}
 

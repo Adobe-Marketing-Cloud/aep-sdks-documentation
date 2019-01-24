@@ -1,3 +1,5 @@
+
+
 # Dispatching events from your extension
 
 Events can be used by extensions in the following scenarios:
