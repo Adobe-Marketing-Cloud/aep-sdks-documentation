@@ -73,9 +73,9 @@ This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) a
 Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCore
-pod 'pod 'ACPCampaignClassic' 
-pod 'ACPUserProfile'
+pod 'ACPCoreBeta', '1.0.2beta'
+pod 'ACPCampaignBeta', '1.0.2beta'
+pod 'ACPUserProfileBeta', '1.0.1beta'
 ```
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
@@ -85,20 +85,23 @@ In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile exten
 #### Objective-C
 
 ```objectivec
-#import "ACPCore.h"
-#import "ACPCampaign.h"
-#import "ACPIdentity.h"
-#import "ACPSignal.h"
-#import "ACPLifecycle.h"
-#import "ACPUserProfile.h"
+#import <ACPCore_iOS/ACPCore_iOS.h>
+#import <ACPCampaign_iOS/ACPCampaign_iOS.h>
+#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import <ACPSignal_iOS/ACPSignal_iOS.h>
+#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+#import <ACPUserProfile_iOS/ACPUserProfile.h>
 ```
 
 #### Swift
 
 ```swift
-import ACPCore
-import ACPCampaign
-import ACPUserProfile
+import ACPCore_iOS
+import ACPCampaign_iOS
+import ACPIdentity_iOS
+import ACPLifecycle_iOS
+import ACPSignal_iOS
+import ACPUserProfile_iOS
 ```
 ACPCore now includes ACPIdentity, ACPLifecycle, ACPSignal, and ACPExtension at the SWIFT layer
 
