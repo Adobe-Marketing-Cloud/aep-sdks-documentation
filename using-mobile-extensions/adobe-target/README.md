@@ -42,25 +42,27 @@ You can find your Target client code by going to the Setup tab and selecting Imp
 {% endtab %}
 
 {% tab title="iOS" %}
+Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
 #### Objective-C
 
-1. Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
-2. Import the Target and Identity library. 
+Import the Target and Identity library. 
 
    ```objectivec
    #import "ACPCore.h"
    #import "ACPTarget.h"
    #import "ACPIdentity.h"
+   #import "ACPTargetRequestObject.h"
+   #import "ACPTargetPrefetchObject.h"
    ```
 
 #### Swift
 
-```swift
-import ACPCore
-import ACPTarget
-```
-
-#### {% endtab %}
+   ```swift
+   #import ACPCore
+   #import ACPTarget
+   #import ACPIdentity
+   ```
+{% endtab %}
 {% endtabs %}
 
 ### Register Target with Mobile Core
@@ -107,6 +109,14 @@ public class TargetApp extends Application {
 
 #### Swift
 {% endtab %}
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    ACPTarget.registerExtension()
+    ACPIdentity.registerExtension()
+    // Override point for customization after application launch. 
+    return true;
+}
+```
 {% endtabs %}
 
 ## Prefetch offers <a id="integrating-adobe-target-with-analytics-a-4-t"></a>

@@ -65,9 +65,9 @@ import com.adobe.marketing.mobile.Lifecycle;
 1. Add the Campaign Classic and [Mobile Core](../mobile-core/) libraries to your project. You will need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCampaignClassic'
-pod 'ACPLifecycle'
-pod 'ACPCore'
+pod 'ACPCampaignClassic', '2.0.0'
+pod 'ACPLifecycle', '2.0.0'
+pod 'ACPCore', '2.0.0'
 ```
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
@@ -86,7 +86,8 @@ or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing
 
 ```swift
 import ACPCore
-import ACPCampaign
+import ACPCampaignClassic
+import ACPLifecycle
 ```
 {% endtab %}
 {% endtabs %}
