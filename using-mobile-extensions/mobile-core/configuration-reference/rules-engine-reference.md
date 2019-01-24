@@ -90,7 +90,7 @@ A Group-type condition contains an array of conditions, which makes the conditio
 | Equals | eq | string, number |
 | Not Equals | ne | string, number |
 | Exists | ex | no value required |
-| Not Exists | ne | string, number |
+| Not Exists | nx | string, number |
 | Greater Than | gt | number |
 | Greater Than or Equals | ge | number |
 | Less Than | lt | number |

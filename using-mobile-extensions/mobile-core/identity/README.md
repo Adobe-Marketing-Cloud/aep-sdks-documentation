@@ -36,13 +36,15 @@ Import the library:
 **Objective-C**
 
 ```objectivec
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import  "ACPIdentity.h"
 ```
 
 #### Swift
 
+In swift, the  ACPCore includes ACPIdentity :
+
 ```swift
-import ACPIdentity_iOS
+import ACPCore
 ```
 {% endtab %}
 {% endtabs %}

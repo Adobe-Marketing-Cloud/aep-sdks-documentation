@@ -69,9 +69,15 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPCore_iOS/ACPCore_iOS.h>
+#import "ACPLifecycle.h"
+#import "ACPCore.h" 
 ```
+
+```swift
+import ACPCore   // In swift ACPCore includes ACPLifecycle 
+```
+
+
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
 

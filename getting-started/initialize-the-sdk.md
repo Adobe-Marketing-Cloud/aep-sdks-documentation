@@ -151,13 +151,13 @@ Add the Identity framework into your project
 #### Objective-C
 
 ```objectivec
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
+#import "ACPIdentity.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPIdentity_iOS
+import ACPCore
 ```
 
 Register the Identity framework with Mobile Core
@@ -256,7 +256,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+#import  "ACPLifecycle.h"
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
@@ -293,10 +293,10 @@ Pause Lifecycle data collection when your app has entered the background:
 
 #### Swift
 
-Import the Lifecycle framework:
+In swift, ACPCore includes ACPLifecycle :
 
 ```swift
-import ACPLifecycle_iOS
+import ACPCore
 ```
 
 Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
