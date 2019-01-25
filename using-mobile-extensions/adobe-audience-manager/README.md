@@ -46,9 +46,8 @@ To get started with **Audience Manager**, follow these steps:
 
 #### Swift
   ```swift
-   import "ACPCore"
-   import "ACPAudience"
-   import "ACPIdentity"
+   import ACPCore
+   import ACPAudience
   ```
 
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.a` to your project.
