@@ -2,7 +2,7 @@
 
 Sessions contain information about the current lifecycle such as device information, application install or upgrade information, session start and pause times, number of application launches, plus any additional context data provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
-The Lifecycle framework provides valuable information about your user's current app lifecycle such as  device information, application install or upgrade information, session start and pause times, number of application launches.
+The Lifecycle framework provides valuable information about your user's current app lifecycle such as device information, application install or upgrade information, session start and pause times, number of application launches.
 
 ## Add Lifecycle to your App
 
@@ -130,38 +130,28 @@ The following is a complete list of all of the metrics provided on your user's a
 
 ### Device Information
 
+| **Metric** | **Key** | **Description** |
+| :--- | :--- | :--- |
+
+
+| App ID | a.AppID | Stores the application name and version in the following format: `AppName BundleVersion (app version code)` . An example of this format is MyAppName 1.1\(1\) |
+| :--- | :--- | :--- |
+
+
+| Device Name | a.DeviceName | Stores the device name. |
+| :--- | :--- | :--- |
+
+
+| Operating System Version | a.OSVersion | Operating system name and version. |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Metric</b>
-      </th>
-      <th style="text-align:left"><b>Key</b>
-      </th>
-      <th style="text-align:left"><b>Description</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">App ID</td>
-      <td style="text-align:left">a.AppID</td>
-      <td style="text-align:left">Stores the application name and version in the following format: <code>AppName BundleVersion (app version code)</code> .
-        An example of this format is MyAppName 1.1(1)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Device Name</td>
-      <td style="text-align:left">a.DeviceName</td>
-      <td style="text-align:left">Stores the device name.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Operating System Version</td>
-      <td style="text-align:left">a.OSVersion</td>
-      <td style="text-align:left">Operating system name and version.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Carrier Name</td>
-      <td style="text-align:left">a.CarrierName</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Carrier Name</th>
+      <th style="text-align:left">a.CarrierName</th>
+      <th style="text-align:left">
         <p>Stores the name of the mobile service provider as provided by the device.
           <br
           />
@@ -169,25 +159,21 @@ The following is a complete list of all of the metrics provided on your user's a
         <p><b>Important</b>: This metric is not automatically stored in an Analytics
           variable. You must create a processing rule to copy this value to an Analytics
           variable for reporting.</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">Resolution</td>
-      <td style="text-align:left">a.Resolution</td>
-      <td style="text-align:left">Width x Height in pixels.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Locale</td>
-      <td style="text-align:left">a.locale</td>
-      <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Run mode</td>
-      <td style="text-align:left">a.RunMode</td>
-      <td style="text-align:left">The SDK running mode, for example, <code>Application / Extension</code>.</td>
-    </tr>
-  </tbody>
-</table>## Configuration Keys
+  </thead>
+  <tbody></tbody>
+</table>| Resolution | a.Resolution | Width x Height in pixels. |
+| :--- | :--- | :--- |
+
+
+| Locale | a.locale | Locale set for this device, for example, _en-US_. |
+| :--- | :--- | :--- |
+
+
+| Run mode | a.RunMode | The SDK running mode, for example, `Application / Extension`. |
+| :--- | :--- | :--- |
+
 
 If you need to update SDK configuration, programmatically, please use the following information to change your Lifecycle configuration values. For more information, please see [Configuration Methods Reference](../configuration-reference/).
 
@@ -195,24 +181,21 @@ If you need to update SDK configuration, programmatically, please use the follow
 The time that your app spends in the background is not included in the session length.
 {% endhint %}
 
+| Key | Description |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">lifecycle.sessionTimeout</td>
-      <td style="text-align:left">
+      <th style="text-align:left">lifecycle.sessionTimeout</th>
+      <th style="text-align:left">
         <p>Time, in seconds, that must elapse between the time the app is launched
           and before the launch is considered to be a new session. This timeout also
           applies when your application is sent to the background and reactivated.</p>
-        <p></p>
         <p>Default value is 300 seconds (5 minutes).</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>## 
-
+  </thead>
+  <tbody></tbody>
+</table>

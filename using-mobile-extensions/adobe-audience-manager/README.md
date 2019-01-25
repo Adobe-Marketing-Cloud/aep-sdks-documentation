@@ -11,7 +11,7 @@ To get started with **Audience Manager**, follow these steps:
    2. Send signals to Audience Manager
    3. Reset Audience Manager identifiers, visitor profiles
 
-## Configuring the Audience Manager Extension in Adobe Launch <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager Extension in Adobe Launch  <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
@@ -31,7 +31,6 @@ To get started with **Audience Manager**, follow these steps:
 
 #### Java
 `import com.adobe.marketing.mobile.*;`
-{% endtab %}
 
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
@@ -54,6 +53,23 @@ To get started with **Audience Manager**, follow these steps:
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.a` to your project.
 {% endtab %}
 {% endtabs %}
+
+
+**Objective-C**
+
+1. Add the library to your project via your `Podfile` by adding:
+
+   `pod 'ACPAudience'`
+
+2. Import the Audience and Identity library:
+
+   ```text
+    #import "ACPCore.h"
+    #import "ACPAudience.h"
+    #import "ACPIdentity.h"
+   ```
+
+   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
 
 ### Register Audience Manager with Mobile Core
 
@@ -82,7 +98,6 @@ public void onCreate() {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -96,7 +111,6 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 
    // Override point for customization after application launch.
    return YES;
-
 }
 ```
 
