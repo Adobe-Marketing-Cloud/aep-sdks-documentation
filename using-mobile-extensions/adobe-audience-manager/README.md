@@ -22,44 +22,46 @@ To get started with **Audience Manager**, follow these steps:
 5. Click **Save**.
 6. Follow the publishing process to update SDK configuration.
 
-## Add Audience Manager to your App
+### Add Audience Manager to your App
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
-
 1. Add the library to your project.
 2. Import the library:
 
+#### Java
 `import com.adobe.marketing.mobile.*;`
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
-
-1. Add the library to your project via your `Podfile` by adding:
-
-   `pod 'ACPAudience'`
-
+1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
 2. Import the Audience and Identity library:
 
-   ```text
-    #import "ACPCore.h"
-    #import "ACPAudience.h"
-    #import "ACPIdentity.h"
-   ```
+#### Objective-C
+  ```objectivec
+  #import "ACPCore.h"
+  #import "ACPAudience.h"
+  #import "ACPIdentity.h"
+  ```
 
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
-   {% endtab %}
-   {% endtabs %}
+#### Swift
+  ```swift
+   import "ACPCore"
+   import "ACPAudience"
+   import "ACPIdentity"
+  ```
+
+   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.a` to your project.
+{% endtab %}
+{% endtabs %}
 
 ### Register Audience Manager with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
+#### Java
 
-Call the `setContext()` method once in the `onCreate()` method of your main activity. 
+Call the `setApplication()` method once in the `onCreate()` method of your main activity.
 
 For example, your code may look like:
 
@@ -70,9 +72,9 @@ public class AudiencetApp extends Application {
 public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-     
+
      try {
-         Audience.registerExtension(); //Register Audience Manager w Mobile Core
+         Audience.registerExtension(); //Register Audience Manager with Mobile Core
          Identity.registerExtension();
      } catch (Exception e) {
      //Log the exception
@@ -84,18 +86,28 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### **Objective-C**
-
-Register the Audience Manager extension with the Mobile Core in your app's `didFinishLaunchingWithOptions` function.
+In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    [ACPIdentity registerExtension];
    [ACPAudience registerExtension];
-   
+
    // Override point for customization after application launch.
    return YES;
-   
+
+}
+```
+
+#### Swift
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
+ ACPIdentity.registerExtension()
+ ACPAudience.registerExtension()
+
+ // Override point for customization after application launch.
+ return true;
 }
 ```
 {% endtab %}
@@ -120,4 +132,3 @@ If you need to update SDK configuration, programmatically, please use the follow
 * How to setup Adobe Analytics server-side forwarding to Audience Manager?
   * See - [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
   * Also see - Setup [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
-
