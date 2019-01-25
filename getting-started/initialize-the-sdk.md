@@ -8,8 +8,8 @@ To initialize the SDK, you'll first need to configure the SDK with the Environme
 To find your Environment ID, navigate to Environments tab in Launch, and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon corresponding to the environment you are setting up.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
+
+
 {% hint style="warning" %}
 _Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**_
 {% endhint %}
@@ -29,9 +29,7 @@ To add these permissions, add the following lines to your AndroidManifest.xml fi
 
 1. Create MainActivity.java in the app.
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
-{% endtab %}
 
-{% tab title="iOS" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -51,17 +49,15 @@ In Xcode, find your `didFinishLaunchingWithOptions` located in AppDelegate.swift
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+
+
 {% hint style="warning" %}
 Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
 1. In Xcode, open AppDelegate.swift
 2. Under `didFinishLaunchingWithOptions`, add:`ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")`
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
@@ -76,7 +72,7 @@ Debug logging is optional and helps you ensure that the SDK is working as intend
 | Error | This log level details unrecoverable errors caused during SDK implementation. |
 | Warning | In addition to detail from **Error** log level, **Warning** provides error information during SDK integration. This log level may indicate that a request has been made to the SDK, but the SDK may be unable to perform the requested task. For example, this may be used when catching an unexpected but recoverable exception and printing its message. |
 | Debug | In addition to detail from **Warning** log level, **Debug** also provides high-level information on how the SDK processes network requests/responses data. |
-| Verbose | In addition to detail from the **Debug** level, **Verbose** provides detailed, low-level information into how SDK processes database interactions and SDK events.  |
+| Verbose | In addition to detail from the **Debug** level, **Verbose** provides detailed, low-level information into how SDK processes database interactions and SDK events. |
 
 To enable debug logging:
 
@@ -111,7 +107,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ## Enable the Experience Cloud Identity service
 
-The Experience Cloud ID service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations. 
+The Experience Cloud ID service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations.
 
 {% hint style="info" %}
 Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
@@ -191,7 +187,7 @@ After successful configuration, you'll see the Experience Cloud ID generated and
 This section shows how to start collecting lifecycle metrics. Setup [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
 {% endhint %}
 
-Lifecycle metrics are valuable, out-of-the-box information about your app user.  These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics.
+Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -347,22 +343,22 @@ This section shows how to start tracking app screens and user actions. Setup [An
 ### Track user actions
 
 {% hint style="warning" %}
-You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call. 
+You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java <a id="java"></a>
+#### Java  <a id="java"></a>
 
-### trackAction <a id="trackaction"></a>
+### trackAction  <a id="trackaction"></a>
 
-#### Syntax <a id="syntax"></a>
+#### Syntax  <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example <a id="example"></a>
+#### Example  <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -412,17 +408,17 @@ States represent screens or views in your app. Each time a new state is displaye
 {% tab title="Android" %}
 #### Java
 
- In Android, trackState is typically called each time a new activity is loaded
+In Android, trackState is typically called each time a new activity is loaded
 
-### trackState <a id="trackstate"></a>
+### trackState  <a id="trackstate"></a>
 
-#### **Syntax** <a id="syntax-1"></a>
+#### **Syntax**  <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example <a id="example-1"></a>
+#### Example  <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         

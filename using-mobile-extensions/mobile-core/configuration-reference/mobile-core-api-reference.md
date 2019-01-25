@@ -1,11 +1,11 @@
-# Mobile Core API Reference
+# Mobile Core API reference
 
 ## Track app actions
 
 Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
-You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call. 
+You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call.
 {% endhint %}
 
 {% hint style="info" %}
@@ -80,17 +80,17 @@ If you have the **Analytics** extension setup, this API will increment page view
 {% tab title="Android" %}
 #### Java
 
- In Android, trackState is typically called each time a new Activity is loaded
+In Android, trackState is typically called each time a new Activity is loaded
 
-### trackState <a id="trackstate"></a>
+### trackState  <a id="trackstate"></a>
 
-#### **Syntax** <a id="syntax-1"></a>
+#### **Syntax**  <a id="syntax-1"></a>
 
 ```text
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example <a id="example-1"></a>
+#### Example  <a id="example-1"></a>
 
 ```text
 Map<String, String> additionalContextData = new HashMap<String, String>();         additionalContextData.put("customKey", "value");         MobileCore.trackState("homePage", additionalContextData);
@@ -134,7 +134,7 @@ ACPCore.trackState("state name", data: ["key": "value"])
 
 ## Collect PII
 
-This API enables the SDK to collect sensitive or PII data. 
+This API enables the SDK to collect sensitive or PII data.
 
 {% hint style="warning" %}
 While this API enables the collection of sensitive data, no data is actually sent to any Adobe endpoint or 3rd party endpoint. To send the data to an endpoint, you may use a postback of PII type.
@@ -199,38 +199,36 @@ ACPCore.collectPii(data: [String : String])
 You can provide the user information to the SDK from various launch points in your application.
 
 {% hint style="info" %}
+If the **Analytics** extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
+{% endhint %}
 
-If the **Analytics** extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message. {% endhint %}
-
-{% tabs %} {% tab title="Android" %}
-
+{% tabs %}
+{% tab title="Android" %}
 Coming soon
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Objective-C
 
 This method should be called to support the following use cases:
 
-- Tracking Deep Link click-throughs
-  - From `application:didFinishLaunchingWithOptions`
-  - Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
-- Tracking Push Message click-through
-  - From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+* Tracking Deep Link click-throughs
+  * From `application:didFinishLaunchingWithOptions`
+  * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+* Tracking Push Message click-through
+  * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
 ### collectLaunchInfo
 
 #### Syntax
 
-```objective-c
+```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 #### Example
 
-```objective-c
+```text
  [ACPCore collectLaunchInfo:launchOptions];
 ```
 
@@ -238,11 +236,11 @@ This method should be called to support the following use cases:
 
 This method should be called to support the following use cases:
 
-- Tracking Deep Link click-throughs
-  - From `application(_:didFinishLaunchingWithOptions:)`
-  - Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
-- Tracking Push Message click-through
-  - From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+* Tracking Deep Link click-throughs
+  * From `application(_:didFinishLaunchingWithOptions:)`
+  * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+* Tracking Push Message click-through
+  * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
 ### collectLaunchInfo
 
@@ -257,8 +255,8 @@ This method should be called to support the following use cases:
 ```swift
 ACPCore.collectLaunchInfo(userInfo)
 ```
-
-{% endtab %} {% endtabs %}
+{% endtab %}
+{% endtabs %}
 
 ## Additional Reading
 

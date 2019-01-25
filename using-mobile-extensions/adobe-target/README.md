@@ -11,7 +11,7 @@ To get started with **Target**, follow these steps:
    2. Prefetch offers
    3. Enter visual preview mode
 
-## Configure Target Extension in Launch <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure Target Extension in Launch  <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
 
@@ -29,8 +29,6 @@ You can find your Target client code by going to the Setup tab and selecting Imp
 
 ## Add Target to your app
 
-{% tabs %}
-{% tab title="Android" %}
 #### Java
 
 1. Add the Target extension to your project using the app's Gradle file.
@@ -39,31 +37,28 @@ You can find your Target client code by going to the Setup tab and selecting Imp
    ```java
    import com.adobe.marketing.mobile.*;
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
 Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
+
 #### Objective-C
 
-Import the Target and Identity library. 
+Import the Target and Identity library.
 
-   ```objectivec
+```objectivec
    #import "ACPCore.h"
    #import "ACPTarget.h"
    #import "ACPIdentity.h"
    #import "ACPTargetRequestObject.h"
    #import "ACPTargetPrefetchObject.h"
-   ```
+```
 
 #### Swift
 
-   ```swift
+```swift
    #import ACPCore
    #import ACPTarget
    #import ACPIdentity
-   ```
-{% endtab %}
-{% endtabs %}
+```
 
 ### Register Target with Mobile Core
 
@@ -109,17 +104,9 @@ public class TargetApp extends Application {
 
 #### Swift
 {% endtab %}
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ACPTarget.registerExtension()
-    ACPIdentity.registerExtension()
-    // Override point for customization after application launch. 
-    return true;
-}
-```
 {% endtabs %}
 
-## Prefetch offers <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Prefetch offers  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 The SDK can minimize the number of times it reaches out to Target servers in order to fetch offers by caching server responses. When this feature is enabled, offer content will be retrieved and cached during the prefetch call. This content will be retrieved from the cache for all future calls that contain cached content for the specified **mbox** name. This "prefetch" process reduces offer load time, network calls made to Target servers, and even provides for Target to be notified which **mbox** was visited by the mobile app user.
 
@@ -218,7 +205,7 @@ Use `prefetchContent` to send a prefetch request to your configured Target serve
                       callback: (nullable void (^) (BOOL success)) callback;
 ```
 
-#### Objective-C Example 
+#### Objective-C Example
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
@@ -285,7 +272,7 @@ Target.clearPrefetchCache();
 + (void) clearPrefetchCache;
 ```
 
-#### Objective-C Example 
+#### Objective-C Example
 
 ```objectivec
 [ACPTarget clearPrefetchCache];
@@ -293,7 +280,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 {% endtabs %}
 
-## Visual preview <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Visual preview  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device without requiring a specialized testing setup.
 
@@ -331,7 +318,7 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% endtab %}
 {% endtabs %}
 
-## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Target with Analytics \(A4T\)  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 To see the performance of your Target activities for certain segments you can set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html)
 

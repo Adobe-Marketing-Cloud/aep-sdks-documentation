@@ -50,7 +50,7 @@ If you currently send mobile SDK data to a report suite that also collects data 
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures ****Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
+If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures _\*\*_Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
 #### Backdate Previous Session Info
 
@@ -58,7 +58,7 @@ If you set up Analytics server-side forwarding to Audience Manager, check this s
 Enable this setting only with report suite\(s\) that are timestamp enabled.
 {% endhint %}
 
-Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length. 
+Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length.
 
 When enabled, the SDK will backdate the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they happened. One hit will be backdated on every new launch of the application.
 
@@ -127,7 +127,7 @@ public class MobileApp extends Application {
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-	 MobileCore.ConfigureWithAppId("yourAppId");
+     MobileCore.ConfigureWithAppId("yourAppId");
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
@@ -150,8 +150,8 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
     [ACPCore start:nil];
-  	// Override point for customization after application launch.
-  	return YES;
+      // Override point for customization after application launch.
+      return YES;
  }
 ```
 
@@ -289,14 +289,14 @@ If you trigger a product-specific event by using the `&&products` variable, you 
 ```java
 //create a context data dictionary
 HashMap cdata = new HashMap<String, Object>();
- 
+
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 cdata.put("&&events", "event1");
 cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
 cdata.put("myapp.purchase", "1");
 cdata.put("myapp.purchaseid", "1234567890");
- 
+
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
 MobileCore.trackAction("purchase", cdata);
@@ -313,14 +313,14 @@ MobileCore.trackState("Order Confirmation", cdata);
 ```objectivec
 //create a context data dictionary
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
- 
+
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 [contextData setObject:@"event1" forKey:@"&&events"];
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
 [contextData setObject:@"1" forKey:@"m.purchase"];
- 
+
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
 [ACPCore trackAction:@"purchase" data:contextData];

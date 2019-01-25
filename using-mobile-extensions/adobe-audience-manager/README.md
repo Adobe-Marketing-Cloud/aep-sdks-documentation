@@ -11,7 +11,7 @@ To get started with **Audience Manager**, follow these steps:
    2. Send signals to Audience Manager
    3. Reset Audience Manager identifiers, visitor profiles
 
-## Configuring the Audience Manager Extension in Adobe Launch <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager Extension in Adobe Launch  <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
@@ -24,17 +24,15 @@ To get started with **Audience Manager**, follow these steps:
 
 ## Add Audience Manager to your App
 
-{% tabs %}
-{% tab title="Android" %}
 **Java**
 
 1. Add the library to your project.
 2. Import the library:
 
 `import com.adobe.marketing.mobile.*;`
-{% endtab %}
 
-{% tab title="iOS" %}
+
+
 **Objective-C**
 
 1. Add the library to your project via your `Podfile` by adding:
@@ -50,8 +48,6 @@ To get started with **Audience Manager**, follow these steps:
    ```
 
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
-   {% endtab %}
-   {% endtabs %}
 
 ### Register Audience Manager with Mobile Core
 
@@ -59,7 +55,7 @@ To get started with **Audience Manager**, follow these steps:
 {% tab title="Android" %}
 #### **Java**
 
-Call the `setContext()` method once in the `onCreate()` method of your main activity. 
+Call the `setContext()` method once in the `onCreate()` method of your main activity.
 
 For example, your code may look like:
 
@@ -70,7 +66,7 @@ public class AudiencetApp extends Application {
 public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-     
+
      try {
          Audience.registerExtension(); //Register Audience Manager w Mobile Core
          Identity.registerExtension();
@@ -80,7 +76,6 @@ public void onCreate() {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -92,10 +87,10 @@ Register the Audience Manager extension with the Mobile Core in your app's `didF
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    [ACPIdentity registerExtension];
    [ACPAudience registerExtension];
-   
+
    // Override point for customization after application launch.
    return YES;
-   
+
 }
 ```
 {% endtab %}

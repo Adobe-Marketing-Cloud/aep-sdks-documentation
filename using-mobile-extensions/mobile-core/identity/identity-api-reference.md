@@ -1,4 +1,4 @@
-# Identity API Reference
+# Identity API reference
 
 ## Synch Identifiers
 

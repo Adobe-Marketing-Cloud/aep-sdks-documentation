@@ -1,9 +1,8 @@
 # Analytics API reference
 
-## Get the Tracking Identifier <a id="gettrackingidentifier"></a>
+## Get the Tracking Identifier  <a id="gettrackingidentifier"></a>
 
-Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch.The ID is preserved between app upgrades and is removed when the app is uninstalled.  
-
+Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch.The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -58,13 +57,13 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
-	// use returned trackingIdentifier
+    // use returned trackingIdentifier
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-## Send Queued Hits <a id="sendqueuedhits"></a>
+## Send Queued Hits  <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -120,13 +119,12 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Get the Queue Size <a id="sendqueuedhits"></a>
+## Get the Queue Size  <a id="sendqueuedhits"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### getQueueSize
 
 #### Syntax
@@ -139,9 +137,9 @@ Retrieves the total number of Analytics hits In the tracking queue.
 
 ```java
 Analytics.getQueueSize(new AdobeCallback<Long>() {
-	@Override
-	public void call(final Long queueSize) {
-		// handle the queueSize
+    @Override
+    public void call(final Long queueSize) {
+        // handle the queueSize
     }
 });
 ```
@@ -178,15 +176,12 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
-
-
-## Set the Custom Visitor Identifier {#setcustomidentifier}
+## Set the Custom Visitor Identifier <a id="setcustomidentifier"></a>
 
 Sets the analytics custom visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### setCustomVistorIdentifier
 
 #### Syntax
@@ -200,11 +195,9 @@ Sets the analytics custom visitor identifier.
 ```java
 Analytics.setCustomVistorIdentifier("custom_identifier");
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### setCustomVistorIdentifier
 
 #### Syntax
@@ -228,17 +221,15 @@ Here are examples in Objective-C and Swift:
 ```swift
 ACPAnalytics.setCustomVistorIdentifier("custom_identifier")
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Get the Custom Visitor Identifier  {#getcustomidentifier}
+## Get the Custom Visitor Identifier <a id="getcustomidentifier"></a>
 
 Sets the analytics custom visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### getCustomVisitorIdentifier
 
 #### Syntax
@@ -251,17 +242,15 @@ Sets the analytics custom visitor identifier.
 
 ```java
 Analytics.getCustomVisitorIdentifier(new AdobeCallback<String>() {
-	@Override
-	public void call(final String visitorIdentifier) {
-		// handle the visitorIdentifier
-	}
+    @Override
+    public void call(final String visitorIdentifier) {
+        // handle the visitorIdentifier
+    }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### getCustomVisitorIdentifier
 
 #### Syntax
@@ -289,7 +278,6 @@ ACPAnalytics.getCustomVistorIdentifier { (visitorIdentifier) in
      // use visitorIdentifier  
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
