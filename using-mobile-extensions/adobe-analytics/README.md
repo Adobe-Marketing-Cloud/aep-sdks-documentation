@@ -107,7 +107,6 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 ```swift
 import ACPCore
 import ACPAnalytics
-import ACPIdentity
 ```
 {% endtab %}
 {% endtabs %}
