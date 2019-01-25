@@ -27,33 +27,36 @@ To update existing Experience Platform Mobile SDK 1.x implementations to 2.x:
 3. Run a 'pod update' command to pull in the latest version of the Mobile Core extension and any other solution extension updates.
 4. In your app code, change all of your import statements:  
 
+
    **For Objective-C**
-   
+
    Where you previously had imports that look like the following:
-   
-   ```objective-c
+
+   ```text
    #import <ACPCore_iOS/ACPCore_iOS.h> 
    #import <ACPIdentity_iOS/ACPIdentity_iOS.h> 
    #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
    #import <ACPSignal_iOS/ACPSignal_iOS.h>
    #import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
    ```
-   
-   The imports will now drop the _iOS_ suffix and can be imported directly as follows: 
-   
-   ```objective-c
+
+   The imports will now drop the _iOS_ suffix and can be imported directly as follows:
+
+   ```text
    #import "ACPCore.h" 
    #import "ACPIdentity.h" 
    #import "ACPLifecycle.h" 
    #import "ACPSignal.h" 
    #import "ACPUserProfile.h"
    ```
-   This change will hold true for any other Adobe solution extensions that you may have previously imported. 
-  
+
+   This change will hold true for any other Adobe solution extensions that you may have previously imported.  
+
+
    **For Swift**
-  
+
    Where you previously had imports that looked like:
-  
+
    ```swift
    import ACPCore_iOS
    import ACPAnalytics_iOS
@@ -62,16 +65,16 @@ To update existing Experience Platform Mobile SDK 1.x implementations to 2.x:
    import ACPSignal_iOS
    import ACPUserProfile_iOS
    ```
-  
-   The imports will now drop the _iOS_ suffix. Additionally, identity, lifecycle and signals can be added just by importing core i.e.:
-  
-    ```Swift
+
+   The imports will now drop the _iOS_ suffix. Additionally, the Identity, Lifecycle and Signals extensions can be added just by importing core , for example:
+
+   ```swift
     import ACPCore
     import ACPAnalytics
     import ACPUserProfile
-    ```
-  
-  We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
+   ```
+
+   We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
 
 ## December 5, 2018
 
