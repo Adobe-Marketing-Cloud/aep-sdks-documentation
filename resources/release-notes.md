@@ -2,19 +2,19 @@
 
 ## January 24, 2019
 
-The January 24th update includes changes to the Adobe Experience Platform Mobile SDKs and solution extensions for iOS applications. See below for an explanation of this change, why the changes were made, and how to update your application to include these changes.
+The January 24th update includes changes to the Adobe Experience Platform Mobile SDKs and solution extensions for iOS applications. We provided an explanation of this change, why the changes were made, and how to update your application to include these changes.
 
 ### What
 
-With this latest release we have changed the Mobile SDK Core and all Adobe solution extensions from dynamic frameworks to static libraries.
+With this release, we have changed the Mobile SDK Core and all Adobe solution extensions from dynamic frameworks to static libraries.
 
 ### Why
 
-Frameworks are an excellent way to package and distribute iOS dependencies but, in some situations, using frameworks can cause issues when a dependent framework is updated. In the case of the Adobe Experience Platform SDK, all extensions have a dependency on the Core extension. This means that when a change is made to the Mobile Core framework all dependent extensions would need to rebuild from source. To resolve this issue, we have changed the SDK Core and all Adobe solution extensions to use static libraries.
+Frameworks are an excellent way to package and distribute iOS dependencies but, in some situations, using frameworks can cause issues when a dependent framework is updated. All of the Adobe Experience Platform SDK extensions have a dependency on the Core extension. This means that when a change is made to the Mobile Core framework, all dependent extensions need to be rebuilt from the source. To resolve this issue, we changed the SDK Core and all Adobe solution extensions to use static libraries.
 
 ### How
 
-To be clear, there is nothing wrong or broken with the previous versions of the SDK. Apps that have already started development with the version 1.x SDK and extensions can continue on in the development lifecycle with no impact. Mobile applications that have not yet started to implement the Mobile SDKs are also fine, as they will start out using the static libraries. The changes listed below are required for any customer that has already started implementation of the Adobe Experience Platform Mobile SDK and wishes to update to the latest version.
+There is nothing wrong or broken with the previous versions of the SDK. Apps that have already started development with the version 1.x SDK and extensions can continue in the development lifecycle with no impact. Mobile applications that have not yet started to implement the Mobile SDKs are also fine, as they will start out using the static libraries. The changes listed below are required for customers who have started implementing the Adobe Experience Platform Mobile SDK and want to update to the latest version.
 
 {% hint style="info" %}
 The changes are only for iOS.
@@ -25,7 +25,53 @@ To update existing Experience Platform Mobile SDK 1.x implementations to 2.x:
 1. Use the latest installation instructions for your selected environment \(development, staging, production\).
 2. Update your Pod file with the latest changes.
 3. Run a 'pod update' command to pull in the latest version of the Mobile Core extension and any other solution extension updates.
-4. In your app code you will need to change all of your import statements:  
+4. In your app code, change all of your import statements:  
+
+   **For Objective-C**
+   
+   Where you previously had imports that look like the following:
+   
+   ```objective-c
+   #import <ACPCore_iOS/ACPCore_iOS.h> 
+   #import <ACPIdentity_iOS/ACPIdentity_iOS.h> 
+   #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
+   #import <ACPSignal_iOS/ACPSignal_iOS.h>
+   #import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
+   ```
+   
+   The imports will now drop the _iOS_ suffix and can be imported directly as follows: 
+   
+   ```objective-c
+   #import "ACPCore.h" 
+   #import "ACPIdentity.h" 
+   #import "ACPLifecycle.h" 
+   #import "ACPSignal.h" 
+   #import "ACPUserProfile.h"
+   ```
+   This change will hold true for any other Adobe solution extensions that you may have previously imported. 
+  
+   **For Swift**
+  
+   Where you previously had imports that looked like:
+  
+   ```swift
+   import ACPCore_iOS
+   import ACPAnalytics_iOS
+   import ACPIdentity_iOS
+   import ACPLifecycle_iOS
+   import ACPSignal_iOS
+   import ACPUserProfile_iOS
+   ```
+  
+   The imports will now drop the _iOS_ suffix. Additionally, identity, lifecycle and signals can be added just by importing core i.e.:
+  
+    ```Swift
+    import ACPCore
+    import ACPAnalytics
+    import ACPUserProfile
+    ```
+  
+  We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
 
 ## December 5, 2018
 
