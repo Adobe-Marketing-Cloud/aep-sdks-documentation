@@ -50,7 +50,7 @@ If you currently send mobile SDK data to a report suite that also collects data 
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures ****Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
+If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures _\*\*_Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
 #### Backdate Previous Session Info
 
@@ -58,7 +58,7 @@ If you set up Analytics server-side forwarding to Audience Manager, check this s
 Enable this setting only with report suite\(s\) that are timestamp enabled.
 {% endhint %}
 
-Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length. 
+Enabling this setting will cause the SDK to backdate end-of-session lifecycle information so it can be attributed into its correct session. Session information currently consist of crashes and session length.
 
 When enabled, the SDK will backdate the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they happened. One hit will be backdated on every new launch of the application.
 
@@ -97,12 +97,15 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 #### Objective-C
 
 ```objectivec
+#import "ACPCore.h"
 #import "ACPAnalytics.h"
+#import "ACPIdentity.h"
 ```
 
 #### Swift
 
 ```swift
+import ACPCore
 import ACPAnalytics
 ```
 {% endtab %}
@@ -118,12 +121,12 @@ You may do the following after calling the `setApplication()` method in the `onC
 
 ```java
 public class MobileApp extends Application {
-​
+
  @Override
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-​
+     MobileCore.ConfigureWithAppId("yourAppId");
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
@@ -142,9 +145,12 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"yourAppId"];
     [ACPAnalytics registerExtension];
-  	// Override point for customization after application launch.
-  	return YES;
+    [ACPIdentity registerExtension];
+    [ACPCore start:nil];
+      // Override point for customization after application launch.
+      return YES;
  }
 ```
 
@@ -152,7 +158,10 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
- ACPAnalytics.registerExtension();
+ ACPCore.configure(withAppId: "yourAppId")   
+ ACPAnalytics.registerExtension()
+ ACPIdentity.registerExtension()
+ ACPCore.start(nil)
  // Override point for customization after application launch. 
  return true;
 }
@@ -176,7 +185,7 @@ trackState API will report the View State as **Page Name**, and state views are 
 trackAction API will report the Action as an **event**, and will not increment your page views in Analytics.
 {% endhint %}
 
-## Integrations with Experience Cloud solutions and services
+## Integrations with Experience Platform solutions and services
 
 ### Analytics for Target \(A4T\)
 
@@ -184,11 +193,11 @@ To see the performance of your Target activities for certain segments you can se
 
 ### Server-side forwarding with Audience Manager
 
-If you want to share the Analytics Data with Adobe Audience Manager, you can enable this in Launch UI in the Analytics extension, by selecting “Audience Manager Forwarding” option and installing the Audience Manager extension. For more details, please consult the [Audience Manager](https://docs.adobelaunch.com/~/edit/drafts/-LO-ar3DEDAsqJmfCW3k/extension-reference/mobile/audience-manager) section.
+To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select **Audience Manager Forwarding** and install the Audience Manager extension. For more information, go to the [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) section.
 
 ### Video Analytics
 
-For more information on collecting video analytics, see [Heartbeat Video Measurement](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+For more information on collecting video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
 
 ## Set Products Variable
 
@@ -279,14 +288,14 @@ If you trigger a product-specific event by using the `&&products` variable, you 
 ```java
 //create a context data dictionary
 HashMap cdata = new HashMap<String, Object>();
- 
+
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 cdata.put("&&events", "event1");
 cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99");
 cdata.put("myapp.purchase", "1");
 cdata.put("myapp.purchaseid", "1234567890");
- 
+
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
 MobileCore.trackAction("purchase", cdata);
@@ -301,16 +310,16 @@ MobileCore.trackState("Order Confirmation", cdata);
 #### Example
 
 ```objectivec
-/create a context data dictionary
+//create a context data dictionary
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
- 
+
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 [contextData setObject:@"event1" forKey:@"&&events"];
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
 [contextData setObject:@"1" forKey:@"m.purchase"];
- 
+
 // send the tracking call - use either a trackAction or TrackState call.
 // trackAction example:
 [ACPCore trackAction:@"purchase" data:contextData];

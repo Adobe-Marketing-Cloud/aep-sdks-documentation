@@ -33,8 +33,6 @@ To create a simple extension, complete the following procedures in the order in 
 
 The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class that any extensions must derive from. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you will have the opportunity to extend the Adobe Experience Platform SDKs functionality by registering event listeners, or by setting a default shared state that other modules can access.
 
-{% tabs %}
-{% tab title="Android" %}
 #### **Android**
 
 The `Extension` class has the following method that you must override:
@@ -76,9 +74,9 @@ class MyExtension extends Extension {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Objective-C" %}
+
+
 #### **iOS**
 
 The `ACPExtension` class has the following method that you must override:
@@ -107,7 +105,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 **MyExtension.h**
 
 ```objectivec
-#import <ACPCore_iOS/ACPExtension.h>
+#import "ACPExtension.h"
 
 @interface MyExtension : ACPExtension
 - (nullable NSString*) name;
@@ -156,8 +154,6 @@ The `ACPExtension` class has the following methods that you can optionally overr
         // your error handling code goes here
    }
    ```
-{% endtab %}
-{% endtabs %}
 
 ### B. **Registering your Extension**
 
@@ -211,7 +207,7 @@ Some registration errors, such as undefined names, name conflicts, or type check
 {% endhint %}
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
+#import "ACPCore.h"
 #import "MyExtension.h"
 
 @implementation AppDelegate

@@ -4,7 +4,7 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
-3. Provide extension settings \(see [Configure Media Analytics Extension](#configure-media-analytics-extension)\).
+3. Provide extension settings \(see [Configure Media Analytics Extension](./#configure-media-analytics-extension)\).
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
@@ -30,7 +30,7 @@ Name of the online platform through which content gets distributed.
 
 #### Player Name
 
-Name of the media player in use (e.g., "AVPlayer", "Native Player", "Custom Player").
+Name of the media player in use \(e.g., "AVPlayer", "Native Player", "Custom Player"\).
 
 #### Application Version
 
@@ -47,7 +47,7 @@ Enables or disables Media SDK logs.
 ## Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires the [Adobe Analytics Extension](../adobe-analytics/README.md). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
+This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
 {% tabs %}
@@ -66,7 +66,6 @@ implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```java
 import com.adobe.marketing.mobile.*;
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -94,7 +93,6 @@ or you can manually include the libraries found in [Github](https://github.com/A
 ```swift
 import ACPMedia
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -102,7 +100,6 @@ import ACPMedia
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 To register media with Mobile Core, call the `setApplication()` method in `onCreate()`, then call setup methods, as shown in this sample:
@@ -133,7 +130,6 @@ public class MobileApp extends Application {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -188,7 +184,6 @@ func application(_ application: UIApplication,
     return true;
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -196,11 +191,12 @@ func application(_ application: UIApplication,
 
 To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
-| Key                  | Required | Description                                           |
-|----------------------|----------|-------------------------------------------------------|
-| `media.trackingServer` |    Yes   | [See Tracking Server](#tracking-server)             |
-| `media.channel`        |    No    | [See Channel](#channel)                             |
-| `media.ovp`            |    No    | [See Online Video Provider](#online-video-provider) |
-| `media.playerName`     |    No    | [See Player Name](#player-name)                     |
-| `media.appVersion`     |    No    | [See Application Version](#application-version)     |
-| `media.debugLogging`   |    No    | [See Debug Logging](#debug-logging)                 |
+| Key | Required | Description |
+| :--- | :--- | :--- |
+| `media.trackingServer` | Yes | [See Tracking Server](./#tracking-server) |
+| `media.channel` | No | [See Channel](./#channel) |
+| `media.ovp` | No | [See Online Video Provider](./#online-video-provider) |
+| `media.playerName` | No | [See Player Name](./#player-name) |
+| `media.appVersion` | No | [See Application Version](./#application-version) |
+| `media.debugLogging` | No | [See Debug Logging](./#debug-logging) |
+

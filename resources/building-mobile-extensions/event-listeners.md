@@ -128,8 +128,8 @@ public class MyExtension extends Extension {
 **MyExtensionListener.h**
 
 ```text
-#import <ACPCore_iOS/ACPExtensionListener.h>
-#import <ACPCore_iOS/ACPExtensionEvent.h>
+#import "ACPExtensionListener.h"
+#import "ACPExtensionEvent.h"
 
 @interface MyExtensionListener : ACPExtensionListener
     - (void) hear:(ACPExtensionEvent *)event;
@@ -233,8 +233,8 @@ In iOS the event listeners are registered using the `registerListener` method of
 **MyExtension.h**
 
 ```text
-#import <ACPCore_iOS/ACPExtension.h>
-#import <ACPCore_iOS/ACPExtensionEvent.h>
+#import "ACPExtension.h"
+#import "ACPExtensionEvent.h"
 
 @interface MyExtension : ACPExtension
 

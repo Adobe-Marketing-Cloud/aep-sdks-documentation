@@ -1,22 +1,24 @@
-# Media API Reference
+# Media API reference
 
-## Create Media Tracker
+## Media API Reference
+
+### Create Media Tracker
 
 Creates a media tracker instance that tracks the playback session.
 
 {% tabs %}
 {% tab title="Android" %}
-### createTracker
+#### createTracker
 
 The callback will be invoked to return the created tracker instance. If an error occurs, `null` is returned.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void createTracker(AdobeCallback<MediaTracker> callback)
 ```
 
-#### Example
+**Example**
 
 ```java
 Media.createTracker(new AdobeCallback<MediaTracker>() {
@@ -26,21 +28,20 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
     }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### createTracker
+#### createTracker
 
 The callback will be invoked to return the created tracker instance. If an error occurs, `nil` is returned.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 +(void) createTracker: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
 ```
 
-#### Examples
+**Examples**
 
 Here are examples in Objective-C and Swift:
 
@@ -59,30 +60,28 @@ ACPMedia.createTracker({mediaTracker in
     // Use the instance for tracking media.
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Create Media Object
+### Create Media Object
 
 Creates an instance of the Media object.
 
-| Variable Name  | Description                  | Required |
-|----------------|------------------------------|:--------:|
-| `name`         | Media name                   | Yes      |
-| `mediaId`      | Media unique identifier      | Yes      |
-| `length`       | Media length                 | Yes      |
-| `streamType`   | [Stream type](#stream-type)  | Yes      |
-| `mediaType`    | [Media type](#media-type)    | Yes      |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `name` | Media name | Yes |
+| `mediaId` | Media unique identifier | Yes |
+| `length` | Media length | Yes |
+| `streamType` | [Stream type](media-api-reference.md#stream-type) | Yes |
+| `mediaType` | [Media type](media-api-reference.md#media-type) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-
-### createMediaObject
+#### createMediaObject
 
 Returns a HashMap instance that contains information about the media.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static HashMap<String, Object> createMediaObject(String name,
@@ -92,7 +91,7 @@ public static HashMap<String, Object> createMediaObject(String name,
                                                         MediaType mediaType);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
@@ -101,16 +100,14 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
                                                             MediaConstants.StreamType.VOD,
                                                             Media.MediaType.Video);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-### createMediaObjectWithName
+#### createMediaObjectWithName
 
 Returns an NSDictionary instance that contains information about the media.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (NSDictionary* _Nonnull) createMediaObjectWithName: (NSString* _Nonnull) name
@@ -120,7 +117,7 @@ Returns an NSDictionary instance that contains information about the media.
                                            mediaType: (ACPMediaType) mediaType;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -145,44 +142,41 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 {% endtab %}
 {% endtabs %}
 
-## Create AdBreak Object
+### Create AdBreak Object
 
 Creates an instance of the AdBreak object.
 
-| Variable Name | Description                                                              | Required |
-|---------------|--------------------------------------------------------------------------|:--------:|
-| `name`        | Ad break name such as pre-roll, mid-roll, and post-roll.                 | Yes      |
-| `position`    | The number position of the ad break within the content, starting with 1. | Yes      |
-| `startTime`   | Playhead value at the start of the ad break.                             | Yes      |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `name` | Ad break name such as pre-roll, mid-roll, and post-roll. | Yes |
+| `position` | The number position of the ad break within the content, starting with 1. | Yes |
+| `startTime` | Playhead value at the start of the ad break. | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-
-### createAdBreakObject
+#### createAdBreakObject
 
 Returns a HashMap instance that contains information about the ad break.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static HashMap<String, Object> createAdBreakObject(String name, Long position, Double startTime);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> adBreakObject = Media.createAdBreakObject("adbreak-name", 1L, 0D);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-### createAdBreakObjectWithName
+#### createAdBreakObjectWithName
 
 Returns an NSDictionary instance that contains information about the ad break.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (NSDictionary* _Nonnull) createAdBreakObjectWithName: (NSString* _Nonnull) name
@@ -190,7 +184,7 @@ Returns an NSDictionary instance that contains information about the ad break.
                                              startTime: (double) startTime;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -206,51 +200,46 @@ NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-n
 
 ```swift
 let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Create Ad Object
+### Create Ad Object
 
 Creates an instance of the Ad object.
 
-| Variable Name | Description                                                         | Required |
-|---------------|---------------------------------------------------------------------|:--------:|
-| `name`        | Friendly name of the ad.                                            | Yes      |
-| `adId`        | Unique identifier for the ad.                                       | Yes      |
-| `position`    | The number position of the ad within the ad break, starting with 1. | Yes      |
-| `length`      | Ad length                                                           | Yes      |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `name` | Friendly name of the ad. | Yes |
+| `adId` | Unique identifier for the ad. | Yes |
+| `position` | The number position of the ad within the ad break, starting with 1. | Yes |
+| `length` | Ad length | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-
-### createAdObject
+#### createAdObject
 
 Returns a HashMap instance that contains information about the ad.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static HashMap<String, Object> createAdObject(String name, String adId, Long position, Double length);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> adInfo = Media.createAdObject("ad-name", "ad-id", 1L, 15D);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-### createAdObjectWithName
+#### createAdObjectWithName
 
 Returns an NSDictionary instance that contains information about the ad.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (NSDictionary* _Nonnull) createAdObjectWithName: (NSString* _Nonnull) name
@@ -259,7 +248,7 @@ Returns an NSDictionary instance that contains information about the ad.
                                            length: (double) length;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -277,29 +266,27 @@ NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
 ```swift
 let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Create Chapter Object
+### Create Chapter Object
 
 Creates an instance of the Chapter object.
 
-| Variable Name | Description        | Required |
-|---------------|--------------------|:--------:|
-| `name`        | Chapter name       | Yes      |
-| `position`    | Chapter position   | Yes      |
-| `length`      | Chapter length     | Yes      |
-| `startTime`   | Chapter start time | Yes      |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `name` | Chapter name | Yes |
+| `position` | Chapter position | Yes |
+| `length` | Chapter length | Yes |
+| `startTime` | Chapter start time | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-
-### createChapterObject
+#### createChapterObject
 
 Returns a HashMap instance that contains information about the chapter.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static HashMap<String, Object> createChapterObject(String name,
@@ -308,21 +295,19 @@ public static HashMap<String, Object> createChapterObject(String name,
                                                           Double startTime);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> chapterInfo = Media.createChapterObject("chapter-name", 1L, 60D, 0D);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-### createChapterObjectWithName
+#### createChapterObjectWithName
 
 Returns an NSDictionary instance that contains information about the chapter.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (NSDictionary* _Nonnull) createChapterObjectWithName: (NSString* _Nonnull) name
@@ -331,7 +316,7 @@ Returns an NSDictionary instance that contains information about the chapter.
                                              startTime: (double) startTime;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -349,30 +334,27 @@ NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-n
 ```swift
 let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", position: 1, length: 60, startTime: 0)
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Create QoE Object
+### Create QoE Object
 
 Creates an instance of the QoE object.
 
-
-| Variable Name   | Description              | Required |
-|-----------------|--------------------------|:--------:|
-| `bitrate`       | Current bitrate          | Yes      |
-| `startupTime`   | Startup time             | Yes      |
-| `fps`           | FPS value                | Yes      |
-| `droppedFrames` | Number of dropped frames | Yes      |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `bitrate` | Current bitrate | Yes |
+| `startupTime` | Startup time | Yes |
+| `fps` | FPS value | Yes |
+| `droppedFrames` | Number of dropped frames | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-
-### createQoEObject
+#### createQoEObject
 
 Returns a HashMap instance that contains information about the quality of experience.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static HashMap<String, Object> createQoEObject(Long bitrate,
@@ -381,21 +363,19 @@ public static HashMap<String, Object> createQoEObject(Long bitrate,
                                                       Long droppedFrames);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> qoeInfo = Media.createQoEObject(10000000L, 2D, 23D, 10D);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-### createQoEObjectWithBitrate
+#### createQoEObjectWithBitrate
 
 Returns an NSDictionary instance that contains information about the quality of experience.
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (NSDictionary* _Nonnull) createQoEObjectWithBitrate: (double) bitrate
@@ -404,7 +384,7 @@ Returns an NSDictionary instance that contains information about the quality of 
                                         droppedFrames: (double) droppedFrames;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -422,32 +402,31 @@ NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
 ```swift
 let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, fps: 23, droppedFrames: 10)
 ```
-
 {% endtab %}
 {% endtabs %}
 
-# Media Tracker API Reference
+## Media Tracker API Reference
 
-## trackSessionStart
+### trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance. See also [Media Resume](#media-resume)
+Track the intention to start playback. This starts a tracking session on the media tracker instance. See also [Media Resume](media-api-reference.md#media-resume)
 
-| Variable Name | Description                                                                                                                                                                 | Required |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|
-| `mediaInfo`   | Media Information created using [createMediaObject](#create-media-object)                                                                                                     |    Yes   |
-| `contextData` | Optional Media context data. Use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants) for standard metadata keys. |    No    |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#createMediaObject) | Yes |
+| `contextData` | Optional Media context data. Use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants) for standard metadata keys. | No |
 
 {% tabs %}
 {% tab title="Android" %}
-### trackSessionStart
+#### trackSessionStart
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackSessionStart(Map<String, Object> mediaInfo, Map<String, String> contextData);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
@@ -463,19 +442,18 @@ mediaMetadata.put("tvStation", "Sample TV Station");
 
 _tracker.trackSessionStart(mediaInfo, videoMetadata);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackSessionStart
+#### trackSessionStart
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackSessionStart: (NSDictionary* _Nonnull) mediaInfo data: (NSDictionary* _Nullable) contextData;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -513,38 +491,37 @@ _tracker.trackSessionStart(mediaObject, data: mediaMetadata)
 {% endtab %}
 {% endtabs %}
 
-## trackPlay
+### trackPlay
 
 Track media play or resume after a previous pause.
 
 {% tabs %}
 {% tab title="Android" %}
-### trackPlay
+#### trackPlay
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackPlay();
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.trackPlay();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackPlay
+#### trackPlay
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackPlay;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -562,38 +539,37 @@ _tracker.trackPlay()
 {% endtab %}
 {% endtabs %}
 
-## trackPause
+### trackPause
 
 Track media pause.
 
 {% tabs %}
 {% tab title="Android" %}
-### trackPause
+#### trackPause
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackPause();
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.trackPause();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackPause
+#### trackPause
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackPause;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -611,39 +587,37 @@ _tracker.trackPause()
 {% endtab %}
 {% endtabs %}
 
-
-## trackComplete
+### trackComplete
 
 Track media complete. Call this method only when the media has been completly viewed.
 
 {% tabs %}
 {% tab title="Android" %}
-### trackComplete
+#### trackComplete
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackComplete();
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.trackComplete();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackComplete
+#### trackComplete
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackComplete;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -661,39 +635,37 @@ _tracker.trackComplete()
 {% endtab %}
 {% endtabs %}
 
-
-## trackSessionEnd
+### trackSessionEnd
 
 Track the end of a viewing session. Call this method even if the user does not view the media to completion.
 
 {% tabs %}
 {% tab title="Android" %}
-### trackSessionEnd
+#### trackSessionEnd
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackSessionEnd();
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.trackSessionEnd();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackSessionEnd
+#### trackSessionEnd
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackSessionEnd;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -711,42 +683,41 @@ _tracker.trackSessionEnd()
 {% endtab %}
 {% endtabs %}
 
-## trackError
+### trackError
 
 Track an error in media playback.
 
-| Variable Name | Description       | Required |
-|---------------|-------------------|:--------:|
-| `errorId`     | Error Information |    Yes   |
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `errorId` | Error Information | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
-### trackError
+#### trackError
 
-#### Syntax
+**Syntax**
 
 ```java
 public void trackError(String errorId);
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.trackError("errorId");
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackError
+#### trackError
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) trackError: (NSString* _Nonnull) errorId;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -761,11 +732,10 @@ Here are examples in Objective-C and Swift:
 ```swift
 _tracker.trackError("errorId")
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## trackEvent
+### trackEvent
 
 Method to track media events.
 
@@ -777,9 +747,9 @@ Method to track media events.
 
 {% tabs %}
 {% tab title="Android" %}
-### trackEvent
+#### trackEvent
 
-#### Syntax
+**Syntax**
 
 ```java
   public void trackEvent(Media.Event event,
@@ -787,10 +757,9 @@ Method to track media events.
                          Map<String, String> data);
 ```
 
-#### Examples
+**Examples**
 
-
-#### Tracking AdBreaks
+**Tracking AdBreaks**
 
 ```java
 // AdBreakStart
@@ -801,7 +770,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdBreakComplete, null, null);
 ```
 
-#### Tracking Ads
+**Tracking Ads**
 
 ```java
 // AdStart
@@ -823,7 +792,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdSkip, null, null);
 ```
 
-#### Tracking Chapters
+**Tracking Chapters**
 
 ```java
 // ChapterStart
@@ -841,7 +810,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.ChapterSkip, null, null);
 ```
 
-#### Tracking Playback events
+**Tracking Playback events**
 
 ```java
 // BufferStart
@@ -857,7 +826,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.SeekComplete, null, null);
 ```
 
-#### Tracking Bitrate change
+**Tracking Bitrate change**
 
 ```java
 // If the new bitrate value is available provide it to the tracker.
@@ -867,13 +836,12 @@ Method to track media events.
 // Bitrate change
   _heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackEvent
+#### trackEvent
 
-#### Syntax
+**Syntax**
 
 ```objectivec
   - (void) trackEvent: (ACPMediaEvent) event
@@ -881,9 +849,9 @@ Method to track media events.
                  data: (NSDictionary* _Nullable) data;
 ```
 
-#### Examples
+**Examples**
 
-#### Tracking AdBreaks
+**Tracking AdBreaks**
 
 Here are examples in Objective-C and Swift:
 
@@ -909,7 +877,7 @@ Here are examples in Objective-C and Swift:
   _tracker.trackEvent(ACPMediaEvent.adBreakComplete, mediaObject: nil, data: nil)
 ```
 
-#### Tracking Ads
+**Tracking Ads**
 
 Here are examples in Objective-C and Swift:
 
@@ -955,7 +923,7 @@ Here are examples in Objective-C and Swift:
   _tracker.trackEvent(ACPMediaEvent.adSkip, mediaObject: nil, data: nil)
 ```
 
-#### Tracking Chapters
+**Tracking Chapters**
 
 Here are examples in Objective-C and Swift:
 
@@ -993,7 +961,7 @@ Here are examples in Objective-C and Swift:
   _tracker.trackEvent(ACPMediaEvent.chapterSkip, mediaObject: nil, data: nil)
 ```
 
-#### Tracking Playback events
+**Tracking Playback events**
 
 Here are examples in Objective-C and Swift:
 
@@ -1029,7 +997,7 @@ Here are examples in Objective-C and Swift:
   _tracker.trackEvent(ACPMediaEvent.seekComplete, mediaObject: nil, data: nil)
 ```
 
-#### Tracking Bitrate change
+**Tracking Bitrate change**
 
 Here are examples in Objective-C and Swift:
 
@@ -1054,47 +1022,44 @@ Here are examples in Objective-C and Swift:
 // Bitrate change
   _tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
 ```
-
 {% endtab %}
 {% endtabs %}
 
-
-## updateCurrentPlayhead
+### updateCurrentPlayhead
 
 Provide media tracker with current media playhead. For accurate tracking, call this multiple times whenever playhead changes.
 
-| Variable Name | Description|
-|---------------|------------|
-| `time`        | Current playhead in seconds. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
+| Variable Name | Description |
+| :--- | :--- |
+| `time` | Current playhead in seconds. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
-### updateCurrentPlayhead
+#### updateCurrentPlayhead
 
-#### Syntax
+**Syntax**
 
 ```java
 public void updateCurrentPlayhead(double time);
 ```
 
-#### Example
+**Example**
 
 ```java
 _tracker.updateCurrentPlayhead(1);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### updateCurrentPlayhead
+#### updateCurrentPlayhead
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) updateCurrentPlayhead: (double) time;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -1112,44 +1077,42 @@ _tracker.updateCurrentPlayhead(1)
 {% endtab %}
 {% endtabs %}
 
-## updateQoEObject
+### updateQoEObject
 
 Provide media tracker with current QoE information. For accurate tracking, call this multiple times whenever the media player provides updated QoE information.
 
-
-| Variable Name | Description|
-|---------------|------------|
-| `qoeObject`   | Current QoE information created using [Create QoE Object](#create-qoe-object)|
+| Variable Name | Description |
+| :--- | :--- |
+| `qoeObject` | Current QoE information created using [Create QoE Object](media-api-reference.md#create-qoe-object) |
 
 {% tabs %}
 {% tab title="Android" %}
-### updateQoEObject
+#### updateQoEObject
 
-#### Syntax
+**Syntax**
 
 ```java
 public void updateQoEObject(Map<String, Object> qoeObject);
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> qoeObject = Media.createQoEObject(1000000L, 2D, 25D, 10D);
 _tracker.updateQoEObject(qoeObject);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### updateQoEObject
+#### updateQoEObject
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 - (void) updateQoEObject: (NSDictionary* _Nonnull) qoeObject;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -1169,10 +1132,9 @@ _tracker.updateQoEObject(qoeObject)
 {% endtab %}
 {% endtabs %}
 
+## Media Constants
 
-# Media Constants
-
-## Media Type
+### Media Type
 
 This defines the type of a media that is currently tracked.
 
@@ -1211,11 +1173,10 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
     ACPMediaTypeAudio
 };
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Stream Type
+### Stream Type
 
 This defines the stream type of the content that is currently tracked.
 
@@ -1292,11 +1253,10 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAudiobook;
  */
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Standard Video Constants
+### Standard Video Constants
 
 This defines the standard metadata keys for video streams.
 
@@ -1351,12 +1311,10 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 
 ```
-
 {% endtab %}
 {% endtabs %}
 
-
-## Standard Audio Constants
+### Standard Audio Constants
 
 This defines the standard metadata keys for audio streams.
 
@@ -1387,14 +1345,11 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyLabel;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAuthor;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyStation;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
-
-## Standard Ad Constants
+### Standard Ad Constants
 
 This defines the standard metadata keys for ads.
 
@@ -1425,13 +1380,11 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyPlacementId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeySiteId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Media Events
+### Media Events
 
 This defines the type of a tracking event.
 
@@ -1574,19 +1527,18 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
     ACPMediaEventBitrateChange,
 };
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## Media Resume
+### Media Resume
 
 Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
-### Media Resume
+#### Media Resume
 
-#### Syntax
+**Syntax**
 
 ```java
 public class MediaConstants {
@@ -1602,7 +1554,7 @@ public class MediaConstants {
 }
 ```
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
@@ -1612,19 +1564,18 @@ mediaObject.put(MediaConstants.MediaObjectKey.RESUMED, true);
 
 _heartbeat.trackSessionStart(mediaObject, null);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-### Media Resume
+#### Media Resume
 
-#### Syntax
+**Syntax**
 
 ```objectivec
   FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
 ```
 
-#### Example
+**Example**
 
 Here are examples in Objective-C and Swift:
 
@@ -1652,3 +1603,4 @@ _tracker.trackSessionStart(mediaObject, data: nil)
 ```
 {% endtab %}
 {% endtabs %}
+
