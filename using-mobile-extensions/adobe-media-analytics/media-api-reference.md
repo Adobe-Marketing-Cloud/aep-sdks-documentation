@@ -440,7 +440,7 @@ mediaMetadata.put(MediaConstants.VideoMetadataKeys.SHOW, "Sample Show");
 mediaMetadata.put("isUserLoggedIn", "false");
 mediaMetadata.put("tvStation", "Sample TV Station");
 
-_tracker.trackSessionStart(mediaInfo, videoMetadata);
+_tracker.trackSessionStart(mediaInfo, mediaMetadata);
 ```
 {% endtab %}
 
