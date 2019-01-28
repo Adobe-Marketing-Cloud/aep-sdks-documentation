@@ -130,6 +130,7 @@ public class MobileApp extends Application {
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
+         MobileCore.start(null);
      } catch (Exception e) {
          //Log the exception
      }
@@ -158,12 +159,12 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
- ACPCore.configure(withAppId: "yourAppId")   
- ACPAnalytics.registerExtension()
- ACPIdentity.registerExtension()
- ACPCore.start(nil)
- // Override point for customization after application launch. 
- return true;
+     ACPCore.configure(withAppId: "yourAppId")   
+     ACPAnalytics.registerExtension()
+     ACPIdentity.registerExtension()
+     ACPCore.start(nil)
+     // Override point for customization after application launch. 
+     return true;
 }
 ```
 {% endtab %}
