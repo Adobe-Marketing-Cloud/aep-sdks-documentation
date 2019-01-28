@@ -21,7 +21,7 @@ public static void createTracker(AdobeCallback<MediaTracker> callback)
 **Example**
 
 ```java
-AdobeCallback<MediaTracker> createdClb = new AdobeCallback<MediaTracker>() {
+Media.createTracker(new AdobeCallback<MediaTracker>() {
     @Override
     public void call(MediaTracker tracker) {
         // Use the instance for tracking media.
@@ -739,11 +739,11 @@ _tracker.trackError("errorId")
 
 Method to track media events.
 
-| Variable Name | Description |
-| :--- | :--- |
-| `event` | \[Media event\]\#\(media-events\) |
-| `info` | For AdBreakStart, AdBreak information created using [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For AdStart, Ad information created using [Create Ad Object](media-api-reference.md#create-ad-object).  For ChapterStart, Chapter information created using [Create Chapter Object](media-api-reference.md#create-chapter-object).  Not required for other events. |
-| `data` | Optional context data only for AdStart and ChapterStart. Not required for other events. |
+| Variable Name | Description                                                                                                                                                                                                                                                                                                                           |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `event `      | [Media event](#media-events)                                                                                                                                                                                                                                                                                                          |
+| `info`        | For AdBreakStart event, AdBreak information is created using [Create AdBreak Object](#create-adbreak-object).<br> For AdStart event, Ad information is created using [Create Ad Object](#create-ad-object).<br> For ChapterStart event, Chapter information is created using [Create Chapter Object](#create-chapter-object).<br> This is not required for other events. |
+| `data`        | Optional context data can be provided for AdStart and ChapterStart events. This is not required for other events.                                                                                                                                                                                                                                               |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -753,9 +753,8 @@ Method to track media events.
 
 ```java
   public void trackEvent(Media.Event event,
-                         Map<String,
-                         Object> info,
-                         Map<String, String> data)
+                         Map<String, Object> info,
+                         Map<String, String> data);
 ```
 
 **Examples**
@@ -776,12 +775,14 @@ Method to track media events.
 ```java
 // AdStart
   HashMap<String, Object> adObject = Media.createAdObject("ad-name", "ad-id", 1L, 15D);
+
   HashMap<String, String> adMetadata = new HashMap<String, String>();
   // Standard metadata keys provided by adobe.
   adMetadata.put(MediaConstants.AdMetadataKeys.ADVERTISER, "Sample Advertiser");
   adMetadata.put(MediaConstants.AdMetadataKeys.CAMPAIGN_ID, "Sample Campaign");
   // Custom metadata keys
   adMetadata.put("affiliate", "Sample affiliate");
+
   _tracker.trackEvent(Media.Event.AdStart, adObject, adMetadata);
 
 // AdComplete
@@ -843,8 +844,9 @@ Method to track media events.
 **Syntax**
 
 ```objectivec
-  - (void) trackEvent: (ACPMediaEvent) event info: (NSDictionary* _Nullable) info data:
-    (NSDictionary* _Nullable) data;
+  - (void) trackEvent: (ACPMediaEvent) event
+                 info: (NSDictionary* _Nullable) info
+                 data: (NSDictionary* _Nullable) data;
 ```
 
 **Examples**
@@ -907,7 +909,7 @@ Here are examples in Objective-C and Swift:
 // AdStart
   let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
 
-  // Standard metadata keys provided by adobe.    
+  // Standard metadata keys provided by adobe.
   var adMetadata = [ACPAdMetadataKeyAdvertiser: "Sample Advertiser", ACPAdMetadataKeyCampaignId: "Sample Campaign"]
   // Custom metadata keys
   adMetadata["affiliate"] = "Sample affiliate"
@@ -1064,7 +1066,7 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[_tracker updateCurrentPlayhead: 1];
+[_tracker updateCurrentPlayhead:1];
 ```
 
 **Swift**
@@ -1139,17 +1141,21 @@ This defines the type of a media that is currently tracked.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-public enum MediaType {
-    /**
-    * Constant defining media type for Video streams
-    */
-    Video,
+public class Media {
 
-    /**
-    * Constant defining media type for Audio streams
-    */
-    Audio
+  public enum MediaType {
+      /**
+      * Constant defining media type for Video streams
+      */
+      Video,
+
+      /**
+      * Constant defining media type for Audio streams
+      */
+      Audio
   }
+
+}
 ```
 {% endtab %}
 
@@ -1177,37 +1183,41 @@ This defines the stream type of the content that is currently tracked.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-public static final class StreamType {
-    /**
-    * Constant defining stream type for VOD streams
-    */
-    public static final String VOD = "vod";
+public class MediaConstants {
 
-    /**
-    * Constant defining stream type for Live streams
-    */
-    public static final String LIVE = "live";
+  public static final class StreamType {
+      /**
+      * Constant defining stream type for VOD streams
+      */
+      public static final String VOD = "vod";
 
-    /**
-    * Constant defining stream type for Linear streams
-    */
-    public static final String LINEAR = "linear";
+      /**
+      * Constant defining stream type for Live streams
+      */
+      public static final String LIVE = "live";
 
-    /**
-    * Constant defining stream type for Podcast streams
-    */
-    public static final String PODCAST = "podcast";
+      /**
+      * Constant defining stream type for Linear streams
+      */
+      public static final String LINEAR = "linear";
 
-    /**
-    * Constant defining stream type for Audiobook streams
-    */
-    public static final String AUDIOBOOK = "audiobook";
+      /**
+      * Constant defining stream type for Podcast streams
+      */
+      public static final String PODCAST = "podcast";
 
-    /**
-    * Constant defining stream type for AOD streams
-    */
-    public static final String AOD = "aod";
+      /**
+      * Constant defining stream type for Audiobook streams
+      */
+      public static final String AUDIOBOOK = "audiobook";
+
+      /**
+      * Constant defining stream type for AOD streams
+      */
+      public static final String AOD = "aod";
   }
+  
+}
 ```
 {% endtab %}
 
@@ -1253,37 +1263,34 @@ This defines the standard metadata keys for video streams.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-/**
- * These constant strings define standard video metadata keys.
- */
-
-public static final class VideoMetadataKeys {
-    public static final String SHOW = "a.media.show";
-    public static final String SEASON = "a.media.season";
-    public static final String EPISODE = "a.media.episode";
-    public static final String ASSET_ID = "a.media.asset";
-    public static final String GENRE = "a.media.genre";
-    public static final String FIRST_AIR_DATE = "a.media.airDate";
-    public static final String FIRST_DIGITAL_DATE = "a.media.digitalDate";
-    public static final String RATING = "a.media.rating";
-    public static final String ORIGINATOR = "a.media.originator";
-    public static final String NETWORK = "a.media.network";
-    public static final String SHOW_TYPE = "a.media.type";
-    public static final String AD_LOAD = "a.media.adLoad";
-    public static final String MVPD = "a.media.pass.mvpd";
-    public static final String AUTHORIZED = "a.media.pass.auth";
-    public static final String DAY_PART = "a.media.dayPart";
-    public static final String FEED = "a.media.feed";
-    public static final String STREAM_FORMAT = "a.media.format";
+public class MediaConstants {
+  
+  public static final class VideoMetadataKeys {
+      public static final String SHOW = "a.media.show";
+      public static final String SEASON = "a.media.season";
+      public static final String EPISODE = "a.media.episode";
+      public static final String ASSET_ID = "a.media.asset";
+      public static final String GENRE = "a.media.genre";
+      public static final String FIRST_AIR_DATE = "a.media.airDate";
+      public static final String FIRST_DIGITAL_DATE = "a.media.digitalDate";
+      public static final String RATING = "a.media.rating";
+      public static final String ORIGINATOR = "a.media.originator";
+      public static final String NETWORK = "a.media.network";
+      public static final String SHOW_TYPE = "a.media.type";
+      public static final String AD_LOAD = "a.media.adLoad";
+      public static final String MVPD = "a.media.pass.mvpd";
+      public static final String AUTHORIZED = "a.media.pass.auth";
+      public static final String DAY_PART = "a.media.dayPart";
+      public static final String FEED = "a.media.feed";
+      public static final String STREAM_FORMAT = "a.media.format";
   }
+  
+}
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```objectivec
-/**
- * These constant strings define standard video metadata keys.
- */
 
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
@@ -1302,6 +1309,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyAuthorized;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyDayPart;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -1313,26 +1321,23 @@ This defines the standard metadata keys for audio streams.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-/**
- * These constant strings define standard audio metadata keys.
- */
+public class MediaConstants {
 
-public static final class AudioMetadataKeys {
-  public static final String ARTIST = "a.media.artist";
-  public static final String ALBUM = "a.media.album";
-  public static final String LABEL = "a.media.label";
-  public static final String AUTHOR = "a.media.author";
-  public static final String STATION = "a.media.station";
-  public static final String PUBLISHER = "a.media.publisher";
+  public static final class AudioMetadataKeys {
+    public static final String ARTIST = "a.media.artist";
+    public static final String ALBUM = "a.media.album";
+    public static final String LABEL = "a.media.label";
+    public static final String AUTHOR = "a.media.author";
+    public static final String STATION = "a.media.station";
+    public static final String PUBLISHER = "a.media.publisher";
+  }
+
 }
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```objectivec
-/**
- * These constant strings define standard audio metadata keys.
- */
 
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
@@ -1351,26 +1356,23 @@ This defines the standard metadata keys for ads.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-/**
- * These constant strings define standard metadata keys for ads.
- */
+public class MediaConstants {
 
-public static final class AdMetadataKeys {
-  public static final String ADVERTISER = "a.media.ad.advertiser";
-  public static final String CAMPAIGN_ID = "a.media.ad.campaign";
-  public static final String CREATIVE_ID = "a.media.ad.creative";
-  public static final String PLACEMENT_ID = "a.media.ad.placement";
-  public static final String SITE_ID = "a.media.ad.site";
-  public static final String CREATIVE_URL = "a.media.ad.creativeURL";
+  public static final class AdMetadataKeys {
+    public static final String ADVERTISER = "a.media.ad.advertiser";
+    public static final String CAMPAIGN_ID = "a.media.ad.campaign";
+    public static final String CREATIVE_ID = "a.media.ad.creative";
+    public static final String PLACEMENT_ID = "a.media.ad.placement";
+    public static final String SITE_ID = "a.media.ad.site";
+    public static final String CREATIVE_URL = "a.media.ad.creativeURL";
+  }
+
 }
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```objectivec
-/**
- * These constant strings define standard metadata keys for ads.
- */
 
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
@@ -1389,76 +1391,79 @@ This defines the type of a tracking event.
 {% tabs %}
 {% tab title="Android" %}
 ```java
-  /**
-  * These enumeration values define the type of a tracking event
-  */
-
-  public enum Event {
-    /**
-     * Constant defining event type for AdBreak start
-     */
-    AdBreakStart,
+public class Media {
 
     /**
-     * Constant defining event type for AdBreak complete
-     */
-    AdBreakComplete,
+    * These enumeration values define the type of a tracking event
+    */
+    public enum Event {
+      /**
+      * Constant defining event type for AdBreak start
+      */
+      AdBreakStart,
 
-    /**
-     * Constant defining event type for Ad start
-     */
-    AdStart,
+      /**
+      * Constant defining event type for AdBreak complete
+      */
+      AdBreakComplete,
 
-    /**
-     * Constant defining event type for Ad complete
-     */
-    AdComplete,
+      /**
+      * Constant defining event type for Ad start
+      */
+      AdStart,
 
-    /**
-     * Constant defining event type for Ad skip
-     */
-    AdSkip,
+      /**
+      * Constant defining event type for Ad complete
+      */
+      AdComplete,
 
-    /**
-     * Constant defining event type for Chapter start
-     */
-    ChapterStart,
+      /**
+      * Constant defining event type for Ad skip
+      */
+      AdSkip,
 
-    /**
-     * Constant defining event type for Chapter complete
-     */
-    ChapterComplete,
+      /**
+      * Constant defining event type for Chapter start
+      */
+      ChapterStart,
 
-    /**
-     * Constant defining event type for Chapter skip
-     */
-    ChapterSkip,
+      /**
+      * Constant defining event type for Chapter complete
+      */
+      ChapterComplete,
 
-    /**
-     * Constant defining event type for Seek start
-     */
-    SeekStart,
+      /**
+      * Constant defining event type for Chapter skip
+      */
+      ChapterSkip,
 
-    /**
-     * Constant defining event type for Seek complete
-     */
-    SeekComplete,
+      /**
+      * Constant defining event type for Seek start
+      */
+      SeekStart,
 
-    /**
-     * Constant defining event type for Buffer start
-     */
-    BufferStart,
+      /**
+      * Constant defining event type for Seek complete
+      */
+      SeekComplete,
 
-    /**
-     * Constant defining event type for Buffer complete
-     */
-    BufferComplete,
+      /**
+      * Constant defining event type for Buffer start
+      */
+      BufferStart,
 
-    /**
-     * Constant defining event type for change in Bitrate
-     */
-    BitrateChange,
+      /**
+      * Constant defining event type for Buffer complete
+      */
+      BufferComplete,
+
+      /**
+      * Constant defining event type for change in Bitrate
+      */
+      BitrateChange,
   }
+
+}
 ```
 {% endtab %}
 
@@ -1536,12 +1541,16 @@ Constant to denote the current tracking session is resuming a previously closed 
 **Syntax**
 
 ```java
-public static final class MediaObjectKey {
+public class MediaConstants {
 
-    /**
-     * Constant defining explicit media resumed property. Set this to true on MediaObject if resuming a previously closed session.
-    */
-    public static final String RESUMED;
+  public static final class MediaObjectKey {
+
+      /**
+      * Constant defining explicit media resumed property. Set this to true on MediaObject if resuming a previously closed session.
+      */
+      public static final String RESUMED;
+  }
+
 }
 ```
 
