@@ -2,13 +2,13 @@
 
 ## Get the Tracking Identifier  <a id="gettrackingidentifier"></a>
 
-Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch.The ID is preserved between app upgrades and is removed when the app is uninstalled.
+Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% tabs %}
 {% tab title="Android" %}
 ### getTrackingIdentifier
 
-Retrieves the analytics tracking identifier.
+Retrieves the Analytics tracking identifier.
 
 #### Syntax
 
@@ -33,7 +33,7 @@ Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
 {% tab title="iOS" %}
 ### getTrackingIdentifier
 
-Retrieves the analytics tracking identifier.
+Retrieves the Analytics tracking identifier.
 
 #### Syntax
 
@@ -77,13 +77,13 @@ Regardless of how many hits are currently queued, this method forces the library
 
 #### **Syntax**
 
-```text
+```java
 public static void sendQueuedHits()
 ```
 
 #### **Example**
 
-```text
+```java
 Analytics.sendQueuedHits();
 ```
 {% endtab %}
@@ -178,7 +178,7 @@ ACPAnalytics.getQueueSize { (queueSize) in
 
 ## Set the Custom Visitor Identifier <a id="setcustomidentifier"></a>
 
-Sets the analytics custom visitor identifier.
+Sets the Analytics custom visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -226,7 +226,7 @@ ACPAnalytics.setCustomVistorIdentifier("custom_identifier")
 
 ## Get the Custom Visitor Identifier <a id="getcustomidentifier"></a>
 
-Sets the analytics custom visitor identifier.
+Sets the Analytics custom visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
