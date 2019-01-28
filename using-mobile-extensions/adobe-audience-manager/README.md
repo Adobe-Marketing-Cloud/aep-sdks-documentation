@@ -31,6 +31,8 @@ To get started with **Audience Manager**, follow these steps:
 
 #### Java
 `import com.adobe.marketing.mobile.*;`
+ **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager Extension manually, ensure that you have added the `identity-1.x.x.aar` file to your project.
+ {% endtab %}
 
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
@@ -49,26 +51,10 @@ To get started with **Audience Manager**, follow these steps:
    import ACPAudience
   ```
 
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.a` to your project.
+   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager Extension manually, ensure that you have also added the `libACPIdentity_iOS.a` to your project.
 {% endtab %}
 {% endtabs %}
 
-
-**Objective-C**
-
-1. Add the library to your project via your `Podfile` by adding:
-
-   `pod 'ACPAudience'`
-
-2. Import the Audience and Identity library:
-
-   ```text
-    #import "ACPCore.h"
-    #import "ACPAudience.h"
-    #import "ACPIdentity.h"
-   ```
-
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing manually, ensure that you have also added the `ACPIdentity.framework` to your project.
 
 ### Register Audience Manager with Mobile Core
 
@@ -91,6 +77,7 @@ public void onCreate() {
      try {
          Audience.registerExtension(); //Register Audience Manager with Mobile Core
          Identity.registerExtension();
+         MobileCore.start(null);
      } catch (Exception e) {
      //Log the exception
      }
@@ -107,6 +94,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    [ACPIdentity registerExtension];
    [ACPAudience registerExtension];
+   [ACPCore start:nil]
 
    // Override point for customization after application launch.
    return YES;
@@ -118,6 +106,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
  ACPIdentity.registerExtension()
  ACPAudience.registerExtension()
+ ACPCore.start(nil)
 
  // Override point for customization after application launch.
  return true;
