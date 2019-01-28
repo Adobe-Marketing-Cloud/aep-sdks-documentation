@@ -50,7 +50,7 @@ If you currently send mobile SDK data to a report suite that also collects data 
 Learn more about [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager) to Audience Manager.
 {% endhint %}
 
-If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures _\*\*_Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
+If you set up Analytics server-side forwarding to Audience Manager, check this setting. When this setting is enabled, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures \_\*\*\_Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
 #### Backdate Previous Session Info
 
@@ -107,7 +107,6 @@ Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACP
 ```swift
 import ACPCore
 import ACPAnalytics
-import ACPIdentity
 ```
 {% endtab %}
 {% endtabs %}
@@ -131,6 +130,7 @@ public class MobileApp extends Application {
      try {
          Analytics.registerExtension(); //Register Analytics with Mobile Core
          Identity.registerExtension();
+         MobileCore.start(null);
      } catch (Exception e) {
          //Log the exception
      }
@@ -159,12 +159,12 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
- ACPCore.configure(withAppId: "yourAppId")   
- ACPAnalytics.registerExtension()
- ACPIdentity.registerExtension()
- ACPCore.start(nil)
- // Override point for customization after application launch. 
- return true;
+     ACPCore.configure(withAppId: "yourAppId")   
+     ACPAnalytics.registerExtension()
+     ACPIdentity.registerExtension()
+     ACPCore.start(nil)
+     // Override point for customization after application launch. 
+     return true;
 }
 ```
 {% endtab %}
