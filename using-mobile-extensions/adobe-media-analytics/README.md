@@ -1,6 +1,6 @@
 # Adobe Media Analytics for Audio and Video
 
-## **Configure Media Analytics Extension in Launch**
+## Configure Media Analytics Extension in Launch
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
@@ -8,11 +8,11 @@
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
-### **Configure Media Analytics Extension**
+### Configure Media Analytics Extension
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
 
-#### **Tracking Server**
+#### Tracking Server
 
 {% hint style="info" %}
 This is different from your Analytics tracking server.
@@ -20,31 +20,31 @@ This is different from your Analytics tracking server.
 
 Provide the tracking server to which all media tracking data should be sent.
 
-#### **Channel**
+#### Channel
 
 Channel name property.
 
-#### **Online Video Provider**
+#### Online Video Provider
 
 Name of the online platform through which content gets distributed.
 
-#### **Player Name**
+#### Player Name
 
 Name of the media player in use \(e.g., "AVPlayer", "Native Player", "Custom Player"\).
 
-#### **Application Version**
+#### Application Version
 
 The version of the media player application/SDK.
 
-#### **Debug Logging**
-
-Enables or disables Media SDK logs.
+#### Debug Logging
 
 {% hint style="danger" %}
 This should be disabled for your production application.
 {% endhint %}
 
-### Add Media Analytics to your app
+Enables or disables Media SDK logs.
+
+## Add Media Analytics to your app
 
 {% hint style="info" %}
 This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
@@ -52,11 +52,16 @@ This extension requires the [Adobe Analytics Extension](../adobe-analytics/). Yo
 
 {% tabs %}
 {% tab title="Android" %}
-Add the Media extension to your project using the app's Gradle file.
 
-#### Java
+1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
-1. Import the Media extension in your application's main activity.
+```text
+implementation 'com.adobe.marketing.mobile:analytics:1.+'
+implementation 'com.adobe.marketing.mobile:media:1.+'
+implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+```
+
+2. Import the Media extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -64,7 +69,18 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPMedia'`.
+
+1. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
+
+```text
+pod 'ACPMedia', '~> 1.0'
+pod 'ACPAnalytics', '~> 2.0'
+pod 'ACPCore', '~> 2.0'
+```
+
+or you can manually include the libraries found in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
+
+2. In Xcode project, import Media extension:
 
 #### Objective-C
 
@@ -89,6 +105,8 @@ import ACPMedia
 To register media with Mobile Core, call the `setApplication()` method in `onCreate()`, then call setup methods, as shown in this sample:
 
 ```java
+import com.adobe.marketing.mobile.*;
+
 public class MobileApp extends Application {
 
   @Override
@@ -97,10 +115,16 @@ public class MobileApp extends Application {
       MobileCore.setApplication(this);
 
       try {
-          Media.registerExtension();  //Register Media with Mobile Core
+          Media.registerExtension();
           Analytics.registerExtension();
           Identity.registerExtension();
-      } catch (Exception e) {
+          MobileCore.start(new AdobeCallback () {
+              @Override
+              public void call(Object o) {
+                  MobileCore.configureWithAppID("your-launch-app-id");
+              }
+          });
+      } catch (InvalidInitException e) {
 
       }
   }
@@ -109,15 +133,28 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
+In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
 
 #### Objective-C
 
 ```objectivec
+#import <ACPCore.h>
+#import <ACPAnalytics.h>
+#import <ACPMedia.h>
+#import <ACPIdentity.h>
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPMedia registerExtension];  //Register Media with Mobile Core
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"your-launch-app-id"];
+
+    [ACPMedia registerExtension];
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
+
+    [ACPCore start:^{
+
+    }];
+
     return YES;
   }
 ```
@@ -125,11 +162,25 @@ In your app's `application:didFinishLaunchingWithOptions`, register Analytics wi
 #### Swift
 
 ```swift
+import ACPCore
+import ACPAnalytics
+import ACPMedia
+import ACPIdentity
+import ACPLifecycle
+
 func application(_ application: UIApplication, 
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ACPMedia.registerExtension();  //Register Media with Mobile Core
-    ACPAnalytics.registerExtension();
-    ACPIdentity.registerExtension();
+    ACPCore.setLogLevel(.debug)
+    ACPCore.configure(withAppId: "your-launch-app-id")
+
+    ACPMedia.registerExtension()
+    ACPAnalytics.registerExtension()
+    ACPIdentity.registerExtension()
+
+    ACPCore.start {
+
+    }
+
     return true;
 }
 ```

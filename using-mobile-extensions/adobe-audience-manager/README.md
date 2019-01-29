@@ -22,8 +22,8 @@ To get started with **Audience Manager**, follow these steps:
 5. Click **Save**.
 6. Follow the publishing process to update SDK configuration.
 
-### Add Audience Manager to your App
 
+### Add Audience Manager to your App
 {% tabs %}
 {% tab title="Android" %}
 1. Add the library to your project.
@@ -54,7 +54,6 @@ To get started with **Audience Manager**, follow these steps:
    **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endtab %}
 {% endtabs %}
-
 
 ### Register Audience Manager with Mobile Core
 
