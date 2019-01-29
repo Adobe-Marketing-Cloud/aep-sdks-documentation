@@ -31,7 +31,7 @@ To get started with **Audience Manager**, follow these steps:
 
 #### Java
 `import com.adobe.marketing.mobile.*;`
- **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager Extension manually, ensure that you have added the `identity-1.x.x.aar` file to your project.
+ **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
  {% endtab %}
 
 {% tab title="iOS" %}
@@ -51,7 +51,7 @@ To get started with **Audience Manager**, follow these steps:
    import ACPAudience
   ```
 
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager Extension manually, ensure that you have also added the `libACPIdentity_iOS.a` to your project.
+   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endtab %}
 {% endtabs %}
 
