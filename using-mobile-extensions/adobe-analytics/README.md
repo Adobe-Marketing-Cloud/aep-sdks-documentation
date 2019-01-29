@@ -92,8 +92,8 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-
+​    1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
+​    2. Import the Analytics and Identity libraries:
 #### Objective-C
 
 ```objectivec
@@ -122,21 +122,24 @@ You may do the following after calling the `setApplication()` method in the `onC
 ```java
 public class MobileApp extends Application {
 
- @Override
- public void onCreate() {
-     super.onCreate();
-     MobileCore.setApplication(this);
-     MobileCore.ConfigureWithAppId("yourAppId");
-     try {
-         Analytics.registerExtension(); //Register Analytics with Mobile Core
-         Identity.registerExtension();
-         MobileCore.start(null);
-     } catch (Exception e) {
-         //Log the exception
-     }
- }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.ConfigureWithAppId("yourAppId");
+        try {
+            Analytics.registerExtension(); //Register Analytics with Mobile Core
+            Identity.registerExtension();
+            MobileCore.start(null);
+        } catch (Exception e) {
+            //Log the exception
+         }
+    }
 }
 ```
+
+**Important**: Analytics depends on the Identity extension and is automatically included in Core via Maven. When installing the Analytics extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -150,8 +153,8 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
     [ACPCore start:nil];
-      // Override point for customization after application launch.
-      return YES;
+    // Override point for customization after application launch.
+    return YES;
  }
 ```
 
@@ -167,6 +170,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      return true;
 }
 ```
+
+**Important**: Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+
 {% endtab %}
 {% endtabs %}
 
