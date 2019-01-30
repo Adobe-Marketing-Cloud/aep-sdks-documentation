@@ -45,17 +45,16 @@ On iOS, UUID is persisted in `NSUserDefaults`.
 
 #### **Syntax**
 
-```java
+```objectivec
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-#### **Examples** 
+#### **Examples**
 
 **Objective-C**
 
 ```objectivec
-// objective-c
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* visitorProfile){
   // your customized code
@@ -66,7 +65,6 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 **Swift**
 
 ```swift
-// swift
 ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_ response: [AnyHashable: Any]?) -> Void in
   // your customized code
 })
@@ -113,14 +111,12 @@ Audience.reset();
 **Objective-C**
 
 ```objectivec
-// objective-c
 [ACPAudience reset];
 ```
 
 **Swift**
 
 ```swift
-// swift
 ACPAudience.reset()
 ```
 {% endtab %}
@@ -163,7 +159,7 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 
 #### **Syntax**
 
-```java
+```objectivec
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
@@ -172,7 +168,6 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 **Objective-C**
 
 ```objectivec
-// objective-c
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
   // your customized code
 }];
@@ -181,11 +176,9 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 **Swift**
 
 ```swift
-// swift
 ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
     // your customized code
 })
 ```
 {% endtab %}
 {% endtabs %}
-
