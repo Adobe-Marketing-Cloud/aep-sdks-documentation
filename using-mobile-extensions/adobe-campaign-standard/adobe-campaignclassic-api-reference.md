@@ -2,7 +2,7 @@
 
 ## Set linkage fields
 
-Allows the Campaign to connect fields from separate databases to create a more developed and personalized messaging experience for their end user. Profile template based messages that can contain PII based personalization will be downloaded. 
+Allows Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. Profile template-based messages that contain PII-based personalization are downloaded. 
 
 {% tabs %}
 
@@ -18,7 +18,7 @@ Allows the Campaign to connect fields from separate databases to create a more d
 
 #### Objective-C
 
-The set linkage fields are stored as base64 encoded JSON string in memory and sent in a custom HTTP header 'X-InApp-Auth' in all future Campaign rules download requests until ACPCampaign::resetLinkageFields is invoked.
+The **linkage fields** are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header 'X-InApp-Auth' in all future Campaign rules download requests until ACPCampaign::resetLinkageFields is invoked.
 
 #### Example
 
@@ -36,7 +36,7 @@ ACPCampaign.setLinkageFields(linkageFields[String:String]);
 
 ## Reset Linkage fields
 
-Removes previously stored linkage fields in the mobile SDK and re-triggers Campaign rules download.
+Removes the previously stored linkage fields in the SDK and triggers the Campaign rules download again.
 
 {% tabs %}
 
