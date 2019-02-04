@@ -28,9 +28,6 @@ Trying to find your ACS endpoint URLs? Contact your beta manager.
 
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
 
-{% hint style="warning" %}
-For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`
-{% endhint %}
 
 #### pKey
 
