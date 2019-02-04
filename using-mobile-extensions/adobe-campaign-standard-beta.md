@@ -18,7 +18,7 @@ This extension is considered beta functionality and is available only in Launch'
 
 ### Configure Campaign Standard Extension
 
-![](../.gitbook/assets/campaign-extension-config.png)
+![](../.gitbook/assets/campaign-extension-config-v2.png)
 
 #### ACS Endpoints
 
