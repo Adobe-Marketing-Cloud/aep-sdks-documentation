@@ -1,12 +1,9 @@
 # Adobe Campaign Standard \(Beta\)
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html). 
+**Before** you install or configure the Adobe Campaign Standard extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html). 
 {% endhint %}
 
-{% hint style="warning" %}
-This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) or contact your beta program manager.
-{% endhint %}
 
 ## Configure Campaign Standard Extension in Launch
 
@@ -18,7 +15,7 @@ This extension is considered beta functionality and is available only in Launch'
 
 ### Configure Campaign Standard Extension
 
-![](../.gitbook/assets/campaign-extension-config.png)
+![](../.gitbook/assets/campaign-extension-config-v2.png)
 
 #### ACS Endpoints
 
@@ -29,7 +26,7 @@ Trying to find your ACS endpoint URLs? Contact your beta manager.
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
 
 {% hint style="warning" %}
-For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`
+For this extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`and must not end with a forward slash.
 {% endhint %}
 
 #### pKey
@@ -46,62 +43,60 @@ Need help connecting your Launch mobile property with your Campaign Standard mob
 Trying to find your MCIAS endpoint URL? Contact your beta manager.
 {% endhint %}
 
-Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
+Select an MCIAS endpoint based on the region where your customer is located or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, `https://mcias-va7.cloud.adobe.io/mcias/`.
+For this extension, the MCIAS endpoint URL should be provided **without** a prefixing`http://` or `https://` and **must not** end with a forward slash. For example, `mcias-va7.cloud.adobe.io/mcias`.
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
+Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds. The minimum timeout value is 1 second.
 
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-This beta extension is currently available only for iOS development.
+This extension is currently available only for iOS development.
 {% endhint %}
 
 {% tabs %}
 {% tab title="iOS" %}
 {% hint style="warning" %}
-This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead, as the instructions below indicate.
+This Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
-![](../.gitbook/assets/acs-beta-pods.png)
+![](../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You'll need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCoreBeta', '1.0.2beta'
-pod 'ACPCampaignBeta', '1.0.2beta'
-pod 'ACPUserProfileBeta', '1.0.1beta'
+use_frameworks!
+pod 'ACPCampaign', '~> 1.0'
+pod 'ACPUserProfile', '~> 2.0'
+pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile)  extensions found in Github.
 
-In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile extensions:
+In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
 #### Objective-C
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
-#import <ACPCampaign_iOS/ACPCampaign_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
-#import <ACPSignal_iOS/ACPSignal_iOS.h>
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPUserProfile_iOS/ACPUserProfile.h>
+#import "ACPCore.h"
+#import "ACPCampaign.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPCore_iOS
-import ACPCampaign_iOS
-import ACPIdentity_iOS
-import ACPLifecycle_iOS
-import ACPSignal_iOS
-import ACPUserProfile_iOS
+import ACPCore
+import ACPCampaign
+import ACPUserProfile
 ```
 {% endtab %}
 {% endtabs %}
