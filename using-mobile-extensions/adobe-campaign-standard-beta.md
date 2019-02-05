@@ -183,6 +183,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtabs %}
 
 If everyting is configured correctly, after installing your app on mobile device, your should see the following debug logs:
+
 a) Campaign rules have been downloaded
 
 #### Example
