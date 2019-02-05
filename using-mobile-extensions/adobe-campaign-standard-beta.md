@@ -56,6 +56,8 @@ For this beta extension, the MCIAS endpoint URL should be provided **with** a pr
 
 Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
 
+{% hint style="warning" %} Request Timeout must be a non-zero number. {% endhint %}
+
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
