@@ -29,7 +29,7 @@ Trying to find your ACS endpoint URLs? Contact your beta manager.
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
 
 {% hint style="warning" %}
-For this beta extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`
+For this extension, these ACS endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
 {% endhint %}
 
 #### pKey
@@ -49,7 +49,7 @@ Trying to find your MCIAS endpoint URL? Contact your beta manager.
 Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this beta extension, the MCIAS endpoint URL should be provided **with** a prefixing`http://` or `https://` and **must** end with a forward slash. For example, `https://mcias-va7.cloud.adobe.io/mcias/`.
+For this extension, the MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
 {% endhint %}
 
 #### Request Timeout
