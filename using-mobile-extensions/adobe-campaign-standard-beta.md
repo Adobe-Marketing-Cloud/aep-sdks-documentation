@@ -27,7 +27,7 @@ Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may sp
 
 {% hint style="warning" %}
 
-For this extension, these endpoints URLs should be entered in **without** a prefixing  `http://` or `https://.`and **cannot** end with a forward slash.
+For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
 
 {% endhint %}
 
@@ -49,7 +49,7 @@ Select an MCIAS endpoint based on the region where your customer is located or e
 
 {% hint style="warning" %}
 
-For this extension, the MCIAS endpoint URL should be provided **without** a prefixing`http://` or `https://` and **cannot** end with a forward slash. For example, `mcias-va7.cloud.adobe.io/mcias`.
+For this extension, the MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
 
 {% endhint %}
 
