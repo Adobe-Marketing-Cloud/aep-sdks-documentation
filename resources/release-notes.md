@@ -1,5 +1,11 @@
 # Release notes
 
+## February 7, 2109
+
+The following updates were made to the Mobile Core extension in iOS version 2.0.2:
+
+* Resolved an issue causing failures retrieving configuration on launch
+
 ## January 24, 2019
 
 The January 24th update includes changes to the Adobe Experience Platform Mobile SDKs and solution extensions for iOS applications. We provided an explanation of this change, why the changes were made, and how to update your application to include these changes.
