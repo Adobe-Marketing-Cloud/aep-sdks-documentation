@@ -2,7 +2,8 @@
 
 ## Set linkage fields
 
-Allows Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. Profile template-based messages that contain PII-based personalization are downloaded. 
+Allows Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. Profile template-based messages that contain PII-based personalization are downloaded. The **linkage fields** are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header 'X-InApp-Auth' in all future Campaign rules download requests until ACPCampaign::resetLinkageFields is invoked.
+The **linkage fields** are cleared cleared if the app is gracefully close, crashed, or privacy status is changed to opt out.
 
 {% tabs %}
 
@@ -18,7 +19,6 @@ Allows Campaign to connect fields from separate databases and create a more deve
 
 #### Objective-C
 
-The **linkage fields** are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header 'X-InApp-Auth' in all future Campaign rules download requests until ACPCampaign::resetLinkageFields is invoked.
 
 #### Example
 
@@ -29,12 +29,16 @@ The **linkage fields** are stored as a base64-encoded JSON string in memory and 
 #### Swift
 
 ```swift
-ACPCampaign.setLinkageFields(linkageFields[String:String]);
+var linkageFields = [String: String]()
+linkageFields["cusFirstName"] = "John"
+linkageFields["cusLastName"] = "Doe"
+linkageFields["cusEmail"] = "john.doe@email.com"
+ACPCampaign.setLinkageFields(linkageFields)
 ```
 {% endtab %}
 {% endtabs %}
 
-## Reset Linkage fields
+## Reset linkage fields
 
 Removes the previously stored linkage fields in the SDK and triggers the Campaign rules download again.
 
