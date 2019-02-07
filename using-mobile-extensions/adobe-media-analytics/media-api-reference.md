@@ -739,11 +739,11 @@ _tracker.trackError("errorId")
 
 Method to track media events.
 
-| Variable Name | Description                                                                                                                                                                                                                                                                                                                           |
-|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `event `      | [Media event](#media-events)                                                                                                                                                                                                                                                                                                          |
-| `info`        | For AdBreakStart event, AdBreak information is created using [Create AdBreak Object](#create-adbreak-object).<br> For AdStart event, Ad information is created using [Create Ad Object](#create-ad-object).<br> For ChapterStart event, Chapter information is created using [Create Chapter Object](#create-chapter-object).<br> This is not required for other events. |
-| `data`        | Optional context data can be provided for AdStart and ChapterStart events. This is not required for other events.                                                                                                                                                                                                                                               |
+| Variable Name | Description |
+| :--- | :--- |
+| `event` | [Media event](media-api-reference.md#media-events) |
+| `info` | For AdBreakStart event, AdBreak information is created using [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For AdStart event, Ad information is created using [Create Ad Object](media-api-reference.md#create-ad-object).  For ChapterStart event, Chapter information is created using [Create Chapter Object](media-api-reference.md#create-chapter-object).  This is not required for other events. |
+| `data` | Optional context data can be provided for AdStart and ChapterStart events. This is not required for other events. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1216,7 +1216,7 @@ public class MediaConstants {
       */
       public static final String AOD = "aod";
   }
-  
+
 }
 ```
 {% endtab %}
@@ -1264,7 +1264,7 @@ This defines the standard metadata keys for video streams.
 {% tab title="Android" %}
 ```java
 public class MediaConstants {
-  
+
   public static final class VideoMetadataKeys {
       public static final String SHOW = "a.media.show";
       public static final String SEASON = "a.media.season";
@@ -1284,14 +1284,13 @@ public class MediaConstants {
       public static final String FEED = "a.media.feed";
       public static final String STREAM_FORMAT = "a.media.format";
   }
-  
+
 }
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyEpisode;
@@ -1309,7 +1308,6 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyAuthorized;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyDayPart;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -1338,7 +1336,6 @@ public class MediaConstants {
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyLabel;
@@ -1373,7 +1370,6 @@ public class MediaConstants {
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeId;

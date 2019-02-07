@@ -52,7 +52,6 @@ This extension requires the [Adobe Analytics Extension](../adobe-analytics/). Yo
 
 {% tabs %}
 {% tab title="Android" %}
-
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
 ```text
@@ -61,7 +60,7 @@ implementation 'com.adobe.marketing.mobile:media:1.+'
 implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
 
-2. Import the Media extension in your application's main activity.
+1. Import the Media extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -69,7 +68,6 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-
 1. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
 
 ```text
@@ -80,7 +78,7 @@ pod 'ACPCore', '~> 2.0'
 
 or you can manually include the libraries found in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
 
-2. In Xcode project, import Media extension:
+1. In Xcode project, import Media extension:
 
 #### Objective-C
 

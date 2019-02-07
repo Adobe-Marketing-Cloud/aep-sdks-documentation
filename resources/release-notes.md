@@ -4,7 +4,7 @@
 
 The following updates were made to the Mobile Core extension in iOS version 2.0.2:
 
-* Resolved an issue causing failures retrieving configuration on launch
+* Resolved an issue that caused failures when retrieving a configuration on application launch.
 
 ## January 24, 2019
 
@@ -33,54 +33,52 @@ To update existing Experience Platform Mobile SDK 1.x implementations to 2.x:
 3. Run a 'pod update' command to pull in the latest version of the Mobile Core extension and any other solution extension updates.
 4. In your app code, change all of your import statements:  
 
+**For Objective-C**
 
-   **For Objective-C**
+Where you previously had imports that look like the following:
 
-   Where you previously had imports that look like the following:
-
-   ```text
+```text
    #import <ACPCore_iOS/ACPCore_iOS.h> 
    #import <ACPIdentity_iOS/ACPIdentity_iOS.h> 
    #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
    #import <ACPSignal_iOS/ACPSignal_iOS.h>
    #import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
-   ```
+```
 
-   The imports will now drop the _iOS_ suffix and can be imported directly as follows:
+The imports will now drop the _iOS_ suffix and can be imported directly as follows:
 
-   ```text
+```text
    #import "ACPCore.h" 
    #import "ACPIdentity.h" 
    #import "ACPLifecycle.h" 
    #import "ACPSignal.h" 
    #import "ACPUserProfile.h"
-   ```
+```
 
-   This change will hold true for any other Adobe solution extensions that you may have previously imported.  
+This change will hold true for any other Adobe solution extensions that you may have previously imported.
 
+**For Swift**
 
-   **For Swift**
+Where you previously had imports that looked like:
 
-   Where you previously had imports that looked like:
-
-   ```swift
+```swift
    import ACPCore_iOS
    import ACPAnalytics_iOS
    import ACPIdentity_iOS
    import ACPLifecycle_iOS
    import ACPSignal_iOS
    import ACPUserProfile_iOS
-   ```
+```
 
-   The imports will now drop the _iOS_ suffix. Additionally, the Identity, Lifecycle and Signals extensions can be added just by importing core , for example:
+The imports will now drop the _iOS_ suffix. Additionally, the Identity, Lifecycle and Signals extensions can be added just by importing core , for example:
 
-   ```swift
+```swift
     import ACPCore
     import ACPAnalytics
     import ACPUserProfile
-   ```
+```
 
-   We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
+We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
 
 ## December 5, 2018
 

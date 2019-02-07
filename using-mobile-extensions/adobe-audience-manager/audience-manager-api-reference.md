@@ -2,7 +2,7 @@
 
 ## Send Signals to Audience Manager
 
-Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to initial signal call.  The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
+Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
 If you are using the Experience Cloud ID \(ECID\) Service, the ECID and other custom identifiers for the same visitor are sent with each signal request. The visitor profile returned by Audience Manager is saved in SDK local storage and updated with subsequent signal calls.
 
@@ -59,7 +59,6 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* visitorProfile){
   // your customized code
 }];
-
 ```
 
 **Swift**
@@ -182,3 +181,4 @@ ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
 ```
 {% endtab %}
 {% endtabs %}
+
