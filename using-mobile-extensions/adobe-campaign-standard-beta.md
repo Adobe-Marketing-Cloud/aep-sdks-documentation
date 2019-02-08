@@ -44,7 +44,7 @@ For this extension, the custom MCIAS endpoint URL should be typed in **without**
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds. The minimum timeout value is 1 second.
+Time in seconds to wait for a response from the in-app messaging service before timing out. The SDK default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 
 {% hint style="warning" %}
 Request Timeout must be a non-zero number.
@@ -59,7 +59,7 @@ The Android version of this extension is coming in the future.
 {% tabs %}
 {% tab title="iOS" %}
 {% hint style="warning" %}
-This Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
+This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
 ![](../.gitbook/assets/acs-pods.png)
