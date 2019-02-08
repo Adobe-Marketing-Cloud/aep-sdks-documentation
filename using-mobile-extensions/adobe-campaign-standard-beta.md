@@ -15,7 +15,7 @@
 
 ### Configure Campaign Standard Extension
 
-![](../.gitbook/assets/campaign-extension-config-v2.png)
+![](../.gitbook/assets/campaign-extension-config-v3.png)
 
 #### ACS Endpoints
 
