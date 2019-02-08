@@ -11,7 +11,7 @@ To get started with **Audience Manager**, follow these steps:
    2. Send signals to Audience Manager
    3. Reset Audience Manager identifiers, visitor profiles
 
-## Configuring the Audience Manager Extension in Adobe Launch  <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager Extension in Adobe Launch   <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
@@ -22,36 +22,38 @@ To get started with **Audience Manager**, follow these steps:
 5. Click **Save**.
 6. Follow the publishing process to update SDK configuration.
 
-
 ### Add Audience Manager to your App
+
 {% tabs %}
 {% tab title="Android" %}
 1. Add the library to your project.
 2. Import the library:
 
 #### Java
-`import com.adobe.marketing.mobile.*;`
- **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
- {% endtab %}
+
+`import com.adobe.marketing.mobile.*;` **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
+{% endtab %}
 
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
 2. Import the Audience and Identity library:
 
 #### Objective-C
-  ```objectivec
+
+```objectivec
   #import "ACPCore.h"
   #import "ACPAudience.h"
   #import "ACPIdentity.h"
-  ```
+```
 
 #### Swift
-  ```swift
+
+```swift
    import ACPCore
    import ACPAudience
-  ```
+```
 
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endtab %}
 {% endtabs %}
 
@@ -87,6 +89,7 @@ public void onCreate() {
 
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
+
 #### Objective-C
 
 ```objectivec
@@ -101,6 +104,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 ```
 
 #### Swift
+
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
  ACPIdentity.registerExtension()
@@ -133,3 +137,4 @@ If you need to update SDK configuration, programmatically, please use the follow
 * How to setup Adobe Analytics server-side forwarding to Audience Manager?
   * See - [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
   * Also see - Setup [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
+

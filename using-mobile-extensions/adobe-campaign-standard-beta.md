@@ -19,7 +19,7 @@
 
 #### ACS Endpoints
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments. 
+Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 
@@ -46,7 +46,9 @@ For this extension, the custom MCIAS endpoint URL should be typed in **without**
 
 Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds. The minimum timeout value is 1 second.
 
-{% hint style="warning" %} Request Timeout must be a non-zero number. {% endhint %}
+{% hint style="warning" %}
+Request Timeout must be a non-zero number.
+{% endhint %}
 
 ## Add Campaign Standard to your app
 
@@ -102,7 +104,7 @@ import ACPUserProfile
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
-#### Objective-C <a id="objective-c-1"></a>
+#### Objective-C  <a id="objective-c-1"></a>
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -139,7 +141,7 @@ iOS simulators do not support push messaging.
 {% endhint %}
 
 {% hint style="info" %}
-Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html). 
+Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
 After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, you will need to set the push token using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
@@ -176,7 +178,7 @@ ACPCore.setPushIdentifier(deviceToken)
 
 If everyting is configured correctly, after installing your app on mobile device, your should see the following debug logs:
 
-a) Campaign rules have been downloaded
+a\) Campaign rules have been downloaded
 
 #### Example
 
@@ -184,14 +186,15 @@ a) Campaign rules have been downloaded
 2019-01-31 18:22:35.980872-0800 CampaignDemoApp[935:156012] [AMSDK DEBUG <com.adobe.module.campaign>]: Successfully downloaded Rules from 'https://mcias-va7.cloud.adobe.io/mcias/mcias.campaign-demo.adobe.com/PR8fdd35ee6cc84aa8bbdea8f92db3f55a/43583282444503123217621782542046274680/rules.zip
 ```
 
-b) request to demdex has been sent
+b\) request to demdex has been sent
 
 #### Example
 
 ```text
 2019-01-31 18:22:35.261676-0800 CampaignDemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
-c) push token
+
+c\) push token
 
 #### Example
 
@@ -199,15 +202,11 @@ c) push token
 2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
 ```
 
-
-
 ### Tracking for push and in-app messaging
 
-To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, contact your beta program manager. 
+To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, contact your beta program manager.
 
 For more information, go to [Configuring your application in Launch](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ConfiguringyourapplicationinLaunch) and search for _Create rules for push notifications tracking postback_ and _Create rules for In-App tracking postback_ .
-
-
 
 ## Deleting mobile properties in Launch
 

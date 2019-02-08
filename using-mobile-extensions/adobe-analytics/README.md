@@ -92,8 +92,8 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-​    1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'`
-​    2. Import the Analytics and Identity libraries:
+​ 1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'` ​ 2. Import the Analytics and Identity libraries:
+
 #### Objective-C
 
 ```objectivec
@@ -139,7 +139,6 @@ public class MobileApp extends Application {
 ```
 
 **Important**: Analytics depends on the Identity extension and is automatically included in Core via Maven. When installing the Analytics extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -172,7 +171,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 **Important**: Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
-
 {% endtab %}
 {% endtabs %}
 

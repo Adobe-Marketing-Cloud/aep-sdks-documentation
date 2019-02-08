@@ -72,9 +72,7 @@ Audience Manager listens for Analytics Response events, which are sent when audi
 
 For more details about this event, see [Events Dispatched by Analytics - Analytics Response Content](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension/events/adobe-analytics/events-dispatched-by-adobe-analytics#analytics-content-response).
 
-
-
-## Events Dispatched <a id="audience-manager-content-response"></a>
+## Events Dispatched  <a id="audience-manager-content-response"></a>
 
 ### Audience Manager Content Response
 
@@ -140,3 +138,4 @@ Shared state for this module is updated on the following occasions:
 | :--- | :--- | :--- |
 | uuid | String | The UUID assigned by the Audience server |
 | aamprofile | Dictionary/Map | The matching visitor profile segments associated with the user |
+
