@@ -206,7 +206,7 @@ c\) push token
 
 To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, contact your beta program manager.
 
-For more information, go to [Configuring your application in Launch](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ConfiguringyourapplicationinLaunch) and search for _Create rules for push notifications tracking postback_ and _Create rules for In-App tracking postback_ .
+For more information, go to [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ConfiguringyourapplicationinLaunch) and search for _Create rules for push notifications tracking postback_ and _Create rules for In-App tracking postback_ .
 
 ## Deleting mobile properties in Launch
 
