@@ -4,7 +4,7 @@
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
-This API synchronizes the provided customer identifier type key and value with the given [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+This API synchronizes the provided customer identifier type key and value with the [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -170,7 +170,7 @@ Appends Adobe visitor data to a URL string. If the provided URL is null or empty
   * Experience Cloud ID \(ECID\)
   * Experience Cloud Org ID
   * A timestamp taken when this request was made
-* The optional adobe\_aa\_vid attribute is the URL encoded Analytics Custom Visitor ID, if available
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
 
 #### **Syntax**
 
@@ -242,7 +242,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 {% tab title="Android" %}
 ### getIdentifiers
 
-Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
+Returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 The values are returned through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
@@ -362,7 +362,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
 
 {% hint style="info" %}
-If identity.adidEnabled set to false, then the advertising identifier is not set or stored. Also, if the current SDK privacy status is optedout, then the advertising identifier is not set.
+If `identity.adidEnabled` set to false, the advertising identifier is not set or stored. Also, if the current SDK privacy status is `optedout`, the advertising identifier is not set.
 {% endhint %}
 
 {% tabs %}
@@ -411,7 +411,7 @@ ACPCore.setAdvertisingIdentifier("AdvertisingId")
 
 ## Set the Push Identifier
 
-This API sets the device token for push notifications in the SDK. If the current SDK privacy status is optedout, the push identifier is not set.
+This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
 {% tabs %}
 {% tab title="Android" %}

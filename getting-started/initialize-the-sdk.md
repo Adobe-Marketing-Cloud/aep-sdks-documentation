@@ -2,23 +2,23 @@
 
 ## Configure SDK with the Launch Environment ID
 
-To initialize the SDK, you'll first need to configure the SDK with the Environment ID from Launch.
+To initialize the SDK, you need to first configure the SDK with an Environment ID from Launch.
 
 {% hint style="info" %}
-To find your Environment ID, navigate to Environments tab in Launch, and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon corresponding to the environment you are setting up.
+To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
 
 
 {% hint style="warning" %}
-_Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**_
+Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**
 {% endhint %}
 
 #### Ensure app permissions
 
-The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider and record offline tracking calls:
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
-To add these permissions, add the following lines to your AndroidManifest.xml file, which is located in the application project directory:
+To add these permissions, add the following lines to your `AndroidManifest.xml` file, which is located in the application project directory:
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
@@ -27,8 +27,8 @@ To add these permissions, add the following lines to your AndroidManifest.xml fi
 
 #### Java
 
-1. Create MainActivity.java in the app.
-2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
+1. In the app, create `MainActivity.java` .
+2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`.
 
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
@@ -36,7 +36,7 @@ Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 
 #### Objective-C
 
-In Xcode, find your `didFinishLaunchingWithOptions`located in AppDelegate.h and add:
+In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
 
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
@@ -44,7 +44,7 @@ In Xcode, find your `didFinishLaunchingWithOptions`located in AppDelegate.h and 
 
 #### Swift
 
-In Xcode, find your `didFinishLaunchingWithOptions` located in AppDelegate.swift and add:
+In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add:
 
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
@@ -115,7 +115,7 @@ Confirm that you have the right Experience Cloud Org ID in the Mobile Core setti
 
 {% tabs %}
 {% tab title="Android" %}
-Import the Identity framework into your project:
+Import the Identity framework to your project:
 
 #### Java
 
@@ -142,7 +142,7 @@ public class MobiletApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the Identity framework into your project
+Add the Identity framework to your project:
 
 #### Objective-C
 
@@ -179,15 +179,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-After successful configuration, you'll see the Experience Cloud ID generated and included on every network hit sent to Adobe. Other automatically generated and custom will also be sent with each hit.
+After successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
 
 ## Enable lifecycle metrics
 
 {% hint style="warning" %}
-This section shows how to start collecting lifecycle metrics. Setup [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
+This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
-Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics.
+Lifecycle metrics contain valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -229,10 +229,10 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK will always have the necessary reference to your application. So, we recommend calling `setApplication`in each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK always has the necessary reference to your application. We recommend calling `setApplication`in each of your activities.
 {% endhint %}
 
-Finally, you may use the `onPause` function, to pause the lifecycle data collection:
+You can use the `onPause` function to pause the lifecycle data collection:
 
 {% hint style="warning" %}
 To ensure accurate session and crash reporting, this call must be added to every activity.
@@ -328,22 +328,22 @@ Pause Lifecycle data collection when your app has entered the background:
 {% endtab %}
 {% endtabs %}
 
-See [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/), for complete usage reference.
+For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).
 
 ## Track screens and user actions
 
-You may use the following screen and action tracking APIs in order to start measuring your user's engagement with your app.
+You can use the following screen and action tracking APIs to measure your user's engagement with your app.
 
-Actions are events that occur in your app. Use this API to track and measure an action - each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. Use this API to track and measure an action, where  each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
-This section shows how to start tracking app screens and user actions. Setup [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
+This section shows you how to start tracking app screens and user actions. To view and report on this data in those respective solutions, set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
 ### Track user actions
 
 {% hint style="warning" %}
-You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call.
+You must call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
 {% endhint %}
 
 {% tabs %}
@@ -402,13 +402,13 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 
 ### Track app states and screens
 
-States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API may be called.. This method sends an Analytics state tracking hit with optional context data.
+States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this method might be called. This method also sends an Analytics state tracking hit with optional context data.
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
-In Android, trackState is typically called each time a new activity is loaded
+In Android, `trackState` is typically called each time a new activity is loaded.
 
 ### trackState  <a id="trackstate"></a>
 
@@ -460,5 +460,5 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-See [Mobile Core API Reference](../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md), for complete usage reference.
+For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md).
 

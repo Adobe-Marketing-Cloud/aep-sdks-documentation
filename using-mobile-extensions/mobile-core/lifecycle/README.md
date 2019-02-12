@@ -1,8 +1,6 @@
 # Lifecycle
 
-Sessions contain information about the current lifecycle such as device information, application install or upgrade information, session start and pause times, number of application launches, plus any additional context data provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
-
-The Lifecycle framework provides valuable information about your user's current app lifecycle such as device information, application install or upgrade information, session start and pause times, number of application launches.
+Sessions contain information about the app's current lifecycle, such as device information, application install or upgrade information, session start and pause times, number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
 ## Add Lifecycle to your App
 
@@ -48,8 +46,6 @@ The Lifecycle framework provides valuable information about your user's current 
    }
    ```
 
-   For more information about registering an extension and setting up the SDK, see .
-
 2. In the `onResume` function, start the lifecycle data collection:
 
    ```java
@@ -60,7 +56,7 @@ The Lifecycle framework provides valuable information about your user's current 
       }
    ```
 
-   **Important:** Setting the Application is only necessary on Activities that are entry points for your application. However, setting the Application on each Activity has no negative impact and also guarantees that the SDK will always have the necessary reference to your Application. As a result, we recommend calling the `setApplication` method in each of your Activities.
+   **Important:** Setting the Application is only necessary on Activities that are entry points for your application. However, setting the Application on each Activity has no negative impact and also guarantees that the SDK always has the necessary reference to your Application. As a result, we recommend calling the `setApplication` method in each of your Activities.
 
 3. In the `onPause` function, pause the lifecycle data collection:
 
@@ -71,7 +67,7 @@ The Lifecycle framework provides valuable information about your user's current 
       }
    ```
 
-**Important:** To ensure accurate session and crash reporting, you must add these calls to every activity.
+**Important:** To ensure accurate session and crash reporting, add these calls to every activity.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -175,7 +171,7 @@ The following is a complete list of all of the metrics provided on your user's a
 | :--- | :--- | :--- |
 
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Lifecycle configuration values. For more information, please see [Configuration Methods Reference](../configuration-reference/).
+If you need to programmatically update SDK configuration, use the following information to change your Lifecycle configuration values. For more information, see [Configuration Methods Reference](../configuration-reference/).
 
 {% hint style="warning" %}
 The time that your app spends in the background is not included in the session length.

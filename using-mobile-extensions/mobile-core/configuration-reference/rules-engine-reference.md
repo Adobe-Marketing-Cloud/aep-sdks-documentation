@@ -2,14 +2,14 @@
 
 ## Key definitions
 
-* **Asset** is an opaque data blob needed by a specific consequence.
-* **Condition** is a condition is one boolean equation that evaluates to true or false.
+* **Asset** is an opaque data blob that is needed by a specific consequence.
+* **Condition** is one boolean equation that evaluates to `true` or `false`.
 * **Consequence** is the action to be performed if the condition\(s\) evaluate to true.
 * **Rule** is a set of conditions and the associated consequence\(s\).
 
 ## File Format
 
-Rules and their associated assets will be delivered as a standard ZIP archive, which uses the following format:
+Rules and their associated assets are delivered as a standard ZIP archive, which uses the following format:
 
 * `/`
 * `rules.json`
@@ -25,18 +25,18 @@ This request is a conditional `GET` and occurs by default at the start of each n
 
 ### rules.json format
 
-The rules.json will consist of a root level json object that contains the following elements:
+The `rules.json` consists of a root level JSON object that contains the following elements:
 
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Version | version | number | **Required**. Version number of the rules.json file format. Should be an integer that increments by 1 for each format change, and the initial version will be 1. |
+| Version | version | number | **Required**. Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
 | Rules | rules | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](rules-engine-reference.md). |
 
 ## Rule Object Definition
 
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | condition | object | **Required**. Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group condition or a Matcher condition. Group conditions contain a logic type, and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root level condition for a rule. This condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](rules-engine-reference.md). |
+| Condition | condition | object | **Required**. Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type. There is one root level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](rules-engine-reference.md). |
 | Action | consequences | array | **Required**. Array of Consequence Objects, each containing the details for the associated consequence that will be executed if the associated condition evalutes to `true`. For more information, see [Consequence Object Definition](rules-engine-reference.md). |
 
 ## Condition Object Definition
@@ -63,7 +63,7 @@ A Group-type condition contains an array of conditions, which makes the conditio
 
 | **Friendly Name** | **Key Value** | **Value Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Logic Type | logic | string | `"logic":"and"` | Must be a valid Logic Type.   Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
+| Logic Type | logic | string | `"logic":"and"` | Must be a valid Logic Type. Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
 | Conditions | conditions | array | `"conditions":[...]` | An array of Condition objects. |
 
 ### Definition Object \(Condition Type = "matcher"\)
@@ -72,7 +72,7 @@ A Group-type condition contains an array of conditions, which makes the conditio
 
 | **Friendly Name** | **Key** | **Value Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Key | key | string | `"key":"key1"` | Key to get the value in question from the dictionary that is passed as a parameter to the rules processor. |
+| Key | key | string | `"key":"key1"` | Key to get the value from the dictionary that is passed as a parameter to the rules processor. |
 | Matches | matcher | string | `"matcher":"eq"` | Matcher type that determines the kind of evaluation to use between the two values. |
 | Values | values | array | `"values":["value0", "value1"]` | List of values that will be compared \(using OR\) against the value in the parameter dictionary for the `"key"` key. |
 
@@ -140,7 +140,7 @@ Here is the example:
 ]
 ```
 
-**Conditions Example 2** is slightly more complex, and represents the following logical condition:
+**Conditions Example 2** is slightly more complex and represents the following logical condition:
 
 ```text
 (key1 == value1 || key1 == value2) || (key2 != value3 && key2 != value4)
@@ -218,7 +218,7 @@ The consequences section of a rule lists the file names of each consequence obje
 
 ## rules.json Examples
 
-**Example 1** in a set of rules that will only run when the event was as a result of an Analytics hit or a GPS location event.
+**Example 1** is a set of rules that will only run when the event was as a result of an Analytics hit or a GPS location event.
 
 The conditions array is set up with the following logic:
 
@@ -318,7 +318,7 @@ If the conditions pass, an in-app message triggered:
 
 If the conditions pass, the in-app message will be displayed \(first consequence\), and future display of the message will be prevented by writing/increamenting value to the client side profile:`(~state.com.adobe.module.userProfile/userprofiledata.48181acd22b3edaebc8a447868a7df7ce629920a-seen)` \(second consequence\), which will prevent the conditions from evaluating to `true` for future evaluations.
 
-**Important**: In a production environment, you should attach the profile write consequence to an IAM result event, not to the show event. IAM consequences are first-one-wins, so multiple in-app messages are not displayed when multiple conditions are met across messages. The other consequences will still be performed.
+**Important**: In a production environment, attach the profile write consequence to an IAM result event, not to the show event. IAM consequences are first-one-wins, so multiple in-app messages are not displayed when multiple conditions are met across messages. The other consequences will still be performed.
 
 ```text
 {
@@ -386,7 +386,7 @@ Since the Rules Engine can support multiple end-point URLs from where to fetch r
 }
 ```
 
-The Adobe Experience Platform SDKs process the URLs based on the order in which they are specified. Both endpoints are URLs that point to a zipped rules collection that contains a _rules.json_ file, an asset folder that contains images, and HTMLs that are used by the rules.
+The Adobe Experience Platform SDKs process the URLs based on the order in which they are specified. Both endpoints are URLs that point to a zipped rules collection that contains a `rules.json` file, an asset folder that contains images, and HTMLs that are used by the rules.
 
 After downloading and extracting rules, the contents of this compressed file are stored in the cache. To trigger an update/download of the rules, see [Rules Engine Methods in Android](https://github.com/jiabingeng/sdk-v5-docs/tree/ece930399ffb1a7605b3aa13ed0e6633c8a8a481/rules-engine/rules-api-in-android.md) or [Rules Engine Methods in iOS](https://github.com/jiabingeng/sdk-v5-docs/tree/ece930399ffb1a7605b3aa13ed0e6633c8a8a481/rules-engine/rules-api-in-ios.md).
 
