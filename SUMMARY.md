@@ -23,7 +23,7 @@
     * [Lifecycle API reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md)
     * [Lifecycle event reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-event-reference.md)
   * [Signals](using-mobile-extensions/mobile-core/signals/README.md)
-    * [Signals Extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
+    * [Signals extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)

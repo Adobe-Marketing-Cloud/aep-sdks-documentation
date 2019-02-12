@@ -1,8 +1,8 @@
 # Media API reference
 
-## Media API Reference
+## Media API reference
 
-### Create Media Tracker
+### Create a media tracker
 
 Creates a media tracker instance that tracks the playback session.
 
@@ -10,7 +10,7 @@ Creates a media tracker instance that tracks the playback session.
 {% tab title="Android" %}
 #### createTracker
 
-The callback will be invoked to return the created tracker instance. If an error occurs, `null` is returned.
+The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
 
 **Syntax**
 
@@ -405,7 +405,7 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 {% endtab %}
 {% endtabs %}
 
-## Media Tracker API Reference
+## Media tracker API reference
 
 ### trackSessionStart
 
@@ -589,7 +589,7 @@ _tracker.trackPause()
 
 ### trackComplete
 
-Track media complete. Call this method only when the media has been completly viewed.
+Track media complete. Call this method only when the media has been completely viewed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1027,7 +1027,7 @@ Here are examples in Objective-C and Swift:
 
 ### updateCurrentPlayhead
 
-Provide media tracker with current media playhead. For accurate tracking, call this multiple times whenever playhead changes.
+Provide media tracker with current media playhead. For accurate tracking, call this multiple times when the playhead changes.
 
 | Variable Name | Description |
 | :--- | :--- |
@@ -1079,7 +1079,7 @@ _tracker.updateCurrentPlayhead(1)
 
 ### updateQoEObject
 
-Provide media tracker with current QoE information. For accurate tracking, call this multiple times whenever the media player provides updated QoE information.
+Provide media tracker with current QoE information. For accurate tracking, call this multiple times when the media player provides updated QoE information.
 
 | Variable Name | Description |
 | :--- | :--- |
@@ -1132,7 +1132,7 @@ _tracker.updateQoEObject(qoeObject)
 {% endtab %}
 {% endtabs %}
 
-## Media Constants
+## Media constants
 
 ### Media Type
 
@@ -1256,7 +1256,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 {% endtab %}
 {% endtabs %}
 
-### Standard Video Constants
+### Standard video constants
 
 This defines the standard metadata keys for video streams.
 
@@ -1312,7 +1312,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 {% endtab %}
 {% endtabs %}
 
-### Standard Audio Constants
+### Standard audio constants
 
 This defines the standard metadata keys for audio streams.
 
@@ -1346,7 +1346,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 {% endtab %}
 {% endtabs %}
 
-### Standard Ad Constants
+### Standard ad constants
 
 This defines the standard metadata keys for ads.
 
@@ -1380,7 +1380,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 {% endtab %}
 {% endtabs %}
 
-### Media Events
+### Media events
 
 This defines the type of a tracking event.
 
@@ -1526,13 +1526,13 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 {% endtab %}
 {% endtabs %}
 
-### Media Resume
+### Media resume
 
 Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Media Resume
+#### Media resume
 
 **Syntax**
 

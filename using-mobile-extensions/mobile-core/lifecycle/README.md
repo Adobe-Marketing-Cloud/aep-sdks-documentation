@@ -2,7 +2,7 @@
 
 Sessions contain information about the app's current lifecycle, such as device information, application install or upgrade information, session start and pause times, number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
-## Add Lifecycle to your App
+## Add Lifecycle to your app
 
 {% tabs %}
 {% tab title="Android" %}
@@ -92,37 +92,37 @@ The following is a complete list of all of the metrics provided on your user's a
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |
-| First Launches | a.InstallEvent | Triggered at the first run after installation or re-installation. |
-| Install Date | a.InstallDate | Date of first launch after installation. The format is `M/d/yyyy`, and an example is `5/3/2017`. |
+| First Launches | `a.InstallEvent` | Triggered at the first run after installation or re-installation. |
+| Install Date | `a.InstallDate` | Date of first launch after installation. The format is `M/d/yyyy`, and an example is `5/3/2017`. |
 
 ### Upgrade
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Upgrades | a.UpgradeEvent | Triggered at the first run after upgrade or anytime the version number changes. |
-| Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number has changed. |
-| Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number has changed. |
+| Upgrades | `a.UpgradeEvent` | Triggered at the first run after upgrade or anytime the version number changes. |
+| Days since last upgrade | `a.DaysSinceLastUpgrade` | Number of days since the application version number has changed. |
+| Launches since last upgrade | `a.LaunchesSinceUpgrade` | Number of launches since the application version number has changed. |
 
 ### Launch
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Daily Engaged Users | a.DailyEngUserEvent | Triggered when the application is used on a particular day.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Monthly Engaged Users | a.MonthlyEngUserEvent | Triggered when the application is used during a particular month.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Launches | a.LaunchEvent | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
-| Previous Session Length | a.PrevSessionLength | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground |
-| Ignored Session Length | a.ignoredSessionLength | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |
-| Launch Number | a.Launches | Number of times the application was launched or brought out of the background. |
-| Days since first use | a.DaysSinceFirstUse | Number of days since first run. |
-| Days since last use | a.DaysSinceLastUse | Number of days since last use. |
-| Hour of Day | a.HourOfDay | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
-| Day of Week | a.DayOfWeek | Measures the day of the week the app was launched. |
+| Daily Engaged Users | `a.DailyEngUserEvent` | Triggered when the application is used on a particular day.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Monthly Engaged Users | `a.MonthlyEngUserEvent` | Triggered when the application is used during a particular month.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Launches | `a.LaunchEvent` | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
+| Previous Session Length | `a.PrevSessionLength` | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground |
+| Ignored Session Length | `a.ignoredSessionLength` | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |
+| Launch Number | `a.Launches` | Number of times the application was launched or brought out of the background. |
+| Days since first use | `a.DaysSinceFirstUse` | Number of days since first run. |
+| Days since last use | `a.DaysSinceLastUse` | Number of days since last use. |
+| Hour of Day | `a.HourOfDay` | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
+| Day of Week | `a.DayOfWeek` | Measures the day of the week the app was launched. |
 
 ### Crash
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Crashes | a.CrashEvent | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
+| Crashes | `a.CrashEvent` | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
 
 ### Device Information
 
@@ -130,15 +130,15 @@ The following is a complete list of all of the metrics provided on your user's a
 | :--- | :--- | :--- |
 
 
-| App ID | a.AppID | Stores the application name and version in the following format: `AppName BundleVersion (app version code)` . An example of this format is MyAppName 1.1\(1\) |
+| App ID | a`.AppID` | Stores the application name and version in the following format: `AppName BundleVersion (app version code)` . An example of this format is MyAppName 1.1\(1\) |
 | :--- | :--- | :--- |
 
 
-| Device Name | a.DeviceName | Stores the device name. |
+| Device Name | `a.DeviceName` | Stores the device name. |
 | :--- | :--- | :--- |
 
 
-| Operating System Version | a.OSVersion | Operating system name and version. |
+| Operating System Version | `a.OSVersion` | Operating system name and version. |
 | :--- | :--- | :--- |
 
 
@@ -146,7 +146,8 @@ The following is a complete list of all of the metrics provided on your user's a
   <thead>
     <tr>
       <th style="text-align:left">Carrier Name</th>
-      <th style="text-align:left">a.CarrierName</th>
+      <th style="text-align:left"><code>a.CarrierName</code>
+      </th>
       <th style="text-align:left">
         <p>Stores the name of the mobile service provider as provided by the device.
           <br
@@ -159,15 +160,15 @@ The following is a complete list of all of the metrics provided on your user's a
     </tr>
   </thead>
   <tbody></tbody>
-</table>| Resolution | a.Resolution | Width x Height in pixels. |
+</table>| Resolution | `a.Resolution` | Width x Height in pixels. |
 | :--- | :--- | :--- |
 
 
-| Locale | a.locale | Locale set for this device, for example, _en-US_. |
+| Locale | `a.locale` | Locale set for this device, for example, _en-US_. |
 | :--- | :--- | :--- |
 
 
-| Run mode | a.RunMode | The SDK running mode, for example, `Application / Extension`. |
+| Run mode | `a.RunMode` | The SDK running mode, for example, `Application / Extension`. |
 | :--- | :--- | :--- |
 
 
@@ -184,7 +185,8 @@ The time that your app spends in the background is not included in the session l
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">lifecycle.sessionTimeout</th>
+      <th style="text-align:left"><code>lifecycle.sessionTimeout</code>
+      </th>
       <th style="text-align:left">
         <p>Time, in seconds, that must elapse between the time the app is launched
           and before the launch is considered to be a new session. This timeout also

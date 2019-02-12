@@ -124,7 +124,7 @@ Pause Lifecycle data collection when your app has entered the background:
 {% endtab %}
 {% endtabs %}
 
-## Collect additional data with lifecycle
+## Collect additional data with Lifecycle
 
 When you call [Lifecycle start](lifecycle-api-reference.md#lifecycle-start-and-pause) you can, optionally, pass a dictionary of additional data that will be attached to the lifecycle event.
 
@@ -171,7 +171,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 {% endtab %}
 {% endtabs %}
 
-## Tracking App Crashes
+## Tracking app crashes
 
 ## Android
 

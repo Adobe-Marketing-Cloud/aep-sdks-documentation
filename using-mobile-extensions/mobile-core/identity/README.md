@@ -17,7 +17,7 @@ To get started with Identity, complete the following steps:
    5. Set advertising IDs.
    6. Set the device notification for push notifications.
 
-## Add Identity to your App
+## Add Identity to your app
 
 {% tabs %}
 {% tab title="Android" %}
@@ -49,7 +49,7 @@ import ACPCore
 {% endtab %}
 {% endtabs %}
 
-## **Register the Extension**
+## **Register the extension**
 
 Here is the code sample to register the Identity extension:
 

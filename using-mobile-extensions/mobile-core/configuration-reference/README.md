@@ -1,6 +1,6 @@
 # Configuration methods reference
 
-## SDK Configuration
+## SDK configuration
 
 ### Launch environment ID
 

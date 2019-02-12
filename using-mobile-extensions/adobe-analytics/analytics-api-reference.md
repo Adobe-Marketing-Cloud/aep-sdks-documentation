@@ -1,8 +1,8 @@
 # Analytics API reference
 
-## Get the Tracking Identifier   <a id="gettrackingidentifier"></a>
+## Get the tracking identifier   <a id="gettrackingidentifier"></a>
 
-Retrieves the Analytics tracking identifier generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -63,7 +63,7 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 {% endtab %}
 {% endtabs %}
 
-## Send Queued Hits   <a id="sendqueuedhits"></a>
+## Send queued hits   <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -119,7 +119,7 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Get the Queue Size   <a id="sendqueuedhits"></a>
+## Get the queue size   <a id="sendqueuedhits"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
@@ -176,7 +176,7 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
-## Set the Custom Visitor Identifier  <a id="setcustomidentifier"></a>
+## Set the custom visitor identifier  <a id="setcustomidentifier"></a>
 
 Sets the Analytics custom visitor identifier.
 
@@ -224,7 +224,7 @@ ACPAnalytics.setCustomVistorIdentifier("custom_identifier")
 {% endtab %}
 {% endtabs %}
 
-## Get the Custom Visitor Identifier  <a id="getcustomidentifier"></a>
+## Get the custom visitor identifier  <a id="getcustomidentifier"></a>
 
 Sets the Analytics custom visitor identifier.
 

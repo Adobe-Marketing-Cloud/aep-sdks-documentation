@@ -1,6 +1,6 @@
 # Identity API reference
 
-## Sync Identifiers
+## Synch identifiers
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
@@ -158,7 +158,7 @@ ACPMobileVisitorAuthenticationState.authenticated)
 {% endtab %}
 {% endtabs %}
 
-## Append Visitor Data to a URL
+## Append visitor data to a URL
 
 {% tabs %}
 {% tab title="Android" %}
@@ -236,7 +236,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 {% endtab %}
 {% endtabs %}
 
-## Get Identifiers
+## Get identifiers
 
 {% tabs %}
 {% tab title="Android" %}
@@ -357,7 +357,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 {% endtab %}
 {% endtabs %}
 
-## Set an Advertising Identifier
+## Set an advertising identifier
 
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
 
@@ -409,7 +409,7 @@ ACPCore.setAdvertisingIdentifier("AdvertisingId")
 {% endtab %}
 {% endtabs %}
 
-## Set the Push Identifier
+## Set the push identifier
 
 This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
@@ -456,7 +456,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-## Identity Service Classes
+## Identity service classes
 
 {% tabs %}
 {% tab title="Android" %}
