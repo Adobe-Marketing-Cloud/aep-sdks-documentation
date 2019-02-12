@@ -107,7 +107,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ## Enable the Experience Cloud Identity service
 
-The Experience Cloud ID service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations.
+Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations.
 
 {% hint style="info" %}
 Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
