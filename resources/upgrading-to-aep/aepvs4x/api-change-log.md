@@ -14,9 +14,6 @@ For more information, see [Mobile Core API reference](../../../using-mobile-exte
 | [getPrivacyStatus](../../privacy-and-gdpr.md#set-and-get-privacy-status) | privacyStatus \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [setPrivacyStatus](../../privacy-and-gdpr.md#set-and-get-privacy-status) | setPrivacyStatus: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [setLogLevel](../../../getting-started/initialize-the-sdk.md#enable-debug-logging) | setDebugLogging: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStart:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStart:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStop:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | Not applicable |
 | [configureWithFileInPath:](../../../using-mobile-extensions/mobile-core/configuration-reference/#using-a-bundled-file-configuration) | overrideConfigPath: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [configureWithAppId:](../../../using-mobile-extensions/mobile-core/configuration-reference/#launch-environment-id) | Not applicable |
 | [updateConfiguration:](../../../using-mobile-extensions/mobile-core/configuration-reference/#programmatic-updates-to-configuration) | Not applicable |
@@ -35,7 +32,6 @@ For more information, see [Mobile Core API reference](../../../using-mobile-exte
 | trackBeacon:Data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Deprecated |
 | trackingClearCurrentBeacon \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Deprecated |
 | registerAdobeDataCallback: \([Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
-| keepLifecycleSessionAlive | Deprecated |
 | lifetimeValue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/lifetime_value.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/lifetime_value.html)\) | Deprecated |
 | trackLifetimeValueIncrease:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/lifetime_value.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/lifetime_value.html)\) |  |
 | trackTimedActionStart: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
@@ -43,6 +39,42 @@ For more information, see [Mobile Core API reference](../../../using-mobile-exte
 | trackTimedActionEnd: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
+
+## Lifecycle Extension APIs <a id="audience-manager-extension-apis"></a>
+
+### Supported APIs
+
+For more information, see [Lifecycle API reference](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md).
+
+| Experience Platform SDK | 4x SDK |
+| :--- | :--- |
+| [lifecycleStart:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStart:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStop:](../../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | Not applicable |
+
+### Deprecated APIs
+
+| 4x SDK | Notes |
+| :--- | :--- |
+| keepLifecycleSessionAlive | Deprecated |
+
+## Identity Extension APIs <a id="audience-manager-extension-apis"></a>
+
+For more information, see [Identity API reference](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md).
+
+### Supported APIs
+
+| Experience Platform SDK | 4x SDK |
+| :--- | :--- |
+| setPushIdentifier: | setPushIdentifier \(iOS \| Android\) |
+| setAdvertisingIdentifier: | setAdvertisingIdentifier \(iOS \| Android\) |
+| getMarketingCloudID: | visitorMarketingCloudID \(iOS \| Android\) |
+| syncIdentifiers: | visitorSyncIdentifiers \(iOS \| Android\) |
+| syncIdentifiers:authentication: | visitorSyncIdentifiers:authenticationState: |
+| syncIdentifier:identifier:authentication: | visitorSyncIdentifiersWithType:identifier:authenticationState: |
+| getIdentifiers | visitorGetIDs |
+| appendToURL:withCallback: | visitorAppendToURL: |
+|  |  |
 
 ## Adobe Analytics Extension APIs <a id="audience-manager-extension-apis"></a>
 
