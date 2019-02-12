@@ -1,6 +1,6 @@
 # Identity API reference
 
-## Synch Identifiers
+## Sync Identifiers
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
@@ -8,7 +8,7 @@ This API synchronizes the provided customer identifier type key and value with t
 
 {% tabs %}
 {% tab title="Android" %}
-### syncidentifier
+### syncIdentifier
 
 #### **Syntax**
 
@@ -24,7 +24,7 @@ public static void syncIdentifier(final String identifierType,
 Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchidentifiers
+### synchIdentifiers
 
 **Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
 
@@ -43,7 +43,7 @@ identifiers.put("idType", "idValue");
 Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchidentifiers \(overloaded\)
+### synchIdentifiers \(overloaded\)
 
 **Tip**: All given customer IDs are given the default authentication state of `UNKNOWN`.
 

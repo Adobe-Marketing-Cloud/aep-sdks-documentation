@@ -56,7 +56,7 @@ For more information, see [Lifecycle API reference](../../../using-mobile-extens
 
 | 4x SDK | Notes |
 | :--- | :--- |
-| keepLifecycleSessionAlive | Deprecated |
+| keepLifecycleSessionAlive \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
 
 ## Identity Extension APIs <a id="audience-manager-extension-apis"></a>
 
@@ -66,15 +66,14 @@ For more information, see [Identity API reference](../../../using-mobile-extensi
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| setPushIdentifier: | setPushIdentifier \(iOS \| Android\) |
-| setAdvertisingIdentifier: | setAdvertisingIdentifier \(iOS \| Android\) |
-| getMarketingCloudID: | visitorMarketingCloudID \(iOS \| Android\) |
-| syncIdentifiers: | visitorSyncIdentifiers \(iOS \| Android\) |
-| syncIdentifiers:authentication: | visitorSyncIdentifiers:authenticationState: |
-| syncIdentifier:identifier:authentication: | visitorSyncIdentifiersWithType:identifier:authenticationState: |
-| getIdentifiers | visitorGetIDs |
-| appendToURL:withCallback: | visitorAppendToURL: |
-|  |  |
+| [setPushIdentifier:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#set-the-push-identifier) | setPushIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [setAdvertisingIdentifier:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#set-an-advertising-identifier) | setAdvertisingIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [getMarketingCloudID:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-experience-cloud-ids) | visitorMarketingCloudID \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifiers:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiers \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifiers:authentication:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiers:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifier:identifier:authentication:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiersWithType:identifier:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [getIdentifiers](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | visitorGetIDs \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [appendToURL:withCallback:](../../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#append-visitor-data-to-a-url) | visitorAppendToURL: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
 
 ## Adobe Analytics Extension APIs <a id="audience-manager-extension-apis"></a>
 
