@@ -40,7 +40,7 @@ ACPCampaign.setLinkageFields(linkageFields)
 
 ## Reset linkage fields
 
-Removes the previously stored linkage fields in the SDK and triggers the Campaign rules download again.
+Removes the previously stored linkage fields in the SDK and triggers the Campaign rules download again. Personalized messages stored in cache prior to this are erased.
 
 {% tabs %}
 

@@ -202,6 +202,10 @@ c\) push token
 2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
 ```
 
+{% hint style="warning" %}
+Each setPushIdentifier call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call setPushIdentifier multiple times. 
+{% endhint %}
+
 ### Tracking for push and in-app messaging
 
 To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, contact your beta program manager.
