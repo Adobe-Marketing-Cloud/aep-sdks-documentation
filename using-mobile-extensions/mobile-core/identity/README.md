@@ -101,7 +101,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtabs %}
 
 {% hint style="info" %}
-Experience Cloud organization IDs uniquely identify each client company in the Adobe Experience Cloud and are similar to the following value:`016D5C175213CCA80A490D05@AdobeOrg`. The trailing `@AdobeOrg` is required.
+Previously known as MCID, the Experience Cloud ID or ECID  uniquely identify each client company in the Adobe Experience Cloud and are similar to the following value:`016D5C175213CCA80A490D05@AdobeOrg`. The trailing `@AdobeOrg` is required.
 {% endhint %}
 
 After the configuration is complete, an Experience Cloud ID will be generated and, where applicable, be included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, will continue to be sent with each hit.
