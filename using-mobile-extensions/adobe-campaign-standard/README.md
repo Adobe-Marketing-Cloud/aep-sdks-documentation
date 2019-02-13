@@ -62,7 +62,7 @@ The Android version of this extension is coming in the future.
 This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
-![](../.gitbook/assets/acs-pods.png)
+![](../../.gitbook/assets/acs-pods.png)
 
 Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You'll need to add the following pods to your `Podfile`:
 
