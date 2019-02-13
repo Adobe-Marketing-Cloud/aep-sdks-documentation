@@ -60,7 +60,7 @@
   * [Updating a shared state that is not tied to an event](resources/building-mobile-extensions/updating-a-shared-state-that-is-not-tied-to-an-event.md)
   * [Monitoring shared states](resources/building-mobile-extensions/monitoring-shared-states.md)
   * [Clearing a shared state](resources/building-mobile-extensions/clearing-a-shared-state.md)
-  * [Building the Launch Extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
+  * [Building the Launch extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
   * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
 * [Frequently asked questions](resources/frequently-asked-questions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)

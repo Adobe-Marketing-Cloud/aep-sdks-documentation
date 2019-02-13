@@ -7,7 +7,7 @@ A shared state is composed of the following:
 
 **Important**: Every event does not result in an updated shared state. Shared states have to be specifically set, which causes events to be sent that the extensions and internal modules can listen for to be updated.
 
-## Using a Shared State
+## Using a shared state
 
 Modules and extensions use events and shared states to communicate with each other. The events allow modules to be relatively decoupled, but shared states are necessary when you have a dependency on a module’s information.
 

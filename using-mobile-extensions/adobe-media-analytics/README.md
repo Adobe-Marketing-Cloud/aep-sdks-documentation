@@ -42,7 +42,7 @@ Type the version of the media player application/SDK.
 Disable this option for your production application.
 {% endhint %}
 
-Enables or disables Media SDK logs. 
+Enables or disables Media SDK logs.
 
 ## Add Media Analytics to your app
 
@@ -50,8 +50,6 @@ Enables or disables Media SDK logs.
 This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
    ```text
@@ -60,15 +58,13 @@ This extension requires the [Adobe Analytics Extension](../adobe-analytics/). Yo
    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
    ```
 
-1. Import the Media extension in your application's main activity.
+2. Import the Media extension in your application's main activity.
 
    ```java
    import com.adobe.marketing.mobile.*;
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
-1. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
+3. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
 
    ```text
    pod 'ACPMedia', '~> 1.0'
@@ -80,19 +76,17 @@ or you can manually include the libraries found in [Github](https://github.com/A
 
 1. In Xcode project, import Media extension:
 
-    #### Objective-C
+   **Objective-C**
 
-    ```objectivec
+   ```objectivec
     #import <ACPMedia.h>
-    ```
+   ```
 
-    #### Swift
+   **Swift**
 
-    ```swift
+   ```swift
    import ACPMedia
    ```
-  {% endtab %}
-  {% endtabs %}
 
 ### Register Media with Mobile Core
 
