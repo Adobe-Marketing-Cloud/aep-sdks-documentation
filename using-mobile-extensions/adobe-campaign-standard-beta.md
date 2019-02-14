@@ -26,7 +26,7 @@ This extension is considered beta functionality and is available only in Launch'
 Trying to find your ACS endpoint URLs? Contact your beta manager.
 {% endhint %}
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments.
+Type the endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 For this extension, these ACS endpoint URLs should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
@@ -34,7 +34,7 @@ For this extension, these ACS endpoint URLs should be typed in **without** the `
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
+A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys are automatically generated for each Campaign Standard instance and configured in the Campaign extension for a successful validation.
 
 {% hint style="info" %}
 Need help connecting your Launch mobile property with your Campaign Standard mobile app? For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
@@ -57,7 +57,7 @@ For this extension, the MCIAS endpoint URL should be typed in **without** the `h
 Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
 
 {% hint style="warning" %}
-Request Timeout must be a non-zero number.
+The **Request Timeout** value must be a non-zero number.
 {% endhint %}
 
 ## Add Campaign Standard to your app
@@ -74,7 +74,7 @@ This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) a
 
 ![](../.gitbook/assets/acs-beta-pods.png)
 
-Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project. You'll need to add the following pods to your `Podfile`:
+To add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project, add the following pods to your `Podfile`:
 
 ```text
 pod 'ACPCoreBeta', '1.0.2beta'
@@ -156,7 +156,7 @@ iOS simulators do not support push messaging.
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
-After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, you will need to set the push token using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -188,9 +188,9 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-If everything is configured correctly, after installing your app on mobile device, your should see the following debug logs:
+If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
 
-a\) Campaign rules have been downloaded
+a\) The Campaign rules have been downloaded:
 
 #### Example
 
@@ -198,7 +198,7 @@ a\) Campaign rules have been downloaded
 2019-01-31 18:22:35.980872-0800 CampaignDemoApp[935:156012] [AMSDK DEBUG <com.adobe.module.campaign>]: Successfully downloaded Rules from 'https://mcias-va7.cloud.adobe.io/mcias/mcias.campaign-demo.adobe.com/PR8fdd35ee6cc84aa8bbdea8f92db3f55a/43583282444503123217621782542046274680/rules.zip
 ```
 
-b\) request to demdex has been sent
+b\) The request to demdex has been sent:
 
 #### Example
 
@@ -206,7 +206,7 @@ b\) request to demdex has been sent
 2019-01-31 18:22:35.261676-0800 CampaignDemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
 
-c\) push token
+c\) The push token:
 
 #### Example
 
@@ -223,10 +223,10 @@ For more information, go to [Configuring your application in Launch](https://hel
 ## Deleting mobile properties in Launch
 
 {% hint style="danger" %}
-Deleting your property in Launch may cause disruption to your recurring push and in-app messaging activities.
+Deleting your property in Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by clicking the **Remove from ACS** button. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
