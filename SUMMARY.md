@@ -47,7 +47,7 @@
 
 * [Upgrading to AEP SDK](resources/upgrading-to-aep/README.md)
   * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x.md)
-  * [API Change Log](resources/upgrading-to-aep/api-change-log.md)
+  * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)

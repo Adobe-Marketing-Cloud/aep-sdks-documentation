@@ -23,7 +23,7 @@ The Experience Platform SDK has experienced significant architectural re-design 
 4. If implementing Analytics, use [Analytics processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) to map variables/rules
 
 {% hint style="success" %}
-The Experience Platform SDK automatically performs migration tasks as required to preserves locally stored user context. Without any manual intervention, you should expect no change to your visitor reporting or marketing campaigns.
+The Experience Platform SDK automatically performs migration tasks as required to preserve locally stored user context. Without manual intervention, you should expect no change to your visitor reporting or marketing campaigns.
 {% endhint %}
 
 {% hint style="info" %}

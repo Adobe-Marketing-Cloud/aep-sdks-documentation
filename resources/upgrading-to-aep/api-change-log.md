@@ -1,4 +1,4 @@
-# API Change Log
+# API Changelog
 
 This page details SDK API changes between the Experience Platform SDK and 4x SDKs.
 
