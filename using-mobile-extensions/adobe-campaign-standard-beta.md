@@ -69,7 +69,7 @@ This beta extension is currently available only for iOS development.
 {% tabs %}
 {% tab title="iOS" %}
 {% hint style="warning" %}
-This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead, as the instructions below indicate.
+This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead.
 {% endhint %}
 
 ![](../.gitbook/assets/acs-beta-pods.png)
@@ -82,7 +82,7 @@ pod 'ACPCampaignBeta', '1.0.2beta'
 pod 'ACPUserProfileBeta', '1.0.1beta'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions found in Github.
+You can optionally manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions from Github.
 
 In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile extensions:
 
@@ -188,7 +188,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-If everyting is configured correctly, after installing your app on mobile device, your should see the following debug logs:
+If everything is configured correctly, after installing your app on mobile device, your should see the following debug logs:
 
 a\) Campaign rules have been downloaded
 
@@ -223,7 +223,7 @@ For more information, go to [Configuring your application in Launch](https://hel
 ## Deleting mobile properties in Launch
 
 {% hint style="danger" %}
-Deleting your property in Launch may cause disruption to any recurring push and in-app messaging activities.
+Deleting your property in Launch may cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
 If you [delete](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property) your mobile property in Launch, you might review your mobile property status in Campaign Standard and ensure that the property displays an updated status of **Deleted in Launch**. You may choose to remove the corresponding mobile app in Campaign Standard by clicking the **Remove from ACS** button. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).

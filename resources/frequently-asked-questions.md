@@ -24,6 +24,21 @@ The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods
 
 Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](upgrading-to-aep/) guide for more information.
 
+#### **How much space does the SDK take?**
+
+| Extension | iOS  \(KB\) | Android \(KB\) |
+| :--- | :--- | :--- |
+| Mobile Core | 504 | 168 |
+| Adobe Analytics | 54 | 21 |
+| Adobe Audience Manager | 40 | 13 |
+| Adobe Target | 77 | 27 |
+| Profile Framework | 20 | 8 |
+
+Please note that the size figures listed above are provided as indicative estimates, with the following considerations:
+
+* Core \(includes Lifecycle, Identity, and Signals frameworks\) is required for all other extensions, so final app size increase can be calculated by adding Core size to each of the enabled extensions. For example: iOS app distribution using Target and Analytics would have a total size increase of 635 KB \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
+* iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report. Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
+
 ### Mobile Core
 
 #### What are Lifecycle Metrics?
