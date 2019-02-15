@@ -43,7 +43,7 @@ For this extension, the custom MCIAS endpoint URL should be typed in **without**
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service before timing out. The SDK default timeout value is 5 seconds, and the minimum timeout value is 1 second.
+Time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 
 {% hint style="warning" %}
 The **Request Timeout** value must be a non-zero number.
