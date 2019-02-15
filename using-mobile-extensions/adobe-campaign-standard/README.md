@@ -19,7 +19,7 @@
 
 #### ACS Endpoints
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You may specify up to three unique endpoints for your development, staging, and production environments.
+Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 
@@ -29,11 +29,11 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you've configured this extension in Launch, you will need to configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKey will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
+A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKey will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
 
 #### MCIAS Region
 
-Select an MCIAS region based on where your customer is located or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
+Select an MCIAS region based on your customer's location or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
 
@@ -52,7 +52,7 @@ The **Request Timeout** value must be a non-zero number.
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-The Android version of this extension is coming in the future.
+The Android version of this extension is currently in progress.
 {% endhint %}
 
 {% tabs %}
@@ -63,7 +63,7 @@ This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [P
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You'll need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -72,7 +72,7 @@ pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile)  extensions found in Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile)  extensions from Github.
 
 In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
