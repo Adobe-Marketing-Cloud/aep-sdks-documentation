@@ -8,5 +8,9 @@ To start implementing the SDK, you'll need to first create a mobile property in 
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" %}
 
+## Quick Links
 
+* [Getting started](getting-started/create-a-mobile-property.md)
+* [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
+* [Frequently asked questions](resources/frequently-asked-questions.md)
 
