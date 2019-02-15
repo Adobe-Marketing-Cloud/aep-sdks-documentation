@@ -12,5 +12,5 @@ To start implementing the SDK, you'll need to first create a mobile property in 
 
 * [Getting started](getting-started/create-a-mobile-property.md)
 * [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
-* [Frequently asked questions](resources/frequently-asked-questions.md)
+* [Frequently asked questions](resources/frequently-asked-questions/)
 

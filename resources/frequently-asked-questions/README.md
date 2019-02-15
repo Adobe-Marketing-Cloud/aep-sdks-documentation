@@ -18,11 +18,11 @@ You may delete a mobile property from Launch by following these [instructions](h
 
 #### Where can I download the SDK?
 
-The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/) - see [Get the SDK](../getting-started/get-the-sdk.md). It is also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/) - see [Get the SDK](../../getting-started/get-the-sdk.md). It is also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 
 #### Can I run both 4x and the new Adobe Experience Platform SDKs on my app?
 
-Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](upgrading-to-aep/) guide for more information.
+Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](../upgrading-to-aep/) guide for more information.
 
 #### **How "big" is the SDK?**
 
@@ -43,7 +43,7 @@ Please note that the size figures listed above are provided as indicative estima
 
 #### What are Lifecycle Metrics?
 
-Lifecycle Metrics are "out-of-the-box" metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../using-mobile-extensions/mobile-core/lifecycle/).
+Lifecycle Metrics are "out-of-the-box" metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../using-mobile-extensions/mobile-core/lifecycle/).
 
 ### Adobe Analytics
 
