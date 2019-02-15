@@ -23,7 +23,7 @@
     * [Lifecycle API reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md)
     * [Lifecycle event reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-event-reference.md)
   * [Signals](using-mobile-extensions/mobile-core/signals/README.md)
-    * [Signals Extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
+    * [Signals extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
@@ -46,8 +46,8 @@
 ## Resources
 
 * [Upgrading to AEP SDK](resources/upgrading-to-aep/README.md)
-  * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x/README.md)
-    * [API Change Log](resources/upgrading-to-aep/aepvs4x/api-change-log.md)
+  * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x.md)
+  * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)
@@ -60,9 +60,10 @@
   * [Updating a shared state that is not tied to an event](resources/building-mobile-extensions/updating-a-shared-state-that-is-not-tied-to-an-event.md)
   * [Monitoring shared states](resources/building-mobile-extensions/monitoring-shared-states.md)
   * [Clearing a shared state](resources/building-mobile-extensions/clearing-a-shared-state.md)
-  * [Building the Launch Extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
+  * [Building the Launch extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
   * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
-* [Frequently asked questions](resources/frequently-asked-questions.md)
+* [Frequently asked questions](resources/frequently-asked-questions/README.md)
+  * [Current SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [Release notes](resources/release-notes.md)
 

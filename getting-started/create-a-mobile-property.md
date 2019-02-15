@@ -3,7 +3,7 @@
 To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps: 
 
 {% hint style="info" %}
-Having trouble creating a mobile property or need access to Launch? See [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide.
+Having trouble creating a mobile property or need access to Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions) guide.
 {% endhint %}
 
 ## Create a new mobile property
@@ -15,7 +15,8 @@ Having trouble creating a mobile property or need access to Launch? See [Launch 
 ## Set up Extensions
 
 1. Setup **Extensions**
-   1. Go to the **Extensions** tab. You should see that **Mobile Core** and **Profile** extensions are installed by default.  
+   1. Go to the **Extensions** tab.   
+      The **Mobile Core** and **Profile** extensions are installed by default.  
 
    2. Click Configure on the **Mobile Core** card**.** 
 
@@ -29,12 +30,12 @@ Having trouble creating a mobile property or need access to Launch? See [Launch 
    4. Click **Catalog** and install all the extensions you need.
 
 {% hint style="info" %}
-Not sure on what extensions you need? Check out the extensions listed in the **Using Mobile Extensions** section.
+Not sure on what extensions you need? Check out the extensions in the **Using Mobile Extensions** section.
 {% endhint %}
 
 ## Publish Configuration
 
-Publish configuration In this step, you'll create library of changes and then deploy the library to a **Development Environment**.
+In this procedure, you will create a library of changes and deploy the library to a **Development Environment**.
 
 1. In the **Publishing** tab, click on **Add New Library** under the **Development** section of the publishing workflow. 
 2. Specify a name for the library and select a development environment from the **Environment** dropdown.
@@ -53,8 +54,8 @@ Testing can be done using the configuration in the Development environment. Late
 
 {% embed url="https://youtu.be/xBWYFUKAoyo" caption="Video: Creating Mobile Properties in Experience Platform Launch" %}
 
-## Further Reading
+## Additional Information
 
-* See [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide to learn more about getting access to Launch
-* Learn more about Launch's publishing workflows in this [video](https://www.youtube.com/embed/Pe-YSn26_xI)
+* To learn more about getting access to Launch, see  the [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide.
+* To learn more about Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 

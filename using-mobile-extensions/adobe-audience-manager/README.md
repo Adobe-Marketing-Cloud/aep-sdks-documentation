@@ -2,27 +2,27 @@
 
 [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html) is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app.
 
-To get started with **Audience Manager**, follow these steps:
+To get started with **Audience Manager**, complete these steps:
 
 1. Configure the **Audience Manager Extension** in **Launch**
 2. Add the **Audience Manager Extension** to your app
 3. Implement **Audience Manager** APIs to:
-   1. Get user profile
-   2. Send signals to Audience Manager
-   3. Reset Audience Manager identifiers, visitor profiles
+   1. Get the user profile.
+   2. Send signals to Audience Manager.
+   3. Reset the Audience Manager identifiers and visitor profiles.
 
-## Configuring the Audience Manager Extension in Adobe Launch   <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Adobe Launch   <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
 1. In Launch, click the **Extensions** tab.
-2. Choose **Catalog**, locate the **Adobe Audience Manager** extension and click **Install**.
-3. Provide your Audience Manager server.
-4. Provide a timeout value - this value is the amount of time, in seconds, to wait for a response from Audience Manager before timing out. We recommend a default value of 2s.
+2. Choose **Catalog**, locate the **Adobe Audience Manager** extension, and click **Install**.
+3. Type your Audience Manager server.
+4. Type a timeout value. This value is the period, in seconds, to wait for a response from Audience Manager before timing out. We recommend a default value of 2s.
 5. Click **Save**.
-6. Follow the publishing process to update SDK configuration.
+6. Follow the publishing process to update the SDK configuration.
 
-### Add Audience Manager to your App
+### Add Audience Manager to your app
 
 {% tabs %}
 {% tab title="Android" %}
@@ -31,7 +31,9 @@ To get started with **Audience Manager**, follow these steps:
 
 #### Java
 
-`import com.adobe.marketing.mobile.*;` **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
+`import com.adobe.marketing.mobile.*;`   
+  
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -120,21 +122,21 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Implement Audience Manager APIs
 
-See [Audience Manager API Reference](audience-manager-api-reference.md)
+For more information about implementing Audience Manager APIs, see [Audience Manager API Reference](audience-manager-api-reference.md).
 
-## Configuration Keys
+## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| audience.server | Yes | Server endpoint used to collect Audience Manager data |
-| audience.timeout | No | Time, in seconds, to wait for a response from Audience Manager before timing out. Default value is 2 seconds. |
+| `audience.server` | Yes | Server endpoint used to collect Audience Manager data |
+| `audience.timeout` | No | Time, in seconds, to wait for a response from Audience Manager before timing out. Default value is 2 seconds. |
 
-## Further Reading
+## Additional information
 
 * How to find your Audience Manager server?
-* How to setup Adobe Analytics server-side forwarding to Audience Manager?
-  * See - [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
-  * Also see - Setup [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
+* How to set up Adobe Analytics server-side forwarding to Audience Manager?
+  * [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
+  * Set up [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
 

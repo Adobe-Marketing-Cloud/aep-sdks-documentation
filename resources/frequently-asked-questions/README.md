@@ -18,17 +18,32 @@ You may delete a mobile property from Launch by following these [instructions](h
 
 #### Where can I download the SDK?
 
-The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/) - see [Get the SDK](../getting-started/get-the-sdk.md). It is also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/) - see [Get the SDK](../../getting-started/get-the-sdk.md). It is also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 
 #### Can I run both 4x and the new Adobe Experience Platform SDKs on my app?
 
-Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](upgrading-to-aep/) guide for more information.
+Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](../upgrading-to-aep/) guide for more information.
+
+#### **How "big" is the SDK?**
+
+| Extension | iOS  \(KB\) | Android \(KB\) |
+| :--- | :--- | :--- |
+| Core | 504 | 168 |
+| Adobe Analytics | 54 | 21 |
+| Adobe Audience Manager | 40 | 13 |
+| Adobe Target | 77 | 27 |
+| Profile Framework | 20 | 8 |
+
+Please note that the size figures listed above are provided as indicative estimates, with the following considerations:
+
+* Core \(includes Lifecycle, Identity, and Signals frameworks\) is required for all other extensions, so final app size increase can be calculated by adding Core size to each of the enabled extensions. For example: iOS app distribution using Target and Analytics would have a total size increase of 635 KB \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
+* iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for a single architecture. Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
 
 ### Mobile Core
 
 #### What are Lifecycle Metrics?
 
-Lifecycle Metrics are "out-of-the-box" metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../using-mobile-extensions/mobile-core/lifecycle/).
+Lifecycle Metrics are "out-of-the-box" metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../using-mobile-extensions/mobile-core/lifecycle/).
 
 ### Adobe Analytics
 

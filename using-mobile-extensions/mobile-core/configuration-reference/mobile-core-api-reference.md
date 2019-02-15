@@ -5,11 +5,11 @@
 Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
-You must call this API when an event that you want to track, occurs. In addition to the action name, you may send additional context data with each track action call.
+Call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
 {% endhint %}
 
 {% hint style="info" %}
-If you have the **Analytics** extension setup, this method will send an Analytics action tracking hit along with the optional context data you provide.
+If you have the **Analytics** extension set up, this method sends an Analytics action tracking hit with the optional context data that you provide.
 {% endhint %}
 
 {% tabs %}
@@ -70,17 +70,17 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 
 ## Track app states and views
 
-States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API may be called.. This method sends an Analytics state tracking hit with optional context data.
+States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
 {% hint style="info" %}
-If you have the **Analytics** extension setup, this API will increment page views and an Analytics state tracking hit along with the optional context data you provide.
+If you have the **Analytics** extension set up, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
-In Android, trackState is typically called each time a new Activity is loaded
+In Android, `trackState` is typically called each time a new Activity is loaded.
 
 ### trackState  <a id="trackstate"></a>
 
@@ -134,10 +134,10 @@ ACPCore.trackState("state name", data: ["key": "value"])
 
 ## Collect PII
 
-This API enables the SDK to collect sensitive or PII data.
+This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
 
 {% hint style="warning" %}
-While this API enables the collection of sensitive data, no data is actually sent to any Adobe endpoint or 3rd party endpoint. To send the data to an endpoint, you may use a postback of PII type.
+While this API enables the collection of sensitive data, no data is actually sent to any Adobe or third-party endpoints. To send the data to an endpoint, use a postback of the PII type.
 {% endhint %}
 
 {% tabs %}
@@ -258,7 +258,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Additional Reading
+## Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
 

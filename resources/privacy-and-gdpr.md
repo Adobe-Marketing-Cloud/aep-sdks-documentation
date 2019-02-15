@@ -18,7 +18,7 @@ You can set a privacy status to ensure collection of data suits your user's pref
 | **Target** | Mbox requests are sent | Mbox requests not sent | Mbox requests queued |
 
 {% hint style="info" %}
-Analytics users: If your report suite is not timestamp enabled, hits will be discarded until the privacy status changes to opt in.
+**Analytics users**: If your report suite is not timestamp enabled, hits are discarded until the privacy status changes to `opt in`.
 {% endhint %}
 
 To programmatically set the privacy status for the app user:
@@ -209,9 +209,9 @@ To update the SDK configuration, programmatically, use the following information
 
 | Key | Description |
 | :--- | :--- |
-| global.privacy | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
+| `global.privacy` | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
 
-## Further Reading
+## Additional information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
 * To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)

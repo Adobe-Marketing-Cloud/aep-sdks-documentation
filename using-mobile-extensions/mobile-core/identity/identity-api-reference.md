@@ -1,14 +1,14 @@
 # Identity API reference
 
-## Synch Identifiers
+## Synch identifiers
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
-This API synchronizes the provided customer identifier type key and value with the given [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+This API synchronizes the provided customer identifier type key and value with the [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
-### syncidentifier
+### syncIdentifier
 
 #### **Syntax**
 
@@ -24,7 +24,7 @@ public static void syncIdentifier(final String identifierType,
 Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchidentifiers
+### synchIdentifiers
 
 **Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
 
@@ -43,7 +43,7 @@ identifiers.put("idType", "idValue");
 Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchidentifiers \(overloaded\)
+### synchIdentifiers \(overloaded\)
 
 **Tip**: All given customer IDs are given the default authentication state of `UNKNOWN`.
 
@@ -158,7 +158,7 @@ ACPMobileVisitorAuthenticationState.authenticated)
 {% endtab %}
 {% endtabs %}
 
-## Append Visitor Data to a URL
+## Append visitor data to a URL
 
 {% tabs %}
 {% tab title="Android" %}
@@ -170,7 +170,7 @@ Appends Adobe visitor data to a URL string. If the provided URL is null or empty
   * Experience Cloud ID \(ECID\)
   * Experience Cloud Org ID
   * A timestamp taken when this request was made
-* The optional adobe\_aa\_vid attribute is the URL encoded Analytics Custom Visitor ID, if available
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
 
 #### **Syntax**
 
@@ -236,13 +236,13 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 {% endtab %}
 {% endtabs %}
 
-## Get Identifiers
+## Get identifiers
 
 {% tabs %}
 {% tab title="Android" %}
 ### getIdentifiers
 
-Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
+Returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 The values are returned through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
@@ -357,12 +357,12 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 {% endtab %}
 {% endtabs %}
 
-## Set an Advertising Identifier
+## Set an advertising identifier
 
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
 
 {% hint style="info" %}
-If identity.adidEnabled set to false, then the advertising identifier is not set or stored. Also, if the current SDK privacy status is optedout, then the advertising identifier is not set.
+If `identity.adidEnabled` set to false, the advertising identifier is not set or stored. Also, if the current SDK privacy status is `optedout`, the advertising identifier is not set.
 {% endhint %}
 
 {% tabs %}
@@ -409,9 +409,9 @@ ACPCore.setAdvertisingIdentifier("AdvertisingId")
 {% endtab %}
 {% endtabs %}
 
-## Set the Push Identifier
+## Set the push identifier
 
-This API sets the device token for push notifications in the SDK. If the current SDK privacy status is optedout, the push identifier is not set.
+This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -456,7 +456,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-## Identity Service Classes
+## Identity service classes
 
 {% tabs %}
 {% tab title="Android" %}

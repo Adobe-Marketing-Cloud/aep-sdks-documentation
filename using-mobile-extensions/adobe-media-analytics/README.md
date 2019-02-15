@@ -1,45 +1,45 @@
 # Adobe Media Analytics for Audio and Video
 
-## Configure Media Analytics Extension in Launch
+## Configure Media Analytics extension in Launch
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
-3. Provide extension settings \(see [Configure Media Analytics Extension](./#configure-media-analytics-extension)\).
+3. Type the extension settings. For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
-### Configure Media Analytics Extension
+### Configure the Media Analytics extension
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
 
 #### Tracking Server
 
 {% hint style="info" %}
-This is different from your Analytics tracking server.
+This server is different from your Analytics tracking server.
 {% endhint %}
 
-Provide the tracking server to which all media tracking data should be sent.
+Type the name of the tracking server to which all media tracking data should be sent.
 
 #### Channel
 
-Channel name property.
+Type the channel name property.
 
 #### Online Video Provider
 
-Name of the online platform through which content gets distributed.
+Type the name of the online platform through which content is distributed.
 
 #### Player Name
 
-Name of the media player in use \(e.g., "AVPlayer", "Native Player", "Custom Player"\).
+Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
 
 #### Application Version
 
-The version of the media player application/SDK.
+Type the version of the media player application/SDK.
 
 #### Debug Logging
 
 {% hint style="danger" %}
-This should be disabled for your production application.
+Disable this option for your production application.
 {% endhint %}
 
 Enables or disables Media SDK logs.
@@ -50,49 +50,43 @@ Enables or disables Media SDK logs.
 This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
-```text
-implementation 'com.adobe.marketing.mobile:analytics:1.+'
-implementation 'com.adobe.marketing.mobile:media:1.+'
-implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-```
+   ```text
+   implementation 'com.adobe.marketing.mobile:analytics:1.+'
+   implementation 'com.adobe.marketing.mobile:media:1.+'
+   implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+   ```
 
-1. Import the Media extension in your application's main activity.
+2. Import the Media extension in your application's main activity.
 
-```java
-import com.adobe.marketing.mobile.*;
-```
-{% endtab %}
+   ```java
+   import com.adobe.marketing.mobile.*;
+   ```
 
-{% tab title="iOS" %}
-1. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
+3. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
 
-```text
-pod 'ACPMedia', '~> 1.0'
-pod 'ACPAnalytics', '~> 2.0'
-pod 'ACPCore', '~> 2.0'
-```
+   ```text
+   pod 'ACPMedia', '~> 1.0'
+   pod 'ACPAnalytics', '~> 2.0'
+   pod 'ACPCore', '~> 2.0'
+   ```
 
 or you can manually include the libraries found in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
 
 1. In Xcode project, import Media extension:
 
-#### Objective-C
+   **Objective-C**
 
-```objectivec
-#import <ACPMedia.h>
-```
+   ```objectivec
+    #import <ACPMedia.h>
+   ```
 
-#### Swift
+   **Swift**
 
-```swift
-import ACPMedia
-```
-{% endtab %}
-{% endtabs %}
+   ```swift
+   import ACPMedia
+   ```
 
 ### Register Media with Mobile Core
 
@@ -185,16 +179,16 @@ func application(_ application: UIApplication,
 {% endtab %}
 {% endtabs %}
 
-## Configuration Keys
+## Configuration keys
 
 To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.trackingServer` | Yes | [See Tracking Server](./#tracking-server) |
-| `media.channel` | No | [See Channel](./#channel) |
-| `media.ovp` | No | [See Online Video Provider](./#online-video-provider) |
-| `media.playerName` | No | [See Player Name](./#player-name) |
-| `media.appVersion` | No | [See Application Version](./#application-version) |
-| `media.debugLogging` | No | [See Debug Logging](./#debug-logging) |
+| `media.trackingServer` | Yes | See [Tracking Server](./#tracking-server). |
+| `media.channel` | No | See [Channel](./#channel). |
+| `media.ovp` | No | See [Online Video Provider](./#online-video-provider). |
+| `media.playerName` | No | See [Player Name](./#player-name). |
+| `media.appVersion` | No | See [Application Version](./#application-version). |
+| `media.debugLogging` | No | See [Debug Logging](./#debug-logging). |
 
