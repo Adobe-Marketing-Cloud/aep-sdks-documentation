@@ -138,7 +138,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Need help creating an in-app mesage using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 {% endhint %}
 
-For in-app messages target users based on their Campaign profile, you need to configure personal attributes that are linked to their campaign profiles with the **setLinkageFields** API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md)
+For message types that allow you to target Adobe Campaign profiles (CRM profiles) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the **setLinkageFields** API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
 
 ### Set up push messaging
 
