@@ -13,7 +13,7 @@ Rules and their associated assets are delivered as a standard ZIP archive, which
 
 * `/`
 * `rules.json`
-* `assets /` 
+* `assets /`
 * `(asset)`
 * `(asset)`
 
@@ -241,7 +241,7 @@ If the conditions pass, an in-app message triggered:
                     {
                         "type" : "group",
                         "definition" : {
-                            "logic" : "or", 
+                            "logic" : "or",
                             "conditions" : [
                                 {
                                     "type" : "matcher",
@@ -395,4 +395,3 @@ After downloading and extracting rules, the contents of this compressed file are
 | Key | Description |
 | :--- | :--- |
 | `rules.url` | URL that points to the remote file location that contains the rules that were configured for the SDK. |
-
