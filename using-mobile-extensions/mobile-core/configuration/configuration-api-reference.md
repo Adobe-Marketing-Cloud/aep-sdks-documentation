@@ -99,7 +99,7 @@ MobileCore.updateConfiguration(data);
 ### updateConfiguration
 
 {% hint style="success" %}
-Starting in ACPCore 2.0.3 for iOS, any key provided via __updateConfiguration__ should not have a prefix.  The configuration extension may modify the key provided to be correct for the corresponding `build.environment` in which the app is running.  For more information, see [Environment-aware Configuration Properties](README.md#environment-aware-configuration-properties).
+Starting in ACPCore 2.0.3 for iOS, any key provided via __updateConfiguration__ should not have a prefix. The configuration extension might modify the key provided to be correct for the corresponding `build.environment` in which the app is running. For more information, see [Environment-aware Configuration Properties](README.md#environment-aware-configuration-properties).
 {% endhint %}
 
 #### Syntax
@@ -124,7 +124,7 @@ ACPCore.updateConfiguration(updatedConfig)
 
 ## Using a bundled file configuration
 
-You can also choose to include a bundled JSON configuration file in your app package to replace or complement by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You may choose to include a bundled JSON configuration file in your app package to either replace or complement the configuration downloaded via the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
 
 To download the JSON configuration file, use the following URL:
 
