@@ -178,27 +178,23 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
+If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed.
 
-a\) The Campaign rules have been downloaded:
+### Debug log examples
 
-#### Example
+The Campaign rules have been downloaded:
 
 ```text
 2019-01-31 18:22:35.980872-0800 CampaignDemoApp[935:156012] [AMSDK DEBUG <com.adobe.module.campaign>]: Successfully downloaded Rules from 'https://mcias-va7.cloud.adobe.io/mcias/mcias.campaign-demo.adobe.com/PR8fdd35ee6cc84aa8bbdea8f92db3f55a/43583282444503123217621782542046274680/rules.zip
 ```
 
-b\) The request to demdex has been sent:
-
-#### Example
+The request to demdex has been sent:
 
 ```text
 2019-01-31 18:22:35.261676-0800 CampaignDemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
 
-c\) The push token:
-
-#### Example
+The push token:
 
 ```text
 2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
