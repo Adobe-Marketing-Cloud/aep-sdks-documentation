@@ -1,6 +1,12 @@
 # Release notes
 
-## February 7, 2109
+## February 19, 2019
+
+The following updates were made to the Mobile Core extension in iOS version 2.0.3:
+
+* Bug fixes
+
+## February 7, 2019
 
 The following updates were made to the Mobile Core extension in iOS version 2.0.2:
 
