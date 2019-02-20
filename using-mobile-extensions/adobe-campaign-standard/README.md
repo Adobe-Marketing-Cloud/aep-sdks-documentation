@@ -1,12 +1,9 @@
-# Adobe Campaign Standard \(Beta\)
+# Adobe Campaign Standard
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard beta extension, we recommend that you read the [_Getting Started_](../getting-started/create-a-mobile-property.md) section and in [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+**Before** you install or configure the Adobe Campaign Standard extension, read [_Getting Started_](../getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 {% endhint %}
 
-{% hint style="warning" %}
-This extension is considered beta functionality and is available only in Launch's [Integration](http://launch-integration.adobe.com) environment. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) or contact your beta program manager.
-{% endhint %}
 
 ## Configure Campaign Standard Extension in Launch
 
@@ -18,43 +15,35 @@ This extension is considered beta functionality and is available only in Launch'
 
 ### Configure Campaign Standard Extension
 
-![](../.gitbook/assets/campaign-extension-config-v2.png)
+![](../../.gitbook/assets/campaign-extension-config-v4.png)
 
 #### ACS Endpoints
 
-{% hint style="info" %}
-Trying to find your ACS endpoint URLs? Contact your beta manager.
-{% endhint %}
-
-Type the endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
+Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
-For this extension, these ACS endpoint URLs should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
+
+For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
+
 {% endhint %}
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKeys are automatically generated for each Campaign Standard instance and configured in the Campaign extension for a successful validation.
+A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKey will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
 
-{% hint style="info" %}
-Need help connecting your Launch mobile property with your Campaign Standard mobile app? For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
-{% endhint %}
+#### MCIAS Region
 
-#### MCIAS Endpoint
-
-{% hint style="info" %}
-Trying to find your MCIAS endpoint URL? Contact your beta manager.
-{% endhint %}
-
-Provide your in-app messaging service URL endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
+Select an MCIAS region based on your customer's location or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this extension, the MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
+
+For this extension, the custom MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash. 
+
 {% endhint %}
 
 #### Request Timeout
 
-Time in seconds to wait for a response from the in-app messaging service, before timing out. The SDK default timeout value is 5 seconds.
+Time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 
 {% hint style="warning" %}
 The **Request Timeout** value must be a non-zero number.
@@ -63,49 +52,47 @@ The **Request Timeout** value must be a non-zero number.
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-This beta extension is currently available only for iOS development.
+The Android version of this extension is currently in progress.
 {% endhint %}
 
 {% tabs %}
 {% tab title="iOS" %}
 {% hint style="warning" %}
-This **beta** Campaign Standard extension requires [Mobile Core](mobile-core/) and [Profile](profile/) **beta** extensions. If you are using other versions of Mobile Core and Profile libraries, use the beta version instead.
+This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
-![](../.gitbook/assets/acs-beta-pods.png)
+![](../../.gitbook/assets/acs-pods.png)
 
-To add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) beta libraries to your project, add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
-pod 'ACPCoreBeta', '1.0.2beta'
-pod 'ACPCampaignBeta', '1.0.2beta'
-pod 'ACPUserProfileBeta', '1.0.1beta'
+use_frameworks!
+pod 'ACPCampaign', '~> 1.0'
+pod 'ACPUserProfile', '~> 2.0'
+pod 'ACPCore', '~> 2.0'
 ```
 
-You can optionally manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1beta-ACPUserProfile) beta extensions from Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile)  extensions from Github.
 
-In Xcode, import the Mobile Core beta, Campaign Standard beta, and Profile extensions:
+In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
 #### Objective-C
 
 ```objectivec
-#import <ACPCore_iOS/ACPCore_iOS.h>
-#import <ACPCampaign_iOS/ACPCampaign_iOS.h>
-#import <ACPIdentity_iOS/ACPIdentity_iOS.h>
-#import <ACPSignal_iOS/ACPSignal_iOS.h>
-#import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-#import <ACPUserProfile_iOS/ACPUserProfile.h>
+#import "ACPCore.h"
+#import "ACPCampaign.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
 ```
 
 #### Swift
 
 ```swift
-import ACPCore_iOS
-import ACPCampaign_iOS
-import ACPIdentity_iOS
-import ACPLifecycle_iOS
-import ACPSignal_iOS
-import ACPUserProfile_iOS
+import ACPCore
+import ACPCampaign
+import ACPUserProfile
 ```
 {% endtab %}
 {% endtabs %}
@@ -145,6 +132,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% endtabs %}
+
+### Set up in-app messaging
+{% hint style="info" %}
+Need help creating an in-app mesage using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+{% endhint %}
+
+For message types that allow you to target Adobe Campaign profiles (CRM profiles) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the **setLinkageFields** API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
 
 ### Set up push messaging
 
@@ -214,11 +208,13 @@ c\) The push token:
 2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
 ```
 
+{% hint style="warning" %}
+Each setPushIdentifier call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call setPushIdentifier multiple times. 
+{% endhint %}
+
 ### Tracking for push and in-app messaging
 
-To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, contact your beta program manager.
-
-For more information, go to [Configuring your application in Launch](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ConfiguringyourapplicationinLaunch) and search for _Create rules for push notifications tracking postback_ and _Create rules for In-App tracking postback_ .
+To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, go to [Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step3CreaterulesforInApptrackingpostback) .
 
 ## Deleting mobile properties in Launch
 
