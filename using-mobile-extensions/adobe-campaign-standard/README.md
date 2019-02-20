@@ -205,7 +205,7 @@ c\) The push token:
 ```
 
 {% hint style="warning" %}
-Each `setPushIdentifier` call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call setPushIdentifier multiple times.
+Each `setPushIdentifier` call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call `setPushIdentifier` multiple times.
 {% endhint %}
 
 ### Tracking for push and in-app messaging
