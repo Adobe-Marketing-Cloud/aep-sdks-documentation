@@ -1,5 +1,11 @@
 # Release notes
 
+## February 20, 2019
+
+The Adobe Campaign Standard extension version 1.0.0 is now available! 
+
+This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
+
 ## February 7, 2109
 
 The following updates were made to the Mobile Core extension in iOS version 2.0.2:
