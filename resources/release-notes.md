@@ -2,7 +2,7 @@
 
 ## February 20, 2019
 
-The Adobe Campaign Standard extension version 1.0.0 is now available! 
+The Adobe Campaign Standard extension version 1.0.0 is now available!
 
 This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 

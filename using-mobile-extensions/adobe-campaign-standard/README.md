@@ -4,9 +4,13 @@
 **Before** you install or configure the Adobe Campaign Standard extension, read [_Getting Started_](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 {% endhint %}
 
+{% hint style="danger" %}
+If you participated in the Campaign Standard **beta**, please use [launch.adobe.com](https://launch.adobe.com) \(instead of the Launch integration environment\) to use the new Campaign Standard extension.
+{% endhint %}
+
 ## Configure the Campaign Standard extension in Launch
 
-1. In Launch's Integration environment, click the **Extensions** tab.
+1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
 3. Provide extension settings \(see [Configure Campaign Standard Extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-beta.md#configure-campaign-standard-extension)\).
 4. Click **Save**.
