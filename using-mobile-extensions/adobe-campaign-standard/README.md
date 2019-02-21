@@ -12,7 +12,7 @@ If you participated in the Campaign Standard **beta**, please use [launch.adobe.
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
-3. Provide extension settings \(see [Configure Campaign Standard Extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-beta.md#configure-campaign-standard-extension)\).
+3. Provide the extension settings.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
