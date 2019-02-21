@@ -4,7 +4,7 @@
 
 ### Campaign Request Content  <a id="configuration-response-content"></a>
 
-TThis event is a request to processes (shows) messages provided in the event data.
+This event is a request to processes (shows) messages provided in the event data.
 
 #### Data payload definition  <a id="data-payload-definition-1"></a>
 
