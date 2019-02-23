@@ -17,6 +17,26 @@ Here are the key-value pairs in this event:
 | `triggeredconsequence`| Array |
 | `loadedconsequences` | Array |
 
+#### Event data example
+
+```text
+{ 
+    "loadedconsequences": [
+    {
+        "assetsPath":"assets/path/", 
+        "detail":"details", 
+        "id":"123", 
+        "type":"iam"
+    },
+    {
+        "assetsPath":"assets/path/", 
+        "detail":"details", 
+        "id":"456", 
+        "type":"csp"
+    }]
+}
+```
+
 
 ### Configuration Response Content  <a id="configuration-response-content"></a>
 
@@ -42,6 +62,22 @@ The Adobe Campaign Standard extension will read the following key from the confi
 If `global.privacy` is changed to **optout**, linkage fields will be reset. All downloaded messages, rules will be erased and no tracking request may leave the device.
 {% endhint %}
 
+#### Event data example
+
+```text
+{
+    "global.privacy":"optedin",
+    "campaign.timeout":1,
+    "campaign.mcias":"mcias-va7.cloud.adobe.io/mcias",
+    "__dev__campaign.pkey":"",
+    "__stage__campaign.pkey":"",
+    "campaign.pkey":"",
+    "__dev__campaign.server":"mcias.campaign-demo.adobe.com",
+    "__stage__campaign.server":"mcias.campaign-demo.adobe.com",
+    "campaign.server":"mcias.campaign-demo.adobe.com"
+}
+```
+
 ### Request Identity  <a id="request-identity"></a>
 
 This event is dispatched by public API to setLinkageFields to set the linkage fields. It is used to download personalized In-App messages.
@@ -53,6 +89,19 @@ Here are the key-value pairs in this event:
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `linkage_fields` | Map<String, String> | No | This map contains either one or multiple linkage fields that are used to personally identify the logged in user. |
+
+#### Event data example
+
+```text
+{ 
+    "linkagefields": 
+    { 
+        "firstName":"john", 
+        "lastName":"doe", 
+        "age":30
+    }
+}
+```
 
 ### Request Reset  <a id="request-reset"></a>
 
@@ -75,6 +124,29 @@ Here are the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `lifecyclecontextdata` | Map | No ||
 
+#### Event data example
+
+```text
+{    "lifecyclecontextdata": 
+    {
+        "installdate":"22/05/2014",        
+        "hourofday":6,        
+        "dayofweek":2,        
+        "osversion":"iOS 12.3",        
+        "appID":"contextDataValue",        
+        "resolution":"600x1345",        
+        "devicename":"iPhoneX",        
+        "launchevent":"LaunchEvent",        
+        "prevsessionlength":345,        
+        "locale":"en-US",        
+        "runmode":"Application",        
+        "launches":42    
+    },    
+    "starttimestampmillis" :44,    
+    "maxsessionlength":22
+}
+```
+
 
 ## Events dispatched
 
@@ -89,8 +161,18 @@ This event is a response from the Adobe Campaign Standard extension contains the
 
 #### Data payload definition
 
+Here is the definition of the key-value pairs in this event:
+
+| **Key** | **Value Type** | **Optional** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `a.message.id` | String | No | Message id of the message which was triggered. |
+| `a.message.triggered` | String ("1") | No | Flag specifying the type of message interaction event. |
 
 #### Event data example
+
+```text
+{ "a.message.id": "12345678", "a.message.triggered": "1" }
+```
 
 
 
