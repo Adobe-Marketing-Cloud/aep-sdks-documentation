@@ -213,7 +213,7 @@ To update the SDK configuration, programmatically, use the following information
 
 ## Video
 
-{% embed url="https://youtu.be/VfuKDx7leCM" %}
+{% embed url="https://www.youtube.com/watch?v=kgUJNFQp3PI" caption="Using Mobile SDK Privacy APIs" %}
 
 ## Additional information
 
