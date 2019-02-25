@@ -4,9 +4,9 @@
 
 ### Campaign Request Content  <a id="configuration-response-content"></a>
 
-This event is dispatched from Event Hub for the following scenarios:
-1. Event data containing loaded consequences for the latest registered campaign rules needs to be dispatched
-2. When a rule is matched for a Campaign consequence. This event contains the data of either local, alert or full screen message that is triggered to be displayed.
+This event is dispatched from the Event Hub for the following scenarios:
+1. Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
+2. This event is dispatched immediately after a Campaign rule is found to be true. For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert , or full-screen message.
 
 #### Data payload definition  <a id="data-payload-definition-1"></a>
 
@@ -44,7 +44,7 @@ The data property in this event is used by each extension to modify its current 
 
 #### Data payload definition  <a id="data-payload-definition-3"></a>
 
-The Adobe Campaign Standard extension will read the following key from the configuration event:
+The Adobe Campaign Standard extension reads the following key from the configuration event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -55,11 +55,11 @@ The Adobe Campaign Standard extension will read the following key from the confi
 | `campaign.server` | String | Yes | This contains the endpoint URL for the production environment Adobe Campaign Standard instance |
 | `campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in production environment Adobe Campaign Standard |
 | `campaign.mcias` | String | Yes | This contains the in-app messaging service URL endpoint |
-| `campaign.timeout` | String | Yes | This contains the amount of time to wait for a response from in-app messaging service |
+| `campaign.timeout` | Integer | Yes | This contains the amount of time to wait for a response from in-app messaging service |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings |
 
 {% hint style="info" %}
-If `global.privacy` is changed to **optout**, linkage fields will be reset. All downloaded messages, rules will be erased and no tracking request may leave the device.
+After `global.privacy` is changed to **optout**, the linkage fields are reset. All downloaded messages and rules are erased, and no tracking request can leave the device.
 {% endhint %}
 
 #### Event data example
@@ -80,7 +80,7 @@ If `global.privacy` is changed to **optout**, linkage fields will be reset. All 
 
 ### Request Identity  <a id="request-identity"></a>
 
-This event is dispatched by public API to setLinkageFields to set the linkage fields. It is used to download personalized In-App messages.
+This event is dispatched by the API to setLinkageFields, which sets the linkage fields. It is used to download personalized in-app messages.
 
 #### Data payload definition  <a id="data-payload-definition-4"></a>
 
@@ -105,7 +105,7 @@ Here are the key-value pairs in this event:
 
 ### Request Reset  <a id="request-reset"></a>
 
-This event is dispatched when a user decides they no longer wants to utilize personalized In-App messages. Following the recieval of this event, campaign deletes all personalized messages and redownloads only generic messages.
+This event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Campaign deletes all personalized messages and downloads only generic messages again.
 
 #### Data payload definition  <a id="data-payload-definition-5"></a>
 
@@ -151,7 +151,7 @@ Here are the key-value pairs in this event:
 ## Events dispatched
 
 ### Campaign Response Content
-This event is a response from the Adobe Campaign Standard extension contains the message interaction details (Viewed, Triggered or Clicked). 
+This event is a response from the Adobe Campaign Standard extension and contains the message interaction details (Viewed, Triggered or Clicked). 
 
 #### Event details
 
