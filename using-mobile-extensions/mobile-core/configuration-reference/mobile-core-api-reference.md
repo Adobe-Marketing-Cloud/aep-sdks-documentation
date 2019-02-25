@@ -1,5 +1,82 @@
 # Mobile Core API Reference
 
+# Application reference
+
+When building Android applications, it is required to pass the `android.app.Application` reference to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
+
+{% hint style="warning" %}
+
+Android applications must call MobileCore.setApplication() before calling any other Mobile SDK API.
+
+{% endhint %}
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+### setApplication
+
+#### Syntax
+
+```java
+public static void setApplication(final Application app)
+```
+
+#### Example
+
+```java
+public class CoreApp extends Application {
+
+   @Override
+   public void onCreate() {
+      super.onCreate();
+      MobileCore.setApplication(this);
+      MobileCore.start(null);
+   }
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+### getApplication
+
+{% hint style="warning" %}
+
+`MobileCore.getApplication` may return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
+
+{% endhint %}
+
+#### Syntax
+
+```java
+public static Application getApplication()
+```
+
+#### Example
+
+```java
+Application app = MobileCore.getApplication();
+if (app != null) {
+    ...
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+
+
 ## Track app actions
 
 Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
