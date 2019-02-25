@@ -5,8 +5,8 @@
 ### Campaign Request Content  <a id="configuration-response-content"></a>
 
 This event is dispatched from the Event Hub for the following scenarios:
-1. Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
-2. This event is dispatched immediately after a Campaign rule is found to be true. For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert , or full-screen message.
+- Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
+- This event is dispatched immediately after a Campaign rule is found to be true. For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
 
 #### Data payload definition  <a id="data-payload-definition-1"></a>
 
