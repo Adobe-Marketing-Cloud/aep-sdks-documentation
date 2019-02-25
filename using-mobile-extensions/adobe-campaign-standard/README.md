@@ -5,7 +5,7 @@
 {% endhint %}
 
 {% hint style="danger" %}
-If you participated in the Campaign Standard **beta**, please use [launch.adobe.com](https://launch.adobe.com) \(instead of the Launch integration environment\) to use the new Campaign Standard extension.
+If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, use [launch.adobe.com](https://launch.adobe.com), instead of the Launch integration environment, .
 {% endhint %}
 
 ## Configure the Campaign Standard extension in Launch
@@ -138,7 +138,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Need help creating an in-app message using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 {% endhint %}
 
-For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the **setLinkageFields** API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
+For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
 
 ### Set up push messaging
 
@@ -182,7 +182,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed.
+If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
 
 ### Debug log examples
 
