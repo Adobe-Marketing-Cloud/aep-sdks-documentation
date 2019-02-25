@@ -1,6 +1,6 @@
 # Get the Application Context
 
-In Android, you can retrieve the `android.app.Application` instance using the `MobileCore.getApplication()` API. The returned Application represents the base class which maintains the global application state.
+In Android, you can retrieve the `android.app.Application` instance using the `MobileCore.getApplication()` API. The returned Application represents the base class which maintains the global application state. For more information, [Moble Core API Reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md)
 
 {% tabs %}
 {% tab title="Android" %}
@@ -8,6 +8,12 @@ In Android, you can retrieve the `android.app.Application` instance using the `M
 ### Android
 
 ### getApplication
+
+{% hint style="warning" %}
+
+`MobileCore.getApplication` may return `null` if the Application object was destroyed or if `MobileCore.setApplication`was not previously called.
+
+{% endhint %}
 
 #### Syntax
 
