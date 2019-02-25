@@ -37,6 +37,7 @@
   * [Campaign Classic event reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-event-reference.md)
 * [Adobe Campaign Standard](using-mobile-extensions/adobe-campaign-standard/README.md)
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
+  * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
