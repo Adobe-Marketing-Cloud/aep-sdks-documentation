@@ -2,11 +2,11 @@
 
 # Application reference
 
-When building Android applications, it is required to pass the `android.app.Application` reference to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
+When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
 
 {% hint style="warning" %}
 
-Android applications must call MobileCore.setApplication() before calling any other Mobile SDK API.
+Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 
 {% endhint %}
 
@@ -52,7 +52,7 @@ public class CoreApp extends Application {
 
 {% hint style="warning" %}
 
-`MobileCore.getApplication` may return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
+`MobileCore.getApplication` might return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
 
 {% endhint %}
 
