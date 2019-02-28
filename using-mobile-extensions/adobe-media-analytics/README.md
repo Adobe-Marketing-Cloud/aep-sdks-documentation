@@ -181,7 +181,7 @@ func application(_ application: UIApplication,
 
 ## Configuration keys
 
-To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference]().
 
 | Key | Required | Description |
 | :--- | :--- | :--- |

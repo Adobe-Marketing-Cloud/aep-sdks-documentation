@@ -178,7 +178,7 @@ To automatically report on the application lifecycle details in Analytics, ensur
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see  [Track app actions](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views).
+To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see  [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
 `trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. 
@@ -390,7 +390,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 ## Videos
 
-### Using [trackState](../mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
+### Using [trackState](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" %}
 
@@ -398,7 +398,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 ## Configuration Keys
 
-To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference]().
 
 <table>
   <thead>

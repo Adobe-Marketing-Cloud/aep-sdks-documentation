@@ -49,13 +49,14 @@ Causes the SDK to download the configuration for the provided App ID and apply i
 ```
 
 #### Example
-###### Objective-C
+
+**Objective-C**
 
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-###### Swift
+**Swift**
 
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
@@ -77,7 +78,6 @@ Keys not found on the current configuration are added when this method is follow
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### updateConfiguration
 
 #### Syntax
@@ -99,7 +99,7 @@ MobileCore.updateConfiguration(data);
 ### updateConfiguration
 
 {% hint style="success" %}
-Starting in ACPCore 2.0.3 for iOS, any key provided via __updateConfiguration__ should not have a prefix. The configuration extension might modify the key provided to be correct for the corresponding `build.environment` in which the app is running. For more information, see [Environment-aware Configuration Properties](README.md#environment-aware-configuration-properties).
+Starting in ACPCore 2.0.3 for iOS, any key provided via **updateConfiguration** should not have a prefix. The configuration extension might modify the key provided to be correct for the corresponding `build.environment` in which the app is running. For more information, see [Environment-aware Configuration Properties](./#environment-aware-configuration-properties).
 {% endhint %}
 
 #### Syntax
@@ -107,18 +107,22 @@ Starting in ACPCore 2.0.3 for iOS, any key provided via __updateConfiguration__ 
 ```objectivec
 + (void) updateConfiguration: (NSDictionary* __nullable) config;
 ```
+
 #### Example
-###### Objective-C
+
+**Objective-C**
+
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.ssl":@YES};
 [ACPCore updateConfiguration:updatedConfig];
 ```
-###### Swift
+
+**Swift**
+
 ```swift
 let updatedConfig = ["global.ssl":true]
 ACPCore.updateConfiguration(updatedConfig)
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -140,6 +144,7 @@ To pass in a bundled path and file name:
 {% tabs %}
 {% tab title="Android" %}
 ### configureWithFileInPath
+
 #### Syntax
 
 ```java
@@ -163,16 +168,20 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 
 #### Example
-###### Objective-C
+
+**Objective-C**
+
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
 [ACPCore configureWithFileInPath:filePath];
 ```
-###### Swift
+
+**Swift**
+
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
 ```
-
 {% endtab %}
 {% endtabs %}
+

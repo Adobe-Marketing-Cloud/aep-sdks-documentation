@@ -4,7 +4,7 @@ This page details SDK API changes between the Experience Platform SDK and 4x SDK
 
 ## Mobile Core APIs <a id="audience-manager-extension-apis"></a>
 
-For more information, see [Mobile Core API reference](../../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md).
+For more information, see [Mobile Core API reference](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
 
 ### Supported APIs
 
@@ -14,13 +14,13 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | [getPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | privacyStatus \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [setPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | setPrivacyStatus: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [setLogLevel](../../getting-started/initialize-the-sdk.md#enable-debug-logging) | setDebugLogging: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [configureWithFileInPath:](../../using-mobile-extensions/mobile-core/configuration-reference/#using-a-bundled-file-configuration) | overrideConfigPath: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [configureWithAppId:](../../using-mobile-extensions/mobile-core/configuration-reference/#launch-environment-id) | Not applicable |
-| [updateConfiguration:](../../using-mobile-extensions/mobile-core/configuration-reference/#programmatic-updates-to-configuration) | Not applicable |
+| [configureWithFileInPath:]() | overrideConfigPath: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [configureWithAppId:]() | Not applicable |
+| [updateConfiguration:]() | Not applicable |
 | setAppGroup: | setAppGroup: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ios_ext.html)\) |
-| [trackState:data:](../../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/states.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/states.html)\) |
-| [trackAction:data:](../../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) |
-| [collectPII:](../../using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
+| [trackState:data:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/states.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/states.html)\) |
+| [trackAction:data:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) |
+| [collectPII:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
 | [getSdkIdentities:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_mob_gdpr_ret-stored-ids-ios.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_mob_gdpr_ret-stored-ids-android.html)\) |
 
 ### Deprecated APIs & Functionality
