@@ -1,6 +1,6 @@
 # Identity API reference
 
-## Synch identifiers
+## Sync identifiers
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
@@ -152,7 +152,7 @@ NSDictionary *ids = @{@"idType":@"idValue"};
 **Swift**
 
 ```swift
-let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];ACPIdentity.syncIdentifiers(identifiers, authentication: 
+let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];ACPIdentity.syncIdentifiers(identifiers, authentication:
 ACPMobileVisitorAuthenticationState.authenticated)
 ```
 {% endtab %}
@@ -526,7 +526,7 @@ Contains the origin, the type, a value, and the authentication state of the visi
 Used to indicate the authentication state for the current `VisitorID`.
 
 ```objectivec
-typedef NS_ENUM(NSUInteger, 
+typedef NS_ENUM(NSUInteger,
     ADBMobileVisitorAuthenticationState) {    
     ACPMobileVisitorAuthenticationStateUnknown          = 0,    
     ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
@@ -534,4 +534,3 @@ typedef NS_ENUM(NSUInteger,
 ```
 {% endtab %}
 {% endtabs %}
-
