@@ -47,12 +47,6 @@
   * [Profile API references](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
 
-## Tutorials
-* [Add Experience Cloud ID Service](tutorials/id-service.md)
-* [Add Analytics to Your App](tutorials/analytics.md)
-* [Add Audience Manager](tutorials/audience-manager.md)
-* [Add Adobe Campaign](tutorials/campaign.md)
-
 ## Resources
 
 * [Upgrading to AEP SDK](resources/upgrading-to-aep/README.md)
