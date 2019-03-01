@@ -4,10 +4,10 @@
 
 The Target extension has been enhanced.
 
-The Target Client Code is now automatically added based on your Adobe Experience Cloud organization.
+The Target Client Code is now automatically added based on your Experience Cloud organization.
 
 * If no code is found, you can type it in.
-* if multiple codes are found, you can select the code from the drop-down list.
+* If multiple codes are found, you can select the code from the drop-down list.
 
 ## February 20, 2019
 
