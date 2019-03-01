@@ -1,5 +1,14 @@
 # Release notes
 
+## February 28, 2019
+
+The Target extension has been enhanced.
+
+The Target Client Code is now automatically added based on your IMS organization.
+
+* If no code is found, you can type it in.
+* if multiple codes are found, select the code from the drop-down list.
+
 ## February 20, 2019
 
 The Adobe Campaign Standard extension version 1.0.0 is now available!
