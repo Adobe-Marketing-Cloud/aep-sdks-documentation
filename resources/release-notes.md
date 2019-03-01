@@ -4,7 +4,7 @@
 
 The Target extension has been enhanced.
 
-The Target Client Code is now automatically added based on your IMS organization.
+The Target Client Code is now automatically added based on your Experience Cloud organization.
 
 * If no code is found, you can type it in.
 * if multiple codes are found, you can select the code from the drop-down list.
