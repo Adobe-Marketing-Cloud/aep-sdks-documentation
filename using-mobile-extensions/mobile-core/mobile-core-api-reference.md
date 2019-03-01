@@ -261,7 +261,7 @@ ACPCore.collectLaunchInfo(userInfo)
 
 ## Set Icons for local notification
 
-Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center. The large icon will be the primary image that is displayed when the user sees the complete notification in the notification center.
+Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
 {% hint style="info" %}
 Those APIs are Android only.
