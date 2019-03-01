@@ -1,4 +1,4 @@
-# Places \(Beta\)
+# Adobe Places \(Beta\)
 
 The Places extension allows you to act based on the location of your users. This extension is the interface to the Places Query Service APIs. By listening for events that contain GPS coordinates and geofence region events, this extension dispatches new events that will be processed by the Rules Engine. The Places extension also retrieves and delivers a list of the nearest places of interest \(POI\) for the app data that retrieves from the APIs. The regions returned by the APIs are stored in cache and persistence, which will allows limited offline processing.
 

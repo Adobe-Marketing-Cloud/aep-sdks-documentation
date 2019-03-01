@@ -46,7 +46,7 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API references](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
-* [Places \(Beta\)](using-mobile-extensions/places-extension/README.md)
+* [Adobe Places \(Beta\)](using-mobile-extensions/places-extension/README.md)
   * [Places API reference](using-mobile-extensions/places-extension/places-api-reference.md)
   * [Places event reference](using-mobile-extensions/places-extension/places-event-reference.md)
   * [Custom Places objects](using-mobile-extensions/places-extension/custom-places-objects.md)

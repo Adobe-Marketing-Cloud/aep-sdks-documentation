@@ -52,7 +52,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Enable Location updates in background <a id="enable-location-updates-in-background"></a>
 
-iOS supports the delivery of location events to apps that are suspended or no longer running. To receive location updates in the background for the Places Monitoring extension, configure the Location updates capability for your app in Xcode.![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LFU0QMlNa2BozkGzwB1%2F-LZkQu44YDLpfqD3TF7S%2F-LZkQvPobl-TTKWy_Se4%2Fbackground-location-updates.png?generation=1551295823464293&alt=media)background-location-updates
+iOS supports the delivery of location events to apps that are suspended or no longer running. To receive location updates in the background for the Places Monitoring extension, configure the Location updates capability for your app in Xcode.background-location-updates.
+
+![](../../../.gitbook/assets/using-the-places-monitor_1.png)
 
 ## Configuring the plist keys <a id="configuring-the-plist-keys"></a>
 
@@ -63,5 +65,5 @@ You must include the `NSLocationWhenInUseUsageDescription` and `NSLocationAlways
 * `NSLocationWhenInUseUsageDescription` should be added with the value describing why the app is requesting access to the user’s location information while running in the foreground.
 * `NSLocationAlwaysAndWhenInUseUsageDescription` should be added with the describing why the app is requesting access to the user’s location information at all times.
 
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LFU0QMlNa2BozkGzwB1%2F-LZkQu44YDLpfqD3TF7S%2F-LZkQvPq2JSS_EC4H1QH%2Flocation-permission.png?generation=1551295822531941&alt=media)
+![](../../../.gitbook/assets/using-the-places-monitor_2.png)
 
