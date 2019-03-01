@@ -258,6 +258,46 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
+
+## Set Icons for local notification
+
+Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center. The large icon will be the primary image that is displayed when the user sees the complete notification in the notification center.
+
+{% hint style="info" %}
+Those APIs are Android only.
+{% endhint %}
+
+#### Java
+
+
+### setSmallIconResourceID
+
+#### Syntax
+
+```java
+public static void setSmallIconResourceID(int resourceID) 
+```
+
+#### Example
+
+```java
+ MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
+```
+
+### setLargeIconResourceID
+
+#### Syntax
+
+```java
+public static void setLargeIconResourceID(int resourceID) 
+```
+
+#### Example
+
+```java
+ MobileCore.setLargeIconResourceID(R.mipmap.ic_launcher_round);
+```
+
 ## Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
