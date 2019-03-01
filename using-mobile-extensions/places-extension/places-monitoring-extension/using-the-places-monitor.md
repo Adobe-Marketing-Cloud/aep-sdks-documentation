@@ -34,7 +34,7 @@ import ACPPlacesimport ACPPlacesMonitor
 
 iOS
 
-In your app's`application:didFinishLaunchingWithOptions`, register PlacesMonitor and Places with Mobile Core:
+In your app's`application:didFinishLaunchingWithOptions`, register `PlacesMonitor` and Places with Mobile Core:
 
 #### Objective-C <a id="objective-c-1"></a>
 
