@@ -1,5 +1,15 @@
 # Release notes
 
+## March 1, 2019
+
+The following updates were made to the Mobile Core extension in Android version 1.1.0.
+
+* setSmallIcon and setLargeIcon APIs added.
+
+The following updates were made to the Mobile Analytics extension in Android version 1.1.1.
+
+* Use configuration setting ‘analytics.launchHitDelay’ to indicate how long to wait before Analytics launch hits are sent.
+
 ## February 28, 2019
 
 The Target extension has been enhanced.
