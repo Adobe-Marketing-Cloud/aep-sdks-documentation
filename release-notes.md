@@ -12,6 +12,27 @@ The following update was made to the Mobile Analytics extension in Android versi
 
 ## February 28, 2019
 
+The first version of Places is now available for public beta access!
+
+The Places solution is composed of the following components:
+
+* The **Places Services**, which is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer.  For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1). 
+*  A **Places-specific card** on Adobe IO \(coming soon\). 
+* The **Places UI**, which is built on the APIs that are provided by the Places Service. This UI allows the customer to create and manage their Places libraries. To log in to the Places UI, go to [https://places.adobe.com](https://places.adobe.com). 
+* The **Places Extension \(Launch & SDK\)** – The functionality in the extension retrieves the relevant Places data from the Places Services based on the location of the calling device.  The SDK extension also dispatches Places-related events on the Event Hub for consumption by the Rules Engine and other interested extensions: 
+  * **GitHub**: [https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces) 
+  *  **Cocoapod**: [https://cocoapods.org/pods/ACPPlaces](https://cocoapods.org/pods/ACPPlaces) 
+  * **Maven Central**: [https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places)
+
+### Documentation Links
+
+To learn more about Places, here are links to the documentation:
+
+* UI - [https://launch.gitbook.io/places-services-by-adobe-documentation/](https://launch.gitbook.io/places-services-by-adobe-documentation/)
+* SDK - [https://aep-sdks.gitbook.io/docs/using-mobile-extensions/places-extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/places-extension)
+
+## February 28, 2019
+
 The Target extension has been enhanced.
 
 The Target Client Code is now automatically added based on your Experience Cloud organization.
