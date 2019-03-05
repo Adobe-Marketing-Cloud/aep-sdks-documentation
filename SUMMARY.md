@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Overview](README.md)
+* [Release notes](release-notes.md)
 
 ## Getting Started
 
@@ -83,5 +84,4 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
-* [Release notes](resources/release-notes.md)
 
