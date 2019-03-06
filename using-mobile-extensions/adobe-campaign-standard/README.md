@@ -82,7 +82,7 @@ import com.adobe.marketing.mobile.UserProfile;
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -91,7 +91,7 @@ pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
 
 In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
@@ -184,10 +184,6 @@ For message types that allow you to target Adobe Campaign profiles \(CRM profile
 
 ### Set up push messaging
 
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
-
 {% hint style="info" %}
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
@@ -195,7 +191,7 @@ Need help creating a push notification using Adobe Campaign? For more informatio
 {% tabs %}
 {% tab title="Android" %}
 
-Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client) 
+Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 ### setPushIdentifier
 
@@ -212,6 +208,11 @@ MobileCore.setPushIdentifier(registrationID);
 {% endtab %}
 
 {% tab title="iOS" %}
+
+{% hint style="warning" %}
+iOS simulators do not support push messaging.
+{% endhint %}
+
 After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
 ### setPushIdentifier
