@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Overview](README.md)
+* [Release notes](release-notes.md)
 
 ## Getting Started
 
@@ -12,10 +13,11 @@
 ## Using Mobile Extensions
 
 * [Mobile Core](using-mobile-extensions/mobile-core/README.md)
-  * [Configuration methods reference](using-mobile-extensions/mobile-core/configuration-reference/README.md)
-    * [Mobile Core API reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md)
-    * [Mobile Core event reference](using-mobile-extensions/mobile-core/configuration-reference/mobile-core-event-reference.md)
-    * [Rules Engine reference](using-mobile-extensions/mobile-core/configuration-reference/rules-engine-reference.md)
+  * [Mobile Core API reference](using-mobile-extensions/mobile-core/mobile-core-api-reference.md)
+  * [Mobile Core event reference](using-mobile-extensions/mobile-core/mobile-core-event-reference.md)
+  * [Configuration](using-mobile-extensions/mobile-core/configuration/README.md)
+    * [Configuration API reference](using-mobile-extensions/mobile-core/configuration/configuration-api-reference.md)
+    * [Configuration event reference](using-mobile-extensions/mobile-core/configuration/configuration-event-reference.md)
   * [Identity](using-mobile-extensions/mobile-core/identity/README.md)
     * [Identity API reference](using-mobile-extensions/mobile-core/identity/identity-api-reference.md)
     * [Identity event reference](using-mobile-extensions/mobile-core/identity/identity-event-reference.md)
@@ -24,6 +26,7 @@
     * [Lifecycle event reference](using-mobile-extensions/mobile-core/lifecycle/lifecycle-event-reference.md)
   * [Signals](using-mobile-extensions/mobile-core/signals/README.md)
     * [Signals extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
+  * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
@@ -44,6 +47,20 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API references](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
+* [Places \(Beta\)](using-mobile-extensions/places-extension/README.md)
+  * [Places extension](using-mobile-extensions/places-extension/places-extension/README.md)
+    * [Places API reference](using-mobile-extensions/places-extension/places-extension/places-api-reference.md)
+    * [Places event reference](using-mobile-extensions/places-extension/places-extension/places-event-reference.md)
+    * [Custom Places objects](using-mobile-extensions/places-extension/places-extension/custom-places-objects.md)
+  * [Places Monitoring extension](using-mobile-extensions/places-extension/places-monitoring-extension/README.md)
+    * [Places Monitor API reference](using-mobile-extensions/places-extension/places-monitoring-extension/places-monitor-api-reference.md)
+    * [Places Monitor event reference](using-mobile-extensions/places-extension/places-monitoring-extension/places-monitor-event-reference.md)
+    * [Select libraries to monitor](using-mobile-extensions/places-extension/places-monitoring-extension/select-libraries-to-monitor.md)
+    * [Monitor the user location](using-mobile-extensions/places-extension/places-monitoring-extension/monitor-the-user-location/README.md)
+      * [Select an app to monitor](using-mobile-extensions/places-extension/places-monitoring-extension/monitor-the-user-location/select-an-app-to-monitor.md)
+      * [Monitor the Adobe SDK](using-mobile-extensions/places-extension/places-monitoring-extension/monitor-the-user-location/monitor-the-adobe-sdk.md)
+    * [Using the Places monitor](using-mobile-extensions/places-extension/places-monitoring-extension/using-the-places-monitor.md)
+    * [Using your own monitor](using-mobile-extensions/places-extension/places-monitoring-extension/using-your-own-monitor.md)
 
 ## Resources
 
@@ -67,5 +84,4 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
-* [Release notes](resources/release-notes.md)
 

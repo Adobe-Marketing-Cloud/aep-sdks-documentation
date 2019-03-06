@@ -172,7 +172,7 @@ The following is a complete list of all of the metrics provided on your user's a
 | :--- | :--- | :--- |
 
 
-If you need to programmatically update SDK configuration, use the following information to change your Lifecycle configuration values. For more information, see [Configuration Methods Reference](../configuration-reference/).
+If you need to programmatically update SDK configuration, use the following information to change your Lifecycle configuration values. For more information, see [Configuration Methods Reference]().
 
 {% hint style="warning" %}
 The time that your app spends in the background is not included in the session length.
