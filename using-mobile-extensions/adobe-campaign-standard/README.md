@@ -52,14 +52,35 @@ The **Request Timeout** value must be a non-zero number.
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-The Android version of this extension is currently in progress.
+This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
 {% tabs %}
+{% tab title="Android" %}
+
+1. Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) extension to your project using the app's Gradle file.
+```java
+    implementation ('com.adobe.marketing.mobile:core:+')
+    implementation ('com.adobe.marketing.mobile:userprofile:+')
+    implementation ('com.adobe.marketing.mobile:identity:+')
+    implementation ('com.adobe.marketing.mobile:lifecycle:+')
+    implementation ('com.adobe.marketing.mobile:signal:+')
+```
+2. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Campaign;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+```
+
+{% endtab %}
 {% tab title="iOS" %}
-{% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
-{% endhint %}
+
 
 ![](../../.gitbook/assets/acs-pods.png)
 
@@ -100,6 +121,28 @@ import ACPUserProfile
 ### Register Campaign Standard with Mobile Core
 
 {% tabs %}
+{% tab title="Android" %}
+{% tabs %} {% tab title="Android" %} In your App's OnCreate method register the Campaign Standard extension:
+```java
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.VERBOSE);
+
+        try {
+            Campaign.registerExtension();
+            UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+        } catch (Exception e) {
+        }
+
+    }
+```
+{% endtab %}
+
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
@@ -150,10 +193,28 @@ iOS simulators do not support push messaging.
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
+{% tabs %}
+{% tab title="Android" %}
+
+Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client) 
+
+### setPushIdentifier
+
+#### Syntax
+```java
+void setPushIdentifier(final String registrationID)
+```
+
+#### Example
+```java
+MobileCore.setPushIdentifier(registrationID);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
 After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
-{% tabs %}
-{% tab title="iOS" %}
 ### setPushIdentifier
 
 #### Objective-C
