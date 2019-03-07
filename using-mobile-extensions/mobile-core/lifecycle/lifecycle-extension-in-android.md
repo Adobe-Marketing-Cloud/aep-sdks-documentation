@@ -8,7 +8,7 @@ You can track lifecycle to learn how frequently and how long your app is being u
 
 ## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
 
-Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [Configuration Methods in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/configuration-methods-in-android).
+Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [L](https://aep-sdks.gitbook.io/docs/~/edit/drafts/-L_P6bcNQSqbiVJok7ps/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference)ifecycle API reference.
 
 To implement lifecycle metrics, complete the following steps in each Activity of your application:
 
@@ -64,7 +64,7 @@ To implement lifecycle metrics, complete the following steps in each Activity of
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
-**Important**: App crashes are tracked as part of lifecycle metrics. Before you can track crashes, add the library to your project. For more information about implementing lifecycle, see [Implementing Lifecycle Metrics in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/lifecycle/lifecycle-extension-in-android#implementing-lifecycle-metrics-in-android).
+**Important**: App crashes are tracked as part of lifecycle metrics. Before you can track crashes, add the library to your project. For more information about implementing lifecycle, see [Implementing Lifecycle Metrics in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-lifecycle-metrics-in-android).
 
 When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleStart(additionalContextData)` in the `OnResume` method of each activity. In the `onPause` method, a call is made to `MobileCore.lifecyclePause()`. In the `MobileCore.lifecyclePause()` method, a flag is set to indicate a graceful exit. When the app is launched again or resumed, `MobileCore.lifecycleStart(additionalContextData)` checks this flag. If the app did not exit successfully as determined by the flag status, an `a.CrashEvent` context data is sent with the next call, and a crash event is reported.
 
