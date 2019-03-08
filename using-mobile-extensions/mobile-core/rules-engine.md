@@ -30,7 +30,7 @@ The `rules.json` consists of a root level JSON object that contains the followin
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
 | Version | `version` | number | **Required**. Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
-| Rules | `rules` | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md). |
+| Rules | `rules` | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
 
 ## Rule object definition
 
