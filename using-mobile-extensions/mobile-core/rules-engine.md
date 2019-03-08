@@ -198,7 +198,7 @@ The consequences section of a rule lists the file names of each consequence obje
 | **Friendly Name** | **Key    Value** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
 | Identifier | `id` | string | String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence Type | `type` | string | A Consequence Type from the [Consequences Type](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) table. |
+| Consequence Type | `type` | string | A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
 | Consequence Details | `detail` | object | JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence types
@@ -206,14 +206,14 @@ The consequences section of a rule lists the file names of each consequence obje
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
 | Analytics | `an` | Sends data to Analytics |  |
-| In-App Message | `iam` | In-App Message | [In-App Consequence Detail Defintion](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) |
-| Postback | `pb` | Send Postback\(s\) | [Postback Consequence Detail Definition](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) |
-| PII | `pii` | Sync Pii | [Sync PII Consequence Detail Definition](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) |
-| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | [Open URL Consequence Detail Definition](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) |
+| In-App Message | `iam` | In-App Message | In-App Consequence Detail Definition |
+| Postback | `pb` | Send Postback\(s\) | Postback Consequence Detail Definition |
+| PII | `pii` | Sync Pii | Sync PII Consequence Detail Definition |
+| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | Open URL Consequence Detail Definition |
 | Callback | `cb` | Calls a customer-defined method. |  |
 | Target | `tar` | Send a request to Target with location information to enrich the User's profile. |  |
 | Audience Manager | `aam` | Send a request to Audience Manager with location information to enrich the User's profile. |  |
-| Client Side Profile | `csp` | Create/Delete operations against the Client-Side Profile. | [Profile Consequence Detail Definition](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/acba563f0cb9ad5f5dd051ad3205d4e1bf785b29/using-mobile-extensions/mobile-core/rules-engine/rules-engine-reference.md) |
+| Client Side Profile | `csp` | Create/Delete operations against the Client-Side Profile. | Profile Consequence Detail Definition |
 | Generate Event | `event` | Generate a raw event on the event hub. |  |
 
 ## rules.json examples
