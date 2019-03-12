@@ -21,7 +21,7 @@ If you decide to use your monitoring services, register the geofences of the POI
 }
 ```
 
-3. Extract the information from the obtained `ACPPlacesPOI` objects and start monitoring those POIs
+1. Extract the information from the obtained `ACPPlacesPOI` objects and start monitoring those POIs
 
 ```text
 - (void) startMonitoringGeoFences: (NSArray*) newGeoFences {
@@ -89,7 +89,6 @@ private void startMonitoringFences(final List<PlacesPOI> nearByPOIs) {
 ```
 {% endtab %}
 {% endtabs %}
-
 
 Calling the `getNearbyPointsOfInterest` API results in a network call that gets the location around the current location.
 

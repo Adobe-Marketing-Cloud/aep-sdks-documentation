@@ -16,7 +16,7 @@ The Places extension allows you to act based on the location of your users. This
 
 ### Configure the Places extension
 
-\[to be updated\] Image of Launch Places configuration page
+![](../../../.gitbook/assets/configure-places-extension.png)
 
 ## Add the Places extension to your app
 
