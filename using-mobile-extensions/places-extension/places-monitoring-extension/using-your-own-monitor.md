@@ -99,9 +99,9 @@ private void startMonitoringFences(final List<PlacesPOI> nearByPOIs) {
 
 {% endtabs %}
 
-"Calling the ``getNearbyPointsOfInterest` API results in a network call that gets the location around the current location.
+Calling the `getNearbyPointsOfInterest` API results in a network call that gets the location around the current location.
 
-**Important** : You should call the API sparingly or only when there is significant location change of the user."
+**Important** : You should call the API sparingly or only when there is significant location change of the user.
 
 ## Posting Geofence Events
 
