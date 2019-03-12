@@ -59,10 +59,7 @@
   * [Places Monitoring extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/README.md)
     * [Places Monitor API reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-api-reference.md)
     * [Places Monitor event reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-event-reference.md)
-    * [Select libraries to monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/select-libraries-to-monitor.md)
-    * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location/README.md)
-      * [Select an app to monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location/select-an-app-to-monitor.md)
-      * [Monitor the Adobe SDK](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location/monitor-the-adobe-sdk.md)
+    * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location.md)
     * [Using the Places monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-the-places-monitor.md)
     * [Using your own monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-your-own-monitor.md)
 
