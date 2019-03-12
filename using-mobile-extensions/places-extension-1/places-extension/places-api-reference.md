@@ -80,7 +80,7 @@ public static void getNearbyPointsOfInterest(final Location location,
 Places.getNearbyPlaces(currentLocation, 10, new AdobeCallback<List<PlacesPOI>>() {
     @Override
     public void call(List<PlacesPOI> pois) {
-		// do required processing with the returned nearbyPoi array
+        // do required processing with the returned nearbyPoi array
         startMonitoringPois(pois);
     }
 });
@@ -163,7 +163,7 @@ Places.getCurrentPointsOfInterest(new AdobeCallback<List<PlacesPOI>>() {
 Requests the location of the device, as previously known by the Places extension.
 
 {% hint style="info" %}
-The Places extension only knows about locations that were provided to it via calls to [GetNearbyPointsOfInterest]().
+The Places extension only knows about locations that were provided to it via calls to [GetNearbyPointsOfInterest](places-api-reference.md).
 {% endhint %}
 
 {% tabs %}
