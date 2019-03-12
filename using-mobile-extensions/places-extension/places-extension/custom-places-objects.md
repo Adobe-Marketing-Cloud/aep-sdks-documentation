@@ -4,11 +4,12 @@
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ### ACPPlacesPoi
 
 #### Definition
 
-```text
+```objective-c
 /**
  *  @class ACPPlacesPoi
  *
@@ -27,5 +28,20 @@
 @end
 ```
 {% endtab %}
+
+{% tab title="Android" %}
+
+```java
+public class PlacesPOI {
+    public String getIdentifier();  ///< The identifier for the POI
+    public String getName(); 		///< The name of the POI
+	public double getLatitude();	///< The latitude of the POI's center
+	public double getLongitude();	///< The longitude of the POI's center
+	public Map<String, String> getMetadata();	///< Dictionary containing meta data for the POI
+    public boolean containsUser();  ///< Indicates if the device is currently inside of this POI
+```
+
+{% endtab %}
+
 {% endtabs %}
 

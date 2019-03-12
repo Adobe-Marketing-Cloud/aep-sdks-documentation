@@ -80,9 +80,8 @@ public static void getNearbyPointsOfInterest(final Location location,
 Places.getNearbyPlaces(currentLocation, 10, new AdobeCallback<List<PlacesPOI>>() {
     @Override
     public void call(List<PlacesPOI> pois) {
-        // use the obtained POIs to plot them or register for geofencing
-        plotPlacesPOI(pois);
-        registerGeofencing(pois);
+		// do required processing with the returned nearbyPoi array
+        startMonitoringPois(pois);
     }
 });
 ```
