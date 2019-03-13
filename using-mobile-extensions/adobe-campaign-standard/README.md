@@ -60,6 +60,7 @@ This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [P
 1. Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) extension to your project using the app's Gradle file.
 ```java
     implementation ('com.adobe.marketing.mobile:core:+')
+    implementation ('com.adobe.marketing.mobile:campaign:+')
     implementation ('com.adobe.marketing.mobile:userprofile:+')
     implementation ('com.adobe.marketing.mobile:identity:+')
     implementation ('com.adobe.marketing.mobile:lifecycle:+')
