@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 #### ACS Endpoints
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
+Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases the server endpoint is the root URL address i.e. companyname.campaing.adobe.com
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
