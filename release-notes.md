@@ -1,5 +1,11 @@
 # Release notes
 
+## March 14, 2019
+
+The following update was made to the Mobile Core extension in Android version 1.1.2:
+
+* Resolved an issue that could result in a crash when the underlying Analytics database was corrupted.
+
 ## March 7, 2019
 
 The following update was made to the Mobile Core extension in Android version 1.1.1:
