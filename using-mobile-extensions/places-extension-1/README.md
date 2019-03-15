@@ -12,3 +12,5 @@ Each extension provides the following functionality:
 
 * **The Places Monitor** **extension** manages device location by OS-specified region monitoring from the nearest POIs in your Places database and passing entry/exit events to the Places extension. This extension is optional and offers an alternative way to manage locations.
 
+Learn more about Places, by visiting [Places Documentation.](https://placesdocs.com/)
+
