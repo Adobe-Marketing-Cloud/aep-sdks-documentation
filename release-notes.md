@@ -4,7 +4,7 @@
 
 The following update was made to the Mobile Core extension in Android version 1.1.2:
 
-* Resolved an issue that could result in a crash when the underlying Analytics database was corrupted.
+* Resolved an issue that might result in a crash when the underlying Analytics database was corrupted.
 
 ## March 7, 2019
 
