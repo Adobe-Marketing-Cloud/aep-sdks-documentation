@@ -260,15 +260,13 @@ ACPCore.collectLaunchInfo(userInfo)
 
 ## Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. It allows a separation between Mobile SDK messages and application messages in the device log files.
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages, and allows the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK.
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging mode when using in production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS). By default, the Mobile SDK logging mode is set to error.
 
-As a Mobile SDK extension developer, use the `log` APIs to include extension log messages with Mobile SDK core log messages.
+As a Mobile SDK extension developer, use the MobileCore (Android) / ACPCore (iOS) `log` API to include extension log messages with Mobile SDK core log messages. 
 
-The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `TRACE`.
-
-
+The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `VERBOSE`.
 
 {% tabs %}
 
@@ -287,7 +285,11 @@ public static void setLogLevel(LoggingMode mode)
 #### Example
 
 ```java
-MobileCore.setLogLevel(com.adobe.marketing.mobile.LoggingMode.VERBOSE);
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+...
+    
+MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 
 {% endtab %}
@@ -307,6 +309,9 @@ MobileCore.setLogLevel(com.adobe.marketing.mobile.LoggingMode.VERBOSE);
 #### Example
 
 ```objective-c
+#import "ACPCore.h"
+...
+    
 [ACPCore setLogLevel: ACPMobileLogLevelVerbose];
 ```
 
@@ -327,6 +332,9 @@ MobileCore.setLogLevel(com.adobe.marketing.mobile.LoggingMode.VERBOSE);
 #### Example
 
 ```swift
+import ACPCore
+...
+
 ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 ```
 
@@ -435,13 +443,13 @@ public static void logError(final String tag, final String message)
 #### Example
 
 ```java
-MobileCore.logDebug("MyActivity", "Debug message.");
+MobileCore.logDebug("MyClassName", "Provided data was null");
 ```
 
 #### Output Example
 
 ```
-D/AdobeExperienceSDK: MyActivity - Debug message.
+D/AdobeExperienceSDK: MyClassName - Provided data was null
 ```
 
 {% endtab %}
@@ -461,13 +469,13 @@ D/AdobeExperienceSDK: MyActivity - Debug message.
 #### Example
 
 ```objective-c
-[ACPCore log: ACPMobileLogLevelDebug, tag:@"source", message:@"debug message"];
+[ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
 ```
 
 #### Output Example
 
 ```
-[AdobeExperienceSDK DEBUG <source>]: debug message
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
 {% endtab %}
@@ -487,13 +495,13 @@ D/AdobeExperienceSDK: MyActivity - Debug message.
 #### Example
 
 ```swift
-ACPCore.log(ACPMobileLogLevel.debug, tag: "source", message: "debug message");
+ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
 ```
 
 #### Output Example
 
 ```
-[AdobeExperienceSDK DEBUG <source>]: debug message
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
 {% endtab %}
