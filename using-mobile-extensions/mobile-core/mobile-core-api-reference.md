@@ -260,7 +260,7 @@ ACPCore.collectLaunchInfo(userInfo)
 
 ## Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. It allows a separation between Mobile SDK messages and application messages in the device log files. 
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. It allows a separation between Mobile SDK messages and application messages in the device log files.
 
 As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK.
 
@@ -438,6 +438,12 @@ public static void logError(final String tag, final String message)
 MobileCore.logDebug("MyActivity", "Debug message.");
 ```
 
+#### Output Example
+
+```
+D/AdobeExperienceSDK: MyActivity - Debug message.
+```
+
 {% endtab %}
 
 {% tab title="Objective-C" %}
@@ -458,6 +464,12 @@ MobileCore.logDebug("MyActivity", "Debug message.");
 [ACPCore log: ACPMobileLogLevelDebug, tag:@"source", message:@"debug message"];
 ```
 
+#### Output Example
+
+```
+[AdobeExperienceSDK DEBUG <source>]: debug message
+```
+
 {% endtab %}
 
 {% tab title="Swift" %}
@@ -475,7 +487,13 @@ MobileCore.logDebug("MyActivity", "Debug message.");
 #### Example
 
 ```swift
-ACPCore.log(ACPMobileLogLevel.debug, "source", "debug message");
+ACPCore.log(ACPMobileLogLevel.debug, tag: "source", message: "debug message");
+```
+
+#### Output Example
+
+```
+[AdobeExperienceSDK DEBUG <source>]: debug message
 ```
 
 {% endtab %}
