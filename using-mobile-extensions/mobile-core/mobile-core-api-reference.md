@@ -258,6 +258,230 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
+## Logging
+
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. It allows a separation between Mobile SDK messages and application messages in the device log files. 
+
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK.
+
+As a Mobile SDK extension developer, use the `log` APIs to include extension log messages with Mobile SDK core log messages.
+
+The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `TRACE`.
+
+
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+### setLogLevel
+
+#### Syntax
+
+```java
+public static void setLogLevel(LoggingMode mode)
+```
+
+#### Example
+
+```java
+MobileCore.setLogLevel(com.adobe.marketing.mobile.LoggingMode.VERBOSE);
+```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+#### Objective-C
+
+### setLogLevel
+
+#### Syntax
+
+```objective-c
++ (void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+#### Example
+
+```objective-c
+[ACPCore setLogLevel: ACPMobileLogLevelVerbose];
+```
+
+{% endtab %}
+
+{% tab title="Swift" %}
+
+#### Swift
+
+### setLogLevel
+
+#### Syntax
+
+```swift
++ (void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+#### Example
+
+```swift
+ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+### getLogLevel
+
+#### Syntax
+
+```java
+public static LoggingMode getLogLevel()
+```
+
+#### Example
+
+```java
+LoggingMode mode = MobileCore.getLogLevel();
+```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+#### Objective-C
+
+### getLogLevel
+
+#### Syntax
+
+```objective-c
++ (ACPMobileLogLevel) logLevel;
+```
+
+#### Example
+
+```
+var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
+```
+
+{% endtab %}
+
+{% tab title="Swift" %}
+
+#### Swift
+
+### getLogLevel
+
+#### Syntax
+
+```swift
++ (ACPMobileLogLevel) logLevel;
+```
+
+#### Example
+
+```swift
+let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+The `MobileCore` logging APIs use the `android.util.Log` APIs to log message to Android.
+
+- `MobileCore.logTrace` calls `android.util.Log.v`
+- `MobileCore.logDebug` calls `android.util.Log.d`
+- `MobileCore.logWarning` calls `android.util.Log.w`
+- `MobileCore.logError` calls `android.util.Log.e`
+
+### logTrace
+
+### logDebug
+
+### logWarning
+
+### logError
+
+#### Syntax
+
+```java
+public static void logTrace(final String tag, final String message)
+public static void logDebug(final String tag, final String message)
+public static void logWarning(final String tag, final String message)
+public static void logError(final String tag, final String message)
+```
+
+#### Example
+
+```java
+MobileCore.logDebug("MyActivity", "Debug message.");
+```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+#### Objective-C
+
+### log
+
+#### Syntax
+
+```objective-c
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+#### Example
+
+```objective-c
+[ACPCore log: ACPMobileLogLevelDebug, tag:@"source", message:@"debug message"];
+```
+
+{% endtab %}
+
+{% tab title="Swift" %}
+
+#### Swift
+
+### log
+
+#### Syntax
+
+```swift
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+#### Example
+
+```swift
+ACPCore.log(ACPMobileLogLevel.debug, "source", "debug message");
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ## Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
