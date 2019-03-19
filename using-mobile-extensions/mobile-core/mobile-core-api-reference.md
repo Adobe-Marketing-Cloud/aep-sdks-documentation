@@ -266,7 +266,7 @@ As an application developer, use the `setLogLevel` API to filter the log message
 
 As a Mobile SDK extension developer, use the `log` APIs to include extension log messages with Mobile SDK core log messages.
 
-The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `TRACE`.
+The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `VERBOSE`.
 
 
 
@@ -408,34 +408,27 @@ let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
 
 #### Java
 
-The `MobileCore` logging APIs use the `android.util.Log` APIs to log message to Android.
+The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` passed to `MobileCore.log()`, the following Android method is called:
 
-- `MobileCore.logTrace` calls `android.util.Log.v`
-- `MobileCore.logDebug` calls `android.util.Log.d`
-- `MobileCore.logWarning` calls `android.util.Log.w`
-- `MobileCore.logError` calls `android.util.Log.e`
+- `LoggingMode.VERBOSE` uses `android.util.Log.v`
+- `LoggingMode.DEBUG` uses `android.util.Log.d`
+- `LoggingMode.WARNING` uses `android.util.Log.w`
+- `LoggingMode.ERROR` uses `android.util.Log.e`
 
-### logTrace
+All log messages from the Adobe Experience SDK to Android use the same log tag of ***AdobeExperienceSDK***. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
-### logDebug
-
-### logWarning
-
-### logError
+### log
 
 #### Syntax
 
 ```java
-public static void logTrace(final String tag, final String message)
-public static void logDebug(final String tag, final String message)
-public static void logWarning(final String tag, final String message)
-public static void logError(final String tag, final String message)
+public static void log(final LoggingMode mode, final String tag, final String message)
 ```
 
 #### Example
 
 ```java
-MobileCore.logDebug("MyActivity", "Debug message.");
+MobileCore.log(LoggingMode.DEBUG, "MyActivity", "Debug message.");
 ```
 
 {% endtab %}
@@ -443,6 +436,8 @@ MobileCore.logDebug("MyActivity", "Debug message.");
 {% tab title="Objective-C" %}
 
 #### Objective-C
+
+All log messages from the Adobe Experience SDK to iOS use a common format which contains the tag ***AdobeExperienceSDK***. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
 
 ### log
 
