@@ -262,7 +262,9 @@ ACPCore.collectLaunchInfo(userInfo)
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages, and allows the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging mode when using in production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS). By default, the Mobile SDK logging mode is set to error.
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging in a production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS). 
+
+By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
 
 As a Mobile SDK extension developer, use the MobileCore (Android) / ACPCore (iOS) `log` API to include extension log messages with Mobile SDK core log messages.
 
@@ -443,7 +445,7 @@ public static void log(final LoggingMode mode, final String tag, final String me
 #### Example
 
 ```java
-MobileCore.log(LoggingMode.DEBUG, "MyActivity", "Debug message.");
+MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
 ```
 
 #### Output Example
