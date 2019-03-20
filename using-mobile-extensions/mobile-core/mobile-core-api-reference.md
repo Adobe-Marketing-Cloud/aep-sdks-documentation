@@ -268,6 +268,13 @@ As a Mobile SDK extension developer, use the MobileCore (Android) / ACPCore (iOS
 
 The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `VERBOSE`.
 
+{% hint style="info" %}
+In Android, Mobile SDK uses `android.util.Log` class for logging the messages, by calling `Log.v()`, `Log.d()`, `Log.w()`, and `Log.e()` based on the provided log level. 
+
+In iOS, Mobile SDK uses `NSLog` for logging the message to Apple System Log facility. 
+
+{% endhint %}
+
 {% tabs %}
 
 {% tab title="Android" %}
