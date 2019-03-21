@@ -1,5 +1,30 @@
 # Release notes
 
+## March 21, 2019
+
+The following update was made to the Mobile Core extension in Android version 1.2.1: 
+
+* Added protection around null results when `toString` is called on Intent extras data.
+
+## March 20, 2019
+
+The following update was made to the Mobile Core extension in Android version 1.2.0:
+
+### **Configuration**
+
+* If there is no cached configuration available, you can fetch the configuration after a network restore.
+* Added environment-aware support, which allows you to define dev and stage environments in a property. ****This overrides the config properties that were based on the default environment.
+
+### Core
+
+* Added the `MobileCore.getApplication` API, which allows third-party extension developers access the application context.
+* Added the `MobileCore.log` API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LoggingMode` to select the verbosity of the logs.
+* You can also use the `MobileCore.getLogLevel` API to retrieve the current `LoggingMode` that was set in the SDK.
+
+### Identity
+
+* You can regenerate the MID when privacy settings change from opted out to opted in/opt unknown in the same session.
+
 ## March 14, 2019
 
 The following update was made to the Mobile Core extension in Android version 1.1.2:
