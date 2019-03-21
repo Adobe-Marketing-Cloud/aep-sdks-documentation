@@ -2,7 +2,7 @@
 
 A common use case is to add an event listener to get notifications for events that occur in the Adobe Experience Platform SDK. The main location to add an event listener is in the `init` method, although you can add listeners by using other callbacks later. You can add the logic that you want executed when an event occurs, and for which you have a listener, in the `hear` method of your listener class. 
 
-The Adobe Experience Cloud Platform SDK  will  lowercase the strings  like extension name, event type and event source strings, and  it is recommended  to compare the extension name, event type and event source strings using ignore case whenever compared.
+In the Adobe Experience Cloud Platform SDK the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
 
 When handling an event in the event listener, take into consideration that the `hear` method should take a maximum of 100ms to execute. This means that potentially long-running operations should be pushed to another thread \(for example, network or file operations\), as in the following examples.
 
