@@ -24,20 +24,20 @@ The following tables provide information about the differences between the new E
 | App screens & user actions tracking | Yes | Yes |
 | Offline tracking | Yes | Yes |
 | Hit batching | Yes | Yes |
-| Milestone media tracking | Yes | No |
-| Timed action tracking | Yes | No |
-| Video heartbeats | Yes | _Support coming_ |
+| Milestone media tracking | Yes | Deprecated |
+| Timed action tracking | Yes | Deprecated |
+| Video heartbeats | Yes | Yes |
 | Lifetime value | Yes | Yes, use Profile extension |
 | Server-side forwarding - Audience Manager | Yes | Yes |
-| Set/get custom visitor ID \(vid or s.vid\) | Yes | No |
+| Set/get custom visitor ID \(vid or s.vid\) | Yes | Yes |
 
 ### Adobe Analytics - Mobile Services / Mobile Add-on
 
 | Functionality | 4x SDK | Experience Platform SDK |
 | :--- | :--- | :--- |
-| Postbacks - Get/POST URL requests | Yes | Yes, use Signals extension |
-| Postbacks - PII Get/POST URL requests | Yes | Yes, use Signals extension |
-| Postbacks - Open app deeplink | Yes | Yes, use Signals extension |
+| Postbacks - Get/POST URL requests | Yes | Yes - Signals extension |
+| Postbacks - PII Get/POST URL requests | Yes | Yes - Signals extension |
+| Postbacks - Open app deeplink | Yes | Yes - Signals extension |
 | Push Messaging | Yes | Support coming |
 | In-app Messaging | Yes | Support coming |
 | Marketing/Acquisition Links | Yes | Support coming |
@@ -51,7 +51,7 @@ The following tables provide information about the differences between the new E
 | Send signals to Audience Manager | Yes | Yes |
 | Reset identifiers and profiles | Yes | Yes |
 | Return visitor profiles | Yes | Yes |
-| DPID/DPUUID synching | Yes | No |
+| DPID/DPUUID synching | Yes | Deprecated |
 
 {% hint style="warning" %}
 Although synching with integration codes is fully supported, the Experience Cloud SDKs do not offer synch support with integration codes. The use of DPID/DPUUID are not supported.

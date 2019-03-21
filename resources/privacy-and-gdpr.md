@@ -18,7 +18,7 @@ You can set a privacy status to ensure collection of data suits your user's pref
 | **Target** | Mbox requests are sent | Mbox requests not sent | Mbox requests queued |
 
 {% hint style="info" %}
-Analytics users: If your report suite is not timestamp enabled, hits will be discarded until the privacy status changes to opt in.
+**Analytics users**: If your report suite is not timestamp enabled, hits are discarded until the privacy status changes to `opt in`.
 {% endhint %}
 
 To programmatically set the privacy status for the app user:
@@ -205,13 +205,17 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration Methods Reference](../using-mobile-extensions/mobile-core/configuration-reference/#update-configuration).
+To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration Methods Reference]().
 
 | Key | Description |
 | :--- | :--- |
-| global.privacy | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
+| `global.privacy` | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
 
-## Further Reading
+## Video
+
+{% embed url="https://www.youtube.com/watch?v=kgUJNFQp3PI" caption="Using Mobile SDK Privacy APIs" %}
+
+## Additional information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
 * To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)

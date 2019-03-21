@@ -1,6 +1,6 @@
 # Profile
 
-You can use the User Profile extension to store attributes about your user on the client. This information can later be used to target and personalize messages during online or offline scenarios, without having to connect to a server for optimal performance. The User Profile extension manages the Client-Side Operation Profile \(CSOP\) and provides a way to react to public APIs, updates user profile attributes, and shares the user profile attributes with the rest of the system as a generated event.
+You can use the Profile extension to store attributes about your user on the client. This information can later be used to target and personalize messages during online or offline scenarios, without having to connect to a server for optimal performance. The Profile extension manages the Client-Side Operation Profile \(CSOP\) and provides a way to react to APIs, updates user profile attributes, and shares the user profile attributes with the rest of the system as a generated event.
 
 The Profile data is used by other extensions to perform profile-related actions. An example is the Rules Engine extension that consumes the profile data and runs rules based on the profile data.
 
@@ -11,8 +11,8 @@ To get started with the Profile extension:
 1. Configure the **Profile Extension** in **Launch**.
 2. Add the **Profile Extension** to your app.
 3. Implement Profile APIs to:
-   1. Update user attributes
-   2. Remove user attributes
+   1. Update user attributes.
+   2. Remove user attributes.
 
 ## Add Profile to your App
 
@@ -33,14 +33,18 @@ To add the Profile extension to your app:
 2. Import the UserProfile and Identity library.   
 
 ```text
-   #import <ACPCore_iOS/ACPCore_iOS.h>#import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
+   #import "ACPCore.h"
+   #import "ACPUserProfile.h"
 ```
 
 ### Swift
 
-If you are building in Swift, this step is co
+```swift
+   import ACPCore
+   import ACPUserProfile
+```
 
-## Register the Profile Extension
+## Register the Profile extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -50,7 +54,7 @@ If you are building in Swift, this step is co
 
 1. The UserProfile extension must be registered with the SDK core before calling any UserProfile API.
 
-   This may be done after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
+   This can be done after calling  `setApplication()` in the `onCreate()` method. Here is a code sample which calls these set up methods:
 
 ```java
 public class MobileApp extends Application {
