@@ -31,7 +31,9 @@ To create a simple extension, complete the following procedures in the order in 
 
 ### A. **Create an Extension Class**
 
-The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class that any extensions must derive from. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you will have the opportunity to extend the Adobe Experience Platform SDKs functionality by registering event listeners, or by setting a default shared state that other modules can access.
+The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class that any extensions must derive from. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you will have the opportunity to extend the Adobe Experience Platform SDKs functionality by registering event listeners, or by setting a default shared state that other modules can access. 
+
+The Adobe Experience Cloud Platform SDK  will  lowercase the strings  like extension name, event type and event source strings, and  it is recommended  to compare the extension name, event type and event source strings using ignore case whenever compared.
 
 {% tabs %}
 {% tab title="Android" %}
