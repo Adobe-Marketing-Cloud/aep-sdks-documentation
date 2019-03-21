@@ -42,7 +42,7 @@ public void hear(final Event event) {
 
 ## Public Shared State Constants
 
-Here is a list of the publically shared state constants and when they are available:
+Here is a list of the shared state constants and when they are available:
 
 `com.adobe.module.configuration`, which is available any time after start up.
 
