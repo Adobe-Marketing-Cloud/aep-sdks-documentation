@@ -8,9 +8,9 @@ An event is composed of the following information:
 * Event data, which is the structured data that is associated with this particular event.   This data is retrievable as a JSON blob.
 * Versioning information, which is used to synchronize a group of events with the associated shared data, is not directly exposed to extensions.  This information is implicitly used when getting shared states.
 
-**Tip**: Extensions use the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class to create events and access the information the modules hold. 
+**Tip**: Extensions use the ACPExtensionEvent (iOS) / Event (Android) class to create events to dispatch to the extensions in order to make requests or retrieve data.
 
-In the Adobe Experience Cloud Platform SDK the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
+In the Adobe Experience Cloud Platform SDK, the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
 
 Here are some examples of potential events:
 

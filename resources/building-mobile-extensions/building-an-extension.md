@@ -34,7 +34,7 @@ To create a simple extension, complete the following procedures in the order in 
 
 The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
 
-In the Adobe Experience Cloud Platform SDK the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
+In the Adobe Experience Cloud Platform SDK, the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
 
 
 #### **Android**
