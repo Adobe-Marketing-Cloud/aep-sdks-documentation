@@ -51,18 +51,39 @@ The **Request Timeout** value must be a non-zero number.
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-The Android version of this extension is currently in progress.
+This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
 {% endhint %}
 
 {% tabs %}
+{% tab title="Android" %}
+
+1. Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) extension to your project using the app's Gradle file.
+```java
+    implementation ('com.adobe.marketing.mobile:core:+')
+    implementation ('com.adobe.marketing.mobile:campaign:+')
+    implementation ('com.adobe.marketing.mobile:userprofile:+')
+    implementation ('com.adobe.marketing.mobile:identity:+')
+    implementation ('com.adobe.marketing.mobile:lifecycle:+')
+    implementation ('com.adobe.marketing.mobile:signal:+')
+```
+2. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Campaign;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+```
+
+{% endtab %}
 {% tab title="iOS" %}
-{% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
-{% endhint %}
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -71,7 +92,7 @@ pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
 
 In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
@@ -99,6 +120,28 @@ import ACPUserProfile
 ### Register Campaign Standard with Mobile Core
 
 {% tabs %}
+{% tab title="Android" %}
+{% tabs %} {% tab title="Android" %} In your App's OnCreate method register the Campaign Standard extension:
+```java
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.VERBOSE);
+
+        try {
+            Campaign.registerExtension();
+            UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+        } catch (Exception e) {
+        }
+
+    }
+```
+{% endtab %}
+
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
@@ -142,18 +185,37 @@ For message types that allow you to target Adobe Campaign profiles \(CRM profile
 
 ### Set up push messaging
 
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
-
 {% hint style="info" %}
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
-After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
-
 {% tabs %}
+{% tab title="Android" %}
+
+Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+
+### setPushIdentifier
+
+#### Syntax
+```java
+void setPushIdentifier(final String registrationID)
+```
+
+#### Example
+```java
+MobileCore.setPushIdentifier(registrationID);
+```
+
+{% endtab %}
+
 {% tab title="iOS" %}
+
+{% hint style="warning" %}
+iOS simulators do not support push messaging.
+{% endhint %}
+
+After you complete [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+
 ### setPushIdentifier
 
 #### Objective-C
