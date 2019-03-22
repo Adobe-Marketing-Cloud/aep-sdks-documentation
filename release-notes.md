@@ -2,6 +2,12 @@
 
 ## March 21, 2019
 
+The Adobe Campaign Standard extension version 1.0.0 is now available for Android! 
+
+This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
+
+## March 21, 2019
+
 The following update was made to the Mobile Core extension in Android version 1.2.1: 
 
 * Added protection around null results when `toString` is called on Intent extras data.

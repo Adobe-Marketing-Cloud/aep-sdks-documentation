@@ -6,13 +6,13 @@ Allows Campaign to connect fields from separate databases and create a more deve
 
 {% tabs %}
 {% tab title="Android" %}
+### Syntax
 
-#### Syntax
 ```java
 public void setLinkageFields(final Map<String, String> linkageFields)
 ```
 
-#### Example
+### Example
 
 ```java
 HashMap<String, String> linkageFields = new HashMap<String, String>();
@@ -21,25 +21,24 @@ linkageFields.put("cusLastName", "Doe");
 linkageFields.put("cusEmail", "john.doe@email.com");
 Campaign.setLinkageFields(linkageFields);
 ```
-
 {% endtab %}
-{% tab title="iOS" %}
 
-#### Syntax
+{% tab title="iOS" %}
+### Syntax
 
 ```objectivec
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
-#### Objective-C
+### Objective-C
 
-#### Example
+### Example
 
 ```objectivec
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
-#### Swift
+### Swift
 
 ```swift
 var linkageFields = [String: String]()
@@ -57,37 +56,35 @@ Removes the previously stored linkage fields in the SDK and triggers the Campaig
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+### Syntax
 
 ```java
-public void resetLinkageFields() 
+public void resetLinkageFields()
 ```
 
-#### Example
+### Example
 
 ```java
 Campaign.resetLinkageFields()
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-#### Syntax
+### Syntax
 
 ```objectivec
 + (void) resetLinkageFields;
 ```
 
-#### Objective-C
+### Objective-C
 
-#### Example
+### Example
 
 ```objectivec
 [ACPCampaign resetLinkageFields];
 ```
 
-#### Swift
+### Swift
 
 ```swift
 ACPCampaign.resetLinkageFields();

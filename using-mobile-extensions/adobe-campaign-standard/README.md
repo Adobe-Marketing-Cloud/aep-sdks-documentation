@@ -51,21 +51,22 @@ The **Request Timeout** value must be a non-zero number.
 ## Add Campaign Standard to your app
 
 {% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](mobile-core/) and [Profile](profile/) extensions.
+This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.
 
-1. Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) extension to your project using the app's Gradle file.
-```java
+   ```java
     implementation ('com.adobe.marketing.mobile:core:+')
     implementation ('com.adobe.marketing.mobile:campaign:+')
     implementation ('com.adobe.marketing.mobile:userprofile:+')
     implementation ('com.adobe.marketing.mobile:identity:+')
     implementation ('com.adobe.marketing.mobile:lifecycle:+')
     implementation ('com.adobe.marketing.mobile:signal:+')
-```
+   ```
+
 2. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
 
 ```java
@@ -77,13 +78,12 @@ import com.adobe.marketing.mobile.MobileCore;
 import com.adobe.marketing.mobile.Signal;
 import com.adobe.marketing.mobile.UserProfile;
 ```
-
 {% endtab %}
-{% tab title="iOS" %}
 
+{% tab title="iOS" %}
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](mobile-core/), and [Profile](profile/) libraries to your project. You also need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -119,9 +119,12 @@ import ACPUserProfile
 
 ### Register Campaign Standard with Mobile Core
 
+
+
 {% tabs %}
 {% tab title="Android" %}
-{% tabs %} {% tab title="Android" %} In your App's OnCreate method register the Campaign Standard extension:
+In your App's OnCreate method register the Campaign Standard extension:
+
 ```java
     @Override
     public void onCreate() {
@@ -145,7 +148,7 @@ import ACPUserProfile
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
-#### Objective-C   <a id="objective-c-1"></a>
+#### Objective-C    <a id="objective-c-1"></a>
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -191,25 +194,24 @@ Need help creating a push notification using Adobe Campaign? For more informatio
 
 {% tabs %}
 {% tab title="Android" %}
-
-Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 ### setPushIdentifier
 
 #### Syntax
+
 ```java
 void setPushIdentifier(final String registrationID)
 ```
 
 #### Example
+
 ```java
 MobileCore.setPushIdentifier(registrationID);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 {% hint style="warning" %}
 iOS simulators do not support push messaging.
 {% endhint %}
@@ -280,7 +282,7 @@ To set up tracking postbacks for push and in-app messaging and create rules for 
 Deleting your property in Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-If you delete your mobile property in Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property). 
+If you delete your mobile property in Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property).
 
 To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 
