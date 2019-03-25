@@ -19,7 +19,7 @@ Want to know how to find report suite IDs? See [Report Suites](https://marketing
 {% endhint %}
 
 Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be added using the **Add Another** button and removed using the
-**Remove Circle** button.
+**Remove Circle** button.  Report suite IDs can be configured for the Development and Staging environments as well now.
 
 #### **Tracking Server**
 
