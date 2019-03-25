@@ -10,7 +10,7 @@
 
 ### **Configure Analytics Extension**
 
-![Adobe Analytics Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.33.47-pm.png)
+![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
 #### **Report Suites**
 
@@ -18,7 +18,8 @@
 Want to know how to find report suite IDs? See [Report Suites](https://marketing.adobe.com/resources/help/en_US/reference/report_suites_admin.html).
 {% endhint %}
 
-Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be comma separated with no space between, for example, _rsid1,rsid2_.
+Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be added using the **Add Another** button and removed using the
+**Remove Circle** button.  Report suite IDs can be configured for the Development and Staging environments as well now.
 
 #### **Tracking Server**
 
