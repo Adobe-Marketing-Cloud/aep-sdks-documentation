@@ -1,30 +1,28 @@
 # Mobile Core API reference
 
-# Application reference
+## Mobile Core API reference
+
+## Application reference
 
 When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
 
 {% hint style="warning" %}
-
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
-
 {% endhint %}
 
 {% tabs %}
-
 {% tab title="Android" %}
+**Java**
 
-#### Java
+#### setApplication
 
-### setApplication
-
-#### Syntax
+**Syntax**
 
 ```java
 public static void setApplication(final Application app)
 ```
 
-#### Example
+**Example**
 
 ```java
 public class CoreApp extends Application {
@@ -37,32 +35,26 @@ public class CoreApp extends Application {
    }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% tabs %}
-
 {% tab title="Android" %}
+**Java**
 
-#### Java
-
-### getApplication
+#### getApplication
 
 {% hint style="warning" %}
-
 `MobileCore.getApplication` might return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
-
 {% endhint %}
 
-#### Syntax
+**Syntax**
 
 ```java
 public static Application getApplication()
 ```
 
-#### Example
+**Example**
 
 ```java
 Application app = MobileCore.getApplication();
@@ -70,12 +62,10 @@ if (app != null) {
     ...
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-## Track app actions
+### Track app actions
 
 Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
@@ -89,17 +79,17 @@ If you have the **Analytics** extension set up, this method sends an Analytics a
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -109,33 +99,33 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
-#### Swift
+**Swift**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackAction("action name", data: ["key": "value"])
@@ -143,7 +133,7 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Track app states and views
+### Track app states and views
 
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
@@ -153,19 +143,19 @@ If you have the **Analytics** extension set up, this API increments page views a
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-### trackState  <a id="trackstate"></a>
+#### trackState   <a id="trackstate"></a>
 
-#### **Syntax**  <a id="syntax-1"></a>
+**Syntax**  
 
 ```text
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example  <a id="example-1"></a>
+**Example**  
 
 ```text
 Map<String, String> additionalContextData = new HashMap<String, String>();         additionalContextData.put("customKey", "value");         MobileCore.trackState("homePage", additionalContextData);
@@ -173,33 +163,33 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### trackState
+#### trackState
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
-#### Swift
+**Swift**
 
-### trackState
+#### trackState
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackState("state name", data: ["key": "value"])
@@ -207,7 +197,7 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Collect PII
+### Collect PII
 
 This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
 
@@ -217,17 +207,17 @@ While this API enables the collection of sensitive data, no data is actually sen
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void collectPII(final Map<String, String> piiData);
 ```
 
-#### Example
+**Example**
 
 ```java
 Map<String, String> data = new HashMap<String, String>();
@@ -239,17 +229,17 @@ MobileCore.collectPII(data);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
 [ACPCore collectPii:data:@{@"key1" : "@value1",
@@ -257,11 +247,11 @@ MobileCore.collectPII(data);
                            }];
 ```
 
-#### Swift
+**Swift**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```swift
 ACPCore.collectPii(data: [String : String])
@@ -269,7 +259,7 @@ ACPCore.collectPii(data: [String : String])
 {% endtab %}
 {% endtabs %}
 
-## Collect launch information
+### Collect launch information
 
 You can provide the user information to the SDK from various launch points in your application.
 
@@ -283,7 +273,7 @@ Coming soon
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
 This method should be called to support the following use cases:
 
@@ -293,21 +283,21 @@ This method should be called to support the following use cases:
 * Tracking Push Message click-through
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
-### collectLaunchInfo
+#### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
 ```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### Example
+**Example**
 
 ```text
  [ACPCore collectLaunchInfo:launchOptions];
 ```
 
-#### Swift
+**Swift**
 
 This method should be called to support the following use cases:
 
@@ -317,15 +307,15 @@ This method should be called to support the following use cases:
 * Tracking Push Message click-through
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
-### collectLaunchInfo
+#### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.collectLaunchInfo(userInfo)
@@ -333,7 +323,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Additional Information
+### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
 

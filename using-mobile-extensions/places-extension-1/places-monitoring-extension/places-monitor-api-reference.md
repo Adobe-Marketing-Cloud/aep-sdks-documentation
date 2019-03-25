@@ -2,7 +2,7 @@
 
 ## Register Places Monitor Extension
 
-Registers the ACPPlacesMonitor extension with the Core Event Hub.
+Registers the `ACPPlacesMonitor` extension with the Core Event Hub.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -16,7 +16,7 @@ Registers the ACPPlacesMonitor extension with the Core Event Hub.
 
 #### Example
 
-This method should be called in `didFinishLaunchingWithOptions` delegate method of the AppDelegate.
+This method should be called in the  `didFinishLaunchingWithOptions` delegate method of the `AppDelegate`.
 
 ```text
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -35,9 +35,9 @@ This method should be called in `didFinishLaunchingWithOptions` delegate method 
 {% endtab %}
 {% endtabs %}
 
-## Extension Version
+## Extension version
 
-Returns the current version of the ACPPlacesMonitor Extension.
+Returns the current version of the `ACPPlacesMonitor` extension.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -57,21 +57,17 @@ Returns the current version of the ACPPlacesMonitor Extension.
 {% endtab %}
 {% endtabs %}
 
-## Start Monitoring
+## Start monitoring
 
-This API tracks the device's location and monitors their nearby POIs. Use this method to start monitoring the user's GPS location. Location monitoring can be done with one of the following strategies:
+This API tracks the device's location and monitors the POIs that are near by. You can use this method to start monitoring the user's GPS location. Location monitoring can be done in one of the following ways:
 
-* Continuous
+* **Continuous**
 
-  The monitoring extension receives and processes locations more frequently. This monitoring strategy consumes a lot of power but provides higher accuracy. You can enable continuous monitoring by passing `YES` to the `continuousMonitoring` parameter.
+  The monitoring extension receives and processes locations more frequently. This monitoring strategy consumes a lot of power but provides higher accuracy. You can enable continuous monitoring by passing `YES` to the `continuousMonitoring` parameter. For more information, see [Apple documentation on continuous monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation).
 
-  For more information, see [Apple documentation on continuous monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation)
+* **Significant**
 
-* Significant
-
-  The monitoring extension only receives and processes location updates after the device has moved a significant distance from the previously processed location. This monitoring strategy consumes less power than the continuous monitoring strategy. You can enable significant monitoring by passing `NO` to the `continuousMonitoring` parameter.
-
-  For more information, see [Apple documentation on significant monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati)
+  The monitoring extension only receives and processes location updates after the device has moved a significant distance from the previously processed location. This monitoring strategy consumes less power than the continuous monitoring strategy. You can enable significant monitoring by passing `NO` to the `continuousMonitoring` parameter. For more information, see [Apple documentation on significant monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati)
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -91,7 +87,7 @@ This API tracks the device's location and monitors their nearby POIs. Use this m
 {% endtab %}
 {% endtabs %}
 
-Tip: If the authorization for the location service has not been provided for the application, the first call to the `StartWithContinuousMonitoring` API requests the authorization to use the location service as configured for the application.
+**Tip**: If the authorization for the location service has not been provided for the application, the first call to the `StartWithContinuousMonitoring` API requests the authorization to use the location service as configured for the application.
 
 ## Stop Monitoring
 
