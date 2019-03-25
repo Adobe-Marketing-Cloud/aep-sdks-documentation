@@ -181,9 +181,9 @@ To automatically report on the application lifecycle details in Analytics, ensur
 To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see  [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
-`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. 
+`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics.  The value is sent to Analytics by using the page name variable (pagename=value). 
 
-`trackAction` reports the Action as an **event** and will not increment your page views in Analytics.
+`trackAction` reports the Action as an **event** and will not increment your page views in Analytics.  The value is sent to Analytics by using the action variable (action=value).
 {% endhint %}
 
 ## Integrations with Experience Platform solutions and services
