@@ -59,12 +59,15 @@ Returns the current version of the `ACPPlacesMonitor` extension.
 
 ## Start monitoring
 
-This API starts tracking the device's location and monitors their nearby Places
+This API starts tracking the device's location and monitors their nearby Places.
 
-When called, the Places Monitor will do the following:
+**Important**: To begin monitoring, the location service must have the necessary authorization.
 
-- If the authorization for the location service has not been provided for the application, the first call to the `start` API requests for authorization to use the location service as configured for the application
-- If available (based on device capabilities), the Places Monitor will begin tracking the user's location based on the currently set ACPPlacesMonitorMode. By default, the monitor will use: `ACPPlacesMonitorModeSignificantChanges`.
+- If the authorization for the location service has not been provided to the application, the first call to the `start` API requests the authorization to use the location service as configured for the application.
+
+- Depending on your device's capabilities, if the authorization has been provided, the Places Monitor tracks the user's location based on the currently set `ACPPlacesMonitorMode`.
+
+  By default, the monitor uses `ACPPlacesMonitorModeSignificantChanges`.
 
 {% tabs %}
 {% tab title="iOS" %}
