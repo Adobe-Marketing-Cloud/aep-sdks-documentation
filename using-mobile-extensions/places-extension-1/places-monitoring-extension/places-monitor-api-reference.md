@@ -59,35 +59,62 @@ Returns the current version of the `ACPPlacesMonitor` extension.
 
 ## Start monitoring
 
-This API tracks the device's location and monitors the POIs that are near by. You can use this method to start monitoring the user's GPS location. Location monitoring can be done in one of the following ways:
+This API starts tracking the device's location and monitors their nearby Places
 
-* **Continuous**
+When called, the Places Monitor will do the following:
 
-  The monitoring extension receives and processes locations more frequently. This monitoring strategy consumes a lot of power but provides higher accuracy. You can enable continuous monitoring by passing `YES` to the `continuousMonitoring` parameter. For more information, see [Apple documentation on continuous monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation).
-
-* **Significant**
-
-  The monitoring extension only receives and processes location updates after the device has moved a significant distance from the previously processed location. This monitoring strategy consumes less power than the continuous monitoring strategy. You can enable significant monitoring by passing `NO` to the `continuousMonitoring` parameter. For more information, see [Apple documentation on significant monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati)
+- If the authorization for the location service has not been provided for the application, the first call to the `start` API requests for authorization to use the location service as configured for the application
+- If available (based on device capabilities), the Places Monitor will begin tracking the user's location based on the currently set ACPPlacesMonitorMode. By default, the monitor will use: `ACPPlacesMonitorModeSignificantChanges`.
 
 {% tabs %}
 {% tab title="iOS" %}
-### StartWithContinuousMonitoring
+
+### Start
 
 #### Syntax
 
 ```text
-+(void) startWithContinuousMonitoring:(BOOL)continuousMonitoring;
++ (void) start;
 ```
 
 #### Example
 
 ```text
-[ACPPlacesMonitor startWithContinuousMonitoring:YES];
+[ACPPlacesMonitor start];
 ```
+
 {% endtab %}
 {% endtabs %}
 
-**Tip**: If the authorization for the location service has not been provided for the application, the first call to the `StartWithContinuousMonitoring` API requests the authorization to use the location service as configured for the application.
+## Monitoring Mode
+
+Monitoring can be set to one of the following values:
+
+* **ACPPlacesMonitorModeContinuous**
+
+  The monitoring extension receives and processes locations more frequently. This monitoring strategy consumes a lot of power but provides higher accuracy. For more information, see [Apple documentation on continuous monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation).
+
+* **ACPPlacesMonitorModeSignificantChanges**
+
+  The monitoring extension only receives and processes location updates after the device has moved a significant distance from the previously processed location. This monitoring strategy consumes less power than the continuous monitoring strategy. For more information, see [Apple documentation on significant monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati)
+
+{% tabs %}
+{% tab title="iOS" %}
+### SetPlacesMonitorMode
+
+#### Syntax
+
+```objective-c
++ (void) setPlacesMonitorMode: (ACPPlacesMonitorMode) monitorMode;
+```
+
+#### Example
+
+```objective-c
+[ACPPlacesMonitor setPlacesMonitorMode:ACPPlacesMonitorModeSignificantChanges];
+```
+{% endtab %}
+{% endtabs %}
 
 ## Stop Monitoring
 
