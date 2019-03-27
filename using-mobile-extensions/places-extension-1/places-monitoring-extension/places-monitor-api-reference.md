@@ -16,7 +16,7 @@ Registers the `ACPPlacesMonitor` extension with the Core Event Hub.
 
 #### Example
 
-This method should be called in the  `didFinishLaunchingWithOptions` delegate method of the `AppDelegate`.
+This method should be called in the `didFinishLaunchingWithOptions` delegate method of the `AppDelegate`.
 
 ```text
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -63,15 +63,13 @@ This API starts tracking the device's location and monitors their nearby Places.
 
 **Important**: To begin monitoring, the location service must have the necessary authorization.
 
-- If the authorization for the location service has not been provided to the application, the first call to the `start` API requests the authorization to use the location service as configured for the application.
-
-- Depending on your device's capabilities, if the authorization has been provided, the Places Monitor tracks the user's location based on the currently set `ACPPlacesMonitorMode`.
+* If the authorization for the location service has not been provided to the application, the first call to the `start` API requests the authorization to use the location service as configured for the application.
+* Depending on your device's capabilities, if the authorization has been provided, the Places Monitor tracks the user's location based on the currently set `ACPPlacesMonitorMode`.
 
   By default, the monitor uses `ACPPlacesMonitorModeSignificantChanges`.
 
 {% tabs %}
 {% tab title="iOS" %}
-
 ### Start
 
 #### Syntax
@@ -85,7 +83,6 @@ This API starts tracking the device's location and monitors their nearby Places.
 ```text
 [ACPPlacesMonitor start];
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -107,13 +104,13 @@ Monitoring can be set to one of the following values:
 
 #### Syntax
 
-```objective-c
+```text
 + (void) setPlacesMonitorMode: (ACPPlacesMonitorMode) monitorMode;
 ```
 
 #### Example
 
-```objective-c
+```text
 [ACPPlacesMonitor setPlacesMonitorMode:ACPPlacesMonitorModeSignificantChanges];
 ```
 {% endtab %}

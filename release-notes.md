@@ -1,5 +1,19 @@
 # Release notes
 
+## March 25, 2019 
+
+The following update was made to the Mobile Core extension in iOS version 2.1.0:
+
+### Configuration
+
+If there is no cached configuration available, the SDK can fetch the configuration after a network restore.
+
+### Core
+
+* Added the `ACPCore` log API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LogLevel` to select the verbosity of the logs.
+* You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
+* `trackAction` and `trackState` only accept `NSDictionary`-type context data.
+
 ## March 21, 2019
 
 The Adobe Campaign Standard extension version 1.0.0 is now available for Android! 
