@@ -60,7 +60,7 @@
     * [Places Monitor API reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-api-reference.md)
     * [Places Monitor event reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-event-reference.md)
     * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location.md)
-    * [Using the Places monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-the-places-monitor.md)
+    * [Using the Places Monitor extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-the-places-monitor.md)
     * [Using your own monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-your-own-monitor.md)
 
 ## Resources

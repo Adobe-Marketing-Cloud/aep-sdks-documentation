@@ -1,6 +1,6 @@
-# Using the Places monitor
+# Using the Places Monitor extension
 
-## Configure the Places Monitoring extension in Launch <a id="configure-places-monitoring-extension-in-launch"></a>
+## Configure the Places Monitor extension in Launch <a id="configure-places-monitoring-extension-in-launch"></a>
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Places Monitoring** extension, and click **Install**.
