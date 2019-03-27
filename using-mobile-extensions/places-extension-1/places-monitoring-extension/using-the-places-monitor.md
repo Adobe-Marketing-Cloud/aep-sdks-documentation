@@ -8,9 +8,11 @@
 4. Click **Save**.
 5. Follow the publishing process to update the SDK configuration.
 
-### **Configure Places Extension** <a id="configure-places-extension"></a>
+### **Configure Places Monitor extension** <a id="configure-places-extension"></a>
 
-Screenshot to be added
+There are no configuration tasks for the Places Monitor extension.
+
+![](../../../.gitbook/assets/configure_places_monitor.png)
 
 ## Add the Places Monitor extension to your app <a id="add-places-monitor-extension-to-your-app"></a>
 
