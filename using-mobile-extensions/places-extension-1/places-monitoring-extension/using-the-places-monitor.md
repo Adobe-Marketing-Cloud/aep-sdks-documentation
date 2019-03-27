@@ -3,7 +3,7 @@
 ## Configure the Places Monitor extension in Launch <a id="configure-places-monitoring-extension-in-launch"></a>
 
 1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Places Monitoring** extension, and click **Install**.
+2. On the **Catalog** tab, locate the **Adobe Places Monitor** extension, and click **Install**.
 3. If the **Adobe Places extension** is not already installed, on the **Catalog** tab, locate the **Adobe Places** extension, and click **Install**.
 4. Click **Save**.
 5. Follow the publishing process to update the SDK configuration.
@@ -33,7 +33,7 @@ import ACPPlacesimport ACPPlacesMonitor
 
 ## Register the Places Monitor with Mobile Core
 
-iOS
+### **iOS**
 
 In your app's`application:didFinishLaunchingWithOptions`, register `PlacesMonitor` and Places with Mobile Core:
 
@@ -49,11 +49,11 @@ In your app's`application:didFinishLaunchingWithOptions`, register `PlacesMonito
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {     ACPCore.configure(withAppId: "yourAppId")        ACPPlaces.registerExtension()     ACPPlacesMonitor.registerExtension()     ACPCore.start(nil)     // Override point for customization after application launch.      return true;}
 ```
 
-**Important**: Places Monitoring depends on the Places extension. When manually installing the Analytics extension, ensure that you add the `libACPPlaces_iOS.a` library to your project.
+**Important**: Places monitoring depends on the Places extension. When manually installing the Analytics extension, ensure that you also add the `libACPPlaces_iOS.a` library to your project.
 
 ## Enable location updates in the background <a id="enable-location-updates-in-background"></a>
 
-iOS supports the delivery of location events to apps that are suspended or no longer running. To receive location updates in the background for the Places Monitoring extension, configure the Location updates capability for your app in `Xcode.background-location-updates`.
+iOS supports the delivery of location events to apps that are suspended or no longer running. To receive location updates in the background for the Places Monitor extension, configure the Location updates capability for your app in `Xcode.background-location-updates`.
 
 ![](../../../.gitbook/assets/using-the-places-monitor_1.png)
 
