@@ -56,7 +56,7 @@
     * [Places API reference](using-mobile-extensions/places-extension-1/places-extension/places-api-reference.md)
     * [Places event reference](using-mobile-extensions/places-extension-1/places-extension/places-event-reference.md)
     * [Custom Places objects](using-mobile-extensions/places-extension-1/places-extension/custom-places-objects.md)
-  * [Places Monitoring extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/README.md)
+  * [Places Monitor extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/README.md)
     * [Places Monitor API reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-api-reference.md)
     * [Places Monitor event reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-event-reference.md)
     * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location.md)
