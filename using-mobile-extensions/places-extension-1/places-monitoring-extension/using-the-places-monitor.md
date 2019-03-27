@@ -11,7 +11,7 @@
 4. Click **Save**.
 5. Follow the publishing process to update the SDK configuration.
 
-### **Configure Places Monitor extension** <a id="configure-places-extension"></a>
+### **Configure the Places Monitor extension** <a id="configure-places-extension"></a>
 
 There are no configuration tasks for the Places Monitor extension.
 
