@@ -3,8 +3,11 @@
 ## Configure the Places Monitor extension in Launch <a id="configure-places-monitoring-extension-in-launch"></a>
 
 1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Places Monitor** extension, and click **Install**.
-3. If the **Adobe Places extension** is not already installed, on the **Catalog** tab, locate the **Adobe Places** extension, and click **Install**.
+2. On the **Catalog** tab, locate the **Places Monitor** extension, and click **Install**.
+3. If the **Adobe Places extension** is not installed, locate the **Adobe Places** extension
+
+   on the **Catalog** tab, and click **Install**. 
+
 4. Click **Save**.
 5. Follow the publishing process to update the SDK configuration.
 
