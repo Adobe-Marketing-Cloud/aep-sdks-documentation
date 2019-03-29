@@ -1,20 +1,20 @@
 # Audience Manager API reference
 
-## Send Signals to Audience Manager
+## Send signals to Audience Manager
 
-Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to initial signal call.  The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
+Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to an initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
-If you are using the Experience Cloud ID \(ECID\) Service, the ECID and other custom identifiers for the same visitor are sent with each signal request. The visitor profile returned by Audience Manager is saved in SDK local storage and updated with subsequent signal calls.
+If you are using the Experience Cloud ID \(ECID\) Service \(formerly MCID\), the ECID and other custom identifiers for the same visitor are sent with each signal request. The visitor profile that is returned by Audience Manager is saved in SDK local storage and is updated with subsequent signal calls.
 
 {% hint style="info" %}
-For more information on UUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+For more information about the UUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 ### **signalWithData**
 
-On Android, the UUID is persisted in `SharedPreferences`.
+In Android, the UUID is persisted in `SharedPreferences`.
 
 #### **Syntax**
 
@@ -45,28 +45,25 @@ On iOS, UUID is persisted in `NSUserDefaults`.
 
 #### **Syntax**
 
-```java
+```objectivec
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-#### **Examples** 
+#### **Examples**
 
 **Objective-C**
 
 ```objectivec
-// objective-c
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* visitorProfile){
   // your customized code
 }];
-
 ```
 
 **Swift**
 
 ```swift
-// swift
 ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_ response: [AnyHashable: Any]?) -> Void in
   // your customized code
 })
@@ -74,12 +71,12 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_
 {% endtab %}
 {% endtabs %}
 
-## Reset Identifiers and Profiles
+## Reset identifiers and profiles
 
 This API helps you reset the Audience Manager UUID and purges the current visitor profile.
 
 {% hint style="info" %}
-For more information on UUID, DPID, DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
 {% endhint %}
 
 {% tabs %}
@@ -113,20 +110,18 @@ Audience.reset();
 **Objective-C**
 
 ```objectivec
-// objective-c
 [ACPAudience reset];
 ```
 
 **Swift**
 
 ```swift
-// swift
 ACPAudience.reset()
 ```
 {% endtab %}
 {% endtabs %}
 
-## Get visitor profile
+## Get the visitor profile
 
 Returns the visitor profile that was most recently updated. The visitor profile is saved in SDK local storage for access across multiple launches of your app. If no prior audience signal has been sent, a null value is returned when this API is called.
 
@@ -134,7 +129,7 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 {% tab title="Android" %}
 ### getVisitorProfile
 
-On Android, the visitor profile is saved in `SharedPreferences`.
+In Android, the visitor profile is saved in `SharedPreferences`.
 
 #### **Syntax**
 
@@ -163,7 +158,7 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 
 #### **Syntax**
 
-```java
+```objectivec
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
@@ -172,7 +167,6 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 **Objective-C**
 
 ```objectivec
-// objective-c
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
   // your customized code
 }];
@@ -181,7 +175,6 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 **Swift**
 
 ```swift
-// swift
 ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
     // your customized code
 })

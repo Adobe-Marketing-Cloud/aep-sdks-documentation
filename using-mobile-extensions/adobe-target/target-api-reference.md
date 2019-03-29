@@ -1,6 +1,6 @@
 # Target API reference
 
-## Get Custom Visitor IDs
+## Get custom visitor IDs
 
 Use this API to get the custom visitor ID for Target.
 
@@ -61,7 +61,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 {% endtab %}
 {% endtabs %}
 
-## Set Custom Visitor IDs
+## Set custom visitor IDs
 
 Use this API to set custom visitor IDs for Target. 
 
@@ -171,9 +171,9 @@ Gets the Target user identifier.
 {% tab title="Android" %}
 ### getTntId
 
-The callback will be invoked to return the `tntId` value, o, if no Target ID is set, `null` is returned.
+The callback is invoked to return the `tntId` value 0 if no Target ID is set, and `null` is returned.
 
-Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+Target returns `tntId` with a successful call to `loadRequests` or `prefetchContent`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
 #### Syntax
 
@@ -253,7 +253,7 @@ TargetRequest request = new TargetRequest.Builder("mboxName","defaultContent")
 
 ### loadRequests
 
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Each object in the array contains a callback function, which will be invoked when content is available for its given mbox location.
+Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Each object in the array contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -375,15 +375,15 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 {% endtab %}
 {% endtabs %}
 
-## Send an mbox Click Notification
+## Send an mbox click notification
 
-Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target.
+Sends a click notification to the configured Target server for a prefetched or regular mbox location. The click metric should be enabled for the provided location name in Target.
 
 {% tabs %}
 {% tab title="Android" %}
 ### locationClicked
 
-Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target. If notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests` indicating that the mbox was viewed.
+If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates  that the mbox was viewed.
 
 #### Syntax
 
@@ -429,7 +429,7 @@ Target.locationClicked("cartLocation", mboxParameters, productParameters, orderP
 {% tab title="iOS" %}
 ### locationClicked
 
-Sends a click notification to configured Target server for a prefetched or regular mbox location. Click metric should be enabled for the provided location name in Target. If notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests` indicating that the mbox was viewed.
+If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates  that the mbox was viewed.
 
 #### Syntax
 
