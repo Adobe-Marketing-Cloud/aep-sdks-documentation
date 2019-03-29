@@ -1,6 +1,71 @@
 # Mobile Core API reference
 
-## Track app actions
+## Mobile Core API reference
+
+## Application reference
+
+When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
+
+{% hint style="warning" %}
+Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+#### setApplication
+
+**Syntax**
+
+```java
+public static void setApplication(final Application app)
+```
+
+**Example**
+
+```java
+public class CoreApp extends Application {
+
+   @Override
+   public void onCreate() {
+      super.onCreate();
+      MobileCore.setApplication(this);
+      MobileCore.start(null);
+   }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+#### getApplication
+
+{% hint style="warning" %}
+`MobileCore.getApplication` might return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
+{% endhint %}
+
+**Syntax**
+
+```java
+public static Application getApplication()
+```
+
+**Example**
+
+```java
+Application app = MobileCore.getApplication();
+if (app != null) {
+    ...
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Track app actions
 
 Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
@@ -14,17 +79,17 @@ If you have the **Analytics** extension set up, this method sends an Analytics a
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -34,33 +99,33 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
-#### Swift
+**Swift**
 
-### trackAction
+#### trackAction
 
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackAction("action name", data: ["key": "value"])
@@ -68,7 +133,7 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Track app states and views
+### Track app states and views
 
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
@@ -78,19 +143,19 @@ If you have the **Analytics** extension set up, this API increments page views a
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-### trackState  <a id="trackstate"></a>
+#### trackState   <a id="trackstate"></a>
 
-#### **Syntax**  <a id="syntax-1"></a>
+**Syntax**
 
 ```text
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example  <a id="example-1"></a>
+**Example**
 
 ```text
 Map<String, String> additionalContextData = new HashMap<String, String>();         additionalContextData.put("customKey", "value");         MobileCore.trackState("homePage", additionalContextData);
@@ -98,33 +163,33 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### trackState
+#### trackState
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
-#### Swift
+**Swift**
 
-### trackState
+#### trackState
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackState("state name", data: ["key": "value"])
@@ -132,7 +197,7 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Collect PII
+### Collect PII
 
 This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
 
@@ -142,17 +207,17 @@ While this API enables the collection of sensitive data, no data is actually sen
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void collectPII(final Map<String, String> piiData);
 ```
 
-#### Example
+**Example**
 
 ```java
 Map<String, String> data = new HashMap<String, String>();
@@ -164,17 +229,17 @@ MobileCore.collectPII(data);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
 [ACPCore collectPii:data:@{@"key1" : "@value1",
@@ -182,11 +247,11 @@ MobileCore.collectPII(data);
                            }];
 ```
 
-#### Swift
+**Swift**
 
-### collectPii
+#### collectPii
 
-#### Syntax
+**Syntax**
 
 ```swift
 ACPCore.collectPii(data: [String : String])
@@ -194,7 +259,7 @@ ACPCore.collectPii(data: [String : String])
 {% endtab %}
 {% endtabs %}
 
-## Collect launch information
+### Collect launch information
 
 You can provide the user information to the SDK from various launch points in your application.
 
@@ -208,7 +273,7 @@ Coming soon
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
 This method should be called to support the following use cases:
 
@@ -218,21 +283,21 @@ This method should be called to support the following use cases:
 * Tracking Push Message click-through
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
-### collectLaunchInfo
+#### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
 ```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### Example
+**Example**
 
 ```text
  [ACPCore collectLaunchInfo:launchOptions];
 ```
 
-#### Swift
+**Swift**
 
 This method should be called to support the following use cases:
 
@@ -242,15 +307,15 @@ This method should be called to support the following use cases:
 * Tracking Push Message click-through
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
-### collectLaunchInfo
+#### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.collectLaunchInfo(userInfo)
@@ -258,11 +323,11 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Logging
+### Logging
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages, and allows the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging in a production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS). 
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging in a production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
 
 By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
 
@@ -281,17 +346,17 @@ In iOS, Mobile SDK uses `NSLog` for logging the message to Apple System Log faci
 
 {% tab title="Android" %}
 
-#### Java
+**Java**
 
-### setLogLevel
+#### setLogLevel
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void setLogLevel(LoggingMode mode)
 ```
 
-#### Example
+**Example**
 
 ```java
 import com.adobe.marketing.mobile.LoggingMode;
@@ -303,19 +368,19 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 
-#### Objective-C
+**Objective-C**
 
-### setLogLevel
+#### setLogLevel
 
-#### Syntax
+**Syntax**
 
 ```objective-c
 + (void) setLogLevel: (ACPMobileLogLevel) logLevel;
 ```
 
-#### Example
+**Example**
 
 ```objective-c
 #import "ACPCore.h"
@@ -324,21 +389,17 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 [ACPCore setLogLevel: ACPMobileLogLevelVerbose];
 ```
 
-{% endtab %}
+**Swift**
 
-{% tab title="Swift" %}
+#### setLogLevel
 
-#### Swift
-
-### setLogLevel
-
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) setLogLevel: (ACPMobileLogLevel) logLevel;
 ```
 
-#### Example
+**Example**
 
 ```swift
 import ACPCore
@@ -352,22 +413,21 @@ ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 {% endtabs %}
 
 
-
 {% tabs %}
 
 {% tab title="Android" %}
 
-#### Java
+**Java**
 
-### getLogLevel
+#### getLogLevel
 
-#### Syntax
+**Syntax**
 
 ```java
 public static LoggingMode getLogLevel()
 ```
 
-#### Example
+**Example**
 
 ```java
 LoggingMode mode = MobileCore.getLogLevel();
@@ -375,39 +435,35 @@ LoggingMode mode = MobileCore.getLogLevel();
 
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 
-#### Objective-C
+**Objective-C**
 
-### getLogLevel
+#### getLogLevel
 
-#### Syntax
+**Syntax**
 
 ```objective-c
 + (ACPMobileLogLevel) logLevel;
 ```
 
-#### Example
+**Example**
 
 ```
 var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
 ```
 
-{% endtab %}
+**Swift**
 
-{% tab title="Swift" %}
+#### getLogLevel
 
-#### Swift
-
-### getLogLevel
-
-#### Syntax
+**Syntax**
 
 ```swift
 + (ACPMobileLogLevel) logLevel;
 ```
 
-#### Example
+**Example**
 
 ```swift
 let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
@@ -423,7 +479,7 @@ let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
 
 {% tab title="Android" %}
 
-#### Java
+**Java**
 
 The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` passed to `MobileCore.log()`, the following Android method is called:
 
@@ -434,21 +490,21 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 
 All log messages from the Adobe Experience SDK to Android use the same log tag of ***AdobeExperienceSDK***. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
-### log
+#### log
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void log(final LoggingMode mode, final String tag, final String message)
 ```
 
-#### Example
+**Example**
 
 ```java
 MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
 ```
 
-#### Output Example
+**Output Example**
 
 ```
 D/AdobeExperienceSDK: MyClassName - Provided data was null
@@ -456,53 +512,49 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 
-#### Objective-C
+**Objective-C**
 
 All log messages from the Adobe Experience SDK to iOS use a common format which contains the tag ***AdobeExperienceSDK***. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
 
-### log
+#### log
 
-#### Syntax
+**Syntax**
 
 ```objective-c
 + (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
 ```
 
-#### Example
+**Example**
 
 ```objective-c
 [ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
 ```
 
-#### Output Example
+**Output Example**
 
 ```
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
-{% endtab %}
+**Swift**
 
-{% tab title="Swift" %}
+#### log
 
-#### Swift
-
-### log
-
-#### Syntax
+**Syntax**
 
 ```swift
 + (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
 ```
 
-#### Output Example
+**Output Example**
 
 ```
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
@@ -512,7 +564,7 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 
 {% endtabs %}
 
-## Additional Information
+### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
 

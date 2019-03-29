@@ -10,7 +10,7 @@
 
 ### **Configure Analytics Extension**
 
-![Adobe Analytics Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.33.47-pm.png)
+![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
 #### **Report Suites**
 
@@ -18,7 +18,7 @@
 Want to know how to find report suite IDs? See [Report Suites](https://marketing.adobe.com/resources/help/en_US/reference/report_suites_admin.html).
 {% endhint %}
 
-Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be comma separated with no space between, for example, _rsid1,rsid2_.
+Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be added using the **Add Another** button and removed using the **Remove Circle** button. Report suite IDs can be configured for the Development and Staging environments as well now.
 
 #### **Tracking Server**
 
@@ -60,7 +60,7 @@ Select the **Backdate Previous Session Info** check box **only** if you have tim
 
 When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. The SDK also backdates the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they occurred. One hit is backdated each time a new launch of the application is occurs.
 
-For example, if you select the checkbox,  Lifecycle session information or crash events is backdated to one second after the last hit was sent. If you do not select the checkbox, Lifecycle data is attached to the first hit of the subsequent session.
+For example, if you select the checkbox, Lifecycle session information or crash events is backdated to one second after the last hit was sent. If you do not select the checkbox, Lifecycle data is attached to the first hit of the subsequent session.
 
 If this option is disabled, the Adobe SDK attaches the session information to the current lifecycle.
 
@@ -178,12 +178,12 @@ To automatically report on the application lifecycle details in Analytics, ensur
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see  [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
+To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
-`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. 
+`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(pagename=value\).
 
-`trackAction` reports the Action as an **event** and will not increment your page views in Analytics.
+`trackAction` reports the Action as an **event** and will not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(action=value\).
 {% endhint %}
 
 ## Integrations with Experience Platform solutions and services
@@ -392,13 +392,11 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 ### Using [trackState](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
 
-{% embed url="https://video.tv.adobe.com/v/26260/?quality=12" %}
-
-
+{% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
 
 ## Configuration Keys
 
-To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference]().
+To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference](./).
 
 <table>
   <thead>
