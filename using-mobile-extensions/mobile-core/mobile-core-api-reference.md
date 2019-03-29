@@ -325,15 +325,20 @@ ACPCore.collectLaunchInfo(userInfo)
 
 ### Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages, and allows the application developer to filter the logged messages based on current logging mode.
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allows the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. We recommend using a less verbose logging in a production application, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
 
 By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
 
 As a Mobile SDK extension developer, use the MobileCore (Android) / ACPCore (iOS) `log` API to include extension log messages with Mobile SDK core log messages.
 
-The Mobile SDK logging modes in order of verbosity, from least to most, are `ERROR`, `WARNING`, `DEBUG`, and `VERBOSE`.
+From least to most verbose, the order of the mobile SDK logging modes is as follows: 
+
+- ERROR
+- WARNING
+- DEBUG
+- VERBOSE
 
 {% hint style="info" %}
 In Android, Mobile SDK uses `android.util.Log` class for printing the messages.
@@ -488,7 +493,7 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 - `LoggingMode.WARNING` uses `android.util.Log.w`
 - `LoggingMode.ERROR` uses `android.util.Log.e`
 
-All log messages from the Adobe Experience SDK to Android use the same log tag of ***AdobeExperienceSDK***. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
+All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
 #### log
 
@@ -516,7 +521,7 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 
 **Objective-C**
 
-All log messages from the Adobe Experience SDK to iOS use a common format which contains the tag ***AdobeExperienceSDK***. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
 
 #### log
 

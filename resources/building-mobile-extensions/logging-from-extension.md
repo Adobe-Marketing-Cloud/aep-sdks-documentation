@@ -1,12 +1,20 @@
 # Logging from an extension
 
-We recommend using the Mobile SDK logging API in order to print any message from the Extension code. The Mobile SDK provides to the application developers the `setLogLevel`  API which is used for setting the Mobile SDK logging mode: VERBOSE, DEBUG, WARNING and ERROR. If current logging mode is less verbose, then the message will not be printed out by the Mobile SDK. When debugging and testing your extension, you or the application developer can make the logging more verbose in order to see all the messages flowing through the Mobile SDK.
+We recommend that you use the Mobile SDK logging API to print a message from the Extension code. The Mobile SDK provides the `setLogLevel` API, which is used to set one of the following Mobile SDK logging modes: 
 
-Mobile SDK uses the extension name as log tag for the Adobe extensions in order to be easier for the application developer to filter the logging for a particular mobile extension. A similar approach can be implemented by any partner extension as in the examples below:
+- VERBOSE
+- DEBUG
+- WARNING
+- ERROR 
+
+If the current logging mode is less verbose, the message is not printed by the Mobile SDK. When debugging and testing your extension, to see all the messages flowing through the Mobile SDK, you or the application developer can make the logging more verbose.
+
+The Mobile SDK uses the extension name as the log tag for the Adobe extensions, so that the application developer can filter the logs for a mobile extension. A similar approach can be implemented by a partner extension as seen in the examples below:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Example
+
+**Java Example**
 
 ```java
 final String extensionName = "com.example.MyExtension";
@@ -22,8 +30,9 @@ MobileCore.registerExtension(MyExtension.class, errorCallback);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-#### Example
+{% tab title="iOS" %}
+
+**Objective-C Example**
 
 ```objective-c
 NSString* extensionName = @"com.example.MyExtension";
