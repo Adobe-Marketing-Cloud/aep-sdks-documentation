@@ -149,7 +149,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration Methods Reference]().
+To update SDK configuration programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
