@@ -122,7 +122,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Implement Audience Manager APIs
 
-For more information about implementing Audience Manager APIs, see [Audience Manager API Reference](audience-manager-api-reference.md).
+For more information about implementing Audience Manager APIs, see [Audience Manager API reference](audience-manager-api-reference.md).
 
 ## Configuration keys
 
