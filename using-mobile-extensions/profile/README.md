@@ -56,9 +56,9 @@ To add the Profile extension to your app:
 {% tab title="Android" %}
 ### Java
 
-**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity. For more details, see [Initial Configuration](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/configuration-methods-in-android)
+**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity. 
 
-1. The UserProfile extension must be registered with the SDK core before calling any UserProfile API.
+1. The `UserProfile` extension must be registered with Mobile Core before calling an `UserProfile` API.
 
    This can be done after calling  `setApplication()` in the `onCreate()` method. Here is a code sample which calls these set up methods:
 
@@ -83,9 +83,9 @@ public class MobileApp extends Application {
 {% tab title="iOS" %}
 ### Objective-C
 
-**Required**: You must complete the following steps in the app before calling other UserProfile APIs.
+**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
 
-1. In your app's `didFinishLaunchingWithOptions` function register the UserProfile extension.
+1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

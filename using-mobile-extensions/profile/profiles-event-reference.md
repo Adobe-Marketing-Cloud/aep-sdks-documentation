@@ -79,7 +79,7 @@ The event is used to share the user profile with the other extension. This event
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `userprofiledata` | Map&lt;String, Object&gt; | no | A map of all the user profile attributes and the attribute values. This map will contain all the user profile attributes \(the most updated copy\). The consumers of this data may replace the existing user profile copy that they may have with this copy. |
+| `userprofiledata` | Map&lt;String, Object&gt; | no | A map of all the user profile attributes and the attribute values. This map contains the most updated copies of all of the user profile attributes. The consumers of this data might replace the existing user profile copy that they might have with this copy. |
 
 Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
 
@@ -105,10 +105,10 @@ Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
 
 The shared state for the Profile extension is created in the following situations:
 
-* **On Initialization** After the extension is initialized, the extension updates the shared state by reading the previously set value from persistence.
-* **On Every UserProfile Attribute Create/Update** The shared state is updated when there is a change in the user attribute data from the API or by other triggers \(Rules Engine\).
+* At initialization After the extension is initialized, the extension updates the shared state by reading the previously set value from persistence.
+* Each time a UserProfile attribute is created or updated The shared state is updated when there is a change in the user attribute data from the API or by other triggers \(Rules Engine\).
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `userprofiledata` | Map&lt;String, Object&gt; | no | Map containing all the key-value pairs of the user profile attributes. |
+| `userprofiledata` | Map&lt;String, Object&gt; | no | Map that contains all the key-value pairs of the user profile attributes. |
 

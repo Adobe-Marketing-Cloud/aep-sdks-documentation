@@ -49,7 +49,7 @@
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API references](using-mobile-extensions/profile/profile-api-references.md)
+  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
 * [Places extensions \(Beta\)](using-mobile-extensions/places-extension-1/README.md)
   * [Places extension](using-mobile-extensions/places-extension-1/places-extension/README.md)
