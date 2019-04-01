@@ -5,7 +5,7 @@
 {% endhint %}
 
 {% hint style="danger" %}
-If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, use [launch.adobe.com](https://launch.adobe.com), instead of the Launch integration environment, .
+If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to [launch.adobe.com](https://launch.adobe.com), instead of the Launch integration environment, .
 {% endhint %}
 
 ## Configure the Campaign Standard extension in Launch
