@@ -1,12 +1,12 @@
 # Adobe Audience Manager
 
-[Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html) is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app.
+ Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
 
-To get started with **Audience Manager**, complete these steps:
+To get started with Audience Manager, complete these steps:
 
-1. Configure the **Audience Manager Extension** in **Launch**
-2. Add the **Audience Manager Extension** to your app
-3. Implement **Audience Manager** APIs to:
+1. Configure the Audience Manager extension in Launch.
+2. Add the Audience Manager extension to your app
+3. Implement the Audience Manager APIs to:
    1. Get the user profile.
    2. Send signals to Audience Manager.
    3. Reset the Audience Manager identifiers and visitor profiles.
@@ -33,7 +33,7 @@ To get started with **Audience Manager**, complete these steps:
 
 `import com.adobe.marketing.mobile.*;`   
   
-**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you add the `identity-1.x.x.aar` library to your project.
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -67,7 +67,7 @@ To get started with **Audience Manager**, complete these steps:
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity.
 
-For example, your code may look like:
+For example, your code might look like the following:
 
 ```java
 public class AudiencetApp extends Application {

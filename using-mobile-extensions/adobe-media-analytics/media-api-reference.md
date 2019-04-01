@@ -409,12 +409,12 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 
 ### trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume)
+Track the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume).
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
 | `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#createMediaObject) | Yes |
-| `contextData` | Optional Media context data. Use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants) for standard metadata keys. | No |
+| `contextData` | Optional Media context data. For standard metadata keys, use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants). | No |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -742,8 +742,8 @@ Method to track media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For AdBreakStart event, AdBreak information is created using [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For AdStart event, Ad information is created using [Create Ad Object](media-api-reference.md#create-ad-object).  For ChapterStart event, Chapter information is created using [Create Chapter Object](media-api-reference.md#create-chapter-object).  This is not required for other events. |
-| `data` | Optional context data can be provided for AdStart and ChapterStart events. This is not required for other events. |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using a [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For an `AdStart` event, the Ad information is created by using a [Create Ad Object](media-api-reference.md#create-ad-object).  For `ChapterStart` event, the Chapter information is created by using a [Create Chapter Object](media-api-reference.md#create-chapter-object).  This is not required for other events. |
+| `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1027,11 +1027,11 @@ Here are examples in Objective-C and Swift:
 
 ### updateCurrentPlayhead
 
-Provide media tracker with current media playhead. For accurate tracking, call this multiple times when the playhead changes.
+Provide a media tracker with the current media playhead. For accurate tracking, call this method multiple times when the playhead changes.
 
 | Variable Name | Description |
 | :--- | :--- |
-| `time` | Current playhead in seconds. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
+| `time` | Current playhead in seconds. For video-on-demand \(VOD\), the value is specified in seconds from the beginning of the media item. For live streaming, returns the playhead position if available or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1079,11 +1079,11 @@ _tracker.updateCurrentPlayhead(1)
 
 ### updateQoEObject
 
-Provide media tracker with current QoE information. For accurate tracking, call this multiple times when the media player provides updated QoE information.
+Provides the media tracker with the current QoE information. For accurate tracking, call this method multiple times when the media player provides updated QoE information.
 
 | Variable Name | Description |
 | :--- | :--- |
-| `qoeObject` | Current QoE information that was created by using [Create QoE Object](media-api-reference.md#create-qoe-object). |
+| `qoeObject` | Current QoE information that was created by using a [Create QoE Object](media-api-reference.md#create-qoe-object). |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1528,7 +1528,7 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 
 ### Media resume
 
-Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
+Constant to denote that the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
