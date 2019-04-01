@@ -164,7 +164,7 @@ ACPMobileVisitorAuthenticationState.authenticated)
 {% tab title="Android" %}
 ### appendVisitorInfoForURL
 
-Appends Adobe visitor data to a URL string. If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the url string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+Appends Adobe visitor data to a URL string. If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the URL string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list containing:
   * Experience Cloud ID \(ECID\)
