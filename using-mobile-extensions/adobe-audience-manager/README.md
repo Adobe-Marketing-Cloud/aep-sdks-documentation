@@ -135,10 +135,10 @@ To update SDK configuration programmatically, use the following information to c
 
 ## Additional information
 
-* How to find your Audience Manager server?
-* How to set up Adobe Analytics server-side forwarding to Audience Manager?
+* How do you find your Audience Manager server?
+* Want to know more about setting up Adobe Analytics server-side forwarding to Audience Manager?
   * [Server-side forwarding overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
-  * Set up [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
+  * [Set up Server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
 
 
 
