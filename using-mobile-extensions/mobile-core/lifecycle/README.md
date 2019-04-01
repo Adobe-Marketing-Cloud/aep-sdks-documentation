@@ -1,6 +1,6 @@
 # Lifecycle
 
-Sessions contain information about the app's current lifecycle, such as device information, application install or upgrade information, session start and pause times, number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
+Sessions contain information about the app's current lifecycle, such as the device information, the application install or upgrade information, the session start and pause times, the number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
 ## Add Lifecycle to your app
 
@@ -56,7 +56,7 @@ Sessions contain information about the app's current lifecycle, such as device i
       }
    ```
 
-   **Important:** Setting the Application is only necessary on Activities that are entry points for your application. However, setting the Application on each Activity has no negative impact and also guarantees that the SDK always has the necessary reference to your Application. As a result, we recommend calling the `setApplication` method in each of your Activities.
+   **Important:** Setting the application is only necessary on Activities that are entry points for your application. However, setting the application on each Activity has no negative impact and also guarantees that the SDK always has the necessary reference to your application. As a result, we recommend calling the `setApplication` method in each of your Activities.
 
 3. In the `onPause` function, pause the lifecycle data collection:
 
