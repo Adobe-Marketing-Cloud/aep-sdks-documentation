@@ -409,7 +409,7 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 
 ### trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance. See also [Media Resume](media-api-reference.md#media-resume)
+Track the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume)
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
@@ -1083,7 +1083,7 @@ Provide media tracker with current QoE information. For accurate tracking, call 
 
 | Variable Name | Description |
 | :--- | :--- |
-| `qoeObject` | Current QoE information created using [Create QoE Object](media-api-reference.md#create-qoe-object) |
+| `qoeObject` | Current QoE information that was created by using [Create QoE Object](media-api-reference.md#create-qoe-object). |
 
 {% tabs %}
 {% tab title="Android" %}
