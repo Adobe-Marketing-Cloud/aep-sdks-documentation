@@ -3,7 +3,7 @@
 To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps: 
 
 {% hint style="info" %}
-Having trouble creating a mobile property or need access to Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions) guide.
+Having trouble creating a mobile property or need access to Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 {% endhint %}
 
 ## Create a new mobile property
@@ -47,7 +47,7 @@ In this procedure, you will create a library of changes and deploy the library t
 The configuration contained in the library will then be deployed to the Development environment and the library will show under the Submitted section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production** environments using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/publishing/approval-workflow#library-state)**.**
+Testing can be done using the configuration in the Development environment. Later, the library can be deployed to **Staging** and **Production** environments using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/getting-started-1/validate-and-publish#publish-to-production)**.**
 {% endhint %}
 
 ## Watch the Video
