@@ -462,7 +462,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% tab title="Android" %}
 ### AdobeCallback   <a id="adobecallback"></a>
 
-This class provides the interface to receive results when the async APIs perform the requested action. For more information about these methods, see [Identity Service methods in Android](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/identity/identity-methods-in-android#identity-service-methods-in-android).
+This class provides the interface to receive results when the async APIs perform the requested action.
 
 ```java
 public interface AdobeCallback<T> {    
