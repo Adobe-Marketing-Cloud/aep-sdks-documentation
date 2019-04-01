@@ -8,12 +8,12 @@ Launch generates a unique environment ID that the SDK uses to retrieve your conf
 We strongly recommend that you configure the SDK with the Launch environment ID.
 {% endhint %}
 
-After configuration is retrieved on the app's first launch, it is stored in local cache. Subsequent requests for configuration cause the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
+After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. Subsequent requests for configuration causes the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
 
 No configuration changes are made when the following conditions are met:
 
-* No change from cached configuration
-* Configuration retrieval fails \(due to network or other considerations\)
+* No change from cached configuration.
+* Configuration retrieval fails due to network, or other, considerations.
 * A file-read or parsing errors occurs.
 
 The unique environment ID provided by Launch can be configured with the SDK using the following:
@@ -22,7 +22,7 @@ The unique environment ID provided by Launch can be configured with the SDK usin
 {% tab title="Android" %}
 ### configureWithAppID
 
-Causes the SDK to download the configuration for the provided App ID and apply it to the current session.
+Causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 #### Syntax
 
@@ -73,7 +73,7 @@ Alternatively, you may also place the Launch environment ID in your iOS project'
 You can also update the configuration programmatically by passing configuration keys and values to override existing configuration.
 
 {% hint style="info" %}
-Keys not found on the current configuration are added when this method is followed. Null values are allowed and will replace existing configuration values.
+Keys that are not found on the current configuration are added when this method is followed. Null values are allowed and replace existing configuration values.
 {% endhint %}
 
 {% tabs %}
@@ -128,7 +128,7 @@ ACPCore.updateConfiguration(updatedConfig)
 
 ## Using a bundled file configuration
 
-You may choose to include a bundled JSON configuration file in your app package to either replace or complement the configuration downloaded via the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
 
 To download the JSON configuration file, use the following URL:
 

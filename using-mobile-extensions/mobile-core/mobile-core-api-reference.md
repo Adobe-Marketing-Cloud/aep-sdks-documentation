@@ -4,7 +4,7 @@
 
 ## Application reference
 
-When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Andorid application.
+When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
 {% hint style="warning" %}
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
@@ -67,7 +67,7 @@ if (app != null) {
 
 ### Track app actions
 
-Actions are events that occur in your app. Use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. You can use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
 Call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
@@ -138,7 +138,7 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
 {% hint style="info" %}
-If you have the **Analytics** extension set up, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
+If you have the Analytics extension set up, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
 {% endhint %}
 
 {% tabs %}
@@ -325,9 +325,9 @@ ACPCore.collectLaunchInfo(userInfo)
 
 ### Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allows the application developer to filter the logged messages based on current logging mode.
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
+Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
 By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
@@ -475,7 +475,7 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 * `LoggingMode.WARNING` uses `android.util.Log.w`
 * `LoggingMode.ERROR` uses `android.util.Log.e`
 
-All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
+All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
 #### log
 
