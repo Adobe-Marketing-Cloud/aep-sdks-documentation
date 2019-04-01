@@ -39,7 +39,7 @@ Here is an example of event data for Lifecycle start request
 
 ### Hub shared state
 
-Lifecycle listens for the Configuration Shared State events.
+Lifecycle listens for the Configuration shared state events.
 
 For more details about the shared state events, see [Events Dispatched by SDK Core - Hub Shared State](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/build-your-own-extension/events/sdk-core/events-dispatched-by-sdk-core#hub-shared-state)​.
 

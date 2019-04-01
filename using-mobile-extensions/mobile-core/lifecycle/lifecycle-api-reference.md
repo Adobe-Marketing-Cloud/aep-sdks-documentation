@@ -2,9 +2,7 @@
 
 Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You can also choose to set additional lifecycle metrics.
 
-{% hint style="warning" %}
-This section shows how to start collecting lifecycle metrics. To view and report on this data in those respective solutions, set up [Analytics](https://aep-sdks.gitbook.io/docs/mobile-extensions/adobe-analytics) or other Experience Cloud solution extensions.
-{% endhint %}
+This section shows you how to collect lifecycle metrics. To view and report on this data in those respective solutions, set up Analytics or other Experience Cloud solution extensions.
 
 ## Lifecycle Start and Pause
 
@@ -46,7 +44,7 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK will always have the necessary reference to your application. In each of your activities, call`setApplication`.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. In each of your activities, call`setApplication`.
 {% endhint %}
 
 To pause the lifecycle data collection, use the `onPause` function.
@@ -137,7 +135,7 @@ You can pass additional data to lifecycle on app launch, app resume, both, or ne
 **Java**
 
 {% hint style="warning" %}
-You need to add this code only in your main activity and any other activity, from which, your app can be launched.
+You need to add this code only in your main activity and any other activity from which your app can be launched.
 {% endhint %}
 
 ```java
@@ -241,7 +239,7 @@ Starting with API Level 14, Android allows global lifecycle callbacks for activi
 {% tab title="Android" %}
 #### Java
 
-You can use these callbacks to ensure that all of your `Activities` correctly call `AdobeMobileMarketing.lifecycleStart()`, and do not need to implement the code for each of the Activity.
+You can use these callbacks to ensure that all of your `Activities` correctly call `AdobeMobileMarketing.lifecycleStart()` and do not need to implement the code for each of the Activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
