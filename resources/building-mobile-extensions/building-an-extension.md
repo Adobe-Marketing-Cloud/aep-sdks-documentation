@@ -75,8 +75,6 @@ class MyExtension extends Extension {
 }
 ```
 
-
-
 #### **iOS**
 
 The `ACPExtension` class has the following method that you must override:
@@ -92,10 +90,10 @@ The `ACPExtension` class has the following methods that you can optionally overr
 * `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
 * `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
 * `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.   
+
   This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.  
 
-
-  **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
+**Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 
 #### **iOS code example**
 

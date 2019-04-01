@@ -147,7 +147,7 @@ If you have the **Analytics** extension set up, this API increments page views a
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-#### trackState   <a id="trackstate"></a>
+#### trackState    <a id="trackstate"></a>
 
 **Syntax**
 
@@ -327,30 +327,27 @@ ACPCore.collectLaunchInfo(userInfo)
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allows the application developer to filter the logged messages based on current logging mode.
 
-As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use  `LoggingMode.VERBOSE` (Android) / `ACPMobileLogLevelVerbose` (iOS) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
+As an application developer, use the `setLogLevel` API to filter the log messages coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
-By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` (Android) / `ACPMobileLogLevelError` (iOS).
+By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
-As a Mobile SDK extension developer, use the MobileCore (Android) / ACPCore (iOS) `log` API to include extension log messages with Mobile SDK core log messages.
+As a Mobile SDK extension developer, use the MobileCore \(Android\) / ACPCore \(iOS\) `log` API to include extension log messages with Mobile SDK core log messages.
 
-From least to most verbose, the order of the mobile SDK logging modes is as follows: 
+From least to most verbose, the order of the mobile SDK logging modes is as follows:
 
-- ERROR
-- WARNING
-- DEBUG
-- VERBOSE
+* ERROR
+* WARNING
+* DEBUG
+* VERBOSE
 
 {% hint style="info" %}
 In Android, Mobile SDK uses `android.util.Log` class for printing the messages.
 
 In iOS, Mobile SDK uses `NSLog` for logging the message to Apple System Log facility.
-
 {% endhint %}
 
 {% tabs %}
-
 {% tab title="Android" %}
-
 **Java**
 
 #### setLogLevel
@@ -370,24 +367,22 @@ import com.adobe.marketing.mobile.MobileCore;
 
 MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 #### setLogLevel
 
 **Syntax**
 
-```objective-c
+```text
 + (void) setLogLevel: (ACPMobileLogLevel) logLevel;
 ```
 
 **Example**
 
-```objective-c
+```text
 #import "ACPCore.h"
 ...
 
@@ -412,16 +407,11 @@ import ACPCore
 
 ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-
 {% tabs %}
-
 {% tab title="Android" %}
-
 **Java**
 
 #### getLogLevel
@@ -437,24 +427,22 @@ public static LoggingMode getLogLevel()
 ```java
 LoggingMode mode = MobileCore.getLogLevel();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 #### getLogLevel
 
 **Syntax**
 
-```objective-c
+```text
 + (ACPMobileLogLevel) logLevel;
 ```
 
 **Example**
 
-```
+```text
 var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
 ```
 
@@ -473,25 +461,19 @@ var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
 ```swift
 let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-
-
 {% tabs %}
-
 {% tab title="Android" %}
-
 **Java**
 
 The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` passed to `MobileCore.log()`, the following Android method is called:
 
-- `LoggingMode.VERBOSE` uses `android.util.Log.v`
-- `LoggingMode.DEBUG` uses `android.util.Log.d`
-- `LoggingMode.WARNING` uses `android.util.Log.w`
-- `LoggingMode.ERROR` uses `android.util.Log.e`
+* `LoggingMode.VERBOSE` uses `android.util.Log.v`
+* `LoggingMode.DEBUG` uses `android.util.Log.d`
+* `LoggingMode.WARNING` uses `android.util.Log.w`
+* `LoggingMode.ERROR` uses `android.util.Log.e`
 
 All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
@@ -511,14 +493,12 @@ MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
 
 **Output Example**
 
-```
+```text
 D/AdobeExperienceSDK: MyClassName - Provided data was null
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
@@ -527,19 +507,19 @@ The log messages from the Adobe Experience SDK are printed to the Apple System L
 
 **Syntax**
 
-```objective-c
+```text
 + (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
 ```
 
 **Output Example**
 
-```
+```text
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
@@ -561,12 +541,10 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 
 **Output Example**
 
-```
+```text
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Additional Information
