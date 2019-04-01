@@ -333,7 +333,9 @@ If you need to update SDK configuration, programmatically, please use the follow
 
 ## Additional information
 
-* Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://marketing.adobe.com/resources/help/en_US/target/ov/r_advanced_mboxjs_settings.html).
-* What is an mbox? See [How Target works in mobile apps](https://marketing.adobe.com/resources/help/en_US/target/target/c_mobile-how-target-works-mobile-apps.html).
-* What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html)
+* Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+* What is an mbox? See [How Target works in mobile apps](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/mobile-how-target-works-mobile-apps.html).
+* What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
+
+
 
