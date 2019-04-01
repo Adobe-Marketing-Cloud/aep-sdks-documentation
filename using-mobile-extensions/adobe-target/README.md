@@ -323,7 +323,7 @@ To see the performance of your Target activities for certain segments, set up th
 
 ## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference]().
+If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
 
 | Key | Description |
 | :--- | :--- |
