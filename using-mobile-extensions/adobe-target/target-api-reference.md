@@ -8,7 +8,7 @@ Use this API to get the custom visitor ID for Target.
 {% tab title="Android" %}
 ### getThirdPartyId
 
-The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
+The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
 
 #### Syntax
 
@@ -234,7 +234,7 @@ Sends a batch request to your configured Target server for multiple mbox locatio
 {% tab title="Android" %}
 ### TargetRequest Builder
 
-`TargetRequest` builder helps to create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
+`TargetRequest` builder helps  create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
 
 #### Syntax
 
