@@ -56,6 +56,6 @@ Testing can be done using the configuration in the Development environment. Late
 
 ## Additional Information
 
-* To learn more about getting access to Launch, see  the [Launch User Permissions](https://docs.adobelaunch.com/administration/user-permissions) guide.
+* To learn more about getting access to Launch, see [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 * To learn more about Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 
