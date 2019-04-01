@@ -319,7 +319,7 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 
 ## Target with Analytics \(A4T\)  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html).
+To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
 ## Configuration keys
 
