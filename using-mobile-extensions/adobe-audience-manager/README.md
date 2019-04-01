@@ -126,7 +126,7 @@ For more information about implementing Audience Manager APIs, see [Audience Man
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration Methods Reference]().
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
