@@ -283,7 +283,7 @@ Target.clearPrefetchCache();
 
 ## Visual preview  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require  a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://marketing.adobe.com/resources/help/en_US/target/target/target-mobile-preview.html).
+Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require  a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
 
 You can also set an app deep link that can be triggered when selections are made in the preview mode by using the following methods:
 
