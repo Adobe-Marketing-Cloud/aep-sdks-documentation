@@ -18,12 +18,12 @@
 Want to know how to find report suite IDs? See [Report Suites](https://marketing.adobe.com/resources/help/en_US/reference/report_suites_admin.html).
 {% endhint %}
 
-Type one or more report suite identifiers to which the Analytics data should be sent. Multiple report suite IDs should be added using the **Add Another** button and removed using the **Remove Circle** button. Report suite IDs can be configured for the Development and Staging environments as well now.
+Type one or more report suite identifiers to which the Analytics data should be sent. Click **Add Another** to add multiple report suite IDs, and click **Remove Circle** to remove these IDs. ****Report suite IDs can also be configured for the Development and Staging environments.
 
 #### **Tracking Server**
 
 {% hint style="info" %}
-Want to know what a tracking server is and where to find it? See [populating Tracking Servers](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
+Want to know what a tracking server is and where to find it? For more information, see [Correctly populate the trackingServer and trackingServerSecure variable](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
 {% endhint %}
 
 Type the tracking domain to which all Analytics requests should be made.
@@ -31,7 +31,7 @@ Type the tracking domain to which all Analytics requests should be made.
 #### **Offline Enabled**
 
 {% hint style="info" %}
-Do you need offline tracking? See [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
+Do you need offline tracking? For more information, see [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
 {% endhint %}
 
 When the **Offline Enabled** check box is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .

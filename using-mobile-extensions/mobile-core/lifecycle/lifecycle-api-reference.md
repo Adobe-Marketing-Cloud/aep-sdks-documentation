@@ -175,7 +175,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 ## Android
 
-If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle **false** crashes or **ungraceful closes**.
+If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle false crashes or ****ungraceful closes.
 
 {% tabs %}
 {% tab title="Android" %}

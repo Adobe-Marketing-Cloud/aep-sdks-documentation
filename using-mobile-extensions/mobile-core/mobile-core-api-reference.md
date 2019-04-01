@@ -264,7 +264,7 @@ ACPCore.collectPii(data: [String : String])
 You can provide the user information to the SDK from various launch points in your application.
 
 {% hint style="info" %}
-If the **Analytics** extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
+If the Analytics extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
 {% endhint %}
 
 {% tabs %}

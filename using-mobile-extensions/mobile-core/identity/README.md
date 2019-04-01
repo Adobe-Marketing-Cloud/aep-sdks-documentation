@@ -8,7 +8,7 @@ While on web or other platforms, there can be situations where this framework mi
 
 To get started with Identity, complete the following steps:
 
-1. Add the **Identity** framework to your app.
+1. Add the ****Identity ****framework to your app.
 2. Implement the SDK APIs to complete the following tasks:
    1. Update customer IDs.
    2. Append Adobe visitor data to a URL string.

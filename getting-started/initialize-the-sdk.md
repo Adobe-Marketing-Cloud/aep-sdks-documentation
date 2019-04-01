@@ -11,7 +11,7 @@ To find your Environment ID, in Launch, go to the **Environments** tab and click
 
 
 {% hint style="warning" %}
-Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**
+Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
 #### Ensure app permissions
@@ -70,9 +70,9 @@ Debug logging is optional and helps you ensure that the SDK is working as intend
 | Log Level | Description |
 | :--- | :--- |
 | Error | This log level details unrecoverable errors caused during SDK implementation. |
-| Warning | In addition to detail from **Error** log level, **Warning** provides error information during SDK integration. This log level may indicate that a request has been made to the SDK, but the SDK may be unable to perform the requested task. For example, this may be used when catching an unexpected but recoverable exception and printing its message. |
-| Debug | In addition to detail from **Warning** log level, **Debug** also provides high-level information on how the SDK processes network requests/responses data. |
-| Verbose | In addition to detail from the **Debug** level, **Verbose** provides detailed, low-level information into how SDK processes database interactions and SDK events. |
+| Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level may indicate that a request has been made to the SDK, but the SDK may be unable to perform the requested task. For example, this may be used when catching an unexpected but recoverable exception and printing its message. |
+| Debug | In addition to detail from _Warning_ log level, _Debug_ also provides high-level information on how the SDK processes network requests/responses data. |
+| Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information into how SDK processes database interactions and SDK events. |
 
 To enable debug logging:
 

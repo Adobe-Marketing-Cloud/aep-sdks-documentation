@@ -1,6 +1,6 @@
 # Mobile Core
 
-The **Mobile Core** represents the core Adobe Experience Platform SDK that is required for every app implementation. The core contains a common set of functionality and frameworks such as an Experience Cloud Identity services, data event hub, rules engine, reusable networking, disk access routines, and so on, which are required by all Adobe and third-party extensions. The following sections provide additional information about what is provided in the Mobile Core extension.
+The Mobile Core represents the core Adobe Experience Platform SDK that is required for every app implementation. The core contains a common set of functionality and frameworks such as an Experience Cloud Identity services, data event hub, rules engine, reusable networking, disk access routines, and so on, which are required by all Adobe and third-party extensions. The following sections provide additional information about what is provided in the Mobile Core extension.
 
 ## Mobile Core generic APIs
 

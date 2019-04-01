@@ -2,10 +2,10 @@
 
 ## Key definitions
 
-* **Asset** is an opaque data blob that is needed by a specific consequence.
-* **Condition** is one boolean equation that evaluates to `true` or `false`.
-* **Consequence** is the action to be performed if the condition\(s\) evaluate to true.
-* **Rule** is a set of conditions and the associated consequence\(s\).
+* An Asset is an opaque data blob that is needed by a specific consequence.
+* A condition is one boolean equation that evaluates to `true` or `false`.
+* A consequence is the action to be performed if the condition\(s\) evaluate to true.
+* A rule is a set of conditions and the associated consequence\(s\).
 
 ## File format
 
@@ -29,15 +29,15 @@ The `rules.json` consists of a root level JSON object that contains the followin
 
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Version | `version` | number | **Required**. Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
-| Rules | `rules` | array | **Required**. An array of rules objects. For more information, see [Rule Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
+| Version | `version` | number | \(Required\) Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
+| Rules | `rules` | array | \(Required\) An array of rules objects. For more information, see [Rule Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
 
 ## Rule object definition
 
 | **Friendly Name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | `condition` | object | **Required**. Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type. There is one root level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
-| Action | `consequences` | array | **Required**. Array of Consequence Objects, each containing the details for the associated consequence that will be executed if the associated condition evaluates to `true`. For more information, see [Consequence Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Condition | `condition` | object | **\(**Required\) Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type. There is one root level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Action | `consequences` | array | \(Required\) Array of Consequence Objects, each containing the details for the associated consequence that will be executed if the associated condition evaluates to `true`. For more information, see [Consequence Object Definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 
 ## Condition object definition
 
