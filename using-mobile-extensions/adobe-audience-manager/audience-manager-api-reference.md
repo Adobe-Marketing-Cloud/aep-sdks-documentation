@@ -123,7 +123,7 @@ ACPAudience.reset()
 
 ## Get the visitor profile
 
-Returns the visitor profile that was most recently updated. The visitor profile is saved in SDK local storage for access across multiple launches of your app. If no prior audience signal has been sent, a null value is returned when this API is called.
+Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no  audience signal has been sent before, when this API is called, a null value is returned.
 
 {% tabs %}
 {% tab title="Android" %}

@@ -28,7 +28,7 @@ For this extension, the registration endpoint URLs should be entered **without**
 
 #### Tracking endpoints
 
-Type the tracking endpoint URL\(s\) for your Campaign Classic instances. Similar to the registration URL's, you can specify up to three unique endpoints for your development, staging, and production environments.
+Type the tracking endpoint URL\(s\) for your Campaign Classic instances. Like the registration URLs, you can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 For this extension, the tracking endpoint URLs should be entered **without** a prefixing `https://.`
@@ -40,7 +40,7 @@ You can specify up to three unique iOS integration keys for your development, st
 
 #### Integration key \(Android\)
 
-Specify up to three unique Android integration keys for your development, staging, and production environments. Similar to iOS, Android integration keys are generated after creating a service that contains Android applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
 
 #### Request timeout
 
@@ -96,7 +96,7 @@ import ACPLifecycle
 
 {% tabs %}
 {% tab title="Android" %}
-In your App's `OnCreate` method register the Campaign Classic and Lifecycle extensions:
+In your app's `OnCreate` method, register the Campaign Classic and Lifecycle extensions:
 
 ```java
 public class CampaignClassicTestApp extends Application {
@@ -149,7 +149,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration keys
 
-If you need to update SDK configuration programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration Methods Reference]().
+To update SDK configuration programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration Methods Reference]().
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
@@ -157,14 +157,14 @@ If you need to update SDK configuration programmatically, use the following info
 | `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Adobe Campaign Classic registration or tracking server. |
 | `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. |
 | `__dev__campaignclassic.trackingServer` | No | Sets the development environment tracking server, which receives tracking requests. |
-| `__dev__campaignclassic.ios.integrationKey` | No | Sets the development environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic. |
-| `__dev__campaignclassic.android.integrationKey` | No | Sets the development environment Android mobile app integration key which links the app to a specific Android application campaign on Adobe Campaign Classic. |
+| `__dev__campaignclassic.ios.integrationKey` | No | Sets the development environment iOS mobile app integration key, which links the app to an iOS application campaign on Adobe Campaign Classic. |
+| `__dev__campaignclassic.android.integrationKey` | No | Sets the development environment Android mobile app integration key, which links the app to an Android application campaign on Adobe Campaign Classic. |
 | `__stage__campaignclassic.marketingServer` | No | Sets the staging environment marketing server, which receives registration requests. |
 | `__stage__campaignclassic.trackingServer` | No | Sets the staging environment tracking server, which receives tracking requests. |
-| `__stage__campaignclassic.ios.integrationKey` | No | Sets the staging environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic. |
-| `__stage__campaignclassic.android.integrationKey` | No | Sets the staging environment Android mobile app integration key, which links the app to a specific Android application campaign on Adobe Campaign Classic. |
+| `__stage__campaignclassic.ios.integrationKey` | No | Sets the staging environment iOS mobile app integration key, which links the app to an iOS application campaign on Adobe Campaign Classic. |
+| `__stage__campaignclassic.android.integrationKey` | No | Sets the staging environment Android mobile app integration key, which links the app to an Android application campaign on Adobe Campaign Classic. |
 | `campaignclassic.marketingServer` | Yes | Sets the production environment marketing server, which receives registration requests. |
 | `campaignclassic.trackingServer` | Yes | Sets the production environment tracking server, which receives tracking requests. |
-| `campaignclassic.ios.integrationKey` | Yes | Sets the production environment iOS mobile app integration key, which links the app to a specific iOS application campaign on Adobe Campaign Classic. |
-| `campaignclassic.android.integrationKey` | Yes | Sets the production environment Android mobile app integration key, which links the app to a specific Android application campaign on Adobe Campaign Classic. |
+| `campaignclassic.ios.integrationKey` | Yes | Sets the production environment iOS mobile app integration key, which links the app to an iOS application campaign on Adobe Campaign Classic. |
+| `campaignclassic.android.integrationKey` | Yes | Sets the production environment Android mobile app integration key, which links the app to an Android application campaign on Adobe Campaign Classic. |
 
