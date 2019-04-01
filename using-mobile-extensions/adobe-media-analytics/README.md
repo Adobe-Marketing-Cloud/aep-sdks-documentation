@@ -185,10 +185,10 @@ To update your SDK configuration programmatically, use the following information
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.trackingServer` | Yes | See [Tracking Server](./#tracking-server). |
-| `media.channel` | No | See [Channel](./#channel). |
-| `media.ovp` | No | See [Online Video Provider](./#online-video-provider). |
-| `media.playerName` | No | See [Player Name](./#player-name). |
-| `media.appVersion` | No | See [Application Version](./#application-version). |
-| `media.debugLogging` | No | See [Debug Logging](./#debug-logging). |
+| `media.trackingServer` | Yes | For more information, see [Tracking Server](./#tracking-server). |
+| `media.channel` | No | For more information, see [Channel](./#channel). |
+| `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
+| `media.playerName` | No | For more information, see [Player Name](./#player-name). |
+| `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
+| `media.debugLogging` | No | For more information, see [Debug Logging](./#debug-logging). |
 
