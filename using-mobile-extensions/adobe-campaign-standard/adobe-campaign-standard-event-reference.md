@@ -109,7 +109,7 @@ This event is dispatched when users no longer want to use personalized in-app me
 
 #### Data payload definition   <a id="data-payload-definition-5"></a>
 
-\(This event has no event data\)
+This event has no event data.
 
 ### Lifecycle Response Content   <a id="lifecycle-response-content"></a>
 
@@ -164,8 +164,8 @@ Here is the definition of the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `a.message.id` | String | No | Message id of the message which was triggered. |
-| `a.message.triggered` | String \("1"\) | No | Flag specifying the type of message interaction event. |
+| `a.message.id` | String | No | Message ID of the message that was triggered. |
+| `a.message.triggered` | String \("1"\) | No | Flag that specifies the type of message interaction event. |
 
 #### Event data example
 
