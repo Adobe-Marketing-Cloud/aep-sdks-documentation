@@ -4,21 +4,21 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Analytics** extension and click **Install**.
-3. Type the extension settings. For more information, see [Configure Analytics Extension](./#configure-analytics-extension).
+3. Type the extension settings.  For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### **Configure Analytics Extension**
+### **Configure the Analytics Extension**
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
 #### **Report Suites**
 
 {% hint style="info" %}
-Want to know how to find report suite IDs? See [Report Suites](https://marketing.adobe.com/resources/help/en_US/reference/report_suites_admin.html).
+Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Type one or more report suite identifiers to which the Analytics data should be sent. Click **Add Another** to add multiple report suite IDs, and click **Remove Circle** to remove these IDs. ****Report suite IDs can also be configured for the Development and Staging environments.
+Type one or more report suite identifiers to which the Analytics data should be sent. To add multiple report suite IDs, click **Add Another**; to remove these IDs, click **Remove Circle.** Report suite IDs can also be configured for the Development and Staging environments.
 
 #### **Tracking Server**
 
@@ -34,10 +34,12 @@ Type the tracking domain to which all Analytics requests should be made.
 Do you need offline tracking? For more information, see [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
 {% endhint %}
 
-When the **Offline Enabled** check box is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .
+When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .
 
 {% hint style="danger" %}
-If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost. If you are not sure whether your report suite is timestamp enabled, contact Customer Care**.**
+If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.   
+  
+If you are not sure whether your report suite is timestamp enabled, contact Customer Care**.**
 {% endhint %}
 
 {% hint style="info" %}
@@ -55,12 +57,12 @@ If you set up Analytics server-side forwarding to Audience Manager, select the *
 #### Backdate Previous Session Info
 
 {% hint style="warning" %}
-Select the **Backdate Previous Session Info** check box **only** if you have timestamp-enabled report report suites.
+Select the **Backdate Previous Session Info** checkbox **only** if you have timestamp-enabled report report suites.
 {% endhint %}
 
-When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. The SDK also backdates the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date in which they occurred. One hit is backdated each time a new launch of the application is occurs.
+When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. The SDK also backdates the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date on which they occurred. One hit is backdated each time a new launch of the application is occurs.
 
-For example, if you select the checkbox, Lifecycle session information or crash events is backdated to one second after the last hit was sent. If you do not select the checkbox, Lifecycle data is attached to the first hit of the subsequent session.
+For example, if you select the checkbox, Lifecycle session information or crash events are backdated to one second after the last hit was sent. If you do not select the checkbox, Lifecycle data is attached to the first hit of the subsequent session.
 
 If this option is disabled, the Adobe SDK attaches the session information to the current lifecycle.
 
@@ -82,7 +84,7 @@ Add the Analytics extension to your project using the app's Gradle file.
 
 #### Java
 
-1. Import the Analytics extension in your application's main activity.
+Import the Analytics extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -115,7 +117,7 @@ import ACPAnalytics
 {% tab title="Android" %}
 #### Java
 
-Here is the code sample to call the set up methods calling the `setApplication()` method in the `onCreate()` method:
+To call the set up methods that call the `setApplication()` method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -136,7 +138,7 @@ public class MobileApp extends Application {
 }
 ```
 
-**Important**: Analytics depends on the Identity extension and is automatically included in Core via Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+**Important**: Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -181,9 +183,9 @@ To automatically report on the application lifecycle details in Analytics, ensur
 To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
-`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(pagename=value\).
+`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
 
-`trackAction` reports the Action as an **event** and will not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(action=value\).
+`trackAction` reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ## Integrations with Experience Platform solutions and services

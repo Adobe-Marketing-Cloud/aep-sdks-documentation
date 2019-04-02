@@ -34,9 +34,9 @@ To use data that is passed to the `collectPii` API to form a token, the format i
 
 **Tip**: `mypii` is the key in the data dictionary that is passed to the `collectPii` API.
 
-For more information about `collectPii` and its usage, see `collectPii` documentation in `ACPCore` extension for iOS and `MobileCore` extension for Android.
+For more information about `collectPii` and its usage, see `collectPii` in [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/~/edit/drafts/-LbTmxizQnkdvn7eot_p/using-mobile-extensions/mobile-core/mobile-core-api-reference).
 
 ### Using tokens in OpenURL rule actions <a id="using-tokens-in-openurl-rule-actions"></a>
 
-`Open URL` actions allow you to specify a URL, which can contain tokens that will be expanded by the SDKs. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+`Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the SDKs. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
