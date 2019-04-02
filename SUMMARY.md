@@ -66,7 +66,7 @@
 ## Resources
 
 * [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/README.md)
-  * [AEP vs. 4x SDK](resources/upgrading-to-aep/aepvs4x.md)
+  * [Experience Platform SDKs vs. the 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [User Guides](resources/user-guides.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
