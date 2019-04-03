@@ -4,7 +4,7 @@
 
 1. Create a new company.
 
-   For more information, see [Your Experience Cloud Account](https://developer.adobelaunch.com/guides/extensions/getting-started/#your-experience-cloud-account).
+   For more information, see [Company Setup. ](https://developer.adobelaunch.com/extensions/submissions/company-setup/)
 
 2. Create a new listing in the Exchange Partner Portal.
 
