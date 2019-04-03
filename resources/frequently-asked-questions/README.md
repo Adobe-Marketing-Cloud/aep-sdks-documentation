@@ -26,7 +26,7 @@ The Adobe Experience Platform SDK is available through [Cocoapods](https://cocoa
 
 Implementing both SDKs is not recommended or supported.   
   
-The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see the [upgrade](../upgrading-to-aep/) guide.
+The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
 
 #### **How "big" is the SDK?**
 
