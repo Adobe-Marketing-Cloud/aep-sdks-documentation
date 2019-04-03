@@ -23,9 +23,12 @@ To build the Launch extension interface, complete the following steps:
    * The scaffold tool prompts you with a series of questions to build the extension folder and add the appropriate metadata. 
    * Make sure that you have your Android Maven and iOS CocoaPods URLs handy.
 3. Develop the extension.
-   * Edit the `src/view/configuration/configuration.html` file that was created by the scaffold tool. 
-   * Modify this page if you need to config parameters from customers. 
-   * If you used the scaffold tool to add actions/events or data elements as part of your extension, these will have separate folders with HTML files that can be modified.
+
+   a. Edit the `src/view/configuration/configuration.html` file that was created by the scaffold tool. 
+   
+   b. Modify this page if you need to config parameters from customers. 
+   
+   If you used the scaffold tool to add actions/events or data elements as part of your extension, these will have separate folders with HTML files that can be modified.
 4. In a terminal window, run `npx @adobe/reactor-sandbox`.
 
    This step loads a simulated Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and so on.
