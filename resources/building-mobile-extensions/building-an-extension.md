@@ -99,22 +99,22 @@ The `ACPExtension` class has the following methods that you can optionally overr
 1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name this class `MyExtension` and ensure that this class is a member of `ACPExtension`.
 
-**Tip**: In the example below, the methods that are available for overriding are displayed.
+  **Tip**: In the example below, the methods that are available for overriding are displayed.
 
-**MyExtension.h**
+   **MyExtension.h**
 
-```objectivec
-#import "ACPExtension.h"
+     ```objectivec
+     #import "ACPExtension.h"
 
-@interface MyExtension : ACPExtension
-- (nullable NSString*) name;
-- (nullable NSString*) version;
-- (void) unexpectedError: (nonnull NSError*) error;
-- (void) onUnregister;
-@end
-```
+     @interface MyExtension : ACPExtension
+     - (nullable NSString*) name;
+     - (nullable NSString*) version;
+     - (void) unexpectedError: (nonnull NSError*) error;
+     - (void) onUnregister;
+     @end
+     ```
 
-1. Provide at least an implementation for the `init` and `name` methods.
+3. Provide at least an implementation for the `init` and `name` methods.
 
    **MyExtension.m**
 
@@ -136,7 +136,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
    @end
    ```
 
-2. If you decide to override the `init` method, call the default implementation of `onUnregister`.
+4. If you decide to override the `init` method, call the default implementation of `onUnregister`.
 
    ```text
    - (void) onUnregister {
@@ -145,7 +145,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
    }
    ```
 
-3. Review the error message that was logged by the default implementation of `unexpectedError`.
+5. Review the error message that was logged by the default implementation of `unexpectedError`.
 
    ```text
    - (void) unexpectedError:(NSError *)error {
