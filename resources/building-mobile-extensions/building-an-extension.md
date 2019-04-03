@@ -35,7 +35,7 @@ The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class fro
 
 #### **Android**
 
-The `Extension` class has the `getName`method, which you must override.   
+The `Extension` class has the `getName`method, which you must override.  
 **Tip**: This method returns the name of the extension.
 
 Extension developers must prefix their extension names with the company name, for example, _com.myCompany.myExtension_. For more information about the naming constraints, see [Namespace conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
@@ -88,9 +88,9 @@ The `ACPExtension` class has the following methods that you can optionally overr
 * `version`, which returns a version string for your extension.   The version string is only used for logging and is not currently validated for formatting.
 * `onUnregister`, which allows your extension to complete the clean up that is required when the Experience Platform SDKs unregister your extension.   Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
 * `unexpectedError`, which allows you log additional information when the Experience Platform SDKs encounter an error that could not be returned immediately from a call to the SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `api` , allows the extension developer to interact with the event hub to register event listeners, manage shared state, and so on.   
+* `api` , allows the extension developer to interact with the event hub to register event listeners, manage shared state, and so on.
 
-  This method can be used at any time during or after `init` has been called on your extension. This method can also be used by your listeners by using the extension member.  
+  This method can be used at any time during or after `init` has been called on your extension. This method can also be used by your listeners by using the extension member.
 
 **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 
@@ -99,11 +99,12 @@ The `ACPExtension` class has the following methods that you can optionally overr
 1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name this class `MyExtension` and ensure that this class is a member of `ACPExtension`.
 
-  **Tip**: In the example below, the methods that are available for overriding are displayed.
+   **Tip**: In the example below, the methods that are available for overriding are displayed.
 
+  
    **MyExtension.h**
 
-     ```objectivec
+   ```objectivec
      #import "ACPExtension.h"
 
      @interface MyExtension : ACPExtension
@@ -112,7 +113,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
      - (void) unexpectedError: (nonnull NSError*) error;
      - (void) onUnregister;
      @end
-     ```
+   ```
 
 3. Provide at least an implementation for the `init` and `name` methods.
 
@@ -156,7 +157,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
 ### B. **Registering your extension**
 
-After creating your extension class, you can register it by using the `ACPCore` \(iOS\) or `MobileCore` \(Android\) method `registerExtension`. During registration, the extension class that you passed will be used by the Adobe Experience Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
+After creating your extension class, register it by using the `ACPCore` \(iOS\) or `MobileCore` \(Android\) method `registerExtension`. During registration, the extension class that you passed is used by the Experience Platform SDKs to create an instance of your extension that is retained until your extension is unregistered.
 
 **Tip**: Registration can be completed any time after the app is launched.
 
@@ -164,7 +165,7 @@ After creating your extension class, you can register it by using the `ACPCore` 
 {% tab title="Android" %}
 #### Android
 
-A convenient place to register your extension on Android is in the `onCreate` method of your activity.
+You can register your extension by using the `onCreate` method of your activity.
 
 {% hint style="info" %}
 Some registration errors, such as sending a null extension class as parameter, are synchronous and occur immediately. Other errors like undefined names, name conflicts, or type checking issues, might occur asynchronously and are reported through the `onUnexpectedError` callback before the extension is unregistered.
@@ -233,11 +234,11 @@ Some registration errors, such as undefined names, name conflicts, or type check
 {% endtab %}
 {% endtabs %}
 
-#### C. Unregistering your extension
+### C. Unregister your extension
 
-If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
+If your extension does not need to be active at all times, unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\). This process allows you to have more granular resource control, but the listeners that you registered are unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
-**Tip**: If you retained a reference to the extension instance \(for example by storing `self` or `this` in a static variable\), this is where you should clean it up.
+**Tip**: If you retained a reference to the extension instance, for example by storing `self` or `this` in a static variable, this is where you should clean it up.
 
 {% tabs %}
 {% tab title="Android" %}
