@@ -4,7 +4,7 @@
 
 #### Do I need additional permissions to create a mobile property in Launch?
 
-If you need access to Launch, see this page on [User Permissions](https://docs.adobelaunch.com/administration/user-permissions). If you have permissions to create a web property, you can create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
+If you need access to Launch, see this page on [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions). If you have permissions to create a web property, you can create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
 
 #### Should I create one property per app or multiple properties per app platform?
 
