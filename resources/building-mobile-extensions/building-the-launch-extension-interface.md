@@ -6,13 +6,13 @@
 
    For more information, see [Company Setup. ](https://developer.adobelaunch.com/extensions/submissions/company-setup/)
 
-2. Create a new listing in the Exchange Partner Portal.
+2. \(Optional\) Create a new listing in the Exchange Partner Portal.
 
-   For more information, see [Create a Listing in the Exchange Partner Portal \(optional\)](https://developer.adobelaunch.com/guides/extensions/getting-started/#create-a-listing-in-the-exchange-partner-portal-optional).
+    For more information, see [Create Exchange Listing](https://developer.adobelaunch.com/extensions/submissions/create-listing/).
 
 3. Create a new Adobe I/O integration.
 
-   For more information, see [Creating an Adobe I/O Integration](https://developer.adobelaunch.com/guides/extensions/getting-started/#creating-an-adobe-io-integration).
+   For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
 
 ## Build a Launch extension interface
 
@@ -42,5 +42,5 @@ To build the Launch extension interface, complete the following steps:
 
    This step uploads your extension to Launch.
 
-   **Tip**: Adobe I/O integration keys are needed before you can build the interface. For more information, see [Creating an Adobe I/O Integration](https://developer.adobelaunch.com/guides/extensions/getting-started/#creating-an-adobe-io-integration).
+   **Tip**: Adobe I/O integration keys are needed before you can build the interface. For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
 

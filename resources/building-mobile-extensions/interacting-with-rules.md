@@ -1,10 +1,10 @@
 # Interacting with rules
 
-Rules are defined in the Launch interface and can include `data elements`, `events`, `conditions` and `actions` provided by extensions.
+Rules are defined in the Launch interface and can include data elements, events, conditions, and actions provided by extensions.
 
 ## Publishing rules support for Launch
 
-Your extension should publish the rules support it provides to Launch. This is done via the `extension.json` file in your extensions base directory.
+Your extension should publish the rules support that it provides to Launch. You can provide this support through the  `extension.json` file in your extensions base directory.
 
 ### Publishing supported data elements
 
