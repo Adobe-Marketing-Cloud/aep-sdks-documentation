@@ -1,4 +1,4 @@
-# Current SDK Versions
+# Current SDK versions
 
 | Extension | Cocopods | Maven | Github |
 | :--- | :--- | :--- | :--- |
