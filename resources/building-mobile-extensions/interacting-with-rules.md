@@ -8,7 +8,7 @@ Your extension should publish the rules support that it provides to Launch. You 
 
 ### Publishing supported data elements
 
-Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).
+Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see [Data Element Types](https://developer.adobelaunch.com/extensions/reference/data-element-types/).
 
 ```text
   "dataElements": [
@@ -27,7 +27,7 @@ Data elements can be supported by publishing the shared state keys that you want
 
 ### Publishing supported conditions
 
-Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).  
+Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see [Condition Types](https://developer.adobelaunch.com/extensions/reference/condition-types/).  
 
 Here is an example:
 
@@ -60,7 +60,7 @@ Here is an example:
 
 ### Publishing supported actions
 
-Conditions can be supported by publishing the events that you want to use in a rule. For more information, see [Type Definition](https://developer.adobelaunch.com/guides/extensions/extension-manifest/#type-definition).  
+Conditions can be supported by publishing the events that you want to use in a rule. For more information, see [Action Types](https://developer.adobelaunch.com/extensions/reference/action-types/).  
 
 Here is an example:
 
