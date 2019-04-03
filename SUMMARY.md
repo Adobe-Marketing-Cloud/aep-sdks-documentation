@@ -83,7 +83,7 @@
   * [Clearing a shared state](resources/building-mobile-extensions/clearing-a-shared-state.md)
   * [Building the Launch extension interface](resources/building-mobile-extensions/building-the-launch-extension-interface.md)
   * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
-  * [Get the Application Context](resources/building-mobile-extensions/get-the-application-context.md)
+  * [Get the application context](resources/building-mobile-extensions/get-the-application-context.md)
   * [Extension logging](resources/building-mobile-extensions/logging-from-extension.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)

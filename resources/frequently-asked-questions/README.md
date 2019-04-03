@@ -4,25 +4,29 @@
 
 #### Do I need additional permissions to create a mobile property in Launch?
 
-If you need access to Launch, see this page on [User Permissions](https://docs.adobelaunch.com/administration/user-permissions). If you have permissions to create a web property, you're all setup to create a mobile property. If you don't see the option to create a mobile property - you may refresh the page with your ad-blocker turned off.
+If you need access to Launch, see this page on [User Permissions](https://docs.adobelaunch.com/administration/user-permissions). If you have permissions to create a web property, you can create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
 
 #### Should I create one property per app or multiple properties per app platform?
 
-If your apps send data to the same Analytics report suites, use the same extensions, rules, data elements, etc. - we recommend you group all of these mobile apps into the same property. If your apps send data to different Analytics report suites, or user different extensions per app, etc. then we suggest creating separate mobile properties. Alternatively, if you group your mobile apps into a single property, you should be able easily to split them out into separate properties over time.
+If your apps send data to the same Analytics report suites, use the same extensions, rules, data elements, and so on, we recommend that you group all of these mobile apps into the same property. If your apps send data to different Analytics report suites, or user different extensions per app, and so on,  we recommend that you create separate mobile properties. Alternatively, if you group your mobile apps into one property, split them into separate properties over time.
 
-#### How to delete a mobile property in Launch?
+#### How do I delete a mobile property in Launch?
 
-You may delete a mobile property from Launch by following these [instructions](https://docs.adobelaunch.com/administration/companies-and-properties#delete-a-property). Please note that if you choose to delete a mobile property, it may not be undone.
+To delete a mobile property from Launch, see the bottom of [Create a Property](https://docs.adobelaunch.com/getting-started-1/general-launch-configuration-and-settings/create-a-property).    
+  
+**Warning**: If you delete a mobile property, you cannot undo this action!
 
-### General Implementation & Migration
+### General implementation and migration
 
 #### Where can I download the SDK?
 
-The Adobe Experience Platform SDK is available via [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/) - see [Get the SDK](../../getting-started/get-the-sdk.md). It is also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+The Adobe Experience Platform SDK is available through [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/), and [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/). For more information, see [Get the SDK](../../getting-started/get-the-sdk.md).
 
-#### Can I run both 4x and the new Adobe Experience Platform SDKs on my app?
+#### Can I run the 4x SDKs and the new Experience Platform SDKs on my app?
 
-Implementing both SDKs is not recommended or supported. The Experience Platform SDK migrates 4x SDK's locally stored, user context. Using both SDKs can cause severe data quality issues and user cliffing. See the [upgrade](../upgrading-to-aep/) guide for more information.
+Implementing both SDKs is not recommended or supported.   
+  
+The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see the [upgrade](../upgrading-to-aep/) guide.
 
 #### **How "big" is the SDK?**
 
@@ -34,10 +38,10 @@ Implementing both SDKs is not recommended or supported. The Experience Platform 
 | Adobe Target | 77 | 27 |
 | Profile Framework | 20 | 8 |
 
-Please note that the size figures listed above are provided as indicative estimates, with the following considerations:
+The size values in the table are provided as indicative estimates, with the following considerations:
 
-* Core \(includes Lifecycle, Identity, and Signals frameworks\) is required for all other extensions, so final app size increase can be calculated by adding Core size to each of the enabled extensions. For example: iOS app distribution using Target and Analytics would have a total size increase of 635 KB \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
-* iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for a single architecture. Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
+* Mobile Core, which includes Lifecycle, Identity, and Signals frameworks, is required for all other extensions.  The final app size increase can be calculated by adding the Core size to each of the enabled extensions. For example, the iOS app distribution using Target and Analytics will have a total size increase of 635 KB. \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
+* iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for one architecture.  Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
 
 ### Mobile Core
 
@@ -49,7 +53,7 @@ Lifecycle Metrics are "out-of-the-box" metrics that are automatically collected 
 
 #### How can I setup, configure, or troubleshoot processing rules?
 
-For more information, see [Processing Rules Tips and Tricks](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules_tips.html).
+For more information, see [Processing Rules Tips and Tricks](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html).
 
 #### How are mobile visits different from launches?
 

@@ -1,6 +1,6 @@
-# Get the Application Context
+# Get the application context
 
-In Android, you can retrieve the `android.app.Application` instance using the `MobileCore.getApplication()` API. The returned `android.app.Application` represents the base class, which maintains the global application state. For more information, see [Moble Core API Reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/ffd74a0a93867c884f4f1179ab9751c00ff8e7eb/using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md).
+In Android, you can retrieve the `android.app.Application` instance using the `MobileCore.getApplication()` API. The returned `android.app.Application` represents the base class, which maintains the global application state. For more information, see [Mobile Core API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/ffd74a0a93867c884f4f1179ab9751c00ff8e7eb/using-mobile-extensions/mobile-core/configuration-reference/mobile-core-api-reference.md).
 
 {% tabs %}
 {% tab title="Android" %}

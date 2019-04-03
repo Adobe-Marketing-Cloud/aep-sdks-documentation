@@ -86,13 +86,13 @@ You should provide support for the events, actions, and conditions that you publ
 
 ### Publishing a shared state `condition` at runtime
 
-A shared state that was published by your extension can be used as a `condition` when configuring a rule in Launch. To learn how you can publish a shared state, see [Updating the Shared State](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/updating-the-shared-state).
+A shared state that was published by your extension can be used as a `condition` when configuring a rule in Launch. To learn how you can publish a shared state, see [Updating the shared state](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/updating-the-shared-state).
 
 ### Dispatching an event `condition` at runtime
 
-An event that was dispatched by your extension can be used as a `condition` when configuring a rule in Launch. To learn how you can dispatch an event, see [Dispatching Events from your Extension](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/dispatching-events-from-your-extension).
+An event that was dispatched by your extension can be used as a `condition` when configuring a rule in Launch. To learn how you can dispatch an event, see [Dispatching events from your extension](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/dispatching-events-from-your-extension).
 
 ### Handling an event `action` at runtime
 
-For an event that your extension registered, a listener for can be used as an `action` when configuring a rule in Launch. To learn how you can register a listener for your events, see [Listening for Events](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/event-listeners).
+For an event that your extension registered, a listener for can be used as an `action` when configuring a rule in Launch. To learn how you can register a listener for your events, see [Listening for events](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/event-listeners).
 
