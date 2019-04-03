@@ -4,7 +4,7 @@
 
 Before you build an extension, complete the following tasks:
 
-* Ensure that you are using the Adobe Experience Platform SDKs.
+* Ensure that you are using the Experience Platform SDKs.
 
   Extensions extend the behavior of these SDKs.
 
@@ -12,8 +12,8 @@ Before you build an extension, complete the following tasks:
 
   To determine your goals, think about the following questions:
 
-  * Do you need access to data that is not already exposed via the Adobe Experience Platform SDKs?    
-  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe  Experience Platform SDKs?   
+  * Do you need access to data that is not already exposed through the Experience Platform SDKs?    
+  * Do you need to be notified when messages will be sent, or data is being collected by the  Experience Platform SDKs?   
   * Do you need to add data to or modify data for outgoing messages?    
   * Do you need to expose data to other extensions or to rules processing?
 
@@ -21,9 +21,9 @@ Before you build an extension, complete the following tasks:
 
 * Ensure that you are using Objective-C on iOS or Java on Android.
 
-  Extensions for iOS can currently only be built using Objective-C, and extensions on Android can currently only be built using Java.
+  **Important**: Extensions for iOS can currently only be built using Objective-C, and extensions on Android can currently only be built using Java.
 
-* Ensure that you have already included the Adobe Experience Platform SDKs in your project.
+* Ensure that you included the Experience Platform SDKs in your project.
 
 ## Implementing an Adobe Experience Platform SDK extension
 
@@ -31,24 +31,23 @@ To create a simple extension, complete the following procedures in the order in 
 
 ### A. **Create an extension class**
 
-The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
+The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
 
 #### **Android**
 
-The `Extension` class has the following method that you must override:
+The `Extension` class has the `getName`method, which you must override.   
+**Tip**: This method returns the name of the extension.
 
-* `getName`, which returns the name of the extension.
-
-  Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
+Extension developers must prefix their extension names with the company name, for example, _com.myCompany.myExtension_. For more information about the naming constraints, see [Namespace conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
 
 **Tip**: All Adobe module names are prefixed with _com.adobe.module_ and are considered reserved.
 
-The `Extension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
+The `Extension` class has the following methods that you can optionally override and a member that provides access to the event hub:
 
-* `getVersion`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
-* `onUnregistered`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension. Unregistration typically happens when you shutdown the app, but it can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or throwing an exception.
-* `onUnexpectedError` allows you to log additional information when the Adobe Experience Platform SDK encounters an error that could not be immediately returned from a call to the Adobe Experience Platform SDK. An example of this error is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `getApi` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.  This method can be used at any time after the extension registration is complete. It may also be used by your listeners by calling  `super.getParentExtension().getApi()`.
+* `getVersion`, which returns a version string for your extension.   The version string is only used for logging and is currently not validated for formatting.
+* `onUnregistered`, which allows your extension to complete the clean up that is required when the Experience Platform SDKs unregister your extension. Unregistration typically happens when you shut down the app, but it can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or throwing an exception.
+* `onUnexpectedError` allows you to log additional information when the Experience Platform SDKs encounter an error that could not be immediately returned from a call to the Experience Platform SDK.  An example of this error is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `getApi` , allows the extension developer to interact with the event hub to register event listeners, manage shared state, and so on.   This method can be used any time after the extension registration is complete. It can also be used by your listeners by calling  `super.getParentExtension().getApi()`.
 
 **Tip**: The `Extension` class provides access to the `ExtensionApi` interface through the `getApi` member.
 
@@ -84,14 +83,14 @@ The `ACPExtension` class has the following method that you must override:
 
   **Tip**: All Adobe module names are prefixed with com.adobe.module and are considered reserved.
 
-The `ACPExtension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
+The `ACPExtension` class has the following methods that you can optionally override, and a member that provides access to the Event Hub:
 
-* `version`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
-* `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
-* `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.   
+* `version`, which returns a version string for your extension.   The version string is only used for logging and is not currently validated for formatting.
+* `onUnregister`, which allows your extension to complete the clean up that is required when the Experience Platform SDKs unregister your extension.   Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
+* `unexpectedError`, which allows you log additional information when the Experience Platform SDKs encounter an error that could not be returned immediately from a call to the SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `api` , allows the extension developer to interact with the event hub to register event listeners, manage shared state, and so on.   
 
-  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.  
+  This method can be used at any time during or after `init` has been called on your extension. This method can also be used by your listeners by using the extension member.  
 
 **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 
