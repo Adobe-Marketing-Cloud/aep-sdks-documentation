@@ -47,7 +47,9 @@ The size values in the table are provided as indicative estimates, with the foll
 
 [Android developer documentation](https://developer.android.com/studio/build/shrink-code) recommends that to make "your APK file as small as possible, you should enable shrinking to remove unused code and resources in your release build". Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html).
 
-Add the following rule to your custom ProGuard rules file - typically labeled as `proguard-rules.pro`. See [Android developer documentation](https://developer.android.com/studio/build/shrink-code#shrink-code) for more information.
+The Adobe Experience Platform Mobile SDK for Android comes with default ProGuard rules included in the Core `AAR` package \(see `proguard.txt`\). Using this default package is the recommended path of implementation.
+
+If you need to add the following rule to your custom ProGuard rules file - typically labeled as `proguard-rules.pro`. See [Android developer documentation](https://developer.android.com/studio/build/shrink-code#shrink-code) for more information.
 
 ```java
 -keep class com.adobe.marketing.mobile.* {
