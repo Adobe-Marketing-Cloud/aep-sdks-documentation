@@ -1,4 +1,4 @@
-# Adobe Analytics - Mobile Services extension
+# Adobe Analytics - Mobile Services
 
 This extension enables in-app messaging, push notifications, and marketing links functionality from Mobile Services on the Experience Platform SDKs.
 
