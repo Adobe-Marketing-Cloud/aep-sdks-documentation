@@ -43,6 +43,18 @@ The size values in the table are provided as indicative estimates, with the foll
 * Mobile Core, which includes Lifecycle, Identity, and Signals frameworks, is required for all other extensions.  The final app size increase can be calculated by adding the Core size to each of the enabled extensions. For example, the iOS app distribution using Target and Analytics will have a total size increase of 635 KB. \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
 * iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for one architecture.  Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
 
+#### How can I use ProGuard with the Android SDK? 
+
+[Android developer documentation](https://developer.android.com/studio/build/shrink-code) recommends that to make "your APK file as small as possible, you should enable shrinking to remove unused code and resources in your release build". Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html).
+
+Add the following rule to your custom ProGuard rules file - typically labeled as `proguard-rules.pro`. See [Android developer documentation](https://developer.android.com/studio/build/shrink-code#shrink-code) for more information.
+
+```java
+-keep class com.adobe.marketing.mobile.* {
+    <init>(...);
+}
+```
+
 ### Mobile Core
 
 #### What are Lifecycle Metrics?
