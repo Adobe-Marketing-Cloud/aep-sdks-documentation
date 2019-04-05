@@ -194,8 +194,6 @@ MobileCore.setPushIdentifier(registrationID);
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-
-
 iOS simulators do not support push messaging.
 {% endhint %}
 
@@ -231,15 +229,9 @@ ACPCore.setPushIdentifier(deviceToken)
 
 ### Debugging push setup
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
+If everything is configured correctly, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
 
-Push token collected:
-
-```text
-2019-01-31 18:22:34.881855-0800 DemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
-```
-
-And a request to `demdex.net` has been sent:
+Request to `demdex.net` containing device push token has been sent:
 
 ```text
 2019-01-31 18:22:35.261676-0800 DemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
@@ -254,6 +246,10 @@ Using the following API does not increment page views.
 {% endhint %}
 
 {% tabs %}
+{% tab title="Android" %}
+No setup required. SDK handles push tracking to Analytics, out of the box, for Android.
+{% endtab %}
+
 {% tab title="iOS" %}
 Use the following API to track a push messaging click through in Adobe Analytics.
 
@@ -323,6 +319,10 @@ android:windowSoftInputMode="adjustUnspecified|stateHidden" >
 <receiver android:name="com.adobe.marketing.mobile.MessageNotificationHandler" />
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+No setup required for iOS. SDK handles in-app message support out of the box.
+{% endtab %}
 {% endtabs %}
 
 #### Fallback images
@@ -355,6 +355,10 @@ public static void setSmallIconResourceId(final int resourceId);
 MobileCore.setSmallIconResourceID(R.drawable.appIcon);
 ```
 {% endtab %}
+
+{% tab title="iOS" %}
+No setup required. Icons are automatically handled by the SDK for iOS.
+{% endtab %}
 {% endtabs %}
 
 {% tabs %}
@@ -374,6 +378,10 @@ public static void setLargeIconResourceId(final int resourceId);
 ```java
 MobileCore.setLargeIconResourceId(R.drawable.appIcon);
 ```
+{% endtab %}
+
+{% tab title="iOS" %}
+No setup required. Icons are automatically handled by the SDK for iOS.
 {% endtab %}
 {% endtabs %}
 
@@ -463,6 +471,10 @@ public class GPBroadcastReceiver extends BroadcastReceiver {
     </intent-filter>
 </receiver>
 ```
+{% endtab %}
+
+{% tab title="iOS" %}
+No setup required. Acquisition context is automatically collected and tracked by the SDK for iOS.
 {% endtab %}
 {% endtabs %}
 

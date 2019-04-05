@@ -31,9 +31,7 @@ To create a simple extension, complete the following procedures in the order in 
 
 ### A. **Create an extension class**
 
-
 The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
-
 
 #### **Android**
 
@@ -41,9 +39,10 @@ The `Extension` class has the following method that you must override:
 
 * `getName`, which returns the name of the extension.
 
-  Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules. 
-  
-  {% hint style="warning" %}
+  Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
+
+
+
   The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
 
 **Tip**: All Adobe module names are prefixed with _com.adobe.module_ and are considered reserved.
@@ -80,8 +79,6 @@ class MyExtension extends Extension {
 }
 ```
 
-
-
 #### **iOS**
 
 The `ACPExtension` class has the following method that you must override:
@@ -97,10 +94,10 @@ The `ACPExtension` class has the following methods that you can optionally overr
 * `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
 * `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
 * `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.   
+
   This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.  
 
-
-  **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
+**Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 
 #### **iOS code example**
 
@@ -122,7 +119,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 @end
 ```
 
-3. Provide at least an implementation for the `init` and `name` methods.
+1. Provide at least an implementation for the `init` and `name` methods.
 
 **MyExtension.m**
 
@@ -144,7 +141,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 @end
 ```
 
-4. If you decide to override the `init` method, call the default implementation of `onUnregister`.
+1. If you decide to override the `init` method, call the default implementation of `onUnregister`.
 
 ```text
 - (void) onUnregister {
@@ -153,7 +150,7 @@ The `ACPExtension` class has the following methods that you can optionally overr
 }
 ```
 
-5. Review the error message that was logged by the default implementation of `unexpectedError`.
+1. Review the error message that was logged by the default implementation of `unexpectedError`.
 
 ```text
 - (void) unexpectedError:(NSError *)error {

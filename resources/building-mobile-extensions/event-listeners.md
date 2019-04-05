@@ -1,6 +1,5 @@
 # Listening for events
 
-
 A common use case is to add an event listener to get notifications for events. The main location to add an event listener is in the `init` method, although you can add listeners by using other callbacks later. You can add the logic that you want executed when an event occurs, and for which you have a listener, in the `hear` method of your listener class.
 
 When handling an event in the event listener, remember that the `hear` method should take a maximum of 100ms to execute. This means that potentially long-running operations should be pushed to another thread \(for example, network or file operations\), as in the following examples.
