@@ -1,5 +1,11 @@
 # Release notes
 
+## April 3, 2019 
+
+The Adobe Campaign Standard extension version 1.0.1 is now available for iOS.
+
+This update fixed an issue with duplicate symbols being present in the Campaign extension library.
+
 ## March 25, 2019 
 
 The following update was made to the Mobile Core extension in iOS version 2.1.0:
