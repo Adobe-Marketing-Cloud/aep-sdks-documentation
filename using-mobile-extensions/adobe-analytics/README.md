@@ -76,6 +76,10 @@ If you set a value greater than 0, ensure that the **Offline Enabled** checkbox 
 
 The default value for this setting is 0, which means that hit batching is disabled, and all hits are immediately sent to Analytics as they are generated.
 
+#### Launch Hit Delay
+
+Number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5s or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services.md) extension.
+
 ## Add Analytics to your app
 
 {% tabs %}

@@ -76,7 +76,7 @@ You can find the Messages URL from your ADBMobileConfig.json file \(typically ar
 
 ## Configure Adobe Analytics extension
 
-Follow the steps listed in the Adobe Analytics extension to ensure it is configured and implemented properly.
+Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to ensure it is configured and implemented properly.
 
 Enter **Launch Hit Delay** of 5s or more to ensure acquisition context is sent to Analytics along with your Lifecycle information.
 
