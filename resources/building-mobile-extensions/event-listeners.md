@@ -3,8 +3,6 @@
 
 A common use case is to add an event listener to get notifications for events. The main location to add an event listener is in the `init` method, although you can add listeners by using other callbacks later. You can add the logic that you want executed when an event occurs, and for which you have a listener, in the `hear` method of your listener class.
 
-In the Adobe Experience Cloud Platform SDK, the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
-
 When handling an event in the event listener, remember that the `hear` method should take a maximum of 100ms to execute. This means that potentially long-running operations should be pushed to another thread \(for example, network or file operations\), as in the following examples.
 
 Here are some additional rules to remember for event listeners:
@@ -14,6 +12,8 @@ Here are some additional rules to remember for event listeners:
 * You can register multiple listeners, but each listener instance only listens for one source/type pair.
 * One listener class might be used to listen for multiple events, but you need to check the details of the event you are passed on each call to the `hear` method.
 * All registered listeners are released when the extension is unregistered.
+
+The event type and event source that are associated with the received event can be in lower case because the Mobile SDK compares the type and the source as case insensitive values. When you check the event type and event source of the event, we recommend that you use the ignore case string comparison.
 
 ## Creating your event listener
 

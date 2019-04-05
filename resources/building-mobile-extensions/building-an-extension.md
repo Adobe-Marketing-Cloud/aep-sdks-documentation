@@ -34,8 +34,6 @@ To create a simple extension, complete the following procedures in the order in 
 
 The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
 
-In the Adobe Experience Cloud Platform SDK, the strings  like extension name, event type and source strings are converted and stored in lowercase. When you compare strings use java.lang.String.equalsIgnoreCase() method.
-
 
 #### **Android**
 
@@ -43,7 +41,10 @@ The `Extension` class has the following method that you must override:
 
 * `getName`, which returns the name of the extension.
 
-  Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
+  Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules. 
+  
+  {% hint style="warning" %}
+  The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
 
 **Tip**: All Adobe module names are prefixed with _com.adobe.module_ and are considered reserved.
 
