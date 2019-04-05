@@ -22,12 +22,24 @@ Looking for Location functionality from Mobile Services? Try out our new and enh
 To use the Mobile Services extension, complete these steps:
 
 1. Configure the Mobile Services extension in Launch
-2. Add Mobile Services extension to your app
-3. Implement Mobile Services APIs in your app.
+2. If using acquisition & marketing links, update configuration in the Analytics extension
+3. Add Mobile Services extension to your app
+4. Implement Mobile Services APIs in your app.
 
 ## Configure the Mobile Services extension in Launch
 
+{% hint style="warning" %}
+The Mobile Services extension also requires the Analytics extension for reporting.
+{% endhint %}
+
 ### Automatic Configuration \(Recommended\)
+
+1. In Launch, click the **Extensions** tab.
+2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
+3.  **Choose a Mobile Services app** and complete the following tasks:
+   1. In **Mobile Services app**, select app from the drop-down list.
+   2. Click **Save**.
+   3. Follow the publishing process to update the SDK configuration.
 
 ![Mobile Services Extension Configuration](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
@@ -40,13 +52,6 @@ The following instructions only apply if you don't see your app listed or need t
 {% hint style="warning" %}
 If you are sending data to multiple Analytics report suites, use the Acquisition App ID from the app that is associated with the first report suite in your list of report suite IDs.
 {% endhint %}
-
-1. In Launch, click the **Extensions** tab.
-2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3.  **Choose a Mobile Services app** and complete the following tasks:
-   1. In **Mobile Services app**, select app from the drop-down list.
-   2. Click **Save**.
-   3. Follow the publishing process to update the SDK configuration.
 
 ![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
@@ -68,6 +73,14 @@ You can find the Messages URL from your ADBMobileConfig.json file \(typically ar
 4. Click **Save**.
 
 5. Follow the publishing process to update your SDK configuration.
+
+## Configure Adobe Analytics extension
+
+Follow the steps listed in the Adobe Analytics extension to ensure it is configured and implemented properly.
+
+Enter **Launch Hit Delay** of 5s or more to ensure acquisition context is sent to Analytics along with your Lifecycle information.
+
+![](../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
 ## Add Mobile Services extension to your app
 
