@@ -534,10 +534,16 @@ Please note the following:
 
 ### Configuration keys
 
+| Key | Description |
+| :--- | :--- |
+| mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information before sending the First Launch Analytics hit. |
+| mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
+| mobile.messagesUrl | Messages URL from your configuration \(ADBMobileConfig.json\) file's remotes section. |
+
 ### Additional information
 
-* To see the Adobe Mobile Services documentation, go to [https://marketing.adobe.com/resources/help/en\_US/mobile/home.html](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
-* To see the Adobe Mobile Services UI, go to [https://mobilemarketing.adobe.com/](https://mobilemarketing.adobe.com/).
+* Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
+* Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
 
 
 
