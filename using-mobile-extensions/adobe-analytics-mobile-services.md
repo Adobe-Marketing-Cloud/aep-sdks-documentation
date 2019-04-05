@@ -1,6 +1,6 @@
 # Adobe Analytics - Mobile Services
 
-This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
+ This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="warning" %}
 The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, please follow [these instructions](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
@@ -349,6 +349,32 @@ For custom, full screen in-app messages, the HTML content in the message needs t
 
 * **Click-through** \(redirect\) example tracking: adbinapp://confirm/?url=http://www.yoursite.com
 * **Cancel** \(close\) example tracking: adbinapp://cancel
+
+For local \(remote\) notifications:
+
+* **Impressions**: when user triggers the notification.
+* **Opens**: when user opens app from the notification.
+
+Here is an example about how to include open tracking:
+
+{% tabs %}
+{% tab title="iOS" %}
+```objectivec
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ 
+  // handle local notification click-throughs for iOS 10 and older
+  NSDictionary *localNotificationDictionary = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
+  if ([localNotificationDictionary isKindOfClass:[NSDictionary class]]) {
+       [ACPCore collectLaunchInfo:localNotificationDictionary];
+  }
+ 
+}
+- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+   [ACPCore collectLaunchInfo:notification.userInfo];
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Acquisition & marketing Links
 
