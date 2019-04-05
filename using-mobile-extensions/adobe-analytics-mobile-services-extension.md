@@ -9,7 +9,7 @@ The following steps require that you have previously created apps in [Mobile Ser
 To use the Mobile Services extension, complete these steps:
 
 1. Configure the Mobile Services extension in Launch
-2. Add the Mobile Services extension to your app
+2. Add Mobile Services extension to your app
 3. Implement Mobile Services APIs in your app.
 
 ## Configure the Mobile Services extension in Launch
@@ -20,16 +20,16 @@ To use the Mobile Services extension, complete these steps:
 
 ### Manual Configuration
 
+{% hint style="danger" %}
+The following instructions only apply if you don't see your app listed or need to configure your Mobile Services app, manually.
+{% endhint %}
+
 1. In Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
 3.  **Choose a Mobile Services app** and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
-
-{% hint style="danger" %}
-The following instructions only apply if you don't see your app listed or need to configure your Mobile Services app, manually.
-{% endhint %}
 
 ![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
@@ -41,32 +41,31 @@ Choose **Enter Custom settings** and complete the following tasks
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
-## Configure the Adobe Analytics - Mobile Services extension
+## Add Mobile Services extension to your app
 
-You can configure the extension in one of the following ways:
+{% hint style="info" %}
+The Mobile Services extension depends on the Core extension, which includes the Identity and Lifecycle frameworks and the Analytics extension.
+{% endhint %}
 
-* By selecting your Mobile Services app
-* By providing custom settings
+{% tabs %}
+{% tab title="Android" %}
+Add the Mobile Services extension to your project using the app's Gradle file.
 
-## Add Adobe Analytics-Mobile Services to your app
+#### Java
 
-### Android
-
-1. Add the library to your project.
-2. Import the library:
+Import the Mobile Services extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobileservices.*; 
 ```
+{% endtab %}
 
-{% hint style="warning" %}
-The Adobe Analytics – Mobile Services extension depends on the Core extension, which includes the Identity and Lifecycle frameworks and the Analytics extension. When you manually install the Adobe Analytics – Mobile Services extension, ensure that you add the `mobileservices-1.x.x.aar` library to your project.
-{% endhint %}
+{% tab title="iOS" %}
+Add the library to your project via your Podfile by adding the `ACPMobileServices`pod.
 
-### iOS
+#### Objective-C
 
-1. Add the library to your project via your Podfile by adding the `ACPMobileServices` pod.
-2. Import the Core, Identity, Lifecycle, & Analytics libraries:
+Import the library into your project:
 
 ```objectivec
 #import "ACPCore.h"
@@ -75,14 +74,16 @@ The Adobe Analytics – Mobile Services extension depends on the Core extension,
 #import "ACPAnalytics.h"
 #import "ACPMobileServices.h"
 ```
+{% endtab %}
+{% endtabs %}
 
-## Register Adobe Analytics – Mobile Services with Mobile Core
+### Register Mobile Services with Mobile Core
 
-### Android
+{% tabs %}
+{% tab title="Android" %}
+#### Java
 
-Call the `setApplication()` method once in the `onCreate()` method of your main activity.
-
-For example, your code might look like the following:
+Call the `setApplication()` method once in the `onCreate()` method of your main activity. For example, your code might look like the following:
 
 ```java
 public class MobileServicesApp extends Application {
@@ -104,8 +105,10 @@ Lifecycle.registerExtension();
   }
 }
 ```
+{% endtab %}
 
-### iOS
+{% tab title="iOS" %}
+#### Objective-C
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
 
@@ -120,24 +123,30 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
    return YES;
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-## Implement Mobile Services APIs
+## Implement Mobile Services APIs in your app
 
 To use your Android or iOS extension with the Experience Platform SDKs, implement the following APIs:
 
 ### Push tracking
 
-#### Android
-
-#### iOS
+{% tabs %}
+{% tab title="iOS" %}
+#### Objective-C
 
 ```objectivec
 [ACPCore collectLaunchInfo:userInfo];
 ```
+{% endtab %}
+{% endtabs %}
 
 ### In-app messaging
 
-#### Android
+{% tabs %}
+{% tab title="Android" %}
+#### Java
 
 If you are using Fullscreen message or local notification, update the Manifest:
 
@@ -167,49 +176,50 @@ To
         <action android:name="com.android.vending.INSTALL_REFERRER" />
     </intent-filter>
 </receiver>
-
 ```
-
-#### iOS
-
-
+{% endtab %}
+{% endtabs %}
 
 ### Marketing Links
 
-#### Android
+{% tabs %}
+{% tab title="Android" %}
+#### Java
 
-```markup
+```java
 com.adobe.marketing.mobile.MobileServices.processReferrer
 ```
-
-#### iOS
-
-```text
-
-```
+{% endtab %}
+{% endtabs %}
 
 ### Deep link tracking
 
-#### Android
+{% tabs %}
+{% tab title="Android" %}
+#### Java
 
 ```java
 MobileServices.trackAdobeDeepLink
 ```
+{% endtab %}
 
-#### iOS
+{% tab title="iOS" %}
+#### Objective-C
 
 ```objectivec
 [ACPMobileServices trackAdobeDeepLink:]
 ```
+{% endtab %}
+{% endtabs %}
 
-{% hint style="warning" %}
-Remember the following information:
+## Migration Notes
 
-* The lifetime value is not supported by v5, so it cannot be used in Messages.
-* Neither `a.internalaction eq Lifecycle` nor `Action eq Lifecycle` can be used as a trigger.  We recommend that you use LaunchEvent instead.
-* `ce` is no longer supported as a trigger.
-* Local notifications do not support Android 8.0 or higher.  This remains unchanged from the v4 SDKs.
-{% endhint %}
+Please note the following:
+
+* As lifetime value is not supported on the Experience Platform SDK, it may not be used to trigger in-app messages or local notifications.
+* `ce` is no longer supported as a trigger for in-app messages or local notifications.
+* `a.internalaction` or `action` \(from Lifecycle\) may be used to trigger in-app messages or local notifications. We suggest using LaunchEvent instead.
+* Local notifications do not support Android 8.0 or higher.
 
 ### Configuration keys
 
