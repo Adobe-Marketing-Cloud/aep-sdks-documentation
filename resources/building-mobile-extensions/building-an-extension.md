@@ -12,8 +12,8 @@ Before you build an extension, complete the following tasks:
 
   To determine your goals, think about the following questions:
 
-  * Do you need access to data that is not already exposed via the Adobe Experience Cloud Platform SDKs?    
-  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe  Cloud Platform SDKs?   
+  * Do you need access to data that is not already exposed via the Adobe Experience Platform SDKs?    
+  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe   Platform SDKs?   
   * Do you need to add data to or modify data for outgoing messages?    
   * Do you need to expose data to other extensions or to rules processing?
 
@@ -52,7 +52,7 @@ The `Extension` class has the following methods that you can optionally override
 
 * `getVersion`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
 * `onUnregistered`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension. Unregistration typically happens when you shutdown the app, but it can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or throwing an exception.
-* `onUnexpectedError`, which allows you log additional information when the Adobe Experience Cloud Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `onUnexpectedError`, which allows you log additional information when the Adobe Experience  Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
 * `getApi` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.  This method can be used at any time after the extension registration is complete. It may also be used by your listeners by calling  `super.getParentExtension().getApi()`.
 
 **Tip**: The `Extension` class provides access to the `ExtensionApi` interface through the `getApi` member.
