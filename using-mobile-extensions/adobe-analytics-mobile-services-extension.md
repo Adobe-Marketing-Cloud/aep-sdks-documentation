@@ -1,35 +1,43 @@
 # Adobe Analytics - Mobile Services
 
-This extension enables in-app messaging, push notifications, and marketing links functionality from Mobile Services on the Experience Platform SDKs.
+This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
-{% hint style="info" %}
-The following steps assume that you have previously created apps in Mobile Services \([mobilemarketing.adobe.com](https://mobilemarketing.adobe.com/)\).
+{% hint style="warning" %}
+The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, please follow [these instructions](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
 {% endhint %}
 
-To use the Mobile Services extension:
+To use the Mobile Services extension, complete these steps:
 
-1. Configure and implement Core and Analytics extensions and APIs.
-2. Configure the Adobe Analytics – Mobile Services Launch extension.
-3. Implement Mobile Services extension and APIs in your app.
+1. Configure the Mobile Services extension in Launch
+2. Add the Mobile Services extension to your app
+3. Implement Mobile Services APIs in your app.
 
-## Configure the Adobe Analytics – Mobile Services extension in Launch
+## Configure the Mobile Services extension in Launch
 
-1. In Launch, click the Extensions tab.
-2. On the **Catalog** tab, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3. Select one of the following options:
-   * **Choose a Mobile Services app** and complete the following tasks:
+### Automatic Configuration \(Recommended\)
 
-     a. In **Mobile Services app**, select app from the drop-down list.
+![Mobile Services Extension Configuration](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
-     b. Click **Save**.
+### Manual Configuration
 
-   * **Enter Custom settings** and complete the following tasks:
+1. In Launch, click the **Extensions** tab.
+2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
+3.  **Choose a Mobile Services app** and complete the following tasks:
+   1. In **Mobile Services app**, select app from the drop-down list.
+   2. Click **Save**.
+   3. Follow the publishing process to update the SDK configuration.
 
-     a. Enter an Acquisition time out, recommended time out is 5 seconds.
+{% hint style="danger" %}
+The following instructions only apply if you don't see your app listed or need to configure your Mobile Services app, manually.
+{% endhint %}
 
-     b. Provide the Acquisition App ID, for example, `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da`.
+![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
-     c. Provide the messages URL, for example, `https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
+Choose **Enter Custom settings** and complete the following tasks
+
+1. Enter an Acquisition time out \(recommended time out is 5 seconds\)
+2. Provide the **Acquisition App ID** \(example value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
+3. Provide the **Messages URL** \(example value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
@@ -38,15 +46,7 @@ To use the Mobile Services extension:
 You can configure the extension in one of the following ways:
 
 * By selecting your Mobile Services app
-
-![](../.gitbook/assets/aa-mob-svc-ext-install.png)
-
 * By providing custom settings
-
-  
-
-
-![](../.gitbook/assets/aa-mob-svc-cust-set.png)
 
 ## Add Adobe Analytics-Mobile Services to your app
 
