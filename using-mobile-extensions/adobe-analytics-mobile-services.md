@@ -2,8 +2,21 @@
 
  This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
+{% hint style="danger" %}
+Review Mobile Services functionality documentation for context and setup before implementation at these links:
+
+* [Getting started with Mobile Services](https://marketing.adobe.com/resources/help/en_US/mobile/gs.html)
+* [Create & managing apps](https://marketing.adobe.com/resources/help/en_US/mobile/manage_apps.html)
+* [Acquisition & marketing links](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html)
+* [Push & in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
+{% endhint %}
+
 {% hint style="warning" %}
 The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, please follow [these instructions](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
+{% endhint %}
+
+{% hint style="info" %}
+Looking for Location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)](places-extension-1/).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
@@ -41,8 +54,19 @@ Choose **Enter Custom settings** and complete the following tasks
 
 1. Enter an Acquisition time out \(recommended time out is 5 seconds\) - this value must be set to a value higher than 0 to enable app acquisition.
 2. Provide the **Acquisition App ID** \(example value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
+
+You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
+
+![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm%20%281%29.png)
+
 3. Provide the **Messages URL** \(example value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
+
+You can find the Messages URL from your ADBMobileConfig.json file \(typically around the bottom of the file\).
+
+![](../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
+
 4. Click **Save**.
+
 5. Follow the publishing process to update your SDK configuration.
 
 ## Add Mobile Services extension to your app
