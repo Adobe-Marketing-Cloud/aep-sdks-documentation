@@ -3,12 +3,12 @@
  This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="danger" %}
-Review Mobile Services functionality documentation for context and setup before implementation at these links:
+Review the following Mobile Services functionality documentation for context and set up before implementation at these links:
 
 * [Getting started with Mobile Services](https://marketing.adobe.com/resources/help/en_US/mobile/gs.html)
-* [Create & managing apps](https://marketing.adobe.com/resources/help/en_US/mobile/manage_apps.html)
-* [Acquisition & marketing links](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html)
-* [Push & in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
+* [Create and managing apps](https://marketing.adobe.com/resources/help/en_US/mobile/manage_apps.html)
+* [Acquisition and marketing links](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html)
+* [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
 {% endhint %}
 
 {% hint style="warning" %}
