@@ -242,43 +242,113 @@ Use the following API to track a push messaging click through in Adobe Analytics
 {% endtab %}
 {% endtabs %}
 
-### In-app messaging
+### Setup in-app messaging
+
+This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see [Create an in-app message](https://marketing.adobe.com/resources/help/en_US/mobile/?f=t_in_app_message). 
+
+To setup your app for in-app messages, implement the following instructions. You may complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they will be delivered dynamically to your app and displayed without an app store update.
 
 {% tabs %}
 {% tab title="Android" %}
+1. Update AndroidManifest.xml to declare the full screen activity and enable the Message Notification Handler
+
 #### Java
 
-If you are using Fullscreen message or local notification, update the Manifest:
+If you are using Fullscreen message or local notification, update the `AndroidManifest.xml` with:
 
-```java
-<activity android:name="com.adobe.mobile.MessageFullScreenActivity">
-</activity>
-<receiver android:name="com.adobe.mobile.MessageNotificationHandler" />
-To 
+```markup
 <activity
     android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
     android:windowSoftInputMode="adjustUnspecified|stateHidden" >
 </activity>
 <receiver android:name="com.adobe.marketing.mobile.MessageNotificationHandler" />
-If you were using the Referral receiver provided by Adobe, then update
-<receiver
-    android:name="com.adobe.mobile.ReferralReceiver"
-    android:exported="true">
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
-</receiver>
-To 
-<receiver
-    android:name="com.adobe.marketing.mobile.ReferralReceiver"
-    android:exported="true">
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
-</receiver>
+```
+
+If you selected a modal layout, select one of the following themes for the message:
+
+* Theme.Translucent.NoTitleBar.Fullscreen
+* Theme.Translucent.NoTitleBar
+* Theme.Translucent
+
+#### Example
+
+```markup
+<activity
+android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
+android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+</activity>
+<receiver android:name="com.adobe.marketing.mobile.MessageNotificationHandler" />
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Fallback images
+
+When creating a full-screen message, you can optionally specify a fallback image. If your message cannot retrieve its intended image from the web, the SDK attempts to load the image with the same name from your application’s assets folder. This allows you to show your message in its original form, even if the user is offline, or the predetermined image is unreachable.
+
+{% hint style="warning" %}
+The fallback image asset name is specified when you configure the message in Mobile Services. You will need to ensure that the specified resource is available.
+{% endhint %}
+
+#### Configuring notification icons
+
+The following methods allow you to configure the small and large icons that appear in the notification area, and the large icon that is displayed when notifications appear in the notification drawer.
+
+{% tabs %}
+{% tab title="Android" %}
+### Config.setSmallIconResourceId\(int resourceId\)
+
+This API sets small icon that will be used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
+
+#### Syntax
+
+```java
+public static void setSmallIconResourceId(final int resourceId);
+```
+
+#### Example
+
+```java
+MobileCore.setSmallIconResourceID(R.drawable.appIcon);
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Android" %}
+### Config.setLargeIconResourceId\(int resourceId\)
+
+Set the large icon that will be used for notifications that are created by the SDK. This icon will be the primary image that is displayed when the user sees the complete notification in the notification center.
+
+#### Syntax
+
+```java
+public static void setLargeIconResourceId(final int resourceId);
+```
+
+#### Example
+
+```java
+MobileCore.setLargeIconResourceId(R.drawable.appIcon);
+```
+{% endtab %}
+{% endtabs %}
+
+### Tracking in-app messages
+
+The SDK automatically tracks the following metrics for your in-app messages:
+
+For full screen and alert style in-app messages:
+
+* **Impressions**: when user triggers an in-app message.
+* **Click throughs**: when user presses the Click through button.
+* **Cancels**: when user pushes the Cancel button.
+
+For custom, full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
+
+* **Click-through** \(redirect\) example tracking: adbinapp://confirm/?url=http://www.yoursite.com
+* **Cancel** \(close\) example tracking: adbinapp://cancel
 
 ### Acquisition & marketing Links
 
