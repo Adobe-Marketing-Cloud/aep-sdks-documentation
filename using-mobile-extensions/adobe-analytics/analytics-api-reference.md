@@ -176,34 +176,34 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
-## Set the custom visitor identifier  <a id="setcustomidentifier"></a>
+## Set the visitor identifier  <a id="setidentifier"></a>
 
-Sets the Analytics custom visitor identifier.
+Sets the Analytics visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
-### setCustomVistorIdentifier
+### setVistorIdentifier
 
 #### Syntax
 
 ```java
- public static void setCustomVistorIdentifier(final String visitorIdentifier)
+ public static void setVistorIdentifier(final String visitorIdentifier)
 ```
 
 #### Example
 
 ```java
-Analytics.setCustomVistorIdentifier("custom_identifier");
+Analytics.setVistorIdentifier("custom_identifier");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-### setCustomVistorIdentifier
+### setVistorIdentifier
 
 #### Syntax
 
 ```objectivec
-+ (void) setCustomVistorIdentifier: (nonnull NSString*) visitorIdentifier;
++ (void) setVistorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```
 
 #### Example
@@ -213,35 +213,35 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[ACPAnalytics setCustomVistorIdentifier:@"custom_identifier"];
+[ACPAnalytics setVistorIdentifier:@"custom_identifier"];
 ```
 
 **Swift**
 
 ```swift
-ACPAnalytics.setCustomVistorIdentifier("custom_identifier")
+ACPAnalytics.setVistorIdentifier("custom_identifier")
 ```
 {% endtab %}
 {% endtabs %}
 
-## Get the custom visitor identifier  <a id="getcustomidentifier"></a>
+## Get the visitor identifier  <a id="getidentifier"></a>
 
-Sets the Analytics custom visitor identifier.
+Sets the Analytics visitor identifier.
 
 {% tabs %}
 {% tab title="Android" %}
-### getCustomVisitorIdentifier
+### getVisitorIdentifier
 
 #### Syntax
 
 ```java
- public static String getCustomVisitorIdentifier(final AdobeCallback<String> callback)
+ public static String getVisitorIdentifier(final AdobeCallback<String> callback)
 ```
 
 #### Example
 
 ```java
-Analytics.getCustomVisitorIdentifier(new AdobeCallback<String>() {
+Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
     @Override
     public void call(final String visitorIdentifier) {
         // handle the visitorIdentifier
@@ -251,12 +251,12 @@ Analytics.getCustomVisitorIdentifier(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### getCustomVisitorIdentifier
+### getVisitorIdentifier
 
 #### Syntax
 
 ```objectivec
-+ (void) getCustomVistorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
++ (void) getVistorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 ```
 
 #### Example
@@ -266,7 +266,7 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[ACPAnalytics getCustomVistorIdentifier:^(NSString visitorIdentifier) {
+[ACPAnalytics getVistorIdentifier:^(NSString visitorIdentifier) {
     // use visitorIdentifier
 }];
 ```
@@ -274,10 +274,9 @@ Here are examples in Objective-C and Swift:
 **Swift**
 
 ```swift
-ACPAnalytics.getCustomVistorIdentifier { (visitorIdentifier) in    
+ACPAnalytics.getVistorIdentifier { (visitorIdentifier) in    
      // use visitorIdentifier  
 }
 ```
 {% endtab %}
 {% endtabs %}
-
