@@ -8,7 +8,9 @@ An event is composed of the following information:
 * Event data, which is the structured data that is associated with this particular event. This data is retrievable as a JSON blob.
 * Versioning information, which is used to synchronize a group of events with the associated shared data, is not directly exposed to extensions. This information is implicitly used when getting shared states.
 
-**Tip**: Extensions use the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class to create events and access the information the modules hold.
+**Tip**: Extensions use the ACPExtensionEvent (iOS) / Event (Android) class to create events and dispatch them to the Mobile SDK event hub to trigger the extension business logic or to retrieve data.
+
+The event type and event source that are associated with the received event can be in lower case because the Mobile SDK compares the type and the source as case insensitive values. When you check the event type and event source of the event, we recommend that you use the ignore case string comparison.
 
 Here are some examples of potential events:
 
