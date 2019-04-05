@@ -19,9 +19,9 @@ To use the Mobile Services extension:
 3. Select one of the following options:
    * **Choose a Mobile Services app** and complete the following tasks:
 
-     a. In Mobile Services app, select app from the drop-down list.
+     a. In **Mobile Services app**, select app from the drop-down list.
 
-     b. Click Save.
+     b. Click **Save**.
 
    * **Enter Custom settings** and complete the following tasks:
 
@@ -29,7 +29,7 @@ To use the Mobile Services extension:
 
      b. Provide the Acquisition App ID, for example, `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da`.
 
-     c. Provide the messages URL, for example, `https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`.
+     c. Provide the messages URL, for example, `https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
