@@ -1,12 +1,12 @@
 # Adobe Audience Manager
 
-[Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html) is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app.
+ Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
 
-To get started with **Audience Manager**, complete these steps:
+To get started with Audience Manager, complete these steps:
 
-1. Configure the **Audience Manager Extension** in **Launch**
-2. Add the **Audience Manager Extension** to your app
-3. Implement **Audience Manager** APIs to:
+1. Configure the Audience Manager extension in Launch.
+2. Add the Audience Manager extension to your app
+3. Implement the Audience Manager APIs to:
    1. Get the user profile.
    2. Send signals to Audience Manager.
    3. Reset the Audience Manager identifiers and visitor profiles.
@@ -33,7 +33,7 @@ To get started with **Audience Manager**, complete these steps:
 
 `import com.adobe.marketing.mobile.*;`   
   
-**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you add the `identity-1.x.x.aar` library to your project.
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -67,7 +67,7 @@ To get started with **Audience Manager**, complete these steps:
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity.
 
-For example, your code may look like:
+For example, your code might look like the following:
 
 ```java
 public class AudiencetApp extends Application {
@@ -122,11 +122,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Implement Audience Manager APIs
 
-For more information about implementing Audience Manager APIs, see [Audience Manager API Reference](audience-manager-api-reference.md).
+For more information about implementing Audience Manager APIs, see [Audience Manager API reference](audience-manager-api-reference.md).
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration Methods Reference]().
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
@@ -135,8 +135,10 @@ To update SDK configuration programmatically, use the following information to c
 
 ## Additional information
 
-* How to find your Audience Manager server?
-* How to set up Adobe Analytics server-side forwarding to Audience Manager?
-  * [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
-  * Set up [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
+* How do you find your Audience Manager server?
+* Want to know more about setting up Adobe Analytics server-side forwarding to Audience Manager?
+  * [Server-side forwarding overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
+  * [Set up Server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
+
+
 

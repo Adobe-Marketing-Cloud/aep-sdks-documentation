@@ -1,4 +1,4 @@
-# Profile API references
+# Profile API reference
 
 ## Update user attributes
 
@@ -37,8 +37,8 @@ Allows you to create/update a batch of user profile attributes:
 
 * String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
 * Custom objects cannot be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it will be created.
-* If the attribute already exists, then the value will be updated.
+* If the attribute does not exist, it is created.
+* If the attribute already exists, the value is updated.
 * A null attribute value will remove the attribute.
 
 #### **Syntax**

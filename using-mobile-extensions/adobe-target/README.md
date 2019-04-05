@@ -1,17 +1,17 @@
 # Adobe Target
 
-[Adobe Target](https://www.adobe.com/marketing/target/mobile-optimization.html) helps test, personalize, and optimize mobile app experiences based on user behavior and mobile context. You can deliver interactions that engage and convert through iterative testing as well as rules-based and AI-powered personalization.
+[Adobe Target](https://www.adobe.com/marketing/target/mobile-optimization.html) helps test, personalize, and optimize mobile app experiences based on user behavior and mobile context. You can deliver interactions that engage and convert through iterative testing and rules-based and AI-powered personalization.
 
-To get started with **Target**, follow these steps:
+To get started with Target, follow these steps:
 
-1. Configure the **Target Extension** in **Launch**.
-2. Add the **Target Extension** to your app.
+1. Configure the Target extension in Launch.
+2. Add the Target Extension to your app.
 3. Implement Target APIs to:
    1. Request activities.
    2. Prefetch offers.
    3. Enter visual preview mode.
 
-## Configure Target extension in Launch  <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure the Target extension in Launch  <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
 
@@ -23,7 +23,7 @@ To get started with **Target**, follow these steps:
 6. Click **Save**.
 7. Follow the publishing process to update SDK configuration
 
-To find your Target client code by going to the **Set up** tab and selecting **Implementation** in the left pane. Under **Implementation Method**, click **Edit at.js Settings** to see the client code in the dialog box that is displayed. 
+To find your Target client code, go to the **Set up** tab and select **Implementation** in the left pane. To see the client code in the dialog box that is displayed under **Implementation Method**, click **Edit at.js Settings**. 
 
 ## Add Target to your app
 
@@ -65,7 +65,9 @@ Import the Target and Identity library.
 {% tab title="Android" %}
 #### Java
 
-You may do the following after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
+After calling the `setApplication()` method in the `onCreate()` method, register Target with Mobile Core.
+
+Here is code sample that calls these set up methods:
 
 ```java
 public class TargetApp extends Application {
@@ -107,7 +109,7 @@ public class TargetApp extends Application {
 
 ## Prefetch offers  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. When this feature is enabled, offer content is retrieved and cached during the prefetch call. This content is retrieved from the cache for all future calls that contain cached content for the specified **mbox** name. This "prefetch" process reduces offer load time, network calls made to Target servers, and allows Target to be notified which **mbox** was visited by the mobile app user.
+The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. When this feature is enabled, offer content is retrieved and cached during the prefetch call. This content is retrieved from the cache for all future calls that contain cached content for the specified mbox name. This prefetch process reduces offer load time, network calls made to Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
 
 {% hint style="warning" %}
 Prefetched offer content does not persist across launches. The prefetch content is cached as long as the application lives or until the API that is used to clear the cache is called. For more information, see [Clear prefetch offer cache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#clear-prefetch-offer-cache).
@@ -121,7 +123,7 @@ Prefetched offer content does not persist across launches. The prefetch content 
 
 #### Using the `TargetPrefetch` Builder
 
-`TargetPrefetch` builder helps to create a `TargetPrefetch` instance with the specified data. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified **mbox** locations.
+The `TargetPrefetch` builder helps create a `TargetPrefetch` instance with the specified data. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
 
 #### Syntax
 
@@ -281,7 +283,7 @@ Target.clearPrefetchCache();
 
 ## Visual preview  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device without requiring a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://marketing.adobe.com/resources/help/en_US/target/target/target-mobile-preview.html).
+Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require  a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
 
 You can also set an app deep link that can be triggered when selections are made in the preview mode by using the following methods:
 
@@ -317,11 +319,11 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 
 ## Target with Analytics \(A4T\)  <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html).
+To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
 ## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration Methods Reference]().
+If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
 
 | Key | Description |
 | :--- | :--- |
@@ -331,7 +333,9 @@ If you need to update SDK configuration, programmatically, please use the follow
 
 ## Additional information
 
-* Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://marketing.adobe.com/resources/help/en_US/target/ov/r_advanced_mboxjs_settings.html).
-* What is an mbox? See [How Target works in mobile apps](https://marketing.adobe.com/resources/help/en_US/target/target/c_mobile-how-target-works-mobile-apps.html).
-* What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html)
+* Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
+* What is an mbox? See [How Target works in mobile apps](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/mobile-how-target-works-mobile-apps.html).
+* What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
+
+
 

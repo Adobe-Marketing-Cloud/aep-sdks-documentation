@@ -32,7 +32,7 @@ Here are the key-value pairs in this event:
 
 | **Key or Key Type** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `visitor_identifiers` | map | no | A map containing the following identifiers:keys = id typesvalues = correlating identifiers: |
+| `visitor_identifiers` | map | no | A map that contains the following identifiers: keys = id typesvalues = correlating identifiers: |
 | `authentication_state` | enum/string constant/number | yes | ​ |
 
 ### Visitor get IDs request

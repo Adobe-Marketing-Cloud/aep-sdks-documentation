@@ -8,7 +8,7 @@ You can track lifecycle to learn how frequently and how long your app is being u
 
 ## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
 
-Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [L](https://aep-sdks.gitbook.io/docs/~/edit/drafts/-L_P6bcNQSqbiVJok7ps/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference)ifecycle API reference.
+Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 
 To implement lifecycle metrics, complete the following steps in each Activity of your application:
 
@@ -35,8 +35,6 @@ To implement lifecycle metrics, complete the following steps in each Activity of
    }
    ```
 
-   For more information about registering an extension and setting up the SDK, see .
-
 3. In the `onResume` function, start the lifecycle data collection:
 
    ```java
@@ -47,7 +45,7 @@ To implement lifecycle metrics, complete the following steps in each Activity of
       }
    ```
 
-   **Important:** Setting the Application is only necessary on Activities that are entry points for your application. However, setting the Application on each Activity has no negative impact and also guarantees that the SDK will always have the necessary reference to your Application. As a result, we recommend calling the `setApplication` method in each of your Activities.
+   **Important:** Setting the application is only necessary on Activities that are entry points for your application. However, setting the application on each Activity has no negative impact and also guarantees that the SDK will always have the necessary reference to your application. As a result, we recommend calling the `setApplication` method in each of your Activities.
 
 4. In the `onPause` function, pause the lifecycle data collection:
 

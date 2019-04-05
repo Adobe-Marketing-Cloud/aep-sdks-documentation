@@ -4,7 +4,7 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
-3. Type the extension settings. For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
+3. Type the extension settings.  For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
@@ -47,7 +47,7 @@ Enables or disables Media SDK logs.
 ## Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
+This extension requires the [Adobe Analytics extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
@@ -181,14 +181,14 @@ func application(_ application: UIApplication,
 
 ## Configuration keys
 
-To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference]().
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.trackingServer` | Yes | See [Tracking Server](./#tracking-server). |
-| `media.channel` | No | See [Channel](./#channel). |
-| `media.ovp` | No | See [Online Video Provider](./#online-video-provider). |
-| `media.playerName` | No | See [Player Name](./#player-name). |
-| `media.appVersion` | No | See [Application Version](./#application-version). |
-| `media.debugLogging` | No | See [Debug Logging](./#debug-logging). |
+| `media.trackingServer` | Yes | For more information, see [Tracking Server](./#tracking-server). |
+| `media.channel` | No | For more information, see [Channel](./#channel). |
+| `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
+| `media.playerName` | No | For more information, see [Player Name](./#player-name). |
+| `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
+| `media.debugLogging` | No | For more information, see [Debug Logging](./#debug-logging). |
 

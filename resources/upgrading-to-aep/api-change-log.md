@@ -1,6 +1,6 @@
 # API Changelog
 
-This page details SDK API changes between the Experience Platform SDK and 4x SDKs.
+This page details SDK API changes between the Experience Platform SDKs and 4x SDKs.
 
 ## Mobile Core APIs <a id="audience-manager-extension-apis"></a>
 
@@ -23,7 +23,7 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | [collectPII:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
 | [getSdkIdentities:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_mob_gdpr_ret-stored-ids-ios.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_mob_gdpr_ret-stored-ids-android.html)\) |
 
-### Deprecated APIs & Functionality
+### Deprecated APIs and functionality
 
 | 4x SDK | Notes |
 | :--- | :--- |
@@ -40,7 +40,7 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
 
-## Lifecycle Extension APIs <a id="audience-manager-extension-apis"></a>
+## Lifecycle extension APIs <a id="audience-manager-extension-apis"></a>
 
 ### Supported APIs
 
@@ -58,7 +58,7 @@ For more information, see [Lifecycle API reference](../../using-mobile-extension
 | :--- | :--- |
 | keepLifecycleSessionAlive \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
 
-## Identity Extension APIs <a id="audience-manager-extension-apis"></a>
+## Identity extension APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Identity API reference](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md).
 
@@ -75,7 +75,7 @@ For more information, see [Identity API reference](../../using-mobile-extensions
 | [getIdentifiers](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | visitorGetIDs \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
 | [appendToURL:withCallback:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#append-visitor-data-to-a-url) | visitorAppendToURL: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
 
-## Adobe Analytics Extension APIs <a id="audience-manager-extension-apis"></a>
+## Adobe Analytics extension APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Analytics API reference](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md).
 
@@ -90,7 +90,7 @@ For more information, see [Analytics API reference](../../using-mobile-extension
 | clearQueue | trackingClearQueue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
 | [getQueueSize](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits-1) | trackingGetQueueSize \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
 
-## Adobe Audience Manager Extension APIs <a id="audience-manager-extension-apis"></a>
+## Adobe Audience Manager extension APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Audience Manager Extension API Reference](../../using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md).
 

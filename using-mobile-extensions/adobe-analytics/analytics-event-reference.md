@@ -63,11 +63,7 @@ The SDK tracks the following metrics for your in-app messages:
 
 ### Target extension
 
-Here is the Analytics event in the Target extension:
-
-#### AnalyticsForTarget
-
-The SDK forwards Target's data to Analytics when A4T is enabled in Target Services.
+The Analytics event in the Target extension is `AnalyticsForTarget`. The SDK forwards Target's data to Analytics when A4T is enabled in Target Services.
 
 ## Events handled by Analytics
 

@@ -19,7 +19,7 @@ To implement lifecycle metrics, complete the following steps:
     #import <ACPCore_iOS/ACPCore_iOS.h>
    ```
 
-2. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions
+2. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions.
 
    ```objectivec
    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -32,7 +32,7 @@ To implement lifecycle metrics, complete the following steps:
 
 ## Public API
 
-Here are the public API's for the Lifecycle extension:
+Here are the public APIs for the Lifecycle extension:
 
 #### Lifecycle Start
 

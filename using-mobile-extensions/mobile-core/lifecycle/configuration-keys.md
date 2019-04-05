@@ -6,5 +6,5 @@ Specifies the length of time, in seconds, that must elapse between the time the 
 
 Default value is 300 seconds \(5 minutes\).
 
-The time that your app spends in the background is not included in the session length.
+**Tip**: The time that your app spends in the background is not included in the session length.
 

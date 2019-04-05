@@ -2,12 +2,12 @@
 
 Events can be used by extensions in the following scenarios:
 
-* Triggering actions in the Adobe Experience Platform SDKs.  Events are used by the extensions to signal when certain actions should take place, for example, to send an Analytics hit. Extensions can send the same types of events that the Adobe Experience Platform SDKs would send internally to trigger these actions.
+* Triggering actions in the Experience Platform SDKs.  Events are used by the extensions to signal when certain actions should take place, for example, to send an Analytics hit. Extensions can send the same types of events that the Experience Platform SDKs would send internally to trigger these actions.
 * Triggering actions in another extension.  You might have multiple extensions in your application, and some of these extensions might have their own events defined that trigger actions.
 
 ## Create an event for dispatching
 
-The `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class contains the event that is used by the internal Event Hub. You can construct an event after the Adobe Experience Platform SDKs has been initialized.
+The `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class contains the event that is used by the internal Event Hub. You can construct an event after the Experience Platform SDKs has been initialized.
 
 **Tip**: This event construction is usually completed in an event listener.
 
@@ -15,9 +15,9 @@ When constructing an event, errors might be returned for the following reasons:
 
 * The data that was passed cannot be converted to a JSON representation.
 * The type or source has been deprecated by Adobe.
-* The type or source is not known \(for example, _com.adobe.eventType_ prefix is used, but the type is not known\).
+* The type or source is not known. For example, _com.adobe.eventType_ prefix is used, but the type is not known.
 
-In the example below, a custom event called `MyCustomEvent` is created with custom types and sources. The internal modules do respond to an event like this because they are not listening for it. You can add an event listener for this type and source to verify that it is working.
+In the example below, a custom event called `MyCustomEvent` is created with custom types and sources. The internal modules respond to custom events because they are not listening for it. You can add an event listener for this type and source to verify that it is working.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -133,7 +133,7 @@ To use a request `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) as a trigger,
 
 **Tip:** Paired events are usually used for set/get operations where you need to be notified about a response event outside your extension code.
 
-Here is an example of how to implement this:
+Here is an example of how to implement paired events:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -174,7 +174,7 @@ protected MyExtension(ExtensionApi extensionApi) {
 ...
 ```
 
-Dispatch a response event when the request is received in the `hear` method of your Listener in `MyListener.java`:
+Dispatch a response event when the request is received in the `hear` method of your listener in `MyListener.java`:
 
 ```java
 public class MyListener extends ExtensionListener {

@@ -48,12 +48,12 @@ The Adobe Campaign Standard extension reads the following key from the configura
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `__dev__campaign.server` | String | Yes | This contains the endpoint URL for the development environment Adobe Campaign Standard instance |
-| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in development environment Adobe Campaign Standard |
-| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment Adobe Campaign Standard instance |
-| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in stage environment Adobe Campaign Standard |
-| `campaign.server` | String | Yes | This contains the endpoint URL for the production environment Adobe Campaign Standard instance |
-| `campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in production environment Adobe Campaign Standard |
+| `__dev__campaign.server` | String | Yes | This contains the endpoint URL for the development environment in the Adobe Campaign Standard instance. |
+| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in development environment in Adobe Campaign Standard. |
+| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment in the Adobe Campaign Standard instance. |
+| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the stage environment in Adobe Campaign Standard. |
+| `campaign.server` | String | Yes | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
+| `campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in in the production environment in Adobe Campaign Standard. |
 | `campaign.mcias` | String | Yes | This contains the in-app messaging service URL endpoint |
 | `campaign.timeout` | Integer | Yes | This contains the amount of time to wait for a response from in-app messaging service |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings |
@@ -109,7 +109,7 @@ This event is dispatched when users no longer want to use personalized in-app me
 
 #### Data payload definition   <a id="data-payload-definition-5"></a>
 
-\(This event has no event data\)
+This event has no event data.
 
 ### Lifecycle Response Content   <a id="lifecycle-response-content"></a>
 
@@ -164,8 +164,8 @@ Here is the definition of the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `a.message.id` | String | No | Message id of the message which was triggered. |
-| `a.message.triggered` | String \("1"\) | No | Flag specifying the type of message interaction event. |
+| `a.message.id` | String | No | Message ID of the message that was triggered. |
+| `a.message.triggered` | String \("1"\) | No | Flag that specifies the type of message interaction event. |
 
 #### Event data example
 

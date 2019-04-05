@@ -5,6 +5,6 @@ By leveraging the same triggers and traits that you use to display an in-app mes
 Here are the implications of the privacy status for this extension:
 
 * When the `global.privacy` configuration is set to `optedout`, the Signals extension clears all queued hits and drops future network send requests.
-* If the configuration is `optunknown`, the network send requests will be queued on the SDK but are not sent out.
+* If the configuration is `optunknown`, the network sends requests that are queued but not sent out.
 * If the configuration is `optedin`, the network requests to a third-party destination are allowed, provided the trigger conditions match.
 
