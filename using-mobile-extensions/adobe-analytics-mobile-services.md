@@ -192,7 +192,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-### Debugging push
+### Debugging push setup
 
 If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
 
@@ -241,6 +241,11 @@ Use the following API to track a push messaging click through in Adobe Analytics
 ```
 {% endtab %}
 {% endtabs %}
+
+### Troubleshooting push messaging
+
+* See [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html)
+* See the [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html)
 
 ### Setup in-app messaging
 
@@ -375,6 +380,11 @@ Here is an example about how to include open tracking:
 ```
 {% endtab %}
 {% endtabs %}
+
+### Troubleshooting in-app messaging
+
+* See [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/in_apps_ts.html)
+* See the [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/in_apps_ts.html)
 
 ### Acquisition & marketing Links
 
