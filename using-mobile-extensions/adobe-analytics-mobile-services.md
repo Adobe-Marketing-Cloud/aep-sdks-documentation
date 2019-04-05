@@ -536,7 +536,7 @@ Please note the following:
 
 | Key | Description |
 | :--- | :--- |
-| mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information before sending the First Launch Analytics hit. |
+| mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
 | mobile.messagesUrl | Messages URL from your configuration \(ADBMobileConfig.json\) file's remotes section. |
 
