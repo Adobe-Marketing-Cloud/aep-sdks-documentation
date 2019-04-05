@@ -1,6 +1,6 @@
 # Analytics API reference
 
-## Send queued hits   <a id="sendqueuedhits"></a>
+## Send queued hits    <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -56,7 +56,57 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size   <a id="sendqueuedhits"></a>
+## Clear queued hits <a id="sendqueuedhits"></a>
+
+Force delete, without sending to Analytics, all hits being stored or batched on the SDK. 
+
+{% tabs %}
+{% tab title="Android" %}
+### clearQueue
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+#### Syntax
+
+```java
+public static void clearQueue()
+```
+
+#### Example
+
+```java
+Analytics.clearQueue();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### clearQueue
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+#### Syntax
+
+```objectivec
++ (void) clearQueue;
+```
+
+#### Example
+
+#### Objective-C
+
+```objectivec
+[ACPAnalytics clearQueue];
+```
+
+#### Swift
+
+```swift
+ACPAnalytics.clearQueue()
+```
+{% endtab %}
+{% endtabs %}
+
+## Get the queue size    <a id="sendqueuedhits"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
@@ -113,18 +163,20 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
-## Get the tracking identifier   <a id="gettrackingidentifier"></a>
+## Get the tracking identifier    <a id="gettrackingidentifier"></a>
+
+{% hint style="warning" %}
+Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+{% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% hint style="info" %}
-If you have a [Experience Cloud ID](../mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
-
+If you have an [Experience Cloud ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/267ffce7f3550c0b85a54b8d4603ae3fe74d5a15/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
@@ -182,9 +234,13 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 {% endtab %}
 {% endtabs %}
 
-## Set the visitor identifier  <a id="setidentifier"></a>
+## Set custom visitor identifier   <a id="setidentifier"></a>
 
-Sets the Analytics visitor identifier.
+{% hint style="warning" %}
+Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+{% endhint %}
+
+Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -229,3 +285,36 @@ ACPAnalytics.setVistorIdentifier("custom_identifier")
 ```
 {% endtab %}
 {% endtabs %}
+
+## Get custom visitor identifier
+
+{% hint style="warning" %}
+Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+{% endhint %}
+
+Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
+
+{% tabs %}
+{% tab title="Android" %}
+### getVistorIdentifier
+
+#### Syntax
+
+```java
+public static void getVisitorIdentifier(AdobeCallback<String> callback)
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### getVistorIdentifier
+
+#### Syntax
+
+```objectivec
++ (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
+```
+
+\*\*\*\*
+{% endtab %}
+{% endtabs %}
+
