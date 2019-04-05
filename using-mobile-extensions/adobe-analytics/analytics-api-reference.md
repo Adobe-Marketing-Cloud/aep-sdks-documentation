@@ -166,14 +166,11 @@ ACPAnalytics.getQueueSize { (queueSize) in
 ## Get the tracking identifier    <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+
+If you have an [Experience Cloud ID](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getexperiencecloudid-1), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null. Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
-
-{% hint style="info" %}
-If you have an [Experience Cloud ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/267ffce7f3550c0b85a54b8d4603ae3fe74d5a15/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
-{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
