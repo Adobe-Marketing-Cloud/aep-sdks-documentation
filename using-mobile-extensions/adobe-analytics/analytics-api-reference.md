@@ -5,7 +5,7 @@
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% hint style="info" %}
-The value returned by `getTrackingIdentifier` may be null if you have a [Experience Cloud ID](../mobile-core/identity/identity-api-reference#get-experience-cloud-ids) and do not have visitor ID grace period configured. 
+If you have a [Experience Cloud ID](../mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
 
 {% endhint %}
 
