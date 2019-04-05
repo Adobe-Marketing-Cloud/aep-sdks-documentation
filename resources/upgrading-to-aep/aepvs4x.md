@@ -1,4 +1,4 @@
-# Experience Platform SDKs vs. the 4x SDKs
+# Experience Platform SDKs vs. 4x SDKs
 
 The following tables provide information about the differences between the new Experience Platform SDKs and the 4x SDKs:
 
@@ -35,14 +35,14 @@ The following tables provide information about the differences between the new E
 
 | Functionality | 4x SDK | Experience Platform SDK |
 | :--- | :--- | :--- |
-| Postbacks - Get/POST URL requests | Yes | Yes - Signals extension |
-| Postbacks - PII Get/POST URL requests | Yes | Yes - Signals extension |
-| Postbacks - Open app deeplink | Yes | Yes - Signals extension |
-| Push Messaging | Yes | Support coming |
-| In-app Messaging | Yes | Support coming |
-| Marketing/Acquisition Links | Yes | Support coming |
-| Geo location and beacon tracking | Yes | Support coming |
-| Geo points-of-interest management | Yes | Support coming |
+| Postbacks - Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Postbacks - PII Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Postbacks - Open app deeplink | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Push Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| In-app Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| Marketing/Acquisition Links | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| Geo location and beacon tracking | Yes | Yes - Use [Places](../../using-mobile-extensions/places-extension-1/) extension |
+| Geo points-of-interest management | Yes | Yes - Use [Places](../../using-mobile-extensions/places-extension-1/) extension |
 
 ### Adobe Audience Manager
 
