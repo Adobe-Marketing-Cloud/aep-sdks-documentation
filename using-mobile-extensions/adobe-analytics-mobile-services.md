@@ -12,7 +12,7 @@ Review Mobile Services functionality documentation for context and setup before 
 {% endhint %}
 
 {% hint style="warning" %}
-The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, please follow [these instructions](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
+The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
 {% endhint %}
 
 {% hint style="info" %}
@@ -22,8 +22,8 @@ Looking for Location functionality from Mobile Services? Try out our new and enh
 To use the Mobile Services extension, complete these steps:
 
 1. Configure the Mobile Services extension in Launch
-2. If using acquisition & marketing links, update configuration in the Analytics extension
-3. Add Mobile Services extension to your app
+2. If using acquisition and marketing links, update your configuration in the Analytics extension.
+3. Add Mobile Services extension to your app.
 4. Implement Mobile Services APIs in your app.
 
 ## Configure the Mobile Services extension in Launch
@@ -36,7 +36,7 @@ The Mobile Services extension also requires the Analytics extension for reportin
 
 1. In Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3.  **Choose a Mobile Services app** and complete the following tasks:
+3.  ****Select **Choose a Mobile Services app** and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
@@ -46,7 +46,7 @@ The Mobile Services extension also requires the Analytics extension for reportin
 ### Manual Configuration
 
 {% hint style="danger" %}
-The following instructions only apply if you don't see your app listed or need to configure your Mobile Services app, manually.
+The following instructions only apply if you do not see your app listed or need to manually configure your Mobile Services app.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -55,18 +55,22 @@ If you are sending data to multiple Analytics report suites, use the Acquisition
 
 ![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
-Choose **Enter Custom settings** and complete the following tasks
+Select **Enter Custom settings** and complete the following tasks
 
-1. Enter an Acquisition time out \(recommended time out is 5 seconds\) - this value must be set to a value higher than 0 to enable app acquisition.
-2. Provide the **Acquisition App ID** \(example value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
+1. Enter an Acquisition time out.  
+   The recommended time out is 5 seconds. To enable app acquisition,
+
+   this value must be set to a value that is higher than 0.
+
+2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
 You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
 
 ![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm%20%281%29.png)
 
-3. Provide the **Messages URL** \(example value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
+3. Provide the **Messages URL** \(sample value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
 
-You can find the Messages URL from your ADBMobileConfig.json file \(typically around the bottom of the file\).
+You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
 ![](../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
@@ -76,9 +80,9 @@ You can find the Messages URL from your ADBMobileConfig.json file \(typically ar
 
 ## Configure Adobe Analytics extension
 
-Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to ensure it is configured and implemented properly.
+Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to ensure that this extension is correctly configured and implemented.
 
-Enter **Launch Hit Delay** of 5s or more to ensure acquisition context is sent to Analytics along with your Lifecycle information.
+In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
 ![](../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
@@ -171,7 +175,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 
 To use your Android or iOS extension with the Experience Platform SDKs, implement the following APIs:
 
-### Setup push messaging
+### Set up push messaging
 
 {% tabs %}
 {% tab title="Android" %}
@@ -227,7 +231,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-### Debugging push setup
+### Debugging the push set up
 
 If everything is configured correctly, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
 
@@ -237,7 +241,7 @@ Request to `demdex.net` containing device push token has been sent:
 2019-01-31 18:22:35.261676-0800 DemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
 
-### Setup push tracking
+### Set up push tracking
 
 Use the following API to track a push messaging click through in Adobe Analytics.
 
@@ -277,18 +281,20 @@ Use the following API to track a push messaging click through in Adobe Analytics
 
 ### Troubleshooting push messaging
 
-* See [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html)
-* See the [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html)
+For more information, see the following:
 
-### Setup in-app messaging
+* [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html)
+* [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html)
+
+### Set up in-app messaging
 
 This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see [Create an in-app message](https://marketing.adobe.com/resources/help/en_US/mobile/?f=t_in_app_message). 
 
-To setup your app for in-app messages, implement the following instructions. You may complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they will be delivered dynamically to your app and displayed without an app store update.
+To set up your app for in-app messages, implement the following instructions. You can complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they are delivered dynamically to your app and displayed without an app store update.
 
 {% tabs %}
 {% tab title="Android" %}
-1. Update AndroidManifest.xml to declare the full screen activity and enable the Message Notification Handler
+1. Update the `AndroidManifest.xml` file to declare the full screen activity and enable the Message Notification Handler.
 
 #### Java
 
@@ -304,9 +310,9 @@ If you are using Fullscreen message or local notification, update the `AndroidMa
 
 If you selected a modal layout, select one of the following themes for the message:
 
-* Theme.Translucent.NoTitleBar.Fullscreen
-* Theme.Translucent.NoTitleBar
-* Theme.Translucent
+* `Theme.Translucent.NoTitleBar.Fullscreen`
+* `Theme.Translucent.NoTitleBar`
+* `Theme.Translucent`
 
 #### Example
 
@@ -330,7 +336,7 @@ No setup required for iOS. SDK handles in-app message support out of the box.
 When creating a full-screen message, you can optionally specify a fallback image. If your message cannot retrieve its intended image from the web, the SDK attempts to load the image with the same name from your application’s assets folder. This allows you to show your message in its original form, even if the user is offline, or the predetermined image is unreachable.
 
 {% hint style="warning" %}
-The fallback image asset name is specified when you configure the message in Mobile Services. You will need to ensure that the specified resource is available.
+The fallback image asset name is specified when you configure the message in Mobile Services. You need to ensure that the specified resource is available.
 {% endhint %}
 
 #### Configuring notification icons
@@ -341,7 +347,7 @@ The following methods allow you to configure the small and large icons that appe
 {% tab title="Android" %}
 ### Config.setSmallIconResourceId\(int resourceId\)
 
-This API sets small icon that will be used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
+This API sets the small icon that is used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
 
 #### Syntax
 
@@ -365,7 +371,7 @@ No setup required. Icons are automatically handled by the SDK for iOS.
 {% tab title="Android" %}
 ### Config.setLargeIconResourceId\(int resourceId\)
 
-Set the large icon that will be used for notifications that are created by the SDK. This icon will be the primary image that is displayed when the user sees the complete notification in the notification center.
+Set the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
 #### Syntax
 
@@ -392,13 +398,13 @@ The SDK automatically tracks the following metrics for your in-app messages:
 For full screen and alert style in-app messages:
 
 * **Impressions**: when user triggers an in-app message.
-* **Click throughs**: when user presses the Click through button.
-* **Cancels**: when user pushes the Cancel button.
+* **Click throughs**: when user presses the **Click through** button.
+* **Cancels**: when user pushes the **Cancel** button.
 
 For custom, full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
-* **Click-through** \(redirect\) example tracking: adbinapp://confirm/?url=http://www.yoursite.com
-* **Cancel** \(close\) example tracking: adbinapp://cancel
+* **Click-through** \(redirect\) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
+* **Cancel** \(close\) example tracking: `adbinapp://cancel`
 
 For local \(remote\) notifications:
 
@@ -428,24 +434,26 @@ Here is an example about how to include open tracking:
 
 ### Troubleshooting in-app messaging
 
-* See [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/in_apps_ts.html)
-* See the [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/in_apps_ts.html)
+For more information, see the following:
 
-### Acquisition & marketing Links
+* [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/in_apps_ts.html)
+* [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/in_apps_ts.html)
+
+### Acquisition and marketing Links
 
 Acquisition and marketing links must be created in Adobe Mobile services. For more information, see [Mobile Services acquisition](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html).
 
 {% hint style="info" %}
-The following setup collects acquisition link context from links created in Mobile Services as well as collecting referrer data from the Google Play store.
+The following set up collects Acquisition link context from links that were created in Mobile Services and collects referrer data from the Google Play store.
 {% endhint %}
 
-When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer will be collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play will be name-spaced with "a.acquisition.custom."
+When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer is collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play are name-spaced with `a.acquisition.custom`.
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
-1. Implement the `BroadcastReceiver` for the referrer
+1. Implement the `BroadcastReceiver` for the referrer.
 
 ```java
 package com.your.package.name;  // replace with your app package name
@@ -480,9 +488,9 @@ No setup required. Acquisition context is automatically collected and tracked by
 
 ### Deep link tracking
 
-The SDK can parse key and value pairs of data appended to any deep or universal link, provided the link contains a key `a.deeplink.id` and a corresponding non-null and user generated value. All key and value pairs of data that are appended to URL string will be parsed, attached to a lifecycle hit as context data, and sent to Adobe Analytics.
+The SDK can parse key-value pairs of data that are appended to any deep or universal link, provided the link contains a key `a.deeplink.id` and a corresponding non-null and user generated value. All key-value pairs of data that are appended to the URL string are parsed, attached to a lifecycle hit as context data, and sent to Adobe Analytics.
 
-Additionally, you might also choose to append one or more of the following reserved keys \(with user-generated values\) to the deep or universal link:
+You can also append one or more of the following reserved keys, with user-generated values, to the deep or universal link:
 
 | Reserved Keys |
 | :--- |
@@ -493,7 +501,7 @@ Additionally, you might also choose to append one or more of the following reser
 | a.launch.campaign.content |
 
 {% hint style="warning" %}
-Ensure the deep link URL has a key `a.deeplink.id` in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters will be sent to Analytics via context data.
+Ensure the deep link URL has a key `a.deeplink.id` in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters are sent to Analytics via context data.
 {% endhint %}
 
 {% tabs %}
@@ -550,11 +558,11 @@ MobileServices.trackAdobeDeepLink
 
 ## Migration Notes
 
-Please note the following:
+To prepare for your migration, remember the following information:
 
-* As lifetime value is not supported on the Experience Platform SDK, it may not be used to trigger in-app messages or local notifications.
+* Liifetime value is not supported on the Experience Platform SDK, so it might not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
-* `a.internalaction` or `action` \(from Lifecycle\) may be used to trigger in-app messages or local notifications. We suggest using LaunchEvent instead.
+* `a.internalaction` or `action` \(from Lifecycle\) can be used to trigger in-app messages or local notifications.  We suggest using `LaunchEvent` instead.
 * Local notifications do not support Android 8.0 or higher.
 
 ### Configuration keys
@@ -563,7 +571,7 @@ Please note the following:
 | :--- | :--- |
 | mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
-| mobile.messagesUrl | Messages URL from your configuration \(ADBMobileConfig.json\) file's remotes section. |
+| mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
 ### Additional information
 
