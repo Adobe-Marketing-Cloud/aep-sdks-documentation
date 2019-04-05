@@ -1,74 +1,5 @@
 # Analytics API reference
 
-## Get the tracking identifier   <a id="gettrackingidentifier"></a>
-
-Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
-
-{% hint style="info" %}
-If you have a [Experience Cloud ID](../mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
-
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-
-### getTrackingIdentifier
-
-Retrieves the Analytics tracking identifier.
-
-#### Syntax
-
-```java
- public static void
-   getTrackingIdentifier(final AdobeCallback<String> callback)
-```
-
-#### **Example**
-
-```java
-AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
-    @Override
-    public void call(final String trackingIdentifier) {
-        // check the trackingIdentifier value    
-    }
-};
-Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### getTrackingIdentifier
-
-Retrieves the Analytics tracking identifier.
-
-#### Syntax
-
-```objectivec
-+ (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
-```
-
-#### Example
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-[ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
-    // use returned trackingIdentifier   
-}];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
-    // use returned trackingIdentifier
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ## Send queued hits   <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
@@ -182,6 +113,75 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
+## Get the tracking identifier   <a id="gettrackingidentifier"></a>
+
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
+
+{% hint style="info" %}
+If you have a [Experience Cloud ID](../mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
+
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+#### Syntax
+
+```java
+ public static void
+   getTrackingIdentifier(final AdobeCallback<String> callback)
+```
+
+#### **Example**
+
+```java
+AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
+    @Override
+    public void call(final String trackingIdentifier) {
+        // check the trackingIdentifier value    
+    }
+};
+Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+#### Syntax
+
+```objectivec
++ (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
+```
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
+    // use returned trackingIdentifier   
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
+    // use returned trackingIdentifier
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Set the visitor identifier  <a id="setidentifier"></a>
 
 Sets the Analytics visitor identifier.
@@ -226,63 +226,6 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.setVistorIdentifier("custom_identifier")
-```
-{% endtab %}
-{% endtabs %}
-
-## Get the visitor identifier  <a id="getidentifier"></a>
-
-Sets the Analytics visitor identifier.
-
-{% tabs %}
-{% tab title="Android" %}
-### getVisitorIdentifier
-
-#### Syntax
-
-```java
- public static String getVisitorIdentifier(final AdobeCallback<String> callback)
-```
-
-#### Example
-
-```java
-Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
-    @Override
-    public void call(final String visitorIdentifier) {
-        // handle the visitorIdentifier
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### getVisitorIdentifier
-
-#### Syntax
-
-```objectivec
-+ (void) getVistorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
-```
-
-#### Example
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-[ACPAnalytics getVistorIdentifier:^(NSString visitorIdentifier) {
-    // use visitorIdentifier
-}];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getVistorIdentifier { (visitorIdentifier) in    
-     // use visitorIdentifier  
-}
 ```
 {% endtab %}
 {% endtabs %}
