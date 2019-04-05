@@ -24,6 +24,10 @@ To use the Mobile Services extension, complete these steps:
 The following instructions only apply if you don't see your app listed or need to configure your Mobile Services app, manually.
 {% endhint %}
 
+{% hint style="warning" %}
+If you are sending data to multiple Analytics report suites, use the Acquisition App ID from the app that is associated with the first report suite in your list of report suite IDs.
+{% endhint %}
+
 1. In Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
 3.  **Choose a Mobile Services app** and complete the following tasks:
@@ -35,7 +39,7 @@ The following instructions only apply if you don't see your app listed or need t
 
 Choose **Enter Custom settings** and complete the following tasks
 
-1. Enter an Acquisition time out \(recommended time out is 5 seconds\)
+1. Enter an Acquisition time out \(recommended time out is 5 seconds\) - this value must be set to a value higher than 0 to enable app acquisition.
 2. Provide the **Acquisition App ID** \(example value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 3. Provide the **Messages URL** \(example value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
 4. Click **Save**.
@@ -130,14 +134,110 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 
 To use your Android or iOS extension with the Experience Platform SDKs, implement the following APIs:
 
-### Push tracking
+### Setup push messaging
+
+{% tabs %}
+{% tab title="Android" %}
+Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+
+### setPushIdentifier <a id="setpushidentifier"></a>
+
+#### Syntax <a id="syntax"></a>
+
+```java
+void setPushIdentifier(final String registrationID)
+```
+
+#### Example <a id="example"></a>
+
+```java
+MobileCore.setPushIdentifier(registrationID);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+{% hint style="warning" %}
+
+
+iOS simulators do not support push messaging.
+{% endhint %}
+
+After you complete [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+
+### setPushIdentifier
+
+#### Objective-C
+
+#### Syntax
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+#### Example
+
+```objectivec
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  // Set the deviceToken that the APNS has assigned to the device
+  [ACPCore setPushIdentifier:deviceToken];
+  //...
+}
+```
+
+#### Swift
+
+```swift
+ACPCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+{% endtabs %}
+
+### Debugging push
+
+If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
+
+Push token collected:
+
+```text
+2019-01-31 18:22:34.881855-0800 DemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
+```
+
+And a request to `demdex.net` has been sent:
+
+```text
+2019-01-31 18:22:35.261676-0800 DemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
+```
+
+### Setup push tracking
+
+Use the following API to track a push messaging click through in Adobe Analytics.
+
+{% hint style="info" %}
+Using the following API does not increment page views.
+{% endhint %}
 
 {% tabs %}
 {% tab title="iOS" %}
+Use the following API to track a push messaging click through in Adobe Analytics.
+
+### collectLaunchInfo
+
+#### Syntax
+
+```objectivec
++ (void) collectLaunchInfo:(NSDictionary *)userInfo;
+```
+
 #### Objective-C
 
 ```objectivec
-[ACPCore collectLaunchInfo:userInfo];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // only send the hit if the app is not active
+    if (application.applicationState != UIApplicationStateActive) {
+        [ACPCore collectLaunchInfo:userInfo];
+    }
+    completionHandler(UIBackgroundFetchResultNoData);
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -180,23 +280,78 @@ To
 {% endtab %}
 {% endtabs %}
 
-### Marketing Links
+### Acquisition & marketing Links
+
+Acquisition and marketing links must be created in Adobe Mobile services. For more information, see [Mobile Services acquisition](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html).
+
+{% hint style="info" %}
+The following setup collects acquisition link context from links created in Mobile Services as well as collecting referrer data from the Google Play store.
+{% endhint %}
+
+When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer will be collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play will be name-spaced with "a.acquisition.custom."
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
+1. Implement the `BroadcastReceiver` for the referrer
+
 ```java
-com.adobe.marketing.mobile.MobileServices.processReferrer
+package com.your.package.name;  // replace with your app package name
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+public class GPBroadcastReceiver extends BroadcastReceiver {
+  @Override
+  public void onReceive(Context c, Intent i) {
+      com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
+  }
+}
+```
+
+2. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
+
+```markup
+<receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
+    <intent-filter>
+        <action android:name="com.android.vending.INSTALL_REFERRER" />
+    </intent-filter>
+</receiver>
 ```
 {% endtab %}
 {% endtabs %}
 
 ### Deep link tracking
 
+The SDK can parse key and value pairs of data appended to any deep or universal link, provided the link contains a key `a.deeplink.id` and a corresponding non-null and user generated value. All key and value pairs of data that are appended to URL string will be parsed, attached to a lifecycle hit as context data, and sent to Adobe Analytics.
+
+Additionally, you might also choose to append one or more of the following reserved keys \(with user-generated values\) to the deep or universal link:
+
+| Reserved Keys |
+| :--- |
+| a.launch.campaign.trackingcode |
+| a.launch.campaign.source |
+| a.launch.campaign.medium |
+| a.launch.campaign.medium |
+| a.launch.campaign.content |
+
+{% hint style="warning" %}
+Ensure the deep link URL has a key `a.deeplink.id` in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters will be sent to Analytics via context data.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 #### Java
+
+#### Syntax
+
+```java
+public static void trackAdobeDeepLink(final Uri uri)
+```
+
+#### Example
 
 ```java
 MobileServices.trackAdobeDeepLink
@@ -204,10 +359,36 @@ MobileServices.trackAdobeDeepLink
 {% endtab %}
 
 {% tab title="iOS" %}
+### trackAdobeDeepLink
+
 #### Objective-C
 
+#### Syntax
+
 ```objectivec
-[ACPMobileServices trackAdobeDeepLink:]
++ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
+```
+
+#### Examples
+
+```objectivec
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [ACPMobileServices trackAdobeDeepLink:url]
+    /*
+     Handle deep link
+     */
+    return YES;
+}
+```
+
+```objectivec
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
+    [ACPMobileServices trackAdobeDeepLink:url];
+    /*
+     Handle deep link
+     */
+    return YES;
+}
 ```
 {% endtab %}
 {% endtabs %}
