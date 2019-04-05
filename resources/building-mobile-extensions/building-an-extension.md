@@ -122,45 +122,45 @@ The `ACPExtension` class has the following methods that you can optionally overr
 @end
 ```
 
-1. Provide at least an implementation for the `init` and `name` methods.
+3. Provide at least an implementation for the `init` and `name` methods.
 
-   **MyExtension.m**
+**MyExtension.m**
 
-   ```text
-   #import "MyExtension.h"
+```text
+#import "MyExtension.h"
 
-   @implementation MyExtension
-   - (nullable NSString*) name {
-       return @"com.myCompany.myExtension";
-   }
+@implementation MyExtension
+- (nullable NSString*) name {
+    return @"com.myCompany.myExtension";
+}
 
-   - (instancetype) init {
-       if (self = [super init]) {
-           // register your listeners here
-       }
+- (instancetype) init {
+    if (self = [super init]) {
+        // register your listeners here
+    }
 
-       return self;
-   }
-   @end
-   ```
+    return self;
+}
+@end
+```
 
-2. If you decide to override the `init` method, call the default implementation of `onUnregister`.
+4. If you decide to override the `init` method, call the default implementation of `onUnregister`.
 
-   ```text
-   - (void) onUnregister {
-       [super onUnregister];
-       // your cleanup code goes here
-   }
-   ```
+```text
+- (void) onUnregister {
+    [super onUnregister];
+    // your cleanup code goes here
+}
+```
 
-3. Review the error message that was logged by the default implementation of `unexpectedError`.
+5. Review the error message that was logged by the default implementation of `unexpectedError`.
 
-   ```text
-   - (void) unexpectedError:(NSError *)error {
-       [super unexpectedError];
-        // your error handling code goes here
-   }
-   ```
+```text
+- (void) unexpectedError:(NSError *)error {
+    [super unexpectedError];
+     // your error handling code goes here
+}
+```
 
 ### B. **Registering your extension**
 
