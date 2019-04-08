@@ -45,7 +45,7 @@ Having trouble creating a mobile property or need access to Launch? See [User Pe
 3. Click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}
-Not sure on what extensions you need? Check out the extensions in the **Using Mobile Extensions** section.
+Not sure on what extensions you need? Check out the extensions in the _Using Mobile Extensions_ section.
 {% endhint %}
 
 ## Publish Configuration
