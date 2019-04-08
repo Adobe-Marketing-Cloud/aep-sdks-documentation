@@ -1,12 +1,12 @@
 # Release notes
 
-## April 3, 2019 
+## April 3, 2019
 
 The Adobe Campaign Standard extension version 1.0.1 is now available for iOS.
 
 This update fixed an issue with duplicate symbols being present in the Campaign extension library.
 
-## March 25, 2019 
+## March 25, 2019
 
 The following update was made to the Mobile Core extension in iOS version 2.1.0:
 
@@ -22,13 +22,13 @@ If there is no cached configuration available, the SDK can fetch the configurati
 
 ## March 21, 2019
 
-The Adobe Campaign Standard extension version 1.0.0 is now available for Android! 
+The Adobe Campaign Standard extension version 1.0.0 is now available for Android!
 
 This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
 ## March 21, 2019
 
-The following update was made to the Mobile Core extension in Android version 1.2.1: 
+The following update was made to the Mobile Core extension in Android version 1.2.1:
 
 * Added protection around null results when `toString` is called on Intent extras data.
 
@@ -39,7 +39,7 @@ The following update was made to the Mobile Core extension in Android version 1.
 ### **Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
-* Added environment-aware support, which allows you to define dev and stage environments in a property. ****This overrides the config properties that were based on the default environment.
+* Added environment-aware support, which allows you to define dev and stage environments in a property. _\*\*_This overrides the config properties that were based on the default environment.
 
 ### Core
 

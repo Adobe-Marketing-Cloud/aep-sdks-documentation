@@ -12,16 +12,16 @@ Review the following Mobile Services functionality documentation for context and
 {% endhint %}
 
 {% hint style="warning" %}
-The following steps require that you have previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
+Before you configure the Mobile Services extension, ensure that you  previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
 {% endhint %}
 
 {% hint style="info" %}
-Looking for Location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)](places-extension-1/).
+Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)](places-extension-1/).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
 
-1. Configure the Mobile Services extension in Launch
+1. Configure the Mobile Services extension in Launch.
 2. If using acquisition and marketing links, update your configuration in the Analytics extension.
 3. Add Mobile Services extension to your app.
 4. Implement Mobile Services APIs in your app.
