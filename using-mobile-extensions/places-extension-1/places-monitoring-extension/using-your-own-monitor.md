@@ -11,17 +11,17 @@ If you decide to use your monitoring services, register the geofences of the POI
 1. Pass the location updates that were obtained from the Core Location services of the iOS to the Places Extension. 
 2. Use the `getNearbyPointsOfInterest` Places Extension API to get the array of _n_ `ACPPlacesPoi` objects around the current location.
 
-```text
-- (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray<CLLocation*>*) locations {
+  ```text
+  - (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray<CLLocation*>*) locations {
 
-        [ACPPlaces getNearbyPointsOfInterest:currentLocation limit:10 callback: ^ (NSArray<ACPPlacesPoi*>* _Nullable nearbyPoi) {
-            [self startMonitoringGeoFences:nearbyPoi];
-    }];
+          [ACPPlaces getNearbyPointsOfInterest:currentLocation limit:10 callback: ^ (NSArray<ACPPlacesPoi*>* _Nullable nearbyPoi) {
+              [self startMonitoringGeoFences:nearbyPoi];
+      }];
 
-}
-```
+  }
+  ```
 
-1. Extract the information from the obtained `ACPPlacesPOI` objects and start monitoring those POIs
+3. Extract the information from the obtained `ACPPlacesPOI` objects and start monitoring those POIs
 
 ```text
 - (void) startMonitoringGeoFences: (NSArray*) newGeoFences {
