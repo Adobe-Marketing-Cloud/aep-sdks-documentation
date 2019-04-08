@@ -11,8 +11,8 @@ To get started with the Profile extension:
 1. Configure the Profile Extension in Launch.
 2. Add the Profile extension to your app.
 3. Implement Profile APIs to:
-   1. Update user attributes.
-   2. Remove user attributes.
+   * Update user attributes.
+   * Remove user attributes.
 
 ## Add Profile to your App
 
