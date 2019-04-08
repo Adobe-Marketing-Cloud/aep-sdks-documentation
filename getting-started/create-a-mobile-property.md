@@ -17,18 +17,24 @@ Having trouble creating a mobile property or need access to Launch? See [User Pe
 1. In Launch, click the **Extensions** tab.   
    The **Mobile Core** and **Profile** extensions are installed by default.  
 
-
-
-   1. Click **Configure** on the **Mobile Core** card**.** 
+   a. Click **Configure** on the **Mobile Core** card.
 
       ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm%20%282%29.png)
 
-      1. Provide your Experience Cloud Org ID.  By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
-      2. \(Optional\) Provide your Experience Cloud ID Server. This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint.
-      3. Optionally, change the **Session Timeout** value. A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
+   b. Provide your Experience Cloud Org ID.  
+   
+      By default, this value is auto-populated using the currently signed-in Organization ID.   This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
-   2. Click **Save** to confirm your settings for **Mobile Core**.
-   3. Click **Catalog** and install the extensions that you need.
+   c. \(Optional\) Provide your Experience Cloud ID Server. 
+
+      This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint.
+   
+   d. Optionally, change the **Session Timeout** value. 
+   
+     A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
+
+2. Click **Save** to confirm your settings for **Mobile Core**.
+3. Click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}
 Not sure on what extensions you need? Check out the extensions in the **Using Mobile Extensions** section.
