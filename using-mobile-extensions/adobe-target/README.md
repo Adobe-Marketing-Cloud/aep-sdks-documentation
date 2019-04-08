@@ -7,9 +7,9 @@ To get started with Target, follow these steps:
 1. Configure the Target extension in Launch.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
-   1. Request activities.
-   2. Prefetch offers.
-   3. Enter visual preview mode.
+   * Request activities.
+   * Prefetch offers.
+   * Enter visual preview mode.
 
 ## Configure the Target extension in Launch  <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
