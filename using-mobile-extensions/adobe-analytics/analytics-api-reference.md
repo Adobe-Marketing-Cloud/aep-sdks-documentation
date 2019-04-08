@@ -234,7 +234,7 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 {% endtab %}
 {% endtabs %}
 
-## Set custom visitor identifier   <a id="setidentifier"></a>
+## Set the custom visitor identifier   <a id="setidentifier"></a>
 
 {% hint style="warning" %}
 Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
@@ -286,7 +286,7 @@ ACPAnalytics.setVistorIdentifier("custom_identifier")
 {% endtab %}
 {% endtabs %}
 
-## Get custom visitor identifier
+## Get the custom visitor identifier
 
 {% hint style="warning" %}
 Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.

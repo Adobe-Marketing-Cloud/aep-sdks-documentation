@@ -24,19 +24,19 @@ Type the name of the tracking server to which all media tracking data should be 
 
 Type the channel name property.
 
-#### Online Video Provider
+#### Online video provider
 
 Type the name of the online platform through which content is distributed.
 
-#### Player Name
+#### Player name
 
 Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
 
-#### Application Version
+#### Application version
 
 Type the version of the media player application/SDK.
 
-#### Debug Logging
+#### Debug logging
 
 {% hint style="danger" %}
 Disable this option for your production application.
@@ -64,7 +64,7 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
    import com.adobe.marketing.mobile.*;
    ```
 
-3. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
+3. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
    ```text
    pod 'ACPMedia', '~> 1.0'
@@ -72,7 +72,7 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
    pod 'ACPCore', '~> 2.0'
    ```
 
-or you can manually include the libraries found in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
+You can also manually include the libraries in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
 
 1. In Xcode project, import Media extension:
 
@@ -94,7 +94,7 @@ or you can manually include the libraries found in [Github](https://github.com/A
 {% tab title="Android" %}
 #### Java
 
-To register media with Mobile Core, call the `setApplication()` method in `onCreate()`, then call setup methods, as shown in this sample:
+To register media with Mobile Core, call the `setApplication()` method in `onCreate()` and call set up methods, as shown in this sample:
 
 ```java
 import com.adobe.marketing.mobile.*;

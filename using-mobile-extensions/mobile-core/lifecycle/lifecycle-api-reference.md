@@ -1,6 +1,6 @@
 # Lifecycle API reference
 
-Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You can also choose to set additional lifecycle metrics.
+Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also choose to set additional lifecycle metrics.
 
 This section shows you how to collect lifecycle metrics. To view and report on this data in those respective solutions, set up Analytics or other Experience Cloud solution extensions.
 
@@ -135,7 +135,7 @@ You can pass additional data to lifecycle on app launch, app resume, both, or ne
 **Java**
 
 {% hint style="warning" %}
-You need to add this code only in your main activity and any other activity from which your app can be launched.
+You need to add this code in your main activity and any other activity from which your app can be launched.
 {% endhint %}
 
 ```java

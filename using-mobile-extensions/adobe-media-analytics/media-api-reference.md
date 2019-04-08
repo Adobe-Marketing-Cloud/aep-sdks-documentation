@@ -63,7 +63,7 @@ ACPMedia.createTracker({mediaTracker in
 {% endtab %}
 {% endtabs %}
 
-### Create Media Object
+### Create a media object
 
 Creates an instance of the Media object.
 
@@ -142,7 +142,7 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 {% endtab %}
 {% endtabs %}
 
-### Create AdBreak Object
+### Create an AdBreak object
 
 Creates an instance of the AdBreak object.
 
@@ -204,7 +204,7 @@ let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create Ad Object
+### Create an ad object
 
 Creates an instance of the Ad object.
 
@@ -269,7 +269,7 @@ let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", posit
 {% endtab %}
 {% endtabs %}
 
-### Create Chapter Object
+### Create a chapter object
 
 Creates an instance of the Chapter object.
 
@@ -337,7 +337,7 @@ let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create QoE Object
+### Create a QoE object
 
 Creates an instance of the QoE object.
 
@@ -770,7 +770,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdBreakComplete, null, null);
 ```
 
-**Tracking Ads**
+**Tracking ads**
 
 ```java
 // AdStart
@@ -792,7 +792,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdSkip, null, null);
 ```
 
-**Tracking Chapters**
+**Tracking chapters**
 
 ```java
 // ChapterStart
@@ -810,7 +810,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.ChapterSkip, null, null);
 ```
 
-**Tracking Playback events**
+**Tracking playback events**
 
 ```java
 // BufferStart
@@ -826,7 +826,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.SeekComplete, null, null);
 ```
 
-**Tracking Bitrate change**
+**Tracking bitrate changes**
 
 ```java
 // If the new bitrate value is available provide it to the tracker.
@@ -1079,7 +1079,7 @@ _tracker.updateCurrentPlayhead(1)
 
 ### updateQoEObject
 
-Provides the media tracker with the current QoE information. For accurate tracking, call this method multiple times when the media player provides updated QoE information.
+Provides the media tracker with the current QoE information. For accurate tracking, call this method multiple times when the media player provides the updated QoE information.
 
 | Variable Name | Description |
 | :--- | :--- |
@@ -1134,7 +1134,7 @@ _tracker.updateQoEObject(qoeObject)
 
 ## Media constants
 
-### Media Type
+### MediaType
 
 This defines the type of a media that is currently tracked.
 
@@ -1176,7 +1176,7 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
 {% endtab %}
 {% endtabs %}
 
-### Stream Type
+### StreamType
 
 This defines the stream type of the content that is currently tracked.
 

@@ -30,9 +30,9 @@ To implement lifecycle metrics, complete the following steps:
    }
    ```
 
-## Public API
+## APIs
 
-Here are the public APIs for the Lifecycle extension:
+Here are the APIs for the Lifecycle extension:
 
 #### Lifecycle Start
 
@@ -88,7 +88,7 @@ Here are some examples for `lifecyclePause` in Objective-C and Swift:
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
-**Important**: You should upgrade to Adobe Experience Cloud Platform SDKs, which contains critical changes that prevent false crashes from being reported.
+**Important**: You should upgrade to Adobe Experience Platform SDKs, which contains critical changes that prevent false crashes from being reported.
 
 **When does Adobe report a crash?**
 
@@ -114,19 +114,19 @@ The following scenarios are known to falsely cause a crash to be reported by the
 The following practices can help prevent false crashes from being reported:
 
 * Ensure that you perform your development against non-production report suites, which should prevent false crash from the first bullet point from occurring.
-* Do not delete or modify any values that the Adobe Experience Cloud Platform SDKs puts in `NSUserDefaults`. If these values are modified outside the SDK, the data reported will be invalid.
+* Do not delete or modify any values that the Experience Platform SDKs puts in `NSUserDefaults`.  If these values are modified outside the SDK, the data reported will be invalid.
 
 **How does crash reporting work?**
 
-iOS uses system notifications that allow developers to track and respond to different states and events in the application lifecycle. The Adobe Experience Cloud Platform SDKs has a notification handler that responds to the `UIApplicationDidEnterBackgroundNotification` notification. In this code, a value is set that indicates that the user has backgrounded the app. On a subsequent launch, if that value cannot be found, a crash is reported.
+iOS uses system notifications that allow developers to track and respond to different states and events in the application lifecycle. The Experience Platform SDKs has a notification handler that responds to the `UIApplicationDidEnterBackgroundNotification` notification. In this code, a value is set that indicates that the user has backgrounded the app. On a subsequent launch, if that value cannot be found, a crash is reported.
 
 **Why does Adobe measure crashes this way?**
 
-This approach of measuring crashes provides a high-level answer to the question, Did the user exit my app intentionally? Crash reporting libraries provided by companies like Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
+This approach of measuring crashes provides a high-level answer to the question, Did the user exit my app intentionally? Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
 
 ### Collecting Additional Data with Lifecycle
 
-When calling `lifecycleStart`, you can optionally pass in a dictionary of additional data that will be attached to the lifecycle event.
+When calling `lifecycleStart`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
 
 **Tip**: You can pass additional data to lifecycle on app launch, app resume, both, or neither.
 

@@ -4,7 +4,7 @@
 
 * An Asset is an opaque data blob that is needed by a specific consequence.
 * A condition is a boolean equation that evaluates to `true` or `false`.
-* A consequence is the action to be performed when the condition\(s\) evaluate to true.
+* A consequence is the action to be performed when the condition\(s\) evaluates to `true`.
 * A rule is a set of conditions and the associated consequence\(s\).
 
 ## File format
@@ -19,7 +19,7 @@ Rules and their associated assets are delivered as a standard ZIP archive, which
 
 ## File delivery
 
-File delivery occurs by using a request from the Adobe Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The SDKs support token expansions on this endpoint, which allows the injection of ECIDs and property IDs in the request.
+File delivery occurs by using a request from the Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The SDKs support token expansions on this endpoint, which allows the injection of ECIDs and property IDs in the request.
 
 This request is a conditional `GET` and occurs by default at the start of each new application session.
 
@@ -102,7 +102,7 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 ### Matching and retrieving values by keys
 
-By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are some special key prefixes that can cause the values to be sourced from other locations known to the Adobe Experience Platform SDKs.
+By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are some special key prefixes that can cause the values to be sourced from other locations known to the Experience Platform SDKs.
 
 To avoid collisions, special key prefixes always start with `~` to differentiate them from the standard event key names.
 

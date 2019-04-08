@@ -1,9 +1,9 @@
 # Adobe Analytics
 
-## **Configure Analytics Extension in Launch**
+## **Configure the Analytics extension in Launch**
 
 1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Analytics** extension and click **Install**.
+2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and click **Install**.
 3. Type the extension settings.  For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
@@ -12,7 +12,7 @@
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
-#### **Report Suites**
+#### **Report suites**
 
 {% hint style="info" %}
 Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
@@ -20,7 +20,7 @@ Want to know how to find report suite IDs? See [Report Suites](https://docs.adob
 
 Type one or more report suite identifiers to which the Analytics data should be sent. To add multiple report suite IDs, click **Add Another**; to remove these IDs, click **Remove Circle.** Report suite IDs can also be configured for the Development and Staging environments.
 
-#### **Tracking Server**
+#### **Tracking server**
 
 {% hint style="info" %}
 Want to know what a tracking server is and where to find it? For more information, see [Correctly populate the trackingServer and trackingServerSecure variable](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
@@ -28,7 +28,7 @@ Want to know what a tracking server is and where to find it? For more informatio
 
 Type the tracking domain to which all Analytics requests should be made.
 
-#### **Offline Enabled**
+#### **Offline enabled**
 
 {% hint style="info" %}
 Do you need offline tracking? For more information, see [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
@@ -46,7 +46,7 @@ If you are not sure whether your report suite is timestamp enabled, contact Cust
 If you currently send mobile SDK data to a report suite that also collects data from web JavaScript, you might need to set up a separate report suite for mobile data or include a custom timestamp on all JavaScript hits that use the`s.timestamp`variable. For more information, contact Customer Care.
 {% endhint %}
 
-#### Audience Manager Forwarding
+#### Audience Manager forwarding
 
 {% hint style="info" %}
 For more information about Analytics server-side forwarding to Audience Manager, see [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager).
@@ -54,7 +54,7 @@ For more information about Analytics server-side forwarding to Audience Manager,
 
 If you set up Analytics server-side forwarding to Audience Manager, select the **Audience Manager Forwarding** checkbox. When this checkbox is selected, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
 
-#### Backdate Previous Session Info
+#### Backdate previous session info
 
 {% hint style="warning" %}
 Select the **Backdate Previous Session Info** checkbox **only** if you have timestamp-enabled report report suites.
@@ -66,7 +66,7 @@ For example, if you select the checkbox, Lifecycle session information or crash 
 
 If this option is disabled, the Adobe SDK attaches the session information to the current lifecycle.
 
-#### Batch Limit
+#### Batch limit
 
 This setting creates a threshold number of hits to be sent in consecutive calls. For example, if you type or select **10**, each Analytics hit before the 10th hit is stored in the queue. When the 10th hit comes in, all 10 hits are sent to Analytics in the order in which they were generated.
 
@@ -76,7 +76,7 @@ If you set a value greater than 0, ensure that the **Offline Enabled** checkbox 
 
 The default value for this setting is 0, which means that hit batching is disabled, and all hits are immediately sent to Analytics as they are generated.
 
-#### Launch Hit Delay
+#### Launch hit delay
 
 Number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5s or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services.md) extension.
 
@@ -336,7 +336,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 {% endtab %}
 {% endtabs %}
 
-## Event Serialization
+## Event serialization
 
 Event serialization is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
 
@@ -400,7 +400,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
 
-## Configuration Keys
+## Configuration keys
 
 To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference](./).
 

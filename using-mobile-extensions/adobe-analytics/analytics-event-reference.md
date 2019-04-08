@@ -27,7 +27,7 @@ Launch data includes information about the application's number of launches, day
 
 We also track the application version upgrades.
 
-#### Crash Event
+#### Crash event
 
 If your application is terminated without having first been backgrounded, the SDK reports a crash the next time your app is launched. If the `backdateSessionInfo` flag is enabled in your configuration, this crash is sent as an individual hit. If the flag is not enabled, the crash is sent as part of the launch event.
 
@@ -246,13 +246,13 @@ This event represents a request to the Lifecycle extension to start or stop coll
 
 The Analytics extension listens only to the Lifecycle Start Event, and the Analytics database queue should be paused for up to `DEFAULT_LIFECYCLE_RESPONSE_WAIT_TIMEOUT` \(ms\) to wait for the corresponding response content event.
 
-#### Event Details    <a id="event-details-3"></a>
+#### Event details    <a id="event-details-3"></a>
 
 | **Event Type** | **Event Source** | **Paired** |
 | :--- | :--- | :--- |
 | `com.adobe.eventType.lifecycle` | com.adobe.eventSource.requestContent | No |
 
-#### Data Payload Definition    <a id="data-payload-definition-4"></a>
+#### Data payload definition    <a id="data-payload-definition-4"></a>
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -275,7 +275,7 @@ The Analytics extension waits for the lifecycle data and appends it to an exitin
 | :--- | :--- | :--- |
 | `com.adobe.eventType.lifecycle` | `com.adobe.eventSource.responseContent` | No |
 
-#### Data Payload Definition    <a id="data-payload-definition-5"></a>
+#### Data payload definition    <a id="data-payload-definition-5"></a>
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -311,7 +311,7 @@ Launch data includes information about the application's number of launches, day
 {    "lifecyclecontextdata": {        "launchevent" : "LaunchEvent",        "dailyenguserevent" : "DailyEngUserEvent",        "monthlyenguserevent":"MonthlyEngUserEvent",        "installdate":"22/05/2014",        "launches":42,        "dayssincelastuse" : 4,        "dayssincefirstuse" : 28        ...    },}
 ```
 
-#### Crash Event    <a id="crash-event"></a>
+#### Crash event    <a id="crash-event"></a>
 
 If your application is terminated without having first been backgrounded, the SDK reports a crash the next time your app is launched. If the `backdateSessionInfo` flag is enabled in your configuration, this information is sent as an individual hit. If the flag is not enabled, the information is sent as part of the launch event.
 
@@ -334,13 +334,13 @@ This event will be generated in the following situations:
 * If Analytics server returns a response content, the Analytics extension after the `com.adobe.eventSource.requestContent` __is processed, __and the hit is sent to the server.
 * The Analytics extension as a response for the _GetQueueSize_ API requests.
 
-#### Event Details
+#### Event details
 
 | **Event Type** | **Event Source** | **Paired** |
 | :--- | :--- | :--- |
 | `com.adobe.eventType.analytics` | `com.adobe.eventSource.responseContent` | No |
 
-#### Data Payload Definition
+#### Data payload definition
 
 Here is the definition of the key-value pairs in this event:
 

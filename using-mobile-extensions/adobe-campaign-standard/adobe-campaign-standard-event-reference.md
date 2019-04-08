@@ -7,7 +7,7 @@
 This event is dispatched from the Event Hub for the following scenarios:
 
 * Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
-* This event is dispatched immediately after a Campaign rule is found to be true. For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
+* This event is dispatched immediately after a Campaign rule is found to be true.  For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
 
 #### Data payload definition   <a id="data-payload-definition-1"></a>
 
@@ -88,7 +88,7 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `linkage_fields` | Map | No | This map contains either one or multiple linkage fields that are used to personally identify the logged in user. |
+| `linkage_fields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
 
 #### Event data example
 

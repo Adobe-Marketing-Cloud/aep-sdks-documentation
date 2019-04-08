@@ -11,7 +11,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 ## Configure the Campaign Standard extension in Launch
 
 1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
+2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension, and click **Install**.
 3. Provide the extension settings.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
@@ -20,7 +20,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ![](../../.gitbook/assets/campaign-extension-config-v4.png)
 
-#### ACS Endpoints
+#### ACS endpoints
 
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaing.adobe.com`.
 
@@ -32,7 +32,7 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Launch Campaign extension for successful validation.
 
-#### MCIAS Region
+#### MCIAS region
 
 Select an MCIAS region based on your customer's location or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
@@ -40,7 +40,7 @@ Select an MCIAS region based on your customer's location or enter a custom endpo
 For this extension, the custom MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
 {% endhint %}
 
-#### Request Timeout
+#### Request timeout
 
 Time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 

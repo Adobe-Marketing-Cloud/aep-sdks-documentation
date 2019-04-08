@@ -12,7 +12,7 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Tokens are special strings used in rule actions as values, which will be expanded by the SDK when the action is carried out. The format of a token is \`\`, which is any period-separated string that identifies the source of the data from which the token will be expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/rules-engine/rules-json#matching-and-retrieving-values-by-keys).
+Tokens are special strings used in rule actions as values, which are expanded by the SDK when the action is carried out. The format of a token is \`\`, which is any period-separated string that identifies the source of the data from which the token is expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/rules-engine/rules-json#matching-and-retrieving-values-by-keys).
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
@@ -24,7 +24,7 @@ Here is a usage example:
 
 ### Using tokens in Postbacks and PII rule actions <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
 
-`Postbacks` and `PII` actions allow you to specify a `templateUrl` field and an optional `postbody`field that allow you to specify which tokens will be expanded by the Adobe Experience Cloud Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+`Postbacks` and `PII` actions allow you to specify a `templateUrl` field and an optional `postbody`field that allow you to specify which tokens will be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
 To use data that is passed to the `collectPii` API to form a token, the format is:
 
@@ -38,5 +38,5 @@ For more information about `collectPii` and its usage, see `collectPii` in [Mobi
 
 ### Using tokens in OpenURL rule actions <a id="using-tokens-in-openurl-rule-actions"></a>
 
-`Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the SDKs. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+`Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the SDKs. For more information about tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 

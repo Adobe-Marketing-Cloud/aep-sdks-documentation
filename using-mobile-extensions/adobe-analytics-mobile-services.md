@@ -68,7 +68,7 @@ You can find the Acquisition App ID in Mobile Services. Select your app, navigat
 
 ![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm%20%281%29.png)
 
-3. Provide the **Messages URL** \(sample value: https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json\)
+3. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
 
 You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
@@ -398,8 +398,8 @@ The SDK automatically tracks the following metrics for your in-app messages:
 For full screen and alert style in-app messages:
 
 * **Impressions**: when user triggers an in-app message.
-* **Click throughs**: when user presses the **Click through** button.
-* **Cancels**: when user pushes the **Cancel** button.
+* **Click throughs**: when user clicks the **Click through** button.
+* **Cancels**: when user clicks the **Cancel** button.
 
 For custom, full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
@@ -492,16 +492,14 @@ The SDK can parse key-value pairs of data that are appended to any deep or unive
 
 You can also append one or more of the following reserved keys, with user-generated values, to the deep or universal link:
 
-| Reserved Keys |
-| :--- |
-| a.launch.campaign.trackingcode |
-| a.launch.campaign.source |
-| a.launch.campaign.medium |
-| a.launch.campaign.medium |
-| a.launch.campaign.content |
+* `a.launch.campaign.trackingcode`
+* `a.launch.campaign.source`
+* `a.launch.campaign.medium`
+* `a.launch.campaign.medium`
+* `a.launch.campaign.content`
 
 {% hint style="warning" %}
-Ensure the deep link URL has a key `a.deeplink.id` in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters are sent to Analytics via context data.
+Ensure the deep link URL has the `a.deeplink.id` key in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters are sent to Analytics via context data.
 {% endhint %}
 
 {% tabs %}
@@ -560,7 +558,7 @@ MobileServices.trackAdobeDeepLink
 
 To prepare for your migration, remember the following information:
 
-* Liifetime value is not supported on the Experience Platform SDK, so it might not be used to trigger in-app messages or local notifications.
+* Lifetime value is not supported on the Experience Platform SDK, so it might not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
 * `a.internalaction` or `action` \(from Lifecycle\) can be used to trigger in-app messages or local notifications.  We suggest using `LaunchEvent` instead.
 * Local notifications do not support Android 8.0 or higher.

@@ -6,7 +6,7 @@
 
 This event updates the profile for Audience Manager and is generated when the`audienceSignalWithData` API is called to send content to Audience Manager.
 
-#### Event Details
+#### Event details
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
@@ -24,7 +24,7 @@ Here are the key-value pairs in this event:
 
 This event is a request to retrieve the visitor profile from Audience Manager and is generated when the parent application requests an audience visitor profile by using `audienceGetVisitorProfile`.
 
-#### Event Details
+#### Event details
 
 | Event Type | Event Source | Paired | Paired Event |
 | :--- | :--- | :--- | :--- |
