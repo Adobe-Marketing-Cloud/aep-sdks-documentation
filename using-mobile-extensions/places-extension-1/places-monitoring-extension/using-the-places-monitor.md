@@ -4,12 +4,8 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Places Monitor** extension, and click **Install**.
-3. If the **Adobe Places extension** is not installed, locate the **Adobe Places** extension
-
-   on the **Catalog** tab, and click **Install**. 
-
-4. Click **Save**.
-5. Follow the publishing process to update the SDK configuration.
+3. Click **Save**.
+4. Follow the publishing process to update the SDK configuration.
 
 ### **Configure the Places Monitor extension** <a id="configure-places-extension"></a>
 
@@ -19,7 +15,7 @@ There are no configuration tasks for the Places Monitor extension.
 
 ## Add the Places Monitor extension to your app <a id="add-places-monitor-extension-to-your-app"></a>
 
-iOS
+### iOS
 
 1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPPlacesMonitor'` 
 2. Import the Places and Places Monitor libraries:

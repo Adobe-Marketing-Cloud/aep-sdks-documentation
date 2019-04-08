@@ -12,7 +12,7 @@
 
 #### **Event Description**
 
-This event is a request to retrieve all of the POIs that the device is currently within.
+This event is a request to retrieve the POIs in which the device is currently located.
 
 #### **Data Payload Definition**
 

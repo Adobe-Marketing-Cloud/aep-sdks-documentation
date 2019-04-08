@@ -90,11 +90,11 @@ This API starts tracking the device's location and monitors their nearby Places.
 
 Monitoring can be set to one of the following values:
 
-* **ACPPlacesMonitorModeContinuous**
+* `ACPPlacesMonitorModeContinuous`
 
   The monitoring extension receives and processes locations more frequently. This monitoring strategy consumes a lot of power but provides higher accuracy. For more information, see [Apple documentation on continuous monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation).
 
-* **ACPPlacesMonitorModeSignificantChanges**
+* `ACPPlacesMonitorModeSignificantChanges`
 
   The monitoring extension only receives and processes location updates after the device has moved a significant distance from the previously processed location. This monitoring strategy consumes less power than the continuous monitoring strategy. For more information, see [Apple documentation on significant monitoring](https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati)
 

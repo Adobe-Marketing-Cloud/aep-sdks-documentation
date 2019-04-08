@@ -9,7 +9,7 @@ If you decide to use your monitoring services, register the geofences of the POI
 {% tabs %}
 {% tab title="iOS" %}
 1. Pass the location updates that were obtained from the Core Location services of the iOS to the Places Extension. 
-2. Use the `getNearbyPointsOfInterest` Places Extension API to get the array of n `ACPPlacesPoi` objects around the current location.
+2. Use the `getNearbyPointsOfInterest` Places Extension API to get the array of _n_ `ACPPlacesPoi` objects around the current location.
 
 ```text
 - (void) locationManager: (CLLocationManager*) manager didUpdateLocations: (NSArray<CLLocation*>*) locations {

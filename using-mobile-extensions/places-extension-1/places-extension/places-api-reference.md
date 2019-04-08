@@ -2,7 +2,7 @@
 
 ## Processing a region event
 
-When a device has crossed the boundary of one of your app's pre-defined Places regions, the region and event type should be passed to the SDK for processing.
+When a device crosses one of your app's pre-defined Places region boundaries, the region and event type are passed to the SDK for processing.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -113,7 +113,7 @@ Places.getNearbyPlaces(currentLocation, 10, new AdobeCallback<List<PlacesPOI>>()
 
 ## Retrieve current device points of interest
 
-Requests a list of POIs that the device is known to currently be within and returns them in a callback.
+Requests a list of POIs in which the device is currently known to be in and returns them in a callback.
 
 {% tabs %}
 {% tab title="Android" %}
