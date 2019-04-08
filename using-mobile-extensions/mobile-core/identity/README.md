@@ -8,14 +8,14 @@ On web or other platforms, there might situations where this framework might not
 
 To get started with Identity, complete the following steps:
 
-1. Add the ****Identity ****framework to your app.
+1. Add the **Identity** framework to your app.
 2. Implement the SDK APIs to complete the following tasks:
-   1. Update customer IDs.
-   2. Append Adobe visitor data to a URL string.
-   3. Return customer IDs.
-   4. Retrieve Experience Cloud IDs.
-   5. Set advertising IDs.
-   6. Set the device notification for push notifications.
+   * Update customer IDs.
+   * Append Adobe visitor data to a URL string.
+   * Return customer IDs.
+   * Retrieve Experience Cloud IDs.
+   * Set advertising IDs.
+   * Set the device notification for push notifications.
 
 ## Add Identity to your app
 
@@ -59,7 +59,7 @@ Here is the code sample to register the Identity extension:
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension.
 
-Here is code sample which calls these set up methods:
+Here is a code sample that calls these set up methods:
 
 ```java
 public class MobiletApp extends Application {
@@ -106,5 +106,5 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each client company in the Adobe Experience Cloud and is similar to the following value:`016D5C175213CCA80A490D05@AdobeOrg`. The trailing `@AdobeOrg` is required.
 {% endhint %}
 
-After the configuration is complete, an Experience Cloud ID is generated and, where applicable, be included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
+After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
 
