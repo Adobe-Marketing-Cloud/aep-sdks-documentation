@@ -1,6 +1,6 @@
 # Next steps
 
-Now that you've initialized the SDK and the Mobile Core extension, you can start implementing extensions that will help you use Adobe Experience Cloud or third-party vendor functionality in your apps.
+Now that you have initialized the SDK and the Mobile Core extension, you can start implementing extensions that will help you use Adobe Experience Cloud or third-party vendor functionality in your apps.
 
 To get started, select an extension:
 
