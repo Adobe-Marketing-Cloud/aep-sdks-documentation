@@ -7,9 +7,9 @@ To get started with Audience Manager, complete these steps:
 1. Configure the Audience Manager extension in Launch.
 2. Add the Audience Manager extension to your app
 3. Implement the Audience Manager APIs to:
-   1. Get the user profile.
-   2. Send signals to Audience Manager.
-   3. Reset the Audience Manager identifiers and visitor profiles.
+   * Get the user profile.
+   * Send signals to Audience Manager.
+   * Reset the Audience Manager identifiers and visitor profiles.
 
 ## Configuring the Audience Manager extension in Adobe Launch   <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
