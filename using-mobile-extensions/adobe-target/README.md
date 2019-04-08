@@ -7,9 +7,9 @@ To get started with Target, follow these steps:
 1. Configure the Target extension in Launch.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
-   * Request activities.
-   * Prefetch offers.
-   * Enter visual preview mode.
+   1. Request activities.
+   2. Prefetch offers.
+   3. Enter visual preview mode.
 
 ## Configure the Target extension in Launch  <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
@@ -115,7 +115,7 @@ The SDK can minimize the number of times it reaches out to Target servers to fet
 Prefetched offer content does not persist across launches. The prefetch content is cached as long as the application lives or until the API that is used to clear the cache is called. For more information, see [Clear prefetch offer cache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#clear-prefetch-offer-cache).
 {% endhint %}
 
-### Using prefetch APIs
+### Using the prefetch APIs
 
 {% tabs %}
 {% tab title="Android" %}

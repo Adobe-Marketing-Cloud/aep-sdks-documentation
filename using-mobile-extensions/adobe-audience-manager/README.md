@@ -1,6 +1,6 @@
 # Adobe Audience Manager
 
- Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
+Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
 
 To get started with Audience Manager, complete these steps:
 
@@ -11,7 +11,7 @@ To get started with Audience Manager, complete these steps:
    * Send signals to Audience Manager.
    * Reset the Audience Manager identifiers and visitor profiles.
 
-## Configuring the Audience Manager extension in Adobe Launch   <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Adobe Launch    <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
 
@@ -31,8 +31,8 @@ To get started with Audience Manager, complete these steps:
 
 #### Java
 
-`import com.adobe.marketing.mobile.*;`   
-  
+`import com.adobe.marketing.mobile.*;`
+
 **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}
 
@@ -126,7 +126,7 @@ For more information about implementing Audience Manager APIs, see [Audience Man
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
@@ -139,6 +139,4 @@ To update SDK configuration programmatically, use the following information to c
 * Want to know more about setting up Adobe Analytics server-side forwarding to Audience Manager?
   * [Server-side forwarding overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
   * [Set up Server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
-
-
 
