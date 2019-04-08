@@ -8,8 +8,6 @@ To initialize the SDK, you need to first configure the SDK with an Environment I
 To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
-
-
 {% hint style="warning" %}
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
@@ -69,10 +67,10 @@ Debug logging is optional and helps you ensure that the SDK is working as intend
 
 | Log Level | Description |
 | :--- | :--- |
-| Error | This log level details unrecoverable errors caused during SDK implementation. |
-| Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level may indicate that a request has been made to the SDK, but the SDK may be unable to perform the requested task. For example, this may be used when catching an unexpected but recoverable exception and printing its message. |
-| Debug | In addition to detail from _Warning_ log level, _Debug_ also provides high-level information on how the SDK processes network requests/responses data. |
-| Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information into how SDK processes database interactions and SDK events. |
+| Error | This log level provides the details about unrecoverable errors that occurred during SDK implementation. |
+| Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level might indicate that a request has been made to the SDK, but the SDK might be unable to perform the requested task. For example, this log level might be used when catching an unexpected, but recoverable, exception and printing its message. |
+| Debug | In addition to detail from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
+| Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information about how SDK processes database interactions and SDK events. |
 
 To enable debug logging:
 
@@ -107,10 +105,10 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ## Enable the Experience Cloud Identity service
 
-Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations.
+Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
 
 {% hint style="info" %}
-Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
+To confirm that you have the correct Experience Cloud Org ID in the Mobile Core settings page, see [Get the SDK](get-the-sdk.md).
 {% endhint %}
 
 {% tabs %}
@@ -179,7 +177,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-After successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
+After a successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
 
 ## Enable lifecycle metrics
 
@@ -229,7 +227,7 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK always has the necessary reference to your application. We recommend calling `setApplication`in each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you call `setApplication`in each of your activities.
 {% endhint %}
 
 You can use the `onPause` function to pause the lifecycle data collection:
@@ -334,7 +332,7 @@ For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-
 
 You can use the following screen and action tracking APIs to measure your user's engagement with your app.
 
-Actions are events that occur in your app. Use this API to track and measure an action, where  each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
 This section shows you how to start tracking app screens and user actions. To view and report on this data in those respective solutions, set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
