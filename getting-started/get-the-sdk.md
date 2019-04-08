@@ -19,7 +19,7 @@ The recommended approach to integrating the SDK is to use Cocoapods or Gradle. S
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-You should see a pop-up similar to the following:
+You should see a dialog box similar to the following:
 
 ![](../.gitbook/assets/android.png)
 {% endtab %}
