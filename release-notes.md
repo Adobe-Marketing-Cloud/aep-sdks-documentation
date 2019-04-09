@@ -1,5 +1,15 @@
 # Release notes
 
+## April 9, 2019
+
+The ACPlaces Monitor version 1.0.1 is now available!
+
+Here are the changes in this release:
+
+* Added full unit test coverage.
+* CI integration \(CircleCI\)
+* Code coverage integration \(codecov\)
+
 ## April 3, 2019
 
 The Adobe Campaign Standard extension version 1.0.1 is now available for iOS.
