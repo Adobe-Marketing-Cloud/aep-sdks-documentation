@@ -52,7 +52,7 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
-* [Places extensions \(Beta\)](using-mobile-extensions/places-extension-1/README.md)
+* [Places \(Beta\)](using-mobile-extensions/places-extension-1/README.md)
   * [Places extension](using-mobile-extensions/places-extension-1/places-extension/README.md)
     * [Places API reference](using-mobile-extensions/places-extension-1/places-extension/places-api-reference.md)
     * [Places event reference](using-mobile-extensions/places-extension-1/places-extension/places-event-reference.md)
