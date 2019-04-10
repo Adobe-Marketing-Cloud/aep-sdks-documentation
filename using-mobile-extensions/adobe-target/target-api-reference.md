@@ -375,6 +375,32 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 {% endtab %}
 {% endtabs %}
 
+## Set preview restart deep link
+
+This API sets the Target preview URL to be displayed when the preview mode is restarted.
+
+{% tabs %}
+{% tab title="Android" %}
+### setPreviewRestartDeeplink
+
+#### Syntax
+
+```text
+
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### setPreviewRestartDeeplink
+
+#### Syntax
+
+```objectivec
++ (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
+```
+{% endtab %}
+{% endtabs %}
+
 ## Send an mbox click notification
 
 Sends a click notification to the configured Target server for a prefetched or regular mbox location. The click metric should be enabled for the provided location name in Target.

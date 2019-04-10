@@ -111,3 +111,33 @@ For more information, see [Audience Manager Extension API Reference](../../using
 | audienceDpid: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
 | audienceDpuuid: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
 
+## Adobe Target extension APIs
+
+For more information see [Target API reference](../../using-mobile-extensions/adobe-target/target-api-reference.md).
+
+### Supported APIs
+
+| Experience Platform SDK | 4x SDK \(iOS \| Android\) |
+| :--- | :--- |
+| getThirdPartyId: | targetThirdPartyID |
+| setThirdPartyId: | targetSetThirdPartyID |
+| getTntid: | Not applicable |
+| resetExperience: | targetClearCookies |
+| prefetchObjectWithName:mboxParameters: | targetPrefetchObjectWithName:mboxParameters: |
+| prefetchContent:withProfileParameters:callback: | targetPrefetchContent:withProfileParameters:callback: |
+| prefetchClearCache: | targetPrefetchClearCache |
+| requestObjectWithName:defaultContent:mboxParameters:callback: | targetRequestObjectWithName:defaultContent:mboxParameters:callback: |
+| loadRequests:withProfileParameters: | targetLoadRequests:withProfileParameters: |
+
+### Deprecated APIs
+
+| 4x SDK | Notes |
+| :--- | :--- |
+| targetPcID | Deprecated |
+| targetSessionID | Deprecated |
+| targetLoadRequest:callback: | Deprecated |
+| targetLoadRequestWithName:defaultContent:profileParameters:orderParameters:mboxParameters:callback: | Deprecated |
+| targetLoadRequestWithName:defaultContent:profileParameters:orderParameters:mboxParameters:requestLocationParameters:callback: | Deprecated |
+| targetCreateRequestWithName:defaultContent:parameters: | Deprecated |
+| targetCreateOrderConfirmRequestWithName:orderId:orderTotal:productPurchasedId:parameters: | Deprecated |
+
