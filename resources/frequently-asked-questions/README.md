@@ -1,6 +1,112 @@
 # Frequently asked questions
 
-### Launch
+### Differences between the Adobe Analytics Mobile SDK v4.x and the Adobe Experience Platform Mobile SDK
+
+One of the main benefits of the Adobe Experience Platform Mobile SDK is the ability to augment functionality by adding solution extensions that do not require an additional SDK.
+
+The table below highlights some of the differneces between the previous generation mobile SDK and the latest Adobe Experience Platform Mobile SDK.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"></th>
+      <th style="text-align:left">Mobile SDK v4.x</th>
+      <th style="text-align:left">Adobe Experience Platform Mobile SDK</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Programatic Configuration</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SDK Configuration Management</td>
+      <td style="text-align:left">Adobe Mobile Services</td>
+      <td style="text-align:left">Adobe Experience Platform Launch</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Ability to dynamically update configuration</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Lifecycle Metrics</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Postback support</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Acquistion links through Adobe Mobile Services</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Push Notifications through Adobe Mobile Services</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">In-App Messaging through Adobe Mobile Services</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Analytics integration</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>&#x2714;&#xFE0F;</p>
+      </td>
+      <td style="text-align:left">&#x2714;&#xFE0F; Includes the ability to configure separate report suites
+        for dev, stage and production environments</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Audience Manager integration</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Campaign Classic support</td>
+      <td style="text-align:left">Requires separate Neolane SDK</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Campaign Standard</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F; Includes mobile channel for Push notifications and In-App
+        Messaging</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Target</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Target Visual Experience Composer</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">(BETA) Adobe Location Services</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F; Places Monitor and Location Services extension</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">(BETA) Project Griffon Mobile Validation</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Support for 3rd party vendor extensions</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x2714;&#xFE0F;</td>
+    </tr>
+  </tbody>
+</table>### Launch
 
 #### Do I need additional permissions to create a mobile property in Launch?
 
