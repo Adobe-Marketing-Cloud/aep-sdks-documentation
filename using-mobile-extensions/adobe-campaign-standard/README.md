@@ -54,13 +54,6 @@ The **Request Timeout** value must be a non-zero number.
 This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
 {% endhint %}
 
-{% hint style="warning" %}
-If developing an Android application, the Campaign Standard Extension's FullscreenMessageActivity must be added to your AndroidManifest.xml file to properly display fullscreen in-app messages. Add this line to the AndroidManifest.xml file:
-```xml
-<activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
-```
-{% endhint %}
-
 {% tabs %}
 {% tab title="Android" %}
 1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.
@@ -189,6 +182,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 {% hint style="info" %}
 Need help creating an in-app message using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+{% endhint %}
+
+{% hint style="warning" %}
+If developing an Android application, the Campaign Standard Extension's FullscreenMessageActivity must be added to your AndroidManifest.xml file to properly display fullscreen in-app messages. Add this line to the AndroidManifest.xml file:
+```xml
+<activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
+```
 {% endhint %}
 
 For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
