@@ -573,7 +573,7 @@ To prepare for your migration, remember the following information:
 
 ## Watch the Video
 
-[https://youtu.be/VKI2ECZU3bU](https://youtu.be/VKI2ECZU3bU)
+{% embed url="https://youtu.be/VKI2ECZU3bU" caption="Video showing Mobile Services integration with Adobe Experience Platform Mobile SDK" %}
 
 ### Additional information
 
