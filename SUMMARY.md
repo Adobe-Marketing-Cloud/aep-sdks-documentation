@@ -63,6 +63,9 @@
     * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location.md)
     * [Using the Places Monitor extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-the-places-monitor.md)
     * [Using your own monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-your-own-monitor.md)
+* [Project Griffon \(Beta\)](using-mobile-extensions/project-griffon/README.md)
+  * [Set up Project Griffon](using-mobile-extensions/project-griffon/set-up-project-griffon.md)
+  * [Using Project Griffon](using-mobile-extensions/project-griffon/using-project-griffon.md)
 
 ## Resources
 
