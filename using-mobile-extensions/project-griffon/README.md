@@ -8,6 +8,10 @@ Project Griffon is in beta. Use of this beta product requires acceptance of term
 
 ## Features
 
+{% embed url="https://giphy.com/gifs/oX8pDi7Yc7uejCbbJJ/html5" %}
+
+
+
 ### Effortless Implementation
 
 Get started in a hurry with a few lines of code. Project Griffon works alongside the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and more.
