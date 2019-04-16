@@ -8,9 +8,7 @@ Project Griffon is in beta. Use of this beta product requires acceptance of term
 
 ## Features
 
-{% embed url="https://giphy.com/gifs/oX8pDi7Yc7uejCbbJJ/html5" %}
-
-
+![](../../.gitbook/assets/ezgif.com-video-to-gif.gif)
 
 ### Effortless Implementation
 
