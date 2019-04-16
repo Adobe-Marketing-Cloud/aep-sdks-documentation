@@ -571,6 +571,10 @@ To prepare for your migration, remember the following information:
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
 | mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
+## Watch the Video
+
+[https://youtu.be/VKI2ECZU3bU](https://youtu.be/VKI2ECZU3bU)
+
 ### Additional information
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
