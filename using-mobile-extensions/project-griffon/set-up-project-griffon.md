@@ -88,18 +88,41 @@ Once the extension has been registered, you may begin a Project Griffon session 
 
 This API accepts a deep link in order to begin a session. When this API is called, the SDK will display a pin authentication overlay on your app to begin a session.
 
+#### Objective-C
+
 #### Syntax
 
 ```text
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
 
-#### Objective-C
+#### Example
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url option (NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [ACPGriffonBridge startSession:url];
     return false;
+}
+```
+
+#### Swift
+
+#### Syntax
+
+```text
+class func startSession(_ url: URL) {
+}
+```
+
+#### Example
+
+```swift
+-(BOOL)
+option([UIApplicationOpenURLOptionsKey : id])
+options
+do {
+    ACPGriffonBridge.startSession(url)
+    return false
 }
 ```
 {% endtab %}
