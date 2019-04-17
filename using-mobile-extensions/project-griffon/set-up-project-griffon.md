@@ -117,12 +117,11 @@ class func startSession(_ url: URL) {
 #### Example
 
 ```swift
--(BOOL)
-option([UIApplicationOpenURLOptionsKey : id])
-options
-do {
-    ACPGriffonBridge.startSession(url)
-    return false
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    do {
+        ACPGriffonBridge.startSession(url)
+        return false
+    }
 }
 ```
 {% endtab %}
