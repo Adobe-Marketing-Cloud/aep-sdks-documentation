@@ -49,9 +49,6 @@
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
-  * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
 * [Places \(Beta\)](using-mobile-extensions/places-extension-1/README.md)
   * [Places extension](using-mobile-extensions/places-extension-1/places-extension/README.md)
     * [Places API reference](using-mobile-extensions/places-extension-1/places-extension/places-api-reference.md)
@@ -66,6 +63,9 @@
 * [Project Griffon \(Beta\)](using-mobile-extensions/project-griffon/README.md)
   * [Set up Project Griffon](using-mobile-extensions/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](using-mobile-extensions/project-griffon/using-project-griffon.md)
+* [Profile](using-mobile-extensions/profile/README.md)
+  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
+  * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
 
 ## Resources
 
