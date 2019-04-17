@@ -12,9 +12,9 @@ This extension is in beta. Use of this beta product requires acceptance of terms
 
 ### **Install the Project Griffon Extension**
 
-&lt;screenshot&gt;
+![](../../.gitbook/assets/pg-launch.png)
 
-Simply click **Install** on the extension card. No extension settings are required.
+Click **Install** on the extension card. No extension settings are required.
 
 ## Add Project Griffon to your app
 
