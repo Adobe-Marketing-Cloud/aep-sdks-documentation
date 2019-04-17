@@ -8,19 +8,19 @@ This extension is in beta. Use of this beta product requires acceptance of terms
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Project Griffon** extension, and click **Install**.
-3. Type the extension settings.  For more information, see [Configure the Project Griffon Extension](./#configure-the-project-griffon-extension).
-4. Click **Save**.
-5. Follow the publishing process to update SDK configuration.
+3. Follow the publishing process to update SDK configuration.
 
-### **Configure the Project Griffon Extension**
+### **Install the Project Griffon Extension**
 
-&lt;insert screenshot&gt;
+&lt;screenshot&gt;
+
+Simply click **Install** on the extension card. No extension settings are required.
 
 ## Add Project Griffon to your app
 
 {% tabs %}
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffon'` ​ 2. Import the Project Griffon libraries along with other SDK libraries:
+1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​ 2. Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
 
@@ -86,6 +86,12 @@ Once the extension has been registered, you may begin a Project Griffon session 
 
 This API accepts a deep link in order to begin a session. When this API is called, the SDK will display a pin authentication overlay on your app to begin a session.
 
+#### Syntax
+
+```text
++ (void) startSession: (NSURL* _Nonnull) url;
+```
+
 #### Objective-C
 
 ```objectivec
@@ -93,12 +99,6 @@ This API accepts a deep link in order to begin a session. When this API is calle
     [ACPGriffonBridge startSession:url];
     return false;
 }
-```
-
-#### Swift
-
-```swift
-
 ```
 {% endtab %}
 {% endtabs %}
