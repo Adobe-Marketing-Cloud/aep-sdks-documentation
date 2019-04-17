@@ -37,7 +37,7 @@ Click **Install** on the extension card. No extension settings are required.
 ```swift
 import ACPCore
 import ACPAnalytics
-import ACPGriffonBridge // <-- import the Project Griffon library
+import ACPGriffonBeta // <-- import the Project Griffon library
 ```
 {% endtab %}
 {% endtabs %}
