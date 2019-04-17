@@ -20,7 +20,9 @@ Simply click **Install** on the extension card. No extension settings are requir
 
 {% tabs %}
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​ 2. Import the Project Griffon libraries along with other SDK libraries:
+1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​ 
+
+2. Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
 
