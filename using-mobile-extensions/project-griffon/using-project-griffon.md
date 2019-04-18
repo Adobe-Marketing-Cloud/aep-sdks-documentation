@@ -44,17 +44,18 @@ This definition is used to launch your app from a URL and initiate the Project G
 
 1. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
 2. Complete one of the following tasks:
-3. Use your iOS Camera app to scan the QR code and to open your app.
-4. Copy the link and open in your app or the Xcode simulator.
+
+   * Use your iOS Camera app to scan the QR code and to open your app.
+   * Copy the link and open in your app or the Xcode simulator.
 
 ![](../../.gitbook/assets/image%20%283%29.png)
 
-1. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
-2. Type in the PIN from the previous step and press **Connect**.
+3. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
+4. Type in the PIN from the previous step and press **Connect**.
 
 ![](../../.gitbook/assets/image%20%286%29.png)
 
-3. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
+5. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
 
 ![](../../.gitbook/assets/image%20%288%29.png)
 
