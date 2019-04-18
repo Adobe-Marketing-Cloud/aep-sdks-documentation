@@ -31,7 +31,7 @@ If you see the following screen, for beta access, click **Register**.
 
 ![](../../.gitbook/assets/image%20%284%29.png)
 
-1. Enter a **Session Name** to identify the session. This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
+1. In **Session Name**, enter a name to identify the session.  This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
 2. In the **Base URL** field, type your app's base deep link definition.
 3. Click **Next**.
 
