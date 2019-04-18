@@ -27,13 +27,13 @@ If you see the following screen, for beta access, click **Register**.
 
 ![](../../.gitbook/assets/image.png)
 
-1. Click **Start**.
+2. Click **Start**.
 
 ![](../../.gitbook/assets/image%20%284%29.png)
 
-1. Enter a **Session Name** to identify the session. This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
-2. In the **Base URL** field, type your app's base deep link definition.
-3. Click **Next**.
+3. Enter a **Session Name** to identify the session. This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
+4. In the **Base URL** field, type your app's base deep link definition.
+5. Click **Next**.
 
 ![](../../.gitbook/assets/image%20%281%29.png)
 
@@ -46,12 +46,12 @@ If you see the following screen, for beta access, click **Register**.
 
 ![](../../.gitbook/assets/image%20%283%29.png)
 
-1. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
-2. Type in the PIN from the previous step and press **Connect**.
+3. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
+4. Type in the PIN from the previous step and press **Connect**.
 
 ![](../../.gitbook/assets/image%20%286%29.png)
 
-1. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
+5. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
 
 ![](../../.gitbook/assets/image%20%288%29.png)
 
