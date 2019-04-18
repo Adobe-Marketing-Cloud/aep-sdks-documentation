@@ -129,7 +129,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ### End a Project Griffon session
 
-Sessions may be ended in the app interface by pressing the floating indicator and selecting _Disconnect_. Alternatively, an active session can be closed, programmatically by using the following API.
+You can end a session in the app interface by pressing the floating indicator and selecting **Disconnect**. You can also programmatically  close an active session by using the following API.
 
 {% tabs %}
 {% tab title="iOS" %}
