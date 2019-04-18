@@ -46,7 +46,7 @@ import ACPGriffonBeta // <-- import the Project Griffon library
 
 {% tabs %}
 {% tab title="iOS" %}
-Registering the extension with Core will send Experience Platform SDK events to an active Project Griffon session. To start using the extension library, please register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core).
+Registering the extension with Core sendS Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension. 
 
 #### Objective-C
 
