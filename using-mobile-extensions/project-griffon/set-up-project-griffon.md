@@ -10,7 +10,7 @@ This extension is in beta. Use of this beta product requires acceptance of terms
 2. On the **Catalog** tab, locate the **Project Griffon** extension, and click **Install**.
 3. Follow the publishing process to update SDK configuration.
 
-### **Install the Project Griffon Extension**
+### **Install the Project Griffon extension**
 
 ![](../../.gitbook/assets/pg-launch.png)
 
