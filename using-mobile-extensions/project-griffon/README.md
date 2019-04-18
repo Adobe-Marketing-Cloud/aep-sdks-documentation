@@ -29,5 +29,5 @@ To get started with Project Griffon, see the following:
 * [Set up Project Griffon](set-up-project-griffon.md)
 * [Using Project Griffon](using-project-griffon.md)
 
-If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com), [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
+If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
 
