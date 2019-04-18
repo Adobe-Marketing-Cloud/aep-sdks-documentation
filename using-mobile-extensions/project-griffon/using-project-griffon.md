@@ -10,7 +10,7 @@ Project Griffon is in beta. Use of this beta product requires acceptance of term
 2. Log in using your Adobe ID credentials for the Experience Cloud.
 
 {% hint style="info" %}
-If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://marketing.adobe.com/resources/help/en_US/mcloud/getting-started-experience-cloud.html).
+If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
 {% endhint %}
 
 ![](../../.gitbook/assets/image%20%282%29.png)
