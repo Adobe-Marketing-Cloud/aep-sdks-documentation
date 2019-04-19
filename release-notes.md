@@ -1,5 +1,21 @@
 # Release notes
 
+## April 16, 2019
+
+Project Griffon is now available for beta access!
+
+Project Griffon is a new, innovative product from Adobe to help you easily inspect, validate, debug data collection and experiences for your mobile app. Made for app product managers and developers, this product will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+
+Project Griffon is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
+
+If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
+
+To learn more about Project Griffon, here are the links to the documentation: 
+
+* [Set up Project Griffon](set-up-project-griffon.md)
+* [Using Project Griffon](using-project-griffon.md)
+
+
 ## April 9, 2019
 
 The ACPlaces Monitor version 1.0.1 is now available!
