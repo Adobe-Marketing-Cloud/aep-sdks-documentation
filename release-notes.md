@@ -25,6 +25,21 @@ Here are the changes in this release:
 * CI integration \(CircleCI\)
 * Code coverage integration \(codecov\)
 
+## April 5, 2019
+
+iOS Core 2.1.1 release: 
+
+* Core: Internal support for database scheme migration. 
+* Identity:  Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session. 
+
+iOS Analytics 2.0.3 release: 
+
+* Fixed a minor Analytics hit ordering issue. 
+
+iOS Mobile Services 1.0.0 release: 
+
+* Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
+
 ## April 3, 2019
 
 The Adobe Campaign Standard extension version 1.0.1 is now available for iOS.

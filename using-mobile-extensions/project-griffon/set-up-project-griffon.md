@@ -20,8 +20,7 @@ Click **Install** on the extension card. No extension settings are required.
 
 {% tabs %}
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​ 
-
+1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​
 2. Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
@@ -46,7 +45,7 @@ import ACPGriffonBeta // <-- import the Project Griffon library
 
 {% tabs %}
 {% tab title="iOS" %}
-Registering the extension with Core sendS Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension. 
+Registering the extension with Core sendS Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Objective-C
 
@@ -80,7 +79,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Start a Project Griffon session
 
-Once the extension has been registered, you may begin a Project Griffon session using the following API.  
+Once the extension has been registered, you may begin a Project Griffon session using the following API.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -129,7 +128,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 ### End a Project Griffon session
 
-You can end a session in the app interface by pressing the floating indicator and selecting **Disconnect**. You can also programmatically  close an active session by using the following API.
+You can end a session in the app interface by pressing the floating indicator and selecting **Disconnect**. You can also programmatically close an active session by using the following API.
 
 {% tabs %}
 {% tab title="iOS" %}
