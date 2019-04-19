@@ -4,17 +4,16 @@
 
 Project Griffon is now available for beta access!
 
-Project Griffon is a new, innovative product from Adobe to help you easily inspect, validate, debug data collection and experiences for your mobile app. Made for app product managers and developers, this product will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+Project Griffon is a new, innovative product from Adobe to help you easily inspect, validate, debug data collection and experiences for your mobile app. Developed for app product managers and developers, Project Griffon ensures that your app is correctly implemented, which allows you to focus on creating engaging experiences.
 
-Project Griffon is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
+Project Griffon is in beta, and the use of this beta release requires you to accept the terms outlined in [https://griffon.adobe.com](https://griffon.adobe.com).
 
 If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
 
-To learn more about Project Griffon, here are the links to the documentation: 
+To learn more about Project Griffon, here are the links to the documentation:
 
-* [Set up Project Griffon](set-up-project-griffon.md)
-* [Using Project Griffon](using-project-griffon.md)
-
+* [Set up Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/fd6137a4ad0388193660ec6714c735650d6f885d/set-up-project-griffon.md)
+* [Using Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/fd6137a4ad0388193660ec6714c735650d6f885d/using-project-griffon.md)
 
 ## April 9, 2019
 
@@ -65,7 +64,7 @@ The following update was made to the Mobile Core extension in Android version 1.
 ### **Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
-* Added environment-aware support, which allows you to define dev and stage environments in a property. _\*\*_This overrides the config properties that were based on the default environment.
+* Added environment-aware support, which allows you to define dev and stage environments in a property. \_\*\*\_This overrides the config properties that were based on the default environment.
 
 ### Core
 
