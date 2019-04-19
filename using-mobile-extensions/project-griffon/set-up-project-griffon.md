@@ -99,7 +99,7 @@ This API accepts a deep link in order to begin a session. When this API is calle
 #### Example
 
 ```objectivec
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url option: (NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [ACPGriffonBridge startSession:url];
     return false;
 }
