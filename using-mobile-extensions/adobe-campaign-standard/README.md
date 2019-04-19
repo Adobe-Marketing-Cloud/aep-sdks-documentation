@@ -185,7 +185,7 @@ Need help creating an in-app message using Adobe Campaign? For more information,
 {% endhint %}
 
 {% hint style="warning" %}
-If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's FullscreenMessageActivity to your AndroidManifest.xml file:
+If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
 ```xml
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
