@@ -35,7 +35,9 @@ The Places extension allows you to act based on the location of your users. This
 ```java
 import com.adobe.marketing.mobile.Places;
 ```
-{% endtab %}{% tab title="iOS" %}
+{% endtab %}
+
+{% tab title="iOS" %}
 
 
 1. Add the Places and [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/blob/master/using-mobile-extensions/mobile-core) libraries to your project. You will need to add the following pods to your `Podfile`:
@@ -93,7 +95,9 @@ public class PlacesTestApp extends Application {
     }
 }
 ```
-{% endtab %}{% tab title="iOS" %}
+{% endtab %}
+
+{% tab title="iOS" %}
 In your App's `application:didFinishLaunchingWithOptions:` method, register the Places extension with your other SDK registration calls:
 
 #### Objective-C
