@@ -20,8 +20,7 @@ The Places extension allows you to act based on the location of your users. This
 
 ## Add the Places extension to your app
 
-{% tabs %}
-{% tab title="Android" %}
+{% tabs %}{% tab title="Android" %}
 **Java**
 
 1. Add the Places extension to your project using your app's gradle file.
@@ -70,13 +69,11 @@ import com.adobe.marketing.mobile.Places;
    import ACPCore
    import ACPPlaces
    ```
-{% endtab %}
-{% endtabs %}
+{% endtab %}{% endtabs %}
 
 ### Register Adobe Places with Mobile Core
 
-{% tabs %}
-{% tab title="Android" %}
+{% tabs %}{% tab title="Android" %}
 In your App's `OnCreate` method register the Places extensions:
 
 ```java
@@ -96,9 +93,7 @@ public class PlacesTestApp extends Application {
     }
 }
 ```
-{% endtab %}
-
-{% tab title="iOS" %}
+{% endtab %}{% tab title="iOS" %}
 In your App's `application:didFinishLaunchingWithOptions:` method, register the Places extension with your other SDK registration calls:
 
 #### Objective-C
@@ -120,8 +115,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true;
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endtab %}{% endtabs %}
 
 ## Configuration keys
 
