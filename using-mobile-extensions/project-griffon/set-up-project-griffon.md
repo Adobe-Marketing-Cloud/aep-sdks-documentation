@@ -155,7 +155,7 @@ You can send custom events from the app to Project Griffon using the following A
 
 {% tabs %}
 {% tab title="iOS" %}
-### endSession
+### sendEvent
 
 This API ends the active session and will ensure that no data is sent to a Project Griffon session.
 
@@ -181,5 +181,24 @@ CFAbsoluteTime totalDownloadTime = CFAbsoluteTimeGetCurrent() - downloadStartTim
                                                                                 }];
         [ACPGriffon sendEvent: griffonDownloadEvent];
 ```
+#### Swift
+
+#### Syntax
+```swift
+ACPGriffon.sendEvent(NSDictionary)
+```
+
+#### Example
+```swift
+var downloadStartTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()
+
+var totalDownloadTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent() - downloadStartTime
+var griffonDownloadEvent = ACPGriffonEvent(vendor: "com.adobe.myapp", type: "download info", payload: [
+    "time": NSNumber(value: totalDownloadTime),
+    "size": NSNumber(value: data.length)
+])
+ACPGriffon.sendEvent(griffonDownloadEvent)
+```
+
 {% endtab %}
 {% endtabs %}
