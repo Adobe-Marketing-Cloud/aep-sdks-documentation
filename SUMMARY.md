@@ -89,6 +89,7 @@
   * [Interacting with rules](resources/building-mobile-extensions/interacting-with-rules.md)
   * [Get the application context](resources/building-mobile-extensions/get-the-application-context.md)
   * [Extension logging](resources/building-mobile-extensions/logging-from-extension.md)
+  * [Mobile extension samples](resources/building-mobile-extensions/sample-extensions.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
