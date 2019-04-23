@@ -151,6 +151,7 @@ ACPGriffon.endSession()
 {% endtabs %}
 
 ### Send custom events
+
 You can send custom events from the app to Project Griffon using the following API. Sending custom events can help inspect information from the app such as API and network responses, foreground and background activity, asset and media downloads, performance metrics, timed processes, app startup times, or screen load times.
 
 {% tabs %}
@@ -166,7 +167,9 @@ This API ends the active session and will ensure that no data is sent to a Proje
 ```objectivec
 [ACPGriffon sendEvent: NSDictionary];
 ```
+
 #### Example
+
 The following example shows you how to send a custom event that measures the download time of an asset download activity in the app.
 
 ```objectivec
@@ -181,14 +184,17 @@ CFAbsoluteTime totalDownloadTime = CFAbsoluteTimeGetCurrent() - downloadStartTim
                                                                                 }];
         [ACPGriffon sendEvent: griffonDownloadEvent];
 ```
+
 #### Swift
 
 #### Syntax
+
 ```swift
 ACPGriffon.sendEvent(NSDictionary)
 ```
 
 #### Example
+
 ```swift
 var downloadStartTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()
 
@@ -199,6 +205,6 @@ var griffonDownloadEvent = ACPGriffonEvent(vendor: "com.adobe.myapp", type: "dow
 ])
 ACPGriffon.sendEvent(griffonDownloadEvent)
 ```
-
 {% endtab %}
 {% endtabs %}
+

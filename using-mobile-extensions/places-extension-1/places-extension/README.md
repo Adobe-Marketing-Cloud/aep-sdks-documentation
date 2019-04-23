@@ -2,8 +2,6 @@
 
 The Places extension allows you to act based on the location of your users. This extension is the interface to the Places Query Service APIs. By listening for events that contain GPS coordinates and geofence region events, this extension dispatches new events that are processed by the Rules Engine. The Places extension also retrieves and delivers a list of the nearest POI for the app data that retrieves from the APIs. The regions returned by the APIs are stored in cache and persistence, which allows limited offline processing.
 
-
-
 ## Configure the Places extension in Launch
 
 1. In Launch, click the **Extensions** tab.
@@ -16,11 +14,12 @@ The Places extension allows you to act based on the location of your users. This
 
 ### Configure the Places extension
 
-![](../../../.gitbook/assets/configure_acs_extension.png)
+![](../../../.gitbook/assets/screen-shot-2019-04-23-at-2.44.58-pm.png)
 
 ## Add the Places extension to your app
 
-{% tabs %}{% tab title="Android" %}
+{% tabs %}
+{% tab title="Android" %}
 **Java**
 
 1. Add the Places extension to your project using your app's gradle file.
@@ -38,8 +37,6 @@ import com.adobe.marketing.mobile.Places;
 {% endtab %}
 
 {% tab title="iOS" %}
-
-
 1. Add the Places and [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/blob/master/using-mobile-extensions/mobile-core) libraries to your project. You will need to add the following pods to your `Podfile`:
 
    ```text
@@ -47,7 +44,7 @@ import com.adobe.marketing.mobile.Places;
    pod 'ACPCore', '~> 2.0'    # minimum Core version for Places is 2.0.3
    ```
 
-   Alternatively, if you are not using Cocoapods, you can manually include the Mobile Core and Places libraries from our [releases page](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/) on Github.  
+   Alternatively, if you are not using Cocoapods, you can manually include the Mobile Core and Places libraries from our [releases page](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/) on Github.
 
 2. Update your Cocoapods:
 
@@ -57,25 +54,26 @@ import com.adobe.marketing.mobile.Places;
 
 3. Open Xcode, and in your AppDelegate class, import the Core and Places headers:
 
-  
-   **Objective-C**
+**Objective-C**
 
-   ```text
+```text
    #import "ACPCore.h"
    #import "ACPPlaces.h"
-   ```
+```
 
-   **Swift**
+**Swift**
 
-   ```swift
+```swift
    import ACPCore
    import ACPPlaces
-   ```
-{% endtab %}{% endtabs %}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Register Adobe Places with Mobile Core
 
-{% tabs %}{% tab title="Android" %}
+{% tabs %}
+{% tab title="Android" %}
 In your App's `OnCreate` method register the Places extensions:
 
 ```java
@@ -119,7 +117,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true;
 }
 ```
-{% endtab %}{% endtabs %}
+{% endtab %}
+{% endtabs %}
 
 ## Configuration keys
 
