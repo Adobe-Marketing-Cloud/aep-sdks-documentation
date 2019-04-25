@@ -184,6 +184,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Need help creating an in-app message using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 {% endhint %}
 
+{% hint style="warning" %}
+If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
+```xml
+<activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
+```
+{% endhint %}
+
 For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
 
 ### Set up push messaging
