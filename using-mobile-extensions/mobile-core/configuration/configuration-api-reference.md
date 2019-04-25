@@ -1,6 +1,6 @@
 # Configuration API reference
 
-## Configure with Launch App ID
+## Configure with the Launch App ID
 
 Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
 

@@ -119,8 +119,6 @@ import ACPUserProfile
 
 ### Register Campaign Standard with Mobile Core
 
-
-
 {% tabs %}
 {% tab title="Android" %}
 In your App's OnCreate method register the Campaign Standard extension:
@@ -148,7 +146,7 @@ In your App's OnCreate method register the Campaign Standard extension:
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
-#### Objective-C    <a id="objective-c-1"></a>
+#### Objective-C     <a id="objective-c-1"></a>
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -186,7 +184,8 @@ Need help creating an in-app message using Adobe Campaign? For more information,
 
 {% hint style="warning" %}
 If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
-```xml
+
+```markup
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
 {% endhint %}
