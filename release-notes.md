@@ -2,6 +2,8 @@
 
 ## April 26, 2019
 
+The following updates were made in this release:
+
 #### iOS 
 
 iOS Core 2.2.0 is now available!
@@ -52,34 +54,36 @@ Here are the changes in this release:
 
 ## April 5, 2019
 
-iOS Core 2.1.1 release: 
+The following updates were made in this release:
+
+#### iOS Core 2.1.1: 
 
 * Core: Internal support for database scheme migration. 
 * Identity:  Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session. 
 
-iOS Analytics 2.0.3 release: 
+#### iOS Analytics 2.0.3: 
 
 * Fixed a minor Analytics hit ordering issue. 
 
-iOS Mobile Services 1.0.0 release: 
+#### iOS Mobile Services 1.0.0: 
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 
 ## April 3, 2019
 
-The Adobe Campaign Standard extension version 1.0.1 is now available for iOS.
+The following update was made in Adobe Campaign Standard extension version 1.0.1 in iOS.
 
-This update fixed an issue with duplicate symbols being present in the Campaign extension library.
+* Fixed an issue with duplicate symbols being present in the Campaign extension library.
 
 ## March 25, 2019
 
-The following update was made to the Mobile Core extension in iOS version 2.1.0:
+The following updates were made to the Mobile Core extension in iOS version 2.1.0:
 
-### Configuration
+#### Configuration
 
 If there is no cached configuration available, the SDK can fetch the configuration after a network restore.
 
-### Core
+#### Core
 
 * Added the `ACPCore` log API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LogLevel` to select the verbosity of the logs.
 * You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
@@ -99,20 +103,20 @@ The following update was made to the Mobile Core extension in Android version 1.
 
 ## March 20, 2019
 
-The following update was made to the Mobile Core extension in Android version 1.2.0:
+The following updates were made to the Mobile Core extension in Android version 1.2.0:
 
-### **Configuration**
+#### **Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
 * Added environment-aware support, which allows you to define dev and stage environments in a property. \_\*\*\_This overrides the config properties that were based on the default environment.
 
-### Core
+#### Core
 
 * Added the `MobileCore.getApplication` API, which allows third-party extension developers access the application context.
 * Added the `MobileCore.log` API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LoggingMode` to select the verbosity of the logs.
 * You can also use the `MobileCore.getLogLevel` API to retrieve the current `LoggingMode` that was set in the SDK.
 
-### Identity
+#### Identity
 
 * You can regenerate the MID when privacy settings change from opted out to opted in/opt unknown in the same session.
 
@@ -164,7 +168,7 @@ To learn more about Places, here are links to the documentation:
 
 ## February 28, 2019
 
-The Target extension has been enhanced.
+The following updates were made to the Adobe Target extension:
 
 The Target Client Code is now automatically added based on your Experience Cloud organization.
 
@@ -279,7 +283,7 @@ The following updates were made to all extensions:
 
 ## November 30, 2018
 
-The following changes were made to the Mobile Core extension in iOS version 1.0.2:
+The following updates were made to the Mobile Core extension in iOS version 1.0.2:
 
 * Minor bug fixes
 
@@ -322,7 +326,7 @@ The following updates were made to the Mobile Core extension:
 
 ## September 27, 2018
 
-### Adobe Experience Platform SDKs are live!
+Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
 
