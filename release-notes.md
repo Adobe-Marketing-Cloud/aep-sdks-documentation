@@ -1,5 +1,22 @@
 # Release notes
 
+## April 26, 2019
+
+#### iOS 
+
+The iOS Core 2.2.0 is now available!
+
+* The `ACPCore.start` API can only get called once.
+* Added the `ACPCore.registerURLHandler` API, which allows the app to set a custom handler for click-through URLs.
+* Fixed the problem where the SDK failed to get locale information.
+* Allow the Rules Engine to replace the token for non-string objects.
+
+#### Android 
+
+The Android Core 1.2.2 is now available!
+
+* Fixed a bug that prevented URLs from being correctly opened on some Android versions.
+
 ## April 16, 2019
 
 Project Griffon is now available for beta access!
