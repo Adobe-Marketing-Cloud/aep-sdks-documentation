@@ -547,6 +547,32 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 {% endtab %}
 {% endtabs %}
 
+### Handle open url action
+
+Mobile SDK allow the user to add a callback function which is triggered before [`open url action`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) occurrs. If the callback function return YES, sdk will not operate `open url actoin`, otherwise continue `open url action`.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective-C**
+
+#### registerURLHandler
+
+**Syntax**
+
+```objectivec
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
+
+**Example**
+
+```objectivec
+[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
+    ...
+}];
+```
+{% endtab %}
+{% endtabs %}
+
 ### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
