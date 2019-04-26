@@ -17,6 +17,14 @@ Android Core 1.2.2 is now available!
 
 * Fixed a bug that prevented URLs from being correctly opened on some Android versions.
 
+#### Analytics 2.0.4 \(iOS\)
+
+Fixed a cocoapod dependency issue.
+
+#### Mobile Services 2.0.1 \(iOS\)
+
+Fixed a cocoapod dependency issue.
+
 ## April 16, 2019
 
 Project Griffon is now available for beta access!
