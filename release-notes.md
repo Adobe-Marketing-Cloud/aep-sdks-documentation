@@ -4,7 +4,7 @@
 
 #### iOS 
 
-The iOS Core 2.2.0 is now available!
+iOS Core 2.2.0 is now available!
 
 * The `ACPCore.start` API can only get called once.
 * Added the `ACPCore.registerURLHandler` API, which allows the app to set a custom handler for click-through URLs.
@@ -13,7 +13,7 @@ The iOS Core 2.2.0 is now available!
 
 #### Android 
 
-The Android Core 1.2.2 is now available!
+Android Core 1.2.2 is now available!
 
 * Fixed a bug that prevented URLs from being correctly opened on some Android versions.
 
