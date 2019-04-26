@@ -547,7 +547,7 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 {% endtab %}
 {% endtabs %}
 
-### Handle open url action
+### Handle open URL action
 
 Mobile SDK allow the user to add a callback function which is triggered before [`open url action`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) occurrs. If the callback function return YES, sdk will not operate `open url actoin`, otherwise continue `open url action`.
 
