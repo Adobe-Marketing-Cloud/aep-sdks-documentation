@@ -23,7 +23,7 @@ To get started with Target VEC, follow these steps:
 
 ## Configure the Adobe Target - VEC extension in Launch   <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
 
-![Adobe Target VEC Extension Configuration](../../.gitbook/assets/adobe-target-vec-1.png)
+![Adobe Target VEC Extension Configuration](../.gitbook/assets/adobe-target-vec-1.png)
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
