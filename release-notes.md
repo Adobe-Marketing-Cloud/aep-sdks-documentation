@@ -1,5 +1,11 @@
 # Release notes
 
+## May 2, 2019
+
+The following update was made to ACPCore v2.2.1:
+
+* Fixed an issue when the app network crashes under extreme conditions.
+
 ## April 26, 2019
 
 The following updates were made in this release:
