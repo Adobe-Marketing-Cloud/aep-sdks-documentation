@@ -56,7 +56,6 @@ Here are the key-value pairs in this event:
 | **Key or Key Type** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `mid (String)` | String | false | Auto Generated MID |
-| `vid (String)` | String | false | Blank if not present |
 | `advertisingIdentifier (String)` | String | false | Blank if not present |
 | `pushIdentifier (String)` | String | false | Blank if not present |
 | `blob (String)` | String | false | Blank if not present |
