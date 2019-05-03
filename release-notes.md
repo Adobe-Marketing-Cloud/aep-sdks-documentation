@@ -43,10 +43,10 @@ Project Griffon is in beta, and the use of this beta release requires you to acc
 
 If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
 
-To learn more about Project Griffon, here are the links to the documentation:
+To learn more about Project Griffon, here are the links to the [documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon):
 
-* [Set up Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/fd6137a4ad0388193660ec6714c735650d6f885d/set-up-project-griffon.md)
-* [Using Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/fd6137a4ad0388193660ec6714c735650d6f885d/using-project-griffon.md)
+* [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/set-up-project-griffon)
+* [Using Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/using-project-griffon)
 
 ## April 9, 2019
 
