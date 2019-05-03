@@ -169,9 +169,9 @@ Appends Adobe visitor data to a URL string. If the provided URL is null or empty
 * The `adobe_mc` attribute is an URL encoded list containing:
   * Experience Cloud ID \(ECID\)
   * Experience Cloud Org ID
-  * Analytics Tracking ID, if available from [Analytics](../../adobe-analytics/)
+  * Analytics Tracking ID (AID), if available from the [Analytics extension](../../adobe-analytics/)
   * A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../adobe-analytics/analytics-api-reference#setidentifier).
 
 #### **Syntax**
 
@@ -206,9 +206,9 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 * The adobe\_mc attribute is an URL encoded list containing:
   * Experience Cloud ID \(ECID\)
   * Experience Cloud Org ID
-  * Analytics Tracking ID, if available from [Analytics](../../adobe-analytics/)
+  * Analytics Tracking ID (AID), if available from the [Analytics extension](../../adobe-analytics/)
   * A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID, if available.
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../adobe-analytics/analytics-api-reference#setidentifier).
 
 #### **Syntax**
 
