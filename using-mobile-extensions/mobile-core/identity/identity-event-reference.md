@@ -63,3 +63,7 @@ Here are the key-value pairs in this event:
 | `visitorIDsList (String)` | List | false | Default: Empty List |
 | `lastSync (String)` | Long | false | default = 0 |
 
+{% hint style="warning" %}
+The Analytics Custom Visitor ID (VID) is no longer included in the data payload. If needed, it may be retrieved from the [Analytics extension](../../adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier).
+{% endhint %}
+
