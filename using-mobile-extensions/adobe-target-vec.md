@@ -136,6 +136,7 @@ When selected Target VEC extension makes a network request as a blocking call on
 When selected Target VEC extension makes a network request in the background on App launch, but does not block the app from loading. If you have experiences authored on the home screen of your app, this will cause flicker as the offers may not always be available before the app screen is rendered.
 
 ### Fetch Target Activities Programmatically
+You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target in the App.
 
 ### Handle Target Workspace Restrictions
 
