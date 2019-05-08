@@ -122,12 +122,18 @@ public class TargetApp extends Application {
 {% endtabs %}
 
 ## Implementation Methods for Target VEC   <a id="implementation-methods-for-target-vec"></a>
+The Target VEC extension retrieves the relevant Target experiences for your app through a single network request. Offers are retrieved via this network call and applied automatically on the targeted screens. It should be noted that no network requests are made to retrieve VEC experiences as the user navigates through multiple screens of the app.
+
+The default behavior of the extension is to make a synchronous network request (blocking call) at the time of Application launch. You can use Launch to control the behavior of this network request to meet your application behavior.
 
 ### Auto-Fetch Target Activities
+This is the default behavior where a network request is initiated automatically by the Target VEC extension. You can use one of the following options to make this request a blocking call or an asynchronous request.
 
 #### Fetch in a blocking call (background is OFF)
+When selected Target VEC extension makes a network request as a blocking call on App launch. Offers are applied immediately and there is no flicker in the app. This is the default behavior of the extension.
 
 #### Fetch in an asynchronous mode (background is ON)
+When selected Target VEC extension makes a network request in the background on App launch, but does not block the app from loading. If you have experiences authored on the home screen of your app, this will cause flicker as the offers may not always be available before the app screen is rendered.
 
 ### Fetch Target Activities Programmatically
 
