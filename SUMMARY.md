@@ -49,7 +49,7 @@
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Adobe Target - Visual Editing Composer](using-mobile-extensions/adobe-target-vec)
+* [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec)
 * [Places \(Beta\)](using-mobile-extensions/places-extension-1/README.md)
   * [Places extension](using-mobile-extensions/places-extension-1/places-extension/README.md)
     * [Places API reference](using-mobile-extensions/places-extension-1/places-extension/places-api-reference.md)
