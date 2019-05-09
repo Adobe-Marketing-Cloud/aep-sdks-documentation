@@ -78,11 +78,10 @@ public class TargetApp extends Application {
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-
      try {
+         //Other Extensions that you need
          TargetVEC.registerExtension();
          Target.registerExtension();
-         Identity.registerExtension();
      } catch (Exception e) {
          //Log the exception
      }
@@ -98,7 +97,7 @@ public class TargetApp extends Application {
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPIdentity registerExtension];
+  //Other Extensions that you need
   [ACPTargetVEC registerExtension];
   [ACPTarget registerExtension];
 
@@ -112,6 +111,7 @@ public class TargetApp extends Application {
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  //Other Extensions that you need
   ACPTargetVEC.registerExtension()
   ACPTarget.registerExtension()
   
@@ -133,7 +133,7 @@ This is the default behavior where a network request is initiated automatically 
 When selected Target VEC extension makes a network request as a blocking call on App launch. Offers are applied immediately and there is no flicker in the app. This is the default behavior of the extension.
 
 #### Fetch in an asynchronous call (background is ON)
-When selected Target VEC extension makes a network request in the background on App launch, but does not block the app from loading. If you have experiences authored on the home screen of your app, this will cause flicker as the offers may not always be available before the app screen is rendered.
+When selected Target VEC extension makes a network request in the background on App launch, but does not block the app from loading. If your experiences are authored on the home screen of your app, the offers may not apply for the home screen if the screen is rendered before the call completes. Offers will be automatically apply on all subsequent screens.
 
 ### Fetch Target Activities Programmatically
 You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target VEC offers in the App. The Target VEC extension has two static methods `prefetchOffers` and `prefetchOffersBackground` that can used to programmatically retrieve Target VEC offers.
