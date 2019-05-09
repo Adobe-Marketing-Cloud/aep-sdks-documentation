@@ -1,5 +1,12 @@
 # Release notes
 
+## May 9, 2019
+
+The following updates were made to the Analytics extension in iOS version 2.1.0:
+
+- Fixes a crash releated to database multi-threading.
+- Enforces HTTPs network reqeusts
+
 ## May 6, 2019
 
 The following updates were made to the Mobile Core extension in Android version 1.3.0:
