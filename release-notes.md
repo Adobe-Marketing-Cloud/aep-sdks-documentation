@@ -1,5 +1,19 @@
 # Release notes
 
+## May 9, 2019
+
+The following updates were made to the Analytics extension in iOS version 2.1.0:
+
+- Fixed a crash releated to database multi-threading.
+- Enforced HTTPs network requests.
+
+React Native wrappers for the following extensions were pushed to npmjs:
+
+- [Core, Identity, Lifecycle, and Signal](https://www.npmjs.com/package/@adobe/react-native-acpcore)
+- [Analytics](https://www.npmjs.com/package/@adobe/react-native-acpanalytics)
+- [Audience](https://www.npmjs.com/package/@adobe/react-native-acpaudience)
+- [Campaign](https://www.npmjs.com/package/@adobe/react-native-acpcampaign)
+
 ## May 6, 2019
 
 The following updates were made to the Mobile Core extension in Android version 1.3.0:
