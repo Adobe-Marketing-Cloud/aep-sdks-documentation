@@ -5,7 +5,7 @@
 The following updates were made to the Analytics extension in iOS version 2.1.0:
 
 - Fixed a crash releated to database multi-threading.
-- Enforced HTTPs network reqeusts.
+- Enforced HTTPs network requests.
 
 React Native wrappers for the following extensions were pushed to npmjs:
 
