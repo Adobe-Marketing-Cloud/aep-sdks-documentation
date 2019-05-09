@@ -129,16 +129,16 @@ The default behavior of the extension is to make a synchronous network request (
 ### Auto-Fetch Target Activities
 This is the default behavior where a network request is initiated automatically by the Target VEC extension. You can use one of the following options to make this request a blocking call or an asynchronous request.
 
-#### Fetch in a blocking call (background is OFF)
+#### Fetch in a synchronous call (background is OFF)
 When selected Target VEC extension makes a network request as a blocking call on App launch. Offers are applied immediately and there is no flicker in the app. This is the default behavior of the extension.
 
-#### Fetch in an asynchronous mode (background is ON)
+#### Fetch in an asynchronous call (background is ON)
 When selected Target VEC extension makes a network request in the background on App launch, but does not block the app from loading. If you have experiences authored on the home screen of your app, this will cause flicker as the offers may not always be available before the app screen is rendered.
 
 ### Fetch Target Activities Programmatically
-You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target in the App. The Target VEC extension has two static methods `prefetchOffers` and `prefetchOffersBackground` that can used to programmatically retrieve Target VEC offers.
+You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target VEC offers in the App. The Target VEC extension has two static methods `prefetchOffers` and `prefetchOffersBackground` that can used to programmatically retrieve Target VEC offers.
 1. `prefetchOffers` method will hide the current screen until Target VEC offers are fetched. The offers are automatically applied to the current screen if applicable and the screen is visible again.
-2. `prefetchOffersBackground` method will not hide the current screen and a call will be made to retrieve the relevant Target offers. Target offers will be automatically applied on screens as applicable.
+2. `prefetchOffersBackground` method will not hide the current screen and a call will be made to retrieve the relevant Target offers. Target offers will *not* be applied on the current screen and there will not be a flicker. As the user navigates to subsequent screens, offers will be automatically applied as applicable.
 
 ### Handle Target Workspace Restrictions
-You can set the `at_property` value for your workspace using the Launch interface. This makes sure only activities in that workspace will be delivered to your Mobile App.
+You can set the `at_property` value for your workspace using the Launch interface. This ensures only activities in that workspace will be delivered to your Mobile App.
