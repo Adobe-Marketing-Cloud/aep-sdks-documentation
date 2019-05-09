@@ -111,7 +111,7 @@ public class TargetApp extends Application {
 1. In your app's `didFinishLaunchingWithOptions` function register the Target VEC extension
 
 ```swift
-- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   ACPTargetVEC.registerExtension()
   ACPTarget.registerExtension()
   
