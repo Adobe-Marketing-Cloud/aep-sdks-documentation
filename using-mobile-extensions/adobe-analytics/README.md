@@ -4,7 +4,7 @@
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and click **Install**.
-3. Type the extension settings.  For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
+3. Type the extension settings.   For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
@@ -31,14 +31,14 @@ Type the tracking domain to which all Analytics requests should be made.
 #### **Offline enabled**
 
 {% hint style="info" %}
-Do you need offline tracking? For more information, see [Offline Tracking](https://marketing.adobe.com/resources/help/en_US/sc/implement/offline_tracking.html).
+Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/offline-tracking.html).
 {% endhint %}
 
 When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .
 
 {% hint style="danger" %}
-If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.   
-  
+If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.
+
 If you are not sure whether your report suite is timestamp enabled, contact Customer Care**.**
 {% endhint %}
 
@@ -196,7 +196,7 @@ To track mobile app states and actions in Adobe Analytics, implement the `trackA
 
 ### Analytics for Target \(A4T\)
 
-To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://marketing.adobe.com/resources/help/en_US/target/a4t/a4t.html).
+To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
 ### Server-side forwarding with Audience Manager
 
@@ -210,7 +210,7 @@ For more information about collecting video analytics, see [Media Analytics for 
 
 As _products_ variable cannot be set by processing rules, you need the syntax below in context data parameters to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://marketing.adobe.com/resources/help/en_US/sc/implement/var_merchandising_impl.html).
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://docs.adobe.com/content/help/en/analytics/components/variables/merchandising-variables/var-merchandising.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -269,9 +269,11 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example:
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+
 #### Swift
 
 #### Syntax
+
 ```swift
 contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]"
 ```
@@ -296,7 +298,6 @@ ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
 ```
-
 {% endtab %}
 {% endtabs %}
 

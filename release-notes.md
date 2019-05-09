@@ -1,8 +1,15 @@
 # Release notes
 
+## May 6, 2019
+
+The following updates were made to the Mobile Core extension in Android version 1.3.0:
+
+* The `MobileCore.start()` API should only get called once, and the SDK ignores the subsequent calls to this API.
+* Added an internal API for React Native support.
+
 ## May 2, 2019
 
-The following update was made to ACPCore v2.2.1:
+The following update was made to the Mobile Core extension in iOS version 2.2.1:
 
 * Fixed an issue when the app network crashes under extreme conditions.
 
@@ -10,7 +17,7 @@ The following update was made to ACPCore v2.2.1:
 
 The following updates were made in this release:
 
-#### iOS 
+#### iOS
 
 iOS Core 2.2.0 is now available!
 
@@ -19,7 +26,7 @@ iOS Core 2.2.0 is now available!
 * Fixed the problem where the SDK failed to get locale information.
 * Allow the Rules Engine to replace the token for non-string objects.
 
-#### Android 
+#### Android
 
 Android Core 1.2.2 is now available!
 
@@ -62,16 +69,16 @@ Here are the changes in this release:
 
 The following updates were made in this release:
 
-#### iOS Core 2.1.1: 
+#### iOS Core 2.1.1:
 
 * Core: Internal support for database scheme migration. 
 * Identity:  Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session. 
 
-#### iOS Analytics 2.0.3: 
+#### iOS Analytics 2.0.3:
 
 * Fixed a minor Analytics hit ordering issue. 
 
-#### iOS Mobile Services 1.0.0: 
+#### iOS Mobile Services 1.0.0:
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 
