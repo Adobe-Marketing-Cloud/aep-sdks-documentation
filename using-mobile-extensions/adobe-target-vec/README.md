@@ -1,13 +1,12 @@
 # Adobe Target - Visual Experience Composer
 This extension enables Adobe Target Visual Experience Composer (Target VEC) functionality. The Target VEC for Native Mobile Apps lets you create activities and personalize content on native mobile apps in a do-it-yourself fashion without continuous development dependencies and app-release cycles.
 
-{% hint style="info" %}
 For more information, see:
 
 * [Mobile App Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer.html)
 * [Setup Mobile VEC for Android](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer-android.html)
 * [Setup Mobile VEC for iOS](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer-ios.html)
-* [Set up click tracking in the Mobile VEC](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/set-up-click-tracking-in-the-mobile-vec.html){% endhint %}
+* [Set up click tracking in the Mobile VEC](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/set-up-click-tracking-in-the-mobile-vec.html)
 
 To get started with Target VEC, complete the following steps:
 
