@@ -7,8 +7,7 @@ For more information, see:
 * [Mobile App Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer.html)
 * [Setup Mobile VEC for Android](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer-android.html)
 * [Setup Mobile VEC for iOS](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/mobile-visual-experience-composer-ios.html)
-* [Set up click tracking in the Mobile VEC](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/set-up-click-tracking-in-the-mobile-vec.html)
-{% endhint %}
+* [Set up click tracking in the Mobile VEC](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/composer/set-up-click-tracking-in-the-mobile-vec.html){% endhint %}
 
 To get started with Target VEC, complete the following steps:
 
@@ -22,9 +21,10 @@ To get started with Target VEC, complete the following steps:
    2. Fetch Target Activities Programmatically
    3. Handle Target Workspace Restrictions
 
+
 ## Configure the Adobe Target - VEC extension in Launch   <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
 
-![Adobe Target VEC Extension Configuration](../.gitbook/assets/adobe-target-vec-1.png)
+![Adobe Target VEC Extension Configuration](../../.gitbook/assets/adobe-target-vec-1.png)
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
