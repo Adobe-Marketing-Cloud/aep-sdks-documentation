@@ -107,7 +107,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 All AEP extensions provide a `registerExtension` API (except Core), this API registers the extension with Core which allows the extension to dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
 
-Once you have all your extensions registered you must call `start` in Core, this is required to boot up the SDK for event processing.
+Once you have all your extensions registered you must call the `start` API in Core. This is required to boot up the SDK for event processing.
 
 The following code snippets demonstrate how to initialize the SDK when using the Identity, Signal, Lifecycle, and Analytics extensions.
 
