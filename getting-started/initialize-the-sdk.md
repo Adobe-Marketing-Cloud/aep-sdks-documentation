@@ -103,6 +103,56 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 {% endtab %}
 {% endtabs %}
 
+## Registering Extensions and Starting Core
+
+All AEP extensions provide a `registerExtension` API (except Core), this API registers the extension with Core which allows the extension to dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
+
+Once you have all your extensions registered you must call `start` in Core, this is required to boot up the SDK for event processing.
+
+The following code snippets demonstrate how to initialize the SDK when using the Identity, Signal, Lifecycle, and Analytics extensions.
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+try {
+	Identity.registerExtension();
+	Lifecycle.registerExtension();
+	Signal.registerExtension();
+	Analytics.registerExtension();
+	} catch (Exception e) {
+	   //Log the exception
+	}
+}
+```
+
+{% endtab %}
+
+{% tab title="Objective-C" %}
+
+```objectivec
+[ACPIdentity registerExtension];
+[ACPLifecycle registerExtension];
+[ACPSignal registerExtension];
+[ACPAnalytics registerExtension];
+[ACPCore start:nil];
+```
+
+{% endtab %}
+
+{% tab title="Swift" %}
+
+```swift
+ACPIdentity.registerExtension()
+ACPLifecycle.registerExtension()
+ACPSignal.registerExtension()
+ACPAnalytics.registerExtension()
+ACPCore.start(nil)
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## Enable the Experience Cloud Identity service
 
 Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
@@ -124,7 +174,7 @@ import com.adobe.marketing.mobile.*;
 Register the framework with Mobile Core:
 
 ```java
-public class MobiletApp extends Application {
+public class MobileApp extends Application {
   @Override
   public void onCreate(){
      super.onCreate();
