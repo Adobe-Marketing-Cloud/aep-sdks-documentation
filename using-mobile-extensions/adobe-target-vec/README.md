@@ -15,8 +15,8 @@ To get started with Target VEC, complete the following steps:
 2. Add the Target VEC Extension to your app.
 3. Select one of the following implementation methods:
    1. Auto-Fetch Target Activities, where options are:
-      a. Fetch in a blocking call (background is OFF)
-      b. Fetch in an asynchronous mode (background is ON)
+      * Fetch in a blocking call (background is OFF)
+      * Fetch in an asynchronous mode (background is ON)
    2. Fetch Target Activities Programmatically
    3. Handle Target Workspace Restrictions
 
@@ -27,9 +27,11 @@ To get started with Target VEC, complete the following steps:
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
-3. The default configuration options loads Target VEC activities as a blocking call on App launch. See [Implementation Methods for Target VEC](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target-vec#implementation-methods-for-target-vec) for details.
+3. The default configuration options loads Target VEC activities as a blocking call on App launch. 
+
+    For more information, see [Implementation Methods for Target VEC](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target-vec#implementation-methods-for-target-vec).
 4. Click **Save**.
-5. Follow the publishing process to update SDK configuration
+5. Follow the publishing process to update SDK configuration.
 
 ## Add Target VEC to your app
 
@@ -150,7 +152,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-## Implementation Methods for Target VEC   <a id="implementation-methods-for-target-vec"></a>
+## Implementation methods for Target VEC   <a id="implementation-methods-for-target-vec"></a>
 The Target VEC extension retrieves the relevant Target experiences for your app through a network request. Offers are retrieved via this network call and applied automatically on the targeted screens. No subsequent network requests are made to retrieve VEC experiences as the user navigates through multiple screens of the app.
 
 The default behavior of the extension is to make a synchronous network request (blocking call) at the time of Application launch. You can use Launch to control the behavior of this network request to meet your application behavior.
@@ -159,15 +161,23 @@ The default behavior of the extension is to make a synchronous network request (
 This is the default behavior where a network request is initiated automatically by the Target VEC extension. You can use one of the following options to make this request a blocking call or an asynchronous request.
 
    * Fetch in a synchronous call (background is OFF)
-     When selected, Target VEC extension makes a network request as a blocking call on App launch. Offers are applied immediately and there is no flicker in the app. This is the default behavior of the extension.
+
+     When this option is selected, Target VEC extension makes a network request as a blocking call when the app is launched. Offers are applied immediately, and there is no flicker in the app. This is the default behavior of the extension.
 
    * Fetch in an asynchronous call (background is ON)
-     When selected, Target VEC extension makes a network request in the background on App launch but does not block the app from loading. If your experiences are authored on the home screen of your app, the offers may not apply for the home screen if the screen is rendered before the call completes. The app screen rendering is typically identified via the lifecycle events `didFinishLaunchingWithOptions` and `onActivityResumed`  on iOS and Android respectively. Offers will be automatically apply on all subsequent screens.
+
+     When this option is selected, Target VEC extension makes a network request in the background on App launch but does not block the app from loading. If your experiences are authored on the home screen of your app, the offers might not apply for the home screen if the screen is rendered before the call completes. The app screen rendering is typically identified via the lifecycle events, `didFinishLaunchingWithOptions` and `onActivityResumed`,  on iOS and Android, respectively. Offers are automatically apply on all subsequent screens.
 
 ### Fetch Target Activities Programmatically
-You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target VEC offers in the App. The Target VEC extension has two static methods `prefetchOffers` and `prefetchOffersBackground` that can used to programmatically retrieve Target VEC offers.
-   * `prefetchOffers` method will hide the current screen until Target VEC offers are fetched. The offers are automatically applied to the current screen if applicable and the screen is visible again.
-   * `prefetchOffersBackground` method will not hide the current screen and a call will be made to retrieve the relevant Target offers. Target offers will *not* be applied on the current screen and there will not be a flicker. As the user navigates to subsequent screens, offers will be automatically applied as applicable.
+You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target VEC offers in the app. The Target VEC extension has the following static methods that can used to programmatically retrieve Target VEC offers:
+
+ * `prefetchOffers` method hides the current screen until Target VEC offers are fetched. 
+   
+     The offers are automatically applied to the current screen if applicable and the screen is visible again.
+
+* `prefetchOffersBackground` method will not hide the current screen and a call will be made to retrieve the relevant Target offers. 
+
+    Target offers are *not* applied on the current screen, and there will no flicker. As the user navigates to subsequent screens, offers will be automatically applied as applicable.
 
 ### Handle Target Workspace Restrictions
-You can set the `at_property` value for your workspace using the Launch interface. This ensures only activities in that workspace will be delivered to your Mobile App.
+You can set the `at_property` value for your workspace using the Launch interface. This ensures only activities in that workspace will be delivered to your mobile app.
