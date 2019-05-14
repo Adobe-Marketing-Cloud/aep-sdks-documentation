@@ -27,18 +27,34 @@ To get started with Target VEC, complete the following steps:
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
-3. The default configuration options loads Target VEC activities as a blocking call on App launch. See [Implementation Methods for Target VEC](implementation-methods-for-target-vec) for details.
+3. The default configuration options loads Target VEC activities as a blocking call on App launch. See [Implementation Methods for Target VEC](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target-vec#implementation-methods-for-target-vec) for details.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration
 
 ## Add Target VEC to your app
 
+{% tabs %}
+{% tab title="Android" %}
 #### Java
 
-1. Add the Target VEC extension to your project using the app's Gradle file.
-2. Import the Target VEC extension in your application's main activity.  `import com.adobe.marketing.mobile.*;`
+1. Add Target VEC extension and it's dependencies to your project using the app's Gradle file.
+```
+   implementation 'com.adobe.marketing.mobile:target-vec:1.+'
+```
+Dependencies
+```java
+   implementation 'com.google.code.gson:gson:2.8.2'
+   implementation 'android.arch.lifecycle:extensions:1.1.1'
+   implementation 'io.github.sac:SocketclusterClientJava:1.7.5'
+   implementation 'com.android.support:support-annotations:28.0.0'
+   implementation 'com.android.support:support-compat:28.0.0'
+   implementation 'com.android.support:design:28.0.0'
+```
+2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC;`
 3. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
+{% endtab %}
 
+{% tab title="iOS" %}
 #### Objective-C
 
 Import the Target and Identity library.
@@ -61,6 +77,9 @@ Import the Target and Identity library.
    #import ACPIdentity
 ```
 
+{% endtab %}
+{% endtabs %}
+
 ### Register Target VEC with Mobile Core
 
 {% tabs %}
@@ -72,7 +91,7 @@ After calling the `setApplication()` method in the `onCreate()` method, register
 Here is code sample that calls these set up methods:
 
 ```java
-public class TargetApp extends Application {
+public class SampleApp extends Application {
 
  @Override
  public void onCreate() {
@@ -82,6 +101,12 @@ public class TargetApp extends Application {
          //Other Extensions that you need
          TargetVEC.registerExtension();
          Target.registerExtension();
+         MobileCore.start(new AdobeCallback () {
+           @Override
+           public void call(Object o) {
+               MobileCore.configureWithAppID("YOUR_LAUNCH_ID");
+           }
+         });
      } catch (Exception e) {
          //Log the exception
      }
@@ -100,7 +125,9 @@ public class TargetApp extends Application {
   //Other Extensions that you need
   [ACPTargetVEC registerExtension];
   [ACPTarget registerExtension];
-
+  [ACPCore start:^{
+    [ACPCore lifecycleStart:nil];
+  }];
   // Override point for customization after application launch.
   return YES;
 }
@@ -114,7 +141,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   //Other Extensions that you need
   ACPTargetVEC.registerExtension()
   ACPTarget.registerExtension()
-  
+  [ACPCore start:^{
+    [ACPCore lifecycleStart:nil];
+  }];
   return true
 }
 ```
