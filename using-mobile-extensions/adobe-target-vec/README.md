@@ -43,12 +43,12 @@ To get started with Target VEC, complete the following steps:
 ```
 Dependencies
 ```java
-implementation 'com.google.code.gson:gson:2.8.2'
-implementation 'android.arch.lifecycle:extensions:1.1.1'
-implementation 'io.github.sac:SocketclusterClientJava:1.7.5'
-implementation 'com.android.support:support-annotations:28.0.0'
-implementation 'com.android.support:support-compat:28.0.0'
-implementation 'com.android.support:design:28.0.0'
+   implementation 'com.google.code.gson:gson:2.8.2'
+   implementation 'android.arch.lifecycle:extensions:1.1.1'
+   implementation 'io.github.sac:SocketclusterClientJava:1.7.5'
+   implementation 'com.android.support:support-annotations:28.0.0'
+   implementation 'com.android.support:support-compat:28.0.0'
+   implementation 'com.android.support:design:28.0.0'
 ```
 2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC;`
 3. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
