@@ -63,7 +63,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | :--- | :--- | :--- |
 | A/B, Multivariate Testing, Offers | Yes | Yes |
 | Offer pre-fetch | Yes | Yes |
-| Offer preview | Yes | _Support coming_ |
+| Offer preview | Yes | Yes |
 | Visual editor | No | _Support coming_ |
 
 ## OS/platform support
@@ -75,7 +75,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | Supported |
 | Apple tvOS​ | Supported | Supported |
-| React Native \(iOS & Android\) | Unsupported | _Support coming_ |
+| React Native \(iOS & Android\) | Supported | Supported |
 | Unity \(iOS & Android\)​ | Supported | _Support coming_ |
 | Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
 | PhoneGap \(iOS & Android\)​ | Supported | _Support coming_ |
