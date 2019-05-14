@@ -33,6 +33,8 @@ To get started with Target VEC, complete the following steps:
 
 ## Add Target VEC to your app
 
+{% tabs %}
+{% tab title="Android" %}
 #### Java
 
 1. Add Target VEC extension and it's dependencies to your project using the app's Gradle file.
@@ -40,7 +42,7 @@ To get started with Target VEC, complete the following steps:
    implementation 'com.adobe.marketing.mobile:target-vec:1.+'
 ```
 Dependencies
-```
+```java
 implementation 'com.google.code.gson:gson:2.8.2'
 implementation 'android.arch.lifecycle:extensions:1.1.1'
 implementation 'io.github.sac:SocketclusterClientJava:1.7.5'
@@ -50,7 +52,9 @@ implementation 'com.android.support:design:28.0.0'
 ```
 2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC;`
 3. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
+{% endtab %}
 
+{% tab title="iOS" %}
 #### Objective-C
 
 Import the Target and Identity library.
@@ -72,6 +76,9 @@ Import the Target and Identity library.
    #import ACPTargetVEC
    #import ACPIdentity
 ```
+
+{% endtab %}
+{% endtabs %}
 
 ### Register Target VEC with Mobile Core
 
