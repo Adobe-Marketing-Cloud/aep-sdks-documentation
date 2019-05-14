@@ -125,7 +125,9 @@ public class SampleApp extends Application {
   //Other Extensions that you need
   [ACPTargetVEC registerExtension];
   [ACPTarget registerExtension];
-
+  [ACPCore start:^{
+    [ACPCore lifecycleStart:nil];
+  }];
   // Override point for customization after application launch.
   return YES;
 }
@@ -139,7 +141,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   //Other Extensions that you need
   ACPTargetVEC.registerExtension()
   ACPTarget.registerExtension()
-  
+  [ACPCore start:^{
+    [ACPCore lifecycleStart:nil];
+  }];
   return true
 }
 ```
