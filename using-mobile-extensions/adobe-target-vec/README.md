@@ -27,7 +27,7 @@ To get started with Target VEC, complete the following steps:
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
-3. The default configuration options loads Target VEC activities as a blocking call on App launch. See [Implementation Methods for Target VEC](implementation-methods-for-target-vec) for details.
+3. The default configuration options loads Target VEC activities as a blocking call on App launch. See [Implementation Methods for Target VEC](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target-vec#implementation-methods-for-target-vec) for details.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration
 
