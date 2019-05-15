@@ -692,11 +692,55 @@ Here is a code sample for this class in Android:
 ```java
 public class TargetRequest extends TargetObject {
 
-    private TargetRequest() {}
+	/**
+	 * Instantiate a TargetRequest object
+	 * @param mboxName String mbox name for this request
+	 * @param targetParameters TargetParameters for this request
+	 * @param defaultContent String default content for this request
+	 * @param contentCallback AdobeCallback<String> which will get called with Target mbox content
+	 */
+	public TargetRequest(final String mboxName, final TargetParameters targetParameters,
+						 final String defaultContent, final AdobeCallback<String> contentCallback);
+
+	 /**
+	 * Sets mbox parameters for the request.
+	 *
+	 * @param mboxParameters Map<String, String> mbox parameters
+	 */
+	 void setMboxParameters(final Map<String, String> mboxParameters);
+
+	 /**
+	 * Sets profile parameters for the request.
+	 *
+	 * @param profileParameters Map<String, String profile parameters
+	 */
+	void setProfileParameters(final Map<String, String> profileParameters);
+
+	/**
+	 * Sets order parameters for the request.
+	 *
+	 * @param orderParameters Map<String, Object> order parameters
+	 */
+	void setOrderParameters(final Map<String, Object> orderParameters);
+
+	/**
+	 * Sets product parameters for the request.
+	 *
+	 * @param productParameters Map<String, String> product parameters
+	 */
+	void setProductParameters(final Map<String, String> productParameters);
+
+	/**
+	 * Sets targetParameters for the request.
+	 *
+	 * @param targetParameters TargetParameters for the request.
+	 */
+	void setTargetParameters(final TargetParameters targetParameters);
 
     /**
     * Builder used to construct a TargetRequest object.
     */
+    @Deprecated
     public static class Builder {
         private TargetRequest targetRequest;
 
@@ -706,6 +750,7 @@ public class TargetRequest extends TargetObject {
          * @param mboxName String mbox name for this request
          * @param defaultContent String default content for this request
          */
+        @Deprecated
         public Builder(final String mboxName, final String defaultContent);
 
         /**
@@ -733,6 +778,22 @@ public class TargetRequest extends TargetObject {
         public Builder setProductParameters(final Map<String, String> productParameters);
 
         /**
+         * Set profile parameters for this request.
+         *
+         * @param profileParameters Map<String, String> profile parameters
+         * @return this builder
+         */
+        public Builder setProfileParameters(final Map<String, Object> profileParameters);
+
+        /**
+         * Set Target parameters for this request.
+         *
+         * @param targetParameters TargetParameters object
+         * @return this builder
+         */
+        public Builder setTargetParameters(final TargetParameters targetParameters);
+
+        /**
         * Set the callback function for this request.
         *
         * @param contentCallback AdobeCallback<String> which will get called with the returning content
@@ -756,11 +817,53 @@ Here is a code sample for this class in Android:
 
 ```java
 public class TargetPrefetch extends TargetObject {
-    private TargetPrefetch() {}
+
+	/**
+	 * Instantiate a {@link TargetPrefetch} object
+	 * @param mboxName {@link String} mbox name for this prefetch
+	 * @param targetParameters {@link TargetParameters} for this prefetch
+	 */
+	 public TargetPrefetch(final String mboxName, final TargetParameters targetParameters)
+
+	 /**
+	 * Sets mbox parameters for the request.
+	 *
+	 * @param mboxParameters Map<String, String> mbox parameters
+	 */
+	 void setMboxParameters(final Map<String, String> mboxParameters);
+
+	 /**
+	 * Sets profile parameters for the request.
+	 *
+	 * @param profileParameters Map<String, String profile parameters
+	 */
+	void setProfileParameters(final Map<String, String> profileParameters);
+
+	/**
+	 * Sets order parameters for the request.
+	 *
+	 * @param orderParameters Map<String, Object> order parameters
+	 */
+	void setOrderParameters(final Map<String, Object> orderParameters);
+
+	/**
+	 * Sets product parameters for the request.
+	 *
+	 * @param productParameters Map<String, String> product parameters
+	 */
+	void setProductParameters(final Map<String, String> productParameters);
+
+	/**
+	 * Sets targetParameters for the request.
+	 *
+	 * @param targetParameters TargetParameters for the request.
+	 */
+	void setTargetParameters(final TargetParameters targetParameters);
 
     /**
      * Builder used to construct a TargetPrefetch object
      */
+    @Deprecated
     public static class Builder {
         private TargetPrefetch targetPrefetch;
 
@@ -795,7 +898,23 @@ public class TargetPrefetch extends TargetObject {
          */
          public Builder setProductParameters(final Map<String, String> productParameters);
 
+         /**
+         * Set profile parameters for this request.
+         *
+         * @param profileParameters Map<String, String> profile parameters
+         * @return this builder
+         */
+         public Builder setProfileParameters(final Map<String, Object> profileParameters);
+
         /**
+         * Set Target parameters for this request.
+         *
+         * @param targetParameters TargetParameters object
+         * @return this builder
+         */
+         public Builder setTargetParameters(final TargetParameters targetParameters);
+
+         /**
          * Build and return TargetPrefetch
          *
          * @return TargetPrefetch the target prefetch object
@@ -803,6 +922,182 @@ public class TargetPrefetch extends TargetObject {
          public TargetPrefetch build();
     }
 
+}
+```
+### TargetParameters
+
+Here is a code sample for this class in Android:
+
+
+```java
+public class TargetParameters {
+
+	private TargetParameters() {}
+
+	/**
+	* Builder used to construct a TargetParameters object
+	*/
+	public static class Builder {
+		private Map<String, String> parameters;
+		private Map<String, String> profileParameters;
+		private TargetProduct product;
+		private TargetOrder order;
+
+		/**
+		 * Create a TargetParameters object Builder
+		 */
+		public Builder() {}
+
+		/**
+		 * Create a TargetParameters object Builder
+		 *
+		 * @param parameters mbox parameters for the built TargetParameters
+		 */
+		public Builder(final Map<String, String> parameters);
+
+		/**
+		 * Set mbox parameters on the built TargetParameters
+		 *
+		 * @param parameters mbox parameters map
+		 * @return this builder
+		 */
+		public Builder parameters(final Map<String, String> parameters);
+
+		/**
+		 * Set profile parameters on the built TargetParameters
+		 *
+		 * @param profileParameters profile parameters map
+		 * @return this builder
+		 */
+		public Builder profileParameters(final Map<String, String> profileParameters);
+
+		/**
+		 * Set product parameters on the built TargetParameters
+		 *
+		 * @param product product parameters
+		 * @return this builder
+		 */
+		public Builder product(final TargetProduct product);
+
+		/**
+		 * Set order parameters on the built TargetParameters
+		 *
+		 * @param order order parameters
+		 * @return this builder
+		 */
+		public Builder order(final TargetOrder order);
+
+		/**
+		 * Build the TargetParameters object
+		 *
+		 * @return the built TargetParameters object
+		 */
+		public TargetParameters build();
+    }
+}
+```
+
+### TargetOrder
+
+Here is a code sample for this class in Android:
+
+
+```java
+public class TargetOrder {
+
+	/**
+	 * Initialize a TargetOrder with an order id, order total and a list of purchasedProductIds
+	 *
+	 * @param id String order id
+	 * @param total double order total amount
+	 * @param purchasedProductIds a list of purchased product ids
+	 */
+	public TargetOrder(final String id, final double total, final List<String> purchasedProductIds);
+	/**
+	 * Get the order id
+	 *
+	 * @return order id
+	 */
+	public String getId();
+
+	/**
+	 * Get the order total
+	 *
+	 * @return order total
+	 */
+	public double getTotal();
+
+	/**
+	 * Get the order purchasedProductIds
+	 *
+	 * @return a list of this order's purchased product ids
+	 */
+	public List<String> getPurchasedProductIds();
+
+	/**
+	 * Converts an order parameter Map to a TargetOrder
+	 *
+	 * @param orderParameters a Map<String, Object> of Target order parameters
+	 * @return converted TargetOrder
+	 */
+	static TargetOrder fromMap(final Map<String, Object> orderParameters);
+
+	/**
+	 * Converts TargetOrder to an order parameters Map.
+	 *
+	 * @param targetOrder a TargetOrder object
+	 * @return Map<String, Object> containing Target order parameters
+	 */
+	static Map<String, Object> toMap(final TargetOrder targetOrder);
+
+}
+```
+
+### TargetProduct
+
+Here is a code sample for this class in Android:
+
+
+```java
+public class TargetProduct {
+
+	/**
+	 * Initialize a TargetProduct with a product id and a productCategoryId categoryId
+	 *
+	 * @param id String product id
+	 * @param categoryId String product category id
+	 */
+     public TargetProduct(final String id, final String categoryId);
+
+	/**
+	 * Get the product id
+	 *
+	 * @return product id
+	 */
+	public String getId();
+
+	/**
+	 * Get the product categoryId
+	 *
+	 * @return product category id
+	 */
+	public String getCategoryId();
+
+	/**
+	 * Converts a product parameter Map to a TargetProduct
+	 *
+	 * @param productParameters a Map<String, String> of Target product parameters
+	 * @return converted TargetProduct
+	 */
+	static TargetProduct fromMap(final Map<String, String> productParameters);
+
+	/**
+	 * Converts a TargetProduct object to product parameters Map.
+	 *
+	 * @param targetProduct a TargetProduct object
+	 * @return Map<String, String> containing Target product parameters
+	 */
+	 static Map<String, String> toMap(final TargetProduct targetProduct);
 }
 ```
 {% endtab %}
@@ -825,7 +1120,18 @@ This class extends `ACPTargetPrefetchObject` by adding default content and a fun
 
 The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
 
+```
++ (nonnull instancetype) targetRequestObjectWithName: (nonnull NSString*) name
+                                    targetParameters: (nullable ACPTargetParameters*) targetParameters
+                                      defaultContent: (nonnull NSString*) defaultContent
+                                            callback: (nullable void (^) (NSString* __nullable content)) callback;
+
+```
+
+
+
 ```objectivec
+@deprecated
 + (nonnull instancetype) requestObjectWithName: (nonnull NSString*) name
                                 defaultContent: (nonnull NSString*) defaultContent
                                 mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters
@@ -837,34 +1143,119 @@ The following method can be used to create an instance of a Target prefetch obje
 This class contains the name of the Target location/mbox and parameter dictionary for mbox parameters, product parameters, and order parameters that will be used in a prefetch:
 
 ```objectivec
-@interface ACPTargetPrefetchObject : NSObject​
+@interface ACPTargetPrefetchObject : NSObject
 
 ///< The name of the Target location/mbox
-@property(nonatomic, strong, nullable) NSString* name;​
+@property(nonatomic, strong, nullable) NSString* name;
 
 ///< Dictionary containing key-value pairs of mbox parameters
-@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* mboxParameters;​
+@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* mboxParameters;
 
 ///< Dictionary containing key-value pairs of product parameters
 @property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* productParameters;
 
-​///< Dictionary containing key-value pairs of order parameters
+///< Dictionary containing key-value pairs of order parameters
 @property(nonatomic, strong, nullable) NSDictionary* orderParameters;
+
+///target parameters associated with the prefetch object. You can set all other parameters in this object
+@property(nonatomic, strong, nullable) ACPTargetParameters* targetParameters;
 @end
 ```
 
 The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
 
+```
++ (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
+                                     targetParameters: (nullable ACPTargetParameters*) targetParameters;
+
+```
+
+
+
 ```text
+@deprecated
 + (nonnull instancetype) prefetchObjectWithName: (nonnull NSString*) name                                 mboxParameters: (nullable NSDictionary*) mboxParameters;
 ```
 
-The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
+### ACPTargetParameters
 
-```text
-+ (nonnull instancetype) prefetchObjectWithName: (nonnull NSString*) name
-                                 mboxParameters: (nullable NSDictionary*) mboxParamete
+This class contains the parameter dictionary for mbox parameters, profile parameters, and ACPTargetOrder object as well as ACPTargetProduct object:
+
+```objectivec
+@interface ACPTargetParameters : NSObject
+
+///Dictionary containing key-value pairs of parameters
+@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* parameters;
+
+///Dictionary containing key-value pairs of profile parameters
+@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* profileParameters;
+
+///ACPTargetOrder object
+@property(nonatomic, strong, nullable) ACPTargetOrder* order;
+
+///ACPTargetProduct object
+@property(nonatomic, strong, nullable) ACPTargetProduct* product;
+@end
 ```
+
+The following method can be used to create an instance of a Target parameters object that can be used when invoking multiple APIs:
+
+```
++ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
+                                      profileParameters: (nullable NSDictionary*) profileParameters
+                                                product: (nullable ACPTargetProduct*) product
+                                                  order: (nullable ACPTargetOrder*) order;
+
+```
+### ACPTargetOrder
+
+This class contains orderId, total and array for purchasedProductIds present in order parameters:
+
+```objectivec
+@interface ACPTargetOrder : NSObject
+
+///Order ID
+@property(nonatomic, strong, nonnull) NSString* orderId;
+
+///Order total
+@property(nonatomic, strong, nullable) NSNumber* total;
+
+///Array of Purchased Product Ids
+@property(nonatomic, strong, nullable) NSArray<NSString*>* purchasedProductIds;
+@end
+```
+
+The following method can be used to create an instance of a Target order object that can be used when invoking multiple APIs:
+
+```
++ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
+                                     total: (nullable NSNumber*) total
+                       purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
+
+```
+### ACPTargetProduct
+
+This class contains productId and categoryId present in product parameters:
+
+```objectivec
+@interface ACPTargetProduct : NSObject
+
+///Product ID
+@property(nonatomic, strong, nullable) NSString* productId;
+
+///Category ID
+@property(nonatomic, strong, nullable) NSString* categoryId;
+@end
+```
+
+The following method can be used to create an instance of a Target Product object that can be used when invoking multiple APIs:
+
+```
++ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
+                                  categoryId: (nullable NSString*) categoryId;
+```
+
+
 {% endtab %}
 {% endtabs %}
 
