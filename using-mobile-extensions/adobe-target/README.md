@@ -115,7 +115,78 @@ Prefetched offer content does not persist across launches. The prefetch content 
 {% tab title="Android" %}
 #### Java
 
-#### Using the `TargetPrefetch` Builder
+
+#### Using the `TargetPrefetch` Constructor
+
+Using `TargetPrefetch` Constructor, you can create a `TargetPrefetch` instance with the specified data. It currently accepts location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations. 
+
+
+#### Syntax
+
+```java
+TargetParameters parameters = new TargetParameters.Builder()
+                              .product(TargetProduct.fromMap(productParameters))
+                              .order(TargetOrder.fromMap(orderParameters))
+                              .parameters(mboxParameters)
+                              .profileParameters(profileParameters).build();
+
+TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", parameters);
+```
+
+#### Using `prefetchContent`
+
+Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `TargetParameters`. The callback is invoked when the prefetch is complete, which returns a null if prefetch completed successfully or error message for the prefetch request.
+
+#### Syntax
+
+```java
+public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
+                                   final TargetParameters parameters,
+                                   final final AdobeCallback<String> callback);
+```
+
+#### Example
+
+```java
+// first prefetch request
+Map<String, Object> mboxParameters1 = new HashMap<>();
+mboxParameters1.put("status", "platinum");
+
+// second prefetch request
+Map<String, Object> mboxParameters2 = new HashMap<>();
+mboxParameters2.put("userType", "paid");
+
+List<String> purchasedIds = new ArrayList<String>();
+purchasedIds.add("34");
+purchasedIds.add("125");
+
+TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
+TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
+
+TargetParameters parameters1 = new TargetParameters.Builder()
+                              .parameters(mboxParameters1)
+                              .build();
+TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", parameters1);
+
+TargetParameters parameters2 = new TargetParameters.Builder()
+                              .parameters(mboxParameters2)
+                              .product(targetProduct)
+                              .order(targetOrder)
+                              .build();
+TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", parameters2);
+
+
+List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
+prefetchMboxesList.add(prefetchRequest1);
+prefetchMboxesList.add(prefetchRequest2);
+
+
+// Call the prefetchContent API.
+TargetParamters parameters = null;
+Target.prefetchContent(prefetchMboxesList, parameters, prefetchStatusCallback);
+```
+
+#### Using the `TargetPrefetch` Builder(Marked as deprecated)
 
 The `TargetPrefetch` builder helps create a `TargetPrefetch` instance with the specified data. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
 
@@ -129,7 +200,7 @@ TargetPrefetch prefetchRequest = new TargetPrefetch.Builder("mboxName")
                 .build();
 ```
 
-#### Using `prefetchContent`
+#### Using `prefetchContent` (Marked as deprecated)
 
 Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `profileParameters`. The callback is invoked when the prefetch is complete, which returns a success status for the prefetch request.
 
@@ -137,8 +208,8 @@ Sends a prefetch request to your configured Target server with the `TargetPrefet
 
 ```java
 public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
-                                    final Map<String, Object> profileParameters,
-                                    final AdobeCallback<Boolean> callback);
+                                   final Map<String, Object> profileParameters,
+                                   final AdobeCallback<Boolean> callback);
 ```
 
 #### Example
@@ -192,6 +263,8 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 
 Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `profileParameters`. The callback will be invoked when the prefetch is complete, which returns a success status for the prefetch request.
 
+//TODO Make changes for prefetch
+
 #### Syntax
 
 ```objectivec
@@ -237,6 +310,126 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 [ACPTarget prefetchContent:prefetchArray withProfileParameters:profileParameters callback:^(BOOL isSuccess){
        // do something with the Boolean result
 }];
+```
+{% endtab %}
+{% endtabs %}
+
+### Using TargetParameters, TargetOrder and TargetProduct object
+
+Using `TargetParameters`, you can encapsulate various parameters (namely mbox-Parameters, profile-parameters, order-parameters and product-parameters) for easy use
+With `TargetOrder`, you can encapsulate the order parameters and use it in TargetParameters.
+With `TargetProduct`, you can encapsulate the product parameters and use it in TargetParameters.
+
+**Merging behavior of parameters passed in API's  with parameters passed in TargetPrefetch/TargetRequest Object**
+
+There can be cases, when some global parameters are passed in API's. If target-parameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
+
+Corresponding TargetOrder and TargetProduct parameters will be overridden by API level global parameters.
+Mbox-parameters and profile-parameters will be appended only if the key names differ. Otherwise if key name matches then they will be overridden.
+
+{% tabs %}
+{% tab title="Android" %}
+#### **Syntax**
+
+```java
+public TargetOrder(final String id, final double total, final List<String> purchasedProductIds)
+
+public TargetProduct(final String id, final String categoryId)
+
+TargetParameters targetParameters = new TargetParameters.Builder()
+                                    .parameters(new HashMap<String, String>())
+                                    .profileParameters(new HashMap<String, String>())
+                                    .product(targetProduct)
+                                    .order(targetOrder)
+                                    .build();
+```
+
+#### **Example**
+
+```java
+List<String> purchasedProductIds = new ArrayList<String>();
+purchasedProductIds.add("34");
+purchasedProductIds.add("125"); 
+TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
+
+TargetProduct targetProduct = new TargetProduct("123", "Books");
+
+Map<String, Object> mboxParameters1 = new HashMap<>();
+mboxParameters1.put("status", "platinum");
+
+Map<String, Object> profileParameters1 = new HashMap<>();
+profileParameters1.put("gender", "male");
+
+TargetParameters targetParameters = new TargetParameters.Builder()
+                                    .parameters(mboxParameters1)
+                                    .profileParameters(profileParameters1)
+                                    .product(targetProduct)
+                                    .order(targetOrder)
+                                    .build();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Syntax
+
+```objectivec
+//TODO Add syntax for TargetParameters, TargetOrder and TargetProduct object
+```
+
+#### Objective-C Example
+
+```objectivec
+//TODO Add example for TargetParameters, TargetOrder and TargetProduct object
+```
+{% endtab %}
+{% endtabs %}
+
+### Using Locations Displayed API for Prefetch
+
+In some situations, you may want to want to inform Target that the corresponding location (mbox) has been viewed. This API sends a display notification to Target for a given prefetched mbox. This helps Target record location display events.
+
+Note: If you're only using regular mboxes, and not prefetching any mbox content, this method should not be called.
+
+{% tabs %}
+{% tab title="Android" %}
+#### **Syntax**
+
+```java
+public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters parameters)
+```
+
+#### **Example**
+
+```java
+List<String> purchasedProductIds = new ArrayList<String>();
+purchasedProductIds.add("34");
+purchasedProductIds.add("125"); 
+TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
+
+TargetProduct targetProduct = new TargetProduct("123", "Books");
+TargetParameters targetParameters = new TargetParameters.Builder()
+                                    .parameters(new HashMap<String, String>())
+                                    .profileParameters(new HashMap<String, String>())
+                                    .product(targetProduct)
+                                    .order(targetOrder)
+                                    .build();
+List<String> mboxList = new ArrayList<>();
+mboxList.add("mboxName1");
+Target.locationsDisplayed(null, targetParameters);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Syntax
+
+```objectivec
+//TODO Add syntax for locationsDisplayed
+```
+
+#### Objective-C Example
+
+```objectivec
+//TODO Add example for locationsDisplayed
 ```
 {% endtab %}
 {% endtabs %}
@@ -319,10 +512,10 @@ To see the performance of your Target activities for certain segments, set up th
 
 If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
-| Key | Description |
-| :--- | :--- |
-| target.clientcode | Client code for your account. |
-| target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. |
+| Key                  | Description                              |
+| :------------------- | :--------------------------------------- |
+| target.clientcode    | Client code for your account.            |
+| target.timeout       | Time, in seconds, to wait for a response from Target servers before timing out. |
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
 
 ## Additional information
