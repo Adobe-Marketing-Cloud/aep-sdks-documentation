@@ -318,6 +318,58 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
        // do something with the callback response
 }];
 ```
+
+####Deprecated prefetchContent API
+
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `profileParameters`. The callback will be invoked when the prefetch is complete, which returns a success status for the prefetch request.
+
+#### Syntax
+
+```objectivec
++ (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
+         withProfileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters
+                      callback: (nullable void (^) (BOOL success)) callback;
+```
+
+#### Objective-C Example
+
+```objectivec
+NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
+NSDictionary *productParameters1 = @{@"id":@"24D3412",
+                                        @"categoryId":@"Books"};
+NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
+                                      @"total":@"344.30",
+                                      @"purchasedProductIds":@"34, 125, 99"};
+
+NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
+NSDictionary *productParameters2 = @{@"id":@"764334",
+                                         @"categoryId":@"Online"};
+NSArray *purchaseIDs = @[@"id1",@"id2"];
+NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
+                                       @"total":@"54.90",
+                                       @"purchasedProductIds":purchaseIDs};
+
+// Creating Prefetch Objects
+ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject prefetchObjectWithName:@"logo" mboxParameters:mboxParameters1];
+prefetch1.productParameters = productParameters1;
+prefetch1.orderParameters = orderParameters1;
+
+ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject prefetchObjectWithName:@"buttonColor" mboxParameters:mboxParameters2];
+prefetch2.productParameters = productParameters2;
+prefetch2.orderParameters = orderParameters2;
+
+// Creating prefetch Array
+NSArray *prefetchArray = @[prefetch1,prefetch2];
+
+// Creating Profile parameters
+NSDictionary *profileParameters = @{@"age":@"20-32"};
+
+// Target API Call
+[ACPTarget prefetchContent:prefetchArray withProfileParameters:profileParameters callback:^(BOOL isSuccess){
+       // do something with the Boolean result
+}];
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -327,9 +379,11 @@ Using `TargetParameters`, you can encapsulate various parameters (namely mbox-Pa
 With `TargetOrder`, you can encapsulate the order parameters and use it in TargetParameters.
 With `TargetProduct`, you can encapsulate the product parameters and use it in TargetParameters.
 
+
+
 **Merging behavior of parameters passed in API's  with parameters passed in TargetPrefetch/TargetRequest Object**
 
-There can be cases, when some global parameters are passed in API's. If target-parameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
+There can be cases, when global parameters are passed in API's. If target-parameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
 
 Corresponding TargetOrder and TargetProduct parameters will be overridden by API level global parameters.
 Mbox-parameters and profile-parameters will be appended only if the key names differ. Otherwise if key name matches then they will be overridden.
@@ -398,8 +452,11 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 ```objectivec
 NSDictionary *mboxParameters = @{@"status":@"Platinum"};
 NSDictionary *profileParameters = @{@"gender":@"female"};
+
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+
 ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
                                                     profileParameters:profileParameters
                                                               product:product
@@ -447,7 +504,8 @@ Target.locationsDisplayed(null, targetParameters);
 #### Syntax
 
 ```objectivec
-+ (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames withTargetParameters: (nullable ACPTargetParameters*) parameters;
++ (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
+       withTargetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
 #### Objective-C Example
