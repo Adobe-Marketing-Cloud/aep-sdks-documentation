@@ -135,7 +135,7 @@ TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", parameters);
 
 #### Using `prefetchContent`
 
-Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `TargetParameters`. The callback is invoked when the prefetch is complete, which returns a null if prefetch completed successfully or error message for the prefetch request.
+Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `TargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
 
 #### Syntax
 
@@ -261,7 +261,7 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 {% tab title="iOS" %}
 #### Objective C
 
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback will be invoked when the prefetch is complete, which returns nil if prefetch completed successfully or error message for the prefetch request.
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
 
 #### Syntax
 
