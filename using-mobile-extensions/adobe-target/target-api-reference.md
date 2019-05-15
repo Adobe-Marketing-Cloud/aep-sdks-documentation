@@ -230,9 +230,37 @@ ACPTarget.getTntId({tntId in
 
 Sends a batch request to your configured Target server for multiple mbox locations that are specified.
 
+{% hint style="warning" %}
+`loadRequests` API is deprecated, and replaced with `retrieveLocationContent` for batch scenarios instead.
+
+Note: When working with prefetch API's, and switching to new `retrieveLocationContent` API, please also use `locationsDisplayed`, otherwise reporting will not work.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
-### TargetRequest Builder
+### TargetRequest Constructor
+
+`TargetRequest` Constructor helps create a `TargetRequest` instance. It replaces the deprecated builder pattern. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
+
+#### Syntax
+
+```java
+TargetParameters parameters = new TargetParameters.Builder()
+                                    .parameters(new HashMap<String, String>())
+                                    .profileParameters(new HashMap<String, String>())
+                                    .order(new TargetOrder())
+                                    .product(new TargetProduct())
+                                    .build();
+TargetRequest targetRequest = new TargetRequest("mboxName", parameters, "defaultContent", 
+                                                new AdobeCallback<String>() {
+                                                    @Override
+                                                    public void call(String value) {
+                                                        // do something with target content.
+                                                    }
+                                                });
+```
+
+### TargetRequest Builder (Marked as deprecated)
 
 `TargetRequest` builder helps create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
 
@@ -251,7 +279,7 @@ TargetRequest request = new TargetRequest.Builder("mboxName","defaultContent")
                 }).build();
 ```
 
-### loadRequests
+### loadRequests (Marked as deprecated)
 
 Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Each object in the array contains a callback function, which is invoked when content is available for its given mbox location.
 
@@ -321,7 +349,7 @@ Target.loadRequests(locationRequests, profileParameters);
 {% endtab %}
 
 {% tab title="iOS" %}
-### loadRequests
+### loadRequests(Marked as deprecated)
 
 Sends a batch request to your configured Target server for multiple mbox locations that are specified in the`ACPTargetRequestObject` array. Each object in the array contains a callback function, which will be invoked when content is available for its given mbox location.
 
@@ -375,6 +403,135 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 {% endtab %}
 {% endtabs %}
 
+## Retrieve Location Content requests
+
+Executes a batch request to the configured Target server for multiple mbox locations. 
+The main difference with `loadRequest` API is in usage along with prefetch APIs.
+This API only returns the content and does not increase the reporting count. 
+If you are using normal batch requests, then there is no difference with `loadRequest` API.
+
+{% tabs %}
+{% tab title="Android" %}
+### retrieveLocationContent
+
+Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Any prefetched content which matches a given mbox location is returned and not included in the batch request to the Target server. Each object in the list contains a callback function, which will be invoked when content is available for its given mbox location.
+
+#### Syntax
+
+```java
+public static void retrieveLocationContent(final List<TargetRequest> targetRequestList,
+                                           final TargetParameters parameters)
+```
+
+#### Example
+
+```java
+// define parameters for first request
+Map<String, Object> mboxParameters1 = new HashMap<>();
+mboxParameters1.put("status", "platinum");
+
+// define parameters for second request
+Map<String, Object> mboxParameters2 = new HashMap<>();
+mboxParameters2.put("userType", "paid");
+
+List<String> purchasedIds = new ArrayList<String>();
+purchasedIds.add("34");
+purchasedIds.add("125");
+
+TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
+TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
+
+TargetParameters parameters1 = new TargetParameters.Builder().parameters(mboxParameters1).build();
+TargetRequest request1 = new TargetRequest("mboxName1", parameters1, "defaultContent1",
+                                            new AdobeCallback<String>() {
+                                                @Override
+                                                public void call(String value) {
+                                                    // do something with target content.
+                                                }
+                                            });
+
+TargetParameters parameters2 = new TargetParameters.Builder()
+                               .parameters(mboxParameters1)
+                               .product(targetProduct)
+                               .order(targetOrder)
+                               .build();
+TargetRequest request1 = new TargetRequest("mboxName1", parameters2, "defaultContent1",
+                                            new AdobeCallback<String>() {
+                                                @Override
+                                                public void call(String value) {
+                                                    // do something with target content.
+                                                }
+                                            });
+
+// Creating Array of Request Objects
+List<TargetRequest> locationRequests = new ArrayList<>();
+locationRequests.add(request1);
+locationRequests.add(request2);
+
+ // Define the profile parameters map.
+Map<String, Object> profileParameters1 = new HashMap<>();
+profileParameters1.put("ageGroup", "20-32");
+
+TargetParameters parameters = new TargetParameters.Builder().profileParameters(profileParameters1).build();
+// Call the targetRetrieveLocationContent API.
+Target.retrieveLocationContent(locationRequests, parameters);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### retrieveLocationContent
+
+Sends a batch request to your configured Target server for multiple mbox locations that are specified in the`ACPTargetRequestObject` array. Each object in the array contains a callback function, which will be invoked when content is available for its given mbox location.
+
+#### Syntax
+
+```objectivec
+//TODO Add syntax for retrieveLocationContent
+```
+
+#### Example
+
+```objectivec
+NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
+NSDictionary *productParameters1 = @{@"id":@"24D3412",
+                                        @"categoryId":@"Books"};
+NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
+                                      @"total":@"344.30",
+                                      @"purchasedProductIds":@"34, 125, 99"};
+
+NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
+NSDictionary *productParameters2 = @{@"id":@"764334",
+                                         @"categoryId":@"Online"};
+NSArray *purchaseIDs = @[@"id1",@"id2"];
+NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
+                                       @"total":@"54.90",
+                                       @"purchasedProductIds":purchaseIDs};
+
+ACPTargetRequestObject *request1 = [ACPTargetRequestObject requestObjectWithName:@"logo" defaultContent:@"BlueWhale" mboxParameters:mboxParameters1 callback:^(NSString *content){
+        // do something with the received content
+  }];
+request1.productParameters = productParameters1;
+request1.orderParameters = orderParameters1;
+
+
+ACPTargetRequestObject *request2 = [ACPTargetRequestObject requestObjectWithName:@"buttonColor" defaultContent:@"red" mboxParameters:mboxParameters2 callback:^(NSString *content){
+        // do something with the received content
+}];
+request2.productParameters = productParameters1;
+request2.orderParameters = orderParameters1;
+
+// create request object array
+NSArray *requestArray = @[request1,request2];
+
+// Creating Profile parameters
+NSDictionary *profileParameters = @{@"age":@"20-32"};
+
+// Call the API
+[ACPTarget loadRequests:requestArray withProfileParameters:profileParameters];
+```
+{% endtab %}
+{% endtabs %}
+
 ## Set preview restart deep link
 
 This API sets the Target preview URL to be displayed when the preview mode is restarted.
@@ -386,7 +543,7 @@ This API sets the Target preview URL to be displayed when the preview mode is re
 #### Syntax
 
 ```text
-
+public static void setPreviewRestartDeepLink(final Uri deepLink)
 ```
 {% endtab %}
 
@@ -414,6 +571,9 @@ If a notification is sent for a prefetched mbox, its contents should already hav
 #### Syntax
 
 ```java
+public static void locationClicked(final String mboxName, final TargetParameters parameters)
+
+@Deprecated
 public static void locationClicked(final String mboxName,
                                     final Map<String, String> mboxParameters
                                     final Map<String, String> productParameters
@@ -448,7 +608,20 @@ orderParameters.put("purchasedProductIds",  purchasedIds);
 Map<String, Object> profileParameters = new HashMap<>();
 profileParameters.put("ageGroup", "20-32");
 
+//Deprecated API call
 Target.locationClicked("cartLocation", mboxParameters, productParameters, orderParameters, profileParameters);
+
+//Target Parameters
+TargetOrder targetOrder = new TargetOrder("NJJICK", "650", purchasedIds);
+TargetProduct targetProduct = new TargetProduct("CEDFJC", "Electronics");
+TargetParameters targetParameters = new TargetParameters.Builder(mboxParameters)
+								.profileParameters(profileParameters)
+								.order(targetOrder)
+								.product(targetProduct)
+								.build();
+//New API call
+Target.locationClicked("cartLocation", targetParameters);
+
 ```
 {% endtab %}
 
@@ -468,7 +641,7 @@ If a notification is sent for a prefetched mbox, its contents should already hav
 ```objectivec
 // Define Mbox parameters
 NSDictionary *mboxParameters = @{@"membership":@"prime"};
-​
+
 // Define Product parameters
 NSDictionary *productParameters = @{@"id":@"CEDFJC",
                                     @"categoryId":@"Electronics"};
@@ -476,11 +649,18 @@ NSDictionary *productParameters = @{@"id":@"CEDFJC",
 NSDictionary *orderParameters = @{@"id":@"NJJICK",
                                     @"total":@"650",
                                     @"purchasedProductIds":@"81, 123, 190"};
-​
+
 // Define Profile parameters
 NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
-​
+
+ 
+// Deprecated API Call
 [ACPTarget locationClickedWithName:@"cartLocation" mboxParameters:mboxParameters productParameters:productParameters orderParameters:orderParameters profileParameters:profileParameters];
+
+// Create Target parameters
+
+
+//New API call
 ```
 {% endtab %}
 {% endtabs %}
