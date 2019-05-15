@@ -125,8 +125,8 @@ Using `TargetPrefetch` Constructor, you can create a `TargetPrefetch` instance w
 
 ```java
 TargetParameters parameters = new TargetParameters.Builder()
-                              .product(TargetProduct.fromMap(productParameters))
-                              .order(TargetOrder.fromMap(orderParameters))
+                              .product(new TargetProduct())
+                              .order(new TargetOrder())
                               .parameters(mboxParameters)
                               .profileParameters(profileParameters).build();
 
@@ -261,7 +261,7 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 {% tab title="iOS" %}
 #### Objective C
 
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback will be invoked when the prefetch is complete, which returns null if prefetch completed sucessfully or error message for the prefetch request.
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback will be invoked when the prefetch is complete, which returns nil if prefetch completed successfully or error message for the prefetch request.
 
 #### Syntax
 
