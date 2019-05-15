@@ -1,5 +1,16 @@
 # Release notes
 
+## May 15, 2019
+
+The following updates were made to the Adobe Target extension:
+
+ * Upgraded Target Delivery APIs to latest v1/delivery
+ * Introduced new API `retrieveLocationContent` (API to retrieve content for multiple Target mbox locations at once without increasing reporting count for prefetch cases)
+ * Introduced new API  `locationsDisplayed` (API to helps Target record location display events and should be used only for prefetch scenarios)
+ * Provided Support for TargetParameters (Helper class which encapsulates various parameters like Mboxparameters, profileparameters, orderParameters and productParameters)
+ * New `prefetchContent` & `locationClicked` APIs which accept TargetParameters
+
+
 ## May 9, 2019
 
 The following updates were made to the Analytics extension in iOS version 2.1.0:
