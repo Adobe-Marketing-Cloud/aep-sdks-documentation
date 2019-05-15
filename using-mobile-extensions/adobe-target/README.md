@@ -261,54 +261,61 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 {% tab title="iOS" %}
 #### Objective C
 
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `profileParameters`. The callback will be invoked when the prefetch is complete, which returns a success status for the prefetch request.
-
-//TODO Make changes for prefetch
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback will be invoked when the prefetch is complete, which returns null if prefetch completed sucessfully or error message for the prefetch request.
 
 #### Syntax
 
 ```objectivec
 + (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
-         withProfileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters
-                      callback: (nullable void (^) (BOOL success)) callback;
+          withParameters: (nullable ACPTargetParameters*) parameters
+                callback: (nullable void (^) (NSError* _Nullable error)) callback;
 ```
 
 #### Objective-C Example
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
-NSDictionary *productParameters1 = @{@"id":@"24D3412",
-                                        @"categoryId":@"Books"};
-NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
-                                      @"total":@"344.30",
-                                      @"purchasedProductIds":@"34, 125, 99"};
+NSDictionary *profileParameters1 = @{@"age":@"20"};
+ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
+ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters1 = [ACPTargetParameters targetParametersWithParameters:mboxParameters1
+                                                    profileParameters:profileParameters1
+                                                              product:product1
+                                                                order:order1];
 
 NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
-NSDictionary *productParameters2 = @{@"id":@"764334",
-                                         @"categoryId":@"Online"};
+ACPTargetProduct *product2 = [ACPTargetProduct targetProductWithId:@"764334" categoryId:@"Online"];
 NSArray *purchaseIDs = @[@"id1",@"id2"];
-NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
-                                       @"total":@"54.90",
-                                       @"purchasedProductIds":purchaseIDs};
+ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:purchaseIDs];
+ACPTargetParameters *targetParameters2 = [ACPTargetParameters targetParametersWithParameters:mboxParameters2
+                                                    profileParameters:nil
+                                                              product:product2
+                                                                order:order2];
 
 // Creating Prefetch Objects
-ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject prefetchObjectWithName:@"logo" mboxParameters:mboxParameters1];
-prefetch1.productParameters = productParameters1;
-prefetch1.orderParameters = orderParameters1;
+ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"logo"
+                                                                         targetParameters:targetParameters1];
 
-ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject prefetchObjectWithName:@"buttonColor" mboxParameters:mboxParameters2];
-prefetch2.productParameters = productParameters2;
-prefetch2.orderParameters = orderParameters2;
+ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"buttonColor"
+                                                                         targetParameters:targetParameters2];
 
 // Creating prefetch Array
 NSArray *prefetchArray = @[prefetch1,prefetch2];
 
-// Creating Profile parameters
+// Creating Target parameters
+NSDictionary *mboxParameters = @{@"status":@"progressive"};
 NSDictionary *profileParameters = @{@"age":@"20-32"};
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
+                                                    profileParameters:profileParameters
+                                                              product:product
+                                                                order:order];
+
 
 // Target API Call
-[ACPTarget prefetchContent:prefetchArray withProfileParameters:profileParameters callback:^(BOOL isSuccess){
-       // do something with the Boolean result
+[ACPTarget prefetchContent:prefetchArray withParameters:targetParameters callback:^(NSError * _Nullable error){
+       // do something with the callback response
 }];
 ```
 {% endtab %}
@@ -373,13 +380,30 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 #### Syntax
 
 ```objectivec
-//TODO Add syntax for TargetParameters, TargetOrder and TargetProduct object
++ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
+                                     total: (nullable NSNumber*) total
+                       purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
+
++ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
+                                  categoryId: (nullable NSString*) categoryId;
+
++ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
+                                      profileParameters: (nullable NSDictionary*) profileParameters
+                                                product: (nullable ACPTargetProduct*) product
+                                                  order: (nullable ACPTargetOrder*) order;
 ```
 
 #### Objective-C Example
 
 ```objectivec
-//TODO Add example for TargetParameters, TargetOrder and TargetProduct object
+NSDictionary *mboxParameters = @{@"status":@"Platinum"};
+NSDictionary *profileParameters = @{@"gender":@"female"};
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
+                                                    profileParameters:profileParameters
+                                                              product:product
+                                                                order:order];
 ```
 {% endtab %}
 {% endtabs %}
@@ -423,13 +447,19 @@ Target.locationsDisplayed(null, targetParameters);
 #### Syntax
 
 ```objectivec
-//TODO Add syntax for locationsDisplayed
++ (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames withTargetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
 #### Objective-C Example
 
 ```objectivec
-//TODO Add example for locationsDisplayed
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
+                                                    profileParameters:nil
+                                                              product:product
+                                                                order:order];
+[ACPTarget locationsDisplayed:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParameters];
 ```
 {% endtab %}
 {% endtabs %}

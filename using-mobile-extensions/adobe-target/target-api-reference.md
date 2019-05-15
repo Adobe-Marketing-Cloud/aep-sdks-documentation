@@ -486,48 +486,54 @@ Sends a batch request to your configured Target server for multiple mbox locatio
 #### Syntax
 
 ```objectivec
-//TODO Add syntax for retrieveLocationContent
++ (void) retrieveLocationContent: (nonnull NSArray<ACPTargetRequestObject*>*) requests
+                  withParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
 #### Example
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
-NSDictionary *productParameters1 = @{@"id":@"24D3412",
-                                        @"categoryId":@"Books"};
-NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
-                                      @"total":@"344.30",
-                                      @"purchasedProductIds":@"34, 125, 99"};
+ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
+ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"a", @"b"]];
 
 NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
-NSDictionary *productParameters2 = @{@"id":@"764334",
-                                         @"categoryId":@"Online"};
+ACPTargetProduct *product2 = [ACPTargetProduct targetProductWithId:@"764334" categoryId:@"Online"];
 NSArray *purchaseIDs = @[@"id1",@"id2"];
-NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
-                                       @"total":@"54.90",
-                                       @"purchasedProductIds":purchaseIDs};
+ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"4t4uxksa" total:@(54.90) purchasedProductIds:purchaseIDs];
 
-ACPTargetRequestObject *request1 = [ACPTargetRequestObject requestObjectWithName:@"logo" defaultContent:@"BlueWhale" mboxParameters:mboxParameters1 callback:^(NSString *content){
-        // do something with the received content
+ACPTargetParameters *params1 = [ACPTargetParameters targetParametersWithParameters:mboxParameters1
+                                                    profileParameters:nil
+                                                              product:product1
+                                                                order:order1];
+ACPTargetRequestObject *request1 = [ACPTargetRequestObject targetRequestObjectWithName:@"logo" targetParameters:params1
+defaultContent:@"BlueWhale" callback:^(NSString * _Nullable content) {
+	// do something with the received content
   }];
-request1.productParameters = productParameters1;
-request1.orderParameters = orderParameters1;
 
-
-ACPTargetRequestObject *request2 = [ACPTargetRequestObject requestObjectWithName:@"buttonColor" defaultContent:@"red" mboxParameters:mboxParameters2 callback:^(NSString *content){
-        // do something with the received content
-}];
-request2.productParameters = productParameters1;
-request2.orderParameters = orderParameters1;
-
+ACPTargetParameters *params2 = [ACPTargetParameters targetParametersWithParameters:mboxParameters2
+                                                    profileParameters:nil
+                                                              product:product2
+                                                                order:order2];
+ACPTargetRequestObject *request2 = [ACPTargetRequestObject targetRequestObjectWithName:@"logo" targetParameters:params2
+defaultContent:@"red" callback:^(NSString * _Nullable content) {
+	// do something with the received content
+  }];
 // create request object array
 NSArray *requestArray = @[request1,request2];
 
-// Creating Profile parameters
+// Creating Target parameters
+NSDictionary *mboxParameters = @{@"status":@"progressive"};
 NSDictionary *profileParameters = @{@"age":@"20-32"};
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
+                                                    profileParameters:profileParameters
+                                                              product:product
+                                                                order:order];
 
 // Call the API
-[ACPTarget loadRequests:requestArray withProfileParameters:profileParameters];
+[ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters]
 ```
 {% endtab %}
 {% endtabs %}
@@ -633,6 +639,9 @@ If a notification is sent for a prefetched mbox, its contents should already hav
 #### Syntax
 
 ```objectivec
++ (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
+
+@Deprecated
 + (void) locationClickedWithName: (nonnull NSString*) name mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters productParameters: (nullable NSDictionary<NSString*, NSString*>*) productParameters orderParameters: (nullable NSDictionary*) orderParameters profileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters;
 ```
 
@@ -658,9 +667,16 @@ NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
 [ACPTarget locationClickedWithName:@"cartLocation" mboxParameters:mboxParameters productParameters:productParameters orderParameters:orderParameters profileParameters:profileParameters];
 
 // Create Target parameters
-
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
+                                                    profileParameters:nil
+                                                              product:product
+                                                                order:order];
 
 //New API call
+[ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters]
+
 ```
 {% endtab %}
 {% endtabs %}
