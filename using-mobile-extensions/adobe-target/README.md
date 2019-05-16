@@ -124,13 +124,13 @@ Using `TargetPrefetch` Constructor, you can create a `TargetPrefetch` instance w
 #### Syntax
 
 ```java
-TargetParameters parameters = new TargetParameters.Builder()
-                              .product(new TargetProduct())
-                              .order(new TargetOrder())
+TargetParameters targetParameters = new TargetParameters.Builder()
+                              .product(new TargetProduct(String, String))
+                              .order(new TargetOrder(String, Double, List<String>))
                               .parameters(mboxParameters)
                               .profileParameters(profileParameters).build();
 
-TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", parameters);
+TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", targetParameters);
 ```
 
 #### Using `prefetchContent`
@@ -141,7 +141,7 @@ Sends a prefetch request to your configured Target server with the `TargetPrefet
 
 ```java
 public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
-                                   final TargetParameters parameters,
+                                   final TargetParameters targetParameters,
                                    final final AdobeCallback<String> callback);
 ```
 
@@ -163,17 +163,17 @@ purchasedIds.add("125");
 TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
 TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
 
-TargetParameters parameters1 = new TargetParameters.Builder()
+TargetParameters targetParameters1 = new TargetParameters.Builder()
                               .parameters(mboxParameters1)
                               .build();
-TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", parameters1);
+TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", targetParameters1);
 
-TargetParameters parameters2 = new TargetParameters.Builder()
+TargetParameters targetParameters2 = new TargetParameters.Builder()
                               .parameters(mboxParameters2)
                               .product(targetProduct)
                               .order(targetOrder)
                               .build();
-TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", parameters2);
+TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", targetParameters2);
 
 
 List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
@@ -182,8 +182,8 @@ prefetchMboxesList.add(prefetchRequest2);
 
 
 // Call the prefetchContent API.
-TargetParamters parameters = null;
-Target.prefetchContent(prefetchMboxesList, parameters, prefetchStatusCallback);
+TargetParamters targetParameters = null;
+Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallback);
 ```
 
 #### Using the `TargetPrefetch` Builder(Marked as deprecated)
@@ -261,13 +261,13 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 {% tab title="iOS" %}
 #### Objective C
 
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a nil value. If the prefetch is not successful, an error message is returned.
 
 #### Syntax
 
 ```objectivec
 + (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
-          withParameters: (nullable ACPTargetParameters*) parameters
+          withParameters: (nullable ACPTargetParameters*) targetParameters
                 callback: (nullable void (^) (NSError* _Nullable error)) callback;
 ```
 
@@ -375,7 +375,7 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 
 ### Using TargetParameters, TargetOrder and TargetProduct object
 
-Using `TargetParameters`, you can encapsulate various parameters (namely mbox-Parameters, profile-parameters, order-parameters and product-parameters) for easy use
+Using `TargetParameters`, you can encapsulate various parameters (namely mboxParameters, profileParameters, orderParameters and productParameters) for easy use
 With `TargetOrder`, you can encapsulate the order parameters and use it in TargetParameters.
 With `TargetProduct`, you can encapsulate the product parameters and use it in TargetParameters.
 
@@ -383,10 +383,10 @@ With `TargetProduct`, you can encapsulate the product parameters and use it in T
 
 **Merging behavior of parameters passed in API's  with parameters passed in TargetPrefetch/TargetRequest Object**
 
-There can be cases, when global parameters are passed in API's. If target-parameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
+There can be cases, when global parameters are passed in APIs. If targetParameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
 
 Corresponding TargetOrder and TargetProduct parameters will be overridden by API level global parameters.
-Mbox-parameters and profile-parameters will be appended only if the key names differ. Otherwise if key name matches then they will be overridden.
+Mbox-parameters and profile-parameters will be appended only if the key names differ. Otherwise if key name matches then they will be overwritten.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -441,7 +441,7 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
                                   categoryId: (nullable NSString*) categoryId;
 
-+ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
++ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters
                                       profileParameters: (nullable NSDictionary*) profileParameters
                                                 product: (nullable ACPTargetProduct*) product
                                                   order: (nullable ACPTargetOrder*) order;
@@ -476,7 +476,7 @@ Note: If you're only using regular mboxes, and not prefetching any mbox content,
 #### **Syntax**
 
 ```java
-public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters parameters)
+public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters targetParameters)
 ```
 
 #### **Example**
@@ -496,7 +496,7 @@ TargetParameters targetParameters = new TargetParameters.Builder()
                                     .build();
 List<String> mboxList = new ArrayList<>();
 mboxList.add("mboxName1");
-Target.locationsDisplayed(null, targetParameters);
+Target.locationsDisplayed(mboxList, targetParameters);
 ```
 {% endtab %}
 
@@ -505,7 +505,7 @@ Target.locationsDisplayed(null, targetParameters);
 
 ```objectivec
 + (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
-       withTargetParameters: (nullable ACPTargetParameters*) parameters;
+       withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
 
 #### Objective-C Example

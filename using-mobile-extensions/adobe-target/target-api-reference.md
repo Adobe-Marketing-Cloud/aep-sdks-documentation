@@ -6,6 +6,7 @@ Use this API to get the custom visitor ID for Target.
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### getThirdPartyId
 
 The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
@@ -233,11 +234,12 @@ Sends a batch request to your configured Target server for multiple mbox locatio
 {% hint style="warning" %}
 `loadRequests` API is deprecated, and replaced with `retrieveLocationContent` for batch scenarios instead.
 
-Note: When working with prefetch API's, and switching to new `retrieveLocationContent` API, please also use `locationsDisplayed`, otherwise reporting will not work.
+Note: When working with prefetch APIs, and switching to new `retrieveLocationContent` API, please also use `locationsDisplayed`, otherwise reporting will not work.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### TargetRequest Constructor
 
 `TargetRequest` Constructor helps create a `TargetRequest` instance. It replaces the deprecated builder pattern. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
@@ -245,13 +247,13 @@ Note: When working with prefetch API's, and switching to new `retrieveLocationCo
 #### Syntax
 
 ```java
-TargetParameters parameters = new TargetParameters.Builder()
+TargetParameters targetParameters = new TargetParameters.Builder()
                                     .parameters(new HashMap<String, String>())
                                     .profileParameters(new HashMap<String, String>())
-                                    .order(new TargetOrder())
-                                    .product(new TargetProduct())
+                                    .order(new TargetOrder(String, Double, List<String>))
+                                    .product(new TargetProduct(String, String))
                                     .build();
-TargetRequest targetRequest = new TargetRequest("mboxName", parameters, "defaultContent", 
+TargetRequest targetRequest = new TargetRequest("mboxName", targetParameters, "defaultContent",
                                                 new AdobeCallback<String>() {
                                                     @Override
                                                     public void call(String value) {
@@ -406,9 +408,9 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 ## Retrieve Location Content requests
 
 Executes a batch request to the configured Target server for multiple mbox locations. 
-The main difference with `loadRequest` API is in usage along with prefetch APIs.
+The main difference with `loadRequests` API is in usage along with prefetch APIs.
 This API only returns the content and does not increase the reporting count. 
-If you are using normal batch requests, then there is no difference with `loadRequest` API.
+If you are using normal batch requests, then there is no difference with `loadRequests` API.
 
 {% tabs %}
 {% tab title="Android" %}
