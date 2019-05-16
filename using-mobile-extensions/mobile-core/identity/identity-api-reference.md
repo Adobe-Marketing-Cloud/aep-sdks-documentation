@@ -362,7 +362,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
 
 {% hint style="info" %}
-If `identity.adidEnabled` set to false, the advertising identifier is not set or stored. Also, if the current SDK privacy status is `optedout`, the advertising identifier is not set.
+If the current SDK privacy status is `optedout`, the advertising identifier is not set.
 {% endhint %}
 
 {% tabs %}
