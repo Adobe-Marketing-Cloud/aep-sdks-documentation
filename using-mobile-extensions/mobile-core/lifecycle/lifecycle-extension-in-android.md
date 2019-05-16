@@ -6,7 +6,7 @@ You can track lifecycle to learn how frequently and how long your app is being u
 
 **Important**: The Lifecycle extension supports the `MobileCore.lifecycleStart()` and `MobileCore.lifecyclePause()` APIs to track application lifecycle for the Adobe SDK.
 
-## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
+## Implementing Lifecycle Metrics in Android  <a id="implementing-lifecycle-metrics-in-android"></a>
 
 Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 
@@ -58,7 +58,7 @@ To implement lifecycle metrics, complete the following steps in each Activity of
 
 **Important:** To ensure accurate session and crash reporting, you must add these calls to every activity.
 
-## Tracking App Crashes in Android <a id="tracking-app-crashes-in-android"></a>
+## Tracking App Crashes in Android  <a id="tracking-app-crashes-in-android"></a>
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
@@ -86,7 +86,7 @@ This Android lifecycle illustration was created and shared by the [Android Open 
 
 Fragments have application lifecycle events that are similar to Activities. However, a Fragment cannot be active without being attached to an Activity.
 
-## Implementing Global Lifecycle Callbacks <a id="implementing-global-lifecycle-callbacks"></a>
+## Implementing Global Lifecycle Callbacks  <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);        
     setContentView(R.layout.activity_main);        
-    
+
     getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {        
     @Override        
     public void onActivityResumed(Activity activity) {
@@ -140,6 +140,6 @@ void onResume() {
   MobileCore.lifecycleStart(additionalContextData);}
 ```
 
-**Important:** You need to add this code only in your main Activity and any other Activity in which your app may be launched.[  
+**Important:** You need to add this code only in your main Activity and any other Activity in which your app may be launched.[    
 ](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/lifecycle)
 

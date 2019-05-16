@@ -2,11 +2,11 @@
 
 ## Skeleton Extension
 
-To help in getting started with your first Adobe Experience Platform Mobile Extension, we've created a Skeleton Extension template for both iOS and Android. 
+To help in getting started with your first Adobe Experience Platform Mobile Extension, we've created a Skeleton Extension template for both iOS and Android.
 
-The Skeleton Extension is a bare bones third party extension that contains a framework for building your own custom extension. Inside the project you'll see well commented examples of how to register your extension with the Mobile Core event hub, and how to setup listeners to hear specific events passed through the SDK. The Skeleton Extension also shows how to set a shared state and publish an event back onto the Mobile Core event hub. 
+The Skeleton Extension is a bare bones third party extension that contains a framework for building your own custom extension. Inside the project you'll see well commented examples of how to register your extension with the Mobile Core event hub, and how to setup listeners to hear specific events passed through the SDK. The Skeleton Extension also shows how to set a shared state and publish an event back onto the Mobile Core event hub.
 
-{% embed url="https://github.com/Adobe-Marketing-Cloud/acp-mobile-extension" %}
+{% embed url="https://github.com/Adobe-Marketing-Cloud/acp-mobile-extension" caption="" %}
 
 ## Weather Extension
 
@@ -14,13 +14,11 @@ The Weather Extension example for both iOS and Android shows a complete client-s
 
 ![](../../.gitbook/assets/screen-shot-2019-04-23-at-3.46.29-pm.png)
 
-#### Client-side iOS and Android Weather Extension
+### Client-side iOS and Android Weather Extension
 
-{% embed url="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/weather-example" %}
+{% embed url="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/weather-example" caption="" %}
 
-#### Launch UI Weather Extension
+### Launch UI Weather Extension
 
-{% embed url="https://github.com/Adobe-Marketing-Cloud/reactor-mobile-examples" %}
-
-
+{% embed url="https://github.com/Adobe-Marketing-Cloud/reactor-mobile-examples" caption="" %}
 

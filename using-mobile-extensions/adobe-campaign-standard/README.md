@@ -146,7 +146,7 @@ In your App's OnCreate method register the Campaign Standard extension:
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
-#### Objective-C     <a id="objective-c-1"></a>
+#### Objective-C      <a id="objective-c-1"></a>
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

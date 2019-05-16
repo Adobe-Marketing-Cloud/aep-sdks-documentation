@@ -6,5 +6,3 @@ This is the starting point for mobile app developers who want to learn how to im
 
 For more information, see [Implementing the Experience Cloud in Mobile iOS Swift Applications](https://docs.adobe.com/content/help/en/experience-cloud/implementing-in-mobile-ios-swift-apps-with-launch/index.html).
 
-
-

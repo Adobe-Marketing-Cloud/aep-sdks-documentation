@@ -160,7 +160,6 @@ The following is a complete list of all of the metrics provided on your user's a
       </td>
       <td style="text-align:left">
         <p>Stores the name of the mobile service provider as provided by the devices.</p>
-        <p></p>
         <p>Important: This metric is not automatically stored in an Analytics variable.
           For reporting, you must create a processing rule to copy this value to
           an Analytics variable.</p>
@@ -185,15 +184,7 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">The SDK running mode, for example, <code>Application/Extension</code>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values:
-
-{% hint style="warning" %}
-The time that your app spends in the background is not included in the session length.
-{% endhint %}
-
-| Key | Description |
-| :--- | :--- |
-
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \| Key \| Description \| \| :--- \| :--- \|
 
 <table>
   <thead>

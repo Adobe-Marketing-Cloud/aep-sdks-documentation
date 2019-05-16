@@ -8,7 +8,7 @@
 
 2. \(Optional\) Create a new listing in the Exchange Partner Portal.
 
-    For more information, see [Create Exchange Listing](https://developer.adobelaunch.com/extensions/submissions/create-listing/).
+   For more information, see [Create Exchange Listing](https://developer.adobelaunch.com/extensions/submissions/create-listing/).
 
 3. Create a new Adobe I/O integration.
 

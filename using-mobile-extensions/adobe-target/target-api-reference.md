@@ -33,17 +33,17 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 
 Gets the custom visitor ID for Target. The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `nil` is returned.
 
-### Syntax <a id="syntax"></a>
+### Syntax  <a id="syntax"></a>
 
 ```objectivec
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
-### Examples <a id="examples"></a>
+### Examples  <a id="examples"></a>
 
 Here are the examples in Objective C and Swift:
 
-#### **Objective C** <a id="objective-c"></a>
+#### **Objective C**  <a id="objective-c"></a>
 
 ```objectivec
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
@@ -51,7 +51,7 @@ Here are the examples in Objective C and Swift:
 }];
 ```
 
-#### **Swift** <a id="swift"></a>
+#### **Swift**  <a id="swift"></a>
 
 ```swift
 ACPTarget.getThirdPartyId({thirdPartyID in
@@ -63,7 +63,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 
 ## Set custom visitor IDs
 
-Use this API to set custom visitor IDs for Target. 
+Use this API to set custom visitor IDs for Target.
 
 {% hint style="info" %}
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the reset experience API is used.
@@ -91,17 +91,17 @@ Target.setThirdPartyId("third-party-id");
 
 Sets the custom visitor ID for Target. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
-### Syntax <a id="syntax-1"></a>
+### Syntax  <a id="syntax-1"></a>
 
 ```objectivec
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
-### Examples <a id="examples-1"></a>
+### Examples  <a id="examples-1"></a>
 
 Here are some examples in Objective-C and Swift:
 
-#### **Objective-C** <a id="objective-c-1"></a>
+#### **Objective-C**  <a id="objective-c-1"></a>
 
 ```objectivec
 [ACPTarget setThirdPartyId:@"third-party-id"];
@@ -139,23 +139,23 @@ Target.resetExperience();
 {% tab title="iOS" %}
 ### resetExperience
 
-### Syntax <a id="syntax-2"></a>
+### Syntax  <a id="syntax-2"></a>
 
 ```objectivec
 + (void) resetExperience;
 ```
 
-### Examples <a id="examples-2"></a>
+### Examples  <a id="examples-2"></a>
 
 Here are some examples in Objective-C and Swift:
 
-#### **Objective-C** <a id="objective-c-2"></a>
+#### **Objective-C**  <a id="objective-c-2"></a>
 
 ```objectivec
 [ACPTarget resetExperience];
 ```
 
-#### **Swift** <a id="swift-1"></a>
+#### **Swift**  <a id="swift-1"></a>
 
 ```swift
 ACPTarget.resetExperience()
@@ -234,7 +234,7 @@ Sends a batch request to your configured Target server for multiple mbox locatio
 {% tab title="Android" %}
 ### TargetRequest Builder
 
-`TargetRequest` builder helps  create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
+`TargetRequest` builder helps create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
 
 #### Syntax
 
@@ -409,7 +409,7 @@ Sends a click notification to the configured Target server for a prefetched or r
 {% tab title="Android" %}
 ### locationClicked
 
-If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates  that the mbox was viewed.
+If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates that the mbox was viewed.
 
 #### Syntax
 
@@ -455,7 +455,7 @@ Target.locationClicked("cartLocation", mboxParameters, productParameters, orderP
 {% tab title="iOS" %}
 ### locationClicked
 
-If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates  that the mbox was viewed.
+If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates that the mbox was viewed.
 
 #### Syntax
 
@@ -557,8 +557,6 @@ public class TargetRequest extends TargetObject {
 ### TargetPrefetch
 
 Here is a code sample for this class in Android:
-
-
 
 ```java
 public class TargetPrefetch extends TargetObject {

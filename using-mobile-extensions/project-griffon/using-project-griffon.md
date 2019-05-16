@@ -13,11 +13,11 @@ Project Griffon is in beta. Use of this beta product requires acceptance of term
 If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/image-2.png)
 
 If you see the following screen, for beta access, click **Register**.
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image-7.png)
 
 ## Begin a Project Griffon session
 
@@ -29,13 +29,13 @@ If you see the following screen, for beta access, click **Register**.
 
 1. Click **Start**.
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image-4.png)
 
 1. In **Session Name**, enter a name to identify the session.  This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
 2. In the **Base URL** field, type your app's base deep link definition.
 3. Click **Next**.
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image-1.png)
 
 ### Connect your device
 
@@ -44,14 +44,14 @@ If you see the following screen, for beta access, click **Register**.
    * Use your iOS Camera app to scan the QR code and to open your app.
    * Copy the link and open in your app or the Xcode simulator.
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image-3.png)
 
 1. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
 2. Type in the PIN from the previous step and press **Connect**.
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image-6.png)
 
 1. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image-8.png)
 

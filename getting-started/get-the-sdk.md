@@ -1,6 +1,6 @@
 # Get the SDK
 
-The Adobe Experience Platform SDK is available via Cocoapods and Gradle. 
+The Adobe Experience Platform SDK is available via Cocoapods and Gradle.
 
 1. Open the **Mobile** property in Launch, and on the **Environments** tab, read the instructions to add the SDKs to an app.
 2. In the table, find the platform that you want and click the box icon under the **Install** column.
@@ -45,11 +45,11 @@ You should see a pop-up similar to the following:
 {% endtab %}
 {% endtabs %}
 
-### Watch the Video
+## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
-### Additional Information
+## Additional Information
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)
 * [How to use CocoaPods for iOS ](https://guides.cocoapods.org/using/using-cocoapods)

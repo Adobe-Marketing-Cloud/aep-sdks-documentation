@@ -70,7 +70,7 @@ Audience Manager listens for Analytics Response events, which are sent when audi
 
 For more information about this event, see [Analytics Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-content).
 
-## Events dispatched  <a id="audience-manager-content-response"></a>
+## Events dispatched   <a id="audience-manager-content-response"></a>
 
 ### Audience Manager Content Response
 

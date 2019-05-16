@@ -27,9 +27,9 @@ To programmatically set the privacy status for the app user:
 {% tab title="Android" %}
 #### Java
 
-### setPrivacyStatus <a id="setprivacystatus"></a>
+### setPrivacyStatus  <a id="setprivacystatus"></a>
 
-You can set the privacy status to one of the following values: 
+You can set the privacy status to one of the following values:
 
 * `MobilePrivacyStatus.OPT_IN`
 * `MobilePrivacyStatus.OPT_OUT`
@@ -37,13 +37,13 @@ You can set the privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-#### Syntax <a id="syntax-4"></a>
+#### Syntax  <a id="syntax-4"></a>
 
 ```java
 public static void setPrivacyStatus(final MobilePrivacyStatus privacyStatus);
 ```
 
-#### Example <a id="example-4"></a>
+#### Example  <a id="example-4"></a>
 
 ```java
 MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
@@ -63,13 +63,13 @@ You can set privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-### Syntax <a id="syntax-4"></a>
+### Syntax  <a id="syntax-4"></a>
 
 ```objectivec
 + (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
 ```
 
-### Example <a id="example-4"></a>
+### Example  <a id="example-4"></a>
 
 ```objectivec
 [ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn
@@ -101,7 +101,7 @@ The enum representation of the privacy status that corresponds to the following 
 void getPrivacyStatus(final AdobeCallback callback);
 ```
 
-#### Example <a id="example-5"></a>
+#### Example  <a id="example-5"></a>
 
 ```objectivec
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
@@ -205,7 +205,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference). 
+To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Description |
 | :--- | :--- |
@@ -219,6 +219,4 @@ To update the SDK configuration, programmatically, use the following information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
 * To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)
-
-
 

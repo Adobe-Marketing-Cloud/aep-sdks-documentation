@@ -1,18 +1,18 @@
 # Adobe Analytics - Mobile Services
 
- This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
+This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="danger" %}
+
 Review the following Mobile Services functionality documentation for context and set up before implementation at these links:
 
 * [Getting started with Mobile Services](https://marketing.adobe.com/resources/help/en_US/mobile/gs.html)
 * [Create and managing apps](https://marketing.adobe.com/resources/help/en_US/mobile/manage_apps.html)
 * [Acquisition and marketing links](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html)
 * [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
-{% endhint %}
 
 {% hint style="warning" %}
-Before you configure the Mobile Services extension, ensure that you  previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html). 
+Before you configure the Mobile Services extension, ensure that you previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html).
 {% endhint %}
 
 {% hint style="info" %}
@@ -36,7 +36,7 @@ The Mobile Services extension also requires the Analytics extension for reportin
 
 1. In Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3.  ****Select **Choose a Mobile Services app** and complete the following tasks:
+3. **\*\*Select** Choose a Mobile Services app\*\* and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
@@ -66,17 +66,16 @@ Select **Enter Custom settings** and complete the following tasks
 
 You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm%20%281%29.png)
+![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-3. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
+1. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
 
 You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
 ![](../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
-4. Click **Save**.
-
-5. Follow the publishing process to update your SDK configuration.
+1. Click **Save**.
+2. Follow the publishing process to update your SDK configuration.
 
 ## Configure Adobe Analytics extension
 
@@ -101,7 +100,7 @@ Add the Mobile Services extension to your project using the app's Gradle file.
 Import the Mobile Services extension in your application's main activity.
 
 ```java
-import com.adobe.marketing.mobileservices.*; 
+import com.adobe.marketing.mobileservices.*;
 ```
 {% endtab %}
 
@@ -139,11 +138,11 @@ public void onCreate() {
      MobileCore.setApplication(this);
 
      try {
-         	Analytics.registerExtension();
+             Analytics.registerExtension();
 MobileServices.registerExtension(); //Register Mobile Services with Mobile Core
 Lifecycle.registerExtension();
-         	Identity.registerExtension();
-         	MobileCore.start(null);
+             Identity.registerExtension();
+             MobileCore.start(null);
      } catch (Exception e) {
      //Log the exception
      }
@@ -181,15 +180,15 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 {% tab title="Android" %}
 Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-### setPushIdentifier <a id="setpushidentifier"></a>
+### setPushIdentifier  <a id="setpushidentifier"></a>
 
-#### Syntax <a id="syntax"></a>
+#### Syntax  <a id="syntax"></a>
 
 ```java
 void setPushIdentifier(final String registrationID)
 ```
 
-#### Example <a id="example"></a>
+#### Example  <a id="example"></a>
 
 ```java
 MobileCore.setPushIdentifier(registrationID);
@@ -288,7 +287,7 @@ For more information, see the following:
 
 ### Set up in-app messaging
 
-This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see [Create an in-app message](https://marketing.adobe.com/resources/help/en_US/mobile/?f=t_in_app_message). 
+This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see [Create an in-app message](https://marketing.adobe.com/resources/help/en_US/mobile/?f=t_in_app_message).
 
 To set up your app for in-app messages, implement the following instructions. You can complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they are delivered dynamically to your app and displayed without an app store update.
 
@@ -417,13 +416,13 @@ Here is an example about how to include open tracking:
 {% tab title="iOS" %}
 ```objectivec
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
- 
+
   // handle local notification click-throughs for iOS 10 and older
   NSDictionary *localNotificationDictionary = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
   if ([localNotificationDictionary isKindOfClass:[NSDictionary class]]) {
        [ACPCore collectLaunchInfo:localNotificationDictionary];
   }
- 
+
 }
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
    [ACPCore collectLaunchInfo:notification.userInfo];
@@ -470,7 +469,7 @@ public class GPBroadcastReceiver extends BroadcastReceiver {
 }
 ```
 
-2. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
+1. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
 
 ```markup
 <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
@@ -579,8 +578,4 @@ To prepare for your migration, remember the following information:
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
 * Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
-
-
-
-
 

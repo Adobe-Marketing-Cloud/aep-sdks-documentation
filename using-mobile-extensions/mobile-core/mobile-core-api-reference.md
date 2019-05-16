@@ -147,7 +147,7 @@ If you have the Analytics extension set up, this API increments page views and a
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-#### trackState    <a id="trackstate"></a>
+#### trackState     <a id="trackstate"></a>
 
 **Syntax**
 

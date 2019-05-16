@@ -41,9 +41,7 @@ The `Extension` class has the following method that you must override:
 
   Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
 
-
-
-  The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
+The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
 
 **Tip**: All Adobe module names are prefixed with _com.adobe.module_ and are considered reserved.
 
@@ -93,9 +91,9 @@ The `ACPExtension` class has the following methods that you can optionally overr
 * `version`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
 * `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
 * `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.   
+* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.
 
-  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.  
+  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.
 
 **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 

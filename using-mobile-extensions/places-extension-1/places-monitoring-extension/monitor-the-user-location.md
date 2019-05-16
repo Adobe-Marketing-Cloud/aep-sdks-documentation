@@ -1,4 +1,4 @@
 # Monitor the user location
 
-This information is  in progress.
+This information is in progress.
 

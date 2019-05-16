@@ -1,6 +1,6 @@
 # Analytics API reference
 
-## Send queued hits    <a id="sendqueuedhits"></a>
+## Send queued hits     <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -56,9 +56,9 @@ ACPAnalytics.sendQueuedHits()
 {% endtab %}
 {% endtabs %}
 
-## Clear queued hits <a id="sendqueuedhits"></a>
+## Clear queued hits  <a id="sendqueuedhits"></a>
 
-Force delete, without sending to Analytics, all hits being stored or batched on the SDK. 
+Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -106,7 +106,7 @@ ACPAnalytics.clearQueue()
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size    <a id="sendqueuedhits"></a>
+## Get the queue size     <a id="sendqueuedhits"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
@@ -163,7 +163,7 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 {% endtabs %}
 
-## Get the tracking identifier    <a id="gettrackingidentifier"></a>
+## Get the tracking identifier     <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
 Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
@@ -234,7 +234,7 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 {% endtab %}
 {% endtabs %}
 
-## Set the custom visitor identifier   <a id="setidentifier"></a>
+## Set the custom visitor identifier    <a id="setidentifier"></a>
 
 {% hint style="warning" %}
 Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.

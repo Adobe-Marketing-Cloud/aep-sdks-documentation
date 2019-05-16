@@ -62,7 +62,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift  <a id="objective-c-and-swift"></a>
+#### Objective-C & Swift   <a id="objective-c-and-swift"></a>
 
 Import the Lifecycle framework:
 
@@ -173,7 +173,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 ## Android
 
-If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle false crashes or ****ungraceful closes.
+If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle false crashes or _\*\*_ungraceful closes.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -231,7 +231,7 @@ iOS uses system notifications that allow developers to track and respond to diff
 {% endtab %}
 {% endtabs %}
 
-## Implementing global lifecycle callbacks  <a id="implementing-global-lifecycle-callbacks"></a>
+## Implementing global lifecycle callbacks   <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 

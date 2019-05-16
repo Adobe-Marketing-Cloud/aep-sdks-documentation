@@ -11,9 +11,9 @@ To get started with Audience Manager, complete these steps:
    * Send signals to Audience Manager.
    * Reset the Audience Manager identifiers and visitor profiles.
 
-## Configuring the Audience Manager extension in Adobe Launch    <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Adobe Launch     <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
-![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
+![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm-1.png)
 
 1. In Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Audience Manager** extension, and click **Install**.
