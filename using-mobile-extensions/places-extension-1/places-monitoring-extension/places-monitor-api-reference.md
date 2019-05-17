@@ -16,7 +16,7 @@ public static void registerExtension();
 
 #### Example
 
-Call this method in the `onCreate` method where you initialize the rest of the AEP SDK.
+Call this method in the `onCreate` method where you initialize the rest of the Experience Platform SDK.
 
 ```java
 public class MobileApp extends Application {

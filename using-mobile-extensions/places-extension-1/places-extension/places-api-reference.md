@@ -10,7 +10,7 @@ When a device crosses one of your app's pre-defined Places region boundaries, th
 
 ### ProcessGeofence
 
-Process a single `Geofence` region event for the provided `transitionType`.
+Process a `Geofence` region event for the provided `transitionType`.
 
 Pass the `transitionType` from  `GeofencingEvent.getGeofenceTransition()`. Currently `Geofence.GEOFENCE_TRANSITION_ENTER` and `Geofence.GEOFENCE_TRANSITION_EXIT` are supported.
 

@@ -8,13 +8,13 @@ The following updates were made in this release:
 
 Android Places Extension 1.2.0:
 
-* Added a new API to process an individual `Geofence`
-* Bug fix to prevent multiple consecutive entry events
+* Added a new API to process an individual `Geofence`.
+* Bug fix to prevent multiple consecutive entry events.
 
 Android Places Monitor 1.0.0:
 
-* Initial release of the Places Monitor for Android
-* For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md)
+* Initial release of the Places Monitor for Android.
+* For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md).
 
 ## May 9, 2019
 
@@ -102,7 +102,7 @@ The following updates were made in this release:
 #### iOS Core 2.1.1:
 
 * Core: Internal support for database scheme migration.
-* Identity:  Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session.
+* Identity: Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session.
 
 #### iOS Analytics 2.0.3:
 
@@ -191,7 +191,7 @@ The first version of Places is now available for public beta access!
 
 The Places solution is composed of the following components:
 
-* The **Places Services** is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer.  For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1).
+* The **Places Services** is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer. For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1).
 * A **Places-specific card** on Adobe IO \(coming soon\).
 * The **Places UI** is built on the APIs that are provided by the Places Service and allows customers to create and manage their Places libraries.
 
