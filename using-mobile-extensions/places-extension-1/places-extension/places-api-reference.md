@@ -5,13 +5,53 @@
 When a device crosses one of your app's pre-defined Places region boundaries, the region and event type are passed to the SDK for processing.
 
 {% tabs %}
+
 {% tab title="Android" %}
-### ProcessGeofenceEvent
+
+### ProcessGeofence
+
+Process a single `Geofence` region event for the provided `transitionType`.
+
+Pass the `transitionType` from  `GeofencingEvent.getGeofenceTransition()`. Currently `Geofence.GEOFENCE_TRANSITION_ENTER` and `Geofence.GEOFENCE_TRANSITION_EXIT` are supported.
 
 #### Syntax
 
 ```java
-public static void processGeofenceEvent(final GeofencingEvent geofencingEvent)
+public static void processGeofence(final Geofence geofence, final int transitionType);
+```
+
+#### Example
+
+Call this method in your `IntentService` that is registered for receiving Android geofence events
+
+```java
+public class GeofenceTransitionsIntentService extends IntentService {
+
+    public GeofenceTransitionsIntentService() {
+        super("GeofenceTransitionsIntentService");
+    }
+
+    protected void onHandleIntent(Intent intent) {
+        GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
+
+        List<Geofence> geofences = geofencingEvent.getTriggeringGeofences();
+
+        if (geofences.size() > 0) {
+          // Call Adobe Places API to process information
+          Places.processGeofence(geofences.get(0), geofencingEvent.getGeofenceTransition());
+        }
+    }
+}
+```
+
+### ProcessGeofencingEvent
+
+Process all `Geofences` in the `GeofencingEvent` at the same time.
+
+#### Syntax
+
+```java
+public static void processGeofenceEvent(final GeofencingEvent geofencingEvent);
 ```
 
 #### Example
@@ -32,6 +72,7 @@ public class GeofenceTransitionsIntentService extends IntentService {
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -57,6 +98,7 @@ This method should be called in the CLLocationManager delegate, which tells if t
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Retrieve nearby points of interest
@@ -208,4 +250,3 @@ Places.getLastKnownLocation(new AdobeCallback<Location>() {
 ```
 {% endtab %}
 {% endtabs %}
-
