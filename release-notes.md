@@ -14,7 +14,8 @@ Android Places Extension 1.2.0:
 Android Places Monitor 1.0.0:
 
 * Initial release of the Places Monitor for Android.
-* For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md).
+
+For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md).
 
 ## May 9, 2019
 
