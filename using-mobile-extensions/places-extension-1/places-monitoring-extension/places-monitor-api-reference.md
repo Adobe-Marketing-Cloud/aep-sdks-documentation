@@ -2,23 +2,52 @@
 
 ## Register Places Monitor Extension
 
-Registers the `ACPPlacesMonitor` extension with the Core Event Hub.
+Registers the Places Monitor extension with the Core Event Hub.
 
 {% tabs %}
+{% tab title="Android" %}
+### RegisterExtension
+
+#### Syntax
+
+```java
+public static void registerExtension();
+```
+
+#### Example
+
+Call this method in the `onCreate` method where you initialize the rest of the Experience Platform SDK.
+
+```java
+public class MobileApp extends Application {
+  @Override
+  public void onCreate(){
+     super.onCreate();
+     MobileCore.setApplication(this);
+     try {
+        PlacesMonitor.registerExtension();
+     } catch (Exception e) {
+       //Log the exception
+       }
+    }
+ }
+```
+{% endtab %}
+
 {% tab title="iOS" %}
 ### RegisterExtension
 
 #### Syntax
 
-```text
-+ (void) registerExtension
+```objectivec
++ (void) registerExtension;
 ```
 
 #### Example
 
 This method should be called in the `didFinishLaunchingWithOptions` delegate method of the `AppDelegate`.
 
-```text
+```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [ACPCore configureWithAppId:@"launch-appID"];    
@@ -33,33 +62,74 @@ This method should be called in the `didFinishLaunchingWithOptions` delegate met
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Extension version
 
-Returns the current version of the `ACPPlacesMonitor` extension.
+Returns the current version of the Places Monitor extension
 
 {% tabs %}
+{% tab title="Android" %}
+### ExtensionVersion
+
+#### Syntax
+
+```java
+public static String extensionVersion();
+```
+
+#### Example
+
+```java
+String placesMonitorVersion = PlacesMonitor.extensionVersion();
+```
+{% endtab %}
+
 {% tab title="iOS" %}
 ### ExtensionVersion
 
 #### Syntax
 
-```text
-+(nonnull NSString*) extensionVersion;
+```objectivec
++ (nonnull NSString*) extensionVersion;
 ```
 
 #### Example
 
-```text
-[ACPPlacesMonitor extensionVersion];
+```objectivec
+NSString *placesMonitorVersion = [ACPPlacesMonitor extensionVersion];
 ```
 {% endtab %}
+
 {% endtabs %}
 
-## Start monitoring
+## Start device monitoring
 
-This API starts tracking the device's location and monitors their nearby Places.
+Begin tracking the device's location and monitoring nearby Places.
+
+{% tabs %}
+
+{% tab title="Android" %}
+### Start
+
+If authorization to use device location has not been granted by the user, the first call to the `start` API will prompt the user for permission.
+
+#### Syntax
+
+```java
+public static void start();
+```
+
+#### Example
+
+```java
+PlacesMonitor.start();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### Start
 
 **Important**: To begin monitoring, the location service must have the necessary authorization.
 
@@ -68,25 +138,103 @@ This API starts tracking the device's location and monitors their nearby Places.
 
   By default, the monitor uses `ACPPlacesMonitorModeSignificantChanges`.
 
-{% tabs %}
-{% tab title="iOS" %}
-### Start
-
 #### Syntax
 
-```text
+```objectivec
 + (void) start;
 ```
 
 #### Example
 
-```text
+```objectivec
 [ACPPlacesMonitor start];
 ```
 {% endtab %}
+
 {% endtabs %}
 
-## Monitoring Mode
+## Stop device monitoring
+
+Stops tracking the device's location.
+
+{% tabs %}
+
+{% tab title="Android" %}
+### Stop
+
+#### Syntax
+
+```java
+public static void stop();
+```
+
+#### Example
+
+```java
+PlacesMonitor.stop();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### Stop
+
+#### Syntax
+
+```objectivec
++ (void) stop;
+```
+
+#### Example
+
+```objectivec
+[ACPPlacesMonitor stop];
+```
+{% endtab %}
+
+{% endtabs %}
+
+## Update Location
+
+Use this API for an immediate update on the device's location. When you call this API, the device attempts to determine the location with the level of accuracy that you specified. This process also refreshes the nearby POIs that are monitored by the extension.
+
+{% tabs %}
+
+{% tab title="Android" %}
+### UpdateLocation
+
+#### Syntax
+
+```java
+public static void updateLocation();
+```
+
+#### Example
+
+```java
+PlacesMonitor.updateLocation();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### UpdateLocationNow
+
+#### Syntax
+
+```objectivec
++ (void) updateLocationNow;
+```
+
+#### Example
+
+```objectivec
+[ACPPlacesMonitor updateLocationNow];
+```
+{% endtab %}
+
+{% endtabs %}
+
+## Monitoring Mode (iOS only)
 
 Monitoring can be set to one of the following values:
 
@@ -115,48 +263,3 @@ Monitoring can be set to one of the following values:
 ```
 {% endtab %}
 {% endtabs %}
-
-## Stop Monitoring
-
-Stops tracking the significant, or continuous, monitoring of the device's location. When you call this method, geofence and beacon monitoring is also stopped. To start location and geofence monitoring again, call the `startWithContinuousMonitoring` method.
-
-{% tabs %}
-{% tab title="iOS" %}
-### Stop
-
-#### Syntax
-
-```text
-+(void) stop;
-```
-
-#### Example
-
-```text
-[ACPPlacesMonitor stop];
-```
-{% endtab %}
-{% endtabs %}
-
-## Update Location
-
-Use this API for an immediate update on the device's location. When you call this API, the device attempts to determine the location with the level of accuracy that you specified. This process also refreshes the nearby POIs that are monitored by the extension.
-
-{% tabs %}
-{% tab title="iOS" %}
-### UpdateLocationNow
-
-#### Syntax
-
-```text
-+(void) updateLocationNow;
-```
-
-#### Example
-
-```text
-[ACPPlacesMonitor updateLocationNow];
-```
-{% endtab %}
-{% endtabs %}
-

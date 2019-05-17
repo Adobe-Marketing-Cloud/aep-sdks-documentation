@@ -1,10 +1,27 @@
 # Release notes
 
+## May 17, 2019
+
+The following updates were made in this release:
+
+#### Android
+
+Android Places Extension 1.2.0:
+
+* Added a new API to process an individual `Geofence`.
+* Bug fix to prevent multiple consecutive entry events.
+
+Android Places Monitor 1.0.0:
+
+* Initial release of the Places Monitor for Android.
+
+For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md).
+
 ## May 9, 2019
 
 The following updates were made to the Analytics extension in iOS version 2.1.0:
 
-* Fixed a crash releated to database multi-threading.
+* Fixed a crash related to database multi-threading.
 * Enforced HTTPs network requests.
 
 React Native wrappers for the following extensions were pushed to npmjs:
@@ -85,12 +102,12 @@ The following updates were made in this release:
 
 #### iOS Core 2.1.1:
 
-* Core: Internal support for database scheme migration. 
-* Identity:  Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session. 
+* Core: Internal support for database scheme migration.
+* Identity: Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session.
 
 #### iOS Analytics 2.0.3:
 
-* Fixed a minor Analytics hit ordering issue. 
+* Fixed a minor Analytics hit ordering issue.
 
 #### iOS Mobile Services 1.0.0:
 
@@ -175,15 +192,15 @@ The first version of Places is now available for public beta access!
 
 The Places solution is composed of the following components:
 
-* The **Places Services** is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer.  For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1). 
-* A **Places-specific card** on Adobe IO \(coming soon\). 
+* The **Places Services** is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer. For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1).
+* A **Places-specific card** on Adobe IO \(coming soon\).
 * The **Places UI** is built on the APIs that are provided by the Places Service and allows customers to create and manage their Places libraries.
 
   To log in to the Places UI, go to [https://places.adobe.com](https://places.adobe.com).
 
 * The **Places Extension \(Launch & SDK\)** The functionality in the extension retrieves the relevant Places data from the Places Services based on the location of the calling device. The SDK extension also dispatches Places-related events on the Event Hub for consumption by the Rules Engine and other interested extensions:
-  * **GitHub**: [https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces) 
-  * **Cocoapod**: [https://cocoapods.org/pods/ACPPlaces](https://cocoapods.org/pods/ACPPlaces) 
+  * **GitHub**: [https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces)
+  * **Cocoapod**: [https://cocoapods.org/pods/ACPPlaces](https://cocoapods.org/pods/ACPPlaces)
   * **Maven Central**: [https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places)
 
 ### Documentation Links
@@ -252,8 +269,8 @@ To update existing Experience Platform Mobile SDK 1.x implementations to 2.x:
 Where you previously had imports that look like the following:
 
 ```text
-   #import <ACPCore_iOS/ACPCore_iOS.h> 
-   #import <ACPIdentity_iOS/ACPIdentity_iOS.h> 
+   #import <ACPCore_iOS/ACPCore_iOS.h>
+   #import <ACPIdentity_iOS/ACPIdentity_iOS.h>
    #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
    #import <ACPSignal_iOS/ACPSignal_iOS.h>
    #import <ACPUserProfile_iOS/ACPUserProfile_iOS.h>
@@ -262,10 +279,10 @@ Where you previously had imports that look like the following:
 The imports will now drop the _iOS_ suffix and can be imported directly as follows:
 
 ```text
-   #import "ACPCore.h" 
-   #import "ACPIdentity.h" 
-   #import "ACPLifecycle.h" 
-   #import "ACPSignal.h" 
+   #import "ACPCore.h"
+   #import "ACPIdentity.h"
+   #import "ACPLifecycle.h"
+   #import "ACPSignal.h"
    #import "ACPUserProfile.h"
 ```
 
@@ -356,4 +373,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
