@@ -8,6 +8,8 @@ To initialize the SDK, you need to first configure the SDK with an Environment I
 To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Android" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
@@ -26,8 +28,10 @@ To add these permissions, add the following lines to your `AndroidManifest.xml` 
 #### Java
 
 1. In the app, create `MainActivity.java` .
-2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`.
+2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
+{% endtab %}
 
+{% tab title="Objective-C" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -39,6 +43,12 @@ In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
 ```
+{% endtab %}
+
+{% tab title="Swift" %}
+{% hint style="warning" %}
+Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
+{% endhint %}
 
 #### Swift
 
@@ -47,13 +57,71 @@ In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
+{% endtab %}
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
-{% endhint %}
+{% tab title="React Native" %}
+### **Initializing the SDK**
 
-1. In Xcode, open AppDelegate.swift
-2. Under `didFinishLaunchingWithOptions`, add:`ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")`
+It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
+
+**iOS**
+
+```jsx
+// Import the SDK
+#import <RCTACPCore/ACPCore.h>
+#import <RCTACPCore/ACPLifecycle.h>
+#import <RCTACPCore/ACPIdentity.h>
+#import <RCTACPCore/ACPSignal.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  //...
+  [ACPCore configureWithAppId:@"yourAppId"];
+  [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+  
+  [ACPCore start:nil];
+}
+```
+
+**Android**
+
+```jsx
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("yourAppId");
+  MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+
+**Javascript**
+
+```jsx
+import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+    ACPCore.configureWithAppId("yourAppId");
+    ACPLifecycle.registerExtension();
+    ACPIdentity.registerExtension();
+    ACPSignal.registerExtension();
+    ACPCore.start();
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
@@ -99,6 +167,23 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 // ACPCore.setLogLevel(ACPMobileLogLevel.error)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+Enable and control the log level of the SDK
+
+```jsx
+import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+
+```jsx
+const ERROR = "ACP_LOG_LEVEL_ERROR";
+const WARNING = "ACP_LOG_LEVEL_WARNING";
+const DEBUG = "ACP_LOG_LEVEL_DEBUG";
+const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
+```
+{% endtab %}
 {% endtabs %}
 
 ## Registering Extensions and Starting Core
@@ -141,6 +226,23 @@ ACPLifecycle.registerExtension()
 ACPSignal.registerExtension()
 ACPAnalytics.registerExtension()
 ACPCore.start(nil)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
+    ACPLifecycle.registerExtension();
+    ACPIdentity.registerExtension();
+    ACPSignal.registerExtension();
+    ACPCore.start();
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -215,6 +317,28 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ACPIdentity.registerExtension()
   return true
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Identity extension
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version \(optional\)
+
+```jsx
+ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
+```
+
+Register the extension with Core
+
+```jsx
+ACPIdentity.registerExtension();
 ```
 {% endtab %}
 {% endtabs %}
@@ -366,6 +490,40 @@ Pause Lifecycle data collection when your app has entered the background:
  }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Lifecycle extension
+
+```jsx
+import {ACPLifecycle} from '@adobe/react-native-acpcore';
+```
+
+Getting the extension version \(optional\)
+
+```jsx
+ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+```
+
+Registering the extension with Core
+
+```jsx
+ACPLifecycle.registerExtension();
+```
+
+Starting a lifecycle event
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+Pausing a lifecycle event
+
+```jsx
+ACPCore.lifecyclePause();
+```
+{% endtab %}
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).
@@ -438,6 +596,14 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ACPCore.trackAction("action name", data: ["key": "value"])
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.trackAction("action", {"mytest": "action"});
+```
+{% endtab %}
 {% endtabs %}
 
 ### Track app states and screens
@@ -496,6 +662,14 @@ MobileCore.trackState("homePage", additionalContextData);
 
 ```c
 ACPCore.trackState("state name", data: ["key": "value"])
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.trackState("state", {"mytest": "state"});
 ```
 {% endtab %}
 {% endtabs %}
