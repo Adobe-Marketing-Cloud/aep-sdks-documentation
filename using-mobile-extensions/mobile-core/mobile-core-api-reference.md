@@ -1,7 +1,5 @@
 # Mobile Core API reference
 
-## Mobile Core API reference
-
 ## Application reference
 
 When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
@@ -131,6 +129,16 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ACPCore.trackAction("action name", data: ["key": "value"])
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+#### trackAction
+
+```jsx
+ACPCore.trackAction("action-name", {"key": "value"});
+```
+{% endtab %}
 {% endtabs %}
 
 ### Track app states and views
@@ -195,6 +203,16 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 ACPCore.trackState("state name", data: ["key": "value"])
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+#### trackState
+
+```jsx
+ACPCore.trackState("state-name", {"key": "value"});
+```
+{% endtab %}
 {% endtabs %}
 
 ### Collect PII
@@ -255,6 +273,14 @@ MobileCore.collectPII(data);
 
 ```swift
 ACPCore.collectPii(data: [String : String])
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.collectPii({"myPii": "data"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -408,6 +434,18 @@ import ACPCore
 ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+#### setLogLevel
+
+```jsx
+import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+{% endtab %}
 {% endtabs %}
 
 {% tabs %}
@@ -460,6 +498,16 @@ var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
 
 ```swift
 let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+#### getLogLevel
+
+```jsx
+ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
 ```
 {% endtab %}
 {% endtabs %}
@@ -543,6 +591,25 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 
 ```text
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like 
+
+```jsx
+ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");
+```
+
+Note: `ACPMobileLogLevel` contains the following getters:
+
+```jsx
+const ERROR = "ACP_LOG_LEVEL_ERROR";
+const WARNING = "ACP_LOG_LEVEL_WARNING";
+const DEBUG = "ACP_LOG_LEVEL_DEBUG";
+const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 ```
 {% endtab %}
 {% endtabs %}
