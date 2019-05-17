@@ -56,9 +56,7 @@
     * [Places event reference](using-mobile-extensions/places-extension-1/places-extension/places-event-reference.md)
     * [Custom Places objects](using-mobile-extensions/places-extension-1/places-extension/custom-places-objects.md)
   * [Places Monitor extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/README.md)
-    * [Places Monitor API reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-api-reference.md)
-    * [Places Monitor event reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-event-reference.md)
-    * [Monitor the user location](using-mobile-extensions/places-extension-1/places-monitoring-extension/monitor-the-user-location.md)
+    * [Places Monitor API reference](using-mobile-extensions/places-extension-1/places-monitoring-extension/places-monitor-api-reference.md)        
     * [Using the Places Monitor extension](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-the-places-monitor.md)
     * [Using your own monitor](using-mobile-extensions/places-extension-1/places-monitoring-extension/using-your-own-monitor.md)
 * [Project Griffon \(Beta\)](using-mobile-extensions/project-griffon/README.md)
@@ -94,4 +92,3 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
-
