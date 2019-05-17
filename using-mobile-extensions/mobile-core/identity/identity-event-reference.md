@@ -56,11 +56,14 @@ Here are the key-value pairs in this event:
 | **Key or Key Type** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `mid (String)` | String | false | Auto Generated MID |
-| `vid (String)` | String | false | Blank if not present |
 | `advertisingIdentifier (String)` | String | false | Blank if not present |
 | `pushIdentifier (String)` | String | false | Blank if not present |
 | `blob (String)` | String | false | Blank if not present |
 | `locationHint (String)` | String | false | Blank if not present |
 | `visitorIDsList (String)` | List | false | Default: Empty List |
 | `lastSync (String)` | Long | false | default = 0 |
+
+{% hint style="warning" %}
+The Analytics Custom Visitor ID (VID) is no longer included in the data payload. If needed, it may be retrieved from the [Analytics extension](../../adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier).
+{% endhint %}
 
