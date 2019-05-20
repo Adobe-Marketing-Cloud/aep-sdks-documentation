@@ -156,6 +156,43 @@ let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"
 ACPMobileVisitorAuthenticationState.authenticated)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### syncIdentifier
+
+Updates the provided customer ID with the Adobe Experience Cloud ID Service.
+
+This API synchronizes the provided customer identifier type key and value with the provided [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If this customer ID type exists in the service, this type is updated with the new ID and authentication state. Otherwise a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+
+```jsx
+ACPIdentity.syncIdentifier(identifierType, identifier, authenticationState);
+```
+
+### syncIdentifiers
+
+```jsx
+ACPIdentity.syncIdentifiers({"id1": "identifier1"});
+```
+
+### syncIdentifiersWithAuthState
+
+```jsx
+import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
+
+ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
+
+```
+
+Note: `ACPMobileVisitorAuthenticationState` contains the following getters:
+
+```jsx
+const AUTHENTICATED = "ACP_VISITOR_AUTH_STATE_AUTHENTICATED";
+const LOGGED_OUT = "ACP_VISITOR_AUTH_STATE_LOGGED_OUT";
+const UNKNOWN = "ACP_VISITOR_AUTH_STATE_UNKNOWN";
+```
+{% endtab %}
 {% endtabs %}
 
 ## Append visitor data to a URL
@@ -236,6 +273,20 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 });
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### appendToURL
+
+Appends Adobe visitor information to the given URL.
+
+If the given url is nil or empty, it is returned as is. Otherwise, the following information is added to the query section of the given URL. The attribute `adobe_mc` is an URL encoded list containing the Experience Cloud ID, Experience Cloud Org ID, and a timestamp when this request was made. The attribute `adobe_aa_vid` is the URL encoded Visitor ID, however the attribute is only included if the Visitor ID was previously set.
+
+```jsx
+ACPIdentity.appendVisitorInfoForURL(baseURL);
+```
+{% endtab %}
 {% endtabs %}
 
 ## Get identifiers
@@ -294,6 +345,18 @@ Returns all customer identifiers which were previously synced with the Adobe Exp
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
    // handle the retrieved Identifiers here        
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### getIdentifiers
+
+Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
+
+```jsx
+ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK: Identifiers = " + identifiers));
 ```
 {% endtab %}
 {% endtabs %}
@@ -357,6 +420,18 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### getExperienceCloudId
+
+Retrieves the Adobe Experience Cloud Visitor ID from the Adobe Experience Cloud ID Service.
+
+```jsx
+ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceSDK: CloudID = " + cloudId));
+```
+{% endtab %}
 {% endtabs %}
 
 ## Set an advertising identifier
@@ -409,6 +484,16 @@ Examples
 ACPCore.setAdvertisingIdentifier("AdvertisingId")
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### setAdvertisingIdentifier
+
+```jsx
+ACPCore.setAdvertisingIdentifier("adID");
+```
+{% endtab %}
 {% endtabs %}
 
 ## Set the push identifier
@@ -454,6 +539,16 @@ Example
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
 ACPCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### setPushIdentifier
+
+```jsx
+ACPCore.setPushIdentifier("pushIdentifier");
 ```
 {% endtab %}
 {% endtabs %}
@@ -533,6 +628,18 @@ typedef NS_ENUM(NSUInteger,
     ACPMobileVisitorAuthenticationStateUnknown          = 0,    
     ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
     ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### ACPVisitorID
+
+```jsx
+import {ACPVisitorID} from '@adobe/react-native-acpcore';
+
+var visitorId = new ACPVisitorID(idOrigin?: string, idType: string, id?: string, authenticationState?: ACPMobileVisitorAuthenticationState)
 ```
 {% endtab %}
 {% endtabs %}
