@@ -4,7 +4,7 @@
 
 The following updates were made in this release:
 
-#### iOS Core 2.2.2
+#### iOS Core 2.2.2:
 
 * Fixed the issue where SSL connection was not kept alive.
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz` 
@@ -17,14 +17,14 @@ The following updates were made in this release:
 * Fixed issue where the callback was not called on ACPIdentity.getIdentifiers if no custom identifiers where synced previously.
 * Fixed issue where the Analytics visitor identifier (VID) was not included in the ACPIdentity.appendToUrl callback value.
 
-#### Android Core 1.3.1
+#### Android Core 1.3.1:
 
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `MobileCore.getSdkIdentities` didn't return correct value for custom analytics id.
 * Added support for migarting Privacy status from v4 to v5, if it was manually set with v4 SDK.
 * Added support for loading cached configuraiton and cached rules on subsequent launch.
 
-#### Android Identity 1.0.5
+#### Android Identity 1.0.5:
 * Fixed issue where the Analytics visitor identifier (VID) was not included in the Identity.appendVisitorInfoForURL callback value.
 
 ## May 17, 2019
