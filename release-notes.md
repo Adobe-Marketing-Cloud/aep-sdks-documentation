@@ -4,27 +4,28 @@
 
 The following updates were made in this release:
 
-#### iOS
-
-iOS Core 2.2.2 is now available!
+#### iOS Core 2.2.2
 
 * Fixed the issue where SSL connection was not kept alive.
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz` 
 * Fixed the bug where `ACPCore.getSdkIdentities` didn't return correct value for custom analytics id.
 * Added support for migarting Privacy status from v4 to v5, if it was manually set with v4 SDK.
-* Identity: Fixed a bug where the callback was not called on getIdentifiers if there were no custom identifiers synced before
-* Identity: Fixed a bug where VID was not present in the appendToUrl callback value
-* Identity: Fixed issue where device locale was not properly read when creating network requests from Identity extension.
 
-#### Android
+#### iOS Identity 2.0.3:
 
-Android Core 1.3.1 is now available!
+* Fixed issue where device locale was not properly read when creating network requests from Identity extension.
+* Fixed issue where the callback was not called on ACPIdentity.getIdentifiers if no custom identifiers where synced previously.
+* Fixed issue where the Analytics visitor identifier (VID) was not included in the ACPIdentity.appendToUrl callback value.
+
+#### Android Core 1.3.1
 
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `MobileCore.getSdkIdentities` didn't return correct value for custom analytics id.
 * Added support for migarting Privacy status from v4 to v5, if it was manually set with v4 SDK.
 * Added support for loading cached configuraiton and cached rules on subsequent launch.
-* Identity: Fixed issue where the Analytics visitor identifier (VID) was not included in the appendVisitorInfoForURL callback value.
+
+#### Android Identity 1.0.5
+* Fixed issue where the Analytics visitor identifier (VID) was not included in the Identity.appendVisitorInfoForURL callback value.
 
 ## May 17, 2019
 
