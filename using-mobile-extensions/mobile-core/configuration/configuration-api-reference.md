@@ -66,6 +66,31 @@ ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 Alternatively, you may also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file, and associated configuration
 {% endhint %}
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### configureWithAppID
+
+Configure the SDK by downloading the remote configuration file hosted on Adobe servers specified by the given application ID. The configuration file is cached once downloaded and used in subsequent calls to this API. If the remote file is updated after the first download, the updated file is downloaded and replaces the cached file.
+
+The appid is preserved, and on application restarts, the remote configuration file specified by appid is downloaded and applied to the SDK.
+
+On failure to download the remote configuration file, the SDK is configured using the cached file if it exists, or if no cache file exists then the existing configuration remains unchanged.
+
+Calls to this API will replace any existing SDK configuration except those set using `ACPCore.updateConfiguration` or `ACPCore.setPrivacyStatus`. Configuration updates made using `ACPCore.updateConfiguration` and `ACPCore.setPrivacyStatus` bare always applied on top of configuration changes made using this API.
+
+`@param {String?} appId` a unique identifier assigned to the app instance by the Adobe Mobile Services. It is automatically added to the ADBMobile JSON file when downloaded from the Adobe Mobile Services UI and can be found in Manage App Settings. A value of `nil` has no effect.
+
+```jsx
+import {ACPCore} from '@adobe/react-native-acpcore';
+
+initSDK() { 
+    ACPCore.configureWithAppId("yourAppId");
+    ACPCore.start();
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Programmatic updates to configuration
@@ -122,6 +147,16 @@ NSDictionary *updatedConfig = @{@"global.ssl":@YES};
 ```swift
 let updatedConfig = ["global.ssl":true]
 ACPCore.updateConfiguration(updatedConfig)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### updateConfiguration
+
+```jsx
+ACPCore.updateConfiguration({"yourConfigKey": "yourConfigValue"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -181,6 +216,18 @@ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"of
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### configureWithFileInPath
+
+```jsx
+ configureWithFileInPath(filepath?: String) {
+   ACPCore.configureWithFileInPath(filepath);
+  },
 ```
 {% endtab %}
 {% endtabs %}
