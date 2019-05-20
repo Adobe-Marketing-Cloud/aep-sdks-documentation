@@ -47,6 +47,22 @@ In swift, the ACPCore includes ACPIdentity :
 import ACPCore
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+Import the Identity extension
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version
+
+```jsx
+ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
+```
+{% endtab %}
 {% endtabs %}
 
 ## **Register the extension**
@@ -97,6 +113,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ACPIdentity.registerExtension();
   // Override point for customization after application launch.
   return true;
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPIdentity.registerExtension();
 }
 ```
 {% endtab %}
