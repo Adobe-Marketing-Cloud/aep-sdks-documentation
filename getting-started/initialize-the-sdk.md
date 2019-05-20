@@ -75,7 +75,7 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   //...
-  [ACPCore configureWithAppId:@"yourAppId"];
+  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
   [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
   [ACPIdentity registerExtension];
   [ACPLifecycle registerExtension];
@@ -92,7 +92,7 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
 public void onCreate() {
   //...
   MobileCore.setApplication(this);
-  MobileCore.configureWithAppID("yourAppId");
+  MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");
   MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
   try {
     Identity.registerExtension();
@@ -113,7 +113,7 @@ import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '
 
 initSDK() {
     ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
-    ACPCore.configureWithAppId("yourAppId");
+    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
     ACPLifecycle.registerExtension();
     ACPIdentity.registerExtension();
     ACPSignal.registerExtension();

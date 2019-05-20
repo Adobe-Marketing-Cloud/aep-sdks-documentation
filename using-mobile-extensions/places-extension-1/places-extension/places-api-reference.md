@@ -5,14 +5,12 @@
 When a device crosses one of your app's pre-defined Places region boundaries, the region and event type are passed to the SDK for processing.
 
 {% tabs %}
-
 {% tab title="Android" %}
-
 ### ProcessGeofence
 
 Process a `Geofence` region event for the provided `transitionType`.
 
-Pass the `transitionType` from  `GeofencingEvent.getGeofenceTransition()`. Currently `Geofence.GEOFENCE_TRANSITION_ENTER` and `Geofence.GEOFENCE_TRANSITION_EXIT` are supported.
+Pass the `transitionType` from `GeofencingEvent.getGeofenceTransition()`. Currently `Geofence.GEOFENCE_TRANSITION_ENTER` and `Geofence.GEOFENCE_TRANSITION_EXIT` are supported.
 
 #### Syntax
 
@@ -72,7 +70,6 @@ public class GeofenceTransitionsIntentService extends IntentService {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -98,7 +95,6 @@ This method should be called in the CLLocationManager delegate, which tells if t
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Retrieve nearby points of interest
@@ -250,3 +246,4 @@ Places.getLastKnownLocation(new AdobeCallback<Location>() {
 ```
 {% endtab %}
 {% endtabs %}
+

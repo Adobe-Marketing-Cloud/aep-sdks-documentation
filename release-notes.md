@@ -15,7 +15,7 @@ Android Places Monitor 1.0.0:
 
 * Initial release of the Places Monitor for Android.
 
-For more information about the Places Monitor, [click here](places-extension-1/places-monitoring-extension/README.md).
+For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
 ## May 9, 2019
 
@@ -373,3 +373,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

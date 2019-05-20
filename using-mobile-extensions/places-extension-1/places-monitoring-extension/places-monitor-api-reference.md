@@ -62,7 +62,6 @@ This method should be called in the `didFinishLaunchingWithOptions` delegate met
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Extension version
@@ -101,7 +100,6 @@ String placesMonitorVersion = PlacesMonitor.extensionVersion();
 NSString *placesMonitorVersion = [ACPPlacesMonitor extensionVersion];
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Start device monitoring
@@ -109,7 +107,6 @@ NSString *placesMonitorVersion = [ACPPlacesMonitor extensionVersion];
 Begin tracking the device's location and monitoring nearby Places.
 
 {% tabs %}
-
 {% tab title="Android" %}
 ### Start
 
@@ -150,7 +147,6 @@ PlacesMonitor.start();
 [ACPPlacesMonitor start];
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Stop device monitoring
@@ -158,7 +154,6 @@ PlacesMonitor.start();
 Stops tracking the device's location.
 
 {% tabs %}
-
 {% tab title="Android" %}
 ### Stop
 
@@ -190,7 +185,6 @@ PlacesMonitor.stop();
 [ACPPlacesMonitor stop];
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Update Location
@@ -198,7 +192,6 @@ PlacesMonitor.stop();
 Use this API for an immediate update on the device's location. When you call this API, the device attempts to determine the location with the level of accuracy that you specified. This process also refreshes the nearby POIs that are monitored by the extension.
 
 {% tabs %}
-
 {% tab title="Android" %}
 ### UpdateLocation
 
@@ -216,7 +209,6 @@ PlacesMonitor.updateLocation();
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### UpdateLocationNow
 
 #### Syntax
@@ -231,10 +223,9 @@ PlacesMonitor.updateLocation();
 [ACPPlacesMonitor updateLocationNow];
 ```
 {% endtab %}
-
 {% endtabs %}
 
-## Monitoring Mode (iOS only)
+## Monitoring Mode \(iOS only\)
 
 Monitoring can be set to one of the following values:
 
@@ -263,3 +254,4 @@ Monitoring can be set to one of the following values:
 ```
 {% endtab %}
 {% endtabs %}
+
