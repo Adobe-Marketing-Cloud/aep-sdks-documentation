@@ -21,6 +21,22 @@ Sessions contain information about the app's current lifecycle, such as the devi
  #import "ACPCore.h"
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+Import the Lifecycle extension
+
+```jsx
+import {ACPLifecycle} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version
+
+```jsx
+ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+```
+{% endtab %}
 {% endtabs %}
 
 ## Register Lifecycle with Mobile Core
@@ -80,6 +96,26 @@ Sessions contain information about the app's current lifecycle, such as the devi
   // Override point for customization after application launch.
   return YES;
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**Registering the extension with Core:**
+
+```jsx
+ACPLifecycle.registerExtension();
+```
+
+**Starting a lifecycle event:**
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+**Pausing a lifecycle event:**
+
+```jsx
+ACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}
