@@ -22,13 +22,16 @@ There are no configuration tasks for the Places Monitor extension.
 
 1. Add the Places Monitor extension and the Places Extension to your project using your app's gradle file.
 
+2. Also include the latest Google Location services in the gradle file.
+
    ```java
     implementation 'com.adobe.marketing.mobile:places:1.+'
     implementation 'com.adobe.marketing.mobile:places-monitor:1.+'
     implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'  
    ```
 
-2. Import the Places Monitor extension in your application's main activity.
+3. Import the Places Monitor extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.PlacesMonitor;
@@ -66,7 +69,7 @@ import ACPPlacesMonitor
 
 #### Java
 
-To call the set up methods that call the `setApplication()` method in the `onCreate()` method:
+In your App's `OnCreate` method register the Places Monitor extensions:
 
 ```java
 public class MobileApp extends Application {
@@ -87,6 +90,8 @@ public class MobileApp extends Application {
 }
 ```
 
+**Important:** Places monitoring depends on the Places extension. When manually installing the Places Monitor extension, ensure that you also add the `places.aar` library to your project.
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -96,7 +101,7 @@ In your app's`application:didFinishLaunchingWithOptions`, register `PlacesMonito
 #### Objective-C  <a id="objective-c-1"></a>
 
 ```objc
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:				  (NSDictionary*)launchOptions {    
 [ACPCore configureWithAppId:@"yourAppId"];    
 [ACPPlaces registerExtension];    
 [ACPPlacesMonitor registerExtension];     
@@ -128,6 +133,27 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 {% tabs %}
+
+{% tab title="Android" %}
+
+## Add permissions to the manifest
+
+For all versions of Android, to declare that your app need location permission, put a ` <uses-permission>` element in your app manifest,  as a child of the top-level `<manifest>` element.
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.adobe.placesapp">
+
+  	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application ...>
+        ...
+    </application>
+</manifest>
+```
+
+{% tabs %}
+
 {% tab title="iOS" %}
 
 ## Enable location updates in the background  <a id="enable-location-updates-in-background"></a>
