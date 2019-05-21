@@ -4,7 +4,7 @@ You can track lifecycle to learn how frequently and how long your app is being u
 
 **Tip:** The code snippets in this section are only examples. Your final implementation will probably contain additional code that is specific to your app.
 
-**Important**: The Lifecycle extension supports the `lifecycleStart` and `lifecyclePause` APIs from the `ACPCore` extension to track application lifecycle for the Adobe SDK.
+**Important**: The Lifecycle extension supports the `lifecycleStart:` and `lifecyclePause` APIs from the `ACPCore` extension to track application lifecycle for the Adobe SDK.
 
 ### Implementing Lifecycle metrics in iOS
 
@@ -15,18 +15,18 @@ To implement lifecycle metrics, complete the following steps:
 1. Import the library:
 
    ```objectivec
-    #import <ACPLifecycle_iOS/ACPLifecycle_iOS.h>
-    #import <ACPCore_iOS/ACPCore_iOS.h>
+   #import "ACPLifecycle.h"
+   #import "ACPCore.h"
    ```
 
 2. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions.
 
    ```objectivec
    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-     [ACPLifecycle registerExtension];
+       [ACPLifecycle registerExtension];
 
-     // Override point for customization after application launch.
-     return YES;
+       // Override point for customization after application launch.
+       return YES;
    }
    ```
 
@@ -36,52 +36,61 @@ Here are the APIs for the Lifecycle extension:
 
 #### Lifecycle Start
 
-To implement Lifecycle metrics, add a `lifecycleStart` call in `application:didFinishLaunchingWithOptions`.
+The `lifecycleStart:` method tells the SDK that the user is launching the app.  It should be called from both entry points in your `AppDelegate`:
+* `application:didFinishLaunchingWithOptions:`  
+* `applicationWillEnterForeground:`
 
 Here are code samples for `lifecycleStart` in Objective-C and Swift:
 
 **Objective-C**
 
 ```objectivec
-// Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
-    [ACPCore lifecycleStart]; 
+    // optionally pass in additional lifecycle data as a dictionary parameter in this call
+    [ACPCore lifecycleStart:nil]; 
+    
     return YES; 
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // additional lifecycle data may also be passed here!
+    [ACPCore lifecycleStart:nil];
 }
 ```
 
 **Swift**
 
 ```swift
-// Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     ACPCore.lifecycleStart(nil)
     return true
+}
+
+func applicationWillEnterForeground(_ application: UIApplication) {
+    ACPCore.lifecycleStart(nil)
 }
 ```
 
 #### Lifecycle Pause
 
-The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics.
+The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics.  The `lifecyclePause` method should be called when your user naturally backgrounds your application, in the `applicationDidEnterBackground:` method.
 
 Here are some examples for `lifecyclePause` in Objective-C and Swift:
 
 **Objective-C**
 
 ```objectivec
- // Objective-C
- - (void) applicationDidEnterBackground:(UIApplication *)application {
-     [ACPCore lifecyclePause];
- }
+- (void) applicationDidEnterBackground:(UIApplication *)application {
+    [ACPCore lifecyclePause];
+}
 ```
 
 **Swift**
 
 ```swift
-// Swift
- func applicationDidEnterBackground(_ application: UIApplication) {    
-     ACPCore.lifecyclePause()
- }
+func applicationDidEnterBackground(_ application: UIApplication) {    
+    ACPCore.lifecyclePause()
+}
 ```
 
 ### Tracking App Crashes in iOS
@@ -126,7 +135,7 @@ This approach of measuring crashes provides a high-level answer to the question,
 
 ### Collecting Additional Data with Lifecycle
 
-When calling `lifecycleStart`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
+When calling `lifecycleStart:`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
 
 **Tip**: You can pass additional data to lifecycle on app launch, app resume, both, or neither.
 
