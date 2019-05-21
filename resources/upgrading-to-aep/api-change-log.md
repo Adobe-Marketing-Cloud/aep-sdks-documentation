@@ -40,9 +40,13 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
 
-## Lifecycle extension APIs  <a id="audience-manager-extension-apis"></a>
+## Lifecycle extension APIs 
 
 ### Supported APIs
+
+{% hint style="warning" %}
+If you are migrating from the v4 iOS SDK, Lifecycle `start` and `stop` calls are made for you automatically. In the AEP SDK, you will need to make the calls to start and stop lifecycle manually.  For more information, see [Lifecycle extension in iOS](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md).
+{% endhint %}
 
 For more information, see [Lifecycle API reference](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md).
 
@@ -50,7 +54,7 @@ For more information, see [Lifecycle API reference](../../using-mobile-extension
 | :--- | :--- |
 | [lifecycleStart:](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 | [lifecycleStart:](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStop:](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | Not applicable |
+| [lifecycleStop](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | Not applicable for iOS \| pauseCollectingLifecycleData |
 
 ### Deprecated APIs
 
@@ -58,7 +62,7 @@ For more information, see [Lifecycle API reference](../../using-mobile-extension
 | :--- | :--- |
 | keepLifecycleSessionAlive \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
 
-## Identity extension APIs  <a id="audience-manager-extension-apis"></a>
+## Identity extension APIs  
 
 For more information, see [Identity API reference](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md).
 
