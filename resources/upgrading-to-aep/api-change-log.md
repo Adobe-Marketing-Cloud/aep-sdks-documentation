@@ -45,7 +45,7 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 ### Supported APIs
 
 {% hint style="warning" %}
-If you are migrating from the v4 iOS SDK, Lifecycle `start` and `stop` calls are made for you automatically. In the AEP SDK, you will need to make the calls to start and stop lifecycle manually.  For more information, see [Lifecycle extension in iOS](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md).
+In the v4 iOS SDK, Lifecycle `start` and `stop` calls are made automatically by the SDK. In the AEP SDK, the calls to start and stop lifecycle will need to be made by the application developer. For more information, see [Lifecycle extension in iOS](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md).
 {% endhint %}
 
 For more information, see [Lifecycle API reference](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md).
