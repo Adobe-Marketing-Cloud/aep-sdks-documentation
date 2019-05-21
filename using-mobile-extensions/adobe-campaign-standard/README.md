@@ -188,6 +188,8 @@ If you are developing an Android application, to correctly display fullscreen in
 ```markup
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
+In addition to this, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. The instructions to do this can be seen at: [Implementing Global Lifecycle Callbacks](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks) 
+
 {% endhint %}
 
 For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
