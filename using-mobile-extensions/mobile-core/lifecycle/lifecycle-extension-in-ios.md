@@ -36,7 +36,8 @@ Here are the APIs for the Lifecycle extension:
 
 #### Lifecycle Start
 
-The `lifecycleStart:` method tells the SDK that the user is launching the app.  It should be called from both entry points in your `AppDelegate`:
+The `lifecycleStart:` method tells the SDK that the user is launching the app. It should be called from both entry points in your `AppDelegate`:
+
 * `application:didFinishLaunchingWithOptions:`  
 * `applicationWillEnterForeground:`
 
@@ -48,7 +49,7 @@ Here are code samples for `lifecycleStart` in Objective-C and Swift:
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
     // optionally pass in additional lifecycle data as a dictionary parameter in this call
     [ACPCore lifecycleStart:nil]; 
-    
+
     return YES; 
 }
 
@@ -73,7 +74,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 #### Lifecycle Pause
 
-The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics.  The `lifecyclePause` method should be called when your user naturally backgrounds your application, in the `applicationDidEnterBackground:` method.
+The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics. The `lifecyclePause` method should be called when your user naturally backgrounds your application, in the `applicationDidEnterBackground:` method.
 
 Here are some examples for `lifecyclePause` in Objective-C and Swift:
 

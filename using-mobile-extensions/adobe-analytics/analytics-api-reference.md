@@ -54,6 +54,18 @@ Here are examples in Objective-C and Swift:
 ACPAnalytics.sendQueuedHits()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+```jsx
+ACPAnalytics.sendQueuedHits();
+```
+{% endtab %}
 {% endtabs %}
 
 ## Clear queued hits  <a id="sendqueuedhits"></a>
@@ -102,6 +114,18 @@ Analytics.clearQueue();
 
 ```swift
 ACPAnalytics.clearQueue()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### clearQueue
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+```jsx
+ACPAnalytics.clearQueue();
 ```
 {% endtab %}
 {% endtabs %}
@@ -159,6 +183,16 @@ Here are examples in Objective-C and Swift:
 ACPAnalytics.getQueueSize { (queueSize) in    
      // use queue size   
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### getQueueSize
+
+```jsx
+ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue size: " + size));
 ```
 {% endtab %}
 {% endtabs %}
@@ -232,6 +266,18 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+```jsx
+ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperienceSDK: Tracking identifier: " + identifier));
+```
+{% endtab %}
 {% endtabs %}
 
 ## Set the custom visitor identifier    <a id="setidentifier"></a>
@@ -284,6 +330,16 @@ Here are examples in Objective-C and Swift:
 ACPAnalytics.setVistorIdentifier("custom_identifier")
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### setVistorIdentifier
+
+```jsx
+ACPAnalytics.setVisitorIdentifier("yourVisitorId");
+```
+{% endtab %}
 {% endtabs %}
 
 ## Get the custom visitor identifier
@@ -315,6 +371,17 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
 
 \*\*\*\*
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### getVistorIdentifier
+
+```jsx
+ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
+
+```
 {% endtab %}
 {% endtabs %}
 
