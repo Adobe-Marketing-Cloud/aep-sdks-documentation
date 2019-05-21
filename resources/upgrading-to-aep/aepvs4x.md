@@ -73,8 +73,8 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Android | Supported | Supported |
 | Android Wear​ | Supported | _Support coming_ |
 | Apple iOS​ | Supported | Supported |
-| Apple WatchOS​ | Supported | Supported |
-| Apple tvOS​ | Supported | Supported |
+| Apple WatchOS​ | Supported | _Support coming_ |
+| Apple tvOS​ | Supported | _Support coming_ |
 | React Native \(iOS & Android\) | Supported | Supported |
 | Unity \(iOS & Android\)​ | Supported | _Support coming_ |
 | Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
