@@ -27,6 +27,11 @@ The following updates were made in this release:
 #### Android Identity 1.0.5:
 * Fixed issue where the Analytics visitor identifier (VID) was not included in the `Identity.appendVisitorInfoForURL` callback value.
 
+#### Android Campaign 1.0.1:
+
+* Added enhanced alert reporting with clickthrough URL support in the campaign response event.
+* Added support for custom title in local notifications.
+
 ## May 17, 2019
 
 The following updates were made in this release:
