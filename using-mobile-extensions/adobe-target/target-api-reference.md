@@ -199,7 +199,7 @@ Target.getTntId(new AdobeCallback<String>() {
 
 Gets the Target user identifier. The callback will be invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
 
-Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `rResetExperience` API is called.
+Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
 #### Syntax
 
@@ -223,184 +223,6 @@ Target returns `tntId` upon a successful call to `loadRequests` or `prefetchCont
 ACPTarget.getTntId({tntId in
        // read target's tntId
 })
-```
-{% endtab %}
-{% endtabs %}
-
-## Load Target requests
-
-Sends a batch request to your configured Target server for multiple mbox locations that are specified.
-
-{% hint style="warning" %}
-`loadRequests` API is deprecated, and replaced with `retrieveLocationContent` for batch scenarios instead.
-
-Note: When working with prefetch APIs, and switching to new `retrieveLocationContent` API, please also use `locationsDisplayed`, otherwise reporting will not work.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-
-### TargetRequest Constructor
-
-`TargetRequest` Constructor helps create a `TargetRequest` instance. It replaces the deprecated builder pattern. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
-
-#### Syntax
-
-```java
-TargetParameters targetParameters = new TargetParameters.Builder()
-                                    .parameters(new HashMap<String, String>())
-                                    .profileParameters(new HashMap<String, String>())
-                                    .order(new TargetOrder(String, Double, List<String>))
-                                    .product(new TargetProduct(String, String))
-                                    .build();
-TargetRequest targetRequest = new TargetRequest("mboxName", targetParameters, "defaultContent",
-                                                new AdobeCallback<String>() {
-                                                    @Override
-                                                    public void call(String value) {
-                                                        // do something with target content.
-                                                    }
-                                                });
-```
-
-### TargetRequest Builder (Marked as deprecated)
-
-`TargetRequest` builder helps create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
-
-#### Syntax
-
-```java
-TargetRequest request = new TargetRequest.Builder("mboxName","defaultContent")
-                .setMboxParameters(new HashMap<String, String>())
-                .setOrderParameters(new HashMap<String, Object>())
-                .setProductParameters(new HashMap<String, String>())
-                .setContentCallback(new AdobeCallback<String>() {
-                    @Override
-                    public void call(String value) {
-                        // do something with target content.
-                    }
-                }).build();
-```
-
-### loadRequests (Marked as deprecated)
-
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Each object in the array contains a callback function, which is invoked when content is available for its given mbox location.
-
-#### Syntax
-
-```java
-public static void loadRequests(final List<TargetRequest> requestArray,
-                                    final Map<String, Object> profileParameters);
-```
-
-#### Example
-
-```java
-// define parameters for first request
-Map<String, Object> mboxParameters1 = new HashMap<>();
-mboxParameters1.put("status", "platinum");
-
-// define parameters for second request
-Map<String, Object> mboxParameters2 = new HashMap<>();
-mboxParameters2.put("userType", "paid");
-
-List<String> purchasedIds = new ArrayList<String>();
-purchasedIds.add("34");
-purchasedIds.add("125"); 
-
-Map<String, Object> orderParameters2 = new HashMap<>();
-orderParameters2.put("id", "ADCKKIM");
-orderParameters2.put("total", "344.30");
-orderParameters2.put("purchasedProductIds",  purchasedIds);
-
-Map<String, Object> productParameters2 = new HashMap<>();
-productParameters2.put("id", "24D3412");
-productParameters2.put("categoryId","Books");
-
-TargetRequest request1 = new TargetRequest.Builder("mboxName1", "defaultContent1")
-                .setMboxParameters(mboxParameters1)
-                .setContentCallback(new AdobeCallback<String>() {
-                    @Override
-                    public void call(String value) {
-                        // do something with target content.
-                    }
-                }).build();
-
-TargetRequest request2 = new TargetRequest.Builder("mboxName2", "defaultContent2")
-                .setMboxParameters(mboxParameters2)
-                .setOrderParameters(orderParameters2)
-                .setProductParameters(productParameters2)
-                .setContentCallback(new AdobeCallback<String>() {
-                    @Override
-                    public void call(String value) {
-                        // do something with target content.
-                    }
-                }).build();
-
-// Creating Array of Request Objects
-List<TargetRequest> locationRequests = new ArrayList<>();
-locationRequests.add(request1);
-locationRequests.add(request2);
-
- // Define the profile parameters map.
-Map<String, Object> profileParameters = new HashMap<>();
-profileParameters.put("ageGroup", "20-32");
-
-// Call the targetLoadRequests API.
-Target.loadRequests(locationRequests, profileParameters);
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### loadRequests(Marked as deprecated)
-
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the`ACPTargetRequestObject` array. Each object in the array contains a callback function, which will be invoked when content is available for its given mbox location.
-
-#### Syntax
-
-```objectivec
-+ (void) loadRequests: (nonnull NSArray<ACPTargetRequestObject*>*) requests
-      withProfileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters;
-```
-
-#### Example
-
-```objectivec
-NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
-NSDictionary *productParameters1 = @{@"id":@"24D3412",
-                                        @"categoryId":@"Books"};
-NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
-                                      @"total":@"344.30",
-                                      @"purchasedProductIds":@"34, 125, 99"};
-​
-NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
-NSDictionary *productParameters2 = @{@"id":@"764334",
-                                         @"categoryId":@"Online"};
-NSArray *purchaseIDs = @[@"id1",@"id2"];
-NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
-                                       @"total":@"54.90",
-                                       @"purchasedProductIds":purchaseIDs};
-​
-ACPTargetRequestObject *request1 = [ACPTargetRequestObject requestObjectWithName:@"logo" defaultContent:@"BlueWhale" mboxParameters:mboxParameters1 callback:^(NSString *content){
-        // do something with the received content
-  }];
-request1.productParameters = productParameters1;
-request1.orderParameters = orderParameters1;
-​
-​
-ACPTargetRequestObject *request2 = [ACPTargetRequestObject requestObjectWithName:@"buttonColor" defaultContent:@"red" mboxParameters:mboxParameters2 callback:^(NSString *content){
-        // do something with the received content
-}];
-request2.productParameters = productParameters1;
-request2.orderParameters = orderParameters1;
-​
-// create request object array
-NSArray *requestArray = @[request1,request2];
-​
-// Creating Profile parameters
-NSDictionary *profileParameters = @{@"age":@"20-32"};
-​
-// Call the API
-[ACPTarget loadRequests:requestArray withProfileParameters:profileParameters];
 ```
 {% endtab %}
 {% endtabs %}
@@ -457,7 +279,7 @@ TargetParameters parameters2 = new TargetParameters.Builder()
                                .product(targetProduct)
                                .order(targetOrder)
                                .build();
-TargetRequest request1 = new TargetRequest("mboxName1", parameters2, "defaultContent1",
+TargetRequest request2 = new TargetRequest("mboxName2", parameters2, "defaultContent2",
                                             new AdobeCallback<String>() {
                                                 @Override
                                                 public void call(String value) {
@@ -580,13 +402,6 @@ If a notification is sent for a prefetched mbox, its contents should already hav
 
 ```java
 public static void locationClicked(final String mboxName, final TargetParameters parameters)
-
-@Deprecated
-public static void locationClicked(final String mboxName,
-                                    final Map<String, String> mboxParameters
-                                    final Map<String, String> productParameters
-                                    final Map<String, Object> orderParameters
-                                    final Map<String, String> profileParameters);
 ```
 
 #### Example
@@ -603,7 +418,7 @@ productParameters.put("categoryId","Electronics");
 
 List<String> purchasedIds = new ArrayList<String>();
 purchasedIds.add("81");
-purchasedIds.add("123"); 
+purchasedIds.add("123");
 purchasedIds.add("190");
 
 // Define Order parameters
@@ -616,9 +431,6 @@ orderParameters.put("purchasedProductIds",  purchasedIds);
 Map<String, Object> profileParameters = new HashMap<>();
 profileParameters.put("ageGroup", "20-32");
 
-//Deprecated API call
-Target.locationClicked("cartLocation", mboxParameters, productParameters, orderParameters, profileParameters);
-
 //Target Parameters
 TargetOrder targetOrder = new TargetOrder("NJJICK", "650", purchasedIds);
 TargetProduct targetProduct = new TargetProduct("CEDFJC", "Electronics");
@@ -627,7 +439,7 @@ TargetParameters targetParameters = new TargetParameters.Builder(mboxParameters)
 								.order(targetOrder)
 								.product(targetProduct)
 								.build();
-//New API call
+
 Target.locationClicked("cartLocation", targetParameters);
 
 ```
@@ -642,9 +454,6 @@ If a notification is sent for a prefetched mbox, its contents should already hav
 
 ```objectivec
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
-
-@Deprecated
-+ (void) locationClickedWithName: (nonnull NSString*) name mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters productParameters: (nullable NSDictionary<NSString*, NSString*>*) productParameters orderParameters: (nullable NSDictionary*) orderParameters profileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters;
 ```
 
 #### Example
@@ -664,10 +473,6 @@ NSDictionary *orderParameters = @{@"id":@"NJJICK",
 // Define Profile parameters
 NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
 
- 
-// Deprecated API Call
-[ACPTarget locationClickedWithName:@"cartLocation" mboxParameters:mboxParameters productParameters:productParameters orderParameters:orderParameters profileParameters:profileParameters];
-
 // Create Target parameters
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
@@ -676,7 +481,6 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
                                                               product:product
                                                                 order:order];
 
-//New API call
 [ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters]
 
 ```
@@ -701,8 +505,10 @@ public class TargetRequest extends TargetObject {
 	 * @param defaultContent String default content for this request
 	 * @param contentCallback AdobeCallback<String> which will get called with Target mbox content
 	 */
-	public TargetRequest(final String mboxName, final TargetParameters targetParameters,
-						 final String defaultContent, final AdobeCallback<String> contentCallback);
+	public TargetRequest(final String mboxName,
+                         final TargetParameters targetParameters,
+                         final String defaultContent,
+                         final AdobeCallback<String> contentCallback);
 
 	 /**
 	 * Sets mbox parameters for the request.
@@ -738,78 +544,6 @@ public class TargetRequest extends TargetObject {
 	 * @param targetParameters TargetParameters for the request.
 	 */
 	void setTargetParameters(final TargetParameters targetParameters);
-
-    /**
-    * Builder used to construct a TargetRequest object.
-    */
-    @Deprecated
-    public static class Builder {
-        private TargetRequest targetRequest;
-
-        /**
-         * Create a TargetRequest Builder.
-         *
-         * @param mboxName String mbox name for this request
-         * @param defaultContent String default content for this request
-         */
-        @Deprecated
-        public Builder(final String mboxName, final String defaultContent);
-
-        /**
-         * Set mbox parameters for this request.
-         *
-         * @param mboxParameters Map<String, String> mbox parameters
-         * @return this builder
-         */
-        public Builder setMboxParameters(final Map<String, String> mboxParameters);
-
-        /**
-        * Set order parameters for this request.
-        *
-        * @param orderParameters Map<String, Object> order parameters
-        * @return this builder
-        */
-        public Builder setOrderParameters(final Map<String, Object> orderParameters);
-
-        /**
-         * Set profile parameters for this request.
-         *
-         * @param productParameters Map<String, String> product parameters
-         * @return this builder
-         */
-        public Builder setProductParameters(final Map<String, String> productParameters);
-
-        /**
-         * Set profile parameters for this request.
-         *
-         * @param profileParameters Map<String, String> profile parameters
-         * @return this builder
-         */
-        public Builder setProfileParameters(final Map<String, Object> profileParameters);
-
-        /**
-         * Set Target parameters for this request.
-         *
-         * @param targetParameters TargetParameters object
-         * @return this builder
-         */
-        public Builder setTargetParameters(final TargetParameters targetParameters);
-
-        /**
-        * Set the callback function for this request.
-        *
-        * @param contentCallback AdobeCallback<String> which will get called with the returning content
-        * @return this builder
-        */
-        public Builder setContentCallback(final AdobeCallback<String> contentCallback);
-
-        /**
-         * Build the TargetRequest.
-         *
-         * @return TargetRequest the target request object
-         */
-        public TargetRequest build();
-    }
 }
 ```
 
@@ -861,68 +595,6 @@ public class TargetPrefetch extends TargetObject {
 	 * @param targetParameters TargetParameters for the request.
 	 */
 	void setTargetParameters(final TargetParameters targetParameters);
-
-    /**
-     * Builder used to construct a TargetPrefetch object
-     */
-    @Deprecated
-    public static class Builder {
-        private TargetPrefetch targetPrefetch;
-
-        /**
-         * Create a TargetPrefetch Builder.
-         *
-         * @param mboxName String mbox name for this request
-         */
-         public Builder(final String mboxName);
-
-        /**
-         * Set mbox parameters for this request.
-         *
-         * @param mboxParameters Map<String, String> mbox parameters
-         * @return this builder
-         */
-         public Builder setMboxParameters(final Map<String, String> mboxParameters);
-
-        /**
-         * Set order parameters for this request.
-         *
-         * @param orderParameters Map<String, String> order parameters
-         * @return this builder
-         */
-         public Builder setOrderParameters(final Map<String, Object> orderParameters);
-
-        /**
-         * Set product parameters for this request.
-         *
-         * @param productParameters Map<String, String> product parameters
-         * @return this builder
-         */
-         public Builder setProductParameters(final Map<String, String> productParameters);
-
-         /**
-         * Set profile parameters for this request.
-         *
-         * @param profileParameters Map<String, String> profile parameters
-         * @return this builder
-         */
-         public Builder setProfileParameters(final Map<String, Object> profileParameters);
-
-        /**
-         * Set Target parameters for this request.
-         *
-         * @param targetParameters TargetParameters object
-         * @return this builder
-         */
-         public Builder setTargetParameters(final TargetParameters targetParameters);
-
-         /**
-         * Build and return TargetPrefetch
-         *
-         * @return TargetPrefetch the target prefetch object
-         */
-         public TargetPrefetch build();
-    }
 
 }
 ```
@@ -1110,10 +782,10 @@ public class TargetProduct {
 This class extends `ACPTargetPrefetchObject` by adding default content and a function pointer property that will be used as a callback when requesting content from Target:
 
 ```objectivec
-@interface ACPTargetRequestObject : ACPTargetPrefetchObject​
+@interface ACPTargetRequestObject : ACPTargetPrefetchObject
 
 ///< The default content that will be returned if Target servers are unreachable    
-@property(nonatomic, strong, nonnull) NSString* defaultContent;​
+@property(nonatomic, strong, nonnull) NSString* defaultContent;
 
 ///< Optional. When batch requesting Target locations, callback will be invoked when content is available for this location.
 @property(nonatomic, strong, nullable) void (^callback)(NSString* __nullable content);
@@ -1130,16 +802,6 @@ The following method can be used to create an instance of a Target prefetch obje
 
 ```
 
-
-
-```objectivec
-@deprecated
-+ (nonnull instancetype) requestObjectWithName: (nonnull NSString*) name
-                                defaultContent: (nonnull NSString*) defaultContent
-                                mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters
-                                                                      callback: (nullable void (^) (NSString* __nullable content)) callback;
-```
-
 ### ACPTargetPrefetchObject
 
 This class contains the name of the Target location/mbox and parameter dictionary for mbox parameters, product parameters, and order parameters that will be used in a prefetch:
@@ -1149,15 +811,6 @@ This class contains the name of the Target location/mbox and parameter dictionar
 
 ///< The name of the Target location/mbox
 @property(nonatomic, strong, nullable) NSString* name;
-
-///< Dictionary containing key-value pairs of mbox parameters
-@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* mboxParameters;
-
-///< Dictionary containing key-value pairs of product parameters
-@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* productParameters;
-
-///< Dictionary containing key-value pairs of order parameters
-@property(nonatomic, strong, nullable) NSDictionary* orderParameters;
 
 ///target parameters associated with the prefetch object. You can set all other parameters in this object
 @property(nonatomic, strong, nullable) ACPTargetParameters* targetParameters;
@@ -1170,13 +823,6 @@ The following method can be used to create an instance of a Target prefetch obje
 + (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
                                      targetParameters: (nullable ACPTargetParameters*) targetParameters;
 
-```
-
-
-
-```text
-@deprecated
-+ (nonnull instancetype) prefetchObjectWithName: (nonnull NSString*) name                                 mboxParameters: (nullable NSDictionary*) mboxParameters;
 ```
 
 ### ACPTargetParameters
