@@ -185,77 +185,6 @@ prefetchMboxesList.add(prefetchRequest2);
 TargetParamters targetParameters = null;
 Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallback);
 ```
-
-#### Using the `TargetPrefetch` Builder(Marked as deprecated)
-
-The `TargetPrefetch` builder helps create a `TargetPrefetch` instance with the specified data. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
-
-#### Syntax
-
-```java
-TargetPrefetch prefetchRequest = new TargetPrefetch.Builder("mboxName")
-                .setMboxParameters(new HashMap<String, String>())
-                .setOrderParameters(new HashMap<String, Object>())
-                .setProductParameters(new HashMap<String, String>())
-                .build();
-```
-
-#### Using `prefetchContent` (Marked as deprecated)
-
-Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `profileParameters`. The callback is invoked when the prefetch is complete, which returns a success status for the prefetch request.
-
-#### Syntax
-
-```java
-public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
-                                   final Map<String, Object> profileParameters,
-                                   final AdobeCallback<Boolean> callback);
-```
-
-#### Example
-
-```java
-// first prefetch request
-Map<String, Object> mboxParameters1 = new HashMap<>();
-mboxParameters1.put("status", "platinum");
-
-// second prefetch request
-Map<String, Object> mboxParameters2 = new HashMap<>();
-mboxParameters2.put("userType", "paid");
-
-List<String> purchasedIds = new ArrayList<String>();
-purchasedIds.add("34");
-purchasedIds.add("125"); 
-
-Map<String, Object> orderParameters2 = new HashMap<>();
-orderParameters2.put("id", "ADCKKIM");
-orderParameters2.put("total", "344.30");
-orderParameters2.put("purchasedProductIds",  purchasedIds);
-
-Map<String, Object> productParameters2 = new HashMap<>();
-productParameters2.put("id", "24D3412");
-productParameters2.put("categoryId","Books");
-
-TargetPrefetch prefetchRequest1 = new TargetPrefetch.Builder("mboxName1")
-                .setMboxParameters(mboxParameters1)
-                .build();
-
-
-TargetPrefetch prefetchRequest2 = new TargetPrefetch.Builder("mboxName2")
-                .setMboxParameters(mboxParameters2)
-                .setOrderParameters(orderParameters2)
-                .setProductParameters(productParameters2)
-                .build();
-
-
-List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
-prefetchMboxesList.add(prefetchRequest1);
-prefetchMboxesList.add(prefetchRequest2);
-
-
-// Call the prefetchContent API.
-Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCallback);
-```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -318,58 +247,6 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
        // do something with the callback response
 }];
 ```
-
-####Deprecated prefetchContent API
-
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `profileParameters`. The callback will be invoked when the prefetch is complete, which returns a success status for the prefetch request.
-
-#### Syntax
-
-```objectivec
-+ (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
-         withProfileParameters: (nullable NSDictionary<NSString*, NSString*>*) profileParameters
-                      callback: (nullable void (^) (BOOL success)) callback;
-```
-
-#### Objective-C Example
-
-```objectivec
-NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
-NSDictionary *productParameters1 = @{@"id":@"24D3412",
-                                        @"categoryId":@"Books"};
-NSDictionary *orderParameters1 = @{@"id":@"ADCKKIM",
-                                      @"total":@"344.30",
-                                      @"purchasedProductIds":@"34, 125, 99"};
-
-NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
-NSDictionary *productParameters2 = @{@"id":@"764334",
-                                         @"categoryId":@"Online"};
-NSArray *purchaseIDs = @[@"id1",@"id2"];
-NSDictionary *orderParameters2 = @{@"id":@"4t4uxksa",
-                                       @"total":@"54.90",
-                                       @"purchasedProductIds":purchaseIDs};
-
-// Creating Prefetch Objects
-ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject prefetchObjectWithName:@"logo" mboxParameters:mboxParameters1];
-prefetch1.productParameters = productParameters1;
-prefetch1.orderParameters = orderParameters1;
-
-ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject prefetchObjectWithName:@"buttonColor" mboxParameters:mboxParameters2];
-prefetch2.productParameters = productParameters2;
-prefetch2.orderParameters = orderParameters2;
-
-// Creating prefetch Array
-NSArray *prefetchArray = @[prefetch1,prefetch2];
-
-// Creating Profile parameters
-NSDictionary *profileParameters = @{@"age":@"20-32"};
-
-// Target API Call
-[ACPTarget prefetchContent:prefetchArray withProfileParameters:profileParameters callback:^(BOOL isSuccess){
-       // do something with the Boolean result
-}];
-```
-
 {% endtab %}
 {% endtabs %}
 
