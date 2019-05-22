@@ -2,7 +2,9 @@
 
 ## Emulating the trackBeacon call from v4 SDKs
 
-The `trackBeacon` call is no longer available in the AEP SDKs. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the [Profile extension](../../using-mobile-extensions/profile/) for the purposes of generating beacon-related Rules.
+The `trackBeacon` call is no longer available in the AEP SDKs. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the [Profile extension](../../using-mobile-extensions/profile/) for the purposes of generating beacon-related rules.
+
+This page contains sample code to help you implement your own `trackBeacon` calls.
 
 #### Tracking a beacon
 
@@ -61,7 +63,7 @@ void trackBeacon(final String beaconUUID, final String major, final String minor
 
 {% tab title="iOS" %}
 
-`CLBeacon` is only currently available in iOS. Our code contains the necessary checks to ensure OS compatibility.
+`CLBeacon` is only currently available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
 
 ```objectivec
 #if TARGET_OS_IOS
@@ -150,7 +152,9 @@ void clearCurrentBeacon() {
 
 {% tab title="iOS" %}
 
-`CLBeacon` is only currently available in iOS. Our code contains the necessary checks to ensure OS compatibility. This example is using `static` constant strings that were provided in the `trackBeacon` code sample above.
+`CLBeacon` is only currently available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
+
+This example is using `static` constant strings that were provided in the `trackBeacon` code sample above.
 
 ```objectivec
 #if TARGET_OS_IOS
