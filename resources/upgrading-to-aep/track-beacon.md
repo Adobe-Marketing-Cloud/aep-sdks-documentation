@@ -13,6 +13,12 @@ When your user comes within range of a beacon, call this method to send beacon d
 {% tabs %}
 {% tab title="Android" %}
 
+In this method, the `proximity` parameter is an `int` representing various distances:
+  - 0 - Unknown
+  - 1 - Immediate
+  - 2 - Near
+  - 3 - Far
+
 ```java
 static final String ACP_BEACON_MAJOR = "a.beacon.major";
 static final String ACP_BEACON_MINOR = "a.beacon.minor";
