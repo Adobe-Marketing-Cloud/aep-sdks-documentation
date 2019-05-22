@@ -289,6 +289,110 @@ ACPIdentity.appendVisitorInfoForURL(baseURL);
 {% endtab %}
 {% endtabs %}
 
+## Get visitor data as URL query parameter
+
+{% tabs %}
+{% tab title="Android" %}
+
+### getUrlVariables
+
+Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+
+- The `adobe_mc` attribute is an URL encoded list containing:
+  - `MCMID` - Experience Cloud ID \(ECID\)
+  - `MCORGID` - Experience Cloud Org ID
+  - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
+  - `TS` - A timestamp taken when this request was made
+- The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+#### **Syntax**
+
+```java
+public static void getUrlVariables(final AdobeCallback<String> callback);
+```
+
+#### **Example**
+
+```java
+Identity.getUrlVariables(new AdobeCallback<String>() {    
+    @Override    
+    public void call(String stringWithAdobeVisitorInfo) {        
+        //handle the URL query parameter string here                   
+    }
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### getUrlVariables
+
+Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
+
+- The adobe\_mc attribute is an URL encoded list containing:
+  - `MCMID` - Experience Cloud ID \(ECID\)
+  - `MCORGID` - Experience Cloud Org ID
+  - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
+  - `TS` - A timestamp taken when this request was made
+- The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+#### **Syntax**
+
+```objectivec
++ (void) getUrlVariables: (nullable void (^) (NSString* __nullable urlVariables)) callback;
+```
+
+#### **Examples**
+
+**Objective-C**
+
+```objectivec
+[ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
+// handle the URL query parameter string here}
+}];
+```
+
+**Swift**
+
+```swift
+ACPIdentity.getUrlVariables: {(urlVariables) in    
+    // URL query parameter string
+});
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+### getUrlVariables
+
+Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
+
+- The adobe\_mc attribute is an URL encoded list containing:
+  - `MCMID` - Experience Cloud ID \(ECID\)
+  - `MCORGID` - Experience Cloud Org ID
+  - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
+  - `TS` - A timestamp taken when this request was made
+- The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+#### Syntax
+
+```jsx
+ACPIdentity.getUrlVariables();
+```
+
+#### Usage
+
+```jsx
+ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## Get identifiers
 
 {% tabs %}
