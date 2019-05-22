@@ -10,6 +10,7 @@ The following updates were made in this release:
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz` 
 * Fixed the bug where `ACPCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
+* Fixed issue where retrieving Privacy status may get delayed when device is offline.
 
 #### iOS Identity 2.0.3:
 
@@ -22,6 +23,7 @@ The following updates were made in this release:
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `MobileCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
+* Fixed issue where retrieving Privacy status may get delayed when device is offline.
 * Added support for loading cached configuraiton and cached rules on subsequent launch.
 
 #### Android Identity 1.0.5:
