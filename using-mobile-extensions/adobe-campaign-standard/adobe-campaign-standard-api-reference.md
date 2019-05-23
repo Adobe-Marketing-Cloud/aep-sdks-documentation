@@ -1,5 +1,27 @@
 # Adobe Campaign Standard API reference
 
+## Get extension version
+
+Get the extension version
+
+{% tabs %}
+{% tab title="Android" %}
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```javascript
+ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPCampaign version: " + version));
+```
+{% endtab %}
+{% endtabs %}
+
 ## Set linkage fields
 
 Allows Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. Profile template-based messages that contain PII-based personalization are downloaded. The linkage fields are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header, `X-InApp-Auth`, in all future Campaign rules download requests until `ACPCampaign::resetLinkageFields` is invoked. The linkage fields are cleared when the app is gracefully closed, crashed, or the privacy status is changed to opt out. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
@@ -48,6 +70,14 @@ linkageFields["cusEmail"] = "john.doe@email.com"
 ACPCampaign.setLinkageFields(linkageFields)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```javascript
+ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Reset linkage fields
@@ -87,6 +117,14 @@ Campaign.resetLinkageFields()
 ### Swift
 
 ```swift
+ACPCampaign.resetLinkageFields();
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```javascript
 ACPCampaign.resetLinkageFields();
 ```
 {% endtab %}
