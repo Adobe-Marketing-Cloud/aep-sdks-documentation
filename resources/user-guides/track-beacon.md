@@ -193,8 +193,4 @@ Configure your condition by selecting the `Profile` extension, choosing `Profile
 
 Before using beacon data in your actions, creating a data element is recommended. You will need to create a data element for each variable you want to use in your actions. The image below is an example of creating a data element named `beacon.major` for the `a.beacon.major` key in our profile:
 
-<a href="../../.gitbook/assets/beacon-data-element.png"><img src="../../.gitbook/assets/beacon-data-element.png"></img></a>
-
 After creating a data element, we can use it as token replacement in our actions. The screenshot below shows an action sending data to Analytics, and attaching the `beacon.major` data element as additional context data:
-
-<a href="../../.gitbook/assets/beacon-token-replacement.png"><img src="../../.gitbook/assets/beacon-token-replacement.png"></img></a>
