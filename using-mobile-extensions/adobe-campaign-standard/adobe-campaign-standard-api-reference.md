@@ -2,7 +2,7 @@
 
 ## Get extension version
 
-Get the extension version
+To return the current version of the ACPCampaign extension, use the following APIs:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -10,7 +10,34 @@ Get the extension version
 {% endtab %}
 
 {% tab title="iOS" %}
+#### Objective-C
 
+#### Syntax
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+
+#### Example
+
+```objectivec
+
+```
+
+#### Swift
+
+#### Syntax
+
+```swift
+class func extensionVersion() -> String {
+}
+```
+
+#### Example
+
+```swift
+
+```
 {% endtab %}
 
 {% tab title="React Native" %}
