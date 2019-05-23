@@ -178,19 +178,20 @@ In the above code samples, attributes are being set in the client-side user prof
 
 Mix-and-match beacon data in conditions to determine the specific audience for your action. You can use the following beacon-related variables:
 
-- UUID (`a.beacon.uuid`)
-- Major ID (`a.beacon.major`)
-- Minor ID (`a.beacon.minor`)
-- User Proximity (`a.beacon.prox`)
+* UUID \(`a.beacon.uuid`\)
+* Major ID \(`a.beacon.major`\)
+* Minor ID \(`a.beacon.minor`\)
+* User Proximity \(`a.beacon.prox`\)
 
-<a href="../../.gitbook/assets/beacon-rule.png"><img src="../../.gitbook/assets/beacon-rule.png"></img></a>
-
-Configure your condition by selecting the `Profile` extension, choosing `Profile Value` as a condition type, and entering in the desired variable. The following image shows an example of a condition which will pass when the Major ID (`a.beacon.major`) of the beacon is equal to `12`:
-
-<a href="../../.gitbook/assets/beacon-condition.png"><img src="../../.gitbook/assets/beacon-condition.png"></img></a>
+Configure your condition by selecting the `Profile` extension, choosing `Profile Value` as a condition type, and entering in the desired variable. The following image shows an example of a condition which will pass when the Major ID \(`a.beacon.major`\) of the beacon is equal to `12`:
 
 ### Beacon data in rule actions
 
 Before using beacon data in your actions, creating a data element is recommended. You will need to create a data element for each variable you want to use in your actions. The image below is an example of creating a data element named `beacon.major` for the `a.beacon.major` key in our profile:
 
 After creating a data element, we can use it as token replacement in our actions. The screenshot below shows an action sending data to Analytics, and attaching the `beacon.major` data element as additional context data:
+
+![](../../.gitbook/assets/beacon-data-element.png)
+
+![](../../.gitbook/assets/beacon-token-replacement.png)
+
