@@ -57,6 +57,29 @@ To get started with Audience Manager, complete these steps:
 
 **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+Install Audience Manager
+
+```jsx
+npm install @adobe/react-native-acpaudience
+react-native link @adobe/react-native-acpaudience
+```
+
+Importing the extension
+
+```jsx
+import {ACPAudience} from '@adobe/react-native-acpaudience';
+```
+
+Getting the extension version
+
+```jsx
+ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAudience version: " + version));
+```
+{% endtab %}
 {% endtabs %}
 
 ### Register Audience Manager with Mobile Core
@@ -115,6 +138,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
  // Override point for customization after application launch.
  return true;
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+import {ACPAudience} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPAudience.registerExtension();
 }
 ```
 {% endtab %}
