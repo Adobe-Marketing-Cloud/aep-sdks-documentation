@@ -69,6 +69,8 @@ void trackBeacon(final String beaconUUID, final String major, final String minor
 {% tab title="iOS" %}
 `CLBeacon` is only currently available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
 
+#### Objective-C
+
 ```objectivec
 #if TARGET_OS_IOS
 static NSString* const ACP_BEACON_MAJOR = @"a.beacon.major";
@@ -131,6 +133,57 @@ static NSString* const ACP_BEACON_PROXIMITY = @"a.beacon.prox";
 }
 #endif
 ```
+
+#### Swift
+
+```swift
+import ARKit
+
+class ARKitSampleViewController: UIViewController {
+    var label: UILabel?
+    var planeFound = false
+
+    func plane(from anchor: ARPlaneAnchor?) -> SCNNode? {
+        let plane = SCNPlane(width: CGFloat(anchor?.extent.x ?? 0.0), height: CGFloat(anchor?.extent.z ?? 0.0))
+
+        plane.firstMaterial?.diffuse.contents = UIColor.clear
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(anchor?.center.x ?? 0.0, 0, anchor?.center.z ?? 0.0)
+        // SCNPlanes are vertically oriented in their local coordinate space.
+        // Rotate it to match the horizontal orientation of the ARPlaneAnchor.
+        planeNode.transform = SCNMatrix4MakeRotation(-.pi * 0.5, 1, 0, 0)
+
+        return planeNode
+    }
+
+// MARK: - ARSCNViewDelegate
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if planeFound == false {
+            if (anchor is ARPlaneAnchor) {
+                DispatchQueue.main.async(execute: {
+                    self.planeFound = true
+                    self.label?.text = "DANCEFLOOR FOUND. LET'S BOOGIE"
+
+                    let overlay = UIView(frame: self.view.frame)
+                    overlay.backgroundColor = UIColor.black
+                    overlay.alpha = 0
+                    if let label = self.label {
+                        self.view.insertSubview(overlay, belowSubview: label)
+                    }
+
+                    UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseIn, animations: {
+                        self.label?.alpha = 0
+                        overlay.alpha = 0.5
+                    }) { finished in
+                        let planeAnchor = anchor as? ARPlaneAnchor
+                        // Show the disco ball here
+                    }
+                })
+            }
+        }
+    }
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -157,6 +210,8 @@ void clearCurrentBeacon() {
 
 This example is using `static` constant strings that were provided in the `trackBeacon` code sample above.
 
+#### Objective-C
+
 ```objectivec
 #if TARGET_OS_IOS
 + (void) clearCurrentBeacon {
@@ -164,6 +219,20 @@ This example is using `static` constant strings that were provided in the `track
     [ACPUserProfile removeUserAttribute:ACP_BEACON_MINOR];
     [ACPUserProfile removeUserAttribute:ACP_BEACON_UUID];
     [ACPUserProfile removeUserAttribute:ACP_BEACON_PROXIMITY];
+}
+#endif
+```
+
+#### Swift
+
+```swift
+#if TARGET_OS_IOS
++clearCurrentBeacon
+do {
+    ACPUserProfile.removeUserAttribute(ACP_BEACON_MAJOR)
+    ACPUserProfile.removeUserAttribute(ACP_BEACON_MINOR)
+    ACPUserProfile.removeUserAttribute(ACP_BEACON_UUID)
+    ACPUserProfile.removeUserAttribute(ACP_BEACON_PROXIMITY)
 }
 #endif
 ```
