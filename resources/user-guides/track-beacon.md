@@ -185,6 +185,10 @@ Mix-and-match beacon data in conditions to determine the specific audience for y
 
 Configure your condition by selecting the `Profile` extension, choosing `Profile Value` as a condition type, and entering in the desired variable. The following image shows an example of a condition which will pass when the Major ID \(`a.beacon.major`\) of the beacon is equal to `12`:
 
+![](../../.gitbook/assets/beacon-condition.png)
+
+![](../../.gitbook/assets/beacon-rule.png)
+
 ### Beacon data in rule actions
 
 Before using beacon data in your actions, creating a data element is recommended. You will need to create a data element for each variable you want to use in your actions. The image below is an example of creating a data element named `beacon.major` for the `a.beacon.major` key in our profile:
