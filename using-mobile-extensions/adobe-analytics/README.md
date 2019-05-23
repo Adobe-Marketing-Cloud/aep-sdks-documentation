@@ -113,6 +113,29 @@ import ACPCore
 import ACPAnalytics
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+Install Analytics
+
+```jsx
+npm install @adobe/react-native-acpanalytics
+react-native link @adobe/react-native-acpanalytics
+```
+
+Importing the extension
+
+```jsx
+import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
+```
+
+Getting the extension version
+
+```jsx
+ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
+```
+{% endtab %}
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -175,6 +198,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 **Important**: Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+import {ACPAnalytics} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPAnalytics.registerExtension();
+}
+```
 {% endtab %}
 {% endtabs %}
 

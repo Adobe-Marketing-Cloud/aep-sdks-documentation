@@ -120,6 +120,40 @@ Pause Lifecycle data collection when your app has entered the background:
  }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Lifecycle extension
+
+```jsx
+import {ACPLifecycle} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version
+
+```jsx
+ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+```
+
+Registering the extension with Core
+
+```jsx
+ACPLifecycle.registerExtension();
+```
+
+Starting a lifecycle event
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+Pausing a lifecycle event
+
+```jsx
+ACPCore.lifecyclePause();
+```
+{% endtab %}
 {% endtabs %}
 
 ## Collect additional data with Lifecycle
@@ -165,6 +199,14 @@ public void onResume() {
 func applicationWillEnterForeground(_ application: UIApplication) {      
     ACPCore.lifecycleStart(["state": "appResume"])
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
 {% endtabs %}
