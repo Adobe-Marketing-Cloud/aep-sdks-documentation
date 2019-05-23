@@ -285,6 +285,18 @@ After you complete [Apple's instructions](https://developer.apple.com/library/ar
 ACPCore.setPushIdentifier(deviceToken)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+Follow instructions in the Android/iOS tabs to setup platform specific push configuration, then use the following API in your React Native project:
+
+### setPushIdentifier
+
+#### JavaScript
+
+```javascript
+ACPCore.setPushIdentifier("pushIdentifier");
+```
+{% endtab %}
 {% endtabs %}
 
 If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
