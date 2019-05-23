@@ -69,6 +69,16 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_
 })
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### **signalWithData**
+
+```jsx
+ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
+```
+{% endtab %}
 {% endtabs %}
 
 ## Reset identifiers and profiles
@@ -117,6 +127,16 @@ Audience.reset();
 
 ```swift
 ACPAudience.reset()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### **JavaScript**
+
+### **reset**
+
+```jsx
+ACPAudience.reset();
 ```
 {% endtab %}
 {% endtabs %}
@@ -178,6 +198,16 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
     // your customized code
 })
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+### getVisitorProfile
+
+```jsx
+ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
 ```
 {% endtab %}
 {% endtabs %}
