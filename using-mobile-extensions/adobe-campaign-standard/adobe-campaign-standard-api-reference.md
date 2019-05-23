@@ -6,7 +6,13 @@ To return the current version of the ACPCampaign extension, use the following AP
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
 
+#### Example
+
+```java
+Campaign.getExtensionVersion();
+```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -21,7 +27,7 @@ To return the current version of the ACPCampaign extension, use the following AP
 #### Example
 
 ```objectivec
-
+NSLog([ACPCore extensionVersion]);
 ```
 
 #### Swift
@@ -29,14 +35,13 @@ To return the current version of the ACPCampaign extension, use the following AP
 #### Syntax
 
 ```swift
-class func extensionVersion() -> String {
-}
+class func extensionVersion() -> String {}
 ```
 
 #### Example
 
 ```swift
-
+print(ACPCore.extensionVersion());
 ```
 {% endtab %}
 
