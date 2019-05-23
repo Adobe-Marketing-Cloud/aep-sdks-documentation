@@ -15,5 +15,5 @@ Sending beacon data and to Adobe Analytics for reporting can be an effective way
 
 ### Links
 
-* [Implementing beacon tracking for Adobe Analytics in Mobile Android & iOS applications](../../using-mobile-extensions/adobe-target/)
+* [Implementing beacon tracking for Adobe Analytics in Mobile Android & iOS applications](track-beacon.md)
 
