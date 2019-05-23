@@ -115,6 +115,31 @@ import ACPCampaign
 import ACPUserProfile
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../mobile-core/) extension. Follow these steps to get started:
+
+#### Create React Native Project
+
+```bash
+react-native init MyReactApp
+```
+
+#### Install JavaScript packages
+
+Install and link the @adobe/react-native-acpcampaign package:
+
+```bash
+npm install @adobe/react-native-acpcampaign
+react-native link @adobe/react-native-acpcampaign
+```
+
+#### Import the extension
+
+```bash
+import {ACPCampaign} from '@adobe/react-native-acpcampaign';
+```
+{% endtab %}
 {% endtabs %}
 
 ### Register Campaign Standard with Mobile Core
@@ -172,6 +197,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   // Override point for customization after application launch.
   return true;
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+To register the Campaign Standard with Core, use the following API:
+
+#### JavaScript
+
+```javascript
+ACPCampaign.registerExtension();
 ```
 {% endtab %}
 {% endtabs %}

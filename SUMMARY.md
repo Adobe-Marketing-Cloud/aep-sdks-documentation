@@ -71,8 +71,8 @@
 * [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/README.md)
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
-* [User Guides](resources/user-guides.md)
-  * [Tracking Beacons](resources/upgrading-to-aep/track-beacon.md)
+* [User Guides](resources/user-guides/README.md)
+  * [Tracking Beacons](resources/user-guides/track-beacon.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)
@@ -93,3 +93,4 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+

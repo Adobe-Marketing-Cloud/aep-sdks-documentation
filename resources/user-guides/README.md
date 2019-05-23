@@ -14,4 +14,6 @@ This is the starting point for mobile app developers who want to learn how to im
 Sending beacon data and to Adobe Analytics for reporting can be an effective way of further understanding how your audiences interact with physical landmarks. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the Profile extension for the purposes of generating beacon-related rules.
 
 ### Links
-* [Implementing beacon tracking for Adobe Analytics in Mobile Android & iOS applications](../../user-guides/track-beacon)
+
+* [Implementing beacon tracking for Adobe Analytics in Mobile Android & iOS applications](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/ae4989902c34c9d348015faaab077e989968a37b/user-guides/track-beacon/README.md)
+
