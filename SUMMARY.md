@@ -71,7 +71,7 @@
 * [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/README.md)
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
-* [User Guides](resources/user-guides/README.md)
+* [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)

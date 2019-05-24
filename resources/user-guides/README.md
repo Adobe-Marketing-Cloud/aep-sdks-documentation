@@ -1,4 +1,4 @@
-# User Guides
+# Tutorials
 
 ## Implementing Experience Cloud solutions in Mobile Android & iOS Swift applications
 
