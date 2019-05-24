@@ -366,37 +366,6 @@ ACPIdentity.getUrlVariables: {(urlVariables) in
 ```
 
 {% endtab %}
-
-{% tab title="React Native" %}
-
-#### JavaScript
-
-### getUrlVariables
-
-*added in ACPIdentity v1.0.3*
-
-Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
-
-- The adobe\_mc attribute is an URL encoded list containing:
-  - `MCMID` - Experience Cloud ID \(ECID\)
-  - `MCORGID` - Experience Cloud Org ID
-  - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
-  - `TS` - A timestamp taken when this request was made
-- The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
-
-#### Syntax
-
-```jsx
-ACPIdentity.getUrlVariables();
-```
-
-#### Usage
-
-```jsx
-ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
-```
-
-{% endtab %}
 {% endtabs %}
 
 ## Get identifiers
