@@ -137,52 +137,67 @@ static NSString* const ACP_BEACON_PROXIMITY = @"a.beacon.prox";
 #### Swift
 
 ```swift
-import ARKit
+#if TARGET_OS_IOS
+private let ACP_BEACON_MAJOR = "a.beacon.major"
+private let ACP_BEACON_MINOR = "a.beacon.minor"
+private let ACP_BEACON_UUID = "a.beacon.uuid"
+private let ACP_BEACON_PROXIMITY = "a.beacon.prox"
 
-class ARKitSampleViewController: UIViewController {
-    var label: UILabel?
-    var planeFound = false
+class func trackBeacon(_ beacon: CLBeacon?, data: [AnyHashable : Any]?) {
+    var contextData = data != nil ? data : [:]
 
-    func plane(from anchor: ARPlaneAnchor?) -> SCNNode? {
-        let plane = SCNPlane(width: CGFloat(anchor?.extent.x ?? 0.0), height: CGFloat(anchor?.extent.z ?? 0.0))
-
-        plane.firstMaterial?.diffuse.contents = UIColor.clear
-        let planeNode = SCNNode(geometry: plane)
-        planeNode.position = SCNVector3Make(anchor?.center.x ?? 0.0, 0, anchor?.center.z ?? 0.0)
-        // SCNPlanes are vertically oriented in their local coordinate space.
-        // Rotate it to match the horizontal orientation of the ARPlaneAnchor.
-        planeNode.transform = SCNMatrix4MakeRotation(-.pi * 0.5, 1, 0, 0)
-
-        return planeNode
+    if beacon?.major != nil {
+        contextData?[ACP_BEACON_MAJOR] = beacon?.major.stringValue ?? ""
+        ACPUserProfile.updateUserAttribute(ACP_BEACON_MAJOR, withValue: beacon?.major.stringValue ?? "")
+    } else {
+        ACPUserProfile.removeUserAttribute(ACP_BEACON_MAJOR)
     }
 
-// MARK: - ARSCNViewDelegate
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if planeFound == false {
-            if (anchor is ARPlaneAnchor) {
-                DispatchQueue.main.async(execute: {
-                    self.planeFound = true
-                    self.label?.text = "DANCEFLOOR FOUND. LET'S BOOGIE"
-
-                    let overlay = UIView(frame: self.view.frame)
-                    overlay.backgroundColor = UIColor.black
-                    overlay.alpha = 0
-                    if let label = self.label {
-                        self.view.insertSubview(overlay, belowSubview: label)
-                    }
-
-                    UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseIn, animations: {
-                        self.label?.alpha = 0
-                        overlay.alpha = 0.5
-                    }) { finished in
-                        let planeAnchor = anchor as? ARPlaneAnchor
-                        // Show the disco ball here
-                    }
-                })
-            }
-        }
+    if beacon?.minor != nil {
+        contextData?[ACP_BEACON_MINOR] = beacon?.minor.stringValue ?? ""
+        ACPUserProfile.updateUserAttribute(ACP_BEACON_MINOR, withValue: beacon?.minor.stringValue ?? "")
+    } else {
+        ACPUserProfile.removeUserAttribute(ACP_BEACON_MINOR)
     }
+
+    if beacon?.proximityUUID.uuidString != nil {
+        contextData?[ACP_BEACON_UUID] = beacon?.proximityUUID.uuidString ?? ""
+        ACPUserProfile.updateUserAttribute(ACP_BEACON_UUID, withValue: beacon?.proximityUUID.uuidString)
+    } else {
+        ACPUserProfile.removeUserAttribute(ACP_BEACON_UUID)
+    }
+
+    switch beacon?.proximity {
+        case .immediate?:
+            contextData?[ACP_BEACON_PROXIMITY] = "1"
+        case .near?:
+            contextData?[ACP_BEACON_PROXIMITY] = "2"
+        case .far?:
+            contextData?[ACP_BEACON_PROXIMITY] = "3"
+        case .unknown?:
+            fallthrough
+        default:
+            contextData?[ACP_BEACON_PROXIMITY] = "0"
+    }
+    ACPUserProfile.updateUserAttribute(ACP_BEACON_PROXIMITY, withValue: contextData?[ACP_BEACON_PROXIMITY])
+
+    let eventData = [
+    "trackinternal": NSNumber(value: true),
+    "action": "Beacon",
+    "contextdata": contextData
+]
+
+var event: ACPExtensionEvent? = nil
+do {
+    event = try ACPExtensionEvent(name: "TrackBeacon", type: "com.adobe.eventType.generic.track", source: "com.adobe.eventSource.requestContent", data: eventData)
+} catch {
 }
+do {
+    try ACPCore.dispatchEvent(event)
+} catch {
+}
+
+#endif
 ```
 {% endtab %}
 {% endtabs %}
