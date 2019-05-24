@@ -2,14 +2,13 @@
 
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
-There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. 
-The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the new Adobe Experience Platform Mobile SDK.
+There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the new Adobe Experience Platform Mobile SDK.
 
 | Core Features | AEP SDK | 4x SDK |
 | :--- | :--- | :--- |
 | Server-side, dynamic configuration | ✔️ |  |
 | Programmatic configuration | ✔️ | ✔️ |
-| Configuration UI | [Launch](https://launch.adobe.com) |[Mobile Services](https://mobilemarketing.adobe.com) |
+| Configuration UI | [Launch](https://launch.adobe.com) | [Mobile Services](https://mobilemarketing.adobe.com) |
 | Partner SDK extensions | ✔️ |  |
 | Lifecycle metrics | ✔️ | ✔️ |
 | GET/POST postbacks | ✔️ | ✔️ |
@@ -25,7 +24,6 @@ The new SDKs offer extensions to augment core SDK functionality, server-side con
 | Adobe Target - Visual Experience Composer | ✔️ | ✔️ |
 | \(BETA\) Adobe Experience Platform Location Service | ✔️ |  |
 | \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
-
 
 ### Do I need additional permissions to create a mobile property in Launch?
 
