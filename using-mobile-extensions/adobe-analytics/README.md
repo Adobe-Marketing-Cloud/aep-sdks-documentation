@@ -400,6 +400,40 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 {% endtab %}
 {% endtabs %}
 
+
+## Custom Events
+To set custom events on hits, you need to pass a context data variable. Use the following syntax:
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+#### Syntax
+
+```java
+cdata.put("countersomething", "1");
+```
+
+#### Example
+
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+
+// add events
+cdata.put("countersomething", "1");
+
+// send a tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("Action Name", cdata);
+// trackState example:
+MobileCore.trackState("State Name", cdata);
+```
+{% endtab %}
+
+{% hint style="info" %}
+You need to map this event on processing rules. 
+{% endhint %}
+
 ## Event serialization
 
 Event serialization is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
@@ -457,6 +491,8 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Videos
 
