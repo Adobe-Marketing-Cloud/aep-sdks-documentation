@@ -1,5 +1,20 @@
 # Release notes
 
+## May 31, 2019
+
+The following updates were made in this release:
+
+**iOS Core 2.3.0:**
+
+* Fixed several crash issues.
+* Fixed the migration of Custom Analytics ID from v4.
+* Added the `collectMessageInfo` API to collect push/local notification-related data.
+* Added the support for title and custom sound in local notifications.
+
+**iOS Identity 2.1.0**
+
+* Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
+
 ## May 20, 2019
 
 The following updates were made in this release:
