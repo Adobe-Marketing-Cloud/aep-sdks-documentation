@@ -29,8 +29,8 @@ The following updates were made in this release:
 
 #### Android Campaign 1.0.1:
 
-* Added enhanced alert reporting with clickthrough URL support in the campaign response event.
-* Added support for custom title in local notifications.
+* Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
+* Added support for a custom title in local notifications.
 
 ## May 17, 2019
 
