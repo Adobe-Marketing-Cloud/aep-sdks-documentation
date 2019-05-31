@@ -319,7 +319,12 @@ public static void getUrlVariables(final AdobeCallback<String> callback);
 Identity.getUrlVariables(new AdobeCallback<String>() {    
     @Override    
     public void call(String stringWithAdobeVisitorInfo) {        
-        //handle the URL query parameter string here                   
+        //handle the URL query parameter string here 
+        //For example, open the URL on the device browser        
+        //        
+        Intent i = new Intent(Intent.ACTION_VIEW);        
+        i.setData(Uri.parse("http://myUrl.com?" + urlWithAdobeVisitorInfo));        
+        startActivity(i);    
     }
 });
 ```
@@ -344,7 +349,7 @@ Retrieve Adobe visitor data as a URL query parameter string for consumption in h
 #### **Syntax**
 
 ```objectivec
-+ (void) getUrlVariables: (nullable void (^) (NSString* __nullable urlVariables)) callback;
++ (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
 ```
 
 #### **Examples**
@@ -353,16 +358,29 @@ Retrieve Adobe visitor data as a URL query parameter string for consumption in h
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
-// handle the URL query parameter string here}
+  // handle the URL query parameter string here
+  NSString* urlString = @"http://myUrl.com";
+  NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
+  NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+  [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
+    // handle openURL success
+  }];
 }];
 ```
 
 **Swift**
 
 ```swift
-ACPIdentity.getUrlVariables: {(urlVariables) in    
+ACPIdentity.getUrlVariables {(urlVariables) in    
     // URL query parameter string
-});
+    let urlStringWithVisitorData : String = "http://myUrl.com?" + urlVariables!
+    let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
+    UIApplication.shared.open(urlWithVisitorData as URL, 
+                              options: [:], 
+                              completionHandler: {(complete) in 
+                                 // handle open success
+    })
+}
 ```
 
 {% endtab %}
