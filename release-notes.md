@@ -15,6 +15,11 @@ The following updates were made in this release:
 
 * Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
 
+**iOS Campaign 1.0.2**
+
+* Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
+* Added support for a custom title in local notifications.
+
 ## May 20, 2019
 
 The following updates were made in this release:
