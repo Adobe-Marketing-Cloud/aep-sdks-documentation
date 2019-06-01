@@ -289,7 +289,7 @@ ACPIdentity.appendVisitorInfoForURL(baseURL);
 {% endtab %}
 {% endtabs %}
 
-## Get visitor data as URL query parameter
+## Get visitor data as URL query parameter <a id="getUrlVariablesTitle"></a>
 
 {% tabs %}
 {% tab title="Android" %}
