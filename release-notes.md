@@ -1,5 +1,20 @@
 # Release notes
 
+## May 31, 2019
+
+The following updates were made in this release:
+
+**iOS Core 2.3.0:**
+
+* Fixed several crash issues.
+* Fixed the migration of Custom Analytics ID from v4.
+* Added the `collectMessageInfo` API to collect push/local notification-related data.
+* Added the support for title and custom sound in local notifications.
+
+**iOS Identity 2.1.0**
+
+* Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
+
 ## May 20, 2019
 
 The following updates were made in this release:
@@ -10,6 +25,7 @@ The following updates were made in this release:
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz` 
 * Fixed the bug where `ACPCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
+* Fixed issue where retrieving Privacy status may get delayed when device is offline.
 
 #### iOS Identity 2.0.3:
 
@@ -22,11 +38,17 @@ The following updates were made in this release:
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `MobileCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
+* Fixed issue where retrieving Privacy status may get delayed when device is offline.
 * Added support for loading cached configuraiton and cached rules on subsequent launch.
 
 #### Android Identity 1.0.5:
 
 * Fixed issue where the Analytics visitor identifier \(VID\) was not included in the `Identity.appendVisitorInfoForURL` callback value.
+
+#### Android Campaign 1.0.1:
+
+* Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
+* Added support for a custom title in local notifications.
 
 ## May 17, 2019
 

@@ -1,82 +1,29 @@
 # Frequently asked questions
 
-## Differences between the Adobe Analytics Mobile SDK v4.x and the Adobe Experience Platform Mobile SDK
+## What's new in the Adobe Experience Platform Mobile SDK?
 
-One of the main benefits of the Adobe Experience Platform Mobile SDK is the ability to augment functionality by adding solution extensions that do not require an additional SDK.
+There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the new Adobe Experience Platform Mobile SDK.
 
-The table below highlights some of the differneces between the previous generation mobile SDK and the latest Adobe Experience Platform Mobile SDK.
-
-|  | Mobile SDK v4.x | Adobe Experience Platform Mobile SDK |
+| Core Features | AEP SDK | 4x SDK |
 | :--- | :--- | :--- |
+| Server-side, dynamic configuration | ✔️ |  |
+| Programmatic configuration | ✔️ | ✔️ |
+| Configuration UI | [Launch](https://launch.adobe.com) | [Mobile Services](https://mobilemarketing.adobe.com) |
+| Partner SDK extensions | ✔️ |  |
+| Lifecycle metrics | ✔️ | ✔️ |
+| GET/POST postbacks | ✔️ | ✔️ |
 
-
-| Programatic Configuration | ✔️ | ✔️ |
+| Solution | AEP SDK | 4x SDK |
 | :--- | :--- | :--- |
-
-
-| SDK Configuration Management | Adobe Mobile Services | Adobe Experience Platform Launch |
-| :--- | :--- | :--- |
-
-
-| Ability to dynamically update configuration |  | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Lifecycle Metrics | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Postback support | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Acquistion links through Adobe Mobile Services | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Push Notifications through Adobe Mobile Services | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| In-App Messaging through Adobe Mobile Services | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Adobe Analytics integration | ✔️ | ✔️ Includes the ability to configure separate report suites for dev, stage and production environments |
-| :--- | :--- | :--- |
-
-
-| Adobe Audience Manager integration | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Adobe Campaign Classic support | Requires separate Neolane SDK | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Adobe Campaign Standard |  | ✔️ Includes mobile channel for Push notifications and In-App Messaging |
-| :--- | :--- | :--- |
-
-
+| Adobe Analytics | ✔️ | ✔️ |
+| Adobe Analytics - Mobile Services | Messaging & Marketing Links | ✔️ |
+| Adobe Audience Manager | ✔️ | ✔️ |
+| Adobe Campaign Classic support | ✔️ |  |
+| Adobe Campaign Standard | Push & in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Adobe Target Visual Experience Composer |  | ✔️ |
-| :--- | :--- | :--- |
-
-
-| \(BETA\) Adobe Location Services |  | ✔️ Places Monitor and Location Services extension |
-| :--- | :--- | :--- |
-
-
-| \(BETA\) Project Griffon Mobile Validation |  | ✔️ |
-| :--- | :--- | :--- |
-
-
-| Support for 3rd party vendor extensions |  | ✔️ |
-| :--- | :--- | :--- |
-
+| Adobe Target - Visual Experience Composer | ✔️ | ✔️ |
+| \(BETA\) Adobe Experience Platform Location Service | ✔️ |  |
+| \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
 
 ### Do I need additional permissions to create a mobile property in Launch?
 

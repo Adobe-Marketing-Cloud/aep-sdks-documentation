@@ -112,6 +112,7 @@ To avoid collisions, special key prefixes always start with `~` to differentiate
 | `~type` | `~type` | Reads `eventType` from the triggering event. |
 | `~source` | `~source` | Reads `eventSource` from the triggering event. |
 | `~timestampu` | `~timestampu` | Reads the current device time in epoch format \(seconds since epoch\). |
+| `~timestampz` | `~timestampz` | Reads the current device time in ISO 8601 data elements and interchange format. |
 | `~sdkver` | `~sdkver` | Reads the current Adobe Experience Platform SDKs version string. |
 | `~cachebust` | `~cachebust` | Generates a random number to be used for cache busting. |
 | `~all_url` | `~all_url` | Contains all data in the Event object and is encoded in the `url` format. |
