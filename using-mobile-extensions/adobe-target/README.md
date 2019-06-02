@@ -116,9 +116,9 @@ Prefetched offer content does not persist across launches. The prefetch content 
 #### Java
 
 
-#### Using the `TargetPrefetch` Constructor
+#### Using the `TargetPrefetch` constructor
 
-Using `TargetPrefetch` Constructor, you can create a `TargetPrefetch` instance with the specified data. It currently accepts location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations. 
+With `TargetPrefetch` constructor, you can create a `TargetPrefetch` instance with the specified data. It currently accepts the location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
 
 
 #### Syntax
@@ -135,7 +135,7 @@ TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", targetParameters
 
 #### Using `prefetchContent`
 
-Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and specified `TargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
+Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and the specified `TargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
 
 #### Syntax
 
@@ -190,7 +190,7 @@ Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallb
 {% tab title="iOS" %}
 #### Objective C
 
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a nil value. If the prefetch is not successful, an error message is returned.
+Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and the specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a nil value. If the prefetch is not successful, an error message is returned.
 
 #### Syntax
 
@@ -252,21 +252,22 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 ### Using TargetParameters, TargetOrder and TargetProduct object
 
-Using `TargetParameters`, you can encapsulate various parameters (namely mboxParameters, profileParameters, orderParameters and productParameters) for easy use
-With `TargetOrder`, you can encapsulate the order parameters and use it in TargetParameters.
-With `TargetProduct`, you can encapsulate the product parameters and use it in TargetParameters.
+With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use.
+With `TargetOrder`, you can combine the order parameters and use it in TargetParameters.
+With `TargetProduct`, you can combine the product parameters and use it in TargetParameters.
 
 
 
-**Merging behavior of parameters passed in API's  with parameters passed in TargetPrefetch/TargetRequest Object**
+**Merge behavior of parameters that are passed in the APIs with parameters that are passed in the TargetPrefetch/TargetRequest Object**
 
-There can be cases, when global parameters are passed in APIs. If targetParameters are also passed in corresponding prefetch/request objects, then those parameters will be merged along with global parameters. 
+Sometimes global parameters are passed in APIs. If `targetParameters` are also passed in the corresponding prefetch/request objects, the parameters are merged with the global parameters.
 
-Corresponding TargetOrder and TargetProduct parameters will be overridden by API level global parameters.
-Mbox-parameters and profile-parameters will be appended only if the key names differ. Otherwise if key name matches then they will be overwritten.
+The corresponding `TargetOrder` and `TargetProduct` parameters will be overridden by the API-level global parameters.
+If the key names differ, mbox parameters and profile parameters are appended. If the key names are the same, these parameters will be overwritten.
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### **Syntax**
 
 ```java
@@ -344,9 +345,9 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 ### Using Locations Displayed API for Prefetch
 
-In some situations, you may want to want to inform Target that the corresponding location (mbox) has been viewed. This API sends a display notification to Target for a given prefetched mbox. This helps Target record location display events.
+In some situations, you might want to want to inform Target that the corresponding location (mbox) has been viewed. This API sends a display notification to Target for a prefetched mbox, which helps Target record location display events.
 
-Note: If you're only using regular mboxes, and not prefetching any mbox content, this method should not be called.
+Tip: If you are only using regular mboxes, and not prefetching any mbox content, do not call this method.
 
 {% tabs %}
 {% tab title="Android" %}
