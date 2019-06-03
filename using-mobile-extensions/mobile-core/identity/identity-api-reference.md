@@ -300,7 +300,7 @@ ACPIdentity.appendVisitorInfoForURL(baseURL);
 
 Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
-- The `adobe_mc` attribute is an URL encoded list containing:
+- The `adobe_mc` attribute is an URL encoded list that contains:
   - `MCMID` - Experience Cloud ID \(ECID\)
   - `MCORGID` - Experience Cloud Org ID
   - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
@@ -339,7 +339,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 
 Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
 
-- The adobe\_mc attribute is an URL encoded list containing:
+- The adobe\_mc attribute is an URL encoded list that contains:
   - `MCMID` - Experience Cloud ID \(ECID\)
   - `MCORGID` - Experience Cloud Org ID
   - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
