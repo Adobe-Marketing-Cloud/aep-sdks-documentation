@@ -73,8 +73,8 @@ The following updates were made to the Adobe Target extension in Android version
 
  * Upgraded Target Delivery APIs to latest v1 delivery endpoint.
  * Introduced `retrieveLocationContent`, a new API that retrieves content for multiple Target mbox locations simultaneously without increasing the reporting count for prefetch cases.
- * Introduced  `locationsDisplayed`, a new API that helps Target record location to display events. This API should only be used for prefetch scenarios.
- * Provided Support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
+ * Introduced `locationsDisplayed`, a new API that helps Target record location to display events. This API should only be used for prefetch scenarios.
+ * Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
  * New `prefetchContent` & `locationClicked` APIs which accept TargetParameters
 
 ## May 9, 2019
