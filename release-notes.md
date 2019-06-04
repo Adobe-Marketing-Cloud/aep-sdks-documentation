@@ -15,6 +15,12 @@ The following updates were made in this release:
 
 * Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
 
+## May 30, 2019
+
+#### Android Places Monitor 1.0.1: 
+
+- Fixed bug that prevents entry event for pois happening on launch.
+
 ## May 20, 2019
 
 The following updates were made in this release:
@@ -54,16 +60,14 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-#### Android
-
-Android Places Extension 1.2.0:
+#### Android Places Extension 1.2.0:
 
 * Added a new API to process an individual `Geofence`.
 * Bug fix to prevent multiple consecutive entry events.
 
-Android Places Monitor 1.0.0:
+#### Android Places Monitor 1.0.0:
 
-* Initial release of the Places Monitor for Android.
+* Initial release of the Places Monitor for Android. The Places Monitor manages the OS-level Location APIs and communicates directly with the Places Extension.  With both extensions installed, customers can have out-of-the-box region monitoring in their application.
 
 For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
