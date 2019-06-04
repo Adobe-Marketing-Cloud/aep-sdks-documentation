@@ -11,7 +11,7 @@ To get started with Target, follow these steps:
    * Prefetch offers.
    * Enter visual preview mode.
 
-## Configure the Target extension in Launch    <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure the Target extension in Launch     <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
 
@@ -101,7 +101,7 @@ public class TargetApp extends Application {
 {% endtab %}
 {% endtabs %}
 
-## Prefetch offers    <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Prefetch offers     <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. When this feature is enabled, offer content is retrieved and cached during the prefetch call. This content is retrieved from the cache for all future calls that contain cached content for the specified mbox name. This prefetch process reduces offer load time, network calls made to Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
 
@@ -115,11 +115,9 @@ Prefetched offer content does not persist across launches. The prefetch content 
 {% tab title="Android" %}
 #### Java
 
-
 #### Using the `TargetPrefetch` constructor
 
 With the `TargetPrefetch` constructor, you can create a `TargetPrefetch` instance with the specified data. It currently accepts the location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
-
 
 #### Syntax
 
@@ -252,22 +250,16 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 ### Using TargetParameters, TargetOrder and TargetProduct object
 
-With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use.
-With `TargetOrder`, you can combine the order parameters and use it in TargetParameters.
-With `TargetProduct`, you can combine the product parameters and use it in TargetParameters.
-
-
+With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use. With `TargetOrder`, you can combine the order parameters and use it in TargetParameters. With `TargetProduct`, you can combine the product parameters and use it in TargetParameters.
 
 **Merge behavior of parameters that are passed in the APIs with parameters that are passed in the TargetPrefetch/TargetRequest Object**
 
 Sometimes global parameters are passed in APIs. If `targetParameters` are also passed in the corresponding prefetch/request objects, the parameters are merged with the global parameters.
 
-The corresponding `TargetOrder` and `TargetProduct` parameters will be overridden by the API-level global parameters.
-If the key names differ, mbox parameters and profile parameters are appended. If the key names are the same, these parameters will be overwritten.
+The corresponding `TargetOrder` and `TargetProduct` parameters will be overridden by the API-level global parameters. If the key names differ, mbox parameters and profile parameters are appended. If the key names are the same, these parameters will be overwritten.
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### **Syntax**
 
 ```java
@@ -345,7 +337,7 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 ### Using Locations Displayed API for Prefetch
 
-In some situations, you might want to want to inform Target that the corresponding location (mbox) has been viewed. This API sends a display notification to Target for a prefetched mbox, which helps Target record location display events.
+In some situations, you might want to want to inform Target that the corresponding location \(mbox\) has been viewed. This API sends a display notification to Target for a prefetched mbox, which helps Target record location display events.
 
 Tip: If you are only using regular mboxes, and not prefetching any mbox content, do not call this method.
 
@@ -434,7 +426,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 {% endtabs %}
 
-## Visual preview    <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Visual preview     <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
 
@@ -470,7 +462,7 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% endtab %}
 {% endtabs %}
 
-## Target with Analytics \(A4T\)    <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Target with Analytics \(A4T\)     <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
@@ -478,10 +470,10 @@ To see the performance of your Target activities for certain segments, set up th
 
 If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
-| Key                  | Description                              |
-| :------------------- | :--------------------------------------- |
-| target.clientcode    | Client code for your account.            |
-| target.timeout       | Time, in seconds, to wait for a response from Target servers before timing out. |
+| Key | Description |
+| :--- | :--- |
+| target.clientcode | Client code for your account. |
+| target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. |
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
 
 ## Additional information

@@ -1,4 +1,4 @@
-# Target API reference (Deprecated)
+# Target API reference \(deprecated\)
 
 ### Using the prefetch APIs
 
@@ -133,7 +133,6 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
        // do something with the Boolean result
 }];
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -149,7 +148,6 @@ Note: When working with prefetch APIs, and switching to new `retrieveLocationCon
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### TargetRequest Builder
 
 `TargetRequest` builder helps create a `TargetRequest` instance. The returned instance can be used with `loadRequests`, which accepts a `TargetRequest` object list to retrieve offers for the specified mbox locations.
@@ -345,7 +343,6 @@ Map<String, Object> profileParameters = new HashMap<>();
 profileParameters.put("ageGroup", "20-32");
 
 Target.locationClicked("cartLocation", mboxParameters, productParameters, orderParameters, profileParameters);
-
 ```
 {% endtab %}
 
@@ -386,7 +383,6 @@ NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
                  productParameters:productParameters
                    orderParameters:orderParameters
                  profileParameters:profileParameters];
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -395,7 +391,6 @@ NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### TargetRequest
 
 {% hint style="warning" %}
@@ -576,7 +571,7 @@ This class extends `ACPTargetPrefetchObject` by adding default content and a fun
 
 The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
 
-```
+```text
 + (nonnull instancetype) requestObjectWithName: (nonnull NSString*) name
                                 defaultContent: (nonnull NSString*) defaultContent
                                 mboxParameters: (nullable NSDictionary<NSString*, NSString*>*) mboxParameters
@@ -606,11 +601,10 @@ This class contains the name of the Target location/mbox and parameter dictionar
 
 The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
 
-```
+```text
 + (nonnull instancetype) prefetchObjectWithName: (nonnull NSString*) name
                                  mboxParameters: (nullable NSDictionary*) mboxParameters;
 ```
-
 {% endtab %}
 {% endtabs %}
 

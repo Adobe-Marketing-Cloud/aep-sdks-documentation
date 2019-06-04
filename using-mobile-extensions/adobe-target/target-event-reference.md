@@ -142,7 +142,7 @@ Here are the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `content` | String | Yes | Response content is returned by the Target server for a load request with valid locations. |
 | `prefetchresult` | Boolean | Yes | Prefetch status returned after a Target prefetch request. |
-| `prefetcherror`  | String  | Yes | Prefetch response error if any, otherwise null |
+| `prefetcherror` | String | Yes | Prefetch response error if any, otherwise null |
 
 ### Target Identity Response
 

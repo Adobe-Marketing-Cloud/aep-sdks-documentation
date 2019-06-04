@@ -1,5 +1,23 @@
 # Release notes
 
+## June 3, 2019
+
+The following updates were made in this release:
+
+**Android Core 1.4.0:**
+
+* Fixed the migration of Custom Analytics ID from v4.
+* Added the `collectMessageInfo` API to collect push/local notification-related data.
+* Forced the ****usage of TLS v1.1/v1.2 on the Android 4.x devices \(Android API version from 16-19\).
+
+**Android Signal 1.0.2:**
+
+* Fixed an issue where the SSL connection was not kept alive.
+
+**Android Identity 1.1.0:**
+
+* Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
+
 ## May 31, 2019
 
 The following updates were made in this release:
@@ -76,11 +94,11 @@ For more information about the Places Monitor, [click here](https://github.com/A
 
 The following updates were made to the Adobe Target extension in Android version 1.1.0 and iOS version 2.1.0:
 
- * Upgraded Target Delivery APIs to latest v1 delivery endpoint.
- * Introduced `retrieveLocationContent`, a new API that retrieves content for multiple Target mbox locations simultaneously without increasing the reporting count for prefetch cases.
- * Introduced `locationsDisplayed`, a new API that helps Target record location to display events. This API should only be used for prefetch scenarios.
- * Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
- * New `prefetchContent` & `locationClicked` APIs which accept TargetParameters
+* Upgraded Target Delivery APIs to latest v1 delivery endpoint.
+* Introduced `retrieveLocationContent`, a new API that retrieves content for multiple Target mbox locations simultaneously without increasing the reporting count for prefetch cases.
+* Introduced `locationsDisplayed`, a new API that helps Target record location to display events. This API should only be used for prefetch scenarios.
+* Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
+* New `prefetchContent` & `locationClicked` APIs which accept TargetParameters
 
 ## May 9, 2019
 
