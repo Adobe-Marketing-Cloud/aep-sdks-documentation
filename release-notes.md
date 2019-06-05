@@ -85,7 +85,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Places Extension 1.2.0**
+**Android Places 1.2.0**
 
 * Added a new API to process an individual `Geofence`.
 * Bug fix to prevent multiple consecutive entry events.
@@ -129,9 +129,19 @@ React Native wrappers for the following extensions were pushed to npmjs:
 
 ## May 2, 2019
 
+The following updates were made in this release:
+
 **iOS Core 2.2.1**
 
 * Fixed an issue when the app network crashes under extreme conditions.
+
+**Android Places 1.1.0**
+
+- Introduced a new API for getNearByPlaces with errorCallback, called with errorCode indicating the reason for error
+- Places Extension now queues the events until configuration is obtained.
+- Support for Environment aware configuration
+- Bug Fix : corrected the keys for the region entry/exit events
+- Storage of last known location now properly respects the user's privacy status
 
 ## April 26, 2019
 
