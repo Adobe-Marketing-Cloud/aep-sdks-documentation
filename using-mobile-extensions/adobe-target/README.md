@@ -17,13 +17,11 @@ To get started with Target, follow these steps:
 
 1. In Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target extension, and click **Configure**.
-3. Type your **Target** client code.
+3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
 5. Set the timeout value to at least 5 seconds.
 6. Click **Save**.
 7. Follow the publishing process to update SDK configuration
-
-To find your Target client code, go to the **Set up** tab and select **Implementation** in the left pane. To see the client code in the dialog box that is displayed under **Implementation Method**, click **Edit at.js Settings**.
 
 ## Add Target to your app
 
