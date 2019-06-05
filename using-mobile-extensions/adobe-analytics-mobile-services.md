@@ -2,7 +2,9 @@
 
 This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
-{% hint style="danger" %}
+{% hint style="info" %}
+The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.
+{% endhint %}
 
 Review the following Mobile Services functionality documentation for context and set up before implementation at these links:
 
