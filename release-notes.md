@@ -44,7 +44,7 @@ The following updates were made in this release:
 
 **Android Places Monitor 1.0.1**
 
-- Fixed bug that prevents entry event for pois happening on launch.
+- Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
 
 ## May 20, 2019
 
@@ -92,7 +92,9 @@ The following updates were made in this release:
 
 **Android Places Monitor 1.0.0**
 
-* Initial release of the Places Monitor for Android. The Places Monitor manages the OS-level Location APIs and communicates directly with the Places Extension.  With both extensions installed, customers can have out-of-the-box region monitoring in their application.
+Initial release of the Places Monitor for Android.
+
+ The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
 
 For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
@@ -137,9 +139,9 @@ The following updates were made in this release:
 
 **Android Places 1.1.0**
 
-- Introduced a new API for getNearByPlaces with errorCallback, called with errorCode indicating the reason for error
-- Places Extension now queues the events until configuration is obtained.
-- Support for Environment aware configuration
+- Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
+- The Places extension now queues the events until a configuration is obtained.
+- Added support for environment-aware configurations.
 - Bug Fix : corrected the keys for the region entry/exit events
 - Storage of last known location now properly respects the user's privacy status
 
@@ -230,13 +232,19 @@ If there is no cached configuration available, the SDK can fetch the configurati
 * You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
 * `trackAction` and `trackState` only accept `NSDictionary`-type context data.
 
+**iOS Places Monitor 1.0.0**
+
+Initial release of the **Places Monitor** for iOS.
+
+ The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
+
+For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
+
 ## March 21, 2019
 
 The **Adobe Campaign Standard** extension version 1.0.0 is now available for Android!
 
-This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
-
-## March 21, 2019
+- This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
 **Android Core 1.2.1**
 
@@ -261,7 +269,7 @@ The following updates were made to the Mobile Core extension in Android version 
 * Added the `MobileCore.log` API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LoggingMode` to select the verbosity of the logs.
 * You can also use the `MobileCore.getLogLevel` API to retrieve the current `LoggingMode` that was set in the SDK.
 
-**Android Identity**
+**Android Identity 1.0.4**
 
 * You can regenerate the MID when privacy settings change from opted out to opted in/opt unknown in the same session.
 
