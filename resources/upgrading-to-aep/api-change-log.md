@@ -40,6 +40,10 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
 
+{% hint style="info" %}
+For methods to send beacon tracking data to Adobe Analytics, see this [guide](../user-guides/track-beacon.md)
+{% endhint %}
+
 ## Lifecycle extension APIs
 
 ### Supported APIs
