@@ -149,7 +149,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 {% tabs %}
 {% tab title="Android" %}
-In your App's OnCreate method register the Campaign Standard extension:
+In your app's `OnCreate` method register the Campaign Standard extension:
 
 ```java
     @Override
@@ -168,6 +168,21 @@ In your App's OnCreate method register the Campaign Standard extension:
         }
 
     }
+```
+
+Add the following APIs that are required in your mobile app:
+
+```java
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   ACPCampaign.registerExtension();
+   ACPIdentity.registerExtension();
+   ACPLifecycle.registerExtension();
+   ACPSignal.registerExtension();   
+   ACPUserProfile.registerExtension();
+   ACPCore.start();
+  // Override point for customization after application launch.
+  return true;
+}
 ```
 {% endtab %}
 
@@ -213,21 +228,6 @@ ACPCampaign.registerExtension();
 ```
 {% endtab %}
 {% endtabs %}
-
-Add the following APIs that are required in your mobile app:
-
-```java
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-   ACPCore.start();
-  // Override point for customization after application launch.
-  return true;
-}
-```
 
 ### Set up in-app messaging
 
