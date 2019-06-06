@@ -38,6 +38,9 @@ To get started with Target VEC, complete the following steps:
 
 ## Add Target VEC to your app
 
+{% tabs %}
+{% tab title="Android" %}
+
 #### Java
 
 1. Add Target VEC extension and it's dependencies to your project using the app's Gradle file.
@@ -57,20 +60,21 @@ To get started with Target VEC, complete the following steps:
    implementation 'com.android.support:design:28.0.0'
    ```
 
-2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC;`
-3. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
+2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC;
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+1. Import Target and the TargetVEC library.
+2. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
 
 #### Objective-C
-
-Import the Target and Identity library.
 
 ```objectivec
    #import "ACPCore.h"
    #import "ACPTargetVEC.h"
    #import "ACPTarget.h"
-   #import "ACPIdentity.h"
-   #import "ACPTargetRequestObject.h"
-   #import "ACPTargetPrefetchObject.h"
 ```
 
 #### Swift
@@ -79,13 +83,16 @@ Import the Target and Identity library.
    #import ACPCore
    #import ACPTarget
    #import ACPTargetVEC
-   #import ACPIdentity
 ```
+
+{% endtab %}
+{% endtabs %}
 
 ### Register Target VEC with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register Target VEC with Mobile Core.
@@ -125,8 +132,8 @@ public class SampleApp extends Application {
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   //Other Extensions that you need
-  [ACPTargetVEC registerExtension];
   [ACPTarget registerExtension];
+  [ACPTargetVEC registerExtension];
   [ACPCore start:^{
     [ACPCore lifecycleStart:nil];
   }];
@@ -135,6 +142,17 @@ public class SampleApp extends Application {
 }
 ```
 
+2. In your app's `openURL` method, add the deeplink handling code.
+
+```objectivec
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
+  [ACPCore collectLaunchInfo:@ {@"adb_deeplink": url.absoluteString}];
+  return YES;
+}
+```
+
+
+
 #### Swift
 
 1. In your app's `didFinishLaunchingWithOptions` function register the Target VEC extension
@@ -142,14 +160,23 @@ public class SampleApp extends Application {
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   //Other Extensions that you need
-  ACPTargetVEC.registerExtension()
   ACPTarget.registerExtension()
+  ACPTargetVEC.registerExtension()
   [ACPCore start:^{
     [ACPCore lifecycleStart:nil];
   }];
   return true
 }
 ```
+2. In your app's `open url` method, add the deeplink handling code.
+
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+  ACPCore.collectLaunchInfo(["adb_deeplink": url.absoluteString])
+  return true
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
