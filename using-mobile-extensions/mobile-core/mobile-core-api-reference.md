@@ -8,20 +8,7 @@ When building Android applications, the `android.app.Application` reference must
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
 
-The following APIs are also required in your mobile app:
 
-```java
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-   ACPCore.start();
-  // Override point for customization after application launch.
-  return true;
-}
-```
 
 {% tabs %}
 {% tab title="Android" %}

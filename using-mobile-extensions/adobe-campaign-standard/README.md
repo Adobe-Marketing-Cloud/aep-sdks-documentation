@@ -214,6 +214,21 @@ ACPCampaign.registerExtension();
 {% endtab %}
 {% endtabs %}
 
+Add the following APIs that are required in your mobile app:
+
+```java
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   ACPCampaign.registerExtension();
+   ACPIdentity.registerExtension();
+   ACPLifecycle.registerExtension();
+   ACPSignal.registerExtension();   
+   ACPUserProfile.registerExtension();
+   ACPCore.start();
+  // Override point for customization after application launch.
+  return true;
+}
+```
+
 ### Set up in-app messaging
 
 {% hint style="info" %}
