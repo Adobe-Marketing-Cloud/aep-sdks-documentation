@@ -66,7 +66,7 @@ To get started with Target VEC, complete the following steps:
 
 {% tab title="iOS" %}
 
-1. Import Target and TargetVEC library.
+1. Import Target and the TargetVEC library.
 2. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
 
 #### Objective-C
@@ -142,7 +142,7 @@ public class SampleApp extends Application {
 }
 ```
 
-2. In your app's `openURL` method, add the deeplink handling code
+2. In your app's `openURL` method, add the deeplink handling code.
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
@@ -168,7 +168,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
-2. In your app's `open url` method, add the deeplink handling code
+2. In your app's `open url` method, add the deeplink handling code.
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
