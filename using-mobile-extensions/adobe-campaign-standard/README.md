@@ -20,7 +20,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ![](../../.gitbook/assets/campaign-extension-config-v4.png)
 
-#### ACS endpoints
+#### Campaign Standard endpoints
 
 Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaing.adobe.com`.
 
@@ -149,7 +149,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 {% tabs %}
 {% tab title="Android" %}
-In your app's `OnCreate` method register the Campaign Standard extension:
+1. In your app's `OnCreate` method register the Campaign Standard extension:
 
 ```java
     @Override
@@ -170,7 +170,7 @@ In your app's `OnCreate` method register the Campaign Standard extension:
     }
 ```
 
-Add the following APIs that are required in your mobile app:
+2. Add the following APIs, which are required in your mobile app:
 
 ```java
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
