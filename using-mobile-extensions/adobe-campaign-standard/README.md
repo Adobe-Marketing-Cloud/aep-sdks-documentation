@@ -1,7 +1,7 @@
 # Adobe Campaign Standard
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard extension, read [_Getting Started_](../../getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+**Before** you install or configure the Campaign Standard extension, read [_Getting Started_](../../getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 {% endhint %}
 
 {% hint style="danger" %}
@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 #### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaing.adobe.com`.
+Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaing.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
@@ -30,7 +30,7 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Launch Campaign extension for successful validation.
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Campaign Standard. When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Launch Campaign extension for successful validation.
 
 #### MCIAS region
 
