@@ -187,11 +187,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-3. Call the following API:
+3. Call `MobileCore.setApplication()`.  
+     For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
+1. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
 
 #### Objective-C      <a id="objective-c-1"></a>
 
@@ -216,6 +217,21 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
    ACPLifecycle.registerExtension();
    ACPSignal.registerExtension();   
    ACPUserProfile.registerExtension();
+  // Override point for customization after application launch.
+  return true;
+}
+```
+
+2. Start the Core extension:
+
+```java
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   ACPCampaign.registerExtension();
+   ACPIdentity.registerExtension();
+   ACPLifecycle.registerExtension();
+   ACPSignal.registerExtension();   
+   ACPUserProfile.registerExtension();
+   ACPCore.start();
   // Override point for customization after application launch.
   return true;
 }
