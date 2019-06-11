@@ -84,6 +84,8 @@ import com.adobe.marketing.mobile.UserProfile;
 {% endtab %}
 
 {% tab title="iOS" %}
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using  Cocoapods.  **Important**: Always ensure that you always get the latest version.
+
 ![](../../.gitbook/assets/acs-pods.png)
 
 Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
@@ -97,7 +99,7 @@ pod 'ACPCore', '~> 2.0'
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
 
-In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
+2. In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
 #### Objective-C
 
@@ -170,7 +172,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
     }
 ```
 
-2. Add the following APIs, which are required in your mobile app:
+2. Start the Core extension:
 
 ```java
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -184,6 +186,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true;
 }
 ```
+
+3. Call the following API:
 {% endtab %}
 
 {% tab title="iOS" %}
