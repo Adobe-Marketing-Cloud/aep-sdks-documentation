@@ -56,21 +56,20 @@ This Campaign Standard extension requires the [Mobile Core](https://github.com/A
 
 {% tabs %}
 {% tab title="Android" %}
-1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.  
-  
-   **Important**: Always ensure that you always get the latest version.  
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.
 
+   **Important**: Always ensure that you always get the latest version.
 
-   ```java
+```java
     implementation ('com.adobe.marketing.mobile:core:+')
     implementation ('com.adobe.marketing.mobile:campaign:+')
     implementation ('com.adobe.marketing.mobile:userprofile:+')
     implementation ('com.adobe.marketing.mobile:identity:+')
     implementation ('com.adobe.marketing.mobile:lifecycle:+')
     implementation ('com.adobe.marketing.mobile:signal:+')
-   ```
+```
 
-2. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
+1. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -99,7 +98,7 @@ pod 'ACPCore', '~> 2.0'
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
 
-2. In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
+1. In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
 
 #### Objective-C
 
@@ -151,10 +150,12 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 {% tabs %}
 {% tab title="Android" %}
-1. In your app's `OnCreate` method register the Campaign Standard extension:
+**Java**
+
+1. In your app's `OnCreate` method register the Campaign Standard extension: ****
 
 ```java
-    @Override
+   @Override
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
@@ -188,65 +189,68 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 3. Call `MobileCore.setApplication()`.  
-   For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
+For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
 
 4. Register the user profile.  
-   If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
-
+If you do not register the user profile, your trigger frequency option in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).  
+  
 5. Start Lifecycle.  
-   For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
+For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).  
+  
+6. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension.
 {% endtab %}
 
 {% tab title="iOS" %}
-1. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
+1. Register the Campaign extension:  
+   ****
 
-#### Objective-C      <a id="objective-c-1"></a>
+   **Objective-C**      
 
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCampaign registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPLifecycle registerExtension];
-    [ACPSignal registerExtension];
-    [ACPUserProfile registerExtension];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
+   ```objectivec
+   - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+       [ACPCampaign registerExtension];
+       [ACPIdentity registerExtension];
+       [ACPLifecycle registerExtension];
+       [ACPSignal registerExtension];
+       [ACPUserProfile registerExtension];
+     // Override point for customization after application launch.
+     return YES;
+   }
+   ```
 
-#### Swift
+   **Swift**
 
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-  // Override point for customization after application launch.
-  return true;
-}
-```
+   ```swift
+   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      ACPCampaign.registerExtension();
+      ACPIdentity.registerExtension();
+      ACPLifecycle.registerExtension();
+      ACPSignal.registerExtension();   
+      ACPUserProfile.registerExtension();
+     // Override point for customization after application launch.
+     return true;
+   }
+   ```
 
-2. Start the Core extension:
+   2. Start the Core extension:
 
-```java
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-   ACPCore.start();
-  // Override point for customization after application launch.
-  return true;
-}
-```
+   ```java
+   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      ACPCampaign.registerExtension();
+      ACPIdentity.registerExtension();
+      ACPLifecycle.registerExtension();
+      ACPSignal.registerExtension();   
+      ACPUserProfile.registerExtension();
+      ACPCore.start();
+     // Override point for customization after application launch.
+     return true;
+   }
+   ```
 
-4. Register the user profile.  
-   If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
-
-5. Start Lifecycle.  
+   3. Register the user profile.  
+   If you do not register the user profile, your trigger frequency option in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).  
+  
+   4. Start Lifecycle.  
    For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 {% endtab %}
 
