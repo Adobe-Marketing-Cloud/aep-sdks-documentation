@@ -1,4 +1,13 @@
-# Release notes
+#  Release notes
+
+## June 12, 2019
+
+The following updates were made in this release:
+
+**iOS Analytics 2.1.1:**
+
+- Fixed a bug where the locale was incorrect for Analytics hits.
+- Fixed a bug where Analytics shared state was not updated with the visitor identifier.
 
 ## June 3, 2019
 
