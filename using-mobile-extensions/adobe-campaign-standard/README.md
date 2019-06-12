@@ -196,7 +196,7 @@ For more information, see [Application reference](https://app.gitbook.com/@aep-s
 If you do not register the user profile, the trigger frequency option that you set in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/profile).  
   
 5. Start Lifecycle.  
-For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).  
+For more information about starting Lifecycle, see [Lifecycle extension in Android](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).  
   
 6. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension.
 {% endtab %}
