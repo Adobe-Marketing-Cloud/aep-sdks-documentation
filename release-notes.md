@@ -1,4 +1,13 @@
-# Release notes
+#  Release notes
+
+## June 12, 2019
+
+The following updates were made in this release:
+
+**iOS Analytics 2.1.1:**
+
+- Fixed a bug where the locale was incorrect for Analytics hits.
+- Fixed a bug where the Analytics shared state was not updated with the visitor identifier.
 
 ## June 3, 2019
 
@@ -45,7 +54,7 @@ The following updates were made in this release:
 #### iOS Core 2.2.2:
 
 * Fixed the issue where SSL connection was not kept alive.
-* Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz` 
+* Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `ACPCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
 * Fixed issue where retrieving Privacy status may get delayed when device is offline.
@@ -456,4 +465,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
