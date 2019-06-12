@@ -188,13 +188,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 3. Call `MobileCore.setApplication()`.  
-     For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
+   For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
 
 4. Register the user profile.  
-     If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
+   If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
 
 5. Start Lifecycle.  
-     For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
+   For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -244,10 +244,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 4. Register the user profile.  
-     If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
+   If you do not register the user profile, your trigger frequency option in Campaign    is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).
 
 5. Start Lifecycle.  
-     For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
+   For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 {% endtab %}
 
 {% tab title="React Native" %}
