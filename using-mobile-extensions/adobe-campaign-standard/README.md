@@ -58,7 +58,8 @@ This Campaign Standard extension requires the [Mobile Core](https://github.com/A
 {% tab title="Android" %}
 1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.
 
-   **Important**: Always ensure that you always get the latest version.
+  
+   **Important**: Always ensure that you always get the latest version of the installation instructions.
 
 ```java
     implementation ('com.adobe.marketing.mobile:core:+')
@@ -83,7 +84,7 @@ import com.adobe.marketing.mobile.UserProfile;
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using  Cocoapods.  **Important**: Always ensure that you always get the latest version.
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using  Cocoapods.    **Important**: Always ensure that you always get the latest version of the installation instructions.
 
 ![](../../.gitbook/assets/acs-pods.png)
 
@@ -152,7 +153,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 {% tab title="Android" %}
 **Java**
 
-1. In your app's `OnCreate` method register the Campaign Standard extension: ****
+1. In your app's `OnCreate` method register the Campaign Standard extension:
 
 ```java
    @Override
@@ -192,7 +193,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
 
 4. Register the user profile.  
-If you do not register the user profile, your trigger frequency option in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).  
+If you do not register the user profile, the trigger frequency option that you set in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/profile).  
   
 5. Start Lifecycle.  
 For more information about starting Lifecycle, see [Lifecycle API reference](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-LhC1aPTf9qmxVGk-oya/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).  
