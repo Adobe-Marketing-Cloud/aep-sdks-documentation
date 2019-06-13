@@ -210,7 +210,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 
 To append visitor information to the URL that is being used to open the web view, call [appendToUrl](./identity-api-reference#appendtourl-ios):
 
-```objective-c
+```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 // handle the appended url here
@@ -219,7 +219,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 
 Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](./identity-api-reference#geturlvariables-ios) and build your own URL:
 
-```objective-c
+```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
   // handle the URL query parameter string here
   NSString* urlString = @"http://myUrl.com";
