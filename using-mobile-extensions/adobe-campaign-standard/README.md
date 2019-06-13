@@ -51,7 +51,7 @@ The **Request Timeout** value must be a non-zero number.
 ## Add the Campaign Standard extension to your app
 
 {% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions. Always ensure that you always get the latest version of the installation instructions.
+This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions. You should always ensure that you get the latest version of the extension.
 {% endhint %}
 
 {% hint style="warning" %}
