@@ -132,7 +132,7 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each client company in the Adobe Experience Cloud and is similar to the following value:`016D5C175213CCA80A490D05@AdobeOrg`. The trailing `@AdobeOrg` is required.
+Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each visitor in the Adobe Experience Cloud and is similar to the following value:`65002602839283012066007008864929833047`.
 {% endhint %}
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -143,7 +143,7 @@ If you app opens mobile web content, you need to ensure that visitors are not id
 
 #### Visitor IDs in Apps
 
-The Mobile SDK generates a unique visitor ID (ECID) when the app is installed. The ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID (ECID, previously known as MCID) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
 
 {% hint style="info" %}
 
