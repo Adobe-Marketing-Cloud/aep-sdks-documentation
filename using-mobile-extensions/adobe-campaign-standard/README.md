@@ -102,7 +102,7 @@ pod 'ACPCore', '~> 2.0'
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
 
-2. In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
+2. In Xcode, import the Mobile Core, Campaign Standard, and Profile, and Lifecycle extensions:
 
 #### Objective-C
 
@@ -250,7 +250,7 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
    }
    ```
 
-   3. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
+   3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
    For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
