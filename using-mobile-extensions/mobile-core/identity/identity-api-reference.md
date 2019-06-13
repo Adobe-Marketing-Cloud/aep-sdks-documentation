@@ -302,7 +302,7 @@ ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => c
 {% tab title="Android" %}
 ### getUrlVariables<a id="geturlvariables-java"></a>
 
-_added in Identity v1.1.0_
+_added in sdk-core v1.4.0 (Identity v1.1.0)_
 
 Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
@@ -339,7 +339,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getUrlVariables<a id="geturlvariables-ios"></a>
 
-_added in ACPIdentity v2.1.0_
+_added in ACPCore v2.3.0 (ACPIdentity v2.1.0)_
 
 Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
 

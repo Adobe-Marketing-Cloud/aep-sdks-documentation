@@ -132,7 +132,7 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each visitor in the Adobe Experience Cloud and is similar to the following value:`65002602839283012066007008864929833047`.
+Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each visitor in the Adobe Experience Cloud and is a 32 character length ID.
 {% endhint %}
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -186,7 +186,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting with SDK version 1.4.0, you can call [getUrlVariables](./identity-api-reference#geturlvariables-java) and build your own URL:
+Alternately, starting with SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](./identity-api-reference#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -217,7 +217,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0, you can call [getUrlVariables](./identity-api-reference#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](./identity-api-reference#geturlvariables-ios) and build your own URL:
 
 ```objective-c
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
