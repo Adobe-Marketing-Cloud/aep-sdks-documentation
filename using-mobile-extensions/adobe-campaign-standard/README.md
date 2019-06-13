@@ -48,7 +48,7 @@ Time in seconds to wait for a response from the in-app messaging service before 
 The **Request Timeout** value must be a non-zero number.
 {% endhint %}
 
-## Add Campaign Standard to your app
+## Add Campaign Standard extension to your app
 
 {% hint style="warning" %}
 This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
