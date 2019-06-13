@@ -48,18 +48,19 @@ Time in seconds to wait for a response from the in-app messaging service before 
 The **Request Timeout** value must be a non-zero number.
 {% endhint %}
 
-## Add Campaign Standard extension to your app
+## Add the Campaign Standard extension to your app
 
 {% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
+This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions. Always ensure that you always get the latest version of the installation instructions.
+{% endhint %}
+
+{% hint style="warning" %}
+The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/profile).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extension to your project using the app's Gradle file.
-
-  
-   **Important**: Always ensure that you always get the latest version of the installation instructions.
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions to your project using the app's Gradle file.
 
 ```java
     implementation ('com.adobe.marketing.mobile:core:+')
@@ -70,7 +71,7 @@ This Campaign Standard extension requires the [Mobile Core](https://github.com/A
     implementation ('com.adobe.marketing.mobile:signal:+')
 ```
 
-1. Import the Campaign Standard, Mobile Core, and Lifecycle extensions in your application's main activity.
+2. Import the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -81,6 +82,8 @@ import com.adobe.marketing.mobile.MobileCore;
 import com.adobe.marketing.mobile.Signal;
 import com.adobe.marketing.mobile.UserProfile;
 ```
+
+The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property &gt; **Environments** tab &gt; **Install**.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -119,6 +122,8 @@ import ACPCore
 import ACPCampaign
 import ACPUserProfile
 ```
+
+The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property &gt; **Environments** tab &gt; **Install**.
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -147,7 +152,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 {% endtab %}
 {% endtabs %}
 
-### Register Campaign Standard with Mobile Core
+### Register the Campaign Standard extension with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -189,16 +194,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-3. Call `MobileCore.setApplication()`.  
+3. Call `MobileCore.setApplication()` for your Android app.  
 For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
 
-4. Register the user profile.  
-If you do not register the user profile, the trigger frequency option that you set in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/profile).  
-  
-5. Start Lifecycle.  
+4. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
 For more information about starting Lifecycle, see [Lifecycle extension in Android](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).  
   
-6. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension.
+5. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -248,10 +250,7 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
    }
    ```
 
-   3. Register the user profile.  
-   If you do not register the user profile, your trigger frequency option in Campaign is not honored. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/profile).  
-  
-   4. Start Lifecycle.  
+   3. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
    For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
