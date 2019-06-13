@@ -132,7 +132,7 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID or ECID uniquely identifies each visitor in the Adobe Experience Cloud and is a 32 character length ID.
+Previously known as MCID, the Experience Cloud ID (ECID) uniquely identifies each visitor in the Adobe Experience Cloud and is a 32-character ID.
 {% endhint %}
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -213,7 +213,7 @@ To append visitor information to the URL that is being used to open the web view
 ```objective-c
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
-// handle the appended url here}
+// handle the appended url here
 }];
 ```
 
