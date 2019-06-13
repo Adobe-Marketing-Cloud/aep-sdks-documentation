@@ -87,11 +87,6 @@
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&amp;logoColor=white&amp;label=campaignclassic&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
-        <p></p>
-        <p>
-          <img src="https://img.shields.io/npm/v/@adobe/react-native-acptarget.svg?color=green&amp;label=%40adobe%2Freact-native-acptarget&amp;logo=npm"
-          alt="npm" />
-        </p>
       </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a> |
         <a
