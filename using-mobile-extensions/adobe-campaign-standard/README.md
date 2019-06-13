@@ -58,6 +58,10 @@ This Campaign Standard extension requires the [Mobile Core](https://github.com/A
 The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/profile).
 {% endhint %}
 
+{% hint style="info" %}
+The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions to your project using the app's Gradle file.
@@ -82,16 +86,16 @@ import com.adobe.marketing.mobile.MobileCore;
 import com.adobe.marketing.mobile.Signal;
 import com.adobe.marketing.mobile.UserProfile;
 ```
-
-The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property &gt; **Environments** tab &gt; **Install**.
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), extensions to your project using  Cocoapods.  
+1. Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle)
+
+   extensions to your project using  Cocoapods.  
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/22148dec688a3240fc58fe5c7b0d5475f5940126/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -100,7 +104,7 @@ pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile), and  [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions from Github.
 
 2. In Xcode, import the Mobile Core, Campaign Standard, and Profile, and Lifecycle extensions:
 
@@ -122,8 +126,6 @@ import ACPCore
 import ACPCampaign
 import ACPUserProfile
 ```
-
-The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property &gt; **Environments** tab &gt; **Install**.
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -156,102 +158,30 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+#### **Java**
 
-1. In your app's `OnCreate` method register the Campaign Standard extension:
+1. In your app's `OnCreate` method, call `MobileCore.setApplication()` for your Android app, register extensions, and start Mobile Core:
 
-```java
-   @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-        MobileCore.setLogLevel(LoggingMode.VERBOSE);
+![](../../.gitbook/assets/acp-android-install.png)
 
-        try {
-            Campaign.registerExtension();
-            UserProfile.registerExtension();
-            Identity.registerExtension();
-            Lifecycle.registerExtension();
-            Signal.registerExtension();
-        } catch (Exception e) {
-        }
-
-    }
-```
-
-2. Start the Core extension:
-
-```java
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-   ACPCore.start();
-  // Override point for customization after application launch.
-  return true;
-}
-```
-
-3. Call `MobileCore.setApplication()` for your Android app.  
-For more information, see [Application reference](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference).
-
-4. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
-For more information about starting Lifecycle, see [Lifecycle extension in Android](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).  
-  
-5. In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension.
+2. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
+For more information about starting Lifecycle, see [Lifecycle extension in Android](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Register the Campaign extension:  
-   ****
+1. Register the Campaign extension and start the Core extension:
 
-   **Objective-C**      
+#### Objective-C
 
-   ```objectivec
-   - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-       [ACPCampaign registerExtension];
-       [ACPIdentity registerExtension];
-       [ACPLifecycle registerExtension];
-       [ACPSignal registerExtension];
-       [ACPUserProfile registerExtension];
-     // Override point for customization after application launch.
-     return YES;
-   }
-   ```
+![](../../.gitbook/assets/acp-ios-install.png)
 
-   **Swift**
+#### Swift
 
-   ```swift
-   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      ACPCampaign.registerExtension();
-      ACPIdentity.registerExtension();
-      ACPLifecycle.registerExtension();
-      ACPSignal.registerExtension();   
-      ACPUserProfile.registerExtension();
-     // Override point for customization after application launch.
-     return true;
-   }
-   ```
+![](../../.gitbook/assets/acp-swift-install.png)
 
-   2. Start the Core extension:
-
-   ```java
-   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      ACPCampaign.registerExtension();
-      ACPIdentity.registerExtension();
-      ACPLifecycle.registerExtension();
-      ACPSignal.registerExtension();   
-      ACPUserProfile.registerExtension();
-      ACPCore.start();
-     // Override point for customization after application launch.
-     return true;
-   }
-   ```
-
-   3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
-   For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
+  
+****3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
+For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
 {% tab title="React Native" %}
