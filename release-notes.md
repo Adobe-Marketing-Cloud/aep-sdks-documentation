@@ -1,5 +1,15 @@
 # Release notes
 
+## June 13, 2019
+
+The following updates were made in this release:
+
+**iOS Core 2.3.1**
+
+* Fixed an issue that was causing network request failures, which were introduced in version 2.2.2. 
+* Fixed an issue that might have caused crashes when the app was being shut down. 
+* Fixed an issue that might have caused the callback to be passed to `ACPCore start:` to be called before the EventHub has finished initialization.
+
 ## June 12, 2019
 
 The following updates were made in this release:
