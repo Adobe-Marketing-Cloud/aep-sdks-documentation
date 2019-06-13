@@ -1,4 +1,4 @@
-#  Release notes
+# Release notes
 
 ## June 12, 2019
 
@@ -6,8 +6,8 @@ The following updates were made in this release:
 
 **iOS Analytics 2.1.1:**
 
-- Fixed a bug where the locale was incorrect for Analytics hits.
-- Fixed a bug where the Analytics shared state was not updated with the visitor identifier.
+* Fixed a bug where the locale was incorrect for Analytics hits.
+* Fixed a bug where the Analytics shared state was not updated with the visitor identifier.
 
 ## June 3, 2019
 
@@ -17,7 +17,7 @@ The following updates were made in this release:
 
 * Fixed the migration of Custom Analytics ID from v4.
 * Added the `collectMessageInfo` API to collect push/local notification-related data.
-* Forced the ****usage of TLS v1.1/v1.2 on the Android 4.x devices \(Android API version from 16-19\).
+* Forced the _\*\*_usage of TLS v1.1/v1.2 on the Android 4.x devices \(Android API version from 16-19\).
 
 **Android Signal 1.0.2:**
 
@@ -465,3 +465,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+
