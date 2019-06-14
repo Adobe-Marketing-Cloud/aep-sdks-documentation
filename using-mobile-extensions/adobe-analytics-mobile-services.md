@@ -20,7 +20,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)](places-extension-1/).
+Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)](places-extension-1.md).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
