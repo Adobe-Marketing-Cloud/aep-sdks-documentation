@@ -103,7 +103,7 @@ The instructions to add these extensions to your mobile app are also available i
 
 {% tabs %}
 {% tab title="Android" %}
-1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions to your project using the app's Gradle file.
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
 
 ```java
 implementation 'com.adobe.marketing.mobile:campaign:1.+'
