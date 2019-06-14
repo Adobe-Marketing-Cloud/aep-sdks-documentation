@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 #### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaing.adobe.com`.
+Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
@@ -30,7 +30,9 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Campaign Standard. When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Launch Campaign extension for successful validation.
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).  
+  
+When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Launch Campaign extension for successful validation.
 
 #### MCIAS region
 
@@ -156,17 +158,23 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 ### Register the Campaign Standard extension with Mobile Core
 
+{% tabs %}
+{% tab title="Android" %}
 #### **Java**
 
 1. In your app's `OnCreate` method, call `MobileCore.setApplication()` for your Android app, register extensions, and start Mobile Core:
 
 ![](../../.gitbook/assets/acp-android-install.png)
 
-1. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
+1. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(Experience Cloud ID, Push Platform, App ID, and so  on\).  
 
    For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 
-2. Register the Campaign extension and start the Core extension:
+2. 
+{% endtab %}
+
+{% tab title="iOS" %}
+Register the Campaign extension and start the Core extension:
 
 #### Objective-C
 
@@ -176,9 +184,11 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 ![](../../.gitbook/assets/acp-swift-install.png)
 
-_\*\*_3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so on\).  
+3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so on\).  
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
+{% endtab %}
 
+{% tab title="React Native" %}
 To register the Campaign Standard with Core, use the following API:
 
 #### JavaScript
@@ -186,6 +196,8 @@ To register the Campaign Standard with Core, use the following API:
 ```javascript
 ACPCampaign.registerExtension();
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Set up in-app messaging
 
