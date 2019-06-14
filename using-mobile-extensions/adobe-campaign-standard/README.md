@@ -75,7 +75,7 @@ The instructions to add these extensions to your mobile app are also available i
     implementation ('com.adobe.marketing.mobile:signal:+')
 ```
 
-2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
+1. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -91,7 +91,7 @@ import com.adobe.marketing.mobile.UserProfile;
 {% tab title="iOS" %}
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle)
 
-   extensions to your project using  Cocoapods.  
+   extensions to your project using Cocoapods.
 
 ![](../../.gitbook/assets/acs-pods.png)
 
@@ -106,7 +106,7 @@ pod 'ACPCore', '~> 2.0'
 
 or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions from Github.
 
-2. In Xcode, import the Mobile Core, Campaign Standard, and Profile, and Lifecycle extensions:
+1. In Xcode, import the Mobile Core, Campaign Standard, and Profile, and Lifecycle extensions:
 
 #### Objective-C
 
@@ -156,20 +156,17 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 ### Register the Campaign Standard extension with Mobile Core
 
-{% tabs %}
-{% tab title="Android" %}
 #### **Java**
 
 1. In your app's `OnCreate` method, call `MobileCore.setApplication()` for your Android app, register extensions, and start Mobile Core:
 
 ![](../../.gitbook/assets/acp-android-install.png)
 
-2. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
-For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
-{% endtab %}
+1. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
 
-{% tab title="iOS" %}
-1. Register the Campaign extension and start the Core extension:
+   For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
+
+2. Register the Campaign extension and start the Core extension:
 
 #### Objective-C
 
@@ -179,12 +176,9 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 
 ![](../../.gitbook/assets/acp-swift-install.png)
 
-  
-****3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so  on\).  
+_\*\*_3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(ECID, Push Platform, App ID, and so on\).  
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
-{% endtab %}
 
-{% tab title="React Native" %}
 To register the Campaign Standard with Core, use the following API:
 
 #### JavaScript
@@ -192,8 +186,6 @@ To register the Campaign Standard with Core, use the following API:
 ```javascript
 ACPCampaign.registerExtension();
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Set up in-app messaging
 
@@ -209,7 +201,11 @@ If you are developing an Android application, to correctly display fullscreen in
 ```
 {% endhint %}
 
-For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
+For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md). 
+
+#### Implementing local notifications
+
+To implement local notifications in Android, update the AndroidManifext.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler/>`. To configure the notification icons to use the Mobile Core APIs, see [Configuring notification icons](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons).
 
 ### Set up push messaging
 
@@ -283,35 +279,9 @@ ACPCore.setPushIdentifier("pushIdentifier");
 {% endtab %}
 {% endtabs %}
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
-
-### Debug log examples
-
-The Campaign rules have been downloaded:
-
-```text
-2019-01-31 18:22:35.980872-0800 CampaignDemoApp[935:156012] [AMSDK DEBUG <com.adobe.module.campaign>]: Successfully downloaded Rules from 'https://mcias-va7.cloud.adobe.io/mcias/mcias.campaign-demo.adobe.com/PR8fdd35ee6cc84aa8bbdea8f92db3f55a/43583282444503123217621782542046274680/rules.zip
-```
-
-The request to demdex has been sent:
-
-```text
-2019-01-31 18:22:35.261676-0800 CampaignDemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
-```
-
-The push token:
-
-```text
-2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
-```
-
-{% hint style="warning" %}
-Each `setPushIdentifier` call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call `setPushIdentifier` multiple times.
-{% endhint %}
-
 ### Tracking for push and in-app messaging
 
-To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, go to [Step 3 Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Step 4 Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback).
+To set up postbacks to track push and in-app messages, go to [Step 3 Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Step 4 Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback).
 
 ## Deleting mobile properties in Launch
 
@@ -321,7 +291,7 @@ Deleting your property in Launch might cause disruption to your recurring push a
 
 If you delete your mobile property in Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property).
 
-To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeLaunchapplication).
 
 {% hint style="warning" %}
 Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
