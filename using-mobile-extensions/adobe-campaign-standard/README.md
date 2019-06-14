@@ -78,7 +78,7 @@ Remember the following information when you add the Campaign extension to your a
       <td style="text-align:left">
         <p></p>
         <p>The Profile extension is required for In-App trigger frequencies to work
-          accurately. For more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions//profile">Profile</a>.</p>
+          accurately. For more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>.</p>
       </td>
     </tr>
     <tr>
