@@ -52,21 +52,57 @@ The **Request Timeout** value must be a non-zero number.
 
 ## Add the Campaign Standard extension to your app
 
-{% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions. You should always ensure that you get the latest version of the extension.
-{% endhint %}
-
-{% hint style="warning" %}
-The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions//profile).
-{% endhint %}
-
-{% hint style="info" %}
-The instructions to add these extensions to your mobile app are also available in Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
-{% endhint %}
-
-{% tabs %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Extension</th>
+      <th style="text-align:left">Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Campaign Standard</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>This Campaign Standard extension requires the <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a> and
+          <a
+          href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>, and <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle">Lifecycle</a>,
+            and <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signals</a> extensions.
+            You should always ensure that you get the latest version of the extension.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Profile</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>The Profile extension is required for In-App trigger frequencies to work
+          accurately. For more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions//profile">Profile</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adding extensions</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>The instructions to add these extensions to your mobile app are also available
+          in Launch. To access the installation dialog box, open your mobile property,
+          click the <b>Environments</b> tab, and click <b>Install</b>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Signals</td>
+      <td style="text-align:left">The Signals extension is required for all postback rules to work. For
+        more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signals</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Lifecycle</td>
+      <td style="text-align:left">Lifecycle extension is required for a profile to get registered in Campaign.
+        You also need to implement Lifecycle APIs ( refer link - This link should
+        point to Step # 3 that talks about Lifecycle APIs)</td>
+    </tr>
+  </tbody>
+</table>{% tabs %}
 {% tab title="Android" %}
-1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](hhttps://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions to your project using the app's Gradle file.
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), [Lifecycle](hhttps://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signals ](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals)extensions to your project using the app's Gradle file.
 
 ```java
     implementation ('com.adobe.marketing.mobile:core:+')
@@ -77,7 +113,7 @@ The instructions to add these extensions to your mobile app are also available i
     implementation ('com.adobe.marketing.mobile:signal:+')
 ```
 
-2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
+2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signals](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -91,13 +127,11 @@ import com.adobe.marketing.mobile.UserProfile;
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle)
-
-   extensions to your project using Cocoapods.
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signals](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions to your project using Cocoapods.
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) libraries to your project. You also need to add the following pods to your `Podfile`:
+Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signals](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) libraries to your project. You also need to add the following pods to your `Podfile`:
 
 ```text
 use_frameworks!
@@ -106,9 +140,9 @@ pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle) extensions from Github.
+or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.3-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile), and [Lifecycle](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signals](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions from Github.
 
-1. In Xcode, import the Mobile Core, Campaign Standard, and Profile, and Lifecycle extensions:
+1. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signals extensions:
 
 #### Objective-C
 
