@@ -254,15 +254,18 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension()
-   ACPUserProfile.registerExtension()
-   ACPIdentity.registerExtension()
-   ACPLifecycle.registerExtension()
-   ACPSignal.registerExtension()
-    ACPCore.start {
+   	ACPCore.setLogLevel(.debug)
+	ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
+
+	ACPCampaign.registerExtension()
+	ACPUserProfile.registerExtension()
+	ACPIdentity.registerExtension()
+	ACPLifecycle.registerExtension()
+	ACPSignal.registerExtension()
+	ACPCore.start {
     	ACPCore.lifecycleStart(nil)
 	}
-
+	
   return true;
 }
 ```
