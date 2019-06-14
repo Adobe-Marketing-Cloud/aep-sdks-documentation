@@ -77,7 +77,7 @@ The instructions to add these extensions to your mobile app are also available i
     implementation ('com.adobe.marketing.mobile:signal:+')
 ```
 
-1. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
+2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/profile/README.md), and [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle) extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -166,11 +166,9 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 ![](../../.gitbook/assets/acp-android-install.png)
 
-1. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(Experience Cloud ID, Push Platform, App ID, and so  on\).  
+2. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(Experience Cloud ID, Push Platform, App ID, and so  on\).  
 
-   For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
-
-2. 
+For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
 
 {% tab title="iOS" %}
