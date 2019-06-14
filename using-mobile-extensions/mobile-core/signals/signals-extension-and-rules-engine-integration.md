@@ -1,4 +1,4 @@
-# Signals extension and Rules Engine integration
+# Signal extension and Rules Engine integration
 
 The rules that you set up can use the available triggers and conditions, which results in one of the following actions:
 
@@ -6,9 +6,9 @@ The rules that you set up can use the available triggers and conditions, which r
 * PII data
 * An open URL request
 
-After these actions have been configured to be triggered and published, the Signals extension carries out the requested actions.
+After these actions have been configured to be triggered and published, the Signal extension carries out the requested actions.
 
-To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signals event. The `collectPii` API can then be used to trigger the rule and send the PII data.
+To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
 
 ## Rules tokens  <a id="rules-tokens"></a>
 
