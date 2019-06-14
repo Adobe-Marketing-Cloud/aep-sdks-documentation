@@ -124,7 +124,7 @@ import com.adobe.marketing.mobile.UserProfile;
 ```
 
 {% hint style="info" %}
-For a manual install, go to [https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) and fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts. 
+To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
 {% endhint %}
 {% endtab %}
 
@@ -134,7 +134,7 @@ For a manual install, go to [https://github.com/Adobe-Marketing-Cloud/acp-sdks/t
 ![](../../.gitbook/assets/acs-pods.png)
 
 {% hint style="info" %}
-For a manual install, go to [https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) and fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts. 
+To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
 {% endhint %}
 
 2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
