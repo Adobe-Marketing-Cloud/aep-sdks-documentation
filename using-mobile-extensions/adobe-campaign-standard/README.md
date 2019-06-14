@@ -191,7 +191,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 {% tab title="Android" %}
 #### **Java**
 
-1. In your app's `OnCreate` method, call `MobileCore.setApplication()` for your Android app, register extensions, and start Mobile Core:
+1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
 ```java
 public class CampaignTestApp extends Application {
@@ -228,7 +228,7 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 {% endtab %}
 
 {% tab title="iOS" %}
-Register the Campaign extension and start the Core extension:
+1. In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
 #### Objective-C
 
@@ -255,19 +255,19 @@ Register the Campaign extension and start the Core extension:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
    ACPCampaign.registerExtension()
-	ACPUserProfile.registerExtension()
-	ACPIdentity.registerExtension()
-	ACPLifecycle.registerExtension()
-	ACPSignal.registerExtension()
-	ACPCore.start {
+   ACPUserProfile.registerExtension()
+   ACPIdentity.registerExtension()
+   ACPLifecycle.registerExtension()
+   ACPSignal.registerExtension()
+    ACPCore.start {
     	ACPCore.lifecycleStart(nil)
 	}
-}
+
   return true;
 }
 ```
 
-3. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
+2. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
