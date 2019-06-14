@@ -52,6 +52,8 @@ The **Request Timeout** value must be a non-zero number.
 
 ## Add the Campaign Standard extension to your app
 
+Remember the following information when you add the Campaign extension to your app:
+
 <table>
   <thead>
     <tr>
