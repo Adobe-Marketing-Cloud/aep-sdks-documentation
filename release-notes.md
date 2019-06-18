@@ -8,8 +8,8 @@ The following updates were made in this release:
 
 * Added a new API to return an error code when there is a failure retrieving nearby places.
 * When privacy status changes to opt-out, all Places-related data will now be wiped from the device.
-* Fixed a bug sometimes causing Places events following a first launch to be lost due to bad network conditions.
-* Fixed an issue where token replacement via Rules Engine would sometimes reference the incorrect POI when processing POIs in quick succession
+* Fixed an issue that, after a first launch, sometimes caused Places events to be lost due to bad network conditions.
+* Fixed an issue where, when processing POI entry events in quick succession, token replacement via Rules Engine sometimes reference the incorrect POI.
 
 ## June 13, 2019
 
