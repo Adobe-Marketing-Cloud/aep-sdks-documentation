@@ -1,5 +1,16 @@
 # Release notes
 
+## June 17, 2019
+
+The following updates were made in this release:
+
+**iOS Places 1.1.0**
+
+* Added a new API to return an error code when there is a failure retrieving nearby places.
+* When privacy status changes to opt-out, all Places-related data will now be wiped from the device.
+* Fixed an issue that, after a first launch, sometimes caused Places events to be lost due to bad network conditions.
+* Fixed an issue where, when processing POI entry events in quick succession, token replacement via Rules Engine sometimes reference the incorrect POI.
+
 ## June 13, 2019
 
 The following updates were made in this release:
