@@ -68,11 +68,19 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
+
+
+## May 30, 2019
+
+**Android Places Monitor 1.0.1**
+
+- Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
+
 ## May 20, 2019
 
 The following updates were made in this release:
 
-#### iOS Core 2.2.2:
+**iOS Core 2.2.2**
 
 * Fixed the issue where SSL connection was not kept alive.
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
@@ -80,13 +88,13 @@ The following updates were made in this release:
 * Added support for migrating Privacy status from v4 to v5, if it was manually set with v4 SDK.
 * Fixed issue where retrieving Privacy status may get delayed when device is offline.
 
-#### iOS Identity 2.0.3:
+**iOS Identity 2.0.3**
 
 * Fixed issue where device locale was not properly read when creating network requests from Identity extension.
 * Fixed issue where the callback was not called on `ACPIdentity.getIdentifiers` if no custom identifiers where synced previously.
 * Fixed issue where the Analytics visitor identifier \(VID\) was not included in the `ACPIdentity.appendToUrl` callback value.
 
-#### Android Core 1.3.1:
+**Android Core 1.3.1**
 
 * Added support for ISO 8601 timestamp for Rules Engine token replacement, you can use the placeholder `~timestampz`
 * Fixed the bug where `MobileCore.getSdkIdentities` didn't return the correct value for Analytics visitor identifier \(VID\).
@@ -94,11 +102,11 @@ The following updates were made in this release:
 * Fixed issue where retrieving Privacy status may get delayed when device is offline.
 * Added support for loading cached configuraiton and cached rules on subsequent launch.
 
-#### Android Identity 1.0.5:
+**Android Identity 1.0.5**
 
 * Fixed issue where the Analytics visitor identifier \(VID\) was not included in the `Identity.appendVisitorInfoForURL` callback value.
 
-#### Android Campaign 1.0.1:
+**Android Campaign 1.0.1**
 
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
@@ -107,22 +115,22 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-#### Android
-
-Android Places Extension 1.2.0:
+**Android Places 1.2.0**
 
 * Added a new API to process an individual `Geofence`.
 * Bug fix to prevent multiple consecutive entry events.
 
-Android Places Monitor 1.0.0:
+**Android Places Monitor 1.0.0**
 
-* Initial release of the Places Monitor for Android.
+Initial release of the Places Monitor for Android.
+
+ The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
 
 For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
 ## May 15, 2019
 
-The following updates were made to the Adobe Target extension in Android version 1.1.0 and iOS version 2.1.0:
+**iOS Target 2.1.0 & Android Target 1.1.0**
 
 * Upgraded Target Delivery APIs to latest v1 delivery endpoint.
 * Introduced `retrieveLocationContent`, a new API that retrieves content for multiple Target mbox locations simultaneously without increasing the reporting count for prefetch cases.
@@ -132,7 +140,7 @@ The following updates were made to the Adobe Target extension in Android version
 
 ## May 9, 2019
 
-The following updates were made to the Analytics extension in iOS version 2.1.0:
+**iOS Analytics 2.1.0**
 
 * Fixed a crash related to database multi-threading.
 * Enforced HTTPs network requests.
@@ -146,43 +154,49 @@ React Native wrappers for the following extensions were pushed to npmjs:
 
 ## May 6, 2019
 
-The following updates were made to the Mobile Core extension in Android version 1.3.0:
+**Android Core 1.3.0**
 
 * The `MobileCore.start()` API should only get called once, and the SDK ignores the subsequent calls to this API.
 * Added an internal API for React Native support.
 
 ## May 2, 2019
 
-The following update was made to the Mobile Core extension in iOS version 2.2.1:
+The following updates were made in this release:
+
+**iOS Core 2.2.1**
 
 * Fixed an issue when the app network crashes under extreme conditions.
+
+**Android Places 1.1.0**
+
+- Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
+- The Places extension now queues the events until a configuration is obtained.
+- Added support for environment-aware configurations.
+- Bug Fix : corrected the keys for the region entry/exit events
+- Storage of last known location now properly respects the user's privacy status
 
 ## April 26, 2019
 
 The following updates were made in this release:
 
-#### iOS
-
-iOS Core 2.2.0 is now available!
+**iOS Core 2.2.0** 
 
 * The `ACPCore.start` API can only get called once.
 * Added the `ACPCore.registerURLHandler` API, which allows the app to set a custom handler for click-through URLs.
 * Fixed the problem where the SDK failed to get locale information.
 * Allow the Rules Engine to replace the token for non-string objects.
 
-#### Android
-
-Android Core 1.2.2 is now available!
+**Android Core 1.2.2**
 
 * Fixed a bug that prevented URLs from being correctly opened on some Android versions.
 
-#### Analytics 2.0.4 \(iOS\)
+**iOS Analytics 2.0.4**
 
-Fixed a cocoapod dependency issue.
+- Fixed a cocoapod dependency issue.
 
-#### Mobile Services 2.0.1 \(iOS\)
+**iOS Mobile Services 2.0.1**
 
-Fixed a cocoapod dependency issue.
+- Fixed a cocoapod dependency issue.
 
 ## April 16, 2019
 
@@ -201,9 +215,9 @@ To learn more about Project Griffon, here are the links to the [documentation](h
 
 ## April 9, 2019
 
-The ACPlaces Monitor version 1.0.1 is now available!
+The following updates were made in this release:
 
-Here are the changes in this release:
+**iOS Places Monitor 1.0.1**
 
 * Added full unit test coverage.
 * CI integration \(CircleCI\)
@@ -213,95 +227,109 @@ Here are the changes in this release:
 
 The following updates were made in this release:
 
-#### iOS Core 2.1.1:
+**iOS Core 2.1.1**
 
 * Core: Internal support for database scheme migration.
 * Identity: Identity MID might be regenerated when privacy settings change from opted out to opted in/opt unknown in the same session.
 
-#### iOS Analytics 2.0.3:
+**iOS Analytics 2.0.3**
 
 * Fixed a minor Analytics hit ordering issue.
 
-#### iOS Mobile Services 1.0.0:
+**iOS Mobile Services 1.0.0**
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 
 ## April 3, 2019
 
-The following update was made in Adobe Campaign Standard extension version 1.0.1 in iOS.
+**iOS Campaign Standard 1.0.1**
 
 * Fixed an issue with duplicate symbols being present in the Campaign extension library.
 
 ## March 25, 2019
 
-The following updates were made to the Mobile Core extension in iOS version 2.1.0:
+The following updates were made in this release:
 
-#### Configuration
+**iOS Core 2.1.0**
+
+**Configuration**
 
 If there is no cached configuration available, the SDK can fetch the configuration after a network restore.
 
-#### Core
+**Core**
 
 * Added the `ACPCore` log API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LogLevel` to select the verbosity of the logs.
 * You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
 * `trackAction` and `trackState` only accept `NSDictionary`-type context data.
 
+**iOS Places Monitor 1.0.0**
+
+Initial release of the **Places Monitor** for iOS.
+
+ The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
+
+For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
+
 ## March 21, 2019
 
-The Adobe Campaign Standard extension version 1.0.0 is now available for Android!
+The **Adobe Campaign Standard** extension version 1.0.0 is now available for Android!
 
-This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
+- This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
-## March 21, 2019
-
-The following update was made to the Mobile Core extension in Android version 1.2.1:
+**Android Core 1.2.1**
 
 * Added protection around null results when `toString` is called on Intent extras data.
 
 ## March 20, 2019
 
+The following updates were made in this release:
+
+**Android Core 1.2.0**
+
 The following updates were made to the Mobile Core extension in Android version 1.2.0:
 
-#### **Configuration**
+**Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
 * Added environment-aware support, which allows you to define dev and stage environments in a property. \_\*\*\_This overrides the config properties that were based on the default environment.
 
-#### Core
+**Core**
 
 * Added the `MobileCore.getApplication` API, which allows third-party extension developers access the application context.
 * Added the `MobileCore.log` API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LoggingMode` to select the verbosity of the logs.
 * You can also use the `MobileCore.getLogLevel` API to retrieve the current `LoggingMode` that was set in the SDK.
 
-#### Identity
+**Android Identity 1.0.4**
 
 * You can regenerate the MID when privacy settings change from opted out to opted in/opt unknown in the same session.
 
 ## March 14, 2019
 
-The following update was made to the Mobile Core extension in Android version 1.1.2:
+**Android Core 1.1.2**
 
 * Resolved an issue that might result in a crash when the underlying Analytics database was corrupted.
 
 ## March 7, 2019
 
-The following update was made to the Mobile Core extension in Android version 1.1.1:
+**Android Core 1.1.1**
 
 * Resolved an issue that could result in a crash when the underlying Analytics database was corrupted.
 
 ## March 1, 2019
 
-The following update was made to the Mobile Core extension in Android version 1.1.0:
+The following updates were made in this release:
+
+**Android Core 1.1.0**
 
 * The `setSmallIcon` and `setLargeIcon` APIs were added.
 
-The following update was made to the Mobile Analytics extension in Android version 1.1.1:
+**Android Analytics 1.1.1**
 
 * Use the `analytics.launchHitDelay` configuration setting to indicate how long to wait before Analytics launch hits are sent.
 
 ## February 28, 2019
 
-The first version of Places is now available for public beta access!
+The first version of **Places** is now available for public beta access!
 
 The Places solution is composed of the following components:
 
@@ -325,7 +353,7 @@ To learn more about Places, here are links to the documentation:
 
 ## February 28, 2019
 
-The following updates were made to the Adobe Target extension:
+The following updates were made to the **Adobe Target extension**:
 
 The Target Client Code is now automatically added based on your Experience Cloud organization.
 
@@ -334,19 +362,19 @@ The Target Client Code is now automatically added based on your Experience Cloud
 
 ## February 20, 2019
 
-The Adobe Campaign Standard extension version 1.0.0 is now available!
+The Adobe **Campaign Standard** extension version 1.0.0 is now available!
 
 This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
 ## February 19, 2019
 
-The following updates were made to the Mobile Core extension in iOS version 2.0.3:
+**iOS Core 2.0.3**
 
 * Bug fixes
 
 ## February 7, 2109
 
-The following updates were made to the Mobile Core extension in iOS version 2.0.2:
+**iOS Core 2.0.2**
 
 * Resolved an issue that caused failures when retrieving a configuration on application launch.
 
@@ -426,7 +454,7 @@ We feel that this update will serve our customers and partners better in the lon
 
 ## December 5, 2018
 
-The following updates were made to the Mobile Core extension in iOS version 1.1.1:
+**iOS Core 1.1.1**
 
 * Fixed a bug where the `deviceToken` conversion was incorrect in some situations.
 
@@ -440,13 +468,13 @@ The following updates were made to all extensions:
 
 ## November 30, 2018
 
-The following updates were made to the Mobile Core extension in iOS version 1.0.2:
+**iOS Core 1.0.2**
 
 * Minor bug fixes
 
 ## November 20, 2018
 
-The Adobe Campaign Classic extension version 1.0.0 is now available!
+The **Adobe Campaign Classic** extension version 1.0.0 is now available for iOS!
 
 This extension enables the delivery and tracking of push notifications to mobile app users from Adobe Campaign Classic.
 
