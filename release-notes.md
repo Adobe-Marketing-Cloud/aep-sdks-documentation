@@ -1,5 +1,15 @@
 # Release notes
 
+## June 19, 2019
+
+The following updates were made in this release:
+
+**iOS Core release 2.3.2**
+
+* Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values. 
+* Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down. 
+* Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
+
 ## June 17, 2019
 
 The following updates were made in this release:
@@ -38,7 +48,7 @@ The following updates were made in this release:
 
 * Fixed the migration of Custom Analytics ID from v4.
 * Added the `collectMessageInfo` API to collect push/local notification-related data.
-* Forced the _\*\*_usage of TLS v1.1/v1.2 on the Android 4.x devices \(Android API version from 16-19\).
+* Forced the \_\*\*\_usage of TLS v1.1/v1.2 on the Android 4.x devices \(Android API version from 16-19\).
 
 **Android Signal 1.0.2:**
 
@@ -68,13 +78,11 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-
-
 ## May 30, 2019
 
 **Android Places Monitor 1.0.1**
 
-- Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
+* Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
 
 ## May 20, 2019
 
@@ -124,7 +132,7 @@ The following updates were made in this release:
 
 Initial release of the Places Monitor for Android.
 
- The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
+The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
 
 For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
@@ -169,17 +177,17 @@ The following updates were made in this release:
 
 **Android Places 1.1.0**
 
-- Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
-- The Places extension now queues the events until a configuration is obtained.
-- Added support for environment-aware configurations.
-- Bug Fix : corrected the keys for the region entry/exit events
-- Storage of last known location now properly respects the user's privacy status
+* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
+* The Places extension now queues the events until a configuration is obtained.
+* Added support for environment-aware configurations.
+* Bug Fix : corrected the keys for the region entry/exit events
+* Storage of last known location now properly respects the user's privacy status
 
 ## April 26, 2019
 
 The following updates were made in this release:
 
-**iOS Core 2.2.0** 
+**iOS Core 2.2.0**
 
 * The `ACPCore.start` API can only get called once.
 * Added the `ACPCore.registerURLHandler` API, which allows the app to set a custom handler for click-through URLs.
@@ -192,11 +200,11 @@ The following updates were made in this release:
 
 **iOS Analytics 2.0.4**
 
-- Fixed a cocoapod dependency issue.
+* Fixed a cocoapod dependency issue.
 
 **iOS Mobile Services 2.0.1**
 
-- Fixed a cocoapod dependency issue.
+* Fixed a cocoapod dependency issue.
 
 ## April 16, 2019
 
@@ -266,7 +274,7 @@ If there is no cached configuration available, the SDK can fetch the configurati
 
 Initial release of the **Places Monitor** for iOS.
 
- The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
+The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
 
 For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
@@ -274,7 +282,7 @@ For more information about the Places Monitor, [click here](https://github.com/A
 
 The **Adobe Campaign Standard** extension version 1.0.0 is now available for Android!
 
-- This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
+* This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
 **Android Core 1.2.1**
 

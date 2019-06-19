@@ -71,7 +71,6 @@ Here is the code sample to register the Identity extension:
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension.
@@ -132,7 +131,7 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID (ECID) uniquely identifies each visitor in the Adobe Experience Cloud and is a 32-character ID.
+Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Cloud and is a 32-character ID.
 {% endhint %}
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -143,18 +142,14 @@ If you app opens mobile web content, you need to ensure that visitors are not id
 
 #### Visitor IDs in Apps
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID (ECID, previously known as MCID) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
 
 {% hint style="info" %}
-
-When the Mobile SDK privacy status is set to Opt-Out and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to Opt-In.
-
+When the Mobile SDK privacy status is set to Opt-Out and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
-
 App visitor IDs persist through upgrades.
-
 {% endhint %}
 
 #### Visitor IDs in the Mobile Web
@@ -163,14 +158,13 @@ Typical mobile web implementations use the same standard Analytics `s_code.js` o
 
 To use the same visitor ID in the app and mobile web, complete the following instructions to pass the visitor ID to the mobile web in the URL.
 
-##### Implementing Visitor Tracking between an App and Mobile Web
+**Implementing Visitor Tracking between an App and Mobile Web**
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](./identity-api-reference#appendtourl-java):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-java):
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -186,7 +180,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting with SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](./identity-api-reference#geturlvariables-java) and build your own URL:
+Alternately, starting with SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -201,14 +195,12 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
     }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](./identity-api-reference#appendtourl-ios):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-ios):
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -217,7 +209,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](./identity-api-reference#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-ios) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -230,27 +222,23 @@ Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you ca
   }];
 }];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](./identity-api-reference#appendtourl-js):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-js):
 
 ```java
 ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
 
-Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](./identity-api-reference#geturlvariables-js) and build your own URL:
+Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-js) and build your own URL:
 
 ```java
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page used the passed-in ECID to track the visitor.
