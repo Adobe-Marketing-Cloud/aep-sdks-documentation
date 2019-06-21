@@ -1,8 +1,8 @@
 # Initialize the SDK and set up tracking
 
-## Configure SDK with the Launch Environment ID
+## Configure SDK with the Experience Platform Launch Environment ID
 
-To initialize the SDK, you need to first configure the SDK with an Environment ID from Launch.
+To initialize the SDK, you need to first configure the SDK with an Environment ID from Experience Platform Launch.
 
 {% hint style="info" %}
 To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.

@@ -2,7 +2,7 @@
 
 ## Emulating the trackBeacon call from v4 SDKs
 
-The `trackBeacon` call is no longer available in the AEP SDKs. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the [Profile extension](../../using-mobile-extensions/profile/) for the purposes of generating beacon-related rules.
+The `trackBeacon` call is no longer available in the Experience Platform SDKs. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the [Profile extension](../../using-mobile-extensions/profile/) for the purposes of generating beacon-related rules.
 
 This page contains sample code to help you implement your own `trackBeacon` calls.
 
@@ -254,9 +254,9 @@ do {
 {% endtab %}
 {% endtabs %}
 
-## Using beacon values in Launch rules
+## Using beacon values in Experience Platform Launch rules
 
-In the above code samples, attributes are being set in the client-side user profile. We can use those attributes when creating a rule in Launch to give a custom experience or take a specific action when the user is near a beacon.
+In the above code samples, attributes are being set in the client-side user profile. We can use those attributes when creating a rule in Experience Platform Launch to give a custom experience or take a specific action when the user is near a beacon.
 
 ### Beacon data in rule conditions
 

@@ -1,4 +1,4 @@
-# Building the Launch extension interface
+# Building the Experience Platform Launch extension interface
 
 ## Prerequisites
 
@@ -14,11 +14,11 @@
 
    For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
 
-## Build a Launch extension interface
+## Build an Experience Platform Launch extension interface
 
-To build the Launch extension interface, complete the following steps:
+To build the Experience Platform Launch extension interface, complete the following steps:
 
-1. Create a new directory for your Launch extension.
+1. Create a new directory for your Experience Platform Launch extension.
 2. In a terminal window, run `npx @adobe/reactor-scaffold`.
    * The scaffold tool prompts you with a series of questions to build the extension folder and add the appropriate metadata. 
    * Make sure that you have your Android Maven and iOS CocoaPods URLs handy.
@@ -32,15 +32,15 @@ To build the Launch extension interface, complete the following steps:
 
 4. In a terminal window, run `npx @adobe/reactor-sandbox`.
 
-   This step loads a simulated Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and so on.
+   This step loads a simulated Experience Platform Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and so on.
 
 5. In a terminal window, run `npx @adobe/reactor-packager`.
 
-   This step creates a zip file of your finished Launch extension.
+   This step creates a zip file of your finished Experience Platform Launch extension.
 
 6. In a terminal window, run `npx @adobe/reactor-uploader`.
 
-   This step uploads your extension to Launch.
+   This step uploads your extension to Experience Platform Launch.
 
    **Tip**: Adobe I/O integration keys are needed before you can build the interface. For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
 

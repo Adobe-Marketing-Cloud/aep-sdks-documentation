@@ -19,8 +19,8 @@
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Daily Engaged Users | a.DailyEngUserEvent | Triggered when the application is used on a particular day.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Monthly Engaged Users | a.MonthlyEngUserEvent | Triggered when the application is used during a particular month.    **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Daily Engaged Users | a.DailyEngUserEvent | Triggered when the application is used on a particular day.      **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Monthly Engaged Users | a.MonthlyEngUserEvent | Triggered when the application is used during a particular month.      **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 | Launches | a.LaunchEvent | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
 | Previous Session Length | a.PrevSessionLength | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. |
 | Ignored Session Length | a.ignoredSessionLength | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |

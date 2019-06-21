@@ -1,11 +1,11 @@
 # Configuration API reference
 
-## Configure with the Launch App ID
+## Configure with the Experience Platform Launch App ID
 
-Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
+Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
 
 {% hint style="success" %}
-We strongly recommend that you configure the SDK with the Launch environment ID.
+We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID.
 {% endhint %}
 
 After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. Subsequent requests for configuration causes the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
@@ -16,7 +16,7 @@ No configuration changes are made when the following conditions are met:
 * Configuration retrieval fails due to network, or other, considerations.
 * A file-read or parsing errors occurs.
 
-The unique environment ID provided by Launch can be configured with the SDK using the following:
+The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -172,7 +172,7 @@ To download the JSON configuration file, use the following URL:
 * In iOS, the `ADBMobileConfig.json` file can be placed anywhere that it is accessible in your bundle.
 * In Android, the `ADBMobileConfig.json` file must be placed in the assets folder.
 
-You can also load a different `ADBMobileConfig.json` file by using the `ConfigureWithFileInPath` method. The Adobe Experience Platform SDKs will attempt to load the file from the given path and parse its JSON contents. Previous programmatic configuration changes that were set by using the `UpdateConfiguration` method are applied on the bundled file's configuration before setting the new configuration to the Adobe Cloud Platform SDKs. If a file-read error or JSON parsing error occurs, no configuration changes are made.
+You can also load a different `ADBMobileConfig.json` file by using the `ConfigureWithFileInPath` method. The Adobe Experience Platform SDKs will attempt to load the file from the given path and parse its JSON contents. Previous programmatic configuration changes that were set by using the `UpdateConfiguration` method are applied on the bundled file's configuration before setting the new configuration to the Adobe Experience Platform SDKs. If a file-read error or JSON parsing error occurs, no configuration changes are made.
 
 To pass in a bundled path and file name:
 
