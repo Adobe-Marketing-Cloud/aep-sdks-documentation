@@ -4,18 +4,18 @@
 
 To get started with Target, follow these steps:
 
-1. Configure the Target extension in Launch.
+1. Configure the Target extension in Experience Platform Launch.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
    * Request activities.
    * Prefetch offers.
    * Enter visual preview mode.
 
-## Configure the Target extension in Launch      <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure the Target extension in Experience Platform Launch      <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target extension, and click **Configure**.
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
@@ -248,7 +248,7 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 ### Using TargetParameters, TargetOrder and TargetProduct object
 
-With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use. With `TargetOrder`, you can combine the order parameters and use it in TargetParameters. With `TargetProduct`, you can combine the product parameters and use it in TargetParameters.
+With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use. With `TargetOrder`, you can combine the order parameters and use it in TargetParameters. With `TargetProduct`, you can combine the product parameters and use it in `TargetParameters`.
 
 **Merge behavior of parameters that are passed in the APIs with parameters that are passed in the TargetPrefetch/TargetRequest Object**
 
@@ -466,7 +466,7 @@ To see the performance of your Target activities for certain segments, set up th
 
 ## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+If you need to update SDK configuration, programmatically, use the following information to change your Target configuration values. For more information, [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Description |
 | :--- | :--- |

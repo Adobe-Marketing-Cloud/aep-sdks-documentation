@@ -2,7 +2,7 @@
 
 ## Configure Campaign Classic extension in Launch
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Classic** extension, and click **Install**.
 3. Type in the settings for your extension.
 4. Click **Save**.

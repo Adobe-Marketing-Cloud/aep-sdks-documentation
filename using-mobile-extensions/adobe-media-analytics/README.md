@@ -1,8 +1,8 @@
 # Adobe Media Analytics for Audio and Video
 
-## Configure Media Analytics extension in Launch
+## Configure Media Analytics extension in Experience Platform Launch
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
 3. Type the extension settings.  For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
 4. Click **Save**.

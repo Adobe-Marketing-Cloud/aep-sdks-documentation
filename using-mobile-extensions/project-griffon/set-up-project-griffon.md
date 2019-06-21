@@ -1,12 +1,12 @@
 # Set up Project Griffon
 
-## **Configure the Project Griffon extension in Launch**
+## **Configure the Project Griffon extension in** Experience Platform **Launch**
 
 {% hint style="warning" %}
 This extension is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
 {% endhint %}
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Project Griffon** extension, and click **Install**.
 3. Follow the publishing process to update SDK configuration.
 

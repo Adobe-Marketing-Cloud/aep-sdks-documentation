@@ -381,10 +381,10 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 To set up postbacks to track push and in-app messages, go to [Step 3 Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Step 4 Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback).
 
-## Deleting mobile properties in Launch
+## Deleting mobile properties in Experience Platform Launch
 
 {% hint style="danger" %}
-Deleting your property in Launch might cause disruption to your recurring push and in-app messaging activities.
+Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
 If you delete your mobile property in Experience Platform Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property).
