@@ -1,5 +1,13 @@
 # Release notes
 
+## June 25, 2019
+
+The following updates were made in this release:
+
+**iOS Places Monitor 1.0.2**
+
+* Quality of life improvements, including better in-code documentation and logging.
+
 ## June 19, 2019
 
 The following updates were made in this release:
