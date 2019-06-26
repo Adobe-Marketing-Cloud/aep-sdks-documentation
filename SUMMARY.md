@@ -6,6 +6,10 @@
 ## BETA
 
 * [Untitled](beta/untitled.md)
+* [Adobe Places](beta/adobe-places.md)
+* [Project Griffon](beta/project-griffon/README.md)
+  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
+  * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
 
 ## Getting Started
 
@@ -55,10 +59,6 @@
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
-* [Places \(Beta\)](using-mobile-extensions/places-extension-1.md)
-* [Project Griffon \(Beta\)](using-mobile-extensions/project-griffon/README.md)
-  * [Set up Project Griffon](using-mobile-extensions/project-griffon/set-up-project-griffon.md)
-  * [Using Project Griffon](using-mobile-extensions/project-griffon/using-project-griffon.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
@@ -90,8 +90,4 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
-
-## BETA <a id="beta-1"></a>
-
-* [Untitled](beta-1/untitled.md)
 

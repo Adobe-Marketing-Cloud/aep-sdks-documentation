@@ -1,4 +1,4 @@
-# Project Griffon \(Beta\)
+# Project Griffon
 
 Project Griffon is a new, innovative product from Adobe to help you easily inspect, validate, debug data collection and experiences for your mobile app. Made for app product managers and developers, this product will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
 
@@ -26,8 +26,8 @@ After you connect, easily inspect live-streamed app events and activity. Filter 
 
 To get started with Project Griffon, see the following:
 
-* [Set up Project Griffon](set-up-project-griffon.md)
-* [Using Project Griffon](using-project-griffon.md)
+* [Set up Project Griffon]()
+* [Using Project Griffon]()
 
 If you need access, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
 
