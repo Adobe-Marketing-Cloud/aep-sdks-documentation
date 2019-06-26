@@ -3,13 +3,6 @@
 * [Overview](README.md)
 * [Release notes](release-notes.md)
 
-## BETA
-
-* [Adobe Places \(Beta\)](beta/adobe-places.md)
-* [Project Griffon \(Beta\)](beta/project-griffon/README.md)
-  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
-  * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
-
 ## Getting Started
 
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
@@ -89,4 +82,11 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+
+## BETA
+
+* [Adobe Places \(Beta\)](beta/adobe-places.md)
+* [Project Griffon \(Beta\)](beta/project-griffon/README.md)
+  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
+  * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
 
