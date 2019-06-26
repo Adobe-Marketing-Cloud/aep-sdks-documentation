@@ -23,11 +23,11 @@ To get started with Target VEC, complete the following steps:
    2. Fetch Target Activities Programmatically
    3. Handle Target Workspace Restrictions
 
-## Configure the Adobe Target - VEC extension in Launch     <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
+## Configure the Adobe Target - VEC extension in Experience Platform Launch     <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
 
 ![Adobe Target VEC Extension Configuration](../.gitbook/assets/adobe-target-vec-1.png)
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target VEC extension, and click **Configure**.
 3. The default configuration options loads Target VEC activities as a blocking call on App launch.
 
