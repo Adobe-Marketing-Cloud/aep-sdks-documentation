@@ -14,7 +14,7 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-1. Open the **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  ![](../.gitbook/assets/package.png) 
+1. Open the **Mobile** property in Experience Platform Launch, and click on the **Environments** tab, and then click on the install package icon![](../.gitbook/assets/package.png). 
 2. On the **Mobile Install Instructions** dialog box, select **Android**.
 3. Follow the instructions for using Gradle with Android.
 

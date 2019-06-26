@@ -5,7 +5,7 @@
 To initialize the SDK, you need to first configure the SDK with an Environment ID from Experience Platform Launch.
 
 {% hint style="info" %}
-To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
+To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
 {% tabs %}
@@ -124,7 +124,7 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
+Developing extensions and using an Experience PlatformLaunch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
 {% endhint %}
 
 ## Enable debug logging
