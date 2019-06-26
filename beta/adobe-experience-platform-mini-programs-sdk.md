@@ -6,9 +6,9 @@
 * Send Analytics track action/state call.
 * Collect `lifecycle` data, including launch/install/upgrade events, and previous session length.
 * Use `aid` to identify a unique user.
-* Retrieve `aid` from remote analytics server at the first app launch. \(Android\).
-* Generate `aid` locally at the first app launch. \(iOS\).
-* Store `aid` and Lifecycle related data into local storage.
+  * Retrieve `aid` from remote analytics server at the first app launch. \(Android\).
+  * Generate `aid` locally at the first app launch. \(iOS\).
+  * Store `aid` and Lifecycle related data into local storage.
 * Use a `queue` to guarantee the request are being sent in order, also to avoid occupying multiple HTTP requests quota.
 * Enable or disable debug logging.
 * Enable or disable debug mode.
