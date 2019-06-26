@@ -1,4 +1,4 @@
-# Project Griffon
+# Project Griffon \(Beta\)
 
 Project Griffon is a new, innovative product from Adobe to help you easily inspect, validate, debug data collection and experiences for your mobile app. Made for app product managers and developers, this product will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
 
