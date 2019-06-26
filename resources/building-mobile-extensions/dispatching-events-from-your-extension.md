@@ -2,7 +2,7 @@
 
 Events can be used by extensions in the following scenarios:
 
-* Triggering actions in the Experience Platform SDKs.  Events are used by the extensions to signal when certain actions should take place, for example, to send an Analytics hit. Extensions can send the same types of events that the Experience Platform SDKs would send internally to trigger these actions.
+* Triggering actions in the Experience Platform SDKs. Events are used by the extensions to signal when certain actions should take place, for example, to send an Analytics hit. Extensions can send the same types of events that the Experience Platform SDKs would send internally to trigger these actions.
 * Triggering actions in another extension.  You might have multiple extensions in your application, and some of these extensions might have their own events defined that trigger actions.
 
 ## Create an event for dispatching

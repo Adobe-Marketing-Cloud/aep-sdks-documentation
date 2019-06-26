@@ -13,7 +13,7 @@ Before you build an extension, complete the following tasks:
   To determine your goals, think about the following questions:
 
   * Do you need access to data that is not already exposed via the Adobe Experience Platform SDKs?    
-  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe   Platform SDKs?   
+  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe Experience Platform SDKs?   
   * Do you need to add data to or modify data for outgoing messages?    
   * Do you need to expose data to other extensions or to rules processing?
 
