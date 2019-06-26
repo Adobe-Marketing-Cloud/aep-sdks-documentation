@@ -3,6 +3,10 @@
 * [Overview](README.md)
 * [Release notes](release-notes.md)
 
+## BETA
+
+* [Untitled](beta/untitled.md)
+
 ## Getting Started
 
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
@@ -86,4 +90,8 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+
+## BETA <a id="beta-1"></a>
+
+* [Untitled](beta-1/untitled.md)
 
