@@ -30,7 +30,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 *`products`* is set directly on the image request, and the other variables are set as context data. All context data variables must be mapped by using processing rules: 
 
-###<Image Here>
+# <Image Here>
 
 You do not need to map the *`products`* variable using processing rules because it is set directly on the image request by the SDK. 
 
