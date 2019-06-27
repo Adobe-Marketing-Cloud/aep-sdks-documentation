@@ -2,25 +2,27 @@
 
 ## Features
 
-* Pass in the configuration, including analytics and app related settings.
+* Pass in the configuration, including Analytics and app-related settings.
 * Send Analytics track action/state call.
-* Collect `lifecycle` data, including launch/install/upgrade events, and previous session length.
+* Collect `lifecycle` data, including launch, install, upgrade events, and previous session length.
 * Use `aid` to identify a unique user.
-  * Retrieve `aid` from remote analytics server at the first app launch. \(Android\).
-  * Generate `aid` locally at the first app launch. \(iOS\).
-  * Store `aid` and Lifecycle related data into local storage.
-* Use a `queue` to guarantee the request are being sent in order, also to avoid occupying multiple HTTP requests quota.
+  * \(Android\) Retrieve `aid` from remote Analytics server at the first app launch. 
+  * \(iOS\) Generate `aid` locally at the first app launch.
+  * Store `aid` and Lifecycle-related data into local storage.
+* Use a `queue` to guarantee the request are being sent in order, which avoids occupying multiple HTTP requests quota.
 * Enable or disable debug logging.
 * Enable or disable debug mode.
 
-## Using Mobile SDK in WeChat Mini Program
+## Using the Mobile SDK in the Mini Program SDK
 
-1. In the `onLaunch` method of the `App.js`, implement `AdobeSDK.init()`, and pass in valid configurations.
+1. In the `onLaunch` method of the `App.js`, implement `AdobeSDK.init()` and pass in valid configurations.
 2. Enable debug logging if needed.
-3. Call `AdobeSDK.trackState()` when switch to a new `Page`, and pass in the page name and any additional context data.  Normally, you can implement this in the `onShow` method of the `Page`.
+3. Call `AdobeSDK.trackState()` when you switch to a new `Page`  pass in the page name and any additional context data.   You can usually implement this in the `onShow` method of the `Page`.
 4. To track a certain event, call `AdobeSDK.trackAction()` .
 
 ## Public API
+
+Here are the public APIs in the Mini ProgramS SDK:
 
 ### AdobeSDK.init\(configurations\)
 
@@ -35,7 +37,7 @@ AdobeSDK.init({
     });
 ```
 
-The `analytics.offlineEnabled` timestamp\(ts\) will be included in Analytics request if this config is enabled.
+If this config is enabled, The `analytics.offlineEnabled` timestamp\(ts\) is included in Analytics request .
 
 ### AdobeSDK.setDebugLoggingEnabled\(flag\)
 
@@ -45,7 +47,7 @@ AdobeSDK.setDebugLoggingEnabled(true)
 
 ### AdobeSDK.setDebugModeEnabled\(flag\)
 
-By default, the SDK will swallow internal exceptions and print error message in console log. If you want to let the SDK throw those exceptions, you need to enable debug mode.
+By default, the SDK swallows internal exceptions and print error message in console log. To let the SDK throw those exceptions, you need to enable debug mode.
 
 ```javascript
 AdobeSDK.setDebugModeEnabled(true)
@@ -65,7 +67,7 @@ AdobeSDK.trackState("state", { "example.key": "value" });
 
 ### Analytics hits example
 
-Here is a list of the Analytics hits for manual tests:
+Here are the Analytics hits examples for manual tests:
 
 #### Lifecycle - Install Event
 
