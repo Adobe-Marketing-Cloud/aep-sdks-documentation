@@ -34,15 +34,6 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 You do not need to map the *`products`* variable using processing rules because it is set directly on the image request by the SDK. 
 
----
-description: Here is an example of the products variable with Merchandising eVars and product-specific events.
-seo-description: Here is an example of the products variable with Merchandising eVars and product-specific events.
-seo-title: Products Variable with Merchandising eVars and Product-Specific Events
-solution: Marketing Cloud,Analytics
-title: Products Variable with Merchandising eVars and Product-Specific Events
-topic: Developer and implementation
-uuid: f913211e-97ad-4237-bfe4-7ded01295caf
----
 
 # Products variable with merchandising eVars and product-specific events {#products-variable-with-merchandising-evars-and-product-specific-events}
 
