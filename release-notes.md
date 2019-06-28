@@ -1,5 +1,13 @@
 # Release notes
 
+## June 28, 2019
+
+The following updates were made in this release: 
+
+**Android Griffon Bridge 1.0.1**
+
+* Initial beta release.
+
 ## June 25, 2019
 
 The following updates were made in this release:
