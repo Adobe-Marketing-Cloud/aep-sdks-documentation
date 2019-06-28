@@ -1,5 +1,14 @@
 # Release notes
 
+## June 27, 2019
+
+The following updates were made in this release:
+
+**iOS Target 2.1.1 & Android Target 1.1.1**
+
+- Use `target.propertyToken` configuration setting to configure at_property_token generated from Target UI, instead of passing as mbox parameter.
+- Fixed an issue where JSON offers were not being returned as content, but instead default content was served.
+
 ## June 25, 2019
 
 The following updates were made in this release:
