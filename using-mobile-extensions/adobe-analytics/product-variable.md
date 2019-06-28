@@ -57,7 +57,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
 
-> \[!TIP\]
->
-> If you trigger a product-specific event by using the _`&&products`_ variable, you must also set that event in the _`&&events`_ variable. If you do not set that event, it is filtered out during processing.
+{% hint style="info" %}
+If you trigger a product-specific event by using the `&&products` variable, you must also set that event in the `&&events` variable. If you do not set that event, it is filtered out during processing.
+{% endhint %}
 
