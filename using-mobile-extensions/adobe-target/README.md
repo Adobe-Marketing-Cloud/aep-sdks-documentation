@@ -20,9 +20,9 @@ To get started with Target, follow these steps:
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
 5. Set the timeout value to at least 5 seconds.
-6. Optionally, enter the target workspace property token (Generated from Target UI).
+6. Optionally, enter the Target workspace property token that was generated from Target UI.
 7. Click **Save**.
-8. Follow the publishing process to update SDK configuration
+8. Follow the publishing process to update SDK configuration.
 
 ## Add Target to your app
 
@@ -474,10 +474,10 @@ If you need to update SDK configuration, programmatically, use the following inf
 | target.clientcode | Client code for your account. |
 | target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. |
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
-| target.propertyToken | at_property token value which is generated from Target UI. If this is left blank, then no token will be sent in target network calls. |
+| target.propertyToken | `at_property token` value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. |
 
 {% hint style="warning" %}
-It is recommended to use Launch config to pass property token instead of passing it inside mbox parameter. If property token is passed inside both launch configuration and mbox parameter, then the token entered in mbox parameter will be discarded.
+We recommend that you use Experience Platform Launch config to pass the property token instead of passing it in as a mbox parameter. If the property token is passed in Experience Platform Launch configuration and also as a mbox parameter, the token that was entered in the mbox parameter is discarded.
 {% endhint %}
 
 ## Additional information
