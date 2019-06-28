@@ -21,21 +21,27 @@ Click **Install** on the extension card. No extension settings are required.
 {% tabs %}
 {% tab title="Android" %}
 1. Add the following libraries in your project's `build.gradle` file:
-`implementation 'com.adobe.marketing.mobile:core:1.4.0'`
-`implementation 'com.adobe.marketing.mobile:griffonbridge:1.0.1'`. 
- Also be sure to use the latest available versions.
-2. Import the Project Griffon libaries along with other SDK libaries:
-#### Java
 
-```
+   `implementation 'com.adobe.marketing.mobile:core:1.4.0'`
+
+   `implementation 'com.adobe.marketing.mobile:griffonbridge:1.0.1'`. 
+
+   Also be sure to use the latest available versions.
+
+2. Import the Project Griffon libaries along with other SDK libaries:
+
+   **Java**
+
+```text
 import com.adobe.marketing.mobile.AndroidGriffonBridge;
 import com.adobe.marketing.mobile.MobileCore;
 ```
-3. Enable Griffon activity (used to establish and control sessions)
-```xml
-<activity android:name="com.adobe.griffon.FullScreenTakeoverActivity" />
-```
 
+1. Enable Griffon activity \(used to establish and control sessions\)
+
+   ```markup
+   <activity android:name="com.adobe.griffon.FullScreenTakeoverActivity" />
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -69,9 +75,10 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 #### Java
 
 1. Register the extension wherever you are registering other extensions.
-```java
-AndroidGriffonBridge.registerExtension();
-```
+
+   ```java
+   AndroidGriffonBridge.registerExtension();
+   ```
 
 2. Call the Griffon set up with the application reference.
 
@@ -80,9 +87,11 @@ AndroidGriffonBridge.registerExtension();
 ```java
 AndroidGriffonBridge.setup(getApplication());
 ```
-3. Pass Griffon all deep link URIs.
+
+1. Pass Griffon all deep link URIs.
 
 **Tip:** Do this where you handle other deep links in your application.
+
 ```java
 final Intent intent = getIntent();
 final Uri data = intent.getData();
@@ -91,7 +100,6 @@ if (data != null) {
     AndroidGriffonBridge.startSession(data.toString());
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -140,11 +148,13 @@ This API accepts a deep link to begin a session. After this API is called, to be
 #### Java
 
 #### Syntax
-````text
+
+```text
 public static void startSession(final String url)
-````
+```
 
 #### Example
+
 ```java
  AndroidGriffonBridge.startSession(url);
 ```
@@ -154,7 +164,6 @@ public static void startSession(final String url)
 ### startSession
 
 This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
-
 
 #### Objective-C
 
@@ -206,10 +215,10 @@ You can end a session in the app interface by pressing the floating indicator an
 This API ends the active session and ensures that no data is sent to a Project Griffon session.
 
 #### Java
-````java
-AndroidGriffonBridge.endSession()
-````
 
+```java
+AndroidGriffonBridge.endSession()
+```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -244,17 +253,19 @@ This API is for sending custom events.
 #### Java
 
 #### Syntax
-````java
+
+```java
 AndroidGriffonBridge.sendEvent(Event event);
-````
+```
 
 #### Example
-````java
+
+```java
 final Map<String, Object> eventPayload = new HashMap<>();
 eventPayload.put("Test Event Key", "Test Event Value");
 final Event newEvent = new Event("GRIFFON", "SINGLE_EVENT_TEST", eventPayload);
 AndroidGriffonBridge.sendEvent(newEvent);
-````
+```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -309,3 +320,4 @@ ACPGriffon.sendEvent(griffonDownloadEvent)
 ```
 {% endtab %}
 {% endtabs %}
+

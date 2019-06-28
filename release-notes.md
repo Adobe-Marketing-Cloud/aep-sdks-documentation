@@ -2,7 +2,7 @@
 
 ## June 28, 2019
 
-The following updates were made in this release: 
+The following updates were made in this release:
 
 **Android Griffon Bridge 1.0.1**
 
