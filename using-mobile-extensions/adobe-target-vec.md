@@ -59,7 +59,8 @@ To get started with Target VEC, complete the following steps:
    implementation 'com.android.support:design:28.0.0'
    ```
 
-2. Import the Target VEC extension in your application's main activity. \`import com.adobe.target.mobile.TargetVEC;
+2. Import the Target VEC extension in your application's main activity.  `import com.adobe.target.mobile.TargetVEC`;
+
 {% endtab %}
 
 {% tab title="iOS" %}
