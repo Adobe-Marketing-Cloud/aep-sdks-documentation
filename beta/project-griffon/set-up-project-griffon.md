@@ -68,16 +68,21 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 
 #### Java
 
-1. Register the extension wherever you are registering other extensions
+1. Register the extension wherever you are registering other extensions.
 ```java
 AndroidGriffonBridge.registerExtension();
 ```
 
-2. Call Griffon setup with the application reference.  Do this as early as possible in your application startup.
+2. Call the Griffon set up with the application reference.
+
+**Tip:** Complete this step as early as possible after your application starts up.
+
 ```java
 AndroidGriffonBridge.setup(getApplication());
 ```
-3. Pass Griffon all deep link URIs. Do this whereever you handle other deep links in your application.
+3. Pass Griffon all deep link URIs.
+
+**Tip:** Do this where you handle other deep links in your application.
 ```java
 final Intent intent = getIntent();
 final Uri data = intent.getData();
@@ -130,7 +135,7 @@ Once the extension has been registered, you may begin a Project Griffon session 
 {% tab title="Android" %}
 ### startSession
 
-This API accepts a deep link in order to begin a session. When this API is called, the SDK will display a pin authentication overlay on your app to begin a session.
+This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
 
 #### Java
 
@@ -148,7 +153,8 @@ public static void startSession(final String url)
 {% tab title="iOS" %}
 ### startSession
 
-This API accepts a deep link in order to begin a session. When this API is called, the SDK will display a pin authentication overlay on your app to begin a session.
+This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
+
 
 #### Objective-C
 
@@ -197,7 +203,7 @@ You can end a session in the app interface by pressing the floating indicator an
 {% tab title="Android" %}
 ### endSession
 
-This API ends the active session and will ensure that no data is sent to a Project Griffon session.
+This API ends the active session and ensures that no data is sent to a Project Griffon session.
 
 #### Java
 ````java
@@ -209,7 +215,7 @@ AndroidGriffonBridge.endSession()
 {% tab title="iOS" %}
 ### endSession
 
-This API ends the active session and will ensure that no data is sent to a Project Griffon session.
+This API ends the active session and ensures that no data is sent to a Project Griffon session.
 
 #### Objective-C
 
