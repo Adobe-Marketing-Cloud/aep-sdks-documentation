@@ -21,7 +21,7 @@ There are several new features and benefits of using the new Adobe Experience Pl
 | Adobe Campaign Classic support | ✔️ |  |
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
-| Adobe Target - Visual Experience Composer | ✔️ | ✔️ |
+| Adobe Target - Visual Experience Composer | ✔️ |  |
 | \(BETA\) Adobe Experience Platform Location Service | ✔️ |  |
 | \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
 
