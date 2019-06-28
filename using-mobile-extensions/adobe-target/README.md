@@ -13,15 +13,16 @@ To get started with Target, follow these steps:
 
 ## Configure the Target extension in Experience Platform Launch      <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
-![Adobe Target Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-05-at-1.47.51-pm.png)
+![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Installed** tab, locate the Adobe Target extension, and click **Configure**.
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
 5. Set the timeout value to at least 5 seconds.
-6. Click **Save**.
-7. Follow the publishing process to update SDK configuration
+6. Optionally, enter the target workspace property token (Generated from Target UI).
+7. Click **Save**.
+8. Follow the publishing process to update SDK configuration
 
 ## Add Target to your app
 
@@ -473,6 +474,11 @@ If you need to update SDK configuration, programmatically, use the following inf
 | target.clientcode | Client code for your account. |
 | target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. |
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
+| target.propertyToken | at_property token value which is generated from Target UI. If this is left blank, then no token will be sent in target network calls. |
+
+{% hint style="warning" %}
+It is recommended to use Launch config to pass property token instead of passing it inside mbox parameter. If property token is passed inside both launch configuration and mbox parameter, then the token entered in mbox parameter will be discarded.
+{% endhint %}
 
 ## Additional information
 
