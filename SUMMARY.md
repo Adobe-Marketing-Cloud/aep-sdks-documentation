@@ -86,9 +86,9 @@
 
 ## BETA
 
-* [Adobe Places \(Beta\)](beta/adobe-places.md)
-* [Project Griffon \(Beta\)](beta/project-griffon/README.md)
+* [Location Service \(Places\)](beta/adobe-places.md)
+* [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
-* [Adobe Experience Platform Mini Programs SDK](beta/adobe-experience-platform-mini-programs-sdk.md)
+* [WeChat Mini Programs SDK](beta/adobe-experience-platform-mini-programs-sdk.md)
 

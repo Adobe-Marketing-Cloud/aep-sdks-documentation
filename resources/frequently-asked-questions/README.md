@@ -2,7 +2,7 @@
 
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
-There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the  Experience Platform Mobile SDK.
+There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the Experience Platform Mobile SDK.
 
 | Core Features | Experience Platform SDK | 4x SDK |
 | :--- | :--- | :--- |
@@ -21,7 +21,7 @@ There are several new features and benefits of using the new Adobe Experience Pl
 | Adobe Campaign Classic support | ✔️ |  |
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
-| Adobe Target - Visual Experience Composer | ✔️ | ✔️ |
+| Adobe Target - Visual Experience Composer | ✔️ |  |
 | \(BETA\) Adobe Experience Platform Location Service | ✔️ |  |
 | \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
 

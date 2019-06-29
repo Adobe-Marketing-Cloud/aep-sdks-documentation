@@ -1,5 +1,22 @@
 # Release notes
 
+## June 28, 2019
+
+The following updates were made in this release:
+
+**Android Griffon Bridge 1.0.1**
+
+* Initial beta release.
+
+## June 27, 2019
+
+The following updates were made in this release:
+
+**iOS Target 2.1.1 and Android Target 1.1.1**
+
+* Use the `target.propertyToken` configuration setting to configure the `at_property_token` that is generated from the Target UI, instead of passing the token as an mbox parameter.
+* Fixed an issue where JSON offers were not being returned as content but instead default content was served.
+
 ## June 25, 2019
 
 The following updates were made in this release:

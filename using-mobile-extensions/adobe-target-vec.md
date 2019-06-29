@@ -23,7 +23,7 @@ To get started with Target VEC, complete the following steps:
    2. Fetch Target Activities Programmatically
    3. Handle Target Workspace Restrictions
 
-## Configure the Adobe Target - VEC extension in Experience Platform Launch     <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
+## Configure the Adobe Target - VEC extension in Experience Platform Launch      <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
 
 ![Adobe Target VEC Extension Configuration](../.gitbook/assets/adobe-target-vec-1.png)
 
@@ -59,7 +59,7 @@ To get started with Target VEC, complete the following steps:
    implementation 'com.android.support:design:28.0.0'
    ```
 
-2. Import the Target VEC extension in your application's main activity. \`import com.adobe.target.mobile.TargetVEC;
+2. Import the Target VEC extension in your application's main activity. `import com.adobe.target.mobile.TargetVEC`;
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -173,7 +173,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 {% endtab %}
 {% endtabs %}
 
-## Implementation methods for Target VEC     <a id="implementation-methods-for-target-vec"></a>
+## Implementation methods for Target VEC      <a id="implementation-methods-for-target-vec"></a>
 
 The Target VEC extension retrieves the relevant Target experiences for your app through a network request. Offers are retrieved via this network call and applied automatically on the targeted screens. No subsequent network requests are made to retrieve VEC experiences as the user navigates through multiple screens of the app.
 
