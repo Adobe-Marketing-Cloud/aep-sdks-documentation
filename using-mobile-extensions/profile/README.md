@@ -1,6 +1,6 @@
 # Profile
 
-You can use the User Profile extension to store attributes about your user on the client. This information can later be used to target and personalize messages during online or offline scenarios, without having to connect to a server for optimal performance. The User Profile extension manages the Client-Side Operation Profile \(CSOP\) and provides a way to react to public APIs, updates user profile attributes, and shares the user profile attributes with the rest of the system as a generated event.
+You can use the Profile extension to store attributes about your user on the client. This information can be used later to target and personalize messages during online or offline scenarios, without having to connect to a server for optimal performance. The Profile extension manages the Client-Side Operation Profile \(CSOP\) and provides a way to react to APIs, updates user profile attributes, and shares the user profile attributes with the rest of the system as a generated event.
 
 The Profile data is used by other extensions to perform profile-related actions. An example is the Rules Engine extension that consumes the profile data and runs rules based on the profile data.
 
@@ -8,11 +8,11 @@ The Profile data is used by other extensions to perform profile-related actions.
 
 To get started with the Profile extension:
 
-1. Configure the **Profile Extension** in **Launch**.
-2. Add the **Profile Extension** to your app.
+1. Configure the Profile Extension in Launch.
+2. Add the Profile extension to your app.
 3. Implement Profile APIs to:
-   1. Update user attributes
-   2. Remove user attributes
+   * Update user attributes.
+   * Remove user attributes.
 
 ## Add Profile to your App
 
@@ -20,8 +20,8 @@ To add the Profile extension to your app:
 
 ### Java
 
-1. Add the UserProfile library to your project using the app's gradle file.
-2. Import the UserProfile library \(and any other SDK library\) in your application's main activity.
+1. Add the `UserProfile` library to your project using the app's gradle file.
+2. Import the `UserProfile` library and any other SDK library in your application's main activity.
 
    ```text
    import com.adobe.marketing.mobile.*;
@@ -44,17 +44,17 @@ To add the Profile extension to your app:
    import ACPUserProfile
 ```
 
-## Register the Profile Extension
+## Register the Profile extension
 
 {% tabs %}
 {% tab title="Android" %}
 ### Java
 
-**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity. For more details, see [Initial Configuration](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/configuration-methods-in-android)
+**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity.
 
-1. The UserProfile extension must be registered with the SDK core before calling any UserProfile API.
+1. The `UserProfile` extension must be registered with Mobile Core before calling an `UserProfile` API.
 
-   This may be done after calling the `setApplication()` method in the `onCreate()` method. Here is code sample which calls these setup methods:
+   This can be done after calling `setApplication()` in the `onCreate()` method. Here is a code sample, which calls these set up methods:
 
 ```java
 public class MobileApp extends Application {
@@ -77,9 +77,9 @@ public class MobileApp extends Application {
 {% tab title="iOS" %}
 ### Objective-C
 
-**Required**: You must complete the following steps in the app before calling other UserProfile APIs.
+**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
 
-1. In your app's `didFinishLaunchingWithOptions` function register the UserProfile extension.
+1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

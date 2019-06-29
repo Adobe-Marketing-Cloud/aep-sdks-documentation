@@ -1,10 +1,8 @@
 # Lifecycle API reference
 
-Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, etc. You may also choose to set additional, lifecycle metrics.
+Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also choose to set additional lifecycle metrics.
 
-{% hint style="warning" %}
-This section shows how to start collecting lifecycle metrics. Setup [Analytics](https://aep-sdks.gitbook.io/docs/mobile-extensions/adobe-analytics) or other Experience Cloud solution extensions in order to view, and report on this data in those respective solutions.
-{% endhint %}
+This section shows you how to collect lifecycle metrics. To view and report on this data in those respective solutions, set up Analytics or other Experience Cloud solution extensions.
 
 ## Lifecycle Start and Pause
 
@@ -46,10 +44,10 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK will always have the necessary reference to your application. So, we recommend calling `setApplication`in each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. In each of your activities, call`setApplication`.
 {% endhint %}
 
-Finally, you may use the `onPause` function, to pause the lifecycle data collection:
+To pause the lifecycle data collection, use the `onPause` function.
 
 {% hint style="info" %}
 To ensure accurate session and crash reporting, this call must be added to every activity.
@@ -64,7 +62,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift  <a id="objective-c-and-swift"></a>
+#### Objective-C & Swift   <a id="objective-c-and-swift"></a>
 
 Import the Lifecycle framework:
 
@@ -122,14 +120,48 @@ Pause Lifecycle data collection when your app has entered the background:
  }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Lifecycle extension
+
+```jsx
+import {ACPLifecycle} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version
+
+```jsx
+ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+```
+
+Registering the extension with Core
+
+```jsx
+ACPLifecycle.registerExtension();
+```
+
+Starting a lifecycle event
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+Pausing a lifecycle event
+
+```jsx
+ACPCore.lifecyclePause();
+```
+{% endtab %}
 {% endtabs %}
 
-## Collect additional data with lifecycle
+## Collect additional data with Lifecycle
 
-When you call [Lifecycle start](lifecycle-api-reference.md#lifecycle-start-and-pause) you can, optionally, pass in a dictionary of additional data that will be attached to the lifecycle event.
+When you call [Lifecycle start](lifecycle-api-reference.md#lifecycle-start-and-pause) you can, optionally, pass a dictionary of additional data that will be attached to the lifecycle event.
 
 {% hint style="info" %}
-You may pass additional data to lifecycle on app launch, app resume, both, or neither.
+You can pass additional data to lifecycle on app launch, app resume, both, or neither.
 {% endhint %}
 
 {% tabs %}
@@ -137,7 +169,7 @@ You may pass additional data to lifecycle on app launch, app resume, both, or ne
 **Java**
 
 {% hint style="warning" %}
-You need to add this code only in your main activity and any other activity, from which, your app may be launched.
+You need to add this code in your main activity and any other activity from which your app can be launched.
 {% endhint %}
 
 ```java
@@ -169,13 +201,21 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+{% endtab %}
 {% endtabs %}
 
-## Tracking App Crashes
+## Tracking app crashes
 
 ## Android
 
-If your app is terminated without having first been backgrounded, the SDK an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle **false** crashes **\*\*or** ungraceful **closes**.\*\*
+If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle false crashes or _\*\*_ungraceful closes.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -233,7 +273,7 @@ iOS uses system notifications that allow developers to track and respond to diff
 {% endtab %}
 {% endtabs %}
 
-## Implementing global lifecycle callbacks  <a id="implementing-global-lifecycle-callbacks"></a>
+## Implementing global lifecycle callbacks   <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 
@@ -241,7 +281,7 @@ Starting with API Level 14, Android allows global lifecycle callbacks for activi
 {% tab title="Android" %}
 #### Java
 
-You can use these callbacks to ensure that all of your `Activities` correctly call `AdobeMobileMarketing.lifecycleStart()`, and do not need to implement the code for each of the Activity.
+You can use these callbacks to ensure that all of your `Activities` correctly call `AdobeMobileMarketing.lifecycleStart()` and do not need to implement the code for each of the Activity.
 
 ```java
 import com.adobe.marketing.mobile.*;

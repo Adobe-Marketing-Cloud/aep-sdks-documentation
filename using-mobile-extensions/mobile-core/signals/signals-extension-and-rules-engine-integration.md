@@ -1,18 +1,18 @@
-# Signals Extension and Rules Engine integration
+# Signal extension and Rules Engine integration
 
-The rules that you set up can use the available triggers and conditions, and the action for these triggers and conditions will be one of the following types:
+The rules that you set up can use the available triggers and conditions, which results in one of the following actions:
 
-* A Postback
+* A postback
 * PII data
 * An open URL request
 
-After these actions have been configured to be triggered and published, the Signals extension carries out the requested actions.
+After these actions have been configured to be triggered and published, the Signal extension carries out the requested actions.
 
-To send PII data to external destinations, the `PII` action can be set up to use the Rules engine to be triggered when certain triggers and traits match. The `PII` action can also be set up for a Signals event when setting up a rule. The `collectPii` API can then be used to trigger the rule and send the PII data.
+To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
 
-## Rules Tokens <a id="rules-tokens"></a>
+## Rules tokens  <a id="rules-tokens"></a>
 
-Tokens are special strings used in rule actions as values which will be expanded by the SDK when the action is carried out. The format of a token is \`\`, which is any period-separated string that identifies the source of the data from which the token will be expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/rules-engine/rules-json#matching-and-retrieving-values-by-keys).
+Tokens are special strings used in rule actions as values, which are expanded by the SDK when the action is carried out. The format of a token is \`\`, which is any period-separated string that identifies the source of the data from which the token is expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#matching-and-retrieving-values-by-keys).
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
@@ -22,9 +22,9 @@ Here is a usage example:
 ​
 ```
 
-### Using Tokens in Postbacks and PII Rule Actions <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
+### Using tokens in Postbacks and PII rule actions  <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
 
-`Postbacks` and `PII` actions allow you to specify a `templateUrl` field and an optional `postbody`field that allow you to specify which tokens will be expanded by the Adobe Experience Cloud Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+`Postbacks` and `PII` actions allow you to specify a `templateUrl` field and an optional `postbody`field that allow you to specify which tokens will be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
 To use data that is passed to the `collectPii` API to form a token, the format is:
 
@@ -34,9 +34,9 @@ To use data that is passed to the `collectPii` API to form a token, the format i
 
 **Tip**: `mypii` is the key in the data dictionary that is passed to the `collectPii` API.
 
-For more information about `collectPii` and its usage, see `collectPii` documentation in `ACPCore` extension for iOS and `MobileCore` extension for Android.
+For more information about `collectPii` and its usage, see `collectPii` in [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/~/edit/drafts/-LbTmxizQnkdvn7eot_p/using-mobile-extensions/mobile-core/mobile-core-api-reference).
 
-### Using Tokens in OpenURL Rule Actions <a id="using-tokens-in-openurl-rule-actions"></a>
+### Using tokens in OpenURL rule actions  <a id="using-tokens-in-openurl-rule-actions"></a>
 
-`Open URL` actions allow you to specify a URL, which can contain tokens that will be expanded by the Adobe Cloud Platform SDKs. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+`Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the SDKs. For more information about tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 

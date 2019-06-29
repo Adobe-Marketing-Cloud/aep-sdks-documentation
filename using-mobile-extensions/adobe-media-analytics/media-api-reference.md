@@ -1,8 +1,8 @@
 # Media API reference
 
-## Media API Reference
+## Media API reference
 
-### Create Media Tracker
+### Create a media tracker
 
 Creates a media tracker instance that tracks the playback session.
 
@@ -10,7 +10,7 @@ Creates a media tracker instance that tracks the playback session.
 {% tab title="Android" %}
 #### createTracker
 
-The callback will be invoked to return the created tracker instance. If an error occurs, `null` is returned.
+The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
 
 **Syntax**
 
@@ -63,7 +63,7 @@ ACPMedia.createTracker({mediaTracker in
 {% endtab %}
 {% endtabs %}
 
-### Create Media Object
+### Create a media object
 
 Creates an instance of the Media object.
 
@@ -142,7 +142,7 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 {% endtab %}
 {% endtabs %}
 
-### Create AdBreak Object
+### Create an AdBreak object
 
 Creates an instance of the AdBreak object.
 
@@ -204,7 +204,7 @@ let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create Ad Object
+### Create an ad object
 
 Creates an instance of the Ad object.
 
@@ -269,7 +269,7 @@ let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", posit
 {% endtab %}
 {% endtabs %}
 
-### Create Chapter Object
+### Create a chapter object
 
 Creates an instance of the Chapter object.
 
@@ -337,7 +337,7 @@ let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create QoE Object
+### Create a QoE object
 
 Creates an instance of the QoE object.
 
@@ -405,16 +405,16 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 {% endtab %}
 {% endtabs %}
 
-## Media Tracker API Reference
+## Media tracker API reference
 
 ### trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance. See also [Media Resume](media-api-reference.md#media-resume)
+Track the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume).
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
 | `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#createMediaObject) | Yes |
-| `contextData` | Optional Media context data. Use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants) for standard metadata keys. | No |
+| `contextData` | Optional Media context data. For standard metadata keys, use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants). | No |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -589,7 +589,7 @@ _tracker.trackPause()
 
 ### trackComplete
 
-Track media complete. Call this method only when the media has been completly viewed.
+Track media complete. Call this method only when the media has been completely viewed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -739,11 +739,11 @@ _tracker.trackError("errorId")
 
 Method to track media events.
 
-| Variable Name | Description                                                                                                                                                                                                                                                                                                                           |
-|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `event `      | [Media event](#media-events)                                                                                                                                                                                                                                                                                                          |
-| `info`        | For AdBreakStart event, AdBreak information is created using [Create AdBreak Object](#create-adbreak-object).<br> For AdStart event, Ad information is created using [Create Ad Object](#create-ad-object).<br> For ChapterStart event, Chapter information is created using [Create Chapter Object](#create-chapter-object).<br> This is not required for other events. |
-| `data`        | Optional context data can be provided for AdStart and ChapterStart events. This is not required for other events.                                                                                                                                                                                                                                               |
+| Variable Name | Description |
+| :--- | :--- |
+| `event` | [Media event](media-api-reference.md#media-events) |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using a [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For an `AdStart` event, the Ad information is created by using a [Create Ad Object](media-api-reference.md#create-ad-object).  For `ChapterStart` event, the Chapter information is created by using a [Create Chapter Object](media-api-reference.md#create-chapter-object).  This is not required for other events. |
+| `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -770,7 +770,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdBreakComplete, null, null);
 ```
 
-**Tracking Ads**
+**Tracking ads**
 
 ```java
 // AdStart
@@ -792,7 +792,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.AdSkip, null, null);
 ```
 
-**Tracking Chapters**
+**Tracking chapters**
 
 ```java
 // ChapterStart
@@ -810,7 +810,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.ChapterSkip, null, null);
 ```
 
-**Tracking Playback events**
+**Tracking playback events**
 
 ```java
 // BufferStart
@@ -826,7 +826,7 @@ Method to track media events.
   _tracker.trackEvent(Media.Event.SeekComplete, null, null);
 ```
 
-**Tracking Bitrate change**
+**Tracking bitrate changes**
 
 ```java
 // If the new bitrate value is available provide it to the tracker.
@@ -1027,11 +1027,11 @@ Here are examples in Objective-C and Swift:
 
 ### updateCurrentPlayhead
 
-Provide media tracker with current media playhead. For accurate tracking, call this multiple times whenever playhead changes.
+Provide a media tracker with the current media playhead. For accurate tracking, call this method multiple times when the playhead changes.
 
 | Variable Name | Description |
 | :--- | :--- |
-| `time` | Current playhead in seconds. For VOD, the value is specified in seconds from the beginning of the media item. For live streaming, return the playhead position if available, or the current UTC time in seconds if not available. |
+| `time` | Current playhead in seconds. For video-on-demand \(VOD\), the value is specified in seconds from the beginning of the media item. For live streaming, returns the playhead position if available or the current UTC time in seconds if not available. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1079,11 +1079,11 @@ _tracker.updateCurrentPlayhead(1)
 
 ### updateQoEObject
 
-Provide media tracker with current QoE information. For accurate tracking, call this multiple times whenever the media player provides updated QoE information.
+Provides the media tracker with the current QoE information. For accurate tracking, call this method multiple times when the media player provides the updated QoE information.
 
 | Variable Name | Description |
 | :--- | :--- |
-| `qoeObject` | Current QoE information created using [Create QoE Object](media-api-reference.md#create-qoe-object) |
+| `qoeObject` | Current QoE information that was created by using a [Create QoE Object](media-api-reference.md#create-qoe-object). |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1132,9 +1132,9 @@ _tracker.updateQoEObject(qoeObject)
 {% endtab %}
 {% endtabs %}
 
-## Media Constants
+## Media constants
 
-### Media Type
+### MediaType
 
 This defines the type of a media that is currently tracked.
 
@@ -1176,7 +1176,7 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
 {% endtab %}
 {% endtabs %}
 
-### Stream Type
+### StreamType
 
 This defines the stream type of the content that is currently tracked.
 
@@ -1216,7 +1216,7 @@ public class MediaConstants {
       */
       public static final String AOD = "aod";
   }
-  
+
 }
 ```
 {% endtab %}
@@ -1256,7 +1256,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 {% endtab %}
 {% endtabs %}
 
-### Standard Video Constants
+### Standard video constants
 
 This defines the standard metadata keys for video streams.
 
@@ -1264,7 +1264,7 @@ This defines the standard metadata keys for video streams.
 {% tab title="Android" %}
 ```java
 public class MediaConstants {
-  
+
   public static final class VideoMetadataKeys {
       public static final String SHOW = "a.media.show";
       public static final String SEASON = "a.media.season";
@@ -1284,14 +1284,13 @@ public class MediaConstants {
       public static final String FEED = "a.media.feed";
       public static final String STREAM_FORMAT = "a.media.format";
   }
-  
+
 }
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyEpisode;
@@ -1309,12 +1308,11 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyAuthorized;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyDayPart;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
-
 ```
 {% endtab %}
 {% endtabs %}
 
-### Standard Audio Constants
+### Standard audio constants
 
 This defines the standard metadata keys for audio streams.
 
@@ -1338,7 +1336,6 @@ public class MediaConstants {
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyLabel;
@@ -1349,7 +1346,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 {% endtab %}
 {% endtabs %}
 
-### Standard Ad Constants
+### Standard ad constants
 
 This defines the standard metadata keys for ads.
 
@@ -1373,7 +1370,6 @@ public class MediaConstants {
 
 {% tab title="iOS" %}
 ```objectivec
-
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeId;
@@ -1384,7 +1380,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 {% endtab %}
 {% endtabs %}
 
-### Media Events
+### Media events
 
 This defines the type of a tracking event.
 
@@ -1530,13 +1526,13 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 {% endtab %}
 {% endtabs %}
 
-### Media Resume
+### Media resume
 
-Constant to denote the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
+Constant to denote that the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Media Resume
+#### Media resume
 
 **Syntax**
 

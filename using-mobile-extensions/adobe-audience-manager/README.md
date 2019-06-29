@@ -1,57 +1,84 @@
 # Adobe Audience Manager
 
-[Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html) is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app.
+Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
 
-To get started with **Audience Manager**, follow these steps:
+To get started with Audience Manager, complete these steps:
 
-1. Configure the **Audience Manager Extension** in **Launch**
-2. Add the **Audience Manager Extension** to your app
-3. Implement **Audience Manager** APIs to:
-   1. Get user profile
-   2. Send signals to Audience Manager
-   3. Reset Audience Manager identifiers, visitor profiles
+1. Configure the Audience Manager extension in Launch.
+2. Add the Audience Manager extension to your app
+3. Implement the Audience Manager APIs to:
+   * Get the user profile.
+   * Send signals to Audience Manager.
+   * Reset the Audience Manager identifiers and visitor profiles.
 
-## Configuring the Audience Manager Extension in Adobe Launch  <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Experience Platform Launch     <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
-![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm%20%281%29.png)
+![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm-1.png)
 
-1. In Launch, click the **Extensions** tab.
-2. Choose **Catalog**, locate the **Adobe Audience Manager** extension and click **Install**.
-3. Provide your Audience Manager server.
-4. Provide a timeout value - this value is the amount of time, in seconds, to wait for a response from Audience Manager before timing out. We recommend a default value of 2s.
+1. In Experience Platform Launch, click the **Extensions** tab.
+2. Choose **Catalog**, locate the **Adobe Audience Manager** extension, and click **Install**.
+3. Type your Audience Manager server.
+4. Type a timeout value. This value is the period, in seconds, to wait for a response from Audience Manager before timing out. We recommend a default value of 2s.
 5. Click **Save**.
-6. Follow the publishing process to update SDK configuration.
+6. Follow the publishing process to update the SDK configuration.
 
+### Add Audience Manager to your app
 
-### Add Audience Manager to your App
 {% tabs %}
 {% tab title="Android" %}
 1. Add the library to your project.
 2. Import the library:
 
 #### Java
+
 `import com.adobe.marketing.mobile.*;`
- **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `identity-1.x.x.aar` library to your project.
- {% endtab %}
+
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% endtab %}
 
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
 2. Import the Audience and Identity library:
 
 #### Objective-C
-  ```objectivec
+
+```objectivec
   #import "ACPCore.h"
   #import "ACPAudience.h"
   #import "ACPIdentity.h"
-  ```
+```
 
 #### Swift
-  ```swift
+
+```swift
    import ACPCore
    import ACPAudience
-  ```
+```
 
-   **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+Install Audience Manager
+
+```jsx
+npm install @adobe/react-native-acpaudience
+react-native link @adobe/react-native-acpaudience
+```
+
+Importing the extension
+
+```jsx
+import {ACPAudience} from '@adobe/react-native-acpaudience';
+```
+
+Getting the extension version
+
+```jsx
+ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAudience version: " + version));
+```
 {% endtab %}
 {% endtabs %}
 
@@ -63,7 +90,7 @@ To get started with **Audience Manager**, follow these steps:
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity.
 
-For example, your code may look like:
+For example, your code might look like the following:
 
 ```java
 public class AudiencetApp extends Application {
@@ -87,6 +114,7 @@ public void onCreate() {
 
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
+
 #### Objective-C
 
 ```objectivec
@@ -101,6 +129,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 ```
 
 #### Swift
+
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
  ACPIdentity.registerExtension()
@@ -112,24 +141,37 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+```jsx
+import {ACPAudience} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPAudience.registerExtension();
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Implement Audience Manager APIs
 
-See [Audience Manager API Reference](audience-manager-api-reference.md)
+For more information about implementing Audience Manager APIs, see [Audience Manager API reference](audience-manager-api-reference.md).
 
-## Configuration Keys
+## Configuration keys
 
-If you need to update SDK configuration, programmatically, please use the following information to change your Audience Manager configuration values. For more information, [Configuration Methods Reference](../mobile-core/configuration-reference/#update-configuration).
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| audience.server | Yes | Server endpoint used to collect Audience Manager data |
-| audience.timeout | No | Time, in seconds, to wait for a response from Audience Manager before timing out. Default value is 2 seconds. |
+| `audience.server` | Yes | Server endpoint used to collect Audience Manager data |
+| `audience.timeout` | No | Time, in seconds, to wait for a response from Audience Manager before timing out. Default value is 2 seconds. |
 
-## Further Reading
+## Additional information
 
-* How to find your Audience Manager server?
-* How to setup Adobe Analytics server-side forwarding to Audience Manager?
-  * See - [Analytics server-side forwarding](https://marketing.adobe.com/resources/help/en_US/reference/ssf.html)
-  * Also see - Setup [SDK Analytics server-side forwarding](../adobe-analytics/#server-side-forwarding-with-audience-manager)
+* How do you find your Audience Manager server?
+* Want to know more about setting up Adobe Analytics server-side forwarding to Audience Manager?
+  * [Server-side forwarding overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
+  * [Set up Server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
+

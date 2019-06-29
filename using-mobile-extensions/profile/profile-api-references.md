@@ -1,12 +1,14 @@
-# Profile API references
+# Profile API reference
 
-## Update User Attributes
+## Update user attributes
 
 {% tabs %}
 {% tab title="Android" %}
 ### **updateUserAttribute**
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
+
+Remember the following information:
 
 * If the attribute does not exist, it will be created.
 * If the attribute exists, the value will be updated.
@@ -34,9 +36,9 @@ Sets the user profile attributes key and value.
 Allows you to create/update a batch of user profile attributes:
 
 * String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
-* We do not allow custom objects to be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it will be created.
-* If the attribute already exists, then the value will be updated.
+* Custom objects cannot be saved as a `UserProfile` attribute.
+* If the attribute does not exist, it is created.
+* If the attribute already exists, the value is updated.
 * A null attribute value will remove the attribute.
 
 #### **Syntax**
@@ -133,7 +135,7 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove a User Attribute**
+## **Remove a user attribute**
 
 Removes the given attribute name.
 
@@ -151,7 +153,7 @@ public static void removeUserAttribute(String attributeName)
 
 #### **Example**
 
-A retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
