@@ -1,14 +1,51 @@
 # Products variable {#products-variable}
 
-The products variable cannot be set by using processing rules. In the iOS 4.x SDK, you must use a special syntax in the context data parameter to set products directly on the server call.
+The products variable cannot be set by using processing rules. In the Adobe Experience Platform SDK, you must use a special syntax in the context data parameter to set products directly on the server call.
 
 To set the *`products`* variable, set a context data key to `"&&products"`, and set the value by using the syntax that is defined for the *`products`* variable:
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Java**
+
+#### **Syntax**
+
+```java
+cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
+```
+
+#### **Example**
+
+```java
+//create a context data dictionary 
+HashMap cdata = new HashMap<String, String>(); 
+ 
+// add products, a purchase id, a purchase context data key, and any other data you want to collect. 
+// Note the special syntax for products 
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99"); 
+cdata.put("myapp.purchase", "1"); 
+cdata.put("myapp.purchaseid", "1234567890"); 
+ 
+// send the tracking call - use either a trackAction or TrackState call. 
+// trackAction example: 
+MobileCore.trackAction("purchase", cdata); 
+// trackState example: 
+MobileCore.trackState("Order Confirmation", cdata);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Objective-C**
+
+#### **Syntax**
 
 ```objective-c
 [contextData setObject:@"Category;Product;Quantity;Price[,Category;Product;Quantity;Price]" forKey:@"&&products"];
 ```
 
-For example:
+#### **Example**
 
 ```objective-c
 //create a context data dictionary 
@@ -27,6 +64,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [ACPCore trackState:@"Order Confirmation" data:contextData]; 
 
 ```
+{% endtab %}
 
 *`products`* is set directly on the image request, and the other variables are set as context data. All context data variables must be mapped by using processing rules: 
 
@@ -39,7 +77,39 @@ You do not need to map the *`products`* variable using processing rules because 
 
 Here is an example of the products variable with Merchandising eVars and product-specific events.
 
+{% tabs %}
+{% tab title="Android" %}
+
+**Java**
+
+#### **Example**
+
+```java
+//create a context data dictionary 
+HashMap cdata = new HashMap<String, String>(); 
+  
+// add products, a purchase id, a purchase context data key, and any other data you want to collect. 
+// Note the special syntax for products 
+cdata.put("&&events", "event1"); 
+cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"); 
+cdata.put("myapp.purchase", "1"); 
+cdata.put("myapp.purchaseid", "1234567890"); 
+  
+// send the tracking call - use either a trackAction or TrackState call. 
+// trackAction example: 
+MobileCore.trackAction("purchase", cdata); 
+// trackState example: 
+MobileCore.trackState("Order Confirmation", cdata);
 ```
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Objective-C**
+
+#### **Example**
+
+```objective-c
 //create a context data dictionary 
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary]; 
   
@@ -56,6 +126,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
 
 >[!TIP]
 >
