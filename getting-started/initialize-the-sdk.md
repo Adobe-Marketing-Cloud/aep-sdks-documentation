@@ -80,7 +80,7 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
   [ACPIdentity registerExtension];
   [ACPLifecycle registerExtension];
   [ACPSignal registerExtension];
-  
+
   [ACPCore start:nil];
 }
 ```
@@ -360,7 +360,7 @@ Lifecycle metrics contain valuable, out-of-the-box information about your app us
 Import the Lifecycle framework:
 
 ```java
-   import com.adobe.marketing.mobile.*;
+import com.adobe.marketing.mobile.*;
 ```
 
 Register the framework with Mobile Core:
@@ -416,78 +416,105 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import  "ACPLifecycle.h"
+#import "ACPLifecycle.h"
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-​  // Override point for customization after application launch.
-  return YES;
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method may be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```objectivec
-// Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
-  [ACPLifecycle registerExtension];
-  [ACPCore start:^{
-        [ACPCore lifecycleStart:nil];
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+        // only start lifecycle if the application is not in the background
+        if (appState != UIApplicationStateBackground) {
+            [ACPCore lifecycleStart:nil];
+        }
     }];
-  return YES; 
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS may call your `applicationWillEnterForeground:` delegate method. We also need to call `lifecycleStart:` here, but this time we do not need all of the supporting code we used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
- // Objective-C
+- (void) applicationWillEnterForeground:(UIApplication *)application {
+    [ACPCore lifecycleStart:nil];
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```objectivec
  - (void) applicationDidEnterBackground:(UIApplication *)application {
-     [ACPCore lifecyclePause];
+    [ACPCore lifecyclePause];
  }
 ```
 
 #### Swift
 
-In swift, ACPCore includes ACPLifecycle :
+In swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
 ```swift
 import ACPCore
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following in your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-ACPLifecycle.registerExtension();
-​  // Override point for customization after application launch.
-  return true;
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method may be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
 
 ```swift
-// Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-ACPCore.start {
-    ACPCore.lifecycleStart(nil);
-}
-    return true
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
+
+    let appState = application.applicationState;            
+    ACPCore.start {
+        // only start lifecycle if the application is not in the background    
+        if appState != .background {
+            ACPCore.lifecycleStart(nil)
+        }    
+    }    
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS may call your `applicationWillEnterForeground:` delegate method. We also need to call `lifecycleStart:` here, but this time we do not need all of the supporting code we used in `application:didFinishLaunchingWithOptions:`:
 
 ```swift
-// Swift
- func applicationDidEnterBackground(_ application: UIApplication) {    
-     ACPCore.lifecyclePause()
- }
+func applicationWillEnterForeground(_ application: UIApplication) {    
+    ACPCore.lifecycleStart(nil)
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```swift
+func applicationDidEnterBackground(_ application: UIApplication) {    
+    ACPCore.lifecyclePause()
+}
 ```
 {% endtab %}
 
@@ -675,4 +702,3 @@ ACPCore.trackState("state", {"mytest": "state"});
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
-
