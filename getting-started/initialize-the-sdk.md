@@ -1,6 +1,6 @@
 # Initialize the SDK and set up tracking
 
-## Configure SDK with the Experience Platform Launch Environment ID
+## Configure the SDK with the Experience Platform Launch Environment ID
 
 To initialize the SDK, you need to first configure the SDK with an Environment ID from Experience Platform Launch.
 
@@ -186,7 +186,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 {% endtab %}
 {% endtabs %}
 
-## Registering Extensions and Starting Core
+## Register extensions and starting Core
 
 Other than the Mobile Core extension, all Experience Platform extensions provide a `registerExtension` API, which registers the extension with Core. After you register the extension, you can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
 
