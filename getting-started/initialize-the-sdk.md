@@ -431,7 +431,7 @@ Register the Lifecycle extension with the SDK Core by adding the following to yo
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
 {% hint style="warning" %}
-If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method may be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
 {% endhint %}
 
 ```objectivec
@@ -449,7 +449,7 @@ If your iOS application supports background capabilities, your `application:didF
 }
 ```
 
-When launched, if your app is resuming from a backgrounded state, iOS may call your `applicationWillEnterForeground:` delegate method. We also need to call `lifecycleStart:` here, but this time we do not need all of the supporting code we used in `application:didFinishLaunchingWithOptions:`:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
 - (void) applicationWillEnterForeground:(UIApplication *)application {
@@ -467,7 +467,7 @@ When the app enters the background, pause Lifecycle data collection from your ap
 
 #### Swift
 
-In swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
+In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
 ```swift
 import ACPCore
@@ -484,7 +484,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method may be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
+{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -501,7 +501,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-When launched, if your app is resuming from a backgrounded state, iOS may call your `applicationWillEnterForeground:` delegate method. We also need to call `lifecycleStart:` here, but this time we do not need all of the supporting code we used in `application:didFinishLaunchingWithOptions:`:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```swift
 func applicationWillEnterForeground(_ application: UIApplication) {    
