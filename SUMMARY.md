@@ -6,7 +6,7 @@
 ## Getting Started
 
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
-* [Get the SDK](getting-started/get-the-sdk.md)
+* [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Initialize the SDK and set up tracking](getting-started/initialize-the-sdk.md)
 * [Next steps](getting-started/next-steps.md)
 
