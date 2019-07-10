@@ -1,5 +1,13 @@
 # Release notes
 
+## July 10, 2019
+
+The following updates were made in this release:
+
+**Android Griffon Bridge 1.0.2**
+
+* Fixed bug where wildcard listener wasn't working. 
+
 ## July 9, 2019
 
 The following updates were made in this release:
