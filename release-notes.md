@@ -421,6 +421,7 @@ This extension allows you to deliver and track in-app messages \(broadcast and p
 **iOS Core 2.0.3**
 
 * Bug fixes
+* Added environment-aware support, which allows you to define dev and stage environments in a property. _**_This overrides the config properties that were based on the default environment.
 
 ## February 7, 2109
 
