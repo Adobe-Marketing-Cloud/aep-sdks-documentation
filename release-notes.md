@@ -341,7 +341,7 @@ The following updates were made to the Mobile Core extension in Android version 
 **Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
-* Added environment-aware support, which allows you to define dev and stage environments in a property. \_\*\*\_This overrides the config properties that were based on the default environment.
+* **Important**: Added environment-aware support, which allows you to define dev and stage environments in a property. This overrides the config properties that were based on the default environment.
 
 **Core**
 
@@ -421,7 +421,7 @@ This extension allows you to deliver and track in-app messages \(broadcast and p
 **iOS Core 2.0.3**
 
 * Bug fixes
-* Added environment-aware support, which allows you to define dev and stage environments in a property. _**_This overrides the config properties that were based on the default environment.
+* **Important**: Added environment-aware support, which allows you to define dev and stage environments in a property. This overrides the config properties that were based on the default environment.
 
 ## February 7, 2109
 
