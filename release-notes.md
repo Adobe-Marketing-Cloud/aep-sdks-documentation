@@ -14,8 +14,8 @@ The following updates were made in this release:
 
 **iOS Analytics 2.1.2**
 
-- ACPAnalytics now correctly identifies Acquisition link event types.
-- Fixes a compile-time error when using the “-all_load” linker flag.
+* ACPAnalytics now correctly identifies Acquisition link event types.
+* Fixes a compile-time error when using the “-all\_load” linker flag.
 
 ## June 28, 2019
 

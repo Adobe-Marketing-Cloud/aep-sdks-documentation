@@ -8,8 +8,6 @@ To initialize the SDK, you need to first configure the SDK with an Environment I
 To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
@@ -29,9 +27,7 @@ To add these permissions, add the following lines to your `AndroidManifest.xml` 
 
 1. In the app, create `MainActivity.java` .
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
-{% endtab %}
 
-{% tab title="Objective-C" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -43,9 +39,7 @@ In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -57,9 +51,7 @@ In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
-{% endtab %}
 
-{% tab title="React Native" %}
 ### **Initializing the SDK**
 
 It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
@@ -120,8 +112,6 @@ initSDK() {
     ACPCore.start();
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 Developing extensions and using an Experience PlatformLaunch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
@@ -484,7 +474,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -573,17 +565,17 @@ You must call this API when an event that you want to track occurs. In addition 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java   <a id="java"></a>
+#### Java    <a id="java"></a>
 
-### trackAction   <a id="trackaction"></a>
+### trackAction    <a id="trackaction"></a>
 
-#### Syntax   <a id="syntax"></a>
+#### Syntax    <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example   <a id="example"></a>
+#### Example    <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -643,15 +635,15 @@ States represent screens or views in your app. Each time a new state is displaye
 
 In Android, `trackState` is typically called each time a new activity is loaded.
 
-### trackState   <a id="trackstate"></a>
+### trackState    <a id="trackstate"></a>
 
-#### **Syntax**   <a id="syntax-1"></a>
+#### **Syntax**    <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example   <a id="example-1"></a>
+#### Example    <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
@@ -702,3 +694,4 @@ ACPCore.trackState("state", {"mytest": "state"});
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
+
