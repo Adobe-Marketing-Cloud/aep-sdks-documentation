@@ -1,32 +1,54 @@
 # Implementation
 
-## Get the SDK
+The following instructions will help you implement the Adobe Experience Platform SDK in your WeChat Mini Programs.
+
+{% hint style="danger" %}
+**Getting the SDK**
 
 Download links for the SDK will be provided as part of the beta welcome email, after the beta kick-off call. Please contact your Adobe account representative or CSM if you have not received this information.
+{% endhint %}
 
-## Include SDK in your project
+## Add the SDK to your project
 
-1. In the `onLaunch` method of the `App.js`, implement `AdobeSDK.init()` and pass in valid configurations.
-2. Enable debug logging if needed.
-3. Call `AdobeSDK.trackState()` when you switch to a new `Page`  pass in the page name and any additional context data.   You can usually implement this in the `onShow` method of the `Page`.
-4. To track a certain event, call `AdobeSDK.trackAction()` .
+In your Mini Program's `app.js`file, reference and require the SDK, for example:
+
+```javascript
+const AdobeSDK = require('AdobeSDK.js');
+```
+
+1. Enable debug logging if needed.
+2. Call `AdobeSDK.trackState()` when you switch to a new `Page`  pass in the page name and any additional context data.   You can usually implement this in the `onShow` method of the `Page`.
+3. To track a certain event, call `AdobeSDK.trackAction()` .
 
 ## Initialize the SDK
 
-### AdobeSDK.init\(configurations\)
+In the `onLaunch` method of your `app.js` file, implement `AdobeSDK.init()` and pass in valid configuration values using the **.init\(configuration\)** method, for example:
 
 ```javascript
-AdobeSDK.init({
-      "analytics.server": "test.sc.adobedc.cn",      //required
-      "analytics.rsids": "mobile5wechat.explore",    //required
-      "app.id": "adobe-demo",                        //required
-      "app.version": "0.0.0.1",                      //optional, default value = ''
-      "analytics.offlineEnabled": true,              //optional, default value = false
-      "session.timeout": 30                          //optional, default value = 30
-    });
+// App({
+//   onLaunch: function () {
+//     // 展示本地存储能力
+//     var logs = wx.getStorageSync('logs') || []
+//     logs.unshift(Date.now())
+//     wx.setStorageSync('logs', logs)
+     AdobeSDK.init({
+       "analytics.server": "test.sc.adobedc.cn",      //required
+       "analytics.rsids": "mobile5wechat.explore",    //required
+       "app.id": "adobe-demo",                        //required
+       "app.version": "0.0.0.1",           //optional, default value = ''
+       "analytics.offlineEnabled": true,   //optional, default value = false
+       "session.timeout": 30               //optional, default value = 30
+     });
+// })
 ```
 
-If this config is enabled, The `analytics.offlineEnabled` timestamp\(ts\) is included in Analytics request 
+{% hint style="info" %}
+If analytics.offlineEnabled is set to true, then timestamp\(ts\) is included in Analytics request.
+{% endhint %}
+
+{% hint style="warning" %}
+To find the right settings pertaining to Adobe Analytics implementation, contact your Adobe Analytics administrator or Adobe consulting for assistance.
+{% endhint %}
 
 ## Implement SDK APIs
 
