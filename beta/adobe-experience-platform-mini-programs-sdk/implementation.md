@@ -16,9 +16,8 @@ In your Mini Program's `app.js`file, reference and require the SDK, for example:
 const AdobeSDK = require('AdobeSDK.js');
 ```
 
-1. Enable debug logging if needed.
-2. Call `AdobeSDK.trackState()` when you switch to a new `Page`  pass in the page name and any additional context data.   You can usually implement this in the `onShow` method of the `Page`.
-3. To track a certain event, call `AdobeSDK.trackAction()` .
+1. Call `AdobeSDK.trackState()` 
+2. To track a certain event, call `AdobeSDK.trackAction()` .
 
 ## Initialize the SDK
 
@@ -50,9 +49,7 @@ If analytics.offlineEnabled is set to true, then timestamp\(ts\) is included in 
 To find the right settings pertaining to Adobe Analytics implementation, contact your Adobe Analytics administrator or Adobe consulting for assistance.
 {% endhint %}
 
-## Implement SDK APIs
-
-### Enable debug logging
+## Enable debug logging
 
 #### AdobeSDK.setDebugLoggingEnabled\(flag\)
 
@@ -68,15 +65,31 @@ By default, the SDK hides internal exceptions and print error message in console
 AdobeSDK.setDebugModeEnabled(true)
 ```
 
-### Tracking custom actions, events, and views
+## Track screens and user actions
+
+You may use the following screen and action tracking APIs to measure your user's engagement with your app.
 
 #### AdobeSDK.trackAction\(actionName, contextData\)
+
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+
+{% hint style="info" %}
+`trackAction`reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
+{% endhint %}
 
 ```javascript
 AdobeSDK.trackAction("action", { "example.key": "value" });
 ```
 
 #### AdobeSDK.trackState\(stateName, contextData\)
+
+{% hint style="info" %}
+`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
+{% endhint %}
+
+{% hint style="info" %}
+This API may be implemented in the `onShow` method of the `Page`to track when users switch to screens or pages.
+{% endhint %}
 
 ```javascript
 AdobeSDK.trackState("state", { "example.key": "value" });
