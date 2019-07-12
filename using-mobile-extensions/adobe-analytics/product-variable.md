@@ -78,6 +78,8 @@ You do not need to map the _`products`_ variable using processing rules because 
 
 Here is an example of the products variable with Merchandising eVars and product-specific events.
 
+{% tabs %}
+{% tab title="Android" %}
 **Java**
 
 ### **Example**
@@ -99,7 +101,9 @@ MobileCore.trackAction("purchase", cdata);
 // trackState example: 
 MobileCore.trackState("Order Confirmation", cdata);
 ```
+{% endtab %}
 
+{% tab title="iOS" %}
 **Objective-C**
 
 ### **Example**
@@ -121,6 +125,8 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 If you trigger a product-specific event by using the `&&products` variable, you must also set that event in the `&&events` variable. If you do not set that event, it is filtered out during processing.
