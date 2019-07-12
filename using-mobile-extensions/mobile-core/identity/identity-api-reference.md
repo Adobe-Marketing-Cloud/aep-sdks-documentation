@@ -4,7 +4,7 @@
 
 Updates the specified customer ID with the Adobe Experience Cloud ID service.
 
-This API synchronizes the provided customer identifier type key and value with the [AuthenticationState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+This API synchronizes the provided customer identifier type key and value with the [AuthenticationState](identity-api-reference.md#identity-service-classes) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -24,7 +24,7 @@ public static void syncIdentifier(final String identifierType,
 Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchIdentifiers
+### syncIdentifiers
 
 **Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
 
@@ -43,7 +43,7 @@ identifiers.put("idType", "idValue");
 Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### synchIdentifiers \(overloaded\)
+### syncIdentifiers \(overloaded\)
 
 **Tip**: All given customer IDs are given the default authentication state of `UNKNOWN`.
 
