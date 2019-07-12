@@ -16,9 +16,6 @@ In your Mini Program's `app.js`file, reference and require the SDK, for example:
 const AdobeSDK = require('AdobeSDK.js');
 ```
 
-1. Call `AdobeSDK.trackState()` 
-2. To track a certain event, call `AdobeSDK.trackAction()` .
-
 ## Initialize the SDK
 
 In the `onLaunch` method of your `app.js` file, implement `AdobeSDK.init()` and pass in valid configuration values using the **.init\(configuration\)** method, for example:
