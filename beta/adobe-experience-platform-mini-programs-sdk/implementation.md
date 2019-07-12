@@ -1,34 +1,17 @@
-# WeChat Mini Programs
+# Implementation
 
-The Adobe Experience Platform SDK for WeChat Mini Programs brings Adobe Experience Cloud & Adobe Experience Platform functionality to developers building Mini Programs. The scope for the beta and the subsequent general release will be for Adobe Analytics customers who want to track behavioral usage of branded Mini Programs.
+## Get the SDK
 
-{% hint style="warning" %}
-This functionality is currently in beta. Contact your Adobe account representatives or CSM to learn more and participate in this beta.
-{% endhint %}
+Download links for the SDK will be provided as part of the beta welcome email, after the beta kick-off call. Please contact your Adobe account representative or CSM if you have not received this information.
 
-## Features
-
-* Pass in the configuration, including Analytics and app-related settings.
-* Send Analytics track action/state call.
-* Collect `lifecycle` data, including launch, install, upgrade events, and previous session length.
-* Use `aid` to identify a unique user.
-  * \(Android\) Retrieve `aid` from remote Analytics server at the first app launch. 
-  * \(iOS\) Generate `aid` locally at the first app launch.
-  * Store `aid` and Lifecycle-related data into local storage.
-* Use a `queue` to guarantee the request are being sent in order, which avoids occupying multiple HTTP requests quota.
-* Enable or disable debug logging.
-* Enable or disable debug mode.
-
-## Using the Mobile SDK in the Mini Program SDK
+## Include SDK in your project
 
 1. In the `onLaunch` method of the `App.js`, implement `AdobeSDK.init()` and pass in valid configurations.
 2. Enable debug logging if needed.
 3. Call `AdobeSDK.trackState()` when you switch to a new `Page`  pass in the page name and any additional context data.   You can usually implement this in the `onShow` method of the `Page`.
 4. To track a certain event, call `AdobeSDK.trackAction()` .
 
-## Public API
-
-Here are the public APIs in the Mini ProgramS SDK:
+## Initialize the SDK
 
 ### AdobeSDK.init\(configurations\)
 
@@ -43,35 +26,41 @@ AdobeSDK.init({
     });
 ```
 
-If this config is enabled, The `analytics.offlineEnabled` timestamp\(ts\) is included in Analytics request .
+If this config is enabled, The `analytics.offlineEnabled` timestamp\(ts\) is included in Analytics request 
 
-### AdobeSDK.setDebugLoggingEnabled\(flag\)
+## Implement SDK APIs
+
+### Enable debug logging
+
+#### AdobeSDK.setDebugLoggingEnabled\(flag\)
 
 ```javascript
 AdobeSDK.setDebugLoggingEnabled(true)
 ```
 
-### AdobeSDK.setDebugModeEnabled\(flag\)
+#### AdobeSDK.setDebugModeEnabled\(flag\)
 
-By default, the SDK swallows internal exceptions and print error message in console log. To let the SDK throw those exceptions, you need to enable debug mode.
+By default, the SDK hides internal exceptions and print error message in console log. To let the SDK throw those exceptions, you need to enable debug mode.
 
 ```javascript
 AdobeSDK.setDebugModeEnabled(true)
 ```
 
-### AdobeSDK.trackAction\(actionName, contextData\)
+### Tracking custom actions, events, and views
+
+#### AdobeSDK.trackAction\(actionName, contextData\)
 
 ```javascript
 AdobeSDK.trackAction("action", { "example.key": "value" });
 ```
 
-### AdobeSDK.trackState\(stateName, contextData\)
+#### AdobeSDK.trackState\(stateName, contextData\)
 
 ```javascript
 AdobeSDK.trackState("state", { "example.key": "value" });
 ```
 
-### Analytics hits example
+## Validate requests to Adobe Analytics
 
 Here are the Analytics hits examples for manual tests:
 
