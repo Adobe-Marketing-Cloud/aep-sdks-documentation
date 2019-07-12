@@ -6,6 +6,8 @@ The products variable cannot be set by using processing rules. In the Adobe Expe
 
 To set the _`products`_ variable, set a context data key to `"&&products"`, and set the value by using the syntax that is defined for the _`products`_ variable:
 
+{% tabs %}
+{% tab title="Android" %}
 **Java**
 
 ### **Syntax**
@@ -33,6 +35,10 @@ MobileCore.trackAction("purchase", cdata);
 MobileCore.trackState("Order Confirmation", cdata);
 ```
 
+\*\*\*\*
+{% endtab %}
+
+{% tab title="iOS" %}
 **Objective-C**
 
 ### **Syntax**
@@ -59,6 +65,8 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
+{% endtabs %}
 
 _`products`_ is set directly on the image request, and the other variables are set as context data. All context data variables must be mapped by using processing rules:
 
