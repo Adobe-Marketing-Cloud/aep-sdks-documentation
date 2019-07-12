@@ -1,7 +1,7 @@
 # Lifecycle
 
 {% hint style="warning" %}
-In version 4 of the iOS SDK, Lifecycle implementation was done for your automatically.
+In version 4 of the iOS SDK, this implementation was completed automatically.
 
 When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
 
