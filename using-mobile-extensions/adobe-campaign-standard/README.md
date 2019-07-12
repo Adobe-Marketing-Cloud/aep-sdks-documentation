@@ -268,7 +268,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-2. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
