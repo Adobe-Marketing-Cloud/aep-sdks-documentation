@@ -1,13 +1,5 @@
 # Lifecycle extension in iOS
 
-{% hint style="warning" %}
-In version 4 of the iOS SDK, this implementation was completed automatically.
-
-When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
-
-For more information, see [Manual Lifecycle Implementation](../../resources/upgrading-to-aep/manual-lifecycle-implementation.md).
-{% endhint %}
-
 You can track lifecycle to learn how frequently and how long your app is being used.
 
 **Tip:** The code snippets in this section are only examples. Your final implementation will probably contain additional code that is specific to your app.
@@ -54,11 +46,11 @@ Here are code samples for `lifecycleStart` in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
     // optionally pass in additional lifecycle data as a dictionary parameter in this call
-    [ACPCore lifecycleStart:nil];
+    [ACPCore lifecycleStart:nil]; 
 
-    return YES;
+    return YES; 
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -161,3 +153,4 @@ func applicationWillEnterForeground(_ application: UIApplication) {
     ACPCore.lifecycleStart(["state": "appResume"])
 }
 ```
+

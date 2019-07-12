@@ -13,7 +13,7 @@ The following tables provide information about the differences between the new E
 | Programmatic configuration | No | Yes |
 | Bundled configuration | Yes | Yes |
 | Configuration management in Launch | No | Yes |
-| Lifecycle metrics | Yes | Yes, see [Manual Lifecycle Implementation](manual-lifecycle-implementation.md) |
+| Lifecycle metrics | Yes | Yes |
 | Experience Cloud ID service | Yes | Yes |
 | Privacy and GDPR framework | Yes | Yes |
 
@@ -82,3 +82,4 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Support coming_ |
 | Windows 8​ | Supported | Unsupported |
 | Blackberry​ | Supported | Unsupported |
+

@@ -2,7 +2,7 @@
 
 ## Products variable  <a id="products-variable"></a>
 
-The products variable cannot be set by using processing rules. In the Adobe Experience Platform SDK, you must use a special syntax in the context data parameter to set products directly on the server call.
+The products variable cannot be set by using processing rules. In the Adobe Experience Platform SDK, you must use a special syntax in the context data parameter to set products directly on the server call
 
 To set the _`products`_ variable, set a context data key to `"&&products"`, and set the value by using the syntax that is defined for the _`products`_ variable:
 
