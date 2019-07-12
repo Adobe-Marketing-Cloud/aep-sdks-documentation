@@ -1,5 +1,13 @@
 # Lifecycle
 
+{% hint style="warning" %}
+In version 4 of the iOS SDK, Lifecycle implementation was done for your automatically.
+
+When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
+
+For more information, see [Manual Lifecycle Implementation](../../resources/upgrading-to-aep/manual-lifecycle-implementation.md).
+{% endhint %}
+
 Sessions contain information about the app's current lifecycle, such as the device information, the application install or upgrade information, the session start and pause times, the number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
 ## Add Lifecycle to your app
