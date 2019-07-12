@@ -1,5 +1,22 @@
 # Release notes
 
+## July 10, 2019
+
+The following updates were made in this release:
+
+**Android Griffon Bridge 1.0.2**
+
+* Fixed bug where wildcard listener wasn't working. 
+
+## July 9, 2019
+
+The following updates were made in this release:
+
+**iOS Analytics 2.1.2**
+
+* ACPAnalytics now correctly identifies Acquisition link event types.
+* Fixes a compile-time error when using the “-all\_load” linker flag.
+
 ## June 28, 2019
 
 The following updates were made in this release:
@@ -324,7 +341,8 @@ The following updates were made to the Mobile Core extension in Android version 
 **Configuration**
 
 * If there is no cached configuration available, you can fetch the configuration after a network restore.
-* Added environment-aware support, which allows you to define dev and stage environments in a property. \_\*\*\_This overrides the config properties that were based on the default environment.
+* Added environment-aware support, which allows you to define dev and stage environments in a property. 
+  **Important**: This overrides the config properties that were based on the default environment.
 
 **Core**
 
@@ -404,6 +422,8 @@ This extension allows you to deliver and track in-app messages \(broadcast and p
 **iOS Core 2.0.3**
 
 * Bug fixes
+* Added environment-aware support, which allows you to define dev and stage environments in a property.
+  **Important**: This overrides the config properties that were based on the default environment.
 
 ## February 7, 2109
 

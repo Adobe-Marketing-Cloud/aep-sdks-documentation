@@ -55,5 +55,13 @@ If you see the following screen, for beta access, click **Register**.
 
 ![](../../.gitbook/assets/image-8.png)
 
-## \*\*\*\*
+## **Exporting a session**
+
+To export a session, click on the Export to JSON button within a given session, as shown below.
+
+![](../../.gitbook/assets/screen-shot-2019-07-10-at-4.07.02-pm.png)
+
+{% hint style="info" %}
+This export feature will honor the search filter and export only the events shown in the event view. For example, if you’ve searched for “track” events and then hit **Export to JSON**, only “track” event results will be exported.
+{% endhint %}
 

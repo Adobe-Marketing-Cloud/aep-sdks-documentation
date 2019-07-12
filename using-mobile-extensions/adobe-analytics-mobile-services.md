@@ -254,7 +254,7 @@ Using the following API does not increment page views.
 
 {% tabs %}
 {% tab title="Android" %}
-No setup required. SDK handles push tracking to Analytics, out of the box, for Android.
+No set up required. In Android, the SDK handles push tracking to Analytics.
 {% endtab %}
 
 {% tab title="iOS" %}
