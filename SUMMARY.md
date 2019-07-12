@@ -60,6 +60,7 @@
 
 * [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/README.md)
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
+  * [Manual Lifecycle Implementation](resources/upgrading-to-aep/manual-lifecycle-implementation.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
@@ -91,4 +92,3 @@
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
 * [WeChat Mini Programs SDK](beta/adobe-experience-platform-mini-programs-sdk.md)
-
