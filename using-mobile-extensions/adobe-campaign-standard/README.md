@@ -222,8 +222,6 @@ public class CampaignTestApp extends Application {
 }
 ```
 
-2. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
-
 For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
 

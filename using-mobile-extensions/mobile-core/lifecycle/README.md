@@ -1,5 +1,13 @@
 # Lifecycle
 
+{% hint style="warning" %}
+In version 4 of the iOS SDK, this implementation was completed automatically.
+
+When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
+
+For more information, see [Manual Lifecycle Implementation](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/87ccee59e0aeb622ec110a51820006b4a688a059/using-mobile-extensions/resources/upgrading-to-aep/manual-lifecycle-implementation.md).
+{% endhint %}
+
 Sessions contain information about the app's current lifecycle, such as the device information, the application install or upgrade information, the session start and pause times, the number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
 
 ## Add Lifecycle to your app
@@ -220,7 +228,7 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">The SDK running mode, for example, <code>Application/Extension</code>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \| Key \| Description \| \| :--- \| :--- \|
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \\| Key \\| Description \\| \\| :--- \\| :--- \\|
 
 <table>
   <thead>

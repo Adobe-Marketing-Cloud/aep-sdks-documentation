@@ -1,8 +1,8 @@
 # Product variable
 
-## Products variable  <a id="products-variable"></a>
+## Products variable   <a id="products-variable"></a>
 
-The products variable cannot be set by using processing rules. In the Adobe Experience Platform SDK, you must use a special syntax in the context data parameter to set products directly on the server call
+The products variable cannot be set by using processing rules. In the Adobe Experience Platform SDK, you must use a special syntax in the context data parameter to set products directly on the server call.
 
 To set the _`products`_ variable, set a context data key to `"&&products"`, and set the value by using the syntax that is defined for the _`products`_ variable:
 
@@ -74,7 +74,7 @@ _`products`_ is set directly on the image request, and the other variables are s
 
 You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
 
-## Products variable with merchandising eVars and product-specific events  <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
+## Products variable with merchandising eVars and product-specific events   <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
 
 Here is an example of the products variable with Merchandising eVars and product-specific events.
 
