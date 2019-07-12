@@ -1,8 +1,8 @@
 # Initialize the SDK and set up tracking
 
-## Configure the SDK with the Experience Platform Launch Environment ID
+## Configure the SDK with an Environment ID
 
-To initialize the SDK, you need to first configure the SDK with an Environment ID from Experience Platform Launch.
+To initialize, you need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch.
 
 {% hint style="info" %}
 To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
@@ -12,7 +12,7 @@ To find your Environment ID, in Experience Platform Launch, go to the **Environm
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-#### Ensure app permissions
+#### Ensure app permissions \(Android\)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -60,10 +60,10 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
 
 ```jsx
 // Import the SDK
-#import <RCTACPCore/ACPCore.h>
-#import <RCTACPCore/ACPLifecycle.h>
-#import <RCTACPCore/ACPIdentity.h>
-#import <RCTACPCore/ACPSignal.h>
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   //...
@@ -112,10 +112,6 @@ initSDK() {
     ACPCore.start();
 }
 ```
-
-{% hint style="info" %}
-Developing extensions and using an Experience PlatformLaunch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
-{% endhint %}
 
 ## Enable debug logging
 
