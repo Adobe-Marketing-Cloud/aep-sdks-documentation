@@ -3,7 +3,7 @@
 In the Experience Platform SDK, all Lifecycle implementation must be done manually. This page provides a suggested implementation of Lifecycle. The correct implementation for Lifecycle should ultimately be determined by the app developer.
 
 {% hint style="danger" %}
-In version 4 of the iOS SDK, this implementation was done for your automatically.
+In version 4 of the iOS SDK, this implementation was completed automatically.
 
 When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
 {% endhint %}
@@ -100,7 +100,7 @@ ACPLifecycle.registerExtension();
 
 ## Start Lifecycle Collection
 
-You can start collecting Lifecycle information at any time in your app, but it is recommended to start as soon as the app enters the foreground. This allows the lifecycle metrics to be properly attributed to all of the user's activity for their current session.
+You can start collecting Lifecycle information at any time in your app, but we recommend that you start as soon as your app enters the foreground. This allows Lifecycle metrics to be correctly attributed to all of your users' activities for their current session.
 
 {% tabs %}
 
@@ -108,7 +108,7 @@ You can start collecting Lifecycle information at any time in your app, but it i
 #### Java
 
 {% hint style="danger" %}
-Starting and stopping lifecycle should not be done from within a Fragment.
+Do not start or stop Lifecycle in a Fragment.
 {% endhint %}
 
 In the `onResume` function of each of your Activities, start Lifecycle data collection:
@@ -137,7 +137,7 @@ Setting the application is only necessary on activities that are entry points fo
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
 {% hint style="warning" %}
-If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
 {% endhint %}
 
 ```objectivec
@@ -155,7 +155,7 @@ If your iOS application supports background capabilities, your `application:didF
 }
 ```
 
-When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
+When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
 - (void) applicationWillEnterForeground:(UIApplication *)application {
@@ -167,9 +167,9 @@ When launched, if your app is resuming from a backgrounded state, iOS might call
 {% tab title="iOS (Swift)" %}
 #### Swift
 
-Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
+{% hint style="warning" %} If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`. {% endhint %}
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -186,7 +186,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
+When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```swift
 func applicationWillEnterForeground(_ application: UIApplication) {    
@@ -212,7 +212,7 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 
 ## Pause Lifecycle Collection
 
-You should pause Lifecycle collection whenever the user stops using your app. The best time to do this is usually when your app has entered the background.
+You should pause Lifecycle collection when the user stops using your app. The best time to do this is usually when your app has entered the background.
 
 {% tabs %}
 
@@ -220,7 +220,7 @@ You should pause Lifecycle collection whenever the user stops using your app. Th
 #### Java
 
 {% hint style="danger" %}
-Starting and stopping lifecycle should not be done from within a Fragment.
+Do not start or stop Lifecycle in a Fragment.
 {% endhint %}
 
 We recommend pausing Lifecycle from the `onPause` function in your Activities:
