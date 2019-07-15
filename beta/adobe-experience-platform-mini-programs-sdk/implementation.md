@@ -28,8 +28,8 @@ In the `onLaunch` method of your `app.js` file, implement `AdobeSDK.init()` and 
 //     logs.unshift(Date.now())
 //     wx.setStorageSync('logs', logs)
      AdobeSDK.init({
-       "analytics.server": "test.sc.adobedc.cn",      //required
-       "analytics.rsids": "mobile5wechat.explore",    //required
+       "analytics.server": "example.sc.adobedc.cn",      //required
+       "analytics.rsids": "example.reportsuite",    //required
        "app.id": "adobe-demo",                        //required
        "app.version": "0.0.0.1",           //optional, default value = ''
        "analytics.offlineEnabled": true,   //optional, default value = false
