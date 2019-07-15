@@ -100,7 +100,7 @@ AdobeSDK.trackState("state", { "example.key": "value" });
 
 ## Lifecycle metrics
 
-The following is a complete list of all metrics that will be sent to Adobe Analytics as part of the user's WeChat Mini Program lifecycle.
+Upon SDK initialization, lifecycle metrics will be automatically sent to Adobe Analytics. The following is a complete list of  metrics that will be collected and sent:
 
 ### Install <a id="install"></a>
 
