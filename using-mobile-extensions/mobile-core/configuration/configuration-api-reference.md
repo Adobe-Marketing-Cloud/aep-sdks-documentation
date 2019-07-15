@@ -123,10 +123,6 @@ MobileCore.updateConfiguration(data);
 {% tab title="iOS" %}
 ### updateConfiguration
 
-{% hint style="success" %}
-Starting in ACPCore 2.0.3 for iOS, any key provided via **updateConfiguration** should not have a prefix. The configuration extension might modify the key provided to be correct for the corresponding `build.environment` in which the app is running. For more information, see [Environment-aware Configuration Properties](./#environment-aware-configuration-properties).
-{% endhint %}
-
 #### Syntax
 
 ```objectivec
