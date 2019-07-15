@@ -42,12 +42,14 @@ To find the settings for your Adobe Analytics implementation, contact your Adobe
 // })
 ```
 
-{% hint style="success" %}
-Upon initialization, the SDK will automatically collect and transmit lifecycle metrics to Adobe Analytics. For a full list of metrics, see [Lifeycle metrics](implementation.md#lifecycle-metrics).
+{% hint style="info" %}
+If the key`analytics.offlineEnabled` is set to true, then timestamp\(ts\) is included in Analytics request.
+
+The key`lifecycle.sessionTimeout`Time, in seconds, that must elapse between the time the app is launched and before the launch is considered to be a new session. This timeout also applies when your application is sent to the background and reactivated. Default value is 30 seconds.
 {% endhint %}
 
-{% hint style="info" %}
-If analytics.offlineEnabled is set to true, then timestamp\(ts\) is included in Analytics request.
+{% hint style="success" %}
+Upon initialization, the SDK will automatically collect and transmit lifecycle metrics to Adobe Analytics. For a full list of metrics, see [Lifeycle metrics](implementation.md#lifecycle-metrics).
 {% endhint %}
 
 ## Enable debug logging
@@ -139,21 +141,7 @@ The following is a complete list of all metrics that will be sent to Adobe Analy
 | Resolution | `a.Resolution` | Width x height, in pixels. |
 | Run mode | `a.RunMode` | The SDK running mode, for example, `Application/Extension`. |
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><code>lifecycle.sessionTimeout</code>
-      </th>
-      <th style="text-align:left">
-        <p>Time, in seconds, that must elapse between the time the app is launched
-          and before the launch is considered to be a new session. This timeout also
-          applies when your application is sent to the background and reactivated.</p>
-        <p>Default value is 300 seconds (5 minutes).</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>## Validate requests to Adobe Analytics
+## Validate requests to Adobe Analytics
 
 Here are the Analytics hits examples for manual tests:
 
