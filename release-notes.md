@@ -1,5 +1,13 @@
 # Release notes
 
+## July 17, 2019
+
+The following updates were made in this release:
+
+**Android Core 1.4.1**
+
+* * Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(cp\) values. 
+
 ## July 10, 2019
 
 The following updates were made in this release:
