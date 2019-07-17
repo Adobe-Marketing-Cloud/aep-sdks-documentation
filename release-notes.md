@@ -12,7 +12,7 @@ The following updates were made in this release:
 
 Adobe Experience Platform SDK for WeChat Mini Programs Beta
 
-The Adobe Experience Platform SDK now supports WeChat Mini Programs. This beta release helps Adobe Analytics customers who want to track the behavioral usage of Mini Programs. For more information see [the documentation](https://aep-sdks.gitbook.io/docs/beta/adobe-experience-platform-mini-programs-sdk) or contact your Adobe customer success manager.
+The Adobe Experience Platform SDK now supports WeChat Mini Programs. This beta release helps Adobe Analytics customers who want to track the behavioral usage of Mini Programs. For more information, see [the documentation](https://aep-sdks.gitbook.io/docs/beta/adobe-experience-platform-mini-programs-sdk) or contact your Adobe customer success manager.
 
 ## July 10, 2019
 
