@@ -4,7 +4,7 @@
 
 ### Identity request identity
 
-This event is used for the Identity extension in one of the following situations:
+This event is used for the Identity extension to complete one of the following tasks::
 
 - To retrieve the custom visitor identifiers
 - To retrieve the Experience Cloud ID (MID)
@@ -31,10 +31,10 @@ Here are the key-value pairs in this event:
 
 | **Key**               | **Value Type**      | **Optional** | **Description**                                              |
 | :-------------------- | :------------------ | :----------- | :----------------------------------------------------------- |
-| `baseurl`             | String              | Yes          | The base URL passed as parameter to the `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) API |
+| `baseurl`             | String              | Yes          | The base URL passed as parameter to the `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) API. |
 | `urlvariables`        | Boolean             | Yes          | This key is present in the Identity request event when the `getUrlVariables` API is called. |
-| `visitoridentifiers`  | Map<String, String> | Yes          | The visitor identifiers that need to be synced with the Experience Cloud ID Service. The keys of the map are the identifier types and the values are the associated identifiers |
-| `authenticationstate` | Integer             | Yes          | The VisitorID Authentication State represent (Unknown - 0, Authenticated - 1, Logged Out - 2) |
+| `visitoridentifiers`  | Map<String, String> | Yes          | The visitor identifiers that need to be synced with the Experience Cloud ID Service. The keys of the map are the identifier types and the values are the associated identifiers. |
+| `authenticationstate` | Integer             | Yes          | The VisitorID Authentication State represent (Unknown - 0, Authenticated - 1, Logged Out - 2). |
 
 #### Event data example
 
@@ -104,7 +104,7 @@ Here are the key-value pairs in this event:
 | **Key**                 | **Value Type** | **Optional** | **Description**                                              |
 | :---------------------- | :------------- | :----------- | :----------------------------------------------------------- |
 | `advertisingidentifier` | String         | Yes          | The value of the Advertising Identifier for the mobile device that needs to be set in the SDK. This key will be populated when `setAdvertisingIdentifier` API is called. |
-| `pushidentifier`        | String         | Yes          | The value of the Push Identifier that needs to be set. This key will be populated when `setPushIdentifier` API is called |
+| `pushidentifier`        | String         | Yes          | The value of the Push Identifier that needs to be set. This key will be populated when `setPushIdentifier` API is called. |
 
 #### Event data example
 
@@ -149,15 +149,15 @@ Here are the key-value pairs in this event:
 
 | **Key**                 | **Value Type**            | **Optional** | **Description**                                              |
 | :---------------------- | :------------------------ | :----------- | :----------------------------------------------------------- |
-| `mid`                   | String                    | Yes          | The value of the Experience Cloud Identifier (MID)           |
-| `advertisingidentifier` | String                    | Yes          | The value of the Advertising Identifier if it was previously set |
-| `pushidentifier`        | String                    | Yes          | The SHA1 hashed Push Identifier if one was previously set    |
-| `blob`                  | String                    | Yes          | The blob value retrieved from the Experience Cloud ID Service |
-| `locationhint`          | String                    | Yes          | The location hint value retrieved from the Experience Cloud ID Service |
-| `visitoridslist`        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were previously synced using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state` |
-| `lastsync`              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the Experience Cloud ID Service, by default it is 0 |
-| `updatedurl`            | String                    | Yes          | The update URL when `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) public API is called |
-| `urlvariables`          | String                    | Yes          | The Visitor IDs as query parameters string when `getUrlVariables` API is called |
+| `mid`                   | String                    | Yes          | The value of the Experience Cloud Identifier (MID).          |
+| `advertisingidentifier` | String                    | Yes          | The value of the Advertising Identifier if it was previously set. |
+| `pushidentifier`        | String                    | Yes          | The SHA1 hashed Push Identifier if one was previously set.   |
+| `blob`                  | String                    | Yes          | The blob value retrieved from the Experience Cloud ID Service. |
+| `locationhint`          | String                    | Yes          | The location hint value retrieved from the Experience Cloud ID Service. |
+| `visitoridslist`        | List<Map<String, Object>> | Yes          | A list of visitor identifiers that were previously synced using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor id will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state`. |
+| `lastsync`              | Long                      | Yes          | Timestamp in seconds of the last sync call sent to the Experience Cloud ID Service, by default it is 0. |
+| `updatedurl`            | String                    | Yes          | The update URL when `appendVisitorInfoForURL` (Android) / `appendToUrl` (iOS) public API is called. |
+| `urlvariables`          | String                    | Yes          | The Visitor IDs as query parameters string when `getUrlVariables` API is called. |
 
 #### Event data example
 
@@ -213,13 +213,13 @@ The Analytics Custom Visitor ID \(VID\) is no longer included in the Identity ev
 
 ### Configuration content request 
 
-The Identity Extension dispatches a new Configuration Content Request event when a privacy change is detected in the response received from the Experience Cloud ID Service. This event will be handled by the Core extension and the new privacy status will be broadcasted to other extensions.
+The Identity Extension dispatches a new Configuration Content Request event when a privacy change is detected in the response received from the Experience Cloud ID Service. This event is handled by the Core extension, and the new privacy status is broadcasted to other extensions.
 
 For more details about this event see the Mobile Core section.
 
 ### Analytics content request
 
-The Identity Extension dispatches a new Analytics Content Request event when a push status preference change is detected, when the push identifier is initially set or when it is cleared from the SDK. This event will be handled by the Analytics extension and a new internal hit will be sent to the Adobe Analytics Server.
+The Identity Extension dispatches a new Analytics Content Request event when a push status preference change is detected, when the push identifier is initially set, or when it is cleared from the SDK. This event is handled by the Analytics extension, and a new internal hit is sent to the Adobe Analytics Server.
 
 For more details about this event see [Analytics Content Request](../../adobe-analytics/analytics-event-reference.md#analytics-content-request)
 
@@ -231,19 +231,19 @@ For more details about this event see [Analytics Content Request](../../adobe-an
 
 The Identity extension shared state is created in the following situations:
 
-* When the extension first loads and is initialized
-* When handling a sync request, regardless if the actual sync occurs. Occurs when setting the Push Identifier, Advertising Identifier, or customer's custom identifiers
-* When the global privacy status changes to `optedout`, a shared state is set after the identifiers are cleared
+* When the extension first loads and is initialized.
+* When handling a sync request, regardless of whether an actual sync occurs. Occurs when setting the Push Identifier, the Advertising Identifier, or the customer's custom identifiers.
+* When the global privacy status changes to `optedout`, a shared state is set after the identifiers are cleared.
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `mid` | String | MID is a unique ID for that visitor for the given Experience Cloud organization ID |
-| `advertisingidentifier` | String | iOS: the IDFA from retrieved Apple APIs<br />Android: The Advertising Identifier that is returned from Google Play Services |
-| `pushidentifier` | String | The SHA1 hashed Push Identifier |
-| `blob` | String | The blob value returned by the the Experience Cloud ID Service |
-| `locationhint` | String | The Experience Cloud ID Service region ID. A region ID \(or location hint\), is a numeric identifier for the geographic location of a particular ID service data center |
-| `visitoridslist` | List<Map<String, Object>> | The list of all the customer's custom identifiers |
-| `lastsync` | Long | The timestamp of the last  sync with the Experience Cloud ID Service (in seconds), by default it is 0 |
+| `mid` | String | MID is a unique ID for that visitor for the given Experience Cloud organization ID. |
+| `advertisingidentifier` | String | iOS: the IDFA from retrieved Apple APIs<br />Android: The Advertising Identifier that is returned from Google Play Services. |
+| `pushidentifier` | String | The SHA1 hashed Push Identifier. |
+| `blob` | String | The blob value returned by the the Experience Cloud ID Service. |
+| `locationhint` | String | The Experience Cloud ID Service region ID. A region ID \(or location hint\), is a numeric identifier for the geographic location of a particular ID service data center. |
+| `visitoridslist` | List<Map<String, Object>> | The list of all the customer's custom identifiers. |
+| `lastsync` | Long | The timestamp of the last  sync with the Experience Cloud ID Service (in seconds), by default it is 0. |
 
 
 
