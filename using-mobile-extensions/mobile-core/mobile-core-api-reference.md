@@ -616,6 +616,32 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 {% endtab %}
 {% endtabs %}
 
+### Handle open URL action
+
+The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective-C**
+
+#### registerURLHandler
+
+**Syntax**
+
+```objectivec
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
+
+**Example**
+
+```objectivec
+[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
+    ...
+}];
+```
+{% endtab %}
+{% endtabs %}
+
 ### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
