@@ -80,7 +80,7 @@ First create the React Native project \(if one does not already exist\)
 react-native init MyReactApp
 ```
 
-Install and link kthe `@adobe/react-native-acpcore` package:
+Install and link the `@adobe/react-native-acpcore` package:
 
 ```jsx
 npm install @adobe/react-native-acpcore
@@ -106,7 +106,7 @@ public void onCreate() {
 
 **iOS project**
 
-Inside your Xcode project click on the project file and under the **General** tab click the + button under the Linked Frameworks and Libraries section. Add the following frameworks and libraries:
+Inside your Xcode project, click on the project file and under the **General** tab, click the **+** button under the **Linked Frameworks and Libraries** section, add the following frameworks and libraries:
 
 * `UIKit.framework`
 * `SystemConfiguration.framework`
