@@ -155,9 +155,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   //Other Extensions that you need
   ACPTarget.registerExtension()
   ACPTargetVEC.registerExtension()
-  [ACPCore start:^{
-    [ACPCore lifecycleStart:nil];
-  }];
+  ACPCore.start {
+    ACPCore.lifecycleStart(nil)
+  }
   return true
 }
 ```
