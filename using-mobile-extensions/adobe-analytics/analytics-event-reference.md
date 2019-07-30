@@ -121,7 +121,7 @@ Here is an example of event data for a Track request:
 {    "action": "clicked add button",    "state":"cart page",    "contextdata":{        "key1" : "value1",        "key2" : "value2"    },    "trackinternal": false}
 ```
 
-#### Event data example     <a id="event-data-example-example"></a>
+#### Event data example     <a id="event-data-example-0"></a>
 
 **Send all Analytics hits request**
 

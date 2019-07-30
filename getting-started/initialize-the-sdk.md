@@ -34,7 +34,7 @@ Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 
 #### Objective-C
 
-In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
+In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
 
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
