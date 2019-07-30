@@ -449,15 +449,51 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% tab title="iOS" %}
 #### Syntax
 
-`+ (void) setPreviewRestartDeepLink: (nonnull NSURL*) deepLink;`
+```objective-c
++ (void) setPreviewRestartDeepLink: (nonnull NSURL*) deepLink;
+```
 
 #### **Objective-C Example**
 
-`[ACPTarget setPreviewRestartDeepLink:@"myApp://HomePage"];`
+```objective-c
+[ACPTarget setPreviewRestartDeepLink:@"myApp://HomePage"];
+```
 
 #### **Swift Example**
 
-`ACPTarget.setPreviewRestartDeepLink("myApp://HomePage")`
+```swift
+ACPTarget.setPreviewRestartDeepLink("myApp://HomePage")
+```
+
+
+{% endtab %}
+{% endtabs %}
+
+The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
+
+{% tabs %}
+
+{% tab title="iOS" %}
+
+#### Syntax
+
+```objective-c
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+#### **Objective-C Example**
+
+```objective-c
+[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
+```
+
+#### **Swift Example**
+
+```swift
+ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget")
+```
+
+
 {% endtab %}
 {% endtabs %}
 
