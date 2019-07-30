@@ -6,7 +6,7 @@
 
 {% tabs %}
 {% tab title="Android" %}
-To get your app ready to handle push notifications, follow [Google's instructions](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the FCM SDK registration token, send this token and the device information to Campaign Classic using the `registerDevice` API.
+To prepare your app to handle push notifications, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the FCM SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
 
 ### registerDevice
 
@@ -91,7 +91,7 @@ ACPCampaignClassic.registerDevice(deviceToken, userKey: userKey, additionalParam
 
 ### Tracking push notifications
 
-Adobe Campaign Classic has two additional APIs used for tracking push message receive and opening.
+Adobe Campaign Classic has the following APIs to track push message receive and opening:
 
 {% tabs %}
 {% tab title="Android" %}

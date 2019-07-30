@@ -6,7 +6,7 @@
 
 This event updates the profile for Audience Manager and is generated when the`audienceSignalWithData` API is called to send content to Audience Manager.
 
-#### Event Details
+#### Event details
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
@@ -24,7 +24,7 @@ Here are the key-value pairs in this event:
 
 This event is a request to retrieve the visitor profile from Audience Manager and is generated when the parent application requests an audience visitor profile by using `audienceGetVisitorProfile`.
 
-#### Event Details
+#### Event details
 
 | Event Type | Event Source | Paired | Paired Event |
 | :--- | :--- | :--- | :--- |
@@ -50,34 +50,34 @@ There are no key-value pairs in this event.
 
 #### Hub shared state
 
-Audience extension listens for the configuration shared state events. For more details about the shared state events, see [Shared states and events](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/shared-states-and-events).​
+Audience Manager listens for the configuration shared state events. For more information about shared state events, see [Shared states and events](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/shared-states-and-events).​
 
 ### Configuration Response Content
 
 The Audience Manager extension listens for Configuration Content Response events to detect whether the privacy status was changed or the audience configuration was updated.
 
-For more details about the this event, see [Configuration Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#configuration-response-content)​.
+For more information about the this event, see [Configuration Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#configuration-response-content)​.
 
 ### Lifecycle Response Content
 
-The Audience Manager extension listens for the Lifecycle Content Response event that is generated when there is a lifecycle session update such as a launch event, upgrade, and so on, and sends a new signal to Audience Manager with the lifecycle context data.
+This event is generated when there is a lifecycle session update such as a launch event, upgrade, and so on. The Audience Manager extension listens for the event and sends a new signal to Audience Manager with the lifecycle context data.
 
-For more details about the this event, see [Lifecycle Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#lifecycle-response-content).
+For more information about the this event, see [Lifecycle Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#lifecycle-response-content).
 
 ### Analytics Response Content
 
 Audience Manager listens for Analytics Response events, which are sent when audience forwarding is enabled, processes the events, and extracts the destinations where the new signals will be sent.
 
-For more details about this event, see [Analytics Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-content).
+For more information about this event, see [Analytics Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-content).
 
-## Events dispatched  <a id="audience-manager-content-response"></a>
+## Events dispatched   <a id="audience-manager-content-response"></a>
 
 ### Audience Manager Content Response
 
-The purpose of this event is to deliver the Audience Manager profile:
+The purpose of this event is to deliver the Audience Manager profile to the following:
 
-* To the original requester.
-* To a module that might be listening for updates.
+* The original requester.
+* A module that might be listening for updates.
 
 The event is generated when a request is made to:
 
@@ -127,11 +127,11 @@ MODULE\_NAME: `com.adobe.module.audience`
 
 The shared state for this module is updated in the following scenarios:
 
-* **On Initialization:** After the module is initialized, it updates the shared state by reading the previously set value from persistence.
-* **On Audience Public API Calls:** The shared stare is updated when the `submitsignal` API is called.
+* At Initialization After the module is initialized, it updates the shared state by reading the previously set value from persistence.
+* With Audience Manager API calls The shared stare is updated when the `submitsignal` API is called.
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `uuid` | String | The UUID assigned by the Audience server |
-| `aamprofile` | Dictionary/Map | The matching visitor profile segments associated with the user |
+| `uuid` | String | The UUID assigned by the Audience server. |
+| `aamprofile` | Dictionary/Map | The matching visitor profile segments associated with the user. |
 

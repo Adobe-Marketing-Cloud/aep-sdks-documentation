@@ -12,8 +12,8 @@ Before you build an extension, complete the following tasks:
 
   To determine your goals, think about the following questions:
 
-  * Do you need access to data that is not already exposed via the Adobe Experience Cloud Platform SDKs?    
-  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe  Cloud Platform SDKs?   
+  * Do you need access to data that is not already exposed via the Adobe Experience Platform SDKs?    
+  * Do you need to be notified when messages will be sent, or data is being collected by the Adobe Experience Platform SDKs?   
   * Do you need to add data to or modify data for outgoing messages?    
   * Do you need to expose data to other extensions or to rules processing?
 
@@ -41,13 +41,15 @@ The `Extension` class has the following method that you must override:
 
   Extension developers must prefix their extension names with the company name \(for example, _com.myCompany.myExtension_\). For more information about the naming constraints, see [Namespace Conventions](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
 
+The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
+
 **Tip**: All Adobe module names are prefixed with _com.adobe.module_ and are considered reserved.
 
 The `Extension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
 
 * `getVersion`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
 * `onUnregistered`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension. Unregistration typically happens when you shutdown the app, but it can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or throwing an exception.
-* `onUnexpectedError`, which allows you log additional information when the Adobe Experience Cloud Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
+* `onUnexpectedError`, which allows you log additional information when the Adobe Experience  Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
 * `getApi` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.  This method can be used at any time after the extension registration is complete. It may also be used by your listeners by calling  `super.getParentExtension().getApi()`.
 
 **Tip**: The `Extension` class provides access to the `ExtensionApi` interface through the `getApi` member.
@@ -75,8 +77,6 @@ class MyExtension extends Extension {
 }
 ```
 
-
-
 #### **iOS**
 
 The `ACPExtension` class has the following method that you must override:
@@ -91,11 +91,11 @@ The `ACPExtension` class has the following methods that you can optionally overr
 * `version`, which returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
 * `onUnregister`, which allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension.  Unregistration typically happens at app shutdown but can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or  throwing an exception.
 * `unexpectedError`, which allows you log additional information when the Adobe Experience Platform SDKs encounter an error that could not be returned immediately from a call into the SDK.  An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
-* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.   
-  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.  
+* `api` , allows the extension developer to interact with the Event Hub to register event listeners, manage shared state, and so on.
 
+  This method can be used at any time during or after init has been called on your extension. It may also be used by your listeners by using the extension member.
 
-  **Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
+**Tip**: The `ACPExtension` class provides access to the `ACPExtensionApi` interface through the API member.
 
 #### **iOS code example**
 
@@ -119,43 +119,43 @@ The `ACPExtension` class has the following methods that you can optionally overr
 
 1. Provide at least an implementation for the `init` and `name` methods.
 
-   **MyExtension.m**
+**MyExtension.m**
 
-   ```text
-   #import "MyExtension.h"
+```text
+#import "MyExtension.h"
 
-   @implementation MyExtension
-   - (nullable NSString*) name {
-       return @"com.myCompany.myExtension";
-   }
+@implementation MyExtension
+- (nullable NSString*) name {
+    return @"com.myCompany.myExtension";
+}
 
-   - (instancetype) init {
-       if (self = [super init]) {
-           // register your listeners here
-       }
+- (instancetype) init {
+    if (self = [super init]) {
+        // register your listeners here
+    }
 
-       return self;
-   }
-   @end
-   ```
+    return self;
+}
+@end
+```
 
-2. If you decide to override the `init` method, call the default implementation of `onUnregister`.
+1. If you decide to override the `init` method, call the default implementation of `onUnregister`.
 
-   ```text
-   - (void) onUnregister {
-       [super onUnregister];
-       // your cleanup code goes here
-   }
-   ```
+```text
+- (void) onUnregister {
+    [super onUnregister];
+    // your cleanup code goes here
+}
+```
 
-3. Review the error message that was logged by the default implementation of `unexpectedError`.
+1. Review the error message that was logged by the default implementation of `unexpectedError`.
 
-   ```text
-   - (void) unexpectedError:(NSError *)error {
-       [super unexpectedError];
-        // your error handling code goes here
-   }
-   ```
+```text
+- (void) unexpectedError:(NSError *)error {
+    [super unexpectedError];
+     // your error handling code goes here
+}
+```
 
 ### B. **Registering your extension**
 

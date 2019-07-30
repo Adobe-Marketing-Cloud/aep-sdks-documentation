@@ -1,10 +1,10 @@
 # Adobe Media Analytics for Audio and Video
 
-## Configure Media Analytics extension in Launch
+## Configure Media Analytics extension in Experience Platform Launch
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
-3. Type the extension settings. For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
+3. Type the extension settings.  For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
@@ -24,19 +24,19 @@ Type the name of the tracking server to which all media tracking data should be 
 
 Type the channel name property.
 
-#### Online Video Provider
+#### Online video provider
 
 Type the name of the online platform through which content is distributed.
 
-#### Player Name
+#### Player name
 
 Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
 
-#### Application Version
+#### Application version
 
 Type the version of the media player application/SDK.
 
-#### Debug Logging
+#### Debug logging
 
 {% hint style="danger" %}
 Disable this option for your production application.
@@ -47,7 +47,7 @@ Enables or disables Media SDK logs.
 ## Add Media Analytics to your app
 
 {% hint style="info" %}
-This extension requires the [Adobe Analytics Extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
+This extension requires the [Adobe Analytics extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
 
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
@@ -64,7 +64,7 @@ This extension requires the [Adobe Analytics Extension](../adobe-analytics/). Yo
    import com.adobe.marketing.mobile.*;
    ```
 
-3. Add the Media library and its dependencies to your project. You will need to add the following pods to your `Podfile`:
+3. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
    ```text
    pod 'ACPMedia', '~> 1.0'
@@ -72,7 +72,7 @@ This extension requires the [Adobe Analytics Extension](../adobe-analytics/). Yo
    pod 'ACPCore', '~> 2.0'
    ```
 
-or you can manually include the libraries found in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
+You can also manually include the libraries in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
 
 1. In Xcode project, import Media extension:
 
@@ -94,7 +94,7 @@ or you can manually include the libraries found in [Github](https://github.com/A
 {% tab title="Android" %}
 #### Java
 
-To register media with Mobile Core, call the `setApplication()` method in `onCreate()`, then call setup methods, as shown in this sample:
+To register media with Mobile Core, call the `setApplication()` method in `onCreate()` and call set up methods, as shown in this sample:
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -181,14 +181,14 @@ func application(_ application: UIApplication,
 
 ## Configuration keys
 
-To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration Methods Reference]().
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.trackingServer` | Yes | See [Tracking Server](./#tracking-server). |
-| `media.channel` | No | See [Channel](./#channel). |
-| `media.ovp` | No | See [Online Video Provider](./#online-video-provider). |
-| `media.playerName` | No | See [Player Name](./#player-name). |
-| `media.appVersion` | No | See [Application Version](./#application-version). |
-| `media.debugLogging` | No | See [Debug Logging](./#debug-logging). |
+| `media.trackingServer` | Yes | For more information, see [Tracking Server](./#tracking-server). |
+| `media.channel` | No | For more information, see [Channel](./#channel). |
+| `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
+| `media.playerName` | No | For more information, see [Player Name](./#player-name). |
+| `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
+| `media.debugLogging` | No | For more information, see [Debug Logging](./#debug-logging). |
 

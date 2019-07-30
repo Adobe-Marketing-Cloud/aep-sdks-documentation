@@ -69,6 +69,16 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_
 })
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### **signalWithData**
+
+```jsx
+ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
+```
+{% endtab %}
 {% endtabs %}
 
 ## Reset identifiers and profiles
@@ -119,11 +129,21 @@ Audience.reset();
 ACPAudience.reset()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### **JavaScript**
+
+### **reset**
+
+```jsx
+ACPAudience.reset();
+```
+{% endtab %}
 {% endtabs %}
 
 ## Get the visitor profile
 
-Returns the visitor profile that was most recently updated. The visitor profile is saved in SDK local storage for access across multiple launches of your app. If no prior audience signal has been sent, a null value is returned when this API is called.
+Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -178,6 +198,16 @@ On iOS, the visitor profile is saved in `NSUserDefaults`.
 ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
     // your customized code
 })
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+### getVisitorProfile
+
+```jsx
+ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
 ```
 {% endtab %}
 {% endtabs %}

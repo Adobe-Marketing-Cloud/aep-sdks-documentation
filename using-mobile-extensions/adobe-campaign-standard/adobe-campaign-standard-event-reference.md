@@ -2,14 +2,14 @@
 
 ## Events handled
 
-### Campaign Request Content   <a id="configuration-response-content"></a>
+### Campaign Request Content    <a id="configuration-response-content"></a>
 
 This event is dispatched from the Event Hub for the following scenarios:
 
 * Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
-* This event is dispatched immediately after a Campaign rule is found to be true. For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
+* This event is dispatched immediately after a Campaign rule is found to be true.  For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
 
-#### Data payload definition   <a id="data-payload-definition-1"></a>
+#### Data payload definition    <a id="data-payload-definition-1"></a>
 
 Here are the key-value pairs in this event:
 
@@ -38,22 +38,22 @@ Here are the key-value pairs in this event:
 }
 ```
 
-### Configuration Response Content   <a id="configuration-response-content"></a>
+### Configuration Response Content    <a id="configuration-response-content"></a>
 
 The data property in this event is used by each extension to modify its current settings. Each extension is responsible for reading out the part of the data property for which it is concerned.
 
-#### Data payload definition   <a id="data-payload-definition-3"></a>
+#### Data payload definition    <a id="data-payload-definition-3"></a>
 
 The Adobe Campaign Standard extension reads the following key from the configuration event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `__dev__campaign.server` | String | Yes | This contains the endpoint URL for the development environment Adobe Campaign Standard instance |
-| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in development environment Adobe Campaign Standard |
-| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment Adobe Campaign Standard instance |
-| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in stage environment Adobe Campaign Standard |
-| `campaign.server` | String | Yes | This contains the endpoint URL for the production environment Adobe Campaign Standard instance |
-| `campaign.pkey` | String | Yes | This contains the identifier for a mobile app configured in production environment Adobe Campaign Standard |
+| `__dev__campaign.server` | String | Yes | This contains the endpoint URL for the development environment in the Adobe Campaign Standard instance. |
+| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in development environment in Adobe Campaign Standard. |
+| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment in the Adobe Campaign Standard instance. |
+| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the stage environment in Adobe Campaign Standard. |
+| `campaign.server` | String | Yes | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
+| `campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in in the production environment in Adobe Campaign Standard. |
 | `campaign.mcias` | String | Yes | This contains the in-app messaging service URL endpoint |
 | `campaign.timeout` | Integer | Yes | This contains the amount of time to wait for a response from in-app messaging service |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings |
@@ -78,17 +78,17 @@ After `global.privacy` is changed to **optout**, the linkage fields are reset. A
 }
 ```
 
-### Request Identity   <a id="request-identity"></a>
+### Request Identity    <a id="request-identity"></a>
 
 This event is dispatched by the API to setLinkageFields, which sets the linkage fields. It is used to download personalized in-app messages.
 
-#### Data payload definition   <a id="data-payload-definition-4"></a>
+#### Data payload definition    <a id="data-payload-definition-4"></a>
 
 Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `linkage_fields` | Map | No | This map contains either one or multiple linkage fields that are used to personally identify the logged in user. |
+| `linkage_fields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
 
 #### Event data example
 
@@ -103,19 +103,19 @@ Here are the key-value pairs in this event:
 }
 ```
 
-### Request Reset   <a id="request-reset"></a>
+### Request Reset    <a id="request-reset"></a>
 
 This event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Campaign deletes all personalized messages and downloads only generic messages again.
 
-#### Data payload definition   <a id="data-payload-definition-5"></a>
+#### Data payload definition    <a id="data-payload-definition-5"></a>
 
-\(This event has no event data\)
+This event has no event data.
 
-### Lifecycle Response Content   <a id="lifecycle-response-content"></a>
+### Lifecycle Response Content    <a id="lifecycle-response-content"></a>
 
 This event is a response from the Lifecycle extension to notify a client/extension about lifecycle context data in which the extension/client might be interested. The event is generated by the Lifecycle extension, and the API is called after a lifecycle start, stop, or pause.
 
-#### Data payload definition   <a id="data-payload-definition-6"></a>
+#### Data payload definition    <a id="data-payload-definition-6"></a>
 
 Here are the key-value pairs in this event:
 
@@ -164,8 +164,8 @@ Here is the definition of the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `a.message.id` | String | No | Message id of the message which was triggered. |
-| `a.message.triggered` | String \("1"\) | No | Flag specifying the type of message interaction event. |
+| `a.message.id` | String | No | Message ID of the message that was triggered. |
+| `a.message.triggered` | String \("1"\) | No | Flag that specifies the type of message interaction event. |
 
 #### Event data example
 

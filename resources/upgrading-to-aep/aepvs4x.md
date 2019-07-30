@@ -1,4 +1,4 @@
-# AEP vs. 4x SDK
+# Experience Platform SDKs vs. 4x SDKs
 
 The following tables provide information about the differences between the new Experience Platform SDKs and the 4x SDKs:
 
@@ -13,7 +13,7 @@ The following tables provide information about the differences between the new E
 | Programmatic configuration | No | Yes |
 | Bundled configuration | Yes | Yes |
 | Configuration management in Launch | No | Yes |
-| Lifecycle metrics | Yes | Yes |
+| Lifecycle metrics | Yes | Yes, see [Manual Lifecycle Implementation](manual-lifecycle-implementation.md) |
 | Experience Cloud ID service | Yes | Yes |
 | Privacy and GDPR framework | Yes | Yes |
 
@@ -35,14 +35,14 @@ The following tables provide information about the differences between the new E
 
 | Functionality | 4x SDK | Experience Platform SDK |
 | :--- | :--- | :--- |
-| Postbacks - Get/POST URL requests | Yes | Yes - Signals extension |
-| Postbacks - PII Get/POST URL requests | Yes | Yes - Signals extension |
-| Postbacks - Open app deeplink | Yes | Yes - Signals extension |
-| Push Messaging | Yes | Support coming |
-| In-app Messaging | Yes | Support coming |
-| Marketing/Acquisition Links | Yes | Support coming |
-| Geo location and beacon tracking | Yes | Support coming |
-| Geo points-of-interest management | Yes | Support coming |
+| Postbacks - Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Postbacks - PII Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Postbacks - Open app deeplink | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
+| Push Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| In-app Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| Marketing/Acquisition Links | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| Geo location and beacon tracking | Yes | Yes - Use [Places](aepvs4x.md) extension |
+| Geo points-of-interest management | Yes | Yes - Use [Places](aepvs4x.md) extension |
 
 ### Adobe Audience Manager
 
@@ -63,8 +63,8 @@ Although synching with integration codes is fully supported, the Experience Clou
 | :--- | :--- | :--- |
 | A/B, Multivariate Testing, Offers | Yes | Yes |
 | Offer pre-fetch | Yes | Yes |
-| Offer preview | Yes | _Support coming_ |
-| Visual editor | No | _Support coming_ |
+| Offer preview | Yes | Yes |
+| Visual editor | No | Yes |
 
 ## OS/platform support
 
@@ -73,9 +73,9 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Android | Supported | Supported |
 | Android Wear​ | Supported | _Support coming_ |
 | Apple iOS​ | Supported | Supported |
-| Apple WatchOS​ | Supported | Supported |
-| Apple tvOS​ | Supported | Supported |
-| React Native \(iOS & Android\) | Unsupported | _Support coming_ |
+| Apple WatchOS​ | Supported | _Support coming_ |
+| Apple tvOS​ | Supported | _Support coming_ |
+| React Native \(iOS & Android\) | Supported | Supported |
 | Unity \(iOS & Android\)​ | Supported | _Support coming_ |
 | Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
 | PhoneGap \(iOS & Android\)​ | Supported | _Support coming_ |

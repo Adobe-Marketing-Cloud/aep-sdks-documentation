@@ -12,6 +12,8 @@ Here are some additional rules to remember for event listeners:
 * One listener class might be used to listen for multiple events, but you need to check the details of the event you are passed on each call to the `hear` method.
 * All registered listeners are released when the extension is unregistered.
 
+The event type and event source that are associated with the received event can be in lower case because the Mobile SDK compares the type and the source as case insensitive values. When you check the event type and event source of the event, we recommend that you use the ignore case string comparison.
+
 ## Creating your event listener
 
 {% tabs %}

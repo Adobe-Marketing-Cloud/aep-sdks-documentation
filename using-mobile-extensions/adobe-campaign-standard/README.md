@@ -1,17 +1,17 @@
 # Adobe Campaign Standard
 
 {% hint style="info" %}
-**Before** you install or configure the Adobe Campaign Standard extension, read [_Getting Started_](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+**Before** you install or configure the Campaign Standard extension, read [_Getting Started_](../../getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
 {% endhint %}
 
 {% hint style="danger" %}
-If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, use [launch.adobe.com](https://launch.adobe.com), instead of the Launch integration environment, .
+If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to [launch.adobe.com](https://launch.adobe.com), instead of the Experience Platform Launch integration environment, .
 {% endhint %}
 
-## Configure the Campaign Standard extension in Launch
+## Configure the Campaign Standard extension in Experience Platform Launch
 
-1. In Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension and click **Install**.
+1. In Experience Platform Launch, click the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension, and click **Install**.
 3. Provide the extension settings.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
@@ -20,9 +20,9 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ![](../../.gitbook/assets/campaign-extension-config-v4.png)
 
-#### ACS Endpoints
+#### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Adobe Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments.
+Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
@@ -30,9 +30,11 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app configured in Adobe Campaign Standard. After you configured this extension in Launch, configure your Launch mobile property in Adobe Campaign Standard. When the configuration in Campaign is successful, pKey will be automatically generated, per Campaign Standard instance, and configured in Launch Campaign extension for successful validation.
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).  
+  
+When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Experience Platform Launch Campaign extension for successful validation.
 
-#### MCIAS Region
+#### MCIAS region
 
 Select an MCIAS region based on your customer's location or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
@@ -40,7 +42,7 @@ Select an MCIAS region based on your customer's location or enter a custom endpo
 For this extension, the custom MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
 {% endhint %}
 
-#### Request Timeout
+#### Request timeout
 
 Time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 
@@ -48,32 +50,94 @@ Time in seconds to wait for a response from the in-app messaging service before 
 The **Request Timeout** value must be a non-zero number.
 {% endhint %}
 
-## Add Campaign Standard to your app
+## Add the Campaign Standard extension to your app
 
-{% hint style="warning" %}
-The Android version of this extension is currently in progress.
+Remember the following information when you add the Campaign extension to your app:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Extension</th>
+      <th style="text-align:left">Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Campaign Standard</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>This Campaign Standard extension requires the <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a>,
+          <a
+          href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>, <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle">Lifecycle</a>,
+            and <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signal</a> extensions.
+            You should always ensure that you get the latest version of the extension.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Profile</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>The Profile extension is required for In-App trigger frequencies to work
+          accurately. For more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Signal</td>
+      <td style="text-align:left">The Signal extension is required for all postback rules to work. For more
+        information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signal</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Lifecycle</td>
+      <td style="text-align:left">
+        <p>Lifecycle extension is required for a profile to get registered in Campaign.
+          You also need to implement Lifecycle APIs. For more information, see</p>
+        <p><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android">Lifecycle extension in Android</a> or
+          <a
+          href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios">Lifecycle extension in iOS</a>.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>{% hint style="info" %}
+The instructions to add these extensions to your mobile app are also available in Experience Platform Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS" %}
-{% hint style="warning" %}
-This Campaign Standard extension requires the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md) and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/profile/README.md) extensions.
+{% tab title="Android" %}
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
+
+```java
+implementation 'com.adobe.marketing.mobile:campaign:1.+'
+implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+```
+
+2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Campaign;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+```
+
+{% hint style="info" %}
+To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
 {% endhint %}
+{% endtab %}
+
+{% tab title="iOS" %}
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
 
 ![](../../.gitbook/assets/acs-pods.png)
 
-Add the Campaign Standard, [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/mobile-core/README.md), and [Profile](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/08a65ca5e163ae9a213dc671e061216426a57435/using-mobile-extensions/adobe-campaign-standard/profile/README.md) libraries to your project. You also need to add the following pods to your `Podfile`:
+{% hint style="info" %}
+To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
+{% endhint %}
 
-```text
-use_frameworks!
-pod 'ACPCampaign', '~> 1.0'
-pod 'ACPUserProfile', '~> 2.0'
-pod 'ACPCore', '~> 2.0'
-```
-
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPCore), [Campaign Standard](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.2beta-ACPCampaign), and [Profile](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v2.0.1-ACPUserProfile) extensions from Github.
-
-In Xcode, import the Mobile Core, Campaign Standard, and Profile extensions:
+2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
 #### Objective-C
 
@@ -94,23 +158,91 @@ import ACPCampaign
 import ACPUserProfile
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../mobile-core/) extension. Follow these steps to get started:
+
+#### Create React Native Project
+
+```bash
+react-native init MyReactApp
+```
+
+#### Install JavaScript packages
+
+Install and link the @adobe/react-native-acpcampaign package:
+
+```bash
+npm install @adobe/react-native-acpcampaign
+react-native link @adobe/react-native-acpcampaign
+```
+
+#### Import the extension
+
+```bash
+import {ACPCampaign} from '@adobe/react-native-acpcampaign';
+```
+{% endtab %}
 {% endtabs %}
 
-### Register Campaign Standard with Mobile Core
+### Register the Campaign Standard extension with Mobile Core
 
 {% tabs %}
-{% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions:` method, register the Campaign Standard extension:
+{% tab title="Android" %}
+#### **Java**
 
-#### Objective-C   <a id="objective-c-1"></a>
+1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
+
+```java
+public class CampaignTestApp extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
+
+        try {
+            Campaign.registerExtension();
+            UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+            MobileCore.start(new AdobeCallback () {
+                @Override
+                public void call(Object o) {
+                    MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
+                }
+            });
+        } catch (InvalidInitException e) {
+            Log.e("CampaignTestApp", e.getMessage());
+        }
+
+    }
+}
+```
+
+For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
+{% endtab %}
+
+{% tab title="iOS" %}
+1. In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
+
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCampaign registerExtension];
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
+	
+	[ACPCampaign registerExtension];
+    [ACPUserProfile registerExtension];
     [ACPIdentity registerExtension];
     [ACPLifecycle registerExtension];
     [ACPSignal registerExtension];
-    [ACPUserProfile registerExtension];
+    [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+    }];
   // Override point for customization after application launch.
   return YES;
 }
@@ -120,17 +252,39 @@ In your app's`application:didFinishLaunchingWithOptions:` method, register the C
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaign.registerExtension();
-   ACPIdentity.registerExtension();
-   ACPLifecycle.registerExtension();
-   ACPSignal.registerExtension();   
-   ACPUserProfile.registerExtension();
-  // Override point for customization after application launch.
+   	ACPCore.setLogLevel(.debug)
+	ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
+
+	ACPCampaign.registerExtension()
+	ACPUserProfile.registerExtension()
+	ACPIdentity.registerExtension()
+	ACPLifecycle.registerExtension()
+	ACPSignal.registerExtension()
+	ACPCore.start {
+    	ACPCore.lifecycleStart(nil)
+	}
+	
   return true;
 }
 ```
+
+For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
+{% endtab %}
+
+{% tab title="React Native" %}
+To register the Campaign Standard with Core, use the following API:
+
+#### JavaScript
+
+```javascript
+ACPCampaign.registerExtension();
+```
 {% endtab %}
 {% endtabs %}
+
+### Initialize the SDK and set up tracking
+
+To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-Lk5p1L7rNsNumKjjTRf/getting-started/initialize-the-sdk).
 
 ### Set up in-app messaging
 
@@ -138,91 +292,53 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Need help creating an in-app message using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 {% endhint %}
 
-For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](adobe-campaign-standard-api-reference.md).
+{% hint style="warning" %}
+If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
+
+```markup
+<activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
+```
+{% endhint %}
+
+#### Implementing local notifications
+
+To implement local notifications in Android, update the AndroidManifext.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler/>`. To configure the notification icons to use the Mobile Core APIs, see [Configuring notification icons](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons).
 
 ### Set up push messaging
-
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
 
 {% hint style="info" %}
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
-After you follow [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
-
 {% tabs %}
+{% tab title="Android" %}
+To obtain the registration ID/token, see [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+{% endtab %}
+
 {% tab title="iOS" %}
-### setPushIdentifier
+{% hint style="warning" %}
+iOS simulators do not support push messaging.
+{% endhint %}
 
-#### Objective-C
+To obtain the registration ID/token, see [Configuring Remote Notification Support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1).
+{% endtab %}
 
-#### Syntax
-
-```objectivec
-+ (void) setPushIdentifier: (nullable NSData*) deviceToken;
-```
-
-#### Example
-
-```objectivec
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  // Set the deviceToken that the APNS has assigned to the device
-  [ACPCore setPushIdentifier:deviceToken];
-  //...
-}
-```
-
-#### Swift
-
-```swift
-ACPCore.setPushIdentifier(deviceToken)
-```
+{% tab title="React Native" %}
+Follow instructions in the Android/iOS tabs to set up platform-specific push configuration and use the following API in your React Native project:
 {% endtab %}
 {% endtabs %}
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following debug logs are displayed:
-
-### Debug log examples
-
-The Campaign rules have been downloaded:
-
-```text
-2019-01-31 18:22:35.980872-0800 CampaignDemoApp[935:156012] [AMSDK DEBUG <com.adobe.module.campaign>]: Successfully downloaded Rules from 'https://mcias-va7.cloud.adobe.io/mcias/mcias.campaign-demo.adobe.com/PR8fdd35ee6cc84aa8bbdea8f92db3f55a/43583282444503123217621782542046274680/rules.zip
-```
-
-The request to demdex has been sent:
-
-```text
-2019-01-31 18:22:35.261676-0800 CampaignDemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
-```
-
-The push token:
-
-```text
-2019-01-31 18:22:34.881855-0800 CampaignDemoApp[935:155847] Push Token: c201fc7cc33243800802850ae65856f64f0cebc439c891eee8939682075afe75
-```
-
-{% hint style="warning" %}
-Each `setPushIdentifier` call makes a new request to the demdex, which results in duplicated data that needs to be processed multiple times. To prevent system overload, do not call `setPushIdentifier` multiple times.
-{% endhint %}
-
-### Tracking for push and in-app messaging
-
-To set up tracking postbacks for push and in-app messaging and create rules for in-app messaging tracking postbacks and push notifications tracking postbacks, go to [Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step3CreaterulesforInApptrackingpostback) .
-
-## Deleting mobile properties in Launch
+## Deleting mobile properties in Experience Platform Launch
 
 {% hint style="danger" %}
-Deleting your property in Launch might cause disruption to your recurring push and in-app messaging activities.
+Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-If you delete your mobile property in Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property). 
+If you delete your mobile property in Experience Platform Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property).
 
-To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeLaunchapplication).
 
 {% hint style="warning" %}
-Deleting your mobile property in Launch does not automatically delete your Campaign Standard mobile app.
+Deleting your mobile property in Experience Platform Launch does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 

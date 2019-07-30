@@ -1,20 +1,18 @@
 # Initialize the SDK and set up tracking
 
-## Configure SDK with the Launch Environment ID
+## Configure the SDK with an Environment ID
 
-To initialize the SDK, you need to first configure the SDK with an Environment ID from Launch.
+To initialize, you need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch.
 
 {% hint style="info" %}
-To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
+To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
-
-
 
 {% hint style="warning" %}
-Adobe Experience Platform SDK for Android supports **Android 4.0 \(API 14\) or later.**
+Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-#### Ensure app permissions
+#### Ensure app permissions \(Android\)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -28,7 +26,7 @@ To add these permissions, add the following lines to your `AndroidManifest.xml` 
 #### Java
 
 1. In the app, create `MainActivity.java` .
-2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`.
+2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
 
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
@@ -36,11 +34,15 @@ Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 
 #### Objective-C
 
-In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
+In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
 
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
 ```
+
+{% hint style="warning" %}
+Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
+{% endhint %}
 
 #### Swift
 
@@ -50,18 +52,66 @@ In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
 
+### **Initializing the SDK**
 
+It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
-{% endhint %}
+**iOS**
 
-1. In Xcode, open AppDelegate.swift
-2. Under `didFinishLaunchingWithOptions`, add:`ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")`
+```jsx
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
 
-{% hint style="info" %}
-Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
-{% endhint %}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  //...
+  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+  [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+
+  [ACPCore start:nil];
+}
+```
+
+**Android**
+
+```jsx
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");
+  MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+
+**Javascript**
+
+```jsx
+import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
+    ACPLifecycle.registerExtension();
+    ACPIdentity.registerExtension();
+    ACPSignal.registerExtension();
+    ACPCore.start();
+}
+```
 
 ## Enable debug logging
 
@@ -69,10 +119,10 @@ Debug logging is optional and helps you ensure that the SDK is working as intend
 
 | Log Level | Description |
 | :--- | :--- |
-| Error | This log level details unrecoverable errors caused during SDK implementation. |
-| Warning | In addition to detail from **Error** log level, **Warning** provides error information during SDK integration. This log level may indicate that a request has been made to the SDK, but the SDK may be unable to perform the requested task. For example, this may be used when catching an unexpected but recoverable exception and printing its message. |
-| Debug | In addition to detail from **Warning** log level, **Debug** also provides high-level information on how the SDK processes network requests/responses data. |
-| Verbose | In addition to detail from the **Debug** level, **Verbose** provides detailed, low-level information into how SDK processes database interactions and SDK events. |
+| Error | This log level provides the details about unrecoverable errors that occurred during SDK implementation. |
+| Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level might indicate that a request has been made to the SDK, but the SDK might be unable to perform the requested task. For example, this log level might be used when catching an unexpected, but recoverable, exception and printing its message. |
+| Debug | In addition to detail from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
+| Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information about how SDK processes database interactions and SDK events. |
 
 To enable debug logging:
 
@@ -103,14 +153,92 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 // ACPCore.setLogLevel(ACPMobileLogLevel.error)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+Enable and control the log level of the SDK
+
+```jsx
+import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+
+```jsx
+const ERROR = "ACP_LOG_LEVEL_ERROR";
+const WARNING = "ACP_LOG_LEVEL_WARNING";
+const DEBUG = "ACP_LOG_LEVEL_DEBUG";
+const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
+```
+{% endtab %}
+{% endtabs %}
+
+## Register extensions and starting Core
+
+Other than the Mobile Core extension, all Experience Platform extensions provide a `registerExtension` API, which registers the extension with Core. After you register the extension, you can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
+
+After you register all of your extensions, call the `start` API in Core. This step is required to boot up the SDK for event processing.
+
+The following code snippets demonstrate how to initialize the SDK when using the Identity, Signal, Lifecycle, and Analytics extensions:
+
+{% tabs %}
+{% tab title="Android" %}
+```java
+try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+    Analytics.registerExtension();
+    } catch (Exception e) {
+       //Log the exception
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Objective-C" %}
+```objectivec
+[ACPIdentity registerExtension];
+[ACPLifecycle registerExtension];
+[ACPSignal registerExtension];
+[ACPAnalytics registerExtension];
+[ACPCore start:nil];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+ACPIdentity.registerExtension()
+ACPLifecycle.registerExtension()
+ACPSignal.registerExtension()
+ACPAnalytics.registerExtension()
+ACPCore.start(nil)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
+    ACPLifecycle.registerExtension();
+    ACPIdentity.registerExtension();
+    ACPSignal.registerExtension();
+    ACPCore.start();
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Enable the Experience Cloud Identity service
 
-Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is pre-requisite for most implementations.
+Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
 
 {% hint style="info" %}
-Confirm that you have the right Experience Cloud Org ID in the Mobile Core settings page, as mentioned in [Get the SDK](get-the-sdk.md).
+To confirm that you have the correct Experience Cloud Org ID in the Mobile Core settings page, see [Get the SDK](get-the-sdk.md).
 {% endhint %}
 
 {% tabs %}
@@ -126,7 +254,7 @@ import com.adobe.marketing.mobile.*;
 Register the framework with Mobile Core:
 
 ```java
-public class MobiletApp extends Application {
+public class MobileApp extends Application {
   @Override
   public void onCreate(){
      super.onCreate();
@@ -177,9 +305,31 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Identity extension
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version \(optional\)
+
+```jsx
+ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
+```
+
+Register the extension with Core
+
+```jsx
+ACPIdentity.registerExtension();
+```
+{% endtab %}
 {% endtabs %}
 
-After successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
+After a successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
 
 ## Enable lifecycle metrics
 
@@ -196,7 +346,7 @@ Lifecycle metrics contain valuable, out-of-the-box information about your app us
 Import the Lifecycle framework:
 
 ```java
-   import com.adobe.marketing.mobile.*;
+import com.adobe.marketing.mobile.*;
 ```
 
 Register the framework with Mobile Core:
@@ -229,7 +379,7 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and will ensure that the SDK always has the necessary reference to your application. We recommend calling `setApplication`in each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you call `setApplication`in each of your activities.
 {% endhint %}
 
 You can use the `onPause` function to pause the lifecycle data collection:
@@ -252,78 +402,141 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import  "ACPLifecycle.h"
+#import "ACPLifecycle.h"
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-​  // Override point for customization after application launch.
-  return YES;
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```objectivec
-// Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
-  [ACPLifecycle registerExtension];
-  [ACPCore start:^{
-        [ACPCore lifecycleStart:nil];
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+        // only start lifecycle if the application is not in the background
+        if (appState != UIApplicationStateBackground) {
+            [ACPCore lifecycleStart:nil];
+        }
     }];
-  return YES; 
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
- // Objective-C
+- (void) applicationWillEnterForeground:(UIApplication *)application {
+    [ACPCore lifecycleStart:nil];
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```objectivec
  - (void) applicationDidEnterBackground:(UIApplication *)application {
-     [ACPCore lifecyclePause];
+    [ACPCore lifecyclePause];
  }
 ```
 
 #### Swift
 
-In swift, ACPCore includes ACPLifecycle :
+In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
 ```swift
 import ACPCore
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following in your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-ACPLifecycle.registerExtension();
-​  // Override point for customization after application launch.
-  return true;
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```swift
-// Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-ACPCore.start {
-    ACPCore.lifecycleStart(nil);
-}
-    return true
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
+
+    let appState = application.applicationState;            
+    ACPCore.start {
+        // only start lifecycle if the application is not in the background    
+        if appState != .background {
+            ACPCore.lifecycleStart(nil)
+        }    
+    }    
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```swift
-// Swift
- func applicationDidEnterBackground(_ application: UIApplication) {    
-     ACPCore.lifecyclePause()
- }
+func applicationWillEnterForeground(_ application: UIApplication) {    
+    ACPCore.lifecycleStart(nil)
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```swift
+func applicationDidEnterBackground(_ application: UIApplication) {    
+    ACPCore.lifecyclePause()
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Lifecycle extension
+
+```jsx
+import {ACPLifecycle} from '@adobe/react-native-acpcore';
+```
+
+Getting the extension version \(optional\)
+
+```jsx
+ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+```
+
+Registering the extension with Core
+
+```jsx
+ACPLifecycle.registerExtension();
+```
+
+Starting a lifecycle event
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+Pausing a lifecycle event
+
+```jsx
+ACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}
@@ -334,7 +547,7 @@ For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-
 
 You can use the following screen and action tracking APIs to measure your user's engagement with your app.
 
-Actions are events that occur in your app. Use this API to track and measure an action, where  each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
 This section shows you how to start tracking app screens and user actions. To view and report on this data in those respective solutions, set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
@@ -348,17 +561,17 @@ You must call this API when an event that you want to track occurs. In addition 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java  <a id="java"></a>
+#### Java    <a id="java"></a>
 
-### trackAction  <a id="trackaction"></a>
+### trackAction    <a id="trackaction"></a>
 
-#### Syntax  <a id="syntax"></a>
+#### Syntax    <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example  <a id="example"></a>
+#### Example    <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -398,6 +611,14 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ACPCore.trackAction("action name", data: ["key": "value"])
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.trackAction("action", {"mytest": "action"});
+```
+{% endtab %}
 {% endtabs %}
 
 ### Track app states and screens
@@ -410,15 +631,15 @@ States represent screens or views in your app. Each time a new state is displaye
 
 In Android, `trackState` is typically called each time a new activity is loaded.
 
-### trackState  <a id="trackstate"></a>
+### trackState    <a id="trackstate"></a>
 
-#### **Syntax**  <a id="syntax-1"></a>
+#### **Syntax**    <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example  <a id="example-1"></a>
+#### Example    <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
@@ -456,6 +677,14 @@ MobileCore.trackState("homePage", additionalContextData);
 
 ```c
 ACPCore.trackState("state name", data: ["key": "value"])
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.trackState("state", {"mytest": "state"});
 ```
 {% endtab %}
 {% endtabs %}
