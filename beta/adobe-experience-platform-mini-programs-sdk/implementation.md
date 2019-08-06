@@ -177,7 +177,7 @@ ndh=1&c.&a.&OSVersion=Android%205.0&DeviceName=Nexus%206&Resolution=610x412&RunM
 
 ## Watch Video
 
-{% embed url="https://youtu.be/xP7-V84qHb0" %}
+{% embed url="https://video.tv.adobe.com/v/28355" %}
 
 
 

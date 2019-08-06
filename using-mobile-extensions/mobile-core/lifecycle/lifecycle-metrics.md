@@ -12,8 +12,8 @@
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
 | Upgrades | a.UpgradeEvent | Triggered at the first run after upgrade or when the version number changes. |
-| Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number changed.             **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric.|
-| Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number changed.          **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric.|
+| Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number changed.             **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number changed.          **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 
 ## Launch
 
