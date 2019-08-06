@@ -1,5 +1,15 @@
 # Release notes
 
+## August 6, 2019
+
+The following updates were made in this release:
+
+**iOS Target 2.1.2 and Android Target 1.1.2**
+
+* New Configuration Boolean key `target.previewEnabled` provided which can be used to enable/disable Target Preview. If key is not provided, then preview will be enabled by default.
+* Fixed an issue in Android where Target Preview links where decoded twice leading to error preview page.
+* Fixed bug which cause crash in iOS, when prefetchContent is called with a nil callback.
+
 ## July 17, 2019
 
 The following updates were made in this release:
