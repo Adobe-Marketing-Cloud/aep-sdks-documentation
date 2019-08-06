@@ -1,5 +1,13 @@
 # Release notes
 
+## August 6, 2019
+
+The following updates were made in this release:
+
+**Android Core 1.4.2**
+
+* Fixed a bug that the replacement value for token `{%~timestampz%}` might be created with the wrong locale. 
+
 ## July 17, 2019
 
 The following updates were made in this release:
