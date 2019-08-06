@@ -67,9 +67,9 @@ You should see a pop-up similar to the following:
 ### React Native
 
 {% hint style="info" %}
-For React Native, it is recommended to first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). 
+For React Native, it is recommended to first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com).
 
-See this [tutorial](https://facebook.github.io/react-native/docs/getting-started) for additional instructions on getting started with React Native applications 
+See this [tutorial](https://facebook.github.io/react-native/docs/getting-started) for additional instructions on getting started with React Native applications
 {% endhint %}
 
 `@adobe/react-native-acpcore` is a wrapper around the iOS and Android Adobe Experience Platform Mobile SDK to allow for integration with React Native applications. Functionality to enable the Core extension is provided entirely through JavaScript documented below.
@@ -98,9 +98,9 @@ import com.adobe.marketing.mobile.MobileCore; // import MobileCore
 
 @Override
 public void onCreate() {
-	super.onCreate();
-	//...
-	MobileCore.setApplication(this); // add this line
+    super.onCreate();
+    //...
+    MobileCore.setApplication(this); // add this line
 }
 ```
 

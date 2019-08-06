@@ -8,8 +8,6 @@ When building Android applications, the `android.app.Application` reference must
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
 
-
-
 {% tabs %}
 {% tab title="Android" %}
 **Java**
@@ -157,7 +155,7 @@ If you have the Analytics extension set up, this API increments page views and a
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-#### trackState     <a id="trackstate"></a>
+#### trackState <a id="trackstate"></a>
 
 **Syntax**
 
@@ -361,13 +359,12 @@ Those APIs are Android only.
 
 #### Java
 
-
 #### setSmallIconResourceID
 
 **Syntax**
 
 ```java
-public static void setSmallIconResourceID(int resourceID) 
+public static void setSmallIconResourceID(int resourceID)
 ```
 
 **Example**
@@ -381,7 +378,7 @@ public static void setSmallIconResourceID(int resourceID)
 **Syntax**
 
 ```java
-public static void setLargeIconResourceID(int resourceID) 
+public static void setLargeIconResourceID(int resourceID)
 ```
 
 **Example**
@@ -638,7 +635,7 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 {% tab title="React Native" %}
 ### JavaScript
 
-The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like 
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like
 
 ```jsx
 ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");

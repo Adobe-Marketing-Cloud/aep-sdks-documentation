@@ -30,8 +30,8 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).  
-  
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).
+
 When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Experience Platform Launch Campaign extension for successful validation.
 
 #### MCIAS region
@@ -54,49 +54,36 @@ The **Request Timeout** value must be a non-zero number.
 
 Remember the following information when you add the Campaign extension to your app:
 
+| Extension | Information |
+| :--- | :--- |
+
+
+| Campaign Standard | This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
+| :--- | :--- |
+
+
+| Profile | The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
+| :--- | :--- |
+
+
+| Signal | The Signal extension is required for all postback rules to work. For more information, see [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals). |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Extension</th>
-      <th style="text-align:left">Information</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Campaign Standard</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>This Campaign Standard extension requires the <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a>,
-          <a
-          href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>, <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle">Lifecycle</a>,
-            and <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signal</a> extensions.
-            You should always ensure that you get the latest version of the extension.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Profile</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>The Profile extension is required for In-App trigger frequencies to work
-          accurately. For more information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Signal</td>
-      <td style="text-align:left">The Signal extension is required for all postback rules to work. For more
-        information, see <a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals">Signal</a>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Lifecycle</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Lifecycle</th>
+      <th style="text-align:left">
         <p>Lifecycle extension is required for a profile to get registered in Campaign.
           You also need to implement Lifecycle APIs. For more information, see</p>
         <p><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android">Lifecycle extension in Android</a> or
           <a
           href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios">Lifecycle extension in iOS</a>.</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
+  </thead>
+  <tbody></tbody>
 </table>{% hint style="info" %}
 The instructions to add these extensions to your mobile app are also available in Experience Platform Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
@@ -111,7 +98,7 @@ implementation 'com.adobe.marketing.mobile:userprofile:1.+'
 implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
 
-2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
+1. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -137,7 +124,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
 {% endhint %}
 
-2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
+1. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
 #### Objective-C
 
@@ -234,8 +221,8 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPCore setLogLevel:ACPMobileLogLevelDebug];
     [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
-	
-	[ACPCampaign registerExtension];
+
+    [ACPCampaign registerExtension];
     [ACPUserProfile registerExtension];
     [ACPIdentity registerExtension];
     [ACPLifecycle registerExtension];
@@ -252,18 +239,18 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   	ACPCore.setLogLevel(.debug)
-	ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
+       ACPCore.setLogLevel(.debug)
+    ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
 
-	ACPCampaign.registerExtension()
-	ACPUserProfile.registerExtension()
-	ACPIdentity.registerExtension()
-	ACPLifecycle.registerExtension()
-	ACPSignal.registerExtension()
-	ACPCore.start {
-    	ACPCore.lifecycleStart(nil)
-	}
-	
+    ACPCampaign.registerExtension()
+    ACPUserProfile.registerExtension()
+    ACPIdentity.registerExtension()
+    ACPLifecycle.registerExtension()
+    ACPSignal.registerExtension()
+    ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+    }
+
   return true;
 }
 ```
@@ -298,8 +285,8 @@ If you are developing an Android application, to correctly display fullscreen in
 ```markup
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
-In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see [Implementing Global Lifecycle Callbacks](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks). 
 
+In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see [Implementing Global Lifecycle Callbacks](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks).
 {% endhint %}
 
 #### Implementing local notifications

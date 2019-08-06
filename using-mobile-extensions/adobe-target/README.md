@@ -11,7 +11,7 @@ To get started with Target, follow these steps:
    * Prefetch offers.
    * Enter visual preview mode.
 
-## Configure the Target extension in Experience Platform Launch       <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure the Target extension in Experience Platform Launch <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
@@ -100,7 +100,7 @@ public class TargetApp extends Application {
 {% endtab %}
 {% endtabs %}
 
-## Prefetch offers       <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Prefetch offers <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. When this feature is enabled, offer content is retrieved and cached during the prefetch call. This content is retrieved from the cache for all future calls that contain cached content for the specified mbox name. This prefetch process reduces offer load time, network calls made to Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
 
@@ -425,7 +425,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 {% endtabs %}
 
-## Visual preview       <a id="visual-preview"></a>
+## Visual preview <a id="visual-preview"></a>
 
 Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
 
@@ -449,13 +449,13 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 {% tab title="iOS" %}
 #### Syntax
 
-```objective-c
+```text
 + (void) setPreviewRestartDeepLink: (nonnull NSURL*) deepLink;
 ```
 
 #### **Objective-C Example**
 
-```objective-c
+```text
 [ACPTarget setPreviewRestartDeepLink:@"myApp://HomePage"];
 ```
 
@@ -464,26 +464,22 @@ Target.setPreviewRestartDeepLink("myApp://HomePage");
 ```swift
 ACPTarget.setPreviewRestartDeepLink("myApp://HomePage")
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
 The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
 
 {% tabs %}
-
 {% tab title="iOS" %}
-
 #### Syntax
 
-```objective-c
+```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 #### **Objective-C Example**
 
-```objective-c
+```text
 [ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
 
@@ -492,12 +488,10 @@ The `collectLaunchInfo` API is used to enter the visual preview mode. After the 
 ```swift
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget")
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
-## Target with Analytics \(A4T\)       <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
 To see the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
