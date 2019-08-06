@@ -1,9 +1,9 @@
 # Set up a mobile property
 
-To create and configure a mobile property in [Launch](https://launch.adobe.com), complete the following steps:
+To create and configure a mobile property in [Experience Platform Launch](https://launch.adobe.com), complete the following steps:
 
 {% hint style="info" %}
-Having trouble creating a mobile property or need access to Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
+Having trouble creating a mobile property or need access to Experience Platform Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 {% endhint %}
 
 ## Create a new mobile property
@@ -17,7 +17,7 @@ Having trouble creating a mobile property or need access to Launch? See [User Pe
 
 ## Set up your extensions
 
-1. In Launch, click the **Extensions** tab.  
+1. In Experience Platform Launch, click the **Extensions** tab.  
    The **Mobile Core** and **Profile** extensions are installed by default.
 
    a. Click **Configure** on the **Mobile Core** card.
@@ -53,8 +53,8 @@ To create a library of changes and deploy the library to a **Development Environ
 
 2. Specify a name for the library and, from the **Environment** drop-down list, select a development environment .
 3. Add the configuration changes to be deployed.
-4. Click **Add All Changed Resources.** To add only some changes, click **Add a Resource**. 
-5. Click **Save & Build for Development**.  **Tip**: The library builds and is displayed under the **Development** section of the publishing workflow.
+4. Click **Add All Changed Resources.**  To add only some changes, click **Add a Resource**. 
+5. Click **Save & Build for Development**.   **Tip**: The library builds and is displayed under the **Development** section of the publishing workflow.
 6. Click on the down arrow for the library and select **Submit for Approval**.
 
 The configuration in the library is deployed to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
@@ -70,5 +70,5 @@ Testing can be done using the configuration in the Development environment. The 
 ## Additional Information
 
 * To learn more about getting access to Launch, see [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
-* To learn more about Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
+* To learn more about Experience Platform Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 

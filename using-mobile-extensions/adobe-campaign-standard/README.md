@@ -222,8 +222,6 @@ public class CampaignTestApp extends Application {
 }
 ```
 
-2. Implement the Lifecycle APIs so that your Android app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
-
 For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
 
@@ -270,7 +268,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-2. Implement the Lifecycle APIs so that your iOS app can send Mobile app registration data to Campaign \(the Experience Cloud ID and the Push Platform\).  
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
@@ -285,6 +282,10 @@ ACPCampaign.registerExtension();
 {% endtab %}
 {% endtabs %}
 
+### Initialize the SDK and set up tracking
+
+To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-Lk5p1L7rNsNumKjjTRf/getting-started/initialize-the-sdk).
+
 ### Set up in-app messaging
 
 {% hint style="info" %}
@@ -297,9 +298,9 @@ If you are developing an Android application, to correctly display fullscreen in
 ```markup
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
-{% endhint %}
+In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see [Implementing Global Lifecycle Callbacks](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks). 
 
-For message types that allow you to target Adobe Campaign profiles \(CRM profiles\) that have subscribed to your mobile application, configure the personal attributes that are linked to their campaign profiles with the `setLinkageFields` API. For more information, see [Campaign API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference). 
+{% endhint %}
 
 #### Implementing local notifications
 
@@ -313,21 +314,7 @@ Need help creating a push notification using Adobe Campaign? For more informatio
 
 {% tabs %}
 {% tab title="Android" %}
-Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
-
-### setPushIdentifier
-
-#### Syntax
-
-```java
-void setPushIdentifier(final String registrationID)
-```
-
-#### Example
-
-```java
-MobileCore.setPushIdentifier(registrationID);
-```
+To obtain the registration ID/token, see [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -335,51 +322,13 @@ MobileCore.setPushIdentifier(registrationID);
 iOS simulators do not support push messaging.
 {% endhint %}
 
-After you complete [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
-
-### setPushIdentifier
-
-#### Objective-C
-
-#### Syntax
-
-```objectivec
-+ (void) setPushIdentifier: (nullable NSData*) deviceToken;
-```
-
-#### Example
-
-```objectivec
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  // Set the deviceToken that the APNS has assigned to the device
-  [ACPCore setPushIdentifier:deviceToken];
-  //...
-}
-```
-
-#### Swift
-
-```swift
-ACPCore.setPushIdentifier(deviceToken)
-```
+To obtain the registration ID/token, see [Configuring Remote Notification Support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1).
 {% endtab %}
 
 {% tab title="React Native" %}
-Follow instructions in the Android/iOS tabs to setup platform specific push configuration, then use the following API in your React Native project:
-
-### setPushIdentifier
-
-#### JavaScript
-
-```javascript
-ACPCore.setPushIdentifier("pushIdentifier");
-```
+Follow instructions in the Android/iOS tabs to set up platform-specific push configuration and use the following API in your React Native project:
 {% endtab %}
 {% endtabs %}
-
-### Tracking for push and in-app messaging
-
-To set up postbacks to track push and in-app messages, go to [Step 3 Create rules for In-App tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback) and [Step 4 Create rules for push notifications tracking postback](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#Step4Createrulesforpushnotificationstrackingpostback).
 
 ## Deleting mobile properties in Experience Platform Launch
 

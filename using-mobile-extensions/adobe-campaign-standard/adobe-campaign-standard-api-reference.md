@@ -162,3 +162,61 @@ ACPCampaign.resetLinkageFields();
 {% endtab %}
 {% endtabs %}
 
+## Set up push messaging
+
+{% tabs %}
+{% tab title="Android" %}
+### setPushIdentifier
+
+#### Syntax
+
+```java
+void setPushIdentifier(final String registrationID)
+```
+
+#### Example
+
+```java
+MobileCore.setPushIdentifier(registrationID);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### setPushIdentifier
+
+#### Objective-C
+
+#### Syntax
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+#### Example
+
+```objectivec
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  // Set the deviceToken that the APNS has assigned to the device
+  [ACPCore setPushIdentifier:deviceToken];
+  //...
+}
+```
+
+#### Swift
+
+```swift
+ACPCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### setPushIdentifier
+
+#### JavaScript
+
+```javascript
+ACPCore.setPushIdentifier("pushIdentifier");
+```
+{% endtab %}
+{% endtabs %}
+

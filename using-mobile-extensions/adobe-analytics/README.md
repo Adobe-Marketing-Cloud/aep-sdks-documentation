@@ -1,10 +1,10 @@
 # Adobe Analytics
 
-## **Configure the Analytics extension in Launch**
+## **Configure the Analytics extension in** Experience Platform **Launch**
 
-1. In Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and click **Install**.
-3. Type the extension settings.   For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
+3. Type the extension settings.    For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 

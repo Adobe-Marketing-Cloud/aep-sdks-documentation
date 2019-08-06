@@ -1,20 +1,18 @@
 # Initialize the SDK and set up tracking
 
-## Configure SDK with the Experience Platform Launch Environment ID
+## Configure the SDK with an Environment ID
 
-To initialize the SDK, you need to first configure the SDK with an Environment ID from Experience Platform Launch.
+To initialize, you need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch.
 
 {% hint style="info" %}
-To find your Environment ID, in Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
+To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-#### Ensure app permissions
+#### Ensure app permissions \(Android\)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -29,23 +27,19 @@ To add these permissions, add the following lines to your `AndroidManifest.xml` 
 
 1. In the app, create `MainActivity.java` .
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
-{% endtab %}
 
-{% tab title="Objective-C" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
 #### Objective-C
 
-In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.h` and add:
+In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
 
 ```objectivec
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -57,9 +51,7 @@ In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
-{% endtab %}
 
-{% tab title="React Native" %}
 ### **Initializing the SDK**
 
 It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
@@ -68,10 +60,10 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
 
 ```jsx
 // Import the SDK
-#import <RCTACPCore/ACPCore.h>
-#import <RCTACPCore/ACPLifecycle.h>
-#import <RCTACPCore/ACPIdentity.h>
-#import <RCTACPCore/ACPSignal.h>
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   //...
@@ -80,7 +72,7 @@ It is recommended to initialize the SDK in your native code inside your AppDeleg
   [ACPIdentity registerExtension];
   [ACPLifecycle registerExtension];
   [ACPSignal registerExtension];
-  
+
   [ACPCore start:nil];
 }
 ```
@@ -120,12 +112,6 @@ initSDK() {
     ACPCore.start();
 }
 ```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-Developing extensions and using Launch Integration? The environment ID should be prefixed with `staging/`. For example, `staging/launch-EN58bc2c40c3b14d688b768fe79a623519-development`
-{% endhint %}
 
 ## Enable debug logging
 
@@ -186,7 +172,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 {% endtab %}
 {% endtabs %}
 
-## Registering Extensions and Starting Core
+## Register extensions and starting Core
 
 Other than the Mobile Core extension, all Experience Platform extensions provide a `registerExtension` API, which registers the extension with Core. After you register the extension, you can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
 
@@ -360,7 +346,7 @@ Lifecycle metrics contain valuable, out-of-the-box information about your app us
 Import the Lifecycle framework:
 
 ```java
-   import com.adobe.marketing.mobile.*;
+import com.adobe.marketing.mobile.*;
 ```
 
 Register the framework with Mobile Core:
@@ -416,78 +402,107 @@ To ensure accurate session and crash reporting, this call must be added to every
 Import the Lifecycle framework:
 
 ```objectivec
-#import  "ACPLifecycle.h"
+#import "ACPLifecycle.h"
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-​  // Override point for customization after application launch.
-  return YES;
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```objectivec
-// Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
-  [ACPLifecycle registerExtension];
-  [ACPCore start:^{
-        [ACPCore lifecycleStart:nil];
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // register the lifecycle extension
+    [ACPLifecycle registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+        // only start lifecycle if the application is not in the background
+        if (appState != UIApplicationStateBackground) {
+            [ACPCore lifecycleStart:nil];
+        }
     }];
-  return YES; 
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
- // Objective-C
+- (void) applicationWillEnterForeground:(UIApplication *)application {
+    [ACPCore lifecycleStart:nil];
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```objectivec
  - (void) applicationDidEnterBackground:(UIApplication *)application {
-     [ACPCore lifecyclePause];
+    [ACPCore lifecyclePause];
  }
 ```
 
 #### Swift
 
-In swift, ACPCore includes ACPLifecycle :
+In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
 ```swift
 import ACPCore
 ```
 
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
+Register the Lifecycle extension with the SDK Core by adding the following in your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-ACPLifecycle.registerExtension();
-​  // Override point for customization after application launch.
-  return true;
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
 }
 ```
 
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
+Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+
+{% hint style="warning" %}
+If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+{% endhint %}
 
 ```swift
-// Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-ACPCore.start {
-    ACPCore.lifecycleStart(nil);
-}
-    return true
+    // register the lifecycle extension
+    ACPLifecycle.registerExtension();
+
+    let appState = application.applicationState;            
+    ACPCore.start {
+        // only start lifecycle if the application is not in the background    
+        if appState != .background {
+            ACPCore.lifecycleStart(nil)
+        }    
+    }    
 }
 ```
 
-Pause Lifecycle data collection when your app has entered the background:
+When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```swift
-// Swift
- func applicationDidEnterBackground(_ application: UIApplication) {    
-     ACPCore.lifecyclePause()
- }
+func applicationWillEnterForeground(_ application: UIApplication) {    
+    ACPCore.lifecycleStart(nil)
+}
+```
+
+When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
+
+```swift
+func applicationDidEnterBackground(_ application: UIApplication) {    
+    ACPCore.lifecyclePause()
+}
 ```
 {% endtab %}
 
@@ -546,17 +561,17 @@ You must call this API when an event that you want to track occurs. In addition 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java   <a id="java"></a>
+#### Java    <a id="java"></a>
 
-### trackAction   <a id="trackaction"></a>
+### trackAction    <a id="trackaction"></a>
 
-#### Syntax   <a id="syntax"></a>
+#### Syntax    <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example   <a id="example"></a>
+#### Example    <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -616,15 +631,15 @@ States represent screens or views in your app. Each time a new state is displaye
 
 In Android, `trackState` is typically called each time a new activity is loaded.
 
-### trackState   <a id="trackstate"></a>
+### trackState    <a id="trackstate"></a>
 
-#### **Syntax**   <a id="syntax-1"></a>
+#### **Syntax**    <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example   <a id="example-1"></a>
+#### Example    <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         

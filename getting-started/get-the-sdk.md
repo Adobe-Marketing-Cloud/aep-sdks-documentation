@@ -1,6 +1,6 @@
-# Get the SDK
+# Get the Experience Platform SDK
 
-The Adobe Experience Platform Mobile SDK is available for iOS via [Cocoapods](https://cocoapods.org/), Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org). Follow the directions below to learn how to incoporate the Experience Platform Mobile SDK into your application.
+The Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org). Follow the directions below to learn how to incorporate the Experience Platform SDK into your application.
 
 {% hint style="info" %}
 For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods or Gradle. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
@@ -11,10 +11,10 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 ### Android
 
 {% hint style="warning" %}
-Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
+The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-1. Open the **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  ![](../.gitbook/assets/package.png) 
+1. Open the **Mobile** property in Experience Platform Launch, and click on the **Environments** tab, and then click on the install package icon![](../.gitbook/assets/package.png). 
 2. On the **Mobile Install Instructions** dialog box, select **Android**.
 3. Follow the instructions for using Gradle with Android.
 
@@ -80,7 +80,7 @@ First create the React Native project \(if one does not already exist\)
 react-native init MyReactApp
 ```
 
-Install and link kthe `@adobe/react-native-acpcore` package:
+Install and link the `@adobe/react-native-acpcore` package:
 
 ```jsx
 npm install @adobe/react-native-acpcore
@@ -106,7 +106,7 @@ public void onCreate() {
 
 **iOS project**
 
-Inside your Xcode project click on the project file and under the **General** tab click the + button under the Lined Frameworks and Libraries section. Add the following frameworks and libraries:
+Inside your Xcode project, click on the project file and under the **General** tab, click the **+** button under the **Linked Frameworks and Libraries** section, add the following frameworks and libraries:
 
 * `UIKit.framework`
 * `SystemConfiguration.framework`

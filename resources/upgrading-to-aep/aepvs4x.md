@@ -13,7 +13,7 @@ The following tables provide information about the differences between the new E
 | Programmatic configuration | No | Yes |
 | Bundled configuration | Yes | Yes |
 | Configuration management in Launch | No | Yes |
-| Lifecycle metrics | Yes | Yes |
+| Lifecycle metrics | Yes | Yes, see [Manual Lifecycle Implementation](manual-lifecycle-implementation.md) |
 | Experience Cloud ID service | Yes | Yes |
 | Privacy and GDPR framework | Yes | Yes |
 
@@ -41,8 +41,8 @@ The following tables provide information about the differences between the new E
 | Push Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
 | In-app Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
 | Marketing/Acquisition Links | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
-| Geo location and beacon tracking | Yes | Yes - Use [Places](../../using-mobile-extensions/places-extension-1.md) extension |
-| Geo points-of-interest management | Yes | Yes - Use [Places](../../using-mobile-extensions/places-extension-1.md) extension |
+| Geo location and beacon tracking | Yes | Yes - Use [Places](aepvs4x.md) extension |
+| Geo points-of-interest management | Yes | Yes - Use [Places](aepvs4x.md) extension |
 
 ### Adobe Audience Manager
 
@@ -64,7 +64,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | A/B, Multivariate Testing, Offers | Yes | Yes |
 | Offer pre-fetch | Yes | Yes |
 | Offer preview | Yes | Yes |
-| Visual editor | No | _Support coming_ |
+| Visual editor | No | Yes |
 
 ## OS/platform support
 

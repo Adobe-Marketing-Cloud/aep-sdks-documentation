@@ -351,6 +351,45 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
+## Set Icons for local notification
+
+Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
+
+{% hint style="info" %}
+Those APIs are Android only.
+{% endhint %}
+
+#### Java
+
+
+#### setSmallIconResourceID
+
+**Syntax**
+
+```java
+public static void setSmallIconResourceID(int resourceID) 
+```
+
+**Example**
+
+```java
+ MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
+```
+
+#### setLargeIconResourceID
+
+**Syntax**
+
+```java
+public static void setLargeIconResourceID(int resourceID) 
+```
+
+**Example**
+
+```java
+ MobileCore.setLargeIconResourceID(R.mipmap.ic_launcher_round);
+```
+
 ### Logging
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow the application developer to filter the logged messages based on current logging mode.
@@ -612,6 +651,32 @@ const ERROR = "ACP_LOG_LEVEL_ERROR";
 const WARNING = "ACP_LOG_LEVEL_WARNING";
 const DEBUG = "ACP_LOG_LEVEL_DEBUG";
 const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
+```
+{% endtab %}
+{% endtabs %}
+
+### Handle open URL action
+
+The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective-C**
+
+#### registerURLHandler
+
+**Syntax**
+
+```objectivec
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
+
+**Example**
+
+```objectivec
+[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
+    ...
+}];
 ```
 {% endtab %}
 {% endtabs %}

@@ -6,7 +6,7 @@
 ## Getting Started
 
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
-* [Get the SDK](getting-started/get-the-sdk.md)
+* [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Initialize the SDK and set up tracking](getting-started/initialize-the-sdk.md)
 * [Next steps](getting-started/next-steps.md)
 
@@ -34,6 +34,7 @@
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
+  * [Product variable](using-mobile-extensions/adobe-analytics/product-variable.md)
 * [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services.md)
 * [Adobe Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
@@ -51,10 +52,6 @@
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
-* [Places \(Beta\)](using-mobile-extensions/places-extension-1.md)
-* [Project Griffon \(Beta\)](using-mobile-extensions/project-griffon/README.md)
-  * [Set up Project Griffon](using-mobile-extensions/project-griffon/set-up-project-griffon.md)
-  * [Using Project Griffon](using-mobile-extensions/project-griffon/using-project-griffon.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
@@ -63,6 +60,7 @@
 
 * [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/README.md)
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
+  * [Manual Lifecycle Implementation](resources/upgrading-to-aep/manual-lifecycle-implementation.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
@@ -86,4 +84,13 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+
+## BETA
+
+* [Location Service \(Places\)](beta/adobe-places.md)
+* [Project Griffon](beta/project-griffon/README.md)
+  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
+  * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
+* [WeChat Mini Programs](beta/adobe-experience-platform-mini-programs-sdk/README.md)
+  * [Implementation](beta/adobe-experience-platform-mini-programs-sdk/implementation.md)
 
