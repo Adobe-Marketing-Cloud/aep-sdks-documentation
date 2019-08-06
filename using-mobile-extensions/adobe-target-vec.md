@@ -208,7 +208,10 @@ You can set the `at_property` value for your workspace using the Launch interfac
 
 ## Visual preview
 
-Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
+Visual preview mode allows you to easily perform end-to-end testing for Target activities by enrolling and previewing these activities on your device. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
+
+**Tip**: This mode does not require a specialized testing set up.
+
 
 The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
 
