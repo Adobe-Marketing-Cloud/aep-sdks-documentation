@@ -5,33 +5,18 @@
 To initialize, you need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch.
 
 {% hint style="info" %}
-To find your Environment ID, in Experience Platform Launch, go to the **Environments** tab and click on the ![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon that corresponds to the environment that you are setting up.
+To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
 {% endhint %}
 
-{% hint style="warning" %}
-Adobe Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
-{% endhint %}
-
-#### Ensure app permissions \(Android\)
-
-The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
-
-To add these permissions, add the following lines to your `AndroidManifest.xml` file, which is located in the application project directory:
-
-```markup
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
+{% tabs %}
+{% tab title="Android" %}
 #### Java
 
 1. In the app, create `MainActivity.java` .
 2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
+{% endtab %}
 
-{% hint style="warning" %}
-Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
-{% endhint %}
-
+{% tab title="iOS" %}
 #### Objective-C
 
 In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
@@ -40,10 +25,6 @@ In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
 [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
 ```
 
-{% hint style="warning" %}
-Adobe Experience Platform SDK for iOS supports **iOS 10 or later.**
-{% endhint %}
-
 #### Swift
 
 In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add:
@@ -51,6 +32,8 @@ In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add
 ```swift
 ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 ```
+{% endtab %}
+{% endtabs %}
 
 ### **Initializing the SDK**
 
@@ -111,6 +94,17 @@ initSDK() {
     ACPSignal.registerExtension();
     ACPCore.start();
 }
+```
+
+### Ensure app permissions \(Android\)
+
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
+
+To add these permissions, add the following lines to your `AndroidManifest.xml` file, which is located in the application project directory:
+
+```markup
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
 ## Enable debug logging

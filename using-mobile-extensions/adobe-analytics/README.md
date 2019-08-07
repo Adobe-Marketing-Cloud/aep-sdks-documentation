@@ -204,7 +204,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### JavaScript
 
 ```jsx
-import {ACPAnalytics} from '@adobe/react-native-acpcore';
+import { ACPAnalytics } from "@adobe/react-native-acpanalytics";
 
 initSDK() {
     ACPAnalytics.registerExtension();

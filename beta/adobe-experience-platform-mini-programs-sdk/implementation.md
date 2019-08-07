@@ -102,7 +102,7 @@ AdobeSDK.trackState("state", { "example.key": "value" });
 
 Upon SDK initialization, lifecycle metrics will be automatically sent to Adobe Analytics. The following is a complete list of metrics that will be collected and sent:
 
-### Install  <a id="install"></a>
+### Install <a id="install"></a>
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |
@@ -177,7 +177,5 @@ ndh=1&c.&a.&OSVersion=Android%205.0&DeviceName=Nexus%206&Resolution=610x412&RunM
 
 ## Watch Video
 
-{% embed url="https://video.tv.adobe.com/v/28355/" %}
-
-
+{% embed url="https://video.tv.adobe.com/v/28355t1/?quality=9" caption="" %}
 
