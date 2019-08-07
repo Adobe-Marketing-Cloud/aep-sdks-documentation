@@ -51,7 +51,6 @@ To get started with Target VEC, complete the following steps:
    Dependencies
 
    ```java
-   implementation 'com.google.code.gson:gson:2.8.2'
    implementation 'android.arch.lifecycle:extensions:1.1.1'
    implementation 'io.github.sac:SocketclusterClientJava:1.7.5'
    implementation 'com.android.support:support-annotations:28.0.0'
@@ -207,3 +206,42 @@ You can disable the Target VEC extension to make the network request automatical
 
 You can set the `at_property` value for your workspace using the Launch interface. This ensures only activities in that workspace will be delivered to your mobile app.
 
+## Visual preview
+
+Visual preview mode allows you to easily perform end-to-end testing for Target activities by enrolling and previewing these activities on your device. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
+
+**Tip**: This mode does not require a specialized testing set up.
+
+The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
+For more information, see [Collect launch information](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information)
+
+{% tabs %}
+
+{% tab title="iOS" %}
+
+#### Syntax
+
+```objective-c
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+#### **Objective-C Example**
+
+```objective-c
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
+   [ACPCore collectLaunchInfo:@ {@"adb_deeplink": url.absoluteString}];
+   return YES;
+}
+```
+
+#### **Swift Example**
+
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+  ACPCore.collectLaunchInfo(["adb_deeplink": url.absoluteString])
+  return true
+}
+```
+
+{% endtab %}
+{% endtabs %}

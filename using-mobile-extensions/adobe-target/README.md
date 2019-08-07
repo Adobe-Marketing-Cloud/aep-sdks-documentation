@@ -425,7 +425,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 {% endtabs %}
 
-## Visual preview <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Visual preview <a id="visual-preview"></a>
 
 Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
 
@@ -505,6 +505,7 @@ If you need to update SDK configuration, programmatically, use the following inf
 | target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. |
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
 | target.propertyToken | `at_property token` value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. |
+| target.previewEnabled | Boolean parameter, which can be used to enable/disable Target Preview. If not specified, then Preview will be enabled by default. |
 
 {% hint style="warning" %}
 We recommend that you use Experience Platform Launch config to pass the property token instead of passing it in as a mbox parameter. If the property token is passed in Experience Platform Launch configuration and also as a mbox parameter, the token that was entered in the mbox parameter is discarded.

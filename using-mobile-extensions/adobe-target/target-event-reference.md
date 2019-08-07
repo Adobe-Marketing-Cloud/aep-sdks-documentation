@@ -120,6 +120,7 @@ The Target extension will read the following keys from the configuration event:
 | `target.environmentId` | String | Yes | The Target Environment ID. |
 | `target.timeout` | Integer | Yes | This value is used for Target request connection timeouts \(in seconds\). If the value is not set, a default value of 5 seconds is used. |
 | `global.privacy` | String | Yes | This contains the mobile privacy status settings. |
+| `target.previewEnabled` | Boolean | Yes | Boolean value to determine whether Target Preview should be enabled. If not set, then Preview is enabled by default. |
 
 ## Events dispatched
 
@@ -161,6 +162,22 @@ Here are the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `tntid` | String | Yes | The Target Identifier retrieved from Target server. |
 | `thirdpartyid` | String | Yes | Current Third Party ID that is set from the API. |
+
+### Target Preview Response
+
+This event is generated when Target Preview is started or stopped by the marketer.
+It can be used to trigger any custom workflows or API calls based on the preview flag by the following:
+
+* The original requester.
+* To any extension that might be listening for updates.
+
+#### Data payload definition
+
+Here are the key-value pairs in this event:
+
+| **Key** | **Value Type** | **Optional** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `ispreviewinitiated` | Boolean | No | Value indicating whether Target preview is initiated or stopped. |
 
 ## Shared states
 
