@@ -212,22 +212,19 @@ Visual preview mode allows you to easily perform end-to-end testing for Target a
 
 **Tip**: This mode does not require a specialized testing set up.
 
-The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
-For more information, see [Collect launch information](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information)
+The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again. For more information, see [Collect launch information](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information)
 
 {% tabs %}
-
 {% tab title="iOS" %}
-
 #### Syntax
 
-```objective-c
+```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 #### **Objective-C Example**
 
-```objective-c
+```text
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
    [ACPCore collectLaunchInfo:@ {@"adb_deeplink": url.absoluteString}];
    return YES;
@@ -242,6 +239,6 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
   return true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

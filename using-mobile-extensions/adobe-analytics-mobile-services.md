@@ -16,6 +16,10 @@ Review the following Mobile Services functionality documentation for context and
 * [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
 
 {% hint style="warning" %}
+Postbacks are **not** supported.
+{% endhint %}
+
+{% hint style="warning" %}
 Before you configure the Mobile Services extension, ensure that you previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html).
 {% endhint %}
 

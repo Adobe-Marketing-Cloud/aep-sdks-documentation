@@ -4,7 +4,6 @@
 
 The following updates were made in this release:
 
-
 **Android Core 1.4.2**
 
 * Fixed a bug where the replacement value for token `{%~timestampz%}` might be created with the wrong locale.
@@ -12,7 +11,9 @@ The following updates were made in this release:
 **iOS Target 2.1.2 and Android Target 1.1.2**
 
 * `target.previewEnabled`, a new configuration Boolean key, has been added. This key is used to enable/disable Target Preview.
+
   If key is not provided, preview is enabled by default.
+
 * Fixed an issue in Android where Target Preview links were decoded twice, which lead to an error preview page.
 
 ## July 17, 2019

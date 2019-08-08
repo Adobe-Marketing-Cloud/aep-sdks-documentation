@@ -165,8 +165,7 @@ Here are the key-value pairs in this event:
 
 ### Target Preview Response
 
-This event is generated when Target Preview is started or stopped by the marketer.
-It can be used to trigger any custom workflows or API calls based on the preview flag by the following:
+This event is generated when Target Preview is started or stopped by the marketer. It can be used to trigger any custom workflows or API calls based on the preview flag by the following:
 
 * The original requester.
 * To any extension that might be listening for updates.
