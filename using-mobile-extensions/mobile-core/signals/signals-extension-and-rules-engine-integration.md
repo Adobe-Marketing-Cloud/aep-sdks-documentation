@@ -12,15 +12,10 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens  <a id="rules-tokens"></a>
 
-Tokens are special strings used in rule actions as values, which are expanded by the SDK when the action is carried out. The format of a token is \`\`, which is any period-separated string that identifies the source of the data from which the token is expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#matching-and-retrieving-values-by-keys).
+Tokens are special strings used in rule actions as values, which are expanded by the SDK when the action is carried out. The format of a token is `{%token_name%}`, which is any period-separated string that identifies the source of the data from which the token is expanded. It can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#matching-and-retrieving-values-by-keys).
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
-Here is a usage example:
-
-```text
-​
-```
 
 ### Using tokens in Postbacks and PII rule actions  <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
 
@@ -28,9 +23,30 @@ Here is a usage example:
 
 To use data that is passed to the `collectPii` API to form a token, the format is:
 
-```text
-​
+{% tabs %}
+{% tab title="Android" %}
+
+**Call collectPII to fire Event with context data**
+
+```java
+Map<String, String> data = new HashMap<String, String>();
+data.put("user_email", "user_001@google.com");
+MobileCore.collectPII(data);
 ```
+
+**Use above contaxt data in `templateUrl`**
+
+```text
+https://my.company.com/users?email={%contextdata.user_email%}
+```
+
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
+{% endtabs %}
 
 **Tip**: `mypii` is the key in the data dictionary that is passed to the `collectPii` API.
 
