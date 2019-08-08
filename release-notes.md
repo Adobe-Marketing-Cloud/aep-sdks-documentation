@@ -1,6 +1,6 @@
 # Release notes
 
-## August 7, 2019
+## August 8, 2019
 
 The following updates were made in this release:
 
