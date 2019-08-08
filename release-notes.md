@@ -8,7 +8,8 @@ The following updates were made in this release:
 **Android Core 1.4.2**
 
 * Fixed a bug where the replacement value for token `{%~timestampz%}` might be created with the wrong locale.
-* Added  `getUniqueIdentifier()` to the `Event` object. This value is a globally unique identifier for every `Event`.
+* Added  `getUniqueIdentifier()` to the `Event` object.
+This value is a globally unique identifier for every `Event`.
 
 **iOS Target 2.1.2 and Android Target 1.1.2**
 
