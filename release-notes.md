@@ -1,5 +1,12 @@
 # Release notes
 
+## August 8, 2019
+
+The following updates were made in this release:
+
+**iOS Target 2.1.3**
+* Fixed a bug that, when prefetchContent is called with a nil callback, caused a crash in iOS.
+
 ## August 6, 2019
 
 The following updates were made in this release:
