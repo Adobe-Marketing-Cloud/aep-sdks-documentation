@@ -39,28 +39,9 @@ ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 
 It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
 
-**iOS**
-
-```jsx
-// Import the SDK
-#import "ACPCore.h"
-#import "ACPLifecycle.h"
-#import "ACPIdentity.h"
-#import "ACPSignal.h"
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  //...
-  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
-  [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
-  [ACPIdentity registerExtension];
-  [ACPLifecycle registerExtension];
-  [ACPSignal registerExtension];
-
-  [ACPCore start:nil];
-}
-```
-
-**Android**
+{% tabs %}
+{% tab title="Android" %}
+### Java
 
 ```jsx
 @Override
@@ -80,8 +61,33 @@ public void onCreate() {
   MobileCore.start(null);
 }
 ```
+{% endtab %}
 
-**Javascript**
+{% tab title="iOS" %}
+### Objective C
+
+```jsx
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  //...
+  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+  [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+
+  [ACPCore start:nil];
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### Javascript
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -95,6 +101,8 @@ initSDK() {
     ACPCore.start();
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Ensure app permissions \(Android\)
 

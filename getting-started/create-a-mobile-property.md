@@ -15,6 +15,10 @@ Having trouble creating a mobile property or need access to Experience Platform 
 
 3. Find the new property in the **Properties** list and click to open it.
 
+{% hint style="danger" %}
+Default privacy status is set to "opted in". Privacy status may impact data collection, please see [Privacy and GDPR](../resources/privacy-and-gdpr.md) for more information.
+{% endhint %}
+
 ## Set up your extensions
 
 1. In Experience Platform Launch, click the **Extensions** tab.  
