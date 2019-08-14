@@ -101,6 +101,10 @@ You can also update the configuration programmatically by passing configuration 
 Keys that are not found on the current configuration are added when this method is followed. Null values are allowed and replace existing configuration values.
 {% endhint %}
 
+{% hint style="warning" %}
+Do not use this API to update build.environment or any key with environment prefix, because it can lead to unexpected behaviors. For more information, read [Configure with Launch App ID](./configuration#environment-aware-configuration-properties).
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 ### updateConfiguration
