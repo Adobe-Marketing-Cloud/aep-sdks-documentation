@@ -48,6 +48,10 @@ If the key`analytics.offlineEnabled` is set to true, then timestamp\(ts\) is inc
 The key`lifecycle.sessionTimeout`Time, in seconds, that must elapse between the time the app is launched and before the launch is considered to be a new session. This timeout also applies when your application is sent to the background and reactivated. Default value is 30 seconds.
 {% endhint %}
 
+{% hint style="info" %}
+To send data to multiple report suites, you may comma separate RSIDs in the configuration code block. For example: `"analytics.rsids": "example.rsid1,example.rsid2"` will cause the SDK to send data to both `example.rsid1` and `example.rsid2` report suites.
+{% endhint %}
+
 {% hint style="success" %}
 Upon initialization, the SDK will automatically collect and transmit lifecycle metrics to Adobe Analytics. For a full list of metrics, see [Lifeycle metrics](implementation.md#lifecycle-metrics).
 {% endhint %}
