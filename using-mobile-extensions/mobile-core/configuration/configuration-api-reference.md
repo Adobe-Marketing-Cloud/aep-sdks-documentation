@@ -102,7 +102,7 @@ Keys that are not found on the current configuration are added when this method 
 {% endhint %}
 
 {% hint style="warning" %}
-Do not use this API to update build.environment or any key with environment prefix, because using this API can lead to unexpected behaviors. For more information, read [Configure with Launch App ID](./configuration#environment-aware-configuration-properties).
+Do not use this API to update build.environment or any key with environment prefix, because it can lead to unexpected behaviors. For more information, read [Configure with Launch App ID](./configuration#environment-aware-configuration-properties).
 {% endhint %}
 
 {% tabs %}
