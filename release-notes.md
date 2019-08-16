@@ -8,7 +8,6 @@ The following updates were made in this release:
 
 * Fixed a bug where the database operation might fail on Android Q.
 * Fixed a crash that was happening on Android 8.0/8.1 and was related to Android's TimeZoneNamesImpl.
-* Other internal bug fixes.
   
 ## August 8, 2019
 
