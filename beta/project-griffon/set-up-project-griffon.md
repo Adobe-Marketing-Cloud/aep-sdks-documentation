@@ -22,9 +22,9 @@ Click **Install** on the extension card. No extension settings are required.
 {% tab title="Android" %}
 1. Add the following libraries in your project's `build.gradle` file:
 
-   `implementation 'com.adobe.marketing.mobile:core:1.4.0'`
+   `implementation 'com.adobe.marketing.mobile:core:1+'`
 
-   `implementation 'com.adobe.marketing.mobile:griffonbridge:1.0.1'`. 
+   `implementation 'com.adobe.marketing.mobile:griffonbridge:1+'`. 
 
    Also be sure to use the latest available versions.
 
