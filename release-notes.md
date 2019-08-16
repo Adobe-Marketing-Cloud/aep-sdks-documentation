@@ -6,8 +6,8 @@ The following updates were made in this release:
 
 **Android Core 1.4.3**
 
-* Fixed a bug where the database operation may fail on Android Q.
-* Fixed a crash happening on Android 8/8.1 related to Android's TimeZoneNamesImpl.
+* Fixed a bug where the database operation might fail on Android Q.
+* Fixed a crash that was happening on Android 8.0/8.1 and was related to Android's TimeZoneNamesImpl.
 * Other internal bug fixes.
   
 ## August 8, 2019
