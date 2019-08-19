@@ -1,4 +1,4 @@
-# Rules Engine
+# Rules Engine technical details
 
 ## Key definitions
 
