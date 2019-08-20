@@ -11,6 +11,10 @@ The following updates were made in this release:
 * Added property `eventUniqueIdentifier` to the `ACPExtensionEvent` object.
 * Serveral minor fixes for the Local Notification.
 
+**iOS Identity release 2.1.1**
+
+- Fixed a bug where the push identifier was not updated in the Identity shared state when setPushIdentifier was called
+
 ## August 15, 2019
 
 The following updates were made in this release:
