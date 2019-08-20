@@ -60,6 +60,9 @@ The Experience Platform SDK migrates the locally stored user contexts from the 4
 | Adobe Audience Manager | 40 | 13 |
 | Adobe Target | 77 | 27 |
 | Profile Framework | 20 | 8 |
+| Adobe Campaign | 60 | 30 |
+| Places | 36 | 20 |
+| Places Monitor | 10 | 19 |
 
 The size values in the table are provided as indicative estimates, with the following considerations:
 
