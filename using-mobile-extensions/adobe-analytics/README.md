@@ -8,6 +8,8 @@
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
+![Workflow Overview for Launch, Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
+
 ### **Configure the Analytics Extension**
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
