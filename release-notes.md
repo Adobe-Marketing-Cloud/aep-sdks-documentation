@@ -18,6 +18,10 @@ The following updates were made in this release:
 
 - Fixed a bug in the App ID string where `CFBundleVersion` and `CFBundleShortVersionString` were being concatenated in the wrong order.
 
+**iOS Acquisition release 2.0.2**
+
+- Fixed a bug where a duplicate Analytics hit was sent when `ACPCore::CollectLaunchInfo` was called.
+
 ## August 15, 2019
 
 The following updates were made in this release:
