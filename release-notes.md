@@ -8,12 +8,15 @@ The following updates were made in this release:
 
 * Reduced the number of threads being consumed by SDK and also the CPU usage of SDK.
 * Fixed a memory leak issue.
-* Added property `eventUniqueIdentifier` to the `ACPExtensionEvent` object.
 * Serveral minor fixes for the Local Notification.
 
 **iOS Identity release 2.1.1**
 
-- Fixed a bug where the push identifier was not updated in the Identity shared state when setPushIdentifier was called
+- Fixed a bug where the push identifier was not updated in the Identity shared state when setPushIdentifier was called.
+
+**iOS Lifecycle release 2.0.3**
+
+- Fixed a bug in the App ID string where CFBundleVersion and CFBundleShortVersionString were being concatenated in the wrong order.
 
 ## August 15, 2019
 
