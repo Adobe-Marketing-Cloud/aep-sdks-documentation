@@ -74,7 +74,7 @@ _`products`_ is set directly on the image request, and the other variables are s
 
 You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
 
-## Set Products Variable
+## Set the products variable
 
 As _products_ variable cannot be set by processing rules, you need the syntax below in context data parameters to set serialized events directly on the hits that are sent to Analytics.
 

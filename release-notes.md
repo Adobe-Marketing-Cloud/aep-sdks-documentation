@@ -20,7 +20,7 @@ The following updates were made in this release:
 
 **iOS Acquisition release 2.0.2**
 
-- Fixed a bug where a duplicate Analytics hit was sent when `ACPCore::CollectLaunchInfo` was called.
+* Fixed a bug where a duplicate Analytics hit was sent when `ACPCore::CollectLaunchInfo` was called.
 
 ## August 15, 2019
 
