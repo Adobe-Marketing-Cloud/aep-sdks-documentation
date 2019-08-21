@@ -12,11 +12,11 @@ The following updates were made in this release:
 
 **iOS Identity release 2.1.1**
 
-- Fixed a bug where the push identifier was not updated in the Identity shared state when setPushIdentifier was called.
+- Fixed a bug where the push identifier was not updated in the Identity-shared state when `setPushIdentifier` was called.
 
 **iOS Lifecycle release 2.0.3**
 
-- Fixed a bug in the App ID string where CFBundleVersion and CFBundleShortVersionString were being concatenated in the wrong order.
+- Fixed a bug in the App ID string where `CFBundleVersion` and `CFBundleShortVersionString` were being concatenated in the wrong order.
 
 ## August 15, 2019
 
