@@ -6,7 +6,7 @@ The following updates were made in this release:
 
 **iOS Core release 2.3.3**
 
-* Reduced the number of threads being consumed by SDK and also the CPU usage of SDK.
+* Reduced the number of threads that were being consumed by the SDK and also reduced the CPU usage of the SDK.
 * Fixed a memory leak issue.
 * Serveral minor fixes for the Local Notification.
 
