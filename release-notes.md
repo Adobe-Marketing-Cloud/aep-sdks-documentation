@@ -8,7 +8,7 @@ The following updates were made in this release:
 
 * Reduced the number of threads that were being consumed by the SDK and also reduced the CPU usage of the SDK.
 * Fixed a memory leak issue.
-* Serveral minor fixes for the Local Notification.
+* Several minor fixes for the Local Notification.
 
 **iOS Identity release 2.1.1**
 
