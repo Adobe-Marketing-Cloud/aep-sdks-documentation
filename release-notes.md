@@ -1,5 +1,23 @@
 # Release notes
 
+## Aug 20, 2019
+
+The following updates were made in this release:
+
+**iOS Core release 2.3.3**
+
+* Reduced the number of threads that were being consumed by the SDK and also reduced the CPU usage of the SDK.
+* Fixed a memory leak issue.
+* Several minor fixes for the Local Notification.
+
+**iOS Identity release 2.1.1**
+
+- Fixed a bug where the push identifier was not updated in the Identity-shared state when `setPushIdentifier` was called.
+
+**iOS Lifecycle release 2.0.3**
+
+- Fixed a bug in the App ID string where `CFBundleVersion` and `CFBundleShortVersionString` were being concatenated in the wrong order.
+
 ## August 15, 2019
 
 The following updates were made in this release:
