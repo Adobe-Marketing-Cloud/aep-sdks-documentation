@@ -206,7 +206,7 @@ Before using this API, review Adobe Analytics's [Visitor ID Order documentation]
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% hint style="info" %}
-If you have an [Experience Cloud ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/267ffce7f3550c0b85a54b8d4603ae3fe74d5a15/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#get-experience-cloud-ids), and do not have visitor ID grace period configured, the value returned by `getTrackingIdentifier` might be null.
+If you have an [Experience Cloud ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/267ffce7f3550c0b85a54b8d4603ae3fe74d5a15/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#get-experience-cloud-ids), and have not configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
 {% endhint %}
 
 {% tabs %}
@@ -286,7 +286,7 @@ ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperi
 Before using this API, review Adobe Analytics's  [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
 {% endhint %}
 
-Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
+Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -348,7 +348,7 @@ ACPAnalytics.setVisitorIdentifier("yourVisitorId");
 Before using this API, review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
 {% endhint %}
 
-Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
+Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
 
 {% tabs %}
 {% tab title="Android" %}
