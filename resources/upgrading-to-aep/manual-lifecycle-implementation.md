@@ -8,7 +8,7 @@ In version 4 of the iOS SDK, this implementation was completed automatically.
 When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
 {% endhint %}
 
-## Importing and Registering the Lifecycle Extension
+## Importing and registering the Lifecycle extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -40,7 +40,7 @@ public class MyApp extends Application {​
 ```
 {% endtab %}
 
-{% tab title="iOS \(Objective-C\)" %}
+{% tab title="iOS" %}
 ### Objective-C
 
 Import the Lifecycle framework:
@@ -57,9 +57,7 @@ Register the Lifecycle extension with the SDK Core by adding the following to yo
     [ACPLifecycle registerExtension];
 }
 ```
-{% endtab %}
 
-{% tab title="iOS \(Swift\)" %}
 ### Swift
 
 In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
@@ -95,7 +93,7 @@ ACPLifecycle.registerExtension();
 {% endtab %}
 {% endtabs %}
 
-## Start Lifecycle Collection
+## Start collecting Lifecycle information
 
 You can start collecting Lifecycle information at any time in your app, but we recommend that you start as soon as your app enters the foreground. This allows Lifecycle metrics to be correctly attributed to all of your users' activities for their current session.
 
@@ -126,7 +124,7 @@ Setting the application is only necessary on activities that are entry points fo
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS \(Objective-C\)" %}
+{% tab title="iOS" %}
 ### Objective-C
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
@@ -157,9 +155,7 @@ When your app is launched, if it is resuming from a backgrounded state, iOS migh
     [ACPCore lifecycleStart:nil];
 }
 ```
-{% endtab %}
 
-{% tab title="iOS \(Swift\)" %}
 ### Swift
 
 Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
@@ -229,7 +225,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS \(Objective-C\)" %}
+{% tab title="iOS" %}
 ### Objective-C
 
 When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
@@ -239,9 +235,7 @@ When the app enters the background, pause Lifecycle data collection from your ap
     [ACPCore lifecyclePause];
  }
 ```
-{% endtab %}
 
-{% tab title="iOS \(Swift\)" %}
 ### Swift
 
 When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:

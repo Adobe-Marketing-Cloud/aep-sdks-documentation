@@ -124,7 +124,7 @@ MobileCore.trackState("Order Confirmation", cdata);
 
 ### **Example**
 
-```text
+```objectivec
 //create a context data dictionary 
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary]; 
 
