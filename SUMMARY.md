@@ -35,7 +35,7 @@
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
-  * [Product variable](using-mobile-extensions/adobe-analytics/product-variable.md)
+  * [Products variable](using-mobile-extensions/adobe-analytics/product-variable.md)
 * [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services.md)
 * [Adobe Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
