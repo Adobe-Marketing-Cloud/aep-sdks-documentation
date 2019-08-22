@@ -200,7 +200,7 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 ## Get the tracking identifier     <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+Before using this API, review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
