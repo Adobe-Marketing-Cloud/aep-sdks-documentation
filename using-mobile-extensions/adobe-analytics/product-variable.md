@@ -84,8 +84,6 @@ Here is a sample network request:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N9cAUiiQNZvVBMFC%2Fproducts-bloodhound.png?generation=1558039282074316&alt=media)
 
-You do not need to map the products variable with processing rules because the variable is directly set on the image request by the SDK.
-
 _`products`_ is set directly on the image request, and the other variables are set as context data. All context data variables must be mapped by using processing rules:
 
 ![](../../.gitbook/assets/map-products.png)
