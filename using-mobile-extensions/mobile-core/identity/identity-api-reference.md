@@ -211,6 +211,14 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
+{% hint style="info" %}
+
+This API is designed to handle URL formats: `scheme://authority/path?query=param#fragment`. In this example, the Adobe visitor data is appended as `scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment`
+
+If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-java).
+
+{endhint}
+
 #### **Syntax**
 
 ```java
@@ -247,6 +255,14 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
   * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+{% hint style="info" %}
+
+This API is designed to handle URL formats: `scheme://authority/path?query=param#fragment`. In this example, the Adobe visitor data is appended as `scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment`
+
+If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-ios).
+
+{endhint}
 
 #### **Syntax**
 
@@ -290,6 +306,14 @@ If the given url is nil or empty, it is returned as is. Otherwise, the following
   - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
   - `TS` - A timestamp taken when this request was made
 - The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+{% hint style="info" %}
+
+This API is designed to handle URL formats: `scheme://authority/path?query=param#fragment`. In this example, the Adobe visitor data is appended as `scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment`
+
+If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-js).
+
+{endhint}
 
 #### Syntax
 
