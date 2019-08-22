@@ -283,7 +283,7 @@ ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperi
 ## Set the custom visitor identifier    <a id="setidentifier"></a>
 
 {% hint style="warning" %}
-Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+Before using this API, review Adobe Analytics's  [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
 {% endhint %}
 
 Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
@@ -345,7 +345,7 @@ ACPAnalytics.setVisitorIdentifier("yourVisitorId");
 ## Get the custom visitor identifier
 
 {% hint style="warning" %}
-Please review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html) before using this API.
+Before using this API, review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
 {% endhint %}
 
 Sets a custom Analytics visitor identifier. Please see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html) for more information.
