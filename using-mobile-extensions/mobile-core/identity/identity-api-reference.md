@@ -217,7 +217,7 @@ This API is designed to handle URL formats: `scheme://authority/path?query=param
 
 If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-java).
 
-{endhint}
+{% endhint %}
 
 #### **Syntax**
 
@@ -262,7 +262,7 @@ This API is designed to handle URL formats: `scheme://authority/path?query=param
 
 If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-ios).
 
-{endhint}
+{% endhint %}
 
 #### **Syntax**
 
@@ -313,7 +313,7 @@ This API is designed to handle URL formats: `scheme://authority/path?query=param
 
 If your application uses more complicated URLs, such as angular URLs, we recommend using [getUrlVariables](#geturlvariables-js).
 
-{endhint}
+{% endhint %}
 
 #### Syntax
 
