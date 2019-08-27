@@ -506,7 +506,7 @@ You can also append one or more of the following reserved keys, with user-genera
 * `a.launch.campaign.content`
 
 {% hint style="warning" %}
-Ensure the deep link URL has the `a.deeplink.id` key in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters are sent to Analytics via context data.
+Ensure that the deep link URL has the `a.deeplink.id` key in the URL string. If `a.deeplink.id` is not found, none of the appended URL parameters are sent to Analytics via context data.
 {% endhint %}
 
 {% tabs %}
