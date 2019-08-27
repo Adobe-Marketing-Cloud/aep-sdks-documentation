@@ -45,4 +45,4 @@ At the start of a new application session that includes the Experience Platform 
 
 **Tip**: Conditions can be a one match or a group of matches.
 
-Technical details of the Rules Engine can be found from [Rules Engine technical details page](rules-engine-details.md).
+Technical details of the Rules Engine can be found from [Rules Engine technical details page](rules-engine-details.md)
