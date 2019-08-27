@@ -30,7 +30,7 @@
     * [Configuration keys](using-mobile-extensions/mobile-core/lifecycle/configuration-keys.md)
   * [Signal](using-mobile-extensions/mobile-core/signals/README.md)
     * [Signal extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
-  * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine.md)
+  * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine/README.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
