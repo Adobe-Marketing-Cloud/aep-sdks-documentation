@@ -1,6 +1,6 @@
 # Rules Engine
 
-The Rules Engine is provided by Adobe Experience Platform Mobile SDK as part of the MobileCore \(Android\)/ACPCore \(iOS\) extension.
+The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the MobileCore \(Android\)/ACPCore \(iOS\) extension.
 
 If you are using the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
 
@@ -10,7 +10,7 @@ The Rules Engine, with [Experience Platform Launch](https://launch.adobe.com/)'s
 
 Data elements are the building blocks for the applications data dictionary and are used to collect, organize, and deliver data across marketing and ad technology.
 
-A data element is a variable where the value can be mapped to a Visitor ID, a Carrier Name, an Advertising ID, a Push ID and so on. In Experience Platform Launch, you can reference this value by its variable name. This collection of data elements becomes the dictionary of defined data that you can use to build your rules \(events, conditions, and actions\). This data dictionary is shared across Experience Platform Launch where it can be used with any extension in your property.
+A data element is a variable where the value can be mapped to a Visitor ID, a Carrier Name, an Advertising ID, a Push ID and so on. In Experience Platform Launch, you can reference this value by its variable name. This collection of data elements becomes the dictionary of defined data that you can use to build your rules \(events, conditions, and actions\), and this dictionary is shared across Experience Platform Launch where it can be used with any extension in your property.
 
 ### **Rules**
 
@@ -24,10 +24,10 @@ The event is defined by selecting an event, the applicable conditions, and the e
 
 ### **Conditions \(AND/NOT\)**
 
-You can narrow the event by configuring the conditions that must be true for an event to trigger the rule. Use the AND/NOT conditions in the following ways:
+You can narrow the event by configuring the conditions that must be true for an event to trigger the rule. The AND/NOT conditions are used in the following ways:
 
-* Multiple conditions are joined with an AND, also called Regular Logic Type. 
-* For included exceptions, use the NOT condition, also called Exception Logic Type. 
+* Multiple conditions are joined with an AND, which is also known as the Regular Logic Type. 
+* For included exceptions, use the NOT condition, which is also called the Exception Logic Type. 
 
 ### **Exception**
 
@@ -43,7 +43,7 @@ Rules include data elements, events, conditions, and actions that are provided b
 
 At the start of a new application session that includes the Experience Platform Mobile SDK, the Rules Engine gets the static endpoint of the Rules JSON file that is defined as part of the SDK configuration, loads the latest version of this rules file, and monitors the events in the SDK. When an event matches the defined conditions in the rules, the Rules Engine sends an action to the respective extensions with an extension-specific payload. Rule matching is completed by checking whether a defined set of conditions is met.
 
-**Tip**: Conditions can be a one match or a group of matches.
+**Tip**: Conditions can be one match or a group of matches.
 
 For more information about the technical details of the Rules Engine, see [Rules Engine technical details](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details).
 
