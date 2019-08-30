@@ -233,7 +233,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 {% hint style="info" %}
-This API is designed to handle URL formats: 
+This API is designed to handle the following URL formats: 
 
 ```basic
 scheme://authority/path?query=param#fragment 
@@ -257,7 +257,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend using [getUrlVariables](identity-api-reference.md#geturlvariables-java).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-java).
 {% endhint %}
 
 {% endtab %}
@@ -302,7 +302,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 });
 ```
 {% hint style="info" %}
-This API is designed to handle URL formats: 
+This API is designed to handle the following URL formats: 
 
 ```basic
 scheme://authority/path?query=param#fragment 
@@ -326,7 +326,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend using [getUrlVariables](identity-api-reference.md#geturlvariables-ios).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-ios).
 {% endhint %}
 
 {% endtab %}
@@ -359,7 +359,7 @@ ACPIdentity.appendVisitorInfoForURL(baseURL);
 ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
 {% hint style="info" %}
-This API is designed to handle URL formats: 
+This API is designed to handle the following URL formats: 
 
 ```basic
 scheme://authority/path?query=param#fragment 
@@ -383,7 +383,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend using [getUrlVariables](identity-api-reference.md#geturlvariables-js).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
 {% endhint %}
 
 {% endtab %}
