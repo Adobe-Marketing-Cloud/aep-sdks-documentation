@@ -5,7 +5,7 @@ In version 4 of the iOS SDK, this implementation was completed automatically.
 
 When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
 
-For more information, see [Manual Lifecycle Implementation](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/87ccee59e0aeb622ec110a51820006b4a688a059/using-mobile-extensions/resources/upgrading-to-aep/manual-lifecycle-implementation.md).
+For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
 
 You can track lifecycle to learn how frequently and how long your app is being used.
