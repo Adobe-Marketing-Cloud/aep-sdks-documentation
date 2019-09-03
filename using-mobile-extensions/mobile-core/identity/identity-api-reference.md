@@ -616,11 +616,11 @@ public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 
 {% hint style="warning" %}
 
-This is just an implementation example, for more details about advertising identifier and how you should handle it correctly in your mobile application, please refer to [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
+This is just an implementation example. For more information about advertising identifiers and how to handle them correctly in your mobile application, see [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
 
 {% endhint %}
 
-This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
+This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file, see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
 
 ```java
 ...
@@ -666,13 +666,12 @@ public void onResume() {
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-**Tip:** Retrieve the IDFA from Apple APIs only if you are using an ad service. If you retrieve
-IDFA, and are not using it properly, your app might be rejected.
+**Tip:** Retrieve the Identifier for Advertising (IDFA) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
 {% endhint %}
 
 {% hint style="warning" %}
 
-This is just an implementation example, for more details about IDFA and how you should handle it correctly in your mobile application, please refer to [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+This is just an implementation example. For more information about IDFA and how to handle them correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
 
 {% endhint %}
 
