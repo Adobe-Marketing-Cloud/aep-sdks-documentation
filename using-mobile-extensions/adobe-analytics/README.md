@@ -20,7 +20,7 @@
 Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Select one or more report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company can be selected. Type in the combo box text field to narrow the search for a report suite identifier. To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
+Select one or more mobile enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and are mobile enabled can be selected. Read the [Analytics Admin Guide] (https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html) for information on how to mobile enable your report suite. Type in the combo box text field to narrow the search for a report suite identifier. Once a valid report suite idenifier has been selected, it will appear in a tag below the combo box (shown above). To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
 
 #### **Tracking server**
 
