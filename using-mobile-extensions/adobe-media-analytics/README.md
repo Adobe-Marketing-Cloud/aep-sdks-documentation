@@ -24,6 +24,14 @@ This server is different from your Analytics tracking server.
 
 Type the name of the tracking server to which all media tracking data should be sent.
 
+#### Collection API Server
+
+{% hint style="warning" %}
+Contact your Adobe account representative to receive this information.
+{% endhint %}
+
+Type the name of the media collection API server to which downloaded media tracking data should be sent.
+
 #### Channel
 
 Type the channel name property.
@@ -190,6 +198,7 @@ To update your SDK configuration programmatically, use the following information
 | Key | Required | Description |
 | :--- | :--- | :--- |
 | `media.trackingServer` | Yes | For more information, see [Tracking Server](./#tracking-server). |
+| `media.collectionServer` | No | For more information, see [Collection Server](./#collection-api-server). |
 | `media.channel` | No | For more information, see [Channel](./#channel). |
 | `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
 | `media.playerName` | No | For more information, see [Player Name](./#player-name). |

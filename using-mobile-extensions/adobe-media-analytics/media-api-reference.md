@@ -4,7 +4,7 @@
 
 ### Create a media tracker
 
-Creates a media tracker instance that tracks the playback session.
+Creates a media tracker instance that tracks the playback session. The tracker created should be used for tracking streaming content and it sends periodic pings to the media analytics backend.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -57,6 +57,99 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPMedia.createTracker({mediaTracker in
+    // Use the instance for tracking media.
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Create a media tracker with optional configuration
+
+Creates a media tracker instance based on the configuration to track the playback session.
+
+| Key | Description | Value | Required |
+| :--- | :--- | :--- | :---: |
+| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from launch for media tracked with this tracker instance.  | String | No |
+| `config.downloadedcontent` | Creates a tracker instance for tracking downloaded media. The tracker will not send periodic pings and will only send a single ping for entire content. | Boolean | No |
+
+{% tabs %}
+{% tab title="Android" %}
+#### createTracker
+
+Optional configuration about the tracker can be passed to this function. The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
+
+**Syntax**
+
+```java
+public class MediaConstants {
+
+	public static final class Config {
+		public static final String CHANNEL = "config.channel";
+		public static final String DOWNLOADED_CONTENT = "config.downloadedcontent";
+	}
+
+}
+
+public static void createTracker(Map<String, Object> config, final AdobeCallback<MediaTracker> callback)
+```
+
+**Example**
+
+```java
+HashMap<String, Object> config = new HashMap<String, Object>();
+config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
+config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from launch
+
+Media.createTracker(config, new AdobeCallback<MediaTracker>() {
+    @Override
+    public void call(MediaTracker tracker) {
+        // Use the instance for tracking media.
+    }
+});
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### createTrackerWithConfig
+
+Optional configuration about the tracker can be passed to this function. The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
+
+**Syntax**
+
+```objectivec
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigChannel;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
+
++ (void) createTrackerWithConfig: (NSDictionary* _Nullable) config 
+                        callback: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
+
+```
+
+**Examples**
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+NSMutableDictionary* config = [NSMutableDictionary dictionary];
+config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Creates downloaded content tracker
+config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Override channel configured from launch
+
+[ACPMedia createTrackerWithConfig: config
+                         callback:^(ACPMediaTracker * _Nullable mediaTracker) {
+    // Use the instance for tracking media.
+}];
+```
+
+**Swift**
+
+```swift
+var config: [String: Any] = [:]
+config[ACPMediaKeyConfigChannel] = "custom-channel"  // Creates downloaded content tracker
+config[ACPMediaKeyConfigDownloadedContent] = true    // Override channel configured from launch
+
+ACPMedia.createTrackerWithConfig(config, {mediaTracker in
     // Use the instance for tracking media.
 }
 ```
