@@ -14,7 +14,7 @@ The SDK for WeChat Mini Programs provide the following functionality:
 {% tab title="English" %}
 ### **Configuration** 
 
-The SDK will allow for easy configuration of app and Adobe Analytics related settings. Developers will be able to manage queuing of Analytics requests. Queuing requests canensure HTTP request ordering and potentially minimize quota collision enforced by WeChat. Debug logging \(with multiple log levels\) is also provided for a more transparent implementation.
+The SDK will allow for easy configuration of app and Adobe Analytics related settings. Developers will be able to manage queuing of Analytics requests. Queuing requests can ensure HTTP request ordering and potentially minimize quota collision enforced by WeChat. Debug logging \(with multiple log levels\) is also provided for a more transparent implementation.
 
 ### **Data Collection** 
 
