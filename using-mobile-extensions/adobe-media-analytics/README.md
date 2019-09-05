@@ -30,7 +30,7 @@ Type the name of the tracking server to which all media tracking data should be 
 Contact your Adobe account representative to receive this information.
 {% endhint %}
 
-Type the name of the media collection API server to which downloaded media tracking data should be sent.
+Type the name of the media collection API server to which the downloaded media tracking data should be sent.
 
 #### Channel
 
