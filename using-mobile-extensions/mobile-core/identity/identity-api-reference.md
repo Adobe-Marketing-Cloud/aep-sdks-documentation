@@ -666,7 +666,7 @@ public void onResume() {
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-**Tip:** Retrieve the Identifier for Advertising (IDFA) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
+Retrieve the Identifier for Advertising (IDFA) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -675,15 +675,15 @@ This is just an implementation example. For more information about IDFA and how 
 
 {% endhint %}
 
-#### **Objective C**
-
-**Syntax**
+#### **Syntax**
 
 ```objectivec
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 
-**Example**
+#### **Example**
+
+**Objective-C**
 
 ```objectivec
 #import <AdSupport/ASIdentifierManager.h>
@@ -701,7 +701,7 @@ This is just an implementation example. For more information about IDFA and how 
 }
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 import AdSupport
