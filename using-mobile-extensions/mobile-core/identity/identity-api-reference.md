@@ -614,15 +614,66 @@ public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 
 #### **Example**
 
+{% hint style="warning" %}
+
+This is just an implementation example. For more information about advertising identifiers and how to handle them correctly in your mobile application, see [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
+
+{% endhint %}
+
+This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file, see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
+
 ```java
-MobileCore.setAdvertisingIdentifier("advertising_identifier");
+...
+@Override
+public void onResume() {
+    super.onResume();
+    ...
+    new Thread(new Runnable() {
+        @Override
+        public void run() {
+            String advertisingIdentifier = null;
+
+            try {
+                AdvertisingIdClient.Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                if (adInfo != null) {
+                    if (!adInfo.isLimitAdTrackingEnabled()) {
+                        advertisingIdentifier = adInfo.getId();
+                    } else {
+                        MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
+                    }
+                }
+
+            } catch (IOException e) {
+                // Unrecoverable error connecting to Google Play services (e.g.,
+                // the old version of the service doesn't support getting AdvertisingId).
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesNotAvailableException e) {
+                // Google Play services is not available entirely.
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesRepairableException e) {
+                // Google Play services is not installed, up-to-date, or enabled.
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            }
+
+            MobileCore.setAdvertisingIdentifier(advertisingIdentifier);
+        }
+    }).start();
+}
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
 ### setAdvertisingIdentifier
 
-#### **Objective C**
+{% hint style="info" %}
+Retrieve the Identifier for Advertising (IDFA) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
+{% endhint %}
+
+{% hint style="warning" %}
+
+This is just an implementation example. For more information about IDFA and how to handle them correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -630,16 +681,42 @@ MobileCore.setAdvertisingIdentifier("advertising_identifier");
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 
-Examples
+#### **Example**
+
+**Objective-C**
 
 ```objectivec
-[ACPCore setAdvertisingIdentifier:@"AdvertisingId"];
+#import <AdSupport/ASIdentifierManager.h>
+...
+    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	NSString *idfa = nil;
+    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    } else {
+        [ACPCore log:ACPMobileLogLevelDebug tag:@"AppDelegateExample" message:@"Advertising Tracking is disabled by the user, cannot process the advertising identifier"];
+    }
+    [ACPCore setAdvertisingIdentifier:idfa];
+    ...
+}
 ```
 
 **Swift**
 
 ```swift
-ACPCore.setAdvertisingIdentifier("AdvertisingId")
+import AdSupport
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+	var idfa:String = "";
+    if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
+        idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
+    } else {
+        ACPCore.log(ACPMobileLogLevel.debug, tag: "AppDelegateExample", message: "Advertising Tracking is disabled by the user, cannot process the advertising identifier");
+    }
+    ACPCore.setAdvertisingIdentifier(idfa);
+    ...
+}
 ```
 {% endtab %}
 
@@ -715,6 +792,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### AdobeCallback <a id="adobecallback"></a>
 
 This class provides the interface to receive results when the async APIs perform the requested action.
