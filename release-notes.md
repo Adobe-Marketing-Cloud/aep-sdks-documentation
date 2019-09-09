@@ -1,5 +1,17 @@
 # Release notes
 
+## Sep 9, 2019
+
+The following updates were made in this release:
+
+**Android Griffon SDK 1.0.0**
+
+* New Artifact split out from the Android Griffon Bridge as of version 1.0.3.
+
+**Android Griffon Bridge 1.0.3**
+
+* Use with new Android Griffon SDK 1.0.0 or newer.
+
 ## Aug 20, 2019
 
 The following updates were made in this release:
