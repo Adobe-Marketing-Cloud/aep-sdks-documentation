@@ -89,7 +89,7 @@ public void onCreate() {
 {% tab title="React Native" %}
 ### Javascript
 
-> Note: It is recommended to initialize the SDK via native code inside your AppDelegate and MainApplication in iOS and Android respectively. However, you can still initialize the SDK in Javascript.
+> Tip: We recommend that you initialize the SDK via native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can still initialize the SDK in Javascript.
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
