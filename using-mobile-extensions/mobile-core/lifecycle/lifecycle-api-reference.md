@@ -89,10 +89,10 @@ Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFini
 
 ```objectivec
 // Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [ACPLifecycle registerExtension];
-  [ACPCore lifecycleStart]; 
-  return YES; 
+  [ACPCore lifecycleStart];
+  return YES;
 }
 ```
 
@@ -123,6 +123,8 @@ Pause Lifecycle data collection when your app has entered the background:
 
 {% tab title="React Native" %}
 ### JavaScript
+
+> Note: Implementing Lifecycle via Javascript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native [Android and iOS code](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle). However, if implementing Lifecycle in Javascript is required you can use the [`AppState`](https://facebook.github.io/react-native/docs/appstate) to receive notifications about when your app enters foreground/background. Based on the `AppState` you can make the corresponding calls to `lifecycleStart` and `lifecyclePause`.
 
 Import the Lifecycle extension
 
@@ -323,4 +325,3 @@ public class MainActivity extends Activity {
 ```
 {% endtab %}
 {% endtabs %}
-
