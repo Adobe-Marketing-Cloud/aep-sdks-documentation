@@ -1,5 +1,14 @@
 # Release notes
 
+## September 9, 2019
+
+The following updates were made in this release:
+
+**iOS Analytics 2.2.0**
+
+* Added support for Griffon debug API.
+* Analytics now ignores the `global.ssl` configuration flag.
+
 ## Aug 20, 2019
 
 The following updates were made in this release:
@@ -64,7 +73,7 @@ The following updates were made in this release:
 
 **Android Core 1.4.1**
 
-* Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(CP\) values. 
+* Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(CP\) values.
 
 ## July 16, 2019
 
@@ -78,7 +87,7 @@ The following updates were made in this release:
 
 **Android Griffon Bridge 1.0.2**
 
-* Fixed bug where wildcard listener wasn't working. 
+* Fixed bug where wildcard listener wasn't working.
 
 ## July 9, 2019
 
@@ -120,8 +129,8 @@ The following updates were made in this release:
 
 **iOS Core release 2.3.2**
 
-* Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values. 
-* Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down. 
+* Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values.
+* Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down.
 * Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
 
 ## June 17, 2019
@@ -141,8 +150,8 @@ The following updates were made in this release:
 
 **iOS Core 2.3.1**
 
-* Fixed an issue that was causing network request failures, which were introduced in version 2.2.2. 
-* Fixed an issue that might have caused crashes when the app was being shut down. 
+* Fixed an issue that was causing network request failures, which were introduced in version 2.2.2.
+* Fixed an issue that might have caused crashes when the app was being shut down.
 * Fixed an issue that might have caused the callback to be passed to `ACPCore start:` to be called before the EventHub has finished initialization.
 
 ## June 12, 2019
@@ -641,4 +650,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
