@@ -89,6 +89,8 @@ public void onCreate() {
 {% tab title="React Native" %}
 ### Javascript
 
+> Tip: We recommend that you initialize the SDK via native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can still initialize the SDK in Javascript.
+
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
 
@@ -692,4 +694,3 @@ ACPCore.trackState("state", {"mytest": "state"});
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
-
