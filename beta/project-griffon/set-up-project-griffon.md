@@ -23,7 +23,7 @@ Click **Install** on the extension card. No extension settings are required.
 1. Add the following libraries in your project's `build.gradle` file:
 
    `implementation 'com.adobe.marketing.mobile:core:1+'`
-
+   `implementation 'com.adobe.marketing.mobile:griffon:1+'`. 
    `implementation 'com.adobe.marketing.mobile:griffonbridge:1+'`. 
 
    Also be sure to use the latest available versions.
@@ -33,6 +33,7 @@ Click **Install** on the extension card. No extension settings are required.
    **Java**
 
 ```text
+import com.adobe.griffon.Event;
 import com.adobe.marketing.mobile.AndroidGriffonBridge;
 import com.adobe.marketing.mobile.MobileCore;
 ```
