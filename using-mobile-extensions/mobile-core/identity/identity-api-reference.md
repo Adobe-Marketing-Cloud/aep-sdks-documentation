@@ -10,6 +10,8 @@ This API synchronizes the provided customer identifier type key and value with t
 {% tab title="Android" %}
 ### syncIdentifier
 
+**Tip**: Both the identifier type and identifier should have valid string values (non null or empty), otherwise this identifier is ignored by the Identity extension.
+
 #### **Syntax**
 
 ```text
@@ -26,7 +28,7 @@ Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHE
 
 ### syncIdentifiers
 
-**Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
+**Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value. Both the identifier type and identifier should have valid string values (non null or empty), otherwise these identifiers are ignored by the Identity extension.
 
 #### **Syntax**
 
@@ -49,7 +51,7 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value. Both the identifier type and identifier should have valid string values (non null or empty), otherwise these identifiers are ignored by the Identity extension.
 
 #### **Syntax**
 

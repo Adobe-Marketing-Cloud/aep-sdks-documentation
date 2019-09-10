@@ -4,6 +4,14 @@
 
 The following updates were made in this release:
 
+**Android Identity 1.1.1**
+
+- Identity extension now ignores any custom identifiers with null or empty ids when calling `syncIdentifier` or `syncIdentifiers` APIs as the Visitor ID Service does not support these identifiers. 
+- Identity extension now ignores the `syncIdentifiers` APIs call with an empty Map. 
+- Identity now removes the duplicate advertising identifier value from its shared state when setAdvertisingIdentifier is called with new value. 
+- Identity extension now ignores the `global.ssl` configuration settings and uses ssl enabled by default. 
+
+
 **iOS Analytics 2.2.0**
 
 * Added support for Griffon debug API.
