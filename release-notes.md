@@ -6,7 +6,7 @@ The following updates were made in this release:
 
 **Android Griffon SDK 1.0.0**
 
-* New Artifact split out from the Android Griffon Bridge as of version 1.0.3.
+* Starting in version 1.0.3, there is a new Artifact split from the Android Griffon Bridge.
 
 **Android Griffon Bridge 1.0.3**
 
