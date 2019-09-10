@@ -4,13 +4,13 @@
 
 The following updates were made in this release:
 
+**Android Griffon Bridge 1.0.3**
+
+* You can use the Android Griffon Bridge version 1.0.3 with the Android Griffon SDK version 1.0.0.
+
 **Android Griffon SDK 1.0.0**
 
 * Starting in version 1.0.3, there is a new Artifact split from the Android Griffon Bridge.
-
-**Android Griffon Bridge 1.0.3**
-
-* Use with new Android Griffon SDK 1.0.0 or newer.
 
 ## Aug 20, 2019
 
