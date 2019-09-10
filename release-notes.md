@@ -6,11 +6,11 @@ The following updates were made in this release:
 
 **Android Identity 1.1.1**
 
-- Identity extension now ignores any custom identifiers with null or empty ids when calling `syncIdentifier` or `syncIdentifiers` APIs as the Visitor ID Service does not support these identifiers. 
-- Identity extension now ignores the `syncIdentifiers` APIs call with an empty Map. 
-- Identity now removes the duplicate advertising identifier value from its shared state when setAdvertisingIdentifier is called with new value. 
-- Identity extension now ignores the `global.ssl` configuration settings and uses ssl enabled by default. 
-
+- Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
+- The `syncIdentifiers` API call is ignored when there is an empty Map. 
+-  The duplicate advertising identifier value is removed from the Identity shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value. 
+- The `global.ssl` configuration settings are ignored, and SSL is enabled by default. 
+- Fixed an issue where `appendVisitorInfoForURL` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
 
 **iOS Analytics 2.2.0**
 
