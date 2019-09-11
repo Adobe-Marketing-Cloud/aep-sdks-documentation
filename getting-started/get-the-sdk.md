@@ -50,10 +50,10 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 ### React Native
 
 {% hint style="info" %}
-For React Native, it is recommended to first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). See this [tutorial](https://facebook.github.io/react-native/docs/getting-started) for additional instructions on getting started with React Native applications
+For React Native, we recommend that you first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
 {% endhint %}
 
-See the README in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository for the latest React Native installation instructions.
+For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
 
 {% endtab %}
 {% endtabs %}
