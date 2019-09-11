@@ -21,6 +21,18 @@ The following updates were made in this release:
 * Added support for Griffon debug API.
 * Analytics now ignores the `global.ssl` configuration flag.
 
+## Aug 30, 2019
+
+The following updates were made in this release:
+
+**iOS Mobile Services 2.0.2**
+
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
+
+**Android Mobile Services 1.0.1**
+
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
+
 ## Aug 20, 2019
 
 The following updates were made in this release:
