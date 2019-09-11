@@ -15,11 +15,11 @@ The following updates were made in this release:
 
 **iOS Mobile Services 2.0.2**
 
-* Added the ability to trigger a In-App Messaging based off Analytics rules consequnse.
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
 
 **Android Mobile Services 1.0.1**
 
-* Added the ability to trigger a In-App Messaging based off Analytics rules consequnse.
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
 
 ## Aug 20, 2019
 
