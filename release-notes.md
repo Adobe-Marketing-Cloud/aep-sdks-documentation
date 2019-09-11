@@ -1,5 +1,17 @@
 # Release notes
 
+## September 10, 2019
+
+The following updates were made in this release:
+
+**Android Analytics 1.2.0**
+
+* Added the following new pieces of data when reporting a crash:
+  * `previousosversion`
+  * `previousappid`.
+* Added support for the Griffon debug API.
+* Analytics now ignores the `global.ssl` configuration flag.
+
 ## September 9, 2019
 
 The following updates were made in this release:
