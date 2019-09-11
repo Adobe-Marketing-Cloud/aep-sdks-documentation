@@ -12,15 +12,15 @@ The SDK for WeChat Mini Programs provide the following functionality:
 
 {% tabs %}
 {% tab title="English" %}
-### **Configuration** 
+### **Configuration**
 
 The SDK will allow for easy configuration of app and Adobe Analytics related settings. Developers will be able to manage queuing of Analytics requests. Queuing requests can ensure HTTP request ordering and potentially minimize quota collision enforced by WeChat. Debug logging \(with multiple log levels\) is also provided for a more transparent implementation.
 
-### **Data Collection** 
+### **Data Collection**
 
 The SDK will automatically collect out-of-the-box lifecycle metrics and send to Adobe Analytics for reporting. Developers may also implement custom action, event, and screen tracking.
 
-### Identity 
+### Identity
 
 The SDK will automatically generate an Adobe Analytics Visitor ID \(aid\) to identify program users. Experience Cloud ID \(ECID or MCID\) is not supported at this time.
 

@@ -69,7 +69,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 
 | Key | Description | Value | Required |
 | :--- | :--- | :--- | :---: |
-| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from launch for media tracked with this tracker instance.  | String | No |
+| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from launch for media tracked with this tracker instance. | String | No |
 | `config.downloadedcontent` | Creates a tracker instance for tracking downloaded media. The tracker will not send periodic pings and will only send a single ping for entire content. | Boolean | No |
 
 {% tabs %}
@@ -83,10 +83,10 @@ Optional configuration about the tracker can be passed to this function. The cal
 ```java
 public class MediaConstants {
 
-	public static final class Config {
-		public static final String CHANNEL = "config.channel";
-		public static final String DOWNLOADED_CONTENT = "config.downloadedcontent";
-	}
+    public static final class Config {
+        public static final String CHANNEL = "config.channel";
+        public static final String DOWNLOADED_CONTENT = "config.downloadedcontent";
+    }
 
 }
 
@@ -122,7 +122,6 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
 
 + (void) createTrackerWithConfig: (NSDictionary* _Nullable) config 
                         callback: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
-
 ```
 
 **Examples**

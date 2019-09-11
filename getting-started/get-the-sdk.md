@@ -54,7 +54,6 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 {% endhint %}
 
 For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
-
 {% endtab %}
 {% endtabs %}
 

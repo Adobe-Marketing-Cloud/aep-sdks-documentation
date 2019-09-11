@@ -694,3 +694,4 @@ ACPCore.trackState("state", {"mytest": "state"});
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
+
