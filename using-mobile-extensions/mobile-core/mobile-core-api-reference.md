@@ -389,7 +389,7 @@ public static void setLargeIconResourceID(int resourceID)
 
 ### Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow the application developer to filter the logged messages based on current logging mode.
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow application developers to filter the logged messages based on the current logging mode.
 
 Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
