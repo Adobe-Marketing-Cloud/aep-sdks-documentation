@@ -50,58 +50,11 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 ### React Native
 
 {% hint style="info" %}
-For React Native, it is recommended to first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). See this [tutorial](https://facebook.github.io/react-native/docs/getting-started) for additional instructions on getting started with React Native applications
+For React Native, we recommend that you first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
 {% endhint %}
 
-`@adobe/react-native-acpcore` is a wrapper around the iOS and Android Adobe Experience Platform Mobile SDK to allow for integration with React Native applications. Functionality to enable the Core extension is provided entirely through JavaScript documented below.
+For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
 
-First create the React Native project \(if one does not already exist\)
-
-```jsx
-react-native init MyReactApp
-```
-
-Install and link the `@adobe/react-native-acpcore` package:
-
-```jsx
-npm install @adobe/react-native-acpcore
-react-native link @adobe/react-native-acpcore
-```
-
-#### Configure native projects
-
-**Android project**
-
-Navigate to `MainApplication.java` under `app/src/main/java/com/<project-name>/` and add a call to `MobileCore.setApplication(this)` inside of `onCreate()`.
-
-```jsx
-import com.adobe.marketing.mobile.MobileCore; // import MobileCore
-
-@Override
-public void onCreate() {
-    super.onCreate();
-    //...
-    MobileCore.setApplication(this); // add this line
-}
-```
-
-**iOS project**
-
-Inside your Xcode project, click on the project file and under the **General** tab, click the **+** button under the **Linked Frameworks and Libraries** section, add the following frameworks and libraries:
-
-* `UIKit.framework`
-* `SystemConfiguration.framework`
-* `WebKit.framework`
-* `UserNotifications.framework`
-* `libsqlite3.0.tbd`
-* `libc++.tbd`
-* `libz.tbd`
-
-![Linked Frameworks required for React Native](../.gitbook/assets/linkedframeworks.png)
-
-{% hint style="info" %}
-Note: If you plan to use the AEP SDK in your native iOS code you will need to import the appropriate headers with the following format: `#import <RCTACPCore/ACPCore.h>`
-{% endhint %}
 {% endtab %}
 {% endtabs %}
 
