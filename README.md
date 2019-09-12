@@ -15,7 +15,7 @@ The Adobe Experience Platform Mobile SDK provides support for the following plat
 * Apple iOS \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
 * Google Android \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
 * React Native \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* [WeChat Mini Programs \(Beta\)](resources/adobe-experience-platform-mini-programs-sdk/)
+* [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:
 
