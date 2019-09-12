@@ -2,10 +2,6 @@
 
 The Adobe Experience Platform SDK for WeChat Mini Programs brings Adobe Experience Cloud & Adobe Experience Platform functionality to developers building Mini Programs. The scope for the beta and subsequent general release will be functionality for Adobe Analytics customers who want to track behavioral usage of branded Mini Programs.
 
-{% hint style="warning" %}
-This functionality is currently in beta. Contact your Adobe account representatives or CSM to learn more and participate in this beta.
-{% endhint %}
-
 ## Supported functionality
 
 The SDK for WeChat Mini Programs provide the following functionality:
