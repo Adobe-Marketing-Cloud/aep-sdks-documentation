@@ -29,6 +29,14 @@ The following updates were made in this release:
 * Added support for Griffon debug API.
 * Analytics now ignores the `global.ssl` configuration flag.
 
+**Android Griffon Bridge 1.0.3**
+
+* You can use the Android Griffon Bridge version 1.0.3 with the Android Griffon SDK version 1.0.0.
+
+**Android Griffon SDK 1.0.0**
+
+* Starting in version 1.0.3, there is a new Artifact split from the Android Griffon Bridge.
+
 ## Aug 30, 2019
 
 The following updates were made in this release:
