@@ -1,8 +1,33 @@
 # Release notes
 
-## Sep 9, 2019
+## September 10, 2019
 
 The following updates were made in this release:
+
+**Android Analytics 1.2.0**
+
+* Added the following new pieces of data when reporting a crash:
+  * `previousosversion`
+  * `previousappid`.
+* Added support for the Griffon debug API.
+* Analytics now ignores the `global.ssl` configuration flag.
+
+## September 9, 2019
+
+The following updates were made in this release:
+
+**Android Identity 1.1.1**
+
+- Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
+- The `syncIdentifiers` API call is ignored when there is an empty Map. 
+- The duplicate advertising identifier value is removed from the Identity shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value. 
+- The `global.ssl` configuration settings are ignored, and SSL is enabled by default. 
+- Fixed an issue where `appendVisitorInfoForURL` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+
+**iOS Analytics 2.2.0**
+
+* Added support for Griffon debug API.
+* Analytics now ignores the `global.ssl` configuration flag.
 
 **Android Griffon Bridge 1.0.3**
 
@@ -11,6 +36,18 @@ The following updates were made in this release:
 **Android Griffon SDK 1.0.0**
 
 * Starting in version 1.0.3, there is a new Artifact split from the Android Griffon Bridge.
+
+## Aug 30, 2019
+
+The following updates were made in this release:
+
+**iOS Mobile Services 2.0.2**
+
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
+
+**Android Mobile Services 1.0.1**
+
+* Added the ability to trigger an In-App message that is based on Analytics rules consequences..
 
 ## Aug 20, 2019
 
@@ -76,7 +113,7 @@ The following updates were made in this release:
 
 **Android Core 1.4.1**
 
-* Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(CP\) values. 
+* Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(CP\) values.
 
 ## July 16, 2019
 
@@ -90,7 +127,7 @@ The following updates were made in this release:
 
 **Android Griffon Bridge 1.0.2**
 
-* Fixed bug where wildcard listener wasn't working. 
+* Fixed bug where wildcard listener wasn't working.
 
 ## July 9, 2019
 
@@ -132,8 +169,8 @@ The following updates were made in this release:
 
 **iOS Core release 2.3.2**
 
-* Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values. 
-* Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down. 
+* Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values.
+* Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down.
 * Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
 
 ## June 17, 2019
@@ -153,8 +190,8 @@ The following updates were made in this release:
 
 **iOS Core 2.3.1**
 
-* Fixed an issue that was causing network request failures, which were introduced in version 2.2.2. 
-* Fixed an issue that might have caused crashes when the app was being shut down. 
+* Fixed an issue that was causing network request failures, which were introduced in version 2.2.2.
+* Fixed an issue that might have caused crashes when the app was being shut down.
 * Fixed an issue that might have caused the callback to be passed to `ACPCore start:` to be called before the EventHub has finished initialization.
 
 ## June 12, 2019

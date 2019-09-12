@@ -10,6 +10,12 @@ This API synchronizes the provided customer identifier type key and value with t
 {% tab title="Android" %}
 ### syncIdentifier
 
+{% hint style="info" %}
+
+If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
+
 #### **Syntax**
 
 ```text
@@ -26,7 +32,11 @@ Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHE
 
 ### syncIdentifiers
 
-**Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -49,7 +59,11 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -101,7 +115,11 @@ Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
 This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, it is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -131,7 +149,11 @@ Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
 This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, the customer ID is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+{% endhint %}
 
 ### **Syntax**
 
@@ -232,34 +254,34 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
     }
 });
 ```
-{% hint style="info" %}
-This API is designed to handle the following URL formats: 
 
-```basic
-scheme://authority/path?query=param#fragment 
+{% hint style="info" %}
+This API is designed to handle the following URL formats:
+
+```text
+scheme://authority/path?query=param#fragment
 ```
 
 In this example, the Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 Similarly, URLs without a query component:
 
-```basic
-scheme://authority/path#fragment 
+```text
+scheme://authority/path#fragment
 ```
 
-The Adobe visitor data is appended as: 
+The Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-java).
 {% endhint %}
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -301,34 +323,34 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 
 });
 ```
-{% hint style="info" %}
-This API is designed to handle the following URL formats: 
 
-```basic
-scheme://authority/path?query=param#fragment 
+{% hint style="info" %}
+This API is designed to handle the following URL formats:
+
+```text
+scheme://authority/path?query=param#fragment
 ```
 
 In this example, the Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 Similarly, URLs without a query component:
 
-```basic
-scheme://authority/path#fragment 
+```text
+scheme://authority/path#fragment
 ```
 
-The Adobe visitor data is appended as: 
+The Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-ios).
 {% endhint %}
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -358,34 +380,34 @@ ACPIdentity.appendVisitorInfoForURL(baseURL);
 ```jsx
 ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
-{% hint style="info" %}
-This API is designed to handle the following URL formats: 
 
-```basic
-scheme://authority/path?query=param#fragment 
+{% hint style="info" %}
+This API is designed to handle the following URL formats:
+
+```text
+scheme://authority/path?query=param#fragment
 ```
 
 In this example, the Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 Similarly, URLs without a query component:
 
-```basic
-scheme://authority/path#fragment 
+```text
+scheme://authority/path#fragment
 ```
 
-The Adobe visitor data is appended as: 
+The Adobe visitor data is appended as:
 
-```basic
+```text
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
 {% endhint %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -681,9 +703,7 @@ public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 #### **Example**
 
 {% hint style="warning" %}
-
 This is just an implementation example. For more information about advertising identifiers and how to handle them correctly in your mobile application, see [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
-
 {% endhint %}
 
 This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file, see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
@@ -732,13 +752,11 @@ public void onResume() {
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-Retrieve the Identifier for Advertising (IDFA) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
+Retrieve the Identifier for Advertising \(IDFA\) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
 {% endhint %}
 
 {% hint style="warning" %}
-
 This is just an implementation example. For more information about IDFA and how to handle them correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
-
 {% endhint %}
 
 #### **Syntax**
@@ -754,9 +772,9 @@ This is just an implementation example. For more information about IDFA and how 
 ```objectivec
 #import <AdSupport/ASIdentifierManager.h>
 ...
-    
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	NSString *idfa = nil;
+    NSString *idfa = nil;
     if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     } else {
@@ -774,7 +792,7 @@ import AdSupport
 ...
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-	var idfa:String = "";
+    var idfa:String = "";
     if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
         idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
     } else {
@@ -858,7 +876,6 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### AdobeCallback <a id="adobecallback"></a>
 
 This class provides the interface to receive results when the async APIs perform the requested action.
