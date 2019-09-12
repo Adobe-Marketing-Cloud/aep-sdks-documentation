@@ -10,6 +10,12 @@ This API synchronizes the provided customer identifier type key and value with t
 {% tab title="Android" %}
 ### syncIdentifier
 
+{% hint style="info" %}
+
+If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
+
 #### **Syntax**
 
 ```text
@@ -26,7 +32,11 @@ Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHE
 
 ### syncIdentifiers
 
-**Tip**: The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -49,7 +59,11 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values (non null or empty), the identifier is ignored by the Identity extension.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -101,7 +115,11 @@ Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
 This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, it is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+{% endhint %}
 
 #### **Syntax**
 
@@ -131,7 +149,11 @@ Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
 
 This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, the customer ID is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
 
-**Tip**: The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+{% hint style="info" %}
+
+The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
+
+{% endhint %}
 
 ### **Syntax**
 

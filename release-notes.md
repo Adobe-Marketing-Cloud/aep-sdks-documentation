@@ -16,6 +16,14 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
+**Android Identity 1.1.1**
+
+- Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
+- The `syncIdentifiers` API call is ignored when there is an empty Map. 
+- The duplicate advertising identifier value is removed from the Identity shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value. 
+- The `global.ssl` configuration settings are ignored, and SSL is enabled by default. 
+- Fixed an issue where `appendVisitorInfoForURL` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+
 **iOS Analytics 2.2.0**
 
 * Added support for Griffon debug API.
