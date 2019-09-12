@@ -86,6 +86,8 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+* [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/README.md)
+  * [Implementation](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
 
 ## BETA
 
@@ -93,6 +95,4 @@
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
-* [WeChat Mini Programs](beta/adobe-experience-platform-mini-programs-sdk/README.md)
-  * [Implementation](beta/adobe-experience-platform-mini-programs-sdk/implementation.md)
 
