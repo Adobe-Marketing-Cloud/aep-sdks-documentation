@@ -57,5 +57,3 @@ The SDK will be available as read-only open source, distributed with an Apache 2
 {% endtab %}
 {% endtabs %}
 
-### \*\*\*\*
-
