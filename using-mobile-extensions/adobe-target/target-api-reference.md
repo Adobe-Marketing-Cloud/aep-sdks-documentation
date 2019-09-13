@@ -228,13 +228,13 @@ ACPTarget.getTntId({tntId in
 
 ## Retrieve Location Content requests
 
-Executes a batch request to the configured Target server for multiple mbox locations. The main difference with `loadRequests` API is in usage along with prefetch APIs. This API only returns the content and does not increase the reporting count. If you are using normal batch requests, then there is no difference with `loadRequests` API.
+Executes a batch request to the configured Target server for multiple mbox locations. The main difference with `loadRequests` API is in usage with prefetch APIs. This API only returns the content and does not increase the reporting count. If you are using normal batch requests, then there is no difference with `loadRequests` API.
 
 {% tabs %}
 {% tab title="Android" %}
 ### retrieveLocationContent
 
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Any prefetched content which matches a given mbox location is returned and not included in the batch request to the Target server. Each object in the list contains a callback function, which will be invoked when content is available for its given mbox location.
+Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Any prefetched content that matches a given mbox location is returned and not included in the batch request to the Target server. Each object in the list contains a callback function, which will be invoked when content is available for its given mbox location.
 
 #### Syntax
 
