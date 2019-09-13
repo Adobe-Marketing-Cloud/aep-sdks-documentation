@@ -200,13 +200,13 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 ## Get the tracking identifier     <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
+Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html). 
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
 
 {% hint style="info" %}
-If you have an [Experience Cloud ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/267ffce7f3550c0b85a54b8d4603ae3fe74d5a15/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#get-experience-cloud-ids), and have not configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
+If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and have not yet configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
 {% endhint %}
 
 {% tabs %}
@@ -283,7 +283,7 @@ ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperi
 ## Set the custom visitor identifier    <a id="setidentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, review Adobe Analytics's  [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
+Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
 {% endhint %}
 
 Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
@@ -345,7 +345,7 @@ ACPAnalytics.setVisitorIdentifier("yourVisitorId");
 ## Get the custom visitor identifier
 
 {% hint style="warning" %}
-Before using this API, review Adobe Analytics's [Visitor ID Order documentation](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_overview.html).
+Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
 {% endhint %}
 
 Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).

@@ -3,7 +3,7 @@
 ### Using the prefetch APIs
 
 {% hint style="warning" %}
-`prefetchContent` API signature is changed, and the recommended way is to use parameters encapsulated in `TargetParameters`
+The `prefetchContent` API signature has changed. We recommend that you  use parameters encapsulated in `TargetParameters`.
 {% endhint %}
 
 {% tabs %}
@@ -83,6 +83,8 @@ Target.prefetchContent(prefetchMboxesList, profileParameters, prefetchStatusCall
 {% endtab %}
 
 {% tab title="iOS" %}
+### prefetchContent
+
 #### Objective C
 
 Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and specified `profileParameters`. The callback will be invoked when the prefetch is complete, which returns a success status for the prefetch request.
@@ -95,7 +97,7 @@ Use `prefetchContent` to send a prefetch request to your configured Target serve
                       callback: (nullable void (^) (BOOL success)) callback;
 ```
 
-#### Objective-C Example
+#### Example
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
@@ -141,9 +143,9 @@ NSDictionary *profileParameters = @{@"age":@"20-32"};
 Sends a batch request to your configured Target server for multiple mbox locations that are specified.
 
 {% hint style="warning" %}
-`loadRequests` API is deprecated, and replaced with `retrieveLocationContent` for batch scenarios instead.
+`loadRequests` API is deprecated and, for batch scenarios, has been replaced with `retrieveLocationContent`.
 
-Note: When working with prefetch APIs, and switching to new `retrieveLocationContent` API, please also use `locationsDisplayed`, otherwise reporting will not work.
+When working with prefetch APIs, and switching to the new `retrieveLocationContent` API, if you do not use `locationsDisplayed`, reporting will not work.
 {% endhint %}
 
 {% tabs %}

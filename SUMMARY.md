@@ -88,6 +88,8 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+* [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/README.md)
+  * [Implementation](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
 
 ## BETA
 
