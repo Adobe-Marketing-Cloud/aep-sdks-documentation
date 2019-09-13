@@ -1,6 +1,6 @@
 # Adobe Campaign Standard API reference
 
-## Get extension version
+## Get the extension version
 
 To return the current version of the ACPCampaign extension, use the following APIs:
 
@@ -16,6 +16,8 @@ Campaign.getExtensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
+### extensionVersion
+
 #### Objective-C
 
 #### Syntax
