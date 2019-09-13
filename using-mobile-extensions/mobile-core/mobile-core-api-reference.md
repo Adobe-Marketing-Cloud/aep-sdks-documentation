@@ -12,7 +12,7 @@ Android applications must call `MobileCore.setApplication()` before calling any 
 {% tab title="Android" %}
 **Java**
 
-#### setApplication
+### setApplication
 
 **Syntax**
 
@@ -40,7 +40,7 @@ public class CoreApp extends Application {
 {% tab title="Android" %}
 **Java**
 
-#### getApplication
+### getApplication
 
 {% hint style="warning" %}
 `MobileCore.getApplication` might return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
@@ -79,7 +79,7 @@ If you have the **Analytics** extension set up, this method sends an Analytics a
 {% tab title="Android" %}
 **Java**
 
-#### trackAction
+### trackAction
 
 **Syntax**
 
@@ -99,7 +99,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% tab title="iOS" %}
 **Objective-C**
 
-#### trackAction
+### trackAction
 
 **Syntax**
 
@@ -115,7 +115,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 **Swift**
 
-#### trackAction
+### trackAction
 
 **Syntax**
 
@@ -131,9 +131,9 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+#### JavaScript
 
-#### trackAction
+### trackAction
 
 ```jsx
 ACPCore.trackAction("action-name", {"key": "value"});
@@ -155,7 +155,7 @@ If you have the Analytics extension set up, this API increments page views and a
 
 In Android, `trackState` is typically called each time a new Activity is loaded.
 
-#### trackState <a id="trackstate"></a>
+### trackState
 
 **Syntax**
 
@@ -173,7 +173,7 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 {% tab title="iOS" %}
 **Objective-C**
 
-#### trackState
+### trackState
 
 **Syntax**
 
@@ -189,7 +189,7 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 
 **Swift**
 
-#### trackState
+### trackState
 
 **Syntax**
 
@@ -227,7 +227,7 @@ While this API enables the collection of sensitive data, no data is actually sen
 {% tab title="Android" %}
 **Java**
 
-#### collectPii
+### collectPii
 
 **Syntax**
 
@@ -249,7 +249,7 @@ MobileCore.collectPII(data);
 {% tab title="iOS" %}
 **Objective-C**
 
-#### collectPii
+### collectPii
 
 **Syntax**
 
@@ -267,7 +267,7 @@ MobileCore.collectPII(data);
 
 **Swift**
 
-#### collectPii
+### collectPii
 
 **Syntax**
 
@@ -357,9 +357,11 @@ Set the small and large icons that will be used for notifications that are creat
 Those APIs are Android only.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Android" %}
 #### Java
 
-#### setSmallIconResourceID
+### setSmallIconResourceID
 
 **Syntax**
 
@@ -373,7 +375,7 @@ public static void setSmallIconResourceID(int resourceID)
  MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
 ```
 
-#### setLargeIconResourceID
+### setLargeIconResourceID
 
 **Syntax**
 
@@ -386,6 +388,8 @@ public static void setLargeIconResourceID(int resourceID)
 ```java
  MobileCore.setLargeIconResourceID(R.mipmap.ic_launcher_round);
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Logging
 
@@ -414,7 +418,7 @@ In iOS, Mobile SDK uses `NSLog` for logging the message to Apple System Log faci
 {% tab title="Android" %}
 **Java**
 
-#### setLogLevel
+### setLogLevel
 
 **Syntax**
 
@@ -490,7 +494,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
 {% tab title="Android" %}
 **Java**
 
-#### getLogLevel
+### getLogLevel
 
 **Syntax**
 
@@ -508,7 +512,7 @@ LoggingMode mode = MobileCore.getLogLevel();
 {% tab title="iOS" %}
 **Objective-C**
 
-#### getLogLevel
+### getLogLevel
 
 **Syntax**
 
@@ -524,7 +528,7 @@ var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
 
 **Swift**
 
-#### getLogLevel
+### getLogLevel
 
 **Syntax**
 
@@ -660,7 +664,7 @@ The Mobile SDK allows users to add a callback function that is triggered before 
 {% tab title="iOS" %}
 **Objective-C**
 
-#### registerURLHandler
+### registerURLHandler
 
 **Syntax**
 
