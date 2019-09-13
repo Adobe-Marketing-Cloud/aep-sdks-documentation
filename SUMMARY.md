@@ -66,6 +66,8 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
+* [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
+  * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)
@@ -95,4 +97,3 @@
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
 * [WeChat Mini Programs](beta/adobe-experience-platform-mini-programs-sdk/README.md)
   * [Implementation](beta/adobe-experience-platform-mini-programs-sdk/implementation.md)
-
