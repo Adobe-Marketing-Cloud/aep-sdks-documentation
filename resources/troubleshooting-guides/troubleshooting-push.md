@@ -7,8 +7,6 @@ When implementing push messaging via the SDK, you can validate client-side imple
 3. [Ensure the user has been opted in for push messaging in Adobe Analytics](#validate-analytics-request-with-push-optin)
 4. [Confirm that the ID for the user is the same in steps 2 and 3 above](validate-the-user-id-is-correct)
 
-### AMS vs campaign???
-
 ## Pass the Push Identifier to the SDK
 
 The `setPushIdentifier` API sets the device token for push notifications in the SDK. This will result in multiple calls to the necessary Adobe servers to associate the user with the push token.
