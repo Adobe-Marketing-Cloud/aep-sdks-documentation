@@ -80,21 +80,23 @@ Campaign.setLinkageFields(linkageFields);
 {% endtab %}
 
 {% tab title="iOS" %}
-### Syntax
+### setLinkageFields
+
+#### Syntax
 
 ```objectivec
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
-### Objective-C
+#### Objective-C
 
-### Example
+#### Example
 
 ```objectivec
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
-### Swift
+#### Swift
 
 ```swift
 var linkageFields = [String: String]()
@@ -134,21 +136,23 @@ Campaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="iOS" %}
-### Syntax
+### resetLinkageFields
+
+#### Syntax
 
 ```objectivec
 + (void) resetLinkageFields;
 ```
 
-### Objective-C
+#### Objective-C
 
-### Example
+#### Example
 
 ```objectivec
 [ACPCampaign resetLinkageFields];
 ```
 
-### Swift
+#### Swift
 
 ```swift
 ACPCampaign.resetLinkageFields();
