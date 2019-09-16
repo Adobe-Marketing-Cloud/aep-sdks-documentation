@@ -290,28 +290,28 @@ Sets a custom Analytics visitor identifier. For more information, see [Custom Vi
 
 {% tabs %}
 {% tab title="Android" %}
-### setVistorIdentifier
+### setVisitorIdentifier
 
 #### Syntax
 
 ```java
- public static void setVistorIdentifier(final String visitorIdentifier)
+ public static void setVisitorIdentifier(final String visitorIdentifier)
 ```
 
 #### Example
 
 ```java
-Analytics.setVistorIdentifier("custom_identifier");
+Analytics.setVisitorIdentifier("custom_identifier");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-### setVistorIdentifier
+### setVisitorIdentifier
 
 #### Syntax
 
 ```objectivec
-+ (void) setVistorIdentifier: (nonnull NSString*) visitorIdentifier;
++ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```
 
 #### Example
@@ -321,20 +321,20 @@ Here are examples in Objective-C and Swift:
 **Objective-C**
 
 ```objectivec
-[ACPAnalytics setVistorIdentifier:@"custom_identifier"];
+[ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 
 **Swift**
 
 ```swift
-ACPAnalytics.setVistorIdentifier("custom_identifier")
+ACPAnalytics.setVisitorIdentifier("custom_identifier")
 ```
 {% endtab %}
 
 {% tab title="React Native" %}
 #### JavaScript
 
-### setVistorIdentifier
+### setVisitorIdentifier
 
 ```jsx
 ACPAnalytics.setVisitorIdentifier("yourVisitorId");
