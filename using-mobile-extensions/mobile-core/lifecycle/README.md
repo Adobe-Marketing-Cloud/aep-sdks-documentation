@@ -3,7 +3,7 @@
 {% hint style="warning" %}
 In version 4 of the iOS SDK, this implementation was completed automatically.
 
-The Experience Platform SDK will not collect Lifecycle metrics for you automatically. If you wish to continue collecting Lifecycle metrics, you must add code to your app.
+The Experience Platform SDK will not automatically collect Lifecycle metrics for you. To continue collecting Lifecycle metrics, you must add code to your app.
 
 For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
@@ -106,7 +106,7 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 }
 ```
 
-2. Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+2. Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
 {% hint style="warning" %}
 If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
@@ -127,7 +127,8 @@ If your iOS application supports background capabilities, your `application:didF
 }
 ```
 
-3. When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
+3. When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method.
+   You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
 - (void) applicationWillEnterForeground:(UIApplication *)application {
