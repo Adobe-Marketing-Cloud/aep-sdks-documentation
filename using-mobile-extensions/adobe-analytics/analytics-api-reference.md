@@ -352,7 +352,7 @@ Sets a custom Analytics visitor identifier. For more information, see [Custom Vi
 
 {% tabs %}
 {% tab title="Android" %}
-### getVistorIdentifier
+### getVisitorIdentifier
 
 #### Syntax
 
@@ -362,7 +362,7 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 {% endtab %}
 
 {% tab title="iOS" %}
-### getVistorIdentifier
+### getVisitorIdentifier
 
 #### Syntax
 
@@ -376,7 +376,7 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 {% tab title="React Native" %}
 #### JavaScript
 
-### getVistorIdentifier
+### getVisitorIdentifier
 
 ```jsx
 ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
