@@ -1,6 +1,6 @@
 # Troubleshooting Push Messaging
 
-When implementing push messaging via the SDK, you can validate client-side implementation by verifying you've done the following steps:
+When implementing push messaging via the SDK, you can validate the client-side implementation by verifying you've completed the following steps:
 
 1. [Pass the device's push token to the SDK](#pass-the-push-identifier-to-the-sdk)
 2. [Verify the push token has been sent to Adobe's Visitor Identity servers](#validate-setpushidentifier-event)
@@ -9,7 +9,7 @@ When implementing push messaging via the SDK, you can validate client-side imple
 
 ## Pass the Push Identifier to the SDK
 
-The `setPushIdentifier` API sets the device token for push notifications in the SDK. This will result in multiple calls to the necessary Adobe servers to associate the user with the push token.
+The `setPushIdentifier` API sets the device token for push notifications in the SDK. This results in multiple calls to the necessary Adobe servers to associate the user with the push token.
 
 {% hint style="info" %}
 If the current SDK privacy status is `optedout`, the push identifier will not be set.
@@ -84,25 +84,25 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ### Validate SetPushIdentifier event
 
-Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). Verify in the list of events that you have an event with type `SetPushIdentifier`. In the details panel on the right, you can verify the value of the push token for this device. The value in `pushIdentifier` is the same value sent to the Adobe servers.
+Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). In the list of events, verify that you have an event with type `SetPushIdentifier`. In the details panel on the right, you can verify the value of the push token for this device. The value in `pushIdentifier` is the same value sent to the Adobe servers.
 
 <img src="../../.gitbook/assets/push_token_to_identity.png" />
 
 ### Validate Analytics request with Push OptIn
 
-Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). Verify in the list of events that you have an event with type `AnalyticsForIdentityRequest`. In the details panel on the right, you can see that there is a value sent to Analytics which opts this user in to receive push notifications.
+Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). In the list of events, verify that you have an event with type `AnalyticsForIdentityRequest`. In the details panel on the right, you can see that there is a value sent to Analytics that opts this user in to receive push notifications.
 
 <img src="../../.gitbook/assets/push_analytics_optin.png" />
 
 ### Validate the User ID is correct
 
-Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). Verify in the list of events that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, you will want to confirm that two values are correct:
+Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). In the list of events, verify that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, confirm that two values are correct:
 
-1. The value for `pushidentifier` should match the value sent in step 2 above
-2. The value for `mid` should match the value for `mid` that is sent to Analytics. If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier), this payload should also contain a `vid` variable with a matching value of that used to identify this user.
+* The value for `pushidentifier` should match the value sent in step 2 above.
+* The value for `mid` should match the value for `mid` that is sent to Analytics. If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier), this payload should also contain a `vid` variable with a matching value of that used to identify this user.
 
 <img src="../../.gitbook/assets/push_identities.png" />
 
 <hr />
 
-After completing the above steps, you can be confident that your app is correctly configured to send push messages via the SDK and Adobe.
+After completing these steps, your app is correctly configured and is ready to send push messages via the SDK and Adobe.
