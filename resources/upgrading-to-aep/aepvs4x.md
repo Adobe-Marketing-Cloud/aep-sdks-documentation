@@ -71,15 +71,15 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Platform | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | Android | Supported | Supported |
-| Android Wear​ | Supported | _Support coming_ |
+| Android Wear​ | Supported | _Not supported_ |
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | _Support coming_ |
 | Apple tvOS​ | Supported | _Support coming_ |
 | React Native \(iOS & Android\) | Supported | Supported |
-| Unity \(iOS & Android\)​ | Supported | _Support coming_ |
-| Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
-| PhoneGap \(iOS & Android\)​ | Supported | _Support coming_ |
-| Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Support coming_ |
-| Windows 8​ | Supported | Unsupported |
-| Blackberry​ | Supported | Unsupported |
+| Unity \(iOS & Android\)​ | Supported | _Not supported_ |
+| Xamarin \(iOS & Android\)​ | Supported | _Not supported_ |
+| PhoneGap \(iOS & Android\)​ | Supported | _Not supported_ |
+| Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Not supported_ |
+| Windows 8​ | Supported | _Not supported_ |
+| Blackberry​ | Supported | _Not supported_ |
 
