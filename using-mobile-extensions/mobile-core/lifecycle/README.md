@@ -106,29 +106,26 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
    }
    ```
 
-2. Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
+2. Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method. 
 
 
-{% hint style="warning" %}If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.{% endhint %}
 
+   ```objectivec
+   - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+           // register the lifecycle extension
+           [ACPLifecycle registerExtension];
 
-    ```objectivec
-    - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-        // register the lifecycle extension
-        [ACPLifecycle registerExtension];
+           const UIApplicationState appState = application.applicationState;
+           [ACPCore start:^{
+               // only start lifecycle if the application is not in the background
+               if (appState != UIApplicationStateBackground) {
+                   [ACPCore lifecycleStart:nil];
+               }
+           }];
+       }
+   ```
 
-        const UIApplicationState appState = application.applicationState;
-        [ACPCore start:^{
-            // only start lifecycle if the application is not in the background
-            if (appState != UIApplicationStateBackground) {
-                [ACPCore lifecycleStart:nil];
-            }
-        }];
-    }
-    ```
-
-3. When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method.
-   You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
+3. When your app is launched, if it is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
    ```objectivec
    - (void) applicationWillEnterForeground:(UIApplication *)application {
@@ -143,7 +140,6 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
        [ACPCore lifecyclePause];
     }
    ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -267,7 +263,7 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">The SDK running mode, for example, <code>Application/Extension</code>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \\| Key \\| Description \\| \\| :--- \\| :--- \\|
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \\\| Key \\\| Description \\\| \\\| :--- \\\| :--- \\\|
 
 <table>
   <thead>
