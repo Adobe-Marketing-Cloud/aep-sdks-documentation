@@ -5,7 +5,7 @@ When implementing push messaging via the SDK, you can validate the client-side i
 1. [Pass the device's push token to the SDK](#pass-the-push-identifier-to-the-sdk)
 2. [Verify the push token has been sent to Adobe's Visitor Identity servers](#validate-setpushidentifier-event)
 3. [Ensure the user has been opted in for push messaging in Adobe Analytics](#validate-analytics-request-with-push-optin)
-4. [Confirm that the ID for the user is the same in steps 2 and 3 above](validate-the-user-id-is-correct)
+4. [Confirm that the ID for the user is the same in steps 2 and 3 above](#validate-the-user-id-is-correct)
 
 ## Pass the Push Identifier to the SDK
 
@@ -99,7 +99,7 @@ Launch your app with the device connected to an [Adobe Griffon session](../../be
 Launch your app with the device connected to an [Adobe Griffon session](../../beta/project-griffon). In the list of events, verify that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, confirm that two values are correct:
 
 * The value for `pushidentifier` should match the value sent in step 2 above.
-* The value for `mid` should match the value for `mid` that is sent to Analytics. If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier), this payload should also contain a `vid` variable with a matching value of that used to identify this user.
+* The value for `mid` should match the value for `mid` that is sent to Analytics. If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier), this payload should also contain a `vid` variable with a matching value of that used to identify this user.
 
 <img src="../../.gitbook/assets/push_identities.png" />
 
