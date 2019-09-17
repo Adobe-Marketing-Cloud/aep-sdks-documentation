@@ -4,7 +4,7 @@
 This troubleshooting guide requires [Project Griffon](../../beta/project-griffon/). Please see [documentation](../../beta/project-griffon/) for access, setup, and use.
 {% endhint %}
 
-When implementing push messaging for [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) via the [Adobe Experience Platform Mobile SDK](../../), you may validate client-side implementation by verifying you've completed the following steps:
+When implementing push messaging via the Adobe Experience Platform Mobile SDK, you may validate  client-side implementation by verifying you've completed the following steps:
 
 1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk)
 2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event)

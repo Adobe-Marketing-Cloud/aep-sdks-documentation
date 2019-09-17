@@ -65,7 +65,3 @@ To export a session, click on the Export to JSON button within a given session, 
 This export feature will honor the search filter and export only the events shown in the event view. For example, if you’ve searched for “track” events and then hit **Export to JSON**, only “track” event results will be exported.
 {% endhint %}
 
-## Further Reading
-
-* View the guide to troubleshoot [Push Messaging](../../resources/troubleshooting-guides/troubleshooting-push.md) using Project Griffon
-
