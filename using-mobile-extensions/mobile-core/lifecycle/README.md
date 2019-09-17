@@ -108,9 +108,9 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 
 2. Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-   {% hint style="warning" %}
-   If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be    called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle    metrics, `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
-   {% endhint %}
+    {% hint style="warning" %}
+    If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might       be called when iOS launches your app in the background. If you do not want background launches to count towards your           lifecycle metrics, `lifecycleStart:` should only be called when the application state is not equal to                         `UIApplicationStateBackground`.
+    {% endhint %}
 
    ```objectivec
    - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
