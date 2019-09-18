@@ -1,5 +1,14 @@
 # Release notes
 
+## September 17, 2019
+
+The following updates were made in this release:
+
+**Android Core 1.4.4**
+
+* Notifications now support BigTextStyle starting API level 16. This enables displaying notifications which have longer text without truncation.
+* Fixed the locale string in the HTTP User-Agent to follow the BCP 47 specification.
+
 ## September 10, 2019
 
 The following updates were made in this release:
