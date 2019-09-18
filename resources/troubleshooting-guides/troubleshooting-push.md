@@ -4,7 +4,7 @@
 This troubleshooting guide requires [Project Griffon](../../beta/project-griffon/). Please see [documentation](../../beta/project-griffon/) for access, setup, and use.
 {% endhint %}
 
-When implementing push messaging via the Adobe Experience Platform Mobile SDK, you may validate  client-side implementation by verifying you've completed the following steps:
+When implementing push messaging via the Adobe Experience Platform Mobile SDK, you may validate client-side implementation by verifying you've completed the following steps:
 
 1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk)
 2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event)
@@ -84,7 +84,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ## Verify push token sync with the Experience Cloud Identity service
 
-Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/). 
+Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
 
 In the list of events, verify that you have an event with type `SetPushIdentifier`. In the details panel on the right, you may verify the value of the push token for this device. The value in `pushIdentifier` is the same value sent to the Adobe servers.
 
