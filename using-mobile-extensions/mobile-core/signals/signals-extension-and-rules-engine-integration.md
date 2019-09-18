@@ -12,21 +12,21 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Tokens are special strings used in rule actions as values, which are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element defined in Adobe Launch for a mobile property which identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal Post back action, where `My Data element for ECID` is a Data element created using the Mobile Core extension, and Data element type Experience Cloud ID.
+Tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal Postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and Data element type is Experience Cloud ID.
 
-The token can also be one of the reserved key names as described in the [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
+The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
 ### Using tokens in Postbacks and PII rule actions <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
 
-`Send Postback` and `Send PII` actions allow you to specify a `URL` field and an optional `Post Body` field. You can specify which tokens should be expanded by the Experience Platform SDKs when the post back or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+The `Send Postback` and `Send PII` actions allow you to specify a `URL` field and an optional `Post Body` field. You can specify which tokens should be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
 **Example**
 
 Here is an example of how to use the data that is passed to the MobileCore (Android) / ACPCore (iOS) `collectPii` API to form a token:
 
-**1. In the mobile application, call collectPII to fire Event with context data**
+1. In the mobile application, call collectPII to fire Event with context data.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -63,17 +63,17 @@ ACPCore.collectPii(piiContextData)
 {% endtab %}
 {% endtabs %}
 
-**2. Using Adobe Launch create a Data element for the user_email context data key**
+2. Using Adobe Launch create a Data element for the `user_email` context data key.
 
 ![Data Element Example for Collect PII context data key](../../../.gitbook/assets/data_element_example_collect_pii.png)
 
-**3. Using Adobe Launch create a new rule for sending a post back**
+3. Using Adobe Launch create a new rule for sending a postback.
 
-Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following images.
+Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following image:
 
 ![Rule example using Collect PII event and Postback action](../../../.gitbook/assets/postback_pii_token_example.png)
 
-**4. Use the above data element in the Postback action**
+4. Use the above data element in the Postback action.
 
 Edit the `Send Postback` action and include the following URL in the corresponding edit box:
 
@@ -87,5 +87,5 @@ For more information about `collectPii` and its usage, see `collectPii` in [Mobi
 
 ### Using tokens in Open URL rule actions <a id="using-tokens-in-openurl-rule-actions"></a>
 
-Similar with the above example, `Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the Experience Platform SDKs. For more information about tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+Similar to the example above, `Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the Experience Platform SDKs. For more information about tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
