@@ -15,7 +15,7 @@
 ![ACC-configure-extension](../../.gitbook/assets/acc-configure-extension.png)
 
 {% hint style="info" %}
-Trying to find your ACC registration or tracking endpoint URLs? Contact your program manager.
+Trying to find your ACC registration or tracking endpoint URLs? You can retrieve it in Campaign Classic interface, in the **Tools** / **Advanced** / **Deployment wizard** menu. The endpoint for push notifications is usually the same as the URL used for web forms & surveys.
 {% endhint %}
 
 #### Registration endpoints
