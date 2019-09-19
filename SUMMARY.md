@@ -97,6 +97,4 @@
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
-* [WeChat Mini Programs](beta/wechat-mini-programs/README.md)
-  * [Implementation](beta/wechat-mini-programs/implementation.md)
 

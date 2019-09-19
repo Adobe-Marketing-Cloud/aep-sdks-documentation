@@ -6,7 +6,7 @@ The following updates were made in this release:
 
 **Android Core 1.4.4**
 
-* Starting in API level 16, notifications now support `BigTextStyle`. 
+* Starting in API level 16, notifications now support `BigTextStyle`.
 
   This enables long notifications to be displayed without being truncated.
 

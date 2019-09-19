@@ -2,12 +2,6 @@
 
 The following instructions will help you implement the Adobe Experience Platform SDK in your WeChat Mini Programs.
 
-{% hint style="danger" %}
-**Getting the SDK**
-
-Download links for the SDK will be provided as part of the beta welcome email, after the beta kick-off call. Please contact your Adobe account representative or CSM if you have not received this information.
-{% endhint %}
-
 ## Add the SDK to your project
 
 In your Mini Program's `app.js`file, reference and require the SDK, for example:
