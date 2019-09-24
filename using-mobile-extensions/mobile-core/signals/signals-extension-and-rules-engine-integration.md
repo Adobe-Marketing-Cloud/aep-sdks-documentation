@@ -12,7 +12,7 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal Postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and Data element type is Experience Cloud ID.
+Tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
 The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
