@@ -1,5 +1,15 @@
 # Release notes
 
+## September 24, 2019
+
+The following updates were made in this release:
+
+**iOS Audience 2.0.1**
+
+* The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
+
+* Appends IMS OrgID to AAM demdex calls if subdomain endpoint is missing.
+
 ## September 17, 2019
 
 The following updates were made in this release:
@@ -22,7 +32,7 @@ The following updates were made in this release:
   * `previousosversion`
   * `previousappid`.
 * Added support for the Griffon debug API.
-* Analytics now ignores the `global.ssl` configuration flag.
+* The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 
 ## September 9, 2019
 
@@ -31,15 +41,15 @@ The following updates were made in this release:
 **Android Identity 1.1.1**
 
 * Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
-* The `syncIdentifiers` API call is ignored when there is an empty Map. 
-* The duplicate advertising identifier value is removed from the Identity shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value. 
-* The `global.ssl` configuration settings are ignored, and SSL is enabled by default. 
+* The `syncIdentifiers` API call is ignored when there is an empty Map.
+* The duplicate advertising identifier value is removed from the Identity shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value.
+* The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where `appendVisitorInfoForURL` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
 
 **iOS Analytics 2.2.0**
 
 * Added support for Griffon debug API.
-* Analytics now ignores the `global.ssl` configuration flag.
+* The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 
 **Android Griffon Bridge 1.0.3**
 
@@ -702,4 +712,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
