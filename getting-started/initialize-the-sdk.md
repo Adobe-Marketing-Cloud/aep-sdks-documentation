@@ -49,7 +49,7 @@ public void onCreate() {
   //...
   MobileCore.setApplication(this);
   MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");
-  MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
   try {
     Identity.registerExtension();
     Lifecycle.registerExtension();
@@ -76,7 +76,6 @@ public void onCreate() {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   //...
   [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
-  [ACPCore setWrapperType:ACPMobileWrapperTypeReactNative];
   [ACPIdentity registerExtension];
   [ACPLifecycle registerExtension];
   [ACPSignal registerExtension];
@@ -89,7 +88,7 @@ public void onCreate() {
 {% tab title="React Native" %}
 ### Javascript
 
-> Tip: We recommend that you initialize the SDK via native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can still initialize the SDK in Javascript.
+> Tip: We recommend that you initialize the SDK via [native code](https://github.com/adobe/react-native-acpcore) in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can still initialize the SDK in Javascript.
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
