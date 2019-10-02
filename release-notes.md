@@ -1,5 +1,19 @@
 # Release notes
 
+## October 2, 2019
+
+The following updates were made in this release:
+
+**iOS Target 2.1.4**
+
+* Target session id and edge host will now be persisted and reset if there is no activity for the configured session timeout. If `target.sessionTimeout` is not configured, the default session timeout will be 30 minutes.
+
+**Android Target 1.1.3**
+
+* Target session id and edge host will now be persisted and reset if there is no activity for the configured session timeout. If `target.sessionTimeout` is not configured, the default session timeout will be 30 minutes.
+
+* Fixed an issue where null `at_property` passed in mbox parameters was being sent in Target requests. 
+
 ## September 24, 2019
 
 The following updates were made in this release:
