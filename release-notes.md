@@ -11,8 +11,7 @@ The following updates were made in this release:
 **Android Target 1.1.3**
 
 * The Target session ID and Edge Host will now be persisted in Shared Preferences. If there is no activity for the configured `target.sessionTimeout`, these variables will be reset. The default session timeout value is 30 minutes.
-
-* Fixed an issue where the null `at_property` key, which was passed in mbox parameters, was being sent in Target requests. 
+* Fixed an issue where the null `at_property` key, which was passed in mbox parameters, was being sent in Target requests.
 
 ## September 24, 2019
 
