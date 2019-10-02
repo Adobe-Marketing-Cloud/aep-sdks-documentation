@@ -11,7 +11,7 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 ## Supported Platforms
 
 {% hint style="success" %}
-The Adobe Experience Platform Mobile SDK is good to go for [iOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/frequently-asked-questions/current-sdk-versions.md) to ensure seamless compatibility.
+The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/frequently-asked-questions/current-sdk-versions.md) to ensure seamless compatibility.
 {% endhint %}
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:

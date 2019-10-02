@@ -7,7 +7,6 @@ The following updates were made in this release:
 **iOS Audience 2.0.1**
 
 * The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
-
 * Appends IMS OrgID to AAM demdex calls if subdomain endpoint is missing.
 
 ## September 17, 2019
@@ -712,3 +711,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

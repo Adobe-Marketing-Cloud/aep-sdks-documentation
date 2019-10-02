@@ -1,19 +1,19 @@
 # Push Messaging
 
 {% hint style="warning" %}
-This troubleshooting guide requires [Project Griffon](../../beta/project-griffon/). Please see [documentation](../../beta/project-griffon/) for access, setup, and use.
+This troubleshooting guide requires [Project Griffon](../../beta/project-griffon/). For more information about access and how to set up Project Griffon, see the [documentation](../../beta/project-griffon/).
 {% endhint %}
 
-When implementing push messaging via the Adobe Experience Platform Mobile SDK, you may validate client-side implementation by verifying you've completed the following steps:
+When implementing push messaging via the Adobe Experience Platform Mobile SDK, you can validate the client-side implementation by verifying that you completed the following steps:
 
-1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk)
-2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event)
-3. [Ensure user opt in for push in Adobe Analytics](troubleshooting-push.md#validate-analytics-request-with-push-optin)
-4. [Confirm user ID is correctly set \(and is same from steps 2 and 3, above](troubleshooting-push.md#validate-the-user-id-is-correct)\)
+1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk).
+2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event).
+3. [Ensure user opt in for push in Adobe Analytics](troubleshooting-push.md#validate-analytics-request-with-push-optin).
+4. [Confirm user ID is correctly set \(and is same from steps 2 and 3, above](troubleshooting-push.md#validate-the-user-id-is-correct)\).
 
 ## Pass the Push Identifier to the SDK
 
-The `setPushIdentifier` API sets the device token for push notifications in the SDK. This results in a few network calls made to requisite Adobe servers to associate the user with the push token.
+The `setPushIdentifier` API sets the device token for push notifications in the SDK. This results in a few network calls made to the requisite Adobe servers to associate the user with the push token.
 
 {% hint style="warning" %}
 If SDK privacy status is`optedout`, the push identifier will not be set.
@@ -86,7 +86,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
 
-In the list of events, verify that you have an event with type `SetPushIdentifier`. In the details panel on the right, you may verify the value of the push token for this device. The value in `pushIdentifier` is the same value sent to the Adobe servers.
+In the list of events, verify that you have an event with type `SetPushIdentifier`. In the details panel on the right, verify the value of the push token for this device. The value in `pushIdentifier` is the same value that is sent to the Adobe servers.
 
 ![](../../.gitbook/assets/push_token_to_identity.png)
 
@@ -94,18 +94,18 @@ In the list of events, verify that you have an event with type `SetPushIdentifie
 
 Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
 
-In the resulting list of events, verify that you have an event with type `AnalyticsForIdentityRequest`. In the details panel on the right, you can see that there is a value sent to Analytics that opts this user in to receive push notifications.
+In the resulting list of events, verify that you have an event with type `AnalyticsForIdentityRequest`. In the details panel on the right, you can see that there is a value that was sent to Analytics that opts this user in to receive push notifications.
 
 ![](../../.gitbook/assets/push_analytics_optin.png)
 
-## Confirm user ID is correctly set
+## Confirm that the user ID is correctly set
 
 Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
 
-In the list of events, verify that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, confirm that two values are correct:
+In the list of events, verify that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, confirm that the following values are correct:
 
-* The value for `pushidentifier` should match the value sent in step 2 above.
-* The value for `mid` should match the value for `mid` that is sent to Analytics. If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier), this payload should also contain a `vid` variable with a matching value of that used to identify this user.
+* The value for `pushidentifier` should match the value that was sent in step 2 above.
+* The value for `mid` should match the value for `mid` that is sent to Analytics.  If you are using a [custom visitor identifier](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier), this payload should also contain a `vid` variable with a value that matches the value that was used to identify this user.
 
 ![](../../.gitbook/assets/push_identities.png)
 
