@@ -7,7 +7,7 @@ The following updates were made in this release:
 **iOS Identity 2.1.2**
 
 * Fixed an issue where the push identifier is not contained in the Identity shared state on bootup.
-* Fixed an issue where `appendToUrl` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+* Fixed an issue where `appendToUrl` uses the incorrect query delimiter when the source URL contains a question mark in its fragment identifier component.
 
 ## October 2, 2019
 
