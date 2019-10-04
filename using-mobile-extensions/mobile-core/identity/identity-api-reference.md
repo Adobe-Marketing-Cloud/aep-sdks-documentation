@@ -8,7 +8,7 @@ These synchronize the provided customer identifier type key and value with the a
 
 These IDs are  preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. 
 
-If the current SDK privacy status  is ``MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
+If the current SDK privacy status  is `MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -264,12 +264,12 @@ ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisito
 
 This `appendVisitorInfoForURL()` API appends Adobe visitor information to the query component of the given URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL and is returned in the [AdobeCallback](../identity/identity-api-reference#adobecallback) instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
   * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../using-mobile-extensions/adobe-analytics)
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
