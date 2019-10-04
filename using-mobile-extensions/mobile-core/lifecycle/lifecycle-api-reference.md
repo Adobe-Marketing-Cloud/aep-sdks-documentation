@@ -62,7 +62,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C & Swift <a id="objective-c-and-swift"></a>
+#### Objective-C and Swift <a id="objective-c-and-swift"></a>
 
 Import the Lifecycle framework:
 
