@@ -17,13 +17,13 @@ To get started with Identity, complete the following steps:
    * Set advertising IDs.
    * Set the device notification for push notifications.
 
-## Add Identity to your app
+## Add Identity to the app
 
 {% tabs %}
 {% tab title="Android" %}
 Import the library**:**
 
-**Java**
+### Java
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -33,7 +33,7 @@ import com.adobe.marketing.mobile.*;
 {% tab title="iOS" %}
 Import the library:
 
-**Objective-C**
+### Objective-C
 
 ```objectivec
 #import  "ACPIdentity.h"
@@ -49,7 +49,7 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 Import the Identity extension
 
@@ -57,23 +57,23 @@ Import the Identity extension
 import {ACPIdentity} from '@adobe/react-native-acpcore';
 ```
 
-Get the extension version
-
-```jsx
-ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
-```
 {% endtab %}
 {% endtabs %}
 
-## **Register the extension**
+
+
+## **Register the Identity extension**
+
+The `registerExtension()` API registers the Identity extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK. 
 
 Here is the code sample to register the Identity extension:
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
-After calling the `setApplication()` method in the `onCreate()` method, register the extension.
+After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an InvalidInitException is thrown.
 
 Here is a code sample that calls these set up methods:
 
@@ -96,7 +96,7 @@ super.onCreate();
 {% tab title="iOS" %}
 Register Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-**Objective-C**
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -136,6 +136,57 @@ Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies e
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
 
+
+
+## **Version of the Identity extension**
+
+The `extensionVersion()` API returns the version of the Identity extension that is registered with the MobileCore extension. 
+
+Here is the code sample to get the version of the Identity extension:
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+```java
+String identityExtensionVersion = Identity.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+
+### Objective-C
+
+```objectivec
+NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
+```
+
+### Swift
+
+```swift
+var identityExtensionVersion  = ACPIdentity.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+Get the extension version
+
+```jsx
+ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
+```
+
+{% endtab %}
+{% endtabs %}
+
+
+
 ## Visitor Tracking between an App and Mobile Web
 
 If you app opens mobile web content, you need to ensure that visitors are not identified separately as they move between the native and mobile web.
@@ -164,7 +215,7 @@ To use the same visitor ID in the app and mobile web, complete the following ins
 {% tab title="Android" %}
 ### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-java):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](../identity/identity-api-reference#appendToUrl-java):
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -180,7 +231,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting with SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-java) and build your own URL:
+Alternately, starting with SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](../identity/identity-api-reference#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -200,7 +251,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-ios):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](../identity/identity-api-reference#appendtourl-ios):
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -209,7 +260,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](../identity/identity-api-reference#geturlvariables-ios) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -227,13 +278,13 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 {% tab title="React Native" %}
 ### JavaScript
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-js):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](../identity/identity-api-reference#appendtourl-js):
 
 ```java
 ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
 
-Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-js) and build your own URL:
+Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](../identity/identity-api-reference#geturlvariables-js) and build your own URL:
 
 ```java
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));

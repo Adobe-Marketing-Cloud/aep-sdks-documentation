@@ -1,18 +1,21 @@
 # Identity API reference
 
-## Sync identifiers
+## Sync identifiers<a id="syncIdentifiersTitle"></a>
 
-Updates the specified customer ID with the Adobe Experience Cloud ID service.
+The  `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs  with the Adobe Experience Cloud ID service. 
 
-This API synchronizes the provided customer identifier type key and value with the [authentication state](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and authentication state. Otherwise, a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+These synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+
+These IDs are  preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. 
+
+If the current SDK privacy status  is ``MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
-### syncIdentifier
 
-{% hint style="info" %}
-If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
-{% endhint %}
+### syncIdentifier<a id="syncIdentifier-java"></a>
+
+This `syncIdentifier()` API updates or appends the provided customer identifier type key and value with the given authentication state to the Adobe Experience Cloud ID Service. If the given customer ID type already exists in the service, then it is updated with the new ID and authentication state. Otherwise a new customer ID is added.
 
 #### **Syntax**
 
@@ -22,42 +25,48 @@ public static void syncIdentifier(final String identifierType,
                                       final VisitorID.AuthenticationState authenticationState);
 ```
 
+o  *identifierType* (String) containing identifier type, and the *identifier* (String) containing identifier value; should not be null or empty. If the identifierTtype and identifier do not have valid string values \(non null or empty\), that identifier is ignored by the Identity extension.
+
+o  *authenticationState* indicates the authentication state of the user, which contains one of the VisitorID.AuthenticationState values `VisitorID.AuthenticationState.AUTHENTICATED`, `VisitorID.AuthenticationState.LOGGED_OUT`, `VisitorID.AuthenticationState.UNKNOWN`
+
 #### **Example**
 
 ```java
-Identity.syncIdentifier("idType", "idValue", VisitorID.AuthenticationState.AUTHENTICATED);
+Identity.syncIdentifier("idType", 
+                        "idValue", 
+                        VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
-### syncIdentifiers
+### syncIdentifiers<a id="syncIdentifiers-java"></a>
 
-{% hint style="info" %}
-The `identifiers` map contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
-{% endhint %}
+The function of the `syncIdentifiers`  API is same as the `syncIdentifier` API, which passes a list of identifiers each containing an identifier type as the key and an identifier as the value. In each of the identifiers pair, both identifier type and identifier should be non empty and non null values, otherwise they will be ignore. 
 
 #### **Syntax**
 
 ```java
 public static void syncIdentifiers(final Map<String, String> identifiers,
-                                       final VisitorID.AuthenticationState authenticationState)
+                                   final VisitorID.AuthenticationState authState)
 ```
 
-#### **Example**
+o  *identifiers* map contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), that identifier is ignored by the Identity extension.
+
+o  *authState* indicates the authentication state for the user, which contains one of the VisitorID.AuthenticationState values `VisitorID.AuthenticationState.AUTHENTICATED`, `VisitorID.AuthenticationState.LOGGED_OUT`, `VisitorID.AuthenticationState.UNKNOWN`
+
+#### Example
 
 ```java
 Map<String, String> identifiers = new HashMap<String, String>();
-identifiers.put("idType", "idValue");
+identifiers.put("idType1", "idValue1");
+identifiers.put("idType2", "idValue2");
+identifiers.put("idType3", "idValue3");
 Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 
 ### syncIdentifiers \(overloaded\)
 
-**Tip**: All given customer IDs are given the default authentication state of `UNKNOWN`.
+This  API  `syncIdentifiers()` is an overloaded version that does not include the parameter for the Authentication State, and assumes a default value of `VisitorID.AuthenticationState.UNKNOWN`
 
-These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
-
-{% hint style="info" %}
-The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
-{% endhint %}
+These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. 
 
 #### **Syntax**
 
@@ -65,21 +74,24 @@ The `identifiers` dictionary contains IDs with the Identifier type as the key, a
 public static void syncIdentifiers(final Map<String, String> identifiers);
 ```
 
-#### **Example**
+o  *identifiers* is a map that contains the Identifiers with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+#### Example
 
 ```java
 Map<String, String> identifiers = new HashMap<String, String>();
-identifiers.put("idType", "idValue");
+identifiers.put("idType1", "idValue1");
+identifiers.put("idType2", "idValue2");
+identifiers.put("idType3", "idValue3");
 Identity.syncIdentifier(identifiers);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-### syncIdentifier
 
-Updates the provided customer ID with the Adobe Experience Cloud ID Service.
+### syncIdentifier<a id="syncIdentifier-ios"></a>
 
-This API synchronizes the provided customer identifier type key and value with the provided [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If this customer ID type exists in the service, this type is updated with the new ID and authentication state. Otherwise a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+This `syncIdentifier()` API updates or appends the provided customer identifier type key and value with the given authentication state to the Adobe Experience Cloud ID Service. If the given customer ID type already exists in the service, then it is updated with the new ID and authentication state. Otherwise a new customer ID is added.
 
 #### **Syntax**
 
@@ -89,7 +101,11 @@ This API synchronizes the provided customer identifier type key and value with t
          authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
 ```
 
-#### **Examples**
+o  *identifierType* (String) containing identifier type, and the *identifier* (String) containing identifier value; should not be null or empty. If the identifierTtype and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+o *authenticationState* (VisitorIDAuthenticationState) value indicating authentication state for the user contaisn one of the VisitorID.AuthenticationState values `ACPMobileVisitorAuthenticationStateAuthenticated`,`ACPMobileVisitorAuthenticationStateLoggedOut` and `ACPMobileVisitorAuthenticationStateUnknown`
+
+#### Examples
 
 **Objective-C**
 
@@ -103,92 +119,132 @@ This API synchronizes the provided customer identifier type key and value with t
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
 ```
 
-## syncIdentifiers <a id="syncidentifiers"></a>
+### syncIdentifiers<a id="syncIdentifiers-ios"></a>
 
-Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
+The function of this `syncIdentifiers()`  API is same as the `syncIdentifier` API, which passes a list of identifiers as a dictionary each containing an identifier type as the key and an identifier as the value. In each of the identifiers pair, both identifier type and identifier should be non empty and non null values, otherwise they will be ignore. 
 
-This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, it is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
-
-{% hint style="info" %}
-The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
-{% endhint %}
-
-#### **Syntax**
-
-```objectivec
-+ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
-```
-
-#### **Examples**
-
-**Objective-C**
-
-```objectivec
-NSDictionary *ids = @{@"idType":@"idValue"};
-[ACPIdentity syncIdentifiers:ids];
-```
-
-**Swift**
-
-```swift
-let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];
-ACPIdentity.syncIdentifiers(identifiers)
-```
-
-## syncIdentifiers \(overloaded\) <a id="syncidentifiers-overloaded"></a>
-
-Updates the provided customer IDs with the Adobe Experience Cloud ID Service.
-
-This API synchronizes the provided customer identifiers to the Adobe Experience Cloud ID Service. If a customer ID type matches an existing ID type, the customer ID is updated with the new ID value and [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate). New customer IDs are added. These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
-
-{% hint style="info" %}
-The `identifiers` dictionary contains IDs with the Identifier type as the key, and the string identifier as the value.
-{% endhint %}
-
-### **Syntax**
+#### Syntax
 
 ```objectivec
 + (void) syncIdentifiers: (nullable NSDictionary*) identifiers          
          authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
 ```
 
-### **Examples**
+o   *identifiers* is a dictionary that contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+o   *authenticationState* (VisitorIDAuthenticationState) value indicating authentication state for the user contaisn one of the VisitorID.AuthenticationState values `ACPMobileVisitorAuthenticationStateAuthenticated`,`ACPMobileVisitorAuthenticationStateLoggedOut` and `ACPMobileVisitorAuthenticationStateUnknown`
+
+#### Examples
 
 **Objective-C**
 
 ```objectivec
-NSDictionary *ids = @{@"idType":@"idValue"};
+NSDictionary *ids = @{@"idType1":@"idValue1", 
+                      @"idType2":@"idValue2", 
+                      @"idType3":@"idValue3"};
 [ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
 ```
 
 **Swift**
 
 ```swift
-let identifiers : [String: String] = ["idType1":"idValue1", "idType2":"idValue2"];ACPIdentity.syncIdentifiers(identifiers, authentication:
+let identifiers : [String: String] = ["idType1":"idValue1",
+                                      "idType2":"idValue2",
+                                      "idType3":"idValue3"];
+ACPIdentity.syncIdentifiers(identifiers, authentication:
 ACPMobileVisitorAuthenticationState.authenticated)
 ```
+
+### syncIdentifiers \(overloaded\) 
+
+This  API  `syncIdentifiers()` is an overloaded version that does not include the parameter for the Authentication State, and assumes a default value as `ACPMobileVisitorAuthenticationStateUnknown`
+
+#### Syntax
+
+```objectivec
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
+```
+
+o  *identifiers* contains a dictionary of Identifiers with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+#### Examples
+
+**Objective-C**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1", 
+                      @"idType2":@"idValue2", 
+                      @"idType3":@"idValue3"};
+[ACPIdentity syncIdentifiers:ids];
+```
+
+**Swift**
+
+```swift
+let identifiers : [String: String] = ["idType1":"idValue1",
+                                      "idType2":"idValue2",
+                                      "idType3":"idValue3"];
+ACPIdentity.syncIdentifiers(identifiers)
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 #### JavaScript
 
-### syncIdentifier
+### syncIdentifier<a id="syncIdentifier-js"></a>
 
-Updates the provided customer ID with the Adobe Experience Cloud ID Service.
+This `syncIdentifier()` API updates or appends the provided customer identifier type key and value with the given authentication state to the Adobe Experience Cloud ID Service. If the given customer ID type already exists in the service, then it is updated with the new ID and authentication state. Otherwise a new customer ID is added.
 
-This API synchronizes the provided customer identifier type key and value with the provided [authentication state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#authenticationstate) to the Adobe Experience Cloud ID Service. If this customer ID type exists in the service, this type is updated with the new ID and authentication state. Otherwise a new customer ID is added. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. If the current SDK privacy status is `optedout`, calling this method results in no operations being performed.
+#### Syntax
 
 ```jsx
-ACPIdentity.syncIdentifier(identifierType, identifier, authenticationState);
+ACPIdentity.syncIdentifier(identifierType: String, identifier: String, authenticationState: string)
 ```
 
-### syncIdentifiers
+o *identifierType* (String) containing identifier type, and the *identifier* (String) containing identifier value; should not be null or empty. If the identifierTtype and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+o  *authenticationState* (VisitorIDAuthenticationState) value indicating authentication state for the user contaisn one of the VisitorID.AuthenticationState values `ACPMobileVisitorAuthenticationState.AUTHENTICATED`,`ACPMobileVisitorAuthenticationState.LOGGED_OUT` and `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+#### Example
+
+```jsx
+ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthenticationState.AUTHENTICATED);
+```
+
+### syncIdentifiers<a id="syncIdentifiers-js"></a>
+
+The function of this `syncIdentifiers()`  API is same as the `syncIdentifier` API, which passes a list of identifiers as a dictionary each containing an identifier type as the key and an identifier as the value. In each of the identifiers pair, both identifier type and identifier should be non empty and non null values, otherwise they will be ignore. 
+
+#### **Syntax**
+
+```jsx
+ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
+```
+
+o   *identifiers* is a dictionary that contains Identifiers with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+#### Example**
 
 ```jsx
 ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 ```
 
-### syncIdentifiersWithAuthState
+### syncIdentifiersWithAuthState<a id="syncIdentifiersWithAuthState-js"></a>
+
+The function of this `syncIdentifiersWithAuthState()`  API is same as the `syncIdentifier` API, which  passes a list of identifiers as a dictionary and  the authenticationState. The identifiers dictionary contains identifiers; each containing an identifier type as the key and an identifier as the value. In each of the identifiers pair, both identifier type and identifier should be non empty and non null values, otherwise they will be ignore. 
+
+#### Syntax
+
+```jsx
+ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, authenticationState: string);
+```
+
+o  *identifiers* is a dictionary that contains IDs with the Identifier type as the key, and the string identifier as the value. If the identifier type and identifier do not have valid string values \(non null or empty\), the identifier is ignored by the Identity extension.
+
+o  *authenticationState* (VisitorIDAuthenticationState) value indicates authentication state for the user containing one of the VisitorID.AuthenticationState values `ACPMobileVisitorAuthenticationState.AUTHENTICATED`,`ACPMobileVisitorAuthenticationState.LOGGED_OUT` and `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+#### Example
 
 ```jsx
 import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
@@ -196,13 +252,6 @@ import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
 ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
 ```
 
-Note: `ACPMobileVisitorAuthenticationState` contains the following getters:
-
-```jsx
-const AUTHENTICATED = "ACP_VISITOR_AUTH_STATE_AUTHENTICATED";
-const LOGGED_OUT = "ACP_VISITOR_AUTH_STATE_LOGGED_OUT";
-const UNKNOWN = "ACP_VISITOR_AUTH_STATE_UNKNOWN";
-```
 {% endtab %}
 {% endtabs %}
 
@@ -210,16 +259,17 @@ const UNKNOWN = "ACP_VISITOR_AUTH_STATE_UNKNOWN";
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### appendVisitorInfoForURL <a id="appendToUrl-java"></a>
 
-Appends Adobe visitor data to the query component of the given URL.
+This `appendVisitorInfoForURL()` API appends Adobe visitor information to the query component of the given URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL and is returned in the [AdobeCallback](../identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
   * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../using-mobile-extensions/adobe-analytics)
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
@@ -229,7 +279,11 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
 public static void appendVisitorInfoForURL(final String baseURL, final AdobeCallback<String> callback);
 ```
 
-#### **Example**
+o  *baseUrl* is the URL to which the visitor info needs to be appended. Returned as is if it is nil or empty.
+
+o  *callback* is the method that is invoked after the updated URL is available.
+
+#### Example**
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -277,7 +331,7 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% tab title="iOS" %}
 ### appendToURL <a id="appendToUrl-ios"></a>
 
-Appends Adobe visitor data to the query component of the given URL
+This `appendToURL()` API appends Adobe visitor information to the query component of the given URL
 
 If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL string and is returned via the callback:
 
@@ -294,7 +348,11 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
 ```
 
-#### **Examples**
+*o baseUrl* is the URL to which the visitor info needs to be appended. Returned as is if it is nil or empty.
+
+*o callback* is the method that is invoked after the updated URL is available.
+
+#### Examples**
 
 **Objective-C**
 
@@ -348,7 +406,7 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 
 ### appendVisitorInfoForURL <a id="appendToUrl-js"></a>
 
-Appends Adobe visitor information to the query component of the given URL.
+This `appendVisitorInfoForURL()` API appends Adobe visitor information to the query component of the given URL.
 
 If the given url is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the given URL.
 
@@ -364,6 +422,8 @@ If the given url is nil or empty, it is returned as is. Otherwise, the following
 ```jsx
 ACPIdentity.appendVisitorInfoForURL(baseURL);
 ```
+
+o *baseUrl* is the URL to which the visitor info needs to be appended. Returned as is if it is nil or empty.
 
 #### Example
 
@@ -411,7 +471,9 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 {% endhint %}
 
-Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading _?_ or _&_ punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+This `getUrlVariables()` API gets the Visitor ID Service variables in URL query parameter form for consumption in hybrid app. This method will return an appropriately formed string containing Visitor ID Service URL variables. There will be no leading (&) or (?) punctuation, as the caller is responsible for placing it in their resulting java.net.URI in the correct location.
+
+If an error occurs while retrieving the URL string, (*callback*) will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -426,7 +488,9 @@ Retrieve Adobe visitor data as a URL query parameter string for consumption in h
 public static void getUrlVariables(final AdobeCallback<String> callback);
 ```
 
-#### **Example**
+o   *callback* is a block pointer to call with an NSString value that contains the visitor identifiers as a querystring upon completion of the service request.
+
+#### Example**
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -446,16 +510,20 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getUrlVariables <a id="geturlvariables-ios"></a>
 
-_added in ACPCore v2.3.0 \(ACPIdentity v2.1.0\)_
+{% hint style="info" %}
+This method was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+{% endhint %}
 
-Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
+* This `getUrlVariables()` API gets the Visitor ID Service variables in URL query parameter form for consumption in hybrid app. This method will return an appropriately formed string containing Visitor ID Service URL variables. There will be no leading (&) or (?) punctuation, as the caller is responsible for placing it in their resulting java.net.URI in the correct location.
 
-* The adobe\_mc attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+  If an error occurs while retrieving the URL string, (*callback*) will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+
+  - The `adobe_mc` attribute is an URL encoded list that contains:
+    - `MCMID` - Experience Cloud ID \(ECID\)
+    - `MCORGID` - Experience Cloud Org ID
+    - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+    - `TS` - A timestamp taken when this request was made
+  - The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 #### **Syntax**
 
@@ -463,7 +531,9 @@ Retrieve Adobe visitor data as a URL query parameter string for consumption in h
 + (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
 ```
 
-#### **Examples**
+o   *callback* is a block pointer to call with an NSString value that contains the visitor identifiers as a querystring upon completion of the service request.
+
+#### Examples
 
 **Objective-C**
 
@@ -500,16 +570,20 @@ ACPIdentity.getUrlVariables {(urlVariables) in
 
 ### getUrlVariables <a id="geturlvariables-js"></a>
 
-_added in react-native-acpcore v1.0.5_
+_{% hint style="info" %}
+This method was added in react-native-acpcore v1.0.5.
+{% endhint %}_
 
-Retrieve Adobe visitor data as a URL query parameter string for consumption in hybrid mobile applications. There is no leading "?" or "&" punctuation, as the caller is responsible for placing the string in the correct location of their resulting URL. The following information is added to the string that is returned via the callback:
+This `getUrlVariables()` API gets the Visitor ID Service variables in URL query parameter form for consumption in hybrid app. This method will return an appropriately formed string containing Visitor ID Service URL variables. There will be no leading (&) or (?) punctuation, as the caller is responsible for placing it in their resulting java.net.URI in the correct location.
 
-* The adobe\_mc attribute is an URL encoded list containing:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+If an error occurs while retrieving the URL string, (*callback*) will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+
+- The `adobe_mc` attribute is an URL encoded list that contains:
+  - `MCMID` - Experience Cloud ID \(ECID\)
+  - `MCORGID` - Experience Cloud Org ID
+  - `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+  - `TS` - A timestamp taken when this request was made
+- The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 #### Syntax
 
@@ -525,15 +599,13 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 {% endtabs %}
 
-## Get identifiers
+## Get identifiers<a id="getIdentifiersTitle"></a>
 
 {% tabs %}
 {% tab title="Android" %}
-### getIdentifiers
+### getIdentifiers<a id="getIdentifiers-java"></a>
 
-Returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
-
-The values are returned through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
+This `getIdentifiers()` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
 #### **Syntax**
 
@@ -541,7 +613,9 @@ The values are returned through the [AdobeCallback](https://aep-sdks.gitbook.io/
 public static void getIdentifiers(final AdobeCallback<List<VisitorID>> callback);
 ```
 
-#### **Example**
+o   *callback* is a method which will be invoked once the customer identifiers are available.
+
+#### Example
 
 ```java
 Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {    
@@ -555,15 +629,17 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### getIdentifiers
+### getIdentifiers<a id="getIdentifiers-ios"></a>
 
-Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
+This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud
 
 #### **Syntax**
 
 ```objectivec
 + (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
 ```
+
+o  *callback* is a method which will be invoked once the customer identifiers are available.
 
 #### **Examples**
 
@@ -587,9 +663,17 @@ ACPIdentity.getIdentifiers { (retrievedVisitorIds) in
 {% tab title="React Native" %}
 #### JavaScript
 
-### getIdentifiers
+### getIdentifiers<a id="getIdentifiers-js"></a>
 
-Returns all customer identifiers which were previously synced with the Adobe Experience Cloud.
+This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud
+
+#### Syntax
+
+```jsx
+ACPIdentity.getIdentifiers()
+```
+
+#### Example
 
 ```jsx
 ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK: Identifiers = " + identifiers));
@@ -597,21 +681,23 @@ ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK
 {% endtab %}
 {% endtabs %}
 
-## Get Experience Cloud IDs
+## Get Experience Cloud IDs<a id="getExperienceCloudIdTitle"></a>
 
 {% tabs %}
 {% tab title="Android" %}
-### getExperienceCloudId
+### getExperienceCloudId<a id="getExperienceCloudId-java"></a>
 
-Retrieves the Experience Cloud ID from the Experience Cloud ID Service.
+This `getExperienceCloudId` API retrieves the Experience Cloud ID that was generated at initial launch  and stored in the Experience Cloud ID Service.
 
-The Experience Cloud ID is generated at initial launch and is stored and used from that point forward. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
 #### **Syntax**
 
 ```java
 public static void getExperienceCloudId(final AdobeCallback<String> callback);
 ```
+
+o  *callback* method  will be invoked once Experience Cloud ID is available
 
 #### **Example**
 
@@ -626,17 +712,19 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### getExperienceCloudId
+### getExperienceCloudId<a id="getExperienceCloudId-ios"></a>
 
-Retrieves the Adobe Experience Cloud Visitor ID from the Adobe Experience Cloud ID Service.
+This `getExperienceCloudId` API retrieves the Experience Cloud ID that was generated at initial launch  and stored in the Experience Cloud ID Service.
 
-The Experience Cloud ID is generated at initial launch and is stored and used from that point. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
 #### **Syntax**
 
 ```objectivec
 + (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
 ```
+
+o  *callback* method  will be invoked once Experience Cloud ID is available
 
 #### **Examples**
 
@@ -660,9 +748,19 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 {% tab title="React Native" %}
 #### JavaScript
 
-### getExperienceCloudId
+### getExperienceCloudId<a id="getExperienceCloudId-js"></a>
 
-Retrieves the Adobe Experience Cloud Visitor ID from the Adobe Experience Cloud ID Service.
+This `getExperienceCloudId` API retrieves the Experience Cloud ID that was generated at initial launch  and stored in the Experience Cloud ID Service.
+
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+#### Syntax
+
+```jsx
+ACPIdentity.getExperienceCloudId()
+```
+
+#### Example
 
 ```jsx
 ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceSDK: CloudID = " + cloudId));
@@ -670,7 +768,7 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 {% endtab %}
 {% endtabs %}
 
-## Set an advertising identifier
+## Set an advertising identifier<a id="setAdvertisingIdentifierTitle"></a>
 
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
 
@@ -680,15 +778,18 @@ If the current SDK privacy status is `optedout`, the advertising identifier is n
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
-### setAdvertisingIdentifier
+### setAdvertisingIdentifier<a id="setAdvertisingIdentifier-java"></a>
+
+This `setAdvertisingIdentifier()` API sets  the advertising identifier provided. 
 
 #### **Syntax**
 
 ```java
 public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 ```
+
+o *advertisingIdentifier* is a String that provides developers with a simple, standard system to continue to track the Ads through their apps	 
 
 #### **Example**
 
@@ -739,7 +840,7 @@ public void onResume() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### setAdvertisingIdentifier
+### setAdvertisingIdentifier<a id="setAdvertisingIdentifier-ios"></a>
 
 {% hint style="info" %}
 Retrieve the Identifier for Advertising \(IDFA\) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
@@ -754,6 +855,8 @@ This is just an implementation example. For more information about IDFA and how 
 ```objectivec
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
+
+o *adId* is a String that provides developers with a simple, standard system to continue to track the Ads through their apps	
 
 #### **Example**
 
@@ -797,27 +900,31 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-### setAdvertisingIdentifier
+### setAdvertisingIdentifier<a id="setAdvertisingIdentifier-js"></a>
 
 ```jsx
 ACPCore.setAdvertisingIdentifier("adID");
 ```
+o *adID* is a String that provides developers with a simple, standard system to continue to track the Ads through their apps	
+
 {% endtab %}
 {% endtabs %}
 
-## Set the push identifier
+## Set the push identifier<a id="setPushIdentifierTitle"></a>
 
-This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
+This `setPushIdentifier` API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
 {% tabs %}
 {% tab title="Android" %}
-### setPushIdentifier
+### setPushIdentifier<a id="setPushIdentifier-java"></a>
 
 #### **Syntax**
 
 ```java
 public static void setPushIdentifier(final String pushIdentifier);
 ```
+
+o *pushIdentifier* is a String that contains the device token for push notifications.
 
 #### **Example**
 
@@ -828,7 +935,7 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS" %}
-### setPushIdentifier
+### setPushIdentifier<a id="setPushIdentifier-ios"></a>
 
 #### **Objective-C**
 
@@ -836,7 +943,9 @@ MobileCore.setPushIdentifier(token);
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
 
-Example
+o *deviceToken* is a String that contains the device token for push notifications.
+
+#### Example
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
@@ -854,11 +963,13 @@ ACPCore.setPushIdentifier(deviceToken)
 {% tab title="React Native" %}
 #### JavaScript
 
-### setPushIdentifier
+### setPushIdentifier<a id="setPushIdentifier-js"></a>
 
 ```jsx
 ACPCore.setPushIdentifier("pushIdentifier");
 ```
+o *pushIdentifier* is a String that contains the device token for push notifications.
+
 {% endtab %}
 {% endtabs %}
 
@@ -866,6 +977,9 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 {% tabs %}
 {% tab title="Android" %}
+
+#### Android
+
 ### AdobeCallback <a id="adobecallback"></a>
 
 This class provides the interface to receive results when the async APIs perform the requested action.
@@ -910,7 +1024,10 @@ public enum AuthenticationState {
 {% endtab %}
 
 {% tab title="iOS" %}
-### ACPMobileVisitorId
+
+#### iOS
+
+### ACPMobileVisitorId<a id="acpmobileVisitorId"></a>
 
 An identifier to be used with the Experience Cloud Visitor ID Service.
 
@@ -943,7 +1060,7 @@ typedef NS_ENUM(NSUInteger,
 {% tab title="React Native" %}
 #### JavaScript
 
-### ACPVisitorID
+### ACPVisitorID<a id="acpvisitorid"></a>
 
 ```jsx
 import {ACPVisitorID} from '@adobe/react-native-acpcore';
