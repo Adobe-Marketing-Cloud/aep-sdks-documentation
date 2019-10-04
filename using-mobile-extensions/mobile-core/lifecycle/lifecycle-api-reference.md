@@ -268,10 +268,6 @@ The following practices can help prevent false crashes from being reported:
 
 * Ensure that you perform your development against non-production report suites, which should prevent false crash from the first bullet point from occurring.
 * Do not delete or modify any values that the Adobe Experience Cloud Platform SDKs puts in `NSUserDefaults`. If these values are modified outside the SDK, the data reported will be invalid.
-
-### **iOS crash reporting**
-
-iOS uses system notifications that allow developers to track and respond to different states and events in the application lifecycle. The Adobe Experience Cloud Platform SDKs has a notification handler that responds to the `UIApplicationDidEnterBackgroundNotification` notification. In this code, a value is set that indicates that the user has backgrounded the app. On a subsequent launch, if that value cannot be found, a crash is reported.
 {% endtab %}
 {% endtabs %}
 
