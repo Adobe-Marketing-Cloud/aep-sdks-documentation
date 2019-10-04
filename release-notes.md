@@ -6,7 +6,7 @@ The following updates were made in this release:
 
 **iOS Core 2.3.4**
 * Fixed a crash that might have happened during app shutdown..
-* Fixed a bug where, when SDK is being used in multiple threads, the SDK might not function under a race condition..
+* Fixed a bug where, when the SDK is being used in multiple threads, the SDK might not function under a race condition..
 * Fixed a bug where the downloaded rules zip file might not be decompressed.
 * Fixed a bug where the `getSdkIdentities` API used wrong key names for the Push ID and IDFA.
 * Removed the usage of UIWebView.
