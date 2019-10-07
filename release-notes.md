@@ -1,5 +1,15 @@
 # Release notes
 
+## October 7, 2019
+
+The following updates were made in this release:
+
+**iOS Mobile Services 1.0.3**
+
+* Fullscreen messages now use WKWebViews from WebKit.framework.
+* Local notifications now use UserNotifications framework.
+* Fixed a crash issue.
+
 ## October 4, 2019
 
 The following updates were made in this release:
