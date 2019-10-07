@@ -6,9 +6,9 @@ The following updates were made in this release:
 
 **iOS Mobile Services 1.0.3**
 
-* Fullscreen messages now use WKWebViews from WebKit.framework.
-* Local notifications now use UserNotifications framework.
-* Fixed a crash issue.
+* Full-screen messages now use `WKWebViews` from `WebKit.framework`.
+* Local notifications now use the `UserNotifications` framework.
+* Fixed a crash that might happen when the Click-Through or the Cancel button in the Full-screen message was clicked more than once.
 
 ## October 4, 2019
 
