@@ -52,7 +52,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Core 1.4.4**
+**Android Core 1.4.4 (sdk-core version 1.4.5)**
 
 * Starting in API level 16, notifications now support `BigTextStyle`.
 
@@ -76,7 +76,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Identity 1.1.1**
+**Android Identity 1.1.1 (sdk-core version 1.4.4)**
 
 * Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
 * The `syncIdentifiers` API call is ignored when there is an empty Map.
