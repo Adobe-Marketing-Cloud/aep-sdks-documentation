@@ -12,7 +12,7 @@ The following updates were made in this release:
 
 **Android Analytics 1.2.1**
 
-* Fixed a bug where the Analytics database was being modified by multiple threads on startup.
+* Fixed a bug where, on start up, the Analytics database was being modified by multiple threads.
 
 ## October 4, 2019
 
