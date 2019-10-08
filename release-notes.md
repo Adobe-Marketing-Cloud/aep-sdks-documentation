@@ -10,6 +10,10 @@ The following updates were made in this release:
 * Local notifications now use the `UserNotifications` framework.
 * Fixed a crash that might happen when the **Click-Through** or the **Cancel** button in the Full-screen message was clicked more than once.
 
+**Android Analytics 1.2.1**
+
+* Fixed a bug where the Analytics database was being modified by multiple threads on startup.
+
 ## October 4, 2019
 
 The following updates were made in this release:
@@ -752,4 +756,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
