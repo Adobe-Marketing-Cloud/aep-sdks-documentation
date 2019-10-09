@@ -1,4 +1,4 @@
-# Target API reference \(new\)
+# Target API reference
 
 ## Get custom visitor IDs
 
@@ -22,7 +22,7 @@ public static void getThirdPartyId(final AdobeCallback<String> callback)
 Target.getThirdPartyId(new AdobeCallback<String>() {                    
     @Override
     public void call(String thirdPartyID) {
-                // read target's thirdPartyID
+                // read Target thirdPartyID
     }
 });
 ```
@@ -31,31 +31,31 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getThirdPartyId
 
-Gets the custom visitor ID for Target. The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `nil` is returned.
+The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `nil` is returned.
 
-### Syntax   <a id="syntax"></a>
+#### Syntax
 
 ```objectivec
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
-### Examples   <a id="examples"></a>
+#### Examples
 
 Here are the examples in Objective C and Swift:
 
-#### **Objective C**   <a id="objective-c"></a>
+**Objective C**
 
 ```objectivec
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
-       // read thirdPartyId
+       // read Target thirdPartyId
 }];
 ```
 
-#### **Swift**   <a id="swift"></a>
+**Swift**
 
 ```swift
 ACPTarget.getThirdPartyId({thirdPartyID in
-       // read thirdPartyId
+       // read Target thirdPartyId
 })
 ```
 {% endtab %}
@@ -89,19 +89,19 @@ Target.setThirdPartyId("third-party-id");
 {% tab title="iOS" %}
 ### setThirdPartyId
 
-Sets the custom visitor ID for Target. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
-### Syntax   <a id="syntax-1"></a>
+#### Syntax
 
 ```objectivec
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
-### Examples   <a id="examples-1"></a>
+#### Examples
 
 Here are some examples in Objective-C and Swift:
 
-#### **Objective-C**   <a id="objective-c-1"></a>
+**Objective-C**
 
 ```objectivec
 [ACPTarget setThirdPartyId:@"third-party-id"];
@@ -115,63 +115,15 @@ ACPTarget.setThirdPartyId("third-party-id")
 {% endtab %}
 {% endtabs %}
 
-## Reset user experience
-
-Use this API to reset the user's experience by removing the visitor identifiers. This method also removes previously set third-party and Target IDs from persistent storage.
-
-{% tabs %}
-{% tab title="Android" %}
-### resetExperience
-
-#### Syntax
-
-```java
-public static void resetExperience()
-```
-
-#### Example
-
-```java
-Target.resetExperience();
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### resetExperience
-
-### Syntax   <a id="syntax-2"></a>
-
-```objectivec
-+ (void) resetExperience;
-```
-
-### Examples   <a id="examples-2"></a>
-
-Here are some examples in Objective-C and Swift:
-
-#### **Objective-C**   <a id="objective-c-2"></a>
-
-```objectivec
-[ACPTarget resetExperience];
-```
-
-#### **Swift**   <a id="swift-1"></a>
-
-```swift
-ACPTarget.resetExperience()
-```
-{% endtab %}
-{% endtabs %}
-
 ## Get Target user identifier
 
-Gets the Target user identifier.
+Use this API to get the Target user identifier.
 
 {% tabs %}
 {% tab title="Android" %}
 ### getTntId
 
-The callback is invoked to return the `tntId` value 0 if no Target ID is set, and `null` is returned.
+The callback is invoked to return the `tntId` value, or if no Target ID is set,  `null` is returned.
 
 Target returns `tntId` with a successful call to `loadRequests` or `prefetchContent`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
@@ -196,7 +148,7 @@ Target.getTntId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getTntId
 
-Gets the Target user identifier. The callback will be invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
+The callback will be invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
 
 Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
@@ -206,7 +158,9 @@ Target returns `tntId` upon a successful call to `loadRequests` or `prefetchCont
 + (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
 ```
 
-#### **Examples**
+#### Examples
+
+Here are some examples in Objective-C and Swift:
 
 **Objective-C**
 
@@ -226,15 +180,360 @@ ACPTarget.getTntId({tntId in
 {% endtab %}
 {% endtabs %}
 
+## Reset user experience
+
+Use this API to reset the user's experience by removing the visitor identifiers and resetting Target session. This method also removes previously set Target user ID and custom visitor IDs, Target Edge Host and session information from persistent storage.
+
+{% tabs %}
+{% tab title="Android" %}
+### resetExperience
+
+#### Syntax
+
+```java
+public static void resetExperience()
+```
+
+#### Example
+
+```java
+Target.resetExperience();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### resetExperience
+
+#### Syntax
+
+```objectivec
++ (void) resetExperience;
+```
+
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPTarget resetExperience];
+```
+
+**Swift**
+
+```swift
+ACPTarget.resetExperience()
+```
+{% endtab %}
+{% endtabs %}
+
+## Set preview restart deeplink
+
+Use this API to set the Target preview URL to be displayed when the preview mode is enabled and preview selections are confirmed.
+
+{% tabs %}
+{% tab title="Android" %}
+### setPreviewRestartDeeplink
+
+#### Syntax
+
+```text
+public static void setPreviewRestartDeepLink(final Uri deepLink)
+```
+#### Example
+
+```java
+Target.setPreviewRestartDeepLink("myapp://HomePage");
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### setPreviewRestartDeeplink
+
+#### Syntax
+
+```objectivec
++ (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
+```
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```text
+[ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
+```
+
+**Swift**
+
+```swift
+ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Prefetch offers
+
+The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. With a successful prefetch call for mbox locations, offer content is retrieved and cached in the SDK. This content is retrieved from the cache for all future [retrieveLocationContent](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests) API calls for the specified mbox names. This prefetch process reduces offer load time, network calls made to Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
+
+{% hint style="warning" %}
+Prefetched offer content does not persist across application launches. The prefetch content is cached as long as the application lives in memory or until the API to clear the cache is called. For more information, see [Clear prefetch offer cache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#clear-prefetch-offer-cache).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+### TargetPrefetch constructor
+
+Using the `TargetPrefetch` constructor, you can create a `TargetPrefetch` instance with the specified data. It accepts the mbox location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent` API to prefetch offers for the specified mbox locations.
+
+#### Syntax
+
+```java
+public TargetPrefetch(final String mboxName, final TargetParameters targetParameters) 
+```
+#### Example
+
+```java
+TargetParameters targetParameters = new TargetParameters.Builder()
+.product(new TargetProduct(String, String))
+.order(new TargetOrder(String, Double, List<String>))
+.parameters(mboxParameters)
+.profileParameters(profileParameters).build();
+
+TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", targetParameters);
+```
+
+### prefetchContent
+
+Use this API to send a prefetch request to your configured Target server with the `TargetPrefetch` list and the specified `TargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
+
+#### Syntax
+
+```java
+public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
+final TargetParameters targetParameters,
+final final AdobeCallback<String> callback);
+```
+
+#### Example
+
+```java
+// first prefetch request
+Map<String, Object> mboxParameters1 = new HashMap<>();
+mboxParameters1.put("status", "platinum");
+
+// second prefetch request
+Map<String, Object> mboxParameters2 = new HashMap<>();
+mboxParameters2.put("userType", "paid");
+
+List<String> purchasedIds = new ArrayList<String>();
+purchasedIds.add("34");
+purchasedIds.add("125");
+
+TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
+TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
+
+TargetParameters targetParameters1 = new TargetParameters.Builder()
+.parameters(mboxParameters1)
+.build();
+TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", targetParameters1);
+
+TargetParameters targetParameters2 = new TargetParameters.Builder()
+.parameters(mboxParameters2)
+.product(targetProduct)
+.order(targetOrder)
+.build();
+TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", targetParameters2);
+
+
+List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
+prefetchMboxesList.add(prefetchRequest1);
+prefetchMboxesList.add(prefetchRequest2);
+
+
+// Call the prefetchContent API.
+TargetParamters targetParameters = null;
+Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallback);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### prefetchContent
+
+Use this API to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and the specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a nil value. If the prefetch is not successful, an error message is returned.
+
+#### Syntax
+
+```objectivec
++ (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
+withParameters: (nullable ACPTargetParameters*) targetParameters
+callback: (nullable void (^) (NSError* _Nullable error)) callback;
+```
+
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
+NSDictionary *profileParameters1 = @{@"age":@"20"};
+ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
+ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"34", @"125"]];
+
+ACPTargetParameters *targetParameters1 = [ACPTargetParameters targetParametersWithParameters:mboxParameters1
+profileParameters:profileParameters1
+product:product1
+order:order1];
+
+NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
+ACPTargetProduct *product2 = [ACPTargetProduct targetProductWithId:@"764334" categoryId:@"Online"];
+ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"id1",@"id2"]];
+
+ACPTargetParameters *targetParameters2 = [ACPTargetParameters targetParametersWithParameters:mboxParameters2
+profileParameters:nil
+product:product2
+order:order2];
+
+// Creating Prefetch Objects
+ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"logo"
+targetParameters:targetParameters1];
+
+ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"buttonColor"
+targetParameters:targetParameters2];
+
+// Creating prefetch Array
+NSArray *prefetchArray = @[prefetch1,prefetch2];
+
+// Creating Target parameters
+NSDictionary *mboxParameters = @{@"status":@"progressive"};
+NSDictionary *profileParameters = @{@"age":@"20-32"};
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
+profileParameters:profileParameters
+product:product
+order:order];
+
+// Target API Call
+[ACPTarget prefetchContent:prefetchArray withParameters:targetParameters callback:^(NSError * _Nullable error){
+// do something with the callback response
+}];
+```
+
+**Swift**
+
+```swift
+let mboxParameters1 = [
+"status": "platinum"
+]
+let profileParameters1 = [
+"age": "20"
+]
+let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
+let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["34", "125"])
+
+let targetParameters1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: profileParameters1, product: product1, order: order1)
+
+let mboxParameters2 = [
+"userType": "Paid"
+]
+let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
+let order2 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["id1", "id2"])
+
+let targetParameters2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
+
+// Creating Prefetch Objects
+let prefetch1 = ACPTargetPrefetchObject(name: "logo", targetParameters: targetParameters1)
+
+let prefetch2 = ACPTargetPrefetchObject(name: "buttonColor", targetParameters: targetParameters2)
+
+// Creating prefetch Array
+let prefetchArray = [prefetch1, prefetch2]
+
+// Creating Target parameters
+let mboxParameters = [
+"status": "progressive"
+]
+let profileParameters = [
+"age": "20-32"
+]
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
+
+// Target API Call
+ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { error in
+// do something with the callback response
+})
+```
+{% endtab %}
+{% endtabs %}
+
+
+## Clear prefetch offer cache
+
+Use this API to clear prefetched offers cached in memory.
+
+{% tabs %}
+{% tab title="Android" %}
+### clearPrefetchCache
+
+#### Syntax
+
+```java
+public static void clearPrefetchCache()
+```
+
+#### Example
+
+```java
+Target.clearPrefetchCache();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### clearPrefetchCache
+
+#### Syntax
+
+```objectivec
++ (void) clearPrefetchCache;
+```
+
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPTarget clearPrefetchCache];
+```
+**Swift**
+
+```swift
+ACPTarget.clearPrefetchCache()
+```
+{% endtab %}
+{% endtabs %}
+
 ## Retrieve Location Content requests
 
-Executes a batch request to the configured Target server for multiple mbox locations. The main difference with `loadRequests` API is in usage with prefetch APIs. This API only returns the content and does not increase the reporting count. If you are using normal batch requests, then there is no difference with `loadRequests` API.
+Use this API to send a batch request to the configured Target server for multiple mbox locations. The main difference with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#loadrequests) API is in usage with prefetch APIs. For a prefetched mbox, unlike `loadRequests` API, invoking this API does not send a display notification to the configured Target server. If you are not prefetching mbox content, then there is no difference with `loadRequests` API for sending batch request to Target.
 
 {% tabs %}
 {% tab title="Android" %}
 ### retrieveLocationContent
 
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the `TargetRequest` list. Any prefetched content that matches a given mbox location is returned and not included in the batch request to the Target server. Each object in the list contains a callback function, which will be invoked when content is available for its given mbox location.
+This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -293,6 +592,7 @@ Map<String, Object> profileParameters1 = new HashMap<>();
 profileParameters1.put("ageGroup", "20-32");
 
 TargetParameters parameters = new TargetParameters.Builder().profileParameters(profileParameters1).build();
+
 // Call the targetRetrieveLocationContent API.
 Target.retrieveLocationContent(locationRequests, parameters);
 ```
@@ -301,7 +601,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 {% tab title="iOS" %}
 ### retrieveLocationContent
 
-Sends a batch request to your configured Target server for multiple mbox locations that are specified in the`ACPTargetRequestObject` array. Each object in the array contains a callback function, which will be invoked when content is available for its given mbox location.
+This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -310,7 +610,11 @@ Sends a batch request to your configured Target server for multiple mbox locatio
                   withParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
-#### Example
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
@@ -319,8 +623,7 @@ ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(34
 
 NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
 ACPTargetProduct *product2 = [ACPTargetProduct targetProductWithId:@"764334" categoryId:@"Online"];
-NSArray *purchaseIDs = @[@"id1",@"id2"];
-ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"4t4uxksa" total:@(54.90) purchasedProductIds:purchaseIDs];
+ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"4t4uxksa" total:@(54.90) purchasedProductIds:@[@"id1",@"id2"]];
 
 ACPTargetParameters *params1 = [ACPTargetParameters targetParametersWithParameters:mboxParameters1
                                                     profileParameters:nil
@@ -339,7 +642,8 @@ ACPTargetRequestObject *request2 = [ACPTargetRequestObject targetRequestObjectWi
 defaultContent:@"red" callback:^(NSString * _Nullable content) {
     // do something with the received content
   }];
-// create request object array
+  
+// Create request object array
 NSArray *requestArray = @[request1,request2];
 
 // Creating Target parameters
@@ -347,53 +651,161 @@ NSDictionary *mboxParameters = @{@"status":@"progressive"};
 NSDictionary *profileParameters = @{@"age":@"20-32"};
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+
 ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
                                                     profileParameters:profileParameters
                                                               product:product
                                                                 order:order];
 
 // Call the API
-[ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters]
+[ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters];
+```
+**Swift**
+
+```swift
+let mboxParameters1 = [
+"status": "platinum"
+]
+let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
+let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["a", "b"])
+
+let mboxParameters2 = [
+"userType": "Paid"
+]
+let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
+let order2 = ACPTargetOrder(id: "4t4uxksa", total: NSNumber(value: 54.90), purchasedProductIds: ["id1", "id2"])
+
+let params1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: nil, product: product1, order: order1)
+let request1 = ACPTargetRequestObject(name: "logo", targetParameters: params1, defaultContent: "BlueWhale", callback: { content in
+// do something with the received content
+})
+
+let params2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
+let request2 = ACPTargetRequestObject(name: "logo", targetParameters: params2, defaultContent: "red", callback: { content in
+// do something with the received content
+})
+
+// Create request object array
+let requestArray = [request1, request2]
+
+// Creating Target parameters
+let mboxParameters = [
+"status": "progressive"
+]
+let profileParameters = [
+"age": "20-32"
+]
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
+
+// Call the API
+ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 ```
 {% endtab %}
 {% endtabs %}
 
-## Set preview restart deep link
+## Send an mbox display notification
 
-This API sets the Target preview URL to be displayed when the preview mode is restarted.
+Use this API to send a location \(mbox\) display notification to configured Target server. This API should be invoked for a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests). If no previous prefetch request is made and the mbox content is retrieved using  `retrieveLocationContent` API, then calling this API does not trigger a notification request to the Target server.
+
+{% hint style="warning" %}
+Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#load-target-requests). For a prefetched mbox, on calling the deprecated `loadRequests` API, mbox display notification is internally sent to the Target server by the SDK. 
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-### setPreviewRestartDeeplink
+### locationsDisplayed
 
 #### Syntax
 
-```text
-public static void setPreviewRestartDeepLink(final Uri deepLink)
+```java
+public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters targetParameters)
+```
+
+#### Example
+
+```java
+List<String> purchasedProductIds = new ArrayList<String>();
+purchasedProductIds.add("34");
+purchasedProductIds.add("125"); 
+TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
+
+TargetProduct targetProduct = new TargetProduct("123", "Books");
+
+TargetParameters targetParameters = new TargetParameters.Builder()
+.parameters(new HashMap<String, String>())
+.profileParameters(new HashMap<String, String>())
+.product(targetProduct)
+.order(targetOrder)
+.build();
+
+List<String> mboxList = new ArrayList<>();
+mboxList.add("mboxName1");
+
+Target.locationsDisplayed(mboxList, targetParameters);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-### setPreviewRestartDeeplink
+### locationsDisplayed
 
 #### Syntax
 
 ```objectivec
-+ (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
++ (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
+withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
+```
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
+profileParameters:nil
+product:product
+order:order];
+
+[ACPTarget locationsDisplayed:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParameters];
+```
+
+**Swift**
+
+```swift
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: nil, product: product, order: order)
+
+ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 ```
 {% endtab %}
 {% endtabs %}
 
+
 ## Send an mbox click notification
 
-Sends a click notification to the configured Target server for a prefetched or regular mbox location. The click metric should be enabled for the provided location name in Target.
+Use this API to send a location \(mbox\) click notification to configured Target server. This API can be invoked in the following cases:
+
+* For a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests).
+* For a regular mbox when no previous prefetch request is made and the mbox content is retrieved using `retrieveLocationContent` API.
+
+
+{% hint style="warning" %}
+For a click notification to be sent to Target, make sure click metric is enabled for the given mbox name in Target.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 ### locationClicked
-
-If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates that the mbox was viewed.
-
 #### Syntax
 
 ```java
@@ -403,11 +815,11 @@ public static void locationClicked(final String mboxName, final TargetParameters
 #### Example
 
 ```java
-// Define Mbox parameters
+// Mbox parameters
 Map<String, Object> mboxParameters = new HashMap<>();
 mboxParameters.put("membership", "prime");
 
-// Define Product parameters
+// Product parameters
 Map<String, Object> productParameters = new HashMap<>();
 productParameters.put("id", "CEDFJC");
 productParameters.put("categoryId","Electronics");
@@ -417,17 +829,17 @@ purchasedIds.add("81");
 purchasedIds.add("123");
 purchasedIds.add("190");
 
-// Define Order parameters
+// Order parameters
 Map<String, Object> orderParameters = new HashMap<>();
 orderParameters.put("id", "NJJICK");
 orderParameters.put("total", "650");
 orderParameters.put("purchasedProductIds",  purchasedIds);
 
-// Creating Profile parameters
+// Profile parameters
 Map<String, Object> profileParameters = new HashMap<>();
 profileParameters.put("ageGroup", "20-32");
 
-//Target Parameters
+// Create Target Parameters
 TargetOrder targetOrder = new TargetOrder("NJJICK", "650", purchasedIds);
 TargetProduct targetProduct = new TargetProduct("CEDFJC", "Electronics");
 TargetParameters targetParameters = new TargetParameters.Builder(mboxParameters)
@@ -442,30 +854,31 @@ Target.locationClicked("cartLocation", targetParameters);
 
 {% tab title="iOS" %}
 ### locationClicked
-
-If a notification is sent for a prefetched mbox, its contents should already have been requested with `loadRequests`, which indicates that the mbox was viewed.
-
 #### Syntax
 
 ```objectivec
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
-#### Example
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
 
 ```objectivec
-// Define Mbox parameters
+// Mbox parameters
 NSDictionary *mboxParameters = @{@"membership":@"prime"};
 
-// Define Product parameters
+// Product parameters
 NSDictionary *productParameters = @{@"id":@"CEDFJC",
                                     @"categoryId":@"Electronics"};
-// Define Order parameters
+// Order parameters
 NSDictionary *orderParameters = @{@"id":@"NJJICK",
                                     @"total":@"650",
                                     @"purchasedProductIds":@"81, 123, 190"};
 
-// Define Profile parameters
+// Profile parameters
 NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
 
 // Create Target parameters
@@ -476,7 +889,41 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
                                                               product:product
                                                                 order:order];
 
-[ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters]
+[ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters];
+```
+
+**Swift**
+
+```swift
+// Mbox parameters
+let mboxParameters = [
+"membership": "prime"
+]
+
+// Product parameters
+let productParameters = [
+"id": "CEDFJC",
+"categoryId": "Electronics"
+]
+
+// Order parameters
+let orderParameters = [
+"id": "NJJICK",
+"total": "650",
+"purchasedProductIds": "81, 123, 190"
+]
+
+// Profile parameters
+let profileParameters = [
+"ageGroup": "20-32"
+]
+
+// Create Target parameters
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: nil, product: product, order: order)
+
+ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetParameters)
 ```
 {% endtab %}
 {% endtabs %}
@@ -549,9 +996,9 @@ Here is a code sample for this class in Android:
 public class TargetPrefetch extends TargetObject {
 
     /**
-     * Instantiate a {@link TargetPrefetch} object
-     * @param mboxName {@link String} mbox name for this prefetch
-     * @param targetParameters {@link TargetParameters} for this prefetch
+     * Instantiate a TargetPrefetch object
+     * @param mboxName String mbox name for this prefetch request
+     * @param targetParameters TargetParameters for this prefetch request
      */
      public TargetPrefetch(final String mboxName, final TargetParameters targetParameters)
 
@@ -771,22 +1218,22 @@ public class TargetProduct {
 {% tab title="iOS" %}
 ### ACPTargetRequestObject
 
-This class extends `ACPTargetPrefetchObject` by adding default content and a function pointer property that will be used as a callback when requesting content from Target:
+This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
 
 ```objectivec
 @interface ACPTargetRequestObject : ACPTargetPrefetchObject
 
-///< The default content that will be returned if Target servers are unreachable    
+/* The default content that will be returned if Target servers are unreachable */   
 @property(nonatomic, strong, nonnull) NSString* defaultContent;
 
-///< Optional. When batch requesting Target locations, callback will be invoked when content is available for this location.
+/* Optional. When batch requesting Target locations, callback will be invoked when content is available for this location. */
 @property(nonatomic, strong, nullable) void (^callback)(NSString* __nullable content);
 @end
 ```
 
-The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
+The following method can be used to create an instance of ACPTargetRequestObject that might be used to make a batch request to the configured Target server to fetch content for mbox locations.
 
-```text
+```objectivec
 + (nonnull instancetype) targetRequestObjectWithName: (nonnull NSString*) name
                                     targetParameters: (nullable ACPTargetParameters*) targetParameters
                                       defaultContent: (nonnull NSString*) defaultContent
@@ -795,50 +1242,50 @@ The following method can be used to create an instance of a Target prefetch obje
 
 ### ACPTargetPrefetchObject
 
-This class contains the name of the Target location/mbox and parameter dictionary for mbox parameters, product parameters, and order parameters that will be used in a prefetch:
+This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
 
 ```objectivec
 @interface ACPTargetPrefetchObject : NSObject
 
-///< The name of the Target location/mbox
+/* The name of the Target location/mbox */
 @property(nonatomic, strong, nullable) NSString* name;
 
-///target parameters associated with the prefetch object. You can set all other parameters in this object
+/* Target parameters associated with the prefetch object. You can set all other parameters in this object */
 @property(nonatomic, strong, nullable) ACPTargetParameters* targetParameters;
 @end
 ```
 
-The following method can be used to create an instance of a Target prefetch object that might be used to make a batch request to the configured Target server to prefetch content for mbox locations:
+The following method can be used to create an instance of ACPTargetPrefetchObject that might be used to make a prefetch request to the configured Target server to prefetch content for mbox locations.
 
-```text
+```objectivec
 + (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
                                      targetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
 
 ### ACPTargetParameters
 
-This class contains the parameter dictionary for mbox parameters, profile parameters, and ACPTargetOrder object as well as ACPTargetProduct object:
+This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
 
 ```objectivec
 @interface ACPTargetParameters : NSObject
 
-///Dictionary containing key-value pairs of parameters
+/* Dictionary containing key-value pairs of parameters */
 @property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* parameters;
 
-///Dictionary containing key-value pairs of profile parameters
+/* Dictionary containing key-value pairs of profile parameters */
 @property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* profileParameters;
 
-///ACPTargetOrder object
+/* ACPTargetOrder object */
 @property(nonatomic, strong, nullable) ACPTargetOrder* order;
 
-///ACPTargetProduct object
+/* ACPTargetProduct object */
 @property(nonatomic, strong, nullable) ACPTargetProduct* product;
 @end
 ```
 
-The following method can be used to create an instance of a Target parameters object that can be used when invoking multiple APIs:
+The following method can be used to create an instance of ACPTargetParameters.
 
-```text
+```objectivec
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
                                       profileParameters: (nullable NSDictionary*) profileParameters
                                                 product: (nullable ACPTargetProduct*) product
@@ -847,25 +1294,25 @@ The following method can be used to create an instance of a Target parameters ob
 
 ### ACPTargetOrder
 
-This class contains orderId, total and array for purchasedProductIds present in order parameters:
+This class contains orderId, total and an array for purchasedProductIds.
 
 ```objectivec
 @interface ACPTargetOrder : NSObject
 
-///Order ID
+/* Order ID */
 @property(nonatomic, strong, nonnull) NSString* orderId;
 
-///Order total
+/* Order total */
 @property(nonatomic, strong, nullable) NSNumber* total;
 
-///Array of Purchased Product Ids
+/* Array of Purchased Product Ids */
 @property(nonatomic, strong, nullable) NSArray<NSString*>* purchasedProductIds;
 @end
 ```
 
-The following method can be used to create an instance of a Target order object that can be used when invoking multiple APIs:
+The following method can be used to create an instance of ACPTargetOrder.
 
-```text
+```objectivec
 + (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
                                      total: (nullable NSNumber*) total
                        purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
@@ -873,22 +1320,22 @@ The following method can be used to create an instance of a Target order object 
 
 ### ACPTargetProduct
 
-This class contains productId and categoryId present in product parameters:
+This class contains productId and categoryId.
 
 ```objectivec
 @interface ACPTargetProduct : NSObject
 
-///Product ID
+/* Product ID */
 @property(nonatomic, strong, nullable) NSString* productId;
 
-///Category ID
+/* Category ID */
 @property(nonatomic, strong, nullable) NSString* categoryId;
 @end
 ```
 
-The following method can be used to create an instance of a Target Product object that can be used when invoking multiple APIs:
+The following method can be used to create an instance of ACPTargetProduct.
 
-```text
+```objectivec
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
                                   categoryId: (nullable NSString*) categoryId;
 ```
