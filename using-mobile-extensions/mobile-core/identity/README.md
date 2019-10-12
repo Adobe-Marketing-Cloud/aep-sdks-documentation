@@ -62,11 +62,11 @@ import {ACPIdentity} from '@adobe/react-native-acpcore';
 
 
 
-## **Register the Identity extension**
+## Register the Identity extension
 
 The `registerExtension()` API registers the Identity extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK. 
 
-Here is the code sample to register the Identity extension:
+To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -74,8 +74,6 @@ Here is the code sample to register the Identity extension:
 ### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an InvalidInitException is thrown.
-
-Here is a code sample that calls these set up methods:
 
 ```java
 public class MobiletApp extends Application {
@@ -138,11 +136,11 @@ After the configuration is complete, an Experience Cloud ID is generated and, wh
 
 
 
-## **Version of the Identity extension**
+## Version of the Identity extension
 
 The `extensionVersion()` API returns the version of the Identity extension that is registered with the MobileCore extension. 
 
-Here is the code sample to get the version of the Identity extension:
+To get the version of the Identity extension, use the following code sample::
 
 {% tabs %}
 {% tab title="Android" %}
