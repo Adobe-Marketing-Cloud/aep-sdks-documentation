@@ -237,7 +237,6 @@ Identity.syncIdentifier(identifiers);
 ```
 {% endtab %}
 {% tab title="iOS" %}
-
 ### iOS
 
 ##### Syntax
@@ -291,7 +290,7 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 ```
 
 {% endtab %}
-{% tabs %}
+{% endtabs %}
 
 ## Append visitor data to a URL
 
