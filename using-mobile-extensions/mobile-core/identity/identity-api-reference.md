@@ -58,7 +58,7 @@ Identity.syncIdentifier("idType",
 
 * The *identifier (String)* contains the `identifier` value, and this parameter should not be null or empty. 
 
-If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+  If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * The *authenticationState (VisitorIDAuthenticationState)* value indicates the authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
       * `ACPMobileVisitorAuthenticationStateAuthenticated`
@@ -93,7 +93,7 @@ ACPIdentity.syncIdentifier(identifierType: String, identifier: String, authentic
 
 * The *identifier (String)* contains the `identifier` value, and this parameter should not be null or empty. 
 
-If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+  If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * *authenticationState (VisitorIDAuthenticationState)* value indicating authentication state for the user contaisn one of the `VisitorID.AuthenticationState` values:
 indicats the authentication state of the user and contains  one of the  `VisitorID.AuthenticationState` values:
@@ -189,7 +189,7 @@ ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, a
 ```
 * The *identifiers* dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
 
 * The *authenticationState (VisitorIDAuthenticationState)*  indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
      * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -224,7 +224,7 @@ public static void syncIdentifiers(final Map<String, String> identifiers);
 
 * *identifiers* is a map that contains the identifiers with the Identifier type as the key, and the string identifier as the value.
 
-In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+  In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 ##### Example
 
@@ -247,7 +247,7 @@ Identity.syncIdentifier(identifiers);
 
 * The *identifiers* dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
 
 ##### Examples
 
@@ -281,7 +281,7 @@ ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
 
 * The *identifiers* dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
 
 ##### Example
 
