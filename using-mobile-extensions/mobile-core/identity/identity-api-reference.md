@@ -150,9 +150,9 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 * The *identifiers* dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-* If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
 
-The *authenticationState (VisitorIDAuthenticationState)*  indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
+* The *authenticationState (VisitorIDAuthenticationState)*  indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
      * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
      * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
      * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -529,7 +529,7 @@ If an error occurs while retrieving the URL string, *callback* will be called wi
 public static void getUrlVariables(final AdobeCallback<String> callback);
 ```
 
- *callback* has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
+ * *callback* has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
 
 ##### Example
 
