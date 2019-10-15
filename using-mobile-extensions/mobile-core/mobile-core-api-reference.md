@@ -349,7 +349,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Set icons for local notification
+## Set Icons for local notification
 
 Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -556,9 +556,7 @@ ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level =
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
-### log
+**Java**
 
 The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` passed to `MobileCore.log()`, the following Android method is called:
 
@@ -568,6 +566,8 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 * `LoggingMode.ERROR` uses `android.util.Log.e`
 
 All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
+
+#### log
 
 **Syntax**
 
@@ -589,11 +589,11 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 {% endtab %}
 
 {% tab title="iOS" %}
-### **log**
-
 **Objective-C**
 
 The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
+
+#### log
 
 **Syntax**
 
@@ -607,13 +607,15 @@ The log messages from the Adobe Experience SDK are printed to the Apple System L
 [ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
 ```
 
-**Example**
+**Output Example**
 
 ```text
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
 **Swift**
+
+#### log
 
 **Syntax**
 
@@ -627,7 +629,7 @@ The log messages from the Adobe Experience SDK are printed to the Apple System L
 ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
 ```
 
-**Example**
+**Output Example**
 
 ```text
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
@@ -635,9 +637,7 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
-
-### log
+### JavaScript
 
 The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like
 
@@ -658,7 +658,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 
 ### Handle open URL action
 
-The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
+The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
 
 {% tabs %}
 {% tab title="iOS" %}

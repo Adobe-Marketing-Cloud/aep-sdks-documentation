@@ -17,11 +17,15 @@ To get started with Identity, complete the following steps:
    * Set advertising IDs.
    * Set the device notification for push notifications.
 
-## Add Identity to the app
+## Add the Identity framework to your app
 
 {% tabs %}
 {% tab title="Android" %}
+<<<<<<< HEAD
+Import the library:
+=======
 ### Import the library
+>>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 
 #### Java
 
@@ -31,7 +35,7 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-Import the library:
+Import the Identity extension:
 
 #### Objective-C
 
@@ -49,9 +53,12 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+<<<<<<< HEAD
+Import the Identity extension:
 
-Import the Identity extension
+=======
+>>>>>>> 81593d85183f8080a978511265adbeb578e000ed
+#### JavaScript
 
 ```jsx
 import {ACPIdentity} from '@adobe/react-native-acpcore';
@@ -67,9 +74,14 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
+<<<<<<< HEAD
+=======
 #### Java
+>>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
+
+#### Java
 
 ```java
 public class MobiletApp extends Application {
@@ -138,14 +150,21 @@ To get the version of the Identity extension, use the following code sample::
 
 {% tabs %}
 {% tab title="Android" %}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 #### Java
 
 ```java
 String identityExtensionVersion = Identity.extensionVersion();
 ```
 {% endtab %}
-
 {% tab title="iOS" %}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 #### Objective-C
 
 ```objectivec
@@ -158,11 +177,8 @@ NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
 var identityExtensionVersion  = ACPIdentity.extensionVersion()
 ```
 {% endtab %}
-
 {% tab title="React Native" %}
 #### JavaScript
-
-Get the extension version
 
 ```jsx
 ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
@@ -232,7 +248,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+#### Objective-C
 
 To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-ios):
 
@@ -259,7 +275,7 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+#### JavaScript
 
 To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-js):
 
