@@ -243,7 +243,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios)\) and build your own URL:
+Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -275,7 +275,5 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 {% endtabs %}
 
-The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor.
-
-On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.
+The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.
 

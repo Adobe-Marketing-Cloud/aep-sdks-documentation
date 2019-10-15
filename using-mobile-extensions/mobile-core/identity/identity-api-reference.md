@@ -6,9 +6,7 @@ The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified custome
 
 These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
 
-These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
-
-If the current SDK privacy status is `MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
+These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall. If the current SDK privacy status is `MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -41,7 +39,7 @@ Identity.syncIdentifier("idType",
 
 ### syncIdentifiers <a id="syncIdentifiers-java"></a>
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an identifier type as the key and an identifier as the value.
+The function of this API is the same as the `syncIdentifier` API. `syncIdentifiers` passes a list of identifiers, and each identifier contains an identifier type as the key and an identifier as the value.
 
 #### Syntax
 
@@ -67,7 +65,7 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 ### syncIdentifiers \(overloaded\)
 
-This API is an overloaded version, which does not include the parameter for the authentication state and assumes a default value of `VisitorID.AuthenticationState.UNKNOWN`.
+This API is an overloaded version, which does not include the parameter for the authentication state, and assumes a default value of `VisitorID.AuthenticationState.UNKNOWN`.
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
 
@@ -290,9 +288,9 @@ ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisito
 {% tab title="Android" %}
 ### appendVisitorInfoForURL <a id="appendToUrl-java"></a>
 
-This API appends Adobe visitor information to the query component of the specified URL.
+This API appends Adobe visitor information to the query component of the specified URL. If the provided URL is null or empty, it is returned as is. 
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -358,9 +356,9 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% tab title="iOS" %}
 ### appendToURL <a id="appendToUrl-ios"></a>
 
-This API appends Adobe visitor information to the query component of the specified URL.
+This API appends Adobe visitor information to the query component of the specified URL. If the provided URL is nil or empty, it is returned as is. 
 
-If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL string and is returned via the callback:
+Otherwise, the following information is added to the query component of the specified URL string and is returned via the callback:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -432,9 +430,9 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 
 ### appendVisitorInfoForURL <a id="appendToUrl-js"></a>
 
-This API appends Adobe visitor information to the query component of the specified URL.
+This API appends Adobe visitor information to the query component of the specified URL. If the specified URL is nil or empty, it is returned as is. 
 
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
+Otherwise, the following information is added to the query component of the specified URL.
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -499,7 +497,7 @@ This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ is called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -542,7 +540,7 @@ This method was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ is called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -598,15 +596,13 @@ ACPIdentity.getUrlVariables {(urlVariables) in
 
 ### getUrlVariables <a id="geturlvariables-js"></a>
 
-\_
-
 {% hint style="info" %}
 This method was added in react-native-acpcore v1.0.5.
 {% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ is called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -887,6 +883,8 @@ This is just an implementation example. For more information about IDFA and how 
 
 #### Example
 
+Here are the Objective-C and Swift samples for this API: 
+
 **Objective-C**
 
 ```objectivec
@@ -978,6 +976,10 @@ MobileCore.setPushIdentifier(token);
 
 #### Example
 
+Here are the Objective-C and Swift samples for this API:
+
+**Objective-C**
+
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
 [ACPCore setPushIdentifier:deviceToken];
@@ -1054,7 +1056,7 @@ public enum AuthenticationState {
 {% tab title="iOS" %}
 **ACPMobileVisitorId**
 
-An identifier to be used with the Experience Cloud Visitor ID Service.
+This class is an identifier that is used with the Experience Cloud Visitor ID Service.
 
 Contains the origin, the type, a value, and the authentication state of the visitor ID.
 
@@ -1071,7 +1073,7 @@ Contains the origin, the type, a value, and the authentication state of the visi
 
 **ACPMobileVisitorAuthenticationState**
 
-Used to indicate the authentication state for the current `VisitorID`.
+This class is used to indicate the authentication state for the current `VisitorID`.
 
 ```objectivec
 typedef NS_ENUM(NSUInteger,
