@@ -21,29 +21,28 @@ To get started with Identity, complete the following steps:
 
 {% tabs %}
 {% tab title="Android" %}
-<<<<<<< HEAD
-Import the library:
-=======
-### Import the library
->>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 
 #### Java
+
+Import the library:
 
 ```java
 import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
-
 {% tab title="iOS" %}
+
+#### iOS
+
 Import the Identity extension:
 
-#### Objective-C
+###### Objective-C
 
 ```objectivec
 #import  "ACPIdentity.h"
 ```
 
-#### Swift
+###### Swift
 
 In swift, the ACPCore includes ACPIdentity :
 
@@ -53,11 +52,8 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
-<<<<<<< HEAD
 Import the Identity extension:
 
-=======
->>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 #### JavaScript
 
 ```jsx
@@ -74,10 +70,6 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-<<<<<<< HEAD
-=======
-#### Java
->>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
@@ -98,11 +90,13 @@ super.onCreate();
 }
 ```
 {% endtab %}
-
 {% tab title="iOS" %}
+
+#### iOS
+
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-#### Objective-C
+###### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -112,7 +106,7 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 }
 ```
 
-#### Swift
+###### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -122,7 +116,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 {% endtab %}
-
 {% tab title="React Native" %}
 #### JavaScript
 
@@ -146,14 +139,11 @@ After the configuration is complete, an Experience Cloud ID is generated and, wh
 
 The `extensionVersion()` API returns the version of the Identity extension that is registered with the MobileCore extension.
 
-To get the version of the Identity extension, use the following code sample::
+To get the version of the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-<<<<<<< HEAD
 
-=======
->>>>>>> 81593d85183f8080a978511265adbeb578e000ed
 #### Java
 
 ```java
@@ -161,23 +151,23 @@ String identityExtensionVersion = Identity.extensionVersion();
 ```
 {% endtab %}
 {% tab title="iOS" %}
-<<<<<<< HEAD
 
-=======
->>>>>>> 81593d85183f8080a978511265adbeb578e000ed
-#### Objective-C
+#### iOS
+
+###### Objective-C
 
 ```objectivec
 NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
 ```
 
-#### Swift
+######  Swift
 
 ```swift
 var identityExtensionVersion  = ACPIdentity.extensionVersion()
 ```
 {% endtab %}
 {% tab title="React Native" %}
+
 #### JavaScript
 
 ```jsx
@@ -246,7 +236,6 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 });
 ```
 {% endtab %}
-
 {% tab title="iOS" %}
 #### Objective-C
 
@@ -273,7 +262,6 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 }];
 ```
 {% endtab %}
-
 {% tab title="React Native" %}
 #### JavaScript
 
@@ -292,4 +280,3 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.
-
