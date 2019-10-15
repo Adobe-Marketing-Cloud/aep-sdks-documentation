@@ -67,13 +67,13 @@ If either the `identifier type` or `identifier` contains a null or an empty stri
 
 ##### Examples
 
-####### Objective-C
+**Objective-C**
 
 ```objectivec
 [ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
 ```
 
-####### Swift
+**Swift**
 
 ```swift
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
@@ -159,7 +159,7 @@ The *authenticationState (VisitorIDAuthenticationState)*  indicates the authenti
 
 ##### Examples
 
-####### Objective-C
+**Objective-C**
 
 ```objectivec
 NSDictionary *ids = @{@"idType1":@"idValue1", 
@@ -168,7 +168,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 [ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
 ```
 
-####### Swift
+**Swift**
 
 ```swift
 let identifiers : [String: String] = ["idType1":"idValue1",
@@ -251,7 +251,7 @@ If any of the identifier pairs contains an empty or null value as the `identifie
 
 ##### Examples
 
-####### Objective-C
+**Objective-C**
 
 ```objectivec
 NSDictionary *ids = @{@"idType1":@"idValue1", 
@@ -260,7 +260,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 [ACPIdentity syncIdentifiers:ids];
 ```
 
-####### Swift
+**Swift**
 
 ```swift
 let identifiers : [String: String] = ["idType1":"idValue1",
@@ -394,7 +394,7 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 
 ##### Examples
 
-###### Objective-C
+**Objective-C**
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -403,7 +403,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-######  Swift
+**Swift**
 
 ```swift
 ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
@@ -572,11 +572,11 @@ If an error occurs while retrieving the URL string, *callback* will be called wi
 + (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
 ```
 
-* *callback* has an NSString value that contains the visitor identifiers as a querystring after the service request is complete
+* *callback* has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
 
 ##### Examples
 
-###### Objective-C
+**Objective-C**
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -590,7 +590,7 @@ If an error occurs while retrieving the URL string, *callback* will be called wi
 }];
 ```
 
-###### Swift
+**Swift**
 
 ```swift
 ACPIdentity.getUrlVariables {(urlVariables) in    
@@ -687,7 +687,7 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 
 ##### Examples
 
-###### Objective-C
+**Objective-C**
 
 ```objectivec
 [ACPIdentity getIdentifiers:^(NSArray<ACPMobileVisitorId *> * _Nullable retrievedVisitorIds) {    
@@ -695,7 +695,7 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
     }];
 ```
 
-###### Swift
+**Swift**
 
 ```swift
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
@@ -773,7 +773,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ##### Examples
 
-###### Objective-C
+**Objective-C**
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
@@ -781,7 +781,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 }];
 ```
 
-###### Swift
+**Swift**
 
 ```swift
 ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
@@ -825,7 +825,7 @@ If the current SDK privacy status is `optedout`, the advertising identifier is n
 
 ### setAdvertisingIdentifier<a id="setAdvertisingIdentifier-java"></a>
 
-This API sets the provided advertising identifier . 
+This API sets the provided advertising identifier. 
 
 #### Java
 
@@ -835,7 +835,7 @@ This API sets the provided advertising identifier .
 public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 ```
 
-* *advertisingIdentifier* is a string that provides developers with a simple, standard system to track the Ads through their apps	 
+* *advertisingIdentifier* is a string that provides developers with a simple, standard system to track the Ads through their apps.	 
 
 ##### Example
 
@@ -903,11 +903,11 @@ This is just an implementation example. For more information about IDFA and how 
 + (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 
-* *adId* is a string that provides developers with a simple, standard system to continue to track the Ads through their apps	
+* *adId* is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.	
 
 ##### Example
 
-####### Objective-C
+**Objective-C**
 
 ```objectivec
 #import <AdSupport/ASIdentifierManager.h>
@@ -925,7 +925,7 @@ This is just an implementation example. For more information about IDFA and how 
 }
 ```
 
-####### Swift
+**Swift**
 
 ```swift
 import AdSupport
@@ -948,10 +948,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 #### JavaScript
 
+##### Syntax
+
 ```jsx
-ACPCore.setAdvertisingIdentifier("adID");
+ACPCore.setAdvertisingIdentifier(adID);
 ```
-* *adID* is a string that provides developers with a simple, standard system to continue to track the Ads through their apps	
+* *adID* is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
+
+##### Example
+
+```jsx
+ACPCore.setAdvertisingIdentifier("ADVTID");
+```
 
 {% endtab %}
 {% endtabs %}
@@ -994,14 +1002,14 @@ MobileCore.setPushIdentifier(token);
 
 ##### Example
 
-####### Objective-C
+**Objective-C**
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
 [ACPCore setPushIdentifier:deviceToken];
 ```
 
-###### Swift
+**Swift**
 
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
@@ -1013,10 +1021,19 @@ ACPCore.setPushIdentifier(deviceToken)
 
 #### JavaScript
 
+##### Syntax
+
 ```jsx
-ACPCore.setPushIdentifier("pushIdentifier");
+ACPCore.setPushIdentifier(pushIdentifier);
 ```
-* *pushIdentifier*  is a string that contains the device token for push notifications..
+
+* *pushIdentifier* is a string that contains the device token for push notifications.
+
+##### Example
+
+```jsx
+ACPCore.setPushIdentifier("pushID");
+```
 
 {% endtab %}
 {% endtabs %}
@@ -1107,7 +1124,7 @@ typedef NS_ENUM(NSUInteger,
 
 ##### ACPVisitorID<a id="acpvisitorid"></a>
 
-This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
+This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
 ```jsx
 import {ACPVisitorID} from '@adobe/react-native-acpcore';
