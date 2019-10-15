@@ -21,9 +21,10 @@ To get started with Identity, complete the following steps:
 
 {% tabs %}
 {% tab title="Android" %}
-Import the library**:**
 
-### Java
+### Import the library
+
+#### Java
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -33,13 +34,13 @@ import com.adobe.marketing.mobile.*;
 {% tab title="iOS" %}
 Import the library:
 
-### Objective-C
+#### Objective-C
 
 ```objectivec
 #import  "ACPIdentity.h"
 ```
 
-### Swift
+#### Swift
 
 In swift, the ACPCore includes ACPIdentity :
 
@@ -49,7 +50,8 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+
+#### JavaScript
 
 Import the Identity extension
 
@@ -71,9 +73,9 @@ To register the Identity extension, use the following code sample:
 {% tabs %}
 {% tab title="Android" %}
 
-### Java
+#### Java
 
-After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an InvalidInitException is thrown.
+After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
 ```java
 public class MobiletApp extends Application {
@@ -92,9 +94,9 @@ super.onCreate();
 {% endtab %}
 
 {% tab title="iOS" %}
-Register Identity extension in your app's `didFinishLaunchingWithOptions` function:
+Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-### Objective-C
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -104,7 +106,7 @@ Register Identity extension in your app's `didFinishLaunchingWithOptions` functi
 }
 ```
 
-### Swift
+#### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -116,6 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### JavaScript
 
 ```jsx
@@ -185,33 +188,33 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ado
 
 
 
-## Visitor Tracking between an App and Mobile Web
+## Visitor tracking between an app and the mobile web
 
-If you app opens mobile web content, you need to ensure that visitors are not identified separately as they move between the native and mobile web.
+If your app opens mobile web content, you need to ensure that visitors are not identified separately as they move between the native and mobile web.
 
-#### Visitor IDs in Apps
+### Visitor IDs in apps
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-Out.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-Out and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to Opt-Out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
 App visitor IDs persist through upgrades.
 {% endhint %}
 
-#### Visitor IDs in the Mobile Web
+### Visitor IDs in the mobile web
 
-Typical mobile web implementations use the same standard Analytics `s_code.js` or `AppMeasurement.js` that is used within desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different vistior ID to be generated when you open mobile web content from your app.
+Typical mobile web implementations use the same standard analytics `s_code.js` or `AppMeasurement.js` that is used within desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different vistior ID to be generated when you open mobile web content from your app.
 
 To use the same visitor ID in the app and mobile web, complete the following instructions to pass the visitor ID to the mobile web in the URL.
 
-**Implementing Visitor Tracking between an App and Mobile Web**
+### Implementing visitor tracking between an app and the mobile web
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
 To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-java):
 
@@ -290,7 +293,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 {% endtabs %}
 
-The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page used the passed-in ECID to track the visitor.
+The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor.
 
-On hits from the mobile web content, verify that the `mid` parameter is present on each hit, and that this value matches the `mid` that is being sent by the app code.
+On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value  that is being sent by the app code.
 
