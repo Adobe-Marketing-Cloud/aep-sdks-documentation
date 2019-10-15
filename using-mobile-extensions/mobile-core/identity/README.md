@@ -1,6 +1,6 @@
 # Identity
 
-The Identity framework is bundled with [Mobile Core](../) and enables your app with Adobe's Experience Cloud ID service. This service helps with the synchronization of Adobe and other customer identifiers.
+The Identity framework is bundled with [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) and enables your app with Adobe's Experience Cloud ID service. This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="danger" %}
 On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
@@ -17,13 +17,14 @@ To get started with Identity, complete the following steps:
    * Set advertising IDs.
    * Set the device notification for push notifications.
 
-## Add Identity to your app
+## Add Identity to the app
 
 {% tabs %}
 {% tab title="Android" %}
-Import the library**:**
 
-**Java**
+### Import the library
+
+#### Java
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -33,13 +34,13 @@ import com.adobe.marketing.mobile.*;
 {% tab title="iOS" %}
 Import the library:
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 #import  "ACPIdentity.h"
 ```
 
-### Swift
+#### Swift
 
 In swift, the ACPCore includes ACPIdentity :
 
@@ -49,6 +50,7 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### JavaScript
 
 Import the Identity extension
@@ -57,25 +59,23 @@ Import the Identity extension
 import {ACPIdentity} from '@adobe/react-native-acpcore';
 ```
 
-Get the extension version
-
-```jsx
-ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
-```
 {% endtab %}
 {% endtabs %}
 
-## **Register the extension**
 
-Here is the code sample to register the Identity extension:
+
+## Register the Identity extension
+
+The `registerExtension()` API registers the Identity extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK. 
+
+To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-After calling the `setApplication()` method in the `onCreate()` method, register the extension.
+#### Java
 
-Here is a code sample that calls these set up methods:
+After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
 ```java
 public class MobiletApp extends Application {
@@ -94,9 +94,9 @@ super.onCreate();
 {% endtab %}
 
 {% tab title="iOS" %}
-Register Identity extension in your app's `didFinishLaunchingWithOptions` function:
+Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -106,7 +106,7 @@ Register Identity extension in your app's `didFinishLaunchingWithOptions` functi
 }
 ```
 
-### Swift
+#### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -118,6 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### JavaScript
 
 ```jsx
@@ -136,35 +137,86 @@ Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies e
 
 After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
 
-## Visitor Tracking between an App and Mobile Web
 
-If you app opens mobile web content, you need to ensure that visitors are not identified separately as they move between the native and mobile web.
 
-#### Visitor IDs in Apps
+## Version of the Identity extension
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalles the app or if the user sets the Mobile SDK global privacy status to Opt-Out.
+The `extensionVersion()` API returns the version of the Identity extension that is registered with the MobileCore extension. 
+
+To get the version of the Identity extension, use the following code sample::
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+```java
+String identityExtensionVersion = Identity.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+
+### Objective-C
+
+```objectivec
+NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
+```
+
+### Swift
+
+```swift
+var identityExtensionVersion  = ACPIdentity.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+Get the extension version
+
+```jsx
+ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
+```
+
+{% endtab %}
+{% endtabs %}
+
+
+
+## Visitor tracking between an app and the mobile web
+
+If your app opens mobile web content, you need to ensure that visitors are not identified separately as they move between the native and mobile web.
+
+### Visitor IDs in apps
+
+The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-Out.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-Out and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to Opt-Out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
 App visitor IDs persist through upgrades.
 {% endhint %}
 
-#### Visitor IDs in the Mobile Web
+### Visitor IDs in the mobile web
 
-Typical mobile web implementations use the same standard Analytics `s_code.js` or `AppMeasurement.js` that is used within desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different vistior ID to be generated when you open mobile web content from your app.
+Typical mobile web implementations use the same standard analytics `s_code.js` or `AppMeasurement.js` that is used within desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different vistior ID to be generated when you open mobile web content from your app.
 
 To use the same visitor ID in the app and mobile web, complete the following instructions to pass the visitor ID to the mobile web in the URL.
 
-**Implementing Visitor Tracking between an App and Mobile Web**
+### Implementing visitor tracking between an app and the mobile web
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-java):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-java):
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -180,7 +232,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting with SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-java) and build your own URL:
+Alternately, starting with SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -200,7 +252,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-ios):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-ios):
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -209,7 +261,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios)) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -227,13 +279,13 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 {% tab title="React Native" %}
 ### JavaScript
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#appendtourl-js):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-js):
 
 ```java
 ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
 
-Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5bef6baed477226452f497e8894ef617e8dc5761/using-mobile-extensions/mobile-core/identity/identity-api-reference/README.md#geturlvariables-js) and build your own URL:
+Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-js) and build your own URL:
 
 ```java
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
@@ -241,7 +293,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 {% endtabs %}
 
-The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page used the passed-in ECID to track the visitor.
+The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor.
 
-On hits from the mobile web content, verify that the `mid` parameter is present on each hit, and that this value matches the `mid` that is being sent by the app code.
+On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value  that is being sent by the app code.
 
