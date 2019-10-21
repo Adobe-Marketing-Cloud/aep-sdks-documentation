@@ -1,5 +1,68 @@
 # Audience Manager API reference
 
+## Register the Audience extension
+
+This API registers an extension class that was derived from `ACPExtension` with a unique name. This call validates the parameters to ensure that the name is not empty, the name is unique, and that the parent class is ACPExtension.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### registerExtension
+
+#### **Syntax**
+
+```java
+public  static void registerExtension() throws InvalidInitException
+```
+
+#### **Example**
+
+```java
+Audience.registerExtension();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### registerExtension
+
+#### **Syntax**
+
+```objectivec
++ (BOOL) registerExtension: (nonnull Class) extensionClass
+                     error: (NSError* _Nullable* _Nullable) error;
+```
+
+#### **Examples**
+
+**Objective-C**
+
+```objectivec
+[ACPAudience registerExtension];
+```
+
+**Swift**
+
+```swift
+ACPAudience.registerExtension()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+### registerExtension
+
+```jsx
+ACPAudience.registerExtension();
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## Send signals to Audience Manager
 
 Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to an initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
@@ -14,13 +77,19 @@ For more information about the UUID and other Audience Manager identifiers, see 
 {% tab title="Android" %}
 ### **signalWithData**
 
-In Android, the UUID is persisted in `SharedPreferences`.
+This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
+
+Audience manager sends the AAM UUID in response in initial signal call. AAM UUID is persisted in `SharedPreferences` and sent by SDK in all subsequent signal requests. If available, Experience Cloud ID (MID) is also sent in each signal request along with DPID and DPUUID. The visitor profile that AAM returns is saved in `SharedPreferences` and updated with every signal call.
 
 #### **Syntax**
 
 ```java
 public static void signalWithData(final Map<String, String> data, final AdobeCallback<Map<String, String>> callback)
 ```
+
+o  `data` is the traits data for the current visitor
+
+o  `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
 #### **Example**
 
@@ -41,7 +110,9 @@ Audience.signalWithData(traits, visitorProfileCallback);
 {% tab title="iOS" %}
 ### signalWithData
 
-On iOS, UUID is persisted in `NSUserDefaults`.
+This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback. 
+
+Audience manager sends the AAM UUID in response in initial signal call. AAM UUID is persisted in `NSUserDefaults` and sent by SDK in all subsequent signal requests. If available, Experience Cloud ID (MID) is also sent in each signal request along with DPID and DPUUID. The visitor profile that AAM returns is saved in `NSUserDefaults` and updated with every signal call.
 
 #### **Syntax**
 
@@ -50,7 +121,11 @@ On iOS, UUID is persisted in `NSUserDefaults`.
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-#### **Examples**
+o  `data` is the traits data for the current visitor
+
+o  `callback` is the void method that is invoked with the visitor's profile as a parameter.
+
+#### Examples**
 
 **Objective-C**
 
@@ -93,6 +168,8 @@ For more information about the UUID, the DPID, the DPUUID and other Audience Man
 {% tab title="Android" %}
 ### **reset**
 
+This API resets the Audience Manager UUID and purges the current visitor profile from `android.content.SharedPreferences`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
+
 #### **Syntax**
 
 ```java
@@ -108,6 +185,8 @@ Audience.reset();
 
 {% tab title="iOS" %}
 ### **reset**
+
+This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
 #### **Syntax**
 
@@ -149,7 +228,7 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 {% tab title="Android" %}
 ### getVisitorProfile
 
-In Android, the visitor profile is saved in `SharedPreferences`.
+This API returns the visitor profile that was most recently obtained. Visitor profile is saved in `SharedPreferences` for easy access across multiple launches of your app. If no signal has been submitted, null is returned.
 
 #### **Syntax**
 
@@ -174,7 +253,7 @@ Audience.getVisitorProfile(visitorProfileCallback);
 {% tab title="iOS" %}
 ### getVisitorProfile
 
-On iOS, the visitor profile is saved in `NSUserDefaults`.
+This API returns the visitor profile that was most recently obtained. Visitor profile is saved in `NSUserDefaults` for easy access across multiple launches of your app. If no signal has been submitted, nil is returned.
 
 #### **Syntax**
 
