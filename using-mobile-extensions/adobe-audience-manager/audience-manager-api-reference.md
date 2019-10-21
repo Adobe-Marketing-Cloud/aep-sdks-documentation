@@ -228,7 +228,7 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 {% tab title="Android" %}
 ### getVisitorProfile
 
-This API returns the visitor profile that was most recently obtained. Visitor profile is saved in `SharedPreferences` for easy access across multiple launches of your app. If no signal has been submitted, null is returned.
+This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `SharedPreferences`. If no signal has been submitted, null is returned.
 
 #### **Syntax**
 
@@ -253,7 +253,7 @@ Audience.getVisitorProfile(visitorProfileCallback);
 {% tab title="iOS" %}
 ### getVisitorProfile
 
-This API returns the visitor profile that was most recently obtained. Visitor profile is saved in `NSUserDefaults` for easy access across multiple launches of your app. If no signal has been submitted, nil is returned.
+This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
 
 #### **Syntax**
 
