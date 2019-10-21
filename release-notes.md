@@ -1,5 +1,9 @@
 # Release notes
 
+Here are the release notes for the Experience Platform Mobile SDKs and Adobe Places:
+
+**Important:**  Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided. 
+
 ## October 9, 2019 (Places)
 
 * **PlacesMonitor 2.1.0**
