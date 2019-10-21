@@ -1,5 +1,19 @@
 # Release notes
 
+## October 9, 2019 (Places)
+
+* **PlacesMonitor 2.1.0**
+
+  * **iOS**
+  
+    * Added a new API, `setRequestAuthorizationLevel`, to set the type of location authorization request for which the user will be prompted.
+
+
+  * **Android**
+
+    * Added a new API, `setLocationPermission`, to set the type of location permission request for which the user will be prompted.
+    * The Places Monitor now supports Android 10.
+
 ## September 24, 2019
 
 The following updates were made in this release:
@@ -101,6 +115,31 @@ The following updates were made in this release:
 * Fixed a bug where the database operation might fail on Android Q.
 * Fixed a crash that was happening on Android 8.0/8.1 and was related to Android's TimeZoneNamesImpl.
 
+## Aug 8, 2019 (Places)
+
+The following updates were made in this release:
+
+### Places UI Updates
+
+Here is a list of the updates to the Places UI: 
+
+#### New Features
+
+* Added a new list view that shows POIs without the map.
+* Added POI filtering options for the city, the state, the country, and the metadata.
+* The first library in an organization is automatically created.
+* Added POI sorting to the List View.
+
+#### UI Updates
+
+* Moved the list and details panel to right side of UI.
+* Added a new search panel to the top of the UI.
+* If only one library is present, this library is automatically selected when you create a POI.
+* Moved library management into a popup window.
+* Added a POI count next to the filters.
+
+
+
 ## August 8, 2019
 
 The following updates were made in this release:
@@ -119,14 +158,69 @@ The following updates were made in this release:
 * Added `getUniqueIdentifier()` to the `Event` object.
 
   This value is a globally unique identifier for every `Event`.
-
-**iOS Target 2.1.2 and Android Target 1.1.2**
+  
+ **iOS Target 2.1.2 and Android Target 1.1.2**
 
 * `target.previewEnabled`, a new configuration Boolean key, has been added. This key is used to enable/disable Target Preview.
 
   If key is not provided, preview is enabled by default.
 
 * Fixed an issue in Android where Target Preview links were decoded twice, which lead to an error preview page.
+
+## Aug 6, 2019 (Places)
+
+The following updates were made in this release:
+
+### Places Monitor Launch Extension 2.0.0
+
+* Updated the Android and iOS installation instructions for the Places Monitor 2.0.
+
+## July 31, 2019 (Places)
+
+The following updates were made in this release:
+
+### Places Monitor 2.0.0
+
+* Monitoring status is now persisted between launches.
+* The handling of the callback, which resulted from a location permission request no longer requires you to extend PlacesActivity.
+* Changed an existing API, allowing developers to clear all Places data from the device:
+
+     Old API: `public static void stop();`
+
+     New API: `public static void stop (final boolean clearData);`
+
+* Updated the use of the Places `getNearbyPointsOfInterest` API to handle error scenarios more effectively.
+
+## July 25, 2019 (Places)
+
+The following updates were made in this release:
+
+### ACPPlacesMonitor 2.0.0
+
+* To clear all Places data from the device,
+
+  in ACPPlacesMonitor, replaced an existing API `+ (void) stop;` with`+ (void) stop: (BOOL) clearData;`.
+
+* Updated the use of the ACPPlaces `getNearbyPointsOfInterest` API to handle error scenarios more effectively.
+
+## July 22, 2019 (PLaces)
+
+The following updates were made in this release:
+
+### Android Places 1.3.0
+
+* Added a new API that clears out all Places-related data from shared state, in-app memory, and Shared Preference.
+* Fixed an issue where shared state was not getting updated during application start.
+* Fixed a bug where `getNearbyPointsOfInterest` callback was returning error code `SERVER_RESPONSE_ERROR instead of CONNECTIVITY_ERROR` on no internet.
+* `getNearbyPointsOfInterest` API (without the errorCallback) will have the `successCallback` called with empty poi list, in case of error retrieving the nearby points of interest.
+
+## July 19, 2019 (Places)
+
+The following updates were made in this release:
+
+**iOS Places 1.2.0**
+
+Added a new API that clears out all Places-related data from shared state, in-app memory, and `NSUserDefaults`.
 
 ## July 17, 2019
 
@@ -176,7 +270,7 @@ The following updates were made in this release:
 * Use the `target.propertyToken` configuration setting to configure the `at_property_token` that is generated from the Target UI, instead of passing the token as an mbox parameter.
 * Fixed an issue where JSON offers were not being returned as content but instead default content was served.
 
-## June 25, 2019
+## June 25, 2019 (Places)
 
 The following updates were made in this release:
 
@@ -194,7 +288,7 @@ The following updates were made in this release:
 * Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down.
 * Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
 
-## June 17, 2019
+## June 17, 2019 (Places)
 
 The following updates were made in this release:
 
@@ -262,11 +356,20 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 30, 2019
+## May 30, 2019 (Places)
 
 **Android Places Monitor 1.0.1**
 
 * Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
+
+## May 28, 2019 (Places)
+
+Fixed the following issues in the Places UI:
+
+* Updated the Solution Switcher in Places to align with the rest of the Experience Cloud.
+* Fixed an issue where rank was saving in instances where no rank changes were made.
+* Increased the minimum allowed radius in the UI to 10 meters.
+* Fixed an issue where, if you delete all the numbers in the field, the radius field reset back to 20 meters.
 
 ## May 20, 2019
 
@@ -303,7 +406,7 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 17, 2019
+## May 17, 2019 (Places)
 
 The following updates were made in this release:
 
@@ -405,7 +508,7 @@ To learn more about Project Griffon, here are the links to the [documentation](h
 * [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/set-up-project-griffon)
 * [Using Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/using-project-griffon)
 
-## April 9, 2019
+## April 9, 2019 (Places)
 
 The following updates were made in this release:
 
@@ -521,7 +624,7 @@ The following updates were made in this release:
 
 * Use the `analytics.launchHitDelay` configuration setting to indicate how long to wait before Analytics launch hits are sent.
 
-## February 28, 2019
+## February 28, 2019 (Places)
 
 The first version of **Places** is now available for public beta access!
 
