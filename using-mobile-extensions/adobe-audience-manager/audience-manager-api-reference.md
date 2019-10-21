@@ -79,7 +79,7 @@ For more information about the UUID and other Audience Manager identifiers, see 
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience manager sends the AAM UUID in response in initial signal call. AAM UUID is persisted in `SharedPreferences` and sent by SDK in all subsequent signal requests. If available, Experience Cloud ID (MID) is also sent in each signal request along with DPID and DPUUID. The visitor profile that AAM returns is saved in `SharedPreferences` and updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
 #### **Syntax**
 
@@ -87,9 +87,9 @@ Audience manager sends the AAM UUID in response in initial signal call. AAM UUID
 public static void signalWithData(final Map<String, String> data, final AdobeCallback<Map<String, String>> callback)
 ```
 
-o  `data` is the traits data for the current visitor
+* `data` is the traits data for the current visitor.
 
-o  `callback` is the void method that is invoked with the visitor's profile as a parameter.
+* `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
 #### **Example**
 
@@ -110,9 +110,9 @@ Audience.signalWithData(traits, visitorProfileCallback);
 {% tab title="iOS" %}
 ### signalWithData
 
-This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback. 
+This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience manager sends the AAM UUID in response in initial signal call. AAM UUID is persisted in `NSUserDefaults` and sent by SDK in all subsequent signal requests. If available, Experience Cloud ID (MID) is also sent in each signal request along with DPID and DPUUID. The visitor profile that AAM returns is saved in `NSUserDefaults` and updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
 
 #### **Syntax**
 
@@ -121,9 +121,9 @@ Audience manager sends the AAM UUID in response in initial signal call. AAM UUID
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 ```
 
-o  `data` is the traits data for the current visitor
+* `data` is the traits data for the current visitor.
 
-o  `callback` is the void method that is invoked with the visitor's profile as a parameter.
+* `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
 #### Examples**
 
