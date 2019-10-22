@@ -234,7 +234,7 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 {% endtab %}
 {% endtabs %}
 
-### Create an AdBreak object
+### Create an adbreak object
 
 Creates an instance of the AdBreak object.
 
@@ -505,7 +505,7 @@ Track the intention to start playback. This starts a tracking session on the med
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#createMediaObject) | Yes |
+| `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#create-a-media-object) method. | Yes |
 | `contextData` | Optional Media context data. For standard metadata keys, use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants). | No |
 
 {% tabs %}
@@ -834,7 +834,7 @@ Method to track media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using a [Create AdBreak Object](media-api-reference.md#create-adbreak-object).  For an `AdStart` event, the Ad information is created by using a [Create Ad Object](media-api-reference.md#create-ad-object).  For `ChapterStart` event, the Chapter information is created by using a [Create Chapter Object](media-api-reference.md#create-chapter-object).  This is not required for other events. |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using [createAdBreakObject](media-api-reference.md#create-an-adbreak-object) method.  For an `AdStart` event, the Ad information is created by using [createAdObject](media-api-reference.md#create-an-ad-object) method.  For `ChapterStart` event, the Chapter information is created by using [createChapterObject](media-api-reference.md#create-a-chapter-object) method.  This is not required for other events. |
 | `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
@@ -1175,7 +1175,7 @@ Provides the media tracker with the current QoE information. For accurate tracki
 
 | Variable Name | Description |
 | :--- | :--- |
-| `qoeObject` | Current QoE information that was created by using a [Create QoE Object](media-api-reference.md#create-qoe-object). |
+| `qoeObject` | Current QoE information that was created by using [createQoEObject](media-api-reference.md#create-a-qoe-object) method. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1226,7 +1226,7 @@ _tracker.updateQoEObject(qoeObject)
 
 ## Media constants
 
-### MediaType
+### Media type
 
 This defines the type of a media that is currently tracked.
 
@@ -1268,7 +1268,7 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
 {% endtab %}
 {% endtabs %}
 
-### StreamType
+### Stream type
 
 This defines the stream type of the content that is currently tracked.
 
