@@ -323,7 +323,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 ## Configuration keys
 
-To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration Methods Reference](./).
+To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 <table>
   <thead>
