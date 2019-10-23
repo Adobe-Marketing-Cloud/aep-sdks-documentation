@@ -88,19 +88,31 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 {% tabs %}
 {% tab title="Android" %}
-Add the Analytics extension to your project using the app's Gradle file.
+1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
+
+```java
+implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+implementation 'com.adobe.marketing.mobile:analytics:1.+'
+```
 
 #### Java
 
-Import the Analytics extension in your application's main activity.
+2. Import the Analytics extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-​ 1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPAnalytics'` ​ 2. Import the Analytics and Identity libraries:
+{% tab title="iOS" %}​
+1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods. Add following pods in your `Podfile`  
+
+```objectivec
+pod 'ACPCore'
+pod 'ACPAnalytics'
+``` ​
+
+2. Import the Analytics and Identity libraries:
 
 #### Objective-C
 
@@ -196,7 +208,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      ACPAnalytics.registerExtension()
      ACPIdentity.registerExtension()
      ACPCore.start(nil)
-     // Override point for customization after application launch. 
+     // Override point for customization after application launch.
      return true;
 }
 ```
