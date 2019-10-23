@@ -359,6 +359,21 @@ Gets a custom Analytics visitor identifier which has been set previously using [
 ```java
 public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
+
+#### Example
+
+```java
+AdobeCallback<String> visitorIdentifierCallback = new AdobeCallback<String>() {
+    @Override
+    public void call(final String visitorIdentifier) {
+        // check the visitorIdentifier value    
+    }
+};
+
+Analytics.getVisitorIdentifier(visitorIdentifierCallback);
+```
+
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -370,7 +385,26 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 ```
 
-\*\*\*\*
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
+    // use returned visitorIdentifier   
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
+    // use returned visitorIdentifier
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -380,7 +414,6 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 
 ```jsx
 ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
-
 ```
 {% endtab %}
 {% endtabs %}
