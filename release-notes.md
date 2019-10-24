@@ -4,14 +4,64 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 **Important:** Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided.
 
+## October 10, 2019	
+
+The following updates were made in this release:	
+
+**iOS Campaign Classic 2.0.1**	
+
+* Fixed an issue where, on iOS 13, the push token was not being extracted correctly from NSData during device registration.	
+* Fixed an issue where the charset information was not being sent in the Content-Type header during device registration call.
+
 ## October 9, 2019 \(Places\)
 
-* **PlacesMonitor 2.1.0**
-  * **iOS**
-    * Added a new API, `setRequestAuthorizationLevel`, to set the type of location authorization request for which the user will be prompted.
-* **Android**
+* **PlacesMonitor 2.1.0 (iOS)**
+
+  * Added a new API, `setRequestAuthorizationLevel`, to set the type of location authorization request for which the user will be prompted.
+
+* **PlacesMonitor 2.1.0 (Android)**
+
   * Added a new API, `setLocationPermission`, to set the type of location permission request for which the user will be prompted.
   * The Places Monitor now supports Android 10.
+  
+## October 7, 2019	
+
+The following updates were made in this release:	
+
+**Android Analytics 1.2.1**	
+
+* Fixed a bug where the Analytics database was being modified by multiple threads on startup.
+  
+## October 4, 2019	
+
+The following updates were made in this release:	
+
+**iOS Core 2.3.4**	
+
+* Fixed a crash that might have happened during app shutdown..	
+* Fixed a bug where, when the SDK is being used in multiple threads, the SDK might not function under a race condition..	
+* Fixed a bug where the downloaded rules zip file might not be decompressed.	
+* Fixed a bug where the `getSdkIdentities` API used wrong key names for the Push ID and IDFA.	
+* Removed the usage of UIWebView.	
+* Extension listeners with null/empty type or source is now invalid and will not be registered.	
+
+**iOS Identity 2.1.2**	
+
+* Fixed an issue where the push identifier is not contained in the Identity shared state on bootup.	
+* Fixed an issue where `appendToUrl` uses the incorrect query delimiter when the source URL contains a question mark in its fragment identifier component.
+  
+## October 2, 2019	
+
+The following updates were made in this release:	
+
+**iOS Target 2.1.4**	
+
+* The Target session ID and Edge Host will now be persisted in NSUserDefaults. If there is no activity for the configured `target.sessionTimeout`, these variables will be reset. The default session timeout value is 30 minutes.	
+
+**Android Target 1.1.3**	
+
+* The Target session ID and Edge Host will now be persisted in Shared Preferences. If there is no activity for the configured `target.sessionTimeout`, these variables will be reset. The default session timeout value is 30 minutes.	
+* Fixed an issue where the null `at_property` key, which was passed in mbox parameters, was being sent in Target requests.
 
 ## September 24, 2019
 
@@ -112,7 +162,7 @@ The following updates were made in this release:
 **Android Core 1.4.3**
 
 * Fixed a bug where the database operation might fail on Android Q.
-* Fixed a crash that was happening on Android 8.0/8.1 and was related to Android's TimeZoneNamesImpl.
+* Fixed a crash that was happening on Android versions 8.0 and 8.1 and was related to Android's `TimeZoneNamesImpl`.
 
 ## Aug 8, 2019 \(Places\)
 
@@ -156,7 +206,7 @@ The following updates were made in this release:
 
   This value is a globally unique identifier for every `Event`.
 
-  **iOS Target 2.1.2 and Android Target 1.1.2**
+**iOS Target 2.1.2 and Android Target 1.1.2**
 
 * `target.previewEnabled`, a new configuration Boolean key, has been added. This key is used to enable/disable Target Preview.
 
@@ -422,13 +472,23 @@ For more information about the Places Monitor, [click here](https://github.com/A
 
 ## May 15, 2019
 
-**iOS Target 2.1.0 & Android Target 1.1.0**
+**iOS Target 2.1.0 and Android Target 1.1.0**
 
-* Upgraded Target Delivery APIs to latest v1 delivery endpoint.
+* Upgraded the Target Delivery APIs to latest v1 delivery endpoint.
 * Introduced `retrieveLocationContent`, a new API that retrieves content for multiple Target mbox locations simultaneously without increasing the reporting count for prefetch cases.
-* Introduced `locationsDisplayed`, a new API that helps Target record location to display events. This API should only be used for prefetch scenarios.
+* Introduced `locationsDisplayed`, a new API that helps Target record location to display events. 
+
+  This API should only be used for prefetch scenarios.
+
 * Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
-* New `prefetchContent` & `locationClicked` APIs which accept TargetParameters
+* New `prefetchContent` and `locationClicked` APIs which accept TargetParameters.
+
+**Android Places 1.1.0**
+
+* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.	
+* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
+* The Places extension now queues the events until a configuration is obtained.	
+* The Places extension now queues the events until a configuration is obtained.
 
 ## May 9, 2019
 
@@ -512,8 +572,8 @@ The following updates were made in this release:
 **iOS Places Monitor 1.0.1**
 
 * Added full unit test coverage.
-* CI integration \(CircleCI\)
-* Code coverage integration \(codecov\)
+* CI integration \(CircleCI\).
+* Code coverage integration \(codecov\).
 
 ## April 5, 2019
 
