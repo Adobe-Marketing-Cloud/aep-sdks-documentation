@@ -105,14 +105,15 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}​
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods. Add following pods in your `Podfile`  
+1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+2. Add following pods in your `Podfile`:
 
 ```objectivec
 pod 'ACPCore'
 pod 'ACPAnalytics'
 ``` ​
 
-2. Import the Analytics and Identity libraries:
+3. Import the Analytics and Identity libraries:
 
 #### Objective-C
 
@@ -160,7 +161,7 @@ ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% tab title="Android" %}
 #### Java
 
-To call the set up methods that call the `setApplication()` method in the `onCreate()` method:
+To call the set up methods that call the [setApplication()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -235,12 +236,12 @@ To automatically report on the application lifecycle details in Analytics, ensur
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the `trackAction` and `trackState` APIs from the Mobile Core extension. For more information, see [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
+To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
-`trackState` reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
+[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
 
-`trackAction` reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
+[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ## Integrations with Experience Platform solutions and services
@@ -253,9 +254,9 @@ To see the performance of your Target activities for some segments, you can set 
 
 To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
 
-### Video Analytics
+### Audio and Video Analytics
 
-For more information about collecting video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
+For more information about collecting audio and video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
 
 ## Event serialization
 
@@ -323,7 +324,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 ## Configuration keys
 
-To update the SDK configuration programmatically, use the following information to change your Analytics configuration values. For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update the SDK configuration programmatically, use the following information to change your Analytics configuration values.
 
 <table>
   <thead>
@@ -384,3 +385,54 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </tbody>
 </table>
+
+{% tabs %}
+{% tab title="Android" %}
+### update Analytics Configuration
+
+#### Example
+
+```java
+HashMap<String, Object> data = new HashMap<String, Object>();
+data.put("analytics.server", "sample.analytics.tracking.server");
+data.put("analytics.rsids", "rsid1,rsid2");
+data.put("analytics.batchLimit", 10);
+data.put("analytics.offlineEnabled", true);
+
+MobileCore.updateConfiguration(data);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### update Analytics Configuration
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.server", @"analytics.rsids":@"rsid1,rsid2", @"analytics.batchLimit":@(10), @"analytics.offlineEnabled":@YES};
+[ACPCore updateConfiguration:updatedConfig];
+```
+
+**Swift**
+
+```swift
+let updatedConfig = ["analytics.server":"sample.analytics.tracking.server", "analytics.rsids":"rsid1,rsid2", "analytics.batchLimit":10, "analytics.offlineEnabled":true]
+ACPCore.updateConfiguration(updatedConfig)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### updateConfiguration
+
+```jsx
+ACPCore.updateConfiguration({"analytics.server":"sample.analytics.tracking.server", "analytics.rsids":"rsid1,rsid2", "analytics.batchLimit":10, "analytics.offlineEnabled":true});
+```
+{% endtab %}
+{% endtabs %}
+
+
+For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
