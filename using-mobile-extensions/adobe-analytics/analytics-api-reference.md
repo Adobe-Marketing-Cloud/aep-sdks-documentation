@@ -68,7 +68,7 @@ ACPAnalytics.sendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## Clear queued hits  <a id="sendqueuedhits"></a>
+## Clear queued hits  <a id="clearqueue"></a>
 
 Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
 
@@ -130,7 +130,7 @@ ACPAnalytics.clearQueue();
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size     <a id="sendqueuedhits"></a>
+## Get the queue size     <a id="getqueuesize"></a>
 
 Retrieves the total number of Analytics hits In the tracking queue.
 
@@ -342,7 +342,7 @@ ACPAnalytics.setVisitorIdentifier("yourVisitorId");
 {% endtab %}
 {% endtabs %}
 
-## Get the custom visitor identifier
+## Get the custom visitor identifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
