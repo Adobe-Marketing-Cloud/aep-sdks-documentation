@@ -505,7 +505,7 @@ Track the intention to start playback. This starts a tracking session on the med
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `mediaInfo` | Media Information created using [createMediaObject](media-api-reference.md#create-a-media-object) method. | Yes |
+| `mediaInfo` | Media information created using the [createMediaObject](media-api-reference.md#create-a-media-object) method. | Yes |
 | `contextData` | Optional Media context data. For standard metadata keys, use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants). | No |
 
 {% tabs %}
@@ -834,7 +834,7 @@ Method to track media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using [createAdBreakObject](media-api-reference.md#create-an-adbreak-object) method.  For an `AdStart` event, the Ad information is created by using [createAdObject](media-api-reference.md#create-an-ad-object) method.  For `ChapterStart` event, the Chapter information is created by using [createChapterObject](media-api-reference.md#create-a-chapter-object) method.  This is not required for other events. |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#create-an-adbreak-object) method.  For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#create-an-ad-object) method.  For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#create-a-chapter-object) method.  This is not required for other events. |
 | `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
@@ -1175,7 +1175,7 @@ Provides the media tracker with the current QoE information. For accurate tracki
 
 | Variable Name | Description |
 | :--- | :--- |
-| `qoeObject` | Current QoE information that was created by using [createQoEObject](media-api-reference.md#create-a-qoe-object) method. |
+| `qoeObject` | Current QoE information that was created by using the [createQoEObject](media-api-reference.md#create-a-qoe-object) method. |
 
 {% tabs %}
 {% tab title="Android" %}
