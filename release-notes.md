@@ -4,6 +4,24 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 **Important:** Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided.
 
+## October 25, 2019
+
+The following updates were made in this release:
+
+**iOS Core 2.3.5**
+
+* Added the support for attach data rules consequence.
+* Added the support for boolean type comparison for `Exist` or `Not Exist` rules condition.
+
+**Android Core 1.4.5**
+
+* Added the support for attach data rules consequence.
+* Added the support for boolean type comparison for `Equals` and `Not Equals` rules condition.
+* Fixed a bug where the `Exist` and `Not Exist` rules condition may not work for a `List` or `Map` type value.
+* Fixed a bug where it might cause a crash on some Android devices when fetching remote config from Launch.
+* Fixed a bug where it might cause a crash when the data url of an activity did not contain valid schema.
+
+
 ## October 10, 2019
 
 The following updates were made in this release:
