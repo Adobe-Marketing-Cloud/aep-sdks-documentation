@@ -132,7 +132,7 @@ ACPAnalytics.clearQueue();
 
 ## Get the queue size     <a id="getqueuesize"></a>
 
-Retrieves the total number of Analytics hits In the tracking queue.
+Retrieves the total number of Analytics hits in the tracking queue.
 
 {% tabs %}
 {% tab title="Android" %}
