@@ -1,36 +1,36 @@
 # Using the Attach Data Rules Action
 
-The Attach Data rule action was added in the `Mobile Core v2.1.8` Launch extension. Attach Data is powerful and complex, and is recommended for users with advanced use cases.
+The Attach Data rule action was added in the `Mobile Core v2.1.8` Launch extension. This rule is powerful and complex and is recommended for users with advanced use cases.
 
-In order to understand how to use Attach Data, you will need a foundational knowledge on how Events flow in the SDK and the role of the SDK's Rules Engine.
+To understand how to use Attach Data, you need foundational knowledge about how Events flow in the SDK and the role of the SDK's Rules Engine.
 
-This document provides the information necessary to understand how to use Attach Data, and provides an example of how to use it.
+This document provides the information necessary to understand how to use Attach Data and provides an example of how to use it.
 
 ## SDK Events
 
 #### What is an Event?
 
-In the SDK, Events hold all of the data required by other SDK extensions to perform their necessary actions.
+In the SDK, Events hold all of the data that is required by other SDK extensions to complete their necessary actions.
 
 Events have the following defining properties:
 
-- `type` - describes what kind of Event this is. _E.g._ **Analytics**, **Target**, or **Lifecycle**.
-- `source` - indicates the cause of the Event, primarily used to indicate the directionality of the Event. _E.g._ **request** or **response**.
-- `event data` - any additional data needed to fully define the Event. _E.g._ context data on an Analytics event.
+- `type` - describes what kind of Event this is. For example, **Analytics**, **Target**, or **Lifecycle**.
+- `source` - indicates the cause of the Event that is primarily used to indicate the directionality of the Event. For example, **request** or **response**.
+- `event data` - any additional data needed to fully define the Event. For example, context data on an Analytics event.
 
-Extensions that register with the SDK will also register Event listeners. A listener is defined by an Event `type` & `source` combination. When the `event hub` processes an Event, it notifies all listeners that match its combination.
+Extensions that register with the SDK will also register Event listeners. A listener is defined by an Event `type` and `source` combination. When the `event hub` processes an Event, it notifies all listeners that match its combination.
 
 #### When are Events created in the SDK
 
-Events are created by an extension then dispatched to the `event hub` in the SDK's core. Each of the Rules created in Adobe Launch are then evaluated against the current Event. Finally, the Event is passed along to each of the listeners for Events with this `type/source` combination.
+Events are created by an extension and are then dispatched to the `event hub` in the SDK's core. Each of the Rules created in Adobe Launch are then evaluated against the current Event. Finally, the Event is passed to each of the listeners for Events with this `type/source` combination.
 
 {% hint style="important" %}
-Invoking any of the SDK's public APIs will result in an Event being created and dispatched. Attach Data use cases tend to focus on these types of Events.
+When you invoke any of the SDK's public APIs, an Event is created and dispatched. Attach Data use cases usually focus on these types of Events.
 {% endhint %}
 
 ## SDK Rules Engine
 
-The Rules Engine lives in the `event hub`. It evaluates each Rule created in Launch against the triggering Event before listeners are notified. A Rule is defined by three components:
+The Rules Engine lives in the `event hub` and, before listeners are notified, evaluates each Rule that is created in Launch against the triggering Event. A Rule is defined by three components:
 
 - `Event` - this is the trigger for the Rule.
 - `Condition` - a definition of criteria to compare against the triggering Event.
@@ -42,17 +42,17 @@ _If `Event` occurs, and `Condition(s)` are met, then do `Action`._
 
 ## What is Attach Data?
 
-Attach Data is a type of Rule Action that allows you to add Event Data to an SDK Event. The modification of data happens in the Rules Engine, before Event listeners are notified of the Event.
+Attach Data is a type of Rule Action that allows you to add Event Data to an SDK Event. The modification of data happens in the Rules Engine before Event listeners are notified of the Event.
 
 {% hint style="important" %}
-Attach Data Rule Actions will only add data to the Event, it will never modify or remove data.
+Attach Data Rule Actions will only add data to the Event, and they will never modify or remove data.
 
-If there is a conflict between the data defined in your Rule and the data in the Event, the data in the Event will always have preference.
+If there is a conflict between the data that is defined in your Rule and the data in the Event, the data in the Event will always have preference.
 {% endhint %}
 
 #### Defining a payload for Attach Data
 
-When defining a payload for Attach Data, the payload must match the format of the triggering Event. For example, if you want to add context data to an Analytics event, you need to know where the context data is defined on that event, and match the format in your rule. For this reason, it is strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you attach data. If the format does not match, it is unlikely that the expected results will be received.
+When defining a payload for Attach Data, the payload must match the format of the triggering Event. For example, if you want to add context data to an Analytics event, you need to know where the context data is defined on that event and match the format in your rule. For this reason, it is strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you attach data. If the format does not match, it is unlikely that the expected results will be received.
 
 ## An example of attaching data to an Analytics Event
 
