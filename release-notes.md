@@ -4,6 +4,16 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 **Important:** Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided.
 
+## October 25, 2019
+
+The following updates were made in this release:
+
+**Android Identity 1.1.2**
+
+- Fixed a bug where the default Experience Cloud Server hostname is now used when no value is configured in the SDK.
+- Fixed a bug where multiple custom identifiers with same idType value were synced with the Visitor ID Service.
+- Custom visitor identifiers can now be cleared from the SDK by providing a null/empty identifier value for a previously synced idType.
+
 ## October 10, 2019
 
 The following updates were made in this release:
