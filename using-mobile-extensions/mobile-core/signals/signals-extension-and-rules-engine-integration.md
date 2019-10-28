@@ -12,7 +12,11 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
+Tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is \`
+
+`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example,`
+
+`can be used in the Signal postback action, where`My Data element for ECID\` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
 The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
@@ -24,13 +28,12 @@ The `Send Postback` and `Send PII` actions allow you to specify a `URL` field an
 
 **Example**
 
-Here is an example of how to use the data that is passed to the MobileCore (Android) / ACPCore (iOS) `collectPii` API to form a token:
+Here is an example of how to use the data that is passed to the MobileCore \(Android\) / ACPCore \(iOS\) `collectPii` API to form a token:
 
 1. In the mobile application, call collectPII to fire Event with context data.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ```java
 Signal.registerExtension();
 ...
@@ -38,14 +41,12 @@ Map<String, String> data = new HashMap<String, String>();
 data.put("user_email", "user_001@example.com");
 MobileCore.collectPII(data);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
+**Objective-C Example**
 
-**Objective-C Example** 
-
-```objective-c
+```text
 [ACPSignal registerExtension];
 ...
 [ACPCore collectPii:data:@{@"user_email" : @"user_001@example.com"}];
@@ -57,23 +58,22 @@ MobileCore.collectPII(data);
 ACPSignal.registerExtension()
 ...
 let piiContextData: [String: String] = ["user_email" : "user_001@example.com"]
-ACPCore.collectPii(piiContextData) 
+ACPCore.collectPii(piiContextData)
 ```
-
 {% endtab %}
 {% endtabs %}
 
-2. In Adobe Experience Platform Launch, create a Data element for the `user_email` context data key.
+1. In Adobe Experience Platform Launch, create a Data element for the `user_email` context data key.
 
 ![Data Element Example for Collect PII context data key](../../../.gitbook/assets/data_element_example_collect_pii.png)
 
-3. In Experience Platform Launch, create a new rule for sending a postback.
+1. In Experience Platform Launch, create a new rule for sending a postback.
 
 Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following image:
 
 ![Rule example using Collect PII event and Postback action](../../../.gitbook/assets/postback_pii_token_example.png)
 
-4. Use the above data element in the Postback action.
+1. Use the above data element in the Postback action.
 
 Edit the `Send Postback` action and include the following URL in the corresponding edit box:
 

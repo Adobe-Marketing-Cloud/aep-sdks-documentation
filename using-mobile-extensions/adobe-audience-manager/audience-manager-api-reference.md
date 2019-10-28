@@ -6,7 +6,6 @@ This API registers an extension class that was derived from `ACPExtension` with 
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### registerExtension
 
 #### **Syntax**
@@ -20,11 +19,9 @@ public  static void registerExtension() throws InvalidInitException
 ```java
 Audience.registerExtension();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### registerExtension
 
 #### **Syntax**
@@ -47,11 +44,9 @@ Audience.registerExtension();
 ```swift
 ACPAudience.registerExtension()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ### registerExtension
@@ -59,7 +54,6 @@ ACPAudience.registerExtension()
 ```jsx
 ACPAudience.registerExtension();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -79,7 +73,7 @@ For more information about the UUID and other Audience Manager identifiers, see 
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
 #### **Syntax**
 
@@ -88,7 +82,6 @@ public static void signalWithData(final Map<String, String> data, final AdobeCal
 ```
 
 * `data` is the traits data for the current visitor.
-
 * `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
 #### **Example**
@@ -112,7 +105,7 @@ Audience.signalWithData(traits, visitorProfileCallback);
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
 
 #### **Syntax**
 
@@ -122,10 +115,9 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 ```
 
 * `data` is the traits data for the current visitor.
-
 * `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
-#### Examples**
+#### Examples\*\*
 
 **Objective-C**
 

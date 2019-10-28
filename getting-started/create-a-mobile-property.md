@@ -34,7 +34,7 @@ By default, this value is auto-populated using the currently signed-in Organizat
 
 c. \(Optional\) Provide your Experience Cloud ID Server.
 
-This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint.
+This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
 d. Optionally, change the **Session Timeout** value.
 
