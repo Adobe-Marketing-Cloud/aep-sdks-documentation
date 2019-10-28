@@ -8,11 +8,25 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 The following updates were made in this release:
 
+**iOS Core 2.3.5**
+
+* Added support for attach data rules consequence.
+* Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
+
+**Android Core 1.4.5**
+
+* Added support for attach data rules consequence.
+* Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
+* Fixed a bug where the `Exist` and `Not Exist` rules condition might not work for a `List` or `Map` type value.
+* Fixed a bug that, when fetching the remote config from Launch, might cause a crash on some Android devices.
+* Fixed a bug that, when the data URL of an activity did not contain valid schema, might cause a crash.
+
 **Android Identity 1.1.2**
 
 - Fixed a bug where the default Experience Cloud Server hostname is now used when no value is configured in the SDK.
 - Fixed a bug where multiple custom identifiers with same `idType` value were synced with the Visitor ID Service.
 - Custom visitor identifiers can now be cleared from the SDK by providing a null/empty identifier value for a previously synced `idType`.
+
 
 ## October 10, 2019
 
