@@ -68,7 +68,7 @@ ACPAnalytics.sendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## Clear queued hits  <a id="sendqueuedhits"></a>
+## Clear queued hits  <a id="clearqueue"></a>
 
 Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
 
@@ -130,9 +130,9 @@ ACPAnalytics.clearQueue();
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size     <a id="sendqueuedhits"></a>
+## Get the queue size     <a id="getqueuesize"></a>
 
-Retrieves the total number of Analytics hits In the tracking queue.
+Retrieves the total number of Analytics hits in the tracking queue.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -200,7 +200,7 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 ## Get the tracking identifier     <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html). 
+Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
@@ -342,13 +342,13 @@ ACPAnalytics.setVisitorIdentifier("yourVisitorId");
 {% endtab %}
 {% endtabs %}
 
-## Get the custom visitor identifier
+## Get the custom visitor identifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
 {% endhint %}
 
-Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
+This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -359,6 +359,21 @@ Sets a custom Analytics visitor identifier. For more information, see [Custom Vi
 ```java
 public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
+
+#### Example
+
+```java
+AdobeCallback<String> visitorIdentifierCallback = new AdobeCallback<String>() {
+    @Override
+    public void call(final String visitorIdentifier) {
+        // check the visitorIdentifier value    
+    }
+};
+
+Analytics.getVisitorIdentifier(visitorIdentifierCallback);
+```
+
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -370,7 +385,26 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 ```
 
-\*\*\*\*
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
+    // use returned visitorIdentifier   
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
+    // use returned visitorIdentifier
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -380,8 +414,6 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 
 ```jsx
 ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
-
 ```
 {% endtab %}
 {% endtabs %}
-
