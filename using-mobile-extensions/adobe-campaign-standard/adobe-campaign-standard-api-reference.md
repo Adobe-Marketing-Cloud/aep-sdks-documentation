@@ -47,7 +47,7 @@ NSLog(@"ACPCampaign version: %@", [ACPCampaign extensionVersion]);
 #### Example
 
 ```swift
-print("ACPCampaign version: " + ACPCampaign.extensionVersion())
+print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 ```
 {% endtab %}
 
