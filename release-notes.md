@@ -12,6 +12,24 @@ The following change was made in this release:
 
 * Added the ability to reset the `pkey`.
 
+**iOS Analytics 2.2.1**
+
+* Analytics response content events now contain two new fields:
+
+  * `hitHost`
+  * `hitUrl`
+
+  These fields contain the host and URL of the of the hit responsible for dispatching the response event.
+
+**Android Analytics 1.2.2**
+
+* Analytics response content events now contain two new fields:
+
+  * `hitHost`
+  * `hitUrl`
+
+  These fields contain the host and URL of the of the hit responsible for dispatching the response event.
+
 ## October 25, 2019
 
 The following updates were made in this release:

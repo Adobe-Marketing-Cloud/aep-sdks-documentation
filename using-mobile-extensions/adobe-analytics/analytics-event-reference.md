@@ -281,7 +281,7 @@ All of the key-value pairs are optional.
 
 ### Lifecycle request content
 
-This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart() with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart() with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) and [lifecyclePause()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
+This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart\(\) with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart\(\) with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) and [lifecyclePause\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
 
 The Analytics extension listens only to the Lifecycle Start Event, and the Analytics database queue should be paused for up to `DEFAULT_LIFECYCLE_RESPONSE_WAIT_TIMEOUT` which is `1000 \(ms\)`to wait for the corresponding response content event.
 
@@ -353,7 +353,7 @@ The Analytics extension waits for the lifecycle data and appends it to an exitin
 
 After lifecycle is enabled, the SDK tracks the application install details., which include the install date and the daily engaged/monthly engaged user badges.
 
-```Javascript
+```javascript
 {
   "lifecyclecontextdata": {
     "installevent": "InstallEvent",
@@ -484,3 +484,4 @@ Here is the definition of the key-value pairs in this event:
   "aid" : "aidValue", "vid": "vidValue"
 }
 ```
+

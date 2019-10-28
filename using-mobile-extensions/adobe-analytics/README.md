@@ -97,7 +97,7 @@ implementation 'com.adobe.marketing.mobile:analytics:1.+'
 
 #### Java
 
-2. Import the Analytics extension in your application's main activity.
+1. Import the Analytics extension in your application's main activity.
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -165,7 +165,7 @@ ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% tab title="Android" %}
 #### Java
 
-To call the set up methods that call the [setApplication()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -388,9 +388,7 @@ To update the SDK configuration programmatically, use the following information 
       </td>
     </tr>
   </tbody>
-</table>
-
-{% tabs %}
+</table>{% tabs %}
 {% tab title="Android" %}
 ### update Analytics Configuration
 
@@ -438,5 +436,5 @@ ACPCore.updateConfiguration({"analytics.server":"sample.analytics.tracking.serve
 {% endtab %}
 {% endtabs %}
 
-
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+

@@ -1,6 +1,6 @@
 # Analytics API reference
 
-## Send queued hits     <a id="sendqueuedhits"></a>
+## Send queued hits <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
 
@@ -68,7 +68,7 @@ ACPAnalytics.sendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## Clear queued hits  <a id="clearqueue"></a>
+## Clear queued hits <a id="clearqueue"></a>
 
 Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
 
@@ -130,7 +130,7 @@ ACPAnalytics.clearQueue();
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size     <a id="getqueuesize"></a>
+## Get the queue size <a id="getqueuesize"></a>
 
 Retrieves the total number of Analytics hits in the tracking queue.
 
@@ -197,7 +197,7 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 {% endtab %}
 {% endtabs %}
 
-## Get the tracking identifier     <a id="gettrackingidentifier"></a>
+## Get the tracking identifier <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
 Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
@@ -280,7 +280,7 @@ ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperi
 {% endtab %}
 {% endtabs %}
 
-## Set the custom visitor identifier    <a id="setidentifier"></a>
+## Set the custom visitor identifier <a id="setidentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
@@ -372,8 +372,6 @@ AdobeCallback<String> visitorIdentifierCallback = new AdobeCallback<String>() {
 
 Analytics.getVisitorIdentifier(visitorIdentifierCallback);
 ```
-
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -404,7 +402,6 @@ ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
     // use returned visitorIdentifier
 }
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -417,3 +414,4 @@ ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK:
 ```
 {% endtab %}
 {% endtabs %}
+
