@@ -14,11 +14,19 @@ The following change was made in this release:
 
 **iOS Analytics 2.2.1**
 
-* Analytics response content events now contain two new fields: `hitHost` and `hitUrl`. These fields contain the host and url of the of the hit responsible for dispatching the response event.
+* Analytics response content events now contain two new fields:
+  * `hitHost`
+  * `hitUrl`
+  
+  These fields contain the host and url of the of the hit responsible for dispatching the response event.
 
 **Android Analytics 1.2.2**
 
-* Analytics response content events now contain two new fields: `hitHost` and `hitUrl`. These fields contain the host and url of the of the hit responsible for dispatching the response event.
+* Analytics response content events now contain two new fields: 
+  * `hitHost`
+  * `hitUrl`
+  
+  These fields contain the host and url of the of the hit responsible for dispatching the response event.
 
 ## October 25, 2019
 
