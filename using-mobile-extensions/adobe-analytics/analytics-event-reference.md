@@ -354,7 +354,9 @@ Here is the definition of the key-value pairs in this event:
 **Forwarding the Analytics server response**
 
 ```text
-{ "analyticsserverresponse": "example response to be forwarded" }
+{ "analyticsserverresponse": "example response to be forwarded",
+"hitHost": "the sever for the analytics hit",
+"hitUrl": "the url for the analytics hit"}
 ```
 
 #### Event data example
