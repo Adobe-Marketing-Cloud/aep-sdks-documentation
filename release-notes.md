@@ -10,16 +10,16 @@ The following updates were made in this release:
 
 **iOS Core 2.3.5**
 
-* Added the support for attach data rules consequence.
-* Added the support for boolean type comparison for `Exist` or `Not Exist` rules condition.
+* Added support for attach data rules consequence.
+* Added support for a boolean-typecomparison for `Exist` or `Not Exist` rules condition.
 
 **Android Core 1.4.5**
 
-* Added the support for attach data rules consequence.
-* Added the support for boolean type comparison for `Equals` and `Not Equals` rules condition.
-* Fixed a bug where the `Exist` and `Not Exist` rules condition may not work for a `List` or `Map` type value.
-* Fixed a bug where it might cause a crash on some Android devices when fetching remote config from Launch.
-* Fixed a bug where it might cause a crash when the data url of an activity did not contain valid schema.
+* Added support for attach data rules consequence.
+* Added support for a boolean-typecomparison for `Exist` or `Not Exist` rules condition.
+* Fixed a bug where the `Exist` and `Not Exist` rules condition might not work for a `List` or `Map` type value.
+* Fixed a bug that, when fetching the remote config from Launch, might cause a crash on some Android devices.
+* Fixed a bug that, when the data URL of an activity did not contain valid schema, might cause a crash.
 
 **Android Identity 1.1.2**
 
