@@ -21,6 +21,12 @@ The following updates were made in this release:
 * Fixed a bug where it might cause a crash on some Android devices when fetching remote config from Launch.
 * Fixed a bug where it might cause a crash when the data url of an activity did not contain valid schema.
 
+**Android Identity 1.1.2**
+
+- Fixed a bug where the default Experience Cloud Server hostname is now used when no value is configured in the SDK.
+- Fixed a bug where multiple custom identifiers with same `idType` value were synced with the Visitor ID Service.
+- Custom visitor identifiers can now be cleared from the SDK by providing a null/empty identifier value for a previously synced `idType`.
+
 
 ## October 10, 2019
 
