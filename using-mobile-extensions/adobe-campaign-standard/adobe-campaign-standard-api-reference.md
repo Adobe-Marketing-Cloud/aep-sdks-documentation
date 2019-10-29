@@ -133,7 +133,7 @@ ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 
 ## Reset linkage fields
 
-Invoking `ACPCampaign::resetLinkageFields`removes the previously stored linkage fields in the SDK and triggers a Campaign rules download to fetch non-personalized messages. Personalized messages that were previously stored in the cache are erased.
+Invoking `ACPCampaign::resetLinkageFields` removes the previously stored linkage fields in the SDK and triggers a Campaign rules download to fetch non-personalized messages. Personalized messages that were previously stored in the cache are erased.
 
 {% tabs %}
 {% tab title="Android" %}
