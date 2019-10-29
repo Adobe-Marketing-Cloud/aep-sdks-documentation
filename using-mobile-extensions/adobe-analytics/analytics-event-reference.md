@@ -437,6 +437,8 @@ Here is the definition of the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `analyticsserverresponse` | String | Yes | The Analytics server response that is used for forwarding by the Audience Manager extension. |
 | `queuesize` | Long | Yes | The Analytics queue size value. |
+| `hitHost` | String | Yes | The Analytics host that was used for the Analytics hit. |
+| `hitUrl` | String | Yes | The Analytics url that was used for the Analytics hit. |
 
 #### Event data example
 
