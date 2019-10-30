@@ -104,26 +104,25 @@ import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
 
-{% tab title="iOS" %}​
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+{% tab title="iOS" %}
+​ 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 
-2. Add following pods in your `Podfile`:
+1. Add following pods in your `Podfile`:
 
 ```ruby
 pod 'ACPCore'
 pod 'ACPAnalytics'
 ```
 
-3. Import the Analytics and Identity libraries:
+1. Import the Analytics and Identity libraries:
 
 #### Objective-C
 
-```objective-c
+```text
 #import "ACPCore.h"
 #import "ACPAnalytics.h"
 #import "ACPIdentity.h"
 ```
-
 
 #### Swift
 
@@ -132,7 +131,6 @@ import ACPCore
 import ACPAnalytics
 import ACPIdentity
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -330,65 +328,48 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 To update the SDK configuration programmatically, use the following information to change your Analytics configuration values.
 
+| Key | Required | Description |
+| :--- | :--- | :--- |
+
+
+| `analytics.server` | Yes | See [Tracking Server](./#tracking-server) |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Key</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>analytics.server</code>
-      </td>
-      <td style="text-align:left">Yes</td>
-      <td style="text-align:left">See <a href="./#tracking-server">Tracking Server</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analytics.rsids</code>
-      </td>
-      <td style="text-align:left">Yes</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>analytics.rsids</code>
+      </th>
+      <th style="text-align:left">Yes</th>
+      <th style="text-align:left">
         <p>See <a href="./#report-suites">Report Suites</a>
         </p>
         <p>Multiple report suite IDs can be comma separated with no space in- between.
           For example:
           <br /><code>&quot;rsids&quot; : &quot;rsid&quot; &quot;rsids&quot; : &quot;rsid1,rsid2&quot;</code>
         </p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left"><code>analytics.batchLimit</code>
-      </td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#batch-limit">Batch Limit</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analytics.aamForwardingEnabled</code>
-      </td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#audience-manager-forwarding">Audience Manager Forwarding</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analytics.offlineEnabled</code>
-      </td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#offline-enabled">Offline Enabled</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analytics.backdatePreviousSessionInfo</code>
-      </td>
-      <td style="text-align:left">No</td>
-      <td style="text-align:left">See <a href="./#backdate-previous-session-info">Backdate Previous Session Info.</a>
-      </td>
-    </tr>
-  </tbody>
-</table>{% tabs %}
+  </thead>
+  <tbody></tbody>
+</table>| `analytics.batchLimit` | No | See [Batch Limit](./#batch-limit) |
+| :--- | :--- | :--- |
+
+
+| `analytics.aamForwardingEnabled` | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
+| :--- | :--- | :--- |
+
+
+| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
+| :--- | :--- | :--- |
+
+
+| `analytics.backdatePreviousSessionInfo` | No | See [Backdate Previous Session Info.](./#backdate-previous-session-info) |
+| :--- | :--- | :--- |
+
+
+{% tabs %}
 {% tab title="Android" %}
 ### update Analytics Configuration
 

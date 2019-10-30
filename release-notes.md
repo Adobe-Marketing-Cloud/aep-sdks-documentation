@@ -10,7 +10,7 @@ The following change was made in this release:
 
 **iOS and Android Campaign Standard 1.1.0**
 
-* Added the ability to reset the `pkey`.
+* In the Launch extension, added the ability to reset the `pkey`.
 
 **iOS Analytics 2.2.1**
 
