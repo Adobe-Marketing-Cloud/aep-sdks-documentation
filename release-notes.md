@@ -4,13 +4,18 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 **Important:** Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided.
 
-## October 29, 2019
+## October 30, 2019
 
 The following updates were made in this release:
 
 **Android Campaign 1.0.2**
 
-- Fixed a bug where full screen message interaction tracking was not working when a message was dismissed.
+- Fixed a bug where full-screen message interaction tracking was not working when a message was dismissed.
+- Added support for local notification message metrics (impression, open, and click).
+- Added support for message frequency rules (show once and until clicked) for local notification messages.
+
+**iOS Campaign 1.0.4**
+
 - Added support for local notification message metrics (impression, open, and click).
 - Added support for message frequency rules (show once and until clicked) for local notification messages.
 
