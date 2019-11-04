@@ -50,9 +50,9 @@ Attach Data Rule Actions will only add data to the Event, and they will never mo
 If there is a conflict between the data that is defined in your Rule and the data in the Event, the data in the Event will always have preference.
 {% endhint %}
 
-### Defining a payload for Attach Data
+### Defining a payload for the attach data action
 
-When defining a payload for Attach Data, the payload must match the format of the triggering Event. For example, if you want to add context data to an Analytics event, you need to know where the context data is defined on that event and match the format in your rule. For this reason, it is strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you attach data. If the format does not match, it is unlikely that the expected results will be received.
+When defining a payload for the attach data action, the payload must match the format of the triggering event. For example, if you want to add context data to an Analytics event, you will need to know where the context data is defined on that event and match the format in your rule. For this reason, it is strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you attach data. If the format does not match, it is unlikely that the expected results will be received.
 
 ## Example - attaching data to an Analytics event
 
