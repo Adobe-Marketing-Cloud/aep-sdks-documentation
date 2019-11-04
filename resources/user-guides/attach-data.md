@@ -1,4 +1,4 @@
-# Using the Attach Data Rules Action
+# Attach Data to SDK Events
 
 The _attach data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.1.8 \(iOS\) and 1.1.8 \(Android\). This action is powerful and complex and enables advanced use cases.
 

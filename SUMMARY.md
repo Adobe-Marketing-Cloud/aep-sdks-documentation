@@ -66,7 +66,7 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
-  * [Using the Attach Data Rules Action](resources/user-guides/attach-data.md)
+  * [Attach Data to SDK Events](resources/user-guides/attach-data.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
   * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
