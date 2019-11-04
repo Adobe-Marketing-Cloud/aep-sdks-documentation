@@ -1,46 +1,46 @@
 # Using the Attach Data Rules Action
 
-The Attach Data rule action was added in the `Mobile Core v2.1.8` Launch extension. This rule is powerful and complex and is recommended for users with advanced use cases.
+The _attach data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.1.8 \(iOS\) and 1.1.8 \(Android\). This action is powerful and complex and enables advanced use cases.
 
-To understand how to use Attach Data, you need foundational knowledge about how Events flow in the SDK and the role of the SDK's Rules Engine.
+To use this action, we'll provide context on how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the SDK's [rules engine](../../using-mobile-extensions/mobile-core/rules-engine/). Then, we'll show how you can use the action along with relevant examples.
 
-This document provides the information necessary to understand how to use Attach Data and provides an example of how to use it.
+## Context
 
-## SDK Events
+### What are SDK events?
 
-### What is an Event?
+In the Experience Platform Mobile SDK, events hold all data that is required by other extensions to complete their necessary actions. Events have the following properties:
 
-In the SDK, Events hold all of the data that is required by other SDK extensions to complete their necessary actions.
+| Property | Description |
+| :--- | :--- |
+| `type` | Describes the event. Example: Analytics, Target, Lifecycle, etc. |
+| `source` | Indicates cause of or directionality of the event. Example: request or response. |
+| `event data` | Additional data required to define the event. Example: context data on an Analytics event. |
 
-Events have the following defining properties:
+Extensions that register with [Mobile Core](../../using-mobile-extensions/mobile-core/) will also register event listeners. A listener is defined by an event `type` and `source` combination. When the SDK event hub processes an event, it notifies all listeners that match the provided combination.
 
-* `type` - describes what kind of Event this is. For example, **Analytics**, **Target**, or **Lifecycle**.
-* `source` - indicates the cause of the Event that is primarily used to indicate the directionality of the Event. For example, **request** or **response**.
-* `event data` - any additional data needed to fully define the Event. For example, context data on an Analytics event.
+### How are events created in the SDK?
 
-Extensions that register with the SDK will also register Event listeners. A listener is defined by an Event `type` and `source` combination. When the `event hub` processes an Event, it notifies all listeners that match its combination.
-
-### When are Events created in the SDK
-
-Events are created by an extension and are then dispatched to the `event hub` in the SDK's core. Each of the Rules created in Adobe Launch are then evaluated against the current Event. Finally, the Event is passed to each of the listeners for Events with this `type/source` combination.
+Events are created by an extension and are then dispatched to the SDK event hub. Each published rule created in Adobe Experience Platform Launch is then evaluated against the current event. Finally, the event is passed to each of the listeners for Events with this `type`/`source` combination.
 
 {% hint style="info" %}
-When you invoke any of the SDK's public APIs, an Event is created and dispatched. Attach Data use cases usually focus on these types of Events.
+Events are created and dispatched when an SDK public API is invoked. Attach data action use cases are meant to act on these types of events.
 {% endhint %}
 
-## SDK Rules Engine
+### What is the rules engine?
 
-The Rules Engine lives in the `event hub` and, before listeners are notified, evaluates each Rule that is created in Launch against the triggering Event. A Rule is defined by three components:
+The rules engine lives in aforementioned SDK event hub. Before listeners are notified, the rules engine evaluates each Launch rule against the triggering event. A rule is defined by 3 properties:
 
-* `Event` - this is the trigger for the Rule.
-* `Condition` - a definition of criteria to compare against the triggering Event.
-* `Action` - what should happen if evaluation of the Rule is positive.
+| Property | Description |
+| :--- | :--- |
+| Event | Trigger for the rule. |
+| Condition | Definition of criteria to compare against the triggering event. |
+| Action | The resulting action to happen if evaluation of rule is positive. |
 
-A rule can be read out loud like this:
+{% hint style="info" %}
+A rule may be read out loud like so: _If_ SDK _**Event** occurs_ and _**Condition\(s\)**_ are met, then perform the _**Action\(s\)**._
+{% endhint %}
 
-_If `Event` occurs, and `Condition(s)` are met, then do `Action`._
-
-## What is Attach Data?
+## Using the attach data action
 
 Attach Data is a type of Rule Action that allows you to add Event Data to an SDK Event. The modification of data happens in the Rules Engine before Event listeners are notified of the Event.
 
