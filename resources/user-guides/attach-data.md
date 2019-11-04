@@ -95,7 +95,7 @@ In the following example, **launches** and **anAddedKey** keys are added to the 
 
 ![](../../.gitbook/assets/setaction.png)
 
-### Save the Rule and rebuild your property
+### Save rule and rebuild your property
 
 After you complete your configuration, verify that your rule looks like the following:
 
