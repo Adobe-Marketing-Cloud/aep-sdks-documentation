@@ -58,8 +58,8 @@ When defining a payload for the attach data action, the payload must match the f
 
 The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#create-a-rule)\*\*\*\*
-2. [Select the **Event** you wish to trigger the rule](attach-data.md#define-the-action)
+1. [Create a new **Rule**](attach-data.md#create-a-rule)
+2. [Select the **Event** you wish to trigger the rule](attach-data.md#select-an-event)
 3. [Select the **Action** to Attach Data and define your payload](attach-data.md#define-the-action)
 4. [Save and rebuild the property](attach-data.md#save-the-rule-and-rebuild-your-property)
 
