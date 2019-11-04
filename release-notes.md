@@ -10,14 +10,14 @@ The following updates were made in this release:
 
 **Android Campaign 1.0.2**
 
-- Fixed a bug where full-screen message interaction tracking was not working when a message was dismissed.
-- Added support for local notification message metrics (impression, open, and click).
-- Added support for message frequency rules (show once and until clicked) for local notification messages.
+* Fixed a bug where full-screen message interaction tracking was not working when a message was dismissed.
+* Added support for local notification message metrics \(impression, open, and click\).
+* Added support for message frequency rules \(show once and until clicked\) for local notification messages.
 
 **iOS Campaign 1.0.4**
 
-- Added support for local notification message metrics (impression, open, and click).
-- Added support for message frequency rules (show once and until clicked) for local notification messages.
+* Added support for local notification message metrics \(impression, open, and click\).
+* Added support for message frequency rules \(show once and until clicked\) for local notification messages.
 
 ## October 28, 2019
 

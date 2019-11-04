@@ -353,11 +353,7 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.batchLimit` | No | See [Batch Limit](./#batch-limit) |
-| :--- | :--- | :--- |
-
-
-| `analytics.aamForwardingEnabled` | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
+</table>| `analytics.aamForwardingEnabled` | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
 | :--- | :--- | :--- |
 
 

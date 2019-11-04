@@ -91,6 +91,7 @@
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/README.md)
   * [Implementation](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
+  * [Implementation\(CN\)](resources/adobe-experience-platform-mini-programs-sdk/implementation-zhong-wen-1.md)
 
 ## BETA
 
@@ -98,3 +99,4 @@
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
+
