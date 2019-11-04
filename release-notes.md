@@ -89,9 +89,15 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
+**iOS Mobile Services 1.0.3**
+
+* Full-screen messages now use `WKWebViews` from the `WebKit.framework`.
+* Local notifications now use the `UserNotifications` framework.
+* Fixed a crash that might happen when the **Click-Through** or the **Cancel** button in the Full-screen message was clicked more than once.
+
 **Android Analytics 1.2.1**
 
-* Fixed a bug where the Analytics database was being modified by multiple threads on startup.
+* Fixed a bug where, on start up, the Analytics database was being modified by multiple threads.
 
 ## October 4, 2019
 
