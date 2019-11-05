@@ -24,7 +24,7 @@ Events are created by an extension and are then dispatched to the SDK event hub.
 
 {% hint style="info" %}
 Events are created and dispatched when an SDK public API is invoked. Attach data action use cases are meant to act on these types of events.
-{% endhint %}
+{% endhint %} 
 
 ### What is the rules engine?
 
