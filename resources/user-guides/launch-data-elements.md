@@ -6,11 +6,17 @@ A data element is a variable where the value can be mapped to data within the Ex
 
 Use data elements as widely as possible throughout rule creation to consolidate the definition of dynamic data. You define data elements once, and use them in multiple places. The concept of reusable data elements if very powerful and you should use them as a best practice.
 
-Data elements are populated with data when they are processed within the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). To use data elements, at a high level:
+Data elements are populated with data when they are processed within the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). To use data elements, at a high level you can follow these steps:
 
 1. Create a data element.
 2. Use the data element when defining a rule.
-3. [Publish](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html) your property, which publishes the rules JSON and make it available for download by your applications.
+3. [Publish](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html) your property, which publishes the rules JSON and make it available for download by your application(s).
+
+{% hint style="info" %}
+
+When a new Extension is added to your property, new data elements may become available to use. You will need to repeat the steps above to create new data elements in order to use them when creating new rules.
+
+{% endhint %}
 
 ## Create a data element
 
@@ -62,13 +68,13 @@ Here is an example which creates a rule to send a postback containing the Experi
 
 5. Add an Action configuration. 
 
-   Select Extension *Mobile Core* and Action Type *Send Postback*. In the "URL" text box, add a sample URL, for example *https://my.company.com/launch?ecid=*. Click the cylinder icon ![cylinder icon](../../.gitbook/assets/data-elements-cylinder.png) and select the ECID data element which adds a token for the data element by the cursor in the text box. When the rule is triggered, the token is replaced by the ECID value for that application.
+   Select Extension *Mobile Core* and Action Type *Send Postback*. In the "URL" text box, add a sample URL, for example *https://my.company.com/launch?ecid=*. Click the cylinder icon ![cylinder icon](../../.gitbook/assets/data-elements-cylinder.png) and select the ECID data element which adds a token for the data element by the cursor in the text box. When the rule is triggered, the token is replaced by the unique ECID value for the current user.
 
    ![action configuration](../../.gitbook/assets/data-elements-action-configuration.png)
 
 6. Click Save.
 
-Once the property is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-configuration), this new rule is made available for download by applications [configured for this property](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk#configure-the-sdk-with-an-environment-id). When the application launches, this rule is triggered and will send a postback to the URL which includes the ECID, provided the ECID exists.
+Once the property is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-configuration), this new rule is made available for download by applications [configured for this property](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk#configure-the-sdk-with-an-environment-id). When the application launches, this rule is triggered and, if the ECID exists in the SDK, a postback is sent to the URL with the included ECID value.
 
 ## See also
 
