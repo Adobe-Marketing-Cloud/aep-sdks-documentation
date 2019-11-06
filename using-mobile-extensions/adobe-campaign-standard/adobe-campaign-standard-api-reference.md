@@ -13,7 +13,7 @@ To return the current version of the ACPCampaign extension, use the following AP
 
 #### Syntax
 
-```objectivec
+```java
 public String extensionVersion()
 ```
 
