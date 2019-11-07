@@ -53,5 +53,9 @@ This client-side, SDK upgrade does not affect marketing campaigns that are in pr
 ## Additional information
 
 * See [Experience Cloud vs. 4x SDK functionality comparison](aepvs4x.md)
-* Visit and ask questions on our [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to get quick, thorough responses
+
+## Get help
+
+* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
+* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
 

@@ -127,10 +127,12 @@ Debug logging is optional and helps you ensure that the SDK is working as intend
 | Debug | In addition to detail from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
 | Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information about how SDK processes database interactions and SDK events. |
 
-To enable debug logging:
+To enable debug logging, use the following methods:
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
+
 ```java
 MobileCore.setLogLevel(LoggingMode.DEBUG);
 // MobileCore.setLogLevel(LoggingMode.VERBOSE);
@@ -139,16 +141,18 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
+### Objective-C
+
 ```objectivec
 [ACPCore setLogLevel:ACPMobileLogLevelDebug];
 // [ACPCore setLogLevel:ACPMobileLogLevelVerbose];
 // [ACPCore setLogLevel:ACPMobileLogLevelWarning];
 // [ACPCore setLogLevel:ACPMobileLogLevelError];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+### Swift
+
 ```swift
 ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 // ACPCore.setLogLevel(ACPMobileLogLevel.verbose)
@@ -158,7 +162,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 {% endtab %}
 
 {% tab title="React Native" %}
-Enable and control the log level of the SDK
+### Javascript
 
 ```jsx
 import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -185,6 +189,8 @@ The following code snippets demonstrate how to initialize the SDK when using the
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
+
 ```java
 try {
     Identity.registerExtension();
@@ -199,6 +205,8 @@ try {
 {% endtab %}
 
 {% tab title="Objective-C" %}
+### Objective-C
+
 ```objectivec
 [ACPIdentity registerExtension];
 [ACPLifecycle registerExtension];
@@ -206,9 +214,9 @@ try {
 [ACPAnalytics registerExtension];
 [ACPCore start:nil];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+### Swift
+
 ```swift
 ACPIdentity.registerExtension()
 ACPLifecycle.registerExtension()
@@ -583,8 +591,10 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 ### trackAction
+
+### Objective-C
 
 #### Syntax
 
@@ -597,10 +607,8 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```c
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
-### trackAction
+### Swift
 
 #### Syntax
 
