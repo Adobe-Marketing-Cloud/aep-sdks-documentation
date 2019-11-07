@@ -51,6 +51,12 @@ Implementing both SDKs is not recommended or supported.
 
 The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
 
+### What OS versions are supported?
+
+* Android versions 4.0 or later (API levels 14 or later)
+* iOS versions 10 or later
+* React Native versions 0.44.0 or later
+
 ### **How "big" is the SDK?**
 
 | Extension | iOS  \(KB\) | Android \(KB\) |
