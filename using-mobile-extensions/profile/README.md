@@ -18,6 +18,8 @@ To get started with the Profile extension:
 
 To add the Profile extension to your app:
 
+{% tabs %}
+{% tab title="Android" %}
 ### Java
 
 1. Add the `UserProfile` library to your project using the app's gradle file.
@@ -26,7 +28,9 @@ To add the Profile extension to your app:
    ```text
    import com.adobe.marketing.mobile.*;
    ```
+{% endtab %}
 
+{% tab title="iOS" %}
 ### Objective-C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
@@ -43,8 +47,10 @@ To add the Profile extension to your app:
    import ACPCore
    import ACPUserProfile
 ```
+{% endtab %}
+{% endtabs %}
 
-## Register the Profile extension
+## Register the extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -88,8 +94,6 @@ public class MobileApp extends Application {
   return YES;
 }
 ```
-
-### Swift
 {% endtab %}
 {% endtabs %}
 
