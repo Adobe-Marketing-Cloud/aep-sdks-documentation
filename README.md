@@ -1,3 +1,7 @@
+---
+description: Welcome to the Adobe Experience Platform Mobile SDK official documentation.
+---
+
 # Home
 
 ## Introduction
