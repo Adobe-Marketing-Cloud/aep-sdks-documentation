@@ -8,3 +8,8 @@ To get started, select an extension:
 * Set up [Adobe Audience Manager](../using-mobile-extensions/adobe-audience-manager/)
 * Set up [Adobe Target](../using-mobile-extensions/adobe-target/)
 
+## Get help
+
+* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
+* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+
