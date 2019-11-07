@@ -651,8 +651,10 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 ### trackState
+
+### Objective-C
 
 #### Syntax
 
@@ -665,10 +667,8 @@ MobileCore.trackState("homePage", additionalContextData);
 ```c
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
-### trackState
+### Swift
 
 #### Syntax
 
