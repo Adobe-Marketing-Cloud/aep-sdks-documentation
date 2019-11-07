@@ -2,7 +2,7 @@
 
 ## Get the extension version
 
-To return the current version of the ACPCampaign extension, use the following APIs:
+To return the current version of the Campaign extension, use the following APIs:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -65,7 +65,7 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ## Set linkage fields
 
-Linkage fields allow Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. After invoking the `ACPCampaign::setLinkageFields` API, template-based messages that contain PII-based profile personalization are downloaded. To retrieve these personalized messages, the linkage fields are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header, `X-InApp-Auth`, in all future Campaign rules download requests until `ACPCampaign::resetLinkageFields` is invoked. The linkage fields are cleared when the app is gracefully closed, crashes, or when the privacy status is changed to opt out. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+Linkage fields allow Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. After invoking the `setLinkageFields` API, template-based messages that contain PII-based profile personalization are downloaded. To retrieve these personalized messages, the linkage fields are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header, `X-InApp-Auth`, in all future Campaign rules download requests until `resetLinkageFields` is invoked. The linkage fields are cleared when the app is gracefully closed, crashes, or when the privacy status is changed to opt out. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -133,7 +133,7 @@ ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 
 ## Reset linkage fields
 
-Invoking `ACPCampaign::resetLinkageFields` removes the previously stored linkage fields in the SDK and triggers a Campaign rules download to fetch non-personalized messages. Personalized messages that were previously stored in the cache are erased.
+Invoking `resetLinkageFields` removes the previously stored linkage fields in the SDK and triggers a Campaign rules download to fetch non-personalized messages. Personalized messages that were previously stored in the cache are erased.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -190,7 +190,7 @@ ACPCampaign.resetLinkageFields();
 
 ## Set up push messaging
 
-To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM) must be sent to the Adobe Identity service by calling `ACPCore::setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
+To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM) must be sent to the Adobe Identity service by calling `setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc.
 For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see https://firebase.google.com/docs/cloud-messaging/android/client..
@@ -275,7 +275,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ## Tracking push or local notification message interactions
 
-User interactions with local or push notifications can be tracked by invoking the `ACPCore::CollectMessageInfo` API. After the API is invoked, a network request will be made to Campaign containing the message interaction event. For more info on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). 
+User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request will be made to Campaign containing the message interaction event. For more info on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). 
 
 {% tabs %}
 {% tab title="Android" %}
