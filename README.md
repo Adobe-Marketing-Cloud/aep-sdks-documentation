@@ -35,8 +35,3 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 * [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
 * [Frequently asked questions](resources/frequently-asked-questions/)
 
-## Get help
-
-* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
-
