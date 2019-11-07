@@ -189,6 +189,8 @@ The following code snippets demonstrate how to initialize the SDK when using the
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
+
 ```java
 try {
     Identity.registerExtension();
@@ -203,6 +205,8 @@ try {
 {% endtab %}
 
 {% tab title="Objective-C" %}
+### Objective-C
+
 ```objectivec
 [ACPIdentity registerExtension];
 [ACPLifecycle registerExtension];
@@ -210,9 +214,9 @@ try {
 [ACPAnalytics registerExtension];
 [ACPCore start:nil];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+### Swift
+
 ```swift
 ACPIdentity.registerExtension()
 ACPLifecycle.registerExtension()
