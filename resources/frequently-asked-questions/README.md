@@ -109,3 +109,8 @@ A launch is measured by the SDK when a user opens the app for the first time or 
 
 Yes. To capture data in multiple report suites, see [Report Suites](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#report-suites).
 
+## Get help
+
+* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
+* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+

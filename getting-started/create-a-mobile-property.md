@@ -76,3 +76,8 @@ Testing can be done using the configuration in the Development environment. The 
 * To learn more about getting access to Launch, see [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 * To learn more about Experience Platform Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 
+## Get help
+
+* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
+* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+
