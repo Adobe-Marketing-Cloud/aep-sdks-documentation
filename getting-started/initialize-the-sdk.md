@@ -591,8 +591,10 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 ### trackAction
+
+### Objective-C
 
 #### Syntax
 
@@ -605,10 +607,8 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```c
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
-### trackAction
+### Swift
 
 #### Syntax
 
