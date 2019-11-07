@@ -1,4 +1,4 @@
-# Implementation - English
+# Implementation
 
 The following instructions will help you implement the Adobe Experience Platform SDK in your WeChat Mini Programs.
 
