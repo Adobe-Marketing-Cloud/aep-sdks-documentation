@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Home](README.md)
 * [Release notes](release-notes.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 
