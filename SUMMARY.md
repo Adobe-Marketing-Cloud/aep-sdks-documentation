@@ -90,8 +90,8 @@
   * [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/README.md)
-  * [Implementation](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
-  * [Implementation\(CN\)](resources/adobe-experience-platform-mini-programs-sdk/implementation-zhong-wen-1.md)
+  * [Implementation - English](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
+  * [Implementation - 中文–简体](resources/adobe-experience-platform-mini-programs-sdk/implementation-zhong-wen-1.md)
 
 ## BETA
 

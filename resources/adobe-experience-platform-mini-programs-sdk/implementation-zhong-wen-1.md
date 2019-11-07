@@ -1,6 +1,6 @@
-# Implementation\(CN\)
+# Implementation - 中文–简体
 
-本文旨在介绍如何在微信小程序中使用Adobe Experience Platform SDK。
+本文旨在介绍如何在微信小程序中使用Adobe Experience Platform SDK.
 
 ## 添加小程序SDK到项目中
 
@@ -39,7 +39,7 @@ const AdobeSDK = require('AdobeSDK.js');
 ```
 
 {% hint style="info" %}
-如果在上述配置中将`analytics.offlineEnabled`配置为True，那么向Analytics发出的请求中会包含timestamps\(ts\)。
+如果在上述配置中将`analytics.offlineEnabled`配置为True，那么向Analytics发出的请求中会包含timestamps\(ts\).
 
 `session.timeout`这个配置的单位是秒，指的是从App初始化完成开始，到一个新的session之间所经过的时间。这个timeout时间在小程序进入后台，之后被重新激活进入前台运行的场景下同样适用。该配置的缺省值是30秒。
 {% endhint %}
