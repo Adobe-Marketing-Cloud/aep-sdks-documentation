@@ -2,28 +2,27 @@
 
 ## Key definitions
 
-* An Asset is an opaque data blob that is needed by a specific consequence.
 * A condition is a boolean equation that evaluates to `true` or `false`.
-* A consequence is the action to be performed when the condition\(s\) evaluates to `true`.
+* A consequence is the action to be performed when the trigger is met and the condition\(s\) evaluates to `true`.
 * A rule is a set of conditions and the associated consequence\(s\).
+* A triggering event is the event that started the rule evaluation. The Adobe Experience Platform Mobile SDK evaluates each rule configured in Adobe Launch for the current event processed by the Event Hub.
+* Rules engine is the system that processes the mobile rules configured in Adobe Launch and triggers the associated actions if the conditions are met.
+* An Asset is an opaque data blob that is needed by a specific consequence.
+
+## Rules delivery
+
+Rules delivery occurs by using a network request from the Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The rules file for each mobile property is hosted on https://assets.adobedtm.com.
+
+This request is a conditional `GET` and occurs by default at the start of each new application session. This means that if there are any changes in Adobe Launch for the set of rules configured for a mobile property, those changes will be picked up by the Experience Platform SDK in the next session or after the application is restarted.
 
 ## File format
 
 Rules and their associated assets are delivered as a standard ZIP archive, which uses the following format:
 
-* `/`
-* `rules.json`
-* `assets /`
-* `(asset)`
-* `(asset)`
-
-## File delivery
-
-File delivery occurs by using a request from the Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The SDKs support token expansions on this endpoint, which allows the injection of ECIDs and property IDs in the request.
-
-This request is a conditional `GET` and occurs by default at the start of each new application session.
-
-### rules.json format
+- `rules.json`
+- `assets /`
+  - `(asset)`
+  - `(asset)`
 
 The `rules.json` consists of a root-level JSON object that contains the following elements:
 
@@ -49,8 +48,8 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 | **Friendly Name** | **Key Value** | **Value Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Condition Type | `type` | string | `"type":"group"` | Indicates the type of the current condition.   The value must be a valid string from the Condition Types. |
-| Definition | `definition` | object | `"definition": { "logic" : "and", "conditions" : [...] }` | Defines how the condition should be evaluated.   The contents of this object will be different depending on the condition type. |
+| Condition Type | `type` | string | `"type":"group"` | Indicates the type of the current condition. The value must be a valid string from the [Condition types](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#condition-types). |
+| Definition | `definition` | object | `"definition": { "logic" : "and", "conditions" : [...] }` | Defines how the condition should be evaluated. The contents of this object will be different depending on the condition type. |
 
 ### Condition types
 
@@ -59,16 +58,22 @@ A Group condition contains an array of conditions, which makes the conditions in
 | Group | `group` | This condition is a container, that holds additional conditions, and the logical evaluator that is used to process those conditions. |
 | Matcher | `matcher` | This condition holds the key, matcher type, and value that should be evaluated. |
 
-### Definition object \(Condition type = "group"\)
+### Definition object 
+
+#### Group condition type
 
 | **Friendly Name** | **Key Value** | **Value Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
 | Logic Type | `logic` | string | `"logic":"and"` | Must be a valid Logic Type. Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
 | Conditions | `conditions` | array | `"conditions":[...]` | An array of Condition objects. |
 
-### Definition object \(Condition type = "matcher"\)
+#### Matcher condition type
 
-**Tip**: The keys used here are different than those used for in-app message matchers.
+{% hint style="info" %}
+
+The keys used here are different than those used for in-app message matchers.
+
+{% endhint %}
 
 | **Friendly Name** | **Key** | **Value Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
@@ -102,9 +107,9 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 ### Matching and retrieving values by keys
 
-By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are some special key prefixes that can cause the values to be sourced from other locations known to the Experience Platform SDKs.
+By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are some special key prefixes that can cause the values to be sourced from other locations known to the Experience Platform SDKs. 
 
-To avoid collisions, special key prefixes always start with `~` to differentiate them from the standard event key names.
+To avoid collisions, special key prefixes always start with `~` (tilde) to differentiate them from the standard event key names.
 
 | **Key Prefix** | **Example** | **Description** |
 | :--- | :--- | :--- |
@@ -194,28 +199,79 @@ Here is the example:
 
 ## Consequence object definition
 
-The consequences section of a rule lists the file names of each consequence object that should be performed when the condition for that rule evaluates to `true`.
+The consequences section of a rule lists the file names of each consequence object that should be performed when all the conditions for that rule evaluate to `true`.
 
 | **Friendly Name** | **Key    Value** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Identifier | `id` | string | String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence Type | `type` | string | A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
-| Consequence Details | `detail` | object | JSON object that contains the details that are necessary to perform a consequence of the given type. |
+| Identifier | `id` | string | (Required) String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
+| Consequence Type | `type` | string | (Required) A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
+| Consequence Details | `detail` | object | (Required) JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence types
 
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
-| Analytics | `an` | Sends data to Analytics |  |
-| In-App Message | `iam` | In-App Message | In-App Consequence Detail Definition |
-| Postback | `pb` | Send Postback\(s\) | Postback Consequence Detail Definition |
-| PII | `pii` | Sync PII | Sync PII Consequence Detail Definition |
-| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | Open URL Consequence Detail Definition |
-| Callback | `cb` | Calls a customer-defined method. |  |
-| Target | `tar` | Send a request to Target with location information to enrich the user's profile. |  |
-| Audience Manager | `aam` | Send a request to Audience Manager with location information to enrich the user's profile. |  |
-| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | Profile Consequence Detail Definition |
-| Generate Event | `event` | Generate a raw event on the event hub. |  |
+| Analytics | `an` | Sends data to Analytics | Analytics event consequence detail definition |
+| In-App Message | `iam` | In-App Message | In-App consequence detail definition |
+| Postback | `pb` | Send Postback\(s\) | Postback consequence detail definition |
+| PII | `pii` | Sync PII | Sync PII consequence detail definition |
+| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | Open URL consequence detail definition |
+| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | Profile consequence detail definition |
+| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | Attach data consequence detail definition |
+
+### Consequence detail definition 
+
+#### Analytics consequence
+
+| Friendly name   | Key          | Type   | Description                                                  |
+| --------------- | ------------ | ------ | ------------------------------------------------------------ |
+| Action          | action       | string | (Optional) If provided, this value will be used as the action parameter in a trackAction call. |
+| State/Page Name | state        | string | (Optional) If provided, this value will be used as the state parameter in a trackState call. |
+| Context Data    | context data | object | (Optional) Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth, containing <string, string> key-value pairs. |
+
+#### In-App message consequence
+
+| Friendly name              | Key          | Type   | Description                                                  |
+| -------------------------- | ------------ | ------ | ------------------------------------------------------------ |
+| In-App template            | template     | string | *(Required)* Determines the display method of the in-app message. Currently supported types are: fullscreen, alert and local. |
+| Fullscreen message content | html         | string | *(Required for fullscreen-type messages)* Filename of the HTML content to load for a fullscreen in-app message. This file will be sourced from the same zip file the consequence was retrieved from, within the assets/ folder. The base path (assets/) should not be included in this value. |
+| Remote assets              | remoteAssets | array  | *(Optional, only used by fullscreen-type messages)* Array of strings of remote assets that should be cached by the client. These should be full-url strings with HTTPS transport. |
+| Message title              | title        | string | *(Required for alert message type)* String defining the title of the alert message. |
+| Message content            | content      | string | *(Required for alert and local type messages)* String defining the content of the alert or local notification. |
+| Confirm button text        | confirm      | string | *(Optional, only used by alert messages)* String defining the text on the 'confirm' button in the OS-operated dialog. |
+| Cancel button text         | cancel       | string | *(Required for alert message type)* String defining the text for the 'cancel' button in the OS-operated dialog. |
+| Confirmation URL           | url          | string | *(Optional, only used by alert messages in conjunction with 'confirm' key)* String defining the URL to trigger if the confirm button of an alert dialog is triggered. Typically used for deep-linking type scenarios, but can be used to trigger external sites and apps. |
+| Wait time                  | wait         | number | *(Optional, only used by local notification message type)* Total number of seconds to delay the triggering of a local notification. Defaults to 0 (immediate). If a `date` is also provided in this detail, the wait field is ignored. |
+| Fire date                  | date         | number | *(Optional, only used by local notification message type)* Represented as number of seconds since epoch, this field indicates a specific time to deliver this local notification. If provided, this field has precedence over the `wait` field. |
+| Deep link                  | adb_deeplink | string | *(Optional, only used by local notification message type)* Deep link URL to attach to the payload of the notification, allowing users who click-through the notification to be redirected to the provided url. |
+| Custom user data           | userData     | object | *(Optional, only used by local notification message type)* A custom dictionary of <key, value> pairs that will be attached to the payload of the notification. |
+| Category                   | category     | string | *(Optional, only used by local notification message type)* A category ID for this notification. |
+| Sound                      | sound        | string | *(Optional, only used by local notification message type)* The name of a custom sound to use when this notification is delivered. |
+
+#### Postback consequence
+
+| Friendly name      | Key          | Type   | Description                                                  |
+| ------------------ | ------------ | ------ | ------------------------------------------------------------ |
+| Description URL    | templateurl  | string | *(Required)* Destination URL that the postback signal will be sent to. |
+| Request body       | templatebody | string | *(Optional)* A string containing the post-body to be sent. If this value exists, the postback will be sent as a POST instead of a GET request. Note: The string should be appropriately json escaped if needed. |
+| Content type       | contenttype  | string | *(Optional)* If this value exists the postback will be sent as a POST instead of a GET request. If not supplied but a request body is found, the default will be `application/x-www-form-urlencoded` |
+| Connection timeout | timeout      | number | *(Optional)* Timeout for postback connection in seconds. The default value is 2 seconds. |
+
+#### Sync PII consequence
+
+
+
+#### Open URL consequence
+
+#### Profile consequence
+
+#### Attach data consequence
+
+| Friendly name | Key       | Type   | Description                                                  |
+| ------------- | --------- | ------ | ------------------------------------------------------------ |
+| Event data    | eventdata | object | *(Required)* Dictionary of <key, value> pairs to overlay on the triggering Event's EventData. |
+
+
 
 ## rules.json examples
 
@@ -394,4 +450,6 @@ The Adobe Experience Platform SDKs process the URLs based on the order in which 
 | Key | Description |
 | :--- | :--- |
 | `rules.url` | URL that points to the remote file location that contains the rules that were configured for the SDK. |
+
+
 
