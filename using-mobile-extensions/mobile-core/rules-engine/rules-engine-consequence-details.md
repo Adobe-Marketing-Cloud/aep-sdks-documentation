@@ -4,6 +4,8 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 
 ## Analytics consequence
 
+This rule consequence is currently handled by the Adobe Analytics mobile extension.
+
 | Friendly name   | Key          | Type   | Description                                                  |
 | --------------- | ------------ | ------ | ------------------------------------------------------------ |
 | Action          | action       | string | *(Optional)* If provided, this value will be used as the action parameter in a trackAction call. |
@@ -11,6 +13,8 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 | Context data    | context data | object | *(Optional)* Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth, containing <string, string> key-value pairs. |
 
 ## In-App message consequence
+
+This rule consequence is currently handled by the Adobe Campaign mobile extension.
 
 | Friendly name              | Key          | Type   | Description                                                  |
 | -------------------------- | ------------ | ------ | ------------------------------------------------------------ |
@@ -31,6 +35,8 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 
 ## Postback consequence
 
+This rule is currently handled by the Adobe Signal mobile extension.
+
 | Friendly name      | Key          | Type   | Description                                                  |
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
 | Description URL    | templateurl  | string | *(Required)* Destination URL that the postback signal will be sent to. |
@@ -39,6 +45,8 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 | Connection timeout | timeout      | number | *(Optional)* Timeout for network connection in seconds. The default value is 2 seconds. |
 
 ## Sync PII consequence
+
+This rule is currently handled by the Adobe Signal mobile extension.
 
 | Friendly name      | Key          | Type   | Description                                                  |
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
@@ -49,11 +57,15 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 
 ## Open URL consequence
 
+This rule is currently handled by the Adobe Signal mobile extension.
+
 | Friendly name | Key  | Type   | Description                                                  |
 | ------------- | ---- | ------ | ------------------------------------------------------------ |
 | URL           | url  | string | *(Required)* URL that will be opened by the target platform. This may be a URL for a website, or a deeplink to an app. |
 
 ## Profile consequence
+
+This rule is currently handled by the Adobe User profile mobile extension.
 
 | Friendly name             | Key       | Type             | Description                                                  |
 | ------------------------- | --------- | ---------------- | ------------------------------------------------------------ |
@@ -62,6 +74,8 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 | Device-size profile value | value     | string or number | *(Required for write operations)* New value to write to key. |
 
 ## Attach data consequence
+
+This rule is currently handled by the Adobe Core mobile extension.
 
 | Friendly name | Key       | Type   | Description                                                  |
 | ------------- | --------- | ------ | ------------------------------------------------------------ |
