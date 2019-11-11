@@ -17,14 +17,7 @@ This request is a conditional `GET` and occurs by default at the start of each n
 
 ## File format
 
-Rules and their associated assets are delivered as a standard ZIP archive, which uses the following format:
-
-- `/rules.json`
-- `/assets/`
-  - `(asset)`
-  - `(asset)`
-
-The `rules.json` consists of a root-level JSON object that contains the following elements:
+Rules are delivered as a standard ZIP archive, which contain a `rules.json` file inside. This file consists of a root-level JSON object that contains the following elements:
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -385,7 +378,7 @@ Rules Engine requires an endpoint URL to be configured in the remote configurati
 }
 ```
 
-The Adobe Experience Platform SDKs process the URL that points to a zipped rules collection that contains a `rules.json` file, an asset folder that contains images, and HTMLs that are used by the rules. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
+The Adobe Experience Platform SDKs process the URL that points to a zipped rules collection that contains a `rules.json` file. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
 
 ## Configuration keys
 

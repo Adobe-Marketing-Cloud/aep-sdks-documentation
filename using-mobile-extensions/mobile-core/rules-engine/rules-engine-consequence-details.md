@@ -4,7 +4,7 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 
 ## Analytics consequence
 
-This rule consequence is currently handled by the Adobe Analytics mobile extension.
+This rule consequence is currently handled by the [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) mobile extension.
 
 | Friendly name   | Key          | Type   | Description                                                  |
 | --------------- | ------------ | ------ | ------------------------------------------------------------ |
@@ -14,7 +14,7 @@ This rule consequence is currently handled by the Adobe Analytics mobile extensi
 
 ## In-App message consequence
 
-This rule consequence is currently handled by the Adobe Campaign mobile extension.
+This rule consequence is currently handled by the [Adobe Campaign](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) mobile extension.
 
 | Friendly name              | Key          | Type   | Description                                                  |
 | -------------------------- | ------------ | ------ | ------------------------------------------------------------ |
@@ -35,7 +35,7 @@ This rule consequence is currently handled by the Adobe Campaign mobile extensio
 
 ## Postback consequence
 
-This rule is currently handled by the Adobe Signal mobile extension.
+This rule is currently handled by the [Adobe Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) mobile extension.
 
 | Friendly name      | Key          | Type   | Description                                                  |
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
@@ -46,7 +46,7 @@ This rule is currently handled by the Adobe Signal mobile extension.
 
 ## Sync PII consequence
 
-This rule is currently handled by the Adobe Signal mobile extension.
+This rule is currently handled by the [Adobe Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) mobile extension.
 
 | Friendly name      | Key          | Type   | Description                                                  |
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
@@ -57,7 +57,7 @@ This rule is currently handled by the Adobe Signal mobile extension.
 
 ## Open URL consequence
 
-This rule is currently handled by the Adobe Signal mobile extension.
+This rule is currently handled by the [Adobe Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) mobile extension.
 
 | Friendly name | Key  | Type   | Description                                                  |
 | ------------- | ---- | ------ | ------------------------------------------------------------ |
@@ -65,17 +65,17 @@ This rule is currently handled by the Adobe Signal mobile extension.
 
 ## Profile consequence
 
-This rule is currently handled by the Adobe User profile mobile extension.
+This rule is currently handled by the [Adobe Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) mobile extension.
 
 | Friendly name             | Key       | Type             | Description                                                  |
 | ------------------------- | --------- | ---------------- | ------------------------------------------------------------ |
-| Operation to perform      | operation | string           | *(Required)* Determines the type of operation to be performed on the profile. The supported operations are: <br/>- *write*: saves `value` into given `key` in shared state and local profile. If an associated value for key already exists, the existing value will be overwritten. <br/> - *delete*: removes `key` from User Profile shared state and from local profile. |
-| Device-side profile key   | key       | string           | *(Required)* Key within the device-side profile to perform the requested operation on. <br/>Note: This key will be accessible later through the shared state from the User Profile extension. For more details, see [User profile shared state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile/profiles-event-reference#shared-state). |
+| Operation to perform      | operation | string           | *(Required)* Determines the type of operation to be performed on the profile. The supported operations are: <br/>- *write*: saves `value` into given `key` in shared state and local profile. If an associated value for key already exists, the existing value will be overwritten. <br/> - *delete*: removes `key` from Profile shared state and from local profile. |
+| Device-side profile key   | key       | string           | *(Required)* Key within the device-side profile to perform the requested operation on. <br/>Note: This key will be accessible later through the shared state from the Profile extension. For more details, see [User profile shared state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile/profiles-event-reference#shared-state). |
 | Device-size profile value | value     | string or number | *(Required for write operations)* New value to write to key. |
 
 ## Attach data consequence
 
-This rule is currently handled by the Adobe Core mobile extension.
+This rule is currently handled by the [Adobe Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) mobile extension.
 
 | Friendly name | Key       | Type   | Description                                                  |
 | ------------- | --------- | ------ | ------------------------------------------------------------ |
