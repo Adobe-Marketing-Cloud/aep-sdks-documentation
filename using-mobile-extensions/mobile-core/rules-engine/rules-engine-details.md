@@ -28,15 +28,15 @@ The `rules.json` consists of a root-level JSON object that contains the followin
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Version | `version` | number | \(Required\) Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
-| Rules | `rules` | array | \(Required\) An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
+| Version | `version` | number | *(Required)* Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
+| Rules | `rules` | array | *(Required)* An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
 
 ## Rule object definition
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | `condition` | object | **\(**Required\) Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition) |
-| Action | `consequences` | array | \(Required\) Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Condition | `condition` | object | *(Required)* Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition) |
+| Action | `consequences` | array | *(Required)* Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 
 ## Condition object definition
 
@@ -48,7 +48,7 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 | **Friendly name** | **Key** | **Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Condition Type | `type` | string | `"type":"group"` | Indicates the type of the current condition. The value must be a valid string from the [Condition types](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#condition-types). |
+| Condition type | `type` | string | `"type":"group"` | Indicates the type of the current condition. The value must be a valid string from the [Condition types](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#condition-types). |
 | Definition | `definition` | object | `"definition": { "logic" : "and", "conditions" : [...] }` | Defines how the condition should be evaluated. The contents of this object will be different depending on the condition type. |
 
 ### Condition types
@@ -64,7 +64,7 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 | **Friendly name** | **Key** | **Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Logic Type | `logic` | string | `"logic":"and"` | Must be a valid Logic Type. Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
+| Logic type | `logic` | string | `"logic":"and"` | Must be a valid Logic Type. Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
 | Conditions | `conditions` | array | `"conditions":[...]` | An array of Condition objects. |
 
 #### Matcher condition type
@@ -201,11 +201,11 @@ Here is the example:
 
 The consequences section of a rule lists the file names of each consequence object that should be performed when all the conditions for that rule evaluate to `true`.
 
-| **Friendly name** | **Key  ** | **Type** | **Description** |
+| **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Identifier | `id` | string | (Required) String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence Type | `type` | string | (Required) A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
-| Consequence Details | `detail` | object | (Required) JSON object that contains the details that are necessary to perform a consequence of the given type. |
+| Identifier | `id` | string | *(Required)* String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
+| Consequence type | `type` | string | *(Required)* A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
+| Consequence details | `detail` | object | *(Required)* JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence types
 
