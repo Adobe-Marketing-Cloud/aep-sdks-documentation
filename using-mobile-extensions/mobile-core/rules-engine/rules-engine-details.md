@@ -211,13 +211,13 @@ The consequences section of a rule lists the file names of each consequence obje
 
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
-| Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](../rules-engine-consequence-details#analytics-consequence) |
-| In-App Message | `iam` | In-App Message | [In-App consequence detail definition](../rules-engine-consequence-details#in-app-message-consequence) |
-| Postback | `pb` | Send Postback\(s\) to a third party URL | [Postback consequence detail definition](../rules-engine-consequence-details#postback-consequence) |
-| PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](../rules-engine-consequence-details#sync-pii-consequence) |
-| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | [Open URL consequence detail definition](../rules-engine-consequence-details#open-url-consequence) |
-| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](../rules-engine-consequence-details#profile-consequence) |
-| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | [Attach data consequence detail definition](../rules-engine-consequence-details#attach-data-consequence) |
+| Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](rules-engine-consequence-details.md#analytics-consequence) |
+| In-App Message | `iam` | In-App Message | [In-App consequence detail definition](rules-engine-consequence-details.md#in-app-message-consequence) |
+| Postback | `pb` | Send Postback\(s\) to a third party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence) |
+| PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](rules-engine-consequence-details.md#sync-pii-consequence) |
+| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | [Open URL consequence detail definition](rules-engine-consequence-details.md#open-url-consequence) |
+| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](rules-engine-consequence-details.md#profile-consequence) |
+| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | [Attach data consequence detail definition](rules-engine-consequence-details.md#attach-data-consequence) |
 
 ## rules.json examples
 
