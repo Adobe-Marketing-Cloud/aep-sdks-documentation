@@ -14,6 +14,7 @@
 ## Using Mobile Extensions
 
 * [Mobile Core](using-mobile-extensions/mobile-core/README.md)
+  * [Release Notes](using-mobile-extensions/mobile-core/mobile-core-release-notes.md)
   * [Mobile Core API reference](using-mobile-extensions/mobile-core/mobile-core-api-reference.md)
   * [Mobile Core event reference](using-mobile-extensions/mobile-core/mobile-core-event-reference.md)
   * [Configuration](using-mobile-extensions/mobile-core/configuration/README.md)
