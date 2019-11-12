@@ -6,11 +6,11 @@ The Adobe Experience Platform Mobile SDK supports multiple types of rule consequ
 
 This rule consequence is currently handled by the [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) mobile extension.
 
-| Friendly name   | Key          | Type   | Description                                                  |
-| --------------- | ------------ | ------ | ------------------------------------------------------------ |
-| Action          | action       | string | *(Optional)* If provided, this value will be used as the action parameter in a trackAction call. |
-| State/Page name | state        | string | *(Optional)* If provided, this value will be used as the state parameter in a trackState call. |
-| Context data    | context data | object | *(Optional)* Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth, containing <string, string> key-value pairs. |
+| Friendly name   | Key         | Type   | Description                                                  |
+| --------------- | ----------- | ------ | ------------------------------------------------------------ |
+| Action          | action      | string | *(Optional)* If provided, this value will be used as the action parameter in a trackAction call. |
+| State/Page name | state       | string | *(Optional)* If provided, this value will be used as the state parameter in a trackState call. |
+| Context data    | contextdata | object | *(Optional)* Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth, containing <string, string> key-value pairs. |
 
 ## In-App message consequence
 
@@ -41,7 +41,7 @@ This rule is currently handled by the [Adobe Signal](https://aep-sdks.gitbook.io
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
 | Description URL    | templateurl  | string | *(Required)* Destination URL that the postback signal will be sent to. |
 | Request body       | templatebody | string | *(Optional)* A string containing the post-body to be sent. If this value exists, the postback will be sent as a POST instead of a GET request. <br/>Note: The string should be appropriately json escaped if needed. |
-| Content type       | contenttype  | string | *(Optional)* If this value exists the postback will be sent as a POST instead of a GET request. If not supplied but a request body is found, the default will be `application/x-www-form-urlencoded` |
+| Content type       | contenttype  | string | *(Optional)* Used to set the Content-Type header for POST requests. If not supplied but a request body is found, the default will be `application/x-www-form-urlencoded` |
 | Connection timeout | timeout      | number | *(Optional)* Timeout for network connection in seconds. The default value is 2 seconds. |
 
 ## Sync PII consequence
@@ -52,7 +52,7 @@ This rule is currently handled by the [Adobe Signal](https://aep-sdks.gitbook.io
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
 | Description URL    | templateurl  | string | *(Required)* Destination URL that the PII signal will be sent to. Must be HTTPS, non HTTPS urls will be ignored. |
 | Request body       | templatebody | string | *(Optional)* base64 encoded blob containing the post body to be sent. If this value exists, the PII signal will be sent as a POST instead of a GET request. |
-| Content type       | contenttype  | string | *(Optional)* If this value exists the PII signal will be sent as a POST instead of a GET request. If not supplied but a request body is found, the default will be `application/x-www-form-urlencoded` |
+| Content type       | contenttype  | string | *(Optional)* Used to set the Content-Type header for POST requests. If not supplied but a request body is found, the default will be `application/x-www-form-urlencoded` |
 | Connection timeout | timeout      | number | *(Optional)* Timeout for network connection in seconds. The default value is 2 seconds. |
 
 ## Open URL consequence
@@ -71,7 +71,7 @@ This rule is currently handled by the [Adobe Profile](https://aep-sdks.gitbook.i
 | ------------------------- | --------- | ---------------- | ------------------------------------------------------------ |
 | Operation to perform      | operation | string           | *(Required)* Determines the type of operation to be performed on the profile. The supported operations are: <br/>- *write*: saves `value` into given `key` in shared state and local profile. If an associated value for key already exists, the existing value will be overwritten. <br/> - *delete*: removes `key` from Profile shared state and from local profile. |
 | Device-side profile key   | key       | string           | *(Required)* Key within the device-side profile to perform the requested operation on. <br/>Note: This key will be accessible later through the shared state from the Profile extension. For more details, see [User profile shared state](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile/profiles-event-reference#shared-state). |
-| Device-size profile value | value     | string or number | *(Required for write operations)* New value to write to key. |
+| Device-side profile value | value     | string or number | *(Required for write operations)* New value to write to key. |
 
 ## Attach data consequence
 
@@ -79,5 +79,5 @@ This rule is currently handled by the [Adobe Core](https://aep-sdks.gitbook.io/d
 
 | Friendly name | Key       | Type   | Description                                                  |
 | ------------- | --------- | ------ | ------------------------------------------------------------ |
-| Event data    | eventdata | object | *(Required)* Dictionary of <key, value> pairs to overlay on the triggering Event's EventData. |
+| Event data    | eventdata | object | *(Required)* Dictionary of <key, value> pairs to overlay on the triggering Event's EventData. For more details, see [Attach Data tutorial](https://aep-sdks.gitbook.io/docs/resources/user-guides/attach-data). |
 

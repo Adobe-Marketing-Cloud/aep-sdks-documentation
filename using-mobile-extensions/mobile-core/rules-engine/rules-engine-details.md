@@ -370,11 +370,11 @@ If the conditions pass, the in-app message is displayed \(first consequence\), a
 
 ## Rules URL
 
-Rules Engine requires an endpoint URL to be configured in the remote configuration, specifying from where to fetch rules:
+Rules Engine requires an endpoint URL to be configured in the configuration, specifying from where to fetch rules:
 
 ```text
 {
-   "rules.url" : "https://assets.adobedtm.com/example.zip
+   "rules.url" : "https://assets.adobedtm.com/example.zip"
 }
 ```
 
