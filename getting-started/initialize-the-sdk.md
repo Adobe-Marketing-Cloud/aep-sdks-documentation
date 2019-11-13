@@ -2,10 +2,10 @@
 
 ## Configure the SDK with an Environment ID
 
-To initialize, you need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch.
+To initialize the SDK, you will need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch. The **Environment ID** links the configuration from a mobile property with your SDK implementation.
 
 {% hint style="info" %}
-To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
+To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab (found in a previously created and configured mobile property) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
 {% endhint %}
 
 {% tabs %}
@@ -36,8 +36,6 @@ ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 {% endtabs %}
 
 ### **Initializing the SDK**
-
-It is recommended to initialize the SDK in your native code inside your AppDelegate and MainApplication in iOS and Android respectively, however you can still initialize the SDK in Javascript.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -88,7 +86,7 @@ public void onCreate() {
 {% tab title="React Native" %}
 ### Javascript
 
-> Tip: We recommend that you initialize the SDK via [native code](https://github.com/adobe/react-native-acpcore) in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can still initialize the SDK in Javascript.
+> Tip: We recommend SDK initialization via [native code](https://github.com/adobe/react-native-acpcore) in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You may also initialize the SDK in Javascript (React Native).
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -109,7 +107,7 @@ initSDK() {
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
-To add these permissions, add the following lines to your `AndroidManifest.xml` file, which is located in the application project directory:
+To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
@@ -118,7 +116,7 @@ To add these permissions, add the following lines to your `AndroidManifest.xml` 
 
 ## Enable debug logging
 
-Debug logging is optional and helps you ensure that the SDK is working as intended. Below is a table that explains the levels of logging available and when they may be used:
+Debug logging is an optional, yet critical SDK feature. It helps you ensure that the SDK is working as intended. Below is a table that explains levels of logging available and when they may be used:
 
 | Log Level | Description |
 | :--- | :--- |
@@ -181,9 +179,9 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 
 ## Register extensions and starting Core
 
-Other than the Mobile Core extension, all Experience Platform extensions provide a `registerExtension` API, which registers the extension with Core. After you register the extension, you can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
+Besides Mobile Core, all Adobe Experience Platform SDK extensions provide a `registerExtension` API. This API registers the extension with Mobile Core. After an extension is registered, it can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
 
-After you register all of your extensions, call the `start` API in Core. This step is required to boot up the SDK for event processing.
+After you register the extensions you want to use, call the `start` API in Core. This step is required to boot up the SDK for event processing.
 
 The following code snippets demonstrate how to initialize the SDK when using the Identity, Signal, Lifecycle, and Analytics extensions:
 
@@ -340,7 +338,7 @@ ACPIdentity.registerExtension();
 {% endtab %}
 {% endtabs %}
 
-After a successful configuration, the Experience Cloud ID is generated and included on every network hit that is sent to Adobe. Other automatically generated and custom are also sent with each hit.
+After successful configuration, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
 
 ## Enable lifecycle metrics
 
@@ -348,7 +346,7 @@ After a successful configuration, the Experience Cloud ID is generated and inclu
 This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
-Lifecycle metrics contain valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
+Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, app lifecycle information about your app user. These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -706,4 +704,3 @@ For more information, see [Mobile Core API Reference](../using-mobile-extensions
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
-

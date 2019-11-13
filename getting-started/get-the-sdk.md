@@ -1,11 +1,11 @@
 # Get the Experience Platform SDK
 
-The Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org).
+The Adobe Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org).
 
-Follow the directions below to to incorporate the Experience Platform SDK into your application.
+Follow the directions below to to incorporate the SDK into your mobile application.
 
 {% hint style="info" %}
-For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods or Gradle. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods, Gradle, and/or npmjs. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 {% endhint %}
 
 {% tabs %}
@@ -16,7 +16,7 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-1. Open the **Mobile** property in Experience Platform Launch, and click on the **Environments** tab, and then click on the install package icon![](../.gitbook/assets/package.png). 
+1. Open a previously created and configured **Mobile** property in Experience Platform Launch, and click on the **Environments** tab, and then click on the install package icon![](../.gitbook/assets/package.png).
 2. On the **Mobile Install Instructions** dialog box, select **Android**.
 3. Follow the instructions for using Gradle with Android.
 
@@ -34,7 +34,7 @@ You should see a dialog box similar to the following:
 **Important:** Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. Open the **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  ![](../.gitbook/assets/package.png) 
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  ![](../.gitbook/assets/package.png) 
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -71,4 +71,3 @@ For the latest React Native installation instructions, see the README file in th
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
-
