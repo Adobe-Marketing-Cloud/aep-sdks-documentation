@@ -8,7 +8,7 @@ To get started with Signal extension, complete the following steps::
 
 1. Add **Signal** extension to your app.
 2. Define the necessary rules in Adobe Launch. 
-3. Implement the SDK APIs to send PII data to external destinations.
+3. (Optional) When using Send PII actions in Adobe Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
 
 ## Add Signal to your app
 
