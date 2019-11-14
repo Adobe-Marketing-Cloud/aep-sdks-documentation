@@ -72,7 +72,7 @@ Sync identifiers request
 
 #### Event data example
 
-Experience Cloud ID request
+Experience Cloud ID request																																																																																																																											
 
 There are no key-value pairs for this event.
 

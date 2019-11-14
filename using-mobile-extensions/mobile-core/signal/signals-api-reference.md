@@ -1,4 +1,0 @@
-# Signal API reference
-
-
-
