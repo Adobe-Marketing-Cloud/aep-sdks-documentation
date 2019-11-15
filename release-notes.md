@@ -10,8 +10,10 @@ The following updates were made in this release:
 
 **iOS Identity 2.1.3**
 
-- Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) service.
-- Fixed a threading issue where the Experience Cloud ID (ECID) service response was handled on an incorrect thread potentially causing a memory corruption crash.
+- Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) Service.
+- Fixed a threading issue where the Experience Cloud ID (ECID) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
+
+These changes were released as part of ACPCore pod v2.3.6.
 
 ## October 30, 2019
 
