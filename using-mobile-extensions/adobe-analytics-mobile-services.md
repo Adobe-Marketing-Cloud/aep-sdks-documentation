@@ -4,7 +4,7 @@ This extension enables in-app messaging, push notifications, and marketing links
 
 {% hint style="info" %}
 The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.  
-  
+
 For more information, contact your Adobe CSM.
 {% endhint %}
 
@@ -24,7 +24,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)]().
+Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions]().
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
@@ -586,4 +586,3 @@ To prepare for your migration, remember the following information:
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
 * Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
-

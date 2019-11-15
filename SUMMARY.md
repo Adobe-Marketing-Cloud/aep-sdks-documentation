@@ -50,6 +50,7 @@
 * [Adobe Campaign Standard](using-mobile-extensions/adobe-campaign-standard/README.md)
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
+* [Adobe Experience Platform Places](beta/adobe-places.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Target API reference \(new\)](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
@@ -96,8 +97,6 @@
 
 ## BETA
 
-* [Adobe Experience Platform Places](beta/adobe-places.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
-
