@@ -4,7 +4,7 @@
 
 The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID service.
 
-These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID (ECID) Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. If the new value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID service. Otherwise, a new customer ID is added.
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
 
@@ -107,7 +107,7 @@ ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthentic
 
 ### syncIdentifiers <a id="syncIdentifiers"></a>
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. If a previously synced `identifier type` contains a null or empty `identifier` value, it is removed from the Identity shared state, local storage and it is not be synced with the Experience Could (ECID) service.
+The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. If a previously synced `identifier type` contains a null or empty `identifier` value, it is removed from the Identity shared state, local storage and it is not be synced with the Adobe ECID service.
 
 {% tabs %}
 {% tab title="Android" %}
