@@ -65,7 +65,7 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ## Set linkage fields
 
-Linkage fields allow Campaign to connect fields from separate databases and create a more developed and personalized messaging experience. After invoking the `setLinkageFields` API, template-based messages that contain PII-based profile personalization are downloaded. To retrieve these personalized messages, the linkage fields are stored as a base64-encoded JSON string in memory and sent in a custom HTTP header, `X-InApp-Auth`, in all future Campaign rules download requests until `resetLinkageFields` is invoked. The linkage fields are cleared when the app is gracefully closed, crashes, or when the privacy status is changed to opt out. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+This API sets the Campaign linkage fields (CRM IDs) in the mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64 encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are also lost in the wake of an Application crash event or upon graceful Application termination or when the privacy status is updated to OPT_OUT. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -77,7 +77,7 @@ Linkage fields allow Campaign to connect fields from separate databases and crea
 #### Syntax
 
 ```java
-public void setLinkageFields(final Map<String, String> linkageFields)
+public static void setLinkageFields(final Map<String, String> linkageFields)
 ```
 
 #### Example
@@ -133,7 +133,7 @@ ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 
 ## Reset linkage fields
 
-Invoking `resetLinkageFields` removes the previously stored linkage fields in the SDK and triggers a Campaign rules download to fetch non-personalized messages. Personalized messages that were previously stored in the cache are erased.
+This method clears cached rules from previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT_IN, no rules download happens.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -143,7 +143,7 @@ Invoking `resetLinkageFields` removes the previously stored linkage fields in th
 #### Syntax
 
 ```java
-public void resetLinkageFields()
+public static void resetLinkageFields()
 ```
 
 #### Example
@@ -203,7 +203,7 @@ For more information about setting up your Android app to connect to FCM and ret
 #### Syntax
 
 ```java
-void setPushIdentifier(final String registrationID)
+public static void setPushIdentifier(final String registrationID)
 ```
 
 #### Example
@@ -285,7 +285,7 @@ User interactions with local or push notifications can be tracked by invoking th
 #### Syntax
 
 ```java
-void collectMessageInfo(final Map<String, Object> messageInfo)
+public static void collectMessageInfo(final Map<String, Object> messageInfo)
 ```
 
 #### Example
