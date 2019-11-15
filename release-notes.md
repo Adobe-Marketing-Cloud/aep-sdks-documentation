@@ -4,6 +4,15 @@ Here are the release notes for the Experience Platform Mobile SDKs and Adobe Pla
 
 **Important:** Adobe Places is currently in Beta. On the Places GA date, the Places release notes content will be removed from this release notes and the location to the Places release notes will be provided.
 
+## November 15, 2019
+
+The following updates were made in this release:
+
+**iOS Identity 2.1.3**
+
+- Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) service.
+- Fixed a threading issue where the Experience Cloud ID (ECID) service response was handled on an incorrect thread potentially causing a memory corruption crash.
+
 ## October 30, 2019
 
 The following updates were made in this release:

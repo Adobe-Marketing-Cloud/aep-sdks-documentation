@@ -107,7 +107,7 @@ ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthentic
 
 ### syncIdentifiers <a id="syncIdentifiers"></a>
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. If a previously synced `identifier type` contains a null or empty `identifier` value, it is removed from the Identity shared state, local storage and it is not be synced with the Experience Could (ECID) service.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -147,7 +147,7 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored. 
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -187,7 +187,7 @@ ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, a
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -220,7 +220,7 @@ public static void syncIdentifiers(final Map<String, String> identifiers);
 
 * _identifiers_ is a map that contains the identifiers with the Identifier type as the key, and the string identifier as the value.
 
-  In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+  In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 **Example**
 
@@ -244,7 +244,7 @@ Identity.syncIdentifier(identifiers);
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Examples**
 
@@ -278,7 +278,7 @@ ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Example**
 
