@@ -2,6 +2,17 @@
 
 Here are the release notes for the Experience Platform Mobile SDKs:
 
+## November 15, 2019
+
+The following updates were made in this release:
+
+**iOS Identity 2.1.3**
+
+- Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) Service.
+- Fixed a threading issue where the Experience Cloud ID (ECID) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
+
+These changes were released as part of ACPCore CocoaPod v2.3.6.
+
 ## October 30, 2019
 
 The following updates were made in this release:
