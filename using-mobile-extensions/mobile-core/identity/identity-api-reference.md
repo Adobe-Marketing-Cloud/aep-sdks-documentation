@@ -111,7 +111,7 @@ ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthentic
 
 The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. 
 
-Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_, if a previously synced `identifier type` contains a null or empty `identifier` value, it is removed from the Identity shared state, local storage and it is not be synced with the Adobe ECID Service.
+Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service. 
 
 {% tabs %}
 {% tab title="Android" %}
