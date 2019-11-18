@@ -65,7 +65,7 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ## Set linkage fields
 
-This API sets the Campaign linkage fields (CRM IDs) in the mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64 encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are also lost in the wake of an Application crash event or upon graceful Application termination or when the privacy status is updated to OPT_OUT. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+This API sets the Campaign linkage fields (CRM IDs) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -133,7 +133,7 @@ ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 
 ## Reset linkage fields
 
-This method clears cached rules from previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT_IN, no rules download happens.
+This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT_IN, no rules download occurs.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -192,8 +192,8 @@ ACPCampaign.resetLinkageFields();
 
 To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM) must be sent to the Adobe Identity service by calling `setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
-For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc.
-For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see https://firebase.google.com/docs/cloud-messaging/android/client..
+For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc).
+For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -275,7 +275,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ## Tracking push or local notification message interactions
 
-User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request will be made to Campaign containing the message interaction event. For more info on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). 
+User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). 
 
 {% tabs %}
 {% tab title="Android" %}
