@@ -56,11 +56,11 @@ When defining a payload for the attach data action, the payload must match the f
 
 ## Example - attaching data to an Analytics event
 
-The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Launch and complete the following steps:
+The following sample shows how to *attach data* to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Launch and complete the following steps:
 
 1. [Create a new **Rule**](attach-data.md#create-a-rule)
-2. [Select the **Event** you wish to trigger the rule](attach-data.md#select-an-event)
-3. [Select the **Action** to Attach Data and define your payload](attach-data.md#define-the-action)
+2. [Select the **Event** you want to trigger the rule](attach-data.md#select-an-event)
+3. [Select the **Action** to attach data and define your payload](attach-data.md#define-the-action)
 4. [Save and rebuild the property](attach-data.md#save-the-rule-and-rebuild-your-property)
 
 ### Create a Rule
@@ -73,7 +73,10 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ### Select an event
 
-1. Give your rule an easily recognizable in your list of rules. In this example, the rule is named **Attach Places Data to Analytics Track Action Events**.
+1. Give your rule an easily recognizable in your list of rules. 
+
+  In this example, the rule is named **Attach Places Data to Analytics Track Action Events**.
+
 2. Under the **Events** section, click **Add**.
 3. From the **Extension** drop-down list, select **Mobile Core**.
 4. From the **Event Type** drop-down list, select **Track Action**.
@@ -86,7 +89,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
 3. From the **Action Type** drop-down list, select **Attach Data**.
-4. On the right pane, in the **JSON Payload** field, type the data that will be added to this Event.
+4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, some context data is added to this event before the Analytics extension processes it. The added context data will now be on the outgoing Analytics hit.
@@ -95,7 +98,7 @@ In the following example, **launches** and **anAddedKey** keys are added to the 
 
 ![](../../.gitbook/assets/setaction.png)
 
-### Save rule and rebuild your property
+### Save the rule and rebuild your property
 
 After you complete your configuration, verify that your rule looks like the following:
 
