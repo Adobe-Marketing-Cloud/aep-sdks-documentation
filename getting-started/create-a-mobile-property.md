@@ -41,6 +41,7 @@ The default privacy status is set to *opted in* and might impact data collection
    A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
    a. Click **Save** to confirm your settings for **Mobile Core**.
+   
    b. Click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}
