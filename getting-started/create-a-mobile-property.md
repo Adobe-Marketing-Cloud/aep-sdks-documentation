@@ -34,7 +34,7 @@ The default privacy status is set to *opted in* and might impact data collection
 
 4. \(Optional\) Provide your Experience Cloud ID Server.
 
-This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
+   This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
 5. Optionally, change the **Session Timeout** value.
 
