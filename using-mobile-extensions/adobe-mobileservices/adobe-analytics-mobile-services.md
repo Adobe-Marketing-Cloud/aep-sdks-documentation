@@ -4,7 +4,7 @@ This extension enables in-app messaging, push notifications, and marketing links
 
 {% hint style="info" %}
 The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.  
-  
+
 For more information, contact your Adobe CSM.
 {% endhint %}
 
@@ -49,7 +49,7 @@ The Mobile Services extension also requires the Analytics extension for reportin
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
 
-![Mobile Services Extension Configuration](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
+![Mobile Services Extension Configuration](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
 ### Manual Configuration
 
@@ -61,7 +61,7 @@ The following instructions only apply if you do not see your app listed or need 
 If you are sending data to multiple Analytics report suites, use the Acquisition App ID from the app that is associated with the first report suite in your list of report suite IDs.
 {% endhint %}
 
-![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
 Select **Enter Custom settings** and complete the following tasks
 
@@ -74,13 +74,13 @@ Select **Enter Custom settings** and complete the following tasks
 
 You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
 1. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
 
 You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
 1. Click **Save**.
 2. Follow the publishing process to update your SDK configuration.
@@ -91,7 +91,7 @@ Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to 
 
 In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
 ## Add Mobile Services extension to your app
 
