@@ -48,5 +48,5 @@ ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeEx
 
 ## CollectPII API
 
-The Signal extension listens for the information provided through [collectPII API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
+The Signal extension listens for the information provided through [collectPII API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 

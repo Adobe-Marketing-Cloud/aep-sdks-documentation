@@ -1,16 +1,18 @@
 # Signal
 
-The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third party endpoints and open URLs (web URLs or application deep links) when using rules actions in Adobe Experience Platform Launch. 
+The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Adobe Experience Platform Launch. 
 
-By leveraging the same triggers and traits that you use to display an in-app message, you can configure the SDK to send customized data to a third-party destination. Also, with the appropriate permissions and configurations, you can use the `collectPii` API to send PII to a remote server.
+By leveraging the same triggers and traits that you use to display an In-App message, you can configure the SDK to send customized data to a third-party destination. Also, with the appropriate permissions and configurations, you can use the `collectPii` API to send PII to a remote server.
 
-To get started with Signal extension, complete the following steps::
+To get started with Signal extension, complete the following steps:
 
-1. Add **Signal** extension to your app.
-2. Define the necessary rules in Adobe Launch. 
-3. (Optional) When using Send PII actions in Adobe Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
+1. Add the **Signal** extension to your app.
+2. Define the necessary rules in Experience Platform Launch. 
+3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to Experience Platform Launchcollect PII data and send it to the configured third-party destination.
 
-## Add Signal to your app
+For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html)
+
+## Add the Signal extension to your app
 
 {% tabs %}
 {% tab title="Android" %}
@@ -111,11 +113,11 @@ public class MobileApp extends Application {
 }
 ```
 
-**Important**: Signal extension is automatically included in Core by Maven. When manually installing the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
+**Important**: The Signal extension is automatically included in Core by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions`, register Signal with Mobile Core:
+In your app's`application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
 
 #### Objective-C
 
@@ -141,7 +143,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Important**: Signal extension is automatically included in the Core pod. When installing the Signal extension manually, ensure that you added the `libACPSignal_iOS.a` library to your project.
+**Important**: The Signal extension is automatically included in the Core pod. When you manually install the Signal extension, ensure that you add the `libACPSignal_iOS.a` library to your project.
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -159,12 +161,12 @@ initSDK() {
 {% endtab %}
 {% endtabs %}
 
-##Define rules in Adobe Launch
+##Define rules in Experience Platform Launch
 
-Define the rules in Adobe Launch by following the steps in the [Signal extension and Rules engine Integaration document](signals-extension-and-rules-engine-integration)
+To define the rules in Experience Platform Launch, complete the steps in [Signal extension and Rules Engine Integaration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration).
 
-##Implement the SDK APIs to send PII data to external destinations
+##Implement the Mobile SDK to send PII data to external destinations
 
-To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
+To send PII data to external destinations, the `PII` action can trigger the Rules engine when the configured triggers and traits match. When setting a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data..
 
 For the information on collectPii and its usage, see collectPii in [AEP Mobile Core API reference Page](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
