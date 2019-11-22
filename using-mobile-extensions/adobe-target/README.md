@@ -131,7 +131,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Target Order
 
-`TargetOrder` encapsulate order ID, order total and purchased product IDs. You can instantiate `TargetOrder` class to create order parameters. For more information on Target Order parameters, see [here](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html)
+The `TargetOrder` class encapsulates the order ID, the order total and the purchased product IDs, and you can instantiate this class to create order parameters. For more information on Target Order parameters, see [here](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html)
 
 {% tabs %}
 {% tab title="Android" %}
@@ -180,10 +180,11 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 
 ### Target Product
 
-`TargetProduct` encapsulates product ID and product category ID. You can instantiate `TargetProduct` class to create order parameters. For more information on Target Product parameters, see [here](https://docs.adobe.com/content/help/en/target/using/recommendations/entities/entity-attributes.html)
+The `TargetProduct` class encapsulates the product ID and the product category ID, and you can instantiate this class to create order parameters. For more information about Target Product parameters, see [Entity attributes](https://docs.adobe.com/content/help/en/target/using/recommendations/entities/entity-attributes.html)
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Syntax
 
 ```java
@@ -227,7 +228,7 @@ let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 
 ### Target Parameters
 
-`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` and provides an easy way to pass these parameters in a Target request. 
+`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` and allows you easily pass these parameters in a Target request.  
 
 {% tabs %}
 {% tab title="Android" %}
@@ -318,26 +319,26 @@ let targetParameters = ACPTargetParameters(parameters: mboxParameters, profilePa
 
 ### Merge behavior of Target parameters
 
-`TargetParameters` including `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` can be passed in Target APIs and also when creating `TargetPrefetch` or `TargetRequest` objects. The `TargetParameters` passed in public APIs are considered global parameters and are merged with the corresponding parameters in the individual `TargetRequest` or `TargetPrefetch` objects.
+`TargetParameters`, such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters`, can be passed in the Target APIs and can also be passed in when you create `TargetPrefetch` or `TargetRequest` objects. The `TargetParameters` that are passed in the public APIs are global parameters and are merged with the corresponding parameters in the individual `TargetRequest` or `TargetPrefetch` objects.
 
-While merging, the new keys in the mbox parameters or the profile parameters are appended to the final dictionary while the keys with the same name are overwritten in each `TargetRequest` or `TargetPrefetch` object by those from global parameters. In the case or `TargetOrder` or `TargetProduct` objects, the object passed in global parameters shall replace the corresponding object in each of `TargetRequest` or `TargetPrefetch` objects.
+When merging, the new keys in the mbox parameters or the profile parameters are appended to the final dictionary, and the keys with the same name are overwritten in each `TargetRequest` or `TargetPrefetch` object by the keys from the global parameters. For `TargetOrder` or `TargetProduct` objects, the object that is passed to the global parameters replaces the corresponding object in the `TargetRequest` or `TargetPrefetch` objects."
 
 ## Target Sessions
 
-With Target release v2.1.4 iOS and  v1.1.3 Android, Target extension now supports persistent sessions. When a Target request is received, a new session ID is generated if one doesn't already exist and is sent in the request. This session ID along with the Edge Host returned from the Target are stored in the persistent storage for the configured `target.sessionTimeout`. If not configured, the default value for the session timeout is 30 minutes. These variables are reset and removed from persistent storage if no Target request is received during the configured `target.sessionTimeout` or if  [resetExperience API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) is called.
+The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout`. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
 
 ## Visual preview
 
-Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
+The visual preview mode allows you to easily perform end-to-end QA activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information on setting up Target visual preview, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html). For more information on setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app). For more information on setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking).
 
-You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#set-preview-restart-deep-link)
+You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#set-preview-restart-deep-link).
 
-The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode.
+To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode, and click the red floating button that appears on the app screen. This button can be pressed to enter the visual preview mode.
 
 {% tabs %}
 {% tab title="Android" %}
 
-On Android, when the application is launched as a result of a deeplink, `collectLaunchInfo` API will be invoked internally with the target Activity and deeplink information will be extracted from the Intent extras.
+In Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target Activity and deep link information is extracted from the Intent extras.
 
 {% endtab %}
 
@@ -388,7 +389,7 @@ We recommend that you use Experience Platform Launch configuration to pass the p
 {% endhint %}
 
 {% hint style="warning" %}
-Currently `target.sessiontimeout` value can only be configured programmatically. For more information, refer [updateConfiguration API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference#programmatic-updates-to-configuration).
+Currently, the `target.sessiontimeout` value can only be configured programmatically. For more information, see [updateConfiguration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference#programmatic-updates-to-configuration).
 {% endhint %}
 
 ## Additional information
