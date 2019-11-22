@@ -33,7 +33,7 @@ To get started with Target, follow these steps:
 #### Java
 
 1. Add the Target extension to your project using the app's Gradle file.
-2. Import the Target extension in your application's main activity.  
+2. Import the Target extension in to your application's main activity.  
 ```java
 import com.adobe.marketing.mobile.*;
 ```
@@ -98,7 +98,7 @@ public class TargetApp extends Application {
 {% tab title="iOS" %}
 #### Objective-C
 
-1. In your app's `didFinishLaunchingWithOptions` function register the Target extension with Mobile Core:
+1. In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -131,10 +131,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Target Order
 
-The `TargetOrder` class encapsulates the order ID, the order total and the purchased product IDs, and you can instantiate this class to create order parameters. For more information on Target Order parameters, see [here](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html)
+The `TargetOrder` class encapsulates the order ID, the order total, and the purchased product IDs. You can instantiate this class to create order parameters. For more information about Target Order parameters, see [Create an Order Confirmation mbox - mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html).
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Syntax
 
 ```java
@@ -228,7 +229,7 @@ let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 
 ### Target Parameters
 
-`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` and allows you easily pass these parameters in a Target request.  
+`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters` and allows you easily pass these parameters in a Target request.  
 
 {% tabs %}
 {% tab title="Android" %}
@@ -319,21 +320,21 @@ let targetParameters = ACPTargetParameters(parameters: mboxParameters, profilePa
 
 ### Merge behavior of Target parameters
 
-`TargetParameters`, such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters`, can be passed in the Target APIs and can also be passed in when you create `TargetPrefetch` or `TargetRequest` objects. The `TargetParameters` that are passed in the public APIs are global parameters and are merged with the corresponding parameters in the individual `TargetRequest` or `TargetPrefetch` objects.
+`TargetParameters`, such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`, can be passed in the Target APIs and can also be passed in when you create `TargetPrefetch` or `TargetRequest` objects. The `TargetParameters` that are passed in the public APIs are global parameters and are merged with the corresponding parameters in the individual `TargetRequest` or `TargetPrefetch` objects.
 
 When merging, the new keys in the mbox parameters or the profile parameters are appended to the final dictionary, and the keys with the same name are overwritten in each `TargetRequest` or `TargetPrefetch` object by the keys from the global parameters. For `TargetOrder` or `TargetProduct` objects, the object that is passed to the global parameters replaces the corresponding object in the `TargetRequest` or `TargetPrefetch` objects."
 
 ## Target Sessions
 
-The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout`. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
+The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
 
 ## Visual preview
 
-The visual preview mode allows you to easily perform end-to-end QA activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information on setting up Target visual preview, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html). For more information on setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app). For more information on setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking).
+The visual preview mode allows you to easily perform end-to-end QA activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information about setting up Target visual preview, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html). For more information about setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app). For more information about setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking).
 
-You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#set-preview-restart-deep-link).
+You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#set-preview-restart-deep-link) API.
 
-To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode, and click the red floating button that appears on the app screen. This button can be pressed to enter the visual preview mode.
+To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -382,10 +383,10 @@ If you need to update SDK configuration, programmatically, use the following inf
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
 | target.propertyToken | `at_property token` value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. |
 | target.previewEnabled | Boolean parameter, which can be used to enable/disable Target Preview. If not specified, then Preview will be enabled by default. |
-| target.sessionTimeout | Time, in seconds, for which the Target session ID and Egde Host are persisted. If not specified, then default timeout value is 30 minutes. |
+| target.sessionTimeout | The duration, in seconds, during which the Target session ID and Egde Host are persisted. If this value is not specified, the default timeout value is 30 minutes. |
 
 {% hint style="warning" %}
-We recommend that you use Experience Platform Launch configuration to pass the property token instead of passing it in as a mbox parameter. If the property token is passed in Experience Platform Launch configuration and also as a mbox parameter, the token that was entered in the mbox parameter is discarded.
+We recommend that, instead of passing the property token in as a mbox parameter, you use an Experience Platform Launch configuration to pass the token. If the token is passed in an Experience Platform Launch configuration, and as a an mbox parameter, the token that was entered in the mbox parameter is discarded.
 {% endhint %}
 
 {% hint style="warning" %}
