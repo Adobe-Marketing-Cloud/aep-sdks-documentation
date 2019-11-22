@@ -86,14 +86,6 @@ The following updates were made in this release:
 * Fixed an issue where, on iOS 13, the push token was not being extracted correctly from NSData during device registration.    
 * Fixed an issue where the charset information was not being sent in the Content-Type header during device registration call.
 
-## October 9, 2019 \(Places\)
-
-* **PlacesMonitor 2.1.0 \(iOS\)**
-  * Added a new API, `setRequestAuthorizationLevel`, to set the type of location authorization request for which the user will be prompted.
-* **PlacesMonitor 2.1.0 \(Android\)**
-  * Added a new API, `setLocationPermission`, to set the type of location permission request for which the user will be prompted.
-  * The Places Monitor now supports Android 10.
-
 ## October 7, 2019
 
 The following updates were made in this release:
@@ -240,29 +232,6 @@ The following updates were made in this release:
 * Fixed a bug where the database operation might fail on Android Q.
 * Fixed a crash that was happening on Android versions 8.0 and 8.1 and was related to Android's `TimeZoneNamesImpl`.
 
-## Aug 8, 2019 \(Places\)
-
-The following updates were made in this release:
-
-### Places UI Updates
-
-Here is a list of the updates to the Places UI:
-
-#### New Features
-
-* Added a new list view that shows POIs without the map.
-* Added POI filtering options for the city, the state, the country, and the metadata.
-* The first library in an organization is automatically created.
-* Added POI sorting to the List View.
-
-#### UI Updates
-
-* Moved the list and details panel to right side of UI.
-* Added a new search panel to the top of the UI.
-* If only one library is present, this library is automatically selected when you create a POI.
-* Moved library management into a popup window.
-* Added a POI count next to the filters.
-
 ## August 8, 2019
 
 The following updates were made in this release:
@@ -289,61 +258,6 @@ The following updates were made in this release:
   If key is not provided, preview is enabled by default.
 
 * Fixed an issue in Android where Target Preview links were decoded twice, which lead to an error preview page.
-
-## Aug 6, 2019 \(Places\)
-
-The following updates were made in this release:
-
-### Places Monitor Launch Extension 2.0.0
-
-* Updated the Android and iOS installation instructions for the Places Monitor 2.0.
-
-## July 31, 2019 \(Places\)
-
-The following updates were made in this release:
-
-### Places Monitor 2.0.0
-
-* Monitoring status is now persisted between launches.
-* The handling of the callback, which resulted from a location permission request no longer requires you to extend PlacesActivity.
-* Changed an existing API, allowing developers to clear all Places data from the device:
-
-  Old API: `public static void stop();`
-
-  New API: `public static void stop (final boolean clearData);`
-
-* Updated the use of the Places `getNearbyPointsOfInterest` API to handle error scenarios more effectively.
-
-## July 25, 2019 \(Places\)
-
-The following updates were made in this release:
-
-### ACPPlacesMonitor 2.0.0
-
-* To clear all Places data from the device,
-
-  in ACPPlacesMonitor, replaced an existing API `+ (void) stop;` with`+ (void) stop: (BOOL) clearData;`.
-
-* Updated the use of the ACPPlaces `getNearbyPointsOfInterest` API to handle error scenarios more effectively.
-
-## July 22, 2019 \(PLaces\)
-
-The following updates were made in this release:
-
-### Android Places 1.3.0
-
-* Added a new API that clears out all Places-related data from shared state, in-app memory, and Shared Preference.
-* Fixed an issue where shared state was not getting updated during application start.
-* Fixed a bug where `getNearbyPointsOfInterest` callback was returning error code `SERVER_RESPONSE_ERROR instead of CONNECTIVITY_ERROR` on no internet.
-* `getNearbyPointsOfInterest` API \(without the errorCallback\) will have the `successCallback` called with empty poi list, in case of error retrieving the nearby points of interest.
-
-## July 19, 2019 \(Places\)
-
-The following updates were made in this release:
-
-**iOS Places 1.2.0**
-
-Added a new API that clears out all Places-related data from shared state, in-app memory, and `NSUserDefaults`.
 
 ## July 17, 2019
 
@@ -393,14 +307,6 @@ The following updates were made in this release:
 * Use the `target.propertyToken` configuration setting to configure the `at_property_token` that is generated from the Target UI, instead of passing the token as an mbox parameter.
 * Fixed an issue where JSON offers were not being returned as content but instead default content was served.
 
-## June 25, 2019 \(Places\)
-
-The following updates were made in this release:
-
-**iOS Places Monitor 1.0.2**
-
-* Quality of life improvements, including better in-code documentation and logging.
-
 ## June 19, 2019
 
 The following updates were made in this release:
@@ -410,17 +316,6 @@ The following updates were made in this release:
 * Fixed an issue that, when making Analytics requests immediately after app launch, might result in incorrect Customer Perspective \(cp\) values.
 * Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down.
 * Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
-
-## June 17, 2019 \(Places\)
-
-The following updates were made in this release:
-
-**iOS Places 1.1.0**
-
-* Added a new API to return an error code when there is a failure retrieving nearby places.
-* When privacy status changes to opt-out, all Places-related data will now be wiped from the device.
-* Fixed an issue that, after a first launch, sometimes caused Places events to be lost due to bad network conditions.
-* Fixed an issue where, when processing POI entry events in quick succession, token replacement via Rules Engine sometimes reference the incorrect POI.
 
 ## June 13, 2019
 
@@ -479,20 +374,6 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 30, 2019 \(Places\)
-
-**Android Places Monitor 1.0.1**
-
-* Fixed an issue that prevented an entry event for POIs when the Places monitoring is started.
-
-## May 28, 2019 \(Places\)
-
-Fixed the following issues in the Places UI:
-
-* Updated the Solution Switcher in Places to align with the rest of the Experience Cloud.
-* Fixed an issue where rank was saving in instances where no rank changes were made.
-* Increased the minimum allowed radius in the UI to 10 meters.
-* Fixed an issue where, if you delete all the numbers in the field, the radius field reset back to 20 meters.
 
 ## May 20, 2019
 
@@ -529,23 +410,6 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 17, 2019 \(Places\)
-
-The following updates were made in this release:
-
-**Android Places 1.2.0**
-
-* Added a new API to process an individual `Geofence`.
-* Bug fix to prevent multiple consecutive entry events.
-
-**Android Places Monitor 1.0.0**
-
-Initial release of the Places Monitor for Android.
-
-The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
-
-For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
-
 ## May 15, 2019
 
 **iOS Target 2.1.0 and Android Target 1.1.0**
@@ -558,13 +422,6 @@ For more information about the Places Monitor, [click here](https://github.com/A
 
 * Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
 * New `prefetchContent` and `locationClicked` APIs which accept TargetParameters.
-
-**Android Places 1.1.0**
-
-* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.    
-* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
-* The Places extension now queues the events until a configuration is obtained.    
-* The Places extension now queues the events until a configuration is obtained.
 
 ## May 9, 2019
 
@@ -595,13 +452,6 @@ The following updates were made in this release:
 
 * Fixed an issue when the app network crashes under extreme conditions.
 
-**Android Places 1.1.0**
-
-* Introduced a new API for `getNearByPlaces`, which has an `errorCallback` and is called with an `errorCode` that indicates the reason for the error.
-* The Places extension now queues the events until a configuration is obtained.
-* Added support for environment-aware configurations.
-* Bug Fix : corrected the keys for the region entry/exit events
-* Storage of last known location now properly respects the user's privacy status
 
 ## April 26, 2019
 
@@ -641,16 +491,6 @@ To learn more about Project Griffon, here are the links to the [documentation](h
 * [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/set-up-project-griffon)
 * [Using Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/using-project-griffon)
 
-## April 9, 2019 \(Places\)
-
-The following updates were made in this release:
-
-**iOS Places Monitor 1.0.1**
-
-* Added full unit test coverage.
-* CI integration \(CircleCI\).
-* Code coverage integration \(codecov\).
-
 ## April 5, 2019
 
 The following updates were made in this release:
@@ -689,14 +529,6 @@ If there is no cached configuration available, the SDK can fetch the configurati
 * Added the `ACPCore` log API, which allows third-party extensions and application developers to log messages and use the Mobile SDK `LogLevel` to select the verbosity of the logs.
 * You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
 * `trackAction` and `trackState` only accept `NSDictionary`-type context data.
-
-**iOS Places Monitor 1.0.0**
-
-Initial release of the **Places Monitor** for iOS.
-
-The Places Monitor manages the OS-level Location APIs and communicates directly with the Places extension. With both extensions installed, customers can have out-of-the-box region monitoring in their application.
-
-For more information about the Places Monitor, [click here](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/7ad91dd281c187baadf3698a3130f4ac0ef81fbe/places-extension-1/places-monitoring-extension/README.md).
 
 ## March 21, 2019
 
@@ -756,30 +588,6 @@ The following updates were made in this release:
 **Android Analytics 1.1.1**
 
 * Use the `analytics.launchHitDelay` configuration setting to indicate how long to wait before Analytics launch hits are sent.
-
-## February 28, 2019 \(Places\)
-
-The first version of **Places** is now available for public beta access!
-
-The Places solution is composed of the following components:
-
-* The **Places Services** is a robust set of REST APIs that provide an interface to the database that stores all Places-related data for a customer. For more information, see [Places database management](https://launch.gitbook.io/places-services-by-adobe-documentation/places-database-management-1).
-* A **Places-specific card** on Adobe IO \(coming soon\).
-* The **Places UI** is built on the APIs that are provided by the Places Service and allows customers to create and manage their Places libraries.
-
-  To log in to the Places UI, go to [https://places.adobe.com](https://places.adobe.com).
-
-* The **Places Extension \(Experience Platform Launch and SDK\)** The functionality in the extension retrieves the relevant Places data from the Places Services based on the location of the calling device. The SDK extension also dispatches Places-related events on the Event Hub for consumption by the Rules Engine and other interested extensions:
-  * **GitHub**: [https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPPlaces)
-  * **Cocoapod**: [https://cocoapods.org/pods/ACPPlaces](https://cocoapods.org/pods/ACPPlaces)
-  * **Maven Central**: [https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places)
-
-### Documentation Links
-
-To learn more about Places, here are links to the documentation:
-
-* UI - [https://launch.gitbook.io/places-services-by-adobe-documentation/](https://launch.gitbook.io/places-services-by-adobe-documentation/)
-* SDK - [https://aep-sdks.gitbook.io/docs/using-mobile-extensions/places-extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/places-extension)
 
 ## February 28, 2019
 
