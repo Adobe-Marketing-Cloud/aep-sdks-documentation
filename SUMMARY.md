@@ -52,7 +52,7 @@
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Experience Platform Location Service](beta/adobe-places.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
-  * [Target API reference \(new\)](using-mobile-extensions/adobe-target/target-api-reference.md)
+  * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
