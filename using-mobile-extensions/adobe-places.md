@@ -1,7 +1,8 @@
-# Adobe Experience Platform Places
+# Adobe Experience Platform Location Service
 
-Adobe Experience Platform Location Service (Places) is now generally available for all customers. Please visit product documentation links found below to proceed with implementation and use:
+Location Service (previously Places) is now generally available for all customers. For more information about implementing and using Location Service, see the following documentation links:
 
-* [Adobe Experience Platform Overview Documentation](https://docs.adobe.com/content/help/en/places/using/home.html)
-* [Adobe Experience Platform Places SDK Implementation Documentation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
-* [Adobe Experience Platform Places SDK Monitor Implementation Documentation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html)
+* [Release notes](https://docs.adobe.com/content/help/en/places/using/release-notes.html)
+* [Overview](https://docs.adobe.com/content/help/en/places/using/home.html)
+* [Places SDK implementation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
+* [Places SDK Monitor implementation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html)
