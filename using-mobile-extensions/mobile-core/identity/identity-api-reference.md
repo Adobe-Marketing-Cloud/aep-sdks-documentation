@@ -4,7 +4,9 @@
 
 The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID service.
 
-These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID (ECID) Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+
+Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service. 
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
 
@@ -107,7 +109,9 @@ ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthentic
 
 ### syncIdentifiers <a id="syncIdentifiers"></a>
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. 
+
+Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service. 
 
 {% tabs %}
 {% tab title="Android" %}
@@ -147,7 +151,7 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored. 
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -187,7 +191,7 @@ ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, a
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -220,7 +224,7 @@ public static void syncIdentifiers(final Map<String, String> identifiers);
 
 * _identifiers_ is a map that contains the identifiers with the Identifier type as the key, and the string identifier as the value.
 
-  In each identifier pair, if either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+  In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 **Example**
 
@@ -244,7 +248,7 @@ Identity.syncIdentifier(identifiers);
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Examples**
 
@@ -278,7 +282,7 @@ ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type` or `identifier`, then it will be ignored.
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Example**
 

@@ -165,11 +165,15 @@ Here is the definition of the key-value pairs in this event:
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `a.message.id` | String | No | Message ID of the message that was triggered. |
-| `a.message.triggered` | String \("1"\) | No | Flag that specifies the type of message interaction event. |
+| `a.message.triggered` | String \("1"\) | No | Flag that specifies a message triggered event. Only one type of message interaction exists in each Campaign response content event. |
+| `a.message.viewed` | String \("1"\) | No | Flag that specifies a message viewed event. |
+| `a.message.clicked` | String \("1"\) | No | Flag that specifies a message clicked event. |
 
 #### Event data example
 
 ```text
 { "a.message.id": "12345678", "a.message.triggered": "1" }
+{ "a.message.id": "12345678", "a.message.viewed": "1" }
+{ "a.message.id": "12345678", "a.message.clicked": "1" }
 ```
 
