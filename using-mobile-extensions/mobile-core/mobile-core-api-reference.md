@@ -44,7 +44,7 @@ public class CoreApp extends Application {
 
 ### Get Application
 
-You can use this API to get the previous set Android `Application` instance and it is mainly provided for the third-party extensions.
+You can use this API to get the previously set Android `Application` instance, and this instance is mainly provided for the third-party extensions.
 
 {% tabs %}
 {% tab title="Android" %}

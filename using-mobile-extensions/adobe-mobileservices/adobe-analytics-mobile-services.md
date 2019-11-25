@@ -63,7 +63,7 @@ If you are sending data to multiple Analytics report suites, use the Acquisition
 
 ![](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
-Select **Enter Custom settings** and complete the following tasks
+Select **Enter Custom settings** and complete the following tasks:
 
 1. Enter an Acquisition time out.  
    The recommended time out is 5 seconds. To enable app acquisition,
@@ -72,7 +72,7 @@ Select **Enter Custom settings** and complete the following tasks
 
 2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
-You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
+You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
 
 ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
