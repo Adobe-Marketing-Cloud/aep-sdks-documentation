@@ -2,11 +2,13 @@
 
 Data elements are the building blocks for your data dictionary and are used to collect, organize, and deliver data across marketing and ad technology.
 
-A data element is a variable where the value can be mapped to data within the Experience Platform Mobile SDK such as visitor ID, device name, user profile, number of launches, et cetera. In Experience Platform Launch you can reference this value by its variable name. This collection of data elements becomes the dictionary of defined data that you can use to build rules for your application, and this dictionary is shared across Experience Platform Launch where it can be used with any extension added to your property.
+A data element is a variable where the value can be mapped to data in the Experience Platform Mobile SDK such as a visitor ID, a device name, a user profile, a number of launches, and so on. In Experience Platform Launch, you can reference this value by its variable name. This collection of data elements becomes the dictionary of defined data that you can use to build rules for your application, and this dictionary is shared across Experience Platform Launch where it can be used with any extension that is added to your property.
 
-Use data elements as widely as possible throughout rule creation to consolidate the definition of dynamic data. You define data elements once, and use them in multiple places. The concept of reusable data elements if very powerful and you should use them as a best practice.
+You can use data elements during rule creation to consolidate the definition of dynamic data. After defining your data elements, you can reuse them in multiple places.
 
-Data elements are populated with data when they are processed within the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). To use data elements, at a high level you can follow these steps:
+*Tip*: We recommend reusing data elements as a best practice.
+
+Data elements are populated with data when they are processed in the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). To use data elements, at a high level, complete the following steps:
 
 1. Create a data element.
 2. Use the data element when defining a rule.
