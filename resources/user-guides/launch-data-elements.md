@@ -8,13 +8,13 @@ You can use data elements during rule creation to consolidate the definition of 
 
 *Tip*: We recommend reusing data elements as a best practice.
 
-Data elements are building blocks for rules. Data elements allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate (shared state, event data) or which extension creates them.
+Data elements are building blocks for rules. Data elements allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate (shared state, event data) or which extension creates them. Data elements are populated with data when they are processed in the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). 
 
-Data elements are populated with data when they are processed in the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). To use data elements, at a high level, complete the following steps:
+To use data elements, at a high level, complete the following steps:
 
 {% hint style="info" %}
 
-When a new Extension is added to your property, new data elements may become available to use. You will need to repeat the steps to create new data elements in order to use them when creating new rules.
+When a new extension is added to your property, new data elements might become available to use. To use data elements when creating new rules, repeat the following steps to create a data element.
 
 {% endhint %}
 
@@ -50,20 +50,20 @@ Here is an example which creates a rule to send a postback containing the Experi
 
 2. Type a unique name for the the rule.
 3. In the **Events** section, click **Add**. 
-   1. In the **Extension** drop-down list, select **Mobile Core**.
-   2. In the **Event Type** drop-down list, select **Launched**.
-   3. Click **Keep Changes**.
+   a. In the **Extension** drop-down list, select **Mobile Core**.
+   b. In the **Event Type** drop-down list, select **Launched**.
+   c. Click **Keep Changes**.
 4. In the **Condition** section, click **Add**.
-   1. In the **Extension** drop-down list, select **Mobile Core**.
-   2. In the **Condition Type** drop-down list, select **Data Element**.
-   3. Enter a name for the condition.
-   4. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section. 
+   a. In the **Extension** drop-down list, select **Mobile Core**.
+   b. In the **Condition Type** drop-down list, select **Data Element**.
+   c. Enter a name for the condition.
+   d. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section. 
 5. In the **Action** section, click **Add**. 
-   1. In the **Extension** drop-down list, select Mobile Core.
-   2. In the **Action Type** drop-down list, select **Send Postback**.
-   3. In the **URL** text field, type a sample URL, for example, `https://my.company.com/launch?ecid=`.
-   4. Enter a name for the action.
-   5. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
+   a. In the **Extension** drop-down list, select Mobile Core.
+   b. In the **Action Type** drop-down list, select **Send Postback**.
+   c. In the **URL** text field, type a sample URL, for example, `https://my.company.com/launch?ecid=`.
+   d. Enter a name for the action.
+   e. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
 6. Click **Save**.
 
 ![create rule](../../.gitbook/assets/data-elements-create-rule.png)
@@ -74,7 +74,7 @@ After the property is published, this new rule is made available for download by
 
 ## Additional information
 
-Here is some additional information about the rules engine and the Signal extention:
+Here is some additional information about the Rules Engine and the Signal extention:
 
 - [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine) 
 
