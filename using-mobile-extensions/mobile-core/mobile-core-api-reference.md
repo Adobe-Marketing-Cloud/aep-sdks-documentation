@@ -10,7 +10,7 @@ Android applications must call `MobileCore.setApplication()` before calling any 
 
 ### Set Application
 
-Use this API to pass the Android Application instance to the SDK.
+You can use this API to pass the Android `Application` instance to the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -44,7 +44,7 @@ public class CoreApp extends Application {
 
 ### Get Application
 
-Use this API to get the previous set Android Application instance, this API is mainly provided for the 3rd party extension.
+You can use this API to get the previous set Android `Application` instance and it is mainly provided for the third-party extensions.
 
 {% tabs %}
 {% tab title="Android" %}
