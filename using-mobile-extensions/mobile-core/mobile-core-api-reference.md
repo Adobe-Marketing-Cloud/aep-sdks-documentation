@@ -1,12 +1,16 @@
 # Mobile Core API reference
 
-## Application reference
+## Application reference (Android Only)
 
 When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
 {% hint style="warning" %}
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
+
+### Set Application
+
+You can use this API to pass the Android `Application` instance to the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -36,6 +40,12 @@ public class CoreApp extends Application {
 {% endtab %}
 {% endtabs %}
 
+
+
+### Get Application
+
+You can use this API to get the previously set Android `Application` instance, and this instance is mainly provided for the third-party extensions.
+
 {% tabs %}
 {% tab title="Android" %}
 **Java**
@@ -63,7 +73,7 @@ if (app != null) {
 {% endtab %}
 {% endtabs %}
 
-### Track app actions
+## Track app actions
 
 Actions are events that occur in your app. You can use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
@@ -141,7 +151,7 @@ ACPCore.trackAction("action-name", {"key": "value"});
 {% endtab %}
 {% endtabs %}
 
-### Track app states and views
+## Track app states and views
 
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
@@ -215,7 +225,7 @@ ACPCore.trackState("state-name", {"key": "value"});
 {% endtab %}
 {% endtabs %}
 
-### Collect PII
+## Collect PII
 
 This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
 
@@ -285,7 +295,7 @@ ACPCore.collectPii({"myPii": "data"});
 {% endtab %}
 {% endtabs %}
 
-### Collect launch information
+## Collect launch information
 
 You can provide the user information to the SDK from various launch points in your application.
 
@@ -349,7 +359,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Set Icons for local notification
+## Set Icons for local notification (Android Only)
 
 Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -391,7 +401,7 @@ public static void setLargeIconResourceID(int resourceID)
 {% endtab %}
 {% endtabs %}
 
-### Logging
+## Logging
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow application developers to filter the logged messages based on the current logging mode.
 
@@ -656,7 +666,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 {% endtab %}
 {% endtabs %}
 
-### Handle open URL action
+## Handle open URL action
 
 The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
 
