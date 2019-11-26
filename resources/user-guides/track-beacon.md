@@ -1,18 +1,18 @@
-# Tracking Beacons
+# Tracking beacons
 
-## Emulating the trackBeacon call from v4 SDKs
+## Emulating the trackBeacon call from the v4 SDKs
 
-The `trackBeacon` call is no longer available in the Experience Platform SDKs. If you would like to send beacon tracking data to your Analytics server and be able to create rules based off of a user's proximity to your beacons, you can do so manually. Note that this solution relies on the [Profile extension](../../using-mobile-extensions/profile/) for the purposes of generating beacon-related rules.
+The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile extension](../../using-mobile-extensions/profile/) to generate beacon-related rules.
 
-This page contains sample code to help you implement your own `trackBeacon` calls.
+This topic contains sample code to help you implement your own `trackBeacon` calls.
 
 ### Tracking a beacon
 
-When your user comes within range of a beacon, call this method to send beacon data to [Analytics](../../using-mobile-extensions/adobe-analytics/). This code also saves all beacon-related data in the client-side Profile for use with the Rules Engine.
+When your user comes within the range of a beacon, call this method to send beacon data to [Analytics](../../using-mobile-extensions/adobe-analytics/). This code also saves all beacon-related data in the client-side Profile for use with the Rules Engine.
 
 {% tabs %}
 {% tab title="Android" %}
-In this method, the `proximity` parameter is an `int` representing various distances:
+In this method, the `proximity` parameter is an `int` that represents the various distances:
 
 * 0 - Unknown
 * 1 - Immediate
@@ -67,7 +67,7 @@ void trackBeacon(final String beaconUUID, final String major, final String minor
 {% endtab %}
 
 {% tab title="iOS" %}
-`CLBeacon` is only currently available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
+Currently, `CLBeacon` is only available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
 
 #### Objective-C
 
@@ -204,11 +204,11 @@ do {
 
 ### Clearing the current beacon
 
-The `clearCurrentBeacon` code will remove any previously set user attributes in the Profile extension. To keep Rules working as expected, this method should be called whenever the user is no longer within range of your beacon.
+The `clearCurrentBeacon` code removes the user attributes that were previously set in the Profile extension. To keep Rules working as expected, this method should be called when the user is no longer within range of your beacon.
 
 {% tabs %}
 {% tab title="Android" %}
-This example is using `static` constant strings that were provided in the `trackBeacon` code sample above.
+This example uses `static` constant strings that were provided in the `trackBeacon` code sample above.
 
 ```java
 void clearCurrentBeacon() {
@@ -221,9 +221,9 @@ void clearCurrentBeacon() {
 {% endtab %}
 
 {% tab title="iOS" %}
-`CLBeacon` is only currently available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
+Currently, `CLBeacon` is only available in iOS. The sample code contains the necessary checks to ensure OS compatibility.
 
-This example is using `static` constant strings that were provided in the `trackBeacon` code sample above.
+This example uses `static` constant strings that were provided in the `trackBeacon` code sample above.
 
 #### Objective-C
 
@@ -256,18 +256,18 @@ do {
 
 ## Using beacon values in Experience Platform Launch rules
 
-In the above code samples, attributes are being set in the client-side user profile. We can use those attributes when creating a rule in Experience Platform Launch to give a custom experience or take a specific action when the user is near a beacon.
+In the code samples above, attributes are set in the client-side user profile. We can use these attributes when creating a rule in Experience Platform Launch to provide a custom experience or to take a specific action when the user is near a beacon.
 
 ### Beacon data in rule conditions
 
-Mix-and-match beacon data in conditions to determine the specific audience for your action. You can use the following beacon-related variables:
+In conditions, you can mix-and-match beacon data to determine the specific audience for your action. You can use the following beacon-related variables:
 
 * UUID \(`a.beacon.uuid`\)
 * Major ID \(`a.beacon.major`\)
 * Minor ID \(`a.beacon.minor`\)
 * User Proximity \(`a.beacon.prox`\)
 
-Configure your condition by selecting the `Profile` extension, choosing `Profile Value` as a condition type, and entering in the desired variable. The following image shows an example of a condition which will pass when the Major ID \(`a.beacon.major`\) of the beacon is equal to `12`:
+Configure your condition by selecting the `Profile` extension, selecting `Profile Value` as the condition type, and typing the variable. The following graphic shows an example of a condition that passes when the Major ID \(`a.beacon.major`\) of the beacon is equal to `12`:
 
 ![](../../.gitbook/assets/beacon-condition.png)
 
@@ -275,11 +275,11 @@ Configure your condition by selecting the `Profile` extension, choosing `Profile
 
 ### Beacon data in rule actions
 
-Before using beacon data in your actions, creating a data element is recommended. You will need to create a data element for each variable you want to use in your actions. The image below is an example of creating a data element named `beacon.major` for the `a.beacon.major` key in our profile:
+Before you can use beacon data in your actions, create a data element for each variable that you want to use in your actions. The following graphic shows an example of creating a data element called `beacon.major` for the `a.beacon.major` key in our profile:
 
 ![](../../.gitbook/assets/beacon-data-element.png)
 
-After creating a data element, we can use it as token replacement in our actions. The screenshot below shows an action sending data to Analytics, and attaching the `beacon.major` data element as additional context data:
+After creating a data element, we can use this data element as a token replacement in our actions. The graphic below shows an action that sends data to Analytics and attaches the `beacon.major` data element as additional context data:
 
 ![](../../.gitbook/assets/beacon-token-replacement.png)
 
