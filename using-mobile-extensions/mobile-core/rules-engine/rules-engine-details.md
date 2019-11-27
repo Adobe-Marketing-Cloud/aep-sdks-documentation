@@ -10,7 +10,7 @@
 
 * A triggering event is the event that started the rule evaluation. 
 
-  The Adobe Experience Platform Mobile SDK evaluates each rule configured in Experience Platform Launch for the current event processed by the Event Hub.
+  The Adobe Experience Platform Mobile SDK evaluates each rule configured in Experience Platform Launch for the current event that is processed by the Event Hub.
 
 * Rules Engine is the system that processes the mobile rules that were configured in Experience Platform Launch and initiates the associated actions when the conditions are met.
 
@@ -35,7 +35,7 @@ Rules are delivered as a standard ZIP archive, which contains a `rules.json` fil
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | `condition` | object | *(Required)* Holds the definition for the base Condition object for this rule. Each Condition object can be a Group or a Matcher condition type. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and a matcher type. There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition) |
+| Condition | `condition` | object | *(Required)* Holds the definition for the base Condition object for this rule. Each Condition object can be a Group or a Matcher condition type. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and a matcher type. There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 | Action | `consequences` | array | *(Required)* Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 
 ## Condition object definition
@@ -107,9 +107,9 @@ The keys that are used here are different than those used for In-App message mat
 
 ### Matching and retrieving values by keys
 
-By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are also some special key prefixes that can cause the values to be sourced from other locations known to the Experience Platform SDKs. 
+By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are also some special key prefixes that can cause the values to be sourced from other locations that are known to the Experience Platform SDKs. 
 
-To avoid collisions, special key prefixes always start with `~` (tilde) to differentiate them from the standard event key names.
+To avoid collisions, special key prefixes always start with a `~` (tilde) to differentiate them from the standard event key names.
 
 | **Key prefix** | **Example** | **Description** |
 | :--- | :--- | :--- |
@@ -211,13 +211,13 @@ The consequences section of a rule lists the file names of each consequence obje
 
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
-| Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](rules-engine-consequence-details.md#analytics-consequence) |
-| In-App Message | `iam` | In-App Message | [In-App consequence detail definition](rules-engine-consequence-details.md#in-app-message-consequence) |
-| Postback | `pb` | Send Postback\(s\) to a third-party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence) |
-| PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](rules-engine-consequence-details.md#sync-pii-consequence) |
-| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deep linking. | [Open URL consequence detail definition](rules-engine-consequence-details.md#open-url-consequence) |
-| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](rules-engine-consequence-details.md#profile-consequence) |
-| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | [Attach data consequence detail definition](rules-engine-consequence-details.md#attach-data-consequence) |
+| Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](rules-engine-consequence-details.md#analytics-consequence). |
+| In-App Message | `iam` | In-App Message | [In-App consequence detail definition](rules-engine-consequence-details.md#in-app-message-consequence). |
+| Postback | `pb` | Send Postback\(s\) to a third-party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence). |
+| PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](rules-engine-consequence-details.md#sync-pii-consequence). |
+| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deep linking. | [Open URL consequence detail definition](rules-engine-consequence-details.md#open-url-consequence). |
+| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](rules-engine-consequence-details.md#profile-consequence). |
+| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | [Attach data consequence detail definition](rules-engine-consequence-details.md#attach-data-consequence). |
 
 ## rules.json examples
 
@@ -385,7 +385,7 @@ The Rules Engine requires an endpoint URL to be configured in the configuration,
 }
 ```
 
-The Adobe Experience Platform SDKs process the URL that points to a zipped rules collection, which contains a `rules.json` file. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
+The Adobe Experience Platform SDKs process the URL that points to a zipped rules collection, and this collection contains a `rules.json` file. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
 
 ## Configuration keys
 

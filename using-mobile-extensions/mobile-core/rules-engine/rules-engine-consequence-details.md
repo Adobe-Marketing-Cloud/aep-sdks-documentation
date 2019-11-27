@@ -10,7 +10,7 @@ This rule consequence is currently handled by the [Analytics](https://aep-sdks.g
 | --------------- | ----------- | ------ | ------------------------------------------------------------ |
 | Action          | action      | string | *(Optional)* If provided, this value will be used as the action parameter in a `trackAction` call. |
 | State/Page name | state       | string | *(Optional)* If provided, this value will be used as the state parameter in a `trackState` call. |
-| Context data    | contextdata | object | *(Optional)* Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth, that contains <string, string> key-value pairs. |
+| Context data    | contextdata | object | *(Optional)* Additional context data to be attached to the resulting Analytics request. The object should only have one level of depth that contains <string, string> key-value pairs. |
 
 ## In-App message consequence
 
@@ -20,7 +20,7 @@ This rule consequence is currently handled by the [Campaign](https://aep-sdks.gi
 | -------------------------- | ------------ | ------ | ------------------------------------------------------------ |
 | In-App template            | template     | string | *(Required)* Determines the display method of the In-App message. Currently supported types are `fullscreen`, `alert` and `local`. |
 | Fullscreen message content | html         | string | *(Required for fullscreen message type)* Filename of the HTML content to load for a fullscreen In-App message. This file will be sourced from the same zip file the `assets/` directory from which the consequence was retrieved. The base path (`assets/`) should not be included in this value. |
-| Remote assets              | remoteAssets | array  | *(Optional, only used by the fullscreen message type)* Array of strings of remote assets that should be cached by the client. These should be full-url strings with HTTPS transport. |
+| Remote assets              | remoteAssets | array  | *(Optional, only used by the fullscreen message type)* Array of strings of remote assets that should be cached by the client. These should be full-URL strings with HTTPS transport. |
 | Message title              | title        | string | *(Required for the alert message type)* String that defines the title of the alert message. |
 | Message content            | content      | string | *(Required for the alert and the local type message types)* String that defines the content of the alert or local notification. |
 | Confirm button text        | confirm      | string | *(Optional, only used by alert messages)* String that defines the text on the **Confirm** button in the OS-operated dialog. |
@@ -41,7 +41,7 @@ This rule is currently handled by the [Signal](https://aep-sdks.gitbook.io/docs/
 | ------------------ | ------------ | ------ | ------------------------------------------------------------ |
 | Description URL    | templateurl  | string | *(Required)* Destination URL to which the postback signal will be sent. |
 | Request body       | templatebody | string | *(Optional)* A string that contains the POST body that will be sent. If this value exists, the postback is sent as a POST instead of as a GET request. <br/>You must ensure that the string is appropriately json escaped. |
-| Content type       | contenttype  | string | *(Optional)* Used to set the Content-Type header for POST requests. If the header is not supplied, but a request body is found, the default is `application/x-www-form-urlencoded`. |
+| Content type       | contenttype  | string | *(Optional)* Used to set the Content-Type header for POST requests. If the header is not supplied, and a request body is found, the default is `application/x-www-form-urlencoded`. |
 | Connection timeout | timeout      | number | *(Optional)* The timeout value for the network connection in seconds. The default value is 2 seconds. |
 
 ## Sync PII consequence
