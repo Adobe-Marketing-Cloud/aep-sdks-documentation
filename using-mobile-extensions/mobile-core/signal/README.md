@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 2. Define the necessary rules in Experience Platform Launch. 
 3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to Experience Platform Launchcollect PII data and send it to the configured third-party destination.
 
-For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html)
+For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
 ## Add the Signal extension to your app
 
@@ -163,10 +163,12 @@ initSDK() {
 
 ##Define rules in Experience Platform Launch
 
-To define the rules in Experience Platform Launch, complete the steps in [Signal extension and Rules Engine Integaration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration).
+To define the rules in Experience Platform Launch, complete the steps in [Signal extension and Rules Engine integaration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration).
 
 ##Implement the Mobile SDK to send PII data to external destinations
 
-To send PII data to external destinations, the `PII` action can trigger the Rules engine when the configured triggers and traits match. When setting a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data..
+To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When setting a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data..
 
 For the information on collectPii and its usage, see collectPii in [AEP Mobile Core API reference Page](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
+
+For more information on how to configure the Signal postbacks in Adobe Experience Platform Launch refer [signals-extension-and-rules-engine-integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signals-extension-and-rules-engine-integration).

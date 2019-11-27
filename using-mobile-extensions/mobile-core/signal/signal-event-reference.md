@@ -4,9 +4,9 @@
 
 ### Rules Engine Response Content
 
-This event is used by the Signal extension to queue up and send network calls that correspond to the sync pii call or postback message.
+This event is used by the Signal extension to queue up and send network calls that correspond to the [sync pii consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) or postback message.
 
-This event is triggered by the Rules Engine when events and conditions are met.
+This event is triggered by the Rules Engine when the events and conditions are met.
 
 #### Event details
 
@@ -57,7 +57,7 @@ Open URL Request with a deeplink URL
 
 ### Configuration Response Content
 
-This event is dispatched on the event hub when a configuration change is processed.  If a change occurs, the listener updates the privacy status. 
+This event is dispatched on the Event Hub when a configuration change is processed.  If a change occurs, the listener updates the privacy status. 
 
 #### Event details
 
@@ -75,8 +75,8 @@ The Signal extension will read the following keys from the configuration event:
 | type           | Event Type    | string                                                       | No       | Type of the event.                                           |
 | source         | Event Source  | string                                                       | No       | Source of the event.                                         |
 | id             | Event ID      | string                                                       | No       | ID used for the event.                                       |
-| eventData      | Event Data    | [Event Data](https://wiki.corp.adobe.com/display/ADMSMobile/Event+Data) | No       | A map of key-value pairs that represents the configuration for all the modules. |
-| global.privacy | String        | String                                                       | No       | Contains the default setting that the user has request with regards to data privacy. |
+| eventData      | Event Data    | [Event Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/attach-data#what-are-sdk-events) | No       | A map of key-value pairs that represents the configuration for all the modules. |
+| global.privacy | String        | String                                                       | No       | Contains the default setting that the user has requested with regards to data privacy. |
 | timestamp      | Time Stamp    | number                                                       | No       | Time (in seconds) since Jan 1, 1970.                         |
 
 #### Event data example
@@ -91,5 +91,5 @@ For a configuration change event:
 
 ## Events dispatched and Shared State
 
-The Signal Extension does not dispatch an event and also it doesn't share any shared state.
+The Signal extension does not dispatch an event and does not share any shared state.
 
