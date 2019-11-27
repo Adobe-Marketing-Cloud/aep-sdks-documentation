@@ -1,12 +1,12 @@
-# Tracking beacons
+# Track beacons
 
-## Emulating the trackBeacon call from the v4 SDKs
+## Emulate the trackBeacon call from the v4 SDKs
 
 The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile extension](../../using-mobile-extensions/profile/) to generate beacon-related rules.
 
 This topic contains sample code to help you implement your own `trackBeacon` calls.
 
-### Tracking a beacon
+### Track a beacon
 
 When your user comes within the range of a beacon, call this method to send beacon data to [Analytics](../../using-mobile-extensions/adobe-analytics/). This code also saves all beacon-related data in the client-side Profile for use with the Rules Engine.
 
@@ -202,7 +202,7 @@ do {
 {% endtab %}
 {% endtabs %}
 
-### Clearing the current beacon
+### Clear the current beacon
 
 The `clearCurrentBeacon` code removes the user attributes that were previously set in the Profile extension. To keep Rules working as expected, this method should be called when the user is no longer within range of your beacon.
 
@@ -254,7 +254,7 @@ do {
 {% endtab %}
 {% endtabs %}
 
-## Using beacon values in Experience Platform Launch rules
+## Use beacon values in Experience Platform Launch rules
 
 In the code samples above, attributes are set in the client-side user profile. We can use these attributes when creating a rule in Experience Platform Launch to provide a custom experience or to take a specific action when the user is near a beacon.
 
