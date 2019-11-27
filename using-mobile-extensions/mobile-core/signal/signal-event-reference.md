@@ -4,7 +4,7 @@
 
 ### Rules Engine Response Content
 
-This event is used by the Signal extension to queue up and send network calls that correspond to the [sync pii consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) or postback message.
+This event is used by the Signal extension to queue and send network calls that correspond to the [sync pii consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) or postback message.
 
 This event is triggered by the Rules Engine when the events and conditions are met.
 
@@ -57,7 +57,7 @@ Open URL Request with a deeplink URL
 
 ### Configuration Response Content
 
-This event is dispatched on the Event Hub when a configuration change is processed.  If a change occurs, the listener updates the privacy status. 
+This event is dispatched on the Event Hub when a configuration change is processed. If a change occurs, the listener updates the privacy status.
 
 #### Event details
 
@@ -67,7 +67,7 @@ This event is dispatched on the Event Hub when a configuration change is process
 
 #### Data payload definition
 
-The Signal extension will read the following keys from the configuration event:
+The Signal extension reads the following keys from the configuration event:
 
 | Key            | Friendly name | Type                                                         | Optional | Description                                                  |
 | -------------- | ------------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |

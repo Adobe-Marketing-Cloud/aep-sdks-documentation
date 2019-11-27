@@ -63,13 +63,13 @@ ACPCore.collectPii(piiContextData)
 
 ![Data Element Example for Collect PII context data key](img/data_element_example_collect_pii.png)
 
-1. In Experience Platform Launch, create a new rule for sending a postback.
+2. In Experience Platform Launch, create a new rule for sending a postback.
 
-Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following image:
+Create a new rule by selecting the Mobile Core Collect PII event and the Action Mobile Core Send Postback action as illustrated in the following graphic:
 
 ![Rule example using Collect PII event and Postback action](img/postback_pii_token_example.png)
 
-1. Use the above data element in the Postback action.
+3. Select the data element that you created in step 1 for the Postback action.
 
 Edit the `Send Postback` action and include the following URL in the corresponding edit box:
 

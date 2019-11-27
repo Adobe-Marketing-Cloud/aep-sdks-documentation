@@ -1,8 +1,10 @@
 # Signal
 
+The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
+
 The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Adobe Experience Platform Launch. 
 
-To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
+To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
 To get started with Signal extension, complete the following steps:
 
@@ -93,7 +95,7 @@ pod install
 
 #### Java
 
-To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in `onCreate()`:
 
 ```java
 public class MobileApp extends Application {
@@ -167,8 +169,8 @@ To define the rules in Experience Platform Launch, complete the steps in [Signal
 
 ##Implement the Mobile SDK to send PII data to external destinations
 
-To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When setting a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data..
+To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When creating a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data.
 
 For the information on collectPii and its usage, see collectPii in [AEP Mobile Core API reference Page](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
 
-For more information on how to configure the Signal postbacks in Adobe Experience Platform Launch refer [signals-extension-and-rules-engine-integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signals-extension-and-rules-engine-integration).
+For more information about how to configure the Signal postbacks in Adobe Experience Platform Launch, see [doc link](https://aep-sdks.gitbook.io/docs/resources/user-guides/signals-extension-and-rules-engine-integration).
