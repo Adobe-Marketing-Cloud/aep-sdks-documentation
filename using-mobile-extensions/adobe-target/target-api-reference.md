@@ -123,7 +123,7 @@ Use this API to get the Target user identifier.
 {% tab title="Android" %}
 ### getTntId
 
-The callback is invoked to return the `tntId` value, or if no Target ID is set,  `null` is returned.
+The callback is invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
 
 Target returns `tntId` with a successful call to `loadRequests` or `prefetchContent`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
@@ -241,6 +241,7 @@ Use this API to set the Target preview URL to be displayed when the preview mode
 ```text
 public static void setPreviewRestartDeepLink(final Uri deepLink)
 ```
+
 #### Example
 
 ```java
@@ -256,6 +257,7 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 ```objectivec
 + (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
 ```
+
 #### Examples
 
 Here are some examples in Objective-C and Swift:
@@ -271,7 +273,6 @@ Here are some examples in Objective-C and Swift:
 ```swift
 ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -285,7 +286,6 @@ Prefetched offer content does not persist across application launches. The prefe
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### TargetPrefetch constructor
 
 Using the `TargetPrefetch` constructor, you can create a `TargetPrefetch` instance with the specified data. It accepts the mbox location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent` API to prefetch offers for the specified mbox locations.
@@ -293,8 +293,9 @@ Using the `TargetPrefetch` constructor, you can create a `TargetPrefetch` instan
 #### Syntax
 
 ```java
-public TargetPrefetch(final String mboxName, final TargetParameters targetParameters) 
+public TargetPrefetch(final String mboxName, final TargetParameters targetParameters)
 ```
+
 #### Example
 
 ```java
@@ -477,7 +478,6 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 {% endtab %}
 {% endtabs %}
 
-
 ## Clear prefetch offer cache
 
 Use this API to clear prefetched offers cached in memory.
@@ -517,6 +517,7 @@ Here are some examples in Objective-C and Swift:
 ```objectivec
 [ACPTarget clearPrefetchCache];
 ```
+
 **Swift**
 
 ```swift
@@ -642,7 +643,7 @@ ACPTargetRequestObject *request2 = [ACPTargetRequestObject targetRequestObjectWi
 defaultContent:@"red" callback:^(NSString * _Nullable content) {
     // do something with the received content
   }];
-  
+
 // Create request object array
 NSArray *requestArray = @[request1,request2];
 
@@ -660,6 +661,7 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 // Call the API
 [ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters];
 ```
+
 **Swift**
 
 ```swift
@@ -708,10 +710,10 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 
 ## Send an mbox display notification
 
-Use this API to send a location \(mbox\) display notification to configured Target server. This API should be invoked for a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests). If no previous prefetch request is made and the mbox content is retrieved using  `retrieveLocationContent` API, then calling this API does not trigger a notification request to the Target server.
+Use this API to send a location \(mbox\) display notification to configured Target server. This API should be invoked for a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests). If no previous prefetch request is made and the mbox content is retrieved using `retrieveLocationContent` API, then calling this API does not trigger a notification request to the Target server.
 
 {% hint style="warning" %}
-Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#load-target-requests). For a prefetched mbox, on calling the deprecated `loadRequests` API, mbox display notification is internally sent to the Target server by the SDK. 
+Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#load-target-requests). For a prefetched mbox, on calling the deprecated `loadRequests` API, mbox display notification is internally sent to the Target server by the SDK.
 {% endhint %}
 
 {% tabs %}
@@ -757,6 +759,7 @@ Target.locationsDisplayed(mboxList, targetParameters);
 + (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
 withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
+
 #### Examples
 
 Here are some examples in Objective-C and Swift:
@@ -790,14 +793,12 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 {% endtab %}
 {% endtabs %}
 
-
 ## Send an mbox click notification
 
 Use this API to send a location \(mbox\) click notification to configured Target server. This API can be invoked in the following cases:
 
 * For a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests).
 * For a regular mbox when no previous prefetch request is made and the mbox content is retrieved using `retrieveLocationContent` API.
-
 
 {% hint style="warning" %}
 For a click notification to be sent to Target, make sure click metric is enabled for the given mbox name in Target.
@@ -806,6 +807,7 @@ For a click notification to be sent to Target, make sure click metric is enabled
 {% tabs %}
 {% tab title="Android" %}
 ### locationClicked
+
 #### Syntax
 
 ```java
@@ -854,6 +856,7 @@ Target.locationClicked("cartLocation", targetParameters);
 
 {% tab title="iOS" %}
 ### locationClicked
+
 #### Syntax
 
 ```objectivec

@@ -1,6 +1,6 @@
 # Mobile Core API reference
 
-## Application reference (Android Only)
+## Application reference \(Android Only\)
 
 When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
@@ -39,8 +39,6 @@ public class CoreApp extends Application {
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Get Application
 
@@ -359,7 +357,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Set Icons for local notification (Android Only)
+## Set Icons for local notification \(Android Only\)
 
 Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 

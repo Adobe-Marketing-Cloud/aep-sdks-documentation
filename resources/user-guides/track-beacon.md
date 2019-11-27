@@ -1,4 +1,4 @@
-# Track beacons
+# Tracking Beacons
 
 ## Emulate the trackBeacon call from the v4 SDKs
 

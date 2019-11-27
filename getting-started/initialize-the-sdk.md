@@ -5,7 +5,7 @@
 To initialize the SDK, you will need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch. The **Environment ID** links the configuration from a mobile property with your SDK implementation.
 
 {% hint style="info" %}
-To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab (found in a previously created and configured mobile property) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
+To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab \(found in a previously created and configured mobile property\) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
 {% endhint %}
 
 {% tabs %}
@@ -86,7 +86,7 @@ public void onCreate() {
 {% tab title="React Native" %}
 ### Javascript
 
-> Tip: We recommend SDK initialization via [native code](https://github.com/adobe/react-native-acpcore) in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You may also initialize the SDK in Javascript (React Native).
+> Tip: We recommend SDK initialization via [native code](https://github.com/adobe/react-native-acpcore) in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You may also initialize the SDK in Javascript \(React Native\).
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -704,3 +704,4 @@ For more information, see [Mobile Core API Reference](../using-mobile-extensions
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+

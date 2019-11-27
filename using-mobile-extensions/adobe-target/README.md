@@ -29,18 +29,17 @@ To get started with Target, follow these steps:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 1. Add the Target extension to your project using the app's Gradle file.
 2. Import the Target extension in to your application's main activity.  
-```java
-import com.adobe.marketing.mobile.*;
-```
+
+   ```java
+   import com.adobe.marketing.mobile.*;
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
-
 1. Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
 2. Import the Target and Identity libraries.
 
@@ -123,7 +122,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true;
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -135,7 +133,6 @@ The `TargetOrder` class encapsulates the order ID, the order total, and the purc
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java
@@ -160,6 +157,7 @@ TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 total: (nullable NSNumber*) total
 purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
 ```
+
 #### Examples
 
 Here are some examples in Objective-C and Swift:
@@ -175,7 +173,6 @@ ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400
 ```swift
 let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -185,7 +182,6 @@ The `TargetProduct` class encapsulates the product ID and the product category I
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java
@@ -213,7 +209,6 @@ Here are some examples in Objective-C and Swift:
 
 **Objective-C**
 
-
 ```objectivec
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 ```
@@ -226,14 +221,12 @@ let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 {% endtab %}
 {% endtabs %}
 
-
 ### Target Parameters
 
-`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters` and allows you easily pass these parameters in a Target request.  
+`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters` and allows you easily pass these parameters in a Target request.
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java
@@ -299,6 +292,7 @@ profileParameters:profileParameters
 product:product
 order:order];
 ```
+
 **Swift**
 
 ```objectivec
@@ -326,7 +320,7 @@ When merging, the new keys in the mbox parameters or the profile parameters are 
 
 ## Target Sessions
 
-The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
+The Target extension \(version 2.1.4 for iOS\) and \(version 1.1.3 for Android\) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
 
 ## Visual preview
 
@@ -338,9 +332,7 @@ To enter the preview visual mode, use the `collectLaunchInfo` API to enable the 
 
 {% tabs %}
 {% tab title="Android" %}
-
 In Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target Activity and deep link information is extracted from the Intent extras.
-
 {% endtab %}
 
 {% tab title="iOS" %}

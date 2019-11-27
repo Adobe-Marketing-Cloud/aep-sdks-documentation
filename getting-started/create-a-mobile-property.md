@@ -16,14 +16,12 @@ Having trouble creating a mobile property or need access to Experience Platform 
 3. Locate the new property in the **Properties** list and open it.
 
 {% hint style="danger" %}
-The default privacy status is set to *opted in* and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
+The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
 {% endhint %}
 
 ## Set up your extensions
 
-1. In Experience Platform Launch, click the **Extensions** tab.  
-   The **Mobile Core** and **Profile** extensions are installed by default.
-
+1. In Experience Platform Launch, click the **Extensions** tab. The **Mobile Core** and **Profile** extensions are installed by default.
 2. On the **Mobile Core** card, click **Configure**.
 
    ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
@@ -41,7 +39,7 @@ The default privacy status is set to *opted in* and might impact data collection
    A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
    a. Click **Save** to confirm your settings for **Mobile Core**.
-   
+
    b. Click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}

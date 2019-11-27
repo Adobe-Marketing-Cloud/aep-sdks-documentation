@@ -1,4 +1,4 @@
-# Attach data to SDK events
+# Attach Data to SDK Events
 
 The _attach data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.1.8 \(Launch\), 2.3.5 \(iOS\), and 1.4.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
 
@@ -56,7 +56,7 @@ When defining a payload for the attach data action, the payload must match the f
 
 ## Example - attaching data to an Analytics event
 
-The following sample shows how to *attach data* to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
 1. [Create a new **Rule**](attach-data.md#create-a-rule)
 2. [Select the **Event** you want to trigger the rule](attach-data.md#select-an-event)
@@ -73,9 +73,9 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ### Select an event
 
-1. Give your rule an easily recognizable name in your list of rules. 
+1. Give your rule an easily recognizable name in your list of rules.
 
-  In this example, the rule is named **Attach Places Data to Analytics Track Action Events**.
+   In this example, the rule is named **Attach Places Data to Analytics Track Action Events**.
 
 2. Under the **Events** section, click **Add**.
 3. From the **Extension** drop-down list, select **Mobile Core**.

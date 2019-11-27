@@ -8,8 +8,8 @@ The following updates were made in this release:
 
 **iOS Identity 2.1.3**
 
-- Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) Service.
-- Fixed a threading issue where the Experience Cloud ID (ECID) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
+* Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID \(ECID\) Service.
+* Fixed a threading issue where the Experience Cloud ID \(ECID\) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
 
 These changes were released as part of ACPCore CocoaPod v2.3.6.
 
@@ -374,7 +374,6 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-
 ## May 20, 2019
 
 The following updates were made in this release:
@@ -451,7 +450,6 @@ The following updates were made in this release:
 **iOS Core 2.2.1**
 
 * Fixed an issue when the app network crashes under extreme conditions.
-
 
 ## April 26, 2019
 
@@ -755,3 +753,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

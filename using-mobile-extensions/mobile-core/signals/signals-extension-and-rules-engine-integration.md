@@ -32,56 +32,50 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
 
 1. In the mobile application, call collectPII to fire Event with context data.
 
-    {% tabs %}
-    {% tab title="Android" %}
-    ```java
+   ```java
     Signal.registerExtension();
     ...
     Map<String, String> data = new HashMap<String, String>();
     data.put("user_email", "user_001@example.com");
     MobileCore.collectPII(data);
-    ```
-    {% endtab %}
+   ```
 
-    {% tab title="iOS" %}
-    **Objective-C Example**
+   **Objective-C Example**
 
-    ```text
+   ```text
     [ACPSignal registerExtension];
     ...
     [ACPCore collectPii:data:@{@"user_email" : @"user_001@example.com"}];
-    ```
+   ```
 
-    **Swift Example**
+   **Swift Example**
 
-    ```swift
+   ```swift
     ACPSignal.registerExtension()
     ...
     let piiContextData: [String: String] = ["user_email" : "user_001@example.com"]
     ACPCore.collectPii(piiContextData)
-    ```
-    {% endtab %}
-    {% endtabs %}
+   ```
 
-1. In Adobe Experience Platform Launch, create a Data element for the `user_email` context data key.
+2. In Adobe Experience Platform Launch, create a Data element for the `user_email` context data key.
 
-    ![Data Element Example for Collect PII context data key](../../../.gitbook/assets/data_element_example_collect_pii.png)
+   ![Data Element Example for Collect PII context data key](../../../.gitbook/assets/data_element_example_collect_pii.png)
 
-1. In Experience Platform Launch, create a new rule for sending a postback.
+3. In Experience Platform Launch, create a new rule for sending a postback.
 
-    Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following image:
+   Create a new rule by selecting the Event Mobile Core Collect PII and the Action Mobile Core Send Postback as in the following image:
 
-    ![Rule example using Collect PII event and Postback action](../../../.gitbook/assets/postback_pii_token_example.png)
+   ![Rule example using Collect PII event and Postback action](../../../.gitbook/assets/postback_pii_token_example.png)
 
-1. Use the above data element in the Postback action.
+4. Use the above data element in the Postback action.
 
-    Edit the `Send Postback` action and include the following URL in the corresponding edit box:
+   Edit the `Send Postback` action and include the following URL in the corresponding edit box:
 
-    ```text
+   ```text
     https://my.company.com/users?email={%%Mobile Core Context Data email%%}
-    ```
+   ```
 
-    ![Send Postback action example](../../../.gitbook/assets/postback_pii_token_example2.png)
+   ![Send Postback action example](../../../.gitbook/assets/postback_pii_token_example2.png)
 
 For more information about `collectPii` and its usage, see `collectPii` in [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 

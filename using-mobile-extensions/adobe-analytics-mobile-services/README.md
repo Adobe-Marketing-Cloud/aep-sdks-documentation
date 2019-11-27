@@ -3,7 +3,7 @@
 This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="info" %}
-The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.  
+The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.
 
 For more information, contact your Adobe CSM.
 {% endhint %}
@@ -24,7 +24,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions]().
+Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions](./).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
@@ -44,7 +44,7 @@ The Mobile Services extension also requires the Analytics extension for reportin
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3. Select ****a Mobile Services app and complete the following tasks:
+3. Select _\*\*_a Mobile Services app and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
@@ -87,7 +87,7 @@ You can find the Messages URL from your `ADBMobileConfig.json` file typically ne
 
 ## Configure Adobe Analytics extension
 
-Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to ensure that this extension is correctly configured and implemented.
+Follow the steps listed in the [Adobe Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/4a820ee0834b79be73c05ff0ac7d7975e4784a35/using-mobile-extensions/adobe-mobileservices/adobe-analytics/README.md) to ensure that this extension is correctly configured and implemented.
 
 In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
@@ -188,15 +188,15 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 {% tab title="Android" %}
 Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-### setPushIdentifier  <a id="setpushidentifier"></a>
+### setPushIdentifier <a id="setpushidentifier"></a>
 
-#### Syntax  <a id="syntax"></a>
+#### Syntax <a id="syntax"></a>
 
 ```java
 void setPushIdentifier(final String registrationID)
 ```
 
-#### Example  <a id="example"></a>
+#### Example <a id="example"></a>
 
 ```java
 MobileCore.setPushIdentifier(registrationID);
@@ -586,3 +586,4 @@ To prepare for your migration, remember the following information:
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
 * Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
+

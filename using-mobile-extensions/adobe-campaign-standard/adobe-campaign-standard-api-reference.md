@@ -6,7 +6,6 @@ To return the current version of the Campaign extension, use the following APIs:
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### extensionVersion
 
 #### Java
@@ -25,7 +24,6 @@ Campaign.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### extensionVersion
 
 #### Syntax
@@ -52,7 +50,6 @@ print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### extensionVersion
 
 #### JavaScript
@@ -65,11 +62,10 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ## Set linkage fields
 
-This API sets the Campaign linkage fields (CRM IDs) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### setLinkageFields
 
 #### Java
@@ -92,7 +88,6 @@ Campaign.setLinkageFields(linkageFields);
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### setLinkageFields
 
 #### Syntax
@@ -133,11 +128,10 @@ ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 
 ## Reset linkage fields
 
-This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT_IN, no rules download occurs.
+This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT\_IN, no rules download occurs.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### resetLinkageFields
 
 #### Syntax
@@ -190,14 +184,12 @@ ACPCampaign.resetLinkageFields();
 
 ## Set up push messaging
 
-To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM) must be sent to the Adobe Identity service by calling `setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
+To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
-For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc).
-For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
+For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### setPushIdentifier
 
 #### Syntax
@@ -210,19 +202,19 @@ public static void setPushIdentifier(final String registrationID)
 
 ```java
 FirebaseInstanceId.getInstance().getInstanceId()
-		.addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-			@Override
-			public void onComplete(@NonNull Task<InstanceIdResult> task) {
-				if (!task.isSuccessful()) {
-					return;
-				}
-				// Get new Instance ID token
-				String registrationID = task.getResult().getToken();
-				// Log and toast
-				System.out.println("Received new registration token: " + registrationID);
-				// invoke the API to send the push identifier to the Identity Service
-				MobileCore.setPushIdentifier(registrationID);
-			}
+        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                if (!task.isSuccessful()) {
+                    return;
+                }
+                // Get new Instance ID token
+                String registrationID = task.getResult().getToken();
+                // Log and toast
+                System.out.println("Received new registration token: " + registrationID);
+                // invoke the API to send the push identifier to the Identity Service
+                MobileCore.setPushIdentifier(registrationID);
+            }
 });
 ```
 {% endtab %}
@@ -259,7 +251,6 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
   //...
 }
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -275,11 +266,10 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ## Tracking push or local notification message interactions
 
-User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). 
+User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### collectMessageInfo
 
 #### Syntax
@@ -301,33 +291,31 @@ private void handleTracking() {
     // Check to see if this view was opened based on a notification
     Intent intent = getIntent();
     Bundle data = intent.getExtras();
-  	if(data != null) {
-			HashMap<String,Object> userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
-			String deliveryId = (String)userInfo.get("deliveryId");
-			String broadlogId = (String)userInfo.get("broadlogId");
+      if(data != null) {
+            HashMap<String,Object> userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
+            String deliveryId = (String)userInfo.get("deliveryId");
+            String broadlogId = (String)userInfo.get("broadlogId");
 
-			HashMap<String, Object> contextData = new HashMap<>();
+            HashMap<String, Object> contextData = new HashMap<>();
 
-			if (deliveryId != null && broadlogId != null) {
-				contextData.put("deliveryId", deliveryId);
-				contextData.put("broadlogId", broadlogId);
+            if (deliveryId != null && broadlogId != null) {
+                contextData.put("deliveryId", deliveryId);
+                contextData.put("broadlogId", broadlogId);
 
-				// Send Click Tracking since the user did click on the notification
-				contextData.put("action", "2");
-				MobileCore.collectMessageInfo(contextData);
+                // Send Click Tracking since the user did click on the notification
+                contextData.put("action", "2");
+                MobileCore.collectMessageInfo(contextData);
 
-				// Send Open Tracking since the user opened the app
-				contextData.put("action", "1");
-				MobileCore.collectMessageInfo(contextData);
-			}
-		}
+                // Send Open Tracking since the user opened the app
+                contextData.put("action", "1");
+                MobileCore.collectMessageInfo(contextData);
+            }
+        }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### collectMessageInfo
 
 #### Syntax
@@ -349,27 +337,27 @@ private void handleTracking() {
         NSDictionary *userInfo = response.notification.request.content.userInfo;
         NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
         NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
-        
+
         // handle the user response to the local notification action buttons
         if([response.actionIdentifier isEqualToString:@"YES_ACTION"] || [response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]){
             NSLog(@"Received a positive action with action identifier %@", response.actionIdentifier);
-            
+
             if ([UIApplication sharedApplication].applicationState == UIApplicationStateInactive || [UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
                 // App is launched from notification (action = "1")
                 [self sendTracking:tOpen withBroadlogId:broadlogId andDeliveryId:deliveryId];
             }
-            
+
             // Push or Local notification is clicked (action = "2")
             [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];
-        
+
         } else if ([response.actionIdentifier isEqualToString:@"NO_ACTION"] || [response.actionIdentifier isEqualToString:UNNotificationDismissActionIdentifier]){
             NSLog(@"Received a dismiss action with action identifier %@", response.actionIdentifier);
-            
+
             // Push or Local notification is clicked (action = "2")
             [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];  
         }
 }
-                   
+
 - (void) sendTracking:(TrackType)trackType withBroadlogId:(NSString *)broadlogId andDeliveryId:(NSString *)deliveryId {
     if (broadlogId != nil && deliveryId != nil) {
         NSString *action = nil;
@@ -377,15 +365,15 @@ private void handleTracking() {
             case tImpression:
                 action = @"7";
                 break;
-                
+
             case tOpen:
                 action = @"1";
                 break;
-                
+
             case tClick:
                 action = @"2";
                 break;
-                
+
             default:
                 NSLog(@"Received invalid tracking type, aborting send!");
                 return;
@@ -414,19 +402,19 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
         // handle the user response to the local notification action buttons
         if (response.actionIdentifier == "YES_ACTION") || (response.actionIdentifier == UNNotificationDefaultActionIdentifier) {
-        	print("Received a positive action with action identifier", response.actionIdentifier)
+            print("Received a positive action with action identifier", response.actionIdentifier)
 
         if UIApplication.shared.applicationState == .inactive || UIApplication.shared.applicationState == .background {
-        	// App is launched from notification (action = "1")
-        	self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+            // App is launched from notification (action = "1")
+            self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
         }
 
         // Push or Local notification is clicked (action = "2")
         self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
         } else if (response.actionIdentifier == "NO_ACTION") || (response.actionIdentifier == UNNotificationDismissActionIdentifier) {
-        	print("Received a dismiss action with action identifier",response.actionIdentifier)
-        	// Push or Local notification is clicked (action = "2")
-        	self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+            print("Received a dismiss action with action identifier",response.actionIdentifier)
+            // Push or Local notification is clicked (action = "2")
+            self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
         }
     }
 }
@@ -453,8 +441,6 @@ func sendTracking(_ trackType: TrackType, withBroadlogId broadlogId: String?, an
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
