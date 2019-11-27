@@ -271,7 +271,7 @@ ACPCampaign.registerExtension();
 
 ### Initialize the SDK and set up tracking
 
-To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://app.gitbook.com/@aep-sdks/s/docs/~/edit/drafts/-Lk5p1L7rNsNumKjjTRf/getting-started/initialize-the-sdk).
+To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
 ### Set up in-app messaging
 
