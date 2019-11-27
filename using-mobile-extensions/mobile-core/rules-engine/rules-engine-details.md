@@ -2,42 +2,41 @@
 
 ## Key definitions
 
-* An Asset is an opaque data blob that is needed by a specific consequence.
 * A condition is a boolean equation that evaluates to `true` or `false`.
-* A consequence is the action to be performed when the condition\(s\) evaluates to `true`.
+
+* A consequence is the action to be performed when the trigger is met and the condition\(s\) evaluates to `true`.
+
 * A rule is a set of conditions and the associated consequence\(s\).
+
+* A triggering event is the event that started the rule evaluation. 
+
+  The Adobe Experience Platform Mobile SDK evaluates each rule configured in Experience Platform Launch for the current event that is processed by the Event Hub.
+
+* Rules Engine is the system that processes the mobile rules that were configured in Experience Platform Launch and initiates the associated actions when the conditions are met.
+
+* An asset is an opaque data blob that is needed by a specific consequence.
+
+## Rules delivery
+
+Rules delivery occurs by using a network request from the Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The rules file for each mobile property is hosted on https://assets.adobedtm.com.
+
+This request is a conditional `GET` and occurs by default at the start of each new application session. In Experience Platform Launch, when the set of rules that were configured for a mobile property change, these changes will be picked up by the Experience Platform SDK in the next session or after the application is restarted.
 
 ## File format
 
-Rules and their associated assets are delivered as a standard ZIP archive, which uses the following format:
+Rules are delivered as a standard ZIP archive, which contains a `rules.json` file. This file consists of a root-level JSON object that contains the following elements:
 
-* `/`
-* `rules.json`
-* `assets /`
-* `(asset)`
-* `(asset)`
-
-## File delivery
-
-File delivery occurs by using a request from the Experience Platform SDKs to a static endpoint that is defined as part of the SDK configuration. The SDKs support token expansions on this endpoint, which allows the injection of ECIDs and property IDs in the request.
-
-This request is a conditional `GET` and occurs by default at the start of each new application session.
-
-### rules.json format
-
-The `rules.json` consists of a root-level JSON object that contains the following elements:
-
-| **Friendly Name** | **Key** | **Type** | **Description** |
+| **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Version | `version` | number | \(Required\) Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
-| Rules | `rules` | array | \(Required\) An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
+| Version | `version` | number | *(Required)* Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
+| Rules | `rules` | array | *(Required)* An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
 
 ## Rule object definition
 
-| **Friendly Name** | **Key** | **Type** | **Description** |
+| **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | `condition` | object | **\(**Required\) Holds the definition for the base Condition object for this rule. Each Condition object has a type and can be a Group or a Matcher condition. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and matcher type.   There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition) |
-| Action | `consequences` | array | \(Required\) Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Condition | `condition` | object | *(Required)* Holds the definition for the base Condition object for this rule. Each Condition object can be a Group or a Matcher condition type. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and a matcher type. There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Action | `consequences` | array | *(Required)* Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 
 ## Condition object definition
 
@@ -47,30 +46,36 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 ### Condition object
 
-| **Friendly Name** | **Key Value** | **Value Type** | **Example** | **Description** |
+| **Friendly name** | **Key** | **Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Condition Type | `type` | string | `"type":"group"` | Indicates the type of the current condition.   The value must be a valid string from the Condition Types. |
-| Definition | `definition` | object | `"definition": { "logic" : "and", "conditions" : [...] }` | Defines how the condition should be evaluated.   The contents of this object will be different depending on the condition type. |
+| Condition type | `type` | string | `"type":"group"` | Indicates the type of the current condition. The value must be a valid string from the [Condition types](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#condition-types). |
+| Definition | `definition` | object | `"definition": { "logic" : "and", "conditions" : [...] }` | Defines how the condition should be evaluated, and the contents of this object will be different depending on the condition type. |
 
 ### Condition types
 
 | **Name** | **Value** | **Description** |
 | :--- | :--- | :--- |
-| Group | `group` | This condition is a container, that holds additional conditions, and the logical evaluator that is used to process those conditions. |
+| Group | `group` | This condition is a container that holds additional conditions, and the logical evaluator that is used to process those conditions. |
 | Matcher | `matcher` | This condition holds the key, matcher type, and value that should be evaluated. |
 
-### Definition object \(Condition type = "group"\)
+### Definition object 
 
-| **Friendly Name** | **Key Value** | **Value Type** | **Example** | **Description** |
+#### Group condition type
+
+| **Friendly name** | **Key** | **Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
-| Logic Type | `logic` | string | `"logic":"and"` | Must be a valid Logic Type. Indicates which logical operator should be used for the Conditions that are defined in the Definition's Conditions array. |
+| Logic type | `logic` | string | `"logic":"and"` | Must be a valid Logic type and indicates which logical operator should be used for the conditions that are defined in the definition's conditions array. |
 | Conditions | `conditions` | array | `"conditions":[...]` | An array of Condition objects. |
 
-### Definition object \(Condition type = "matcher"\)
+#### Matcher condition type
 
-**Tip**: The keys used here are different than those used for in-app message matchers.
+{% hint style="info" %}
 
-| **Friendly Name** | **Key** | **Value Type** | **Example** | **Description** |
+The keys that are used here are different than those used for In-App message matchers.
+
+{% endhint %}
+
+| **Friendly name** | **Key** | **Type** | **Example** | **Description** |
 | :--- | :--- | :--- | :--- | :--- |
 | Key | `key` | `string` | `"key":"key1"` | Key to get the value from the dictionary that is passed as a parameter to the rules processor. |
 | Matches | `matcher` | `string` | `"matcher":"eq"` | Matcher type that determines the kind of evaluation to use between the two values. |
@@ -102,11 +107,11 @@ A Group condition contains an array of conditions, which makes the conditions in
 
 ### Matching and retrieving values by keys
 
-By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are some special key prefixes that can cause the values to be sourced from other locations known to the Experience Platform SDKs.
+By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are also some special key prefixes that can cause the values to be sourced from other locations that are known to the Experience Platform SDKs. 
 
-To avoid collisions, special key prefixes always start with `~` to differentiate them from the standard event key names.
+To avoid collisions, special key prefixes always start with a `~` (tilde) to differentiate them from the standard event key names.
 
-| **Key Prefix** | **Example** | **Description** |
+| **Key prefix** | **Example** | **Description** |
 | :--- | :--- | :--- |
 | `~state.` | `~state.sharedStateName/keyName` | Reads the `keyName` from the shared state of the module that is stored in `sharedStateName`. |
 | `~type` | `~type` | Reads `eventType` from the triggering event. |
@@ -194,28 +199,25 @@ Here is the example:
 
 ## Consequence object definition
 
-The consequences section of a rule lists the file names of each consequence object that should be performed when the condition for that rule evaluates to `true`.
+The consequences section of a rule lists the file names of each consequence object that should be performed when all of the conditions for that rule evaluate to `true`.
 
-| **Friendly Name** | **Key    Value** | **Type** | **Description** |
+| **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Identifier | `id` | string | String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence Type | `type` | string | A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
-| Consequence Details | `detail` | object | JSON object that contains the details that are necessary to perform a consequence of the given type. |
+| Identifier | `id` | string | *(Required)* String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
+| Consequence type | `type` | string | *(Required)* A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
+| Consequence details | `detail` | object | *(Required)* JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence types
 
 | **Name** | **Value** | **Description** | **Payload Definition** |
 | :--- | :--- | :--- | :--- |
-| Analytics | `an` | Sends data to Analytics |  |
-| In-App Message | `iam` | In-App Message | In-App Consequence Detail Definition |
-| Postback | `pb` | Send Postback\(s\) | Postback Consequence Detail Definition |
-| PII | `pii` | Sync PII | Sync PII Consequence Detail Definition |
-| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deeplinking. | Open URL Consequence Detail Definition |
-| Callback | `cb` | Calls a customer-defined method. |  |
-| Target | `tar` | Send a request to Target with location information to enrich the user's profile. |  |
-| Audience Manager | `aam` | Send a request to Audience Manager with location information to enrich the user's profile. |  |
-| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | Profile Consequence Detail Definition |
-| Generate Event | `event` | Generate a raw event on the event hub. |  |
+| Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](rules-engine-consequence-details.md#analytics-consequence). |
+| In-App Message | `iam` | In-App Message | [In-App consequence detail definition](rules-engine-consequence-details.md#in-app-message-consequence). |
+| Postback | `pb` | Send Postback\(s\) to a third-party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence). |
+| PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](rules-engine-consequence-details.md#sync-pii-consequence). |
+| Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deep linking. | [Open URL consequence detail definition](rules-engine-consequence-details.md#open-url-consequence). |
+| Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](rules-engine-consequence-details.md#profile-consequence). |
+| Attach Data | `add` | Attaches key-value pairs to the EventData of an existing Event | [Attach data consequence detail definition](rules-engine-consequence-details.md#attach-data-consequence). |
 
 ## rules.json examples
 
@@ -373,25 +375,20 @@ If the conditions pass, the in-app message is displayed \(first consequence\), a
 }
 ```
 
-## Rules URLs
+## Rules URL
 
-Since the Rules Engine can support multiple end-point URLs from where to fetch rules, the URLs are prioritized based on the following scheme:
+The Rules Engine requires an endpoint URL to be configured in the configuration, which specifies the location from where rules should be fetched:
 
 ```text
 {
-   "rules.url" : [
-        "https://url/endpoint1",
-        "https://url/endpoint2",
-        ..
-    ]
+   "rules.url" : "https://assets.adobedtm.com/example.zip"
 }
 ```
 
-The Adobe Experience Platform SDKs process the URLs based on the order in which they are specified. Both endpoints are URLs that point to a zipped rules collection that contains a `rules.json` file, an asset folder that contains images, and HTMLs that are used by the rules. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
+The Adobe Experience Platform SDKs process the URL that points to a zipped rules collection, and this collection contains a `rules.json` file. After the rules are downloaded and extracted, the contents of this compressed file are stored in the cache.
 
 ## Configuration keys
 
 | Key | Description |
 | :--- | :--- |
-| `rules.url` | URL that points to the remote file location that contains the rules that were configured for the SDK. |
-
+| `rules.url` | URL that points to the remote file location that contains the rules that were configured for the Mobile SDKs. For more information, see [Rules URL](#rules-url). |
