@@ -4,7 +4,7 @@ The Adobe Experience Platform SDK for WeChat Mini Programs brings Adobe Experien
 
 ## Supported functionality
 
-The SDK for WeChat Mini Programs provide the following functionality:
+The SDK for WeChat Mini Programs provides the following functionality:
 
 {% tabs %}
 {% tab title="English" %}
