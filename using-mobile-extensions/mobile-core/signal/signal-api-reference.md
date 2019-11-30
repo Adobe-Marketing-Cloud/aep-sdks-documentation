@@ -4,7 +4,7 @@
 
 The `extensionVersion()` API returns the version of the Signal extension that is registered with the Mobile Core extension.
 
-To get the version of the Identity extension, use the following code sample:
+To get the version of the Signal extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -48,5 +48,5 @@ ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeEx
 
 ## CollectPII API
 
-The Signal extension listens for the information provided through the [collectPII](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii) API.
+The Signal extension can be used for handling collectPII rules, for more information check the Mobile Core  [collectPII](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii) API.
 

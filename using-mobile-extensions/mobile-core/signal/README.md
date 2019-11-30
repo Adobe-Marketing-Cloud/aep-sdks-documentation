@@ -54,10 +54,9 @@ Import the Signal libraries:
 ```
 
 #### Swift
-
+In swift, the ACPCore includes ACPSignal
 ```swift
 import ACPCore
-import ACPSignal
 ```
 
 {% endtab %}
@@ -90,12 +89,16 @@ pod install
 
 ### Register Signal extension
 
+The `registerExtension()` API registers the Signal extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK.
+
+To register the Identity extension, use the following code sample:
+
 {% tabs %}
 {% tab title="Android" %}
 
 #### Java
 
-To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in `onCreate()`:
+After calling the `setApplication()` method in the `onCreate()` method, register the Signal extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
 ```java
 public class MobileApp extends Application {
@@ -162,10 +165,6 @@ initSDK() {
 
 {% endtab %}
 {% endtabs %}
-
-##Define rules in Experience Platform Launch
-
-To define the rules in Experience Platform Launch, complete the steps in [Signal extension and Rules Engine integaration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration).
 
 ##Implement the Mobile SDK to send PII data to external destinations
 

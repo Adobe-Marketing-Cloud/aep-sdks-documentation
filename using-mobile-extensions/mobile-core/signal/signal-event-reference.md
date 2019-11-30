@@ -18,15 +18,15 @@ This event is triggered by the Rules Engine when the events and conditions are m
 
 The key-value pairs in this event correspond to Postback and Sync PII:
 
-| Key                  | Friendly name   | Type                | Optional | Description                               |
-| -------------------- | --------------- | ------------------- | -------- | ----------------------------------------- |
-| triggeredconsequence | Description URL | Map<String, Object> | Yes      | Triggered Consequence details in the map. |
+| Key                  | Friendly name   | Type                | Optional | Description                                                  |
+| -------------------- | --------------- | ------------------- | -------- | ------------------------------------------------------------ |
+| triggeredconsequence | Description URL | Map<String, Object> | Yes      | Triggered Consequence details in the map.   <br />For the detailed description of each rule consequence refer the following pages. <br />[Postback consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#postback-consequence)<br/>[Sync PII consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence)<br/>[Open URL consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#open-url-consequence) |
 
 #### Event data example
 
 Postback Message
 
-```javascript
+```
 {
     "id"        : "9d40f5665d5bdbe96dcb3a24f4e4fe98d686a602",
     "type"      : "pb",
@@ -45,11 +45,11 @@ Open URL Request with a deeplink URL
 
 ```
 {
-    ``"id"`        `: ``"48181acd22b3edaebc8a447868a7df7ce629920a"``,
-    ``"type"`      `: ``"url"``,
-    ``"detail"`    `: {
-        ``"url"` `: ``"myApp://HomePage"
-    ``}
+    "id"				: "48181acd22b3edaebc8a447868a7df7ce629920a",
+    "type"			: "url",
+    "detail"		: {
+    		"url"	: "myApp://HomePage"
+    }
 }
 ```
 
@@ -67,26 +67,18 @@ This event is dispatched on the Event Hub when a configuration change is process
 
 #### Data payload definition
 
-The Signal extension reads the following keys from the configuration event:
+The Signal extension reads the global.privacy key from the configuration event.
 
-| Key            | Friendly name | Type                                                         | Optional | Description                                                  |
-| -------------- | ------------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
-| name           | Event Name    | string                                                       | No       | Name of the event.                                           |
-| type           | Event Type    | string                                                       | No       | Type of the event.                                           |
-| source         | Event Source  | string                                                       | No       | Source of the event.                                         |
-| id             | Event ID      | string                                                       | No       | ID used for the event.                                       |
-| eventData      | Event Data    | [Event Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/attach-data#what-are-sdk-events) | No       | A map of key-value pairs that represents the configuration for all the modules. |
-| global.privacy | String        | String                                                       | No       | Contains the default setting that the user has requested with regards to data privacy. |
-| timestamp      | Time Stamp    | number                                                       | No       | Time (in seconds) since Jan 1, 1970.                         |
+| Key            | Friendly name | Type   | Optional | Description                                  |
+| -------------- | ------------- | ------ | -------- | -------------------------------------------- |
+| global.privacy | String        | String | No       | Contains the mobile privacy status settings. |
 
 #### Event data example
 
 For a configuration change event:
 
-```javascript
-{
-    "global.privacy": "true"
-}
+```
+{ "global.privacy": "optedin" }
 ```
 
 ## Events dispatched and Shared State
