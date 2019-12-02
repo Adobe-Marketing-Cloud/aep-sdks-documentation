@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. (Optional) When using Send PII actions in Adobe Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
+3. (Optional) When using Send PII actions in Experience Platform Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
@@ -54,7 +54,7 @@ Import the Signal libraries:
 ```
 
 #### Swift
-In swift, the ACPCore includes ACPSignal:
+In Swift, the ACPCore includes ACPSignal:
 ```swift
 import ACPCore
 ```
@@ -65,7 +65,7 @@ import ACPCore
 
 #### JavaScript
 
-Install Signal
+Install Signal:
 
 ```jsx
 npm install @adobe/react-native-acpcore
