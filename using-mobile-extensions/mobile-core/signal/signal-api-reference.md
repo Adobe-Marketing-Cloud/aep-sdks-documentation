@@ -48,5 +48,5 @@ ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeEx
 
 ## CollectPII API
 
-The Signal extension can be used for handling collectPII rules, for more information check the Mobile Core  [collectPII](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii) API.
+The Signal extension can be used to handle `collectPII` rules. For more information, see the [collectPII](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii) API.
 

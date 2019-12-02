@@ -16,11 +16,11 @@ This event is triggered by the Rules Engine when the events and conditions are m
 
 #### Data payload definition
 
-The key-value pairs in this event correspond to Postback and Sync PII:
+The key-value pairs in this event correspond to postback and sync PII:
 
 | Key                  | Friendly name   | Type                | Optional | Description                                                  |
 | -------------------- | --------------- | ------------------- | -------- | ------------------------------------------------------------ |
-| triggeredconsequence | Description URL | Map<String, Object> | Yes      | Triggered Consequence details in the map.   <br />For the detailed description of each rule consequence refer the following pages. <br />[Postback consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#postback-consequence)<br/>[Sync PII consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence)<br/>[Open URL consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#open-url-consequence) |
+| triggeredconsequence | Description URL | Map<String, Object> | Yes      | Triggered Consequence details in the map.   <br />For the detailed description of each rule consequence refer the following pages: <br />[Postback consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#postback-consequence)<br/>[Sync PII consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence)<br/>[Open URL consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#open-url-consequence) |
 
 #### Event data example
 

@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to Experience Platform Launchcollect PII data and send it to the configured third-party destination.
+3. (Optional) When using Send PII actions in Adobe Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
@@ -54,7 +54,7 @@ Import the Signal libraries:
 ```
 
 #### Swift
-In swift, the ACPCore includes ACPSignal
+In swift, the ACPCore includes ACPSignal:
 ```swift
 import ACPCore
 ```
@@ -166,7 +166,7 @@ initSDK() {
 {% endtab %}
 {% endtabs %}
 
-##Implement the Mobile SDK to send PII data to external destinations
+## Implement the Mobile SDK to send PII data to external destinations
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When creating a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data.
 
