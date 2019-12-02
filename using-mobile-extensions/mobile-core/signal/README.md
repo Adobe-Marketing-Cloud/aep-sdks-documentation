@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. (Optional) When using Send PII actions in Experience Platform Launch, implement the SDK APIs to collect PII data and send it to the configured third party destination.
+3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
@@ -89,7 +89,7 @@ pod install
 
 ### Register Signal extension
 
-The `registerExtension()` API registers the Signal extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK.
+The `registerExtension()` API registers the Signal extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Mobile SDK.
 
 To register the Identity extension, use the following code sample:
 
@@ -170,6 +170,6 @@ initSDK() {
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When creating a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data.
 
-For the information on collectPii and its usage, see collectPii in [AEP Mobile Core API reference Page](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
+For the information on `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
 
 For more information about how to configure the Signal postbacks in Adobe Experience Platform Launch, see [doc link](https://aep-sdks.gitbook.io/docs/resources/user-guides/signals-extension-and-rules-engine-integration).
