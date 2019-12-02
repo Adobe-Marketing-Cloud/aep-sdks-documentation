@@ -170,6 +170,6 @@ initSDK() {
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when the configured triggers and traits match. When creating a rule, you can set the `PII` action for a Signal event, so that `collectPii` can trigger the rule and send the `PII` data.
 
-For the information on `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii)
+For more information about `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
 For more information about how to configure the Signal postbacks in Adobe Experience Platform Launch, see [doc link](https://aep-sdks.gitbook.io/docs/resources/user-guides/signals-extension-and-rules-engine-integration).
