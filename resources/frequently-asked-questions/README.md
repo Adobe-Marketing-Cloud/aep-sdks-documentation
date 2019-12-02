@@ -22,7 +22,7 @@ There are several new features and benefits of using the new Adobe Experience Pl
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
 | Adobe Target - Visual Experience Composer | ✔️ |  |
-| \(BETA\) Adobe Experience Platform Location Service | ✔️ |  |
+| Adobe Experience Platform Location Service | ✔️ |  |
 | \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
 
 ### Do I need additional permissions to create a mobile property in Experience Platform Launch?

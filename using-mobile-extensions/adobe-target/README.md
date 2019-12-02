@@ -7,16 +7,17 @@ To get started with Target, follow these steps:
 1. Configure the Target extension in Experience Platform Launch.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
-   * Request activities.
-   * Prefetch offers.
+   * Request mbox offers.
+   * Prefetch mbox offers.
+   * Track mboxes.
    * Enter visual preview mode.
 
-## Configure the Target extension in Experience Platform Launch <a id="configuring-the-adobe-target-extension-in-adobe-launch"></a>
+## Configure the Target extension in Experience Platform Launch
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
-2. On the **Installed** tab, locate the Adobe Target extension, and click **Configure**.
+2. On the **Catalog** tab, locate the Adobe Target extension, and click **Install**.
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
 5. Set the timeout value to at least 5 seconds.
@@ -26,15 +27,23 @@ To get started with Target, follow these steps:
 
 ## Add Target to your app
 
+{% tabs %}
+{% tab title="Android" %}
 #### Java
 
 1. Add the Target extension to your project using the app's Gradle file.
-2. Import the Target extension in your application's main activity.  `import com.adobe.marketing.mobile.*;`
-3. Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
+2. Import the Target extension in to your application's main activity.  
+
+   ```java
+   import com.adobe.marketing.mobile.*;
+   ```
+{% endtab %}
+
+{% tab title="iOS" %}
+1. Add the Target library to your project via your `Podfile` by adding `pod 'ACPTarget'`
+2. Import the Target and Identity libraries.
 
 #### Objective-C
-
-Import the Target and Identity library.
 
 ```objectivec
    #import "ACPCore.h"
@@ -51,6 +60,8 @@ Import the Target and Identity library.
    #import ACPTarget
    #import ACPIdentity
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Register Target with Mobile Core
 
@@ -69,10 +80,12 @@ public class TargetApp extends Application {
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
+     MobileCore.ConfigureWithAppId("yourAppId");
 
      try {
          Target.registerExtension();
          Identity.registerExtension();
+         MobileCore.start(null);
      } catch (Exception e) {
          //Log the exception
      }
@@ -84,197 +97,148 @@ public class TargetApp extends Application {
 {% tab title="iOS" %}
 #### Objective-C
 
-1. In your app's `didFinishLaunchingWithOptions` function register the Target extension
+1. In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPCore configureWithAppId:@"yourAppId"];
   [ACPIdentity registerExtension];
   [ACPTarget registerExtension];
-
+  [ACPCore start:nil];
   // Override point for customization after application launch.
   return YES;
 }
 ```
 
 #### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  ACPCore.configure(withAppId: "yourAppId")   
+  ACPTarget.registerExtension()
+  ACPIdentity.registerExtension()
+  ACPCore.start(nil)
+  // Override point for customization after application launch. 
+  return true;
+}
+```
 {% endtab %}
 {% endtabs %}
 
-## Prefetch offers <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Parameters in a Target request
 
-The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. When this feature is enabled, offer content is retrieved and cached during the prefetch call. This content is retrieved from the cache for all future calls that contain cached content for the specified mbox name. This prefetch process reduces offer load time, network calls made to Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
+### Target Order
 
-{% hint style="warning" %}
-Prefetched offer content does not persist across launches. The prefetch content is cached as long as the application lives or until the API that is used to clear the cache is called. For more information, see [Clear prefetch offer cache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#clear-prefetch-offer-cache).
-{% endhint %}
-
-### Using the prefetch APIs
+The `TargetOrder` class encapsulates the order ID, the order total, and the purchased product IDs. You can instantiate this class to create order parameters. For more information about Target Order parameters, see [Create an Order Confirmation mbox - mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html).
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
-#### Using the `TargetPrefetch` constructor
-
-With the `TargetPrefetch` constructor, you can create a `TargetPrefetch` instance with the specified data. It currently accepts the location name and an optional `TargetParameters` object. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
-
 #### Syntax
 
 ```java
-TargetParameters targetParameters = new TargetParameters.Builder()
-                              .product(new TargetProduct(String, String))
-                              .order(new TargetOrder(String, Double, List<String>))
-                              .parameters(mboxParameters)
-                              .profileParameters(profileParameters).build();
-
-TargetPrefetch prefetchRequest = new TargetPrefetch("mboxName", targetParameters);
-```
-
-#### Using `prefetchContent`
-
-Sends a prefetch request to your configured Target server with the `TargetPrefetch` list and the specified `TargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
-
-#### Syntax
-
-```java
-public static void prefetchContent(final List<TargetPrefetch>                                                                         targetPrefetchList,
-                                   final TargetParameters targetParameters,
-                                   final final AdobeCallback<String> callback);
+public TargetOrder(final String id, final double total, final List<String> purchasedProductIds)
 ```
 
 #### Example
 
 ```java
-// first prefetch request
-Map<String, Object> mboxParameters1 = new HashMap<>();
-mboxParameters1.put("status", "platinum");
-
-// second prefetch request
-Map<String, Object> mboxParameters2 = new HashMap<>();
-mboxParameters2.put("userType", "paid");
-
-List<String> purchasedIds = new ArrayList<String>();
-purchasedIds.add("34");
-purchasedIds.add("125");
-
-TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
-TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
-
-TargetParameters targetParameters1 = new TargetParameters.Builder()
-                              .parameters(mboxParameters1)
-                              .build();
-TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", targetParameters1);
-
-TargetParameters targetParameters2 = new TargetParameters.Builder()
-                              .parameters(mboxParameters2)
-                              .product(targetProduct)
-                              .order(targetOrder)
-                              .build();
-TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", targetParameters2);
-
-
-List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
-prefetchMboxesList.add(prefetchRequest1);
-prefetchMboxesList.add(prefetchRequest2);
-
-
-// Call the prefetchContent API.
-TargetParamters targetParameters = null;
-Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallback);
+List<String> purchasedProductIds = new ArrayList<String>();
+purchasedProductIds.add("34");
+purchasedProductIds.add("125"); 
+TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective C
-
-Use `prefetchContent` to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and the specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a nil value. If the prefetch is not successful, an error message is returned.
-
 #### Syntax
 
 ```objectivec
-+ (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) targetPrefetchObjectArray
-          withParameters: (nullable ACPTargetParameters*) targetParameters
-                callback: (nullable void (^) (NSError* _Nullable error)) callback;
++ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
+total: (nullable NSNumber*) total
+purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
 ```
 
-#### Objective-C Example
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
 
 ```objectivec
-NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
-NSDictionary *profileParameters1 = @{@"age":@"20"};
-ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
-ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"34", @"125"]];
-ACPTargetParameters *targetParameters1 = [ACPTargetParameters targetParametersWithParameters:mboxParameters1
-                                                    profileParameters:profileParameters1
-                                                              product:product1
-                                                                order:order1];
-
-NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
-ACPTargetProduct *product2 = [ACPTargetProduct targetProductWithId:@"764334" categoryId:@"Online"];
-NSArray *purchaseIDs = @[@"id1",@"id2"];
-ACPTargetOrder *order2 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:purchaseIDs];
-ACPTargetParameters *targetParameters2 = [ACPTargetParameters targetParametersWithParameters:mboxParameters2
-                                                    profileParameters:nil
-                                                              product:product2
-                                                                order:order2];
-
-// Creating Prefetch Objects
-ACPTargetPrefetchObject *prefetch1 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"logo"
-                                                                         targetParameters:targetParameters1];
-
-ACPTargetPrefetchObject *prefetch2 = [ACPTargetPrefetchObject targetPrefetchObjectWithName:@"buttonColor"
-                                                                         targetParameters:targetParameters2];
-
-// Creating prefetch Array
-NSArray *prefetchArray = @[prefetch1,prefetch2];
-
-// Creating Target parameters
-NSDictionary *mboxParameters = @{@"status":@"progressive"};
-NSDictionary *profileParameters = @{@"age":@"20-32"};
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
-                                                    profileParameters:profileParameters
-                                                              product:product
-                                                                order:order];
+```
 
+**Swift**
 
-// Target API Call
-[ACPTarget prefetchContent:prefetchArray withParameters:targetParameters callback:^(NSError * _Nullable error){
-       // do something with the callback response
-}];
+```swift
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
 ```
 {% endtab %}
 {% endtabs %}
 
-### Using TargetParameters, TargetOrder and TargetProduct object
+### Target Product
 
-With `TargetParameters`, you can combine parameters such as `mboxParameters`, `profileParameters`, `orderParameters` and `productParameters` for easy use. With `TargetOrder`, you can combine the order parameters and use it in TargetParameters. With `TargetProduct`, you can combine the product parameters and use it in `TargetParameters`.
-
-**Merge behavior of parameters that are passed in the APIs with parameters that are passed in the TargetPrefetch/TargetRequest Object**
-
-Sometimes global parameters are passed in APIs. If `targetParameters` are also passed in the corresponding prefetch/request objects, the parameters are merged with the global parameters.
-
-The corresponding `TargetOrder` and `TargetProduct` parameters will be overridden by the API-level global parameters. If the key names differ, mbox parameters and profile parameters are appended. If the key names are the same, these parameters will be overwritten.
+The `TargetProduct` class encapsulates the product ID and the product category ID, and you can instantiate this class to create order parameters. For more information about Target Product parameters, see [Entity attributes](https://docs.adobe.com/content/help/en/target/using/recommendations/entities/entity-attributes.html)
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Syntax**
+#### Syntax
 
 ```java
-public TargetOrder(final String id, final double total, final List<String> purchasedProductIds)
-
 public TargetProduct(final String id, final String categoryId)
-
-TargetParameters targetParameters = new TargetParameters.Builder()
-                                    .parameters(new HashMap<String, String>())
-                                    .profileParameters(new HashMap<String, String>())
-                                    .product(targetProduct)
-                                    .order(targetOrder)
-                                    .build();
 ```
 
-#### **Example**
+#### Example
+
+```java
+TargetProduct targetProduct = new TargetProduct("123", "Books");
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Syntax
+
+```objectivec
++ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
+categoryId: (nullable NSString*) categoryId;
+```
+
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+```
+
+**Swift**
+
+```swift
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+```
+{% endtab %}
+{% endtabs %}
+
+### Target Parameters
+
+`TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters` and allows you easily pass these parameters in a Target request.
+
+{% tabs %}
+{% tab title="Android" %}
+#### Syntax
+
+```java
+TargetParameters targetParameters = new TargetParameters.Builder()
+.parameters(new HashMap<String, String>())
+.profileParameters(new HashMap<String, String>())
+.product(new TargetProduct("productId", "productCategoryId"))
+.order(new TargetOrder("orderId", 0.0, new ArrayList<String>()))
+.build();
+```
+
+#### Example
 
 ```java
 List<String> purchasedProductIds = new ArrayList<String>();
@@ -284,18 +248,18 @@ TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 
 TargetProduct targetProduct = new TargetProduct("123", "Books");
 
-Map<String, Object> mboxParameters1 = new HashMap<>();
+Map<String, String> mboxParameters = new HashMap<String, String>();
 mboxParameters1.put("status", "platinum");
 
-Map<String, Object> profileParameters1 = new HashMap<>();
+Map<String, String> profileParameters = new HashMap<String, String>();
 profileParameters1.put("gender", "male");
 
 TargetParameters targetParameters = new TargetParameters.Builder()
-                                    .parameters(mboxParameters1)
-                                    .profileParameters(profileParameters1)
-                                    .product(targetProduct)
-                                    .order(targetOrder)
-                                    .build();
+.parameters(mboxParameters)
+.profileParameters(profileParameters)
+.product(targetProduct)
+.order(targetOrder)
+.build();
 ```
 {% endtab %}
 
@@ -303,20 +267,17 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 #### Syntax
 
 ```objectivec
-+ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
-                                     total: (nullable NSNumber*) total
-                       purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
-
-+ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
-                                  categoryId: (nullable NSString*) categoryId;
-
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters
-                                      profileParameters: (nullable NSDictionary*) profileParameters
-                                                product: (nullable ACPTargetProduct*) product
-                                                  order: (nullable ACPTargetOrder*) order;
+profileParameters: (nullable NSDictionary*) profileParameters
+product: (nullable ACPTargetProduct*) product
+order: (nullable ACPTargetOrder*) order;
 ```
 
-#### Objective-C Example
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
 
 ```objectivec
 NSDictionary *mboxParameters = @{@"status":@"Platinum"};
@@ -327,149 +288,53 @@ ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" cate
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
 
 ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
-                                                    profileParameters:profileParameters
-                                                              product:product
-                                                                order:order];
+profileParameters:profileParameters
+product:product
+order:order];
+```
+
+**Swift**
+
+```objectivec
+let mboxParameters = [
+"status": "Platinum"
+]
+let profileParameters = [
+"gender": "female"
+]
+
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 {% endtab %}
 {% endtabs %}
 
-### Using Locations Displayed API for Prefetch
+### Merge behavior of Target parameters
 
-In some situations, you might want to want to inform Target that the corresponding location \(mbox\) has been viewed. This API sends a display notification to Target for a prefetched mbox, which helps Target record location display events.
+`TargetParameters`, such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`, can be passed in the Target APIs and can also be passed in when you create `TargetPrefetch` or `TargetRequest` objects. The `TargetParameters` that are passed in the public APIs are global parameters and are merged with the corresponding parameters in the individual `TargetRequest` or `TargetPrefetch` objects.
 
-Tip: If you are only using regular mboxes, and not prefetching any mbox content, do not call this method.
+When merging, the new keys in the mbox parameters or the profile parameters are appended to the final dictionary, and the keys with the same name are overwritten in each `TargetRequest` or `TargetPrefetch` object by the keys from the global parameters. For `TargetOrder` or `TargetProduct` objects, the object that is passed to the global parameters replaces the corresponding object in the `TargetRequest` or `TargetPrefetch` objects."
+
+## Target Sessions
+
+The Target extension \(version 2.1.4 for iOS\) and \(version 1.1.3 for Android\) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from the Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes. If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#reset-user-experience) API is called, these variables are reset and removed from persistent storage .
+
+## Visual preview
+
+The visual preview mode allows you to easily perform end-to-end QA activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information about setting up Target visual preview, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html). For more information about setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app). For more information about setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking).
+
+You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#set-preview-restart-deep-link) API.
+
+To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Syntax**
-
-```java
-public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters targetParameters)
-```
-
-#### **Example**
-
-```java
-List<String> purchasedProductIds = new ArrayList<String>();
-purchasedProductIds.add("34");
-purchasedProductIds.add("125"); 
-TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
-
-TargetProduct targetProduct = new TargetProduct("123", "Books");
-TargetParameters targetParameters = new TargetParameters.Builder()
-                                    .parameters(new HashMap<String, String>())
-                                    .profileParameters(new HashMap<String, String>())
-                                    .product(targetProduct)
-                                    .order(targetOrder)
-                                    .build();
-List<String> mboxList = new ArrayList<>();
-mboxList.add("mboxName1");
-Target.locationsDisplayed(mboxList, targetParameters);
-```
+In Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target Activity and deep link information is extracted from the Intent extras.
 {% endtab %}
 
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
-       withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
-```
-
-#### Objective-C Example
-
-```objectivec
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
-                                                    profileParameters:nil
-                                                              product:product
-                                                                order:order];
-[ACPTarget locationsDisplayed:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParameters];
-```
-{% endtab %}
-{% endtabs %}
-
-### Clear prefetch offer cache
-
-To clear prefetched, cached offer data, use the following:
-
-{% tabs %}
-{% tab title="Android" %}
-#### **Syntax**
-
-```java
-public static void clearPrefetchCache()
-```
-
-#### **Example**
-
-```java
-Target.clearPrefetchCache();
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (void) clearPrefetchCache;
-```
-
-#### Objective-C Example
-
-```objectivec
-[ACPTarget clearPrefetchCache];
-```
-{% endtab %}
-{% endtabs %}
-
-## Visual preview <a id="visual-preview"></a>
-
-Visual preview mode allows you to easily perform end-to-end QA for Target activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links. For more information, see [Target mobile preview](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/target-mobile-preview.html).
-
-You can also set an app deep link that can be triggered when selections are made in the preview mode by using the following methods:
-
-{% tabs %}
-{% tab title="Android" %}
-#### **Syntax**
-
-```java
-public static void setPreviewRestartDeepLink(final Uri deepLink);
-```
-
-#### **Example**
-
-```java
-Target.setPreviewRestartDeepLink("myApp://HomePage");
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```text
-+ (void) setPreviewRestartDeepLink: (nonnull NSURL*) deepLink;
-```
-
-#### **Objective-C Example**
-
-```text
-[ACPTarget setPreviewRestartDeepLink:@"myApp://HomePage"];
-```
-
-#### **Swift Example**
-
-```swift
-ACPTarget.setPreviewRestartDeepLink("myApp://HomePage")
-```
-{% endtab %}
-{% endtabs %}
-
-The `collectLaunchInfo` API is used to enter the visual preview mode. After the visual preview mode is enabled, a red floating button is displayed on the app screen. This button can be pressed to enter the visual preview mode again.
-
-{% tabs %}
 {% tab title="iOS" %}
 #### Syntax
 
@@ -477,16 +342,20 @@ The `collectLaunchInfo` API is used to enter the visual preview mode. After the 
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### **Objective-C Example**
+#### Examples
+
+Here are some examples in Objective-C and Swift:
+
+**Objective-C**
 
 ```text
 [ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
 
-#### **Swift Example**
+**Swift**
 
 ```swift
-ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget")
+ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 {% endtab %}
 {% endtabs %}
@@ -506,9 +375,14 @@ If you need to update SDK configuration, programmatically, use the following inf
 | target.environmentId | Environment ID you want to use, if this is left blank, the default production environment will be used. |
 | target.propertyToken | `at_property token` value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. |
 | target.previewEnabled | Boolean parameter, which can be used to enable/disable Target Preview. If not specified, then Preview will be enabled by default. |
+| target.sessionTimeout | The duration, in seconds, during which the Target session ID and Egde Host are persisted. If this value is not specified, the default timeout value is 30 minutes. |
 
 {% hint style="warning" %}
-We recommend that you use Experience Platform Launch config to pass the property token instead of passing it in as a mbox parameter. If the property token is passed in Experience Platform Launch configuration and also as a mbox parameter, the token that was entered in the mbox parameter is discarded.
+We recommend that, instead of passing the property token in as a mbox parameter, you use an Experience Platform Launch configuration to pass the token. If the token is passed in an Experience Platform Launch configuration, and as a an mbox parameter, the token that was entered in the mbox parameter is discarded.
+{% endhint %}
+
+{% hint style="warning" %}
+Currently, the `target.sessiontimeout` value can only be configured programmatically. For more information, see [updateConfiguration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference#programmatic-updates-to-configuration).
 {% endhint %}
 
 ## Additional information

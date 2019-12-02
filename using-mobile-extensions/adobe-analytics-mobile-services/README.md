@@ -3,8 +3,8 @@
 This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="info" %}
-The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.  
-  
+The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.
+
 For more information, contact your Adobe CSM.
 {% endhint %}
 
@@ -24,7 +24,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions \(Beta\)]().
+Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions](./).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
@@ -44,12 +44,12 @@ The Mobile Services extension also requires the Analytics extension for reportin
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3. Select ****a Mobile Services app and complete the following tasks:
+3. Select _\*\*_a Mobile Services app and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
 
-![Mobile Services Extension Configuration](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
+![Mobile Services Extension Configuration](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
 ### Manual Configuration
 
@@ -61,9 +61,9 @@ The following instructions only apply if you do not see your app listed or need 
 If you are sending data to multiple Analytics report suites, use the Acquisition App ID from the app that is associated with the first report suite in your list of report suite IDs.
 {% endhint %}
 
-![](../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
-Select **Enter Custom settings** and complete the following tasks
+Select **Enter Custom settings** and complete the following tasks:
 
 1. Enter an Acquisition time out.  
    The recommended time out is 5 seconds. To enable app acquisition,
@@ -72,26 +72,26 @@ Select **Enter Custom settings** and complete the following tasks
 
 2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
-You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings and under SDK Acquisition Options, copy the hashed string similar to the highlighted value:
+You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
 1. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
 
 You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
 1. Click **Save**.
 2. Follow the publishing process to update your SDK configuration.
 
 ## Configure Adobe Analytics extension
 
-Follow the steps listed in the [Adobe Analytics extension](adobe-analytics/) to ensure that this extension is correctly configured and implemented.
+Follow the steps listed in the [Adobe Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/4a820ee0834b79be73c05ff0ac7d7975e4784a35/using-mobile-extensions/adobe-mobileservices/adobe-analytics/README.md) to ensure that this extension is correctly configured and implemented.
 
 In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
-![](../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
+![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
 ## Add Mobile Services extension to your app
 
@@ -188,15 +188,15 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 {% tab title="Android" %}
 Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-### setPushIdentifier  <a id="setpushidentifier"></a>
+### setPushIdentifier <a id="setpushidentifier"></a>
 
-#### Syntax  <a id="syntax"></a>
+#### Syntax <a id="syntax"></a>
 
 ```java
 void setPushIdentifier(final String registrationID)
 ```
 
-#### Example  <a id="example"></a>
+#### Example <a id="example"></a>
 
 ```java
 MobileCore.setPushIdentifier(registrationID);

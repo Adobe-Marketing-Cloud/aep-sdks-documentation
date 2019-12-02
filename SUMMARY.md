@@ -14,6 +14,7 @@
 ## Using Mobile Extensions
 
 * [Mobile Core](using-mobile-extensions/mobile-core/README.md)
+  * [Release Notes](using-mobile-extensions/mobile-core/mobile-core-release-notes.md)
   * [Mobile Core API reference](using-mobile-extensions/mobile-core/mobile-core-api-reference.md)
   * [Mobile Core event reference](using-mobile-extensions/mobile-core/mobile-core-event-reference.md)
   * [Configuration](using-mobile-extensions/mobile-core/configuration/README.md)
@@ -33,11 +34,13 @@
     * [Signal extension and Rules Engine integration](using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration.md)
   * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine/README.md)
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
+    * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
   * [Products variable](using-mobile-extensions/adobe-analytics/product-variable.md)
-* [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services.md)
+* [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services/README.md)
+  * [Mobile Services API reference](using-mobile-extensions/adobe-analytics-mobile-services/mobileservices-api-reference.md)
 * [Adobe Analytics - Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
@@ -50,10 +53,11 @@
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
-  * [Target API reference \(new\)](using-mobile-extensions/adobe-target/target-api-reference.md)
+  * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
+* [Adobe Experience Platform Location Service](using-mobile-extensions/adobe-places.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
   * [Profiles event reference](using-mobile-extensions/profile/profiles-event-reference.md)
@@ -67,6 +71,7 @@
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach Data to SDK Events](resources/user-guides/attach-data.md)
+  * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
   * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
@@ -95,7 +100,6 @@
 
 ## BETA
 
-* [Adobe Experience Platform Places](beta/adobe-places.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)

@@ -6,48 +6,47 @@ To create and configure a mobile property in [Experience Platform Launch](https:
 Having trouble creating a mobile property or need access to Experience Platform Launch? See [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 {% endhint %}
 
-## Create a new mobile property
+## Create a mobile property
 
-1. Click **New Property**
-2. Create a new property by providing a name and selecting **Mobile** as the platform.
+1. Click **New Property**.
+2. Type a name and select **Mobile** as the platform.
 
-   If required, you can change [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
+   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
 
-3. Find the new property in the **Properties** list and click to open it.
+3. Locate the new property in the **Properties** list and open it.
 
 {% hint style="danger" %}
-Default privacy status is set to "opted in". Privacy status may impact data collection, please see [Privacy and GDPR](../resources/privacy-and-gdpr.md) for more information.
+The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
 {% endhint %}
 
 ## Set up your extensions
 
-1. In Experience Platform Launch, click the **Extensions** tab.  
-   The **Mobile Core** and **Profile** extensions are installed by default.
-
-   a. Click **Configure** on the **Mobile Core** card.
+1. In Experience Platform Launch, click the **Extensions** tab. The **Mobile Core** and **Profile** extensions are installed by default.
+2. On the **Mobile Core** card, click **Configure**.
 
    ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
 
-   b. Provide your Experience Cloud Org ID.
+3. Type your Experience Cloud Org ID.
 
-By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
+   By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
-c. \(Optional\) Provide your Experience Cloud ID Server.
+4. \(Optional\) Provide your Experience Cloud ID Server.
 
-This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
+   This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
-d. Optionally, change the **Session Timeout** value.
+5. Optionally, change the **Session Timeout** value.
 
-A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
+   A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
-1. Click **Save** to confirm your settings for **Mobile Core**.
-2. Click **Catalog** and install the extensions that you need.
+   a. Click **Save** to confirm your settings for **Mobile Core**.
+
+   b. Click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}
 Not sure on what extensions you need? Check out the extensions in the _Using Mobile Extensions_ section.
 {% endhint %}
 
-## Publish Configuration
+## Publish the configuration
 
 To create a library of changes and deploy the library to a **Development Environment**:
 
@@ -67,17 +66,17 @@ The configuration in the library is deployed to the Development environment and 
 Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/getting-started-1/validate-and-publish#publish-to-production)**.**
 {% endhint %}
 
-## Watch the Video
+## Watch the video
 
 {% embed url="https://youtu.be/xBWYFUKAoyo" caption="Video: Creating Mobile Properties in Experience Platform Launch" %}
 
-## Additional Information
+## Additional information
 
 * To learn more about getting access to Launch, see [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions).
 * To learn more about Experience Platform Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 
 ## Get help
 
-* Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* To ask questions, visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk).
+* For immediate assistance, contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html).
 

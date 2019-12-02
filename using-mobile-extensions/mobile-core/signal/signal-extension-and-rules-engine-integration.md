@@ -59,17 +59,17 @@ ACPCore.collectPii(piiContextData)
 {% endtab %}
 {% endtabs %}
 
-1. In Adobe Experience Platform Launch, create a data element for the `user_email` context data key.
+2. In Adobe Experience Platform Launch, create a data element for the `user_email` context data key.
 
 ![Data Element Example for Collect PII context data key](img/data_element_example_collect_pii.png)
 
-2. In Experience Platform Launch, create a new rule for sending a postback.
+3. In Experience Platform Launch, create a new rule for sending a postback.
 
 Create a new rule by selecting the Mobile Core Collect PII event and the Action Mobile Core Send Postback action as illustrated in the following graphic:
 
 ![Rule example using Collect PII event and Postback action](img/postback_pii_token_example.png)
 
-3. Select the data element that you created in step 1 for the Postback action.
+4. Select the data element that you created in step 1 for the Postback action.
 
 Edit the `Send Postback` action and include the following URL in the corresponding edit box:
 
