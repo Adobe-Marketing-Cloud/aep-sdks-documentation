@@ -6,7 +6,7 @@ A data element is a variable where the value can be mapped to data in the Experi
 
 You can use data elements during rule creation to consolidate the definition of dynamic data. After defining your data elements, you can reuse them in multiple places.
 
-**Tip**: We recommend reusing data elements as a best practice.
+**Tip**: As a best practice, we recommend that you reuse data elements.
 
 Data elements are building blocks for rules. Data elements allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate (shared state, event data) or which extension creates them. Data elements are populated with data when they are processed in the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine). 
 
