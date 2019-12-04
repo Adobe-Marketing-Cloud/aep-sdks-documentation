@@ -73,7 +73,7 @@
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach Data to SDK Events](resources/user-guides/attach-data.md)
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
-  * [Signal extension and Rules Engine integration](resources/user-guides/signals-extension-and-rules-engine-integration.md)
+  * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
   * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
