@@ -32,7 +32,7 @@
     * [Configuration keys](using-mobile-extensions/mobile-core/lifecycle/configuration-keys.md)
   * [Signal](using-mobile-extensions/mobile-core/signals/README.md)
     * [Signal API reference](using-mobile-extensions/mobile-core/signals/signal-api-reference.md)
-    * [Signal event reference](using-mobile-extensions/mobile-core/signals/signal-event-reference)
+    * [Signal event reference](using-mobile-extensions/mobile-core/signals/signal-event-reference.md)
   * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine/README.md)
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
