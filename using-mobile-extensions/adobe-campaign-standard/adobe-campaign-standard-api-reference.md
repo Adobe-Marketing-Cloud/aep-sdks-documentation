@@ -283,42 +283,43 @@ public static void collectMessageInfo(final Map<String, Object> messageInfo)
 ```java
 @Override
 protected void onResume() {
-    super.onResume();
-    handleTracking();
+  super.onResume();
+  handleTracking();
 }
+
 // handle a push or local notification click  
 private void handleTracking() {
-		Intent intent = getIntent();
-		Bundle data = intent.getExtras();
-		HashMap<String, Object> userInfo = null;
+  Intent intent = getIntent();
+  Bundle data = intent.getExtras();
+  HashMap<String, Object> userInfo = null;
 
-		if (data != null) {
-      userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
-    } else {
-      return;
-    }
+  if (data != null) {
+    userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
+  } else {
+    return;
+  }
   
-  	// Check if we have local notification click through data.
-  	// If it is present, this view was opened based on a notification.
-  	if (userInfo != null) {
-      String deliveryId = (String)userInfo.get("deliveryId");
-      String broadlogId = (String)userInfo.get("broadlogId");
+  // Check if we have local notification click through data.
+  // If it is present, this view was opened based on a notification.
+  if (userInfo != null) {
+    String deliveryId = (String)userInfo.get("deliveryId");
+    String broadlogId = (String)userInfo.get("broadlogId");
 
-      HashMap<String, Object> contextData = new HashMap<>();
+    HashMap<String, Object> contextData = new HashMap<>();
 
-      if (deliveryId != null && broadlogId != null) {
-        contextData.put("deliveryId", deliveryId);
-        contextData.put("broadlogId", broadlogId);
+    if (deliveryId != null && broadlogId != null) {
+      contextData.put("deliveryId", deliveryId);
+      contextData.put("broadlogId", broadlogId);
 
-        // Send Click Tracking since the user did click on the notification
-        contextData.put("action", "2");
-        MobileCore.collectMessageInfo(contextData);
+      // Send Click Tracking since the user did click on the notification
+      contextData.put("action", "2");
+      MobileCore.collectMessageInfo(contextData);
 
-        // Send Open Tracking since the user opened the app
-        contextData.put("action", "1");
-        MobileCore.collectMessageInfo(contextData);
-      }
+      // Send Open Tracking since the user opened the app
+      contextData.put("action", "1");
+      MobileCore.collectMessageInfo(contextData);
     }
+  }
 }
 ```
 {% endtab %}
