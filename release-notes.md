@@ -1,6 +1,12 @@
+---
+description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs
+---
+
 # Release notes
 
-Here are the release notes for the Experience Platform Mobile SDKs:
+## We want to help!
+
+Please take a moment to fill out a [short-survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
 ## November 15, 2019
 
