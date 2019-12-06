@@ -298,7 +298,7 @@ private void handleTracking() {
   } else {
     return;
   }
-  
+
   // Check if we have local notification click through data.
   // If it is present, this view was opened based on a notification.
   if (userInfo != null) {

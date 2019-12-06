@@ -8,18 +8,15 @@ To get the version of the Signal extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
-#### Java
+### Java
 
 ```java
 String signalExtensionVersion = Signal.extensionVersion();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
-#### iOS
+### iOS
 
 **Objective-C**
 
@@ -32,17 +29,14 @@ NSString *signalExtensionVersion = [ACPSignal extensionVersion];
 ```swift
 var signalExtensionVersion  = ACPSignal.extensionVersion()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
-#### JavaScript
+### JavaScript
 
 ```jsx
 ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeExperienceSDK: ACPSignal version: " + signalExtensionVersion));
 ```
-
 {% endtab %}
 {% endtabs %}
 

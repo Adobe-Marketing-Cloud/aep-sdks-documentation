@@ -818,7 +818,7 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 
 ## Set an advertising identifier <a id="setAdvertisingIdentifierTitle"></a>
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](), and is removed at uninstall.
 
 {% hint style="info" %}
 If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.

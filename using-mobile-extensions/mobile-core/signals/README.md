@@ -2,7 +2,7 @@
 
 The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
 
-The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Adobe Experience Platform Launch. 
+The Signal extension is bundled with the [MobileCore \(Android\)/ACPCore \(iOS\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Adobe Experience Platform Launch.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
+3. \(Optional\) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
@@ -18,7 +18,6 @@ For more information about creating and configuring a rule in Experience Platfor
 
 {% tabs %}
 {% tab title="Android" %}
-
 Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using the app's Gradle file.
 
 ```java
@@ -32,7 +31,6 @@ Import the Signal extension in your application's main activity.
 ```java
 import com.adobe.marketing.mobile.*;
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -40,7 +38,7 @@ import com.adobe.marketing.mobile.*;
 
 Add following pods in your `Podfile`:
 
-```shell
+```text
 pod 'ACPCore'
 ```
 
@@ -48,21 +46,21 @@ Import the Signal libraries:
 
 #### Objective-C
 
-```objective-c
+```text
 #import "ACPCore.h"
 #import "ACPSignal.h"
 ```
 
 #### Swift
+
 In Swift, the ACPCore includes ACPSignal:
+
 ```swift
 import ACPCore
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 Install Signal:
@@ -80,10 +78,9 @@ import {ACPSignal} from '@adobe/react-native-acpcore';
 
 Note: if using Cocoapods, run:
 
-```
+```text
 pod install
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -95,7 +92,6 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register the Signal extension. If the registration was not successful, an `InvalidInitException` is thrown.
@@ -152,7 +148,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
@@ -162,7 +157,6 @@ initSDK() {
     ACPSignal.registerExtension();
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -173,3 +167,4 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 For more information about `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
 For more information about how to configure the Signal postbacks in Adobe Experience Platform Launch, see [doc link](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
+
