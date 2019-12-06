@@ -6,6 +6,7 @@ Use this API to get the custom visitor ID for Target.
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### getThirdPartyId
 
 The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
@@ -59,6 +60,23 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 })
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### getThirdPartyId
+
+The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
+
+**JavaScript**
+
+```javascript
+ACPTarget.getThirdPartyId().then(thirdPartyId => 
+			// read Target thirdPartyId 
+));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Set custom visitor IDs
@@ -113,6 +131,19 @@ Here are some examples in Objective-C and Swift:
 ACPTarget.setThirdPartyId("third-party-id")
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### setThirdPartyId
+
+**JavaScript**
+
+```javascript
+ACPTarget.setThirdPartyId("third-party-id");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Get Target user identifier
@@ -178,6 +209,25 @@ ACPTarget.getTntId({tntId in
 })
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### getTntId
+
+The callback will be invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
+
+Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+
+**JavaScript**
+
+```javascript
+ACPTarget.getTntId().then(tntId => 
+			// read target's tntId                         
+));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Reset user experience
@@ -226,6 +276,19 @@ Here are some examples in Objective-C and Swift:
 ACPTarget.resetExperience()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### resetExperience
+
+**JavaScript**
+
+```javascript
+ACPTarget.resetExperience();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Set preview restart deeplink
@@ -274,6 +337,19 @@ Here are some examples in Objective-C and Swift:
 ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### setPreviewRestartDeeplink
+
+**JavaScript**
+
+```javascript
+ACPTarget.setPreviewRestartDeeplink("myapp://HomePage");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Prefetch offers
@@ -476,6 +552,47 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 })
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### prefetchContent
+
+Use this API to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and the specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
+
+**JavaScript**
+
+```javascript
+var mboxParameters1 = {"status": "platinum"};
+var profileParameters1 = {"age": "20"};
+var product1 = new ACPTargetProduct("24D3412", "Books");
+var order1 = new ACPTargetOrder("ADCKKIM", 344.30, ["34","125"]);
+var targetParameters1 = new ACPTargetParameters(mboxParameters1, profileParameters1, product1, order1);
+
+var mboxParameters2 = {"userType": "Paid"};
+var product2 = new ACPTargetProduct("764334", "Online");
+var order2 = new ACPTargetOrder("ADCKKIM", 344.30, ["id1","id2"]);
+var targetParameters2 = new ACPTargetParameters(mboxParameters2, null, product2, order2);
+
+// Creating Prefetch Objects
+var prefetch1 = new ACPTargetPrefetchObject("logo", targetParameters1);
+var prefetch2 = new ACPTargetPrefetchObject("buttonColor", targetParameters2);
+
+// Creating prefetch Array
+var prefetchList = [prefetch1, prefetch2];
+
+// Creating Target parameters
+var mboxParameters = {"status": "progressive"};
+var profileParameters = {"age": "20-32"};
+var product = new ACPTargetProduct("24D334", "Stationary");
+var order = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
+var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters, product, order);
+
+// Target API Call
+ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => console.log(success)).catch(err => console.log(err));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Clear prefetch offer cache
@@ -524,6 +641,19 @@ Here are some examples in Objective-C and Swift:
 ACPTarget.clearPrefetchCache()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### clearPrefetchCache
+
+**JavaScript**
+
+```javascript
+ACPTarget.clearPrefetchCache();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Retrieve Location Content requests
@@ -706,6 +836,58 @@ let targetParameters = ACPTargetParameters(parameters: mboxParameters, profilePa
 ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### retrieveLocationContent
+
+This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+
+**JavaScript**
+
+```javascript
+var mboxParameters1 = {"status": "platinum"};
+var product1 = new ACPTargetProduct("24D3412", "Books");
+var order1 = new ACPTargetOrder("ADCKKIM", 344.30, ["a","b"]);
+
+var mboxParameters2 = {"userType": "Paid"};
+var product2 = new ACPTargetProduct("764334", "Online");
+var order2 = new ACPTargetOrder("4t4uxksa", 54.90, ["id1","id2"]);
+
+var params1 = new ACPTargetParameters(mboxParameters1, null, product1, order1);
+var request1 = new ACPTargetRequestObject("logo", params1, "BlueWhale", (error, content) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("Target content:" + content);
+      }
+});
+
+var params2 = new ACPTargetParameters(mboxParameters2, null, product2, order2);
+var request2 = new ACPTargetRequestObject("logo", params1, "red", (error, content) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("Target content:" + content);
+      }
+});
+
+// Create request object array
+let requestArray = [request1, request2]
+
+// Creating Target parameters
+var mboxParameters = {"status": "progressive"};
+var profileParameters = {"age": "20-32"};
+var product = new ACPTargetProduct("24D334", "Stationary");
+var order = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
+var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters, product, order);
+
+// Target API Call
+ACPTarget.retrieveLocationContent(requestArray, targetParameters);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Send an mbox display notification
@@ -791,6 +973,23 @@ let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: n
 ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### locationsDisplayed
+
+**JavaScript**
+
+```javascript
+var product = new ACPTargetProduct("24D334", "Stationary");
+var order = new ACPTargetOrder("ADCKKBC", 400.50, ["34", "125"]);
+var targetParameters = new ACPTargetParameters(null, null, product, order);
+
+ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Send an mbox click notification
@@ -929,6 +1128,36 @@ let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: n
 ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetParameters)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### locationClicked
+
+**JavaScript**
+
+```javascript
+// Mbox parameters
+var mboxParameters = {"membership": "prime"};
+
+// Product parameters
+var productParameters = new ACPTargetProduct("CEDFJC", "Electronics");
+
+// Order parameters
+var orderParameters = new ACPTargetOrder("NJJICK", 650, ["81","123","190"]);
+
+// Profile parameters
+var profileParameters = {"ageGroup": "20-32"};
+
+// Create Target parameters
+var product = new ACPTargetProduct("24D334", "Stationary");
+var order = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
+var targetParameters = new ACPTargetParameters(null, null, product, order);
+
+ACPTarget.locationClickedWithName("cartLocation", targetParameters);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Public classes
@@ -1343,5 +1572,96 @@ The following method can be used to create an instance of ACPTargetProduct.
                                   categoryId: (nullable NSString*) categoryId;
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+### ACPTargetRequestObject
+
+This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
+
+```javascript
+class ACPTargetRequestObject extends ACPTargetPrefetchObject {
+  defaultContent:   string;
+
+  constructor(name: string, targetParameters: ACPTargetParameters, defaultContent: string) {
+    super(name, targetParameters);
+    this.defaultContent = defaultContent;
+  }
+}
+```
+
+### ACPTargetPrefetchObject
+
+This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
+
+```javascript
+class ACPTargetPrefetchObject {
+  name:   string;
+  targetParameters: ACPTargetParameters;
+
+  constructor(name?: string, targetParameters?: ACPTargetParameters) {
+  	this.name = name;
+    this.targetParameters = targetParameters;
+  }
+
+}
+```
+
+### ACPTargetParameters
+
+This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
+
+```javascript
+class ACPTargetParameters {
+  parameters: {string: string};
+  profileParameters: {string: string};
+  order: ACPTargetOrder;
+  product: ACPTargetProduct;
+
+  constructor(parameters?: {string: string}, profileParameters?: {string: string}, product?: ACPTargetProduct, order?: ACPTargetOrder) {
+  	this.parameters = parameters;
+    this.profileParameters = profileParameters;
+    this.product = product;
+    this.order = order;
+  }
+}
+```
+
+### ACPTargetOrder
+
+This class contains orderId, total and an array for purchasedProductIds.
+
+```javascript
+class ACPTargetOrder {
+  orderId:   string;
+  total:     number;
+  purchasedProductIds: Array<string>;
+
+  constructor(orderId: string, total?: number, purchasedProductIds: Array<string>) {
+  	this.orderId = orderId;
+    this.total = total;
+    this.purchasedProductIds = purchasedProductIds;
+  }
+}
+```
+
+### ACPTargetProduct
+
+This class contains productId and categoryId.
+
+```javascript
+class ACPTargetProduct {
+  productId: string;
+  categoryId: string;
+
+  constructor(productId: string, categoryId: string) {
+  	this.productId = productId;
+    this.categoryId = categoryId;
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
