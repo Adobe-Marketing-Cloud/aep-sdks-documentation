@@ -111,3 +111,5 @@ ExperiencePlatform.sendEvent(event, new ExperiencePlatformCallback() {
     }
 });
 ```
+
+Read more about response and error response handling [here](./response-handling.md).

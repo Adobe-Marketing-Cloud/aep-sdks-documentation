@@ -112,4 +112,5 @@
   - [Data Platform setup](alpha/experience-platform-extension/data-platform-setup.md)
   - [Set up the SDK](alpha/experience-platform-extension/set-up-the-sdk.md)
   - [Experience Platform events](alpha/experience-platform-extension/experience-platform-events.md)
+  - [Response handling](alpha/experience-platform-extension/response-handling.md)
 
