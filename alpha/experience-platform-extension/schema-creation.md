@@ -100,7 +100,7 @@ The `ProductListItemsItem` object includes details for a product selected by the
 
 ## Examples
 
-Product Add event
+#### Product Add event
 
 {% tabs %}
 {% tab title="Android" %}
@@ -132,7 +132,7 @@ xdmData.setProductListItems(itemsList);
 
 {% endtabs %}
 
-Purchase event
+#### Purchase event
 
 {% tabs %}
 {% tab title="Android" %}
