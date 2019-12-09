@@ -69,13 +69,15 @@ The following updates were made in this release:
 * Added support for attach data rules consequence.
 * Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
 
-**Android Core 1.4.5**
+**Android Core 1.4.5 (sdk-core:1.4.6)**
 
 * Added support for attach data rules consequence.
 * Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
 * Fixed a bug where the `Exist` and `Not Exist` rules condition might not work for a `List` or `Map` type value.
 * Fixed a bug that, when fetching the remote config from Launch, might cause a crash on some Android devices.
 * Fixed a bug that, when the data URL of an activity did not contain valid schema, might cause a crash.
+
+These changes were released as part of `sdk-core` v1.4.6.
 
 **Android Identity 1.1.2**
 
@@ -150,13 +152,15 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Core 1.4.4**
+**Android Core 1.4.4 (sdk-core:1.4.5)**
 
 * Starting in API level 16, notifications now support `BigTextStyle`.
 
   This enables long notifications to be displayed without being truncated.
 
 * Fixed the locale string in the HTTP User-Agent to follow the BCP 47 specification.
+
+These changes were released as part of `sdk-core` v1.4.5.
 
 ## September 10, 2019
 
@@ -174,13 +178,15 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Identity 1.1.1**
+**Android Identity 1.1.1 (sdk-core: 1.4.4)**
 
 * Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
 * The `syncIdentifiers` API call is ignored when there is an empty Map.
 * The duplicate advertising identifier value is removed from the Identity-shared state when `MobileCore.setAdvertisingIdentifier` is called with a new value.
 * The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where `appendVisitorInfoForURL` uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+
+These changes were released as part of `sdk-core` v1.4.4.
 
 **iOS Analytics 2.2.0**
 
