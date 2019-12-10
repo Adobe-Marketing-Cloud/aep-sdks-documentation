@@ -664,7 +664,7 @@ Use this API to send a batch request to the configured Target server for multipl
 {% tab title="Android" %}
 ### retrieveLocationContent
 
-For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -732,7 +732,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 {% tab title="iOS" %}
 ### retrieveLocationContent
 
-For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -841,7 +841,7 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 
 ### retrieveLocationContent
 
-For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 **JavaScript**
 
