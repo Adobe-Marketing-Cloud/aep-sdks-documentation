@@ -152,7 +152,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 {% tab title="React Native" %}
 
-To register the Target with Core, use the following API:
+To register the Target extension with the MobileCore Extension, use the following API:
 
 #### JavaScript
 
