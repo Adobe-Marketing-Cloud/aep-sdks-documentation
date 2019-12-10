@@ -9,7 +9,7 @@ Use this API to get the custom visitor ID for Target.
 
 ### getThirdPartyId
 
-The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
+The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned
 
 #### Syntax
 
@@ -32,7 +32,7 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getThirdPartyId
 
-The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `nil` is returned.
+The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
 
 #### Syntax
 
@@ -65,7 +65,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 
 ### getThirdPartyId
 
-The callback will be invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
+The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
 
 **JavaScript**
 
@@ -156,7 +156,7 @@ Use this API to get the Target user identifier.
 
 The callback is invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
 
-Target returns `tntId` with a successful call to `loadRequests` or `prefetchContent`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+With a successful call to `loadRequests` or `prefetchContent`, Target returns the `tntId`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
 #### Syntax
 
@@ -179,9 +179,9 @@ Target.getTntId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getTntId
 
-The callback will be invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
+The callback is invoked to return the `tntId` value, or if no Target ID is set, `nil` is returned.
 
-Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+With a successful call to `loadRequests` or `prefetchContent`, Target returns the `tntId`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
 #### Syntax
 
@@ -214,9 +214,9 @@ ACPTarget.getTntId({tntId in
 
 ### getTntId
 
-The callback will be invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
+The callback is invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
 
-Target returns `tntId` upon a successful call to `loadRequests` or `prefetchContent`. Once set in SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
+With a successful call to `loadRequests` or `prefetchContent`, Target returns the `tntId`. Once set in the SDK, this ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when `resetExperience` API is called.
 
 **JavaScript**
 
@@ -664,7 +664,7 @@ Use this API to send a batch request to the configured Target server for multipl
 {% tab title="Android" %}
 ### retrieveLocationContent
 
-This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -732,7 +732,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 {% tab title="iOS" %}
 ### retrieveLocationContent
 
-This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 #### Syntax
 
@@ -841,7 +841,7 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 
 ### retrieveLocationContent
 
-This API will send a batch request to configured Target server only for mbox locations in the `TargetRequest` list that are not already prefetched. The content for the mbox locations which are already prefetched with a prior prefetch request, will be returned from within the SDK itself. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 **JavaScript**
 
@@ -1577,7 +1577,7 @@ The following method can be used to create an instance of ACPTargetProduct.
 
 ### ACPTargetRequestObject
 
-This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
+This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that is invoked to return mbox content from Target.
 
 ```javascript
 class ACPTargetRequestObject extends ACPTargetPrefetchObject {
@@ -1592,7 +1592,7 @@ class ACPTargetRequestObject extends ACPTargetPrefetchObject {
 
 ### ACPTargetPrefetchObject
 
-This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
+This class contains the name of the Target location/mbox and Target parameters to be used in a prefetch request.
 
 ```javascript
 class ACPTargetPrefetchObject {
@@ -1609,7 +1609,7 @@ class ACPTargetPrefetchObject {
 
 ### ACPTargetParameters
 
-This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
+This class contains an mbox parameters dictionary, a profile parameters dictionary, an `ACPTargetOrder` object, and an `ACPTargetProduct` object.
 
 ```javascript
 class ACPTargetParameters {
@@ -1629,7 +1629,7 @@ class ACPTargetParameters {
 
 ### ACPTargetOrder
 
-This class contains orderId, total and an array for purchasedProductIds.
+This class contains an `orderId`, the total, and an array, for `purchasedProductIds`.
 
 ```javascript
 class ACPTargetOrder {
@@ -1647,7 +1647,7 @@ class ACPTargetOrder {
 
 ### ACPTargetProduct
 
-This class contains productId and categoryId.
+This class contains a productId and a categoryId.
 
 ```javascript
 class ACPTargetProduct {
