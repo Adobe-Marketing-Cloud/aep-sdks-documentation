@@ -61,6 +61,32 @@ To get started with Target, follow these steps:
    #import ACPIdentity
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+Install Target
+
+```javascript
+npm install @adobe/react-native-acptarget
+react-native link @adobe/react-native-acptarget
+```
+
+Importing the extension and related libraries
+
+```javascript
+import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
+```
+
+Getting the extension version
+
+```javascript
+ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register Target with Mobile Core
@@ -123,6 +149,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+To register the Target extension with the Mobile Core extension, use the following API:
+
+#### JavaScript
+
+```javascript
+ACPTarget.registerExtension();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Parameters in a Target request
@@ -174,6 +213,17 @@ ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400
 let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+**JavaScript**
+
+```javascript
+var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Target Product
@@ -219,6 +269,17 @@ ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" cate
 let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+**JavaScript**
+
+```javascript
+var targetProduct = new ACPTargetProduct("24D334", "Stationary");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Target Parameters
@@ -310,6 +371,22 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+
+**JavaScript**
+
+```javascript
+var mboxParameters = {"status": "platinum"};
+var profileParameters = {"gender": "female"};
+var targetProduct = new ACPTargetProduct("24D334", "Stationary");
+var purchaseIDs = ["34","125"];
+var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, purchaseIDs);
+var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters, targetProduct, targetOrder);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Merge behavior of Target parameters
