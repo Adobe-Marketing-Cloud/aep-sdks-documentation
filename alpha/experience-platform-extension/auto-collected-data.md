@@ -1,6 +1,6 @@
 # Automatically Collected Information
 
-The Experience Platform mobile extension automatically collects specific information and adds it to each Platform Event  sent to the Adobe Data Platform. Below is a list of the information collected.
+The Experience Platform Mobile extension automatically collects specific information and adds it to each Platform Event  sent to the Adobe Experience Platform. Below is a list of the information collected.
 
 ## Identity
 

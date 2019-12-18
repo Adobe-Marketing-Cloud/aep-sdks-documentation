@@ -106,3 +106,9 @@
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon.md)
 
+## ALPHA
+
+- [Experience Platform Extension](alpha/experience-platform-extension/README.md)
+  - [Mobile extension schema](alpha/experience-platform-extension/schema-creation.md)
+  - [Auto collected data](alpha/experience-platform-extension/auto-collected-data.md)
+

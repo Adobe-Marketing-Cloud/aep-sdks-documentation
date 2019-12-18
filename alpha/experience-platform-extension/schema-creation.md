@@ -1,12 +1,12 @@
 # XDM Schema
 
-Experience Data Model (XDM) schemas are a set a rules which defines and validates the format of customer experience data in Adobe Data Platform. XDM schemas are composed of a single class and zero or more mixins. For more information on XDM Schemas, read the [XDM System overview](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) and [basics of schema composition](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/schema_composition/schema_composition.md). For information on creating your own Schema, see the tutorials on creating a schema [using the user interface](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md).
+Experience Data Model (XDM) schemas are a set a rules which defines and validates the format of customer experience data in Adobe Experience Platform. XDM schemas are composed of a single class and zero or more mixins. For more information on XDM Schemas, read the [XDM System overview](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) and [basics of schema composition](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/schema_composition/schema_composition.md). For information on creating your own Schema, see the tutorials on creating a schema [using the user interface](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md).
 
 ## Sample schema for mobile extension
 
-For Alpha customers of the Adobe Experience Platform mobile extension, a sample XDM schema is already created for your use. The schema defines a basic set of things you want to send to Adobe Data Platform if you have products in your application. 
+For Alpha customers of the Adobe Experience Platform Mobile extension, a sample XDM schema is already created for your use. The schema defines a basic set of things you want to send to Adobe Experience Platform if you have products in your application. 
 
-The sample XDM schema for the Experience Platform mobile extension extends from the [XDM ExperienceEvent]() class, which is a time-series based class and captures the state of the system when an event, or events, occurred. Three mixins are also included in the schema: 
+The sample XDM schema for the Experience Platform Mobile extension extends from the [XDM ExperienceEvent]() class, which is a time-series based class and captures the state of the system when an event, or events, occurred. Three mixins are also included in the schema: 
 
 - [ExperienceEvent Application Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-application.schema.md) - data related to the application generating or targeted by the event
 - [ExperienceEvent Environment Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) - data related to the device, location, and surrounding situation
@@ -14,7 +14,7 @@ The sample XDM schema for the Experience Platform mobile extension extends from 
 
 ## Commerce
 
-For the most part, you only need to be concerned with the ExperienceEvent Commerce Details mixin, as the Experience Platform mobile extension automatically collects application and environment details for each experience event.
+For the most part, you only need to be concerned with the ExperienceEvent Commerce Details mixin, as the Experience Platform Mobile extension automatically collects application and environment details for each experience event.
 
 The [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) mixin defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening on a list of `ProductListItemsItem`s. 
 
