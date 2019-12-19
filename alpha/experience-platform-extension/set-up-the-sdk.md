@@ -1,10 +1,14 @@
 # Set up the SDK
 
+In this section, we provide information to help you set up the SDK.
+
 ## Configure the Experience Platform extension
+
+Before you can use the SDK, you must first set it up.
 
 ### Set up the required configuration
 
-Configure a bundle configuration called `ADBMobileConfig.json` in your application's assets folder, with the following content: 
+In your application's assets folder, configure a bundle configuration called `ADBMobileConfig.json` with the following content:
 
 ```
 {
@@ -15,14 +19,14 @@ Configure a bundle configuration called `ADBMobileConfig.json` in your applicati
 ```
 
 {% hint style="warning" %}
-Replace COMPANY_ORG_ID with your company's Adobe organization ID and CONFIG_ID with the Data Platform configuration identifier for your Schema and Dataset.
+Replace the COMPANY_ORG_ID with your company's Adobe organization ID and CONFIG_ID with the Experience Platform configuration identifier for your schema and dataset.
 {% endhint %}
 
 ### Register the extension
 
-The `registerExtension()` API registers the Identity extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
+The `registerExtension()` API registers the Identity extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
 
-In the Application file _onCreate()_ method, register the Mobile Core and the Experience Platform extensions.
+In the Application file's `onCreate()` method, register the Mobile Core and the Experience Platform extensions.
 
 ```java
 public class ExperiencePlatformDemoApplication extends Application {
@@ -59,7 +63,7 @@ public void onCreate() {
 
 ## Sending events
 
-Once an [Experience Platform Event](./experience-platform-events.md) is created, it can be sent to the Adobe Solutions you are provisioned with and the Adobe Data Platform using the `sendEvent` API of the Experience Platform extension.
+After you create an Experience Platform event, use `sendEvent` to send this event to the Adobe solutions for which you are provisioned and to the Experience Platform. For more information, see [Experience Platform event](./experience-platform-events.md).
 
 **Syntax**
 
@@ -92,11 +96,13 @@ ExperiencePlatform.sendEvent(event, null);
 
 ## Retrieving data from Adobe solutions
 
-As described in the [Sending events](#sending-events) section, the _responseCallback_ is an optional parameter. However, if you would like to get notified when a response is returned from the Adobe solutions, you can register a _responseCallback_ that will be invoked whenever new data is available from the server. This callback is called for each event handle returned by the server, which in Android is represented by a Map<String, Object>.
+As described in the [Sending events](#sending-events) section, `responseCallback` is an optional parameter. However, to be notified when a response is returned from the Adobe solutions, you can register a `responseCallback` that is invoked when new data is available from the server. This callback is called for each event handle that is returned by the server.
 
-Based of the nature of the event and the various Adobe solutions you have enabled for your organization, for each Experience Platform event you can receive one, multiple or no event handles.
+**Tip**: In Android, the event handle is represented by a `Map<String, Object>`.
 
-For optimized performance, the server side event handle comes in a chunks, so you should expect that the responseCallback is called multiple times.
+Depending on the nature of the event, and the various Adobe solutions you enabled for your organization, you can receive one, multiple, or no event handles for each Experience Platform event.
+
+For the best performance, the server-side event handle comes in chunks. As a result, the `responseCallback` is called multiple times.
 
 ```java
 // create the ExperiencePlatformEvent for your use case
@@ -112,4 +118,4 @@ ExperiencePlatform.sendEvent(event, new ExperiencePlatformCallback() {
 });
 ```
 
-Read more about response and error response handling [here](./response-handling.md).
+For more information about about response and error response handling, see [Server response handling](./response-handling.md).
