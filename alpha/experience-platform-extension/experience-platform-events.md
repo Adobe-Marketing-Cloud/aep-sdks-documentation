@@ -54,7 +54,7 @@ public interface Schema {
     String getSchemaIdentifier();
 
     /**
-     * Serialize this {@code Schema} object to a map that is equivalent of its XDM schema.
+     * Serialize this {@code Schema} object to a map with the same format as its XDM schema.
      * @return the XDM-formatted map of this {@code Schema} object.
      */
     Map<String, Object> serializeToXdm();
@@ -67,7 +67,7 @@ By implementing the **Property** interface, you can define complex properties fo
 public interface Property {
 
     /**
-     * Serialize this {@code Property} object to a map that is equivalent of its XDM schema.
+     * Serialize this {@code Property} object to a map with the same format as its XDM schema.
      * @return XDM-formatted map of this {@code Property} object.
      */
     Map<String, Object> serializeToXdm();
