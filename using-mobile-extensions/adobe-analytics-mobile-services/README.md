@@ -37,7 +37,7 @@ To use the Mobile Services extension, complete these steps:
 ## Configure the Mobile Services extension in Experience Platform Launch
 
 {% hint style="warning" %}
-The Mobile Services extension also requires the Analytics extension for reporting.
+The Mobile Services extension requires the Analytics extension for reporting and uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite might be sent.
 {% endhint %}
 
 ### Automatic Configuration \(Recommended\)
