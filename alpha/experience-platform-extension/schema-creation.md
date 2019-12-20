@@ -1,6 +1,6 @@
 # XDM Schema
 
-Experience Data Model (XDM) schemas are a set a rules that defines and validates the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more mixins. For more information on XDM Schemas, see [XDM System overview](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) and [Basics of schema composition](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/schema_composition/schema_composition.md). For information on creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md).
+Experience Data Model (XDM) schemas are a set a rules that define and validate the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more mixins. For more information about XDM Schemas, see [XDM System overview](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) and [Basics of schema composition](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/schema_composition/schema_composition.md). For information on creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md).
 
 ## Sample schema for mobile extension
 
@@ -22,7 +22,7 @@ The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c2218
 
 Each action object that is defined in the `Commerce` object takes a value, typically set to 1, which indicates that action occurred.
 
-- CartAbandons - A product list has been identified as no longer accessible (for example purchasable) by the user.
+- CartAbandons - A product list has been identified as no longer accessible (for example, purchasable) by the user.
 - Checkouts - An action during a checkout process of a product list.
 - ProductListAdds - Addition of a product to the product list.
 - ProductListOpens - Initializations of a new product list.
@@ -88,7 +88,7 @@ commerce.setOrder(order);
 
 ### Product list items
 
-The `ProductListItemsItem` object includes details for a product that was selected by the customer. A list of  `ProductListItemsItem` objects can be used to identity the products with which the customer has interacted.
+The `ProductListItemsItem` object includes details for a product that was selected by the customer. The following `ProductListItemsItem` objects can be used to identity the products with which the customer has interacted.
 
 - SKU - Unique identifier for a product that was defined by the vendor. 
 - currencyCode - The ISO 4217 alphabetic currency code used to price the product.
