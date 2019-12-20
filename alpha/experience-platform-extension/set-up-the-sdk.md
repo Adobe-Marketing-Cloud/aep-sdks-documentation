@@ -24,7 +24,7 @@ Replace the COMPANY_ORG_ID with your company's Adobe organization ID and CONFIG_
 
 ### Register the extension
 
-The `registerExtension()` API registers the Identity extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
+The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
 
 In the Application file's `onCreate()` method, register the Mobile Core and the Experience Platform extensions.
 
