@@ -2,9 +2,18 @@
 
 The Experience Platform Mobile extension automatically collects and adds information to each Platform event that is sent to the Adobe Experience Platform. The following sections provide details about the collected information:
 
+## Platform event
+
+The [Experience Event](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent.schema.md) is a time-based record of an event. The XDM Experience Event schema is the top-level class for all Experience events and contains information about the event, device, environment, and the identity of the user. Here are the properties the Experience Platform Mobile extension automatically adds to each Platform event:
+
+| Property  | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| Timestamp | The time when the event occurred. The timestamp is set when the Platform event is received by the Experience Platform Mobile extension. |
+| ID        | A unique identifier for the time-series event.               |
+
 ## Identity
 
-The [IdentityMap](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/identitymap.schema.md) defines a map that contains end-user identities.
+The [IdentityMap](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/identitymap.schema.md) defines a map that contains end-user identities. Here are the identity properties the Experience Platform Mobile extension automatically adds to each Platform event:
 
 | Property | Description                                                  |
 | -------- | ------------------------------------------------------------ |
