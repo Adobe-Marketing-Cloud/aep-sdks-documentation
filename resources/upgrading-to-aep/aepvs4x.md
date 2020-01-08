@@ -71,7 +71,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Platform | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | Android | Supported | Supported |
-| Android Wear​ | Supported | _Not supported_ |
+| Android Wear​ | Supported | _Support coming_ |
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | _Support coming_ |
 | Apple tvOS​ | Supported | _Support coming_ |
