@@ -88,7 +88,7 @@ commerce.setOrder(order);
 
 ### Product list items
 
-The `ProductListItemsItem` object includes details for a product that was selected by the customer. The following `ProductListItemsItem` objects can be used to identity the products with which the customer has interacted.
+The `ProductListItemsItem` object includes details for a product that was selected by the user. The following `ProductListItemsItem` objects can be used to identity the products with which the user has interacted.
 
 - SKU - Unique identifier for a product that was defined by the vendor. 
 - currencyCode - The ISO 4217 alphabetic currency code used to price the product.
