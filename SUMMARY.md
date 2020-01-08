@@ -111,6 +111,10 @@
 ## ALPHA
 
 - [Experience Platform Extension](alpha/experience-platform-extension/README.md)
+  - [Experience Platform setup](alpha/experience-platform-extension/experience-platform-setup.md)
+  - [Set up the SDK](alpha/experience-platform-extension/set-up-the-sdk.md)
+  - [Experience Platform events](alpha/experience-platform-extension/experience-platform-events.md)
+  - [Response handling](alpha/experience-platform-extension/response-handling.md)
   - [Mobile extension schema](alpha/experience-platform-extension/schema-creation.md)
   - [Auto collected data](alpha/experience-platform-extension/auto-collected-data.md)
 
