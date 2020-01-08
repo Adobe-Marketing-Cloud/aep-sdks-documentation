@@ -4,10 +4,7 @@
 
 ### Campaign Request Content <a id="configuration-response-content"></a>
 
-This event is dispatched from the Event Hub for the following scenarios:
-
-* Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
-* This event is dispatched immediately after a Campaign rule is found to be true.  For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
+This event is dispatched from the Event Hub when a Campaign rule is found to be true.  For example, for the rule *"User has launched the app"*, after the user launches the app, this rule is found to be true. A triggered consquences event is dispatched which contains the data of the displayed local, alert, or full-screen message.
 
 #### Data payload definition <a id="data-payload-definition-1"></a>
 
@@ -15,26 +12,29 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `triggeredconsequence` | Array |  |  |
-| `loadedconsequences` | Array |  |  |
+| `triggeredconsequence` | Map | Yes | The triggered Campaign rule consquence. |
 
 #### Event data example
 
+triggered consequence data
+
 ```text
-{ 
-    "loadedconsequences": [
-    {
-        "assetsPath":"assets/path/", 
-        "detail":"details", 
-        "id":"123", 
-        "type":"iam"
+{
+  "triggeredconsequence": {
+    "assetsPath": "assets/path/",
+    "id": "123",
+    "detail": {
+      "template": "local",
+      "wait": 0,
+      "userData": {
+        "deliveryId": "123abc",
+        "broadlogId": "456edf"
+      },
+      "title": "local example",
+      "content": "local example text"
     },
-    {
-        "assetsPath":"assets/path/", 
-        "detail":"details", 
-        "id":"456", 
-        "type":"csp"
-    }]
+    "type": "iam"
+  }
 }
 ```
 
@@ -121,7 +121,7 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `lifecyclecontextdata` | Map | No |  |
+| `lifecyclecontextdata` | Map | No | Map containing the stored lifecycle metrics. |
 
 #### Event data example
 

@@ -1,12 +1,11 @@
 # Adobe Campaign Standard API reference
 
-## Get the extension version
+## Extension version
 
 To return the current version of the Campaign extension, use the following APIs:
 
 {% tabs %}
 {% tab title="Android" %}
-### extensionVersion
 
 #### Java
 
@@ -24,8 +23,6 @@ Campaign.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
-### extensionVersion
-
 #### Syntax
 
 ```objectivec
@@ -50,8 +47,6 @@ print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 {% endtab %}
 
 {% tab title="React Native" %}
-### extensionVersion
-
 #### JavaScript
 
 ```javascript
@@ -66,7 +61,6 @@ This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are
 
 {% tabs %}
 {% tab title="Android" %}
-### setLinkageFields
 
 #### Java
 
@@ -75,6 +69,8 @@ This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are
 ```java
 public static void setLinkageFields(final Map<String, String> linkageFields)
 ```
+
+- *linkageFields* is a map that contains the linkage field key-value pairs.
 
 #### Example
 
@@ -88,13 +84,13 @@ Campaign.setLinkageFields(linkageFields);
 {% endtab %}
 
 {% tab title="iOS" %}
-### setLinkageFields
-
 #### Syntax
 
 ```objectivec
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
+
+- *linkageFields* is a dictionary that contains the linkage field key-value pairs.
 
 #### Example
 
@@ -118,8 +114,6 @@ ACPCampaign.setLinkageFields(linkageFields)
 {% tab title="React Native" %}
 #### JavaScript
 
-### setLinkageFields
-
 ```javascript
 ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
 ```
@@ -132,7 +126,6 @@ This method clears the cached rules from the previous download before triggering
 
 {% tabs %}
 {% tab title="Android" %}
-### resetLinkageFields
 
 #### Syntax
 
@@ -148,8 +141,6 @@ Campaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="iOS" %}
-### resetLinkageFields
-
 #### Syntax
 
 ```objectivec
@@ -174,29 +165,28 @@ ACPCampaign.resetLinkageFields()
 {% tab title="React Native" %}
 #### JavaScript
 
-### resetLinkageFields
-
 ```javascript
 ACPCampaign.resetLinkageFields();
 ```
 {% endtab %}
 {% endtabs %}
 
-## Set up push messaging
+## Set push identifier
 
-To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
+To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. More information regarding the `setPushIdentifer` API can be seen at [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle) After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 {% tabs %}
 {% tab title="Android" %}
-### setPushIdentifier
 
 #### Syntax
 
 ```java
 public static void setPushIdentifier(final String registrationID)
 ```
+
+- *registrationID*  is a string that contains the device token received from the Firebase Cloud Messaging Platform.
 
 #### Example
 
@@ -220,13 +210,13 @@ FirebaseInstanceId.getInstance().getInstanceId()
 {% endtab %}
 
 {% tab title="iOS" %}
-### setPushIdentifier
-
 #### Syntax
 
 ```objectivec
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
+
+- *deviceToken* is a string that contains the device token received from the Apple Push Notification Service.
 
 #### Objective-C
 
@@ -254,8 +244,6 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 {% endtab %}
 
 {% tab title="React Native" %}
-### setPushIdentifier
-
 #### JavaScript
 
 ```javascript
@@ -264,19 +252,20 @@ ACPCore.setPushIdentifier("pushIdentifier");
 {% endtab %}
 {% endtabs %}
 
-## Tracking push or local notification message interactions
+## Collect message info
 
 User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
 {% tabs %}
 {% tab title="Android" %}
-### collectMessageInfo
 
 #### Syntax
 
 ```java
 public static void collectMessageInfo(final Map<String, Object> messageInfo)
 ```
+
+- *messageInfo* is a map which contains the delivery id, message id, and action type for a local notification which was interacted with. The delivery id and message id are extracted from the local notification payload while the action type is inferred from the method in which the local notification was interacted.  
 
 #### Example
 
@@ -325,13 +314,13 @@ private void handleTracking() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### collectMessageInfo
-
 #### Syntax
 
 ```objectivec
 + (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
 ```
+
+- *messageInfo* is a dictionary which contains the delivery id, message id, and action type for a local notification which was interacted with. The delivery id and message id are extracted from the local notification payload while the action type is inferred from the way in which the local notification was interacted.  
 
 #### Objective-C
 
