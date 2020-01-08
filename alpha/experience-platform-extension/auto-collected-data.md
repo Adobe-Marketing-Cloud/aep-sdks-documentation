@@ -21,7 +21,7 @@ The [IdentityMap](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e054
 
 ## Device
 
-[Device](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/device.schema.md) is included in the [Experience Cloud Environment details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) mixin and details data about the mobile device. Here are the device properties the Experience Platform Mobile extension automatically adds to each Platform event:
+[Device](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/device.schema.md) is included in the [Experience Cloud Environment details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) mixin and details data about the mobile device. Here are the device properties that the Experience Platform Mobile extension automatically adds to each Platform event:
 
 | Property           | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
@@ -35,7 +35,7 @@ The [IdentityMap](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e054
 
 ## Environment
 
-[Environment](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/environment.schema.md) is included in the  [Experience Cloud Environment details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) mixin and includes information about the surrounding environment at the time of the event. Here are the environment properties the Experience Platform Mobile extension automatically adds to each Platform event:
+[Environment](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/environment.schema.md) is included in the  [Experience Cloud Environment details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) mixin and includes information about the surrounding environment at the time of the event. Here are the environment properties that the Experience Platform Mobile extension automatically adds to each Platform event:
 
 | Property                 | Description                                           |
 | ------------------------ | ----------------------------------------------------- |
