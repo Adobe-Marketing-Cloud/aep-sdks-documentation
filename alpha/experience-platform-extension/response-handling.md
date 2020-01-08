@@ -10,7 +10,7 @@ If you integrated the [Project Griffon extension](https://aep-sdks.gitbook.io/do
 
 ## Error handling
 
-If a server-side error occurs, the Experience Platform extension logs an error/warning message with the error or warning details, like in the following example:
+If a server-side error occurs, the Experience Platform extension logs an error/warning message with the error or warning details. For example:
 
 ```
 E/AdobeExperienceSDK: NetworkResponseHandler - Received event error for request id (d9058d43-34a9-45f3-815e-b28065185f64), error details:
