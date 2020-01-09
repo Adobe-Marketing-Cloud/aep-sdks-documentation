@@ -12,7 +12,7 @@ Please take a moment to fill out a [short-survey](https://www.surveymonkey.com/r
 
 The following updates were made in this release:
 
-**iOS Identity 2.1.3(Released with ACPCore version 2.3.6 on Cocoapod) **
+**iOS Identity 2.1.3(Released with ACPCore version 2.3.6 on Cocoapods) **
 
 * Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID \(ECID\) Service.
 * Fixed a threading issue where the Experience Cloud ID \(ECID\) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
@@ -69,7 +69,7 @@ The following updates were made in this release:
 * Added support for the attach data rules consequence.
 * Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
 
-**Android Core 1.4.5 (Released with sdk-core version 1.4.6 on maven)**
+**Android Core 1.4.5 (Released with sdk-core version 1.4.6 on Maven)**
 
 * Added support for attach data rules consequence.
 * Added support for a boolean-type comparison for the `Exist` or `Not Exist` rules condition.
@@ -150,7 +150,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Core 1.4.4 (Released with sdk-core version 1.4.5 on maven)**
+**Android Core 1.4.4 (Released with sdk-core version 1.4.5 on Maven)**
 
 * Starting in API level 16, notifications now support `BigTextStyle`.
 
@@ -174,7 +174,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Identity 1.1.1 (Released with sdk-core version 1.4.4 on maven)**
+**Android Identity 1.1.1 (Released with sdk-core version 1.4.4 on Maven)**
 
 * Custom identifiers with null or empty IDs are ignored when calling the `syncIdentifier` or `syncIdentifiers` APIs because the Visitor ID Service does not support these identifiers.
 * The `syncIdentifiers` API call is ignored when there is an empty Map.
