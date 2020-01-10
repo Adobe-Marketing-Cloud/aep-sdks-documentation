@@ -18,6 +18,9 @@ No extension settings are required.
 
 {% tabs %}
 {% tab title="Android" %}
+
+**Java**
+
 1. Add the following libraries in your project's `build.gradle` file:
 
    ```java
@@ -29,13 +32,12 @@ No extension settings are required.
 
 2. Import the Project Griffon libraries with the other SDK libraries:
 
-**Java**
+   ```java
+   import com.adobe.marketing.mobile.GriffonEvent;
+   import com.adobe.marketing.mobile.Griffon; 
+   import com.adobe.marketing.mobile.MobileCore;
+   ```
 
-```text
-import com.adobe.griffon.Event;
-import com.adobe.marketing.mobile.Griffon;
-import com.adobe.marketing.mobile.MobileCore;
-```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -46,35 +48,48 @@ import com.adobe.marketing.mobile.MobileCore;
 
 ```objectivec
 #import "ACPCore.h"
-#import "ACPAnalytics.h"
 #import "ACPGriffon.h" // <-- import the Project Griffon library
+#import "ACPGriffonEvent.h"
 ```
 
 #### Swift
 
 ```swift
 import ACPCore
-import ACPAnalytics
 import ACPGriffon // <-- import the Project Griffon library
+import ACPGriffonEvent
 ```
 {% endtab %}
 {% endtabs %}
 
-### Register Project Griffon with Mobile Core
+### Register Griffon with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Java
 
 1. Register the extension wherever you are registering other extensions.
 
    ```java
-   Griffon.registerExtension();
+     public class TargetApp extends Application {
+      @Override
+      public void onCreate() {
+         super.onCreate();
+         MobileCore.setApplication(this);
+         MobileCore.ConfigureWithAppId("yourAppId");
+         try {
+            Griffon.registerExtension();
+            MobileCore.start(null);
+         } catch (Exception e) {
+            // Log the exception
+         }
+      }
+     }
    ```
 
-2. Use the deeplink created on the Griffon UI to start the Griffon session.
+2. Open the deeplink created on the Griffon UI to start the Griffon session.
 
 {% endtab %}
 
@@ -86,8 +101,6 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPCore configureWithAppId:@"yourAppId"];
-    [ACPAnalytics registerExtension];
-    [ACPIdentity registerExtension];
     [ACPGriffon registerExtension]; // <-- register Project Griffon with Core
     [ACPCore start:nil];
     // Override point for customization after application launch.
@@ -100,8 +113,6 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      ACPCore.configure(withAppId: "yourAppId")   
-     ACPAnalytics.registerExtension()
-     ACPIdentity.registerExtension()
      ACPGriffon.registerExtension() // <-- register Project Griffon with Core
      ACPCore.start(nil)
      // Override point for customization after application launch. 
