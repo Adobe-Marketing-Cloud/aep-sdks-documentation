@@ -13,7 +13,7 @@ Project Griffon is currently in beta. To use this product, you must accept the t
 
 ### Effortless Implementation
 
-You can get started quickly with only a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and more.
+You can get started quickly with only a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and so on.
 
 ### Seamless Connection
 
