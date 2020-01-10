@@ -3,7 +3,7 @@
 ## Logging in
 
 {% hint style="warning" %}
-Project Griffon is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
+Project Griffon is in beta. To use Project Griffon, you must accept the terms outlined in [https://griffon.adobe.com](https://griffon.adobe.com).
 {% endhint %}
 
 1. Go to to [https://griffon.adobe.com](https://griffon.adobe.com).
@@ -13,55 +13,51 @@ Project Griffon is in beta. Use of this beta product requires acceptance of term
 If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
 {% endhint %}
 
-![](../../.gitbook/assets/image-2.png)
+3. In the beta access page, click **Register**. 
 
-If you see the following screen, for beta access, click **Register**.
+## Project Griffon sessions
 
-![](../../.gitbook/assets/image-7.png)
+To begin a session, you need to create a session and connect your device.
 
-## Begin a Project Griffon session
+### 1. Create a session
 
-### Create a session
+a. Log in to Project Griffon. 
 
-1. To begin, click the **Create Session** button on the upper right-hand corner of the screen.
+b. Click **Create Session** in the top right. 
 
-![](../../.gitbook/assets/image.png)
+c. Click **Start**.
 
-1. Click **Start**.
+d. In **Session Name**, enter a name to identify the session.  
+    This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
+e. In the **Base URL** field, type your app's base deep link definition.
+f. Click **Next**.
 
-![](../../.gitbook/assets/image-4.png)
 
-1. In **Session Name**, enter a name to identify the session.  This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
-2. In the **Base URL** field, type your app's base deep link definition.
-3. Click **Next**.
+### 2. Connect your device
 
-![](../../.gitbook/assets/image-1.png)
-
-### Connect your device
-
-1. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
-2. Complete one of the following tasks:
+a. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
+b. Complete one of the following tasks:
    * Use your iOS Camera app to scan the QR code and to open your app.
    * Copy the link and open in your app or the Xcode simulator.
+   
+   ![](../../.gitbook/assets/image-3.png)
 
-![](../../.gitbook/assets/image-3.png)
+c. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
+d. Type in the PIN from the previous step and press **Connect**.
 
-1. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
-2. Type in the PIN from the previous step and press **Connect**.
+   ![](../../.gitbook/assets/image-6.png)
 
-![](../../.gitbook/assets/image-6.png)
+e. Verify that your app is connected to Project Griffon when the red Experience Cloud icon is displayed on your app.
 
-1. Verify that your app is connected to Project Griffon when the red icon is displayed on your app.
+   ![](../../.gitbook/assets/image-8.png)
 
-![](../../.gitbook/assets/image-8.png)
+## Exporting a session
 
-## **Exporting a session**
-
-To export a session, click on the Export to JSON button within a given session, as shown below.
+To export a Project Griffon session, on your app’s sessions details page, click **Export to JSON** in a session:
 
 ![](../../.gitbook/assets/screen-shot-2019-07-10-at-4.07.02-pm.png)
 
 {% hint style="info" %}
-This export feature will honor the search filter and export only the events shown in the event view. For example, if you’ve searched for “track” events and then hit **Export to JSON**, only “track” event results will be exported.
+This export operation maintains the search filter results and exports only the events displayed in the event view. For example, if you searched for “track” events and then click **Export to JSON**, only the “track” event results are exported.
 {% endhint %}
 
