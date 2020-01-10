@@ -19,35 +19,35 @@ If you do not know your Adobe ID credentials, contact your Adobe administrator o
 
 To begin a session, you need to create a session and connect your device.
 
-### 1.Create a session
+### 1. Create a session
 
-1. Log in to Project Griffon. 
+a. Log in to Project Griffon. 
 
-2. Click **Create Session** in the top right. 
+b. Click **Create Session** in the top right. 
 
-3. Click **Start**.
+c. Click **Start**.
 
-4. In **Session Name**, enter a name to identify the session.  
+d. In **Session Name**, enter a name to identify the session.  
     This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
-5. In the **Base URL** field, type your app's base deep link definition.
-6. Click **Next**.
+e. In the **Base URL** field, type your app's base deep link definition.
+f. Click **Next**.
 
 
-### 2.Connect your device
+### 2. Connect your device
 
-1. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
-2. Complete one of the following tasks:
+a. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
+b. Complete one of the following tasks:
    * Use your iOS Camera app to scan the QR code and to open your app.
    * Copy the link and open in your app or the Xcode simulator.
    
    ![](../../.gitbook/assets/image-3.png)
 
-3. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
-4. Type in the PIN from the previous step and press **Connect**.
+c. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
+d. Type in the PIN from the previous step and press **Connect**.
 
    ![](../../.gitbook/assets/image-6.png)
 
-5. Verify that your app is connected to Project Griffon when the red Experience Cloud icon is displayed on your app.
+e. Verify that your app is connected to Project Griffon when the red Experience Cloud icon is displayed on your app.
 
    ![](../../.gitbook/assets/image-8.png)
 
