@@ -1,6 +1,6 @@
 # Adobe Campaign Standard API reference
 
-## Extension version
+## extensionVersion
 
 To return the current version of the Campaign extension, use the following APIs:
 
@@ -55,7 +55,7 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 {% endtab %}
 {% endtabs %}
 
-## Set linkage fields
+## setLinkageFields
 
 This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
 
@@ -114,13 +114,23 @@ ACPCampaign.setLinkageFields(linkageFields)
 {% tab title="React Native" %}
 #### JavaScript
 
+#### Syntax
+
 ```javascript
-ACPCampaign.setLinkageFields({"linkageKey": "linkageValue"});
+ACPCampaign.setLinkageFields(linkageFields: { string: string })
+```
+
+- *linkageFields* is a map that contains the linkage field key-value pairs.
+
+#### Example
+
+```javascript
+ACPCampaign.setLinkageFields({"firstName": "John"});
 ```
 {% endtab %}
 {% endtabs %}
 
-## Reset linkage fields
+## resetLinkageFields
 
 This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT\_IN, no rules download occurs.
 
@@ -165,13 +175,21 @@ ACPCampaign.resetLinkageFields()
 {% tab title="React Native" %}
 #### JavaScript
 
+#### Syntax
+
+```javascript
+ACPCampaign.resetLinkageFields();
+```
+
+#### Example
+
 ```javascript
 ACPCampaign.resetLinkageFields();
 ```
 {% endtab %}
 {% endtabs %}
 
-## Set push identifier
+## setPushIdentifier
 
 To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. More information regarding the `setPushIdentifer` API can be seen at [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle) After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information about Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
@@ -246,13 +264,23 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 {% tab title="React Native" %}
 #### JavaScript
 
+#### Syntax
+
 ```javascript
-ACPCore.setPushIdentifier("pushIdentifier");
+ACPCore.setPushIdentifier(pushIdentifier);
+```
+
+- *pushIdentifier* is a string that contains the device token for push notifications.
+
+#### Example
+
+```javascript
+ACPCore.setPushIdentifier("pushID");
 ```
 {% endtab %}
 {% endtabs %}
 
-## Collect message info
+## collectMessageInfo
 
 User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on Campaign message interaction events, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description).
 
