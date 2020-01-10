@@ -49,6 +49,14 @@ print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 {% tab title="React Native" %}
 #### JavaScript
 
+#### Syntax
+
+```javascript
+ACPCampaign.extensionVersion(): Promise<string>
+```
+
+#### Example
+
 ```javascript
 ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPCampaign version: " + version));
 ```
