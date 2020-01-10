@@ -2,7 +2,7 @@
 
 ## Events handled
 
-### Campaign Request Content <a id="configuration-response-content"></a>
+### Campaign Request Content <a id="campaign-request-content"></a>
 
 This event is dispatched from the Event Hub when a Campaign rule is found to be true.  For example, for the rule *"User has launched the app"*, after the user launches the app, this rule is found to be true. A triggered consquences event is dispatched which contains the data of the displayed local, alert, or full-screen message.
 
@@ -143,6 +143,30 @@ Here are the key-value pairs in this event:
     },    
     "starttimestampmillis" :44,    
     "maxsessionlength":22
+}
+```
+
+### Generic Data OS <a id="generic-data-os"></a>
+
+This event is dispatched by the Core extension to the EventHub when the collectMessageInfo API is invoked by the app developer to track local and push notification interactions.
+
+#### Data payload definition <a id="data-payload-definition-7"></a>
+
+Here are the key-value pairs in this event:
+
+| **Key**      | **Value Type** | **Optional** | **Description**                                              |
+| :----------- | :------------- | :----------- | :----------------------------------------------------------- |
+| `deliveryId` | String         | No           | String containing the delivery id of the message interacted with. |
+| `action`     | String         | No           | String containing the message interaction id.                |
+| `broadlogId` | String         | No           | String containing the broadlog id of the message interacted with. |
+
+#### Event data example
+
+```json
+{
+  "deliveryId": "1442de4",
+  "action": "2",
+  "broadlogId": "h1c1380"
 }
 ```
 
