@@ -1,7 +1,5 @@
 # Set up Project Griffon
 
-## **Configure the Project Griffon extension in** Experience Platform **Launch**
-
 {% hint style="warning" %}
 This extension is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
 {% endhint %}
@@ -14,7 +12,7 @@ This extension is in beta. Use of this beta product requires acceptance of terms
 
 ![](../../.gitbook/assets/pg-launch.png)
 
-Click **Install** on the extension card. No extension settings are required.
+No extension settings are required.
 
 ## Add Project Griffon to your app
 
@@ -25,30 +23,23 @@ Click **Install** on the extension card. No extension settings are required.
    ```java
    implementation 'com.adobe.marketing.mobile:core:1+'
    implementation 'com.adobe.marketing.mobile:griffon:1+' 
-   implementation 'com.adobe.marketing.mobile:griffonbridge:1+'
    ```
 
    Also be sure to use the latest available versions.
 
-2. Import the Project Griffon libaries along with other SDK libaries:
+2. Import the Project Griffon libraries with the other SDK libraries:
 
 **Java**
 
 ```text
 import com.adobe.griffon.Event;
-import com.adobe.marketing.mobile.AndroidGriffonBridge;
+import com.adobe.marketing.mobile.Griffon;
 import com.adobe.marketing.mobile.MobileCore;
 ```
-
-1. Enable Griffon activity \(used to establish and control sessions\)
-
-   ```markup
-   <activity android:name="com.adobe.griffon.FullScreenTakeoverActivity" />
-   ```
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffonBeta'` ​
+1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffon'`
 2. Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
@@ -56,7 +47,7 @@ import com.adobe.marketing.mobile.MobileCore;
 ```objectivec
 #import "ACPCore.h"
 #import "ACPAnalytics.h"
-#import "ACPGriffonBridge.h" // <-- import the Project Griffon library
+#import "ACPGriffon.h" // <-- import the Project Griffon library
 ```
 
 #### Swift
@@ -64,7 +55,7 @@ import com.adobe.marketing.mobile.MobileCore;
 ```swift
 import ACPCore
 import ACPAnalytics
-import ACPGriffonBeta // <-- import the Project Griffon library
+import ACPGriffon // <-- import the Project Griffon library
 ```
 {% endtab %}
 {% endtabs %}
@@ -73,40 +64,22 @@ import ACPGriffonBeta // <-- import the Project Griffon library
 
 {% tabs %}
 {% tab title="Android" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Java
 
 1. Register the extension wherever you are registering other extensions.
 
    ```java
-   AndroidGriffonBridge.registerExtension();
+   Griffon.registerExtension();
    ```
 
-2. Call the Griffon set up with the application reference.
+2. Use the deeplink created on the Griffon UI to start the Griffon session.
 
-**Tip:** Complete this step as early as possible after your application starts up.
-
-```java
-AndroidGriffonBridge.setup(getApplication());
-```
-
-1. Pass Griffon all deep link URIs.
-
-**Tip:** Do this where you handle other deep links in your application.
-
-```java
-final Intent intent = getIntent();
-final Uri data = intent.getData();
-
-if (data != null) {
-    AndroidGriffonBridge.startSession(data.toString());
-}
-```
 {% endtab %}
 
 {% tab title="iOS" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Objective-C
 
@@ -115,7 +88,7 @@ Registering the extension with Core sends Experience Platform SDK events to an a
     [ACPCore configureWithAppId:@"yourAppId"];
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
-    [ACPGriffonBridge registerExtension]; // <-- register Project Griffon with Core
+    [ACPGriffon registerExtension]; // <-- register Project Griffon with Core
     [ACPCore start:nil];
     // Override point for customization after application launch.
     return YES;
@@ -129,7 +102,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      ACPCore.configure(withAppId: "yourAppId")   
      ACPAnalytics.registerExtension()
      ACPIdentity.registerExtension()
-     ACPGriffonBridge.registerExtension() // <-- register Project Griffon with Core
+     ACPGriffon.registerExtension() // <-- register Project Griffon with Core
      ACPCore.start(nil)
      // Override point for customization after application launch. 
      return true;
@@ -140,10 +113,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Start a Project Griffon session
 
-Once the extension has been registered, you may begin a Project Griffon session using the following API.
+After the extension has been registered, start a Project Griffon session by using the following API:
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### startSession
 
 This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
@@ -159,7 +133,7 @@ public static void startSession(final String url)
 #### Example
 
 ```java
- AndroidGriffonBridge.startSession(url);
+ Griffon.startSession(url);
 ```
 {% endtab %}
 
@@ -180,26 +154,19 @@ This API accepts a deep link to begin a session. After this API is called, to be
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [ACPGriffonBridge startSession:url];
+    [ACPGriffon startSession:url];
     return false;
 }
 ```
 
 #### Swift
 
-#### Syntax
-
-```text
-class func startSession(_ url: URL) {
-}
-```
-
 #### Example
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     do {
-        ACPGriffonBridge.startSession(url)
+        ACPGriffon.startSession(url)
         return false
     }
 }
@@ -220,7 +187,7 @@ This API ends the active session and ensures that no data is sent to a Project G
 #### Java
 
 ```java
-AndroidGriffonBridge.endSession()
+Griffon.endSession()
 ```
 {% endtab %}
 
@@ -245,10 +212,11 @@ ACPGriffon.endSession()
 
 ### Send custom events
 
-You can send custom events from the app to Project Griffon using the following API. Sending custom events can help inspect information from the app such as API and network responses, foreground and background activity, asset and media downloads, performance metrics, timed processes, app startup times, or screen load times.
+You can send custom events from the app to Project Griffon using the following API. Custom events can help you inspect information from the app such as the API and network responses, foreground and background activity, asset and media downloads, performance metrics, timed processes, app startup times, or screen load times.
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### sendEvent
 
 This API is for sending custom events.
@@ -257,17 +225,30 @@ This API is for sending custom events.
 
 #### Syntax
 
+The follow syntax shows you how to use the sendEvent API:
+
 ```java
-AndroidGriffonBridge.sendEvent(Event event);
+public static void sendEvent(final GriffonEvent event);
 ```
+The following syntax shows you how to create a Griffon event:
+
+```java
+public GriffonEvent(final String vendor, final String type, final Map<String, Object> payload)
+```
+
 
 #### Example
 
+The following example shows you how to send a custom event that measures the download time of an asset’s download activity in the app.
+
 ```java
 final Map<String, Object> eventPayload = new HashMap<>();
-eventPayload.put("Test Event Key", "Test Event Value");
-final Event newEvent = new Event("GRIFFON", "SINGLE_EVENT_TEST", eventPayload);
-AndroidGriffonBridge.sendEvent(newEvent);
+eventPayload.put("time", downloadTime);
+eventPayload.put("size", data.length());
+
+// create and send the Griffon event
+final GriffonEvent event = new GriffonEvent("com.adobe.myapp", "download info", eventPayload);
+Griffon.sendEvent(newEvent);
 ```
 {% endtab %}
 
@@ -280,8 +261,16 @@ This API is for sending custom events.
 
 #### Syntax
 
+The follow syntax shows you how to use the sendEvent API:
+
 ```objectivec
-[ACPGriffon sendEvent: NSDictionary];
++ (void) sendEvent: (ACPGriffonEvent* _Nonnull) event;
+```
+
+The following syntax shows you how to create a ACPGriffonEvent object:
+
+```objectivec
+- (instancetype) initWithVendor: (NSString*) vendor type: (NSString*) type payload: (NSDictionary*) payload;
 ```
 
 #### Example
@@ -301,13 +290,8 @@ CFAbsoluteTime totalDownloadTime = CFAbsoluteTimeGetCurrent() - downloadStartTim
         [ACPGriffon sendEvent: griffonDownloadEvent];
 ```
 
+
 #### Swift
-
-#### Syntax
-
-```swift
-ACPGriffon.sendEvent(NSDictionary)
-```
 
 #### Example
 
