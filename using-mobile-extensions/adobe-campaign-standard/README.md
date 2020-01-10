@@ -331,3 +331,4 @@ To remove the corresponding mobile app in Campaign Standard, click **Remove from
 Deleting your mobile property in Experience Platform Launch does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 
+        let urlString = userInfo["adb_deeplink"] as? String
