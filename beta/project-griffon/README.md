@@ -1,9 +1,9 @@
 # Project Griffon
 
-Project Griffon helps you inspect, validate, debug data collection and experiences for your mobile app. Although developed for app product managers and developers, Project Griffon will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+Project Griffon is a new, innovative beta product from Adobe Experience Cloud to help you easily inspect, validate, debug data collection and experiences for your mobile app. Project Griffon will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
 
 {% hint style="warning" %}
-Project Griffon is currently in beta. To use this product, you must accept the terms on [https://griffon.adobe.com](https://griffon.adobe.com).
+Project Griffon is a beta product. To use it, you must accept the terms on [https://griffon.adobe.com](https://griffon.adobe.com).
 {% endhint %}
 
 
@@ -13,7 +13,7 @@ Project Griffon is currently in beta. To use this product, you must accept the t
 
 ### Effortless Implementation
 
-You can get started quickly with only a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and so on.
+Get started in a hurry with a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and more.
 
 ### Seamless Connection
 
@@ -31,4 +31,3 @@ To get started with Project Griffon, see the following:
 * [Using Project Griffon](using-project-griffon.md)
 
 To access Project Griffon, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
-
