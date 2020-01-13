@@ -107,5 +107,6 @@
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Using Project Griffon](beta/project-griffon/using-project-griffon/README.md)
+    * [Location Service & Project Griffon](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Adobe Analytics & Project Griffon](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
 
