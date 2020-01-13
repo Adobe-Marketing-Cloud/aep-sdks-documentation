@@ -9,9 +9,9 @@ Project Griffon is in beta. To use Project Griffon, you must accept the terms ou
 1. Go to to [https://griffon.adobe.com](https://griffon.adobe.com).
 2. Log in using your Adobe ID credentials for the Experience Cloud.
 
-{% hint style="info" %}
-If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
-{% endhint %}
+    {% hint style="info" %}
+    If you do not know your Adobe ID credentials, contact your Adobe administrator or see [how to log in](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/getting-started-experience-cloud.html).
+    {% endhint %}
 
 3. In the beta access page, click **Register**. 
 
@@ -21,33 +21,33 @@ To begin a session, you need to create a session and connect your device.
 
 ### 1. Create a session
 
-a. Log in to Project Griffon. 
+1. Log in to Project Griffon. 
 
-b. Click **Create Session** in the top right. 
+2. Click **Create Session** in the top right. 
 
-c. Click **Start**.
+3. Click **Start**.
 
-d. In **Session Name**, enter a name to identify the session.  
+4. In **Session Name**, enter a name to identify the session.  
     This definition is used to launch your app from a URL and initiate the Project Griffon session. An example value might look like: `grifflab://default`.
 e. In the **Base URL** field, type your app's base deep link definition.
-f. Click **Next**.
+5. Click **Next**.
 
 
 ### 2. Connect your device
 
-a. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
-b. Complete one of the following tasks:
+1. Ensure that you see a screen that shows you a link, a QR code, and a PIN. 
+2. Complete one of the following tasks:
    * Use your iOS Camera app to scan the QR code and to open your app.
    * Copy the link and open in your app or the Xcode simulator.
    
    ![](../../.gitbook/assets/image-3.png)
 
-c. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
-d. Type in the PIN from the previous step and press **Connect**.
+3. When your app launches, you should see the Project Griffon PIN entry screen overlaid. 
+4. Type in the PIN from the previous step and press **Connect**.
 
    ![](../../.gitbook/assets/image-6.png)
 
-e. Verify that your app is connected to Project Griffon when the red Experience Cloud icon is displayed on your app.
+5. Verify that your app is connected to Project Griffon when the red Experience Cloud icon is displayed on your app.
 
    ![](../../.gitbook/assets/image-8.png)
 
