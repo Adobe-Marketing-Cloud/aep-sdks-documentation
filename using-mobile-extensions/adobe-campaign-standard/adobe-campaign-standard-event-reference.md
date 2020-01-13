@@ -88,7 +88,7 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `linkage_fields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
+| `linkagefields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
 
 #### Event data example
 
