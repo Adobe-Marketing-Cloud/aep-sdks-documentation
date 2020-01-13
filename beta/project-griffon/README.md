@@ -3,7 +3,7 @@
 Project Griffon is a new, innovative beta product from Adobe Experience Cloud to help you easily inspect, validate, debug data collection and experiences for your mobile app. Project Griffon will do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
 
 {% hint style="warning" %}
-Project Griffon is a beta product. To use it, you must accept the terms on [https://griffon.adobe.com](https://griffon.adobe.com).
+Project Griffon is a beta product. To use it, you must accept the terms on [https://griffon.adobe.com](https://experience.adobe.com/griffon).
 {% endhint %}
 
 
