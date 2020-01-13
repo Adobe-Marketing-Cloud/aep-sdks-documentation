@@ -29,11 +29,38 @@ notifications:**
                  
     * Verification in Griffon: Verify that the user id is correctly set. [Refer](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#confirm-that-the-user-id-is-correctly-set).
 
-    * Verification in Campaign Instance: Verify that app’s push token is present in Campaign instance mapped with correct Experience cloud id(mid). This can be verified by logging into Campaign instance and then navigating to following section: Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch your app and check under mobile application subscribers. It should contain list of all Subscribers of app. Verify mid and push token for your app are present there. This can be verified on the page shown in below screenshot.
+    * Verification in Campaign Instance: Verify that app’s push token is present in Campaign instance mapped with correct Experience cloud id(mid). This can be verified by logging into Campaign instance and then navigating to following section: Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch your app and check under mobile application subscribers. It should contain list of all Subscribers of app. Verify mid and push token for your app are present there. This can be verified on the page shown in below screenshot. **Experience Cloud ID** and **Registration Token** for the user should be present here.
     
     ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")
     
-    For more information about verifying it, see point 7 of [_**Channel specific application configuration**_](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) in Adobe Campaign 
+    For more information about verifying it, see point 7 of [_**Channel specific application configuration**_](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) in Adobe Campaign
+    
+ 
+## Troubleshooting Push Notification events tracking:  
+Following three events related to push notifications are tracked: 
+  * impression (Notification is delivered)
+  * click (User clicked the notification)
+  * open (App opened in response to user's click on notification) 
+  [Refer](https://helpx.adobe.com/campaign/kb/push-tracking.html) for implementation of tracking push notification events.
+  Whether these events are successfully tracked or not can be verified by checking logs on Griffon. In case Griffon is not     available it can be verified using Charles as well.
+  
+  #### Troubleshooting push notifications tracking events using Griffon:  
+  Open the Griffon session and look for **TYPE** **CollectData**.  
+  Pleae see screenshots below:
+  
+   ![alt text]( , "Shows Push notification impression tracking.")
+   
+   Shows tracking of push notification **impression** event. It is indicated by action 7.
+   
+   ![alt text]( , "Shows Push notification click tracking.")
+   
+   Shows tracking of push notification **click** event. It is indicated by action 2.
+   
+   ![alt text]( , "Shows Push notification open tracking.")
+   
+   Shows tracking of push notification **open** event. It is indicated by action 1.
+  
+
 
 
   
