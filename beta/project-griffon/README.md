@@ -6,9 +6,6 @@ Project Griffon is a new, innovative beta product from Adobe Experience Cloud to
 Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
-
-## Features
-
 ![](../../.gitbook/assets/ezgif.com-video-to-gif.gif)
 
 ### Effortless Implementation
