@@ -333,7 +333,7 @@ Deleting your mobile property in Experience Platform Launch does not automatical
 
 ### Handling deeplinks included in Campaign In-App messages
 
-A deeplink can be added to in-app messages delivered from Adobe Camapign. The deeplink will be a website URL such as https://www.adobe.com or an app deep link which can be used to direct the user to a specific area of your app.
+A deeplink can be added to in-app messages delivered from Adobe Campaign. The link can be a website URL such as https://www.adobe.com or an app link which can be used to direct the user to a specific area of your app.
 
 {% tabs %}
 {% tab title="Android" %}
