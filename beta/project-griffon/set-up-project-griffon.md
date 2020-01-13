@@ -154,7 +154,7 @@ This API accepts a deep link to begin a session. After this API is called, to be
 
 #### Syntax
 
-```text
+```objectivec
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
 
@@ -206,11 +206,21 @@ This API ends the active session and ensures that no data is sent to a Project G
 
 #### Objective-C
 
+#### Syntax
+
+```objectivec
++ (void) endSession;
+```
+
+#### Example
+
 ```objectivec
 [ACPGriffon endSession];
 ```
 
 #### Swift
+
+#### Example
 
 ```swift
 ACPGriffon.endSession()
