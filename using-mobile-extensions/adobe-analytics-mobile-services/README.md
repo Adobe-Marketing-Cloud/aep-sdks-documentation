@@ -44,7 +44,7 @@ The Mobile Services extension requires the Analytics extension for reporting and
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3. Select _\*\*_a Mobile Services app and complete the following tasks:
+3. Select \_\*\*\_a Mobile Services app and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.

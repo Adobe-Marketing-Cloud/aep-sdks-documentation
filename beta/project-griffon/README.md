@@ -18,17 +18,20 @@ With Project Griffon, you do not need network proxies, [MiTM](https://en.wikiped
 
 ### Instant Validation
 
-After connecting, you can easily inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting  your mobile app implementation.
+After connecting, you can easily inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting your mobile app implementation.
 
 ## Features
 
 ### SDK Event Inspection
+
 Project Griffon helps you introspect raw SDK events present in the Adobe Experience Platform Mobile SDK. All events collected by the SDK is available for inspection. SDK events are loaded in a list view, sorted by time. Each event has a detailed view that provides further detail.
 
 ### Adobe Analytics Event Inspection
-The Adobe Analytics view shows you events only related to your Adobe Analytics SDK implementation. The list view shows the action/state name and event “status” along with a specifically formatted detail view. Status tells you when an SDK event is generated (processed), if the SDK has made a network request with Adobe Analytics (queued), and if we’ve returned post-processing information about that event (validated). 
 
-### Location Services (Places) Validation
+The Adobe Analytics view shows you events only related to your Adobe Analytics SDK implementation. The list view shows the action/state name and event “status” along with a specifically formatted detail view. Status tells you when an SDK event is generated \(processed\), if the SDK has made a network request with Adobe Analytics \(queued\), and if we’ve returned post-processing information about that event \(validated\).
+
+### Location Services \(Places\) Validation
+
 The Location Services view is an on-device view that shows the user location entry and exit events for easy validation. This handy view provides a convenient interface to view location specific data points for inspection on the client for in-context debugging.
 
 ## Getting Started
@@ -36,6 +39,7 @@ The Location Services view is an on-device view that shows the user location ent
 To get started with Project Griffon, see the following:
 
 * [Set up Project Griffon](set-up-project-griffon.md)
-* [Using Project Griffon](using-project-griffon.md)
+* [Using Project Griffon](using-project-griffon/)
 
 To access Project Griffon, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
+

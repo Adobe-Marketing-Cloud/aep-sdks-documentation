@@ -18,14 +18,13 @@ No extension settings are required. Save and [publish the extension](https://aep
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Java**
 
 1. Add the following libraries in your project's `build.gradle` file:
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1+'
-   implementation 'com.adobe.marketing.mobile:griffon:1+' 
+   implementation 'com.adobe.marketing.mobile:griffon:1+'
    ```
 
    Also be sure to use the latest available versions.
@@ -36,7 +35,6 @@ No extension settings are required. Save and [publish the extension](https://aep
    import com.adobe.marketing.mobile.Griffon; 
    import com.adobe.marketing.mobile.MobileCore;
    ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -87,7 +85,6 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
    ```
 
 2. Open the deeplink created on the Griffon UI to start the Griffon session.
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -125,7 +122,6 @@ After the extension has been registered, start a Project Griffon session by usin
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### startSession
 
 This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
@@ -234,7 +230,6 @@ You can send custom events from the app to Project Griffon using the following A
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### sendEvent
 
 This API is for sending custom events.
@@ -248,12 +243,12 @@ The follow syntax shows you how to use the sendEvent API:
 ```java
 public static void sendEvent(final GriffonEvent event);
 ```
+
 The following syntax shows you how to create a Griffon event:
 
 ```java
 public GriffonEvent(final String vendor, final String type, final Map<String, Object> payload)
 ```
-
 
 #### Example
 
@@ -308,7 +303,6 @@ CFAbsoluteTime totalDownloadTime = CFAbsoluteTimeGetCurrent() - downloadStartTim
         [ACPGriffon sendEvent: griffonDownloadEvent];
 ```
 
-
 #### Swift
 
 #### Example
@@ -325,3 +319,4 @@ ACPGriffon.sendEvent(griffonDownloadEvent)
 ```
 {% endtab %}
 {% endtabs %}
+
