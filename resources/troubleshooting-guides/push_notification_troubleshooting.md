@@ -30,6 +30,10 @@ notifications:**
     * Verification in Griffon: Verify that the user id is correctly set. [Refer](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#confirm-that-the-user-id-is-correctly-set).
 
     * Verification in Campaign Instance: Verify that app’s push token is present in Campaign instance mapped with correct Experience cloud id(mid). This can be verified by logging into Campaign instance and then navigating to following section: Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch your app and check under mobile application subscribers. It should contain list of all Subscribers of app. Verify mid and push token for your app are present there. This can be verified on the page shown in below screenshot.
+    
+    ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")
+    
+    For more information about verifying it, see point 7 of [_**Channel specific application configuration**_](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) in Adobe Campaign 
 
 
   
