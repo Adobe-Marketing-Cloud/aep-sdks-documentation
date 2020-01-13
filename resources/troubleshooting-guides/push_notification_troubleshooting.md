@@ -35,8 +35,21 @@ notifications:**
     
     For more information about verifying it, see point 7 of [_**Channel specific application configuration**_](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html) in Adobe Campaign
     
+    
+### Setting up iOS application for receiving push notification includes following 3 main steps
+
+1. Registering app on Apple developer account and generate server certificate. [Refer](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns?language=objc for more details.) 
+
+2. Add server certificate in Campaign instance.
+      Ensure that server certificate (.pem file) is successfully set up in Campaign instance. This can be verified in Campaign instance under following section Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch mobile app and check push channel settings, it should say Android key set up success. It should look like:
+  ![alt text]( "Configured push certificate in Campaign.")
+  
+  3. Set up iOS application to set APNS push token in SDK.  
+      Register the app for receiving APNS token on app launch by calling registerForRemoteNotifications, which will in turn    generate the APNS token and return through callback. In callback set the Push identifier by call setPushIdentifier method. Refer [here](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging) for more details.
+
+Whether push identifier is successfully synced with identity service can be verified by Griffon and Charles.    
  
-## Troubleshooting Push Notification events tracking:  
+### Troubleshooting Push Notification events tracking in Android and iOS:  
 Following three events related to push notifications are tracked: 
   * impression (Notification is delivered)
   * click (User clicked the notification)
