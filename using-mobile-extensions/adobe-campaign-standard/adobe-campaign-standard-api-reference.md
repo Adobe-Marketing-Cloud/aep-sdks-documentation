@@ -63,6 +63,72 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 {% endtab %}
 {% endtabs %}
 
+## resetLinkageFields
+
+This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT\_IN, no rules download occurs.
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+#### Syntax
+
+```java
+public static void resetLinkageFields()
+```
+
+#### Example
+
+```java
+Campaign.resetLinkageFields()
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Syntax
+
+```objectivec
++ (void) resetLinkageFields;
+```
+
+#### Objective-C
+
+#### Example
+
+```objectivec
+[ACPCampaign resetLinkageFields];
+```
+
+#### Swift
+
+```swift
+ACPCampaign.resetLinkageFields()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+#### Syntax
+
+```javascript
+ACPCampaign.resetLinkageFields();
+```
+
+#### Example
+
+```javascript
+ACPCampaign.resetLinkageFields();
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## setLinkageFields
 
 This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
@@ -137,63 +203,3 @@ ACPCampaign.setLinkageFields({"firstName": "John"});
 ```
 {% endtab %}
 {% endtabs %}
-
-## resetLinkageFields
-
-This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT\_IN, no rules download occurs.
-
-{% tabs %}
-{% tab title="Android" %}
-
-#### Syntax
-
-```java
-public static void resetLinkageFields()
-```
-
-#### Example
-
-```java
-Campaign.resetLinkageFields()
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (void) resetLinkageFields;
-```
-
-#### Objective-C
-
-#### Example
-
-```objectivec
-[ACPCampaign resetLinkageFields];
-```
-
-#### Swift
-
-```swift
-ACPCampaign.resetLinkageFields()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-#### Syntax
-
-```javascript
-ACPCampaign.resetLinkageFields();
-```
-
-#### Example
-
-```javascript
-ACPCampaign.resetLinkageFields();
-```
-{% endtab %}
-{% endtabs %}
-
