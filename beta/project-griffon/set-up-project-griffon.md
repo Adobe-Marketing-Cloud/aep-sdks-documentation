@@ -170,6 +170,16 @@ This API accepts a deep link to begin a session. After this API is called, to be
 }
 ```
 
+iOS 13 - SceneDelegate
+```
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts{
+    NSURL* url = [[URLContexts allObjects] objectAtIndex:0].URL;
+    if(url){
+        [ACPGriffon startSession:url];
+    }
+}
+```
+
 #### Swift
 
 #### Example
