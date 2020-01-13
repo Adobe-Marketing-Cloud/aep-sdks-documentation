@@ -69,9 +69,7 @@
 
 {% endtabs %}
  
-## Whether push identifier is successfully synced with identity service can be verified using Griffon and Charles.    
- 
-### Troubleshooting Push Notification events tracking in Android and iOS:  
+## Troubleshooting Push Notification events tracking in Android and iOS:  
 Following three events related to push notifications are tracked: 
   * impression (Notification is delivered)
   * click (User clicked the notification)
