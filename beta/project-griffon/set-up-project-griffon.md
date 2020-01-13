@@ -1,7 +1,7 @@
 # Set up Project Griffon
 
 {% hint style="warning" %}
-This extension is in beta. Use of this beta product requires acceptance of terms outlined on [https://griffon.adobe.com](https://griffon.adobe.com).
+The SDK extension for Project Griffon is in beta. Use of this beta product requires acceptance of terms outlined on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
 1. In Experience Platform Launch, click the **Extensions** tab.
@@ -12,7 +12,7 @@ This extension is in beta. Use of this beta product requires acceptance of terms
 
 ![](../../.gitbook/assets/pg-launch.png)
 
-No extension settings are required.
+No extension settings are required. Save and [publish the extension](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
 
 ## Add Project Griffon to your app
 
@@ -33,7 +33,6 @@ No extension settings are required.
 2. Import the Project Griffon libraries with the other SDK libraries:
 
    ```java
-   import com.adobe.marketing.mobile.GriffonEvent;
    import com.adobe.marketing.mobile.Griffon; 
    import com.adobe.marketing.mobile.MobileCore;
    ```
@@ -49,7 +48,6 @@ No extension settings are required.
 ```objectivec
 #import "ACPCore.h"
 #import "ACPGriffon.h" // <-- import the Project Griffon library
-#import "ACPGriffonEvent.h"
 ```
 
 #### Swift
@@ -57,7 +55,6 @@ No extension settings are required.
 ```swift
 import ACPCore
 import ACPGriffon // <-- import the Project Griffon library
-import ACPGriffonEvent
 ```
 {% endtab %}
 {% endtabs %}
@@ -318,4 +315,3 @@ ACPGriffon.sendEvent(griffonDownloadEvent)
 ```
 {% endtab %}
 {% endtabs %}
-
