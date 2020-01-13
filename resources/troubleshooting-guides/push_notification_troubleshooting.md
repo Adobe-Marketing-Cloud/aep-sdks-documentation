@@ -44,21 +44,24 @@ Following three events related to push notifications are tracked:
   [Refer](https://helpx.adobe.com/campaign/kb/push-tracking.html) for implementation of tracking push notification events.
   Whether these events are successfully tracked or not can be verified by checking logs on Griffon. In case Griffon is not     available it can be verified using Charles as well.
   
-  #### Troubleshooting push notifications tracking events using Griffon:  
-  Open the Griffon session and look for **TYPE** **CollectData**.  
-  Pleae see screenshots below:
+  * **Troubleshooting push notifications tracking events using Griffon:**  
+      Open the Griffon session and look for **TYPE** **CollectData**.  
+      Pleae see screenshots below:
   
-   ![alt text]( , "Shows Push notification impression tracking.")
+   ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
    
    Shows tracking of push notification **impression** event. It is indicated by action 7.
    
-   ![alt text]( , "Shows Push notification click tracking.")
+   ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/push_tracking_click.png "Shows Push notification click tracking.")
    
    Shows tracking of push notification **click** event. It is indicated by action 2.
    
-   ![alt text]( , "Shows Push notification open tracking.")
+   ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/push_tracking_open.png "Shows Push notification open tracking.")
    
    Shows tracking of push notification **open** event. It is indicated by action 1.
+  
+  
+  * **Troubleshooting push notifications tracking events using Charles:**. 
   
 
 
