@@ -42,7 +42,7 @@ notifications:**
 
 2. Add server certificate in Campaign instance.
       Ensure that server certificate (.pem file) is successfully set up in Campaign instance. This can be verified in Campaign instance under following section Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch mobile app and check push channel settings, it should say Android key set up success. It should look like:
-  ![alt text]( "Configured push certificate in Campaign.")
+  ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/campaign_ios_cert_configured.png "Configured push certificate in Campaign.")
   
   3. Set up iOS application to set APNS push token in SDK.  
       Register the app for receiving APNS token on app launch by calling registerForRemoteNotifications, which will in turn    generate the APNS token and return through callback. In callback set the Push identifier by call setPushIdentifier method. Refer [here](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging) for more details.
