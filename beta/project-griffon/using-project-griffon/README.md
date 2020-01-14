@@ -1,4 +1,4 @@
-# Using Project Griffon
+# Use Project Griffon
 
 ## Logging in
 
