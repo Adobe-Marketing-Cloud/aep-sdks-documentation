@@ -504,19 +504,19 @@ private void handleTracking() {
 ```swift
 // Handle notification interaction from background or closed
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    DispatchQueue.main.async(execute: {
-        let userInfo = response.notification.request.content.userInfo
-        let broadlogId = userInfo["_mId"] ?? userInfo["broadlogId"] as? String
-        let deliveryId = userInfo["_dId"] ?? userInfo["deliveryId"] as? String
+       DispatchQueue.main.async(execute: {
+       		let userInfo = response.notification.request.content.userInfo
+       		var broadlogId:String = (userInfo["_mId"] ?? userInfo["broadlogId"]) as! String
+       		var deliveryId:String = (userInfo["_dId"] ?? userInfo["deliveryId"]) as! String
 
-        if (broadlogId?.count ?? 0) == 0 || (deliveryId?.count ?? 0) == 0 {
-            return
-        }
-        // Send Click Tracking since the user did click on the notification
-        self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
-        // Send Open Tracking since the user opened the app
-        self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
-    })
+       		if (broadlogId.count == 0 || deliveryId.count == 0) {
+          	return
+          }
+          // Send Click Tracking since the user did click on the notification
+          self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+          // Send Open Tracking since the user opened the app
+          self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+       })
 }
 
 func sendTracking(_ trackType: TrackType, withBroadlogId broadlogId: String?, andDeliveryId deliveryId: String?) {
