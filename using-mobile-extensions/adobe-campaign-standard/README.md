@@ -453,31 +453,19 @@ private void handleTracking() {
 ```objectivec
 // Handle notification interaction from background or closed
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
-    NSLog(@"User Info : %@",response.notification.request.content.userInfo);
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"App state : %ld",(long)[UIApplication sharedApplication].applicationState);
-        NSDictionary *userInfo = response.notification.request.content.userInfo;
-        NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
-        NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
-
-        // handle the user response to the notification action buttons
-        if([response.actionIdentifier isEqualToString:@"YES_ACTION"] || [response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]){
-            NSLog(@"Received a positive action with action identifier %@", response.actionIdentifier);
-
-            if ([UIApplication sharedApplication].applicationState == UIApplicationStateInactive || [UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
-                // App is launched from notification (action = "1")
-                [self sendTracking:tOpen withBroadlogId:broadlogId andDeliveryId:deliveryId];
-            }
-
-            // Push or Local notification is clicked (action = "2")
-            [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];
-
-        } else if ([response.actionIdentifier isEqualToString:@"NO_ACTION"] || [response.actionIdentifier isEqualToString:UNNotificationDismissActionIdentifier]){
-            NSLog(@"Received a dismiss action with action identifier %@", response.actionIdentifier);
-
-            // Push or Local notification is clicked (action = "2")
-            [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];  
-        }
+    	NSDictionary *userInfo = response.notification.request.content.userInfo;
+    	NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
+    	NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
+          
+    	if(!broadlogId.length || !deliveryId.length){
+      	return;
+      }
+       // Send Click Tracking since the user did click on the notification
+       [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];
+       // Send Open Tracking since the user opened the app
+       [self sendTracking:tOpen withBroadlogId:broadlogId andDeliveryId:deliveryId];
+    });
 }
 
 - (void) sendTracking:(TrackType)trackType withBroadlogId:(NSString *)broadlogId andDeliveryId:(NSString *)deliveryId {
@@ -514,31 +502,21 @@ private void handleTracking() {
 #### Example
 
 ```swift
+// Handle notification interaction from background or closed
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    print("User Info :", response.notification.request.content.userInfo)
-    DispatchQueue.main.async {
-        print(String(format: "App state :", UIApplication.shared.applicationState.rawValue))
+    DispatchQueue.main.async(execute: {
         let userInfo = response.notification.request.content.userInfo
         let broadlogId = userInfo["_mId"] ?? userInfo["broadlogId"] as? String
         let deliveryId = userInfo["_dId"] ?? userInfo["deliveryId"] as? String
 
-        // handle the user response to the notification action buttons
-        if (response.actionIdentifier == "YES_ACTION") || (response.actionIdentifier == UNNotificationDefaultActionIdentifier) {
-            print("Received a positive action with action identifier", response.actionIdentifier)
-
-        if UIApplication.shared.applicationState == .inactive || UIApplication.shared.applicationState == .background {
-            // App is launched from notification (action = "1")
-            self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+        if (broadlogId?.count ?? 0) == 0 || (deliveryId?.count ?? 0) == 0 {
+            return
         }
-
-        // Push or Local notification is clicked (action = "2")
+        // Send Click Tracking since the user did click on the notification
         self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
-        } else if (response.actionIdentifier == "NO_ACTION") || (response.actionIdentifier == UNNotificationDismissActionIdentifier) {
-            print("Received a dismiss action with action identifier",response.actionIdentifier)
-            // Push or Local notification is clicked (action = "2")
-            self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
-        }
-    }
+        // Send Open Tracking since the user opened the app
+        self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+    })
 }
 
 func sendTracking(_ trackType: TrackType, withBroadlogId broadlogId: String?, andDeliveryId deliveryId: String?) {
