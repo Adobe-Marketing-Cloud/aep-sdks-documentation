@@ -10,7 +10,7 @@ We know that using location context with your app experiences can make them more
 
 Follow these steps to get started:
 
-1. Ensure you have implemented the latest versions of Project Griffon and Location Services \(Places\) extensions.
+1. Ensure you have implemented the latest versions of [Project Griffon](../set-up-project-griffon.md) and [Location Services](location-service-and-project-griffon.md) \(Places\) extensions.
 2. Visit https://experience.adobe.com/griffon \(not griffon.adobe.com\).
 3. Connect your app to a Project Griffon session
 4. Select the new Places view \(per the screenshot below\) to view your events.
