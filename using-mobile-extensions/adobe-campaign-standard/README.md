@@ -18,7 +18,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ### Configure the Campaign Standard extension
 
-![](../../.gitbook/assets/campaign-extension-config-v4.png)
+![](../../.gitbook/assets/campaign-extension-config-v5.png)
 
 #### Campaign Standard endpoints
 
@@ -30,7 +30,7 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
 
 When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Experience Platform Launch Campaign extension for successful validation.
 
@@ -295,7 +295,7 @@ To set up local notifications in Android, update the AndroidManifest.xml file wi
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. More information regarding the `setPushIdentifer` API can be seen at [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. For more information about the `setPushIdentifer` API, see [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -333,8 +333,6 @@ FirebaseInstanceId.getInstance().getInstanceId()
 iOS simulators do not support push messaging.
 {% endhint %}
 
-To obtain the registration ID/token, see [Configuring Remote Notification Support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1).
-
 #### Objective-C
 
 #### Example
@@ -363,7 +361,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 {% tab title="React Native" %}
 
-Follow instructions in the Android/iOS tabs to set up platform-specific push configuration and use the following API in your React Native project:
+Prior to using the following API in your React Native project, complete the steps in the **Android** and **iOS** tabs to set up platform-specific push configuration.
 
 #### Example
 
@@ -387,7 +385,9 @@ User interactions with local or push notifications can be tracked by invoking th
 public static void collectMessageInfo(final Map<String, Object> messageInfo)
 ```
 
-- *messageInfo* is a map which contains the delivery id, message id, and action type for a local or push notification which was interacted with. The delivery id and message id are extracted from the notification payload while the action type is inferred from the method in which the notification was interacted.  
+- *messageInfo* is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+
+#### Java
 
 #### Example
 
@@ -444,7 +444,7 @@ private void handleTracking() {
 + (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
 ```
 
-- *messageInfo* is a dictionary which contains the delivery id, message id, and action type for a local or push notification which was interacted with. The delivery id and message id are extracted from the notification payload while the action type is inferred from the way in which the notification was interacted.  
+- *messageInfo* is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
 #### Objective-C
 
@@ -573,7 +573,7 @@ func sendTracking(_ trackType: TrackType, withBroadlogId broadlogId: String?, an
 Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-If you delete your mobile property in Experience Platform Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
+In Experience Platform Launch, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
 
 To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeExperiencePlatformLaunchapplication).
 

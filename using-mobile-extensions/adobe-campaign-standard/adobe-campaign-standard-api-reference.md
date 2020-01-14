@@ -52,7 +52,7 @@ print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 #### Syntax
 
 ```javascript
-ACPCampaign.extensionVersion(): Promise<string>
+extensionVersion(): Promise<string>
 ```
 
 #### Example
@@ -117,7 +117,7 @@ ACPCampaign.resetLinkageFields()
 #### Syntax
 
 ```javascript
-ACPCampaign.resetLinkageFields();
+resetLinkageFields();
 ```
 
 #### Example
@@ -131,7 +131,12 @@ ACPCampaign.resetLinkageFields();
 
 ## setLinkageFields
 
-This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost when an application crash event occurs, after a graceful termination of the application, or when the privacy status is updated to `OPT_OUT`. For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
+This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost in the following scenarios:
+
+- When an application crash event occurs, after a graceful termination of the application.
+- When the privacy status is updated to `OPT_OUT`.
+
+For more information, see [Extending the subscriptions to an application resource](https://docs.adobe.com/content/help/en/campaign-standard/using/developing/use-cases--extending-resources/extending-the-subscriptions-to-an-application-resource.html).
 
 {% tabs %}
 {% tab title="Android" %}
