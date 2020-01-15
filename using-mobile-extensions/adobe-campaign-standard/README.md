@@ -377,7 +377,7 @@ ACPCore.setPushIdentifier("pushID");
 User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event.
 
 {% hint style="warning" %}
-The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for proper local and push notification message tracking. The Campaign document regarding local notification tracking can be seen at [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the document regarding push notification tracking can be see at [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for the proper implementation of local and push notification message tracking. The Campaign document regarding local notification tracking can be seen at [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the document regarding push notification tracking can be see at [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
 {% endhint %}
 
 {% tabs %}
