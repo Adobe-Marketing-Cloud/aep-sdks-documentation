@@ -1,4 +1,4 @@
-# Adobe Analytics & Project Griffon
+# Adobe Analytics and Project Griffon
 
 ## Overview
 
