@@ -14,16 +14,17 @@ The following updates were made in this release:
 
 **iOS Griffon 1.0.3**
 
-* Griffon bridge and Griffon SDK unified. 
-Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
+* The Griffon bridge and the Griffon SDK are now unified.   
+  The set up steps are now slightly different. For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon).
 * The Adobe Analytics debug flag is now enabled when you start a Griffon session and is disabled when you end the session.
 * The client-side Griffon UI now logs Location Service entry and exit events.
 * This version is compatible with iOS 13.
 * Fixed a crash in LIBDISPATCH.
 
 **Android Griffon 1.1.0**
-* Griffon bridge and Griffon SDK unified. 
-Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
+
+* The Griffon bridge and the Griffon SDK are now unified.   
+  The set up steps are now slightly different. For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon).
 * The Adobe Analytics debug flag is now enabled when you start a Griffon session and is disabled when you end the session.
 * The client-side Griffon UI now logs Location Service entry and exit events.
 * Modified client-ui to include client-side logging capabilities.
