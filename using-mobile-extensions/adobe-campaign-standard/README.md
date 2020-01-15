@@ -374,7 +374,11 @@ ACPCore.setPushIdentifier("pushID");
 
 ## Tracking local and push notification message interactions
 
-User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event. For more information on tracking local notification message interactions, see [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description). For more information on tracking push notification message interactions, see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event.
+
+{% hint style="warning" %}
+The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for proper local and push notification message tracking. The Campaign document regarding local notification tracking can be seen at [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the document regarding push notification tracking can be see at [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
@@ -462,38 +466,18 @@ private void handleTracking() {
       	return;
       }
        // Send Click Tracking since the user did click on the notification
-       [self sendTracking:tClick withBroadlogId:broadlogId andDeliveryId:deliveryId];
-       // Send Open Tracking since the user opened the app
-       [self sendTracking:tOpen withBroadlogId:broadlogId andDeliveryId:deliveryId];
-    });
-}
-
-- (void) sendTracking:(TrackType)trackType withBroadlogId:(NSString *)broadlogId andDeliveryId:(NSString *)deliveryId {
-    if (broadlogId != nil && deliveryId != nil) {
-        NSString *action = nil;
-        switch (trackType) {
-            case tImpression:
-                action = @"7";
-                break;
-
-            case tOpen:
-                action = @"1";
-                break;
-
-            case tClick:
-                action = @"2";
-                break;
-
-            default:
-                NSLog(@"Received invalid tracking type, aborting send!");
-                return;
-        }
-        [ACPCore collectMessageInfo:@{
+       [ACPCore collectMessageInfo:@{
                                       @"broadlogId" : broadlogId,
                                       @"deliveryId": deliveryId,
-                                      @"action": action
+                                      @"action": @"2"
                                       }];
-    }
+       // Send Open Tracking since the user opened the app
+       [ACPCore collectMessageInfo:@{
+                                      @"broadlogId" : broadlogId,
+                                      @"deliveryId": deliveryId,
+                                      @"action": @"1"
+                                      }];
+    });
 }
 ```
 
@@ -513,32 +497,18 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
           	return
           }
           // Send Click Tracking since the user did click on the notification
-          self.sendTracking(tClick, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
-          // Send Open Tracking since the user opened the app
-          self.sendTracking(tOpen, withBroadlogId: broadlogId, andDeliveryId: deliveryId)
+					ACPCore.collectMessageInfo([
+            "broadlogId": broadlogId,
+						"deliveryId": deliveryId,
+						"action": "2"
+					])
+					// Send Open Tracking since the user opened the app
+					ACPCore.collectMessageInfo([
+            "broadlogId": broadlogId,
+						"deliveryId": deliveryId,
+						"action": "1"
+					])
        })
-}
-
-func sendTracking(_ trackType: TrackType, withBroadlogId broadlogId: String?, andDeliveryId deliveryId: String?) {
-    if broadlogId != nil && deliveryId != nil {
-        var action: String? = nil
-        switch trackType {
-            case tImpression:
-                action = "7"
-            case tOpen:
-                action = "1"
-            case tClick:
-                action = "2"
-            default:
-                print("Received invalid tracking type, aborting send!")
-                return
-        }
-        ACPCore.collectMessageInfo([
-        "broadlogId": broadlogId,
-        "deliveryId": deliveryId,
-        "action": action
-        ])
-    }
 }
 ```
 
