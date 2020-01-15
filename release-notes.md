@@ -14,16 +14,18 @@ The following updates were made in this release:
 
 **iOS Griffon 1.0.3**
 
-* Griffon bridge and Griffon SDK unified. Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
-* Adobe Analytics debug flag now enabled on Griffon session start and disabled on session stop.
-* Client-side UI now logs location service events (entry/exit) events.
-* Updated for iOS 13 compatibility.
-* Fixed a crash of LIBDISPATCH.
+* Griffon bridge and Griffon SDK unified. 
+Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
+* The Adobe Analytics debug flag is now enabled when you start a Griffon session and is disabled when you end the session.
+* The client-side Griffon UI now logs Location Service entry and exit events.
+* This version is compatible with iOS 13.
+* Fixed a crash in LIBDISPATCH.
 
 **Android Griffon 1.1.0**
-* Griffon bridge and Griffon SDK unified. Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
-* Adobe Analytics debug flag now enabled on Griffon session start and disabled on session stop.
-* Client-side UI now logs location service events (entry/exit) events
+* Griffon bridge and Griffon SDK unified. 
+Setup steps are slightly different now. See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) for updated documentation.
+* The Adobe Analytics debug flag is now enabled when you start a Griffon session and is disabled when you end the session.
+* The client-side Griffon UI now logs Location Service entry and exit events.
 * Modified client-ui to include client-side logging capabilities.
 * Fixed an issue for Android API versions 28 or later where multiple WebViews cannot share the same data directory.
 * Added generic exception handling for exceptions that can occur when WebViews are accessed while OS is updating Chrome.
@@ -31,19 +33,21 @@ The following updates were made in this release:
 The Project Griffon web UI now has new views specifically for users trying to inspect and improve Adobe Analytics and Location Service (Places) implementations.
 
 **Adobe Analytics View**
+
 The new Adobe Analytics view shows you events only related to your Adobe Analytics implementation. The list view now shows the action/state name and event “status” along with a newly formatted detail view. Status tells you when an SDK event is generated (processed), if the SDK has made a network request with Adobe Analytics (queued), and if we’ve returned post-processing information about that event (validated). This information should give you more confidence to determine if your context data is being mapped appropriately in Adobe Analytics.
 
 Generally speaking, for a given Analytics track event – the detailed view contains 3 valuable pieces:
 * Originating SDK Analytics request event
-* OOTB meta and context data from the request (such as report suite ID, SDK extension versions, OOTB context data, etc.) and
-* Post-processed information on the Analytics event (contains mapping of revars, evars, props, etc.).
+* The OOTB meta and context data from the request, such as the report suite ID, the SDK extension versions, the OOTB context data, and so on.
+* The post-processed information on the Analytics event, which contains mapping of revars, evars, props, and so on.
 
-See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon) for documentation.
+For more information, see [Adobe Analytics and Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon).
 
 **Location Service (Places) View**
-The new Location Services views allow you to inspect location entry and exit events on the Project Griffon web UI as well as an innovative on-device view. These handy views provide a convenient interface to view location specific data points for inspection on the web/client for in-context debugging depending on your business workflows.
 
-See [here](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/location-service-and-project-griffon) for documentation.
+The new Location Services views allow you to inspect location entry and exit events on the Project Griffon web UI as well as an innovative on-device view. These views provide a convenient interface to view location specific data points for inspection on the web/client for in-context debugging depending on your business workflows.
+
+For more information, see [Location Service and Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/location-service-and-project-griffon) for documentation.
 
 ## November 15, 2019
 
