@@ -1,4 +1,4 @@
-# Location Service & Project Griffon
+# Location Service and Project Griffon
 
 ## Overview
 
