@@ -6,7 +6,6 @@ Use this API to get the custom visitor ID for Target.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### getThirdPartyId
 
 The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned
@@ -62,7 +61,6 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### getThirdPartyId
 
 The callback is invoked to return the `thirdPartyId` value, or if no third-party ID is set, `null` is returned.
@@ -71,12 +69,10 @@ The callback is invoked to return the `thirdPartyId` value, or if no third-party
 
 ```javascript
 ACPTarget.getThirdPartyId().then(thirdPartyId => 
-			// read Target thirdPartyId 
+            // read Target thirdPartyId 
 ));
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Set custom visitor IDs
@@ -133,7 +129,6 @@ ACPTarget.setThirdPartyId("third-party-id")
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### setThirdPartyId
 
 **JavaScript**
@@ -141,9 +136,7 @@ ACPTarget.setThirdPartyId("third-party-id")
 ```javascript
 ACPTarget.setThirdPartyId("third-party-id");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Get Target user identifier
@@ -211,7 +204,6 @@ ACPTarget.getTntId({tntId in
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### getTntId
 
 The callback is invoked to return the `tntId` value, or if no Target ID is set, `null` is returned.
@@ -222,12 +214,10 @@ With a successful call to `loadRequests` or `prefetchContent`, Target returns th
 
 ```javascript
 ACPTarget.getTntId().then(tntId => 
-			// read target's tntId                         
+            // read target's tntId                         
 ));
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Reset user experience
@@ -278,7 +268,6 @@ ACPTarget.resetExperience()
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### resetExperience
 
 **JavaScript**
@@ -286,9 +275,7 @@ ACPTarget.resetExperience()
 ```javascript
 ACPTarget.resetExperience();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Set preview restart deeplink
@@ -339,7 +326,6 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### setPreviewRestartDeeplink
 
 **JavaScript**
@@ -347,9 +333,7 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 ```javascript
 ACPTarget.setPreviewRestartDeeplink("myapp://HomePage");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Prefetch offers
@@ -554,7 +538,6 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### prefetchContent
 
 Use this API to send a prefetch request to your configured Target server with the `ACPTargetPrefetchObject` array and the specified `ACPTargetParameters`. The callback is invoked when the prefetch is complete and, if successful, returns a null value. If the prefetch is not successful, an error message is returned.
@@ -590,9 +573,7 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => console.log(success)).catch(err => console.log(err));
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Clear prefetch offer cache
@@ -643,7 +624,6 @@ ACPTarget.clearPrefetchCache()
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### clearPrefetchCache
 
 **JavaScript**
@@ -651,9 +631,7 @@ ACPTarget.clearPrefetchCache()
 ```javascript
 ACPTarget.clearPrefetchCache();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Retrieve Location Content requests
@@ -838,7 +816,6 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### retrieveLocationContent
 
 For mbox locations in the `TargetRequest` list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each `TargetRequest` object in the list contains a callback function, which is invoked when content is available for its given mbox location.
@@ -885,9 +862,7 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.retrieveLocationContent(requestArray, targetParameters);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Send an mbox display notification
@@ -975,7 +950,6 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### locationsDisplayed
 
 **JavaScript**
@@ -987,9 +961,7 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Send an mbox click notification
@@ -1130,7 +1102,6 @@ ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetPara
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### locationClicked
 
 **JavaScript**
@@ -1155,9 +1126,7 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationClickedWithName("cartLocation", targetParameters);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Public classes
@@ -1574,7 +1543,6 @@ The following method can be used to create an instance of ACPTargetProduct.
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### ACPTargetRequestObject
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that is invoked to return mbox content from Target.
@@ -1600,7 +1568,7 @@ class ACPTargetPrefetchObject {
   targetParameters: ACPTargetParameters;
 
   constructor(name?: string, targetParameters?: ACPTargetParameters) {
-  	this.name = name;
+      this.name = name;
     this.targetParameters = targetParameters;
   }
 
@@ -1619,7 +1587,7 @@ class ACPTargetParameters {
   product: ACPTargetProduct;
 
   constructor(parameters?: {string: string}, profileParameters?: {string: string}, product?: ACPTargetProduct, order?: ACPTargetOrder) {
-  	this.parameters = parameters;
+      this.parameters = parameters;
     this.profileParameters = profileParameters;
     this.product = product;
     this.order = order;
@@ -1638,7 +1606,7 @@ class ACPTargetOrder {
   purchasedProductIds: Array<string>;
 
   constructor(orderId: string, total?: number, purchasedProductIds: Array<string>) {
-  	this.orderId = orderId;
+      this.orderId = orderId;
     this.total = total;
     this.purchasedProductIds = purchasedProductIds;
   }
@@ -1655,13 +1623,11 @@ class ACPTargetProduct {
   categoryId: string;
 
   constructor(productId: string, categoryId: string) {
-  	this.productId = productId;
+      this.productId = productId;
     this.categoryId = categoryId;
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
