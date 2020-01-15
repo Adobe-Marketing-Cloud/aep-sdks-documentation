@@ -6,7 +6,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## We want to help!
 
-Please take a moment to fill out a [short-survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
+Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
 ## January 13, 2020
 
