@@ -67,7 +67,7 @@ ACPTarget.clearPrefetchCache();
 
 ## extensionVersion
 
-This API gets the currrent extension version for Target extension.
+This API gets the current Target extension version.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -118,7 +118,7 @@ ACPTarget.extensionVersion()
 extensionVersion(): Promise<string>
 ```
 
-* A Promise object is returned which is resolved with the extension version value.
+* A Promise object is returned and is resolved with the extension version value.
 
 #### Examples
 
@@ -136,7 +136,7 @@ ACPTarget.extensionVersion().then(version => {
 
 ## getThirdPartyId
 
-This API gets the custom visitor ID for Target. This ID will be `null` if no third-party ID was previously set or if it was reset by calling `resetExperience` API.
+This API gets the custom visitor ID for Target. If no third-party ID was previously set, or if the ID was reset by calling `resetExperience` API, it will have a `null` value.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -158,7 +158,7 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 });
 ```
 
-* _callback_ is the callback that is invoked with the `thirdPartyId` value. The value will be `null` if no third-party ID was set.
+* _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `null`.
 
 {% endtab %}
 
@@ -170,13 +170,13 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
-* _callback_ is the callback that is invoked with the `thirdPartyId` value. The value will be `nil` if no third-party ID was set.
+* _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `nil`.
 
 ### Examples
 
-Here are the examples in Objective C and Swift:
+Here are the examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
@@ -202,7 +202,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 getThirdPartyId(): Promise<string>
 ```
 
-* A Promise object is returned which is resolved with the `thirdPartyId` value.
+* A Promise object is returned and is resolved with the `thirdPartyId` value.
 
 ### Example
 
@@ -220,7 +220,7 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
 
 ## getTntId
 
-This API gets the Target user identifier. Target returns the `tntId` with a successful call to `loadRequests` or `prefetchContent` which is then persisted in the SDK.
+This API gets the Target user identifier. Target returns the `tntId` with a successful call to `loadRequests` or `prefetchContent`, which is then persisted in the SDK.
 
 {% hint style="info" %}
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
@@ -235,7 +235,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 public static void getTntId(final AdobeCallback<String> callback)
 ```
 
-*_callback_ is the callback that is invoked with the `tntId` value. The value will be `null` if no Target ID was set.
+* _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `null`. 
 
 #### Example
 
@@ -257,7 +257,7 @@ Target.getTntId(new AdobeCallback<String>() {
 + (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
 ```
 
-*_callback_ is the callback that is invoked with the `tntId` value. The value will be `nil` if no Target ID was set.
+* _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `nil`.
 
 #### Examples
 
@@ -288,7 +288,7 @@ ACPTarget.getTntId({tntId in
 getTntId(): Promise<string>
 ```
 
-* A Promise object is returned which is resolved with the `tntId` value. The value will be `null` if no Target ID was set.
+* A Promise object is returned and is resolved with the `tntId` value. If no Target ID was set, this value will be `null`.
 
 #### Examples
 
@@ -306,13 +306,13 @@ ACPTarget.getTntId().then(tntId => {
 
 ## locationClicked
 
-This API sends a location \(mbox\) click notification to configured Target server and can be invoked in the following cases:
+This API sends a location \(mbox\) click notification to the configured Target server and can be invoked in the following cases:
 
-* For a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests).
-* For a regular mbox when no previous prefetch request is made and the mbox content is retrieved using `retrieveLocationContent` API.
+* For a prefetched mbox, after the mbox content is retrieved using the `retrieveLocationContent` API.
+* For a regular mbox, where no previous prefetch request is made, and the mbox content is retrieved using the `retrieveLocationContent` API.
 
 {% hint style="warning" %}
-For a click notification to be sent to Target, make sure click metric is enabled for the given mbox name in Target.
+For a click notification to be sent to Target, ensure that the click metric is enabled for the specified mbox name in Target.
 {% endhint %}
 
 {% tabs %}
@@ -324,7 +324,7 @@ For a click notification to be sent to Target, make sure click metric is enabled
 public static void locationClicked(final String mboxName, final TargetParameters parameters)
 ```
 
-* _mboxName_ is a String containing mbox location for which click notification is to be sent to Target.
+* _mboxName_ is a String the contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `TargetParameters` for the request.
 
 ### Example
@@ -375,7 +375,7 @@ Target.locationClicked("cartLocation", targetParameters);
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
-* _name_ is a NSString containing mbox location for which click notification is to be sent to Target.
+* _name_ is an NSString that contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `ACPTargetParameters` for the request.
 
 ### Examples
@@ -453,7 +453,7 @@ ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetPara
 locationClickedWithName(name: string, parameters?: ACPTargetParameters)
 ```
 
-* _name_ is a string containing mbox location for which click notification is to be sent to Target.
+* _name_ is a string that contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `ACPTargetParameters` for the request.
 
 #### Examples
@@ -487,10 +487,10 @@ ACPTarget.locationClickedWithName("cartLocation", targetParameters);
 
 ## locationsDisplayed
 
-Use this API to send a location \(mbox\) display notification to configured Target server. This API should be invoked for a prefetched mbox, after the mbox content is retrieved using [retrieveLocationContent API](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieve-location-content-requests). If no previous prefetch request is made and the mbox content is retrieved using `retrieveLocationContent` API, then calling this API does not trigger a notification request to the Target server.
+Use this API to send a location \(mbox\) display notification to the configured Target server. This API should be invoked for a prefetched mbox after the mbox content is retrieved using the `retrieveLocationContent` API. If no previous prefetch request is made, and the mbox content is retrieved using the `retrieveLocationContent` API, calling this API does not trigger a notification request to the Target server.
 
 {% hint style="warning" %}
-Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#load-target-requests). For a prefetched mbox, on calling the deprecated `loadRequests` API, mbox display notification is internally sent to the Target server by the SDK.
+Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#load-target-requests) API. For a prefetched mbox, after calling the deprecated `loadRequests` API, the mbox display notification is sent internally to the Target server by the SDK.
 {% endhint %}
 
 {% tabs %}
@@ -502,7 +502,7 @@ Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.
 public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters targetParameters)
 ```
 
-* _mboxNames_ is a list of mbox locations for which display notification is to be sent to Target.
+* _mboxNames_ is a list of the mbox locations for which the display notification will be sent to Target.
 * _targetParameters_ is the configured `TargetParameters` for the request.
 
 #### Example
@@ -538,7 +538,7 @@ Target.locationsDisplayed(mboxList, targetParameters);
 withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
 
-* _mboxNames_ is a NSArray of mbox locations for which display notification is to be sent to Target.
+* _mboxNames_ is an NSArray of the mbox locations for which the display notification will be sent to Target.
 * _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
 #### Examples
@@ -581,7 +581,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 locationsDisplayed(mboxNames: Array<string>, parameters?: ACPTargetParameters)
 ```
 
-* _mboxNames_ is an Array of mbox locations for which display notification is to be sent to Target.
+* _mboxNames_ is an Array of the mbox locations for which the display notification will be sent to Target.
 * _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
 #### Examples
@@ -602,7 +602,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
 
 ## prefetchContent
 
-This API sends a prefetch request to your configured Target server with the prefetch objects array and the specified target parameters. For more information, see [Offer prefetch](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#offer-prefetch)
+This API sends a prefetch request to your configured Target server with the prefetch objects array and the specified target parameters. For more information, see [Offer prefetch](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target#offer-prefetch).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -617,7 +617,7 @@ final final AdobeCallback<String> callback);
 
 * _targetPrefetchList_ is a list of `TargetPrefetch` objects for various mbox locations.
 * _targetParameters_ is the configured `TargetParameters` for the prefetch request.
-* _callback_ is the callback invoked with a `null` value if prefetch is successful, otherwise an error message is returned.
+* If the prefetch is successful, _callback_ is invoked with a `null` value. If the prefetch is not successful, an error message is returned.
 
 #### Example
 
@@ -672,7 +672,7 @@ callback: (nullable void (^) (NSError* _Nullable error)) callback;
 ```
 * _targetPrefetchObjectArray_ is an array of `ACPTargetPrefetchObject` objects for various mbox locations.
 * _targetParameters_ is the configured `ACPTargetParameters` for the prefetch request.
-* _callback_ is the callback invoked with a `nil` value if prefetch is successful, otherwise an error message is returned.
+* If the prefetch is successful, _callback_ is invoked with a `nil` value. If the prefetch is not successful, an error message is returned.
 
 #### Examples
 
@@ -785,7 +785,7 @@ prefetchContent(prefetchObjectArray: Array<ACPTargetPrefetchObject>, parameters?
 ```
 * _prefetchObjectArray_ is an Array of `ACPTargetPrefetchObject` objects for various mbox locations.
 * _parameters_ is the configured `ACPTargetParameters` for the prefetch request.
-* A Promise object is returned which is resolved with true value or rejected with the error reason.
+* A Promise object is returned and is resolved with true value or is rejected with the reason for the error.
 
 #### Examples
 
@@ -828,7 +828,7 @@ ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => consol
 
 ## resetExperience
 
-This API resets the user's experience by removing the visitor identifiers and resetting Target session. Invoking this API also removes previously set Target user ID and custom visitor IDs, Target Edge Host and session information from persistent storage.
+This API resets the user's experience by removing the visitor identifiers and resetting the Target session. Invoking this API also removes previously set Target user ID and custom visitor IDs, Target Edge Host, and the session information from persistent storage.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -893,11 +893,11 @@ ACPTarget.resetExperience();
 
 ## retrieveLocationContent
 
-This API to sends a batch request to the configured Target server for multiple mbox locations. 
+This API sends a batch request to the configured Target server for multiple mbox locations. 
 
-The main difference with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#loadrequests) API is in usage with prefetch APIs. For a prefetched mbox, unlike `loadRequests` API, invoking this API does not send a display notification to the configured Target server. If you are not prefetching mbox content, then there is no difference with `loadRequests` API for sending batch request to Target.
+The main difference with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#loadrequests) API is in usage with prefetch APIs. For a prefetched mbox, unlike `loadRequests` API, invoking this API does not send a display notification to the configured Target server. If you do not have an existing prefetch content call, and you send a batch request to Target, there is no difference in behaviors of the `retrieveLocationContent` and `loadRequests` APIs.
 
-For mbox locations in the target requests list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each target request object in the list contains a callback function, which is invoked when content is available for its given mbox location.
+For mbox locations in the Target requests list that are not already prefetched, this API sends a batch request to the configured Target server. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each Target request object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -977,7 +977,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
                   withParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
-* _ACPTargetRequestObject_ is a NSArray of `ACPTargetRequestObject` objects for various mbox locations.
+* _ACPTargetRequestObject_ is an NSArray of `ACPTargetRequestObject` objects for various mbox locations.
 * _parameters_ is the configured `ACPTargetParameters` for the load request.
 
 #### Examples
@@ -1149,7 +1149,7 @@ This API sets the Target preview URL to be displayed when the preview mode is en
 public static void setPreviewRestartDeepLink(final Uri deepLink)
 ```
 
-* _deeplink_ is a Uri containing the preview restart deeplink.
+* _deeplink_ is a Uri that contains the preview restart deeplink.
 #### Example
 
 ```java
@@ -1165,7 +1165,7 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 + (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
 ```
 
-* _deeplink_ is a NSURL containing the preview restart deeplink.
+* _deeplink_ is an NSURL that contains the preview restart deeplink.
 
 #### Examples
 
@@ -1191,7 +1191,7 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 ```javascript
 setPreviewRestartDeeplink(deepLink: string)
 ```
-* _deepLink_ is a string containing the preview restart deeplink.
+* _deepLink_ is a string that contains the preview restart deeplink.
 
 #### Examples
 
@@ -1222,7 +1222,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 public static void setThirdPartyId(final String thirdPartyId)
 ```
 
-* _thirdPartyId_ is a String containing the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a String that contains the custom visitor ID to be set in Target.
 
 ### Example
 
@@ -1239,7 +1239,7 @@ Target.setThirdPartyId("third-party-id");
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
-* _thirdPartyId_ is a NSString containing the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a NSString that contains the custom visitor ID to be set in Target.
 
 ### Examples
 
@@ -1266,7 +1266,7 @@ ACPTarget.setThirdPartyId("third-party-id")
 setThirdPartyId(thirdPartyId: string) 
 ```
 
-* _thirdPartyId_ is a string containing the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a string that contains the custom visitor ID to be set in Target.
 
 ### Examples
 
