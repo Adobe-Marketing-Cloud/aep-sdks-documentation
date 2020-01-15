@@ -10,6 +10,6 @@ This extension allows you to implement Adobe Experience Cloud capabilities in a 
 
 To set up the Experience Platform Mobile extension, follow these steps:
 
-- [Adobe Data platform setup](./data-platform-setup.md)
+- [Adobe Data platform setup](./experience-platform-setup.md)
 - [Set up the Mobile SDK](./set-up-the-sdk.md)
 
