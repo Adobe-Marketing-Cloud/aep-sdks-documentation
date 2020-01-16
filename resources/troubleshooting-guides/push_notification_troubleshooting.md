@@ -8,8 +8,8 @@ To set up an Android app to receive push notifications, complete the following s
    3. Add the generated **“google-service.json”** to the project and set up the project and module level gradle files.  
    For more information, see [Add Firebase to your Android project](https://firebase.google.com/docs/android/setup#console).
    4. Verify that Firebase server key is configured in the Campaign instance.
-   5. To verify, click _Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_.
-   6. Launch the mobile app and verify that the push channel settings status is _Android key set up success_.  
+   5. To verify, click _Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_.
+   6. Select the mobile app from the list and verify that the push channel settings status is _Android key set up success_.  
    
    ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/android_server_key.png "Server key configuration in Android.")
   
@@ -19,8 +19,8 @@ To set up an iOS app to receive push notifications, complete the following steps
    For more information, see [Enable the Push Notifications Capability](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc).
    2. To configuring APNS certificate, register app on Apple developer account and generate server certificate.  
    For more information, see [Establishing a Certificate-Based Connection to APNs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns?language=objc).
-   3. Verify that APNS server certificate is configured in the Campaign instance.  
-   4. Verify this by clicking Campaign -> Administrator -> Channels -> Mobile App (AEP SDK). Launch mobile app and ensuring that _iOS certficate with filename *.pem is successfully uploaded_.
+   3. Verify that the APNS server certificate is configured in the Campaign instance.  
+   4. Verify this by clicking _Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_. Select the mobile app from the list and verify that push channel settings status for iOS is _iOS certficate with filename *.pem is successfully uploaded_.
    
    ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/campaign_ios_cert_configured.png "Configured push certificate in Campaign.")
   
@@ -33,14 +33,13 @@ To set up an iOS app to receive push notifications, complete the following steps
    2. Verify that user has opted in to receive push notifications and verify this in Project Griffon.  
    For more information, see [Ensure user opt-in for push in Adobe Analytics](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#ensure-user-opt-in-for-push-in-adobe-analytics).
    3. Verify this step in Project Griffon.
-   For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) and [Use Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon).
-  
+   For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) and [Use Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon).  
    4. Generate a push token for app using FireBase Instance Id class.  
    5. Set the push token to the Expereince Platform SDK by calling Set [Push Identifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference#set-up-push-messaging).  
    6. Verify that push token has successfully synced with Identity service in Griffon.  
    For more information, see [Verify push token sync with the Experience Cloud Identity service](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#verify-push-token-sync-with-the-experience-cloud-identity-service).
    7. To verify that the user id is correctly set in Project Griffon, see [Confirm that the user ID is correctly set](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#confirm-that-the-user-id-is-correctly-set).                 
-   8. Verify that app’s push token is in the Campaign instance that was mapped with the correct Experience cloud id(mid) by clicking Campaign -> Administrator -> Channels -> Mobile App (AEP SDK).
+   8. Verify that app’s push token is in the Campaign instance that was mapped with the correct Experience cloud id(mid) by clicking _Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_.
    9. Launch your app and, under the mobile application subscribers, review the list of all Subscribers of app.
    10. Verify the Experience Cloud ID and Registration Token for the user is displayed.
    
@@ -55,21 +54,24 @@ To set up an iOS app to receive push notifications, complete the following steps
   This API generates the APNS token and returns token through the callback.
   2. In the callback, set the Push identifier by calling the `setPushIdentifier` method.  
   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
-  
-
-      
-
+  3. Verify that push token has successfully synced with Identity service in Griffon.  
+  For more information, see [Verify push token sync with the Experience Cloud Identity service](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#verify-push-token-sync-with-the-experience-cloud-identity-service).
+  4. To verify that the user id is correctly set in Project Griffon, see [Confirm that the user ID is correctly set](https://aep-sdks.gitbook.io/docs/resources/troubleshooting-guides/troubleshooting-push#confirm-that-the-user-id-is-correctly-set). 
+ 5. Verify that app’s push token is in the Campaign instance that was mapped with the correct Experience cloud id(mid) by clicking _Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_.
+ 6. Launch your app and, under the mobile application subscribers, review the list of all Subscribers of app.
+ 7. Verify the Experience Cloud ID and Registration Token for the user is displayed.
  
-## Troubleshooting Push Notification events tracking in Android and iOS:  
-Following three events related to push notifications are tracked: 
-  * impression (Notification is delivered)
-  * click (User clicked the notification)
-  * open (App opened in response to user's click on notification) 
-  For implementation of tracking push notification events, see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
-  Whether these events are successfully tracked or not can be verified by checking logs on Griffon. In case Griffon is not     available it can be verified using Charles as well.
+Troubleshooting push notification events tracking in Android and iOS  
+
+The following events are related to the tracked push notifications:
+  * Impression (Notification is delivered.)
+  * Click (User clicked the notification.)
+  * Open (App opened in response to user's click on notification) 
+  For more information about implementing the tracking of push notification events,see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+  You can verify whether these events are successfully tracked by checking the Project Griffon logs. If Project Griffon is not available, you can verify the logs by using Charles.
   
-  * **Troubleshooting push notifications tracking events using Griffon:**  
-      Open the Griffon session and look for **TYPE** **CollectData**.  
+The following graphic is an example of how to troubleshoot your push notification events tracking in Project Griffon:  
+      Open the Griffon session and look for **TYPE** **CollectData*. 
       Pleae see screenshots below:
   
    ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
@@ -85,4 +87,4 @@ Following three events related to push notifications are tracked:
    Shows tracking of push notification **open** event. It is indicated by action 1.
   
   
-  * **Troubleshooting push notifications tracking events using Charles:**
+The following graphic is an example of how to troubleshoot your push notification events tracking using the Charles logs:
