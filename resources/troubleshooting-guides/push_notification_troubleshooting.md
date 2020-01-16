@@ -61,6 +61,13 @@ To set up an iOS app to receive push notifications, complete the following steps
  6. Launch your app and, under the mobile application subscribers, review the list of all Subscribers of app.
  7. Verify the Experience Cloud ID and Registration Token for the user is displayed.
  
+ Common between Android and iOS.
+ 
+ 1.If you are using Charles, verify that the push token is successfully synced with the ECID service. Check for the demdex request which is marked with red line in the ecreenshot below. Also verify the successfull reposne for this network call.  
+ 
+ ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
+ 
+ 
 Troubleshooting push notification events tracking in Android and iOS  
 
 The following events are related to the tracked push notifications:
@@ -87,4 +94,20 @@ The following graphic is an example of how to troubleshoot your push notificatio
    Shows tracking of push notification **open** event. It is indicated by action 1.
   
   
-The following graphic is an example of how to troubleshoot your push notification events tracking using the Charles logs:
+The following graphic is an example of how to troubleshoot your push notification events tracking using the Charles logs:  
+
+To verify that a successfull network call is made to track push notification interaction event, look for GET request with query string `id=broadlogID,deliveryID,action` as show in screeshots below.  
+
+**_Screenshot for impression event tracing(action value 7)_**
+
+![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/tracking_impression.png "Impression event tracking for notification.")
+
+**_Screenshot for click event tracking(action value 2)**-
+
+![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/tracking_click.png "Click event tracking for notification.")
+
+_**Screenshot for open event tracking(action value 1)**_
+
+![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/tracking_open.png "Open event tracking for notification.")
+
+
