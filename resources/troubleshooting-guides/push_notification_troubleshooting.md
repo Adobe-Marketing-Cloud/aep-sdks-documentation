@@ -1,6 +1,6 @@
 #                         Push Notification Implementation and Tracking Troubleshooting
                          
-To set up an Android app to receive push notifications, complete the following steps:
+**To set up server key in the campaign instance, complete the following steps:**
 
    1. To configure the app in Google Firebase, go to the Google [Firebase Console](https://console.firebase.google.com/) and sign in using your Google Developer credentials. 
    2. Add a project and add your app under that project using the application ID that you used in app.  
@@ -13,7 +13,7 @@ To set up an Android app to receive push notifications, complete the following s
    
    ![alt text](https://github.com/shivam-tomar-sde/aep-sdks-documentation/blob/push-troubleshooting-document/.gitbook/assets/android_server_key.png "Server key configuration in Android.")
   
-To set up an iOS app to receive push notifications, complete the following steps:
+**To set up APNS server certificate in the campaign instance, complete the following steps:**
 
    1. Add Push Notification entitlement to your app.  
    For more information, see [Enable the Push Notifications Capability](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc).
