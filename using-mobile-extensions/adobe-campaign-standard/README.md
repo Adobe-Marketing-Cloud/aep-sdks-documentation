@@ -30,9 +30,9 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
 
-When the configuration in Campaign is successful, the pKey is automatically generated and configured in Experience Platform Launch Campaign extension for successful validation.
+After the configuration is successful in Campaign, the pKey is automatically generated and configured in Experience Platform Launch Campaign extension for a successful validation.
 
 #### MCIAS region
 
@@ -295,7 +295,7 @@ To set up local notifications in Android, update the AndroidManifest.xml file wi
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) must be sent to the Adobe Identity service by calling `setPushIdentifer`. For more information about the `setPushIdentifer` API, see [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [Identity API reference - setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -361,7 +361,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 {% tab title="React Native" %}
 
-Prior to using the following API in your React Native project, complete the steps in the **Android** and **iOS** tabs to set up platform-specific push configuration.
+Before you use the following API in your React Native project, complete the steps in the **Android** and **iOS** tabs to set up platform-specific push configuration.
 
 #### Example
 
@@ -377,7 +377,7 @@ ACPCore.setPushIdentifier("pushID");
 User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event.
 
 {% hint style="warning" %}
-The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for the proper implementation of local and push notification message tracking. The Campaign document regarding local notification tracking can be seen at [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the document regarding push notification tracking can be see at [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for the proper implementation of local and push notification message tracking. The Campaign document about local notification tracking is [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the Campaign document about push notification tracking is [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
 {% endhint %}
 
 {% tabs %}
