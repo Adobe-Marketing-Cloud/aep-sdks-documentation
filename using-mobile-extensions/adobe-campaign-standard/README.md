@@ -32,7 +32,7 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
 
-When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Experience Platform Launch Campaign extension for successful validation.
+When the configuration in Campaign is successful, the pKey is automatically generated and configured in Experience Platform Launch Campaign extension for successful validation.
 
 #### MCIAS region
 
