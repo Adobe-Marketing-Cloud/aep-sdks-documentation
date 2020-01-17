@@ -53,7 +53,7 @@ The Adobe Campaign Standard extension reads the following key from the configura
 | `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment in the Adobe Campaign Standard instance. |
 | `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the stage environment in Adobe Campaign Standard. |
 | `campaign.server` | String | No | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
-| `campaign.pkey` | String | No | This contains the identifier for a mobile app that was configured in in the production environment in Adobe Campaign Standard. |
+| `campaign.pkey` | String | No | This contains the identifier for a mobile app that was configured in the production environment in Adobe Campaign Standard. |
 | `campaign.mcias` | String | No | This contains the in-app messaging service URL endpoint |
 | `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from in-app messaging service |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings |
