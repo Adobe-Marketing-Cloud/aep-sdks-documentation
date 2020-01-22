@@ -1,5 +1,5 @@
 # Custom Validation and Project Griffon
-## Overview
+
 You can use the Custom Validation view to quickly and easily write a JavaScript function and validate the events in your session.
 
 ## Using the Custom Validation view
