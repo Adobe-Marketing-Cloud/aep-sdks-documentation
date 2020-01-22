@@ -1,7 +1,5 @@
 # Adobe Analytics and Project Griffon
 
-## Overview
-
 The Adobe Analytics view is focused, yet richer view of SDK events only related to your Adobe Analytics implementation. The view now shows the action/state name and event “status” along with a specifically formatted detail view. 
 
 Status tells you when an SDK event is generated \(processed\), if the SDK has made a network request with Adobe Analytics \(queued\), and if we’ve returned post-processing information from Adobe Analytics about that event \(validated\).
