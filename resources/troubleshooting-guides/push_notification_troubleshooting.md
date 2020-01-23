@@ -2,8 +2,9 @@
                          
 To set up server key/APNS server certificate in the campaign instance, complete the following steps:  
 
-## Android
+{% tabs %}
 
+{% tab title="Android" %}
 ### Set up a server key
 
    1. To configure the app in Google Firebase, see [Firebase Console](https://console.firebase.google.com/) and sign in using your Google Developer credentials. 
@@ -14,9 +15,10 @@ To set up server key/APNS server certificate in the campaign instance, complete 
    4. Verify that Firebase server key is configured in the Campaign instance by clicking **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.    .
    5. Select the mobile app from the list and verify that the push channel settings status for Android is _Android key set up success_.  
    
-   ![alt text](../../.gitbook/assets/android_server_key.png "Server key configuration in Android.")
+   ![Server key configuration in Android](../../.gitbook/assets/android_server_key.png "Server key configuration in Android.")
+{% endtab %}
 
-## iOS
+{% tab title="iOS" %}
 
 ### Set up the APNS server certificate
 
@@ -31,7 +33,11 @@ To set up server key/APNS server certificate in the campaign instance, complete 
  Verify that you are using production certificate for production version of app and debug certificate for debug version of app.
  {% endhint %}
    
-   ![alt text](../../.gitbook/assets/campaign_ios_cert_configured.png "Configured push certificate in Campaign.")
+   ![Configured push certificate in Campaign](../../.gitbook/assets/campaign_ios_cert_configured.png "Configured push certificate in Campaign.")
+   
+{% endtab %}
+
+{% endtabs %}
    
 > For more information about configuration, see [Channel specific application configuration in Adobe Campaign.](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).  
   
@@ -45,7 +51,8 @@ To set up server key/APNS server certificate in the campaign instance, complete 
    For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) and [Use Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon).  
    3. Generate a push token for the app using FireBase Instance ID class.  
    4. in `onComplete` of `OnCompleteListener`, set the Push identifier by calling the API `setPushIdentifier`.  
-   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).     
+   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).   
+   
 
 ### Set up the iOS app  
   
@@ -67,18 +74,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
    4. In the details panel on the right, verify the value of the push token for this device.  
       The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
       
-![alt text](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
+![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
    2. To verify that app’s push token that was mapped to the correct Experience cloud id(mid) is in the Campaign instance, click Adobe **_Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
    3. Launch your app, under the mobile application subscribers, review the list of all Subscribers of the app.  
    4. Verify that the ECID and the registration token for the user is displayed.  
    
-   ![alt text](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
+   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
    
    5. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
    6. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
    7. Verify the successfull response(200) for this network call.       
  
- ![alt text](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
+ ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  
  
  ## Troubleshooting push notification events tracking  
@@ -102,15 +109,15 @@ The following events are related to the tracked push notifications:
   The value of action should be 7 for impression, 2 for the click, and 1 for open.  
   It is shown in the screenshots below.  
   
-   ![alt text](../../.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
+   ![Shows Push notification impression tracking](../../.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
    
    Shows tracking of **impression** event. It is indicated by action 7.
    
-   ![alt text](../../.gitbook/assets/push_tracking_click.png "Shows Push notification click tracking.")
+   ![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png "Shows Push notification click tracking.")
    
    Shows tracking of **click** event. It is indicated by action 2.
    
-   ![alt text](../../.gitbook/assets/push_tracking_open.png "Shows Push notification open tracking.")
+   ![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png "Shows Push notification open tracking.")
    
    Shows tracking of **open** event. It is indicated by action 1.
   
@@ -121,14 +128,14 @@ To verify that a successful network call is made to track the push notification 
 
 **_Screenshot for the impression event tracking(action value 7)_**
 
-![alt text](../../.gitbook/assets/tracking_impression.png "Impression event tracking for notification.")
+![Impression event tracking for notification](../../.gitbook/assets/tracking_impression.png "Impression event tracking for notification.")
 
 **_Screenshot for the click event tracking(action value 2)_**
 
-![alt text](../../.gitbook/assets/tracking_click.png "Click event tracking for notification.")
+![Click event tracking for notification](../../.gitbook/assets/tracking_click.png "Click event tracking for notification.")
 
 _**Screenshot for the open event tracking(action value 1)**_
 
-![alt text](../../.gitbook/assets/tracking_open.png "Open event tracking for notification.")
+![Open event tracking for notification](../../.gitbook/assets/tracking_open.png "Open event tracking for notification.")
 
 
