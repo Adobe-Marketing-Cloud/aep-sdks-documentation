@@ -18,10 +18,10 @@ The following updates were made in this release:
 * Enable the shared state of the UserProfile extenstion to be used as the traits for In-App Messaging.
 
 
-**Android Mobile Services 1.0.5**
+**Android Mobile Services 1.1.0**
 
 * Enable the shared state of the UserProfile extenstion to be used as the traits for In-App Messaging.
-* Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)` , to support Google Play Install Referrer APIs. For more information about the Install Referrer APIs, see Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 .
+* Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)` , to support Google Play Install Referrer APIs. For more information about the Install Referrer APIs, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html).
 
 
 ## January 13, 2020
