@@ -48,10 +48,35 @@ For more information about configuration, see [Channel specific application conf
 ### Set up the Android app  
 
    1. Create the Firebase Messaging Service and add it to the Android Manifest file.  
-   For more information, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
+   For more information, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
    2. Generate a push token for the app using FireBase Instance ID class.  
    3. In the `onComplete` function of `OnCompleteListener`, set the Push identifier by calling the API `MobileCore.setPushIdentifier`.  
-   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).   
+   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
+   
+   #### Verify that the push token has successfully synced with the Experience Cloud ID service
+
+{% hint style="warning" %}
+If SDK privacy status is `optedout`, the push identifier will not be set.
+{% endhint %}
+
+   1. Verify the push token sync with the Experience Cloud ID service (ECID).  
+   2. To verify, launch your app connected to a Project Griffon session.   
+   3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
+   4. In the details panel on the right, verify the value of the push token for this device.  
+      The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
+      
+![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
+
+   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
+   
+   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
+   
+   6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
+   7. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
+   8. Verify the successful response(200) for this network call.       
+ 
+ ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  {% endtab %}
 
 {% tab title="iOS" %}
@@ -62,10 +87,35 @@ For more information about configuration, see [Channel specific application conf
   For more information, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc)
   2. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, call `setPushIdentifier` to set the Push identifier.  
   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
+  
+  #### Verify that the push token has successfully synced with the Experience Cloud ID service
+
+{% hint style="warning" %}
+If SDK privacy status is `optedout`, the push identifier will not be set.
+{% endhint %}
+
+   1. Verify the push token sync with the Experience Cloud ID service (ECID).  
+   2. To verify, launch your app connected to a Project Griffon session.   
+   3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
+   4. In the details panel on the right, verify the value of the push token for this device.  
+      The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
+      
+![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
+
+   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
+   
+   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
+   
+   6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
+   7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
+   8. Verify the successful response(200) for this network call.       
+ 
+ ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
   {% endtab %}
   {% endtabs %}
  
-### Verify that the push token has successfully synced with the Experience Cloud ID service
+#### Verify that the push token has successfully synced with the Experience Cloud ID service
 
 {% hint style="warning" %}
 If SDK privacy status is `optedout`, the push identifier will not be set.
@@ -104,10 +154,12 @@ The following events are related to the tracked push notifications:
   You can verify the push token sync with the ECID service in Project Griffon.  
   
   1. Connect your app to a Griffon session.  
-  2. Receive a push notification in the device.  
-  3. Click on the push notification to launch the app.
-  4. In the list of events, verify that you have an event with type CollectData.  
-  5. In the Details panel on the right, verify the value of the action.  
+  2. Send a push notification to app from your Campaign instance.  
+  To know more about how to send push notification, see [Preparing and sending a push notification](https://docs.adobe.com/content/help/en/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html).
+  3. Receive a push notification in the device.  
+  4. Click on the push notification to launch the app.  
+  5. In the list of events, verify that you have an event with type CollectData.  
+  6. In the Details panel on the right, verify the value of the action.  
   The value of the action should be 7 for impression, 2 for the click, and 1 for open.  
   It is shown in the screenshots below.  
   
