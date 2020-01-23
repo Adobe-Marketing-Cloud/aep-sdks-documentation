@@ -30,7 +30,7 @@ To set up server key/APNS server certificate in the campaign instance, complete 
    4. Select the mobile app from the list and verify that push channel settings status for iOS is _iOS certificate with filename *.pem is successfully uploaded_.  
    
  {% hint style="warning" %}
- Verify that you are using production certificate for production version of app and debug certificate for debug version of app.
+ Verify that you are using production certificate for production environment and development certificate for development environment.
  {% endhint %}
    
    ![Configured push certificate in Campaign](../../.gitbook/assets/campaign_ios_cert_configured.png "Configured push certificate in Campaign.")
@@ -47,10 +47,8 @@ To set up server key/APNS server certificate in the campaign instance, complete 
 
    1. Create the Firebase Messaging Service and add it to the Android Manifest file.  
    For more information, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
-   2. Verify this step in Project Griffon.
-   For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon) and [Use Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon).  
-   3. Generate a push token for the app using FireBase Instance ID class.  
-   4. in `onComplete` of `OnCompleteListener`, set the Push identifier by calling the API `setPushIdentifier`.  
+   2. Generate a push token for the app using FireBase Instance ID class.  
+   3. In `onComplete` of `OnCompleteListener`, set the Push identifier by calling the API `MobileCore.setPushIdentifier`.  
    For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).   
    
 
@@ -69,21 +67,22 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 {% endhint %}
 
    1. Verify the push token sync with the Experience Cloud ID service (ECID).  
-   2. To verify, launch your app with the device connected to a Project Griffon session.   
+   2. To verify, launch your app connected to a Project Griffon session.   
    3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
    4. In the details panel on the right, verify the value of the push token for this device.  
       The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
       
-![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
-   2. To verify that app’s push token that was mapped to the correct Experience cloud id(mid) is in the Campaign instance, click Adobe **_Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
-   3. Launch your app, under the mobile application subscribers, review the list of all Subscribers of the app.  
-   4. Verify that the ECID and the registration token for the user is displayed.  
+![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
+
+   5. To verify that app’s push token that was mapped to the correct Experience cloud id(mid) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   6. Launch your app, under the mobile application subscribers, review the list of all Subscribers of the app.  
+   7. Verify that the ECID and the push token for the user is displayed.  
    
    ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
    
-   5. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
-   6. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
-   7. Verify the successfull response(200) for this network call.       
+   6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
+   7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
+   8. Verify the successfull response(200) for this network call.       
  
  ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  
