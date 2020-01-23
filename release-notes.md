@@ -8,6 +8,22 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+
+## January 23, 2020
+
+The following updates were made in this release:
+
+**iOS Mobile Services 1.0.5**
+
+* Enable the shared state of the UserProfile extenstion to be used as the traits for In-App Messaging.
+
+
+**Android Mobile Services 1.0.5**
+
+* Enable the shared state of the UserProfile extenstion to be used as the traits for In-App Messaging.
+* Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)` , to support Google Play Install Referrer APIs. For more information about the Install Referrer APIs, see Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 .
+
+
 ## January 13, 2020
 
 The following updates were made in this release:
