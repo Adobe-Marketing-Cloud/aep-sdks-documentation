@@ -565,15 +565,11 @@ public void onCreate(Bundle savedInstanceState) {
 
 #### Handling in-app message app links on Android
 
-Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality although they have the appearance of a standard website URL. The intent filter setup for deep links is modified to handle ` http` schemes and verification of the app link needs to be setup on [Google Search Console](https://support.google.com/webmasters/answer/9008080). For more information on the additional verification setup needed, see [Verify Android App Links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if your app is installed or redirect to your app's website if it is not installed. For more information on Android app links, see [Handling Android App Links](https://developer.android.com/training/app-links/index.html#add-app-links).
+Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality although they have the appearance of a standard website URL. The intent filter previously setup for deep links is modified to handle ` http` schemes and verification of the app link needs to be setup on [Google Search Console](https://support.google.com/webmasters/answer/9008080). For more information on the additional verification setup needed, see [Verify Android App Links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if your app is installed or redirect to your app's website if it is not installed. For more information on Android app links, see [Handling Android App Links](https://developer.android.com/training/app-links/index.html#add-app-links).
 
 {% endtab %}
 
 {% tab title="iOS" %}
-
-#### Handling in-app message universal links on iOS
-
-
 
 #### Handling alert or fullscreen notification website URLs on iOS
 
@@ -661,6 +657,10 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
 
 The deep link URL can be retrieved from the response object passed into the handler method. An example for retrieving the deep link URL and loading web links is provided below. For more information about handling deep links and setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc).
+
+#### Handling in-app message universal links on iOS
+
+Universal links are available for iOS 9.0 devices or later. They can be used to redirect to specific areas of your app if your app is installed or redirect to your app's website if it is not installed. For more information, see [Allowing Apps and Websites to Link to Your Content](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content). Universal links are typically used from outside your installed app, for example from a link present on a website or a link included in an email message. iOS devices will not open a universal link if it determines that it is being opened from within the app it links to. For more information on this limitation, see the section titled "**Preparing Your App to Handle Universal Links**" at this Apple documentation page: [Support Universal Links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2). If a universal link is included as a Campaign clickthrough destination, the link must be handled by the app developer in a similar fashion as a deep link. For more information on how to handle the universal link in this scenario, see [Handling alert or fullscreen notfication deep links on iOS](#Handling alert or fullscreen notfication deep links on iOS) and [Handling local or push notification deep links on iOS](#Handling local or push notification deep links on iOS).
 
 {% endtab %}
 {% endtabs %}
