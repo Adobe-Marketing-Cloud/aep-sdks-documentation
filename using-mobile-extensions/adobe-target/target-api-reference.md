@@ -2,7 +2,7 @@
 
 ## clearPrefetchCache
 
-This API clears prefetched offers cache in memory.
+This API clears the in-memory cache that contains the prefetched offers.
 
 {% tabs %}
 {% tab title="Android" %}

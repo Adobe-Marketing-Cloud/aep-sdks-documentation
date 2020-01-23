@@ -453,10 +453,10 @@ ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobe
 
 ## Offer Prefetch
 
-The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. With a successful prefetch call for mbox locations, offer content is retrieved and cached in the SDK. This content is retrieved from the cache for all future [retrieveLocationContent](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieveLocationContent) API calls for the specified mbox names. This prefetch process reduces the offer load time, and network calls that were made to the Target servers, and allows Target to be notified which mbox was visited by the mobile app user.
+The SDK can minimize the number of times it reaches out to Target servers to fetch offers by caching server responses. With a successful prefetch call for mbox locations, offer content is retrieved and cached in the SDK. This content is retrieved from the cache for all future [retrieveLocationContent](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrieveLocationContent) API calls for the specified mbox names. This prefetch process reduces the offer load time and network calls that were made to the Target servers, and the prrocess allows Target to be notified which mbox was visited by the mobile app user.
 
 {% hint style="warning" %}
-Prefetched offer content does not persist across application launches. The prefetch content is cached as long as the application lives in memory or until the API to clear the cache is called. For more information, see [Clear prefetch offer cache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/target-api-reference#clearPrefetchCache).
+Prefetched offer content does not persist across application launches. The prefetch content is cached as long as the application lives in memory or until the API to clear the cache is called. For more information, see [clearPrefetchCache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/target-api-reference#clearPrefetchCache).
 {% endhint %}
 
 
