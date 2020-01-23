@@ -1,6 +1,6 @@
-# Implementing push notifications and tracking troubleshooting
+# Troubleshooting Campaign push notifications
                          
-To set up server key/APNS server certificate in the campaign instance, complete the following steps:  
+## To set up server key/APNS server certificate in the Campaign instance, complete the following steps:  
 
 {% tabs %}
 
@@ -39,26 +39,31 @@ To set up server key/APNS server certificate in the campaign instance, complete 
 
 {% endtabs %}
    
-> For more information about configuration, see [Channel specific application configuration in Adobe Campaign.](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).  
+For more information about configuration, see [Channel specific application configuration in Adobe Campaign.](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).  
   
 ## Set up an Android or iOS app to receive push notifications  
 
+{% tabs %}
+{% tab title="Android" %}
 ### Set up the Android app  
 
    1. Create the Firebase Messaging Service and add it to the Android Manifest file.  
    For more information, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
    2. Generate a push token for the app using FireBase Instance ID class.  
-   3. In `onComplete` of `OnCompleteListener`, set the Push identifier by calling the API `MobileCore.setPushIdentifier`.  
+   3. In the `onComplete` function of `OnCompleteListener`, set the Push identifier by calling the API `MobileCore.setPushIdentifier`.  
    For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).   
-   
+ {% endtab %}
 
+{% tab title="iOS" %}
 ### Set up the iOS app  
   
   1. After you launch the app, call `registerForRemoteNotifications` to register the app and receive the APNS token.  
-  This API generates and returns the APNS token through the `didRegisterForRemoteNotificationsWithDeviceToken` delegate function.  
+  This API generates and returns the APNS token through the `application:didRegisterForRemoteNotificationsWithDeviceToken:` delegate function.  
   For more information, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc)
-  2. In `didRegisterForRemoteNotificationsWithDeviceToken`, call `setPushIdentifier` to set the Push identifier.  
+  2. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, call `setPushIdentifier` to set the Push identifier.  
   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
+  {% endtab %}
+  {% endtabs %}
  
 ### Verify that the push token has successfully synced with the Experience Cloud ID service
 
@@ -74,15 +79,14 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
       
 ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
-   5. To verify that app’s push token that was mapped to the correct Experience cloud id(mid) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
-   6. Launch your app, under the mobile application subscribers, review the list of all Subscribers of the app.  
-   7. Verify that the ECID and the push token for the user is displayed.  
+   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
    ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
    
    6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
    7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
-   8. Verify the successfull response(200) for this network call.       
+   8. Verify the successful response(200) for this network call.       
  
  ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  
@@ -97,43 +101,42 @@ The following events are related to the tracked push notifications:
   
 ###  Troubleshooting using Project Griffon  
 
-  You can verify the push token sync with the ECID service on Project Griffon.  
+  You can verify the push token sync with the ECID service in Project Griffon.  
   
-  1. Connect your app to a PG session.  
+  1. Connect your app to a Griffon session.  
   2. Receive a push notification in the device.  
   3. Click on the push notification to launch the app.
-  4. In the list of events, verify that you have an events with type CollectData.  
+  4. In the list of events, verify that you have an event with type CollectData.  
   5. In the Details panel on the right, verify the value of the action.  
-  6. In the details panel on the right, verify the value of the action.  
-  The value of action should be 7 for impression, 2 for the click, and 1 for open.  
+  The value of the action should be 7 for impression, 2 for the click, and 1 for open.  
   It is shown in the screenshots below.  
   
    ![Shows Push notification impression tracking](../../.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
    
-   Shows tracking of **impression** event. It is indicated by action 7.
+   Shows tracking of the _impression_ event. It is indicated by action 7.
    
    ![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png "Shows Push notification click tracking.")
    
-   Shows tracking of **click** event. It is indicated by action 2.
+   Shows tracking of the _click_ event. It is indicated by action 2.
    
    ![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png "Shows Push notification open tracking.")
    
-   Shows tracking of **open** event. It is indicated by action 1.
+   Shows tracking of the _open_ event. It is indicated by action 1.
   
   
 ###  Troubleshooting using Charles  
 
-To verify that a successful network call is made to track the push notification interaction event, look for the GET request with the query string `id=broadlogID,deliveryID,action` to the Campaign server, see screenshots below for mopre details about what to look.  
+To verify that a successful network call is made to track the push notification interaction event, look for the GET request with the query string `id=broadlogID,deliveryID,action` to the Campaign server, see screenshots below for more details about what to look.  
 
-**_Screenshot for the impression event tracking(action value 7)_**
+Screenshot for the impression event tracking(action value 7)
 
 ![Impression event tracking for notification](../../.gitbook/assets/tracking_impression.png "Impression event tracking for notification.")
 
-**_Screenshot for the click event tracking(action value 2)_**
+Screenshot for the click event tracking(action value 2)
 
 ![Click event tracking for notification](../../.gitbook/assets/tracking_click.png "Click event tracking for notification.")
 
-_**Screenshot for the open event tracking(action value 1)**_
+Screenshot for the open event tracking(action value 1)
 
 ![Open event tracking for notification](../../.gitbook/assets/tracking_open.png "Open event tracking for notification.")
 
