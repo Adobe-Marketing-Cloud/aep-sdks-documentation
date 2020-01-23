@@ -65,7 +65,6 @@ Remember the following information when you add the Campaign extension to your a
 | Profile | The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
 | :--- | :--- |
 
-
 | Signal | The Signal extension is required for all postback rules to work. For more information, see [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals). |
 | :--- | :--- |
 
@@ -331,30 +330,65 @@ To remove the corresponding mobile app in Campaign Standard, click **Remove from
 Deleting your mobile property in Experience Platform Launch does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 
-### Handling deeplinks included in Campaign In-App messages
+### Handling clickthrough destinations included in Campaign In-App messages
 
-A deeplink can be added to in-app messages that are delivered from Adobe Campaign. The link can be a website URL such as https://www.adobe.com or an app link, which can be used to direct the user to a specific area of your app.
+A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as https://www.adobe.com or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true`, which can be used to direct the user to a specific area of your app.
 
 {% tabs %}
 {% tab title="Android" %}
 
-#### Handling in-app message deeplinks on Android
+#### Handling in-app message website URLs on Android
 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
 - `url` key present in the alert message payload
-- `data-destination-url` present in the fullscreen message html code
-- `adb_deeplink` key present in the local or push notification payload
+- `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
+- `adb_deeplink` key present in the local notification payload
+- `uri` key present in the push notification payload
 
-To handle app links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking).
+#### Handling in-app message deep links on Android
+
+To handle deep links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking). Once the desired activity is started by the newly added intent filter, the data present in the deep link can be retrieved. Any further actions based on the data present in the deep link can then be made.
+
+#### Java
+
+```java
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+    Intent intent = getIntent();
+    String action = intent.getAction();
+    Uri data = intent.getData();
+  	// parse any data present in the deep link
+}
+```
+
+#### Handling in-app message app links on Android
+
+Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality although they have the appearance of a standard website URL. The intent filter setup for deep links is modified to handle ` http` schemes and verification of the app link needs to be setup on [Google Search Console](https://support.google.com/webmasters/answer/9008080). For more information on the additional verification setup needed, see [Verify Android App Links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if your app is installed or redirect to your app's website if it is not installed. For more information on Android app links, see [Handling Android App Links](https://developer.android.com/training/app-links/index.html#add-app-links).
 
 {% endtab %}
 
 {% tab title="iOS" %}
 
-#### Handling alert or fullscreen notfication deeplinks on iOS
+#### Handling in-app message universal links on iOS
 
-To open URLs and app links on iOS, by default, use the Safari browser. If the included deeplink is a web URL, this is an expected behavior, but Safari does not allow the app to directly handle app links. To provide a better customer experience, the Experience Platform SDK provides a URL handler that you can use with alert or fullscreen notification deeplinks.
+
+
+#### Handling alert or fullscreen notification website URLs on iOS
+
+Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
+
+- `url` key present in the alert message payload
+- `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
+- `adb_deeplink` key present in the local notification payload
+- `uri` key present in the push notification payload
+
+#### Handling alert or fullscreen notfication deep links on iOS
+
+When a deep link is opened in Safari, this does not allow the app to directly handle the link. To provide a better customer experience, the Experience Platform SDK provides a URL handler that you can use with alert or fullscreen notification deep links.
 
 #### Objective-C
 
@@ -362,7 +396,7 @@ To open URLs and app links on iOS, by default, use the Safari browser. If the in
 [ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
 	NSLog(@"Inside registerURLHandler callback, clickthrough url is: %@", url);
   if([url containsString:@"campaigndemoapp://"]){
-    // handle the app link (parse any data present in the app link and/or redirect to a desired area within the app)
+    // handle the deep link (parse any data present in the deep link and/or redirect to a desired area within the app)
     return true;
   }
   // false is returned when the URL should be opened in Safari
@@ -376,7 +410,7 @@ To open URLs and app links on iOS, by default, use the Safari browser. If the in
 ACPCore.registerURLHandler({ url in
 	print("Inside registerURLHandler callback, clickthrough url is: \(url ?? "")")
 	if url?.contains("campaigndemoapp://") ?? false {
-        // handle the app link (parse any data present in the app link and/or redirect to a desired area within the app)
+        // handle the deep link (parse any data present in the deep link and/or redirect to a desired area within the app)
    	return true
   }
   // false is returned when the URL should be opened in Safari
@@ -384,15 +418,9 @@ ACPCore.registerURLHandler({ url in
 })
 ```
 
-#### Handling local or push notification deeplinks on iOS
+#### Handling local or push notification website URLs on iOS
 
-When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
-
-The deeplink URL can be retrieved from the response object passed into the handler method. An example for retrieving the deeplink URL and loading web links is provided below. For more information about handling app links and setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc).
-
-#### Retrieving then loading the URL string from the local or push notification response 
-
-The deeplink in the response can be loaded using the [openURL:options:completionHandler:](https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl?language=objc) instance method. 
+The website URL in the response can be loaded using the [openURL:options:completionHandler:](https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl?language=objc) instance method. 
 
 #### Objective-C
 
@@ -429,6 +457,12 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
     })
 }
 ```
+
+#### Handling local or push notification deep links on iOS
+
+When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
+
+The deep link URL can be retrieved from the response object passed into the handler method. An example for retrieving the deep link URL and loading web links is provided below. For more information about handling deep links and setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc).
 
 {% endtab %}
 {% endtabs %}
