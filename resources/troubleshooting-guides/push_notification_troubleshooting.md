@@ -26,7 +26,7 @@
    For more information, see [Enable the Push Notifications Capability](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc).
    2. To configure the APNS certificate, register the app on your Apple developer account and generate the certificate.  
    For more information, see [Establishing a Certificate-Based Connection to APNs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns?language=objc).
-   3. Verify that the APNS server certificate is configured in the Campaign instance by clicking **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.    
+   3. Verify that the APNS server certificate is configured in the Campaign instance by clicking **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.    
    4. Select the mobile app from the list and verify that push channel settings status for iOS is _iOS certificate with filename *.pem is successfully uploaded_.  
    
  {% hint style="warning" %}
@@ -53,7 +53,7 @@ For more information about configuration, see [Channel specific application conf
    3. In the `onComplete` function of `OnCompleteListener`, set the Push identifier by calling the API `MobileCore.setPushIdentifier`.  
    For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
    
-   #### Verify that the push token has successfully synced with the Experience Cloud ID service
+#### Verify that the push token has successfully synced with the Experience Cloud ID service
 
 {% hint style="warning" %}
 If SDK privacy status is `optedout`, the push identifier will not be set.
@@ -67,7 +67,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
       
 ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
-   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.  
    6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
    ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png "App subscriber list, verify mid and push token.")  
@@ -89,7 +89,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
   2. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, call `setPushIdentifier` to set the Push identifier.  
   For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
   
-  #### Verify that the push token has successfully synced with the Experience Cloud ID service
+#### Verify that the push token has successfully synced with the Experience Cloud ID service
 
 {% hint style="warning" %}
 If SDK privacy status is `optedout`, the push identifier will not be set.
@@ -103,14 +103,14 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
       
 ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
-   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
+   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.  
    6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
-   ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_ios.png "App subscriber list, verify mid and push token.")  
+   ![App subscriber list, verify mid and Registration token](../../.gitbook/assets/subscriber_list_ios.png "App subscriber list, verify mid and Registration token.")  
    
-   6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
-   7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
-   8. Verify the successful response(200) for this network call.       
+   7. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
+   8. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
+   9. Verify the successful response(200) for this network call.       
  
  ![ECID network request for push token sync](../../.gitbook/assets/charles_demdex_call_ios.png "ECID network request for push token sync.")
  
@@ -138,19 +138,18 @@ The following events are related to the tracked push notifications:
   5. In the list of events, verify that you have an event with type CollectData.  
   6. In the Details panel on the right, verify the value of the action.  
   The value of the action should be 7 for impression, 2 for the click, and 1 for open.  
-  It is shown in the screenshots below.  
   
    ![Shows Push notification impression tracking](../../.gitbook/assets/push_tracking_impression.png "Shows Push notification impression tracking.")
    
-   Shows tracking of the _impression_ event. It is indicated by action 7.
+   Impression event tracking (action value 7)
    
    ![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png "Shows Push notification click tracking.")
    
-   Shows tracking of the _click_ event. It is indicated by action 2.
+   Click event tracking (action value 2)
    
    ![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png "Shows Push notification open tracking.")
    
-   Shows tracking of the _open_ event. It is indicated by action 1.
+   Open event tracking (action value 1)
   
   
 ###  Troubleshooting using Charles  
