@@ -22,9 +22,9 @@ Sessions contain information about the app's current lifecycle, such as the devi
 
 ## Rules Engine
 
-Mobile Core contains a rule engine that interprets all tracking, PII, Signals, _Request Content_, and extension-specific events for the SDK. Users can create rules, which when matched, trigger a _Response Content_ event for the listening extension to handle the associated consequence\(s\). For more information, see [Rules Engine](rules-engine/)
+Mobile Core contains a rule engine that interprets all tracking, PII, Signals, _Request Content_, and extension-specific events for the SDK. Users can create rules, which when matched, trigger a _Response Content_ event for the listening extension to handle the associated consequence\(s\). For more information, see [Rules Engine](rules-engine/).
 
-## Signals
+## Signal
 
-The Signals extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Launch. For more information, see [Signals]().
+The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Launch. For more information, see [Signal](signals/).
 
