@@ -128,7 +128,7 @@ The following events are related to the tracked push notifications:
   
 ###  Troubleshooting using Project Griffon  
 
-  You can verify the push token sync with the ECID service in Project Griffon.  
+  You can verify the push notification tracking in Project Griffon.  
   
   1. Connect your app to a Griffon session.  
   2. Send a push notification to app from your Campaign instance.  
