@@ -2,12 +2,9 @@
 
 ## Events handled
 
-### Campaign Request Content <a id="configuration-response-content"></a>
+### Campaign Request Content <a id="campaign-request-content"></a>
 
-This event is dispatched from the Event Hub for the following scenarios:
-
-* Dispatch the event data that contains the loaded consequences for the latest registered Campaign rules.
-* This event is dispatched immediately after a Campaign rule is found to be true.  For example, if the rule is _User has launched the app_, after the user launches the app, this rule is found to be true. This event also contains the data of the displayed local, alert, or full-screen message.
+This event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the *"User has launched the app"* rule is found to be true. A triggered consquences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
 
 #### Data payload definition <a id="data-payload-definition-1"></a>
 
@@ -15,26 +12,29 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `triggeredconsequence` | Array |  |  |
-| `loadedconsequences` | Array |  |  |
+| `triggeredconsequence` | Map | No | The triggered Campaign rule consquence. |
 
 #### Event data example
 
+triggered consequence data
+
 ```text
-{ 
-    "loadedconsequences": [
-    {
-        "assetsPath":"assets/path/", 
-        "detail":"details", 
-        "id":"123", 
-        "type":"iam"
+{
+  "triggeredconsequence": {
+    "assetsPath": "assets/path/",
+    "id": "123",
+    "detail": {
+      "template": "local",
+      "wait": 0,
+      "userData": {
+        "deliveryId": "123abc",
+        "broadlogId": "456edf"
+      },
+      "title": "local example",
+      "content": "local example text"
     },
-    {
-        "assetsPath":"assets/path/", 
-        "detail":"details", 
-        "id":"456", 
-        "type":"csp"
-    }]
+    "type": "iam"
+  }
 }
 ```
 
@@ -52,11 +52,11 @@ The Adobe Campaign Standard extension reads the following key from the configura
 | `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in development environment in Adobe Campaign Standard. |
 | `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment in the Adobe Campaign Standard instance. |
 | `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the stage environment in Adobe Campaign Standard. |
-| `campaign.server` | String | Yes | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
-| `campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in in the production environment in Adobe Campaign Standard. |
-| `campaign.mcias` | String | Yes | This contains the in-app messaging service URL endpoint |
-| `campaign.timeout` | Integer | Yes | This contains the amount of time to wait for a response from in-app messaging service |
-| `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings |
+| `campaign.server` | String | No | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
+| `campaign.pkey` | String | No | This contains the identifier for a mobile app that was configured in the production environment in Adobe Campaign Standard. |
+| `campaign.mcias` | String | No | This contains the in-app messaging service URL endpoint. |
+| `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from in-app messaging service. |
+| `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings. |
 
 {% hint style="info" %}
 After `global.privacy` is changed to **optout**, the linkage fields are reset. All downloaded messages and rules are erased, and no tracking request can leave the device.
@@ -88,7 +88,7 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `linkage_fields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
+| `linkagefields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the user who is logged in. |
 
 #### Event data example
 
@@ -121,7 +121,7 @@ Here are the key-value pairs in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `lifecyclecontextdata` | Map | No |  |
+| `lifecyclecontextdata` | Map | No | The map that contains the stored lifecycle metrics. |
 
 #### Event data example
 
@@ -143,6 +143,30 @@ Here are the key-value pairs in this event:
     },    
     "starttimestampmillis" :44,    
     "maxsessionlength":22
+}
+```
+
+### Generic Data OS <a id="generic-data-os"></a>
+
+This event is dispatched by the Core extension to the Event Hub when the `collectMessageInfo` API is invoked by the app developer to track local and push notification interactions.
+
+#### Data payload definition <a id="data-payload-definition-7"></a>
+
+Here are the key-value pairs in this event:
+
+| **Key**      | **Value Type** | **Optional** | **Description**                                              |
+| :----------- | :------------- | :----------- | :----------------------------------------------------------- |
+| `deliveryId` | String         | No           | The string that contains the delivery ID of the message for which there were interactions. |
+| `action`     | String         | No           | The string that contains the message interaction ID.         |
+| `broadlogId` | String         | No           | The string that contains the broadlog ID of the message for which there were interactions. |
+
+#### Event data example
+
+```json
+{
+  "deliveryId": "1442de4",
+  "action": "2",
+  "broadlogId": "h1c1380"
 }
 ```
 
