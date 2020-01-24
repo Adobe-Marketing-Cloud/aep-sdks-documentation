@@ -26,5 +26,5 @@ Mobile Core contains a rule engine that interprets all tracking, PII, Signals, _
 
 ## Signal
 
-The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Launch. For more information, see [Signal](signals/).
+The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Experience Platform Launch. For more information, see [Signal](signals/).
 

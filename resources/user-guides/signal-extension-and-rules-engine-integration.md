@@ -12,7 +12,7 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Adobe Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
+Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
 The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
@@ -53,7 +53,7 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
     ACPCore.collectPii(piiContextData)
    ```
 
-2. In Adobe Experience Platform Launch, create a data element for the `user_email` context data key.
+2. In Experience Platform Launch, create a data element for the `user_email` context data key.
 
    ![Data Element Example for Collect PII context data key](../../.gitbook/assets/data_element_example_collect_pii.png)
 
