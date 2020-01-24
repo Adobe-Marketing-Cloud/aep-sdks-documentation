@@ -70,13 +70,14 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
    5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
    6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
-   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
+   ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png "App subscriber list, verify mid and push token.")  
    
    6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
    7. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
    8. Verify the successful response(200) for this network call.       
  
  ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
+ 
  {% endtab %}
 
 {% tab title="iOS" %}
@@ -105,42 +106,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
    5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
    6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
-   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
+   ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_ios.png "App subscriber list, verify mid and push token.")  
    
    6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
    7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
    8. Verify the successful response(200) for this network call.       
  
- ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
+ ![ECID network request for push token sync](../../.gitbook/assets/charles_demdex_call_ios.png "ECID network request for push token sync.")
+ 
   {% endtab %}
   {% endtabs %}
- 
-#### Verify that the push token has successfully synced with the Experience Cloud ID service
 
-{% hint style="warning" %}
-If SDK privacy status is `optedout`, the push identifier will not be set.
-{% endhint %}
 
-   1. Verify the push token sync with the Experience Cloud ID service (ECID).  
-   2. To verify, launch your app connected to a Project Griffon session.   
-   3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
-   4. In the details panel on the right, verify the value of the push token for this device.  
-      The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
-      
-![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
-
-   5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **_Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)_**.  
-   6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
-   
-   ![App subscriber list, verify mid and push token](../../.gitbook/assets/campaign_app_subscriber_list.png "App subscriber list, verify mid and push token.")  
-   
-   6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
-   7. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
-   8. Verify the successful response(200) for this network call.       
- 
- ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
- 
- 
  ## Troubleshooting push notification events tracking  
 
 The following events are related to the tracked push notifications:
