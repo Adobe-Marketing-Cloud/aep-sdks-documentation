@@ -58,7 +58,7 @@ For more information about configuration, see [Channel specific application conf
 
    For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
 
-#### Verify that the push token has successfully synced with the Experience Cloud ID service
+### Verify that the push token has successfully synced with the Experience Cloud ID service
 
 {% hint style="warning" %}
 If SDK privacy status is `optedout`, the push identifier will not be set.
@@ -97,7 +97,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 
    For more information, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-messaging).
 
-#### Verify that the push token has successfully synced with the Experience Cloud ID service
+### Verify that the push token has successfully synced with the Experience Cloud ID service
 
 {% hint style="warning" %}
 If SDK privacy status is `optedout`, the push identifier will not be set.
