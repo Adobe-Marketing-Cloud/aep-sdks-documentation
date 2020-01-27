@@ -72,18 +72,18 @@ Select **Enter Custom settings** and complete the following tasks:
 
 2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
-You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
+   You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
 
-![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
+   ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-1. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
+3. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
 
-You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
+   You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
-![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
+   ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
-1. Click **Save**.
-2. Follow the publishing process to update your SDK configuration.
+4. Click **Save**.
+5. Follow the publishing process to update your SDK configuration.
 
 ## Configure Adobe Analytics extension
 
@@ -462,30 +462,30 @@ When the user downloads and runs an app as the result of a Google Play store acq
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
-```java
-package com.your.package.name;  // replace with your app package name
+   ```java
+   package com.your.package.name;  // replace with your app package name
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+   import android.content.BroadcastReceiver;
+   import android.content.Context;
+   import android.content.Intent;
 
-public class GPBroadcastReceiver extends BroadcastReceiver {
-  @Override
-  public void onReceive(Context c, Intent i) {
-      com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
-  }
-}
-```
+   public class GPBroadcastReceiver extends BroadcastReceiver {
+     @Override
+     public void onReceive(Context c, Intent i) {
+         com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
+     }
+   }
+   ```
 
-1. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
+2. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
 
-```markup
-<receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
-</receiver>
-```
+   ```markup
+   <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
+       <intent-filter>
+           <action android:name="com.android.vending.INSTALL_REFERRER" />
+       </intent-filter>
+   </receiver>
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
