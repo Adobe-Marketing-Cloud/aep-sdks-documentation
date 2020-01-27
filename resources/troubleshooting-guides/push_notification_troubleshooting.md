@@ -63,7 +63,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 2. To verify, launch your app connected to a Project Griffon session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device.  
-The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot   below.  
+The value in pushIdentifier is the same value that is sent to the ECID service.  
       
 ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
@@ -99,7 +99,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 2. To verify, launch your app connected to a Project Griffon session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device.  
-The value in pushIdentifier is the same value that is sent to the ECID service. For more information, see screenshot below.  
+The value in pushIdentifier is the same value that is sent to the ECID service.  
       
 ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
