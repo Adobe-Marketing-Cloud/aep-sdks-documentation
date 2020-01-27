@@ -10,9 +10,6 @@ Having trouble creating a mobile property or need access to Experience Platform 
 
 1. Click **New Property**.
 2. Type a name and select **Mobile** as the platform.
-
-   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
-
 3. Locate the new property in the **Properties** list and open it.
 
 {% hint style="danger" %}
