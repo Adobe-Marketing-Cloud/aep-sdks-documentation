@@ -82,6 +82,7 @@
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
   * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
+  * [Campaign Push Notifications](resources/troubleshooting-guides/push_notification_troubleshooting.md)
 * [Building mobile extensions](resources/building-mobile-extensions/README.md)
   * [Event processing](resources/building-mobile-extensions/event-processing.md)
   * [Shared states and events](resources/building-mobile-extensions/shared-states-and-events.md)
