@@ -72,9 +72,9 @@ The value in pushIdentifier is the same value that is sent to the ECID service.
    
   ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png "App subscriber list, verify mid and push token.")  
    
-6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
-7. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
-8. Verify the successful response(200) for this network call.       
+7. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
+8. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
+9. Verify the successful response(200) for this network call.       
  
   ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  
