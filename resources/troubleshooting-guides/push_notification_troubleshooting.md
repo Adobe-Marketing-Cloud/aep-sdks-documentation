@@ -72,18 +72,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 4. In the details panel on the right, verify the value of the push token for this device.  
    The value in pushIdentifier is the same value that is sent to the ECID service.
 
-   ![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png)
+     ![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png)
 
 5. To verify that app’s push token is mapped to the correct Experience cloud ID\(ECID\) in the Campaign instance, click **Adobe Campaign -&gt; Administrator -&gt; Channels -&gt; Mobile App \(AEP SDK\)**.
 6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.
 
-   ![App subscriber list, verify mid and push token.](../../.gitbook/assets/subscriber_list_android.png)
+     ![App subscriber list, verify mid and push token.](../../.gitbook/assets/subscriber_list_android.png)
 
 7. If you are using Charles, verify that the push token has successfully synced with the ECID service.
 8. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
 9. Verify the successful response\(200\) for this network call.
 
-   ![ECID network request for push token sync.](../../.gitbook/assets/push_identifier.png)
+     ![ECID network request for push token sync.](../../.gitbook/assets/push_identifier.png)
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -114,18 +114,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 
    The value in pushIdentifier is the same value that is sent to the ECID service.  
 
-![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png)
+    ![Verify SetPushIdentifier event.](../../.gitbook/assets/push_token_to_identity.png)
 
 1. To verify that app’s push token is mapped to the correct Experience cloud ID\(ECID\) in the Campaign instance, click  **Adobe Campaign -&gt; Administrator -&gt; Channels -&gt; Mobile App \(AEP SDK\)**.  
 2. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.
 
-   ![App subscriber list, verify mid and Registration token.](../../.gitbook/assets/subscriber_list_ios.png)
+    ![App subscriber list, verify mid and Registration token.](../../.gitbook/assets/subscriber_list_ios.png)
 
 3. If you are using Charles, verify that the push token has successfully synced with the ECID service.
 4. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
 5. Verify the successful response\(200\) for this network call.
 
-   ![ECID network request for push token sync.](../../.gitbook/assets/charles_demdex_call_ios.png)
+    ![ECID network request for push token sync.](../../.gitbook/assets/charles_demdex_call_ios.png)
 {% endtab %}
 {% endtabs %}
 
