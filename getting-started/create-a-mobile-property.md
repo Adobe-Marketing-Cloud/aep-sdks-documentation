@@ -21,26 +21,26 @@ The default privacy status is set to _opted in_ and might impact data collection
 
 ## Set up your extensions
 
-1. In Experience Platform Launch, click the **Extensions** tab. The **Mobile Core** and **Profile** extensions are installed by default.
+1. Within the mobile property, click the **Extensions** tab. The **Mobile Core** and **Profile** extensions are installed by default and will display on the tab.
 2. On the **Mobile Core** card, click **Configure**.
 
    ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
 
-3. Type your Experience Cloud Org ID.
+3. Type your **Experience Cloud Org ID**.
 
    By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
-4. \(Optional\) Provide your Experience Cloud ID Server.
+4. \(Optional\) Provide your **Experience Cloud Server**.
 
    This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
-5. Optionally, change the **Session Timeout** value.
+5. \(Optional\) Change the **Session Timeout** value.
 
    A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
    a. Click **Save** to confirm your settings for **Mobile Core**.
 
-   b. Click **Catalog** and install the extensions that you need.
+6. On the **Extensions** tab, click **Catalog** and install the extensions that you need.
 
 {% hint style="info" %}
 Not sure on what extensions you need? Check out the extensions in the _Using Mobile Extensions_ section.
