@@ -40,7 +40,7 @@ To use the Mobile Services extension, complete these steps:
 The Mobile Services extension requires the Analytics extension for reporting and uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite might be sent.
 {% endhint %}
 
-### Automatic Configuration \(Recommended\)
+### Automatic configuration \(Recommended\)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
@@ -51,7 +51,7 @@ The Mobile Services extension requires the Analytics extension for reporting and
 
 ![Mobile Services Extension Configuration](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
-### Manual Configuration
+### Manual configuration
 
 {% hint style="danger" %}
 The following instructions only apply if you do not see your app listed or need to manually configure your Mobile Services app.
@@ -85,7 +85,7 @@ Select **Enter Custom settings** and complete the following tasks:
 4. Click **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
-## Configure Adobe Analytics extension
+## Configure the Adobe Analytics extension
 
 Follow the steps listed in the [Adobe Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/4a820ee0834b79be73c05ff0ac7d7975e4784a35/using-mobile-extensions/adobe-mobileservices/adobe-analytics/README.md) to ensure that this extension is correctly configured and implemented.
 
@@ -238,7 +238,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-### Debugging the push set up
+### Debugging the push messaging set up
 
 If everything is configured correctly, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
 
@@ -578,7 +578,7 @@ To prepare for your migration, remember the following information:
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
 | mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
-## Watch the Video
+## Watch the video
 
 {% embed url="https://youtu.be/VKI2ECZU3bU" caption="Video showing Mobile Services integration with Adobe Experience Platform Mobile SDK" %}
 
