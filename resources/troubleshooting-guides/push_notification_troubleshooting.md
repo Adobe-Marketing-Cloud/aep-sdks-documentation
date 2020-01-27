@@ -12,7 +12,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 For more information, see [Add Firebase to your Android project](https://firebase.google.com/docs/android/setup#console).  
 3. Add the generated **“google-service.json”** to the project and set up the project and module level gradle files.  
 For more information, see [Add Firebase to your Android project](https://firebase.google.com/docs/android/setup#console).
-4. Verify that Firebase server key is configured in the Campaign instance by clicking **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.    .
+4. Verify that Firebase server key is configured in the Campaign instance by clicking **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.
 5. Select the mobile app from the list and verify that the push channel settings status for Android is _Android key set up success_.  
    
    ![Server key configuration in Android](../../.gitbook/assets/android_server_key.png "Server key configuration in Android.")
@@ -39,7 +39,7 @@ For more information, see [Establishing a Certificate-Based Connection to APNs](
 
 {% endtabs %}
    
-For more information about configuration, see [Channel specific application configuration in Adobe Campaign.](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).  
+For more information about configuration, see [Channel specific application configuration in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).  
   
 ## Set up an Android or iOS app to receive push notifications  
 
@@ -65,18 +65,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 4. In the details panel on the right, verify the value of the push token for this device.  
 The value in pushIdentifier is the same value that is sent to the ECID service.  
       
-![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
+  ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png "Verify SetPushIdentifier event.")
 
 5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click  **Adobe Campaign -> Administrator -> Channels -> Mobile App (AEP SDK)**.  
 6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed.  
    
-![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png "App subscriber list, verify mid and push token.")  
+  ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png "App subscriber list, verify mid and push token.")  
    
 6. If you are using Charles, verify that the push token has successfully synced with the ECID service.  
 7. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
 8. Verify the successful response(200) for this network call.       
  
-![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
+  ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png "ECID network request for push token sync.")
  
  {% endtab %}
 
@@ -155,15 +155,15 @@ The value of the action should be 7 for impression, 2 for the click, and 1 for o
 
 To verify that a successful network call is made to track the push notification interaction event, look for the GET request with the query string `id=broadlogID,deliveryID,action` to the Campaign server, see screenshots below for more details about what to look.  
 
-Screenshot for the impression event tracking(action value 7)
+Impression event tracking(action value 7)
 
 ![Impression event tracking for notification](../../.gitbook/assets/tracking_impression.png "Impression event tracking for notification.")
 
-Screenshot for the click event tracking(action value 2)
+Click event tracking(action value 2)
 
 ![Click event tracking for notification](../../.gitbook/assets/tracking_click.png "Click event tracking for notification.")
 
-Screenshot for the open event tracking(action value 1)
+Open event tracking(action value 1)
 
 ![Open event tracking for notification](../../.gitbook/assets/tracking_open.png "Open event tracking for notification.")
 
