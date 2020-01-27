@@ -2,7 +2,7 @@
 
 The Adobe Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org).
 
-Follow the directions below to incorporate the SDK into your mobile application.
+Follow the directions below to to incorporate the SDK into your mobile application.
 
 {% hint style="info" %}
 For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods, Gradle, and/or npmjs. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
@@ -16,8 +16,9 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
-1. Open a previously created and configured **Mobile** property in Experience Platform Launch, and click on the **Environments** tab, and then click on the install package icon![](../.gitbook/assets/package.png).
-2. On the **Mobile Install Instructions** dialog box, select **Android**.
+1. Open a previously created and configured mobile property in Experience Platform Launch and click on the **Environments** tab
+2. In the row for the **Development** environment, click on the install package icon![](../.gitbook/assets/package.png).
+3. On the **Mobile Install Instructions** dialog box, select the **Android** tab.
 3. Follow the instructions for using Gradle with Android.
 
 The necessary dependencies and initialization code can be copied from the dialog box to your app project.
