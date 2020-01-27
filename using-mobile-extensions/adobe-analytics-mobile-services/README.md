@@ -76,7 +76,8 @@ Select **Enter Custom settings** and complete the following tasks:
 
    ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-3. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
+3. Provide the **Messages URL**.  
+   Here is a sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
 
    You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
@@ -93,7 +94,7 @@ In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisiti
 
 ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
-## Add Mobile Services extension to your app
+## Add the Mobile Services extension to your app
 
 {% hint style="info" %}
 The Mobile Services extension depends on the Core extension, which includes the Identity and Lifecycle frameworks and the Analytics extension.
