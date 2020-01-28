@@ -17,9 +17,9 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 {% endhint %}
 
 1. Open a previously created and configured mobile property in Experience Platform Launch and click on the **Environments** tab
-2. In the row for the **Development** environment, click on the install package icon![](../.gitbook/assets/package.png).
+2. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package.png)).
 3. On the **Mobile Install Instructions** dialog box, select the **Android** tab.
-3. Follow the instructions for using Gradle with Android.
+4. Follow the instructions for using Gradle with Android.
 
 The necessary dependencies and initialization code can be copied from the dialog box to your app project.
 
