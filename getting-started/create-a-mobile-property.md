@@ -14,7 +14,7 @@ Having trouble creating a mobile property or need access to Experience Platform 
    If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
 
 3. Click **Save** to create the mobile property.
-4. Locate the new property in the **Properties** list displayed and open it.
+4. Locate the new property in the displayed Properties list and open it.
 
 {% hint style="danger" %}
 The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
