@@ -11,7 +11,7 @@ Having trouble creating a mobile property or need access to Experience Platform 
 1. Click **New Property**.
 2. Type a name and select **Mobile** as the platform.
 
-   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status)settings later.
+   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
 
 3. Click **Save** to create the mobile property.
 4. Locate the new property in the displayed Properties list and open it.
@@ -55,10 +55,10 @@ To create a library of changes and publish them to a **Development Environment**
 2. Under the **Development** section of the publishing workflow, click **Add New Library**.
 3. Specify any name for the library **Name**.
 4. From the **Environment** drop-down list, select Development as the environment.
-5. Click **Add All Changed Resources** to add the configuration changes to be deployed. \(To add only some changes, click **Add a Resource**.\) 
-6. Click **Save & Build for Development**.   **Tip**: The library builds and is displayed under the **Development** section of the publishing workflow.
-7. On the library card, click _..._ to see a drop-down list.
-8. Select **Submit for Approval** and then **Submit**.
+5. Click **Add All Changed Resources** to add the configuration changes to be deployed. (To add only some changes, click **Add a Resource**.) 
+5. Click **Save & Build for Development**.   **Tip**: The library builds and is displayed under the **Development** section of the publishing workflow.
+6. On the library card, click *...* to see a drop-down list.
+7. Select **Submit for Approval** and then **Submit**.
 
 The library of changes are deployed to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 

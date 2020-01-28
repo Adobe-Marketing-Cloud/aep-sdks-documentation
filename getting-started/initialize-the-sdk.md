@@ -202,7 +202,7 @@ try {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
+{% tab title="iOS" %}
 ### Objective-C
 
 ```objectivec
