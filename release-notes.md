@@ -14,11 +14,11 @@ The following updates were made in this release:
 
 **iOS Core 2.4.0**
 
-* Added a new property `eventUniqueIdentifier` to the `ACPExtensionEvent` class. 
-* Fixed a issue where advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
-* Fixed a issue where SDK was trying to download the rules multipile times right after app launch.
+* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
+* Fixed an issue where the advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
+* Fixed an issue where the SDK was trying to download the rules multipile times immediately after app launch.
 * Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
-* Fixed a bug where iOS fullscreen message was not able to load cached images.
+* Fixed a bug where the iOS fullscreen message was unable to load cached images.
 
 ## January 25, 2020
 

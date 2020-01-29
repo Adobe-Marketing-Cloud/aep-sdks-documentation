@@ -459,7 +459,7 @@ When the user downloads and runs an app as the result of a Google Play store acq
 
 {% tabs %}
 {% tab title="Android" %}
-#### Using BroadcastReceiver
+#### Using The BroadcastReceiver
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
@@ -489,7 +489,7 @@ When the user downloads and runs an app as the result of a Google Play store acq
    ```
 
 
-#### Using Google Play Install Referrer APIs
+#### Using The Google Play Install Referrer APIs
 
 Starting on March 1, 2020, Google is deprecating the install_referrer intent broadcast mechanism. For more information, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use MobileServcies Extension version 1.1.0 or newer.
 
