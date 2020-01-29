@@ -24,11 +24,11 @@ The following updates were made in this release:
 **iOS Griffon 1.0.4** 
 
 * Griffon SDK adds and reports uniqueIdentifier and timestamp associated with eventHub events. (works from Core v2.4.0).
-* Improved Logging.
+* Improved Logging to assist with debugging.
 
 **Android Griffon 1.1.2**
 
-* Bug Fix - Fixed the nomenclature for unique event identifier.
+* Fixed the nomenclature for the unique event identifier.
 
 ## January 25, 2020
 
@@ -44,10 +44,10 @@ The following updates were made in this release:
 
 **Android Griffon 1.1.1**
 
-* Griffon SDK now reports event's source, type, sequence number and timestamp for every event.
-* Griffon SDK adds and reports uniqueIdentifier associated with eventHub events. (works from Core v1.4.2)
-* Bug fix: removed unwanted resource files that caused compilation error
-* Improved logging
+* The Griffon SDK now reports an event's source, type, sequence number and timestamp for every event.
+* The Griffon SDK adds and reports `uniqueIdentifier` associated with eventHub events. This update is effective from Mobile Core version 1.4.2
+* Removed unwanted resource files that were creating compilation error.
+* Improved logging to assist with debugging.
 
 ## January 23, 2020
 
