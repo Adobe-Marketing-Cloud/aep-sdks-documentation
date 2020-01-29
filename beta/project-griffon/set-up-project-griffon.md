@@ -71,7 +71,7 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
 
 #### Java
 
-1. Register the extension wherever you are registering other extensions.
+1. Register the extension when you register other extensions.
 
    ```java
      public class MobileApp extends Application {
@@ -122,19 +122,21 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Start a Project Griffon session
 
-1. [Create](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#1-create-a-session) a new session in the [griffon UI](https://griffon.adobe.com/) by providing a base url for your application.
+1. Create a session in the [Griffon UI](https://griffon.adobe.com/) by providing a base url for your application.
+
+For more information about creating a session, see [Create a session](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#1-create-a-session).
 
 2. Configure your iOS/Android application to handle the griffon session deeplink obtained from the griffon.
 
 {% tabs %}
 {% tab title="Android" %}
 
-Once your app is configured to handle the deeplink. You can start the griffon session by opening the deeplink provided from the griffon UI
+After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
 ![](../../.gitbook/assets/griffon_deeplink_configure.png)
 
 ### startSession
 
-Alternatively, startSession API can be used to start a griffon session by providing the deeplink. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
+You can also start a Griffon session by providing the deeplink through `startSession` API. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
 
 #### Java
 
@@ -152,7 +154,7 @@ public static void startSession(final String url)
 {% endtab %}
 {% tab title="iOS" %}
 
-Once your app is configured to handle the deeplink. You can start the griffon session by opening the deeplink provided from the griffon UI
+After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
 ![](../../.gitbook/assets/griffon_deeplink_configure.png)
 
 ### startSession
