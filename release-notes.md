@@ -8,6 +8,32 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## January 28, 2019
+
+The following updates were made in this release:
+
+**iOS Griffon 1.0.4** 
+
+* Griffon SDK adds and reports uniqueIdentifier and timestamp associated with eventHub events. (works from Core v2.4.0).
+* Improved Logging.
+
+**Android Griffon 1.1.2**
+
+* Bug Fix - Fixed the nomenclature for unique event identifier.
+
+
+## January 24, 2019
+
+The following updates were made in this release:
+
+**Android Griffon 1.1.1**
+
+* Griffon SDK now reports event's source, type, sequence number and timestamp for every event.
+* Griffon SDK adds and reports uniqueIdentifier associated with eventHub events. (works from Core v1.4.2)
+* Bug fix: removed unwanted resource files that caused compilation error
+* Improved logging
+
+
 ## January 13, 2020
 
 The following updates were made in this release:
