@@ -80,7 +80,7 @@ public  void onReceive(Context context, Intent intent) {
 
 You can use this API to process the data you get from the Google Play Install Referrer APIs.
 
-**Tip**: This API is available starting in Android version `1.1.0`
+**Tip**: This API is available starting in Android version `1.1.0`.
 
 ### processReferrer
 
@@ -153,6 +153,5 @@ void handleGooglePlayReferrer() {
         }
     });
 }
-
 ```
 
