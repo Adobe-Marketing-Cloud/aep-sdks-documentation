@@ -8,6 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+
 ## January 29, 2020
 
 The following updates were made in this release:
@@ -16,6 +17,19 @@ The following updates were made in this release:
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
+## January 28, 2019
+
+The following updates were made in this release:
+
+**iOS Griffon 1.0.4** 
+
+* Griffon SDK adds and reports uniqueIdentifier and timestamp associated with eventHub events. (works from Core v2.4.0).
+* Improved Logging to assist with debugging.
+
+**Android Griffon 1.1.2**
+
+* Fixed the nomenclature for the unique event identifier.
+
 ## January 27, 2020
 
 The following updates were made in this release:
@@ -23,8 +37,8 @@ The following updates were made in this release:
 **iOS Core 2.4.0**
 
 * Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
-* Fixed an issue where the advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
-* Fixed an issue where the SDK was trying to download the rules multipile times immediately after app launch.
+* Fixed an issue where the advertising identifier was duplicated in the response to the `getSDKIdentifiers` API.
+* Fixed an issue where the SDK was trying to download the rules multiple times immediately after app launch.
 * Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
 * Fixed a bug where the iOS fullscreen message was unable to load cached images.
 
@@ -36,6 +50,17 @@ The following updates were made in this release:
 
 * `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
 
+## January 24, 2020
+
+The following updates were made in this release:
+
+**Android Griffon 1.1.1**
+
+* The Griffon SDK now reports an event's source, type, sequence number and timestamp for every event.
+* The Griffon SDK adds and reports `uniqueIdentifier` associated with eventHub events. This update is effective from Mobile Core version 1.4.2
+* Removed unwanted resource files that were creating compilation error.
+* Improved logging to assist with debugging.
+
 ## January 23, 2020
 
 The following updates were made in this release:
@@ -43,7 +68,6 @@ The following updates were made in this release:
 **iOS Mobile Services 1.0.5**
 
 * The shared state of the Profile extension can now be used as the traits for In-App Messaging.
-
 
 **Android Mobile Services 1.1.0**
 

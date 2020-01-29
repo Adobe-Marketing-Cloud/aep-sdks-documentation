@@ -38,7 +38,13 @@ No extension settings are required. Save and [publish the extension](https://aep
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` by adding `pod 'ACPGriffon'`
+1. Add the library to your project via your Cocoapods `Podfile` 
+
+```
+pod 'ACPCore'
+pod 'ACPGriffon'
+```
+
 2. Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
@@ -65,15 +71,15 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
 
 #### Java
 
-1. Register the extension wherever you are registering other extensions.
+1. Register the extension when you register other extensions.
 
    ```java
-     public class TargetApp extends Application {
+     public class MobileApp extends Application {
       @Override
       public void onCreate() {
          super.onCreate();
          MobileCore.setApplication(this);
-         MobileCore.ConfigureWithAppId("yourAppId");
+         MobileCore.configureWithAppId("yourAppId");
          try {
             Griffon.registerExtension();
             MobileCore.start(null);
@@ -83,8 +89,6 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
       }
      }
    ```
-
-2. Open the deeplink created on the Griffon UI to start the Griffon session.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -118,13 +122,21 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Start a Project Griffon session
 
-After the extension has been registered, start a Project Griffon session by using the following API:
+1. Create a session in the [Griffon UI](https://griffon.adobe.com/) by typing a base URL for your application.
+
+For more information about creating a session, see [Create a session](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#1-create-a-session).
+
+2. Configure your iOS/Android application to handle the griffon session deeplink obtained from the griffon.
 
 {% tabs %}
 {% tab title="Android" %}
+
+After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
+![](../../.gitbook/assets/griffon_deeplink_configure.png)
+
 ### startSession
 
-This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
+You can also start a Griffon session by providing the deeplink through `startSession` API. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
 
 #### Java
 
@@ -140,8 +152,11 @@ public static void startSession(final String url)
  Griffon.startSession(url);
 ```
 {% endtab %}
-
 {% tab title="iOS" %}
+
+After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
+![](../../.gitbook/assets/griffon_deeplink_configure.png)
+
 ### startSession
 
 This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
