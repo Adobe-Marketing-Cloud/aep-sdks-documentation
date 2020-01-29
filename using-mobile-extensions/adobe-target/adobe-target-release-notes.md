@@ -1,5 +1,13 @@
 # Adobe Target Extension Release Notes
 
+## January 29, 2020
+
+The following updates were made in this release:
+
+**Android Target 1.1.4 and iOS Target 2.1.5**
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## October 2, 2019
 
 The following updates were made in this release:

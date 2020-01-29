@@ -40,7 +40,7 @@ To use the Mobile Services extension, complete these steps:
 The Mobile Services extension requires the Analytics extension for reporting and uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite might be sent.
 {% endhint %}
 
-### Automatic Configuration \(Recommended\)
+### Automatic configuration \(Recommended\)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
@@ -51,7 +51,7 @@ The Mobile Services extension requires the Analytics extension for reporting and
 
 ![Mobile Services Extension Configuration](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.34-pm.png)
 
-### Manual Configuration
+### Manual configuration
 
 {% hint style="danger" %}
 The following instructions only apply if you do not see your app listed or need to manually configure your Mobile Services app.
@@ -72,20 +72,21 @@ Select **Enter Custom settings** and complete the following tasks:
 
 2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
-You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
+   You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
 
-![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
+   ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-1. Provide the **Messages URL** \(sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`\).
+3. Provide the **Messages URL**.  
+   Here is a sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
 
-You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
+   You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
-![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
+   ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
-1. Click **Save**.
-2. Follow the publishing process to update your SDK configuration.
+4. Click **Save**.
+5. Follow the publishing process to update your SDK configuration.
 
-## Configure Adobe Analytics extension
+## Configure the Adobe Analytics extension
 
 Follow the steps listed in the [Adobe Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/4a820ee0834b79be73c05ff0ac7d7975e4784a35/using-mobile-extensions/adobe-mobileservices/adobe-analytics/README.md) to ensure that this extension is correctly configured and implemented.
 
@@ -93,7 +94,7 @@ In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisiti
 
 ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
-## Add Mobile Services extension to your app
+## Add the Mobile Services extension to your app
 
 {% hint style="info" %}
 The Mobile Services extension depends on the Core extension, which includes the Identity and Lifecycle frameworks and the Analytics extension.
@@ -238,7 +239,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-### Debugging the push set up
+### Debugging the push messaging set up
 
 If everything is configured correctly, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
 
@@ -462,30 +463,30 @@ When the user downloads and runs an app as the result of a Google Play store acq
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
-```java
-package com.your.package.name;  // replace with your app package name
+   ```java
+   package com.your.package.name;  // replace with your app package name
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+   import android.content.BroadcastReceiver;
+   import android.content.Context;
+   import android.content.Intent;
 
-public class GPBroadcastReceiver extends BroadcastReceiver {
-  @Override
-  public void onReceive(Context c, Intent i) {
-      com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
-  }
-}
-```
+   public class GPBroadcastReceiver extends BroadcastReceiver {
+     @Override
+     public void onReceive(Context c, Intent i) {
+         com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
+     }
+   }
+   ```
 
-1. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
+2. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
 
-```markup
-<receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
-</receiver>
-```
+   ```markup
+   <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
+       <intent-filter>
+           <action android:name="com.android.vending.INSTALL_REFERRER" />
+       </intent-filter>
+   </receiver>
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -578,7 +579,7 @@ To prepare for your migration, remember the following information:
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
 | mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
-## Watch the Video
+## Watch the video
 
 {% embed url="https://youtu.be/VKI2ECZU3bU" caption="Video showing Mobile Services integration with Adobe Experience Platform Mobile SDK" %}
 

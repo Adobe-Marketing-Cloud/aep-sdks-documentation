@@ -13,7 +13,8 @@ Having trouble creating a mobile property or need access to Experience Platform 
 
    If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
 
-3. Locate the new property in the **Properties** list and open it.
+3. Click **Save** to create the mobile property.
+4. Locate the new property in the displayed Properties list and open it.
 
 {% hint style="danger" %}
 The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
@@ -48,19 +49,18 @@ Not sure on what extensions you need? Check out the extensions in the _Using Mob
 
 ## Publish the configuration
 
-To create a library of changes and deploy the library to a **Development Environment**:
+To create a library of changes and publish them to a **Development Environment**, complete the following steps:
 
-1. In the **Publishing** tab, under the **Development** section of the publishing workflow.
-
-   click **Add New Library**.
-
-2. Specify a name for the library and, from the **Environment** drop-down list, select a development environment .
-3. Add the configuration changes to be deployed.
-4. Click **Add All Changed Resources.**  To add only some changes, click **Add a Resource**. 
+1. Click the **Publishing** tab.
+2. Under the **Development** section of the publishing workflow, click **Add New Library**.
+3. Specify any name for the library **Name**.
+4. From the **Environment** drop-down list, select Development as the environment.
+5. Click **Add All Changed Resources** to add the configuration changes to be deployed. (To add only some changes, click **Add a Resource**.) 
 5. Click **Save & Build for Development**.   **Tip**: The library builds and is displayed under the **Development** section of the publishing workflow.
-6. Click on the down arrow for the library and select **Submit for Approval**.
+6. On the library card, click *...* to see a drop-down list.
+7. Select **Submit for Approval** and then **Submit**.
 
-The configuration in the library is deployed to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
+The library of changes are deployed to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
 Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see Launch's [publishing states](https://docs.adobelaunch.com/getting-started-1/validate-and-publish#publish-to-production)**.**

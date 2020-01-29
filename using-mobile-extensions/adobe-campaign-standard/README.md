@@ -18,7 +18,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ### Configure the Campaign Standard extension
 
-![](../../.gitbook/assets/campaign-extension-config-v4.png)
+![](../../.gitbook/assets/campaign-extension-config-v5.png)
 
 #### Campaign Standard endpoints
 
@@ -30,9 +30,9 @@ For this extension, these endpoint URLs should be typed in **without** the `http
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configured this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeLaunchapplicationinAdobeCampaign).
+A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
 
-When the configuration in Campaign is successful, the pKey is automatically generated, as per the Campaign Standard instance and configured in Experience Platform Launch Campaign extension for successful validation.
+After the configuration is successful in Campaign, the pKey is automatically generated and configured in Experience Platform Launch Campaign extension for a successful validation.
 
 #### MCIAS region
 
@@ -56,7 +56,6 @@ Remember the following information when you add the Campaign extension to your a
 
 | Extension | Information |
 | :--- | :--- |
-
 
 | Campaign Standard | This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
 | :--- | :--- |
@@ -90,6 +89,7 @@ The instructions to add these extensions to your mobile app are also available i
 
 {% tabs %}
 {% tab title="Android" %}
+
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
 
 ```java
@@ -295,13 +295,37 @@ To set up local notifications in Android, update the AndroidManifest.xml file wi
 
 ### Set up push messaging
 
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+
+For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
+
 {% hint style="info" %}
 Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-To obtain the registration ID/token, see [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+
+#### Example
+
+```java
+FirebaseInstanceId.getInstance().getInstanceId()
+        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                if (!task.isSuccessful()) {
+                    return;
+                }
+                // Get new Instance ID token
+                String registrationID = task.getResult().getToken();
+                // Log and toast
+                System.out.println("Received new registration token: " + registrationID);
+                // invoke the API to send the push identifier to the Identity Service
+                MobileCore.setPushIdentifier(registrationID);
+            }
+});
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -309,11 +333,185 @@ To obtain the registration ID/token, see [Firebase Cloud Messaging \(FCM\) APIs]
 iOS simulators do not support push messaging.
 {% endhint %}
 
-To obtain the registration ID/token, see [Configuring Remote Notification Support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1).
+#### Objective-C
+
+#### Example
+
+```objectivec
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  // Set the deviceToken that the APNS has assigned to the device
+  [ACPCore setPushIdentifier:deviceToken];
+  //...
+}
+```
+
+#### Swift
+
+#### Example
+
+```swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+  // Set the deviceToken that the APNS has assigned to the device
+  ACPCore.setPushIdentifier(deviceToken)
+  //...
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-Follow instructions in the Android/iOS tabs to set up platform-specific push configuration and use the following API in your React Native project:
+
+Before you use the following API in your React Native project, complete the steps in the **Android** and **iOS** tabs to set up platform-specific push configuration.
+
+#### Example
+
+```javascript
+ACPCore.setPushIdentifier("pushID");
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Tracking local and push notification message interactions
+
+User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event.
+
+{% hint style="warning" %}
+The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for the proper implementation of local and push notification message tracking. The Campaign document about local notification tracking is [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the Campaign document about push notification tracking is [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Syntax
+
+```java
+public static void collectMessageInfo(final Map<String, Object> messageInfo)
+```
+
+- *messageInfo* is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+
+#### Java
+
+#### Example
+
+```java
+@Override
+protected void onResume() {
+  super.onResume();
+  handleTracking();
+}
+
+// handle notification open and click tracking
+private void handleTracking() {
+  Intent intent = getIntent();
+  Bundle data = intent.getExtras();
+  HashMap<String, Object> userInfo = null;
+
+  if (data != null) {
+    userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
+  } else {
+    return;
+  }
+
+  // Check if we have notification user info.
+  // If it is present, this view was opened based on a notification.
+  if (userInfo != null) {
+    String deliveryId = (String)userInfo.get("deliveryId");
+    String broadlogId = (String)userInfo.get("broadlogId");
+
+    HashMap<String, Object> contextData = new HashMap<>();
+
+    if (deliveryId != null && broadlogId != null) {
+      contextData.put("deliveryId", deliveryId);
+      contextData.put("broadlogId", broadlogId);
+
+      // Send Click Tracking since the user did click on the notification
+      contextData.put("action", "2");
+      MobileCore.collectMessageInfo(contextData);
+
+      // Send Open Tracking since the user opened the app
+      contextData.put("action", "1");
+      MobileCore.collectMessageInfo(contextData);
+    }
+  }
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Syntax
+
+```objectivec
++ (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
+```
+
+- *messageInfo* is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+
+#### Objective-C
+
+#### Example
+
+```objectivec
+// Handle notification interaction from background or closed
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+    dispatch_async(dispatch_get_main_queue(), ^{
+    	NSDictionary *userInfo = response.notification.request.content.userInfo;
+    	NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
+    	NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
+          
+    	if(!broadlogId.length || !deliveryId.length){
+      	return;
+      }
+       // Send Click Tracking since the user did click on the notification
+       [ACPCore collectMessageInfo:@{
+                                      @"broadlogId" : broadlogId,
+                                      @"deliveryId": deliveryId,
+                                      @"action": @"2"
+                                      }];
+       // Send Open Tracking since the user opened the app
+       [ACPCore collectMessageInfo:@{
+                                      @"broadlogId" : broadlogId,
+                                      @"deliveryId": deliveryId,
+                                      @"action": @"1"
+                                      }];
+    });
+}
+```
+
+#### Swift
+
+#### Example
+
+```swift
+// Handle notification interaction from background or closed
+func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+       DispatchQueue.main.async(execute: {
+       		let userInfo = response.notification.request.content.userInfo
+       		var broadlogId:String = (userInfo["_mId"] ?? userInfo["broadlogId"]) as! String
+       		var deliveryId:String = (userInfo["_dId"] ?? userInfo["deliveryId"]) as! String
+
+       		if (broadlogId.count == 0 || deliveryId.count == 0) {
+          	return
+          }
+          // Send Click Tracking since the user did click on the notification
+					ACPCore.collectMessageInfo([
+            "broadlogId": broadlogId,
+						"deliveryId": deliveryId,
+						"action": "2"
+					])
+					// Send Open Tracking since the user opened the app
+					ACPCore.collectMessageInfo([
+            "broadlogId": broadlogId,
+						"deliveryId": deliveryId,
+						"action": "1"
+					])
+       })
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -323,9 +521,9 @@ Follow instructions in the Android/iOS tabs to set up platform-specific push con
 Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-If you delete your mobile property in Experience Platform Launch, review your mobile property status in Campaign Standard and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobelaunch.com/launch-reference/administration/companies-and-properties#delete-a-property).
+In Experience Platform Launch, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
 
-To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeLaunchapplication).
+To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeExperiencePlatformLaunchapplication).
 
 {% hint style="warning" %}
 Deleting your mobile property in Experience Platform Launch does not automatically delete your Campaign Standard mobile app.

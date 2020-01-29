@@ -8,6 +8,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+
+## January 29, 2020
+
+The following updates were made in this release:
+
+**Android Target 1.1.4 and iOS Target 2.1.5**
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## January 28, 2019
 
 The following updates were made in this release:
@@ -21,8 +30,15 @@ The following updates were made in this release:
 
 * Bug Fix - Fixed the nomenclature for unique event identifier.
 
+## January 25, 2020
 
-## January 24, 2019
+The following updates were made in this release:
+
+**Android Analytics 1.2.3 and iOS Analytics 2.2.2**
+
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
+
+## January 24, 2020
 
 The following updates were made in this release:
 
@@ -32,6 +48,21 @@ The following updates were made in this release:
 * Griffon SDK adds and reports uniqueIdentifier associated with eventHub events. (works from Core v1.4.2)
 * Bug fix: removed unwanted resource files that caused compilation error
 * Improved logging
+
+## January 23, 2020
+
+The following updates were made in this release:
+
+**iOS Mobile Services 1.0.5**
+
+* The shared state of the Profile extension can now be used as the traits for In-App Messaging.
+
+**Android Mobile Services 1.1.0**
+
+* The shared state of the Profile extension can now be used as the traits for In-App Messaging.
+* Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)`, to support Google Play Install Referrer APIs.
+
+  For more information about the Install Referrer APIs, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html).
 
 
 ## January 13, 2020
