@@ -122,7 +122,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Start a Project Griffon session
 
-1. Create a session in the [Griffon UI](https://griffon.adobe.com/) by providing a base url for your application.
+1. Create a session in the [Griffon UI](https://griffon.adobe.com/) by typing a base URL for your application.
 
 For more information about creating a session, see [Create a session](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#1-create-a-session).
 
