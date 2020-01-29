@@ -459,7 +459,7 @@ When the user downloads and runs an app as the result of a Google Play store acq
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+#### Using BroadcastReceiver
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
@@ -487,7 +487,95 @@ When the user downloads and runs an app as the result of a Google Play store acq
        </intent-filter>
    </receiver>
    ```
-{% endtab %}
+
+
+#### Using Google Play Install Referrer APIs
+
+Starting on March 1, 2020, Google is deprecating the install_referrer intent broadcast mechanism. For more information, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use MobileServcies Extension version 1.1.0 or newer.
+
+With the deprecation, instead of creating a BroadcastReceiver, you need to collect the install referrer URL from a new Google API and pass the resulting URL to the SDK.
+
+1. Add the Google Play Install Referrer package to your gradle file's dependencies:
+
+   ```java
+   implementation 'com.android.installreferrer:installreferrer:1.1'
+   ```
+
+2. To retrieve the referrer URL from the Install Referrer API, complete the steps in [Getting the install referrer ](https://developer.android.com/google/play/installreferrer/library#install-referrer).
+
+3. Pass the referrer URL to the SDK:
+
+   ```markup
+   MobileServices.processGooglePlayInstallReferrerUrl(referrerUrl);
+   ```
+
+   To decide the best way to use the Google Play Install Referrer APIs in your app, see Google's documentation. Here is an example of how to use the Adobe SDK with the Google Play Install Referrer APIs:
+
+   ```java
+   void handleGooglePlayReferrer() {
+       // Google recommends only calling this API the first time you need it:
+       // https://developer.android.com/google/play/installreferrer/library#install-referrer
+   
+       // Store a boolean in SharedPreferences to ensure we only call it once.
+       final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
+       if (prefs != null) {
+           if (prefs.getBoolean("referrerHasBeenProcessed", false)) {
+               return;
+           }
+       }
+   
+       final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
+       referrerClient.startConnection(new InstallReferrerStateListener() {
+           private boolean complete = false;
+   
+           @Override
+           public void onInstallReferrerSetupFinished(int responseCode) {
+               switch (responseCode) {
+                   case InstallReferrerClient.InstallReferrerResponse.OK:
+                       // connection is established
+                       complete();
+                       try {
+                           final ReferrerDetails details = referrerClient.getInstallReferrer();                        
+   
+                           // pass the install referrer url to the SDK
+                           MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
+   
+                       } catch (final RemoteException ex) {
+                           Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
+                       } finally {
+                           referrerClient.endConnection();
+                       }
+                       break;
+                   case InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
+                   case InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE:
+                   default:
+                       // API not available in the Play Store app - nothing to do here
+                       complete();
+                       referrerClient.endConnection();
+                       break;
+               }
+           }
+   
+           @Override
+           public void onInstallReferrerServiceDisconnected() {
+               if (!complete) {
+                   // something went wrong trying to get a connection, try again
+                   referrerClient.startConnection(this);
+               }
+           }
+   
+           void complete() {
+               complete = true;
+               SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
+               editor.putBoolean("referrerHasBeenProcessed", true);
+               editor.apply();
+           }
+       });
+   }
+   
+   ```
+
+   {% endtab %}
 
 {% tab title="iOS" %}
 No setup required. Acquisition context is automatically collected and tracked by the SDK for iOS.
