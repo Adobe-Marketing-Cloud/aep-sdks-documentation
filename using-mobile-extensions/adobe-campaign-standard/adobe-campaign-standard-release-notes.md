@@ -1,4 +1,4 @@
-# Adobe Campaign Standard Extension Release Notes  
+# Adobe Campaign Standard Extension Release Notes
 
 ## January 29, 2020
 
