@@ -1,6 +1,6 @@
 # Identity
 
-The Identity framework is bundled with [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) and enables your app with the ECID. This service helps with the synchronization of Adobe and other customer identifiers.
+The Identity framework is bundled with [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) and enables your app with Adobe's Experience Cloud ID service. This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="danger" %}
 On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
@@ -63,7 +63,7 @@ import {ACPIdentity} from '@adobe/react-native-acpcore';
 
 ## Register the Identity extension
 
-The `registerExtension()` API registers the Identity extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Mobile SDK.
+The `registerExtension()` API registers the Identity extension with the MobileCore extension. This API allows the extension to send and receive events to and from the Mobile SDK.
 
 To register the Identity extension, use the following code sample:
 
@@ -129,14 +129,14 @@ initSDK() {
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Platform and is a 32-character ID.
+Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Cloud and is a 32-character ID.
 {% endhint %}
 
-After the configuration is complete, an ECID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
+After the configuration is complete, an Experience Cloud ID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
 
 ## Version of the Identity extension
 
-The `extensionVersion()` API returns the version of the Identity extension that is registered with the Mobile Core extension.
+The `extensionVersion()` API returns the version of the Identity extension that is registered with the MobileCore extension.
 
 To get the version of the Identity extension, use the following code sample:
 
@@ -180,10 +180,10 @@ If your app opens mobile web content, you need to ensure that visitors are not i
 
 ### Visitor IDs in apps
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This Experience Cloud ID \(ECID, previously known as MCID\) is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-Out.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to Opt-Out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
@@ -192,9 +192,9 @@ App visitor IDs persist through upgrades.
 
 ### Visitor IDs in the mobile web
 
-Typical mobile web implementations use the same standard analytics `s_code.js` or `AppMeasurement.js` that is used in desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different visitor ID to be generated when you open mobile web content from your app.
+Typical mobile web implementations use the same standard analytics `s_code.js` or `AppMeasurement.js` that is used within desktop sites. The JavaScript libraries have their own methods of generating unique visitor IDs, which causes a different visitor ID to be generated when you open mobile web content from your app.
 
-To use the same visitor ID in the app and mobile web and pass the visitor ID to the mobile web in the URL, complete the following steps:
+To use the same visitor ID in the app and mobile web, complete the following instructions to pass the visitor ID to the mobile web in the URL.
 
 ### Implementing visitor tracking between an app and the mobile web
 
