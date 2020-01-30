@@ -17,6 +17,10 @@ The following updates were made in this release:
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
+**Android Campaign 1.0.3 and iOS Campaign 1.0.5**
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## January 28, 2019
 
 The following updates were made in this release:
