@@ -1,4 +1,4 @@
-# Attach Data to SDK Events
+# Attach data to SDK events
 
 The _attach data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.1.8 \(Launch\), 2.3.5 \(iOS\), and 1.4.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
 
@@ -6,9 +6,11 @@ To use this action, we need to provide context about how events flow in the Adob
 
 ## Context
 
+The following sections provide additional information to help you understand SDK events. 
+
 ### What are SDK events?
 
-In the Experience Platform Mobile SDK, events hold all the data that is required by other extensions to complete the necessary actions. Events have the following properties:
+In the Experience Platform Mobile SDK, events hold all the data that is required by other extensions to complete the necessary actions and have the following properties:
 
 | Property | Description |
 | :--- | :--- |
@@ -26,9 +28,9 @@ Events are created by an extension and are dispatched to the SDK Event Hub. Each
 Events are created and dispatched when an SDK public API is invoked. Attach data action use cases are meant to act on these types of events.
 {% endhint %}
 
-### What is the Rules Engine?
+### What is the Rules engine?
 
-The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the Rules Engine evaluates each Experience Platform Launch rule against the triggering event. A rule is defined by the following properties:
+The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the Rules Engine evaluates each Experience Platform Launch rule against the triggering event. For more information about the Rules engine, see A rule is defined by the following properties:
 
 | Property | Description |
 | :--- | :--- |

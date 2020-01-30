@@ -1,4 +1,4 @@
-# Rules Engine
+# Rules engine
 
 The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the MobileCore \(Android\)/ACPCore \(iOS\) extension.
 
