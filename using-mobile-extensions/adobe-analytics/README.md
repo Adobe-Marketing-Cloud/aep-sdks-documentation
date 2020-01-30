@@ -92,45 +92,45 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
-```java
-implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-implementation 'com.adobe.marketing.mobile:analytics:1.+'
-```
+    ```java
+    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+    implementation 'com.adobe.marketing.mobile:analytics:1.+'
+    ```
 
 1. Import the Analytics extension in your application's main activity.
 
-```java
-import com.adobe.marketing.mobile.*;
-```
+    ```java
+    import com.adobe.marketing.mobile.*;
+    ```
 {% endtab %}
 
 {% tab title="iOS" %}
-​ 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 
 1. Add following pods in your `Podfile`:
 
-```ruby
-pod 'ACPCore'
-pod 'ACPAnalytics'
-```
+    ```ruby
+    pod 'ACPCore'
+    pod 'ACPAnalytics'
+    ```
 
 1. Import the Analytics and Identity libraries:
 
-#### Objective-C
+    #### Objective-C
 
-```text
-#import "ACPCore.h"
-#import "ACPAnalytics.h"
-#import "ACPIdentity.h"
-```
+    ```text
+    #import "ACPCore.h"
+    #import "ACPAnalytics.h"
+    #import "ACPIdentity.h"
+    ```
 
-#### Swift
+    #### Swift
 
-```swift
-import ACPCore
-import ACPAnalytics
-import ACPIdentity
-```
+    ```swift
+    import ACPCore
+    import ACPAnalytics
+    import ACPIdentity
+    ```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -190,7 +190,7 @@ public class MobileApp extends Application {
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
