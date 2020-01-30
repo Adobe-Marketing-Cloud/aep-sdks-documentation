@@ -4,7 +4,7 @@
 
 ### Create a media tracker
 
-Creates a media tracker instance that tracks the playback session. The tracker created should be used for tracking streaming content and it sends periodic pings to the media analytics backend.
+Creates a media tracker instance that tracks the playback session. The tracker created should be used to track the streaming content, and it sends periodic pings to the media analytics backend.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -70,7 +70,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 | Key | Description | Value | Required |
 | :--- | :--- | :--- | :---: |
 | `config.channel` | Channel name for media. Set this to overwrite the channel name configured from launch for media tracked with this tracker instance. | String | No |
-| `config.downloadedcontent` | Creates a tracker instance for tracking downloaded media. The tracker will not send periodic pings and will only send a single ping for entire content. | Boolean | No |
+| `config.downloadedcontent` | Creates a tracker instance to track downloaded media. Instead of sending periodic pings, the tracker only sends one ping for the entire content. | Boolean | No |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -410,9 +410,9 @@ Returns an NSDictionary instance that contains information about the chapter.
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
@@ -547,9 +547,9 @@ _tracker.trackSessionStart(mediaInfo, mediaMetadata);
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
@@ -615,9 +615,9 @@ _tracker.trackPlay();
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker trackPlay];
@@ -663,9 +663,9 @@ _tracker.trackPause();
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker trackPause];
@@ -711,9 +711,9 @@ _tracker.trackComplete();
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker trackComplete];
@@ -759,9 +759,9 @@ _tracker.trackSessionEnd();
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker trackSessionEnd];
@@ -811,9 +811,9 @@ _tracker.trackError("errorId");
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker trackError:@"errorId"];
@@ -945,9 +945,9 @@ Tracks media events.
 
 **Tracking AdBreaks**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 // AdBreakStart
@@ -971,9 +971,9 @@ Here are examples in Objective-C and Swift:
 
 **Tracking Ads**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 // AdStart
@@ -1017,9 +1017,9 @@ Here are examples in Objective-C and Swift:
 
 **Tracking Chapters**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 // ChapterStart
@@ -1055,9 +1055,9 @@ Here are examples in Objective-C and Swift:
 
 **Tracking Playback events**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 // BufferStart
@@ -1091,9 +1091,9 @@ Here are examples in Objective-C and Swift:
 
 **Tracking Bitrate change**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 // If the new bitrate value is available provide it to the tracker.
@@ -1153,9 +1153,9 @@ _tracker.updateCurrentPlayhead(1);
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [_tracker updateCurrentPlayhead:1];
@@ -1206,9 +1206,9 @@ _tracker.updateQoEObject(qoeObject);
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:1000000 startupTime:2 fps:25 droppedFrames:10];
@@ -1665,9 +1665,9 @@ _heartbeat.trackSessionStart(mediaObject, null);
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];

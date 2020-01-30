@@ -16,15 +16,45 @@ This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/c
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
 
-To configure the Media Analytics extension, complete the following steps:
+#### Tracking Server
 
-1. In **Tracking Server**, Type the name of the tracking server to which all media tracking data should be sent. **Tip**: This server is different from your Analytics tracking server.
-2. In **Collection API Server**, type the name of the media collection API server to which the downloaded media tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
-3. In **Channel**, type the channel name property.
-4. In **Online video provider**, Type the name of the online platform through which content is distributed.
-5. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
-6. In Application Version, Type the version of the media player application/SDK.
-7. To enable or disable debug logging, select \(or deselect\) the Debug logging checkbox. **Caution**: You **must** disable this option for your production application.
+{% hint style="info" %}
+This server is different from your Analytics tracking server.
+{% endhint %}
+
+Type the name of the tracking server to which all media tracking data should be sent.
+
+#### Collection API Server
+
+{% hint style="warning" %}
+Contact your Adobe account representative to receive this information.
+{% endhint %}
+
+Type the name of the media collection API server to which the downloaded media tracking data should be sent.
+
+#### Channel
+
+Type the channel name property.
+
+#### Online video provider
+
+Type the name of the online platform through which content is distributed.
+
+#### Player name
+
+Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+
+#### Application version
+
+Type the version of the media player application/SDK.
+
+#### Debug logging
+
+{% hint style="danger" %}
+Disable this option for your production application.
+{% endhint %}
+
+Enables or disables Media SDK logs.
 
 ## Add Media Analytics to your app
 
@@ -58,7 +88,7 @@ You can also manually include the libraries in [Github](https://github.com/Adobe
 
 1. In Xcode project, import Media extension:
 
-   **Objective C**
+   **Objective-C**
 
    ```objectivec
     #import <ACPMedia.h>
