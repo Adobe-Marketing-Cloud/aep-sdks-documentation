@@ -1,6 +1,6 @@
 # Mobile Core
 
-The Mobile Core represents the core Adobe Experience Platform SDK that is required for every app implementation. The core contains a common set of functionality and frameworks such as an Experience Cloud Identity services, data event hub, rules engine, reusable networking, disk access routines, and so on, which are required by all Adobe and third-party extensions. The following sections provide additional information about what is provided in the Mobile Core extension.
+The Mobile Core represents the core Adobe Experience Platform SDK that is required for every app implementation. The core contains a common set of functionality and frameworks, such as  Experience Cloud Identity services, data event hub, Rules Engine, reusable networking, disk access routines, and so on, which are required by all Adobe and third-party extensions. The following sections provide additional information about what is provided in the Mobile Core extension.
 
 ## Mobile Core generic APIs
 
@@ -10,11 +10,11 @@ For more information, see [Mobile Core API Reference](mobile-core-api-reference.
 
 ## Configuration
 
-The configuration extension provides the necessary events in the Event Hub that provide the configuration details for all installed extensions. For more information, see [Configuration](configuration/).
+The configuration extension provides the events in the Event Hub that provide the configuration details for all installed extensions. For more information, see [Configuration](configuration/).
 
 ## Identity
 
-The Identity framework enables the Experience Cloud ID service and is a required component for most SDK implementations. For more information, see [Identity](identity/).
+The Identity framework enables the Experience Cloud ID \(ECID\) service and is a required component for most SDK implementations. For more information, see [Identity](identity/).
 
 ## Lifecycle
 

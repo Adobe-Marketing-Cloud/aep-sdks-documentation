@@ -8,7 +8,7 @@ You can use data elements during rule creation to consolidate the definition of 
 
 **Tip**: As a best practice, we recommend that you reuse data elements.
 
-Data elements are building blocks for rules and allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate \(shared state, event data\) or which extension creates them. Data elements are populated with data when they are processed in the [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine).
+Data elements are building blocks for rules. Data elements allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate \(shared state, event data\) or which extension creates them. Data elements are populated with data when they are processed in the Experience Platform Mobile SDK [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine).
 
 To use data elements, at a high level, complete the following steps:
 
@@ -18,11 +18,11 @@ When a new extension is added to your property, new data elements might become a
 
 ## 1. Create a data element
 
-1. On the Property page, click the **Data Elements** tab, and then click **Add Data Element**.
+1. On the Property page, on the **Data Elements** tab, click **Add Data Element**.
 2. Type a unique data element name.
 3. In the **Extension** drop-down list, select the extension that will generate the data element type.
 
-   You can only select extensions that are currently installed in your property.
+   You can only select extensions which are currently installed in your property.
 
 4. In the **Data Element Type** drop-down list, select the required configuration parameters.
 
@@ -30,19 +30,19 @@ When a new extension is added to your property, new data elements might become a
 
 5. Click **Save**.
 
-For example, to create a data element that maps to an Experience Cloud ID \(ECID\), on the Create New Data Element page, type **ECID** as the name, select the **Mobile Core** extension, and select the **Experience Cloud ID** data type
+For example, to create a data element that maps to an Experience Cloud ID, on the Create New Data Element page, type **ECID** as the name, select the **Mobile Core** extension, and select the **Experience Cloud ID** data type
 
 ![create ECID data element](../../.gitbook/assets/data-elements-create-data-element-ecid.png)
 
-## 2. Use a data element
+## 2. Using data elements
 
 You can use data elements to define rules in Experience Platform Launch. When a rule configuration allows the use of data elements, click the cylinder icon to display a list of data elements that are defined in the mobile property.
 
 ### Example: Creating a rule to send a postback
 
-In the following example, a rule to send a postback that contains the ECID when the application launches, is created:
+Here is an example which creates a rule to send a postback containing the Experience Cloud ID when the application launches.
 
-1. On the property page for your mobile property, click the **Rules** tab, and then click **Create New Rule**.
+1. On the property page for your mobile property, click the **Rules** tab, and click **Create New Rule**.
 2. Type a unique name for the the rule.
 3. In the **Events** section, click **Add**. 
 
@@ -68,8 +68,7 @@ In the following example, a rule to send a postback that contains the ECID when 
 
    b. In the **Action Type** drop-down list, select **Send Postback**.
 
-   c. In the **URL** text field, type a sample URL, for example,  
-    `https://my.company.com/launch?ecid=`.
+   c. In the **URL** text field, type a sample URL, for example, `https://my.company.com/launch?ecid=`.
 
    d. Enter a name for the action.
 
@@ -79,7 +78,7 @@ In the following example, a rule to send a postback that contains the ECID when 
 
 ![create rule](../../.gitbook/assets/data-elements-create-rule.png)
 
-## 3. Publish the configuration
+### 3. Publish configuration
 
 After the property is published, this new rule is made available for download by the applications that are configured for this property. For more information, see [Publish the configuration](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-configuration) and [Configure the SDK with an Environment ID](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk#configure-the-sdk-with-an-environment-id). When the application launches, this rule is triggered and, if the ECID exists in the SDK, a postback is sent to the URL with the ECID value.
 
@@ -93,5 +92,5 @@ Here is some additional information about the Rules Engine and the Signal extent
 
 * [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration)
 
-  This section provides an example of how to create rules to trigger actions in the Signals extension.
+  This content provides an example of how to create rules to trigger actions in the Signals extension.
 
