@@ -76,7 +76,7 @@ public  void onReceive(Context context, Intent intent) {
 }
 ```
 
-## Process the Google Play Install Referrer
+## Process The Google Play Install Referrer
 
 You can use this API to process the data you get from the Google Play Install Referrer APIs.
 
