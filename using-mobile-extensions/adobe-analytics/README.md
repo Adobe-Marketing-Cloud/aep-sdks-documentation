@@ -136,24 +136,24 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 {% tab title="React Native" %}
 #### JavaScript
 
-Install Analytics
+1. Install Analytics.
 
-```jsx
-npm install @adobe/react-native-acpanalytics
-react-native link @adobe/react-native-acpanalytics
-```
+    ```jsx
+    npm install @adobe/react-native-acpanalytics
+    react-native link @adobe/react-native-acpanalytics
+    ```
 
-Importing the extension
+2. Import the extension.
 
-```jsx
-import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
-```
+    ```jsx
+    import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
+    ```
 
-Getting the extension version
+3. Get the extension version.
 
-```jsx
-ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
-```
+    ```jsx
+    ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
+    ```
 {% endtab %}
 {% endtabs %}
 
