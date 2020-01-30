@@ -8,7 +8,7 @@ You can track lifecycle to learn how frequently and how long your app is being u
 
 ## Implementing Lifecycle Metrics in Android  <a id="implementing-lifecycle-metrics-in-android"></a>
 
-Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
+Tracking lifecycle requires that the Mobile SDKs have a valid configuration. For more information, see [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 
 To implement lifecycle metrics, complete the following steps in each Activity of your application:
 
@@ -58,7 +58,7 @@ To implement lifecycle metrics, complete the following steps in each Activity of
 
 **Important:** To ensure accurate session and crash reporting, you must add these calls to every activity.
 
-## Tracking App Crashes in Android  <a id="tracking-app-crashes-in-android"></a>
+## Tracking app crashes in Android  <a id="tracking-app-crashes-in-android"></a>
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
