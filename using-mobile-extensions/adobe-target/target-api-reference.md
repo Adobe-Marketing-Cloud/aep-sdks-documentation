@@ -331,32 +331,25 @@ public static void locationClicked(final String mboxName, final TargetParameters
 
 ```java
 // Mbox parameters
-Map<String, Object> mboxParameters = new HashMap<>();
+Map<String, String> mboxParameters = new HashMap<>();
 mboxParameters.put("membership", "prime");
 
 // Product parameters
-Map<String, Object> productParameters = new HashMap<>();
-productParameters.put("id", "CEDFJC");
-productParameters.put("categoryId","Electronics");
+TargetProduct targetProduct = new TargetProduct("CEDFJC", "Electronics");
 
+
+// Order parameters
 List<String> purchasedIds = new ArrayList<String>();
 purchasedIds.add("81");
 purchasedIds.add("123");
 purchasedIds.add("190");
-
-// Order parameters
-Map<String, Object> orderParameters = new HashMap<>();
-orderParameters.put("id", "NJJICK");
-orderParameters.put("total", "650");
-orderParameters.put("purchasedProductIds",  purchasedIds);
+TargetOrder targetOrder = new TargetOrder("NJJICK", "650", purchasedIds);
 
 // Profile parameters
-Map<String, Object> profileParameters = new HashMap<>();
+Map<String, String> profileParameters = new HashMap<>();
 profileParameters.put("ageGroup", "20-32");
 
 // Create Target Parameters
-TargetOrder targetOrder = new TargetOrder("NJJICK", "650", purchasedIds);
-TargetProduct targetProduct = new TargetProduct("CEDFJC", "Electronics");
 TargetParameters targetParameters = new TargetParameters.Builder(mboxParameters)
                                 .profileParameters(profileParameters)
                                 .order(targetOrder)
@@ -623,37 +616,37 @@ final final AdobeCallback<String> callback);
 
 ```java
 // first prefetch request
-Map<String, Object> mboxParameters1 = new HashMap<>();
+Map<String, String> mboxParameters1 = new HashMap<>();
 mboxParameters1.put("status", "platinum");
 
+TargetParameters targetParameters1 = new TargetParameters.Builder()
+.parameters(mboxParameters1)
+.build();
+
+TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", targetParameters1);
+
 // second prefetch request
-Map<String, Object> mboxParameters2 = new HashMap<>();
+Map<String, String> mboxParameters2 = new HashMap<>();
 mboxParameters2.put("userType", "paid");
 
 List<String> purchasedIds = new ArrayList<String>();
 purchasedIds.add("34");
 purchasedIds.add("125");
-
 TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
-TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
 
-TargetParameters targetParameters1 = new TargetParameters.Builder()
-.parameters(mboxParameters1)
-.build();
-TargetPrefetch prefetchRequest1 = new TargetPrefetch("mboxName1", targetParameters1);
+TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
 
 TargetParameters targetParameters2 = new TargetParameters.Builder()
 .parameters(mboxParameters2)
 .product(targetProduct)
 .order(targetOrder)
 .build();
+
 TargetPrefetch prefetchRequest2 = new TargetPrefetch("mboxName2", targetParameters2);
 
-
-List<TargetPrefetchObject> prefetchMboxesList = new ArrayList<>();
+List<TargetPrefetch> prefetchMboxesList = new ArrayList<>();
 prefetchMboxesList.add(prefetchRequest1);
 prefetchMboxesList.add(prefetchRequest2);
-
 
 // Call the prefetchContent API.
 TargetParamters targetParameters = null;
@@ -916,21 +909,11 @@ public static void retrieveLocationContent(final List<TargetRequest> targetReque
 
 ```java
 // define parameters for first request
-Map<String, Object> mboxParameters1 = new HashMap<>();
+Map<String, String> mboxParameters1 = new HashMap<>();
 mboxParameters1.put("status", "platinum");
 
-// define parameters for second request
-Map<String, Object> mboxParameters2 = new HashMap<>();
-mboxParameters2.put("userType", "paid");
-
-List<String> purchasedIds = new ArrayList<String>();
-purchasedIds.add("34");
-purchasedIds.add("125");
-
-TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
-TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
-
 TargetParameters parameters1 = new TargetParameters.Builder().parameters(mboxParameters1).build();
+
 TargetRequest request1 = new TargetRequest("mboxName1", parameters1, "defaultContent1",
                                             new AdobeCallback<String>() {
                                                 @Override
@@ -939,11 +922,23 @@ TargetRequest request1 = new TargetRequest("mboxName1", parameters1, "defaultCon
                                                 }
                                             });
 
+// define parameters for second request
+Map<String, String> mboxParameters2 = new HashMap<>();
+mboxParameters2.put("userType", "paid");
+
+List<String> purchasedIds = new ArrayList<String>();
+purchasedIds.add("34");
+purchasedIds.add("125");
+TargetOrder targetOrder = new TargetOrder("ADCKKIM", 344.30, purchasedIds);
+
+TargetProduct targetProduct = new TargetProduct("24D3412", "Books");
+
 TargetParameters parameters2 = new TargetParameters.Builder()
-                               .parameters(mboxParameters1)
+                               .parameters(mboxParameters2)
                                .product(targetProduct)
                                .order(targetOrder)
                                .build();
+                               
 TargetRequest request2 = new TargetRequest("mboxName2", parameters2, "defaultContent2",
                                             new AdobeCallback<String>() {
                                                 @Override
@@ -958,7 +953,7 @@ locationRequests.add(request1);
 locationRequests.add(request2);
 
  // Define the profile parameters map.
-Map<String, Object> profileParameters1 = new HashMap<>();
+Map<String, String> profileParameters1 = new HashMap<>();
 profileParameters1.put("ageGroup", "20-32");
 
 TargetParameters parameters = new TargetParameters.Builder().profileParameters(profileParameters1).build();
