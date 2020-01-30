@@ -20,13 +20,13 @@ For more information about creating and configuring a rule in Experience Platfor
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using the app's Gradle file.
 
 ```java
 implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
-
-#### Java
 
 Import the Signal extension in your application's main activity.
 
@@ -86,7 +86,7 @@ pod install
 {% endtab %}
 {% endtabs %}
 
-### Register Signal extension
+### Register the Signal extension
 
 The `registerExtension()` API registers the Signal extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Mobile SDK.
 

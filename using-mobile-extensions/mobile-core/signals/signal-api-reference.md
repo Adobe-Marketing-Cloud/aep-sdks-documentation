@@ -8,7 +8,7 @@ To get the version of the Signal extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
 ```java
 String signalExtensionVersion = Signal.extensionVersion();
@@ -16,9 +16,7 @@ String signalExtensionVersion = Signal.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
-### iOS
-
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSString *signalExtensionVersion = [ACPSignal extensionVersion];

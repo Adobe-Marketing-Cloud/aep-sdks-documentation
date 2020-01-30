@@ -1,12 +1,12 @@
 # Rules Engine
 
-The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the MobileCore \(Android\)/ACPCore \(iOS\) extension.
+The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the [MobileCore \(Android\)/ACPCore \(iOS\)](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsU1nOc9yXSg36RvlZ/using-mobile-extensions/mobile-core) extension.
 
-If you are using the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
+In the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
 
 The Rules Engine, with [Experience Platform Launch](https://launch.adobe.com/)'s tag management system, allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
 
-### **Data Elements**
+### **Data elements**
 
 Data elements are the building blocks for the applications data dictionary and are used to collect, organize, and deliver data across marketing and ad technology.
 
@@ -39,7 +39,7 @@ An action, also known as a consequence, triggers an event after a rule's events 
 
 Rules include data elements, events, conditions, and actions that are provided by the relevant extensions. These rules can be modified at any time and are saved and published as a new library that the SDK downloads as the latest set of rules.
 
-### **Loading and Processing rules JSON file by the Rules Engine**
+### **Loading and processing the Rules JSON file by the Rules Engine**
 
 At the start of a new application session that includes the Experience Platform Mobile SDK, the Rules Engine gets the static endpoint of the Rules JSON file that is defined as part of the SDK configuration, loads the latest version of this rules file, and monitors the events in the SDK. When an event matches the defined conditions in the rules, the Rules Engine sends an action to the respective extensions with an extension-specific payload. Rule matching is completed by checking whether a defined set of conditions is met.
 

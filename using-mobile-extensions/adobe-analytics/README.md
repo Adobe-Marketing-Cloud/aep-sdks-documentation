@@ -8,7 +8,7 @@
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-![Workflow Overview for Launch, Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
+![Workflow overview for Experience Platform Launch, the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
 
 ### **Configure the Analytics Extension**
 
@@ -20,7 +20,7 @@
 Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see \[Mobile Management\] \([https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html)\).
+Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see [Mobile Management](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html).
 
 To narrow the search for a report suite identifier, type a string in the combo box text field. After a valid report suite identifier has been selected, this identifier appears in a tag below the combo box \(shown above\). To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
 
@@ -38,7 +38,7 @@ Type the tracking domain to which all Analytics requests should be made.
 Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/offline-tracking.html).
 {% endhint %}
 
-When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .
+When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled.
 
 {% hint style="danger" %}
 If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.
@@ -88,14 +88,14 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 {% tabs %}
 {% tab title="Android" %}
+**Java**
+
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
 ```java
 implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 implementation 'com.adobe.marketing.mobile:analytics:1.+'
 ```
-
-#### Java
 
 1. Import the Analytics extension in your application's main activity.
 
