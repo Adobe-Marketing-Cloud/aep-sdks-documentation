@@ -501,7 +501,7 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 
 ### trackSessionStart
 
-Track the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume).
+Tracks the intention to start playback. This starts a tracking session on the media tracker instance. For more information, see [Media Resume](media-api-reference.md#media-resume).
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
@@ -585,7 +585,7 @@ _tracker.trackSessionStart(mediaObject, data: mediaMetadata)
 
 ### trackPlay
 
-Track media play or resume after a previous pause.
+Tracks the media play, or resume, after a previous pause.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -633,7 +633,7 @@ _tracker.trackPlay()
 
 ### trackPause
 
-Track media pause.
+Tracks the media pause.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -681,7 +681,7 @@ _tracker.trackPause()
 
 ### trackComplete
 
-Track media complete. Call this method only when the media has been completely viewed.
+Tracks media complete. Call this method only when the media has been completely viewed.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -729,7 +729,7 @@ _tracker.trackComplete()
 
 ### trackSessionEnd
 
-Track the end of a viewing session. Call this method even if the user does not view the media to completion.
+Tracks the end of a viewing session. Call this method even if the user does not view the media to completion.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -777,7 +777,7 @@ _tracker.trackSessionEnd()
 
 ### trackError
 
-Track an error in media playback.
+Tracks an error in media playback.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
@@ -829,7 +829,7 @@ _tracker.trackError("errorId")
 
 ### trackEvent
 
-Method to track media events.
+Tracks media events.
 
 | Variable Name | Description |
 | :--- | :--- |
@@ -1119,7 +1119,7 @@ Here are examples in Objective-C and Swift:
 
 ### updateCurrentPlayhead
 
-Provide a media tracker with the current media playhead. For accurate tracking, call this method multiple times when the playhead changes.
+Provides a media tracker with the current media playhead. For accurate tracking, call this method multiple times when the playhead changes.
 
 | Variable Name | Description |
 | :--- | :--- |
@@ -1228,7 +1228,7 @@ _tracker.updateQoEObject(qoeObject)
 
 ### Media type
 
-This defines the type of a media that is currently tracked.
+Defines the type of a media that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1270,7 +1270,7 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
 
 ### Stream type
 
-This defines the stream type of the content that is currently tracked.
+Defines the stream type of the content that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1350,7 +1350,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 
 ### Standard video constants
 
-This defines the standard metadata keys for video streams.
+Defines the standard metadata keys for video streams.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1406,7 +1406,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 
 ### Standard audio constants
 
-This defines the standard metadata keys for audio streams.
+Defines the standard metadata keys for audio streams.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1440,7 +1440,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 
 ### Standard ad constants
 
-This defines the standard metadata keys for ads.
+Defines the standard metadata keys for ads.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1474,7 +1474,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 
 ### Media events
 
-This defines the type of a tracking event.
+Defines the type of a tracking event.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1620,7 +1620,7 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 
 ### Media resume
 
-Constant to denote that the current tracking session is resuming a previously closed session. This information must be provided when starting a tracking session.
+Constant to denote that the current tracking session is resuming a previously closed session. This information **must** be provided when starting a tracking session.
 
 {% tabs %}
 {% tab title="Android" %}

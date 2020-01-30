@@ -92,44 +92,45 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
-   ```java
+    ```java
     implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
     implementation 'com.adobe.marketing.mobile:analytics:1.+'
-   ```
+    ```
 
-2. Import the Analytics extension in your application's main activity.
+1. Import the Analytics extension in your application's main activity.
 
-   ```java
+    ```java
     import com.adobe.marketing.mobile.*;
-   ```
+    ```
 {% endtab %}
 
 {% tab title="iOS" %}
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
-2. Add following pods in your `Podfile`:
 
-   ```ruby
+1. Add following pods in your `Podfile`:
+
+    ```ruby
     pod 'ACPCore'
     pod 'ACPAnalytics'
-   ```
+    ```
 
-3. Import the Analytics and Identity libraries:
+1. Import the Analytics and Identity libraries:
 
-   **Objective-C**
+    #### Objective-C
 
-   ```text
+    ```text
     #import "ACPCore.h"
     #import "ACPAnalytics.h"
     #import "ACPIdentity.h"
-   ```
+    ```
 
-   **Swift**
+    #### Swift
 
-   ```swift
+    ```swift
     import ACPCore
     import ACPAnalytics
     import ACPIdentity
-   ```
+    ```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -137,22 +138,22 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 1. Install Analytics.
 
-   ```jsx
+    ```jsx
     npm install @adobe/react-native-acpanalytics
     react-native link @adobe/react-native-acpanalytics
-   ```
+    ```
 
 2. Import the extension.
 
-   ```jsx
+    ```jsx
     import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
-   ```
+    ```
 
 3. Get the extension version.
 
-   ```jsx
+    ```jsx
     ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
-   ```
+    ```
 {% endtab %}
 {% endtabs %}
 
@@ -253,7 +254,7 @@ To see the performance of your Target activities for some segments, you can set 
 
 ### Server-side forwarding with Audience Manager
 
-To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
+To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
 
 ### Audio and Video Analytics
 
@@ -291,7 +292,7 @@ MobileCore.trackState("State Name", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective C
+#### Objective-C
 
 #### Syntax
 
@@ -352,7 +353,11 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
+</table>| `analytics.aamForwardingEnabled` | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
+| :--- | :--- | :--- |
+
+
+| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
 | :--- | :--- | :--- |
 
 
