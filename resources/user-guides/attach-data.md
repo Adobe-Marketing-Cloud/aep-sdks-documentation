@@ -28,9 +28,11 @@ Events are created by an extension and are dispatched to the SDK Event Hub. Each
 Events are created and dispatched when an SDK public API is invoked. Attach data action use cases are meant to act on these types of events.
 {% endhint %}
 
-### What is the Rules engine?
+### What is the Rules Engine?
 
-The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the Rules Engine evaluates each Experience Platform Launch rule against the triggering event. For more information about the Rules engine, see A rule is defined by the following properties:
+The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the Rules Engine evaluates each Experience Platform Launch rule against the triggering event. For more information about the Rules engine, see [Rules Engine](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzrZM4SRvbU1QFOD5gQ/using-mobile-extensions/mobile-core/rules-engine).   
+  
+A rule is defined by the following properties:
 
 | Property | Description |
 | :--- | :--- |
@@ -39,7 +41,7 @@ The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the 
 | Action | The resulting action if the evaluation of the rule is positive. |
 
 {% hint style="info" %}
-A rule might be read out in the following way: _If_ SDK _**Event** occurs_ and _**Condition\(s\)**_ are met, then perform the _**Action\(s\)**._
+A rule might be read out in the following way: _If the SDK_ _**Event** occurs,_ and _**Condition\(s\)**_ are met, then perform the _**Action\(s\)**._
 {% endhint %}
 
 ## Using the attach data action
@@ -60,14 +62,14 @@ When defining a payload for the attach data action, the payload must match the f
 
 The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#create-a-rule)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#select-an-event)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#define-the-action)
-4. [Save and rebuild the property](attach-data.md#save-the-rule-and-rebuild-your-property)
+1. [Create a new **Rule**](attach-data.md#create-a-rule)**.**
+2. [Select the **Event** you want to trigger the rule](attach-data.md#select-an-event).
+3. [Select the **Action** to attach data and define your payload](attach-data.md#define-the-action).
+4. [Save and rebuild the property](attach-data.md#save-the-rule-and-rebuild-your-property).
 
 ### Create a rule
 
-1. On the **Rules** tab, click **Create New Rule**.
+1. In Experience Platform Launch, click the **Rules** tab, and then click **Create New Rule**.
 
 {% hint style="info" %}
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
@@ -75,7 +77,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ### Select an event
 
-1. Give your rule an easily recognizable name in your list of rules.
+1. Type a meaningful name for your rule.
 
    In this example, the rule is named **Attach Places Data to Analytics Track Action Events**.
 
@@ -88,7 +90,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ### Define the action
 
-1. Under the **Actions** section, click **Add**.
+1. In the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
 3. From the **Action Type** drop-down list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
@@ -96,7 +98,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, some context data is added to this event before the Analytics extension processes it. The added context data will now be on the outgoing Analytics hit.
 
-In the following example, **launches** and **anAddedKey** keys are added to the **contextdata** of the Analytics event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+In the following example, the **launches** and **anAddedKey** keys are added to the **contextdata** of the Analytics event. Values for the new keys can be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
 
 ![](../../.gitbook/assets/setaction.png)
 
@@ -107,5 +109,5 @@ After you complete your configuration, verify that your rule looks like the foll
 ![](../../.gitbook/assets/rulecomplete.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct environment.
 
