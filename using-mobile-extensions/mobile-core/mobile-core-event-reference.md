@@ -22,5 +22,5 @@ Here are the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `deeplink` | String | Yes | Deep link information that was collected from the provided user information. |
 | `pushmessageid` | String | Yes | The push message identifier \(if one was found in the provided user information under the `adb_m_id` key\). |
-| `notificationid` | String | Yes | The local notification identifier \(if one was found in the provided user information\). |
+| `notificationid` | String | Yes | The local notification identifier \(if one was found in the provided user info\). |
 
