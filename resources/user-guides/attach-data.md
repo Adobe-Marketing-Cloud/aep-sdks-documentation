@@ -54,16 +54,19 @@ If there is a conflict between the data that is defined in your Rule and the dat
 
 When defining a payload for the attach data action, the payload must match the format of the triggering event. For example, if you want to add context data to an Analytics event, you need to know where the context data is defined on that event and match the format in your rule. For this reason, we strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you will attach the data. If the format does not match, most likely the expected results will not be received.
 
-## Example - attaching data to an Analytics event
+## Example - attaching data to an event
+
+{% tabs %}
+{% tab title="Analytics" %}
 
 The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#create-a-rule)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#select-an-event)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#define-the-action)
-4. [Save and rebuild the property](attach-data.md#save-the-rule-and-rebuild-your-property)
+1. [Create a new **Rule**](#analytics-create-rule)
+2. [Select the **Event** you want to trigger the rule](#analytics-select-an-event)
+3. [Select the **Action** to attach data and define your payload](#analytics-define-the-action)
+4. [Save and rebuild the property](#analytics-save-the-rule-and-rebuild-your-property)
 
-### Create a rule
+### Create a rule<a name="analytics-create-rule"> </a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -71,7 +74,7 @@ The following sample shows how to _attach data_ to all outgoing `TrackAction` An
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event<a name="analytics-select-an-event"></a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -84,7 +87,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/setevent.png)
 
-### Define the action
+### Define the action<a name="analytics-define-the-action"></a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -98,7 +101,7 @@ In the following example, **launches** and **anAddedKey** keys are added to the 
 
 ![](../../.gitbook/assets/setaction.png)
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="analytics-save-the-rule-and-rebuild-your-property"></a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
@@ -107,3 +110,67 @@ After you complete your configuration, verify that your rule looks like the foll
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
 
+{% endtab %}
+
+{% tab title="Target" %}
+
+The following sample shows how to _attach data_ to all outgoing `loadRequests` or `retrieveLocationContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+
+1. [Create a new **Rule**](#target-create-rule)
+2. [Select the **Event** you want to trigger the rule](#target-select-an-event)
+3. [Select the **Action** to attach data and define your payload](#target-define-the-action)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property)
+
+### Create a rule<a name="target-create-rule"> </a>
+
+1. On the **Rules** tab, click **Create New Rule**.
+
+{% hint style="info" %}
+If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
+{% endhint %}
+
+### Select an event<a name="target-select-an-event"> </a>
+
+1. Give your rule an easily recognizable name in your list of rules.
+
+   In this example, the rule is named **Attach additional data to Target content request**.
+
+2. Under the **Events** section, click **Add**.
+
+3. From the **Extension** drop-down list, select **Adobe Target**.
+
+4. From the **Event Type** drop-down list, select **Content Requested**.
+
+5. Click **Keep Changes**.
+
+![](../../.gitbook/assets/target-attach-data-event-setup.png)
+
+### Define the action<a name="target-define-the-action"> </a>
+
+1. Under the **Actions** section, click **Add**.
+2. From the **Extension** drop-down list, select **Mobile Core**.
+3. From the **Action Type** drop-down list, select **Attach Data**.
+4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
+5. Click **Keep Changes**.
+
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, additional profile parameters are added to this event before the Target extension processes it. The added profile parameters will now be added on outgoing Target load requests or Target retrieve location content requests.
+
+In the following example, **extraKey**, **extraKey2**, and a data element defined for the **OS version** are added to the profile parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+
+![](../../.gitbook/assets/target-attach-data-json-example.png)
+
+The following example shows how the data element for OS version was created.
+
+![](../../.gitbook/assets/target-attach-data-data-element-setup.png)
+
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property"> </a>
+
+After you complete your configuration, verify that your rule looks like the following:
+
+![](../../.gitbook/assets/target-attach-data-rule-setup.png)
+
+1. Click **Save**
+2. Rebuild your Launch property and deploy it to the correct Environment.
+
+{% endtab %}
+{% endtabs %}
