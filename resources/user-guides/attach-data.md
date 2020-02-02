@@ -114,7 +114,9 @@ After you complete your configuration, verify that your rule looks like the foll
 
 {% tab title="Target" %}
 
-The following sample shows how to _attach data_ to all outgoing `loadRequests` or `retrieveLocationContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+### How to attach additional profile parameters to Target retrieve location events
+
+The following sample shows how to _attach data_ to all outgoing `retrieveLocationContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
 1. [Create a new **Rule**](#target-create-rule)
 2. [Select the **Event** you want to trigger the rule](#target-select-an-event)
@@ -133,7 +135,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 1. Give your rule an easily recognizable name in your list of rules.
 
-   In this example, the rule is named **Attach additional data to Target content request**.
+   In this example, the rule is named **Attach additional data to Target retrieve location Events**.
 
 2. Under the **Events** section, click **Add**.
 
@@ -153,7 +155,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, additional profile parameters are added to this event before the Target extension processes it. The added profile parameters will now be added on outgoing Target load requests or Target retrieve location content requests.
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, additional profile parameters are added to this event before the Target extension processes it. The added profile parameters will now be added on outgoing Target retrieve location content requests.
 
 In the following example, **extraKey**, **extraKey2**, and a data element defined for the **OS version** are added to the profile parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
 
@@ -168,6 +170,62 @@ The following example shows how the data element for OS version was created.
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/target-attach-data-rule-setup.png)
+
+1. Click **Save**
+2. Rebuild your Launch property and deploy it to the correct Environment.
+
+### How to attach additional Target prefetch objects to Target prefetch request events
+
+ The following sample shows how to add a custom mbox to prefetch in all outgoing `prefetchContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+
+1. [Create a new **Rule**](#target-create-rule-prefetch)
+2. [Select the **Event** you want to trigger the rule](#target-select-an-event-prefetch)
+3. [Select the **Action** to attach data and define your payload](#target-define-the-action-prefetch)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property-prefetch)
+
+### Create a rule<a name="target-create-rule-prefetch"> </a>
+
+1. On the **Rules** tab, click **Create New Rule**.
+
+{% hint style="info" %}
+If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
+{% endhint %}
+
+### Select an event<a name="target-select-an-event-prefetch"> </a>
+
+1. Give your rule an easily recognizable name in your list of rules.
+
+   In this example, the rule is named **Attach additional data to Target prefetch content Events**.
+
+2. Under the **Events** section, click **Add**.
+
+3. From the **Extension** drop-down list, select **Adobe Target**.
+
+4. From the **Event Type** drop-down list, select **Content Prefetched**.
+
+5. Click **Keep Changes**.
+
+![](../../.gitbook/assets/target-attach-data-event-setup-prefetch.png)
+
+### Define the action<a name="target-define-the-action-prefetch"> </a>
+
+1. Under the **Actions** section, click **Add**.
+2. From the **Extension** drop-down list, select **Mobile Core**.
+3. From the **Action Type** drop-down list, select **Attach Data**.
+4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
+5. Click **Keep Changes**.
+
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, a custom mbox is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target prefetch requests.
+
+In the following example, an mbox named **custom_mbox** with an additional parameter named **customparams** is added to the Target event.
+
+![](../../.gitbook/assets/target-attach-data-json-example-prefetch.png)
+
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-prefetch"> </a>
+
+After you complete your configuration, verify that your rule looks like the following:
+
+![](../../.gitbook/assets/target-attach-data-rule-setup-prefetch.png)
 
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
