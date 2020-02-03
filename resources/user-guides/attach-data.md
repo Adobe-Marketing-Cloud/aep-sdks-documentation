@@ -171,12 +171,7 @@ In addition to being able to add custom profile parameters to each Target retrie
 {
     "request": [
         {
-            "mboxname": "custom_mbox",
-            "targetparams": {
-                "mboxparameters": {
-                    "customparams": "customvalue"
-                }
-            }
+            "mboxname": "custom_mbox"
         }
     ]
 }
