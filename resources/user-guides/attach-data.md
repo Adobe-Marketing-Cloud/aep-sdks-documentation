@@ -227,11 +227,27 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, a custom mbox is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target prefetch requests.
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, a custom mbox with custom mbox parameters is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target prefetch requests.
 
 In the following example, an mbox named **custom_mbox** with an additional mbox parameter named **customparams** is added to the Target event.
 
 ![](../../.gitbook/assets/target-attach-data-json-example-prefetch.png)
+
+In the above example, the JSON payload adds custom mbox parameters only for the custom mbox added. Custom parameters can be added to each of the Target objects instead. The following example contains a valid JSON payload for this use case:
+
+```json
+    "prefetch[*]": {
+        "targetparams": {
+            "mboxparameters": {
+                "extraPrefetchMboxKey": "extraPrefetchMboxValue"
+            },
+            "profileparams": {
+                "extraPrefetchProfileKey": "extraPrefetchProfileValue"
+            }
+        }
+    }
+}
+```
 
 ### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-prefetch"> </a>
 
