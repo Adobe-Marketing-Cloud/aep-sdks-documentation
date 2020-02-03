@@ -165,6 +165,23 @@ The following example shows how the data element for OS version was created.
 
 ![](../../.gitbook/assets/target-attach-data-data-element-setup.png)
 
+In addition to being able to add custom profile parameters to each Target retrieve location request, custom mboxes can be added as well. The following example contains a valid JSON payload for this use case:
+
+```json
+{
+    "request": [
+        {
+            "mboxname": "custom_mbox",
+            "targetparams": {
+                "mboxparameters": {
+                    "customparams": "customvalue"
+                }
+            }
+        }
+    ]
+}
+```
+
 ### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property"> </a>
 
 After you complete your configuration, verify that your rule looks like the following:
@@ -221,23 +238,6 @@ In the following example, an mbox named **custom_mbox** with an additional mbox 
 
 ![](../../.gitbook/assets/target-attach-data-json-example-prefetch.png)
 
-In addition to being able to add custom mboxes to each Target prefetch request, custom mboxes can also be added to Target retrieve location requests. The following example contains a valid JSON payload for this use case:
-
-```json
-{
-    "request": [
-        {
-            "mboxname": "custom_mbox",
-            "targetparams": {
-                "mboxparameters": {
-                    "customparams": "customvalue"
-                }
-            }
-        }
-    ]
-}
-```
-
 ### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-prefetch"> </a>
 
 After you complete your configuration, verify that your rule looks like the following:
@@ -247,9 +247,9 @@ After you complete your configuration, verify that your rule looks like the foll
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
 
-### How to attach additional Target prefetch objects to Target location clicked events
+### How to attach additional mbox and profile parameters to Target location clicked events
 
-The following sample shows how to add a custom mbox to prefetch in all outgoing `locationClicked` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+The following sample shows how to add additional mbox and profile parameters in all outgoing `locationClicked` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
 1. [Create a new **Rule**](#target-create-rule-clicked)
 2. [Select the **Event** you want to trigger the rule](#target-select-an-event-clicked)
@@ -303,9 +303,9 @@ After you complete your configuration, verify that your rule looks like the foll
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
 
-### How to attach additional Target prefetch objects to Target location displayed events
+### How to attach additional mbox and profile parameters to Target location displayed events
 
-The following sample shows how to add a custom mbox to prefetch in all outgoing `locationDisplayed` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
+The following sample shows how to add additional mbox and profile parameters in all outgoing `locationDisplayed` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
 1. [Create a new **Rule**](#target-create-rule-displayed)
 2. [Select the **Event** you want to trigger the rule](#target-select-an-event-displayed)
