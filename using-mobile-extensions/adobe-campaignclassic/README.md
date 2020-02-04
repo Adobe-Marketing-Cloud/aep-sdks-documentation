@@ -74,24 +74,24 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 
    or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
 
-1. In Xcode project, import Mobile Core and Campaign Classic extensions:
+1. In Xcode project, import the Mobile Core and Campaign Classic extensions:
 
-#### Objective C
+   #### Objective C
 
-```objectivec
-#import "ACPCore.h"
-#import "ACPCampaignClassic.h"
-#import "ACPLifecycle.h"
-```
+   ```objectivec
+   #import "ACPCore.h"
+   #import "ACPCampaignClassic.h"
+   #import "ACPLifecycle.h"
+   ```
 
-#### Swift
+   #### Swift
 
-```swift
-import ACPCore
-import ACPCampaignClassic
-import ACPLifecycle
-```
-{% endtab %}
+   ```swift
+   import ACPCore
+   import ACPCampaignClassic
+   import ACPLifecycle
+   ```
+   {% endtab %}
 {% endtabs %}
 
 ### Register Campaign Classic with Mobile Core
