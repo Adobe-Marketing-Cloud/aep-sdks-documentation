@@ -6,7 +6,7 @@
 
 {% tabs %}
 {% tab title="Android" %}
-To prepare your app to handle push notifications, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the FCM SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
+To prepare your app to handle push notifications, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the Firebase Cloud Messaging \(FCM\) SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
 
 ### registerDevice
 
