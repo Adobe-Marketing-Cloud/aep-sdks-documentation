@@ -2,7 +2,7 @@
 
 ## Events handled
 
-Here are the events that are handled by the Campaign Classic extension:
+The following events are handled by the Campaign Classic extension:
 
 ### Campaign Request Content   <a id="campaignclassic-content-request"></a>
 
@@ -74,7 +74,7 @@ The Campaign Classic extension also reads the following key from the configurati
 
 ## Events dispatched
 
-Here are the events that are dispatched by the Campaign Classic extension:
+The following events are dispatched to the Campaign Classic extension:
 
 ### Campaign Response Content
 
