@@ -92,23 +92,23 @@ The instructions to add these extensions to your mobile app are also available i
 
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
 
-```java
-implementation 'com.adobe.marketing.mobile:campaign:1.+'
-implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-```
+	```java
+	implementation 'com.adobe.marketing.mobile:campaign:1.+'
+	implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+	implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+	```
 
 1. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
 
-```java
-import com.adobe.marketing.mobile.AdobeCallback;
-import com.adobe.marketing.mobile.Campaign;
-import com.adobe.marketing.mobile.Identity;
-import com.adobe.marketing.mobile.Lifecycle;
-import com.adobe.marketing.mobile.MobileCore;
-import com.adobe.marketing.mobile.Signal;
-import com.adobe.marketing.mobile.UserProfile;
-```
+	```java
+	import com.adobe.marketing.mobile.AdobeCallback;
+	import com.adobe.marketing.mobile.Campaign;
+	import com.adobe.marketing.mobile.Identity;
+	import com.adobe.marketing.mobile.Lifecycle;
+	import com.adobe.marketing.mobile.MobileCore;
+	import com.adobe.marketing.mobile.Signal;
+	import com.adobe.marketing.mobile.UserProfile;
+	```
 
 {% hint style="info" %}
 To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
@@ -118,32 +118,32 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% tab title="iOS" %}
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
 
-![](../../.gitbook/assets/acs-pods.png)
+	![](../../.gitbook/assets/acs-pods.png)
 
-{% hint style="info" %}
-To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
-{% endhint %}
+	{% hint style="info" %}
+	To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
+	{% endhint %}
 
 1. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
-#### Objective-C
+	#### Objective C
 
-```objectivec
-#import "ACPCore.h"
-#import "ACPCampaign.h"
-#import "ACPUserProfile.h"
-#import "ACPIdentity.h"
-#import "ACPLifecycle.h"
-#import "ACPSignal.h"
-```
+	```objectivec
+	#import "ACPCore.h"
+	#import "ACPCampaign.h"
+	#import "ACPUserProfile.h"
+	#import "ACPIdentity.h"
+	#import "ACPLifecycle.h"
+	#import "ACPSignal.h"
+	```
 
-#### Swift
+	#### Swift
 
-```swift
-import ACPCore
-import ACPCampaign
-import ACPUserProfile
-```
+	```swift
+	import ACPCore
+	import ACPCampaign
+	import ACPUserProfile
+	```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -180,34 +180,34 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-```java
-public class CampaignTestApp extends Application {
+	```java
+	public class CampaignTestApp extends Application {
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-        MobileCore.setLogLevel(LoggingMode.DEBUG);
+	    @Override
+	    public void onCreate() {
+		super.onCreate();
+		MobileCore.setApplication(this);
+		MobileCore.setLogLevel(LoggingMode.DEBUG);
 
-        try {
-            Campaign.registerExtension();
-            UserProfile.registerExtension();
-            Identity.registerExtension();
-            Lifecycle.registerExtension();
-            Signal.registerExtension();
-            MobileCore.start(new AdobeCallback () {
-                @Override
-                public void call(Object o) {
-                    MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
-                }
-            });
-        } catch (InvalidInitException e) {
-            Log.e("CampaignTestApp", e.getMessage());
-        }
+		try {
+		    Campaign.registerExtension();
+		    UserProfile.registerExtension();
+		    Identity.registerExtension();
+		    Lifecycle.registerExtension();
+		    Signal.registerExtension();
+		    MobileCore.start(new AdobeCallback () {
+			@Override
+			public void call(Object o) {
+			    MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
+			}
+		    });
+		} catch (InvalidInitException e) {
+		    Log.e("CampaignTestApp", e.getMessage());
+		}
 
-    }
-}
-```
+	    }
+	}
+	```
 
 For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
@@ -215,45 +215,45 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 {% tab title="iOS" %}
 1. In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-#### Objective-C
+	#### Objective C
 
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-    [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
+	```objectivec
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+	    [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
 
-    [ACPCampaign registerExtension];
-    [ACPUserProfile registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPLifecycle registerExtension];
-    [ACPSignal registerExtension];
-    [ACPCore start:^{
-        [ACPCore lifecycleStart:nil];
-    }];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
+	    [ACPCampaign registerExtension];
+	    [ACPUserProfile registerExtension];
+	    [ACPIdentity registerExtension];
+	    [ACPLifecycle registerExtension];
+	    [ACPSignal registerExtension];
+	    [ACPCore start:^{
+		[ACPCore lifecycleStart:nil];
+	    }];
+	  // Override point for customization after application launch.
+	  return YES;
+	}
+	```
 
-#### Swift
+	#### Swift
 
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       ACPCore.setLogLevel(.debug)
-    ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
+	```swift
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+	       ACPCore.setLogLevel(.debug)
+	    ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
 
-    ACPCampaign.registerExtension()
-    ACPUserProfile.registerExtension()
-    ACPIdentity.registerExtension()
-    ACPLifecycle.registerExtension()
-    ACPSignal.registerExtension()
-    ACPCore.start {
-        ACPCore.lifecycleStart(nil)
-    }
+	    ACPCampaign.registerExtension()
+	    ACPUserProfile.registerExtension()
+	    ACPIdentity.registerExtension()
+	    ACPLifecycle.registerExtension()
+	    ACPSignal.registerExtension()
+	    ACPCore.start {
+		ACPCore.lifecycleStart(nil)
+	    }
 
-  return true;
-}
-```
+	  return true;
+	}
+	```
 
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
@@ -333,7 +333,7 @@ FirebaseInstanceId.getInstance().getInstanceId()
 iOS simulators do not support push messaging.
 {% endhint %}
 
-#### Objective-C
+#### Objective C
 
 #### Example
 
@@ -450,7 +450,7 @@ private void handleTracking() {
 
 - *messageInfo* is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
-#### Objective-C
+#### Objective C
 
 #### Example
 
