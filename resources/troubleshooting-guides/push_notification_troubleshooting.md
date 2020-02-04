@@ -34,7 +34,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 3. Verify that the APNS server certificate is configured in the Campaign instance by clicking **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
 4. Select the mobile app from the list and verify that push channel settings status for iOS is _iOS certificate with filename \*.pem is successfully uploaded_.
 
-   Verify that you are using production certificate for production environment and development certificate for development environment.
+5. Verify that you are using production certificate for production environment and development certificate for development environment.
 ![Configured push certificate in Campaign.](../../.gitbook/assets/campaign_ios_cert_configured.png)
 {% endtab %}
 {% endtabs %}
