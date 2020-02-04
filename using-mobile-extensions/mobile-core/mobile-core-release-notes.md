@@ -1,6 +1,6 @@
 # Release Notes
 
-## February 2, 2020
+## February 4, 2020
 
 **Android Identity 1.2.0** (Released with sdk-core version 1.5.0 on Maven)
 
