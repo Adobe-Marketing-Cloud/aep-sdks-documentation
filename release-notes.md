@@ -10,11 +10,26 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 ## February 4, 2020
 
-**Android Identity 1.2.0**
+The following updates were made in this release:
+
+### Android Core 1.5.0
+
+* Fixed a cursor leak.
+* Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
+* Added support for overriding internal network stack with customer-provided code.
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities ` methods. 
+  We plan to gradually add the ability to enable failure callback to the other extensions.
+
+### Android Identity 1.2.0
 
 * Added support for the optional `AdobeCallbackWithError` available in Android Core 1.5.0 on the following APIs: `appendVisitorInfoForURL`, `getUrlVariables`, `getIdentifiers`, `getExperienceCloudId`. When the AdobeCallbackWithError is used, a default 500ms timeout is enforced when retrieving the Mobile SDK values; an AdobeError is returned if the operation times out or is not successful.
 
 Released with sdk-core version 1.5.0.
+
+### Android Mobile Services 1.1.1
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
 
 ## January 29, 2020
 
