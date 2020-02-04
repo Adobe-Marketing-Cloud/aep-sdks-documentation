@@ -8,6 +8,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## February 4, 2020
+
+**Android Identity 1.2.0** (Released with sdk-core version 1.5.0 on Maven)
+
+* Added support for the optional AdobeCallbackWithError available in Android Core 1.5.0 on the following APIs: appendVisitorInfoForURL, getUrlVariables, getIdentifiers, getExperienceCloudId. When the AdobeCallbackWithError is used, a default 500ms timeout will be enforced when retrieving the Mobile SDK values; an AdobeError will be returned if the operation timed out or it was not successful.
 
 ## January 29, 2020
 
