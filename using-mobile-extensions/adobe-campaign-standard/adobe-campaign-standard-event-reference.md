@@ -2,9 +2,11 @@
 
 ## Events handled
 
+The following events are handled by the Campaign Standard extension:
+
 ### Campaign Request Content <a id="campaign-request-content"></a>
 
-This event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the *"User has launched the app"* rule is found to be true. A triggered consquences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
+This event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the _"User has launched the app"_ rule is found to be true. A triggered consequences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
 
 #### Data payload definition <a id="data-payload-definition-1"></a>
 
@@ -154,15 +156,15 @@ This event is dispatched by the Core extension to the Event Hub when the `collec
 
 Here are the key-value pairs in this event:
 
-| **Key**      | **Value Type** | **Optional** | **Description**                                              |
-| :----------- | :------------- | :----------- | :----------------------------------------------------------- |
-| `deliveryId` | String         | No           | The string that contains the delivery ID of the message for which there were interactions. |
-| `action`     | String         | No           | The string that contains the message interaction ID.         |
-| `broadlogId` | String         | No           | The string that contains the broadlog ID of the message for which there were interactions. |
+| **Key** | **Value Type** | **Optional** | **Description** |
+| :--- | :--- | :--- | :--- |
+| `deliveryId` | String | No | The string that contains the delivery ID of the message for which there were interactions. |
+| `action` | String | No | The string that contains the message interaction ID. |
+| `broadlogId` | String | No | The string that contains the broadlog ID of the message for which there were interactions. |
 
 #### Event data example
 
-```json
+```javascript
 {
   "deliveryId": "1442de4",
   "action": "2",
@@ -171,6 +173,8 @@ Here are the key-value pairs in this event:
 ```
 
 ## Events dispatched
+
+The following events are dispatched by the Campaign Standard extension:
 
 ### Campaign Response Content
 
