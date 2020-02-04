@@ -74,6 +74,8 @@ The Campaign Classic extension also reads the following key from the configurati
 
 ## Events dispatched
 
+Here are the events that are dispatched by the Campaign Classic extension:
+
 ### Campaign Response Content
 
 This event is a response from the Campaign Classic extension to notify the result of the registration request that is sent to the Campaign Classic marketing server.
