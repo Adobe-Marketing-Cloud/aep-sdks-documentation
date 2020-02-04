@@ -236,13 +236,14 @@ In the following example, an mbox named **custom_mbox** with an additional mbox 
 In the above example, the JSON payload adds custom mbox parameters only for the custom mbox added. Custom parameters can be added to each of the Target objects instead. The following example contains a valid JSON payload for this use case:
 
 ```json
+{
     "prefetch[*]": {
         "targetparams": {
-            "mboxparameters": {
-                "extraPrefetchMboxKey": "extraPrefetchMboxValue"
-            },
             "profileparams": {
                 "extraPrefetchProfileKey": "extraPrefetchProfileValue"
+            },
+            "mboxparameters": {
+                "extraPrefetchMboxKey": "extraPrefetchMboxValue"
             }
         }
     }
