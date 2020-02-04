@@ -8,6 +8,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## February 4, 2020
+
+The following updates were made in this release:
+
+**Android Core 1.5.0**
+
+* Fixed a cusor leak.
+* Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
+* Added support for overriding internal network stack with customer-provided code.
+* Added new a interface with failure callback, `AdobeCallbackWithError`, which can be used with the methods `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities`. And we will gradually add the support in other extensions to enable the failure callback.
+
+**Android Mobile Servcies 1.1.1**
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
 
 ## January 29, 2020
 
