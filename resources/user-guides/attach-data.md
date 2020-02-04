@@ -114,7 +114,7 @@ After you complete your configuration, verify that your rule looks like the foll
 
 {% tab title="Target" %}
 
-### How to attach additional profile parameters to Target retrieve location events
+### How to attach additional Target request objects to Target retrieve location events
 
 The following sample shows how to _attach data_ to all outgoing `retrieveLocationContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
@@ -155,25 +155,26 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, additional profile parameters are added to this event before the Target extension processes it. The added profile parameters will now be added on outgoing Target retrieve location content requests.
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, a custom mbox with custom mbox parameters is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target retrieve location requests.
 
-In the following example, **extraKey**, **extraKey2**, and a data element defined for the **OS version** are added to the profile parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+In the following example, an mbox named **custom_mbox** with an additional mbox parameter named **customparams** is added to the Target event.
 
 ![](../../.gitbook/assets/target-attach-data-json-example.png)
 
-The following example shows how the data element for OS version was created.
-
-![](../../.gitbook/assets/target-attach-data-data-element-setup.png)
-
-In addition to being able to add custom profile parameters to each Target retrieve location request, custom mboxes can be added as well. The following example contains a valid JSON payload for this use case:
+In the above example, the JSON payload adds custom mbox parameters only for the custom mbox added. Custom parameters can be added to each of the Target retrieve location objects instead. The following example contains a valid JSON payload for this use case:
 
 ```json
 {
-    "request": [
-        {
-            "mboxname": "custom_mbox"
+    "request[*]": {
+        "targetparams": {
+            "profileparams": {
+                "extraRetrieveLocationKey": "extraRetrieveLocationValue"
+            },
+            "mboxparameters": {
+                "extraRetrieveLocationMboxKey": "extraRetrieveLocationMboxValue"
+            }
         }
-    ]
+    }
 }
 ```
 
@@ -233,7 +234,7 @@ In the following example, an mbox named **custom_mbox** with an additional mbox 
 
 ![](../../.gitbook/assets/target-attach-data-json-example-prefetch.png)
 
-In the above example, the JSON payload adds custom mbox parameters only for the custom mbox added. Custom parameters can be added to each of the Target objects instead. The following example contains a valid JSON payload for this use case:
+In the above example, the JSON payload adds custom mbox parameters only for the custom mbox added. Custom parameters can be added to each of the Target prefetch objects instead. The following example contains a valid JSON payload for this use case:
 
 ```json
 {
@@ -259,7 +260,7 @@ After you complete your configuration, verify that your rule looks like the foll
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
 
-### How to attach additional mbox and profile parameters to Target location clicked events
+### How to attach additional Target parameters to Target location clicked events
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationClicked` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
@@ -302,9 +303,13 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, custom mbox and profile parameters are added to the event before the Target extension processes it. The added mbox and profile parameters will now be added on outgoing Target location clicked requests.
 
-In the following example, **extraKey**, **extraKey2**, and a data element defined for the **OS version** are added to the profile parameters of the Target event. A key named **customMboxParameter** is added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
 
 ![](../../.gitbook/assets/target-attach-data-json-example-location-clicked.png)
+
+The following example shows how the data element for OS version was created.
+
+![](../../.gitbook/assets/target-attach-data-data-element-setup.png)
 
 ### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-clicked"> </a>
 
@@ -315,7 +320,7 @@ After you complete your configuration, verify that your rule looks like the foll
 1. Click **Save**
 2. Rebuild your Launch property and deploy it to the correct Environment.
 
-### How to attach additional mbox and profile parameters to Target location displayed events
+### How to attach additional Target parameters to Target location displayed events
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationDisplayed` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
@@ -358,7 +363,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, custom mbox and profile parameters are added to the event before the Target extension processes it. The added mbox and profile parameters will now be added on outgoing Target location displayed requests.
 
-In the following example, **extraKey**, **extraKey2**, and a data element defined for the **OS version** are added to the profile parameters of the Target event. A key named **customMboxParameter** is added to the mbox paramters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
 
 ![](../../.gitbook/assets/target-attach-data-json-example-location-displayed.png)
 
