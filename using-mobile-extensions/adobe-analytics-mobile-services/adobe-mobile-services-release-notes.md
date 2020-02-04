@@ -6,7 +6,7 @@ Release notes and change logs for the Adobe Mobile Services extension
 
 The following updates were made in this release:
 
-**Android Mobile Servicies 1.1.1**
+**Android Mobile Services 1.1.1**
 
 * Improved existing log messages and added additional logging to assist with debugging.
 

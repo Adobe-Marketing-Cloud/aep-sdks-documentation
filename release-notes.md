@@ -19,7 +19,7 @@ The following updates were made in this release:
 * Added support for overriding internal network stack with customer-provided code.
 * Added new a interface with failure callback, `AdobeCallbackWithError`, which can be used with the methods `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities`. And we will gradually add the support in other extensions to enable the failure callback.
 
-**Android Mobile Servicies 1.1.1**
+**Android Mobile Services 1.1.1**
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
