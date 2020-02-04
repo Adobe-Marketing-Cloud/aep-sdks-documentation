@@ -142,11 +142,12 @@ You can verify the push notification tracking in Project Griffon.
   
    Click event tracking \(action value 2\)
 
-![Shows Push notification click tracking.](../../.gitbook/assets/push_tracking_click.png)
+   ![Shows Push notification click tracking.](../../.gitbook/assets/push_tracking_click.png)
 
   
-Open event tracking \(action value 1\)  
- ![Shows Push notification open tracking.](../../.gitbook/assets/push_tracking_open.png)
+   Open event tracking \(action value 1\)  
+ 
+   ![Shows Push notification open tracking.](../../.gitbook/assets/push_tracking_open.png)
 
 ### Troubleshooting using Charles
 
