@@ -55,26 +55,28 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 1. Add the Campaign Classic extension to your project using the app's Gradle file.
 2. Import the CampaignClassic and Lifecycle extensions in your application's main activity.
 
-```java
-import com.adobe.marketing.mobile.CampaignClassic;
-import com.adobe.marketing.mobile.Lifecycle;
-```
+   ```java
+   import com.adobe.marketing.mobile.CampaignClassic;
+   import com.adobe.marketing.mobile.Lifecycle;
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Campaign Classic and [Mobile Core](../mobile-core/) libraries to your project. You will need to add the following pods to your `Podfile`:
+1. Add the Campaign Classic and [Mobile Core](../mobile-core/) libraries to your project. 
 
-```text
-pod 'ACPCampaignClassic', '2.0.0'
-pod 'ACPLifecycle', '2.0.0'
-pod 'ACPCore', '2.0.0'
-```
+   You can add the following pods to your `Podfile`:
 
-or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
+   ```text
+   pod 'ACPCampaignClassic', '2.0.0'
+   pod 'ACPLifecycle', '2.0.0'
+   pod 'ACPCore', '2.0.0'
+   ```
+
+   or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
 
 1. In Xcode project, import Mobile Core and Campaign Classic extensions:
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
 #import "ACPCore.h"
@@ -123,7 +125,7 @@ public class CampaignClassicTestApp extends Application {
 {% tab title="iOS" %}
 In your App's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
