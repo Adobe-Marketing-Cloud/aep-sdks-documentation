@@ -43,9 +43,9 @@ The callback will be invoked to return the created tracker instance. If an error
 
 **Examples**
 
-Here are examples in Objective-C and Swift:
+Here are examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [ACPMedia createTracker:^(ACPMediaTracker * _Nullable mediaTracker) {
