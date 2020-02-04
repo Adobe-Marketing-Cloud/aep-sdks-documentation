@@ -17,7 +17,8 @@ The following updates were made in this release:
 * Fixed a cursor leak.
 * Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
 * Added support for overriding internal network stack with customer-provided code.
-* Added new a interface with failure callback, `AdobeCallbackWithError`, which can be used with the methods `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities`. And we will gradually add the support in other extensions to enable the failure callback.
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities ` methods. 
+  We plan to gradually add the ability to enable failure callback to the other extensions.
 
 **Android Mobile Services 1.1.1**
 
