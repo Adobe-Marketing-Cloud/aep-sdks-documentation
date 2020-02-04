@@ -2,8 +2,6 @@
 
 ## Events handled
 
-The following events are handled by the Audience Manager extension:
-
 ### Audience Manager Content Request
 
 This event updates the profile for Audience Manager and is generated when the`audienceSignalWithData` API is called to send content to Audience Manager.
@@ -72,9 +70,7 @@ Audience Manager listens for Analytics Response events, which are sent when audi
 
 For more information about this event, see [Analytics Response Content](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-content).
 
-## Events dispatched <a id="audience-manager-content-response"></a>
-
-The following events are dispatched by the Audience Manager extension:
+## Events dispatched   <a id="audience-manager-content-response"></a>
 
 ### Audience Manager Content Response
 

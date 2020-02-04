@@ -74,7 +74,7 @@ The Campaign Classic extension also reads the following key from the configurati
 
 ## Events dispatched
 
-The following events are dispatched to the Campaign Classic extension:
+The following events are dispatched by the Campaign Classic extension:
 
 ### Campaign Response Content
 
