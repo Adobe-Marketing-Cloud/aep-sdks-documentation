@@ -14,7 +14,14 @@ The following updates were made in this release:
   
 ### Android Identity 1.2.0
 
-- Added support for the optional `AdobeCallbackWithError` available in Android Core 1.5.0 on the following APIs: `appendVisitorInfoForURL`, `getUrlVariables`, `getIdentifiers`, `getExperienceCloudId`. When the AdobeCallbackWithError is used, a default 500ms timeout is enforced when retrieving the Mobile SDK values; an AdobeError is returned if the operation times out or is not successful.
+- Added support for the optional `AdobeCallbackWithError` callback that is available in Android Core version 1.5.0 on the following APIs: 
+
+  - `appendVisitorInfoForURL`
+  - `getUrlVariables`
+  - `getIdentifiers`
+  - `getExperienceCloudId`
+
+  When the `AdobeCallbackWithError` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `AdobeError` is returned.
 
 Released with sdk-core version 1.5.0.
 
