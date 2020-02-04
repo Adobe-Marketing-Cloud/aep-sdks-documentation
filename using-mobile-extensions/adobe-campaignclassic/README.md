@@ -12,7 +12,7 @@
 
 ### Configure Campaign Classic extension
 
-![ACC-configure-extension](../../.gitbook/assets/acc-configure-extension.png)
+![Configuring the Campaign Classic extension](../../.gitbook/assets/acc-configure-extension.png)
 
 {% hint style="info" %}
 Trying to find your Campaign Classic registration or tracking endpoint URLs? You can retrieve this information in the Campaign Classic interface in the **Tools** &gt; **Advanced** &gt; **Deployment wizard** menu. The endpoint for push notifications is usually the same as the URL that is used for web forms and surveys.
