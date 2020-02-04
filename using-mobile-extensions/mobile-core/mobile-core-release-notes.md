@@ -1,5 +1,21 @@
 # Release Notes
 
+## February 4, 2020
+
+The following updates were made in this release:
+
+**Android Core 1.5.0**
+
+* Fixed a cursor leak.
+
+* Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
+
+* Added support for overriding internal network stack with customer-provided code.
+
+* Added new a interface with failure callback, `AdobeCallbackWithError`, which can be used with the methods `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities`. And we will gradually add the support in other extensions to enable the failure callback.
+
+  
+
 ## January 27, 2020
 
 The following updates were made in this release:

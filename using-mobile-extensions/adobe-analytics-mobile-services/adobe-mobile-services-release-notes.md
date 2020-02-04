@@ -2,6 +2,16 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## February 4, 2020
+
+The following updates were made in this release:
+
+**Android Mobile Servicies 1.1.1**
+
+* Improved existing log messages and added additional logging to assist with debugging.
+
+  
+
 ## January 23, 2020
 
 The following updates were made in this release:
