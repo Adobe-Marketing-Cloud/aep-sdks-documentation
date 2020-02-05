@@ -182,6 +182,105 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
+## Enable the Experience Cloud Identity service
+
+Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
+
+{% hint style="info" %}
+To confirm that you have the correct Experience Cloud Org ID in the Mobile Core settings page, see [Get the SDK](get-the-sdk.md).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+Import the Identity framework to your project:
+
+#### Java
+
+```java
+import com.adobe.marketing.mobile.*;
+```
+
+Register the framework with Mobile Core:
+
+```java
+public class MobileApp extends Application {
+  @Override
+  public void onCreate(){
+     super.onCreate();
+     MobileCore.setApplication(this);
+     try {
+        Identity.registerExtension();
+     } catch (Exception e) {
+       //Log the exception
+       }
+    }
+ }
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+Add the Identity framework to your project:
+
+#### Objective-C
+
+```objectivec
+#import "ACPIdentity.h"
+```
+
+#### Swift
+
+```swift
+import ACPCore
+```
+
+Register the Identity framework with Mobile Core
+
+#### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPIdentity registerExtension];
+  // Override point for customization after application launch.
+  return YES;
+}
+```
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  ACPIdentity.registerExtension()
+  return true
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+Import the Identity extension
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+```
+
+Get the extension version \(optional\)
+
+```jsx
+ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
+```
+
+Register the extension with Core
+
+```jsx
+ACPIdentity.registerExtension();
+```
+{% endtab %}
+{% endtabs %}
+
+After successful configuration, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
+
+
 ## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
