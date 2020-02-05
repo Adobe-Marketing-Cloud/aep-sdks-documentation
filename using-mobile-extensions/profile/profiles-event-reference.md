@@ -8,13 +8,13 @@ The following events are handled by the Profile extension:
 
 The event is used to put a user profile attribute update action on the Event Hub and is consumed by the Profile extension. This event is generated when an `updateUserAttribute` call is made by the SDK client.
 
-#### Event Details
+#### Event details
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
 | `com.adobe.eventType.userProfile` | `com.adobe.eventSource.requestProfile` | No |  |
 
-#### Data Payload Definition
+#### Data payload definition
 
 Here are the key-value pairs in this event:
 

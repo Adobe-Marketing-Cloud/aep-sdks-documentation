@@ -2,8 +2,6 @@
 
 ## Events handled
 
-The following events are handled by the Target extension:
-
 ### Target Content Request
 
 This event is created when an API is called to send a Target request for the associated mbox location or to prefetch locations.
@@ -125,8 +123,6 @@ The Target extension will read the following keys from the configuration event:
 | `target.previewEnabled` | Boolean | Yes | Boolean value to determine whether Target Preview should be enabled. If not set, then Preview is enabled by default. |
 
 ## Events dispatched
-
-The following events are dispatched by the Target extension:
 
 ### Target Content Response
 
