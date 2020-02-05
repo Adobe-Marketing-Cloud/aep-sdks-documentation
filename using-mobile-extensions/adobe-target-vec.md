@@ -13,15 +13,15 @@ To get started with Target VEC, complete the following steps:
 
 1. Configure the Adobe Target - VEC extension.
 
-   The VEC extension is dependent on the Adobe Target Extension. Make sure Adobe Target extension is already configured and enabled.
+   **Important**: The VEC extension is dependent on the Adobe Target Extension. Ensure that the Adobe Target extension has been configured and enabled.
 
 2. Add the Target VEC Extension to your app.
 3. Select one of the following implementation methods:
-   1. Auto-Fetch Target Activities, where options are:
+   1. **Auto-Fetch Target Activities**, where options are:
       * Fetch in a blocking call \(background is OFF\)
       * Fetch in an asynchronous mode \(background is ON\)
-   2. Fetch Target Activities Programmatically
-   3. Handle Target Workspace Restrictions
+   2. **Fetch Target Activities Programmatically**
+   3. **Handle Target Workspace Restrictions**
 
 ## Configure the Adobe Target - VEC extension in Experience Platform Launch <a id="configuring-the-adobe-target-vec-extension-in-adobe-launch"></a>
 

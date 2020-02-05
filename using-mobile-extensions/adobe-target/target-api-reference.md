@@ -6,6 +6,7 @@ This API clears the in-memory cache that contains the prefetched offers.
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Syntax
 
 ```java
@@ -20,6 +21,7 @@ Target.clearPrefetchCache();
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -28,9 +30,9 @@ Target.clearPrefetchCache();
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget clearPrefetchCache];
@@ -44,20 +46,23 @@ ACPTarget.clearPrefetchCache()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
 clearPrefetchCache();
 ```
 
-#### Example
+#### Examples
 
 **JavaScript**
 
 ```javascript
 ACPTarget.clearPrefetchCache();
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## extensionVersion
@@ -66,6 +71,7 @@ This API gets the current Target extension version.
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Syntax
 
 ```java
@@ -80,6 +86,7 @@ Target.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -88,9 +95,9 @@ Target.extensionVersion();
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget extensionVersion];
@@ -104,15 +111,16 @@ ACPTarget.extensionVersion()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
 extensionVersion(): Promise<string>
 ```
 
-* A _Promise_ object is returned and is resolved with the extension version value.
+* A Promise object is returned and is resolved with the extension version value.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -121,7 +129,9 @@ ACPTarget.extensionVersion().then(version => {
             // read Target extension version 
 });
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## getThirdPartyId
@@ -130,13 +140,14 @@ This API gets the custom visitor ID for Target. If no third-party ID was previou
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+
+### Syntax
 
 ```java
 public static void getThirdPartyId(final AdobeCallback<String> callback)
 ```
 
-#### Example
+### Example
 
 ```java
 Target.getThirdPartyId(new AdobeCallback<String>() {                    
@@ -148,10 +159,12 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 ```
 
 * _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `null`.
+
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+
+### Syntax
 
 ```objectivec
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
@@ -159,11 +172,11 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 
 * _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `nil`.
 
-#### Examples
+### Examples
 
-Here are the examples in Objective C and Swift:
+Here are the examples in Objective-C and Swift:
 
-#### **Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
@@ -178,27 +191,31 @@ ACPTarget.getThirdPartyId({thirdPartyID in
        // read Target thirdPartyId
 })
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-#### Syntax
+
+### Syntax
 
 ```javascript
 getThirdPartyId(): Promise<string>
 ```
 
-* A _Promise_ object is returned and is resolved with the `thirdPartyId` value.
+* A Promise object is returned and is resolved with the `thirdPartyId` value.
 
-#### Example
+### Example
 
 **JavaScript**
 
 ```javascript
 ACPTarget.getThirdPartyId().then(thirdPartyId => {
-            // read Target thirdPartyId 
+			// read Target thirdPartyId 
 });
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## getTntId
@@ -211,6 +228,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Syntax
 
 ```java
@@ -232,6 +250,7 @@ Target.getTntId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -242,9 +261,9 @@ Target.getTntId(new AdobeCallback<String>() {
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget getTntId:^(NSString *tntId){
@@ -262,15 +281,16 @@ ACPTarget.getTntId({tntId in
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
 getTntId(): Promise<string>
 ```
 
-* A _Promise_ object is returned and is resolved with the `tntId` value. If no Target ID was set, this value will be `null`.
+* A Promise object is returned and is resolved with the `tntId` value. If no Target ID was set, this value will be `null`.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -279,7 +299,9 @@ ACPTarget.getTntId().then(tntId => {
             // read target's tntId                         
 });
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## locationClicked
@@ -295,9 +317,8 @@ For a click notification to be sent to Target, ensure that the click metric is e
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public static void locationClicked(final String mboxName, final TargetParameters parameters)
@@ -306,7 +327,7 @@ public static void locationClicked(final String mboxName, final TargetParameters
 * _mboxName_ is a String the contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `TargetParameters` for the request.
 
-#### Example
+### Example
 
 ```java
 // Mbox parameters
@@ -340,7 +361,8 @@ Target.locationClicked("cartLocation", targetParameters);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+
+### Syntax
 
 ```objectivec
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
@@ -349,11 +371,11 @@ Target.locationClicked("cartLocation", targetParameters);
 * _name_ is an NSString that contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `ACPTargetParameters` for the request.
 
-#### Examples
+### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-#### **Objective C**
+**Objective-C**
 
 ```objectivec
 // Mbox parameters
@@ -417,6 +439,7 @@ ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetPara
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
@@ -426,7 +449,7 @@ locationClickedWithName(name: string, parameters?: ACPTargetParameters)
 * _name_ is a string that contains the mbox location for which the click notification will be sent to Target.
 * _parameters_ is the configured `ACPTargetParameters` for the request.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -450,7 +473,9 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationClickedWithName("cartLocation", targetParameters);
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## locationsDisplayed
@@ -463,7 +488,6 @@ Do not use this API with the deprecated [loadRequests](https://aep-sdks.gitbook.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 #### Syntax
 
@@ -499,6 +523,7 @@ Target.locationsDisplayed(mboxList, targetParameters);
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -511,9 +536,9 @@ withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
@@ -542,6 +567,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
@@ -551,7 +577,7 @@ locationsDisplayed(mboxNames: Array<string>, parameters?: ACPTargetParameters)
 * _mboxNames_ is an Array of the mbox locations for which the display notification will be sent to Target.
 * _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -562,7 +588,9 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## prefetchContent
@@ -571,7 +599,6 @@ This API sends a prefetch request to your configured Target server with the pref
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 #### Syntax
 
@@ -628,6 +655,7 @@ Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallb
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -635,16 +663,15 @@ Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallb
 withParameters: (nullable ACPTargetParameters*) targetParameters
 callback: (nullable void (^) (NSError* _Nullable error)) callback;
 ```
-
 * _targetPrefetchObjectArray_ is an array of `ACPTargetPrefetchObject` objects for various mbox locations.
 * _targetParameters_ is the configured `ACPTargetParameters` for the prefetch request.
 * If the prefetch is successful, _callback_ is invoked with a `nil` value. If the prefetch is not successful, an error message is returned.
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
@@ -743,17 +770,17 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
 prefetchContent(prefetchObjectArray: Array<ACPTargetPrefetchObject>, parameters?: ACPTargetParameters): Promise<any>
 ```
-
 * _prefetchObjectArray_ is an Array of `ACPTargetPrefetchObject` objects for various mbox locations.
 * _parameters_ is the configured `ACPTargetParameters` for the prefetch request.
 * A Promise object is returned and is resolved with true value or is rejected with the reason for the error.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -786,8 +813,11 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => console.log(success)).catch(err => console.log(err));
 ```
+
 {% endtab %}
+
 {% endtabs %}
+
 
 ## resetExperience
 
@@ -795,7 +825,6 @@ This API resets the user's experience by removing the visitor identifiers and re
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 #### Syntax
 
@@ -811,6 +840,7 @@ Target.resetExperience();
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -819,9 +849,9 @@ Target.resetExperience();
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget resetExperience];
@@ -835,6 +865,7 @@ ACPTarget.resetExperience()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
@@ -848,12 +879,14 @@ resetExperience()
 ```javascript
 ACPTarget.resetExperience();
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## retrieveLocationContent
 
-This API sends a batch request to the configured Target server for multiple mbox locations.
+This API sends a batch request to the configured Target server for multiple mbox locations. 
 
 The main difference with the deprecated [loadRequests](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference-deprecated#loadrequests) API is in usage with prefetch APIs. For a prefetched mbox, unlike `loadRequests` API, invoking this API does not send a display notification to the configured Target server. If you do not have an existing prefetch content call, and you send a batch request to Target, there is no difference in behaviors of the `retrieveLocationContent` and `loadRequests` APIs.
 
@@ -861,7 +894,6 @@ For mbox locations in the Target requests list that are not already prefetched, 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 #### Syntax
 
@@ -906,7 +938,7 @@ TargetParameters parameters2 = new TargetParameters.Builder()
                                .product(targetProduct)
                                .order(targetOrder)
                                .build();
-
+                               
 TargetRequest request2 = new TargetRequest("mboxName2", parameters2, "defaultContent2",
                                             new AdobeCallback<String>() {
                                                 @Override
@@ -932,6 +964,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -944,9 +977,9 @@ Target.retrieveLocationContent(locationRequests, parameters);
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
@@ -1039,6 +1072,7 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
@@ -1048,7 +1082,7 @@ retrieveLocationContent(requests: Array<ACPTargetRequestObject>, parameters?: AC
 * _ACPTargetRequestObject_ is an Array of `ACPTargetRequestObject` objects for various mbox locations.
 * _parameters_ is the configured `ACPTargetParameters` for the load request.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
@@ -1092,7 +1126,9 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.retrieveLocationContent(requestArray, targetParameters);
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## setPreviewRestartDeeplink
@@ -1101,7 +1137,6 @@ This API sets the Target preview URL to be displayed when the preview mode is en
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 #### Syntax
 
@@ -1110,8 +1145,7 @@ public static void setPreviewRestartDeepLink(final Uri deepLink)
 ```
 
 * _deeplink_ is a Uri that contains the preview restart deeplink.
-
-**Example**
+#### Example
 
 ```java
 Target.setPreviewRestartDeepLink("myapp://HomePage");
@@ -1119,6 +1153,7 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Syntax
 
 ```objectivec
@@ -1129,9 +1164,9 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-**Objective C**
+**Objective-C**
 
 ```text
 [ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
@@ -1145,22 +1180,24 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Syntax
 
 ```javascript
 setPreviewRestartDeeplink(deepLink: string)
 ```
-
 * _deepLink_ is a string that contains the preview restart deeplink.
 
-#### Example
+#### Examples
 
 **JavaScript**
 
 ```javascript
 ACPTarget.setPreviewRestartDeeplink("myapp://HomePage");
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## setThirdPartyId
@@ -1173,9 +1210,8 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public static void setThirdPartyId(final String thirdPartyId)
@@ -1183,7 +1219,7 @@ public static void setThirdPartyId(final String thirdPartyId)
 
 * _thirdPartyId_ is a String that contains the custom visitor ID to be set in Target.
 
-#### Example
+### Example
 
 ```java
 Target.setThirdPartyId("third-party-id");
@@ -1191,7 +1227,8 @@ Target.setThirdPartyId("third-party-id");
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+
+### Syntax
 
 ```objectivec
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
@@ -1199,11 +1236,11 @@ Target.setThirdPartyId("third-party-id");
 
 * _thirdPartyId_ is a NSString that contains the custom visitor ID to be set in Target.
 
-#### Examples
+### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Objective-C and Swift:
 
-#### **Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPTarget setThirdPartyId:@"third-party-id"];
@@ -1217,22 +1254,25 @@ ACPTarget.setThirdPartyId("third-party-id")
 {% endtab %}
 
 {% tab title="React Native" %}
-#### Syntax
+
+### Syntax
 
 ```javascript
-setThirdPartyId(thirdPartyId: string)
+setThirdPartyId(thirdPartyId: string) 
 ```
 
 * _thirdPartyId_ is a string that contains the custom visitor ID to be set in Target.
 
-#### Example
+### Examples
 
 **JavaScript**
 
 ```javascript
 ACPTarget.setThirdPartyId("third-party-id");
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Public classes
@@ -1649,6 +1689,7 @@ The following method can be used to create an instance of ACPTargetProduct.
 {% endtab %}
 
 {% tab title="React Native" %}
+
 ### ACPTargetRequestObject
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that is invoked to return mbox content from Target.
@@ -1674,7 +1715,7 @@ class ACPTargetPrefetchObject {
   targetParameters: ACPTargetParameters;
 
   constructor(name?: string, targetParameters?: ACPTargetParameters) {
-      this.name = name;
+  	this.name = name;
     this.targetParameters = targetParameters;
   }
 
@@ -1693,7 +1734,7 @@ class ACPTargetParameters {
   product: ACPTargetProduct;
 
   constructor(parameters?: {string: string}, profileParameters?: {string: string}, product?: ACPTargetProduct, order?: ACPTargetOrder) {
-      this.parameters = parameters;
+  	this.parameters = parameters;
     this.profileParameters = profileParameters;
     this.product = product;
     this.order = order;
@@ -1712,7 +1753,7 @@ class ACPTargetOrder {
   purchasedProductIds: Array<string>;
 
   constructor(orderId: string, total?: number, purchasedProductIds: Array<string>) {
-      this.orderId = orderId;
+  	this.orderId = orderId;
     this.total = total;
     this.purchasedProductIds = purchasedProductIds;
   }
@@ -1729,11 +1770,13 @@ class ACPTargetProduct {
   categoryId: string;
 
   constructor(productId: string, categoryId: string) {
-      this.productId = productId;
+  	this.productId = productId;
     this.categoryId = categoryId;
   }
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
