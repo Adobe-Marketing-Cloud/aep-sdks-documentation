@@ -122,52 +122,52 @@ public class SampleApp extends Application {
 
 1. In your app's `didFinishLaunchingWithOptions` function register the Target VEC extension
 
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  //Other Extensions that you need
-  [ACPTarget registerExtension];
-  [ACPTargetVEC registerExtension];
-  [ACPCore start:^{
-    [ACPCore lifecycleStart:nil];
-  }];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
+    ```objectivec
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+      //Other Extensions that you need
+      [ACPTarget registerExtension];
+      [ACPTargetVEC registerExtension];
+      [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+      }];
+      // Override point for customization after application launch.
+      return YES;
+    }
+    ```
 
 1. In your app's `openURL` method, add the deeplink handling code.
 
-```objectivec
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
-  [ACPCore collectLaunchInfo:@ {@"adb_deeplink": url.absoluteString}];
-  return YES;
-}
-```
+    ```objectivec
+    - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
+      [ACPCore collectLaunchInfo:@ {@"adb_deeplink": url.absoluteString}];
+      return YES;
+    }
+    ```
 
 #### Swift
 
 1. In your app's `didFinishLaunchingWithOptions` function register the Target VEC extension
 
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  //Other Extensions that you need
-  ACPTarget.registerExtension()
-  ACPTargetVEC.registerExtension()
-  ACPCore.start {
-    ACPCore.lifecycleStart(nil)
-  }
-  return true
-}
-```
+    ```swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      //Other Extensions that you need
+      ACPTarget.registerExtension()
+      ACPTargetVEC.registerExtension()
+      ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+      }
+      return true
+    }
+    ```
 
 1. In your app's `open url` method, add the deeplink handling code.
 
-```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-  ACPCore.collectLaunchInfo(["adb_deeplink": url.absoluteString])
-  return true
-}
-```
+    ```swift
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+      ACPCore.collectLaunchInfo(["adb_deeplink": url.absoluteString])
+      return true
+    }
+    ```
 {% endtab %}
 {% endtabs %}
 
