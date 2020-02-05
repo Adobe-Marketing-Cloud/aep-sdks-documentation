@@ -21,7 +21,7 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 
    The **Environments** tab lists the different environments that you can publish. 
    
-2. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package.png).
+2. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package.png)).
 
    You should see a dialog box similar to the following:
 
