@@ -2,13 +2,17 @@
 
 A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Experience Platform Launch](https://launch.adobe.com).
 
-## Set up groups and users
+## Before you start
+
+Before you can set up your mobile property, complete the following prerequisites:
+
+### Set up groups and users
 
 Launch is fully integrated with your Adobe ID. User permissions are managed through the Admin Console with other Adobe products and solutions from the Creative Cloud, Document Cloud, and Experience Cloud.
 
 For detailed instructions on how to create groups and add users for Launch, see [User permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html).
 
-## Log in to Experience Platform Launch
+### Log in to Experience Platform Launch
 
 After Expeience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to https://launch.adobe.com or by logging in to the Experience Cloud (https://experiencecloud.adobe.com), navigating to the Activation page, and clicking on Launch.
 
