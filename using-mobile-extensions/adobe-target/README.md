@@ -50,53 +50,53 @@ To add Target to your app:
 {% tab title="iOS" %}
 1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
 
-```text
-pod 'ACPCore'
-pod 'ACPTarget'
-```
+    ```text
+    pod 'ACPCore'
+    pod 'ACPTarget'
+    ```
 
 1. Import the Target and Identity libraries.
 
-#### Objective C
+    #### Objective C
 
-```objectivec
-   #import "ACPCore.h"
-   #import "ACPTarget.h"
-   #import "ACPIdentity.h"
-   #import "ACPTargetRequestObject.h"
-   #import "ACPTargetPrefetchObject.h"
-```
+    ```objectivec
+       #import "ACPCore.h"
+       #import "ACPTarget.h"
+       #import "ACPIdentity.h"
+       #import "ACPTargetRequestObject.h"
+       #import "ACPTargetPrefetchObject.h"
+    ```
 
-#### Swift
+    #### Swift
 
-```swift
-   #import ACPCore
-   #import ACPTarget
-   #import ACPIdentity
-```
+    ```swift
+       #import ACPCore
+       #import ACPTarget
+       #import ACPIdentity
+    ```
 {% endtab %}
 
 {% tab title="React Native" %}
 #### JavaScript
 
-Install Target
+1. Install Target.
 
-```javascript
-npm install @adobe/react-native-acptarget
-react-native link @adobe/react-native-acptarget
-```
+    ```javascript
+    npm install @adobe/react-native-acptarget
+    react-native link @adobe/react-native-acptarget
+    ```
 
-Importing the extension and related libraries
+2. Import the extension and related libraries.
 
-```javascript
-import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
-```
+    ```javascript
+    import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
+    ```
 
-Getting the extension version
+3. Get the extension version.
 
-```javascript
-ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
-```
+    ```javascript
+    ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
+    ```
 {% endtab %}
 {% endtabs %}
 
