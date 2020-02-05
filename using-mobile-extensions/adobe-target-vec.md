@@ -64,7 +64,7 @@ To get started with Target VEC, complete the following steps:
 1. Import Target and the TargetVEC library.
 2. Add the Target VEC library to your project via your `Podfile` by adding `pod 'ACPTargetVEC'`
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
    #import "ACPCore.h"
@@ -118,7 +118,7 @@ public class SampleApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
 1. In your app's `didFinishLaunchingWithOptions` function register the Target VEC extension
 
@@ -177,7 +177,7 @@ The Target VEC extension retrieves the relevant Target experiences for your app 
 
 The default behavior of the extension is to make a synchronous network request \(blocking call\) at the time of Application launch. You can use Launch to control the behavior of this network request to meet your application behavior.
 
-### Auto-Fetch Target Activities
+### Auto-fetch Target activities
 
 This is the default behavior where a network request is initiated automatically by the Target VEC extension. You can use one of the following options to make this request a blocking call or an asynchronous request.
 
@@ -189,7 +189,7 @@ This is the default behavior where a network request is initiated automatically 
 
   When this option is selected, Target VEC extension makes a network request in the background on App launch but does not block the app from loading. If your experiences are authored on the home screen of your app, the offers might not apply for the home screen if the screen is rendered before the call completes. The app screen rendering is typically identified via the lifecycle events, `didFinishLaunchingWithOptions` and `onActivityResumed`, on iOS and Android, respectively. Offers are automatically apply on all subsequent screens.
 
-### Fetch Target Activities Programmatically
+### Fetch Target activities programmatically
 
 You can disable the Target VEC extension to make the network request automatically and decide to programmatically call the Extension API. This gives your developers control on how they want to integrate Target VEC offers in the app. The Target VEC extension has the following static methods that can used to programmatically retrieve Target VEC offers:
 
@@ -201,7 +201,7 @@ You can disable the Target VEC extension to make the network request automatical
 
   Target offers are _not_ applied on the current screen, and there will no flicker. As the user navigates to subsequent screens, offers will be automatically applied as applicable.
 
-### Handle Target Workspace Restrictions
+### Handle Target workspace restrictions
 
 You can set the `at_property` value for your workspace using the Launch interface. This ensures only activities in that workspace will be delivered to your mobile app.
 
@@ -221,7 +221,9 @@ The `collectLaunchInfo` API is used to enter the visual preview mode. After the 
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### **Objective-C Example**
+#### Examples
+
+**Objective C**
 
 ```text
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
@@ -230,7 +232,7 @@ The `collectLaunchInfo` API is used to enter the visual preview mode. After the 
 }
 ```
 
-#### **Swift Example**
+**Swift**
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
