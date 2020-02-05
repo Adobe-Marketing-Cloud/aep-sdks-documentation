@@ -68,7 +68,7 @@ For the latest React Native installation instructions, see the README file in th
 
 If you cannot access the installation dialog box, complete the following sections to get the Mobile SDKs. 
 
-### Configure the SDK with an Environment ID
+### 1. Configure the SDK with an Environment ID
 
 To initialize the SDK, you will need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch. The **Environment ID** links the configuration from a mobile property with your SDK implementation.
 
@@ -103,7 +103,7 @@ ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
 {% endtab %}
 {% endtabs %}
 
-### Initializing the SDK
+### 2. Initialize the SDK
 
 {% tabs %}
 {% tab title="Android" %}
@@ -171,7 +171,7 @@ initSDK() {
 {% endtab %}
 {% endtabs %}
 
-### Ensure app permissions \(Android\)
+### 3. Ensure app permissions \(Android\)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -182,7 +182,7 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Enable the Experience Cloud Identity service
+## 4. Enable the Experience Cloud Identity service
 
 Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
 
