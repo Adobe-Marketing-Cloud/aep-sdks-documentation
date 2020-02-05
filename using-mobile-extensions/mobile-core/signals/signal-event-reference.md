@@ -2,7 +2,7 @@
 
 ## Events handled
 
-The following events are handled by the Signal extension:
+Here are the events that are handled by the Signal extension:
 
 ### Rules Engine Response Content
 
@@ -83,5 +83,5 @@ For a configuration change event:
 
 ## Dispatched events shared states
 
-The Signal extension does not dispatch events and does not share any shared state.
+The Signal extension does not dispatch an event and does not share any shared state.
 

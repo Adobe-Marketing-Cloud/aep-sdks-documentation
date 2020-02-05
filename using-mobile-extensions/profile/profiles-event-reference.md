@@ -2,7 +2,7 @@
 
 ## Events handled
 
-Here are the events that are handled by the Profile extension:
+The following events are handled by the Profile extension:
 
 ### USER\_PROFILE : REQUEST\_PROFILE
 
@@ -69,7 +69,7 @@ Here is a code sample of the `USERPROFILE : REQUEST_RESET` event:
 
 ## Events dispatched
 
-Here are the events that are dispatched by the Profile extension:
+The following events are dispatched by the Profile extension:
 
 ### USER\_PROFILE : RESPONSE\_PROFILE
 

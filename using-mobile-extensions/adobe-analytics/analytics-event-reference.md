@@ -12,7 +12,7 @@ Here are the Analytics events in the Lifecycle extension:
 
 #### Install event
 
-The SDK tracks the application install details when Lifecycle is enabled. These details include the install date and the daily engaged/monthly engaged user badges.
+The SDK tracks the application install details when lifecycle is enabled. These details include the install date and the daily engaged/monthly engaged user badges.
 
 #### Launch event
 
@@ -23,7 +23,9 @@ A launch is considered to be new when the following conditions are met:
 * The application is reopened from the background after the configured session timeout.
 * The application is opened after a force close.
 
-Launch data includes information about the application's number of launches, days since first run, days since last use, user daily/monthly engaged badges, and other lifecycle metrics. We also track the application version upgrades.
+Launch data includes information about the application's number of launches, days since first run, days since last use, user daily/monthly engaged badges, and other lifecycle metrics.
+
+We also track the application version upgrades.
 
 #### Crash event
 
@@ -31,7 +33,9 @@ If your application is terminated without having first been backgrounded, the SD
 
 #### SessionInfo
 
-This hit contains information about the previous launch session, such as the session length. This information is sent as an individual hit if the `backdateSessionInfo` flag is enabled in your configuration. If the flag is not enabled, the information is sent as part of the launch event.
+This hit contains information about the previous launch session, such as the session length.
+
+This information is sent as an individual hit if the `backdateSessionInfo` flag is enabled in your configuration. If the flag is not enabled, the information is sent as part of the launch event.
 
 ### Identity extension
 
@@ -62,8 +66,6 @@ The SDK tracks the following metrics for your in-app messages:
 The Analytics event in the Target extension is `AnalyticsForTarget`. The SDK forwards Target's data to Analytics when A4T is enabled in Target Services.
 
 ## Events handled by Analytics
-
-The following events are handled by the Analytics extension:
 
 ### Analytics content request <a id="analytics-content-request"></a>
 
@@ -202,7 +204,7 @@ The Analytics extension will read the following keys from the configuration even
 | `analytics.offlineEnabled` | Bool | Yes | Indicates whether Analytics offline batching is enabled. By default, this option is disabled. |
 | `lifecycle.backdateSessionInfo` | Bool | Yes | Indicates whether Analytics should backdate the lifecycle `SessionInfo` hit. This flag is used when `analytics.offlineEnabled` is also enabled. By default, this option is disabled. |
 | `analytics.referrerTimeout` | Int | Yes | Indicates the number of seconds that the SDK will wait for referrer information to arrive. By default, this value is 0. |
-| `experienceCloud.org` | String | No | The Experience Cloud organization ID. |
+| `experienceCloud.org` | String | No | The Experience cloud org ID. |
 | `global.privacy` | String | Yes | Contains the mobile privacy status settings. |
 
 #### Event data example <a id="event-data-example-3"></a>
@@ -293,8 +295,8 @@ The Analytics extension listens only to the Lifecycle Start Event, and the Analy
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `type` | String | No | Has one of these values: Start, Stop, or Pause |
-| `contextdata` | Map | Yes | Map that contains the user-supplied context data. |
+| `type` | String | No | Has one of these values: Start\|Stop\|Pause |
+| `contextdata` | Map | Yes | Map containing the user supplied context data. |
 
 ```javascript
 {
@@ -349,7 +351,7 @@ The Analytics extension waits for the lifecycle data and appends it to an exitin
 
 #### Install event <a id="install-event"></a>
 
-After lifecycle is enabled, the SDK tracks the application install details, which include the install date and the daily engaged/monthly engaged user badges.
+After lifecycle is enabled, the SDK tracks the application install details., which include the install date and the daily engaged/monthly engaged user badges.
 
 ```javascript
 {
@@ -410,17 +412,15 @@ If your application is terminated without having first been backgrounded, the SD
 
 This hit contains information, such as the session length, about the previous launch session. If the `backdateSessionInfo` flag is enabled in your configuration, this information is sent as an individual hit. If the flag is not enabled, the information sent as part of the launch event.
 
-## Events dispatched by Analytics
-
-The following events are dispatched by the Analytics extension:
+## Events dispatched by Adobe Analytics
 
 ### Analytics response content
 
 This event is a response from the Analytics extension to notify the result of the track calls or to return the analytics hits queue size.
 
-This event is generated in the following situations:
+This event will be generated in the following situations:
 
-* If the Analytics server returns a response content, the Analytics extension after the `com.adobe.eventSource.requestContent` **is processed,** and the hit is sent to the server.
+* If Analytics server returns a response content, the Analytics extension after the `com.adobe.eventSource.requestContent` **is processed,** and the hit is sent to the server.
 * The Analytics extension as a response for the _GetQueueSize_ API requests.
 
 #### Event details
