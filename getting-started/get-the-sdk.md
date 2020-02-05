@@ -64,6 +64,124 @@ For the latest React Native installation instructions, see the README file in th
 {% endtab %}
 {% endtabs %}
 
+## Manual installation
+
+If you cannot access the installation dialog box, complete the following sections to get the Mobile SDKs. 
+
+### Configure the SDK with an Environment ID
+
+To initialize the SDK, you will need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch. The **Environment ID** links the configuration from a mobile property with your SDK implementation.
+
+{% hint style="info" %}
+To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab \(found in a previously created and configured mobile property\) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+1. In the app, create `MainActivity.java` .
+2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
+
+```objectivec
+[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+```
+
+#### Swift
+
+In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add:
+
+```swift
+ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
+```
+{% endtab %}
+{% endtabs %}
+
+### Initializing the SDK
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```jsx
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");
+
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective C
+
+```jsx
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  //...
+  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+
+  [ACPCore start:nil];
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### Javascript
+
+> Tip: We recommend that you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+
+```jsx
+import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
+    ACPLifecycle.registerExtension();
+    ACPIdentity.registerExtension();
+    ACPSignal.registerExtension();
+    ACPCore.start();
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Ensure app permissions \(Android\)
+
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
+
+To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
+
+```markup
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
 ## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
