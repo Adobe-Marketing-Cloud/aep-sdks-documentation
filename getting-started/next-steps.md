@@ -1,4 +1,4 @@
-# Implementing additional extensions
+# Implement additional extensions
 
 Now that you have initialized the SDK and added the Mobile Core and Profile extensions to your app, you can start implementing extensions that will help you use the Experience Platform SDKs or third-party vendor functionality in your apps.
 
