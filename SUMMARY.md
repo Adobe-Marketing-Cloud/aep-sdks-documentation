@@ -63,7 +63,6 @@
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
 * [Places Service](using-mobile-extensions/adobe-places.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
