@@ -6,19 +6,25 @@ Project Griffon is a new, innovative beta product from [Adobe Experience Cloud](
 Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
-![](../../.gitbook/assets/ezgif.com-video-to-gif.gif)
+## What can Project Griffon do for you?
 
-### Effortless Implementation
+### Quick Setup
 
 Get started in a hurry with a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and more.
 
 ### Seamless Connection
 
-With Project Griffon, you do not need network proxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and other network gymnastics. Connecting your app to the interface is as easy as scanning a QR code.
+With Project Griffon, you do not need network proxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and other network gymnastics. Connecting your app to Project Griffon is made as easy as scanning a QR code.
 
 ### Instant Validation
 
-After connecting, you can easily inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting your mobile app implementation.
+After connecting, you can inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting your mobile app implementation.
+
+### Integration with Adobe Experience Cloud
+
+Client-side data and experiences are given context by how users setup reporting rules, activities, and campaigns on our marketer-focused user interfaces. To help you connect the dots between the two, we're integrating with Adobe Experience Cloud solutions such as Adobe Analytics, Adobe Target, Adobe Experience Platform Places Service, and more. 
+
+![](../../.gitbook/assets/ezgif.com-video-to-gif.gif)
 
 ## Features
 
@@ -41,5 +47,5 @@ To get started with Project Griffon, see the following:
 * [Set up Project Griffon](set-up-project-griffon.md)
 * [Using Project Griffon](using-project-griffon/)
 
-To access Project Griffon, go to [https://griffon.adobe.com](https://griffon.adobe.com) and [register your interest](https://forms.office.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u).
+To access Project Griffon, go to
 
