@@ -2,7 +2,7 @@
 
 ## Emulate the trackBeacon call from the v4 SDKs
 
-The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile extension](../../using-mobile-extensions/profile/) to generate beacon-related rules.
+The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile](../../using-mobile-extensions/profile/) extension to generate beacon-related rules.
 
 This topic contains sample code to help you implement your own `trackBeacon` calls.
 

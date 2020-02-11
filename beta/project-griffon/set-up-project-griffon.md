@@ -1,20 +1,49 @@
 # Set up Project Griffon
 
 {% hint style="warning" %}
-The SDK extension for Project Griffon is in beta. Use of this beta product requires acceptance of terms outlined on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
+Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon). 
 {% endhint %}
 
-1. In Experience Platform Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Project Griffon** extension, and click **Install**.
-3. Follow the publishing process to update SDK configuration.
+{% hint style="danger" %}
+Beta products are not supported by Adobe customer care or Adobe Experience Cloud community forums. Please use the Slack channel provided in your beta invite email to ask and resolve concerns.
+{% endhint %}
 
-### **Install the Project Griffon extension**
+## How to participate in the Project Griffon beta
 
-![](../../.gitbook/assets/pg-launch.png)
+1. Request access to Project Griffon by filling out the intake form
+2. Setup your app for Project Griffon
+3. Visit [Project Griffon](https://experience.adobe.com/griffon) to start your first session
 
-No extension settings are required. Save and [publish the extension](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
+## Request Access to Project Griffon
 
-## Add Project Griffon to your app
+Please fill out [this form](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUMjNHTjVCVUJXUDM0VUIzOUFWMk9RNlBLRC4u) to request access for Project Griffon.
+
+{% hint style="info" %}
+Beta participation requires a valid, active Adobe Experience Cloud contract. Beta participation is subject to terms \(as listed above\). Project Griffon team do their best to respond on your participation request within 48-72 hours after form submission.
+{% endhint %}
+
+You may access Project Griffon by visiting [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
+
+## Setup app for Project Griffon
+
+Follow these steps to add Project Griffon to your app:
+
+1. Follow instructions to implement the new Adobe Experience Platform Mobile SDK \(skip if already done\)
+2. Add the Project Griffon Extension to your app
+   1. In Experience Platform Launch, click the **Extensions** tab.
+   2. On the **Catalog** tab, locate the **Project Griffon** extension, and click **Install**.
+   3. Follow the publishing process to update SDK configuration.
+3. Implement Project Griffon SDK APIs in your app
+
+![](../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.1.png)
+
+### Add Project Griffon Extension to your app
+
+{% hint style="info" %}
+Use the latest versions of the Adobe Experience Platform Mobile SDK and Project Griffon SDK extension to try out our newest functionality.
+{% endhint %}
+
+#### Add Project Griffon
 
 {% tabs %}
 {% tab title="Android" %}
@@ -27,8 +56,6 @@ No extension settings are required. Save and [publish the extension](https://aep
    implementation 'com.adobe.marketing.mobile:griffon:1+'
    ```
 
-   Also be sure to use the latest available versions.
-
 2. Import the Project Griffon libraries with the other SDK libraries:
 
    ```java
@@ -38,14 +65,14 @@ No extension settings are required. Save and [publish the extension](https://aep
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the library to your project via your Cocoapods `Podfile` 
+Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/ACPGriffon) `Podfile` 
 
-```
+```text
 pod 'ACPCore'
 pod 'ACPGriffon'
 ```
 
-2. Import the Project Griffon libraries along with other SDK libraries:
+Import the Project Griffon libraries along with other SDK libraries:
 
 #### Objective-C
 
@@ -63,7 +90,7 @@ import ACPGriffon // <-- import the Project Griffon library
 {% endtab %}
 {% endtabs %}
 
-### Register Griffon with Mobile Core
+#### Register Griffon with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -120,46 +147,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-### Start a Project Griffon session
+#### Implement Project Griffon session start APIs \(iOS\)
 
-1. Create a session in the [Griffon UI](https://griffon.adobe.com/) by typing a base URL for your application.
+The  `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
-For more information about creating a session, see [Create a session](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon#1-create-a-session).
+With the latest Project Griffon SDK extensions, Android does not require this API to be called. When the `registerExtension` API is called, Project Griffon registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
-2. Configure your iOS/Android application to handle the griffon session deeplink obtained from the griffon.
+{% hint style="info" %}
+You may call this API when the app launches with a url \(see code snippet below  for sample usage\)
+{% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-
-After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
-![](../../.gitbook/assets/griffon_deeplink_configure.png)
-
-### startSession
-
-You can also start a Griffon session by providing the deeplink through `startSession` API. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
-
-#### Java
-
-#### Syntax
-
-```text
-public static void startSession(final String url)
-```
-
-#### Example
-
-```java
- Griffon.startSession(url);
-```
-{% endtab %}
 {% tab title="iOS" %}
-
-After your app is configured to handle the deeplink, start the Griffon session by opening the deeplink from the Griffon UI.
-![](../../.gitbook/assets/griffon_deeplink_configure.png)
-
 ### startSession
-
-This API accepts a deep link to begin a session. After this API is called, to begin a session, the SDK displays a PIN authentication overlay on your app.
 
 #### Objective-C
 
@@ -189,148 +189,6 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
         return false
     }
 }
-```
-{% endtab %}
-{% endtabs %}
-
-### End a Project Griffon session
-
-You can end a session in the app interface by pressing the floating indicator and selecting **Disconnect**. You can also programmatically close an active session by using the following API.
-
-{% tabs %}
-{% tab title="Android" %}
-### endSession
-
-This API ends the active session and ensures that no data is sent to a Project Griffon session.
-
-#### Java
-
-```java
-Griffon.endSession()
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### endSession
-
-This API ends the active session and ensures that no data is sent to a Project Griffon session.
-
-#### Objective-C
-
-#### Syntax
-
-```objectivec
-+ (void) endSession;
-```
-
-#### Example
-
-```objectivec
-[ACPGriffon endSession];
-```
-
-#### Swift
-
-#### Example
-
-```swift
-ACPGriffon.endSession()
-```
-{% endtab %}
-{% endtabs %}
-
-### Send custom events
-
-You can send custom events from the app to Project Griffon using the following API. Custom events can help you inspect information from the app such as the API and network responses, foreground and background activity, asset and media downloads, performance metrics, timed processes, app startup times, or screen load times.
-
-{% tabs %}
-{% tab title="Android" %}
-### sendEvent
-
-This API is for sending custom events.
-
-#### Java
-
-#### Syntax
-
-The follow syntax shows you how to use the sendEvent API:
-
-```java
-public static void sendEvent(final GriffonEvent event);
-```
-
-The following syntax shows you how to create a Griffon event:
-
-```java
-public GriffonEvent(final String vendor, final String type, final Map<String, Object> payload)
-```
-
-#### Example
-
-The following example shows you how to send a custom event that measures the download time of an asset’s download activity in the app.
-
-```java
-final Map<String, Object> eventPayload = new HashMap<>();
-eventPayload.put("time", downloadTime);
-eventPayload.put("size", data.length());
-
-// create and send the Griffon event
-final GriffonEvent event = new GriffonEvent("com.adobe.myapp", "download info", eventPayload);
-Griffon.sendEvent(newEvent);
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### sendEvent
-
-This API is for sending custom events.
-
-#### Objective-C
-
-#### Syntax
-
-The follow syntax shows you how to use the sendEvent API:
-
-```objectivec
-+ (void) sendEvent: (ACPGriffonEvent* _Nonnull) event;
-```
-
-The following syntax shows you how to create a ACPGriffonEvent object:
-
-```objectivec
-- (instancetype) initWithVendor: (NSString*) vendor type: (NSString*) type payload: (NSDictionary*) payload;
-```
-
-#### Example
-
-The following example shows you how to send a custom event that measures the download time of an asset download activity in the app.
-
-```objectivec
-CFAbsoluteTime downloadStartTime = CFAbsoluteTimeGetCurrent();
-
-CFAbsoluteTime totalDownloadTime = CFAbsoluteTimeGetCurrent() - downloadStartTime;
-        ACPGriffonEvent* griffonDownloadEvent = [[ACPGriffonEvent alloc] initWithVendor:@"com.adobe.myapp"
-                                                                                   type:@"download info"
-                                                                                payload:@{
-                                                                                    @"time" : @(totalDownloadTime),
-                                                                                    @"size" : @(data.length)
-                                                                                }];
-        [ACPGriffon sendEvent: griffonDownloadEvent];
-```
-
-#### Swift
-
-#### Example
-
-```swift
-var downloadStartTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()
-
-var totalDownloadTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent() - downloadStartTime
-var griffonDownloadEvent = ACPGriffonEvent(vendor: "com.adobe.myapp", type: "download info", payload: [
-    "time": NSNumber(value: totalDownloadTime),
-    "size": NSNumber(value: data.length)
-])
-ACPGriffon.sendEvent(griffonDownloadEvent)
 ```
 {% endtab %}
 {% endtabs %}

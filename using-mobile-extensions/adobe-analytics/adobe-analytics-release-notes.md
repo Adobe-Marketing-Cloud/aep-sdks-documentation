@@ -6,7 +6,7 @@ The following updates were made in this release:
 
 ### Android Analytics 1.2.3 and iOS Analytics 2.2.2
 
-* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
 
 ## October 28, 2019
 

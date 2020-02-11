@@ -22,7 +22,7 @@ The unique environment ID provided by Experience Platform Launch can be configur
 {% tab title="Android" %}
 ### configureWithAppID
 
-Causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
+This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 #### Syntax
 
@@ -95,14 +95,14 @@ initSDK() {
 
 ## Programmatic updates to configuration
 
-You can also update the configuration programmatically by passing configuration keys and values to override existing configuration.
+You can also update the configuration programmatically by passing configuration keys and values to override the existing configuration.
 
 {% hint style="info" %}
 Keys that are not found on the current configuration are added when this method is followed. Null values are allowed and replace existing configuration values.
 {% endhint %}
 
 {% hint style="warning" %}
-Do not use this API to update build.environment or any key with environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
+Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
 {% endhint %}
 
 {% tabs %}

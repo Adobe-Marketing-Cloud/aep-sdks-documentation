@@ -10,8 +10,6 @@ The following updates were made in this release:
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
-  
-
 ## January 23, 2020
 
 The following updates were made in this release:
@@ -20,15 +18,12 @@ The following updates were made in this release:
 
 * The shared state of the Profile extension can now be used as the traits for In-App Messaging.
 
-
 **Android Mobile Services 1.1.0**
 
 * The shared state of the Profile extension can now be used as the traits for In-App Messaging.
 * Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)`, to support Google Play Install Referrer APIs.
 
   For more information about the Install Referrer APIs, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html).
-
-
 
 ## October 7, 2019
 

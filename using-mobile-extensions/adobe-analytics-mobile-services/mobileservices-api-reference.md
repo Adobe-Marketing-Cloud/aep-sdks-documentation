@@ -37,7 +37,7 @@ Uri testUri = new Uri.Builder()
 
 #### Example
 
-#### Objective-C
+#### Objective C
 
 ```text
 NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
@@ -58,7 +58,9 @@ ACPMobileServices.trackAdobeDeepLink(url)
 
 You can use this API to process the referrer intent that was received from Android.
 
-**Tip**: This API is available only in Android.
+{% hint style="warning" %}
+This API is **only** available in Android.
+{% endhint %}
 
 ### processReferrer
 
@@ -76,11 +78,13 @@ public  void onReceive(Context context, Intent intent) {
 }
 ```
 
-## Process The Google Play Install Referrer
+## Process the Google Play Install Referrer
 
 You can use this API to process the data you get from the Google Play Install Referrer APIs.
 
-**Tip**: This API is available starting in Android version `1.1.0`.
+{% hint style="warning" %}
+This API is available starting in Android version `1.1.0`.
+{% endhint %}
 
 ### processReferrer
 

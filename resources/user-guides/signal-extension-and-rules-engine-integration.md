@@ -12,7 +12,11 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%%token%%}`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%%My Data element for ECID%%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
+Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is \`
+
+`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example,`
+
+`can be used in the Signal postback action, where`My Data element for ECID\` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
 The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
@@ -22,11 +26,11 @@ Some tokens are modifier functions that specify the transformation that is appli
 
 The `Send Postback` and `Send PII` actions allow you to specify a `URL` field and an optional `Post Body` field. You can specify which tokens should be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration#rules-tokens).
 
-**Example**
+#### **Example**
 
 Here is an example of how to use the data that is passed to the MobileCore \(Android\) / ACPCore \(iOS\) `collectPii` API to form a token:
 
-1. In the mobile application, call collectPII to fire Event with context data.
+1. In the mobile application, call `collectPII` to fire Event with context data.
 
    ```java
     Signal.registerExtension();
@@ -36,7 +40,7 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
     MobileCore.collectPII(data);
    ```
 
-   **Objective-C Example**
+   **Objective-C**
 
    ```text
     [ACPSignal registerExtension];
@@ -44,7 +48,7 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
     [ACPCore collectPii:data:@{@"user_email" : @"user_001@example.com"}];
    ```
 
-   **Swift Example**
+   **Swift**
 
    ```swift
     ACPSignal.registerExtension()
@@ -58,7 +62,7 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
    ![Data Element Example for Collect PII context data key](../../.gitbook/assets/data_element_example_collect_pii.png)
 
 3. In Experience Platform Launch, create a new rule for sending a postback.
-4. Create a new rule by selecting the Mobile Core Collect PII event and the Action Mobile Core Send Postback action as illustrated in the following graphic:
+4. Create a new rule by selecting the **Mobile Core Collect PII** event and the **Action Mobile Core Send Postback** action.
 
    ![Rule example using Collect PII event and Postback action](../../.gitbook/assets/postback_pii_token_example.png)
 

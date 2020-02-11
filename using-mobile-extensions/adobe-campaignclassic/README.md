@@ -12,7 +12,7 @@
 
 ### Configure Campaign Classic extension
 
-![ACC-configure-extension](../../.gitbook/assets/acc-configure-extension.png)
+![Configuring the Campaign Classic extension](../../.gitbook/assets/acc-configure-extension.png)
 
 {% hint style="info" %}
 Trying to find your Campaign Classic registration or tracking endpoint URLs? You can retrieve this information in the Campaign Classic interface in the **Tools** &gt; **Advanced** &gt; **Deployment wizard** menu. The endpoint for push notifications is usually the same as the URL that is used for web forms and surveys.
@@ -36,11 +36,11 @@ For this extension, the tracking endpoint URLs should be entered **without** a p
 
 #### Integration key \(iOS\)
 
-You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
 
 #### Integration key \(Android\)
 
-Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Adobe Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
 
 #### Request timeout
 
@@ -53,7 +53,7 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 #### Java
 
 1. Add the Campaign Classic extension to your project using the app's Gradle file.
-2. Import the CampaignClassic and Lifecycle extensions in your application's main activity.
+2. Import the Campaign Classic and Lifecycle extensions in your application's main activity.
 
    ```java
    import com.adobe.marketing.mobile.CampaignClassic;
@@ -152,7 +152,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Adobe Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update SDK configuration programmatically, use the following information to change your  Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |

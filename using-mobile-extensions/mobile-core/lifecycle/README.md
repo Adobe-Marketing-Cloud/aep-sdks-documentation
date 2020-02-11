@@ -3,9 +3,7 @@
 {% hint style="warning" %}
 In version 4 of the iOS SDK, this implementation was completed automatically.
 
-The Experience Platform SDK will not automatically collect Lifecycle metrics for you. To continue collecting Lifecycle metrics, you must add code to your app.
-
-For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
+The Experience Platform SDK will not automatically collect Lifecycle metrics. To continue collecting Lifecycle metrics, you must add code to your app. For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
 
 Sessions contain information about the app's current lifecycle, such as the device information, the application install or upgrade information, the session start and pause times, the number of application launches, and additional context data that is provided by the developer through the `LifecycleStart` API. Session data is persisted, so it is available across application launches.
@@ -47,7 +45,7 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% endtab %}
 {% endtabs %}
 
-## Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls
+## Register Lifecycle with Mobile Core and add appropriate Start/Pause calls
 
 {% tabs %}
 {% tab title="Android" %}
@@ -263,20 +261,25 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">The SDK running mode, for example, <code>Application/Extension</code>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %} \\\| Key \\\| Description \\\| \\\| :--- \\\| :--- \\\|
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}.
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><code>lifecycle.sessionTimeout</code>
-      </th>
-      <th style="text-align:left">
+      <th style="text-align:left">Key</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>lifecycle.sessionTimeout</code>
+      </td>
+      <td style="text-align:left">
         <p>Time, in seconds, that must elapse between the time the app is launched
           and before the launch is considered to be a new session. This timeout also
           applies when your application is sent to the background and reactivated.</p>
         <p>Default value is 300 seconds (5 minutes).</p>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
+  </tbody>
 </table>
