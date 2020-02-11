@@ -113,6 +113,6 @@
     * [Project Griffon SDK API Reference](beta/project-griffon/set-up-project-griffon/project-griffon-sdk-api-reference.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
     * [Places Service and Project Griffon](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
-    * [Adobe Analytics and Project Griffon](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
+    * [Integration with Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Custom Validation and Project Griffon](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
 

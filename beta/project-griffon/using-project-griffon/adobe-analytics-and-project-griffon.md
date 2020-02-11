@@ -1,6 +1,10 @@
-# Adobe Analytics and Project Griffon
+# Integration with Adobe Analytics
 
-The Adobe Analytics view is a focused, yet richer, view of SDK events that are only related to your Adobe Analytics implementation. The view now shows the action/state name and event status with a specifically formatted detail view.
+## Overview
+
+The integration with Adobe Analytics provides a richer view of SDK events meant for users debugging and validating their Adobe Analytics implementation. The view now shows lifecycle and action/state events sent to Adobe Analytics from the Adobe Experience Platform SDK. The view also features a "response" section that provides information on how the events were processed post application of report suite processing rules. 
+
+![](../../../.gitbook/assets/aa-loop.gif)
 
 If the SDK made a network request with Adobe Analytics \(queued\), and if post-processing information is returned from Adobe Analytics about that event \(validated\), the status tells you when an SDK event is generated \(processed\).
 
