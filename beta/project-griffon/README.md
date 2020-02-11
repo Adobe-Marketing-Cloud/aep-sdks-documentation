@@ -44,8 +44,8 @@ The Location Services view is an on-device view that shows the user location ent
 
 To get started with Project Griffon, see the following:
 
-* [Set up Project Griffon](set-up-project-griffon.md)
+* [Set up Project Griffon](set-up-project-griffon/)
 * [Using Project Griffon](using-project-griffon/)
 
-To access Project Griffon, see instructions on [Set up Project Griffon](set-up-project-griffon.md#how-to-participate-in-the-project-griffon-beta)
+To access Project Griffon, see instructions on [Set up Project Griffon](set-up-project-griffon/#how-to-participate-in-the-project-griffon-beta)
 

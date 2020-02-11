@@ -6,7 +6,7 @@ You can use the Custom Validation view to quickly and easily write a JavaScript 
 
 To use the Custom Validation view, complete the following steps:
 
-1. Ensure that you installed and configured the latest version of the Project Griffon extension. For more information, see  [Set up Project Griffon](../set-up-project-griffon.md).
+1. Ensure that you installed and configured the latest version of the Project Griffon extension. For more information, see  [Set up Project Griffon](../set-up-project-griffon/).
 2. Log in to the Griffon UI in one of the following ways:
    * [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon)
    * [https://griffon.adobe.com](https://griffon.adobe.com)

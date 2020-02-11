@@ -10,8 +10,8 @@ Beta products are not supported by Adobe customer care or Adobe Experience Cloud
 
 ## How to participate in the Project Griffon beta
 
-1. [Request access to Project Griffon](set-up-project-griffon.md#request-access-to-project-griffon) by filling out the intake form
-2. [Setup your app for Project Griffon](set-up-project-griffon.md#setup-app-for-project-griffon)
+1. [Request access to Project Griffon](./#request-access-to-project-griffon) by filling out the intake form
+2. [Setup your app for Project Griffon](./#setup-app-for-project-griffon)
 3. Visit [Project Griffon](https://experience.adobe.com/griffon) to start your first session
 
 ## Request Access to Project Griffon
@@ -35,7 +35,7 @@ Follow these steps to add Project Griffon to your app:
    3. Follow the publishing process to update SDK configuration.
 3. Implement Project Griffon SDK APIs in your app
 
-![](../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.1.png)
+![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.1.png)
 
 ### Add Project Griffon Extension to your app
 
