@@ -47,5 +47,5 @@ To get started with Project Griffon, see the following:
 * [Set up Project Griffon](set-up-project-griffon.md)
 * [Using Project Griffon](using-project-griffon/)
 
-To access Project Griffon, go to
+To access Project Griffon, see instructions on [Set up Project Griffon](set-up-project-griffon.md#how-to-participate-in-the-project-griffon-beta)
 

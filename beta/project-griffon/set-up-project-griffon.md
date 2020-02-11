@@ -10,8 +10,8 @@ Beta products are not supported by Adobe customer care or Adobe Experience Cloud
 
 ## How to participate in the Project Griffon beta
 
-1. Request access to Project Griffon by filling out the intake form
-2. Setup your app for Project Griffon
+1. [Request access to Project Griffon](set-up-project-griffon.md#request-access-to-project-griffon) by filling out the intake form
+2. [Setup your app for Project Griffon](set-up-project-griffon.md#setup-app-for-project-griffon)
 3. Visit [Project Griffon](https://experience.adobe.com/griffon) to start your first session
 
 ## Request Access to Project Griffon
