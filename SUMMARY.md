@@ -114,5 +114,5 @@
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
-    * [Custom Validation and Project Griffon](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
+    * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
 

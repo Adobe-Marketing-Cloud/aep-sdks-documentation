@@ -1,4 +1,4 @@
-# Places Service and Project Griffon
+# Places Service
 
 The **Places** views allow you to inspect location entry and exit events on the Project Griffon web UI and provides an innovative on-device view. Depending on your business workflows, these handy views provide a convenient interface to display location-specific data points for inspection on the web/client for in-context debugging.
 
