@@ -2,7 +2,7 @@
 
 ## Overview
 
-The integration with Adobe Analytics provides a richer view of SDK events meant for users debugging and validating their Adobe Analytics implementation. The view now shows lifecycle and action/state events sent to Adobe Analytics from the Adobe Experience Platform SDK. The view also features a "response" section that provides information on how the events were processed post application of report suite processing rules. 
+The integration with Adobe Analytics provides a richer view of SDK events to users debugging and validating their Adobe Analytics implementation. The view now shows lifecycle and action/state events sent to Adobe Analytics from the [Adobe Experience Platform SDK](../../../using-mobile-extensions/adobe-analytics/). The view also features "response" detail that provides information on how the events were processed after the application of respective report suite's processing rules. 
 
 ![](../../../.gitbook/assets/aa-loop.gif)
 
