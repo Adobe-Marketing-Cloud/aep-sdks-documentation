@@ -1,4 +1,4 @@
-# Integration with Adobe Analytics
+# Adobe Analytics
 
 ## Overview
 
