@@ -110,7 +110,7 @@ After you complete your configuration, verify that your rule looks like the foll
 2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 {% endtab %}
 
-{% tab title="Target" %} <a name="Target-Attach-Data-Tab"></a>
+{% tab title="Target" %} <a name="Target-Attach-Data"></a>
 
 {% hint style="warning" %}
 The Attach Data feature applies **only** to the Target, and not the Target VEC, extension.
