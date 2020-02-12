@@ -113,7 +113,7 @@ After you complete your configuration, verify that your rule looks like the foll
 {% tab title="Target" %} <a name="Target-Attach-Data"></a>
 
 {% hint style="warning" %}
-The Attach Data feature applies **only** to the Target, and not the Target VEC, extension.
+The Attach Data feature applies **only** to the Target and not the Target VEC, extension.
 {% endhint %}
 
 ### Attach additional data to Target to retrieve location events <a name="Target-Attach-Data-Retrieve-Location"> </a>
