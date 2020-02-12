@@ -60,12 +60,12 @@ When defining a payload for the attach data action, the payload must match the f
 {% tab title="Analytics" %}
 The following sample shows how to _attach data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#analytics-create-rule)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#analytics-select-an-event)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#analytics-define-the-action)
-4. [Save and rebuild the property](attach-data.md#analytics-save-the-rule-and-rebuild-your-property)
+1. [Create a new **Rule**.](#analytics-create-rule)
+2. [Select the **Event** you want to trigger the rule.](#analytics-select-an-event)
+3. [Select the **Action** to attach data and define your payload.](#analytics-define-the-action)
+4. [Save and rebuild the property](#analytics-save-the-rule-and-rebuild-your-property).
 
-### Create a rule
+### Create a rule<a name="analytics-create-rule"></a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -73,7 +73,7 @@ The following sample shows how to _attach data_ to all outgoing `TrackAction` An
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event<a name="analytics-select-an-event"></a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -86,7 +86,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/setevent.png)
 
-### Define the action
+### Define the action<a name="analytics-define-the-action"></a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -100,27 +100,32 @@ In the following example, **launches** and **anAddedKey** keys are added to the 
 
 ![](../../.gitbook/assets/setaction.png)
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="analytics-save-the-rule-and-rebuild-your-property"></a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/rulecomplete.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 {% endtab %}
 
-{% tab title="Target" %}
-### Attaching additional Target request objects to Target to retrieve location events
+{% tab title="Target" %} <a name="Target-Attach-Data"></a>
+
+{% hint style="warning" %}
+The Attach Data feature applies **only** to the Target and not the Target VEC, extension.
+{% endhint %}
+
+### Attach additional data to Target to retrieve location events <a name="Target-Attach-Data-Retrieve-Location"> </a>
 
 The following sample shows how to _attach data_ to all outgoing `retrieveLocationContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#target-create-rule)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#target-select-an-event)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#target-define-the-action)
-4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property)
+1. [Create a new **Rule**.](#target-create-rule)
+2. [Select the **Event** you want to trigger the rule.](#target-select-an-event)
+3. [Select the **Action** to attach data and define your payload.](#target-define-the-action)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property).
 
-### Create a rule
+### Create a rule<a name="target-create-rule"> </a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -128,7 +133,7 @@ The following sample shows how to _attach data_ to all outgoing `retrieveLocatio
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event<a name="target-select-an-event"> </a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -141,7 +146,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/target-attach-data-event-setup.png)
 
-### Define the action
+### Define the action<a name="target-define-the-action"> </a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -172,25 +177,25 @@ In the above example, the JSON payload adds custom mbox parameters only for the 
 }
 ```
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property"> </a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/target-attach-data-rule-setup.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 
-### Attaching additional Target request objects to Target to prefetch content events
+### Attach additional data to Target to prefetch content events<a name="Target-Attach-Data-Prefetch-Content"></a>
 
 The following sample shows how to add a custom mbox to prefetch in all outgoing `prefetchContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#target-create-rule-prefetch)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#target-select-an-event-prefetch)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#target-define-the-action-prefetch)
-4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-prefetch)
+1. [Create a new **Rule**.](#target-create-rule-prefetch)
+2. [Select the **Event** you want to trigger the rule.](#target-select-an-event-prefetch)
+3. [Select the **Action** to attach data and define your payload.](#target-define-the-action-prefetch)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property-prefetch).
 
-### Create a rule
+### Create a rule<a name="target-create-rule-prefetch"></a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -198,7 +203,7 @@ The following sample shows how to add a custom mbox to prefetch in all outgoing 
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event<a name="target-select-an-event-prefetch"></a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -211,7 +216,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-prefetch.png)
 
-### Define the action
+### Define the action<a name="target-define-the-action-prefetch"></a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -242,25 +247,25 @@ In the above example, the JSON payload adds custom mbox parameters only for the 
 }
 ```
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-prefetch"></a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/target-attach-data-rule-setup-prefetch.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 
-### Attaching additional Target parameters to Target location-clicked events
+### Attach additional data to Target location-clicked events<a name="Target-Attach-Data-Location-Clicked"></a>
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationClicked` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#target-create-rule-clicked)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#target-select-an-event-clicked)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#target-define-the-action-clicked)
-4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-clicked)
+1. [Create a new **Rule**.](#target-create-rule-clicked)
+2. [Select the **Event** you want to trigger the rule.](#target-select-an-event-clicked)
+3. [Select the **Action** to attach data and define your payload.](#target-define-the-action-clicked)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property-clicked).
 
-### Create a rule
+### Create a rule<a name="target-create-rule-clicked"></a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -268,7 +273,7 @@ The following sample shows how to add additional mbox and profile parameters in 
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event<a name="target-select-an-event-clicked"></a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -281,7 +286,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-location-clicked.png)
 
-### Define the action
+### Define the action<a name="target-define-the-action-clicked"></a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -299,25 +304,25 @@ The following example shows how the data element for this OS version was created
 
 ![](../../.gitbook/assets/target-attach-data-data-element-setup.png)
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-clicked"></a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/target-attach-data-rule-setup-location-clicked.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 
-### Attaching additional Target parameters to Target location-displayed events
+### Attach additional data to Target location-displayed events<a name="Target-Attach-Data-Location-Displayed"></a>
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationDisplayed` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#target-create-rule-displayed)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#target-select-an-event-displayed)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#target-define-the-action-displayed)
-4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-displayed)
+1. [Create a new **Rule**](#target-create-rule-displayed)
+2. [Select the **Event** you want to trigger the rule](#target-select-an-event-displayed)
+3. [Select the **Action** to attach data and define your payload](#target-define-the-action-displayed)
+4. [Save and rebuild the property](#target-save-the-rule-and-rebuild-your-property-displayed)
 
-### Create a rule
+### Create a rule<a name="target-create-rule-displayed"></a>
 
 1. On the **Rules** tab, click **Create New Rule**.
 
@@ -325,7 +330,7 @@ The following sample shows how to add additional mbox and profile parameters in 
 If you do not have existing rules for this property, the **Create New Rule** button will be in the middle of the screen. If your property has rules, the button will be in the top right of the screen.
 {% endhint %}
 
-### Select an event
+### Select an event <a name="target-select-an-event-displayed"></a>
 
 1. Give your rule an easily recognizable name in your list of rules.
 
@@ -338,7 +343,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-location-displayed.png)
 
-### Define the action
+### Define the action<a name="target-define-the-action-displayed"></a>
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
@@ -352,14 +357,14 @@ In the following example, **extraKey** and **extraKey2** are added to the profil
 
 ![](../../.gitbook/assets/target-attach-data-json-example-location-displayed.png)
 
-### Save the rule and rebuild your property
+### Save the rule and rebuild your property<a name="target-save-the-rule-and-rebuild-your-property-displayed"></a>
 
 After you complete your configuration, verify that your rule looks like the following:
 
 ![](../../.gitbook/assets/target-attach-data-rule-setup-location-displayed.png)
 
 1. Click **Save**
-2. Rebuild your Launch property and deploy it to the correct Environment.
+2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
 {% endtab %}
 {% endtabs %}
 
