@@ -169,7 +169,7 @@ These changes were released as part of ACPCore CocoaPod v2.3.6.
 
 ## November 8, 2019
 
-The following updates were made in this release:
+The following update was made in this release:
 
 **iOS Mobile Servies 1.0.4**
 
