@@ -167,6 +167,14 @@ The following updates were made in this release:
 
 These changes were released as part of ACPCore CocoaPod v2.3.6.
 
+## November 8, 2019
+
+The following update was made in this release:
+
+**iOS Mobile Servies 1.0.4**
+
+* Fixed a bug where the iOS fullscreen message was unable to load cached images.
+
 ## October 30, 2019
 
 The following updates were made in this release:
