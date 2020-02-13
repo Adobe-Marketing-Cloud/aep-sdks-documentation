@@ -14,8 +14,8 @@ The following updates were made in this release:
 
 ### Android Analytics 1.2.4
 
-* Fixed an issue which was causing some hits to be delayed.
-* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when debug API was enabled.
+* Fixed an issue which, was causing some hits to be delayed.
+* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ## February 4, 2020
@@ -27,7 +27,7 @@ The following updates were made in this release:
 * Fixed a cursor leak.
 * Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
 * Added support for overriding internal network stack with customer-provided code.
-* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities` methods.
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus` and `MobileCore.getSdkIdentities` methods.
 
   We plan to gradually add the ability to enable failure callback to the other extensions.
 
