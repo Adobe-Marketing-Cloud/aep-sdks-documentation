@@ -8,6 +8,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## February 13, 2020
+
+The following updates were made in this release:
+
+### Android Analytics 1.2.4
+
+* Fixed an issue which, was causing some hits to be delayed.
+* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## February 4, 2020
 
 The following updates were made in this release:
@@ -17,7 +27,7 @@ The following updates were made in this release:
 * Fixed a cursor leak.
 * Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
 * Added support for overriding internal network stack with customer-provided code.
-* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities` methods. 
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus` and `MobileCore.getSdkIdentities` methods.
 
   We plan to gradually add the ability to enable failure callback to the other extensions.
 
@@ -69,7 +79,7 @@ The following updates were made in this release:
 
 **iOS Core 2.4.0**
 
-* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
+* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class.
 * Fixed an issue where the advertising identifier was duplicated in the response to the `getSDKIdentifiers` API.
 * Fixed an issue where the SDK was trying to download the rules multiple times immediately after app launch.
 * Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
@@ -915,4 +925,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
