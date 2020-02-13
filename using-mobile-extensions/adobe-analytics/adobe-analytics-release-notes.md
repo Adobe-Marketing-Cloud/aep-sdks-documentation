@@ -1,5 +1,15 @@
 # Release Notes
 
+## February 13, 2020
+
+The following updates were made in this release:
+
+### Android Analytics 1.2.4
+
+* Fixed an issue which, was causing some hits to be delayed.
+* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## January 25, 2020
 
 The following updates were made in this release:
@@ -61,4 +71,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-
