@@ -1,6 +1,6 @@
 # Set up a mobile property
 
-A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Experience Platform Launch](https://launch.adobe.com).
+A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Experience Platform Launch](https://launch.adobe.com). You will typically create a mobile property for each mobile application you want to manage.
 
 ## Before you start
 
@@ -14,19 +14,19 @@ For detailed instructions on how to create groups and add users for Launch, see 
 
 ### Log in to Experience Platform Launch
 
-After Expeience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to https://launch.adobe.com or by logging in to the Experience Cloud (https://experiencecloud.adobe.com), navigating to the Activation page, and clicking on Launch.
+After Experience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to https://launch.adobe.com or by logging in to the Experience Cloud (https://experiencecloud.adobe.com), navigating to the Activation page, and clicking on Launch.
 
 ## Create a mobile property
 
 1. Log in to Experience Platform Launch.
-2. On the main page, reiew the list of existing mobile and web properties.
+2. On the main page, review the list of existing mobile and web properties.
 3. Click **New Property**.
-2. Type a name and select **Mobile** as the platform.
+2. Type a name for the property and select **Mobile** as the platform.
 
-   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) and **HTTPS** settings later.
+   If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) setting later.
 
 3. Click **Save** to create the mobile property.
-4. Search for the property you just created and open it.
+4. Search for the property you just created and click to open it.
 
 {% hint style="danger" %}
 The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
@@ -34,9 +34,7 @@ The default privacy status is set to _opted in_ and might impact data collection
 
 ## Install your extensions
 
-An extension is an integration built by Adobe or an Adobe partner that adds new and endless options for the tags that you can deploy to your sites. If you think of Experience Platform Launch as an operating system, extensions are the apps that you install so Launch can complete the tasks that you specify.
-
-By default, all new mobile properties come with the Mobile Core and Profile extensions installed. The Mobile Core extension is built by the Launch team to provide a robust default set of data element types for your data layer and event types for your rules. Most actions that you want to complete, such as get an ECID, send Adobe Analytics beacons, load the Target global mbox, and so on, will come from extensions that you install from the catalog. For more information, see [Add a new extension](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension).
+An extension is an integration built by Adobe or an Adobe partner that adds new options you can use in your apps. By default, all new mobile properties come with the Mobile Core and Profile extensions installed. The Mobile Core extension provides a robust default set of functionality, including lifecycle events and conditions. The Profile extension allows storing of data into a client-side profile. Additional functionality for Analytics, Target, and so on will come from extensions that you install from the catalog. For more information, see [Add a new extension](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension).
 
 ## Set up your extensions
 
@@ -44,11 +42,11 @@ By default, all new mobile properties come with the Mobile Core and Profile exte
 
    The **Mobile Core** and **Profile** extensions are installed by default.
 
-2. On the **Mobile Core** card, click **Configure**.
+2. On the **Mobile Core** card, click **Configure** to open the extensions detail page.
 
    ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
 
-3. Type your Experience Cloud Org ID.
+3. Check your Experience Cloud Org ID.
 
    By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
@@ -64,7 +62,7 @@ By default, all new mobile properties come with the Mobile Core and Profile exte
 
 ## Publish the configuration
 
-Before the mobile application can access the configuration, it needs published to an environment. The Profile and Mobile Core extension will show as changes to be published.
+Before the mobile application can access the configuration, it needs published to an environment. For now, we need to publish the Mobile Core and Profile extension configurations.
 
 To deploy your configuration to a development environment for testing:
 
@@ -72,7 +70,7 @@ To deploy your configuration to a development environment for testing:
 2. Under the **Development** section of the publishing workflow, click **Add New Library**.
 3. Specify any name for the library **Name**.
 4. From the **Environment** drop-down list, select Development as the environment.
-5. Click **Add All Changed Resources** to add the configuration changes to be deployed. 
+5. Click **Add All Changed Resources** to add the configuration changes to be deployed. You will see the Mobile Core and Profile extensions listed as changes to be published.
 5. Click **Save & Build for Development**.
 
    The library builds and is displayed under the **Development** section of the publishing workflow.
@@ -80,13 +78,13 @@ To deploy your configuration to a development environment for testing:
 6. On the library card, click *...* to see a drop-down list.
 7. Select **Submit for Approval** and then **Submit**.
 
-The library of changes are published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
+The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
 Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see [Publishing](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
 {% endhint %}
 
-Now that you published your configuration, get the Mobile SDKs. For more information, see [Get the Experience Platform SDKs](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk).
+Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see [Get the Experience Platform SDKs](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk).
 
 ## Watch the video
 
