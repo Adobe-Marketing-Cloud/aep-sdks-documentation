@@ -2,7 +2,7 @@
 
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
-There are several new features and benefits of using the new Adobe Experience Platform Mobile SDK. The new SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The table below highlights some of the improvements made in the Experience Platform Mobile SDK.
+There are several new features and benefits of using the Experience Platform Mobile SDK. These SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The following table highlights some of the improvements in the Experience Platform Mobile SDK:
 
 | Core Features | Experience Platform SDK | 4x SDK |
 | :--- | :--- | :--- |
@@ -21,23 +21,24 @@ There are several new features and benefits of using the new Adobe Experience Pl
 | Adobe Campaign Classic support | ✔️ |  |
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
-| Adobe Target - Visual Experience Composer | ✔️ |  |
-| Adobe Experience Platform Location Service | ✔️ |  |
+| Places Service | ✔️ |  |
 | \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
 
 ### Do I need additional permissions to create a mobile property in Experience Platform Launch?
 
-If you need access to Experience Platform Launch, see this page on [User Permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions). If you have permissions to create a web property, you can create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
+If you need access to Experience Platform Launch, see [User Permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html). If you create a web property, you can also create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
 
 ### Should I create one property per app or multiple properties per app platform?
 
-If your apps send data to the same Analytics report suites, use the same extensions, rules, data elements, and so on, we recommend that you group all of these mobile apps into the same property. If your apps send data to different Analytics report suites, or user different extensions per app, and so on, we recommend that you create separate mobile properties. Alternatively, if you group your mobile apps into one property, split them into separate properties over time.
+If your apps send data to the same Analytics report suites, use the same extensions, rules, data elements, and so on. We recommend that you group all of these mobile apps into the same property. If your apps send data to different Analytics report suites, or user different extensions per app, create separate mobile properties. If you group your mobile apps into one property, you can also split them into separate properties over time.
 
 ### How do I delete a mobile property in Experience Platform Launch?
 
-To delete a mobile property from Experience Platform Launch, see the bottom of [Create a Property](https://docs.adobelaunch.com/getting-started-1/general-launch-configuration-and-settings/create-a-property).
+To delete a mobile property from Experience Platform Launch, see [Delete a property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property). 
 
-**Warning**: If you delete a mobile property, you cannot undo this action!
+{% hint style="warning" %}
+If you delete a mobile property, you cannot undo this action!
+{% endhint %}
 
 ## General implementation and migration
 
@@ -72,16 +73,14 @@ The Experience Platform SDK migrates the locally stored user contexts from the 4
 
 The size values in the table are provided as indicative estimates, with the following considerations:
 
-* Mobile Core, which includes Lifecycle, Identity, and Signals frameworks, is required for all other extensions.   The final app size increase can be calculated by adding the Core size to each of the enabled extensions. For example, the iOS app distribution using Target and Analytics will have a total size increase of 635 KB. \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
-* The iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for one architecture.   The Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
+* Mobile Core, which includes the Lifecycle, the Identity, and the Signals extensions, is required for all other extensions. The final app size increase can be calculated by adding the Mobile Core size to each of the enabled extensions. For example, the iOS app distribution using the Target and Analytics extensions will have a total size increase of 635 KB. \(Core: 504 KB + Analytics: 54 KB + Target: 77 KB\).
+* The iOS \(SDK extension versions 2+\) estimates are based on Xcode’s App Thinning size report for one architecture. The Android \(SDK extension versions 1+\) size estimates listed refer to unsigned apps and do not account for proguarding.
 
 ### How can I use ProGuard with the Android SDK?
 
-[Android developer documentation](https://developer.android.com/studio/build/shrink-code) recommends that _to make your APK file as small as possible, you should enable shrinking to remove unused code and resources in your release build_. Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html).
+ Android developer documentation recommends that to make your APK file as small as possible, enable shrinking to remove unused code and resources in your release build. For more information, see [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code). Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html). The Experience Platform Mobile SDK for Android comes with default ProGuard rules that are included in the Core `AAR` package \(see `proguard.txt`\). We recommend that you use this default package when you implement. 
 
-The Experience Platform Mobile SDK for Android comes with default ProGuard rules included in the Core `AAR` package \(see `proguard.txt`\). Using this default package is the recommended path of implementation.
-
-If you need to add the following rule to your custom ProGuard rules file, typically labeled as `proguard-rules.pro`. For more information, see [Android developer documentation](https://developer.android.com/studio/build/shrink-code#shrink-code).
+Add the following rule to your custom ProGuard rules file, typically labeled `proguard-rules.pro`. For more information, see  [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code).
 
 ```java
 -keep class com.adobe.marketing.mobile.* {
@@ -91,19 +90,21 @@ If you need to add the following rule to your custom ProGuard rules file, typica
 
 ## Mobile Core
 
-### What are Lifecycle Metrics?
+### What are Lifecycle metrics?
 
-Lifecycle Metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../using-mobile-extensions/mobile-core/lifecycle/).
+Lifecycle metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../using-mobile-extensions/mobile-core/lifecycle/).
 
 ## Adobe Analytics
 
-### How can I setup, configure, or troubleshoot processing rules?
+### How can I set up, configure, or troubleshoot processing rules?
 
 For more information, see [Processing Rules Tips and Tricks](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html).
 
 ### How are mobile visits different from launches?
 
-A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting. A visit is a server-side calculation by Adobe Analytics and is based on the first and last data hits that are sent by the SDK without exceeding a visit timeout. Typically, session timeouts are set at 30 minutes for a report suite. Although visits come from traditional web analytics, these hits still provide valuable insights into how users enter and exit from your app.
+A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting. 
+
+A visit is a server-side calculation by Adobe Analytics and is based on the first and last data hits that are sent by the SDK without exceeding a visit timeout. Typically, session timeouts are set at 30 minutes for a report suite. Although visits come from traditional web analytics, these hits still provide valuable insights into how users enter and exit from your app.
 
 ### Can I send my analytics data to multiple report suites?
 

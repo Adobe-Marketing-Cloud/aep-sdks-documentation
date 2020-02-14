@@ -50,30 +50,30 @@ To add Target to your app:
 {% tab title="iOS" %}
 1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
 
-    ```text
+   ```text
     pod 'ACPCore'
     pod 'ACPTarget'
-    ```
+   ```
 
-1. Import the Target and Identity libraries.
+2. Import the Target and Identity libraries.
 
-    #### Objective C
+   **Objective C**
 
-    ```objectivec
+   ```objectivec
        #import "ACPCore.h"
        #import "ACPTarget.h"
        #import "ACPIdentity.h"
        #import "ACPTargetRequestObject.h"
        #import "ACPTargetPrefetchObject.h"
-    ```
+   ```
 
-    #### Swift
+   **Swift**
 
-    ```swift
+   ```swift
        #import ACPCore
        #import ACPTarget
        #import ACPIdentity
-    ```
+   ```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -81,22 +81,22 @@ To add Target to your app:
 
 1. Install Target.
 
-    ```javascript
+   ```javascript
     npm install @adobe/react-native-acptarget
     react-native link @adobe/react-native-acptarget
-    ```
+   ```
 
 2. Import the extension and related libraries.
 
-    ```javascript
+   ```javascript
     import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
-    ```
+   ```
 
 3. Get the extension version.
 
-    ```javascript
+   ```javascript
     ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
-    ```
+   ```
 {% endtab %}
 {% endtabs %}
 
@@ -235,7 +235,7 @@ var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
 {% endtab %}
 {% endtabs %}
 
-### Target Product class 
+### Target Product class
 
 The `TargetProduct` class encapsulates the product ID and the product category ID, and you can instantiate this class to create order parameters. For more information about Target Product parameters, see [Entity attributes](https://docs.adobe.com/content/help/en/target/using/recommendations/entities/entity-attributes.html)
 

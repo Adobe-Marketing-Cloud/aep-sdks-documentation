@@ -70,6 +70,7 @@ To deploy your configuration to a development environment for testing:
 2. Under the **Development** section of the publishing workflow, click **Add New Library**.
 3. Specify any name for the library **Name**.
 4. From the **Environment** drop-down list, select Development as the environment.
+
 5. Click **Add All Changed Resources** to add the configuration changes to be deployed. You will see the Mobile Core and Profile extensions listed as changes to be published.
 5. Click **Save & Build for Development**.
 

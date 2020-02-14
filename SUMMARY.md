@@ -66,7 +66,6 @@
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Adobe Target - Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md)
 * [Places Service](using-mobile-extensions/adobe-places.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
@@ -113,9 +112,10 @@
 ## BETA
 
 * [Project Griffon](beta/project-griffon/README.md)
-  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
+  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon/README.md)
+    * [Project Griffon SDK API Reference](beta/project-griffon/set-up-project-griffon/project-griffon-sdk-api-reference.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
-    * [Places Service and Project Griffon](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
-    * [Adobe Analytics and Project Griffon](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
-    * [Custom Validation and Project Griffon](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
+    * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
+    * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
+    * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
 

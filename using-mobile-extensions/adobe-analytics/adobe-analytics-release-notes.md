@@ -1,12 +1,22 @@
 # Release Notes
 
+## February 13, 2020
+
+The following updates were made in this release:
+
+### Android Analytics 1.2.4
+
+* Fixed an issue which, was causing some hits to be delayed.
+* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## January 25, 2020
 
 The following updates were made in this release:
 
 ### Android Analytics 1.2.3 and iOS Analytics 2.2.2
 
-* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
 
 ## October 28, 2019
 
@@ -61,4 +71,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-

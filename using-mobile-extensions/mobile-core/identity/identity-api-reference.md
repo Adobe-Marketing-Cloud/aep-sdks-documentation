@@ -2,7 +2,7 @@
 
 ## Sync identifiers <a id="syncIdentifiersTitle"></a>
 
-The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID (ECID) Service.
+The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID \(ECID\) Service.
 
 These APIs synchronize the provided customer identifier type key and value with the authentication state to the ECID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
 
@@ -826,7 +826,7 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 
 ## Set an advertising identifier <a id="setAdvertisingIdentifierTitle"></a>
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](), and is removed at uninstall.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](identity-api-reference.md), and is removed at uninstall.
 
 {% hint style="info" %}
 If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.

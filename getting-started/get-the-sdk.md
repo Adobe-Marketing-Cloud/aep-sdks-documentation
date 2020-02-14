@@ -41,7 +41,7 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 **Important:** Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  (![](../.gitbook/assets/package.png)). 
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\). 
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.

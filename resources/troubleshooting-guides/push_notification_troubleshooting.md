@@ -133,21 +133,19 @@ You can verify the push notification tracking in Project Griffon.
 4. Click on the push notification to launch the app.  
 5. In the list of events, verify that you have an event with type CollectData.  
 6. In the Details panel on the right, verify the value of the action.  
-   The value of the action should be 7 for impression, 2 for the click, and 1 for open.   
-  
-   Impression event tracking \(action value 7\) 
+   The value of the action should be 7 for impression, 2 for the click, and 1 for open.
+
+   Impression event tracking \(action value 7\)
 
    ![Shows Push notification impression tracking](../../.gitbook/assets/push_tracking_impression.png)
 
-  
-   Click event tracking \(action value 2\)
+Click event tracking \(action value 2\)
 
-   ![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png)
+![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png)
 
-  
-   Open event tracking \(action value 1\)  
- 
-   ![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png)
+Open event tracking \(action value 1\)
+
+![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png)
 
 ### Troubleshooting using Charles
 

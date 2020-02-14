@@ -57,6 +57,7 @@ Remember the following information when you add the Campaign extension to your a
 | Extension | Information |
 | :--- | :--- |
 
+
 | Campaign Standard | This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
 | :--- | :--- |
 
@@ -89,26 +90,25 @@ The instructions to add these extensions to your mobile app are also available i
 
 {% tabs %}
 {% tab title="Android" %}
-
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
 
-	```java
-	implementation 'com.adobe.marketing.mobile:campaign:1.+'
-	implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-	implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-	```
+   ```java
+    implementation 'com.adobe.marketing.mobile:campaign:1.+'
+    implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+   ```
 
-1. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
+2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
 
-	```java
-	import com.adobe.marketing.mobile.AdobeCallback;
-	import com.adobe.marketing.mobile.Campaign;
-	import com.adobe.marketing.mobile.Identity;
-	import com.adobe.marketing.mobile.Lifecycle;
-	import com.adobe.marketing.mobile.MobileCore;
-	import com.adobe.marketing.mobile.Signal;
-	import com.adobe.marketing.mobile.UserProfile;
-	```
+   ```java
+    import com.adobe.marketing.mobile.AdobeCallback;
+    import com.adobe.marketing.mobile.Campaign;
+    import com.adobe.marketing.mobile.Identity;
+    import com.adobe.marketing.mobile.Lifecycle;
+    import com.adobe.marketing.mobile.MobileCore;
+    import com.adobe.marketing.mobile.Signal;
+    import com.adobe.marketing.mobile.UserProfile;
+   ```
 
 {% hint style="info" %}
 To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
@@ -118,32 +118,30 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% tab title="iOS" %}
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
 
-	![](../../.gitbook/assets/acs-pods.png)
+   ![](../../.gitbook/assets/acs-pods.png)
 
-	{% hint style="info" %}
-	To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
-	{% endhint %}
+   To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
 
-1. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
+2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
-	#### Objective C
+   **Objective C**
 
-	```objectivec
-	#import "ACPCore.h"
-	#import "ACPCampaign.h"
-	#import "ACPUserProfile.h"
-	#import "ACPIdentity.h"
-	#import "ACPLifecycle.h"
-	#import "ACPSignal.h"
-	```
+   ```objectivec
+    #import "ACPCore.h"
+    #import "ACPCampaign.h"
+    #import "ACPUserProfile.h"
+    #import "ACPIdentity.h"
+    #import "ACPLifecycle.h"
+    #import "ACPSignal.h"
+   ```
 
-	#### Swift
+   **Swift**
 
-	```swift
-	import ACPCore
-	import ACPCampaign
-	import ACPUserProfile
-	```
+   ```swift
+    import ACPCore
+    import ACPCampaign
+    import ACPUserProfile
+   ```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -180,34 +178,34 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-	```java
-	public class CampaignTestApp extends Application {
+   ```java
+    public class CampaignTestApp extends Application {
 
-	    @Override
-	    public void onCreate() {
-		super.onCreate();
-		MobileCore.setApplication(this);
-		MobileCore.setLogLevel(LoggingMode.DEBUG);
+        @Override
+        public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
 
-		try {
-		    Campaign.registerExtension();
-		    UserProfile.registerExtension();
-		    Identity.registerExtension();
-		    Lifecycle.registerExtension();
-		    Signal.registerExtension();
-		    MobileCore.start(new AdobeCallback () {
-			@Override
-			public void call(Object o) {
-			    MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
-			}
-		    });
-		} catch (InvalidInitException e) {
-		    Log.e("CampaignTestApp", e.getMessage());
-		}
+        try {
+            Campaign.registerExtension();
+            UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+            MobileCore.start(new AdobeCallback () {
+            @Override
+            public void call(Object o) {
+                MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
+            }
+            });
+        } catch (InvalidInitException e) {
+            Log.e("CampaignTestApp", e.getMessage());
+        }
 
-	    }
-	}
-	```
+        }
+    }
+   ```
 
 For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
@@ -215,45 +213,45 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
 {% tab title="iOS" %}
 1. In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-	#### Objective C
+   **Objective C**
 
-	```objectivec
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-	    [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
+   ```objectivec
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+        [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
 
-	    [ACPCampaign registerExtension];
-	    [ACPUserProfile registerExtension];
-	    [ACPIdentity registerExtension];
-	    [ACPLifecycle registerExtension];
-	    [ACPSignal registerExtension];
-	    [ACPCore start:^{
-		[ACPCore lifecycleStart:nil];
-	    }];
-	  // Override point for customization after application launch.
-	  return YES;
-	}
-	```
+        [ACPCampaign registerExtension];
+        [ACPUserProfile registerExtension];
+        [ACPIdentity registerExtension];
+        [ACPLifecycle registerExtension];
+        [ACPSignal registerExtension];
+        [ACPCore start:^{
+        [ACPCore lifecycleStart:nil];
+        }];
+      // Override point for customization after application launch.
+      return YES;
+    }
+   ```
 
-	#### Swift
+   **Swift**
 
-	```swift
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-	       ACPCore.setLogLevel(.debug)
-	    ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
+   ```swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+           ACPCore.setLogLevel(.debug)
+        ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
 
-	    ACPCampaign.registerExtension()
-	    ACPUserProfile.registerExtension()
-	    ACPIdentity.registerExtension()
-	    ACPLifecycle.registerExtension()
-	    ACPSignal.registerExtension()
-	    ACPCore.start {
-		ACPCore.lifecycleStart(nil)
-	    }
+        ACPCampaign.registerExtension()
+        ACPUserProfile.registerExtension()
+        ACPIdentity.registerExtension()
+        ACPLifecycle.registerExtension()
+        ACPSignal.registerExtension()
+        ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+        }
 
-	  return true;
-	}
-	```
+      return true;
+    }
+   ```
 
 For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
@@ -295,7 +293,7 @@ To set up local notifications in Android, update the AndroidManifest.xml file wi
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -305,7 +303,6 @@ Need help creating a push notification using Adobe Campaign? For more informatio
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Example
 
 ```java
@@ -325,7 +322,6 @@ FirebaseInstanceId.getInstance().getInstanceId()
             }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -356,11 +352,9 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
   //...
 }
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 Before you use the following API in your React Native project, complete the steps in the **Android** and **iOS** tabs to set up platform-specific push configuration.
 
 #### Example
@@ -368,7 +362,6 @@ Before you use the following API in your React Native project, complete the step
 ```javascript
 ACPCore.setPushIdentifier("pushID");
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -382,14 +375,13 @@ The code samples below are provided as examples on how to correctly invoke the `
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java
 public static void collectMessageInfo(final Map<String, Object> messageInfo)
 ```
 
-- *messageInfo* is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+* _messageInfo_ is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
 #### Java
 
@@ -437,18 +429,16 @@ private void handleTracking() {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Syntax
 
 ```objectivec
 + (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
 ```
 
-- *messageInfo* is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+* _messageInfo_ is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
 #### Objective C
 
@@ -458,12 +448,12 @@ private void handleTracking() {
 // Handle notification interaction from background or closed
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     dispatch_async(dispatch_get_main_queue(), ^{
-    	NSDictionary *userInfo = response.notification.request.content.userInfo;
-    	NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
-    	NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
-          
-    	if(!broadlogId.length || !deliveryId.length){
-      	return;
+        NSDictionary *userInfo = response.notification.request.content.userInfo;
+        NSString *broadlogId = userInfo[@"_mId"] ?: userInfo[@"broadlogId"];
+        NSString *deliveryId = userInfo[@"_dId"] ?: userInfo[@"deliveryId"];
+
+        if(!broadlogId.length || !deliveryId.length){
+          return;
       }
        // Send Click Tracking since the user did click on the notification
        [ACPCore collectMessageInfo:@{
@@ -489,29 +479,28 @@ private void handleTracking() {
 // Handle notification interaction from background or closed
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
        DispatchQueue.main.async(execute: {
-       		let userInfo = response.notification.request.content.userInfo
-       		var broadlogId:String = (userInfo["_mId"] ?? userInfo["broadlogId"]) as! String
-       		var deliveryId:String = (userInfo["_dId"] ?? userInfo["deliveryId"]) as! String
+               let userInfo = response.notification.request.content.userInfo
+               var broadlogId:String = (userInfo["_mId"] ?? userInfo["broadlogId"]) as! String
+               var deliveryId:String = (userInfo["_dId"] ?? userInfo["deliveryId"]) as! String
 
-       		if (broadlogId.count == 0 || deliveryId.count == 0) {
-          	return
+               if (broadlogId.count == 0 || deliveryId.count == 0) {
+              return
           }
           // Send Click Tracking since the user did click on the notification
-					ACPCore.collectMessageInfo([
+                    ACPCore.collectMessageInfo([
             "broadlogId": broadlogId,
-						"deliveryId": deliveryId,
-						"action": "2"
-					])
-					// Send Open Tracking since the user opened the app
-					ACPCore.collectMessageInfo([
+                        "deliveryId": deliveryId,
+                        "action": "2"
+                    ])
+                    // Send Open Tracking since the user opened the app
+                    ACPCore.collectMessageInfo([
             "broadlogId": broadlogId,
-						"deliveryId": deliveryId,
-						"action": "1"
-					])
+                        "deliveryId": deliveryId,
+                        "action": "1"
+                    ])
        })
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

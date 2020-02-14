@@ -3,9 +3,7 @@
 {% hint style="warning" %}
 In version 4 of the iOS SDK, this implementation was completed automatically.
 
-When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
-
-For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
+When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics. For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
 
 You can track lifecycle to learn how frequently and how long your app is being used.
@@ -49,9 +47,9 @@ The `lifecycleStart:` method tells the SDK that the user is launching the app. I
 * `application:didFinishLaunchingWithOptions:`  
 * `applicationWillEnterForeground:`
 
-Here are code samples for `lifecycleStart` in Objective-C and Swift:
+Here are code samples for `lifecycleStart` in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -84,9 +82,9 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics. The `lifecyclePause` method should be called when your user naturally backgrounds your application, in the `applicationDidEnterBackground:` method.
 
-Here are some examples for `lifecyclePause` in Objective-C and Swift:
+Here are some examples for `lifecyclePause` in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 - (void) applicationDidEnterBackground:(UIApplication *)application {
@@ -102,7 +100,7 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 }
 ```
 
-### Tracking App Crashes in iOS
+### Tracking app crashes in iOS
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
@@ -140,9 +138,11 @@ iOS uses system notifications that allow developers to track and respond to diff
 
 **Why does Adobe measure crashes this way?**
 
-This approach of measuring crashes provides a high-level answer to the question, Did the user exit my app intentionally? Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
+This approach of measuring crashes provides a high-level answer to the question, _Did the user exit my app intentionally?_ 
 
-### Collecting Additional Data with Lifecycle
+Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
+
+### Collecting additional data with Lifecycle
 
 When calling `lifecycleStart:`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
 

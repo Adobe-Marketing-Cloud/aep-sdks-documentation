@@ -2,7 +2,7 @@
 
 ## We want to help!
 
-Please take a moment to fill out a [short-survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
+Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
 ## End of support for the version 4 Mobile SDKs
 
@@ -21,7 +21,7 @@ Here are the end-of-support considerations for the version 4 SDKs:
 * [4x SDKs](https://github.com/Adobe-Marketing-Cloud/mobile-services) will have continued [Adobe Customer Support](https://helpx.adobe.com/contact/enterprise-support.ec.html) and [access to forums](https://github.com/Adobe-Marketing-Cloud/mobile-services/issues) until **September 30, 2020.**
 * Adobe will release final updates for Version 4 SDKs to facilitate compatibility with upcoming OS releases such as iOS 13/Xcode 11 and Android Q.
 * Customer issues will continue to be addressed by impact through **September 30, 2019,** after which ****Adobe may, in its sole discretion, develop new fixes for problems of high technical impact or business exposure for customers. Based on the customer input, Adobe will determine the degree of impact and exposure and the consequent activities.
-* Starting **October 2020**, no new fixes, OS-related updates, or support for 4x SDKs will be provided. Customers will be expected to use the new [Experience Platform Mobile SDKs](./).
+* Starting **October 2020**, no new fixes, OS-related updates, or support for 4x SDKs will be provided.  Customers will be expected to use the new [Experience Platform Mobile SDKs](./).
 
 ## Frequently asked questions
 
@@ -31,7 +31,7 @@ The version 4 SDKs were first released in September 2013 to support mobile app i
 
 Spurred by customer feedback for more control, performance, and functionality over the years; and to support future product enhancements, we released the re-architected [Adobe Experience Platform Mobile SDKs](./) in September 2018. The new Experience Platform Mobile SDKs replaces the version 4 SDKs and provide support for new features such as flexible configuration through Experience Platform Launch, modular Adobe and partner extensions. 
 
-Solutions such as [Target Visual Experience Composer](using-mobile-extensions/adobe-target-vec.md), [Adobe Experience Platform Location Service](using-mobile-extensions/adobe-places.md), and [Project Griffon](beta/project-griffon/) are exclusively available on Experience Platform Mobile SDKs.
+Solutions such as Places Service and [Project Griffon](beta/project-griffon/) are exclusively available on Experience Platform Mobile SDKs.
 
 ### Where do I learn more about upgrading/migrating to the Experience Platform Mobile SDKs?
 

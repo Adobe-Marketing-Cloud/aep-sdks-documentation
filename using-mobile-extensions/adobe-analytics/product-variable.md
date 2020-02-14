@@ -24,7 +24,7 @@ cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quant
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
 #### Syntax
 
