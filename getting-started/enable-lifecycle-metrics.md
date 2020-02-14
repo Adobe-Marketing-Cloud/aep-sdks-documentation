@@ -4,36 +4,11 @@
 This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
-Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, app lifecycle information about your app user. These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
+Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
-
-Import the Lifecycle framework:
-
-```java
-import com.adobe.marketing.mobile.*;
-```
-
-Register the framework with Mobile Core:
-
-```java
-public class TargetApp extends Application {
-​
- @Override
- public void onCreate() {
-     super.onCreate();
-     MobileCore.setApplication(this);
-​
-     try {
-         Lifecycle.registerExtension();
-     } catch (Exception e) {
-         //Log the exception
-     }
- }
-}
-```
 
 With the `onResume` function, start Lifecycle data collection:
 
@@ -65,21 +40,6 @@ To ensure accurate session and crash reporting, this call must be added to every
 
 {% tab title="iOS" %}
 #### Objective-C
-
-Import the Lifecycle framework:
-
-```objectivec
-#import "ACPLifecycle.h"
-```
-
-Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
-
-```objectivec
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // register the lifecycle extension
-    [ACPLifecycle registerExtension];
-}
-```
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
@@ -119,21 +79,6 @@ When the app enters the background, pause Lifecycle data collection from your ap
 ```
 
 #### Swift
-
-In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
-
-```swift
-import ACPCore
-```
-
-Register the Lifecycle extension with the SDK Core by adding the following in your app's `application:didFinishLaunchingWithOptions:` delegate method:
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // register the lifecycle extension
-    ACPLifecycle.registerExtension();
-}
-```
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
@@ -175,24 +120,6 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 
 {% tab title="React Native" %}
 ### JavaScript
-
-Import the Lifecycle extension
-
-```jsx
-import {ACPLifecycle} from '@adobe/react-native-acpcore';
-```
-
-Getting the extension version \(optional\)
-
-```jsx
-ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
-```
-
-Registering the extension with Core
-
-```jsx
-ACPLifecycle.registerExtension();
-```
 
 Starting a lifecycle event
 

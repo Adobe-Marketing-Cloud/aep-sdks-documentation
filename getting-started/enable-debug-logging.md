@@ -47,17 +47,12 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 ### Javascript
 
 ```jsx
-import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
-
+ACPCore.setLogLevel(ACPMobileLogLevel.DEBUG);
 ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+ACPCore.setLogLevel(ACPMobileLogLevel.WARNING);
+ACPCore.setLogLevel(ACPMobileLogLevel.ERROR);
 ```
 
-```jsx
-const ERROR = "ACP_LOG_LEVEL_ERROR";
-const WARNING = "ACP_LOG_LEVEL_WARNING";
-const DEBUG = "ACP_LOG_LEVEL_DEBUG";
-const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
-```
 {% endtab %}
 {% endtabs %}
 

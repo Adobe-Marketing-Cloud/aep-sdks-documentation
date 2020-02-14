@@ -64,97 +64,178 @@ For the latest React Native installation instructions, see the README file in th
 {% endtab %}
 {% endtabs %}
 
-## Manual installation
+## Installation instructions
 
-If you cannot access the installation dialog box, complete the following sections to get the Mobile SDKs. 
+If you cannot access the **Mobile Install Instructions** dialog box in Experience Platform Launch, complete the following sections to get the Adobe Experience Platform SDK. If you already completed the steps in the Mobile Install Instructions dialog box, no need to complete these steps.
 
-### 1. Configure the SDK with an Environment ID
+### 1. Add dependencies to your project
 
-To initialize the SDK, you will need to first configure the SDK with an **Environment ID** from Adobe Experience Platform Launch. The **Environment ID** links the configuration from a mobile property with your SDK implementation.
-
-{% hint style="info" %}
-To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab \(found in a previously created and configured mobile property\) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon.
-{% endhint %}
+Each extension needs added as a dependency to the mobile application project. The examples below will add the Mobile Core and Profile extensions.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
-1. In the app, create `MainActivity.java` .
-2. Add `MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");`
+#### Android
+
+Add the dependencies to build.gradle for each extension.
+
+```java
+implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
 
-In Xcode, find your `didFinishLaunchingWithOptions` in `AppDelegate.m` and add:
+#### iOS
+
+Add the dependencies to your Podfile for each extension.
 
 ```objectivec
-[ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
+use_frameworks!
+pod 'ACPUserProfile', '~> 2.0'
+pod 'ACPCore', '~> 2.0'
 ```
 
-#### Swift
-
-In Xcode, find your `didFinishLaunchingWithOptions` in AppDelegate.swift and add:
-
-```swift
-ACPCore.configure(withAppId: "PASTE_ENVIRONMENT_ID_HERE")
-```
 {% endtab %}
 {% endtabs %}
 
-### 2. Initialize the SDK
+
+
+### 2. Add initialization code
+
+Each extension needs imported and registered in your mobile application project. Besides Mobile Core, all Adobe Experience Platform SDK extensions provide a `registerExtension` API. This API registers the extension with Mobile Core. After an extension is registered, it can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
+
+After you register the extensions, you will want to call the `start` API in Core. This step is required to boot up the SDK for event processing. The following code snippets demonstrate how to import and register the Mobile Core and Profile extensions. You will also see Identity, Lifecycle, Signal, and UserProfile imported and registered. These are part of the Mobile Core extension bundle. You will see that logging is turned on in DEBUG mode. Mobile Core is also configured with the AppID. This is the ID that matches the mobile application with the configuration published in Adobe Platform Launch.
+
+{% hint style="info" %}
+To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab \(found in a previously created and configured mobile property\) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon. Find the Environment File ID at the top and copy it.
+{% endhint %}
+
+Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations. After importing and configuring Identity below, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
+
+
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
-```jsx
-@Override
-public void onCreate() {
-  //...
-  MobileCore.setApplication(this);
-  MobileCore.configureWithAppID("PASTE_ENVIRONMENT_ID_HERE");
+#### Android
 
-  try {
-    Identity.registerExtension();
-    Lifecycle.registerExtension();
-    Signal.registerExtension();
-  } catch (Exception e) {
-    // handle exception
+Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApp extends Application {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    MobileCore.setApplication(this);
+		MobileCore.setLogLevel(LoggingMode.DEBUG);
+    ...
+    try {
+      UserProfile.registerExtension();
+			Identity.registerExtension();
+			Lifecycle.registerExtension();
+			Signal.registerExtension();
+			MobileCore.start(new AdobeCallback () {
+    		@Override
+    		public void call(Object o) {
+        	MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+    }
+});
+    } catch (InvalidInitException e) {
+      ...
+    }
   }
-
-  MobileCore.start(null);
 }
 ```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-#### Objective C
+{% tab title="iOS - Objective C" %}
 
-```jsx
-// Import the SDK
+#### iOS - Objective C
+
+Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+```objectivec
+#import "AppDelegate.h"
 #import "ACPCore.h"
-#import "ACPLifecycle.h"
+#import "ACPUserProfile.h"
 #import "ACPIdentity.h"
+#import "ACPLifecycle.h"
 #import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+  [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+	...
+  [ACPUserProfile registerExtension];
+	[ACPIdentity registerExtension];
+	[ACPLifecycle registerExtension];
+	[ACPSignal registerExtension];
+	[ACPCore start:^{
+  	[ACPCore lifecycleStart:nil];
+	}];
+	...
+  return YES;
+}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  //...
-  [ACPCore configureWithAppId:@"PASTE_ENVIRONMENT_ID_HERE"];
-  [ACPIdentity registerExtension];
-  [ACPLifecycle registerExtension];
-  [ACPSignal registerExtension];
+@end
+```
 
-  [ACPCore start:nil];
+{% endtab %}
+
+{% tab title="iOS - Swift" %}
+
+#### iOS - Swift
+
+Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+```swift
+import ACPCore
+import ACPUserProfile
+...
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
+  func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
+    ACPCore.setLogLevel(.debug)
+		ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
+    ...
+    ACPUserProfile.registerExtension()
+		ACPIdentity.registerExtension()
+		ACPLifecycle.registerExtension()
+		ACPSignal.registerExtension()
+		ACPCore.start {
+    	ACPCore.lifecycleStart(nil)
+		}
+    ...
+    return true
+  }
 }
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
+
 #### Javascript
 
-> Tip: We recommend that you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+> Tip: We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -168,10 +249,14 @@ initSDK() {
     ACPCore.start();
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
-### 3. Ensure app permissions \(Android\)
+
+
+### 3. Ensure app permissions \(Android-only)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -182,103 +267,29 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## 4. Enable the Experience Cloud Identity service
 
-Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations.
 
-{% hint style="info" %}
-To confirm that you have the correct Experience Cloud Org ID in the Mobile Core settings page, see [Get the SDK](get-the-sdk.md).
-{% endhint %}
+### 3. Podfile init, update and install \(iOS-only)
 
-{% tabs %}
-{% tab title="Android" %}
-Import the Identity framework to your project:
+Create a Podfile if you do not already have one:
 
-#### Java
-
-```java
-import com.adobe.marketing.mobile.*;
+```objective-c
+pod init
 ```
 
-Register the framework with Mobile Core:
+If CocoaPods could not find the dependencies, you may need to run this command:
 
-```java
-public class MobileApp extends Application {
-  @Override
-  public void onCreate(){
-     super.onCreate();
-     MobileCore.setApplication(this);
-     try {
-        Identity.registerExtension();
-     } catch (Exception e) {
-       //Log the exception
-       }
-    }
- }
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-Add the Identity framework to your project:
-
-#### Objective-C
-
-```objectivec
-#import "ACPIdentity.h"
+```objective-c
+pod repo update
 ```
 
-#### Swift
+Save the Podfile and run the install:
 
-```swift
-import ACPCore
+```objective-c
+pod install
 ```
 
-Register the Identity framework with Mobile Core
 
-#### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPIdentity registerExtension];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
-
-#### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  ACPIdentity.registerExtension()
-  return true
-}
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-Import the Identity extension
-
-```jsx
-import {ACPIdentity} from '@adobe/react-native-acpcore';
-```
-
-Get the extension version \(optional\)
-
-```jsx
-ACPIdentity.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPIdentity version: " + version));
-```
-
-Register the extension with Core
-
-```jsx
-ACPIdentity.registerExtension();
-```
-{% endtab %}
-{% endtabs %}
-
-After successful configuration, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
 
 
 ## Watch the Video
