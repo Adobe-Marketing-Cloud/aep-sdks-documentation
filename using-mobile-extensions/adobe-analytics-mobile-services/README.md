@@ -648,6 +648,27 @@ MobileServices.trackAdobeDeepLink
 {% endtab %}
 {% endtabs %}
 
+## Integration with Apple Search Ads (iOS)
+
+The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) <> to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see (Apple Search Ads)[https://searchads.apple.com/]. This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app. 
+
+### Implement Search Ads integration
+
+To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview) (in addition to the Mobile Services extension) to your app.
+
+### Reporting on Search Ads Attribution
+
+Apple Search Ads attribution data is provided in the acquisition name, the source, and the term values.
+
+If `attribution = true` , all of the `iad-*` fields will be included in a Lifecycle request to Adobe Analytics.
+In addition, the following values will be mapped from the "iad" dictionary to our typical acquisition context data fields:
+  * `iad-campaign-id` --> `a.referrer.campaign.trackingcode`
+  * `iad-campaign-name` --> `a.referrer.campaign.name`
+  * `iad-adgroup-id` --> `a.referrer.campaign.content`
+  * `iad-keyword` --> `a.referrer.campaign.term`
+
+This mapping ensures that the values are available in Adobe Analytics standard reporting.
+
 ## Migration Notes
 
 To prepare for your migration, remember the following information:
@@ -673,4 +694,3 @@ To prepare for your migration, remember the following information:
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
 * Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
-
