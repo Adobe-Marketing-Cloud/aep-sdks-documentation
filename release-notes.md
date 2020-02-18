@@ -14,7 +14,7 @@ The following updates were made in this release:
 
 ### iOS Identity 2.2.0
 
-* Report extension details to Mobile SDK for improved logging.
+* Report extension details to Mobile Core for improved logging and Griffon support.
 * Added APIs to support `completionHandler` callback that is available in iOS ACPCore version 2.5.0 on the following APIs:
 
   * `appendToURL:witCompletionHandler`
