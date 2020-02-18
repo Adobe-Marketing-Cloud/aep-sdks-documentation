@@ -33,7 +33,7 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 
     The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
 
-5. For Andoird, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
+5. For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
