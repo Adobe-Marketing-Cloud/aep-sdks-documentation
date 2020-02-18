@@ -51,6 +51,14 @@ The necessary dependencies and initialization code can be copied from the dialog
 You should see a pop-up similar to the following \(image below shows iOS\):
 
 ![](../.gitbook/assets/obj-c.png)
+
+For Andoird, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
+
+To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 {% endtab %}
 
 {% tab title="React Native" %}
