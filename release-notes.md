@@ -8,6 +8,24 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## February 18, 2020
+
+The following updates were made in this release:
+
+### iOS Identity 2.2.0
+
+* Report extension details to Mobile SDK for improved logging.
+* Added APIs to support `completionHandler` callback that is available in iOS ACPCore version 2.5.0 on the following APIs:
+
+  * `appendToURL:witCompletionHandler`
+  * `getUrlVariablesWithCompletionHandler`
+  * `getIdentifiersWithCompletionHandler`
+  * `getExperienceCloudIdWithCompletionHandler`
+
+  When the `completionHandler` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `NSError` is returned.
+
+Released with ACPCore version 2.5.0.
+
 ## February 13, 2020
 
 The following updates were made in this release:
