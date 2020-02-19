@@ -17,11 +17,9 @@ The following updates were made in this release:
 * Mobile Core now shares the list of enabled extensions and their meta data through shared state.
 * Added Wrapper Type for Flutter.
 * Exposed eventNumber and eventTimestamp in ACPExtensionEvent class.
-* Added support for completionHandler callback for public getter methods. Added the following APIs in Core:
+* Added the following API to support the completion handler with an nullable `NSError` object:
   * `getPrivacyStatusWithCompletionHandler`
   * `getSdkIdentitiesWithCompletionHandler`
-  
-  We plan to gradually add the ability to enable completionHandler callback to the other extensions.
 
 ### iOS Identity 2.2.0
 
