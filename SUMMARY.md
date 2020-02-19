@@ -8,8 +8,8 @@
 
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
-* [Enable debug logging](/getting-started/enable-debug-logging.md)
-* [Enable lifecycle metrics](/getting-started/enable-lifecycle-metrics.md)
+* [Enable debug logging](getting-started/enable-debug-logging.md)
+* [Enable lifecycle metrics](getting-started/enable-lifecycle-metrics.md)
 * [Set up tracking](getting-started/initialize-the-sdk.md)
 * [Implement additional extensions](getting-started/next-steps.md)
 
