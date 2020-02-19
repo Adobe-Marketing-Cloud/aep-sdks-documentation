@@ -78,7 +78,7 @@
 
 | Cocoapods | Maven | Flutter | React Native | Github |
 | :--- | :--- | :--- | :--- | :--- |
-| [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon)[![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffonbridge.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffonbridge) | Coming Soon | Coming Soon | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) \| [iOS](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v0.0.11-ACPGriffonBeta) |
+| [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon) | Coming Soon | Coming Soon | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) \| [iOS](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v0.0.11-ACPGriffonBeta) |
 
 ## Profile
 * [Using Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile)
