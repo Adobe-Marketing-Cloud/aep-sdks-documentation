@@ -8,16 +8,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
-## February 18, 2020
+## February 19, 2020
 
 The following updates were made in this release:
 
 ### iOS Identity 2.2.0
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
-* Added APIs to support `completionHandler` callback that is available in iOS ACPCore version 2.5.0 on the following APIs:
+* Added the following APIs to support the completionHandler callback that is available in iOS ACPCore version 2.5.0:
 
-  * `appendToURL:witCompletionHandler`
+  * `appendToURL:withCompletionHandler`
   * `getUrlVariablesWithCompletionHandler`
   * `getIdentifiersWithCompletionHandler`
   * `getExperienceCloudIdWithCompletionHandler`
