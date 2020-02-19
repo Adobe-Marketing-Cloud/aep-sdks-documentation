@@ -12,6 +12,17 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 The following updates were made in this release:
 
+### iOS Core 2.5.0
+
+* Mobile Core now shares the list of enabled extensions and their meta data through shared state.
+* Added Wrapper Type for Flutter.
+* Exposed eventNumber and eventTimestamp in ACPExtensionEvent class.
+* Added support for completionHandler callback for public getter methods. Added the following APIs in Core:
+  * `getPrivacyStatusWithCompletionHandler`
+  * `getSdkIdentitiesWithCompletionHandler`
+  
+  We plan to gradually add the ability to enable completionHandler callback to the other extensions.
+
 ### iOS Identity 2.2.0
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
@@ -23,8 +34,6 @@ The following updates were made in this release:
   * `getExperienceCloudIdWithCompletionHandler`
 
   When the `completionHandler` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `NSError` is returned.
-
-Released with ACPCore version 2.5.0.
 
 ## February 13, 2020
 
