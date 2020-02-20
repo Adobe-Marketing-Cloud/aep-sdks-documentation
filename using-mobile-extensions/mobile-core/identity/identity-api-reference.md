@@ -602,7 +602,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
-* _completionHandler_ invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpted error occurs or the request times out. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -1155,7 +1155,7 @@ public interface AdobeCallback<T> {
 
 **AdobeCallbackWithError**
 
-This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed after 500ms, the request is aborted and _fail_ is called.
+This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within 500ms or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
 
 ```java
 public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
