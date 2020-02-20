@@ -296,6 +296,7 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### appendVisitorInfoForURL <a id="appendToUrl-java"></a>
 
 This API appends Adobe visitor information to the query component of the specified URL.
@@ -369,6 +370,10 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 
 {% tab title="iOS" %}
 ### appendToURL <a id="appendToUrl-ios"></a>
+
+{% hint style="info" %}
+Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
 
 This API appends Adobe visitor information to the query component of the specified URL.
 
@@ -572,7 +577,8 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 ### getUrlVariables <a id="geturlvariables-ios"></a>
 
 {% hint style="info" %}
-This method was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
@@ -716,6 +722,10 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% tab title="iOS" %}
 ### getIdentifiers <a id="getIdentifiers-ios"></a>
 
+{% hint style="info" %}
+Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### iOS
@@ -822,6 +832,10 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 
 {% tab title="iOS" %}
 ### getExperienceCloudId <a id="getExperienceCloudId-ios"></a>
+
+{% hint style="info" %}
+Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
