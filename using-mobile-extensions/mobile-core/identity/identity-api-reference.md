@@ -296,6 +296,7 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### appendVisitorInfoForURL <a id="appendToUrl-java"></a>
 
 This API appends Adobe visitor information to the query component of the specified URL.
@@ -370,6 +371,10 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% tab title="iOS" %}
 ### appendToURL <a id="appendToUrl-ios"></a>
 
+{% hint style="info" %}
+Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This API appends Adobe visitor information to the query component of the specified URL.
 
 If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL string and is returned via the callback:
@@ -387,10 +392,12 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 
 ```objectivec
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
 ```
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -401,6 +408,14 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 // handle the appended url here}
 }];
+
+[ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
+   if (error) {
+     // handle error here
+   } else {
+     // handle the appended url here
+   }
+}];
 ```
 
 **Swift**
@@ -408,8 +423,15 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 ```swift
 ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
     // handle the appended url here
-
 });
+
+ACPIdentity.append(to: URL(string: "www.myUrl.com"), withCompletionHandler: { (appendedURL, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the appended url here
+  }
+})
 ```
 
 {% hint style="info" %}
@@ -555,7 +577,8 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 ### getUrlVariables <a id="geturlvariables-ios"></a>
 
 {% hint style="info" %}
-This method was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
@@ -575,9 +598,11 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 ```objectivec
 + (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
++ (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -593,6 +618,14 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
     // handle openURL success
   }];
 }];
+
+[ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
+  if (error) {
+		// handle error here
+  } else {
+		// handle the URL query parameter string here
+  }
+}];
 ```
 
 **Swift**
@@ -607,6 +640,14 @@ ACPIdentity.getUrlVariables {(urlVariables) in
                               completionHandler: {(complete) in 
                                  // handle open success
     })
+}
+
+ACPIdentity.getUrlVariables { (urlVariables, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the URL query parameter string here
+  }
 }
 ```
 {% endtab %}
@@ -681,6 +722,10 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% tab title="iOS" %}
 ### getIdentifiers <a id="getIdentifiers-ios"></a>
 
+{% hint style="info" %}
+Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### iOS
@@ -689,9 +734,11 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 
 ```objectivec
 + (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
++ (void) getIdentifiersWithCompletionHandler: (nonnull void (^) (NSArray<ACPMobileVisitorId*>* __nullable visitorIDs, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -700,7 +747,15 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```objectivec
 [ACPIdentity getIdentifiers:^(NSArray<ACPMobileVisitorId *> * _Nullable retrievedVisitorIds) {    
     // handle the retrieved identifiers here     
-    }];
+}];
+
+[ACPIdentity getIdentifiersWithCompletionHandler:^(NSArray<ACPMobileVisitorId *> * _Nullable visitorIDs, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
+}];
 ```
 
 **Swift**
@@ -708,6 +763,14 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```swift
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
    // handle the retrieved identifiers here        
+}
+
+ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
 }
 ```
 {% endtab %}
@@ -770,6 +833,10 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getExperienceCloudId <a id="getExperienceCloudId-ios"></a>
 
+{% hint style="info" %}
+Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
@@ -778,9 +845,11 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```objectivec
 + (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
++ (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ is invoked after the ECID is available.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -788,7 +857,15 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
-// handle the retrieved Id here    
+	// handle the retrieved ID here    
+}];
+
+[ACPIdentity getExperienceCloudIdWithCompletionHandler:^(NSString * _Nullable experienceCloudId, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
 }];
 ```
 
@@ -796,7 +873,15 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```swift
 ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
-    // handle the retrieved Id here    
+    // handle the retrieved ID here    
+}
+
+ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
 }
 ```
 {% endtab %}
@@ -1065,6 +1150,16 @@ This class provides the interface to receive results when the async APIs perform
 ```java
 public interface AdobeCallback<T> {    
     void call(final T value);
+}
+```
+
+**AdobeCallbackWithError**
+
+This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within 500ms or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
+
+```java
+public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
+	void fail(final AdobeError error);
 }
 ```
 
