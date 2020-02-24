@@ -12,13 +12,13 @@ To set the products variable, set a context data key to `&&products`, and set th
 
 #### Syntax <a id="syntax"></a>
 
-```text
+```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
 #### Example <a id="example"></a>
 
-```text
+```java
 //create a context data dictionary
 HashMap cdata = new HashMap<String, Object>();
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
