@@ -19,7 +19,17 @@ cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quant
 #### Example <a id="example"></a>
 
 ```text
-//create a context data dictionaryHashMap cdata = new HashMap<String, Object>();​// add products, a purchase id, a purchase context data key, and any other data you want to collect.// Note the special syntax for productscdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");cdata.put("myapp.purchase", "1");cdata.put("myapp.purchaseid", "1234567890");​// send the tracking call - use either a trackAction or TrackState call.// trackAction example:MobileCore.trackAction("purchase", cdata);// trackState example:MobileCore.trackState("Order Confirmation", cdata);
+//create a context data dictionary
+HashMap cdata = new HashMap<String, Object>();
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
 ```
 {% endtab %}
 
