@@ -232,6 +232,52 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% endtab %}
 {% endtabs %}
 
+## extensionVersion
+
+The `extensionVersion()` API returns the version of the Identity extension that is registered with the Mobile Core extension.
+
+To get the version of the Identity extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+```java
+String identityExtensionVersion = Identity.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### iOS
+
+**Objective-C**
+
+```objectivec
+NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
+```
+
+**Swift**
+
+```swift
+var identityExtensionVersion  = ACPIdentity.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## getExperienceCloudId
 
 {% tabs %}
@@ -615,6 +661,80 @@ ACPIdentity.getUrlVariables();
 ```jsx
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
 ```
+{% endtab %}
+{% endtabs %}
+
+
+
+## registerExtension
+
+The `registerExtension()` API registers the Identity extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Mobile SDK.
+
+To register the Identity extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
+
+#### Java
+
+```java
+public class MobiletApp extends Application {
+@Override
+public void onCreate() {
+super.onCreate();
+     MobileCore.setApplication(this);
+     try {
+         Identity.registerExtension();
+     } catch (Exception e) {
+         //Log the exception
+     }
+  }
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### iOS
+
+Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
+
+**Objective-C**
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPIdentity registerExtension];
+  // Override point for customization after application launch.
+  return YES;
+}
+```
+
+**Swift**
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  ACPIdentity.registerExtension();
+  // Override point for customization after application launch.
+  return true;
+}
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+import {ACPIdentity} from '@adobe/react-native-acpcore';
+
+initSDK() {
+    ACPIdentity.registerExtension();
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
