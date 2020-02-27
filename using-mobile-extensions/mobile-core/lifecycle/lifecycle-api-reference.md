@@ -1,10 +1,93 @@
 # Lifecycle API reference
 
-Lifecycle metrics are valuable, out-of-the-box information about your app user. These metrics contain information on the app user's lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also choose to set additional lifecycle metrics.
+## Lifecycle Start
 
-This section shows you how to collect lifecycle metrics. To view and report on this data in those respective solutions, set up Analytics or other Experience Cloud solution extensions.
+You can use this API to start a new lifecycle session or resume a previously paused lifecycle session. If a previously paused session timed out, then a new session is created. If a current session is running, then calling this method does nothing.
 
-## Lifecycle Start and Pause
+### lifecycleStart <a id="lifecycleStart"></a>
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+**Syntax**
+
+```java
+public static void lifecycleStart(final Map<String, String> additionalContextData);
+```
+**Example**
+
+```java
+Identity.syncIdentifier("idType", 
+                        "idValue", 
+                        VisitorID.AuthenticationState.AUTHENTICATED);
+```
+{% endtab %}
+
+{% hint style="warning" %}
+This method should be called from the Activity onResume method.
+{% endhint %}
+
+
+### Collect additional data with Lifecycle
+
+Additional context data may be passed when calling this method. Lifecycle data and any additional data are sent as context data parameters to Analytics, to Target as mbox parameters, and for Audience Manager they are sent as customer variables. Any additional data is also used by the Rules Engine when processing rules.
+
+{% hint style="warning" %}
+If you want to track additional context data, you need to add this code in your main activity and any other activity from which your app can be launched.
+{% endhint %}
+
+```java
+@Override
+public void onResume() {
+    HashMap<String, Object> additionalContextData = new HashMap<String, Object>();
+    contextData.put("myapp.category", "Game");
+    MobileCore.lifecycleStart(additionalContextData);
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Objective-C
+
+```objectivec
+// Objective-C
+- (void) applicationWillEnterForeground:(UIApplication *)application {      
+    [ACPCore lifecycleStart:@{@"state": @"appResume"}];      
+}
+```
+
+#### Swift
+
+```swift
+// Swift
+func applicationWillEnterForeground(_ application: UIApplication) {      
+    ACPCore.lifecycleStart(["state": "appResume"])
+}
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
+
+
+
 
 {% tabs %}
 {% tab title="Android" %}
@@ -64,61 +147,11 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% tab title="iOS" %}
 #### Objective-C & Swift <a id="objective-c-and-swift"></a>
 
-Import the Lifecycle framework:
+The `lifecycleStart:` method tells the SDK that the user is launching the app. It should be called from both entry points in your `AppDelegate`:
 
-```objectivec
-#import "ACPLifecycle.h"
-#import "ACPCore.h"
-```
+* `application:didFinishLaunchingWithOptions:`  
+* `applicationWillEnterForeground:`
 
-```swift
-import ACPCore   // In swift ACPCore includes ACPLifecycle
-```
-
-Register the framework with Mobile Core by adding the following in your app's `didFinishLaunchingWithOptions`:
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-​  // Override point for customization after application launch.
-  return YES;
-}
-```
-
-Start Lifecycle data collection by adding `lifecycleStart` to your app's`didFinishLaunchingWithOptions`
-
-```objectivec
-// Objective-C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPLifecycle registerExtension];
-  [ACPCore lifecycleStart];
-  return YES;
-}
-```
-
-```swift
-// Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    ACPCore.lifecycleStart(nil)
-    return true
-}
-```
-
-Pause Lifecycle data collection when your app has entered the background:
-
-```objectivec
-// Objective-C
- - (void) applicationDidEnterBackground:(UIApplication *)application {
-     [ACPCore lifecyclePause];
- }
-```
-
-```swift
-// Swift
- func applicationDidEnterBackground(_ application: UIApplication) {    
-     ACPCore.lifecyclePause()
- }
-```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -212,117 +245,3 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
 {% endtabs %}
-
-## Tracking app crashes
-
-## Android
-
-If your app is terminated, without having first been backgrounded, an ungraceful close is registered the next time your app is launched. This information helps you understand how closes are tracked and the best practices to handle false crashes or \_\*\*\_ungraceful closes.
-
-{% tabs %}
-{% tab title="Android" %}
-When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleStart(additionalContextData)` in the `OnResume` method of each activity. In the `onPause` method, a call is made to `MobileCore.lifecyclePause()`. In the `MobileCore.lifecyclePause()` method, a flag is set to indicate a graceful exit. When the app is launched again or resumed, `MobileCore.lifecycleStart(additionalContextData)` checks this flag. If the app did not exit successfully as determined by the flag status, an `a.CrashEvent` context data is sent with the next call, and a crash event is reported.
-
-{% hint style="info" %}
-To ensure accurate crash reporting, you must call `lifecyclePause()` in the `onPause` method of each activity. For more information about the Android activity lifecycle, see [Activities](https://developer.android.com/guide/components/activities/).
-{% endhint %}
-
-### **Causes of false crash reporting**
-
-* If you are debugging by using an IDE, such as Android Studio, and launching the app again from the IDE while the app is in the foreground causes a crash.
-
-  **Tip**: You can avoid this crash by backgrounding the app before launching again from the IDE.
-
-* If the previous foreground Activity of your app is moved to the background and does not call `MobileCore.lifecyclePause()`in `onPause`, and your app is manually closed or killed by the operating system, the next launch results in a crash.
-
-### **Handling fragments**
-
-Fragments have application lifecycle events that are similar to Activities. However, a fragment cannot be active without being attached to an Activity.
-{% endtab %}
-
-{% tab title="iOS" %}
-This approach of measuring crashes provides a high-level answer to the question, Did the user exit my app intentionally? Crash reporting and app performance vendors use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. We have decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
-
-### Cause of false crashes
-
-The following scenarios are known to falsely cause a crash to be reported by the SDK:
-
-* If you are debugging using Xcode, launching the app again while it is in the foreground, causes a crash.
-
-{% hint style="info" %}
-You can avoid a crash in this scenario by backgrounding the app before launching the app again from Xcode.
-{% endhint %}
-
-* If your app is in the background and sends Analytics hits through a call other than `trackActionFromBackground`, `trackLocation`, or `trackBeacon`, and the app is terminated \(manually or by the operating system\) while in the background, and the next launch will be a crash.
-
-{% hint style="info" %}
-Background activity that occurs beyond the `lifecycleTimeout` threshold might also result in an additional false launch.
-{% endhint %}
-
-* If your app is launched in the background because of a background fetch, location update, and so on, and is terminated by the operating without coming to the foreground, the next launch \(background or foreground\) results in a crash.
-* If you programmatically delete Adobe’s pause flag from `NSUserDefaults`, while the app is in the background, the next launch or resume causes a crash.
-
-### **Preventing false crashes**
-
-The following practices can help prevent false crashes from being reported:
-
-* Ensure that you perform your development against non-production report suites, which should prevent false crash from the first bullet point from occurring.
-* Do not delete or modify any values that the Adobe Experience Cloud Platform SDKs puts in `NSUserDefaults`. If these values are modified outside the SDK, the data reported will be invalid.
-
-### **iOS crash reporting**
-
-iOS uses system notifications that allow developers to track and respond to different states and events in the application lifecycle. The Adobe Experience Cloud Platform SDKs has a notification handler that responds to the `UIApplicationDidEnterBackgroundNotification` notification. In this code, a value is set that indicates that the user has backgrounded the app. On a subsequent launch, if that value cannot be found, a crash is reported.
-{% endtab %}
-{% endtabs %}
-
-## Implementing global lifecycle callbacks <a id="implementing-global-lifecycle-callbacks"></a>
-
-Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-You can use these callbacks to ensure that all of your `Activities` correctly call `AdobeMobileMarketing.lifecycleStart()` and do not need to implement the code for each of the Activity.
-
-```java
-import com.adobe.marketing.mobile.*;
-​
-public class MainActivity extends Activity {
-​
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {     
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-​
-        getApplication().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
-        @Override
-        public void onActivityResumed(Activity activity) {
-            MobileCore.setApplication(getApplication());
-            MobileCore.lifecycleStart(null);
-        }
-        @Override
-        public void onActivityPaused(Activity activity) {
-            MobileCore.lifecyclePause();
-        }
-​
-        // the following methods aren't needed for our lifecycle purposes, but are
-        // required to be implemented by the ActivityLifecycleCallbacks object
-        @Override
-        public void onActivityCreated(Activity activity, Bundle savedInstanceState) {}
-        @Override
-        public void onActivityStarted(Activity activity) {}
-        @Override
-        public void onActivityStopped(Activity activity) {}
-        @Override
-        public void onActivitySaveInstanceState(Activity activity, Bundle outState) {}
-        @Override
-        public void onActivityDestroyed(Activity activity) {}
-        });
-    }
-...
-}
-```
-{% endtab %}
-{% endtabs %}
-

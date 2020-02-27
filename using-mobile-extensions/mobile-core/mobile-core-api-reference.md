@@ -668,7 +668,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 
 ## Handle open URL action
 
-The Mobile SDK allows users to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. If the callback function returns YES, the SDK does not complete the `open url` action. If the callback function returns NO, the SDK completes the `open url` action.
+You can use this API to add a callback function that will be triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. Depending on the return value of this callback, SDK decides whether it should run the logic to open the URL using underlying iOS API. If the callback function returns `YES`, then the SDK stops processing the URL. Otherwise, the SDK completes the `open url` action by calling `openURL:options:completionHandler:`.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -689,6 +689,55 @@ The Mobile SDK allows users to add a callback function that is triggered before 
     ...
 }];
 ```
+{% endtab %}
+{% endtabs %}
+
+
+
+## Set App Group (iOS only)
+
+You can use this API to set the app group used to share user defaults and files among the containing app and the extension apps.
+
+Note: This API *must* be called in AppDidFinishLaunching and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective-C**
+
+### setAppGroup
+
+**Objective-C**
+
+#### setAppGroup
+
+**Syntax**
+
+```objective-c
++ (void) setAppGroup: (nullable NSString*) appGroup;
+```
+
+**Example**
+
+```objective-c
+[ACPCore setAppGroup:@"app-group-id"];
+```
+
+**Swift**
+
+#### setAppGroup
+
+**Syntax**
+
+```swift
++ (void) setAppGroup: (nullable NSString*) appGroup;
+```
+
+**Example**
+
+```swift
+ACPCore.setAppGroup("app-group-id")
+```
+
 {% endtab %}
 {% endtabs %}
 
