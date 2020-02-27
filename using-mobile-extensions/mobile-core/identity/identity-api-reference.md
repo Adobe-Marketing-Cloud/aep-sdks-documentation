@@ -2,11 +2,11 @@
 
 ## Sync identifiers <a id="syncIdentifiersTitle"></a>
 
-The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID service.
+The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID \(ECID\) Service.
 
-These APIs synchronize the provided customer identifier type key and value with the authentication state to the Adobe Experience Cloud ID (ECID) Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+These APIs synchronize the provided customer identifier type key and value with the authentication state to the ECID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
 
-Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service. 
+Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
 
@@ -14,7 +14,7 @@ If the current SDK privacy status is `MobilePrivacyStatus.OPT_OUT`, calling this
 
 ### syncIdentifier <a id="syncIdentifier"></a>
 
-This API updates or appends the provided customer identifier type key and value with the given authentication state to the Adobe Experience Cloud ID Service. If the specified customer ID type exists in the service, the ID is updated with the new ID and authentication state. Otherwise a new customer ID is added.
+This API updates or appends the provided customer identifier type key and value with the given authentication state to the ECID Service. If the specified customer ID type exists in the service, the ID is updated with the new ID and authentication state. Otherwise a new customer ID is added.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -109,9 +109,9 @@ ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthentic
 
 ### syncIdentifiers <a id="syncIdentifiers"></a>
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension. 
+The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service. 
+Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -151,7 +151,7 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
-  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored. 
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
@@ -296,11 +296,12 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### appendVisitorInfoForURL <a id="appendToUrl-java"></a>
 
 This API appends Adobe visitor information to the query component of the specified URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the `AdobeCallback` instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -308,6 +309,8 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
   * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
+
+When `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Java
 
@@ -368,6 +371,10 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% tab title="iOS" %}
 ### appendToURL <a id="appendToUrl-ios"></a>
 
+{% hint style="info" %}
+Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This API appends Adobe visitor information to the query component of the specified URL.
 
 If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL string and is returned via the callback:
@@ -385,10 +392,12 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 
 ```objectivec
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
 ```
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -399,6 +408,14 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 // handle the appended url here}
 }];
+
+[ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
+   if (error) {
+     // handle error here
+   } else {
+     // handle the appended url here
+   }
+}];
 ```
 
 **Swift**
@@ -406,8 +423,15 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 ```swift
 ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
     // handle the appended url here
-
 });
+
+ACPIdentity.append(to: URL(string: "www.myUrl.com"), withCompletionHandler: { (appendedURL, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the appended url here
+  }
+})
 ```
 
 {% hint style="info" %}
@@ -511,7 +535,7 @@ This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an `AdobeCallback` instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -519,6 +543,8 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
   * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
+
+When `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Java
 
@@ -551,12 +577,13 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 ### getUrlVariables <a id="geturlvariables-ios"></a>
 
 {% hint style="info" %}
-This method was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
+Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an `AdobeCallback` instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -571,9 +598,11 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 ```objectivec
 + (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
++ (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -589,6 +618,14 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
     // handle openURL success
   }];
 }];
+
+[ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
+  if (error) {
+		// handle error here
+  } else {
+		// handle the URL query parameter string here
+  }
+}];
 ```
 
 **Swift**
@@ -603,6 +640,14 @@ ACPIdentity.getUrlVariables {(urlVariables) in
                               completionHandler: {(complete) in 
                                  // handle open success
     })
+}
+
+ACPIdentity.getUrlVariables { (urlVariables, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the URL query parameter string here
+  }
 }
 ```
 {% endtab %}
@@ -647,7 +692,9 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% tab title="Android" %}
 ### getIdentifiers <a id="getIdentifiers-java"></a>
 
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the _AdobeCallback_.
+
+When `AdobeCallbackWithError` is provided, and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Java
 
@@ -675,6 +722,10 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% tab title="iOS" %}
 ### getIdentifiers <a id="getIdentifiers-ios"></a>
 
+{% hint style="info" %}
+Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
 This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### iOS
@@ -683,9 +734,11 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 
 ```objectivec
 + (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
++ (void) getIdentifiersWithCompletionHandler: (nonnull void (^) (NSArray<ACPMobileVisitorId*>* __nullable visitorIDs, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -694,7 +747,15 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```objectivec
 [ACPIdentity getIdentifiers:^(NSArray<ACPMobileVisitorId *> * _Nullable retrievedVisitorIds) {    
     // handle the retrieved identifiers here     
-    }];
+}];
+
+[ACPIdentity getIdentifiersWithCompletionHandler:^(NSArray<ACPMobileVisitorId *> * _Nullable visitorIDs, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
+}];
 ```
 
 **Swift**
@@ -702,6 +763,14 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```swift
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
    // handle the retrieved identifiers here        
+}
+
+ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
 }
 ```
 {% endtab %}
@@ -733,9 +802,11 @@ ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK
 {% tab title="Android" %}
 ### getExperienceCloudId <a id="getExperienceCloudId-java"></a>
 
-This API retrieves the Experience Cloud ID that was generated when the app was initially launched and is stored in the Experience Cloud ID Service.
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the `AdobeCallback`.
+
+When `AdobeCallbackWithError` is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 **Java**
 
@@ -745,7 +816,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 public static void getExperienceCloudId(final AdobeCallback<String> callback);
 ```
 
-* _callback_ is invoked after the Experience Cloud ID is available.
+* _callback_ is invoked after the ECID is available.
 
 **Example**
 
@@ -762,7 +833,11 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 ### getExperienceCloudId <a id="getExperienceCloudId-ios"></a>
 
-This API retrieves the Experience Cloud ID that was generated when the app was initially launched and is stored in the Experience Cloud ID Service.
+{% hint style="info" %}
+Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
 
@@ -770,9 +845,11 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```objectivec
 + (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
++ (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
 ```
 
-* _callback_ is invoked after the Experience Cloud ID is available.
+* _callback_ is invoked after the ECID is available.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 **Examples**
 
@@ -780,7 +857,15 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
-// handle the retrieved Id here    
+	// handle the retrieved ID here    
+}];
+
+[ACPIdentity getExperienceCloudIdWithCompletionHandler:^(NSString * _Nullable experienceCloudId, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
 }];
 ```
 
@@ -788,7 +873,15 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```swift
 ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
-    // handle the retrieved Id here    
+    // handle the retrieved ID here    
+}
+
+ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
+	if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
 }
 ```
 {% endtab %}
@@ -796,7 +889,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 {% tab title="React Native" %}
 ### getExperienceCloudId <a id="getExperienceCloudId-js"></a>
 
-This API retrieves the Experience Cloud ID that was generated when the app was initially launched and is stored in the Experience Cloud ID Service.
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
@@ -818,7 +911,7 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 
 ## Set an advertising identifier <a id="setAdvertisingIdentifierTitle"></a>
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](../signals/), and is removed at uninstall.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](identity-api-reference.md), and is removed at uninstall.
 
 {% hint style="info" %}
 If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.
@@ -1057,6 +1150,16 @@ This class provides the interface to receive results when the async APIs perform
 ```java
 public interface AdobeCallback<T> {    
     void call(final T value);
+}
+```
+
+**AdobeCallbackWithError**
+
+This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within 500ms or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
+
+```java
+public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
+	void fail(final AdobeError error);
 }
 ```
 

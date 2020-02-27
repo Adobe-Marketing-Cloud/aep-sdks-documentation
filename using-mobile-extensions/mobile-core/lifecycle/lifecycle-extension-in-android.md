@@ -8,7 +8,7 @@ For implementation details please reference to [Register Lifecycle with Mobile C
 
 
 
-## Tracking App Crashes in Android  <a id="tracking-app-crashes-in-android"></a>
+## Tracking app crashes in Android  <a id="tracking-app-crashes-in-android"></a>
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 

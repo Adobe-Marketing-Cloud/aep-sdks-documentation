@@ -1,6 +1,6 @@
 # Mobile Core API reference
 
-## Application reference (Android Only)
+## Application reference \(Android only\)
 
 When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
@@ -39,8 +39,6 @@ public class CoreApp extends Application {
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Get Application
 
@@ -82,7 +80,7 @@ Call this API when an event that you want to track occurs. In addition to the ac
 {% endhint %}
 
 {% hint style="info" %}
-If you have the **Analytics** extension set up, this method sends an Analytics action tracking hit with the optional context data that you provide.
+If you installed and configured the Analytics extension, this method sends an Analytics action tracking hit with the optional context data that you provide.
 {% endhint %}
 
 {% tabs %}
@@ -156,7 +154,7 @@ ACPCore.trackAction("action-name", {"key": "value"});
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
 
 {% hint style="info" %}
-If you have the Analytics extension set up, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
+If you installed and configured the Analytics extension, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
 {% endhint %}
 
 {% tabs %}
@@ -230,7 +228,7 @@ ACPCore.trackState("state-name", {"key": "value"});
 This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
 
 {% hint style="warning" %}
-While this API enables the collection of sensitive data, no data is actually sent to any Adobe or third-party endpoints. To send the data to an endpoint, use a postback of the PII type.
+Although this API enables the collection of sensitive data, no data is sent to any Adobe or third-party endpoints. To send the data to an endpoint, use a postback of the PII type.
 {% endhint %}
 
 {% tabs %}
@@ -359,12 +357,12 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Set Icons for local notification (Android Only)
+## Set Icons for local notification \(Android only\)
 
-Set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
+You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
-{% hint style="info" %}
-Those APIs are Android only.
+{% hint style="warning" %}
+Those APIs are **only** available in Android.
 {% endhint %}
 
 {% tabs %}
@@ -405,13 +403,13 @@ public static void setLargeIconResourceID(int resourceID)
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow application developers to filter the logged messages based on the current logging mode.
 
-Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
+Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages that are coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
 By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
 
-As a Mobile SDK extension developer, use the MobileCore \(Android\) / ACPCore \(iOS\) `log` API to include extension log messages with Mobile SDK core log messages.
+As a Mobile SDK extension developer, you should use the MobileCore \(Android\) / ACPCore \(iOS\) `log` API to include extension log messages with Mobile SDK core log messages.
 
-From least to most verbose, the order of the mobile SDK logging modes is as follows:
+From least to most verbose, here is the order of the mobile SDK logging modes:
 
 * ERROR
 * WARNING
@@ -419,9 +417,8 @@ From least to most verbose, the order of the mobile SDK logging modes is as foll
 * VERBOSE
 
 {% hint style="info" %}
-In Android, Mobile SDK uses `android.util.Log` class for printing the messages.
-
-In iOS, Mobile SDK uses `NSLog` for logging the message to Apple System Log facility.
+* In **Android**, the Mobile SDK uses the `android.util.Log` class to print the messages.
+* In **iOS**, the Mobile SDK uses the `NSLog` for logging the message to Apple System Log facility.
 {% endhint %}
 
 {% tabs %}
@@ -448,7 +445,7 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
+**Objective C**
 
 #### setLogLevel
 
@@ -568,7 +565,7 @@ ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level =
 {% tab title="Android" %}
 **Java**
 
-The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` passed to `MobileCore.log()`, the following Android method is called:
+The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` that is passed to `MobileCore.log()`, the following Android method is called:
 
 * `LoggingMode.VERBOSE` uses `android.util.Log.v`
 * `LoggingMode.DEBUG` uses `android.util.Log.d`
@@ -668,11 +665,11 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 
 ## Handle open URL action
 
-You can use this API to add a callback function that will be triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurrs. Depending on the return value of this callback, SDK decides whether it should run the logic to open the URL using underlying iOS API. If the callback function returns `YES`, then the SDK stops processing the URL. Otherwise, the SDK completes the `open url` action by calling `openURL:options:completionHandler:`.
+The Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
 
 {% tabs %}
 {% tab title="iOS" %}
-**Objective-C**
+**Objective C**
 
 ### registerURLHandler
 

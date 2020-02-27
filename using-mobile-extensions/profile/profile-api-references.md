@@ -80,13 +80,13 @@ Remember the following information:
 
 You want to update `username` of a user obtained in the log in page:
 
-Here is an example in Objective-C:
+**Objective-C**
 
 ```text
 [ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```java
 ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
@@ -115,7 +115,7 @@ A null attribute value will remove the attribute.
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
-Here is an example in Objective-C:
+**Objective C**
 
 ```objectivec
 NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
@@ -124,7 +124,7 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 [ACPUserProfile updateUserAttributes:profileMap];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```swift
 var profileMap = [AnyHashable: Any]()
@@ -173,15 +173,15 @@ Removes the user profile attribute for the given key.
 
 #### **Examples**
 
-Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
-Here is an example in Objective-C:
+**Objective C**
 
 ```objectivec
 [ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```swift
 ACPUserProfile.removeUserAttribute("itemsAddedToCart");

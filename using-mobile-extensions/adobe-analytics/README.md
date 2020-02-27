@@ -8,7 +8,7 @@
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-![Workflow Overview for Launch, Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
+![Workflow overview for Experience Platform Launch, the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
 
 ### **Configure the Analytics Extension**
 
@@ -20,7 +20,7 @@
 Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see \[Mobile Management\] \([https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html)\).
+Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see [Mobile Management](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html).
 
 To narrow the search for a report suite identifier, type a string in the combo box text field. After a valid report suite identifier has been selected, this identifier appears in a tag below the combo box \(shown above\). To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
 
@@ -38,7 +38,7 @@ Type the tracking domain to which all Analytics requests should be made.
 Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/offline-tracking.html).
 {% endhint %}
 
-When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled .
+When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled.
 
 {% hint style="danger" %}
 If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.
@@ -82,78 +82,77 @@ The default value for this setting is 0, which means that hit batching is disabl
 
 #### Launch hit delay
 
-Number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5s or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services.md) extension.
+Number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5s or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services/) extension.
 
 ## Add Analytics to your app
 
 {% tabs %}
 {% tab title="Android" %}
+**Java**
+
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
-```java
-implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-implementation 'com.adobe.marketing.mobile:analytics:1.+'
-```
+   ```java
+    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+    implementation 'com.adobe.marketing.mobile:analytics:1.+'
+   ```
 
-#### Java
+2. Import the Analytics extension in your application's main activity.
 
-1. Import the Analytics extension in your application's main activity.
-
-```java
-import com.adobe.marketing.mobile.*;
-```
+   ```java
+    import com.adobe.marketing.mobile.*;
+   ```
 {% endtab %}
 
 {% tab title="iOS" %}
-​ 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+2. Add following pods in your `Podfile`:
 
-1. Add following pods in your `Podfile`:
+   ```ruby
+    pod 'ACPCore'
+    pod 'ACPAnalytics'
+   ```
 
-```ruby
-pod 'ACPCore'
-pod 'ACPAnalytics'
-```
+3. Import the Analytics and Identity libraries:
 
-1. Import the Analytics and Identity libraries:
+   **Objective-C**
 
-#### Objective-C
+   ```text
+    #import "ACPCore.h"
+    #import "ACPAnalytics.h"
+    #import "ACPIdentity.h"
+   ```
 
-```text
-#import "ACPCore.h"
-#import "ACPAnalytics.h"
-#import "ACPIdentity.h"
-```
+   **Swift**
 
-#### Swift
-
-```swift
-import ACPCore
-import ACPAnalytics
-import ACPIdentity
-```
+   ```swift
+    import ACPCore
+    import ACPAnalytics
+    import ACPIdentity
+   ```
 {% endtab %}
 
 {% tab title="React Native" %}
 #### JavaScript
 
-Install Analytics
+1. Install Analytics.
 
-```jsx
-npm install @adobe/react-native-acpanalytics
-react-native link @adobe/react-native-acpanalytics
-```
+   ```jsx
+    npm install @adobe/react-native-acpanalytics
+    react-native link @adobe/react-native-acpanalytics
+   ```
 
-Importing the extension
+2. Import the extension.
 
-```jsx
-import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
-```
+   ```jsx
+    import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
+   ```
 
-Getting the extension version
+3. Get the extension version.
 
-```jsx
-ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
-```
+   ```jsx
+    ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
+   ```
 {% endtab %}
 {% endtabs %}
 
@@ -190,7 +189,7 @@ public class MobileApp extends Application {
 {% tab title="iOS" %}
 In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -254,7 +253,7 @@ To see the performance of your Target activities for some segments, you can set 
 
 ### Server-side forwarding with Audience Manager
 
-To enable the ability to share Analytics data with Audience Manager, in the Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
+To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
 
 ### Audio and Video Analytics
 
@@ -292,7 +291,7 @@ MobileCore.trackState("State Name", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
 #### Syntax
 
@@ -353,11 +352,7 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.aamForwardingEnabled` | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
-| :--- | :--- | :--- |
-
-
-| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
+</table>| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
 | :--- | :--- | :--- |
 
 

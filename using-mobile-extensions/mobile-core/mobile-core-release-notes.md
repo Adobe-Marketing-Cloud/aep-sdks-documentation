@@ -1,11 +1,90 @@
+# Release Notes
+
+## February 19, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.5.0
+
+* Mobile Core now shares the list of enabled extensions and their meta data through shared state.
+* Added Wrapper Type for Flutter.
+* Exposed eventNumber and eventTimestamp in ACPExtensionEvent class.
+* Added the following API to support the completion handler with an nullable `NSError` object:
+  * `getPrivacyStatusWithCompletionHandler`
+  * `getSdkIdentitiesWithCompletionHandler`
+
+### iOS Identity 2.2.0
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Added the following APIs to support the completionHandler callback that is available in iOS ACPCore version 2.5.0:
+
+  * `appendToURL:withCompletionHandler`
+  * `getUrlVariablesWithCompletionHandler`
+  * `getIdentifiersWithCompletionHandler`
+  * `getExperienceCloudIdWithCompletionHandler`
+
+  When the `completionHandler` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `NSError` is returned.
+
+## February 4, 2020
+
+The following updates were made in this release:
+
+### Android Core 1.5.0
+
+* Fixed a cursor leak.
+* Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
+* Added support for overriding internal network stack with customer-provided code.
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`,  `MobileCore.getSdkIdentities` methods. 
+
+  We plan to gradually add the ability to enable failure callback to the other extensions.
+
+### Android Identity 1.2.0
+
+* Added support for the optional `AdobeCallbackWithError` callback that is available in Android Core version 1.5.0 on the following APIs:
+
+  * `appendVisitorInfoForURL`
+  * `getUrlVariables`
+  * `getIdentifiers`
+  * `getExperienceCloudId`
+
+  When the `AdobeCallbackWithError` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `AdobeError` is returned.
+
+Released with sdk-core version 1.5.0.
+
+## January 27, 2020
+
+The following updates were made in this release:
+
+**iOS Core 2.4.0**
+
+* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
+* Fixed an issue where the advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
+* Fixed an issue where the SDK was trying to download the rules multipile times immediately after app launch.
+* Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
+* Fixed a bug where the iOS fullscreen message was unable to load cached images.
+
+## November 15, 2019
+
+The following updates were made in this release:
+
+### iOS Identity 2.1.3
+
+* Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID \(ECID\) Service.
+* Fixed a threading issue where the Experience Cloud ID \(ECID\) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
+
+These changes were released as part of ACPCore CocoaPod v2.3.6.
+
 ## October 25, 2019
+
 The following updates were made in this release:
 
 ### iOS Core 2.3.5
+
 * Added support for attach data rules consequence.
 * Added support for a boolean-type comparison for the Exist or Not Exist rules condition.
 
 ### Android Core 1.4.5
+
 * Added support for attach data rules consequence.
 * Added support for a boolean-type comparison for the Exist or Not Exist rules condition.
 * Fixed a bug where the Exist and Not Exist rules condition might not work for a List or Map type value.
@@ -13,15 +92,17 @@ The following updates were made in this release:
 * Fixed a bug that, when the data URL of an activity did not contain valid schema, might cause a crash.
 
 ### Android Identity 1.1.2
+
 * Fixed a bug where the default Experience Cloud Server hostname is now used when no value is configured in the SDK.
 * Fixed a bug where multiple custom identifiers with same idType value were synced with the Visitor ID Service.
 * Custom visitor identifiers can now be cleared from the SDK by providing a null/empty identifier value for a previously synced idType.
 
-
 ## October 4, 2019
+
 The following updates were made in this release:
 
 ### iOS Core 2.3.4
+
 * Fixed a crash that might have happened during app shutdown..    
 * Fixed a bug where, when the SDK is being used in multiple threads, the SDK might not function under a race condition..    
 * Fixed a bug where the downloaded rules zip file might not be decompressed.    
@@ -30,24 +111,29 @@ The following updates were made in this release:
 * Extension listeners with null/empty type or source is now invalid and will not be registered.    
 
 ### iOS Identity 2.1.2
+
 * Fixed an issue where the push identifier is not contained in the Identity shared state on bootup.    
 * Fixed an issue where appendToUrl uses the incorrect query delimiter when the source URL contains a question mark in its fragment identifier component.
 
 ## September 17, 2019
+
 The following updates were made in this release:
 
 ### Android Core 1.4.4
+
 * Starting in API level 16, notifications now support BigTextStyle.
   * This enables long notifications to be displayed without being truncated.
 * Fixed the locale string in the HTTP User-Agent to follow the BCP 47 specification.
 
-
 ## September 9, 2019
+
 The following updates were made in this release:
 
 ### Android Identity 1.1.1
+
 * Custom identifiers with null or empty IDs are ignored when calling the syncIdentifier or syncIdentifiers APIs because the Visitor ID Service does not support these identifiers.
 * The syncIdentifiers API call is ignored when there is an empty Map.
 * The duplicate advertising identifier value is removed from the Identity-shared state when MobileCore.setAdvertisingIdentifier is called with a new value.
 * The global.ssl configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where appendVisitorInfoForURL uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+

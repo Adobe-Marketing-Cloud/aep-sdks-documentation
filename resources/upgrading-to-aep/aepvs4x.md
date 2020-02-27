@@ -35,12 +35,12 @@ The following tables provide information about the differences between the new E
 
 | Functionality | 4x SDK | Experience Platform SDK |
 | :--- | :--- | :--- |
-| Postbacks - Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
-| Postbacks - PII Get/POST URL requests | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
-| Postbacks - Open app deeplink | Yes | Yes - [Signals](../../using-mobile-extensions/mobile-core/signals/) extension |
-| Push Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
-| In-app Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
-| Marketing/Acquisition Links | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services.md) extension |
+| Postbacks - Get/POST URL requests | Yes | Yes - [Signals](aepvs4x.md) extension |
+| Postbacks - PII Get/POST URL requests | Yes | Yes - [Signals](aepvs4x.md) extension |
+| Postbacks - Open app deeplink | Yes | Yes - [Signals](aepvs4x.md) extension |
+| Push Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services/) extension |
+| In-app Messaging | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services/) extension |
+| Marketing/Acquisition Links | Yes | Yes - [Mobile Services](../../using-mobile-extensions/adobe-analytics-mobile-services/) extension |
 | Geo location and beacon tracking | Yes | Yes - Use [Places](aepvs4x.md) extension |
 | Geo points-of-interest management | Yes | Yes - Use [Places](aepvs4x.md) extension |
 
@@ -71,7 +71,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Platform | 4x SDKs | Experience Platform SDKs |
 | :--- | :--- | :--- |
 | Android | Supported | Supported |
-| Android Wear​ | Supported | _Not supported_ |
+| Android Wear​ | Supported | _Support coming_ |
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | _Support coming_ |
 | Apple tvOS​ | Supported | _Support coming_ |
