@@ -1,6 +1,169 @@
 # Configuration
 
-The Configuration extension is built into the Mobile Core extension. With the extension APIs, you can generate the necessary events in the Event Hub that provide the configuration options for all installed extensions.
+The Configuration extension is built into the Mobile Core extension. It provides serverl different APIs for you to setup configuration either remotely on Launch UI or locally.
+
+## Configure with the Experience Platform Launch App ID
+
+Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
+
+{% hint style="success" %}
+We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID.
+{% endhint %}
+
+After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration on the cold launch or when a new session detected. Subsequent requests for configuration causes the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
+
+The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Objective-C**
+
+```objectivec
+[ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
+```
+
+**Swift**
+
+```swift
+ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
+```
+
+{% hint style="info" %}
+Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
+{% endhint %}
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+import {ACPCore} from '@adobe/react-native-acpcore';
+
+initSDK() { 
+    ACPCore.configureWithAppId("yourAppId");
+    ACPCore.start();
+}
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Programmatic updates to configuration
+
+You can also update the configuration programmatically by passing configuration keys and values to override the existing configuration.
+
+{% hint style="info" %}
+Keys that are not found on the current configuration are added when this method is followed. Null values are allowed and replace existing configuration values.
+{% endhint %}
+
+{% hint style="warning" %}
+Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+HashMap<String, Object> data = new HashMap<String, Object>();
+data.put("global.ssl", true);
+MobileCore.updateConfiguration(data);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Objective-C**
+
+```objectivec
+NSDictionary *updatedConfig = @{@"global.ssl":@YES};
+[ACPCore updateConfiguration:updatedConfig];
+```
+
+**Swift**
+
+```swift
+let updatedConfig = ["global.ssl":true]
+ACPCore.updateConfiguration(updatedConfig)
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+ACPCore.updateConfiguration({"yourConfigKey": "yourConfigValue"});
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Using a bundled file configuration
+
+You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+
+To download the JSON configuration file, use the following URL:
+
+`https://assets.adobedtm.com/PASTE-LAUNCH-ENVIRONMENT-ID.json`
+
+* In iOS, the `ADBMobileConfig.json` file can be placed anywhere that it is accessible in your bundle.
+* In Android, the `ADBMobileConfig.json` file must be placed in the assets folder.
+
+You can also load a different `ADBMobileConfig.json` file by using the `ConfigureWithFileInPath` method. The Adobe Experience Platform SDKs will attempt to load the file from the given path and parse its JSON contents. Previous programmatic configuration changes that were set by using the `UpdateConfiguration` method are applied on the bundled file's configuration before setting the new configuration to the Adobe Experience Platform SDKs. If a file-read error or JSON parsing error occurs, no configuration changes are made.
+
+To pass in a bundled path and file name:
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Objective-C**
+
+```objectivec
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
+[ACPCore configureWithFileInPath:filePath];
+```
+
+**Swift**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ACPCore.configureWithFile(inPath: filePath)
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+```jsx
+ACPCore.configureWithFileInPath(filepath); 
+```
+
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Environment-aware configuration properties
 

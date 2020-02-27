@@ -88,11 +88,6 @@
       <td style="text-align:left">Locale</td>
       <td style="text-align:left">a.locale</td>
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Run mode</td>
-      <td style="text-align:left">a.RunMode</td>
-      <td style="text-align:left">The SDK running mode, for example, <code>Application / Extension</code>.</td>
-    </tr>
+    </tr>  
   </tbody>
 </table>

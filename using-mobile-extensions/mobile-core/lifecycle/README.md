@@ -115,7 +115,7 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
    ```objectivec
    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
      // register the lifecycle extension
-  [ACPLifecycle registerExtension];
+    [ACPLifecycle registerExtension];
      return YES;
    }
    ```
@@ -240,6 +240,60 @@ ACPCore.lifecyclePause();
 
 The following is a complete list of all of the metrics provided on your user's app lifecycle.
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Metric</b>
+      </th>
+      <th style="text-align:left"><b>Key</b>
+      </th>
+      <th style="text-align:left"><b>Description</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">App ID</td>
+      <td style="text-align:left">a.AppID</td>
+      <td style="text-align:left">Stores the application name and version in the following format: <code>AppName BundleVersion (app version code)</code> .
+        An example of this format is <code>MyAppName 1.1(1)</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Device Name</td>
+      <td style="text-align:left">a.DeviceName</td>
+      <td style="text-align:left">Stores the device name.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Operating System Version</td>
+      <td style="text-align:left">a.OSVersion</td>
+      <td style="text-align:left">Operating system name and version.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Carrier Name</td>
+      <td style="text-align:left">a.CarrierName</td>
+      <td style="text-align:left">
+        <p>Stores the name of the mobile service provider as provided by the device.
+          <br
+          />
+        </p>
+        <p><b>Important</b>: This metric is not automatically stored in an Analytics
+          variable. You must create a processing rule to copy this value to an Analytics
+          variable for reporting.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Resolution</td>
+      <td style="text-align:left">a.Resolution</td>
+      <td style="text-align:left">Width x Height in pixels.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Locale</td>
+      <td style="text-align:left">a.locale</td>
+      <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
+    </tr>  
+  </tbody>
+</table>
+
 ### Install
 
 | **Metric** | **Key** | **DescriptIon** |
@@ -328,12 +382,6 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left"><code>a.Locale</code>
       </td>
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Run mode</td>
-      <td style="text-align:left"><code>a.RunMode</code>
-      </td>
-      <td style="text-align:left">The SDK running mode, for example, <code>Application/Extension</code>.</td>
     </tr>
   </tbody>
 </table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}.
