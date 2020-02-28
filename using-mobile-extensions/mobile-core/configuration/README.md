@@ -10,7 +10,7 @@ Experience Platform Launch generates a unique environment ID that the SDK uses t
 We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID.
 {% endhint %}
 
-After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected, if there is no change or an network request error occurs while downloading the configuration file, the cached configuration will be used.
+After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected, if there is no change or a network request error occurs while downloading the configuration file, the cached configuration will be used.
 
 The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
 
