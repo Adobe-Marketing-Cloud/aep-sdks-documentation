@@ -8,7 +8,7 @@ When upgrading to the Experience Platform SDK, you must add code to continue col
 
 ### Implementing Lifecycle metrics in iOS
 
-For implementation details please reference to [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 ### Tracking app crashes in iOS
 

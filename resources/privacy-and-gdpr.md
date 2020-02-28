@@ -133,7 +133,7 @@ The enum representation of the privacy status that corresponds to the following 
 ```
 
 - *callback* is invoked after the privacy status is available.
-- *completionHandler is invoked with the current privacy status, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+- *completionHandler* is invoked with the current privacy status, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -210,7 +210,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 
 - *callback* is invoked with the SDK identities as a JSON string.
-- *completionHandler* is nvoked with the SDK identities as a JSON string, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+- *completionHandler* is invoked with the SDK identities as a JSON string, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 

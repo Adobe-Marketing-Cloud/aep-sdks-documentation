@@ -122,7 +122,7 @@ package com.adobe.example;
 ```
 
 {% hint style="info" %}
-Your implementation must return an object conforming to the `Connection` interface when the connection has successfully succeded. If the connection does not succeed, you will need to return these constants (depending on the scenario):
+Your implementation must return an object conforming to the `Connection` interface when the connection has succeded. If the connection does not succeed, you will need to return these constants (depending on the scenario):
 
 * For all URL parsing / malformed URL issues, return `HTTPConnectionPerformer.CONNECTION_ERROR_URL`. 
 * For any IOExceptions or any other errors, return `HTTPConnectionPerformer.CONNECTION_ERROR_IO`.

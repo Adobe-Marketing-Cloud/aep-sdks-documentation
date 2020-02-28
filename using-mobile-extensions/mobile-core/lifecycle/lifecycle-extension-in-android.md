@@ -4,7 +4,7 @@
 
 ## Implementing Lifecycle Metrics in Android  <a id="implementing-lifecycle-metrics-in-android"></a>
 
-For implementation details please reference to [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 
 

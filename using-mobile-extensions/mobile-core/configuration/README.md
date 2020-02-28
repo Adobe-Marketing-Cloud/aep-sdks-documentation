@@ -1,6 +1,6 @@
 # Configuration
 
-The Configuration extension is built into the Mobile Core extension. It provides serverl different APIs for you to setup configuration either remotely on Launch UI or locally.
+The Configuration extension is built into the Mobile Core extension. It provides several different APIs for you to setup the configuration either remotely on Launch UI or locally.
 
 ## Configure with the Experience Platform Launch App ID
 
@@ -10,7 +10,7 @@ Experience Platform Launch generates a unique environment ID that the SDK uses t
 We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID.
 {% endhint %}
 
-After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration on the cold launch or when a new session detected. Subsequent requests for configuration causes the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
+After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected, if there is no change or an network request error occurs while downloading the configuration file, the cached configuration will be used.
 
 The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
 
@@ -67,7 +67,7 @@ Keys that are not found on the current configuration are added when this method 
 {% endhint %}
 
 {% hint style="warning" %}
-Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
+Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behavior. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
 {% endhint %}
 
 {% tabs %}
