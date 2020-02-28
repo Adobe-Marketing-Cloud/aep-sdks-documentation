@@ -20,9 +20,11 @@ The following updates were made in this release:
 
 ### Android Signal 1.0.3
 * Logging improvement
+* Report extension details to Mobile Core for improved logging and Griffon support.
 
 ### Android Lifecycle 1.0.3
 * Logging improvement
+* Report extension details to Mobile Core for improved logging and Griffon support.
 
 
 ## February 19, 2020
@@ -67,6 +69,7 @@ The following updates were made in this release:
 ### Android Core 1.5.0
 
 * Fixed a cursor leak.
+* Mobile Core now shares the list of enabled extensions and their meta data through shared state.
 * Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
 * Added support for overriding internal network stack with customer-provided code.
 * Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus` and `MobileCore.getSdkIdentities` methods.
