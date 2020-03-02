@@ -12,7 +12,7 @@ This feature is only available in Android Core version 2.5.0 or later.
 
 ### 1. Create custom HTTPConnectionPerformer implementation
 
-The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect` which must be overridden. Optionally it's possible to override the `shouldOverride` method if you want to conditionally override network requests (if you do not override this method, all requests will be overridden by default).
+The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect`, which must be overridden. Optionally, it's possible to override the `shouldOverride` method if you want to conditionally override network requests (if you do not override this method, all requests will be overridden by default).
 
 #### Example
 
