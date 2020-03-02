@@ -107,7 +107,8 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
    {% hint style="warning" %}
    To ensure accurate session and crash reporting, this call must be added to every activity.
    {% endhint %}
-   {% endtab %}
+   
+{% endtab %}
 
 {% tab title="iOS" %}
 1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
