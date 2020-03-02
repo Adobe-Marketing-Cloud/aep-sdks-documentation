@@ -1,5 +1,16 @@
 # Release Notes
 
+## March 2, 2020
+
+The following updates were made in this release:
+
+### iOS Analytics 2.2.3
+
+* `AnalyticsResponse` events are now always dispatched regardless if the debugApi is enabled or if AAM forwarding is enabled.
+* Report extension details to ACPCore for improved logging and Griffon support.
+* Improved existing log messages and added additional logging to assist with debugging.
+
+
 ## February 13, 2020
 
 The following updates were made in this release:
@@ -8,6 +19,7 @@ The following updates were made in this release:
 
 * Fixed an issue which, was causing some hits to be delayed.
 * Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ## January 25, 2020
@@ -71,4 +83,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-
