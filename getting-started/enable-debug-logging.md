@@ -13,7 +13,7 @@ To enable debug logging, use the following methods:
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+## Java
 
 ```java
 MobileCore.setLogLevel(LoggingMode.DEBUG);
@@ -24,7 +24,7 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+## Objective-C
 
 ```objectivec
 [ACPCore setLogLevel:ACPMobileLogLevelDebug];
@@ -33,7 +33,7 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 // [ACPCore setLogLevel:ACPMobileLogLevelError];
 ```
 
-### Swift
+## Swift
 
 ```swift
 ACPCore.setLogLevel(ACPMobileLogLevel.debug)
@@ -44,7 +44,7 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 {% endtab %}
 
 {% tab title="React Native" %}
-### Javascript
+## Javascript
 
 ```jsx
 ACPCore.setLogLevel(ACPMobileLogLevel.DEBUG);
@@ -52,7 +52,6 @@ ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
 ACPCore.setLogLevel(ACPMobileLogLevel.WARNING);
 ACPCore.setLogLevel(ACPMobileLogLevel.ERROR);
 ```
-
 {% endtab %}
 {% endtabs %}
 

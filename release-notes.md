@@ -19,13 +19,14 @@ The following updates were made in this release:
 * Added Wrapper Type for Flutter.
 
 ### Android Signal 1.0.3
+
 * Logging improvement
 * Report extension details to Mobile Core for improved logging and Griffon support.
 
 ### Android Lifecycle 1.0.3
+
 * Logging improvement
 * Report extension details to Mobile Core for improved logging and Griffon support.
-
 
 ## February 19, 2020
 
@@ -170,7 +171,7 @@ The following updates were made in this release:
 
 **iOS Griffon 1.0.3**
 
-* The Griffon bridge and the Griffon SDK are now unified.   
+* The Griffon bridge and the Griffon SDK are now unified.
 
   The set up steps are now slightly different. For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon).
 
@@ -181,7 +182,7 @@ The following updates were made in this release:
 
 **Android Griffon 1.1.0**
 
-* The Griffon bridge and the Griffon SDK are now unified.   
+* The Griffon bridge and the Griffon SDK are now unified.
 
   The set up steps are now slightly different. For more information, see [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon).
 
@@ -970,3 +971,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

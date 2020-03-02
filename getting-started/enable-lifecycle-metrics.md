@@ -8,7 +8,7 @@ Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Exp
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 With the `onResume` function, start Lifecycle data collection:
 
@@ -39,7 +39,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+### Objective-C
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
@@ -78,7 +78,7 @@ When the app enters the background, pause Lifecycle data collection from your ap
  }
 ```
 
-#### Swift
+### Swift
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
@@ -119,7 +119,7 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+## JavaScript
 
 Starting a lifecycle event
 

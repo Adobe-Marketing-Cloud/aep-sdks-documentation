@@ -1,4 +1,4 @@
-# Set up user tracking
+# Set up tracking
 
 You can use the user actions APIs below to measure your user’s engagement with your app.
 

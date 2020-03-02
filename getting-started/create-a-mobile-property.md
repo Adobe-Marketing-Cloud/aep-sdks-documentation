@@ -14,19 +14,19 @@ For detailed instructions on how to create groups and add users for Launch, see 
 
 ### Log in to Experience Platform Launch
 
-After Experience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to https://launch.adobe.com or by logging in to the Experience Cloud (https://experiencecloud.adobe.com), navigating to the Activation page, and clicking on Launch.
+After Experience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to [https://launch.adobe.com](https://launch.adobe.com) or by logging in to the Experience Cloud \([https://experiencecloud.adobe.com](https://experiencecloud.adobe.com)\), navigating to the Activation page, and clicking on Launch.
 
 ## Create a mobile property
 
 1. Log in to Experience Platform Launch.
 2. On the main page, review the list of existing mobile and web properties.
 3. Click **New Property**.
-2. Type a name for the property and select **Mobile** as the platform.
+4. Type a name for the property and select **Mobile** as the platform.
 
    If necessary, you can change the [**Privacy** ](../resources/privacy-and-gdpr.md#setting-privacy-status) setting later.
 
-3. Click **Save** to create the mobile property.
-4. Search for the property you just created and click to open it.
+5. Click **Save** to create the mobile property.
+6. Search for the property you just created and click to open it.
 
 {% hint style="danger" %}
 The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
@@ -38,7 +38,7 @@ An extension is an integration built by Adobe or an Adobe partner that adds new 
 
 ## Set up your extensions
 
-1. In Experience Platform Launch. on the details page for your mobile property, click the **Extensions** tab. 
+1. In Experience Platform Launch. on the details page for your mobile property, click the **Extensions** tab.
 
    The **Mobile Core** and **Profile** extensions are installed by default.
 
@@ -70,14 +70,13 @@ To deploy your configuration to a development environment for testing:
 2. Under the **Development** section of the publishing workflow, click **Add New Library**.
 3. Specify any name for the library **Name**.
 4. From the **Environment** drop-down list, select Development as the environment.
-
 5. Click **Add All Changed Resources** to add the configuration changes to be deployed. You will see the Mobile Core and Profile extensions listed as changes to be published.
-5. Click **Save & Build for Development**.
+6. Click **Save & Build for Development**.
 
    The library builds and is displayed under the **Development** section of the publishing workflow.
 
-6. On the library card, click *...* to see a drop-down list.
-7. Select **Submit for Approval** and then **Submit**.
+7. On the library card, click _..._ to see a drop-down list.
+8. Select **Submit for Approval** and then **Submit**.
 
 The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 

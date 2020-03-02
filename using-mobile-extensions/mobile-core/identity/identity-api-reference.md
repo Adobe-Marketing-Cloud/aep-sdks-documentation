@@ -1,11 +1,9 @@
 # Identity API reference
 
-
 ## appendVisitorInfoForURL
 
 {% tabs %}
 {% tab title="Android" %}
-
 This API appends Adobe visitor information to the query component of the specified URL.
 
 If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the `AdobeCallback` instance:
@@ -135,7 +133,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
 });
 
 ACPIdentity.append(to: URL(string: "www.myUrl.com"), withCompletionHandler: { (appendedURL, error) in
-	if (error) {
+    if (error) {
     // handle error here
   } else {
     // handle the appended url here
@@ -240,17 +238,14 @@ To get the version of the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
 String identityExtensionVersion = Identity.extensionVersion();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### iOS
 
 **Objective-C**
@@ -264,17 +259,14 @@ NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
 ```swift
 var identityExtensionVersion  = ACPIdentity.extensionVersion()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
 ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -339,7 +331,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
-	// handle the retrieved ID here    
+    // handle the retrieved ID here    
 }];
 
 [ACPIdentity getExperienceCloudIdWithCompletionHandler:^(NSString * _Nullable experienceCloudId, NSError * _Nullable error) {
@@ -359,7 +351,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 }
 
 ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
-	if (error) {
+    if (error) {
     // handle error here
   } else {
     // handle the retrieved ID here
@@ -471,7 +463,7 @@ ACPIdentity.getIdentifiers { (retrievedVisitorIds) in
 }
 
 ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
-	if (error) {
+    if (error) {
     // handle error here
   } else {
     // handle the retrieved identifiers here
@@ -555,8 +547,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 ### getUrlVariables
 
 {% hint style="info" %}
-Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0.
-Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0. Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
@@ -599,9 +590,9 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 [ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
   if (error) {
-		// handle error here
+        // handle error here
   } else {
-		// handle the URL query parameter string here
+        // handle the URL query parameter string here
   }
 }];
 ```
@@ -621,7 +612,7 @@ ACPIdentity.getUrlVariables {(urlVariables) in
 }
 
 ACPIdentity.getUrlVariables { (urlVariables, error) in
-	if (error) {
+    if (error) {
     // handle error here
   } else {
     // handle the URL query parameter string here
@@ -664,8 +655,6 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 {% endtabs %}
 
-
-
 ## registerExtension
 
 The `registerExtension()` API registers the Identity extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Mobile SDK.
@@ -692,11 +681,9 @@ super.onCreate();
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### iOS
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
@@ -720,11 +707,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true;
 }
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
@@ -734,7 +719,6 @@ initSDK() {
     ACPIdentity.registerExtension();
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -965,7 +949,6 @@ ACPCore.setPushIdentifier("pushID");
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## syncIdentifier
 
@@ -1279,7 +1262,7 @@ This class provides the interface to receive results or an error when the async 
 
 ```java
 public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
-	void fail(final AdobeError error);
+    void fail(final AdobeError error);
 }
 ```
 

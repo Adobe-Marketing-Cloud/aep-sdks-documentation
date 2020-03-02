@@ -24,10 +24,10 @@ The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xc
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
-* Apple iOS \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* Google Android \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* React Native \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* Flutter \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
+* Android \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#android) for download links\)
+* iOS \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#ios) for download links\)
+* React Native \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#react-native) for download links\)
+* Flutter \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#flutter-beta) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:

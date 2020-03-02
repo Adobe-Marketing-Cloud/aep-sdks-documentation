@@ -19,27 +19,25 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 1. Open the mobile property you created earlier in Experience Platform Launch.
 2. On your mobile property's details page, click on the **Environments** tab.
 
-   The **Environments** tab lists the different environments where you can publish. 
-   
-2. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package.png)).
+   The **Environments** tab lists the different environments where you can publish.
+
+3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package.png)\).
 
    You should see a dialog box similar to the following:
 
    ![](../.gitbook/assets/android.png)
-   
-3. On the **Mobile Install Instructions** dialog box, make sure you are on the **Android** tab.
 
-4. Follow the instructions for using Gradle with Android.
+4. On the **Mobile Install Instructions** dialog box, make sure you are on the **Android** tab.
+5. Follow the instructions for using Gradle with Android.
 
-    The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
+   The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
 
-5. For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
+6. For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
 
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -59,8 +57,6 @@ The necessary dependencies and initialization code can be copied from the dialog
 You should see a pop-up similar to the following \(image below shows iOS\):
 
 ![](../.gitbook/assets/obj-c.png)
-
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -84,7 +80,6 @@ Each extension needs added as a dependency to the mobile application project. Th
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Android
 
 Add the dependencies to build.gradle for each extension.
@@ -93,11 +88,9 @@ Add the dependencies to build.gradle for each extension.
 implementation 'com.adobe.marketing.mobile:userprofile:1.+'
 implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### iOS
 
 Add the dependencies to your Podfile for each extension.
@@ -107,11 +100,8 @@ use_frameworks!
 pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
 ```
-
 {% endtab %}
 {% endtabs %}
-
-
 
 ### 2. Add initialization code
 
@@ -125,11 +115,8 @@ To find your Environment ID for an environment, in Experience Platform Launch, g
 
 Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations. After importing and configuring Identity below, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
 
-
-
 {% tabs %}
 {% tab title="Android" %}
-
 #### Android
 
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
@@ -152,17 +139,17 @@ public class MainApp extends Application {
   public void on Create(){
     super.onCreate();
     MobileCore.setApplication(this);
-		MobileCore.setLogLevel(LoggingMode.DEBUG);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
     ...
     try {
       UserProfile.registerExtension();
-			Identity.registerExtension();
-			Lifecycle.registerExtension();
-			Signal.registerExtension();
-			MobileCore.start(new AdobeCallback () {
-    		@Override
-    		public void call(Object o) {
-        	MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+            MobileCore.start(new AdobeCallback () {
+            @Override
+            public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
     }
 });
     } catch (InvalidInitException e) {
@@ -171,11 +158,9 @@ public class MainApp extends Application {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS - Objective C" %}
-
 #### iOS - Objective C
 
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
@@ -192,25 +177,23 @@ Add the following initialization code. It may need to be adjusted depending on h
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [ACPCore setLogLevel:ACPMobileLogLevelDebug];
   [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
-	...
+    ...
   [ACPUserProfile registerExtension];
-	[ACPIdentity registerExtension];
-	[ACPLifecycle registerExtension];
-	[ACPSignal registerExtension];
-	[ACPCore start:^{
-  	[ACPCore lifecycleStart:nil];
-	}];
-	...
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+    [ACPCore start:^{
+      [ACPCore lifecycleStart:nil];
+    }];
+    ...
   return YES;
 }
 
 @end
 ```
-
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
-
 #### iOS - Swift
 
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
@@ -224,25 +207,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
     ACPCore.setLogLevel(.debug)
-		ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
+        ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
     ...
     ACPUserProfile.registerExtension()
-		ACPIdentity.registerExtension()
-		ACPLifecycle.registerExtension()
-		ACPSignal.registerExtension()
-		ACPCore.start {
-    	ACPCore.lifecycleStart(nil)
-		}
+        ACPIdentity.registerExtension()
+        ACPLifecycle.registerExtension()
+        ACPSignal.registerExtension()
+        ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+        }
     ...
     return true
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### Javascript
 
 > Tip: We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
@@ -259,14 +240,10 @@ initSDK() {
     ACPCore.start();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-
-
-### 3. Ensure app permissions \(Android-only)
+### 3. Ensure app permissions \(Android-only\)
 
 The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -277,30 +254,25 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-
-
-### 3. Podfile init, update and install \(iOS-only)
+### 3. Podfile init, update and install \(iOS-only\)
 
 Create a Podfile if you do not already have one:
 
-```objective-c
+```text
 pod init
 ```
 
 If CocoaPods could not find the dependencies, you may need to run this command:
 
-```objective-c
+```text
 pod repo update
 ```
 
 Save the Podfile and run the install:
 
-```objective-c
+```text
 pod install
 ```
-
-
-
 
 ## Watch the Video
 
