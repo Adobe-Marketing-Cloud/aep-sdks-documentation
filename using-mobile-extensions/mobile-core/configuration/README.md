@@ -1,6 +1,6 @@
 # Configuration
 
-The Configuration extension is built into the Mobile Core extension. It provides several different APIs for you to setup the configuration either remotely on Launch UI or locally.
+The Configuration extension is built into the Mobile Core extension. It provides several different APIs for you to setup the configuration either remotely on Experience Platform Launch or locally.
 
 ## Configure with the Experience Platform Launch App ID
 
