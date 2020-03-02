@@ -27,7 +27,7 @@ To programmatically set the privacy status for the app user:
 {% tab title="Android" %}
 #### Java
 
-### setPrivacyStatus  <a id="setprivacystatus"></a>
+### setPrivacyStatus <a id="setprivacystatus"></a>
 
 You can set the privacy status to one of the following values:
 
@@ -37,13 +37,13 @@ You can set the privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-#### Syntax  <a id="syntax-4"></a>
+#### Syntax <a id="syntax-4"></a>
 
 ```java
 public static void setPrivacyStatus(final MobilePrivacyStatus privacyStatus);
 ```
 
-#### Example  <a id="example-4"></a>
+#### Example <a id="example-4"></a>
 
 ```java
 MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
@@ -63,13 +63,13 @@ You can set privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-### Syntax  <a id="syntax-4"></a>
+### Syntax <a id="syntax-4"></a>
 
 ```objectivec
 + (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
 ```
 
-### Example  <a id="example-4"></a>
+### Example <a id="example-4"></a>
 
 ```objectivec
 [ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn
@@ -101,7 +101,7 @@ The enum representation of the privacy status that corresponds to the following 
 void getPrivacyStatus(final AdobeCallback callback);
 ```
 
-#### Example  <a id="example-5"></a>
+#### Example <a id="example-5"></a>
 
 ```objectivec
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
@@ -129,11 +129,10 @@ The enum representation of the privacy status that corresponds to the following 
 ```java
 + (void) getPrivacyStatus: (nonnull void (^) (ACPMobilePrivacyStatus status)) callback;
 + (void) getPrivacyStatusWithCompletionHandler: (nonnull void (^) (ACPMobilePrivacyStatus status, NSError* _Nullable error)) completionHandler;
-
 ```
 
-- *callback* is invoked after the privacy status is available.
-- *completionHandler* is invoked with the current privacy status, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+* _callback_ is invoked after the privacy status is available.
+* _completionHandler_ is invoked with the current privacy status, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -206,11 +205,10 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```objectivec
 + (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
 + (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
-
 ```
 
-- *callback* is invoked with the SDK identities as a JSON string.
-- *completionHandler* is invoked with the SDK identities as a JSON string, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 

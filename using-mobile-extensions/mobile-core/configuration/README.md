@@ -7,7 +7,7 @@ The Configuration extension is built into the Mobile Core extension. It provides
 Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
 
 {% hint style="success" %}
-We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID. Follow the steps in [Set up a mobile property](../../../getting-started/create-a-mobile-property) if you need to create a new Experience Platform Launch App.
+We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID. Follow the steps in [Set up a mobile property](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/657caa417ee61ae29017dec4007b272aba0354e7/getting-started/create-a-mobile-property/README.md) if you need to create a new Experience Platform Launch App.
 {% endhint %}
 
 After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected. If there is no change or a network request error occurs while downloading the configuration file, the cached configuration will be used.
@@ -16,15 +16,12 @@ The unique environment ID provided by Experience Platform Launch can be configur
 
 {% tabs %}
 {% tab title="Android" %}
-
 ```java
 MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 ```objectivec
@@ -43,7 +40,6 @@ Alternatively, you can also place the Launch environment ID in your iOS project'
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
@@ -54,7 +50,6 @@ initSDK() {
     ACPCore.start();
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -72,17 +67,14 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
-
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
 data.put("global.ssl", true);
 MobileCore.updateConfiguration(data);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 ```objectivec
@@ -96,17 +88,14 @@ NSDictionary *updatedConfig = @{@"global.ssl":@YES};
 let updatedConfig = ["global.ssl":true]
 ACPCore.updateConfiguration(updatedConfig)
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
 ACPCore.updateConfiguration({"yourConfigKey": "yourConfigValue"});
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -127,15 +116,12 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-
 ```java
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 ```objectivec
@@ -149,21 +135,16 @@ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"of
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 ```jsx
-ACPCore.configureWithFileInPath(filepath); 
+ACPCore.configureWithFileInPath(filepath);
 ```
-
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Environment-aware configuration properties
 

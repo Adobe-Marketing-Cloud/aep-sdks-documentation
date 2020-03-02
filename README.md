@@ -27,7 +27,7 @@ The Adobe Experience Platform Mobile SDK provides support for the following plat
 * Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
 * iOS \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
 * React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
-* Flutter \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
+* Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:

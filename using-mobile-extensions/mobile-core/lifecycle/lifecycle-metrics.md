@@ -88,6 +88,6 @@
       <td style="text-align:left">Locale</td>
       <td style="text-align:left">a.locale</td>
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
-    </tr>  
+    </tr>
   </tbody>
 </table>

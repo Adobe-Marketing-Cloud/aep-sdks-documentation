@@ -6,11 +6,11 @@ In version 4 of the iOS SDK, this implementation was completed automatically.
 When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics. For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
 
-### Implementing Lifecycle metrics in iOS
+## Implementing Lifecycle metrics in iOS
 
-For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/89d18da94f53833fe3fb3b163c2ee0d45a033c2a/using-mobile-extensions/mobile-core/using-mobile-extensions/mobile-core/lifecycle/README.md#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
-### Tracking app crashes in iOS
+## Tracking app crashes in iOS
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
@@ -48,11 +48,11 @@ iOS uses system notifications that allow developers to track and respond to diff
 
 **Why does Adobe measure crashes this way?**
 
-This approach of measuring crashes provides a high-level answer to the question, _Did the user exit my app intentionally?_ 
+This approach of measuring crashes provides a high-level answer to the question, _Did the user exit my app intentionally?_
 
 Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
 
-### Collecting additional data with Lifecycle
+## Collecting additional data with Lifecycle
 
 When calling `lifecycleStart:`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
 

@@ -10,7 +10,6 @@ The following updates were made in this release:
 * Report extension details to ACPCore for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-
 ## February 13, 2020
 
 The following updates were made in this release:
@@ -83,3 +82,4 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
+

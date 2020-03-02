@@ -20,7 +20,6 @@ Sessions contain information about the app's current lifecycle, such as the devi
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Objective-C
 
 1. Import the library:
@@ -29,6 +28,7 @@ Sessions contain information about the app's current lifecycle, such as the devi
  #import "ACPLifecycle.h"
  #import "ACPCore.h"
 ```
+
 #### Swift
 
 1. In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
@@ -36,9 +36,6 @@ Sessions contain information about the app's current lifecycle, such as the devi
 ```swift
 import ACPCore
 ```
-
-
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -66,12 +63,12 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 
    ```java
    public class TargetApp extends Application {
-   
+
     @Override
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
-   
+
         try {
             Lifecycle.registerExtension();
         } catch (Exception e) {
@@ -91,9 +88,7 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
       }
    ```
 
-   {% hint style="warning" %}
    Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you call `setApplication`in each of your activities.
-   {% endhint %}
 
 3. In the `onPause` function, pause the lifecycle data collection:
 
@@ -103,11 +98,8 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
          MobileCore.lifecyclePause();
       }
    ```
-   
-   {% hint style="warning" %}
+
    To ensure accurate session and crash reporting, this call must be added to every activity.
-   {% endhint %}
-   
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -120,18 +112,16 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
      return YES;
    }
    ```
-   
+
 2. Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-   {% hint style="warning" %}
    If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
-   {% endhint %}
 
    ```objectivec
    - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
        // register the lifecycle extension
        [ACPLifecycle registerExtension];
-   
+
        const UIApplicationState appState = application.applicationState;
        [ACPCore start:^{
            // only start lifecycle if the application is not in the background
@@ -141,8 +131,6 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
        }];
    }
    ```
-
-
 
 3. When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
@@ -160,8 +148,6 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
     }
    ```
 
-
-
 #### Swift
 
 1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
@@ -175,15 +161,13 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 
 2. Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
-   {% hint style="warning" %}
    If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
-   {% endhint %}
 
    ```swift
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        // register the lifecycle extension
        ACPLifecycle.registerExtension();
-   
+
        let appState = application.applicationState;            
        ACPCore.start {
            // only start lifecycle if the application is not in the background    
@@ -193,8 +177,6 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
        }    
    }
    ```
-
-
 
 3. When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
@@ -211,9 +193,6 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
        ACPCore.lifecyclePause()
    }
    ```
-
-
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -291,11 +270,9 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale</td>
       <td style="text-align:left">a.locale</td>
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
-    </tr>  
+    </tr>
   </tbody>
-</table>
-
-### Install
+</table>### Install
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |

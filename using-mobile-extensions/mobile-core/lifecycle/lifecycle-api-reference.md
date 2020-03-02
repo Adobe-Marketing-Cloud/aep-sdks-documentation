@@ -15,14 +15,16 @@ You can use this API to start a new lifecycle session or resume a previously pau
 ```java
 public static void lifecycleStart(final Map<String, String> additionalContextData);
 ```
+
 **Example**
 
 ```java
 MobileCore.lifecycleStart(null);
 ```
+
 If you need to collect additional lifecycle data:
 
-```
+```text
 contextData.put("myapp.category", "Game");
 MobileCore.lifecycleStart(additionalContextData);
 ```
@@ -30,13 +32,9 @@ MobileCore.lifecycleStart(additionalContextData);
 {% hint style="warning" %}
 This method should be called from the Activity onResume method.
 {% endhint %}
-
 {% endtab %}
 
-
-
 {% tab title="iOS" %}
-
 #### Objective-C
 
 **Syntax**
@@ -48,40 +46,31 @@ This method should be called from the Activity onResume method.
 **Example**
 
 ```java
-[ACPCore lifecycleStart:nil];      
+[ACPCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
-```
-[ACPCore lifecycleStart:@{@"state": @"appResume"}]; 
+```text
+[ACPCore lifecycleStart:@{@"state": @"appResume"}];
 ```
 
 #### Swift
 
-```
+```text
 // Swift
 ACPCore.lifecycleStart(["state": "appResume"])
 ```
-
 {% endtab %}
-
-
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
-```
+```text
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
-
 {% endtab %}
-
-
-
- {% endtabs %}
-
+{% endtabs %}
 
 ### Lifecycle Pause
 
@@ -91,7 +80,6 @@ Use this API to pause or stop the collection of lifecycle data.
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 **Syntax**
@@ -105,13 +93,9 @@ public static void lifecyclePause()
 ```java
 MobileCore.lifecyclePause();
 ```
-
 {% endtab %}
 
-
-
 {% tab title="iOS" %}
-
 #### Objective-C
 
 **Syntax**
@@ -123,30 +107,23 @@ MobileCore.lifecyclePause();
 **Example**
 
 ```java
-[ACPCore lifecyclePause];      
+[ACPCore lifecyclePause];
 ```
 
 #### Swift
 
-```
+```text
 // Swift
 ACPCore.lifecyclePause()
 ```
-
 {% endtab %}
-
-
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
-```
+```text
 ACPCore.lifecyclePause();
 ```
-
 {% endtab %}
+{% endtabs %}
 
-
-
- {% endtabs %}

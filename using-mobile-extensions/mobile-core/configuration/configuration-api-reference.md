@@ -6,7 +6,6 @@ This API causes the SDK to download the configuration for the provided app ID an
 
 {% tabs %}
 {% tab title="Android" %}
-
 This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 #### Syntax
@@ -42,13 +41,12 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-** JavaScript**
+ **JavaScript**
 
-####  Example
+#### Example
 
 ```jsx
 import {ACPCore} from '@adobe/react-native-acpcore';
@@ -75,7 +73,7 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
-### updateConfiguration   <a id="updateConfiguration"></a>
+### updateConfiguration <a id="updateConfiguration"></a>
 
 #### Syntax
 
@@ -137,7 +135,6 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java

@@ -689,13 +689,11 @@ The Mobile SDK allows you to add a callback function that is triggered before th
 {% endtab %}
 {% endtabs %}
 
-
-
-## Set App Group (iOS only)
+## Set App Group \(iOS only\)
 
 You can use this API to set the app group used to share user defaults and files among the containing app and the extension apps.
 
-Note: This API *must* be called in AppDidFinishLaunching and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+Note: This API _must_ be called in AppDidFinishLaunching and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -709,13 +707,13 @@ Note: This API *must* be called in AppDidFinishLaunching and before any other in
 
 **Syntax**
 
-```objective-c
+```text
 + (void) setAppGroup: (nullable NSString*) appGroup;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore setAppGroup:@"app-group-id"];
 ```
 
@@ -734,7 +732,6 @@ Note: This API *must* be called in AppDidFinishLaunching and before any other in
 ```swift
 ACPCore.setAppGroup("app-group-id")
 ```
-
 {% endtab %}
 {% endtabs %}
 
