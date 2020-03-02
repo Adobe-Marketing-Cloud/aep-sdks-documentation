@@ -44,13 +44,13 @@ If you delete a mobile property, you cannot undo this action!
 
 ### Where can I download the SDK?
 
-The Experience Platform SDK is available through [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/), and [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/). For more information, see [Get the SDK](../getting-started/get-the-sdk.md).
+The Experience Platform SDK is available through [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/), and [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/). For more information, see [Get the SDK](../../getting-started/get-the-sdk.md).
 
 ### Can I run the 4x SDKs and the new Experience Platform SDKs on my app?
 
 Implementing both SDKs is not recommended or supported.
 
-The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](upgrading-to-aep/).
+The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
 
 ### What OS versions are supported?
 
@@ -92,7 +92,7 @@ Add the following rule to your custom ProGuard rules file, typically labeled `pr
 
 ### What are Lifecycle metrics?
 
-Lifecycle metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../using-mobile-extensions/mobile-core/lifecycle/).
+Lifecycle metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../using-mobile-extensions/mobile-core/lifecycle/).
 
 ## Adobe Analytics
 

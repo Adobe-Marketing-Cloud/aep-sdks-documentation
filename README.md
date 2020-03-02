@@ -42,7 +42,7 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 * [Getting started](getting-started/create-a-mobile-property.md)
 * [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
-* [Frequently asked questions](resources/frequently-asked-questions.md)
+* [Frequently asked questions](resources/frequently-asked-questions/)
 
 ## Get help
 
