@@ -128,7 +128,12 @@ The enum representation of the privacy status that corresponds to the following 
 
 ```java
 + (void) getPrivacyStatus: (nonnull void (^) (ACPMobilePrivacyStatus status)) callback;
++ (void) getPrivacyStatusWithCompletionHandler: (nonnull void (^) (ACPMobilePrivacyStatus status, NSError* _Nullable error)) completionHandler;
+
 ```
+
+- *callback* is invoked after the privacy status is available.
+- *completionHandler* is invoked with the current privacy status, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -139,6 +144,15 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
           case ACPMobilePrivacyStatusOptIn: NSLog(@"Privacy Status: Opt-In");               break; 
           } 
 }];
+
+
+[ACPCore getPrivacyStatusWithCompletionHandler:^(ACPMobilePrivacyStatus status, NSError * _Nullable error) {
+        if (error) {
+            // handle error here
+        } else {
+            // handle the retrieved privacy status
+        }
+    }];
 ```
 {% endtab %}
 {% endtabs %}
@@ -190,8 +204,13 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 #### Syntax
 
 ```objectivec
-[ACPCore getSdkIdentities:]
++ (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
++ (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
+
 ```
+
+- *callback* is invoked with the SDK identities as a JSON string.
+- *completionHandler* is invoked with the SDK identities as a JSON string, or *error* if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -199,6 +218,15 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 [ACPCore getSdkIdentities:^(NSString * _Nullable content){
     NSLog(content);
 }];
+
+[ACPCore getSdkIdentitiesWithCompletionHandler:^(NSString * _Nullable content, NSError * _Nullable error) {
+        if (error) {
+            // handle error here
+        } else {
+            // handle the retrieved identities
+            NSLog(content);
+        }
+    }];
 ```
 {% endtab %}
 {% endtabs %}

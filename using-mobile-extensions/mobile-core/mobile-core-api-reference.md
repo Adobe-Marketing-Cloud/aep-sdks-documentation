@@ -689,6 +689,55 @@ The Mobile SDK allows you to add a callback function that is triggered before th
 {% endtab %}
 {% endtabs %}
 
+
+
+## Set App Group (iOS only)
+
+You can use this API to set the app group used to share user defaults and files among the containing app and the extension apps.
+
+Note: This API *must* be called in AppDidFinishLaunching and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective-C**
+
+### setAppGroup
+
+**Objective-C**
+
+#### setAppGroup
+
+**Syntax**
+
+```objective-c
++ (void) setAppGroup: (nullable NSString*) appGroup;
+```
+
+**Example**
+
+```objective-c
+[ACPCore setAppGroup:@"app-group-id"];
+```
+
+**Swift**
+
+#### setAppGroup
+
+**Syntax**
+
+```swift
++ (void) setAppGroup: (nullable NSString*) appGroup;
+```
+
+**Example**
+
+```swift
+ACPCore.setAppGroup("app-group-id")
+```
+
+{% endtab %}
+{% endtabs %}
+
 ### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?

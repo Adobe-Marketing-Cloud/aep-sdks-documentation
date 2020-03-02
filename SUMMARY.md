@@ -38,6 +38,7 @@
   * [Rules Engine](using-mobile-extensions/mobile-core/rules-engine/README.md)
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
+  * [Platform Services](using-mobile-extensions/mobile-core/platform-services/README.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
