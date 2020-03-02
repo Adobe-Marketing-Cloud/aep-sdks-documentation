@@ -8,6 +8,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## March 2, 2020
+
+The following updates were made in this release:
+
+### iOS Analytics 2.2.3
+
+* `AnalyticsResponse` events are now always dispatched regardless if the debugApi is enabled or if AAM forwarding is enabled.
+* Report extension details to ACPCore for improved logging and Griffon support.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## February 27, 2020
 
 The following updates were made in this release:
@@ -61,6 +71,7 @@ The following updates were made in this release:
 
 * Fixed an issue which, was causing some hits to be delayed.
 * Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ## February 4, 2020
@@ -971,4 +982,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
