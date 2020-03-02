@@ -282,7 +282,7 @@ pod install
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)
 * [How to use CocoaPods for iOS ](https://guides.cocoapods.org/using/using-cocoapods)
-* [Current SDK Versions](../resources/frequently-asked-questions/current-sdk-versions.md)
+* [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md)
 
 ## Get help
 

@@ -19,15 +19,15 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 ## Supported Platforms
 
 {% hint style="success" %}
-The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/frequently-asked-questions/current-sdk-versions.md) to ensure seamless compatibility.
+The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure seamless compatibility.
 {% endhint %}
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
-* Android \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#android) for download links\)
-* iOS \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#ios) for download links\)
-* React Native \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#react-native) for download links\)
-* Flutter \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md#flutter-beta) for download links\)
+* Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
+* iOS \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
+* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* Flutter \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:
@@ -42,7 +42,7 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 * [Getting started](getting-started/create-a-mobile-property.md)
 * [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
-* [Frequently asked questions](resources/frequently-asked-questions/)
+* [Frequently asked questions](resources/frequently-asked-questions.md)
 
 ## Get help
 
