@@ -18,6 +18,27 @@ The following updates were made in this release:
 * Report extension details to ACPCore for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
+### iOS Griffon 1.1.0
+* Added support for capturing device screenshot.
+* Added support for forwarding application logs to Griffon.
+* Added support for editing loaded launch configuration through Griffon.
+* Added support for dispatching fake events from Griffon.
+* Unique clientID and sessionID are now shared through Griffon shared state.
+* Shared state contents of all the registered extensions are now forwarded to Griffon.
+* Griffon event now includes eventNumber and timestamp.
+* Added an API to create ACPGriffonEvent with vendor, type, payload, and timestamp.
+* Bug fixes.
+
+### Android Griffon 1.1.3
+* Added support for capturing device screenshot.
+* Added support for forwarding application logs to Griffon.
+* Added support for editing loaded launch configuration through Griffon.
+* Added support for dispatching fake events from Griffon.
+* Unique clientID and sessionID are now shared through Griffon shared state.
+* Shared state contents of all the registered extensions are now forwarded to Griffon.
+* Added constructors to create GriffonEvent with vendor, type, payload, and timestamp.
+* Bug fixes.
+
 ## February 27, 2020
 
 The following updates were made in this release:
