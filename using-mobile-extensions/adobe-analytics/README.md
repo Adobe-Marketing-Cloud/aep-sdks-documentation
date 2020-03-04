@@ -35,10 +35,11 @@ Type the tracking domain to which all Analytics requests should be made.
 #### **Offline enabled**
 
 {% hint style="info" %}
-Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/offline-tracking.html).
+Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/technotes/timestamps-optional.html).
 {% endhint %}
 
-When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled.
+When the **Offline Enabled** checkbox is selected, client-side timestamp data is captured and sent directly with the device data using client-side timestamp variables. To use offline tracking, ensure that your report suite is timestamp enabled.
+When the **Offline Enabled** checkbox is *not* selected, the SDK sets the timestamp on non-timestamped data in a report suite when the data hits the collection servers.
 
 {% hint style="danger" %}
 If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.
@@ -409,4 +410,3 @@ ACPCore.updateConfiguration({"analytics.server":"sample.analytics.tracking.serve
 {% endtabs %}
 
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
-
