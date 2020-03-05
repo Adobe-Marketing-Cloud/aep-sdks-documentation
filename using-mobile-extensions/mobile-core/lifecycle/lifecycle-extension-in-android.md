@@ -2,7 +2,7 @@
 
 ## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
 
-For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](../../lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/db7da44a368ec6377ea0231078ffcae8a77491ab/using-mobile-extensions/lifecycle/README.md#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 ## Tracking app crashes in Android <a id="tracking-app-crashes-in-android"></a>
 

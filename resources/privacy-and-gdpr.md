@@ -101,8 +101,8 @@ The enum representation of the privacy status that corresponds to the following 
 void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
 ```
 
-- _callback_ is invoked after the privacy status is available.
-- If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+* _callback_ is invoked after the privacy status is available.
+* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Example <a id="example-5"></a>
 
@@ -188,8 +188,8 @@ You must call the API below and retrieve identities stored in the SDK, **before*
 void getSdkIdentities(AdobeCallback<String> callback);
 ```
 
-- _callback_ is invoked with the SDK identities as a JSON string.
-- If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+* _callback_ is invoked with the SDK identities as a JSON string.
+* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Example
 
