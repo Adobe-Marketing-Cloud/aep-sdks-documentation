@@ -8,6 +8,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## March 4, 2020
+
+The following updates were made in this release:
+
+### Android Places 1.4.2
+
+* Made a change to allow faking entry and exit events through Project Griffon UI.
+
+### iOS 2.2.3
+
 ## March 2, 2020
 
 The following updates were made in this release:
@@ -17,6 +27,30 @@ The following updates were made in this release:
 * `AnalyticsResponse` events are now always dispatched regardless if the debugApi is enabled or if AAM forwarding is enabled.
 * Report extension details to ACPCore for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
+
+### iOS Griffon 1.1.0
+
+* Added support for capturing device screenshot.
+* Added support for forwarding application logs to Griffon.
+* Added support for editing loaded launch configuration through Griffon.
+* Added support for dispatching fake events from Griffon.
+* Unique clientID and sessionID are now shared through Griffon shared state.
+* Shared state contents of all the registered extensions are now forwarded to Griffon
+* Griffon event now includes eventNumber and timestamp.
+* Added an API to create ACPGriffonEvent with vendor, type, payload, and timestamp.
+* Bug fixes.
+
+### Android Griffon 1.1.3
+
+* Added support for capturing device screenshot.
+* Added support for forwarding application logs to Griffon.
+* Added support for editing loaded launch configuration through Griffon.
+* Added support for dispatching fake events from Griffon.
+* Unique clientID and sessionID are now shared through Griffon shared state.
+* Shared state contents of all the registered extensions are now forwarded to Griffon.
+* Added constructors to create GriffonEvent with vendor, type, payload, and timestamp.
+* Bug fixes.
+
 
 ## February 27, 2020
 
