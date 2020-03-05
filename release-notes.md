@@ -16,8 +16,6 @@ The following updates were made in this release:
 
 * Made a change to allow faking entry and exit events through Project Griffon UI.
 
-### iOS 2.2.3
-
 ## March 2, 2020
 
 The following updates were made in this release:
@@ -50,7 +48,6 @@ The following updates were made in this release:
 * Shared state contents of all the registered extensions are now forwarded to Griffon.
 * Added constructors to create GriffonEvent with vendor, type, payload, and timestamp.
 * Bug fixes.
-
 
 ## February 27, 2020
 
