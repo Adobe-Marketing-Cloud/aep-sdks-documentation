@@ -7,7 +7,7 @@ The Configuration extension is built into the Mobile Core extension. It provides
 Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
 
 {% hint style="success" %}
-We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID. Follow the steps in [Set up a mobile property](../../getting-started/create-a-mobile-property) if you need to create a new Experience Platform Launch App.
+We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID. Follow the steps in [Set up a mobile property](../../../getting-started/create-a-mobile-property) if you need to create a new Experience Platform Launch App.
 {% endhint %}
 
 After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected. If there is no change or a network request error occurs while downloading the configuration file, the cached configuration will be used.
