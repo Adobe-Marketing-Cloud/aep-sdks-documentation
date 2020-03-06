@@ -178,7 +178,7 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ide
 #### Dart
 
 ```dart
-String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
+String identityExtensionVersion = await FlutterACPIdentity.extensionVersion;
 ```
 {% endtab %}
 {% endtabs %}

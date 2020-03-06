@@ -186,7 +186,7 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
    ```
 3. Get the extension version.
    ```dart
-   String version = FlutterACPAnalytics.extensionVersion;
+   String version = await FlutterACPAnalytics.extensionVersion;
    ```
 {% endtab %}
 
