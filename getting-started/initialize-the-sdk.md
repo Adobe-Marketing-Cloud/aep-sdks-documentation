@@ -40,13 +40,13 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 #### Syntax
 
-```csharp
+```objective-c
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```c
+```objective-c
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
@@ -54,13 +54,13 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 #### Syntax
 
-```c
+```objective-c
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```c
+```swift
 ACPCore.trackAction("action name", data: ["key": "value"])
 ```
 {% endtab %}
@@ -68,10 +68,33 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% tab title="React Native" %}
 ### JavaScript
 
+#### Syntax
+
+```jsx
+trackAction(action?: String, contextData?: { string: string });
+```
+
+#### Example
 ```jsx
 ACPCore.trackAction("action", {"mytest": "action"});
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+#### Syntax
+
+```dart
+Future<void> trackAction(String action, {Map<String, String> data});
+```
+
+#### Example
+```dart
+FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});
+```
+{% endtab %}
+
 {% endtabs %}
 
 ### Track app states and screens
@@ -108,13 +131,13 @@ MobileCore.trackState("homePage", additionalContextData);
 
 #### Syntax
 
-```c
+```objective-c
  + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```c
+```objective-c
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
@@ -122,13 +145,13 @@ MobileCore.trackState("homePage", additionalContextData);
 
 #### Syntax
 
-```c
+```objective-c
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```c
+```swift
 ACPCore.trackState("state name", data: ["key": "value"])
 ```
 {% endtab %}
@@ -136,8 +159,28 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% tab title="React Native" %}
 ### JavaScript
 
+#### Syntax
+```jsx
+trackState(state?: String, contextData?: { string: string });
+```
+
+#### Example
 ```jsx
 ACPCore.trackState("state", {"mytest": "state"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+#### Syntax
+```dart
+Future<void> trackState(String state, {Map<String, String> data});
+```
+
+#### Example
+```dart
+FlutterACPCore.trackState("state",  data: {"mytest": "state"});
 ```
 {% endtab %}
 {% endtabs %}

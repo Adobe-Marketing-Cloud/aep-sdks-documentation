@@ -118,13 +118,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-```jsx
-import {ACPIdentity} from '@adobe/react-native-acpcore';
+When using React Native, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
 
-initSDK() {
-    ACPIdentity.registerExtension();
-}
-```
+{% tab title="Flutter" %}
+#### Dart
+
+When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
 {% endtab %}
 {% endtabs %}
 
@@ -169,7 +170,15 @@ var identityExtensionVersion  = ACPIdentity.extensionVersion()
 #### JavaScript
 
 ```jsx
-ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
+ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Identity version: " + identityExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+```dart
+String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 ```
 {% endtab %}
 {% endtabs %}
@@ -267,14 +276,42 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 
 To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-js):
 
-```java
-ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
+```jsx
+ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("Url with Visitor Data = " + urlWithVisitorData));
 ```
 
 Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-js) and build your own URL:
 
-```java
-ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
+```jsx
+ACPIdentity.getUrlVariables().then(urlVariables => console.log("query params = " + urlVariables));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+To append visitor information to the URL that is being used to open the web view, call appendVisitorInfoForUrl:
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPIdentity.appendToUrl("www.myUrl.com");
+} on PlatformException {
+  log("Failed to append URL");
+}
+```
+
+Alternately, starting with SDK version 1.0.0-beta.1, you can call getUrlVariables and build your own URL:
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPIdentity.urlVariables;
+} on PlatformException {
+  log("Failed to get url variables");
+}
 ```
 {% endtab %}
 {% endtabs %}

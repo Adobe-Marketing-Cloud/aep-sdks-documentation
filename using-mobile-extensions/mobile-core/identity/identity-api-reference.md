@@ -189,7 +189,7 @@ If the specified URL is nil or empty, it is returned as is. Otherwise, the follo
 **Syntax**
 
 ```jsx
-ACPIdentity.appendVisitorInfoForURL(baseURL);
+appendVisitorInfoForURL(baseURL?: String): Promise<?string>;
 ```
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
@@ -226,6 +226,72 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 ```
 
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
+{% endhint %}
+{% endtab %}
+
+{% tab title="Flutter" %}
+### appendVisitorInfoForURL
+
+This API appends Adobe visitor information to the query component of the specified URL.
+
+If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
+
+* The `adobe_mc` attribute is a URL encoded list that contains:
+  * `MCMID` - Experience Cloud ID \(ECID\)
+  * `MCORGID` - Experience Cloud Org ID
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../adobe-analytics/)
+  * `TS` - A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/174e9069bc1d3a521b59d52a066e9a7730f60ff5/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#setidentifier).
+
+#### Dart
+
+**Syntax**
+
+```dart
+Future<String> appendToUrl (String url);
+```
+
+* _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+
+**Example**
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPIdentity.appendToUrl("www.myUrl.com");
+} on PlatformException {
+  log("Failed to append URL");
+}
+```
+
+{% hint style="info" %}
+This API is designed to handle the following URL formats:
+
+```text
+scheme://authority/path?query=param#fragment
+```
+
+In this example, the Adobe visitor data is appended as:
+
+```text
+scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
+```
+
+Similarly, URLs without a query component:
+
+```text
+scheme://authority/path#fragment
+```
+
+The Adobe visitor data is appended as:
+
+```text
+scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
+```
+
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use getUrlVariables.
+
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -266,6 +332,14 @@ var identityExtensionVersion  = ACPIdentity.extensionVersion()
 
 ```jsx
 ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+```dart
+String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 ```
 {% endtab %}
 {% endtabs %}
@@ -372,7 +446,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 #### Syntax
 
 ```jsx
-ACPIdentity.getExperienceCloudId()
+getExperienceCloudId(): Promise<?string>;
 ```
 
 #### Example
@@ -380,6 +454,36 @@ ACPIdentity.getExperienceCloudId()
 ```jsx
 ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceSDK: CloudID = " + cloudId));
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### getExperienceCloudId
+
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
+
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+#### Dart
+
+#### Syntax
+
+```dart
+Future<String> experienceCloudId;
+```
+
+#### Example
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPIdentity.experienceCloudId;
+} on PlatformException {
+  log("Failed to get experienceCloudId");
+}
+
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -482,13 +586,39 @@ This API returns all customer identifiers that were previously synced with the A
 **Syntax**
 
 ```jsx
-ACPIdentity.getIdentifiers()
+getIdentifiers(): Promise<Array<?ACPVisitorID>>;
 ```
 
 **Example**
 
 ```jsx
 ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK: Identifiers = " + identifiers));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### getIdentifiers
+
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
+
+#### Dart
+
+**Syntax**
+
+```dart
+ Future<List<ACPMobileVisitorId>> identifiers;
+```
+
+**Example**
+
+```dart
+List<ACPMobileVisitorId> result;
+
+try {
+  result = await FlutterACPIdentity.identifiers;
+} on PlatformException {
+  log("Failed to get identifiers");
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -644,13 +774,48 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 **Syntax**
 
 ```jsx
-ACPIdentity.getUrlVariables();
+getUrlVariables(): Promise<?string>;
 ```
 
 **Example**
 
 ```jsx
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSDK: query params = " + urlVariables));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### getUrlVariables
+
+#### Dart
+
+This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
+
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+
+* The `adobe_mc` attribute is an URL encoded list that contains:
+  * `MCMID` - Experience Cloud ID \(ECID\)
+  * `MCORGID` - Experience Cloud Org ID
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+  * `TS` - A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
+
+**Syntax**
+
+```dart
+ Future<String> urlVariables;
+```
+
+**Example**
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPIdentity.urlVariables;
+} on PlatformException {
+  log("Failed to get url variables");
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -668,7 +833,7 @@ After calling the `setApplication()` method in the `onCreate()` method, register
 #### Java
 
 ```java
-public class MobiletApp extends Application {
+public class MobileApp extends Application {
 @Override
 public void onCreate() {
 super.onCreate();
@@ -712,13 +877,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-```jsx
-import {ACPIdentity} from '@adobe/react-native-acpcore';
+When using React Native, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 
-initSDK() {
-    ACPIdentity.registerExtension();
-}
-```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
 {% endtab %}
 {% endtabs %}
 
@@ -862,7 +1029,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 **Syntax**
 
 ```jsx
-ACPCore.setAdvertisingIdentifier(adID);
+setAdvertisingIdentifier(advertisingIdentifier?: String);
 ```
 
 * _adID_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
@@ -871,6 +1038,26 @@ ACPCore.setAdvertisingIdentifier(adID);
 
 ```jsx
 ACPCore.setAdvertisingIdentifier("ADVTID");
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### setAdvertisingIdentifier
+
+#### Dart
+
+**Syntax**
+
+```dart
+Future<void> setAdvertisingIdentifier (String aid); 
+```
+
+* _aid_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
+
+**Example**
+
+```dart
+FlutterACPCore.setAdvertisingIdentifier("ADVTID");
 ```
 {% endtab %}
 {% endtabs %}
@@ -1034,7 +1221,7 @@ ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPM
 **Syntax**
 
 ```jsx
-ACPIdentity.syncIdentifier(identifierType: String, identifier: String, authenticationState: string)
+syncIdentifier(identifierType: String, identifier: String, authenticationState: string);
 ```
 
 * The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
@@ -1050,7 +1237,37 @@ ACPIdentity.syncIdentifier(identifierType: String, identifier: String, authentic
 **Example**
 
 ```jsx
-ACPIdentity.syncIdentifier(identifierType, identifier, ACPMobileVisitorAuthenticationState.AUTHENTICATED);
+import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
+
+ACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthenticationState.AUTHENTICATED);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+**Syntax**
+
+```dart
+Future<void> syncIdentifier(String identifierType, String identifier, ACPMobileVisitorAuthenticationState authState);
+```
+
+* The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
+
+  If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+
+* _authState_ value indicating authentication state for the user contaisn one of the `ACPMobileVisitorAuthenticationState` values: indicats the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
+* `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
+* `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
+* `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+**Example**
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
+
+FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthenticationState.AUTHENTICATED);
 ```
 {% endtab %}
 {% endtabs %}
@@ -1134,14 +1351,14 @@ ACPMobileVisitorAuthenticationState.authenticated)
 **Syntax**
 
 ```jsx
-ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, authenticationState: string);
+syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState: string);
 ```
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
+* The _authenticationState \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
   * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
   * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1152,6 +1369,33 @@ ACPIdentity.syncIdentifiersWithAuthState((nullable NSDictionary*) identifiers, a
 import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
 
 ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+**Syntax**
+
+```dart
+Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPMobileVisitorAuthenticationState authState);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* The _authState_ \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
+  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
+  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
+  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+**Example**
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
+
+FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
 ```
 {% endtab %}
 {% endtabs %}
@@ -1225,7 +1469,7 @@ ACPIdentity.syncIdentifiers(identifiers)
 **Syntax**
 
 ```jsx
-ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
+syncIdentifiers(identifiers?: {string: string});
 ```
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
@@ -1236,6 +1480,28 @@ ACPIdentity.syncIdentifiers: (nullable NSDictionary*) identifiers;
 
 ```jsx
 ACPIdentity.syncIdentifiers({"id1": "identifier1"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+**Syntax**
+
+```dart
+Future<void> syncIdentifiers (Map<String, String> identifiers);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+**Example**
+
+```jsx
+FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
+                                    "idType2":"idValue2",
+                                    "idType3":"idValue3"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -1340,8 +1606,50 @@ This is an identifier to be used with the Experience Cloud Visitor ID Service an
 ```jsx
 import {ACPVisitorID} from '@adobe/react-native-acpcore';
 
-var visitorId = new ACPVisitorID(idOrigin?: string, idType: string, id?: string, authenticationState?: ACPMobileVisitorAuthenticationState)
+var visitorId = new ACPVisitorID(idOrigin?: string, idType: string, id?: string, authenticationState?: ACPMobileVisitorAuthenticationState);
 ```
+
+**ACPMobileVisitorAuthenticationState**
+
+This is used to indicate the authentication state for the current `VisitorID`.
+```jsx
+import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
+
+var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
+//var state = ACPMobileVisitorAuthenticationState.LOGGED_OUT;
+//var state = ACPMobileVisitorAuthenticationState.UNKNOWN;
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+**ACPVisitorID**
+
+This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
+
+
+class ACPMobileVisitorId {
+  String get idOrigin;
+  String get idType;
+  String get identifier;
+  ACPMobileVisitorAuthenticationState get authenticationState;
+};
+```
+
+**ACPMobileVisitorAuthenticationState**
+
+This is used to indicate the authentication state for the current `VisitorID`.
+```dart
+import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
+
+enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
+```
+
 {% endtab %}
 {% endtabs %}
 

@@ -143,8 +143,32 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 
 ### trackAction
 
+**Syntax**
 ```jsx
-ACPCore.trackAction("action-name", {"key": "value"});
+trackAction(action?: String, contextData?: { string: string });
+```
+
+**Example**
+
+```jsx
+ACPCore.trackAction("action name", {"key": "value"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### trackAction
+
+**Syntax**
+```dart
+Future<void> trackAction (String action, {Map<String, String> data}); 
+```
+
+**Example**
+
+```dart
+FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -217,8 +241,32 @@ ACPCore.trackState("state name", data: ["key": "value"])
 
 #### trackState
 
+**Syntax**
 ```jsx
-ACPCore.trackState("state-name", {"key": "value"});
+trackState(state?: String, contextData?: { string: string });
+```
+
+**Example**
+
+```jsx
+ACPCore.trackState("state name", {"key": "value"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+#### trackState
+
+**Syntax**
+```dart
+Future<void> trackState (String state, {Map<String, String> data});
+```
+
+**Example**
+
+```dart
+FlutterACPCore.trackState("state name",  data: {"key1: "value"})
 ```
 {% endtab %}
 {% endtabs %}
@@ -493,6 +541,18 @@ ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
 
 ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+#### setLogLevel
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
+
+FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
 ```
 {% endtab %}
 {% endtabs %}

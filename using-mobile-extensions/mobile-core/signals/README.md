@@ -65,24 +65,23 @@ import ACPCore
 {% tab title="React Native" %}
 #### JavaScript
 
-Install Signal:
-
-```jsx
-npm install @adobe/react-native-acpcore
-react-native link @adobe/react-native-acpcore
-```
-
-Importing the Signal extension
+Importing the Signal extension:
 
 ```jsx
 import {ACPSignal} from '@adobe/react-native-acpcore';
 ```
 
-Note: if using Cocoapods, run:
+{% endtab %}
 
-```text
-pod install
+{% tab title="Flutter" %}
+#### Dart
+
+Importing the Signal extension:
+
+```dart
+import 'package:flutter_acpcore/flutter_acpsignal.dart';
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -152,13 +151,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-```jsx
-import {ACPSignal} from '@adobe/react-native-acpcore';
+When using React Native, registering Signal with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 
-initSDK() {
-    ACPSignal.registerExtension();
-}
-```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+When using Flutter, registering Signal with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
 {% endtab %}
 {% endtabs %}
 

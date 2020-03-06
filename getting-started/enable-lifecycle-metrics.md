@@ -121,6 +121,8 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 {% tab title="React Native" %}
 ## JavaScript
 
+> Note: We recommend implementing Lifecycle metrics in native code, however, Lifecycle API's are available in Javascript if it fits your use case.
+
 Starting a lifecycle event
 
 ```jsx
@@ -131,6 +133,24 @@ Pausing a lifecycle event
 
 ```jsx
 ACPCore.lifecyclePause();
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+## Dart
+
+> Note: We recommend implementing Lifecycle metrics in native code, however, Lifecycle API's are available in Dart if it fits your use case.
+
+Starting a lifecycle event
+
+```dart
+FlutterACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+
+Pausing a lifecycle event
+
+```dart
+FlutterACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}

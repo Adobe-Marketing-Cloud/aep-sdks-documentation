@@ -68,6 +68,13 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 
 For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
 {% endtab %}
+
+{% tab title="Flutter" %}
+### Flutter
+
+For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
+
+{% endtab %}
 {% endtabs %}
 
 ## Installation instructions
@@ -240,6 +247,13 @@ initSDK() {
     ACPCore.start();
 }
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
 {% endtab %}
 {% endtabs %}
 

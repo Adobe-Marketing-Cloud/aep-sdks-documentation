@@ -42,21 +42,6 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 {% endtab %}
-
-{% tab title="React Native" %}
- **JavaScript**
-
-#### Example
-
-```jsx
-import {ACPCore} from '@adobe/react-native-acpcore';
-
-initSDK() { 
-    ACPCore.configureWithAppId("yourAppId");
-    ACPCore.start();
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ## updateConfiguration
@@ -122,7 +107,17 @@ ACPCore.updateConfiguration(updatedConfig)
 ### updateConfiguration
 
 ```jsx
-ACPCore.updateConfiguration({"yourConfigKey": "yourConfigValue"});
+ACPCore.updateConfiguration({"global.ssl": true});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### updateConfiguration
+
+```dart
+FlutterACPCore.updateConfiguration({"global.ssl": true});
 ```
 {% endtab %}
 {% endtabs %}
@@ -169,16 +164,6 @@ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"of
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-```jsx
- configureWithFileInPath(filepath?: String) {
-   ACPCore.configureWithFileInPath(filepath);
-  },
 ```
 {% endtab %}
 {% endtabs %}
