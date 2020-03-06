@@ -138,9 +138,28 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 1. Install Analytics.
 
-   ```jsx
-    npm install @adobe/react-native-acpanalytics
-    react-native link @adobe/react-native-acpanalytics
+   ```bash
+   npm install @adobe/react-native-acpanalytics
+   ```
+
+   1.1 Link
+   - **React Native 0.60+**
+
+
+   [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+
+
+   - **React Native <= 0.59**
+
+
+   ```bash
+   react-native link @adobe/react-native-acpanalytics
+   ```
+
+   *Note* For `iOS` using `cocoapods`, run:
+
+   ```bash
+   cd ios/ && pod install
    ```
 
 2. Import the extension.
@@ -155,6 +174,23 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
     ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
    ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Flutter
+
+1. Install Analytics.
+
+   Instructions on installing the Analytics SDK in Flutter can be found [here](https://pub.dev/packages/flutter_acpanalytics#-installing-tab-).
+2. Import the extension.
+   ```dart
+   import 'package:flutter_acpanalytics/flutter_acpanalytics.dart';
+   ```
+3. Get the extension version.
+   ```dart
+   String version = FlutterACPAnalytics.extensionVersion;
+   ```
+{% endtab %}
+
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -222,14 +258,17 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-```jsx
-import { ACPAnalytics } from "@adobe/react-native-acpanalytics";
+When using React Native, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 
-initSDK() {
-    ACPAnalytics.registerExtension();
-}
-```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Send Lifecycle Metrics to Analytics
@@ -316,6 +355,53 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [ACPCore trackState:@"State Name" data:contextData];
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+#### Syntax
+
+```jsx
+var contextData = {"eventN:serial number": "&&events"};
+```
+
+#### Example
+
+```jsx
+// create a context data dictionary and add events
+var contextData = {"event1:12341234": "&&events"};
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.trackAction("Action Name", contextData);
+// trackState example:
+ACPCore.trackState("State Name", contextData);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+#### Syntax
+
+```dart
+var contextData = {"eventN:serial number": "&&events"};
+```
+
+#### Example
+
+```dart
+// create a context data dictionary and add events
+var contextData = {"event1:12341234": "&&events"};
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+FlutterACPCore.trackAction("Action Name",  data: contextData);
+// trackState example:
+FlutterACPCore.trackState("State Name",  data: contextData);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Videos
@@ -363,7 +449,7 @@ To update the SDK configuration programmatically, use the following information 
 
 {% tabs %}
 {% tab title="Android" %}
-### update Analytics Configuration
+### Update Analytics Configuration
 
 #### Example
 
@@ -379,21 +465,27 @@ MobileCore.updateConfiguration(data);
 {% endtab %}
 
 {% tab title="iOS" %}
-### update Analytics Configuration
+### Update Analytics Configuration
 
 #### Example
 
 **Objective-C**
 
 ```objectivec
-NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.server", @"analytics.rsids":@"rsid1,rsid2", @"analytics.batchLimit":@(10), @"analytics.offlineEnabled":@YES};
+NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.server",
+                                @"analytics.rsids":@"rsid1,rsid2",
+                                @"analytics.batchLimit":@(10),
+                                @"analytics.offlineEnabled":@YES};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
 **Swift**
 
 ```swift
-let updatedConfig = ["analytics.server":"sample.analytics.tracking.server", "analytics.rsids":"rsid1,rsid2", "analytics.batchLimit":10, "analytics.offlineEnabled":true]
+let updatedConfig = ["analytics.server":"sample.analytics.tracking.server", 
+                     "analytics.rsids":"rsid1,rsid2", 
+                     "analytics.batchLimit":10, 
+                     "analytics.offlineEnabled":true]
 ACPCore.updateConfiguration(updatedConfig)
 ```
 {% endtab %}
@@ -401,10 +493,26 @@ ACPCore.updateConfiguration(updatedConfig)
 {% tab title="React Native" %}
 #### JavaScript
 
-### updateConfiguration
+### Update Analytics Configuration
 
 ```jsx
-ACPCore.updateConfiguration({"analytics.server":"sample.analytics.tracking.server", "analytics.rsids":"rsid1,rsid2", "analytics.batchLimit":10, "analytics.offlineEnabled":true});
+ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
+                             "analytics.rsids": "rsid1,rsid2",
+                             "analytics.batchLimit": 10,
+                             "analytics.offlineEnabled": true});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### Update Analytics Configuration
+
+```dart
+FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
+                                    "analytics.rsids": "rsid1,rsid2",
+                                    "analytics.batchLimit": 10,
+                                    "analytics.offlineEnabled": true});
 ```
 {% endtab %}
 {% endtabs %}
