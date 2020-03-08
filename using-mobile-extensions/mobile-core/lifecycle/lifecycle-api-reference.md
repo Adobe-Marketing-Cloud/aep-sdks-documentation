@@ -39,26 +39,25 @@ This method should be called from the Activity onResume method.
 
 **Syntax**
 
-```java
+```objective-c
 + (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
 ```
 
 **Example**
 
-```java
+```objective-c
 [ACPCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
-```text
+```objective-c
 [ACPCore lifecycleStart:@{@"state": @"appResume"}];
 ```
 
 #### Swift
 
-```text
-// Swift
+```swift
 ACPCore.lifecycleStart(["state": "appResume"])
 ```
 {% endtab %}
@@ -66,8 +65,35 @@ ACPCore.lifecycleStart(["state": "appResume"])
 {% tab title="React Native" %}
 #### JavaScript
 
-```text
+Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
+
+**Syntax**
+
+```jsx
+lifecycleStart(additionalContextData?: { string: string });
+```
+
+**Example**
+
+```jsx
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
+
+**Syntax**
+```dart
+Future<void> lifecycleStart (Map<String, String> contextData);
+```
+
+**Example**
+
+```dart
+FlutterACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -100,20 +126,19 @@ MobileCore.lifecyclePause();
 
 **Syntax**
 
-```java
+```objective-c
 + (void) lifecyclePause;
 ```
 
 **Example**
 
-```java
+```objective-c
 [ACPCore lifecyclePause];
 ```
 
 #### Swift
 
-```text
-// Swift
+```swift
 ACPCore.lifecyclePause()
 ```
 {% endtab %}
@@ -121,9 +146,36 @@ ACPCore.lifecyclePause()
 {% tab title="React Native" %}
 #### JavaScript
 
-```text
+> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
+
+**Syntax**
+```jsx
+lifecyclePause();
+```
+
+**Example**
+
+```jsx
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
+
+**Syntax**
+```dart
+Future<void> lifecyclePause();
+```
+
+**Example**
+
+```dart
+FlutterACPCore.lifecyclePause();
+```
+{% endtab %}
+
 {% endtabs %}
 

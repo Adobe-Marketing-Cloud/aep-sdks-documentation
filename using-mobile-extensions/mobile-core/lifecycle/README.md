@@ -47,11 +47,17 @@ Import the Lifecycle extension
 import {ACPLifecycle} from '@adobe/react-native-acpcore';
 ```
 
-Get the extension version
+{% endtab %}
 
-```jsx
-ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPLifecycle version: " + version));
+{% tab title="Flutter" %}
+#### Dart
+
+Import the Lifecycle extension
+
+```dart
+import 'package:flutter_acpcore/flutter_acplifecycle.dart';
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -196,11 +202,12 @@ ACPLifecycle.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **Registering the extension with Core:**
 
-```jsx
-ACPLifecycle.registerExtension();
-```
+When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
+> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
 
 **Starting a lifecycle event:**
 
@@ -212,6 +219,27 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 
 ```jsx
 ACPCore.lifecyclePause();
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Registering the extension with Core:**
+
+When using Flutter, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
+> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
+
+**Starting a lifecycle event:**
+
+```dart
+FlutterACPCore.lifecycleStart({"contextKey": "contextValue"});
+```
+
+**Pausing a lifecycle event:**
+
+```dart
+FlutterACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}

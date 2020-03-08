@@ -66,6 +66,19 @@ Regardless of how many hits are currently queued, this method forces the library
 ACPAnalytics.sendQueuedHits();
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+```dart
+FlutterACPAnalytics.sendQueuedHits();
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Clear queued hits <a id="clearqueue"></a>
@@ -128,6 +141,19 @@ ACPAnalytics.clearQueue()
 ACPAnalytics.clearQueue();
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### clearQueue
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+```dart
+FlutterACPAnalytics.clearQueue();
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Get the queue size <a id="getqueuesize"></a>
@@ -195,6 +221,23 @@ ACPAnalytics.getQueueSize { (queueSize) in
 ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue size: " + size));
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### getQueueSize
+
+```dart
+int queueSize;
+
+try {
+	queueSize = await FlutterACPAnalytics.queueSize;
+} on PlatformException {
+	log("Failed to get the queue size");
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Get the tracking identifier <a id="gettrackingidentifier"></a>
@@ -278,6 +321,25 @@ Retrieves the Analytics tracking identifier.
 ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperienceSDK: Tracking identifier: " + identifier));
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+```dart
+String trackingId;
+
+try {
+	trackingId = await FlutterACPAnalytics.trackingIdentifier;
+} on PlatformException {
+	log("Failed to get the tracking identifier");
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Set the custom visitor identifier <a id="setidentifier"></a>
@@ -337,7 +399,17 @@ ACPAnalytics.setVisitorIdentifier("custom_identifier")
 ### setVisitorIdentifier
 
 ```jsx
-ACPAnalytics.setVisitorIdentifier("yourVisitorId");
+ACPAnalytics.setVisitorIdentifier("custom_identifier");
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### setVisitorIdentifier
+
+```dart
+FlutterACPAnalytics.setVisitorIdentifier("yourVisitorId");
 ```
 {% endtab %}
 {% endtabs %}
@@ -413,5 +485,22 @@ ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
 ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### getVisitorIdentifier
+
+```dart
+String visitorId;
+
+try {
+	visitorId = await FlutterACPAnalytics.visitorIdentifier;
+} on PlatformException {
+	visitorId = "Failed to get the visitor identifier";
+}
+```
+{% endtab %}
+
 {% endtabs %}
 

@@ -48,9 +48,20 @@ ACPCore.setLogLevel(ACPMobileLogLevel.debug)
 
 ```jsx
 ACPCore.setLogLevel(ACPMobileLogLevel.DEBUG);
-ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
-ACPCore.setLogLevel(ACPMobileLogLevel.WARNING);
-ACPCore.setLogLevel(ACPMobileLogLevel.ERROR);
+//ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+//ACPCore.setLogLevel(ACPMobileLogLevel.WARNING);
+//ACPCore.setLogLevel(ACPMobileLogLevel.ERROR);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+## Dart
+
+```dart
+FlutterACPCore.setLogLevel(ACPLoggingLevel.DEBUG);
+//FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
+//FlutterACPCore.setLogLevel(ACPLoggingLevel.WARNING);
+//FlutterACPCore.setLogLevel(ACPLoggingLevel.ERROR);
 ```
 {% endtab %}
 {% endtabs %}
