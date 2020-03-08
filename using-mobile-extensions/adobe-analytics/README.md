@@ -14,7 +14,13 @@
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
-#### **Report suites**
+#### ** Analytics Company**
+
+![Adobe Analytics Company](../../.gitbook/assets/mobile-analytics-company.png)
+
+No select menu will appear for the analytics company if the user only has access to a single company.  On the other hand, a select menu will appear for users that have access to more than one analytics company.  The list of report suites associated with the selected company will appear in the combo box in the report suites section.
+ 
+#### **Report Suites**
 
 {% hint style="info" %}
 Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
