@@ -190,6 +190,16 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
     }
 }
 ```
+
+In iOS 13 and later, for a scene-based application.
+
+```swift
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        ACPGriffon.startSession((URLContexts.first!).url)
+}
+```
+
+
 {% endtab %}
 {% endtabs %}
 
