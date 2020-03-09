@@ -59,6 +59,17 @@ Import the Identity extension:
 import {ACPIdentity} from '@adobe/react-native-acpcore';
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+Import the Identity extension:
+
+#### Dart
+
+```dart
+import 'package:flutter_acpcore/flutter_acpidentity.dart';
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Register the Identity extension
