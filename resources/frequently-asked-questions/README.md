@@ -57,6 +57,7 @@ The Experience Platform SDK migrates the locally stored user contexts from the 4
 * Android versions 4.0 or later \(API levels 14 or later\)
 * iOS versions 10 or later
 * React Native versions 0.44.0 or later
+* Flutter versions 1.10.0 or later
 
 ### **How "big" is the SDK?**
 
