@@ -1274,134 +1274,6 @@ FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisit
 
 ## syncIdentifiers
 
-The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
-
-Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Syntax**
-
-```java
-public static void syncIdentifiers(final Map<String, String> identifiers, final VisitorID.AuthenticationState authState)
-```
-
-* _identifiers_ ia a map that contains IDs with the identifier type as the key, and the string identifier as the value.
-* _authState_ indicates the authentication state for the user, which contains one of the following `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.AUTHENTICATED`
-  * `VisitorID.AuthenticationState.LOGGED_OUT`
-  * `VisitorID.AuthenticationState.UNKNOWN`
-
-**Example**
-
-```java
-Map<String, String> identifiers = new HashMap<String, String>();
-identifiers.put("idType1", "idValue1");
-identifiers.put("idType2", "idValue2");
-identifiers.put("idType3", "idValue3");
-Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### iOS
-
-**Syntax**
-
-```objectivec
-+ (void) syncIdentifiers: (nullable NSDictionary*) identifiers authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
-```
-
-* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
-
-  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
-
-* The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
-
-**Examples**
-
-**Objective-C**
-
-```objectivec
-NSDictionary *ids = @{@"idType1":@"idValue1", 
-                      @"idType2":@"idValue2", 
-                      @"idType3":@"idValue3"};
-[ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
-```
-
-**Swift**
-
-```swift
-let identifiers : [String: String] = ["idType1":"idValue1",
-                                      "idType2":"idValue2",
-                                      "idType3":"idValue3"];
-ACPIdentity.syncIdentifiers(identifiers, authentication:
-ACPMobileVisitorAuthenticationState.authenticated)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-**Syntax**
-
-```jsx
-syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState: string);
-```
-
-* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
-
-  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
-
-* The _authenticationState \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
-
-**Example**
-
-```jsx
-import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
-
-ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-**Syntax**
-
-```dart
-Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPMobileVisitorAuthenticationState authState);
-```
-
-* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
-
-  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
-
-* The _authState_ \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
-
-**Example**
-
-```dart
-import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
-
-FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
-```
-{% endtab %}
-{% endtabs %}
-
-## syncIdentifiers \(overloaded\)
-
 This API is an overloaded version, which does not include the parameter for the authentication state and it assumes a default value of `VisitorID.AuthenticationState.UNKNOWN`.
 
 {% tabs %}
@@ -1503,6 +1375,145 @@ FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
                                     "idType2":"idValue2",
                                     "idType3":"idValue3"});
 ```
+{% endtab %}
+{% endtabs %}
+
+## syncIdentifiers \(overloaded\)
+
+The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
+
+Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
+
+```java
+public static void syncIdentifiers(final Map<String, String> identifiers, final VisitorID.AuthenticationState authState)
+```
+
+* _identifiers_ ia a map that contains IDs with the identifier type as the key, and the string identifier as the value.
+* _authState_ indicates the authentication state for the user, which contains one of the following `VisitorID.AuthenticationState` values:
+  * `VisitorID.AuthenticationState.AUTHENTICATED`
+  * `VisitorID.AuthenticationState.LOGGED_OUT`
+  * `VisitorID.AuthenticationState.UNKNOWN`
+
+**Example**
+
+```java
+Map<String, String> identifiers = new HashMap<String, String>();
+identifiers.put("idType1", "idValue1");
+identifiers.put("idType2", "idValue2");
+identifiers.put("idType3", "idValue3");
+Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### iOS
+
+**Syntax**
+
+```objectivec
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
+
+  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
+  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
+  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+**Examples**
+
+**Objective-C**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1", 
+                      @"idType2":@"idValue2", 
+                      @"idType3":@"idValue3"};
+[ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
+```
+
+**Swift**
+
+```swift
+let identifiers : [String: String] = ["idType1":"idValue1",
+                                      "idType2":"idValue2",
+                                      "idType3":"idValue3"];
+ACPIdentity.syncIdentifiers(identifiers, authentication:
+ACPMobileVisitorAuthenticationState.authenticated)
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+#### JavaScript
+
+**Syntax**
+
+```jsx
+syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState: string);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* The _authenticationState \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
+
+  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
+  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
+  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+**Example**
+
+```jsx
+import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
+
+ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+#### Dart
+
+**Syntax**
+
+```dart
+Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPMobileVisitorAuthenticationState authState);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* The _authState_ \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
+
+  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
+  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
+  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+
+**Example**
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
+
+FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
+```
+
 {% endtab %}
 {% endtabs %}
 
