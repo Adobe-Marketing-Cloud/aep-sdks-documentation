@@ -76,6 +76,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Apple WatchOS​ | Supported | _Support coming_ |
 | Apple tvOS​ | Supported | _Support coming_ |
 | React Native \(iOS & Android\) | Supported | Supported |
+| Flutter \(iOS & Android\) | Unupported | Supported |
 | Unity \(iOS & Android\)​ | Supported | _Not supported_ |
 | Xamarin \(iOS & Android\)​ | Supported | _Not supported_ |
 | PhoneGap \(iOS & Android\)​ | Supported | _Not supported_ |

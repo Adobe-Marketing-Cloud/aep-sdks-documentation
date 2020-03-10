@@ -18,7 +18,7 @@ With the latest Project Griffon SDK extensions, Android does not require this AP
 
 #### Syntax
 
-```text
+```java
 public static void startSession(final String url)
 ```
 
@@ -58,6 +58,23 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
         return false
     }
 }
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+#### Dart
+
+#### Syntax
+
+```dart
+static Future<void> startSession(String url);
+```
+
+#### Example
+
+```dart
+FlutterGriffon.startSession(url);
 ```
 {% endtab %}
 {% endtabs %}
@@ -100,6 +117,23 @@ Griffon.endSession()
 ACPGriffon.endSession()
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+#### Syntax
+
+```dart
+static Future<void> endSession();
+```
+
+#### Example
+
+```dart
+FlutterGriffon.endSession();
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## sendEvent
@@ -138,5 +172,27 @@ final GriffonEvent event = new GriffonEvent("com.adobe.myapp", "download info", 
 Griffon.sendEvent(newEvent);
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+#### Syntax
+
+The follow syntax shows you how to use the sendEvent API:
+
+```dart
+static Future<void> sendEvent(String vendor, String type, Map payload);
+```
+
+#### Example
+
+The following example shows you how to send a custom event that measures the download time of an asset’s download activity in the app.
+
+```dart
+// create and send the Griffon event
+FlutterGriffon.sendEvent("com.adobe.myapp", "download info", {"time": downloadTime, "size": data.length()});
+```
+{% endtab %}
+
 {% endtabs %}
 

@@ -47,6 +47,7 @@ Use the latest versions of the Adobe Experience Platform Mobile SDK and Project 
 
 {% tabs %}
 {% tab title="Android" %}
+
 **Java**
 
 1. Add the following libraries in your project's `build.gradle` file:
@@ -87,6 +88,14 @@ Import the Project Griffon libraries along with other SDK libraries:
 import ACPCore
 import ACPGriffon // <-- import the Project Griffon library
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Dart**
+
+Flutter install instructions for Griffon can be found [here](https://pub.dev/packages/flutter_griffon#-installing-tab-).
+
 {% endtab %}
 {% endtabs %}
 
@@ -144,6 +153,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      return true;
 }
 ```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+When using Flutter, registering Griffon with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
 {% endtab %}
 {% endtabs %}
 

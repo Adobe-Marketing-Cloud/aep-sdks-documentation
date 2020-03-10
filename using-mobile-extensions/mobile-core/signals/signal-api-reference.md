@@ -36,6 +36,14 @@ var signalExtensionVersion  = ACPSignal.extensionVersion()
 ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeExperienceSDK: ACPSignal version: " + signalExtensionVersion));
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
+```
+{% endtab %}
 {% endtabs %}
 
 ## CollectPII API
