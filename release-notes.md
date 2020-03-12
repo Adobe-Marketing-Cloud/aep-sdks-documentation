@@ -8,6 +8,25 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## March 11, 2020
+
+The following updates were made in this release:
+
+### Android Target 1.1.5
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Target Session Id will now be added as a context data parameter `a.target.sessionId` in the internal Analytics for Target hit sent to Adobe Analytics.
+* Fixed an issue, where on app close and relaunch, previously persisted tntId was not being sent in Target requests. 
+
+## March 10, 2020
+
+The following updates were made in this release:
+
+### iOS Target 2.1.6
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Target Session Id will now be added as a context data parameter `a.target.sessionId` in the internal Analytics for Target hit sent to Adobe Analytics.
+
 ## March 2, 2020
 
 The following updates were made in this release:
