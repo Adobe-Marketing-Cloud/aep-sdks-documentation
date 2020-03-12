@@ -297,7 +297,7 @@ To set up local notifications in Android, update the AndroidManifest.xml file wi
 
 {% tab title="iOS" %}
 
-No additional setup is needed for iOS in-app messaging and local notifications
+No additional setup is needed for iOS in-app messaging and local notifications.
 
 {% endtab %} 
 
