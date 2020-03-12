@@ -1,5 +1,14 @@
 # Release Notes
 
+## March 16, 2020
+
+The following updates were made in this release:
+
+### iOS Identity 2.2.1
+
+- Fixed an issue where all Identity APIs with callbacks were subject to a timeout. Only Identity APIs which use a completionHandler callback are subject to a timeout.
+- Improved existing log messages and added additional logging to assist with debugging.
+
 ## February 27, 2020
 
 The following updates were made in this release:
