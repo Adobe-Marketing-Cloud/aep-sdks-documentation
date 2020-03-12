@@ -8,7 +8,7 @@ When upgrading to the Experience Platform SDK, you must add code to continue col
 
 ## Implementing Lifecycle metrics in iOS
 
-For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/db7da44a368ec6377ea0231078ffcae8a77491ab/using-mobile-extensions/lifecycle/README.md#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 ## Tracking app crashes in iOS
 
