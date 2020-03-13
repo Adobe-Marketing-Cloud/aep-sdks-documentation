@@ -114,6 +114,10 @@ To pass in a bundled path and file name:
 {% tabs %}
 {% tab title="Android" %}
 ```java
+// Case 1: to use ADBMobileConfig.json in the assets folder
+// No code is needed
+
+// Case 2: to use a config json from a different path:
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
