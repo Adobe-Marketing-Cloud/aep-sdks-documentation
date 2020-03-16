@@ -14,8 +14,8 @@ The following updates were made in this release:
 
 ### iOS Core 2.5.1
 
-* Fixed an crash which happened on `ADBJsonType::Get`.
-* Fixed an crash which happened on `EventHubInner::CreateOrUpdateSharedStateCommon`, the crash was introduced on the version 2.5.0.
+* Fixed a crash which happened in `ADBJsonType::Get`.
+* Fixed a crash which happened in `EventHubInner::CreateOrUpdateSharedStateCommon`, the crash was introduced on the version 2.5.0.
 * Fixed an internal issue where the SDK failed to create a Json array if it contains empty items.
 * Improved log messages.
 
