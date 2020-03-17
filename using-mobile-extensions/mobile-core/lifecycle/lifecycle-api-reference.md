@@ -39,19 +39,19 @@ This method should be called from the Activity onResume method.
 
 **Syntax**
 
-```objective-c
+```text
 + (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
-```objective-c
+```text
 [ACPCore lifecycleStart:@{@"state": @"appResume"}];
 ```
 
@@ -86,6 +86,7 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 > Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
 
 **Syntax**
+
 ```dart
 Future<void> lifecycleStart (Map<String, String> contextData);
 ```
@@ -126,13 +127,13 @@ MobileCore.lifecyclePause();
 
 **Syntax**
 
-```objective-c
+```text
 + (void) lifecyclePause;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore lifecyclePause];
 ```
 
@@ -149,6 +150,7 @@ ACPCore.lifecyclePause()
 > Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
 
 **Syntax**
+
 ```jsx
 lifecyclePause();
 ```
@@ -166,6 +168,7 @@ ACPCore.lifecyclePause();
 > Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
 
 **Syntax**
+
 ```dart
 Future<void> lifecyclePause();
 ```
@@ -176,6 +179,5 @@ Future<void> lifecyclePause();
 FlutterACPCore.lifecyclePause();
 ```
 {% endtab %}
-
 {% endtabs %}
 

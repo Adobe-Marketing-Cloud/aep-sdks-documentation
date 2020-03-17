@@ -40,13 +40,13 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 #### Syntax
 
-```objective-c
+```text
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```objective-c
+```text
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
@@ -54,7 +54,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 #### Syntax
 
-```objective-c
+```text
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
@@ -75,6 +75,7 @@ trackAction(action?: String, contextData?: { string: string });
 ```
 
 #### Example
+
 ```jsx
 ACPCore.trackAction("action", {"mytest": "action"});
 ```
@@ -90,11 +91,11 @@ Future<void> trackAction(String action, {Map<String, String> data});
 ```
 
 #### Example
+
 ```dart
 FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Track app states and screens
@@ -131,13 +132,13 @@ MobileCore.trackState("homePage", additionalContextData);
 
 #### Syntax
 
-```objective-c
+```text
  + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
 #### Example
 
-```objective-c
+```text
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
@@ -145,7 +146,7 @@ MobileCore.trackState("homePage", additionalContextData);
 
 #### Syntax
 
-```objective-c
+```text
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
@@ -160,11 +161,13 @@ ACPCore.trackState("state name", data: ["key": "value"])
 ### JavaScript
 
 #### Syntax
+
 ```jsx
 trackState(state?: String, contextData?: { string: string });
 ```
 
 #### Example
+
 ```jsx
 ACPCore.trackState("state", {"mytest": "state"});
 ```
@@ -174,11 +177,13 @@ ACPCore.trackState("state", {"mytest": "state"});
 ### Dart
 
 #### Syntax
+
 ```dart
 Future<void> trackState(String state, {Map<String, String> data});
 ```
 
 #### Example
+
 ```dart
 FlutterACPCore.trackState("state",  data: {"mytest": "state"});
 ```

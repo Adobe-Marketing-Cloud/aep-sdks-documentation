@@ -22,7 +22,6 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Objective-C**
 
 ```objectivec
@@ -38,7 +37,6 @@ ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 {% hint style="info" %}
 Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
 {% endhint %}
-
 {% endtab %}
 {% endtabs %}
 

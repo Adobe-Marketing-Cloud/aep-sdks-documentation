@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
-##  March 16, 2020
+## March 16, 2020
 
 The following updates were made in this release:
 
@@ -21,14 +21,16 @@ The following updates were made in this release:
 
 ### iOS Identity 2.2.1
 
-- Fixed an issue where all Identity APIs with callbacks were subject to a timeout. Only Identity APIs which use a completionHandler callback are subject to a timeout.
-- Improved existing log messages and added additional logging to assist with debugging.
+* Fixed an issue where all Identity APIs with callbacks were subject to a timeout. Only Identity APIs which use a completionHandler callback are subject to a timeout.
+* Improved existing log messages and added additional logging to assist with debugging.
 
 ### iOS Signal 2.0.4
+
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved log messages.
 
 ### iOS Lifecycle 2.0.4
+
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved log messages.
 

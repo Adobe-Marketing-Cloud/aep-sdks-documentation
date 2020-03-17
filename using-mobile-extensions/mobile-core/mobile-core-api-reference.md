@@ -144,6 +144,7 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 ### trackAction
 
 **Syntax**
+
 ```jsx
 trackAction(action?: String, contextData?: { string: string });
 ```
@@ -161,8 +162,9 @@ ACPCore.trackAction("action name", {"key": "value"});
 ### trackAction
 
 **Syntax**
+
 ```dart
-Future<void> trackAction (String action, {Map<String, String> data}); 
+Future<void> trackAction (String action, {Map<String, String> data});
 ```
 
 **Example**
@@ -242,6 +244,7 @@ ACPCore.trackState("state name", data: ["key": "value"])
 #### trackState
 
 **Syntax**
+
 ```jsx
 trackState(state?: String, contextData?: { string: string });
 ```
@@ -259,6 +262,7 @@ ACPCore.trackState("state name", {"key": "value"});
 #### trackState
 
 **Syntax**
+
 ```dart
 Future<void> trackState (String state, {Map<String, String> data});
 ```

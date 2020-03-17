@@ -148,7 +148,7 @@ _`products`_ is set directly on the image request, and the other variables are s
 
 You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
 
-## Products variable with merchandising eVars and product-specific events   <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
+## Products variable with merchandising eVars and product-specific events <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
 
 Here is an example of the products variable with Merchandising eVars and product-specific events.
 
@@ -222,7 +222,6 @@ ACPCore.trackState("Order Confirmation", data: contextData)
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **JavaScript**
 
 ```jsx
@@ -245,7 +244,6 @@ ACPCore.trackState("Order Confirmation", contextData);
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 **Dart**
 
 ```dart
@@ -266,7 +264,6 @@ FlutterACPCore.trackAction("purchase", data: contextData);
 FlutterACPCore.trackState("Order Confirmation", data: contextData);
 ```
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}

@@ -291,7 +291,6 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 ```
 
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use getUrlVariables.
-
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -481,9 +480,7 @@ try {
 } on PlatformException {
   log("Failed to get experienceCloudId");
 }
-
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -878,14 +875,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### JavaScript
 
 When using React Native, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 
 {% tab title="Flutter" %}
 #### Dart
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 
@@ -1049,7 +1044,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID");
 **Syntax**
 
 ```dart
-Future<void> setAdvertisingIdentifier (String aid); 
+Future<void> setAdvertisingIdentifier (String aid);
 ```
 
 * _aid_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
@@ -1386,7 +1381,6 @@ Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if 
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 **Syntax**
@@ -1410,11 +1404,9 @@ identifiers.put("idType2", "idValue2");
 identifiers.put("idType3", "idValue3");
 Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### iOS
 
 **Syntax**
@@ -1428,7 +1420,6 @@ Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * The _authenticationState \(VisitorIDAuthenticationState\)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
-
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
   * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
   * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1453,11 +1444,9 @@ let identifiers : [String: String] = ["idType1":"idValue1",
 ACPIdentity.syncIdentifiers(identifiers, authentication:
 ACPMobileVisitorAuthenticationState.authenticated)
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 **Syntax**
@@ -1471,7 +1460,6 @@ syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * The _authenticationState \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
   * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
   * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1483,11 +1471,9 @@ import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
 
 ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 #### Dart
 
 **Syntax**
@@ -1500,8 +1486,7 @@ Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPM
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authState_ \(ACPMobileVisitorAuthenticationState\)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-
+* The _authState_ \(ACPMobileVisitorAuthenticationState\)\_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
   * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
   * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
   * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1513,7 +1498,6 @@ import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
 
 FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1623,6 +1607,7 @@ var visitorId = new ACPVisitorID(idOrigin?: string, idType: string, id?: string,
 **ACPMobileVisitorAuthenticationState**
 
 This is used to indicate the authentication state for the current `VisitorID`.
+
 ```jsx
 import {ACPMobileVisitorAuthenticationState} from '@adobe/react-native-acpcore';
 
@@ -1630,7 +1615,6 @@ var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
 //var state = ACPMobileVisitorAuthenticationState.LOGGED_OUT;
 //var state = ACPMobileVisitorAuthenticationState.UNKNOWN;
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -1655,12 +1639,12 @@ class ACPMobileVisitorId {
 **ACPMobileVisitorAuthenticationState**
 
 This is used to indicate the authentication state for the current `VisitorID`.
+
 ```dart
 import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
 
 enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 ```
-
 {% endtab %}
 {% endtabs %}
 
