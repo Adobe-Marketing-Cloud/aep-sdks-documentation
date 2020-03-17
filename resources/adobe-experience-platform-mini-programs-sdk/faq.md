@@ -6,7 +6,7 @@ If you have followed our documentation and are unable to see reporting data in y
 
 #### Verify that network requests are sent to Adobe Analytics
 
-You may use the debug tools in WeChat-provided Devtools or in a network proxy monitor \(such as Charles or Fiddler\) to ensure that your Mini Program is sending network requests to Adobe Analytics.
+You may use the debug tools in [WeChat DevTools](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/devtools.html) or in a network proxy monitor \(such as [Charles](https://www.charlesproxy.com/) or [Fiddler](https://www.telerik.com/fiddler)\) to ensure that your Mini Program is sending network requests to Adobe Analytics.
 
 For example, network hits to Adobe Analytics will contain values from your SDK configuration block such as tracking server and report suite\(s\) values; context variables or `s` parameters.
 
@@ -21,7 +21,7 @@ The following settings explain how settings between the SDK and your report suit
 
 #### Contact Adobe Customer Care
 
-
+If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance.
 
 ### Do Adobe Analytics-provided tracking servers have an ICP?
 
