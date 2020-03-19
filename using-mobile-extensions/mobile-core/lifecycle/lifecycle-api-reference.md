@@ -79,24 +79,6 @@ lifecycleStart(additionalContextData?: { string: string });
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Syntax**
-
-```dart
-Future<void> lifecycleStart (Map<String, String> contextData);
-```
-
-**Example**
-
-```dart
-FlutterACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
-{% endtab %}
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -159,24 +141,6 @@ lifecyclePause();
 
 ```jsx
 ACPCore.lifecyclePause();
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Syntax**
-
-```dart
-Future<void> lifecyclePause();
-```
-
-**Example**
-
-```dart
-FlutterACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}

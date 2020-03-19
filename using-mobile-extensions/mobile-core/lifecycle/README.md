@@ -218,26 +218,6 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
-
-{% tab title="Flutter" %}
-**Registering the extension with Core:**
-
-When using Flutter, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Starting a lifecycle event:**
-
-```dart
-FlutterACPCore.lifecycleStart({"contextKey": "contextValue"});
-```
-
-**Pausing a lifecycle event:**
-
-```dart
-FlutterACPCore.lifecyclePause();
-```
-{% endtab %}
 {% endtabs %}
 
 ## Lifecycle metrics
