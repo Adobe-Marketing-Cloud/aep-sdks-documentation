@@ -38,10 +38,15 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | trackTimedActionUpdate: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | trackTimedActionEnd: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
+| trackPushMessageClickThrough:userInfo([iOS](https://docs.adobe.com/content/help/en/mobile-services/ios/messaging-ios/push-messaging/push-messaging.html) \| [Android](https://docs.adobe.com/content/help/en/mobile-services/android/messaging-android/push-messaging/push-messaging.html)) | Deprecated |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
+|  |  |
 
 {% hint style="info" %}
-For methods to send beacon tracking data to Adobe Analytics, see this [guide](../user-guides/track-beacon.md)
+For methods to send beacon tracking data to Adobe Analytics, see this [guide](../user-guides/track-beacon.md).
+
+For push tracking, see [How can I implement push tracking with Experience Platform Mobile SDK](../frequently-asked-questions/README.md).
+
 {% endhint %}
 
 ## Lifecycle extension APIs

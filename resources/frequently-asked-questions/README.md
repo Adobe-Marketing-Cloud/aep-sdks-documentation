@@ -89,6 +89,14 @@ Add the following rule to your custom ProGuard rules file, typically labeled `pr
 }
 ```
 
+### How can I implement push tracking with Experience Platform Mobile SDK?
+
+You can implement push tracking in multiple ways with the Experience Platform Mobile SDKs, depending on which extension you are using:
+
+- For the Campaign Standard extension, see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+- If you use the Campaign classic extension, see [Tracking push notifications](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference#tracknotification-api).
+- For Adobe Analytics - Mobile Services extension, see [Set up push tracking](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-tracking).
+
 ## Mobile Core
 
 ### What are Lifecycle metrics?
