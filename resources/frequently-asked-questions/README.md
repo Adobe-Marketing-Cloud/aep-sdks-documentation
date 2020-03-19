@@ -34,7 +34,7 @@ If your apps send data to the same Analytics report suites, use the same extensi
 
 ### How do I delete a mobile property in Experience Platform Launch?
 
-To delete a mobile property from Experience Platform Launch, see [Delete a property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property). 
+To delete a mobile property from Experience Platform Launch, see [Delete a property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
 
 {% hint style="warning" %}
 If you delete a mobile property, you cannot undo this action!
@@ -79,9 +79,9 @@ The size values in the table are provided as indicative estimates, with the foll
 
 ### How can I use ProGuard with the Android SDK?
 
- Android developer documentation recommends that to make your APK file as small as possible, enable shrinking to remove unused code and resources in your release build. For more information, see [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code). Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html). The Experience Platform Mobile SDK for Android comes with default ProGuard rules that are included in the Core `AAR` package \(see `proguard.txt`\). We recommend that you use this default package when you implement. 
+Android developer documentation recommends that to make your APK file as small as possible, enable shrinking to remove unused code and resources in your release build. For more information, see [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code). Shrinking is accomplished by using [ProGuard](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html). The Experience Platform Mobile SDK for Android comes with default ProGuard rules that are included in the Core `AAR` package \(see `proguard.txt`\). We recommend that you use this default package when you implement.
 
-Add the following rule to your custom ProGuard rules file, typically labeled `proguard-rules.pro`. For more information, see  [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code).
+Add the following rule to your custom ProGuard rules file, typically labeled `proguard-rules.pro`. For more information, see [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code).
 
 ```java
 -keep class com.adobe.marketing.mobile.* {
@@ -103,7 +103,7 @@ For more information, see [Processing Rules Tips and Tricks](https://docs.adobe.
 
 ### How are mobile visits different from launches?
 
-A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting. 
+A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting.
 
 A visit is a server-side calculation by Adobe Analytics and is based on the first and last data hits that are sent by the SDK without exceeding a visit timeout. Typically, session timeouts are set at 30 minutes for a report suite. Although visits come from traditional web analytics, these hits still provide valuable insights into how users enter and exit from your app.
 

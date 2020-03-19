@@ -39,19 +39,19 @@ This method should be called from the Activity onResume method.
 
 **Syntax**
 
-```objective-c
+```text
 + (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
-```objective-c
+```text
 [ACPCore lifecycleStart:@{@"state": @"appResume"}];
 ```
 
@@ -77,23 +77,6 @@ lifecycleStart(additionalContextData?: { string: string });
 
 ```jsx
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Syntax**
-```dart
-Future<void> lifecycleStart (Map<String, String> contextData);
-```
-
-**Example**
-
-```dart
-FlutterACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -126,13 +109,13 @@ MobileCore.lifecyclePause();
 
 **Syntax**
 
-```objective-c
+```text
 + (void) lifecyclePause;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPCore lifecyclePause];
 ```
 
@@ -149,6 +132,7 @@ ACPCore.lifecyclePause()
 > Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
 
 **Syntax**
+
 ```jsx
 lifecyclePause();
 ```
@@ -159,23 +143,5 @@ lifecyclePause();
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Syntax**
-```dart
-Future<void> lifecyclePause();
-```
-
-**Example**
-
-```dart
-FlutterACPCore.lifecyclePause();
-```
-{% endtab %}
-
 {% endtabs %}
 

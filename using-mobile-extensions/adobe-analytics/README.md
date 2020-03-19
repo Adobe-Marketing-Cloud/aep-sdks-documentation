@@ -14,12 +14,12 @@
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
-#### ** Analytics Company**
+#### **Analytics Company**
 
 ![Adobe Analytics Company](../../.gitbook/assets/mobile-analytics-company.png)
 
-No select menu will appear for the analytics company if the user only has access to a single company.  On the other hand, a select menu will appear for users that have access to more than one analytics company.  The list of report suites associated with the selected company will appear in the combo box in the report suites section.
- 
+No select menu will appear for the analytics company if the user only has access to a single company. On the other hand, a select menu will appear for users that have access to more than one analytics company. The list of report suites associated with the selected company will appear in the combo box in the report suites section.
+
 #### **Report Suites**
 
 {% hint style="info" %}
@@ -148,32 +148,30 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
    ```
 
    1.1 Link
-   - **React Native 0.60+**
 
+   * **React Native 0.60+**
 
-   [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
 
+* **React Native &lt;= 0.59**
 
-   - **React Native <= 0.59**
-
-
-   ```bash
+```bash
    react-native link @adobe/react-native-acpanalytics
-   ```
+```
 
-   *Note* For `iOS` using `cocoapods`, run:
+_Note_ For `iOS` using `cocoapods`, run:
 
-   ```bash
+```bash
    cd ios/ && pod install
-   ```
+```
 
-2. Import the extension.
+1. Import the extension.
 
    ```jsx
     import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
    ```
 
-3. Get the extension version.
+2. Get the extension version.
 
    ```jsx
     ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
@@ -186,16 +184,19 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 1. Install Analytics.
 
    Instructions on installing the Analytics SDK in Flutter can be found [here](https://pub.dev/packages/flutter_acpanalytics#-installing-tab-).
+
 2. Import the extension.
+
    ```dart
    import 'package:flutter_acpanalytics/flutter_acpanalytics.dart';
    ```
+
 3. Get the extension version.
+
    ```dart
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -264,16 +265,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### JavaScript
 
 When using React Native, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 
 {% tab title="Flutter" %}
 #### Dart
 
 When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Send Lifecycle Metrics to Analytics
@@ -406,7 +404,6 @@ FlutterACPCore.trackAction("Action Name",  data: contextData);
 FlutterACPCore.trackState("State Name",  data: contextData);
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Videos
@@ -444,11 +441,7 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.offlineEnabled` | No | See [Offline Enabled](./#offline-enabled) |
-| :--- | :--- | :--- |
-
-
-| `analytics.backdatePreviousSessionInfo` | No | See [Backdate Previous Session Info.](./#backdate-previous-session-info) |
+</table>| `analytics.backdatePreviousSessionInfo` | No | See [Backdate Previous Session Info.](./#backdate-previous-session-info) |
 | :--- | :--- | :--- |
 
 
@@ -523,3 +516,4 @@ FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracki
 {% endtabs %}
 
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+

@@ -69,7 +69,6 @@ Import the Identity extension:
 import 'package:flutter_acpcore/flutter_acpidentity.dart';
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Register the Identity extension
@@ -136,7 +135,6 @@ When using React Native, registering Identity with Mobile Core should be done in
 #### Dart
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 

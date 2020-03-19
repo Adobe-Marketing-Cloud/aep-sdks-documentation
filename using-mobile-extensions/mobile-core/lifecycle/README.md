@@ -20,7 +20,7 @@ Sessions contain information about the app's current lifecycle, such as the devi
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+### Objective-C
 
 1. Import the library:
 
@@ -29,7 +29,7 @@ Sessions contain information about the app's current lifecycle, such as the devi
  #import "ACPCore.h"
 ```
 
-#### Swift
+### Swift
 
 1. In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
@@ -39,25 +39,23 @@ import ACPCore
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 Import the Lifecycle extension
 
 ```jsx
 import {ACPLifecycle} from '@adobe/react-native-acpcore';
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
 Import the Lifecycle extension
 
 ```dart
 import 'package:flutter_acpcore/flutter_acplifecycle.dart';
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -154,7 +152,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
     }
    ```
 
-#### Swift
+### Swift
 
 1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
 
@@ -202,7 +200,6 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Registering the extension with Core:**
 
 When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
@@ -219,27 +216,6 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 
 ```jsx
 ACPCore.lifecyclePause();
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-
-**Registering the extension with Core:**
-
-When using Flutter, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
-> Note: Implementing Lifecycle via Dart may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in Dart to support flexible Lifecycle implementations.
-
-**Starting a lifecycle event:**
-
-```dart
-FlutterACPCore.lifecycleStart({"contextKey": "contextValue"});
-```
-
-**Pausing a lifecycle event:**
-
-```dart
-FlutterACPCore.lifecyclePause();
 ```
 {% endtab %}
 {% endtabs %}

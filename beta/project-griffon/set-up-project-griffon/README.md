@@ -1,7 +1,7 @@
 # Set up Project Griffon
 
 {% hint style="warning" %}
-Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon). 
+Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
 {% hint style="danger" %}
@@ -47,7 +47,6 @@ Use the latest versions of the Adobe Experience Platform Mobile SDK and Project 
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Java**
 
 1. Add the following libraries in your project's `build.gradle` file:
@@ -66,7 +65,7 @@ Use the latest versions of the Adobe Experience Platform Mobile SDK and Project 
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/ACPGriffon) `Podfile` 
+Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/ACPGriffon) `Podfile`
 
 ```text
 pod 'ACPCore'
@@ -91,11 +90,9 @@ import ACPGriffon // <-- import the Project Griffon library
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 **Dart**
 
 Flutter install instructions for Griffon can be found [here](https://pub.dev/packages/flutter_griffon#-installing-tab-).
-
 {% endtab %}
 {% endtabs %}
 
@@ -156,20 +153,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 When using Flutter, registering Griffon with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 
 #### Implement Project Griffon session start APIs \(iOS\)
 
-The  `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 With the latest Project Griffon SDK extensions, Android does not require this API to be called. When the `registerExtension` API is called, Project Griffon registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 {% hint style="info" %}
-You may call this API when the app launches with a url \(see code snippet below  for sample usage\)
+You may call this API when the app launches with a url \(see code snippet below for sample usage\)
 {% endhint %}
 
 {% tabs %}
@@ -213,8 +208,6 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
         ACPGriffon.startSession((URLContexts.first!).url)
 }
 ```
-
-
 {% endtab %}
 {% endtabs %}
 

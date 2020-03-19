@@ -78,7 +78,6 @@ Regardless of how many hits are currently queued, this method forces the library
 FlutterACPAnalytics.sendQueuedHits();
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Clear queued hits <a id="clearqueue"></a>
@@ -153,7 +152,6 @@ ACPAnalytics.clearQueue();
 FlutterACPAnalytics.clearQueue();
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Get the queue size <a id="getqueuesize"></a>
@@ -231,13 +229,12 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 int queueSize;
 
 try {
-	queueSize = await FlutterACPAnalytics.queueSize;
+    queueSize = await FlutterACPAnalytics.queueSize;
 } on PlatformException {
-	log("Failed to get the queue size");
+    log("Failed to get the queue size");
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Get the tracking identifier <a id="gettrackingidentifier"></a>
@@ -333,13 +330,12 @@ Retrieves the Analytics tracking identifier.
 String trackingId;
 
 try {
-	trackingId = await FlutterACPAnalytics.trackingIdentifier;
+    trackingId = await FlutterACPAnalytics.trackingIdentifier;
 } on PlatformException {
-	log("Failed to get the tracking identifier");
+    log("Failed to get the tracking identifier");
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Set the custom visitor identifier <a id="setidentifier"></a>
@@ -495,12 +491,11 @@ ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK:
 String visitorId;
 
 try {
-	visitorId = await FlutterACPAnalytics.visitorIdentifier;
+    visitorId = await FlutterACPAnalytics.visitorIdentifier;
 } on PlatformException {
-	visitorId = "Failed to get the visitor identifier";
+    visitorId = "Failed to get the visitor identifier";
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 

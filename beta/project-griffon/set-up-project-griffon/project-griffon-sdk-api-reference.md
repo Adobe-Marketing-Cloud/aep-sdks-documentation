@@ -2,10 +2,10 @@
 
 ## startSession
 
-The  `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-You may call this API when the app launches with a url \(see code snippet below  for sample usage\)
+You may call this API when the app launches with a url \(see code snippet below for sample usage\)
 {% endhint %}
 
 {% tabs %}
@@ -14,15 +14,15 @@ This API is optional for Android.
 
 With the latest Project Griffon SDK extensions, Android does not require this API to be called. When the `registerExtension` API is called, Project Griffon registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
-#### Java
+### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public static void startSession(final String url)
 ```
 
-#### Example
+### Example
 
 ```java
  Griffon.startSession(url);
@@ -30,15 +30,15 @@ public static void startSession(final String url)
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+### Objective-C
 
-#### Syntax
+### Syntax
 
 ```objectivec
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
 
-#### Example
+### Example
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -47,9 +47,9 @@ public static void startSession(final String url)
 }
 ```
 
-#### Swift
+### Swift
 
-#### Example
+### Example
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -62,16 +62,15 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 {% endtab %}
 
 {% tab title="Flutter" %}
+### Dart
 
-#### Dart
-
-#### Syntax
+### Syntax
 
 ```dart
 static Future<void> startSession(String url);
 ```
 
-#### Example
+### Example
 
 ```dart
 FlutterGriffon.startSession(url);
@@ -87,7 +86,7 @@ This API ends the active session and ensures that no data is sent to a Project G
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 ```java
 Griffon.endSession()
@@ -95,23 +94,23 @@ Griffon.endSession()
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+### Objective-C
 
-#### Syntax
+### Syntax
 
 ```objectivec
 + (void) endSession;
 ```
 
-#### Example
+### Example
 
 ```objectivec
 [ACPGriffon endSession];
 ```
 
-#### Swift
+### Swift
 
-#### Example
+### Example
 
 ```swift
 ACPGriffon.endSession()
@@ -119,20 +118,19 @@ ACPGriffon.endSession()
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
-#### Syntax
+### Syntax
 
 ```dart
 static Future<void> endSession();
 ```
 
-#### Example
+### Example
 
 ```dart
 FlutterGriffon.endSession();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -142,9 +140,9 @@ You may send custom events from the app to Project Griffon using the following A
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-#### Syntax
+### Syntax
 
 The follow syntax shows you how to use the sendEvent API:
 
@@ -158,7 +156,7 @@ The following syntax shows you how to create a Griffon event:
 public GriffonEvent(final String vendor, final String type, final Map<String, Object> payload)
 ```
 
-#### Example
+### Example
 
 The following example shows you how to send a custom event that measures the download time of an asset’s download activity in the app.
 
@@ -174,9 +172,9 @@ Griffon.sendEvent(newEvent);
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
-#### Syntax
+### Syntax
 
 The follow syntax shows you how to use the sendEvent API:
 
@@ -184,7 +182,7 @@ The follow syntax shows you how to use the sendEvent API:
 static Future<void> sendEvent(String vendor, String type, Map payload);
 ```
 
-#### Example
+### Example
 
 The following example shows you how to send a custom event that measures the download time of an asset’s download activity in the app.
 
@@ -193,6 +191,5 @@ The following example shows you how to send a custom event that measures the dow
 FlutterGriffon.sendEvent("com.adobe.myapp", "download info", {"time": downloadTime, "size": data.length()});
 ```
 {% endtab %}
-
 {% endtabs %}
 

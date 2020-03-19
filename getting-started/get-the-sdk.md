@@ -73,7 +73,6 @@ For the latest React Native installation instructions, see the README file in th
 ### Flutter
 
 For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
-
 {% endtab %}
 {% endtabs %}
 
@@ -253,7 +252,6 @@ initSDK() {
 #### Dart
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
-
 {% endtab %}
 {% endtabs %}
 

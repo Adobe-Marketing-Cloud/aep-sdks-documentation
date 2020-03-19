@@ -109,6 +109,7 @@
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/README.md)
   * [Implementation](resources/adobe-experience-platform-mini-programs-sdk/implementation.md)
   * [Implementation - 中文–简体](resources/adobe-experience-platform-mini-programs-sdk/implementation-zhong-wen-1.md)
+  * [Frequently Asked Questions](resources/adobe-experience-platform-mini-programs-sdk/faq.md)
 
 ## BETA
 
