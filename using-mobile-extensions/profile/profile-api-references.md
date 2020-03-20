@@ -135,9 +135,8 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove a user attribute**
+## **Remove user attributes**
 
-Removes the given attribute name.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -233,3 +232,64 @@ ACPUserProfile.removeUserAttributes(["UsesrName","Password"]);
 {% endtab %}
 {% endtabs %}
 
+## **Get user attributes**
+
+{% tabs %}
+{% tab title="Android" %}
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```java
+public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
+```
+
+#### **Example**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+```java
+UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallback<Map<String, Object>>() {
+			@Override
+			public void call(Map<String, Object> stringObjectMap) {
+          // your customized code
+			}
+		});
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+### removeUserAttribute
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```objectivec
++ (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
+```
+
+#### **Examples**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile getUserAttributes:attributes withCompletionHandler:^(NSDictionary* dict, NSError* error){
+    // your customized code
+    }];
+```
+
+**Swift**
+
+```swift
+ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
+              // your customized code
+})
+```
+{% endtab %}
+{% endtabs %}
