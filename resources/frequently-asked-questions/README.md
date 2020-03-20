@@ -89,6 +89,14 @@ Add the following rule to your custom ProGuard rules file, typically labeled `pr
 }
 ```
 
+### How can I track user engagement of push notifications using the Experience Platform Mobile SDK?
+
+How you implement push notification tracking and measurement with the SDK depends on the Experience Cloud solution being used. Specifically, for:
+
+- Adobe Campaign Standard extension, see [Adobe Campaign Standard Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+- Adobe Campaign Classic extension, see [Adobe Campaign Classic Push Notifications Tracking](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference#tracknotification-api).
+- Adobe Analytics - Mobile Services extension, see [Set Up Tracking for Mobile Services Push Notifications](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-tracking).
+
 ## Mobile Core
 
 ### What are Lifecycle metrics?
