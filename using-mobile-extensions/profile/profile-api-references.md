@@ -158,6 +158,24 @@ A retail application wants to remove the `itemsAddedToCart` user data after the 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
 ```
+### **removeUserAttributes**
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```java
+public static void removeUserAttributes(List<String> attributeNames)
+```
+
+#### **Example**
+
+You want to remove `username`, `passowrd` user data when session timeout occurs. 
+
+```java
+UserProfile.removeUserAttributes(Arrays.asList("UserName", "Password"));
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -186,6 +204,32 @@ A retail application wants to remove the `itemsAddedToCart` user data after the 
 ```swift
 ACPUserProfile.removeUserAttribute("itemsAddedToCart");
 ```
+### removeUserAttributes
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```objectivec
++ (void) removeUserAttributes: (nonnull NSArray <NSString*>*) attributeNames
+```
+
+#### **Examples**
+
+You want to remove `username`, `passowrd` user data when session timeout occurs. 
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile removeUserAttributes:@[@"UsesrName", @"Password"]]
+```
+
+**Swift**
+
+```swift
+ACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
 {% endtab %}
 {% endtabs %}
 
