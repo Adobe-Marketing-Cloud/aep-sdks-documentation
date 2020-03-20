@@ -276,9 +276,7 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>
-
-### Install
+</table>### Install
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |
