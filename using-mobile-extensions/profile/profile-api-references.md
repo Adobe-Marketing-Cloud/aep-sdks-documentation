@@ -227,7 +227,7 @@ You want to remove `username`, `passowrd` user data when session timeout occurs.
 **Swift**
 
 ```swift
-ACPUserProfile.removeUserAttribute("itemsAddedToCart");
+ACPUserProfile.removeUserAttributes(["UsesrName","Password"]);
 ```
 
 {% endtab %}
