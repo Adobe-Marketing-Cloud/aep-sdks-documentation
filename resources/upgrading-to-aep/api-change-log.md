@@ -43,7 +43,7 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 |  |  |
 
 {% hint style="info" %}
-For methods to send beacon tracking data to Adobe Analytics, see this [guide](../user-guides/track-beacon.md).
+To send beacon tracking data to Adobe Analytics for, see this [guide](../user-guides/track-beacon.md).
 
 For push tracking, see [How can I implement push tracking with Experience Platform Mobile SDK](../frequently-asked-questions/README.md).
 
