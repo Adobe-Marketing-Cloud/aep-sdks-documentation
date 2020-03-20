@@ -136,7 +136,7 @@ For more details see [Audience Manager Content Response Document](https://aep-sd
 
 Whenever the configuration extension dispatches the Configuration Response Content event, the Identity extension fetches the URL of the Experience Cloud Identity Service,  Experience Cloud Organization Identifier, and the Privacy status settings.
 
-This event will be generated in the following scenarios:
+This event is generated in the following scenarios:
 
 - Initial config requested by the customer.
 - Configuration modified (remote update or local developer action).
@@ -154,7 +154,7 @@ The data property in the Configuration Response Content event is used by each ex
 
 #### Data Payload Definition
 
-The Identity extension will read the following keys from the configuration event:
+The Identity extension reads the following keys from the configuration event:
 
 Here are the key-value pairs in this event:
 
@@ -169,7 +169,7 @@ Here are the key-value pairs in this event:
 
 #### Event Description
 
-The shared state event is dispatched by the event hub after a shared state is created or updated. The event data contains the event owner, the name of the extension to which the shared state belongs. Upon hearing this event, the relevant listener rergistered by the Identity extension triggers processing of Identity module's event queue.
+The shared state event is dispatched by the event hub after a shared state is created or updated. The event data contains the event owner, the name of the extension to which the shared state belongs. The Identity extension triggers processing the queued events, if any, when the Configuration's shared state is updated.
 
 #### Event Details
 
@@ -179,7 +179,7 @@ The shared state event is dispatched by the event hub after a shared state is cr
 
 #### Data Payload Definition
 
-Definition of the key/value pairs that will be present in this event
+Definition of the key/value pairs that are present in this event
 
 | Key        | Value Type | Optional | Description |
 | :--------- | :--------- | :------- | :---------- |
