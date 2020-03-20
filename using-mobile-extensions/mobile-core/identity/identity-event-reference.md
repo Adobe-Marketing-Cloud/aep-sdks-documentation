@@ -120,41 +120,21 @@ Set the Push Identifier request
 
 ### Analytics Identity Response
 
-#### Event Description
+Identity Extension listens to Analytics Identity Response Event to retrieve the value of the Analytics tracking identifier (AID) that is returned as part of the visitor information for the  appendToURL and getUrlVariables API calls. 
 
-This event is dispatched by the Analytics extension upon receiving the Analytics identity request event that gets generated in the Analytics [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#getvisitoridentifier-1) calls. This event contains the unique tracking identifier. This value may be null if identity extension is enabled and there is a valid ECID generated.
-
-#### Event Details
-
-| Type                          | Source                                 | Paired | Direction                                                    |
-| :---------------------------- | :------------------------------------- | :----- | :----------------------------------------------------------- |
-| com.adobe.eventType.analytics | com.adobe.eventSource.responseIdentity | True   | This is the end of the paired event Analytics Request Identity event containing the AID value |
-
-#### Event Data Payload Definition
-
-Definition of the key/value pairs that will be present in this event
-
-| Key  | Value Type | Optional | Description                             |
-| :--- | :--------- | :------- | :-------------------------------------- |
-| aid  | String     | No       | The analytics tracking identifier value |
-
-#### Event Data Example
-
-**sample**
-
-```
-{"aid" : "aidValue"}
-```
+For more details see [Analytics response identity Document](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-identity).
 
 ### Audience Manager Content Response
 
-The Identity extension listens for the Audience extension response content event for any user opt-out updates. If this response contains `optedouthitsent: false` a new opt-out network call is sent to the Identity service.
+The Identity extension listens for the Audience extension response content event for any user opt-out updates. If this response contains `optedouthitsent: false` an opt-out network call is sent to the Experience Cloud Identity Service.
 
-For the details about this event, please refer the [Audience Manager Event Reference document](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1).
+For more details see [Audience Manager Content Response Document](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1).
 
 ### Configuration Response Content
 
 #### Event Description
+
+Whenever the configuration extension dispatches the Configuration Response Content event, the Identity extension fetches the URL of the Experience Cloud Identity Service,  Experience Cloud Organization Identifier, and the Privacy status settings.
 
 This event will be generated in the following scenarios:
 
