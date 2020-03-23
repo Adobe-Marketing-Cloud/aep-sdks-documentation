@@ -1527,6 +1527,18 @@ public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
 }
 ```
 
+**AuthenticationState**
+
+This class is used to indicate the authentication state for the current `VisitorID`.
+
+```java
+public enum AuthenticationState {        
+       UNKNOWN,        
+       AUTHENTICATED,        
+       LOGGED_OUT;
+}
+```
+
 **VisitorID**
 
 This class is an identifier to be used with the Experience Cloud Visitor ID Service.
@@ -1547,21 +1559,22 @@ public class VisitorID {
 }
 ```
 
-**AuthenticationState**
-
-This class is used to indicate the authentication state for the current `VisitorID`.
-
-```java
-public enum AuthenticationState {        
-       UNKNOWN,        
-       AUTHENTICATED,        
-       LOGGED_OUT;
-}
-```
 {% endtab %}
 
 {% tab title="iOS" %}
 #### iOS
+
+**ACPMobileVisitorAuthenticationState**
+
+This is used to indicate the authentication state for the current `VisitorID`.
+
+```objectivec
+typedef NS_ENUM(NSUInteger,
+    ADBMobileVisitorAuthenticationState) {    
+    ACPMobileVisitorAuthenticationStateUnknown          = 0,    
+    ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
+    ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
+```
 
 **ACPMobileVisitorId**
 
@@ -1578,17 +1591,6 @@ This is an identifier to be used with the Experience Cloud Visitor ID Service an
 @end
 ```
 
-**ACPMobileVisitorAuthenticationState**
-
-This is used to indicate the authentication state for the current `VisitorID`.
-
-```objectivec
-typedef NS_ENUM(NSUInteger,
-    ADBMobileVisitorAuthenticationState) {    
-    ACPMobileVisitorAuthenticationStateUnknown          = 0,    
-    ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
-    ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
-```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -1647,4 +1649,5 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 ```
 {% endtab %}
 {% endtabs %}
+
 
