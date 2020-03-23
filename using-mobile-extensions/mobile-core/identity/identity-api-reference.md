@@ -33,7 +33,7 @@ public static void appendVisitorInfoForURL(final String baseURL, final AdobeCall
 **Example**
 
 ```java
-Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
+Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
     @Override    
     public void call(String urlWithAdobeVisitorInfo) {        
         //handle the new URL here        
@@ -111,7 +111,7 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 **Objective-C**
 
 ```objectivec
-NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
+NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 	// handle the appended url here
 	
@@ -137,7 +137,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 **Swift**
 
 ```swift
-ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
+ACPIdentity.append(to:URL(string: "https://example.com"), withCallback: {(appendedURL) in    
 	// handle the appended url here
                                                                    
   // make sure to process APIs which update the UI on the main thread
@@ -146,7 +146,7 @@ ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL)
   }                                                                 
 });
 
-ACPIdentity.append(to: URL(string: "www.myUrl.com"), withCompletionHandler: { (appendedURL, error) in
+ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler: { (appendedURL, error) in
   if (error) {
     // handle error here
   } else {
@@ -216,7 +216,7 @@ appendVisitorInfoForURL(baseURL?: String): Promise<?string>;
 **Example**
 
 ```jsx
-ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
+ACPIdentity.appendVisitorInfoForURL("https://example.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
 
 {% hint style="info" %}
@@ -278,7 +278,7 @@ Future<String> appendToUrl (String url);
 String result = "";
 
 try {
-  result = await FlutterACPIdentity.appendToUrl("www.myUrl.com");
+  result = await FlutterACPIdentity.appendToUrl("https://example.com");
 } on PlatformException {
   log("Failed to append URL");
 }
@@ -682,7 +682,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
         //For example, open the URL on the device browser        
         //        
         Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse("http://myUrl.com?" + urlWithAdobeVisitorInfo));        
+        i.setData(Uri.parse("https://example.com?" + urlWithAdobeVisitorInfo));        
         startActivity(i);    
     }
 });
@@ -726,7 +726,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
   // handle the URL query parameter string here
-  NSString* urlString = @"http://myUrl.com";
+  NSString* urlString = @"https://example.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
   dispatch_async(dispatch_get_main_queue(), ^{
@@ -741,7 +741,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
     // handle error here
   } else {
     // handle the URL query parameter string here
-    NSString* urlString = @"http://myUrl.com";
+    NSString* urlString = @"https://example.com";
     NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
     NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -758,7 +758,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 ```swift
 ACPIdentity.getUrlVariables {(urlVariables) in    
     // URL query parameter string
-    let urlStringWithVisitorData : String = "http://myUrl.com?" + urlVariables!
+    let urlStringWithVisitorData : String = "https://example.com?" + urlVariables!
     let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
     DispatchQueue.main.async {
     	UIApplication.shared.open(urlWithVisitorData as URL, 
@@ -774,7 +774,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
     // handle error here
   } else {
     // handle the URL query parameter string here
-    let urlStringWithVisitorData : String = "http://myUrl.com?" + urlVariables!
+    let urlStringWithVisitorData : String = "https://example.com?" + urlVariables!
     let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
     DispatchQueue.main.async {
     	UIApplication.shared.open(urlWithVisitorData as URL, 
