@@ -113,7 +113,12 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
-// handle the appended url here}
+	// handle the appended url here
+	
+	// make sure to process APIs which update the UI on the main thread
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+  }
 }];
 
 [ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
@@ -121,6 +126,10 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
      // handle error here
    } else {
      // handle the appended url here
+     
+     // make sure to process APIs which update the UI on the main thread
+		 dispatch_async(dispatch_get_main_queue(), ^{
+			[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
    }
 }];
 ```
@@ -129,14 +138,24 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 
 ```swift
 ACPIdentity.append(to:URL(string: "www.myUrl.com"), withCallback: {(appendedURL) in    
-    // handle the appended url here
+	// handle the appended url here
+                                                                   
+  // make sure to process APIs which update the UI on the main thread
+  DispatchQueue.main.async {
+  	self.webView.load(URLRequest(url: appendedURL!))
+  }                                                                 
 });
 
 ACPIdentity.append(to: URL(string: "www.myUrl.com"), withCompletionHandler: { (appendedURL, error) in
-    if (error) {
+  if (error) {
     // handle error here
   } else {
     // handle the appended url here
+    
+    // make sure to process APIs which update the UI on the main thread
+  	DispatchQueue.main.async {
+  		self.webView.load(URLRequest(url: appendedURL!))
+  	}   
   }
 })
 ```
@@ -710,16 +729,26 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
   NSString* urlString = @"http://myUrl.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
-  [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
-    // handle openURL success
-  }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+  	[[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
+    	// handle openURL success
+  	}];
+  }
 }];
 
 [ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
   if (error) {
-        // handle error here
+    // handle error here
   } else {
-        // handle the URL query parameter string here
+    // handle the URL query parameter string here
+    NSString* urlString = @"http://myUrl.com";
+    NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
+    NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
+        // handle openURL success
+      }];
+    }
   }
 }];
 ```
@@ -731,11 +760,13 @@ ACPIdentity.getUrlVariables {(urlVariables) in
     // URL query parameter string
     let urlStringWithVisitorData : String = "http://myUrl.com?" + urlVariables!
     let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
-    UIApplication.shared.open(urlWithVisitorData as URL, 
-                              options: [:], 
-                              completionHandler: {(complete) in 
+    DispatchQueue.main.async {
+    	UIApplication.shared.open(urlWithVisitorData as URL, 
+                              	options: [:], 
+                              	completionHandler: {(complete) in 
                                  // handle open success
-    })
+    	})
+    }
 }
 
 ACPIdentity.getUrlVariables { (urlVariables, error) in
@@ -743,6 +774,15 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
     // handle error here
   } else {
     // handle the URL query parameter string here
+    let urlStringWithVisitorData : String = "http://myUrl.com?" + urlVariables!
+    let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
+    DispatchQueue.main.async {
+    	UIApplication.shared.open(urlWithVisitorData as URL, 
+                              	options: [:], 
+                              	completionHandler: {(complete) in 
+                                 // handle open success
+    	})
+    }
   }
 }
 ```
