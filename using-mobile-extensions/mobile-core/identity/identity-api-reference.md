@@ -450,7 +450,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId) in
 }
 
 ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
-    if (error) {
+  if let error = error {
     // handle error here
   } else {
     // handle the retrieved ID here
@@ -590,7 +590,7 @@ ACPIdentity.getIdentifiers { (retrievedVisitorIds) in
 }
 
 ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
-    if (error) {
+  if let error = error {
     // handle error here
   } else {
     // handle the retrieved identifiers here
