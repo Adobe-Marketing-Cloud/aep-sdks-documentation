@@ -115,7 +115,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 	// handle the appended url here
 	
-	// make sure to process APIs which update the UI on the main thread
+	// APIs which update the UI must be from main thread
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
   }
@@ -124,10 +124,13 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
    if (error) {
      // handle error here
+     if (error.code == ACPErrorCallbackTimeout) {
+      // handle callback timeout
+    }
    } else {
      // handle the appended url here
      
-     // make sure to process APIs which update the UI on the main thread
+     // APIs which update the UI must be from main thread
 		 dispatch_async(dispatch_get_main_queue(), ^{
 			[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
    }
@@ -140,19 +143,23 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 ACPIdentity.append(to:URL(string: "https://example.com"), withCallback: {(appendedURL) in    
 	// handle the appended url here
                                                                    
-  // make sure to process APIs which update the UI on the main thread
+  // APIs which update the UI must be from main thread
   DispatchQueue.main.async {
   	self.webView.load(URLRequest(url: appendedURL!))
   }                                                                 
 });
 
 ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler: { (appendedURL, error) in
-  if (error) {
-    // handle error here
+  if let error = error {
+    // handle error
+    let callbackError: NSError = (error as NSError)
+    if (callbackError.code == Int(ACPError.callbackTimeout.rawValue)) {
+    	// handle callback timeout
+    }
   } else {
     // handle the appended url here
     
-    // make sure to process APIs which update the UI on the main thread
+    // APIs which update the UI must be from main thread
   	DispatchQueue.main.async {
   		self.webView.load(URLRequest(url: appendedURL!))
   	}   
@@ -729,25 +736,26 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
   NSString* urlString = @"https://example.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+  // APIs which update the UI must be from main thread
   dispatch_async(dispatch_get_main_queue(), ^{
-  	[[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
-    	// handle openURL success
-  	}];
+  	[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
   }
 }];
 
 [ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
   if (error) {
     // handle error here
+    if (error.code == ACPErrorCallbackTimeout) {
+      // handle callback timeout
+    }
   } else {
     // handle the URL query parameter string here
     NSString* urlString = @"https://example.com";
     NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
     NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+    // APIs which update the UI must be from main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-      [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
-        // handle openURL success
-      }];
+      [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
     }
   }
 }];
@@ -756,32 +764,42 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 **Swift**
 
 ```swift
-ACPIdentity.getUrlVariables {(urlVariables) in    
-    // URL query parameter string
-    let urlStringWithVisitorData : String = "https://example.com?" + urlVariables!
-    let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
-    DispatchQueue.main.async {
-    	UIApplication.shared.open(urlWithVisitorData as URL, 
-                              	options: [:], 
-                              	completionHandler: {(complete) in 
-                                 // handle open success
-    	})
-    }
+ACPIdentity.getUrlVariables {(urlVariables) in
+	var urlStringWithVisitorData: String = "https://example.com"
+	if let urlVariables: String = urlVariables {
+    urlStringWithVisitorData.append("?" + urlVariables)
+  }
+
+  guard let urlWithVisitorData: URL = URL(string: urlStringWithVisitorData) else {
+    // handle error, unable to construct URL
+    return
+  }
+	// APIs which update the UI must be from main thread
+  DispatchQueue.main.async {
+  	self.webView.load(URLRequest(url: urlWithVisitorData))
+  }
 }
 
 ACPIdentity.getUrlVariables { (urlVariables, error) in
-    if (error) {
-    // handle error here
+  if let error = error {
+    // handle error
+    let callbackError: NSError = (error as NSError)
+    if (callbackError.code == Int(ACPError.callbackTimeout.rawValue)) {
+    	// handle callback timeout
+    }
   } else {
-    // handle the URL query parameter string here
-    let urlStringWithVisitorData : String = "https://example.com?" + urlVariables!
-    let urlWithVisitorData : NSURL = NSURL(string: urlStringWithVisitorData)!
+    var urlStringWithVisitorData: String = "https://example.com"
+    if let urlVariables: String = urlVariables {
+    	urlStringWithVisitorData.append("?" + urlVariables)
+    }
+
+    guard let urlWithVisitorData: URL = URL(string: urlStringWithVisitorData) else {
+    	// handle error, unable to construct URL
+    	return
+    }
+		// APIs which update the UI must be from main thread
     DispatchQueue.main.async {
-    	UIApplication.shared.open(urlWithVisitorData as URL, 
-                              	options: [:], 
-                              	completionHandler: {(complete) in 
-                                 // handle open success
-    	})
+    	self.webView.load(URLRequest(url: urlWithVisitorData))
     }
   }
 }
