@@ -114,10 +114,13 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 	// handle the appended url here
-	
-	// APIs which update the UI must be from main thread
-	dispatch_async(dispatch_get_main_queue(), ^{
-		[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+	if (urlWithVisitorData) {
+		// APIs which update the UI must be called from main thread
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+  	}
+  } else {
+    // handle error, nil urlWithVisitorData
   }
 }];
 
@@ -129,11 +132,14 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
     }
    } else {
      // handle the appended url here
-     
-     // APIs which update the UI must be from main thread
-		 dispatch_async(dispatch_get_main_queue(), ^{
-			[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
-   }
+     if (urlWithVisitorData) {
+     	// APIs which update the UI must be called from main thread
+		 	dispatch_async(dispatch_get_main_queue(), ^{
+				[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+   		}
+     } else {
+       // handle error, nil urlWithVisitorData
+     }
 }];
 ```
 
@@ -142,11 +148,14 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 ```swift
 ACPIdentity.append(to:URL(string: "https://example.com"), withCallback: {(appendedURL) in    
 	// handle the appended url here
-                                                                   
-  // APIs which update the UI must be from main thread
-  DispatchQueue.main.async {
-  	self.webView.load(URLRequest(url: appendedURL!))
-  }                                                                 
+  if let appendedURL = appendedURL {
+  	// APIs which update the UI must be called from main thread
+  	DispatchQueue.main.async {
+  		self.webView.load(URLRequest(url: appendedURL!))
+  	}
+  } else {
+    // handle error, nil appendedURL
+  }
 });
 
 ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler: { (appendedURL, error) in
@@ -158,11 +167,14 @@ ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler
     }
   } else {
     // handle the appended url here
-    
-    // APIs which update the UI must be from main thread
-  	DispatchQueue.main.async {
-  		self.webView.load(URLRequest(url: appendedURL!))
-  	}   
+    if let appendedURL = appendedURL {
+    	// APIs which update the UI must be called from main thread
+  		DispatchQueue.main.async {
+  			self.webView.load(URLRequest(url: appendedURL!))
+  		}
+    } else {
+      // handle error, nil appendedURL
+    }
   }
 })
 ```
@@ -736,7 +748,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
   NSString* urlString = @"https://example.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
-  // APIs which update the UI must be from main thread
+  // APIs which update the UI must be called from main thread
   dispatch_async(dispatch_get_main_queue(), ^{
   	[[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
   }
@@ -753,7 +765,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
     NSString* urlString = @"https://example.com";
     NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
     NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
-    // APIs which update the UI must be from main thread
+    // APIs which update the UI must be called from main thread
     dispatch_async(dispatch_get_main_queue(), ^{
       [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
     }
@@ -774,7 +786,7 @@ ACPIdentity.getUrlVariables {(urlVariables) in
     // handle error, unable to construct URL
     return
   }
-	// APIs which update the UI must be from main thread
+	// APIs which update the UI must be called from main thread
   DispatchQueue.main.async {
   	self.webView.load(URLRequest(url: urlWithVisitorData))
   }
@@ -797,7 +809,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
     	// handle error, unable to construct URL
     	return
     }
-		// APIs which update the UI must be from main thread
+		// APIs which update the UI must be called from main thread
     DispatchQueue.main.async {
     	self.webView.load(URLRequest(url: urlWithVisitorData))
     }
