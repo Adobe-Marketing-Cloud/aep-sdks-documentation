@@ -251,10 +251,14 @@ public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
 ```java
-UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallback<Map<String, Object>>() {
+UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
+			@Override
+			public void fail(AdobeError adobeError) {
+				// your customized code
+			}
 			@Override
 			public void call(Map<String, Object> stringObjectMap) {
-          // your customized code
+         			// your customized code
 			}
 		});
 ```
@@ -262,7 +266,7 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 {% endtab %}
 
 {% tab title="iOS" %}
-### removeUserAttribute
+### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
 
