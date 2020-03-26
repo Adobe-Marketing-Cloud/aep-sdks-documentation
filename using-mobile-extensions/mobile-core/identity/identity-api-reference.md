@@ -1563,25 +1563,6 @@ FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2"
 {% tab title="Android" %}
 #### Android
 
-**VisitorID**
-
-This class is an identifier to be used with the Experience Cloud Visitor ID Service.
-
-```java
-public class VisitorID {    
-     //Constructor    
-     public VisitorID(String idOrigin, String idType, String id, VisitorID.AuthenticationState authenticationState);​    
-
-     public VisitorID.AuthenticationState getAuthenticationState();​    
-
-     public final String getId();​    
-
-     public final String getIdOrigin();​    
-
-     public final String getIdType();​​
-
-}
-```
 
 **AuthenticationState**
 
@@ -1594,25 +1575,31 @@ public enum AuthenticationState {
        LOGGED_OUT;
 }
 ```
+
+**VisitorID**
+
+This class is an identifier to be used with the Experience Cloud Visitor ID Service.
+
+```java
+public class VisitorID {    
+     //Constructor    
+     public VisitorID(String idOrigin, String idType, String id, VisitorID.AuthenticationState authenticationState);
+
+     public VisitorID.AuthenticationState getAuthenticationState();   
+
+     public final String getId();  
+
+     public final String getIdOrigin();  
+
+     public final String getIdType();
+
+}
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
 #### iOS
-
-**ACPMobileVisitorId**
-
-This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
-
-```objectivec
-@interface ACPMobileVisitorId : NSObject​
-
-@property(nonatomic, strong, nullable) NSString* idOrigin;
-@property(nonatomic, strong, nullable) NSString* idType;
-@property(nonatomic, strong, nullable) NSString* identifier;
-@property(nonatomic, readwrite) ACPMobileVisitorAuthenticationState authenticationState;​
-
-@end
-```
 
 **ACPMobileVisitorAuthenticationState**
 
@@ -1625,6 +1612,22 @@ typedef NS_ENUM(NSUInteger,
     ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
     ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
 ```
+
+**ACPMobileVisitorId**
+
+This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
+
+```objectivec
+@interface ACPMobileVisitorId : NSObject
+
+@property(nonatomic, strong, nullable) NSString* idOrigin;
+@property(nonatomic, strong, nullable) NSString* idType;
+@property(nonatomic, strong, nullable) NSString* identifier;
+@property(nonatomic, readwrite) ACPMobileVisitorAuthenticationState authenticationState;
+
+@end
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -1683,4 +1686,5 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 ```
 {% endtab %}
 {% endtabs %}
+
 
