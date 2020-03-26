@@ -6,7 +6,7 @@
 {% tab title="Android" %}
 This API appends Adobe visitor information to the query component of the specified URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the `AdobeCallback` instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](../../mobile-core-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -15,7 +15,7 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
-When `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When [AdobeCallbackWithError](../../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -104,7 +104,7 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -127,9 +127,6 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
    if (error) {
      // handle error here
-     if (error.code == ACPErrorCallbackTimeout) {
-      // handle callback timeout
-    }
    } else {
      // handle the appended url here
      if (urlWithVisitorData) {
@@ -161,10 +158,6 @@ ACPIdentity.append(to:URL(string: "https://example.com"), withCallback: {(append
 ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler: { (appendedURL, error) in
   if let error = error {
     // handle error
-    let callbackError: NSError = (error as NSError)
-    if (callbackError.code == Int(ACPError.callbackTimeout.rawValue)) {
-    	// handle callback timeout
-    }
   } else {
     // handle the appended url here
     if let appendedURL = appendedURL {
@@ -389,9 +382,9 @@ String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the `AdobeCallback`.
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](../../mobile-core-api-reference#adobecallback).
 
-When `AdobeCallbackWithError` is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When [AdobeCallbackWithError](../../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../../mobile-core-api-reference#adobeerror).
 
 **Java**
 
@@ -424,7 +417,7 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback).
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the callback.
 
 **Syntax**
 
@@ -434,7 +427,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 ```
 
 * _callback_ is invoked after the ECID is available.
-* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -528,9 +521,9 @@ try {
 {% tab title="Android" %}
 ### getIdentifiers
 
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the _AdobeCallback_.
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the [AdobeCallback](../../mobile-core-api-reference#adobecallback).
 
-When `AdobeCallbackWithError` is provided, and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When [AdobeCallbackWithError](../../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -574,7 +567,7 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
-* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -670,7 +663,7 @@ This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an `AdobeCallback` instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](../../mobile-core-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -679,7 +672,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
-When `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When [AdobeCallbackWithError](../../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -717,7 +710,7 @@ Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity vers
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an `AdobeCallback` instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -736,7 +729,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
-* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -757,9 +750,6 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 [ACPIdentity getUrlVariablesWithCompletionHandler:^(NSString * _Nullable urlVariables, NSError * _Nullable error) {
   if (error) {
     // handle error here
-    if (error.code == ACPErrorCallbackTimeout) {
-      // handle callback timeout
-    }
   } else {
     // handle the URL query parameter string here
     NSString* urlString = @"https://example.com";
@@ -795,10 +785,6 @@ ACPIdentity.getUrlVariables {(urlVariables) in
 ACPIdentity.getUrlVariables { (urlVariables, error) in
   if let error = error {
     // handle error
-    let callbackError: NSError = (error as NSError)
-    if (callbackError.code == Int(ACPError.callbackTimeout.rawValue)) {
-    	// handle callback timeout
-    }
   } else {
     var urlStringWithVisitorData: String = "https://example.com"
     if let urlVariables: String = urlVariables {
@@ -829,7 +815,7 @@ This method was added in react-native-acpcore v1.0.5.
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -858,7 +844,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#adobecallback) instance:
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
 
 * The `adobe_mc` attribute is an URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
