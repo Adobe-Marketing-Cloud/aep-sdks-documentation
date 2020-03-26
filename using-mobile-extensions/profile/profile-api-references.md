@@ -250,6 +250,8 @@ public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
+When `AdobeCallbackWithError` is provided, if the operation times out (500ms) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
 ```java
 UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
 			@Override
