@@ -246,6 +246,8 @@ Gets the user profile attributes with the given keys.
 public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
 ```
 
+* _callback_ is invoked after the customer attributes are available.
+
 #### **Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
@@ -277,6 +279,8 @@ Gets the user profile attributes with the given keys.
 ```objectivec
 + (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
 ```
+
+* _completionHandler_ is invoked after the customer attributes are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 500ms.
 
 #### **Examples**
 
