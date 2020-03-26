@@ -1563,26 +1563,6 @@ FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2"
 {% tab title="Android" %}
 #### Android
 
-**AdobeCallback**
-
-This class provides the interface to receive results when the async APIs perform the requested action.
-
-```java
-public interface AdobeCallback<T> {    
-    void call(final T value);
-}
-```
-
-**AdobeCallbackWithError**
-
-This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within 500ms or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
-
-```java
-public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
-    void fail(final AdobeError error);
-}
-```
-
 **VisitorID**
 
 This class is an identifier to be used with the Experience Cloud Visitor ID Service.
