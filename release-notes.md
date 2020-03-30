@@ -16,13 +16,13 @@ The following updates were made in this release:
 
 * Added an API `removeUserAttributes` to remote multiple attributes.
 
-* Added an API `getUserAttributes` to get user attributes by provided keys.
+* Added an API `getUserAttributes` to get user attributes with provided keys.
 
 ### Android UserProfile 1.1.0
 
 * Added an API `removeUserAttributes` to remote multiple attributes.
 
-* Added an API `getUserAttributes` to get user attributes by provided keys.
+* Added an API `getUserAttributes` to get user attributes with provided keys.
 
 ## March 16, 2020
 
