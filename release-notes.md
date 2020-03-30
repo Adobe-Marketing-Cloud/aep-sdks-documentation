@@ -8,19 +8,23 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
-## March 30, 2020
+## March 19, 2020
 
 The following updates were made in this release:
 
-### iOS UserProfile 2.1.0
+### Android Campaign Classic 1.0.1
 
-* Added an API `removeUserAttributes` to remove multiple attributes.
-* Added an API `getUserAttributes` to get user attributes with provided keys.
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Fixed a security issue where hex conversion method was vulnerable to hash collisions.
 
-### Android UserProfile 1.1.0
+## March 18, 2020
 
-* Added an API `removeUserAttributes` to remove multiple attributes.
-* Added an API `getUserAttributes` to get user attributes with provided keys.
+The following updates were made in this release:
+
+### iOS Campaign Classic 2.0.3
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Fixed an issue where passing nil callback in `registerDevice` API caused a crash.
 
 ## March 16, 2020
 
