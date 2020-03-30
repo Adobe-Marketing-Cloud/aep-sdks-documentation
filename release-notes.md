@@ -8,6 +8,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+### iOS UserProfile 2.1.0
+
+* Added an API `removeUserAttributes` to remove multiple attributes.
+* Added an API `getUserAttributes` to get user attributes with provided keys.
+
+### Android UserProfile 1.1.0
+
+* Added an API `removeUserAttributes` to remove multiple attributes.
+* Added an API `getUserAttributes` to get user attributes with provided keys.
+
 ## March 19, 2020
 
 The following updates were made in this release:
