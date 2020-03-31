@@ -220,13 +220,13 @@ You want to remove `username`, `password` user data when session timeout occurs.
 **Objective C**
 
 ```objectivec
-[ACPUserProfile removeUserAttributes:@[@"UsersName", @"Password"]]
+[ACPUserProfile removeUserAttributes:@[@"username", @"password"]]
 ```
 
 **Swift**
 
 ```swift
-ACPUserProfile.removeUserAttributes(["UsersName","Password"]);
+ACPUserProfile.removeUserAttributes(["username","password"]);
 ```
 
 {% endtab %}
