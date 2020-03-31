@@ -169,10 +169,10 @@ public static void removeUserAttributes(List<String> attributeNames)
 
 #### **Example**
 
-You want to remove `username`, `password` user data when session timeout occurs. 
+You want to remove `username`, `usertype` user data when session timeout occurs. 
 
 ```java
-UserProfile.removeUserAttributes(Arrays.asList("username", "password"));
+UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 
 {% endtab %}
@@ -215,18 +215,18 @@ Removes the user profile attributes for the given keys.
 
 #### **Examples**
 
-You want to remove `username`, `password` user data when session timeout occurs. 
+You want to remove `username`, `usertype` user data when session timeout occurs. 
 
 **Objective C**
 
 ```objectivec
-[ACPUserProfile removeUserAttributes:@[@"username", @"password"]]
+[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
 ```
 
 **Swift**
 
 ```swift
-ACPUserProfile.removeUserAttributes(["username","password"]);
+ACPUserProfile.removeUserAttributes(["username","usertype"]);
 ```
 
 {% endtab %}
