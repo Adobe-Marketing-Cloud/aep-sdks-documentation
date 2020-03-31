@@ -58,6 +58,8 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ### updateConfiguration <a id="updateConfiguration"></a>
 
 #### Syntax
@@ -70,7 +72,7 @@ public static void updateConfiguration(final Map configMap);
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("global.ssl", true);
+data.put("global.privacy", "optedout");
 MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
@@ -89,14 +91,14 @@ MobileCore.updateConfiguration(data);
 **Objective-C**
 
 ```objectivec
-NSDictionary *updatedConfig = @{@"global.ssl":@YES};
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
 **Swift**
 
 ```swift
-let updatedConfig = ["global.ssl":true]
+let updatedConfig = ["global.privacy":"optedout"]
 ACPCore.updateConfiguration(updatedConfig)
 ```
 {% endtab %}
@@ -107,7 +109,7 @@ ACPCore.updateConfiguration(updatedConfig)
 ### updateConfiguration
 
 ```jsx
-ACPCore.updateConfiguration({"global.ssl": true});
+ACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 
@@ -117,7 +119,7 @@ ACPCore.updateConfiguration({"global.ssl": true});
 ### updateConfiguration
 
 ```dart
-FlutterACPCore.updateConfiguration({"global.ssl": true});
+FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -167,4 +169,3 @@ ACPCore.configureWithFile(inPath: filePath)
 ```
 {% endtab %}
 {% endtabs %}
-
