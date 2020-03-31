@@ -14,7 +14,9 @@ To get started with Signal extension, complete the following steps:
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
-{% embed url="https://www.youtube.com/watch?v=r-z9ivQjzOY" caption="" %}
+## Watch the Video
+
+{% embed url="https://www.youtube.com/watch?v=r-z9ivQjzOY" caption="Video: Sending Postbacks with Adobe Experience Platform Mobile SDKs" %}
 
 ## Add the Signal extension to your app
 
