@@ -172,7 +172,7 @@ public static void removeUserAttributes(List<String> attributeNames)
 You want to remove `username`, `password` user data when session timeout occurs. 
 
 ```java
-UserProfile.removeUserAttributes(Arrays.asList("UserName", "Password"));
+UserProfile.removeUserAttributes(Arrays.asList("username", "password"));
 ```
 
 {% endtab %}
