@@ -71,7 +71,7 @@ MobileCore.updateConfiguration(data);
 #### Objective-C
 
 ```objectivec
-NSDictionary *updatedConfig = @{@"global.privacy":@optedout};
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
