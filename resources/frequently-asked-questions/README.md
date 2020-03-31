@@ -46,9 +46,9 @@ If you delete a mobile property, you cannot undo this action!
 
 The Experience Platform SDK is available through [Cocoapods](https://cocoapods.org) and [Gradle](https://gradle.org/), and [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/). For more information, see [Get the SDK](../../getting-started/get-the-sdk.md).
 
-### Can I run the 4x SDKs and the new Experience Platform SDKs on my app?
+### Can I use both the 4x SDK and the new Experience Platform SDK at the same time?
 
-Implementing both SDKs is not recommended or supported.
+Implementing two the SDKs in your app is not recommended, supported, or even technically feasible.
 
 The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
 
