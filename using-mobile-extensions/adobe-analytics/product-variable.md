@@ -23,9 +23,10 @@ cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quant
 HashMap cdata = new HashMap<String, Object>();
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
-cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");cdata.put("myapp.purchase", "1");
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
 cdata.put("myapp.purchaseid", "1234567890");
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 MobileCore.trackAction("purchase", cdata);
 // trackState example:
@@ -54,7 +55,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
 [contextData setObject:@"1" forKey:@"m.purchase"];
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 [ACPCore trackAction:@"purchase" data:contextData];
 // trackState example:
@@ -81,7 +82,7 @@ contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
@@ -121,7 +122,7 @@ cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;
 cdata.put("myapp.purchase", "1"); 
 cdata.put("myapp.purchaseid", "1234567890"); 
 
-// send the tracking call - use either a trackAction or TrackState call. 
+// send the tracking call - use either a trackAction or trackState call. 
 // trackAction example: 
 MobileCore.trackAction("purchase", cdata); 
 // trackState example: 
@@ -145,7 +146,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
 [contextData setObject:@"1" forKey:@"m.purchase"]; 
 
-// send the tracking call - use either a trackAction or TrackState call. 
+// send the tracking call - use either a trackAction or trackState call. 
 // trackAction example: 
 [ACPCore trackAction:@"purchase" data:contextData]; 
 // trackState example: 
@@ -165,7 +166,7 @@ contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandis
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
