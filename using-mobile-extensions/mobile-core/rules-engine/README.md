@@ -47,3 +47,6 @@ At the start of a new application session that includes the Experience Platform 
 
 For more information about the technical details of the Rules Engine, see [Rules Engine technical details](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details).
 
+## Watch the Video
+
+{% embed url="https://www.youtube.com/watch?v=BwBeYNu5Crg" caption="Video: How to configure IFTTT mobile rules in Adobe Experience Platform Launch" %}
