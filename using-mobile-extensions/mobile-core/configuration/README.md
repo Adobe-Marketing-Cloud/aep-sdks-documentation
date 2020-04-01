@@ -16,19 +16,23 @@ The unique environment ID provided by Experience Platform Launch can be configur
 
 {% tabs %}
 {% tab title="Android" %}
+
+#### Java
+
 ```java
 MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
+
+#### Objective-C
 
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
@@ -54,25 +58,27 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("global.ssl", true);
+data.put("global.privacy", "optedout");
 MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
+#### Objective-C
 
 ```objectivec
-NSDictionary *updatedConfig = @{@"global.ssl":@YES};
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
-let updatedConfig = ["global.ssl":true]
+let updatedConfig = ["global.privacy":"optedout"]
 ACPCore.updateConfiguration(updatedConfig)
 ```
 {% endtab %}
@@ -81,7 +87,7 @@ ACPCore.updateConfiguration(updatedConfig)
 #### JavaScript
 
 ```jsx
-ACPCore.updateConfiguration({"global.ssl": true});
+ACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 
@@ -89,7 +95,7 @@ ACPCore.updateConfiguration({"global.ssl": true});
 #### Dart
 
 ```dart
-FlutterACPCore.updateConfiguration({"global.ssl": true});
+FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 {% endtabs %}
@@ -111,6 +117,9 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
+
+#### Java
+
 ```java
 // Case 1: to use ADBMobileConfig.json in the assets folder
 // No code is needed
@@ -121,14 +130,14 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
 [ACPCore configureWithFileInPath:filePath];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
@@ -144,6 +153,8 @@ This feature is only available in iOS ACPCore version 2.0.3 or later.
 {% endhint %}
 
 Some extension developers might use different configuration values based on their environment, and the generated configuration might have several entries for the same property. For example, the Adobe Campaign Standard extension has different endpoints for development, staging, and production servers. Here is an example of a raw configuration that supports multiple build environments:
+
+#### JavaScript
 
 ```javascript
 {
@@ -199,4 +210,3 @@ Here's a sample JSON file for the SDK:
     "rules.url": "https://link.to.rules/test.zip"
 }
 ```
-

@@ -16,6 +16,8 @@ public static void configureWithAppID(final String appId);
 
 #### Example
 
+#### Java
+
 ```java
 MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
@@ -30,13 +32,13 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
@@ -58,7 +60,6 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
 
 ### updateConfiguration <a id="updateConfiguration"></a>
 
@@ -69,6 +70,8 @@ public static void updateConfiguration(final Map configMap);
 ```
 
 #### Example
+
+#### Java
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
@@ -88,14 +91,14 @@ MobileCore.updateConfiguration(data);
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 let updatedConfig = ["global.privacy":"optedout"]
@@ -139,6 +142,8 @@ public static void configureWithFileInPath(final String filePath);
 ```
 
 #### Example
+
+#### Java
 
 ```java
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
