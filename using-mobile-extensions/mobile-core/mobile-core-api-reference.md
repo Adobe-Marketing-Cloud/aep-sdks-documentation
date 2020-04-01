@@ -818,7 +818,7 @@ public interface AdobeCallback<T> {
 
 ##### AdobeCallbackWithError
 
-This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within 500ms or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
+This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
 
 ```java
 public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
@@ -830,32 +830,32 @@ public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
 
 Errors which may be passed to an AdobeCallbackWithError:
 
-- `UNEXPECTED_ERROR` - an unexpected error occurred
-- `CALLBACK_TIMEOUT` - timeout was met
-- `CALLBACK_NULL` - callback function is null
-- `EXTENSION_NOT_INITIALIZED` - the extension is not initialized
+- `UNEXPECTED_ERROR` - An unexpected error occurred.
+- `CALLBACK_TIMEOUT` - The timeout was met.
+- `CALLBACK_NULL` - The provided callback function is null.
+- `EXTENSION_NOT_INITIALIZED` - The extension is not initialized.
 
 **Example**
 
 ```java
 MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
-	@Override
-	public void fail(AdobeError error) {
-		if (error == AdobeError.UNEXPECTED_ERROR) {
-			// handle unexpected error
-		} else if (error == AdobeError.CALLBACK_TIMEOUT) {
-			// handle timeout error
-		} else if (error == AdobeError.CALLBACK_NULL) {
-			// handle null callback error
-		} else if (error == AdobeError.EXTENSION_NOT_INITIALIZED) {
-			// handle extension not initialized error
-		}
-	}
+  @Override
+  public void fail(final AdobeError error) {
+    if (error == AdobeError.UNEXPECTED_ERROR) {
+      // handle unexpected error
+    } else if (error == AdobeError.CALLBACK_TIMEOUT) {
+      // handle timeout error
+    } else if (error == AdobeError.CALLBACK_NULL) {
+      // handle null callback error
+    } else if (error == AdobeError.EXTENSION_NOT_INITIALIZED) {
+      // handle extension not initialized error
+    }
+  }
 
-	@Override
-	public void call(MobilePrivacyStatus value) {
-		// use MobilePrivacyStatus value
-	}
+  @Override
+  public void call(final MobilePrivacyStatus value) {
+    // use MobilePrivacyStatus value
+  }
 });
 ```
 
@@ -869,10 +869,10 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 
 Errors which may be passed to a completion handler callback from any API which uses one:
 
-- `ACPErrorUnexpected` - an unexpected error occurred
-- `ACPErrorCallbackTimeout` - timeout was met
-- `ACPErrorCallbackNil` - callback function is nil
-- `ACPErrorExtensionNotInitialized` - the extension is not initialized
+- `ACPErrorUnexpected` - An unexpected error occurred.
+- `ACPErrorCallbackTimeout` - The timeout was met.
+- `ACPErrorCallbackNil` - The provided callback function is nil.
+- `ACPErrorExtensionNotInitialized` - The extension is not initialized.
 
 **Examples**
 
@@ -880,19 +880,19 @@ Errors which may be passed to a completion handler callback from any API which u
 
 ```objective-c
 [ACPCore getPrivacyStatusWithCompletionHandler:^(ACPMobilePrivacyStatus status, NSError * _Nullable error) {
-	if (error) {
-		if (error.code == ACPErrorCallbackTimeout) {
-			// handle timeout error
-		} else if (error.code == ACPErrorCallbackNil) {
-			// handle nil callback error
-		} else if (error.code == ACPErrorExtensionNotInitialized) {
-			// handle extension not initialized error
-		} else if (error.code == ACPErrorUnexpected) {
-			// handle unexpected error
-		}
-	} else {
-		// use privacy status
-	}
+  if (error) {
+    if (error.code == ACPErrorCallbackTimeout) {
+      // handle timeout error
+    } else if (error.code == ACPErrorCallbackNil) {
+      // handle nil callback error
+    } else if (error.code == ACPErrorExtensionNotInitialized) {
+      // handle extension not initialized error
+    } else if (error.code == ACPErrorUnexpected) {
+      // handle unexpected error
+    }
+  } else {
+    // use privacy status
+  }
 }];
 ```
 
@@ -900,20 +900,20 @@ Errors which may be passed to a completion handler callback from any API which u
 
 ```swift
 ACPCore.getPrivacyStatus { (privacyStatus, error) in
-	if let error = error {
-		let callbackError: NSError = (error as NSError)
-		if (callbackError.code == ACPError.callbackTimeout.rawValue) {
-			// handle timeout error
-		} else if (callbackError.code == ACPError.callbackNil.rawValue) {
-			// handle nil callback error
-		} else if (callbackError.code == ACPError.extensionNotInitialized.rawValue) {
-			// handle extension not initialized error
-		} else if (callbackError.code == ACPError.unexpected.rawValue) {
-			// handle unexpected error
-		}
-	} else {
-		// use privacyStatus
-	}
+  if let error = error {
+    let callbackError: NSError = (error as NSError)
+    if (callbackError.code == ACPError.callbackTimeout.rawValue) {
+      // handle timeout error
+    } else if (callbackError.code == ACPError.callbackNil.rawValue) {
+      // handle nil callback error
+    } else if (callbackError.code == ACPError.extensionNotInitialized.rawValue) {
+      // handle extension not initialized error
+    } else if (callbackError.code == ACPError.unexpected.rawValue) {
+      // handle unexpected error
+    }
+  } else {
+    // use privacyStatus
+  }
 }
 ```
 
