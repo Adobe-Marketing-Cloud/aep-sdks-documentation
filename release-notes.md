@@ -8,6 +8,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## April 2, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.0
+
+* Added support for overriding internal network stack with customer-provided code.
+
 ## March 30, 2020
 
 ### iOS UserProfile 2.1.0
