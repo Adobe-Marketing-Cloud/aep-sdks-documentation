@@ -14,7 +14,7 @@ The following updates were made in this release:
 
 ### iOS Core 2.6.0
 
-* Added support for overriding internal network stack with customer-provided code.
+* Added support for overriding internal network stack with customer-provided implementation.
 
 ## March 30, 2020
 
