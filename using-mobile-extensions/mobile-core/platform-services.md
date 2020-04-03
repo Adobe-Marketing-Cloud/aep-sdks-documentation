@@ -152,14 +152,14 @@ This step should occur prior to any other interactions with the AEP SDK. While i
 
 ### 1. Conform to the ACPHttpConnectionPerformer protocol
 
-The ACPHttpConnectionPerformer is a protocol which must be conformed to in order to override the network stack. It provides two methods which must be implemented:
+The `ACPHttpConnectionPerformer` is a protocol which must be conformed to in order to override the network stack. It provides two methods which must be implemented:
 
-    1. `shouldOverride`, which takes a URL and an Http method, and returns true if the network stack should be overriden by     the performer, or false if it should not. 
+    1. `shouldOverride`, which takes a URL and an HTTP method. You return true if you want the network stack to be overriden     by the performer, or false if not. 
     2. `requestUrl`, which is the URL request override with a completion block.
     
 ### 2. Create an ACPHttpConnection and pass relevant data from your NSURLSessionDataTask completion block
 
-The completion block for the `requestUrl` method, takes an `ACPHttpConnection` as it's parameter. The ACPHttpConnection is used when overriding the network stack in place of the internal network connection implementation and represents the response to an Http request. It is to be created using the NSURLResponse, and NSData from your url request response. In the case of a Network Error, or timeout, the `ACPHttpConnection*` is expected to be nil.
+The completion block for the `requestUrl` method, takes an `ACPHttpConnection` as its parameter. The `ACPHttpConnection` is used when overriding the network stack in place of the internal network connection implementation and represents the response to an HTTP request. It is to be created using the NSURLResponse, and NSData from your url request response. In the case of a Network Error, or timeout, the `ACPHttpConnection*` is expected to be nil.
 
     
  #### Example
@@ -198,11 +198,9 @@ The completion block for the `requestUrl` method, takes an `ACPHttpConnection` a
                     
             // ***** NOTE the creation of the ACPHttpConnection outlined in step 2.*****
             ACPHttpConnection* connOverride = [[ACPHttpConnection alloc] initWithResponse:httpResponse data:data];
-            completion(connOverride);
-        } else if ([[error domain]  isEqual:@"NSURLErrorDomain"]) {
-            completion(NULL);
+            completion(connOverride); 
         } else {
-            completion(NULL);
+            completion(nil);
         }
     }];
     [task resume];
@@ -256,9 +254,9 @@ didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *
         ...
         [ACPNetworkServiceOverrider setHttpConnectionPerformer:[[YourPerformerOverrider alloc] init]];
         ...
-        ACPCore.start {
-            ...
-        }
+        [ACPCore start:^{
+        ...
+        }];
 ```
 
 **Swift**
