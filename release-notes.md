@@ -8,6 +8,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## April 7, 2020
+
+The following updates were made in this release:
+
+### Android Griffon 1.1.4
+
+* Fixed a bug where Griffon pinpad screen may disappear behind an activity.
+* Griffon SDK attempts to seemlessly reconnect to its session on network interruption.
+* Fixed a bug that prevented to establish Griffon connection on Android API 27 and below.
+* Added a new Plugin interface method that gets called on Griffon session termination.
+
 ## April 2, 2020
 
 The following updates were made in this release:
