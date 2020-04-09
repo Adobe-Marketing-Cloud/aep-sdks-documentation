@@ -358,7 +358,7 @@ ACPIdentity.appendVisitorInfoForUrl = function(url, success, fail);
 ```jsx
 ACPIdentity.appendVisitorInfoForUrl("https://example.com", function (handleCallback, handleError) {
   if(handleError) {
-  		console.log("Failed to append URL : " + handleError)
+  		console.log("AdobeExperenceSDK: Failed to append URL : " + handleError)
   } else {
   		console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback)
   }
@@ -461,7 +461,7 @@ ACPIdentity.extensionVersion = function(success, fail);
 ```jsx
 ACPIdentity.extensionVersion(function (handleCallback, handleError) {
   if(handleError) {
-  		console.log("Failed to retrieve ACPIdentity version : " + handleError)
+  		console.log("AdobeExperenceSDK: Failed to retrieve ACPIdentity version : " + handleError)
   } else {
   		console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
   }
@@ -636,7 +636,7 @@ ACPIdentity.getExperienceCloudId(success, fail);
 ```jsx
 ACPIdentity.getExperienceCloudId(function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to retrieve experienceCloudId : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to retrieve experienceCloudId : " + handleError)
   } else {
     console.log("AdobeExperienceSDK: experienceCloudId: " + handleCallback)
   }
@@ -804,9 +804,9 @@ Example**
 ```jsx
 ACPIdentity.getIdentifiers(function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to retrieve visitor identifiers : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to retrieve visitor identifiers : " + handleError)
   } else {
-    console.log("AdobeExperienceSDK: visitor identifiers: " + handleCallback)
+    console.log("AdobeExperienceSDK: Visitor identifiers: " + handleCallback)
   }
 });
 ```
@@ -1071,9 +1071,9 @@ ACPIdentity.getUrlVariables(success, fail);
 ```jsx
 ACPIdentity.getUrlVariables(function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to retrieve url variables : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError)
   } else {
-    console.log("AdobeExperienceSDK: url variables: " + handleCallback)
+    console.log("AdobeExperienceSDK: Url variables: " + handleCallback)
   }
 });
 ```
@@ -1342,9 +1342,9 @@ ACPCore.setAdvertisingIdentifier(identifier, success, fail);
 ```jsx
 ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to set advertising identifier : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to set advertising identifier : " + handleError)
   } else {
-    console.log("AdobeExperienceSDK: advertising identifier successfully set: " + handleCallback)
+    console.log("AdobeExperienceSDK: Advertising identifier successfully set: " + handleCallback)
   }
 });
 ```
@@ -1593,9 +1593,9 @@ ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, suc
 ```jsx
 ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown, function (handleCallback, handleError) {
 		if(handleError) {
-    		console.log("Failed to sync identifier : " + handleError)
+    		console.log("AdobeExperenceSDK: Failed to sync identifier : " + handleError)
     } else {
-    		console.log("Identifier synced successfully : " + handleCallback)
+    		console.log("AdobeExperenceSDK: Identifier synced successfully : " + handleCallback)
     }
 });
 ```
@@ -1732,7 +1732,7 @@ ACPIdentity.syncIdentifiers = function(identifiers, success, fail);
 ```jsx
 ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to sync identifiers : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
   } else {
     console.log("AdobeExperienceSDK: " + handleCallback)
   }
@@ -1899,7 +1899,7 @@ ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
 ```jsx
 ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated, function (handleCallback, handleError) {
   if(handleError) {
-    console.log("Failed to sync identifiers : " + handleError)
+    console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
   } else {
     console.log("AdobeExperienceSDK: " + handleCallback)
   }
