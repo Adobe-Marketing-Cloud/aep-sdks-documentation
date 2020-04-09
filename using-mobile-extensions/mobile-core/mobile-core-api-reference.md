@@ -191,7 +191,7 @@ ACPCore.trackAction = function(action, contextData, success, fail);
 ```jsx
 ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
   if(handleError) {
-  		console.log("Failed to track action : " + handleError)
+  		console.log("AdobeExperenceSDK: failed to track action : " + handleError)
   } else {
   		console.log("AdobeExperenceSDK: track action successful : " + handleCallback)
   }
@@ -318,7 +318,7 @@ ACPCore.trackState = function(state, contextData, success, fail);
 ```jsx
 ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
   if(handleError) {
-  		console.log("Failed to track state : " + handleError)
+  		console.log("AdobeExperenceSDK: failed to track state : " + handleError)
   } else {
   		console.log("AdobeExperenceSDK: track state successful : " + handleCallback)
   }
@@ -620,7 +620,7 @@ FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
 
 #### setLogLevel
 
-From least to most verbose, here is the order of the mobile SDK logging modes for the Cordova AEP SDK:
+From least to most verbose, here is the order of the mobile SDK logging modes for the Cordova version of the ACPCore extension:
 
 * ACPCore.ACPMobileLogLevelError
 * ACPCore.ACPMobileLogLevelWarning
@@ -638,7 +638,7 @@ ACPCore.setLogLevel = function(logLevel, success, fail);
 ```jsx
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, function (handleCallback, handleError) {
   if(handleError) {
-  		console.log("Failed to set log level : " + handleError)
+  		console.log("AdobeExperenceSDK: failed to set log level : " + handleError)
   } else {
   		console.log("AdobeExperenceSDK: log level set : " + handleCallback)
   }
