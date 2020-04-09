@@ -356,12 +356,10 @@ ACPIdentity.appendVisitorInfoForUrl = function(url, success, fail);
 **Example**
 
 ```jsx
-ACPIdentity.appendVisitorInfoForUrl("https://example.com", function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperenceSDK: Failed to append URL : " + handleError)
-  } else {
-  		console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback)
-  }
+ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
+  console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to append URL : " + handleError);
 });
 ```
 
@@ -459,12 +457,10 @@ ACPIdentity.extensionVersion = function(success, fail);
 **Example**
 
 ```jsx
-ACPIdentity.extensionVersion(function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperenceSDK: Failed to retrieve ACPIdentity version : " + handleError)
-  } else {
-  		console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
-  }
+ACPIdentity.extensionVersion(function (handleCallback) {
+  console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: failed to get extension version : " + handleError)
 });
 ```
 
@@ -634,12 +630,10 @@ ACPIdentity.getExperienceCloudId(success, fail);
 #### Example
 
 ```jsx
-ACPIdentity.getExperienceCloudId(function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to retrieve experienceCloudId : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: experienceCloudId: " + handleCallback)
-  }
+ACPIdentity.getExperienceCloudId(function (handleCallback) {
+  console.log("AdobeExperienceSDK: experienceCloudId: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve experienceCloudId : " + handleError);
 });
 ```
 
@@ -799,15 +793,13 @@ ACPIdentity.getIdentifiers(success, fail);
 * _success_ is a callback containing the previously synced identifiers if the `getIdentifiers` API executed without any errors.
 * _fail_ is a callback containing error information if the `getIdentifiers` API was executed with errors.
 
-Example**
+**Example**
 
 ```jsx
-ACPIdentity.getIdentifiers(function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to retrieve visitor identifiers : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: Visitor identifiers: " + handleCallback)
-  }
+ACPIdentity.getIdentifiers(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Visitor identifiers: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve visitor identifiers : " + handleError);
 });
 ```
 
@@ -1069,12 +1061,10 @@ ACPIdentity.getUrlVariables(success, fail);
 **Example**
 
 ```jsx
-ACPIdentity.getUrlVariables(function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: Url variables: " + handleCallback)
-  }
+ACPIdentity.getUrlVariables(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Url variables: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError);
 });
 ```
 
@@ -1340,12 +1330,10 @@ ACPCore.setAdvertisingIdentifier(identifier, success, fail);
 **Example**
 
 ```jsx
-ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to set advertising identifier : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: Advertising identifier successfully set: " + handleCallback)
-  }
+ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
+  console.log("AdobeExperienceSDK: Advertising identifier successfully set.");
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to set advertising identifier : " + handleError);
 });
 ```
 
@@ -1591,12 +1579,10 @@ ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, suc
 **Example**
 
 ```jsx
-ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown, function (handleCallback, handleError) {
-		if(handleError) {
-    		console.log("AdobeExperenceSDK: Failed to sync identifier : " + handleError)
-    } else {
-    		console.log("AdobeExperenceSDK: Identifier synced successfully : " + handleCallback)
-    }
+ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown, function (handleCallback) {
+  console.log("AdobeExperenceSDK: Identifier synced successfully : " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifier : " + handleError);
 });
 ```
 
@@ -1730,12 +1716,10 @@ ACPIdentity.syncIdentifiers = function(identifiers, success, fail);
 **Example**
 
 ```jsx
-ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: " + handleCallback)
-  }
+ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, function (handleCallback) {
+  console.log("AdobeExperienceSDK: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
 });
 ```
 
@@ -1897,12 +1881,10 @@ ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
 **Example**
 
 ```jsx
-ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated, function (handleCallback, handleError) {
-  if(handleError) {
-    console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
-  } else {
-    console.log("AdobeExperienceSDK: " + handleCallback)
-  }
+ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated, function (handleCallback) {
+  console.log("AdobeExperienceSDK: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
 });
 ```
 
@@ -2048,9 +2030,9 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 This is used to indicate the authentication state for the current `VisitorID`.
 
 ```jsx
-var state = ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated;
-//var state = ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut;
-//var state = ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown;
+ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown = 0;
+ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated = 1;
+ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 ```
 
 {% endtab %}
