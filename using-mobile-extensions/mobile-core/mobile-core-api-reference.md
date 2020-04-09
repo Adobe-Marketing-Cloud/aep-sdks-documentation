@@ -173,6 +173,33 @@ Future<void> trackAction (String action, {Map<String, String> data});
 FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+### trackAction
+
+**Syntax**
+
+```jsx
+ACPCore.trackAction = function(action, contextData, success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
+  if(handleError) {
+  		console.log("Failed to track action : " + handleError)
+  } else {
+  		console.log("AdobeExperenceSDK: track action successful : " + handleCallback)
+  }
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Track app states and views
@@ -273,6 +300,33 @@ Future<void> trackState (String state, {Map<String, String> data});
 FlutterACPCore.trackState("state name",  data: {"key1: "value"})
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### Cordova
+
+#### trackState
+
+**Syntax**
+
+```jsx
+ACPCore.trackState = function(state, contextData, success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
+  if(handleError) {
+  		console.log("Failed to track state : " + handleError)
+  } else {
+  		console.log("AdobeExperenceSDK: track state successful : " + handleCallback)
+  }
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Collect PII
@@ -559,6 +613,40 @@ import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
 FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### Cordova
+
+#### setLogLevel
+
+From least to most verbose, here is the order of the mobile SDK logging modes for the Cordova AEP SDK:
+
+* ACPCore.ACPMobileLogLevelError
+* ACPCore.ACPMobileLogLevelWarning
+* ACPCore.ACPMobileLogLevelDebug
+* ACPCore.ACPMobileLogLevelVerbose
+
+**Syntax**
+
+```jsx
+ACPCore.setLogLevel = function(logLevel, success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, function (handleCallback, handleError) {
+  if(handleError) {
+  		console.log("Failed to set log level : " + handleError)
+  } else {
+  		console.log("AdobeExperenceSDK: log level set : " + handleCallback)
+  }
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 {% tabs %}
