@@ -44,6 +44,23 @@ ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeEx
 String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### Cordova
+
+```jsx
+ACPSignal.extensionVersion(function (handleCallback, handleError) {
+  if(handleError) {
+  		console.log("AdobeExperienceSDK: Failed to retrieve ACPSignal version : " + handleError)
+  } else {
+  		console.log("AdobeExperienceSDK: ACPSignal version: " + handleCallback)
+  }
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## CollectPII API
