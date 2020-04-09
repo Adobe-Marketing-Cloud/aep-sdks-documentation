@@ -189,13 +189,7 @@ ACPCore.trackAction = function(action, contextData, success, fail);
 **Example**
 
 ```jsx
-ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperenceSDK: Failed to track action : " + handleError)
-  } else {
-  		console.log("AdobeExperenceSDK: Track action successful : " + handleCallback)
-  }
-});
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 
 {% endtab %}
@@ -316,13 +310,7 @@ ACPCore.trackState = function(state, contextData, success, fail);
 **Example**
 
 ```jsx
-ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperenceSDK: Failed to track state : " + handleError)
-  } else {
-  		console.log("AdobeExperenceSDK: Track state successful : " + handleCallback)
-  }
-});
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 
 {% endtab %}
@@ -636,13 +624,7 @@ ACPCore.setLogLevel = function(logLevel, success, fail);
 **Example**
 
 ```jsx
-ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperenceSDK: Failed to set log level : " + handleError)
-  } else {
-  		console.log("AdobeExperenceSDK: Log level set : " + handleCallback)
-  }
-});
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
 ```
 
 {% endtab %}

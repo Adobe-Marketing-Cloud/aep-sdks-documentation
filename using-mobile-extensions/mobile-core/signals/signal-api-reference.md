@@ -50,12 +50,10 @@ String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
 ### Cordova
 
 ```jsx
-ACPSignal.extensionVersion(function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperienceSDK: Failed to retrieve ACPSignal version : " + handleError)
-  } else {
-  		console.log("AdobeExperienceSDK: ACPSignal version: " + handleCallback)
-  }
+ACPSignal.extensionVersion(function(version) {  
+    console.log("ACPSignal version: " + version);
+}, function(error) {  
+    console.log(error);  
 });
 ```
 

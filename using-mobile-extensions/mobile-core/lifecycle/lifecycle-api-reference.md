@@ -57,12 +57,10 @@ String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
 ### Cordova
 
 ```jsx
-ACPLifecycle.extensionVersion(function (handleCallback, handleError) {
-  if(handleError) {
-  		console.log("AdobeExperienceSDK: Failed to retrieve ACPLifecycle version : " + handleError)
-  } else {
-  		console.log("AdobeExperienceSDK: ACPLifecycle version: " + handleCallback)
-  }
+ACPLifecycle.extensionVersion(function(version) {  
+   console.log("ACPLifecycle version: " + version);
+}, function(error) {  
+   console.log(error);  
 });
 ```
 
