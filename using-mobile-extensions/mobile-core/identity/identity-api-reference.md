@@ -257,7 +257,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](#geturlvariables-js).
 {% endhint %}
 {% endtab %}
 
@@ -325,6 +325,73 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 If your application uses more complicated URLs, such as Angular URLs, we recommend that you use getUrlVariables.
 {% endhint %}
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### appendVisitorInfoForURL
+
+This API appends Adobe visitor information to the query component of the specified URL.
+
+If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
+
+* The `adobe_mc` attribute is a URL encoded list that contains:
+  * `MCMID` - Experience Cloud ID \(ECID\)
+  * `MCORGID` - Experience Cloud Org ID
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
+  * `TS` - A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.appendVisitorInfoForUrl = function(url, success, fail);
+```
+
+* _url_ _\(String\)_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+* _success_ is a callback containing the provided URL with the visitor information appended if the `appendVisitorInfoForUrl` API executed without any errors.
+* _fail_ is a callback containing error information if the  `appendVisitorInfoForUrl` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
+  console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to append URL : " + handleError);
+});
+```
+
+{% hint style="info" %}
+This API is designed to handle the following URL formats:
+
+```text
+scheme://authority/path?query=param#fragment
+```
+
+In this example, the Adobe visitor data is appended as:
+
+```text
+scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
+```
+
+Similarly, URLs without a query component:
+
+```text
+scheme://authority/path#fragment
+```
+
+The Adobe visitor data is appended as:
+
+```text
+scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
+```
+
+If your application uses more complicated URLs we recommend that you use [getUrlVariables](#geturlvariables-cordova).
+{% endhint %}
+{% endtab %}
+
 {% endtabs %}
 
 ## extensionVersion
@@ -373,6 +440,32 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ado
 String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.extensionVersion = function(success, fail);
+```
+
+* _success_ is a callback containing the ACPIdentity extension version if the `extensionVersion` API executed without any errors.
+* _fail_ is a callback containing error information if the  `appendVisitorInfoForUrl` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.extensionVersion(function (handleCallback) {
+  console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: failed to get extension version : " + handleError)
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getExperienceCloudId
@@ -514,6 +607,38 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### getExperienceCloudId
+
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
+
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+#### Cordova
+
+#### Syntax
+
+```jsx
+ACPIdentity.getExperienceCloudId(success, fail);
+```
+
+* _success_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
+* _fail_ is a callback containing error information if the `getExperienceCloudId` API was executed with errors.
+
+#### Example
+
+```jsx
+ACPIdentity.getExperienceCloudId(function (handleCallback) {
+  console.log("AdobeExperienceSDK: experienceCloudId: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve experienceCloudId : " + handleError);
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getIdentifiers
@@ -650,6 +775,36 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### getIdentifiers
+
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.getIdentifiers(success, fail);
+```
+
+* _success_ is a callback containing the previously synced identifiers if the `getIdentifiers` API executed without any errors.
+* _fail_ is a callback containing error information if the `getIdentifiers` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.getIdentifiers(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Visitor identifiers: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve visitor identifiers : " + handleError);
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getUrlVariables
@@ -806,7 +961,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-### getUrlVariables
+### <a name="geturlvariables-js">getUrlVariables</a>
 
 #### JavaScript
 
@@ -872,6 +1027,45 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### <a name="geturlvariables-cordova">getUrlVariables </a>
+
+#### Cordova
+
+This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
+
+If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
+
+* The `adobe_mc` attribute is an URL encoded list that contains:
+  * `MCMID` - Experience Cloud ID \(ECID\)
+  * `MCORGID` - Experience Cloud Org ID
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+  * `TS` - A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
+
+**Syntax**
+
+```jsx
+ACPIdentity.getUrlVariables(success, fail);
+```
+
+* _success_ is a callback containing the url varaibles in query parameter form if the `getUrlVariables` API executed without any errors.
+* _fail_ is a callback containing error information if the `getUrlVariables` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.getUrlVariables(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Url variables: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError);
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## registerExtension
@@ -1112,6 +1306,35 @@ Future<void> setAdvertisingIdentifier (String aid);
 FlutterACPCore.setAdvertisingIdentifier("ADVTID");
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### setAdvertisingIdentifier
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPCore.setAdvertisingIdentifier(identifier, success, fail);
+```
+
+* _identifier_ _\(String\)_ provides developers with a simple, standard system to continue to track the Ads through their apps.
+* _success_ is a callback containing a general success message if the `setAdvertisingIdentifier` API executed without any errors.
+* _fail_ is a callback containing error information if the `setAdvertisingIdentifier` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
+  console.log("AdobeExperienceSDK: Advertising identifier successfully set.");
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to set advertising identifier : " + handleError);
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## setPushIdentifier
@@ -1281,7 +1504,7 @@ syncIdentifier(identifierType: String, identifier: String, authenticationState: 
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState \(VisitorIDAuthenticationState\)_ value indicating authentication state for the user contaisn one of the `VisitorID.AuthenticationState` values: indicats the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
+* _authenticationState \(VisitorIDAuthenticationState\)_ value indicating authentication state for the user and contains one of the following  `VisitorID.AuthenticationState` values:
 * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
 * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
 * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1309,7 +1532,7 @@ Future<void> syncIdentifier(String identifierType, String identifier, ACPMobileV
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState_ value indicating authentication state for the user contaisn one of the `ACPMobileVisitorAuthenticationState` values: indicats the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
+* _authState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
 * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
 * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
 * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1322,6 +1545,45 @@ import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
 FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthenticationState.AUTHENTICATED);
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, success, fail);
+```
+
+* The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
+
+* The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
+
+  If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+
+* _authState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
+
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
+
+* _success_ is a callback containing the visitor id type, value, and authentication state if the `syncIdentifier` API executed without any errors.
+
+* _fail_ is a callback containing error information if the `syncIdentifier` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown, function (handleCallback) {
+  console.log("AdobeExperenceSDK: Identifier synced successfully : " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifier : " + handleError);
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## syncIdentifiers
@@ -1428,6 +1690,37 @@ FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
                                     "idType3":"idValue3"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.syncIdentifiers = function(identifiers, success, fail);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
+
+* _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, function (handleCallback) {
+  console.log("AdobeExperienceSDK: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## syncIdentifiers \(overloaded\)
@@ -1556,6 +1849,43 @@ import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
 FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPMobileVisitorAuthenticationState.UNKNOWN);
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+**Syntax**
+
+```jsx
+ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
+```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
+
+* _authState_ value indicating authentication state for the identifiers to be synced and contains one of the `ACPMobileVisitorAuthenticationState` values:
+
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
+  * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
+
+* _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
+
+* _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
+
+**Example**
+
+```jsx
+ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType3":"idValue3"}, ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated, function (handleCallback) {
+  console.log("AdobeExperienceSDK: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
+});
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Public classes
@@ -1686,6 +2016,23 @@ import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
 enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+**ACPMobileVisitorAuthenticationState**
+
+This is used to indicate the authentication state for the current `VisitorID`.
+
+```jsx
+ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown = 0;
+ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated = 1;
+ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 
