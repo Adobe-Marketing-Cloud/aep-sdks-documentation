@@ -257,7 +257,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](#geturlvariables-js).
 {% endhint %}
 {% endtab %}
 
@@ -388,7 +388,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
+If your application uses more complicated URLs we recommend that you use [getUrlVariables](#geturlvariables-cordova).
 {% endhint %}
 {% endtab %}
 
@@ -961,7 +961,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-### getUrlVariables
+### <a name="geturlvariables-js">getUrlVariables</a>
 
 #### JavaScript
 
@@ -1030,13 +1030,9 @@ try {
 
 {% tab title="Cordova" %}
 
-### getUrlVariables
+### <a name="geturlvariables-cordova">getUrlVariables </a>
 
 #### Cordova
-
-{% hint style="info" %}
-This method was added in react-native-acpcore v1.0.5.
-{% endhint %}
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
