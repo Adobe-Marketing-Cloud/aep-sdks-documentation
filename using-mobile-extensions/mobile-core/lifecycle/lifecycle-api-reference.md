@@ -1,5 +1,73 @@
 # Lifecycle API reference
 
+## Version of the Lifecycle extension
+
+The `extensionVersion()` API returns the version of the Lifecycle extension that is registered with the Mobile Core extension.
+
+To get the version of the Lifecycle extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+```java
+String lifecycleExtensionVersion = Lifecycle.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *lifecycleExtensionVersion = [ACPLifecycle extensionVersion];
+```
+
+**Swift**
+
+```swift
+let lifecycleExtensionVersion  = ACPLifecycle.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+### JavaScript
+
+```jsx
+ACPLifecycle.extensionVersion().then(lifecycleExtensionVersion => console.log("AdobeExperienceSDK: ACPLifecycle version: " + lifecycleExtensionVersion));
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+### Dart
+
+```dart
+String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+### Cordova
+
+```jsx
+ACPLifecycle.extensionVersion(function(version) {  
+   console.log("ACPLifecycle version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ## Lifecycle Start
 
 You can use this API to start a new lifecycle session or resume a previously paused lifecycle session. If a previously paused session timed out, then a new session is created. If a current session is running, then calling this method does nothing.
