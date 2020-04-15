@@ -196,7 +196,29 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```dart
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
+
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+1. Install Analytics.
+
+   Instructions on installing the Analytics SDK in Cordova can be found [here](https://github.com/adobe/cordova-acpanalytics).
+
+2. Get the extension version.
+
+   ```jsx
+   ACPAnalytics.extensionVersion(function(version) {  
+      console.log("ACPAnalytics version: " + version);
+   }, function(error) {  
+      console.log(error);  
+   });
+   ```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register Analytics with Mobile Core

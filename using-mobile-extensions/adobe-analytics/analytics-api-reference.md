@@ -91,7 +91,7 @@ Regardless of how many hits are currently queued, this method forces the library
 ACPAnalytics.sendQueuedHits(function (handleCallback) {
   console.log("AdobeExperienceSDK: Send queued hits successful. " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to send queued hits : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to send queued hits: " + handleError);
 });
 ```
 
@@ -184,7 +184,7 @@ FlutterACPAnalytics.clearQueue();
 ACPAnalytics.clearQueue(function (handleCallback) {
   console.log("AdobeExperienceSDK: Clear queued hits successful. " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to clear queued hits : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to clear queued hits: " + handleError);
 });
 ```
 
@@ -282,9 +282,9 @@ try {
 
 ```jsx
 ACPAnalytics.getQueueSize(function (handleCallback) {
-  console.log("AdobeExperienceSDK: Queue size : " + handleCallback);
+  console.log("AdobeExperienceSDK: Queue size: " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to get queue size : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to get queue size: " + handleError);
 });
 ```
 
@@ -402,9 +402,9 @@ Retrieves the Analytics tracking identifier.
 
 ```jsx
 ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
-  console.log("AdobeExperienceSDK: Retrieved tracking identifier : " + handleCallback);
+  console.log("AdobeExperienceSDK: Retrieved tracking identifier: " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to retrieve tracking identifier : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to retrieve tracking identifier: " + handleError);
 });
 ```
 
@@ -491,9 +491,9 @@ FlutterACPAnalytics.setVisitorIdentifier("yourVisitorId");
 
 ```jsx
 ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback) {
-  console.log("AdobeExperienceSDK: Custom visitor identifier set successfully : " + handleCallback);
+  console.log("AdobeExperienceSDK: Custom visitor identifier set successfully. " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to set custom visitor identifier : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to set custom visitor identifier: " + handleError);
 });
 ```
 
@@ -597,9 +597,9 @@ try {
 
 ```jsx
 ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
-  console.log("AdobeExperienceSDK: Retrieved custom visitor identifier : " + handleCallback);
+  console.log("AdobeExperienceSDK: Retrieved custom visitor identifier: " + handleCallback);
 } ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to retrieve custom visitor identifier : " + handleError);
+  console.log("AdobeExperenceSDK: Failed to retrieve custom visitor identifier: " + handleError);
 });
 ```
 
