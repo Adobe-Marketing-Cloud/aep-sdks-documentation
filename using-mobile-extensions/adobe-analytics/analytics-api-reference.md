@@ -172,7 +172,7 @@ FlutterACPAnalytics.clearQueue();
 ```
 {% endtab %}
 
-% tab title="Cordova" %}
+{% tab title="Cordova" %}
 
 #### Cordova
 
