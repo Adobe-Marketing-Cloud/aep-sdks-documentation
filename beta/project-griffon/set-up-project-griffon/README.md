@@ -229,7 +229,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 
 #### Syntax
 
-```objectivec
+```jsx
 ACPGriffon.startSession(url, success, error);
 ```
 
