@@ -69,6 +69,17 @@ Import the Identity extension:
 import 'package:flutter_acpcore/flutter_acpidentity.dart';
 ```
 {% endtab %}
+{% tab title="Cordova" %}
+
+### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Identity extension for Cordova can be added with this command:
+
+```
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## Register the Identity extension
@@ -136,6 +147,13 @@ When using React Native, registering Identity with Mobile Core should be done in
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+When using Cordova, registering Identity with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -189,6 +207,19 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ide
 ```dart
 String identityExtensionVersion = await FlutterACPIdentity.extensionVersion;
 ```
+{% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+```jsx
+ACPIdentity.extensionVersion(function (handleCallback) {
+  console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: failed to get extension version : " + handleError)
+});
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -322,6 +353,32 @@ try {
   log("Failed to get url variables");
 }
 ```
+{% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+```jsx
+ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
+  console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to append URL : " + handleError);
+});
+```
+
+Alternately, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+
+```jsx
+ACPIdentity.getUrlVariables(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Url variables: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError);
+});
+```
+
+
 {% endtab %}
 {% endtabs %}
 

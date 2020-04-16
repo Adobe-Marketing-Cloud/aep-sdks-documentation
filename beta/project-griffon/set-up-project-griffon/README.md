@@ -88,11 +88,22 @@ import ACPCore
 import ACPGriffon // <-- import the Project Griffon library
 ```
 {% endtab %}
-
 {% tab title="Flutter" %}
-**Dart**
+
+#### Dart
 
 Flutter install instructions for Griffon can be found [here](https://pub.dev/packages/flutter_griffon#-installing-tab-).
+{% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Project Griffon extension for Cordova can be added with this command:
+
+```
+cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -155,6 +166,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="Flutter" %}
 When using Flutter, registering Griffon with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+{% tab title="Cordova" %}
+When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
 {% endtabs %}
 
 #### Implement Project Griffon session start APIs \(iOS\)
@@ -208,6 +222,27 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
         ACPGriffon.startSession((URLContexts.first!).url)
 }
 ```
+{% endtab %}
+{% tab title="Cordova" %}
+
+### startSession
+
+#### Syntax
+
+```objectivec
+ACPGriffon.startSession(url, success, error);
+```
+
+#### Example
+
+```jsx
+ACPGriffon.startSession(sessionUrl, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Griffon session start successful: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to start griffon session: " + handleError);
+});
+```
+
 {% endtab %}
 {% endtabs %}
 
