@@ -412,6 +412,10 @@ You can also set an application deep link that can be triggered when selections 
 
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen. For more information, see [collectLaunchInfo](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information).
 
+{% hint style="info" %}
+The first mbox request made after making preview mode selections may sometimes fail due to a Target server caching issue. A workaround is to make the same mbox request again, which should now be succesful in retrieving the test offer. To ensure that the request is repeated, the mbox request may be called in the application's `viewWillAppear:` delegate on iOS or in the application's  `onResume` callback on Android. The mbox request can then be triggered by navigating to another view within the application and returning to the current view.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 On Android, when the application is launched as a result of a deep link, the `collectLaunchIInfo` API is internally invoked, and the Target activity and deep link information is extracted from the Intent extras.
@@ -448,6 +452,10 @@ The SDK can minimize the number of times it reaches out to Target servers to fet
 
 {% hint style="warning" %}
 Prefetched offer content does not persist across application launches. The prefetch content is cached as long as the application lives in memory or until the API to clear the cache is called. For more information, see [clearPrefetchCache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/target-api-reference#clearPrefetchCache).
+{% endhint %}
+
+{% hint style="warning" %}
+Offer prefetch is not available while visual preview mode is enabled. Visual preview mode will enable  the retrieval of test offers and the retrieved test data should not be cached. Visual preview mode must be exited to resume the use of offer prefetch.
 {% endhint %}
 
 ## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
