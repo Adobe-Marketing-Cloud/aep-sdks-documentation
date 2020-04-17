@@ -413,7 +413,9 @@ You can also set an application deep link that can be triggered when selections 
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen. For more information, see [collectLaunchInfo](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information).
 
 {% hint style="info" %}
-The first mbox request made after making preview mode selections may sometimes fail due to a Target server caching issue. A workaround is to make the same mbox request again, which should now be succesful in retrieving the test offer. To ensure that the request is repeated, the mbox request may be called in the application's `viewWillAppear:` delegate on iOS or in the application's  `onResume` callback on Android. The mbox request can then be triggered by navigating to another view within the application and returning to the current view.
+After making preview mode selections, the first mbox request made may fail due to a caching issue on the Target server. For more information see https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html#preview. 
+
+One workaround is to ensure your mbox request is in a location where it will be triggered as the user is navigating screens (e.g. `viewWillAppear` for iOS or `onResume` for Android). If the mbox calls are in the correct location, you can simply navigate away from the current screen then back to make the mbox request again.
 {% endhint %}
 
 {% tabs %}
@@ -455,7 +457,7 @@ Prefetched offer content does not persist across application launches. The prefe
 {% endhint %}
 
 {% hint style="warning" %}
-Offer prefetch is not available while visual preview mode is enabled. Visual preview mode will enable  the retrieval of test offers and the retrieved test data should not be cached. Visual preview mode must be exited to resume the use of offer prefetch.
+Offer prefetch is not available while visual preview mode is enabled.
 {% endhint %}
 
 ## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
