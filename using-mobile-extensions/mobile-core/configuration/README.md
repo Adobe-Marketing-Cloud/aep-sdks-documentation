@@ -16,7 +16,6 @@ The unique environment ID provided by Experience Platform Launch can be configur
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
@@ -25,7 +24,6 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Objective-C
 
 ```objectivec
@@ -117,7 +115,6 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
@@ -210,3 +207,4 @@ Here's a sample JSON file for the SDK:
     "rules.url": "https://link.to.rules/test.zip"
 }
 ```
+

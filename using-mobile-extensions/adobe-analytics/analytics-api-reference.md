@@ -80,7 +80,6 @@ FlutterACPAnalytics.sendQueuedHits();
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### sendQueuedHits
@@ -94,9 +93,7 @@ ACPAnalytics.sendQueuedHits(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to send queued hits: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Clear queued hits <a id="clearqueue"></a>
@@ -173,7 +170,6 @@ FlutterACPAnalytics.clearQueue();
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### clearQueue
@@ -187,9 +183,7 @@ ACPAnalytics.clearQueue(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to clear queued hits: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Get the queue size <a id="getqueuesize"></a>
@@ -275,7 +269,6 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### getQueueSize
@@ -287,9 +280,7 @@ ACPAnalytics.getQueueSize(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to get queue size: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Get the tracking identifier <a id="gettrackingidentifier"></a>
@@ -393,7 +384,6 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### getTrackingIdentifier
@@ -407,9 +397,7 @@ ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to retrieve tracking identifier: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Set the custom visitor identifier <a id="setidentifier"></a>
@@ -484,7 +472,6 @@ FlutterACPAnalytics.setVisitorIdentifier("yourVisitorId");
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### setVisitorIdentifier
@@ -496,9 +483,7 @@ ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback)
   console.log("AdobeExperenceSDK: Failed to set custom visitor identifier: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Get the custom visitor identifier <a id="getvisitoridentifier"></a>
@@ -590,7 +575,6 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### getVisitorIdentifier
@@ -602,8 +586,6 @@ ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to retrieve custom visitor identifier: " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

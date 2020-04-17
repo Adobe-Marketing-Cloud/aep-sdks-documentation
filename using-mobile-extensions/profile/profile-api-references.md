@@ -137,7 +137,6 @@ ACPUserProfile.updateUserAttributes(profileMap)
 
 ## **Remove user attributes**
 
-
 {% tabs %}
 {% tab title="Android" %}
 ### **removeUserAttribute**
@@ -157,6 +156,7 @@ A retail application wants to remove the `itemsAddedToCart` user data after the 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
 ```
+
 ### **removeUserAttributes**
 
 Removes the user profile attributes for the given keys.
@@ -169,12 +169,11 @@ public static void removeUserAttributes(List<String> attributeNames)
 
 #### **Example**
 
-You want to remove `username`, `usertype` user data when session timeout occurs. 
+You want to remove `username`, `usertype` user data when session timeout occurs.
 
 ```java
 UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -203,6 +202,7 @@ A retail application wants to remove the `itemsAddedToCart` user data after the 
 ```swift
 ACPUserProfile.removeUserAttribute("itemsAddedToCart");
 ```
+
 ### removeUserAttributes
 
 Removes the user profile attributes for the given keys.
@@ -215,7 +215,7 @@ Removes the user profile attributes for the given keys.
 
 #### **Examples**
 
-You want to remove `username`, `usertype` user data when session timeout occurs. 
+You want to remove `username`, `usertype` user data when session timeout occurs.
 
 **Objective C**
 
@@ -228,7 +228,6 @@ You want to remove `username`, `usertype` user data when session timeout occurs.
 ```swift
 ACPUserProfile.removeUserAttributes(["username","usertype"]);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -252,21 +251,20 @@ public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-When `AdobeCallbackWithError` is provided, if the operation times out (5s) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 ```java
 UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
-			@Override
-			public void fail(AdobeError adobeError) {
-				// your customized code
-			}
-			@Override
-			public void call(Map<String, Object> stringObjectMap) {
-         			// your customized code
-			}
-		});
+            @Override
+            public void fail(AdobeError adobeError) {
+                // your customized code
+            }
+            @Override
+            public void call(Map<String, Object> stringObjectMap) {
+                     // your customized code
+            }
+        });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -303,3 +301,4 @@ ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(
 ```
 {% endtab %}
 {% endtabs %}
+

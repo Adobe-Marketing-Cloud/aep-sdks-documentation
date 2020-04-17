@@ -154,16 +154,15 @@ This step should occur prior to any other interactions with the AEP SDK. While i
 
 The `ACPHttpConnectionPerformer` is a protocol which must be conformed to in order to override the network stack. It provides two methods which must be implemented:
 
-    1. `shouldOverride`, which takes a URL and an HTTP method. Return true if you want the network stack to be overridden by the performer, or false if not. 
-    2. `requestUrl`, which is the URL request override with a completion block.
-    
+1. `shouldOverride`, which takes a URL and an HTTP method. Return true if you want the network stack to be overridden by the performer, or false if not. 
+2. `requestUrl`, which is the URL request override with a completion block.
+
 ### 2. Create an ACPHttpConnection and pass relevant data from your NSURLSessionDataTask completion block
 
 The completion block for the `requestUrl` method takes an `ACPHttpConnection` as its parameter. The `ACPHttpConnection` is used when overriding the network stack in place of the internal network connection implementation and represents the response to an HTTP request. It is to be created using the NSURLResponse and NSData from your url request response. In the case of a Network Error, or timeout, the `ACPHttpConnection*` is expected to be nil.
 
-    
- #### Example
-{% tab title="iOS" %}
+#### Example
+
 **Objective-C**
 
 ```objectivec
@@ -182,9 +181,9 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
 - (void) requestUrl: (NSURL*) url httpCommand: (NSString*) command connectPayload: (NSString*) payload requestPropertyDict: (NSDictionary<NSString*, NSString*>*) requestProperty connectTimeout: (NSTimeInterval) connectTimeout readTimeout: (NSTimeInterval) readTimeout completion: (void (^) (ACPHttpConnection*)) completion {
 
     requestUrlCompletion = completion;
-    
+
     ... URL configuration code ...
-    
+
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
 
     // Start the request
@@ -195,7 +194,7 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
             NSError * error) {
                 if(!error) {
                     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-                    
+
             // ***** NOTE the creation of the ACPHttpConnection outlined in step 2.*****
             ACPHttpConnection* connOverride = [[ACPHttpConnection alloc] initWithResponse:httpResponse data:data];
             completion(connOverride); 
@@ -216,7 +215,7 @@ class YourPerformerOverrider: ACPHttpConnectionPerformer {
     func shouldOverride(_ url: URL, method: String) -> Bool {
         return true
     }
-    
+
     func request(_ url: URL, httpCommand command: String, connectPayload payload: String, requestPropertyDict requestProperty: [String : String], connectTimeout: TimeInterval, readTimeout: TimeInterval, completion: @escaping (ACPHttpConnection?) -> Void) {
         //...
         let session = URLSession()
@@ -233,17 +232,13 @@ class YourPerformerOverrider: ACPHttpConnectionPerformer {
     }
 }
 ```
-{% endtab %}
- 
- 
- 
+
 ### 3: Register your ACPHttpConnectionPerformer with the SDK
 
 This step should occur prior to any other interactions with the AEP SDK. While it's possible to register the network override at any point during the application lifecycle, the override will only function for network requests performed after the registration has taken place.
 
 #### Example
 
-{% tab title="iOS" %}
 **Objective-C**
 
 ```objectivec
@@ -272,4 +267,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ...
         }
 ```
-{% endtab %}
+

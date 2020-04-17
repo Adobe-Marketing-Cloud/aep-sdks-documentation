@@ -15,7 +15,7 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError]https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate \[AdobeError\][https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference\#adobeerror](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror)\).
 
 #### Java
 
@@ -257,7 +257,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](#geturlvariables-js).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
 {% endhint %}
 {% endtab %}
 
@@ -327,7 +327,6 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### appendVisitorInfoForURL
 
 This API appends Adobe visitor information to the query component of the specified URL.
@@ -388,10 +387,9 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs we recommend that you use [getUrlVariables](#geturlvariables-cordova).
+If your application uses more complicated URLs we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-cordova).
 {% endhint %}
 {% endtab %}
-
 {% endtabs %}
 
 ## extensionVersion
@@ -442,7 +440,6 @@ String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 **Syntax**
@@ -463,9 +460,7 @@ ACPIdentity.extensionVersion(function (handleCallback) {
   console.log("AdobeExperenceSDK: failed to get extension version : " + handleError)
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getExperienceCloudId
@@ -476,7 +471,7 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback]https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback).
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the \[AdobeCallback\][https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference\#adobecallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback)\).
 
 When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror).
 
@@ -609,7 +604,6 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### getExperienceCloudId
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
@@ -636,9 +630,7 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to retrieve experienceCloudId : " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getIdentifiers
@@ -777,7 +769,6 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### getIdentifiers
 
 This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
@@ -802,9 +793,7 @@ ACPIdentity.getIdentifiers(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to retrieve visitor identifiers : " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getUrlVariables
@@ -961,7 +950,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-### <a name="geturlvariables-js">getUrlVariables</a>
+### [getUrlVariables](identity-api-reference.md)
 
 #### JavaScript
 
@@ -1029,8 +1018,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-
-### <a name="geturlvariables-cordova">getUrlVariables </a>
+### [getUrlVariables](identity-api-reference.md)
 
 #### Cordova
 
@@ -1063,9 +1051,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## registerExtension
@@ -1308,7 +1294,6 @@ FlutterACPCore.setAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### setAdvertisingIdentifier
 
 #### Cordova
@@ -1332,9 +1317,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
   console.log("AdobeExperenceSDK: Failed to set advertising identifier : " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## setPushIdentifier
@@ -1504,7 +1487,7 @@ syncIdentifier(identifierType: String, identifier: String, authenticationState: 
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState \(VisitorIDAuthenticationState\)_ value indicating authentication state for the user and contains one of the following  `VisitorID.AuthenticationState` values:
+* _authenticationState \(VisitorIDAuthenticationState\)_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
 * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
 * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
 * `ACPMobileVisitorAuthenticationState.UNKNOWN`
@@ -1547,7 +1530,6 @@ FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisit
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 **Syntax**
@@ -1557,19 +1539,15 @@ ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, suc
 ```
 
 * The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
-
 * The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * _authState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
-
 * _success_ is a callback containing the visitor id type, value, and authentication state if the `syncIdentifier` API executed without any errors.
-
 * _fail_ is a callback containing error information if the `syncIdentifier` API was executed with errors.
 
 **Example**
@@ -1581,9 +1559,7 @@ ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenti
   console.log("AdobeExperenceSDK: Failed to sync identifier : " + handleError);
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## syncIdentifiers
@@ -1692,7 +1668,6 @@ FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 **Syntax**
@@ -1706,7 +1681,6 @@ ACPIdentity.syncIdentifiers = function(identifiers, success, fail);
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
-
 * _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
 
 **Example**
@@ -1718,9 +1692,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
   console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## syncIdentifiers \(overloaded\)
@@ -1851,7 +1823,6 @@ FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2"
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 **Syntax**
@@ -1865,13 +1836,10 @@ ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * _authState_ value indicating authentication state for the identifiers to be synced and contains one of the `ACPMobileVisitorAuthenticationState` values:
-
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
   * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
-
 * _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
-
 * _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
 
 **Example**
@@ -1883,9 +1851,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
   console.log("AdobeExperenceSDK: Failed to sync identifiers : " + handleError)
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Public classes
@@ -1893,7 +1859,6 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% tabs %}
 {% tab title="Android" %}
 #### Android
-
 
 **AuthenticationState**
 
@@ -1926,7 +1891,6 @@ public class VisitorID {
 
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -1958,7 +1922,6 @@ This is an identifier to be used with the Experience Cloud Visitor ID Service an
 
 @end
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -2018,7 +1981,6 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 **ACPMobileVisitorAuthenticationState**
@@ -2030,9 +1992,6 @@ ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown = 0;
 ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated = 1;
 ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 ```
-
 {% endtab %}
-
 {% endtabs %}
-
 

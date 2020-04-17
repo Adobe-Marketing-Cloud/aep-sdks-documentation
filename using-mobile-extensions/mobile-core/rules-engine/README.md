@@ -50,3 +50,4 @@ For more information about the technical details of the Rules Engine, see [Rules
 ## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=BwBeYNu5Crg" caption="Video: How to configure IFTTT mobile rules in Adobe Experience Platform Launch" %}
+

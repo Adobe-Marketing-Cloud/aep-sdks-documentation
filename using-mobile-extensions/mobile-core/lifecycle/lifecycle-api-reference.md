@@ -8,13 +8,11 @@ To get the version of the Lifecycle extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
 String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -29,31 +27,25 @@ NSString *lifecycleExtensionVersion = [ACPLifecycle extensionVersion];
 ```swift
 let lifecycleExtensionVersion  = ACPLifecycle.extensionVersion()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
 ```jsx
 ACPLifecycle.extensionVersion().then(lifecycleExtensionVersion => console.log("AdobeExperienceSDK: ACPLifecycle version: " + lifecycleExtensionVersion));
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 ### Dart
 
 ```dart
 String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
 ```
-
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 ```jsx
@@ -63,9 +55,7 @@ ACPLifecycle.extensionVersion(function(version) {
    console.log(error);  
 });
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Lifecycle Start

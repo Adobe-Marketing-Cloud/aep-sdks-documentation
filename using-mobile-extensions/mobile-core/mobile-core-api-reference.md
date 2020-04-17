@@ -175,7 +175,6 @@ FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 ### trackAction
@@ -191,9 +190,7 @@ ACPCore.trackAction = function(action, contextData, success, fail);
 ```jsx
 ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Track app states and views
@@ -296,7 +293,6 @@ FlutterACPCore.trackState("state name",  data: {"key1: "value"})
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 #### trackState
@@ -312,9 +308,7 @@ ACPCore.trackState = function(state, contextData, success, fail);
 ```jsx
 ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Collect PII
@@ -603,7 +597,6 @@ FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 #### setLogLevel
@@ -626,9 +619,7 @@ ACPCore.setLogLevel = function(logLevel, success, fail);
 ```jsx
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% tabs %}
@@ -873,10 +864,9 @@ ACPCore.setAppGroup("app-group-id")
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Android
 
-##### AdobeCallback
+**AdobeCallback**
 
 This class provides the interface to receive results when the async APIs perform the requested action.
 
@@ -886,7 +876,7 @@ public interface AdobeCallback<T> {
 }
 ```
 
-##### AdobeCallbackWithError
+**AdobeCallbackWithError**
 
 This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
 
@@ -896,14 +886,14 @@ public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
 }
 ```
 
-##### AdobeError
+**AdobeError**
 
 Errors which may be passed to an AdobeCallbackWithError:
 
-- `UNEXPECTED_ERROR` - An unexpected error occurred.
-- `CALLBACK_TIMEOUT` - The timeout was met.
-- `CALLBACK_NULL` - The provided callback function is null.
-- `EXTENSION_NOT_INITIALIZED` - The extension is not initialized.
+* `UNEXPECTED_ERROR` - An unexpected error occurred.
+* `CALLBACK_TIMEOUT` - The timeout was met.
+* `CALLBACK_NULL` - The provided callback function is null.
+* `EXTENSION_NOT_INITIALIZED` - The extension is not initialized.
 
 **Example**
 
@@ -928,27 +918,25 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
   }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### iOS
 
-##### ACPError
+**ACPError**
 
 Errors which may be passed to a completion handler callback from any API which uses one:
 
-- `ACPErrorUnexpected` - An unexpected error occurred.
-- `ACPErrorCallbackTimeout` - The timeout was met.
-- `ACPErrorCallbackNil` - The provided callback function is nil.
-- `ACPErrorExtensionNotInitialized` - The extension is not initialized.
+* `ACPErrorUnexpected` - An unexpected error occurred.
+* `ACPErrorCallbackTimeout` - The timeout was met.
+* `ACPErrorCallbackNil` - The provided callback function is nil.
+* `ACPErrorExtensionNotInitialized` - The extension is not initialized.
 
 **Examples**
 
 **Objective C**
 
-```objective-c
+```text
 [ACPCore getPrivacyStatusWithCompletionHandler:^(ACPMobilePrivacyStatus status, NSError * _Nullable error) {
   if (error) {
     if (error.code == ACPErrorCallbackTimeout) {
@@ -986,7 +974,6 @@ ACPCore.getPrivacyStatus { (privacyStatus, error) in
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

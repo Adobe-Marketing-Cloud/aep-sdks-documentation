@@ -20,7 +20,7 @@ Review the following Mobile Services functionality documentation for context and
 * [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
 
 {% hint style="warning" %}
-Postbacks are **not** supported.
+Postbacks created from the Mobile Services interface are **not** supported. Please use a Launch rule with the Mobile Core extension to create a postback. [Signal extension and Rules Engine integration](../../resources/user-guides/signal-extension-and-rules-engine-integration.md).
 {% endhint %}
 
 {% hint style="warning" %}

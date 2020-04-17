@@ -60,7 +60,6 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### updateConfiguration <a id="updateConfiguration"></a>
 
 #### Syntax
@@ -174,3 +173,4 @@ ACPCore.configureWithFile(inPath: filePath)
 ```
 {% endtab %}
 {% endtabs %}
+

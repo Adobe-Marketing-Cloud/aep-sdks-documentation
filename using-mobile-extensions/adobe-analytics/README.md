@@ -196,11 +196,9 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```dart
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
-
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 1. Install Analytics.
@@ -216,9 +214,7 @@ _Note_ For `iOS` using `cocoapods`, run:
       console.log(error);  
    });
    ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -463,11 +459,7 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.backdatePreviousSessionInfo` | No | See [Backdate Previous Session Info.](./#backdate-previous-session-info) |
-| :--- | :--- | :--- |
-
-
-{% tabs %}
+</table>{% tabs %}
 {% tab title="Android" %}
 ### Update Analytics Configuration
 
