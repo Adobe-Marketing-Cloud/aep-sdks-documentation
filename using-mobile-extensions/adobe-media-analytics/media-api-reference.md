@@ -4,26 +4,36 @@
 
 ### Create a media tracker
 
+{% hint style="warning" %}
+The API createTracker with callback has been deprecated for the synchronous version
+{% endhint %}
+
 Creates a media tracker instance that tracks the playback session. The tracker created should be used to track the streaming content, and it sends periodic pings to the media analytics backend.
 
 {% tabs %}
 {% tab title="Android" %}
 #### createTracker
 
-The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
+ The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
 ```java
+public static MediaTracker createTracker()
+
+// Deprecated
 public static void createTracker(AdobeCallback<MediaTracker> callback)
 ```
 
 **Example**
 
 ```java
+MediaTracker mediaTracker = Media.createTracker();  // Use the instance for tracking media.
+
+// Deprecated
 Media.createTracker(new AdobeCallback<MediaTracker>() {
     @Override
-    public void call(MediaTracker tracker) {
+    public void call(MediaTracker mediaTracker) {
         // Use the instance for tracking media.
     }
 });
@@ -33,11 +43,15 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 #### createTracker
 
-The callback will be invoked to return the created tracker instance. If an error occurs, `nil` is returned.
+ The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
 ```objectivec
++(ACPMediaTracker* _Nullable) createTracker;
+
+
+// Deprecated
 +(void) createTracker: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
 ```
 
@@ -48,6 +62,10 @@ Here are examples in Objective C and Swift:
 **Objective C**
 
 ```objectivec
+ACPMediaTracker *mediaTracker = [ACPMedia createTracker];  // Use the instance for tracking media.
+
+
+// Deprecated
 [ACPMedia createTracker:^(ACPMediaTracker * _Nullable mediaTracker) {
     // Use the instance for tracking media.
 }];
@@ -56,9 +74,12 @@ Here are examples in Objective C and Swift:
 **Swift**
 
 ```swift
+let mediaTracker = ACPMedia.createTracker()  // Use the instance for tracking media.
+
+// Deprecated
 ACPMedia.createTracker({mediaTracker in
     // Use the instance for tracking media.
-}
+})
 ```
 {% endtab %}
 {% endtabs %}
@@ -76,7 +97,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 {% tab title="Android" %}
 #### createTracker
 
-Optional configuration about the tracker can be passed to this function. The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
+Optional configuration about the tracker can be passed to this function.  The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -90,6 +111,9 @@ public class MediaConstants {
 
 }
 
+public static MediaTracker createTracker(Map<String, Object> config)
+
+// Deprecated
 public static void createTracker(Map<String, Object> config, final AdobeCallback<MediaTracker> callback)
 ```
 
@@ -100,9 +124,13 @@ HashMap<String, Object> config = new HashMap<String, Object>();
 config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
 config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from launch
 
+
+MediaTracker mediaTracker = Media.createTracker(config);  // Use the instance for tracking media.
+
+// Deprecated
 Media.createTracker(config, new AdobeCallback<MediaTracker>() {
     @Override
-    public void call(MediaTracker tracker) {
+    public void call(MediaTracker mediaTracker) {
         // Use the instance for tracking media.
     }
 });
@@ -112,7 +140,7 @@ Media.createTracker(config, new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 #### createTrackerWithConfig
 
-Optional configuration about the tracker can be passed to this function. The callback is invoked to return the created tracker instance. If an error occurs, `null` is returned.
+Optional configuration about the tracker can be passed to this function. The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -120,7 +148,10 @@ Optional configuration about the tracker can be passed to this function. The cal
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigChannel;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
 
-+ (void) createTrackerWithConfig: (NSDictionary* _Nullable) config 
++ (ACPMediaTracker* _Nullable) createTrackerWithConfig: (NSDictionary* _Nullable) config;
+
+// Deprecated
++ (void) createTrackerWithConfig: (NSDictionary* _Nullable) config
                         callback: (void (^ _Nonnull) (ACPMediaTracker* _Nullable)) callback;
 ```
 
@@ -135,6 +166,9 @@ NSMutableDictionary* config = [NSMutableDictionary dictionary];
 config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Creates downloaded content tracker
 config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Override channel configured from launch
 
+ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Use the instance for tracking media.
+
+// Deprecated
 [ACPMedia createTrackerWithConfig: config
                          callback:^(ACPMediaTracker * _Nullable mediaTracker) {
     // Use the instance for tracking media.
@@ -148,6 +182,9 @@ var config: [String: Any] = [:]
 config[ACPMediaKeyConfigChannel] = "custom-channel"  // Creates downloaded content tracker
 config[ACPMediaKeyConfigDownloadedContent] = true    // Override channel configured from launch
 
+let mediaTracker = ACPMedia.createTrackerWithConfig(config); // Use the instance for tracking media.
+
+// Deprecated
 ACPMedia.createTrackerWithConfig(config, {mediaTracker in
     // Use the instance for tracking media.
 }
@@ -497,6 +534,62 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 {% endtab %}
 {% endtabs %}
 
+### Create a Player State object
+
+Creates an instance of the Player State object.
+
+| Variable Name | Description | Required |
+| :--- | :--- | :---: |
+| `name` | State name | Yes |
+
+{% tabs %}
+{% tab title="Android" %}
+#### createStateObject
+
+Returns a HashMap instance that contains information about the chapter.
+
+**Syntax**
+
+```java
+public static HashMap<String, Object> createStateObject(String stateName);
+```
+
+**Example**
+
+```java
+HashMap<String, Object> playerStateInfo = Media.createChapterObject("fullscreen");
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+#### createStateObjectWithName
+
+Returns an NSDictionary instance that contains information about the player state.
+
+**Syntax**
+
+```objectivec
++ (NSDictionary* _Nonnull) createStateObjectWithName: (NSString* _Nonnull) stateName;
+```
+
+**Example**
+
+Here are examples in Objective C and Swift:
+
+**Objective C**
+
+```objectivec
+NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscreen";
+```
+
+**Swift**
+
+```swift
+let playerStateObject = ACPMedia.createStateObject(withName: "fullscreen")
+```
+{% endtab %}
+{% endtabs %}
+
 ## Media tracker API reference
 
 ### trackSessionStart
@@ -834,7 +927,7 @@ Tracks media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#create-an-adbreak-object) method.  For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#create-an-ad-object) method.  For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#create-a-chapter-object) method.  This is not required for other events. |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#create-an-adbreak-object) method.  For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#create-an-ad-object) method.  For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#create-a-chapter-object) method. For `StateStart` and `StateEnd` event, the State information is created by using the [createStateObject](media-api-reference.md#create-a-player-state-object) method. This is not required for other events. |
 | `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
@@ -850,6 +943,18 @@ Tracks media events.
 ```
 
 **Examples**
+
+**Tracking Player States**
+```java
+// StateStart
+  HashMap<String, Object> stateObject = Media.createStateObject("fullscreen");
+  _tracker.trackEvent(Media.Event.StateStart, stateObject, null);
+
+// StateEnd
+  HashMap<String, Object> stateObject = Media.createStateObject("fullscreen");
+  _tracker.trackEvent(Media.Event.StateEnd, stateObject, null);
+```
+
 
 **Tracking AdBreaks**
 
@@ -928,6 +1033,10 @@ Tracks media events.
 // Bitrate change
   _heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
 ```
+
+**Tracking bitrate changes**
+
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -942,6 +1051,34 @@ Tracks media events.
 ```
 
 **Examples**
+
+**Tracking Player States**
+
+Here are examples in Objective C and Swift:
+
+**Objective C**
+
+```objectivec
+// StateStart
+  NSDictionary* stateObject = [ACPMedia createStateObjectWithName:@"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
+
+// StateEnd
+  NSDictionary* stateObject = [ACPMedia createStateObjectWithName:@"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateEnd mediaObject:stateObject data:nil];
+```
+
+**Swift**
+
+```swift
+// StateStart
+  let stateObject = ACPMedia.createStateObject(withName: "fullscreen")
+  _tracker.trackEvent(ACPMediaEvent.stateStart, mediaObject: stateObject, data: nil)
+
+// StateEnd
+  let stateObject = ACPMedia.createStateObject(withName: "fullscreen")
+  _tracker.trackEvent(ACPMediaEvent.stateEnd, mediaObject: stateObject, data: nil)
+```
 
 **Tracking AdBreaks**
 
@@ -1114,8 +1251,38 @@ Here are examples in Objective C and Swift:
 // Bitrate change
   _tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
 ```
+
+**Tracking PlayerState events**
+
+**Objective C**
+
+```objectivec
+// stateStart
+  NSMutableDictionary *stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
+
+// stateEnd
+  NSMutableDictionary *stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateEnd mediaObject:stateObject data:nil];
+
+```
+
+**Swift**
+
+```swift
+// stateStart
+  let stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
+
+// stateEnd
+  let stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
+  [_tracker trackEvent:ACPMediaEventStateEnd mediaObject:stateObject data:nil];
+```
+
+
 {% endtab %}
 {% endtabs %}
+
 
 ### updateCurrentPlayhead
 
@@ -1472,6 +1639,38 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 {% endtab %}
 {% endtabs %}
 
+### Player State constants
+
+Defines some common Player State constants.
+
+{% tabs %}
+{% tab title="Android" %}
+```java
+public class MediaConstants {
+
+  public static final class PlayerState {
+    public static final String FULLSCREEN = "fullscreen";
+		public static final String PICTURE_IN_PICTURE = "pictureInPicture";
+		public static final String CLOSED_CAPTION = "closedCaptioning";
+		public static final String IN_FOCUS = "inFocus";
+		public static final String MUTE = "mute";
+  }
+
+}
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+```objectivec
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateFullScreen;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStatePictureInPicture;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateClosedCaption;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateInFocus;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateMute;
+```
+{% endtab %}
+{% endtabs %}
+
 ### Media events
 
 Defines the type of a tracking event.
@@ -1549,6 +1748,16 @@ public class Media {
       * Constant defining event type for change in Bitrate
       */
       BitrateChange,
+
+      /**
+  		 * Constant defining event type for State start
+  		 */
+  		StateStart,
+
+  		/**
+  		 * Constant defining event type for State end
+  		 */
+  		StateEnd
   }
 
 }
@@ -1613,6 +1822,14 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
      * Constant defining event type for change in Bitrate
      */
     ACPMediaEventBitrateChange,
+    /**
+     * Constant defining event type for player State start
+     */
+    ACPMediaEventStateStart
+    /**
+     * Constant defining event type for  player State end
+     */
+    ACPMediaEventStateEnd
 };
 ```
 {% endtab %}
@@ -1691,4 +1908,3 @@ _tracker.trackSessionStart(mediaObject, data: nil)
 ```
 {% endtab %}
 {% endtabs %}
-

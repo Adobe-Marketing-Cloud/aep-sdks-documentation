@@ -18,13 +18,12 @@ This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/c
 
 To configure the Media Analytics extension, complete the following steps:
 
-1. In **Tracking Server**, Type the name of the tracking server to which all media tracking data should be sent. **Tip**: This server is different from your Analytics tracking server.
-2. In **Collection API Server**, type the name of the media collection API server to which the downloaded media tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
-3. In **Channel**, type the channel name property.
-4. In **Online video provider**, Type the name of the online platform through which content is distributed.
-5. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
-6. In Application Version, Type the version of the media player application/SDK.
-7. To enable or disable debug logging, select \(or deselect\) the Debug logging checkbox. **Caution**: You **must** disable this option for your production application.
+1. In **Collection API Server**, Type the name of the media collection API server to which the downloaded media tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
+2. In **Channel**, type the channel name property.
+3. In **Online video provider**, Type the name of the online platform through which content is distributed.
+4. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+5. In Application Version, Type the version of the media player application/SDK.
+6. To enable or disable debug logging, select \(or deselect\) the Debug logging checkbox. **Caution**: You **must** disable this option for your production application.
 
 ## Add Media Analytics to your app
 
@@ -36,7 +35,7 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
 
    ```text
    implementation 'com.adobe.marketing.mobile:analytics:1.+'
-   implementation 'com.adobe.marketing.mobile:media:1.+'
+   implementation 'com.adobe.marketing.mobile:media:2.+'
    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
    ```
 
@@ -49,7 +48,7 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
 3. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
    ```text
-   pod 'ACPMedia', '~> 1.0'
+   pod 'ACPMedia', '~> 2.0'
    pod 'ACPAnalytics', '~> 2.0'
    pod 'ACPCore', '~> 2.0'
    ```
@@ -142,7 +141,7 @@ import ACPMedia
 import ACPIdentity
 import ACPLifecycle
 
-func application(_ application: UIApplication, 
+func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ACPCore.setLogLevel(.debug)
     ACPCore.configure(withAppId: "your-launch-app-id")
@@ -167,11 +166,13 @@ To update your SDK configuration programmatically, use the following information
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.trackingServer` | Yes | For more information, see [Tracking Server](./#tracking-server). |
-| `media.collectionServer` | No | For more information, see [Collection Server](./#collection-api-server). |
+| `media.collectionServer` | Yes | For more information, see [Collection Server](./#collection-api-server). |
 | `media.channel` | No | For more information, see [Channel](./#channel). |
 | `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
 | `media.playerName` | No | For more information, see [Player Name](./#player-name). |
 | `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
-| `media.debugLogging` | No | For more information, see [Debug Logging](./#debug-logging). |
 
+
+### Player State Tracking
+
+We have added support for tracking player states like fullscreen, closeCaption, mute and any custom states you would like to track. This feature will be available to use from Media Extension v2.0.0 onwards. Currently you can track upto 10 states per media session. Check API reference for implementation details.
