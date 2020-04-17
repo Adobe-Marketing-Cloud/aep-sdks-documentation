@@ -415,7 +415,7 @@ To enter the preview visual mode, use the `collectLaunchInfo` API to enable the 
 {% hint style="info" %}
 After making preview mode selections, the first mbox request made may fail due to a caching issue on the Target server. For more information see https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html#preview. 
 
-One workaround is to ensure your mbox request is in a location where it will be triggered as the user is navigating screens (e.g. `viewWillAppear` for iOS or `onResume` for Android). If the mbox calls are in the correct location, you can simply navigate away from the current screen then back to make the mbox request again.
+The mbox request that failed can be retried to successfully retrieve the test offer content.
 {% endhint %}
 
 {% tabs %}
