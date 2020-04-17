@@ -14,7 +14,7 @@ The following updates were made in this release:
 
 ### iOS Mobile Services 1.0.6
 
-* Fixed a bug where the modal fullscreen message was showed with a white space at the top of the image.
+* Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
 
 ## April 9, 2020
 
