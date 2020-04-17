@@ -8,13 +8,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## April 17, 2020
+
+The following updates were made in this release:
+
+### iOS Mobile Services 1.0.6
+
+* Fixed a bug where the modal fullscreen message shows with a white space at the top of the image.
+
 ## April 9, 2020
 
 The following updates were made in this release:
 
 ### Android Core 1.5.2
 
-* Fixed serveval security issues.
+* Fixed several security issues.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ### Android Lifecycle 1.0.3
