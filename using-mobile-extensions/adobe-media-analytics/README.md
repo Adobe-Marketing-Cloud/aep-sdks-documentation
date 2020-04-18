@@ -14,6 +14,10 @@ This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/c
 
 ### Configure the Media Analytics extension
 
+{% hint style="info" %}
+If you update the Adobe Media Analytics for Audio and Video launch extension in your launch property, you must make sure to update and use Media extension v2.0.0 and higher.
+{% endhint %}
+
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
 
 To configure the Media Analytics extension, complete the following steps:
@@ -171,8 +175,3 @@ To update your SDK configuration programmatically, use the following information
 | `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
 | `media.playerName` | No | For more information, see [Player Name](./#player-name). |
 | `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
-
-
-### Player State Tracking
-
-We have added support for tracking player states like fullscreen, closeCaption, mute and any custom states you would like to track. This feature will be available to use from Media Extension v2.0.0 onwards. Currently you can track upto 10 states per media session. Check API reference for implementation details.
