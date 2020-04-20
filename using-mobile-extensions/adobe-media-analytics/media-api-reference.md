@@ -546,7 +546,7 @@ Creates an instance of the Player State object.
 {% tab title="Android" %}
 #### createStateObject
 
-Returns a HashMap instance that contains information about the chapter.
+Returns a HashMap instance that contains information about the State.
 
 **Syntax**
 
@@ -557,7 +557,7 @@ public static HashMap<String, Object> createStateObject(String stateName);
 **Example**
 
 ```java
-HashMap<String, Object> playerStateInfo = Media.createChapterObject("fullscreen");
+HashMap<String, Object> playerStateInfo = Media.createStateObject("fullscreen");
 ```
 {% endtab %}
 
