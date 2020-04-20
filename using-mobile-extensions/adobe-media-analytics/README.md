@@ -24,16 +24,20 @@ To configure the Media Analytics extension, complete the following steps:
 
 1. In **Collection API Server**, Type the name of the media collection API server to which the downloaded media tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
 2. In **Channel**, type the channel name property.
-3. In **Online video provider**, Type the name of the online platform through which content is distributed.
-4. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
-5. In Application Version, Type the version of the media player application/SDK.
-6. To enable or disable debug logging, select \(or deselect\) the Debug logging checkbox. **Caution**: You **must** disable this option for your production application.
+3. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+4. In Application Version, Type the version of the media player application/SDK.
 
 ## Add Media Analytics to your app
 
 {% hint style="info" %}
 This extension requires the [Adobe Analytics extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
 {% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+* Current Android SDK: [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media)
+
+* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
 
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
@@ -42,14 +46,20 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
    implementation 'com.adobe.marketing.mobile:media:2.+'
    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
    ```
+You can also manually include the libraries. Get `.aar` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android).
 
 2. Import the Media extension in your application's main activity.
 
    ```java
    import com.adobe.marketing.mobile.*;
    ```
+{% endtab %}
 
-3. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
+{% tab title="iOS" %}
+
+Current iOS SDK: [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)
+
+1. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
    ```text
    pod 'ACPMedia', '~> 2.0'
@@ -57,9 +67,9 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
    pod 'ACPCore', '~> 2.0'
    ```
 
-You can also manually include the libraries in [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks).
+You can also manually include the libraries. Get `.a` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS).
 
-1. In Xcode project, import Media extension:
+2. In Xcode project, import Media extension:
 
    **Objective C**
 
@@ -72,6 +82,10 @@ You can also manually include the libraries in [Github](https://github.com/Adobe
    ```swift
    import ACPMedia
    ```
+
+{% endtab %}
+{% endtabs %}
+
 
 ### Register Media with Mobile Core
 
@@ -172,6 +186,13 @@ To update your SDK configuration programmatically, use the following information
 | :--- | :--- | :--- |
 | `media.collectionServer` | Yes | For more information, see [Collection Server](./#collection-api-server). |
 | `media.channel` | No | For more information, see [Channel](./#channel). |
-| `media.ovp` | No | For more information, see [Online Video Provider](./#online-video-provider). |
 | `media.playerName` | No | For more information, see [Player Name](./#player-name). |
 | `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
+
+
+## Platform Support
+| Platform | Support Status |
+| :--- | :--- |
+| Android | Supported |
+| Apple iOS​ | Supported |
+| React Native \(iOS & Android\) | Supported |
