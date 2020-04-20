@@ -35,9 +35,8 @@ This extension requires the [Adobe Analytics extension](../adobe-analytics/). Yo
 
 {% tabs %}
 {% tab title="Android" %}
-* Current Android SDK: [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media)
+Current Android SDK: [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media)
 
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
 
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
