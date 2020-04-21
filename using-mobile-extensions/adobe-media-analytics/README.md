@@ -15,7 +15,7 @@ This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/c
 ### Configure the Media Analytics extension
 
 {% hint style="info" %}
-If you update the Adobe Media Analytics for Audio and Video launch extension in your launch property, you must make sure to update and use Media extension v2.0.0 and higher.
+If you update the Adobe Media Analytics for Audio and Video launch extension to v2.x in your launch property, you must make sure to update and use AEP SDK Media extension v2.0.0 and higher.
 {% endhint %}
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)

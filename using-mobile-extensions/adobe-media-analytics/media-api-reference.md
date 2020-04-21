@@ -477,6 +477,10 @@ Creates an instance of the QoE object.
 | `fps` | FPS value | Yes |
 | `droppedFrames` | Number of dropped frames | Yes |
 
+{% hint style="info" %}
+All the QoE values `bitrate`, `startupTime`, `fps`, `droppedFrames` would be converted to `long` for reporting purposes.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 #### createQoEObject
@@ -579,7 +583,7 @@ Here are examples in Objective C and Swift:
 **Objective C**
 
 ```objectivec
-NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscreen";
+NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscreen"];
 ```
 
 **Swift**
@@ -1031,7 +1035,7 @@ Tracks media events.
   _tracker.updateQoEObject(qoeObject);
 
 // Bitrate change
-  _heartbeat.trackEvent(Media.Event.BitrateChange, null, null);
+  _tracker.trackEvent(Media.Event.BitrateChange, null, null);
 ```
 
 **Tracking bitrate changes**
@@ -1750,14 +1754,14 @@ public class Media {
       BitrateChange,
 
       /**
-  		 * Constant defining event type for State start
-  		 */
-  		StateStart,
+      * Constant defining event type for State start
+      */
+      StateStart,
 
-  		/**
-  		 * Constant defining event type for State end
-  		 */
-  		StateEnd
+      /**
+      * Constant defining event type for State end
+      */
+      StateEnd
   }
 
 }
@@ -1867,7 +1871,7 @@ HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "med
 // Attach media resumed information.
 mediaObject.put(MediaConstants.MediaObjectKey.RESUMED, true);
 
-_heartbeat.trackSessionStart(mediaObject, null);
+_tracker.trackSessionStart(mediaObject, null);
 ```
 {% endtab %}
 
