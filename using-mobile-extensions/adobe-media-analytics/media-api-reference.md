@@ -203,6 +203,11 @@ Creates an instance of the Media object.
 | `length` | Media length | Yes |
 | `streamType` | [Stream type](media-api-reference.md#stream-type) | Yes |
 | `mediaType` | [Media type](media-api-reference.md#media-type) | Yes |
+| `prerollTrackingWaitingTime` | Wait time for Preroll Ads | No |
+
+#### PrerollTrackingWaitingTime
+
+Defines the amount of time in `milliseconds` that Media tracker will wait between trackPlay and trackAdStart before tracking the media start. If set, should be a `Long` value else it would be ignored. By default it will be set to `250 milliseconds`.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -229,6 +234,17 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
                                                             MediaConstants.StreamType.VOD,
                                                             Media.MediaType.Video);
 ```
+
+To set the prerollTrackingWaitingTime you have to use the above created mediaInfo map:
+
+```java
+// Attach media prerollTrackingWaitingTime of 500 milliseconds information.
+mediaObject.put(MediaConstants.MediaObjectKey.PREROLL_TRACKING_WAITING_TIME, 500);
+
+// To disable the prerollTrackingWaitingTime
+mediaObject.put(MediaConstants.MediaObjectKey.PREROLL_TRACKING_WAITING_TIME, 0);
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -259,6 +275,19 @@ NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
                                                      streamType: ACPMediaStreamTypeVod
                                                       mediaType: ACPMediaTypeVideo];
 ```
+To set the prerollTrackingWaitingTime you have to use the above created mediaObject dictionary:
+
+```objectivec
+NSMutableDictionary *objWithPreroll  = [mediaObject mutableCopy];
+
+// Attach media prerollTrackingWaitingTime of 500 milliseconds information.
+[objWithPreroll setObject:[NSNumber numberWithLong:500] forKey:ACPMediaKeyPrerollTrackingWaitingTime];
+
+// To disable the prerollTrackingWaitingTime
+[objWithPreroll setObject:[NSNumber numberWithLong:0] forKey:ACPMediaKeyPrerollTrackingWaitingTime];
+```
+
+Pass this `objWithPreroll` dictionary with updated prerollTrackingWaitingTime value to trackSessionStart API.
 
 **Swift**
 
@@ -267,6 +296,15 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
                                                length: Double(60),
                                            streamType: ACPMediaStreamTypeVod,
                                             mediaType:ACPMediaType.video)
+```
+
+To set the prerollTrackingWaitingTime you have to use the above created mediaObject dictionary:
+```swift
+// Attach media prerollTrackingWaitingTime of 500 milliseconds information.
+mediaObject[ACPMediaKeyPrerollTrackingWaitingTime] = 500
+
+// To disable the prerollTrackingWaitingTime
+mediaObject[ACPMediaKeyPrerollTrackingWaitingTime] = 0
 ```
 {% endtab %}
 {% endtabs %}
