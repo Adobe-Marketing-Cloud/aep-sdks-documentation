@@ -12,6 +12,18 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 The following updates were made in this release:
 
+### iOS Core 1.6.1
+
+* Added an internal enum for Cordova support.
+
+### Android Core 1.5.3
+
+* Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
+
+## April 17, 2020
+
+The following updates were made in this release:
+
 ### iOS Mobile Services 1.0.6
 
 * Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
