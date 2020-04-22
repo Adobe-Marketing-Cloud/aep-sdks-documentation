@@ -1,5 +1,31 @@
 # Release Notes
 
+## April 21, 2020
+
+The following updates were made in this release:
+
+### iOS Core 1.6.1
+
+* Added an internal enum for Cordova support.
+
+### Android Core 1.5.3
+
+* Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
+
+## April 9, 2020
+
+The following updates were made in this release:
+
+### Android Core 1.5.2
+
+* Fixed several security issues.
+* Improved existing log messages and added additional logging to assist with debugging.
+
+### Android Lifecycle 1.0.3
+
+* Fixed a bug where the `Resolution` was captured in non-English numerals.
+
+
 ## April 2, 2020
 
 The following updates were made in this release:

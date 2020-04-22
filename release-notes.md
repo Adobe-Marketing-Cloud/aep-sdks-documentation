@@ -8,6 +8,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## April 21, 2020
+
+The following updates were made in this release:
+
+### iOS Core 1.6.1
+
+* Added an internal enum for Cordova support.
+
+### Android Core 1.5.3
+
+* Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
+
 ## April 17, 2020
 
 The following updates were made in this release:
