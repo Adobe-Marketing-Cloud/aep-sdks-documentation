@@ -8,6 +8,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+
+## April 22, 2020
+
+The following updates were made in this release:
+
+### Android Griffon 1.1.5
+
+* Fix bug where pinCode entry activity fails to show when another application’s activity is started at the same time.
+* Blob upload services uses production URL with multiple environment support.
+* ClientId is shared as a query parameter to socket URL rather than tagging each Griffon event.
+* Griffon socket connection now authenticates against organization Id. 
+
 ## April 21, 2020
 
 The following updates were made in this release:
