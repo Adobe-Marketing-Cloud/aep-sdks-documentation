@@ -76,6 +76,31 @@ static Future<void> startSession(String url);
 FlutterGriffon.startSession(url);
 ```
 {% endtab %}
+{% tab title="Cordova" %}
+
+### Cordova
+
+### Syntax
+
+```jsx
+ACPGriffon.startSession(url, success, error);
+```
+
+* _url_ _\(String\)_ is the griffon session url.
+* _success_ is a callback which indicates if the `startSession` API was executed without errors.
+* _error_ is a callback containing error information if the `startSession` API was executed with errors.
+
+### Example
+
+```jsx
+ACPGriffon.startSession(url, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Griffon session start successful: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to start griffon session: " + handleError);
+});
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## endSession

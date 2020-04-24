@@ -197,13 +197,14 @@ _Note_ For `iOS` using `cocoapods`, run:
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
 {% endtab %}
-
 {% tab title="Cordova" %}
 #### Cordova
 
-1. Install Analytics.
+1. After creating your Cordova app and adding the Android and iOS platforms, the Analytics extension for Cordova can be added with this command:
 
-   Instructions on installing the Analytics SDK in Cordova can be found [here](https://github.com/adobe/cordova-acpanalytics).
+   ```
+   cordova plugin add https://github.com/adobe/cordova-acpanalytics.git
+   ```
 
 2. Get the extension version.
 
@@ -289,6 +290,13 @@ When using React Native, registering Analytics with Mobile Core should be done i
 #### Dart
 
 When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+When using Cordova, registering Analytics with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+
 {% endtab %}
 {% endtabs %}
 
@@ -422,6 +430,38 @@ FlutterACPCore.trackAction("Action Name",  data: contextData);
 FlutterACPCore.trackState("State Name",  data: contextData);
 ```
 {% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+#### Syntax
+
+```jsx
+var contextData = {"eventN:serial number": "&&events"};
+```
+
+#### Example
+
+```jsx
+// create a context data dictionary and add events
+var contextData = {"event1:12341234": "&&events"};
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.trackAction("Action Name", contextData, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Track action success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to track action: " + handleError);
+});
+// trackState example:
+ACPCore.trackState("State Name", contextData, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Track state success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to track state: " + handleError);
+});
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## Videos
@@ -526,6 +566,24 @@ FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracki
                                     "analytics.batchLimit": 10,
                                     "analytics.offlineEnabled": true});
 ```
+{% endtab %}
+{% tab title="Cordova" %}
+
+#### Cordova
+
+### Update Analytics Configuration
+
+```jsx
+ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
+                             "analytics.rsids": "rsid1,rsid2",
+                             "analytics.batchLimit": 10,
+                             "analytics.offlineEnabled": true}, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Analytics configuration update success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to update analytics configuration: " + handleError);
+});
+```
+
 {% endtab %}
 {% endtabs %}
 
