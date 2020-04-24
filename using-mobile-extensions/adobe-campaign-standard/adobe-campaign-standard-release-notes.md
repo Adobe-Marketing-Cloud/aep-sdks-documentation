@@ -1,5 +1,15 @@
 # Release Notes
 
+## April 24, 2020
+
+The following updates were made in this release:
+
+**Android Campaign 1.0.4**
+
+* Changes in Fullscreen In app message to make it compatible with Webview Security changes in Mobile Core 1.5.2 release.
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Fixed an image caching related bug, where cached images used to get deleted.
+
 ## January 29, 2020
 
 The following updates were made in this release:
