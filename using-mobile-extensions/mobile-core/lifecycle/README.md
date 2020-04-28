@@ -291,6 +291,7 @@ The following is a complete list of all of the metrics provided on your user's a
     </tr>
   </tbody>
 </table>
+
 ### Install
 
 | **Metric** | **Key** | **DescriptIon** |
