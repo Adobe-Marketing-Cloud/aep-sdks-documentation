@@ -79,8 +79,7 @@ For the latest Flutter installation instructions, see the package [install tab](
 ### Cordova
 
 {% hint style="info" %}
-Cordova is distributed via [npm](http://npmjs.com) (Node Package Management). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal:
-`sudo npm install -g cordova`
+Cordova is distributed via [npm](http://npmjs.com) \(Node Package Management\). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal: `sudo npm install -g cordova`
 {% endhint %}
 
 For the latest Cordova installation instructions, see the README file in the [cordova-acpcore](https://github.com/adobe/cordova-acpcore) repository.
@@ -90,9 +89,7 @@ For the latest Cordova installation instructions, see the README file in the [co
 To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Installation instructions
@@ -272,13 +269,15 @@ initSDK() {
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 {% endtab %}
+
 {% tab title="Cordova" %}
 #### Cordova
 
 For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
 **iOS:**
-```objective-c
+
+```text
 // Import the SDK
 #import "ACPCore.h"
 #import "ACPLifecycle.h"
@@ -300,6 +299,7 @@ For Cordova apps, initialize the SDK using native code in your `AppDelegate` and
 ```
 
 **Android:**
+
 ```java
 // Import the SDK
 import com.adobe.marketing.mobile.MobileCore;
@@ -331,7 +331,6 @@ public void onCreate() {
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### 3. Ensure app permissions \(Android-only\)

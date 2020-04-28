@@ -238,20 +238,23 @@ When using Cordova, registering Lifecycle with Mobile Core must be done in nativ
 
 The following is a complete list of all of the metrics provided on your user's app lifecycle.
 
-|Metric|Key|Description|
-|--- |--- |--- |
-|App ID|a.AppID|Stores the application name and version in the following format: AppName BundleVersion (app version code) .
-        An example of this format is MyAppName 1.1(1).|
-|Device Name|a.DeviceName|Stores the device name.|
-|Operating System Version|a.OSVersion|Operating system name and version.|
-|Carrier Name|a.CarrierName|Stores the name of the mobile service provider as provided by the device.
-          
-        
-        Important: This metric is not automatically stored in an Analytics
-          variable. You must create a processing rule to copy this value to an Analytics
-          variable for reporting.|
-|Resolution|a.Resolution|Width x Height in pixels.|
-|Locale|a.locale|Locale set for this device, for example, en-US.|
+| Metric | Key | Description |
+| :--- | :--- | :--- |
+| App ID | a.AppID | Stores the application name and version in the following format: AppName BundleVersion \(app version code\) . |
+
+```text
+    An example of this format is MyAppName 1.1(1).|
+```
+
+\|Device Name\|a.DeviceName\|Stores the device name.\| \|Operating System Version\|a.OSVersion\|Operating system name and version.\| \|Carrier Name\|a.CarrierName\|Stores the name of the mobile service provider as provided by the device.
+
+```text
+    Important: This metric is not automatically stored in an Analytics
+      variable. You must create a processing rule to copy this value to an Analytics
+      variable for reporting.|
+```
+
+\|Resolution\|a.Resolution\|Width x Height in pixels.\| \|Locale\|a.locale\|Locale set for this device, for example, en-US.\|
 
 ### Install
 
