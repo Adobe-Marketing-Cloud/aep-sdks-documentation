@@ -76,8 +76,8 @@ static Future<void> startSession(String url);
 FlutterGriffon.startSession(url);
 ```
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 ### Cordova
 
 ### Syntax
@@ -99,7 +99,6 @@ ACPGriffon.startSession(url, function(handleCallback) {
   console.log("AdobeExperenceSDK: Failed to start griffon session: " + handleError);
 });
 ```
-
 {% endtab %}
 {% endtabs %}
 

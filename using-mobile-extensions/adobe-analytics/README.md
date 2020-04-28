@@ -197,12 +197,13 @@ _Note_ For `iOS` using `cocoapods`, run:
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
 {% endtab %}
+
 {% tab title="Cordova" %}
 #### Cordova
 
 1. After creating your Cordova app and adding the Android and iOS platforms, the Analytics extension for Cordova can be added with this command:
 
-   ```
+   ```text
    cordova plugin add https://github.com/adobe/cordova-acpanalytics.git
    ```
 
@@ -291,12 +292,11 @@ When using React Native, registering Analytics with Mobile Core should be done i
 
 When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 #### Cordova
 
 When using Cordova, registering Analytics with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 
@@ -430,8 +430,8 @@ FlutterACPCore.trackAction("Action Name",  data: contextData);
 FlutterACPCore.trackState("State Name",  data: contextData);
 ```
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 #### Cordova
 
 #### Syntax
@@ -460,7 +460,6 @@ ACPCore.trackState("State Name", contextData, function(handleCallback) {
   console.log("AdobeExperenceSDK: Failed to track state: " + handleError);
 });
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -567,8 +566,8 @@ FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracki
                                     "analytics.offlineEnabled": true});
 ```
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 #### Cordova
 
 ### Update Analytics Configuration
@@ -583,7 +582,6 @@ ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.serv
   console.log("AdobeExperenceSDK: Failed to update analytics configuration: " + handleError);
 });
 ```
-
 {% endtab %}
 {% endtabs %}
 

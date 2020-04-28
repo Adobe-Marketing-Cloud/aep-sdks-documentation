@@ -57,16 +57,15 @@ Import the Lifecycle extension
 import 'package:flutter_acpcore/flutter_acplifecycle.dart';
 ```
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 ### Cordova
 
 After creating your Cordova app and adding the Android and iOS platforms, the Lifecycle extension for Cordova can be added with this command:
 
-```
+```text
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -229,10 +228,9 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
+
 {% tab title="Cordova" %}
-
 When using Cordova, registering Lifecycle with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 
@@ -294,41 +292,7 @@ The following is a complete list of all of the metrics provided on your user's a
   </tbody>
 </table>### Install
 
-| **Metric** | **Key** | **DescriptIon** |
-| :--- | :--- | :--- |
-| First Launches | `a.InstallEvent` | Triggered at the first run after installation or re-installation. |
-| Install Date | `a.InstallDate` | Date of first launch after installation. The format is `M/d/yyyy`, and an example is `5/3/2017`. |
-
-### Upgrade
-
-| **Metric** | **Key** | **Description** |
-| :--- | :--- | :--- |
-| Upgrades | `a.UpgradeEvent` | Triggered at the first run after upgrade or when the version number changes. |
-| Days since last upgrade | `a.DaysSinceLastUpgrade` | Number of days since the application version number  changed. |
-| Launches since last upgrade | `a.LaunchesSinceUpgrade` | Number of launches since the application version number changed. |
-
-### Launch
-
-| **Metric** | **Key** | **Description** |
-| :--- | :--- | :--- |
-| Daily Engaged Users | `a.DailyEngUserEvent` | Triggered when the application is used on a particular day.     **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Monthly Engaged Users | `a.MonthlyEngUserEvent` | Triggered when the application is used during a particular month. **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Launches | `a.LaunchEvent` | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
-| Previous Session Length | `a.PrevSessionLength` | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. |
-| Ignored Session Length | `a.ignoredSessionLength` | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |
-| Launch Number | `a.Launches` | Number of times the application was launched or brought out of the background. |
-| Days since first use | `a.DaysSinceFirstUse` | Number of days since first run. |
-| Days since last use | `a.DaysSinceLastUse` | Number of days since last use. |
-| Hour of Day | `a.HourOfDay` | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
-| Day of Week | `a.DayOfWeek` | Measures the day of the week the app was launched. |
-
-### Crash
-
-| **Metric** | **Key** | **Description** |
-| :--- | :--- | :--- |
-| Crashes | `a.CrashEvent` | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
-
-### Device Information
+\| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*DescriptIon\*\* \| \| :--- \| :--- \| :--- \| \| First Launches \| \`a.InstallEvent\` \| Triggered at the first run after installation or re-installation. \| \| Install Date \| \`a.InstallDate\` \| Date of first launch after installation. The format is \`M/d/yyyy\`, and an example is \`5/3/2017\`. \| \#\#\# Upgrade \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Upgrades \| \`a.UpgradeEvent\` \| Triggered at the first run after upgrade or when the version number changes. \| \| Days since last upgrade \| \`a.DaysSinceLastUpgrade\` \| Number of days since the application version number changed. \| \| Launches since last upgrade \| \`a.LaunchesSinceUpgrade\` \| Number of launches since the application version number changed. \| \#\#\# Launch \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Daily Engaged Users \| \`a.DailyEngUserEvent\` \| Triggered when the application is used on a particular day. \*\*Important\*\*: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. \| \| Monthly Engaged Users \| \`a.MonthlyEngUserEvent\` \| Triggered when the application is used during a particular month. \*\*Important\*\*: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. \| \| Launches \| \`a.LaunchEvent\` \| Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. \| \| Previous Session Length \| \`a.PrevSessionLength\` \| Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. \| \| Ignored Session Length \| \`a.ignoredSessionLength\` \| If the last session is set to last longer than \`lifecycle.sessionTimeout\`, that session length is ignored and recorded here. \| \| Launch Number \| \`a.Launches\` \| Number of times the application was launched or brought out of the background. \| \| Days since first use \| \`a.DaysSinceFirstUse\` \| Number of days since first run. \| \| Days since last use \| \`a.DaysSinceLastUse\` \| Number of days since last use. \| \| Hour of Day \| \`a.HourOfDay\` \| Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. \| \| Day of Week \| \`a.DayOfWeek\` \| Measures the day of the week the app was launched. \| \#\#\# Crash \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Crashes \| \`a.CrashEvent\` \| Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. \| \#\#\# Device Information
 
 <table>
   <thead>

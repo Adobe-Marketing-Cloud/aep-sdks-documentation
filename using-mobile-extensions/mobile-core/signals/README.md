@@ -83,16 +83,15 @@ Importing the Signal extension:
 import 'package:flutter_acpcore/flutter_acpsignal.dart';
 ```
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 ### Cordova
 
 After creating your Cordova app and adding the Android and iOS platforms, the Signal extension for Cordova can be added with this command:
 
-```
+```text
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -170,12 +169,11 @@ When using React Native, registering Signal with Mobile Core should be done in n
 
 When using Flutter, registering Signal with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
-{% tab title="Cordova" %}
 
+{% tab title="Cordova" %}
 #### Cordova
 
 When using Cordova, registering Signal with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 

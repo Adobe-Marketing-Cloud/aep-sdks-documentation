@@ -76,3 +76,4 @@ The following updates were made in this release:
 ### iOS Mobile Services 1.0.0
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
+
