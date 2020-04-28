@@ -290,9 +290,7 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>
-
-### Install
+</table>### Install
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |
@@ -382,7 +380,11 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}.
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: 
+
+{% hint style="warning" %}
+The time that your app spends in the background is not included in the session length.
+{% endhint %}
 
 <table>
   <thead>
