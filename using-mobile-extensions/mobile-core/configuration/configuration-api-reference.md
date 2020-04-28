@@ -124,6 +124,16 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"});
 FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+Update SDK configuration
+
+```javascript
+ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
+```
+{% endtab %}
 {% endtabs %}
 
 ## configureWithFileInPath
