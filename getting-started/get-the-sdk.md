@@ -79,7 +79,7 @@ For the latest Flutter installation instructions, see the package [install tab](
 ### Cordova
 
 {% hint style="info" %}
-Cordova is distributed via [npm] (http://npmjs.com) (Node Package Management). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js] (https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal:
+Cordova is distributed via [npm](http://npmjs.com) (Node Package Management). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal:
 sudo npm install -g cordova
 {% endhint %}
 
