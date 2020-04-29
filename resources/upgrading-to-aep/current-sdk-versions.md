@@ -122,7 +122,7 @@
 ### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 
 * Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v0.0.11-ACPGriffonBeta)
+* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon)
 
 ## Flutter \(Beta\)
 
