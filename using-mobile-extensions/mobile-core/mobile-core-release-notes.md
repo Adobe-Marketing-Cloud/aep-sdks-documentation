@@ -25,7 +25,6 @@ The following updates were made in this release:
 
 * Fixed a bug where the `Resolution` was captured in non-English numerals.
 
-
 ## April 2, 2020
 
 The following updates were made in this release:

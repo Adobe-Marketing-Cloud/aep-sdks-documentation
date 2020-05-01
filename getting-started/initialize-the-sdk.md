@@ -93,10 +93,22 @@ Future<void> trackAction(String action, {Map<String, String> data});
 #### Example
 
 ```dart
-FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});
+FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});J
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+#### Calling trackAction
+
+```javascript
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 ### Track app states and screens
 
@@ -186,6 +198,16 @@ Future<void> trackState(String state, {Map<String, String> data});
 
 ```dart
 FlutterACPCore.trackState("state",  data: {"mytest": "state"});
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+#### Calling track state
+
+```javascript
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
 {% endtabs %}

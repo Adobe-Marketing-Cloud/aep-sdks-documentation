@@ -137,6 +137,12 @@ lifecycleStart(additionalContextData?: { string: string });
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -200,6 +206,12 @@ lifecyclePause();
 ```jsx
 ACPCore.lifecyclePause();
 ```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 {% endtabs %}
 

@@ -57,6 +57,16 @@ Import the Lifecycle extension
 import 'package:flutter_acpcore/flutter_acplifecycle.dart';
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Lifecycle extension for Cordova can be added with this command:
+
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
+{% endtab %}
 {% endtabs %}
 
 ## Register Lifecycle with Mobile Core and add appropriate Start/Pause calls
@@ -218,6 +228,10 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+When using Cordova, registering Lifecycle with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
 {% endtabs %}
 
 ## Lifecycle metrics
@@ -366,7 +380,11 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}.
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: 
+
+{% hint style="warning" %}
+The time that your app spends in the background is not included in the session length.
+{% endhint %}
 
 <table>
   <thead>

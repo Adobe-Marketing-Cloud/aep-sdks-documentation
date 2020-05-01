@@ -1119,6 +1119,12 @@ When using React Native, registering Identity with Mobile Core should be done in
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Cordova" %}
+## Cordova
+
+When using Cordova, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
 {% endtabs %}
 
 ## setAdvertisingIdentifier

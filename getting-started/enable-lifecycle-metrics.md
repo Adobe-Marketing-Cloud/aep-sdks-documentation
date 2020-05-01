@@ -135,6 +135,28 @@ Pausing a lifecycle event
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+## Flutter
+
+Note: It is required to implement Lifecycle in native [Android and iOS code](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Cordova
+
+> Note: We recommend implementing Lifecycle in native [Android and iOS code](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+
+**Getting Lifecycle version:**
+
+```javascript
+ACPLifecycle.extensionVersion(function(version) {
+    console.log(version);
+}, function(error) {
+    console.log(error);
+});
+```
+{% endtab %}
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).
