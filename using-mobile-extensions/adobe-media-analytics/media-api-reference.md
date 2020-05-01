@@ -2,7 +2,7 @@
 
 ## Media API reference
 
-### Create a media tracker
+### createTracker
 
 {% hint style="warning" %}
 The API createTracker with callback has been deprecated for the synchronous version
@@ -84,7 +84,7 @@ ACPMedia.createTracker({mediaTracker in
 {% endtab %}
 {% endtabs %}
 
-### Create a media tracker with optional configuration
+### createTrackerWithConfig
 
 Creates a media tracker instance based on the configuration to track the playback session.
 
@@ -192,7 +192,7 @@ ACPMedia.createTrackerWithConfig(config, {mediaTracker in
 {% endtab %}
 {% endtabs %}
 
-### Create a media object
+### createMediaObject
 
 Creates an instance of the Media object.
 
@@ -287,7 +287,7 @@ NSMutableDictionary *objWithPreroll  = [mediaObject mutableCopy];
 [objWithPreroll setObject:[NSNumber numberWithLong:0] forKey:ACPMediaKeyPrerollTrackingWaitingTime];
 ```
 
-Pass this `objWithPreroll` dictionary with updated prerollTrackingWaitingTime value to trackSessionStart API.
+Pass this `objWithPreroll` dictionary with updated prerollTrackingWaitingTime value to `trackSessionStart` API.
 
 **Swift**
 
@@ -309,7 +309,7 @@ mediaObject[ACPMediaKeyPrerollTrackingWaitingTime] = 0
 {% endtab %}
 {% endtabs %}
 
-### Create an adbreak object
+### createAdBreakObject
 
 Creates an instance of the AdBreak object.
 
@@ -371,7 +371,7 @@ let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create an ad object
+### createAdObject
 
 Creates an instance of the Ad object.
 
@@ -436,7 +436,7 @@ let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", posit
 {% endtab %}
 {% endtabs %}
 
-### Create a chapter object
+### createChapterObject
 
 Creates an instance of the Chapter object.
 
@@ -504,7 +504,7 @@ let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", posit
 {% endtab %}
 {% endtabs %}
 
-### Create a QoE object
+### createQoEObject
 
 Creates an instance of the QoE object.
 
@@ -576,7 +576,7 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 {% endtab %}
 {% endtabs %}
 
-### Create a Player State object
+### createStateObject
 
 Creates an instance of the Player State object.
 
