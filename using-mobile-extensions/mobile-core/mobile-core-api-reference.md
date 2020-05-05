@@ -273,7 +273,7 @@ MobileCore.trackState("homePage", additionalContextData);
 
 **Syntax**
 
-```swift
+```objectivec
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
 
