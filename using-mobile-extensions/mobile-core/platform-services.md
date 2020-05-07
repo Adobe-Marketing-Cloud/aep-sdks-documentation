@@ -170,6 +170,8 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
 
 #### Example
 
+This is just an implementation example. For more information about handling network requests correctly in your mobile application, see [NSURLSessionConfiguration](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration) and [NSMutableURLRequest](https://developer.apple.com/documentation/foundation/nsmutableurlrequest).
+
 **Objective-C**
 
 ```objectivec
@@ -207,6 +209,15 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [request setHTTPMethod:command];
     [request setURL:url];
+  
+  	if (payload.length > 0 && [@"POST" isEqualToString:[command uppercaseString]]) {
+       [request setHTTPBody:[payload dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    for (NSString *key in requestProperty) {
+        NSString* value = requestProperty[key];
+        [request setValue:value forHTTPHeaderField:key];
+    }
 
     // Start the request
     NSURLSessionDataTask* task;
