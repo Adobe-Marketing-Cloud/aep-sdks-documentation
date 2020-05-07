@@ -27,6 +27,14 @@ To configure the Media Analytics extension, complete the following steps:
 3. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
 4. In Application Version, Type the version of the media player application/SDK.
 
+{% hint style="info" %}
+Legacy settings should not be configured for Media Extension v2.x and higher. Those settings are only for backwards compatibility.
+{% endhint %}
+
+If you are using Media Extension v1.x, then go to Legacy settings section
+1. Enable the `Use Tracking Server` checkbox.
+2. In **Tracking Server**,  Type the name of the tracking server to which all media tracking data should be sent.
+
 ## Add Media Analytics to your app
 
 {% hint style="info" %}
