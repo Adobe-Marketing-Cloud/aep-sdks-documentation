@@ -186,7 +186,7 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
 
 	// Modifications here would allow for conditional overriding based on the url/method.
   // In this example it always returns true to override all network requests.
-- (BOOL) shouldOverride: (NSString*) url method: (NSString*) method {
+- (BOOL) shouldOverride: (NSURL*) url method: (NSString*) method {
     return true;
 }
 
