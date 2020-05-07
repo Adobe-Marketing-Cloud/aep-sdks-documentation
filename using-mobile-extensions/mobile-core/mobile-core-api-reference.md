@@ -95,6 +95,9 @@ If you installed and configured the Analytics extension, this method sends an An
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+
 **Example**
 
 ```java
@@ -112,8 +115,11 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Syntax**
 
 ```objectivec
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -128,8 +134,11 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Syntax**
 
 ```swift
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -149,6 +158,9 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 trackAction(action?: String, contextData?: { string: string });
 ```
 
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+
 **Example**
 
 ```jsx
@@ -164,8 +176,11 @@ ACPCore.trackAction("action name", {"key": "value"});
 **Syntax**
 
 ```dart
-Future<void> trackAction (String action, {Map<String, String> data});
+Future<void> trackAction (String action, {Map<String, String> contextData});
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -184,6 +199,11 @@ FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```jsx
 ACPCore.trackAction = function(action, contextData, success, fail);
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+* _success_ callback is invoked when trackAction executes successfully.
+* _fail_ callback is invoked when trackAction fails.
 
 **Example**
 
@@ -211,14 +231,19 @@ In Android, `trackState` is typically called each time a new Activity is loaded.
 
 **Syntax**
 
-```text
+```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+
 **Example**
 
-```text
-Map<String, String> additionalContextData = new HashMap<String, String>();         additionalContextData.put("customKey", "value");         MobileCore.trackState("homePage", additionalContextData);
+```java
+Map<String, String> additionalContextData = new HashMap<String, String>();        
+additionalContextData.put("customKey", "value");
+MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
@@ -230,8 +255,11 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 **Syntax**
 
 ```objectivec
-+ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -246,8 +274,11 @@ Map<String, String> additionalContextData = new HashMap<String, String>();      
 **Syntax**
 
 ```objectivec
-+ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -257,15 +288,18 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+#### JavaScript
 
-#### trackState
+### trackState
 
 **Syntax**
 
 ```jsx
 trackState(state?: String, contextData?: { string: string });
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -275,15 +309,18 @@ ACPCore.trackState("state name", {"key": "value"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-### Dart
+#### Dart
 
-#### trackState
+### trackState
 
 **Syntax**
 
 ```dart
-Future<void> trackState (String state, {Map<String, String> data});
+Future<void> trackState (String state, {Map<String, String> contextData});
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
@@ -302,6 +339,11 @@ FlutterACPCore.trackState("state name",  data: {"key1: "value"})
 ```jsx
 ACPCore.trackState = function(state, contextData, success, fail);
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+* _success_ callback is invoked when trackState executes successfully.
+* _fail_ callback is invoked when trackState fails.
 
 **Example**
 
@@ -980,4 +1022,3 @@ ACPCore.getPrivacyStatus { (privacyStatus, error) in
 ### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
-

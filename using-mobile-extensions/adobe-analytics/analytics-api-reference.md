@@ -1,102 +1,6 @@
 # Analytics API reference
 
-## Send queued hits <a id="sendqueuedhits"></a>
-
-Sends all queued hits to Analytics, regardless of the current hit batch settings.
-
-{% tabs %}
-{% tab title="Android" %}
-### sendQueuedHits
-
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
-
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
-
-#### **Syntax**
-
-```java
-public static void sendQueuedHits()
-```
-
-#### **Example**
-
-```java
-Analytics.sendQueuedHits();
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### sendQueuedHits
-
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
-
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
-
-#### Syntax
-
-```objectivec
-+ (void) sendQueuedHits;
-```
-
-#### Example
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-[ACPAnalytics sendQueuedHits];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.sendQueuedHits()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-### sendQueuedHits
-
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
-
-```jsx
-ACPAnalytics.sendQueuedHits();
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-### sendQueuedHits
-
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
-
-```dart
-FlutterACPAnalytics.sendQueuedHits();
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-### sendQueuedHits
-
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
-
-```jsx
-ACPAnalytics.sendQueuedHits(function (handleCallback) {
-  console.log("AdobeExperienceSDK: Send queued hits successful. " + handleCallback);
-} ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to send queued hits: " + handleError);
-});
-```
-{% endtab %}
-{% endtabs %}
-
-## Clear queued hits <a id="clearqueue"></a>
+## clearQueue <a id="clearqueue"></a>
 
 Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
 
@@ -150,7 +54,15 @@ ACPAnalytics.clearQueue()
 
 ### clearQueue
 
+**Syntax**
+
+```jsx
+clearQueue();
+```
+
 **Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+**Example**
 
 ```jsx
 ACPAnalytics.clearQueue();
@@ -162,7 +74,15 @@ ACPAnalytics.clearQueue();
 
 ### clearQueue
 
+**Syntax**
+
+```dart
+Future<void> clearQueue();
+```
+
 **Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+**Example**
 
 ```dart
 FlutterACPAnalytics.clearQueue();
@@ -174,7 +94,15 @@ FlutterACPAnalytics.clearQueue();
 
 ### clearQueue
 
+```jsx
+ACPAnalytics.clearQueue = function(success, fail);
+```
+* _success_ is a callback containing a general success message if the clearQueue API executed without any errors.
+* _fail_ is a callback containing error information if the clearQueue API was executed with errors.
+
 **Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+**Example**
 
 ```jsx
 ACPAnalytics.clearQueue(function (handleCallback) {
@@ -186,7 +114,7 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 {% endtab %}
 {% endtabs %}
 
-## Get the queue size <a id="getqueuesize"></a>
+## getQueueSize <a id="getqueuesize"></a>
 
 Retrieves the total number of Analytics hits in the tracking queue.
 
@@ -199,6 +127,8 @@ Retrieves the total number of Analytics hits in the tracking queue.
 ```java
  public static void getQueueSize(final AdobeCallback<Long> callback)
 ```
+
+* _callback_ is invoked with the queue size <Long> value.
 
 #### Example
 
@@ -220,6 +150,8 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 ```objectivec
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 ```
+
+* _callback_ is invoked with the queue size value.
 
 #### Example
 
@@ -247,6 +179,14 @@ ACPAnalytics.getQueueSize { (queueSize) in
 
 ### getQueueSize
 
+**Syntax**
+
+```jsx
+getQueueSize(): Promise<?integer>;
+```
+
+**Example**
+
 ```jsx
 ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue size: " + size));
 ```
@@ -256,6 +196,14 @@ ACPAnalytics.getQueueSize().then(size => console.log("AdobeExperienceSDK: Queue 
 #### Dart
 
 ### getQueueSize
+
+**Syntax**
+
+```dart
+Future<int> getQueueSize;
+```
+
+**Example**
 
 ```dart
 int queueSize;
@@ -273,6 +221,16 @@ try {
 
 ### getQueueSize
 
+**Syntax**
+
+```jsx
+ACPAnalytics.getQueueSize = function(success, fail);
+```
+* _success_ is a callback containing the `queue size` if the getQueueSize API executed without any errors.
+* _fail_ is a callback containing error information if the getQueueSize API was executed with errors.
+
+**Example**
+
 ```jsx
 ACPAnalytics.getQueueSize(function (handleCallback) {
   console.log("AdobeExperienceSDK: Queue size: " + handleCallback);
@@ -283,7 +241,7 @@ ACPAnalytics.getQueueSize(function (handleCallback) {
 {% endtab %}
 {% endtabs %}
 
-## Get the tracking identifier <a id="gettrackingidentifier"></a>
+## getTrackingIdentifier <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
 Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
@@ -308,6 +266,8 @@ Retrieves the Analytics tracking identifier.
    getTrackingIdentifier(final AdobeCallback<String> callback)
 ```
 
+* _callback_ is invoked with the tracking Identifier string value.
+
 #### **Example**
 
 ```java
@@ -331,6 +291,8 @@ Retrieves the Analytics tracking identifier.
 ```objectivec
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
 ```
+
+* _callback_ is invoked with the tracking Identifier string value.
 
 #### Example
 
@@ -360,6 +322,15 @@ ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
 
 Retrieves the Analytics tracking identifier.
 
+**Syntax**
+
+```jsx
+getTrackingIdentifier();
+```
+
+* _callback_ is invoked with the tracking Identifier string value.
+
+**Example**
 ```jsx
 ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperienceSDK: Tracking identifier: " + identifier));
 ```
@@ -371,6 +342,14 @@ ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperi
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
+
+**Syntax**
+
+```dart
+Future<String> getTrackingIdentifier;
+```
+
+**Example**
 
 ```dart
 String trackingId;
@@ -391,6 +370,15 @@ try {
 Retrieves the Analytics tracking identifier.
 
 ```jsx
+ACPAnalytics.getTrackingIdentifier = function(success, fail);
+```
+
+* _success_ is a callback containing a general success message if the getTrackingIdentifier API executed without any errors.
+* _fail_ is a callback containing error information if the getTrackingIdentifier API was executed with errors.
+
+**Example**
+
+```jsx
 ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
   console.log("AdobeExperienceSDK: Retrieved tracking identifier: " + handleCallback);
 } ,function (handleError) {
@@ -400,93 +388,7 @@ ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
 {% endtab %}
 {% endtabs %}
 
-## Set the custom visitor identifier <a id="setidentifier"></a>
-
-{% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
-{% endhint %}
-
-Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
-
-{% tabs %}
-{% tab title="Android" %}
-### setVisitorIdentifier
-
-#### Syntax
-
-```java
- public static void setVisitorIdentifier(final String visitorIdentifier)
-```
-
-#### Example
-
-```java
-Analytics.setVisitorIdentifier("custom_identifier");
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### setVisitorIdentifier
-
-#### Syntax
-
-```objectivec
-+ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
-```
-
-#### Example
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-[ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.setVisitorIdentifier("custom_identifier")
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-### setVisitorIdentifier
-
-```jsx
-ACPAnalytics.setVisitorIdentifier("custom_identifier");
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-### setVisitorIdentifier
-
-```dart
-FlutterACPAnalytics.setVisitorIdentifier("yourVisitorId");
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-### setVisitorIdentifier
-
-```jsx
-ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback) {
-  console.log("AdobeExperienceSDK: Custom visitor identifier set successfully. " + handleCallback);
-} ,function (handleError) {
-  console.log("AdobeExperenceSDK: Failed to set custom visitor identifier: " + handleError);
-});
-```
-{% endtab %}
-{% endtabs %}
-
-## Get the custom visitor identifier <a id="getvisitoridentifier"></a>
+## getVisitorIdentifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
@@ -503,6 +405,8 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 ```java
 public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
+
+* _callback_ is invoked with the visitor identifier value.
 
 #### Example
 
@@ -527,9 +431,9 @@ Analytics.getVisitorIdentifier(visitorIdentifierCallback);
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 ```
 
-#### Example
+* _callback_ is invoked with the visitor identifier value.
 
-Here are examples in Objective-C and Swift:
+#### Example
 
 **Objective-C**
 
@@ -553,6 +457,14 @@ ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
 
 ### getVisitorIdentifier
 
+**Syntax**
+
+```jsx
+getVisitorIdentifier();
+```
+
+**Example**
+
 ```jsx
 ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK: Visitor identifier: " + vid));
 ```
@@ -562,6 +474,14 @@ ACPAnalytics.getVisitorIdentifier().then(vid => console.log("AdobeExperienceSDK:
 #### Dart
 
 ### getVisitorIdentifier
+
+**Syntax**
+
+```dart
+Future<String> visitorIdentifier;
+```
+
+**Example**
 
 ```dart
 String visitorId;
@@ -579,6 +499,16 @@ try {
 
 ### getVisitorIdentifier
 
+**Syntax**
+
+```jsx
+ACPAnalytics.getVisitorIdentifier = function(success, fail);
+```
+* _success_ is a callback containing the `Visitor Identifier` string if the getVisitorIdentifier API executed without any errors.
+* _fail_ is a callback containing error information if the getVisitorIdentifier API was executed with errors.
+
+**Example**
+
 ```jsx
 ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
   console.log("AdobeExperienceSDK: Retrieved custom visitor identifier: " + handleCallback);
@@ -589,3 +519,245 @@ ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
 {% endtab %}
 {% endtabs %}
 
+## sendQueuedHits <a id="sendqueuedhits"></a>
+
+Sends all queued hits to Analytics, regardless of the current hit batch settings.
+
+{% tabs %}
+{% tab title="Android" %}
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+#### **Syntax**
+
+```java
+public static void sendQueuedHits()
+```
+
+#### **Example**
+
+```java
+Analytics.sendQueuedHits();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+#### Syntax
+
+```objectivec
++ (void) sendQueuedHits;
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics sendQueuedHits];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.sendQueuedHits()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Syntax**
+
+```jsx
+sendQueuedHits();
+```
+
+**Example**
+
+```jsx
+ACPAnalytics.sendQueuedHits();
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Syntax**
+
+```dart
+Future<void> sendQueuedHits();
+```
+
+**Example**
+
+```dart
+FlutterACPAnalytics.sendQueuedHits();
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+### sendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Syntax**
+
+```jsx
+ACPAnalytics.sendQueuedHits = function(success, fail);
+```
+
+* _success_ is a callback containing a general success message if the sendQueuedHits API executed without any errors.
+* _fail_ is a callback containing error information if the sendQueuedHits API was executed with errors.
+
+**Example**
+
+```jsx
+ACPAnalytics.sendQueuedHits(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Send queued hits successful. " + handleCallback);
+} ,function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to send queued hits: " + handleError);
+});
+```
+{% endtab %}
+{% endtabs %}
+
+## setVisitorIdentifier <a id="setidentifier"></a>
+
+{% hint style="warning" %}
+Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+{% endhint %}
+
+Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
+
+{% tabs %}
+{% tab title="Android" %}
+### setVisitorIdentifier
+
+#### Syntax
+
+```java
+ public static void setVisitorIdentifier(final String visitorIdentifier)
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+#### Example
+
+```java
+Analytics.setVisitorIdentifier("custom_identifier");
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### setVisitorIdentifier
+
+#### Syntax
+
+```objectivec
++ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.setVisitorIdentifier("custom_identifier")
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+### setVisitorIdentifier
+
+**Syntax**
+
+```jsx
+setVisitorIdentifier(visitorIdentifier);
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+**Example**
+
+```jsx
+ACPAnalytics.setVisitorIdentifier("custom_identifier");
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### setVisitorIdentifier
+
+**Syntax**
+
+```dart
+Future<void> setVisitorIdentifier(visitorIdentifier);
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+**Example**
+
+```dart
+FlutterACPAnalytics.setVisitorIdentifier("yourVisitorId");
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+### setVisitorIdentifier
+
+**Syntax**
+
+```jsx
+ACPAnalytics.setVisitorIdentifier(visitorIdentifier, success, fail);
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+* _success_ is a callback containing a general success message if the setVisitorIdentifier API executed without any errors.
+* _fail_ is a callback containing error information if the setVisitorIdentifier API was executed with errors.
+
+**Example**
+
+```jsx
+ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback) {
+  console.log("AdobeExperienceSDK: Custom visitor identifier set successfully. " + handleCallback);
+} ,function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to set custom visitor identifier: " + handleError);
+});
+```
+{% endtab %}
+{% endtabs %}
