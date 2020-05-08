@@ -1,5 +1,15 @@
 # Release Notes
 
+## May 12, 2020
+
+### iOS Media 2.0.0
+* Uses media collection endpoint for tracking both streaming and downloaded content.
+* Added support for player state tracking
+
+### Android Media 2.0.0
+* Uses media collection endpoint for tracking both streaming and downloaded content.
+* Added support for player state tracking
+
 ## January 16, 2020
 
 The following updates were made in this release:
