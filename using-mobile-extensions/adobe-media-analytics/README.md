@@ -22,10 +22,17 @@ If you update the Adobe Media Analytics for Audio and Video launch extension to 
 
 To configure the Media Analytics extension, complete the following steps:
 
-1. In **Collection API Server**, Type the name of the media collection API server to which the downloaded media tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
-2. In **Channel**, type the channel name property.
-3. In **Player name**, type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
-4. In Application Version, Type the version of the media player application/SDK.
+#### **Collection API Server**
+Type the name of the media collection API server to which the tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
+
+#### **Channel**
+Type the channel name property.
+
+#### **Player name**
+Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+
+#### **Application Version**
+Type the version of the media player application/SDK.
 
 {% hint style="info" %}
 Legacy settings should not be configured for Media Extension v2.x and higher. Those settings are only for backwards compatibility.
@@ -82,7 +89,7 @@ You can also manually include the libraries. Get `.a` libraries from [Github](ht
    **Objective C**
 
    ```objectivec
-    #import <ACPMedia.h>
+    #import "ACPMedia.h"
    ```
 
    **Swift**
@@ -137,18 +144,18 @@ In your app's `application:didFinishLaunchingWithOptions`, register Media with M
 #### Objective-C
 
 ```objectivec
-#import <ACPCore.h>
-#import <ACPAnalytics.h>
-#import <ACPMedia.h>
-#import <ACPIdentity.h>
+#import "ACPCore.h"
+#import "ACPAnalytics.h"
+#import "ACPIdentity.h"
+#import "ACPMedia.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPCore setLogLevel:ACPMobileLogLevelDebug];
     [ACPCore configureWithAppId:@"your-launch-app-id"];
 
-    [ACPMedia registerExtension];
     [ACPAnalytics registerExtension];
     [ACPIdentity registerExtension];
+    [ACPMedia registerExtension];
 
     [ACPCore start:^{
 
@@ -163,18 +170,17 @@ In your app's `application:didFinishLaunchingWithOptions`, register Media with M
 ```swift
 import ACPCore
 import ACPAnalytics
-import ACPMedia
 import ACPIdentity
-import ACPLifecycle
+import ACPMedia
 
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     ACPCore.setLogLevel(.debug)
     ACPCore.configure(withAppId: "your-launch-app-id")
 
-    ACPMedia.registerExtension()
     ACPAnalytics.registerExtension()
     ACPIdentity.registerExtension()
+    ACPMedia.registerExtension()
 
     ACPCore.start {
 
@@ -192,10 +198,10 @@ To update your SDK configuration programmatically, use the following information
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-| `media.collectionServer` | Yes | For more information, see [Collection Server](./#collection-api-server). |
-| `media.channel` | No | For more information, see [Channel](./#channel). |
-| `media.playerName` | No | For more information, see [Player Name](./#player-name). |
-| `media.appVersion` | No | For more information, see [Application Version](./#application-version). |
+| `media.collectionServer` | Yes | Media Collection Server endpoint to which all the media tracking data is sent. For more information, see [Collection Server](./#collection-api-server). |
+| `media.channel` | No | Channel name. For more information, see [Channel](./#channel). |
+| `media.playerName` | No | Name of the media player in use, i.e., "AVPlayer", "HTML5 Player", "My Custom Player". For more information, see [Player Name](./#player-name). |
+| `media.appVersion` | No | Version of the media player app/SDK. For more information, see [Application Version](./#application-version). |
 
 
 ## Platform Support
