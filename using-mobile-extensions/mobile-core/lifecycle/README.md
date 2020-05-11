@@ -143,7 +143,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        [ACPCore lifecycleStart:nil];
    }
    ```
-   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneWillEnterForeground` delegate method as follows:
+   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneWillEnterForeground` method as follows:
    
    ```objectivec
    - (void) sceneWillEnterForeground:(UIScene *)scene {
@@ -159,7 +159,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
     }
    ```
    
-   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneDidEnterBackground` delegate method as follows:
+   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterForeground` method as follows:   
    
    ```objectivec
    - (void) sceneDidEnterBackground:(UIScene *)scene {
@@ -204,8 +204,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        ACPCore.lifecycleStart(nil)
    }
    ```
-   
-   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneWillEnterForeground` delegate method as follows:
+      In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneWillEnterForeground` method as follows:
    
    ```swift
    func sceneWillEnterForeground(_ scene: UIScene) {
@@ -220,9 +219,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        ACPCore.lifecyclePause()
    }
    ```
-   
-      NOTE: If you are using `UISceneDelegate`, then you should use the `sceneDidEnterBackground` delegate method as follows:
-   
+      In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterBackground` method as follows:
    ```swift
    func sceneDidEnterBackground(_ scene: UIScene) {
         ACPCore.lifecyclePause()
