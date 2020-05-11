@@ -46,6 +46,13 @@ Alternatively, you can also place the Launch environment ID in your iOS project'
 
 When using Cordova, the `configureWithAppId` method call must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+#### C#
+```csharp
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
+{% endtab %}
 {% endtabs %}
 
 ## Programmatic updates to configuration
@@ -114,6 +121,17 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallba
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+#### C#
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("global.privacy", "optedout");
+ACPCore.UpdateConfiguration(dict);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Using a bundled file configuration

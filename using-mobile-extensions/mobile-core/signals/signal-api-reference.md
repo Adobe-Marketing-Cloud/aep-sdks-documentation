@@ -56,6 +56,17 @@ ACPSignal.extensionVersion(function(version) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### C#
+
+```csharp
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## CollectPII API

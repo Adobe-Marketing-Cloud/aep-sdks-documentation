@@ -331,6 +331,38 @@ public void onCreate() {
 }
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+For Unity apps, initialize the SDK using the following code in the start function of the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {   
+        if (Application.platform == RuntimePlatform.Android) {
+            ACPCore.SetApplication();
+        }
+        
+        ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+        ACPCore.SetWrapperType();
+        ACPIdentity.registerExtension();
+        ACPLifecycle.registerExtension();
+        ACPSignal.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### 3. Ensure app permissions \(Android-only\)

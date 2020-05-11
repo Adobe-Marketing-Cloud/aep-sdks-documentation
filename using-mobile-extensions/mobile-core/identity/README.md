@@ -79,6 +79,17 @@ After creating your Cordova app and adding the Android and iOS platforms, the Id
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### C#
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Register the Identity extension
@@ -152,6 +163,21 @@ When using Flutter, registering Identity with Mobile Core should be done in nati
 
 When using Cordova, registering Identity with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+Register the Identity extension in your app's `Start()` function:
+
+```csharp
+void Start() {
+  ACPIdentity.RegisterExtension();
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 {% hint style="info" %}
@@ -218,6 +244,17 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+```csharp
+string identityVersion = ACPIdentity.ExtensionVersion();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Visitor tracking between an app and the mobile web
@@ -375,6 +412,35 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeIdentityAppendToUrlCallback))]
+public static void HandleAdobeIdentityAppendToUrlCallback(string url)
+{
+    print("Url is : " + url);
+}
+ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlCallback);
+```
+
+Alternately, you can call [GetUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeGetUrlVariables))]
+public static void HandleAdobeGetUrlVariables(string urlVariables)
+{
+    print("Url variables are : " + urlVariables);
+}
+ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.

@@ -81,6 +81,22 @@ ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelDebug, successCallback, errorCallba
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+## C#
+
+Controlling the log level of the SDK
+
+```csharp
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.WARNING);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.DEBUG);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 

@@ -106,6 +106,21 @@ FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});J
 ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+## C#
+
+#### Calling trackAction
+
+```javascript
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "value");
+ACPCore.TrackAction("action name", contextData);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 
@@ -210,6 +225,21 @@ FlutterACPCore.trackState("state",  data: {"mytest": "state"});
 ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+## C#
+
+#### Calling track state
+
+```javascript
+var dict = new Dictionary<string, string>();
+dict.Add("key", "state value");
+ACPCore.TrackState("state", dict);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
