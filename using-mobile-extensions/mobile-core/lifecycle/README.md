@@ -143,6 +143,13 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        [ACPCore lifecycleStart:nil];
    }
    ```
+   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneWillEnterForeground` delegate method as follows:
+   
+   ```objectivec
+   - (void) sceneWillEnterForeground:(UIScene *)scene {
+      [ACPCore lifecycleStart:nil];
+   }
+   ```
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -150,6 +157,14 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
     - (void) applicationDidEnterBackground:(UIApplication *)application {
        [ACPCore lifecyclePause];
     }
+   ```
+   
+   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneDidEnterBackground` delegate method as follows:
+   
+   ```objectivec
+   - (void) sceneDidEnterBackground:(UIScene *)scene {
+      [ACPCore lifecyclePause];
+   }
    ```
 
 ### Swift
@@ -189,6 +204,14 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        ACPCore.lifecycleStart(nil)
    }
    ```
+   
+   NOTE: If you are using `UISceneDelegate`, then you should use the `sceneWillEnterForeground` delegate method as follows:
+   
+   ```swift
+   func sceneWillEnterForeground(_ scene: UIScene) {
+        ACPCore.lifecycleStart(nil)
+   }
+   ```
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -197,6 +220,15 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
        ACPCore.lifecyclePause()
    }
    ```
+   
+      NOTE: If you are using `UISceneDelegate`, then you should use the `sceneDidEnterBackground` delegate method as follows:
+   
+   ```swift
+   func sceneDidEnterBackground(_ scene: UIScene) {
+        ACPCore.lifecyclePause()
+   }
+   ```
+   
 {% endtab %}
 
 {% tab title="React Native" %}
