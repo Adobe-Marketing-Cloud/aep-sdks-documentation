@@ -271,6 +271,9 @@ ACPCampaign.registerExtension();
 
 To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
+{% tabs %}
+{% tab title="Android" %}
+
 ### Set up in-app messaging
 
 {% hint style="info" %}
@@ -291,6 +294,16 @@ In addition to adding the `FullscreenMessageActivity`, a global lifecycle callba
 
 To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see [Configuring notification icons](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons).
 
+{% endtab %}
+
+{% tab title="iOS" %}
+
+No additional setup is needed for iOS in-app messaging and local notifications.
+
+{% endtab %} 
+
+{% endtabs %}
+
 ### Set up push messaging
 
 To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
@@ -303,6 +316,7 @@ Need help creating a push notification using Adobe Campaign? For more informatio
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Example
 
 ```java
