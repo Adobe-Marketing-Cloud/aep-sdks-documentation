@@ -113,7 +113,7 @@ ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallb
 
 #### Calling TrackAction
 
-```javascript
+```csharp
 var contextData = new Dictionary<string, string>();
 contextData.Add("key", "value");
 ACPCore.TrackAction("action name", contextData);
@@ -232,7 +232,7 @@ ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallbac
 
 #### Calling TrackState
 
-```javascript
+```csharp
 var dict = new Dictionary<string, string>();
 dict.Add("key", "state value");
 ACPCore.TrackState("state", dict);

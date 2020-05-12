@@ -1221,7 +1221,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 **Syntax**
 
-```jsx
+```csharp
 public static void GetUrlVariables(AdobeGetUrlVariables callback)
 ```
 
