@@ -82,6 +82,18 @@ ACPMedia.createTracker({mediaTracker in
 })
 ```
 {% endtab %}
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createTracker
+
+
+```jsx
+ACPMedia.createTracker().then(tracker =>
+  this.setState({currentTracker: tracker})
+);
+```
+{% endtab %}
 {% endtabs %}
 
 ### createTrackerWithConfig
@@ -190,6 +202,23 @@ ACPMedia.createTrackerWithConfig(config, {mediaTracker in
 }
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createTracker
+
+
+```jsx
+var config = new Object();
+config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";
+config[ACPMediaConstants.ACPMediaKeyConfigDownloadedContent] = true;
+ACPMedia.createTrackerWithConfig(config).then(tracker =>
+  this.setState({currentTracker: tracker})
+);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ### createMediaObject
@@ -270,6 +299,17 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
                                             mediaType:ACPMediaType.video)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createMediaObject
+
+
+```jsx
+let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
+```
+{% endtab %}
 {% endtabs %}
 
 ### createAdBreakObject
@@ -330,6 +370,17 @@ NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-n
 
 ```swift
 let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createAdBreakObject
+
+
+```jsx
+let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
 ```
 {% endtab %}
 {% endtabs %}
@@ -395,6 +446,17 @@ NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
 
 ```swift
 let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createAdObject
+
+
+```jsx
+let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
 ```
 {% endtab %}
 {% endtabs %}
@@ -463,6 +525,17 @@ NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-n
 
 ```swift
 let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", position: 1, length: 60, startTime: 0)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createChapterObject
+
+
+```jsx
+let chapterObject = ACPMedia.createChapterObject('chapter-name', 1, 60, 0);
 ```
 {% endtab %}
 {% endtabs %}
@@ -537,6 +610,17 @@ NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
 let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, fps: 23, droppedFrames: 10)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createQoEObject
+
+
+```jsx
+let qoeObject = ACPMedia.createQoEObject(1000000, 2, 23, 10);
+```
+{% endtab %}
 {% endtabs %}
 
 ### createStateObject
@@ -591,6 +675,17 @@ NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscr
 
 ```swift
 let playerStateObject = ACPMedia.createStateObject(withName: "fullscreen")
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### createStateObject
+
+
+```jsx
+let qoeObject = ACPMedia.createStateObject("fullscreen");
 ```
 {% endtab %}
 {% endtabs %}
@@ -679,6 +774,25 @@ mediaMetadata["tvStation"] = "Sample TV station"
 _tracker.trackSessionStart(mediaObject, data: mediaMetadata)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackSessionStart
+
+```jsx
+let mediaObject = ACPMedia.createMediaObject("media-name", "media-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
+var mediaMetadata = new Object();
+mediaMetadata[ACPMediaConstants.ACPVideoMetadataKeyShow] = "Sample Show";
+mediaMetadata[ACPMediaConstants.ACPVideoMetadataKeySeason] = "Sample Season";
+
+// Custom metadata keys
+mediaMetadata["isUserLoggedIn"] = "false";
+mediaMetadata["tvStation"] = "Sample TV station";
+
+tracker.trackSessionStart(mediaObject, mediaMetadata);
+```
+{% endtab %}
 {% endtabs %}
 
 ### trackPlay
@@ -725,6 +839,16 @@ Here are examples in Objective C and Swift:
 
 ```swift
 _tracker.trackPlay()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackPlay
+
+```jsx
+tracker.trackPlay();
 ```
 {% endtab %}
 {% endtabs %}
@@ -775,6 +899,16 @@ Here are examples in Objective C and Swift:
 _tracker.trackPause()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackPause
+
+```jsx
+tracker.trackPause();
+```
+{% endtab %}
 {% endtabs %}
 
 ### trackComplete
@@ -823,6 +957,16 @@ Here are examples in Objective C and Swift:
 _tracker.trackComplete()
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackComplete
+
+```jsx
+tracker.trackComplete();
+```
+{% endtab %}
 {% endtabs %}
 
 ### trackSessionEnd
@@ -869,6 +1013,16 @@ Here are examples in Objective C and Swift:
 
 ```swift
 _tracker.trackSessionEnd()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackSessionEnd
+
+```jsx
+tracker.trackSessionEnd();
 ```
 {% endtab %}
 {% endtabs %}
@@ -921,6 +1075,16 @@ Here are examples in Objective C and Swift:
 
 ```swift
 _tracker.trackError("errorId")
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### trackError
+
+```jsx
+tracker.trackError("errorId");
 ```
 {% endtab %}
 {% endtabs %}
@@ -1038,9 +1202,6 @@ Tracks media events.
 // Bitrate change
   _tracker.trackEvent(Media.Event.BitrateChange, null, null);
 ```
-
-**Tracking bitrate changes**
-
 
 {% endtab %}
 
@@ -1256,35 +1417,101 @@ Here are examples in Objective C and Swift:
 // Bitrate change
   _tracker.trackEvent(ACPMediaEvent.bitrateChange, mediaObject: nil, data: nil)
 ```
+{% endtab %}
 
-**Tracking PlayerState events**
 
-**Objective C**
+{% tab title="React Native" %}
+**JavaScript**
 
-```objectivec
-// stateStart
-  NSMutableDictionary *stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
-  [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
+#### trackEvent
 
-// stateEnd
-  NSMutableDictionary *stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
-  [_tracker trackEvent:ACPMediaEventStateEnd mediaObject:stateObject data:nil];
+**Examples**
 
+**Tracking Player States**
+```jsx
+// StateStart
+  let stateObject = ACPMedia.createStateObject("fullscreen");
+  tracker.trackEvent(ACPMediaEvent.EventStateStart, stateObject, null);
+
+// StateEnd
+  let stateObject = ACPMedia.createStateObject("fullscreen");
+  tracker.trackEvent(ACPMediaEvent.EventStateEnd, stateObject, null);
 ```
 
-**Swift**
+**Tracking AdBreaks**
+```jsx
+// AdBreakStart
+  let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
+  tracker.trackEvent(ACPMediaEvent.EventAdBreakStart, adBreakObject, null);
 
-```swift
-// stateStart
-  let stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
-  [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
-
-// stateEnd
-  let stateObject = [ACPMedia createStateObjectWithName:"fullscreen"];
-  [_tracker trackEvent:ACPMediaEventStateEnd mediaObject:stateObject data:nil];
+// AdBreakComplete
+  tracker.trackEvent(ACPMediaEvent.EventAdBreakComplete, null, null);
 ```
 
+**Tracking ads**
 
+```jsx
+// AdStart
+  let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
+  var adMetadata = new Object();
+  adMetadata[ACPMediaConstants.ACPAdMetadataKeyAdvertiser] = "Sample Advertiser";
+  adMetadata[ACPMediaConstants.ACPAdMetadataKeyCampaignId] = "Sample Campaign";
+
+  // Custom metadata keys
+  adMetadata["affiliate"] = "Sample affiliate";
+
+  tracker.trackEvent(ACPMediaEvent.EventAdStart, adObject, adMetadata);
+
+// AdComplete
+  tracker.trackEvent(ACPMediaEvent.EventAdComplete, null, null);
+
+// AdSkip
+  tracker.trackEvent(ACPMediaEvent.EventAdSkip, null, null);
+```
+
+**Tracking chapters**
+
+```jsx
+// ChapterStart
+  let chapterObject = ACPMedia.createChapterObject("chapter-name", 1, 60, 0);
+  var chapterMetadata = new Object();
+  chapterMetadata["segmentType"] = "Sample segment type";
+
+  tracker.trackEvent(ACPMediaEvent.EventChapterStart, chapterObject, chapterMetadata);
+
+// ChapterComplete
+  tracker.trackEvent(ACPMediaEvent.EventChapterComplete, null, null);
+
+// ChapterSkip
+  tracker.trackEvent(ACPMediaEvent.EventChapterSkip, null, null);
+```
+
+**Tracking playback events**
+
+```jsx
+// BufferStart
+  tracker.trackEvent(ACPMediaEvent.EventBufferStart, null, null);
+
+// BufferComplete
+  tracker.trackEvent(ACPMediaEvent.EventBufferComplete, null, null);
+
+// SeekStart
+  tracker.trackEvent(ACPMediaEvent.EventSeekStart, null, null);
+
+// SeekComplete
+  tracker.trackEvent(ACPMediaEvent.EventSeekComplete, null, null);
+```
+
+**Tracking bitrate changes**
+
+```jsx
+// If the new bitrate value is available provide it to the tracker.
+  let qoeObject = ACPMedia.createQoEObject(2000000, 2, 25, 10);
+  tracker.updateQoEObject(qoeObject);
+
+// Bitrate change
+  tracker.trackEvent(ACPMediaEvent.EventBitrateChange, null, null);
+```
 {% endtab %}
 {% endtabs %}
 
@@ -1337,6 +1564,15 @@ Here are examples in Objective C and Swift:
 
 ```swift
 _tracker.updateCurrentPlayhead(1)
+```
+{% endtab %}
+{% tab title="React Native" %}
+**JavaScript**
+
+#### updateCurrentPlayhead
+
+```jsx
+tracker.updateCurrentPlayhead(1);
 ```
 {% endtab %}
 {% endtabs %}
@@ -1394,6 +1630,17 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 1000000, startupTime: 2, f
 _tracker.updateQoEObject(qoeObject)
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### updateQoEObject
+
+```jsx
+let qoeObject = ACPMedia.createQoEObject(1000000, 2, 25, 10);
+tracker.updateQoEObject(qoeObject);
+```
+{% endtab %}
 {% endtabs %}
 
 ## Media constants
@@ -1436,6 +1683,17 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
     */
     ACPMediaTypeAudio
 };
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaType} from '@adobe/react-native-acpmedia';
+
+ACPMediaType.Video
+ACPMediaType.Audio
 ```
 {% endtab %}
 {% endtabs %}
@@ -1518,6 +1776,20 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAudiobook;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 ```
 {% endtab %}
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
+
+ACPMediaConstants.ACPMediaStreamTypeVod
+ACPMediaConstants.ACPMediaStreamTypeLive
+ACPMediaConstants.ACPMediaConstantsACPMediaStreamTypeLinear
+ACPMediaConstants.ACPMediaStreamTypePodcast
+ACPMediaConstants.ACPMediaStreamTypeAudiobook
+ACPMediaConstants.ACPMediaStreamTypeAod
+```
+{% endtab %}
 {% endtabs %}
 
 ### Standard video constants
@@ -1574,6 +1846,33 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
+
+ACPMediaConstants.ACPVideoMetadataKeyShow
+ACPMediaConstants.ACPVideoMetadataKeySeason
+ACPMediaConstants.ACPVideoMetadataKeyEpisode
+ACPMediaConstants.ACPVideoMetadataKeyAssetId
+ACPMediaConstants.ACPVideoMetadataKeyGenre
+ACPMediaConstants.ACPVideoMetadataKeyFirstAirDate
+ACPMediaConstants.ACPVideoMetadataKeyFirstDigitalDate
+ACPMediaConstants.ACPVideoMetadataKeyRating
+ACPMediaConstants.ACPVideoMetadataKeyOriginator
+ACPMediaConstants.ACPVideoMetadataKeyNetwork
+ACPMediaConstants.ACPVideoMetadataKeyShowType
+ACPMediaConstants.ACPVideoMetadataKeyAdLoad
+ACPMediaConstants.ACPVideoMetadataKeyMvpd
+ACPMediaConstants.ACPVideoMetadataKeyAuthorized
+ACPMediaConstants.ACPVideoMetadataKeyDayPart
+ACPMediaConstants.ACPVideoMetadataKeyFeed
+ACPMediaConstants.ACPVideoMetadataKeyStreamFormat
+```
+{% endtab %}
+
 {% endtabs %}
 
 ### Standard audio constants
@@ -1608,6 +1907,22 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyStation;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
+
+ACPMediaConstants.ACPAudioMetadataKeyArtist
+ACPMediaConstants.ACPAudioMetadataKeyAlbum
+ACPMediaConstants.ACPAudioMetadataKeyLabel
+ACPMediaConstants.ACPAudioMetadataKeyAuthor
+ACPMediaConstants.ACPAudioMetadataKeyStation
+ACPMediaConstants.ACPAudioMetadataKeyPublisher
+```
+{% endtab %}
+
 {% endtabs %}
 
 ### Standard ad constants
@@ -1642,6 +1957,20 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeySiteId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 ```
 {% endtab %}
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
+
+ACPMediaConstants.ACPAdMetadataKeyAdvertiser
+ACPMediaConstants.ACPAdMetadataKeyCampaignId
+ACPMediaConstants.ACPAdMetadataKeyCreativeId
+ACPMediaConstants.ACPAdMetadataKeyPlacementId
+ACPMediaConstants.ACPAdMetadataKeySiteId
+ACPMediaConstants.ACPAdMetadataKeyCreativeUrl
+```
+{% endtab %}
 {% endtabs %}
 
 ### Player State constants
@@ -1672,6 +2001,20 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStatePictureInPicture;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateClosedCaption;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateInFocus;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateMute;
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
+
+ACPMediaConstants.ACPMediaPlayerStateFullScreen
+ACPMediaConstants.ACPMediaPlayerStatePictureInPicture
+ACPMediaConstants.ACPMediaPlayerStateClosedCaption
+ACPMediaConstants.ACPMediaPlayerStateInFocus
+ACPMediaConstants.ACPMediaPlayerStateMute
 ```
 {% endtab %}
 {% endtabs %}
@@ -1838,6 +2181,28 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 };
 ```
 {% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+import {ACPMediaEvent} from '@adobe/react-native-acpmedia';
+
+ACPMediaEvent.EventAdBreakStart
+ACPMediaEvent.EventAdBreakComplete
+ACPMediaEvent.EventAdStart
+ACPMediaEvent.EventAdComplete
+ACPMediaEvent.EventAdSkip
+ACPMediaEvent.EventChapterStart
+ACPMediaEvent.EventChapterComplete
+ACPMediaEvent.EventChapterSkip
+ACPMediaEvent.EventSeekStart
+ACPMediaEvent.EventSeekComplete
+ACPMediaEvent.EventBufferStart
+ACPMediaEvent.EventBufferComplete
+ACPMediaEvent.EventBitrateChange
+```
+{% endtab %}
 {% endtabs %}
 
 ### Media resume
@@ -1910,6 +2275,19 @@ var mediaObject = ACPMedia.createMediaObject(withName: "media-name", mediaId: "m
 mediaObject[ACPMediaKeyMediaResumed] = true
 
 _tracker.trackSessionStart(mediaObject, data: nil)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+#### Media Resume
+
+```jsx
+let mediaObject = ACPMedia.createMediaObject("media-name", "media-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
+mediaObject[ACPMediaConstants.ACPMediaKeyMediaResumed] = true
+
+tracker.trackSessionStart(mediaObject, null);
 ```
 {% endtab %}
 {% endtabs %}
