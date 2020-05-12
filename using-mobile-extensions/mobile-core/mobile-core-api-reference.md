@@ -1022,3 +1022,4 @@ ACPCore.getPrivacyStatus { (privacyStatus, error) in
 ### Additional Information
 
 * What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
+

@@ -35,7 +35,7 @@ Follow these steps to add Project Griffon to your app:
    3. Follow the publishing process to update SDK configuration.
 3. Implement Project Griffon SDK APIs in your app
 
-![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.1.png)
+![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.14.34-am.png)
 
 ### Add Project Griffon Extension to your app
 

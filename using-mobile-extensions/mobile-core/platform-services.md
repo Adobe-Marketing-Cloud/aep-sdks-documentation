@@ -10,11 +10,8 @@ This section walks through the steps necessary to create a custom network overri
 This feature is only available in Android Core version 2.5.0 or later and iOS Core version 2.6.0 or later.
 {% endhint %}
 
-
-
 {% tabs %}
 {% tab title="Android" %}
-
 ### 1. Create custom HTTPConnectionPerformer implementation
 
 The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect`, which must be overridden. Optionally, it's possible to override the `shouldOverride` method if you want to conditionally override network requests \(if you do not override this method, all requests will be overridden by default\).
@@ -142,7 +139,7 @@ import com.adobe.marketing.mobile.AndroidNetworkServiceOverrider;
 import com.adobe.marketing.mobile.MobileCore;
 
 public void onCreate() {
-	super.onCreate();
+    super.onCreate();
 
   // Register network override prior to making any other calls to the AEP SDK
   AndroidNetworkServiceOverrider.setHTTPConnectionPerformer(new SampleHTTPConnectionPerformer());
@@ -152,11 +149,9 @@ public void onCreate() {
   //... continue with initialization / registering extensions.
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### 1. Conform to the ACPHttpConnectionPerformer protocol
 
 The `ACPHttpConnectionPerformer` is a protocol which must be conformed to in order to override the network stack. It provides two methods which must be implemented:
@@ -186,7 +181,7 @@ This is just an implementation example. For more information about handling netw
     void (^requestUrlCompletion)(ACPHttpConnection*);
 }
 
-	// Modifications here would allow for conditional overriding based on the url/method.
+    // Modifications here would allow for conditional overriding based on the url/method.
   // In this example it always returns true to override all network requests.
 - (BOOL) shouldOverride: (NSURL*) url method: (NSString*) method {
     return true;
@@ -203,17 +198,17 @@ This is just an implementation example. For more information about handling netw
     config.timeoutIntervalForResource = connectTimeout;
 
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
-    
+
     // Create an NSURLRequest with the provided request parameters
     NSMutableURLRequest* request = [NSMutableURLRequest new];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [request setHTTPMethod:command];
     [request setURL:url];
-  
-  	if (payload.length > 0 && [@"POST" isEqualToString:[command uppercaseString]]) {
+
+      if (payload.length > 0 && [@"POST" isEqualToString:[command uppercaseString]]) {
        [request setHTTPBody:[payload dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    
+
     for (NSString *key in requestProperty) {
         NSString* value = requestProperty[key];
         [request setValue:value forHTTPHeaderField:key];
@@ -301,6 +296,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ...
         }
 ```
-
 {% endtab %}
 {% endtabs %}
+

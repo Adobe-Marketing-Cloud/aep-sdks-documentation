@@ -97,6 +97,7 @@ FlutterACPAnalytics.clearQueue();
 ```jsx
 ACPAnalytics.clearQueue = function(success, fail);
 ```
+
 * _success_ is a callback containing a general success message if the clearQueue API executed without any errors.
 * _fail_ is a callback containing error information if the clearQueue API was executed with errors.
 
@@ -128,7 +129,7 @@ Retrieves the total number of Analytics hits in the tracking queue.
  public static void getQueueSize(final AdobeCallback<Long> callback)
 ```
 
-* _callback_ is invoked with the queue size <Long> value.
+* _callback_ is invoked with the queue size  value.
 
 #### Example
 
@@ -226,6 +227,7 @@ try {
 ```jsx
 ACPAnalytics.getQueueSize = function(success, fail);
 ```
+
 * _success_ is a callback containing the `queue size` if the getQueueSize API executed without any errors.
 * _fail_ is a callback containing error information if the getQueueSize API was executed with errors.
 
@@ -331,6 +333,7 @@ getTrackingIdentifier();
 * _callback_ is invoked with the tracking Identifier string value.
 
 **Example**
+
 ```jsx
 ACPAnalytics.getTrackingIdentifier().then(identifier => console.log("AdobeExperienceSDK: Tracking identifier: " + identifier));
 ```
@@ -504,6 +507,7 @@ try {
 ```jsx
 ACPAnalytics.getVisitorIdentifier = function(success, fail);
 ```
+
 * _success_ is a callback containing the `Visitor Identifier` string if the getVisitorIdentifier API executed without any errors.
 * _fail_ is a callback containing error information if the getVisitorIdentifier API was executed with errors.
 
@@ -761,3 +765,4 @@ ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback)
 ```
 {% endtab %}
 {% endtabs %}
+
