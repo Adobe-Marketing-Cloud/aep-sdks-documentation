@@ -150,6 +150,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
       [ACPCore lifecycleStart:nil];
    }
    ```
+   For more information on handling foregrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_foreground?language=objc) 
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -159,13 +160,14 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
     }
    ```
    
-   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterForeground` method as follows:   
+   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterBackground` method as follows:   
    
    ```objectivec
    - (void) sceneDidEnterBackground:(UIScene *)scene {
       [ACPCore lifecyclePause];
    }
    ```
+   For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background?language=objc) 
 
 ### Swift
 
@@ -211,6 +213,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
         ACPCore.lifecycleStart(nil)
    }
    ```
+For more information on handling foregrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_foreground) 
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -225,6 +228,7 @@ import 'package:flutter_acpcore/flutter_acplifecycle.dart';
         ACPCore.lifecyclePause()
    }
    ```
+   For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background) 
    
 {% endtab %}
 
