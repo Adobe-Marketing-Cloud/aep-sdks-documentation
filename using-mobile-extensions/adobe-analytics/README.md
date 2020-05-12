@@ -217,6 +217,25 @@ _Note_ For `iOS` using `cocoapods`, run:
    });
    ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpcore/tree/master/ACPAnalytics/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
+
+   ```csharp
+   using com.adobe.marketing.mobile; 
+   ```
+
+2. Get the extension version.
+
+   ```csharp
+   ACPAnalytics.extensionVersion();
+   ```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -298,6 +317,29 @@ When using Flutter, registering Analytics with Mobile Core should be done in nat
 
 When using Cordova, registering Analytics with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+Register the extension in the `start()` function:
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {   
+        ACPAnalytics.registerExtension();
+    }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Send Lifecycle Metrics to Analytics
@@ -461,6 +503,35 @@ ACPCore.trackState("State Name", contextData, function(handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+#### Syntax
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "trackAction");
+```
+
+#### Example
+
+```csharp
+// create a context data dictionary and add events
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "trackAction");
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.TrackAction("Action Name", contextData);
+
+// trackState example:
+ACPCore.TrackState("State Name", contextData);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Videos
@@ -583,6 +654,24 @@ ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.serv
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### Update Analytics Configuration
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("analytics.server": "sample.analytics.tracking.server");
+dict.Add("analytics.rsids": "rsid1,rsid2");
+dict.Add("analytics.batchLimit": 10);
+dict.Add("analytics.offlineEnabled": true);
+ACPCore.UpdateConfiguration(dict);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
