@@ -2201,6 +2201,8 @@ ACPMediaEvent.EventSeekComplete
 ACPMediaEvent.EventBufferStart
 ACPMediaEvent.EventBufferComplete
 ACPMediaEvent.EventBitrateChange
+ACPMediaEvent.EventStateStart
+ACPMediaEvent.EventStateEnd
 ```
 {% endtab %}
 {% endtabs %}
