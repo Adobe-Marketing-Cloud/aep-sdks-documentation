@@ -7,7 +7,7 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 ## End of support for the version 4 Mobile SDKs
 
 {% hint style="warning" %}
-Support for the Mobile [version 4 SDKs](https://github.com/Adobe-Marketing-Cloud/mobile-services) will end on **September 30, 2020**. 
+Support for the Mobile [version 4 SDKs](https://github.com/Adobe-Marketing-Cloud/mobile-services) will end on **August 31, 2021**. 
 {% endhint %}
 
 After **September 30, 2020**, customers can continue to download and use the version 4 SDKs, but there will be no Customer Care support or access to forums. The [Adobe Experience Platform Mobile SDK](./) \(previously referred to as v5\) will exclusively support upcoming Adobe Experience Cloud features and functionality. 
