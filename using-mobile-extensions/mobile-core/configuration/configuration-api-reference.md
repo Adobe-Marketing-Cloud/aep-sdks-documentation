@@ -19,7 +19,7 @@ public static void configureWithAppID(final String appId);
 #### Java
 
 ```java
-MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
+MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
@@ -44,6 +44,25 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 {% endtab %}
+
+{% tabs %}
+{% tab title="Unity" %}
+
+#### Syntax
+
+```csharp
+public static void ConfigureWithAppID(string appId)
+```
+
+#### Example
+
+#### C#
+
+```csharp
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## updateConfiguration
@@ -134,6 +153,19 @@ Update SDK configuration
 ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+## C#
+
+Update SDK configuration
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("newConfigKey", "newConfigValue");
+ACPCore.UpdateConfiguration(dict);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## configureWithFileInPath

@@ -157,6 +157,31 @@ ACPLifecycle.extensionVersion(function(version) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+## C#
+
+Starting and pausing a lifecycle event
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).

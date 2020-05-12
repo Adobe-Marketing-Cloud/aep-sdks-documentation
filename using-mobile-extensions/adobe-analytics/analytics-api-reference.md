@@ -113,6 +113,27 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### ClearQueue
+
+```csharp
+public static void ClearQueue()
+```
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+**Example**
+
+```csharp
+ACPAnalytics.ClearQueue();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getQueueSize <a id="getqueuesize"></a>
@@ -224,7 +245,7 @@ try {
 
 **Syntax**
 
-```jsx
+```csharp
 ACPAnalytics.getQueueSize = function(success, fail);
 ```
 
@@ -233,7 +254,7 @@ ACPAnalytics.getQueueSize = function(success, fail);
 
 **Example**
 
-```jsx
+```csharp
 ACPAnalytics.getQueueSize(function (handleCallback) {
   console.log("AdobeExperienceSDK: Queue size: " + handleCallback);
 } ,function (handleError) {
@@ -241,6 +262,34 @@ ACPAnalytics.getQueueSize(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### GetQueueSize
+
+**Syntax**
+
+```csharp
+public static void GetQueueSize(AdobeGetQueueSizeCallback callback)
+```
+
+* _callback_ is a callback containing the `queue size` if the getQueueSize API executed without any errors.
+
+**Example**
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeGetQueueSizeCallback))]
+public static void HandleAdobeGetQueueSizeCallback(long queueSize)
+{
+    Debug.Log("Queue size is : " + queueSize);
+}
+ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
@@ -389,6 +438,34 @@ ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### GetTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+```csharp
+public static void GetTrackingIdentifier(AdobeGetTrackingIdentifierCallback callback)
+```
+
+* _callback_ is a callback containing a general success message if the getTrackingIdentifier API executed without any errors.
+
+**Example**
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeGetTrackingIdentifierCallback))]
+public static void HandleAdobeGetTrackingIdentifierCallback(string trackingIdentifier)
+{
+    Debug.Log("Tracking identifier is : " + trackingIdentifier);
+}
+ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
@@ -521,6 +598,34 @@ ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### GetVisitorIdentifier
+
+**Syntax**
+
+```csharp
+public static void GetVisitorIdentifier(AdobeGetVisitorIdentifierCallback callback)
+```
+
+* _callback_ is a callback containing the `Visitor Identifier` string if the getVisitorIdentifier API executed without any errors.
+
+**Example**
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeGetVisitorIdentifierCallback))]
+public static void HandleAdobeGetVisitorIdentifierCallback(string visitorIdentifier)
+{
+    Debug.Log("Visitor identifier is : " + visitorIdentifier);
+}
+ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## sendQueuedHits <a id="sendqueuedhits"></a>
@@ -642,6 +747,29 @@ ACPAnalytics.sendQueuedHits(function (handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+### SendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Syntax**
+
+```csharp
+public static void SendQueuedHits()
+```
+
+**Example**
+
+```csharp
+ACPAnalytics.SendQueuedHits();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## setVisitorIdentifier <a id="setidentifier"></a>
@@ -764,5 +892,27 @@ ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback)
 });
 ```
 {% endtab %}
-{% endtabs %}
 
+{% tab title="Unity" %}
+
+#### C#
+
+### SetVisitorIdentifier
+
+**Syntax**
+
+```csharp
+public static void SetVisitorIdentifier(string visitorId)
+```
+
+* _visitorId_ is the new value for the visitor identifier.
+
+**Example**
+
+```csharp
+ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
+```
+
+{% endtab %}
+
+{% endtabs %}

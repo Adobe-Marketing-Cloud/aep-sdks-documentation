@@ -56,6 +56,17 @@ ACPLifecycle.extensionVersion(function(version) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### C#
+
+```csharp
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Lifecycle Start
@@ -143,6 +154,31 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 
 When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -213,5 +249,30 @@ ACPCore.lifecyclePause();
 
 When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 

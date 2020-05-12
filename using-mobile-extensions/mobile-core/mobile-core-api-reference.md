@@ -211,6 +211,30 @@ ACPCore.trackAction = function(action, contextData, success, fail);
 ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+#### C#
+
+### trackAction
+
+**Syntax**
+
+```csharp
+public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
+```
+
+* _name_ contains the name of the action to track.
+* _contextDataDict_ contains the context data to attach on this hit.
+
+**Example**
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "value");
+ACPCore.TrackAction("action", contextData);
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Track app states and views
@@ -351,6 +375,31 @@ ACPCore.trackState = function(state, contextData, success, fail);
 ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+### C#
+
+#### trackState
+
+**Syntax**
+
+```csharp
+public static void TrackState(string name, Dictionary<string, string> contextDataDict)
+```
+
+* _name_ contains the name of the state to track.
+* _contextDataDict_ contains the context data to attach on this hit.
+
+**Example**
+
+```csharp
+var dict = new Dictionary<string, string>();
+dict.Add("key", "value");
+ACPCore.TrackState("state", dict);
+```
+{% endtab %}
+
+
 {% endtabs %}
 
 ## Collect PII
@@ -662,6 +711,32 @@ ACPCore.setLogLevel = function(logLevel, success, fail);
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+### C#
+
+#### setLogLevel
+
+From least to most verbose, here is the order of the mobile SDK logging modes for the Unity version of the ACPCore extension:
+
+* ACPCore.ACPMobileLogLevel.ERROR
+* ACPCore.ACPMobileLogLevel.WARNING
+* ACPCore.ACPMobileLogLevel.DEBUG
+* ACPCore.ACPMobileLogLevel.VERBOSE
+
+**Syntax**
+
+```csharp
+public static void SetLogLevel(ACPMobileLogLevel logLevel)
+```
+
+**Example**
+
+```csharp
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+```
+{% endtab %}
+
 {% endtabs %}
 
 {% tabs %}
@@ -726,6 +801,17 @@ let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
 ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+### C#
+
+#### getLogLevel
+
+```csharp
+ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
+```
+{% endtab %}
+
 {% endtabs %}
 
 {% tabs %}

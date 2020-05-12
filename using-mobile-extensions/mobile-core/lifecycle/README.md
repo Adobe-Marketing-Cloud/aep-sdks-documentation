@@ -67,6 +67,19 @@ After creating your Cordova app and adding the Android and iOS platforms, the Li
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### C#
+
+After importing the `ACPCore.unitypackage` . In the MainSceneScript the Lifecycle extension can be added by using
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Register Lifecycle with Mobile Core and add appropriate Start/Pause calls

@@ -93,6 +93,19 @@ After creating your Cordova app and adding the Android and iOS platforms, the Si
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### C#
+
+Importing the signal extension
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register the Signal extension
@@ -175,6 +188,22 @@ When using Flutter, registering Signal with Mobile Core should be done in native
 
 When using Cordova, registering Signal with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+Register the extension in the `start()` function:
+
+```c#
+void Start()
+{   
+  ACPSignal.RegisterExtension();
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Implement the Mobile SDK to send PII data to external destinations
