@@ -242,7 +242,7 @@ try {
 
 **Syntax**
 
-```csharp
+```jsx
 ACPAnalytics.getQueueSize = function(success, fail);
 ```
 
@@ -271,7 +271,7 @@ ACPAnalytics.getQueueSize(function (handleCallback) {
 public static void GetQueueSize(AdobeGetQueueSizeCallback callback)
 ```
 
-* _callback_ is a callback containing the `queue size` if the getQueueSize API executed without any errors.
+* _callback_ is a callback containing the `queue size` if the GetQueueSize API executed without any errors.
 
 **Example**
 
@@ -444,7 +444,7 @@ Retrieves the Analytics tracking identifier.
 public static void GetTrackingIdentifier(AdobeGetTrackingIdentifierCallback callback)
 ```
 
-* _callback_ is a callback containing a general success message if the getTrackingIdentifier API executed without any errors.
+* _callback_ is a callback containing a general success message if the GetTrackingIdentifier API executed without any errors.
 
 **Example**
 
@@ -601,7 +601,7 @@ ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
 public static void GetVisitorIdentifier(AdobeGetVisitorIdentifierCallback callback)
 ```
 
-* _callback_ is a callback containing the `Visitor Identifier` string if the getVisitorIdentifier API executed without any errors.
+* _callback_ is a callback containing the `Visitor Identifier` string if the GetVisitorIdentifier API executed without any errors.
 
 **Example**
 

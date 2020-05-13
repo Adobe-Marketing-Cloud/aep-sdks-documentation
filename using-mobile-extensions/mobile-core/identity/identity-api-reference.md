@@ -452,7 +452,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-cordova).
+If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-unity).
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -728,7 +728,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callback)
 ```
 
-* _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
+* _callback_ is a callback containing the experience cloud id if the `GetExperienceCloudId` API executed without any errors.
 
 #### Example
 

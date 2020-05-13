@@ -90,6 +90,21 @@ To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
 {% endtab %}
+
+{% tab title="Unity" %}
+### C#
+
+For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
+
+#### Installation
+
+To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
+
+- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
+- Unzip `ACPCore-0.0.1-Unity.zip`
+- Import `ACPCore.unitypackage` via Assets-Import Package
+{% endtab %}
+
 {% endtabs %}
 
 ## Installation instructions
@@ -343,6 +358,12 @@ using using AOT;
 
 public class MainScript : MonoBehaviour
 {
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+    }
+        
     // Start is called before the first frame update
     void Start()
     {   
