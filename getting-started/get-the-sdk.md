@@ -90,6 +90,18 @@ To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### Xamarin
+
+For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
+
+#### Installation
+
+The AEP SDK Xamarin packages are distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile then added to projects within a VIsual Studio solution.
+{% endtab %}
+
 {% endtabs %}
 
 ## Installation instructions
@@ -358,6 +370,79 @@ public class MainScript : MonoBehaviour
         ACPSignal.registerExtension();
         ACPCore.Start(HandleStartAdobeCallback);
     }
+}
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
+
+**iOS**
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+
+[Register("AppDelegate")]
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+  //
+  // This method is invoked when the application has loaded and is ready to run. In this 
+  // method you should instantiate the window, load the UI into it and then make the window
+  // visible.
+  //
+  // You have 17 seconds to return from this method, or iOS will terminate your application.
+  //
+  public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+  {
+    global::Xamarin.Forms.Forms.Init();
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
+
+    // set launch config
+    ACPCore.ConfigureWithAppID("your-app-id");
+
+    // register SDK extensions
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+  }
+```
+
+**Android**
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+
+[Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(WrapperType.Xamarin);
+
+    // register SDK extensions
+    ACPCore.Application = this.Application;
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(new CoreStartCompletionCallback());
 }
 ```
 
