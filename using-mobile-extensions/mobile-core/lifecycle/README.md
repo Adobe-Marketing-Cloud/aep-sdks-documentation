@@ -282,6 +282,28 @@ ACPCore.lifecyclePause();
 {% tab title="Cordova" %}
 When using Cordova, registering Lifecycle with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Unity" %}
+**Starting and Pausing a lifecycle event:**
+Add the OnApplicationPause in the MainScript with the following code:
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Lifecycle metrics

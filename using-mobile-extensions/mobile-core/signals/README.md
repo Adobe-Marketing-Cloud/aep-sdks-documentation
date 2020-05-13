@@ -97,7 +97,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% tab title="Unity" %}
 ### C\#
 
-Importing the signal extension
+After importing the `ACPCore.unitypackage` . In the MainSceneScript the Signal extension can be added by using
 
 ```csharp
 using com.adobe.marketing.mobile;

@@ -81,7 +81,9 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% endtab %}
 
 {% tab title="Unity" %}
-### C\#
+
+### C#
+After importing the ACPCore.unitypackage . In the MainSceneScript the Identity extension can be added by using
 
 ```csharp
 using com.adobe.marketing.mobile;
