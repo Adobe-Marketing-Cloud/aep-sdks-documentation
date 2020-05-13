@@ -115,8 +115,7 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### ClearQueue
 
@@ -131,9 +130,7 @@ public static void ClearQueue()
 ```csharp
 ACPAnalytics.ClearQueue();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getQueueSize <a id="getqueuesize"></a>
@@ -264,8 +261,7 @@ ACPAnalytics.getQueueSize(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### GetQueueSize
 
@@ -287,9 +283,7 @@ public static void HandleAdobeGetQueueSizeCallback(long queueSize)
 }
 ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
@@ -440,8 +434,7 @@ ACPAnalytics.getTrackingIdentifier(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### GetTrackingIdentifier
 
@@ -463,9 +456,7 @@ public static void HandleAdobeGetTrackingIdentifierCallback(string trackingIdent
 }
 ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
@@ -600,8 +591,7 @@ ACPAnalytics.getVisitorIdentifier(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### GetVisitorIdentifier
 
@@ -623,9 +613,7 @@ public static void HandleAdobeGetVisitorIdentifierCallback(string visitorIdentif
 }
 ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## sendQueuedHits <a id="sendqueuedhits"></a>
@@ -749,8 +737,7 @@ ACPAnalytics.sendQueuedHits(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### SendQueuedHits
 
@@ -767,9 +754,7 @@ public static void SendQueuedHits()
 ```csharp
 ACPAnalytics.SendQueuedHits();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## setVisitorIdentifier <a id="setidentifier"></a>
@@ -894,8 +879,7 @@ ACPAnalytics.setVisitorIdentifier("custom_identifier", function (handleCallback)
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### SetVisitorIdentifier
 
@@ -912,7 +896,6 @@ public static void SetVisitorIdentifier(string visitorId)
 ```csharp
 ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
-
 {% endtab %}
-
 {% endtabs %}
+

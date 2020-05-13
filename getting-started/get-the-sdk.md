@@ -333,8 +333,7 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 For Unity apps, initialize the SDK using the following code in the start function of the MainScript
 
@@ -350,7 +349,7 @@ public class MainScript : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android) {
             ACPCore.SetApplication();
         }
-        
+
         ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
         ACPCore.SetWrapperType();
         ACPIdentity.registerExtension();
@@ -360,9 +359,7 @@ public class MainScript : MonoBehaviour
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### 3. Ensure app permissions \(Android-only\)

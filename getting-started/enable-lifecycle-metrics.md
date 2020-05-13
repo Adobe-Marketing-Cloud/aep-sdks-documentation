@@ -159,8 +159,7 @@ ACPLifecycle.extensionVersion(function(version) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-## C#
+## C\#
 
 Starting and pausing a lifecycle event
 
@@ -179,9 +178,7 @@ private void OnApplicationPause(bool pauseStatus)
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).

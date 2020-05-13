@@ -391,8 +391,7 @@ If your application uses more complicated URLs we recommend that you use [getUrl
 {% endhint %}
 {% endtab %}
 
-{% tab title="Cordova" %}
-
+{% tab title="Unity" %}
 ### AppendToUrl
 
 This API appends Adobe visitor information to the query component of the specified URL.
@@ -406,7 +405,7 @@ If the specified URL is nil or empty, it is returned as is. Otherwise, the follo
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -455,9 +454,7 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 
 If your application uses more complicated URLs we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-cordova).
 {% endhint %}
-
 {% endtab %}
-
 {% endtabs %}
 
 ## extensionVersion
@@ -531,8 +528,7 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -545,9 +541,7 @@ public static string ExtensionVersion()
 ```csharp
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getExperienceCloudId
@@ -720,19 +714,18 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### getExperienceCloudId
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
-#### C#
+#### C\#
 
 #### Syntax
 
 ```csharp
-public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callback) 
+public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callback)
 ```
 
 * _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
@@ -747,9 +740,7 @@ public static void HandleAdobeGetExperienceCloudIdCallback(string cloudId)
 }
 ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getIdentifiers
@@ -915,12 +906,11 @@ ACPIdentity.getIdentifiers(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### getIdentifiers
 
 This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -940,9 +930,7 @@ public static void HandleAdobeGetIdentifiersCallback(string visitorIds)
 }
 ACPIdentity.GetIdentifiers(HandleAdobeGetIdentifiersCallback);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getUrlVariables
@@ -1203,10 +1191,9 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### [GetUrlVariables](identity-api-reference.md)
 
-#### C#
+#### C\#
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
@@ -1237,9 +1224,7 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
 }
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## registerExtension
@@ -1315,8 +1300,7 @@ When using Cordova, registering Identity with Mobile Core should be done in nati
 {% endtab %}
 
 {% tab title="Unity" %}
-
-## C#
+## C\#
 
 Register the Identity extension in your app's `Start()` function:
 
@@ -1325,9 +1309,7 @@ void Start() {
   ACPIdentity.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## setAdvertisingIdentifier
@@ -1529,10 +1511,9 @@ ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### SetAdvertisingIdentifier
 
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -1547,9 +1528,7 @@ public static void SetAdvertisingIdentifier(string adId)
 ```csharp
 ACPCore.SetAdvertisingIdentifier("ADVTID");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## setPushIdentifier
@@ -1794,8 +1773,7 @@ ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenti
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -1804,25 +1782,21 @@ public static void SyncIdentifier(string identifierType, string identifier, ACPA
 ```
 
 * The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
-
 * The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * _authState_ value indicating authentication state for the user and contains one of the following `ACPAuthenticationState` values:
-
   * `ACPIdentity.ACPAuthenticationState.AUTHENTICATED`
   * `ACPIdentity.ACPAuthenticationState.UNKNOWN`
   * `ACPIdentity.ACPAuthenticationState.LOGGED_OUT`
 
 **Example**
 
-```chsarp
+```text
 ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationState.AUTHENTICATED);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## syncIdentifiers
@@ -1958,8 +1932,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -1971,7 +1944,6 @@ ublic static void SyncIdentifiers(Dictionary<string, string> identifiers)
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-
 **Example**
 
 ```csharp
@@ -1981,9 +1953,7 @@ ids.Add("idsType2", "idValue2");
 ids.Add("idsType3", "idValue3");
 ACPIdentity.SyncIdentifiers(ids);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## syncIdentifiers \(overloaded\)
@@ -2145,8 +2115,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 **Syntax**
 
@@ -2159,7 +2128,6 @@ public static void SyncIdentifiers(Dictionary<string, string> ids, ACPAuthentica
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * _authenticationState_ value indicating authentication state for the identifiers to be synced and contains one of the `VisitorID.AuthenticationState` values:
-
   * `VisitorID.AuthenticationState.AUTHENTICATED`
   * `VisitorID.AuthenticationState.LOGGED_OUT`
   * `VisitorID.AuthenticationState.UNKNOWN`
@@ -2175,9 +2143,7 @@ ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.AUTHENTICATE
 ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.LOGGED_OUT);
 ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.UNKNOWN);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Public classes
@@ -2321,8 +2287,7 @@ ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 **ACPAuthenticationState**
 
@@ -2333,8 +2298,6 @@ ACPIdentity.ACPAuthenticationState.UNKNOWN = 0;
 ACPIdentity.ACPAuthenticationState.AUTHENTICATED = 1;
 ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

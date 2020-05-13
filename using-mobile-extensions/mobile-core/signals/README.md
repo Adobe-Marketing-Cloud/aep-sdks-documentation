@@ -95,17 +95,14 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% endtab %}
 
 {% tab title="Unity" %}
-
-### C#
+### C\#
 
 Importing the signal extension
 
 ```csharp
 using com.adobe.marketing.mobile;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Register the Signal extension
@@ -190,20 +187,17 @@ When using Cordova, registering Signal with Mobile Core must be done in native c
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 Register the extension in the `start()` function:
 
-```c#
+```text
 void Start()
 {   
   ACPSignal.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Implement the Mobile SDK to send PII data to external destinations

@@ -81,15 +81,12 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% endtab %}
 
 {% tab title="Unity" %}
-
-### C#
+### C\#
 
 ```csharp
 using com.adobe.marketing.mobile;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Register the Identity extension
@@ -165,8 +162,7 @@ When using Cordova, registering Identity with Mobile Core must be done in native
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 Register the Identity extension in your app's `Start()` function:
 
@@ -175,9 +171,7 @@ void Start() {
   ACPIdentity.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
@@ -246,15 +240,12 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ```csharp
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Visitor tracking between an app and the mobile web
@@ -414,8 +405,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
 
@@ -438,9 +428,7 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
 }
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.

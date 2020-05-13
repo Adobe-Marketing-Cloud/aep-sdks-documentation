@@ -58,15 +58,12 @@ ACPLifecycle.extensionVersion(function(version) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-### C#
+### C\#
 
 ```csharp
 string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Lifecycle Start
@@ -156,8 +153,7 @@ When using Cordova, the `lifecycleStart` method call must be done in native code
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
 
@@ -176,9 +172,7 @@ private void OnApplicationPause(bool pauseStatus)
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -251,8 +245,7 @@ When using Cordova, the `lifecyclePause` method call must be done in native code
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
 
@@ -271,8 +264,6 @@ private void OnApplicationPause(bool pauseStatus)
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

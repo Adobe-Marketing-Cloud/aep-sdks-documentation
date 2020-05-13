@@ -413,7 +413,7 @@ You can also set an application deep link that can be triggered when selections 
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen. For more information, see [collectLaunchInfo](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information).
 
 {% hint style="info" %}
-After making preview mode selections, the first mbox request made may fail due to a caching issue on the Target server. For more information see https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html#preview. 
+After making preview mode selections, the first mbox request made may fail due to a caching issue on the Target server. For more information see [https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html\#preview](https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html#preview).
 
 The mbox request that failed can be retried to successfully retrieve the test offer content.
 {% endhint %}

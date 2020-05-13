@@ -219,13 +219,12 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpcore/tree/master/ACPAnalytics/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
 
    ```csharp
-   using com.adobe.marketing.mobile; 
+   using com.adobe.marketing.mobile;
    ```
 
 2. Get the extension version.
@@ -233,9 +232,7 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```csharp
    ACPAnalytics.extensionVersion();
    ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -319,8 +316,7 @@ When using Cordova, registering Analytics with Mobile Core must be done in nativ
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 Register the extension in the `start()` function:
 
@@ -337,9 +333,7 @@ public class MainScript : MonoBehaviour
     }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Send Lifecycle Metrics to Analytics
@@ -505,8 +499,7 @@ ACPCore.trackState("State Name", contextData, function(handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 #### Syntax
 
@@ -529,9 +522,7 @@ ACPCore.TrackAction("Action Name", contextData);
 // trackState example:
 ACPCore.TrackState("State Name", contextData);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Videos
@@ -656,8 +647,7 @@ ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.serv
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ### Update Analytics Configuration
 
@@ -669,9 +659,7 @@ dict.Add("analytics.batchLimit": 10);
 dict.Add("analytics.offlineEnabled": true);
 ACPCore.UpdateConfiguration(dict);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).

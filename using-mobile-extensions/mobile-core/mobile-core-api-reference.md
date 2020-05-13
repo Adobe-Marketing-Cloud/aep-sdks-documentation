@@ -213,7 +213,7 @@ ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallb
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C#
+#### C\#
 
 ### trackAction
 
@@ -234,7 +234,6 @@ contextData.Add("key", "value");
 ACPCore.TrackAction("action", contextData);
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Track app states and views
@@ -377,7 +376,7 @@ ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallbac
 {% endtab %}
 
 {% tab title="Unity" %}
-### C#
+### C\#
 
 #### trackState
 
@@ -398,8 +397,6 @@ dict.Add("key", "value");
 ACPCore.TrackState("state", dict);
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ## Collect PII
@@ -713,7 +710,7 @@ ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCall
 {% endtab %}
 
 {% tab title="Unity" %}
-### C#
+### C\#
 
 #### setLogLevel
 
@@ -736,7 +733,6 @@ public static void SetLogLevel(ACPMobileLogLevel logLevel)
 ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
 ```
 {% endtab %}
-
 {% endtabs %}
 
 {% tabs %}
@@ -803,7 +799,7 @@ ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level =
 {% endtab %}
 
 {% tab title="Unity" %}
-### C#
+### C\#
 
 #### getLogLevel
 
@@ -811,7 +807,6 @@ ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level =
 ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
 ```
 {% endtab %}
-
 {% endtabs %}
 
 {% tabs %}
