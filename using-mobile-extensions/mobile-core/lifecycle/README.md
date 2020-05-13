@@ -166,6 +166,14 @@ using com.adobe.marketing.mobile;
        [ACPCore lifecycleStart:nil];
    }
    ```
+   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneWillEnterForeground` method as follows:
+   
+   ```objectivec
+   - (void) sceneWillEnterForeground:(UIScene *)scene {
+      [ACPCore lifecycleStart:nil];
+   }
+   ```
+   For more information on handling foregrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_foreground?language=objc) 
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -174,6 +182,15 @@ using com.adobe.marketing.mobile;
        [ACPCore lifecyclePause];
     }
    ```
+   
+   In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterBackground` method as follows:   
+   
+   ```objectivec
+   - (void) sceneDidEnterBackground:(UIScene *)scene {
+      [ACPCore lifecyclePause];
+   }
+   ```
+   For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background?language=objc) 
 
 ### Swift
 
@@ -212,6 +229,14 @@ using com.adobe.marketing.mobile;
        ACPCore.lifecycleStart(nil)
    }
    ```
+      In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneWillEnterForeground` method as follows:
+   
+   ```swift
+   func sceneWillEnterForeground(_ scene: UIScene) {
+        ACPCore.lifecycleStart(nil)
+   }
+   ```
+For more information on handling foregrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_foreground) 
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
 
@@ -220,6 +245,14 @@ using com.adobe.marketing.mobile;
        ACPCore.lifecyclePause()
    }
    ```
+      In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `sceneDidEnterBackground` method as follows:
+   ```swift
+   func sceneDidEnterBackground(_ scene: UIScene) {
+        ACPCore.lifecyclePause()
+   }
+   ```
+   For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background) 
+   
 {% endtab %}
 
 {% tab title="React Native" %}

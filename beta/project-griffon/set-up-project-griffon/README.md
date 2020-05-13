@@ -202,6 +202,17 @@ You may call this API when the app launches with a url \(see code snippet below 
 }
 ```
 
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```objectivec
+- (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    UIOpenURLContext * urlContext = URLContexts.anyObject;
+    if (urlContext != nil) {
+        [ACPGriffon startSession:urlContext.URL];
+    }
+}
+```
+
 #### Swift
 
 #### Example
@@ -215,7 +226,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 }
 ```
 
-In iOS 13 and later, for a scene-based application.
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
