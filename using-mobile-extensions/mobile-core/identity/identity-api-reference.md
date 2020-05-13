@@ -548,7 +548,7 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-cordova).
+If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-xamarin).
 {% endhint %}
 
 {% endtab %}
