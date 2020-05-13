@@ -90,10 +90,22 @@ To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
 {% endtab %}
+{% tab title="Unity" %}
+### C#
 
+For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
+
+#### Installation
+
+To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
+
+- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
+- Unzip `ACPCore-0.0.1-Unity.zip`
+- Import `ACPCore.unitypackage` via Assets-Import Package
+{% endtab %}
 {% tab title="Xamarin" %}
 
-### Xamarin
+### C#
 
 For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
 
@@ -101,7 +113,6 @@ For the latest Xamarin installation instructions, see the README file in the [xa
 
 The AEP SDK Xamarin packages are distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endtab %}
-
 {% endtabs %}
 
 ## Installation instructions
@@ -345,8 +356,7 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 For Unity apps, initialize the SDK using the following code in the start function of the MainScript
 
@@ -356,13 +366,19 @@ using using AOT;
 
 public class MainScript : MonoBehaviour
 {
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+    }
+        
     // Start is called before the first frame update
     void Start()
     {   
         if (Application.platform == RuntimePlatform.Android) {
             ACPCore.SetApplication();
         }
-        
+
         ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
         ACPCore.SetWrapperType();
         ACPIdentity.registerExtension();
@@ -372,9 +388,7 @@ public class MainScript : MonoBehaviour
     }
 }
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### C#
@@ -445,9 +459,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
     ACPCore.Start(new CoreStartCompletionCallback());
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### 3. Ensure app permissions \(Android-only\)

@@ -48,7 +48,8 @@ When using Cordova, the `configureWithAppId` method call must be done in native 
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C#
+#### C\#
+
 ```csharp
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
@@ -134,7 +135,7 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallba
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C#
+#### C\#
 
 ```csharp
 var dict = new Dictionary<string, object>();
@@ -142,7 +143,6 @@ dict.Add("global.privacy", "optedout");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### C#
@@ -166,7 +166,6 @@ ACPCore.UpdateConfiguration(config);
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## Using a bundled file configuration

@@ -5,7 +5,7 @@
 This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 {% tabs %}
-{% tab title="Android" %}
+
 This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 #### Syntax
@@ -21,9 +21,7 @@ public static void configureWithAppID(final String appId);
 ```java
 MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
-{% endtab %}
 
-{% tab title="iOS" %}
 #### Syntax
 
 ```objectivec
@@ -43,11 +41,9 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
-{% endtab %}
 
 {% tabs %}
 {% tab title="Unity" %}
-
 #### Syntax
 
 ```csharp
@@ -56,13 +52,12 @@ public static void ConfigureWithAppID(string appId)
 
 #### Example
 
-#### C#
+#### C\#
 
 ```csharp
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### Android Syntax
@@ -86,7 +81,6 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## updateConfiguration
@@ -179,7 +173,7 @@ ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, 
 {% endtab %}
 
 {% tab title="Unity" %}
-## C#
+## C\#
 
 Update SDK configuration
 
@@ -189,7 +183,6 @@ dict.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 ## C#
@@ -215,7 +208,6 @@ ACPCore.UpdateConfiguration(config);
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## configureWithFileInPath

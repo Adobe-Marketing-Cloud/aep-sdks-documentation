@@ -95,15 +95,13 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% endtab %}
 
 {% tab title="Unity" %}
+### C\#
 
-### C#
-
-Importing the signal extension
+After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip), the Signal extension for Unity can be added with following code in the MainScript
 
 ```csharp
 using com.adobe.marketing.mobile;
 ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -117,7 +115,6 @@ using Com.Adobe.Marketing.Mobile;
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ### Register the Signal extension
@@ -202,21 +199,18 @@ When using Cordova, registering Signal with Mobile Core must be done in native c
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 Register the extension in the `start()` function:
 
-```c#
+```text
 void Start()
 {   
   ACPSignal.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
-{% tab title="Unity" %}
+{% tab title="Xamarin" %}
 
 #### C#
 
@@ -245,9 +239,7 @@ protected override void OnCreate(Bundle savedInstanceState)
   ACPSignal.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Implement the Mobile SDK to send PII data to external destinations

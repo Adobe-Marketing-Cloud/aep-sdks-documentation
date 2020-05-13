@@ -58,15 +58,12 @@ ACPSignal.extensionVersion(function(version) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-### C#
+### C\#
 
 ```csharp
 string signalVersion = ACPSignal.ExtensionVersion();
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 ### C#
@@ -76,7 +73,6 @@ string signalVersion = ACPSignal.ExtensionVersion();
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## CollectPII API

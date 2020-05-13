@@ -83,13 +83,12 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% tab title="Unity" %}
 
 ### C#
+After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip), the Identity extension for Unity can be added with following code in the MainScript
 
 ```csharp
 using com.adobe.marketing.mobile;
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 ### C#
@@ -99,7 +98,6 @@ using Com.Adobe.Marketing.Mobile;
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## Register the Identity extension
@@ -175,8 +173,7 @@ When using Cordova, registering Identity with Mobile Core must be done in native
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 Register the Identity extension in your app's `Start()` function:
 
@@ -185,9 +182,7 @@ void Start() {
   ACPIdentity.RegisterExtension();
 }
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### C#
@@ -229,7 +224,6 @@ protected override void OnCreate(Bundle savedInstanceState)
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
@@ -298,15 +292,12 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 ```csharp
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### C#
@@ -316,7 +307,6 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 ## Visitor tracking between an app and the mobile web
@@ -476,8 +466,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
 
@@ -500,9 +489,7 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
 }
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ```
-
 {% endtab %}
-
 {% tab title="Xamarin" %}
 
 #### C#
@@ -572,7 +559,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 ```
 
 {% endtab %}
-
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.
