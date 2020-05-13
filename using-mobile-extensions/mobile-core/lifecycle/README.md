@@ -80,6 +80,18 @@ using com.adobe.marketing.mobile;
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+### C#
+
+After adding the iOS ACPCore NuGet package or the Android ACPLifecycle NuGet package, the Lifecycle extension can be added by this import statement
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Register Lifecycle with Mobile Core and add appropriate Start/Pause calls
@@ -245,6 +257,99 @@ ACPCore.lifecyclePause();
 {% tab title="Cordova" %}
 When using Cordova, registering Lifecycle with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+**iOS**
+
+1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
+
+   ```c#
+   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+   {
+     ACPLifecycle.RegisterExtension();
+     return base.FinishedLaunching(app, options);
+   }
+   ```
+
+2. Start Lifecycle data collection by calling `LifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `FinishedLaunching:` delegate method.
+
+   If your iOS application supports background capabilities, your `FinishedLaunching:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `LifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+
+   ```c#
+   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+   {
+     ACPLifecycle.RegisterExtension();
+     
+     // only start lifecycle if the application is not in the background
+     var appstate = app.ApplicationState;
+     if(appstate != UIApplicationState.Background)
+     {
+       ACPCore.LifecycleStart(null);
+     }
+     return base.FinishedLaunching(app, options);
+   }
+   ```
+
+3. When launched, if your app is resuming from a backgrounded state, iOS might call your `WillEnterForeground:` delegate method. You also need to call `LifecycleStart:`, but this time you do not need all of the supporting code that you used in `FinishedLaunching:`:
+
+   ```c#
+   public override void WillEnterForeground(UIApplication uiApplication)
+   {
+     ACPCore.LifecycleStart(null);
+     base.WillEnterForeground(uiApplication);
+   }
+   ```
+
+4. When the app enters the background, pause Lifecycle data collection from your app's `DidEnterBackground:` delegate method:
+
+   ```c#
+   public override void DidEnterBackground(UIApplication uiApplication)
+   {
+     ACPCore.LifecyclePause();
+     base.DidEnterBackground(uiApplication);
+   }
+   ```
+
+**Android**
+
+1. Register the Lifecycle extension:
+
+   ```c#
+   protected override void OnCreate(Bundle savedInstanceState)
+   {
+     base.OnCreate(savedInstanceState);
+   	LoadApplication(new App());
+     ACPCore.Application = this.Application;
+     ACPLifecycle.RegisterExtension();
+   }
+   ```
+
+2. In the `onResume` function, start the lifecycle data collection:
+
+   ```c#
+   protected override void OnResume()
+   {
+     base.OnResume();
+     ACPCore.LifecycleStart(null);
+   }
+   ```
+
+   Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you set the application (`ACPCore.Application = this.Application;`) in each of your activities.
+
+3. In the `onPause` function, pause the lifecycle data collection:
+
+   ```c#
+   protected override void OnPause()
+   {
+     base.OnPause();
+     ACPCore.LifecyclePause();
+   }
+   ```
+
+   To ensure accurate session and crash reporting, this call must be added to every activity.
+   {% endtab %}
+
 {% endtabs %}
 
 ## Lifecycle metrics

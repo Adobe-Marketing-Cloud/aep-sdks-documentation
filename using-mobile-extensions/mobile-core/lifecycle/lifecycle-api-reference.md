@@ -67,6 +67,16 @@ string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+### C#
+
+```c#
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Lifecycle Start
@@ -179,6 +189,36 @@ private void OnApplicationPause(bool pauseStatus)
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+#### C#
+
+**iOS**
+
+When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
+
+```c#
+public override void OnActivated(UIApplication uiApplication)
+{
+  base.OnActivated(uiApplication);
+  ACPCore.LifecycleStart(null);
+}
+```
+
+**Android**
+
+When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
+
+```c#
+protected override void OnResume()
+{
+  base.OnResume();
+  ACPCore.LifecycleStart(null);
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -269,6 +309,36 @@ private void OnApplicationPause(bool pauseStatus)
     cdata.Add("launch.data", "added");
     ACPCore.LifecycleStart(cdata);
   }
+}
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+**iOS**
+
+When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
+
+```c#
+public override void OnResignActivation(UIApplication uiApplication)
+{
+  base.OnResignActivation(uiApplication);
+  ACPCore.LifecyclePause();
+}
+```
+
+**Android**
+
+When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
+
+```c#
+protected override void OnPause()
+{
+  base.OnPause();
+  ACPCore.LifecyclePause();
 }
 ```
 

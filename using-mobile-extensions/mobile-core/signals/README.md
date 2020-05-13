@@ -106,6 +106,18 @@ using com.adobe.marketing.mobile;
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+### C#
+
+After adding the iOS ACPCore NuGet package or the Android ACPSignal NuGet package, the Signal extension can be added by this import statement
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register the Signal extension
@@ -198,6 +210,38 @@ Register the extension in the `start()` function:
 ```c#
 void Start()
 {   
+  ACPSignal.RegisterExtension();
+}
+```
+
+{% endtab %}
+
+{% tab title="Unity" %}
+
+#### C#
+
+**iOS**
+
+Register the Signal extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
+
+```c#
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  ACPSignal.RegisterExtension();
+  return base.FinishedLaunching(app, options);
+}
+```
+
+**Android**
+
+Register the Signal extension with the SDK Core by adding the following to your app's `OnCreate:` method:
+
+```c#
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+	LoadApplication(new App());
+  ACPCore.Application = this.Application;
   ACPSignal.RegisterExtension();
 }
 ```

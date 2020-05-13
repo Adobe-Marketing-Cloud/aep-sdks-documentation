@@ -67,6 +67,16 @@ string signalVersion = ACPSignal.ExtensionVersion();
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+### C#
+
+```c#
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## CollectPII API

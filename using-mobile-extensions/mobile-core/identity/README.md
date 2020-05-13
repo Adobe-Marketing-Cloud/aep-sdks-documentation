@@ -90,6 +90,16 @@ using com.adobe.marketing.mobile;
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+### C#
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Register the Identity extension
@@ -178,6 +188,48 @@ void Start() {
 
 {% endtab %}
 
+{% tab title="Xamarin" %}
+
+#### C#
+
+**iOS**
+
+Register the Identity extension in your app's `FinishedLaunching()` function:
+
+```c#
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+	ACPIdentity.RegisterExtension();
+
+  // start core
+  ACPCore.Start(startCallback);
+
+  return base.FinishedLaunching(app, options);
+}
+```
+
+**Android**
+
+Register the Identity extension in your app's `OnCreate()` function:
+
+```c#
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+
+  ACPIdentity.RegisterExtension();
+  
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 {% hint style="info" %}
@@ -250,6 +302,16 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 #### C#
 
 ```csharp
+string identityVersion = ACPIdentity.ExtensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+```c#
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 
@@ -437,6 +499,76 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
     print("Url variables are : " + urlVariables);
 }
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+**iOS**
+
+```c#
+ACPIdentity.AppendToUrl(url, callback => {
+  Console.WriteLine("Appended url: " + callback);
+});
+```
+
+To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+**Android**
+
+```c#
+ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Appended url: " + stringContent);
+    } 
+    else 
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
+##### Alternately, you can call [GetUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+
+**iOS**
+
+```c#
+ACPIdentity.GetUrlVariables(callback => {
+  Console.WriteLine("Url variables: " + callback);
+});
+```
+
+**Android**
+
+```c#
+ACPIdentity.GetUrlVariables(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Url variables: " + stringContent);
+    } 
+    else 
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
 ```
 
 {% endtab %}
