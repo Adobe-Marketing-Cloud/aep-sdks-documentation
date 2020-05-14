@@ -54,6 +54,17 @@ When using Cordova, the `configureWithAppId` method call must be done in native 
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+```c#
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Programmatic updates to configuration
@@ -132,6 +143,29 @@ dict.Add("global.privacy", "optedout");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+
+#### C#
+
+**iOS**
+
+```c#
+ var config = new NSMutableDictionary<NSString, NSObject>
+ {
+   ["global.privacy"] = new NSString("optedout")
+ };
+ACPCore.UpdateConfiguration(config);
+```
+
+**Android**
+
+```c#
+var config = new Dictionary<string, Java.Lang.Object>();
+config.Add("global.privacy", "optedout");
+ACPCore.UpdateConfiguration(config);
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## Using a bundled file configuration
@@ -177,6 +211,17 @@ let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+```c#
+ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Environment-aware configuration properties

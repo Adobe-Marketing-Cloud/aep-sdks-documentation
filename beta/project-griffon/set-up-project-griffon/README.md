@@ -104,7 +104,16 @@ After creating your Cordova app and adding the Android and iOS platforms, the Pr
 cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
 ```
 {% endtab %}
+{% tab title="Unity" %}
 
+#### C#
+
+After importing the [ACPGriffon.unitypackage](https://github.com/adobe/unity-acpgriffon/blob/master/bin/ACPGriffon-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
+
+```csharp
+using com.adobe.marketing.mobile; 
+```
+{% endtab %}
 {% tab title="Xamarin" %}
 
 #### C#
@@ -120,9 +129,7 @@ cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
    ```c#
    ACPGriffon.ExtensionVersion();
    ```
-
 {% endtab %}
-
 {% endtabs %}
 
 #### Register Griffon with Mobile Core
@@ -188,7 +195,23 @@ When using Flutter, registering Griffon with Mobile Core should be done in nativ
 {% tab title="Cordova" %}
 When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+{% tab title="Unity" %}
 
+#### C#
+```csharp
+using com.adobe.marketing.mobile;
+using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {   
+      ACPGriffon.RegisterExtension();
+    }
+}
+```
+{% endtab %}
 {% tab title="Xamarin" %}
 
 #### C#
@@ -202,7 +225,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
   LoadApplication(new App());
-	ACPGriffon.RegisterExtension();
+  ACPGriffon.RegisterExtension();
   // start core
   ACPCore.Start(startCallback);
   return base.FinishedLaunching(app, options);
@@ -240,9 +263,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 #### Implement Project Griffon session start APIs \(iOS\)
@@ -328,7 +349,24 @@ ACPGriffon.startSession(sessionUrl, function(handleCallback) {
 });
 ```
 {% endtab %}
+{% tab title="Unity" %}
 
+### startSession
+
+#### C#
+
+#### Syntax
+
+```csharp
+public static void StartSession(string url)
+```
+
+#### Example
+
+```csharp
+ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235-46a6-a327-7346f6de3a0");
+```
+{% endtab %}
 {% tab title="Xamarin" %}
 
 ### startSession
@@ -357,8 +395,6 @@ ACPGriffon.StartSession(url);
 ```c#
 ACPGriffon.StartSession("session url");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

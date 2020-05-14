@@ -100,7 +100,20 @@ ACPGriffon.startSession(url, function(handleCallback) {
 });
 ```
 {% endtab %}
+{% tab title="Unity" %}
+### C#
 
+### Syntax
+
+```csharp
+public static void StartSession(string url)
+```
+
+### Example
+```csharp
+ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235-46a6-a327-7346f6de3a0");
+```
+{% endtab %}
 {% tab title="Xamarin" %}
 
 ### C#
@@ -134,8 +147,7 @@ ACPGriffon.StartSession(url);
 ACPGriffon.StartSession("session url");
 ```
 
-### {% endtab %}
-
+{% endtab %}
 {% endtabs %}
 
 ## endSession

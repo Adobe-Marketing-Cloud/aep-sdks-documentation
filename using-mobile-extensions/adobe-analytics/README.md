@@ -221,7 +221,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Unity" %}
 #### C\#
 
-1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpcore/tree/master/ACPAnalytics/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
+1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
 
    ```csharp
    using com.adobe.marketing.mobile;
