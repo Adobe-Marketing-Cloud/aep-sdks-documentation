@@ -100,6 +100,28 @@ ACPGriffon.startSession(url, function(handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Unity" %}
+
+### startSession
+
+#### C#
+
+#### Syntax
+
+```csharp
+ACPGriffon.StartSession(url);
+```
+
+#### Example
+```csharp
+public void startGriffonSession(string url)
+{
+    ACPGriffon.StartSession(url);
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## endSession
