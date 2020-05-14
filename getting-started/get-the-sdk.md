@@ -89,8 +89,10 @@ For the latest Cordova installation instructions, see the README file in the [co
 To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
+
 {% endtab %}
 {% tab title="Unity" %}
+
 ### C#
 
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
@@ -101,10 +103,10 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open the appl
 
 - Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
 - Unzip `ACPCore-0.0.1-Unity.zip`
-- Import `ACPCore.unitypackage` via Assets-Import Package
+- Import `ACPCore.unitypackage` via Assets-Import Package 
+
 {% endtab %}
 {% tab title="Xamarin" %}
-
 ### C#
 
 For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.

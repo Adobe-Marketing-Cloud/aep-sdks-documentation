@@ -521,7 +521,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 
 {% hint style="info" %}
 
-##### This API is designed to handle the following URL formats:
+This API is designed to handle the following URL formats:
 
 ```text
 scheme://authority/path?query=param#fragment
