@@ -33,7 +33,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-### iOS Core 1.6.1
+### iOS Core 2.6.1
 
 * Added an internal enum for Cordova support.
 
