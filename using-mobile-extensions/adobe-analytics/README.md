@@ -331,7 +331,7 @@ public class MainScript : MonoBehaviour
     {   
         ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {   

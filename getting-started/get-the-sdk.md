@@ -89,11 +89,14 @@ For the latest Cordova installation instructions, see the README file in the [co
 To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
 
 `cordova plugin add https://github.com/adobe/cordova-acpcore.git`
-
 {% endtab %}
-{% tab title="Unity" %}
 
-### C#
+{% tab title="Unity" %}
+### C\#
+
+{% hint style="warning" %}
+Unity SDK will be released shortly. This message will be removed once the SDK is available
+{% endhint %}
 
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
 
@@ -101,13 +104,17 @@ For the latest Unity installation instructions, see the README file in the [unit
 
 To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
 
-- Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
-- Unzip `ACPCore-0.0.1-Unity.zip`
-- Import `ACPCore.unitypackage` via Assets-Import Package 
-
+* Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
+* Unzip `ACPCore-0.0.1-Unity.zip`
+* Import `ACPCore.unitypackage` via Assets-Import Package 
 {% endtab %}
+
 {% tab title="Xamarin" %}
-### C#
+### C\#
+
+{% hint style="warning" %}
+Xamarin SDK will be released shortly. This message will be removed once the SDK is available
+{% endhint %}
 
 For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
 
@@ -373,7 +380,7 @@ public class MainScript : MonoBehaviour
     {   
         ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
     }
-        
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -391,15 +398,15 @@ public class MainScript : MonoBehaviour
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
 
 **iOS**
 
-```c#
+```text
 using Com.Adobe.Marketing.Mobile;
 
 [Register("AppDelegate")]
@@ -435,7 +442,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 
 **Android**
 
-```c#
+```text
 using Com.Adobe.Marketing.Mobile;
 
 [Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

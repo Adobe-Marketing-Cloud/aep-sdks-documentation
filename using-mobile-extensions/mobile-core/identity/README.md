@@ -81,24 +81,23 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 {% endtab %}
 
 {% tab title="Unity" %}
+### C\#
 
-### C#
 After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip), the Identity extension for Unity can be added with following code in the MainScript
 
 ```csharp
 using com.adobe.marketing.mobile;
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-### C#
+{% tab title="Xamarin" %}
+### C\#
 
 After adding the iOS ACPCore NuGet package or the Android ACPIdentity NuGet package, the Identity extension can be added by this import statement
 
-```c#
+```text
 using Com.Adobe.Marketing.Mobile;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -185,20 +184,20 @@ void Start() {
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
 Register the Identity extension in your app's `FinishedLaunching()` function:
 
-```c#
+```text
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
   LoadApplication(new App());
-	ACPIdentity.RegisterExtension();
+    ACPIdentity.RegisterExtension();
 
   // start core
   ACPCore.Start(startCallback);
@@ -217,7 +216,7 @@ private void startCallback()
 
 Register the Identity extension in your app's `OnCreate()` function:
 
-```c#
+```text
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -225,7 +224,7 @@ protected override void OnCreate(Bundle savedInstanceState)
   LoadApplication(new App());
 
   ACPIdentity.RegisterExtension();
-  
+
   // start core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
@@ -239,7 +238,6 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -315,14 +313,13 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 {% endtab %}
+
 {% tab title="Xamarin" %}
+#### C\#
 
-#### C#
-
-```c#
+```text
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -507,15 +504,15 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
 
 **iOS**
 
-```c#
+```text
 ACPIdentity.AppendToUrl(url, callback => {
   Console.WriteLine("Appended url: " + callback);
 });
@@ -525,7 +522,7 @@ To append visitor information to the URL that is being used to open the web view
 
 **Android**
 
-```c#
+```text
 ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -544,11 +541,11 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 }
 ```
 
-##### Alternately, you can call [GetUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+**Alternately, you can call GetUrlVariables and build your own URL:**
 
 **iOS**
 
-```c#
+```text
 ACPIdentity.GetUrlVariables(callback => {
   Console.WriteLine("Url variables: " + callback);
 });
@@ -556,7 +553,7 @@ ACPIdentity.GetUrlVariables(callback => {
 
 **Android**
 
-```c#
+```text
 ACPIdentity.GetUrlVariables(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -574,7 +571,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
