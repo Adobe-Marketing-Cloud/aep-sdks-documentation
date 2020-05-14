@@ -205,6 +205,12 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
   return base.FinishedLaunching(app, options);
 }
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
 ```
 
 **Android**
@@ -222,6 +228,15 @@ protected override void OnCreate(Bundle savedInstanceState)
   
   // start core
   ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
 }
 ```
 

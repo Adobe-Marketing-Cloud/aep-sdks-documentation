@@ -222,7 +222,16 @@ Register the Signal extension with the SDK Core by adding the following to your 
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   ACPSignal.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+
   return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
 }
 ```
 
@@ -237,6 +246,17 @@ protected override void OnCreate(Bundle savedInstanceState)
 	LoadApplication(new App());
   ACPCore.Application = this.Application;
   ACPSignal.RegisterExtension();
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
 }
 ```
 {% endtab %}
