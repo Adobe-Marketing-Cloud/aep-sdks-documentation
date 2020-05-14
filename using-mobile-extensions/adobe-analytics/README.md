@@ -250,7 +250,7 @@ public class MobileApp extends Application {
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
-        MobileCore.configureWithAppId("yourAppId");
+        MobileCore.configureWithAppID("yourAppId");
         try {
             Analytics.registerExtension(); //Register Analytics with Mobile Core
             Identity.registerExtension();
