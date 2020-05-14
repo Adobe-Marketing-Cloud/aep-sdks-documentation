@@ -102,23 +102,17 @@ ACPGriffon.startSession(url, function(handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
+### C#
 
-### startSession
-
-#### C#
-
-#### Syntax
+### Syntax
 
 ```csharp
-ACPGriffon.StartSession(url);
+public static void StartSession(string url)
 ```
 
-#### Example
+### Example
 ```csharp
-public void startGriffonSession(string url)
-{
-    ACPGriffon.StartSession(url);
-}
+ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235-46a6-a327-7346f6de3a0");
 ```
 {% endtab %}
 
