@@ -77,6 +77,17 @@ After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcor
 using com.adobe.marketing.mobile;
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+
+### C#
+
+After adding the iOS ACPCore NuGet package or the Android ACPLifecycle NuGet package, the Lifecycle extension can be added by this import statement
+
+```c#
+using Com.Adobe.Marketing.Mobile;
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## Register Lifecycle with Mobile Core and add appropriate Start/Pause calls
@@ -278,11 +289,9 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ACPCore.lifecyclePause();
 ```
 {% endtab %}
-
 {% tab title="Cordova" %}
 When using Cordova, registering Lifecycle with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
-
 {% tab title="Unity" %}
 **Starting and Pausing a lifecycle event:**
 Add the OnApplicationPause in the MainScript with the following code:
@@ -303,7 +312,97 @@ private void OnApplicationPause(bool pauseStatus)
 }
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
 
+**iOS**
+
+1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
+
+   ```c#
+   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+   {
+     ACPLifecycle.RegisterExtension();
+     return base.FinishedLaunching(app, options);
+   }
+   ```
+
+2. Start Lifecycle data collection by calling `LifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `FinishedLaunching:` delegate method.
+
+   If your iOS application supports background capabilities, your `FinishedLaunching:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `LifecycleStart:` should only be called when the application state is not equal to `UIApplicationState.Background`.
+
+   ```c#
+   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+   {
+     ACPLifecycle.RegisterExtension();
+     
+     // only start lifecycle if the application is not in the background
+     var appstate = app.ApplicationState;
+     if(appstate != UIApplicationState.Background)
+     {
+       ACPCore.LifecycleStart(null);
+     }
+     return base.FinishedLaunching(app, options);
+   }
+   ```
+
+3. When launched, if your app is resuming from a backgrounded state, iOS might call your `WillEnterForeground:` delegate method. You also need to call `LifecycleStart:`, but this time you do not need all of the supporting code that you used in `FinishedLaunching:`:
+
+   ```c#
+   public override void WillEnterForeground(UIApplication uiApplication)
+   {
+     base.WillEnterForeground(uiApplication);
+     ACPCore.LifecycleStart(null);
+   }
+   ```
+
+4. When the app enters the background, pause Lifecycle data collection from your app's `DidEnterBackground:` delegate method:
+
+   ```c#
+   public override void DidEnterBackground(UIApplication uiApplication)
+   {
+     base.DidEnterBackground(uiApplication);
+     ACPCore.LifecycleStart(null);
+   }
+   ```
+
+**Android**
+
+1. Register the Lifecycle extension:
+
+   ```c#
+   protected override void OnCreate(Bundle savedInstanceState)
+   {
+     base.OnCreate(savedInstanceState);
+    LoadApplication(new App());
+     ACPCore.Application = this.Application;
+     ACPLifecycle.RegisterExtension();
+   }
+   ```
+
+2. In the `onResume` function, start the lifecycle data collection:
+
+   ```c#
+   protected override void OnResume()
+   {
+     base.OnResume();
+     ACPCore.LifecycleStart(null);
+   }
+   ```
+
+   Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you set the application (`ACPCore.Application = this.Application;`) in each of your activities.
+
+3. In the `onPause` function, pause the lifecycle data collection:
+
+   ```c#
+   protected override void OnPause()
+   {
+     base.OnPause();
+     ACPCore.LifecyclePause();
+   }
+   ```
+
+   To ensure accurate session and crash reporting, this call must be added to every activity.
+{% endtab %}
 {% endtabs %}
 
 ## Lifecycle metrics
@@ -362,7 +461,45 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>\#\#\# Install \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*DescriptIon\*\* \| \| :--- \| :--- \| :--- \| \| First Launches \| \`a.InstallEvent\` \| Triggered at the first run after installation or re-installation. \| \| Install Date \| \`a.InstallDate\` \| Date of first launch after installation. The format is \`M/d/yyyy\`, and an example is \`5/3/2017\`. \| \#\#\# Upgrade \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Upgrades \| \`a.UpgradeEvent\` \| Triggered at the first run after upgrade or when the version number changes. \| \| Days since last upgrade \| \`a.DaysSinceLastUpgrade\` \| Number of days since the application version number changed. \| \| Launches since last upgrade \| \`a.LaunchesSinceUpgrade\` \| Number of launches since the application version number changed. \| \#\#\# Launch \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Daily Engaged Users \| \`a.DailyEngUserEvent\` \| Triggered when the application is used on a particular day. \*\*Important\*\*: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. \| \| Monthly Engaged Users \| \`a.MonthlyEngUserEvent\` \| Triggered when the application is used during a particular month. \*\*Important\*\*: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. \| \| Launches \| \`a.LaunchEvent\` \| Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. \| \| Previous Session Length \| \`a.PrevSessionLength\` \| Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. \| \| Ignored Session Length \| \`a.ignoredSessionLength\` \| If the last session is set to last longer than \`lifecycle.sessionTimeout\`, that session length is ignored and recorded here. \| \| Launch Number \| \`a.Launches\` \| Number of times the application was launched or brought out of the background. \| \| Days since first use \| \`a.DaysSinceFirstUse\` \| Number of days since first run. \| \| Days since last use \| \`a.DaysSinceLastUse\` \| Number of days since last use. \| \| Hour of Day \| \`a.HourOfDay\` \| Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. \| \| Day of Week \| \`a.DayOfWeek\` \| Measures the day of the week the app was launched. \| \#\#\# Crash \| \*\*Metric\*\* \| \*\*Key\*\* \| \*\*Description\*\* \| \| :--- \| :--- \| :--- \| \| Crashes \| \`a.CrashEvent\` \| Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. \| \#\#\# Device Information
+</table>
+
+### Install
+
+| **Metric** | **Key** | **DescriptIon** |
+| :--- | :--- | :--- |
+| First Launches | `a.InstallEvent` | Triggered at the first run after installation or re-installation. |
+| Install Date | `a.InstallDate` | Date of first launch after installation. The format is `M/d/yyyy`, and an example is `5/3/2017`. |
+
+### Upgrade
+
+| **Metric** | **Key** | **Description** |
+| :--- | :--- | :--- |
+| Upgrades | `a.UpgradeEvent` | Triggered at the first run after upgrade or when the version number changes. |
+| Days since last upgrade | `a.DaysSinceLastUpgrade` | Number of days since the application version number  changed. |
+| Launches since last upgrade | `a.LaunchesSinceUpgrade` | Number of launches since the application version number changed. |
+
+### Launch
+
+| **Metric** | **Key** | **Description** |
+| :--- | :--- | :--- |
+| Daily Engaged Users | `a.DailyEngUserEvent` | Triggered when the application is used on a particular day.     **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Monthly Engaged Users | `a.MonthlyEngUserEvent` | Triggered when the application is used during a particular month. **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Launches | `a.LaunchEvent` | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
+| Previous Session Length | `a.PrevSessionLength` | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. |
+| Ignored Session Length | `a.ignoredSessionLength` | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |
+| Launch Number | `a.Launches` | Number of times the application was launched or brought out of the background. |
+| Days since first use | `a.DaysSinceFirstUse` | Number of days since first run. |
+| Days since last use | `a.DaysSinceLastUse` | Number of days since last use. |
+| Hour of Day | `a.HourOfDay` | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
+| Day of Week | `a.DayOfWeek` | Measures the day of the week the app was launched. |
+
+### Crash
+
+| **Metric** | **Key** | **Description** |
+| :--- | :--- | :--- |
+| Crashes | `a.CrashEvent` | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
+
+### Device Information
 
 <table>
   <thead>
@@ -416,7 +553,11 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}
+</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: 
+
+{% hint style="warning" %}
+The time that your app spends in the background is not included in the session length.
+{% endhint %}
 
 <table>
   <thead>

@@ -58,6 +58,29 @@ public static void ConfigureWithAppID(string appId)
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+
+#### Android Syntax
+
+```c#
+public unsafe static void ConfigureWithAppID (string appId);
+```
+
+#### iOS Syntax
+
+```c#
+public static void ConfigureWithAppID (string appid);
+```
+
+#### Example
+
+#### C#
+
+```c#
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## updateConfiguration
@@ -160,6 +183,31 @@ dict.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+
+## C#
+
+Update SDK configuration
+
+**iOS**
+
+```c#
+ var config = new NSMutableDictionary<NSString, NSObject>
+ {
+   ["newConfigKey"] = new NSString("newConfigValue")
+ };
+ACPCore.UpdateConfiguration(config);
+```
+
+**Android**
+
+```c#
+var config = new Dictionary<string, Java.Lang.Object>();
+config.Add("newConfigKey", "newConfigValue");
+ACPCore.UpdateConfiguration(config);
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## configureWithFileInPath
@@ -208,5 +256,30 @@ let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### Android Syntax
+
+```c#
+public unsafe static void ConfigureWithFileInPath (string filepath);
+```
+
+#### iOS Syntax
+
+```c#
+public static void ConfigureWithFileInPath (string filepath);
+```
+
+#### Example
+
+#### C#
+
+```c#
+ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
