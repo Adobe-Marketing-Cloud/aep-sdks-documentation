@@ -104,6 +104,25 @@ After creating your Cordova app and adding the Android and iOS platforms, the Pr
 cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+1. After adding the iOS or Android ACPGriffon NuGet package, the Griffon extension can be added by this import statement
+
+   ```c#
+   using Com.Adobe.Marketing.Mobile;
+   ```
+
+2. Get the extension version.
+
+   ```c#
+   ACPGriffon.ExtensionVersion();
+   ```
+
+{% endtab %}
+
 {% endtabs %}
 
 #### Register Griffon with Mobile Core
@@ -169,6 +188,61 @@ When using Flutter, registering Griffon with Mobile Core should be done in nativ
 {% tab title="Cordova" %}
 When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C#
+
+**iOS**
+
+Register the Griffon extension in your app's `FinishedLaunching()` function:
+
+```c#
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+	ACPGriffon.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the Griffon extension in your app's `OnCreate()` function:
+
+```c#
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+  ACPGriffon.RegisterExtension();
+  
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 #### Implement Project Griffon session start APIs \(iOS\)
@@ -254,5 +328,37 @@ ACPGriffon.startSession(sessionUrl, function(handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### startSession
+
+#### iOS Syntax
+
+```c#
+public static void StartSession (NSUrl url);
+```
+
+#### Android Syntax
+
+```c#
+public unsafe static void StartSession (string url);
+```
+
+#### iOS Example
+
+```c#
+NSUrl url = new NSUrl("session url");
+ACPGriffon.StartSession(url);
+```
+
+#### Android Example
+
+```c#
+ACPGriffon.StartSession("session url");
+```
+
+{% endtab %}
+
 {% endtabs %}
 

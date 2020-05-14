@@ -100,6 +100,42 @@ ACPGriffon.startSession(url, function(handleCallback) {
 });
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### C#
+
+#### iOS Syntax
+
+```c#
+public static void StartSession (NSUrl url);
+```
+
+- _url_ _\(NSUrl\)_ is the Griffon session url.
+
+#### Android Syntax
+
+```c#
+public unsafe static void StartSession (string url);
+```
+
+- _url_ _\(string\)_ is the Griffon session url.
+
+#### iOS Example
+
+```c#
+NSUrl url = new NSUrl("session url");
+ACPGriffon.StartSession(url);
+```
+
+#### Android Example
+
+```c#
+ACPGriffon.StartSession("session url");
+```
+
+### {% endtab %}
+
 {% endtabs %}
 
 ## endSession
