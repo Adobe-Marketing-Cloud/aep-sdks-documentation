@@ -23,7 +23,7 @@ If you update the Adobe Media Analytics for Audio and Video launch extension to 
 To configure the Media Analytics extension, complete the following steps:
 
 #### **Collection API Server**
-Type the name of the media collection API server to which the tracking data should be sent. Important: You need to contact your Adobe account representative for this information.
+Type the name of the media collection API server. This is the server where the downloaded media tracking data is sent. Important: You need to contact your Adobe account representative for this information.
 
 #### **Channel**
 Type the channel name property.

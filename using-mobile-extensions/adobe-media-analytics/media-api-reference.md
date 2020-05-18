@@ -14,7 +14,7 @@ Creates a media tracker instance that tracks the playback session. The tracker c
 {% tab title="Android" %}
 #### createTracker
 
- The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
+The createTracker function returns the instance of MediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -43,7 +43,7 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 #### createTracker
 
- The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
+ The createTracker function returns the instance of ACPMediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -109,7 +109,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 {% tab title="Android" %}
 #### createTracker
 
-Optional configuration about the tracker can be passed to this function.  The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
+Optional configuration about the tracker can be passed to this function. The createTracker function returns the instance of MediaTracker with the configuration for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -152,7 +152,7 @@ Media.createTracker(config, new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 #### createTrackerWithConfig
 
-Optional configuration about the tracker can be passed to this function. The createTracker function returns the instance of MediaTracker with the given config to be used for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
+Optional configuration about the tracker can be passed to this function. The createTracker function returns the instance of ACPMediaTracker with the configuration for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -468,9 +468,9 @@ Creates an instance of the Chapter object.
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
 | `name` | Chapter name | Yes |
-| `position` | Chapter position | Yes |
+| `position` | The number position of the chapter within the content, starting with 1. | Yes |
 | `length` | Chapter length | Yes |
-| `startTime` | Chapter start time | Yes |
+| `startTime` | Playhead value at the start of the chapter | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -629,7 +629,7 @@ Creates an instance of the Player State object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | State name | Yes |
+| `name` | State name(Use [LinkToOurConstants](media-api-reference.md#playerstateconstants)  constants to track standard player states) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -685,7 +685,7 @@ let playerStateObject = ACPMedia.createStateObject(withName: "fullscreen")
 
 
 ```jsx
-let qoeObject = ACPMedia.createStateObject("fullscreen");
+let playerStateObject = ACPMedia.createStateObject("fullscreen");
 ```
 {% endtab %}
 {% endtabs %}
@@ -1984,10 +1984,10 @@ public class MediaConstants {
 
   public static final class PlayerState {
     public static final String FULLSCREEN = "fullscreen";
-		public static final String PICTURE_IN_PICTURE = "pictureInPicture";
-		public static final String CLOSED_CAPTION = "closedCaptioning";
-		public static final String IN_FOCUS = "inFocus";
-		public static final String MUTE = "mute";
+    public static final String PICTURE_IN_PICTURE = "pictureInPicture";
+    public static final String CLOSED_CAPTION = "closedCaptioning";
+    public static final String IN_FOCUS = "inFocus";
+    public static final String MUTE = "mute";
   }
 
 }
@@ -2171,11 +2171,11 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
      */
     ACPMediaEventBitrateChange,
     /**
-     * Constant defining event type for player State start
+     * Constant defining event type for State start
      */
     ACPMediaEventStateStart
     /**
-     * Constant defining event type for  player State end
+     * Constant defining event type for State end
      */
     ACPMediaEventStateEnd
 };
