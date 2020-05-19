@@ -50,6 +50,7 @@
   * [Mobile Services API reference](using-mobile-extensions/adobe-analytics-mobile-services/mobileservices-api-reference.md)
 * [Adobe Analytics - Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
+  * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
   * [Release Notes](using-mobile-extensions/adobe-audience-manager/adobe-audience-manager-release-notes.md)
   * [Audience Manager API reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
@@ -121,4 +122,3 @@
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
-
