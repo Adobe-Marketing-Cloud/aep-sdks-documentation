@@ -1,6 +1,6 @@
 # Release Notes
 
-## May 12, 2020
+## May 19, 2020
 
 ### iOS Media 2.0.0
 * Uses media collection endpoint for tracking both streaming and downloaded content.
