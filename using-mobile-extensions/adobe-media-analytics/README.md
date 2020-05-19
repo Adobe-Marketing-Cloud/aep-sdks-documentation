@@ -4,7 +4,7 @@
 This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/content/help/en/media-analytics/using/media-overview.html) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
 {% endhint %}
 
-## Configure Media Analytics extension in Experience Platform Launch
+### Configure Media Analytics extension in Experience Platform Launch
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
@@ -42,7 +42,7 @@ If you are using Media Extension v1.x, then go to Legacy settings section
 1. Enable the `Use Tracking Server` checkbox.
 2. In **Tracking Server**,  Type the name of the tracking server to which all media tracking data should be sent.
 
-## Add Media Analytics to your app
+### Add Media Analytics to your app
 
 {% hint style="info" %}
 This extension requires the [Adobe Analytics extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
@@ -192,7 +192,7 @@ func application(_ application: UIApplication,
 {% endtab %}
 {% endtabs %}
 
-## Configuration keys
+### Configuration keys
 
 To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
@@ -204,7 +204,7 @@ To update your SDK configuration programmatically, use the following information
 | `media.appVersion` | No | Version of the media player app/SDK. For more information, see [Application Version](./#application-version). |
 
 
-## Platform Support
+### Platform Support
 | Platform | Support Status |
 | :--- | :--- |
 | Android | Supported |
