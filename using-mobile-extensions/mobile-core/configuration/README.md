@@ -16,7 +16,6 @@ The unique environment ID provided by Experience Platform Launch can be configur
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
@@ -25,7 +24,6 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Objective-C
 
 ```objectivec
@@ -41,6 +39,28 @@ ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 {% hint style="info" %}
 Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
 {% endhint %}
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `configureWithAppId` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+```csharp
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+```text
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
 {% endtab %}
 {% endtabs %}
 
@@ -98,6 +118,50 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"});
 FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+```jsx
+ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Update configuration successful: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to update configuration : " + handleError);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("global.privacy", "optedout");
+ACPCore.UpdateConfiguration(dict);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+```text
+ var config = new NSMutableDictionary<NSString, NSObject>
+ {
+   ["global.privacy"] = new NSString("optedout")
+ };
+ACPCore.UpdateConfiguration(config);
+```
+
+**Android**
+
+```text
+var config = new Dictionary<string, Java.Lang.Object>();
+config.Add("global.privacy", "optedout");
+ACPCore.UpdateConfiguration(config);
+```
+{% endtab %}
 {% endtabs %}
 
 ## Using a bundled file configuration
@@ -117,7 +181,6 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
@@ -142,6 +205,14 @@ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"of
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
 ACPCore.configureWithFile(inPath: filePath)
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+```text
+ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 {% endtabs %}
@@ -210,3 +281,4 @@ Here's a sample JSON file for the SDK:
     "rules.url": "https://link.to.rules/test.zip"
 }
 ```
+

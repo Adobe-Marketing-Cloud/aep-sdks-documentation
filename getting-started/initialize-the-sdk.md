@@ -93,7 +93,29 @@ Future<void> trackAction(String action, {Map<String, String> data});
 #### Example
 
 ```dart
-FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});
+FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});J
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+#### Calling trackAction
+
+```javascript
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+## C\#
+
+#### Calling TrackAction
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "value");
+ACPCore.TrackAction("action name", contextData);
 ```
 {% endtab %}
 {% endtabs %}
@@ -186,6 +208,28 @@ Future<void> trackState(String state, {Map<String, String> data});
 
 ```dart
 FlutterACPCore.trackState("state",  data: {"mytest": "state"});
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+#### Calling track state
+
+```javascript
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+## C\#
+
+#### Calling TrackState
+
+```csharp
+var dict = new Dictionary<string, string>();
+dict.Add("key", "state value");
+ACPCore.TrackState("state", dict);
 ```
 {% endtab %}
 {% endtabs %}

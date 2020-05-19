@@ -46,7 +46,6 @@ String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 ```jsx
@@ -56,9 +55,23 @@ ACPSignal.extensionVersion(function(version) {
     console.log(error);  
 });
 ```
-
 {% endtab %}
 
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```text
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+{% endtab %}
 {% endtabs %}
 
 ## CollectPII API

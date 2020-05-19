@@ -8,13 +8,11 @@ To get the version of the Lifecycle extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
 String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -29,31 +27,25 @@ NSString *lifecycleExtensionVersion = [ACPLifecycle extensionVersion];
 ```swift
 let lifecycleExtensionVersion  = ACPLifecycle.extensionVersion()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
 ```jsx
 ACPLifecycle.extensionVersion().then(lifecycleExtensionVersion => console.log("AdobeExperienceSDK: ACPLifecycle version: " + lifecycleExtensionVersion));
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 ### Dart
 
 ```dart
 String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
 ```
-
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 ```jsx
@@ -63,9 +55,23 @@ ACPLifecycle.extensionVersion(function(version) {
    console.log(error);  
 });
 ```
-
 {% endtab %}
 
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```text
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+{% endtab %}
 {% endtabs %}
 
 ## Lifecycle Start
@@ -147,6 +153,62 @@ lifecycleStart(additionalContextData?: { string: string });
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
+
+```text
+public override void OnActivated(UIApplication uiApplication)
+{
+  base.OnActivated(uiApplication);
+  ACPCore.LifecycleStart(null);
+}
+```
+
+**Android**
+
+When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
+
+```text
+protected override void OnResume()
+{
+  base.OnResume();
+  ACPCore.LifecycleStart(null);
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -209,6 +271,62 @@ lifecyclePause();
 
 ```jsx
 ACPCore.lifecyclePause();
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
+
+```text
+public override void OnResignActivation(UIApplication uiApplication)
+{
+  base.OnResignActivation(uiApplication);
+  ACPCore.LifecyclePause();
+}
+```
+
+**Android**
+
+When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
+
+```text
+protected override void OnPause()
+{
+  base.OnPause();
+  ACPCore.LifecyclePause();
+}
 ```
 {% endtab %}
 {% endtabs %}

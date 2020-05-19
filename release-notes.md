@@ -8,13 +8,54 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## April 24, 2020
+
+The following updates were made in this release:
+
+### Android Campaign 1.0.4
+
+* Changes in how fullscreen in-app messages are displayed inline with WebView security recommendations in Mobile Core 1.5.2 release.
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Fixed an image caching related bug, where cached images used to get deleted.
+
+## April 22, 2020
+
+The following updates were made in this release:
+
+### Android Griffon 1.1.5
+
+* Fix bug where pinCode entry activity fails to show when another application’s activity is started at the same time.
+* Blob upload services uses production URL with multiple environment support.
+* ClientId is shared as a query parameter to socket URL rather than tagging each Griffon event.
+* Griffon socket connection now authenticates against organization Id. 
+
+## April 21, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.1
+
+* Added an internal enum for Cordova support.
+
+### Android Core 1.5.3
+
+* Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
+
+## April 17, 2020
+
+The following updates were made in this release:
+
+### iOS Mobile Services 1.0.6
+
+* Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
+
 ## April 9, 2020
 
 The following updates were made in this release:
 
 ### Android Core 1.5.2
 
-* Fixed serveval security issues.
+* Fixed several security issues.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ### Android Lifecycle 1.0.3
