@@ -11,10 +11,12 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 ## May 19, 2020
 
 ### iOS Media 2.0.0
+
 * Uses media collection endpoint for tracking both streaming and downloaded content.
 * Added support for player state tracking
 
 ### Android Media 2.0.0
+
 * Uses media collection endpoint for tracking both streaming and downloaded content.
 * Added support for player state tracking
 
@@ -1163,3 +1165,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

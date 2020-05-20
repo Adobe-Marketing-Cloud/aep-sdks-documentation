@@ -43,7 +43,7 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
 {% tab title="iOS" %}
 #### createTracker
 
- The createTracker function returns the instance of ACPMediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
+The createTracker function returns the instance of ACPMediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 **Syntax**
 
@@ -82,11 +82,11 @@ ACPMedia.createTracker({mediaTracker in
 })
 ```
 {% endtab %}
+
 {% tab title="React Native" %}
 **JavaScript**
 
 #### createTracker
-
 
 ```jsx
 ACPMedia.createTracker().then(tracker =>
@@ -208,7 +208,6 @@ ACPMedia.createTrackerWithConfig(config, {mediaTracker in
 
 #### createTracker
 
-
 ```jsx
 var config = new Object();
 config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";
@@ -218,7 +217,6 @@ ACPMedia.createTrackerWithConfig(config).then(tracker =>
 );
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### createMediaObject
@@ -240,7 +238,6 @@ Creates an instance of the Media object.
 Returns a HashMap instance that contains information about the media.
 
 **Syntax**
-
 
 ```java
 public static HashMap<String, Object> createMediaObject(String name,
@@ -304,7 +301,6 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 **JavaScript**
 
 #### createMediaObject
-
 
 ```jsx
 let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
@@ -377,7 +373,6 @@ let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", posit
 **JavaScript**
 
 #### createAdBreakObject
-
 
 ```jsx
 let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
@@ -453,7 +448,6 @@ let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", posit
 **JavaScript**
 
 #### createAdObject
-
 
 ```jsx
 let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
@@ -532,7 +526,6 @@ let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", posit
 **JavaScript**
 
 #### createChapterObject
-
 
 ```jsx
 let chapterObject = ACPMedia.createChapterObject('chapter-name', 1, 60, 0);
@@ -616,7 +609,6 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 
 #### createQoEObject
 
-
 ```jsx
 let qoeObject = ACPMedia.createQoEObject(1000000, 2, 23, 10);
 ```
@@ -629,7 +621,7 @@ Creates an instance of the Player State object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | State name(Use [LinkToOurConstants](media-api-reference.md#playerstateconstants)  constants to track standard player states) | Yes |
+| `name` | State name\(Use [LinkToOurConstants](media-api-reference.md#playerstateconstants)  constants to track standard player states\) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -682,7 +674,6 @@ let playerStateObject = ACPMedia.createStateObject(withName: "fullscreen")
 **JavaScript**
 
 #### createStateObject
-
 
 ```jsx
 let playerStateObject = ACPMedia.createStateObject("fullscreen");
@@ -1096,7 +1087,7 @@ Tracks media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#createadbreakobject) method. <br/> For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#createadobject) method.<br/>  For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#createchapterobject) method.<br/> For `StateStart` and `StateEnd` event, the State information is created by using the [createStateObject](media-api-reference.md#createstateobject) method.|
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#createadbreakobject) method.   For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#createadobject) method.   For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#createchapterobject) method.  For `StateStart` and `StateEnd` event, the State information is created by using the [createStateObject](media-api-reference.md#createstateobject) method. |
 | `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
@@ -1114,6 +1105,7 @@ Tracks media events.
 **Examples**
 
 **Tracking Player States**
+
 ```java
 // StateStart
   HashMap<String, Object> stateObject = Media.createStateObject("fullscreen");
@@ -1123,7 +1115,6 @@ Tracks media events.
   HashMap<String, Object> stateObject = Media.createStateObject("fullscreen");
   _tracker.trackEvent(Media.Event.StateEnd, stateObject, null);
 ```
-
 
 **Tracking AdBreaks**
 
@@ -1202,7 +1193,6 @@ Tracks media events.
 // Bitrate change
   _tracker.trackEvent(Media.Event.BitrateChange, null, null);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -1419,7 +1409,6 @@ Here are examples in Objective C and Swift:
 ```
 {% endtab %}
 
-
 {% tab title="React Native" %}
 **JavaScript**
 
@@ -1428,6 +1417,7 @@ Here are examples in Objective C and Swift:
 **Examples**
 
 **Tracking Player States**
+
 ```jsx
 // StateStart
   let stateObject = ACPMedia.createStateObject("fullscreen");
@@ -1439,6 +1429,7 @@ Here are examples in Objective C and Swift:
 ```
 
 **Tracking AdBreaks**
+
 ```jsx
 // AdBreakStart
   let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
@@ -1515,7 +1506,6 @@ Here are examples in Objective C and Swift:
 {% endtab %}
 {% endtabs %}
 
-
 ### updateCurrentPlayhead
 
 Provides a media tracker with the current media playhead. For accurate tracking, call this method multiple times when the playhead changes.
@@ -1566,6 +1556,7 @@ Here are examples in Objective C and Swift:
 _tracker.updateCurrentPlayhead(1)
 ```
 {% endtab %}
+
 {% tab title="React Native" %}
 **JavaScript**
 
@@ -1776,6 +1767,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAudiobook;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 ```
 {% endtab %}
+
 {% tab title="React Native" %}
 **JavaScript**
 
@@ -1872,7 +1864,6 @@ ACPMediaConstants.ACPVideoMetadataKeyFeed
 ACPMediaConstants.ACPVideoMetadataKeyStreamFormat
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Standard audio constants
@@ -1922,7 +1913,6 @@ ACPMediaConstants.ACPAudioMetadataKeyStation
 ACPMediaConstants.ACPAudioMetadataKeyPublisher
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Standard ad constants
@@ -1957,6 +1947,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeySiteId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 ```
 {% endtab %}
+
 {% tab title="React Native" %}
 **JavaScript**
 
@@ -2293,3 +2284,4 @@ tracker.trackSessionStart(mediaObject, null);
 ```
 {% endtab %}
 {% endtabs %}
+
