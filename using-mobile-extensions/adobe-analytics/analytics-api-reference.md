@@ -131,6 +131,27 @@ public static void ClearQueue()
 ACPAnalytics.ClearQueue();
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### ClearQueue
+
+```c#
+public static void ClearQueue ();
+```
+
+**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+
+**Example**
+
+```c#
+ACPAnalytics.ClearQueue();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getQueueSize <a id="getqueuesize"></a>
@@ -284,6 +305,60 @@ public static void HandleAdobeGetQueueSizeCallback(long queueSize)
 ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### GetQueueSize
+
+**iOS Syntax**
+
+```c#
+public unsafe static void GetQueueSize (Action<nuint> callback);
+```
+
+* _callback_ is a callback containing the `queue size` if the GetQueueSize API executed without any errors.
+
+**iOS Example**
+
+```c#
+ACPAnalytics.GetQueueSize(callback => {
+  Console.WriteLine("Queue size: " + callback);
+});
+```
+
+**Android Syntax**
+
+```c#
+public unsafe static void GetQueueSize (IAdobeCallback callback);
+```
+
+* _callback_ is a callback containing the `queue size` if the GetQueueSize API executed without any errors.
+
+**Android Example**
+
+```c#
+ACPAnalytics.GetQueueSize(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Queue size: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
@@ -419,7 +494,7 @@ Retrieves the Analytics tracking identifier.
 ACPAnalytics.getTrackingIdentifier = function(success, fail);
 ```
 
-* _success_ is a callback containing a general success message if the getTrackingIdentifier API executed without any errors.
+* _success_ is a callback containing the tracking Identifier string value.
 * _fail_ is a callback containing error information if the getTrackingIdentifier API was executed with errors.
 
 **Example**
@@ -444,7 +519,7 @@ Retrieves the Analytics tracking identifier.
 public static void GetTrackingIdentifier(AdobeGetTrackingIdentifierCallback callback)
 ```
 
-* _callback_ is a callback containing a general success message if the GetTrackingIdentifier API executed without any errors.
+* _callback_ is a callback containing the tracking Identifier string value.
 
 **Example**
 
@@ -457,6 +532,62 @@ public static void HandleAdobeGetTrackingIdentifierCallback(string trackingIdent
 ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### GetTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+**iOS Syntax**
+
+```c#
+public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
+```
+
+* _callback_ is a callback containing the tracking Identifier string value.
+
+**iOS Example**
+
+```c#
+ACPAnalytics.GetTrackingIdentifier(callback => {
+  Console.WriteLine("Tracking identifier: " + callback);
+});
+```
+
+**Android Syntax**
+
+```c#
+public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
+```
+
+* _callback_ is a callback containing the tracking Identifier string value.
+
+**Android Example**
+
+```c#
+ACPAnalytics.GetTrackingIdentifier(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Tracking identifier: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
@@ -614,6 +745,60 @@ public static void HandleAdobeGetVisitorIdentifierCallback(string visitorIdentif
 ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### GetVisitorIdentifier
+
+**iOS Syntax**
+
+```c#
+public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
+```
+
+* _callback_ is a callback containing the visitor Identifier string value.
+
+**iOS Example**
+
+```c#
+ACPAnalytics.GetVisitorIdentifier(callback => {
+  Console.WriteLine("Visitor identifier: " + callback);
+});
+```
+
+**Android Syntax**
+
+```c#
+public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
+```
+
+* _callback_ is a callback containing the visitor Identifier string value.
+
+**Android Example**
+
+```c#
+ACPAnalytics.GetVisitorIdentifier(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Visitor identifier: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## sendQueuedHits <a id="sendqueuedhits"></a>
@@ -755,6 +940,29 @@ public static void SendQueuedHits()
 ACPAnalytics.SendQueuedHits();
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### SendQueuedHits
+
+Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+
+**Syntax**
+
+```c#
+public static void SendQueuedHits ();
+```
+
+**Example**
+
+```c#
+ACPAnalytics.SendQueuedHits();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## setVisitorIdentifier <a id="setidentifier"></a>
@@ -897,5 +1105,36 @@ public static void SetVisitorIdentifier(string visitorId)
 ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+#### C\#
+
+### SetVisitorIdentifier
+
+**iOS Syntax**
+
+```c#
+public static void SetVisitorIdentifier (string visitorIdentifier);
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+**Android Syntax**
+
+```c#
+public unsafe static void SetVisitorIdentifier (string visitorID);
+```
+
+* _visitorID_ is the new value for the visitor identifier.
+
+**Example**
+
+```c#
+ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
