@@ -64,14 +64,13 @@ ACPLifecycle.extensionVersion(function(version) {
 string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 ```
 {% endtab %}
+
 {% tab title="Xamarin" %}
+### C\#
 
-### C#
-
-```c#
+```text
 string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -182,15 +181,15 @@ private void OnApplicationPause(bool pauseStatus)
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
 When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
 
-```c#
+```text
 public override void OnActivated(UIApplication uiApplication)
 {
   base.OnActivated(uiApplication);
@@ -202,14 +201,13 @@ public override void OnActivated(UIApplication uiApplication)
 
 When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
 
-```c#
+```text
 protected override void OnResume()
 {
   base.OnResume();
   ACPCore.LifecycleStart(null);
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -303,15 +301,15 @@ private void OnApplicationPause(bool pauseStatus)
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
 When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
 
-```c#
+```text
 public override void OnResignActivation(UIApplication uiApplication)
 {
   base.OnResignActivation(uiApplication);
@@ -323,14 +321,13 @@ public override void OnResignActivation(UIApplication uiApplication)
 
 When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
 
-```c#
+```text
 protected override void OnPause()
 {
   base.OnPause();
   ACPCore.LifecyclePause();
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

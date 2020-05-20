@@ -8,6 +8,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## May 19, 2020
+
+### iOS Media 2.0.0
+
+* Uses media collection endpoint for tracking both streaming and downloaded content.
+* Added support for player state tracking
+
+### Android Media 2.0.0
+
+* Uses media collection endpoint for tracking both streaming and downloaded content.
+* Added support for player state tracking
+
 ## April 24, 2020
 
 The following updates were made in this release:
@@ -27,7 +39,7 @@ The following updates were made in this release:
 * Fix bug where pinCode entry activity fails to show when another application’s activity is started at the same time.
 * Blob upload services uses production URL with multiple environment support.
 * ClientId is shared as a query parameter to socket URL rather than tagging each Griffon event.
-* Griffon socket connection now authenticates against organization Id. 
+* Griffon socket connection now authenticates against organization Id.
 
 ## April 21, 2020
 
@@ -145,7 +157,7 @@ The following updates were made in this release:
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Target Session Id will now be added as a context data parameter `a.target.sessionId` in the internal Analytics for Target hit sent to Adobe Analytics.
-* Fixed an issue, where on app close and relaunch, previously persisted tntId was not being sent in Target requests. 
+* Fixed an issue, where on app close and relaunch, previously persisted tntId was not being sent in Target requests.
 
 ## March 10, 2020
 

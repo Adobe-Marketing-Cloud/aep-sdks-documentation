@@ -455,8 +455,8 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-unity).
 {% endhint %}
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### AppendToUrl
 
 This API appends Adobe visitor information to the query component of the specified URL.
@@ -470,11 +470,11 @@ If the specified URL is nil or empty, it is returned as is. Otherwise, the follo
   * `TS` - A timestamp taken when this request was made
 * The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
-#### C#
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void AppendToUrl (NSUrl baseUrl, Action<NSUrl> callback);
 ```
 
@@ -483,7 +483,7 @@ public unsafe static void AppendToUrl (NSUrl baseUrl, Action<NSUrl> callback);
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void AppendVisitorInfoForURL (string baseURL, IAdobeCallback callback);
 ```
 
@@ -492,7 +492,7 @@ public unsafe static void AppendVisitorInfoForURL (string baseURL, IAdobeCallbac
 
 **iOS Example**
 
-```c#
+```text
 ACPIdentity.AppendToUrl(url, callback => {
   Console.WriteLine("Appended url: " + callback);
 });
@@ -500,7 +500,7 @@ ACPIdentity.AppendToUrl(url, callback => {
 
 **Android Example**
 
-```c#
+```text
 ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -520,7 +520,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 ```
 
 {% hint style="info" %}
-
 This API is designed to handle the following URL formats:
 
 ```text
@@ -547,7 +546,6 @@ scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragmen
 
 If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-xamarin).
 {% endhint %}
-
 {% endtab %}
 {% endtabs %}
 
@@ -636,22 +634,21 @@ public static string ExtensionVersion()
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **Syntax**
 
-```c#
+```text
 public static string ExtensionVersion ();
 ```
 
 **Example**
 
-```c#
+```text
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -852,19 +849,19 @@ public static void HandleAdobeGetExperienceCloudIdCallback(string cloudId)
 ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### getExperienceCloudId
 
 This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
-#### C#
+#### C\#
 
 #### iOS Syntax
 
-```c#
+```text
 public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 ```
 
@@ -872,7 +869,7 @@ public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 
 #### Android Syntax
 
-```c#
+```text
 public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 ```
 
@@ -880,7 +877,7 @@ public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 
 #### iOS Example
 
-```c#
+```text
 ACPIdentity.GetExperienceCloudId(callback => {
   Console.WriteLine("Experience cloud id: " + callback);
 });
@@ -888,7 +885,7 @@ ACPIdentity.GetExperienceCloudId(callback => {
 
 #### Android Example
 
-```c#
+```text
 ACPIdentity.GetExperienceCloudId(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -906,7 +903,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1098,17 +1094,17 @@ public static void HandleAdobeGetIdentifiersCallback(string visitorIds)
 ACPIdentity.GetIdentifiers(HandleAdobeGetIdentifiersCallback);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### getIdentifiers
 
 This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
-#### C#
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void GetIdentifiers (Action<ACPMobileVisitorId[]> callback);
 ```
 
@@ -1116,7 +1112,7 @@ public unsafe static void GetIdentifiers (Action<ACPMobileVisitorId[]> callback)
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void GetIdentifiers (IAdobeCallback callback);
 ```
 
@@ -1124,7 +1120,7 @@ public unsafe static void GetIdentifiers (IAdobeCallback callback);
 
 **iOS Example**
 
-```c#
+```text
 Action<ACPMobileVisitorId[]> callback = new Action<ACPMobileVisitorId[]>(handleCallback);
 ACPIdentity.GetIdentifiers(callback);
 
@@ -1145,7 +1141,7 @@ private void handleCallback(ACPMobileVisitorId[] ids)
 
 **Android Example**
 
-```c#
+```text
 ACPIdentity.GetIdentifiers(new GetIdentifiersCallback());
 
 class GetIdentifiersCallback : Java.Lang.Object, IAdobeCallback
@@ -1170,7 +1166,6 @@ class GetIdentifiersCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1466,11 +1461,11 @@ public static void HandleAdobeGetUrlVariables(string urlVariables)
 ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### [GetUrlVariables](identity-api-reference.md)
 
-#### C#
+#### C\#
 
 This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
 
@@ -1485,7 +1480,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void GetUrlVariables (Action<NSString> callback);
 ```
 
@@ -1493,7 +1488,7 @@ public unsafe static void GetUrlVariables (Action<NSString> callback);
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void GetUrlVariables (IAdobeCallback callback);
 ```
 
@@ -1501,7 +1496,7 @@ public unsafe static void GetUrlVariables (IAdobeCallback callback);
 
 **iOS Example**
 
-```c#
+```text
  ACPIdentity.GetUrlVariables(callback => {
    Console.WriteLine("Url variables: " + callback);
  });
@@ -1509,7 +1504,7 @@ public unsafe static void GetUrlVariables (IAdobeCallback callback);
 
 **Android Example**
 
-```c#
+```text
 ACPIdentity.GetUrlVariables(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -1527,9 +1522,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -1616,20 +1608,20 @@ void Start() {
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-## C#
+{% tab title="Xamarin" %}
+## C\#
 
 **iOS**
 
 Register the Identity extension in your app's `FinishedLaunching()` function:
 
-```c#
+```text
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
   LoadApplication(new App());
-	ACPIdentity.RegisterExtension();
+    ACPIdentity.RegisterExtension();
 
   // start core
   ACPCore.Start(startCallback);
@@ -1642,7 +1634,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 Register the Identity extension in your app's `OnCreate()` function:
 
-```c#
+```text
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -1650,12 +1642,11 @@ protected override void OnCreate(Bundle savedInstanceState)
   LoadApplication(new App());
 
   ACPIdentity.RegisterExtension();
-  
+
   // start core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -1876,15 +1867,15 @@ public static void SetAdvertisingIdentifier(string adId)
 ACPCore.SetAdvertisingIdentifier("ADVTID");
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### SetAdvertisingIdentifier
 
-#### C#
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public static void SetAdvertisingIdentifier (string adId);
 ```
 
@@ -1892,7 +1883,7 @@ public static void SetAdvertisingIdentifier (string adId);
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void SetAdvertisingIdentifier (string advertisingIdentifier);
 ```
 
@@ -1900,10 +1891,9 @@ public unsafe static void SetAdvertisingIdentifier (string advertisingIdentifier
 
 **Example**
 
-```c#
+```text
 ACPCore.SetAdvertisingIdentifier("ADVTID");
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -2173,58 +2163,53 @@ public static void SyncIdentifier(string identifierType, string identifier, ACPA
 ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationState.AUTHENTICATED);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public static void SyncIdentifier (string identifierType, string identifier, ACPMobileVisitorAuthenticationState authenticationState);
 ```
 
 * The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
-
 * The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * _authenticationState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-
   * `ACPMobileVisitorAuthenticationState.Authenticated`
   * `ACPMobileVisitorAuthenticationState.Unknown`
   * `ACPMobileVisitorAuthenticationState.LoggedOut`
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void SyncIdentifier (string identifierType, string identifier, VisitorID.AuthenticationState authenticationState);
 ```
 
 * The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
-
 * The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
 * _authenticationState_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-
   * `VisitorID.AuthenticationState.Authenticated`
   * `VisitorID.AuthenticationState.Unknown`
   * `VisitorID.AuthenticationState.LoggedOut`
 
 **iOS Example**
 
-```c#
+```text
 ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPMobileVisitorAuthenticationState.Authenticated);
 ```
 
 **Android Example**
 
-```c#
+```text
 ACPIdentity.SyncIdentifier("idType1", "idValue1", VisitorID.AuthenticationState.Authenticated);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -2383,13 +2368,13 @@ ids.Add("idsType3", "idValue3");
 ACPIdentity.SyncIdentifiers(ids);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public static void SyncIdentifiers (NSDictionary identifiers);
 ```
 
@@ -2399,7 +2384,7 @@ public static void SyncIdentifiers (NSDictionary identifiers);
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void SyncIdentifiers (IDictionary<string, string> identifiers);
 ```
 
@@ -2409,7 +2394,7 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
 **iOS Example**
 
-```c#
+```text
 var ids = new NSMutableDictionary<NSString, NSObject>
 {
   ["idsType1"] = new NSString("idValue1"),
@@ -2421,14 +2406,13 @@ ACPIdentity.SyncIdentifiers(ids);
 
 **Android Example**
 
-```c#
+```text
 Dictionary<string, string> ids = new Dictionary<string, string>();
 ids.Add("idsType1", "idValue1");
 ids.Add("idsType2", "idValue2");
 ids.Add("idsType3", "idValue3");
 ACPIdentity.SyncIdentifiers(ids);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -2620,13 +2604,13 @@ ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.LOGGED_OUT);
 ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.UNKNOWN);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS Syntax**
 
-```c#
+```text
 public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAuthenticationState authenticationState);
 ```
 
@@ -2635,14 +2619,13 @@ public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAu
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 * _authenticationState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-
   * `ACPMobileVisitorAuthenticationState.Authenticated`
   * `ACPMobileVisitorAuthenticationState.Unknown`
   * `ACPMobileVisitorAuthenticationState.LoggedOut`
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void SyncIdentifiers (IDictionary<string, string> identifiers, VisitorID.AuthenticationState authenticationState);
 ```
 
@@ -2650,14 +2633,14 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-- _authenticationState_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-  - `VisitorID.AuthenticationState.Authenticated`
-  - `VisitorID.AuthenticationState.Unknown`
-  - `VisitorID.AuthenticationState.LoggedOut`
+* _authenticationState_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
+  * `VisitorID.AuthenticationState.Authenticated`
+  * `VisitorID.AuthenticationState.Unknown`
+  * `VisitorID.AuthenticationState.LoggedOut`
 
 **iOS Example**
 
-```c#
+```text
 var ids = new NSMutableDictionary<NSString, NSObject>
 {
   ["idsType1"] = new NSString("idValue1"),
@@ -2669,14 +2652,13 @@ ACPIdentity.SyncIdentifiers(ids, ACPMobileVisitorAuthenticationState.LoggedOut);
 
 **Android Example**
 
-```c#
+```text
 Dictionary<string, string> ids = new Dictionary<string, string>();
 ids.Add("idsType1", "idValue1");
 ids.Add("idsType2", "idValue2");
 ids.Add("idsType3", "idValue3");
 ACPIdentity.SyncIdentifiers(ids, VisitorID.AuthenticationState.LoggedOut);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -2833,9 +2815,9 @@ ACPIdentity.ACPAuthenticationState.AUTHENTICATED = 1;
 ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
@@ -2843,7 +2825,7 @@ ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 
 This is used to indicate the authentication state for the current `ACPMobileVisitorId`.
 
-```c#
+```text
 ACPMobileVisitorAuthenticationState.Unknown = 0;
 ACPMobileVisitorAuthenticationState.Authenticated = 1;
 ACPMobileVisitorAuthenticationState.LoggedOut = 2;
@@ -2855,12 +2837,11 @@ ACPMobileVisitorAuthenticationState.LoggedOut = 2;
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
-```c#
+```text
 VisitorID.AuthenticationState.Unknown = 0;
 VisitorID.AuthenticationState.Authenticated = 1;
 VisitorID.AuthenticationState.LoggedOut = 2;
 ```
-
 {% endtab %}
 {% endtabs %}
 

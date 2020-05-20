@@ -105,13 +105,12 @@ cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
 ```
 {% endtab %}
 {% tab title="Unity" %}
-
-#### C#
+#### C\#
 
 After importing the [ACPGriffon.unitypackage](https://github.com/adobe/unity-acpgriffon/blob/master/bin/ACPGriffon-0.0.1-Unity.zip), the Griffon extension for Unity can be added with following code in the MainScript
 
 ```csharp
-using com.adobe.marketing.mobile; 
+using com.adobe.marketing.mobile;
 ```
 {% endtab %}
 {% tab title="Xamarin" %}
@@ -196,8 +195,8 @@ When using Flutter, registering Griffon with Mobile Core should be done in nativ
 When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 {% tab title="Unity" %}
+#### C\#
 
-#### C#
 ```csharp
 using com.adobe.marketing.mobile;
 using AOT;
@@ -350,10 +349,9 @@ ACPGriffon.startSession(sessionUrl, function(handleCallback) {
 ```
 {% endtab %}
 {% tab title="Unity" %}
-
 ### startSession
 
-#### C#
+#### C\#
 
 #### Syntax
 

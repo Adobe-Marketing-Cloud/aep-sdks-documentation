@@ -56,15 +56,12 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="Xamarin" %}
+#### C\#
 
-#### C#
-
-```c#
+```text
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Programmatic updates to configuration
@@ -143,13 +140,13 @@ dict.Add("global.privacy", "optedout");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
-```c#
+```text
  var config = new NSMutableDictionary<NSString, NSObject>
  {
    ["global.privacy"] = new NSString("optedout")
@@ -159,12 +156,11 @@ ACPCore.UpdateConfiguration(config);
 
 **Android**
 
-```c#
+```text
 var config = new Dictionary<string, Java.Lang.Object>();
 config.Add("global.privacy", "optedout");
 ACPCore.UpdateConfiguration(config);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -213,15 +209,12 @@ ACPCore.configureWithFile(inPath: filePath)
 {% endtab %}
 
 {% tab title="Xamarin" %}
+#### C\#
 
-#### C#
-
-```c#
+```text
 ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Environment-aware configuration properties

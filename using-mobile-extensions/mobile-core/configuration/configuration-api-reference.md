@@ -58,28 +58,27 @@ public static void ConfigureWithAppID(string appId)
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 #### Android Syntax
 
-```c#
+```text
 public unsafe static void ConfigureWithAppID (string appId);
 ```
 
 #### iOS Syntax
 
-```c#
+```text
 public static void ConfigureWithAppID (string appid);
 ```
 
 #### Example
 
-#### C#
+#### C\#
 
-```c#
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+```text
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -183,15 +182,15 @@ dict.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(dict);
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-## C#
+{% tab title="Xamarin" %}
+## C\#
 
 Update SDK configuration
 
 **iOS**
 
-```c#
+```text
  var config = new NSMutableDictionary<NSString, NSObject>
  {
    ["newConfigKey"] = new NSString("newConfigValue")
@@ -201,12 +200,11 @@ ACPCore.UpdateConfiguration(config);
 
 **Android**
 
-```c#
+```text
 var config = new Dictionary<string, Java.Lang.Object>();
 config.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(config);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -258,28 +256,25 @@ ACPCore.configureWithFile(inPath: filePath)
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### Android Syntax
 
-```c#
+```text
 public unsafe static void ConfigureWithFileInPath (string filepath);
 ```
 
 #### iOS Syntax
 
-```c#
+```text
 public static void ConfigureWithFileInPath (string filepath);
 ```
 
 #### Example
 
-#### C#
+#### C\#
 
-```c#
+```text
 ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
