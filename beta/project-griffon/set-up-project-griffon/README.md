@@ -104,6 +104,7 @@ After creating your Cordova app and adding the Android and iOS platforms, the Pr
 cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
 ```
 {% endtab %}
+
 {% tab title="Unity" %}
 #### C\#
 
@@ -113,19 +114,19 @@ After importing the [ACPGriffon.unitypackage](https://github.com/adobe/unity-acp
 using com.adobe.marketing.mobile;
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 1. After adding the iOS or Android ACPGriffon NuGet package, the Griffon extension can be added by this import statement
 
-   ```c#
+   ```text
    using Com.Adobe.Marketing.Mobile;
    ```
 
 2. Get the extension version.
 
-   ```c#
+   ```text
    ACPGriffon.ExtensionVersion();
    ```
 {% endtab %}
@@ -194,6 +195,7 @@ When using Flutter, registering Griffon with Mobile Core should be done in nativ
 {% tab title="Cordova" %}
 When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
 {% tab title="Unity" %}
 #### C\#
 
@@ -211,15 +213,15 @@ public class MainScript : MonoBehaviour
 }
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
-#### C#
+{% tab title="Xamarin" %}
+#### C\#
 
 **iOS**
 
 Register the Griffon extension in your app's `FinishedLaunching()` function:
 
-```c#
+```text
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
@@ -241,14 +243,14 @@ private void startCallback()
 
 Register the Griffon extension in your app's `OnCreate()` function:
 
-```c#
+```text
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
   global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
   LoadApplication(new App());
   ACPGriffon.RegisterExtension();
-  
+
   // start core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
@@ -348,6 +350,7 @@ ACPGriffon.startSession(sessionUrl, function(handleCallback) {
 });
 ```
 {% endtab %}
+
 {% tab title="Unity" %}
 ### startSession
 
@@ -365,32 +368,32 @@ public static void StartSession(string url)
 ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235-46a6-a327-7346f6de3a0");
 ```
 {% endtab %}
-{% tab title="Xamarin" %}
 
+{% tab title="Xamarin" %}
 ### startSession
 
 #### iOS Syntax
 
-```c#
+```text
 public static void StartSession (NSUrl url);
 ```
 
 #### Android Syntax
 
-```c#
+```text
 public unsafe static void StartSession (string url);
 ```
 
 #### iOS Example
 
-```c#
+```text
 NSUrl url = new NSUrl("session url");
 ACPGriffon.StartSession(url);
 ```
 
 #### Android Example
 
-```c#
+```text
 ACPGriffon.StartSession("session url");
 ```
 {% endtab %}

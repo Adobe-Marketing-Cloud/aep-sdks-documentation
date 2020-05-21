@@ -232,20 +232,20 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```csharp
    ACPAnalytics.extensionVersion();
    ```
-   {% endtab %}
 
-   {% tab title="Xamarin" %}
-#### C#
 
-1. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
 
-   ```c#
+   **C\#**
+
+3. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
+
+   ```text
    using Com.Adobe.Marketing.Mobile;
    ```
 
-2. Get the extension version.
+4. Get the extension version.
 
-   ```c#
+   ```text
    ACPAnalytics.ExtensionVersion();
    ```
 {% endtab %}
@@ -359,19 +359,18 @@ public class MainScript : MonoBehaviour
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
-#### C#
+#### C\#
 
 **iOS**
 
 Register the Analytics extension in your app's `FinishedLaunching()` function:
 
-```c#
+```text
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
   LoadApplication(new App());
-	ACPAnalytics.RegisterExtension();
+    ACPAnalytics.RegisterExtension();
   // start core
   ACPCore.Start(startCallback);
   return base.FinishedLaunching(app, options);
@@ -388,14 +387,14 @@ private void startCallback()
 
 Register the Analytics extension in your app's `OnCreate()` function:
 
-```c#
+```text
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
   global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
   LoadApplication(new App());
   ACPAnalytics.RegisterExtension();
-  
+
   // start core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
@@ -409,7 +408,6 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -602,12 +600,11 @@ ACPCore.TrackState("State Name", contextData);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
-#### C#
+#### C\#
 
 #### iOS Syntax
 
-```c#
+```text
 var contextData = new NSMutableDictionary<NSString, NSString>
 {
   ["&&events"] = new NSString("eventN:serial number")
@@ -616,7 +613,7 @@ var contextData = new NSMutableDictionary<NSString, NSString>
 
 #### iOS Example
 
-```c#
+```text
 // create a context data dictionary and add events
 var contextData = new NSMutableDictionary<NSString, NSString>
 {
@@ -633,14 +630,14 @@ ACPCore.TrackState("State Name", contextData);
 
 #### Android Syntax
 
-```c#
+```text
 var contextData = new Dictionary<string, string>();
 contextData.Add("&&events", "event1:12341234");
 ```
 
 #### Android Example
 
-```c#
+```text
 // create a context data dictionary and add events
 var contextData = new Dictionary<string, string>();
 contextData.Add("&&events", "event1:12341234");
@@ -652,9 +649,7 @@ ACPCore.TrackAction("Action Name", contextData);
 // trackState example:
 ACPCore.TrackState("State Name", contextData);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Videos
@@ -794,14 +789,13 @@ ACPCore.UpdateConfiguration(dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### Update Analytics Configuration
 
 **iOS**
 
-```c#
+```text
 var config = new NSMutableDictionary<NSString, NSObject>
 {
   ["analytics.server"] = new NSString("sample.analytics.tracking.server"),
@@ -814,7 +808,7 @@ ACPCore.UpdateConfiguration(config);
 
 **Android**
 
-```c#
+```text
 var config = new Dictionary<string, Java.Lang.Object>();
 config.Add("analytics.server", "sample.analytics.tracking.server");
 config.Add("analytics.rsids", "rsid1,rsid2");
@@ -822,9 +816,7 @@ config.Add("analytics.batchLimit", 10);
 config.Add("analytics.offlineEnabled", true);
 ACPCore.UpdateConfiguration(config);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).

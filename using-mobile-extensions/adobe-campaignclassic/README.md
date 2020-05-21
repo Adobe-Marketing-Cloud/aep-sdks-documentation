@@ -53,9 +53,11 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 #### Java
 
 1. Add the Campaign Classic extension to your project using the app's Gradle file.
+
    ```java
    implementation "com.adobe.marketing.mobile:campaignclassic:1.0.0"
    ```
+
 2. Import the Campaign Classic and Lifecycle extensions in your application's main activity.
 
    ```java
@@ -79,22 +81,21 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 
 2. In Xcode project, import the Mobile Core and Campaign Classic extensions:
 
-  
-   **Objective C**
+**Objective C**
 
-   ```objectivec
+```objectivec
    #import "ACPCore.h"
    #import "ACPCampaignClassic.h"
    #import "ACPLifecycle.h"
-   ```
+```
 
-   **Swift**
+**Swift**
 
-   ```swift
+```swift
    import ACPCore
    import ACPCampaignClassic
    import ACPLifecycle
-   ```
+```
 {% endtab %}
 {% endtabs %}
 
@@ -155,7 +156,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your  Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update SDK configuration programmatically, use the following information to change your Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description |
 | :--- | :--- | :--- |

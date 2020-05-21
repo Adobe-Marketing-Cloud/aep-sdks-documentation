@@ -133,12 +133,11 @@ ACPAnalytics.ClearQueue();
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### ClearQueue
 
-```c#
+```text
 public static void ClearQueue ();
 ```
 
@@ -146,12 +145,10 @@ public static void ClearQueue ();
 
 **Example**
 
-```c#
+```text
 ACPAnalytics.ClearQueue();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getQueueSize <a id="getqueuesize"></a>
@@ -307,14 +304,13 @@ ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### GetQueueSize
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void GetQueueSize (Action<nuint> callback);
 ```
 
@@ -322,7 +318,7 @@ public unsafe static void GetQueueSize (Action<nuint> callback);
 
 **iOS Example**
 
-```c#
+```text
 ACPAnalytics.GetQueueSize(callback => {
   Console.WriteLine("Queue size: " + callback);
 });
@@ -330,7 +326,7 @@ ACPAnalytics.GetQueueSize(callback => {
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void GetQueueSize (IAdobeCallback callback);
 ```
 
@@ -338,7 +334,7 @@ public unsafe static void GetQueueSize (IAdobeCallback callback);
 
 **Android Example**
 
-```c#
+```text
 ACPAnalytics.GetQueueSize(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -356,9 +352,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
@@ -534,7 +528,6 @@ ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### GetTrackingIdentifier
@@ -543,7 +536,7 @@ Retrieves the Analytics tracking identifier.
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
 ```
 
@@ -551,7 +544,7 @@ public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
 
 **iOS Example**
 
-```c#
+```text
 ACPAnalytics.GetTrackingIdentifier(callback => {
   Console.WriteLine("Tracking identifier: " + callback);
 });
@@ -559,7 +552,7 @@ ACPAnalytics.GetTrackingIdentifier(callback => {
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
 ```
 
@@ -567,7 +560,7 @@ public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
 
 **Android Example**
 
-```c#
+```text
 ACPAnalytics.GetTrackingIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -585,9 +578,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
@@ -747,14 +738,13 @@ ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### GetVisitorIdentifier
 
 **iOS Syntax**
 
-```c#
+```text
 public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
 ```
 
@@ -762,7 +752,7 @@ public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
 
 **iOS Example**
 
-```c#
+```text
 ACPAnalytics.GetVisitorIdentifier(callback => {
   Console.WriteLine("Visitor identifier: " + callback);
 });
@@ -770,7 +760,7 @@ ACPAnalytics.GetVisitorIdentifier(callback => {
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
 ```
 
@@ -778,7 +768,7 @@ public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
 
 **Android Example**
 
-```c#
+```text
 ACPAnalytics.GetVisitorIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -796,9 +786,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## sendQueuedHits <a id="sendqueuedhits"></a>
@@ -942,7 +930,6 @@ ACPAnalytics.SendQueuedHits();
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### SendQueuedHits
@@ -951,18 +938,16 @@ Regardless of how many hits are currently queued, this method forces the library
 
 **Syntax**
 
-```c#
+```text
 public static void SendQueuedHits ();
 ```
 
 **Example**
 
-```c#
+```text
 ACPAnalytics.SendQueuedHits();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## setVisitorIdentifier <a id="setidentifier"></a>
@@ -1107,14 +1092,13 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### C\#
 
 ### SetVisitorIdentifier
 
 **iOS Syntax**
 
-```c#
+```text
 public static void SetVisitorIdentifier (string visitorIdentifier);
 ```
 
@@ -1122,7 +1106,7 @@ public static void SetVisitorIdentifier (string visitorIdentifier);
 
 **Android Syntax**
 
-```c#
+```text
 public unsafe static void SetVisitorIdentifier (string visitorID);
 ```
 
@@ -1130,11 +1114,9 @@ public unsafe static void SetVisitorIdentifier (string visitorID);
 
 **Example**
 
-```c#
+```text
 ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
