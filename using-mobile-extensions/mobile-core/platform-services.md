@@ -18,6 +18,12 @@ The `HTTPConnectionPerformer` class is an abstract base class that must be subcl
 
 #### Example
 
+{% hint style="warning" %}
+
+This is just an implementation example. For more information about handling network requests correctly in your mobile application, see [HttpURLConnection](https://developer.android.com/reference/java/net/HttpURLConnection).
+
+{% endhint %}
+
 ```java
 package com.adobe.example;
 
@@ -165,7 +171,11 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
 
 #### Example
 
+{% hint style="warning" %}
+
 This is just an implementation example. For more information about handling network requests correctly in your mobile application, see [NSURLSessionConfiguration](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration) and [NSMutableURLRequest](https://developer.apple.com/documentation/foundation/nsmutableurlrequest).
+
+{% endhint %}
 
 **Objective-C**
 
@@ -181,12 +191,13 @@ This is just an implementation example. For more information about handling netw
     void (^requestUrlCompletion)(ACPHttpConnection*);
 }
 
-    // Modifications here would allow for conditional overriding based on the url/method.
+  // Modifications here would allow for conditional overriding based on the url/method.
   // In this example it always returns true to override all network requests.
 - (BOOL) shouldOverride: (NSURL*) url method: (NSString*) method {
     return true;
 }
 
+	// Network request override with a completion block. The provided parameters should be configured on the network request.
 - (void) requestUrl: (NSURL*) url httpCommand: (NSString*) command connectPayload: (NSString*) payload requestPropertyDict: (NSDictionary<NSString*, NSString*>*) requestProperty connectTimeout: (NSTimeInterval) connectTimeout readTimeout: (NSTimeInterval) readTimeout completion: (void (^) (ACPHttpConnection*)) completion {
 
     requestUrlCompletion = completion;
@@ -237,24 +248,53 @@ This is just an implementation example. For more information about handling netw
 **Swift**
 
 ```swift
-class SamplePerformerOverrider: ACPHttpConnectionPerformer {
+import Foundation
+import ACPCore
+
+class SamplePerformerOverrider: NSObject, ACPHttpConnectionPerformer {
+    
+    // Modifications here would allow for conditional overriding based on the url/method.
+    // In this example it always returns true to override all network requests.
     func shouldOverride(_ url: URL, method: String) -> Bool {
-        return true
+      return true
     }
 
+    // Network request override with a completion block. The provided parameters should be configured on the network request.
     func request(_ url: URL, httpCommand command: String, connectPayload payload: String, requestPropertyDict requestProperty: [String : String], connectTimeout: TimeInterval, readTimeout: TimeInterval, completion: @escaping (ACPHttpConnection?) -> Void) {
-        //...
-        let session = URLSession()
-        _ = session.dataTask(with: url) { (data, response, error) in
-            let httpResponse = response as! HTTPURLResponse
-            let connectionOverride = ACPHttpConnection(response: httpResponse, data: data)
-            if let error = error {
-                // Handle error
-                completion(nil)
-            } else {
-                completion(connectionOverride)
-            }
+
+      // Create the URLSessionConfiguration with the provided timeouts
+      let config = URLSessionConfiguration.ephemeral
+      config.urlCache = nil
+      config.timeoutIntervalForRequest = readTimeout
+      config.timeoutIntervalForResource = connectTimeout
+
+      let session = URLSession(configuration: config)
+
+      // Create an NSURLRequest with the provided request parameters
+      let request = NSMutableURLRequest.init(url: url)
+      request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData
+      request.httpMethod = command
+
+      if !payload.isEmpty && "POST" == command.uppercased() {
+        request.httpBody = payload.data(using: .utf8)
+      }
+
+      for property in requestProperty {
+        request.setValue(property.value, forHTTPHeaderField: property.key)
+      }
+
+      // Start the request
+      let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+        if error == nil {
+          let httpResponse = response as? HTTPURLResponse
+          // create ACPHttpConnection object with the data received and call the completion handler
+          let connectionOverride = ACPHttpConnection(response: httpResponse, data: data)
+                                                                 completion(connectionOverride)
+        } else {
+          completion(nil)
         }
+      })
+      task.resume()
     }
 }
 ```
@@ -286,6 +326,8 @@ didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *
 **Swift**
 
 ```swift
+import ACPCore
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
