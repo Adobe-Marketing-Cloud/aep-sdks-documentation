@@ -112,11 +112,9 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open the appl
 {% tab title="Xamarin" %}
 ### C\#
 
-{% hint style="warning" %}
-Xamarin SDK will be released shortly. This message will be removed once the SDK is available
-{% endhint %}
-
+{% hint style="info" %}
 For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
+{% endhint %}
 
 #### Installation
 
