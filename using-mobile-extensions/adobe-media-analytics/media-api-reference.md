@@ -621,7 +621,7 @@ Creates an instance of the Player State object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | State name\(Use [LinkToOurConstants](media-api-reference.md#playerstateconstants)  constants to track standard player states\) | Yes |
+| `name` | State name(Use [Player State constants](media-api-reference.md#player-state-constants) to track standard player states) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -2284,4 +2284,3 @@ tracker.trackSessionStart(mediaObject, null);
 ```
 {% endtab %}
 {% endtabs %}
-

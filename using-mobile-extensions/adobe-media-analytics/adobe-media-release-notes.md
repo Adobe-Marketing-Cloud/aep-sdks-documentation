@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 22, 2020
+
+### @adobe/react-native-acpmedia 2.0.0
+* Updated to iOS Media v2.0.0.
+* Updated to Android Media v2.0.0.
+
 ## May 19, 2020
 
 ### iOS Media 2.0.0
