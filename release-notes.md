@@ -8,6 +8,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## May 22, 2020
+
+### @adobe/react-native-acpmedia 2.0.0
+* Updated to iOS Media v2.0.0.
+* Updated to Android Media v2.0.0.
+
 ## May 19, 2020
 
 ### iOS Media 2.0.0
@@ -1165,4 +1171,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
