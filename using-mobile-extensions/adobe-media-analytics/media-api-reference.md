@@ -629,7 +629,7 @@ Creates an instance of the Player State object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | State name(Use [Player State Constants](media-api-reference.md#player-state-constants)  constants to track standard player states) | Yes |
+| `name` | State name(Use [Player State Constants](media-api-reference.md#player-state-constants) to track standard player states) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
