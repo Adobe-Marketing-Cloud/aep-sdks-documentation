@@ -133,8 +133,8 @@ public static void createTracker(Map<String, Object> config, final AdobeCallback
 
 ```java
 HashMap<String, Object> config = new HashMap<String, Object>();
-config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
 config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from launch
+config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
 
 
 MediaTracker mediaTracker = Media.createTracker(config);  // Use the instance for tracking media.
@@ -175,8 +175,8 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
-config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Creates downloaded content tracker
-config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Override channel configured from launch
+config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from launch
+config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Creates downloaded content tracker
 
 ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Use the instance for tracking media.
 
@@ -191,8 +191,8 @@ ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Us
 
 ```swift
 var config: [String: Any] = [:]
-config[ACPMediaKeyConfigChannel] = "custom-channel"  // Creates downloaded content tracker
-config[ACPMediaKeyConfigDownloadedContent] = true    // Override channel configured from launch
+config[ACPMediaKeyConfigChannel] = "custom-channel"  // Override channel configured from launch
+config[ACPMediaKeyConfigDownloadedContent] = true    // Creates downloaded content tracker
 
 let mediaTracker = ACPMedia.createTrackerWithConfig(config); // Use the instance for tracking media.
 
@@ -210,8 +210,8 @@ ACPMedia.createTrackerWithConfig(config, {mediaTracker in
 
 ```jsx
 var config = new Object();
-config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";
-config[ACPMediaConstants.ACPMediaKeyConfigDownloadedContent] = true;
+config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";  // Override channel configured from launch
+config[ACPMediaConstants.ACPMediaKeyConfigDownloadedContent] = true;  // Creates downloaded content tracker
 ACPMedia.createTrackerWithConfig(config).then(tracker =>
   this.setState({currentTracker: tracker})
 );
