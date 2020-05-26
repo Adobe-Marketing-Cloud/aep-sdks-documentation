@@ -49,10 +49,8 @@ class SampleHTTPConnectionPerformer extends HTTPConnectionPerformer {
   }
 
   // Overriding the connect method is required.  This method must perform a synchronous
-  // (blocking) network request.  Upon success, return an object conforming to the
-  // Connection interface.  Upon error, return one of these values:
-  //  - URL Parsing / Malformed issues - CONNECTION_ERROR_URL
-  //  - IO / Other errors - CONNECTION_ERROR_IO
+  // (blocking) network request and return an object conforming to the
+  // Connection interface.
   @Override
   public Connection connect(String url, String method, byte[] payload, Map<String, String> headers, int connectionTimeoutSeconds, int readTimeoutSeconds) {
     try {
@@ -289,7 +287,7 @@ class SamplePerformerOverrider: NSObject, ACPHttpConnectionPerformer {
           let httpResponse = response as? HTTPURLResponse
           // create ACPHttpConnection object with the data received and call the completion handler
           let connectionOverride = ACPHttpConnection(response: httpResponse, data: data)
-                                                                 completion(connectionOverride)
+          completion(connectionOverride)
         } else {
           completion(nil)
         }
