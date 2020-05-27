@@ -83,7 +83,7 @@ using com.adobe.marketing.mobile;
 
 After adding the iOS ACPCore NuGet package or the Android ACPLifecycle NuGet package, the Lifecycle extension can be added by this import statement
 
-```text
+```csharp
 using Com.Adobe.Marketing.Mobile;
 ```
 {% endtab %}
@@ -318,7 +318,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
 
-   ```text
+   ```csharp
    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
    {
      ACPLifecycle.RegisterExtension();
@@ -330,7 +330,7 @@ private void OnApplicationPause(bool pauseStatus)
 
    If your iOS application supports background capabilities, your `FinishedLaunching:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `LifecycleStart:` should only be called when the application state is not equal to `UIApplicationState.Background`.
 
-   ```text
+   ```csharp
    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
    {
      ACPLifecycle.RegisterExtension();
@@ -347,7 +347,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 3. When launched, if your app is resuming from a backgrounded state, iOS might call your `WillEnterForeground:` delegate method. You also need to call `LifecycleStart:`, but this time you do not need all of the supporting code that you used in `FinishedLaunching:`:
 
-   ```text
+   ```csharp
    public override void WillEnterForeground(UIApplication uiApplication)
    {
      base.WillEnterForeground(uiApplication);
@@ -357,7 +357,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 4. When the app enters the background, pause Lifecycle data collection from your app's `DidEnterBackground:` delegate method:
 
-   ```text
+   ```csharp
    public override void DidEnterBackground(UIApplication uiApplication)
    {
      base.DidEnterBackground(uiApplication);
@@ -369,7 +369,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 1. Register the Lifecycle extension:
 
-   ```text
+   ```csharp
    protected override void OnCreate(Bundle savedInstanceState)
    {
      base.OnCreate(savedInstanceState);
@@ -381,7 +381,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 2. In the `onResume` function, start the lifecycle data collection:
 
-   ```text
+   ```csharp
    protected override void OnResume()
    {
      base.OnResume();
@@ -393,7 +393,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 3. In the `onPause` function, pause the lifecycle data collection:
 
-   ```text
+   ```csharp
    protected override void OnPause()
    {
      base.OnPause();
@@ -551,7 +551,10 @@ The following is a complete list of all of the metrics provided on your user's a
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
   </tbody>
-</table>If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: {% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}
+</table>
+
+If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values: 
+{% hint style="warning" %} The time that your app spends in the background is not included in the session length. {% endhint %}
 
 <table>
   <thead>

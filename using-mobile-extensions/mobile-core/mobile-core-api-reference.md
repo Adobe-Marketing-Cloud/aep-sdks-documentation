@@ -46,7 +46,7 @@ public class CoreApp extends Application {
 
 **Example**
 
-```text
+```csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 {
   protected override void OnCreate(Bundle savedInstanceState)
@@ -101,7 +101,7 @@ if (app != null) {
 
 **Example**
 
-```text
+```csharp
 var app = ACPCore.Application;
 if (app != null) {
     ...
@@ -281,7 +281,7 @@ ACPCore.TrackAction("action", contextData);
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void TrackAction (string action, NSMutableDictionary<NSString, NSString> data);
 ```
 
@@ -290,7 +290,7 @@ public static void TrackAction (string action, NSMutableDictionary<NSString, NSS
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
 ```
 
@@ -301,7 +301,7 @@ public unsafe static void TrackAction (string action, IDictionary<string, string
 
 **iOS**
 
-```text
+```csharp
 var data = new NSMutableDictionary<NSString, NSString>
 {
   ["key"] = new NSString("value")
@@ -311,8 +311,8 @@ ACPCore.TrackAction("action", data);
 
 **Android**
 
-```text
-Dictionary<string, string> data = new Dictionary<string, string>();
+```csharp
+var data = new Dictionary<string, string>();
 data.Add("key", "value");
 ACPCore.TrackAction("action", data);
 ```
@@ -488,7 +488,7 @@ ACPCore.TrackState("state", dict);
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void TrackState (string state, NSMutableDictionary<NSString, NSString> data);
 ```
 
@@ -497,7 +497,7 @@ public static void TrackState (string state, NSMutableDictionary<NSString, NSStr
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void TrackState (string state, IDictionary<string, string> contextData);
 ```
 
@@ -508,7 +508,7 @@ public unsafe static void TrackState (string state, IDictionary<string, string> 
 
 **iOS**
 
-```text
+```csharp
 var data = new NSMutableDictionary<NSString, NSString>
 {
   ["key"] = new NSString("value")
@@ -518,8 +518,8 @@ ACPCore.TrackState("state", data);
 
 **Android**
 
-```text
-Dictionary<string, string> data = new Dictionary<string, string>();
+```csharp
+var data = new Dictionary<string, string>();
 data.Add("key", "value");
 ACPCore.TrackState("state", data);
 ```
@@ -708,13 +708,13 @@ public static void setLargeIconResourceID(int resourceID)
 
 **Syntax**
 
-```text
+```csharp
 public unsafe static void SetSmallIconResourceID (int resourceID);
 ```
 
 **Example**
 
-```text
+```csharp
 ACPCore.SetSmallIconResourceID(Resource.Mipmap.icon_round);
 ```
 
@@ -722,13 +722,13 @@ ACPCore.SetSmallIconResourceID(Resource.Mipmap.icon_round);
 
 **Syntax**
 
-```text
+```csharp
 public unsafe static void SetLargeIconResourceID (int resourceID);
 ```
 
 **Example**
 
-```text
+```csharp
  ACPCore.SetLargeIconResourceID(Resource.Mipmap.icon_round);
 ```
 {% endtab %}
@@ -914,25 +914,25 @@ The ACPCore Android extension uses the following logging modes:
 
 **iOS Syntax**
 
-```text
+```csharp
 public static ACPMobileLogLevel LogLevel { get, set }
 ```
 
 **iOS Example**
 
-```text
+```csharp
 ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
 ```
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static LoggingMode LogLevel { get, set }
 ```
 
 **Android Example**
 
-```text
+```csharp
 ACPCore.LogLevel = LoggingMode.Verbose;
 ```
 {% endtab %}
@@ -1016,7 +1016,7 @@ ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
 
 #### getLogLevel
 
-```text
+```csharp
 var logLevel = ACPCore.LogLevel;
 ```
 {% endtab %}
@@ -1128,7 +1128,7 @@ const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
 
 The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.Log()`, the api call and logging output on Xamarin iOS look like
 
-```text
+```csharp
 ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
 ```
 
@@ -1138,7 +1138,7 @@ ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
 
 On Xamarin Android, the api call and logging output are
 
-```text
+```csharp
 ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
 ```
 
@@ -1226,13 +1226,13 @@ ACPCore.setAppGroup("app-group-id")
 
 **Syntax**
 
-```text
+```csharp
 public static void SetAppGroup (string appGroup);
 ```
 
 **Example**
 
-```text
+```csharp
 ACPCore.SetAppGroup("app_group");
 ```
 {% endtab %}
@@ -1361,7 +1361,7 @@ ACPCore.getPrivacyStatus { (privacyStatus, error) in
 
 This class provides the interface to receive results when the async APIs perform the requested action.
 
-```text
+```csharp
 public interface IAdobeCallback : IJavaObject, IDisposable, IJavaPeerable
 {
     void Call (Java.Lang.Object p0);
@@ -1372,7 +1372,7 @@ public interface IAdobeCallback : IJavaObject, IDisposable, IJavaPeerable
 
 This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
 
-```text
+```csharp
 public interface IAdobeCallbackWithError : IAdobeCallback, IJavaObject, IDisposable, IJavaPeerable
 {
     void Fail (AdobeError p0);
@@ -1390,7 +1390,7 @@ Errors which may be passed to an AdobeCallbackWithError:
 
 **Example**
 
-```text
+```csharp
 ACPCore.GetPrivacyStatus(new AdobeCallbackWithError());
 
 class AdobeCallbackWithError : Java.Lang.Object, IAdobeCallbackWithError
@@ -1442,7 +1442,7 @@ Errors which may be passed to a completion handler callback from any API which u
 
 **Example**
 
-```text
+```csharp
 ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
   if (error != null)
   {

@@ -109,7 +109,7 @@ using com.adobe.marketing.mobile;
 
 After adding the iOS ACPCore NuGet package or the Android ACPSignal NuGet package, the Signal extension can be added by this import statement
 
-```text
+```csharp
 using Com.Adobe.Marketing.Mobile;
 ```
 {% endtab %}
@@ -216,7 +216,7 @@ void Start()
 
 Register the Signal extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
 
-```text
+```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   ACPSignal.RegisterExtension();
@@ -237,7 +237,7 @@ private void startCallback()
 
 Register the Signal extension with the SDK Core by adding the following to your app's `OnCreate:` method:
 
-```text
+```csharp
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);

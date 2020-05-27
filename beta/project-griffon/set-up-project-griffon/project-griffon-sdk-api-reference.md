@@ -122,7 +122,7 @@ ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235
 
 #### iOS Syntax
 
-```text
+```csharp
 public static void StartSession (NSUrl url);
 ```
 
@@ -130,7 +130,7 @@ public static void StartSession (NSUrl url);
 
 #### Android Syntax
 
-```text
+```csharp
 public unsafe static void StartSession (string url);
 ```
 
@@ -138,14 +138,14 @@ public unsafe static void StartSession (string url);
 
 #### iOS Example
 
-```text
+```csharp
 NSUrl url = new NSUrl("session url");
 ACPGriffon.StartSession(url);
 ```
 
 #### Android Example
 
-```text
+```csharp
 ACPGriffon.StartSession("session url");
 ```
 {% endtab %}

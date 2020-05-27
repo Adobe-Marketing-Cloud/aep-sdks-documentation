@@ -137,7 +137,7 @@ ACPAnalytics.ClearQueue();
 
 ### ClearQueue
 
-```text
+```csharp
 public static void ClearQueue ();
 ```
 
@@ -145,7 +145,7 @@ public static void ClearQueue ();
 
 **Example**
 
-```text
+```csharp
 ACPAnalytics.ClearQueue();
 ```
 {% endtab %}
@@ -310,7 +310,7 @@ ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void GetQueueSize (Action<nuint> callback);
 ```
 
@@ -318,7 +318,7 @@ public unsafe static void GetQueueSize (Action<nuint> callback);
 
 **iOS Example**
 
-```text
+```csharp
 ACPAnalytics.GetQueueSize(callback => {
   Console.WriteLine("Queue size: " + callback);
 });
@@ -326,7 +326,7 @@ ACPAnalytics.GetQueueSize(callback => {
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void GetQueueSize (IAdobeCallback callback);
 ```
 
@@ -334,7 +334,7 @@ public unsafe static void GetQueueSize (IAdobeCallback callback);
 
 **Android Example**
 
-```text
+```csharp
 ACPAnalytics.GetQueueSize(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -536,7 +536,7 @@ Retrieves the Analytics tracking identifier.
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
 ```
 
@@ -544,7 +544,7 @@ public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
 
 **iOS Example**
 
-```text
+```csharp
 ACPAnalytics.GetTrackingIdentifier(callback => {
   Console.WriteLine("Tracking identifier: " + callback);
 });
@@ -552,7 +552,7 @@ ACPAnalytics.GetTrackingIdentifier(callback => {
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
 ```
 
@@ -560,7 +560,7 @@ public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
 
 **Android Example**
 
-```text
+```csharp
 ACPAnalytics.GetTrackingIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -744,7 +744,7 @@ ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
 ```
 
@@ -752,7 +752,7 @@ public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
 
 **iOS Example**
 
-```text
+```csharp
 ACPAnalytics.GetVisitorIdentifier(callback => {
   Console.WriteLine("Visitor identifier: " + callback);
 });
@@ -760,7 +760,7 @@ ACPAnalytics.GetVisitorIdentifier(callback => {
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
 ```
 
@@ -768,7 +768,7 @@ public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
 
 **Android Example**
 
-```text
+```csharp
 ACPAnalytics.GetVisitorIdentifier(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -938,13 +938,13 @@ Regardless of how many hits are currently queued, this method forces the library
 
 **Syntax**
 
-```text
+```csharp
 public static void SendQueuedHits ();
 ```
 
 **Example**
 
-```text
+```csharp
 ACPAnalytics.SendQueuedHits();
 ```
 {% endtab %}

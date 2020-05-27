@@ -95,7 +95,7 @@ using com.adobe.marketing.mobile;
 
 After adding the iOS ACPCore NuGet package or the Android ACPIdentity NuGet package, the Identity extension can be added by this import statement
 
-```text
+```csharp
 using Com.Adobe.Marketing.Mobile;
 ```
 {% endtab %}
@@ -192,7 +192,7 @@ void Start() {
 
 Register the Identity extension in your app's `FinishedLaunching()` function:
 
-```text
+```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
@@ -216,7 +216,7 @@ private void startCallback()
 
 Register the Identity extension in your app's `OnCreate()` function:
 
-```text
+```csharp
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -317,7 +317,7 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 {% tab title="Xamarin" %}
 #### C\#
 
-```text
+```csharp
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 {% endtab %}
@@ -512,7 +512,7 @@ To append visitor information to the URL that is being used to open the web view
 
 **iOS**
 
-```text
+```csharp
 ACPIdentity.AppendToUrl(url, callback => {
   Console.WriteLine("Appended url: " + callback);
 });
@@ -522,7 +522,7 @@ To append visitor information to the URL that is being used to open the web view
 
 **Android**
 
-```text
+```csharp
 ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -545,7 +545,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 
 **iOS**
 
-```text
+```csharp
 ACPIdentity.GetUrlVariables(callback => {
   Console.WriteLine("Url variables: " + callback);
 });
@@ -553,7 +553,7 @@ ACPIdentity.GetUrlVariables(callback => {
 
 **Android**
 
-```text
+```csharp
 ACPIdentity.GetUrlVariables(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback

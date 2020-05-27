@@ -58,7 +58,7 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 {% tab title="Xamarin" %}
 #### C\#
 
-```text
+```csharp
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
@@ -146,7 +146,7 @@ ACPCore.UpdateConfiguration(dict);
 
 **iOS**
 
-```text
+```csharp
  var config = new NSMutableDictionary<NSString, NSObject>
  {
    ["global.privacy"] = new NSString("optedout")
@@ -156,7 +156,7 @@ ACPCore.UpdateConfiguration(config);
 
 **Android**
 
-```text
+```csharp
 var config = new Dictionary<string, Java.Lang.Object>();
 config.Add("global.privacy", "optedout");
 ACPCore.UpdateConfiguration(config);
@@ -211,7 +211,7 @@ ACPCore.configureWithFile(inPath: filePath)
 {% tab title="Xamarin" %}
 #### C\#
 
-```text
+```csharp
 ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}

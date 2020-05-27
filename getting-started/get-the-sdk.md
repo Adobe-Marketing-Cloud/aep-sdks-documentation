@@ -404,7 +404,7 @@ For Xamarin Forms apps, the SDK intialization differs depending on the platform 
 
 **iOS**
 
-```text
+```csharp
 using Com.Adobe.Marketing.Mobile;
 
 [Register("AppDelegate")]
@@ -440,7 +440,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 
 **Android**
 
-```text
+```csharp
 using Com.Adobe.Marketing.Mobile;
 
 [Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -463,7 +463,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
     ACPSignal.RegisterExtension();
 
     // start core
-    ACPCore.Start(new CoreStartCompletionCallback());
+    ACPCore.Start(null);
 }
 ```
 {% endtab %}

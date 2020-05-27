@@ -179,6 +179,49 @@ private void OnApplicationPause(bool pauseStatus)
 }
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+## C\#
+
+**iOS**
+
+Starting and pausing a lifecycle event
+
+```csharp
+public override void WillEnterForeground(UIApplication uiApplication)
+{
+  base.WillEnterForeground(uiApplication);
+  ACPCore.LifecycleStart(null);
+}
+
+public override void DidEnterBackground(UIApplication uiApplication)
+{
+  base.DidEnterBackground(uiApplication);
+  ACPCore.LifecycleStart(null);
+}
+```
+
+**Android**
+
+Starting and pausing a lifecycle event
+
+```csharp
+protected override void OnResume()
+{
+  base.OnResume();
+  ACPCore.LifecycleStart(null);
+}
+
+protected override void OnPause()
+{
+  base.OnPause();
+  ACPCore.LifecyclePause();
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).

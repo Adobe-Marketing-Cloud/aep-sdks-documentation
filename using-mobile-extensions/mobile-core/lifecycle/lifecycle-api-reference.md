@@ -8,6 +8,7 @@ To get the version of the Lifecycle extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 ```java
@@ -68,7 +69,7 @@ string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 {% tab title="Xamarin" %}
 ### C\#
 
-```text
+```csharp
 string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 ```
 {% endtab %}
@@ -189,7 +190,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
 
-```text
+```csharp
 public override void OnActivated(UIApplication uiApplication)
 {
   base.OnActivated(uiApplication);
@@ -201,7 +202,7 @@ public override void OnActivated(UIApplication uiApplication)
 
 When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
 
-```text
+```csharp
 protected override void OnResume()
 {
   base.OnResume();
@@ -309,7 +310,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
 
-```text
+```csharp
 public override void OnResignActivation(UIApplication uiApplication)
 {
   base.OnResignActivation(uiApplication);
@@ -321,7 +322,7 @@ public override void OnResignActivation(UIApplication uiApplication)
 
 When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
 
-```text
+```csharp
 protected override void OnPause()
 {
   base.OnPause();
