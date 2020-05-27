@@ -120,13 +120,13 @@ using com.adobe.marketing.mobile;
 
 1. After adding the iOS or Android ACPGriffon NuGet package, the Griffon extension can be added by this import statement
 
-   ```text
+   ```csharp
    using Com.Adobe.Marketing.Mobile;
    ```
 
 2. Get the extension version.
 
-   ```text
+   ```csharp
    ACPGriffon.ExtensionVersion();
    ```
 {% endtab %}
@@ -221,7 +221,7 @@ public class MainScript : MonoBehaviour
 
 Register the Griffon extension in your app's `FinishedLaunching()` function:
 
-```text
+```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
@@ -243,7 +243,7 @@ private void startCallback()
 
 Set the current activity with ACPCore via the ACPCoreBridge and register the Griffon extension in your app's `OnCreate()` function:
 
-```text
+```csharp
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -378,26 +378,26 @@ ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235
 
 #### iOS Syntax
 
-```text
+```csharp
 public static void StartSession (NSUrl url);
 ```
 
 #### Android Syntax
 
-```text
+```csharp
 public unsafe static void StartSession (string url);
 ```
 
 #### iOS Example
 
-```text
+```csharp
 NSUrl url = new NSUrl("session url");
 ACPGriffon.StartSession(url);
 ```
 
 #### Android Example
 
-```text
+```csharp
 ACPGriffon.StartSession("session url");
 ```
 {% endtab %}

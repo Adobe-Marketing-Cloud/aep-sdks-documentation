@@ -68,7 +68,7 @@ string signalVersion = ACPSignal.ExtensionVersion();
 {% tab title="Xamarin" %}
 ### C\#
 
-```text
+```csharp
 string signalVersion = ACPSignal.ExtensionVersion();
 ```
 {% endtab %}

@@ -474,7 +474,7 @@ If the specified URL is nil or empty, it is returned as is. Otherwise, the follo
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void AppendToUrl (NSUrl baseUrl, Action<NSUrl> callback);
 ```
 
@@ -483,7 +483,7 @@ public unsafe static void AppendToUrl (NSUrl baseUrl, Action<NSUrl> callback);
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void AppendVisitorInfoForURL (string baseURL, IAdobeCallback callback);
 ```
 
@@ -492,7 +492,7 @@ public unsafe static void AppendVisitorInfoForURL (string baseURL, IAdobeCallbac
 
 **iOS Example**
 
-```text
+```csharp
 ACPIdentity.AppendToUrl(url, callback => {
   Console.WriteLine("Appended url: " + callback);
 });
@@ -500,7 +500,7 @@ ACPIdentity.AppendToUrl(url, callback => {
 
 **Android Example**
 
-```text
+```csharp
 ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -522,25 +522,25 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% hint style="info" %}
 This API is designed to handle the following URL formats:
 
-```text
+```csharp
 scheme://authority/path?query=param#fragment
 ```
 
 In this example, the Adobe visitor data is appended as:
 
-```text
+```csharp
 scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
 Similarly, URLs without a query component:
 
-```text
+```csharp
 scheme://authority/path#fragment
 ```
 
 The Adobe visitor data is appended as:
 
-```text
+```csharp
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
@@ -640,13 +640,13 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 
 **Syntax**
 
-```text
+```csharp
 public static string ExtensionVersion ();
 ```
 
 **Example**
 
-```text
+```csharp
 string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 {% endtab %}
@@ -861,7 +861,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 #### iOS Syntax
 
-```text
+```csharp
 public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 ```
 
@@ -869,7 +869,7 @@ public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 
 #### Android Syntax
 
-```text
+```csharp
 public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 ```
 
@@ -877,7 +877,7 @@ public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 
 #### iOS Example
 
-```text
+```csharp
 ACPIdentity.GetExperienceCloudId(callback => {
   Console.WriteLine("Experience cloud id: " + callback);
 });
@@ -885,7 +885,7 @@ ACPIdentity.GetExperienceCloudId(callback => {
 
 #### Android Example
 
-```text
+```csharp
 ACPIdentity.GetExperienceCloudId(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -1104,7 +1104,7 @@ This API returns all customer identifiers that were previously synced with the A
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void GetIdentifiers (Action<ACPMobileVisitorId[]> callback);
 ```
 
@@ -1112,7 +1112,7 @@ public unsafe static void GetIdentifiers (Action<ACPMobileVisitorId[]> callback)
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void GetIdentifiers (IAdobeCallback callback);
 ```
 
@@ -1120,7 +1120,7 @@ public unsafe static void GetIdentifiers (IAdobeCallback callback);
 
 **iOS Example**
 
-```text
+```csharp
 Action<ACPMobileVisitorId[]> callback = new Action<ACPMobileVisitorId[]>(handleCallback);
 ACPIdentity.GetIdentifiers(callback);
 
@@ -1141,19 +1141,18 @@ private void handleCallback(ACPMobileVisitorId[] ids)
 
 **Android Example**
 
-```text
+```csharp
 ACPIdentity.GetIdentifiers(new GetIdentifiersCallback());
 
 class GetIdentifiersCallback : Java.Lang.Object, IAdobeCallback
 {
-  public void Call(Java.Lang.Object visitorIDs)
+  public void Call(Java.Lang.Object retrievedIds)
   {
-    JavaList ids = null;
     System.String visitorIdsString = "[]";
-    if (visitorIDs != null)
+    if (retrievedIds != null)
     {
-      ids = (JavaList)visitorIDs;
-      if (!ids.IsEmpty)
+      var ids = GetObject<JavaList>(retrievedIds.Handle, JniHandleOwnership.DoNotTransfer);
+      if (ids != null && ids.Count > 0)
       {
         visitorIdsString = "";
         foreach (VisitorID id in ids)
@@ -1480,7 +1479,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 
 **iOS Syntax**
 
-```text
+```csharp
 public unsafe static void GetUrlVariables (Action<NSString> callback);
 ```
 
@@ -1488,7 +1487,7 @@ public unsafe static void GetUrlVariables (Action<NSString> callback);
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void GetUrlVariables (IAdobeCallback callback);
 ```
 
@@ -1496,7 +1495,7 @@ public unsafe static void GetUrlVariables (IAdobeCallback callback);
 
 **iOS Example**
 
-```text
+```csharp
  ACPIdentity.GetUrlVariables(callback => {
    Console.WriteLine("Url variables: " + callback);
  });
@@ -1504,7 +1503,7 @@ public unsafe static void GetUrlVariables (IAdobeCallback callback);
 
 **Android Example**
 
-```text
+```csharp
 ACPIdentity.GetUrlVariables(new StringCallback());
 
 class StringCallback : Java.Lang.Object, IAdobeCallback
@@ -1616,7 +1615,7 @@ void Start() {
 
 Register the Identity extension in your app's `FinishedLaunching()` function:
 
-```text
+```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
@@ -1634,7 +1633,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 Register the Identity extension in your app's `OnCreate()` function:
 
-```text
+```csharp
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -1875,7 +1874,7 @@ ACPCore.SetAdvertisingIdentifier("ADVTID");
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void SetAdvertisingIdentifier (string adId);
 ```
 
@@ -1883,7 +1882,7 @@ public static void SetAdvertisingIdentifier (string adId);
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void SetAdvertisingIdentifier (string advertisingIdentifier);
 ```
 
@@ -1891,7 +1890,7 @@ public unsafe static void SetAdvertisingIdentifier (string advertisingIdentifier
 
 **Example**
 
-```text
+```csharp
 ACPCore.SetAdvertisingIdentifier("ADVTID");
 ```
 {% endtab %}
@@ -2169,7 +2168,7 @@ ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationS
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void SyncIdentifier (string identifierType, string identifier, ACPMobileVisitorAuthenticationState authenticationState);
 ```
 
@@ -2185,7 +2184,7 @@ public static void SyncIdentifier (string identifierType, string identifier, ACP
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void SyncIdentifier (string identifierType, string identifier, VisitorID.AuthenticationState authenticationState);
 ```
 
@@ -2201,13 +2200,13 @@ public unsafe static void SyncIdentifier (string identifierType, string identifi
 
 **iOS Example**
 
-```text
+```csharp
 ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPMobileVisitorAuthenticationState.Authenticated);
 ```
 
 **Android Example**
 
-```text
+```csharp
 ACPIdentity.SyncIdentifier("idType1", "idValue1", VisitorID.AuthenticationState.Authenticated);
 ```
 {% endtab %}
@@ -2374,7 +2373,7 @@ ACPIdentity.SyncIdentifiers(ids);
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void SyncIdentifiers (NSDictionary identifiers);
 ```
 
@@ -2384,7 +2383,7 @@ public static void SyncIdentifiers (NSDictionary identifiers);
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void SyncIdentifiers (IDictionary<string, string> identifiers);
 ```
 
@@ -2394,7 +2393,7 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
 **iOS Example**
 
-```text
+```csharp
 var ids = new NSMutableDictionary<NSString, NSObject>
 {
   ["idsType1"] = new NSString("idValue1"),
@@ -2406,8 +2405,8 @@ ACPIdentity.SyncIdentifiers(ids);
 
 **Android Example**
 
-```text
-Dictionary<string, string> ids = new Dictionary<string, string>();
+```csharp
+var ids = new Dictionary<string, string>();
 ids.Add("idsType1", "idValue1");
 ids.Add("idsType2", "idValue2");
 ids.Add("idsType3", "idValue3");
@@ -2610,7 +2609,7 @@ ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.UNKNOWN);
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAuthenticationState authenticationState);
 ```
 
@@ -2625,7 +2624,7 @@ public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAu
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void SyncIdentifiers (IDictionary<string, string> identifiers, VisitorID.AuthenticationState authenticationState);
 ```
 
@@ -2640,7 +2639,7 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
 **iOS Example**
 
-```text
+```csharp
 var ids = new NSMutableDictionary<NSString, NSObject>
 {
   ["idsType1"] = new NSString("idValue1"),
@@ -2652,8 +2651,8 @@ ACPIdentity.SyncIdentifiers(ids, ACPMobileVisitorAuthenticationState.LoggedOut);
 
 **Android Example**
 
-```text
-Dictionary<string, string> ids = new Dictionary<string, string>();
+```csharp
+var ids = new Dictionary<string, string>();
 ids.Add("idsType1", "idValue1");
 ids.Add("idsType2", "idValue2");
 ids.Add("idsType3", "idValue3");
@@ -2825,7 +2824,7 @@ ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 
 This is used to indicate the authentication state for the current `ACPMobileVisitorId`.
 
-```text
+```csharp
 ACPMobileVisitorAuthenticationState.Unknown = 0;
 ACPMobileVisitorAuthenticationState.Authenticated = 1;
 ACPMobileVisitorAuthenticationState.LoggedOut = 2;
@@ -2837,7 +2836,7 @@ ACPMobileVisitorAuthenticationState.LoggedOut = 2;
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
-```text
+```csharp
 VisitorID.AuthenticationState.Unknown = 0;
 VisitorID.AuthenticationState.Authenticated = 1;
 VisitorID.AuthenticationState.LoggedOut = 2;

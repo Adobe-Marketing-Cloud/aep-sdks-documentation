@@ -365,7 +365,7 @@ public class MainScript : MonoBehaviour
 
 Register the Analytics extension in your app's `FinishedLaunching()` function:
 
-```text
+```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   global::Xamarin.Forms.Forms.Init();
@@ -387,7 +387,7 @@ private void startCallback()
 
 Register the Analytics extension in your app's `OnCreate()` function:
 
-```text
+```csharp
 protected override void OnCreate(Bundle savedInstanceState)
 {
   base.OnCreate(savedInstanceState);
@@ -604,7 +604,7 @@ ACPCore.TrackState("State Name", contextData);
 
 #### iOS Syntax
 
-```text
+```csharp
 var contextData = new NSMutableDictionary<NSString, NSString>
 {
   ["&&events"] = new NSString("eventN:serial number")
@@ -613,7 +613,7 @@ var contextData = new NSMutableDictionary<NSString, NSString>
 
 #### iOS Example
 
-```text
+```csharp
 // create a context data dictionary and add events
 var contextData = new NSMutableDictionary<NSString, NSString>
 {
@@ -630,14 +630,14 @@ ACPCore.TrackState("State Name", contextData);
 
 #### Android Syntax
 
-```text
+```csharp
 var contextData = new Dictionary<string, string>();
 contextData.Add("&&events", "event1:12341234");
 ```
 
 #### Android Example
 
-```text
+```csharp
 // create a context data dictionary and add events
 var contextData = new Dictionary<string, string>();
 contextData.Add("&&events", "event1:12341234");
@@ -795,7 +795,7 @@ ACPCore.UpdateConfiguration(dict);
 
 **iOS**
 
-```text
+```csharp
 var config = new NSMutableDictionary<NSString, NSObject>
 {
   ["analytics.server"] = new NSString("sample.analytics.tracking.server"),
@@ -808,7 +808,7 @@ ACPCore.UpdateConfiguration(config);
 
 **Android**
 
-```text
+```csharp
 var config = new Dictionary<string, Java.Lang.Object>();
 config.Add("analytics.server", "sample.analytics.tracking.server");
 config.Add("analytics.rsids", "rsid1,rsid2");

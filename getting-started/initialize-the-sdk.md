@@ -118,6 +118,33 @@ contextData.Add("key", "value");
 ACPCore.TrackAction("action name", contextData);
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+## C\#
+
+#### Calling TrackAction
+
+**iOS**
+
+```csharp
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackAction("action", data);
+```
+
+**Android**
+
+```csharp
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackAction("action", data);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Track app states and screens
@@ -232,6 +259,33 @@ dict.Add("key", "state value");
 ACPCore.TrackState("state", dict);
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+## C\#
+
+#### Calling TrackState
+
+**iOS**
+
+```csharp
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackState("state", data);
+```
+
+**Android**
+
+```csharp
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackState("state", data);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
