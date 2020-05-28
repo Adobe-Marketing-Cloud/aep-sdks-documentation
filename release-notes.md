@@ -8,6 +8,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## May 28, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.2
+
+* Added the capability for rule engine to reprocess the events that are dispatched before rules is loaded.
+* Fixed the import statement in `ACPNetworkServiceOverrider.h`.
+
+### Android Core 1.5.4
+
+* Added the capability for rule engine to reprocess the events that are dispatched before rules is loaded.
+* Fixed a bug where the shared state of event hub was not properly created.
+* Fixed a security issue.
+
 ## May 19, 2020
 
 ### iOS Media 2.0.0
