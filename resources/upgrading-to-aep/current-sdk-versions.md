@@ -124,6 +124,20 @@
 * Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon)
 * [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon)
 
+## Cordova
+
+### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
+
+* npmjs - 
+
+### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+
+* npmjs - 
+
+### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+* npmjs - 
+
 ## Flutter
 
 ### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
