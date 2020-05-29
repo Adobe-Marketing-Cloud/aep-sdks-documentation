@@ -182,3 +182,17 @@
 
 * npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign)
 
+## Xamarin
+
+### Mobile Core
+
+* NuGet - 
+
+### Adobe Analytics
+
+* NuGet
+
+### Project Griffon \(Beta\)
+
+* NuGet - 
+
