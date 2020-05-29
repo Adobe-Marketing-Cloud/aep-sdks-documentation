@@ -134,7 +134,9 @@ AdobeSDK.trackState("state", { "example.key": "value" });
       <td style="text-align:left">&#x9996;&#x6B21;&#x6253;&#x5F00;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x65E5;&#x671F;</td>
     </tr>
   </tbody>
-</table>### 小程序升级
+</table>
+
+### 小程序升级
 
 <table>
   <thead>
@@ -173,7 +175,9 @@ AdobeSDK.trackState("state", { "example.key": "value" });
       <td style="text-align:left">&#x81EA;&#x4E0A;&#x6B21;&#x5C0F;&#x7A0B;&#x5E8F;&#x7248;&#x672C;&#x53D8;&#x66F4;&#x540E;&#xFF0C;&#x6253;&#x5F00;&#x6B21;&#x6570;&#x3002;(&#x6CE8;&#xFF1A;&#x5C0F;&#x7A0B;&#x5E8F;App&#x7684;<code>onLaunch</code>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6B21;&#x6570;&#xFF09;</td>
     </tr>
   </tbody>
-</table>### 小程序打开
+</table>
+
+### 小程序打开
 
 <table>
   <thead>
@@ -252,7 +256,9 @@ AdobeSDK.trackState("state", { "example.key": "value" });
       <td style="text-align:left">&#x8BB0;&#x5F55;&#x5C0F;&#x7A0B;&#x5E8F;&#x5728;&#x4E00;&#x5468;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x5929;&#x6253;&#x5F00;&#x3002;</td>
     </tr>
   </tbody>
-</table>### Device information
+</table>
+
+### Device information
 
 <table>
   <thead>
@@ -304,7 +310,9 @@ AdobeSDK.trackState("state", { "example.key": "value" });
       <td style="text-align:left">&#x8FD0;&#x884C;&#x6A21;&#x5F0F;&#x3002;&#x8BE5;&#x503C;&#x4E3A;&quot;Application&quot;&#x3002;</td>
     </tr>
   </tbody>
-</table>## 验证发送给Analytics的请求
+</table>
+
+## 验证发送给Analytics的请求
 
 以下为向Analytics发送请求的示例。
 

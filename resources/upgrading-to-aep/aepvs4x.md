@@ -78,7 +78,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | React Native \(iOS & Android\) | Supported | Supported |
 | Flutter \(iOS & Android\) | Unupported | Supported |
 | Unity \(iOS & Android\)​ | Supported | _Support coming_ |
-| Xamarin \(iOS & Android\)​ | Supported | _Support coming_ |
+| Xamarin \(iOS & Android\)​ | Supported | Supported |
 | Cordova \(iOS & Android\)​ | Supported | Supported |
 | Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Not supported_ |
 | Windows 8​ | Supported | _Not supported_ |

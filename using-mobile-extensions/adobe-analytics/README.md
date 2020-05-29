@@ -233,17 +233,15 @@ _Note_ For `iOS` using `cocoapods`, run:
    ACPAnalytics.extensionVersion();
    ```
 
+**C\#**
 
-
-   **C\#**
-
-3. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
+1. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
 
    ```text
    using Com.Adobe.Marketing.Mobile;
    ```
 
-4. Get the extension version.
+2. Get the extension version.
 
    ```text
    ACPAnalytics.ExtensionVersion();
@@ -687,7 +685,9 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>{% tabs %}
+</table>
+
+{% tabs %}
 {% tab title="Android" %}
 ### Update Analytics Configuration
 

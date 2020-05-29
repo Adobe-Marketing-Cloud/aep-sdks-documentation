@@ -8,7 +8,6 @@ To get the version of the Lifecycle extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java

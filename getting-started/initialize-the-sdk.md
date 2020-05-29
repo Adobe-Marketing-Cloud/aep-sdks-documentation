@@ -120,7 +120,6 @@ ACPCore.TrackAction("action name", contextData);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ## C\#
 
 #### Calling TrackAction
@@ -142,9 +141,7 @@ var data = new Dictionary<string, string>();
 data.Add("key", "value");
 ACPCore.TrackAction("action", data);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Track app states and screens
@@ -261,7 +258,6 @@ ACPCore.TrackState("state", dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ## C\#
 
 #### Calling TrackState
@@ -283,9 +279,7 @@ var data = new Dictionary<string, string>();
 data.Add("key", "value");
 ACPCore.TrackState("state", data);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).

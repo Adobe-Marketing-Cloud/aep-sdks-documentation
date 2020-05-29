@@ -181,7 +181,6 @@ private void OnApplicationPause(bool pauseStatus)
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ## C\#
 
 **iOS**
@@ -219,9 +218,7 @@ protected override void OnPause()
   ACPCore.LifecyclePause();
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](../using-mobile-extensions/mobile-core/lifecycle/).

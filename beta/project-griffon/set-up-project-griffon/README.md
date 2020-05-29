@@ -249,10 +249,10 @@ protected override void OnCreate(Bundle savedInstanceState)
   base.OnCreate(savedInstanceState);
   global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
   LoadApplication(new App());
-  
+
    // Set the activity in core using the bridge
   ACPCoreBridge.SetCurrentActivity((Activity)Forms.Context);
-  
+
   ACPGriffon.RegisterExtension();
 
   // start core

@@ -19,9 +19,7 @@ The `HTTPConnectionPerformer` class is an abstract base class that must be subcl
 #### Example
 
 {% hint style="warning" %}
-
 This is just an implementation example. For more information about handling network requests correctly in your mobile application, see [HttpURLConnection](https://developer.android.com/reference/java/net/HttpURLConnection).
-
 {% endhint %}
 
 ```java
@@ -170,9 +168,7 @@ The completion block for the `requestUrl` method takes an `ACPHttpConnection` as
 #### Example
 
 {% hint style="warning" %}
-
 This is just an implementation example. For more information about handling network requests correctly in your mobile application, see [NSURLSessionConfiguration](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration) and [NSMutableURLRequest](https://developer.apple.com/documentation/foundation/nsmutableurlrequest).
-
 {% endhint %}
 
 **Objective-C**
@@ -195,7 +191,7 @@ This is just an implementation example. For more information about handling netw
     return true;
 }
 
-	// Network request override with a completion block. The provided parameters should be configured on the network request.
+    // Network request override with a completion block. The provided parameters should be configured on the network request.
 - (void) requestUrl: (NSURL*) url httpCommand: (NSString*) command connectPayload: (NSString*) payload requestPropertyDict: (NSDictionary<NSString*, NSString*>*) requestProperty connectTimeout: (NSTimeInterval) connectTimeout readTimeout: (NSTimeInterval) readTimeout completion: (void (^) (ACPHttpConnection*)) completion {
 
     requestUrlCompletion = completion;
@@ -250,7 +246,7 @@ import Foundation
 import ACPCore
 
 class SamplePerformerOverrider: NSObject, ACPHttpConnectionPerformer {
-    
+
     // Modifications here would allow for conditional overriding based on the url/method.
     // In this example it always returns true to override all network requests.
     func shouldOverride(_ url: URL, method: String) -> Bool {

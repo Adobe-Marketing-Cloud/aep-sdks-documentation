@@ -3,16 +3,19 @@
 ## May 22, 2020
 
 ### @adobe/react-native-acpmedia 2.0.0
+
 * Updated to iOS Media v2.0.0.
 * Updated to Android Media v2.0.0.
 
 ## May 19, 2020
 
 ### iOS Media 2.0.0
+
 * Uses media collection endpoint for tracking both streaming and downloaded content.
 * Added support for player state tracking
 
 ### Android Media 2.0.0
+
 * Uses media collection endpoint for tracking both streaming and downloaded content.
 * Added support for player state tracking
 
@@ -90,3 +93,4 @@ The following updates were made in this release:
 ### Android Media 1.0.0
 
 * First version of Media Android Extension.
+

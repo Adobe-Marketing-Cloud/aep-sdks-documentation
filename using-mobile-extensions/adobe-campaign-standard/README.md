@@ -84,7 +84,9 @@ Remember the following information when you add the Campaign extension to your a
     </tr>
   </thead>
   <tbody></tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 The instructions to add these extensions to your mobile app are also available in Experience Platform Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
 
