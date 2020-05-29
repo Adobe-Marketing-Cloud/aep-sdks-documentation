@@ -186,13 +186,13 @@
 
 ### Mobile Core
 
-* NuGet - 
+* NuGet - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/)
 
 ### Adobe Analytics
 
-* NuGet
+* NuGet - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/)
 
 ### Project Griffon \(Beta\)
 
-* NuGet - 
+* NuGet - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/)
 
