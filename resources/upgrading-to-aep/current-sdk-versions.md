@@ -142,15 +142,15 @@
 
 ### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore)
+* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore)
 
 ### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics)
+* pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics)
 
 ### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon)
+* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon)
 
 ## React Native
 
@@ -181,6 +181,12 @@
 ### [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard)
 
 * npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign)
+
+### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+* npmjs - Coming Soon
+
+
 
 ## Xamarin
 
