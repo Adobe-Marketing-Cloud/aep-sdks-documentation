@@ -12,6 +12,12 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
 
+## Key Features and Benefits of the Adobe Experience Platform Mobile SDKs 
+
+The blog below will discuss some of the key features and beneifts of the Adobe Experience Platform Mobile SDKs 
+
+[Accelerate Your Mobile Application Development with Adobe Experience Platform Mobile SDK and Launch](https://medium.com/adobetech/accelerate-your-mobile-application-development-with-adobe-experience-platform-mobile-sdk-and-launch-ed023536d611)
+
 ## Supported Platforms
 
 {% hint style="success" %}
