@@ -8,6 +8,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## June 1, 2020
+
+### iOS Analytics 2.2.4
+
+* Fixed TimeZone calculation bug
+* Fixed other minor issues and improved extension stability
+
 ## May 19, 2020
 
 ### iOS Media 2.0.0

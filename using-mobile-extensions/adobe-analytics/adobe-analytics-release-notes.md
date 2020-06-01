@@ -1,5 +1,16 @@
 # Release Notes
 
+## June 1, 2020
+
+### @adobe/react-native-acpanalytics 1.1.6
+
+* Updates iOS Analytics to 2.2.4
+
+### iOS Analytics 2.2.4
+
+* Fixed TimeZone calculation bug
+* Fixed other minor issues and improved extension stability
+
 ## March 2, 2020
 
 The following updates were made in this release:
@@ -82,4 +93,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-
