@@ -84,7 +84,9 @@ Remember the following information when you add the Campaign extension to your a
     </tr>
   </thead>
   <tbody></tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 The instructions to add these extensions to your mobile app are also available in Experience Platform Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
 
@@ -271,6 +273,8 @@ ACPCampaign.registerExtension();
 
 To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
+{% tabs %}
+{% tab title="Android" %}
 ### Set up in-app messaging
 
 {% hint style="info" %}
@@ -290,6 +294,12 @@ In addition to adding the `FullscreenMessageActivity`, a global lifecycle callba
 ### Set up local notifications
 
 To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see [Configuring notification icons](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons).
+{% endtab %}
+
+{% tab title="iOS" %}
+No additional setup is needed for iOS in-app messaging and local notifications.
+{% endtab %}
+{% endtabs %}
 
 ### Set up push messaging
 

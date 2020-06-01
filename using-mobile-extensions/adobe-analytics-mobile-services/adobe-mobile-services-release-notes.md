@@ -2,6 +2,14 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## April 17, 2020
+
+The following updates were made in this release:
+
+### iOS Mobile Services 1.0.6
+
+* Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
+
 ## February 4, 2020
 
 The following updates were made in this release:
@@ -47,11 +55,25 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-### iOS Mobile Services 2.0.2
+### iOS Mobile Services 1.0.2
 
 * Added the ability to trigger an In-App message that is based on Analytics rules consequences.
 
 ### Android Mobile Services 1.0.1
 
 * Added the ability to trigger an In-App message that is based on Analytics rules consequences.
+
+## April 26, 2019
+
+The following updates were made in this release:
+
+### iOS Mobile Services 1.0.1
+
+* Fixed a cocoapod dependency issue.
+
+## April 5, 2019
+
+### iOS Mobile Services 1.0.0
+
+* Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 

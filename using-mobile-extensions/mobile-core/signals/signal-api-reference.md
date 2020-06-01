@@ -44,6 +44,34 @@ ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeEx
 String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPSignal.extensionVersion(function(version) {  
+    console.log("ACPSignal version: " + version);
+}, function(error) {  
+    console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string signalVersion = ACPSignal.ExtensionVersion();
+```
+{% endtab %}
 {% endtabs %}
 
 ## CollectPII API

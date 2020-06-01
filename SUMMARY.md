@@ -2,6 +2,7 @@
 
 * [Overview](README.md)
 * [Release notes](release-notes.md)
+* [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 
 ## Getting Started
@@ -48,6 +49,7 @@
   * [Release Notes](using-mobile-extensions/adobe-analytics-mobile-services/adobe-mobile-services-release-notes.md)
   * [Mobile Services API reference](using-mobile-extensions/adobe-analytics-mobile-services/mobileservices-api-reference.md)
 * [Adobe Analytics - Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
+  * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
   * [Release Notes](using-mobile-extensions/adobe-audience-manager/adobe-audience-manager-release-notes.md)

@@ -39,7 +39,7 @@ After you've created a session, you can begin connecting to it by following thes
 
 To export a Project Griffon session, on your app’s sessions details page, click **Export to JSON** in a session:
 
-![Exporting a session](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-kolw2vavrhjuimxvm_-m-kern6uomuqyodcimt_screen-shot-2020-02-10-at-12.5.png)
+![Exporting a session](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-kolw2vavrhjuimxvm_-m-kern6uomuqyodcimt_screen-shot-2020-02-10-at-12.51.58-pm.png)
 
 The export option respects search filter results and only exports events displayed in the event view. For example, if you searched for “track” events and then click Export to JSON, only the “track” event results are exported.
 

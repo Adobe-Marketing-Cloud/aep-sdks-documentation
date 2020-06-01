@@ -69,6 +69,36 @@ Import the Identity extension:
 import 'package:flutter_acpcore/flutter_acpidentity.dart';
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Identity extension for Cordova can be added with this command:
+
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip), the Identity extension for Unity can be added with following code in the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+After adding the iOS ACPCore NuGet package or the Android ACPIdentity NuGet package, the Identity extension can be added by this import statement
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+```
+{% endtab %}
 {% endtabs %}
 
 ## Register the Identity extension
@@ -136,6 +166,79 @@ When using React Native, registering Identity with Mobile Core should be done in
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, registering Identity with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+Register the Identity extension in your app's `Start()` function:
+
+```csharp
+void Start() {
+  ACPIdentity.RegisterExtension();
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+Register the Identity extension in your app's `FinishedLaunching()` function:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+    ACPIdentity.RegisterExtension();
+
+  // start core
+  ACPCore.Start(startCallback);
+
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the Identity extension in your app's `OnCreate()` function:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+
+  ACPIdentity.RegisterExtension();
+
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -188,6 +291,34 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ide
 
 ```dart
 String identityExtensionVersion = await FlutterACPIdentity.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+```jsx
+ACPIdentity.extensionVersion(function (handleCallback) {
+  console.log("AdobeExperienceSDK: ACPIdentity version: " + handleCallback)
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: failed to get extension version : " + handleError)
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+```csharp
+string identityVersion = ACPIdentity.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+```csharp
+string identityVersion = ACPIdentity.ExtensionVersion();
 ```
 {% endtab %}
 {% endtabs %}
@@ -320,6 +451,124 @@ try {
   result = await FlutterACPIdentity.urlVariables;
 } on PlatformException {
   log("Failed to get url variables");
+}
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+```jsx
+ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
+  console.log("AdobeExperenceSDK: Url with Visitor Data = " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to append URL : " + handleError);
+});
+```
+
+Alternately, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+
+```jsx
+ACPIdentity.getUrlVariables(function (handleCallback) {
+  console.log("AdobeExperienceSDK: Url variables: " + handleCallback);
+}, function (handleError) {
+  console.log("AdobeExperenceSDK: Failed to retrieve url variables : " + handleError);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeIdentityAppendToUrlCallback))]
+public static void HandleAdobeIdentityAppendToUrlCallback(string url)
+{
+    print("Url is : " + url);
+}
+ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlCallback);
+```
+
+Alternately, you can call [GetUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeGetUrlVariables))]
+public static void HandleAdobeGetUrlVariables(string urlVariables)
+{
+    print("Url variables are : " + urlVariables);
+}
+ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+**iOS**
+
+```csharp
+ACPIdentity.AppendToUrl(url, callback => {
+  Console.WriteLine("Appended url: " + callback);
+});
+```
+
+To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+
+**Android**
+
+```csharp
+ACPIdentity.AppendVisitorInfoForURL("https://example.com", new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Appended url: " + stringContent);
+    } 
+    else 
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+}
+```
+
+**Alternately, you can call GetUrlVariables and build your own URL:**
+
+**iOS**
+
+```csharp
+ACPIdentity.GetUrlVariables(callback => {
+  Console.WriteLine("Url variables: " + callback);
+});
+```
+
+**Android**
+
+```csharp
+ACPIdentity.GetUrlVariables(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("Url variables: " + stringContent);
+    } 
+    else 
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
 }
 ```
 {% endtab %}

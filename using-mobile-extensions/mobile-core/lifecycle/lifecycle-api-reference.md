@@ -1,5 +1,79 @@
 # Lifecycle API reference
 
+## Version of the Lifecycle extension
+
+The `extensionVersion()` API returns the version of the Lifecycle extension that is registered with the Mobile Core extension.
+
+To get the version of the Lifecycle extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String lifecycleExtensionVersion = Lifecycle.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *lifecycleExtensionVersion = [ACPLifecycle extensionVersion];
+```
+
+**Swift**
+
+```swift
+let lifecycleExtensionVersion  = ACPLifecycle.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPLifecycle.extensionVersion().then(lifecycleExtensionVersion => console.log("AdobeExperienceSDK: ACPLifecycle version: " + lifecycleExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPLifecycle.extensionVersion(function(version) {  
+   console.log("ACPLifecycle version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+```
+{% endtab %}
+{% endtabs %}
+
 ## Lifecycle Start
 
 You can use this API to start a new lifecycle session or resume a previously paused lifecycle session. If a previously paused session timed out, then a new session is created. If a current session is running, then calling this method does nothing.
@@ -79,6 +153,62 @@ lifecycleStart(additionalContextData?: { string: string });
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
+
+```csharp
+public override void OnActivated(UIApplication uiApplication)
+{
+  base.OnActivated(uiApplication);
+  ACPCore.LifecycleStart(null);
+}
+```
+
+**Android**
+
+When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
+
+```csharp
+protected override void OnResume()
+{
+  base.OnResume();
+  ACPCore.LifecycleStart(null);
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Lifecycle Pause
@@ -141,6 +271,62 @@ lifecyclePause();
 
 ```jsx
 ACPCore.lifecyclePause();
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
+
+```csharp
+private void OnApplicationPause(bool pauseStatus)
+{
+  if (!pauseStatus)
+  {
+    ACPCore.LifecyclePause();
+  }
+  else
+  {
+    var cdata = new Dictionary<string, string>();
+    cdata.Add("launch.data", "added");
+    ACPCore.LifecycleStart(cdata);
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
+
+```csharp
+public override void OnResignActivation(UIApplication uiApplication)
+{
+  base.OnResignActivation(uiApplication);
+  ACPCore.LifecyclePause();
+}
+```
+
+**Android**
+
+When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
+
+```csharp
+protected override void OnPause()
+{
+  base.OnPause();
+  ACPCore.LifecyclePause();
+}
 ```
 {% endtab %}
 {% endtabs %}

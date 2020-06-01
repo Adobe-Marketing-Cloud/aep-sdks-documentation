@@ -197,6 +197,56 @@ _Note_ For `iOS` using `cocoapods`, run:
    String version = await FlutterACPAnalytics.extensionVersion;
    ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+1. After creating your Cordova app and adding the Android and iOS platforms, the Analytics extension for Cordova can be added with this command:
+
+   ```text
+   cordova plugin add https://github.com/adobe/cordova-acpanalytics.git
+   ```
+
+2. Get the extension version.
+
+   ```jsx
+   ACPAnalytics.extensionVersion(function(version) {  
+      console.log("ACPAnalytics version: " + version);
+   }, function(error) {  
+      console.log(error);  
+   });
+   ```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
+
+   ```csharp
+   using com.adobe.marketing.mobile;
+   ```
+
+2. Get the extension version.
+
+   ```csharp
+   ACPAnalytics.extensionVersion();
+   ```
+
+**C\#**
+
+1. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
+
+   ```text
+   using Com.Adobe.Marketing.Mobile;
+   ```
+
+2. Get the extension version.
+
+   ```text
+   ACPAnalytics.ExtensionVersion();
+   ```
+{% endtab %}
 {% endtabs %}
 
 ### Register Analytics with Mobile Core
@@ -214,7 +264,7 @@ public class MobileApp extends Application {
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
-        MobileCore.configureWithAppId("yourAppId");
+        MobileCore.configureWithAppID("yourAppId");
         try {
             Analytics.registerExtension(); //Register Analytics with Mobile Core
             Identity.registerExtension();
@@ -272,6 +322,91 @@ When using React Native, registering Analytics with Mobile Core should be done i
 
 When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, registering Analytics with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+Register the extension in the `start()` function:
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        ACPAnalytics.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+Register the Analytics extension in your app's `FinishedLaunching()` function:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+    ACPAnalytics.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the Analytics extension in your app's `OnCreate()` function:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+  ACPAnalytics.RegisterExtension();
+
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Send Lifecycle Metrics to Analytics
@@ -296,7 +431,7 @@ To see the performance of your Target activities for some segments, you can set 
 
 ### Server-side forwarding with Audience Manager
 
-To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox and install the Audience Manager extension. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
+To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
 
 ### Audio and Video Analytics
 
@@ -404,6 +539,115 @@ FlutterACPCore.trackAction("Action Name",  data: contextData);
 FlutterACPCore.trackState("State Name",  data: contextData);
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+#### Syntax
+
+```jsx
+var contextData = {"eventN:serial number": "&&events"};
+```
+
+#### Example
+
+```jsx
+// create a context data dictionary and add events
+var contextData = {"event1:12341234": "&&events"};
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.trackAction("Action Name", contextData, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Track action success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to track action: " + handleError);
+});
+// trackState example:
+ACPCore.trackState("State Name", contextData, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Track state success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to track state: " + handleError);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+#### Syntax
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "trackAction");
+```
+
+#### Example
+
+```csharp
+// create a context data dictionary and add events
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "trackAction");
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.TrackAction("Action Name", contextData);
+
+// trackState example:
+ACPCore.TrackState("State Name", contextData);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+#### iOS Syntax
+
+```csharp
+var contextData = new NSMutableDictionary<NSString, NSString>
+{
+  ["&&events"] = new NSString("eventN:serial number")
+};
+```
+
+#### iOS Example
+
+```csharp
+// create a context data dictionary and add events
+var contextData = new NSMutableDictionary<NSString, NSString>
+{
+  ["&&events"] = new NSString("event1:12341234")
+};
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.TrackAction("Action Name", contextData);
+
+// trackState example:
+ACPCore.TrackState("State Name", contextData);
+```
+
+#### Android Syntax
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("&&events", "event1:12341234");
+```
+
+#### Android Example
+
+```csharp
+// create a context data dictionary and add events
+var contextData = new Dictionary<string, string>();
+contextData.Add("&&events", "event1:12341234");
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+ACPCore.TrackAction("Action Name", contextData);
+
+// trackState example:
+ACPCore.TrackState("State Name", contextData);
+```
+{% endtab %}
 {% endtabs %}
 
 ## Videos
@@ -441,9 +685,7 @@ To update the SDK configuration programmatically, use the following information 
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `analytics.backdatePreviousSessionInfo` | No | See [Backdate Previous Session Info.](./#backdate-previous-session-info) |
-| :--- | :--- | :--- |
-
+</table>
 
 {% tabs %}
 {% tab title="Android" %}
@@ -511,6 +753,68 @@ FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracki
                                     "analytics.rsids": "rsid1,rsid2",
                                     "analytics.batchLimit": 10,
                                     "analytics.offlineEnabled": true});
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+### Update Analytics Configuration
+
+```jsx
+ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
+                             "analytics.rsids": "rsid1,rsid2",
+                             "analytics.batchLimit": 10,
+                             "analytics.offlineEnabled": true}, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Analytics configuration update success: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to update analytics configuration: " + handleError);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+### Update Analytics Configuration
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("analytics.server": "sample.analytics.tracking.server");
+dict.Add("analytics.rsids": "rsid1,rsid2");
+dict.Add("analytics.batchLimit": 10);
+dict.Add("analytics.offlineEnabled": true);
+ACPCore.UpdateConfiguration(dict);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+### Update Analytics Configuration
+
+**iOS**
+
+```csharp
+var config = new NSMutableDictionary<NSString, NSObject>
+{
+  ["analytics.server"] = new NSString("sample.analytics.tracking.server"),
+  ["analytics.rsids"] = new NSString("rsid1,rsid2"),
+  ["analytics.batchLimit"] = new NSNumber(10),
+  ["analytics.offlineEnabled"] = new NSNumber(true)
+};
+ACPCore.UpdateConfiguration(config);
+```
+
+**Android**
+
+```csharp
+var config = new Dictionary<string, Java.Lang.Object>();
+config.Add("analytics.server", "sample.analytics.tracking.server");
+config.Add("analytics.rsids", "rsid1,rsid2");
+config.Add("analytics.batchLimit", 10);
+config.Add("analytics.offlineEnabled", true);
+ACPCore.UpdateConfiguration(config);
 ```
 {% endtab %}
 {% endtabs %}

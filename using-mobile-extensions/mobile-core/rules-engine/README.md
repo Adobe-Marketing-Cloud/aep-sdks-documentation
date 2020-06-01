@@ -53,3 +53,7 @@ Since downloading rules will spend some time, serveral incoming events occured a
 
 For more information about the technical details of the Rules Engine, see [Rules Engine technical details](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details).
 
+## Watch the Video
+
+{% embed url="https://www.youtube.com/watch?v=BwBeYNu5Crg" caption="Video: How to configure IFTTT mobile rules in Adobe Experience Platform Launch" %}
+

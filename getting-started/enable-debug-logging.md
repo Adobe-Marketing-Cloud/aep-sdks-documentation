@@ -68,5 +68,31 @@ FlutterACPCore.setLogLevel(ACPLoggingLevel.DEBUG);
 //FlutterACPCore.setLogLevel(ACPLoggingLevel.ERROR);
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+## Cordova
+
+Controlling the log level of the SDK
+
+```javascript
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelError, successCallback, errorCallback);
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelWarning, successCallback, errorCallback);
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelDebug, successCallback, errorCallback);
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+## C\#
+
+Controlling the log level of the SDK
+
+```csharp
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.WARNING);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.DEBUG);
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+```
+{% endtab %}
 {% endtabs %}
 

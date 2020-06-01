@@ -74,6 +74,52 @@ For the latest React Native installation instructions, see the README file in th
 
 For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
 {% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+{% hint style="info" %}
+Cordova is distributed via [npm](http://npmjs.com) \(Node Package Management\). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal: `sudo npm install -g cordova`
+{% endhint %}
+
+For the latest Cordova installation instructions, see the README file in the [cordova-acpcore](https://github.com/adobe/cordova-acpcore) repository.
+
+#### Installation
+
+To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
+
+`cordova plugin add https://github.com/adobe/cordova-acpcore.git`
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+{% hint style="warning" %}
+Unity SDK will be released shortly. This message will be removed once the SDK is available
+{% endhint %}
+
+For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
+
+#### Installation
+
+To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
+
+* Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
+* Unzip `ACPCore-0.0.1-Unity.zip`
+* Import `ACPCore.unitypackage` via Assets-Import Package 
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+{% hint style="info" %}
+For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
+{% endhint %}
+
+#### Installation
+
+The AEP SDK Xamarin packages are distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
+{% endtab %}
 {% endtabs %}
 
 ## Installation instructions
@@ -252,6 +298,174 @@ initSDK() {
 #### Dart
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+**iOS:**
+
+```text
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {  
+  // make sure to set the wrapper type at the beginning of initialization
+  [ACPCore setWrapperType:ACPMobileWrapperTypeCordova];
+
+  //...
+  [ACPCore configureWithAppId:@"yourAppId"];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+  // Register any additional extensions
+
+  [ACPCore start:nil];
+}
+```
+
+**Android:**
+
+```java
+// Import the SDK
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.WrapperType;
+
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("yourAppId");
+
+  // make sure to set the wrapper type at the beginning of initialization
+  MobileCore.setWrapperType(WrapperType.CORDOVA);
+
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+
+    // Register any additional extensions
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+For Unity apps, initialize the SDK using the following code in the start function of the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        if (Application.platform == RuntimePlatform.Android) {
+            ACPCore.SetApplication();
+        }
+
+        ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+        ACPCore.SetWrapperType();
+        ACPIdentity.registerExtension();
+        ACPLifecycle.registerExtension();
+        ACPSignal.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
+
+**iOS**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Register("AppDelegate")]
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+  //
+  // This method is invoked when the application has loaded and is ready to run. In this 
+  // method you should instantiate the window, load the UI into it and then make the window
+  // visible.
+  //
+  // You have 17 seconds to return from this method, or iOS will terminate your application.
+  //
+  public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+  {
+    global::Xamarin.Forms.Forms.Init();
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
+
+    // set launch config
+    ACPCore.ConfigureWithAppID("your-app-id");
+
+    // register SDK extensions
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+  }
+```
+
+**Android**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(WrapperType.Xamarin);
+
+    // register SDK extensions
+    ACPCore.Application = this.Application;
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+}
+```
 {% endtab %}
 {% endtabs %}
 

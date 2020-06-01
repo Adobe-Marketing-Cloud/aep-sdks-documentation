@@ -35,7 +35,7 @@ Follow these steps to add Project Griffon to your app:
    3. Follow the publishing process to update SDK configuration.
 3. Implement Project Griffon SDK APIs in your app
 
-![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.1.png)
+![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.14.34-am.png)
 
 ### Add Project Griffon Extension to your app
 
@@ -90,9 +90,45 @@ import ACPGriffon // <-- import the Project Griffon library
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+#### Dart
 
 Flutter install instructions for Griffon can be found [here](https://pub.dev/packages/flutter_griffon#-installing-tab-).
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Project Griffon extension for Cordova can be added with this command:
+
+```text
+cordova plugin add https://github.com/adobe/cordova-acpgriffon.git
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+After importing the [ACPGriffon.unitypackage](https://github.com/adobe/unity-acpgriffon/blob/master/bin/ACPGriffon-0.0.1-Unity.zip), the Griffon extension for Unity can be added with following code in the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+1. After adding the iOS or Android ACPGriffon NuGet package, the Griffon extension can be added by this import statement
+
+   ```csharp
+   using Com.Adobe.Marketing.Mobile;
+   ```
+
+2. Get the extension version.
+
+   ```csharp
+   ACPGriffon.ExtensionVersion();
+   ```
 {% endtab %}
 {% endtabs %}
 
@@ -155,6 +191,84 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="Flutter" %}
 When using Flutter, registering Griffon with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Cordova" %}
+When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+```csharp
+using com.adobe.marketing.mobile;
+using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {   
+      ACPGriffon.RegisterExtension();
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+Register the Griffon extension in your app's `FinishedLaunching()` function:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+  ACPGriffon.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Set the current activity with ACPCore via the ACPCoreBridge and register the Griffon extension in your app's `OnCreate()` function:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+
+   // Set the activity in core using the bridge
+  ACPCoreBridge.SetCurrentActivity((Activity)Forms.Context);
+
+  ACPGriffon.RegisterExtension();
+
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 #### Implement Project Griffon session start APIs \(iOS\)
@@ -188,6 +302,17 @@ You may call this API when the app launches with a url \(see code snippet below 
 }
 ```
 
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```objectivec
+- (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    UIOpenURLContext * urlContext = URLContexts.anyObject;
+    if (urlContext != nil) {
+        [ACPGriffon startSession:urlContext.URL];
+    }
+}
+```
+
 #### Swift
 
 #### Example
@@ -201,12 +326,79 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 }
 ```
 
-In iOS 13 and later, for a scene-based application.
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         ACPGriffon.startSession((URLContexts.first!).url)
 }
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### startSession
+
+#### Syntax
+
+```jsx
+ACPGriffon.startSession(url, success, error);
+```
+
+#### Example
+
+```jsx
+ACPGriffon.startSession(sessionUrl, function(handleCallback) {
+  console.log("AdobeExperenceSDK: Griffon session start successful: " + handleCallback);
+}, function(handleError) {
+  console.log("AdobeExperenceSDK: Failed to start griffon session: " + handleError);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### startSession
+
+#### C\#
+
+#### Syntax
+
+```csharp
+public static void StartSession(string url)
+```
+
+#### Example
+
+```csharp
+ACPGriffon.StartSession("griffonexample//?adb_validation_sessionid=f35ed0d7-e235-46a6-a327-7346f6de3a0");
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### startSession
+
+#### iOS Syntax
+
+```csharp
+public static void StartSession (NSUrl url);
+```
+
+#### Android Syntax
+
+```csharp
+public unsafe static void StartSession (string url);
+```
+
+#### iOS Example
+
+```csharp
+NSUrl url = new NSUrl("session url");
+ACPGriffon.StartSession(url);
+```
+
+#### Android Example
+
+```csharp
+ACPGriffon.StartSession("session url");
 ```
 {% endtab %}
 {% endtabs %}

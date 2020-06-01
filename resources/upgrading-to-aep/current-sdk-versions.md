@@ -122,21 +122,35 @@
 ### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 
 * Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v0.0.11-ACPGriffonBeta)
+* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon)
 
-## Flutter \(Beta\)
+## Cordova
 
 ### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore)
+* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpcore?label=cordova-acpcore&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpcore)
 
 ### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics)
+* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics)
 
 ### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 
-* [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon)
+* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpgriffon?label=cordova-acpgriffon&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpgriffon)
+
+## Flutter
+
+### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
+
+* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore)
+
+### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+
+* pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics)
+
+### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon)
 
 ## React Native
 
@@ -167,4 +181,27 @@
 ### [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard)
 
 * npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign)
+
+### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+* npmjs - Coming Soon
+
+
+
+## Xamarin
+
+### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
+
+* NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/)
+* NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/)
+
+### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+
+* NuGet\(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/)
+* NuGet - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/)
+
+### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+* NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/)
+* NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/)
 

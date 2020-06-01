@@ -14,7 +14,9 @@ To get started with Signal extension, complete the following steps:
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
 
-{% embed url="https://www.youtube.com/watch?v=r-z9ivQjzOY" caption="" %}
+## Watch the Video
+
+{% embed url="https://www.youtube.com/watch?v=r-z9ivQjzOY" caption="Video: Sending Postbacks with Adobe Experience Platform Mobile SDKs" %}
 
 ## Add the Signal extension to your app
 
@@ -79,6 +81,36 @@ Importing the Signal extension:
 
 ```dart
 import 'package:flutter_acpcore/flutter_acpsignal.dart';
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+After creating your Cordova app and adding the Android and iOS platforms, the Signal extension for Cordova can be added with this command:
+
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+After importing the [ACPCore.unitypackage](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip), the Signal extension for Unity can be added with following code in the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+After adding the iOS ACPCore NuGet package or the Android ACPSignal NuGet package, the Signal extension can be added by this import statement
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
 ```
 {% endtab %}
 {% endtabs %}
@@ -156,6 +188,75 @@ When using React Native, registering Signal with Mobile Core should be done in n
 #### Dart
 
 When using Flutter, registering Signal with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Cordova" %}
+#### Cordova
+
+When using Cordova, registering Signal with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+#### C\#
+
+Register the extension in the `start()` function:
+
+```text
+void Start()
+{   
+  ACPSignal.RegisterExtension();
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### C\#
+
+**iOS**
+
+Register the Signal extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  ACPSignal.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the Signal extension with the SDK Core by adding the following to your app's `OnCreate:` method:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+    LoadApplication(new App());
+  ACPCore.Application = this.Application;
+  ACPSignal.RegisterExtension();
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
 {% endtab %}
 {% endtabs %}
 
