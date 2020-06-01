@@ -8,7 +8,7 @@
 
 ### iOS Analytics 2.2.4
 
-* Fixed TimeZone calculation bug
+* Fixed timezone calculation bug
 * Fixed other minor issues and improved extension stability
 
 ## March 2, 2020
