@@ -47,7 +47,7 @@ At the start of a new application session that includes the Experience Platform 
 
 ### **Re-evaluating events**
 
-Since downloading rules will spend some time, serveral incoming events occured at this time will not be evaluated by the Rules Engine. So the Experience Platform Mobile SDK will cache the first several imcoming events until the rules get downloaded and reevaluate those cached events with the downloaded rules.
+Since downloading rules will spend some time, serveral incoming events occured at this time will not be evaluated by the Rules Engine. So the Experience Platform Mobile SDK will cache the first several imcoming events until the rules get downloaded and re-evaluate those cached events with the downloaded rules.
 
 
 
