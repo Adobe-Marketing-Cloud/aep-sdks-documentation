@@ -84,6 +84,32 @@ commerce.setOrder(order);
 
 {% endtab %}
 
+{% tab title="iOS" %}
+
+```swift
+// Create PaymentItem which details the method of payment
+
+var paymentsItem = PaymentsItem()
+paymentsItem.currencyCode = "USD"
+paymentsItem.paymentAmount = 25.99
+paymentsItem.paymentType = "credit_card"
+  
+// create the Order
+var order = Order()
+order.currencyCode = "USD"
+order.priceTotal = 25.99
+order.payments = [paymentsItem]
+
+// create Commerce and add Purchases action and Order details
+var commerce = Commerce()
+var purchases = Purchases()
+purchases.value  = 1
+commerce.order = order
+commerce.purchases = purchases            
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Product list items
@@ -126,6 +152,32 @@ MobileSDKPlatformEventSchema xdmData = new MobileSDKPlatformEventSchema();
 xdmData.setEventType("commerce.productListAdds");
 xdmData.setCommerce(commerce);
 xdmData.setProductListItems(itemsList);       
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```swift
+var productItem = ProductListItemsItem()
+productItem.name = "red ball"
+productItem.SKU  = "625-740"
+productItem.currencyCode = "USD"
+productItem.quantity     = 1
+productItem.priceTotal   = 9.95
+  
+var itemsList: [ProductListItemsItem]
+itemsList.append(productItem)  
+
+var commerce = Commerce()
+var productViews = ProductViews()
+productViews.value = 1
+commerce.productViews = productViews
+
+var xdmData = MobileSDKPlatformEventSchema()
+xdmData.eventType = "commerce.productListAdds"
+xdmData.commerce = commerce
+xdmData.productListItems = itemsList 
 ```
 
 {% endtab %}
@@ -184,6 +236,55 @@ MobileSDKPlatformEventSchema xdmData = new MobileSDKPlatformEventSchema();
 xdmData.setEventType("commerce.purchases");
 xdmData.setCommerce(commerce);
 xdmData.setProductListItems(itemsList);    
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```swift
+// Create product item list with two products
+
+var productItem1 = ProductListItemsItem()
+productItem1.name = "red ball"
+productItem1.SKU  = "625-740"
+productItem1.currencyCode = "USD"
+productItem1.quantity     = 1
+productItem1.priceTotal   = 9.95
+
+var productItem2 = ProductListItemsItem()
+productItem2.name = "blue car"
+productItem2.SKU  = "450-495"
+productItem2.currencyCode = "USD"
+productItem2.quantity     = 1
+productItem2.priceTotal   = 12.98
+  
+var itemsList: [ProductListItemsItem]
+itemsList.append(productItem1)  
+itemsList.append(productItem2)  
+
+var paymentsItem = PaymentsItem()
+paymentsItem.currencyCode = "USD"
+paymentsItem.paymentAmount = 22.93
+paymentsItem.paymentType = "credit_card"
+  
+// create the Order
+var order = Order()
+order.currencyCode = "USD"
+order.priceTotal = 22.93
+order.payments = [paymentsItem]
+
+// create Commerce and add Purchases action and Order details
+var commerce = Commerce()
+var purchases = Purchases()
+purchases.value  = 1
+commerce.order = order
+commerce.purchases = purchases    
+
+var xdmData = MobileSDKPlatformEventSchema()
+xdmData.eventType = "commerce.purchases"
+xdmData.commerce = commerce
+xdmData.productListItems = itemsList    
 ```
 
 {% endtab %}

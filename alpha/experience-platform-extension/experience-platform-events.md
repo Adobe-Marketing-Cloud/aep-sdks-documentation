@@ -34,6 +34,11 @@ The Experience Platform extension provides the following interfaces:
 
 By using the Experience Platform Mobile extension, the **Schema** interface can be used to define the classes that are associated with your defined schema in Adobe Experience Platform.
 
+
+
+{% tabs %}
+{% tab title="Android" %}
+
 ```java
 /**
  * The interface that represents an Experience Platform XDM event data schema.
@@ -74,10 +79,47 @@ public interface Property {
 }
 ```
 
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```swift
+import Foundation
+
+/// An protocol representing a Platform XDM Event Data schema.
+public protocol XDMSchema: Encodable {
+    
+    /// Returns the version of this schema as defined in the Adobe Experience Platform.
+    /// - Returns: The version of this schema
+    var schemaVersion: String { get }
+    
+    /// Returns the identifier for this schema as defined in the Adobe Experience Platform.
+    /// The identifier is a URI where this schema is defined.
+    /// - Returns: The URI identifier for this schema
+    var schemaIdentifier:  String { get }
+    
+    /// Returns the identifier for this dataset as defined in the Adobe Experience Platform.
+    /// This is a system generated identifier for the Dataset the event belongs to.
+    /// - Returns: The  identifier as a String for this dataset
+    var datasetIdentifier: String { get }
+}
+
+extension XDMSchema {
+    func toJSONData() -> Data? {
+        try? JSONEncoder().encode(self)
+    }
+}
+```
+
+By implementing this **XDMSchema** protocol, you can define complex properties for your XDM Schema. A complex property is defined as not being a fundamental  type (Int, Float, Double, Bool or String), or Date.
+
+{% endtab %}
+{% endtabs %}
+
 When defining your custom XDM Schemas, to ensure that the Experience Platform extension successfully serializes the provided data before sending it to Adobe solutions and Experience Platform, implement these interfaces.
 
 {% hint style="info" %}
-In this apha release, the Mobile SDK provides predefined Java classes of the XDM Schema for commerce events in the new `xdmlib` library.
+In this alpha release, the Mobile SDK provides predefined classes of the XDM Schema for commerce events in the new `xdmlib` library.
 {% endhint %}
 
 
