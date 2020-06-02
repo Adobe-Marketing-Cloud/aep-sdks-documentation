@@ -54,6 +54,9 @@ Implementing two the SDKs in your app is not recommended, supported, or even tec
 
 The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
 
+### What platforms are supported?
+For a complete list of supported platforms, please see [Latest SDK Versions](../upgrading-to-aep/current-sdk-versions).
+
 ### What OS versions are supported?
 
 * Android versions 4.0 or later \(API levels 14 or later\)
