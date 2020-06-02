@@ -1,5 +1,20 @@
 # Release Notes
 
+## May 28, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.2
+
+* Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
+* Fixed the import statement in `ACPNetworkServiceOverrider.h`.
+
+### Android Core 1.5.4
+
+* Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
+* Fixed a bug where the shared state of event hub was not properly created.
+* Fixed a security issue.
+
 ## April 21, 2020
 
 The following updates were made in this release:
