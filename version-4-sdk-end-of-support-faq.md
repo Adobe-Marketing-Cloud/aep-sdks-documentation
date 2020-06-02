@@ -14,7 +14,9 @@ Last year, we announced that support for Adobe Experience Cloud's version 4 mobi
 
 We have received feedback from multiple customers that the COVID-19 pandemic is disrupting mobile-related teams, projects, and timelines. In an effort to assist you and your team during this time, we are extending support for version 4 mobile SDKs to **August 31, 2021**. 
 
-See Adobe's updates and helpful resources during [COVID-19](https://www.adobe.com/mt/covid-19-response.html). 
+{% hint style="info" %}
+See Adobe's updates and helpful resources during [COVID-19](https://www.adobe.com/mt/covid-19-response.html).
+{% endhint %}
 
 After **August 31, 2021** customers can continue to download and use the version 4 SDKs, but there will be no Customer Care support or access to forums. The [Adobe Experience Platform Mobile SDK](./) \(previously referred to as v5\) will exclusively support upcoming Adobe Experience Cloud features and functionality.
 
