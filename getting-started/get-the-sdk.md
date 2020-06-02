@@ -94,11 +94,9 @@ To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to
 {% tab title="Unity" %}
 ### C\#
 
-{% hint style="warning" %}
-Unity SDK will be released shortly. This message will be removed once the SDK is available
-{% endhint %}
-
+{% hint style="info" %}
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
+{% endhint %}
 
 #### Installation
 
