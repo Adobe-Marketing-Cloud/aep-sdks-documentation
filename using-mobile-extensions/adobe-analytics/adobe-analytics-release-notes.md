@@ -1,5 +1,12 @@
 # Release Notes
 
+## June 1, 2020
+
+### iOS Analytics 2.2.4
+
+* Fixed incorrect timezone offset calculation
+* Fixed a crash which happened in Analytics::TrackLifecycle
+
 ## March 2, 2020
 
 The following updates were made in this release:
@@ -82,4 +89,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-

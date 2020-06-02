@@ -8,6 +8,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## June 1, 2020
+
+### iOS Analytics 2.2.4
+
+* Fixed incorrect timezone offset calculation
+* Fixed a crash which happened in Analytics::TrackLifecycle
+
 ## May 28, 2020
 
 The following updates were made in this release:
@@ -1180,4 +1187,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
