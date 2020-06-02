@@ -2,14 +2,10 @@
 
 ## June 1, 2020
 
-### @adobe/react-native-acpanalytics 1.1.6
-
-* Updates iOS Analytics to 2.2.4
-
 ### iOS Analytics 2.2.4
 
-* Fixed timezone calculation bug
-* Fixed other minor issues and improved extension stability
+* Fixed incorrect timezone offset calculation
+* Fixed a crash which happened in Analytics::TrackLifecycle
 
 ## March 2, 2020
 

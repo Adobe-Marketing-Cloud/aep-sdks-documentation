@@ -12,8 +12,8 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 ### iOS Analytics 2.2.4
 
-* Fixed timezone calculation bug
-* Fixed other minor issues and improved extension stability
+* Fixed incorrect timezone offset calculation
+* Fixed a crash which happened in Analytics::TrackLifecycle
 
 ## May 19, 2020
 
