@@ -77,7 +77,7 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Apple tvOS​ | Supported | _Support coming_ |
 | React Native \(iOS & Android\) | Supported | Supported |
 | Flutter \(iOS & Android\) | Unupported | Supported |
-| Unity \(iOS & Android\)​ | Supported | _Support coming_ |
+| Unity \(iOS & Android\)​ | Supported | Supported |
 | Xamarin \(iOS & Android\)​ | Supported | Supported |
 | Cordova \(iOS & Android\)​ | Supported | Supported |
 | Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Not supported_ |
