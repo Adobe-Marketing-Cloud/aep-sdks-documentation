@@ -1,6 +1,6 @@
 # Enable debug logging
 
-Debug logging is an optional, yet critical SDK feature. It helps you ensure that the SDK is working as intended. Below is a table that explains levels of logging available and when they may be used:
+Debug logging is an optional, yet critical SDK feature. By enabling logging, you can ensure that the SDK is working as intended. The following table explains levels of logging available and the purpose they serve:
 
 | Log Level | Description |
 | :--- | :--- |
