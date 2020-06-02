@@ -12,17 +12,19 @@ There are several new features and benefits of using the Experience Platform Mob
 | Partner SDK extensions | ✔️ |  |
 | Lifecycle metrics | ✔️ | ✔️ |
 | GET/POST postbacks | ✔️ | ✔️ |
+| Rules & Data Elements | ✔️ |  |
 
 | Solution | Experience Platform SDK | 4x SDK |
 | :--- | :--- | :--- |
 | Adobe Analytics | ✔️ | ✔️ |
+| Adobe Analytics - Media Analytics | ✔️ | ✔️ |
 | Adobe Analytics - Mobile Services | Messaging and Marketing Links | ✔️ |
 | Adobe Audience Manager | ✔️ | ✔️ |
-| Adobe Campaign Classic support | ✔️ |  |
+| Adobe Campaign Classic | ✔️ |  |
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
 | Places Service | ✔️ |  |
-| \(BETA\) Project Griffon Mobile Validation | ✔️ |  |
+| Project Griffon \(BETA\) | ✔️ |  |
 
 ### Do I need additional permissions to create a mobile property in Experience Platform Launch?
 
