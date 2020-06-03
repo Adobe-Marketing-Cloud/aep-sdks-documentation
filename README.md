@@ -4,10 +4,6 @@ description: Welcome to the Adobe Experience Platform Mobile SDK documentation.
 
 # Overview
 
-## We want to help!
-
-Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
-
 ## About the Adobe Experience Platform SDK
 
 The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
@@ -16,26 +12,33 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
 
+## Key Features and Benefits of the Adobe Experience Platform Mobile SDKs 
+
+The blog below will discuss some of the key features and beneifts of the Adobe Experience Platform Mobile SDKs 
+
+[Accelerate Your Mobile Application Development with Adobe Experience Platform Mobile SDK and Launch](https://medium.com/adobetech/accelerate-your-mobile-application-development-with-adobe-experience-platform-mobile-sdk-and-launch-ed023536d611)
+
 ## Supported Platforms
 
 {% hint style="success" %}
-The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/frequently-asked-questions/current-sdk-versions.md) to ensure seamless compatibility.
+The Adobe Experience Platform Mobile SDK is good to go for [iOS/iPadOS 13 and Xcode 11](https://developer.apple.com/ios/). Please use the latest [extension versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure seamless compatibility.
 {% endhint %}
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
-* Apple iOS \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* Google Android \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
-* React Native \(see [Current SDK versions](resources/frequently-asked-questions/current-sdk-versions.md) for download links\)
+* Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
+* iOS \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
+* Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
+* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
+* Unity \(see [Current SDK versions](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-M8rC9HxYsCE0-wA2XAl/resources/upgrading-to-aep/current-sdk-versions#unity) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
+* Xamarin \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#xamarin) for download links\)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:
 
 * Apple WatchOS
 * Google Wear
-* PhoneGap / Cordova
-* Unity
-* Xamarin
 
 ## Quick Links
 

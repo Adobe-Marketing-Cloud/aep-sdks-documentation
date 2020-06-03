@@ -31,7 +31,9 @@ To get started with Audience Manager, complete these steps:
 
 #### Java
 
-`import com.adobe.marketing.mobile.*;`
+```text
+import com.adobe.marketing.mobile.*;
+```
 
 **Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endtab %}

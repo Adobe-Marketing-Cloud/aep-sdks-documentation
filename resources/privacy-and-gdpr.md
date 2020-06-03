@@ -4,7 +4,7 @@ The Experience Platform SDKs give you controls to manage consent and privacy obl
 
 Before implementing these controls, read Adobe's [GDPR documentation](https://www.adobe.io/apis/cloudplatform/gdpr.html).
 
-When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions \(for example, as set out in your agreement with Adobe\). As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
+When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
 
 ## Set and get privacy status
 
@@ -27,7 +27,7 @@ To programmatically set the privacy status for the app user:
 {% tab title="Android" %}
 #### Java
 
-### setPrivacyStatus  <a id="setprivacystatus"></a>
+### setPrivacyStatus <a id="setprivacystatus"></a>
 
 You can set the privacy status to one of the following values:
 
@@ -37,13 +37,13 @@ You can set the privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-#### Syntax  <a id="syntax-4"></a>
+#### Syntax <a id="syntax-4"></a>
 
 ```java
 public static void setPrivacyStatus(final MobilePrivacyStatus privacyStatus);
 ```
 
-#### Example  <a id="example-4"></a>
+#### Example <a id="example-4"></a>
 
 ```java
 MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
@@ -63,13 +63,13 @@ You can set privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-### Syntax  <a id="syntax-4"></a>
+### Syntax <a id="syntax-4"></a>
 
 ```objectivec
 + (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
 ```
 
-### Example  <a id="example-4"></a>
+### Example <a id="example-4"></a>
 
 ```objectivec
 [ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn
@@ -98,10 +98,13 @@ The enum representation of the privacy status that corresponds to the following 
 #### Syntax
 
 ```objectivec
-void getPrivacyStatus(final AdobeCallback callback);
+void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
 ```
 
-#### Example  <a id="example-5"></a>
+* _callback_ is invoked after the privacy status is available.
+* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
+#### Example <a id="example-5"></a>
 
 ```objectivec
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
@@ -128,7 +131,11 @@ The enum representation of the privacy status that corresponds to the following 
 
 ```java
 + (void) getPrivacyStatus: (nonnull void (^) (ACPMobilePrivacyStatus status)) callback;
++ (void) getPrivacyStatusWithCompletionHandler: (nonnull void (^) (ACPMobilePrivacyStatus status, NSError* _Nullable error)) completionHandler;
 ```
+
+* _callback_ is invoked after the privacy status is available.
+* _completionHandler_ is invoked with the current privacy status, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -139,6 +146,15 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
           case ACPMobilePrivacyStatusOptIn: NSLog(@"Privacy Status: Opt-In");               break; 
           } 
 }];
+
+
+[ACPCore getPrivacyStatusWithCompletionHandler:^(ACPMobilePrivacyStatus status, NSError * _Nullable error) {
+        if (error) {
+            // handle error here
+        } else {
+            // handle the retrieved privacy status
+        }
+    }];
 ```
 {% endtab %}
 {% endtabs %}
@@ -169,8 +185,11 @@ You must call the API below and retrieve identities stored in the SDK, **before*
 #### Syntax
 
 ```java
-MobileCore.getSdkIdentities()
+void getSdkIdentities(AdobeCallback<String> callback);
 ```
+
+* _callback_ is invoked with the SDK identities as a JSON string.
+* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 #### Example
 
@@ -190,8 +209,12 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 #### Syntax
 
 ```objectivec
-[ACPCore getSdkIdentities:]
++ (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
++ (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
 ```
+
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
 
 #### Example
 
@@ -199,6 +222,15 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 [ACPCore getSdkIdentities:^(NSString * _Nullable content){
     NSLog(content);
 }];
+
+[ACPCore getSdkIdentitiesWithCompletionHandler:^(NSString * _Nullable content, NSError * _Nullable error) {
+        if (error) {
+            // handle error here
+        } else {
+            // handle the retrieved identities
+            NSLog(content);
+        }
+    }];
 ```
 {% endtab %}
 {% endtabs %}

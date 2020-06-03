@@ -1,28 +1,12 @@
 # Configuration API reference
 
-## Configure with the Experience Platform Launch App ID
+## configureWithAppID
 
-Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
-
-{% hint style="success" %}
-We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID.
-{% endhint %}
-
-After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. Subsequent requests for configuration causes the continued use of the cached configuration, unless configuration changes. If a network error occurs while downloading the configuration file, the local cache is used.
-
-No configuration changes are made when the following conditions are met:
-
-* No change from cached configuration.
-* Configuration retrieval fails due to network, or other, considerations.
-* A file-read or parsing errors occurs.
-
-The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
+This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 {% tabs %}
-{% tab title="Android" %}
-### configureWithAppID
 
-Causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
+This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 #### Syntax
 
@@ -32,15 +16,11 @@ public static void configureWithAppID(final String appId);
 
 #### Example
 
+#### Java
+
 ```java
-MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
+MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
-{% endtab %}
-
-{% tab title="iOS" %}
-### configureWithAppID
-
-Causes the SDK to download the configuration for the provided App ID and apply it to the current session.
 
 #### Syntax
 
@@ -50,64 +30,73 @@ Causes the SDK to download the configuration for the provided App ID and apply i
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 
-{% hint style="info" %}
-Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
-{% endhint %}
+{% tabs %}
+{% tab title="Unity" %}
+#### Syntax
+
+```csharp
+public static void ConfigureWithAppID(string appId)
+```
+
+#### Example
+
+#### C\#
+
+```csharp
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
 {% endtab %}
 
-{% tab title="React Native" %}
-#### JavaScript
+{% tab title="Xamarin" %}
+#### Android Syntax
 
-### configureWithAppID
+```csharp
+public unsafe static void ConfigureWithAppID (string appId);
+```
 
-Configure the SDK by downloading the remote configuration file hosted on Adobe servers specified by the given application ID. The configuration file is cached once downloaded and used in subsequent calls to this API. If the remote file is updated after the first download, the updated file is downloaded and replaces the cached file.
+#### iOS Syntax
 
-The appid is preserved, and on application restarts, the remote configuration file specified by appid is downloaded and applied to the SDK.
+```csharp
+public static void ConfigureWithAppID (string appid);
+```
 
-On failure to download the remote configuration file, the SDK is configured using the cached file if it exists, or if no cache file exists then the existing configuration remains unchanged.
+#### Example
 
-Calls to this API will replace any existing SDK configuration except those set using `ACPCore.updateConfiguration` or `ACPCore.setPrivacyStatus`. Configuration updates made using `ACPCore.updateConfiguration` and `ACPCore.setPrivacyStatus` bare always applied on top of configuration changes made using this API.
+#### C\#
 
-`@param {String?} appId` a unique identifier assigned to the app instance by the Adobe Mobile Services. It is automatically added to the ADBMobile JSON file when downloaded from the Adobe Mobile Services UI and can be found in Manage App Settings. A value of `nil` has no effect.
-
-```jsx
-import {ACPCore} from '@adobe/react-native-acpcore';
-
-initSDK() { 
-    ACPCore.configureWithAppId("yourAppId");
-    ACPCore.start();
-}
+```text
+ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 {% endtabs %}
 
-## Programmatic updates to configuration
+## updateConfiguration
 
-You can also update the configuration programmatically by passing configuration keys and values to override existing configuration.
+You can also update the configuration programmatically by passing configuration keys and values to override the existing configuration.
 
 {% hint style="info" %}
 Keys that are not found on the current configuration are added when this method is followed. Null values are allowed and replace existing configuration values.
 {% endhint %}
 
 {% hint style="warning" %}
-Do not use this API to update build.environment or any key with environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
+Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-### updateConfiguration
+### updateConfiguration <a id="updateConfiguration"></a>
 
 #### Syntax
 
@@ -117,9 +106,11 @@ public static void updateConfiguration(final Map configMap);
 
 #### Example
 
+#### Java
+
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("global.ssl", true);
+data.put("global.privacy", "optedout");
 MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
@@ -135,17 +126,17 @@ MobileCore.updateConfiguration(data);
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
-NSDictionary *updatedConfig = @{@"global.ssl":@YES};
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
-let updatedConfig = ["global.ssl":true]
+let updatedConfig = ["global.privacy":"optedout"]
 ACPCore.updateConfiguration(updatedConfig)
 ```
 {% endtab %}
@@ -156,30 +147,75 @@ ACPCore.updateConfiguration(updatedConfig)
 ### updateConfiguration
 
 ```jsx
-ACPCore.updateConfiguration({"yourConfigKey": "yourConfigValue"});
+ACPCore.updateConfiguration({"global.privacy":"optedout"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+### updateConfiguration
+
+```dart
+FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+## Javascript
+
+Update SDK configuration
+
+```javascript
+ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+## C\#
+
+Update SDK configuration
+
+```csharp
+var dict = new Dictionary<string, object>();
+dict.Add("newConfigKey", "newConfigValue");
+ACPCore.UpdateConfiguration(dict);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+## C\#
+
+Update SDK configuration
+
+**iOS**
+
+```csharp
+ var config = new NSMutableDictionary<NSString, NSObject>
+ {
+   ["newConfigKey"] = new NSString("newConfigValue")
+ };
+ACPCore.UpdateConfiguration(config);
+```
+
+**Android**
+
+```csharp
+var config = new Dictionary<string, Java.Lang.Object>();
+config.Add("newConfigKey", "newConfigValue");
+ACPCore.UpdateConfiguration(config);
 ```
 {% endtab %}
 {% endtabs %}
 
-## Using a bundled file configuration
+## configureWithFileInPath
 
 You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
-
-To download the JSON configuration file, use the following URL:
-
-`https://assets.adobedtm.com/PASTE-LAUNCH-ENVIRONMENT-ID.json`
-
-* In iOS, the `ADBMobileConfig.json` file can be placed anywhere that it is accessible in your bundle.
-* In Android, the `ADBMobileConfig.json` file must be placed in the assets folder.
-
-You can also load a different `ADBMobileConfig.json` file by using the `ConfigureWithFileInPath` method. The Adobe Experience Platform SDKs will attempt to load the file from the given path and parse its JSON contents. Previous programmatic configuration changes that were set by using the `UpdateConfiguration` method are applied on the bundled file's configuration before setting the new configuration to the Adobe Experience Platform SDKs. If a file-read error or JSON parsing error occurs, no configuration changes are made.
 
 To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-### configureWithFileInPath
-
 #### Syntax
 
 ```java
@@ -188,14 +224,14 @@ public static void configureWithFileInPath(final String filePath);
 
 #### Example
 
+#### Java
+
 ```java
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-### configureWithFileInPath
-
 #### Syntax
 
 ```objectivec
@@ -219,15 +255,25 @@ ACPCore.configureWithFile(inPath: filePath)
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-#### JavaScript
+{% tab title="Xamarin" %}
+#### Android Syntax
 
-### configureWithFileInPath
+```csharp
+public unsafe static void ConfigureWithFileInPath (string filepath);
+```
 
-```jsx
- configureWithFileInPath(filepath?: String) {
-   ACPCore.configureWithFileInPath(filepath);
-  },
+#### iOS Syntax
+
+```csharp
+public static void ConfigureWithFileInPath (string filepath);
+```
+
+#### Example
+
+#### C\#
+
+```csharp
+ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 {% endtabs %}

@@ -2,7 +2,7 @@
 
 This page details SDK API changes between the Experience Platform SDKs and 4x SDKs.
 
-## Mobile Core APIs    <a id="audience-manager-extension-apis"></a>
+## Mobile Core APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Mobile Core API reference](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
 
@@ -29,7 +29,7 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | :--- | :--- |
 | trackActionFromBackground \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) | Deprecated |
 | trackLocation:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/geo_poi.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/geo_poi.html)\) | Deprecated |
-| trackBeacon:Data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Deprecated |
+| trackBeacon:Data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Support modified, [see guide](../user-guides/track-beacon.md) |
 | trackingClearCurrentBeacon \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Deprecated |
 | registerAdobeDataCallback: \([Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
 | lifetimeValue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/lifetime_value.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/lifetime_value.html)\) | Deprecated |
@@ -38,11 +38,8 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | trackTimedActionUpdate: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | trackTimedActionEnd: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
 | trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
+| trackPushMessageClickThrough:userInfo\([iOS](https://docs.adobe.com/content/help/en/mobile-services/ios/messaging-ios/push-messaging/push-messaging.html) \| [Android](https://docs.adobe.com/content/help/en/mobile-services/android/messaging-android/push-messaging/push-messaging.html)\) | Support modified, [see guide](https://aep-sdks.gitbook.io/docs/resources/frequently-asked-questions#how-can-i-track-user-engagement-of-push-notifications-using-the-experience-platform-mobile-sdk) |
 | Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
-
-{% hint style="info" %}
-For methods to send beacon tracking data to Adobe Analytics, see this [guide](../user-guides/track-beacon.md)
-{% endhint %}
 
 ## Lifecycle extension APIs
 
@@ -74,17 +71,17 @@ For more information, see [Identity API reference](../../using-mobile-extensions
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| [setPushIdentifier:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#set-the-push-identifier) | setPushIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [setAdvertisingIdentifier:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#set-an-advertising-identifier) | setAdvertisingIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [getMarketingCloudID:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-experience-cloud-ids) | visitorMarketingCloudID \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifiers:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiers \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifiers:authentication:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiers:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifier:identifier:authentication:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#synch-identifiers) | visitorSyncIdentifiersWithType:identifier:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [getIdentifiers](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | visitorGetIDs \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [appendToURL:withCallback:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#append-visitor-data-to-a-url) | visitorAppendToURL: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [getUrlVariables](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#getUrlVariablesTitle) | visitorGetUrlVariablesAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/hybrid_app.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/hybrid_app.html)\) |
+| [setPushIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setpushidentifier) | setPushIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [setAdvertisingIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setadvertisingidentifier) | setAdvertisingIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [getExperienceCloudId:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getexperiencecloudid) | visitorMarketingCloudID \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifiers:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers) | visitorSyncIdentifiers \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifiers:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers-overloaded) | visitorSyncIdentifiers:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [syncIdentifier:identifier:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifier) | visitorSyncIdentifiersWithType:identifier:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [getIdentifiers](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getidentifiers) | visitorGetIDs \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [appendToURL:withCallback:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl) | visitorAppendToURL: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
+| [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables) | visitorGetUrlVariablesAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/hybrid_app.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/hybrid_app.html)\) |
 
-## Adobe Analytics extension APIs    <a id="audience-manager-extension-apis"></a>
+## Adobe Analytics extension APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Analytics API reference](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md).
 
@@ -99,11 +96,11 @@ For more information, see [Analytics API reference](../../using-mobile-extension
 | clearQueue | trackingClearQueue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
 | [getQueueSize](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits-1) | trackingGetQueueSize \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
 
-## Adobe Audience Manager extension APIs    <a id="audience-manager-extension-apis"></a>
+## Adobe Audience Manager extension APIs <a id="audience-manager-extension-apis"></a>
 
 For more information, see [Audience Manager Extension API Reference](../../using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md).
 
-### Supported APIs    <a id="supported-apis"></a>
+### Supported APIs <a id="supported-apis"></a>
 
 | Experience Platform SDK | 4x SDK \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) |
 | :--- | :--- |
@@ -112,7 +109,7 @@ For more information, see [Audience Manager Extension API Reference](../../using
 | [​signalWithData:callback:​](../../using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md#send-signals-to-audience-manager) | audienceSignalWithData:callback |
 | [​reset​](../../using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md#reset-identifiers-and-profiles) | audienceReset |
 
-### Deprecated APIs    <a id="deprecated-apis"></a>
+### Deprecated APIs <a id="deprecated-apis"></a>
 
 | 4x SDK | Notes |
 | :--- | :--- |

@@ -3,106 +3,14 @@
 {% hint style="warning" %}
 In version 4 of the iOS SDK, this implementation was completed automatically.
 
-When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
-
-For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
+When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics. For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
 {% endhint %}
 
-You can track lifecycle to learn how frequently and how long your app is being used.
+## Implementing Lifecycle metrics in iOS
 
-**Tip:** The code snippets in this section are only examples. Your final implementation will probably contain additional code that is specific to your app.
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
-**Important**: The Lifecycle extension supports the `lifecycleStart:` and `lifecyclePause` APIs from the `ACPCore` extension to track application lifecycle for the Adobe SDK.
-
-### Implementing Lifecycle metrics in iOS
-
-After you enable lifecycle, each time your app is launched, one hit is sent to measure launches, upgrades, sessions, engaged users, and many other metrics.
-
-To implement lifecycle metrics, complete the following steps:
-
-1. Import the library:
-
-   ```objectivec
-   #import "ACPLifecycle.h"
-   #import "ACPCore.h"
-   ```
-
-2. Register the Lifecycle extension: In your app's `didFinishLaunchingWithOptions` function register the Lifecycle extensions.
-
-   ```objectivec
-   - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-       [ACPLifecycle registerExtension];
-
-       // Override point for customization after application launch.
-       return YES;
-   }
-   ```
-
-## APIs
-
-Here are the APIs for the Lifecycle extension:
-
-#### Lifecycle Start
-
-The `lifecycleStart:` method tells the SDK that the user is launching the app. It should be called from both entry points in your `AppDelegate`:
-
-* `application:didFinishLaunchingWithOptions:`  
-* `applicationWillEnterForeground:`
-
-Here are code samples for `lifecycleStart` in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // optionally pass in additional lifecycle data as a dictionary parameter in this call
-    [ACPCore lifecycleStart:nil];
-
-    return YES;
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // additional lifecycle data may also be passed here!
-    [ACPCore lifecycleStart:nil];
-}
-```
-
-**Swift**
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    ACPCore.lifecycleStart(nil)
-    return true
-}
-
-func applicationWillEnterForeground(_ application: UIApplication) {
-    ACPCore.lifecycleStart(nil)
-}
-```
-
-#### Lifecycle Pause
-
-The SDK needs to know when your app has entered the background to properly calculate your lifecycle metrics. The `lifecyclePause` method should be called when your user naturally backgrounds your application, in the `applicationDidEnterBackground:` method.
-
-Here are some examples for `lifecyclePause` in Objective-C and Swift:
-
-**Objective-C**
-
-```objectivec
-- (void) applicationDidEnterBackground:(UIApplication *)application {
-    [ACPCore lifecyclePause];
-}
-```
-
-**Swift**
-
-```swift
-func applicationDidEnterBackground(_ application: UIApplication) {    
-    ACPCore.lifecyclePause()
-}
-```
-
-### Tracking App Crashes in iOS
+## Tracking app crashes in iOS
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
@@ -140,9 +48,11 @@ iOS uses system notifications that allow developers to track and respond to diff
 
 **Why does Adobe measure crashes this way?**
 
-This approach of measuring crashes provides a high-level answer to the question, Did the user exit my app intentionally? Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
+This approach of measuring crashes provides a high-level answer to the question, _Did the user exit my app intentionally?_
 
-### Collecting Additional Data with Lifecycle
+Crash reporting libraries provided by companies such as Apteligent \(formerly Crittercism\) use a global `NSException` handler to provide more detailed crash reporting. Your app is not allowed to have more than one of these kinds of handlers. Adobe decided to not implement a global `NSException` handler to prevent build errors, knowing that our customers might be using other crash reporting providers.
+
+## Collecting additional data with Lifecycle
 
 When calling `lifecycleStart:`, you can optionally pass a dictionary of additional data that will be attached to the lifecycle event.
 

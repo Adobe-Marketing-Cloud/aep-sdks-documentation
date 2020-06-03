@@ -1,27 +1,27 @@
-# Adobe Analytics & Project Griffon
+# Adobe Analytics
 
 ## Overview
 
-The Adobe Analytics view is focused, yet richer view of SDK events only related to your Adobe Analytics implementation. The view now shows the action/state name and event “status” along with a specifically formatted detail view. 
+The integration with Adobe Analytics provides a richer view of SDK events to users debugging and validating their Adobe Analytics implementation. The view now shows lifecycle and action/state events sent to Adobe Analytics from the [Adobe Experience Platform SDK](../../../using-mobile-extensions/adobe-analytics/). The view also features "response" detail that provides information on how the events were processed after the application of respective report suite's processing rules. 
 
-Status tells you when an SDK event is generated \(processed\), if the SDK has made a network request with Adobe Analytics \(queued\), and if we’ve returned post-processing information from Adobe Analytics about that event \(validated\).
+![](../../../.gitbook/assets/aa-loop.gif)
 
-Generally speaking, for a given Analytics track event – the detailed view contains 3 valuable pieces:
+If the SDK made a network request with Adobe Analytics \(queued\), and if post-processing information is returned from Adobe Analytics about that event \(validated\), the status tells you when an SDK event is generated \(processed\).
 
-* Originating SDK Analytics request event
-* OOTB meta and context data from the request \(such as report suite ID, SDK extension versions, OOTB context data, etc.\) and
-* Post-processed information on the Analytics event \(contains mapping of revars, evars, props, etc.\).
+For an Analytics track event, the detailed view contains the following valuable parts:
+
+* An originating SDK Analytics request event.
+* OOTB meta and context data from the request, such as report suite ID, SDK extension versions, OOTB context data, and so on.
+* Post-processed information on the Analytics event that contains the mapping of revars, evars, props, and so on.
 
 ## Using Project Griffon for Adobe Analytics
 
-Follow these steps to get started:
+To get started, complete the following steps:
 
-1. Ensure you have implemented the latest versions of [Project Griffon](../set-up-project-griffon.md) and [Adobe Analytics](../../../using-mobile-extensions/adobe-analytics/) extensions
-2. Visit https://experience.adobe.com/griffon \(not griffon.adobe.com\).
-3. Connect your app to a Project Griffon session
-4. Select the new Adobe Analytics view \(per the screenshot below\) to view your events.
+1. Ensure that you implemented the latest versions of the [Project Griffon](../set-up-project-griffon/) and [Adobe Analytics](../../../using-mobile-extensions/adobe-analytics/) extensions.
+2. Go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) \(**not** griffon.adobe.com\).
+3. Connect your app to a Project Griffon session. For more information, see [Connect your device](https://app.gitbook.com/@aep-sdks/s/docs/beta/project-griffon/using-project-griffon#2-connect-your-device).
+4. To view your events, select the **Adobe Analytics** view.
 
 ![](../../../.gitbook/assets/screen-shot-2020-01-13-at-12.04.14-pm.png)
-
-
 

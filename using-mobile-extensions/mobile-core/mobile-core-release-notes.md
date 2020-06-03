@@ -1,5 +1,163 @@
 # Release Notes
 
+## May 28, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.2
+
+* Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
+* Fixed the import statement in `ACPNetworkServiceOverrider.h`.
+
+### Android Core 1.5.4
+
+* Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
+* Fixed a bug where the shared state of event hub was not properly created.
+* Fixed a security issue.
+
+## April 21, 2020
+
+The following updates were made in this release:
+
+### iOS Core 1.6.1
+
+* Added an internal enum for Cordova support.
+
+### Android Core 1.5.3
+
+* Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
+
+## April 9, 2020
+
+The following updates were made in this release:
+
+### Android Core 1.5.2
+
+* Fixed several security issues.
+* Improved existing log messages and added additional logging to assist with debugging.
+
+### Android Lifecycle 1.0.3
+
+* Fixed a bug where the `Resolution` was captured in non-English numerals.
+
+## April 2, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.6.0
+
+* Added support for overriding internal network stack with customer-provided implementation. For more information, see [Override network stack](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/platform-services#ios).
+
+## March 16, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.5.1
+
+* Fixed a crash which happened in `ADBJsonType::Get`.
+* Fixed a crash which happened in `EventHubInner::CreateOrUpdateSharedStateCommon`, the crash was introduced on the version 2.5.0.
+* Fixed an internal issue where the SDK failed to create a Json array if it contains empty items.
+* Improved log messages.
+
+### iOS Identity 2.2.1
+
+* Fixed an issue where all Identity APIs with callbacks were subject to a timeout. Only Identity APIs which use a completionHandler callback are subject to a timeout.
+* Improved existing log messages and added additional logging to assist with debugging.
+
+### iOS Signal 2.0.4
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Improved log messages.
+
+### iOS Lifecycle 2.0.4
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Improved log messages.
+
+## February 27, 2020
+
+The following updates were made in this release:
+
+### Android Core 1.5.1
+
+* Fixed a bug where AppID used non-arabic numbers as app versions.
+* Fixed a bug where app version was not included in AppID on Android 9 or above devices.
+* Added Wrapper Type for Flutter.
+
+### Android Signal 1.0.3
+
+* Logging improvement
+* Report extension details to Mobile Core for improved logging and Griffon support.
+
+### Android Lifecycle 1.0.3
+
+* Logging improvement
+* Report extension details to Mobile Core for improved logging and Griffon support.
+
+## February 19, 2020
+
+The following updates were made in this release:
+
+### iOS Core 2.5.0
+
+* Mobile Core now shares the list of enabled extensions and their meta data through shared state.
+* Added Wrapper Type for Flutter.
+* Exposed eventNumber and eventTimestamp in ACPExtensionEvent class.
+* Added the following API to support the completion handler with an nullable `NSError` object:
+  * `getPrivacyStatusWithCompletionHandler`
+  * `getSdkIdentitiesWithCompletionHandler`
+
+### iOS Identity 2.2.0
+
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Added the following APIs to support the completionHandler callback that is available in iOS ACPCore version 2.5.0:
+
+  * `appendToURL:withCompletionHandler`
+  * `getUrlVariablesWithCompletionHandler`
+  * `getIdentifiersWithCompletionHandler`
+  * `getExperienceCloudIdWithCompletionHandler`
+
+  When the `completionHandler` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `NSError` is returned.
+
+## February 4, 2020
+
+The following updates were made in this release:
+
+### Android Core 1.5.0
+
+* Fixed a cursor leak.
+* Mobile Core now shares the list of enabled extensions and their meta data through shared state.
+* Fixed an issue where the advertising identifier was duplicated in the response to the `MobileCore.getSDKIdentifiers` API.
+* Added support for overriding internal network stack with customer-provided code.
+* Added a new interface with failure callback, `AdobeCallbackWithError`, which can be used with the `MobileCore.getPrivacyStatus`, `MobileCore.getSdkIdentities` methods.
+
+  We plan to gradually add the ability to enable failure callback to the other extensions.
+
+### Android Identity 1.2.0
+
+* Added support for the optional `AdobeCallbackWithError` callback that is available in Android Core version 1.5.0 on the following APIs:
+
+  * `appendVisitorInfoForURL`
+  * `getUrlVariables`
+  * `getIdentifiers`
+  * `getExperienceCloudId`
+
+  When the `AdobeCallbackWithError` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `AdobeError` is returned.
+
+Released with sdk-core version 1.5.0.
+
+## January 27, 2020
+
+The following updates were made in this release:
+
+**iOS Core 2.4.0**
+
+* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
+* Fixed an issue where the advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
+* Fixed an issue where the SDK was trying to download the rules multipile times immediately after app launch.
+* Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
+* Fixed a bug where the iOS fullscreen message was unable to load cached images.
+
 ## November 15, 2019
 
 The following updates were made in this release:
