@@ -361,7 +361,7 @@ private void OnApplicationPause(bool pauseStatus)
    public override void DidEnterBackground(UIApplication uiApplication)
    {
      base.DidEnterBackground(uiApplication);
-     ACPCore.LifecycleStart(null);
+     ACPCore.LifecyclePause();
    }
    ```
 
