@@ -14,7 +14,7 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 
 ## Why use the Adobe Experience Platform Mobile SDK?
 
-The article below highlights key features and beneifts of the Adobe Experience Platform Mobile SDK
+The article below highlights key features and benefts of the Adobe Experience Platform Mobile SDK
 
 [Accelerate Your Mobile Application Development with Adobe Experience Platform Mobile SDK and Launch](https://medium.com/adobetech/accelerate-your-mobile-application-development-with-adobe-experience-platform-mobile-sdk-and-launch-ed023536d611)
 
