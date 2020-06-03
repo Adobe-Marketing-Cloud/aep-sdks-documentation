@@ -1,12 +1,8 @@
-# Next steps
+# Implement extensions
 
-Now that you have initialized the SDK and the Mobile Core extension, you can start implementing extensions that will help you use the Adobe Experience Platform SDKs or third-party vendor functionality in your apps.
+Now that you have added and initialized the Experience Platform SDK and added the Mobile Core and Profile extensions to your mobile application, you can start implementing extensions that will help you use Adobe or Adobe-partner solutions and services functionality in your mobile apps.
 
-To get started, select an extension:
-
-* Set up [Adobe Analytics](../using-mobile-extensions/adobe-analytics/)
-* Set up [Adobe Audience Manager](../using-mobile-extensions/adobe-audience-manager/)
-* Set up [Adobe Target](../using-mobile-extensions/adobe-target/)
+To get started, see the **Using the Mobile Extensions** section in the left pane.
 
 ## Get help
 

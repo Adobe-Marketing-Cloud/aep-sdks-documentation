@@ -1,64 +1,10 @@
 # Lifecycle extension in Android
 
-You can track lifecycle to learn how frequently and how long your app is being used.
+## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
 
-**Tip:** The code snippets in this section are only examples. Your final implementation will probably contain additional code that is specific to your app.
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
-**Important**: The Lifecycle extension supports the `MobileCore.lifecycleStart()` and `MobileCore.lifecyclePause()` APIs to track application lifecycle for the Adobe SDK.
-
-## Implementing Lifecycle Metrics in Android  <a id="implementing-lifecycle-metrics-in-android"></a>
-
-Tracking lifecycle requires that the Adobe Experience Cloud Platform SDKs have a valid configuration. For more information, see [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference).
-
-To implement lifecycle metrics, complete the following steps in each Activity of your application:
-
-1. Import the library:
-
-   ```java
-      import com.adobe.marketing.mobile.*;
-   ```
-
-2. Register the Lifecycle extension:
-
-   ```java
-   public class TargetApp extends Application {​ 
-   @Override 
-   public void onCreate() {     
-       super.onCreate();
-       MobileCore.setApplication(this);​     
-       try {
-           Lifecycle.registerExtension();     
-           } catch (Exception e) {         
-               //Log the exception     
-           } 
-    }
-   }
-   ```
-
-3. In the `onResume` function, start the lifecycle data collection:
-
-   ```java
-      @Override
-      public void onResume() {
-         MobileCore.setApplication(getApplication());      
-         MobileCore.lifecycleStart(null);   
-      }
-   ```
-
-   **Important:** Setting the application is only necessary on Activities that are entry points for your application. However, setting the application on each Activity has no negative impact and also guarantees that the SDK will always have the necessary reference to your application. As a result, we recommend calling the `setApplication` method in each of your Activities.
-
-4. In the `onPause` function, pause the lifecycle data collection:
-
-   ```java
-      @Override   
-      public void onPause() {      
-         MobileCore.lifecyclePause();   
-      }
-   ```
-
-**Important:** To ensure accurate session and crash reporting, you must add these calls to every activity.
-
-## Tracking App Crashes in Android  <a id="tracking-app-crashes-in-android"></a>
+## Tracking app crashes in Android <a id="tracking-app-crashes-in-android"></a>
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
@@ -86,7 +32,7 @@ This Android lifecycle illustration was created and shared by the [Android Open 
 
 Fragments have application lifecycle events that are similar to Activities. However, a Fragment cannot be active without being attached to an Activity.
 
-## Implementing Global Lifecycle Callbacks  <a id="implementing-global-lifecycle-callbacks"></a>
+## Implementing Global Lifecycle Callbacks <a id="implementing-global-lifecycle-callbacks"></a>
 
 Starting with API Level 14, Android allows global lifecycle callbacks for activities. For more information, see the [_Android Developers Guide_](https://developer.android.com/reference/android/app/Application#registerActivityLifecycleCallbacks%28android.app.Application.ActivityLifecycleCallbacks).
 

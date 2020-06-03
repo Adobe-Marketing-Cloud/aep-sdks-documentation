@@ -10,7 +10,7 @@ The `prefetchContent` API signature has changed. We recommend that you  use para
 {% tab title="Android" %}
 #### Java
 
-#### Using the `TargetPrefetch` Builder
+#### Using the `TargetPrefetch` builder
 
 The `TargetPrefetch` builder helps create a `TargetPrefetch` instance with the specified data. The returned instance can be used with `prefetchContent`, which accepts a `TargetPrefetch` object list to prefetch offers for the specified mbox locations.
 
