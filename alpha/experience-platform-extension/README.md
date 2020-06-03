@@ -1,15 +1,13 @@
-# Experience Platform Extension overview
+# Adobe Experience Platform - Experience Edge - Mobile Extension
 
-The Experience Platform Mobile extension allows you to send data to the Adobe Experience Platform from a mobile application. This extension is available for both Android and iOS platforms.
+The Adobe Experience Platform - Experience Edge - Mobile extension allows you to deploy Adobe Experience Cloud solutions leveraging Adobe's new Experience Edge (unified network edge) in your mobile application. This extension is currently in **Beta** and supports both Android (Java) and iOS (Swift) platforms.
 
 {% hint style="warning" %}
-This section provides information about the Experience Platform Mobile extension, which is in Alpha and **should not** be used for production use cases.
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
-
-This extension allows you to implement Adobe Experience Cloud capabilities in a more robust way, serve multiple Adobe solutions though one network call, and simultaneously forward this information to the Adobe Experience Platform.
 
 To set up the Experience Platform Mobile extension, follow these steps:
 
-- [Adobe Data platform setup](./experience-platform-setup.md)
-- [Set up the Mobile SDK](./set-up-the-sdk.md)
+- [Setup Adobe Experience Platform](./experience-platform-setup.md)
+- [Setup Adobe Experience Platform Mobile SDK](./set-up-the-sdk.md)
 
