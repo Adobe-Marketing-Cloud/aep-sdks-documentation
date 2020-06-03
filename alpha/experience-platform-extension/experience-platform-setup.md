@@ -21,4 +21,4 @@ To use the Mobile SDK, you need a configuration ID, which ensures that your data
 - Schema ID, which is available at the end of the URL of the schema creation/viewing page.
 - Friendly Name, which is the name that will be used in future UIs for this configuration.
 
-After you received your configuration ID, you can continue with the [Set  up the SDK](./set-up-the-sdk) steps.
+After you received your configuration ID, you can continue with the [Set up the SDK](./set-up-the-sdk) steps.

@@ -1,6 +1,6 @@
 # Experience Platform Extension overview
 
-The Experience Platform Mobile extension allows you to send data to the Adobe Experience Platform from a mobile application. This extension is currently only available in Android; iOS support is in development.
+The Experience Platform Mobile extension allows you to send data to the Adobe Experience Platform from a mobile application. This extension is available for both Android and iOS platforms.
 
 {% hint style="warning" %}
 This section provides information about the Experience Platform Mobile extension, which is in Alpha and **should not** be used for production use cases.
