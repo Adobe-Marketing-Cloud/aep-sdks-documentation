@@ -4,7 +4,7 @@ description: Welcome to the Adobe Experience Platform Mobile SDK documentation.
 
 # Overview
 
-## About the Adobe Experience Platform SDK
+## About the Adobe Experience Platform Mobile SDK?
 
 The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
 
@@ -12,9 +12,9 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
 
-## Key Features and Benefits of the Adobe Experience Platform Mobile SDKs 
+## Why use the Adobe Experience Platform Mobile SDK?
 
-The blog below will discuss some of the key features and beneifts of the Adobe Experience Platform Mobile SDKs 
+The article below highlights key features and beneifts of the Adobe Experience Platform Mobile SDK
 
 [Accelerate Your Mobile Application Development with Adobe Experience Platform Mobile SDK and Launch](https://medium.com/adobetech/accelerate-your-mobile-application-development-with-adobe-experience-platform-mobile-sdk-and-launch-ed023536d611)
 
