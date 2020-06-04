@@ -40,7 +40,7 @@ An extension is an integration built by Adobe or an Adobe partner that adds new 
 
 ## Set up your extensions
 
-1. In Experience Platform Launch. on the details page for your mobile property, click the **Extensions** tab.
+1. In Experience Platform Launch, on the details page for your mobile property, click the **Extensions** tab.
 
    The **Mobile Core** and **Profile** extensions are installed by default.
 
