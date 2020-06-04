@@ -73,7 +73,7 @@ For more information about the UUID and other Audience Manager identifiers, see 
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the ECID is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
 #### **Syntax**
 
@@ -188,7 +188,7 @@ This API resets the Audience Manager UUID and purges the current visitor profile
 
 #### **Examples**
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [ACPAudience reset];
@@ -255,7 +255,7 @@ This API returns the visitor profile that was most recently obtained. For easy a
 
 #### **Example**
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){

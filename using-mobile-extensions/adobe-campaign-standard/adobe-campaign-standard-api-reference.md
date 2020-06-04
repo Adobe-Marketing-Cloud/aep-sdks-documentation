@@ -6,7 +6,6 @@ To return the current version of the Campaign extension, use the following APIs:
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 #### Syntax
@@ -29,17 +28,15 @@ Campaign.extensionVersion();
 + (nonnull NSString*) extensionVersion;
 ```
 
-#### Objective-C
+#### Examples
 
-#### Example
+#### Objective C
 
 ```objectivec
 NSLog(@"ACPCampaign version: %@", [ACPCampaign extensionVersion]);
 ```
 
 #### Swift
-
-#### Example
 
 ```swift
 print("ACPCampaign version: ", ACPCampaign.extensionVersion())
@@ -69,7 +66,6 @@ This method clears the cached rules from the previous download before triggering
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 #### Syntax
@@ -83,18 +79,16 @@ public static void resetLinkageFields()
 ```java
 Campaign.resetLinkageFields()
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Syntax
 
 ```objectivec
 + (void) resetLinkageFields;
 ```
 
-#### Objective-C
+#### Objective C
 
 #### Example
 
@@ -107,11 +101,9 @@ Campaign.resetLinkageFields()
 ```swift
 ACPCampaign.resetLinkageFields()
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
 #### Syntax
@@ -125,7 +117,6 @@ resetLinkageFields();
 ```javascript
 ACPCampaign.resetLinkageFields();
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -133,15 +124,14 @@ ACPCampaign.resetLinkageFields();
 
 This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost in the following scenarios:
 
-- When an application crash event occurs.
-- After a graceful termination of the application.
-- When the privacy status is updated to `OPT_OUT`. For more information, see [Set and Get Privacy Status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status)
+* When an application crash event occurs.
+* After a graceful termination of the application.
+* When the privacy status is updated to `OPT_OUT`.  For more information, see [Set and Get Privacy Status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status)
 
-For more information on setting up linkage fields in Campaign, see [Extending the subscriptions to an application resource](https://docs.adobe.com/content/help/en/campaign-standard/using/developing/use-cases--extending-resources/extending-the-subscriptions-to-an-application-resource.html).
+For more information about setting up linkage fields in Campaign, see [Extending the subscriptions to an application resource](https://docs.adobe.com/content/help/en/campaign-standard/using/developing/use-cases--extending-resources/extending-the-subscriptions-to-an-application-resource.html).
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 #### Syntax
@@ -150,7 +140,7 @@ For more information on setting up linkage fields in Campaign, see [Extending th
 public static void setLinkageFields(final Map<String, String> linkageFields)
 ```
 
-- *linkageFields* is a map that contains the linkage field key-value pairs.
+* _linkageFields_ is a map that contains the linkage field key-value pairs.
 
 #### Example
 
@@ -170,11 +160,11 @@ Campaign.setLinkageFields(linkageFields);
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
-- *linkageFields* is a dictionary that contains the linkage field key-value pairs.
+* _linkageFields_ is a dictionary that contains the linkage field key-value pairs.
 
-#### Example
+#### Examples
 
-#### Objective-C
+#### Objective C
 
 ```objectivec
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
@@ -200,7 +190,7 @@ ACPCampaign.setLinkageFields(linkageFields)
 setLinkageFields(linkageFields: { string: string })
 ```
 
-- *linkageFields* is a map that contains the linkage field key-value pairs.
+* _linkageFields_ is a map that contains the linkage field key-value pairs.
 
 #### Example
 
@@ -209,3 +199,4 @@ ACPCampaign.setLinkageFields({"firstName": "John"});
 ```
 {% endtab %}
 {% endtabs %}
+

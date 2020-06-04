@@ -20,7 +20,7 @@ To add the Profile extension to your app:
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
 1. Add the `UserProfile` library to your project using the app's gradle file.
 2. Import the `UserProfile` library and any other SDK library in your application's main activity.
@@ -31,7 +31,7 @@ To add the Profile extension to your app:
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+#### Objective C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
 2. Import the UserProfile and Identity library.   
@@ -41,7 +41,7 @@ To add the Profile extension to your app:
    #import "ACPUserProfile.h"
 ```
 
-### Swift
+#### Swift
 
 ```swift
    import ACPCore
@@ -54,7 +54,7 @@ To add the Profile extension to your app:
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
 **Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity.
 
@@ -81,7 +81,7 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+#### Objective C
 
 **Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
 

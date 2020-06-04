@@ -1,4 +1,4 @@
-# Adobe Audience Manager Extension Release Notes
+# Release Notes
 
 ## September 24, 2019
 

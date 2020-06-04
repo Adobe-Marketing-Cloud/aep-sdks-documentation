@@ -1,6 +1,6 @@
 # Adobe Target
 
-[Adobe Target](https://www.adobe.com/marketing/target/mobile-optimization.html) helps test, personalize, and optimize mobile app experiences based on user behavior and mobile context. You can deliver interactions that engage and convert through iterative testing and rules-based and AI-powered personalization.
+Adobe Target helps test, personalize, and optimize mobile app experiences based on user behavior and mobile context. You can deliver interactions that engage and convert through iterative testing and rules-based and AI-powered personalization.
 
 To get started with Target, follow these steps:
 
@@ -27,18 +27,20 @@ To get started with Target, follow these steps:
 
 ## Add Target to your app
 
+To add Target to your app:
+
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
 1. Add the Mobile Core and Target extensions to your project using the app's Gradle file.
 
-    ```java
+   ```java
     implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-    implementation 'com.adobe.marketing.mobile:target:1.+'    
-    ```
+    implementation 'com.adobe.marketing.mobile:target:1.+'
+   ```
 
-2. Import the Target extension to your application's main activity.  
+2. Import the Target extension to your application's main activity.
 
    ```java
    import com.adobe.marketing.mobile.*;
@@ -48,60 +50,59 @@ To get started with Target, follow these steps:
 {% tab title="iOS" %}
 1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
 
-```text
-pod 'ACPCore'
-pod 'ACPTarget'
-```
+   ```text
+    pod 'ACPCore'
+    pod 'ACPTarget'
+   ```
 
 2. Import the Target and Identity libraries.
 
-#### Objective-C
+   **Objective C**
 
-```objectivec
-   #import "ACPCore.h"
-   #import "ACPTarget.h"
-   #import "ACPIdentity.h"
-   #import "ACPTargetRequestObject.h"
-   #import "ACPTargetPrefetchObject.h"
-```
+   ```objectivec
+       #import "ACPCore.h"
+       #import "ACPTarget.h"
+       #import "ACPIdentity.h"
+       #import "ACPTargetRequestObject.h"
+       #import "ACPTargetPrefetchObject.h"
+   ```
 
-#### Swift
+   **Swift**
 
-```swift
-   #import ACPCore
-   #import ACPTarget
-   #import ACPIdentity
-```
+   ```swift
+       #import ACPCore
+       #import ACPTarget
+       #import ACPIdentity
+   ```
 {% endtab %}
 
 {% tab title="React Native" %}
-
 #### JavaScript
 
-Install Target
+1. Install Target.
 
-```javascript
-npm install @adobe/react-native-acptarget
-react-native link @adobe/react-native-acptarget
-```
+   ```javascript
+    npm install @adobe/react-native-acptarget
+    react-native link @adobe/react-native-acptarget
+   ```
 
-Importing the extension and related libraries
+2. Import the extension and related libraries.
 
-```javascript
-import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
-```
+   ```javascript
+    import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
+   ```
 
-Getting the extension version
+3. Get the extension version.
 
-```javascript
-ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
-```
-
+   ```javascript
+    ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
+   ```
 {% endtab %}
-
 {% endtabs %}
 
 ### Register Target with Mobile Core
+
+To register Target with Mobile Core:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -118,7 +119,7 @@ public class TargetApp extends Application {
  public void onCreate() {
      super.onCreate();
      MobileCore.setApplication(this);
-     MobileCore.ConfigureWithAppId("yourAppId");
+     MobileCore.configureWithAppId("yourAppId");
 
      try {
          Target.registerExtension();
@@ -133,9 +134,9 @@ public class TargetApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
-1. In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
+In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -163,7 +164,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-
 To register the Target extension with the Mobile Core extension, use the following API:
 
 #### JavaScript
@@ -171,14 +171,14 @@ To register the Target extension with the Mobile Core extension, use the followi
 ```javascript
 ACPTarget.registerExtension();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Parameters in a Target request
 
-### Target Order
+Here is some information about the parameters in a Target request:
+
+### Target Order class
 
 The `TargetOrder` class encapsulates the order ID, the order total, and the purchased product IDs. You can instantiate this class to create order parameters. For more information about Target Order parameters, see [Create an Order Confirmation mbox - mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/orderconfirm-create.html).
 
@@ -211,9 +211,9 @@ purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
 
 #### Examples
 
-Here are some examples in Objective-C and Swift:
+Here are some examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
@@ -227,18 +227,15 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **JavaScript**
 
 ```javascript
 var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-### Target Product
+### Target Product class
 
 The `TargetProduct` class encapsulates the product ID and the product category ID, and you can instantiate this class to create order parameters. For more information about Target Product parameters, see [Entity attributes](https://docs.adobe.com/content/help/en/target/using/recommendations/entities/entity-attributes.html)
 
@@ -267,9 +264,9 @@ categoryId: (nullable NSString*) categoryId;
 
 #### Examples
 
-Here are some examples in Objective-C and Swift:
+Here are some examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
@@ -283,15 +280,12 @@ let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **JavaScript**
 
 ```javascript
 var targetProduct = new ACPTargetProduct("24D334", "Stationary");
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Target Parameters
@@ -348,9 +342,9 @@ order: (nullable ACPTargetOrder*) order;
 
 #### Examples
 
-Here are some examples in Objective-C and Swift:
+Here are some examples in Objective C and Swift:
 
-**Objective-C**
+**Objective C**
 
 ```objectivec
 NSDictionary *mboxParameters = @{@"status":@"Platinum"};
@@ -385,7 +379,6 @@ let targetParameters = ACPTargetParameters(parameters: mboxParameters, profilePa
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **JavaScript**
 
 ```javascript
@@ -396,9 +389,7 @@ var purchaseIDs = ["34","125"];
 var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, purchaseIDs);
 var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters, targetProduct, targetOrder);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Merge behavior of Target parameters
@@ -407,9 +398,9 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 
 When merging, the new keys in the mbox parameters or the profile parameters are appended to the final dictionary, and the keys with the same name are overwritten in each `TargetRequest` or `TargetPrefetch` object by the keys from the global parameters. For `TargetOrder` or `TargetProduct` objects, the object that is passed to the global parameters replaces the corresponding object in the `TargetRequest` or `TargetPrefetch` objects.
 
-## Target Sessions
+## Target sessions
 
-The Target extension \(version 2.1.4 for iOS\) and \(version 1.1.3 for Android\) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes. 
+The Target extension \(version 2.1.4 for iOS\) and \(version 1.1.3 for Android\) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes.
 
 If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#resetExperience) API is called, these variables are reset and removed from persistent storage.
 
@@ -420,6 +411,12 @@ The visual preview mode allows you to easily perform end-to-end QA activities by
 You can also set an application deep link that can be triggered when selections are made in the preview mode by using the [setPreviewRestartDeeplink](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#setPreviewRestartDeeplink) API.
 
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen. For more information, see [collectLaunchInfo](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-launch-information).
+
+{% hint style="info" %}
+After making preview mode selections, the first mbox request made may fail due to a caching issue on the Target server. For more information see [https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html\#preview](https://docs.adobe.com/content/help/en/target/using/release-notes/known-issues-resolved-issues.html#preview).
+
+The mbox request that failed can be retried to successfully retrieve the test offer content.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
@@ -459,6 +456,9 @@ The SDK can minimize the number of times it reaches out to Target servers to fet
 Prefetched offer content does not persist across application launches. The prefetch content is cached as long as the application lives in memory or until the API to clear the cache is called. For more information, see [clearPrefetchCache](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/target-api-reference#clearPrefetchCache).
 {% endhint %}
 
+{% hint style="warning" %}
+Offer prefetch is not available while visual preview mode is enabled.
+{% endhint %}
 
 ## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 

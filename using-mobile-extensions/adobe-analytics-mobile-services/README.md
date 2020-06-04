@@ -2,6 +2,10 @@
 
 This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
+{% hint style="warning" %}
+As of **April 1, 2020**, Apple will no longer support the UIWebView API. To avoid any issues, ensure that you are using the iOS SDK version 1.0.3 or later. For more information about the UIWebView API, see [UIWebView ](https://developer.apple.com/documentation/uikit/uiwebview).
+{% endhint %}
+
 {% hint style="info" %}
 The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.
 
@@ -16,7 +20,7 @@ Review the following Mobile Services functionality documentation for context and
 * [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
 
 {% hint style="warning" %}
-Postbacks are **not** supported.
+Postbacks created from the Mobile Services interface are **not** supported. Please use a Launch rule with the Mobile Core extension to create a postback. [Signal extension and Rules Engine integration](../../resources/user-guides/signal-extension-and-rules-engine-integration.md).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -24,7 +28,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out our new and enhanced, location points of interest management services - [Places extensions](./).
+Looking for location functionality from Mobile Services? Try out Places Service, our point of interest management service. For more information, see [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html).
 {% endhint %}
 
 To use the Mobile Services extension, complete these steps:
@@ -32,7 +36,7 @@ To use the Mobile Services extension, complete these steps:
 1. Configure the Mobile Services extension in Launch.
 2. If using acquisition and marketing links, update your configuration in the Analytics extension.
 3. Add Mobile Services extension to your app.
-4. Implement Mobile Services APIs in your app.
+4. Implement the Mobile Services APIs in your app.
 
 ## Configure the Mobile Services extension in Experience Platform Launch
 
@@ -44,7 +48,7 @@ The Mobile Services extension requires the Analytics extension for reporting and
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
-3. Select \_\*\*\_a Mobile Services app and complete the following tasks:
+3. Select a Mobile Services app and complete the following tasks:
    1. In **Mobile Services app**, select app from the drop-down list.
    2. Click **Save**.
    3. Follow the publishing process to update the SDK configuration.
@@ -54,7 +58,7 @@ The Mobile Services extension requires the Analytics extension for reporting and
 ### Manual configuration
 
 {% hint style="danger" %}
-The following instructions only apply if you do not see your app listed or need to manually configure your Mobile Services app.
+The following instructions only apply if you **do not** see your app listed or need to manually configure your Mobile Services app.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -63,34 +67,36 @@ If you are sending data to multiple Analytics report suites, use the Acquisition
 
 ![](../../.gitbook/assets/screen-shot-2019-04-04-at-10.37.49-pm.png)
 
-Select **Enter Custom settings** and complete the following tasks:
+To install the Mobile Services extension, complete the following steps:
 
-1. Enter an Acquisition time out.  
+1. Select **Enter Custom settings**.
+2. Enter an Acquisition time out.  
    The recommended time out is 5 seconds. To enable app acquisition,
 
    this value must be set to a value that is higher than 0.
 
-2. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
+3. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
-   You can find the Acquisition App ID in Mobile Services. Select your app, navigate to Manage App Settings, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
+   You can find the Acquisition App ID in Mobile Services.
+
+4. Select your app, navigate to Manage App Settings page, and in the **SDK Acquisition Options** section, copy the hashed string similar to the highlighted value:
 
    ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-3. Provide the **Messages URL**.  
+5. Provide the **Messages URL**.  
    Here is a sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
 
    You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
    ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.08.29-pm.png)
 
-4. Click **Save**.
-5. Follow the publishing process to update your SDK configuration.
+6. Click **Save**.
+7. Follow the publishing process to update your SDK configuration.
 
 ## Configure the Adobe Analytics extension
 
-Follow the steps listed in the [Adobe Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/4a820ee0834b79be73c05ff0ac7d7975e4784a35/using-mobile-extensions/adobe-mobileservices/adobe-analytics/README.md) to ensure that this extension is correctly configured and implemented.
-
-In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
+1. To ensure that this extension is correctly configured and implemented, follow the steps in the [Configure the Mobile Services extension in Experience Platform Launch](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsbnKuIZ7JbOKOD9DC/using-mobile-extensions/adobe-analytics-mobile-services#configure-the-adobe-analytics-extension).
+2. In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
 ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
 
@@ -161,7 +167,7 @@ Lifecycle.registerExtension();
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
 
@@ -291,8 +297,8 @@ Use the following API to track a push messaging click through in Adobe Analytics
 
 For more information, see the following:
 
-* [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html)
-* [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html)
+* [Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html) \(Android\)
+* [Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html) \(iOS\)
 
 ### Set up in-app messaging
 
@@ -447,7 +453,7 @@ For more information, see the following:
 * [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/in_apps_ts.html)
 * [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/in_apps_ts.html)
 
-### Acquisition and marketing Links
+### Acquisition and marketing links
 
 Acquisition and marketing links must be created in Adobe Mobile services. For more information, see [Mobile Services acquisition](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html).
 
@@ -457,9 +463,7 @@ The following set up collects Acquisition link context from links that were crea
 
 When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer is collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play are name-spaced with `a.acquisition.custom`.
 
-{% tabs %}
-{% tab title="Android" %}
-#### Java
+#### Using The BroadcastReceiver
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
@@ -487,12 +491,94 @@ When the user downloads and runs an app as the result of a Google Play store acq
        </intent-filter>
    </receiver>
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
-No setup required. Acquisition context is automatically collected and tracked by the SDK for iOS.
-{% endtab %}
-{% endtabs %}
+#### Using The Google Play Install Referrer APIs
+
+Starting on March 1, 2020, Google is deprecating the install\_referrer intent broadcast mechanism. For more information, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use the Mobile Services extension version 1.1.0 or newer.
+
+With the deprecation, instead of creating a `BroadcastReceiver`, you need to collect the install referrer URL from a new Google API and pass the resulting URL to the SDK.
+
+1. Add the Google Play Install Referrer package to your gradle file's dependencies:
+
+   ```java
+   implementation 'com.android.installreferrer:installreferrer:1.1'
+   ```
+
+2. To retrieve the referrer URL from the Install Referrer API, complete the steps in [Getting the install referrer ](https://developer.android.com/google/play/installreferrer/library#install-referrer).
+3. Pass the referrer URL to the SDK:
+
+   ```markup
+   MobileServices.processGooglePlayInstallReferrerUrl(referrerUrl);
+   ```
+
+   To decide the best way to use the Google Play Install Referrer APIs in your app, see Google's documentation. Here is an example of how to use the Adobe SDK with the Google Play Install Referrer APIs:
+
+   ```java
+   void handleGooglePlayReferrer() {
+       // Google recommends only calling this API the first time you need it:
+       // https://developer.android.com/google/play/installreferrer/library#install-referrer
+
+       // Store a boolean in SharedPreferences to ensure we only call it once.
+       final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
+       if (prefs != null) {
+           if (prefs.getBoolean("referrerHasBeenProcessed", false)) {
+               return;
+           }
+       }
+
+       final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
+       referrerClient.startConnection(new InstallReferrerStateListener() {
+           private boolean complete = false;
+
+           @Override
+           public void onInstallReferrerSetupFinished(int responseCode) {
+               switch (responseCode) {
+                   case InstallReferrerClient.InstallReferrerResponse.OK:
+                       // connection is established
+                       complete();
+                       try {
+                           final ReferrerDetails details = referrerClient.getInstallReferrer();                        
+
+                           // pass the install referrer url to the SDK
+                           MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
+
+                       } catch (final RemoteException ex) {
+                           Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
+                       } finally {
+                           referrerClient.endConnection();
+                       }
+                       break;
+                   case InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
+                   case InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE:
+                   default:
+                       // API not available in the Play Store app - nothing to do here
+                       complete();
+                       referrerClient.endConnection();
+                       break;
+               }
+           }
+
+           @Override
+           public void onInstallReferrerServiceDisconnected() {
+               if (!complete) {
+                   // something went wrong trying to get a connection, try again
+                   referrerClient.startConnection(this);
+               }
+           }
+
+           void complete() {
+               complete = true;
+               SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
+               editor.putBoolean("referrerHasBeenProcessed", true);
+               editor.apply();
+           }
+       });
+   }
+   ```
+
+{% hint style="info" %}
+No set up is required. Acquisition context is automatically collected and tracked by the SDK for iOS.
+{% endhint %}
 
 ### Deep link tracking
 
@@ -530,7 +616,7 @@ MobileServices.trackAdobeDeepLink
 {% tab title="iOS" %}
 ### trackAdobeDeepLink
 
-#### Objective-C
+#### Objective C
 
 #### Syntax
 
@@ -561,6 +647,27 @@ MobileServices.trackAdobeDeepLink
 ```
 {% endtab %}
 {% endtabs %}
+
+## Integration with Apple Search Ads \(iOS\)
+
+The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) &lt;&gt; to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see \(Apple Search Ads\)\[[https://searchads.apple.com/](https://searchads.apple.com/)\]. This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
+
+### Implement Search Ads integration
+
+To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview) \(in addition to the Mobile Services extension\) to your app.
+
+### Reporting on Search Ads Attribution
+
+Apple Search Ads attribution data is provided in the acquisition name, the source, and the term values.
+
+If `attribution = true` , all of the `iad-*` fields will be included in a Lifecycle request to Adobe Analytics. In addition, the following values will be mapped from the "iad" dictionary to our typical acquisition context data fields:
+
+* `iad-campaign-id` --&gt; `a.referrer.campaign.trackingcode`
+* `iad-campaign-name` --&gt; `a.referrer.campaign.name`
+* `iad-adgroup-id` --&gt; `a.referrer.campaign.content`
+* `iad-keyword` --&gt; `a.referrer.campaign.term`
+
+This mapping ensures that the values are available in Adobe Analytics standard reporting.
 
 ## Migration Notes
 

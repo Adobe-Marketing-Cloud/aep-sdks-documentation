@@ -2,9 +2,11 @@
 
 ## Events handled
 
+The following events are handled by the Signal extension:
+
 ### Rules Engine Response Content
 
-This event is used by the Signal extension to queue and send network calls that correspond to the [sync pii consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) or postback message.
+This event is used by the Signal extension to queue and send network calls that correspond to the [Sync PII Consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) or postback message.
 
 This event is triggered by the Rules Engine when the events and conditions are met.
 
@@ -20,11 +22,11 @@ The key-value pairs in this event correspond to postback and sync PII:
 
 | Key | Friendly name | Type | Optional | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| triggeredconsequence | Description URL | Map | Yes | Triggered Consequence details in the map.    For the detailed description of each rule consequence refer the following pages:  [Postback consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#postback-consequence) [Sync PII consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) [Open URL consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#open-url-consequence) |
+| triggeredconsequence | Description URL | Map | Yes | Triggered Consequence details in the map.    For the detailed description of each rule consequence, see the following pages:  [Postback consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#postback-consequence) [Sync PII consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#sync-pii-consequence) [Open URL consequence](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details#open-url-consequence) |
 
 #### Event data example
 
-Postback Message
+Postback message
 
 ```text
 {
@@ -79,7 +81,7 @@ For a configuration change event:
 { "global.privacy": "optedin" }
 ```
 
-## Events dispatched and Shared State
+## Dispatched events shared states
 
-The Signal extension does not dispatch an event and does not share any shared state.
+The Signal extension does not dispatch events and does not share any shared state.
 

@@ -12,15 +12,15 @@
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
 | Upgrades | a.UpgradeEvent | Triggered at the first run after upgrade or when the version number changes. |
-| Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number changed.             **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number changed.          **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number changed.               **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number changed.            **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 
 ## Launch
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Daily Engaged Users | a.DailyEngUserEvent | Triggered when the application is used on a particular day.      **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
-| Monthly Engaged Users | a.MonthlyEngUserEvent | Triggered when the application is used during a particular month.      **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Daily Engaged Users | a.DailyEngUserEvent | Triggered when the application is used on a particular day.        **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
+| Monthly Engaged Users | a.MonthlyEngUserEvent | Triggered when the application is used during a particular month.        **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 | Launches | a.LaunchEvent | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
 | Previous Session Length | a.PrevSessionLength | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. |
 | Ignored Session Length | a.ignoredSessionLength | If the last session is set to last longer than `lifecycle.sessionTimeout`, that session length is ignored and recorded here. |
@@ -89,10 +89,6 @@
       <td style="text-align:left">a.locale</td>
       <td style="text-align:left">Locale set for this device, for example, <em>en-US</em>.</td>
     </tr>
-    <tr>
-      <td style="text-align:left">Run mode</td>
-      <td style="text-align:left">a.RunMode</td>
-      <td style="text-align:left">The SDK running mode, for example, <code>Application / Extension</code>.</td>
-    </tr>
   </tbody>
 </table>
+

@@ -1,12 +1,40 @@
 # Release Notes
 
+## June 1, 2020
+
+### iOS Analytics 2.2.4
+
+* Fixed incorrect timezone offset calculation
+* Fixed a crash which happened in Analytics::TrackLifecycle
+
+## March 2, 2020
+
+The following updates were made in this release:
+
+### iOS Analytics 2.2.3
+
+* `AnalyticsResponse` events are now always dispatched regardless if the debugApi is enabled or if AAM forwarding is enabled.
+* Report extension details to ACPCore for improved logging and Griffon support.
+* Improved existing log messages and added additional logging to assist with debugging.
+
+## February 13, 2020
+
+The following updates were made in this release:
+
+### Android Analytics 1.2.4
+
+* Fixed an issue which, was causing some hits to be delayed.
+* Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## January 25, 2020
 
 The following updates were made in this release:
 
 ### Android Analytics 1.2.3 and iOS Analytics 2.2.2
 
-* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
 
 ## October 28, 2019
 

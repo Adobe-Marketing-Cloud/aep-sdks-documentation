@@ -80,13 +80,13 @@ Remember the following information:
 
 You want to update `username` of a user obtained in the log in page:
 
-Here is an example in Objective-C:
+**Objective-C**
 
 ```text
 [ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```java
 ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
@@ -115,7 +115,7 @@ A null attribute value will remove the attribute.
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
-Here is an example in Objective-C:
+**Objective C**
 
 ```objectivec
 NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
@@ -124,7 +124,7 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 [ACPUserProfile updateUserAttributes:profileMap];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```swift
 var profileMap = [AnyHashable: Any]()
@@ -135,9 +135,7 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 {% endtabs %}
 
-## **Remove a user attribute**
-
-Removes the given attribute name.
+## **Remove user attributes**
 
 {% tabs %}
 {% tab title="Android" %}
@@ -158,6 +156,24 @@ A retail application wants to remove the `itemsAddedToCart` user data after the 
 ```java
 UserProfile.removeUserAttribute("itemsAddedToCart");
 ```
+
+### **removeUserAttributes**
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```java
+public static void removeUserAttributes(List<String> attributeNames)
+```
+
+#### **Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```java
+UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
+```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -173,18 +189,115 @@ Removes the user profile attribute for the given key.
 
 #### **Examples**
 
-Retail appilication wants to remove the `itemsAddedToCart` user data after the product is purchased.
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
-Here is an example in Objective-C:
+**Objective C**
 
 ```objectivec
 [ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
 ```
 
-Here is an example in Swift:
+**Swift**
 
 ```swift
 ACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+### removeUserAttributes
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```objectivec
++ (void) removeUserAttributes: (nonnull NSArray <NSString*>*) attributeNames
+```
+
+#### **Examples**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+```
+
+**Swift**
+
+```swift
+ACPUserProfile.removeUserAttributes(["username","usertype"]);
+```
+{% endtab %}
+{% endtabs %}
+
+## **Get user attributes**
+
+{% tabs %}
+{% tab title="Android" %}
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```java
+public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
+```
+
+* _callback_ is invoked after the customer attributes are available.
+
+#### **Example**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
+```java
+UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
+            @Override
+            public void fail(AdobeError adobeError) {
+                // your customized code
+            }
+            @Override
+            public void call(Map<String, Object> stringObjectMap) {
+                     // your customized code
+            }
+        });
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```objectivec
++ (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
+```
+
+* _completionHandler_ is invoked after the customer attributes are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5s.
+
+#### **Examples**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile getUserAttributes:attributes withCompletionHandler:^(NSDictionary* dict, NSError* error){
+    // your customized code
+    }];
+```
+
+**Swift**
+
+```swift
+ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
+              // your customized code
+})
 ```
 {% endtab %}
 {% endtabs %}

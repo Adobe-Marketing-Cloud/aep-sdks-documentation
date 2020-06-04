@@ -1,4 +1,4 @@
-# Adobe Experience Platform Location Service
+# Places Service
 
 Location Service \(previously Places\) is now generally available for all customers. For more information about implementing and using Location Service, see the following documentation links:
 

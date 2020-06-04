@@ -12,19 +12,30 @@ To set the products variable, set a context data key to `&&products`, and set th
 
 #### Syntax <a id="syntax"></a>
 
-```text
+```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
 #### Example <a id="example"></a>
 
-```text
-//create a context data dictionaryHashMap cdata = new HashMap<String, Object>();​// add products, a purchase id, a purchase context data key, and any other data you want to collect.// Note the special syntax for productscdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");cdata.put("myapp.purchase", "1");cdata.put("myapp.purchaseid", "1234567890");​// send the tracking call - use either a trackAction or TrackState call.// trackAction example:MobileCore.trackAction("purchase", cdata);// trackState example:MobileCore.trackState("Order Confirmation", cdata);
+```java
+//create a context data dictionary
+HashMap cdata = new HashMap<String, String>();
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
+cdata.put("myapp.purchase", "1");
+cdata.put("myapp.purchaseid", "1234567890");
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+MobileCore.trackAction("purchase", cdata);
+// trackState example:
+MobileCore.trackState("Order Confirmation", cdata);
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+#### Objective C
 
 #### Syntax
 
@@ -44,7 +55,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"];
 [contextData setObject:@"1" forKey:@"m.purchase"];
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 [ACPCore trackAction:@"purchase" data:contextData];
 // trackState example:
@@ -71,11 +82,69 @@ contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### JavaScript
+
+#### Syntax
+
+```jsx
+contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
+```
+
+#### Example
+
+```jsx
+//create a context data dictionary
+var contextData = {};
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99";
+contextData["m.purchaseid"] = "1234567890";
+contextData["m.purchase"] = "1";
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+ACPCore.trackAction("purchase", contextData);
+// trackState example:
+ACPCore.trackState("Order Confirmation", contextData);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+#### Dart
+
+#### Syntax
+
+```dart
+contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
+```
+
+#### Example
+
+```dart
+//create a context data dictionary
+var contextData = {};
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99";
+contextData["m.purchaseid"] = "1234567890";
+contextData["m.purchase"] = "1";
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+FlutterACPCore.trackAction("purchase", data: contextData);
+// trackState example:
+FlutterACPCore.trackState("Order Confirmation", data: contextData);
 ```
 {% endtab %}
 {% endtabs %}
@@ -90,7 +159,7 @@ _`products`_ is set directly on the image request, and the other variables are s
 
 You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
 
-## Products variable with merchandising eVars and product-specific events   <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
+## Products variable with merchandising eVars and product-specific events <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
 
 Here is an example of the products variable with Merchandising eVars and product-specific events.
 
@@ -111,7 +180,7 @@ cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;
 cdata.put("myapp.purchase", "1"); 
 cdata.put("myapp.purchaseid", "1234567890"); 
 
-// send the tracking call - use either a trackAction or TrackState call. 
+// send the tracking call - use either a trackAction or trackState call. 
 // trackAction example: 
 MobileCore.trackAction("purchase", cdata); 
 // trackState example: 
@@ -135,7 +204,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
 [contextData setObject:@"1" forKey:@"m.purchase"]; 
 
-// send the tracking call - use either a trackAction or TrackState call. 
+// send the tracking call - use either a trackAction or trackState call. 
 // trackAction example: 
 [ACPCore trackAction:@"purchase" data:contextData]; 
 // trackState example: 
@@ -155,11 +224,55 @@ contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandis
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
-// send the tracking call - use either a trackAction or TrackState call.
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
 ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+```jsx
+//create a context data dictionary
+var contextData = {};
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+contextData["&&events"] = "event1";
+contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["m.purchaseid"] = "1234567890";
+contextData["m.purchase"] = "1";
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+ACPCore.trackAction("purchase", contextData);
+// trackState example:
+ACPCore.trackState("Order Confirmation", contextData);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+**Dart**
+
+```dart
+//create a context data dictionary
+var contextData = {};
+
+// add products, a purchase id, a purchase context data key, and any other data you want to collect.
+// Note the special syntax for products
+contextData["&&events"] = "event1";
+contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["m.purchaseid"] = "1234567890";
+contextData["m.purchase"] = "1";
+
+// send the tracking call - use either a trackAction or TrackState call.
+// trackAction example:
+FlutterACPCore.trackAction("purchase", data: contextData);
+// trackState example:
+FlutterACPCore.trackState("Order Confirmation", data: contextData);
 ```
 {% endtab %}
 {% endtabs %}
