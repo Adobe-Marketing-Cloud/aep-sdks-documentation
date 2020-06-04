@@ -115,13 +115,13 @@
 
 ## BETA
 
-* [Adobe Experience Platform - Experience Edge - Extension](alpha/experience-platform-extension/README.md)
-  * [Setup Adobe Experience Platform](alpha/experience-platform-extension/experience-platform-setup.md)
-  * [Setup Adobe Experience Platform Mobile SDK](alpha/experience-platform-extension/set-up-the-sdk.md)
-  * [Experience Events](alpha/experience-platform-extension/experience-platform-events.md)
-  * [Response handling](alpha/experience-platform-extension/response-handling.md)
-  * [Mobile extension schema](alpha/experience-platform-extension/schema-creation.md)
-  * [Auto collected data](alpha/experience-platform-extension/auto-collected-data.md)
+* [Adobe Experience Platform - Experience Edge - Extension](beta/experience-platform-extension/README.md)
+  * [Setup Adobe Experience Platform](beta/experience-platform-extension/experience-platform-setup.md)
+  * [Setup Adobe Experience Platform Mobile SDK](beta/experience-platform-extension/set-up-the-sdk.md)
+  * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
+  * [Response handling](beta/experience-platform-extension/response-handling.md)
+  * [Mobile extension schema](beta/experience-platform-extension/schema-creation.md)
+  * [Auto collected data](beta/experience-platform-extension/auto-collected-data.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon/README.md)
     * [Project Griffon SDK API Reference](beta/project-griffon/set-up-project-griffon/project-griffon-sdk-api-reference.md)
@@ -129,3 +129,4 @@
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
+

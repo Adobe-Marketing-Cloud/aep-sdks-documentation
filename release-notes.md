@@ -8,6 +8,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## June 2, 2020
+
+### Additional frameworks supported by Adobe Experience Platform Mobile SDK
+
+* [Apache Cordova ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#cordova)
+* [Microsoft Xamarin](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin)
+* [Unity](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#unity)
+
+Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additionally, these frameworks have been released as open source projects that can be modified to suit your use cases. 
+
+See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK. 
+
 ## June 1, 2020
 
 ### iOS Analytics 2.2.4
