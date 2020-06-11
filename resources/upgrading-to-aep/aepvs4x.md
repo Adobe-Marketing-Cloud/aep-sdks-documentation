@@ -64,7 +64,6 @@ Although synching with integration codes is fully supported, the Experience Clou
 | A/B, Multivariate Testing, Offers | Yes | Yes |
 | Offer pre-fetch | Yes | Yes |
 | Offer preview | Yes | Yes |
-| Visual editor | No | Yes |
 
 ## OS/platform support
 
