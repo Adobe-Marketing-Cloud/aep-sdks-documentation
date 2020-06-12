@@ -14,7 +14,7 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
 * IntegrationId in Griffon’s shared state now has format sessionId|clientId
-* Griffon pinpad UI supports for devices with cutouts from Android version 28 and above.
+* Griffon pinpad UI support for devices with cutouts from Android version 28 and above.
 
 
 ## June 4, 2020
