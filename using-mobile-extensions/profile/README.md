@@ -48,6 +48,29 @@ To add the Profile extension to your app:
    import ACPUserProfile
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+1. After creating your Cordova app and adding the Android and iOS platforms, the User Profile extension for Cordova can be added with this command:
+
+   ```text
+   cordova plugin add https://github.com/adobe/cordova-acpuserprofile.git
+   ```
+
+2. Get the extension version.
+
+   ```js
+   ACPUserProfile.extensionVersion(function(version) {  
+      console.log("ACPUserProfile version: " + version);
+   }, function(error) {  
+      console.log(error);  
+   });
+   ```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Register the extension
@@ -95,5 +118,13 @@ public class MobileApp extends Application {
 }
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+#### Cordova
+
+When using Cordova, registering User Profile with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+{% endtab %}
+
 {% endtabs %}
 
