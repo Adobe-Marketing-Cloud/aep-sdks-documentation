@@ -8,6 +8,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## June 12, 2020
+
+### Android Griffon 1.1.7
+
+* Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
+* IntegrationId in Griffon’s shared state now has format sessionId|clientId
+* Griffon pinpad UI supports for devices with cutouts in Android version 28 and above.
+
+
 ## June 4, 2020
 
 ### iOS Griffon 1.1.2
@@ -49,7 +58,7 @@ The following updates were made in this release:
 * Fixed a bug where the shared state of event hub was not properly created.
 * Fixed a security issue.
 
-## May 22, 2020
+## May 27, 2020
 
 ### iOS Griffon 1.1.1
 
