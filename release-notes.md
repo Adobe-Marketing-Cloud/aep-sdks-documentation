@@ -13,16 +13,14 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 ### Android Griffon 1.1.7
 
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
-* IntegrationId in Griffon’s shared state now has format sessionId|clientId
+* IntegrationId in Griffon’s shared state now has format sessionId\|clientId
 * Griffon pinpad UI support for devices with cutouts from Android version 28 and above.
-
 
 ## June 4, 2020
 
 ### iOS Griffon 1.1.2
 
-* Reduced the scope of variable BUFFER_SIZE that was exposed globally which may result in naming conflict
-
+* Reduced the scope of variable BUFFER\_SIZE that was exposed globally which may result in naming conflict
 
 ## June 2, 2020
 
@@ -32,9 +30,9 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 * [Microsoft Xamarin](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin)
 * [Unity](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#unity)
 
-Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additionally, these frameworks have been released as open source projects that can be modified to suit your use cases. 
+Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additionally, these frameworks have been released as open source projects that can be modified to suit your use cases.
 
-See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK. 
+See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK.
 
 ## June 1, 2020
 

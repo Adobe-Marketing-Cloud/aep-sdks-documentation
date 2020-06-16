@@ -256,3 +256,4 @@ To update your SDK configuration programmatically, use the following information
 | Android | Supported |
 | Apple iOS​ | Supported |
 | React Native \(iOS & Android\) | Supported |
+

@@ -89,6 +89,28 @@ import ACPGriffon // <-- import the Project Griffon library
 ```
 {% endtab %}
 
+{% tab title="React Native" %}
+#### React Native
+
+Install and link the `@adobe/react-native-acpgriffon` package:
+
+```text
+cd MyReactAppnpm install @adobe/react-native-acpgriffon
+```
+
+Link the Griffon extension
+
+* **React Native 0.60+**
+
+[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+
+* **React Native &lt;= 0.59**
+
+```text
+react-native link @adobe/react-native-acpgriffon
+```
+{% endtab %}
+
 {% tab title="Flutter" %}
 #### Dart
 
@@ -185,6 +207,44 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      // Override point for customization after application launch. 
      return true;
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### React Native
+
+**Importing the extension:**
+
+```text
+import {ACPGriffon} from '@adobe/react-native-acpgriffon';
+```
+
+**Getting the extension version:**
+
+```text
+ACPGriffon.getVersion().then(version => console.log("AdobeExperienceSDK: ACPGriffon version: " + version));
+```
+
+**Registering the extension with ACPCore:**
+
+> Note: It is recommended to initialize the SDK via native code inside your AppDelegate and MainApplication in iOS and Android respectively. However, you can still initialize the SDK in Javascript. For more information see how to initialize [Core](https://github.com/adobe/react-native-acpcore#initializing-the-sdk).
+
+**iOS**
+
+```text
+#import <RCTACPGriffon/ACPGriffon.h> [ACPGriffon registerExtension];
+```
+
+**Android:**
+
+```text
+import com.adobe.marketing.mobile.Griffon;Griffon.registerExtension();
+```
+
+**Javascript:**
+
+```text
+import {ACPGriffon} from '@adobe/react-native-acpgriffon';ACPGriffon.registerExtension();
 ```
 {% endtab %}
 
@@ -332,6 +392,14 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         ACPGriffon.startSession((URLContexts.first!).url)
 }
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### React Native
+
+```text
+import {ACPGriffon} from '@adobe/react-native-acpgriffon';ACPGriffon.startSession("{your-griffon-session-url}");
 ```
 {% endtab %}
 

@@ -47,9 +47,7 @@ At the start of a new application session that includes the Experience Platform 
 
 ### **Re-evaluating events**
 
-On older versions of Experience Platform Mobile SDKs (prior to iOS version 1.6.2, Android version 1.5.4), after the first launch of the app, it always takes some time to download the rules from the remote servers. During this time, Rules Engine won't be able to evaluate the first several events until the rules are loaded. Starting from iOS version 1.6.2 and Android version 1.5.4, we add the capability to cache the events before the rules are downloaded and will re-evaluate those events afterward. This change is mainly to enable the trigger of Posback based on the install event.
-
-
+On older versions of Experience Platform Mobile SDKs \(prior to iOS version 1.6.2, Android version 1.5.4\), after the first launch of the app, it always takes some time to download the rules from the remote servers. During this time, Rules Engine won't be able to evaluate the first several events until the rules are loaded. Starting from iOS version 1.6.2 and Android version 1.5.4, we add the capability to cache the events before the rules are downloaded and will re-evaluate those events afterward. This change is mainly to enable the trigger of Posback based on the install event.
 
 For more information about the technical details of the Rules Engine, see [Rules Engine technical details](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details).
 
