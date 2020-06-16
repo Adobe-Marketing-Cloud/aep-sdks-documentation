@@ -42,6 +42,7 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 
+{% endtab %}
 {% tab title="Unity" %}
 #### Syntax
 
