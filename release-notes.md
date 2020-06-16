@@ -8,6 +8,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+## June 15, 2020
+
+### React Native
+
+* Support added for Project Griffon [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
+* Support added for Places  [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
+
 ## June 12, 2020
 
 ### Android Griffon 1.1.7
@@ -15,6 +22,11 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId
 * Griffon pinpad UI support for devices with cutouts from Android version 28 and above.
+
+### Cordova
+
+* [Support added for Places extension in Cordova](https://github.com/adobe/cordova-acpplaces)
+* [Support added for Profile extension in Cordova ](https://github.com/adobe/cordova-acpuserprofile)
 
 ## June 4, 2020
 
