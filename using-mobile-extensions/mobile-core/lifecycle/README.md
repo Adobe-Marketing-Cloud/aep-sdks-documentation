@@ -499,13 +499,12 @@ The following is a complete list of all of the metrics provided on your user's a
 | Hour of Day | `a.HourOfDay` | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
 | Day of Week | `a.DayOfWeek` | Measures the day of the week the app was launched.| 
 
-### Crash
+## Crash
 | Metric | Key | Description |
 | :--- | :--- | :--- |
 | Crashes | `a.CrashEvent` | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
 
-### Device Information
-
+## Device Information
 <table>
   <thead>
     <tr>
