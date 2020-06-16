@@ -161,79 +161,7 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
 
 ## Retrieving stored identifiers
 
-The following SDK identities \(as applicable\) are locally stored:
-
-* Company Context - IMS Org IDs
-* Experience Cloud ID \(MID\)
-* User IDs
-* Integration codes \(ADID, push IDs\)
-* Data source IDs \(DPID, DPUUID\)
-* Analytics IDs \(AVID, AID, VID, and associated RSIDs\)
-* Target legacy IDs \(TNTID, TNT3rdpartyID\)
-* Audience Manager ID \(UUID\)
-
-To retrieve data as a JSON string from the SDKs, and send this data to your servers, use the following:
-
-{% hint style="warning" %}
-You must call the API below and retrieve identities stored in the SDK, **before** the user opts out.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-#### Syntax
-
-```java
-void getSdkIdentities(AdobeCallback<String> callback);
-```
-
-* _callback_ is invoked with the SDK identities as a JSON string.
-* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
-
-#### Example
-
-```java
-MobileCore.getSdkIdentities(new AdobeCallback<String>() {
-    @Override
-    public void call(String value) {
-        // handle the json string
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Objective-C
-
-#### Syntax
-
-```objectivec
-+ (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
-+ (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
-```
-
-* _callback_ is invoked with the SDK identities as a JSON string.
-* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
-
-#### Example
-
-```objectivec
-[ACPCore getSdkIdentities:^(NSString * _Nullable content){
-    NSLog(content);
-}];
-
-[ACPCore getSdkIdentitiesWithCompletionHandler:^(NSString * _Nullable content, NSError * _Nullable error) {
-        if (error) {
-            // handle error here
-        } else {
-            // handle the retrieved identities
-            NSLog(content);
-        }
-    }];
-```
-{% endtab %}
-{% endtabs %}
+To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#getSdkIdentities) API from the Mobile Core extension.
 
 ## Configuration keys
 
@@ -251,4 +179,3 @@ To update the SDK configuration, programmatically, use the following information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
 * To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)
-
