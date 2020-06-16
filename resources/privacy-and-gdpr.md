@@ -161,7 +161,7 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
 
 ## Retrieving stored identifiers
 
-To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#getSdkIdentities) API from the Mobile Core extension.
+To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/92afda65d9611aff978a79c8a88245f2ef9fbcaf/using-mobile-extensions/mobile-core/mobile-core-api-reference/README.md#getSdkIdentities) API from the Mobile Core extension.
 
 ## Configuration keys
 
@@ -179,3 +179,4 @@ To update the SDK configuration, programmatically, use the following information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
 * To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)
+
