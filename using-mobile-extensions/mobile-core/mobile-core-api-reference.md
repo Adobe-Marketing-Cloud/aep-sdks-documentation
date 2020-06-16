@@ -660,7 +660,7 @@ ACPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-#### Retrieving stored identifiers
+## Retrieving stored identifiers
 
 The following SDK identities \(as applicable\) are locally stored:
 
