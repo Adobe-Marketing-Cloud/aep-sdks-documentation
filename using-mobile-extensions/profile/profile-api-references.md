@@ -135,7 +135,6 @@ ACPUserProfile.updateUserAttributes(profileMap)
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### **updateUserAttribute**
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -148,20 +147,20 @@ Remember the following information:
 
 #### **Syntax**
 
-```js
+```javascript
 ACPUserProfile.updateUserAttribute = function(attributeName, attributeValue, success, fail);
 ```
 
-- *attributeName* is a string containing the name of the user profile attribute to create or update.
-- *attributeValue* must be a string, number, or array containing the user profile attribute value.
-- *success* is a callback containing a general success message if the updateUserAttribute API executed without any errors.
-- *fail* is a callback containing error information if the updateUserAttribute API was executed with errors.
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
+* _success_ is a callback containing a general success message if the updateUserAttribute API executed without any errors.
+* _fail_ is a callback containing error information if the updateUserAttribute API was executed with errors.
 
 #### **Example**
 
 You want to update `username` of a user obtained in the log in page :
 
-```js
+```javascript
 ACPUserProfile.updateUserAttribute("username", "Will Smith", handleCallback, handleError);
 ```
 
@@ -179,27 +178,25 @@ Allows you to create/update a batch of user profile attributes:
 
 #### **Syntax**
 
-```js
+```javascript
 ACPUserProfile.updateUserAttributes = function(attributes, success, fail);
 ```
 
-- *attributes* is a object containing a batch of user profile attributes to create or update.
-- *success* is a callback containing a general success message if the updateUserAttributes API executed without any errors.
-- *fail* is a callback containing error information if the updateUserAttributes API was executed with errors.
+* _attributes_ is a object containing a batch of user profile attributes to create or update.
+* _success_ is a callback containing a general success message if the updateUserAttributes API executed without any errors.
+* _fail_ is a callback containing error information if the updateUserAttributes API was executed with errors.
 
 #### **Example**
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
-```js
+```javascript
 var username = "will_smith";
 var usertype = "Actor";
 var attributes = {"username":username, "usertype":usertype};
 ACPUserProfile.updateUserAttributes(attributes, handleCallback, handleError);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## **Remove user attributes**
@@ -298,26 +295,25 @@ ACPUserProfile.removeUserAttributes(["username","usertype"]);
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### **removeUserAttribute**
 
 Removes the user profile attribute for the given key.
 
 #### **Syntax**
 
-```js
+```javascript
 ACPUserProfile.removeUserAttribute = function(attributeName, success, fail);
 ```
 
-- *attributeName* is a string containing the name of the user profile attribute to remove.
-- *success* is a callback containing a general success message if the removeUserAttribute API executed without any errors.
-- *fail* is a callback containing error information if the removeUserAttribute API was executed with errors.
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+* _success_ is a callback containing a general success message if the removeUserAttribute API executed without any errors.
+* _fail_ is a callback containing error information if the removeUserAttribute API was executed with errors.
 
 #### **Example**
 
 A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
-```js
+```javascript
 ACPUserProfile.removeUserAttribute("itemsAddedToCart", handleCallback, handleError);
 ```
 
@@ -327,29 +323,25 @@ Removes the user profile attributes for the given keys.
 
 #### **Syntax**
 
-```js
+```javascript
 ACPUserProfile.removeUserAttributes = function(attributeNames, success, fail);
 ```
 
-- *attributeNames* is an array of strings containing the names of user profile attributes to remove.
-- *success* is a callback containing a general success message if the removeUserAttributes API executed without any errors.
-- *fail* is a callback containing error information if the removeUserAttributes API was executed with errors.
+* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
+* _success_ is a callback containing a general success message if the removeUserAttributes API executed without any errors.
+* _fail_ is a callback containing error information if the removeUserAttributes API was executed with errors.
 
 #### **Example**
 
-
 You want to remove `username`, `usertype` user data when session timeout occurs.
 
-
-```js
+```javascript
 var attributeNames = new Array();
 attributeNames.push("username");
 attributeNames.push("usertype");
 ACPUserProfile.removeUserAttributes(attributeNames, handleCallback, handleError);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## **Get user attributes**
@@ -423,32 +415,29 @@ ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
 
 #### **Syntax**
 
-```js
+```javascript
 ACPUserProfile.getUserAttributes = function(attributeNames, success, fail);
 ```
 
-* *attributeNames* is an array of strings containing the names of user profile attributes to retrieve.
-* *success* is a callback containing the retrieved user profile attributes.
-* *fail* is a callback containing error information if the getUserAttributes API was executed with errors.
+* _attributeNames_ is an array of strings containing the names of user profile attributes to retrieve.
+* _success_ is a callback containing the retrieved user profile attributes.
+* _fail_ is a callback containing error information if the getUserAttributes API was executed with errors.
 
 #### **Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-```js
+```javascript
 var attributeNames = new Array();
 attributeNames.push("itemsAddedToCart");
 ACPUserProfile.getUserAttributes(attributeNames, handleCallback, handleError);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

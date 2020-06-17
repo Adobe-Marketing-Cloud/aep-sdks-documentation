@@ -62,6 +62,10 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 {% tab title="React Native" %}
 ### React Native
 
+{% hint style="warning" %}
+**Important:** Adobe Experience Platform SDKs plugins for React Native supports **React Native versions 0.44.0 or later.**
+{% endhint %}
+
 {% hint style="info" %}
 For React Native, we recommend that you first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
 {% endhint %}
