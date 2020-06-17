@@ -20,8 +20,8 @@ public static void configureWithAppID(final String appId);
 MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
-{% tab title="iOS" %}
 
+{% tab title="iOS" %}
 #### Syntax
 
 ```objectivec
@@ -41,8 +41,8 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
-
 {% endtab %}
+
 {% tab title="Unity" %}
 #### Syntax
 
@@ -277,3 +277,4 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 {% endtabs %}
+
