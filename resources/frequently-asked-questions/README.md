@@ -58,12 +58,15 @@ The Experience Platform SDK migrates the locally stored user contexts from the 4
 
 For a complete list of supported platforms, please see [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions).
 
-### What OS versions are supported?
+### What OS & platform versions are supported?
 
 * Android versions 4.0 or later \(API levels 14 or later\)
 * iOS versions 10 or later
 * React Native versions 0.44.0 or later
 * Flutter versions 1.10.0 or later
+* Cordova 9.0.0 or later
+* Xamarin - MonoAndroid 9.0+ and Xamarin.iOS 1.0+
+* Unity 2019.3.10f1or later
 
 ### **How "big" is the SDK?**
 
