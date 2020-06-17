@@ -10,10 +10,10 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+### Java / Kotlin
 
 {% hint style="warning" %}
-The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -44,7 +44,7 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 ### Objective C / Swift
 
 {% hint style="warning" %}
-**Important:** Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
+Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\). 
@@ -63,7 +63,7 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 ### React Native
 
 {% hint style="warning" %}
-**Important:** Adobe Experience Platform SDKs plugins for React Native supports **React Native versions 0.44.0 or later.**
+Adobe Experience Platform SDKs plugins for React Native supports **React Native versions 0.44.0 or later.**
 {% endhint %}
 
 {% hint style="info" %}
@@ -76,11 +76,19 @@ For the latest React Native installation instructions, see the README file in th
 {% tab title="Flutter" %}
 ### Flutter
 
+{% hint style="warning" %}
+Adobe Experience Platform SDKs plugins for Flutter supports **Flutter versions  1.10.0 or later.**
+{% endhint %}
+
 For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### Cordova
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs plugins for Cordova supports **Cordova 1.1.0 or later.**
+{% endhint %}
 
 {% hint style="info" %}
 Cordova is distributed via [npm](http://npmjs.com) \(Node Package Management\). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal: `sudo npm install -g cordova`
@@ -96,7 +104,11 @@ To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to
 {% endtab %}
 
 {% tab title="Unity" %}
-### C\#
+### Unity
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs plugins for Unity supports **Unity versions 2019.3.10f1 or later**
+{% endhint %}
 
 {% hint style="info" %}
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
@@ -112,7 +124,11 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open the appl
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### C\#
+### Xamarin
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs plugins for Xamarin requires **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**
+{% endhint %}
 
 {% hint style="info" %}
 For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
