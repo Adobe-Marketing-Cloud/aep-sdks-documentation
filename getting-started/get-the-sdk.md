@@ -87,7 +87,7 @@ For the latest Flutter installation instructions, see the package [install tab](
 ### Cordova
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs plugins for Cordova supports **Cordova 1.1.0 or later.**
+Adobe Experience Platform SDKs plugins for Cordova supports **Cordova 9.0.0 or later.**
 {% endhint %}
 
 {% hint style="info" %}
