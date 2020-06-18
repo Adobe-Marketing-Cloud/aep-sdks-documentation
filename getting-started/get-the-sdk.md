@@ -301,14 +301,14 @@ initSDK() {
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+Initialization code is located in this Github [`README`](https://github.com/adobe/flutter_acpcore).
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
-
 For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
 **iOS:**
@@ -369,7 +369,7 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
 
 For Unity apps, initialize the SDK using the following code in the start function of the MainScript
 
@@ -404,7 +404,7 @@ public class MainScript : MonoBehaviour
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
 For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
 
