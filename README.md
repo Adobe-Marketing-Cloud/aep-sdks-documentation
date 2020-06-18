@@ -1,10 +1,10 @@
 ---
-description: Welcome to the Adobe Experience Platform Mobile SDK documentation.
+description: Welcome to the home of Adobe Experience Platform Mobile SDK documentation.
 ---
 
 # Overview
 
-## About the Adobe Experience Platform Mobile SDK?
+## About the Adobe Experience Platform Mobile SDK
 
 The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
 
@@ -23,7 +23,7 @@ The article below highlights key features and benefts of the Adobe Experience Pl
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
 * Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
-* iOS \(including tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
+* iOS \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
 * Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
 * React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
 * Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
