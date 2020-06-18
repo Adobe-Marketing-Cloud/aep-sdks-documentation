@@ -74,27 +74,13 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplaces?label=cordova-acpplaces&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplaces) | [Link](https://github.com/adobe/cordova-acpcore) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics) | [Link](https://github.com/adobe/cordova-acpcore) |
 
-| Extension | Cordova |
-| :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpcore?label=cordova-acpcore&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpcore) |
-| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) |  |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpgriffon?label=cordova-acpgriffon&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpgriffon) |
-| [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplaces?label=cordova-acpplaces&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplaces) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics) |
-
-### Flutter
+## Flutter
 
 | Extension | pub.dev | Github |
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) | [Link](https://github.com/adobe/flutter_acpcore) |
 | [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon) | [Link](https://github.com/adobe/flutter_acpgriffon) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) | [Link](https://github.com/adobe/flutter_acpanalytics) |
-
-| Extension | Flutter |
-| :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) |
 
 ### Xamarin
 
