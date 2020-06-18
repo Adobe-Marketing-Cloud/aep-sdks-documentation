@@ -1,9 +1,9 @@
-# Latest SDK Versions
+# Current SDK Versions
 
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
 * Google Android API 14 \(Ice Cream Sandwich\) or later
-* Apple iOS 10 or later
+* Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
 
 <table>
   <thead>

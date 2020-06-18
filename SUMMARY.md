@@ -80,7 +80,7 @@
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
   * [Manual Lifecycle Implementation](resources/upgrading-to-aep/manual-lifecycle-implementation.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
-  * [Latest SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
+  * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
