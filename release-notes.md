@@ -26,6 +26,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Added tvOS compatibility
 * Version 2.3.0 onwards, binaries are built with Xcode 11.0
 
+### iOS Analytics 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Media 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
 ## June 15, 2020
 
 ### React Native
