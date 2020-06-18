@@ -1,29 +1,189 @@
 # Latest SDK Versions
 
-## Native Platforms
+The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
-| Extension | iOS | Android |
-| :--- | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&logoColor=white&label=core&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&logoColor=white&label=userprofile&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&label=ACPPlaces&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlaces)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&logoColor=white&label=places&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/android/places-1.0.0.aar) |
-| [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&label=ACPPlacesMonitor&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlacesMonitor)  [Github](https://github.com/adobe/places-monitor-ios) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&logoColor=white&label=placesmonitor&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor)  [Github](https://github.com/adobe/places-monitor-android) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&logoColor=white&label=analytics&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&label=ACPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAudience) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&logoColor=white&label=audience&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=Orange&label=ACPMobileServices&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMobileServices) \_\_  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&logoColor=white&label=mobileservices&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&label=ACPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPTarget)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&logoColor=white&label=target&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&label=ACPCampaign&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaign)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaign.svg?logo=android&logoColor=white&label=campaign&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaign)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&label=ACPCampaignClassic&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaignClassic)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic) | Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&logoColor=white&label=campaignclassic&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
+* Google Android API 14 \(Ice Cream Sandwich\) or later
+* Apple iOS 10 or later
 
-### tvOS
-
-| Extension | tvOS |
-| :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics) |
-| [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia) |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Extension</th>
+      <th style="text-align:left">Cocoapods</th>
+      <th style="text-align:left">Android</th>
+      <th style="text-align:left">Github</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&amp;logoColor=white&amp;label=core&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p>Android</p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPUserProfile"><img src="https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&amp;label=ACPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&amp;logoColor=white&amp;label=userprofile&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/beta/project-griffon">Project Griffon (Beta)</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPGriffon"><img src="https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&amp;label=ACPGriffon&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/home.html">Places Service</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlaces"><img src="https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&amp;label=ACPPlaces&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&amp;logoColor=white&amp;label=places&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html">Places Monitor</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&amp;logoColor=white&amp;label=placesmonitor&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics">Adobe Analytics</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&amp;logoColor=white&amp;label=analytics&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics">Adobe Analytics - Media Analytics for Audio &amp; Video</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&amp;logoColor=white&amp;label=media&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager">Adobe Audience Manager</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAudience"><img src="https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&amp;label=ACPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&amp;logoColor=white&amp;label=audience&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services">Adobe Analytics - Mobile Services</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=Orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&amp;logoColor=white&amp;label=mobileservices&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target">Adobe Target</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPTarget"><img src="https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&amp;label=ACPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&amp;logoColor=white&amp;label=target&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard">Adobe Campaign Standard</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaign"><img src="https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&amp;label=ACPCampaign&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaign"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaign.svg?logo=android&amp;logoColor=white&amp;label=campaign&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic">Adobe Campaign Classic</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&amp;logoColor=white&amp;label=campaignclassic&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## React Native
 
