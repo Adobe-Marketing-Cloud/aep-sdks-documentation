@@ -72,9 +72,7 @@ For React Native, we recommend that you install [Node.js](https://nodejs.org) to
 {% tab title="Flutter" %}
 ### Flutter
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs plugins for Flutter supports **Flutter versions  1.10.0 or later.**
-{% endhint %}
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
 For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
 {% endtab %}
@@ -112,9 +110,9 @@ Adobe Experience Platform SDKs plugins for Unity supports **Unity versions 2019.
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
 {% endhint %}
 
-#### Installation
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the requisite Unity package\(s\).
 
-To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
+For instance, to add the Mobile Core extension, you may:
 
 * Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
 * Unzip `ACPCore-0.0.1-Unity.zip`
@@ -124,17 +122,11 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open the appl
 {% tab title="Xamarin" %}
 ### Xamarin
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs plugins for Xamarin requires **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**
-{% endhint %}
+Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="info" %}
-For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
+The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endhint %}
-
-#### Installation
-
-The AEP SDK Xamarin packages are distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endtab %}
 {% endtabs %}
 
