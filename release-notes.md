@@ -8,6 +8,26 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
 
+### iOS Core 2.7.0
+
+* Added TvOS compatibility
+* Start from this version, binary is built with Xcode 11.0
+
+### iOS Lifecycle 2.1.0
+
+* Added TvOS compatibility
+* Start from this version, binary is built with Xcode 11.0
+
+### iOS Signal 2.1.0
+
+* Added TvOS compatibility
+* Start from this version, binary is built with Xcode 11.0
+
+### iOS Identity 2.3.0
+
+* Added TvOS compatibility
+* Start from this version, binary is built with Xcode 11.0
+
 ## June 15, 2020
 
 ### React Native
