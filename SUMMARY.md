@@ -1,10 +1,10 @@
 # Table of contents
 
 * [Overview](README.md)
+* [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Release notes](release-notes.md)
-* [Latest SDK Versions](current-sdk-versions.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
-* [Version 4 API Changelog](resources/upgrading-to-aep/api-change-log.md)
+* [Version 4 API Changelog](api-change-log.md)
 
 ## Getting Started
 
