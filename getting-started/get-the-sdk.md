@@ -177,9 +177,9 @@ Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Android
-
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+### Java
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -220,10 +220,10 @@ public class MainApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS - Objective C" %}
-#### iOS - Objective C
-
+{% tab title="iOS" %}
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+### Objective-C
 
 ```objectivec
 #import "AppDelegate.h"
@@ -251,12 +251,8 @@ Add the following initialization code. It may need to be adjusted depending on h
 
 @end
 ```
-{% endtab %}
 
-{% tab title="iOS - Swift" %}
-#### iOS - Swift
-
-Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+### Swift
 
 ```swift
 import ACPCore
@@ -284,9 +280,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-#### Javascript
+### Javascript
 
-> Tip: We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+{% hint style="info" %}
+We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+{% endhint %}
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -496,7 +494,7 @@ Create a Podfile if you do not already have one:
 pod init
 ```
 
-If CocoaPods could not find the dependencies, you may need to run this command:
+If Cocoapods cannot not find the dependencies, you may need to run this command:
 
 ```text
 pod repo update
