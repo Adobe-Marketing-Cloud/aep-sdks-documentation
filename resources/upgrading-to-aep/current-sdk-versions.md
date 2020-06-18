@@ -16,14 +16,15 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a>
-      </td>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a> (supports
+        tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&amp;logoColor=white&amp;label=core&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
-        <p>Android</p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
         </p>
       </td>
@@ -85,8 +86,8 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics">Adobe Analytics</a>
-      </td>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics">Adobe Analytics</a> (supports
+        tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&amp;logoColor=white&amp;label=analytics&amp;style=flat-square" alt="Maven Central"/></a>
@@ -99,8 +100,8 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics">Adobe Analytics - Media Analytics for Audio &amp; Video</a>
-      </td>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics">Adobe Analytics - Media Analytics for Audio &amp; Video</a> (supports
+        tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&amp;logoColor=white&amp;label=media&amp;style=flat-square" alt="Maven Central"/></a>
