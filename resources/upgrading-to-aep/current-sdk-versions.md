@@ -27,7 +27,7 @@
 
 ## React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the README file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
 For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
@@ -47,7 +47,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 
 ## Cordova
 
-Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the README file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="info" %}
 For Cordova, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with Cordova applications, see this [guide](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
@@ -84,23 +84,27 @@ Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versi
 
 ## Xamarin
 
-Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the README file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="info" %}
 The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endhint %}
 
-| Extension | Android | iOS |
-| :--- | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/) |
+| Extension | Android | iOS | Github |
+| :--- | :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/) | [Link](https://github.com/adobe/xamarin-acpcore) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) | [Link](https://github.com/adobe/xamarin-acpgriffon) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/) | [Link](https://github.com/adobe/xamarin-acpanalytics) |
 
 ## Unity
 
-| Extension | Xamarin |
+Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 2019.3.10f1 or later**. For the latest Unity installation instructions, see the `README` file in the [`unity-acpcore`](https://github.com/adobe/unity-acpcore) repository.
+
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
+
+| Extension | Github |
 | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/)   NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/)   NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | NuGet\(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/)   NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/) |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [Link](https://github.com/adobe/unity-acpcore/tree/master/bin) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [Link](https://github.com/adobe/unity-acpgriffon/tree/master/bin) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [Link](https://github.com/adobe/unity-acpanalytics/tree/master/bin) |
 
