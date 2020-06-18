@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 18, 2020
+
+### iOS Griffon 1.1.3
+
+* IntegrationId in Griffon’s shared state now has format sessionId|clientId.
+
 ## June 17, 2020
 
 ### iOS Core 2.7.0
