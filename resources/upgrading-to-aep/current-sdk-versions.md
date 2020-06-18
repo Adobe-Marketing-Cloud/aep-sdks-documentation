@@ -25,8 +25,6 @@
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics) |
 | [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)  [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia) |
 
-## Framework Platforms
-
 ## React Native
 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the README file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
