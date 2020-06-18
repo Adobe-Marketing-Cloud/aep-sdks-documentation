@@ -4,38 +4,36 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## We want to help!
-
-Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
-
 ## June 17, 2020
 
 ### iOS Core 2.7.0
 
-* Added TvOS compatibility
-* Start from this version, binary is built with Xcode 11.0
+* Added tvOS compatibility
+* Version 2.7.0 onwards, binaries are built with Xcode 11.0
 
 ### iOS Lifecycle 2.1.0
 
-* Added TvOS compatibility
-* Start from this version, binary is built with Xcode 11.0
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
 ### iOS Signal 2.1.0
 
-* Added TvOS compatibility
-* Start from this version, binary is built with Xcode 11.0
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
 ### iOS Identity 2.3.0
 
-* Added TvOS compatibility
-* Start from this version, binary is built with Xcode 11.0
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
 
 ## June 15, 2020
 
 ### React Native
 
-* Support added for Project Griffon [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
-* Support added for Places  [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
+* Support added for Project Griffon
+  * [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
+* Support added for Places 
+  * [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
 
 ## June 12, 2020
 
@@ -43,7 +41,7 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId
-* Griffon pinpad UI support for devices with cutouts from Android version 28 and above.
+* Griffon pin pad UI support for devices with cutouts from Android version 28 and above.
 
 ### Cordova
 
