@@ -1,11 +1,11 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), for Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org).
+The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
 {% hint style="info" %}
-For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods, Gradle, and/or npmjs. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+For iOS and Android projects, the recommended approach to integrating the SDK is to use supported dependency and package managers as listed for each platform such as Maven, Cocoapods, etc. SDKs are also available for download on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 {% endhint %}
 
 {% tabs %}
@@ -62,15 +62,11 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 {% tab title="React Native" %}
 ### React Native
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs plugins for React Native supports **React Native versions 0.44.0 or later.**
-{% endhint %}
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
-For React Native, we recommend that you first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
+For React Native, we recommend that you install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
 {% endhint %}
-
-For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -86,21 +82,23 @@ For the latest Flutter installation instructions, see the package [install tab](
 {% tab title="Cordova" %}
 ### Cordova
 
-{% hint style="warning" %}
-Adobe Experience Platform SDKs plugins for Cordova supports **Cordova 9.0.0 or later.**
-{% endhint %}
+Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="info" %}
-Cordova is distributed via [npm](http://npmjs.com) \(Node Package Management\). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal: `sudo npm install -g cordova`
+For Cordova, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with Cordova applications, see this [guide](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
 {% endhint %}
 
-For the latest Cordova installation instructions, see the README file in the [cordova-acpcore](https://github.com/adobe/cordova-acpcore) repository.
+With Node.js installed, you may install the Cordova framework from terminal using the following statement:
 
-#### Installation
+```text
+sudo npm install -g cordova
+```
 
-To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
+To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin\(s\) using the following statement:
 
-`cordova plugin add https://github.com/adobe/cordova-acpcore.git`
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
 {% endtab %}
 
 {% tab title="Unity" %}
