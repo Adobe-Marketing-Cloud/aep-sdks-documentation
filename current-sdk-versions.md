@@ -31,6 +31,8 @@
 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the README file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
+### React Native
+
 {% hint style="info" %}
 For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
 {% endhint %}
@@ -48,6 +50,8 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 | [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign) | [Link](https://github.com/adobe/react-native-acpcore) |
 
 ## Cordova
+
+### Cordova
 
 Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the README file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
