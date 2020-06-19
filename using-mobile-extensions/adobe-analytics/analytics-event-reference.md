@@ -209,16 +209,13 @@ The Analytics extension will read the following keys from the configuration even
 
 ```javascript
 {
-  "experienceCloud.org": "3CE342C75100435B0A490D4C@AdobeOrg",
+  "experienceCloud.org": "orgsample@AdobeOrg",
   "analytics.rsids": "mobilesamplersid",
-  "analytics.server": "obumobile1.sc.omtrdc.net",
+  "analytics.server": "serversample.sc.omtrdc.net",
   "analytics.aamForwardingEnabled": false,
   "analytics.offlineEnabled": true,
   "analytics.batchLimit": 0,
-  "global.ssl": false,
   "global.privacy": "optedin",
-  "global.timezone": "PDT",
-  "global.timezoneOffset": -420,
   "lifecycle.sessionTimeout": 300,
   "lifecycle.backdateSessionInfo": false
 }
