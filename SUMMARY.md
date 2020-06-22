@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Overview](README.md)
+* [Home](README.md)
 * [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Release notes](release-notes.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
@@ -116,7 +116,7 @@
 
 ## BETA
 
-* [Adobe Experience Platform - Experience Edge - Extension](beta/experience-platform-extension/README.md)
+* [Adobe Experience Platform - Experience Edge](beta/experience-platform-extension/README.md)
   * [Setup Adobe Experience Platform](beta/experience-platform-extension/experience-platform-setup.md)
   * [Setup Adobe Experience Platform Mobile SDK](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)

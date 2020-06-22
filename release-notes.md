@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+
+## Swift Developer Preview
+
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+
+[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
+
 ## June 18, 2020
 
 ### iOS Griffon 1.1.3
@@ -16,6 +23,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added tvOS compatibility
 * Version 2.7.0 onwards, binaries are built with Xcode 11.0
+* Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
 
 ### iOS Lifecycle 2.1.0
 
@@ -31,6 +39,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added tvOS compatibility
 * Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Analytics 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Media 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
 ## June 15, 2020
 

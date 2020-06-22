@@ -1,5 +1,12 @@
 # Release Notes
 
+## June 17, 2020
+
+### iOS Media 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
 ## May 22, 2020
 
 ### @adobe/react-native-acpmedia 2.0.0
