@@ -116,7 +116,7 @@
 
 ## BETA
 
-* [Adobe Experience Platform - Experience Edge - Extension](beta/experience-platform-extension/README.md)
+* [Adobe Experience Platform - Experience Edge](beta/experience-platform-extension/README.md)
   * [Setup Adobe Experience Platform](beta/experience-platform-extension/experience-platform-setup.md)
   * [Setup Adobe Experience Platform Mobile SDK](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
