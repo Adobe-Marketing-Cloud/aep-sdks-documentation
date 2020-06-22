@@ -10,6 +10,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added tvOS compatibility
 * Version 2.7.0 onwards, binaries are built with Xcode 11.0
+* Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
 
 ### iOS Lifecycle 2.1.0
 
