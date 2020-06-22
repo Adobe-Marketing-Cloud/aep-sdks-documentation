@@ -4,7 +4,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-
 ## Swift Developer Preview
 
 The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
