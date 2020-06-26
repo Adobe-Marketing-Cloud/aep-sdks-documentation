@@ -242,7 +242,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Platform and is a 32-character ID.
+Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Platform and is a 38-character ID.
 {% endhint %}
 
 After the configuration is complete, an ECID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
