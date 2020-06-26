@@ -1,19 +1,19 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for iOS via [Cocoapods](https://cocoapods.org/), for Android via [Gradle](https://gradle.org), and for React Native projects via [Node Package Manager](https://nodejs.org).
+The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
 {% hint style="info" %}
-For iOS and Android projects, the recommended approach to integrating the SDK is to use Cocoapods, Gradle, and/or npmjs. SDK libraries are also available on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+For iOS and Android projects, the recommended approach to integrating the SDK is to use supported dependency and package managers as listed for each platform such as Maven, Cocoapods, etc. SDKs are also available for download on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+### Java / Kotlin
 
 {% hint style="warning" %}
-The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -44,7 +44,7 @@ The Experience Platform SDK for Android supports Android 4.0 \(API 14\) or later
 ### Objective C / Swift
 
 {% hint style="warning" %}
-**Important:** Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
+Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\). 
@@ -62,15 +62,17 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 {% tab title="React Native" %}
 ### React Native
 
-{% hint style="info" %}
-For React Native, we recommend that you first install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
-{% endhint %}
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
-For the latest React Native installation instructions, see the README file in the [react-native-acpcore](https://github.com/adobe/react-native-acpcore) repository.
+{% hint style="info" %}
+For React Native, we recommend that you install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
+{% endhint %}
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Flutter
+
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
 For the latest Flutter installation instructions, see the package [install tab](https://pub.dev/packages/flutter_acpcore#-installing-tab-).
 {% endtab %}
@@ -78,29 +80,39 @@ For the latest Flutter installation instructions, see the package [install tab](
 {% tab title="Cordova" %}
 ### Cordova
 
+Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
+
 {% hint style="info" %}
-Cordova is distributed via [npm](http://npmjs.com) \(Node Package Management\). In order to install and build Cordova applications you will need to have Node.js installed. [Install Node.js](https://nodejs.org/en/). Once Node.js is installed, you can install the Cordova framework from terminal: `sudo npm install -g cordova`
+For Cordova, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with Cordova applications, see this [guide](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
 {% endhint %}
 
-For the latest Cordova installation instructions, see the README file in the [cordova-acpcore](https://github.com/adobe/cordova-acpcore) repository.
+With Node.js installed, you may install the Cordova framework from terminal using the following statement:
 
-#### Installation
+```text
+sudo npm install -g cordova
+```
 
-To start using the Adobe Experience Platform Mobile SDK for Cordova, navigate to the directory of your Cordova app and install the plugin:
+To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin\(s\) using the following statement:
 
-`cordova plugin add https://github.com/adobe/cordova-acpcore.git`
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
 {% endtab %}
 
 {% tab title="Unity" %}
-### C\#
+### Unity
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs plugins for Unity supports **Unity versions 2019.3.10f1 or later**
+{% endhint %}
 
 {% hint style="info" %}
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
 {% endhint %}
 
-#### Installation
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the requisite Unity package\(s\).
 
-To start using the Adobe Experience Platform Mobile SDK for Unity, open the application in unity and import the unity package:
+For instance, to add the Mobile Core extension, you may:
 
 * Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
 * Unzip `ACPCore-0.0.1-Unity.zip`
@@ -108,15 +120,13 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open the appl
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### C\#
+### Xamarin
+
+Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="info" %}
-For the latest Xamarin installation instructions, see the README file in the [xamarin-acpcore](https://github.com/adobe/xamarin-acpcore) repository.
+The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endhint %}
-
-#### Installation
-
-The AEP SDK Xamarin packages are distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
 {% endtab %}
 {% endtabs %}
 
@@ -167,9 +177,9 @@ Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Android
-
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+### Java
 
 ```java
 import com.adobe.marketing.mobile.AdobeCallback;
@@ -210,10 +220,10 @@ public class MainApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS - Objective C" %}
-#### iOS - Objective C
-
+{% tab title="iOS" %}
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+
+### Objective-C
 
 ```objectivec
 #import "AppDelegate.h"
@@ -241,12 +251,8 @@ Add the following initialization code. It may need to be adjusted depending on h
 
 @end
 ```
-{% endtab %}
 
-{% tab title="iOS - Swift" %}
-#### iOS - Swift
-
-Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+### Swift
 
 ```swift
 import ACPCore
@@ -274,9 +280,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-#### Javascript
+### Javascript
 
-> Tip: We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+{% hint style="info" %}
+We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
+{% endhint %}
 
 ```jsx
 import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
@@ -293,14 +301,14 @@ initSDK() {
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+Initialization code is located in this Github [`README`](https://github.com/adobe/flutter_acpcore).
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
-
 For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
 **iOS:**
@@ -361,7 +369,7 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
 
 For Unity apps, initialize the SDK using the following code in the start function of the MainScript
 
@@ -396,7 +404,7 @@ public class MainScript : MonoBehaviour
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
 For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
 
@@ -486,7 +494,7 @@ Create a Podfile if you do not already have one:
 pod init
 ```
 
-If CocoaPods could not find the dependencies, you may need to run this command:
+If Cocoapods cannot not find the dependencies, you may need to run this command:
 
 ```text
 pod repo update

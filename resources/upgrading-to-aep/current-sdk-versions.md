@@ -1,221 +1,279 @@
-# Latest SDK Versions
-
-## Android
-
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&logoColor=white&label=core&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-* [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&logoColor=white&label=analytics&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services)
-
-* [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&logoColor=white&label=mobileservices&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&logoColor=white&label=audience&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&logoColor=white&label=campaignclassic&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaign.svg?logo=android&logoColor=white&label=campaign&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaign)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&logoColor=white&label=target&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&logoColor=white&label=placesmonitor&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor)
-* [Github](https://github.com/adobe/places-monitor-android)
-
-### [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&logoColor=white&label=places&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/android/places-1.0.0.aar)
-
-### [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&logoColor=white&label=userprofile&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* Maven - [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android)
-
-## iOS
-
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore)
-
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics)
-
-### [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=Orange&label=ACPMobileServices&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMobileServices) 
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices)
-
-### [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia)
-
-### [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager)
-
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience)
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&label=ACPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAudience)
-
-### [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&label=ACPCampaignClassic&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaignClassic)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic)
-
-### [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&label=ACPCampaign&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaign)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign)
-
-### [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&label=ACPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPTarget)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget)
-
-### [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&label=ACPPlacesMonitor&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlacesMonitor)
-* [Github](https://github.com/adobe/places-monitor-ios)
-
-### [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&label=ACPPlaces&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlaces)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces)
-
-### [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* Cocoapods - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&label=ACPGriffon&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPGriffon)
-* [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon)
-
-## Cordova
-
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
-
-* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpcore?label=cordova-acpcore&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpcore)
-
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* npmjs - [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpgriffon?label=cordova-acpgriffon&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpgriffon)
-
-## Flutter
-
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
-
-* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore)
-
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-* pub.dev - [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* pub.dev -[![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon)
+# Current SDK Versions
+
+## Swift Developer Preview
+
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+
+[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
+
+## 
+
+The Adobe Experience Platform Mobile SDK supports the following OS versions:
+
+* Google Android API 14 \(Ice Cream Sandwich\) or later
+* Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Extension</th>
+      <th style="text-align:left">Cocoapods</th>
+      <th style="text-align:left">Android</th>
+      <th style="text-align:left">Github</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a> (supports
+        tvOS)</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&amp;logoColor=white&amp;label=core&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPUserProfile"><img src="https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&amp;label=ACPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&amp;logoColor=white&amp;label=userprofile&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/beta/project-griffon">Project Griffon (Beta)</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPGriffon"><img src="https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&amp;label=ACPGriffon&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/home.html">Places Service</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlaces"><img src="https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&amp;label=ACPPlaces&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&amp;logoColor=white&amp;label=places&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html">Places Monitor</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&amp;logoColor=white&amp;label=placesmonitor&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics">Adobe Analytics</a> (supports
+        tvOS)</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&amp;logoColor=white&amp;label=analytics&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics">Adobe Analytics - Media Analytics for Audio &amp; Video</a> (supports
+        tvOS)</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&amp;logoColor=white&amp;label=media&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager">Adobe Audience Manager</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAudience"><img src="https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&amp;label=ACPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&amp;logoColor=white&amp;label=audience&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services">Adobe Analytics - Mobile Services</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=Orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&amp;logoColor=white&amp;label=mobileservices&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target">Adobe Target</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPTarget"><img src="https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&amp;label=ACPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&amp;logoColor=white&amp;label=target&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard">Adobe Campaign Standard</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaign"><img src="https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&amp;label=ACPCampaign&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaign"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaign.svg?logo=android&amp;logoColor=white&amp;label=campaign&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic">Adobe Campaign Classic</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&amp;logoColor=white&amp;label=campaignclassic&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## React Native
 
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcore.svg?color=green&label=%40adobe%2Freact-native-acpcore&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcore)
+{% hint style="info" %}
+For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
+{% endhint %}
 
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+| Extension | npmjs | Github |
+| :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcore.svg?color=green&label=%40adobe%2Freact-native-acpcore&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcore) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpuserprofile.svg?color=green&label=%40adobe%2Freact-native-acpuserprofile&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpuserprofile) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpgriffon.svg?color=green&label=%40adobe%2Freact-native-acpgriffon&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpgriffon) | [Link](https://github.com/adobe/react-native-acpgriffon) |
+| [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpplaces.svg?color=green&label=%40adobe%2Freact-native-acpplaces&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpplaces) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpanalytics.svg?color=green&label=%40adobe%2Freact-native-acpanalytics&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpanalytics) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpmedia.svg?color=green&label=%40adobe%2Freact-native-acpmedia&logo=npm&style=flat-square)](https://www.npmjs.com/package/@adobe/react-native-acpmedia) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpaudience.svg?color=green&label=%40adobe%2Freact-native-acpaudience&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpaudience) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acptarget.svg?color=green&label=%40adobe%2Freact-native-acptarget&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acptarget) | [Link](https://github.com/adobe/react-native-acpcore) |
+| [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign) | [Link](https://github.com/adobe/react-native-acpcore) |
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpanalytics.svg?color=green&label=%40adobe%2Freact-native-acpanalytics&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpanalytics)
+## Cordova
 
-### [Adobe Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics)
+Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpmedia.svg?color=green&label=%40adobe%2Freact-native-acpmedia&logo=npm&style=flat-square)](https://www.npmjs.com/package/@adobe/react-native-acpmedia)
+{% hint style="info" %}
+For Cordova, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with Cordova applications, see this [guide](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
+{% endhint %}
 
-### [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile)
+With Node.js installed, you may install the Cordova framework from terminal using the following statement:
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpuserprofile.svg?color=green&label=%40adobe%2Freact-native-acpuserprofile&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpuserprofile)
+```text
+sudo npm install -g cordova
+```
 
-### [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target)
+To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin\(s\) using the following statement:
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acptarget.svg?color=green&label=%40adobe%2Freact-native-acptarget&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acptarget)
+```text
+cordova plugin add https://github.com/adobe/cordova-acpcore.git
+```
 
-### [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager)
+| Extension | npmjs | Github |
+| :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpcore?label=cordova-acpcore&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpcore) | [Link](https://github.com/adobe/cordova-acpcore) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpgriffon?label=cordova-acpgriffon&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpgriffon) | [Link](https://github.com/adobe/cordova-acpcore) |
+| [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplaces?label=cordova-acpplaces&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplaces) | [Link](https://github.com/adobe/cordova-acpcore) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics) | [Link](https://github.com/adobe/cordova-acpcore) |
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpaudience.svg?color=green&label=%40adobe%2Freact-native-acpaudience&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpaudience)
+## Flutter
 
-### [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard)
+Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
-* npmjs - [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcampaign.svg?color=green&label=%40adobe%2Freact-native-acpcampaign&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcampaign)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* npmjs - Coming Soon
-
-
+| Extension | pub.dev | Github |
+| :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) | [Link](https://github.com/adobe/flutter_acpcore) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon) | [Link](https://github.com/adobe/flutter_acpgriffon) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) | [Link](https://github.com/adobe/flutter_acpanalytics) |
 
 ## Xamarin
 
-### [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core)
+Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
-* NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/)
-* NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/)
+{% hint style="info" %}
+The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
+{% endhint %}
 
-### [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-
-* NuGet\(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/)
-* NuGet - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/)
-
-### [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
-* NuGet \(Android\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/)
-* NuGet \(iOS\) - [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/)
+| Extension | Android | iOS | Github |
+| :--- | :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/) | [Link](https://github.com/adobe/xamarin-acpcore) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) | [Link](https://github.com/adobe/xamarin-acpgriffon) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/) | [Link](https://github.com/adobe/xamarin-acpanalytics) |
 
 ## Unity
 
-### Mobile Core
+Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 2019.3.10f1 or later**. For the latest Unity installation instructions, see the `README` file in the [`unity-acpcore`](https://github.com/adobe/unity-acpcore) repository.
 
-[Download ACPCore](https://github.com/adobe/unity-acpcore/tree/master/bin/ACPCore-0.0.1-Unity.zip)
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
 
-### Adobe Analytics
-
-[Download ACPAnalytics](https://github.com/adobe/unity-acpanalytics)
-
-### Project Griffon \(Beta\)
-
-[Download ACPGriffon](https://github.com/adobe/unity-acpgriffon)
+| Extension | Github |
+| :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [Link](https://github.com/adobe/unity-acpcore/tree/master/bin) |
+| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [Link](https://github.com/adobe/unity-acpgriffon/tree/master/bin) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [Link](https://github.com/adobe/unity-acpanalytics/tree/master/bin) |
 

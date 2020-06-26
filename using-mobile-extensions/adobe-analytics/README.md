@@ -232,11 +232,9 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```csharp
    ACPAnalytics.extensionVersion();
    ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 #### **C\#**
 
 1. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
@@ -250,7 +248,6 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```text
    ACPAnalytics.ExtensionVersion();
    ```
-
 {% endtab %}
 {% endtabs %}
 

@@ -1,5 +1,11 @@
 # Frequently asked questions
 
+## Swift Developer Preview
+
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+
+[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
+
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
 There are several new features and benefits of using the Experience Platform Mobile SDK. These SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The following table highlights some of the improvements in the Experience Platform Mobile SDK:
@@ -58,12 +64,15 @@ The Experience Platform SDK migrates the locally stored user contexts from the 4
 
 For a complete list of supported platforms, please see [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions).
 
-### What OS versions are supported?
+### What OS & platform versions are supported?
 
 * Android versions 4.0 or later \(API levels 14 or later\)
 * iOS versions 10 or later
 * React Native versions 0.44.0 or later
 * Flutter versions 1.10.0 or later
+* Cordova 9.0.0 or later
+* Xamarin - MonoAndroid 9.0+ and Xamarin.iOS 1.0+
+* Unity 2019.3.10f1or later
 
 ### **How "big" is the SDK?**
 

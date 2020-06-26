@@ -385,13 +385,12 @@ Retrieves the Analytics tracking identifier.
 #### **Example**
 
 ```java
-AdobeCallback<String> trackingIdentifierCallback = new AdobeCallback<String>() {
+Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
     @Override
     public void call(final String trackingIdentifier) {
         // check the trackingIdentifier value    
     }
-};
-Analytics.getTrackingIdentifier(analyticsTrackingIdentifierCallback);
+});
 ```
 {% endtab %}
 
@@ -416,7 +415,7 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 [ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
-    // use returned trackingIdentifier   
+    // check the trackingIdentifier value  
 }];
 ```
 
@@ -424,7 +423,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
-    // use returned trackingIdentifier
+    // check the trackingIdentifier value  
 }
 ```
 {% endtab %}
@@ -604,14 +603,12 @@ public static void getVisitorIdentifier(AdobeCallback<String> callback)
 #### Example
 
 ```java
-AdobeCallback<String> visitorIdentifierCallback = new AdobeCallback<String>() {
+Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
     @Override
     public void call(final String visitorIdentifier) {
         // check the visitorIdentifier value    
     }
-};
-
-Analytics.getVisitorIdentifier(visitorIdentifierCallback);
+});
 ```
 {% endtab %}
 
@@ -632,7 +629,7 @@ Analytics.getVisitorIdentifier(visitorIdentifierCallback);
 
 ```objectivec
 [ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
-    // use returned visitorIdentifier   
+    // check the visitorIdentifier value   
 }];
 ```
 
@@ -640,7 +637,7 @@ Analytics.getVisitorIdentifier(visitorIdentifierCallback);
 
 ```swift
 ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
-    // use returned visitorIdentifier
+    // check the visitorIdentifier value  
 }
 ```
 {% endtab %}

@@ -1,9 +1,10 @@
 # Table of contents
 
-* [Overview](README.md)
+* [Home](README.md)
+* [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Release notes](release-notes.md)
-* [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
+* [Version 4 API Changelog](api-change-log.md)
 
 ## Getting Started
 
@@ -79,7 +80,7 @@
   * [Experience Platform SDKs vs. 4x SDKs](resources/upgrading-to-aep/aepvs4x.md)
   * [Manual Lifecycle Implementation](resources/upgrading-to-aep/manual-lifecycle-implementation.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
-  * [Latest SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
+  * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
@@ -115,7 +116,7 @@
 
 ## BETA
 
-* [Adobe Experience Platform - Experience Edge - Extension](beta/experience-platform-extension/README.md)
+* [Adobe Experience Platform - Experience Edge](beta/experience-platform-extension/README.md)
   * [Setup Adobe Experience Platform](beta/experience-platform-extension/experience-platform-setup.md)
   * [Setup Adobe Experience Platform Mobile SDK](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)

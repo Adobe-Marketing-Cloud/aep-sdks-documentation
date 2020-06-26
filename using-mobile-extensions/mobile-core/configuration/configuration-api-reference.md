@@ -5,9 +5,7 @@
 This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
 
 {% tabs %}
-
-This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
-
+{% tab title="Android" %}
 #### Syntax
 
 ```java
@@ -21,7 +19,9 @@ public static void configureWithAppID(final String appId);
 ```java
 MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
+{% endtab %}
 
+{% tab title="iOS" %}
 #### Syntax
 
 ```objectivec
@@ -41,8 +41,8 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
+{% endtab %}
 
-{% tabs %}
 {% tab title="Unity" %}
 #### Syntax
 

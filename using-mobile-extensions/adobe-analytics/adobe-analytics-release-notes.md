@@ -1,5 +1,12 @@
 # Release Notes
 
+## June 17, 2020
+
+### iOS Analytics 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
 ## June 1, 2020
 
 ### iOS Analytics 2.2.4

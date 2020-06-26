@@ -4,16 +4,78 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## We want to help!
+## Swift Developer Preview
 
-Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+
+[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
+
+## June 18, 2020
+
+### iOS Griffon 1.1.3
+
+* IntegrationId in Griffon’s shared state now has format sessionId|clientId.
+
+## June 17, 2020
+
+### iOS Core 2.7.0
+
+* Added tvOS compatibility
+* Version 2.7.0 onwards, binaries are built with Xcode 11.0
+* Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
+
+### iOS Lifecycle 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Signal 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Identity 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Analytics 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Media 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
+## June 15, 2020
+
+### React Native
+
+* Support added for Project Griffon
+  * [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
+* Support added for Places 
+  * [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
+
+## June 12, 2020
+
+### Android Griffon 1.1.7
+
+* Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
+* IntegrationId in Griffon’s shared state now has format sessionId\|clientId
+* Griffon pin pad UI support for devices with cutouts from Android version 28 and above.
+
+### Cordova
+
+* [Support added for Places extension in Cordova](https://github.com/adobe/cordova-acpplaces)
+* [Support added for Profile extension in Cordova ](https://github.com/adobe/cordova-acpuserprofile)
 
 ## June 4, 2020
 
 ### iOS Griffon 1.1.2
 
-* Reduced the scope of variable BUFFER_SIZE that was exposed globally which may result in naming conflict
-
+* Reduced the scope of variable BUFFER\_SIZE that was exposed globally which may result in naming conflict
 
 ## June 2, 2020
 
@@ -23,9 +85,9 @@ Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r
 * [Microsoft Xamarin](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin)
 * [Unity](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#unity)
 
-Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additionally, these frameworks have been released as open source projects that can be modified to suit your use cases. 
+Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additionally, these frameworks have been released as open source projects that can be modified to suit your use cases.
 
-See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK. 
+See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK.
 
 ## June 1, 2020
 
@@ -49,7 +111,7 @@ The following updates were made in this release:
 * Fixed a bug where the shared state of event hub was not properly created.
 * Fixed a security issue.
 
-## May 22, 2020
+## May 27, 2020
 
 ### iOS Griffon 1.1.1
 

@@ -3,7 +3,7 @@
 This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
 
 {% hint style="warning" %}
-As of **April 1, 2020**, Apple will no longer support the UIWebView API. To avoid any issues, ensure that you are using the iOS SDK version 1.0.3 or later. For more information about the UIWebView API, see [UIWebView ](https://developer.apple.com/documentation/uikit/uiwebview).
+As of **April 1, 2020**, Apple will no longer support UIWebView. To avoid any issues, ensure that you are using the iOS extension versions 1.0.3 or later. For more information, see Apple's documentation on [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
 {% endhint %}
 
 {% hint style="info" %}

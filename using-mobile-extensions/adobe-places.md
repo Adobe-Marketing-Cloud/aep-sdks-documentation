@@ -7,4 +7,5 @@ Location Service \(previously Places\) is now generally available for all custom
 * [Places SDK implementation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
 * [Places SDK Monitor implementation](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html)
 * [Cordova Places SDK github readme](https://github.com/adobe/cordova-acpplaces/blob/master/README.md)
+* [Cordova Places SDK Monitor github readme](https://github.com/adobe/cordova-acpplaces-monitor/blob/master/README.md)
 
