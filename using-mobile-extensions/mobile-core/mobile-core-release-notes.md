@@ -1,5 +1,36 @@
 # Release Notes
 
+## June 26, 2020
+
+### iOS Identity 2.3.1
+
+* Fixed an intermittent bug where Identity data was not loading at SDK initialization time.
+
+Released with ACPCore 2.7.1
+
+## June 17, 2020
+
+### iOS Core 2.7.0
+
+* Added tvOS compatibility
+* Version 2.7.0 onwards, binaries are built with Xcode 11.0
+* Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
+
+### iOS Lifecycle 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Signal 2.1.0
+
+* Added tvOS compatibility
+* Version 2.1.0 onwards, binaries are built with Xcode 11.0
+
+### iOS Identity 2.3.0
+
+* Added tvOS compatibility
+* Version 2.3.0 onwards, binaries are built with Xcode 11.0
+
 ## May 28, 2020
 
 The following updates were made in this release:
