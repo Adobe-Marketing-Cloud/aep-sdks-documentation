@@ -420,7 +420,7 @@ The mbox request that failed can be retried to successfully retrieve the test of
 
 {% tabs %}
 {% tab title="Android" %}
-On Android, when the application is launched as a result of a deep link, the `collectLaunchIInfo` API is internally invoked, and the Target activity and deep link information is extracted from the Intent extras.
+On Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target activity and deep link information is extracted from the Intent extras.
 {% endtab %}
 
 {% tab title="iOS" %}
