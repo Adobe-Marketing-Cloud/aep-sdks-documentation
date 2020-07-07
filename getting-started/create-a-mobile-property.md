@@ -68,7 +68,7 @@ Before the mobile application can access the configuration, it needs published t
 
 To deploy your configuration to a development environment for testing:
 
-1. In Experience Platform Launch, on your mobile property's details page, click the **Publishing** tab.
+1. In Experience Platform Launch, on your mobile property's details page, click the **Publishing Flow** menu.
 2. Under the **Development** section of the publishing workflow, click **Add New Library**.
 3. Specify any name for the library **Name**.
 4. From the **Environment** drop-down list, select Development as the environment.
