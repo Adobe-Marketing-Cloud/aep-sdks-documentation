@@ -51,8 +51,6 @@ MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### setPrivacyStatus
 
 You can set privacy status to one of the following values:
@@ -63,16 +61,33 @@ You can set privacy status to one of the following values:
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
 
-### Syntax <a id="syntax-4"></a>
+### Objective-C
+
+#### Syntax
 
 ```objectivec
 + (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
 ```
 
-### Example <a id="example-4"></a>
+#### Example
 
 ```objectivec
-[ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn
+[ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn];
+```
+
+### Swift
+
+#### Syntax
+
+```objectivec
+class func setPrivacyStatus(_ status: ACPMobilePrivacyStatus) {
+}
+```
+
+#### Example
+
+```objectivec
+ACPCore.privacyStatus = ACPMobilePrivacyStatusOptIn
 ```
 {% endtab %}
 {% endtabs %}
@@ -85,8 +100,6 @@ The following API returns an enum representation of the privacy status for the u
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
 ### getPrivacyStatus
 
 The enum representation of the privacy status that corresponds to the following statuses:
@@ -94,6 +107,8 @@ The enum representation of the privacy status that corresponds to the following 
 * `MobilePrivacyStatus.OPT_IN`
 * `MobilePrivacyStatus.OPT_OUT`
 * `MobilePrivacyStatus.UNKNOWN`
+
+### Java
 
 #### Syntax
 
@@ -117,8 +132,6 @@ MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
-
 ### getPrivacyStatus
 
 The enum representation of the privacy status that corresponds to the following statuses:
@@ -126,6 +139,8 @@ The enum representation of the privacy status that corresponds to the following 
 * `ACPMobilePrivacyStatusOptIn` 
 * `ACPMobilePrivacyStatusOptOut`
 * `ACPMobilePrivacyStatusUnknown`
+
+### Objective-C
 
 #### Syntax
 
@@ -155,6 +170,43 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
             // handle the retrieved privacy status
         }
     }];
+```
+
+### Swift
+
+#### Syntax
+
+```java
+class func getPrivacyStatus(_ callback: @escaping (_ status: ACPMobilePrivacyStatus) -> Void) {//}
+
+class func getPrivacyStatus(withCompletionHandler completionHandler: @escaping (_ status: ACPMobilePrivacyStatus, _ error: Error?) -> Void) {//}
+```
+
+* _callback_ is invoked after the privacy status is available.
+* _completionHandler_ is invoked with the current privacy status, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+
+#### Example
+
+```objectivec
+ACPCore.getPrivacyStatus(
+    { status in
+        switch status {
+            case ACPMobilePrivacyStatusOptIn:
+                print("Privacy Status: Opt-In")
+            default:
+                break
+        }
+    })
+
+
+ACPCore.getPrivacyStatus(withCompletionHandler: { status, error in
+    if error != nil {
+        // handle error here
+    } else {
+        // handle the retrieved privacy status
+    }
+})
+
 ```
 {% endtab %}
 {% endtabs %}
