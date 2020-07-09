@@ -197,6 +197,64 @@ var attributes = {"username":username, "usertype":usertype};
 ACPUserProfile.updateUserAttributes(attributes, handleCallback, handleError);
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+### **updateUserAttribute**
+
+Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
+
+Remember the following information:
+
+* If the attribute does not exist, it will be created.
+* If the attribute exists, the value will be updated.
+* A null attribute value removes the attribute.
+
+#### **Syntax**
+
+```dart
+static Future<void> updateUserAttribute(String attributeName, String attributeValue) async
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
+
+#### **Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```dart
+FlutterACPUserProfile.updateUserAttribute("username", "Will Smith");
+```
+
+### updateUserAttributes
+
+Sets the user profile attributes key and value.
+
+Allows you to create/update a batch of user profile attributes:
+
+* String, Number, and Array are valid types of user profile attributes.
+* Custom objects cannot be saved as a `UserProfile` attribute.
+* If the attribute does not exist, it is created.
+* If the attribute already exists, the value is updated.
+* A null attribute value will remove the attribute.
+
+#### **Syntax**
+
+```dart
+static Future<void> updateUserAttributes(Map<String, Object> attributeMap) async
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+#### **Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+```dart
+FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":"Actor"});
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## **Remove user attributes**
@@ -342,6 +400,50 @@ attributeNames.push("usertype");
 ACPUserProfile.removeUserAttributes(attributeNames, handleCallback, handleError);
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+### **removeUserAttribute**
+
+Removes the user profile attribute for the given key.
+
+#### **Syntax**
+
+```dart
+static Future<void> removeUserAttribute(String attributeName) async
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+#### **Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```dart
+FlutterACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+### **removeUserAttributes**
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```dart
+static Future<void> removeUserAttributes(List<String> attributeName) async
+```
+
+* _attributeName_ is an array of strings containing the names of user profile attributes to remove.
+
+#### **Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```dart
+FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
+```
+{% endtab %}
+
+
 {% endtabs %}
 
 ## **Get user attributes**
@@ -439,5 +541,32 @@ attributeNames.push("itemsAddedToCart");
 ACPUserProfile.getUserAttributes(attributeNames, handleCallback, handleError);
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```dart
+static Future<String> getUserAttributes(List<String> attributeKeys) async
+```
+
+* _attributeKeys_ is an array of strings containing the names of user profile attributes to retrieve.
+
+#### **Example**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+```dart
+try {
+  result = await FlutterACPUserProfile.getUserAttributes(["itemsAddedToCart"]);
+} on PlatformException {
+  log("Failed to get the user attributes");
+}
+```
+{% endtab %}
+
 {% endtabs %}
 
