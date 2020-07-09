@@ -80,6 +80,12 @@ To add the Profile extension to your app:
       flutter_acpuserprofile: ">= 1.0.0"
   ```
 
+Then fetch the packages with:
+
+```bash
+flutter pub get
+```
+
 2. Get the extension version.
 
    ```dart
