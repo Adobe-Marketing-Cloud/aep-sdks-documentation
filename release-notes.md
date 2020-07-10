@@ -10,11 +10,27 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## July 09, 2020
+
+### Flutter
+
+* Client-side Profile extension released for Flutter see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) for more information.
+
 ## June 26, 2020
 
 ### iOS Identity 2.3.1
 
 * Fixed an intermittent bug where Identity data was not loading at SDK initialization time.
+
+### React Native
+
+* Places Monitor extension released for React Native see: [Places Monitor React Native](https://www.npmjs.com/package/@adobe/react-native-acpplaces-monitor)
+
+## June 24, 2020
+
+### Cordova
+
+* Places Monitor extension released for Cordova see: [Places Monitor Cordova](https://www.npmjs.com/package/@adobe/cordova-acpplacesmonitor)
 
 ## June 18, 2020
 
