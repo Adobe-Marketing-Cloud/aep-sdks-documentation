@@ -1,6 +1,77 @@
 # Audience Manager API reference
 
-## Register the Audience extension
+## getVisitorProfile
+
+Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
+
+{% tabs %}
+{% tab title="Android" %}
+### getVisitorProfile
+
+This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `SharedPreferences`. If no signal has been submitted, null is returned.
+
+#### **Syntax**
+
+```java
+public static void getVisitorProfile(final AdobeCallback<Map<String, String>> adobeCallback)
+```
+
+#### **Example**
+
+```java
+AdobeCallback<Map<String, String>> visitorProfileCallback = new AdobeCallback<Map<String, String>>() {
+    @Override
+    public void call(final Map<String, String> visitorProfile) {
+        // your own customized code
+    }
+};
+
+Audience.getVisitorProfile(visitorProfileCallback);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### getVisitorProfile
+
+This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
+
+#### **Syntax**
+
+```objectivec
++ (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
+```
+
+#### **Example**
+
+**Objective C**
+
+```objectivec
+[ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
+  // your customized code
+}];
+```
+
+**Swift**
+
+```swift
+ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
+    // your customized code
+})
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**JavaScript**
+
+### getVisitorProfile
+
+```jsx
+ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
+```
+{% endtab %}
+{% endtabs %}
+
+## registerExtension
 
 This API registers an extension class that was derived from `ACPExtension` with a unique name. This call validates the parameters to ensure that the name is not empty, the name is unique, and that the parent class is ACPExtension.
 
@@ -57,7 +128,71 @@ ACPAudience.registerExtension();
 {% endtab %}
 {% endtabs %}
 
-## Send signals to Audience Manager
+## reset
+
+This API helps you reset the Audience Manager UUID and purges the current visitor profile.
+
+{% hint style="info" %}
+For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+### **reset**
+
+This API resets the Audience Manager UUID and purges the current visitor profile from `android.content.SharedPreferences`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
+
+#### **Syntax**
+
+```java
+public static void reset()
+```
+
+#### **Example**
+
+```java
+Audience.reset();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### **reset**
+
+This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
+
+#### **Syntax**
+
+```objectivec
++ (void) reset;
+```
+
+#### **Examples**
+
+**Objective C**
+
+```objectivec
+[ACPAudience reset];
+```
+
+**Swift**
+
+```swift
+ACPAudience.reset()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+#### **JavaScript**
+
+### **reset**
+
+```jsx
+ACPAudience.reset();
+```
+{% endtab %}
+{% endtabs %}
+
+## signalWithData
 
 Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to an initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
@@ -147,139 +282,3 @@ ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => con
 ```
 {% endtab %}
 {% endtabs %}
-
-## Reset identifiers and profiles
-
-This API helps you reset the Audience Manager UUID and purges the current visitor profile.
-
-{% hint style="info" %}
-For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-### **reset**
-
-This API resets the Audience Manager UUID and purges the current visitor profile from `android.content.SharedPreferences`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
-
-#### **Syntax**
-
-```java
-public static void reset()
-```
-
-#### **Example**
-
-```java
-Audience.reset();
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### **reset**
-
-This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
-
-#### **Syntax**
-
-```objectivec
-+ (void) reset;
-```
-
-#### **Examples**
-
-**Objective C**
-
-```objectivec
-[ACPAudience reset];
-```
-
-**Swift**
-
-```swift
-ACPAudience.reset()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### **JavaScript**
-
-### **reset**
-
-```jsx
-ACPAudience.reset();
-```
-{% endtab %}
-{% endtabs %}
-
-## Get the visitor profile
-
-Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
-
-{% tabs %}
-{% tab title="Android" %}
-### getVisitorProfile
-
-This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `SharedPreferences`. If no signal has been submitted, null is returned.
-
-#### **Syntax**
-
-```java
-public static void getVisitorProfile(final AdobeCallback<Map<String, String>> adobeCallback)
-```
-
-#### **Example**
-
-```java
-AdobeCallback<Map<String, String>> visitorProfileCallback = new AdobeCallback<Map<String, String>>() {
-    @Override
-    public void call(final Map<String, String> visitorProfile) {
-        // your own customized code
-    }
-};
-
-Audience.getVisitorProfile(visitorProfileCallback);
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-### getVisitorProfile
-
-This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
-
-#### **Syntax**
-
-```objectivec
-+ (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
-```
-
-#### **Example**
-
-**Objective C**
-
-```objectivec
-[ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
-  // your customized code
-}];
-```
-
-**Swift**
-
-```swift
-ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
-    // your customized code
-})
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**JavaScript**
-
-### getVisitorProfile
-
-```jsx
-ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
-```
-{% endtab %}
-{% endtabs %}
-
