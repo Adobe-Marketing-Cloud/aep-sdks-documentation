@@ -14,6 +14,7 @@
 * [Enable lifecycle metrics](getting-started/enable-lifecycle-metrics.md)
 * [Set up tracking](getting-started/initialize-the-sdk.md)
 * [Implement extensions](getting-started/next-steps.md)
+* [Validation](getting-started/validate.md)
 
 ## Using Mobile Extensions
 
