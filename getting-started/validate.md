@@ -8,7 +8,7 @@ Once you have Griffon integrated, you can create a [new session](https://aep-sdk
 
 The main interface for Griffon will show a running event list of all SDK events, including a configuration response event that will provide a readout of all configuration values obtained from Adobe Experience Platform Launch. 
 
-![Griffon Configuration Response](../../../.gitbook/assets/Configurationresponse.png)
+![Griffon Configuration Response](.gitbook/assets/GriffonPlaces.png)
 
 
 ## Adobe Analytics View
