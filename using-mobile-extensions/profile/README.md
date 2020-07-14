@@ -74,11 +74,11 @@ To add the Profile extension to your app:
 
 1. After creating your Flutter app and adding the Android and iOS platforms, the User Profile extension for flutter can be added in the `pubspec.yaml`:
 
-  ```yaml
+   ```yaml
     dependencies:
       flutter_acpcore: ">= 1.0.0"
       flutter_acpuserprofile: ">= 1.0.0"
-  ```
+   ```
 
 Then fetch the packages with:
 
@@ -86,14 +86,13 @@ Then fetch the packages with:
 flutter pub get
 ```
 
-2. Get the extension version.
+1. Get the extension version.
 
    ```dart
    import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
    String version = FlutterACPUserProfile.extensionVersion;
    ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Register the extension

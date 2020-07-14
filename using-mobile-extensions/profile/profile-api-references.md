@@ -254,7 +254,6 @@ You want to update `username, usertype` of a user obtained in the log in page :
 FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":"Actor"});
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## **Remove user attributes**
@@ -442,8 +441,6 @@ You want to remove `username`, `usertype` user data when session timeout occurs.
 FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ## **Get user attributes**
@@ -567,6 +564,5 @@ try {
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 

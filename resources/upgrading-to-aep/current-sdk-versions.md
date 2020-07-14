@@ -2,11 +2,9 @@
 
 ## Swift Developer Preview
 
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-
-## 
 
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
@@ -82,7 +80,7 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
     <tr>
       <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html">Places Monitor</a>
       </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&amp;logoColor=white&amp;label=placesmonitor&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
@@ -180,7 +178,7 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
     <tr>
       <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic">Adobe Campaign Classic</a>
       </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&amp;logoColor=white&amp;label=campaignclassic&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
