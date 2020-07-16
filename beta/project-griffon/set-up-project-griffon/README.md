@@ -231,20 +231,18 @@ ACPGriffon.getVersion().then(version => console.log("AdobeExperienceSDK: ACPGrif
 
 **iOS**
 
-```text
-#import <RCTACPGriffon/ACPGriffon.h> [ACPGriffon registerExtension];
+```objectivec
+#import <RCTACPGriffon/ACPGriffon.h>
+
+[ACPGriffon registerExtension];
 ```
 
 **Android:**
 
-```text
-import com.adobe.marketing.mobile.Griffon;Griffon.registerExtension();
-```
+```java
+import com.adobe.marketing.mobile.Griffon;
 
-**Javascript:**
-
-```text
-import {ACPGriffon} from '@adobe/react-native-acpgriffon';ACPGriffon.registerExtension();
+Griffon.registerExtension();
 ```
 {% endtab %}
 
