@@ -10,7 +10,18 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
-## July 16, 202
+## July 16, 2020
+
+### iOS Core 2.7.1 \(Released with ACPCore version 2.7.2 on Cocoapods\)
+
+* Updated the wrapper type strings used by SDK plugins.
+* Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
+* Another attampt to fix the crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
+
+### Android Core 1.5.5
+
+* Updated the wrapper type strings used by SDK plugins.
+* Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
 
 ### Flutter
 
@@ -30,7 +41,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ## June 26, 2020
 
-### iOS Identity 2.3.1
+### iOS Identity 2.3.1 \(Released with ACPCore version 2.7.1 on Cocoapods\)
 
 * Fixed an intermittent bug where Identity data was not loading at SDK initialization time.
 
