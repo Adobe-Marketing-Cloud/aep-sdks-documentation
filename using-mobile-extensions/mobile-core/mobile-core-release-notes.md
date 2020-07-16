@@ -1,12 +1,27 @@
 # Release Notes
 
+## July 16, 2020
+
+### iOS Core 2.7.1 
+
+* Updated the wrapper type strings used by SDK plugins.
+* Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
+* Another attampt to fix the crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
+
+Released with ACPCore version 2.7.2 on Cocoapods
+
+### Android Core 1.5.5
+
+* Updated the wrapper type strings used by SDK plugins.
+* Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
+
 ## June 26, 2020
 
 ### iOS Identity 2.3.1
 
 * Fixed an intermittent bug where Identity data was not loading at SDK initialization time.
 
-Released with ACPCore 2.7.1
+Released with ACPCore version 2.7.1 on Cocoapods
 
 ## June 17, 2020
 
