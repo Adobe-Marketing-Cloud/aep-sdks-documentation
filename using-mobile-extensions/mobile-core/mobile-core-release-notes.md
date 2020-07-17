@@ -2,7 +2,7 @@
 
 ## July 16, 2020
 
-### iOS Core 2.7.1 
+### iOS Core 2.7.1
 
 * Updated the wrapper type strings used by SDK plugins.
 * Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.

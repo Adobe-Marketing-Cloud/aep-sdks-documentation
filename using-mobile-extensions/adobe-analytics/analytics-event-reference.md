@@ -72,7 +72,7 @@ This event is a request to complete processing on the Analytics hits queue. The 
 The Analytics extension receives and processes the following keys in a generic track content request event:
 
 * `action` - action name to attribute to the Analytics request being processed.
-* `state` - state name (page name) to attribute to the Analytics request being processed.
+* `state` - state name \(page name\) to attribute to the Analytics request being processed.
 * `contextdata` - key-value pairs that add context to the Analytics request being processed.
 
 {% hint style="info" %}
@@ -113,7 +113,6 @@ Here is an example of event data for a track request:
   "trackinternal": false
 }
 ```
-
 
 ### Analytics content request <a id="analytics-content-request"></a>
 

@@ -10,6 +10,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## July 17, 2020
+
+### Xamarin
+
+* Places extension released for Xamarin. See current [Xamarin versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin) for more information.
+
 ## July 16, 2020
 
 ### iOS Core 2.7.1 \(Released with ACPCore version 2.7.2 on Cocoapods\)
