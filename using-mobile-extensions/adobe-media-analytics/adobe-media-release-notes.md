@@ -1,5 +1,11 @@
 # Release Notes
 
+## July 17, 2020
+
+###  Android Media 2.0.1
+
+* Fixed a crash when configuring incorrect collection API server.
+
 ## June 17, 2020
 
 ### iOS Media 2.1.0

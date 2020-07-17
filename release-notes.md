@@ -12,6 +12,15 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ## July 17, 2020
 
+### Android Audience 1.0.2
+
+* Fixed an issue where UUID was not returned in getSdkIdentities API response.
+* Fixed an issue where customer visitor IDs were missing from Audience signals.
+
+### Android Media 2.0.1
+
+* Fixed a crash when configuring incorrect collection API server.
+
 ### Xamarin
 
 * Places extension released for Xamarin. See current [Xamarin versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin) for more information.
