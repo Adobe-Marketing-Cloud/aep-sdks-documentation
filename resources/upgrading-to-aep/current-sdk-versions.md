@@ -248,7 +248,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
-| Extension | pub.dev | Github | Sample |
+| Extension | pub.dev | Github | Sample App |
 | :--- | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![pub package](https://img.shields.io/pub/v/flutter_acpcore.svg)](https://pub.dartlang.org/packages/flutter_acpcore) | [Link](https://github.com/adobe/flutter_acpcore) | [Sample](https://github.com/adobe/flutter_acpcore/tree/master/example) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) | [![pub package](https://img.shields.io/pub/v/flutter_acpuserprofile.svg)](https://pub.dartlang.org/packages/flutter_acpuserprofile) | [Link](https://github.com/adobe/flutter-acpuserprofile) | [Sample](https://github.com/adobe/flutter_acpuserprofile/tree/master/example) |
