@@ -92,7 +92,24 @@ flutter pub get
    import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
    String version = FlutterACPUserProfile.extensionVersion;
    ```
+   {% endtab %}
+
+### Xamarin
+
+1. After adding the iOS or Android ACPUserProfile NuGet package, the User Profile extension for Xamarin can be added by this import statement:
+
+   ```csharp
+   using Com.Adobe.Marketing.Mobile;
+   ```
+
+2. Get the extension version.
+
+   ```csharp
+   ACPUserProfile.ExtensionVersion();
+   ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Register the extension
@@ -152,5 +169,62 @@ When using Cordova, registering User Profile with Mobile Core must be done in na
 
 When using Flutter, registering User Profile with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### Xamarin
+
+#### C\#
+
+**iOS**
+
+Register the User Profile extension in your app's `FinishedLaunching()` function:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+  ACPUserProfile.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the User Profile extension in your app's `OnCreate()` function:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+  ACPUserProfile.RegisterExtension();
+
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 

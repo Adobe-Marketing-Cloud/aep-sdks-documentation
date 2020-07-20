@@ -254,6 +254,103 @@ You want to update `username, usertype` of a user obtained in the log in page :
 FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":"Actor"});
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### **updateUserAttribute**
+
+Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
+
+Remember the following information:
+
+* If the attribute does not exist, it will be created.
+* If the attribute exists, the value will be updated.
+* A null attribute value removes the attribute.
+
+#### **Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void UpdateUserAttribute (string attributeName, Java.Lang.Object attributeValue);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a String, Integer, Boolean, Double, Array, or Map containing the user profile attribute value. Custom objects cannot be saved as a `UserProfile` attribute.
+
+**iOS**
+
+```csharp
+public static void UpdateUserAttribute (string attributeName, string attributeValue);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ is a string containing the user profile attribute value.
+
+#### **Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```csharp
+ACPUserProfile.updateUserAttribute("username", "Will Smith");
+```
+
+### updateUserAttributes
+
+Sets the user profile attributes key and value.
+
+Allows you to create/update a batch of user profile attributes:
+
+* String, Integer, Boolean, Double, Array, or Map are valid types of user profile attributes.
+* Custom objects cannot be saved as a `UserProfile` attribute.
+* If the attribute does not exist, it is created.
+* If the attribute already exists, the value is updated.
+* A null attribute value will remove the attribute.
+
+#### **Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void UpdateUserAttributes (IDictionary<string, Java.Lang.Object> attributeMap);
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+**iOS**
+
+```csharp
+public static void UpdateUserAttributes (NSDictionary attributeMap);
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+#### **Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+**Android**
+
+```csharp
+var attributes = new Dictionary<string, Java.Lang.Object>();
+attributes.Add("username", "will_smith");
+attributes.Add("usertype", "Actor");
+ACPUserProfile.UpdateUserAttributes(attributes);
+```
+
+**iOS**
+
+```csharp
+ var attributes = new NSMutableDictionary<NSString, NSString>
+ {
+   ["username"] = new NSString("will_smith"),
+   ["usertype"] = new NSString("Actor")
+ };
+ACPUserProfile.updateUserAttributes(attributes);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## **Remove user attributes**
@@ -441,6 +538,83 @@ You want to remove `username`, `usertype` user data when session timeout occurs.
 FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### **removeUserAttribute**
+
+Removes the user profile attribute for the given key.
+
+#### **Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void RemoveUserAttribute (string attributeName);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+**iOS**
+
+```csharp
+public static void RemoveUserAttribute (string attributeName);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+#### **Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```csharp
+ACPUserProfile.RemoveUserAttribute("itemsAddedToCart");
+```
+
+### **removeUserAttributes**
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void RemoveUserAttributes (IList<string> attributeNames);
+```
+
+* _attributeNames_ is an IList containing the names of user profile attributes to remove.
+
+**iOS**
+
+```csharp
+public static void RemoveUserAttributes (string[] attributeNames);
+```
+
+* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
+
+#### **Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+**Android**
+
+```csharp
+var attributes = new List<string>();
+attributes.Add("username");
+attributes.Add("usertype");
+ACPUserProfile.RemoveUserAttributes(attributes);
+```
+
+**iOS**
+
+```csharp
+string[] attributes = new string[] { "username", "usertype" };
+ACPUserProfile.RemoveUserAttributes(attributes);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## **Get user attributes**
@@ -564,5 +738,96 @@ try {
 }
 ```
 {% endtab %}
+
+{% tab title="Xamarin" %}
+
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void GetUserAttributes (IList<string> keys, IAdobeCallback callback);
+```
+
+* _keys_ is an IList containing the names of user profile attributes to retrieve.
+
+**iOS**
+
+```csharp
+public unsafe static void GetUserAttributes (string[] attributNames, [BlockProxy (typeof(ObjCRuntime.Trampolines.NIDActionArity2V0))] Action<NSDictionary, NSError> completionHandler);
+```
+
+* _attributNames_ is an array of strings containing the names of user profile attributes to remove.
+
+#### **Example**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+**Android**
+
+```csharp
+var keysToRetrieve = new List<string>();
+keysToRetrieve.Add("itemsAddedToCart");
+ACPUserProfile.GetUserAttributes(keysToRetrieve, new AdobeCallback());
+
+class AdobeCallback : Java.Lang.Object, IAdobeCallbackWithError
+{
+  public void Fail(AdobeError error)
+  {
+    Console.WriteLine("GetUserAttributes error: " + error.ToString());
+  }
+
+  public void Call(Java.Lang.Object retrievedAttributes)
+  {
+    if (retrievedAttributes != null)
+    {
+      var attributesDictionary = new Android.Runtime.JavaDictionary<string, object>(retrievedAttributes.Handle, Android.Runtime.JniHandleOwnership.DoNotRegister);
+      foreach (KeyValuePair<string, object> pair in attributesDictionary)
+      {
+        Console.WriteLine("[ " + pair.Key + " : " + pair.Value + " ]");
+      }
+    }
+    else
+    {
+      Console.WriteLine("GetUserAttributes callback is null.");
+    }
+  }
+}
+```
+
+**iOS**
+
+```csharp
+var callback = new Action<NSDictionary, NSError>(handleCallback);
+var keysToRetrieve = new string[] { "itemsAddedToCart" };
+ACPUserProfile.GetUserAttributes(keysToRetrieve, callback);
+
+private void handleCallback(NSDictionary content, NSError error)
+{
+  if (error != null)
+  {
+    Console.WriteLine("GetUserAttributes error: " + error.DebugDescription);
+  }
+  else if (content == null)
+  {
+    Console.WriteLine("GetUserAttributes callback is null.");
+  }
+  else
+  {
+    var attributesDictionary = (NSDictionary)content;
+    foreach (KeyValuePair<NSObject, NSObject> pair in attributesDictionary)
+    {
+      Console.WriteLine("[ " + pair.Key + " : " + pair.Value + " ]");
+    }
+  }
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
