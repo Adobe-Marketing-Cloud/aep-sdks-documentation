@@ -37,6 +37,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Updated the wrapper type strings used by SDK plugins.
 * Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
+* Added support for [Modify Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data) rules.
 
 ### Flutter
 
@@ -83,6 +84,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 * Added tvOS compatibility
 * Version 2.7.0 onwards, binaries are built with Xcode 11.0
 * Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
+* Added support for [Modify Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data) rules.
 
 ### iOS Lifecycle 2.1.0
 
