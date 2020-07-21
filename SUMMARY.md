@@ -85,6 +85,7 @@
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
+  * [Modify data in SDK events](resources/user-guides/modify-data.md)
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
@@ -131,4 +132,3 @@
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
-
