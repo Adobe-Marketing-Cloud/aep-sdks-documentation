@@ -12,4 +12,5 @@ Location Service \(previously Places\) is now generally available for all custom
 * [React Native Places Monitor SDK github readme](https://github.com/adobe/react-native-acpplaces-monitor/blob/master/README.md)
 * [Flutter Places SDK github readme](https://github.com/adobe/flutter-acpplaces/blob/master/README.md)
 * [Flutter Places Monitor SDK github readme](https://github.com/adobe/flutter_acpplaces_monitor/blob/master/README.md)
+* [Xamarin Places SDK github readme](https://github.com/adobe/xamarin-acpplaces/blob/master/README.md)
 
