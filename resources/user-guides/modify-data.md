@@ -52,9 +52,9 @@ If there is a conflict between the data that is defined in your Rule and the dat
 
 ### Defining a payload for the modify data action
 
-When defining a payload for the modify data action, the payload must match the format of the triggering event. For example, if you want to modify context data in an Analytics event, you need to know where the context data is defined on that event and match the format in your rule. For this reason, we strongly recommended that you enable verbose logging in the SDK and carefully study the format of the event to which you will attach the data. If the format does not match, most likely the expected results will not be received.
+When defining a payload for the modify data action, the payload must match the format of the triggering event. For example, if you want to modify context data in an Analytics event, you need to know where the context data is defined on that event and match the format in your rule. For this reason, we strongly recommended that you use the **Template** if available. If not, please enable verbose logging in the SDK and carefully study the format of the event to which you will modify the data. If the format does not match, most likely the expected results will not be received.
 
-## Example - modifying data in Analytics event
+## Example - Modifying data in Analytics event
 
 The following sample shows how to _modify data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
@@ -84,25 +84,38 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ![](../../.gitbook/assets/setevent.png)
 
-### Define the action
+### Define the action using Template
 
 1. Under the **Actions** section, click **Add**.
 2. From the **Extension** drop-down list, select **Mobile Core**.
 3. From the **Action Type** drop-down list, select **Modify Data**.
-4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
+4. On the right pane, in the **Context Data** area, click the **Add** button to insert a new key-value pair. Additional key-value pairs can be added by clicking on the Add button for each key-value pair.
+5. Select the **Value Type** for the value as String, Number, Boolean or Null. If the value type is selected as Null, the key will be removed from the triggering analytics event.
+6. Enter the **key** and **value** that needs to be modified in the triggering analytics event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, context data is added to this event before the Analytics extension processes it. The added context data will now be on the outgoing Analytics hit.
+![](../../.gitbook/assets/setactionanalytics.png)
 
-In the following example, **launches** and **anAddedKey** keys are added to the **contextdata** of the Analytics event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
+### Define the action using Freeform JSON
 
-![](../../.gitbook/assets/setaction.png)
+1. Under the **Actions** section, click **Add**.
+2. From the **Extension** drop-down list, select **Mobile Core**.
+3. From the **Action Type** drop-down list, select **Modify Data**.
+4. On the right pane, from the **Choose a Template** drop-down list, select **JSON**.
+5. In the **JSON Payload** field, type the json data that will modify this event data.
+6. Click Keep Changes.
+
+![](../../.gitbook/assets/setactionjson.png)
+
+On the right pane, you can add a payload that modifies data of an SDK event before an extension that is listening for this event can hear the event. In this example, context data of this event is modified before the Analytics extension processes it. The added context data will now be on the outgoing Analytics hit.
+
+In the following example, **launches** and **anAddedKey** keys are modified and **aRemovedKey** key is removed in the **contextdata** of the Analytics event. Values for the new keys can either be hardcoded in the rule, or dynamically determined by the SDK when this event processes by using Data Elements.
 
 ### Save the rule and rebuild your property
 
 After you complete your configuration, verify that your rule looks like the following:
 
-![](../../.gitbook/assets/rulecomplete.png)
+![](../../.gitbook/assets/rulecompletemodifydata.png)
 
 1. Click **Save**
 2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
