@@ -1,6 +1,6 @@
 # Modify data in SDK events
 
-The _modify data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.2.8 \(Launch\), 2.6.2 \(iOS\), and 1.5.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
+The _modify data_ rule action is supported in [Mobile Core](../../using-mobile-extensions/mobile-core/) starting version 2.1.14 \(Launch\), 2.7.1 \(iOS\), and 1.5.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
 
 To use this action, we need to provide context about how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the SDK's [rules engine](../../using-mobile-extensions/mobile-core/rules-engine/). Next, you will learn how to use the action with relevant examples.
 
