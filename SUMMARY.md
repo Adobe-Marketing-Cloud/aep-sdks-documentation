@@ -132,4 +132,4 @@
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
-  * [Troubleshooting Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/blob/master/beta/project-griffon/troubleshoot-project-griffon/README.md)
+  * [Troubleshoot Project Griffon](/beta/project-griffon/troubleshoot-project-griffon/README.md)
