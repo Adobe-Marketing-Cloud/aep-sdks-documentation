@@ -2,9 +2,9 @@
 
 If you are having trouble getting Project Griffon to work, please see suggestions under the following issue topics to resolve commonly encountered issues.
 
-## Enable debug logging
+To enable smoother implementation and to discover any potential issues, ensure you have SDK logging turned on per [Enable Debug Logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging) in the Getting Started section.
 
-* Change the log level with MobileCore/ACPCore `setLogLevel` API. See [Enable Debug Logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging).
+You may change SDK log levels using the [`setLogLevel`](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#logging) API.
 
 ## On-device, app issues
 
