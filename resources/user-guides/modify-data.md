@@ -58,10 +58,10 @@ When defining a payload for the modify data action, the payload must match the f
 
 The following sample shows how to _modify data_ to all outgoing `TrackAction` Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**.](#analytics-create-rule)
-2. [Select the **Event** you want to trigger the rule.](#analytics-select-an-event)
-3. [Select the **Action** to modify data and define your payload.](#analytics-define-the-action)
-4. [Save and rebuild the property](#analytics-save-the-rule-and-rebuild-your-property).
+1. [Create a new **Rule**.](modify-data.md#analytics-create-rule)
+2. [Select the **Event** you want to trigger the rule.](modify-data.md#analytics-select-an-event)
+3. [Select the **Action** to modify data and define your payload.](modify-data.md#analytics-define-the-action)
+4. [Save and rebuild the property](modify-data.md#analytics-save-the-rule-and-rebuild-your-property).
 
 ### Create a rule
 
@@ -92,7 +92,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **Context Data** area, click the **Add** button to insert a new key-value pair. Additional key-value pairs can be added by clicking on the Add button for each key-value pair.
 5. Select the **Value Type** for the value as String, Number, Boolean or Null. If the value type is selected as Null, the key will be removed from the triggering analytics event.
 6. Enter the **key** and **value** that needs to be modified in the triggering analytics event.
-5. Click **Keep Changes**.
+7. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/setactionanalytics.png)
 
@@ -119,4 +119,4 @@ After you complete your configuration, verify that your rule looks like the foll
 
 1. Click **Save**
 2. Rebuild your Experience Platform Launch property and deploy it to the correct Environment.
-{% endtab %}
+

@@ -92,7 +92,6 @@ flutter pub get
    import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
    String version = FlutterACPUserProfile.extensionVersion;
    ```
-   {% endtab %}
 
 ### Xamarin
 
@@ -107,9 +106,7 @@ flutter pub get
    ```csharp
    ACPUserProfile.ExtensionVersion();
    ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Register the extension
@@ -171,7 +168,6 @@ When using Flutter, registering User Profile with Mobile Core must be done in na
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ### Xamarin
 
 #### C\#
@@ -223,8 +219,6 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

@@ -256,7 +256,6 @@ FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ### **updateUserAttribute**
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -348,9 +347,7 @@ ACPUserProfile.UpdateUserAttributes(attributes);
  };
 ACPUserProfile.updateUserAttributes(attributes);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## **Remove user attributes**
@@ -540,7 +537,6 @@ FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ### **removeUserAttribute**
 
 Removes the user profile attribute for the given key.
@@ -612,9 +608,7 @@ ACPUserProfile.RemoveUserAttributes(attributes);
 string[] attributes = new string[] { "username", "usertype" };
 ACPUserProfile.RemoveUserAttributes(attributes);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## **Get user attributes**
@@ -740,7 +734,6 @@ try {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
@@ -826,8 +819,6 @@ private void handleCallback(NSDictionary content, NSError error)
   }
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 

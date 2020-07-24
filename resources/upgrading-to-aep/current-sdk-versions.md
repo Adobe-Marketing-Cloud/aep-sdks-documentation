@@ -215,7 +215,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 
 ## Cordova
 
-Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository. 
+Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 A sample Cordova application that uses the Adobe Experience Platform Mobile SDK can be found [here](https://github.com/adobe/cordova-acpsample).
 
