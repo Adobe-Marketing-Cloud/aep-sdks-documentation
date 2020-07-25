@@ -1,5 +1,17 @@
 # Release Notes
 
+## July 24, 2020
+
+### iOS Media 2.1.1
+
+* Fixed a performance issue when tracking media.
+  
+
+### @adobe/react-native-acpmedia 2.0.1
+
+* Updated to iOS Media v2.1.1.
+* Updated to Android Media v2.0.1.
+
 ## July 17, 2020
 
 ### Android Media 2.0.1

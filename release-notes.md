@@ -10,6 +10,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## July 24, 2020
+
+### iOS Media 2.1.1
+
+* Fixed a performance issue when tracking media.
+
 ## July 22, 2020
 
 ### Xamarin
@@ -27,7 +33,6 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Added Modify Data action for Launch Rules. See more information on usage here: [Modify data in SDK events](resources/user-guides/modify-data.md).
 * Update requires Mobile Core iOS minimum version 2.7.2 and Android minimum version 1.5.5
-
 ## July 17, 2020
 
 ### Android Audience 1.0.2
