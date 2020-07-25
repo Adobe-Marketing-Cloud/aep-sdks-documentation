@@ -16,6 +16,23 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Fixed a performance issue when tracking media.
 
+## July 22, 2020
+
+### Xamarin
+
+* User Profile extension for Android [released](https://www.nuget.org/packages/Adobe.ACPUserProfile.Android/)
+* User Profile extension for iOS [released](https://www.nuget.org/packages/Adobe.ACPUserProfile.iOS/)
+
+### Unity
+
+* User Profile extension for Unity [released](https://github.com/adobe/unity_acpuserprofile)
+
+## July 21, 2020
+
+### Mobile Core Launch Extension 2.1.15
+
+* Added Modify Data action for Launch Rules. See more information on usage here: [Modify data in SDK events](resources/user-guides/modify-data.md).
+* Update requires Mobile Core iOS minimum version 2.7.2 and Android minimum version 1.5.5
 ## July 17, 2020
 
 ### Android Audience 1.0.2
