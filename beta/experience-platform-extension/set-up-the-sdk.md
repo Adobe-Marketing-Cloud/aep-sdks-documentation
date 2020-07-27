@@ -8,7 +8,7 @@ Before you can use the SDK, you must first set it up.
 
 ### Set up the required configuration
 
-In your application's assets folder, configure a bundle configuration called `ADBMobileConfig.json` with the following content:
+In your application's assets folder, [configure a bundle configuration](../../using-mobile-extensions/mobile-core/configuration#using-a-bundled-file-configuration) called `ADBMobileConfig.json` with the following content:
 
 ```text
 {
@@ -19,12 +19,12 @@ In your application's assets folder, configure a bundle configuration called `AD
 ```
 
 {% hint style="warning" %}
-Replace the COMPANY\_ORG\_ID with your company's Adobe organization ID and CONFIG\_ID with the Experience Platform configuration identifier for your schema and dataset.
+Replace the COMPANY\_ORG\_ID with your company's Adobe organization ID and CONFIG\_ID with the Experience Edge configuration identifier created in the [Create an Experience Edge configuration ID](../experience-platform-setup#create-an-experience-edge-configuration-id) step. The configuration ID can be found on top of the page in the Edge Configuration page in Experience Platform Launch UI.
 {% endhint %}
 
 ### Register the extension
 
-The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
+The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows you to start sending and receiving events to and from the Experience Platform Mobile SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -107,6 +107,13 @@ public static void sendEvent(final ExperiencePlatformEvent experiencePlatformEve
 * _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
 * _responseCallback \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
 
+{% hint style="info" %}
+If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Android implementation, please contact your Adobe Customer Success Manager.
+
+Alternatively, you can create an ExperiencePlatformEvent with XDM data as Map<String, Object>, by using the `setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier)` API from the `ExperiencePlatformEvent.Builder`. 
+
+{% endhint %}
+
 **Example \(commerce event\)**
 
 ```java
@@ -135,6 +142,13 @@ public static func sendEvent(experiencePlatformEvent: ExperiencePlatformEvent, r
 
 * _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
 * _responseHandler \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
+
+{% hint style="info" %}
+If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Swift implementation, please contact your Adobe Customer Success Manager.
+
+Alternatively, you can create an ExperiencePlatformEvent with XDM data as dictionary of [String: Any], by using the `init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)` init from the `ExperiencePlatformEvent` struct.
+
+{% endhint %}
 
 **Example \(commerce event\)**
 
