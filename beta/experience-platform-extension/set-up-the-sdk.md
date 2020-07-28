@@ -29,7 +29,7 @@ If you are already enrolled in the beta program, you should have received the bu
    
        // Mobile SDK Core Bundle
        implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-   		implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+       implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
        // Project Griffon for debugging
        implementation 'com.adobe.marketing.mobile:griffon:1.+'
        ...
@@ -194,7 +194,7 @@ public static func sendEvent(experiencePlatformEvent: ExperiencePlatformEvent, r
 {% hint style="info" %}
 If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Swift implementation, please contact your Adobe Customer Success Manager.
 
-Alternatively, you can create an ExperiencePlatformEvent with XDM data as dictionary of [String: Any], by using the `init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)` init from the `ExperiencePlatformEvent` struct.
+Alternatively, you can create an ExperiencePlatformEvent with XDM data as dictionary of [String: Any], by using the `init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)` method available in the `ExperiencePlatformEvent` struct.
 
 {% endhint %}
 

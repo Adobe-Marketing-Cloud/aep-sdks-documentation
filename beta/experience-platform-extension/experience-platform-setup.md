@@ -26,9 +26,6 @@ In order to send experience events to Adobe Experience Platform Edge Network, yo
   * Select the Streaming Inlet from the dropdown. If needed, create a new one `Create New Inlet...` . 
   * Select the dataset you created in the previous step `Prepare Platform`.
 
-  ![Enable Adobe Experience Platform in ExEdge configuration](../../.gitbook/assets/aep-enable-dataset.png)
-
-  
+  ![Enable Adobe Experience Platform in Edge configuration](../../.gitbook/assets/aep-enable-dataset.png)
 
 After you created your configuration ID, you can continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
-
