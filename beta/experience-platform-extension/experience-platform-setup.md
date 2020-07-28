@@ -1,4 +1,4 @@
-# Setup Adobe Experience Platform
+# Set up Adobe Experience Platform
 
 ## Prepare Platform
 
