@@ -1,10 +1,56 @@
-# Setup Adobe Experience Platform Mobile SDK
+# Set up Adobe Experience Platform Mobile SDK
 
 In this section, we provide information to help you set up the SDK.
 
+## Configure the Mobile Core SDK
+
+As any other mobile extension, the Experience Platform extension relies on the AEP Mobile Core SDK for delivering the events, for managing the unique ECID on the mobile device and, in the future, for triggering client-side rules based on Experience events.
+
+If your mobile application doesn't use the AEP SDK yet, follow the [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) and [Get the Experience Platform SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) pages first and then continue with the steps  below.
+
 ## Configure the Experience Platform extension
 
-Before you can use the SDK, you must first set it up.
+### Install Experience Platform extension
+
+If you are already enrolled in the beta program, you should have received the bundle containing the Android and Swift Experience Platform SDKs. In order to get started, reference the SDK in your mobile application.
+
+{% tabs %}
+{% tab title="Android" %}
+
+1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
+
+2. Copy the `*.aar` file from the bundle path `/Android/lib/` and paste it in the libs folder.
+
+3. Add the libs folder to the gradle dependencies. Example:
+
+   ```
+   dependencies {
+       implementation fileTree(dir: 'libs', include: ['*.aar'])
+   
+       // Mobile SDK Core Bundle
+       implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+   		implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+       // Project Griffon for debugging
+       implementation 'com.adobe.marketing.mobile:griffon:1.+'
+       ...
+   }
+   ```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+**Swift**
+
+1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
+2. Copy the `*.a` file along with the `*.swiftmodule` folder from the bundle path `/iOS/lib/` and paste it in the libs folder.
+3. In Xcode, add the new library to your project dependencies list. 
+   - Select the mobile application Target and click on Build Phases.
+   - In the Link Binary With Libraries tab, Add new (+).
+   - Click Add Other -> Add files, navigate to libs/ folder, select the *.a file and click Open.
+
+{% endtab %}
+{% endtabs %}
 
 ### Set up the required configuration
 
@@ -12,14 +58,12 @@ In your application's assets folder, [configure a bundle configuration](../../us
 
 ```text
 {
-  "global.privacy": "optedin",
-  "experienceCloud.org": "COMPANY_ORG_ID@AdobeOrg",
   "experiencePlatform.configId": "CONFIG_ID"
 }
 ```
 
 {% hint style="warning" %}
-Replace the COMPANY\_ORG\_ID with your company's Adobe organization ID and CONFIG\_ID with the Experience Edge configuration identifier created in the [Create an Experience Edge configuration ID](../experience-platform-setup#create-an-experience-edge-configuration-id) step. The configuration ID can be found on top of the page in the Edge Configuration page in Experience Platform Launch UI.
+Replace the CONFIG\_ID with the Experience Edge configuration identifier created in the [Create an Experience Edge configuration ID](../experience-platform-setup#create-an-experience-edge-configuration-id) step. The configuration ID can be found on top of the page in the Edge Configuration page in Experience Platform Launch UI.
 {% endhint %}
 
 ### Register the extension
@@ -37,13 +81,14 @@ public class ExperiencePlatformDemoApplication extends Application {
 public void onCreate() {
     super.onCreate();
     MobileCore.setApplication(this);
+    MobileCore.configureWithAppID(YOUR_APP_ID);
 
     try {
         // register Mobile Core extensions
         Identity.registerExtension();
         Signal.registerExtension();
         Lifecycle.registerExtension();
-
+      
         // register the Experience Platform extension
         ExperiencePlatform.registerExtension();
        } catch (InvalidInitException e) {
@@ -65,10 +110,8 @@ public void onCreate() {
 {% tab title="iOS" %}
 ```swift
 import UIKit
-import ACPExperiencePlatform
 import ACPCore
-import ACPGriffon
-import xdmlib
+import AEPExperiencePlatform
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -76,10 +119,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        ACPCore.configure(withAppId: YOUR_APP_ID)
+      
+        // register Mobile Core extensions
         ACPIdentity.registerExtension()
         ACPLifecycle.registerExtension()
-        ACPExperiencePlatform.registerExtension()
+        ACPSignal.registerExtension()
+      
+        // register the Experience Platform extension
+        ExperiencePlatform.registerExtension()
         let filePath = Bundle.main.path(forResource: "ADBMobileConfig", ofType: "json")
         ACPCore.configureWithFile(inPath: filePath)
         ACPCore.start({

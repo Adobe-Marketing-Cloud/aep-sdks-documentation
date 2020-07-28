@@ -53,12 +53,12 @@ public interface Schema {
      * @return the URI identifier for this schema.
      */
     String getSchemaIdentifier();
-  
-  	/**
-	 	 * Returns the identifier for this dataset as defined in the Adobe Experience Platform.
-	 	 * @return the dataset ID
-	 	 */
-		String getDatasetIdentifier();
+
+    /**
+     * Returns the identifier for this dataset as defined in the Adobe Experience Platform.
+     * @return the dataset ID
+     */
+    String getDatasetIdentifier();
 
     /**
      * Serialize this {@code Schema} object to a map with the same format as its XDM schema.
