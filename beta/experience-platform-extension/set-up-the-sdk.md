@@ -244,14 +244,22 @@ ACPExperiencePlatform.sendEvent(experiencePlatformEvent: event, responseHandler:
 
 ## Retrieving data from Adobe solutions
 
-As described in the [Sending events](set-up-the-sdk.md#sending-events) section, the server-side event handle comes in chunks for the best performance. However, to be notified when a response is returned from the Adobe solutions, you can register a responseCallback\(Android\) /responseHandler \(iOS\) that is invoked when new data is available from the server. This callback is invoked for each event handle that is returned by the server and so it can be called multiple times.
+As described in [Send events to Experience Edge](set-up-the-sdk.md#send-events-to-experience-edge), the server-side event handle comes in chunks to maximize performance.
 
-**Tip**: In Android, the event handle is represented by a `Map<String, Object>`.
+To be notified when a response is returned, you may register a `responseCallback`\(Android\) or `responseHandler` \(iOS\) that is invoked when new data is available from the server. This callback is invoked for each event handle that is returned by the server and therefore, it may be be called multiple times.
 
-Depending on the nature of the event, and the various Adobe solutions you enabled for your organization, you can receive one, multiple, or no event handles for each Experience Platform event.
+{% hint style="info" %}
+In Android, the event handle is represented by a `Map<String, Object>`.
+{% endhint %}
+
+Depending on the nature of the event and Adobe solutions you are using, you may receive one, several, or no event handles for an event transmitted.
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
+
+### Example
+
 ```java
 // Create the ExperiencePlatformEvent for your use case
 ...
@@ -268,6 +276,10 @@ ExperiencePlatform.sendEvent(event, new ExperiencePlatformCallback() {
 {% endtab %}
 
 {% tab title="iOS" %}
+### Swift
+
+### Example
+
 ```swift
 // Create the ExperiencePlatformEvent for your use case
 ...
@@ -284,5 +296,5 @@ class ResponseHandler : ExperiencePlatformResponseHandler {
 {% endtab %}
 {% endtabs %}
 
-For more information about about response and error response handling, see [Server response handling](response-handling.md).
+For more information on response & error response handling, see [Server response handling](response-handling.md).
 
