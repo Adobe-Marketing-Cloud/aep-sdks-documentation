@@ -1,4 +1,4 @@
-# Setup Adobe Experience Platform
+# Set up Adobe Experience Platform
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
@@ -16,14 +16,20 @@ To send data to [Adobe Experience Platform](https://platform.adobe.com/), you ne
   * ExperienceEvent Commerce Details
 * [Create a dataset](https://platform.adobe.com/dataset/overview) where your data should be sent by using the schema that you created earlier.
 
-## Requesting a configuration ID
+## Create an Experience Edge configuration ID
 
-To use the Mobile SDK, you need a configuration ID, which ensures that your data is routed to the correct location. To obtain a configuration ID from your consultant or through Adobe Client Care, provide the following information:
+In order to send experience events to Adobe Experience Platform Edge Network, you need an Experience Edge configuration ID, which ensures that your data is routed to the correct location and references the server-side configuration. To create a configuration ID use the following steps:
 
-* Org ID: To locate this ID, complete the instructions in [Organizations and account linking](https://docs.adobe.com/content/help/en/core-services/interface/manage-users-and-products/organizations.html).
-* Dataset ID, which is available in the dataset UI when you click on a dataset.
-* Schema ID, which is available at the end of the URL of the schema creation/viewing page.
-* Friendly Name, which is the name that will be used in future UIs for this configuration.
+* Navigate to [AEP Launch UI](https://experience.adobe.com/launch) and click on the `Edge Configurations` button from the left side menu, then click the `New Edge Configuration` button.
 
-After you received your configuration ID, you can continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
+* Set up the default environment settings - these settings are used as defaults across the Experience Edge environments.
 
+* In order to start sending events to Adobe Experience Platform, you should enable this section in your Edge configuration. This workflow requires that you have purchased the Adobe Experience Platform. 
+
+  * Select the AEP Sandbox.
+  * Select the Streaming Inlet from the dropdown. If needed, create a new one `Create New Inlet...` . 
+  * Select the dataset you created in the previous step `Prepare Platform`.
+
+  ![Enable Adobe Experience Platform in Edge configuration](../../.gitbook/assets/aep-enable-dataset.png)
+
+After you created your configuration ID, you can continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
