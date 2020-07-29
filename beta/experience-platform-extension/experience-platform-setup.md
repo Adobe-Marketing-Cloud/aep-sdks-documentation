@@ -25,7 +25,7 @@ Before you can start collecting data in [Adobe Experience Platform](https://expe
 
 ## Generate a Experience Edge environment identifier
 
-To start sending events to Experience Edge, the SDK will require a configuration identifier to ensure the implementation matches server-side configuration and data is routed/received to/from the correct destination. 
+To start sending events to Experience Edge, the SDK will require a configuration identifier to ensure the implementation matches server-side configuration and data is routed/received to/from the correct destination.
 
 To create a configuration identifier use the following steps:
 

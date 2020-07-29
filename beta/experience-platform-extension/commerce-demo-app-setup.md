@@ -7,10 +7,10 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 This tutorial illustrates how you may send commerce events to Adobe Experience Platform via Experience Edge using the Experience Edge extension.
 
 {% hint style="info" %}
-The application is provided in Android and iOS \(Swift\) as part of the beta welcome packet - please contact your beta manager for further detail. 
+The application is provided in Android and iOS \(Swift\) as part of the beta welcome packet - please contact your beta manager for further detail.
 {% endhint %}
 
-The demo mobile application illustrated here provides a shopping cart example to lets users view product items, update a cart by adding or removing product items, checkout, and complete a purchase. 
+The demo mobile application illustrated here provides a shopping cart example to lets users view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
 
 ## Setup the demo app
 
@@ -49,8 +49,8 @@ The demo mobile application illustrated here provides a shopping cart example to
    ```text
    $ open AEPCommerceDemoApp.xcworkspace
    ```
-4. Run the target `AEPCommerceDemoApp` on an iPhone emulator or physical device.
 
+4. Run the target `AEPCommerceDemoApp` on an iPhone emulator or physical device.
 {% endtab %}
 {% endtabs %}
 
@@ -61,14 +61,11 @@ This application uses a default configuration. To configure the Adobe Mobile SDK
 1. Open **ADBMobileConfig.json** in the project's **assets** folder.
 2. Set **experienceCloud.org** to your assigned Experience Cloud organization ID.
 3. Set **experiencePlatform.configId** to your Experience Edge configuration ID.
-4. Update the **dataset identifier** in the MobileSDKComerceSchema:
-   1. Navigate to [https://experience.adobe.com/platform/dataset/browse](https://experience.adobe.com/platform/dataset/browse) and select the dataset you created in the previous step.
-   2. From the right panel, copy the Dataset ID value.
-   3. Update the dataset identifier for your commerce schema:
+4. Update the **dataset identifier** in the MobileSDKComerceSchema: 1. Navigate to [https://experience.adobe.com/platform/dataset/browse](https://experience.adobe.com/platform/dataset/browse) and select the dataset you created in the previous step. 2. From the right panel, copy the Dataset ID value. 3. Update the dataset identifier for your commerce schema:
 
-      a. Android - Replace the value returned by the MobileSDKCommerceSchema `getDatasetIdentifier` API with the value you copied at Step 4.2.
+   a. Android - Replace the value returned by the MobileSDKCommerceSchema `getDatasetIdentifier` API with the value you copied at Step 4.2.
 
-      b. iOS - Replace the value returned of the MobileSDKCommerceSchema `datasetIdentifier` property with the value you copied at Step 4.2.
+   b. iOS - Replace the value returned of the MobileSDKCommerceSchema `datasetIdentifier` property with the value you copied at Step 4.2.
 
 ## Use the demo app
 

@@ -1,6 +1,6 @@
 # Adobe Experience Platform - Experience Edge
 
-The Adobe Experience Platform - Experience Edge - Mobile extension helps you to deploy Adobe Experience Cloud solutions leveraging Adobe's new Experience Edge \(unified network edge\) in your mobile application. This extension is currently in **beta** and supports both Android \(Java\) and iOS \(Swift\) platforms.
+The Adobe Experience Platform - Experience Edge - Mobile extension helps you to deploy Adobe Experience Cloud solutions leveraging Adobe's new Experience Edge in your mobile application. This extension is currently in **beta** and supports both Android \(Java\) and iOS \(Swift\) platforms.
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in **beta**. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
