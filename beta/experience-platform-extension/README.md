@@ -13,7 +13,7 @@ To set up the Experience Platform Mobile extension, follow these steps:
 
 ## Beta Schedule
 
-### Week 1
+### Milestone 1
 
 1. [Create a schema/dataset and generate a configuration identifier](experience-platform-setup.md) in Adobe Experience Platform
 2. Get familiar with the [sample mobile app](commerce-demo-app-setup.md) \(link provided via beta materials email\)
