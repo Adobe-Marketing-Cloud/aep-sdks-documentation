@@ -12,15 +12,15 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 
 ## Initialize Adobe Experience Platform for data collection
 
-To begin collecting data in [Adobe Experience Platform](https://platform.adobe.com/), you need to create an XDM schema and a dataset that uses the schema. Follow these steps to get started:
+To begin collecting data in [Adobe Experience Platform](https://experience.adobe.com/platform), you need to create an XDM schema and a dataset that uses the schema. Follow these steps to get started:
 
-1. [Create a schema](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md)
+1. [Create a schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html)
 2. Assign the XDM ExperienceEvent class to your schema.
 3. Add the following mixins: 
    * ExperienceEvent Application Details
    * ExperienceEvent Environment Details
    * ExperienceEvent Commerce Details
-4. [Create a dataset](https://platform.adobe.com/dataset/overview) where your data should be sent by using the schema that you created earlier.
+4. [Create a dataset](https://docs.adobe.com/content/help/en/experience-platform/catalog/datasets/user-guide.html#create) where your data should be sent by using the schema that you created earlier.
 
 ## Generate a Experience Edge configuration identifier
 
@@ -38,5 +38,5 @@ To create a configuration identifier use the following steps:
 
    ![Enable Adobe Experience Platform in Edge configuration](../../.gitbook/assets/aep-enable-dataset.png)
 
-After you have have successfully generated a configuration identifier, you may continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
+After you have have successfully generated a configuration identifier, you may continue with the [Set up the SDK](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/set-up-the-sdk) steps.
 

@@ -48,7 +48,7 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 
 ## Application configuration
 
-This application uses a default configuration. If you want to configure the Adobe Mobile SDK with your own Adobe Experience Cloud Org ID and Experience Edge configuration ID, follow the steps to [Set up Adobe Experience Platform](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) and update the following:
+This application uses a default configuration. If you want to configure the Adobe Mobile SDK with your own Adobe Experience Cloud Org ID and Experience Edge configuration ID, follow the steps to [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) and update the following:
 
 1. Open **ADBMobileConfig.json** in the project's **assets** folder.
 2. Set **experienceCloud.org** to your assigned Experience Cloud organization ID.
