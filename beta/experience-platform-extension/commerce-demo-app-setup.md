@@ -1,15 +1,21 @@
-# Tutorial - Commerce Demo App
-
-The Adobe Experience Platform mobile extension demo application showcases sending commerce events to the Adobe Experience Platform using the Adobe Experience Platform mobile extension. The demo application is a simple shopping cart example which allows a user to view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
-
-This demo application has been provided to you in Android and iOS \(Swift\). To get started follow the setup steps below.
+# Tutorial - Sample App
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
 {% endhint %}
 
-## Android app setup
+This tutorial illustrates how you may send commerce events to Adobe Experience Platform via Experience Edge using the Experience Edge extension.
 
+{% hint style="info" %}
+The application is provided in Android and iOS \(Swift\) as part of the beta welcome packet - please contact your beta manager for further detail. 
+{% endhint %}
+
+The demo mobile application illustrated here provides a shopping cart example to lets users view product items, update a cart by adding or removing product items, checkout, and complete a purchase. 
+
+## Setup the demo app
+
+{% tabs %}
+{% tab title="Android" %}
 ### Prerequisites
 
 * Android Studio 3.+ with an Android emulator running Android 7.0+
@@ -21,12 +27,12 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 2. From Android Studio, open the `Android/demo/settings.gradle` project file as an existing project.
 3. Run `sync gradle` and confirm there are no errors.
 4. Now, run the app `experience-platform-commerce-demo-app` on your Android emulator or physical device to launch the demo application.
+{% endtab %}
 
-## iOS app setup
-
+{% tab title="iOS" %}
 ### Prerequisites
 
-* Xcode 11.+, Swift 5.+ with an iOS simualtor running iOS 10.+
+* Xcode 11.+, Swift 5.+ with an iOS simulator running iOS 10.+
 * CocoaPods 
 
 ### Configure and run project
@@ -43,12 +49,14 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
    ```text
    $ open AEPCommerceDemoApp.xcworkspace
    ```
-
 4. Run the target `AEPCommerceDemoApp` on an iPhone emulator or physical device.
 
-## Application configuration
+{% endtab %}
+{% endtabs %}
 
-This application uses a default configuration. If you want to configure the Adobe Mobile SDK with your own Adobe Experience Cloud Org ID and Experience Edge configuration ID, follow the steps to [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) and update the following:
+## Configure the demo app
+
+This application uses a default configuration. To configure the Adobe Mobile SDK with your own Adobe Experience Cloud Org ID and Experience Edge configuration ID, follow the steps to [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) and then, update the following:
 
 1. Open **ADBMobileConfig.json** in the project's **assets** folder.
 2. Set **experienceCloud.org** to your assigned Experience Cloud organization ID.
@@ -62,13 +70,13 @@ This application uses a default configuration. If you want to configure the Adob
 
       b. iOS - Replace the value returned of the MobileSDKCommerceSchema `datasetIdentifier` property with the value you copied at Step 4.2.
 
-## Application overview
+## Use the demo app
 
 ### Adobe Experience Platform extension and XDM objects
 
 This application uses the Experience Platform extension for sending XDM formatted data to the Adobe Experience Edge and so to Adobe Experience Platform. The XDM data is modelled based on the XDM Schemas you have configured in Adobe Experience Platform.
 
-The Commerce Demo app includes automatically generated source classes for the XDM Objects that define the 3 mixins configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` usage in the `CommerceUtil` class.
+The sample app includes automatically generated source classes for the XDM Objects that define the 3 mixins configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` usage in the `CommerceUtil` class.
 
 **Note:** If you would like to use more complex XDM Schemas for your application, the Mobile SDK team can help generating the XDM classes for your Android or Swift implementation similar with the ones used in the commerce example, so please contact your Adobe representative.
 
@@ -277,11 +285,11 @@ Project Griffon is a product from Adobe to help you inspect, validate, and debug
    ![](../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
 7. Once connected to Griffon, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Griffon server is lost for some reason. In this case, you want to reconnect to continue to see the session in Griffon.
-8. In the Griffon session, you should now start seeing events populating the Events List. When navigating through the commerce app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
+8. In the Griffon session, you should now start seeing events populating the Events List. When navigating through the sample app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
 
 ### Queries in Experience Platform
 
-After using the Commerce Demo application to view products and checkout items in a cart, the XDM Experience Events containing the commerce data are sent to the Adobe Experience Platform through Experience Edge.
+After using the sample demo application to view products and checkout items in a cart, the XDM Experience Events containing the commerce data are sent to the Adobe Experience Platform through Experience Edge.
 
 **Note:** It may take up to 15-20mins before the data is ingested in Experience Platform.
 
