@@ -6,7 +6,7 @@ For each Experience Platform event that is sent through the Experience Platform 
 
 Each event handle that is returned by the server is handled by the Experience Platform extension and is dispatched as a new mobile event to the extensions that are listening for it.
 
-If you integrated the [Project Griffon extension](https://aep-sdks.gitbook.io/docs/beta/project-griffon) in your mobile application, to display the events in your session, go to [https://griffon.adobe.com/](https://griffon.adobe.com/) and in **Search Events**, type `Response event`.
+If you integrated the [Project Griffon extension](https://aep-sdks.gitbook.io/docs/beta/project-griffon) in your mobile application, to display the events in your session, go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and in **Search Events**, type `Response event`.
 
 ## Error handling
 

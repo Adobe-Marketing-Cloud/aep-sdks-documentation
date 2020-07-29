@@ -4,9 +4,9 @@
 
 The Experience Platform extension can send events that follow a previously defined XDM schema to Adobe Experience Platform.
 
-For more information about the Experience Data Model \(XDM\), see [The Experience Business speaks one Language: XDM](https://www.adobe.io/open/standards/xdm.html).
+For more information about the Experience Data Model \(XDM\), see [XDM System overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html).
 
-To learn how to create a schema, see [Create a schema using the Schema Editor](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md).
+To learn how to create a schema, see [Create a schema using the Schema Editor](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
 
 ## XDM events
 
