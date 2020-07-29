@@ -1,4 +1,4 @@
-# Tutorial - Commerce Demo Application
+# Demo app
 
 The Adobe Experience Platform mobile extension demo application showcases sending commerce events to the Adobe Experience Platform using the Adobe Experience Platform mobile extension. The demo application is a simple shopping cart example which allows a user to view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
 
@@ -263,16 +263,16 @@ Project Griffon is a product from Adobe to help you inspect, validate, and debug
 2. When asked for the **Base URL**, enter `testapp://main`.
 3. After starting a Project Griffon session from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), click on the the Session Details button on the right corner of the Project Griffon page and copy the session link and note down the PIN.
 
-   ![](../../.gitbook/assets/Commerce_Session_Details.png)
+   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Session_Details.png)
 
 4. Go to the Adobe Experience Platform mobile extension demo application that is installed on your Android/iOS device or simulator, and click on the Griffon button \(iOS Swift\) / the Settings button -&gt; Connect to Griffon \(Android\) in the top right corner of the app.
 5. This will take you to the Griffon Connect Page. Now, paste the Griffon Session URL that you copied from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and Click Connect.
 
-   ![](../../.gitbook/assets/Commerce_Griffon_Login.png)
+   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Griffon_Login.png)
 
 6. Now, this will take you to the Griffon Connect Login Page. Enter the PIN that you noted from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and Click Connect.
 
-   ![](../../.gitbook/assets/Commerce_Griffon_Connection.png)
+   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Griffon_Connection.png)
 
 7. Once connected to Griffon, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Griffon server is lost for some reason. In this case, you want to reconnect to continue to see the session in Griffon.
 8. In the Griffon session, you should now start seeing events populating the Events List. When navigating through the commerce app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
