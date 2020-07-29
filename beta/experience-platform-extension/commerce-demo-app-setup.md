@@ -1,4 +1,4 @@
-# Demo app
+# Tutorial - Commerce Demo App
 
 The Adobe Experience Platform mobile extension demo application showcases sending commerce events to the Adobe Experience Platform using the Adobe Experience Platform mobile extension. The demo application is a simple shopping cart example which allows a user to view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
 
