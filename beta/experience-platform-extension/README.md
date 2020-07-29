@@ -12,4 +12,9 @@ To set up the Experience Platform Mobile extension, follow these steps:
 * [Setup Adobe Experience Platform Mobile SDK](set-up-the-sdk.md)
 
 ## Beta Assignments
-Coming Soon
+### Week 1
+1. Create a schema and dataset in Adobe Experience Platform
+2. Get familiar with the Commerce demo mobile app
+3. Setup Project Griffon
+4. Query the commerce events in Experience Platform
+5. Provide feedback on configuration steps, workflow, clarity
