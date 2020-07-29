@@ -119,7 +119,7 @@
 ## BETA
 
 * [Adobe Experience Platform - Experience Edge](beta/experience-platform-extension/README.md)
-  * [Set up Adobe Experience Platform](beta/experience-platform-extension/experience-platform-setup.md)
+  * [Generate Configuration Identifier](beta/experience-platform-extension/experience-platform-setup.md)
   * [Set up Adobe Experience Platform Mobile SDK](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
   * [Response handling](beta/experience-platform-extension/response-handling.md)
