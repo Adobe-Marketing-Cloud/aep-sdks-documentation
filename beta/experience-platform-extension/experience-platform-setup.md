@@ -1,18 +1,19 @@
 ---
 description: >-
-  This step will show how you may generate a configuration identifier necessary
-  for the Experience Edge Extension implementation.
+  This step outlines the generation of an environment identifier from Adobe
+  Experience Platform necessary for the Experience Edge Extension
+  implementation.
 ---
 
-# Generate Configuration Identifier
+# Generate Environment Identifier
 
 {% hint style="warning" %}
-The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in **beta**. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
 ## Initialize Adobe Experience Platform for data collection
 
-To begin collecting data in [Adobe Experience Platform](https://platform.adobe.com/), you need to create an XDM schema and a dataset that uses the schema. Follow these steps to get started:
+Before you can start collecting data in [Adobe Experience Platform](https://platform.adobe.com/), you will need to first create an XDM schema and a dataset that uses the schema. Follow these steps to get started:
 
 1. [Create a schema](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/schema_editor_tutorial/schema_editor_tutorial.md)
 2. Assign the XDM ExperienceEvent class to your schema.
@@ -22,21 +23,20 @@ To begin collecting data in [Adobe Experience Platform](https://platform.adobe.c
    * ExperienceEvent Commerce Details
 4. [Create a dataset](https://platform.adobe.com/dataset/overview) where your data should be sent by using the schema that you created earlier.
 
-## Generate a Experience Edge configuration identifier
+## Generate a Experience Edge environment identifier
 
-In order to send events to the Experience Edge, the SDK will require a configuration identifier to ensure your implementation matches your server-side configuration and data is routed/received to/from the correct destination. 
+To start sending events to Experience Edge, the SDK will require a configuration identifier to ensure the implementation matches server-side configuration and data is routed/received to/from the correct destination. 
 
 To create a configuration identifier use the following steps:
 
-1. Navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and click on the `Edge Configurations` button from the left side menu, then click the `New Edge Configuration` button.
-2. Set up the default environment settings - these settings are used as defaults across the Experience Edge environments.
-3. In order to start sending events to Adobe Experience Platform, you should enable this section in your Edge configuration. This workflow requires that you have purchased the Adobe Experience Platform.
-
+1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select _Edge Configurations_ from the left panel, then select _New Edge Configuration_.
+2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Experience Edge environments.
+3. To send events to Adobe Experience Platform, you will need to enable the Adobe Experience Platform section as shown below:
    * Select the AEP Sandbox.
-   * Select the Streaming Inlet from the dropdown. If needed, create a new one `Create New Inlet...` . 
-   * Select the dataset you created in the previous step `Prepare Platform`.
+   * Select \(or create a new\) the Streaming Inlet from the dropdown.
+   * Select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](experience-platform-setup.md#initialize-adobe-experience-platform-for-data-collection)
 
-   ![Enable Adobe Experience Platform in Edge configuration](../../.gitbook/assets/aep-enable-dataset.png)
+![](../../.gitbook/assets/aep-enable-dataset.png)
 
-After you have have successfully generated a configuration identifier, you may continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
+After these settings are saved, environment identifiers will be generated, and you may continue with the [Set up the SDK](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/794ac7be1c848e8501c4af1f7fbdbbb2970a04aa/alpha/experience-platform-extension/set-up-the-sdk/README.md) steps.
 
