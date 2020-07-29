@@ -1,76 +1,32 @@
-# Set up Adobe Experience Platform Mobile SDK
+# Setup Adobe Experience Platform Mobile SDK
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
-## Configure the Mobile Core SDK
-
-As any other mobile extension, the Experience Platform extension relies on the AEP Mobile Core SDK for delivering the events, for managing the unique ECID on the mobile device and, in the future, for triggering client-side rules based on Experience events.
-
-If your mobile application doesn't use the AEP SDK yet, follow the [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) and [Get the Experience Platform SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) pages first and then continue with the steps  below.
-
 ## Configure the Experience Platform extension
 
-### Install Experience Platform extension
-
-If you are already enrolled in the beta program, you should have received the bundle containing the Android and Swift Experience Platform SDKs. In order to get started, reference the SDK in your mobile application.
-
-{% tabs %}
-{% tab title="Android" %}
-
-1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
-
-2. Copy the `*.aar` file from the bundle path `/Android/lib/` and paste it in the libs folder.
-
-3. Add the libs folder to the gradle dependencies. Example:
-
-   ```
-   dependencies {
-       implementation fileTree(dir: 'libs', include: ['*.aar'])
-   
-       // Mobile SDK Core Bundle
-       implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-       implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-       // Project Griffon for debugging
-       implementation 'com.adobe.marketing.mobile:griffon:1.+'
-       ...
-   }
-   ```
-
-{% endtab %}
-
-{% tab title="iOS" %}
-
-**Swift**
-
-1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
-2. Copy the `*.a` file along with the `*.swiftmodule` folder from the bundle path `/iOS/lib/` and paste it in the libs folder.
-3. In Xcode, add the new library to your project dependencies list. 
-   - Select the mobile application Target and click on Build Phases.
-   - In the Link Binary With Libraries tab, Add new (+).
-   - Click Add Other -> Add files, navigate to libs/ folder, select the *.a file and click Open.
-
-{% endtab %}
-{% endtabs %}
+Before you can use the SDK, you must first set it up.
 
 ### Set up the required configuration
 
-In your application's assets folder, [configure a bundle configuration](../../using-mobile-extensions/mobile-core/configuration#using-a-bundled-file-configuration) called `ADBMobileConfig.json` with the following content:
+In your application's assets folder, configure a bundle configuration called `ADBMobileConfig.json` with the following content:
 
 ```text
 {
+  "global.privacy": "optedin",
+  "experienceCloud.org": "COMPANY_ORG_ID@AdobeOrg",
   "experiencePlatform.configId": "CONFIG_ID"
 }
 ```
 
 {% hint style="warning" %}
-Replace the CONFIG\_ID with the Experience Edge configuration identifier created in the [Create an Experience Edge configuration ID](../experience-platform-setup#create-an-experience-edge-configuration-id) step. The configuration ID can be found on top of the page in the Edge Configuration page in Experience Platform Launch UI.
+Replace the COMPANY\_ORG\_ID with your company's Adobe organization ID and CONFIG\_ID with the Experience Platform configuration identifier for your schema and dataset.
 {% endhint %}
 
 ### Register the extension
 
-The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows you to start sending and receiving events to and from the Experience Platform Mobile SDK.
+The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows the extension to send and receive events to and from the Experience Platform Mobile SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -83,14 +39,13 @@ public class ExperiencePlatformDemoApplication extends Application {
 public void onCreate() {
     super.onCreate();
     MobileCore.setApplication(this);
-    MobileCore.configureWithAppID(YOUR_APP_ID);
 
     try {
         // register Mobile Core extensions
         Identity.registerExtension();
         Signal.registerExtension();
         Lifecycle.registerExtension();
-      
+
         // register the Experience Platform extension
         ExperiencePlatform.registerExtension();
        } catch (InvalidInitException e) {
@@ -112,8 +67,10 @@ public void onCreate() {
 {% tab title="iOS" %}
 ```swift
 import UIKit
+import ACPExperiencePlatform
 import ACPCore
-import AEPExperiencePlatform
+import ACPGriffon
+import xdmlib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -121,15 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ACPCore.configure(withAppId: YOUR_APP_ID)
-      
-        // register Mobile Core extensions
+        // Override point for customization after application launch.
         ACPIdentity.registerExtension()
         ACPLifecycle.registerExtension()
-        ACPSignal.registerExtension()
-      
-        // register the Experience Platform extension
-        ExperiencePlatform.registerExtension()
+        ACPExperiencePlatform.registerExtension()
         let filePath = Bundle.main.path(forResource: "ADBMobileConfig", ofType: "json")
         ACPCore.configureWithFile(inPath: filePath)
         ACPCore.start({
@@ -156,13 +108,6 @@ public static void sendEvent(final ExperiencePlatformEvent experiencePlatformEve
 
 * _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
 * _responseCallback \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
-
-{% hint style="info" %}
-If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Android implementation, please contact your Adobe Customer Success Manager.
-
-Alternatively, you can create an ExperiencePlatformEvent with XDM data as Map<String, Object>, by using the `setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier)` API from the `ExperiencePlatformEvent.Builder`. 
-
-{% endhint %}
 
 **Example \(commerce event\)**
 
@@ -192,13 +137,6 @@ public static func sendEvent(experiencePlatformEvent: ExperiencePlatformEvent, r
 
 * _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
 * _responseHandler \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
-
-{% hint style="info" %}
-If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Swift implementation, please contact your Adobe Customer Success Manager.
-
-Alternatively, you can create an ExperiencePlatformEvent with XDM data as dictionary of [String: Any], by using the `init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)` method available in the `ExperiencePlatformEvent` struct.
-
-{% endhint %}
 
 **Example \(commerce event\)**
 

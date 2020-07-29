@@ -4,7 +4,7 @@ Experience Data Model \(XDM\) schemas are a set of rules that define and validat
 
 ## Sample schema for mobile extension
 
-For beta customers, a sample XDM schema has been created for the Adobe Experience Platform Mobile extension. If you have products in your application, the schema defines a basic set of properties that you want to send to Adobe Experience Platform.
+For alpha customers, a sample XDM schema has been created for the Adobe Experience Platform Mobile extension. If you have products in your application, the schema defines a basic set of properties that you want to send to Adobe Experience Platform.
 
 The sample XDM schema for the Experience Platform Mobile extension extends from the [XDM Experience Event](schema-creation.md) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following mixins are also included in the schema:
 
@@ -14,7 +14,7 @@ The sample XDM schema for the Experience Platform Mobile extension extends from 
 
 ## Commerce
 
-The Experience Platform Mobile extension automatically collects the ECID for each experience event. For this example, you need to focus only on the Experience Event Commerce Details mixin.
+The Experience Platform Mobile extension automatically collects application and environment details for each experience event. As a result, you need to focus only on the Experience Event Commerce Details mixin.
 
 The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) mixin defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
 
