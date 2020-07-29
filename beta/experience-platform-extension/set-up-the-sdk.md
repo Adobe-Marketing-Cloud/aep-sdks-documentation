@@ -1,43 +1,55 @@
+---
+description: >-
+  This step outlines the configuration & implementation of the mobile SDK along
+  with the Experience Edge extension in your app.
+---
+
 # Implement Experience Edge Extension
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
-## Configure the Mobile Core SDK
+## Configure the Adobe Experience Platform Mobile SDK
 
-As any other mobile extension, the Experience Platform extension relies on the AEP Mobile Core SDK for delivering the events, for managing the unique ECID on the mobile device and, in the future, for triggering client-side rules based on Experience events.
+As a pre-requisite, the Experience Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](../../using-mobile-extensions/mobile-core/). 
 
-If your mobile application doesn't use the AEP SDK yet, follow the [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) and [Get the Experience Platform SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) pages first and then continue with the steps below.
+Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensions/mobile-core/) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
 
-## Configure the Experience Platform extension
+If your mobile application doesn't use the Adobe Experience Platform Mobile SDK, follow the steps listed in the Getting Started section of this site to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) and [Get the Experience Platform SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) before you proceed with the steps below.
 
-### Install Experience Platform extension
+## Setup the Experience Edge extension
 
-If you are already enrolled in the beta program, you should have received the bundle containing the Android and Swift Experience Platform SDKs. In order to get started, reference the SDK in your mobile application.
+### Add Experience Platform extension to your app
+
+You should have received the bundle containing the Android and Swift Experience Platform SDKs as part of your beta welcome packet. In order to get started, reference the SDK in your mobile application as follows:
 
 {% tabs %}
 {% tab title="Android" %}
-1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
-2. Copy the `*.aar` file from the bundle path `/Android/lib/` and paste it in the libs folder.
-3. Add the libs folder to the gradle dependencies. Example:
+### Java
 
-   ```text
-   dependencies {
-       implementation fileTree(dir: 'libs', include: ['*.aar'])
+1. Create a `libs` folder in your application directory \(ignore this step If you already have this folder\)
+2. Copy the `*.aar` file from the bundle path `/Android/lib/` and paste it in the libs folder
+3. Add the libs folder to the Gradle dependencies. 
 
-       // Mobile SDK Core Bundle
-       implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-       implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-       // Project Griffon for debugging
-       implementation 'com.adobe.marketing.mobile:griffon:1.+'
-       ...
-   }
-   ```
+### Example
+
+```text
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    // Mobile SDK Core Bundle
+    implementation 'com.adobe.marketing.mobile:userprofile:1.+'
+    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+    // Project Griffon for debugging
+    implementation 'com.adobe.marketing.mobile:griffon:1.+'
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-**Swift**
+### **Swift**
 
 1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
 2. Copy the `*.a` file along with the `*.swiftmodule` folder from the bundle path `/iOS/lib/` and paste it in the libs folder.
@@ -48,7 +60,7 @@ If you are already enrolled in the beta program, you should have received the bu
 {% endtab %}
 {% endtabs %}
 
-### Set up the required configuration
+### Setup configuration
 
 In your application's assets folder, [configure a bundle configuration](../../using-mobile-extensions/mobile-core/configuration/#using-a-bundled-file-configuration) called `ADBMobileConfig.json` with the following content:
 
@@ -59,16 +71,20 @@ In your application's assets folder, [configure a bundle configuration](../../us
 ```
 
 {% hint style="warning" %}
-Replace the CONFIG\_ID with the Experience Edge configuration identifier created in the [Create an Experience Edge configuration ID](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/8bb3c402c0b73759dd5143d60051a20c4eda5d79/beta/experience-platform-setup/README.md#create-an-experience-edge-configuration-id) step. The configuration ID can be found on top of the page in the Edge Configuration page in Experience Platform Launch UI.
+Replace the CONFIG\_ID with the Experience Edge environment identifier created in the [Create an Experience Edge environment identifier](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/8bb3c402c0b73759dd5143d60051a20c4eda5d79/beta/experience-platform-setup/README.md#create-an-experience-edge-configuration-id) step. This identifier may be found [Adobe Experience Platform Launch](https://launch.adobe.com) under _Edge Configurations_.
 {% endhint %}
 
 ### Register the extension
 
-The `registerExtension()` API registers the Experience Platform extension with the Mobile Core extension. This API allows you to start sending and receiving events to and from the Experience Platform Mobile SDK.
+The `registerExtension` API registers the Experience Edge extension with Mobile Core. This API is required to initialize the Experience Edge extension in order to start sending/receiving events to/from and from the Experience Edge.
 
 {% tabs %}
 {% tab title="Android" %}
-In the Application file's `onCreate()` method, register the Mobile Core and the Experience Platform extensions.
+### Java
+
+In the Application file's `onCreate()` method, initialize the Mobile Core and register the Experience Platform extension.
+
+### Example
 
 ```java
 public class ExperiencePlatformDemoApplication extends Application {
@@ -136,28 +152,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 {% endtabs %}
 
-## Sending events
+## Send events to Experience Edge
 
-After you create an Experience Platform event, use `sendEvent` to send this event to the Adobe solutions for which you are provisioned and to the Experience Platform. For more information, see [Experience Platform event](experience-platform-events.md).
+After you create an [Experience event](experience-platform-events.md), use `sendEvent` to send this event to the Adobe solutions and Adobe Experience Platform. 
+
+{% hint style="info" %}
+To generate custom XDM classes for your Android or Swift implementation, please contact your beta manager. 
+{% endhint %}
+
+{% hint style="warning" %}
+`experiencePlatformEvent (required)`should not be null.`responseCallback (optional)`callback may be invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-**Syntax**
+### **Java**
+
+### **Syntax**
 
 ```java
 public static void sendEvent(final ExperiencePlatformEvent experiencePlatformEvent, final ExperiencePlatformCallback responseCallback)
 ```
 
-* _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
-* _responseCallback \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
+You may create an `ExperiencePlatformEvent` with XDM data as Map, by using the `setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier)` API from the `ExperiencePlatformEvent.Builder`.
 
-{% hint style="info" %}
-If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Android implementation, please contact your Adobe Customer Success Manager.
-
-Alternatively, you can create an ExperiencePlatformEvent with XDM data as Map, by using the `setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier)` API from the `ExperiencePlatformEvent.Builder`.
-{% endhint %}
-
-**Example \(commerce event\)**
+### **Example \(commerce event\)**
 
 ```java
 // Create the ExperiencePlatformEvent for your use case
@@ -177,22 +196,21 @@ ExperiencePlatform.sendEvent(event, null);
 {% endtab %}
 
 {% tab title="iOS" %}
-**Syntax**
+### **Swift**
+
+### **Syntax**
 
 ```java
 public static func sendEvent(experiencePlatformEvent: ExperiencePlatformEvent, responseHandler: ExperiencePlatformResponseHandler? = nil)
 ```
 
-* _experiencePlatformEvent \(required\)_ event to be sent to Adobe Data Platform. It should not be null.
-* _responseHandler \(optional\)_ callback to be invoked when the response handles are received from Adobe Data Platform. It can be called on a different thread and may be invoked multiple times.
+You may create an `ExperiencePlatformEvent` with XDM data as dictionary \(`[String: Any]`\) by using the the following method available in the `ExperiencePlatformEvent` struct.
 
-{% hint style="info" %}
-If you want to use more complex XDM Schemas for Experience Events and you would like help in generating custom XDM classes for your Swift implementation, please contact your Adobe Customer Success Manager.
+```text
+init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)
+```
 
-Alternatively, you can create an ExperiencePlatformEvent with XDM data as dictionary of \[String: Any\], by using the `init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)` method available in the `ExperiencePlatformEvent` struct.
-{% endhint %}
-
-**Example \(commerce event\)**
+### **Example \(commerce event\)**
 
 ```swift
 // Create the ExperiencePlatformEvent for your use case
