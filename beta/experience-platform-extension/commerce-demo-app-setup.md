@@ -1,12 +1,16 @@
-# Tutorial - Commerce Demo App
-
-The Adobe Experience Platform mobile extension demo application showcases sending commerce events to the Adobe Experience Platform using the Adobe Experience Platform mobile extension. The demo application is a simple shopping cart example which allows a user to view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
-
-This demo application has been provided to you in Android and iOS \(Swift\). To get started follow the setup steps below.
+# Tutorial - Sample Demo App
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
 {% endhint %}
+
+This tutorial illustrates how you may send commerce events to Adobe Experience Platform via Experience Edge using the Experience Edge extension.
+
+{% hint style="info" %}
+The application is provided in Android and iOS \(Swift\) as part of the beta welcome packet - please contact your beta manager for further detail. 
+{% endhint %}
+
+The demo mobile application illustrated here provides a shopping cart example to lets users view product items, update a cart by adding or removing product items, checkout, and complete a purchase. 
 
 ## Android app setup
 

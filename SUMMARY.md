@@ -121,7 +121,7 @@
 * [Adobe Experience Platform - Experience Edge](beta/experience-platform-extension/README.md)
   * [Generate Environment Identifier](beta/experience-platform-extension/experience-platform-setup.md)
   * [Implement Experience Edge Extension](beta/experience-platform-extension/set-up-the-sdk.md)
-  * [Tutorial - Commerce Demo App](beta/experience-platform-extension/commerce-demo-app-setup.md)
+  * [Tutorial - Sample Demo App](beta/experience-platform-extension/commerce-demo-app-setup.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
   * [Response handling](beta/experience-platform-extension/response-handling.md)
   * [Mobile extension schema](beta/experience-platform-extension/schema-creation.md)
