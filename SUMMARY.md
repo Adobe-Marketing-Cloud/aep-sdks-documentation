@@ -125,8 +125,6 @@
   * [Response handling](beta/experience-platform-extension/response-handling.md)
   * [Mobile extension schema](beta/experience-platform-extension/schema-creation.md)
   * [Auto collected data](beta/experience-platform-extension/auto-collected-data.md)
-  * [Tutorials](beta/experience-platform-extension/tutorials/README.md)
-    * [Commerce Demo Application](beta/experience-platform-extension/tutorials/commerce-demo-app-setup.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon/README.md)
     * [Project Griffon SDK API Reference](beta/project-griffon/set-up-project-griffon/project-griffon-sdk-api-reference.md)
