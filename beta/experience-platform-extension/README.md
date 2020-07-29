@@ -1,6 +1,6 @@
 # Adobe Experience Platform - Experience Edge
 
-The Adobe Experience Platform - Experience Edge - Mobile extension allows you to deploy Adobe Experience Cloud solutions leveraging Adobe's new Experience Edge \(unified network edge\) in your mobile application. This extension is currently in **Beta** and supports both Android \(Java\) and iOS \(Swift\) platforms.
+The Adobe Experience Platform - Experience Edge - Mobile extension helps you to deploy Adobe Experience Cloud solutions leveraging Adobe's new Experience Edge \(unified network edge\) in your mobile application. This extension is currently in **Beta** and supports both Android \(Java\) and iOS \(Swift\) platforms.
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
@@ -8,16 +8,16 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 
 To set up the Experience Platform Mobile extension, follow these steps:
 
-* [Setup Adobe Experience Platform](experience-platform-setup.md)
-* [Setup Adobe Experience Platform Mobile SDK](set-up-the-sdk.md)
+1. [Generate a Configuration Identifier from Adobe Experience Platform](experience-platform-setup.md)
+2. Implement the [Adobe Experience Platform Mobile SDK](../../) and the **Beta** [Experience Edge extension](set-up-the-sdk.md)
 
-## Beta Assignments
+## Beta Schedule
 
 ### Week 1
 
 1. Create a schema and dataset in Adobe Experience Platform
-2. Get familiar with the Commerce demo mobile app
+2. Get familiar with the _Commerce Demo_ mobile app
 3. Setup [Project Griffon](../project-griffon/)
-4. Query the commerce events in Experience Platform
-5. Provide feedback on configuration steps, workflow, clarity
+4. Query the commerce events in Adobe Experience Platform
+5. Provide feedback on ease of use, workflow, and clarity of documentation
 
