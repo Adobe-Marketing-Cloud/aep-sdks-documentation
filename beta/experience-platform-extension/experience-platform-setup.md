@@ -1,6 +1,10 @@
 # Set up Adobe Experience Platform
 
-## Prepare Platform
+{% hint style="warning" %}
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+{% endhint %}
+
+## Setup Adobe Experience Platform
 
 To send data to [Adobe Experience Platform](https://platform.adobe.com/), you need to create an XDM schema and a dataset that uses the schema.
 

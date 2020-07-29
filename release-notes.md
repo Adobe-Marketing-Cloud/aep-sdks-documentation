@@ -33,7 +33,8 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Added Modify Data action for Launch Rules. See more information on usage here: [Modify data in SDK events](resources/user-guides/modify-data.md).
 * Update requires Mobile Core iOS minimum version 2.7.2 and Android minimum version 1.5.5
-## July 17, 2020
+
+  **July 17, 2020**
 
 ### Android Audience 1.0.2
 

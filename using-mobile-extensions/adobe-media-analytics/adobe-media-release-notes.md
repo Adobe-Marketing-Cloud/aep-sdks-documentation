@@ -5,7 +5,6 @@
 ### iOS Media 2.1.1
 
 * Fixed a performance issue when tracking media.
-  
 
 ### @adobe/react-native-acpmedia 2.0.1
 

@@ -1,6 +1,8 @@
 # Set up Adobe Experience Platform Mobile SDK
 
-In this section, we provide information to help you set up the SDK.
+{% hint style="warning" %}
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+{% endhint %}
 
 ## Configure the Mobile Core SDK
 
