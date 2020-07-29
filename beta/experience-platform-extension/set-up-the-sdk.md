@@ -1,4 +1,4 @@
-# Implement Experience Edge extension
+# Implement Experience Edge Extension
 
 {% hint style="warning" %}
 The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
