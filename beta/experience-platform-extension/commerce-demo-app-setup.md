@@ -18,7 +18,7 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 ### Configure and run project
 
 1. Open Android Studio.
-2. From Android Studio, open the `Android/demo/experience-platform-experience-commerce-demo-app/build.gradle` project file from the  as an existing project.
+2. From Android Studio, open the `Android/demo/experience-platform-experience-commerce-demo-app/build.gradle` project file as an existing project.
 3. Run `sync gradle` and confirm there are no errors.
 4. Now, run the app `experience-platform-commerce-demo-app` on your Android emulator or physical device to launch the demo application.
 
@@ -43,6 +43,8 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
    ```text
    $ open AEPCommerceDemoApp.xcworkspace
    ```
+
+4. Run the target `AEPCommerceDemoApp` on an iPhone emulator or physical device.
 
 ## Application configuration
 
@@ -83,57 +85,57 @@ The product details page displays a single product from the product list. Here, 
 When this page is loaded, a `commerce.productViews` Experience Platform event is sent to the Adobe Experience Edge.
 
 ```javascript
-        "events": [
-        {
-          "xdm": {
-            "_id": "159df588-b19c-4911-8339-5e9810e10fe2",
-            "eventType": "commerce.productViews",
-            "commerce": {
-              "productViews": {
-                "value": 1
-              }
-            },
-            "productListItems": [
-              {
-                "quantity": 0,
-                "priceTotal": 0,
-                "name": "Red",
-                "SKU": "625–740"
-              }
-            ],
-            "timestamp": "2019-11-18T16:47:39-08:00"
-          }
+"events": [
+  {
+    "xdm": {
+      "_id": "159df588-b19c-4911-8339-5e9810e10fe2",
+      "eventType": "commerce.productViews",
+      "commerce": {
+        "productViews": {
+          "value": 1
         }
-      ]
+      },
+      "productListItems": [
+        {
+          "quantity": 0,
+          "priceTotal": 0,
+          "name": "Red",
+          "SKU": "625–740"
+        }
+      ],
+      "timestamp": "2019-11-18T16:47:39-08:00"
+    }
+  }
+]
 ```
 
 Clicking the **Add to Cart** button adds the product with the selected quantity to the user's cart. In addition, a `commerce.productListAdds` Experience Platform event is sent to the Adobe Experience Edge.
 
 ```javascript
-        "events": [
-        {
-          "xdm": {
-            "_id": "433184ab-8088-4b3c-9261-5752a2502cc1",
-            "eventType": "commerce.productListAdds",
-            "commerce": {
-              "productListAdds": {
-                "value": 1
-              }
-            },
-            "productListItems": [
-              {
-                "quantity": 1,
-                "productAddMethod": "add to cart button",
-                "priceTotal": 9.95,
-                "name": "Red",
-                "SKU": "625–740",
-                "currencyCode": "USD"
-              }
-            ],
-            "timestamp": "2019-11-18T16:49:04-08:00"
-          }
+"events": [
+  {
+    "xdm": {
+      "_id": "433184ab-8088-4b3c-9261-5752a2502cc1",
+      "eventType": "commerce.productListAdds",
+      "commerce": {
+        "productListAdds": {
+          "value": 1
         }
-      ]
+      },
+      "productListItems": [
+        {
+          "quantity": 1,
+          "productAddMethod": "add to cart button",
+          "priceTotal": 9.95,
+          "name": "Red",
+          "SKU": "625–740",
+          "currencyCode": "USD"
+        }
+      ],
+      "timestamp": "2019-11-18T16:49:04-08:00"
+    }
+  }
+]
 ```
 
 #### Cart list page
@@ -143,29 +145,29 @@ The cart list page displays the list of products the user has added to their car
 Users can remove items from their cart by clicking the **Remove** button. When a product is removed, a `commerce.productListRemovals` event is sent to the Adobe Experience Edge.
 
 ```javascript
-        "events": [
-        {
-          "xdm": {
-            "_id": "95c8166a-8404-4ba9-adc7-dc94b2f7f388",
-            "eventType": "commerce.productListRemovals",
-            "commerce": {
-              "productListRemovals": {
-                "value": 1
-              }
-            },
-            "productListItems": [
-              {
-                "quantity": 1,
-                "priceTotal": 9.95,
-                "name": "Red",
-                "SKU": "625–740",
-                "currencyCode": "USD"
-              }
-            ],
-            "timestamp": "2019-11-18T16:49:57-08:00"
-          }
+"events": [
+  {
+    "xdm": {
+      "_id": "95c8166a-8404-4ba9-adc7-dc94b2f7f388",
+      "eventType": "commerce.productListRemovals",
+      "commerce": {
+        "productListRemovals": {
+          "value": 1
         }
-      ]
+      },
+      "productListItems": [
+        {
+          "quantity": 1,
+          "priceTotal": 9.95,
+          "name": "Red",
+          "SKU": "625–740",
+          "currencyCode": "USD"
+        }
+      ],
+      "timestamp": "2019-11-18T16:49:57-08:00"
+    }
+  }
+]
 ```
 
 Selecting the **Checkout** button takes the user to the checkout page.
@@ -177,82 +179,82 @@ The checkout page allows the user to select a payment type and purchase the prod
 The payment type is hardcoded to either "cash" or "credit card", there is no option to enter billing information. When the checkout page is loaded, a `commerce.checkouts` Experience Platform event is sent to Adobe Experience Edge. In a production application, there may be several `commerce.checkouts` events, one for each checkout step, depending on the complexity of the checkout workflow. This demo application only has this single checkout step.
 
 ```javascript
-        "events": [
-        {
-          "xdm": {
-            "_id": "03397915-7501-42ba-9d0a-87d491317448",
-            "eventType": "commerce.checkouts",
-            "commerce": {
-              "checkouts": {
-                "value": 1
-              }
-            },
-            "productListItems": [
-              {
-                "quantity": 1,
-                "priceTotal": 9.95,
-                "name": "Red",
-                "SKU": "625–740",
-                "currencyCode": "USD"
-              },
-              {
-                "quantity": 2,
-                "priceTotal": 21.9,
-                "name": "Green",
-                "SKU": "495–570",
-                "currencyCode": "USD"
-              }
-            ],
-            "timestamp": "2019-11-18T16:50:49-08:00"
-          }
+"events": [
+  {
+    "xdm": {
+      "_id": "03397915-7501-42ba-9d0a-87d491317448",
+      "eventType": "commerce.checkouts",
+      "commerce": {
+        "checkouts": {
+          "value": 1
         }
-      ]
+      },
+      "productListItems": [
+        {
+          "quantity": 1,
+          "priceTotal": 9.95,
+          "name": "Red",
+          "SKU": "625–740",
+          "currencyCode": "USD"
+        },
+        {
+          "quantity": 2,
+          "priceTotal": 21.9,
+          "name": "Green",
+          "SKU": "495–570",
+          "currencyCode": "USD"
+        }
+      ],
+      "timestamp": "2019-11-18T16:50:49-08:00"
+    }
+  }
+]
 ```
 
 When the user clicks the **Purchase** button, a `commerce.purchases` experience platform event is send to Adobe Data Platform. After the purchase is complete, the shopping cart is cleared and the user is navigated back to the product list page.
 
 ```javascript
-        "events": [
-        {
-          "xdm": {
-            "_id": "79b3d0d8-01e5-45e7-8cb8-1e7e359e1448",
-            "eventType": "commerce.purchases",
-            "commerce": {
-              "purchases": {
-                "value": 1
-              },
-              "order": {
-                "payments": [
-                  {
-                    "currencyCode": "USD",
-                    "paymentAmount": 31.85,
-                    "paymentType": "Credit Card"
-                  }
-                ],
-                "priceTotal": 31.85,
-                "currencyCode": "USD"
-              }
-            },
-            "productListItems": [
-              {
-                "quantity": 1,
-                "priceTotal": 9.95,
-                "name": "Red",
-                "SKU": "625–740",
-                "currencyCode": "USD"
-              },
-              {
-                "quantity": 2,
-                "priceTotal": 21.9,
-                "name": "Green",
-                "SKU": "495–570",
-                "currencyCode": "USD"
-              }
-            ],
-            "timestamp": "2019-11-18T16:51:28-08:00"
-          }
+"events": [
+  {
+    "xdm": {
+      "_id": "79b3d0d8-01e5-45e7-8cb8-1e7e359e1448",
+      "eventType": "commerce.purchases",
+      "commerce": {
+        "purchases": {
+          "value": 1
+        },
+        "order": {
+          "payments": [
+            {
+              "currencyCode": "USD",
+              "paymentAmount": 31.85,
+              "paymentType": "Credit Card"
+            }
+          ],
+          "priceTotal": 31.85,
+          "currencyCode": "USD"
         }
-      ]
+      },
+      "productListItems": [
+        {
+          "quantity": 1,
+          "priceTotal": 9.95,
+          "name": "Red",
+          "SKU": "625–740",
+          "currencyCode": "USD"
+        },
+        {
+          "quantity": 2,
+          "priceTotal": 21.9,
+          "name": "Green",
+          "SKU": "495–570",
+          "currencyCode": "USD"
+        }
+      ],
+      "timestamp": "2019-11-18T16:51:28-08:00"
+    }
+  }
+]
 ```
 
 ### Using Project Griffon
@@ -263,16 +265,16 @@ Project Griffon is a product from Adobe to help you inspect, validate, and debug
 2. When asked for the **Base URL**, enter `testapp://main`.
 3. After starting a Project Griffon session from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), click on the the Session Details button on the right corner of the Project Griffon page and copy the session link and note down the PIN.
 
-   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Session_Details.png)
+   ![](../../.gitbook/assets/Commerce_Session_Details.png)
 
 4. Go to the Adobe Experience Platform mobile extension demo application that is installed on your Android/iOS device or simulator, and click on the Griffon button \(iOS Swift\) / the Settings button -&gt; Connect to Griffon \(Android\) in the top right corner of the app.
 5. This will take you to the Griffon Connect Page. Now, paste the Griffon Session URL that you copied from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and Click Connect.
 
-   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Griffon_Login.png)
+   ![](../../.gitbook/assets/Commerce_Griffon_Login.png)
 
 6. Now, this will take you to the Griffon Connect Login Page. Enter the PIN that you noted from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and Click Connect.
 
-   ![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/f14e94443ebb98dea901b62506883fb04c0ff9c3/.gitbook/assets/exedge-beta/Commerce_Griffon_Connection.png)
+   ![](../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
 7. Once connected to Griffon, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Griffon server is lost for some reason. In this case, you want to reconnect to continue to see the session in Griffon.
 8. In the Griffon session, you should now start seeing events populating the Events List. When navigating through the commerce app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
