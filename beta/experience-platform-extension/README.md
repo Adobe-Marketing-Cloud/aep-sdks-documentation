@@ -16,7 +16,7 @@ To set up the Experience Platform Mobile extension, follow these steps:
 ### Week 1
 
 1. [Create a schema/dataset and generate a configuration identifier](experience-platform-setup.md) in Adobe Experience Platform
-2. Get familiar with the [_Commerce Demo_ mobile app](commerce-demo-app-setup.md) \(link provided via beta materials email\)
+2. Get familiar with the [sample mobile app](commerce-demo-app-setup.md) \(link provided via beta materials email\)
 3. Setup [Project Griffon](../project-griffon/)
 4. Query the commerce events in Adobe Experience Platform
 
