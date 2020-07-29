@@ -50,8 +50,22 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 This application uses a default configuration. If you want to configure the Adobe Mobile SDK with your own Adobe Experience Cloud Org ID and Experience Edge configuration ID, follow the steps to [Set up Adobe Experience Platform](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) and update the following:
 
 1. Open **ADBMobileConfig.json** in the project's **assets** folder.
+
 2. Set **experienceCloud.org** to your assigned Experience Cloud organization ID.
+
 3. Set **experiencePlatform.configId** to your Experience Edge configuration ID.
+
+4. Update the **dataset identifier** in the MobileSDKComerceSchema:
+
+   1. Navigate to https://experience.adobe.com/platform/dataset/browse and select the dataset you created in the previous step.
+
+   2. From the right panel, copy the Dataset ID value.
+
+   3. Update the dataset identifier for your commerce schema:
+
+      a. Android - Replace the value returned by the MobileSDKCommerceSchema `getDatasetIdentifier` API with the value you copied at Step 4.2.
+
+      b. iOS - Replace the value returned of the MobileSDKCommerceSchema `datasetIdentifier` property with the value you copied at Step 4.2.
 
 ## Application overview
 
