@@ -18,7 +18,7 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 ### Configure and run project
 
 1. Open Android Studio.
-2. From Android Studio, open the `Android/demo/experience-platform-experience-commerce-demo-app/build.gradle` project file as an existing project.
+2. From Android Studio, open the `Android/demo/settings.gradle` project file as an existing project.
 3. Run `sync gradle` and confirm there are no errors.
 4. Now, run the app `experience-platform-commerce-demo-app` on your Android emulator or physical device to launch the demo application.
 
