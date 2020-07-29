@@ -8,7 +8,7 @@ The Adobe Experience Platform - Experience Edge - Mobile extension is currently 
 
 To set up the Experience Platform Mobile extension, follow these steps:
 
-1. [Generate a Configuration Identifier from Adobe Experience Platform](experience-platform-setup.md)
+1. [Generate an Environment Identifier from Adobe Experience Platform](experience-platform-setup.md)
 2. Implement the [Adobe Experience Platform Mobile SDK](../../) and the **beta** [Experience Edge extension](set-up-the-sdk.md)
 
 ## Beta Schedule
