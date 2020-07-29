@@ -20,5 +20,9 @@ To set up the Experience Platform Mobile extension, follow these steps:
 3. Setup [Project Griffon](../project-griffon/)
 4. Query the commerce events in Adobe Experience Platform
 
-Plan on providing feedback on ease of use, workflow, and clarity of documentation during the beta review call.
+#### Prepare to provide feedback on:
+
+* [ ] Overall implementation workflow
+* [ ] Ease of use \(SDK APIs\)
+* [ ] Clarity of documentation during the beta review call.
 
