@@ -2,6 +2,10 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## Android Mobile Services 1.0.5
+
+* Fixed an issue where acquisition data may not be correctly processed.
+
 ## April 17, 2020
 
 The following updates were made in this release:
