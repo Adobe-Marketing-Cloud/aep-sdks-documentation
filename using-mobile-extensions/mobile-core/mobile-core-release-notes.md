@@ -1,5 +1,16 @@
 # Release Notes
 
+## July 31, 2020
+
+### Android Core 1.5.6
+
+* Fixed an issue where null values in rules consequences was not respected.
+* Some internal fixes.
+
+### Android Lifecycle 1.0.5
+
+* Session start time is now added to the shared state of Lifecycle extension.
+
 ## July 16, 2020
 
 ### iOS Core 2.7.1

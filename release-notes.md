@@ -10,6 +10,22 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## July 31, 2020
+
+### Android Core 1.5.6
+
+* Fixed an issue where null values in rules consequences was not respected.
+* Some internal fixes.
+
+### Android Lifecycle 1.0.5
+
+* Session start time is now added to the shared state of Lifecycle extension.
+
+### Android Mobile Services 1.0.5
+
+* Fixed an issue where acquisition data may not be correctly processed.
+
+
 ## July 24, 2020
 
 ### iOS Media 2.1.1
