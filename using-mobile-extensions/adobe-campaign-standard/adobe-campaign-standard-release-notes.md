@@ -1,5 +1,13 @@
 # Release Notes
 
+## August 3, 2020
+
+The following updates were made in this release:
+
+**Android Campaign 1.0.5**
+
+* Added ETag support for Campaign rules download requests.
+
 ## April 24, 2020
 
 The following updates were made in this release:
