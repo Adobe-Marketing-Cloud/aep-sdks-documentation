@@ -25,7 +25,6 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Fixed an issue where acquisition data may not be correctly processed.
 
-
 ## July 24, 2020
 
 ### iOS Media 2.1.1
