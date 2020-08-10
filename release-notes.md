@@ -12,13 +12,20 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ## Aug 10, 2020
 
+### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
+
+* Fixed a crash happening on `AdobeMarketingMobile::RulesEngine::ProcessEventForRules()`.
+* Fixed an issue where null values in rules consequences was not respected.
+
 ### iOS Identity 2.3.2
 
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
 * In order to improve the Analytics push tracking reports, the push notification preferences (a.push.optin) are now forwarded to Analytics when `setPushIdentifier` ACPCore API is first called with nil, in addition to the push preferences change optin to optout or output to optin.
 * Improved safety checks for the Identity APIs with completion handler.
 
-Released with ACPCore version 2.7.3 on Cocoapods
+### iOS Lifecycle 2.1.1
+
+* Session start time is now added to the shared state of Lifecycle extension.
 
 ## Aug 4, 2020
 
