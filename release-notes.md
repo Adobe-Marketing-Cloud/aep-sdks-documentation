@@ -10,6 +10,16 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## Aug 10, 2020
+
+### iOS Identity 2.3.2
+
+* Identity shared state now gets updated in current session on server response changes for blob or locationHint.
+* In order to improve the Analytics push tracking reports, the push notification preferences (a.push.optin) are now forwarded to Analytics when `setPushIdentifier` ACPCore API is first called with nil, in addition to the push preferences change optin to optout or output to optin.
+* Improved safety checks for the Identity APIs with completion handler.
+
+Released with ACPCore version 2.7.3 on Cocoapods
+
 ## Aug 4, 2020
 
 ### Android Analytics 1.2.5
