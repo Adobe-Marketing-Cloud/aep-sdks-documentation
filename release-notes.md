@@ -15,7 +15,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 ### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
 
 * Fixed a crash happening on `AdobeMarketingMobile::RulesEngine::ProcessEventForRules()`.
-* Fixed an issue where null values in rules consequences was not respected.
+* Fixed an issue where null values in rules consequences were not respected.
 
 ### iOS Identity 2.3.2
 
