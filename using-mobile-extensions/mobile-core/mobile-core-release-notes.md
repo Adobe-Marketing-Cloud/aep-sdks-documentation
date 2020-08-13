@@ -10,7 +10,7 @@
 ### iOS Identity 2.3.2
 
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
-* In order to improve the Analytics push tracking reports, the push notification preferences (a.push.optin) are now forwarded to Analytics when `setPushIdentifier` ACPCore API is first called with nil, in addition to the push preferences change optin to optout or output to optin.
+* In order to improve the Analytics push tracking reports, the push notification preferences (`a.push.optin`) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved safety checks for the Identity APIs with completion handler.
 
 ### iOS Lifecycle 2.1.1
