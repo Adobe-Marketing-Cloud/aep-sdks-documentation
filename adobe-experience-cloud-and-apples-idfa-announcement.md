@@ -22,3 +22,5 @@ Given that these developments are taking place against the backdrop of broader c
 {% endtab %}
 {% endtabs %}
 
+Please contact your Adobe Customer Success Manager or account representatives for further detail.
+
