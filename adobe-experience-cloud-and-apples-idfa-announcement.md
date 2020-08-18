@@ -18,7 +18,7 @@ In terms of early reactions, the US ad trades are still evaluating and further p
 
 IAB Europe released a letter to Tim Cook on July 2:
 
-> “Marketing professionals urge Apple to adopt standards promoting interoperability and more predictable user privacy”, along with concerns about developers’ abilities to continue to meet their legal obligations under the announced guidelines.
+> Marketing professionals urge Apple to adopt standards promoting interoperability and more predictable user privacy”, along with concerns about developers’ abilities to continue to meet their legal obligations under the announced guidelines.
 
 Given that these developments are taking place against the backdrop of broader changes to addressable communications in the wider ecosystem \(e.g., browser changes\) Adobe is engaged in the appropriate policy and technical forums to work on these important issues.   
 {% endtab %}
