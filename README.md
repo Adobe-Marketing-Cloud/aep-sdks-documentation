@@ -13,7 +13,7 @@ See [here](adobe-experience-cloud-and-apples-idfa-announcement.md) for more info
 {% hint style="info" %}
 ### Adobe Experience Platform Mobile SDK & iOS 14 / Android 11
 
-We are monitoring changes associated with Google Android 11 and Apple iOS 14 betas and actively testing our SDKs for compatibility. We'll announce and publish SDK updates as necessary. Please see release notes for more information.
+We are monitoring changes associated with Google Android 11 and Apple iOS 14 betas and actively testing our SDKs for compatibility. We'll announce and publish SDK updates as necessary. Updates will be noted in SDK [release notes](release-notes.md).
 
 Please contact Adobe Customer Care for help with specific issues or contact your Adobe Customer Success Manager for further information.
 {% endhint %}
