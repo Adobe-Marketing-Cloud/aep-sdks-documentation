@@ -112,12 +112,12 @@ In-depth instructions can be seen at the [Analytics Readme](../../using-mobile-e
 
 #### Track App State and Track App Actions
 
-The Mobile Services SDK syntax and usage examples for these API are:
-
 {% tabs %}
 {% tab title="Android" %}
 
 ##### Mobile Services SDK
+
+The Mobile Services SDK syntax and usage examples for these API are:
 
 ```java
 // syntax
@@ -139,9 +139,9 @@ Analytics.trackAction("linkClicked", new HashMap<String, Object>() {{
 }});
 ```
 
-The AEP SDK's have moved the `trackAction` and `trackState` APIs to the MobileCore extension. In addition, the context data Map has been changed from `<String, Object>` to `<String, String>`: 
-
 ##### AEP SDK
+
+The AEP SDK's have moved the `trackAction` and `trackState` APIs to the MobileCore extension. In addition, the context data Map has been changed from `<String, Object>` to `<String, String>`. The syntax is:
 
 ```java
 // syntax
@@ -167,6 +167,8 @@ MobileCore.trackAction("linkClicked", new HashMap<String, String>() {{
 
 {% tab title="iOS" %}
 
+The Mobile Services SDK syntax and usage examples for these API are:
+
 ##### Mobile Services SDK
 
 ```objective-c
@@ -185,9 +187,9 @@ MobileCore.trackAction("linkClicked", new HashMap<String, String>() {{
 [ADBMobile trackAction:@"linkClicked" data:@{@"url":@"https://www.adobe.com"}];
 ```
 
-The AEP SDK's have moved the `trackAction` and `trackState` API's to the MobileCore extension. In addition, the NSDictionary has been changed from `<NSString, NSObject>` to `<NSString, NSString>`: 
-
 ##### AEP SDK
+
+The AEP SDK's have moved the `trackAction` and `trackState` API's to the MobileCore extension. In addition, the NSDictionary has been changed from `<NSString, NSObject>` to `<NSString, NSString>`. The syntax is:
 
 ```objective-c
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary<NSString*, NSString*>*) data;
