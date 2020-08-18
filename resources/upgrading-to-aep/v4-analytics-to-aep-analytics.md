@@ -1,15 +1,15 @@
-# Migrating from V4 Analytics to the AEP Analytics Extension
+# Migrating from Mobile Services SDK Analytics to the AEP Analytics Extension
 
-## Configuration
+### Configuration
 
-The AEP Analytics extension uses [Launch](https://launch.adobe.com/) to configure the AEP SDK's. This replaces the ADBMobileConfig.json which the V4 SDK used for configuration. To get started with the AEP SDK's:
+The AEP Analytics extension uses [Launch](https://launch.adobe.com/) to configure the AEP SDK's. This replaces the ADBMobileConfig.json which the Mobile Services SDK used for configuration. To get started with the AEP SDK's:
 
 1. Create a mobile property on Launch. See [Set up a mobile property](../../getting-started/create-a-mobile-property) for more information.
-2. Configure your mobile app with the create mobile property. The AEP Mobile Core extension provides general functionality required by all the Adobe AEP extensions. The Configuration extension is buult into the Mobile Core and contains the `configureWithAppId` API. This API is used to link the Launch mobile property with your mobile app. The documentation for this API can be seen at the [Configuration API Reference](../../using-mobile-extensions/mobile-core/configuration/configuration-api-reference#configurewithappid) page. A code sample showing the usage of this API is provided below.
+2. Configure your mobile app with the create mobile property. The AEP Mobile Core extension provides general functionality required by all the Adobe AEP extensions. The Configuration extension is built into the Mobile Core and contains the `configureWithAppId` API. This API is used to link the Launch mobile property with your mobile app. The documentation for this API can be seen at the [Configuration API Reference](../../using-mobile-extensions/mobile-core/configuration/configuration-api-reference#configurewithappid) page. A code sample showing the usage of this API is provided below.
 
-## API changes
+### Analytics Migration Overview
 
-For an overview of the API mapping between the V4 and AEP SDK's, see the [API Change Log](../../resources/upgrading-to-aep/api-change-log). This section will go over the Analytics specific changes made with the AEP Analytics extension.
+For an overview of the API mapping between the Mobile Services SDK and AEP SDK's, see the [API Change Log](../../resources/upgrading-to-aep/api-change-log). This section will go over the Analytics specific changes made with the AEP Analytics extension.
 
 #### Deprecated API
 
@@ -25,9 +25,9 @@ For an overview of the API mapping between the V4 and AEP SDK's, see the [API Ch
 | trackTimedActionEnd: ([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html), [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics) and [User Profile](../../using-mobile-extensions/profile) extensions. |
 | trackTimedActionExists: ([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html), [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics) and [User Profile](../../using-mobile-extensions/profile) extensions. |
 
-#### API Changes
+### AEP SDK Installation and Setup
 
-##### Register the AEP Extensions and link the app to the configuration created on Launch
+#### Register the AEP Extensions and link the app to the configuration created on Launch
 
 In your App's Application class add the AEP extension registration and configuration code:
 
@@ -108,12 +108,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 In-depth instructions can be seen at the [Analytics Readme](../../using-mobile-extensions/adobe-analytics/readme.md#add-analytics-to-your-app).
 
-##### Track App State and Track App Actions
+### API changes
 
-The V4 syntax and usage examples for these API are:
+#### Track App State and Track App Actions
+
+The Mobile Services SDK syntax and usage examples for these API are:
 
 {% tabs %}
 {% tab title="Android" %}
+
+##### Mobile Services SDK
 
 ```java
 // syntax
@@ -136,6 +140,8 @@ Analytics.trackAction("linkClicked", new HashMap<String, Object>() {{
 ```
 
 The AEP SDK's have moved the `trackAction` and `trackState` APIs to the MobileCore extension. In addition, the context data Map has been changed from `<String, Object>` to `<String, String>`: 
+
+##### AEP SDK
 
 ```java
 // syntax
@@ -161,6 +167,8 @@ MobileCore.trackAction("linkClicked", new HashMap<String, String>() {{
 
 {% tab title="iOS" %}
 
+##### Mobile Services SDK
+
 ```objective-c
 // syntax
 + (void) trackState:(NSString *)state data:(NSDictionary *)data;
@@ -178,6 +186,8 @@ MobileCore.trackAction("linkClicked", new HashMap<String, String>() {{
 ```
 
 The AEP SDK's have moved the `trackAction` and `trackState` API's to the MobileCore extension. In addition, the NSDictionary has been changed from `<NSString, NSObject>` to `<NSString, NSString>`: 
+
+##### AEP SDK
 
 ```objective-c
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary<NSString*, NSString*>*) data;
@@ -206,9 +216,9 @@ ACPCore.trackAction("linkClicked", data: ["url": "https://www.adobe.com"])
 {% endtab %}
 {% endtabs %}
 
-##### Privacy status changes in the AEP SDK
+### Privacy status changes in the AEP SDK
 
-The privacy status API `setPrivacyStatus` and `getPrivacyStatus` can be found in the MobileCore. Like the V4 SDK, the Analytics extension will follow these behaviors depending on the privacy status set:
+The privacy status API `setPrivacyStatus` and `getPrivacyStatus` can be found in the MobileCore. Like the Mobile Services SDK, the Analytics extension will follow these behaviors depending on the privacy status set:
 
 **Opted in**: Analytics hits will be sent.
 
@@ -218,6 +228,8 @@ The privacy status API `setPrivacyStatus` and `getPrivacyStatus` can be found in
 
 {% tabs %}
 {% tab title="Android" %}
+
+##### AEP SDK
 
 The syntax and usage examples for `setPrivacyStatus` are:
 
@@ -249,6 +261,8 @@ The callback is invoked after the privacy status is available. If an instance of
 {% endtab %}
 
 {% tab title="iOS" %}
+
+##### AEP SDK
 
 The syntax for `setPrivacyStatus` is:
 
