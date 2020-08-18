@@ -16,7 +16,7 @@ Apple continues to release new details regarding these changes, and fuller busin
 
 In terms of early reactions, the US ad trades are still evaluating and further preparing responses. [The Association of National Advertisers \(ANA\)](https://www.ana.net/content/show/id/60948) expressed concerns about the impact these changes would have on personalization, measurement and marketing communications, underscoring the importance of having a coordinated ecosystem wide solution not determined by a single company.  
 
-IAB Europe released a letter to Tim Cook on July 2:
+IAB Europe released a [letter to Tim Cook](https://iabeurope.eu/all-news/marketing-professionals-urge-apple-to-adopt-standards-promoting-interoperability-and-more-predictable-user-privacy/) on July 2:
 
 > Marketing professionals urge Apple to adopt standards promoting interoperability and more predictable user privacy”, along with concerns about developers’ abilities to continue to meet their legal obligations under the announced guidelines.
 
