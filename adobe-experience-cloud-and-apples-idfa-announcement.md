@@ -1,7 +1,7 @@
 # Adobe Experience Cloud & Apple’s IDFA Announcement
 
 {% tabs %}
-{% tab title="Updated Aug 18, 2020" %}
+{% tab title="As of Aug 18, 2020" %}
 ### What’s changed?
 
 Apple recently announced [new changes](https://developer.apple.com/app-store/user-privacy-and-data-use/) to iOS 14, which are scheduled to take effect later in 2020.   Among the highlights of the changes: 
