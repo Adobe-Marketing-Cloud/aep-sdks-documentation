@@ -4,23 +4,33 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
-## Swift Developer Preview
-
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
-
-[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-
-## Adobe Experience Cloud & Apple's IDFA Announcement
+{% hint style="info" %}
+### Adobe Experience Cloud & Apple's IDFA Announcement
 
 See [here](adobe-experience-cloud-and-apples-idfa-announcement.md) for more information on context and information around Apple's iOS 14 updates.
+{% endhint %}
+
+{% hint style="info" %}
+### Adobe Experience Platform Mobile SDK & iOS 14 / Android 11
+
+We are monitoring changes associated with Google Android 11 and Apple iOS 14 betas and actively testing our SDKs for compatibility. We'll announce and publish SDK updates as necessary. Please see release notes for more information.
+
+Please contact Adobe Customer Care for help with specific issues or contact your Adobe Customer Success Manager for further information.
+{% endhint %}
 
 ## About the Adobe Experience Platform Mobile SDK
 
 The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
 
-To implement the SDK, create a mobile property in Adobe Experience Platform Launch, set up the configuration required by the Mobile Core and and by other extensions you may add, and publish the configuration into an environment. To initialize the SDK in your app, you'll reference the environment to get started.
+To implement the SDK, create a mobile property in Adobe Experience Platform Launch, set up the configuration required by the Mobile Core and by other extensions you may add, and publish the configuration into an environment. To initialize the SDK in your app, you'll reference the environment to get started.
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
+
+## Swift Developer Preview
+
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+
+[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
 ## Why use the Adobe Experience Platform Mobile SDK?
 
