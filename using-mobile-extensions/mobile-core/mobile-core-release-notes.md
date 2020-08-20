@@ -1,5 +1,22 @@
 # Release Notes
 
+## Aug 10, 2020
+
+### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
+
+* Fixed a crash happening on `AdobeMarketingMobile::RulesEngine::ProcessEventForRules()`.
+* Fixed an issue where null values in rules consequences were not respected.
+
+### iOS Identity 2.3.2
+
+* Identity shared state now gets updated in current session on server response changes for blob or locationHint.
+* In order to improve the Analytics push tracking reports, the push notification preferences (`a.push.optin`) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
+* Improved safety checks for the Identity APIs with completion handler.
+
+### iOS Lifecycle 2.1.1
+
+* Session start time is now added to the shared state of Lifecycle extension.
+
 ## July 31, 2020
 
 ### Android Core 1.5.6
