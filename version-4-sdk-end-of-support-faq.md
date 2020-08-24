@@ -1,9 +1,5 @@
 # Version 4 Mobile SDKs end-of-support FAQ
 
-## We want to help!
-
-Please take a moment to fill out a [short survey](https://www.surveymonkey.com/r/AEPDocs) on how we can better assist you with enabling Adobe Experience Cloud solutions and services on your mobile apps.
-
 ## Update on end of support for version 4 Mobile SDKs
 
 {% hint style="warning" %}

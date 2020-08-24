@@ -1,5 +1,12 @@
 # Release Notes
 
+## Aug 4, 2020
+
+### Android Analytics 1.2.5
+
+* Fixed TimeSinceLaunch not getting reported in analytics hits.
+* Fixed a race condition which was causing a null pointer crash.
+
 ## June 17, 2020
 
 ### iOS Analytics 2.3.0
