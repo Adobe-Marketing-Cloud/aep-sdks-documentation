@@ -1729,7 +1729,7 @@ Retrieve the Identifier for Advertising \(IDFA\) from Apple APIs only if you are
 {% endhint %}
 
 {% hint style="info" %}
-Since iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework for requesting a user's authorization before using the Identifier for Advertising \(IDFA)\.  The following is an implementaiton example of how to suport your application running on different versions of iOS.
+Since iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework for requesting a user's authorization before using the Identifier for Advertising \(IDFA)\.  The following is an implementation example of how to support your application running on different versions of iOS.
 {% endhint %}
 
 {% hint style="warning" %}
