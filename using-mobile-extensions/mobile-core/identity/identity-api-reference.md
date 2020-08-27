@@ -1725,15 +1725,11 @@ public void onResume() {
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-Retrieve the Identifier for Advertising \(IDFA\) from Apple APIs only if you are using an ad service. If you retrieve IDFA, and are not using it properly, your app might be rejected.
-{% endhint %}
-
-{% hint style="info" %}
-Since iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework for requesting a user's authorization before using the Identifier for Advertising \(IDFA)\.  The following is an implementaiton example of how to suport your application running on different versions of iOS.
+To access IDFA  and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
 {% endhint %}
 
 {% hint style="warning" %}
-This is just an implementation example. For more information about IDFA and how to handle them correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising \(IDFA\).
 {% endhint %}
 
 #### iOS
@@ -1778,7 +1774,7 @@ This is just an implementation example. For more information about IDFA and how 
              message:@"Advertising Tracking is disabled by the user, cannot process the advertising identifier"];
     }
     [ACPCore setAdvertisingIdentifier:idfa];
-    
+
 }
 
 - (void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
@@ -1805,7 +1801,7 @@ This is just an implementation example. For more information about IDFA and how 
                      message:@"Advertising Tracking is restricted by the user, cannot process the advertising identifier"];
                 break;
         }
-        
+
         [ACPCore setAdvertisingIdentifier:idfa];
     }];
 }
@@ -1826,7 +1822,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
        // Fallback on earlier versions
        setAdvertisingIdentifierUsingIdentifierManager()
     }
-    
+
 }
 
 func setAdvertisingIdentifierUsingIdentifierManager() {
@@ -1840,12 +1836,12 @@ func setAdvertisingIdentifierUsingIdentifierManager() {
         }
         ACPCore.setAdvertisingIdentifier(idfa);
 }
-    
+
 @available(iOS 14, *)
 func setAdvertisingIdentitiferUsingTrackingManager() {
     ATTrackingManager.requestTrackingAuthorization { (status) in
         var idfa: String = "";
-                        
+
         switch (status) {
         case .authorized:
             idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
@@ -1862,7 +1858,7 @@ func setAdvertisingIdentitiferUsingTrackingManager() {
                         tag: "AppDelegateExample",
                         message: "Advertising Tracking is restricted by the user, cannot process the advertising identifier.")
         }
-                                    
+
         ACPCore.setAdvertisingIdentifier(idfa)
     }
 }
