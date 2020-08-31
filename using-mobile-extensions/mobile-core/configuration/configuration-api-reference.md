@@ -91,7 +91,7 @@ Keys that are not found on the current configuration are added when this method 
 {% endhint %}
 
 {% hint style="warning" %}
-Do not use this API to update the build.environment or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
+Do not use this API to update the `build.environment` key or any key with an environment prefix, because it can lead to unexpected behaviors. For more information, read [Environment-aware configuration properties](./#environment-aware-configuration-properties).
 {% endhint %}
 
 {% tabs %}
@@ -277,4 +277,3 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 {% endtabs %}
-
