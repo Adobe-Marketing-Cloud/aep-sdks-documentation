@@ -4,11 +4,12 @@
 
 ### iOS Target 2.1.7
 
-* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.3.5.
+* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
 
 ### Android Target 1.1.6
 
-* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.3.5.
+* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
+* Public APIs now support error handling via passing `AdobeCallbackWithError`.
 
 ## March 11, 2020
 
