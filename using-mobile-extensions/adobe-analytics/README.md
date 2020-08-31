@@ -662,14 +662,14 @@ ACPCore.TrackState("State Name", contextData);
 
 To update the SDK configuration programmatically, use the following information to change your Analytics configuration values.
 
-| Key |	Required |	Description |
-| :--- |	:--- | :--- |
-| analytics.server | Yes |See [Tracking Server](./#tracking-server) |
-| analytics.rsids |	Yes |	See Report Suites. Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2"|
-|analytics.batchLimit |	No	| See Batch Limit |
-|analytics.aamForwardingEnabled | No |	See Audience Manager Forwarding |
-|analytics.offlineEnabled | No	| See Offline Enabled |
-|analytics.backdatePreviousSessionInfo | No | See Backdate Previous Session Info. |
+| Key | Required | Description |
+| :--- | :--- | :--- |
+| analytics.server | Yes | See [Tracking Server](./#tracking-server) |
+| analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" |
+| analytics.batchLimit | No | See [Batch Limit](./#batch-limit) |
+| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
+| analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) |
+| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). |
 
 {% tabs %}
 {% tab title="Android" %}

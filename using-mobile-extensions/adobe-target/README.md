@@ -482,7 +482,7 @@ For more information, see [Programmatic updates to Configuration](https://aep-sd
 | target.propertyToken | `at_property` token value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. |
 | target.previewEnabled | Boolean parameter, which can be used to enable/disable Target Preview. If not specified, then Preview will be enabled by default. |
 | target.sessionTimeout | The duration, in seconds, during which the Target session ID and Edge Host are persisted. If this value is not specified, the default timeout value is 30 minutes. |
-| target.server | *Optional*. If provided, all Target requests will be sent to this host. Available since v2.1.7 (iOS), v1.1.6 (Android). e.g. - `mytargetdomain.com`|
+| target.server | _Optional_. If provided, all Target requests will be sent to this host. Available since v2.1.7 \(iOS\), v1.1.6 \(Android\). e.g. - `mytargetdomain.com` |
 
 {% hint style="warning" %}
 We recommend that, instead of passing the property token as a mbox parameter, you use an Experience Platform Launch configuration so that Target can pass the token. If the token is passed both in an Experience Platform Launch configuration, and as a mbox parameter, the token that was provided as the mbox parameter is discarded.
@@ -497,3 +497,4 @@ Currently, the `target.sessiontimeout` value can only be configured programmatic
 * Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://docs.adobe.com/content/help/en/target/using/implement-target/client-side/mbox-implement/advanced-mboxjs-settings.html).
 * What is an mbox? See [How Target works in mobile apps](https://docs.adobe.com/content/help/en/target/using/implement-target/mobile-apps/mobile-how-target-works-mobile-apps.html).
 * What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
+
