@@ -1,4 +1,4 @@
----
+ ---
 description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
 ---
 
@@ -38,7 +38,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Session start time is now added to the shared state of Lifecycle extension.
 
-## August 4, 2020
+## Aug 4, 2020
 
 ### Android Analytics 1.2.5
 
