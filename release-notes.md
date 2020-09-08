@@ -10,7 +10,18 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
-## August 10, 2020
+## Aug 31, 2020
+
+### iOS Target 2.1.7
+
+* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
+
+### Android Target 1.1.6
+
+* Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
+* Public APIs now support error handling via passing `AdobeCallbackWithError`.
+
+## Aug 10, 2020
 
 ### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
 
@@ -20,7 +31,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 ### iOS Identity 2.3.2
 
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
-* In order to improve the Analytics push tracking reports, the push notification preferences (`a.push.optin`) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
+* In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved safety checks for the Identity APIs with completion handler.
 
 ### iOS Lifecycle 2.1.1
@@ -34,7 +45,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 * Fixed TimeSinceLaunch not getting reported in analytics hits.
 * Fixed a race condition which was causing a null pointer crash.
 
-## August 3, 2020
+## Aug 3, 2020
 
 ### Android Campaign 1.0.5
 
@@ -110,7 +121,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ### Flutter
 
-* Places and Places Monitor extension released for Flutter. See current [Flutter versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#flutter) for more information. 
+* Places and Places Monitor extension released for Flutter. See current [Flutter versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#flutter) for more information.
 
 ## July 10, 2020
 
@@ -186,7 +197,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Support added for Project Griffon
   * [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
-* Support added for Places 
+* Support added for Places
   * [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
 
 ## June 12, 2020
@@ -252,7 +263,7 @@ The following updates were made in this release:
 * Griffon socket connection now authenticates against organization Id.
 * Griffon SDK attempts to seemlessly reconnect to its session on network interruptions.
 * Fixed an issue where "Connect" button does not appear in the pinpad screen on iOS version 10 and below.
-* Fixed a crash that happens when screenshots fails to upload to blob service. 
+* Fixed a crash that happens when screenshots fails to upload to blob service.
 * Fixed an issue where Griffon floating button disappears during orientation change.
 
 ## May 22, 2020

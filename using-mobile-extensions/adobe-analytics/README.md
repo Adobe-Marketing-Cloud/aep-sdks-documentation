@@ -664,30 +664,12 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key | Required | Description |
 | :--- | :--- | :--- |
-
-
-| `analytics.server` | Yes | See [Tracking Server](./#tracking-server) |
-| :--- | :--- | :--- |
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><code>analytics.rsids</code>
-      </th>
-      <th style="text-align:left">Yes</th>
-      <th style="text-align:left">
-        <p>See <a href="./#report-suites">Report Suites</a>
-        </p>
-        <p>Multiple report suite IDs can be comma separated with no space in- between.
-          For example:
-          <br /><code>&quot;rsids&quot; : &quot;rsid&quot; &quot;rsids&quot; : &quot;rsid1,rsid2&quot;</code>
-        </p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+| analytics.server | Yes | See [Tracking Server](./#tracking-server) |
+| analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" |
+| analytics.batchLimit | No | See [Batch Limit](./#batch-limit) |
+| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
+| analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) |
+| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). |
 
 {% tabs %}
 {% tab title="Android" %}
