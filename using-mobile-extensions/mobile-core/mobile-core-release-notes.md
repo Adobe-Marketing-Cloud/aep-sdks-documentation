@@ -3,7 +3,7 @@
 ## September 9, 2020
 
 ### Android Core 1.5.7
-* Fixed the issue where it may fail to save caches when `Etag` contains special charactors. 
+* Fixed the issue where it may fail to save caches when `Etag` contains special characters. 
 
 ### Android Identity 1.2.1
 * Report extension details to Mobile Core for improved logging and Griffon support.
