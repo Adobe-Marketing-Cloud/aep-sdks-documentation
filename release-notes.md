@@ -10,6 +10,13 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## September 9, 2020
+### Android Identity 1.2.1
+* Report extension details to Mobile Core for improved logging and Griffon support.
+* Identity shared state now gets updated in current session on server response changes for blob or locationHint.
+* In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
+* Improved existing log messages and added additional logging to assist with debugging.
+
 ## Aug 31, 2020
 
 ### iOS Target 2.1.7
