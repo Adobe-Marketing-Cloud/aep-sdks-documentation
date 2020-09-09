@@ -83,6 +83,7 @@
   * [Manual Lifecycle Implementation](resources/upgrading-to-aep/manual-lifecycle-implementation.md)
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
+  * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)

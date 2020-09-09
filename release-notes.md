@@ -1,4 +1,4 @@
----
+ ---
 description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
 ---
 
@@ -23,6 +23,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ### Android Lifecycle 1.0.6
 * Added previous application Id and OS version info to lifecycle event data.
+
+## Sept 8, 2020
+
+### Android Campaign 1.0.6
+
+* Added support for weak ETags.
 
 ## Aug 31, 2020
 
@@ -58,6 +64,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Fixed TimeSinceLaunch not getting reported in analytics hits.
 * Fixed a race condition which was causing a null pointer crash.
+
+## Aug 3, 2020
+
+### Android Campaign 1.0.5
+
+* Added ETag support for Campaign rules download requests.
 
 ## July 31, 2020
 
