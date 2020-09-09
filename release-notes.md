@@ -10,6 +10,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
+## Sept 8, 2020
+
+### Android Campaign 1.0.6
+
+* Added support for weak ETags.
+
 ## Aug 31, 2020
 
 ### iOS Target 2.1.7

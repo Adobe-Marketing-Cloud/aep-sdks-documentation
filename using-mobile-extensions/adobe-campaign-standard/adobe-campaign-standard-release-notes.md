@@ -1,8 +1,16 @@
 # Release Notes
 
+## September 8, 2020
+
+The following update was made in this release:
+
+**Android Campaign 1.0.6**
+
+* Added support for weak ETags.
+
 ## August 3, 2020
 
-The following updates were made in this release:
+The following update was made in this release:
 
 **Android Campaign 1.0.5**
 
