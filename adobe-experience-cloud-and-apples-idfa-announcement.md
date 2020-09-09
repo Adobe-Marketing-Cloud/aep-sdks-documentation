@@ -23,6 +23,8 @@ IAB Europe released a [letter to Tim Cook](https://iabeurope.eu/all-news/marketi
 along with concerns about developers’ abilities to continue to meet their legal obligations under the announced guidelines.
 
 Given that these developments are taking place against the backdrop of broader changes to addressable communications in the wider ecosystem \(e.g., browser changes\) Adobe is engaged in the appropriate policy and technical forums to work on these important issues.   
+
+{% file src=".gitbook/assets/apple-idfa-adobe-pov-september-2-2020.pdf" %}
 {% endtab %}
 {% endtabs %}
 
