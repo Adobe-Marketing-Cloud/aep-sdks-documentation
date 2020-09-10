@@ -14,7 +14,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 #### iOS Core 2.7.4
 
-* Fixed a crash issue happened on `ACPExtensionAPI`.
+* Fixed an intermitted issue where third party extensions may experience crashes after unregistration when using the `ACPExtensionAPI`.
 
 #### iOS Lifecycle 2.1.2
 
