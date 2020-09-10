@@ -242,8 +242,12 @@ Add the following initialization code. It may need to be adjusted depending on h
     [ACPIdentity registerExtension];
     [ACPLifecycle registerExtension];
     [ACPSignal registerExtension];
+    const UIApplicationState appState = application.applicationState;
     [ACPCore start:^{
-      [ACPCore lifecycleStart:nil];
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
     }];
     ...
   return YES;
