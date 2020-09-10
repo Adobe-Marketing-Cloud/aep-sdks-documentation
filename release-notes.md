@@ -1,247 +1,250 @@
- ---
-description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
----
-
 # Release notes
 
-## Swift Developer Preview
+### description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
+
+## Release notes
+
+### Swift Developer Preview
 
 The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
-## September 9, 2020
+### September 9, 2020
 
-### Android Core 1.5.7
+#### Android Core 1.5.7
+
 * Fixed the issue where it may fail to save caches when `Etag` contains special characters. 
 
-### Android Identity 1.2.1
+#### Android Identity 1.2.1
+
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
 * In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-### Android Lifecycle 1.0.6
+#### Android Lifecycle 1.0.6
+
 * Added previous application Id and OS version info to lifecycle event data.
 
-## Sept 8, 2020
+### Sept 8, 2020
 
-### Android Campaign 1.0.6
+#### Android Campaign 1.0.6
 
 * Added support for weak ETags.
 
-## Aug 31, 2020
+### Aug 31, 2020
 
-### iOS Target 2.1.7
+#### iOS Target 2.1.7
 
 * Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
 
-### Android Target 1.1.6
+#### Android Target 1.1.6
 
 * Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
 * Public APIs now support error handling via passing `AdobeCallbackWithError`.
 
-## Aug 10, 2020
+### Aug 10, 2020
 
-### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
+#### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
 
 * Fixed a crash happening on `AdobeMarketingMobile::RulesEngine::ProcessEventForRules()`.
 * Fixed an issue where null values in rules consequences were not respected.
 
-### iOS Identity 2.3.2
+#### iOS Identity 2.3.2
 
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
 * In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved safety checks for the Identity APIs with completion handler.
 
-### iOS Lifecycle 2.1.1
+#### iOS Lifecycle 2.1.1
 
 * Session start time is now added to the shared state of Lifecycle extension.
 
-## Aug 4, 2020
+### Aug 4, 2020
 
-### Android Analytics 1.2.5
+#### Android Analytics 1.2.5
 
 * Fixed TimeSinceLaunch not getting reported in analytics hits.
 * Fixed a race condition which was causing a null pointer crash.
 
-## Aug 3, 2020
+### Aug 3, 2020
 
-### Android Campaign 1.0.5
+#### Android Campaign 1.0.5
 
 * Added ETag support for Campaign rules download requests.
 
-## July 31, 2020
+### July 31, 2020
 
-### Android Core 1.5.6
+#### Android Core 1.5.6
 
 * Fixed an issue where null values in rules consequences was not respected.
 * Some internal fixes.
 
-### Android Lifecycle 1.0.5
+#### Android Lifecycle 1.0.5
 
 * Session start time is now added to the shared state of Lifecycle extension.
 
-### Android Mobile Services 1.0.5
+#### Android Mobile Services 1.0.5
 
 * Fixed an issue where acquisition data may not be correctly processed.
 
-## July 24, 2020
+### July 24, 2020
 
-### iOS Media 2.1.1
+#### iOS Media 2.1.1
 
 * Fixed a performance issue when tracking media.
 
-## July 22, 2020
+### July 22, 2020
 
-### Xamarin
+#### Xamarin
 
 * User Profile extension for Android [released](https://www.nuget.org/packages/Adobe.ACPUserProfile.Android/)
 * User Profile extension for iOS [released](https://www.nuget.org/packages/Adobe.ACPUserProfile.iOS/)
 
-### Unity
+#### Unity
 
 * User Profile extension for Unity [released](https://github.com/adobe/unity_acpuserprofile)
 
-## July 21, 2020
+### July 21, 2020
 
-### Mobile Core Launch Extension 2.1.15
+#### Mobile Core Launch Extension 2.1.15
 
 * Added Modify Data action for Launch Rules. See more information on usage here: [Modify data in SDK events](resources/user-guides/modify-data.md).
 * Update requires Mobile Core iOS minimum version 2.7.2 and Android minimum version 1.5.5
 
   **July 17, 2020**
 
-### Android Audience 1.0.2
+#### Android Audience 1.0.2
 
 * Fixed an issue where UUID was not returned in getSdkIdentities API response.
 * Fixed an issue where customer visitor IDs were missing from Audience signals.
 
-### Android Media 2.0.1
+#### Android Media 2.0.1
 
 * Fixed a crash when configuring incorrect collection API server.
 
-### Xamarin
+#### Xamarin
 
 * Places extension released for Xamarin. See current [Xamarin versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin) for more information.
 
-## July 16, 2020
+### July 16, 2020
 
-### iOS Core 2.7.1 \(Released with ACPCore version 2.7.2 on Cocoapods\)
+#### iOS Core 2.7.1 \(Released with ACPCore version 2.7.2 on Cocoapods\)
 
 * Updated the wrapper type strings used by SDK plugins.
 * Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
 * Another attampt to fix the crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
 
-### Android Core 1.5.5
+#### Android Core 1.5.5
 
 * Updated the wrapper type strings used by SDK plugins.
 * Added support for the token `~timestampp` which complies with the Adobe Experience Platform Edge Network.
 * Added support for [Modify Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data) rules.
 
-### Flutter
+#### Flutter
 
 * Places and Places Monitor extension released for Flutter. See current [Flutter versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#flutter) for more information.
 
-## July 10, 2020
+### July 10, 2020
 
-### iOS Audience 2.0.2
+#### iOS Audience 2.0.2
 
 * Fixed an issue where UUID was not returned in getSdkIdentities API response.
 
-## July 09, 2020
+### July 09, 2020
 
-### Flutter
+#### Flutter
 
 * Client-side Profile extension released for Flutter see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) for more information.
 
-## June 26, 2020
+### June 26, 2020
 
-### iOS Identity 2.3.1 \(Released with ACPCore version 2.7.1 on Cocoapods\)
+#### iOS Identity 2.3.1 \(Released with ACPCore version 2.7.1 on Cocoapods\)
 
 * Fixed an intermittent bug where Identity data was not loading at SDK initialization time.
 
-### React Native
+#### React Native
 
 * Places Monitor extension released for React Native see: [Places Monitor React Native](https://www.npmjs.com/package/@adobe/react-native-acpplaces-monitor)
 
-## June 24, 2020
+### June 24, 2020
 
-### Cordova
+#### Cordova
 
 * Places Monitor extension released for Cordova see: [Places Monitor Cordova](https://www.npmjs.com/package/@adobe/cordova-acpplacesmonitor)
 
-## June 18, 2020
+### June 18, 2020
 
-### iOS Griffon 1.1.3
+#### iOS Griffon 1.1.3
 
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId.
 
-## June 17, 2020
+### June 17, 2020
 
-### iOS Core 2.7.0
+#### iOS Core 2.7.0
 
 * Added tvOS compatibility
 * Version 2.7.0 onwards, binaries are built with Xcode 11.0
 * Fixed a crash which happened in AdobeMarketingMobile::ModuleEventListenerBase
 * Added support for [Modify Data](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data) rules.
 
-### iOS Lifecycle 2.1.0
+#### iOS Lifecycle 2.1.0
 
 * Added tvOS compatibility
 * Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
-### iOS Signal 2.1.0
+#### iOS Signal 2.1.0
 
 * Added tvOS compatibility
 * Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
-### iOS Identity 2.3.0
+#### iOS Identity 2.3.0
 
 * Added tvOS compatibility
 * Version 2.3.0 onwards, binaries are built with Xcode 11.0
 
-### iOS Analytics 2.3.0
+#### iOS Analytics 2.3.0
 
 * Added tvOS compatibility
 * Version 2.3.0 onwards, binaries are built with Xcode 11.0
 
-### iOS Media 2.1.0
+#### iOS Media 2.1.0
 
 * Added tvOS compatibility
 * Version 2.1.0 onwards, binaries are built with Xcode 11.0
 
-## June 15, 2020
+### June 15, 2020
 
-### React Native
+#### React Native
 
 * Support added for Project Griffon
   * [See more information in the React Native tab in the Griffon docs](https://aep-sdks.gitbook.io/docs/beta/project-griffon/set-up-project-griffon#add-project-griffon)
 * Support added for Places
   * [See more information in the Places extension section of the Places docs](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-extension/places-extension.html)
 
-## June 12, 2020
+### June 12, 2020
 
-### Android Griffon 1.1.7
+#### Android Griffon 1.1.7
 
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId
 * Griffon pin pad UI support for devices with cutouts from Android version 28 and above.
 
-### Cordova
+#### Cordova
 
 * [Support added for Places extension in Cordova](https://github.com/adobe/cordova-acpplaces)
 * [Support added for Profile extension in Cordova ](https://github.com/adobe/cordova-acpuserprofile)
 
-## June 4, 2020
+### June 4, 2020
 
-### iOS Griffon 1.1.2
+#### iOS Griffon 1.1.2
 
 * Reduced the scope of variable BUFFER\_SIZE that was exposed globally which may result in naming conflict
 
-## June 2, 2020
+### June 2, 2020
 
-### Additional frameworks supported by Adobe Experience Platform Mobile SDK
+#### Additional frameworks supported by Adobe Experience Platform Mobile SDK
 
 * [Apache Cordova ](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#cordova)
 * [Microsoft Xamarin](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#xamarin)
@@ -251,31 +254,31 @@ Each framework supports Mobile Core, Adobe Analytics and Project Griffon. Additi
 
 See [Get the Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) for information for installing and initializing the SDK.
 
-## June 1, 2020
+### June 1, 2020
 
-### iOS Analytics 2.2.4
+#### iOS Analytics 2.2.4
 
 * Fixed incorrect timezone offset calculation
 * Fixed a crash which happened in Analytics::TrackLifecycle
 
-## May 28, 2020
+### May 28, 2020
 
 The following updates were made in this release:
 
-### iOS Core 2.6.2
+#### iOS Core 2.6.2
 
 * Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
 * Fixed the import statement in `ACPNetworkServiceOverrider.h`.
 
-### Android Core 1.5.4
+#### Android Core 1.5.4
 
 * Added the capability for rules engine to reprocess the events that are dispatched before rules are loaded.
 * Fixed a bug where the shared state of event hub was not properly created.
 * Fixed a security issue.
 
-## May 27, 2020
+### May 27, 2020
 
-### iOS Griffon 1.1.1
+#### iOS Griffon 1.1.1
 
 * Griffon extension is optimized to unregister itself, when it does not obtain session's deeplink URL within 5 seconds of app launch.
 * Fixed a bug where user is not able to disconnect when griffon attempts to reconnect with expired socket URL.
@@ -286,9 +289,9 @@ The following updates were made in this release:
 * Fixed a crash that happens when screenshots fails to upload to blob service.
 * Fixed an issue where Griffon floating button disappears during orientation change.
 
-## May 22, 2020
+### May 22, 2020
 
-### Android Griffon 1.1.6
+#### Android Griffon 1.1.6
 
 * Changes to support Griffon on Xamarin and Unity.
 * Griffon extension is optimized to unregister itself, when it does not obtain session's deeplink URL within 5 seconds of app launch.
@@ -296,177 +299,177 @@ The following updates were made in this release:
 * Fixed a bug that prevents pinpad screen from closing when Mobile SDK is not configured.
 * Improved logging.
 
-## May 19, 2020
+### May 19, 2020
 
-### iOS Media 2.0.0
-
-* Uses media collection endpoint for tracking both streaming and downloaded content.
-* Added support for player state tracking
-
-### Android Media 2.0.0
+#### iOS Media 2.0.0
 
 * Uses media collection endpoint for tracking both streaming and downloaded content.
 * Added support for player state tracking
 
-## April 24, 2020
+#### Android Media 2.0.0
+
+* Uses media collection endpoint for tracking both streaming and downloaded content.
+* Added support for player state tracking
+
+### April 24, 2020
 
 The following updates were made in this release:
 
-### Android Campaign 1.0.4
+#### Android Campaign 1.0.4
 
 * Changes in how fullscreen in-app messages are displayed inline with WebView security recommendations in Mobile Core 1.5.2 release.
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Fixed an image caching related bug, where cached images used to get deleted.
 
-## April 22, 2020
+### April 22, 2020
 
 The following updates were made in this release:
 
-### Android Griffon 1.1.5
+#### Android Griffon 1.1.5
 
 * Fix bug where pinCode entry activity fails to show when another application’s activity is started at the same time.
 * Blob upload services uses production URL with multiple environment support.
 * ClientId is shared as a query parameter to socket URL rather than tagging each Griffon event.
 * Griffon socket connection now authenticates against organization Id.
 
-## April 21, 2020
+### April 21, 2020
 
 The following updates were made in this release:
 
-### iOS Core 2.6.1
+#### iOS Core 2.6.1
 
 * Added an internal enum for Cordova support.
 
-### Android Core 1.5.3
+#### Android Core 1.5.3
 
 * Fixed a performance issue where the initiliaztion of SDK extensions could block the main thread for a while.
 
-## April 17, 2020
+### April 17, 2020
 
 The following updates were made in this release:
 
-### iOS Mobile Services 1.0.6
+#### iOS Mobile Services 1.0.6
 
 * Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
 
-## April 9, 2020
+### April 9, 2020
 
 The following updates were made in this release:
 
-### Android Core 1.5.2
+#### Android Core 1.5.2
 
 * Fixed several security issues.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-### Android Lifecycle 1.0.3
+#### Android Lifecycle 1.0.3
 
 * Fixed a bug where the `Resolution` was captured in non-English numerals.
 
-## April 7, 2020
+### April 7, 2020
 
 The following updates were made in this release:
 
-### Android Griffon 1.1.4
+#### Android Griffon 1.1.4
 
 * Fixed a bug where Griffon pinpad screen may disappear behind an activity.
 * Griffon SDK attempts to seemlessly reconnect to its session on network interruption.
 * Fixed a bug that prevented to establish Griffon connection on Android API 27 and below.
 * Added a new Plugin interface method that gets called on Griffon session termination.
 
-## April 2, 2020
+### April 2, 2020
 
 The following updates were made in this release:
 
-### iOS Core 2.6.0
+#### iOS Core 2.6.0
 
 * Added support for overriding internal network stack with customer-provided implementation. For more information, see [Override network stack](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/platform-services#ios).
 
-## March 30, 2020
+### March 30, 2020
 
-### iOS UserProfile 2.1.0
-
-* Added an API `removeUserAttributes` to remove multiple attributes.
-* Added an API `getUserAttributes` to get user attributes with provided keys.
-
-### Android UserProfile 1.1.0
+#### iOS UserProfile 2.1.0
 
 * Added an API `removeUserAttributes` to remove multiple attributes.
 * Added an API `getUserAttributes` to get user attributes with provided keys.
 
-## March 19, 2020
+#### Android UserProfile 1.1.0
+
+* Added an API `removeUserAttributes` to remove multiple attributes.
+* Added an API `getUserAttributes` to get user attributes with provided keys.
+
+### March 19, 2020
 
 The following updates were made in this release:
 
-### Android Campaign Classic 1.0.1
+#### Android Campaign Classic 1.0.1
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Fixed a security issue where hex conversion method was vulnerable to hash collisions.
 
-## March 18, 2020
+### March 18, 2020
 
 The following updates were made in this release:
 
-### iOS Campaign Classic 2.0.3
+#### iOS Campaign Classic 2.0.3
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Fixed an issue where passing nil callback in `registerDevice` API caused a crash.
 
-## March 16, 2020
+### March 16, 2020
 
 The following updates were made in this release:
 
-### iOS Core 2.5.1
+#### iOS Core 2.5.1
 
 * Fixed a crash which happened in `ADBJsonType::Get`.
 * Fixed a crash which happened in `EventHubInner::CreateOrUpdateSharedStateCommon`, the crash was introduced on the version 2.5.0.
 * Fixed an internal issue where the SDK failed to create a Json array if it contains empty items.
 * Improved log messages.
 
-### iOS Identity 2.2.1
+#### iOS Identity 2.2.1
 
 * Fixed an issue where all Identity APIs with callbacks were subject to a timeout. Only Identity APIs which use a completionHandler callback are subject to a timeout.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-### iOS Signal 2.0.4
+#### iOS Signal 2.0.4
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved log messages.
 
-### iOS Lifecycle 2.0.4
+#### iOS Lifecycle 2.0.4
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved log messages.
 
-## March 11, 2020
+### March 11, 2020
 
 The following updates were made in this release:
 
-### Android Target 1.1.5
+#### Android Target 1.1.5
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Target Session Id will now be added as a context data parameter `a.target.sessionId` in the internal Analytics for Target hit sent to Adobe Analytics.
 * Fixed an issue, where on app close and relaunch, previously persisted tntId was not being sent in Target requests.
 
-## March 10, 2020
+### March 10, 2020
 
 The following updates were made in this release:
 
-### iOS Target 2.1.6
+#### iOS Target 2.1.6
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Target Session Id will now be added as a context data parameter `a.target.sessionId` in the internal Analytics for Target hit sent to Adobe Analytics.
 
-## March 2, 2020
+### March 2, 2020
 
 The following updates were made in this release:
 
-### iOS Analytics 2.2.3
+#### iOS Analytics 2.2.3
 
 * `AnalyticsResponse` events are now always dispatched regardless if the debugApi is enabled or if AAM forwarding is enabled.
 * Report extension details to ACPCore for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-### iOS Griffon 1.1.0
+#### iOS Griffon 1.1.0
 
 * Added support for capturing device screenshot.
 * Added support for forwarding application logs to Griffon.
@@ -478,7 +481,7 @@ The following updates were made in this release:
 * Added an API to create ACPGriffonEvent with vendor, type, payload, and timestamp.
 * Bug fixes.
 
-### Android Griffon 1.1.3
+#### Android Griffon 1.1.3
 
 * Added support for capturing device screenshot.
 * Added support for forwarding application logs to Griffon.
@@ -489,31 +492,31 @@ The following updates were made in this release:
 * Added constructors to create GriffonEvent with vendor, type, payload, and timestamp.
 * Bug fixes.
 
-## February 27, 2020
+### February 27, 2020
 
 The following updates were made in this release:
 
-### Android Core 1.5.1
+#### Android Core 1.5.1
 
 * Fixed a bug where AppID used non-arabic numbers as app versions.
 * Fixed a bug where app version was not included in AppID on Android 9 or above devices.
 * Added Wrapper Type for Flutter.
 
-### Android Signal 1.0.3
+#### Android Signal 1.0.3
 
 * Logging improvement
 * Report extension details to Mobile Core for improved logging and Griffon support.
 
-### Android Lifecycle 1.0.3
+#### Android Lifecycle 1.0.3
 
 * Logging improvement
 * Report extension details to Mobile Core for improved logging and Griffon support.
 
-## February 19, 2020
+### February 19, 2020
 
 The following updates were made in this release:
 
-### iOS Core 2.5.0
+#### iOS Core 2.5.0
 
 * Mobile Core now shares the list of enabled extensions and their meta data through shared state.
 * Added Wrapper Type for Flutter.
@@ -522,7 +525,7 @@ The following updates were made in this release:
   * `getPrivacyStatusWithCompletionHandler`
   * `getSdkIdentitiesWithCompletionHandler`
 
-### iOS Identity 2.2.0
+#### iOS Identity 2.2.0
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Added the following APIs to support the completionHandler callback that is available in iOS ACPCore version 2.5.0:
@@ -534,22 +537,22 @@ The following updates were made in this release:
 
   When the `completionHandler` is used, and you are retrieving the Mobile SDK values, the timeout value is 500ms; if the operation times out or is not successful, an `NSError` is returned.
 
-## February 13, 2020
+### February 13, 2020
 
 The following updates were made in this release:
 
-### Android Analytics 1.2.4
+#### Android Analytics 1.2.4
 
 * Fixed an issue which, was causing some hits to be delayed.
 * Fixed an issue where `AnalyticsResponse` events were not being dispatched even when the debug API was enabled.
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-## February 4, 2020
+### February 4, 2020
 
 The following updates were made in this release:
 
-### Android Core 1.5.0
+#### Android Core 1.5.0
 
 * Fixed a cursor leak.
 * Mobile Core now shares the list of enabled extensions and their meta data through shared state.
@@ -559,7 +562,7 @@ The following updates were made in this release:
 
   We plan to gradually add the ability to enable failure callback to the other extensions.
 
-### Android Identity 1.2.0
+#### Android Identity 1.2.0
 
 * Added support for the optional `AdobeCallbackWithError` callback that is available in Android Core version 1.5.0 on the following APIs:
 
@@ -572,11 +575,11 @@ The following updates were made in this release:
 
 Released with sdk-core version 1.5.0.
 
-### Android Mobile Services 1.1.1
+#### Android Mobile Services 1.1.1
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
-## January 29, 2020
+### January 29, 2020
 
 The following updates were made in this release:
 
@@ -588,7 +591,7 @@ The following updates were made in this release:
 
 * Improved existing log messages and added additional logging to assist with debugging.
 
-## January 28, 2019
+### January 28, 2019
 
 The following updates were made in this release:
 
@@ -601,7 +604,7 @@ The following updates were made in this release:
 
 * Fixed the nomenclature for the unique event identifier.
 
-## January 27, 2020
+### January 27, 2020
 
 The following updates were made in this release:
 
@@ -613,7 +616,7 @@ The following updates were made in this release:
 * Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
 * Fixed a bug where the iOS fullscreen message was unable to load cached images.
 
-## January 25, 2020
+### January 25, 2020
 
 The following updates were made in this release:
 
@@ -621,7 +624,7 @@ The following updates were made in this release:
 
 * `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
 
-## January 24, 2020
+### January 24, 2020
 
 The following updates were made in this release:
 
@@ -632,7 +635,7 @@ The following updates were made in this release:
 * Removed unwanted resource files that were creating compilation error.
 * Improved logging to assist with debugging.
 
-## January 23, 2020
+### January 23, 2020
 
 The following updates were made in this release:
 
@@ -647,7 +650,7 @@ The following updates were made in this release:
 
   For more information about the Install Referrer APIs, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html).
 
-## January 13, 2020
+### January 13, 2020
 
 The following updates were made in this release:
 
@@ -694,7 +697,7 @@ The new Location Services views allow you to inspect location entry and exit eve
 
 For more information, see [Location Service and Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/location-service-and-project-griffon).
 
-## November 15, 2019
+### November 15, 2019
 
 The following updates were made in this release:
 
@@ -705,7 +708,7 @@ The following updates were made in this release:
 
 These changes were released as part of ACPCore CocoaPod v2.3.6.
 
-## November 8, 2019
+### November 8, 2019
 
 The following update was made in this release:
 
@@ -713,7 +716,7 @@ The following update was made in this release:
 
 * Fixed a bug where the iOS fullscreen message was unable to load cached images.
 
-## October 30, 2019
+### October 30, 2019
 
 The following updates were made in this release:
 
@@ -728,7 +731,7 @@ The following updates were made in this release:
 * Added support for local notification message metrics \(impression, open, and click\).
 * Added support for message frequency rules \(show once and until clicked\) for local notification messages.
 
-## October 28, 2019
+### October 28, 2019
 
 The following change was made in this release:
 
@@ -754,7 +757,7 @@ The following change was made in this release:
 
   These fields contain the host and URL of the of the hit responsible for dispatching the response event.
 
-## October 25, 2019
+### October 25, 2019
 
 The following updates were made in this release:
 
@@ -777,7 +780,7 @@ The following updates were made in this release:
 * Fixed a bug where multiple custom identifiers with same `idType` value were synced with the Visitor ID Service.
 * Custom visitor identifiers can now be cleared from the SDK by providing a null/empty identifier value for a previously synced `idType`.
 
-## October 10, 2019
+### October 10, 2019
 
 The following updates were made in this release:
 
@@ -786,7 +789,7 @@ The following updates were made in this release:
 * Fixed an issue where, on iOS 13, the push token was not being extracted correctly from NSData during device registration.    
 * Fixed an issue where the charset information was not being sent in the Content-Type header during device registration call.
 
-## October 7, 2019
+### October 7, 2019
 
 The following updates were made in this release:
 
@@ -800,7 +803,7 @@ The following updates were made in this release:
 
 * Fixed a bug where, on start up, the Analytics database was being modified by multiple threads.
 
-## October 4, 2019
+### October 4, 2019
 
 The following updates were made in this release:
 
@@ -818,7 +821,7 @@ The following updates were made in this release:
 * Fixed an issue where the push identifier is not contained in the Identity shared state on bootup.    
 * Fixed an issue where `appendToUrl` uses the incorrect query delimiter when the source URL contains a question mark in its fragment identifier component.
 
-## October 2, 2019
+### October 2, 2019
 
 The following updates were made in this release:
 
@@ -831,7 +834,7 @@ The following updates were made in this release:
 * The Target session ID and Edge Host will now be persisted in Shared Preferences. If there is no activity for the configured `target.sessionTimeout`, these variables will be reset. The default session timeout value is 30 minutes.    
 * Fixed an issue where the null `at_property` key, which was passed in mbox parameters, was being sent in Target requests.
 
-## September 24, 2019
+### September 24, 2019
 
 The following updates were made in this release:
 
@@ -840,7 +843,7 @@ The following updates were made in this release:
 * The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 * Appends IMS OrgID to AAM demdex calls if subdomain endpoint is missing.
 
-## September 17, 2019
+### September 17, 2019
 
 The following updates were made in this release:
 
@@ -852,7 +855,7 @@ The following updates were made in this release:
 
 * Fixed the locale string in the HTTP User-Agent to follow the BCP 47 specification.
 
-## September 10, 2019
+### September 10, 2019
 
 The following updates were made in this release:
 
@@ -864,7 +867,7 @@ The following updates were made in this release:
 * Added support for the Griffon debug API.
 * The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 
-## September 9, 2019
+### September 9, 2019
 
 The following updates were made in this release:
 
@@ -889,7 +892,7 @@ The following updates were made in this release:
 
 * Starting in version 1.0.3, there is a new Artifact split from the Android Griffon Bridge.
 
-## Aug 30, 2019
+### Aug 30, 2019
 
 The following updates were made in this release:
 
@@ -901,7 +904,7 @@ The following updates were made in this release:
 
 * Added the ability to trigger an In-App message that is based on Analytics rules consequences..
 
-## Aug 20, 2019
+### Aug 20, 2019
 
 The following updates were made in this release:
 
@@ -923,7 +926,7 @@ The following updates were made in this release:
 
 * Fixed a bug where a duplicate Analytics hit was sent when `ACPCore::CollectLaunchInfo` was called.
 
-## August 15, 2019
+### August 15, 2019
 
 The following updates were made in this release:
 
@@ -932,7 +935,7 @@ The following updates were made in this release:
 * Fixed a bug where the database operation might fail on Android Q \(Android 10\).
 * Fixed a crash that was happening on Android versions 8.0 and 8.1 and was related to Android's `TimeZoneNamesImpl`.
 
-## August 8, 2019
+### August 8, 2019
 
 The following updates were made in this release:
 
@@ -940,7 +943,7 @@ The following updates were made in this release:
 
 * Fixed a bug that, when prefetchContent is called with a nil callback, caused a crash in iOS.
 
-## August 6, 2019
+### August 6, 2019
 
 The following updates were made in this release:
 
@@ -959,7 +962,7 @@ The following updates were made in this release:
 
 * Fixed an issue in Android where Target Preview links were decoded twice, which lead to an error preview page.
 
-## July 17, 2019
+### July 17, 2019
 
 The following updates were made in this release:
 
@@ -967,13 +970,13 @@ The following updates were made in this release:
 
 * Fixed an issue that, when making Analytics requests during the switch of Android activities, might result in incorrect Customer Perspective \(CP\) values.
 
-## July 16, 2019
+### July 16, 2019
 
 Adobe Experience Platform SDK for WeChat Mini Programs Beta
 
 The Adobe Experience Platform SDK now supports WeChat Mini Programs. This beta release helps Adobe Analytics customers who want to track the behavioral usage of Mini Programs. For more information, see [the documentation](https://aep-sdks.gitbook.io/docs/beta/adobe-experience-platform-mini-programs-sdk) or contact your Adobe customer success manager.
 
-## July 10, 2019
+### July 10, 2019
 
 The following updates were made in this release:
 
@@ -981,7 +984,7 @@ The following updates were made in this release:
 
 * Fixed bug where wildcard listener wasn't working.
 
-## July 9, 2019
+### July 9, 2019
 
 The following updates were made in this release:
 
@@ -990,7 +993,7 @@ The following updates were made in this release:
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
 
-## June 28, 2019
+### June 28, 2019
 
 The following updates were made in this release:
 
@@ -998,7 +1001,7 @@ The following updates were made in this release:
 
 * Initial beta release.
 
-## June 27, 2019
+### June 27, 2019
 
 The following updates were made in this release:
 
@@ -1007,7 +1010,7 @@ The following updates were made in this release:
 * Use the `target.propertyToken` configuration setting to configure the `at_property_token` that is generated from the Target UI, instead of passing the token as an mbox parameter.
 * Fixed an issue where JSON offers were not being returned as content but instead default content was served.
 
-## June 19, 2019
+### June 19, 2019
 
 The following updates were made in this release:
 
@@ -1017,7 +1020,7 @@ The following updates were made in this release:
 * Fixed an issue that might cause the main thread to be blocked for up to 60 seconds while the app is shutting down.
 * Fixed several issues leading to a non-observed crash in the background while the app attempts to shut down.
 
-## June 13, 2019
+### June 13, 2019
 
 The following updates were made in this release:
 
@@ -1027,7 +1030,7 @@ The following updates were made in this release:
 * Fixed an issue that might have caused crashes when the app was being shut down.
 * Fixed an issue that might have caused the callback to be passed to `ACPCore start:` to be called before the EventHub has finished initialization.
 
-## June 12, 2019
+### June 12, 2019
 
 The following updates were made in this release:
 
@@ -1036,7 +1039,7 @@ The following updates were made in this release:
 * Fixed a bug where the locale was incorrect for Analytics hits.
 * Fixed a bug where the Analytics shared state was not updated with the visitor identifier.
 
-## June 3, 2019
+### June 3, 2019
 
 The following updates were made in this release:
 
@@ -1054,7 +1057,7 @@ The following updates were made in this release:
 
 * Added the `getUrlVariables` API to retrieve Visitor Identifiers as URL-encoded query strings for hybrid mobile applications.
 
-## May 31, 2019
+### May 31, 2019
 
 The following updates were made in this release:
 
@@ -1074,7 +1077,7 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 20, 2019
+### May 20, 2019
 
 The following updates were made in this release:
 
@@ -1109,7 +1112,7 @@ The following updates were made in this release:
 * Added enhanced alert reporting with clickthrough URL support in the Campaign response event.
 * Added support for a custom title in local notifications.
 
-## May 15, 2019
+### May 15, 2019
 
 **iOS Target 2.1.0 and Android Target 1.1.0**
 
@@ -1122,7 +1125,7 @@ The following updates were made in this release:
 * Provided support for `TargetParameters` which is a helper class that combines parameters such as `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters`.
 * New `prefetchContent` and `locationClicked` APIs which accept TargetParameters.
 
-## May 9, 2019
+### May 9, 2019
 
 **iOS Analytics 2.1.0**
 
@@ -1136,14 +1139,14 @@ React Native wrappers for the following extensions were pushed to npmjs:
 * [Audience](https://www.npmjs.com/package/@adobe/react-native-acpaudience)
 * [Campaign](https://www.npmjs.com/package/@adobe/react-native-acpcampaign)
 
-## May 6, 2019
+### May 6, 2019
 
 **Android Core 1.3.0**
 
 * The `MobileCore.start()` API should only get called once, and the SDK ignores the subsequent calls to this API.
 * Added an internal API for React Native support.
 
-## May 2, 2019
+### May 2, 2019
 
 The following updates were made in this release:
 
@@ -1151,7 +1154,7 @@ The following updates were made in this release:
 
 * Fixed an issue when the app network crashes under extreme conditions.
 
-## April 26, 2019
+### April 26, 2019
 
 The following updates were made in this release:
 
@@ -1174,7 +1177,7 @@ The following updates were made in this release:
 
 * Fixed a cocoapod dependency issue.
 
-## April 16, 2019
+### April 16, 2019
 
 Project Griffon is now available for beta access!
 
@@ -1189,7 +1192,7 @@ To learn more about Project Griffon, here are the links to the [documentation](h
 * [Set up Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/set-up-project-griffon)
 * [Using Project Griffon](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/project-griffon/using-project-griffon)
 
-## April 5, 2019
+### April 5, 2019
 
 The following updates were made in this release:
 
@@ -1206,13 +1209,13 @@ The following updates were made in this release:
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 
-## April 3, 2019
+### April 3, 2019
 
 **iOS Campaign Standard 1.0.1**
 
 * Fixed an issue with duplicate symbols being present in the Campaign extension library.
 
-## March 25, 2019
+### March 25, 2019
 
 The following updates were made in this release:
 
@@ -1228,7 +1231,7 @@ If there is no cached configuration available, the SDK can fetch the configurati
 * You can also use the ACPCore `getLogLevel` API to retrieve the current `LogLevel` that was set in the SDK.
 * `trackAction` and `trackState` only accept `NSDictionary`-type context data.
 
-## March 21, 2019
+### March 21, 2019
 
 The **Adobe Campaign Standard** extension version 1.0.0 is now available for Android!
 
@@ -1238,7 +1241,7 @@ The **Adobe Campaign Standard** extension version 1.0.0 is now available for And
 
 * Added protection around null results when `toString` is called on Intent extras data.
 
-## March 20, 2019
+### March 20, 2019
 
 The following updates were made in this release:
 
@@ -1263,19 +1266,19 @@ The following updates were made to the Mobile Core extension in Android version 
 
 * You can regenerate the MID when privacy settings change from opted out to opted in/opt unknown in the same session.
 
-## March 14, 2019
+### March 14, 2019
 
 **Android Core 1.1.2**
 
 * Resolved an issue that might result in a crash when the underlying Analytics database was corrupted.
 
-## March 7, 2019
+### March 7, 2019
 
 **Android Core 1.1.1**
 
 * Resolved an issue that could result in a crash when the underlying Analytics database was corrupted.
 
-## March 1, 2019
+### March 1, 2019
 
 The following updates were made in this release:
 
@@ -1287,7 +1290,7 @@ The following updates were made in this release:
 
 * Use the `analytics.launchHitDelay` configuration setting to indicate how long to wait before Analytics launch hits are sent.
 
-## February 28, 2019
+### February 28, 2019
 
 The following updates were made to the **Adobe Target extension**:
 
@@ -1296,13 +1299,13 @@ The Target Client Code is now automatically added based on your Experience Cloud
 * If no code is found, you can type it in.
 * If multiple codes are found, you can select the code from the drop-down list.
 
-## February 20, 2019
+### February 20, 2019
 
 The Adobe **Campaign Standard** extension version 1.0.0 is now available!
 
 This extension allows you to deliver and track in-app messages \(broadcast and personalized\) and push notifications to mobile app users from Adobe Campaign Standard.
 
-## February 19, 2019
+### February 19, 2019
 
 **iOS Core 2.0.3**
 
@@ -1311,25 +1314,25 @@ This extension allows you to deliver and track in-app messages \(broadcast and p
 
   **Important**: This overrides the config properties that were based on the default environment.
 
-## February 7, 2109
+### February 7, 2109
 
 **iOS Core 2.0.2**
 
 * Resolved an issue that caused failures when retrieving a configuration on application launch.
 
-## January 24, 2019
+### January 24, 2019
 
 The January 24th update includes changes to the Adobe Experience Platform Mobile SDKs and solution extensions for iOS applications. We provided an explanation of this change, why the changes were made, and how to update your application to include these changes.
 
-### What
+#### What
 
 With this release, we have changed the Mobile SDK Core and all Adobe solution extensions from dynamic frameworks to static libraries.
 
-### Why
+#### Why
 
 Frameworks are an excellent way to package and distribute iOS dependencies but, in some situations, using frameworks can cause issues when a dependent framework is updated. All of the Adobe Experience Platform SDK extensions have a dependency on the Core extension. This means that when a change is made to the Mobile Core framework, all dependent extensions need to be rebuilt from the source. To resolve this issue, we changed the SDK Core and all Adobe solution extensions to use static libraries.
 
-### How
+#### How
 
 There is nothing wrong or broken with the previous versions of the SDK. Apps that have already started development with the version 1.x SDK and extensions can continue in the development lifecycle with no impact. Mobile applications that have not yet started to implement the Mobile SDKs are also fine, as they will start out using the static libraries. The changes listed below are required for customers who have started implementing the Adobe Experience Platform Mobile SDK and want to update to the latest version.
 
@@ -1391,13 +1394,13 @@ The imports will now drop the _iOS_ suffix. Additionally, the Identity, Lifecycl
 
 We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
 
-## December 5, 2018
+### December 5, 2018
 
 **iOS Core 1.1.1**
 
 * Fixed a bug where the `deviceToken` conversion was incorrect in some situations.
 
-## December 4, 2018
+### December 4, 2018
 
 The following updates were made to all extensions:
 
@@ -1405,13 +1408,13 @@ The following updates were made to all extensions:
 
 * All ACP frameworks now properly run on 32-bit devices.
 
-## November 30, 2018
+### November 30, 2018
 
 **iOS Core 1.0.2**
 
 * Minor bug fixes
 
-## November 20, 2018
+### November 20, 2018
 
 The **Adobe Campaign Classic** extension version 1.0.0 is now available for iOS!
 
@@ -1421,7 +1424,7 @@ This extension enables the delivery and tracking of push notifications to mobile
 This extension is only for Adobe Campaign Classic and will not work with Adobe Campaign Standard.
 {% endhint %}
 
-#### Key Features
+**Key Features**
 
 In this release, you can:
 
@@ -1434,7 +1437,7 @@ Here is some additional information:
 
 This extension is an alternative to the stand-alone Campaign Classic SDK. It allows Experience Platform SDK users to enable push messaging from Campaign Classic without installing the Campaign Classic SDK separately.
 
-## November 16, 2018
+### November 16, 2018
 
 The following updates were made to the Mobile Core extension:
 
@@ -1448,7 +1451,7 @@ The following updates were made to the Mobile Core extension:
 * This version now includes the _proguard-rules.pro_ config file.
 * Minor bug fixes.
 
-## September 27, 2018
+### September 27, 2018
 
 Adobe Experience Platform SDKs are live!
 

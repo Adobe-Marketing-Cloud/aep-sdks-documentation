@@ -3,15 +3,18 @@
 ## September 9, 2020
 
 ### Android Core 1.5.7
+
 * Fixed the issue where it may fail to save caches when `Etag` contains special characters. 
 
 ### Android Identity 1.2.1
+
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
 * In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ### Android Lifecycle 1.0.6
+
 * Added previous application Id and OS version info to lifecycle event data.
 
 ## Aug 10, 2020
