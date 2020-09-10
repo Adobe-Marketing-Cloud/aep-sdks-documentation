@@ -4,7 +4,7 @@
 
 #### iOS Core 2.7.4
 
-* Fixed a crash issue happened on `ACPExtensionAPI`.
+* Fixed an intermitted issue where third party extensions may experience crashes after unregistration when using the `ACPExtensionAPI`.
 
 #### iOS Lifecycle 2.1.2
 
