@@ -1,5 +1,15 @@
 # Release Notes
 
+### September 10, 2020
+
+#### iOS Core 2.7.4
+
+* Fixed an intermitted issue where third party extensions may experience crashes after unregistration when using the `ACPExtensionAPI`.
+
+#### iOS Lifecycle 2.1.2
+
+* Added previous application Id and OS version info to lifecycle event data.
+
 ## September 9, 2020
 
 ### Android Core 1.5.7
