@@ -21,9 +21,9 @@ Please contact Adobe Customer Care for help with specific issues or contact your
 {% endhint %}
 
 {% hint style="info" %}
-### Adobe Experience Cloud & Apple's IDFA Announcement
+### Adobe Experience Cloud & Apple's iOS 14 IDFA, Privacy Announcements
 
-See [here](adobe-experience-cloud-and-apples-idfa-announcement.md) for more information on context and information around Apple's iOS 14 updates.
+See [here](adobe-experience-cloud-and-apples-idfa-announcement.md) for more information on context, impact, and other information around Apple's iOS 14 updates.
 {% endhint %}
 
 ## About the Adobe Experience Platform Mobile SDK
