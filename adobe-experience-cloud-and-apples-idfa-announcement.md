@@ -12,9 +12,7 @@ Apple recently announced [new changes](https://developer.apple.com/app-store/use
 2. Beginning iOS 14, apps will need to ask & receive user’s permission to be tracked \(specifically referring to accessing the device’s advertising identifier or IDFA\). 
 3. Apple is introducing a new variant of device location signal labelled “reduced” or “Approximate Location”.
 
-{% tabs %}
-{% tab title="As of Sep 15, 2020" %}
-### Next Steps & Industry Reaction
+## Next Steps & Industry Reaction
 
 Apple continues to release new details regarding these changes, and fuller business, legal, and technical impact assessments will follow accordingly. On the legal and technical sides, these changes raise questions as to how to best effectuate consumer rights and choices under laws like GDPR, CCPA, and the like. 
 
@@ -29,8 +27,6 @@ along with concerns about developers’ abilities to continue to meet their lega
 Given that these developments are taking place against the backdrop of broader changes to addressable communications in the wider ecosystem \(e.g., browser changes\) Adobe is engaged in the appropriate policy and technical forums to work on these important issues.   
 
 Adobe is proud to join the Partnership for Responsible Addressable Media as a founding member. We support the partnership’s principles and objectives to develop common standards, technologies, and practices for addressability. This cross-industry approach is critical to building consumer trust, powering exceptional digital experiences designed to delight consumers, and driving innovation that supports continued growth of the digital economy in a responsible and transparent way. 
-{% endtab %}
-{% endtabs %}
 
 ## **Potential Impact to Adobe Experience Cloud**
 
