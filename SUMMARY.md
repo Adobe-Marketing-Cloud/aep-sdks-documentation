@@ -5,7 +5,7 @@
 * [Release notes](release-notes.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 * [Version 4 API Changelog](api-change-log.md)
-* [Adobe Experience Cloud & Apple’s IDFA & Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
+* [Adobe Experience Cloud & Apple’s IDFA / Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
 
 ## Getting Started
 
