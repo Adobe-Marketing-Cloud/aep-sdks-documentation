@@ -2,7 +2,7 @@
 description: 'Last Updated September 2, 2020'
 ---
 
-# Adobe Experience Cloud & Apple’s IDFA / Privacy Announcements
+# Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements
 
 ## What’s changed?
 
