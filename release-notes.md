@@ -1,22 +1,22 @@
+---
+description: Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
+---
+
 # Release notes
 
-### Release notes and change logs for the Adobe Experience Platform Mobile SDKs.
-
-## Release notes
-
+{% hint style="info" %}
 ### Swift Developer Preview
 
 The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-
-
+{% endhint %}
 
 ### September 11, 2020
 
 #### Android 11 Compatibility
 
-* Pre-release versions of Android 11 have tested to be compatabile with the latest versions of Adobe Experience Platform Mobile SDK. Please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers for Android Mobile Core and solution extensions.
+* Latest extension versions of Adobe Experience Platform Mobile SDK are now certified for Android 11. Please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers.
 
 ### September 10, 2020
 
