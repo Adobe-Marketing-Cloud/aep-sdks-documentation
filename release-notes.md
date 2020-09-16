@@ -12,6 +12,16 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### September 15, 2020
+
+#### Android, iOS Project Griffon 1.2.0
+
+* Fixed an issue caused by when extension unregistration and Shared State read events happen concurrently.
+* New modified event structure is used to communicate with backend servers.
+* New client details such as OSName, OS version, Model name, battery status, screen size, current location permission, low power mode and application configuration are now sent as a part of client event.
+* The following public APIs are removed: attemptReconnect, sendEvent, sendBlob, loglocalUILevel and registerListenerForVendor.
+* Improvements to client connection error screen to provide relevant error messages and descriptions.
+
 ### September 11, 2020
 
 #### Android 11 Compatibility
