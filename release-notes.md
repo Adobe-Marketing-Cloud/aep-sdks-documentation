@@ -45,13 +45,13 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Added previous application Id and OS version info to lifecycle event data.
 
-### Sept 8, 2020
+### September 8, 2020
 
 #### Android Campaign 1.0.6
 
 * Added support for weak ETags.
 
-### Aug 31, 2020
+### August 31, 2020
 
 #### iOS Target 2.1.7
 
@@ -62,7 +62,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 * Added support for configuration option `target.server` which enables a custom host to be used for Target requests. This configuration option is available in the Adobe Target Launch extension starting with version 2.4.0.
 * Public APIs now support error handling via passing `AdobeCallbackWithError`.
 
-### Aug 10, 2020
+### August 10, 2020
 
 #### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
 
@@ -79,14 +79,14 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Session start time is now added to the shared state of Lifecycle extension.
 
-### Aug 4, 2020
+### August 4, 2020
 
 #### Android Analytics 1.2.5
 
 * Fixed TimeSinceLaunch not getting reported in analytics hits.
 * Fixed a race condition which was causing a null pointer crash.
 
-### Aug 3, 2020
+### August 3, 2020
 
 #### Android Campaign 1.0.5
 
@@ -714,6 +714,8 @@ For more information, see [Adobe Analytics and Project Griffon](https://aep-sdks
 The new Location Services views allow you to inspect location entry and exit events on the Project Griffon web UI and on a mobile device. Depending on your business workflows, these views provide a convenient interface to view location-specific data points for inspection on the web/client for in-context debugging.
 
 For more information, see [Location Service and Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon/location-service-and-project-griffon).
+
+## 2019
 
 ### November 15, 2019
 
@@ -1411,6 +1413,8 @@ The imports will now drop the _iOS_ suffix. Additionally, the Identity, Lifecycl
 ```
 
 We feel that this update will serve our customers and partners better in the long run. If you have any questions or issues, go to our [user forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk#).
+
+## 2018
 
 ### December 5, 2018
 

@@ -18,9 +18,9 @@ This information helps you understand how crashes are tracked and the best pract
 
 **How does crash reporting work?**
 
-When creating a new lifecycle session, the SDK looks for a variable it maintains in `NSUserDefaults` that indicates the previous session was paused. If the flag is not set, then the ensuing launch will also be treated as a crash. 
+When creating a new lifecycle session, the SDK looks for a variable it maintains in `NSUserDefaults` that indicates the previous session was paused. If the flag is not set, then the ensuing launch will also be treated as a crash.
 
-The variable is controlled by calls to `lifecyclePause` (which sets the flag) and `lifecycleStart` (which clears the flag).
+The variable is controlled by calls to `lifecyclePause` \(which sets the flag\) and `lifecycleStart` \(which clears the flag\).
 
 **Why does Adobe measure crashes this way?**
 
@@ -36,8 +36,7 @@ The following scenarios are known to falsely cause a crash to be reported by the
 
 **Tip:** You can avoid a crash in this scenario by backgrounding the app prior to re-launching the app from Xcode.
 
-* If your app is launched in the background because of an enabled background capability (e.g. - background fetch, location update), then `lifecycleStart` is called and the app never comes to the foreground, the next launch \(whether in the background or foreground\) will result in a crash.
-
+* If your app is launched in the background because of an enabled background capability \(e.g. - background fetch, location update\), then `lifecycleStart` is called and the app never comes to the foreground, the next launch \(whether in the background or foreground\) will result in a crash.
 * If you programmatically delete Adobe’s pause flag from `NSUserDefaults`, while the app is in the background, the next launch or resume causes a crash.
 
 **How can I prevent false crashes from being reported?**
@@ -45,10 +44,8 @@ The following scenarios are known to falsely cause a crash to be reported by the
 The following practices can help prevent false crashes from being reported:
 
 * Perform your development against non-production report suites to ensure there aren't false crashes from Xcode development.
-
 * If your app has background capabilites, ensure that you are checking that the app is not in the background prior to calling `lifecycleStart`.
-
-* Do not delete or modify any values that the Experience Platform SDKs puts in `NSUserDefaults`.  If these values are modified outside the SDK, the data reported will be invalid.
+* Do not delete or modify any values that the Experience Platform SDKs puts in `NSUserDefaults`. If these values are modified outside the SDK, the data reported will be invalid.
 
 ## Collecting additional data with Lifecycle
 
