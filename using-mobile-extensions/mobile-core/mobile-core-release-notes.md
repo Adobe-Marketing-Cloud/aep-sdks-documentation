@@ -1,5 +1,11 @@
 # Release Notes
 
+### September 22, 2020
+
+#### iOS Core 2.7.5
+
+* Fixes an issue where the EventHub could be blocked by synchronous network calls returning recoverable errors.
+
 ### September 10, 2020
 
 #### iOS Core 2.7.4
