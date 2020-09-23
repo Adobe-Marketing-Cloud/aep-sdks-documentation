@@ -12,6 +12,13 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### September 23, 2020
+
+#### Android Project Griffon 1.2.1
+
+* Fixed dropped events and connection termination issues caused by exceeding maximum data capacity of a websocket connection.
+
+
 ### September 22, 2020
 
 #### iOS Core 2.7.5
@@ -217,7 +224,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ### June 18, 2020
 
-#### iOS Griffon 1.1.3
+#### iOS Project Griffon 1.1.3
 
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId.
 
@@ -266,7 +273,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ### June 12, 2020
 
-#### Android Griffon 1.1.7
+#### Android Project Griffon 1.1.7
 
 * Fixed a bug where Griffon unregisters its wildcard listeners during automatic session reconnect.
 * IntegrationId in Griffon’s shared state now has format sessionId\|clientId
@@ -279,7 +286,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 ### June 4, 2020
 
-#### iOS Griffon 1.1.2
+#### iOS Project Griffon 1.1.2
 
 * Reduced the scope of variable BUFFER\_SIZE that was exposed globally which may result in naming conflict
 
@@ -319,7 +326,7 @@ The following updates were made in this release:
 
 ### May 27, 2020
 
-#### iOS Griffon 1.1.1
+#### iOS Project Griffon 1.1.1
 
 * Griffon extension is optimized to unregister itself, when it does not obtain session's deeplink URL within 5 seconds of app launch.
 * Fixed a bug where user is not able to disconnect when griffon attempts to reconnect with expired socket URL.
@@ -332,7 +339,7 @@ The following updates were made in this release:
 
 ### May 22, 2020
 
-#### Android Griffon 1.1.6
+#### Android Project Griffon 1.1.6
 
 * Changes to support Griffon on Xamarin and Unity.
 * Griffon extension is optimized to unregister itself, when it does not obtain session's deeplink URL within 5 seconds of app launch.
@@ -366,7 +373,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-#### Android Griffon 1.1.5
+#### Android Project Griffon 1.1.5
 
 * Fix bug where pinCode entry activity fails to show when another application’s activity is started at the same time.
 * Blob upload services uses production URL with multiple environment support.
@@ -410,7 +417,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-#### Android Griffon 1.1.4
+#### Android Project Griffon 1.1.4
 
 * Fixed a bug where Griffon pinpad screen may disappear behind an activity.
 * Griffon SDK attempts to seemlessly reconnect to its session on network interruption.
@@ -510,7 +517,7 @@ The following updates were made in this release:
 * Report extension details to ACPCore for improved logging and Griffon support.
 * Improved existing log messages and added additional logging to assist with debugging.
 
-#### iOS Griffon 1.1.0
+#### iOS Project Griffon 1.1.0
 
 * Added support for capturing device screenshot.
 * Added support for forwarding application logs to Griffon.
@@ -522,7 +529,7 @@ The following updates were made in this release:
 * Added an API to create ACPGriffonEvent with vendor, type, payload, and timestamp.
 * Bug fixes.
 
-#### Android Griffon 1.1.3
+#### Android Project Griffon 1.1.3
 
 * Added support for capturing device screenshot.
 * Added support for forwarding application logs to Griffon.
@@ -636,12 +643,12 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**iOS Griffon 1.0.4**
+**iOS Project Griffon 1.0.4**
 
 * Griffon SDK adds and reports uniqueIdentifier and timestamp associated with eventHub events. \(works from Core v2.4.0\).
 * Improved Logging to assist with debugging.
 
-**Android Griffon 1.1.2**
+**Android Project Griffon 1.1.2**
 
 * Fixed the nomenclature for the unique event identifier.
 
@@ -669,7 +676,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**Android Griffon 1.1.1**
+**Android Project Griffon 1.1.1**
 
 * The Griffon SDK now reports an event's source, type, sequence number and timestamp for every event.
 * The Griffon SDK adds and reports `uniqueIdentifier` associated with eventHub events. This update is effective from Mobile Core version 1.4.2
@@ -695,7 +702,7 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
-**iOS Griffon 1.0.3**
+**iOS Project Griffon 1.0.3**
 
 * The Griffon bridge and the Griffon SDK are now unified.
 
@@ -706,7 +713,7 @@ The following updates were made in this release:
 * This version is compatible with iOS 13.
 * Fixed a crash in LIBDISPATCH.
 
-**Android Griffon 1.1.0**
+**Android Project Griffon 1.1.0**
 
 * The Griffon bridge and the Griffon SDK are now unified.
 
