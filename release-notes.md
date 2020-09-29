@@ -12,6 +12,15 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### September 29, 2020
+
+The following updates were made in this release:
+
+#### Android Campaign 1.0.7 and iOS Campaign 1.0.6
+
+* Added an enhancement to reduce the number of registration requests sent to Campaign. There is now a default 7 day registration delay which starts after the most recent registration request sent to Campaign is successful.
+* Added configuration settings to change the default registration delay or to pause registration requests.
+
 ### September 23, 2020
 
 #### Android Project Griffon 1.2.1

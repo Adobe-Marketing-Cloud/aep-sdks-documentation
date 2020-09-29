@@ -736,3 +736,58 @@ Universal links are available for iOS 9.0 devices or later. They can be used to 
 {% endtab %}
 {% endtabs %}
 
+### Customizing the frequency of registration requests sent to Campaign
+
+The frequency of registration requests sent to Campaign are reduced starting with Campaign Standard Android extension 1.0.7 and iOS extension 1.0.6. The default registration delay is 7 days since the last successful registration. This registration delay can be configured to provide more flexibility on when to send a registration request.
+
+{% hint style="danger" %}
+
+Registration requests can be paused but this is provided for specific use cases only and using this configuration setting should be avoided when possible.
+
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Example
+
+```java
+MobileCore.updateConfiguration(new HashMap<String, Object>() {
+  {
+    put("campaign.registrationDelay", 30); // number of days to delay sending a registration request.
+    put("campaign.registrationPaused", false); // boolean signaling if registration requests should be paused
+  }
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Objective C
+
+#### Example
+
+```objectivec
+NSMutableDictionary *config = [@{} mutableCopy];
+config[@"campaign.registrationDelay"] = @30; // number of days to delay sending a registration request.
+config[@"campaign.registrationPaused"] = [NSNumber numberWithBool:NO]; // boolean signaling if registration requests should be paused
+[ACPCore updateConfiguration:config];
+```
+
+#### Swift
+
+#### Example
+
+```swift
+var config = [AnyHashable: Any]()
+config["campaign.registrationDelay"] = 30 // number of days to delay sending a registration request.
+config["campaign.registrationPaused"] = false // boolean signaling if registration requests should be paused
+ACPCore.updateConfiguration(config)
+```
+
+{% endtab %}
+
+Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event which was the same behavior seen before the registration request reduction enhancement was added.
+
+{% endtabs %}
