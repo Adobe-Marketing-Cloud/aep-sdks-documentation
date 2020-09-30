@@ -59,9 +59,15 @@ The Adobe Campaign Standard extension reads the following key from the configura
 | `campaign.mcias` | String | No | This contains the in-app messaging service URL endpoint. |
 | `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from in-app messaging service. |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings. |
+| `campaign.registrationDelay` | Integer | Yes | This contains the number of days to delay the sending of the next Campaign registration request. |
+| `campaign.registrationPaused` | Boolean | Yes | This contains the Campaign registration request paused status. |
 
 {% hint style="info" %}
 After `global.privacy` is changed to **optout**, the linkage fields are reset. All downloaded messages and rules are erased, and no tracking request can leave the device.
+{% endhint %}
+
+{% hint style="danger" %}
+The configuration setting to pause registration requests is provided for specific use cases only. The use of this configuration setting should be avoided when possible.
 {% endhint %}
 
 #### Event data example

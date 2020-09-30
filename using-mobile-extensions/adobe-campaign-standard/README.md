@@ -741,14 +741,11 @@ Universal links are available for iOS 9.0 devices or later. They can be used to 
 The frequency of registration requests sent to Campaign are reduced starting with Campaign Standard Android extension 1.0.7 and iOS extension 1.0.6. The default registration delay is 7 days since the last successful registration. This registration delay can be configured to provide more flexibility on when to send a registration request.
 
 {% hint style="danger" %}
-
-Registration requests can be paused but this is provided for specific use cases only and using this configuration setting should be avoided when possible.
-
+The configuration setting to pause registration requests is provided for specific use cases only. The use of this configuration setting should be avoided when possible.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Example
 
 ```java
@@ -761,7 +758,6 @@ MobileCore.updateConfiguration(new HashMap<String, Object>() {
 ```
 
 {% endtab %}
-
 {% tab title="iOS" %}
 
 #### Objective C
@@ -787,7 +783,5 @@ ACPCore.updateConfiguration(config)
 ```
 
 {% endtab %}
-
 Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event which was the same behavior seen before the registration request reduction enhancement was added.
-
 {% endtabs %}
