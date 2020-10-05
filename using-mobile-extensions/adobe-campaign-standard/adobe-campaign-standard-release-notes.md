@@ -1,5 +1,14 @@
 # Release Notes
 
+## September 29, 2020
+
+The following updates were made in this release:
+
+**Android Campaign 1.0.7 and iOS Campaign 1.0.6**
+
+* Added an enhancement to reduce the number of registration requests sent to Campaign. There is now a default 7 day registration delay which starts after the most recent registration request sent to Campaign is successful.
+* Added configuration settings to change the default registration delay or to pause registration requests.
+
 ## September 8, 2020
 
 The following update was made in this release:
