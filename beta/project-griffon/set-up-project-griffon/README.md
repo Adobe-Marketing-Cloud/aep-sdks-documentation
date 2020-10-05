@@ -37,13 +37,13 @@ Follow these steps to add Project Griffon to your app:
 
 ![](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.14.34-am.png)
 
-### Add Project Griffon Extension to your app
+### Add AEPAssurance Extension to your app
 
 {% hint style="info" %}
 Use the latest versions of the Adobe Experience Platform Mobile SDK and Project Griffon SDK extension to try out our newest functionality.
 {% endhint %}
 
-#### Add Project Griffon
+#### Add AEPAssurance
 
 {% tabs %}
 {% tab title="Android" %}
@@ -53,13 +53,13 @@ Use the latest versions of the Adobe Experience Platform Mobile SDK and Project 
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1+'
-   implementation 'com.adobe.marketing.mobile:griffon:1+'
+   implementation 'com.adobe.marketing.mobile:assurance:1+'
    ```
 
 2. Import the Project Griffon libraries with the other SDK libraries:
 
    ```java
-   import com.adobe.marketing.mobile.Griffon; 
+   import com.adobe.marketing.mobile.Assurance; 
    import com.adobe.marketing.mobile.MobileCore;
    ```
 {% endtab %}
@@ -69,7 +69,7 @@ Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/
 
 ```text
 pod 'ACPCore'
-pod 'ACPGriffon'
+pod 'AEPAssurance'
 ```
 
 Import the Project Griffon libraries along with other SDK libraries:
@@ -78,14 +78,14 @@ Import the Project Griffon libraries along with other SDK libraries:
 
 ```objectivec
 #import "ACPCore.h"
-#import "ACPGriffon.h" // <-- import the Project Griffon library
+#import "AEPAssurance.h" // <-- import the AEPAssurance library
 ```
 
 #### Swift
 
 ```swift
 import ACPCore
-import ACPGriffon // <-- import the Project Griffon library
+import AEPAssurance // <-- import the AEPAssurance library
 ```
 {% endtab %}
 
@@ -154,7 +154,7 @@ using com.adobe.marketing.mobile;
 {% endtab %}
 {% endtabs %}
 
-#### Register Griffon with Mobile Core
+#### Register AEPAssurance with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -172,7 +172,7 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
          MobileCore.setApplication(this);
          MobileCore.configureWithAppId("yourAppId");
          try {
-            Griffon.registerExtension();
+            Assurance.registerExtension();
             MobileCore.start(null);
          } catch (Exception e) {
             // Log the exception
@@ -190,7 +190,7 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ACPCore configureWithAppId:@"yourAppId"];
-    [ACPGriffon registerExtension]; // <-- register Project Griffon with Core
+    [AEPAssurance registerExtension]; // <-- register AEPAssurance with Core
     [ACPCore start:nil];
     // Override point for customization after application launch.
     return YES;
@@ -202,7 +202,7 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      ACPCore.configure(withAppId: "yourAppId")   
-     ACPGriffon.registerExtension() // <-- register Project Griffon with Core
+     ACPGriffon.registerExtension() // <-- register AEPAssurance with Core
      ACPCore.start(nil)
      // Override point for customization after application launch. 
      return true;
@@ -329,11 +329,9 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-#### Implement Project Griffon session start APIs \(iOS\)
+#### Implement AEPAssurance session start APIs \(iOS\)
 
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
-
-With the latest Project Griffon SDK extensions, Android does not require this API to be called. When the `registerExtension` API is called, Project Griffon registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 {% hint style="info" %}
 You may call this API when the app launches with a url \(see code snippet below for sample usage\)
@@ -391,6 +389,12 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
         ACPGriffon.startSession((URLContexts.first!).url)
 }
 ```
+{% endtab %}
+
+{% tab title="Android" %}
+
+Android does not require this API to be called. When the `registerExtension` API is called, Assurance SDK registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
+
 {% endtab %}
 
 {% tab title="React Native" %}
