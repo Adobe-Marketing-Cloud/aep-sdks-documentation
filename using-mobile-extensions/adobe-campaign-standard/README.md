@@ -783,5 +783,6 @@ ACPCore.updateConfiguration(config)
 ```
 
 {% endtab %}
-Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event. This is the previous behavior seen before the registration request reduction enhancement was added.
 {% endtabs %}
+
+Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event. This is the previous behavior seen before the registration request reduction enhancement was added.
