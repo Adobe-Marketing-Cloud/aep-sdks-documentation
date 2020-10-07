@@ -1,29 +1,33 @@
-# Assurance SDK Troubleshooting
+# Solving commonly-asked issues
 
-## Unable to open the app using the griffon deeplink
+## Unable to open app with QR code or generated link
 
-This might happen, If deeplink is not properly configured in your application.
+If scanning the QR code or opening the deep link in Project Griffon does not open your app, deep linking may not be correctly configured in your mobile application.
 
-**iOS** 
+Please follow OS developer documentation to learn more on setting up deep linking.
 
+{% tabs %}
+{% tab title="Android" %}
+Follow the [Android documention](https://developer.android.com/training/app-links/deep-linking%20) on information about how to setup a deeplink.
+{% endtab %}
+
+{% tab title="iOS" %}
 Follow [Apple developer](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app) documentation to set custom URL scheme for your application.
+{% endtab %}
+{% endtabs %}
 
-**Android**
+## P**IN** screen does not appear
 
-Follow the [Android documention](https://developer.android.com/training/app-links/deep-linking ) on information about how to setup a deeplink.
+When the generated link or QR code from Project Griffon is opened on device, it should launch your app and show a PIN screen to establish a Project Griffon session \(as shown below\). If this screen does not appear, ensure the following:
 
-## Pincode entry screen doesnot appear
+### Register Assurance SDK extension with Mobile Core
 
-a. This might happen if Griffon extension is not registered with the MobileCore.
-
-### Possible Fix
-
-Make sure that the Assurance Extension is registered with the EventHub.
-
-**Android**
+{% tabs %}
+{% tab title="Android" %}
+#### Java
 
 ```java
-  public class MobileApp extends Application {
+public class MobileApp extends Application {
    @Override
    public void onCreate() {
       super.onCreate();
@@ -38,24 +42,28 @@ Make sure that the Assurance Extension is registered with the EventHub.
    }
   }
 ```
+{% endtab %}
 
-**iOS**
+{% tab title="iOS" %}
+**Swift**
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      ACPCore.configure(withAppId: "yourAppId")   
-     ACPGriffon.registerExtension() // <-- register AEPAssurance with Core
+     AEPAssurance.registerExtension() // <-- register AEPAssurance with Core
      ACPCore.start(nil)
      // Override point for customization after application launch. 
      return true;
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-b. This might also happen if the deeplink URL to open griffon session doesn't contain the query parameter "adb_validation_sessionid" 
+### Copy link or open QR code from Project Griffon
 
-#### Sample logs
+The PIN screen may not show if the link or QR code is incorrect \(or doesn't contain the query parameter `adb_validation_sessionid`. You may detect this error by seeing console logs with the following strings:
 
-```latex
+```text
 iOS
 [AdobeExperienceSDK DEBUG <AEPAssurance>]: Not a valid Assurance deeplink, Ignorning start session API call. URL : <deeplink URL>
 
@@ -63,33 +71,33 @@ Android
 W/AdobeExperienceSDK: Assurance - Not a valid Assurance deeplink, Ignorning start session API call. URL :  <deeplink URL>
 ```
 
-### Possible Fix
+This issue may be resolved by scanning the right QR code or correctly copying the link generated in Project Griffon.
 
-Make sure you scan or copy the correct Assurance deeplink URL.
+## Connection error
 
-## Connection Error
+After you enter the PIN, if you see the following Connection Error:
 
-After you successfully scan the assurance deeplink and entered the 4 digit code. And then if you see the following error.
+![](../../.gitbook/assets/assurance_connection_error.png)
 
-<img src="../../.gitbook/assets/assurance_connection_error.png" alt="Assurance connection error" style="zoom:50%;" />
+You may resolve it by double-checking the PIN is entered correctly from the session associated link or QR code:
 
-### Possible Fix
+![](../../.gitbook/assets/assurance_pincode.png)
 
-1. Make sure the 4 digit pin code is entered correctly from the session associated with the deeplink
+Or or ensuring internet connectivity on the device/simulator. 
 
-   
+## Invalid Launch & SDK configuration
 
-   <img src="../../.gitbook/assets/assurance_pincode.png" alt="Assurance connection error" style="zoom:30%;" />
+If you see a Invalid Launch & SDK Configuration error \(see screenshot below\), verify the following:
 
-2. Check if the device has a proper internet connection.
+1. Mobile Core is [configured](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference)
+2. Configuration in Experience Platform Launch is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration)
+3. Ensure the device/simulator has internet connectivity
 
-## Invalid Launch & SDK Configuration
-
-<img src="../../.gitbook/assets/assurance_invalid_configuration_error.png" alt="Adobe Target Extension Configuration" style="zoom:50%;" />
+![Adobe Target Extension Configuration](../../.gitbook/assets/assurance_invalid_configuration_error.png)
 
 #### Sample logs
 
-```
+```text
 iOS
 [AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Invalid Launch & SDK Configuration, Description: The Experience Cloud Org identifier is unavailable from SDK configuration. Please ensure the Launch mobile property is properly configured.
 
@@ -97,21 +105,15 @@ Android
 W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Invalid Launch & SDK Configuration, Description: The Experience Cloud Org identifier is unavailable from SDK configuration. Please ensure the Launch mobile property is properly configured.
 ```
 
-### Possible Fix
-
-* Verify if MobileCore is [configured properly](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
-* Make sure you have published the configuration with [Experience Platform Launch](https://launch.adobe.com/). See [Publish the configuration](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
-* Confirm if the device has an internet connection to download the remote configuration.
-
 
 
 ## Unauthorized access
 
-<img src="../../.gitbook/assets/assurance_unauthorized_access_error.png" alt="Adobe Target Extension Configuration" style="zoom:50%;" />
+![Adobe Target Extension Configuration](../../.gitbook/assets/assurance_unauthorized_access_error.png)
 
 #### Sample logs
 
-```
+```text
 iOS
 [AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Unauthorized Access, Description: AEP Assurance sessions and Launch mobile properties must be created in the same organization.
 
@@ -121,9 +123,7 @@ W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Unauthori
 
 ### Possible fix
 
-- Make sure that the Organization in which the mobile property is setup in launch is same as the Organization of the griffon session that you have created.
-
-  
+* Make sure that the Organization in which the mobile property is setup in launch is same as the Organization of the griffon session that you have created.
 
 ## Timeout
 
@@ -139,11 +139,9 @@ Sample log messages:
 
 **Android**
 
-```
+```text
 D/AdobeExperienceSDK: Assurance - Timeout - Assurance did not receive deeplink to start Assurance session within 5 seconds. Shutting down Assurance extension
 ```
-
-
 
 ## Failed to show fullscreen takeover
 
