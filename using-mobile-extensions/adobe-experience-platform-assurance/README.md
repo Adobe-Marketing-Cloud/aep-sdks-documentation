@@ -21,7 +21,7 @@ Follow these steps to add the install the extension in Experience Platform Launc
 2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
 3. Follow the publishing process to update SDK configuration.
 
-![](../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-k1ewgkf68tywcmmcq_-m-k5ydeu06vutd4p1zi_screen-shot-2020-02-10-at-10.14.34-am.png)
+![](../../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
 
 ## Add AEPAssurance to your app
 
