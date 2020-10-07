@@ -23,13 +23,13 @@ You may change SDK log levels using the [`setLogLevel`](../../using-mobile-exten
   * [Supporting Universal Links in Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/supporting_universal_links_in_your_app)
 
 {% hint style="info" %}
-For Android, the`startSession` API does not need to be explicitly called. For iOS, use the API as described in [Set up Project Griffon ](set-up-project-griffon/#startsession).
+For Android, the`startSession` API does not need to be explicitly called. For iOS, use the API as described in [Set up Project Griffon ](set-up-project-griffon.md#startsession).
 {% endhint %}
 
 ### Authentication overlay appears, but app fails to connect
 
 * Ensure internet connectivity of the device through the device web browser.
-* If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See [Set up Project Griffon](set-up-project-griffon/).
+* If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See [Set up Project Griffon](set-up-project-griffon.md).
 * Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](troubleshoot-project-griffon.md#sdk-log-message-orgid-information-is-not-available) \(this is uncommon and relevant only if you have access to more than one ORG instance\).
 
 ## SDK error logs
