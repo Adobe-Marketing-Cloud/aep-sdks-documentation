@@ -756,10 +756,9 @@ MobileCore.updateConfiguration(new HashMap<String, Object>() {
   }
 });
 ```
-
 {% endtab %}
-{% tab title="iOS" %}
 
+{% tab title="iOS" %}
 #### Objective C
 
 #### Example
@@ -781,7 +780,10 @@ config["campaign.registrationDelay"] = 30 // number of days to delay sending a r
 config["campaign.registrationPaused"] = false // boolean signaling if registration requests should be paused
 ACPCore.updateConfiguration(config)
 ```
-
 {% endtab %}
+
+{% tab %}
 Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event. This is the previous behavior seen before the registration request reduction enhancement was added.
+{% endtab %}
 {% endtabs %}
+

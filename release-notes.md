@@ -27,13 +27,11 @@ The following updates were made in this release:
 
 * Fixed dropped events and connection termination issues caused by exceeding maximum data capacity of a websocket connection.
 
-
 ### September 22, 2020
 
 #### iOS Core 2.7.5
 
 * Fixes an issue where the EventHub could be blocked by synchronous network calls returning recoverable errors.
-
 
 ### September 16, 2020
 

@@ -392,9 +392,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 {% endtab %}
 
 {% tab title="Android" %}
-
 Android does not require this API to be called. When the `registerExtension` API is called, Assurance SDK registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
-
 {% endtab %}
 
 {% tab title="React Native" %}
