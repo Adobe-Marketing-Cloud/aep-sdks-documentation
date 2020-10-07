@@ -1,28 +1,32 @@
 # Project Griffon
 
-Project Griffon is a new, innovative beta product from [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) to help you easily inspect, validate, debug data collection and experiences for your mobile app. We're building Project Griffon to do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+Project Griffon is a new, innovative beta product from [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) to help you inspect, proof, simulate, and validate how you collect data or serve experiences in your mobile app.
+
+We're building Project Griffon to do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
 
 {% hint style="warning" %}
-Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
+Project Griffon is a beta product.
+
+To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
 ## What can Project Griffon do for you?
 
 ### Quick Setup
 
-Get started in a hurry with a few lines of code. Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect and validate app events, logs, device information, and more.
+Get started in a hurry with few lines of code. For mobile apps, Project Griffon works with the [Adobe Experience Platform Mobile SDK](../../) to help you inspect, simulate, and validate app events, location signals, configuration parameters, SDK logs, device information, and more.
 
-### Seamless Connection
+### No-hassle Connection
 
-With Project Griffon, you do not need network proxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and other network gymnastics. Connecting your app to Project Griffon is made as easy as scanning a QR code.
+With Project Griffon, we've made connecting your app with our service simple and reliable. We've saved you the hassle of using network proxies, [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and other network gymnastics - connecting your app to Project Griffon is made as easy as scanning a QR code.
 
-### Instant Validation
+### Real-time inspection, simulation, and validation
 
-After connecting, you can inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting your mobile app implementation.
+After connecting, you can inspect live-streamed app events and activity and filter and search to eliminate noise. Events contain details about validating, debugging, and troubleshooting your mobile app implementation. Project Griffon also lets you screenshot, simulate location signals, and more in real-time.
 
 ### Integration with Adobe Experience Cloud
 
-Client-side data and experiences are given context by how users setup reporting rules, activities, and campaigns on our marketer-focused user interfaces. To help you connect the dots between the two, we're integrating with Adobe Experience Cloud solutions such as Adobe Analytics, Adobe Target, Adobe Experience Platform Places Service, and more. 
+Client-side data and experiences are given context by how users setup reporting rules, activities, and campaigns on our marketer-focused user interfaces. To help you connect the dots between the two, we're integrating with Adobe Experience Cloud solutions such as Adobe Experience Platform, Adobe Analytics, Adobe Target, Places Service, and more. 
 
 ![](../../.gitbook/assets/ezgif.com-video-to-gif.gif)
 
