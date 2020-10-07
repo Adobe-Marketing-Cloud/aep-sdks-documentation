@@ -1,4 +1,4 @@
-# Solving commonly-asked issues
+# Resolving Common Issues
 
 ## Unable to open app with QR code or generated link
 
@@ -109,6 +109,8 @@ W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Invalid L
 
 ## Unauthorized access
 
+This error may happen when you have access to multiple organizations in your Adobe Experience Cloud interface. To resolve, ensure the organization which houses the Experience Platform Launch mobile property is the same one as that where you are using Project Griffon.
+
 ![Adobe Target Extension Configuration](../../.gitbook/assets/assurance_unauthorized_access_error.png)
 
 #### Sample logs
@@ -121,15 +123,11 @@ Android
 W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Unauthorized Access, Description: AEP Assurance sessions and Launch mobile properties must be created in the same organization.
 ```
 
-### Possible fix
-
-* Make sure that the Organization in which the mobile property is setup in launch is same as the Organization of the griffon session that you have created.
-
 ## Timeout
 
-This log message is not a problem by itself. It is expected if the app was not launched with a Assurance deep link. You may ignore this error if Assuracne SDK works as expected.
+This SDK log message is not an error and is displayed during the routine course of SDK initialization. This message is expected if the app was not launched with a Project Griffon deep link. You may ignore this message if Project Griffon works as expected.
 
-Sample log messages:
+#### Sample log messages
 
 **iOS**
 
@@ -145,9 +143,9 @@ D/AdobeExperienceSDK: Assurance - Timeout - Assurance did not receive deeplink t
 
 ## Failed to show fullscreen takeover
 
-* This log message is not a problem and will appear with typical usage in Android. You may ignore this error if Assurance SDK works as expected.
+This log message is not an error and will appear with routine usage on Android devices & simulators. You may ignore this log if Project Griffon works as expected.
 
-Sample log:
+#### Sample log
 
 ```text
 W/AdobeExperienceSDK: Assurance - Failed to show fullscreen takeover, could not get fullScreenTakeover object.
