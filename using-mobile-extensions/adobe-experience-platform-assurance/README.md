@@ -1,14 +1,12 @@
 # Adobe Experience Platform Assurance
 
-This extension enables capabilities for Project Griffon.  Project Griffon helps you inspect, validate, debug data collection and experiences for your mobile app.
+This extension enables capabilities for [Project Griffon](../../beta/project-griffon/).  
 
-We're building Project Griffon to do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
-
-{% hint style="warning" %}
+{% hint style="info" %}
 Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
-To get started with Project Griffon in your app, you'll need to:
+To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
 1. Install the Assurance extension in Experience Platform Launch
 2. Add AEPAssurance SDK extension library to your app
