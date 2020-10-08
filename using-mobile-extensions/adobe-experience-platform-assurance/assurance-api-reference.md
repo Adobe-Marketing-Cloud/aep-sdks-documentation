@@ -44,7 +44,24 @@ Assurance.extensionVersion()
 AEPAssurance.extensionVersion()
 ```
 {% endtab %}
-{% endtabs %}
+
+{% tab title="Flutter" %}
+
+### Dart
+
+### Syntax
+
+```dart
+static Future<String> get extensionVersion async
+```
+
+### Example
+
+```dart
+assuranceVersion = await FlutterAssurance.extensionVersion;
+```
+
+{% endtab %}{% endtabs %}
 
 ## startSession
 
@@ -114,5 +131,24 @@ For SceneDelegate based applications
     }
 ```
 {% endtab %}
+
+{% tab title="Flutter" %}
+
+### Dart
+
+### Syntax
+
+```dart
+static Future<void> startSession(String url);
+```
+
+### Example
+
+```dart
+FlutterAssurance.startSession(url);
+```
+
+{% endtab %}
+
 {% endtabs %}
 

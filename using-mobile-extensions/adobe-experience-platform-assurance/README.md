@@ -82,10 +82,7 @@ Updated support for React Native is coming. This section will be updated shortly
 {% tab title="Flutter" %}
 #### Dart
 
-{% hint style="danger" %}
-Updated support for Flutter is coming. This section will be updated shortly.
-{% endhint %}
-{% endtab %}
+Flutter install instructions for AEPAssurance can be found [here](https://pub.dev/packages/flutter_assurance/install).{% endtab %}
 
 {% tab title="Cordova" %}
 #### Cordova
@@ -169,17 +166,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-#### React Native
-
 {% hint style="danger" %}
 Updated support for React Native is coming. This section will be updated shortly.
 {% endhint %}
 {% endtab %}
 
 {% tab title="Flutter" %}
-{% hint style="danger" %}
-Updated support for Flutter is coming. This section will be updated shortly.
-{% endhint %}
 
 When using Flutter, registering AEPAssurance with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
