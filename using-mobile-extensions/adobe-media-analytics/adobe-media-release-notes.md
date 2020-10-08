@@ -1,5 +1,22 @@
 # Release Notes
 
+## October 7, 2020
+
+### iOS Media 2.2.0
+
+* Changed the **default** Ad tracking granularity to **10 seconds**. Added configuration key to enable 1 sec ad tracking.
+* **Restart** tracking session every **24 hours** for long running sessions.
+
+### Android Media 2.1.0
+
+* Changed the **default** Ad tracking granularity to **10 seconds**. Added configuration key to enable 1 sec ad tracking.
+* **Restart** tracking session every **24 hours** for long running sessions.
+
+### @adobe/react-native-acpmedia 2.1.0
+
+* Updated to iOS Media v2.2.0.
+* Updated to Android Media v2.1.0.
+
 ## July 24, 2020
 
 ### iOS Media 2.1.1
@@ -117,4 +134,3 @@ The following updates were made in this release:
 ### Android Media 1.0.0
 
 * First version of Media Android Extension.
-

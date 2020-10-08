@@ -8,7 +8,7 @@ You may use the Custom Validation feature to quickly and easily write a JavaScri
 
 To use this view, complete the following steps:
 
-1. [Setup Project Griffon](../set-up-project-griffon/)
+1. [Setup Project Griffon](../set-up-project-griffon.md)
 2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
 3. In the **Home** view, select **Custom Validation**
 
