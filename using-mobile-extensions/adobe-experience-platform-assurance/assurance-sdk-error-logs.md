@@ -63,13 +63,23 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 The PIN screen may not show if the link or QR code is incorrect \(or doesn't contain the query parameter `adb_validation_sessionid`. You may detect this error by seeing console logs with the following strings:
 
-```text
-iOS
-[AdobeExperienceSDK DEBUG <AEPAssurance>]: Not a valid Assurance deeplink, Ignorning start session API call. URL : <deeplink URL>
+{% tabs %}
+{% tab title="Android" %}
 
-Android
+```
 W/AdobeExperienceSDK: Assurance - Not a valid Assurance deeplink, Ignorning start session API call. URL :  <deeplink URL>
 ```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```
+[AdobeExperienceSDK DEBUG <AEPAssurance>]: Not a valid Assurance deeplink, Ignorning start session API call. URL : <deeplink URL>
+```
+
+{% endtab %}
+{% endtabs %}
 
 This issue may be resolved by scanning the right QR code or correctly copying the link generated in Project Griffon.
 
@@ -77,13 +87,13 @@ This issue may be resolved by scanning the right QR code or correctly copying th
 
 After you enter the PIN, if you see the following Connection Error:
 
-![](../../.gitbook/assets/assurance_connection_error.png)
+![Connection error](../../.gitbook/assets/assurance_connection_error.png)
 
 You may resolve it by double-checking the PIN is entered correctly from the session associated link or QR code:
 
 ![](../../.gitbook/assets/assurance_pincode.png)
 
-Or or ensuring internet connectivity on the device/simulator. 
+Or ensuring internet connectivity on the device/simulator. 
 
 ## Invalid Launch & SDK configuration
 
@@ -93,35 +103,53 @@ If you see a Invalid Launch & SDK Configuration error \(see screenshot below\), 
 2. Configuration in Experience Platform Launch is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration)
 3. Ensure the device/simulator has internet connectivity
 
-![Adobe Target Extension Configuration](../../.gitbook/assets/assurance_invalid_configuration_error.png)
+![Invalid Launch & SDK configuration](../../.gitbook/assets/assurance_invalid_configuration_error.png)
 
 #### Sample logs
 
-```text
-iOS
-[AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Invalid Launch & SDK Configuration, Description: The Experience Cloud Org identifier is unavailable from SDK configuration. Please ensure the Launch mobile property is properly configured.
+{% tabs %}
+{% tab title="Android" %}
 
-Android
+```
 W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Invalid Launch & SDK Configuration, Description: The Experience Cloud Org identifier is unavailable from SDK configuration. Please ensure the Launch mobile property is properly configured.
 ```
 
+{% endtab %}
 
+{% tab title="iOS" %}
+
+```
+[AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Invalid Launch & SDK Configuration, Description: The Experience Cloud Org identifier is unavailable from SDK configuration. Please ensure the Launch mobile property is properly configured.
+```
+
+{% endtab %}
+{% endtabs %}
 
 ## Unauthorized access
 
 This error may happen when you have access to multiple organizations in your Adobe Experience Cloud interface. To resolve, ensure the organization which houses the Experience Platform Launch mobile property is the same one as that where you are using Project Griffon.
 
-![Adobe Target Extension Configuration](../../.gitbook/assets/assurance_unauthorized_access_error.png)
+![Unauthorized access](../../.gitbook/assets/assurance_unauthorized_access_error.png)
 
 #### Sample logs
 
-```text
-iOS
-[AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Unauthorized Access, Description: AEP Assurance sessions and Launch mobile properties must be created in the same organization.
+{% tabs %}
+{% tab title="Android" %}
 
-Android
+```
 W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Unauthorized Access, Description: AEP Assurance sessions and Launch mobile properties must be created in the same organization.
 ```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```
+[AdobeExperienceSDK ERROR <AEPAssurance>]: Assurance connection closed. Reason: Unauthorized Access, Description: AEP Assurance sessions and Launch mobile properties must be created in the same organization.
+```
+
+{% endtab %}
+{% endtabs %}
 
 ## Timeout
 
@@ -129,17 +157,23 @@ This SDK log message is not an error and is displayed during the routine course 
 
 #### Sample log messages
 
-**iOS**
+{% tabs %}
+{% tab title="Android" %}
 
-```text
+```
+D/AdobeExperienceSDK: Assurance - Timeout - Assurance did not receive deeplink to start Assurance session within 5 seconds. Shutting down Assurance extension
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+```
 [AdobeExperienceSDK DEBUG <AEPAssurance>]: Timeout - Griffon didnot receive deeplink to start griffon session. Shutting down griffon extension
 ```
 
-**Android**
-
-```text
-D/AdobeExperienceSDK: Assurance - Timeout - Assurance did not receive deeplink to start Assurance session within 5 seconds. Shutting down Assurance extension
-```
+{% endtab %}
+{% endtabs %}
 
 ## Failed to show fullscreen takeover
 

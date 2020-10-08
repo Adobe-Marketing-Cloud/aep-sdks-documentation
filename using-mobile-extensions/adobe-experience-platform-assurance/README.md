@@ -47,7 +47,7 @@ Follow these steps to add the install the extension in Experience Platform Launc
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/ACPGriffon) `Podfile`
+Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
 
 ```text
 pod 'ACPCore'
@@ -160,7 +160,7 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      ACPCore.configure(withAppId: "yourAppId")   
-     ACPGriffon.registerExtension() // <-- register AEPAssurance with Core
+     AEPAssurance.registerExtension() // <-- register AEPAssurance with Core
      ACPCore.start(nil)
      // Override point for customization after application launch. 
      return true;
@@ -189,7 +189,7 @@ When using Flutter, registering AEPAssurance with Mobile Core should be done in 
 Updated support for Cordova is coming. This section will be updated shortly.
 {% endhint %}
 
-When using Cordova, registering Griffon with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, registering AEPAssurance with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
@@ -231,7 +231,7 @@ You may call this API when the app launches with a url \(see code snippet below 
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [ACPGriffon startSession:url];
+    [AEPAssurance startSession:url];
     return false;
 }
 ```
@@ -242,7 +242,7 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 - (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
     UIOpenURLContext * urlContext = URLContexts.anyObject;
     if (urlContext != nil) {
-        [ACPGriffon startSession:urlContext.URL];
+        [AEPAssurance startSession:urlContext.URL];
     }
 }
 ```
@@ -254,7 +254,7 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     do {
-        ACPGriffon.startSession(url)
+        AEPAssurance.startSession(url)
         return false
     }
 }
@@ -264,9 +264,8 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        ACPGriffon.startSession((URLContexts.first!).url)
+        AEPAssurance.startSession((URLContexts.first!).url)
 }
 ```
 {% endtab %}
 {% endtabs %}
-
