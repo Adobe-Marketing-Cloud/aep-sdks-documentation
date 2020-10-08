@@ -284,4 +284,4 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open your app
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [Link](https://github.com/adobe/unity-acpcore/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpcore#sample-app) |
 | [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [Link](https://github.com/adobe/unity-acpgriffon/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpgriffon#sample-app) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [Link](https://github.com/adobe/unity-acpanalytics/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpanalytics#sample-app) |
-
+| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [Link](https://github.com/adobe/unity_acpuserprofile/tree/master/bin) | [Sample](https://github.com/adobe/unity_acpuserprofile#sample-app) |
