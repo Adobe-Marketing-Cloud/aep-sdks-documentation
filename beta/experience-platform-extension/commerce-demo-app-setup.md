@@ -1,7 +1,7 @@
 # Tutorial - Sample App
 
 {% hint style="warning" %}
-The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
 {% endhint %}
 
 This tutorial illustrates how you may send commerce events to Adobe Experience Platform via Experience Edge using the Experience Edge extension.
@@ -10,12 +10,13 @@ This tutorial illustrates how you may send commerce events to Adobe Experience P
 The application is provided in Android and iOS \(Swift\) as part of the beta welcome packet - please contact your beta manager for further detail.
 {% endhint %}
 
-The demo mobile application illustrated here provides a shopping cart example to lets users view product items, update a cart by adding or removing product items, checkout, and complete a purchase.
+The demo mobile application has multiple tabs. For this exercise, the `AEP` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
 
 ## Setup the demo app
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Prerequisites
 
 * Android Studio 3.+ with an Android emulator running Android 7.0+
@@ -32,25 +33,25 @@ The demo mobile application illustrated here provides a shopping cart example to
 {% tab title="iOS" %}
 ### Prerequisites
 
-* Xcode 11.+, Swift 5.+ with an iOS simulator running iOS 10.+
-* CocoaPods 
+* Xcode 11.+, Swift 5.+ with an iOS simulator running iOS 13.+
+* CocoaPods, 1.8.0+
 
 ### Configure and run project
 
-1. Navigate to iOS/demo/AEPCommerceDemoApp
-2. In your terminal run the CocoaPods command and wait for the AEP Mobile SDK to be downloaded:
+1. In your terminal run the CocoaPods command and wait for the AEP Mobile SDK to be downloaded:
 
    ```text
+   $ cd Swift 
    $ pod install
    ```
 
 3. Open AEPCommerceDemoApp.xcworkspace in Xcode:
 
    ```text
-   $ open AEPCommerceDemoApp.xcworkspace
+   $ open AEPSampleApp.xcworkspace
    ```
 
-4. Run the target `AEPCommerceDemoApp` on an iPhone emulator or physical device.
+4. Run the target `AEPSampleApp` on an iPhone emulator or physical device.
 {% endtab %}
 {% endtabs %}
 
@@ -73,7 +74,7 @@ This application uses a default configuration. To configure the Adobe Mobile SDK
 
 This application uses the Experience Platform extension for sending XDM formatted data to the Adobe Experience Edge and so to Adobe Experience Platform. The XDM data is modelled based on the XDM Schemas you have configured in Adobe Experience Platform.
 
-The sample app includes automatically generated source classes for the XDM Objects that define the 3 mixins configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` usage in the `CommerceUtil` class.
+The sample app includes automatically generated source classes for the XDM Objects that define the commerce mixin configured in the previous step. To explore these, check the `MobileSDKCommerceSchema`  class and its usages in `ExperiencePlatformViewController.swift (iOS)` / `PlatformTab.java (Android)`.
 
 **Note:** If you would like to use more complex XDM Schemas for your application, the Mobile SDK team can help generating the XDM classes for your Android or Swift implementation similar with the ones used in the commerce example, so please contact your Adobe representative.
 
@@ -262,27 +263,27 @@ When the user clicks the **Purchase** button, a `commerce.purchases` experience 
 ]
 ```
 
-### Using Project Griffon
+### Using AEP Assurance
 
-Project Griffon is a product from Adobe to help you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is already set up to use Adobe's Project Griffon, which allows you to view the events being sent through the Adobe Mobile SDK.
+AEP Assurance (also known as Project Griffon) is a product from Adobe to help you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is already set up to use Adobe's AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
-1. To use Project Griffon, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
-2. When asked for the **Base URL**, enter `testapp://main`.
-3. After starting a Project Griffon session from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), click on the the Session Details button on the right corner of the Project Griffon page and copy the session link and note down the PIN.
+1. To use AEP Assurance, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
+2. When asked for the **Base URL**, enter `sampleapp://`.
+3. After starting an Assurance session from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), click on the the Session Details button on the right corner of the Project Griffon page and copy the session link and note down the PIN.
 
    ![](../../.gitbook/assets/Commerce_Session_Details.png)
 
-4. Go to the Adobe Experience Platform mobile extension demo application that is installed on your Android/iOS device or simulator, and click on the Griffon button \(iOS Swift\) / the Settings button -&gt; Connect to Griffon \(Android\) in the top right corner of the app.
-5. This will take you to the Griffon Connect Page. Now, paste the Griffon Session URL that you copied from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and Click Connect.
+4. Go to the Adobe Experience Platform mobile extension demo application that is installed on your Android/iOS device or simulator, and click on the Assurance tab.
+5. This will take you to the Assurance Connect Page. Now, paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
 
    ![](../../.gitbook/assets/Commerce_Griffon_Login.png)
 
-6. Now, this will take you to the Griffon Connect Login Page. Enter the PIN that you noted from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and Click Connect.
+6. Now, this will take you to the Assurance Connect Login Page. Enter the PIN that you noted from from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and click `Connect`.
 
    ![](../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
-7. Once connected to Griffon, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Griffon server is lost for some reason. In this case, you want to reconnect to continue to see the session in Griffon.
-8. In the Griffon session, you should now start seeing events populating the Events List. When navigating through the sample app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
+7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Assurance server is lost for some reason. In this case, you want to reconnect to continue to see the session in the UI.
+8. In the Assurance session, you should now start seeing events populating the Events List. When navigating through the sample app you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
 
 ### Queries in Experience Platform
 

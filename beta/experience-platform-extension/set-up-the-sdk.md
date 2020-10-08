@@ -7,7 +7,7 @@ description: >-
 # Implement Experience Edge Extension
 
 {% hint style="warning" %}
-The Adobe Experience Platform - Experience Edge - Mobile extension is currently in beta. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+The Adobe Experience Platform - Experience Edge - Mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
 ## Configure the Adobe Experience Platform Mobile SDK
@@ -16,63 +16,40 @@ As a pre-requisite, the Experience Edge extension requires the successful implem
 
 Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensions/mobile-core/) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
 
-If your mobile application doesn't use the Adobe Experience Platform Mobile SDK, follow the steps listed in the Getting Started section of this site to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) and [Get the Experience Platform SDK](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk) before you proceed with the steps below.
+1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 
-## Setup the Experience Edge extension
+2. Install the Adobe Experience Platform extension from the Catalog. 
+
+3. In the configuration view, select the `Edge Configuration` you created in the previous step (see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)) and click `Save`.
+4. Install the `AEP Assurance` extension from the Catalog. 
+
+5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`. 
+6. Click `Save & Build for Development` to publish the changes in the Development environment.
+
+## Set up the Experience Edge extension
 
 ### Add Experience Platform extension to your app
 
-You should have received the bundle containing the Android and Swift Experience Platform SDKs as part of your beta welcome packet. In order to get started, reference the SDK in your mobile application as follows:
+You should have received the bundle containing the Android and Swift Experience Platform SDKs as part of the BETA welcome packet. In order to get started, reference the SDK in your mobile application as follows:
 
 {% tabs %}
 {% tab title="Android" %}
 ### Java
 
-1. Create a `libs` folder in your application directory \(ignore this step If you already have this folder\)
-2. Copy the `*.aar` file from the bundle path `/Android/lib/` and paste it in the libs folder
-3. Add the libs folder to the Gradle dependencies. 
+Follow the steps descried in [AEP SDK Sample App Android](https://github.com/adobe/aepsdk-sample-app-android).
 
-### Example
-
-```text
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
-
-    // Mobile SDK Core Bundle
-    implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-    // Project Griffon for debugging
-    implementation 'com.adobe.marketing.mobile:griffon:1.+'
-    ...
-}
-```
 {% endtab %}
 
 {% tab title="iOS" %}
 ### **Swift**
 
-1. Create a `libs` folder in your application directory. If you already have this folder, you can skip this step.
-2. Copy the `*.a` file along with the `*.swiftmodule` folder from the bundle path `/iOS/lib/` and paste it in the libs folder.
-3. In Xcode, add the new library to your project dependencies list. 
-   * Select the mobile application Target and click on Build Phases.
-   * In the Link Binary With Libraries tab, Add new \(+\).
-   * Click Add Other -&gt; Add files, navigate to libs/ folder, select the \*.a file and click Open.
-{% endtab %}
-{% endtabs %}
+Follow the steps described in [AEP SDK Sample App Swift](https://github.com/adobe/aepsdk-sample-app-ios#swift).
 
-### Setup configuration
+### Set up the configuration
 
-In your application's assets folder, [configure a bundle configuration](../../using-mobile-extensions/mobile-core/configuration/#using-a-bundled-file-configuration) called `ADBMobileConfig.json` with the following content:
+In Experience Platform Launch, go to the **Environments** tab in the mobile property created in the previous step (Configure the Adobe Experience Platform Mobile SDK) and click on the Development![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)icon. Find the Environment File ID at the top and copy it.
 
-```text
-{
-  "experiencePlatform.configId": "CONFIG_ID"
-}
-```
-
-{% hint style="warning" %}
-Replace the CONFIG\_ID with the Experience Edge environment identifier created in the [Create an Experience Edge environment identifier](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/8bb3c402c0b73759dd5143d60051a20c4eda5d79/beta/experience-platform-setup/README.md#create-an-experience-edge-configuration-id) step. This identifier may be found [Adobe Experience Platform Launch](https://launch.adobe.com) under _Edge Configurations_.
-{% endhint %}
+Set the  `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` (Android) / `AppDelegate` (iOS) class.
 
 ### Register the extension
 
@@ -80,6 +57,7 @@ The `registerExtension` API registers the Experience Edge extension with Mobile 
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 In the Application file's `onCreate()` method, initialize the Mobile Core and register the Experience Platform extension.

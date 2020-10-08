@@ -1,2 +1,2 @@
-# Adobe Experience Platform Mobile SDK Tutorials
+# Adobe Experience Platform Edge Mobile SDK Tutorials
 
