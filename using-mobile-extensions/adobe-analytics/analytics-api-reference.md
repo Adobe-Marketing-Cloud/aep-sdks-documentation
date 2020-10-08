@@ -165,7 +165,7 @@ Retrieves the total number of Analytics hits in the tracking queue.
  public static void getQueueSize(final AdobeCallback<Long> callback)
 ```
 
-* _callback_ is invoked with the queue size  value.
+* _callback_ is invoked with the queue size value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with queue size.
 
 #### Example
 
@@ -355,6 +355,44 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
+## getQueueSizeWithCompletionHandler <a id="getQueueSizeWithCompletionHandler"></a>
+
+Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if unexpected error occures or request times out.
+
+{% tabs %}
+{% tab title="iOS" %}
+### getQueueSizeWithCompletionHandler
+
+#### Syntax
+
+```objectivec
++ (void) getQueueSizeWithCompletionHandler: (nonnull void (^) (NSUInteger queueSize, NSError* __nullable error)) completionHandler;
+```
+
+* _completionHandler_ is invoked with the queue size value or an NSError if an unexpected error occurs or the request times out.
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getQueueSizeWithCompletionHandler: ^(NSUInteger queueSize, NSError * _Nullable error) {    
+    // use queue size or handle error
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in    
+     // use queue size or handle error  
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
@@ -380,7 +418,7 @@ Retrieves the Analytics tracking identifier.
    getTrackingIdentifier(final AdobeCallback<String> callback)
 ```
 
-* _callback_ is invoked with the tracking Identifier string value.
+* _callback_ is invoked with the tracking Identifier string value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with analytics tracking identifier.
 
 #### **Example**
 
@@ -580,6 +618,53 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
+## getTrackingIdentifierWithCompletionHandler <a id="getTrackingIdentifierWithCompletionHandler"></a>
+
+{% hint style="warning" %}
+Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+{% endhint %}
+
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled. Invoke the callback with NSError if unexpected error occures or request times out.
+
+{% hint style="info" %}
+If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and have not yet configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
+{% endhint %}
+
+
+{% tabs %}
+{% tab title="iOS" %}
+### getTrackingIdentifierWithCompletionHandler
+
+#### Syntax
+
+```objectivec
++ (void) getTrackingIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable trackingIdentifier, NSError* __nullable error)) completionHandler;
+```
+
+* _completionHandler_ is invoked with the tracking Identifier string value. or an NSError if an unexpected error occurs or the request times out.
+
+#### Example
+
+Here are examples in Objective-C and Swift:
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getTrackingIdentifierWithCompletionHandler:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
+    // use queue size or handle error
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
+     // use queue size or handle error  
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
@@ -598,7 +683,7 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
 
-* _callback_ is invoked with the visitor identifier value.
+* _callback_ is invoked with the visitor identifier value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with visitor identifier.
 
 #### Example
 
@@ -781,6 +866,46 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
       Console.WriteLine("null content in string callback");
     }
   }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## getVisitorIdentifierWithCompletionHandler <a id="getVisitorIdentifierWithCompletionHandler"></a>
+
+{% hint style="warning" %}
+Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+{% endhint %}
+
+This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier). Callback with NSError if an unexpected error occurs or the request times out.
+
+{% tabs %}
+{% tab title="iOS" %}
+### getVisitorIdentifier
+
+#### Syntax
+
+```objectivec
++ (void) getVisitorIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable visitorIdentifier, NSError* __nullable error)) completionHandler;
+```
+
+* _completionHandler_ is invoked with the visitor identifier value or an NSError if an unexpected error occurs or the request times out.
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+[ACPAnalytics getVisitorIdentifierWithCompletionHandler:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
+    // check the visitorIdentifier value or handle error
+}];
+```
+
+**Swift**
+
+```swift
+ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, error) in
+    // check the visitorIdentifier value or handle error
 }
 ```
 {% endtab %}

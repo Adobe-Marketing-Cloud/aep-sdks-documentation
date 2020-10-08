@@ -24,6 +24,26 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 * Changed the **default** Ad tracking granularity to **10 seconds**. Added configuration key to enable 1 sec ad tracking.
 * **Restart** tracking session every **24 hours** for long running sessions.
 
+### October 06, 2020
+
+The following updates were made in this release:
+
+#### iOS Analytics 2.4.0
+
+* Added new APIs getQueueSizeWithCompletionHandler, getTrackingIdentifierWithCompletionHandler and getVisitorIdentifierWithCompletionHandler. These APIs take completion handler as an arguement which is invoked with the queue size or an NSError if an unexpected error occurs or the request times out.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
+### October 05, 2020
+
+The following updates were made in this release:
+
+#### Android Analytics 1.2.6
+
+* Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
 ### September 29, 2020
 
 The following updates were made in this release:
