@@ -165,7 +165,7 @@ Retrieves the total number of Analytics hits in the tracking queue.
  public static void getQueueSize(final AdobeCallback<Long> callback)
 ```
 
-* _callback_ is invoked with the queue size value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with queue size.
+* _callback_ is invoked with the queue size value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout \(5000ms\) is met before the callback is returned with queue size.
 
 #### Example
 
@@ -418,7 +418,7 @@ Retrieves the Analytics tracking identifier.
    getTrackingIdentifier(final AdobeCallback<String> callback)
 ```
 
-* _callback_ is invoked with the tracking Identifier string value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with analytics tracking identifier.
+* _callback_ is invoked with the tracking Identifier string value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout \(5000ms\) is met before the callback is returned with analytics tracking identifier.
 
 #### **Example**
 
@@ -630,7 +630,6 @@ Retrieves the Analytics tracking identifier that is generated for this app/devic
 If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#get-experience-cloud-ids), and have not yet configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
 {% endhint %}
 
-
 {% tabs %}
 {% tab title="iOS" %}
 ### getTrackingIdentifierWithCompletionHandler
@@ -683,7 +682,7 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 public static void getVisitorIdentifier(AdobeCallback<String> callback)
 ```
 
-* _callback_ is invoked with the visitor identifier value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with visitor identifier.
+* _callback_ is invoked with the visitor identifier value. When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout \(5000ms\) is met before the callback is returned with visitor identifier.
 
 #### Example
 

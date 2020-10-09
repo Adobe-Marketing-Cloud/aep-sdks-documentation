@@ -134,3 +134,4 @@ The following updates were made in this release:
 ### Android Media 1.0.0
 
 * First version of Media Android Extension.
+

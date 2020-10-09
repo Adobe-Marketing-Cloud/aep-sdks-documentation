@@ -4,18 +4,18 @@
 
 ### iOS Analytics 2.4.0
 
- * Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
- * Added an enhancement to append previous app id and previous os version to backdated session info hits.
- * Changes to read from Assurance shared state.
- 
+* Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
 ## Oct 5, 2020
 
 ### Android Analytics 1.2.6
 
- * Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
- * Added an enhancement to append previous app id and previous os version to backdated session info hits.
- * Changes to read from Assurance shared state.
- 
+* Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
 ## Aug 4, 2020
 
 ### Android Analytics 1.2.5

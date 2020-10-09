@@ -1,6 +1,6 @@
 # Adobe Experience Platform Assurance
 
-This extension enables capabilities for [Project Griffon](../../beta/project-griffon/).  
+This extension enables capabilities for [Project Griffon](../../beta/project-griffon/).
 
 {% hint style="info" %}
 Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
@@ -82,7 +82,8 @@ Updated support for React Native is coming. This section will be updated shortly
 {% tab title="Flutter" %}
 #### Dart
 
-Flutter install instructions for AEPAssurance can be found [here](https://pub.dev/packages/flutter_assurance/install).{% endtab %}
+Flutter install instructions for AEPAssurance can be found [here](https://pub.dev/packages/flutter_assurance/install).
+{% endtab %}
 
 {% tab title="Cordova" %}
 #### Cordova
@@ -172,7 +173,6 @@ Updated support for React Native is coming. This section will be updated shortly
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 When using Flutter, registering AEPAssurance with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
@@ -261,3 +261,4 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```
 {% endtab %}
 {% endtabs %}
+
