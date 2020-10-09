@@ -50,16 +50,16 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/beta/project-griffon">Project Griffon (Beta)</a>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance">Adobe Experience Platform Assurance</a>
       </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPGriffon"><img src="https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&amp;label=ACPGriffon&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAssurance"><img src="https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&amp;label=AEPAssurance&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/assurance"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/assurance.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
         </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon">iOS</a>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance">iOS</a>
         </p>
       </td>
     </tr>
