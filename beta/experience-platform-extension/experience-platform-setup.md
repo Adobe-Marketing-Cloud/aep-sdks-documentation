@@ -1,14 +1,13 @@
 ---
 description: >-
-  This step outlines the generation of an environment identifier from Adobe
-  Experience Platform necessary for the Experience Edge Extension
+  This step outlines the generation of an Edge environment identifier necessary for the AEP Edge extension
   implementation.
 ---
 
 # Generate Environment Identifier
 
 {% hint style="warning" %}
-The Adobe Experience Platform - Experience Edge - Mobile extension is currently in **beta**. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
 ## Initialize Adobe Experience Platform for data collection
