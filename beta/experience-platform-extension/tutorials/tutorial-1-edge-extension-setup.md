@@ -1,4 +1,4 @@
-# Tutorial 1 - Experience Edge extension setup and XDM usage
+# Tutorial 1 - AEP Edge extension setup and XDM usage
 
 {% hint style="warning" %}
 The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.

@@ -8,18 +8,20 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 ### Assignment 1
 
-In this assignment learn how to:
+In this assignment you will learn how to:
 
 1. Create a schema, a dataset and generate a configuration identifier in Adobe Experience Platform
-2. Get familiar with the sample demo applications (iOS - Swift, Android)
+2. Get familiar with the sample demo applications (iOS Swift, Android)
 3. Setup Project Griffon
 4. Query the commerce events in Adobe Experience Platform
+5. Implement new XDM Experience events
 
-Get started with [Assignment 1 - Edge Extension setup](./tutorial-1-edge-extension-setup).
+Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](./tutorial-1-edge-extension-setup).
 
 #### Prepare to provide feedback on:
 
 * [ ] Overall setup and implementation workflow
-* [ ] Ease of use \(AEP Edge SDK APIs\)
-* [ ] Clarity of documentation during the beta review call.
+* [ ] Ease of use for the AEP Edge SDK APIs (creating and sending XDM Experience events)
+* [ ] XDM implementation validation
+* [ ] Clarity of documentation during the beta review call
 
