@@ -12,8 +12,6 @@ The XDM schema for the AEP Edge extension should extend from the [XDM Experience
 
 ## Commerce
 
-The AEP Edge extension automatically collects application and environment details for each experience event. As a result, you need to focus only on the Experience Event Commerce Details mixin.
-
 The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) mixin defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
 
 ### Commerce actions

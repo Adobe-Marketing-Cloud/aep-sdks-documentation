@@ -10,9 +10,9 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 In this assignment you will learn how to:
 
-1. Create a schema, a dataset and generate a configuration identifier in Adobe Experience Platform
+1. Create a schema, a dataset and generate a configuration identifier in Adobe Experience Platform Launch 
 2. Get familiar with the sample demo applications (iOS Swift, Android)
-3. Setup Project Griffon
+3. Setup Project Griffon and use it for validating XDM events
 4. Query the commerce events in Adobe Experience Platform
 5. Implement new XDM Experience events
 

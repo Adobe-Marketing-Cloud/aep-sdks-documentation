@@ -10,7 +10,7 @@ While the log messages can be quite helpful for an application developer, inspec
 
 To use Project Griffon, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
 
-### Event types handled by the AEP Mobile extension
+### Event types handled by the AEP Edge mobile extension
 
 Here is a list of the events currently supported by the AEP Edge mobile extension, that can be seen in the Project Griffon UI:
 

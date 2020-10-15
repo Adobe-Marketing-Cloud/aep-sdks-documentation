@@ -1,12 +1,12 @@
 # Response handling
 
-For each Experience event that is sent through the AEP Edge mobile extension, you can have zero or more event handles returned from the Adobe solutions that you enabled. The event handle might contain information, such as personalization data, that can be used in the mobile application views, user profile updates, and so on.
+For each Experience event that is sent through the AEP Edge mobile extension, there can be zero or more event handles returned from the Adobe solutions that you enabled. The response event handle contains relevant information, such as personalization data, that can be used in the mobile application views, user profile updates, and so on.
 
 ## Response handling
 
-Each event handle that is returned by the server is handled by the AEP Edge extension and is dispatched as a new mobile event to the extensions that are listening for it.
+Each event handle that is returned by the Experience Edge Network is handled by the AEP Edge extension and it is dispatched as a new mobile SDK event.
 
-If you integrated the [Project Griffon extension](https://aep-sdks.gitbook.io/docs/beta/project-griffon) in your mobile application, to display the events in your session, go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and in **Search Events**, type `Response event`.
+To see these events in a [Project Griffon session](https://experience.adobe.com/griffon ), in  **Search Events** type `Response event`.
 
 ## Error handling
 
@@ -22,5 +22,5 @@ E/AdobeExperienceSDK: NetworkResponseHandler - Received event error for request 
 
 The message is also dispatched as a new error response event for the mobile extensions to handle.
 
-In Project Griffon, you can view the error response events that were received for your session when you filter by the `Error response event`.
+To see these events in a [Project Griffon session](https://experience.adobe.com/griffon ), in  **Search Events** type `Error response event`.
 
