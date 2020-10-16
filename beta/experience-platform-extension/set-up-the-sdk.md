@@ -7,7 +7,7 @@ description: >-
 # Implement Adobe Experience Platform Edge Extension
 
 {% hint style="warning" %}
-The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+The Adobe Experience Platform Edge extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
 ## Configure the Adobe Experience Platform Mobile SDK
