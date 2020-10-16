@@ -1,13 +1,13 @@
 ---
 description: >-
-  This step outlines the configuration & implementation of the mobile SDK along
+  This step outlines the configuration & implementation of the SDK along
   with the Experience Edge extension in your app.
 ---
 
-# Implement Experience Edge Extension
+# Implement Adobe Experience Platform Edge Extension
 
 {% hint style="warning" %}
-The Adobe Experience Platform - Experience Edge - Mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+The Adobe Experience Platform Edge extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
 {% endhint %}
 
 ## Configure the Adobe Experience Platform Mobile SDK
@@ -18,7 +18,7 @@ Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensi
 
 1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 
-2. Install the `Adobe Experience Platform` extension from the Catalog. 
+2. Install the `Adobe Experience Platform Edge` extension from the Catalog. 
 
 3. In the configuration view, select the `Edge Configuration` you created in the previous step (see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)) and click `Save`.
 4. Install the `AEP Assurance` extension from the Catalog. 
@@ -26,11 +26,11 @@ Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensi
 5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`. 
 6. Click `Save & Build for Development` to publish the changes in the Development environment.
 
-## Set up the Experience Edge extension
+## Set up the AEP Edge extension
 
-### Add Experience Platform extension to your app
+### Add AEP Edge extension to your app
 
-You should have received the bundle containing the Android and Swift Experience Platform SDKs as part of the BETA welcome packet. In order to get started, reference the SDK in your mobile application by following the steps below:
+You should have received the bundle containing the Android and Swift AEP SDKs as part of the BETA welcome packet. In order to get started, reference the SDK in your mobile application by following the steps below:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -74,7 +74,7 @@ target 'YourAppTarget' do
   pod 'AEPRulesEngine', :git => 'git@github.com:adobe/aepsdk-rulesengine-ios.git', :branch => 'main'
   
   # AEP Edge SDK
-  pod 'AEPEdge', :git => 'git@github.com:adobe/aepsdk-platform-ios.git', :branch => 'dev'
+  pod 'AEPEdge', :git => 'git@github.com:adobe/aepsdk-edge-ios.git', :branch => 'master'
   
   # Assurance SDK for debugging using Project Griffon
   pod 'ACPCore', :git => 'git@github.com:adobe/aepsdk-compatibility-ios.git', :branch => 'main'
@@ -95,7 +95,7 @@ Replace `YOUR_APP_ID` with the copied Environment File ID when calling `configur
 
 ### Register the extension
 
-The `registerExtension` API registers the Edge extension with Mobile Core. This API is required to initialize the AEP Edge extension in order to start sending/receiving events to/from and from the Experience Edge Network.
+The `registerExtension` API registers the AEP Edge extension with Mobile Core. This API is required to initialize the AEP Edge extension in order to start sending/receiving events to/from and from the Experience Edge Network.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -171,15 +171,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Send events to Experience Edge
 
-After you create an [Experience event](experience-platform-events.md), use `sendEvent` to send this event to the Adobe solutions and Adobe Experience Platform. 
+After you create an [Experience event](experience-platform-events.md), use the `sendEvent` API to send this event to the Adobe solutions and Adobe Experience Platform. 
 
-{% hint style="info" %}
-To generate custom XDM classes for your Android or Swift implementation, please contact your beta manager. 
-{% endhint %}
+Parameters:
 
-{% hint style="warning" %}
-`experienceEvent (required)`should not be null.`responseCallback (optional)`callback may be invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
-{% endhint %}
+- `experienceEvent (required)`should not be null.
+
+- `responseCallback (optional)`callback is invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -189,7 +187,7 @@ To generate custom XDM classes for your Android or Swift implementation, please 
 ### **Syntax**
 
 ```java
-public static void sendEvent(final ExperienceEvent experienceEvent, final ExperienceEdgeCallback responseCallback)
+public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback responseCallback)
 ```
 
 You may create an `ExperienceEvent` with XDM data as Map, by using the `setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier)` API from the `ExperienceEvent.Builder`.
@@ -222,7 +220,7 @@ Edge.sendEvent(event, null);
 public static func sendEvent(experienceEvent: ExperienceEvent, responseHandler: EdgeResponseHandler? = nil)
 ```
 
-You may create an `ExperiencePlatformEvent` with XDM data as dictionary \(`[String: Any]`\) by using the the following method available in the `ExperiencePlatformEvent` struct.
+You may create an `ExperienceEvent` with XDM data as dictionary \(`[String: Any]`\) by using the the following method available in the `ExperienceEvent` struct.
 
 ```swift
 init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil)
@@ -254,7 +252,7 @@ xdmData.productListItems = itemsList
 
 // Send the event to the AEP Edge extension
 let event = ExperienceEvent(xdm:xdmData)
-let responseHandler = ResponseHandler()
+let responseHandler = EdgeResponseHandler()
 Edge.sendEvent(experienceEvent: event, responseHandler: responseHandler)
 ```
 {% endtab %}
@@ -262,15 +260,15 @@ Edge.sendEvent(experienceEvent: event, responseHandler: responseHandler)
 
 ## Retrieving data from Adobe solutions
 
-As described in [Send events to Experience Edge](set-up-the-sdk.md#send-events-to-experience-edge), the server-side event handle comes in chunks to maximize performance.
+As described in [Send events to Experience Edge](set-up-the-sdk.md#send-events-to-experience-edge), the server-side event handle comes in chunks to maximize the performance.
 
-To be notified when a response is returned, you may register a `responseCallback`\(Android\) or `responseHandler` \(iOS\) that is invoked when new data is available from the server. This callback is invoked for each event handle that is returned by the server and therefore, it may be be called multiple times.
+To be notified when a response is returned, you may register a `EdgeCallback`\(Android\) or `EdgeResponseHandler` \(iOS\) that is invoked when new data is available from the server. This callback is invoked for each event handle that is returned by the server and therefore, it may be called multiple times.
 
 {% hint style="info" %}
 In Android, the event handle is represented by a `Map<String, Object>`.
 {% endhint %}
 
-Depending on the nature of the event and Adobe solutions you are using, you may receive one, several, or no event handles for an event transmitted.
+Depending on the nature of the event and the Adobe solutions you are using, you may receive one, several, or no event handles for an event transmitted.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -283,7 +281,7 @@ Depending on the nature of the event and Adobe solutions you are using, you may 
 ...
 
 // Send the event to the AEP Edge extension
-Edge.sendEvent(event, new ExperienceEdgeCallback() {
+Edge.sendEvent(event, new EdgeCallback() {
     @Override
     public void onResponse(final Map<String, Object> data) {
         // TODO: handle the data received from the server

@@ -4,10 +4,9 @@
 The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
 {% endhint %}
 
-This tutorial illustrates how you may send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension using a sample application. The application is provided in iOS \(Swift\) and Android as part of the beta welcome packet and  - please contact your beta manager for further details.
-{% endhint %}
+This tutorial illustrates how you may send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
 
-The demo mobile application has multiple tabs. For this exercise, the `AEP` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
+The demo mobile application has multiple tabs. For this exercise, the `Edge` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
 
 ## Prerequisites for this tutorial
 
@@ -19,7 +18,7 @@ The demo mobile application has multiple tabs. For this exercise, the `AEP` and 
 
 ## Setup the schema, dataset and environment identifier
 
-Follow the step by step instructions in the [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup) page.
+Follow the step by step instructions in [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup).
 
 ## Setup the demo app
 
@@ -27,14 +26,16 @@ Follow the step by step instructions in the [Generate Environment Identifier](ht
 
 To configure a mobile property required for this tutorial, follow the steps in [Configure the Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/set-up-the-sdk#configure-the-adobe-experience-platform-mobile-sdk).
 
-### Download the demo application and install the AEP mobile extensions
+### Download the sample application and the AEP mobile extensions
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### Java
 
-Follow the steps described in [AEP SDK Sample App Android](https://github.com/adobe/aepsdk-sample-app-android).
+Clone or download the Android Sample application from https://github.com/adobe/aepsdk-sample-app-android.
+
+To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android#installation).
 
 {% endtab %}
 
@@ -42,7 +43,10 @@ Follow the steps described in [AEP SDK Sample App Android](https://github.com/ad
 
 ### **Swift**
 
-Follow the steps described in [AEP SDK Sample App Swift](https://github.com/adobe/aepsdk-sample-app-ios#swift).
+Clone or download the iOS Swift Sample application from https://github.com/adobe/aepsdk-sample-app-ios.
+
+To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios#installation).
+
 {% endtab %}
 {% endtabs %}
 
@@ -58,18 +62,16 @@ Set the  `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `
 
 This application uses the AEP Edge extension for sending XDM formatted data to the Adobe Experience Edge Network and so to Adobe Experience Platform. The XDM data is modelled based on the XDM Schemas you have configured in Adobe Experience Platform.
 
-The sample app includes automatically generated source classes for the XDM Objects that define the commerce mixin configured in the previous step. To explore these, check the `MobileSDKCommerceSchema`  class and its usages in `ExperiencePlatformViewController.swift (iOS)` / `PlatformTab.java (Android)`.
-
-**Note:** If you would like to use more complex XDM Schemas for your application, the Mobile SDK team can help generating the XDM classes for your Android or Swift implementation similar with the ones used in the commerce example, so please contact your Adobe representative.
+The sample app includes automatically generated source classes for the XDM Objects that define the commerce mixin configured in the previous step. To explore these, check the `MobileSDKCommerceSchema`  class and its usages in `EdgeViewController.swift (iOS)` / `EdgeTab.java (Android)`.
 
 ### Commerce events
 
-Click on the AEP view/tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
+Click on the `Edge` tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
 
 - Add to cart
 - Purchase
 
-When the `Purchase` button is clicked a new XDM Commerce Purchase Experience event is created and sent to the Adobe Experience Edge Network. 
+When the `Purchase` button is clicked a new XDM Commerce Purchase Experience event is created and sent to the Adobe Experience Edge Network. Example:
 
 ```json
 "events" : [
@@ -118,7 +120,7 @@ When the `Purchase` button is clicked a new XDM Commerce Purchase Experience eve
 
 AEP Assurance (also known as Project Griffon) is a product from Adobe to help you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is already set up to use Adobe's AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
-1. To use AEP Assurance, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
+1. To get started, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
 
 2. When asked for the **Base URL**, enter `sampleapp://` .
 
@@ -128,33 +130,35 @@ AEP Assurance (also known as Project Griffon) is a product from Adobe to help yo
 
    ![](../../../.gitbook/assets/Commerce_Session_Details.png)
 
-4. Go to the Sample application that is installed on your Android/iOS device or simulator, and click on the `Assurance` tab.
+4. Go to the Sample application that is installed on your device, and click on the `Assurance` tab.
 
-5. This will take you to the Assurance Connect Page. Paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
+5. Paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Login.png)
 
-6. Now, this will take you to the Assurance Connect Login Page. Enter the PIN from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and click `Connect`.
+6. Enter the PIN from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
-7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
+7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
 
-8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `AEP` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
+8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `Edge` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
+
+   **Hint:** To check the XDM Experience event was successfully validated, check that this message `validation for the given event was successful` is present in the `service com.adobe.streaming.validation` event.
 
 ### Queries in Adobe Experience Platform
 
 After using the sample demo application to view products and checkout items in a cart, the XDM Experience Events containing the commerce data are sent to the Adobe Experience Platform through Experience Edge.
 
-**Note:** It may take up to 15-20mins before the data is ingested in Experience Platform.
+**Note:** It may take up to 15-20mins before the data is showing in Adobe Experience Platform.
 
-You can query the dataset which stores the data for your Schema by doing the following:
+Query the dataset which stores the commerce data by doing the following:
 
 1. Log in to [https://experience.adobe.com/platform](https://experience.adobe.com/platform) using your Adobe credentials.
 
 2. Select your Adobe Experience Cloud Organization to the organization ID used to configure the demo application.
 
-3. On the navigation panel, under Data Management, select Datasets and select the Dataset you created at the beginning of this tutorial. From the right panel, copy the `Table name` value.
+3. On the navigation panel, under Data Management, select Datasets and click the dataset you created at the beginning of this tutorial. From the right panel, copy the `Table name` value.
 
 4. From the left panel, select **Queries**.
 
@@ -167,15 +171,15 @@ You can query the dataset which stores the data for your Schema by doing the fol
        where eventType = 'commerce.purchases' LIMIT 10
    ```
 
-7. Click the "Play" icon in the top-left corner above the query text box to run the query. The results will appear in the **Results** tab in the bottom panel.
+7. Click the "Play" icon to run the query. The results will appear in the **Results** tab at the bottom.
 
-**Note:** you can save this query and run it later when needed.
+**Hint:** you can save this query and run it later when needed.
 
 ### Implement Add to cart XDM events
 
-For this exercise, implement the Add to cart functionality in the sample application. Navigate to `ExperiencePlatformViewController.swift (iOS)` / `PlatformTab.java (Android)` and implement the `sendAddToCartXDMEvent` function.
+For this exercise, implement the Add to cart functionality in the sample application. Navigate to `EdgeViewController.swift (iOS)` / `EdgeTab.java (Android)` and implement the `sendAddToCartXDMEvent` function.
 
-**Hint:** Use the `sendPurchaseXDMEvent` as an example and use Project Griffon to validate that the XDM Experience Event is propertly formatted. 
+**Hint:** Use the `sendPurchaseXDMEvent` as an example and Project Griffon to validate that the XDM Experience Event is propertly formatted. 
 
 ### Next steps
 

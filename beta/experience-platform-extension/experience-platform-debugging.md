@@ -10,16 +10,16 @@ While the log messages can be quite helpful for an application developer, inspec
 
 To use Project Griffon, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
 
-### Event types handled by the AEP Mobile extension
+### Event types handled by the AEP Edge extension
 
-Here is a list of the events currently supported by the AEP Edge mobile extension, that can be seen in the Project Griffon UI:
+Here is a list of the events currently supported by the AEP Edge extension, that can be seen in the Project Griffon UI:
 
-* _AEP Request Event_: it represents the experience event sent through the AEP Edge extension and contains the XDM and free-form data.
-* _AEP Response Event Handle_: it represents the event handle received from Experience Edge in response to an AEP Request Event.
+* _AEP Request Event_: represents the experience event sent through the AEP Edge extension and contains the XDM and free-form data.
+* _AEP Response Event Handle_: represents the event handle received from Experience Edge in response to an AEP Request Event.
 * _AEP Error Response_: you may see this error event in case of an error with the XDM payload sent to Experience Edge or if a server-side error is returned for other reasons.
 * _service_: this event is published by the AEP Edge Network servers and allows you to validate that the experience event was sent successfully to the services, along with the payload attached to the request, configId used, requestId etc. Examples:
   * The service events published by `com.adobe.edge.konductor` indicate that a network request was received by the Edge Network.
   * The service events published by `com.adobe.streaming.validation` indicate if the event passed the XDM format validation based on the schema defined in Adobe Experience Platform. This can help you debug parameter type errors, incorrect parameter names etc.
 
-**Hint:** If you want to filter out only the events handled by the AEP Edge mobile extension, you can type one of the event names listed above in the **Search Events** input field from the Session View.
+**Hint:** If you want to filter out only the events handled by the AEP Edge extension, you can type one of the event names listed above in the **Search Events** input field from the Session View.
 
