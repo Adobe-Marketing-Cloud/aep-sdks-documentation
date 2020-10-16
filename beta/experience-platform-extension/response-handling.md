@@ -1,6 +1,6 @@
 # Response handling
 
-For each Experience event that is sent through the AEP Edge mobile extension, there can be zero or more event handles returned from the Adobe solutions that you enabled. The response event handle contains relevant information, such as personalization data, that can be used in the mobile application views, user profile updates, and so on.
+For each Experience event that is sent through the AEP Edge extension, there can be zero or more event handles returned from the Adobe solutions that you enabled. The response event handle contains relevant information, such as personalization data, that can be used in the mobile application views, user profile updates, and so on.
 
 ## Response handling
 
