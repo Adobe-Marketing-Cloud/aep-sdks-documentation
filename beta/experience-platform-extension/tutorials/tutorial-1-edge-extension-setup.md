@@ -130,17 +130,17 @@ AEP Assurance (also known as Project Griffon) is a product from Adobe to help yo
 
    ![](../../../.gitbook/assets/Commerce_Session_Details.png)
 
-4. Go to the Sample application that is installed on your Android/iOS device or simulator, and click on the `Assurance` tab.
+4. Go to the Sample application that is installed on your device, and click on the `Assurance` tab.
 
-5. This will take you to the Assurance Connect Page. Paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
+5. Paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Login.png)
 
-6. Now, this will take you to the Assurance Connect Login Page. Enter the PIN from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and click `Connect`.
+6. Enter the PIN from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
-7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon will become gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
+7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
 
 8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `Edge` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
 
@@ -152,7 +152,7 @@ After using the sample demo application to view products and checkout items in a
 
 **Note:** It may take up to 15-20mins before the data is showing in Adobe Experience Platform.
 
-You can query the dataset which stores the data for your Schema by doing the following:
+Query the dataset which stores the commerce data by doing the following:
 
 1. Log in to [https://experience.adobe.com/platform](https://experience.adobe.com/platform) using your Adobe credentials.
 
@@ -173,7 +173,7 @@ You can query the dataset which stores the data for your Schema by doing the fol
 
 7. Click the "Play" icon to run the query. The results will appear in the **Results** tab at the bottom.
 
-**Note:** you can save this query and run it later when needed.
+**Hint:** you can save this query and run it later when needed.
 
 ### Implement Add to cart XDM events
 
