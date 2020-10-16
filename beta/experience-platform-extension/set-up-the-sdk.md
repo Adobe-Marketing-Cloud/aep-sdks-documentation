@@ -1,6 +1,6 @@
 ---
 description: >-
-  This step outlines the configuration & implementation of the mobile SDK along
+  This step outlines the configuration & implementation of the SDK along
   with the Experience Edge extension in your app.
 ---
 
