@@ -6,7 +6,7 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 This tutorial illustrates how you may send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
 
-The demo mobile application has multiple tabs. For this exercise, the `AEP` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
+The demo mobile application has multiple tabs. For this exercise, the `Edge` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
 
 ## Prerequisites for this tutorial
 
@@ -66,7 +66,7 @@ The sample app includes automatically generated source classes for the XDM Objec
 
 ### Commerce events
 
-Click on the Edge view/tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
+Click on the `Edge` tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
 
 - Add to cart
 - Purchase
@@ -120,7 +120,7 @@ When the `Purchase` button is clicked a new XDM Commerce Purchase Experience eve
 
 AEP Assurance (also known as Project Griffon) is a product from Adobe to help you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is already set up to use Adobe's AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
-1. To use AEP Assurance, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
+1. To get started, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
 
 2. When asked for the **Base URL**, enter `sampleapp://` .
 

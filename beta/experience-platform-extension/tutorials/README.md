@@ -14,7 +14,7 @@ In this assignment you will learn how to:
 2. Get familiar with the sample demo applications (iOS Swift, Android)
 3. Setup Project Griffon and use it for validating XDM events
 4. Query the commerce events in Adobe Experience Platform
-5. Implement new XDM Experience events
+5. Implement new XDM Experience events for a given XDM schema
 
 Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](./tutorial-1-edge-extension-setup).
 

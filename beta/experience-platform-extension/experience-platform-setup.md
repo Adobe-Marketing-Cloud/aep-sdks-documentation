@@ -31,11 +31,10 @@ To create a configuration identifier use the following steps:
 1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select _Edge Configurations_ from the left panel, then select _New Edge Configuration_.
 2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Experience Edge environments.
 3. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
-   * Select the AEP Sandbox.
-   * Select \(or create a new\) the Streaming Inlet from the dropdown.
-   * Select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](experience-platform-setup.md#initialize-adobe-experience-platform-for-data-collection).
+   * Select the `AEP Sandbox`.
+   * Select \(or create a new\) the `Streaming Inlet` from the dropdown.
+   * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](experience-platform-setup.md#initialize-adobe-experience-platform-for-data-collection).
+   * Click `Save`.
 
 ![](../../.gitbook/assets/aep-enable-dataset.png)
-
-After these settings are saved, environment identifiers will be generated, and you may continue with the [Set up the SDK](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/set-up-the-sdk) steps.
 
