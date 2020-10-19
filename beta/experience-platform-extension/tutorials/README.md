@@ -16,7 +16,7 @@ In this assignment you will learn how to:
 4. Query the commerce events in Adobe Experience Platform
 5. Implement new XDM Experience events for a given XDM schema
 
-Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](./tutorial-1-edge-extension-setup).
+Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup).
 
 #### Prepare to provide feedback on:
 
