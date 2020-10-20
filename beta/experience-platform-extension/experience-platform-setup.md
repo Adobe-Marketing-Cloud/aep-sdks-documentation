@@ -24,7 +24,6 @@ To start collecting data in [Adobe Experience Platform](https://experience.adobe
 
    - Add the following existing mixins: 
 
-     - ExperienceEvent Application Details
      - ExperienceEvent Environment Details
      - ExperienceEvent Commerce Details
 
