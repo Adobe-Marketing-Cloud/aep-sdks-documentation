@@ -24,7 +24,19 @@ Follow the step by step instructions in [Generate Environment Identifier](https:
 
 ### Configure the Launch Mobile property
 
-To configure a mobile property required for this tutorial, follow the steps in [Configure the Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/set-up-the-sdk#configure-the-adobe-experience-platform-mobile-sdk).
+As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](../../using-mobile-extensions/mobile-core/). 
+
+Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensions/mobile-core/) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
+
+1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
+
+2. Install the `Adobe Experience Platform Edge` extension from the Catalog. 
+
+3. In the configuration view, select the `Edge Configuration` you created in the previous step (see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)) and click `Save`.
+4. Install the `AEP Assurance` extension from the Catalog. 
+
+5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`. 
+6. Click `Save & Build for Development` to publish the changes in the **Development** environment.
 
 ### Download the sample application and the AEP mobile extensions
 
@@ -56,7 +68,7 @@ In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go t
 
 Set the  `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` (Android) / `AppDelegate` (iOS) class.
 
-## Use the demo app
+## Use the sample application
 
 ### AEP Edge extension and XDM objects
 
@@ -66,7 +78,7 @@ The sample app includes automatically generated source classes for the XDM Objec
 
 ### Commerce events
 
-Click on the `Edge` tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
+In the sample app, click on the `Edge` tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
 
 - Add to cart
 - Purchase
@@ -140,7 +152,7 @@ AEP Assurance (also known as Project Griffon) is a product from Adobe to help yo
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
-7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the Product List Page. The color of this AEP Icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
+7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the app view. The color of this AEP Icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
 
 8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `Edge` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
 
@@ -177,7 +189,7 @@ Query the dataset which stores the commerce data by doing the following:
 
 ### Implement Add to cart XDM events
 
-For this exercise, implement the Add to cart functionality in the sample application. Navigate to `EdgeViewController.swift (iOS)` / `EdgeTab.java (Android)` and implement the `sendAddToCartXDMEvent` function.
+For this exercise, implement the Add to cart functionality in the sample application. Navigate to `EdgeViewController.swift (iOS)` / `EdgeTab.java (Android)` and implement the `sendAddToCartXDMEvent` function. The recommended eventType is `commerce.productListAdds`.
 
 **Hint:** Use the `sendPurchaseXDMEvent` as an example and Project Griffon to validate that the XDM Experience Event is propertly formatted. 
 
