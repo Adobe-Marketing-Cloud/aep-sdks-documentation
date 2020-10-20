@@ -30,7 +30,7 @@ Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensi
 
 ### Add AEP Edge extension to your app
 
-You should have received the bundle containing the Android and Swift AEP SDKs as part of the BETA welcome packet. In order to get started, reference the SDK in your mobile application by following the steps below:
+In order to get started, reference the SDK in your mobile application by following the steps below:
 
 {% tabs %}
 {% tab title="Android" %}

@@ -24,7 +24,19 @@ Follow the step by step instructions in [Generate Environment Identifier](https:
 
 ### Configure the Launch Mobile property
 
-To configure a mobile property required for this tutorial, follow the steps in [Configure the Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/set-up-the-sdk#configure-the-adobe-experience-platform-mobile-sdk).
+As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](../../using-mobile-extensions/mobile-core/). 
+
+Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensions/mobile-core/) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
+
+1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
+
+2. Install the `Adobe Experience Platform Edge` extension from the Catalog. 
+
+3. In the configuration view, select the `Edge Configuration` you created in the previous step (see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)) and click `Save`.
+4. Install the `AEP Assurance` extension from the Catalog. 
+
+5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`. 
+6. Click `Save & Build for Development` to publish the changes in the **Development** environment.
 
 ### Download the sample application and the AEP mobile extensions
 
