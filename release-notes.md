@@ -16,7 +16,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 #### iOS Core 2.7.6
 
-* Fixed somes issues that might have caused crashes when the app was being shut down.
+* Fixed several crashes that were happening during app shutdown.
 
 ### October 7, 2020
 
