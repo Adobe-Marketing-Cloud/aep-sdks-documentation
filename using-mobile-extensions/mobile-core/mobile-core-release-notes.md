@@ -1,5 +1,11 @@
 # Release Notes
 
+### October 21, 2020
+
+#### iOS Core 2.7.6
+
+* Fixed several crashes that were happening during app shutdown.
+
 ### September 22, 2020
 
 #### iOS Core 2.7.5
