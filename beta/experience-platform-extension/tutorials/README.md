@@ -25,3 +25,20 @@ Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https:/
 * [ ] XDM implementation validation
 * [ ] Clarity of documentation during the beta review call
 
+
+### Assignment 2
+
+In this assignment you will learn how to:
+
+1. Include Swfit Core library using Cocoapods
+2. Initialize SDK with new API
+3. Start/Stop lifecycle
+
+Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup).
+
+#### Prepare to provide feedback on:
+
+* [ ] Overall setup and implementation workflow
+* [ ] Ease of use for the AEP Edge SDK APIs (creating and sending XDM Experience events)
+* [ ] XDM implementation validation
+* [ ] Clarity of documentation during the beta review call
