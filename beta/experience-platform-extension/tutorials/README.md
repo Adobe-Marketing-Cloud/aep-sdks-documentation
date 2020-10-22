@@ -30,15 +30,16 @@ Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https:/
 
 In this assignment you will learn how to:
 
-1. Include Swfit Core library using Cocoapods
+1. Install Swfit Core library using Cocoapods
 2. Initialize SDK with new API
 3. Start/Stop lifecycle
+4. Make an Identity call
 
 Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup).
 
 #### Prepare to provide feedback on:
 
-* [ ] Overall setup and implementation workflow
-* [ ] Ease of use for the AEP Edge SDK APIs (creating and sending XDM Experience events)
-* [ ] XDM implementation validation
-* [ ] Clarity of documentation during the beta review call
+* [ ] Overall setup and implementation workflow of AEPCore SDK
+* [ ] In Pod file, instead of just include ACPCore, now you need to cinlude AEPServcies, AEPCore, AEPLifecyle, AEPIdentity, AEPSignal, does that bother you?
+* [ ] SPM vs Cocoapod, which dependency mangament tool are you using today?
+* [ ] Are your apps currently built with obj-c or Swfit or the combination of both?
