@@ -30,16 +30,16 @@ Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https:/
 
 In this assignment you will learn how to:
 
-1. Install Swfit Core library using Cocoapods
+1. Install Swift Core library using Cocoapods
 2. Initialize SDK with new API
 3. Start/Stop lifecycle
 4. Make an Identity call
 
-Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup).
+Get started with [Assignment 2 - Swift Core setup](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-2-swift-core-setup).
 
 #### Prepare to provide feedback on:
 
 * [ ] Overall setup and implementation workflow of AEPCore SDK
-* [ ] In Pod file, instead of just include ACPCore, now you need to cinlude AEPServcies, AEPCore, AEPLifecyle, AEPIdentity, AEPSignal, does that bother you?
-* [ ] SPM vs Cocoapod, which dependency mangament tool are you using today?
-* [ ] Are your apps currently built with obj-c or Swfit or the combination of both?
+* [ ] In `Podfile`, instead of just including ACPCore, you now need to include AEPCore, AEPServices, AEPLifecycle, AEPIdentity, and AEPSignal. This allows greater flexibility for both developers and consumers of the SDK to only include what they need. Do you feel the trade-off is an overall benefit?
+* [ ] SPM vs Cocoapod - which dependency mangament tool are you using today? Are you considering adopting or changing dependency management tools in the near future?
+* [ ] Are your apps currently built with Obj-C, Swift, or a combination of the two?
