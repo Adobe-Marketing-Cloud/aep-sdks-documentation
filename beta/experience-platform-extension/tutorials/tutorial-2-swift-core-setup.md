@@ -58,8 +58,9 @@ import AEPSignal
 ```
 // enable the trace log, we need it in the future steps
 MobileCore.setLogLevel(level: .trace)
+// init SDK
 MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
-    // Use the App id assigned to this application via Adobe Launch
+    // use the App id assigned to this application via Adobe Launch
     MobileCore.configureWith(appId: self.LAUNCH_ENVIRONMENT_FILE_ID)
 })
 ```
