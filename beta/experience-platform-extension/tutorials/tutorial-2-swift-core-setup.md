@@ -19,7 +19,7 @@ To finish the tutorial, you can either use a existing Mobile Property or create 
 
 ### Download the sample app
 
-Download the Swift base sample app from https://github.com/adobe/aepsdk-sample-app-ios/releases/download/1.0.0-beta.1/AEPSample_Base.zip , upzip it and you will get a new folder `AEPSample_Base` containing the sample source code.
+Download the [Swift base sample app]( https://github.com/adobe/aepsdk-sample-app-ios/releases/download/1.0.0-beta.1/AEPSample_Base.zip) , upzip it and you will get a new folder `AEPSample_Base` containing the sample source code.
 
 
 
@@ -44,7 +44,7 @@ Download the Swift base sample app from https://github.com/adobe/aepsdk-sample-a
 
 ### Init SDK
 
-1. Open  AppDelegate.swift and add the following `import` statements.
+1. Open AppDelegate.swift and add the following `import` statements.
 
 ```
 import AEPCore
