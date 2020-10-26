@@ -109,7 +109,7 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 ### Next steps
 
-To know more about Swfit Core SDK, check out the documentation at https://github.com/adobe/aepsdk-core-ios/tree/dev/Documentation.
+To know more about Swift Core SDK check out the [AEPCore Documentation](https://github.com/adobe/aepsdk-core-ios/tree/dev/Documentation).
 
-Get the sample apps from https://github.com/adobe/aepsdk-sample-app-ios to learn how to use SDK in a Swift app or an Obj-c app.
+Get the [sample apps](https://github.com/adobe/aepsdk-sample-app-ios) to learn how to use AEPCore SDK in a Swift app or an Obj-c app.
 
