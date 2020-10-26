@@ -21,8 +21,6 @@ To finish the tutorial, you can either use a existing Mobile Property or create 
 
 Download the [Swift base sample app]( https://github.com/adobe/aepsdk-sample-app-ios/releases/download/1.0.0-beta.1/AEPSample_Base.zip) , upzip it and you will get a new folder `AEPSample_Base` containing the sample source code.
 
-
-
 ### Install the AEPCore SDK
 
 1. Add the following code to the `Podfile`
@@ -38,9 +36,7 @@ Download the [Swift base sample app]( https://github.com/adobe/aepsdk-sample-app
 
 2. Run `pod install` in the `AEPSample_Base` folder, it should download all the dependencies and add them to the project.
 
-3. Open the project from `AEPSampleApp.xcworkspace`
-
-
+3. Open the project from `AEPSampleApp.xcworkspace
 
 ### Init SDK
 
@@ -113,7 +109,7 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 ### Next steps
 
-To know more about Swfit Core SDK, Check out  the documention at https://github.com/adobe/aepsdk-core-ios/tree/dev/Documentation.
+To know more about Swfit Core SDK, Check out the documentation at https://github.com/adobe/aepsdk-core-ios/tree/dev/Documentation.
 
 Get the sample apps from https://github.com/adobe/aepsdk-sample-app-ios to learn how to use SDK in a Swift app or an Obj-c app.
 
