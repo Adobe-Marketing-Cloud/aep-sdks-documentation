@@ -756,10 +756,9 @@ MobileCore.updateConfiguration(new HashMap<String, Object>() {
   }
 });
 ```
-
 {% endtab %}
-{% tab title="iOS" %}
 
+{% tab title="iOS" %}
 #### Objective C
 
 #### Example
@@ -781,7 +780,6 @@ config["campaign.registrationDelay"] = 30 // number of days to delay sending a r
 config["campaign.registrationPaused"] = false // boolean signaling if registration requests should be paused
 ACPCore.updateConfiguration(config)
 ```
-
 {% endtab %}
 {% endtabs %}
 

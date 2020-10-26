@@ -24,5 +24,5 @@ To learn more about Places Service see: [Places Service overview](https://docs.a
 
 ![Project Griffon Places Service Location Simulation](../.gitbook/assets/GriffonPlaces.png)
 
-To learn more about Project Griffon see: [Project Griffon setup](../beta/project-griffon/set-up-project-griffon/)
+To learn more about Project Griffon see: [Project Griffon setup](../beta/project-griffon/set-up-project-griffon.md)
 

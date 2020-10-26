@@ -1,10 +1,12 @@
 # Current SDK Versions
 
+{% hint style="info" %}
 ## Swift Developer Preview
 
 The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
+{% endhint %}
 
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
@@ -50,16 +52,16 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/beta/project-griffon">Project Griffon (Beta)</a>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance">Adobe Experience Platform Assurance</a>
       </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPGriffon"><img src="https://img.shields.io/cocoapods/v/ACPGriffon.svg?color=orange&amp;label=ACPGriffon&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAssurance"><img src="https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&amp;label=AEPAssurance&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/griffon"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/griffon.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/assurance"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/assurance.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
         </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPGriffon">iOS</a>
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance">iOS</a>
         </p>
       </td>
     </tr>
@@ -204,7 +206,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 | :--- | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpcore.svg?color=green&label=%40adobe%2Freact-native-acpcore&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpcore) | [Link](https://github.com/adobe/react-native-acpcore) | [Sample](https://github.com/adobe/react-native-acpcore/tree/master/sample/ACPCoreSample) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpuserprofile.svg?color=green&label=%40adobe%2Freact-native-acpuserprofile&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpuserprofile) | [Link](https://github.com/adobe/react-native-acpuserprofile) | [Sample](https://github.com/adobe/react-native-acpuserprofile/tree/master/sample/ACPUserProfileSample) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpgriffon.svg?color=green&label=%40adobe%2Freact-native-acpgriffon&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpgriffon) | [Link](https://github.com/adobe/react-native-acpgriffon) | [Sample](https://github.com/adobe/react-native-acpgriffon/tree/master/sample/ACPGriffonSample) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-aepassurance.svg?color=green&label=%40adobe%2Freact-native-aepassurance&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-aepassurance) | [Link](https://github.com/adobe/react-native-aepassurance) | [Sample](https://github.com/adobe/react-native-aepassurance/tree/master/sample/AEPAssuranceSample) |
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpplaces.svg?color=green&label=%40adobe%2Freact-native-acpplaces&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpplaces) | [Link](https://github.com/adobe/react-native-acpplaces) | [Sample](https://github.com/adobe/react-native-acpplaces/tree/master/sample/ACPPlacesSample) |
 | [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpplaces-monitor.svg?color=green&label=%40adobe%2Freact-native-acpplaces-monitor&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpplaces-monitor) | [Link](https://github.com/adobe/react-native-acpplaces-monitor) | [Sample](https://github.com/adobe/react-native-acpplaces-monitor/tree/master/sample/ACPPlacesMonitorSample) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm version](https://img.shields.io/npm/v/@adobe/react-native-acpanalytics.svg?color=green&label=%40adobe%2Freact-native-acpanalytics&logo=npm&style=flat-square)](https://badge.fury.io/js/%40adobe%2Freact-native-acpanalytics) | [Link](https://github.com/adobe/react-native-acpanalytics) | [Sample](https://github.com/adobe/react-native-acpanalytics/tree/master/sample/ACPAnalyticsSample) |
@@ -239,7 +241,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpcore?label=cordova-acpcore&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpcore) | [Link](https://github.com/adobe/cordova-acpcore) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#cordova) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpuserprofile?label=cordova-acpuserprofile&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpuserprofile) | [Link](https://github.com/adobe/cordova-acpuserprofile) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpgriffon?label=cordova-acpgriffon&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpgriffon) | [Link](https://github.com/adobe/cordova-acpgriffon) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-aepassurance?label=cordova-aepassurance&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-aepassurance) | [Link](https://github.com/adobe/cordova-aepassurance) |
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplaces?label=cordova-acpplaces&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplaces) | [Link](https://github.com/adobe/cordova-acpplaces) |
 | [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpplacesmonitor?label=cordova-acpplacesmonitor&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpplacesmonitor) | [Link](https://github.com/adobe/cordova-acpplaces-monitor) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![npm](https://img.shields.io/npm/v/@adobe/cordova-acpanalytics?label=cordova-acpanalytics&logo=npm)](https://www.npmjs.com/package/@adobe/cordova-acpanalytics) | [Link](https://github.com/adobe/cordova-acpanalytics) |
@@ -254,7 +256,7 @@ Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versi
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#flutter) | [![pub package](https://img.shields.io/pub/v/flutter_acpuserprofile.svg)](https://pub.dartlang.org/packages/flutter_acpuserprofile) | [Link](https://github.com/adobe/flutter-acpuserprofile) | [Sample](https://github.com/adobe/flutter_acpuserprofile/tree/master/example) |
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces.svg)](https://pub.dartlang.org/packages/flutter_acpplaces) | [Link](https://github.com/adobe/flutter-acpplaces) | [Sample](https://github.com/adobe/flutter_acpplaces/tree/master/example) |
 | [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | [![pub package](https://img.shields.io/pub/v/flutter_acpplaces_monitor.svg)](https://pub.dartlang.org/packages/flutter_acpplaces_monitor) | [Link](https://github.com/adobe/flutter-acpplaces_monitor) | [Sample](https://github.com/adobe/flutter_acpplaces_monitor/tree/master/example) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![pub package](https://img.shields.io/pub/v/flutter_griffon.svg)](https://pub.dartlang.org/packages/flutter_griffon) | [Link](https://github.com/adobe/flutter_acpgriffon) | [Sample](https://github.com/adobe/flutter_acpgriffon/tree/master/example) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![pub package](https://img.shields.io/pub/v/flutter_assurance.svg)](https://pub.dartlang.org/packages/flutter_assurance) | [Link](https://github.com/adobe/flutter_assurance) | [Sample](https://github.com/adobe/flutter_assurance/tree/master/example) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![pub package](https://img.shields.io/pub/v/flutter_acpanalytics.svg)](https://pub.dartlang.org/packages/flutter_acpanalytics) | [Link](https://github.com/adobe/flutter_acpanalytics) | [Sample](https://github.com/adobe/flutter_acpanalytics/tree/master/example) |
 
 ## Xamarin
@@ -269,7 +271,7 @@ The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distri
 | :--- | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.Android?label=Adobe.ACPCore.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPCore.iOS?label=Adobe.ACPCore.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPCore.iOS/) | [Link](https://github.com/adobe/xamarin-acpcore) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile#xamarin) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPUserProfile.Android?label=Adobe.ACPUserProfile.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPUserProfile.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPUserProfile.iOS?label=Adobe.ACPUserProfile.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPUserProfile.iOS/) | [Link](https://github.com/adobe/xamarin-acpuserprofile) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) | [Link](https://github.com/adobe/xamarin-acpgriffon) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.Android?label=Adobe.ACPGriffon.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPGriffon.iOS?label=Adobe.ACPGriffon.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPGriffon.iOS/) | [Link](https://github.com/adobe/xamarin-aepassurance) |
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPPlaces.Android?label=Adobe.ACPPlaces.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPPlaces.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPPlaces.iOS?label=Adobe.ACPPlaces.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPPlaces.iOS/) | [Link](https://github.com/adobe/xamarin-acpcore) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.Android?label=Adobe.ACPAnalytics.Android&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/) | [![Nuget](https://img.shields.io/nuget/v/Adobe.ACPAnalytics.iOS?label=Adobe.ACPAnalytics.iOS&logo=xamarin)](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/) | [Link](https://github.com/adobe/xamarin-acpanalytics) |
 
@@ -282,6 +284,7 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open your app
 | Extension | Github | Sample App |
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [Link](https://github.com/adobe/unity-acpcore/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpcore#sample-app) |
-| [Project Griffon \(Beta\)](https://aep-sdks.gitbook.io/docs/beta/project-griffon) | [Link](https://github.com/adobe/unity-acpgriffon/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpgriffon#sample-app) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [Link](https://github.com/adobe/unity-aepassurance/tree/master/bin) | [Sample](https://github.com/adobe/unity-aepassurance#sample-app) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [Link](https://github.com/adobe/unity-acpanalytics/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpanalytics#sample-app) |
+| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [Link](https://github.com/adobe/unity_acpuserprofile/tree/master/bin) | [Sample](https://github.com/adobe/unity_acpuserprofile#sample-app) |
 

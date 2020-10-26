@@ -12,6 +12,44 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### October 21, 2020
+
+#### iOS Core 2.7.6
+
+* Fixed several crashes that were happening during app shutdown.
+
+### October 7, 2020
+
+#### iOS Media 2.2.0
+
+* Changed the **default** Ad tracking granularity to **10 seconds**. Added configuration key to enable 1 sec ad tracking.
+* **Restart** tracking session every **24 hours** for long running sessions.
+
+#### Android Media 2.1.0
+
+* Changed the **default** Ad tracking granularity to **10 seconds**. Added configuration key to enable 1 sec ad tracking.
+* **Restart** tracking session every **24 hours** for long running sessions.
+
+### October 06, 2020
+
+The following updates were made in this release:
+
+#### iOS Analytics 2.4.0
+
+* Added new APIs getQueueSizeWithCompletionHandler, getTrackingIdentifierWithCompletionHandler and getVisitorIdentifierWithCompletionHandler. These APIs take completion handler as an arguement which is invoked with the queue size or an NSError if an unexpected error occurs or the request times out.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
+### October 05, 2020
+
+The following updates were made in this release:
+
+#### Android Analytics 1.2.6
+
+* Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
+* Added an enhancement to append previous app id and previous os version to backdated session info hits.
+* Changes to read from Assurance shared state.
+
 ### September 29, 2020
 
 The following updates were made in this release:
@@ -27,13 +65,11 @@ The following updates were made in this release:
 
 * Fixed dropped events and connection termination issues caused by exceeding maximum data capacity of a websocket connection.
 
-
 ### September 22, 2020
 
 #### iOS Core 2.7.5
 
 * Fixes an issue where the EventHub could be blocked by synchronous network calls returning recoverable errors.
-
 
 ### September 16, 2020
 
@@ -71,7 +107,7 @@ The following updates were made in this release:
 
 #### Android Core 1.5.7
 
-* Fixed the issue where it may fail to save caches when `Etag` contains special characters. 
+* Fixed the issue where it may fail to save caches when `Etag` contains special characters.
 
 #### Android Identity 1.2.1
 
