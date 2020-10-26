@@ -782,8 +782,24 @@ ACPCore.updateConfiguration(config)
 ```
 {% endtab %}
 
-{% tab %}
-Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event. This is the previous behavior seen before the registration request reduction enhancement was added.
-{% endtab %}
 {% endtabs %}
 
+Giving a value of `0` when setting `campaign.registrationDelay` will send a registration request on every launch event. This is the previous behavior seen before the registration request reduction enhancement was added.
+
+## Configuration keys
+
+To update SDK configuration programmatically, use the following information to change your Campaign Standard configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+
+| Key                           | Required | Description                                                  | Data Type |
+| :---------------------------- | :------- | :----------------------------------------------------------- | --------- |
+| `campaign.timeout`            | Yes      | Sets the amount of time to wait for a response from the in-app messaging service. | Integer   |
+| `campaign.mcias`              | Yes      | Sets the in-app messaging service URL endpoint.              | String    |
+| `campaign.server`             | Yes      | Sets the endpoint URL for the production environment in the Adobe Campaign Standard instance. | String    |
+| `campaign.pkey`               | Yes      | Sets the identifier for a mobile app that was configured in the production environment in the Adobe Campaign Standard. | String    |
+| `build.environment`           | Yes      | Specifies which environment to use \(prod, dev, or staging\) when sending registration information. | String    |
+| `__dev__campaign.pkey`        | No       | Sets the identifier for a mobile app that was configured in the development environment in Adobe Campaign Standard. | String    |
+| `__dev__campaign.server`      | No       | Sets the endpoint URL for the development environment in the Adobe Campaign Standard instance. | String    |
+| `__stage__campaign.pkey`      | No       | Sets the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. | String    |
+| `__stage__campaign.server`    | No       | Sets the endpoint URL for the staging environment in the Adobe Campaign Standard instance. | String    |
+| `campaign.registrationDelay`  | No       | Sets the number of days to delay the sending of the next Adobe Campaign Standard registration request. | Integer   |
+| `campaign.registrationPaused` | No       | Sets the Adobe Campaign Standartd registration request paused status. | Boolean   |

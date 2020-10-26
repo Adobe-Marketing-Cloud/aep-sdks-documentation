@@ -51,16 +51,16 @@ The Adobe Campaign Standard extension reads the following key from the configura
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `__dev__campaign.server` | String | Yes | This contains the endpoint URL for the development environment in the Adobe Campaign Standard instance. |
-| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in development environment in Adobe Campaign Standard. |
-| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the stage environment in the Adobe Campaign Standard instance. |
-| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the stage environment in Adobe Campaign Standard. |
+| `__dev__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the development environment in Adobe Campaign Standard. |
+| `__stage__campaign.server` | String | Yes | This contains the endpoint URL for the staging environment in the Adobe Campaign Standard instance. |
+| `__stage__campaign.pkey` | String | Yes | This contains the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. |
 | `campaign.server` | String | No | This contains the endpoint URL for the production environment in the Adobe Campaign Standard instance. |
 | `campaign.pkey` | String | No | This contains the identifier for a mobile app that was configured in the production environment in Adobe Campaign Standard. |
 | `campaign.mcias` | String | No | This contains the in-app messaging service URL endpoint. |
-| `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from in-app messaging service. |
+| `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from the in-app messaging service. |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings. |
-| `campaign.registrationDelay` | Integer | Yes | This contains the number of days to delay the sending of the next Campaign registration request. |
-| `campaign.registrationPaused` | Boolean | Yes | This contains the Campaign registration request paused status. |
+| `campaign.registrationDelay` | Integer | Yes | This contains the number of days to delay the sending of the next Adobe Campaign Standrd registration request. |
+| `campaign.registrationPaused` | Boolean | Yes | This contains the Adobe Campaign Standard registration request paused status. |
 
 {% hint style="info" %}
 After `global.privacy` is changed to **optout**, the linkage fields are reset. All downloaded messages and rules are erased, and no tracking request can leave the device.
