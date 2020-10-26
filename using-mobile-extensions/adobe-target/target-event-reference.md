@@ -119,7 +119,7 @@ The Target extension will read the following keys from the configuration event:
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `target.clientCode` | String | No | The Target Client Code that is obtained during provisioning with the Target Adobe solution. |
-| `target.environmentId` | String | Yes | The Target Environment ID. |
+| `target.environmentId` | Integer | Yes | The Target Environment ID. |
 | `target.timeout` | Integer | Yes | This value is used for Target request connection timeouts \(in seconds\). If the value is not set, a default value of 5 seconds is used. |
 | `global.privacy` | String | Yes | This contains the mobile privacy status settings. |
 | `target.previewEnabled` | Boolean | Yes | Boolean value to determine whether Target Preview should be enabled. If not set, then Preview is enabled by default. |

@@ -158,20 +158,20 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 To update SDK configuration programmatically, use the following information to change your Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
-| Key | Required | Description |
-| :--- | :--- | :--- |
-| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. |
-| `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Campaign Classic registration or tracking server. |
-| `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. |
-| `__dev__campaignclassic.trackingServer` | No | Sets the development environment tracking server, which receives tracking requests. |
-| `__dev__campaignclassic.ios.integrationKey` | No | Sets the development environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. |
-| `__dev__campaignclassic.android.integrationKey` | No | Sets the development environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. |
-| `__stage__campaignclassic.marketingServer` | No | Sets the staging environment marketing server, which receives registration requests. |
-| `__stage__campaignclassic.trackingServer` | No | Sets the staging environment tracking server, which receives tracking requests. |
-| `__stage__campaignclassic.ios.integrationKey` | No | Sets the staging environment iOS mobile app integration key, which links the app to an iOS application campaign in  Campaign Classic. |
-| `__stage__campaignclassic.android.integrationKey` | No | Sets the staging environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. |
-| `campaignclassic.marketingServer` | Yes | Sets the production environment marketing server, which receives registration requests. |
-| `campaignclassic.trackingServer` | Yes | Sets the production environment tracking server, which receives tracking requests. |
-| `campaignclassic.ios.integrationKey` | Yes | Sets the production environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. |
-| `campaignclassic.android.integrationKey` | Yes | Sets the production environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. |
+| Key | Required | Description | Data Type |
+| :--- | :--- | :--- | ---- |
+| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. | String |
+| `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Campaign Classic registration or tracking server. | Integer |
+| `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. | String |
+| `__dev__campaignclassic.trackingServer` | No | Sets the development environment tracking server, which receives tracking requests. | String |
+| `__dev__campaignclassic.ios.integrationKey` | No | Sets the development environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
+| `__dev__campaignclassic.android.integrationKey` | No | Sets the development environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
+| `__stage__campaignclassic.marketingServer` | No | Sets the staging environment marketing server, which receives registration requests. | String |
+| `__stage__campaignclassic.trackingServer` | No | Sets the staging environment tracking server, which receives tracking requests. | String |
+| `__stage__campaignclassic.ios.integrationKey` | No | Sets the staging environment iOS mobile app integration key, which links the app to an iOS application campaign in  Campaign Classic. | String |
+| `__stage__campaignclassic.android.integrationKey` | No | Sets the staging environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
+| `campaignclassic.marketingServer` | Yes | Sets the production environment marketing server, which receives registration requests. | String |
+| `campaignclassic.trackingServer` | Yes | Sets the production environment tracking server, which receives tracking requests. | String |
+| `campaignclassic.ios.integrationKey` | Yes | Sets the production environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
+| `campaignclassic.android.integrationKey` | Yes | Sets the production environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
 
