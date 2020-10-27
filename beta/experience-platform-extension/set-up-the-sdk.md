@@ -1,10 +1,10 @@
 ---
 description: >-
-  This step outlines the configuration & implementation of the SDK along
-  with the Experience Edge extension in your app.
+  This step outlines the configuration & implementation of the SDK along with
+  the Experience Edge extension in your app.
 ---
 
-# Implement Adobe Experience Platform Edge Extension
+# Implement Experience Edge Extension
 
 {% hint style="warning" %}
 The Adobe Experience Platform Edge extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
@@ -12,18 +12,15 @@ The Adobe Experience Platform Edge extension is currently in BETA. Use of this e
 
 ## Configure the Adobe Experience Platform Mobile SDK
 
-As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](../../using-mobile-extensions/mobile-core/). 
+As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](../../using-mobile-extensions/mobile-core/).
 
 Experience Edge extension relies on the [Mobile Core](../../using-mobile-extensions/mobile-core/) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
 
 1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
-
-2. Install the `Adobe Experience Platform Edge` extension from the Catalog. 
-
-3. In the configuration view, select the `Edge Configuration` you created in the previous step (see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)) and click `Save`.
-4. Install the `AEP Assurance` extension from the Catalog. 
-
-5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`. 
+2. Install the `Adobe Experience Platform Edge` extension from the Catalog.
+3. In the configuration view, select the `Edge Configuration` you created in the previous step \(see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)\) and click `Save`.
+4. Install the `AEP Assurance` extension from the Catalog.
+5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`.
 6. Click `Save & Build for Development` to publish the changes in the Development environment.
 
 ## Set up the AEP Edge extension
@@ -38,7 +35,7 @@ In order to get started, reference the SDK in your mobile application by followi
 
 Update the dependencies for your Android application in the gradle file.
 
-```
+```text
 dependencies {
     // Mobile SDK Core Bundle
     implementation 'com.adobe.marketing.mobile:userprofile:1.+'
@@ -50,9 +47,6 @@ dependencies {
     ...
 }
 ```
-
-
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -60,7 +54,7 @@ dependencies {
 
 Use Cocoapods for integrating with AEP Mobile SDK:
 
-```
+```text
 platform :ios, '10.0'
 
 use_frameworks!
@@ -72,24 +66,22 @@ target 'YourAppTarget' do
   pod 'AEPIdentity', :git => 'git@github.com:adobe/aepsdk-core-ios.git', :branch => 'main'
   pod 'AEPSignal', :git => 'git@github.com:adobe/aepsdk-core-ios.git', :branch => 'main'
   pod 'AEPRulesEngine', :git => 'git@github.com:adobe/aepsdk-rulesengine-ios.git', :branch => 'main'
-  
+
   # AEP Edge SDK
   pod 'AEPEdge', :git => 'git@github.com:adobe/aepsdk-edge-ios.git', :branch => 'main'
-  
+
   # Assurance SDK for debugging using Project Griffon
   pod 'ACPCore', :git => 'git@github.com:adobe/aepsdk-compatibility-ios.git', :branch => 'main'
   pod 'AEPAssurance'
   ...
 end
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Set up the configuration
 
-In Experience Platform Launch, go to the **Environments** tab in the mobile property created in the previous step (Configure the Adobe Experience Platform Mobile SDK) and click on the Development![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)icon. Find the Environment File ID at the top and copy it.
+In Experience Platform Launch, go to the **Environments** tab in the mobile property created in the previous step \(Configure the Adobe Experience Platform Mobile SDK\) and click on the Development![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)icon. Find the Environment File ID at the top and copy it.
 
 Replace `YOUR_APP_ID` with the copied Environment File ID when calling `configureWithAppID` as in the examples below.
 
@@ -99,7 +91,6 @@ The `registerExtension` API registers the AEP Edge extension with Mobile Core. T
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 In the Application file's `onCreate()` method, initialize the Mobile Core and register the AEP Edge extension.
@@ -140,7 +131,6 @@ public void onCreate() {
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 ```swift
@@ -161,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // register Mobile Core and AEP Edge extensions
         MobileCore.registerExtensions([Edge.self, Identity.self, Lifecycle.self, Signal.self])
-        
+
         return true
     }
 }
@@ -171,17 +161,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Send events to Experience Edge
 
-After you create an [Experience event](experience-platform-events.md), use the `sendEvent` API to send this event to the Adobe solutions and Adobe Experience Platform. 
+After you create an [Experience event](experience-platform-events.md), use the `sendEvent` API to send this event to the Adobe solutions and Adobe Experience Platform.
 
 Parameters:
 
-- `experienceEvent (required)`should not be null.
-
-- `responseCallback (optional)`callback is invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
+* `experienceEvent (required)`should not be null.
+* `responseCallback (optional)`callback is invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### **Java**
 
 ### **Syntax**

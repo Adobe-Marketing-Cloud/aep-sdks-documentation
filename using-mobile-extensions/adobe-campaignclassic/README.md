@@ -159,7 +159,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 To update SDK configuration programmatically, use the following information to change your Campaign Classic configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description | Data Type |
-| :--- | :--- | :--- | ---- |
+| :--- | :--- | :--- | :--- |
 | `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. | String |
 | `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Campaign Classic registration or tracking server. | Integer |
 | `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. | String |

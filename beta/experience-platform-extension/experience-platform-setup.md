@@ -1,7 +1,7 @@
 ---
 description: >-
-  This step outlines the generation of an Edge environment identifier necessary for the AEP Edge extension
-  implementation.
+  This step outlines the generation of an Edge environment identifier necessary
+  for the AEP Edge extension implementation.
 ---
 
 # Generate Environment Identifier
@@ -15,24 +15,20 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 To start collecting data in [Adobe Experience Platform](https://experience.adobe.com/platform), an XDM schema and a Dataset need to be created. Follow these steps to get started:
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
-
 2. Create an [XDM Schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html) as follows:
-
-   - From the left panel, select Schemas
-
-   - Click `Create schema`
-   - Select `XDM Experience event`
-
-   - Add the following existing mixins: 
-     - ExperienceEvent Environment Details
-     - ExperienceEvent Commerce Details
-   - Set a name for this schema and click `Save`.
+   * From the left panel, select Schemas
+   * Click `Create schema`
+   * Select `XDM Experience event`
+   * Add the following existing mixins:
+     * ExperienceEvent Environment Details
+     * ExperienceEvent Commerce Details
+   * Set a name for this schema and click `Save`.
 
 ![](../../.gitbook/assets/XDMSchemaExample.png)
 
 **Note:** on the top left corner, observe that the selected AEP Sandbox is Prod.
 
-3. [Create a dataset from this schema](https://docs.adobe.com/content/help/en/experience-platform/catalog/datasets/user-guide.html#schema). 
+1. [Create a dataset from this schema](https://docs.adobe.com/content/help/en/experience-platform/catalog/datasets/user-guide.html#schema). 
 
 ## Generate an Experience Edge environment identifier
 
@@ -45,8 +41,7 @@ To create a configuration identifier use the following steps:
 
 ![](../../.gitbook/assets/create_new_edge_config.png)
 
-3. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
-
+1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
    * Select `Prod` for `AEP Sandbox`.
    * Select the `Streaming Inlet` from the dropdown or create a new one. A streaming inlet is an HTTP source in the Adobe Experience Platform.
    * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](experience-platform-setup.md#initialize-adobe-experience-platform-for-data-collection).

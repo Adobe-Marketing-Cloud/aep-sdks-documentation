@@ -74,6 +74,22 @@ For a complete list of supported platforms, please see [Latest SDK Versions](htt
 * Xamarin - MonoAndroid 9.0+ and Xamarin.iOS 1.0+
 * Unity 2019.3.10f1or later
 
+### **Where does the SDK store identities & preferences on the app?**
+
+{% tabs %}
+{% tab title="Android" %}
+The SDK uses the cache and shared preferences at these locations: 
+
+data/data/your.app.package/cache
+
+data/data/your.app.package/shared\_prefs
+{% endtab %}
+
+{% tab title="iOS" %}
+The SDK uses NSUserDefaults using key prefix Adobe.\*
+{% endtab %}
+{% endtabs %}
+
 ### **How "big" is the SDK?**
 
 | Extension | iOS  \(KB\) | Android \(KB\) |

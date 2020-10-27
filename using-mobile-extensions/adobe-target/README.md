@@ -475,7 +475,7 @@ To programmatically update SDK configuration, use the following information to c
 For more information, see [Programmatic updates to Configuration](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference#programmatic-updates-to-configuration).
 
 | Key | Description | Data Type |
-| :--- | :--- | ---- |
+| :--- | :--- | :--- |
 | target.clientcode | Client code for your account. | String |
 | target.timeout | Time, in seconds, to wait for a response from Target servers before timing out. | Integer |
 | target.environmentId | Environment ID you want to use. If the value is left blank, the default production environment will be used. | Integer |
