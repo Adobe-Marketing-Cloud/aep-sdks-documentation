@@ -1,6 +1,6 @@
 # Tutorial 2 - Swift Core setup
 
-This tutorial illustrates how to send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
+This tutorial illustrates how to send install AEPCore Swfit SDK and use it in a sample application.
 
 ## Prerequisites for this tutorial
 
