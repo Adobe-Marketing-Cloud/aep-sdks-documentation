@@ -40,7 +40,7 @@ Download the [Swift base sample app]( https://github.com/adobe/aepsdk-sample-app
 
 ### Init SDK
 
-1. Open AppDelegate.swift and add the following `import` statements.
+1. Open `AppDelegate.swift` and add the following `import` statements.
 
 ```
 import AEPCore
@@ -70,37 +70,50 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 
 ### Enable Lifecycle
+1. Open `AppDelegate.swift` and add the code to get `applicationState` and trigger `lifecycleStart`
+    ```
 
-1. Open the file `SceneDelegate.swift` and import `AEPCore`
+    let appState = application.applicationState;
+    // init SDK
+    MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
+        // use the App id assigned to this application via Adobe Launch
+        MobileCore.configureWith(appId: self.LAUNCH_ENVIRONMENT_FILE_ID)
+        if appState != .background {
+            MobileCore.lifecycleStart(additionalContextData: nil)
+        }
+    })
+    ```
+
+2. Open `SceneDelegate.swift` and import `AEPCore`
 
    ```swift
    import AEPCore
    ```
 
-2. In the `sceneWillEnterForeground` method, add:
+3. In the `sceneWillEnterForeground` method, add:
 
    ```
    MobileCore.lifecycleStart(additionalContextData: nil)
    ```
 
-3. In the `sceneDidEnterBackground` method, add:
+4. In the `sceneDidEnterBackground` method, add:
 
    ```
    MobileCore.lifecyclePause()
    ```
 
-4. Now run the app. In the log, search for ``LaunchEvent``, you should be able to see the log for the Lifecycle event which contains the `LaunchEvent` and other lifecycle data. 
+5. Now run the app. In the log, search for ``LaunchEvent``, you should be able to see the log for the Lifecycle event which contains the `LaunchEvent` and other lifecycle data. 
 
 
 
 ### Sync Identifier
 
-1. Open the file `CoreViewController.swift`
+1. Open `CoreViewController.swift`
 
 2. Search for `Text("Sync Identifiers")`, and in the `action` block above it,  use the `Identity.syncIdentifiers` API to sync the identifiers with the Identity service.
 
    ```
-   Identity.syncIdentifiers(identifiers: ["idType1":"1234567"], authenticationState: .authenticated)
+   Identity.syncIdentifiers(identifiers: ["customId":"1234567"], authenticationState: .authenticated)
    ```
 
 3. Now run the app, find the `Sync Identifiers` button in the `Core` tab and click on it. You should see in the log that a network request is sent to the `dpm.demdex.net` server containing the ids in the code.
