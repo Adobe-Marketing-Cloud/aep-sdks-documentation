@@ -1,6 +1,6 @@
 # Tutorial 2 - Swift Core setup
 
-This tutorial illustrates how to send install AEPCore Swfit SDK and use it in a sample application.
+This tutorial illustrates how to install AEPCore Swfit SDK and use it in a sample application.
 
 ## Prerequisites for this tutorial
 
