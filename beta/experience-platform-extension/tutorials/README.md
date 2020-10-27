@@ -43,3 +43,5 @@ Get started with [Assignment 2 - Swift Core setup](https://aep-sdks.gitbook.io/d
 * [ ] In `Podfile`, instead of just including ACPCore, you now need to include AEPCore, AEPServices, AEPLifecycle, AEPIdentity, and AEPSignal. This allows greater flexibility for both developers and consumers of the SDK to only include what they need. Do you feel the trade-off is an overall benefit?
 * [ ] SPM vs Cocoapod - which dependency mangament tool are you using today? Are you considering adopting or changing dependency management tools in the near future?
 * [ ] Are your apps currently built with Obj-C, Swift, or a combination of the two?
+
+Feedback or questions can be posted to [Experience Edge Beta - Swift SDK Feedback](https://github.com/adobe/aepsdk-core-ios/issues/427).
