@@ -41,17 +41,17 @@ Experience Edge extension relies on the [Mobile Core](https://github.com/Adobe-M
 {% tab title="Android" %}
 ### Java
 
-Clone or download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android](https://github.com/adobe/aepsdk-sample-app-android).
+Clone or download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1).
 
-To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android#installation).
+To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1#installation).
 {% endtab %}
 
 {% tab title="iOS" %}
 ### **Swift**
 
-Clone or download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios](https://github.com/adobe/aepsdk-sample-app-ios).
+Clone or download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1).
 
-To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios#installation).
+To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1#installation).
 {% endtab %}
 {% endtabs %}
 
