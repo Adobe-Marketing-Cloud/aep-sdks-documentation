@@ -39,7 +39,7 @@ Experience Edge extension relies on the [Mobile Core](https://github.com/Adobe-M
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
+#### Java
 
 Clone or download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1).
 
@@ -47,7 +47,7 @@ To get started, follow the steps described in [AEP SDK Sample App Android - Inst
 {% endtab %}
 
 {% tab title="iOS" %}
-### **Swift**
+#### Swift
 
 Clone or download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1).
 
