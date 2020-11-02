@@ -19,18 +19,18 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 #### Java
 
-Clone or download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-3](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-3).
+Download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-3](https://github.com/adobe/aepsdk-sample-app-android/archive/beta-assignment-3.zip).
 
-To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1#installation).
+To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-3#installation).
 {% endtab %}
 
 {% tab title="iOS" %}
 
 #### Swift
 
-Clone or download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-3](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-3).
+Download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-3](https://github.com/adobe/aepsdk-sample-app-ios/archive/beta-assignment-3.zip).
 
-To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1#installation).
+To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-3#installation).
 {% endtab %}
 {% endtabs %}
 
