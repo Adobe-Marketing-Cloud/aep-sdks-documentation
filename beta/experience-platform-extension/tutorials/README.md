@@ -49,7 +49,7 @@ Feedback or questions can be posted to [Experience Edge Beta - Swift SDK Feedbac
 
 In this assignment you will learn how to:
 
-1. Implement XDM Experience Events using custom Schemas or dictionaries
+1. Implement XDM Experience Events using Schema representations or dictionaries
 2. Use multiple schemas and datasets
 3. Sync identities in XDM format
 4. View the Real-time Customer Profile in Adobe Experience Platform
@@ -58,8 +58,9 @@ Get started with [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io
 
 #### Prepare to provide feedback on:
 
-* [ ] Ease of use for the AEP Edge SDK APIs
-* [ ] Use-cases when client-side XDM client-side events can be used over remote rules
+* [ ] Ease of use for the AEP Edge SDK APIs and select datasets
+* [ ] Use-cases when XDM client-side events can be used over remote rules
+* [ ] Use-cases where multiple schemas and/or datasets can be used
 * [ ] What type of visitor identifiers do you currently sync using the AEP SDK?
 * [ ] Do you prefer syncing the visitor identifiers using a specialized API (example [syncIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifier)), XDM format, remote rules or a combination of these?
 

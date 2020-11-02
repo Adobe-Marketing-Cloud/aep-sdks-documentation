@@ -64,12 +64,12 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
    * Start adding fields as follows:
 
-     | Field name | Display name | Type    |
-     | :--------- | :----------- | :------ |
-     | productSku | Product SKU  | String  |
-     | reviewText | Review Text  | String  |
-     | rating     | Rating       | Integer |
-     | reviewerId | Reviewer ID  | String  |
+     | Field name | Display name | Type    | Required |
+     | :--------- | :----------- | :------ | -------- |
+     | productSku | Product SKU  | String  | Yes      |
+     | reviewText | Review Text  | String  | No       |
+     | rating     | Rating       | Integer | Yes      |
+     | reviewerId | Reviewer ID  | String  | No       |
 
      * select the `reviewerId` and enable it for `Identity` , enable `Primary Identity` and select Identity namespace `Email`.
 
@@ -83,23 +83,92 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
    - When the `Enable for Profile` pop-up is displayed, click `Enable`.
 
-4. [Create a dataset from this schema](https://docs.adobe.com/content/help/en/experience-platform/catalog/datasets/user-guide.html#schema).
+4. Create a dataset for this schema:
+
+   - Click on `Datasets` from the left panel.
+   - Click `Create dataset`.
+   - Select `Create dataset from schema`.
+   - Search for the `Product Reviews` schema and select it.
+   - Click `Next`.
+   - Name this dataset `Product Reviews`.
+   - Click `Finish`.
+
+5. To include this dataset for Real-time Customer profiles, enable this dataset for Profile:
+
+   - Select the `Product Reviews` dataset created.
+   - From the right panel, enable the `Profile` toggle.
 
 ## Send Product Review 
 
-### Build Product Review XDM objects
+### Build XDM objects
 
 For this exercise, implement the Product Review functionality in the sample application. Navigate to `EdgeViewController.swift (iOS)` / `EdgeTab.java (Android)` and implement the `sendProductReviewXdmEvent` function. 
 
-Todo
+1. Create the XDM Experience Event using the `XDM IdentityMap` containing the reviewer `Email` and the review information.
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Swift
+
+```swift
+// TODO - Assignment 3
+var xdmData : [String: Any] = [:]
+// 1. Add Email to the IdentityMap.
+// Note: this app does not implement a logging system, so authenticatedState ambiguous is used
+// in this case. The other authenticatedState values are: authenticated, loggedOut
+xdmData["identityMap"] = ["Email": [["id": reviewerEmail,
+                                     "authenticatedState": "ambiguous"]]]
+
+// 2. Add product review details in the custom mixin
+// Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
+xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
+                         "rating": reviewRating,
+                         "reviewText": reviewText,
+                         "reviewerId": reviewerEmail]
+```
+
+{% endtab %}
+{% endtabs %}
+
+**Note:** when sending XDM data for custom mixins, use your **_tenantId** as shown in the Schema.
 
 ### Override the default Dataset
 
-Todo
+2. Send the Experience Event using the AEP Edge extension and specify the dataset identifier for `Product Reviews`.
 
-### Implement IdentityMap
+{% tabs %}
+{% tab title="Android" %}
 
-Todo
+#### Java
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Swift
+
+```swift
+// 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
+// shown in Adobe Experience Platform
+// Note: the Dataset identifier specified at Event level overrises the Experience Event Dataset specified in the
+// Edge configuration in Adobe Launch
+xdmData["eventType"] = "product.review"
+let experienceEvent =
+ExperienceEvent(xdm: xdmData,
+                data: nil,
+                datasetIdentifier: "yourDatasetIdentifier")
+Edge.sendEvent(experienceEvent: experienceEvent, responseHandler: nil)
+```
+
+{% endtab %}
+{% endtabs %}
 
 ### Run the sample application
 
@@ -108,10 +177,10 @@ Run the sample app on a device or simulator in Xcode / Android Studio. Click on 
 1. Select a Product from the list.
 2. In the `XDM Product Review Example` section:
    - Fill in the `Reviewer email` with a sample email address.
-   - Select a rating for the selected product.
-   - Write your comments.
+   - Add the rating for the selected product.
+   - Write your comment.
    - Click `Submit Review`.
-3. Repeat these steps multiple times to "collect" multiple reviews.
+3. Repeat these steps multiple times to "collect" product reviews.
 
 ## View the Product reviews in Adobe Experience Platform
 
@@ -142,3 +211,30 @@ Query the dataset which stores the commerce data by doing the following:
 
 ## View the Real-time Customer Profile
 
+ The customer profile can be viewed in [Adobe Experience Platform UI](https://experience.adobe.com/platform).
+
+1. Select `Profiles` from the left panel.
+2. Click `Browse` and search for the email you sent from the sample app.
+   - Select the `merge policy`: _xdm.context.profile Private graph Timestamp ordered
+   - Select Email as the `Identity namespace`
+   - For the `Identity value`, enter the same Email as you sent from the app.
+   - Click on the Profile ID found in the table.
+3. Inspect the Customer profile.
+   - Notice that the client-side ECID and the Email(s) you sent in XDM format using the Edge extension are now displayed in the `Detail` view, under the `Linked identities` section, as well as in the `Attributes` view.
+   - In the `Events` tab you can view the events sent to the dataset(s) enabled for Profile for the selected customer profile.
+
+
+
+## Extra credit: Create segment based on Identity Authentication State
+
+Create a segment in [Adobe Experience Platform UI](https://experience.adobe.com/platform) for the customer profiles where Authenticated State equal Ambiguous.
+
+1. Select `Segments` from the left panel.
+2. Click `Create segment`.
+3. Select `Events` -> `XDM Experience Event`-> `Identity Map` and drag the `Authenticated State` element in the `Start building segment section`.
+4. Select `Include Identity Map` within `Email` where `Authenticated State` equals `Ambiguous`.
+5. Set the name for this segment, for example `Users with email and authenticated state ambiguous`.
+6. Click `Save`.
+7. Once the segment is computed you can see how many users qualify for this segment.
+
+For more details about Segmentation in Adobe Experience Platform, see the [Segment Builder user guide](https://docs.adobe.com/content/help/en/experience-platform/segmentation/ui/segment-builder.html).
