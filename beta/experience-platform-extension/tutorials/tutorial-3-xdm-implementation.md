@@ -111,6 +111,31 @@ For this exercise, implement the Product Review functionality in the sample appl
 
 #### Java
 
+```java
+// TODO - Assignment 3
+Map<String, Object> xdmData = new HashMap<String, Object>();
+
+// 1. Add Email to the IdentityMap.
+// Note: this app does not implement a logging system, so authenticatedState ambiguous is used
+// in this case. The other authenticatedState values are: authenticated, loggedOut
+Map<String, Object> identityMap = new HashMap<String, Object>();
+identityMap.put("Email", new ArrayList<Object>() {{
+  add(new HashMap<String, Object>() {{
+    put("id", reviewerId);
+    put("authenticatedState", "ambiguous");
+  }});
+}});
+xdmData.put("identityMap", identityMap);
+
+// 2. Add product review details in the custom mixin
+// Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
+xdmData.put("_tenantId", new HashMap<String, Object>() {{
+	put("productSku", product.sku);
+	put("rating", rating);
+	put("reviewText", text);
+}});
+```
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -120,6 +145,7 @@ For this exercise, implement the Product Review functionality in the sample appl
 ```swift
 // TODO - Assignment 3
 var xdmData : [String: Any] = [:]
+
 // 1. Add Email to the IdentityMap.
 // Note: this app does not implement a logging system, so authenticatedState ambiguous is used
 // in this case. The other authenticatedState values are: authenticated, loggedOut
@@ -130,14 +156,17 @@ xdmData["identityMap"] = ["Email": [["id": reviewerEmail,
 // Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
 xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
                          "rating": reviewRating,
-                         "reviewText": reviewText,
-                         "reviewerId": reviewerEmail]
+                         "reviewText": reviewText]
 ```
 
 {% endtab %}
 {% endtabs %}
 
 **Note:** when sending XDM data for custom mixins, use your **_tenantId** as shown in the Schema.
+
+{% hint style="info" %}
+Use the knowledge from Assignment 1 and connect to an Assurance Session to verify if the XDM data sent from the sample app is in the correct format.
+{% endhint %}
 
 ### Override the default Dataset
 
@@ -147,6 +176,23 @@ xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
 {% tab title="Android" %}
 
 #### Java
+
+```java
+// 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
+// shown in Adobe Experience Platform
+// Note: the Dataset identifier specified at Event level overrises the Experience Event Dataset specified in the
+// Edge configuration in Adobe Launch
+xdmData.put("eventType", "product.review");
+ExperienceEvent event = new ExperienceEvent.Builder()
+  .setXdmSchema(xdmData, "yourDatasetIdentifier")
+  .build();
+Edge.sendEvent(event, new EdgeCallback() {
+  @Override
+  public void onResponse(Map<String, Object> data) {
+    Log.d("Send XDM Event", String.format("Received response for event 'product.review': %s", data));
+  }
+});
+```
 
 {% endtab %}
 
