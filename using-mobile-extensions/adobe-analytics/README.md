@@ -662,14 +662,14 @@ ACPCore.TrackState("State Name", contextData);
 
 To update the SDK configuration programmatically, use the following information to change your Analytics configuration values.
 
-| Key | Required | Description |
-| :--- | :--- | :--- |
-| analytics.server | Yes | See [Tracking Server](./#tracking-server) |
-| analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" |
-| analytics.batchLimit | No | See [Batch Limit](./#batch-limit) |
-| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) |
-| analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) |
-| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). |
+| Key | Required | Description | Data Type |
+| :--- | :--- | :--- | ---- |
+| analytics.server | Yes | See [Tracking Server](./#tracking-server) | String |
+| analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" | String |
+| analytics.batchLimit | No | See [Batch Limit](./#batch-limit) | Integer |
+| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) | Boolean |
+| analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) | Boolean |
+| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). | Boolean |
 
 {% tabs %}
 {% tab title="Android" %}
