@@ -103,7 +103,11 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 ### Sync Identifier
 
-1. Open `CoreViewController.swift`
+1. Open `CoreViewController.swift` and import `AEPIdentity`
+
+   ```swift
+   import AEPIdentity
+   ```
 2. Search for `Text("Sync Identifiers")`, and in the `action` block above it, use the `Identity.syncIdentifiers` API to sync the identifiers with the Identity service.
 
    ```swift
