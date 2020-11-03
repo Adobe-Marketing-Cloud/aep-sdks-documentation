@@ -52,17 +52,19 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
    * Select `XDM Experience event`
 
+   * Set the name for this schema as `Product Reviews`.
+
    * Click the `+ Add` button to add mixins
 
      * Select `ExperienceEvent Environment Details` from the `Use existing mixin` section and click `Add mixin`.
 
    * Click the `+ Add` button to add mixins
 
-     * Select `Create new mixin` and set the name `Product Review`, click `Add mixin`.
+     * Select `Create new mixin` and set the name `Product review`, click `Add mixin`.
 
-   * In the Schema structure, select the  `Product review` mixin and click on the top level `+`.
+   * In the Schema structure, select the  `Product review` mixin and click on plus icon  `+` next to the schema name `Product Reviews`.
 
-   * Start adding fields as follows:
+   * Start adding fields as follows. After each, click the `Apply` button, then plus icon `+` to add the next field.
 
      | Field name | Display name | Type    | Required |
      | :--------- | :----------- | :------ | -------- |
@@ -73,7 +75,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
      * select the `reviewerId` and enable it for `Identity` , enable `Primary Identity` and select Identity namespace `Email`.
 
-   * Set the name for this schema as `Product Reviews` and click `Save`.
+   * Click `Save`.
 
 ![](../../../.gitbook/assets/xdm_product_review.png)
 
@@ -172,7 +174,8 @@ Use the knowledge from Assignment 1 and connect to an Assurance Session to verif
 
 ### Override the default Dataset
 
-2. Send the Experience Event using the AEP Edge extension and specify the dataset identifier for `Product Reviews`.
+2. Send the Experience Event using the AEP Edge extension and specify the dataset identifier for `Product Reviews`. 
+   - Copy the `<DatasetIdentifier>`from the Adobe Experience Platform  `Product Reviews` dataset and replace it in the sample app implementation where indicated below.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -186,7 +189,7 @@ Use the knowledge from Assignment 1 and connect to an Assurance Session to verif
 // Edge configuration in Adobe Launch
 xdmData.put("eventType", "product.review");
 ExperienceEvent event = new ExperienceEvent.Builder()
-  .setXdmSchema(xdmData, "yourDatasetIdentifier")
+  .setXdmSchema(xdmData, "<DatasetIdentifier>")
   .build();
 Edge.sendEvent(event, new EdgeCallback() {
   @Override
@@ -209,10 +212,8 @@ Edge.sendEvent(event, new EdgeCallback() {
 // Edge configuration in Adobe Launch
 xdmData["eventType"] = "product.review"
 let experienceEvent =
-ExperienceEvent(xdm: xdmData,
-                data: nil,
-                datasetIdentifier: "yourDatasetIdentifier")
-Edge.sendEvent(experienceEvent: experienceEvent, responseHandler: nil)
+ExperienceEvent(xdm: xdmData, datasetIdentifier: "<DatasetIdentifier>")
+Edge.sendEvent(experienceEvent: experienceEvent)
 ```
 
 {% endtab %}
