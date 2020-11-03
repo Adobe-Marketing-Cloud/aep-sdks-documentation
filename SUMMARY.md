@@ -127,6 +127,7 @@
   * [Tutorials](beta/experience-platform-extension/tutorials/README.md)
     * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup.md)
     * [AEP Core setup](beta/experience-platform-extension/tutorials/tutorial-2-swift-core-setup.md)
+    * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
   * [Generate Environment Identifier](beta/experience-platform-extension/experience-platform-setup.md)
   * [Implement Experience Edge Extension](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
