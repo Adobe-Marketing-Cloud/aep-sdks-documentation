@@ -69,7 +69,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
      | productSku | Product SKU  | String  | Yes      |
      | reviewText | Review Text  | String  | No       |
      | rating     | Rating       | Integer | Yes      |
-     | reviewerId | Reviewer ID  | String  | No       |
+     | reviewerId | Reviewer ID  | String  | Yes      |
 
      * select the `reviewerId` and enable it for `Identity` , enable `Primary Identity` and select Identity namespace `Email`.
 
@@ -133,6 +133,7 @@ xdmData.put("_tenantId", new HashMap<String, Object>() {{
 	put("productSku", product.sku);
 	put("rating", rating);
 	put("reviewText", text);
+  put("reviewerId", reviewerId);
 }});
 ```
 
@@ -156,7 +157,8 @@ xdmData["identityMap"] = ["Email": [["id": reviewerEmail,
 // Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
 xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
                          "rating": reviewRating,
-                         "reviewText": reviewText]
+                         "reviewText": reviewText,
+                       	 "reviewerId": reviewerEmail]
 ```
 
 {% endtab %}
@@ -269,7 +271,7 @@ Query the dataset which stores the commerce data by doing the following:
    - Notice that the client-side ECID and the Email(s) you sent in XDM format using the Edge extension are now displayed in the `Detail` view, under the `Linked identities` section, as well as in the `Attributes` view.
    - In the `Events` tab you can view the events sent to the dataset(s) enabled for Profile for the selected customer profile.
 
-
+To learn more about Adobe Customer Profile, see [Identity Service overview](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html) and [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
 
 ## Extra credit: Create segment based on Identity Authentication State
 
