@@ -12,6 +12,17 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### November 4, 2020
+
+#### iOS Core 2.8.0
+
+- Update version for bundled ACPIdentity 2.4.0 release.
+
+#### iOS Identity 2.4.0
+
+* Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+* The default Identity Server URL of `dpm.demdex.com` is used if the SDK configuration parameter `experienceCloud.server` is either missing or an empty string.
+
 ### October 21, 2020
 
 #### iOS Core 2.7.6
