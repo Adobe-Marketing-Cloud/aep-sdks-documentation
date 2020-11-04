@@ -1,5 +1,16 @@
 # Release Notes
 
+### November 4, 2020
+
+#### iOS Core 2.8.0
+
+- Update version for bundled ACPIdentity 2.4.0 release.
+
+#### iOS Identity 2.4.0
+
+* Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+* The default Identity Server URL of `dpm.demdex.com` is used if the SDK configuration parameter `experienceCloud.server` is either missing or an empty string.
+
 ### October 21, 2020
 
 #### iOS Core 2.7.6
