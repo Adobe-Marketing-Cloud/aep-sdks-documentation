@@ -40,7 +40,7 @@ Download the [Swift base sample app](https://github.com/adobe/aepsdk-sample-app-
 
 1. Open `AppDelegate.swift` and add the following `import` statements.
 
-```text
+```swift
 import AEPCore
 import AEPLifecycle
 import AEPIdentity
@@ -49,9 +49,9 @@ import AEPSignal
 
 1. In the method `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` , register `Lifecycle` , `Identity` and `Signal` extensions and start the SDK. Also call the `MobileCore.configureWith(appId:)` to configure the app id. 
 
-```text
+```swift
 // enable the trace log, we need it in the future steps
-MobileCore.setLogLevel(level: .trace)
+MobileCore.setLogLevel(.trace)
 // init SDK
 MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
     // use the App id assigned to this application via Adobe Launch
@@ -69,7 +69,7 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 1. Open `AppDelegate.swift` and add the code to get `applicationState` and trigger `lifecycleStart`
 
-   ```text
+   ```swift
     let appState = application.applicationState;
     // init SDK
     MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
@@ -89,13 +89,13 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 3. In the `sceneWillEnterForeground` method, add:
 
-   ```text
+   ```swift
    MobileCore.lifecycleStart(additionalContextData: nil)
    ```
 
 4. In the `sceneDidEnterBackground` method, add:
 
-   ```text
+   ```swift
    MobileCore.lifecyclePause()
    ```
 
@@ -103,10 +103,14 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
 
 ### Sync Identifier
 
-1. Open `CoreViewController.swift`
+1. Open `CoreViewController.swift` and import `AEPIdentity`
+
+   ```swift
+   import AEPIdentity
+   ```
 2. Search for `Text("Sync Identifiers")`, and in the `action` block above it, use the `Identity.syncIdentifiers` API to sync the identifiers with the Identity service.
 
-   ```text
+   ```swift
    Identity.syncIdentifiers(identifiers: ["customId":"1234567"], authenticationState: .authenticated)
    ```
 

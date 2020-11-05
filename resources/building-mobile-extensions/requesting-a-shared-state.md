@@ -48,7 +48,7 @@ Here is the shared state constant:
 
 **Example structure**
 
-To see a configuration event data example, go to [Sample JSON file](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/sdk-core/sample-json-file).
+To see a configuration event data example, go to [Sample JSON file](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration#sample-configuration).
 
 `com.adobe.module.identity`, which is available after receiving a shared state update event where `eventData["stateowner"]=com.adobe.module.identity`.
 
