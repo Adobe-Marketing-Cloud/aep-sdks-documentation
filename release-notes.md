@@ -61,6 +61,14 @@ The following updates were made in this release:
 
 The following updates were made in this release:
 
+#### iOS Assurance 1.0.0
+
+* Production release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+#### Android Assurance 1.0.0
+
+* Production release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
 #### Android Analytics 1.2.6
 
 * Added error callbacks for following APIs getQueueSize, getTrackingIdentifier and getVisitorIdentifier. Instance of AdobeCallbackWithError can be passed to these API's as an arguement to receive error callbacks.
