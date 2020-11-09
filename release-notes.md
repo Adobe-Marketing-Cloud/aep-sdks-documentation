@@ -23,6 +23,12 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 * Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
 * The default Identity Server URL of `dpm.demdex.com` is used if the SDK configuration parameter `experienceCloud.server` is either missing or an empty string.
 
+### October 27, 2020
+
+#### iOS Griffon 1.2.1
+
+* Minor bugs fixed.
+
 ### October 21, 2020
 
 #### iOS Core 2.7.6
@@ -54,6 +60,14 @@ The following updates were made in this release:
 ### October 05, 2020
 
 The following updates were made in this release:
+
+#### iOS Assurance 1.0.0
+
+* General availability and release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+
+#### Android Assurance 1.0.0
+
+* General availability and release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 
 #### Android Analytics 1.2.6
 
