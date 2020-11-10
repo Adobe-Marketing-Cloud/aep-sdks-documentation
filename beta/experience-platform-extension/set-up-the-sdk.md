@@ -168,8 +168,11 @@ Parameters:
 * `experienceEvent (required)`should not be null.
 * `responseCallback (optional)`callback is invoked when the response handles are received from Experience Edge. It may be called on a different thread and may be invoked multiple times.
 
+> Note: When the Edge extension receives an `ExperienceEvent`, it is persisted to disk. This means that if an `ExperienceEvent` fails to be sent to the Edge network (usually due to a network connectivity issue), it will be retried at a later date, even between app launches.
+
 {% tabs %}
 {% tab title="Android" %}
+
 ### **Java**
 
 ### **Syntax**
