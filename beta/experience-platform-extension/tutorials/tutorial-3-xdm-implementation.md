@@ -56,7 +56,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
    * Click the `+ Add` button to add mixins
 
-     * Select `ExperienceEvent Environment Details` from the `Use existing mixin` section and click `Add mixin`.
+     * Select `Environment Details` from the `Use existing mixin` section and click `Add mixin`.
 
    * Click the `+ Add` button to add mixins
 

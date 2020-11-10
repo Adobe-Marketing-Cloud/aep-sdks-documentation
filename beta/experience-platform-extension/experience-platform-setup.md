@@ -20,8 +20,8 @@ To start collecting data in [Adobe Experience Platform](https://experience.adobe
    * Click `Create schema`
    * Select `XDM Experience event`
    * Add the following existing mixins:
-     * ExperienceEvent Environment Details
-     * ExperienceEvent Commerce Details
+     * Environment Details
+     * Commerce Details
    * Set a name for this schema and click `Save`.
 
 ![](../../.gitbook/assets/XDMSchemaExample.png)
