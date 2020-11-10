@@ -71,7 +71,7 @@ In this assignment you will learn how to:
 1. Update an existing XDM Schema
 2. Create data elements and rules for mobile properties in Adobe Experience Launch
 3. Attach new data to XDM events
-4. Validate the rules are executed correctly with Project Griffon
+4. Validate the rules are executed correctly with AEP Assurance (Project Griffon).
 
 Get started with [Assignment 4 - Rules for XDM events](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events).
 
