@@ -10,11 +10,11 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 * Minimal Swift / Android development knowledge 
 * Knowledge about the AEP Edge extension
 * Completion of [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup) (required to have a mobile property in Launch with Edge configuration setup).
-* Completion of [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events) (required to have a Product reviews schema and dataset).
+* Completion of [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation) (required to have a Product reviews schema and dataset).
 
 ### Download the sample application
 
-**Note:** This step is not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events).
+**Note:** This step is not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -38,7 +38,7 @@ To get started, follow the steps described in [AEP SDK Sample App Swift - Instal
 
 ### Set up the required fields
 
-**Note:** The steps in this section are not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events).
+**Note:** The steps in this section are not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation).
 
 In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the mobile property created in Assignment 1 and click on the Development![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)icon. Find the Environment File ID at the top and copy it.
 
