@@ -6,9 +6,9 @@ Experience Data Model \(XDM\) schemas are a set of rules that define and validat
 
 The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html#dnl-xdm-experienceevent) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following mixins should be included in the schema:
 
-* [ExperienceEvent Application Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-application.schema.md) - Data that is related to the application that generates or is targeted by the event.
-* [ExperienceEvent Environment Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) - Data that is related to the device, location, and surrounding environment.
-* [ExperienceEvent Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) - Data that is related to buying and selling lists of products.
+* [Application Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-application.schema.md) - Data that is related to the application that generates or is targeted by the event.
+* [Environment Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) - Data that is related to the device, location, and surrounding environment.
+* [Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) - Data that is related to buying and selling lists of products.
 
 ## Commerce
 
