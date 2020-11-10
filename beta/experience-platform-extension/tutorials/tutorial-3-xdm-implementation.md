@@ -185,7 +185,7 @@ Use the knowledge from Assignment 1 and connect to an Assurance Session to verif
 ```java
 // 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
 // shown in Adobe Experience Platform
-// Note: the Dataset identifier specified at Event level overrises the Experience Event Dataset specified in the
+// Note: the Dataset identifier specified at Event level overrides the Experience Event Dataset specified in the
 // Edge configuration in Adobe Launch
 xdmData.put("eventType", "product.review");
 ExperienceEvent event = new ExperienceEvent.Builder()
@@ -272,7 +272,7 @@ Query the dataset which stores the commerce data by doing the following:
    - Notice that the client-side ECID and the Email(s) you sent in XDM format using the Edge extension are now displayed in the `Detail` view, under the `Linked identities` section, as well as in the `Attributes` view.
    - In the `Events` tab you can view the events sent to the dataset(s) enabled for Profile for the selected customer profile.
 
-To learn more about Adobe Customer Profile, see [Identity Service overview](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html) and [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
+To learn more about the Adobe Customer Profile, see [Identity Service overview](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html) and [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
 
 ## Extra credit: Create segment based on Identity Authentication State
 
