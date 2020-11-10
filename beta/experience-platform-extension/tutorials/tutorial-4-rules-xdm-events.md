@@ -62,10 +62,10 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
 
    - Click on the plus icon `+` next to the schema name and add the following fields. Click `Apply` after each field added.
 
-     | Field name   | Display name  | Type   | Required |
-     | :----------- | :------------ | :----- | -------- |
-     | ratingSource | Rating Source | String | No       |
-     | ratingDate   | Rating Date   | String | No       |
+     | Field name   | Display name  | Type     | Required |
+     | :----------- | :------------ | :------- | -------- |
+     | ratingSource | Rating Source | String   | No       |
+     | ratingDate   | Rating Date   | DateTime | No       |
 
    - Click `Save` to update the schema.
 
