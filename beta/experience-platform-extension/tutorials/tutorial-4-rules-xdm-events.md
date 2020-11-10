@@ -133,6 +133,10 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
    - Select the development library and click `+ Add All Changed Resources`.
    - Click `Save & Build for Development`.
 
+{% hint style="info" %}
+The rules configured in Adobe Experience Launch for mobile properties are executed on the client-side mobile application by the AEP Rules Engine extension.
+{% endhint %}
+
 ### Test with the sample application
 
 Run the Sample app in a simulator or a device and generate product review XDM events:
@@ -152,3 +156,13 @@ Connect to an Assurance Session to inspect that the AEP Request Event has the co
 ### Extra credit: Update rule/add new rule of your choice
 
 Add a new rule in Adobe Experience Launch or update the one created in the previous steps. Then validate that the rule was correctly executed for your use-case using Project Griffon and/or Mobile SDK logging.
+
+### Next steps
+
+Find more details about the AEP Mobile SDK Rules Engine and the supported rule types, see [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine) and GitHub [adobe/aepsdk-rulesengine-ios](https://github.com/adobe/aepsdk-rulesengine-ios). 
+
+For more rules examples in Adobe Experience Launch, see the following links: 
+
+- [Attach data to SDK events](https://aep-sdks.gitbook.io/docs/resources/user-guides/attach-data)
+- [Modify data in SDK events](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data)
+- [Using data elements to define dynamic data in rules](https://aep-sdks.gitbook.io/docs/resources/user-guides/launch-data-elements)
