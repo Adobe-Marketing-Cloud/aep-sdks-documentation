@@ -6,7 +6,7 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 ## Beta Schedule
 
-### Assignment 1
+### Assignment 1 (week Oct 20)
 
 In this assignment you will learn how to:
 
@@ -25,7 +25,7 @@ Get started with [Assignment 1 - AEP Edge extension setup and XDM usage](https:/
 * [ ] XDM implementation validation
 * [ ] Clarity of documentation during the beta review call
 
-### Assignment 2
+### Assignment 2 (week Oct 27)
 
 In this assignment you will learn how to:
 
@@ -45,7 +45,7 @@ Get started with [Assignment 2 - Swift Core setup](https://aep-sdks.gitbook.io/d
 
 Feedback or questions can be posted to [Experience Edge Beta - Swift SDK Feedback](https://github.com/adobe/aepsdk-core-ios/issues/427).
 
-### Assignment 3
+### Assignment 3 (week Nov 3)
 
 In this assignment you will learn how to:
 
@@ -64,3 +64,20 @@ Get started with [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io
 * [ ] What type of visitor identifiers do you currently sync using the AEP SDK?
 * [ ] Do you prefer syncing the visitor identifiers using a specialized API (example [syncIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifier)), XDM format, remote rules or a combination of these?
 
+### Assignment 4 (week Nov 10)
+
+In this assignment you will learn how to:
+
+1. Update an existing XDM Schema
+2. Create data elements and rules for mobile properties in Adobe Experience Launch
+3. Attach new data to XDM events
+4. Validate the rules are executed correctly with AEP Assurance (Project Griffon).
+
+Get started with [Assignment 4 - Rules for XDM events](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events).
+
+#### Prepare to provide feedback on:
+
+* [ ] General feedback about mobile data elements and rules usage
+* [ ] Examples of mobile rules used in your experience
+* [ ] Ease to validate rules execution when using the AEP Mobile SDK
+* [ ] What validation techniques do you use when configuring rules remotely
