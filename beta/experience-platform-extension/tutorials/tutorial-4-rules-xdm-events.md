@@ -94,38 +94,39 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
 
    - Click `Create New Rule`.
 - Click on the `+ Add` button in the Events section.
-   
+  
   - Select `Adobe Experience Platform Edge` for Extension.
      - Select `AEP Request Event`.
      - Click on the `+` button to Add XDM Event Type.
      - Select `XDM Event Type equals product.review`.
      - Click `Keep Changes`.
-   
+  
+
 ![](../../../.gitbook/assets/rule_xdm_event_type.png)
-   
+
 - Click on the `+ Add` button in the Actions section.
-   
+  
   - Select `Mobile Core` from the Extensions drop-down and `Attach Data` as Action type.
-   
+  
   - In the JSON Payload box, add the following content and modify `_tenantId` to the org identifier found in the `Product reviews` schema:
-   
+  
     ```json
      {
            "xdm": {
                "_tenantId": {
-                   "ratingDate": "{%%XDM timestamp%%}",
+                   "ratingDate": "{%%Event timestamp%%}",
                    "ratingSource": "MobileApp {%%App ID%%} OS {%%Operating system version%%}"
                }
            }
        }
-       ```
-     
+    ```
+    
   - Note that the 3 data elements created in step 3 are used here to populate the `ratingDate` and `ratingSource` XDM fields.
-   
+  
      - Click `Keep Changes`.
      
    - Set a name and click `Save` to keep the rule.
-   
+  
 5. Publish the new data elements and rule created:
 
    - Click on `Publishing Flow` from the left panel.
