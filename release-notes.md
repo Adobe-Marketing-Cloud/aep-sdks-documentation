@@ -12,6 +12,17 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### November 9, 2020
+
+#### iOS Audience 2.1.0
+* Added new APIs getVisitorProfileWithCompletionHandler, signalWithData:WithCompletionHandler. These APIs take completion handler as an argument which is invoked with the desirable response or an NSError if an unexpected error occurs or the request times out.
+* Added changes to publish Audience shared state on EventHub boot.
+* Fixed an issue to handle Analytics response only if AAMForwarding is enabled.
+
+#### Android Audience 1.1.0
+* Added support for AdobeCallbackWithError for APIs getVisitorProfile, signalWithData.
+* Added changes to publish Audience shared state on EventHub boot.
+
 ### November 4, 2020
 
 #### iOS Core 2.8.0
@@ -53,7 +64,7 @@ The following updates were made in this release:
 
 #### iOS Analytics 2.4.0
 
-* Added new APIs getQueueSizeWithCompletionHandler, getTrackingIdentifierWithCompletionHandler and getVisitorIdentifierWithCompletionHandler. These APIs take completion handler as an arguement which is invoked with the queue size or an NSError if an unexpected error occurs or the request times out.
+* Added new APIs getQueueSizeWithCompletionHandler, getTrackingIdentifierWithCompletionHandler and getVisitorIdentifierWithCompletionHandler. These APIs take completion handler as an argument which is invoked with the desirable response or an NSError if an unexpected error occurs or the request times out.
 * Added an enhancement to append previous app id and previous os version to backdated session info hits.
 * Changes to read from Assurance shared state.
 
@@ -1578,4 +1589,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-

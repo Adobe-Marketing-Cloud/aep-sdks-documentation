@@ -10,6 +10,8 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 
 This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `SharedPreferences`. If no signal has been submitted, null is returned.
 
+When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
+
 #### **Syntax**
 
 ```java
@@ -33,12 +35,18 @@ Audience.getVisitorProfile(visitorProfileCallback);
 {% tab title="iOS" %}
 ### getVisitorProfile
 
+{% hint style="info" %}
+Method `getVisitorProfileWithCompletionHandler` was added in ACPAudience version 2.1.0.
+{% endhint %}
+
 This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
 
 #### **Syntax**
 
 ```objectivec
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
+
++ (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
 ```
 
 #### **Example**
@@ -47,16 +55,32 @@ This API returns the visitor profile that was most recently obtained. For easy a
 
 ```objectivec
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
-  // your customized code
+  // handle the visitorProfile here
+}];
+
+[ACPAudience getVisitorProfileWithCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the returned visitorProfile here
+  }
 }];
 ```
 
 **Swift**
 
 ```swift
-ACPAudience.getVisitorProfile({(_ response: [AnyHashable: Any]?) -> Void in
-    // your customized code
-})
+ACPAudience.getVisitorProfile { (visitorProfile) in
+  // handle the visitorProfile here
+}
+
+ACPAudience.getVisitorProfile { (visitorProfile, error) in
+  if let error = error {
+    // handle error here
+  } else {
+    // handle the returned visitorProfile here
+  }
+}
 ```
 {% endtab %}
 
@@ -70,6 +94,7 @@ ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK:
 ```
 {% endtab %}
 {% endtabs %}
+
 
 ## registerExtension
 
@@ -210,6 +235,8 @@ This API sends Audience Manager a signal with traits and returns the matching se
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the ECID is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
+When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
+
 #### **Syntax**
 
 ```java
@@ -225,7 +252,7 @@ public static void signalWithData(final Map<String, String> data, final AdobeCal
 AdobeCallback<Map<String, String>> visitorProfileCallback = new AdobeCallback<Map<String, String>>() {
     @Override
     public void call(final Map<String, String> visitorProfile) {
-        // your own customized code
+        // handle the returned visitorProfile here
     }
 };
 ​
@@ -238,6 +265,10 @@ Audience.signalWithData(traits, visitorProfileCallback);
 {% tab title="iOS" %}
 ### signalWithData
 
+{% hint style="info" %}
+Method `signalWithData:withCompletionHandler` was added in ACPAudience version 2.1.0.
+{% endhint %}
+
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
@@ -247,6 +278,9 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 ```objectivec
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
+
++ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
+                        withCompletionHandler:: (nullable void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
 ```
 
 * `data` is the traits data for the current visitor.
@@ -259,15 +293,32 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 ```objectivec
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* visitorProfile){
-  // your customized code
+  // handle the visitorProfile here
+}];
+
+[ACPAudience signalWithData:(NSDictionary<NSString *,NSString *> * _Nonnull)
+          withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the returned visitorProfile here
+  }
 }];
 ```
 
 **Swift**
 
 ```swift
-ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: {(_ response: [AnyHashable: Any]?) -> Void in
-  // your customized code
+ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: { (visitorProfile) in
+  // handle the visitorProfile here  
+})
+
+ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], withCompletionHandler: { (visitorProfile, error) in
+  if let error = error {
+    // handle error
+  } else {
+    // handle the returned visitorProfile here
+  }    
 })
 ```
 {% endtab %}
@@ -282,4 +333,3 @@ ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => con
 ```
 {% endtab %}
 {% endtabs %}
-
