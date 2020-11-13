@@ -24,9 +24,9 @@ Follow the step by step instructions in [Generate Environment Identifier](https:
 
 ### Configure the Launch Mobile property
 
-As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/59b0d1f72eaa51e8b6a6b2d580f38379f5453129/beta/using-mobile-extensions/mobile-core/README.md).
+As a pre-requisite, the AEP Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core).
 
-Experience Edge extension relies on the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/59b0d1f72eaa51e8b6a6b2d580f38379f5453129/beta/using-mobile-extensions/mobile-core/README.md) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
+Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
 
 1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 2. Install the `Adobe Experience Platform Edge` extension from the Catalog.
