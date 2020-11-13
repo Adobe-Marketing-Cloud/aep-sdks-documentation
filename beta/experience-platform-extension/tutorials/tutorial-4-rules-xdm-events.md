@@ -143,7 +143,7 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 
 - In the sample app, navigate to the Edge tab.
 - Select a product, add the review information and click `Submit Review`.
-- In the console log search for this log message - `Attaching event data` (iOS) / `New EventData for Event` (Android) and check that `ratingData` and `ratingSource` were attached correctly. 
+- In the console log search for this log message - `Attaching event data` (iOS) / `New EventData for Event` (Android) and check that `ratingDate` and `ratingSource` were attached correctly. 
 - Verify if the logging messages are intuitive and descriptive for the use-case you are testing.
 
 ### Validate the event data with AEP Assurance
@@ -151,7 +151,7 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 Connect to an Assurance Session to inspect that the AEP Request Event has the correct data. To set up an Assurance session with the Sample app, follow the steps in [Using AEP Assurance](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance).
 
 - Once connected to Project Griffon, search for AEP Request Event in your session.
-- Check that the XDM data for the `product.review` event is correctly updated with the two new fields  `ratingData` and `ratingSource`.
+- Check that the XDM data for the `product.review` event is correctly updated with the two new fields  `ratingDate` and `ratingSource`.
 
 ### Extra credit: Update rule/add new rule of your choice
 
