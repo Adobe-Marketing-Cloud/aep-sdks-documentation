@@ -86,7 +86,7 @@ Get started with [Assignment 4 - Rules for XDM events](https://aep-sdks.gitbook.
 
 In this assignment you will learn how to:
 
-1. Configure Analytics in Experience Edge environments
+1. Configure Analytics using the Edge Configuration.
 2. Include Analytics Edge extension in sample apps
 3. Review trackAction and trackState calls​
 

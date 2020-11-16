@@ -15,7 +15,7 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 In Adobe Experience Platform Launch, navigate to your mobile property and select Edge Configurations from the left panel, then select the configuration created in Assignment 1
 
-* Select development environment, enable `Adobe Analytics` and add development report suite to send analytics data.
+* Select development environment, enable `Adobe Analytics` and add a development report suite. If you don't have one, create a new report suite for this exercise using the Mobile template.
 
    ![](../../../.gitbook/assets/edge_analytics_config.png)
 
@@ -46,14 +46,14 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `A
 Analytics Edge Android extension is currently under development and will be available soon.
 {% endhint %}
 
-1. Add the following code to the `Podfile`
+1. Add the following code to the `aepsdk-sample-app-ios/Swift/Podfile`
 
 ```text
   pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main'
 ```
 
-2. Run `pod install` in the `AEPSampleApp` base folder, it should download all the dependencies and add them to the project.
-3. Open the project from \`AEPSampleApp.xcworkspace
+2. Run `pod install` in the `aepsdk-sample-app-ios/Swift` folder, it should download all the dependencies and add them to the project.
+3. Open the project from `aepsdk-sample-app-ios/Swift/AEPSampleApp.xcworkspace`
 
 ### Init Extension
 
@@ -79,7 +79,7 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.
 
 3. You should see the reports get populated in the configured report suite. 
 
-Here is a sample report which captures actions and page views from the sample application. 
+Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
 
   ![](../../../.gitbook/assets/edge_analytics_report.png)
 
