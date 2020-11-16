@@ -42,6 +42,10 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `A
 
 ### Install the AnalyticsEdge Extension
 
+{% hint style="info" %}
+Analytics Edge Android extension is currently under development and will be available soon.
+{% endhint %}
+
 1. Add the following code to the `Podfile`
 
 ```text
@@ -73,7 +77,11 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.
 
 2. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
 
-3. You should see the reports get populated in the configured report suite 
+3. You should see the reports get populated in the configured report suite. 
+
+Here is a sample report which captures actions and page views from the sample application. 
+
+  ![](../../../.gitbook/assets/edge_analytics_report.png)
 
 ### Next steps
 
