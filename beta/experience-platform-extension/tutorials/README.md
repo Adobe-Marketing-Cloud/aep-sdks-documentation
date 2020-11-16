@@ -81,3 +81,18 @@ Get started with [Assignment 4 - Rules for XDM events](https://aep-sdks.gitbook.
 * [ ] Examples of mobile rules used in your experience
 * [ ] Ease to validate rules execution when using the AEP Mobile SDK
 * [ ] What validation techniques do you use when configuring rules remotely
+
+### Assignment 5 (week Nov 17)
+
+In this assignment you will learn how to:
+
+1. Configure Analytics using the Edge Configuration.
+2. Include Analytics Edge extension in sample apps
+3. Review trackAction and trackState calls​
+
+Get started with [Assignment 5 - Analytics edge extension](./tutorial-5-analytics-edge-extension.md).
+
+#### Prepare to provide feedback on:
+
+* [ ] General feedback about setup and configuration of AnalyticsEdge extension
+* [ ] Support existing analytics workflows with this extension 
