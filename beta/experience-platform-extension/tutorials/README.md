@@ -90,7 +90,7 @@ In this assignment you will learn how to:
 2. Include Analytics Edge extension in sample apps
 3. Review trackAction and trackState calls​
 
-Get started with [Assignment 5 - Analytics edge extension](./tutorial-5-analytics-edge-extension).
+Get started with [Assignment 5 - Analytics edge extension](./tutorial-5-analytics-edge-extension.md).
 
 #### Prepare to provide feedback on:
 
