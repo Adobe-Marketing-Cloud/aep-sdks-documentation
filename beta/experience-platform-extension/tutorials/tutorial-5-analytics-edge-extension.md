@@ -80,6 +80,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `A
 ![](../../../.gitbook/assets/edge_analytics_report.png)
 
 
+
 5. You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
 
 6. Once connected to Assurance, you should start seeing `AEP Request Event` of type `legacy.analytics` sent to Experience Edge for each track call.
