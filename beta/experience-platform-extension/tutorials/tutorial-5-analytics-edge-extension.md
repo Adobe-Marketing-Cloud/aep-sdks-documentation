@@ -62,7 +62,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `A
 import AEPAnalyticsEdge
 ```
 
-1. In the method `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` , register `Analytics` extension before starting the SDK. Also call the `MobileCore.configureWith(appId:)` to configure the app id. 
+2. In the method `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` , register `Analytics` extension before starting the SDK. Also call the `MobileCore.configureWith(appId:)` to configure the app id. 
 
 ```swift
 // enable the trace log, we need it in the future steps
@@ -74,16 +74,16 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.
 })
 ```
 
-2. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
+3. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
 
-3. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
+4. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
 
   ![](../../../.gitbook/assets/edge_analytics_report.png)
 
 
-4. You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
+5. You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
 
-5. Once connected to Assurance, you should start seeing `AEP Request Event` of type `legacy.analytics` sent to Experience Edge for each track call.
+6. Once connected to Assurance, you should start seeing `AEP Request Event` of type `legacy.analytics` sent to Experience Edge for each track call.
 
 ### Next steps
 
