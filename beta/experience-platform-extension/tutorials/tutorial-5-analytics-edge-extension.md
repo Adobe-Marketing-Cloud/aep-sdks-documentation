@@ -41,9 +41,9 @@ Analytics Edge Android extension is currently under development and will be avai
 
 1. Add the following code to the `aepsdk-sample-app-ios/Swift/Podfile`
 
-```text
-  pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main'
-```
+  ```text
+    pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main'
+  ```
 
 2. Run `pod install` in the `aepsdk-sample-app-ios/Swift` folder, it should download all the dependencies and add them to the project.
 3. Open the project from `aepsdk-sample-app-ios/Swift/AEPSampleApp.xcworkspace`
@@ -58,32 +58,32 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `A
 
 1. Open `AppDelegate.swift` and add the following `import` statements.
 
-```swift
-import AEPAnalyticsEdge
-```
+  ```swift
+  import AEPAnalyticsEdge
+  ```
 
-1. In the method `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` , register `Analytics` extension before starting the SDK. Also call the `MobileCore.configureWith(appId:)` to configure the app id. 
+2. In the method `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool` , register `Analytics` extension before starting the SDK. Also call the `MobileCore.configureWith(appId:)` to configure the app id. 
 
-```swift
-// enable the trace log, we need it in the future steps
-MobileCore.setLogLevel(.trace)
-// init SDK
-MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self, Analytics.self], {
-    // use the App id assigned to this application via Adobe Launch
-    MobileCore.configureWith(appId: self.LAUNCH_ENVIRONMENT_FILE_ID)
-})
-```
+  ```swift
+  // enable the trace log, we need it in the future steps
+  MobileCore.setLogLevel(.trace)
+  // init SDK
+  MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self, Analytics.self], {
+      // use the App id assigned to this application via Adobe Launch
+      MobileCore.configureWith(appId: self.LAUNCH_ENVIRONMENT_FILE_ID)
+  })
+  ```
 
-2. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
+3. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
 
-3. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
+4. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
 
   ![](../../../.gitbook/assets/edge_analytics_report.png)
 
 
-4. You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
+5. You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
 
-5. Once connected to Assurance, you should start seeing `AEP Request Event` of type `legacy.analytics` sent to Experience Edge for each track call.
+6. Once connected to Assurance, you should start seeing `AEP Request Event` of type `legacy.analytics` sent to Experience Edge for each track call.
 
 ### Next steps
 
