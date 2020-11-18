@@ -1,10 +1,16 @@
 # Release Notes
 
+### November 18, 2020
+
+#### iOS Core 2.8.1
+
+* Fixed a memory alignment issue that caused crashes in iOS 10.x.
+
 ### November 4, 2020
 
 #### iOS Core 2.8.0
 
-- Update version for bundled ACPIdentity 2.4.0 release.
+* Update version for bundled ACPIdentity 2.4.0 release.
 
 #### iOS Identity 2.4.0
 
@@ -37,7 +43,7 @@
 
 ### Android Core 1.5.7
 
-* Fixed the issue where it may fail to save caches when `Etag` contains special characters. 
+* Fixed the issue where it may fail to save caches when `Etag` contains special characters.
 
 ### Android Identity 1.2.1
 
@@ -276,7 +282,7 @@ The following updates were made in this release:
 
 **iOS Core 2.4.0**
 
-* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class. 
+* Added a new property, `eventUniqueIdentifier`, to the `ACPExtensionEvent` class.
 * Fixed an issue where the advertising identifier was duplicated in the response of the `getSDKIdentifiers` API.
 * Fixed an issue where the SDK was trying to download the rules multipile times immediately after app launch.
 * Fixed a crash on `std::__1::system_error: mutex lock failed: Invalid argument`.
@@ -355,4 +361,3 @@ The following updates were made in this release:
 * The duplicate advertising identifier value is removed from the Identity-shared state when MobileCore.setAdvertisingIdentifier is called with a new value.
 * The global.ssl configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where appendVisitorInfoForURL uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
-
