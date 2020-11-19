@@ -128,7 +128,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
 * You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
 
-
+![](../../../.gitbook/assets/edge_analytics_report.png)
 
 * You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
 
