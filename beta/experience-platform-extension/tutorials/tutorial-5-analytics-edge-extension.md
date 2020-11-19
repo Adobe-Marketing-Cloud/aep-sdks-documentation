@@ -121,19 +121,12 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
   })
   ```
 
-<<<<<<< HEAD
 {% endtab %}
 {% endtabs %}
 
 * Now run the app, find the `Track Action` or `Track State` button in the `Core` tab (Swift) or `Analytics` tab (Android) and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
 
 * You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
-=======
-3. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
-4. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application.  
-
-![](../../../.gitbook/assets/edge_analytics_report.png)
->>>>>>> 1361062600112beb7dcb4a9753ae8634cef6ec8a
 
 
 
