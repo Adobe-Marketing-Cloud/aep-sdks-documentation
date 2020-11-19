@@ -17,7 +17,7 @@ In Adobe Experience Platform Launch, navigate to your mobile property and select
 
 * Select development environment, enable `Adobe Analytics` and add a development report suite. If you don't have one, create a new report suite for this exercise using the Mobile template.
 
-   ![](../../../.gitbook/assets/edge_analytics_config.png)
+![](../../../.gitbook/assets/edge_analytics_config.png)
 
 
 ### Download the sample application
@@ -121,14 +121,20 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
   })
   ```
 
+<<<<<<< HEAD
 {% endtab %}
 {% endtabs %}
 
 * Now run the app, find the `Track Action` or `Track State` button in the `Core` tab (Swift) or `Analytics` tab (Android) and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
 
 * You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application. 
+=======
+3. Now run the app, find the `Track Action` or `Track State` button in the `Core` tab and click on it. You should see in the logs that a corresponding edge request is sent containing the track data. 
+4. You should see the reports get populated in the configured report suite. Here is a sample real-time Analytics report which captures actions and page views from the sample application.  
 
-  ![](../../../.gitbook/assets/edge_analytics_report.png)
+![](../../../.gitbook/assets/edge_analytics_report.png)
+>>>>>>> 1361062600112beb7dcb4a9753ae8634cef6ec8a
+
 
 
 * You can follow the steps from [Assignment 1](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance) to use AEP Assurance (also known as Project Griffon) to examine the events being sent through the AEP Mobile SDK.
