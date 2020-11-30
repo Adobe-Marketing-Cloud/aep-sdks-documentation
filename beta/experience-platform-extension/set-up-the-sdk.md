@@ -170,6 +170,7 @@ Parameters:
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### **Java**
 
 ### **Syntax**
@@ -201,6 +202,8 @@ Edge.sendEvent(event, null);
 
 {% tab title="iOS" %}
 ### **Swift**
+
+> Note: When the Edge extension receives an `ExperienceEvent`, it is persisted to disk. This means that if an `ExperienceEvent` fails to be sent to the Edge network (usually due to a network connectivity issue), it will be retried at a later date, even between app launches.
 
 ### **Syntax**
 
