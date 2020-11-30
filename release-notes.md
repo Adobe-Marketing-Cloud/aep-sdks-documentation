@@ -12,6 +12,37 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### November 24, 2020
+
+#### Android Assurance 1.0.1
+
+- Fixed a bug that triggered ANR (Application not responsive) error while initializing webview.
+
+### November 23, 2020
+
+The following updates were made in this release:
+
+#### React Native Assurance 1.0.0
+
+- Assurance extension released for React Native. See: [Assurance React Native](https://www.npmjs.com/package/@adobe/react-native-aepassurance)
+
+#### Flutter Assurance 1.0.1
+
+- Assurance extension released for Flutter. See: [Assurance Flutter](https://pub.dev/packages/flutter_assurance)
+
+#### Xamarin Assurance 0.0.1
+
+- Assurance extension released for Xamarin iOS. See : [Xamarin Assurance iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
+- Assurance extension released for Xamarin Android. See : [Xamarin  Assurance Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) 
+
+#### Cordova Assurance 0.0.1
+
+- Support for Assurance extension in Cordova. See : [Assurance Cordova](https://www.npmjs.com/package/@adobe/cordova-aepassurance)
+
+#### Unity Assurance 0.0.1
+
+- Assurance extension released for Unity. See: [Assurance Unity](https://github.com/adobe/unity-aepassurance) 
+
 ### November 18, 2020
 
 #### iOS Core 2.8.1
