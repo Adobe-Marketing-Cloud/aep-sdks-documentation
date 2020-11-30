@@ -13,7 +13,7 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 
 #### Create a Launch Server Side Property
 
-We will create a Launch Server Side property that can be used to maniupate and forward data from our Mobile application to 3rd party vendors or internal systems. Launch Server Side rules can be used with data sent from Web and Mobile properties at the same time. Follow the steps below to create your Launch Server Side property.
+We will create a Launch Server Side property that can be used to manipulate and forward data from our Mobile application to 3rd party vendors or internal systems. Launch Server Side rules can be used with data sent from Web and Mobile properties at the same time. Follow the steps below to create your Launch Server Side property.
 
 1. Login to [http://launch-demo.adobe.com](http://launch-demo.adobe.com)
 2. In the upper-left menu select `Server Side` as the configuration type
