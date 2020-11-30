@@ -11,7 +11,7 @@ To get started with Audience Manager, complete these steps:
    * Send signals to Audience Manager.
    * Reset the Audience Manager identifiers and visitor profiles.
 
-## Configuring the Audience Manager extension in Experience Platform Launch     <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Experience Platform Launch <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm-1.png)
 
@@ -166,7 +166,7 @@ For more information about implementing Audience Manager APIs, see [Audience Man
 To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description | Data Type |
-| :--- | :--- | :--- | ---- |
+| :--- | :--- | :--- | :--- |
 | `audience.server` | Yes | Server endpoint used to collect Audience Manager data | String |
 | `audience.timeout` | No | Time, in seconds, to wait for a response from Audience Manager before timing out. Default value is 2 seconds. | Integer |
 

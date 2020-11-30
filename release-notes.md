@@ -21,11 +21,13 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 ### November 9, 2020
 
 #### iOS Audience 2.1.0
+
 * Added new APIs getVisitorProfileWithCompletionHandler, signalWithData:WithCompletionHandler. These APIs take completion handler as an argument which is invoked with the desirable response or an NSError if an unexpected error occurs or the request times out.
 * Added changes to publish Audience shared state on EventHub boot.
 * Fixed an issue to handle Analytics response only if AAMForwarding is enabled.
 
 #### Android Audience 1.1.0
+
 * Added support for AdobeCallbackWithError for APIs getVisitorProfile, signalWithData.
 * Added changes to publish Audience shared state on EventHub boot.
 
@@ -33,7 +35,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 #### iOS Core 2.8.0
 
-- Update version for bundled ACPIdentity 2.4.0 release.
+* Update version for bundled ACPIdentity 2.4.0 release.
 
 #### iOS Identity 2.4.0
 
@@ -1595,3 +1597,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

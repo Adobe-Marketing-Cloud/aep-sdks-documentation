@@ -130,6 +130,7 @@
     * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
     * [Rules for XDM events](beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events.md)
     * [Analytics Edge extension](beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension.md)
+    * [Launch Server Side](beta/experience-platform-extension/tutorials/launch-server-side.md)
   * [Generate Environment Identifier](beta/experience-platform-extension/experience-platform-setup.md)
   * [Implement Experience Edge Extension](beta/experience-platform-extension/set-up-the-sdk.md)
   * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)

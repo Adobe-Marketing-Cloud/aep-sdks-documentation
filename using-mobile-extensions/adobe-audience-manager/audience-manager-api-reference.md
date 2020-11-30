@@ -10,7 +10,7 @@ Returns the visitor profile that was most recently updated. The visitor profile 
 
 This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `SharedPreferences`. If no signal has been submitted, null is returned.
 
-When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
+When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout \(5000ms\) is met before the callback is returned with the visitor profile.
 
 #### **Syntax**
 
@@ -94,7 +94,6 @@ ACPAudience.getVisitorProfile().then(profile => console.log("AdobeExperienceSDK:
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## registerExtension
 
@@ -235,7 +234,7 @@ This API sends Audience Manager a signal with traits and returns the matching se
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the ECID is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
-When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
+When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout \(5000ms\) is met before the callback is returned with the visitor profile.
 
 #### **Syntax**
 
@@ -333,3 +332,4 @@ ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => con
 ```
 {% endtab %}
 {% endtabs %}
+

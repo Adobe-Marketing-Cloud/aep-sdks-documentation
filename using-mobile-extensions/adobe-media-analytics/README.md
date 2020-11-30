@@ -243,7 +243,7 @@ When using React Native, registering Media with Mobile Core should be done in na
 To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description | Data Type |
-| :--- | :--- | :--- | ---- |
+| :--- | :--- | :--- | :--- |
 | `media.collectionServer` | Yes | Media Collection Server endpoint to which all the media tracking data is sent. For more information, see [Collection Server](./#collection-api-server). | String |
 | `media.channel` | No | Channel name. For more information, see [Channel](./#channel). | String |
 | `media.playerName` | No | Name of the media player in use, i.e., "AVPlayer", "HTML5 Player", "My Custom Player". For more information, see [Player Name](./#player-name). | String |

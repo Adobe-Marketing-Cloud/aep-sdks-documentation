@@ -663,7 +663,7 @@ ACPCore.TrackState("State Name", contextData);
 To update the SDK configuration programmatically, use the following information to change your Analytics configuration values.
 
 | Key | Required | Description | Data Type |
-| :--- | :--- | :--- | ---- |
+| :--- | :--- | :--- | :--- |
 | analytics.server | Yes | See [Tracking Server](./#tracking-server) | String |
 | analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" | String |
 | analytics.batchLimit | No | See [Batch Limit](./#batch-limit) | Integer |

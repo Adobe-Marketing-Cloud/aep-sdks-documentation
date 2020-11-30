@@ -108,6 +108,7 @@ MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self], {
    ```swift
    import AEPIdentity
    ```
+
 2. Search for `Text("Sync Identifiers")`, and in the `action` block above it, use the `Identity.syncIdentifiers` API to sync the identifiers with the Identity service.
 
    ```swift
