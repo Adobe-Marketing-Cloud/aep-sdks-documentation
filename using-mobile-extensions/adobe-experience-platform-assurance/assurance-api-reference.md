@@ -1,8 +1,8 @@
-# Assurance API reference
+# AEP Assurance API reference
 
 ## extensionVersion
 
-Returns the current version of the AEPAssurance extension
+Returns the current version of the AEP Assurance extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -45,6 +45,18 @@ AEPAssurance.extensionVersion()
 ```
 {% endtab %}
 
+{% tab title="React Native" %}
+
+### JavaScript
+
+### Example
+
+```objectivec
+AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEP Assurance version: " + version));
+```
+
+{% endtab %}
+
 {% tab title="Flutter" %}
 ### Dart
 
@@ -60,11 +72,60 @@ static Future<String> get extensionVersion async
 assuranceVersion = await FlutterAssurance.extensionVersion;
 ```
 {% endtab %}
+
+{% tab title="Cordova" %}
+
+### Syntax
+
+```javascript
+AEPAssurance.extensionVersion = function(success, fail);
+```
+
+### Example
+
+```javascript
+AEPAssurance.extensionVersion(function(version) {  
+   console.log("AEPAssurance version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+
+{% endtab %}
+
+{% tab title="Unity" %}
+
+### Syntax
+
+```c#
+public static string ExtensionVersion()
+```
+
+### Example in C#
+
+```c#
+string version = AEPAssurance.ExtensionVersion();
+print(LOG_TAG + "Assurance version: "+version);
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+### Example in C#
+
+```
+string version = AEPAssurance.ExtensionVersion()  
+Console.WriteLine("AEPAssurance version installed is: " + version);
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## startSession
 
-The `startSession` API needs to be called to begin a AEPAssurance session. When called, SDK displays a PIN authentication overlay to begin a session.
+The `startSession` API needs to be called to begin a AEP Assurance session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
 You may call this API when the app launches with a url \(see code snippet below for sample usage\)
@@ -74,7 +135,7 @@ You may call this API when the app launches with a url \(see code snippet below 
 {% tab title="Android" %}
 This API is optional for Android.
 
-Android does not require this API to be called. When the `registerExtension` API is called, Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
+Android does not require this API to be called. When the `registerExtension` API is called, AEP Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 ### Java
 
@@ -131,6 +192,18 @@ For SceneDelegate based applications
 ```
 {% endtab %}
 
+{% tab title="React Native" %}
+
+### JavaScript
+
+### Example
+
+```javascript
+AEPAssurance.startSession("your-griffon-session-url");
+```
+
+{% endtab %}
+
 {% tab title="Flutter" %}
 ### Dart
 
@@ -145,6 +218,54 @@ static Future<void> startSession(String url);
 ```dart
 FlutterAssurance.startSession(url);
 ```
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+### Syntax
+
+```javascript
+AEPAssurance.startSession = function(sessionurl,success, fail);
+```
+
+### Example
+
+```javascript
+AEPAssurance.startSession(url,function(result) {  
+   console.log("AdobeExperenceSDK: AEPAssurance session started succesfully: " + result);
+}, function(error) {  
+   console.log("AdobeExperenceSDK: Failed to start AEPAssurance session: " + error);
+});
+```
+
+{% endtab %}
+
+{% tab title="Unity" %}
+
+### Syntax
+
+```c#
+public static void StartSession(string url)
+```
+
+### Example in C#
+
+```c#
+AEPAssurance.StartSession(url);
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+### Example in C#
+
+```
+AEPAssurance.StartSession(url);
+```
+
+{% endtab %}
+
 {% endtab %}
 {% endtabs %}
 

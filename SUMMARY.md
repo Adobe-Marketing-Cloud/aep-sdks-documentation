@@ -72,6 +72,7 @@
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Assurance](using-mobile-extensions/adobe-experience-platform-assurance/README.md)
+  * [Release Notes](using-mobile-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md) 
   * [Assurance API reference](using-mobile-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](using-mobile-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
 * [Places Service](using-mobile-extensions/adobe-places.md)

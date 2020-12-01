@@ -8,12 +8,12 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the Assurance extension in Experience Platform Launch
-2. Add AEPAssurance SDK extension library to your app
-   1. Import AEPAssurance into your app
+1. Install the AEP Assurance extension in Experience Platform Launch
+2. Add AEP Assurance SDK extension library to your app
+   1. Import AEP Assurance into your app
    2. Register and implement extension APIs
 
-## Install the Assurance extension in Experience Platform Launch
+## Install the AEP Assurance extension in Experience Platform Launch
 
 Follow these steps to add the install the extension in Experience Platform Launch:
 
@@ -74,39 +74,119 @@ import AEPAssurance // <-- import the AEPAssurance library
 {% tab title="React Native" %}
 #### React Native
 
-{% hint style="danger" %}
-Updated support for React Native is coming. This section will be updated shortly.
-{% endhint %}
+1. Install AEP Assurance.
+
+   ```bash
+   npm install @adobe/react-native-aepassurance
+   ```
+
+   1.1 Link
+
+   * **React Native 0.60+**
+
+[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+
+* **React Native &lt;= 0.59**
+
+```bash
+   react-native link @adobe/react-native-aepassurance
+```
+
+_Note_ For `iOS` using `cocoapods`, run:
+
+```bash
+   cd ios/ && pod install
+```
+
+1. Import the extension.
+
+   ```jsx
+    import {AEPAssurance} from '@adobe/react-native-aepassurance';
+   ```
+
+2. Get the extension version.
+
+   ```jsx
+    AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEPAssurance version: " + version));
+   ```
+
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+#### Flutter
 
-Flutter install instructions for AEPAssurance can be found [here](https://pub.dev/packages/flutter_assurance/install).
+1. Install AEP Assurance.
+
+   Flutter install instructions for AEP Assurance can be found [here](https://pub.dev/packages/flutter_assurance/install). 
+
+2. Import the extension.
+
+   ```dart
+   import 'package:flutter_assurance/flutter_assurance.dart';
+   ```
+
+3. Get the extension version.
+
+   ```dart
+   String version = await FlutterAEPAssurance.extensionVersion;
+   ```
+
 {% endtab %}
 
 {% tab title="Cordova" %}
+
 #### Cordova
 
-{% hint style="danger" %}
-Updated support for Cordova is coming. This section will be updated shortly.
-{% endhint %}
+1. After creating your Cordova app and adding the Android and iOS platforms, the AEPAssurance extension for Cordova can be added with this command:
+
+   ```text
+   cordova plugin add https://github.com/adobe/cordova-aepassurance.git
+   ```
+
+2. Get the extension version.
+
+   ```jsx
+   AEPAssurance.extensionVersion(function(version) {  
+      console.log("AEPAssurance version: " + version);
+   }, function(error) {  
+      console.log(error);  
+   });
+   ```
+
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-{% hint style="danger" %}
-Updated support for Unity is coming. This section will be updated shortly.
-{% endhint %}
+1. After importing the [AEPAssurance.unitypackage](https://github.com/adobe/unity-aepassurance/tree/master/bin), the AEP Assurance extension for Unity can be added with the following code in the MainScript:
+
+   ```csharp
+   using com.adobe.marketing.mobile;
+   ```
+
+2. Get the extension version.
+
+   ```csharp
+   AEPAssurance.extensionVersion();
+   ```
+
 {% endtab %}
 
 {% tab title="Xamarin" %}
 #### C\#
 
-{% hint style="danger" %}
-Updated support for Xamarin is coming. This section will be updated shortly.
-{% endhint %}
+1. After adding the [iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/) or [Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) AEP Assurance NuGet package, the Assurance extension can be added by this import statement:
+
+   ```text
+   using Com.Adobe.Marketing.Mobile;
+   ```
+
+2. Get the extension version.
+
+   ```text
+   AEPAssurance.ExtensionVersion();
+   ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -167,39 +247,110 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-{% hint style="danger" %}
-Updated support for React Native is coming. This section will be updated shortly.
-{% endhint %}
+
+### JavaScript
+
+When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+
 {% endtab %}
 
 {% tab title="Flutter" %}
-When using Flutter, registering AEPAssurance with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+
+### Dart 
+
+When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+
 {% endtab %}
 
 {% tab title="Cordova" %}
-{% hint style="danger" %}
-Updated support for Cordova is coming. This section will be updated shortly.
-{% endhint %}
 
-When using Cordova, registering AEPAssurance with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+### Cordova
+
+When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-{% hint style="danger" %}
-Updated support for Unity is coming. This section will be updated shortly.
-{% endhint %}
+Register the extension in the `start()` function:
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("yourAppId"); 
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        AEPAssurance.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="Xamarin" %}
-{% hint style="danger" %}
-Updated support for Xamarin is coming. This section will be updated shortly.
-{% endhint %}
+
+**iOS**
+
+Register the AEPAssurance extension in your app's `FinishedLaunching()` function:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+  global::Xamarin.Forms.Forms.Init();
+  LoadApplication(new App());
+  AEPAssurance.RegisterExtension();
+  // start core
+  ACPCore.Start(startCallback);
+  return base.FinishedLaunching(app, options);
+}
+
+private void startCallback()
+{
+  // set launch config
+  ACPCore.ConfigureWithAppID("yourAppId");
+}
+```
+
+**Android**
+
+Register the AEPAssurance extension in your app's `OnCreate()` function:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
+  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+  LoadApplication(new App());
+  AEPAssurance.RegisterExtension();
+
+  // start core
+  ACPCore.Start(new CoreStartCompletionCallback());
+}
+
+class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object callback)
+  {
+    // set launch config
+    ACPCore.ConfigureWithAppID("yourAppId");
+  }
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
-### Implement AEPAssurance session start APIs \(iOS only\)
+### Implement AEP Assurance session start APIs \(iOS only\)
 
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
