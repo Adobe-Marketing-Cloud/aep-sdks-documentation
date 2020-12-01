@@ -316,19 +316,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 #### JavaScript
 
-When using React Native, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 #### Dart
 
-When using Flutter, registering Analytics with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
 #### Cordova
 
-When using Cordova, registering Analytics with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}

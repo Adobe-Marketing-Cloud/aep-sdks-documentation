@@ -158,13 +158,13 @@ public class MobileApp extends Application {
 {% tab title="Cordova" %}
 ### Cordova
 
-When using Cordova, registering User Profile with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Flutter
 
-When using Flutter, registering User Profile with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Xamarin" %}

@@ -158,7 +158,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Unity" %}
 #### C\#
 
-1. After importing the [AEPAssurance.unitypackage](https://github.com/adobe/unity-aepassurance/tree/master/bin), the Assurance extension for Unity can be added with following code in the MainScript
+1. After importing the [AEPAssurance.unitypackage](https://github.com/adobe/unity-aepassurance/tree/master/bin), the Assurance extension for Unity can be added with the following code in the MainScript:
 
    ```csharp
    using com.adobe.marketing.mobile;
@@ -175,7 +175,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Xamarin" %}
 #### C\#
 
-1. After adding the [iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/) or [Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) AEPAssurance NuGet package, the Assurance extension can be added by this import statement
+1. After adding the [iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/) or [Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) AEPAssurance NuGet package, the Assurance extension can be added by this import statement:
 
    ```text
    using Com.Adobe.Marketing.Mobile;
@@ -250,7 +250,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### JavaScript
 
-When using React Native, registering AEPAssurance with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 
 {% endtab %}
 
@@ -258,14 +258,15 @@ When using React Native, registering AEPAssurance with Mobile Core should be don
 
 ### Dart 
 
-When using Flutter, registering AEPAssurance with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+
 {% endtab %}
 
 {% tab title="Cordova" %}
 
 ### Cordova
 
-When using Cordova, registering AEPAssurance with Mobile Core must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}

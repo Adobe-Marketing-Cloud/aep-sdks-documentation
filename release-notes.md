@@ -32,12 +32,12 @@ The following updates were made in this release:
 
 #### Xamarin Assurance 0.0.1
 
-- Assurance extension released for Xamarin iOS. See : [Xamarin Assurance iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
-- Assurance extension released for Xamarin Android. See : [Xamarin  Assurance Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) 
+- Assurance extension released for Xamarin iOS. See : [Assurance Xamarin iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
+- Assurance extension released for Xamarin Android. See : [Assurance Xamarin Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) 
 
 #### Cordova Assurance 0.0.1
 
-- Support for Assurance extension in Cordova. See : [Assurance Cordova](https://www.npmjs.com/package/@adobe/cordova-aepassurance)
+- Assurance extension released for Cordova. See : [Assurance Cordova](https://www.npmjs.com/package/@adobe/cordova-aepassurance)
 
 #### Unity Assurance 0.0.1
 
