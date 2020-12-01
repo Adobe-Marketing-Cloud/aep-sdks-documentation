@@ -8,12 +8,12 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the Assurance extension in Experience Platform Launch
-2. Add AEPAssurance SDK extension library to your app
-   1. Import AEPAssurance into your app
+1. Install the AEP Assurance extension in Experience Platform Launch
+2. Add AEP Assurance SDK extension library to your app
+   1. Import AEP Assurance into your app
    2. Register and implement extension APIs
 
-## Install the Assurance extension in Experience Platform Launch
+## Install the AEP Assurance extension in Experience Platform Launch
 
 Follow these steps to add the install the extension in Experience Platform Launch:
 
@@ -74,7 +74,7 @@ import AEPAssurance // <-- import the AEPAssurance library
 {% tab title="React Native" %}
 #### React Native
 
-1. Install Assurance.
+1. Install AEP Assurance.
 
    ```bash
    npm install @adobe/react-native-aepassurance
@@ -115,9 +115,9 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Flutter" %}
 #### Flutter
 
-1. Install AEPAssurance.
+1. Install AEP Assurance.
 
-   Flutter install instructions for AEPAssurance can be found [here](https://pub.dev/packages/flutter_assurance/install). 
+   Flutter install instructions for AEP Assurance can be found [here](https://pub.dev/packages/flutter_assurance/install). 
 
 2. Import the extension.
 
@@ -158,7 +158,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Unity" %}
 #### C\#
 
-1. After importing the [AEPAssurance.unitypackage](https://github.com/adobe/unity-aepassurance/tree/master/bin), the Assurance extension for Unity can be added with the following code in the MainScript:
+1. After importing the [AEPAssurance.unitypackage](https://github.com/adobe/unity-aepassurance/tree/master/bin), the AEP Assurance extension for Unity can be added with the following code in the MainScript:
 
    ```csharp
    using com.adobe.marketing.mobile;
@@ -175,7 +175,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Xamarin" %}
 #### C\#
 
-1. After adding the [iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/) or [Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) AEPAssurance NuGet package, the Assurance extension can be added by this import statement:
+1. After adding the [iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/) or [Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) AEP Assurance NuGet package, the Assurance extension can be added by this import statement:
 
    ```text
    using Com.Adobe.Marketing.Mobile;
@@ -350,7 +350,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-### Implement AEPAssurance session start APIs \(iOS only\)
+### Implement AEP Assurance session start APIs \(iOS only\)
 
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 

@@ -1,8 +1,8 @@
-# Assurance API reference
+# AEP Assurance API reference
 
 ## extensionVersion
 
-Returns the current version of the AEPAssurance extension
+Returns the current version of the AEP Assurance extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -52,7 +52,7 @@ AEPAssurance.extensionVersion()
 ### Example
 
 ```objectivec
-AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEPAssurance version: " + version));
+AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEP Assurance version: " + version));
 ```
 
 {% endtab %}
@@ -125,7 +125,7 @@ Console.WriteLine("AEPAssurance version installed is: " + version);
 
 ## startSession
 
-The `startSession` API needs to be called to begin a AEPAssurance session. When called, SDK displays a PIN authentication overlay to begin a session.
+The `startSession` API needs to be called to begin a AEP Assurance session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
 You may call this API when the app launches with a url \(see code snippet below for sample usage\)
@@ -135,7 +135,7 @@ You may call this API when the app launches with a url \(see code snippet below 
 {% tab title="Android" %}
 This API is optional for Android.
 
-Android does not require this API to be called. When the `registerExtension` API is called, Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
+Android does not require this API to be called. When the `registerExtension` API is called, AEP Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 ### Java
 
