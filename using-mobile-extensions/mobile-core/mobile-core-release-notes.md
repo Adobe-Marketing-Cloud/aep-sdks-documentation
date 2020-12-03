@@ -1,5 +1,13 @@
 # Release Notes
 
+### December 3, 2020
+
+#### Android Identity 1.2.2
+
+* Fix issue where push identifier had incorrect value in Identity shared state when `setPushIdentifer` was not called on each launch.
+
+  Released with sdk-core version 1.5.8
+
 ### December 2, 2020
 
 #### iOS Core 2.8.2
