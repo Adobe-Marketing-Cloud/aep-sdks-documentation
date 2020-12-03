@@ -1984,8 +1984,13 @@ ACPCore.SetAdvertisingIdentifier("ADVTID");
 
 This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
 
+{% hint style="info" %}
+It is recommended to call `setPushIdentifier` on each application launch to ensure the most up-to-date device token is set to the SDK. If no device token is available, `null`/`nil` should be passed.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
+
 ### setPushIdentifier
 
 #### Java

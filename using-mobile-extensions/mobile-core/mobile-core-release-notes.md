@@ -1,5 +1,15 @@
 # Release Notes
 
+### December 2, 2020
+
+#### iOS Core 2.8.2
+
+* Update version for bundled ACPIdentity 2.4.1 release.
+
+#### iOS Identity 2.4.1
+
+* Fix issue where push identifier had incorrect value in Identity shared state when `setPushIdentifer` was not called on each launch.
+
 ### November 18, 2020
 
 #### iOS Core 2.8.1

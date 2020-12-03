@@ -12,6 +12,16 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### December 2, 2020
+
+#### iOS Core 2.8.2
+
+* Update version for bundled ACPIdentity 2.4.1 release.
+
+#### iOS Identity 2.4.1
+
+* Fix issue where push identifier had incorrect value in Identity shared state when `setPushIdentifer` was not called on each launch.
+
 ### November 24, 2020
 
 #### Android Assurance 1.0.1

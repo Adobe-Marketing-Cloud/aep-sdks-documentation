@@ -211,7 +211,7 @@ Here are the key-value pairs in this event:
 | :--- | :--- | :--- | :--- |
 | `mid` | String | Yes | The value of the Experience Cloud Identifier \(MID\). |
 | `advertisingidentifier` | String | Yes | The value of the Advertising Identifier if it was previously set. |
-| `pushidentifier` | String | Yes | The SHA1 hashed Push Identifier if one was previously set. |
+| `pushidentifier` | String | Yes | The Push Identifier if one was previously set. |
 | `blob` | String | Yes | The blob value retrieved from the ECID Service. |
 | `locationhint` | String | Yes | The location hint value retrieved from the ECID Service. |
 | `visitoridslist` | List&gt; | Yes | A list of visitor identifiers that were previously synced using `syncIdentifier` or `syncIdentifiers` public APIs. Each visitor ID will have the following keys: `id_origin`, `id_type`, `id`, `authentication_state`. |
@@ -295,7 +295,7 @@ The Identity extension shared state is created in the following situations:
 | :--- | :--- | :--- |
 | `mid` | String | MID is a unique ID for that visitor for the given Experience Cloud organization ID. |
 | `advertisingidentifier` | String | iOS: the IDFA from retrieved Apple APIs Android: The Advertising Identifier that is returned from Google Play Services. |
-| `pushidentifier` | String | The SHA1 hashed Push Identifier. |
+| `pushidentifier` | String | The Push Identifier. |
 | `blob` | String | The blob value returned by the the ECID Service. |
 | `locationhint` | String | The ECID Service region ID. A region ID \(or location hint\), is a numeric identifier for the geographic location of a particular ID service data center. |
 | `visitoridslist` | List&gt; | The list of all the customer's custom identifiers. |
