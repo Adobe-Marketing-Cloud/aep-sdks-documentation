@@ -9,7 +9,7 @@ Adobe Experience Platform Offer Decisioning mobile extension can deliver persona
 ## Prerequisites
 
 * IMS organization is enabled for edge decisioning
-* Offers, Activities created
+* Offers and Activities are created
 * Adobe Experience Platform Core and Edge mobile extensions have been implemented in the app
 * Launch UI config is published
 
@@ -17,13 +17,13 @@ Adobe Experience Platform Offer Decisioning mobile extension can deliver persona
 
 To enable Offer Decisioning, you need to perform the following steps:
 
-1. In Adobe Experience Platform Launch, navigate to your mobile property and select Edge Configurations from the left panel, then select the configuration needs to be updated.
+1. In Adobe Experience Platform Launch, navigate to the Edge Configurations from the left panel, then select the configuration that needs to be updated.
 
-   Enabled Adobe Experience Platform in your [edge configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en) and check the `Offer Decisioning` box
+   Enable Adobe Experience Platform in your [edge configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en) and check the `Offer Decisioning` box
 
 ![](/Users/jgeng/work/v5/aep-sdks-documentation/.gitbook/assets/offer-decisioning-edge-config.png)
 
-2. Add AEP Offer Decisioniong extension to the project.
+2. Add AEP Offer Decisioning extension to the project.
 
    {% tabs %} {% tab title="Android" %}
 
@@ -114,7 +114,7 @@ For Offer Decisioning, Decision Scope is the JSON data structure which contains 
 }
 ```
 
-AEP Offer Decisioning extension provides a convinient class for you to construct the Decision Scope.
+AEP Offer Decisioning extension provides a convenient class for you to construct the Decision Scope.
 
 {% tabs %}
 
@@ -131,7 +131,7 @@ let decisionScope = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa9338
 
 ### Prefetch offers
 
-AEP Offer Decisioning exension provides seperate APIs to prefetch the offers and retrives the offer contents. This design is aim to help apps to build better user experience for their end uses. We recommand the app to prefetch the offers in advance, so there is no latency when you rerieve the offer contents and reder them.
+AEP Offer Decisioning exension provides separate APIs to prefetch the offers and retrieves the offer contents. This design is aim to help apps to build better user experience for their end uses. We recommend the app to prefetch the offers in advance, so there is no latency by the time you retrieve the offer contents and render them.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -186,7 +186,7 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [decisionScope]) { 	  
 
 ## Listen for offer update
 
-Offer prefetch can not only be triggered the the forementioned `prefetchOffers` API, calling `Edge.sendEvent()` or using Rules are alternative approaches to prefetch offers. AEP Offer Decisioning extension is listening for all the respsonses from Offer Decisioning Services, no matter how the requests are triggered.
+Offer prefetch can not only be triggered by the aforementioned `prefetchOffers` API, calling `Edge.sendEvent()` or using Rules are alternative approaches to prefetch offers. AEP Offer Decisioning extension is listening for all the responses from Offer Decisioning Services, no matter how the requests are triggered.
 
 The app can register a listener for offer update, so it is notified whenever there are new offers being cached or updated.
 

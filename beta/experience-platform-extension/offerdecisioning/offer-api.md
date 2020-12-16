@@ -2,14 +2,14 @@
 
 ## onOfferUpdate
 
-Use this API to register a callback, it will be invoked whenever the AEP Offer Decisioning extension receives an offer reposonse from backend sercies. The offer requests can be triggered by the `OfferDecisioning.prefetchOffers()` API, `Edge.sendEvent()` API or consequence rules.
+Use this API to register a callback, it will be invoked whenever the AEP Offer Decisioning extension receives an offer response from backend services. The Offer Decisioning requests can be triggered by the `OfferDecisioning.prefetchOffers()` API, `Edge.sendEvent()` API or consequence rules.
 
 {% tabs %}
 
 {% tab title="iOS" %}
 #### Syntax
 
-```objecst
+```swift
 func onOfferUpdate(perform: @escaping ([DecisionScope: [Offer]]) -> Void) 
 ```
 
@@ -129,7 +129,7 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
 {% tab title="iOS" %}
 ### DecisionScope/**AEPDecisionScope**
 
-This class contains the id of activity and placement, wich is used by the offer decisioning service to propose offers for.
+This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for.
 
 ```swift
 public class DecisionScope{
