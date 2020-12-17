@@ -99,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## Prefetch and retrieve offers 
 
-After you get everything correctly setup, you can now use the AEP Offer Decisioning extension to prefetch and retrieve the offers and then render the content in your app.
+After you get everything correctly set up, you can now use the AEP Offer Decisioning extension to prefetch and retrieve the offers and then render the content in your app.
 
 ### Decision Scope
 
@@ -131,7 +131,7 @@ let decisionScope = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa9338
 
 ### Prefetch offers
 
-AEP Offer Decisioning exension provides separate APIs to prefetch the offers and retrieves the offer contents. This design is aim to help apps to build better user experience for their end uses. We recommend the app to prefetch the offers in advance, so there is no latency by the time you retrieve the offer contents and render them.
+AEP Offer Decisioning exension provides separate APIs to prefetch the offers and retrieves the offer contents. This design aims to help apps to build better user experience for their end users. We recommend the app to prefetch the offers in advance, so there is no latency by the time you retrieve the offer contents and render them.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -156,9 +156,9 @@ OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2]
 
 
 
-### Retreive offers content
+### Retrieve offers content
 
-Once the offers have been prefetched, use the `retrievePrefetchedOffers` API to get the contents for the targted decision scopes.
+Once the offers have been prefetched, use the `retrievePrefetchedOffers` API to get the contents for the targeted decision scopes.
 
 {% tabs %}
 
@@ -171,7 +171,7 @@ let decisionScope = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa9338
 
 OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [decisionScope]) { 	   offersDict, _ in
 
-  // handle respsonse
+  // handle response
   if let offers = offersDict[decisionScope] {
     let offer = offers[0]
     // render the offer with offer.content
@@ -186,7 +186,7 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [decisionScope]) { 	  
 
 ## Listen for offer update
 
-Offer prefetch can not only be triggered by the aforementioned `prefetchOffers` API, calling `Edge.sendEvent()` or using Rules are alternative approaches to prefetch offers. AEP Offer Decisioning extension is listening for all the responses from Offer Decisioning Services, no matter how the requests are triggered.
+Offer prefetch can not only be triggered by the aforementioned `prefetchOffers` API, calling `Edge.sendEvent()` or using Rules are alternate approaches to prefetch offers. AEP Offer Decisioning extension is listening for all the responses from Offer Decisioning Services, no matter how the requests are triggered.
 
 The app can register a listener for offer update, so it is notified whenever there are new offers being cached or updated.
 
