@@ -21,7 +21,7 @@ Here are some examples in Objective C and Swift:
 
 ```objectivec
 [AEPMobileOfferDecisioning onOfferUpdateWithPerform:^(NSDictionary<AEPDecisionScope*, NSArray<AEPOffer*>*>* offersDict) {
-//handle offers respsonse
+//handle offers response
 }];
 ```
 
@@ -29,7 +29,7 @@ Here are some examples in Objective C and Swift:
 
 ```swift
 OfferDecisioning.onOfferUpdate { offersDict in
-//handle offers respsonse
+//handle offers response
 }
 ```
 {% endtab %}
@@ -164,7 +164,7 @@ public class Offer: NSObject, Codable {
 
 ### OfferType/AEPOfferType
 
-An enum indicates the type of an offer, which is a field of the `Offer` class
+An enum indicating the type of an offer, which is a field of the `Offer` class
 
 ```swift
 public enum OfferType{
