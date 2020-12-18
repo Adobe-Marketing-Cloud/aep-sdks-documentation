@@ -12,22 +12,6 @@ In order to support the new Apple M1 architecture while maintaining support for 
 Please see [Release notes](release-notes.md#december-18-2020) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-{% hint style="success" %}
-### iOS 14 Compatibility
-
-With the general release of iOS 14 on September 16, 2020 - latest extension versions of Adobe Experience Platform Mobile SDK have been tested and certified for compatibility.
-
-Please see [Release notes](release-notes.md) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
-{% endhint %}
-
-{% hint style="success" %}
-### Android 11 Compatibility
-
-With the general release of [Android 11](https://developer.android.com/about/versions/11) on September 8, 2020 - latest extension versions of Adobe Experience Platform Mobile SDK are now certified for compatibility.
-
-Please see [Release notes](release-notes.md) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
-{% endhint %}
-
 {% hint style="info" %}
 ### Adobe Experience Cloud & Apple's iOS 14 IDFA, Privacy Announcements
 
