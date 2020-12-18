@@ -1,5 +1,13 @@
 # Release Notes
 
+## December 18, 2020
+
+### iOS Media 2.3.0
+
+* The AEP SDKs are now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
+  * __IMPORTANT__: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+  * __IMPORTANT__: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
+
 ## November 19, 2020
 
 ### @adobe/react-native-acpmedia 2.2.0
@@ -140,4 +148,3 @@ The following updates were made in this release:
 ### Android Media 1.0.0
 
 * First version of Media Android Extension.
-

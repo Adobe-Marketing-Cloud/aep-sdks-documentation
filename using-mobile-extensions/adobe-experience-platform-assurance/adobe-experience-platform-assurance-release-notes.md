@@ -2,6 +2,14 @@
 
 Release notes and change logs for the Adobe Experience Platform Assurance extension
 
+## December 18, 2020
+
+### iOS Assurance 1.1.0
+
+* The AEP SDKs are now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
+  * __IMPORTANT__: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+  * __IMPORTANT__: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
+
 ## November 24, 2020
 
 ### Android Assurance 1.0.1
@@ -23,7 +31,7 @@ The following updates were made in this release:
 ### Xamarin Assurance 0.0.1
 
 - AEP Assurance extension released for Xamarin iOS. See : [Assurance Xamarin iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
-- AEP Assurance extension released for Xamarin Android. See : [Assurance Xamarin Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/) 
+- AEP Assurance extension released for Xamarin Android. See : [Assurance Xamarin Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/)
 
 ### Cordova Assurance 0.0.1
 
@@ -31,7 +39,7 @@ The following updates were made in this release:
 
 ### Unity Assurance 0.0.1
 
-- AEP Assurance extension released for Unity. See: [Assurance Unity](https://github.com/adobe/unity-aepassurance) 
+- AEP Assurance extension released for Unity. See: [Assurance Unity](https://github.com/adobe/unity-aepassurance)
 
 ## October 05, 2020
 
@@ -44,4 +52,3 @@ The following updates were made in this release:
 ### Android Assurance 1.0.0
 
 - General availability and release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-

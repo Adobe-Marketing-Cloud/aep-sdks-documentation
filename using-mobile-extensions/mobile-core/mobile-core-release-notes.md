@@ -1,5 +1,13 @@
 # Release Notes
 
+### December 18, 2020
+
+#### iOS Core 2.9.0, iOS Identity 2.5.0, iOS Lifecycle 2.2.0, iOS Signal 2.2.0
+
+* The AEP SDKs are now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
+  * __IMPORTANT__: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+  * __IMPORTANT__: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
+
 ### December 3, 2020
 
 #### Android Identity 1.2.2
@@ -379,4 +387,3 @@ The following updates were made in this release:
 * The duplicate advertising identifier value is removed from the Identity-shared state when MobileCore.setAdvertisingIdentifier is called with a new value.
 * The global.ssl configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where appendVisitorInfoForURL uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
-

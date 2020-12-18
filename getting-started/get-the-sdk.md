@@ -47,7 +47,15 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\). 
+{% hint style="success" %}
+### Apple M1 Compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+
+Please see [Release notes](../release-notes.md#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+{% endhint %}
+
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -116,7 +124,7 @@ For instance, to add the Mobile Core extension, you may:
 
 * Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
 * Unzip `ACPCore-0.0.1-Unity.zip`
-* Import `ACPCore.unitypackage` via Assets-Import Package 
+* Import `ACPCore.unitypackage` via Assets-Import Package
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -386,7 +394,7 @@ public class MainScript : MonoBehaviour
     [MonoPInvokeCallback(typeof(AdobeStartCallback))]
     public static void HandleStartAdobeCallback()
     {   
-        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d"); 
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
     }
 
     // Start is called before the first frame update
@@ -421,7 +429,7 @@ using Com.Adobe.Marketing.Mobile;
 public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 {
   //
-  // This method is invoked when the application has loaded and is ready to run. In this 
+  // This method is invoked when the application has loaded and is ready to run. In this
   // method you should instantiate the window, load the UI into it and then make the window
   // visible.
   //
@@ -524,4 +532,3 @@ pod install
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
-

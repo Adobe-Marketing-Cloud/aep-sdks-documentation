@@ -1,6 +1,6 @@
 # Places Service
 
-Location Service \(previously Places\) is now generally available for all customers. For more information about implementing and using Location Service, see the following documentation links:
+Places is now generally available for all customers. For more information about implementing and using Places, see the following documentation links:
 
 * [Release notes](https://docs.adobe.com/content/help/en/places/using/release-notes.html)
 * [Overview](https://docs.adobe.com/content/help/en/places/using/home.html)
@@ -13,4 +13,3 @@ Location Service \(previously Places\) is now generally available for all custom
 * [Flutter Places SDK github readme](https://github.com/adobe/flutter-acpplaces/blob/master/README.md)
 * [Flutter Places Monitor SDK github readme](https://github.com/adobe/flutter_acpplaces_monitor/blob/master/README.md)
 * [Xamarin Places SDK github readme](https://github.com/adobe/xamarin-acpplaces/blob/master/README.md)
-

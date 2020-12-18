@@ -5,6 +5,14 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 # Home
 
 {% hint style="success" %}
+### Apple M1 Compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+
+Please see [Release notes](release-notes.md#december-18-2020) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+{% endhint %}
+
+{% hint style="success" %}
 ### iOS 14 Compatibility
 
 With the general release of iOS 14 on September 16, 2020 - latest extension versions of Adobe Experience Platform Mobile SDK have been tested and certified for compatibility.
@@ -36,7 +44,7 @@ To implement the SDK, create a mobile property in Adobe Experience Platform Laun
 
 ## Swift Developer Preview
 
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
@@ -74,4 +82,3 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
-

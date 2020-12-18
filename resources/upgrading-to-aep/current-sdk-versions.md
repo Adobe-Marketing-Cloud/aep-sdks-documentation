@@ -8,6 +8,14 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+{% hint style="success" %}
+### Apple M1 Compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+
+Please see [Release notes](../../release-notes.md#december-18-2020) for more information on the latest extension versions.
+{% endhint %}
+
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
 * Google Android API 14 \(Ice Cream Sandwich\) or later
@@ -138,7 +146,7 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
     <tr>
       <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services">Adobe Analytics - Mobile Services</a>
       </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=Orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&amp;logoColor=white&amp;label=mobileservices&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
@@ -287,4 +295,3 @@ To start using the Adobe Experience Platform Mobile SDK for Unity, open your app
 | [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [Link](https://github.com/adobe/unity-aepassurance/tree/master/bin) | [Sample](https://github.com/adobe/unity-aepassurance#sample-app) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [Link](https://github.com/adobe/unity-acpanalytics/tree/master/bin) | [Sample](https://github.com/adobe/unity-acpanalytics#sample-app) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [Link](https://github.com/adobe/unity_acpuserprofile/tree/master/bin) | [Sample](https://github.com/adobe/unity_acpuserprofile#sample-app) |
-
