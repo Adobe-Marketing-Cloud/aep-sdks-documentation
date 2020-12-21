@@ -13,17 +13,11 @@ With the Streaming Media Analytics integration, you can now validate your AEP Mo
 
 After you have connected and [set up](../set-up-project-griffon.md) your app for Adobe Analytics, you are ready to configure it for Streaming Media Analytics.  At the bottom of the left panel, click **Configure** to add the Media Analytics Events view and **Save** it.
 
-<!--![Configure](../../../.gitbook/assets/configure-media-events.png)-->
-<div>
-<img src="../../../.gitbook/assets/configure-media-events.png" width="25%" height="25%"/>
-</div>
+![Configure](../../../.gitbook/assets/configure-media-events-resize.png)
 
 Once added, select the **Adobe Analytics > Media Analytics Events** view to validate your session tracking.
 
-![Select](../../../.gitbook/assets/select-media-analytics-events.png)
-<div>
-<img src="../../../.gitbook/assets/select-media-analytics-events.png" width="25%" height="25%"/>
-</div>
+![Select](../../../.gitbook/assets/select-media-analytics-events-resize.png)
 
 In the Media Analytics Events view, you may search and filter by Session ID (VSID) to view a specific media session.  To view additional event details, select a specific event.
 
@@ -32,8 +26,6 @@ In the Media Analytics Events view, you may search and filter by Session ID (VSI
 
 For a more succinct view of API calls, you may also hide the playhead update events by selecting the **Hide Playhead Update events** filter.
 
-<!--![Hide Playhead](../../../.gitbook/assets/hide-playhead.png)-->
-<div>
-<img src="../../../.gitbook/assets/hide-playhead.png" width="75%" height="75%"/>
-</div>
+![Hide Playhead](../../../.gitbook/assets/hide-playhead-resize.png)
+
 
