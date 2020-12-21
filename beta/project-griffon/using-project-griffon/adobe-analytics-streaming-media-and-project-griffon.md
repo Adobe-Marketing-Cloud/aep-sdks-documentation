@@ -20,7 +20,7 @@ After you have connected and [set up](../set-up-project-griffon.md) your app for
 
 Once added, select the **Adobe Analytics > Media Analytics Events** view to validate your session tracking.
 
-![Select](../../../.gitbook/assets/select-media-analytics-events.png)
+<!--![Select](../../../.gitbook/assets/select-media-analytics-events.png)-->
 <div>
 <img src="../../../.gitbook/assets/select-media-analytics-events.png" width="25%" height="25%"/>
 </div>
