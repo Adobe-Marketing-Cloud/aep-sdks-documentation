@@ -13,11 +13,11 @@ With the Streaming Media Analytics integration, you can now validate your AEP Mo
 
 After you have connected and [set up](../set-up-project-griffon.md) your app for Adobe Analytics, you are ready to configure it for Streaming Media Analytics.  At the bottom of the left panel, click **Configure** to add the Media Analytics Events view and **Save** it.
 
-![Configure](../../../.gitbook/assets/configure-media-events-resize.png)
+![Configure](../../../.gitbook/assets/configure-media-events1.jpg)
 
 Once added, select the **Adobe Analytics > Media Analytics Events** view to validate your session tracking.
 
-![Select](../../../.gitbook/assets/select-media-analytics-events.png)
+![Select](../../../.gitbook/assets/select-media-analytics-events1.jpg)
 
 
 In the Media Analytics Events view, you may search and filter by Session ID (VSID) to view a specific media session.  To view additional event details, select a specific event.
