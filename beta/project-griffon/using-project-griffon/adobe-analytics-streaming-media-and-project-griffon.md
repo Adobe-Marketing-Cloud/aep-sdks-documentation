@@ -7,7 +7,7 @@ With the Streaming Media Analytics integration, you can now validate your AEP Mo
 * Ad break Start and Ad start event will all ad properties attached, also skip and complete event for both
 * Chapter Start with all properties and chapter skip and complete events
 * All playback changes (play, pause, buffer, errors, bitrate change)
-* All player state tracking changes (start, end)
+* All player state tracking changes (start, end) 
 
 ## Using Project Griffon for Adobe Analytics for Streaming Media
 
