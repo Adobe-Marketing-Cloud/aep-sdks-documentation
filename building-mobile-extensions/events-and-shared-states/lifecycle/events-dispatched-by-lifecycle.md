@@ -1,2 +1,0 @@
-# Events Dispatched by Lifecycle
-
