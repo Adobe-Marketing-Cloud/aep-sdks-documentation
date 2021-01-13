@@ -207,7 +207,6 @@ ACPCore.getPrivacyStatus(withCompletionHandler: { status, error in
         // handle the retrieved privacy status
     }
 })
-
 ```
 {% endtab %}
 {% endtabs %}

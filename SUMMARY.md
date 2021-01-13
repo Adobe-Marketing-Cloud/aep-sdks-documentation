@@ -9,8 +9,8 @@
 ## Getting Started
 
 * [Configure Scheme and Dataset](getting-started/create-a-mobile-property.md)
-* [Configure Edge Configuration](getting-started/create-a-mobile-property.md)
-* [Set up a mobile property](getting-started/create-a-mobile-property.md)
+* [Configure Edge Configuration](getting-started/create-a-mobile-property-1.md)
+* [Set up a mobile property](getting-started/create-a-mobile-property-2.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Enable debug logging](getting-started/enable-debug-logging.md)
 * [Set up tracking](getting-started/initialize-the-sdk.md)
@@ -56,3 +56,4 @@
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
+

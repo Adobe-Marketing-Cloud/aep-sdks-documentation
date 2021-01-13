@@ -2,7 +2,7 @@
 
 ## Swift Developer Preview
 
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release. 
+The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
 
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 
@@ -58,7 +58,7 @@ The Experience Platform SDK is available through [Cocoapods](https://cocoapods.o
 
 Implementing two the SDKs in your app is not recommended, supported, or even technically feasible.
 
-The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](../upgrading-to-aep/).
+The Experience Platform SDK migrates the locally stored user contexts from the 4x SDKs. Using both SDKs can cause severe data quality issues and user cliffing. For more information, see [Upgrade to the Experience Platform SDKs](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/README.md).
 
 ### What platforms are supported?
 
@@ -78,7 +78,7 @@ For a complete list of supported platforms, please see [Latest SDK Versions](htt
 
 {% tabs %}
 {% tab title="Android" %}
-The SDK uses the cache and shared preferences at these locations: 
+The SDK uses the cache and shared preferences at these locations:
 
 data/data/your.app.package/cache
 
@@ -156,7 +156,7 @@ If you have followed our documentation and are unable to see reporting data in y
 
 #### Verify that network requests are sent to Adobe Analytics <a id="verify-that-network-requests-are-sent-to-adobe-analytics"></a>
 
-You may use [Project Griffon](../../beta/project-griffon/) to verify events are being sent to Adobe Analytics.
+You may use [Project Griffon](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/beta/project-griffon/README.md) to verify events are being sent to Adobe Analytics.
 
 #### Ensure appropriate time-stamp configuration <a id="ensure-appropriate-time-stamp-configuration"></a>
 

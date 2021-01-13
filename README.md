@@ -9,7 +9,7 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
 
-Please see [Release notes](release-notes.md#december-18-2020) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see [Release notes](release-notes.md#december-18-2020) and [Current SDK Versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
 {% hint style="info" %}
@@ -42,14 +42,14 @@ The article below highlights key features and benefts of the Adobe Experience Pl
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
-* Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
-* iOS \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
-* Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
-* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
-* Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
-* Unity \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) for download links\)
-* [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
-* Xamarin \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#xamarin) for download links\)
+* Android \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
+* iOS \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
+* Cordova \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
+* React Native \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* Flutter \(in beta, see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
+* Unity \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md) for download links\)
+* [WeChat Mini Programs](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/adobe-experience-platform-mini-programs-sdk/README.md)
+* Xamarin \(see [Current SDK versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md#xamarin) for download links\)
 
 Additionally, support for the following platforms is available on the 4x SDK versions:
 
@@ -58,7 +58,7 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 ## Quick Links
 
-* [Getting started](getting-started/create-a-mobile-property.md)
+* [Getting started](getting-started/create-a-mobile-property-2.md)
 * [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
 * [Frequently asked questions](resources/frequently-asked-questions/)
 
@@ -66,3 +66,4 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+

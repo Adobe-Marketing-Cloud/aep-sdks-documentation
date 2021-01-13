@@ -25,9 +25,9 @@ The AEP SDKs are now distributed using XCFrameworks in order to support hardware
 Below is a list of the new versions for each extension:
 
 * iOS Core 2.9.0
-    * iOS Identity 2.5.0
-    * iOS Lifecycle 2.2.0
-    * iOS Signal 2.2.0
+  * iOS Identity 2.5.0
+  * iOS Lifecycle 2.2.0
+  * iOS Signal 2.2.0
 * iOS Analytics 2.5.0
 * iOS Assurance 1.1.0
 * iOS Audience 2.2.0
@@ -61,7 +61,7 @@ Below is a list of the new versions for each extension:
 
 #### Android Assurance 1.0.1
 
-- Fixed a bug that triggered ANR (Application not responsive) error while initializing webview.
+* Fixed a bug that triggered ANR \(Application not responsive\) error while initializing webview.
 
 ### November 23, 2020
 
@@ -69,24 +69,24 @@ The following updates were made in this release:
 
 #### React Native Assurance 1.0.0
 
-- AEP Assurance extension released for React Native. See: [Assurance React Native](https://www.npmjs.com/package/@adobe/react-native-aepassurance)
+* AEP Assurance extension released for React Native. See: [Assurance React Native](https://www.npmjs.com/package/@adobe/react-native-aepassurance)
 
 #### Flutter Assurance 1.0.1
 
-- AEP Assurance extension released for Flutter. See: [Assurance Flutter](https://pub.dev/packages/flutter_assurance)
+* AEP Assurance extension released for Flutter. See: [Assurance Flutter](https://pub.dev/packages/flutter_assurance)
 
 #### Xamarin Assurance 0.0.1
 
-- AEP Assurance extension released for Xamarin iOS. See : [Assurance Xamarin iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
-- AEP Assurance extension released for Xamarin Android. See : [Assurance Xamarin Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/)
+* AEP Assurance extension released for Xamarin iOS. See : [Assurance Xamarin iOS](https://www.nuget.org/packages/Adobe.AEPAssurance.iOS/)
+* AEP Assurance extension released for Xamarin Android. See : [Assurance Xamarin Android](https://www.nuget.org/packages/Adobe.AEPAssurance.Android/)
 
 #### Cordova Assurance 0.0.1
 
-- AEP Assurance extension released for Cordova. See : [Assurance Cordova](https://www.npmjs.com/package/@adobe/cordova-aepassurance)
+* AEP Assurance extension released for Cordova. See : [Assurance Cordova](https://www.npmjs.com/package/@adobe/cordova-aepassurance)
 
 #### Unity Assurance 0.0.1
 
-- AEP Assurance extension released for Unity. See: [Assurance Unity](https://github.com/adobe/unity-aepassurance)
+* AEP Assurance extension released for Unity. See: [Assurance Unity](https://github.com/adobe/unity-aepassurance)
 
 ### November 18, 2020
 
@@ -195,7 +195,7 @@ The following updates were made in this release:
 
 #### iOS 14 Compatibility
 
-* Latest extension versions of Adobe Experience Platform Mobile SDK are now certified for iOS 14. Please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers.
+* Latest extension versions of Adobe Experience Platform Mobile SDK are now certified for iOS 14. Please see [Current SDK Versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers.
 
 ### September 15, 2020
 
@@ -211,7 +211,7 @@ The following updates were made in this release:
 
 #### Android 11 Compatibility
 
-* Latest extension versions of Adobe Experience Platform Mobile SDK are now certified for Android 11. Please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers.
+* Latest extension versions of Adobe Experience Platform Mobile SDK are now certified for Android 11. Please see [Current SDK Versions](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/32dfc7dd49e725872c6daaff6aaaa4535b9d627e/resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest version numbers.
 
 ### September 10, 2020
 
@@ -1673,3 +1673,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+

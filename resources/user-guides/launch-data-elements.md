@@ -44,7 +44,7 @@ In the following example, a rule to send a postback that contains the ECID when 
 
 1. On the property page for your mobile property, click the **Rules** tab, and then click **Create New Rule**.
 2. Type a unique name for the the rule.
-3. In the **Events** section, click **Add**. 
+3. In the **Events** section, click **Add**.
 
    a. In the **Extension** drop-down list, select **Mobile Core**.
 
@@ -60,16 +60,16 @@ In the following example, a rule to send a postback that contains the ECID when 
 
    c. Enter a name for the condition.
 
-   d. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section. 
+   d. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
 
-5. In the **Action** section, click **Add**. 
+5. In the **Action** section, click **Add**.
 
    a. In the **Extension** drop-down list, select Mobile Core.
 
    b. In the **Action Type** drop-down list, select **Send Postback**.
 
    c. In the **URL** text field, type a sample URL, for example,  
-    `https://my.company.com/launch?ecid=`.
+   `https://my.company.com/launch?ecid=`.
 
    d. Enter a name for the action.
 
