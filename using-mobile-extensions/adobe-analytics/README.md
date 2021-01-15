@@ -1,12 +1,12 @@
-# Adobe Analytics
+# Adobe Analytics Edge
 
 ## **Configure the Adobe Experience Platform Edge extension in** Experience Platform **Launch**
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Experience Platform Edge** extension, and click **Install**.
-3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Adobe Experience Platform Edge configuration for use with your mobile app, see [Experience Platform Setup](../../beta/experience-platform-extension/experience-platform-setup). Additionally, Analytics Edge extension setup steps are available in a tutorial at [Enable Analytics in Edge configuration.](../../beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension#enable-analytics-in-edge-configuration)
+3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Edge configuration for use with your mobile app, see [Experience Platform Setup](../../beta/experience-platform-extension/experience-platform-setup). Additionally, Analytics Edge extension setup steps are available in a tutorial at [Enable Analytics in Edge configuration.](../../beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension#enable-analytics-in-edge-configuration)
 4. Click **Save**.
-5. Follow the publishing process to update the SDK configuration.
+5. Publish the latest changes to your **Adobe Experience Platform Launch** configuration and proceed to adding the Analytics Edge extension in your mobile app.
 
 ## Add the Analytics Edge extension to your app
 
@@ -30,7 +30,7 @@
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Mobile Core, Edge, Identity Edge, and Analytics Edge extensions to your project using Cocoapods.
+1. Add the Mobile Core, Edge, Identity, and Analytics Edge extensions to your project using Cocoapods.
 
 2. Add the following pods in your `Podfile`:
 
@@ -41,25 +41,25 @@
     pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main' 
    ```
 
-3. Import the Analytics Edge, Mobile Core, Edge, Identity, and Services libraries:
+3. Import the Mobile Core, Edge, Identity, Analytics Edge, and AEP Services libraries:
 
    **Objective-C**
 
    ```text
-    @import AEPAnalyticsEdge;
     @import AEPCore;
     @import AEPEdge;
     @import AEPIdentity;
+    @import AEPAnalyticsEdge;
     @import AEPServices;
    ```
 
    **Swift**
 
    ```swift
-    import AEPAnalyticsEdge
     import AEPCore
     import AEPEdge
     import AEPIdentity
+    import AEPAnalyticsEdge
     import AEPServices
    ```
    {% endtab %}
@@ -107,7 +107,7 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics Edg
     [AEPMobileCore setLogLevel: AEPLogLevelTrace];
     NSArray *extensionsToRegister = @[AEPMobileEdge.class, AEPMobileIdentity.class, AEPMobileAnalytics.class];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:nil];
-    // Use the App id assigned to this application via Adobe Launch
+    // Use the App id assigned to this application via Adobe Experience Platform Launch
     [AEPMobileCore configureWithAppId: @"yourAppId];
     // Override point for customization after application launch.
     return YES;
@@ -120,7 +120,7 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics Edg
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      MobileCore.setLogLevel(.trace)
      MobileCore.registerExtensions([Edge.self, Identity.self, Analytics.self])
-     // Use the App id assigned to this application via Adobe Launch
+     // Use the App id assigned to this application via Adobe Experience Platform Launch
      MobileCore.configureWith(appId: "yourAppId")
      // Override point for customization after application launch.
      return true;
