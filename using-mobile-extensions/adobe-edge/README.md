@@ -16,7 +16,7 @@
 
 #### Edge Configuration
 
-Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was created before, see [Set up the Edge Configuration](getting-started/edge-configuration.md).
+Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was created before, see [Set up the Edge Configuration](/getting-started/edge-configuration.md).
 
 If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
 
