@@ -153,8 +153,9 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 **Syntax**
 
-```objectivec
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
+```swift
+@objc(trackAction:data:)
+static func track(action: String?, data: [String: Any]?)
 ```
 
 * _action_ contains the name of the action to track.
@@ -163,7 +164,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Example**
 
 ```objectivec
- [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
+ [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
@@ -173,7 +174,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Syntax**
 
 ```swift
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
+static func track(action: String?, data: [String: Any]?)
 ```
 
 * _action_ contains the name of the action to track.
@@ -182,139 +183,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Example**
 
 ```swift
-ACPCore.trackAction("action name", data: ["key": "value"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-### trackAction
-
-**Syntax**
-
-```jsx
-trackAction(action?: String, contextData?: { string: string });
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```jsx
-ACPCore.trackAction("action name", {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-### trackAction
-
-**Syntax**
-
-```dart
-Future<void> trackAction (String action, {Map<String, String> contextData});
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```dart
-FlutterACPCore.trackAction("action name",  data: {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-### trackAction
-
-**Syntax**
-
-```jsx
-ACPCore.trackAction = function(action, contextData, success, fail);
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-* _success_ callback is invoked when trackAction executes successfully.
-* _fail_ callback is invoked when trackAction fails.
-
-**Example**
-
-```jsx
-ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-#### C\#
-
-### trackAction
-
-**Syntax**
-
-```csharp
-public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
-```
-
-* _name_ contains the name of the action to track.
-* _contextDataDict_ contains the context data to attach on this hit.
-
-**Example**
-
-```csharp
-var contextData = new Dictionary<string, string>();
-contextData.Add("key", "value");
-ACPCore.TrackAction("action", contextData);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-### trackAction
-
-**iOS Syntax**
-
-```csharp
-public static void TrackAction (string action, NSMutableDictionary<NSString, NSString> data);
-```
-
-* _action_ contains the name of the action to track.
-* _data_ contains the context data to attach on this hit.
-
-**Android Syntax**
-
-```csharp
-public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-**iOS**
-
-```csharp
-var data = new NSMutableDictionary<NSString, NSString>
-{
-  ["key"] = new NSString("value")
-};
-ACPCore.TrackAction("action", data);
-```
-
-**Android**
-
-```csharp
-var data = new Dictionary<string, string>();
-data.Add("key", "value");
-ACPCore.TrackAction("action", data);
+MobileCore.track(action: "action name", data: ["key": "value"])
 ```
 {% endtab %}
 {% endtabs %}
@@ -360,8 +229,9 @@ MobileCore.trackState("homePage", additionalContextData);
 
 **Syntax**
 
-```objectivec
-+ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
+```swift
+@objc(trackState:data:)
+static func track(state: String?, data: [String: Any]?)
 ```
 
 * _state_ contains the name of the state to track.
@@ -370,7 +240,7 @@ MobileCore.trackState("homePage", additionalContextData);
 **Example**
 
 ```objectivec
- [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
+ [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
@@ -379,8 +249,8 @@ MobileCore.trackState("homePage", additionalContextData);
 
 **Syntax**
 
-```objectivec
-+ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
+```swift
+static func track(state: String?, data: [String: Any]?) 
 ```
 
 * _state_ contains the name of the state to track.
@@ -389,142 +259,298 @@ MobileCore.trackState("homePage", additionalContextData);
 **Example**
 
 ```swift
-ACPCore.trackState("state name", data: ["key": "value"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-### trackState
-
-**Syntax**
-
-```jsx
-trackState(state?: String, contextData?: { string: string });
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```jsx
-ACPCore.trackState("state name", {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-### trackState
-
-**Syntax**
-
-```dart
-Future<void> trackState (String state, {Map<String, String> contextData});
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```dart
-FlutterACPCore.trackState("state name",  data: {"key1: "value"})
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-#### trackState
-
-**Syntax**
-
-```jsx
-ACPCore.trackState = function(state, contextData, success, fail);
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-* _success_ callback is invoked when trackState executes successfully.
-* _fail_ callback is invoked when trackState fails.
-
-**Example**
-
-```jsx
-ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-#### trackState
-
-**Syntax**
-
-```csharp
-public static void TrackState(string name, Dictionary<string, string> contextDataDict)
-```
-
-* _name_ contains the name of the state to track.
-* _contextDataDict_ contains the context data to attach on this hit.
-
-**Example**
-
-```csharp
-var dict = new Dictionary<string, string>();
-dict.Add("key", "value");
-ACPCore.TrackState("state", dict);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-### trackState
-
-**iOS Syntax**
-
-```csharp
-public static void TrackState (string state, NSMutableDictionary<NSString, NSString> data);
-```
-
-* _state_ contains the name of the state to track.
-* _data_ contains the context data to attach on this hit.
-
-**Android Syntax**
-
-```csharp
-public unsafe static void TrackState (string state, IDictionary<string, string> contextData);
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-**iOS**
-
-```csharp
-var data = new NSMutableDictionary<NSString, NSString>
-{
-  ["key"] = new NSString("value")
-};
-ACPCore.TrackState("state", data);
-```
-
-**Android**
-
-```csharp
-var data = new Dictionary<string, string>();
-data.Add("key", "value");
-ACPCore.TrackState("state", data);
+MobileCore.track(state: "state name", data: ["key": "value"])
 ```
 {% endtab %}
 {% endtabs %}
+
+## setAdvertisingIdentifier
+
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](identity-api-reference.md), and is removed at uninstall.
+
+{% hint style="info" %}
+If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+### setAdvertisingIdentifier
+
+This API sets the provided advertising identifier.
+
+#### Java
+
+**Syntax**
+
+```java
+public static void setAdvertisingIdentifier(final String advertisingIdentifier);
+```
+
+* _advertisingIdentifier_ is a string that provides developers with a simple, standard system to track the Ads through their apps.     
+
+**Example**
+
+{% hint style="warning" %}
+This is just an implementation example. For more information about advertising identifiers and how to handle them correctly in your mobile application, see [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
+{% endhint %}
+
+This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file, see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
+
+```java
+...
+@Override
+public void onResume() {
+    super.onResume();
+    ...
+    new Thread(new Runnable() {
+        @Override
+        public void run() {
+            String advertisingIdentifier = null;
+
+            try {
+                AdvertisingIdClient.Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                if (adInfo != null) {
+                    if (!adInfo.isLimitAdTrackingEnabled()) {
+                        advertisingIdentifier = adInfo.getId();
+                    } else {
+                        MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
+                    }
+                }
+
+            } catch (IOException e) {
+                // Unrecoverable error connecting to Google Play services (e.g.,
+                // the old version of the service doesn't support getting AdvertisingId).
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesNotAvailableException e) {
+                // Google Play services is not available entirely.
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesRepairableException e) {
+                // Google Play services is not installed, up-to-date, or enabled.
+                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            }
+
+            MobileCore.setAdvertisingIdentifier(advertisingIdentifier);
+        }
+    }).start();
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### setAdvertisingIdentifier
+
+{% hint style="info" %}
+To access IDFA  and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+{% endhint %}
+
+{% hint style="warning" %}
+Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising \(IDFA\).
+{% endhint %}
+
+#### iOS
+
+**Syntax**
+
+```swift
+@objc(setAdvertisingIdentifier:)
+public static func setAdvertisingIdentifier(_ identifier: String?)
+```
+
+* _adId_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.    
+
+**Example**
+
+**Objective-C**
+
+```objectivec
+#import <AdSupport/ASIdentifierManager.h>
+#import <AppTrackingTransparency/ATTrackingManager.h>
+...
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+-   ...
+-   
+    if (@available(iOS 14, *)) {
+        [self setAdvertisingIdentitiferUsingTrackingManager];
+    } else {
+        // fallback to earlier versions
+        [self setAdvertisingIdentifierUsingIdentifierManager];
+    }
+
+}
+
+- (void) setAdvertisingIdentifierUsingIdentifierManager {
+    // setup the advertising identifier
+    NSString *idfa = nil;
+    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    } else {
+        [ACPCore log:ACPMobileLogLevelDebug
+                 tag:@"AppDelegateExample"
+             message:@"Advertising Tracking is disabled by the user, cannot process the advertising identifier"];
+    }
+    [AEPMobileCore setAdvertisingIdentifier:idfa];
+}
+
+- (void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
+    ^(ATTrackingManagerAuthorizationStatus status){
+        NSString *idfa = nil;
+        switch(status) {
+            case ATTrackingManagerAuthorizationStatusAuthorized:
+                idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                break;
+            case ATTrackingManagerAuthorizationStatusDenied:
+                [ACPCore log:ACPMobileLogLevelDebug
+                         tag:@"AppDelegateExample"
+                     message:@"Advertising Tracking is denied by the user, cannot process the advertising identifier"];
+                break;
+            case ATTrackingManagerAuthorizationStatusNotDetermined:
+                [ACPCore log:ACPMobileLogLevelDebug
+                         tag:@"AppDelegateExample"
+                     message:@"Advertising Tracking is not determined, cannot process the advertising identifier"];
+                break;
+            case ATTrackingManagerAuthorizationStatusRestricted:
+                [ACPCore log:ACPMobileLogLevelDebug
+                         tag:@"AppDelegateExample"
+                     message:@"Advertising Tracking is restricted by the user, cannot process the advertising identifier"];
+                break;
+        }
+        [AEPMobileCore setAdvertisingIdentifier:idfa];
+    }];
+}
+```
+
+**Swift**
+
+```swift
+import AdSupport
+import AppTrackingTransparency
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    ...
+    if #available(iOS 14, *) {
+       setAdvertisingIdentitiferUsingTrackingManager()
+    } else {
+       // Fallback on earlier versions
+       setAdvertisingIdentifierUsingIdentifierManager()
+    }
+
+}
+
+func setAdvertisingIdentifierUsingIdentifierManager() {
+    var idfa:String = "";
+        if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
+            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
+        } else {
+            ACPCore.log(ACPMobileLogLevel.debug,
+                        tag: "AppDelegateExample",
+                        message: "Advertising Tracking is disabled by the user, cannot process the advertising identifier.");
+        }
+        ACPCore.setAdvertisingIdentifier(idfa);
+}
+
+@available(iOS 14, *)
+func setAdvertisingIdentitiferUsingTrackingManager() {
+    ATTrackingManager.requestTrackingAuthorization { (status) in
+        var idfa: String = "";
+
+        switch (status) {
+        case .authorized:
+            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        case .denied:
+            ACPCore.log(.debug,
+                        tag: "AppDelegateExample",
+                        message: "Advertising Tracking is denied by the user, cannot process the advertising identifier.")
+        case .notDetermined:
+            ACPCore.log(.debug,
+                        tag: "AppDelegateExample",
+                        message: "Advertising Tracking is not determined, cannot process the advertising identifier.")
+        case .restricted:
+            ACPCore.log(.debug,
+                        tag: "AppDelegateExample",
+                        message: "Advertising Tracking is restricted by the user, cannot process the advertising identifier.")
+        }
+
+        ACPCore.setAdvertisingIdentifier(idfa)
+    }
+}
+```
+
+{% endtab %}
+
+
+{% endtabs %}
+
+## setPushIdentifier
+
+This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
+
+{% hint style="info" %}
+It is recommended to call `setPushIdentifier` on each application launch to ensure the most up-to-date device token is set to the SDK. If no device token is available, `null`/`nil` should be passed.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+### setPushIdentifier
+
+#### Java
+
+**Syntax**
+
+```java
+public static void setPushIdentifier(final String pushIdentifier);
+```
+
+* _pushIdentifier_  is a string that contains the device token for push notifications.
+
+**Example**
+
+```java
+//Retrieve the token from either GCM or FCM, and pass it to the SDK
+MobileCore.setPushIdentifier(token);
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### setPushIdentifier
+
+#### iOS
+
+```swift
+@objc(setPushIdentifier:)
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_  is a string that contains the device token for push notifications.
+
+**Example**
+
+**Objective-C**
+
+```objectivec
+// Set the deviceToken that the APNS has assigned to the device
+[AEPMobileCore setPushIdentifier:deviceToken];
+```
+
+**Swift**
+
+```swift
+// Set the deviceToken that the APNs has assigned to the device
+MobileCore.setPushIdentifier(deviceToken)
+```
+
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Collect PII
 
@@ -564,15 +590,16 @@ MobileCore.collectPII(data);
 
 **Syntax**
 
-```objectivec
-+ (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
+```swift
+@objc(collectPii:)
+public static func collectPii(_ data: [String: Any])
 ```
 
 **Example**
 
 ```objectivec
-[ACPCore collectPii:data:@{@"key1" : "@value1",
-                           @"key2" : "@value2"
+[ACPCore collectPii:data:@{@"key1" : @"value1",
+                           @"key2" : @"value2"
                            }];
 ```
 
@@ -583,80 +610,14 @@ MobileCore.collectPII(data);
 **Syntax**
 
 ```swift
-ACPCore.collectPii(data: [String : String])
+public static func collectPii(_ data: [String: Any])
 ```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-```jsx
-ACPCore.collectPii({"myPii": "data"});
-```
-{% endtab %}
-{% endtabs %}
-
-## Collect launch information
-
-You can provide the user information to the SDK from various launch points in your application.
-
-{% hint style="info" %}
-If the Analytics extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-Coming soon
-{% endtab %}
-
-{% tab title="iOS" %}
-**Objective-C**
-
-This method should be called to support the following use cases:
-
-* Tracking Deep Link click-throughs
-  * From `application:didFinishLaunchingWithOptions`
-  * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
-* Tracking Push Message click-through
-  * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
-
-#### collectLaunchInfo
-
-**Syntax**
-
-```text
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
-```
-
 **Example**
 
-```text
- [ACPCore collectLaunchInfo:launchOptions];
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 ```
 
-**Swift**
-
-This method should be called to support the following use cases:
-
-* Tracking Deep Link click-throughs
-  * From `application(_:didFinishLaunchingWithOptions:)`
-  * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
-* Tracking Push Message click-through
-  * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
-
-#### collectLaunchInfo
-
-**Syntax**
-
-```swift
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
-```
-
-**Example**
-
-```swift
-ACPCore.collectLaunchInfo(userInfo)
-```
 {% endtab %}
 {% endtabs %}
 
@@ -714,8 +675,8 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 #### Syntax
 
 ```objectivec
-+ (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
-+ (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
+@objc(getSdkIdentities:)
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void) 
 ```
 
 * _callback_ is invoked with the SDK identities as a JSON string.
@@ -724,18 +685,13 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 #### Example
 
 ```objectivec
-[ACPCore getSdkIdentities:^(NSString * _Nullable content){
-    NSLog(content);
+[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+    if (error) {
+      // handle error here
+    } else {
+      // handle the retrieved identities
+    }
 }];
-
-[ACPCore getSdkIdentitiesWithCompletionHandler:^(NSString * _Nullable content, NSError * _Nullable error) {
-        if (error) {
-            // handle error here
-        } else {
-            // handle the retrieved identities
-            NSLog(content);
-        }
-    }];
 ```
 {% endtab %}
 {% endtabs %}
@@ -866,17 +822,15 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 
 **Syntax**
 
-```text
-+ (void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```swift
+@objc(setLogLevel:)
+public static func setLogLevel(_ level: LogLevel)
 ```
 
 **Example**
 
-```text
-#import "ACPCore.h"
-...
-
-[ACPCore setLogLevel: ACPMobileLogLevelVerbose];
+```objective-c
+[AEPMobileCore setLogLevel: AEPLogLevelTrace];
 ```
 
 **Swift**
@@ -886,136 +840,17 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 **Syntax**
 
 ```swift
-+ (void) setLogLevel: (ACPMobileLogLevel) logLevel;
+public static func setLogLevel(_ level: LogLevel)
 ```
 
 **Example**
 
 ```swift
-import ACPCore
-...
-
-ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
+MobileCore.setLogLevel(.trace)
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
 
-#### setLogLevel
-
-```jsx
-import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
-
-ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Dart
-
-#### setLogLevel
-
-```dart
-import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
-
-FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-#### setLogLevel
-
-From least to most verbose, here is the order of the mobile SDK logging modes for the Cordova version of the ACPCore extension:
-
-* ACPCore.ACPMobileLogLevelError
-* ACPCore.ACPMobileLogLevelWarning
-* ACPCore.ACPMobileLogLevelDebug
-* ACPCore.ACPMobileLogLevelVerbose
-
-**Syntax**
-
-```jsx
-ACPCore.setLogLevel = function(logLevel, success, fail);
-```
-
-**Example**
-
-```jsx
-ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-#### setLogLevel
-
-From least to most verbose, here is the order of the mobile SDK logging modes for the Unity version of the ACPCore extension:
-
-* ACPCore.ACPMobileLogLevel.ERROR
-* ACPCore.ACPMobileLogLevel.WARNING
-* ACPCore.ACPMobileLogLevel.DEBUG
-* ACPCore.ACPMobileLogLevel.VERBOSE
-
-**Syntax**
-
-```csharp
-public static void SetLogLevel(ACPMobileLogLevel logLevel)
-```
-
-**Example**
-
-```csharp
-ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-#### setLogLevel
-
-From least to most verbose, here is the order of the mobile SDK logging modes for the Xamarin version of the ACPCore iOS extension:
-
-* ACPMobileLogLevel.Error;
-* ACPMobileLogLevel.Warning;
-* ACPMobileLogLevel.Debug;
-* ACPMobileLogLevel.Verbose;
-
-The ACPCore Android extension uses the following logging modes:
-
-* LoggingMode.Error;
-* LoggingMode.Warning;
-* LoggingMode.Debug;
-* LoggingMode.Verbose;
-
-**iOS Syntax**
-
-```csharp
-public static ACPMobileLogLevel LogLevel { get, set }
-```
-
-**iOS Example**
-
-```csharp
-ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
-```
-
-**Android Syntax**
-
-```csharp
-public unsafe static LoggingMode LogLevel { get, set }
-```
-
-**Android Example**
-
-```csharp
-ACPCore.LogLevel = LoggingMode.Verbose;
-```
-{% endtab %}
 {% endtabs %}
 
 {% tabs %}
@@ -1072,34 +907,8 @@ let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
 
-#### getLogLevel
 
-```jsx
-ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-#### getLogLevel
-
-```csharp
-ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-#### getLogLevel
-
-```csharp
-var logLevel = ACPCore.LogLevel;
-```
-{% endtab %}
 {% endtabs %}
 
 {% tabs %}
@@ -1184,75 +993,10 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
 
-The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like
-
-```jsx
-ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");
-```
-
-Note: `ACPMobileLogLevel` contains the following getters:
-
-```jsx
-const ERROR = "ACP_LOG_LEVEL_ERROR";
-const WARNING = "ACP_LOG_LEVEL_WARNING";
-const DEBUG = "ACP_LOG_LEVEL_DEBUG";
-const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.Log()`, the api call and logging output on Xamarin iOS look like
-
-```csharp
-ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
-```
-
-```text
-[AdobeExperienceSDK ERROR <xamarin tag>]: xamarin message
-```
-
-On Xamarin Android, the api call and logging output are
-
-```csharp
-ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
-```
-
-```text
-[AdobeExperienceSDK] xamarin tag - xamarin message
-```
-{% endtab %}
 {% endtabs %}
 
-## Handle open URL action
 
-The Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
-
-{% tabs %}
-{% tab title="iOS" %}
-**Objective C**
-
-### registerURLHandler
-
-**Syntax**
-
-```objectivec
-+ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
-```
-
-**Example**
-
-```objectivec
-[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
-    ...
-}];
-```
-{% endtab %}
-{% endtabs %}
 
 ## Set App Group \(iOS only\)
 
@@ -1272,14 +1016,14 @@ Note: This API _must_ be called in AppDidFinishLaunching and before any other in
 
 **Syntax**
 
-```text
-+ (void) setAppGroup: (nullable NSString*) appGroup;
+```swift
+public static func setAppGroup(_ group: String?)
 ```
 
 **Example**
 
-```text
-[ACPCore setAppGroup:@"app-group-id"];
+```objc
+[AEPMobileCore setAppGroup:@"app-group-id"];
 ```
 
 **Swift**
@@ -1289,31 +1033,13 @@ Note: This API _must_ be called in AppDidFinishLaunching and before any other in
 **Syntax**
 
 ```swift
-+ (void) setAppGroup: (nullable NSString*) appGroup;
+public static func setAppGroup(_ group: String?)
 ```
 
 **Example**
 
 ```swift
-ACPCore.setAppGroup("app-group-id")
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### setAppGroup
-
-**Syntax**
-
-```csharp
-public static void SetAppGroup (string appGroup);
-```
-
-**Example**
-
-```csharp
-ACPCore.SetAppGroup("app_group");
+MobileCore.setAppGroup("app-group-id")
 ```
 {% endtab %}
 {% endtabs %}
@@ -1381,33 +1107,36 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 {% tab title="iOS" %}
 #### iOS
 
-**ACPError**
+**AEPError**
 
 Errors which may be passed to a completion handler callback from any API which uses one:
 
-* `ACPErrorUnexpected` - An unexpected error occurred.
-* `ACPErrorCallbackTimeout` - The timeout was met.
-* `ACPErrorCallbackNil` - The provided callback function is nil.
-* `ACPErrorExtensionNotInitialized` - The extension is not initialized.
+* `.unexpected` - An unexpected error occurred.
+* `.callbackTimeout`The timeout was met.
+* `.callbackNil` - The provided callback function is nil.
+* `.errorExtensionNotInitialized` - The extension is not initialized.
+* `.serverError` - There was a error on the server side.
+* `.networkError` - Network connection failed.
+* `.invalidRequest` - Invalid request parameters.
+* `.invalidResponse` - Invalid server response.
 
 **Examples**
 
 **Objective C**
 
-```text
-[ACPCore getPrivacyStatusWithCompletionHandler:^(ACPMobilePrivacyStatus status, NSError * _Nullable error) {
+```objc
+[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
   if (error) {
-    if (error.code == ACPErrorCallbackTimeout) {
+    if (error.code == 1) {
       // handle timeout error
-    } else if (error.code == ACPErrorCallbackNil) {
+    } else if (error.code == 2) {
       // handle nil callback error
-    } else if (error.code == ACPErrorExtensionNotInitialized) {
-      // handle extension not initialized error
-    } else if (error.code == ACPErrorUnexpected) {
-      // handle unexpected error
     }
+    
+    ....
+    
   } else {
-    // use privacy status
+    // use content
   }
 }];
 ```
@@ -1415,139 +1144,19 @@ Errors which may be passed to a completion handler callback from any API which u
 **Swift**
 
 ```swift
-ACPCore.getPrivacyStatus { (privacyStatus, error) in
-  if let error = error {
-    let callbackError: NSError = (error as NSError)
-    if (callbackError.code == ACPError.callbackTimeout.rawValue) {
-      // handle timeout error
-    } else if (callbackError.code == ACPError.callbackNil.rawValue) {
-      // handle nil callback error
-    } else if (callbackError.code == ACPError.extensionNotInitialized.rawValue) {
-      // handle extension not initialized error
-    } else if (callbackError.code == ACPError.unexpected.rawValue) {
-      // handle unexpected error
+MobileCore.getSdkIdentities { identities, error in
+    if let error = error{
+        switch (error) {
+            case AEPError.unexpected:
+                // deal with error if needed
+                break;
+            default:
+                break;
+        }
+    } else{      
+    // use content
     }
-  } else {
-    // use privacyStatus
-  }
 }
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### Android
-
-**IAdobeCallback**
-
-This class provides the interface to receive results when the async APIs perform the requested action.
-
-```csharp
-public interface IAdobeCallback : IJavaObject, IDisposable, IJavaPeerable
-{
-    void Call (Java.Lang.Object p0);
-}
-```
-
-**IAdobeCallbackWithError**
-
-This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
-
-```csharp
-public interface IAdobeCallbackWithError : IAdobeCallback, IJavaObject, IDisposable, IJavaPeerable
-{
-    void Fail (AdobeError p0);
-}
-```
-
-**AdobeError**
-
-Errors which may be passed to an AdobeCallbackWithError:
-
-* `UnexpectedError` - An unexpected error occurred.
-* `CallbackTimeout` - The timeout was met.
-* `CallbackNull` - The provided callback function is null.
-* `ExtensionNotInitialized` - The extension is not initialized.
-
-**Example**
-
-```csharp
-ACPCore.GetPrivacyStatus(new AdobeCallbackWithError());
-
-class AdobeCallbackWithError : Java.Lang.Object, IAdobeCallbackWithError
-{
-  public void Call(Java.Lang.Object stringContent)
-  {
-    if (stringContent != null)
-    {
-      Console.WriteLine("String callback content: " + stringContent);
-    }
-    else
-    {
-      Console.WriteLine("null content in string callback");
-    }
-  }
-
-  public void Fail(AdobeError error)
-  {
-    if (error == AdobeError.UnexpectedError)
-    {
-      // handle unexpected error
-    }
-    else if (error == AdobeError.CallbackTimeout)
-    {
-      // handle timeout error
-    }
-    else if (error == AdobeError.CallbackNull)
-    {
-      // handle null callback error
-    }
-    else if (error == AdobeError.ExtensionNotInitialized)
-    {
-      // handle extension not initialized error
-    }
-  }
-}
-```
-
-#### iOS
-
-**ACPError**
-
-Errors which may be passed to a completion handler callback from any API which uses one:
-
-* `ACPError.Unexpected` - An unexpected error occurred.
-* `ACPError.CallbackTimeout` - The timeout was met.
-* `ACPError.CallbackNil` - The provided callback function is nil.
-* `ACPError.ExtensionNotInitialized` - The extension is not initialized.
-
-**Example**
-
-```csharp
-ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
-  if (error != null)
-  {
-    if ( error.Code == (int)ACPError.CallbackTimeout)
-    {
-      // handle timeout error
-    }
-    else if (error.Code == (int)ACPError.CallbackNil) 
-    {
-      // handle nil callback error
-    }
-    else if (error.Code == (int)ACPError.ExtensionNotInitialized)
-    {
-      // handle extension not initialized error
-    }
-    else if (error.Code == (int)ACPError.Unexpected)
-    {
-      // handle unexpected error
-    }
-  }
-  else
-  {
-    Console.WriteLine("privacy status: " + privacyStatus);
-  }
-});
 ```
 {% endtab %}
 {% endtabs %}
