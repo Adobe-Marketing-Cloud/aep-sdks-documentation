@@ -85,16 +85,7 @@ Use the AEP Edge mobile extension to send the Experience event created in the pr
 #### Java
 
 ```java
-// option 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent, null);
-
-// option 2 - send the experience event and handle the Edge Network response onComplete
-Edge.sendEvent(experienceEvent, new EdgeCallback() {
-  @Override
-  public void onComplete(final List<EdgeEventHandle> handles) {
-		// handle the Edge Network response 
-  }
-});
 ```
 
 {% endtab %}
@@ -104,25 +95,13 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 #### Swift
 
 ```swift
-// option 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent: experienceEvent)
-
-// option 2 - send the experience event and handle the Edge Network response onComplete
-Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
-            // handle the Edge Network response
-        }
 ```
 
 #### Objective-C
 
 ```objective-c
-// option 1 - send the experience event without handling the Edge Network response
 [AEPMobileEdge sendEventWithExperienceEvent:experienceEvent :nil];
-
-// option 2 - send the experience event and handle the Edge Network response onComplete
-[AEPMobileEdge sendEventWithExperienceEvent:experienceEvent :^(NSArray<AEPEdgeEventHandle *> * _Nonnull handles) {
-  // handle the Edge Network response
-}];
 ```
 
 {% endtab %}
