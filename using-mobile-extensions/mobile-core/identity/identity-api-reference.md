@@ -251,7 +251,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 ```swift
 @objc(getExperienceCloudId:)
-static func getExperienceCloudId(completion: @escaping (String?) -> Void)
+static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
 * completion is invoked after the ECID is available.  The default timeout is 1000ms.
@@ -261,7 +261,7 @@ static func getExperienceCloudId(completion: @escaping (String?) -> Void)
 **Objective-C**
 
 ```objectivec
-[AEPMobileIdentity getExperienceCloudId:^(NSString * _Nullable exCloudId) {   
+[AEPMobileIdentity getExperienceCloudId:^(NSString * _Nullable exCloudId, NSError * error) {   
     // handle the retrieved ID here    
 }];
 ```
@@ -270,7 +270,7 @@ static func getExperienceCloudId(completion: @escaping (String?) -> Void)
 
 ```swift
 
-Identity.getExperienceCloudId { (exCloudId) in
+Identity.getExperienceCloudId { (exCloudId, error) in
   if let error = error {
     // handle error here
   } else {
