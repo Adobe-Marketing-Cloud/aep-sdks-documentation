@@ -387,11 +387,7 @@ public static func setAdvertisingIdentifier(_ identifier: String?)
     NSString *idfa = nil;
     if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    } else {
-        [ACPCore log:ACPMobileLogLevelDebug
-                 tag:@"AppDelegateExample"
-             message:@"Advertising Tracking is disabled by the user, cannot process the advertising identifier"];
-    }
+    } 
     [AEPMobileCore setAdvertisingIdentifier:idfa];
 }
 
@@ -403,20 +399,14 @@ public static func setAdvertisingIdentifier(_ identifier: String?)
             case ATTrackingManagerAuthorizationStatusAuthorized:
                 idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
                 break;
-            case ATTrackingManagerAuthorizationStatusDenied:
-                [ACPCore log:ACPMobileLogLevelDebug
-                         tag:@"AppDelegateExample"
-                     message:@"Advertising Tracking is denied by the user, cannot process the advertising identifier"];
+            case ATTrackingManagerAuthorizationStatusDenied:        
+                //handle error       
                 break;
-            case ATTrackingManagerAuthorizationStatusNotDetermined:
-                [ACPCore log:ACPMobileLogLevelDebug
-                         tag:@"AppDelegateExample"
-                     message:@"Advertising Tracking is not determined, cannot process the advertising identifier"];
+            case ATTrackingManagerAuthorizationStatusNotDetermined:   
+                //handle error
                 break;
-            case ATTrackingManagerAuthorizationStatusRestricted:
-                [ACPCore log:ACPMobileLogLevelDebug
-                         tag:@"AppDelegateExample"
-                     message:@"Advertising Tracking is restricted by the user, cannot process the advertising identifier"];
+            case ATTrackingManagerAuthorizationStatusRestricted:  
+                //handle error
                 break;
         }
         [AEPMobileCore setAdvertisingIdentifier:idfa];
@@ -446,10 +436,6 @@ func setAdvertisingIdentifierUsingIdentifierManager() {
     var idfa:String = "";
         if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
             idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
-        } else {
-            ACPCore.log(ACPMobileLogLevel.debug,
-                        tag: "AppDelegateExample",
-                        message: "Advertising Tracking is disabled by the user, cannot process the advertising identifier.");
         }
         ACPCore.setAdvertisingIdentifier(idfa);
 }
@@ -462,21 +448,15 @@ func setAdvertisingIdentitiferUsingTrackingManager() {
         switch (status) {
         case .authorized:
             idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        case .denied:
-            ACPCore.log(.debug,
-                        tag: "AppDelegateExample",
-                        message: "Advertising Tracking is denied by the user, cannot process the advertising identifier.")
-        case .notDetermined:
-            ACPCore.log(.debug,
-                        tag: "AppDelegateExample",
-                        message: "Advertising Tracking is not determined, cannot process the advertising identifier.")
-        case .restricted:
-            ACPCore.log(.debug,
-                        tag: "AppDelegateExample",
-                        message: "Advertising Tracking is restricted by the user, cannot process the advertising identifier.")
+        case .denied:              
+             //handle error
+        case .notDetermined:     
+             //handle error
+        case .restricted:       
+             //handle error       
         }
 
-        ACPCore.setAdvertisingIdentifier(idfa)
+        MobileCore.setAdvertisingIdentifier(idfa)
     }
 }
 ```
@@ -598,7 +578,7 @@ public static func collectPii(_ data: [String: Any])
 **Example**
 
 ```objectivec
-[ACPCore collectPii:data:@{@"key1" : @"value1",
+[AEPMobileCore collectPii:data:@{@"key1" : @"value1",
                            @"key2" : @"value2"
                            }];
 ```

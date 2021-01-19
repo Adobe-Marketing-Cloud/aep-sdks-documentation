@@ -50,13 +50,11 @@ Import the Signal libraries:
 
 #### Objective-C
 
-```text
+```objective-c
 @import AEPSignal;
 ```
 
 #### Swift
-
-In Swift, the ACPCore includes ACPSignal:
 
 ```swift
 import AEPSignal
@@ -106,9 +104,9 @@ In your app's`application:didFinishLaunchingWithOptions`, register the Signal ex
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore configureWithAppId:@"yourAppId"];
     NSArray *extensionsToRegister = @[AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
+        [AEPMobileCore configureWithAppId: @"yourAppId"];
         [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
     }];
     // Override point for customization after application launch.
@@ -120,9 +118,9 @@ In your app's`application:didFinishLaunchingWithOptions`, register the Signal ex
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     ACPCore.configure(withAppId: "yourAppId")   
      MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self]){       
-       MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+        MobileCore.configureWith(appId: "yourAppId")   
+        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
      }
      // Override point for customization after application launch.
      return true;

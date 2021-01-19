@@ -129,10 +129,6 @@ MobileCore.configureWith(filePath: filePath)
 
 ## Environment-aware configuration properties
 
-{% hint style="info" %}
-This feature is only available in iOS ACPCore version 2.0.3 or later.
-{% endhint %}
-
 Some extension developers might use different configuration values based on their environment, and the generated configuration might have several entries for the same property. For example, the Adobe Campaign Standard extension has different endpoints for development, staging, and production servers. Here is an example of a raw configuration that supports multiple build environments:
 
 #### JavaScript

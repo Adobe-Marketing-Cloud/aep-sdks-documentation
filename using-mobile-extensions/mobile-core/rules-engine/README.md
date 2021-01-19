@@ -1,6 +1,6 @@
 # Rules Engine
 
-The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the [MobileCore \(Android\)/ACPCore \(iOS\)](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsU1nOc9yXSg36RvlZ/using-mobile-extensions/mobile-core) extension.
+The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as part of the [MobileCore \(Android\)/AEPCore \(iOS\)](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsU1nOc9yXSg36RvlZ/using-mobile-extensions/mobile-core) extension.
 
 In the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
 
