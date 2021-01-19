@@ -1,4 +1,4 @@
-# Configure Scheme and Dataset
+# Configure Schema and Dataset
 
 A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Experience Platform Launch](https://launch.adobe.com). You will typically create a mobile property for each mobile application you want to manage.
 
