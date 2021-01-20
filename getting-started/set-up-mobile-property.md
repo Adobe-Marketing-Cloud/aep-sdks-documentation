@@ -36,7 +36,7 @@ After Experience Platform Launch rights have been added to your Adobe ID, log in
 The default privacy status is set to _opted in_ and might impact data collection. For more information, see [Privacy and GDPR](../resources/privacy-and-gdpr.md).
 {% endhint %}
 
-![Setting default privacy status](/Users/hardy/.gitbook/assets/createmobileprop.png)
+![Setting default privacy status](../.gitbook/assets/createmobileprop.png)
 
 ## Install your extensions
 
@@ -50,7 +50,7 @@ An extension is an integration built by Adobe or an Adobe partner that adds new 
 
 2. On the **Mobile Core** card, click **Configure** to open the extensions detail page.
 
-   ![](/Users/hardy/.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
+   ![](../.gitbook/assets/screen-shot-2018-10-02-at-5.02.05-pm-2.png)
 
 3. Check your Experience Cloud Org ID.
 
