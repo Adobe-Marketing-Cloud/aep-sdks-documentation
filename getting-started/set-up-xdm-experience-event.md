@@ -101,7 +101,7 @@ Edge.sendEvent(experienceEvent: experienceEvent)
 #### Objective-C
 
 ```objective-c
-[AEPMobileEdge sendEventWithExperienceEvent:experienceEvent :nil];
+[AEPMobileEdge sendExperienceEvent:event completion:nil];
 ```
 
 {% endtab %}
