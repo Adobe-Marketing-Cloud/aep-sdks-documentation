@@ -22,7 +22,7 @@ To create a new Edge Configuration follow the steps below:
 
 ![Edge Configuration Details](../.gitbook/assets/AEP_Edge_Config_Details.png)
 
-In the summary screen you will see that three environments have been created for your Edge Configuration. If desired, each environment can be edited individually with different configuration parameters. Make note of the Environment ID, as this value will be used to connect your mobile application to your Edge Configuration.
+In the summary screen you will see that three environments have been created for your Edge Configuration. If desired, each environment can be edited individually with different configuration parameters. Make note of the `Environment ID`, as this value will be used to connect your mobile application to your Edge Configuration.
 
 For additional information on Edge Configurations in Experience Platform Launch [see this document](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en#creating-an-edge-configuration).
 
