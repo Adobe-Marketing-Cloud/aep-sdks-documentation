@@ -6,15 +6,20 @@ By utilizing the latest Adobe Experience Platform Mobile SDK along with the Adob
 
 Mobile XDM events take the place of solution APIs such as trackAction and trackState calls to send analytics events. Customers that are not yet ready to fully adopt an XDM only data workflow may opt to keep solution specific API calls, and then create separate XDM calls for important events. 
 
+![Create XDM Schema](../.gitbook/assets/AEP_Edge_XDMdata.png)
+
 XDM data collected is sent to the Adobe Experience Platform Edge Network where it can be transformed or distributed to different Adobe solutions including Adobe Experience Platform, Adobe Customer Journey Analytics, Adobe Customer Journey Management, Adobe Audience Manager, Adobe Target and others. In addition to Adobe solutions, XDM data delivered to the Edge Network can take advantage of Adobe Experience Platform Launch Server Side, where rules can be configured to forward data to 3rd party solutions.
+
+![Create XDM Schema](../.gitbook/assets/AEP_Edge_dataflow.png)
+
 
 ## Key Benefits
 
-Performance - Reduced number of network calls from your web/mobile applications to improve customer experience
-Smaller footprint – Decrease in the number of extensions and dependencies to manage for mobile implementations
-Simplified data collection – Standardize data collection with XDM, reducing developer complexity and maintenance
-Privacy - Improved privacy controls and consent management
-Server Side Forward – Take advantage of Launch Server Side rules and extensions to deliver data to 3rd parties
+  * Performance - Reduced number of network calls from your web/mobile applications to improve customer experience
+  * Smaller footprint – Decrease in the number of extensions and dependencies to manage for mobile implementations
+  * Simplified data collection – Standardize data collection with XDM, reducing developer complexity and maintenance
+  * Privacy - Improved privacy controls and consent management
+  * Server Side Forward – Take advantage of Launch Server Side rules and extensions to deliver data to 3rd parties
 
 
 ## Is the Edge Network right for my organization?
