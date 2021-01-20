@@ -10,7 +10,7 @@ Before you can set up your mobile property, complete the following prerequisites
 
 Launch is fully integrated with your Adobe ID. User permissions are managed through the Admin Console with other Adobe products and solutions from the Creative Cloud, Document Cloud, and Experience Cloud.
 
-For detailed instructions on how to create groups and add users for Launch, see [User permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html).
+For detailed instructions on how to create groups and add users for Launch, see [User permissions](https://experienceleague.adobe.com/docs/launch/using/admin/user-permissions.html).
 
 ### Log in to Experience Platform Launch
 
@@ -95,7 +95,7 @@ To deploy your configuration to a development environment for testing:
 The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see [Publishing](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
+Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see [Publishing](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html).
 {% endhint %}
 
 Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see [Get the Experience Platform SDKs](./get-the-sdk.md).
@@ -103,7 +103,7 @@ Now that you published your configuration, get the Adobe Experience Platform SDK
 
 ## Additional information
 
-* To learn more about getting access to Launch, see [User Permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html).
+* To learn more about getting access to Launch, see [User Permissions](https://experienceleague.adobe.com/docs/launch/using/admin/user-permissions.html).
 * To learn more about Experience Platform Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 
 ## Get help
