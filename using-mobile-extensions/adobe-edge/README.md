@@ -59,17 +59,14 @@ The Edge configuration used by the client-side implementation is one of the foll
    ```swift
    use_frameworks!
    target 'YourTargetApp' do
-   	pod 'AEPServices', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-   	pod 'AEPCore', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-   	pod 'AEPLifecycle', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-   	pod 'AEPIdentity', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-   	pod 'AEPSignal', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-   	pod 'AEPRulesEngine', :git => 'https://github.com/adobe/aepsdk-rulesengine-ios.git', :branch => 'main'
-   	pod 'AEPEdge', :git => 'https://github.com/adobe/aepsdk-edge-ios.git', :branch => 'main'
-   	...
+   	pod 'AEPCore'
+   	pod 'AEPLifecycle'
+   	pod 'AEPIdentity'
+   	pod 'AEPSignal'
+   	pod 'AEPEdge'
    end
    ```
-
+   
 2. Import the Mobile Core and Edge libraries:
 
 ### Swift
@@ -169,3 +166,10 @@ To update the SDK configuration programmatically, use the following information 
 | Key           | Required | Description                                      | Data Type |
 | :------------ | :------- | :----------------------------------------------- | :-------- |
 | edge.configId | Yes      | See [Edge Configuration](./#edge-configuration). | String    |
+
+
+
+## What OS & platform versions are supported?
+
+- Android versions 4.4 or later (API levels 19 or later)
+- iOS versions 10 or later

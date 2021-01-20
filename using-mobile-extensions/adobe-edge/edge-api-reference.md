@@ -131,10 +131,10 @@ static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEve
 
 ```objective-c
 // example 1 - send the experience event without handling the Edge Network response
-[AEPMobileEdge sendEventWithExperienceEvent:experienceEvent :nil];
+[AEPMobileEdge sendExperienceEvent:event completion:nil];
 
 // example 2 - send the experience event and handle the Edge Network response onComplete
-[AEPMobileEdge sendEventWithExperienceEvent:experienceEvent :^(NSArray<AEPEdgeEventHandle *> * _Nonnull handles) {
+[AEPMobileEdge sendExperienceEvent:event completion:^(NSArray<AEPEdgeEventHandle *> * _Nonnull handles) {
   // handle the Edge Network response
 }];
 ```
