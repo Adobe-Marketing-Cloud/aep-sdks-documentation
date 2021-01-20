@@ -21,7 +21,7 @@ To create a basic XDM schema for mobile data collection follow the steps below t
       * Environment Details
    * Set a name for this schema and click `Save`.
    
-![Create XDM Schema](.gitbook/assets/AEP_Edge_CreateXDMSchema.png)
+![Create XDM Schema](../.gitbook/assets/AEP_Edge_CreateXDMSchema.png)
 
    
 ## Configuring a Dataset
@@ -35,4 +35,7 @@ To create a dataset container for mobile data collection, follow the steps below
    * Click `Create dataset from schema`
    * Select the XDM schema previously created and click `Next`.
    * Set a name for this dataset and click `Finish`.
+  
+![Create XDM Schema](../.gitbook/assets/AEP_Edge_CreateDatasetfromSchema.png)
+   
 
