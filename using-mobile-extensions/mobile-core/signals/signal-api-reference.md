@@ -19,59 +19,17 @@ String signalExtensionVersion = Signal.extensionVersion();
 **Objective C**
 
 ```objectivec
-NSString *signalExtensionVersion = [ACPSignal extensionVersion];
+NSString *signalExtensionVersion = [AEPMobileSignal extensionVersion];
 ```
 
 **Swift**
 
 ```swift
-var signalExtensionVersion  = ACPSignal.extensionVersion()
+var signalExtensionVersion  = AEPSignal.extensionVersion
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
 
-```jsx
-ACPSignal.extensionVersion().then(signalExtensionVersion => console.log("AdobeExperienceSDK: ACPSignal version: " + signalExtensionVersion));
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Dart
-
-```dart
-String signalExtensionVersion = await FlutterACPSignal.extensionVersion;
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-```jsx
-ACPSignal.extensionVersion(function(version) {  
-    console.log("ACPSignal version: " + version);
-}, function(error) {  
-    console.log(error);  
-});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-```csharp
-string signalVersion = ACPSignal.ExtensionVersion();
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-```csharp
-string signalVersion = ACPSignal.ExtensionVersion();
-```
-{% endtab %}
 {% endtabs %}
 
 ## CollectPII API

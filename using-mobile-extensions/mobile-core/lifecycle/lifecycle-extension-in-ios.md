@@ -56,14 +56,14 @@ When calling `lifecycleStart:`, you can optionally pass a dictionary of addition
 ```objectivec
 // Objective-C
 - (void) applicationWillEnterForeground:(UIApplication *)application {      
-    [ACPCore lifecycleStart:@{@"state": @"appResume"}];      
+    [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
 }
 ```
 
 ```swift
 // Swift
 func applicationWillEnterForeground(_ application: UIApplication) {      
-    ACPCore.lifecycleStart(["state": "appResume"])
+    MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
 }
 ```
 

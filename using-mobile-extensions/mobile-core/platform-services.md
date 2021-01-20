@@ -7,7 +7,7 @@ Currently, the AEP SDK only provides the capability for overriding the Adobe-pro
 This section walks through the steps necessary to create a custom network override, and register it with the SDK.
 
 {% hint style="info" %}
-This feature is only available in Android Core version 2.5.0 or later and iOS Core version 2.6.0 or later.
+This feature is only available in Android Core version 2.5.0 or later and iOS Core version 3.0.0 or later.
 {% endhint %}
 
 {% tabs %}
