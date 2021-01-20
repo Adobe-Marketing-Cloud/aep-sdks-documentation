@@ -1,4 +1,10 @@
-# Analytics API reference
+# Analytics Edge API reference (To be removed?)
+
+{% hint style="info" %}
+
+The following Analytics API are currently **not** supported with Analytics Edge. They are listed for reference only.
+
+{% endhint %}
 
 ## clearQueue <a id="clearqueue"></a>
 
@@ -1240,3 +1246,4 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
 {% endtab %}
 {% endtabs %}
+

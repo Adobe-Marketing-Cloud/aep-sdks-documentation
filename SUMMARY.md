@@ -38,21 +38,11 @@
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
   * [Platform Services](using-mobile-extensions/mobile-core/platform-services.md)
-  
-  [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
-  
+* [Adobe Analytics Edge](using-mobile-extensions/adobe-analytics/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
-  * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
+  * [Analytics Edge API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Products variable](using-mobile-extensions/adobe-analytics/product-variable.md)
-  
-* [Adobe Analytics Edge](using-mobile-extensions/adobe-analytics-edge/README.md)
-  
-  * [Release Notes](using-mobile-extensions/adobe-analytics-edge/adobe-analytics-edge-release-notes.md)
-  * [Analytics Edge API reference](using-mobile-extensions/adobe-analytics-edge/analytics-edge-api-reference.md)
-  * [Products variable](using-mobile-extensions/adobe-analytics-edge/product-variable.md)
-  
 * [Profile](using-mobile-extensions/profile/README.md)
-  
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
 
 ## Resources
