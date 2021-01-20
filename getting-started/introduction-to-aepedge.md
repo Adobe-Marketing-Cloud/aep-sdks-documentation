@@ -1,14 +1,14 @@
 # Introduction
 
-Adobe Experience Cloud implementations for mobile apps leverage Adobe Experience Platform Mobile SDKs for data collection and experience delivery. With the introduction of Adobe Experience Platform Edge Network data collection, client-side implementations will provide unified, purpose-based APIs to provide customers with a more modern and efficient data collection paradigm.
+Adobe Experience Cloud implementations for mobile apps leverage [Adobe Experience Platform Mobile SDKs](http://sdkdocs.com) for data collection and experience delivery. With the introduction of Adobe Experience Platform Edge Network data collection, client-side implementations will provide unified, purpose-based APIs to provide customers with a more modern and efficient data collection paradigm.
  
-By utilizing the latest Adobe Experience Platform Mobile SDK along with the Adobe Experience Platform Edge Network extension, customers can adopt XDM (Experience Data Model) workflows for data collection. XDM data collection represents a shift from solution specific APIs to simple key / value pairs, that can be sent from both Mobile and Web properties.
+By utilizing the latest Adobe Experience Platform Mobile SDK along with the [Adobe Experience Platform Edge Network extension](using-mobile-extensions/adobe-edge/README.md), customers can adopt XDM ([Experience Data Model](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)) workflows for data collection. XDM data collection represents a shift from solution specific APIs to simple key / value pairs, that can be sent from both Mobile and Web properties.
 
 Mobile XDM events take the place of solution APIs such as trackAction and trackState calls to send analytics events. Customers that are not yet ready to fully adopt an XDM only data workflow may opt to keep solution specific API calls, and then create separate XDM calls for important events. 
 
 ![Create XDM Schema](../.gitbook/assets/AEP_Edge_XDMdata.png)
 
-XDM data collected is sent to the Adobe Experience Platform Edge Network where it can be transformed or distributed to different Adobe solutions including Adobe Experience Platform, Adobe Customer Journey Analytics, Adobe Customer Journey Management, Adobe Audience Manager, Adobe Target and others. In addition to Adobe solutions, XDM data delivered to the Edge Network can take advantage of Adobe Experience Platform Launch Server Side, where rules can be configured to forward data to 3rd party solutions.
+XDM data collected is sent to the [Adobe Experience Platform Edge Network](https://www.adobe.com/experience-platform/experience-platform-edge-network.html) where it can be transformed or distributed to different Adobe solutions including Adobe Experience Platform, Adobe Customer Journey Analytics, Adobe Customer Journey Management, Adobe Audience Manager, Adobe Target and others. In addition to Adobe solutions, XDM data delivered to the Edge Network can take advantage of [Adobe Experience Platform Launch Server Side](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en#server-side-info), where rules can be configured to forward data to 3rd party solutions.
 
 ![Create XDM Schema](../.gitbook/assets/AEP_Edge_dataflow.png)
 
