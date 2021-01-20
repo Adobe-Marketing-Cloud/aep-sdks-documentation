@@ -22,6 +22,7 @@ XDM data collected is sent to the [Adobe Experience Platform Edge Network](https
   * Server Side Forward – Take advantage of Launch Server Side rules and extensions to deliver data to 3rd parties
 
 
+
 ## Is the Edge Network right for my organization?
 
 Generally speaking, the determination for adopting the Adobe Experience Platform Edge Network, depends on if you are looking to start sending data to the Adobe Experience Platform, or if you are looking at adopting additional platform-based solutions such as Customer Journey Management or Customer Journey Analytics. 
