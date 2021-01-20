@@ -8,6 +8,7 @@
 
 ## Getting Started
 
+* [Introduction](getting-started/introduction-to-aepedge.md)
 * [Configure Schema and Dataset](getting-started/configure-schema-and-dataset.md)
 * [Set up the Edge Configuration](getting-started/edge-configuration.md)
 * [Set up a mobile property](getting-started/set-up-mobile-property.md)
