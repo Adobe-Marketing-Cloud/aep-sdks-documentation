@@ -4,7 +4,7 @@
 
 As _products_ variable cannot be set by processing rules, you need the syntax below in context data parameters to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://docs.adobe.com/content/help/en/analytics/components/variables/merchandising-variables/var-merchandising.html).
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/addproductevar.html#vars).
 
 {% tabs %}
 {% tab title="Android" %}
