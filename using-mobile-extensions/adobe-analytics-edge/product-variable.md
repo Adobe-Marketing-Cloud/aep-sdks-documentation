@@ -4,7 +4,7 @@
 
 As _products_ variable cannot be set by processing rules, you need the syntax below in context data parameters to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://docs.adobe.com/content/help/en/analytics/components/variables/merchandising-variables/var-merchandising.html).
+To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/addproductevar.html#vars).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -57,9 +57,9 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 // send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
-[ACPCore trackAction:@"purchase" data:contextData];
+[AEPMobileCore trackAction:@"purchase" data:contextData];
 // trackState example:
-[ACPCore trackState:@"Order Confirmation" data:contextData];
+[AEPMobileCore trackState:@"Order Confirmation" data:contextData];
 ```
 
 #### Swift
@@ -84,80 +84,15 @@ contextData["m.purchase"] = "1"
 
 // send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
-ACPCore.trackAction("purchase", data: contextData)
+MobileCore.track(action: "purchase", data: contextData)
 // trackState example:
-ACPCore.trackState("Order Confirmation", data: contextData)
+MobileCore.track(state: "Order Confirmation", data: contextData)
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-#### JavaScript
+The _`products`_  variable is set directly on the image request and the other variables are set as context data. All context data variables must be mapped by using processing rules except for the _`products`_ variable as it is set directly on the image request by the SDK.
 
-#### Syntax
-
-```jsx
-contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
-```
-
-#### Example
-
-```jsx
-//create a context data dictionary
-var contextData = {};
-
-// add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
-contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99";
-contextData["m.purchaseid"] = "1234567890";
-contextData["m.purchase"] = "1";
-
-// send the tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-ACPCore.trackAction("purchase", contextData);
-// trackState example:
-ACPCore.trackState("Order Confirmation", contextData);
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-#### Syntax
-
-```dart
-contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
-```
-
-#### Example
-
-```dart
-//create a context data dictionary
-var contextData = {};
-
-// add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
-contextData["&&products"] = ";Running Shoes;1;69.95,;Running Socks;10;29.99";
-contextData["m.purchaseid"] = "1234567890";
-contextData["m.purchase"] = "1";
-
-// send the tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-FlutterACPCore.trackAction("purchase", data: contextData);
-// trackState example:
-FlutterACPCore.trackState("Order Confirmation", data: contextData);
-```
-{% endtab %}
 {% endtabs %}
-
-Here is a sample network request:
-
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N9cAUiiQNZvVBMFC%2Fproducts-bloodhound.png?generation=1558039282074316&alt=media)
-
-_`products`_ is set directly on the image request, and the other variables are set as context data. All context data variables must be mapped by using processing rules:
-
-![](../../.gitbook/assets/map-products.png)
-
-You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
 
 ## Products variable with merchandising eVars and product-specific events <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
 
@@ -206,9 +141,9 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 
 // send the tracking call - use either a trackAction or trackState call. 
 // trackAction example: 
-[ACPCore trackAction:@"purchase" data:contextData]; 
+[AEPMobileCore trackAction:@"purchase" data:contextData]; 
 // trackState example: 
-[ACPCore trackState:@"Order Confirmation" data:contextData];
+[AEPMobileCore trackState:@"Order Confirmation" data:contextData];
 ```
 
 **Swift**
@@ -226,53 +161,9 @@ contextData["m.purchase"] = "1"
 
 // send the tracking call - use either a trackAction or trackState call.
 // trackAction example:
-ACPCore.trackAction("purchase", data: contextData)
+MobileCore.track(action: "purchase", data: contextData)
 // trackState example:
-ACPCore.trackState("Order Confirmation", data: contextData)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**JavaScript**
-
-```jsx
-//create a context data dictionary
-var contextData = {};
-
-// add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
-contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
-contextData["m.purchaseid"] = "1234567890";
-contextData["m.purchase"] = "1";
-
-// send the tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-ACPCore.trackAction("purchase", contextData);
-// trackState example:
-ACPCore.trackState("Order Confirmation", contextData);
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-**Dart**
-
-```dart
-//create a context data dictionary
-var contextData = {};
-
-// add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
-contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
-contextData["m.purchaseid"] = "1234567890";
-contextData["m.purchase"] = "1";
-
-// send the tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-FlutterACPCore.trackAction("purchase", data: contextData);
-// trackState example:
-FlutterACPCore.trackState("Order Confirmation", data: contextData);
+MobileCore.track(state: "Order Confirmation", data: contextData)
 ```
 {% endtab %}
 {% endtabs %}
