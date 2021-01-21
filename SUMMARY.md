@@ -39,7 +39,10 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
 * [Adobe Edge](using-mobile-extensions/adobe-edge/README.md)
+  * [Release Notes](using-mobile-extensions/adobe-edge/edge-release-notes.md)
   * [Edge API reference](using-mobile-extensions/adobe-edge/edge-api-reference.md)
+  * [XDM Experience Events](using-mobile-extensions/adobe-edge/xdm-experience-events.md)
+  * [Edge Validation](using-mobile-extensions/adobe-edge/edge-validation.md)
 * [Adobe Analytics Edge Beta](using-mobile-extensions/adobe-analytics-edge/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics-edge/adobe-analytics-edge-release-notes.md)
   * [Analytics Edge API reference](using-mobile-extensions/adobe-analytics-edge/analytics-edge-api-reference.md)
@@ -48,12 +51,12 @@
 ## Resources
 
 * [Tutorials](resources/user-guides/README.md)
-  * [Tracking Beacons](resources/user-guides/track-beacon.md)
+  * [AEP Edge extension setup and XDM usage](resources/user-guides/aep-edge-extension-setup-and-xdm-usage.md)
+  * [XDM implementation](resources/user-guides/tutorial-3-xdm-implementation.md)
+  * [Rules for XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
-  * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
-  * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](./current-sdk-versions.md)
+  * [Latest SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 

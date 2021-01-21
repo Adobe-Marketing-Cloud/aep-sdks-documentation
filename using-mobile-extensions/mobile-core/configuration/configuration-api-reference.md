@@ -84,7 +84,7 @@ MobileCore.updateConfiguration(data);
 
 ```objectivec
 @objc(updateConfiguration:)
-static func updateConfigurationWith(configDict: [String: Any]) 
+static func updateConfigurationWith(configDict: [String: Any])
 ```
 
 #### Example
@@ -132,7 +132,7 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 #### Syntax
 
 ```swift
-static func configureWith(filePath: String) 
+static func configureWith(filePath: String)
 ```
 
 #### Example

@@ -1,10 +1,10 @@
-# Create a new Edge Configuration
+# Set up the Edge Configuration
 
-The [Adobe Experience Platform Edge Network](https://www.adobe.com/experience-platform/experience-platform-edge-network.html) is a solution-agnostic data network that can be used to streamline multiple data transfers to and from Adobe Experience Cloud solutions, Adobe Experience Platform services and external 3rd parties when used with [Experience Platform Launch Server Side](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en#server-side-info). 
+The [Adobe Experience Platform Edge Network](https://www.adobe.com/experience-platform/experience-platform-edge-network.html) is a solution-agnostic data network that can be used to streamline multiple data transfers to and from Adobe Experience Cloud solutions, Adobe Experience Platform services and external 3rd parties when used with [Experience Platform Launch Server Side](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en#server-side-info).
 
-Customers looking to send mobile data through the Adobe Experience Platform Edge Network must first create an Edge Configuration in Adobe Experience Platform Launch. 
+Customers looking to send mobile data through the Adobe Experience Platform Edge Network must first create an Edge Configuration in Adobe Experience Platform Launch.
 
-It is recommended that prior to creating a new Edge Configuration, that customers first create a XDM Schema and corresponding dataset in Adobe Experience Platform. See [Configure Schema and Dataset]() for more information.
+It is recommended that prior to creating a new Edge Configuration, that customers first create a XDM Schema and corresponding dataset in Adobe Experience Platform. See [Configure Schema and Dataset](edge-configuration.md) for more information.
 
 To create a new Edge Configuration follow the steps below:
 
@@ -15,10 +15,10 @@ To create a new Edge Configuration follow the steps below:
 
 ![Create Edge Configuration](../.gitbook/assets/AEP_Edge_EdgeConfig.png)
 
-5. In the next screen switch on `Adobe Experience Platform`
-  * For Streaming Inlet select `Create New Inlet`
-  * For Event Dataset select the dataset you previously created
-6. Once you have made your selections click `Save`.
+1. In the next screen switch on `Adobe Experience Platform`
+   * For Streaming Inlet select `Create New Inlet`
+   * For Event Dataset select the dataset you previously created
+2. Once you have made your selections click `Save`.
 
 ![Edge Configuration Details](../.gitbook/assets/AEP_Edge_Config_Details.png)
 

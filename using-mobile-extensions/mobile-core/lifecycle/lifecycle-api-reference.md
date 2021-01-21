@@ -71,18 +71,18 @@ This method should be called from the Activity onResume method.
 
 ```swift
 @objc(lifecycleStart:)
-static func lifecycleStart(additionalContextData: [String: Any]?) 
+static func lifecycleStart(additionalContextData: [String: Any]?)
 ```
 
 **Example**
 
-```objective-c
+```text
 [AEPMobileCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
-```objective-c
+```text
 [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
 ```
 
@@ -129,7 +129,7 @@ static func lifecyclePause()
 
 **Example**
 
-```objective-c
+```text
 [AEPMobileCore lifecyclePause];
 ```
 
@@ -139,7 +139,5 @@ static func lifecyclePause()
 MobileCore.lifecyclePause()
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
