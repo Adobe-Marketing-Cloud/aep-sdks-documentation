@@ -1,5 +1,11 @@
 # Adobe Analytics Edge
 
+{% hint style="warning" %}
+
+The AEP Analytics Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+
+{% endhint %}
+
 ## **Configure the Adobe Experience Platform Edge extension in** Experience Platform **Launch**
 
 1. In Experience Platform Launch, click the **Extensions** tab.
@@ -35,9 +41,9 @@
 2. Add the following pods in your `Podfile`:
 
    ```ruby
-    pod 'AEPCore', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
-    pod 'AEPEdge', :git => 'https://github.com/adobe/aepsdk-edge-ios.git', :branch => 'main'
-    pod 'AEPIdentity', :git => 'https://github.com/adobe/aepsdk-core-ios.git', :branch => 'main'
+    pod 'AEPCore'
+    pod 'AEPEdge'
+    pod 'AEPIdentity'
     pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main' 
    ```
 
