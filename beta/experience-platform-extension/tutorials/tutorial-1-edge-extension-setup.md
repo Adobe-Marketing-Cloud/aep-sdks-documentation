@@ -1,9 +1,5 @@
 # AEP Edge extension setup and XDM usage
 
-{% hint style="warning" %}
-The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
-{% endhint %}
-
 This tutorial illustrates how you may send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
 
 The demo mobile application has multiple tabs. For this exercise, the `Edge` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
@@ -18,7 +14,51 @@ The demo mobile application has multiple tabs. For this exercise, the `Edge` and
 
 ## Setup the schema, dataset and environment identifier
 
-Follow the step by step instructions in [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup).
+### Initialize Adobe Experience Platform for data collection
+
+To start collecting data in Adobe Experience Platform, an XDM schema and a Dataset need to be created. Follow these steps to get started:
+
+1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
+2. Create an XDM Schema as follows:
+   * From the left panel, select Schemas
+   * Click `Create schema`
+   * Select `XDM Experience event`
+   * Add the following existing mixins:
+     * Environment Details
+     * Commerce Details
+   * Set a name for this schema and click `Save`.
+
+![](/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/XDMSchemaExample.png)
+
+**Note:** on the top left corner, observe that the selected AEP Sandbox is Prod.
+
+3. Create a dataset from the schema as follows: 
+   - From the left panel, select Datasets
+   - Click `Create dataset from schema`
+   - Select the schema you previously created
+   - Click `Next` 
+   - Set a name for this dataset and click `Finish`.
+
+### Generate an Experience Edge environment identifier
+
+The SDK requires a configuration identifier that ensures the implementation matches the server-side Edge configuration and data is routed/received to/from the correct destination.
+
+To create a configuration identifier use the following steps:
+
+1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select _Edge Configurations_ from the left panel, then select _New Edge Configuration_.
+2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Experience Edge environments.
+
+![](/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/create_new_edge_config.png)
+
+1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
+   * Select `Prod` for `AEP Sandbox`.
+   * Select the `Streaming Inlet` from the dropdown or create a new one. A streaming inlet is an HTTP source in the Adobe Experience Platform.
+   * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](#initialize-adobe-experience-platform-for-data-collection).
+   * Click `Save`.
+
+![](/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/aep-enable-dataset.png)
+
+
 
 ## Setup the demo app
 
@@ -30,7 +70,7 @@ Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.i
 
 1. First, follow these steps to [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 2. Install the `Adobe Experience Platform Edge` extension from the Catalog.
-3. In the configuration view, select the `Edge Configuration` you created in the previous step \(see [Generate Environment Identifier](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-setup)\) and click `Save`.
+3. In the configuration view, select the `Edge Configuration` you created in the `Generate an Experience Edge environment identifier`  step and click `Save`.
 4. Install the `AEP Assurance` extension from the Catalog.
 5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`.
 6. Click `Save & Build for Development` to publish the changes in the **Development** environment.
@@ -41,17 +81,19 @@ Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.i
 {% tab title="Android" %}
 #### Java
 
-Clone or download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1).
+Download the Android Sample application from [GitHub - beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-android/releases/tag/beta-assignment-1) then follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1#installation).
 
-To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-1#installation).
 {% endtab %}
 
 {% tab title="iOS" %}
 #### Swift
 
-Clone or download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1).
+Download the iOS Swift Sample application from [GitHub - beta-assignment-1](https://github.com/adobe/aepsdk-sample-app-ios/releases/tag/beta-assignment-1), then follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1#installation).
 
-To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-1#installation).
+- Navigate to the `Swift` directory, and run the following command from terminal: `pod install`.
+- Open the Xcode workspace by running the command `open AEPSampleApp.xcworkspace`.
+- Run the `AEPSampleApp` target on the simulator of your choice.
+
 {% endtab %}
 {% endtabs %}
 
@@ -125,8 +167,14 @@ When the `Purchase` button is clicked a new XDM Commerce Purchase Experience eve
 
 AEP Assurance \(also known as Project Griffon\) is a product from Adobe to help you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is already set up to use Adobe's AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
-1. To get started, follow the [Using Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon/using-project-griffon) instructions.
-2. When asked for the **Base URL**, enter `sampleapp://` .
+1. Visit https://experience.adobe.com/griffon and login with your Adobe credentials.
+
+2. Create a new Session:
+
+   - Click `Create Session` in the top right.
+   - In the `Create New Session` dialog, review instructions, and proceed by selecting `Start`.
+   - When asked for the **Base URL**, enter `sampleapp://` , then click `Next`.
+
 3. After starting an Assurance session from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), click on the the Session Details button on the right corner of the Project Griffon page and copy the session link.
 
    **Note:** If you are using a real device, you can also use the `Scan QR Code` functionality. Then jump to step 6.
@@ -134,6 +182,7 @@ AEP Assurance \(also known as Project Griffon\) is a product from Adobe to help 
    ![](../../../.gitbook/assets/Commerce_Session_Details.png)
 
 4. Go to the Sample application that is installed on your device, and click on the `Assurance` tab.
+
 5. Paste the Assurance Session URL that you copied from [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon), and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Login.png)
@@ -143,6 +192,7 @@ AEP Assurance \(also known as Project Griffon\) is a product from Adobe to help 
    ![](../../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
 7. Once connected to Assurance, you will see an AEP Icon in red color on the top right corner of the app view. The color of this AEP Icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
+
 8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `Edge` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
 
    **Hint:** To check the XDM Experience event was successfully validated, check that this message `validation for the given event was successful` is present in the `service com.adobe.streaming.validation` event.
@@ -155,7 +205,7 @@ After using the sample demo application to view products and checkout items in a
 
 Query the dataset which stores the commerce data by doing the following:
 
-1. Log in to [https://experience.adobe.com/platform](https://experience.adobe.com/platform) using your Adobe credentials.
+1. Log in to [Adobe Experience Platform](https://experience.adobe.com/platform) using your Adobe credentials.
 2. Select your Adobe Experience Cloud Organization to the organization ID used to configure the demo application.
 3. On the navigation panel, under Data Management, select Datasets and click the dataset you created at the beginning of this tutorial. From the right panel, copy the `Table name` value.
 4. From the left panel, select **Queries**.
@@ -181,3 +231,4 @@ For this exercise, implement the Add to cart functionality in the sample applica
 
 If you would like to explore other XDM Schemas for your mobile use-case, find more details in the [Adobe Experience Platform - Experience Edge](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension) page.
 
+To learn more about the Experience Data Model (XDM), Schemas, Datasets and Mixins, read [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
