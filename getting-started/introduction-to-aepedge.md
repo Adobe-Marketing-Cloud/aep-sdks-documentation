@@ -23,10 +23,8 @@ XDM data collected is sent to the [Adobe Experience Platform Edge Network](https
 
 
 
-## Is the Edge Network right for my organization?
+## Adobe Experience Platform Edge Network Migration Considerations
 
-Generally speaking, the determination for adopting the Adobe Experience Platform Edge Network, depends on if you are looking to start sending data to the Adobe Experience Platform, or if you are looking at adopting additional platform-based solutions such as Customer Journey Management or Customer Journey Analytics. 
+The new Experience Platform Edge Network extension requires the usage of the latest Adobe Experience Platform SDKs, which for iOS is a new Swift-based SDK. This new Swift SDK for iOS is incompatible with existing Adobe solution extensions such as Adobe Campaign Standard, Adobe Campaign Classic, and Adobe Mobile Services. While updates to these solution extensions are in progress, organizations requiring multiple Adobe solutions should first check to ensure that a swift-compatible or Edge version of the extension exists. For the latest information on supported extensions see [Current SDK Versions](./current-sdk-versions.md). 3rd party vendor extensions should continue to work as expected.
 
-The new Experience Platform Edge Network extension requires the usage of the latest Adobe Experience Platform SDKs, which for iOS is a new Swift-based SDK. This new Swift SDK for iOS is incompatible with existing Adobe solution extensions such as Adobe Campaign Standard, Adobe Campaign Classic, and Adobe Mobile Services. While updates to these solution extensions are in progress, organizations requiring multiple Adobe solutions should first check to ensure that a swift-compatible or Edge version of the extension exists. 
-
-Customers looking to take advantage of Adobe Experience Platform Launch Server Side for data rules and forwarding to 3rd parties should consider adopting the Experience Platform Edge Network extension. 
+Customers looking to adopt platform-based solutions such as Customer Journey Management or Customer Journey Analtyics should consider adopting the new Experinece Platform Edge Network extension to simplify sending XDM events to the platform. 
