@@ -6,11 +6,11 @@ By utilizing the latest Adobe Experience Platform Mobile SDK along with the [Ado
 
 Mobile XDM events take the place of solution APIs such as trackAction and trackState calls to send analytics events. Customers that are not yet ready to fully adopt an XDM only data workflow may opt to keep solution specific API calls, and then create separate XDM calls for important events. 
 
-![Create XDM Schema](../.gitbook/assets/AEP_Edge_XDMdata.png)
+![](../.gitbook/assets/AEP_Edge_XDMdata.png)
 
 XDM data collected is sent to the [Adobe Experience Platform Edge Network](https://www.adobe.com/experience-platform/experience-platform-edge-network.html) where it can be transformed or distributed to different Adobe solutions including Adobe Experience Platform, Adobe Customer Journey Analytics, Adobe Customer Journey Management, Adobe Audience Manager, Adobe Target and others. In addition to Adobe solutions, XDM data delivered to the Edge Network can take advantage of [Adobe Experience Platform Launch Server Side](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en#server-side-info), where rules can be configured to forward data to 3rd party solutions.
 
-![Create XDM Schema](../.gitbook/assets/AEP_Edge_dataflow.png)
+![](../.gitbook/assets/AEP_Edge_dataflow.png)
 
 
 ## Key Benefits
