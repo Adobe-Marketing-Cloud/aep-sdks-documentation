@@ -78,7 +78,7 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
 {% tab title="Android" %}
 #### Java
 
-To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+In your Application class, register Analytics Edge with Mobile Core in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {

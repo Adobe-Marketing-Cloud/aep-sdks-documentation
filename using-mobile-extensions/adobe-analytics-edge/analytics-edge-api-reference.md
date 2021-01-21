@@ -1,5 +1,11 @@
 # Analytics Edge API reference
 
+{% hint style="warning" %}
+
+The AEP Analytics Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
+
+{% endhint %}
+
 ## trackAction
 
 To track mobile app actions in Adobe Analytics, implement the `trackAction` APIs from the Mobile Core extension. For more information, see [Track app actions](../mobile-core/mobile-core-api-reference.md#track-app-actions).
