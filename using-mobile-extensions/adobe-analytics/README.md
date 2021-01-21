@@ -23,17 +23,17 @@ No select menu will appear for the analytics company if the user only has access
 #### **Report Suites**
 
 {% hint style="info" %}
-Want to know how to find report suite IDs? See [Report Suites](https://docs.adobe.com/content/help/en/analytics/admin/manage-report-suites/report-suites-admin.html).
+Want to know how to find report suite IDs? See [Report Suites](https://experienceleague.adobe.com/docs/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see [Mobile Management](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/mobile-management.html).
+Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see [Mobile Management](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/mobile-management.html).
 
 To narrow the search for a report suite identifier, type a string in the combo box text field. After a valid report suite identifier has been selected, this identifier appears in a tag below the combo box \(shown above\). To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
 
 #### **Tracking server**
 
 {% hint style="info" %}
-Want to know what a tracking server is and where to find it? For more information, see [Correctly populate the trackingServer and trackingServerSecure variable](https://helpx.adobe.com/analytics/kb/determining-data-center.html).
+Want to know what a tracking server is and where to find it? For more information, see [Correctly populate the trackingServer and trackingServerSecure variable](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html).
 {% endhint %}
 
 Type the tracking domain to which all Analytics requests should be made.
@@ -41,7 +41,7 @@ Type the tracking domain to which all Analytics requests should be made.
 #### **Offline enabled**
 
 {% hint style="info" %}
-Do you need offline tracking? For more information, see [Offline tracking](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/offline-tracking.html).
+Do you need offline tracking? For more information, see [Offline tracking](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackoffline.html).
 {% endhint %}
 
 When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled.
@@ -429,7 +429,7 @@ To track mobile app states and actions in Adobe Analytics, implement the [trackA
 
 ### Analytics for Target \(A4T\)
 
-To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
+To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html).
 
 ### Server-side forwarding with Audience Manager
 
