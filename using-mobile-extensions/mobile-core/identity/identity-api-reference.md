@@ -1571,7 +1571,7 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  ACPIdentity.registerExtension();
+  ACPIdentity.registerExtension()
   // Override point for customization after application launch.
   return true;
 }

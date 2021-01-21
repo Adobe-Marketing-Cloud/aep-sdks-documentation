@@ -294,22 +294,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% tab title="React Native" %}
 ### Javascript
 
-{% hint style="info" %}
-We recommend you initialize the SDK by using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively. You can also initialize the SDK in Javascript \([React Native](https://github.com/adobe/react-native-acpcore)\).
-{% endhint %}
+For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
-```jsx
-import {ACPCore, ACPLifecycle, ACPIdentity, ACPSignal, ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+Initialization code is located in this Github [`README`](https://github.com/adobe/react-native-acpcore).
 
-initSDK() {
-    ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
-    ACPCore.configureWithAppId("PASTE_ENVIRONMENT_ID_HERE");
-    ACPLifecycle.registerExtension();
-    ACPIdentity.registerExtension();
-    ACPSignal.registerExtension();
-    ACPCore.start();
-}
-```
 {% endtab %}
 
 {% tab title="Flutter" %}
