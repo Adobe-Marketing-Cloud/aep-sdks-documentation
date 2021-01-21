@@ -1,4 +1,4 @@
-# AEP Assurance API reference
+# Assurance API reference
 
 ## extensionVersion
 
@@ -46,7 +46,6 @@ AEPAssurance.extensionVersion()
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
 ### Example
@@ -54,7 +53,6 @@ AEPAssurance.extensionVersion()
 ```objectivec
 AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEP Assurance version: " + version));
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -74,7 +72,6 @@ assuranceVersion = await FlutterAssurance.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Syntax
 
 ```javascript
@@ -90,37 +87,31 @@ AEPAssurance.extensionVersion(function(version) {
    console.log(error);  
 });
 ```
-
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### Syntax
 
-```c#
+```text
 public static string ExtensionVersion()
 ```
 
-### Example in C#
+### Example in C\#
 
-```c#
+```text
 string version = AEPAssurance.ExtensionVersion();
 print(LOG_TAG + "Assurance version: "+version);
 ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
+### Example in C\#
 
-### Example in C#
-
-```
+```text
 string version = AEPAssurance.ExtensionVersion()  
 Console.WriteLine("AEPAssurance version installed is: " + version);
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## startSession
@@ -193,7 +184,6 @@ For SceneDelegate based applications
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
 ### Example
@@ -201,7 +191,6 @@ For SceneDelegate based applications
 ```javascript
 AEPAssurance.startSession("your-griffon-session-url");
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -221,7 +210,6 @@ FlutterAssurance.startSession(url);
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Syntax
 
 ```javascript
@@ -237,35 +225,28 @@ AEPAssurance.startSession(url,function(result) {
    console.log("AdobeExperenceSDK: Failed to start AEPAssurance session: " + error);
 });
 ```
-
 {% endtab %}
 
 {% tab title="Unity" %}
-
 ### Syntax
 
-```c#
+```text
 public static void StartSession(string url)
 ```
 
-### Example in C#
+### Example in C\#
 
-```c#
+```text
 AEPAssurance.StartSession(url);
 ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
+### Example in C\#
 
-### Example in C#
-
-```
+```text
 AEPAssurance.StartSession(url);
 ```
-
-{% endtab %}
-
 {% endtab %}
 {% endtabs %}
 

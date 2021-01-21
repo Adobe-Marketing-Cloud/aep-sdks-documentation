@@ -7,8 +7,8 @@ Release notes and change logs for the Adobe Mobile Services extension
 ### iOS Mobile Services 1.1.0
 
 * The AEP SDKs are now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
-  * __IMPORTANT__: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
-  * __IMPORTANT__: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
+  * **IMPORTANT**: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+  * **IMPORTANT**: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
 
 ## July 31, 2020
 
@@ -90,3 +90,4 @@ The following updates were made in this release:
 ### iOS Mobile Services 1.0.0
 
 * Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
+

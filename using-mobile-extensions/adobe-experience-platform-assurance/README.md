@@ -109,7 +109,6 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```jsx
     AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEPAssurance version: " + version));
    ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -117,7 +116,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 1. Install AEP Assurance.
 
-   Flutter install instructions for AEP Assurance can be found [here](https://pub.dev/packages/flutter_assurance/install). 
+   Flutter install instructions for AEP Assurance can be found [here](https://pub.dev/packages/flutter_assurance/install).
 
 2. Import the extension.
 
@@ -130,11 +129,9 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```dart
    String version = await FlutterAEPAssurance.extensionVersion;
    ```
-
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 #### Cordova
 
 1. After creating your Cordova app and adding the Android and iOS platforms, the AEPAssurance extension for Cordova can be added with this command:
@@ -152,7 +149,6 @@ _Note_ For `iOS` using `cocoapods`, run:
       console.log(error);  
    });
    ```
-
 {% endtab %}
 
 {% tab title="Unity" %}
@@ -169,7 +165,6 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```csharp
    AEPAssurance.extensionVersion();
    ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
@@ -186,7 +181,6 @@ _Note_ For `iOS` using `cocoapods`, run:
    ```text
    AEPAssurance.ExtensionVersion();
    ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -247,23 +241,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-
 ### JavaScript
 
 When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
-
 {% endtab %}
 
 {% tab title="Flutter" %}
-
-### Dart 
+### Dart
 
 When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
-
 {% endtab %}
 
 {% tab title="Cordova" %}
-
 ### Cordova
 
 When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
@@ -294,11 +283,9 @@ public class MainScript : MonoBehaviour
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Xamarin" %}
-
 **iOS**
 
 Register the AEPAssurance extension in your app's `FinishedLaunching()` function:
@@ -346,7 +333,6 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

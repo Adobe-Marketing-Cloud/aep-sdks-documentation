@@ -1,16 +1,15 @@
-# Offer Decisioning API reference
+# Offer Decisioning API Reference
 
 ## onOfferUpdate
 
 Use this API to register a callback, it will be invoked whenever the AEP Offer Decisioning extension receives an offer response from backend services. The Offer Decisioning requests can be triggered by the `OfferDecisioning.prefetchOffers()` API, `Edge.sendEvent()` API or consequence rules.
 
 {% tabs %}
-
 {% tab title="iOS" %}
 #### Syntax
 
 ```swift
-func onOfferUpdate(perform: @escaping ([DecisionScope: [Offer]]) -> Void) 
+func onOfferUpdate(perform: @escaping ([DecisionScope: [Offer]]) -> Void)
 ```
 
 #### Example
@@ -40,7 +39,6 @@ OfferDecisioning.onOfferUpdate { offersDict in
 This API sends a request to the Offer Decisioning Services with the decisioning scopes array. The returned offers will be cached and you can use `retrievePrefetchedOffers` API to retrieve them later on demand.
 
 {% tabs %}
-
 {% tab title="iOS" %}
 #### Syntax
 
@@ -56,7 +54,7 @@ Here are some examples in Objective C and Swift:
 
 ```objectivec
 AEPDecisionScope* decisionScope = [[AEPDecisionScope alloc] initWithActivityId:@"xcore:offer-activity:124e8bc413c888dd" placementId:@"xcore:offer-placement:124e8a16430888db"];
-        
+
 [AEPMobileOfferDecisioning prefetchOffersWithDecisionScopes:@[decisionScope]];
 ```
 
@@ -72,18 +70,17 @@ OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope ])
 
 ## retrievePrefetchedOffers
 
-This API retrieves the prefetched offers for the targeted decision scopes from the cache. The returned  dictionary will only contains offers for decision scopes that has already been prefetched and cached. If a certain decision scope has not been prefetched before, it won't be contained in the returned dictionary.
+This API retrieves the prefetched offers for the targeted decision scopes from the cache. The returned dictionary will only contains offers for decision scopes that has already been prefetched and cached. If a certain decision scope has not been prefetched before, it won't be contained in the returned dictionary.
 
 {% tabs %}
 {% tab title="iOS" %}
-
 #### Syntax
 
 ```swift
 func retrievePrefetchedOffers(decisionScopes: [DecisionScope], completionHandler: @escaping ([DecisionScope: [Offer]], Error?) -> Void)
 ```
 
-* _callback_ is invoked with the `[DecisionScope: [Offer]] ` type of  value. An `Error` will be returned if SDK fails to retrieve the offers.
+* _callback_ is invoked with the `[DecisionScope: [Offer]]` type of  value. An `Error` will be returned if SDK fails to retrieve the offers.
 
 #### Examples
 
@@ -96,10 +93,9 @@ AEPDecisionScope* homeDecisionScope = [[AEPDecisionScope alloc] initWithActivity
 
 [AEPMobileOfferDecisioning retrievePrefetchedOffersWithDecisionScopes:@[homeDecisionScope] completionHandler:^(NSDictionary<AEPDecisionScope *,NSArray<AEPOffer*>*>* offers, NSError * error) {
           // get the offers for homeDecisionScope
-  		    NSArray<AEPOffer*>* homeOffers = offers[homeDecisionScope]
+              NSArray<AEPOffer*>* homeOffers = offers[homeDecisionScope]
           // deal with the offers
 }];
-        
 ```
 
 **Swift**
@@ -116,16 +112,11 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
                 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## Public classes
 
 {% tabs %}
-
-
 {% tab title="iOS" %}
 ### DecisionScope/**AEPDecisionScope**
 
@@ -135,15 +126,13 @@ This class contains the id of activity and placement, which is used by the offer
 public class DecisionScope{
     public let activityId: String
     public let placementId: String
-  
+
     public init(activityId: String, placementId: String) {
         self.activityId = activityId
         self.placementId = placementId
     }
 }
 ```
-
-
 
 ### Offer/AEPOffer
 
@@ -160,8 +149,6 @@ public class Offer: NSObject, Codable {
 }
 ```
 
-
-
 ### OfferType/AEPOfferType
 
 An enum indicating the type of an offer, which is a field of the `Offer` class
@@ -175,6 +162,6 @@ public enum OfferType{
     case image = 4
 }
 ```
-
 {% endtab %}
 {% endtabs %}
+

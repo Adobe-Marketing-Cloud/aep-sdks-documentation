@@ -21,7 +21,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
    The **Environments** tab lists the different environments where you can publish.
 
-3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package.png)\).
+3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
 
    You should see a dialog box similar to the following:
 
@@ -55,7 +55,7 @@ In order to support the new Apple M1 architecture while maintaining support for 
 Please see [Release notes](../release-notes.md#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package.png)\).
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package%20%281%29.png)\).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -532,3 +532,4 @@ pod install
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+

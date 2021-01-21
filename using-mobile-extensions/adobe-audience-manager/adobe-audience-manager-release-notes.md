@@ -5,8 +5,8 @@
 ### iOS Audience 2.2.0
 
 * The AEP SDKs are now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
-  * __IMPORTANT__: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
-  * __IMPORTANT__: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
+  * **IMPORTANT**: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+  * **IMPORTANT**: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
 
 ## November 9, 2020
 
@@ -47,3 +47,4 @@ The following change was made in this release:
 
 * The `global.ssl` configuration settings are ignored, and SSL is enabled by default.
 * Appends IMS OrgID to AAM demdex calls if subdomain endpoint is missing.
+
