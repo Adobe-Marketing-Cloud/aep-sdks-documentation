@@ -38,6 +38,8 @@ public class CoreApp extends Application {
 }
 ```
 {% endtab %}
+
+
 {% endtabs %}
 
 ### Get Application
@@ -211,7 +213,7 @@ static func track(state: String?, data: [String: Any]?)
 **Syntax**
 
 ```swift
-static func track(state: String?, data: [String: Any]?)
+static func track(state: String?, data: [String: Any]?) 
 ```
 
 * _state_ contains the name of the state to track.
@@ -227,7 +229,7 @@ MobileCore.track(state: "state name", data: ["key": "value"])
 
 ## setAdvertisingIdentifier
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/0ed8dac3a8db99800c8eda3ada4428f9f1ced6b0/using-mobile-extensions/mobile-core/identity-api-reference.md), and is removed at uninstall.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](identity-api-reference.md), and is removed at uninstall.
 
 {% hint style="info" %}
 If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.
@@ -235,6 +237,7 @@ If the current SDK privacy status is `optedout`, the advertising identifier is n
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### setAdvertisingIdentifier
 
 This API sets the provided advertising identifier.
@@ -295,13 +298,15 @@ public void onResume() {
     }).start();
 }
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
+
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+To access IDFA  and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
 {% endhint %}
 
 {% hint style="warning" %}
@@ -418,7 +423,10 @@ func setAdvertisingIdentitiferUsingTrackingManager() {
     }
 }
 ```
+
 {% endtab %}
+
+
 {% endtabs %}
 
 ## setPushIdentifier
@@ -431,6 +439,7 @@ It is recommended to call `setPushIdentifier` on each application launch to ensu
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### setPushIdentifier
 
 #### Java
@@ -449,9 +458,11 @@ public static void setPushIdentifier(final String pushIdentifier);
 //Retrieve the token from either GCM or FCM, and pass it to the SDK
 MobileCore.setPushIdentifier(token);
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
+
 ### setPushIdentifier
 
 #### iOS
@@ -478,8 +489,11 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 // Set the deviceToken that the APNs has assigned to the device
 MobileCore.setPushIdentifier(deviceToken)
 ```
+
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Collect PII
 
@@ -541,12 +555,12 @@ public static func collectPii(_ data: [String: Any])
 ```swift
 public static func collectPii(_ data: [String: Any])
 ```
-
 **Example**
 
 ```objectivec
 MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -605,7 +619,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 ```objectivec
 @objc(getSdkIdentities:)
-static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void) 
 ```
 
 * _callback_ is invoked with the SDK identities as a JSON string.
@@ -624,14 +638,13 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
     }
 }];
 ```
-
 **Swift**
-
 ```swift
 MobileCore.getSdkIdentities { (content, error) in
     // handle completion
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -736,7 +749,7 @@ public static func setLogLevel(_ level: LogLevel)
 
 **Example**
 
-```text
+```objective-c
 [AEPMobileCore setLogLevel: AEPLogLevelTrace];
 ```
 
@@ -756,6 +769,8 @@ public static func setLogLevel(_ level: LogLevel)
 MobileCore.setLogLevel(.trace)
 ```
 {% endtab %}
+
+
 {% endtabs %}
 
 {% tabs %}
@@ -780,7 +795,10 @@ LoggingMode mode = MobileCore.getLogLevel();
 {% tab title="iOS" %}
 TBD
 {% endtab %}
+
 {% endtabs %}
+
+
 
 {% tabs %}
 {% tab title="Android" %}
@@ -819,7 +837,11 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 {% tab title="iOS" %}
 TBD
 {% endtab %}
+
+
 {% endtabs %}
+
+
 
 ## Set App Group \(iOS only\)
 
@@ -845,7 +867,7 @@ public static func setAppGroup(_ group: String?)
 
 **Example**
 
-```text
+```objc
 [AEPMobileCore setAppGroup:@"app-group-id"];
 ```
 
@@ -947,7 +969,7 @@ Errors which may be passed to a completion handler callback from any API which u
 
 **Objective C**
 
-```text
+```objc
 [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
   if (error) {
     if (error.code == 1) {
@@ -955,9 +977,9 @@ Errors which may be passed to a completion handler callback from any API which u
     } else if (error.code == 2) {
       // handle nil callback error
     }
-
+    
     ....
-
+    
   } else {
     // use content
   }

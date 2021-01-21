@@ -8,7 +8,7 @@ This section shows how to start tracking product reviews as user actions in a mo
 
 ## Before you start
 
-In Adobe Experience Platform, create a schema by choosing the XDM ExperienceEvent option. For this example add the `Environment Details` mixin and create a custom mixin for product reviews containing the following fields: productSku, rating, ratingText, reviewerId. Then save the schema.
+In Adobe Experience Platform, create a schema by choosing the XDM ExperienceEvent option. For this example add the `Environment Details` mixin and create a custom mixin for product reviews containing the following fields: productSku, rating, ratingText, reviewerId. Then save the schema. 
 
 Create a dataset based on this Schema, set it up in your Edge configuration in Adobe Launch UI and enable Adobe Experience Platform.
 
@@ -20,6 +20,7 @@ Import and register the AEP Edge extension in your client-side mobile implementa
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 ```java
@@ -37,9 +38,11 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
                 .setXdmSchema(xdmData)
                 .build();
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
+
 ### Swift
 
 ```swift
@@ -54,33 +57,41 @@ let experienceEvent = ExperienceEvent(xdm: xdmData)
 
 ### Objective-C
 
-```text
+```objective-c
 NSDictionary<NSString*, NSObject*>* xdmData;
 [xdmData setValue:@"MyFirstXDMExperienceEvent" forKey:@"eventType"];
 [xdmData setValue:@{@"productSku": @"demo123",
                     @"rating": @5,
                     @"reviewText": @"I love this demo!",
                     @"reviewerId": @"Anonymous user"}
-                      forKey:_yourTenantId];
+				 	 forKey:_yourTenantId];
 AEPExperienceEvent *experienceEvent = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:nil];
 ```
+
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Send an Experience event to Adobe Experience Edge Network
 
 Use the AEP Edge mobile extension to send the Experience event created in the previous step
 
+
+
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 ```java
 Edge.sendEvent(experienceEvent, null);
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Swift
 
 ```swift
@@ -89,9 +100,10 @@ Edge.sendEvent(experienceEvent: experienceEvent)
 
 #### Objective-C
 
-```text
+```objective-c
 [AEPMobileEdge sendExperienceEvent:event completion:nil];
 ```
+
 {% endtab %}
 {% endtabs %}
 
