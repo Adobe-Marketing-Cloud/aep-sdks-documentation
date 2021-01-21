@@ -52,6 +52,6 @@
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](current-sdk-versions)
+  * [Latest SDK Versions](./current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 
