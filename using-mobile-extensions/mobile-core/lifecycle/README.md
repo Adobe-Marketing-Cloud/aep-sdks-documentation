@@ -42,6 +42,7 @@ import AEPLifecycle
 
 {% tabs %}
 {% tab title="Android" %}
+
 1. Register the Lifecycle extension:
 
    ```java
@@ -83,6 +84,7 @@ import AEPLifecycle
    ```
 
    To ensure accurate session and crash reporting, this call must be added to every activity.
+
 {% endtab %}
 
 {% tab title="iOS" %}
