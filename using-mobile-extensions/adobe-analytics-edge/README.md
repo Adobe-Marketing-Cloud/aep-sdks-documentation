@@ -44,7 +44,7 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
     pod 'AEPCore'
     pod 'AEPEdge'
     pod 'AEPIdentity'
-    pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :branch => 'main' 
+    pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :tag => '1.0.0-beta.1' 
    ```
 
 3. Import the Mobile Core, Edge, Identity, Analytics Edge, and AEP Services libraries:
