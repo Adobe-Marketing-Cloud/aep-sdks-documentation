@@ -27,40 +27,18 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 #### Objective-C
 
 ```objectivec
-[ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
+[AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
 #### Swift
 
 ```swift
-ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
+MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 
 {% hint style="info" %}
 Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
 {% endhint %}
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-When using Cordova, the `configureWithAppId` method call must be done in native code which is shown under the Android and iOS tabs.
-{% endtab %}
-
-{% tab title="Unity" %}
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
-```
 {% endtab %}
 {% endtabs %}
 
@@ -92,74 +70,14 @@ MobileCore.updateConfiguration(data);
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
-[ACPCore updateConfiguration:updatedConfig];
+[AEPMobileCore updateConfiguration:updatedConfig];
 ```
 
 #### Swift
 
 ```swift
 let updatedConfig = ["global.privacy":"optedout"]
-ACPCore.updateConfiguration(updatedConfig)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-```jsx
-ACPCore.updateConfiguration({"global.privacy":"optedout"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-```dart
-FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-```jsx
-ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallback) {
-  console.log("AdobeExperenceSDK: Update configuration successful: " + handleCallback);
-}, function(handleError) {
-  console.log("AdobeExperenceSDK: Failed to update configuration : " + handleError);
-});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-#### C\#
-
-```csharp
-var dict = new Dictionary<string, object>();
-dict.Add("global.privacy", "optedout");
-ACPCore.UpdateConfiguration(dict);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-**iOS**
-
-```csharp
- var config = new NSMutableDictionary<NSString, NSObject>
- {
-   ["global.privacy"] = new NSString("optedout")
- };
-ACPCore.UpdateConfiguration(config);
-```
-
-**Android**
-
-```csharp
-var config = new Dictionary<string, Java.Lang.Object>();
-config.Add("global.privacy", "optedout");
-ACPCore.UpdateConfiguration(config);
+MobileCore.updateConfigurationWith(configDict: updatedConfig)
 ```
 {% endtab %}
 {% endtabs %}
@@ -197,31 +115,19 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
-[ACPCore configureWithFileInPath:filePath];
+[AEPMobileCore configureWithFilePath::filePath];
 ```
 
 #### Swift
 
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-ACPCore.configureWithFile(inPath: filePath)
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+MobileCore.configureWith(filePath: filePath)
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Environment-aware configuration properties
-
-{% hint style="info" %}
-This feature is only available in iOS ACPCore version 2.0.3 or later.
-{% endhint %}
 
 Some extension developers might use different configuration values based on their environment, and the generated configuration might have several entries for the same property. For example, the Adobe Campaign Standard extension has different endpoints for development, staging, and production servers. Here is an example of a raw configuration that supports multiple build environments:
 

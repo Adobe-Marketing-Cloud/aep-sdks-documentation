@@ -2,13 +2,13 @@
 
 ## Implementing Lifecycle Metrics in Android <a id="implementing-lifecycle-metrics-in-android"></a>
 
-For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](./README.md#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 ## Tracking app crashes in Android <a id="tracking-app-crashes-in-android"></a>
 
 This information helps you understand how crashes are tracked and the best practices to handle false crashes.
 
-**Important**: App crashes are tracked as part of lifecycle metrics. Before you can track crashes, add the library to your project. For more information about implementing lifecycle, see [Implementing Lifecycle Metrics in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-lifecycle-metrics-in-android).
+**Important**: App crashes are tracked as part of lifecycle metrics. Before you can track crashes, add the library to your project. For more information about implementing lifecycle, see [Implementing Lifecycle Metrics in Android](./lifecycle-extension-in-android.md#implementing-lifecycle-metrics-in-android).
 
 When lifecycle metrics are implemented, a call is made to `MobileCore.lifecycleStart(additionalContextData)` in the `OnResume` method of each activity. In the `onPause` method, a call is made to `MobileCore.lifecyclePause()`. In the `MobileCore.lifecyclePause()` method, a flag is set to indicate a graceful exit. When the app is launched again or resumed, `MobileCore.lifecycleStart(additionalContextData)` checks this flag. If the app did not exit successfully as determined by the flag status, an `a.CrashEvent` context data is sent with the next call, and a crash event is reported.
 
@@ -86,6 +86,5 @@ void onResume() {
   MobileCore.lifecycleStart(additionalContextData);}
 ```
 
-**Important:** You need to add this code only in your main Activity and any other Activity in which your app may be launched.[    
-](https://launch.gitbook.io/marketing-mobile-sdk-v5-by-adobe-documentation/lifecycle)
+**Important:** You need to add this code only in your main Activity and any other Activity in which your app may be launched.
 

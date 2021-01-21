@@ -1,20 +1,18 @@
 # Table of contents
 
 * [Home](README.md)
-* [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+* [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 * [Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
 
 ## Getting Started
 
-* [Configure Scheme and Dataset](getting-started/create-a-mobile-property.md)
-* [Configure Edge Configuration](getting-started/create-a-mobile-property-1.md)
-* [Set up a mobile property](getting-started/create-a-mobile-property-2.md)
-* [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
-* [Enable debug logging](getting-started/enable-debug-logging.md)
-* [Set up tracking](getting-started/initialize-the-sdk.md)
-* [Implement extensions](getting-started/next-steps.md)
+* [Introduction](getting-started/introduction-to-aepedge.md)
+* [Configure Schema and Dataset](getting-started/configure-schema-and-dataset.md)
+* [Set up the Edge Configuration](getting-started/edge-configuration.md)
+* [Set up a mobile property](getting-started/set-up-mobile-property.md)
+* [Set up your first XDM Experience event](getting-started/set-up-xdm-experience-event.md)
 * [Validation](getting-started/validate.md)
 
 ## Using Mobile Extensions
@@ -38,12 +36,14 @@
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
   * [Platform Services](using-mobile-extensions/mobile-core/platform-services.md)
+* [Profile](using-mobile-extensions/profile/README.md)
+  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
+* [Adobe Edge](using-mobile-extensions/adobe-edge/README.md)
+  * [Edge API reference](using-mobile-extensions/adobe-edge/edge-api-reference.md)
 * [Adobe Analytics Edge Beta](using-mobile-extensions/adobe-analytics-edge/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics-edge/adobe-analytics-edge-release-notes.md)
   * [Analytics Edge API reference](using-mobile-extensions/adobe-analytics-edge/analytics-edge-api-reference.md)
   * [Products variable](using-mobile-extensions/adobe-analytics-edge/product-variable.md)
-* [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
 
 ## Resources
 
@@ -54,6 +54,6 @@
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+  * [Latest SDK Versions](./current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 
