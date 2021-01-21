@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-### January 19, 2020
+### January 19, 2021
 
 #### Adobe Experience Platform iOS Core SDKs
 The brand new Adobe Experience Platform Core iOS swift SDKs are live! It is [open sourced on github](https://github.com/adobe/aepsdk-core-ios/), containing the following extensions:
