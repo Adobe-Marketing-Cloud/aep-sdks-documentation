@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Home](README.md)
-* [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+* [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 * [Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
@@ -54,6 +54,6 @@
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+  * [Latest SDK Versions](./current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 

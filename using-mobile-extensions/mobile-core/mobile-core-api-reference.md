@@ -39,25 +39,7 @@ public class CoreApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="Xamarin" %}
-**C\#**
 
-### setApplication
-
-**Example**
-
-```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-{
-  protected override void OnCreate(Bundle savedInstanceState)
-  {
-    base.OnCreate(savedInstanceState);
-    ACPCore.Application = this.Application;
-    ACPCore.Start(null);
-  }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### Get Application
@@ -84,25 +66,6 @@ public static Application getApplication()
 
 ```java
 Application app = MobileCore.getApplication();
-if (app != null) {
-    ...
-}
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### getApplication
-
-{% hint style="warning" %}
-`ACPCore.Application` might be `null` if the Application object was destroyed or if no application was set in the Core.
-{% endhint %}
-
-**Example**
-
-```csharp
-var app = ACPCore.Application;
 if (app != null) {
     ...
 }
@@ -437,7 +400,7 @@ func setAdvertisingIdentifierUsingIdentifierManager() {
         if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
             idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
         }
-        ACPCore.setAdvertisingIdentifier(idfa);
+        MobileCore.setAdvertisingIdentifier(idfa)
 }
 
 @available(iOS 14, *)
@@ -660,9 +623,11 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 ```
 
 * _callback_ is invoked with the SDK identities as a JSON string.
-* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
 
 #### Example
+
+**Objective-C**
 
 ```objectivec
 [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
@@ -673,6 +638,13 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
     }
 }];
 ```
+**Swift**
+```swift
+MobileCore.getSdkIdentities { (content, error) in
+    // handle completion
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -716,47 +688,15 @@ public static void setLargeIconResourceID(int resourceID)
  MobileCore.setLargeIconResourceID(R.mipmap.ic_launcher_round);
 ```
 {% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-### setSmallIconResourceID
-
-**Syntax**
-
-```csharp
-public unsafe static void SetSmallIconResourceID (int resourceID);
-```
-
-**Example**
-
-```csharp
-ACPCore.SetSmallIconResourceID(Resource.Mipmap.icon_round);
-```
-
-### setLargeIconResourceID
-
-**Syntax**
-
-```csharp
-public unsafe static void SetLargeIconResourceID (int resourceID);
-```
-
-**Example**
-
-```csharp
- ACPCore.SetLargeIconResourceID(Resource.Mipmap.icon_round);
-```
-{% endtab %}
 {% endtabs %}
 
 ## Logging
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow application developers to filter the logged messages based on the current logging mode.
 
-Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `ACPMobileLogLevelVerbose` \(iOS\) to enable all the logging messages that are coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
+Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `LogLevel.verbose` \(iOS\) to enable all the logging messages that are coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `LogLevel.error` \(iOS\).
 
-By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `ACPMobileLogLevelError` \(iOS\).
+By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `LogLevel.eror` \(iOS\).
 
 As a Mobile SDK extension developer, you should use the MobileCore \(Android\) / ACPCore \(iOS\) `log` API to include extension log messages with Mobile SDK core log messages.
 
@@ -853,43 +793,12 @@ LoggingMode mode = MobileCore.getLogLevel();
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
-
-### getLogLevel
-
-**Syntax**
-
-```text
-+ (ACPMobileLogLevel) logLevel;
-```
-
-**Example**
-
-```text
-var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
-```
-
-**Swift**
-
-### getLogLevel
-
-**Syntax**
-
-```swift
-+ (ACPMobileLogLevel) logLevel;
-```
-
-**Example**
-
-```swift
-let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
-```
+TBD
 {% endtab %}
 
-{% tab title="React Native" %}
-
-
 {% endtabs %}
+
+
 
 {% tabs %}
 {% tab title="Android" %}
@@ -926,51 +835,7 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
-
-The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
-
-#### log
-
-**Syntax**
-
-```text
-+ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
-```
-
-**Example**
-
-```text
-[ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
-```
-
-**Output Example**
-
-```text
-[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
-```
-
-**Swift**
-
-#### log
-
-**Syntax**
-
-```swift
-+ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
-```
-
-**Example**
-
-```swift
-ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
-```
-
-**Output Example**
-
-```text
-[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
-```
+TBD
 {% endtab %}
 
 

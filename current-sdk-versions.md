@@ -38,7 +38,7 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdge"><img src="https://img.shields.io/cocoapods/v/AEPEdge.svg?color=orange&amp;label=AEPEdge&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/edge"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/edge.svg?logo=android&amp;logoColor=white&amp;label=userprofile&amp;style=flat-square" alt="Maven Central"/></a>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/edge"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/edge.svg?logo=android&amp;logoColor=white&amp;label=edge&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
