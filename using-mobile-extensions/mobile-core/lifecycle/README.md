@@ -42,7 +42,6 @@ import AEPLifecycle
 
 {% tabs %}
 {% tab title="Android" %}
-
 1. Register the Lifecycle extension:
 
    ```java
@@ -84,7 +83,6 @@ import AEPLifecycle
    ```
 
    To ensure accurate session and crash reporting, this call must be added to every activity.
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -115,7 +113,7 @@ import AEPLifecycle
        }];
    }
    ```
-   
+
 3. When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
    ```objectivec
@@ -161,7 +159,7 @@ import AEPLifecycle
        MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self])
    }
    ```
-   
+
 2. Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
    If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
@@ -177,7 +175,7 @@ import AEPLifecycle
        }
    }
    ```
-   
+
 3. When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
    ```swift
@@ -213,11 +211,7 @@ import AEPLifecycle
    ```
 
    For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background)
-   
-   
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Lifecycle metrics

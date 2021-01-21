@@ -8,7 +8,7 @@ To get the version of the Signal extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 ```java
 String signalExtensionVersion = Signal.extensionVersion();
@@ -28,8 +28,6 @@ NSString *signalExtensionVersion = [AEPMobileSignal extensionVersion];
 var signalExtensionVersion  = AEPSignal.extensionVersion
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ## CollectPII API

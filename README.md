@@ -58,8 +58,8 @@ Additionally, support for the following platforms is available on the 4x SDK ver
 
 ## Quick Links
 
-* [Getting started](getting-started/create-a-mobile-property-2.md)
-* [Getting the Experience Platform SDKs](getting-started/get-the-sdk.md)
+* [Getting started](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/0ed8dac3a8db99800c8eda3ada4428f9f1ced6b0/getting-started/create-a-mobile-property-2.md)
+* [Getting the Experience Platform SDKs](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/0ed8dac3a8db99800c8eda3ada4428f9f1ced6b0/getting-started/get-the-sdk.md)
 * [Frequently asked questions](resources/frequently-asked-questions/)
 
 ## Get help
