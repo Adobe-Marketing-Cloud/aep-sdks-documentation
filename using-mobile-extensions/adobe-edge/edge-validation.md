@@ -1,8 +1,10 @@
-# Debugging
+# Edge Validation
+
+The Adobe Experience Platform Edge extension is integrated with Adobe Assurance mobile extension to allow for request-response events inspection and provides rich verbose logging that can be used when verifying your mobile implementation.
 
 ## Adobe Experience Platform SDK Logging
 
-The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE see [Enable debug logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging).
+The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE enable the Mobile Core logging.
 
 ## Inspect Experience events with Project Griffon
 
@@ -19,7 +21,7 @@ Here is a list of the events currently supported by the AEP Edge extension, that
 * _AEP Error Response_: you may see this error event in case of an error with the XDM payload sent to Experience Edge or if a server-side error is returned for other reasons.
 * _service_: this event is published by the AEP Edge Network servers and allows you to validate that the experience event was sent successfully to the services, along with the payload attached to the request, configId used, requestId etc. Examples:
   * The service events published by `com.adobe.edge.konductor` indicate that a network request was received by the Edge Network.
-  * The service events published by `com.adobe.streaming.validation` indicate if the event passed the XDM format validation based on the schema defined in Adobe Experience Platform. This can help you debug parameter type errors, incorrect parameter names etc.
+  * The service events published by `com.adobe.streaming.validation` indicate if the event passed the XDM format validation based on the schema defined in Adobe Experience Platform. This can help you debug parameter type errors, incorrect parameter names and other errors.
 
 **Hint:** If you want to filter out only the events handled by the AEP Edge extension, you can type one of the event names listed above in the **Search Events** input field from the Session View.
 

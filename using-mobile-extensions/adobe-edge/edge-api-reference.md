@@ -261,7 +261,7 @@ public interface Schema {
 }
 ```
 
-By implementing the **Property** interface, you can define complex properties for your XDM Schema. A complex property is defined as not being a primitive type, string, or date.
+By implementing the **Property** interface, you can define complex properties for your XDM Schema. A complex property is defined as not being a primitive type, String, or Date.
 
 ```java
 public interface Property {
@@ -296,7 +296,7 @@ public class EdgeEventHandle {
 }
 ```
 
-Use this class with when calling the sendEvent API with EdgeCallback.
+Use this class when calling the sendEvent API with EdgeCallback.
 
 {% endtab %}
 
