@@ -1,13 +1,13 @@
 # Lifecycle metrics
 
-### Install
+## Install
 
 | **Metric** | **Key** | **DescriptIon** |
 | :--- | :--- | :--- |
 | First Launches | a.InstallEvent | Triggered at the first run after installation or re-installation. |
 | Install Date | a.InstallDate | Date of first launch after installation. The format is `M/d/yyyy`, and an example is `5/3/2017`. |
 
-### Upgrade
+## Upgrade
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
@@ -15,7 +15,7 @@
 | Days since last upgrade | a.DaysSinceLastUpgrade | Number of days since the application version number changed.               **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 | Launches since last upgrade | a.LaunchesSinceUpgrade | Number of launches since the application version number changed.            **Important**: This metric is not automatically stored in an Analytics metric. You must create a processing rule that sets a custom event to capture this metric. |
 
-### Launch
+## Launch
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
@@ -30,13 +30,13 @@
 | Hour of Day | a.HourOfDay | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
 | Day of Week | a.DayOfWeek | Measures the day of the week the app was launched. |
 
-### Crash
+## Crash
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
 | Crashes | a.CrashEvent | Triggered when the application crashed before closing. The event is sent when the application is started again after the crash. |
 
-### Device Information
+## Device Information
 
 <table>
   <thead>

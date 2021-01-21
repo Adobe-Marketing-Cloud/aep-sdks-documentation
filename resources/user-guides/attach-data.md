@@ -297,7 +297,7 @@ On the right pane, you can add a freeform JSON payload that adds data to an SDK 
 
 In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
-![](../../.gitbook/assets/target-attach-data-json-example-location-clicked.png)
+![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%282%29.png)
 
 The following example shows how the data element for this OS version was created.
 
@@ -354,7 +354,7 @@ On the right pane, you can add a freeform JSON payload that adds data to an SDK 
 
 In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
-![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29.png)
+![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%283%29.png)
 
 ### Save the rule and rebuild your property
 

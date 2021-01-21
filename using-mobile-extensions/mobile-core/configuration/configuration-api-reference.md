@@ -24,8 +24,8 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% tab title="iOS" %}
 #### Syntax
 
-```objectivec
-+ (void) configureWithAppId: (NSString* __nullable) appid;
+```swift
+static func configureWith(appId: String)
 ```
 
 #### Example
@@ -33,51 +33,13 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 #### Objective-C
 
 ```objectivec
-[ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
+[AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
 #### Swift
 
 ```swift
-ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-#### Syntax
-
-```csharp
-public static void ConfigureWithAppID(string appId)
-```
-
-#### Example
-
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### Android Syntax
-
-```csharp
-public unsafe static void ConfigureWithAppID (string appId);
-```
-
-#### iOS Syntax
-
-```csharp
-public static void ConfigureWithAppID (string appid);
-```
-
-#### Example
-
-#### C\#
-
-```text
-ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 {% endtab %}
 {% endtabs %}
@@ -121,7 +83,8 @@ MobileCore.updateConfiguration(data);
 #### Syntax
 
 ```objectivec
-+ (void) updateConfiguration: (NSDictionary* __nullable) config;
+@objc(updateConfiguration:)
+static func updateConfigurationWith(configDict: [String: Any])
 ```
 
 #### Example
@@ -130,80 +93,14 @@ MobileCore.updateConfiguration(data);
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
-[ACPCore updateConfiguration:updatedConfig];
+[AEPMobileCore updateConfiguration:updatedConfig];
 ```
 
 #### Swift
 
 ```swift
 let updatedConfig = ["global.privacy":"optedout"]
-ACPCore.updateConfiguration(updatedConfig)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-### updateConfiguration
-
-```jsx
-ACPCore.updateConfiguration({"global.privacy":"optedout"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-#### Dart
-
-### updateConfiguration
-
-```dart
-FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-## Javascript
-
-Update SDK configuration
-
-```javascript
-ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-## C\#
-
-Update SDK configuration
-
-```csharp
-var dict = new Dictionary<string, object>();
-dict.Add("newConfigKey", "newConfigValue");
-ACPCore.UpdateConfiguration(dict);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-## C\#
-
-Update SDK configuration
-
-**iOS**
-
-```csharp
- var config = new NSMutableDictionary<NSString, NSObject>
- {
-   ["newConfigKey"] = new NSString("newConfigValue")
- };
-ACPCore.UpdateConfiguration(config);
-```
-
-**Android**
-
-```csharp
-var config = new Dictionary<string, Java.Lang.Object>();
-config.Add("newConfigKey", "newConfigValue");
-ACPCore.UpdateConfiguration(config);
+MobileCore.updateConfigurationWith(configDict: updatedConfig)
 ```
 {% endtab %}
 {% endtabs %}
@@ -234,8 +131,8 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 {% tab title="iOS" %}
 #### Syntax
 
-```objectivec
-+ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```swift
+static func configureWith(filePath: String)
 ```
 
 #### Example
@@ -244,36 +141,14 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
-[ACPCore configureWithFileInPath:filePath];
+[AEPMobileCore configureWithFilePath:filePath];
 ```
 
 **Swift**
 
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-ACPCore.configureWithFile(inPath: filePath)
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### Android Syntax
-
-```csharp
-public unsafe static void ConfigureWithFileInPath (string filepath);
-```
-
-#### iOS Syntax
-
-```csharp
-public static void ConfigureWithFileInPath (string filepath);
-```
-
-#### Example
-
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+MobileCore.configureWith(filePath: filePath)
 ```
 {% endtab %}
 {% endtabs %}

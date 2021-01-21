@@ -3,12 +3,12 @@
 {% hint style="warning" %}
 In version 4 of the iOS SDK, this implementation was completed automatically.
 
-When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics. For more information, see [Manual Lifecycle Implementation](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/manual-lifecycle-implementation).
+When upgrading to the Experience Platform SDK, you must add code to continue collecting Lifecycle metrics.
 {% endhint %}
 
 ## Implementing Lifecycle metrics in iOS
 
-For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference [Register Lifecycle with Mobile Core and Add Appropriate Start/Pause calls](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/1778dc6e1f03fb80abf2b448587d608d1bc5bf6a/using-mobile-extensions/mobile-core/lifecycle/lifecycle/README.md#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 ## Tracking app crashes in iOS
 
@@ -56,14 +56,14 @@ When calling `lifecycleStart:`, you can optionally pass a dictionary of addition
 ```objectivec
 // Objective-C
 - (void) applicationWillEnterForeground:(UIApplication *)application {      
-    [ACPCore lifecycleStart:@{@"state": @"appResume"}];      
+    [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
 }
 ```
 
 ```swift
 // Swift
 func applicationWillEnterForeground(_ application: UIApplication) {      
-    ACPCore.lifecycleStart(["state": "appResume"])
+    MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
 }
 ```
 

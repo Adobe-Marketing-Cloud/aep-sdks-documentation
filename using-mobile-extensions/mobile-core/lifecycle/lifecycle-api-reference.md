@@ -19,57 +19,13 @@ String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 **Objective C**
 
 ```objectivec
-NSString *lifecycleExtensionVersion = [ACPLifecycle extensionVersion];
+NSString *lifecycleExtensionVersion = [AEPMobileLifecycle extensionVersion];
 ```
 
 **Swift**
 
 ```swift
-let lifecycleExtensionVersion  = ACPLifecycle.extensionVersion()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-```jsx
-ACPLifecycle.extensionVersion().then(lifecycleExtensionVersion => console.log("AdobeExperienceSDK: ACPLifecycle version: " + lifecycleExtensionVersion));
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Dart
-
-```dart
-String lifeycycleExtensionVersion = await FlutterACPLifecycle.extensionVersion;
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-```jsx
-ACPLifecycle.extensionVersion(function(version) {  
-   console.log("ACPLifecycle version: " + version);
-}, function(error) {  
-   console.log(error);  
-});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-```csharp
-string lifecycleVersion = ACPLifecycle.ExtensionVersion();
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-```csharp
-string lifecycleVersion = ACPLifecycle.ExtensionVersion();
+let lifecycleExtensionVersion  = Lifecycle.extensionVersion
 ```
 {% endtab %}
 {% endtabs %}
@@ -98,7 +54,7 @@ MobileCore.lifecycleStart(null);
 
 If you need to collect additional lifecycle data:
 
-```text
+```java
 contextData.put("myapp.category", "Game");
 MobileCore.lifecycleStart(additionalContextData);
 ```
@@ -113,100 +69,27 @@ This method should be called from the Activity onResume method.
 
 **Syntax**
 
-```text
-+ (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
+```swift
+@objc(lifecycleStart:)
+static func lifecycleStart(additionalContextData: [String: Any]?)
 ```
 
 **Example**
 
 ```text
-[ACPCore lifecycleStart:nil];
+[AEPMobileCore lifecycleStart:nil];
 ```
 
 If you need to collect additional lifecycle data:
 
 ```text
-[ACPCore lifecycleStart:@{@"state": @"appResume"}];
+[AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
 ```
 
 #### Swift
 
 ```swift
-ACPCore.lifecycleStart(["state": "appResume"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
-
-**Syntax**
-
-```jsx
-lifecycleStart(additionalContextData?: { string: string });
-```
-
-**Example**
-
-```jsx
-ACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
-{% endtab %}
-
-{% tab title="Unity" %}
-#### C\#
-
-When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
-
-```csharp
-private void OnApplicationPause(bool pauseStatus)
-{
-  if (!pauseStatus)
-  {
-    ACPCore.LifecyclePause();
-  }
-  else
-  {
-    var cdata = new Dictionary<string, string>();
-    cdata.Add("launch.data", "added");
-    ACPCore.LifecycleStart(cdata);
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-**iOS**
-
-When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
-
-```csharp
-public override void OnActivated(UIApplication uiApplication)
-{
-  base.OnActivated(uiApplication);
-  ACPCore.LifecycleStart(null);
-}
-```
-
-**Android**
-
-When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
-
-```csharp
-protected override void OnResume()
-{
-  base.OnResume();
-  ACPCore.LifecycleStart(null);
-}
+MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
 ```
 {% endtab %}
 {% endtabs %}
@@ -239,94 +122,21 @@ MobileCore.lifecyclePause();
 
 **Syntax**
 
-```text
-+ (void) lifecyclePause;
+```swift
+@objc(lifecyclePause)
+static func lifecyclePause()
 ```
 
 **Example**
 
 ```text
-[ACPCore lifecyclePause];
+[AEPMobileCore lifecyclePause];
 ```
 
 #### Swift
 
 ```swift
-ACPCore.lifecyclePause()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
-
-**Syntax**
-
-```jsx
-lifecyclePause();
-```
-
-**Example**
-
-```jsx
-ACPCore.lifecyclePause();
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-#### Cordova
-
-When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
-{% endtab %}
-
-{% tab title="Unity" %}
-#### C\#
-
-When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
-
-```csharp
-private void OnApplicationPause(bool pauseStatus)
-{
-  if (!pauseStatus)
-  {
-    ACPCore.LifecyclePause();
-  }
-  else
-  {
-    var cdata = new Dictionary<string, string>();
-    cdata.Add("launch.data", "added");
-    ACPCore.LifecycleStart(cdata);
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### C\#
-
-**iOS**
-
-When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
-
-```csharp
-public override void OnResignActivation(UIApplication uiApplication)
-{
-  base.OnResignActivation(uiApplication);
-  ACPCore.LifecyclePause();
-}
-```
-
-**Android**
-
-When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
-
-```csharp
-protected override void OnPause()
-{
-  base.OnPause();
-  ACPCore.LifecyclePause();
-}
+MobileCore.lifecyclePause()
 ```
 {% endtab %}
 {% endtabs %}
