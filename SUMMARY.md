@@ -49,11 +49,11 @@
 ## Resources
 
 * [Tutorials](resources/user-guides/README.md)
-  * [Tracking Beacons](resources/user-guides/track-beacon.md)
+  * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup)
+  * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
+  * [Rules for XDM events](beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
-  * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
-  * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
   * [Latest SDK Versions](./current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
