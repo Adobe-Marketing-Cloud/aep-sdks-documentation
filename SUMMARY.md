@@ -51,7 +51,7 @@
 ## Resources
 
 * [Tutorials](resources/user-guides/README.md)
-  * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup)
+  * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup.md)
   * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
   * [Rules for XDM events](beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
