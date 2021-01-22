@@ -6,51 +6,56 @@ Returns the version of the client-side Edge extension.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-#### Syntax
+#### Java
+
+##### Syntax
 
 ```java
 public static String extensionVersion();
 ```
 
-#### Example
+##### Example
 
 ```java
 Edge.extensionVersion();
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
 
-#### Syntax
+#### Swift
+
+##### Syntax
 
 ```swift
 public static let extensionVersion
 ```
 
-#### Example
+##### Example
 
 ```swift
 Edge.extensionVersion
 ```
 
-### Objective-C
+#### Objective-C
 
-#### Syntax
+##### Syntax
 
-```text
+```objective-c
 // Swift Edge
 public static let extensionVersion
 ```
 
-#### Example
+##### Example
 
-```text
+```objective-c
 [AEPMobileEdge extensionVersion];
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## sendEvent <a id="sendevent"></a>
@@ -59,18 +64,19 @@ Sends an Experience event to Adobe Experience Edge Network.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-#### Syntax
+#### Java
+
+##### Syntax
 
 ```java
 public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback callback);
 ```
 
-* _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
-* _callback_ - optional callback to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+- *experienceEvent* - the XDM Experience Event to be sent to Adobe Experience Edge Network
+- *callback* - optional callback to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
-#### Example
+##### Example
 
 ```java
 // example 1 - send the experience event without handling the Edge Network response
@@ -80,25 +86,27 @@ Edge.sendEvent(experienceEvent, null);
 Edge.sendEvent(experienceEvent, new EdgeCallback() {
   @Override
   public void onComplete(final List<EdgeEventHandle> handles) {
-        // handle the Edge Network response 
+		// handle the Edge Network response 
   }
 });
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
 
-#### Syntax
+#### Swift
+
+##### Syntax
 
 ```swift
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
 ```
 
-* _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
-* _completion_ - optional completion handler to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+- *experienceEvent* - the XDM Experience Event to be sent to Adobe Experience Edge Network
+- *completion* - optional completion handler to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
-#### Example
+##### Example
 
 ```swift
 // example 1 - send the experience event without handling the Edge Network response
@@ -110,18 +118,18 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
         }
 ```
 
-### Objective-C
+#### Objective-C
 
-#### Syntax
+##### Syntax
 
-```text
+```objective-c
 // Swift Edge
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
 ```
 
-#### Example
+##### Example
 
-```text
+```objective-c
 // example 1 - send the experience event without handling the Edge Network response
 [AEPMobileEdge sendExperienceEvent:event completion:nil];
 
@@ -130,7 +138,9 @@ static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEve
   // handle the Edge Network response
 }];
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## registerExtension <a id="registerextension"></a>
@@ -139,34 +149,37 @@ Registers the Edge extension with the Mobile Core SDK.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-#### Syntax
+#### Java
+
+##### Syntax
 
 ```java
 public static void registerExtension();
 ```
 
-#### Example
+##### Example
 
 ```java
 Edge.registerExtension();
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
+
+#### Swift
 
 Use the MobileCore API to register the Edge extension.
 
-#### Syntax
+##### Syntax
 
 ```swift
 // MobileCore
 public static func registerExtensions(_ extensions: [Extension.Type], _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+##### Example
 
 ```swift
 MobileCore.registerExtensions([Edge.self, ...], {
@@ -174,34 +187,39 @@ MobileCore.registerExtensions([Edge.self, ...], {
 })
 ```
 
-### Objective-C
+#### Objective-C
 
 Use the AEPMobileCore API to register the Edge extension.
 
-#### Syntax
+##### Syntax
 
-```text
+```objective-c
 // Swift MobileCore
 public static func registerExtensions(_ extensions: [Extension.Type], _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+##### Example
 
-```text
+```objective-c
 [AEPMobileCore registerExtensions:@[AEPMobileEdge.class, ...] completion:^{
   // processing after registration
 }];
 ```
+
 {% endtab %}
+
 {% endtabs %}
+
+
 
 ## Public classes
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-#### Schema and Property interfaces
+#### Java
+
+##### Schema and Property interfaces
 
 The Edge extension provides the following interfaces:
 
@@ -256,9 +274,9 @@ public interface Property {
 }
 ```
 
-When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
+When defining your custom XDM Schema(s), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
 
-#### EdgeEventHandle
+##### EdgeEventHandle
 
 ```java
 /**
@@ -267,24 +285,26 @@ When defining your custom XDM Schema\(s\), implement these interfaces to ensure 
  */
 public class EdgeEventHandle {
   /**
-     * @return the payload type or null if not found in the {@link JSONObject} response
-     */
+	 * @return the payload type or null if not found in the {@link JSONObject} response
+	 */
   public String getType() {...}
-
+  
   /**
-     * @return the event payload values for this {@link EdgeEventHandle} or null if not found in the {@link JSONObject} response
-     */
+	 * @return the event payload values for this {@link EdgeEventHandle} or null if not found in the {@link JSONObject} response
+	 */
   public List<Map<String, Object>> getPayload() {...}
 }
 ```
 
 Use this class when calling the sendEvent API with EdgeCallback.
+
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
 
-#### XDMSchema protocol
+#### Swift
+
+##### XDMSchema protocol
 
 When using the AEPEdge extension, the **XDMSchema** protocol can be implemented to define the classes that are associated with your defined schema in Adobe Experience Platform.
 
@@ -318,9 +338,9 @@ extension XDMSchema {
 
 By implementing this **XDMSchema** protocol, you can define complex properties for your XDM Schema. A complex property is defined as not being a fundamental type \(Int, Float, Double, Bool or String\), or Date.
 
-When defining your custom XDM Schema\(s\), implement this protocol to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
+When defining your custom XDM Schema(s), implement this protocol to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
 
-#### EdgeEventHandle
+##### EdgeEventHandle
 
 ```swift
 /// The EdgeEventHandle is a response fragment from Adobe Experience Edge Service for a sent XDM Experience Event. 
@@ -336,6 +356,7 @@ public class EdgeEventHandle: NSObject, Codable {
 ```
 
 Use this class when calling the sendEvent API with completion handler.
+
 {% endtab %}
 {% endtabs %}
 

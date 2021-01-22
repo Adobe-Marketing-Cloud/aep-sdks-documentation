@@ -19,6 +19,7 @@ You can set a privacy status to ensure collection of data suits your user's pref
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 You can set the privacy status to one of the following values:
@@ -28,9 +29,11 @@ You can set the privacy status to one of the following values:
 * `MobilePrivacyStatus.UNKNOWN`
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
+
 {% endtab %}
 
 {% tab title="iOS" %}
+
 You can set privacy status to one of the following values:
 
 #### Swift
@@ -48,6 +51,7 @@ You can set privacy status to one of the following values:
 * `AEPPrivacyStatusUnknown`
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
+
 {% endtab %}
 {% endtabs %}
 
@@ -57,6 +61,7 @@ To programmatically set the privacy status for the application user:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 #### Syntax
@@ -91,15 +96,16 @@ MobileCore.setPrivacyStatus(PrivacyStatus.optedIn)
 
 #### Syntax
 
-```text
+```objective-c
 + (void) setPrivacyStatus: (AEPPrivacyStatus) status;
 ```
 
 #### Example
 
-```text
+```objective-c
 [AEPMobileCore setPrivacyStatus:AEPPrivacyStatusOptedIn];
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -109,10 +115,11 @@ You can also programmatically view the current privacy status by using the follo
 The following API returns an enum representation of the privacy status for the user.
 {% endhint %}
 
-### getPrivacyStatus <a id="getprivacystatus"></a>
+### getPrivacyStatus<a id="getprivacystatus"></a>
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 #### Syntax
@@ -124,7 +131,7 @@ void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
 * _callback_ is invoked after the privacy status is available.
 * If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
-#### Example
+#### Example 
 
 ```objectivec
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
@@ -137,6 +144,7 @@ MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
 {% endtab %}
 
 {% tab title="iOS" %}
+
 #### Swift
 
 #### Syntax
@@ -149,16 +157,16 @@ static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
 
 ```swift
 MobileCore.getPrivacyStatus { (status: PrivacyStatus) in
-    switch status {
-        case .optedIn:
-            print("Privacy Status: Opt-In")
-        case .optedOut:
-            print("Privacy Status: Opt-Out")
-        case .unknown:
-            print("Privacy Status: Unknown")
-        default:
-            print("Privacy Status: Unknown")
-        }
+	switch status {
+		case .optedIn:
+			print("Privacy Status: Opt-In")
+		case .optedOut:
+			print("Privacy Status: Opt-Out")
+		case .unknown:
+			print("Privacy Status: Unknown")
+		default:
+			print("Privacy Status: Unknown")
+		}
 }
 ```
 
@@ -166,13 +174,13 @@ MobileCore.getPrivacyStatus { (status: PrivacyStatus) in
 
 #### Syntax
 
-```text
+```objective-c
 + (void) getPrivacyStatus: (nonnull void (^) (AEPPrivacyStatus status)) callback;
 ```
 
 #### Example
 
-```text
+```objective-c
 [AEPMobileCore getPrivacyStatus:^(AEPPrivacyStatus status) {
   switch (status) {
     case AEPPrivacyStatusOptedIn:
@@ -184,6 +192,7 @@ MobileCore.getPrivacyStatus { (status: PrivacyStatus) in
   }
 }];
 ```
+
 {% endtab %}
 {% endtabs %}
 

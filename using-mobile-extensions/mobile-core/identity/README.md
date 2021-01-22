@@ -1,6 +1,6 @@
 # Identity
 
-The Identity framework is bundled with [Mobile Core](../) and enables your app with the ECID. This service helps with the synchronization of Adobe and other customer identifiers.
+The Identity framework is bundled with [Mobile Core](../README.md) and enables your app with the ECID. This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="danger" %}
 On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
@@ -179,7 +179,7 @@ To use the same visitor ID in the app and mobile web and pass the visitor ID to 
 {% tab title="Android" %}
 #### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendToUrl-java):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](./identity-api-reference.md#appendToUrl-java):
 
 ```java
 Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
@@ -195,7 +195,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting in SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-java) and build your own URL:
+Alternately, starting in SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](./identity-api-reference.md#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -215,7 +215,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% tab title="iOS" %}
 #### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendToUrl-ios):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](./identity-api-reference.md#appendToUrl-ios):
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
@@ -225,7 +225,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-ios) and build your own URL:
+Alternately, you can call [getUrlVariables](./identity-api-reference.md#geturlvariables-ios) and build your own URL:
 
 ```objectivec
 [AEPMobileIdentity getUrlVariables:^(NSString * _Nullable urlVariables, NSError * error) { 

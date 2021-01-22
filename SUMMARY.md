@@ -51,12 +51,12 @@
 ## Resources
 
 * [Tutorials](resources/user-guides/README.md)
-  * [AEP Edge extension setup and XDM usage](resources/user-guides/aep-edge-extension-setup-and-xdm-usage.md)
-  * [XDM implementation](resources/user-guides/tutorial-3-xdm-implementation.md)
-  * [Rules for XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
+  * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup)
+  * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
+  * [Rules for XDM events](beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
 * [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
+  * [Latest SDK Versions](./current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 
