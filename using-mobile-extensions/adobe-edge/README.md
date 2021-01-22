@@ -4,7 +4,7 @@
 
 1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
-3. Type the extension settings. For more information, see [Set up the Edge Configuration](getting-started/edge-configuration.md) and [Edge Configuration](./#edge-configuration).
+3. Type the extension settings. For more information, see [Set up the Edge Configuration](../../getting-started/edge-configuration.md) and [Edge Configuration](./#edge-configuration).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
