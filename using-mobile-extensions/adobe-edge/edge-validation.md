@@ -4,7 +4,7 @@ The Adobe Experience Platform Edge extension is integrated with Adobe Assurance 
 
 ## Adobe Experience Platform SDK Logging
 
-The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE set the verbose/trace mode for [MobileCore logging](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#logging).
+The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE set the verbose/trace mode for [MobileCore logging](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#logging).
 
 ## Inspect Experience events with Project Griffon
 
