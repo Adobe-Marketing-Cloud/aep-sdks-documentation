@@ -4,7 +4,7 @@ The Adobe Experience Platform Edge extension is integrated with Adobe Assurance 
 
 ## Adobe Experience Platform SDK Logging
 
-The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE enable the Mobile Core logging.
+The Adobe Experience Platform Mobile SDK and the AEP Edge extension allow for detailed debugging in debug or test environments when using Verbose or Debug Log level. To enable this and see the log messages in your IDE set the verbose/trace mode for [MobileCore logging](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#logging).
 
 ## Inspect Experience events with Project Griffon
 
@@ -19,7 +19,7 @@ Here is a list of the events currently supported by the AEP Edge extension, that
 * _AEP Request Event_: represents the experience event sent through the AEP Edge extension and contains the XDM and free-form data.
 * _AEP Response Event Handle_: represents the event handle received from Experience Edge in response to an AEP Request Event.
 * _AEP Error Response_: you may see this error event in case of an error with the XDM payload sent to Experience Edge or if a server-side error is returned for other reasons.
-* _service_: this event is published by the AEP Edge Network servers and allows you to validate that the experience event was sent successfully to the services, along with the payload attached to the request, configId used, requestId etc. Examples:
+* _service_: this event is published by the Experience Edge Network servers and allows you to validate that the experience event was sent successfully to the services, along with the payload attached to the request, configId used, requestId etc. Examples:
   * The service events published by `com.adobe.edge.konductor` indicate that a network request was received by the Edge Network.
   * The service events published by `com.adobe.streaming.validation` indicate if the event passed the XDM format validation based on the schema defined in Adobe Experience Platform. This can help you debug parameter type errors, incorrect parameter names and other errors.
 
