@@ -11,7 +11,7 @@ The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of
 * Knowledge about the AEP Edge extension
 * Completion of [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup) \(required to have a mobile property in Launch with Edge configuration setup\).
 
-#### Create a Launch Server Side Property
+### Create a Launch Server Side Property
 
 We will create a Launch Server Side property that can be used to manipulate and forward data from our Mobile application to 3rd party vendors or internal systems. Launch Server Side rules can be used with data sent from Web and Mobile properties at the same time. Follow the steps below to create your Launch Server Side property.
 
@@ -28,7 +28,7 @@ We will create a Launch Server Side property that can be used to manipulate and 
 4. Give your library a name, such as Dev library and under the Environment drop-down select development. 
 5. Click the `+ Add All Changed Resources` button and then the `Save and Build for Development` button at the top. 
 
-#### Link your Launch Server Side Property to your Edge Configuration
+### Link your Launch Server Side Property to your Edge Configuration
 
 Do not close your Launch Server Side property as we will need additional information in a minute. Open a new window and login to your Launch property that we have used thus far in the beta by going to either [http://launch.adobe.com](http://launch.adobe.com) or [http://experience.adobe.com/launch](http://experience.adobe.com/launch)
 
@@ -43,7 +43,7 @@ Do not close your Launch Server Side property as we will need additional informa
 
 ![Manually adding environment ID and property ID to your Edge Configuration](../../../.gitbook/assets/image%20%284%29.png)
 
-#### Create your first Server Side Forwarding Rule
+### Create your first Server Side Forwarding Rule
 
 For this next activity we are going to use Launch Server Side rules to forward XDM product information to a 3rd party. For this exercise we are going to work with three browser windows or tabs open. The first window should be your Launch Server Side propery \([http://launch-demo.adobe.com](http://launch-demo.adobe.com)\), the second window should be Project Griffon \([http://experience.adobe.com/griffon](http://experience.adobe.com/griffon)\) and the third window should be Webhook.site \([https://webhook.site/](https://webhook.site/)\)
 

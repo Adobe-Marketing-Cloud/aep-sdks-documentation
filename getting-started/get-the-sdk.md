@@ -297,7 +297,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
 Initialization code is located in this Github [`README`](https://github.com/adobe/react-native-acpcore).
-
 {% endtab %}
 
 {% tab title="Flutter" %}
