@@ -90,8 +90,9 @@ MobileCore.track(state: "Order Confirmation", data: contextData)
 ```
 {% endtab %}
 
-The _`products`_  variable is set directly on the image request and the other variables are set as context data. All context data variables must be mapped by using processing rules except for the _`products`_ variable as it is set directly on the image request by the SDK.
-
+{% tab %}
+The _`products`_ variable is set directly on the image request and the other variables are set as context data. All context data variables must be mapped by using processing rules except for the _`products`_ variable as it is set directly on the image request by the SDK.
+{% endtab %}
 {% endtabs %}
 
 ## Products variable with merchandising eVars and product-specific events <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>

@@ -98,14 +98,13 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
 * _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _completion is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#public-classes) code of the specific error. The default timeout is 1000ms.
+* _completion is invoked with \_urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#public-classes) code of the specific error. The default timeout is 1000ms.
 
 **Examples**
 
 **Objective-C**
 
 ```objectivec
-          
 [AEPMobileIdentity appendToUrl:[NSURL URLWithString:@"https://example.com"] completion:^(NSURL * _Nullable url, NSError * error) {
 
   if (error) {
@@ -141,7 +140,6 @@ Identity.appendTo(url: URL(string: "https://example.com")) { (appendedURL, error
       // handle error, nil appendedURL
    }
 }
-
 ```
 
 {% hint style="info" %}
@@ -269,7 +267,6 @@ static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void
 **Swift**
 
 ```swift
-
 Identity.getExperienceCloudId { (exCloudId, error) in
   if let error = error {
     // handle error here
@@ -356,8 +353,6 @@ Identity.getIdentifiers { (ids, error) in
 }
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ## getUrlVariables
@@ -433,7 +428,7 @@ If an error occurs while retrieving the URL string, _callback_ will be called wi
 static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned Error` contains the [AEPError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completion is invoked with \_urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned Error\` contains the [AEPError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -514,11 +509,8 @@ super.onCreate();
 #### iOS
 
 Use the `MobileCore.registerExtensions` API.
-
 {% endtab %}
 {% endtabs %}
-
-
 
 ## syncIdentifier
 
@@ -667,7 +659,7 @@ Identity.syncIdentifiers(identifiers: identifiers)
 
 The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-Starting with _AEPIdentity v3.0.0 and _Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
+Starting with _AEPIdentity v3.0.0 and \_Identity v1.1.2 \(Android\)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
 
 {% tabs %}
 {% tab title="Android" %}

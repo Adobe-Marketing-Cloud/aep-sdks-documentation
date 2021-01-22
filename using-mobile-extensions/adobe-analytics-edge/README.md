@@ -1,23 +1,21 @@
-# Adobe Analytics Edge
+# Adobe Analytics Edge Beta
 
 {% hint style="warning" %}
-
 The AEP Analytics Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more.
-
 {% endhint %}
 
 ## **Configure the Adobe Experience Platform Edge extension in** Experience Platform **Launch**
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Experience Platform Edge** extension, and click **Install**.
-3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Edge configuration for use with your mobile app, see the [Edge extension readme](../adobe-edge/README.md). Additionally, Analytics Edge extension setup steps are available in a tutorial at [Enable Analytics in Edge configuration.](../../beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension#enable-analytics-in-edge-configuration)
+3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Edge configuration for use with your mobile app, see the [Edge extension readme](../adobe-edge/). Additionally, Analytics Edge extension setup steps are available in a tutorial at [Enable Analytics in Edge configuration.](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/251c4c8375daded0e48c732d8ae80925e919a201/beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension/README.md#enable-analytics-in-edge-configuration)
 4. Click **Save**.
 5. Publish the latest changes to your **Adobe Experience Platform Launch** configuration and proceed to adding the Analytics Edge extension in your mobile app.
 
 ## Add the Analytics Edge extension to your app
 
 {% tabs %}
-{% tab title="Android" %}
+
 **Java**
 
 1. Add the Mobile Core, Edge, and Analytics Edge extensions to your project using the app's Gradle file.
@@ -33,18 +31,17 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
    ```java
     import com.adobe.marketing.mobile.*;
    ```
-{% endtab %}
 
-{% tab title="iOS" %}
+
+
 1. Add the Mobile Core, Edge, Identity, and Analytics Edge extensions to your project using Cocoapods.
-
 2. Add the following pods in your `Podfile`:
 
    ```ruby
     pod 'AEPCore'
     pod 'AEPEdge'
     pod 'AEPIdentity'
-    pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :tag => '1.0.0-beta.1' 
+    pod 'AEPAnalyticsEdge', :git => 'https://github.com/adobe/aepsdk-analyticsedge-ios', :tag => '1.0.0-beta.1'
    ```
 
 3. Import the Mobile Core, Edge, Identity, Analytics Edge, and AEP Services libraries:
@@ -68,9 +65,6 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
     import AEPAnalyticsEdge
     import AEPServices
    ```
-   {% endtab %}
-
-   {% endtabs %}
 
 ### Register Analytics Edge with Mobile Core
 
@@ -132,7 +126,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      return true;
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -153,7 +146,7 @@ To track mobile app states and actions in Adobe Analytics, implement the `trackA
 ```java
 // create a context data dictionary
 Map<String, String> additionalContextData = new HashMap<>();
-                                          
+
 // add data
 additionalContextData.put("exampleCustomKey", "exampleValue");
 
@@ -181,6 +174,7 @@ NSMutableDictionary *additionalContextData = [NSMutableDictionary dictionary];
 // trackState example:
 [AEPMobileCore trackState:@"State Name" data:additionalContextData];
 ```
+
 #### Swift
 
 ```swift
@@ -193,7 +187,6 @@ MobileCore.track(action: "Action Name", data: additionalContextData)
 // trackState example:
 MobileCore.track(state: "State Name", data: additionalContextData)
 ```
-
 {% endtab %}
 {% endtabs %}
 

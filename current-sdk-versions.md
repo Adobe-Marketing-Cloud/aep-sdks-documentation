@@ -16,14 +16,25 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a></td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPCore"><img src="https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&amp;label=AEPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      <a href="https://cocoapods.org/pods/AEPServices"><img src="https://img.shields.io/cocoapods/v/AEPServices.svg?color=orange&amp;label=AEPServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
-       <a href="https://cocoapods.org/pods/AEPIdentity"><img src="https://img.shields.io/cocoapods/v/AEPIdentity.svg?color=orange&amp;label=AEPIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
-        <a href="https://cocoapods.org/pods/AEPSignal"><img src="https://img.shields.io/cocoapods/v/AEPSignal.svg?color=orange&amp;label=AEPSignal&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-         <a href="https://cocoapods.org/pods/AEPLifecycle"><img src="https://img.shields.io/cocoapods/v/AEPLifecycle.svg?color=orange&amp;label=AEPLifecycle&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-          <a href="https://cocoapods.org/pods/AEPServices"><img src="https://img.shields.io/cocoapods/v/AEPServices.svg?color=orange&amp;label=AEPServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-           <a href="https://cocoapods.org/pods/AEPRulesEngine"><img src="https://img.shields.io/cocoapods/v/AEPRulesEngine.svg?color=orange&amp;label=AEPRulesEngine&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a></td>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPCore"><img src="https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&amp;label=AEPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+        <a
+        href="https://cocoapods.org/pods/AEPServices">
+          <img src="https://img.shields.io/cocoapods/v/AEPServices.svg?color=orange&amp;label=AEPServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
+          alt="Cocoapods" />
+          </a> <a href="https://cocoapods.org/pods/AEPIdentity"><img src="https://img.shields.io/cocoapods/v/AEPIdentity.svg?color=orange&amp;label=AEPIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+          <a
+          href="https://cocoapods.org/pods/AEPSignal">
+            <img src="https://img.shields.io/cocoapods/v/AEPSignal.svg?color=orange&amp;label=AEPSignal&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
+            alt="Cocoapods" />
+            </a> <a href="https://cocoapods.org/pods/AEPLifecycle"><img src="https://img.shields.io/cocoapods/v/AEPLifecycle.svg?color=orange&amp;label=AEPLifecycle&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a> 
+            <a
+            href="https://cocoapods.org/pods/AEPServices">
+              <img src="https://img.shields.io/cocoapods/v/AEPServices.svg?color=orange&amp;label=AEPServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
+              alt="Cocoapods" />
+              </a> <a href="https://cocoapods.org/pods/AEPRulesEngine"><img src="https://img.shields.io/cocoapods/v/AEPRulesEngine.svg?color=orange&amp;label=AEPRulesEngine&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
       <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&amp;logoColor=white&amp;label=core&amp;style=flat-square" alt="Maven Central"/></a>
       </td>
       <td style="text-align:left">
@@ -46,7 +57,7 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
         <p><a href="https://github.com/adobe/aepsdk-edge-ios">iOS</a>
         </p>
       </td>
-    </tr>   
+    </tr>
   </tbody>
 </table>
 

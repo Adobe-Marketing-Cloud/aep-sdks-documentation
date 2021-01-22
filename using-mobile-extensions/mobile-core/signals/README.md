@@ -2,7 +2,7 @@
 
 The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
 
-The Signal extension is bundled with the  [Mobile Core](../README.md) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
+The Signal extension is bundled with the [Mobile Core](../) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
@@ -38,7 +38,7 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS" %}
- Add the [Mobile Core](../README.md) extension to your project using Cocoapods.
+Add the [Mobile Core](../) extension to your project using Cocoapods.
 
 Add following pods in your `Podfile`:
 
@@ -50,7 +50,7 @@ Import the Signal libraries:
 
 #### Objective-C
 
-```objective-c
+```text
 @import AEPSignal;
 ```
 
@@ -60,8 +60,6 @@ Import the Signal libraries:
 import AEPSignal
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ### Register the Signal extension
@@ -126,7 +124,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      return true;
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -136,5 +133,5 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 For more information about `collectPii` and its usage, see [collectPii](../mobile-core-api-reference.md#collect-pii).
 
-For more information about how to configure the Signal postbacks in Experience Platform Launch, see [Signal extension and Rules Engine integration](../../../resources/user-guides/signal-extension-and-rules-engine-integration).
+For more information about how to configure the Signal postbacks in Experience Platform Launch, see [Signal extension and Rules Engine integration](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/415ad4c45b0bddcb6879a7403d8c2922f154ef8b/resources/user-guides/signal-extension-and-rules-engine-integration/README.md).
 
