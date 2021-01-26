@@ -1,5 +1,11 @@
 # Release Notes
 
+## January 20, 2021
+
+### iOS Audience 2.3.0
+
+* Added tvOS compatibility
+
 ## December 18, 2020
 
 ### iOS Audience 2.2.0
