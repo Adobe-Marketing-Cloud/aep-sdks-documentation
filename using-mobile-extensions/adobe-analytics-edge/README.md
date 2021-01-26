@@ -15,8 +15,8 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
 ## Add the Analytics Edge extension to your app
 
 {% tabs %}
-
-**Java**
+{% tab title="Android" %}
+#### Java
 
 1. Add the Mobile Core, Edge, and Analytics Edge extensions to your project using the app's Gradle file.
 
@@ -31,8 +31,10 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
    ```java
     import com.adobe.marketing.mobile.*;
    ```
+{% endtab %}
 
-
+{% tab title="iOS" %}
+#### Objective C
 
 1. Add the Mobile Core, Edge, Identity, and Analytics Edge extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
@@ -65,6 +67,8 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
     import AEPAnalyticsEdge
     import AEPServices
    ```
+{% endtab %}
+{% endtabs %}
 
 ### Register Analytics Edge with Mobile Core
 
