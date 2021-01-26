@@ -1,56 +1,69 @@
 # Products variable
 
-## Set the products variable using XDM events and the Edge extension
+## Set the products variable using Experience events and the Edge extension
 
-Experience Data Model (XDM) schemas can be used to send the products variable to Analytics. XDM schemas are composed of one class and zero or more mixins. For more information on creating an XDM schema, see [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#understanding-schemas) and [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html#tutorials). An Edge event containing a mixin for a [commerce detail object](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) can be used for sending product information to Analytics.
+An Experience Event can be used to send the products variable to the Experience Edge after an XDM schema and dataset have been setup for receiving the event. For more information on creating an XDM schema, see [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#understanding-schemas) and [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html#tutorials). The created schema should contain a mixin for a [commerce detail object.](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)
+
+For more information on the products variable, see [Implementing a Merchandising Variable](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/addproductevar.html#vars).
 
 {% tabs %}
 {% tab title="Android" %}
 
 #### Java <a id="java-2"></a>
 
-Create an Experience Edge event containing purchased product data and send it to Experience Edge. The following code sample is a modified version of the product purchase example within the [AEP SDK Sample App for Android](https://github.com/adobe/aepsdk-sample-app-android).
-
 #### Example <a id="example"></a>
 
 ```java
-// Create the purchased item objects
-final ProductListItemsItem product1 = new ProductListItemsItem();
-product1.setName("Running Shoes");
-product1.setPriceTotal(69.95);
-product1.setQuantity(1);
+// build a product map for each product
+HashMap<String, Object> product1 = new HashMap<>();
+product1.put("SKU", "SH100");
+product1.put("name", "Running Shoes");
+product1.put("priceTotal", 69.95);
+product1.put("quantity", 1);
+HashMap<String, Object> product2 = new HashMap<>();
+product2.put("SKU", "SO100");
+product2.put("name", "Running Socks");
+product2.put("priceTotal", 29.99);
+product2.put("quantity", 10);
 
-final ProductListItemsItem product2 = new ProductListItemsItem();
-product2.setName("Running Socks");
-product2.setPriceTotal(29.99);
-product2.setQuantity(10);
+// build a product list and add the product maps
+List<Object> productListItems = new ArrayList<>();
+productListItems.add(product1);
+productListItems.add(product2);
 
-// Create a list of purchased items
-List<ProductListItemsItem> purchasedItems = new ArrayList<ProductListItemsItem>() {{
-  add(product1);
-  add(product2);
-}};
+// create an order total variable
+double orderTotal = 0D;
+orderTotal += (double)product1.get("priceTotal");
+orderTotal += (double)product2.get("priceTotal");
 
-// Create Purchases action
-Purchases purchases = new Purchases();
-purchases.setValue(1);
-purchases.setId("1234567890");
+// create a paymentsItem map which details the method of payment
+HashMap<String, Object> paymentsItem = new HashMap<>();
+paymentsItem.put("transactionID", "abc123");
+paymentsItem.put("paymentAmount", orderTotal);
+paymentsItem.put("paymentType", "credit_card");
+paymentsItem.put("currencyCode", "USD");
 
-// Create Commerce object and add Purchases action
-Commerce commerce = new Commerce();
-commerce.setPurchases(purchases);
+// build an order, purchases, and commerce map
+HashMap<String, Object> order = new HashMap<>();
+order.put("purchaseID", "1234567890");
+order.put("priceTotal", orderTotal);
+order.put("currencyCode", "USD");
+order.put("payments", paymentsItem);
 
-// Compose the XDM Schema object and set the event name
-MobileSDKCommerceSchema xdmData = new MobileSDKCommerceSchema();
-xdmData.setEventType("commerce.purchases");
-xdmData.setCommerce(commerce);
-xdmData.setProductListItems(purchasedItems);
+HashMap<String, Object> purchases = new HashMap<>();
+purchases.put("value", 1.0);
 
-// Create an Experience Event with the built schema and send it using the AEP Edge extension
-ExperienceEvent event = new ExperienceEvent.Builder()
-  .setXdmSchema(xdmData)
-  .build();
-Edge.sendEvent(event, new EdgeCallback() {
+HashMap<String, Object> commerce = new HashMap<>();
+commerce.put("order", order);
+commerce.put("purchases", purchases);
+
+// create an Experience Event and send it using the AEP Edge extension
+HashMap<String, Object> xdmData = new HashMap<>();
+xdmData.put("commerce", commerce);
+xdmData.put("productListItems", productListItems);
+xdmData.put("eventType", "commerce.purchases");
+final ExperienceEvent experienceEvent = new ExperienceEvent.Builder().setXdmSchema(xdmData,"your-dataset-id").build();
+Edge.sendEvent(experienceEvent, new EdgeCallback() {
   @Override
   public void onComplete(List<EdgeEventHandle> list) {
     // handle the response
@@ -59,50 +72,46 @@ Edge.sendEvent(event, new EdgeCallback() {
 }
 ```
 
+The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the Schema interface at https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes, and the commerce example in [AEP SDK Sample App for Android](https://github.com/adobe/aepsdk-sample-app-android).
+
 {% endtab %}
 
 {% tab title="iOS" %}
-
-Create an Experience Edge event containing purchased product data and send it to Experience Edge. The following code sample is a modified version of the product purchase example within the [AEP SDK Sample App for iOS](https://github.com/adobe/aepsdk-sample-app-ios/tree/main/Swift).
 
 #### Swift
 
 #### Example
 
 ```swift
-// Create the purchased item objects
-var product1 = ProductListItemsItem()
-product1.name = "Running Shoes"
-product1.priceTotal = 69.95
-product1.quantity = 1
-        
-var product2 = ProductListItemsItem()
-product2.name = "Running Socks"
-product2.priceTotal = 29.99
-product2.quantity = 10
-                
-// Create a list of purchased items
-let purchasedItems: [ProductListItemsItem] = [product1, product2]
+// build a product map for each product
+let product1 = ["SKU":"SH100","name":"Running Shoes","priceTotal": 69.95, "quantity": 1] as [String : Any]
+let product2 = ["SKU":"SO100","name":"Running Socks","priceTotal": 29.99, "quantity": 10] as [String : Any]
 
-// Create Purchases action
-var purchases = Purchases()
-purchases.value = 1
-purchases.id = "1234567890"
+// build a product list and add the product maps
+let productListItems: [Dictionary<String, Any>] = [product1, product2]
 
-// Create Commerce object and add Purchases action
-var commerce = Commerce()
-commerce.purchases = purchases
-                
-// Compose the XDM Schema object and set the event name
-var xdmData = MobileSDKCommerceSchema()
-xdmData.eventType = "commerce.purchases"
-xdmData.commerce = commerce
-xdmData.productListItems = purchasedItems
+// create an order total variable
+var orderTotal = 0.0
+orderTotal += product1["priceTotal"] as! Double
+orderTotal += product2["priceTotal"] as! Double
 
-// Create an Experience Event with the built schema and send it using the Platform extension
-let event = ExperienceEvent(xdm: xdmData)
+// create a paymentsItem map which details the method of payment
+let paymentsItem =  ["transactionID":"abc123", "paymentAmount":orderTotal,"paymentType":"credit_card","currencyCode":"USD"] as [String: Any]
+
+// build an order, purchases, and commerce map
+let order = ["purchaseID":"1234567890","priceTotal":orderTotal,"currencyCode":"USD","payments":paymentsItem] as [String : Any]
+
+let purchases = ["value":1.0]
+
+let commerce = ["order":order,"purchases":purchases]
+
+// create an Experience Event and send it using the AEP Edge extension
+let xdmData =  ["commerce":commerce,"productListItems":productListItems,"eventType":"commerce.purchases"] as [String : Any]
+let event = ExperienceEvent(xdm: xdmData, datasetIdentifier: "60106c7230c86f1948613a91")
 Edge.sendEvent(experienceEvent: event)
 ```
+
+The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the XDMSchema protocol at https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes, and the commerce example in [AEP SDK Sample App for iOS](https://github.com/adobe/aepsdk-sample-app-ios/tree/main/Swift).
 
 {% endtab %}
 
