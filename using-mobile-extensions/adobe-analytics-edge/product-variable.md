@@ -72,7 +72,7 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 }
 ```
 
-The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the Schema interface at https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes, and the commerce example in [AEP SDK Sample App for Android](https://github.com/adobe/aepsdk-sample-app-android).
+The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the Schema interface in [Edge API public classes](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes) and the commerce example in [AEP SDK Sample App for Android](https://github.com/adobe/aepsdk-sample-app-android).
 
 {% endtab %}
 
@@ -88,7 +88,7 @@ let product1 = ["SKU":"SH100","name":"Running Shoes","priceTotal": 69.95, "quant
 let product2 = ["SKU":"SO100","name":"Running Socks","priceTotal": 29.99, "quantity": 10] as [String : Any]
 
 // build a product list and add the product maps
-let productListItems: [Dictionary<String, Any>] = [product1, product2]
+let productListItems: [[String : Any]] = [product1, product2]
 
 // create an order total variable
 var orderTotal = 0.0
@@ -107,11 +107,11 @@ let commerce = ["order":order,"purchases":purchases]
 
 // create an Experience Event and send it using the AEP Edge extension
 let xdmData =  ["commerce":commerce,"productListItems":productListItems,"eventType":"commerce.purchases"] as [String : Any]
-let event = ExperienceEvent(xdm: xdmData, datasetIdentifier: "60106c7230c86f1948613a91")
+let event = ExperienceEvent(xdm: xdmData, datasetIdentifier: "your-dataset-id")
 Edge.sendEvent(experienceEvent: event)
 ```
 
-The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the XDMSchema protocol at https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes, and the commerce example in [AEP SDK Sample App for iOS](https://github.com/adobe/aepsdk-sample-app-ios/tree/main/Swift).
+The alternative to using raw dictionaries for your XDM data is building a concrete class based on your XDM schema. For more information, see the XDMSchema protocol in [Edge API public classes](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge/edge-api-reference#public-classes) and the commerce example in [AEP SDK Sample App for iOS](https://github.com/adobe/aepsdk-sample-app-ios/tree/main/Swift).
 
 {% endtab %}
 
