@@ -41,6 +41,10 @@ Solutions such as [Places Service](https://docs.adobe.com/content/help/en/places
 
 To upgrade to the Experience Platform SDKs, see [Upgrade to the Experience Platform SDKs](resources/upgrading-to-aep/).
 
+### Will Mobile Services functionality still work for me?
+
+Yes! This end-of-support statement does not affect your use of Mobile Services in anyway. You may continue to use features such as marketing links, push notifications, in-app messaging, etc. with version 4 SDKs or by leveraging the [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services/) extension for the new Experience Platform Mobile SDKs.
+
 ### Can I still download and use the version 4 SDKs?
 
 You can continue to use the version 4 SDKs after the end-of-support dates. However, as mentioned in [End-of-support considerations](version-4-sdk-end-of-support-faq.md#end-of-support-considerations), no support will be provided.

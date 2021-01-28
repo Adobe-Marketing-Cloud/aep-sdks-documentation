@@ -52,7 +52,7 @@ For this next activity we are going to use Launch Server Side rules to forward X
 3. Looking at the Griffon event list you should see the `AEP Request Event` for each action. 
 4. Clicking on the Request you should be to click and expand the raw event looking similar to the image below
 
-![AEP Request Raw Event](../../../.gitbook/assets/image%20%289%29%20%281%29.png)
+![AEP Request Raw Event](../../../.gitbook/assets/image%20%289%29%20%282%29%20%281%29.png)
 
 1. In your Launch Server Side window select the Data Element menu and click `Add Data Element`
 2. Name the Data Element as ProductName, the extension should be Core and the Data Element Type should be Path

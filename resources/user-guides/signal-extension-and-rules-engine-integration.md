@@ -73,7 +73,7 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
     https://my.company.com/users?email={%%Mobile Core Context Data email%%}
    ```
 
-   ![Send Postback action example](../../.gitbook/assets/postback_pii_token_example2.png)
+   ![Send Postback action example](../../.gitbook/assets/postback_pii_token_example2%20%283%29.png)
 
 For more information about `collectPii` and its usage, see `collectPii` in [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
