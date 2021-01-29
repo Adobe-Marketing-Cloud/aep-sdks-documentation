@@ -28,7 +28,7 @@ To start collecting data in Adobe Experience Platform, an XDM schema and a Datas
      * Commerce Details
    * Set a name for this schema and click `Save`.
 
-![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b563f1346152e703607e526b7f95aa7b984a0961/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/XDMSchemaExample.png)
+![](../../.gitbook/assets/XDMSchemaExample.png)
 
 **Note:** on the top left corner, observe that the selected AEP Sandbox is Prod.
 
@@ -48,7 +48,7 @@ To create a configuration identifier use the following steps:
 1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select _Edge Configurations_ from the left panel, then select _New Edge Configuration_.
 2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Experience Edge environments.
 
-![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b563f1346152e703607e526b7f95aa7b984a0961/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/create_new_edge_config.png)
+![](../../.gitbook/assets/create_new_edge_config.png)
 
 1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
    * Select `Prod` for `AEP Sandbox`.
@@ -56,7 +56,7 @@ To create a configuration identifier use the following steps:
    * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](tutorial-1-edge-extension-setup.md#initialize-adobe-experience-platform-for-data-collection).
    * Click `Save`.
 
-![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b563f1346152e703607e526b7f95aa7b984a0961/Users/dobrin/Git/forked/docs/acp-sdks-documentation/.gitbook/assets/aep-enable-dataset.png)
+![](../../.gitbook/assets/aep-enable-dataset.png)
 
 ## Setup the demo app
 
