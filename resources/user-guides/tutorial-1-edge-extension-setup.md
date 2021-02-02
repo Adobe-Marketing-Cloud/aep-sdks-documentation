@@ -1,4 +1,4 @@
-# AEP Edge extension setup and XDM usage
+# Getting Started with Adobe Experience Platform
 
 This tutorial illustrates how you may send XDM commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
 

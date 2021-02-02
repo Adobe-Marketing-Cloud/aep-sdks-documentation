@@ -45,7 +45,7 @@
 ## Resources
 
 * [Tutorials](resources/user-guides/README.md)
-  * [AEP Edge extension setup and XDM usage](resources/user-guides/tutorial-1-edge-extension-setup.md)
+  * [Getting Started with Adobe Experience Platform](resources/user-guides/tutorial-1-edge-extension-setup.md)
   * [XDM implementation](resources/user-guides/tutorial-3-xdm-implementation.md)
   * [Rules for XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
