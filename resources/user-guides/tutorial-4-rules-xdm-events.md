@@ -1,20 +1,12 @@
-# Rules for XDM events
-
-{% hint style="warning" %}
-The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
-{% endhint %}
+# Rules & XDM events
 
 ## Prerequisites for this tutorial
 
-* Access to Adobe Experience Platform
-* Minimal Swift / Android development knowledge 
-* Knowledge about the AEP Edge extension
-* Completion of [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup) \(required to have a mobile property in Launch with Edge configuration setup\).
-* Completion of [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation) \(required to have a Product reviews schema and dataset\).
+* Finish [Sample XDM Implementation](tutorial-3-xdm-implementation.md)
 
 ### Download the sample application
 
-**Note:** This step is not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation).
+**Note:** This step is not required if you already implemented the steps described in [Sample XDM Implementation](tutorial-3-xdm-implementation.md)
 
 {% tabs %}
 {% tab title="Android" %}

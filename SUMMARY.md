@@ -46,8 +46,8 @@
 
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/tutorial-1-edge-extension-setup.md)
-  * [Sample XDM implementation](resources/user-guides/tutorial-3-xdm-implementation.md)
-  * [Rules for XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
+  * [Sample XDM Implementation](resources/user-guides/tutorial-3-xdm-implementation.md)
+  * [Rules & XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)

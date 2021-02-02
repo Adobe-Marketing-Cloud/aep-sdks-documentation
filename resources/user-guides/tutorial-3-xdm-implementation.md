@@ -1,4 +1,4 @@
-# Sample XDM implementation
+# Sample XDM Implementation
 
 ## Prerequisites for this tutorial
 
