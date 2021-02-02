@@ -15,7 +15,7 @@ Data collection for Adobe Experience Platform is via the Edge Network and the ne
 Data collection via Adobe Experience Platform Edge Network provides support for the following platforms:
 
 * Android \(see [Current SDK Versions](current-sdk-versions.md) for download links\)
-* iOS \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK Versions](current-sdk-versions.md) for download links\)
+* iOS \(includes iOS, iPadOS\) \(see [Current SDK Versions](current-sdk-versions.md) for download links\)
 
 ## Get help
 
