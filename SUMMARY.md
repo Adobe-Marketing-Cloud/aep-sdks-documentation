@@ -50,7 +50,5 @@
   * [Rules for XDM events](resources/user-guides/tutorial-4-rules-xdm-events.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
-* [Frequently asked questions](resources/frequently-asked-questions/README.md)
-  * [Latest SDK Versions](resources/frequently-asked-questions/current-sdk-versions.md)
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
 
