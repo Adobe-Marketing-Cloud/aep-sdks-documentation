@@ -2,9 +2,6 @@
 
 ## Prerequisites for this tutorial
 
-* Access to Adobe Experience Platform
-* Access to AEP Real-time Customer Profile
-* Minimal Swift / Android development knowledge 
 * Finish [Getting Started with Adobe Experience Platform](tutorial-1-edge-extension-setup.md)
 
 ### Download the sample application
