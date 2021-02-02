@@ -35,7 +35,7 @@ In the resulting summary screen, you will see that three environments have been 
 
 Make note of the listed, Launch Edge Configuration **Environment ID**s, as these values will be referenced when you setup the mobile property in the next step.
 
-
+![Environment IDs for your Edge Configuration](../.gitbook/assets/screen-shot-2021-02-02-at-12.45.55-pm.png)
 
 For additional information on Edge Configurations in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
 
