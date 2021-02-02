@@ -6,5 +6,3 @@ The Adobe Experience Platform Edge mobile extension helps you to deploy Adobe Ex
 The Adobe Experience Platform Edge Network extension for the Experience Platform Mobile SDK has been released and is generally available. To learn more about this extension, setup, and getting started, visit: [Adobe Experience Platform Edge Network Mobile](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/).
 {% endhint %}
 
-
-

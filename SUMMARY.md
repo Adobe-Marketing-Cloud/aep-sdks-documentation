@@ -124,21 +124,7 @@
 
 ## BETA
 
-* [Adobe Experience Platform Edge Mobile Extension](beta/experience-platform-extension/README.md)
- <!--- * [Tutorials](beta/experience-platform-extension/tutorials/README.md)
-    * [AEP Edge extension setup and XDM usage](beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup.md)
-    * [AEP Core setup](beta/experience-platform-extension/tutorials/tutorial-2-swift-core-setup.md)
-    * [XDM implementation](beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation.md)
-    * [Rules for XDM events](beta/experience-platform-extension/tutorials/tutorial-4-rules-xdm-events.md)
-    * [Analytics Edge extension](beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension.md)
-    * [Launch Server Side](beta/experience-platform-extension/tutorials/launch-server-side.md)
-  * [Generate Environment Identifier](beta/experience-platform-extension/experience-platform-setup.md)
-  * [Implement Experience Edge Extension](beta/experience-platform-extension/set-up-the-sdk.md)
-  * [Experience Events](beta/experience-platform-extension/experience-platform-events.md)
-  * [Response handling](beta/experience-platform-extension/response-handling.md)
-  * [Mobile extension schema](beta/experience-platform-extension/schema-creation.md)
-  * [Auto collected data](beta/experience-platform-extension/auto-collected-data.md)
-  * [Debugging](beta/experience-platform-extension/experience-platform-debugging.md)--->
+* [Adobe Experience Platform Edge Mobile Extension](beta/experience-platform-extension.md)
 * [Adobe Experience Platform Offer Decisioning Extension](beta/offer-decisioning-extension/README.md)
   * [Offer Decisioning API Reference](beta/offer-decisioning-extension/offer-api.md)
 * [Project Griffon](beta/project-griffon/README.md)
