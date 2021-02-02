@@ -22,18 +22,20 @@ To create a new Edge Configuration follow the steps below:
 3. Click **New Edge Configuration** \(located on top right\)
 4. Set a name for the configuration and click **Save**.
 
-![Creating an Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/AEP_Edge_EdgeConfig.png)
+![Creating an Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/screen-shot-2021-02-02-at-12.42.57-pm%20%281%29.png)
 
 1. In the next screen, toggle on **Adobe Experience Platform** and:
    1. Select the appropriate **Sandbox** from the dropdown
    2. Choose the appropriate **Event Dataset** as previously created
 2. Once you have made your selections click `Save`.
 
-![Configuring your Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/AEP_Edge_Config_Details.png)
+![Configuring your Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/screen-shot-2021-02-02-at-12.44.31-pm.png)
 
 In the resulting summary screen, you will see that three environments have been created for your Edge Configuration. If needed, each environment can be edited individually with different configuration parameters.
 
 Make note of the listed, Launch Edge Configuration **Environment ID**s, as these values will be referenced when you setup the mobile property in the next step.
+
+
 
 For additional information on Edge Configurations in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
 
