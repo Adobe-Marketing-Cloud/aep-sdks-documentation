@@ -4,7 +4,7 @@ Adobe Experience Cloud implementations for mobile apps leverage [Adobe Experienc
 
 By utilizing the latest Adobe Experience Platform Mobile SDK along with the [Adobe Experience Platform Edge Network extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/415ad4c45b0bddcb6879a7403d8c2922f154ef8b/getting-started/using-mobile-extensions/adobe-edge/README.md), customers can adopt XDM \([Experience Data Model](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)\) workflows for data collection. XDM data collection represents a shift from solution specific APIs to simple key / value pairs, that can be sent from both Mobile and Web properties.
 
-Mobile XDM events take the place of solution APIs such as trackAction and trackState calls to send analytics events. Customers that are not yet ready to fully adopt an XDM only data workflow may opt to keep solution specific API calls, and then create separate XDM calls for important events.
+For instance, XDM events based on take the place of solution APIs such as trackAction and trackState calls to send analytics events. Customers that are not yet ready to fully adopt an XDM only data workflow may opt to keep solution specific API calls, and then create separate XDM calls for important events.
 
 ![](../.gitbook/assets/AEP_Edge_XDMdata.png)
 

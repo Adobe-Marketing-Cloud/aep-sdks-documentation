@@ -1,4 +1,4 @@
-# Adobe Edge
+# Adobe Experience Platform Edge Network
 
 ## Configure the Adobe Experience Platform Edge Network extension in Experience Platform Launch
 
