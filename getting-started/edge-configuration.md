@@ -1,28 +1,39 @@
-# Set up the Edge Configuration
+# Configure the Edge
 
-The [Adobe Experience Platform Edge Network](https://www.adobe.com/experience-platform/experience-platform-edge-network.html) is a solution-agnostic data network that can be used to streamline multiple data transfers to and from Adobe Experience Cloud solutions, Adobe Experience Platform services and external 3rd parties when used with [Experience Platform Launch Server Side](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en#server-side-info).
+For mobile data collection via the Adobe Experience Platform Edge Network, the configuration of the  Experience Platform Mobile SDK is now split between two workflows within [Experience Platform Launch](https://launch.adobe.com):
 
-Customers looking to send mobile data through the Adobe Experience Platform Edge Network must first create an Edge Configuration in Adobe Experience Platform Launch.
+{% hint style="warning" %}
+To create an Edge configuration, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.
+{% endhint %}
 
-It is recommended that prior to creating a new Edge Configuration, that customers first create a XDM Schema and corresponding dataset in Adobe Experience Platform. See [Configure Schema and Dataset](edge-configuration.md) for more information.
+{% hint style="info" %}
+The Edge configuration tool is available to customers on the _allow list_ regardless whether they use Experience Platform Launch for web tag management or to manage mobile app configuration.
+
+Users will require _Develop_ permissions in Experience Platform Launch. See the [User Permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) article in the Experience Platform Launch documentation for more details.
+{% endhint %}
+
+1. Create an Edge configuration - The Edge configuration contains settings for Adobe solutions and services and is setup server-side \(instead of client-side\). The Edge configuration is identified to the Mobile SDK by edgeConfigId \(via the Edge Network Extension\).
+2. Setting up a mobile property - As previously done, users will need to create and setup a mobile property and add the Adobe Experience Platform Edge Network extension \(and other extensions as needed\) to obtain install instructions and the client environment ID.
 
 To create a new Edge Configuration follow the steps below:
 
 1. In the browser, navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and login with your credentials.
-2. From the left panel, change from Client Side configurations to `Edge Configurations`
-3. Click `New Edge Configuration` on the right side
-4. Set a name for the configuration and click `Save`.
+2. From the left panel, choose **Edge Configuration** from the dropdown \(instead of **Client Side**\).
+3. Click **New Edge Configuration** \(located on top right\)
+4. Set a name for the configuration and click **Save**.
 
-![Create Edge Configuration](../.gitbook/assets/AEP_Edge_EdgeConfig.png)
+![Creating an Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/AEP_Edge_EdgeConfig.png)
 
-1. In the next screen switch on `Adobe Experience Platform`
-   * For Streaming Inlet select `Create New Inlet`
-   * For Event Dataset select the dataset you previously created
+1. In the next screen, toggle on **Adobe Experience Platform** and:
+   1. Select the appropriate **Sandbox** from the dropdown
+   2. Choose the appropriate **Event Dataset** as previously created
 2. Once you have made your selections click `Save`.
 
-![Edge Configuration Details](../.gitbook/assets/AEP_Edge_Config_Details.png)
+![Configuring your Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/AEP_Edge_Config_Details.png)
 
-In the summary screen you will see that three environments have been created for your Edge Configuration. If desired, each environment can be edited individually with different configuration parameters. Make note of the `Environment ID`, as this value will be used to connect your mobile application to your Edge Configuration.
+In the resulting summary screen, you will see that three environments have been created for your Edge Configuration. If needed, each environment can be edited individually with different configuration parameters.
 
-For additional information on Edge Configurations in Experience Platform Launch [see this document](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en#creating-an-edge-configuration).
+Make note of the listed, Launch Edge Configuration **Environment ID**s, as these values will be referenced when you setup the mobile property in the next step.
+
+For additional information on Edge Configurations in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
 
