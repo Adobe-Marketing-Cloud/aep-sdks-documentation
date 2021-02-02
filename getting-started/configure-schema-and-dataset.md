@@ -1,4 +1,4 @@
-# Configure Schema and Dataset
+# Setup Schemas & Datasets
 
 To standardize data collection and interoperability, Adobe has created the open and publicly documented Experience Data Model standard, or [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html). XDM is the foundational framework that allows [Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/home.html) services and Adobe Experience Cloud solutions, to deliver the right experiences to the right person, on the right channel and at the right time.
 
@@ -23,11 +23,11 @@ To create a basic XDM schema for mobile data collection, follow the steps below 
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create an XDM Schema as follows:
-   * From the left panel, select Schemas
-   * Click **Create schema**
-   * Select **XDM Experience event**
-   * Under **Mixins**, select **Add**; search and add the `Environment Details`,`Application Details`, and other custom mixins as needed.
-   * Set a **Display Name** for this schema and click `Save`.
+   1. From the left panel, select Schemas
+   2. Click **Create schema**
+   3. Select **XDM Experience event**
+   4. Under **Mixins**, select **Add**; search and add the `Environment Details`,`Application Details`, and other pre-created or custom _mixins_ as needed.
+   5. Set a **Display Name** for this schema and click `Save`.
 
 ![Schema Creation in Adobe Experience Platform](../.gitbook/assets/AEP_Edge_CreateXDMSchema.png)
 
