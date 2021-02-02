@@ -1,16 +1,11 @@
-# XDM implementation
-
-{% hint style="warning" %}
-The Adobe Experience Platform Edge mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
-{% endhint %}
+# Sample XDM implementation
 
 ## Prerequisites for this tutorial
 
 * Access to Adobe Experience Platform
 * Access to AEP Real-time Customer Profile
 * Minimal Swift / Android development knowledge 
-* Knowledge about the AEP Edge extension
-* Completion of [Assignment 1 - AEP Edge extension setup and XDM usage](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup).
+* Finish [Getting Started with Adobe Experience Platform](tutorial-1-edge-extension-setup.md)
 
 ### Download the sample application
 
