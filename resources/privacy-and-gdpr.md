@@ -10,10 +10,9 @@ When Adobe provides software and services to an enterprise, Adobe acts as a data
 
 You can set a privacy status to ensure collection of data suits your user's preferences.
 
-| Exp**ected Behavior** | Opt In | Opt Out | Opt Unknown |
+| Extension | Opt In | Opt Out | Opt Unknown |
 | :--- | :--- | :--- | :--- |
-| **Edge** | Hits are sent | Hits not sent | Hits queued |
-| **Analytics Edge** | Hits are sent | Hits not sent | Hits queued |
+| **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
 ### Privacy Status settings
 
