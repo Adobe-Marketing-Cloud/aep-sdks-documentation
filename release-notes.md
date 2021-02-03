@@ -18,7 +18,7 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 
 * Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
 * Fixed a bug which prevented cached configuration being loaded during app launch.
-* Fixed a crash which was caused by the exception thrown from the underlining Android `okhttp` library.
+* Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
 
 ### January 20, 2021
 
