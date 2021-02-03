@@ -1,5 +1,13 @@
 # Release Notes
 
+### February 2, 2021
+
+#### Android Core 1.6.0
+
+* Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
+* Fixed a bug which prevented cached configuration being loaded during app launch.
+* Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
+
 ### December 18, 2020
 
 #### iOS Core 2.9.0, iOS Identity 2.5.0, iOS Lifecycle 2.2.0, iOS Signal 2.2.0

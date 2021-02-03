@@ -12,6 +12,14 @@ The Adobe Experience Platform Mobile SDK will soon be available in Swift as an i
 [Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
 {% endhint %}
 
+### February 2, 2021
+
+#### Android Core 1.6.0
+
+* Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
+* Fixed a bug which prevented cached configuration being loaded during app launch.
+* Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
+
 ### January 20, 2021
 
 #### iOS Audience 2.3.0
