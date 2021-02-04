@@ -6,7 +6,7 @@ The following events are handled by the Profile extension:
 
 ### USER\_PROFILE : REQUEST\_PROFILE
 
-The event is used to put a user profile attribute update action on the Event Hub and is consumed by the Profile extension. This event is generated when an `updateUserAttribute` call is made by the SDK client.
+The event is used to put a user profile attribute update action on the Event Hub and is consumed by the Profile extension. This event is generated when an `updateUserAttributes` call is made by the SDK client.
 
 #### Event details
 
