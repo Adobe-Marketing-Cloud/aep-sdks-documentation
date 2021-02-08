@@ -13,6 +13,7 @@ To get started with the Profile extension:
 3. Implement Profile APIs to:
    * Update user attributes.
    * Remove user attributes.
+   * Get user attributes.
 
 ## Add Profile to your App
 
@@ -31,81 +32,23 @@ To add the Profile extension to your app:
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
-2. Import the UserProfile and Identity library.   
+2. Import the UserProfile library.  
+
+### Objective C
+
+ 
 
 ```text
-   #import "ACPCore.h"
-   #import "ACPUserProfile.h"
+  @import AEPUserProfile;
 ```
 
 ### Swift
 
 ```swift
-   import ACPCore
-   import ACPUserProfile
+   import AEPUserProfile
 ```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-1. After creating your Cordova app and adding the Android and iOS platforms, the User Profile extension for Cordova can be added with this command:
-
-   ```text
-   cordova plugin add https://github.com/adobe/cordova-acpuserprofile.git
-   ```
-
-2. Get the extension version.
-
-   ```javascript
-   ACPUserProfile.extensionVersion(function(version) {  
-      console.log("ACPUserProfile version: " + version);
-   }, function(error) {  
-      console.log(error);  
-   });
-   ```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Flutter
-
-1. After creating your Flutter app and adding the Android and iOS platforms, the User Profile extension for flutter can be added in the `pubspec.yaml`:
-
-   ```yaml
-    dependencies:
-      flutter_acpcore: ">= 1.0.0"
-      flutter_acpuserprofile: ">= 1.0.0"
-   ```
-
-Then fetch the packages with:
-
-```bash
-flutter pub get
-```
-
-1. Get the extension version.
-
-   ```dart
-   import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
-   String version = FlutterACPUserProfile.extensionVersion;
-   ```
-
-### Xamarin
-
-1. After adding the iOS or Android ACPUserProfile NuGet package, the User Profile extension for Xamarin can be added by this import statement:
-
-   ```csharp
-   using Com.Adobe.Marketing.Mobile;
-   ```
-
-2. Get the extension version.
-
-   ```csharp
-   ACPUserProfile.ExtensionVersion();
-   ```
 {% endtab %}
 {% endtabs %}
 
@@ -113,6 +56,7 @@ flutter pub get
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 **Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity.
@@ -140,6 +84,7 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
+
 ### Objective C
 
 **Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
@@ -148,77 +93,27 @@ public class MobileApp extends Application {
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPUserProfile registerExtension];
+	[AEPMobileCore registerExtensions:@AEPMobileUserProfile.class] completion:^{
+    ...
+  }];
+  ...
   // Override point for customization after application launch.
   return YES;
 }
 ```
-{% endtab %}
+### Swift
 
-{% tab title="Cordova" %}
-### Cordova
-
-When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Flutter
-
-When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### Xamarin
-
-#### C\#
-
-**iOS**
-
-Register the User Profile extension in your app's `FinishedLaunching()` function:
-
-```csharp
-public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-{
-  global::Xamarin.Forms.Forms.Init();
-  LoadApplication(new App());
-  ACPUserProfile.RegisterExtension();
-  // start core
-  ACPCore.Start(startCallback);
-  return base.FinishedLaunching(app, options);
-}
-
-private void startCallback()
-{
-  // set launch config
-  ACPCore.ConfigureWithAppID("yourAppId");
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([UserProfile.self], {
+  })
+  ...
 }
 ```
 
-**Android**
 
-Register the User Profile extension in your app's `OnCreate()` function:
 
-```csharp
-protected override void OnCreate(Bundle savedInstanceState)
-{
-  base.OnCreate(savedInstanceState);
-  global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-  LoadApplication(new App());
-  ACPUserProfile.RegisterExtension();
-
-  // start core
-  ACPCore.Start(new CoreStartCompletionCallback());
-}
-
-class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
-{
-  public void Call(Java.Lang.Object callback)
-  {
-    // set launch config
-    ACPCore.ConfigureWithAppID("yourAppId");
-  }
-}
-```
 {% endtab %}
 {% endtabs %}
 
