@@ -10,7 +10,7 @@
 * [Setup Schemas & Datasets](getting-started/configure-schema-and-dataset.md)
 * [Configure the Edge](getting-started/edge-configuration.md)
 * [Set up a mobile property](getting-started/set-up-mobile-property.md)
-* [Get the Experience Platform SDK](get-the-sdk.md)
+* [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Set up your first XDM Experience event](getting-started/set-up-xdm-experience-event.md)
 * [Validation](getting-started/validate.md)
 
