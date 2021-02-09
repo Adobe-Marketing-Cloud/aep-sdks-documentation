@@ -10,7 +10,7 @@ To use this view, complete the following steps:
 
 1. [Setup Project Griffon](../set-up-project-griffon.md)
 2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
-3. In the **Home** view, select **Custom Validation**
+3. In the **Home** view, select **Validation Summary**
 
 ![Validation Summary](../../../.gitbook/assets/screen-shot-2021-02-08-at-2.49.28-pm.png)
 
