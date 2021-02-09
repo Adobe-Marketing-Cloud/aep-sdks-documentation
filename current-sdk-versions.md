@@ -58,6 +58,20 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
         </p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPUserProfile"><img src="https://img.shields.io/cocoapods/v/AEPUserProfile.svg?color=orange&amp;label=AEPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&amp;logoColor=white&amp;label=profile&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
+        </p>
+        <p><a href="https://github.com/adobe/aepsdk-userprofile-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
