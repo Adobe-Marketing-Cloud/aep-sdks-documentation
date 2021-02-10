@@ -13,7 +13,7 @@ To begin sending XDM data from your mobile application to Adobe Experience Platf
 
 ## Create & Configure your XDM Schema
 
-Customers and organizations can configure XDM data schemas to organize and describe data that will be ingested into the Adobe Experience Platform. 
+Customers and organizations can configure XDM data schemas to organize and describe data that will be ingested into the Adobe Experience Platform.
 
 {% hint style="info" %}
 To learn more about XDM schema creation see [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html).

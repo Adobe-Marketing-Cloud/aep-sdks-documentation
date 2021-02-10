@@ -8,7 +8,7 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
 
-Data collection for Adobe Experience Platform is via the Edge Network and the new [Adobe Experience Platform Edge Network](using-mobile-extensions/adobe-edge/) extension. This extension, like other SDK extensions is a client-side, native library that allows customers of Adobe Experience Cloud to interact with the various services in the Experience Cloud through the Adobe Experience Platform Edge Network. 
+Data collection for Adobe Experience Platform is via the Edge Network and the new [Adobe Experience Platform Edge Network](using-mobile-extensions/adobe-edge/) extension. This extension, like other SDK extensions is a client-side, native library that allows customers of Adobe Experience Cloud to interact with the various services in the Experience Cloud through the Adobe Experience Platform Edge Network.
 
 ## Supported Platforms
 

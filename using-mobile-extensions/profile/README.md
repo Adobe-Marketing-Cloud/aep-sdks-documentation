@@ -32,13 +32,10 @@ To add the Profile extension to your app:
 {% endtab %}
 
 {% tab title="iOS" %}
-
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
 2. Import the UserProfile library.  
 
 ### Objective C
-
- 
 
 ```text
   @import AEPUserProfile;
@@ -56,7 +53,6 @@ To add the Profile extension to your app:
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 **Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity.
@@ -84,7 +80,6 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Objective C
 
 **Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
@@ -93,7 +88,7 @@ public class MobileApp extends Application {
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[AEPMobileCore registerExtensions:@AEPMobileUserProfile.class] completion:^{
+    [AEPMobileCore registerExtensions:@AEPMobileUserProfile.class] completion:^{
     ...
   }];
   ...
@@ -101,6 +96,7 @@ public class MobileApp extends Application {
   return YES;
 }
 ```
+
 ### Swift
 
 ```swift
@@ -111,9 +107,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 }
 ```
-
-
-
 {% endtab %}
 {% endtabs %}
 

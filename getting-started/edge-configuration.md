@@ -1,6 +1,6 @@
 # Configure the Edge
 
-For mobile data collection via the Adobe Experience Platform Edge Network, the configuration of the  Experience Platform Mobile SDK is now split between two workflows within [Experience Platform Launch](https://launch.adobe.com):
+For mobile data collection via the Adobe Experience Platform Edge Network, the configuration of the Experience Platform Mobile SDK is now split between two workflows within [Experience Platform Launch](https://launch.adobe.com):
 
 {% hint style="warning" %}
 To create an Edge configuration, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.

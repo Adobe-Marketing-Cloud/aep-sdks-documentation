@@ -60,7 +60,6 @@ UserProfile.updateUserAttributes(profileMap);
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### updateUserAttributes
 
 Sets the user profile attributes key and value.
@@ -218,7 +217,7 @@ Gets the user profile attributes with the given keys.
 #### **Syntax**
 
 ```swift
-public  static func getUserAttributes(attributeNames: [String], completion: @escaping ([String: Any]?, AEPError) -> Void) 
+public  static func getUserAttributes(attributeNames: [String], completion: @escaping ([String: Any]?, AEPError) -> Void)
 ```
 
 * _completion_ is invoked after the customer attributes are available, or _AEPError_ if an unexpected error occurs or the request times out. The default timeout is 5s.
@@ -240,7 +239,7 @@ A retail application wants to get the `itemsAddedToCart` user data when processi
 ```swift
 UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]){
                      attributes, error in
-				              // your customized code
+                              // your customized code
 }
 ```
 {% endtab %}
