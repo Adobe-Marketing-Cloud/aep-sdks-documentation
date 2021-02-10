@@ -2,7 +2,7 @@
 
 ## Overview
 
-You may use the Validation Summary feature to quickly and easily manage JavaScript functions to validate events in a Project Griffon session.
+You may use the Validation Summary feature to quickly and easily manage JavaScript functions to validate events in a Project Griffon session. Each function receives the events in a Project Griffon session. You can write functions to validate your client configuration, event conditions, tests and use cases.
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ After you have tested your function, you can click **Upload** to save your valid
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `uuid` | String | Universally unique identifier for the event. |
-| `timestamp` | Number | Timestamp from the device when the event was sent from the SDK. |
+| `timestamp` | Number | Timestamp from the client when the event was sent to Project Griffon. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
 | `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
 | `type` | String | Used to denote the type of event. |
