@@ -8,9 +8,13 @@ The AEP Analytics Edge mobile extension is currently in BETA. Use of this extens
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Experience Platform Edge** extension, and click **Install**.
-3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Edge configuration for use with your mobile app, see the [Edge extension readme](../adobe-edge/). Additionally, Analytics Edge extension setup steps are available in a tutorial at [Enable Analytics in Edge configuration.](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/251c4c8375daded0e48c732d8ae80925e919a201/beta/experience-platform-extension/tutorials/tutorial-5-analytics-edge-extension/README.md#enable-analytics-in-edge-configuration)
-4. Click **Save**.
-5. Publish the latest changes to your **Adobe Experience Platform Launch** configuration and proceed to adding the Analytics Edge extension in your mobile app.
+3. Within the Edge Extension configuration page add your Edge configuration and environment settings. For more information on creating an Edge configuration for use with your mobile app, see the [Edge extension readme](../adobe-edge/). 
+4. Additionally, Analytics needs to be enabled in the Edge configuration. Select the configuration created in the previous step. Select development environment, enable Adobe Analytics and add a development report suite.
+
+![](../../.gitbook/assets/edge_analytics_config.png)
+
+5. Click **Save**.
+6. Publish the latest changes to your **Adobe Experience Platform Launch** configuration and proceed to adding the Analytics Edge extension in your mobile app.
 
 ## Add the Analytics Edge extension to your app
 
