@@ -4,14 +4,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-{% hint style="info" %}
-### Swift Developer Preview
-
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
-
-[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-{% endhint %}
-
 ### February 2, 2021
 
 #### Android Core 1.6.0
