@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### February 11, 2021
+
+#### iOS Core 2.9.1
+
+* Fixed a crash which happened in `AdobeMarketingMobile::StringUtils`
+
 ### February 2, 2021
 
 #### Android Core 1.6.0
