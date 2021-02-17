@@ -61,9 +61,19 @@ To execute the function in the code editor, click **Test**. The function is expe
 
 ![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 
+## Viewing Results
+
+The left panel displays the results of all enabled validations, including the tested function in the right panel.
+
+When a validation result is `unknown` or `not matched` and the `events` array has one or more `uuids`, the left panel will render a link with the count of events that are not matched. Clicking on the link will render a popover that contains a list of views. Selecting one of the views will navigate you to that view and will select those events not matched.
+
+![](../../../.gitbook/assets/screen-shot-2021-02-11-at-10.15.06-am.png)
+
 ## Troubleshooting
 
 If an error occurs in the JavaScript code editor, an `ERROR` status is displayed, and the reason for the error is output to the browser's developer console.
 
-Additionally, you can also reach out to our team on our Slack Channel at [https://projectgriffon.slack.com/](https://projectgriffon.slack.com/)
+Additionally, you can also reach out to our team on our Slack Channel at [https://projectgriffon.slack.com/](https://projectgriffon.slack.com/).
+
+To learn more about validations, you can visit the [Project Griffon Validations](https://github.com/adobe/griffon-validation-plugins) GitHub. There you can find examples from validations owned by Adobe, as well as the [wiki](https://github.com/adobe/griffon-validation-plugins/wiki) that describes validations in more detail.
 
