@@ -88,9 +88,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+TBD
+
+{% endtab %}
+
 {% endtabs %}
 
-## Prefetch and retrieve offers 
+## Prefetch and retrieve offers
 
 After you get everything correctly set up, you can now use the AEP Offer Decisioning extension to prefetch and retrieve the offers and then render the content in your app.
 
@@ -120,6 +127,17 @@ let decisionScope = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa9338
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Java 
+
+```Java
+DecisionScope decisionScope = new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c");
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Prefetch offers
@@ -145,6 +163,19 @@ OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2]
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Java 
+
+```Java
+OfferDecisioning.prefetchOffers(Arrays.asList(
+                        new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c"),
+                        new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100d")));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 
@@ -173,6 +204,29 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [decisionScope]) { 	  
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Java 
+
+```Java
+OfferDecisioning.retrievePrefetchedOffers(Arrays.asList(
+                new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c")),
+                new AdobeCallbackWithError<Map<DecisionScope, List<Offer>>>() {
+                    @Override
+                    public void fail(AdobeError adobeError) {
+
+                    }
+                    @Override
+                    public void call(Map<DecisionScope, List<Offer>> decisionScopeListMap) {
+                        StringBuffer sb = new StringBuffer();
+                        // render the offer with offer.content
+                    }
+                });
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 
@@ -199,4 +253,24 @@ OfferDecisioning.onOfferUpdate { offersDict in
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Java 
+
+```Java
+OfferDecisioning.onOfferUpdate(new AdobeCallbackWithError<Map<DecisionScope, List<Offer>>>() {
+            @Override
+            public void fail(AdobeError adobeError) {
+
+            }
+            @Override
+            public void call(Map<DecisionScope, List<Offer>> decisionScopeListMap) {
+			      // handle offers
+            }
+        });
+```
+
+{% endtab %}
+
 {% endtabs %}

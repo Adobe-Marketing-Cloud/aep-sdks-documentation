@@ -33,6 +33,34 @@ OfferDecisioning.onOfferUpdate { offersDict in
 }
 ```
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Syntax
+
+```java
+public static void onOfferUpdate(final AdobeCallbackWithError<Map<DecisionScope, List<Offer>>> callback) 
+```
+
+#### Example
+
+#### Java
+
+```Java
+OfferDecisioning.onOfferUpdate(new AdobeCallbackWithError<Map<DecisionScope, List<Offer>>>() {
+            @Override
+            public void fail(AdobeError adobeError) {
+
+            }
+            @Override
+            public void call(Map<DecisionScope, List<Offer>> decisionScopeListMap) {
+			      // handle offers
+            }
+        });
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## prefetchOffers
@@ -68,6 +96,26 @@ let decisionScope = DecisionScope(activityId: "xcore:offer-activity:124e8bc413c8
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope ])
 ```
 {% endtab %}
+
+{% tab title="Android" %}
+
+#### Syntax
+
+```java
+public static void prefetchOffers(final List<DecisionScope> decisionScopes)
+```
+
+#### Example
+
+#### Java
+
+```Java
+OfferDecisioning.prefetchOffers(Arrays.asList(
+                        new DecisionScope("xcore:offer-activity:124e8bc413c888dd", "xcore:offer-placement:124e8a16430888db")));
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## retrievePrefetchedOffers
@@ -117,7 +165,35 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
 ```
 {% endtab %}
 
+{% tab title="Android" %}
 
+#### Syntax
+
+```java
+public static void retrievePrefetchedOffers(final List<DecisionScope> decisionScopes, final AdobeCallbackWithError<Map<DecisionScope, List<Offer>>> callback)
+```
+
+#### Example
+
+#### Java
+
+```Java
+OfferDecisioning.retrievePrefetchedOffers(Arrays.asList(
+                new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c")),
+                new AdobeCallbackWithError<Map<DecisionScope, List<Offer>>>() {
+                    @Override
+                    public void fail(AdobeError adobeError) {
+
+                    }
+                    @Override
+                    public void call(Map<DecisionScope, List<Offer>> decisionScopeListMap) {
+                        StringBuffer sb = new StringBuffer();
+                        // render the offer with offer.content
+                    }
+                });
+```
+
+{% endtab %}
 
 {% endtabs %}
 
@@ -177,4 +253,82 @@ public enum OfferType{
 ```
 
 {% endtab %}
+
+{% tab title="Android" %}
+
+### DecisionScope
+
+This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for.
+
+```java
+final public class DecisionScope {
+    final private String activityId;
+    final private String placementId;
+  	public DecisionScope(final String activityId, final String placementId){
+      //set activityId & placementId
+    }
+    public String getActivityId() {
+        return activityId;
+    }
+    public String getPlacementId() {
+        return placementId;
+    }
+}
+```
+
+
+
+### Offer
+
+This class represents the offer option received from the offer decisioning service.
+
+```java
+public class Offer {
+    final private String id;
+    final private String schema;
+    final private OfferType type;
+    final private List<String> language;
+    final private String content;
+    final private Map<String, String> characteristics;
+  	
+  	String getId() {
+        return id;
+    }
+
+    String getSchema() {
+        return schema;
+    }
+
+    public OfferType getType() {
+        return type;
+    }
+
+    public List<String> getLanguage() {
+        return language;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Map<String, String> getCharacteristics() {
+        return characteristics;
+    }
+}
+```
+
+
+
+### OfferType
+
+An enum indicating the type of an offer, which is a field of the `Offer` class
+
+```Java
+public enum OfferType {
+  UNKNOWN, JSON, HTML, IMAGE, TEXT
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
