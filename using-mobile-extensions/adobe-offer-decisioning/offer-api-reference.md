@@ -85,10 +85,10 @@ Here are some examples in Objective C and Swift:
 ```objectivec
 AEPDecisionScope* decisionScope = [[AEPDecisionScope alloc] initWithActivityId:@"xcore:offer-activity:124e8bc413c888dd" placementId:@"xcore:offer-placement:124e8a16430888db"];
         
-// prefetch with only decision scopes
+// prefetch offers for decision scopes
 [AEPMobileOfferDecisioning prefetchOffersWithDecisionScopes:@[decisionScope]];
 
-// prefetch with additional data
+// prefetch offers for decision scopes with additional expxperience event 
 AEPOfferExperienceEvent* expxperienceEvent = [[AEPOfferExperienceEvent alloc] initWithXdm:@{@"key":@"value"} data:nil datasetIdentifier:nil];
         
 [AEPMobileOfferDecisioning prefetchOffersWithDecisionScopes:@[decisionScope] experienceEvent:expxperienceEvent];

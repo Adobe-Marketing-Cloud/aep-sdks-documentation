@@ -161,11 +161,10 @@ let decisionScope2 = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa933
 
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2])
 
-
-// prefetch decision scopes
+// prefetch offers for decision scopes
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2])
 
-// prefetch decision scopes with additional data
+// prefetch offers for decision scopes with additional expxperience event 
 let experienceEvent = OfferExperienceEvent(xdm: ["xdmkey": "xdmvalue"], data: nil, datasetIdentifier: "override-datasetId")
 
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2], experienceEvent: experienceEvent)
