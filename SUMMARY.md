@@ -41,7 +41,9 @@
   * [XDM Experience Events](using-mobile-extensions/adobe-edge/xdm-experience-events.md)
   * [Edge Validation](using-mobile-extensions/adobe-edge/edge-validation.md)
 * [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
+  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)  
+* [Offer Decisioning](using-mobile-extensions/adobe-offer-decisioning/offer-decisioning-extension.md)
+  * [Offer Decisioning API reference](using-mobile-extensions/adobe-offer-decisioning/offer-api-reference.md)
 
 ## Resources
 

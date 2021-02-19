@@ -73,7 +73,7 @@ This API sends a request to the Offer Decisioning Services with the decisioning 
 #### Syntax
 
 ```swift
-func prefetchOffers(decisionScopes: [DecisionScope])
+func prefetchOffers(decisionScopes: [DecisionScope], experienceEvent: OfferExperienceEvent? = nil)
 ```
 
 #### Examples
@@ -85,15 +85,27 @@ Here are some examples in Objective C and Swift:
 ```objectivec
 AEPDecisionScope* decisionScope = [[AEPDecisionScope alloc] initWithActivityId:@"xcore:offer-activity:124e8bc413c888dd" placementId:@"xcore:offer-placement:124e8a16430888db"];
         
+// prefetch offers for decision scopes
 [AEPMobileOfferDecisioning prefetchOffersWithDecisionScopes:@[decisionScope]];
+
+// prefetch offers for decision scopes with additional expxperience event 
+AEPOfferExperienceEvent* expxperienceEvent = [[AEPOfferExperienceEvent alloc] initWithXdm:@{@"key":@"value"} data:nil datasetIdentifier:nil];
+        
+[AEPMobileOfferDecisioning prefetchOffersWithDecisionScopes:@[decisionScope] experienceEvent:expxperienceEvent];
+
 ```
 
 **Swift**
 
 ```swift
 let decisionScope = DecisionScope(activityId: "xcore:offer-activity:124e8bc413c888dd", placementId: "xcore:offer-placement:124e8a16430888db")
-
+// prefetch with only decision scopes
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope ])
+
+// prefetch with additional data
+let experienceEvent = OfferExperienceEvent(xdm: ["xdmkey": "xdmvalue"], data: nil, datasetIdentifier: "override-datasetId")
+
+OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope ], experienceEvent: experienceEvent)
 ```
 {% endtab %}
 
@@ -205,16 +217,18 @@ OfferDecisioning.retrievePrefetchedOffers(Arrays.asList(
 {% tab title="iOS" %}
 ### DecisionScope/**AEPDecisionScope**
 
-This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for.
+This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for. For advanced use case you can also assign the value of `itemCount`, if not, a default value of 1 will be used.
 
 ```swift
 public class DecisionScope{
     public let activityId: String
     public let placementId: String
+    public let itemCount: Int
   
-    public init(activityId: String, placementId: String) {
+    public init(activityId: String, placementId: String, itemCount: Int = 1) {
         self.activityId = activityId
         self.placementId = placementId
+        self.itemCount = itemCount
     }
 }
 ```
@@ -251,6 +265,40 @@ public enum OfferType{
     case image = 4
 }
 ```
+
+
+
+### OfferExperienceEvent/**AEPOfferExperienceEvent**
+
+An instance of `OfferExperienceEvent` need to be passed to the prefetch API when additional context data need to be provided to the Offer Decisioning services.
+
+```swift
+public class OfferExperienceEvent: NSObject {
+    /// XDM formatted data, use an `XDMSchema` implementation for a better XDM data injestion and format control
+    @objc public let xdm: [String: Any]
+
+    /// Optional free-form data associated with this event
+    @objc public let data: [String: Any]?
+
+    /// Adobe Experience Platform dataset identifier, if not set the default dataset identifier set in the Edge Configuration is used
+    @objc public let datasetIdentifier: String?
+
+    /// Initialize an Experience Event with the provided event data
+    /// - Parameters:
+    ///   - xdm:  XDM formatted data for this event, passed as a raw XDM Schema data dictionary.
+    ///   - data: Any free form data in a [String : Any] dictionary structure.
+    ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Edge configuration is used
+    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {
+        self.xdm = xdm
+        self.data = data
+        self.datasetIdentifier = datasetIdentifier
+    }
+}
+```
+
+
+
+
 
 {% endtab %}
 
