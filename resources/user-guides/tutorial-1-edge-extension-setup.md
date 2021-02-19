@@ -51,7 +51,7 @@ To create a configuration identifier use the following steps:
 ![](../../.gitbook/assets/create_new_edge_config.png)
 
 1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
-   * Select `Prod` for `AEP Sandbox`.
+   * Select `Prod` for `AEP Sandbox`. For more details about Sandboxes, see [Sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en)
    * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](tutorial-1-edge-extension-setup.md#initialize-adobe-experience-platform-for-data-collection).
    * Click `Save`.
 
