@@ -43,7 +43,7 @@
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)  
 * [Offer Decisioning](using-mobile-extensions/adobe-offer-decisioning/offer-decisioning-extension.md)
-  * [Offer Decisioning API reference](using-mobile-extensions/adobe-offer-decisioning/profile-api-references.md)
+  * [Offer Decisioning API reference](using-mobile-extensions/adobe-offer-decisioning/offer-api-reference.md)
 
 ## Resources
 
