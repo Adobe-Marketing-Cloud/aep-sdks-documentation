@@ -1,7 +1,7 @@
 # Offer Decisioning extension
 
 {% hint style="warning" %}
-The Adobe Experience Platform Offer Decisioning mobile extension is currently in BETA. Use of this extension is by invitation only. Please contact your Adobe Customer Success Manager to learn more and get access to the materials for this tutorial.
+The use of Offer Decisioning in Adobe Experience Platform Mobile SDKs is currently available in early access to select users. This functionality is not available to all IMS organizations.
 {% endhint %}
 
 Adobe Experience Platform Offer Decisioning mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface (UI) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
@@ -160,6 +160,16 @@ let decisionScope1 = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa933
 let decisionScope2 = DecisionScope(activityId: "xcore:offer-activity:11cfb1fa93381aca", placementId: "xcore:offer-placement:1175009612b0100d")
 
 OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2])
+
+
+// prefetch with only decision scopes
+OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2])
+
+// prefetch with additional data
+let experienceEvent = OfferExperienceEvent(xdm: ["xdmkey": "xdmvalue"], data: nil, datasetIdentifier: "override-datasetId")
+
+OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2], experienceEvent: experienceEvent)
+
 ```
 
 {% endtab %}
