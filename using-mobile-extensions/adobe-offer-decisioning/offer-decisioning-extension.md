@@ -91,7 +91,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 {% tab title="Android" %}
 
-TBD
+#### Java
+
+```java
+public class MobileApp extends Application {
+
+    @Override
+    public void onCreate() {
+      super.onCreate();
+      MobileCore.setApplication(this);
+      MobileCore.configureWithAppID("yourAppId");
+
+      try {
+        Edge.registerExtension(); 
+        Identity.registerExtension();
+        Lifecycle.registerExtension();
+        OfferDecisioning.registerExtension(); //Register OfferDecisioning extension
+        MobileCore.start(new AdobeCallback() {
+          @Override
+          public void call(final Object o) {
+            // processing after start
+          }});
+      } catch (Exception e) {
+        //Log the exception
+      }
+    }
+}
+```
+
+
 
 {% endtab %}
 
@@ -145,11 +173,6 @@ DecisionScope decisionScope = new DecisionScope("xcore:offer-activity:11cfb1fa93
 AEP Offer Decisioning exension provides separate APIs to prefetch the offers and retrieves the offer contents. This design aims to help apps to build better user experience for their end users. We recommend the app to prefetch the offers in advance, so there is no latency by the time you retrieve the offer contents and render them.
 
 {% tabs %}
-{% tab title="Android" %}
-
-#### TBD
-
-{% endtab %}
 
 {% tab title="iOS" %}
 
@@ -178,9 +201,21 @@ OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope1, decisionScope2]
 #### Java 
 
 ```Java
+// prefetch offers for decision scopes
 OfferDecisioning.prefetchOffers(Arrays.asList(
                         new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c"),
                         new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100d")));
+// prefetch offers for decision scopes with additional expxperience event
+OfferExperienceEvent exEvent = new OfferExperienceEvent(
+                        new HashMap<String, Object>() {
+                            {
+                                put("xdmkey", "xdmvalue");
+                            }
+                        },null,"override-datasetId");
+OfferDecisioning.prefetchOffers(Arrays.asList(
+                        new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100c"),
+                        new DecisionScope("xcore:offer-activity:11cfb1fa93381aca", "xcore:offer-placement:1175009612b0100d")),
+                        exEvent);
 ```
 
 {% endtab %}
