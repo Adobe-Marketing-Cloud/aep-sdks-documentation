@@ -98,7 +98,7 @@ public class MobileApp extends Application {
 
     @Override
     public void onCreate() {
-        super.onCreate();
+      super.onCreate();
       MobileCore.setApplication(this);
       MobileCore.configureWithAppID("yourAppId");
 
