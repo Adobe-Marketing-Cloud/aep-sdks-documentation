@@ -115,6 +115,7 @@ OfferDecisioning.prefetchOffers(decisionScopes: [decisionScope ], experienceEven
 
 ```java
 public static void prefetchOffers(final List<DecisionScope> decisionScopes)
+public static void prefetchOffers(final List<DecisionScope> decisionScopes, final OfferExperienceEvent offerExperienceEvent)
 ```
 
 #### Example
@@ -122,8 +123,20 @@ public static void prefetchOffers(final List<DecisionScope> decisionScopes)
 #### Java
 
 ```Java
+// prefetch offers for decision scopes
 OfferDecisioning.prefetchOffers(Arrays.asList(
                         new DecisionScope("xcore:offer-activity:124e8bc413c888dd", "xcore:offer-placement:124e8a16430888db")));
+
+// prefetch offers for decision scopes with additional expxperience event
+OfferExperienceEvent exEvent = new OfferExperienceEvent(
+                        new HashMap<String, Object>() {
+                            {
+                                put("xdmkey", "xdmvalue");
+                            }
+                        },null,"override-datasetId");
+OfferDecisioning.prefetchOffers(Arrays.asList(
+                        new DecisionScope("xcore:offer-activity:124e8bc413c888dd", "xcore:offer-placement:124e8a16430888db"),
+                        exEvent);
 ```
 
 {% endtab %}
@@ -306,20 +319,27 @@ public class OfferExperienceEvent: NSObject {
 
 ### DecisionScope
 
-This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for.
+This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for. For advanced use case you can also assign the value of `itemCount`, if not, a default value of 1 will be used.
 
 ```java
 final public class DecisionScope {
     final private String activityId;
     final private String placementId;
+    final private int itemCount;
   	public DecisionScope(final String activityId, final String placementId){
       //set activityId & placementId
+    }
+  	public DecisionScope(final String activityId, final String placementId, final int itemCount){
+      //set activityId， placementId & itemCount
     }
     public String getActivityId() {
         return activityId;
     }
     public String getPlacementId() {
         return placementId;
+    }
+	  public int getItemCount() {
+        return this.itemCount;
     }
 }
 ```
@@ -376,6 +396,27 @@ public enum OfferType {
   UNKNOWN, JSON, HTML, IMAGE, TEXT
 }
 ```
+
+
+
+### OfferExperienceEvent
+
+An instance of `OfferExperienceEvent` need to be passed to the prefetch API when additional context data need to be provided to the Offer Decisioning services.
+
+```java
+public class OfferExperienceEvent {
+    private final Map<String, Object> xdmData;
+    private final Map<String, Object> data;
+    private final String datasetIdentifier;
+  
+    public OfferExperienceEvent(final Map<String, Object> xdmData){}
+    public OfferExperienceEvent(final Map<String, Object> xdmData, final Map<String, Object> data, final String datasetIdentifier){}
+    
+    
+}
+```
+
+
 
 {% endtab %}
 
