@@ -280,7 +280,7 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 
 ## configureWithFileInAssets (Android Only)
 
-You can bundle a JSON configuration file in app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
 
 {% hint style="info" %}
 Method `configureWithFileInAssets` was added in Android Core version 1.7.0.
