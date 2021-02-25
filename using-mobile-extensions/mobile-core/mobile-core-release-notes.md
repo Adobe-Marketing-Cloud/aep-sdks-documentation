@@ -1,5 +1,13 @@
 # Release Notes
 
+### February 24, 2021
+
+#### Android Core 1.7.0
+
+* Fixed a crash which was caused by the exception thrown from the Android okhttp library.
+* Added new public APIs to set XDM shared state.
+* Added a new API `MobileCore.configureWithFileInAssets()` which allows the app to use a config file in the app's Assets folder.
+
 ### February 11, 2021
 
 #### iOS Core 2.9.1

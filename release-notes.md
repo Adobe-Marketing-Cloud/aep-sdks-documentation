@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-### February 11, 2021
+### February 24, 2021
 
 #### Android Core 1.7.0
 
