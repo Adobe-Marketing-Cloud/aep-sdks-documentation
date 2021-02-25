@@ -125,8 +125,6 @@
 ## BETA
 
 * [Adobe Experience Platform Edge Mobile Extension](beta/experience-platform-extension.md)
-* [Adobe Experience Platform Offer Decisioning Extension](beta/offer-decisioning-extension/README.md)
-  * [Offer Decisioning API Reference](beta/offer-decisioning-extension/offer-api.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
