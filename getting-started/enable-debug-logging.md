@@ -4,7 +4,7 @@ Debug logging is an optional, yet critical SDK feature. By enabling logging, you
 
 | Log Level | Description |
 | :--- | :--- |
-| Error | This log level provides the details about unrecoverable errors that occurred during SDK implementation. |
+| Error | This is the default log level used by SDK. This log level provides the details about unrecoverable errors that occurred during SDK implementation. |
 | Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level might indicate that a request has been made to the SDK, but the SDK might be unable to perform the requested task. For example, this log level might be used when catching an unexpected, but recoverable, exception and printing its message. |
 | Debug | In addition to detail from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
 | Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information about how SDK processes database interactions and SDK events. |
