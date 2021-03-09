@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### iOS Core 2.9.2
 
-* Update version for bundled ACPIdentity 2.4.1 release.
+* Update version for bundled ACPIdentity 2.5.1 and ACPLifecycle 2.2.1 release.
 
 #### iOS Identity 2.5.1
 
