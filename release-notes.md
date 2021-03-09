@@ -4,6 +4,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### March 9, 2021
+
+#### iOS Core 2.9.2
+
+* Update version for bundled ACPIdentity 2.5.1 and ACPLifecycle 2.2.1 release.
+
+#### iOS Identity 2.5.1
+
+* Fixed a bug where the visitor URL variables was using a TS in milliseconds instead of seconds.
+
+#### iOS Lifecycle 2.2.1
+
+* No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
+
 ### February 24, 2021
 
 #### Android Core 1.7.0
