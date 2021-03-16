@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### March 16, 2021
+
+#### iOS Core 2.9.3
+
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types: 
+  - Contains
+  - Not Contains
+  - Starts With
+  - Ends With
+
 ### March 9, 2021
 
 #### iOS Core 2.9.2
@@ -1707,4 +1717,3 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
-
