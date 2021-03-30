@@ -4,6 +4,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### March 29, 2021
+
+#### Android Media 2.1.1
+
+* Updated Media request header content-type to “application/json”
+
+### March 26, 2021
+
+#### iOS Media 2.3.1
+
+* Updated Media request header content-type to “application/json”
+
 ### March 16, 2021
 
 #### iOS Core 2.9.3

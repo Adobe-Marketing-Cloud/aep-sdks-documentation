@@ -1,5 +1,30 @@
 # Release Notes
 
+## March 29, 2021
+
+### Android Media 2.1.1
+
+* Updated Media request header content-type to “application/json”
+
+### @adobe/react-native-acpmedia 2.3.1
+
+* Updated to iOS Media v2.3.1.
+* Updated to Android Media v2.1.1.
+
+## March 26, 2021
+
+### iOS Media 2.3.1
+
+* Updated Media request header content-type to “application/json”
+
+## December 21, 2020
+
+### @adobe/react-native-acpmedia 2.3.0
+
+* General - The SDK is now distributed using XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture.
+  - IMPORTANT: Upgrading to AdobeMobile XCFrameworks requires Xcode 12.0 or newer
+  - IMPORTANT: If using Cocoapods, upgrading to AdobeMobile XCFrameworks requires Cocoapods 1.10.0 or newer
+
 ## December 18, 2020
 
 ### iOS Media 2.3.0
