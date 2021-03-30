@@ -8,13 +8,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### Android Media 2.1.1
 
-* Updated Media request header content-type to “application/json”
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
 
 ### March 26, 2021
 
 #### iOS Media 2.3.1
 
-* Updated Media request header content-type to “application/json”
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
 
 ### March 16, 2021
 

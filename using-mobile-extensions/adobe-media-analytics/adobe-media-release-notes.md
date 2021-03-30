@@ -4,7 +4,7 @@
 
 ### Android Media 2.1.1
 
-* Updated Media request header content-type to “application/json”
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
 
 ### @adobe/react-native-acpmedia 2.3.1
 
@@ -15,7 +15,7 @@
 
 ### iOS Media 2.3.1
 
-* Updated Media request header content-type to “application/json”
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
 
 ## December 21, 2020
 
