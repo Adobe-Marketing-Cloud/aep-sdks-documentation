@@ -4,6 +4,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### March 31, 2021
+
+#### Android Core 1.8.0
+
+* Added public platform services for network, data queue, device info.
+* Added a new API, `MobileCore.resetIdentities()`.
+* Added a new API, `MobileCore.dispatchEventWithResponseCallback()`.
+* The extensions dictionaries in the EventHub's shared state is now using extension's full names as keys.
+
+#### Lifecycle Core 1.0.7
+* No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
+
 ### March 16, 2021
 
 #### iOS Core 2.9.3
