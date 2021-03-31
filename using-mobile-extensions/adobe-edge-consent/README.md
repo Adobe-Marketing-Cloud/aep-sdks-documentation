@@ -16,7 +16,7 @@
 
 ## Add the AEP Edge Consent extension to your app
 
-### Download and import the Edge extension
+### Download and import the Edge Consent extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -97,7 +97,7 @@ public class MobileApp extends Application {
 
     @Override
     public void onCreate() {
-        super.onCreate();
+      super.onCreate();
       MobileCore.setApplication(this);
       MobileCore.configureWithAppID("yourAppId");
 
@@ -140,7 +140,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
     ...
   }];
   [AEPMobileCore configureWithAppId: @"yourAppId"];
