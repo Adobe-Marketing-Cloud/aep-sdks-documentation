@@ -23,13 +23,10 @@ The following instructions are for configuring an application with Edge Identity
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
-   implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
-   implementation 'com.adobe.marketing.mobile:signal:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
    ```
-
+   
 2. Import the Mobile Core and Edge extensions in your application class.
 
    ```java
@@ -44,11 +41,8 @@ The following instructions are for configuring an application with Edge Identity
    use_frameworks!
    target 'YourTargetApp' do
        pod 'AEPCore'
-       pod 'AEPLifecycle'
-       pod 'AEPSignal'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPEdgeConsent'
    end
    ```
    
@@ -60,10 +54,7 @@ The following instructions are for configuring an application with Edge Identity
 // AppDelegate.swift
 import AEPCore
 import AEPEdge
-import AEPEdgeConsent
 import AEPEdgeIdentity
-import AEPLifecycle
-import AEPSignal
 ```
 
 ### Objective-C
@@ -72,15 +63,12 @@ import AEPSignal
 // AppDelegate.h
 @import AEPCore;
 @import AEPEdge;
-@import AEPEdgeConsent;
 @import AEPEdgeIdentity;
-@import AEPLifecycle;
-@import AEPSignal;
 ```
 {% endtab %}
 {% endtabs %}
 
-### Register Edge Identity with Mobile Core
+### Register the Edge Identity extension with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -97,10 +85,7 @@ public class MobileApp extends Application {
 
       try {
         Edge.registerExtension();
-        Identity.registerExtension(); //Register Edge Identity with Mobile Core
-        Consent.registerExtension();
-        Lifecycle.registerExtension();
-        Signal.registerExtension();
+        Identity.registerExtension();
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
@@ -120,7 +105,7 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self, Consent.self], {
+    MobileCore.registerExtensions([Identity.self, Edge.self], {
     MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
   })
   ...
@@ -132,7 +117,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class] completion:^{
     ...
   }];
   [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
@@ -156,13 +141,10 @@ The following instructions are for configuring an application with both Identity
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:identity:1.+'
-   implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
-   implementation 'com.adobe.marketing.mobile:signal:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
    ```
-
+   
 2. Import the Mobile Core and Edge extensions in your application class.
 
    ```java
@@ -178,11 +160,8 @@ The following instructions are for configuring an application with both Identity
    target 'YourTargetApp' do
        pod 'AEPCore'
        pod 'AEPIdentity'
-       pod 'AEPLifecycle'
-       pod 'AEPSignal'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPEdgeConsent'
    end
    ```
    
@@ -195,10 +174,7 @@ The following instructions are for configuring an application with both Identity
 import AEPCore
 import AEPIdentity
 import AEPEdge
-import AEPEdgeConsent
 import AEPEdgeIdentity
-import AEPLifecycle
-import AEPSignal
 ```
 
 ### Objective-C
@@ -208,15 +184,12 @@ import AEPSignal
 @import AEPCore;
 @import AEPIdentity;
 @import AEPEdge;
-@import AEPEdgeConsent;
 @import AEPEdgeIdentity;
-@import AEPLifecycle;
-@import AEPSignal;
 ```
 {% endtab %}
 {% endtabs %}
 
-### Register Edge Identity with Mobile Core
+### Register the Identity and Edge Identity extensions with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -235,9 +208,6 @@ public class MobileApp extends Application {
         Edge.registerExtension();
         com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Edge Identity with Mobile Core
         com.adobe.marketing.mobile.Identity.registerExtension(); // Register Identity with Mobile Core
-        Consent.registerExtension();
-        Lifecycle.registerExtension();
-        Signal.registerExtension();
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
@@ -257,7 +227,7 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Lifecycle.self, AEPEdgeIdentity.Identity.self, AEPIdentity.Identity.self, Signal.self, Edge.self, Consent.self], {
+    MobileCore.registerExtensions([AEPEdgeIdentity.Identity.self, AEPIdentity.Identity.self, Edge.self], {
     MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
   })
   ...
@@ -269,7 +239,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileIdentity.class, AEPMobileEdge.class] completion:^{
     ...
   }];
   [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
