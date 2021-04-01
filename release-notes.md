@@ -16,7 +16,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * The callback method passed to `MobileCore.registerEventListener` now runs on a background thread.
 * Improved logging for dictionaries.
 * The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
- 
+
 ### iOS AEPIdentity 3.1.0
 
 * Fixed an issue where privacy status was not correctly loaded from persistence.
@@ -27,7 +27,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Added support for UI Services.
 * The Locale string used in HTTP Headers is now properly formatted.
 * Fixed a bug that would sometimes prevent downloaded files from being properly unzipped.
-
 
 ## January 19, 2021
 

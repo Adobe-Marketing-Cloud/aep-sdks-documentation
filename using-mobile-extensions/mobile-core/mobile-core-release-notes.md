@@ -12,7 +12,7 @@
 * The callback method passed to `MobileCore.registerEventListener` now runs on a background thread.
 * Improved logging for dictionaries.
 * The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
- 
+
 ### iOS AEPIdentity 3.1.0
 
 * Fixed an issue where privacy status was not correctly loaded from persistence.

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Adobe Experience Platform for Mobile](README.md)
+* [Home](README.md)
 * [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes.md)
 
@@ -41,9 +41,9 @@
   * [XDM Experience Events](using-mobile-extensions/adobe-edge/xdm-experience-events.md)
   * [Edge Validation](using-mobile-extensions/adobe-edge/edge-validation.md)
 * [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)  
-* [Offer Decisioning](using-mobile-extensions/adobe-offer-decisioning/offer-decisioning-extension.md)
-  * [Offer Decisioning API reference](using-mobile-extensions/adobe-offer-decisioning/offer-api-reference.md)
+  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
+* [Offer Decisioning](using-mobile-extensions/offer-decisioning-extension/README.md)
+  * [Offer Decisioning API reference](using-mobile-extensions/offer-decisioning-extension/offer-api-reference.md)
 
 ## Resources
 

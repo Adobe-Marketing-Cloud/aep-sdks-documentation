@@ -2,7 +2,7 @@
 description: Welcome to the home of Adobe Experience Platform Mobile SDK documentation.
 ---
 
-# Adobe Experience Platform for Mobile
+# Home
 
 ## Data Collection via Adobe Experience Platform Edge Network
 
