@@ -1,5 +1,22 @@
 # Release Notes
 
+## March 29, 2021
+
+### Android Media 2.1.1
+
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
+
+### @adobe/react-native-acpmedia 2.3.1
+
+* Updated to iOS Media v2.3.1.
+* Updated to Android Media v2.1.1.
+
+## March 26, 2021
+
+### iOS Media 2.3.1
+
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
+
 ## December 18, 2020
 
 ### iOS Media 2.3.0

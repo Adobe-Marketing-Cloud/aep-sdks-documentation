@@ -16,6 +16,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 #### Lifecycle Core 1.0.7
 * No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
 
+### March 29, 2021
+
+#### Android Media 2.1.1
+
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
+
+### March 26, 2021
+
+#### iOS Media 2.3.1
+
+* Updated "Content-Type" header to “application/json” in Media Collection API requests.
+
 ### March 16, 2021
 
 #### iOS Core 2.9.3
