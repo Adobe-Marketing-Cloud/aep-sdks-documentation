@@ -59,7 +59,7 @@ import AEPEdgeIdentity
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.h
 @import AEPCore;
 @import AEPEdge;
@@ -114,7 +114,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class] completion:^{
@@ -179,7 +179,7 @@ import AEPEdgeIdentity
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.h
 @import AEPCore;
 @import AEPIdentity;
@@ -236,7 +236,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileIdentity.class, AEPMobileEdge.class] completion:^{
