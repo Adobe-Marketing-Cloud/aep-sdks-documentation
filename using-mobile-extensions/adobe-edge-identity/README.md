@@ -44,7 +44,6 @@ The following instructions are for configuring an application with Edge Identity
    use_frameworks!
    target 'YourTargetApp' do
        pod 'AEPCore'
-       pod 'AEPServices'
        pod 'AEPLifecycle'
        pod 'AEPSignal'
        pod 'AEPEdge'
@@ -52,7 +51,7 @@ The following instructions are for configuring an application with Edge Identity
        pod 'AEPEdgeConsent'
    end
    ```
-
+   
 2. Import the Mobile Core and Edge libraries:
 
 ### Swift
@@ -179,7 +178,6 @@ The following instructions are for configuring an application with both Identity
    target 'YourTargetApp' do
        pod 'AEPCore'
        pod 'AEPIdentity'
-       pod 'AEPServices'
        pod 'AEPLifecycle'
        pod 'AEPSignal'
        pod 'AEPEdge'
@@ -187,7 +185,7 @@ The following instructions are for configuring an application with both Identity
        pod 'AEPEdgeConsent'
    end
    ```
-
+   
 2. Import the Mobile Core and Edge libraries:
 
 ### Swift
