@@ -8,9 +8,9 @@
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the AEP Edge Consent extension
+### Configure the AEP Consent Collection extension
 
-![Adobe Edge Network extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
+![Adobe Edge Consent Collect extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 
 
