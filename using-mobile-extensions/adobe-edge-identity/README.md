@@ -35,7 +35,7 @@ The following instructions are for configuring an application with Edge Identity
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -153,7 +153,7 @@ The following instructions are for configuring an application with both Identity
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
