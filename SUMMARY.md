@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [Adobe Experience Platform for Mobile](README.md)
 * [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes.md)
 
