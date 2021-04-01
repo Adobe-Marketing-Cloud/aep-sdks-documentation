@@ -1,6 +1,8 @@
 # Adobe Experience Platform Edge Consent
 
-## Configure the Adobe Experience Platform Edge Consent extension in Experience Platform Launch
+The Adobe Experience Platform Consent Collection mobile extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform [https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
+
+## Configure the Adobe Experience Platform Consent Collection extension in Experience Platform Launch
 
 1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Consent Collection** extension, and click **Install**.
@@ -27,12 +29,11 @@
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
-   implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile.edgeidentity:1.+'
    implementation 'com.adobe.marketing.mobile.edgeconsent:1.+'
    ```
-
+   
 2. Import the Mobile Core and Edge extensions in your application class.
 
    ```java
@@ -49,7 +50,6 @@
    use_frameworks!
    target 'YourTargetApp' do
        pod 'AEPCore'
-       pod 'AEPLifecycle'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
        pod 'AEPEdgeConsent'
@@ -66,7 +66,6 @@ import AEPCore
 import AEPEdge
 import AEPEdgeIdentity
 import AEPEdgeConsent
-import AEPLifecycle
 ```
 
 ### Objective-C
@@ -77,13 +76,12 @@ import AEPLifecycle
 @import AEPEdge;
 @import AEPEdgeIdentity;
 @import AEPEdgeConsent;
-@import AEPLifecycle;
 ```
 
 {% endtab %}
 {% endtabs %}
 
-### Register Edge with Mobile Core
+### Register Edge extensions with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -103,7 +101,6 @@ public class MobileApp extends Application {
         Edge.registerExtension();
         Consent.registerExtension(); // register Consent
         Identity.registerExtension();
-        Lifecycle.registerExtension();
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
@@ -125,9 +122,9 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Lifecycle.self, Identity.self, Edge.self, Consent.self], {
-    MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-  })
+    MobileCore.registerExtensions([Identity.self, Edge.self, Consent.self], {
+    	MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+    })
   ...
 }
 ```
@@ -137,10 +134,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileLifecycle.class AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
-    ...
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class, 	     AEPMobileEdgeConsent.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
   }];
-  [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
   ...
 }
 ```
@@ -152,9 +148,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 To update the SDK configuration programmatically, use the following information to change the Edge Consent configuration values.
 
-| Key             | Required | Description                                                  | Data Type |
-| :-------------- | :------- | :----------------------------------------------------------- | :-------- |
-| consent.default | No       | Consents in XDM format. [More info.](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md) | String    |
+| Key             | Required | Description                                                  | Data Type           |
+| :-------------- | :------- | :----------------------------------------------------------- | :------------------ |
+| consent.default | No       | Consents in XDM format. [More info.](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md) | Map<String, Object> |
 
 ## What OS & platform versions are supported?
 
