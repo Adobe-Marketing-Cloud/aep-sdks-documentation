@@ -2325,7 +2325,7 @@ Map<String, String> identifiers = new HashMap<String, String>();
 identifiers.put("idType1", "idValue1");
 identifiers.put("idType2", "idValue2");
 identifiers.put("idType3", "idValue3");
-Identity.syncIdentifier(identifiers);
+Identity.syncIdentifiers(identifiers);
 ```
 {% endtab %}
 
@@ -2532,7 +2532,7 @@ Map<String, String> identifiers = new HashMap<String, String>();
 identifiers.put("idType1", "idValue1");
 identifiers.put("idType2", "idValue2");
 identifiers.put("idType3", "idValue3");
-Identity.syncIdentifier(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
+Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 {% endtab %}
 
