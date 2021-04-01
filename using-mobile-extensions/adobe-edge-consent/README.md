@@ -26,9 +26,10 @@
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
 
    ```java
-   implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
+   implementation 'com.adobe.marketing.mobile:core:1.+'
+     implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
-     implementation 'com.adobe.marketing.mobile.edgeidentity:1.+'
+   implementation 'com.adobe.marketing.mobile.edgeidentity:1.+'
    implementation 'com.adobe.marketing.mobile.edgeconsent:1.+'
    ```
 
@@ -49,13 +50,12 @@
    target 'YourTargetApp' do
        pod 'AEPCore'
        pod 'AEPLifecycle'
-       pod 'AEPSignal'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
        pod 'AEPEdgeConsent'
    end
    ```
-
+   
 2. Import the Mobile Core and Edge libraries:
 
 ### Swift
@@ -67,7 +67,6 @@ import AEPEdge
 import AEPEdgeIdentity
 import AEPEdgeConsent
 import AEPLifecycle
-import AEPSignal
 ```
 
 ### Objective-C
@@ -79,7 +78,6 @@ import AEPSignal
 @import AEPEdgeIdentity;
 @import AEPEdgeConsent;
 @import AEPLifecycle;
-@import AEPSignal;
 ```
 
 {% endtab %}
@@ -99,14 +97,13 @@ public class MobileApp extends Application {
     public void onCreate() {
       super.onCreate();
       MobileCore.setApplication(this);
-      MobileCore.configureWithAppID("yourAppId");
+      MobileCore.configureWithAppID("yourLaunchEnvironmentID");
 
       try {
         Edge.registerExtension();
         Consent.registerExtension(); // register Consent
-        com.adobe.marketing.mobile.edge.identity.Identity.registerExtension();
+        Identity.registerExtension();
         Lifecycle.registerExtension();
-        Signal.registerExtension();
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
@@ -128,8 +125,8 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self, Consent.self], {
-    MobileCore.configureWith(appId: "yourAppId")
+    MobileCore.registerExtensions([Lifecycle.self, Identity.self, Edge.self, Consent.self], {
+    MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
   })
   ...
 }
@@ -140,10 +137,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileLifecycle.class AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
     ...
   }];
-  [AEPMobileCore configureWithAppId: @"yourAppId"];
+  [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
   ...
 }
 ```
