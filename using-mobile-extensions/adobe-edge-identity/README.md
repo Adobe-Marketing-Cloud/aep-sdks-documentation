@@ -83,17 +83,13 @@ public class MobileApp extends Application {
       MobileCore.setApplication(this);
       MobileCore.configureWithAppID("yourLaunchEnvironmentID");
 
-      try {
-        Edge.registerExtension();
-        Identity.registerExtension();
-        MobileCore.start(new AdobeCallback() {
-          @Override
-          public void call(final Object o) {
-            // processing after start
-          }});
-      } catch (Exception e) {
-        //Log the exception
-      }
+      Edge.registerExtension();
+      Identity.registerExtension();
+      MobileCore.start(new AdobeCallback() {
+        @Override
+        public void call(final Object o) {
+          // processing after start
+        }});
     }
 }
 ```
@@ -204,18 +200,14 @@ public class MobileApp extends Application {
       MobileCore.setApplication(this);
       MobileCore.configureWithAppID("yourLaunchEnvironmentID");
 
-      try {
-        Edge.registerExtension();
-        com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Edge Identity with Mobile Core
-        com.adobe.marketing.mobile.Identity.registerExtension(); // Register Identity with Mobile Core
-        MobileCore.start(new AdobeCallback() {
-          @Override
-          public void call(final Object o) {
-            // processing after start
-          }});
-      } catch (Exception e) {
-        //Log the exception
-      }
+      Edge.registerExtension();
+      com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Edge Identity with Mobile Core
+      com.adobe.marketing.mobile.Identity.registerExtension(); // Register Identity with Mobile Core
+      MobileCore.start(new AdobeCallback() {
+        @Override
+        public void call(final Object o) {
+          // processing after start
+        }});
     }
 }
 ```
