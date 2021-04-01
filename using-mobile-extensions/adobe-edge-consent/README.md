@@ -10,7 +10,7 @@
 
 ### Configure the AEP Edge Consent extension
 
-![Adobe Edge Network extension configuration](/Users/nporter/Developer/Documentation/acp-sdks-documentation/.gitbook/assets/mobile-edge-consent-launch-configuration.png)
+![Adobe Edge Network extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 
 
