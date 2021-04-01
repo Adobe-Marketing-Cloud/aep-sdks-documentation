@@ -27,7 +27,7 @@
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
-     implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
+   implementation 'com.adobe.marketing.mobile:lifecycle:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile.edgeidentity:1.+'
    implementation 'com.adobe.marketing.mobile.edgeconsent:1.+'
