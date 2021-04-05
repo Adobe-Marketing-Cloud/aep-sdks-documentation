@@ -1,6 +1,6 @@
-# Adobe Experience Platform Edge Consent
+# Adobe Experience Platform Consent Collection
 
-The Adobe Experience Platform Consent Collection mobile extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform [https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
+The Adobe Experience Platform Consent Collection mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
 
 ## Configure the Adobe Experience Platform Consent Collection extension in Experience Platform Launch
 
