@@ -260,8 +260,6 @@ let collectConsent = ["collect": ["val": "y"]]
 let currentConsents = ["consents": collectConsent]
 Consent.update(with: currentConsents)
 
-Consent.update(consents);
-
 // example 2, updating users collect consent to 'no'
 let collectConsent = ["collect": ["val": "n"]]
 let currentConsents = ["consents": collectConsent]
@@ -280,10 +278,12 @@ static func update(with consents: [String: Any])
 
 ```objective-c
 // example 1, updating users collect consent to 'yes'
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"y"}}}];
+NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 
 // example 2, updating users collect consent to 'no'
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"n"}}}];
+NSDictionary *collectConsent = @{ @"collect": @{@"val": @"n"};
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 ```
 
 {% endtab %}

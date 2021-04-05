@@ -6,15 +6,17 @@ Before implementing these controls, read Adobe's [GDPR documentation](https://ww
 
 When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
 
-## Set and get consent collect
+> Note: Collect consent is supported starting with v1.1.0 of the Edge network extension. Implementations using Edge Network extension v1.0.0 should adhere to privacy status settings. More information can be found [here](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status).
+
+## Update and get collect consent preferences
 
 You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension | Collect (Yes) | Collect (No) | Collect (Pending) |
+| Extension | Collect (y) | Collect (n) | Collect (p) |
 | :--- | :--- | :--- | :--- |
 | **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
-> Note: When no defualt collect consent value is defined in configuration, the SDK defaults to Yes for collect consent.
+> Note: When no default collect consent value is defined in configuration, the SDK defaults to Yes for collect consent.
 
 ### Consent Collect settings
 
@@ -27,7 +29,7 @@ You can set the collect consent to one of the following values:
 * `y`
 * `n`
 
-To understand the expected behavior, see the _Set and get consent collect_ table above.
+To understand the expected behavior, see the *Update and get collect consent preferences* table above.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -45,7 +47,7 @@ You can set the collect consent to one of the following values:
 * `y`
 * `n`
 
-To understand the expected behavior, see the _Set and get consent collect_ table above.
+To understand the expected behavior, see the *Update and get collect consent preferences* table above.
 {% endtab %}
 {% endtabs %}
 
@@ -120,7 +122,6 @@ static func update(with consents: [String: Any])
 let collectConsent = ["collect": ["val": "y"]]
 let currentConsents = ["consents": collectConsent]
 Consent.update(with: currentConsents)
-Consent.update(consents);
 
 // example 2, updating users collect consent to 'no'
 let collectConsent = ["collect": ["val": "n"]]
@@ -140,15 +141,17 @@ static func update(with consents: [String: Any])
 
 ```objective-c
 // example 1, updating users collect consent to 'yes'
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"y"}}}];
+NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 
 // example 2, updating users collect consent to 'no'
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"n"}}}];
+NSDictionary *collectConsent = @{ @"collect": @{@"val": @"n"};
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 ```
 {% endtab %}
 {% endtabs %}
 
-You can also programmatically view the current collect consent status by using the following:
+You can also programmatically view the current collect consent preferences status by using the following:
 
 {% hint style="info" %}
 The following API returns a dictionary representation of the consent preferences for the user.
