@@ -1,21 +1,15 @@
-# Adobe Experience Platform Edge Identity
-The Adobe Experience Platform Edge Identity mobile extension enables identity management from your mobile app when using the [Adobe Experience Platform](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
+# Frequently Asked Questions
 
-## Configure the Adobe Experience Platform Edge Identity extension in Experience Platform Launch
+## Q: I am using AEP Edge and Adobe Solutions extensions, which Identity Extension should I install and register?
+### A: Both. 
+When using both Adobe Experience Platform Edge and Adobe Solutions extensions, both Edge Identity and Identity direct extensions can be registered with the Mobile SDK at the same time. 
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Edge Identity** extension, and click **Install**.
-3. There are no configuration settings for **Edge Identity**.
-4. Click **Save**.
-5. Follow the publishing process to update SDK configuration.
-
-## Add the AEP Edge Identity extension to your app
-
-### Download and import the Edge Identity extension
+### Download and import the Identity and Edge Identity extensions
 {% hint style="info" %}
-The following instructions are for configuring an application with Edge Identity. If an application will include both Identity and Edge Identity extensions, follow the instructions outlined in the [FAQ](./edge-identity-faq#download-and-import-the-identity-and-edge-identity-extensions).
+The following instructions are for configuring an application with both Identity and Edge Identity extensions. If an application will include only the Edge Identity extension, follow the instructions [here](./README#download-and-import-the-edge-identity-extension).
 {% tabs %}
 
+{% tabs %}
 {% tab title="Android" %}
 ### Java
 
@@ -23,6 +17,7 @@ The following instructions are for configuring an application with Edge Identity
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
+   implementation 'com.adobe.marketing.mobile:identity:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
    ```
@@ -41,6 +36,7 @@ The following instructions are for configuring an application with Edge Identity
    use_frameworks!
    target 'YourTargetApp' do
        pod 'AEPCore'
+       pod 'AEPIdentity'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
    end
@@ -53,6 +49,7 @@ The following instructions are for configuring an application with Edge Identity
 ```swift
 // AppDelegate.swift
 import AEPCore
+import AEPIdentity
 import AEPEdge
 import AEPEdgeIdentity
 ```
@@ -62,13 +59,14 @@ import AEPEdgeIdentity
 ```objectivec
 // AppDelegate.h
 @import AEPCore;
+@import AEPIdentity;
 @import AEPEdge;
 @import AEPEdgeIdentity;
 ```
 {% endtab %}
 {% endtabs %}
 
-### Register the Edge Identity extension with Mobile Core
+### Register the Identity and Edge Identity extensions with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -84,7 +82,8 @@ public class MobileApp extends Application {
       MobileCore.configureWithAppID("yourLaunchEnvironmentID");
 
       Edge.registerExtension();
-      Identity.registerExtension();
+      com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Edge Identity with Mobile Core
+      com.adobe.marketing.mobile.Identity.registerExtension(); // Register Identity with Mobile Core
       MobileCore.start(new AdobeCallback() {
         @Override
         public void call(final Object o) {
@@ -101,7 +100,7 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Identity.self, Edge.self], {
+    MobileCore.registerExtensions([AEPEdgeIdentity.Identity.self, AEPIdentity.Identity.self, Edge.self], {
     MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
   })
   ...
@@ -113,7 +112,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileIdentity.class, AEPMobileEdge.class] completion:^{
     ...
   }];
   [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
@@ -122,10 +121,3 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% endtabs %}
-
-## What OS & platform versions are supported?
-
-* Android versions 4.4 or later \(API levels 19 or later\)
-* iOS versions 10 or later
-
-
