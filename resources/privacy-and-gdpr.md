@@ -6,53 +6,52 @@ Before implementing these controls, read Adobe's [GDPR documentation](https://ww
 
 When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
 
-## Set and get privacy status
+## Set and get consent collect
 
-You can set a privacy status to ensure collection of data suits your user's preferences.
+You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension | Opt In | Opt Out | Opt Unknown |
+| Extension | Collect (Yes) | Collect (No) | Collect (Pending) |
 | :--- | :--- | :--- | :--- |
 | **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
-### Privacy Status settings
+> Note: When no defualt collect consent value is defined in configuration, the SDK defaults to Yes for collect consent.
+
+### Consent Collect settings
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
-You can set the privacy status to one of the following values:
+You can set the collect consent to one of the following values:
 
-* `MobilePrivacyStatus.OPT_IN`
-* `MobilePrivacyStatus.OPT_OUT`
-* `MobilePrivacyStatus.UNKNOWN`
+* `y`
+* `n`
 
-To understand the expected behavior, see the _Set and get privacy status_ table above.
+To understand the expected behavior, see the _Set and get consent collect_ table above.
 {% endtab %}
 
 {% tab title="iOS" %}
-You can set privacy status to one of the following values:
+You can set the collect consent to one of the following values:
 
 #### Swift
 
-* `PrivacyStatus.optedIn`
-* `PrivacyStatus.optedOut` 
-* `PrivacyStatus.unknown`
+* `y`
+* `n`
 
 #### Objective-C
 
-You can set privacy status to one of the following values:
+You can set the collect consent to one of the following values:
 
-* `AEPPrivacyStatusOptedIn`
-* `AEPPrivacyStatusOptedOut` 
-* `AEPPrivacyStatusUnknown`
+* `y`
+* `n`
 
-To understand the expected behavior, see the _Set and get privacy status_ table above.
+To understand the expected behavior, see the _Set and get consent collect_ table above.
 {% endtab %}
 {% endtabs %}
 
-### setPrivacyStatus <a id="setprivacystatus"></a>
+### updateConsents<a id="updateconsent"></a>
 
-To programmatically set the privacy status for the application user:
+To programmatically update the consent collect for the application user:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -61,13 +60,45 @@ To programmatically set the privacy status for the application user:
 #### Syntax
 
 ```java
-public static void setPrivacyStatus(final MobilePrivacyStatus privacyStatus);
+public static void update(final Map<String, Object> xdmFormattedConsents);
 ```
 
 #### Example
 
 ```java
-MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
+// example 1, updating users collect consent to 'yes'
+final Map<String, Object> consents = new HashMap<String, Object>() {
+	{
+		put("consents", new HashMap<String, Object>() {
+			{
+				put("collect", new HashMap<String, String>() {
+					{
+						put("val", "y");
+					}
+				});
+			}
+		});
+	}
+};
+
+Consent.update(consents);
+
+// example 2, updating users collect consent to 'no'
+final Map<String, Object> consents = new HashMap<String, Object>() {
+	{
+		put("consents", new HashMap<String, Object>() {
+			{
+				put("collect", new HashMap<String, String>() {
+					{
+						put("val", "n");
+					}
+				});
+			}
+		});
+	}
+};
+
+Consent.update(consents);
 ```
 {% endtab %}
 
@@ -77,38 +108,51 @@ MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
 #### Syntax
 
 ```swift
-static func setPrivacyStatus(_ status: PrivacyStatus)
+static func update(with consents: [String: Any])
 ```
 
 #### Example
 
 ```swift
-MobileCore.setPrivacyStatus(PrivacyStatus.optedIn)
+// example 1, updating users collect consent to 'yes'
+let collectConsent = ["collect": ["val": "y"]]
+let currentConsents = ["consents": collectConsent]
+Consent.update(with: currentConsents)
+Consent.update(consents);
+
+// example 2, updating users collect consent to 'no'
+let collectConsent = ["collect": ["val": "n"]]
+let currentConsents = ["consents": collectConsent]
+Consent.update(with: currentConsents)
 ```
 
 #### Objective-C
 
 #### Syntax
 
-```text
-+ (void) setPrivacyStatus: (AEPPrivacyStatus) status;
+```swift
+static func update(with consents: [String: Any])
 ```
 
 #### Example
 
-```text
-[AEPMobileCore setPrivacyStatus:AEPPrivacyStatusOptedIn];
+```objective-c
+// example 1, updating users collect consent to 'yes'
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"y"}}}];
+
+// example 2, updating users collect consent to 'no'
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": @{ @"collect": @{@"val": @"n"}}}];
 ```
 {% endtab %}
 {% endtabs %}
 
-You can also programmatically view the current privacy status by using the following:
+You can also programmatically view the current collect consent status by using the following:
 
 {% hint style="info" %}
-The following API returns an enum representation of the privacy status for the user.
+The following API returns a dictionary representation of the consent preferences for the user.
 {% endhint %}
 
-### getPrivacyStatus <a id="getprivacystatus"></a>
+### getConsents<a id="getconsents"></a>
 
 {% tabs %}
 {% tab title="Android" %}
@@ -117,20 +161,23 @@ The following API returns an enum representation of the privacy status for the u
 #### Syntax
 
 ```objectivec
-void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
+public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
 ```
 
-* _callback_ is invoked after the privacy status is available.
-* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be retruned in the eventuality of any error that occured while getting the user consents. The callback may be invoked on a different thread.
 
 #### Example
 
 ```objectivec
-MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
-    @Override
-    public void call(MobilePrivacyStatus value) {
-          System.out.println("getPrivacyStatus: " + status);
-    }
+Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
+	@Override
+	public void call(Map<String, Object> currentConsents) {
+		if (currentConsents == null) { return; }
+    final Map<String, Object> consents = currentConsets.get("consents");
+    final Map<String, Object> collectConsent = consents.get("collect");
+    final String collectConsentStatus = collectConsent.get("val");
+    // inspect collectConsentStatus
+	}
 });
 ```
 {% endtab %}
@@ -141,23 +188,18 @@ MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
 #### Syntax
 
 ```swift
-static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
+static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 ```
 
 #### Example
 
 ```swift
-MobileCore.getPrivacyStatus { (status: PrivacyStatus) in
-    switch status {
-        case .optedIn:
-            print("Privacy Status: Opt-In")
-        case .optedOut:
-            print("Privacy Status: Opt-Out")
-        case .unknown:
-            print("Privacy Status: Unknown")
-        default:
-            print("Privacy Status: Unknown")
-        }
+Consent.getConsents { currentConsents, error in
+	guard error == nil else { return }
+	guard let consents = currentConsents["consents"] as? [String: Any] else { return }
+	guard let collectConsent = consents["collect"] as? [String: Any] else { return }
+	let collectConsentStatus = collectConsent["val"] as? String
+  // inspect collectConsentStatus
 }
 ```
 
@@ -166,21 +208,18 @@ MobileCore.getPrivacyStatus { (status: PrivacyStatus) in
 #### Syntax
 
 ```text
-+ (void) getPrivacyStatus: (nonnull void (^) (AEPPrivacyStatus status)) callback;
+static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 ```
 
 #### Example
 
-```text
-[AEPMobileCore getPrivacyStatus:^(AEPPrivacyStatus status) {
-  switch (status) {
-    case AEPPrivacyStatusOptedIn:
-      NSLog(@"Privacy Status: Opt-in");
-      break;
-
-    default:
-      break;
-  }
+```objective-c
+[AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error) {
+	if (error) { return; }
+	NSDictionary *consents = currentConsents[@"consents"];
+  NSDictionary *collectConsent = currentConsents[@"collect"];
+  NSString *collectConsentStatus = collectConsent[@"val"];
+  // inspect collectConsentStatus
 }];
 ```
 {% endtab %}
@@ -192,15 +231,11 @@ To retrieve all the identifier data stored locally by the SDK as a JSON string, 
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration API reference](../using-mobile-extensions/mobile-core/configuration/configuration-api-reference.md).
+To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, [ConsentAPI reference](../using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference.md).
 
 | Key | Description |
 | :--- | :--- |
-| `global.privacy` | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
-
-## Video
-
-{% embed url="https://www.youtube.com/watch?v=kgUJNFQp3PI" caption="Using Mobile SDK Privacy APIs" %}
+| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. [More info.](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md) |
 
 ## Additional information
 
