@@ -53,6 +53,8 @@ To understand the expected behavior, see the _Set and get consent collect_ table
 
 To programmatically update the consent collect for the application user:
 
+> After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+
 {% tabs %}
 {% tab title="Android" %}
 #### Java

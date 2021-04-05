@@ -185,6 +185,8 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 Merges the existing consents with the given consents. Duplicate keys will take the value of those passed in the API.
 
+> After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+
 {% tabs %}
 {% tab title="Android" %}
 
