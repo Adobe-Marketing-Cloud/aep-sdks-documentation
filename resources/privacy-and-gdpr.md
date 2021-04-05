@@ -12,7 +12,7 @@ When Adobe provides software and services to an enterprise, Adobe acts as a data
 
 You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension | Collect (y) | Collect (n) | Collect (p) |
+| Extension | Collect (y) | Collect (n) | Collect (pending) |
 | :--- | :--- | :--- | :--- |
 | **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
