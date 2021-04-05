@@ -51,6 +51,83 @@ To understand the expected behavior, see the *Update and get collect consent pre
 {% endtab %}
 {% endtabs %}
 
+### getConsents<a id="getconsents"></a>
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+#### Syntax
+
+```objectivec
+public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
+```
+
+* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be retruned in the eventuality of any error that occured while getting the user consents. The callback may be invoked on a different thread.
+
+#### Example
+
+```objectivec
+Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
+	@Override
+	public void call(Map<String, Object> currentConsents) {
+		if (currentConsents == null) { return; }
+    final Map<String, Object> consents = currentConsets.get("consents");
+    final Map<String, Object> collectConsent = consents.get("collect");
+    final String collectConsentStatus = collectConsent.get("val");
+    // inspect collectConsentStatus
+	}
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Swift
+
+#### Syntax
+
+```swift
+static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
+```
+
+#### Example
+
+```swift
+Consent.getConsents { currentConsents, error in
+	guard error == nil else { return }
+	guard let consents = currentConsents["consents"] as? [String: Any] else { return }
+	guard let collectConsent = consents["collect"] as? [String: Any] else { return }
+	let collectConsentStatus = collectConsent["val"] as? String
+  // inspect collectConsentStatus
+}
+```
+
+#### Objective-C
+
+#### Syntax
+
+```text
+static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
+```
+
+#### Example
+
+```objective-c
+[AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error) {
+	if (error) { return; }
+	NSDictionary *consents = currentConsents[@"consents"];
+  NSDictionary *collectConsent = currentConsents[@"collect"];
+  NSString *collectConsentStatus = collectConsent[@"val"];
+  // inspect collectConsentStatus
+}];
+```
+
+{% endtab %}
+{% endtabs %}
+
 ### updateConsents<a id="updateconsent"></a>
 
 To programmatically update the consent collect for the application user:
@@ -64,43 +141,35 @@ To programmatically update the consent collect for the application user:
 #### Syntax
 
 ```java
-public static void update(final Map<String, Object> xdmFormattedConsents);
+public static void update(final Map<String, Object> consents);
 ```
 
 #### Example
 
 ```java
 // example 1, updating users collect consent to 'yes'
-final Map<String, Object> consents = new HashMap<String, Object>() {
+final Map<String, Object> collectConsents = new HashMap<>();
+collectConsents.put("collect", new HashMap<String, String>() {
 	{
-		put("consents", new HashMap<String, Object>() {
-			{
-				put("collect", new HashMap<String, String>() {
-					{
-						put("val", "y");
-					}
-				});
-			}
-		});
+		put("val", "y");
 	}
-};
+});
+
+final Map<String, Object> consents = new HashMap<>();
+consents.put("consents", collectConsents);
 
 Consent.update(consents);
 
 // example 2, updating users collect consent to 'no'
-final Map<String, Object> consents = new HashMap<String, Object>() {
+final Map<String, Object> collectConsents = new HashMap<>();
+collectConsents.put("collect", new HashMap<String, String>() {
 	{
-		put("consents", new HashMap<String, Object>() {
-			{
-				put("collect", new HashMap<String, String>() {
-					{
-						put("val", "n");
-					}
-				});
-			}
-		});
+		put("val", "n");
 	}
-};
+});
+
+final Map<String, Object> consents = new HashMap<>();
+consents.put("consents", collectConsents);
 
 Consent.update(consents);
 ```
@@ -156,79 +225,6 @@ You can also programmatically view the current collect consent preferences statu
 {% hint style="info" %}
 The following API returns a dictionary representation of the consent preferences for the user.
 {% endhint %}
-
-### getConsents<a id="getconsents"></a>
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-#### Syntax
-
-```objectivec
-public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
-```
-
-* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be retruned in the eventuality of any error that occured while getting the user consents. The callback may be invoked on a different thread.
-
-#### Example
-
-```objectivec
-Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
-	@Override
-	public void call(Map<String, Object> currentConsents) {
-		if (currentConsents == null) { return; }
-    final Map<String, Object> consents = currentConsets.get("consents");
-    final Map<String, Object> collectConsent = consents.get("collect");
-    final String collectConsentStatus = collectConsent.get("val");
-    // inspect collectConsentStatus
-	}
-});
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Swift
-
-#### Syntax
-
-```swift
-static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
-```
-
-#### Example
-
-```swift
-Consent.getConsents { currentConsents, error in
-	guard error == nil else { return }
-	guard let consents = currentConsents["consents"] as? [String: Any] else { return }
-	guard let collectConsent = consents["collect"] as? [String: Any] else { return }
-	let collectConsentStatus = collectConsent["val"] as? String
-  // inspect collectConsentStatus
-}
-```
-
-#### Objective-C
-
-#### Syntax
-
-```text
-static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
-```
-
-#### Example
-
-```objective-c
-[AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error) {
-	if (error) { return; }
-	NSDictionary *consents = currentConsents[@"consents"];
-  NSDictionary *collectConsent = currentConsents[@"collect"];
-  NSString *collectConsentStatus = collectConsent[@"val"];
-  // inspect collectConsentStatus
-}];
-```
-{% endtab %}
-{% endtabs %}
 
 ## Retrieving stored identifiers
 

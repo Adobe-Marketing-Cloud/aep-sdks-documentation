@@ -52,70 +52,6 @@ public static let extensionVersion
 {% endtab %}
 {% endtabs %}
 
-## registerExtension <a id="registerextension"></a>
-
-Registers the Edge Consent extension with the Mobile Core SDK.
-
-{% tabs %}
-{% tab title="Android" %}
-
-### Java
-
-#### Syntax
-
-```java
-public static void registerExtension();
-```
-
-#### Example
-
-```java
-Consent.registerExtension();
-```
-
-{% endtab %}
-
-{% tab title="iOS" %}
-
-### Swift
-
-Use the MobileCore API to register the Edge Consent extension.
-
-#### Syntax
-
-```swift
-public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
-```
-
-#### Example
-
-```swift
-MobileCore.registerExtensions([Consent.self, ...], {
-  // processing after registration
-})
-```
-
-### Objective-C
-
-Use the AEPMobileCore API to register the Edge Consent extension.
-
-#### Syntax
-
-```swift
-public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
-```
-
-#### Example
-
-```objective-c
-[AEPMobileCore registerExtensions:@[AEPMobileEdgeConsent.class, ...] completion:^{
-  // processing after registration
-}];
-```
-
-{% endtab %}
-{% endtabs %}
-
 ## getConsents<a id="getconsents"></a>
 
 Retrieves the current consent preferences stored in the Consent extension.
@@ -181,6 +117,70 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 {% endtab %}
 {% endtabs %}
 
+## registerExtension <a id="registerextension"></a>
+
+Registers the Edge Consent extension with the Mobile Core SDK.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+#### Syntax
+
+```java
+public static void registerExtension();
+```
+
+#### Example
+
+```java
+Consent.registerExtension();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+### Swift
+
+Use the MobileCore API to register the Edge Consent extension.
+
+#### Syntax
+
+```swift
+public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
+```
+
+#### Example
+
+```swift
+MobileCore.registerExtensions([Consent.self, ...], {
+  // processing after registration
+})
+```
+
+### Objective-C
+
+Use the AEPMobileCore API to register the Edge Consent extension.
+
+#### Syntax
+
+```swift
+public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
+```
+
+#### Example
+
+```objective-c
+[AEPMobileCore registerExtensions:@[AEPMobileEdgeConsent.class, ...] completion:^{
+  // processing after registration
+}];
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## updateConsents<a id="updateConsents"></a>
 
 Merges the existing consents with the given consents. Duplicate keys will take the value of those passed in the API.
@@ -195,45 +195,39 @@ Merges the existing consents with the given consents. Duplicate keys will take t
 #### Syntax
 
 ```java
-public static void update(final Map<String, Object> xdmFormattedConsents);
+public static void update(final Map<String, Object> consents);
 ```
 
-* *xdmFormattedConsents* - A `Map` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* *consents* - A `Map` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
 ```java
 // example 1, updating users collect consent to 'yes'
-final Map<String, Object> consents = new HashMap<String, Object>() {
+final Map<String, Object> collectConsents = new HashMap<>();
+collectConsents.put("collect", new HashMap<String, String>() {
 	{
-		put("consents", new HashMap<String, Object>() {
-			{
-				put("collect", new HashMap<String, String>() {
-					{
-						put("val", "y");
-					}
-				});
-			}
-		});
+		put("val", "y");
 	}
-};
+});
+
+final Map<String, Object> consents = new HashMap<>();
+consents.put("consents", collectConsents);
+
+Consent.update(consents);
 
 Consent.update(consents);
 
 // example 2, updating users collect consent to 'no'
-final Map<String, Object> consents = new HashMap<String, Object>() {
+final Map<String, Object> collectConsents = new HashMap<>();
+collectConsents.put("collect", new HashMap<String, String>() {
 	{
-		put("consents", new HashMap<String, Object>() {
-			{
-				put("collect", new HashMap<String, String>() {
-					{
-						put("val", "n");
-					}
-				});
-			}
-		});
+		put("val", "n");
 	}
-};
+});
+
+final Map<String, Object> consents = new HashMap<>();
+consents.put("consents", collectConsents);
 
 Consent.update(consents);
 ```
