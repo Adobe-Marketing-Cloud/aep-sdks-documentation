@@ -40,6 +40,7 @@
   * [Edge API reference](using-mobile-extensions/adobe-edge/edge-api-reference.md)
   * [XDM Experience Events](using-mobile-extensions/adobe-edge/xdm-experience-events.md)
   * [Edge Validation](using-mobile-extensions/adobe-edge/edge-validation.md)
+* [Consent](using-mobile-extensions/adobe-edge-consent/README.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
 * [Offer Decisioning](using-mobile-extensions/offer-decisioning-extension/README.md)
