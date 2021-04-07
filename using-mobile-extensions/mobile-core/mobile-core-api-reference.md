@@ -560,7 +560,7 @@ If the Analytics extension is enabled in your SDK, collecting this launch data r
 
 {% tabs %}
 {% tab title="Android" %}
-Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed,, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
+Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
 * Tracking Deep Link click-through. 
 * Tracking Push Message click-through
 * Tracking Local Notification click-through
