@@ -710,7 +710,7 @@ MobileCore.getSdkIdentities { (content, error) in
 
 This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
 
-The  extensions that are currently handing this API call:
+The extensions that are currently handing this API call:
 * The Identity Edge extension. It will clear all the identities held by this extension as well as generating a new ECID
 
 {% tabs %}
@@ -742,7 +742,7 @@ MobileCore.resetIdentities();
 
 #### Syntax
 
-```objectivec
+```swift
 @objc(resetIdentities)
 static func resetIdentities()
 ```
