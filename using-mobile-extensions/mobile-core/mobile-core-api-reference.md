@@ -569,6 +569,10 @@ To retrieve data as a JSON string from the SDKs, and send this data to your serv
 You must call the API below and retrieve identities stored in the SDK, **before** the user opts out.
 {% endhint %}
 
+{% hint style="warning" %}
+This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](../adobe-edge-identity/adobe-edge-identity-api-reference#getidentities).
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 #### Java
@@ -634,6 +638,64 @@ MobileCore.getSdkIdentities { (content, error) in
 ```
 {% endtab %}
 {% endtabs %}
+
+## resetIdentities
+
+Clears the identites from Edge extensions and resets the Experience Cloud ID (ECID).
+
+{% hint style="warning" %}
+This API is only handled by the [Edge](../adobe-edge/README) and [Edge Identity](../adobe-edge-identity/README.md) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/README).
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+### resetIdentities
+
+#### Syntax
+
+```java
+void resetIdentities();
+```
+
+#### Example
+
+```java
+MobileCore.resetIdentities();
+```
+_since Mobile Core v1.3.0_
+{% endtab %}
+
+{% tab title="iOS" %}
+#### Objective-C
+
+### resetIdentities
+
+#### Syntax
+
+```swift
+@objc(resetIdentities)
+static func resetIdentities()
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+[AEPMobileCore resetIdentities];
+```
+
+**Swift**
+
+```swift
+MobileCore.resetIdentities()
+```
+_since AEPCore v3.1.0_
+{% endtab %}
+{% endtabs %}
+
 
 ## Set Icons for local notification \(Android only\)
 
