@@ -704,8 +704,6 @@ MobileCore.getSdkIdentities { (content, error) in
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Reset Identities
 
 This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
@@ -763,10 +761,6 @@ MobileCore.resetIdentities()
 
 {% endtab %}
 {% endtabs %}
-
-
-
-
 
 ## Set Icons for local notification \(Android only\)
 
