@@ -20,7 +20,7 @@ When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public
 public static void getExperienceCloudId(final AdobeCallback<String> callback);
 ```
 
-* _callback_ is invoked after the ECID is available.
+* _callback_ is invoked after the ECID is available. The callback may be invoked on a different thread.
 
 **Example**
 
@@ -91,7 +91,7 @@ When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public
 public static void getIdentities(final AdobeCallback<IdentityMap> callback);
 ```
 
-* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](#identitymap)
+* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](#identitymap). The callback may be invoked on a different thread.
 
 **Example**
 
@@ -148,11 +148,11 @@ Identity.getIdentities { (identityMap, error) in
 {% tab title="Android" %}
 ### updateIdentities
 
-Update the currently known identites within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
-Updating identites using a reserved namespace is not allowed using this API. The reserved namespaces are:
+Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
 - ECID
 - IDFA
@@ -180,11 +180,11 @@ Identity.updateIdentities(identityMap);
 {% tab title="iOS" %}
 ### updateIdentities
 
-Update the currently known identites within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
-Updating identites using a reserved namespace is not allowed using this API. The reserved namespaces are:
+Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
 - ECID
 - IDFA
@@ -227,7 +227,7 @@ Remove the identity from the stored client-side [IdentityMap](#identitymap). The
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
-Removing identites using a reserved namespace is not allowed using this API. The reserved namespaces are:
+Removing identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
 - ECID
 - IDFA
@@ -257,7 +257,7 @@ Remove the identity from the stored client-side [IdentityMap](#identitymap). The
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
-Removing identites using a reserved namespace is not allowed using this API. The reserved namespaces are:
+Removing identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
 - ECID
 - IDFA
@@ -354,10 +354,10 @@ identityMap.addItem(item, "Email");
 IdentityItem item = new IdentityItem("user@example.com");
 identityMap.removeItem(item, "Email");
 
-// Get list of items for a given namespace
+// Get a list of items for a given namespace
 List<IdentityItem> items = identityMap.getIdentityItemsForNamespace("Email");
 
-// Get list of all namespaces used in current IdentityMap
+// Get a list of all namespaces used in current IdentityMap
 List<String> namespaces = identityMap.getNamespaces();
 
 // Check if IdentityMap has no identities
@@ -383,10 +383,10 @@ AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" 
 AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
 [identityMap removeItem:item withNamespace:@"Email"];
 
-// Get list of items for a given namespace
+// Get a list of items for a given namespace
 NSArray* items = [identityMap getItemsWithNamespace:@"Email"];
 
-// Get list of all namespaces used in current IdentityMap
+// Get a list of all namespaces used in current IdentityMap
 NSArray* namespaces = identityMap.namespaces;
 
 // Check if IdentityMap has no identities
@@ -404,10 +404,10 @@ identityMap.add(item: IdentityItem(id: "user@example.com"), withNamespace: "Emai
 // Remove an item
 identityMap.remove(item: IdentityItem(id: "user@example.com", withNamespace: "Email"))
 
-// Get list of items for a given namespace
+// Get a list of items for a given namespace
 let items: [IdentityItem] = identityMap.getItems(withNamespace: "Email")
 
-// Get list of all namespaces used in current IdentityMap
+// Get a list of all namespaces used in current IdentityMap
 let namespaces: [String] = identityMap.namespaces
 
 // Check if IdentityMap has no identities
