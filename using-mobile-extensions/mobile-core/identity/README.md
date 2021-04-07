@@ -6,6 +6,10 @@ The Identity framework is bundled with [Mobile Core](../) and enables your app w
 On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
 {% endhint %}
 
+{% hint style="info" %}
+If an application is using the [Adobe Experience Platform Edge Network](../../adobe-edge/README.md) extension, then the [Edge Identity](../../adobe-edge-identity/README.md) extension is required. 
+{% endhint %}
+
 To get started with Identity, complete the following steps:
 
 1. Add the **Identity** framework to your app.

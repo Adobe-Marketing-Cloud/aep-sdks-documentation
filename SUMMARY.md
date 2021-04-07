@@ -40,6 +40,8 @@
   * [Edge API reference](using-mobile-extensions/adobe-edge/edge-api-reference.md)
   * [XDM Experience Events](using-mobile-extensions/adobe-edge/xdm-experience-events.md)
   * [Edge Validation](using-mobile-extensions/adobe-edge/edge-validation.md)
+
+* [Edge Identity](using-mobile-extensions/adobe-edge-identity/README.md)
 * [Consent](using-mobile-extensions/adobe-edge-consent/README.md)
   * [Consent API reference](using-mobile-extensions/adobe-edge/edge-consent-api-reference.md)
 * [Profile](using-mobile-extensions/profile/README.md)
