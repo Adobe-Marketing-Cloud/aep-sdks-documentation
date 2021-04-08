@@ -4,4 +4,5 @@
 
 ### iOS & Android AEPEdgeConsent
 
-The Adobe Experience Platform Edge Consent (AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension allows for sending a user's consent preferences to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+The Adobe Experience Platform Edge Consent (AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension allows for sending a user's consent preferences to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities. You can now find the `Consent Collection` extension in the Launch extensions catalog for mobile properties.
+same below
