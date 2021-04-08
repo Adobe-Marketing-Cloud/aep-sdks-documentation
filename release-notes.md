@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 8, 2021
+
+### iOS AEPEdgeIdentity
+
+The Adobe Experience Platform Edge Identity (AEPEdgeIdentity\) mobile extension is now available in iOS! This extension enables identity management with the Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+
 ## April 5, 2021
 
 ### iOS AEPEdgeConsent
