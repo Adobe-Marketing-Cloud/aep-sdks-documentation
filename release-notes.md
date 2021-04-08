@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## April 1, 2021
+## April 8, 2021
 
 ### iOS AEPCore 3.1.1
 
