@@ -6,6 +6,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## April 1, 2021
 
+### iOS AEPCore 3.1.1
+
+* Fixed a bug where incomplete eventhub shared state was created before the event hub has been started.
+
+## April 1, 2021
+
 ### iOS AEPCore 3.1.0
 
 * New API - `MobileCore.collectLaunchInfo()` - see API reference for more information.
