@@ -45,7 +45,7 @@
   * [Edge Identity API reference](using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md)
   * [FAQ](using-mobile-extensions/adobe-edge-identity/edge-identity-faq.md)
 * [Consent](using-mobile-extensions/adobe-edge-consent/README.md)
-  * [Release Notes](using-mobile-extensions/adobe-edge/edge-release-notes.md)
+  * [Release Notes](using-mobile-extensions/adobe-edge-consent/edge-consent-release-notes.md)
   * [Consent API reference](using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference.md)
 * [Profile](using-mobile-extensions/profile/README.md)
   * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
