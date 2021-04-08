@@ -550,6 +550,75 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 {% endtab %}
 {% endtabs %}
 
+## Collect launch information
+
+You can provide the user information to the SDK from various launch points in your application.
+
+{% hint style="info" %}
+If the Analytics extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
+* Tracking Deep Link click-through. 
+* Tracking Push Message click-through
+* Tracking Local Notification click-through
+
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective-C**
+
+This method should be called to support the following use cases:
+
+* Tracking Deep Link click-throughs
+  * From `application:didFinishLaunchingWithOptions`
+  * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+* Tracking Push Message click-through
+  * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+
+#### collectLaunchInfo
+
+**Syntax**
+
+```text
+@objc(collectLaunchInfo:)
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+**Example**
+
+```text
+ [AEPMobileCore collectLaunchInfo:launchOptions];
+```
+
+**Swift**
+
+This method should be called to support the following use cases:
+
+* Tracking Deep Link click-throughs
+  * From `application(_:didFinishLaunchingWithOptions:)`
+  * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+* Tracking Push Message click-through
+  * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+
+#### collectLaunchInfo
+
+**Syntax**
+
+```swift
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+**Example**
+
+```swift
+AEPCore.collectLaunchInfo(userInfo)
+```
+{% endtab %}
+{% endtabs %}
+
 ## Retrieving stored identifiers
 
 The following SDK identities \(as applicable\) are locally stored:
@@ -632,6 +701,64 @@ MobileCore.getSdkIdentities { (content, error) in
     // handle completion
 }
 ```
+{% endtab %}
+{% endtabs %}
+
+## Reset Identities
+
+This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
+
+The extensions that are currently handing this API call:
+* The Identity Edge extension. It will clear all the identities held by this extension as well as generating a new ECID
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+### getSdkIdentities
+
+#### Syntax
+
+```java
+void resetIdentities();
+```
+
+#### Example
+
+```java
+MobileCore.resetIdentities();
+```
+
+{% endtab %}
+
+{% tab title="iOS" %}
+
+#### Objective-C
+
+### resetIdentities
+
+#### Syntax
+
+```swift
+@objc(resetIdentities)
+static func resetIdentities()
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+[AEPMobileCore resetIdentities];
+```
+
+**Swift**
+
+```swift
+MobileCore.resetIdentities()
+```
+
 {% endtab %}
 {% endtabs %}
 
