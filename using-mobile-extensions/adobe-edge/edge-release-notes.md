@@ -4,12 +4,12 @@
 
 ### iOS AEPEdge 1.1.0
 
-- Integration with AEPEdgeConsent 1.0.0 and collect consent preferences enforcement for requests to Edge Network.
+- Integration with AEPEdgeConsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
 - Adds required dependency on AEPEdgeIdentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
 
 ### Android Edge 1.1.0
 
-- Integration with edgeconsent 1.0.0 and collect consent preferences enforcement for requests to Edge Network.
+- Integration with edgeconsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
 - Adds required dependency on edgeidentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
 
 ## January 19, 2021
