@@ -1,5 +1,11 @@
 # Release Notes
 
+## April 8, 2021
+
+### iOS AEPCore 3.1.1
+
+* Fixed a bug where incomplete eventhub shared state was created before the event hub has been started.
+
 ## April 1, 2021
 
 ### iOS AEPCore 3.1.0

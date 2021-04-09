@@ -6,6 +6,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## April 8, 2021
 
+### iOS AEPCore 3.1.1
+
+* Fixed a bug where incomplete eventhub shared state was created before the event hub has been started.
+
 ### iOS AEPEdge 1.1.0
 
 - Integration with AEPEdgeConsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
