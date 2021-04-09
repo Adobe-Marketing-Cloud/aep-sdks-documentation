@@ -1,4 +1,4 @@
-# Edge Identity API Reference
+# Identity API Reference
 
 ## getExperienceCloudId
 
@@ -79,7 +79,7 @@ Identity.getExperienceCloudId { (ecid, error) in
 {% tab title="Android" %}
 ### getIdentities
 
-Get all identities in the Edge Identity extension, including customer identifiers which were previously added.
+Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
 When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public-classes) is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core/mobile-core-api-reference.md#public-classes).
 
@@ -108,7 +108,7 @@ Identity.getIdentities(new AdobeCallback<IdentityMap>() {
 {% tab title="iOS" %}
 ### getIdentities
 
-Get all identities in the Edge Identity extension, including customer identifiers which were previously added.
+Get all identities in the Identity for Egde Network extension, including customer identifiers which were previously added.
 
 **Syntax**
 
@@ -148,7 +148,7 @@ Identity.getIdentities { (identityMap, error) in
 {% tab title="Android" %}
 ### updateIdentities
 
-Update the currently known identities within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
@@ -180,7 +180,7 @@ Identity.updateIdentities(identityMap);
 {% tab title="iOS" %}
 ### updateIdentities
 
-Update the currently known identities within the SDK. The Edge Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
@@ -289,10 +289,10 @@ Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespac
 
 ## resetIdentities
 
-Clears all identities stored in the Edge Identity extension and generates a new Experience Cloud ID (ECID) .  Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
+Clears all identities stored in the Identity extension and generates a new Experience Cloud ID (ECID) .  Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
 {% hint style="warning" %}
-The Edge Identity extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Edge Identity extension.
+The Identity for Edge Network extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Identity for Edge Network extension.
 {% endhint %}
 
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference#resetidentities) for more details.

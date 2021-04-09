@@ -2,9 +2,9 @@
 
 ## Q: I am using AEP Edge and Adobe Solutions extensions, which Identity Extension should I install and register?
 ### A: Both. 
-When using both Adobe Experience Platform Edge and Adobe Solutions extensions, both Edge Identity and Identity direct extensions can be registered with the Mobile SDK at the same time. 
+When using both Adobe Experience Platform Edge and Adobe Solutions extensions, both Identity for Edge Network and Identity direct extensions can be registered with the Mobile SDK at the same time. 
 
-### Download and import the Identity and Edge Identity extensions
+### Download and import the Identity and Identity for Edge Network extensions
 {% hint style="info" %}
 
 The following instructions are for configuring an application using both Edge Network and Adobe Solutions mobile extensions. If an application will include only Adobe Experience Platform Edge extensions, follow the instructions [here](./README#download-and-import-the-edge-identity-extension).
@@ -67,7 +67,7 @@ import AEPEdgeIdentity
 {% endtab %}
 {% endtabs %}
 
-### Register the Identity and Edge Identity extensions with Mobile Core
+### Register the Identity and Identity for Edge Network extensions with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -84,7 +84,7 @@ public class MobileApp extends Application {
 
       try {
         Edge.registerExtension();
-        com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Edge Identity with Mobile Core
+        com.adobe.marketing.mobile.edge.identity.Identity.registerExtension(); // Register Identity for Edge Network with Mobile Core
         com.adobe.marketing.mobile.Identity.registerExtension(); // Register Identity with Mobile Core
         MobileCore.start(new AdobeCallback() {
           @Override

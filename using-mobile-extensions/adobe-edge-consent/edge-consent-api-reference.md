@@ -1,11 +1,12 @@
-# Consent Collection API reference
+# Consent API reference
 
 ## extensionVersion <a id="extensionversion"></a>
 
-Returns the version of the client-side Edge Consent extension.
+Returns the version of the client-side Consent extension.
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 #### Syntax
