@@ -18,13 +18,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS & Android AEPEdgeIdentity 1.0.0
 
-The Adobe Experience Platform Edge Identity (AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables identity management with the Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities. You can now find the `Edge Identity` extension in the Launch extensions catalog for mobile properties.
+The Adobe Experience Platform Identity (AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension. You can now find the `Identity` extension in the Launch extensions catalog for mobile properties.
 
 ## April 5, 2021
 
 ### iOS & Android AEPEdgeConsent 1.0.0
 
-The Adobe Experience Platform Edge Consent (AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension allows for sending a user's consent preferences to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities. You can now find the `Consent Collection` extension in the Launch extensions catalog for mobile properties.
+The Adobe Experience Platform Consent (AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
 
 ## April 1, 2021
 
