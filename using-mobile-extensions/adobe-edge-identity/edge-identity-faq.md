@@ -262,7 +262,35 @@ The [IdentityMap](./edge-identity-api-reference#identitymap) in the AEP Edge Ide
 ### Java
 
 ```java
+// Sample example using Commerce schema
+Map<String, Object> xdmData = new HashMap<String, Object>() {{
+    put("identityMap", new HashMap<String, Object>() {{
+        put("Email", new ArrayList<Object>() {{
+            add(new HashMap<String, Object>() {{
+                put("id", "user@example.com");
+                put("authenticatedState", AuthenticatedState.AUTHENTICATED.getName());
+                put("primary", true);
+            }});
+        }});
+    }});
+    put("commerce", new HashMap<String, Object>(){{
+        put("productListViews", new HashMap<String, Object>() {{
+            put("value", 1);
+        }});
+    }});
+    put("productListItems", new ArrayList<Object>() {{
+        add(new HashMap<String, Object>() {{
+            put("SKU", "1002352692");
+            put("product", "https://commerce.adobe.io/entities/product/product-203766910");
+        }});
+    }});
+}};
 
+// Create an Experience Event with the built schema and send it using the AEP Edge extension
+ExperienceEvent event = new ExperienceEvent.Builder()
+        .setXdmSchema(xdmData, "1234567890")
+        .build();
+Edge.sendEvent(event, null);
 ```
 {% endtab %}
 
@@ -294,6 +322,7 @@ if let dict = identityMap.asDictionary() {
     xdmData["identityMap"] = dict
 }
 
+// Send event to the specified dataset
 let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "1234567890")
 Edge.sendEvent(experienceEvent: experienceEvent)
 ```
