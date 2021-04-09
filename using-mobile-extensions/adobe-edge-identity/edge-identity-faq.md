@@ -127,25 +127,25 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtabs %}
 
 
-## Q: Will an existing Experience Cloud ID (ECID) migrate to the AEP Edge Identity extension?
+## Q: Will an existing Experience Cloud ID (ECID) migrate to the Identity for Edge Network extension?
 ### A: Yes
-If the application previously installed the AEP Identity direct solution extension and upgrades to the AEP Edge Identity extension, the existing ECID value is migrated to the AEP Edge Identity extension on first launch of the application.
+If the application previously installed the Identity for Experience Cloud ID Service extension and upgrades to the Identity for Edge Network extension, the existing ECID value is migrated to the Identity for Edge Network extension on first launch of the application.
 
-Note, however, if the Mobile SDK's privacy status was set to `optedOut` at the time the application is upgraded, the AEP Identity direct solution extension will not have an ECID, as it was cleared. In this case, the AEP Edge Identity extension will generate a new ECID.
+Note, however, if the Mobile SDK's privacy status was set to `optedOut` at the time the application is upgraded, the Identity for Experience Cloud ID Service extension will not have an ECID, as it was cleared. In this case, the Identity for Edge Network extension will generate a new ECID.
 
 
 ## Q: What is the Experience Cloud ID (ECID) used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
-### A: The AEP Edge Identity extension and the AEP Identity direct solution extension each manage their own ECID.
+### A: The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID.
 
-At first launch of the application after upgrading to the AEP Edge Identity extension, the existing ECID from the AEP Identity direct solution extension is migrated to the AEP Edge Identity extension. In this case both extensions will have the same ECID value.
+At first launch of the application after upgrading to the Identity for Edge Network extension, the existing ECID from the Identity for Experience Cloud ID Service extension is migrated to the Identity for Edge Network extension. In this case both extensions will have the same ECID value.
 
-The [resetIdentities](./edge-identity-api-reference#resetIdentities) API regenerates a new ECID used by the AEP Edge Identity extension. This API call does not change the ECID used by the AEP Identity direct solution extension. After calling this API, the ECID used by each identity extension will be different.
+The [resetIdentities](./edge-identity-api-reference#resetIdentities) API regenerates a new ECID used by the Identity for Edge Network extension. This API call does not change the ECID used by the Identity for Experience Cloud ID Service extension. After calling this API, the ECID used by each identity extension will be different.
 
-Changing the privacy status to `optedOut` will clear the ECID value used by the AEP Identity direct solution extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the AEP Identity direct solution extension. Privacy status changes do not change the ECID used by the AEP Edge Identity extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
+Changing the privacy status to `optedOut` will clear the ECID value used by the Identity for Experience Cloud ID Service extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the Identity for Experience Cloud ID Service extension. Privacy status changes do not change the ECID used by the Identity for Edge Network extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
 
-When each identity extension has a different ECID, the AEP Edge Identity extension will include the AEP Identity direct solution ECID in its [IdentityMap](./edge-identity-api-reference#identitymap) by listening to state changes from the AEP Identity direct solution extension. By including both ECIDs in the `IdentityMap`, the Adobe Experience Platform Identity Service will link the two ECIDs in the customer's Identity Graph.
+When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](./edge-identity-api-reference#identitymap) by listening to state changes from the Identity for Experience Cloud ID Service extension. By including both ECIDs in the `IdentityMap`, the Adobe Experience Platform Identity Service will link the two ECIDs in the customer's Identity Graph.
 
-The following example shows an IdentityMap containing the ECIDs from both AEP Edge Identity extension and AEP Identity direct solution extension. The ECID from the AEP Edge Identity extension is always listed first in the list of ECIDs.
+The following example shows an IdentityMap containing the ECIDs from both Identity for Edge Network extension and Identity for Experience Cloud ID Service extension. The ECID from the Identity for Edge Network extension is always listed first in the list of ECIDs.
 ```json
 "identityMap" : {
       "ECID" : [
@@ -165,15 +165,15 @@ The following example shows an IdentityMap containing the ECIDs from both AEP Ed
 
 
 ## Q: I set privacy status to opted out, why do I see an ECID value when calling `Identity.getExperienceCloudId()`?
-### A: The AEP Edge Identity does not change its ECID based on privacy status changes.
+### A: The Identity for Edge Network extension does not change its ECID based on privacy status changes.
 
 {% hint style="info" %}
-The AEP Edge Identity extension and the AEP Identity direct solution extension each manage their own ECID value and are generated independently of each other. 
+The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID value and are generated independently of each other. 
 {% endhint %}
 
-The AEP Edge Identity extension does not clear its stored identities or regenerate the ECID due to privacy status changes. Instead, use the [resetIdentities](./edge-identity-api-reference#resetidentities) API. Note this API does not clear the ECID but instead generates a new ECID.
+The Identity for Edge Network extension does not clear its stored identities or regenerate the ECID due to privacy status changes. Instead, use the [resetIdentities](./edge-identity-api-reference#resetidentities) API. Note this API does not clear the ECID but instead generates a new ECID.
 
-Each identity extension has its own API to retrieve their respective ECIDs as well. Use [Identity.getExperienceCloudId](./edge-identity-api-reference#getexperiencecloudid) to get the AEP Edge Identity ECID, and [Identity.getExperienceCloudId](../mobile-core/identity/identity-api-reference#getexperiencecloudid) to get the AEP Identity direct solution ECID.
+Each identity extension has its own API to retrieve their respective ECIDs as well. Use [Identity.getExperienceCloudId](./edge-identity-api-reference#getexperiencecloudid) to get the Identity for Edge Network extension's ECID, and [Identity.getExperienceCloudId](../mobile-core/identity/identity-api-reference#getexperiencecloudid) to get the Identity for Experience Cloud ID Service extension's ECID.
 
 
 ## Q: How can I get all the identifiers used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
@@ -199,8 +199,8 @@ When using Real-time Customer Profile and Identity Service, the ECIDs from both 
 
 Perform the following API calls to regenerate the ECIDs in sequence:
 1. Set [privacy status](../resources/privacy-and-gdpr#setprivacystatus) to `optedOut` to clear the ECID from the AEP Identity direct service extension.
-2. Call [resetIdentities](./edge-identity-api-reference#resetidentities) to regenerate a new ECID in the AEP Edge Identity extension.
-3. Call [getExperienceCloudId](./edge-identity-api-reference#getexperiencecloudid) on the AEP Edge Identity extension. This ensures the new ECID is generated before continuing.
+2. Call [resetIdentities](./edge-identity-api-reference#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension.
+3. Call [getExperienceCloudId](./edge-identity-api-reference#getexperiencecloudid) on the Identity for Edge Network extension. This ensures the new ECID is generated before continuing.
 4. Set [privacy status](../resources/privacy-and-gdpr#setprivacystatus) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
 
 After completing the above steps, each identity extension will have its own, different, ECID. The new ECIDs will get linked under a new Identity Graph for the customer.
@@ -213,7 +213,7 @@ After completing the above steps, each identity extension will have its own, dif
 There can be only one primary identity per request event and the primary identity must be contained within the [IdentityMap](./edge-identity-api-reference#identitymap).
 {% endhint %}
 
-By default, the ECID from the AEP Edge Identity extension is the primary identifier for the Experience Event request. Once an Experience Event is received by the AEP Edge Network, if no identity is primary, it will mark the ECID as primary.
+By default, the ECID from the Identity for Edge Network extension is the primary identifier for the Experience Event request. Once an Experience Event is received by the AEP Edge Network, if no identity is primary, it will mark the ECID as primary.
 
 To set a different identifier as primary for an Experience Event, use the [updateIdentities](./edge-identity-api-reference#updateidentities) API.
 
@@ -255,7 +255,7 @@ AEPIdentityMap *map = [[AEPIdentityMap alloc] init];
 ## Q: I use multiple XDM schemas enabled for Profile, can I use different primary identifiers for each?
 ### A: Yes
 
-The [IdentityMap](./edge-identity-api-reference#identitymap) in the AEP Edge Identity extension is automatically included on each call to [Edge.sendEvent](../edge/edge-api-reference#sendevent). When using multiple Experience Data Model (XDM) schemas where each uses a different primary identifier, you will need to pass the primary identifier with each request, instead of marking a primary identifier in the AEP Edge Identity `IdentityMap`.
+The [IdentityMap](./edge-identity-api-reference#identitymap) in the Identity for Edge Network extension is automatically included on each call to [Edge.sendEvent](../edge/edge-api-reference#sendevent). When using multiple Experience Data Model (XDM) schemas where each uses a different primary identifier, you will need to pass the primary identifier with each request, instead of marking a primary identifier in the Identity for Edge Network `IdentityMap`.
 
 {% tabs %}
 {% tab title="Android" %}
