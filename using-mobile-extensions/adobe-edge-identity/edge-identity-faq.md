@@ -4,7 +4,6 @@
 ### A: Both. 
 When using both Adobe Experience Platform Edge and Adobe Solutions extensions, both Edge Identity and Identity direct extensions can be registered with the Mobile SDK at the same time. 
 
-### Download and import the Identity and Edge Identity extensions
 {% hint style="info" %}
 
 The following instructions are for configuring an application using both Edge Network and Adobe Solutions mobile extensions. If an application will include only Adobe Experience Platform Edge extensions, follow the instructions [here](./README#download-and-import-the-edge-identity-extension).
@@ -144,7 +143,7 @@ The [resetIdentities](./edge-identity-api-reference#resetIdentities) API regener
 
 Changing the privacy status to `optedOut` will clear the ECID value used by the AEP Identity direct solution extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the AEP Identity direct solution extension. Privacy status changes do not change the ECID used by the AEP Edge Identity extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
 
-When each identity extension has a different ECID, the AEP Edge Identity extension will include the AEP Identity direct solution ECID in its [IdentityMap](./edge-identity-api-reference#identitymap) by listening to state changes from the AEP Identity direct solution extension. By including the both ECIDs in the `IdentityMap`, the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
+When each identity extension has a different ECID, the AEP Edge Identity extension will include the AEP Identity direct solution ECID in its [IdentityMap](./edge-identity-api-reference#identitymap) by listening to state changes from the AEP Identity direct solution extension. By including both ECIDs in the `IdentityMap`, the Adobe Experience Platform Identity Service will link the two ECIDs in the customer's Identity Graph.
 
 The following example shows an IdentityMap containing the ECIDs from both AEP Edge Identity extension and AEP Identity direct solution extension. The ECID from the AEP Edge Identity extension is always listed first in the list of ECIDs.
 ```json
