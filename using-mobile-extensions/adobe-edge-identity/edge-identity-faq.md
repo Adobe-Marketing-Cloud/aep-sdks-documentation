@@ -135,7 +135,7 @@ Note, however, if the Mobile SDK's privacy status was set to `optedOut` at the t
 
 
 ## Q: What is the Experience Cloud ID (ECID) used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
-### A: The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID.
+### A: The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID. However, the two ECIDs are synced as part of the XDM IdentityMap.
 
 At first launch of the application after upgrading to the Identity for Edge Network extension, the existing ECID from the Identity for Experience Cloud ID Service extension is migrated to the Identity for Edge Network extension. In this case both extensions will have the same ECID value.
 
@@ -204,6 +204,47 @@ Perform the following API calls to regenerate the ECIDs in sequence:
 4. Set [privacy status](../resources/privacy-and-gdpr#setprivacystatus) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
 
 After completing the above steps, each identity extension will have its own, different, ECID. The new ECIDs will get linked under a new Identity Graph for the customer.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+```java
+MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
+MobileCore.resetIdentities();
+com.adobe.marketing.mobile.edge.identity.Identity.getExperienceCloudId(new AdobeCallback<String>() {
+    @Override
+    public void call(String s) {
+        // ignore
+    }
+});
+MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_IN);
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### Swift
+
+```swift
+MobileCore.setPrivacyStatus(.optedOut)
+MobileCore.resetIdentities()
+AEPEdgeIdentity.Identity.getExperienceCloudId { _, _ in }
+MobileCore.setPrivacyStatus(.optedIn)
+```
+
+### Objective-C
+
+```objectivec
+[AEPMobileCore setPrivacyStatus:AEPPrivacyStatusOptedOut];
+[AEPMobileCore resetIdentities];
+[AEPMobileEdgeIdentity getExperienceCloudId:^(NSString *ecid, NSError *error) {
+    // ignore
+}];
+[AEPMobileCore setPrivacyStatus:AEPPrivacyStatusOptedIn];
+```
+{% endtab %}
+{% endtabs %}
 
 
 ## Q: I would like to enable my XDM schema for Profile. Which identifier should be marked as primary?
