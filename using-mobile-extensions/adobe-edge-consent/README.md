@@ -1,24 +1,24 @@
-# Adobe Experience Platform Consent Collection
+# Adobe Experience Platform Consent
 
-The Adobe Experience Platform Consent Collection mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
+The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
 
-## Configure the Adobe Experience Platform Consent Collection extension in Experience Platform Launch
+## Configure the Adobe Experience Platform Consent extension in Experience Platform Launch
 
 1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Consent Collection** extension, and click **Install**.
+2. On the **Catalog** tab, locate or search for the **Consent** extension, and click **Install**.
 3. Set your desired default consent level.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the AEP Consent Collection extension
+### Configure the AEP Consent extension
 
-![Adobe Edge Consent Collect extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
+![AEP Consent extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 
 
-## Add the AEP Edge Consent extension to your app
+## Add the AEP Consent extension to your app
 
-### Download and import the Edge Consent extension
+### Download and import the Consent extension
 
 {% tabs %}
 {% tab title="Android" %}

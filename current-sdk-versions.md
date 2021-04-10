@@ -72,6 +72,34 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
         </p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-identity">Identity</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeIdentity"><img src="https://img.shields.io/cocoapods/v/AEPEdgeIdentity.svg?color=orange&amp;label=AEPEdgeIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/edgeidentity"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/edgeidentity.svg?logo=android&amp;logoColor=white&amp;label=edgeidentity&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/adobe/aepsdk-edgeidentity-android">Android</a>
+        </p>
+        <p><a href="https://github.com/adobe/aepsdk-edgeidentity-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent">Consent</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeConsent"><img src="https://img.shields.io/cocoapods/v/AEPEdgeConsent.svg?color=orange&amp;label=AEPEdgeConsent&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/edgeconsent"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/edgeconsent.svg?logo=android&amp;logoColor=white&amp;label=edgeconsent&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/adobe/aepsdk-edgeconsent-android">Android</a>
+        </p>
+        <p><a href="https://github.com/adobe/aepsdk-edgeconsent-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
