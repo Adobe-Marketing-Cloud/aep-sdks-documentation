@@ -330,7 +330,22 @@ Edge.sendEvent(experienceEvent: experienceEvent)
 ### Objective-C
 
 ```objectivec
+NSDictionary *commerce = @{@"productListViews": @{@"value": @1}};
+NSArray *productListItems = @[@{
+    @"SKU": @"1002352692",
+    @"product": @"https://commerce.adobe.io/entities/product/product-203766910"
+}];
+NSDictionary *identityMap = @{@"Email": @[@{
+    @"id":@"user@example.com",
+    @"authenticatedState":@"authenticated",
+    @"primary": @true
+    
+}]};
 
+NSDictionary *xdmData = [[NSDictionary alloc] initWithObjectsAndKeys:identityMap,@"identityMap",commerce, @"commerce",productListItems,@"productListItems",nil];
+
+AEPExperienceEvent *experienceEvent = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:@"1234567890"];
+[AEPMobileEdge sendExperienceEvent:experienceEvent completion:nil];
 ```
 {% endtab %}
 {% endtabs %}
