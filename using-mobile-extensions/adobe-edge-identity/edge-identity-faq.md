@@ -187,7 +187,7 @@ To get the identifiers used by the AEP Edge extensions, call [getIdentities](./e
 ## Q: How can I clear all the identifiers from the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
 ### A: Set privacy status to `optedOut` and call `resetIdentities`
 
-To clear the identifiers used by the Adobe Solutions extensions, call [setPrivacyStatus](../resources/privacy-and-gdpr#setprivacystatus) and set the privacy status to `optedOut`.
+To clear the identifiers used by the Adobe Solutions extensions, call [setPrivacyStatus](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) and set the privacy status to `optedOut`.
 
 To clear the identifiers used by the AEP Edge extensions, call [resetIdentities](../mobile-core/mobile-core-api-reference#reset-identities)
 
@@ -198,10 +198,10 @@ To clear the identifiers used by the AEP Edge extensions, call [resetIdentities]
 When using Real-time Customer Profile and Identity Service, the ECIDs from both identity extensions are linked together in the customer's Identity Graph. Care must be taken when regenerating new ECIDs such that the old and new ECIDs are not linked within the same Identity Graph.
 
 Perform the following API calls to regenerate the ECIDs in sequence:
-1. Set [privacy status](../resources/privacy-and-gdpr#setprivacystatus) to `optedOut` to clear the ECID from the AEP Identity direct service extension.
+1. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension.
 2. Call [resetIdentities](./edge-identity-api-reference#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension.
 3. Call [getExperienceCloudId](./edge-identity-api-reference#getexperiencecloudid) on the Identity for Edge Network extension. This ensures the new ECID is generated before continuing.
-4. Set [privacy status](../resources/privacy-and-gdpr#setprivacystatus) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
+4. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
 
 After completing the above steps, each identity extension will have its own, different, ECID. The new ECIDs will get linked under a new Identity Graph for the customer.
 
