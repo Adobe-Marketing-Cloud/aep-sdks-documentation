@@ -13,6 +13,7 @@ The following instructions are for configuring an application using both Edge Ne
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
@@ -145,7 +146,7 @@ The [resetIdentities](./edge-identity-api-reference#resetIdentities) API regener
 
 Changing the privacy status to `optedOut` will clear the ECID value used by the Identity for Experience Cloud ID Service extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the Identity for Experience Cloud ID Service extension. Privacy status changes do not change the ECID used by the Identity for Edge Network extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
 
-When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](./edge-identity-api-reference#identitymap) by listening to state changes from the Identity for Experience Cloud ID Service extension. By including both ECIDs in the `IdentityMap`, the Adobe Experience Platform Identity Service will link the two ECIDs in the customer's Identity Graph.
+When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](./edge-identity-api-reference#identitymap), and so the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
 
 The following example shows an IdentityMap containing the ECIDs from both Identity for Edge Network extension and Identity for Experience Cloud ID Service extension. The ECID from the Identity for Edge Network extension is always listed first in the list of ECIDs.
 ```json
