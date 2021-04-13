@@ -6,7 +6,7 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 ### Download and import the Identity extension
 {% hint style="info" %}
 The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [Frequently Asked Questions](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-identity/edge-identity-faq#download-and-import-the-identity-and-identity-for-edge-network-extensions) page.
-{% endhint%}
+{% endhint %}
 
 {% tab title="Android" %}
 ### Java

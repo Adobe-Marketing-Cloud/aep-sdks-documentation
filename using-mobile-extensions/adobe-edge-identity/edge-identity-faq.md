@@ -7,7 +7,7 @@ When using both Adobe Experience Platform Edge and Adobe Solutions extensions, b
 {% hint style="info" %}
 
 The following instructions are for configuring an application using both Edge Network and Adobe Solutions mobile extensions. If an application will include only Adobe Experience Platform Edge extensions, follow the instructions [here](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-identity#download-and-import-the-identity-extension).
-{% endhint%}
+{% endhint %}
 
 #### Download and import the Identity and Identity for Edge Network extensions
 
