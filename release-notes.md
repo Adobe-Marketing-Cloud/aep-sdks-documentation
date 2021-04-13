@@ -4,6 +4,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 13, 2021
+
+### Identity Launch Extension
+
+You can now find the `Identity` extension in the Launch extensions catalog for mobile properties.
+
+## April 12, 2021
+
+### Consent Launch Extension
+
+You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
+
 ## April 8, 2021
 
 ### iOS AEPCore 3.1.1
