@@ -713,7 +713,7 @@ MobileCore.getSdkIdentities { (content, error) in
 This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
 
 {% hint style="warning" %}
-This API is only handled by the [Edge](../adobe-edge/README) and [Edge Identity](../adobe-edge-identity/README.md) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/README).
+This API is only handled by the [Edge](../adobe-edge/) and [Edge Identity](../adobe-edge-identity/) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/).
 {% endhint %}
 
 {% tabs %}
