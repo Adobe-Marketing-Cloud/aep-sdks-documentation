@@ -146,7 +146,7 @@ The [resetIdentities](edge-identity-api-reference#resetidentities) API regenerat
 
 Changing the privacy status to `optedOut` will clear the ECID value used by the Identity for Experience Cloud ID Service extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the Identity for Experience Cloud ID Service extension. Privacy status changes do not change the ECID used by the Identity for Edge Network extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
 
-When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference#identitymap), and so the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
+When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](edge-identity-api-reference#identitymap), and so the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
 
 The following example shows an IdentityMap containing the ECIDs from both Identity for Edge Network extension and Identity for Experience Cloud ID Service extension. The ECID from the Identity for Edge Network extension is always listed first in the list of ECIDs.
 ```json
@@ -190,7 +190,7 @@ To get the identifiers used by the AEP Edge extensions, call [getIdentities](edg
 ## Q: How can I clear all the identifiers from the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
 ### A: Set privacy status to `optedOut` and call `resetIdentities`
 
-To clear the identifiers used by the Adobe Solutions extensions, call [setPrivacyStatus](../../resources/privacy-and-gdpr#set-and-get-privacy-status) and set the privacy status to `optedOut`.
+To clear the identifiers used by the Adobe Solutions extensions, call [setPrivacyStatus](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) and set the privacy status to `optedOut`.
 
 To clear the identifiers used by the AEP Edge extensions, call [resetIdentities](../mobile-core/mobile-core-api-reference#reset-identities)
 
@@ -201,10 +201,10 @@ To clear the identifiers used by the AEP Edge extensions, call [resetIdentities]
 When using Real-time Customer Profile and Identity Service, the ECIDs from both identity extensions are linked together in the customer's Identity Graph. Care must be taken when regenerating new ECIDs such that the old and new ECIDs are not linked within the same Identity Graph.
 
 Perform the following API calls to regenerate the ECIDs in sequence:
-1. Set [privacy status](../../resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension.
+1. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension.
 2. Call [resetIdentities](edge-identity-api-reference#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension.
 3. Call [getExperienceCloudId](edge-identity-api-reference#getexperiencecloudid) on the Identity for Edge Network extension. This ensures the new ECID is generated before continuing.
-4. Set [privacy status](../../resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
+4. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
 
 After completing the above steps, each identity extension will have its own, different, ECID. The new ECIDs will get linked under a new Identity Graph for the customer.
 
