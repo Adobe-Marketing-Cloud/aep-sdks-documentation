@@ -639,7 +639,7 @@ You must call the API below and retrieve identities stored in the SDK, **before*
 {% endhint %}
 
 {% hint style="warning" %}
-This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](../adobe-edge-identity/adobe-edge-identity-api-reference#getidentities).
+This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](../adobe-edge-identity/adobe-edge-identity-api-reference.md#getidentities).
 {% endhint %}
 
 {% tabs %}
