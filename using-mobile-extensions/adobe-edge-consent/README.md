@@ -151,7 +151,7 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key             | Required | Description                                                  | Data Type           |
 | :-------------- | :------- | :----------------------------------------------------------- | :------------------ |
-| consent.default | No       | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md). | Map<String, Object> |
+| consent.default | No       | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). | Map<String, Object> |
 
 ## What OS & platform versions are supported?
 
