@@ -186,7 +186,7 @@ public static func registerExtensions(_ extensions: [NSObject.Type], _ completio
 
 Merges the existing consents with the given consents. Duplicate keys will take the value of those passed in the API.
 
-> After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -199,7 +199,7 @@ Merges the existing consents with the given consents. Duplicate keys will take t
 public static void update(final Map<String, Object> consents);
 ```
 
-* *consents* - A `Map` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* *consents* - A `Map` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
@@ -245,7 +245,7 @@ Consent.update(consents);
 static func update(with consents: [String: Any])
 ```
 
-* *consents* - A `[String: Any]` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* *consents* - A `[String: Any]` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 

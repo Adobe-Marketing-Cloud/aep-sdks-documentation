@@ -6,7 +6,7 @@ Before implementing these controls, read Adobe's [GDPR documentation](https://ww
 
 When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
 
-> Note: Collect consent is supported starting with v1.1.0 of the Edge network extension. Implementations using Edge Network extension v1.0.0 should adhere to privacy status settings. More information can be found [here](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status).
+> **Note:** Collect consent is supported starting with v1.1.0 of the Edge network extension. Implementations using Edge Network extension v1.0.0 should adhere to privacy status settings. More information can be found [here](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status).
 
 ## Update and get collect consent preferences
 
@@ -16,9 +16,9 @@ You can set the collect consent status to ensure collection of data suits your u
 | :--- | :--- | :--- | :--- |
 | **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
-> Note: When no default collect consent value is defined in configuration, the SDK defaults to Yes for collect consent.
+> **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes (y) for collect consent.
 
-### Consent Collect settings
+### Collect Consent settings
 
 {% tabs %}
 {% tab title="Android" %}
@@ -132,10 +132,11 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 To programmatically update the consent collect for the application user:
 
-> After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 #### Syntax
@@ -228,15 +229,17 @@ The following API returns a dictionary representation of the consent preferences
 
 ## Retrieving stored identifiers
 
-To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#getsdkidentities) API from the Mobile Core extension.
+When using the Edge Network extensions, use the [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
+
+When using both Edge Network extension and Adobe Solutions extensions,  use both [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/ile-core-api-reference.md#retrieving-stored-identifiers) API  to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, [ConsentAPI reference](../using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference.md).
+To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../using-mobile-extensions/mobile-core/configuration/configuration-api-reference.md).
 
 | Key | Description |
 | :--- | :--- |
-| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. [More info.](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md) |
+| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md). |
 
 ## Additional information
 

@@ -1,5 +1,5 @@
 # Adobe Experience Platform Identity
-The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the [Adobe Experience Platform](../mobile-core/README.md) and the [Edge Network extension](../adobe-edge/README.md).
+The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the [Adobe Experience Platform Mobile SDK](../mobile-core/README.md) and the [Edge Network extension](../adobe-edge/README.md).
 
 ## Add the AEP Identity extension to your app
 

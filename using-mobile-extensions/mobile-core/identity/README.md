@@ -7,7 +7,7 @@ On web or other platforms, there might situations where this framework might not
 {% endhint %}
 
 {% hint style="info" %}
-If an application is using the [Adobe Experience Platform Edge Network](../../adobe-edge/README.md) extension, then the [Edge Identity](../../adobe-edge-identity/README.md) extension is required. 
+If an application is using the [Adobe Experience Platform Edge Network](../../adobe-edge/README.md) extension, then the [Identity for Edge Network](../../adobe-edge-identity/README.md) extension is required. 
 {% endhint %}
 
 To get started with Identity, complete the following steps:
