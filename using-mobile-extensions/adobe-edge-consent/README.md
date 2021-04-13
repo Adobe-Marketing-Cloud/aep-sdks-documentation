@@ -28,8 +28,8 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
-   implementation 'com.adobe.marketing.mobile.edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile.edgeconsent:1.+'
+   implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
+   implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
    ```
    
 2. Import the Mobile Core and Edge extensions in your application class.
