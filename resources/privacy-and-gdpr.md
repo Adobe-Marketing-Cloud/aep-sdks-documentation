@@ -231,7 +231,7 @@ The following API returns a dictionary representation of the consent preferences
 
 When using the Edge Network extensions, use the [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
-When using both Edge Network extension and Adobe Solutions extensions,  use both [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/ile-core-api-reference.md#retrieving-stored-identifiers) API  to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
+When using both Edge Network extension and Adobe Solutions extensions,  use both [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers) API  to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
 ## Configuration keys
 
@@ -239,7 +239,7 @@ To update the SDK configuration, programmatically, use the following information
 
 | Key | Description |
 | :--- | :--- |
-| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/fc0773107f29928e1dc4753f8f055836083ea53f/docs/reference/mixins/profile/profile-consents.schema.md). |
+| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). |
 
 ## Additional information
 
