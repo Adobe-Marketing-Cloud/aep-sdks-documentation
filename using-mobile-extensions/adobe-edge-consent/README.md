@@ -40,7 +40,8 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
     import com.adobe.marketing.mobile.*;
    ```
 
-   {% endtab %}
+
+{% endtab %}
 
 {% tab title="iOS" %}
 

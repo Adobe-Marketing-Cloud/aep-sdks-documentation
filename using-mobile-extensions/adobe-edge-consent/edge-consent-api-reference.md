@@ -199,7 +199,7 @@ Merges the existing consents with the given consents. Duplicate keys will take t
 public static void update(final Map<String, Object> consents);
 ```
 
-* *consents* - A `Map` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* *consents* - A `Map` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
