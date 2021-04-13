@@ -245,7 +245,7 @@ Consent.update(consents);
 static func update(with consents: [String: Any])
 ```
 
-* *consents* - A `[String: Any]` of consents in predefined [Profile Consents XDM schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* *consents* - A `[String: Any]` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
