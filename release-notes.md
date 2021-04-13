@@ -22,7 +22,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS & Android Identity 1.0.0
 
-The Adobe Experience Platform Identity (AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension. You can now find the `Identity` extension in the Launch extensions catalog for mobile properties.
+The Adobe Experience Platform Identity (AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
 
 ## April 5, 2021
 
