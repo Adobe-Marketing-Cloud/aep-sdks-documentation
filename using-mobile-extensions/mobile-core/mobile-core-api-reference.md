@@ -561,7 +561,7 @@ If the Analytics extension is enabled in your SDK, collecting this launch data r
 {% tabs %}
 {% tab title="Android" %}
 Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
-* Tracking Deep Link click-through. 
+* Tracking Deep Link click-through.
 * Tracking Push Message click-through
 * Tracking Local Notification click-through
 
@@ -638,6 +638,10 @@ To retrieve data as a JSON string from the SDKs, and send this data to your serv
 You must call the API below and retrieve identities stored in the SDK, **before** the user opts out.
 {% endhint %}
 
+{% hint style="warning" %}
+This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](../adobe-edge-identity/adobe-edge-identity-api-reference#getidentities).
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 #### Java
@@ -704,19 +708,20 @@ MobileCore.getSdkIdentities { (content, error) in
 {% endtab %}
 {% endtabs %}
 
-## Reset Identities
+## Reset identities
 
 This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
 
-The extensions that are currently handing this API call:
-* The Identity Edge extension. It will clear all the identities held by this extension as well as generating a new ECID
+{% hint style="warning" %}
+This API is only handled by the [Edge](../adobe-edge/README) and [Edge Identity](../adobe-edge-identity/README.md) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/README).
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 
 #### Java
 
-### getSdkIdentities
+### resetIdentities
 
 #### Syntax
 
@@ -729,7 +734,7 @@ void resetIdentities();
 ```java
 MobileCore.resetIdentities();
 ```
-
+_since Mobile Core v1.8.0_
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -758,7 +763,7 @@ static func resetIdentities()
 ```swift
 MobileCore.resetIdentities()
 ```
-
+_since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}
 

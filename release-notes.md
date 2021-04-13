@@ -10,6 +10,26 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fixed a bug where incomplete eventhub shared state was created before the event hub has been started.
 
+### iOS AEPEdge 1.1.0
+
+- Integration with AEPEdgeConsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
+- Adds required dependency on AEPEdgeIdentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
+
+### Android Edge 1.1.0
+
+- Integration with edgeconsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
+- Adds required dependency on edgeidentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
+
+### iOS & Android Identity 1.0.0
+
+The Adobe Experience Platform Identity (AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
+
+## April 5, 2021
+
+### iOS & Android Consent 1.0.0
+
+The Adobe Experience Platform Consent (AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
+
 ## April 1, 2021
 
 ### iOS AEPCore 3.1.0
