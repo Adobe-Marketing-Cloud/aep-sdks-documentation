@@ -6,7 +6,7 @@ Release notes and change logs for the Adobe Mobile Services extension
 
 #### iOS Mobile Services 1.1.1
 
-* Fixed a crash which happend when downloading the remote assets. 
+* Fixed a crash that could happen while downloading remote assets.
 
 ## December 18, 2020
 
