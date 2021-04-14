@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### iOS Mobile Services 1.1.1
 
-* Fixed a crash which happend when downloading the remote assets. 
+* Fixed a crash that could happen while downloading remote assets. 
 
 ### March 31, 2021
 
