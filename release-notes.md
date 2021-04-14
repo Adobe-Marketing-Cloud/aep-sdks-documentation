@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### April 14, 2021
+
+#### iOS MobileServices 1.1.1
+
+* Fixed a crash which happend when downloading the remote assets. 
+
 ### March 31, 2021
 
 #### Android Core 1.8.0
