@@ -4,7 +4,7 @@
 
 Here are a few things to consider when installing the Adobe Experience Platform Edge Network mobile extension.
 
-- The new AEP Edge Network extension requires the usage of the latest AEP SDKs, which for iOS is a new Swift-based SDK. Read more about this in the [Adobe Experience Platform Edge Network Migration Considerations](../getting-started/introduction-to-aepedge.md#adobe-experience-platform-edge-network-migration-considerations).
+- The new AEP Edge Network extension requires the usage of the latest AEP SDKs, which for iOS is a new Swift-based SDK. If you are an ACP Mobile SDK user, read more about this in the [Adobe Experience Platform Edge Network Migration Considerations](../getting-started/introduction-to-aepedge.md#adobe-experience-platform-edge-network-migration-considerations).
 - For the latest information on supported Swift SDK compatible extensions, see [Current SDK Versions](current-sdk-versions.md).
 - This extension requires the use of [Identity for Edge Network mobile extension](../using-mobile-extensions/adobe-edge-identity).
 - When using this extension, it is strongly encouraged to use Consent mobile extension for managing and enforcing the collect consent settings. For more details see [Consent extension](../using-mobile-extensions/adobe-edge-consent) and [Privacy and GDPR](../privacy-and-gdpr.md).
