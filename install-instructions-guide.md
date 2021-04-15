@@ -22,22 +22,22 @@ Add the Mobile Core and Edge extensions to your project using Cocoapods. Add fol
 ```swift
 use_frameworks!
 target 'YourTargetApp' do
-		// Mobile Core and dependents
+    // Mobile Core and dependents
     pod 'AEPCore'
     pod 'AEPSignal'
-		pod 'AEPLifecycle'
+    pod 'AEPLifecycle'
 
-		// Client-side user profile
-		pod 'AEPUserProfile'
+    // Client-side user profile
+    pod 'AEPUserProfile'
 
-		// Edge Network and depenedents
+    // Edge Network and depenedents
     pod 'AEPEdge'
     pod 'AEPEdgeIdentity'
     pod 'AEPEdgeConsent'
 
-		// Adobe Analytics and dependents
-		pod 'AEPIdentity'
-		pod 'AEPAnalytics'
+    // Adobe Analytics and dependents
+    pod 'AEPIdentity'
+    pod 'AEPAnalytics'
 end
 ```
 
