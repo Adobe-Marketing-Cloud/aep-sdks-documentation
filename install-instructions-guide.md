@@ -24,8 +24,11 @@ use_frameworks!
 target 'YourTargetApp' do
 		// Mobile Core and dependents
     pod 'AEPCore'
-    pod 'AEPUserProfile'
     pod 'AEPSignal'
+		pod 'AEPLifecycle'
+
+		// Client-side user profile
+		pod 'AEPUserProfile'
 
 		// Edge Network and depenedents
     pod 'AEPEdge'
@@ -34,7 +37,6 @@ target 'YourTargetApp' do
 
 		// Adobe Analytics and dependents
 		pod 'AEPIdentity'
-		pod 'AEPLifecycle'
 		pod 'AEPAnalytics'
 end
 ```
@@ -51,8 +53,11 @@ This is just an example, check the full list of supported Swift SDK compatible e
 
 // Mobile Core and dependents
 import AEPCore
-import AEPUserProfile
 import AEPSignal
+import AEPLifecycle
+
+// Client-side user profile
+import AEPUserProfile
 
 // Edge Network and depenedents
 import AEPEdge
@@ -61,7 +66,6 @@ import AEPEdgeConsent
 
 // Adobe Analytics and dependents
 import AEPIdentity
-import AEPLifecycle
 import AEPAnalytics
 ```
 
@@ -74,8 +78,11 @@ import AEPAnalytics
 
 // Mobile Core and dependents
 @import AEPCore;
-@import AEPUserProfile;
 @import AEPSignal;
+@import AEPLifecycle;
+
+// Client-side user profile
+@import AEPUserProfile;
 
 // Edge Network and depenedents
 @import AEPEdge;
@@ -84,7 +91,6 @@ import AEPAnalytics
 
 // Adobe Analytics and dependents
 @import AEPIdentity;
-@import AEPLifecycle;
 @import AEPAnalytics;
 ```
 
@@ -104,7 +110,7 @@ Note that the registration setup changed to a single API call `MobileCore.regist
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([UserProfile.self, Signal.self, Edge.self, AEPEdgeIdentity.Identity.self, Consent.self, AEPIdentity.Identity.self, Lifecycle.self, Analytics.self], {
+    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Edge.self, AEPEdgeIdentity.Identity.self, Consent.self, AEPIdentity.Identity.self, Analytics.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
     })
   ...
@@ -118,7 +124,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```objective-c
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileUserProfile.class, AEPMobileSignal.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileAnalytics.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
     [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
   }];
   ...
