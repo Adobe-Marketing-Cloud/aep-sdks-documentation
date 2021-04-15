@@ -2,7 +2,7 @@
 
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
-* Google Android API 14 \(Ice Cream Sandwich\) or later
+* Google Android API 16 or later
 * Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
 
 <table>
@@ -100,6 +100,43 @@ The Adobe Experience Platform Mobile SDK supports the following OS versions:
         </p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-analytics">Analytics</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAnalytics"><img src="https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&amp;label=AEPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&amp;logoColor=white&amp;label=analytics&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/adobe/aepsdk-analytics-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-target">Target</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPTarget"><img src="https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&amp;label=AEPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&amp;logoColor=white&amp;label=target&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/adobe/aepsdk-target-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-audience">Audience</a>
+      </td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAudience"><img src="https://img.shields.io/cocoapods/v/AEPAudience.svg?color=orange&amp;label=AEPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&amp;logoColor=white&amp;label=audience&amp;style=flat-square" alt="Maven Central"/></a>
+      </td>
+      <td style="text-align:left">
+        <p><a href="https://github.com/adobe/aepsdk-audience-ios">iOS</a>
+        </p>
+      </td>
+    </tr>
   </tbody>
 </table>
+
 
