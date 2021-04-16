@@ -1,4 +1,4 @@
-# iOS install instructions guide
+# iOS AEP SDKs installation guide
 
 ## Migration considerations 
 
