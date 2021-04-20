@@ -217,8 +217,6 @@ consents.put("consents", collectConsents);
 
 Consent.update(consents);
 
-Consent.update(consents);
-
 // example 2, updating users collect consent to 'no'
 final Map<String, Object> collectConsents = new HashMap<>();
 collectConsents.put("collect", new HashMap<String, String>() {
