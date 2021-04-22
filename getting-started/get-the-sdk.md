@@ -26,11 +26,11 @@ Here are a few things to consider when installing the Adobe Experience Platform 
 Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later (Edge, Identity and Consent extensions support min API 19).
 {% endhint %}
 
-To get the Adobe Experience Platform Core SDK for Android, follow the instructions below.
+To get the Adobe Experience Platform Core SDK for Android, follow the instructions below. In this example we'll use [Gradle](https://docs.gradle.org/current/userguide/userguide.html) to manage dependencies. 
 
 ### 1. Add dependencies to your project
 
-Each extension needs added as a dependency to the mobile application project. Add the Mobile Core and Profile extensions as dependencies to build.gradle for each extension.
+Each extension needs added as a dependency to the mobile application project. Add the Mobile Core and Profile extensions as dependencies to `build.gradle` for each extension.
 
 ```java
 // Mobile Core and dependents, includes Identity used by Adobe Analytics extension
@@ -48,7 +48,7 @@ implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
 implementation 'com.adobe.marketing.mobile:analytics:1.+'
 ```
 
-This is just an example, check the full list of supported extensions at [Current SDK Versions](../current-sdk-versions.md).
+**Note:** This is just an example, check the full list of supported extensions at [Current SDK Versions](../current-sdk-versions.md).
 
 ### 2. Add initialization code
 
@@ -126,15 +126,27 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 
 {% tab title="iOS" %}
 
+## Swift / Objective-C
+
 {% hint style="warning" %}
 Adobe Experience Platform Mobile SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-### 1. (Optional) Existing ACP users
+In this example we'll use [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods) to manage dependencies. 
 
-Remove the Adobe pods prefixed with `ACP` from your Podfile so the Swift extensions can be installed in the following steps.
+### 1. (Optional) Set up your Podfile
 
-### 2. Add the dependencies to the Podfile
+Create a podfile if you don't already have one by running the following command in the terminal:
+
+```bash
+pod init
+```
+
+### 2. (Optional) Existing ACP users
+
+Remove the Adobe pods prefixed with `ACP` from your `Podfile` so the Swift extensions can be installed in the following steps.
+
+### 3. Add the dependencies to the Podfile
 
 Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in the `Podfile`:
 
@@ -160,9 +172,18 @@ target 'YourTargetApp' do
 end
 ```
 
-This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](../current-sdk-versions.md). If you use additional extensions than the ones listed at [Current SDK Versions](../current-sdk-versions.md), please contact your Adobe Customer Success Manager or account representative.
+**Note:** This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](../current-sdk-versions.md). If you use additional extensions than the ones listed at [Current SDK Versions](../current-sdk-versions.md), please contact your Adobe Customer Success Manager or account representative.
 
-### 3. Add initialization code
+### 4. Download the dependencies
+
+Save the Podfile. To update the local CocoaPods dependencies and install the dependencies in your app, run the following commands:
+
+```bash
+pod repo update
+pod install
+```
+
+### 5. Add initialization code
 
 #### Swift
 
@@ -210,7 +231,7 @@ import AEPAnalytics
 @import AEPAnalytics;
 ```
 
-### 4. Add extensions registration code
+### 6. Add extensions registration code
 
 {% hint style="info" %}
 
