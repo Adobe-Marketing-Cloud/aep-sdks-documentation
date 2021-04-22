@@ -10,7 +10,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Support for Shared States in XDM format when using the AEPEdge extension.
 * Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
-* Sends extension-specific state events when connecting to a griffon session.
+* Sends extension-specific state events when connecting to a Griffon session.
 * Better error handling when reaching activity or Griffon session limits.
 * Bug fix that ensures the Griffon UI will always correctly show the number of connected devices.
 * Various security fixes.
@@ -19,7 +19,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Support for Shared States in XDM format when using the AEPEdge extension.
 * Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
-* Sends extension-specific state events when connecting to a griffon session.
+* Sends extension-specific state events when connecting to a Griffon session.
 * Better error handling when reaching activity or Griffon session limits.
 * Various security fixes.
 
