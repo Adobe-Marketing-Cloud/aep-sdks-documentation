@@ -6,9 +6,6 @@ The Adobe Experience Platform Mobile SDK is available for Apple iOS \(includes i
 We recommend integrating our SDKs through supported package and dependency managers for maximized ease of implementation.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Android" %}
-
 ## Migration considerations 
 
 Here are a few things to consider when installing the Adobe Experience Platform Edge Network mobile extension.
@@ -19,6 +16,9 @@ Here are a few things to consider when installing the Adobe Experience Platform 
 - When using the AEP Edge Network extension, it is strongly encouraged to use Consent mobile extension for managing and enforcing the collect consent settings. For more details see [Consent extension](../using-mobile-extensions/adobe-edge-consent) and [Privacy and GDPR](../privacy-and-gdpr.md).
 
 ## Install the AEP Mobile SDK extensions
+
+{% tabs %}
+{% tab title="Android" %}
 
 ## Java
 
