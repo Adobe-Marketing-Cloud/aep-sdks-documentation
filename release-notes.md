@@ -8,20 +8,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### iOS Assurance 1.1.1
 
-* Support for XDM Shared State.
-* Capture lifecycle install/launch hits for AA debugging.
-* Assurance SDK ensures a griffon session is always populated with SDK states at the time of connect.
-* Fixed Security issues.
-* Better error handling when the griffon session reaches limit for number of events per minute/ number of active devices per session.
-* Bug fix to ensure client event is the first event for a session.
+* Support for XDM Shared State when using the AEPEdge extension.
+* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
+* Sends extension-specific state events when connecting to a griffon session.
+* Better error handling when reaching activity or Griffon session limits.
+* Bug fix that ensures the Griffon UI will always correctly show the number of connected devices.
+* Various security fixes.
 
 #### Android Assurance 1.0.2
 
-* Support for XDM Shared State.
-* Capture lifecycle install/launch hits for AA debugging.
-* Assurance SDK ensures a griffon session is always populated with SDK states at the time of connect.
-* Fixed Security issues.
-* Better error handling when the griffon session reaches limit for number of events per minute/ number of active devices per session.
+* Support for XDM Shared State when using the AEPEdge extension.
+* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
+* Sends extension-specific state events when connecting to a griffon session.
+* Better error handling when reaching activity or Griffon session limits.
+* Various security fixes.
 
 ### April 14, 2021
 
