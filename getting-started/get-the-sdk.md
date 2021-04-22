@@ -48,7 +48,7 @@ implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
 implementation 'com.adobe.marketing.mobile:analytics:1.+'
 ```
 
-This is just an example, check the full list of supported extensions at [Current SDK Versions](current-sdk-versions.md).
+This is just an example, check the full list of supported extensions at [Current SDK Versions](../current-sdk-versions.md).
 
 ### 2. Add initialization code
 
@@ -160,7 +160,7 @@ target 'YourTargetApp' do
 end
 ```
 
-This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](current-sdk-versions.md). If you use additional extensions than the ones listed at [Current SDK Versions](current-sdk-versions.md), please contact your Adobe Customer Success Manager or account representative.
+This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](../current-sdk-versions.md). If you use additional extensions than the ones listed at [Current SDK Versions](../current-sdk-versions.md), please contact your Adobe Customer Success Manager or account representative.
 
 ### 3. Add initialization code
 
