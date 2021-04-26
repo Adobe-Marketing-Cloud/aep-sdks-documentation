@@ -4,6 +4,25 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### April 21, 2021
+
+#### iOS Assurance 1.1.1
+
+* Support for Shared States in XDM format when using the AEPEdge extension.
+* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
+* Sends extension-specific state events when connecting to a Griffon session.
+* Better error handling when reaching activity or Griffon session limits.
+* Bug fix that ensures the Griffon UI will always correctly show the number of connected devices.
+* Various security fixes.
+
+#### Android Assurance 1.0.2
+
+* Support for Shared States in XDM format when using the AEPEdge extension.
+* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
+* Sends extension-specific state events when connecting to a Griffon session.
+* Better error handling when reaching activity or Griffon session limits.
+* Various security fixes.
+
 ### April 14, 2021
 
 #### iOS Mobile Services 1.1.1
