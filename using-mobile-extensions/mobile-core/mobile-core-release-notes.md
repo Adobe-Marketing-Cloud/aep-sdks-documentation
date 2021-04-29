@@ -17,11 +17,11 @@
 
 #### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types:
-  - Contains
-  - Not Contains
-  - Starts With
-  - Ends With
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
+  * Contains
+  * Not Contains
+  * Starts With
+  * Ends With
 
 ### March 9, 2021
 
@@ -446,3 +446,4 @@ The following updates were made in this release:
 * The duplicate advertising identifier value is removed from the Identity-shared state when MobileCore.setAdvertisingIdentifier is called with a new value.
 * The global.ssl configuration settings are ignored, and SSL is enabled by default.
 * Fixed an issue where appendVisitorInfoForURL uses the wrong query delimiter when the source URL contains a question mark in its fragment identifier component.
+

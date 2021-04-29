@@ -473,7 +473,7 @@ Once Analytics is listed as the reporting source for an activity on Target UI, A
 The A4T payload returned from Target servers is sent to Adobe Analytics in the following cases:
 
 * When one or more locations are retrieved using [retrieveLocationContent](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrievelocationcontent) API call.
-* When one or more prefetched locations are loaded and a subsequent [locationsDisplayed](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#locationsdisplayed) API call is made for the location(s).
+* When one or more prefetched locations are loaded and a subsequent [locationsDisplayed](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#locationsdisplayed) API call is made for the location\(s\).
 
 {% hint style="warning" %}
 For A4T data to be sent to Adobe Analytics client-side, make sure Analytics SDK extension is installed and registered in your mobile application. For more information, see [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).

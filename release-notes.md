@@ -39,6 +39,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
 
 #### Android Lifecycle 1.0.7
+
 * No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
 
 ### March 29, 2021
@@ -57,11 +58,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types: 
-  - Contains
-  - Not Contains
-  - Starts With
-  - Ends With
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types: 
+  * Contains
+  * Not Contains
+  * Starts With
+  * Ends With
 
 ### March 9, 2021
 
@@ -1766,3 +1767,4 @@ The following updates were made to the Mobile Core extension:
 Adobe Experience Platform SDKs are live!
 
 * Version 1.0.0 of the Experience Platform SDKs were released for the Mobile Core, Analytics, Audience Manager, and Adobe Target extensions.
+
