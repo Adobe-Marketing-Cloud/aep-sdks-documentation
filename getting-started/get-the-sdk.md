@@ -31,13 +31,6 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 5. Follow the instructions for using Gradle with Android.
 
    The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
-
-6. For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. To enable these permissions, add the following lines to your AndroidManifest.xml file, located in your app's application project directory:
-
-```markup
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
 {% endtab %}
 
 {% tab title="iOS - Swift" %}
@@ -186,7 +179,7 @@ Each extension needs added as a dependency to the mobile application project. Th
 {% tab title="Android" %}
 #### Android
 
-Add the dependencies to build.gradle for each extension.
+Add the dependencies to `build.gradle` for each extension.
 
 ```java
 implementation 'com.adobe.marketing.mobile:userprofile:1.+'
@@ -584,7 +577,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 ### 3. Ensure app permissions \(Android-only\)
 
-The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
+The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
+
+For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
 
 To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
 
