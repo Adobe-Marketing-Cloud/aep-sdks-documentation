@@ -40,9 +40,45 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### Objective C / Swift
+{% tab title="iOS - Swift" %}
+{% hint style="warning" %}
+Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
+{% endhint %}
 
+{% hint style="success" %}
+### Apple M1 Compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+
+Please see [Release notes](../release-notes.md#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+{% endhint %}
+
+Add the dependencies to your `Podfile` for each extension.
+
+```swift
+use_frameworks!
+target 'YourTargetApp' do
+    // Mobile Core and dependents
+    pod 'AEPCore'
+    pod 'AEPSignal'
+    pod 'AEPLifecycle'
+
+    // Client-side user profile
+    pod 'AEPUserProfile'
+
+    // Edge Network and dependents
+    pod 'AEPEdge'
+    pod 'AEPEdgeIdentity'
+    pod 'AEPEdgeConsent'
+
+    // Adobe Analytics and dependents
+    pod 'AEPIdentity'
+    pod 'AEPAnalytics'
+end
+```
+{% endtab %}
+
+{% tab title="iOS - Obj C" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 {% endhint %}
@@ -158,34 +194,76 @@ implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-#### iOS
+{% tab title="iOS - Swift" %}
+Create a `Podfile` if you do not already have one:
 
-Add the dependencies to your Podfile for each extension.
+```text
+pod init
+```
+
+Add the dependencies to your `Podfile` for each extension.
+
+```swift
+use_frameworks!
+pod 'AEPCore', '~> 1.0'
+pod 'AEPUserProfile', '~> 1.0'
+```
+
+If Cocoapods cannot not find the dependencies, you may need to run this command:
+
+```text
+pod repo update
+```
+
+Save the Podfile and run the install:
+
+```text
+pod install
+```
+{% endtab %}
+
+{% tab title="iOS - Obj C" %}
+Create a `Podfile` if you do not already have one:
+
+```text
+pod init
+```
+
+Add the dependencies to your `Podfile` for each extension.
 
 ```objectivec
 use_frameworks!
-pod 'ACPUserProfile', '~> 2.0'
 pod 'ACPCore', '~> 2.0'
+pod 'ACPUserProfile', '~> 2.0'
+```
+
+If Cocoapods cannot not find the dependencies, you may need to run this command:
+
+```text
+pod repo update
+```
+
+Save the Podfile and run the install:
+
+```text
+pod install
 ```
 {% endtab %}
 {% endtabs %}
 
 ### 2. Add initialization code
 
-Each extension needs imported and registered in your mobile application project. Besides Mobile Core, all Adobe Experience Platform SDK extensions provide a `registerExtension` API. This API registers the extension with Mobile Core. After an extension is registered, it can dispatch and listen for events. You are required to register each of your extensions before making API calls and failing to do so will lead to undefined behavior.
+Next you'll need to import SDK libraries into your project and register them for initialization. Extensions are registered with Mobile Core so that they can dispatch and listen for events. 
 
-After you register the extensions, you will want to call the `start` API in Core. This step is required to boot up the SDK for event processing. The following code snippets demonstrate how to import and register the Mobile Core and Profile extensions. You will also see Identity, Lifecycle, Signal, and UserProfile imported and registered. These are part of the Mobile Core extension bundle. You will see that logging is turned on in DEBUG mode. Mobile Core is also configured with the AppID. This is the ID that matches the mobile application with the configuration published in Adobe Platform Launch.
-
-{% hint style="info" %}
-To find your Environment ID for an environment, in Experience Platform Launch, go to the **Environments** tab \(found in a previously created and configured mobile property\) and click on the corresponding![](../.gitbook/assets/screen-shot-2018-10-18-at-11.22.17-am.png)icon. Find the Environment File ID at the top and copy it.
+{% hint style="danger" %}
+Extension registration is **mandatory**. Attempting to make extension-specific API calls without doing so will lead to undefined behavior.
 {% endhint %}
 
-Formerly known as Marketing Cloud ID \(MCID\), the Experience Cloud ID \(ECID\) service provides a cross-channel notion of identity across Experience Cloud solutions and is a prerequisite for most implementations. After importing and configuring Identity below, an Experience Cloud identifier is generated and included on every network hit that is sent to Adobe solutions. Other automatically generated and custom synced identifiers are also sent with each hit.
+The following code snippets demonstrate how you may import and register the Mobile Core and Profile extensions. You may also see, for reference, Identity, Lifecycle, Signal, Profile, and other extensions imported and registered. 
 
 {% tabs %}
 {% tab title="Android" %}
-Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+After you register the extensions, call the `start` API in Core to initialize the SDK as shown below. This step is required to boot up the SDK for event processing. The following code snippet is provided as a reference example.
 
 ### Java
 
@@ -228,7 +306,37 @@ public class MainApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Swift" %}
+{% hint style="warning" %}
+For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start`API is no longer required.
+{% endhint %}
+
+### Swift
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Edge.self, AEPEdgeIdentity.Identity.self, Consent.self, AEPIdentity.Identity.self, Analytics.self], {
+        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+    })
+  ...
+}
+```
+
+### Objective-C
+
+```text
+// AppDelegate.m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+  }];
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS - Obj C" %}
 Add the following initialization code. It may need to be adjusted depending on how your application is structured.
 
 ### Objective-C
@@ -483,26 +591,6 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 ```markup
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
-### 3. Podfile init, update and install \(iOS-only\)
-
-Create a Podfile if you do not already have one:
-
-```text
-pod init
-```
-
-If Cocoapods cannot not find the dependencies, you may need to run this command:
-
-```text
-pod repo update
-```
-
-Save the Podfile and run the install:
-
-```text
-pod install
 ```
 
 ## Watch the Video
