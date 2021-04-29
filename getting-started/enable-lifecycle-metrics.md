@@ -38,7 +38,7 @@ To ensure accurate session and crash reporting, this call must be added to every
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS - Obj C" %}
 ### Objective-C
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
