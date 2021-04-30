@@ -5,7 +5,7 @@ The Adobe Journey Optimizer Messaging mobile extension extension allows configur
 ## Prerequisites
 
 * IMS organization is enabled for messaging.
-* [Mobile Core](../mobile-core/README.md) and [Adobe Experience Platform Edge Network](../adobe-edge/README.md) extensions have been implemented in the app.
+* [Mobile Core](../mobile-core/README.md) and [Adobe Experience Platform Edge Network](../adobe-edge/README.md) extensions have been implemented in the app. 
 Make sure that the [Edge Configuration](../adobe-edge/README.md#edge-configuration) used in the Edge extension has a Profile Dataset selected. For more information, see [Set up the Edge Configuration](../../getting-started/edge-configuration.md)
 
 ## Configure the Adobe Journey Optimizer Messaging extension in Experience Platform Launch
