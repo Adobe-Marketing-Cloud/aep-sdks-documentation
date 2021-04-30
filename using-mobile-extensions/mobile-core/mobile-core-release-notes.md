@@ -1,5 +1,16 @@
 # Release Notes
 
+## April 29, 2021
+
+### iOS AEPCore 3.1.2
+
+* Fixed a bug where the URL session was not reused for the same host.
+* Fixed a Swift compatibility issue.
+
+### iOS AEPIdentity 3.1.2
+
+* Fixed a bug where Identity was blocked on the first launch if the configuration was invalid.
+
 ## April 8, 2021
 
 ### iOS AEPCore 3.1.1
