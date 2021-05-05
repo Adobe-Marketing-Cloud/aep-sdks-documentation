@@ -18,7 +18,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
  Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later
 {% endhint %}
 
-| Extension | Android | Github |
+| Extension | Maven | Github |
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&logoColor=white&label=core&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&logoColor=white&label=userprofile&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
@@ -28,7 +28,6 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 | [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/assurance.svg?logo=android&logoColor=white)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/assurance) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&logoColor=white&label=places&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&logoColor=white&label=placesmonitor&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
-| [Profile](../../using-mobile-extensions/profile/) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&logoColor=white&label=profile&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&logoColor=white&label=analytics&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&logoColor=white&label=media&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
 | [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | [![Maven Central](https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&logoColor=white&label=audience&style=flat-square)](https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience) | [Android](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) |
@@ -47,8 +46,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
   <thead>
     <tr>
       <th style="text-align:left">Extension</th>
-      <th style="text-align:left">Cocoapods</th>
-      <th style="text-align:left">Android</th>
+      <th style="text-align:left">Objective-C</th>
+      <th style="text-align:left">Swift</th>
       <th style="text-align:left">Github</th>
     </tr>
   </thead>
@@ -58,13 +57,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/core"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/core.svg?logo=android&amp;logoColor=white&amp;label=core&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
       </td>
     </tr>
     <tr>
@@ -72,13 +66,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPUserProfile"><img src="https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&amp;label=ACPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/userprofile"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/userprofile.svg?logo=android&amp;logoColor=white&amp;label=userprofile&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
       </td>
     </tr>
     <tr>
@@ -86,11 +75,9 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAssurance"><img src="https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&amp;label=AEPAssurance&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/assurance"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/assurance.svg?logo=android&amp;logoColor=white" alt="Maven Central"/></a>
-      </td>
+      <td style="text-align:left"></td>
       <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
+        <p></p>
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance">iOS</a>
         </p>
       </td>
@@ -100,13 +87,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlaces"><img src="https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&amp;label=ACPPlaces&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places.svg?logo=android&amp;logoColor=white&amp;label=places&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
       </td>
     </tr>
     <tr>
@@ -114,13 +96,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/places-monitor"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/places-monitor.svg?logo=android&amp;logoColor=white&amp;label=placesmonitor&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
       </td>
     </tr>
     <tr>
@@ -128,13 +105,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/analytics"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/analytics.svg?logo=android&amp;logoColor=white&amp;label=analytics&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
       </td>
     </tr>
     <tr>
@@ -142,13 +114,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/media"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/media.svg?logo=android&amp;logoColor=white&amp;label=media&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
       </td>
     </tr>
     <tr>
@@ -156,13 +123,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAudience"><img src="https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&amp;label=ACPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/audience"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/audience.svg?logo=android&amp;logoColor=white&amp;label=audience&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
       </td>
     </tr>
     <tr>
@@ -170,13 +132,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/mobileservices"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/mobileservices.svg?logo=android&amp;logoColor=white&amp;label=mobileservices&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
       </td>
     </tr>
     <tr>
@@ -184,13 +141,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPTarget"><img src="https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&amp;label=ACPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/target"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/target.svg?logo=android&amp;logoColor=white&amp;label=target&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
       </td>
     </tr>
     <tr>
@@ -198,13 +150,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaign"><img src="https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&amp;label=ACPCampaign&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaign"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaign.svg?logo=android&amp;logoColor=white&amp;label=campaign&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
       </td>
     </tr>
     <tr>
@@ -212,13 +159,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"><a href="https://mvnrepository.com/artifact/com.adobe.marketing.mobile/campaignclassic"><img src="https://img.shields.io/maven-central/v/com.adobe.marketing.mobile/campaignclassic.svg?logo=android&amp;logoColor=white&amp;label=campaignclassic&amp;style=flat-square" alt="Maven Central"/></a>
-      </td>
-      <td style="text-align:left">
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android">Android</a>
-        </p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
-        </p>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
       </td>
     </tr>
   </tbody>
