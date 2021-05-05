@@ -97,6 +97,7 @@
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform.md)
+  * [Sample XDM Implementation](resources/user-guides/sample-xdm-implementation.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
