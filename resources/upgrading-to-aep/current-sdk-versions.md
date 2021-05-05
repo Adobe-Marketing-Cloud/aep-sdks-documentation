@@ -3,13 +3,7 @@
 {% hint style="info" %}
 ## Swift SDKs are here!
 
-We've released Swift versions of our iOS SDKs for Core and select extensions - please scroll down for available Swift extensions and reference documentation for more information.
-{% endhint %}
-
-{% hint style="success" %}
-## Swift = Open Source
-
-The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
+We've released Swift versions of our iOS SDKs for Core and select extensions - please [scroll down](current-sdk-versions.md#ios) for available Swift extensions and reference documentation for more information.
 {% endhint %}
 
 ## Android
@@ -40,6 +34,12 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 
 {% hint style="warning" %}
  Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
+{% endhint %}
+
+{% hint style="info" %}
+## Swift = Open Source
+
+The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
 <table>
