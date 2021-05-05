@@ -9,22 +9,22 @@ The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experie
 
 ### Workflow
 
-1. Setup Schemas & Datasets
-2. Configure Datastreams
-3. Setup Mobile Property
-4. Get the Experience Platform Mobile SDK
-5. Debugging and implementing basic events
-6. Validation
+1. [Setup Schemas & Datasets](setup-schemas-and-datasets.md)
+2. [Configure Datastreams](configure-datastreams.md)
+3. [Setup Mobile Property](create-a-mobile-property.md)
+4. [Get the Experience Platform Mobile SDK](get-the-sdk.md)
+5. [Debugging and implementing basic events](enable-debug-logging.md)
+6. [Validation](validate.md)
 
 ## Integration via solutions-specific network infrastructure
 
 ### Workflow
 
 1. Configure solutions
-2. Setup Mobile Property
-3. Get the Experience Platform Mobile SDK
-4. Debugging and implementing basic events
-5. Validation
+2. [Setup Mobile Property](create-a-mobile-property.md)
+3. [Get the Experience Platform Mobile SDK](get-the-sdk.md)
+4. [Debugging and implementing basic events](enable-debug-logging.md)
+5. [Validation](validate.md)
 
 ## Reference
 
