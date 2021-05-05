@@ -11,7 +11,7 @@ We recommend integrating our SDKs through supported package and dependency manag
 Here are a few things to consider when installing the Adobe Experience Platform Edge Network mobile extension.
 
 * The new AEP Edge Network extension requires the usage of the latest AEP SDKs, which for iOS is a new Swift-based SDK. If you are an ACP Mobile SDK user, read  [Adobe Experience Platform Edge Network Migration Considerations](introduction-to-aepedge.md#adobe-experience-platform-edge-network-migration-considerations).
-* For the latest information on supported Swift SDK compatible extensions, see [Current SDK Versions](../current-sdk-versions.md).
+* For the latest information on supported Swift SDK compatible extensions, see [Current SDK Versions]().
 * The AEP Edge Network extension requires the use of [Identity for Edge Network mobile extension](../using-mobile-extensions/adobe-edge-identity/).
 * When using the AEP Edge Network extension, it is strongly encouraged to use Consent mobile extension for managing and enforcing the collect consent settings. For more details see [Consent extension](../using-mobile-extensions/adobe-edge-consent/) and [Privacy and GDPR](../resources/privacy-and-gdpr.md).
 
@@ -47,7 +47,7 @@ implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
 implementation 'com.adobe.marketing.mobile:analytics:1.+'
 ```
 
-**Note:** This is just an example, check the full list of supported extensions at [Current SDK Versions](../current-sdk-versions.md).
+**Note:** This is just an example, check the full list of supported extensions at [Current SDK Versions]().
 
 ### 2. Add initialization code
 
@@ -170,7 +170,7 @@ target 'YourTargetApp' do
 end
 ```
 
-**Note:** This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](../current-sdk-versions.md). If you use additional extensions than the ones listed at [Current SDK Versions](../current-sdk-versions.md), please contact your Adobe Customer Success Manager or account representative.
+**Note:** This is just an example, check the full list of supported Swift SDK compatible extensions at [Current SDK Versions](). If you use additional extensions than the ones listed at [Current SDK Versions](), please contact your Adobe Customer Success Manager or account representative.
 
 ### 4. Download the dependencies
 
@@ -273,7 +273,7 @@ If you are using any of the iOS partner extensions from the AEP Launch catalog, 
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)
 * [How to use CocoaPods for iOS ](https://guides.cocoapods.org/using/using-cocoapods)
-* [Current SDK Versions](../current-sdk-versions.md)
+* [Current SDK Versions]()
 
 ## Get help
 
