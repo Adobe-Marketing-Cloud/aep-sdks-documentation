@@ -19,7 +19,8 @@
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Enable debug logging](getting-started/enable-debug-logging.md)
 * [Enable lifecycle metrics](getting-started/enable-lifecycle-metrics.md)
-* [Set up tracking](getting-started/initialize-the-sdk.md)
+* [Set up tracking](getting-started/initialize-the-sdk/README.md)
+  * [Set up your first XDM Experience event](getting-started/initialize-the-sdk/set-up-your-first-xdm-experience-event.md)
 * [Implement extensions](getting-started/next-steps.md)
 * [Validation](getting-started/validate.md)
 
