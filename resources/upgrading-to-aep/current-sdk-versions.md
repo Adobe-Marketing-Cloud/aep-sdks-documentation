@@ -6,6 +6,8 @@
 We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
+## Android / iOS
+
 The Adobe Experience Platform Mobile SDK supports the following OS versions:
 
 * Google Android API 14 \(Ice Cream Sandwich\) or later
