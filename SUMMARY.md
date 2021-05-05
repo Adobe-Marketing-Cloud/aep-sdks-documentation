@@ -2,7 +2,7 @@
 
 * [Adobe Experience Platform for Mobile](README.md)
 * [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
-* [Release notes](release-notes.md)
+* [Release Notes](https://aep-sdks.gitbook.io/docs/release-notes)
 
 ## Getting Started
 
