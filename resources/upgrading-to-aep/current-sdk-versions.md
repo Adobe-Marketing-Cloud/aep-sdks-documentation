@@ -9,7 +9,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 ## Android
 
 {% hint style="warning" %}
- Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later
+Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later
 {% endhint %}
 
 | Extension | Maven | Github |
@@ -33,7 +33,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 ## iOS
 
 {% hint style="warning" %}
- Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
+Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
 {% endhint %}
 
 {% hint style="info" %}
@@ -42,164 +42,23 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Extension</th>
-      <th style="text-align:left">Objective-C</th>
-      <th style="text-align:left">Swift</th>
-      <th style="text-align:left">Github</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core">Mobile Core</a> (supports
-        tvOS)</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPCore"><img src="https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&amp;label=AEPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/>&#x200B;</a>
-        <a
-        href="https://cocoapods.org/pods/AEPIdentity">
-          <img src="https://img.shields.io/cocoapods/v/AEPIdentity.svg?color=orange&amp;label=AEPIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
-          alt="Cocoapods" />&#x200B;</a><a href="https://cocoapods.org/pods/AEPSignal"><img src="https://img.shields.io/cocoapods/v/AEPSignal.svg?color=orange&amp;label=AEPSignal&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/>&#x200B;</a>
-          <a
-          href="https://cocoapods.org/pods/AEPLifecycle">
-            <img src="https://img.shields.io/cocoapods/v/AEPLifecycle.svg?color=orange&amp;label=AEPLifecycle&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
-            alt="Cocoapods" />
-            </a>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile">Profile</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPUserProfile"><img src="https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&amp;label=ACPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPUserProfile"><img src="https://img.shields.io/cocoapods/v/AEPUserProfile.svg?color=orange&amp;label=AEPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Adobe Experience Platform Edge Network</td>
-      <td style="text-align:left">Not Available</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdge"><img src="https://img.shields.io/cocoapods/v/AEPEdge.svg?color=orange&amp;label=AEPEdge&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Identity for Edge Network</td>
-      <td style="text-align:left">Not Available</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeIdentity"><img src="https://img.shields.io/cocoapods/v/AEPEdgeIdentity.svg?color=orange&amp;label=AEPEdgeIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Consent for Edge Network</td>
-      <td style="text-align:left">Not Available</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeConsent"><img src="https://img.shields.io/cocoapods/v/AEPEdgeConsent.svg?color=orange&amp;label=AEPEdgeConsent&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance">Adobe Experience Platform Assurance</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAssurance"><img src="https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&amp;label=AEPAssurance&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left">
-        <p></p>
-        <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance">iOS</a>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/home.html">Places Service</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlaces"><img src="https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&amp;label=ACPPlaces&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html">Places Monitor</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics">Adobe Analytics</a> (supports
-        tvOS)</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAnalytics"><img src="https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&amp;label=AEPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics">Adobe Analytics - Media Analytics for Audio &amp; Video</a> (supports
-        tvOS)</td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager">Adobe Audience Manager</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAudience"><img src="https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&amp;label=ACPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAudience"><img src="https://img.shields.io/cocoapods/v/AEPAudience.svg?color=orange&amp;label=AEPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services">Adobe Analytics - Mobile Services</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target">Adobe Target</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPTarget"><img src="https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&amp;label=ACPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPTarget"><img src="https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&amp;label=AEPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard">Adobe Campaign Standard</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaign"><img src="https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&amp;label=ACPCampaign&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic">Adobe Campaign Classic</a>
-      </td>
-      <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
-      </td>
-      <td style="text-align:left">Releasing Soon</td>
-      <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Extension | Objective-C | Swift |
+| :--- | :--- | :--- |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&label=AEPCore&logo=apple&logoColor=white&style=flat-square)​](https://cocoapods.org/pods/AEPCore) [![Cocoapods](https://img.shields.io/cocoapods/v/AEPIdentity.svg?color=orange&label=AEPIdentity&logo=apple&logoColor=white&style=flat-square)​](https://cocoapods.org/pods/AEPIdentity)[![Cocoapods](https://img.shields.io/cocoapods/v/AEPSignal.svg?color=orange&label=AEPSignal&logo=apple&logoColor=white&style=flat-square)​](https://cocoapods.org/pods/AEPSignal) [![Cocoapods](https://img.shields.io/cocoapods/v/AEPLifecycle.svg?color=orange&label=AEPLifecycle&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPLifecycle) |
+| [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPUserProfile.svg?color=orange&label=AEPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPUserProfile) |
+| Adobe Experience Platform Edge Network | Not Available | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPEdge.svg?color=orange&label=AEPEdge&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPEdge) |
+| Identity for Edge Network | Not Available | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPEdgeIdentity.svg?color=orange&label=AEPEdgeIdentity&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPEdgeIdentity) |
+| Consent for Edge Network | Not Available | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPEdgeConsent.svg?color=orange&label=AEPEdgeConsent&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPEdgeConsent) |
+| [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&label=AEPAssurance&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAssurance) | Releasing Soon |
+| [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&label=ACPPlaces&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlaces) | Releasing Soon |
+| [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&label=ACPPlacesMonitor&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlacesMonitor) | Releasing Soon |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&label=AEPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAnalytics) |
+| [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia) | Releasing Soon |
+| [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&label=ACPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAudience) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAudience.svg?color=orange&label=AEPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAudience) |
+| [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&label=ACPMobileServices&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMobileServices) | Releasing Soon |
+| [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&label=ACPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPTarget) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&label=AEPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPTarget) |
+| [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&label=ACPCampaign&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaign) | Releasing Soon |
+| [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&label=ACPCampaignClassic&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCampaignClassic) | Releasing Soon |
 
 ## React Native
 
