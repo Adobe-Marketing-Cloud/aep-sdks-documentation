@@ -3,6 +3,7 @@
 * [Home](README.md)
 * [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Release notes](release-notes/README.md)
+  * [2020](release-notes/2020.md)
   * [2019](release-notes/2019.md)
   * [2018](release-notes/2018.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
