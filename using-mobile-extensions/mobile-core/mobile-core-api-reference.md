@@ -561,10 +561,10 @@ If the Analytics extension is enabled in your SDK, collecting this launch data r
 {% tabs %}
 {% tab title="Android" %}
 Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
+
 * Tracking Deep Link click-through.
 * Tracking Push Message click-through
 * Tracking Local Notification click-through
-
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -639,7 +639,7 @@ You must call the API below and retrieve identities stored in the SDK, **before*
 {% endhint %}
 
 {% hint style="warning" %}
-This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](../adobe-edge-identity/adobe-edge-identity-api-reference.md#getidentities).
+This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/09dd71f04d377c356dd24aac9b89ed0fffc1cf63/using-mobile-extensions/adobe-edge-identity/adobe-edge-identity-api-reference.md#getidentities).
 {% endhint %}
 
 {% tabs %}
@@ -718,7 +718,6 @@ This API is only handled by the [Edge](../adobe-edge/) and [Edge Identity](../ad
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ### resetIdentities
@@ -734,11 +733,11 @@ void resetIdentities();
 ```java
 MobileCore.resetIdentities();
 ```
+
 _since Mobile Core v1.8.0_
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Objective-C
 
 ### resetIdentities
@@ -763,6 +762,7 @@ static func resetIdentities()
 ```swift
 MobileCore.resetIdentities()
 ```
+
 _since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}

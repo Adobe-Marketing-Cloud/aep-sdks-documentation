@@ -6,7 +6,6 @@ Returns the version of the client-side Consent extension.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -47,13 +46,13 @@ public static let extensionVersion
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileEdgeConsent extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
 
-## getConsents<a id="getconsents"></a>
+## getConsents <a id="getconsents"></a>
 
 Retrieves the current consent preferences stored in the Consent extension.
 
@@ -73,10 +72,10 @@ public static void getConsents(final AdobeCallback<Map<String, Object>> callback
 
 ```java
 Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
-	@Override
-	public void call(Map<String, Object> currentConsents) {
-		// handle currentConsents
-	}
+    @Override
+    public void call(Map<String, Object> currentConsents) {
+        // handle currentConsents
+    }
 });
 ```
 {% endtab %}
@@ -96,7 +95,7 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 ```swift
 Consent.getConsents { currentConsents, error in
-	// handle currentConsents
+    // handle currentConsents
 }
 ```
 
@@ -104,15 +103,15 @@ Consent.getConsents { currentConsents, error in
 
 #### Syntax
 
-```objective-c
+```text
 static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 ```
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error){
-	// handle currentConsents
+    // handle currentConsents
 }];
 ```
 {% endtab %}
@@ -124,7 +123,6 @@ Registers the Edge Consent extension with the Mobile Core SDK.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -138,11 +136,9 @@ public static void registerExtension();
 ```java
 Consent.registerExtension();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 Use the MobileCore API to register the Edge Consent extension.
@@ -173,24 +169,22 @@ public static func registerExtensions(_ extensions: [NSObject.Type], _ completio
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileCore registerExtensions:@[AEPMobileEdgeConsent.class, ...] completion:^{
   // processing after registration
 }];
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## updateConsents<a id="updateConsents"></a>
+## updateConsents <a id="updateConsents"></a>
 
 Merges the existing consents with the given consents. Duplicate keys will take the value of those passed in the API.
 
-> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+> **Note:** After a user has selected collect consent no \(n\), the SDK will not allow you to set the users collect consent to yes \(y\).
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -199,7 +193,7 @@ Merges the existing consents with the given consents. Duplicate keys will take t
 public static void update(final Map<String, Object> consents);
 ```
 
-* *consents* - A `Map` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* _consents_ - A `Map` of consents defined based on [Privacy/Personalization/Marketing Preferences \(Consents\) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
@@ -207,9 +201,9 @@ public static void update(final Map<String, Object> consents);
 // example 1, updating users collect consent to 'yes'
 final Map<String, Object> collectConsents = new HashMap<>();
 collectConsents.put("collect", new HashMap<String, String>() {
-	{
-		put("val", "y");
-	}
+    {
+        put("val", "y");
+    }
 });
 
 final Map<String, Object> consents = new HashMap<>();
@@ -220,9 +214,9 @@ Consent.update(consents);
 // example 2, updating users collect consent to 'no'
 final Map<String, Object> collectConsents = new HashMap<>();
 collectConsents.put("collect", new HashMap<String, String>() {
-	{
-		put("val", "n");
-	}
+    {
+        put("val", "n");
+    }
 });
 
 final Map<String, Object> consents = new HashMap<>();
@@ -230,11 +224,9 @@ consents.put("consents", collectConsents);
 
 Consent.update(consents);
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 #### Syntax
@@ -243,7 +235,7 @@ Consent.update(consents);
 static func update(with consents: [String: Any])
 ```
 
-* *consents* - A `[String: Any]` of consents defined based on [Privacy/Personalization/Marketing Preferences (Consents) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
+* _consents_ - A `[String: Any]` of consents defined based on [Privacy/Personalization/Marketing Preferences \(Consents\) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
 #### Examples
 
@@ -263,13 +255,13 @@ Consent.update(with: currentConsents)
 
 #### Syntax
 
-```objective-c
+```text
 static func update(with consents: [String: Any])
 ```
 
 #### Examples
 
-```objective-c
+```text
 // example 1, updating users collect consent to 'yes'
 NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
 [AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
@@ -278,6 +270,6 @@ NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
 NSDictionary *collectConsent = @{ @"collect": @{@"val": @"n"};
 [AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 ```
-
 {% endtab %}
 {% endtabs %}
+

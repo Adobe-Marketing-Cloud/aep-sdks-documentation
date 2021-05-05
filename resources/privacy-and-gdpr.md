@@ -12,11 +12,11 @@ When Adobe provides software and services to an enterprise, Adobe acts as a data
 
 You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension | Collect (y) | Collect (n) | Collect (pending) |
+| Extension | Collect \(y\) | Collect \(n\) | Collect \(pending\) |
 | :--- | :--- | :--- | :--- |
 | **Edge Network** | Hits are sent | Hits not sent | Hits queued |
 
-> **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes (y) for collect consent.
+> **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes \(y\) for collect consent.
 
 ### Collect Consent settings
 
@@ -29,7 +29,7 @@ You can set the collect consent to one of the following values:
 * `y`
 * `n`
 
-To understand the expected behavior, see the *Update and get collect consent preferences* table above.
+To understand the expected behavior, see the _Update and get collect consent preferences_ table above.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -47,15 +47,14 @@ You can set the collect consent to one of the following values:
 * `y`
 * `n`
 
-To understand the expected behavior, see the *Update and get collect consent preferences* table above.
+To understand the expected behavior, see the _Update and get collect consent preferences_ table above.
 {% endtab %}
 {% endtabs %}
 
-### getConsents<a id="getconsents"></a>
+### getConsents <a id="getconsents"></a>
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 #### Syntax
@@ -70,21 +69,19 @@ public static void getConsents(final AdobeCallback<Map<String, Object>> callback
 
 ```objectivec
 Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
-	@Override
-	public void call(Map<String, Object> currentConsents) {
-		if (currentConsents == null) { return; }
+    @Override
+    public void call(Map<String, Object> currentConsents) {
+        if (currentConsents == null) { return; }
     final Map<String, Object> consents = currentConsets.get("consents");
     final Map<String, Object> collectConsent = consents.get("collect");
     final String collectConsentStatus = collectConsent.get("val");
     // inspect collectConsentStatus
-	}
+    }
 });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 #### Swift
 
 #### Syntax
@@ -97,10 +94,10 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 ```swift
 Consent.getConsents { currentConsents, error in
-	guard error == nil else { return }
-	guard let consents = currentConsents["consents"] as? [String: Any] else { return }
-	guard let collectConsent = consents["collect"] as? [String: Any] else { return }
-	let collectConsentStatus = collectConsent["val"] as? String
+    guard error == nil else { return }
+    guard let consents = currentConsents["consents"] as? [String: Any] else { return }
+    guard let collectConsent = consents["collect"] as? [String: Any] else { return }
+    let collectConsentStatus = collectConsent["val"] as? String
   // inspect collectConsentStatus
 }
 ```
@@ -115,28 +112,26 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error) {
-	if (error) { return; }
-	NSDictionary *consents = currentConsents[@"consents"];
+    if (error) { return; }
+    NSDictionary *consents = currentConsents[@"consents"];
   NSDictionary *collectConsent = currentConsents[@"collect"];
   NSString *collectConsentStatus = collectConsent[@"val"];
   // inspect collectConsentStatus
 }];
 ```
-
 {% endtab %}
 {% endtabs %}
 
-### updateConsents<a id="updateconsent"></a>
+### updateConsents <a id="updateconsent"></a>
 
 To programmatically update the consent collect for the application user:
 
-> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
+> **Note:** After a user has selected collect consent no \(n\), the SDK will not allow you to set the users collect consent to yes \(y\).
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 #### Syntax
@@ -151,9 +146,9 @@ public static void update(final Map<String, Object> consents);
 // example 1, updating users collect consent to 'yes'
 final Map<String, Object> collectConsents = new HashMap<>();
 collectConsents.put("collect", new HashMap<String, String>() {
-	{
-		put("val", "y");
-	}
+    {
+        put("val", "y");
+    }
 });
 
 final Map<String, Object> consents = new HashMap<>();
@@ -164,9 +159,9 @@ Consent.update(consents);
 // example 2, updating users collect consent to 'no'
 final Map<String, Object> collectConsents = new HashMap<>();
 collectConsents.put("collect", new HashMap<String, String>() {
-	{
-		put("val", "n");
-	}
+    {
+        put("val", "n");
+    }
 });
 
 final Map<String, Object> consents = new HashMap<>();
@@ -209,7 +204,7 @@ static func update(with consents: [String: Any])
 
 #### Example
 
-```objective-c
+```text
 // example 1, updating users collect consent to 'yes'
 NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
 [AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
@@ -231,7 +226,7 @@ The following API returns a dictionary representation of the consent preferences
 
 When using the Edge Network extensions, use the [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
-When using both Edge Network extension and Adobe Solutions extensions,  use both [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers) API  to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
+When using both Edge Network extension and Adobe Solutions extensions, use both [Identity.getIdentities](../using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
 ## Configuration keys
 
@@ -239,7 +234,7 @@ To update the SDK configuration, programmatically, use the following information
 
 | Key | Description |
 | :--- | :--- |
-| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). |
+| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences \(Consents\) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). |
 
 ## Additional information
 

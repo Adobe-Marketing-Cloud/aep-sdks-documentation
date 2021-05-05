@@ -1,4 +1,4 @@
-# Adobe Experience Platform Consent
+# Consent
 
 The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
 
@@ -12,15 +12,12 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
 
 ![AEP Consent extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
-
-
 ## Add the AEP Consent extension to your app
 
 ### Download and import the Consent extension
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
@@ -31,18 +28,15 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
    implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
    ```
-   
+
 2. Import the Mobile Core and Edge extensions in your application class.
 
    ```java
     import com.adobe.marketing.mobile.*;
    ```
-
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
 
    ```swift
@@ -54,7 +48,7 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
        pod 'AEPEdgeConsent'
    end
    ```
-   
+
 2. Import the Mobile Core and Edge libraries:
 
 ### Swift
@@ -76,7 +70,6 @@ import AEPEdgeConsent
 @import AEPEdgeIdentity;
 @import AEPEdgeConsent;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -84,7 +77,6 @@ import AEPEdgeConsent
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 ```java
@@ -111,18 +103,16 @@ public class MobileApp extends Application {
     }
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     MobileCore.registerExtensions([Identity.self, Edge.self, Consent.self], {
-    	MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
     })
   ...
 }
@@ -130,7 +120,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Objective-C
 
-```objective-c
+```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{
@@ -139,7 +129,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -147,11 +136,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 To update the SDK configuration programmatically, use the following information to change the Edge Consent configuration values.
 
-| Key             | Required | Description                                                  | Data Type           |
-| :-------------- | :------- | :----------------------------------------------------------- | :------------------ |
-| consent.default | No       | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). | Map<String, Object> |
+| Key | Required | Description | Data Type |
+| :--- | :--- | :--- | :--- |
+| consent.default | No | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences \(Consents\) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). | Map |
 
 ## What OS & platform versions are supported?
 
 * Android versions 4.4 or later \(API levels 19 or later\)
 * iOS versions 10 or later
+

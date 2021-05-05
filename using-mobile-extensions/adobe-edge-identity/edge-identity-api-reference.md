@@ -1,4 +1,4 @@
-# Identity API Reference
+# Identity API reference
 
 ## getExperienceCloudId
 
@@ -75,6 +75,7 @@ Identity.getExperienceCloudId { (ecid, error) in
 {% endtabs %}
 
 ## getIdentities
+
 {% tabs %}
 {% tab title="Android" %}
 ### getIdentities
@@ -91,7 +92,7 @@ When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public
 public static void getIdentities(final AdobeCallback<IdentityMap> callback);
 ```
 
-* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](#identitymap). The callback may be invoked on a different thread.
+* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](edge-identity-api-reference.md#identitymap). The callback may be invoked on a different thread.
 
 **Example**
 
@@ -117,7 +118,7 @@ Get all identities in the Identity for Egde Network extension, including custome
 static func getIdentities(completion: @escaping (IdentityMap?, Error?) -> Void)
 ```
 
-* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](#identitymap)
+* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](edge-identity-api-reference.md#identitymap)
 
 **Examples**
 
@@ -144,6 +145,7 @@ Identity.getIdentities { (identityMap, error) in
 {% endtabs %}
 
 ## updateIdentities
+
 {% tabs %}
 {% tab title="Android" %}
 ### updateIdentities
@@ -154,10 +156,9 @@ Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
 Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
-- ECID
-- IDFA
-- GAID
-
+* ECID
+* IDFA
+* GAID
 
 **Java**
 
@@ -186,9 +187,9 @@ Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
 Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
-- ECID
-- IDFA
-- GAID
+* ECID
+* IDFA
+* GAID
 
 **Syntax**
 
@@ -219,20 +220,20 @@ Identity.updateIdentities(with: identityMap)
 {% endtabs %}
 
 ## removeIdentity
+
 {% tabs %}
 {% tab title="Android" %}
 ### removeIdentity
 
-Remove the identity from the stored client-side [IdentityMap](#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
+Remove the identity from the stored client-side [IdentityMap](edge-identity-api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
 Removing identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
-- ECID
-- IDFA
-- GAID
-
+* ECID
+* IDFA
+* GAID
 
 **Java**
 
@@ -253,15 +254,15 @@ Identity.removeIdentity(item, "Email");
 {% tab title="iOS" %}
 ### removeIdentity
 
-Remove the identity from the stored client-side [IdentityMap](#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
+Remove the identity from the stored client-side [IdentityMap](edge-identity-api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
 Removing identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
 
-- ECID
-- IDFA
-- GAID
+* ECID
+* IDFA
+* GAID
 
 **Syntax**
 
@@ -289,7 +290,7 @@ Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespac
 
 ## resetIdentities
 
-Clears all identities stored in the Identity extension and generates a new Experience Cloud ID (ECID) .  Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
+Clears all identities stored in the Identity extension and generates a new Experience Cloud ID \(ECID\) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
 {% hint style="warning" %}
 The Identity for Edge Network extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Identity for Edge Network extension.
@@ -298,7 +299,9 @@ The Identity for Edge Network extension does not read the Mobile SDK's privacy s
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#reset-identities) for more details.
 
 ## Public Classes
+
 ### IdentityMap
+
 Defines a map containing a set of end user identities, keyed on either namespace integration code or the namespace ID of the identity. The values of the map are an array, meaning that more than one identity of each namespace may be carried.
 
 The format of the IdentityMap class is defined by the [XDM Identity Map Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/shared/identitymap.schema.md).
@@ -338,10 +341,10 @@ For more information, please read an overview of the [AEP Identity Service](http
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Examples**
 
 **Java**
+
 ```java
 // Construct
 IdentityMap identityMap = new IdentityMap();
@@ -363,14 +366,13 @@ List<String> namespaces = identityMap.getNamespaces();
 // Check if IdentityMap has no identities
 boolean hasNotIdentities = identityMap.isEmpty();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Examples**
 
 **Objective-C**
+
 ```objectivec
 // Initialize
 AEPIdentityMap *identityMap = [[AEPIdentityMap alloc] init];
@@ -394,6 +396,7 @@ bool hasNoIdentities = identityMap.isEmpty;
 ```
 
 **Swift**
+
 ```swift
 // Initialize
 let identityMap: IdentityMap = IdentityMap()
@@ -413,20 +416,21 @@ let namespaces: [String] = identityMap.namespaces
 // Check if IdentityMap has no identities
 let hasNoIdentities: Bool = identityMap.isEmpty
 ```
-
 {% endtab %}
 {% endtabs %}
+
 ### IdentityItem
-Defines an identity to be included in an [IdentityMap](#identitymap).
+
+Defines an identity to be included in an [IdentityMap](edge-identity-api-reference.md#identitymap).
 
 The format of the IdentityItem class is defined by the [XDM Identity Item Schema](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/identityitem.schema.md).
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Examples**
 
 **Java**
+
 ```java
 // Construct
 IdentityItem item = new IdentityItem("identifier");
@@ -441,14 +445,13 @@ AuthenticatedState state = item.getAuthenticatedState();
 
 boolean primary = item.isPrimary();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Examples**
 
 **Objective-C**
+
 ```objectivec
 // Initialize
 AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
@@ -462,6 +465,7 @@ bool primary = primaryEmail.primary;
 ```
 
 **Swift**
+
 ```swift
 // Initialize
 let item = IdentityItem(id: "identifier")
@@ -475,35 +479,33 @@ let state: AuthenticatedState = item.authenticatedState
 
 let primary: Bool = item.primary
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### AuthenticatedState
-Defines the state an [Identity Item](#identityitem) is authenticated for.
+
+Defines the state an [Identity Item](edge-identity-api-reference.md#identityitem) is authenticated for.
 
 The possible authenticated states are:
-- Ambiguous - the state is ambiguous or not defined
-- Authenticated - the user is identified by a login or similar action
-- LoggedOut - the user was identified by a login action at a previous time, but is not logged in now
+
+* Ambiguous - the state is ambiguous or not defined
+* Authenticated - the user is identified by a login or similar action
+* LoggedOut - the user was identified by a login action at a previous time, but is not logged in now
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public enum AuthenticatedState {
-	AMBIGUOUS("ambiguous"),
-	AUTHENTICATED("authenticated"),
-	LOGGED_OUT("loggedOut");
+    AMBIGUOUS("ambiguous"),
+    AUTHENTICATED("authenticated"),
+    LOGGED_OUT("loggedOut");
 }
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 **Syntax**
 
 ```swift
@@ -514,7 +516,6 @@ public enum AuthenticatedState: Int, RawRepresentable, Codable {
     case loggedOut = 2
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

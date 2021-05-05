@@ -6,27 +6,26 @@ The Adobe Experience Platform Mobile SDK is available for Apple iOS \(includes i
 We recommend integrating our SDKs through supported package and dependency managers for maximized ease of implementation.
 {% endhint %}
 
-## Migration considerations 
+## Migration considerations
 
 Here are a few things to consider when installing the Adobe Experience Platform Edge Network mobile extension.
 
-- The new AEP Edge Network extension requires the usage of the latest AEP SDKs, which for iOS is a new Swift-based SDK. If you are an ACP Mobile SDK user, read  [Adobe Experience Platform Edge Network Migration Considerations](introduction-to-aepedge.md#adobe-experience-platform-edge-network-migration-considerations).
-- For the latest information on supported Swift SDK compatible extensions, see [Current SDK Versions](../current-sdk-versions.md).
-- The AEP Edge Network extension requires the use of [Identity for Edge Network mobile extension](../using-mobile-extensions/adobe-edge-identity).
-- When using the AEP Edge Network extension, it is strongly encouraged to use Consent mobile extension for managing and enforcing the collect consent settings. For more details see [Consent extension](../using-mobile-extensions/adobe-edge-consent) and [Privacy and GDPR](../resources/privacy-and-gdpr.md).
+* The new AEP Edge Network extension requires the usage of the latest AEP SDKs, which for iOS is a new Swift-based SDK. If you are an ACP Mobile SDK user, read  [Adobe Experience Platform Edge Network Migration Considerations](introduction-to-aepedge.md#adobe-experience-platform-edge-network-migration-considerations).
+* For the latest information on supported Swift SDK compatible extensions, see [Current SDK Versions](../current-sdk-versions.md).
+* The AEP Edge Network extension requires the use of [Identity for Edge Network mobile extension](../using-mobile-extensions/adobe-edge-identity/).
+* When using the AEP Edge Network extension, it is strongly encouraged to use Consent mobile extension for managing and enforcing the collect consent settings. For more details see [Consent extension](../using-mobile-extensions/adobe-edge-consent/) and [Privacy and GDPR](../resources/privacy-and-gdpr.md).
 
 ## Install the AEP Mobile SDK extensions
 
 {% tabs %}
 {% tab title="Android" %}
-
 ## Java
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later (Edge, Identity and Consent extensions support min API 19).
+Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later \(Edge, Identity and Consent extensions support min API 19\).
 {% endhint %}
 
-To get the Adobe Experience Platform Core SDK for Android, follow the instructions below. In this example we'll use [Gradle](https://docs.gradle.org/current/userguide/userguide.html) to manage dependencies. 
+To get the Adobe Experience Platform Core SDK for Android, follow the instructions below. In this example we'll use [Gradle](https://docs.gradle.org/current/userguide/userguide.html) to manage dependencies.
 
 ### 1. Add dependencies to your project
 
@@ -86,7 +85,7 @@ public class MainApp extends Application {
       // Mobile Core and dependents
       Signal.registerExtension();
       Lifecycle.registerExtension();
-      
+
       // Client-side user profile
       UserProfile.registerExtension();
 
@@ -98,7 +97,7 @@ public class MainApp extends Application {
        // Adobe Analytics and dependents
        Analytics.registerExtension();
        com.adobe.marketing.mobile.Identity.registerExtension();
-       
+
       MobileCore.start(new AdobeCallback () {
             @Override
             public void call(Object o) {
@@ -125,16 +124,15 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ## Swift / Objective-C
 
 {% hint style="warning" %}
 Adobe Experience Platform Mobile SDK for iOS supports **iOS 10 or later.**
 {% endhint %}
 
-In this example we'll use [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods) to manage dependencies. 
+In this example we'll use [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods) to manage dependencies.
 
-### 1. (Optional) Set up your Podfile
+### 1. \(Optional\) Set up your Podfile
 
 Create a podfile if you don't already have one by running the following command in the terminal:
 
@@ -142,7 +140,7 @@ Create a podfile if you don't already have one by running the following command 
 pod init
 ```
 
-### 2. (Optional) Existing ACP users
+### 2. \(Optional\) Existing ACP users
 
 Remove the Adobe pods prefixed with `ACP` from your `Podfile` so the Swift extensions can be installed in the following steps.
 
@@ -210,7 +208,7 @@ import AEPAnalytics
 
 #### Objective-C
 
-```objective-c
+```text
 // AppDelegate.h
 
 // Mobile Core and dependents
@@ -234,7 +232,6 @@ import AEPAnalytics
 ### 6. Add extensions registration code
 
 {% hint style="info" %}
-
 Note that the registration setup changed to a single API call `MobileCore.registerExtensions([...])`. There is no need to call `MobileCore.start` anymore, registerExtensions does that implicitly.
 {% endhint %}
 
@@ -252,7 +249,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 #### Objective-C
 
-```objective-c
+```text
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
@@ -269,7 +266,6 @@ To find your Environment File ID for an environment, in Experience Platform Laun
 ### Partner extensions
 
 If you are using any of the iOS partner extensions from the AEP Launch catalog, please contact your Adobe Customer Success Manager or account representative.
-
 {% endtab %}
 {% endtabs %}
 
