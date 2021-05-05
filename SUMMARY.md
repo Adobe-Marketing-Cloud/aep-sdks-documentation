@@ -98,6 +98,7 @@
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform.md)
   * [Sample XDM Implementation](resources/user-guides/sample-xdm-implementation.md)
+  * [Rules & XDM events](resources/user-guides/rules-and-xdm-events.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
