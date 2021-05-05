@@ -43,7 +43,7 @@ Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 
 In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
 
-Please see [Release notes](../release-notes.md#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see [Release notes](../release-notes/#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
 Add the dependencies to your `Podfile` for each extension.
@@ -81,7 +81,7 @@ Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
 
 In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
 
-Please see [Release notes](../release-notes.md#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see [Release notes](../release-notes/#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package%20%281%29.png)\).
