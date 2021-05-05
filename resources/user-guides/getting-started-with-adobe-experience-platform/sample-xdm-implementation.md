@@ -2,7 +2,7 @@
 
 ## Prerequisites for this tutorial
 
-* Finish [Getting Started with Adobe Experience Platform](getting-started-with-adobe-experience-platform.md)
+* Finish [Getting Started with Adobe Experience Platform](./)
 
 ### Download the sample application
 
@@ -56,7 +56,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
    * Click `Save`.
 
-![](../../.gitbook/assets/xdm_product_review.png)
+![](../../../.gitbook/assets/xdm_product_review.png)
 
 1. This schema is going to be used for Profiles in the next steps in this assigment.
    * Click on the Schema name, then from the right panel enable the `Profile` toggle.

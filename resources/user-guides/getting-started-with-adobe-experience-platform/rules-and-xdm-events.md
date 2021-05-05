@@ -81,7 +81,7 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
      * Select `XDM Event Type equals product.review`.
      * Click `Keep Changes`.
 
-![](../../.gitbook/assets/rule_xdm_event_type.png)
+![](../../../.gitbook/assets/rule_xdm_event_type.png)
 
 * Click on the `+ Add` button in the Actions section.
   * Select `Mobile Core` from the Extensions drop-down and `Attach Data` as Action type.
