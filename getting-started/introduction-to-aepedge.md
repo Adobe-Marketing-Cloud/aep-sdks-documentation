@@ -1,5 +1,9 @@
 # Introduction
 
+{% hint style="danger" %}
+This documentation section is in the process of being moved - please see [https://aep-sdks.gitbook.io/docs/getting-started/overview](https://aep-sdks.gitbook.io/docs/getting-started/overview) to get started.
+{% endhint %}
+
 Adobe Experience Cloud implementations for mobile apps leverage [Adobe Experience Platform Mobile SDKs](http://sdkdocs.com) for data collection and experience delivery. With the introduction of Adobe Experience Platform Edge Network data collection, client-side implementations will provide unified, purpose-based APIs to provide customers with a more modern and efficient data collection paradigm.
 
 By utilizing the latest Adobe Experience Platform Mobile SDK along with the [Adobe Experience Platform Edge Network extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/415ad4c45b0bddcb6879a7403d8c2922f154ef8b/getting-started/using-mobile-extensions/adobe-edge/README.md), customers can adopt XDM \([Experience Data Model](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html)\) workflows for data collection. XDM data collection represents a shift from solution specific APIs to simple key / value pairs, that can be sent from both Mobile and Web properties.
