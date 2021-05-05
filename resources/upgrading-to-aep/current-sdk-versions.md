@@ -57,7 +57,17 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCore"><img src="https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&amp;label=ACPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPCore"><img src="https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&amp;label=AEPCore&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/>&#x200B;</a>
+        <a
+        href="https://cocoapods.org/pods/AEPIdentity">
+          <img src="https://img.shields.io/cocoapods/v/AEPIdentity.svg?color=orange&amp;label=AEPIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
+          alt="Cocoapods" />&#x200B;</a><a href="https://cocoapods.org/pods/AEPSignal"><img src="https://img.shields.io/cocoapods/v/AEPSignal.svg?color=orange&amp;label=AEPSignal&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/>&#x200B;</a>
+          <a
+          href="https://cocoapods.org/pods/AEPLifecycle">
+            <img src="https://img.shields.io/cocoapods/v/AEPLifecycle.svg?color=orange&amp;label=AEPLifecycle&amp;logo=apple&amp;logoColor=white&amp;style=flat-square"
+            alt="Cocoapods" />
+            </a>
+      </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore">iOS</a>
       </td>
     </tr>
@@ -66,16 +76,38 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPUserProfile"><img src="https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&amp;label=ACPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPUserProfile"><img src="https://img.shields.io/cocoapods/v/AEPUserProfile.svg?color=orange&amp;label=AEPUserProfile&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile">iOS</a>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Adobe Experience Platform Edge Network</td>
+      <td style="text-align:left">Not Available</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdge"><img src="https://img.shields.io/cocoapods/v/AEPEdge.svg?color=orange&amp;label=AEPEdge&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Identity for Edge Network</td>
+      <td style="text-align:left">Not Available</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeIdentity"><img src="https://img.shields.io/cocoapods/v/AEPEdgeIdentity.svg?color=orange&amp;label=AEPEdgeIdentity&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Consent for Edge Network</td>
+      <td style="text-align:left">Not Available</td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPEdgeConsent"><img src="https://img.shields.io/cocoapods/v/AEPEdgeConsent.svg?color=orange&amp;label=AEPEdgeConsent&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left"><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance">Adobe Experience Platform Assurance</a>
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAssurance"><img src="https://img.shields.io/cocoapods/v/AEPAssurance.svg?color=orange&amp;label=AEPAssurance&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left">
         <p></p>
         <p><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance">iOS</a>
@@ -87,7 +119,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlaces"><img src="https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&amp;label=ACPPlaces&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces">iOS</a>
       </td>
     </tr>
@@ -96,7 +128,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPPlacesMonitor"><img src="https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&amp;label=ACPPlacesMonitor&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/adobe/places-monitor-ios">iOS</a>
       </td>
     </tr>
@@ -105,7 +137,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAnalytics"><img src="https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&amp;label=ACPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAnalytics"><img src="https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&amp;label=AEPAnalytics&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics">iOS</a>
       </td>
     </tr>
@@ -114,7 +147,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
         tvOS)</td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMedia"><img src="https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&amp;label=ACPMedia&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia">iOS</a>
       </td>
     </tr>
@@ -123,7 +156,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPAudience"><img src="https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&amp;label=ACPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPAudience"><img src="https://img.shields.io/cocoapods/v/AEPAudience.svg?color=orange&amp;label=AEPAudience&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience">iOS</a>
       </td>
     </tr>
@@ -132,7 +166,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPMobileServices"><img src="https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&amp;label=ACPMobileServices&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices">iOS</a>
       </td>
     </tr>
@@ -141,7 +175,8 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPTarget"><img src="https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&amp;label=ACPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><a href="https://cocoapods.org/pods/AEPTarget"><img src="https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&amp;label=AEPTarget&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
+      </td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget">iOS</a>
       </td>
     </tr>
@@ -150,7 +185,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaign"><img src="https://img.shields.io/cocoapods/v/ACPCampaign.svg?color=orange&amp;label=ACPCampaign&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaign">iOS</a>
       </td>
     </tr>
@@ -159,7 +194,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
       </td>
       <td style="text-align:left"><a href="https://cocoapods.org/pods/ACPCampaignClassic"><img src="https://img.shields.io/cocoapods/v/ACPCampaignClassic.svg?color=orange&amp;label=ACPCampaignClassic&amp;logo=apple&amp;logoColor=white&amp;style=flat-square" alt="Cocoapods"/></a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Releasing Soon</td>
       <td style="text-align:left"><a href="https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCampaignClassic">iOS</a>
       </td>
     </tr>
