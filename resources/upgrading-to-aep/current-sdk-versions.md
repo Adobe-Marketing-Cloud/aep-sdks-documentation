@@ -99,7 +99,7 @@ Adobe Experience Platform Mobile SDK plugins for React Native are compatible onl
 {% endhint %}
 
 {% hint style="info" %}
-For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
+For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from [npm](https://npm.io/). For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
 {% endhint %}
 
 | Extension | npmjs | Github | Sample |
