@@ -10,6 +10,16 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
+{% hint style="success" %}
+## Support for Adobe Experience Platform Edge Network
+
+The Adobe Experience Platform Mobile SDKs support data collection and other features via the Edge Network.
+
+The new **Experience Platform Edge Network** extension and others are now available for Android and iOS to help you take advantage of functionality provided by [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) and [Adobe Experience Platform](https://business.adobe.com/products/experience-platform/adobe-experience-platform.html).
+
+Navigate to **GETTING STARTED** for more information.
+{% endhint %}
+
 ## Bring the Adobe Experience Cloud to your apps
 
 The Adobe Experience Platform Mobile SDK helps power Adobe's Experience Cloud solutions and services in your mobile apps.
