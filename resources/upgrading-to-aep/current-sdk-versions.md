@@ -3,7 +3,7 @@
 {% hint style="info" %}
 ## Swift SDKs are here!
 
-We've released Swift versions of our iOS SDKs for Core and select extensions - please [scroll down](current-sdk-versions.md#ios) for available Swift extensions and reference documentation for more information.
+We've released Swift versions of our iOS SDKs for Core and select extensions - please [scroll down](current-sdk-versions.md#ios-swift) for available Swift extensions and reference documentation for more information.
 {% endhint %}
 
 ## Android
