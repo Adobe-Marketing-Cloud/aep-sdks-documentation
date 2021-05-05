@@ -2,7 +2,7 @@
 
 ## Prerequisites for this tutorial
 
-* Finish [Getting Started with Adobe Experience Platform]()
+* Finish [Getting Started with Adobe Experience Platform](getting-started-with-adobe-experience-platform.md)
 
 ### Download the sample application
 
