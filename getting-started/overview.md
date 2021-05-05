@@ -18,7 +18,7 @@ The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experie
 
 ## Integration via solutions-specific network infrastructure
 
-Workflow
+### Workflow
 
 1. Configure solutions
 2. Setup Mobile Property
