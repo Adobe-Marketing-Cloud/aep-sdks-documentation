@@ -2,7 +2,7 @@
 
 ## extensionVersion <a id="extensionversion"></a>
 
-Returns the version of the client-side Consent extension.
+Returns the version of the client-side Messaging extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -55,7 +55,7 @@ public static let extensionVersion
 
 ## handleNotificationResponse<a id="handlenotificationresponse"></a>
 
-Sends the push notification interactions feedback to experience platform.
+Sends the push notification interactions feedback to **Adobe Experience Platform**.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -75,6 +75,8 @@ public static void handleNotificationResponse(final Intent intent, final boolean
 #### Example
 
 ```java
+// Intent can be retrieved from the Activity/BroadcastReceiver using the getIntent() method. 
+Intent intent = getIntent();
 Messaging.handleNotificationResponse(intent, true, "customActionId");
 ```
 {% endtab %}
@@ -90,12 +92,17 @@ static func handleNotificationResponse(_ response: UNNotificationResponse, appli
 
 * _response_ - UNNotificationResponse response object containing push notification details 
 * _applicationOpened_ - Bool values denoting whether the application was opened or not. 
-* _customActionId_ - String values denoting the id of the custom action.
+* _customActionId_ - Option String values denoting the id of the custom action.
 
 #### Example
 
 ```swift
-Messaging.handleNotificationResponse(response, applicationOpened: true, customActionId: "customActionId")
+func userNotificationCenter(_: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+    Messaging.handleNotificationResponse(response, applicationOpened: true, customActionId: "customActionId")
+    completionHandler()
+}
 ```
 
 ### Objective-C
@@ -103,13 +110,21 @@ Messaging.handleNotificationResponse(response, applicationOpened: true, customAc
 #### Syntax
 
 ```objective-c
+@objc(handleNotificationResponse:applicationOpened:withCustomActionId:)
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
 #### Example
 
 ```objective-c
-[AEPMobileMessaging handleNotificationResponse:response applicationOpened:true withCustomActionId:@"customActionId"]
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)())completionHandler {
+    // Your code
+    [AEPMobileMessaging handleNotificationResponse:response applicationOpened:true withCustomActionId:@"customActionId"]
+    completionHandler();
+}
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -185,8 +200,8 @@ This Core API is used for syncing the push token to the profile in experience pl
 {% tabs %}
 {% tab title="Android" %}
 
-To retrieve the push token from Firebase Messaging Service follow this [link](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). 
-After retrieving the push token use the below core api to sync it with profile in platform.
+To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). 
+After retrieving the push token use the below core API to sync it with profile in platform.
 
 ### Java
 
@@ -219,8 +234,8 @@ FirebaseMessaging.getInstance().getToken()
 
 ### Swift
 
-To retrieve the push token in iOS, checkout the apple documentation [here](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
-After retrieving the push token use the below core api to sync it with profile in platform.
+To retrieve the push token in iOS, checkout the apple documentation [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
+After retrieving the push token use the below core API to sync it with profile in platform.
 
 #### Syntax
 
@@ -228,7 +243,7 @@ After retrieving the push token use the below core api to sync it with profile i
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* *deviceToken* - A `String` value denoting the push token..
+* *deviceToken* - A `Data` value denoting the push token.
 
 #### Examples
 
@@ -245,6 +260,8 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 ```objective-c
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
+
+* *deviceToken* - A `Data` value denoting the push token.
 
 #### Examples
 
@@ -278,13 +295,13 @@ public static boolean addPushTrackingDetails(final Intent intent, final String m
 * *intent* - `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
 * *messageId* - `String` message ID of the push notification
 * *data* - `Map` which represents the data part of the remoteMessage.
-* Returns `boolean` indicating whether the intent was update with necessary information (messageId and customer journey data).
+* Returns `boolean` indicating whether the intent was updated with necessary information (messageId and customer journey data).
 
 
 #### Examples
 
 ```java
-boolean update = addPushTrackingDetails(intent, messageId, data)
+boolean success = addPushTrackingDetails(intent, messageId, data)
 ```
 
 {% endtab %}

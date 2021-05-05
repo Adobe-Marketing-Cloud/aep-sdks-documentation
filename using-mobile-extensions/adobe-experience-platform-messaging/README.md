@@ -9,34 +9,34 @@ The Adobe Experience Platform Messaging extension is currently in Beta developme
 ## Prerequisites
 
 * IMS organization is enabled for messaging.
-* [Mobile Core](../mobile-core/README.md) and [Adobe Experience Platform Edge Network](../adobe-edge/README.md) extensions have been implemented in the app.
+* [Mobile Core](../mobile-core/README.md), [Adobe Experience Platform Edge Network](../adobe-edge/README.md) and [EdgeIdentity](../adobe-edge-identity/README.md) extensions have been implemented in the app.
 
 ## Configure Profile Dataset in Edge Configuration
-1. Follow the [edge configuration](../../getting-started/edge-configuration.md) document to configure edge.
-2. In the screen below update the **Profile Dataset** with the `CJM Push Profile Dataset`
-![Configuring your Edge Configuration in Adobe Experience Platform Launch](../../.gitbook/assets/screen-shot-2021-02-02-at-12.44.31-pm.png)
-3. Hit **Save**.
+1. Follow the [datastream](https://aep-sdks.gitbook.io/docs/getting-started/configure-datastreams) document to configure edge.
+1. In the screen below update the **Profile Dataset** with the `CJM Push Profile Dataset`
+![Configuring your Edge Configuration in Adobe Experience Platform Launch](../../.gitbook/assets/aep-edge-config.png)
+1. Hit **Save**.
 
 ## Configure the Adobe Experience Platform Messaging extension in Experience Platform Launch
 
 1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform - Messaging** extension, and click **Install**.
-3. Select the **Event Dataset** for Production, Stage and Development Environments. The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](../../getting-started/configure-schema-and-dataset.md).
-4. Click **Save**.
-5. Follow the publishing process to update SDK configuration.
+1. On the **Catalog** tab, locate or search for the **Adobe Experience Platform - Messaging** extension, and click **Install**.
+1. Select the **Event Dataset** for Production, Stage and Development Environments. The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](../../getting-started/configure-schema-and-dataset.md).
+1. Click **Save**.
+1. Follow the publishing process to update SDK configuration.
 ![AEP Messaging extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 ## Configure Application Configuration
 1. In Experience Platform Launch, click the **App Configurations** tab on the left pane.
-2. Click the **Add App Configuration** button.
-3. Provide a **Name** and select the **Messaging Service Type**
+1. Click the **Add App Configuration** button.
+1. Provide a **Name** and select the **Messaging Service Type**
 ![AEP App configuration](../../.gitbook/assets/add-app-config.png)
 
 {% tabs %}
 {% tab title="Android" %}
 
 4. Provide the **App ID (Android package name)**. Usually the package name is the app id in your `build.gradle` file.
-5. Drag and drop the FCM push credentials. For more details on how to get the push credentials follow [this](https://firebase.google.com/docs/admin/setup#initialize-sdk).
+5. Drag and drop the FCM push credentials. For more details on how to get the push credentials follow [the Firebase documentation](https://firebase.google.com/docs/admin/setup#initialize-sdk).
  
 ![AEP Android App Configuration](../../.gitbook/assets/add-app-config-android.png)
 
@@ -51,7 +51,7 @@ The Adobe Experience Platform Messaging extension is currently in Beta developme
 
 ![AEP Android App Configuration](../../.gitbook/assets/add-app-config-ios.png)
 
-For more information follow this [link](https://help.apple.com/developer-account/#/deva05921840)
+For more information follow this [Apple's documentation](https://help.apple.com/developer-account/#/deva05921840)
 
 {% endtab %}
 {% endtabs %}
@@ -59,12 +59,12 @@ For more information follow this [link](https://help.apple.com/developer-account
 ## Configure the application to allow push notification 
 {% tabs %}
 {% tab title="Android" %}
-To add Firebase Messaging Service to your app please follow the [link](https://firebase.google.com/docs/cloud-messaging/android/client)
+To add Firebase Messaging Service to your app please follow the [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client)
 
 {% endtab %}
 
 {% tab title="iOS" %}
-To add APNs to your app please follow the [link](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
+To add APNs to your app please follow the [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
 
 {% endtab %}
 {% endtabs %}
@@ -78,7 +78,7 @@ To add APNs to your app please follow the [link](https://developer.apple.com/doc
 
 ### Java
 
-1. Add the Mobile Core, Edge and Messaging extensions to your project using the app's Gradle file.
+1. Add the Mobile Core, Edge, EdgeIdentity and Messaging extensions to your project using the app's Gradle file.
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
@@ -87,10 +87,11 @@ To add APNs to your app please follow the [link](https://developer.apple.com/doc
    implementation 'com.adobe.marketing.mobile:messaging:1.+'
    ```
 
-2. Import the Mobile Core Edge and Messaging extensions in your application class.
+2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
 
    ```java
     import com.adobe.marketing.mobile.*;
+    import com.adobe.marketing.mobile.edge.identity.Identity;
    ```
 
 
@@ -98,7 +99,7 @@ To add APNs to your app please follow the [link](https://developer.apple.com/doc
 
 {% tab title="iOS" %}
 
-1. Add the Mobile Core, Edge and Messaging extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core, Edge, EdgeIdentity and Messaging extensions to your project using Cocoapods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -110,7 +111,7 @@ To add APNs to your app please follow the [link](https://developer.apple.com/doc
    end
    ```
 
-2. Import the Mobile Core, Edge and Messaging libraries:
+2. Import the Mobile Core, Edge, EdgeIdentity and Messaging libraries:
 
 ### Swift
 
@@ -174,7 +175,7 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Identity.self, Edge.self, AEPMessaging.self], {
+    MobileCore.registerExtensions([Identity.self, Edge.self, Messaging.self], {
     	MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
     })
   ...
@@ -202,7 +203,7 @@ To update the SDK configuration programmatically, use the following information 
 | Key             | Required | Description                                                  | Data Type           | Platform         |
 | :-------------- | :------- | :----------------------------------------------------------- | :------------------ | :---------------- |
 | messaging.eventDataset | Yes       | Experience Event Dataset Id which can be found from experience platform | String | Android/iOS |
-| messaging.useSandbox | No       | See more details [here](https://github.com/adobe/aepsdk-messaging-ios/blob/dev/Documentation/SetupSDK.md#using-apnssandbox-environment-for-push-notification) | Boolean | iOS |
+| messaging.useSandbox | No       | See more details in the [Messaging documentation](https://github.com/adobe/aepsdk-messaging-ios/blob/dev/Documentation/SetupSDK.md#using-apnssandbox-environment-for-push-notification) | Boolean | iOS |
 
 
 ## What OS & platform versions are supported?
