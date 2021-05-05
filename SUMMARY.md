@@ -12,6 +12,7 @@
 
 ## Getting Started
 
+* [Overview](getting-started/overview.md)
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Enable debug logging](getting-started/enable-debug-logging.md)
