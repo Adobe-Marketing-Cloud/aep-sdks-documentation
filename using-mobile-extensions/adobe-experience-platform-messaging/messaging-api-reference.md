@@ -308,10 +308,10 @@ boolean success = addPushTrackingDetails(intent, messageId, data)
 {% endtabs %}
 
 ## Public Classes
-### AEPMessagingFCMPushPayload
+### MessagingPushPayload
 
 This is a helper class for extracting the data payload attributes from `RemoteMessage` which are used while creating the push notification.
-Create the instance of `AEPMessagingFCMPushPayload` in the `onMessageReceived` method using the below constructors.
+Create the instance of `MessagingPushPayload` in the `onMessageReceived` method using the below constructors.
 
 ### Constructor
 
@@ -322,13 +322,13 @@ Create the instance of `AEPMessagingFCMPushPayload` in the `onMessageReceived` m
 #### Syntax
 
 ```java
-public AEPMessagingFCMPushPayload(RemoteMessage message)
+public MessagingPushPayload(RemoteMessage message)
 ```
 
 * *message* - `RemoteMessage` message containing the payload data with the necessary attributes for creating push notification
 
 ```java
-public AEPMessagingFCMPushPayload(Map<String, String> data)
+public MessagingPushPayload(Map<String, String> data)
 ```
 
 * *data* - `Map<String, String>` data payload containing the necessary attributes for creating push notification
@@ -339,13 +339,13 @@ public AEPMessagingFCMPushPayload(Map<String, String> data)
 // Using the remote message
 @Override
 public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-    AEPMessagingFCMPushPayload payload = new AEPMessagingFCMPushPayload(remoteMessage);
+    MessagingPushPayload payload = new MessagingPushPayload(remoteMessage);
 }
 
 // Using the data map
 @Override
 public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-    AEPMessagingFCMPushPayload payload = new AEPMessagingFCMPushPayload(remoteMessage.getData());
+    MessagingPushPayload payload = new MessagingPushPayload(remoteMessage.getData());
 }
 ```
 
