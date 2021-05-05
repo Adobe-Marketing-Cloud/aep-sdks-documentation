@@ -116,3 +116,27 @@ ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
 {% endtab %}
 {% endtabs %}
 
+## Call out Swift Separately
+
+{% tabs %}
+{% tab title="iOS - Swift" %}
+## Swift
+
+```swift
+// AEPCore.setLogLevel(AEPMobileLogLevel.debug)
+// AEPCore.setLogLevel(AEPMobileLogLevel.verbose)
+// AEPCore.setLogLevel(AEPMobileLogLevel.warning)
+// AEPCore.setLogLevel(AEPMobileLogLevel.error)
+```
+
+## Objective-C
+
+```objectivec
+// [AEPCore setLogLevel:AEPMobileLogLevelDebug];
+// [AEPCore setLogLevel:AEPMobileLogLevelVerbose];
+// [AEPCore setLogLevel:AEPMobileLogLevelWarning];
+// [AEPCore setLogLevel:AEPMobileLogLevelError];
+```
+{% endtab %}
+{% endtabs %}
+

@@ -4,31 +4,19 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
-{% hint style="info" %}
+{% hint style="success" %}
 ## Swift SDKs are here!
 
 We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
-{% hint style="success" %}
-### Apple M1 Compatibility
+## Bring the Adobe Experience Cloud to your apps
 
-In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+The Adobe Experience Platform Mobile SDK helps power Adobe's Experience Cloud solutions and services in your mobile apps.
 
-Please see [Release notes](release-notes.md#december-18-2020) and [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
-{% endhint %}
+The SDK is comprised of the Mobile Core and a series of modular Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Extensions interact with the Mobile Core to provide features specific to the solution or service they represent.
 
-{% hint style="info" %}
-### Adobe Experience Cloud & Apple's iOS 14 IDFA, Privacy Announcements
-
-See [here](adobe-experience-cloud-and-apples-idfa-announcement.md) for more information on context, impact, and other information around Apple's iOS 14 updates.
-{% endhint %}
-
-## Bring Adobe Experience Cloud to your apps
-
-The Adobe Experience Platform Mobile SDK is required to power Adobe's Experience Cloud solutions and services in your mobile apps. The SDK is composed of the Mobile Core and a series of Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Each extension registers with the Mobile Core to provide features specific to the solution or service it represents.
-
-To implement the SDK, create a mobile property in Adobe Experience Platform Launch, set up the configuration required by the Mobile Core and by other extensions you may add, and publish the configuration into an environment. To initialize the SDK in your app, you'll reference the environment to get started.
+Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](./#supported-platforms) of cross-platform development frameworks. SDKs configuration is managed via Adobe Experience Platform Launch for flexible configuration and extensible, rules-based integrations.
 
 {% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
 
