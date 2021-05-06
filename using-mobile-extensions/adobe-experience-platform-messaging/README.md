@@ -153,7 +153,7 @@ public class MobileApp extends Application {
       try {
         Edge.registerExtension();
         Identity.registerExtension();
-        AEPMessaging.registerExtension(); // register Messaging
+        Messaging.registerExtension(); // register Messaging
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
