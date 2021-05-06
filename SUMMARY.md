@@ -51,6 +51,7 @@
 * [Adobe Experience Platform Edge Network](using-mobile-extensions/experience-platform-extension/README.md)
   * [Release Notes](using-mobile-extensions/experience-platform-extension/release-notes.md)
   * [Edge Network API reference](using-mobile-extensions/experience-platform-extension/edge-network-api-reference.md)
+  * [XDM Experience Events](using-mobile-extensions/experience-platform-extension/xdm-experience-events.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
