@@ -59,6 +59,7 @@
   * [API Reference](consent-for-edge-network/api-reference.md)
 * [Identity for Edge Network](identity-for-edge-network.md)
 * [Release Notes](release-notes-1.md)
+* [API Reference](api-reference.md)
 * [Adobe Experience Platform Assurance](adobe-experience-platform-assurance/README.md)
   * [Release Notes](adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](adobe-experience-platform-assurance/assurance-api-reference.md)
