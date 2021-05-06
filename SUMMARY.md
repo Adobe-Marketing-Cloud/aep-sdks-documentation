@@ -48,6 +48,7 @@
     * [Rules Engine technical details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](using-mobile-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)
   * [Platform Services](using-mobile-extensions/mobile-core/platform-services.md)
+* [Adobe Experience Platform Edge Mobile Extension](using-mobile-extensions/experience-platform-extension.md)
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
@@ -132,7 +133,6 @@
 
 ## BETA
 
-* [Adobe Experience Platform Edge Mobile Extension](beta/experience-platform-extension.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
