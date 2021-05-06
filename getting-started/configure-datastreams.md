@@ -1,6 +1,6 @@
 # Configure Datastreams
 
-For mobile data collection via the Adobe Experience Platform Edge Network, the configuration of the Experience Platform Mobile SDK is now split between two workflows within [Experience Platform Launch](https://launch.adobe.com):
+After you've created a schema and its associated dataset, you may now configure datastreams \(also referred to as Edge configurations or Edge Network configurations\).
 
 {% hint style="warning" %}
 To create an Datastream, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.
@@ -12,10 +12,11 @@ The Datastreams tool is available to customers on the _allow list_ regardless wh
 Users will require _Develop_ permissions in Experience Platform Launch. See the [User Permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) article in the Experience Platform Launch documentation for more details.
 {% endhint %}
 
-1. Create a Datastream - The Datastream contains settings for Adobe solutions and services and is setup server-side \(instead of client-side\). The Datastream is identified to the Mobile SDK by edgeConfigId \(via the Edge Network Extension\).
-2. Setting up a mobile property - As previously done, users will need to create and setup a mobile property and add the Adobe Experience Platform Edge Network extension \(and other extensions as needed\) to obtain install instructions and the client environment ID.
+### What is a datastream?
 
-To create a new Datatstream follow the steps below:
+A datastream is a configured instance of the Edge Network that contains settings for your Adobe solutions and services. This configuration ensures that incoming data to the Edge Network is routed to Adobe Experience Platform and Adobe Experience Cloud solutions & services appropriately.
+
+The following steps illustrate how to create a sample datastream for a mobile implementation:
 
 1. In the browser, navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and login with your credentials.
 2. From the left panel, choose **Datatstreams** from the dropdown \(instead of **Client Side**\).
@@ -37,5 +38,5 @@ Make note of the listed, Launch Datatstream **Environment ID**s, as these values
 
 ![Environment IDs for your Datatstream](../.gitbook/assets/screen-shot-2021-02-02-at-12.45.55-pm.png)
 
-For additional information on Datatstreams in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
+For additional information on datatstreams in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
 
