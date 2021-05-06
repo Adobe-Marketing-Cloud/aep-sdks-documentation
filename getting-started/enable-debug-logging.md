@@ -1,8 +1,10 @@
-# Enable debug logging
+# Debugging & lifecycle metrics
 
-### Debug logging
+## Debug logging
 
-Debug logging is an optional, yet critical SDK feature. By enabling logging, you can ensure that the SDK is working as intended. The following table explains levels of logging available and the purpose they serve:
+Debug logging is an optional, yet a recommended and critical SDK feature.
+
+By enabling logging, you can ensure that the SDK is working as intended. The following table explains levels of logging available and the purpose they serve:
 
 | Log Level | Description |
 | :--- | :--- |
@@ -118,13 +120,19 @@ ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
 {% endtab %}
 {% endtabs %}
 
-### Lifecycle metrics
+## Lifecycle metrics
+
+Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. A complete list of available metrics is provided [here](../using-mobile-extensions/mobile-core/lifecycle/).
+
+These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You may also set additional lifecycle metrics.
 
 {% hint style="warning" %}
 This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
-Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You can also set additional lifecycle metrics.
+{% hint style="danger" %}
+Lifecycle metrics are not available for Edge Network at this time. Check back soon on support for XDM-based lifecycle metrics for Edge Network implementations.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
