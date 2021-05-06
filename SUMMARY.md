@@ -55,6 +55,7 @@
   * [XDM Experience Events](experience-platform-extension/xdm-experience-events.md)
   * [Validation](experience-platform-extension/validation.md)
 * [Adobe Experience Platform Assurance](adobe-experience-platform-assurance/README.md)
+  * [Consent for Edge Network](adobe-experience-platform-assurance/consent-for-edge-network.md)
   * [Release Notes](adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
