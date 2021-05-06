@@ -20,7 +20,7 @@ The following information outlines the steps you'll need to follow to get starte
 5. [Debugging and implementing basic events](enable-debug-logging.md)
 6. [Validation](validate.md)
 
-## Integration via solutions-specific network infrastructure
+## Integration via solutions-specific network endpoints
 
 ![](../.gitbook/assets/2-img.png)
 
