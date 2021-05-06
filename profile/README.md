@@ -30,7 +30,24 @@ To add the Profile extension to your app:
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'AEPUserProfile'`.
+2. Import the UserProfile library.  
+
+### Objective C
+
+```text
+  @import AEPUserProfile;
+```
+
+### Swift
+
+```swift
+   import AEPUserProfile
+```
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 ### Objective C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
@@ -139,7 +156,37 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+### Objective C
+
+**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
+
+1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@AEPMobileUserProfile.class] completion:^{
+    ...
+  }];
+  ...
+  // Override point for customization after application launch.
+  return YES;
+}
+```
+
+### Swift
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([UserProfile.self], {
+  })
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 ### Objective C
 
 **Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
