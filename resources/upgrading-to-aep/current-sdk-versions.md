@@ -9,7 +9,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 ## Android
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later
+Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later.  The Adobe Experience Platform Edge Network extension requires Android versions 4.4 or later \(API levels 19 or later\).
 {% endhint %}
 
 | Extension | Maven | Github |

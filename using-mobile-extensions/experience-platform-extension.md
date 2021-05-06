@@ -156,8 +156,3 @@ To update the SDK configuration programmatically, use the following information 
 | :--- | :--- | :--- | :--- |
 | edge.configId | Yes | See [datastreams](experience-platform-extension.md#datastreams) | String |
 
-## What OS & platform versions are supported?
-
-* Android versions 4.4 or later \(API levels 19 or later\)
-* iOS versions 10 or later
-
