@@ -59,7 +59,50 @@ UserProfile.updateUserAttributes(profileMap);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+### updateUserAttributes
+
+Sets the user profile attributes key and value.
+
+Allows to create/update a batch of user profile attributes:
+
+* String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
+* We do not allow custom objects to be saved as a `UserProfile` attribute.
+* If the attribute already exists, then the value will be updated.
+* If the attribute does not exist, it will be created.
+
+A null attribute value will remove the attribute.
+
+#### **Syntax**
+
+```swift
+public static func updateUserAttributes(attributeDict: [String: Any])
+```
+
+#### **Examples**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+**Objective C**
+
+```objectivec
+NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
+[profileMap setObject:@"username" forKey:@"will_smith"];
+[profileMap setObject:@"usertype" forKey:@"Actor"];
+[AEPMobileUserProfile updateUserAttributes:profileMap];
+```
+
+**Swift**
+
+```swift
+var profileMap = [AnyHashable: Any]()
+profileMap["username"] = "will_smith"
+profileMap["usertype"] = "Actor"
+UserProfile.updateUserAttributes(attributeDict: profileMap)
+```
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 ### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -391,7 +434,45 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+### **removeUserAttribute**
+
+Removes the user profile attribute for the given key.
+
+#### **Syntax**
+
+```java
+public static void removeUserAttribute(String attributeName)
+```
+
+#### **Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```java
+UserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+### **removeUserAttributes**
+
+Removes the user profile attributes for the given keys.
+
+#### **Syntax**
+
+```java
+public static void removeUserAttributes(List<String> attributeNames)
+```
+
+#### **Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```java
+UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
+```
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 ### removeUserAttribute
 
 Removes the user profile attribute for the given key.
@@ -647,7 +728,40 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+### **getUserAttributes**
+
+Gets the user profile attributes with the given keys.
+
+#### **Syntax**
+
+```java
+public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
+```
+
+* _callback_ is invoked after the customer attributes are available.
+
+#### **Example**
+
+A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
+
+When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
+```java
+UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
+            @Override
+            public void fail(AdobeError adobeError) {
+                // your customized code
+            }
+            @Override
+            public void call(Map<String, Object> stringObjectMap) {
+                     // your customized code
+            }
+        });
+```
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
