@@ -19,7 +19,6 @@
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Debugging & lifecycle metrics](getting-started/enable-debug-logging.md)
 * [Track events](getting-started/initialize-the-sdk.md)
-* [Implement extensions](getting-started/next-steps.md)
 * [Validation and next steps](getting-started/validate.md)
 
 ## Mobile Foundations <a id="foundation-extensions"></a>
