@@ -147,7 +147,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% endtab %}
 
 {% tab title="React Native" %}
-You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../mobile-core/) extension. Follow these steps to get started:
+You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../../mobile-core/) extension. Follow these steps to get started:
 
 #### Create React Native Project
 

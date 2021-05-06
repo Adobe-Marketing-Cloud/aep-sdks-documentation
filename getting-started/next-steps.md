@@ -1,8 +1,8 @@
 # Implement extensions
 
-Now that you have added and initialized the Experience Platform SDK and added the Mobile Core and Profile extensions to your mobile application, you can start implementing extensions that will help you use Adobe or Adobe-partner solutions and services functionality in your mobile apps.
+Once you have added and initialized the Experience Platform SDK you can extend SDK functionality by adding other extensions. implementing extensions that will help you use Adobe or Adobe-partner solutions and services functionality in your mobile apps.
 
-To get started, see the **Using the Mobile Extensions** section in the left pane.
+To get started, see the **Mobile Foundations** and **Experience Cloud** sections in the left pane.
 
 ## Get help
 

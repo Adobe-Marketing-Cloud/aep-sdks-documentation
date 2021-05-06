@@ -4,7 +4,7 @@ This page details SDK API changes between the Experience Platform SDKs and 4x SD
 
 ## Mobile Core APIs <a id="audience-manager-extension-apis"></a>
 
-For more information, see [Mobile Core API reference](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
+For more information, see [Mobile Core API reference](../../mobile-core/mobile-core-api-reference.md).
 
 ### Supported APIs
 
@@ -18,10 +18,10 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 | [configureWithAppId:](api-change-log.md) | Not applicable |
 | [updateConfiguration:](api-change-log.md) | Not applicable |
 | setAppGroup: | setAppGroup: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ios_ext.html)\) |
-| [trackState:data:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/states.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/states.html)\) |
-| [trackAction:data:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) |
-| [collectPII:](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
-| [getSdkIdentities:](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_mob_gdpr_ret-stored-ids-ios.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_mob_gdpr_ret-stored-ids-android.html)\) |
+| [trackState:data:](../../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/states.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/states.html)\) |
+| [trackAction:data:](../../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) |
+| [collectPII:](../../mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
+| [getSdkIdentities:](../../mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_mob_gdpr_ret-stored-ids-ios.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_mob_gdpr_ret-stored-ids-android.html)\) |
 
 ### Deprecated APIs and functionality
 
@@ -46,16 +46,16 @@ For more information, see [Mobile Core API reference](../../using-mobile-extensi
 ### Supported APIs
 
 {% hint style="warning" %}
-In the v4 iOS SDK, Lifecycle `start` and `stop` calls are made automatically by the SDK. In the AEP SDK, the calls to start and stop lifecycle will need to be made by the application developer. For more information, see [Lifecycle extension in iOS](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md).
+In the v4 iOS SDK, Lifecycle `start` and `stop` calls are made automatically by the SDK. In the AEP SDK, the calls to start and stop lifecycle will need to be made by the application developer. For more information, see [Lifecycle extension in iOS](../../mobile-core/lifecycle/lifecycle-extension-in-ios.md).
 {% endhint %}
 
-For more information, see [Lifecycle API reference](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md).
+For more information, see [Lifecycle API reference](../../mobile-core/lifecycle/lifecycle-api-reference.md).
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| [lifecycleStart:](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStart:](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStop](../../using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | pauseCollectingLifecycleData \([Android only](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStart:](../../mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStart:](../../mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStop](../../mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | pauseCollectingLifecycleData \([Android only](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
 
 ### Deprecated APIs
 
@@ -65,7 +65,7 @@ For more information, see [Lifecycle API reference](../../using-mobile-extension
 
 ## Identity extension APIs
 
-For more information, see [Identity API reference](../../using-mobile-extensions/mobile-core/identity/identity-api-reference.md).
+For more information, see [Identity API reference](../../mobile-core/identity/identity-api-reference.md).
 
 ### Supported APIs
 

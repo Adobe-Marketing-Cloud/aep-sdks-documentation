@@ -213,11 +213,11 @@ ACPCore.getPrivacyStatus(withCompletionHandler: { status, error in
 
 ## Retrieving stored identifiers
 
-To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#getsdkidentities) API from the Mobile Core extension.
+To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../mobile-core/mobile-core-api-reference.md#getsdkidentities) API from the Mobile Core extension.
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration API reference](../using-mobile-extensions/mobile-core/configuration/configuration-api-reference.md).
+To update the SDK configuration, programmatically, use the following information to change your privacy configuration values. For more information, [Configuration API reference](../mobile-core/configuration/configuration-api-reference.md).
 
 | Key | Description |
 | :--- | :--- |

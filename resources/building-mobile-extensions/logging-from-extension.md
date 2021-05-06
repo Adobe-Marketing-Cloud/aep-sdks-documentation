@@ -48,5 +48,5 @@ if ([ACPCore registerExtension:[MyExtension class] error:&error]) {
 
 ## Additional Information
 
-Read more about Mobile SDK Logging [here](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#logging)
+Read more about Mobile SDK Logging [here](../../mobile-core/mobile-core-api-reference.md#logging)
 

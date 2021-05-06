@@ -1,4 +1,4 @@
-# Validation
+# Validation and next steps
 
 As you begin to add solution APIs to your mobile implementation, you are going to want to validate that specific actions and experiences work as intended. Adding [Project Griffon](../beta/project-griffon/#what-can-project-griffon-do-for-you) to your application at the beginning of your implementation provides a way to quickly check to make sure the SDK has been instrumented properly and that data is flowing to Adobe Analytics and other solutions.
 
@@ -25,4 +25,10 @@ To learn more about Places Service see: [Places Service overview](https://docs.a
 ![Project Griffon Places Service Location Simulation](../.gitbook/assets/GriffonPlaces.png)
 
 To learn more about Project Griffon see: [Project Griffon setup](../beta/project-griffon/set-up-project-griffon.md)
+
+## Next Steps
+
+Once you have added, initialized, and validated the Experience Platform SDK for a base implementation — you can extend SDK functionality by adding in other extensions. 
+
+To get started, see the **MOBILE FOUNDATIONS** and **EXPERIENCE CLOUD** sections in the left pane.
 

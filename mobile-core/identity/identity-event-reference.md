@@ -279,7 +279,7 @@ For more details about this event, see the [Mobile Core](https://app.gitbook.com
 
 The Identity extension dispatches a new Analytics Content Request event when a push status preference change is detected, when the push identifier is initially set, or when it is cleared from the SDK. This event is handled by the Analytics extension, and a new internal hit is sent to the Adobe Analytics Server.
 
-For more details about this event see [Analytics Content Request](../../adobe-analytics/analytics-event-reference.md#analytics-content-request)
+For more details about this event see [Analytics Content Request](../../using-mobile-extensions/adobe-analytics/analytics-event-reference.md#analytics-content-request)
 
 ## Shared state
 

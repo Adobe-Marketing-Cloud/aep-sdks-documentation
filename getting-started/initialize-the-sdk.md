@@ -382,7 +382,7 @@ ACPCore.TrackState("state", data);
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
+For more information, see [Mobile Core API Reference](../mobile-core/mobile-core-api-reference.md).
 
 ## Get help
 
