@@ -18,7 +18,7 @@
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Debugging & lifecycle metrics](getting-started/enable-debug-logging.md)
-* [Set up tracking](getting-started/initialize-the-sdk/README.md)
+* [Track events](getting-started/initialize-the-sdk/README.md)
   * [Set up your first XDM Experience event](getting-started/initialize-the-sdk/set-up-your-first-xdm-experience-event.md)
 * [Implement extensions](getting-started/next-steps.md)
 * [Validation](getting-started/validate.md)

@@ -1,12 +1,16 @@
-# Set up tracking
+# Track events
 
-You can use the user actions APIs below to measure your user’s engagement with your app.
+The SDK provides 3 event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
 
-Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
-
-This section shows you how to start tracking app screens and user actions. To view and report on this data in those respective solutions, set up [Analytics](../../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
+1. Send events to Edge Network
+2. [Track user actions](./#track-user-actions) \(used for Adobe Analytics integrations\)
+3. [Track app states and screens](./#track-app-states-and-screens) \(used for Adobe Analytics integrations\)
 
 ### Track user actions
+
+This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Analytics](../../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
+
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
 {% hint style="warning" %}
 You must call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
