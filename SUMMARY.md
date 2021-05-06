@@ -96,6 +96,7 @@
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Offer Decisioning](using-mobile-extensions/offer-decisioning.md)
+* [API Reference](using-mobile-extensions/api-reference.md)
 * [Places Service](using-mobile-extensions/adobe-places.md)
 
 ## Resources
