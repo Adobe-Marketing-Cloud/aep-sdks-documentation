@@ -10,7 +10,7 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-![AEP Consent extension configuration](../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
+![AEP Consent extension configuration](.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 ## Add the AEP Consent extension to your app
 
