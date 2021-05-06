@@ -20,14 +20,14 @@ When the view is loaded, it provides a panel on the left that contains a categor
 
 ## Writing a Validation Function
 
-This feature allows you to create, edit, or delete validation functions for your Project Griffon sessions. 
+This feature allows you to create, edit, or delete validation functions for your Project Griffon sessions.
 
 1. Select **Create a New Validation**.
 2. Enter a **name** to identify the validation, then provide a **category** and a **description**.
 3. Edit the code in the editor to validate the events for your Project Griffon session.
 4. Click **Test** to preview the results of the function in the left panel.
 
-After you have tested your function, you can click **Upload** to save your validation. 
+After you have tested your function, you can click **Upload** to save your validation.
 
 ### Event Definition
 
@@ -53,11 +53,11 @@ After you have tested your function, you can click **Upload** to save your valid
 
 To execute the function in the code editor, click **Test**. The function is expected to return an object that contains the following:
 
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| `message` | String | The validation message to display in the summary results. |
-| `events` | Array | An array of event uuids to be reported as matched or not matched. |
-| `result` | 'matched'|'not matched'|'unknown' | This is the validation result and is expected to be one of the enumerated strings. |
+| Key | Type | Description |  |  |
+| :--- | :--- | :--- | :--- | :--- |
+| `message` | String | The validation message to display in the summary results. |  |  |
+| `events` | Array | An array of event uuids to be reported as matched or not matched. |  |  |
+| `result` | 'matched' | 'not matched' | 'unknown' | This is the validation result and is expected to be one of the enumerated strings. |
 
 ![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 

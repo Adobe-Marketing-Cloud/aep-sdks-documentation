@@ -2,18 +2,25 @@
 
 * [Home](README.md)
 * [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
-* [Release notes](release-notes.md)
+* [Release notes](release-notes/README.md)
+  * [2020](release-notes/2020.md)
+  * [2019](release-notes/2019.md)
+  * [2018](release-notes/2018.md)
 * [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
 * [Version 4 API Changelog](api-change-log.md)
 * [Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
 
 ## Getting Started
 
+* [Overview](getting-started/overview.md)
+* [Setup Schemas & Datasets](getting-started/setup-schemas-and-datasets.md)
+* [Configure Datastreams](getting-started/configure-datastreams.md)
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Enable debug logging](getting-started/enable-debug-logging.md)
 * [Enable lifecycle metrics](getting-started/enable-lifecycle-metrics.md)
-* [Set up tracking](getting-started/initialize-the-sdk.md)
+* [Set up tracking](getting-started/initialize-the-sdk/README.md)
+  * [Set up your first XDM Experience event](getting-started/initialize-the-sdk/set-up-your-first-xdm-experience-event.md)
 * [Implement extensions](getting-started/next-steps.md)
 * [Validation](getting-started/validate.md)
 
@@ -89,6 +96,9 @@
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
 * [Tutorials](resources/user-guides/README.md)
+  * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform/README.md)
+    * [Sample XDM Implementation](resources/user-guides/getting-started-with-adobe-experience-platform/sample-xdm-implementation.md)
+    * [Rules & XDM events](resources/user-guides/getting-started-with-adobe-experience-platform/rules-and-xdm-events.md)
   * [Tracking Beacons](resources/user-guides/track-beacon.md)
   * [Attach data to SDK events](resources/user-guides/attach-data.md)
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
