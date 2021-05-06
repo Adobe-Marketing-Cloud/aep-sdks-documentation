@@ -17,7 +17,7 @@ To enable Offer Decisioning, you need to perform the following steps:
 
    Enable Adobe Experience Platform in your [edge configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en) and check the `Offer Decisioning` box
 
-![](../.gitbook/assets/offer-decisioning-edge-config.png)
+![](../../.gitbook/assets/offer-decisioning-edge-config.png)
 
 1. Add AEP Offer Decisioning extension to the project.
 
