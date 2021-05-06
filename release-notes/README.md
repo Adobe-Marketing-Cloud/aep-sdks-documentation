@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+### May 5, 2021
+
+#### iOS AEPMedia 3.0.0
+
+* Initial release to support Adobe Media workflows with AEP iOS swift SDK. It is [open sourced on github](https://github.com/adobe/aepsdk-media-ios/).
+
 ### April 29, 2021
 
 #### iOS AEPCore 3.1.2
@@ -102,6 +108,16 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 * The Locale string used in HTTP Headers is now properly formatted.
 * Fixed a bug that would sometimes prevent downloaded files from being properly unzipped.
 
+#### iOS AEPAnalytics 3.0.1
+
+* Added support to handle internal analytics track request events
+* Refactored code and updated doc comments
+
+#### iOS AEPAudience 3.0.1
+
+* Updated syncedVisitorIds implementation to a map
+* Fixed access modifer for two classes
+
 ### March 31, 2021
 
 #### Android Core 1.8.0
@@ -151,6 +167,12 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 * No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
 
+### February 26, 2021
+
+#### iOS AEPAnalytics 3.0.0  
+
+- Initial release to support Adobe Analytics workflows with AEP iOS swift SDK. It is [open sourced on github](https://github.com/adobe/aepsdk-analytics-ios/).
+
 ### February 24, 2021
 
 #### Android Core 1.7.0
@@ -172,6 +194,12 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 * Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
 * Fixed a bug which prevented cached configuration being loaded during app launch.
 * Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
+
+### January 29, 2021
+
+#### iOS Audience 3.0.0
+
+- Initial release to support Adobe Audience workflows with AEP iOS swift SDK. It is [open sourced on github](https://github.com/adobe/aepsdk-audience-ios/).
 
 ### January 19, 2021
 
