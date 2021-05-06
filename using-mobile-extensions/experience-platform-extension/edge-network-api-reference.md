@@ -1,4 +1,4 @@
-# Edge Network API Reference
+# Edge Network API reference
 
 ## extensionVersion <a id="extensionversion"></a>
 
