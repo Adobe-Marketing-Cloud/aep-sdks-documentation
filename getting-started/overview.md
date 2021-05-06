@@ -1,15 +1,17 @@
 # Overview
 
-The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud services via one or both of the following methods:
+The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud solutions and services via one or both of the following methods:
 
 1. [Adobe Experience Platform Edge Network](overview.md#integration-via-experience-platform-edge-network)
 2. [Leveraging Experience Cloud solution / service-specific network infrastructure](overview.md#integration-via-solutions-specific-network-infrastructure)
+
+The following information outlines the steps you'll need to follow to get started to leverage integrations via one or both methods.
 
 ## Integration via Experience Platform Edge Network
 
 ![](../.gitbook/assets/1-img.png)
 
-### Workflow
+### Steps to Getting Started
 
 1. [Setup Schemas & Datasets](setup-schemas-and-datasets.md)
 2. [Configure Datastreams](configure-datastreams.md)
@@ -22,7 +24,7 @@ The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experie
 
 ![](../.gitbook/assets/2-img.png)
 
-### Workflow
+### Steps to Getting Started
 
 1. Configure solutions
 2. [Setup Mobile Property](create-a-mobile-property.md)
