@@ -3,7 +3,7 @@
 The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud solutions and services via one or both of the following methods:
 
 1. [Adobe Experience Platform Edge Network](overview.md#integration-via-experience-platform-edge-network)
-2. [Leveraging Experience Cloud solution / service-specific network infrastructure](overview.md#integration-via-solutions-specific-network-infrastructure)
+2. [Leveraging Experience Cloud solution / service-specific endpoints](overview.md#integration-via-solutions-specific-network-infrastructure)
 
 The following information outlines the steps you'll need to follow to get started to leverage integrations via one or both methods.
 
@@ -20,7 +20,7 @@ The following information outlines the steps you'll need to follow to get starte
 5. [Debugging and implementing basic events](enable-debug-logging.md)
 6. [Validation](validate.md)
 
-## Integration via solutions-specific network endpoints
+## Integration via solutions-specific endpoints
 
 ![](../.gitbook/assets/2-img.png)
 
