@@ -84,7 +84,7 @@ To add APNs to your app please follow the [Apple's documentation](https://develo
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:messaging:1.+'
+   implementation 'com.adobe.marketing.mobile:messaging:1.0.0-beta-1'
    ```
 
 2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
@@ -107,7 +107,7 @@ To add APNs to your app please follow the [Apple's documentation](https://develo
        pod 'AEPCore'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPMessaging'
+       pod 'AEPMessaging', :git => 'git@github.com:adobe/aepsdk-messaging-ios.git', :branch => 'main'
    end
    ```
 
