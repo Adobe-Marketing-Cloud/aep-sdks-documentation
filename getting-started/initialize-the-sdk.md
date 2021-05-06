@@ -2,13 +2,109 @@
 
 The SDK provides 3 event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
 
-1. Send events to Edge Network
-2. [Track user actions](./#track-user-actions) \(used for Adobe Analytics integrations\)
-3. [Track app states and screens](./#track-app-states-and-screens) \(used for Adobe Analytics integrations\)
+1. Send events to Edge Network \(requires Edge Network extension\)
+2. [Track user actions](initialize-the-sdk.md#track-user-actions) \(requires Adobe Analytics extension\)
+3. [Track app states and screens](initialize-the-sdk.md#track-app-states-and-screens) \(requires Adobe Analytics extension\)
 
-### Track user actions
+## Send events to Edge Network
 
-This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Analytics](../../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
+The Edge Network extension provides an API to send an `ExperienceEvent` to Edge Network. And `ExperienceEvent` is an object that contains data conforming to an XDM `ExperienceEvent` schema definition in Adobe Experience Platform.
+
+{% hint style="info" %}
+Experience Events to track time-series-based user actions in your mobile application or cross channel.
+{% endhint %}
+
+In the following reference examples, you'll create an ExperienceEvent and then send it using the sendEvent API.
+
+For the XDM schema, we've added the `Environment Details` mixin and also created a custom mixin for product reviews that contain the following fields:
+
+* productSku
+* rating
+* ratingText
+* reviewerId
+
+### Create ExperienceEvent
+
+{% tabs %}
+{% tab title="Android" %}
+### Java
+
+```text
+Map<String, Object> reviewXdmData = new HashMap<>();
+reviewXdmData.put("productSku", "demo123");
+reviewXdmData.put("rating", 5);
+reviewXdmData.put("reviewText", "I love this demo!");
+reviewXdmData.put("reviewerId", "Anonymous user");
+
+Map<String, Object> xdmData = new HashMap<>();
+xdmData.put("eventType", "MyFirstXDMExperienceEvent");
+xdmData.put(_yourTenantId, reviewXdmData);
+
+ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+                .setXdmSchema(xdmData)
+                .build();
+```
+{% endtab %}
+
+{% tab title="iOS — Swift" %}
+### Swift
+
+```swift
+var xdmData : [String: Any] = [:]
+xdmData["eventType"] = "MyFirstXDMExperienceEvent"
+xdmData[_yourTenantId] = ["productSku": "demo123",
+                          "rating": 5,
+                          "reviewText": "I love this demo!",
+                          "reviewerId": "Anonymous user"]
+let experienceEvent = ExperienceEvent(xdm: xdmData)
+```
+
+### Objective-C
+
+```text
+NSDictionary<NSString*, NSObject*>* xdmData;
+[xdmData setValue:@"MyFirstXDMExperienceEvent" forKey:@"eventType"];
+[xdmData setValue:@{@"productSku": @"demo123",
+                    @"rating": @5,
+                    @"reviewText": @"I love this demo!",
+                    @"reviewerId": @"Anonymous user"}
+                      forKey:_yourTenantId];
+AEPExperienceEvent *experienceEvent = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:nil];
+```
+{% endtab %}
+{% endtabs %}
+
+### Send ExperienceEvent to Edge Network
+
+Use the AEP Edge mobile extension to send the Experience event created in the previous step.
+
+{% tabs %}
+{% tab title="Android" %}
+### Java
+
+```text
+Edge.sendEvent(experienceEvent, null);
+```
+{% endtab %}
+
+{% tab title="iOS — Swift" %}
+### Swift
+
+```swift
+Edge.sendEvent(experienceEvent: experienceEvent)
+```
+
+### Objective-C
+
+```text
+[AEPMobileEdge sendExperienceEvent:event completion:nil];
+```
+{% endtab %}
+{% endtabs %}
+
+## Track user actions \(for Adobe Analytics\)
+
+This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 
 Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
 
@@ -37,7 +133,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Obj-C" %}
 ### trackAction
 
 ### Objective C
@@ -148,7 +244,7 @@ ACPCore.TrackAction("action", data);
 {% endtab %}
 {% endtabs %}
 
-### Track app states and screens
+## Track app states and screens \(for Adobe Analytics\)
 
 States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this method might be called. This method also sends an Analytics state tracking hit with optional context data.
 
@@ -175,7 +271,7 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Obj-C" %}
 ### trackState
 
 ### Objective C
@@ -286,7 +382,7 @@ ACPCore.TrackState("state", data);
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Mobile Core API Reference](../../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
+For more information, see [Mobile Core API Reference](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md).
 
 ## Get help
 
