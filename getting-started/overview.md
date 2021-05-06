@@ -3,7 +3,7 @@
 The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud services via one or both of the following methods:
 
 1. [Adobe Experience Platform Edge Network](overview.md#integration-via-experience-platform-edge-network)
-2. [Leveraging Experience Cloud solution / service -specific network infrastructure](overview.md#integration-via-solutions-specific-network-infrastructure)
+2. [Leveraging Experience Cloud solution / service-specific network infrastructure](overview.md#integration-via-solutions-specific-network-infrastructure)
 
 ## Integration via Experience Platform Edge Network
 

@@ -83,7 +83,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 | [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html) | Releasing Soon |  |
 | [Places Monitor](https://docs.adobe.com/content/help/en/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html) | Releasing Soon |  |
 | [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&label=AEPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAnalytics) | [Link](https://github.com/adobe/aepsdk-analytics-ios) |
-| [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics)  | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPMedia.svg?color=orange&label=AEPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPMedia) | [Link](https://github.com/adobe/aepsdk-media-ios) |
+| [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPMedia.svg?color=orange&label=AEPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPMedia) | [Link](https://github.com/adobe/aepsdk-media-ios) |
 | [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAudience.svg?color=orange&label=AEPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAudience) | [Link](https://github.com/adobe/aepsdk-audience-ios) |
 | [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services) | Releasing Soon |  |
 | [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&label=AEPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPTarget) | [Link](https://github.com/adobe/aepsdk-target-ios) |
@@ -95,7 +95,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for React Native are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time. 
+Adobe Experience Platform Mobile SDK plugins for React Native are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 {% hint style="info" %}
@@ -120,7 +120,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time. 
+Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 A sample Cordova application that uses the Adobe Experience Platform Mobile SDK can be found [here](https://github.com/adobe/cordova-acpsample).
@@ -155,7 +155,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time. 
+Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 | Extension | pub.dev | Github | Sample App |
@@ -172,7 +172,7 @@ Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only wit
 Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time. 
+Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 {% hint style="info" %}
@@ -192,7 +192,7 @@ The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distri
 Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 2019.3.10f1 or later**. For the latest Unity installation instructions, see the `README` file in the [`unity-acpcore`](https://github.com/adobe/unity-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time. 
+Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
