@@ -33,11 +33,6 @@
   * [Release Notes](using-mobile-extensions/adobe-edge-identity/edge-identity-release-notes.md)
   * [Identity API reference](using-mobile-extensions/adobe-edge-identity/edge-identity-api-reference.md)
   * [FAQ](using-mobile-extensions/adobe-edge-identity/edge-identity-faq.md)
-* [Consent](using-mobile-extensions/adobe-edge-consent/README.md)
-  * [Release Notes](using-mobile-extensions/adobe-edge-consent/edge-consent-release-notes.md)
-  * [Consent API reference](using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference.md)
-* [Profile](using-mobile-extensions/profile/README.md)
-  * [Profile API reference](using-mobile-extensions/profile/profile-api-references.md)
 * [Offer Decisioning](using-mobile-extensions/offer-decisioning-extension/README.md)
   * [Offer Decisioning API reference](using-mobile-extensions/offer-decisioning-extension/offer-api-reference.md)
 
