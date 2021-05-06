@@ -17,9 +17,11 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 ### Download and import the Identity extension
 
 {% hint style="info" %}
-The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [Frequently Asked Questions]() page.
+The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [Frequently Asked Questions](resources/frequently-asked-questions/) page.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Android" %}
 ### Java
 
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
@@ -48,7 +50,9 @@ The following instructions are for configuring an application using Adobe Experi
    ```
 
 4. Import the Mobile Core and Edge libraries:
+{% endtab %}
 
+{% tab title="iOS — Swift" %}
 ### Swift
 
 ```swift
@@ -66,6 +70,8 @@ import AEPEdgeIdentity
 @import AEPEdge;
 @import AEPEdgeIdentity;
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Register the Identity extension with Mobile Core
 
@@ -94,7 +100,7 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
 ### Swift
 
 ```swift
@@ -121,9 +127,4 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% endtabs %}
-
-## What OS & platform versions are supported?
-
-* Android versions 4.4 or later \(API levels 19 or later\)
-* iOS versions 10 or later
 
