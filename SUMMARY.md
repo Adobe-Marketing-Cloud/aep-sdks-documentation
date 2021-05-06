@@ -14,7 +14,7 @@
 
 * [Overview](getting-started/overview.md)
 * [Setup schemas & datasets](getting-started/setup-schemas-and-datasets.md)
-* [Configure Datastreams](getting-started/configure-datastreams.md)
+* [Configure datastreams](getting-started/configure-datastreams.md)
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Debugging & lifecycle metrics](getting-started/enable-debug-logging.md)

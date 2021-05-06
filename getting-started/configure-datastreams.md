@@ -1,4 +1,4 @@
-# Configure Datastreams
+# Configure datastreams
 
 After you've created a schema and its associated dataset, you may now configure datastreams \(also referred to as Edge configurations or Edge Network configurations\).
 
