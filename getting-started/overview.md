@@ -7,6 +7,8 @@ The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experie
 
 ## Integration via Experience Platform Edge Network
 
+![](../.gitbook/assets/1-img.png)
+
 ### Workflow
 
 1. [Setup Schemas & Datasets](setup-schemas-and-datasets.md)
@@ -17,6 +19,8 @@ The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experie
 6. [Validation](validate.md)
 
 ## Integration via solutions-specific network infrastructure
+
+![](../.gitbook/assets/2-img.png)
 
 ### Workflow
 
