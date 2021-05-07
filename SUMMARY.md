@@ -147,8 +147,8 @@
 
 ## BETA
 
-* [Adobe Journey Optimizer](beta/adobe-journey-optimizer.md)
-* [API Reference](beta/api-reference.md)
+* [Adobe Journey Optimizer](beta/adobe-journey-optimizer/README.md)
+  * [API Reference](beta/adobe-journey-optimizer/api-reference.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
