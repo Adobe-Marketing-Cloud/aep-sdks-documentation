@@ -5,4 +5,4 @@ structure:
     summary: SUMMARY.md
     
 redirects:  
-    docs/using-mobile-extensions/adobe-edge-consent: https://aep-sdks.gitbook.io/docs/consent-for-edge-network
+    docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: docs/consent-for-edge-network
