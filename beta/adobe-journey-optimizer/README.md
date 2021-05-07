@@ -3,9 +3,9 @@
 The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collects user push tokens and manages interaction measurement with Adobe Experience Platform services.
 
 {% hint style="warning" %}
-Adobe Journey Optimizer is a beta product.
+### Beta
 
-Please contact your Adobe Customer Success Manager for more details.
+Adobe Journey Optimizer is a beta product. Please contact your Adobe Customer Success Manager for more details.
 {% endhint %}
 
 {% hint style="info" %}
