@@ -109,7 +109,7 @@ Identity.getIdentities(new AdobeCallback<IdentityMap>() {
 {% tab title="iOS" %}
 ### getIdentities
 
-Get all identities in the Identity for Egde Network extension, including customer identifiers which were previously added.
+Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
 **Syntax**
 
