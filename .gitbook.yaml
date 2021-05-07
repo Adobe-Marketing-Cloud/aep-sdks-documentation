@@ -6,4 +6,4 @@ root: ./
     
 redirects:  
     docs/beta/experience-platform-extension: docs/release-notes
-    docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: docs/consent-for-edge-network
+    docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: docs/foundation-extensions/consent-for-edge-network
