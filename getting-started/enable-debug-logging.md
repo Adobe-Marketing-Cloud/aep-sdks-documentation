@@ -122,7 +122,7 @@ ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
 
 ## Lifecycle metrics
 
-Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. A complete list of available metrics is provided [here](../mobile-core/lifecycle/).
+Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. A complete list of available metrics is provided [here](../foundation-extensions/mobile-core/lifecycle/).
 
 These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You may also set additional lifecycle metrics.
 
@@ -349,5 +349,5 @@ protected override void OnPause()
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Lifecycle Metrics](../mobile-core/lifecycle/).
+For more information, see [Lifecycle Metrics](../foundation-extensions/mobile-core/lifecycle/).
 

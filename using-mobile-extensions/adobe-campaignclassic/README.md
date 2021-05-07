@@ -67,7 +67,7 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Campaign Classic and [Mobile Core](../../mobile-core/) libraries to your project.
+1. Add the Campaign Classic and [Mobile Core](../../foundation-extensions/mobile-core/) libraries to your project.
 
    You can add the following pods to your `Podfile`:
 

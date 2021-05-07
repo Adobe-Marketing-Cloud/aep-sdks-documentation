@@ -413,11 +413,11 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 
 ## Send Lifecycle Metrics to Analytics
 
-To automatically report on the application lifecycle details in Analytics, ensure that you properly configure the lifecycle data collection. For more information, see [Lifecycle Metrics.](../../mobile-core/lifecycle/)
+To automatically report on the application lifecycle details in Analytics, ensure that you properly configure the lifecycle data collection. For more information, see [Lifecycle Metrics.](../../foundation-extensions/mobile-core/lifecycle/)
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see [Track app actions](../../mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../../mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
+To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see [Track app actions](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
 
 {% hint style="info" %}
 [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
@@ -654,7 +654,7 @@ ACPCore.TrackState("State Name", contextData);
 
 ## Videos
 
-### Using [trackState](../../mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
+### Using [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
 

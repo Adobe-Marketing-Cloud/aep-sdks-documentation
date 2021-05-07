@@ -1,8 +1,8 @@
 # Modify data in SDK events
 
-The _modify data_ rule action is supported in [Mobile Core](../../mobile-core/) starting version 2.1.14 \(Launch\), 2.7.0 \(iOS\), and 1.5.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
+The _modify data_ rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting version 2.1.14 \(Launch\), 2.7.0 \(iOS\), and 1.5.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
 
-To use this action, we need to provide context about how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the SDK's [rules engine](../../mobile-core/rules-engine/). Next, you will learn how to use the action with relevant examples.
+To use this action, we need to provide context about how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the SDK's [rules engine](../../foundation-extensions/mobile-core/rules-engine/). Next, you will learn how to use the action with relevant examples.
 
 ## Context
 
@@ -16,7 +16,7 @@ In the Experience Platform Mobile SDK, events hold all the data that is required
 | Source | Indicates the cause of or directionality of the event. For example, a request or a response. |
 | Event data | Additional data is required to define the event. For example, context data on an Analytics event. |
 
-Extensions that register with [Mobile Core](../../mobile-core/) will also register event listeners. A listener is defined by an event _type_ and _source_ combination. When the SDK event hub processes an event, it notifies all listeners that match the provided combination.
+Extensions that register with [Mobile Core](../../foundation-extensions/mobile-core/) will also register event listeners. A listener is defined by an event _type_ and _source_ combination. When the SDK event hub processes an event, it notifies all listeners that match the provided combination.
 
 ### How are events created in the SDK?
 

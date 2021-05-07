@@ -132,7 +132,7 @@ How you implement push notification tracking and measurement with the SDK depend
 
 ### What are Lifecycle metrics?
 
-Lifecycle metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../mobile-core/lifecycle/).
+Lifecycle metrics are out-of-the-box metrics that are automatically collected when the SDK is first implemented in your app. For more information, see [Lifecycle](../../foundation-extensions/mobile-core/lifecycle/).
 
 ## Adobe Analytics
 

@@ -1,12 +1,12 @@
 # Adobe Experience Platform Assurance
 
-This extension enables capabilities for [Project Griffon](../beta/project-griffon/).
+This extension enables capabilities for [Project Griffon](../../beta/project-griffon/).
 
 {% hint style="info" %}
 Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
 {% endhint %}
 
-To get started with [Project Griffon](../beta/project-griffon/) in your app, you'll need to:
+To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
 1. Install the AEP Assurance extension in Experience Platform Launch
 2. Add AEP Assurance SDK extension library to your app
@@ -21,7 +21,7 @@ Follow these steps to add the install the extension in Experience Platform Launc
 2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
 3. Follow the publishing process to update SDK configuration.
 
-![](../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
+![](../../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
 
 ## Add AEPAssurance to your app
 

@@ -15,7 +15,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 
 The Adobe Experience Platform Mobile SDKs support data collection and other features via the Edge Network.
 
-The new [Experience Platform Edge Network](experience-platform-extension/) extension and others are now available for Android and iOS to help you take advantage of functionality provided by [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) and [Adobe Experience Platform](https://business.adobe.com/products/experience-platform/adobe-experience-platform.html).
+The new [Experience Platform Edge Network](foundation-extensions/experience-platform-extension/) extension and others are now available for Android and iOS to help you take advantage of functionality provided by [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) and [Adobe Experience Platform](https://business.adobe.com/products/experience-platform/adobe-experience-platform.html).
 {% endhint %}
 
 ## Bring the Adobe Experience Cloud to your apps

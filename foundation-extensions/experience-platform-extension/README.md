@@ -5,17 +5,17 @@
 1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
 3. Type in the extension settings
-   1. For more information, see [Configure datastreams](../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
+   1. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ### Configure the AEP Edge Network extension
 
-![Adobe Edge Network extension configuration](../.gitbook/assets/mobile-edge-launch-configuration.png)
+![Adobe Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
-Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was previously created, see [Configure datastreams](../getting-started/configure-datastreams.md).
+Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
 If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
 

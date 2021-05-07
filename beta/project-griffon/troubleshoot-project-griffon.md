@@ -4,7 +4,7 @@ If you are having trouble getting Project Griffon to work, please see suggestion
 
 To enable smoother implementation and to discover any potential issues, ensure you have SDK logging turned on per [Enable Debug Logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging) in the Getting Started section.
 
-You may change SDK log levels using the [`setLogLevel`](../../mobile-core/mobile-core-api-reference.md#logging) API.
+You may change SDK log levels using the [`setLogLevel`](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#logging) API.
 
 ## On-device, app issues
 
@@ -23,12 +23,12 @@ You may change SDK log levels using the [`setLogLevel`](../../mobile-core/mobile
   * [Supporting Universal Links in Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/supporting_universal_links_in_your_app)
 
 {% hint style="info" %}
-For Android, the`startSession` API does not need to be explicitly called. For iOS, use the API as described in [Adobe Experience Platform Assurance](../../adobe-experience-platform-assurance/#implement-aepassurance-session-start-apis-ios-only).
+For Android, the`startSession` API does not need to be explicitly called. For iOS, use the API as described in [Adobe Experience Platform Assurance](../../foundation-extensions/adobe-experience-platform-assurance/#implement-aepassurance-session-start-apis-ios-only).
 {% endhint %}
 
 ### Authentication overlay appears, but app fails to connect
 
 * Ensure internet connectivity of the device through the device web browser.
-* If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See instructions on installing the [Adobe Experience Platform Assurance](../../adobe-experience-platform-assurance/#install-the-assurance-extension-in-experience-platform-launch) SDK library.
-* Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](../../adobe-experience-platform-assurance/assurance-sdk-error-logs.md#orgid-information-is-not-available) \(this is uncommon and relevant only if you have access to more than one ORG instance\).
+* If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See instructions on installing the [Adobe Experience Platform Assurance](../../foundation-extensions/adobe-experience-platform-assurance/#install-the-assurance-extension-in-experience-platform-launch) SDK library.
+* Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](../../foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md#orgid-information-is-not-available) \(this is uncommon and relevant only if you have access to more than one ORG instance\).
 

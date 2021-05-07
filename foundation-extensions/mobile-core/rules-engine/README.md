@@ -16,7 +16,7 @@ A data element is a variable where the value can be mapped to a Visitor ID, a Ca
 
 You can define a set of rules in the [Experience Platform Launch](https://launch.adobe.com/) interface to find specific events or conditions and specify what actions should be triggered when those conditions are met.
 
-![](../../.gitbook/assets/rule_example.png)
+![](../../../.gitbook/assets/rule_example.png)
 
 ### **Events \(If\)**
 

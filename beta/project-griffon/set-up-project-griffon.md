@@ -26,5 +26,5 @@ You may access Project Griffon by visiting [https://experience.adobe.com/griffon
 
 ## Setup app for Project Griffon
 
-Install and implement the [Adobe Experience Platform Assurance SDK extension](../../adobe-experience-platform-assurance/) in your app.
+Install and implement the [Adobe Experience Platform Assurance SDK extension](../../foundation-extensions/adobe-experience-platform-assurance/) in your app.
 

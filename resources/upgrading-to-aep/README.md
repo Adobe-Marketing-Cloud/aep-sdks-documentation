@@ -14,7 +14,7 @@ The Experience Platform SDK have been significantly architecturally re-designed,
 
 Review the following checklist to understand some of the changes and what is required to upgrade:
 
-* The Experience Platform SDKs introduce the [Mobile Core](../../mobile-core/) and constituent extensions.
+* The Experience Platform SDKs introduce the [Mobile Core](../../foundation-extensions/mobile-core/) and constituent extensions.
 
   Mobile Core contains core SDK functionality that is required for all implementations that require Adobe and/or third-party extensions.
 

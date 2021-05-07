@@ -83,11 +83,11 @@ This issue may be resolved by scanning the right QR code or correctly copying th
 
 After you enter the PIN, if you see the following Connection Error:
 
-![Connection error](../.gitbook/assets/assurance_connection_error.png)
+![Connection error](../../.gitbook/assets/assurance_connection_error.png)
 
 You may resolve it by double-checking the PIN is entered correctly from the session associated link or QR code:
 
-![](../.gitbook/assets/assurance_pincode.png)
+![](../../.gitbook/assets/assurance_pincode.png)
 
 Or ensuring internet connectivity on the device/simulator.
 
@@ -99,7 +99,7 @@ If you see a Invalid Launch & SDK Configuration error \(see screenshot below\), 
 2. Configuration in Experience Platform Launch is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration)
 3. Ensure the device/simulator has internet connectivity
 
-![Invalid Launch &amp; SDK configuration](../.gitbook/assets/assurance_invalid_configuration_error.png)
+![Invalid Launch &amp; SDK configuration](../../.gitbook/assets/assurance_invalid_configuration_error.png)
 
 #### Sample logs
 
@@ -121,7 +121,7 @@ W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Invalid L
 
 This error may happen when you have access to multiple organizations in your Adobe Experience Cloud interface. To resolve, ensure the organization which houses the Experience Platform Launch mobile property is the same one as that where you are using Project Griffon.
 
-![Unauthorized access](../.gitbook/assets/assurance_unauthorized_access_error.png)
+![Unauthorized access](../../.gitbook/assets/assurance_unauthorized_access_error.png)
 
 #### Sample logs
 
