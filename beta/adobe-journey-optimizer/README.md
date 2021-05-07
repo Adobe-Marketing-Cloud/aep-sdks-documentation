@@ -203,8 +203,3 @@ To update the SDK configuration programmatically, use the following information 
 | messaging.eventDataset | Yes | Experience Event Dataset Id which can be found from experience platform | String | Android/iOS |
 | messaging.useSandbox | No | See more details in the [Messaging documentation](https://github.com/adobe/aepsdk-messaging-ios/blob/dev/Documentation/SetupSDK.md#using-apnssandbox-environment-for-push-notification) | Boolean | iOS |
 
-## What OS & platform versions are supported?
-
-* Android versions 4.4 or later \(API levels 19 or later\)
-* iOS versions 10 or later
-
