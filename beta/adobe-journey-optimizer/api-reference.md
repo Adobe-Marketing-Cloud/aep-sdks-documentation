@@ -2,11 +2,10 @@
 
 ## extensionVersion <a id="extensionversion"></a>
 
-Returns the version of the client-side Messaging extension.
+Returns the library version.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -47,19 +46,18 @@ public static let extensionVersion
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileMessaging extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
 
-## handleNotificationResponse<a id="handlenotificationresponse"></a>
+## handleNotificationResponse <a id="handlenotificationresponse"></a>
 
-Sends the push notification interactions feedback to **Adobe Experience Platform**.
+Transmits the push notification interactions feedback.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -109,14 +107,14 @@ func userNotificationCenter(_: UNUserNotificationCenter,
 
 #### Syntax
 
-```objective-c
+```text
 @objc(handleNotificationResponse:applicationOpened:withCustomActionId:)
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
 #### Example
 
-```objective-c
+```text
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)())completionHandler {
@@ -124,18 +122,16 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     [AEPMobileMessaging handleNotificationResponse:response applicationOpened:true withCustomActionId:@"customActionId"]
     completionHandler();
 }
-
 ```
 {% endtab %}
 {% endtabs %}
 
 ## registerExtension <a id="registerextension"></a>
 
-Registers the Messaging extension with the Mobile Core SDK.
+Registers the extension with the [Mobile Core](../../foundation-extensions/mobile-core/).
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -149,11 +145,9 @@ public static void registerExtension();
 ```java
 Messaging.registerExtension();
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 Use the MobileCore API to register the Messaging extension.
@@ -184,24 +178,21 @@ public static func registerExtensions(_ extensions: [NSObject.Type], _ completio
 
 #### Example
 
-```objective-c
+```text
 [AEPMobileCore registerExtensions:@[AEPMobileMessaging.class, ...] completion:^{
   // processing after registration
 }];
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## setPushIdentifier<a id="setpushidentifier"></a>
+## setPushIdentifier <a id="setpushidentifier"></a>
 
-This Core API is used for syncing the push token to the profile in experience platform.
+Although this API is provided in Mobile Core, the use of this API is required and leveraged by the Adobe Journey Optimizer extension to sync provided push tokens with Adobe Experience Platform services.
 
 {% tabs %}
 {% tab title="Android" %}
-
-To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). 
-After retrieving the push token use the below core API to sync it with profile in platform.
+To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). After retrieving the push token use the below core API to sync it with profile in platform.
 
 ### Java
 
@@ -211,7 +202,7 @@ After retrieving the push token use the below core API to sync it with profile i
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-* *pushIdentifier* - A `String` value denoting the push token.
+* _pushIdentifier_ - A `String` value denoting the push token.
 
 #### Examples
 
@@ -227,11 +218,9 @@ FirebaseMessaging.getInstance().getToken()
             }
         });
 ```
-
 {% endtab %}
 
 {% tab title="iOS" %}
-
 ### Swift
 
 To retrieve the push token in iOS, checkout the apple documentation [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
@@ -243,7 +232,7 @@ After retrieving the push token use the below core API to sync it with profile i
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* *deviceToken* - A `Data` value denoting the push token.
+* _deviceToken_ - A `Data` value denoting the push token.
 
 #### Examples
 
@@ -257,33 +246,32 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 
 #### Syntax
 
-```objective-c
+```text
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* *deviceToken* - A `Data` value denoting the push token.
+* _deviceToken_ - A `Data` value denoting the push token.
 
 #### Examples
 
-```objective-c
+```text
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
     [AEPMobileCore setPushIdentifier:deviceToken];
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
-## addPushTrackingDetails<a id="addpushtrackingdetails"></a>
+## addPushTrackingDetails <a id="addpushtrackingdetails"></a>
 
 This API is used to updated the push notification pending intent with necessary customer journey information.
+
 {% hint style="warning" %}
-Call to this API is necessary to ensure that all the important information (messageId, Customer journey information) are added to the pending intent so that they can be used while tracking the push notification interactions.
+Call to this API is necessary to ensure that all the important information \(messageId, Customer journey information\) are added to the pending intent so that they can be used while tracking the push notification interactions.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -292,26 +280,24 @@ Call to this API is necessary to ensure that all the important information (mess
 public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
 ```
 
-* *intent* - `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
-* *messageId* - `String` message ID of the push notification
-* *data* - `Map` which represents the data part of the remoteMessage.
-* Returns `boolean` indicating whether the intent was updated with necessary information (messageId and customer journey data).
-
+* _intent_ - `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
+* _messageId_ - `String` message ID of the push notification
+* _data_ - `Map` which represents the data part of the remoteMessage.
+* Returns `boolean` indicating whether the intent was updated with necessary information \(messageId and customer journey data\).
 
 #### Examples
 
 ```java
 boolean success = addPushTrackingDetails(intent, messageId, data)
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ## Public Classes
+
 ### MessagingPushPayload
 
-This is a helper class for extracting the data payload attributes from `RemoteMessage` which are used while creating the push notification.
-Create the instance of `MessagingPushPayload` in the `onMessageReceived` method using the below constructors.
+This is a helper class for extracting the data payload attributes from `RemoteMessage` which are used while creating the push notification. Create the instance of `MessagingPushPayload` in the `onMessageReceived` method using the below constructors.
 
 ### Constructor
 
@@ -325,13 +311,13 @@ Create the instance of `MessagingPushPayload` in the `onMessageReceived` method 
 public MessagingPushPayload(RemoteMessage message)
 ```
 
-* *message* - `RemoteMessage` message containing the payload data with the necessary attributes for creating push notification
+* _message_ - `RemoteMessage` message containing the payload data with the necessary attributes for creating push notification
 
 ```java
 public MessagingPushPayload(Map<String, String> data)
 ```
 
-* *data* - `Map<String, String>` data payload containing the necessary attributes for creating push notification
+* _data_ - `Map<String, String>` data payload containing the necessary attributes for creating push notification
 
 #### Examples
 
@@ -348,16 +334,15 @@ public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
     MessagingPushPayload payload = new MessagingPushPayload(remoteMessage.getData());
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### Public APIs
+
 Public APIs for getting attributes from push payload which are used while creating the push notification.
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java
 
 #### Syntax
@@ -405,9 +390,9 @@ public String getActionUri()
 public List<ActionButton> getActionButtons()
 ```
 
-##### Internal Classes and Enums
+**Internal Classes and Enums**
 
-###### ActionType
+**ActionType**
 
 ```java
 public enum ActionType {
@@ -415,7 +400,8 @@ public enum ActionType {
 }
 ```
 
-###### ActionButtons
+**ActionButtons**
+
 ```java
 // Constructor
 public ActionButton(final String label, final String link, final String type)
@@ -431,7 +417,6 @@ public String getLink()
 // Returns the ActionType for the action button
 public ActionType getType()
 ```
-
 {% endtab %}
 {% endtabs %}
 
