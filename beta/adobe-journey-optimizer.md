@@ -1,15 +1,18 @@
 # Adobe Journey Optimizer
 
-The Adobe Journey Optimizer extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collects user push tokens and manages interaction measurement with Adobe Experience Platform services.
+The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collects user push tokens and manages interaction measurement with Adobe Experience Platform services.
 
 {% hint style="warning" %}
-The Adobe Experience Platform Messaging extension is currently in Beta development.
+Adobe Journey Optimizer is a beta product.
+
+Please contact your Adobe Customer Success Manager for more details.
 {% endhint %}
 
-## Prerequisites
+{% hint style="info" %}
+### Prerequisites
 
-* IMS organization is enabled for messaging.
-* [Mobile Core](), [Adobe Experience Platform Edge Network](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/using-mobile-extensions/adobe-edge/README.md) and [EdgeIdentity]() extensions have been implemented in the app.
+As this extension supports Adobe Journey Optimizer, which is currently a beta product, your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for further detail.
+{% endhint %}
 
 ## Configure Profile Dataset in Edge Configuration
 
@@ -71,6 +74,8 @@ To add APNs to your app please follow the [Apple's documentation](https://develo
 {% endtabs %}
 
 ## Add the AEP Messaging extension to your application
+
+After you have integrated [Mobile Core](../foundation-extensions/mobile-core/), [Adobe Experience Platform Edge Network](../foundation-extensions/experience-platform-extension/), and [Identity for Edge Network](../foundation-extensions/identity-for-edge-network/) extensions, follow these steps to also integrate the Adobe Journey Optimizer extension.
 
 ### Download and import the Messaging extension
 
