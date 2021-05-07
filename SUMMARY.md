@@ -36,7 +36,6 @@
 * [Offer Decisioning](using-mobile-extensions/offer-decisioning-extension/README.md)
   * [Offer Decisioning API reference](using-mobile-extensions/offer-decisioning-extension/offer-api-reference.md)
 * [Consent for Edge Network](using-mobile-extensions/adobe-edge-consent.md)
-* [Messaging](using-mobile-extensions/adobe-experience-platform-messaging.md)
 
 ## Resources
 
