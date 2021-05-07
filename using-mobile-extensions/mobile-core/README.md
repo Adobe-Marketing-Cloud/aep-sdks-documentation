@@ -26,7 +26,7 @@ Rules Engine looks for the interactions between users and their associated data 
 
 ## Signal
 
-The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Experience Platform Launch. For more information, see [Signal](signals/).
+The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Experience Platform Launch. For more information, please read the documentation on the [Signal extension](signals/).
 
 ## Platform Services
 
