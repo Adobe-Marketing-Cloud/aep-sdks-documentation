@@ -26,7 +26,7 @@ As this extension supports Adobe Journey Optimizer, which is currently a beta pr
 ## Configure the Journey Optimizer extension in Launch
 
 1. Navigate to [Experience Platform Launch](https://launch.adobe.com) - select mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Jouney Optimizer** extension, and click on **Install**.
+2. On the **Catalog** tab, locate the **Adobe Journey Optimizer** extension, and click on **Install**.
 3. Select the **Event Dataset** for Production, Stage and Development Environments. The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
