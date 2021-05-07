@@ -30,7 +30,7 @@ The following steps illustrate how to create a sample datastream for a mobile im
    2. Choose the appropriate **Event Dataset** as previously created
 2. Once you have made your selections click `Save`.
 
-![Configuring your Datatstream in Adobe Experience Platform Launch](../.gitbook/assets/screen-shot-2021-02-02-at-12.44.31-pm.png)
+![Configuring your Datatstream in Adobe Experience Platform Launch](../.gitbook/assets/aep-edge-config.png)
 
 In the resulting summary screen, you will see that three environments have been created for your Datatstream. If needed, each environment can be edited individually with different configuration parameters.
 
