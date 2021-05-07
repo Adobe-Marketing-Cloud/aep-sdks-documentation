@@ -1,6 +1,6 @@
 # Identity
 
-The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the [Adobe Experience Platform Mobile SDK](../mobile-core/) and the [Edge Network extension]().
+The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the [Adobe Experience Platform Mobile SDK](../mobile-core/) and the [Edge Network extension](./).
 
 ## Configure the Adobe Experience Platform Identity extension in Experience Platform Launch
 
