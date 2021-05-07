@@ -14,24 +14,24 @@ Please contact your Adobe Customer Success Manager for more details.
 As this extension supports Adobe Journey Optimizer, which is currently a beta product, your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for further detail.
 {% endhint %}
 
-## Configure Profile Dataset in Edge Configuration
+## Update Datastream with Profile Dataset
 
-1. Follow the [datastream](https://aep-sdks.gitbook.io/docs/getting-started/configure-datastreams) document to configure edge.
-2. In the screen below update the **Profile Dataset** with the `CJM Push Profile Dataset`
+1. Ensure you have a properly configured Datastream by following [Configure datastreams](../getting-started/configure-datastreams.md)
+2. Navigate to your previously configured Datastream and select **CJM Push Profile Dataset**
 
-   ![Configuring your Edge Configuration in Adobe Experience Platform Launch](../.gitbook/assets/aep-edge-config.png)
+   in **Profile Dataset** dropdown \(found in **Adobe Experience Platform** section\) and hit **Save**.
 
-3. Hit **Save**.
+![Updating Datastream with Push Profile Dataset for Adobe Journey Optimizer](../.gitbook/assets/aep-edge-config.png)
 
-## Configure the Adobe Experience Platform Messaging extension in Experience Platform Launch
+## Configure the Journey Optimizer extension in Launch
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform - Messaging** extension, and click **Install**.
+1. Navigate to [Experience Platform Launch](https://launch.adobe.com) - select mobile property, click the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Jouney Optimizer** extension, and click on **Install**.
 3. Select the **Event Dataset** for Production, Stage and Development Environments. The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-   ![AEP Messaging extension configuration](../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
+![AEP Messaging extension configuration](../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
 ## Configure Application Configuration
 
@@ -39,7 +39,7 @@ As this extension supports Adobe Journey Optimizer, which is currently a beta pr
 2. Click the **Add App Configuration** button.
 3. Provide a **Name** and select the **Messaging Service Type**
 
-   ![AEP App configuration](../.gitbook/assets/add-app-config.png)
+![AEP App configuration](../.gitbook/assets/add-app-config.png)
 
 {% tabs %}
 {% tab title="Android" %}
