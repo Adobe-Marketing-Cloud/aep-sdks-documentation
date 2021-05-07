@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 #### iOS AEPMedia 3.0.0
 
-* Initial release to support Adobe Media workflows with AEP iOS swift SDK. It is [open sourced on github](https://github.com/adobe/aepsdk-media-ios/).
+* Initial release to support Adobe Analytics - Media Analytics workflows for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-media-ios/).
 
 ### April 29, 2021
 
