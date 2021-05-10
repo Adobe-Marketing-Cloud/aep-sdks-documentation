@@ -4,6 +4,5 @@ structure:
     readme: README.md  
     summary: SUMMARY.md
     
-redirects:  
-    v/AEP-Edge-Docs/experience-platform-extension: docs/release-notes
-    v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: https://google.com
+redirects:
+    adobe-edge-consent: README.md
