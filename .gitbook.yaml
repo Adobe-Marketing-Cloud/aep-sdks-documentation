@@ -5,5 +5,5 @@ structure:
     summary: SUMMARY.md
     
 redirects:  
-    docs/v/AEP-Edge-Docs/experience-platform-extension: docs/release-notes
-    docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: docs/foundation-extensions/consent-for-edge-network
+    AEP-Edge-Docs/experience-platform-extension: docs/release-notes
+    AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent: docs/foundation-extensions/consent-for-edge-network
