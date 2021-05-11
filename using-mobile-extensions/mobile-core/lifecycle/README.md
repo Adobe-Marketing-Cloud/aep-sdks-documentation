@@ -170,7 +170,7 @@ import AEPLifecycle
        MobileCore.registerExtensions([Lifecycle.self, Identity.self, Signal.self, Edge.self]){
       // only start lifecycle if the application is not in the background    
            if appState != .background {
-               MobileCore.lifecycleStart(nil)
+               MobileCore.lifecycleStart(additionalContextData: nil)
            }    
        }
    }
@@ -180,7 +180,7 @@ import AEPLifecycle
 
    ```swift
    func applicationWillEnterForeground(_ application: UIApplication) {    
-       MobileCore.lifecycleStart(nil)
+       MobileCore.lifecycleStart(additionalContextData: nil)
    }
    ```
 
@@ -188,7 +188,7 @@ import AEPLifecycle
 
    ```swift
    func sceneWillEnterForeground(_ scene: UIScene) {
-        MobileCore.lifecycleStart(nil)
+        MobileCore.lifecycleStart(additionalContextData: nil)
    }
    ```
 
