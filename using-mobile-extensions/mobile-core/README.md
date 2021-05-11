@@ -30,5 +30,5 @@ The Signal extension allows you to send data third-party endpoints via GET and P
 
 ## Platform Services
 
-The interaction with native plaforms is mainly built into the Platform Services layer, which is used across all the extensions. It also makes it easy for the apps to customize the behavior if needed. For more information, see [Platform Services](platform-services.md).
+The interaction with native platforms is mainly built into the Platform Services layer, which is used across all the extensions. It also makes it easy for the apps to customize the behavior if needed. For more information, see [Platform Services](platform-services.md).
 

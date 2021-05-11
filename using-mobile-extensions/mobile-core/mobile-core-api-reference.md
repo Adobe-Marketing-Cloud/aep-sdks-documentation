@@ -1,16 +1,16 @@
 # Mobile Core API reference
 
-## Application reference \(Android only\)
+## Application reference (Android only)
 
-When building Android applications, the `android.app.Application` reference must be passed to the Mobile SDK, which allows the Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
+When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
 {% hint style="warning" %}
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
 
-### Set Application
+### Set the `Application` instance
 
-You can use this API to pass the Android `Application` instance to the SDK.
+You can use the `setApplication` method to pass the Android `Application` instance to Mobile SDK.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -40,9 +40,9 @@ public class CoreApp extends Application {
 {% endtab %}
 {% endtabs %}
 
-### Get Application
+### Get the `Application` instance
 
-You can use this API to get the previously set Android `Application` instance, and this instance is mainly provided for the third-party extensions.
+You can use the `getApplication` method to get the previously set Android `Application` instance. The `Application` instance is mainly provided for third-party extensions.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -51,7 +51,7 @@ You can use this API to get the previously set Android `Application` instance, a
 ### getApplication
 
 {% hint style="warning" %}
-`MobileCore.getApplication` might return `null` if the Application object was destroyed or if `MobileCore.setApplication` was not previously called.
+`MobileCore.getApplication` may return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
 {% endhint %}
 
 **Syntax**
@@ -73,14 +73,14 @@ if (app != null) {
 
 ## Track app actions
 
-Actions are events that occur in your app. You can use this API to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
 
 {% hint style="warning" %}
-Call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
+You want to use the `trackAction` method when you want to track an occurring event. In addition to the action name, you can send additional context data with each track action call.
 {% endhint %}
 
 {% hint style="info" %}
-If you installed and configured the Analytics extension, this method sends an Analytics action tracking hit with the optional context data that you provide.
+If you installed and configured the Adobe Analytics extension, this method sends an Adobe Analytics action tracking hit with the provided optional context data.
 {% endhint %}
 
 {% tabs %}
@@ -96,7 +96,7 @@ public static void trackAction(final String action, final Map<String, String> co
 ```
 
 * _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -120,7 +120,7 @@ static func track(action: String?, data: [String: Any]?)
 ```
 
 * _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -139,7 +139,7 @@ static func track(action: String?, data: [String: Any]?)
 ```
 
 * _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -149,19 +149,19 @@ MobileCore.track(action: "action name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## Track app states and views
+## Track application states and views
 
-States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this API can be called. This method sends an Analytics state tracking hit with optional context data.
+States represent screens or views in your application. The `trackState` method needs to be called every time a new state is displayed in your application. For example, this method should be called when a user navigates from the home page to the news feed. This method sends an Adobe Analytics state tracking hit with optional context data.
 
 {% hint style="info" %}
-If you installed and configured the Analytics extension, this API increments page views and an Analytics state tracking hit with the optional context data that you provide.
+If you installed and configured the Adobe Analytics extension, the `trackState` method increments page views and an Adobe Analytics state tracking hit with the provided optional context data.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
 
-In Android, `trackState` is typically called each time a new Activity is loaded.
+In Android, `trackState` is typically called every time a new `Activity` is loaded.
 
 ### trackState
 
@@ -172,7 +172,7 @@ public static void trackState(final String state, final Map<String, String> cont
 ```
 
 * _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -196,7 +196,7 @@ static func track(state: String?, data: [String: Any]?)
 ```
 
 * _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -215,7 +215,7 @@ static func track(state: String?, data: [String: Any]?)
 ```
 
 * _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
@@ -225,21 +225,19 @@ MobileCore.track(state: "state name", data: ["key": "value"])
 {% endtab %}
 {% endtabs %}
 
-## setAdvertisingIdentifier
+## Set the advertising ID
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/415ad4c45b0bddcb6879a7403d8c2922f154ef8b/using-mobile-extensions/mobile-core/identity-api-reference.md), and is removed at uninstall.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall. The `setAdvertisingIdentifier` method is used to set the advertising identifier for your application.
 
 {% hint style="info" %}
-If the current SDK privacy status is `optedout`, the advertising identifier is not set or stored.
+If the current SDK privacy status is `optedout`, the advertising identifier is **not** set or stored.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
+**Java**
+
 ### setAdvertisingIdentifier
-
-This API sets the provided advertising identifier.
-
-#### Java
 
 **Syntax**
 
@@ -247,15 +245,15 @@ This API sets the provided advertising identifier.
 public static void setAdvertisingIdentifier(final String advertisingIdentifier);
 ```
 
-* _advertisingIdentifier_ is a string that provides developers with a simple, standard system to track the Ads through their apps.     
+* _advertisingIdentifier_ is a string that provides developers with a system to track the ads through their applications.     
 
 **Example**
 
 {% hint style="warning" %}
-This is just an implementation example. For more information about advertising identifiers and how to handle them correctly in your mobile application, see [Google Play Services documentation about Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
+This is just a sample implementation. For more information about advertising identifiers and how to handle them correctly in your mobile application, please read the [Google Play Services documentation on Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
 {% endhint %}
 
-This example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your ApplicationManifest.xml file, see [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
+The following example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your `ApplicationManifest.xml` file, please read the documentation on [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
 
 ```java
 ...
@@ -298,26 +296,24 @@ public void onResume() {
 {% endtab %}
 
 {% tab title="iOS" %}
+**Swift**
+
 ### setAdvertisingIdentifier
 
-{% hint style="info" %}
-To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
-{% endhint %}
-
 {% hint style="warning" %}
-Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising \(IDFA\).
-{% endhint %}
+Starting from iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 
-#### iOS
+To access IDFA and handle it correctly in your mobile application, please read the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager).
+{% endhint %}
 
 **Syntax**
 
 ```swift
 @objc(setAdvertisingIdentifier:)
-public static func setAdvertisingIdentifier(_ identifier: String?)
+public static func setAdvertisingIdentifier(_ adId: String?)
 ```
 
-* _adId_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.    
+* _adId_ is a string that provides developers with a system to track ads in their apps.    
 
 **Example**
 
