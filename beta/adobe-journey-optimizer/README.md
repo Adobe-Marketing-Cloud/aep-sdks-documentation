@@ -192,6 +192,86 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
+## Synch user push token with Adobe
+
+Use the setPushIdentifier API to sync user push token from the device with Adobe Experience Platform services.
+
+{% tabs %}
+{% tab title="Android" %}
+To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). After retrieving the push token use the below core API to sync it with profile in platform.
+
+### Java
+
+#### Syntax
+
+```java
+public static void setPushIdentifier(final String pushIdentifier);
+```
+
+* _pushIdentifier_ - A `String` value denoting the push token.
+
+#### Examples
+
+```java
+FirebaseMessaging.getInstance().getToken()
+        .addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if (task.isSuccessful()) {
+                    String token = task.getResult();
+                    MobileCore.setPushIdentifier(token);
+                }
+            }
+        });
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+### Swift
+
+To retrieve the push token in iOS, checkout the apple documentation [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
+After retrieving the push token use the below core API to sync it with profile in platform.
+
+#### Syntax
+
+```swift
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_ - A `Data` value denoting the push token.
+
+#### Examples
+
+```swift
+func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    MobileCore.setPushIdentifier(deviceToken)
+}
+```
+
+### Objective-C
+
+#### Syntax
+
+```text
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_ - A `Data` value denoting the push token.
+
+#### Examples
+
+```text
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
+    [AEPMobileCore setPushIdentifier:deviceToken];
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## Next Steps
+
+* [Track Push Interactions](api-reference.md#addpushtrackingdetails)
+
 ## Configuration keys
 
 To update the SDK configuration programmatically, use the following information to change the Messaging configuration values.
