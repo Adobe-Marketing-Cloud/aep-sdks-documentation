@@ -10,7 +10,7 @@ Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to 
 
 ## Update Datastream with Profile Dataset
 
-Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md), then:
+Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com), then:
 
 Select **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(found in **Adobe Experience Platform** section\) and hit **Save**.
 
