@@ -224,9 +224,9 @@ The following API returns a dictionary representation of the consent preferences
 
 ## Retrieving stored identifiers
 
-When using the Edge Network extensions, use the [Identity.getIdentities]() API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
+When using the Edge Network extensions, use the [Identity.getIdentities](privacy-and-gdpr.md) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
-When using both Edge Network extension and Adobe Solutions extensions, use both [Identity.getIdentities]() API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
+When using both Edge Network extension and Adobe Solutions extensions, use both [Identity.getIdentities](privacy-and-gdpr.md) API and [MobileCore.getSdkIdentities](../using-mobile-extensions/mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers) API to retrieve all the identifier data stored locally by the SDK and send this data to your servers.
 
 ## Configuration keys
 

@@ -713,7 +713,7 @@ MobileCore.getSdkIdentities { (content, error) in
 This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
 
 {% hint style="warning" %}
-This API is only handled by the [Edge]() and [Edge Identity]() extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/).
+This API is only handled by the [Edge](mobile-core-api-reference.md) and [Edge Identity](mobile-core-api-reference.md) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/).
 {% endhint %}
 
 {% tabs %}
