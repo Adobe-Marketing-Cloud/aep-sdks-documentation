@@ -25,6 +25,8 @@ Navigate to [Experience Platform Launch](https://launch.adobe.com) - select mobi
 3. Click **Save**.
 4. Follow the publishing process to update SDK configuration.
 
+![Adobe Journey Optimizer extension configuration](../../.gitbook/assets/adobe-journey-optimizer-messaging-configuration.png)
+
 {% hint style="info" %}
 The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 {% endhint %}
