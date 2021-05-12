@@ -725,54 +725,67 @@ MobileCore.getSdkIdentities { (content, error) in
 
 ## Reset identities
 
-This is a generic API to request each extension to reset the identities it owns. Each extension can decide whether and how it will reponse to this API call.
+The `resetIdentities` method requests that each extension resets the identities it owns. Each extension responds to this request uniquely.
 
 {% hint style="warning" %}
-This API is only handled by the [Edge]() and [Edge Identity](../adobe-edge-identity/) extensions. Calling `resetIdentities` does not clear identities in non-edge extensions, such as [Identity](identity/).
+This API is only handled by the [Edge]() and [Edge Identity](../adobe-edge-identity/) extensions. Calling `resetIdentities` does **not** clear identities in non-edge extensions, such as [Identity](identity/).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 ### resetIdentities
 
-#### Syntax
+Note, this method is only available in Mobile Core v.1.8.0 and above.
+
+**Syntax** 
 
 ```java
 void resetIdentities();
 ```
 
-#### Example
+**Example**
 
 ```java
 MobileCore.resetIdentities();
 ```
 
-_since Mobile Core v1.8.0_
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
+
+Note, this method is only available in Mobile Core v.1.8.0 and above.
 
 ### resetIdentities
 
-#### Syntax
+**Syntax**
 
 ```swift
 @objc(resetIdentities)
 static func resetIdentities()
 ```
 
-#### Example
-
-**Objective-C**
+**Example**
 
 ```objectivec
 [AEPMobileCore resetIdentities];
 ```
 
 **Swift**
+
+Note, this method is only available in Mobile Core v.1.8.0 and above.
+
+### resetIdentities
+
+**Syntax**
+
+```swift
+static func resetIdentities()
+```
+
+**Example**
 
 ```swift
 MobileCore.resetIdentities()
@@ -782,17 +795,17 @@ _since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}
 
-## Set Icons for local notification \(Android only\)
+## Set icons for local notification (Android only)
 
 You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
 {% hint style="warning" %}
-Those APIs are **only** available in Android and Xamarin Android.
+The following methods are **only** available in Android and Xamarin Android.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 ### setSmallIconResourceID
 
@@ -826,24 +839,26 @@ public static void setLargeIconResourceID(int resourceID)
 
 ## Logging
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages and allow application developers to filter the logged messages based on the current logging mode.
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. This allows application developers to filter the logged messages based on the current logging mode.
 
-Application developers can use the `setLogLevel` API to filter the log messages that are coming from the Mobile SDK. When debugging, use `LoggingMode.VERBOSE` \(Android\) / `LogLevel.verbose` \(iOS\) to enable all the logging messages that are coming from the Mobile SDK and partner extensions. In a production application, we recommend that you use a less verbose logging mode, for example `LoggingMode.ERROR` \(Android\) / `LogLevel.error` \(iOS\).
+Application developers can use the `setLogLevel` method to filter the log messages that are coming from the Mobile SDK. 
 
-By default, the Mobile SDK logging mode is set to `LoggingMode.ERROR` \(Android\) / `LogLevel.eror` \(iOS\).
-
-As a Mobile SDK extension developer, you should use the MobileCore \(Android\) / ACPCore \(iOS\) `log` API to include extension log messages with Mobile SDK core log messages.
-
-From least to most verbose, here is the order of the mobile SDK logging modes:
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
 
 * ERROR
 * WARNING
 * DEBUG
 * VERBOSE
 
+When debugging on iOS, you can use `LogLevel.verbose` to enable all the logging messages that are coming from Mobile SDK and partner extensions. Similarly, on Android, you can use `LoggingMode.VERBOSE` to enable all the logging messages that are coming from Mobile SDK and partner extensions. 
+
+In a production application, you should use a less verbose logging mode, such as error-level logging.
+
+By default, Mobile SDK logging mode is set to `LoggingMode.ERROR` for Android and `LogLevel.error`on iOS.
+
 {% hint style="info" %}
-* In **Android**, the Mobile SDK uses the `android.util.Log` class to print the messages.
-* In **iOS**, the Mobile SDK uses the `NSLog` for logging the message to Apple System Log facility.
+* On **Android**, Mobile SDK uses the `android.util.Log` class to log messages.
+* On **iOS**, Mobile SDK uses `NSLog` to messages to Apple System Log facility.
 {% endhint %}
 
 {% tabs %}
@@ -863,7 +878,6 @@ public static void setLogLevel(LoggingMode mode)
 ```java
 import com.adobe.marketing.mobile.LoggingMode;
 import com.adobe.marketing.mobile.MobileCore;
-...
 
 MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
@@ -872,7 +886,7 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 {% tab title="iOS" %}
 **Objective C**
 
-#### setLogLevel
+### setLogLevel
 
 **Syntax**
 
@@ -889,7 +903,7 @@ public static func setLogLevel(_ level: LogLevel)
 
 **Swift**
 
-#### setLogLevel
+### setLogLevel
 
 **Syntax**
 
@@ -925,7 +939,7 @@ LoggingMode mode = MobileCore.getLogLevel();
 {% endtab %}
 
 {% tab title="iOS" %}
-TBD
+Do we have this information?
 {% endtab %}
 {% endtabs %}
 
@@ -942,7 +956,7 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 
 All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
 
-#### log
+### log
 
 **Syntax**
 
@@ -956,7 +970,7 @@ public static void log(final LoggingMode mode, final String tag, final String me
 MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
 ```
 
-**Output Example**
+**Output**
 
 ```text
 D/AdobeExperienceSDK: MyClassName - Provided data was null
@@ -964,25 +978,24 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 {% endtab %}
 
 {% tab title="iOS" %}
-TBD
+Do we have information for this?
 {% endtab %}
 {% endtabs %}
 
-## Set App Group \(iOS only\)
+## Set app group (iOS only)
 
-You can use this API to set the app group used to share user defaults and files among the containing app and the extension apps.
+You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
 
-Note: This API _must_ be called in AppDidFinishLaunching and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+{% hint style="info" %} 
+This API *must* be called in `AppDidFinishLaunching` and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+{% endhint %}
 
 {% tabs %}
 {% tab title="iOS" %}
+
 **Objective-C**
 
 ### setAppGroup
-
-**Objective-C**
-
-#### setAppGroup
 
 **Syntax**
 
@@ -998,7 +1011,7 @@ public static func setAppGroup(_ group: String?)
 
 **Swift**
 
-#### setAppGroup
+### setAppGroup
 
 **Syntax**
 
@@ -1014,15 +1027,17 @@ MobileCore.setAppGroup("app-group-id")
 {% endtab %}
 {% endtabs %}
 
-## Public Classes
+## Public classes
+
+Public classes are ???
 
 {% tabs %}
 {% tab title="Android" %}
-#### Android
+**Java**
 
-**AdobeCallback**
+### AdobeCallback
 
-This class provides the interface to receive results when the async APIs perform the requested action.
+The `AdobeCallback` class provides the interface to receive results when the asynchronous APIs perform the requested action.
 
 ```java
 public interface AdobeCallback<T> {    
@@ -1030,9 +1045,11 @@ public interface AdobeCallback<T> {
 }
 ```
 
-**AdobeCallbackWithError**
+### AdobeCallbackWithError
 
-This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
+The `AdobeCallbackWithError` class provides the interface to receive results or an error when the asynchronous APIs perform the requested action. 
+
+When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is stopped and the fail method is called with the corresponding `AdobeError`.
 
 ```java
 public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
@@ -1040,9 +1057,9 @@ public interface AdobeCallbackWithError<T> extends AdobeCallback<T> {
 }
 ```
 
-**AdobeError**
+### AdobeError
 
-Errors which may be passed to an AdobeCallbackWithError:
+The `AdobeError` class shows the errors that can be passed to an `AdobeCallbackWithError`:
 
 * `UNEXPECTED_ERROR` - An unexpected error occurred.
 * `CALLBACK_TIMEOUT` - The timeout was met.
@@ -1075,20 +1092,18 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### iOS
+### AEPError
 
-**AEPError**
+The `AEPError` class shows the errors that can be passed to a completion handler callback from any API which uses one:
 
-Errors which may be passed to a completion handler callback from any API which uses one:
-
-* `.unexpected` - An unexpected error occurred.
-* `.callbackTimeout`The timeout was met.
-* `.callbackNil` - The provided callback function is nil.
-* `.errorExtensionNotInitialized` - The extension is not initialized.
-* `.serverError` - There was a error on the server side.
-* `.networkError` - Network connection failed.
-* `.invalidRequest` - Invalid request parameters.
-* `.invalidResponse` - Invalid server response.
+* `.unexpected`: An unexpected error occurred.
+* `.callbackTimeout`: The timeout was met.
+* `.callbackNil`: The provided callback function is nil.
+* `.errorExtensionNotInitialized`: The extension is not initialized.
+* `.serverError`: There was a error on the server side.
+* `.networkError`: Network connection failed.
+* `.invalidRequest`: Invalid request parameters.
+* `.invalidResponse`: Invalid server response.
 
 **Examples**
 
@@ -1131,7 +1146,6 @@ MobileCore.getSdkIdentities { identities, error in
 {% endtab %}
 {% endtabs %}
 
-### Additional Information
+## Additional information
 
-* What is [context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html)?
-
+To learn what context data is, please read the [documentation on context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html).
