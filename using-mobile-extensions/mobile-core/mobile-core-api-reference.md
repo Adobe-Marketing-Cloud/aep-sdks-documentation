@@ -114,8 +114,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 **Syntax**
 
-```swift
-@objc(trackAction:data:)
+```objc
 static func track(action: String?, data: [String: Any]?)
 ```
 
@@ -124,7 +123,7 @@ static func track(action: String?, data: [String: Any]?)
 
 **Example**
 
-```objectivec
+```objc
  [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
@@ -135,6 +134,7 @@ static func track(action: String?, data: [String: Any]?)
 **Syntax**
 
 ```swift
+@objc(trackAction:data:)
 static func track(action: String?, data: [String: Any]?)
 ```
 
@@ -317,59 +317,6 @@ public static func setAdvertisingIdentifier(_ adId: String?)
 
 **Example**
 
-**Objective-C**
-
-```objectivec
-#import <AdSupport/ASIdentifierManager.h>
-#import <AppTrackingTransparency/ATTrackingManager.h>
-...
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
--   ...
--   
-    if (@available(iOS 14, *)) {
-        [self setAdvertisingIdentitiferUsingTrackingManager];
-    } else {
-        // fallback to earlier versions
-        [self setAdvertisingIdentifierUsingIdentifierManager];
-    }
-
-}
-
-- (void) setAdvertisingIdentifierUsingIdentifierManager {
-    // setup the advertising identifier
-    NSString *idfa = nil;
-    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    } 
-    [AEPMobileCore setAdvertisingIdentifier:idfa];
-}
-
-- (void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
-    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
-    ^(ATTrackingManagerAuthorizationStatus status){
-        NSString *idfa = nil;
-        switch(status) {
-            case ATTrackingManagerAuthorizationStatusAuthorized:
-                idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-                break;
-            case ATTrackingManagerAuthorizationStatusDenied:        
-                //handle error       
-                break;
-            case ATTrackingManagerAuthorizationStatusNotDetermined:   
-                //handle error
-                break;
-            case ATTrackingManagerAuthorizationStatusRestricted:  
-                //handle error
-                break;
-        }
-        [AEPMobileCore setAdvertisingIdentifier:idfa];
-    }];
-}
-```
-
-**Swift**
-
 ```swift
 import AdSupport
 import AppTrackingTransparency
@@ -414,6 +361,72 @@ func setAdvertisingIdentitiferUsingTrackingManager() {
     }
 }
 ```
+
+**Objective-C**
+
+### setAdvertisingIdentifier
+
+{% hint style="warning" %}
+Starting from iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
+
+To access IDFA and handle it correctly in your mobile application, please read the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager).
+{% endhint %}
+
+**Syntax**
+
+```objectivec
+static func setAdvertisingIdentifier(idfa: String?)
+```
+
+* _idfa_ is a string that provides developers with a system to track ads in their apps. 
+
+**Example**
+
+```objc
+#import <AdSupport/ASIdentifierManager.h>
+#import <AppTrackingTransparency/ATTrackingManager.h>
+
+(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if (@available(iOS 14, *)) {
+        [self setAdvertisingIdentitiferUsingTrackingManager];
+    } else {
+        // fallback to earlier versions
+        [self setAdvertisingIdentifierUsingIdentifierManager];
+    }
+
+}
+
+(void) setAdvertisingIdentifierUsingIdentifierManager {
+    // setup the advertising identifier
+    NSString *idfa = nil;
+    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    } 
+    [AEPMobileCore setAdvertisingIdentifier:idfa];
+}
+
+(void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
+    ^(ATTrackingManagerAuthorizationStatus status){
+        NSString *idfa = nil;
+        switch(status) {
+            case ATTrackingManagerAuthorizationStatusAuthorized:
+                idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                break;
+            case ATTrackingManagerAuthorizationStatusDenied:        
+                //handle error       
+                break;
+            case ATTrackingManagerAuthorizationStatusNotDetermined:   
+                //handle error
+                break;
+            case ATTrackingManagerAuthorizationStatusRestricted:  
+                //handle error
+                break;
+        }
+        [AEPMobileCore setAdvertisingIdentifier:idfa];
+    }];
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -427,9 +440,9 @@ It is recommended to call `setPushIdentifier` on each application launch to ensu
 
 {% tabs %}
 {% tab title="Android" %}
-### setPushIdentifier
+**Java**
 
-#### Java
+### setPushIdentifier
 
 **Syntax**
 
@@ -448,9 +461,30 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS" %}
+**Objective-C**
+
 ### setPushIdentifier
 
-#### iOS
+**Syntax**
+
+```objc
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_  is a string that contains the device token for push notifications.
+
+**Example**
+
+```objectivec
+// Set the deviceToken that the APNS has assigned to the device
+[AEPMobileCore setPushIdentifier:deviceToken];
+```
+
+**Swift**
+
+### setPushIdentifier
+
+**Syntax**
 
 ```swift
 @objc(setPushIdentifier:)
@@ -461,15 +495,6 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 **Example**
 
-**Objective-C**
-
-```objectivec
-// Set the deviceToken that the APNS has assigned to the device
-[AEPMobileCore setPushIdentifier:deviceToken];
-```
-
-**Swift**
-
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
 MobileCore.setPushIdentifier(deviceToken)
@@ -477,12 +502,12 @@ MobileCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-## Collect PII
+## Collect personally identifiable information
 
-This API allows the SDK to collect sensitive or personally identifiable information \(PII\) data.
+The `collectPii` method lets the SDK to collect sensitive or personally identifiable information (PII).
 
 {% hint style="warning" %}
-Although this API enables the collection of sensitive data, no data is sent to any Adobe or third-party endpoints. To send the data to an endpoint, use a postback of the PII type.
+Although this method enables the collection of sensitive data, no data is sent to any Adobe or other third-party endpoints. To send the data to an endpoint, use a PII type postback.
 {% endhint %}
 
 {% tabs %}
@@ -523,9 +548,7 @@ public static func collectPii(_ data: [String: Any])
 **Example**
 
 ```objectivec
-[AEPMobileCore collectPii:data:@{@"key1" : @"value1",
-                           @"key2" : @"value2"
-                           }];
+[AEPMobileCore collectPii:data:@{@"key1" : @"value1", @"key2" : @"value2" }];
 ```
 
 **Swift**
@@ -551,12 +574,12 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 You can provide the user information to the SDK from various launch points in your application.
 
 {% hint style="info" %}
-If the Analytics extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
+If the Adobe Analytics extension is enabled in your SDK, collecting this launch data results in an Analytics request being sent. Other extensions in the SDK might use the collected data, for example, as a rule condition for an In-App Message.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`and listen for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being use din the following scenarios:
+The Android SDK automatically registers an `Application.ActivityLifecycleCallbacks`and listens for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being used in the following scenarios:
 
 * Tracking Deep Link click-through.
 * Tracking Push Message click-through
@@ -566,12 +589,12 @@ Android SDK automaticaly registers an `Application.ActivityLifecycleCallbacks`an
 {% tab title="iOS" %}
 **Objective-C**
 
-This method should be called to support the following use cases:
+The `collectLaunchInfo` method should be used in the following use cases:
 
-* Tracking Deep Link click-throughs
+* Tracking a Deep Link click-through
   * From `application:didFinishLaunchingWithOptions`
   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
-* Tracking Push Message click-through
+* Tracking a Push Message click-through
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
 #### collectLaunchInfo
@@ -591,12 +614,12 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 
 **Swift**
 
-This method should be called to support the following use cases:
+The `collectLaunchInfo` method should be used in the following use cases:
 
-* Tracking Deep Link click-throughs
+* Tracking a Deep Link click-through
   * From `application(_:didFinishLaunchingWithOptions:)`
   * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
-* Tracking Push Message click-through
+* Tracking a Push Message click-through
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
 #### collectLaunchInfo
@@ -617,43 +640,41 @@ AEPCore.collectLaunchInfo(userInfo)
 
 ## Retrieving stored identifiers
 
-The following SDK identities \(as applicable\) are locally stored:
+The following SDK identities, as applicable, are locally stored:
 
 * Company Context - IMS Org IDs
-* Experience Cloud ID \(MID\)
+* Experience Cloud ID (MID)
 * User IDs
-* Integration codes \(ADID, push IDs\)
-* Data source IDs \(DPID, DPUUID\)
-* Analytics IDs \(AVID, AID, VID, and associated RSIDs\)
-* Target legacy IDs \(TNTID, TNT3rdpartyID\)
-* Audience Manager ID \(UUID\)
+* Integration codes (ADID, push IDs)
+* Data source IDs (DPID, DPUUID)
+* Analytics IDs (AVID, AID, VID, and associated RSIDs)
+* Target legacy IDs (TNTID, TNT3rdpartyID)
+* Audience Manager ID (UUID)
 
-To retrieve data as a JSON string from the SDKs, and send this data to your servers, use the following:
+To retrieve data as a JSON string from the SDKs and send this data to your servers, use the `getSdkIdentities` method:
 
 {% hint style="warning" %}
 You must call the API below and retrieve identities stored in the SDK, **before** the user opts out.
-{% endhint %}
 
-{% hint style="warning" %}
-This API does not include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/09dd71f04d377c356dd24aac9b89ed0fffc1cf63/using-mobile-extensions/adobe-edge-identity/adobe-edge-identity-api-reference.md#getidentities).
+This API does **not** include the identities stored in the Edge Identity extension. To retrieve the identities from the Edge Identity extension, use [getIdentities](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/09dd71f04d377c356dd24aac9b89ed0fffc1cf63/using-mobile-extensions/adobe-edge-identity/adobe-edge-identity-api-reference.md#getidentities).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java**
 
 ### getSdkIdentities
 
-#### Syntax
+**Syntax**
 
 ```java
 void getSdkIdentities(AdobeCallback<String> callback);
 ```
 
 * _callback_ is invoked with the SDK identities as a JSON string.
-* If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+  * If an instance of  `AdobeCallbackWithError` is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 5000ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
-#### Example
+**Example**
 
 ```java
 MobileCore.getSdkIdentities(new AdobeCallback<String>() {
@@ -666,11 +687,11 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective-C
+**Objective-C**
 
 ### getSdkIdentities
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 @objc(getSdkIdentities:)
@@ -680,9 +701,7 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 * _callback_ is invoked with the SDK identities as a JSON string.
 * _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
 
-#### Example
-
-**Objective-C**
+**Example**
 
 ```objectivec
 [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
