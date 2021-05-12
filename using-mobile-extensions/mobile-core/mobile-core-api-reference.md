@@ -728,7 +728,7 @@ MobileCore.getSdkIdentities { (content, error) in
 The `resetIdentities` method requests that each extension resets the identities it owns. Each extension responds to this request uniquely.
 
 {% hint style="warning" %}
-This API is only handled by the [Edge]() and [Edge Identity](../adobe-edge-identity/) extensions. Calling `resetIdentities` does **not** clear identities in non-edge extensions, such as [Identity](identity/).
+This API is only handled by the [Edge](mobile-core-api-reference.md) and [Edge Identity](../adobe-edge-identity/) extensions. Calling `resetIdentities` does **not** clear identities in non-edge extensions, such as [Identity](identity/).
 {% endhint %}
 
 {% tabs %}
