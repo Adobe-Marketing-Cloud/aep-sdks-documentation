@@ -4,6 +4,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 13, 2021
+
+### Android Mobileservices 1.1.4
+
+* Fixed a bug that caused a crash when multiple threads were accessing InAppMessages instance.
+
+## May 10, 2021
+
+### Android PlacesMonitor 2.2.2
+
+* Fixed a crash that was caused when application did not find the required activity for requesting location permission.
+
 ## May 5, 2021
 
 ### iOS AEPMedia 3.0.0
