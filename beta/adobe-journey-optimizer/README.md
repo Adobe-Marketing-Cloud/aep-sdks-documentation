@@ -24,10 +24,17 @@ Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropd
 
 ![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.19.31-am.png)
 
-### Setup your app for push notifications
+### Setup app for push notifications
 
-1. Apple iOS - See [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
-2. Google Android - See [Setup up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
+Before you can integrate push notifications with Adobe Journey Optimizer for Apple iOS and Google Android apps, you will need to follow steps with respective developer programs. Please see the following links:
+
+#### Apple iOS
+
+See [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
+
+#### Google Android
+
+See [Setup up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
 
 ### Setup an App Configuration
 
