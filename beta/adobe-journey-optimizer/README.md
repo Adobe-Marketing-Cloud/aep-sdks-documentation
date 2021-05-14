@@ -15,7 +15,9 @@ Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to 
 To get started with the Adobe Journey Optimizer extension, you'll need to follow these steps:
 
 1. [Update your app's Datastream](./#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://launch.adobe.com)
-2. 
+2. Setup app for push notifications
+3. Setup an App Configuration
+
 ### Update Datastream with Profile Dataset
 
 Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com), then:
