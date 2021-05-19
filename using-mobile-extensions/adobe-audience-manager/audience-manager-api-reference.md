@@ -1,17 +1,17 @@
 # Audience Manager API reference
 
-## Version of the Analytics extension
+## Version of the Audience extension
 
-The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
+The `extensionVersion()` API returns the version of the Audience extension that is registered with the Mobile Core extension.
 
-To get the version of the Analytics extension, use the following code sample:
+To get the version of the Audience extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
 #### Java
 
 ```java
-String analyticsExtensionVersion = Analytics.extensionVersion();
+String audienceExtensionVersion = Audience.extensionVersion();
 ```
 {% endtab %}
 
@@ -19,13 +19,13 @@ String analyticsExtensionVersion = Analytics.extensionVersion();
 **Objective C**
 
 ```objectivec
-NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
+NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
 ```
 
 **Swift**
 
 ```swift
-let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
+let audienceExtensionVersion  = ACPAudience.extensionVersion()
 ```
 {% endtab %}
 
@@ -33,7 +33,7 @@ let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
 ### JavaScript
 
 ```jsx
-ACPAnalytics.extensionVersion().then(analyticsExtensionVersion => console.log("AdobeExperienceSDK: ACPAnalytics version: " + analyticsExtensionVersion));
+ACPAudience.extensionVersion().then(audienceExtensionVersion => console.log("AdobeExperienceSDK: ACPAudience version: " + audienceExtensionVersion));
 ```
 {% endtab %}
 
@@ -41,7 +41,7 @@ ACPAnalytics.extensionVersion().then(analyticsExtensionVersion => console.log("A
 ### Dart
 
 ```dart
-String analyticsExtensionVersion = await FlutterACPAnalytics.extensionVersion;
+String audienceExtensionVersion = await FlutterACPAudience.extensionVersion;
 ```
 {% endtab %}
 
@@ -49,8 +49,8 @@ String analyticsExtensionVersion = await FlutterACPAnalytics.extensionVersion;
 ### Cordova
 
 ```jsx
-ACPAnalytics.extensionVersion(function(version) {  
-   console.log("ACPAnalytics version: " + version);
+ACPAudience.extensionVersion(function(version) {  
+   console.log("ACPAudience version: " + version);
 }, function(error) {  
    console.log(error);  
 });
@@ -61,7 +61,7 @@ ACPAnalytics.extensionVersion(function(version) {
 ### C\#
 
 ```csharp
-string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+string audienceExtensionVersion = ACPAudience.ExtensionVersion();
 ```
 {% endtab %}
 
@@ -69,7 +69,7 @@ string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
 ### C\#
 
 ```csharp
-string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+string audienceExtensionVersion = ACPAudience.ExtensionVersion();
 ```
 {% endtab %}
 {% endtabs %}
