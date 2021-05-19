@@ -1,8 +1,10 @@
 # Adobe Campaign Standard API reference
 
-## extensionVersion
+## Version of the Campaign Standard extension
 
-To return the current version of the Campaign extension, use the following APIs:
+The `extensionVersion()` API returns the version of the Campaign Standard extension that is registered with the Mobile Core extension.
+
+To get the version of the Campaign Standard extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}

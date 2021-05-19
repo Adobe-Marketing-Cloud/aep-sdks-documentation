@@ -1,5 +1,79 @@
 # Audience Manager API reference
 
+## Version of the Audience extension
+
+The `extensionVersion()` API returns the version of the Audience extension that is registered with the Mobile Core extension.
+
+To get the version of the Audience extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String audienceExtensionVersion = Audience.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
+```
+
+**Swift**
+
+```swift
+let audienceExtensionVersion  = ACPAudience.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPAudience.extensionVersion().then(audienceExtensionVersion => console.log("AdobeExperienceSDK: ACPAudience version: " + audienceExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String audienceExtensionVersion = await FlutterACPAudience.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPAudience.extensionVersion(function(version) {  
+   console.log("ACPAudience version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string audienceExtensionVersion = ACPAudience.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string audienceExtensionVersion = ACPAudience.ExtensionVersion();
+```
+{% endtab %}
+{% endtabs %}
+
 ## getVisitorProfile
 
 Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.

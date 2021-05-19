@@ -1,6 +1,42 @@
 # Media API reference
 
-## Media API reference
+## Version of the Media extension
+
+The `extensionVersion()` API returns the version of the Media extension that is registered with the Mobile Core extension.
+
+To get the version of the Media extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String mediaExtensionVersion = Media.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *mediaExtensionVersion = [ACPMedia extensionVersion];
+```
+
+**Swift**
+
+```swift
+let mediaExtensionVersion  = ACPMedia.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPMedia.extensionVersion().then(mediaExtensionVersion => console.log("AdobeExperienceSDK: ACPMedia version: " + mediaExtensionVersion));
+```
+{% endtab %}
+{% endtabs %}
 
 ### createTracker
 

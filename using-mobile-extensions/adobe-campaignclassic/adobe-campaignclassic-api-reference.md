@@ -1,5 +1,35 @@
 # Campaign Classic API reference
 
+## Version of the Campaign Classic extension
+
+The `extensionVersion()` API returns the version of the Campaign Classic extension that is registered with the Mobile Core extension.
+
+To get the version of the Campaign Classic extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String campaignClassicExtensionVersion = CampaignClassic.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *campaignClassicExtensionVersion = [ACPCampaignClassic extensionVersion];
+```
+
+**Swift**
+
+```swift
+let campaignClassicExtensionVersion  = ACPCampaignClassic.extensionVersion()
+```
+{% endtab %}
+{% endtabs %}
+
 ## registerDevice API
 
 ### Registering a user's device with Campaign Classic
