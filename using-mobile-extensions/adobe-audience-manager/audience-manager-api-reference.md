@@ -1,5 +1,79 @@
 # Audience Manager API reference
 
+## Version of the Analytics extension
+
+The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
+
+To get the version of the Analytics extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String analyticsExtensionVersion = Analytics.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
+```
+
+**Swift**
+
+```swift
+let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPAnalytics.extensionVersion().then(analyticsExtensionVersion => console.log("AdobeExperienceSDK: ACPAnalytics version: " + analyticsExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String analyticsExtensionVersion = await FlutterACPAnalytics.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPAnalytics.extensionVersion(function(version) {  
+   console.log("ACPAnalytics version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+```
+{% endtab %}
+{% endtabs %}
+
 ## getVisitorProfile
 
 Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
