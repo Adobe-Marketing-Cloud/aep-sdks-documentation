@@ -143,11 +143,11 @@ Note, however, if the Mobile SDK's privacy status was set to `optedOut` at the t
 
 At first launch of the application after upgrading to the Identity for Edge Network extension, the existing ECID from the Identity for Experience Cloud ID Service extension is migrated to the Identity for Edge Network extension. In this case both extensions will have the same ECID value.
 
-The [resetIdentities](edge-identity-api-reference.md#resetidentities) API regenerates a new ECID used by the Identity for Edge Network extension. This API call does not change the ECID used by the Identity for Experience Cloud ID Service extension. After calling this API, the ECID used by each identity extension will be different.
+The [resetIdentities](api-reference.md#resetidentities) API regenerates a new ECID used by the Identity for Edge Network extension. This API call does not change the ECID used by the Identity for Experience Cloud ID Service extension. After calling this API, the ECID used by each identity extension will be different.
 
 Changing the privacy status to `optedOut` will clear the ECID value used by the Identity for Experience Cloud ID Service extension. Changing the privacy status back to `optedIn` will generate a new ECID used by the Identity for Experience Cloud ID Service extension. Privacy status changes do not change the ECID used by the Identity for Edge Network extension. Changing the privacy status will cause the ECID used by each identity extension to be different.
 
-When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](edge-identity-api-reference.md#identitymap), and so the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
+When each identity extension has a different ECID, the Identity for Edge Network extension will include the Identity for Experience Cloud ID Service ECID in its [IdentityMap](api-reference.md#identitymap), and so the Adobe Experience Platform Identity Service will link the the two ECIDs in the customer's Identity Graph.
 
 The following example shows an IdentityMap containing the ECIDs from both Identity for Edge Network extension and Identity for Experience Cloud ID Service extension. The ECID from the Identity for Edge Network extension is always listed first in the list of ECIDs.
 
@@ -178,7 +178,7 @@ The Identity for Edge Network extension and the Identity for Experience Cloud ID
 
 The Identity for Edge Network extension does not clear its stored identities or regenerate the ECID due to privacy status changes. Instead, use the [resetIdentities](edge-identity-api-reference.md#resetidentities) API. Note this API does not clear the ECID but instead generates a new ECID.
 
-Each identity extension has its own API to retrieve their respective ECIDs as well. Use [Identity.getExperienceCloudId](edge-identity-api-reference.md#getexperiencecloudid) to get the Identity for Edge Network extension's ECID, and [Identity.getExperienceCloudId](../mobile-core/identity/identity-api-reference.md#getexperiencecloudid) to get the Identity for Experience Cloud ID Service extension's ECID.
+Each identity extension has its own API to retrieve their respective ECIDs as well. Use [Identity.getExperienceCloudId](api-reference.md#getexperiencecloudid) to get the Identity for Edge Network extension's ECID, and [Identity.getExperienceCloudId](../mobile-core/identity/identity-api-reference.md#getexperiencecloudid) to get the Identity for Experience Cloud ID Service extension's ECID.
 
 ## Q: How can I get all the identifiers used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
 
@@ -186,7 +186,7 @@ Each identity extension has its own API to retrieve their respective ECIDs as we
 
 To get the identifiers used by the Adobe Solutions extensions, call [getSdkIdentities](../mobile-core/mobile-core-api-reference.md#retrieving-stored-identifiers).
 
-To get the identifiers used by the AEP Edge extensions, call [getIdentities](edge-identity-api-reference.md#getidentities).
+To get the identifiers used by the AEP Edge extensions, call [getIdentities](api-reference.md#getidentities).
 
 ## Q: How can I clear all the identifiers from the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
 
@@ -202,7 +202,12 @@ To clear the identifiers used by the AEP Edge extensions, call [resetIdentities]
 
 When using Real-time Customer Profile and Identity Service, the ECIDs from both identity extensions are linked together in the customer's Identity Graph. Care must be taken when regenerating new ECIDs such that the old and new ECIDs are not linked within the same Identity Graph.
 
-Perform the following API calls to regenerate the ECIDs in sequence: 1. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension. 2. Call [resetIdentities](edge-identity-api-reference.md#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension. 3. Call [getExperienceCloudId](edge-identity-api-reference.md#getexperiencecloudid) on the Identity for Edge Network extension. This ensures the new ECID is generated before continuing. 4. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
+Perform the following API calls to regenerate the ECIDs in sequence: 
+
+1. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension. 
+2. Call [resetIdentities](api-reference.md#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension. 
+3. Call [getExperienceCloudId](api-reference.md#getexperiencecloudid) on the Identity for Edge Network extension. This ensures the new ECID is generated before continuing. 
+4. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedIn` to generate a new ECID in the AEP Identity direct service extension.
 
 After completing the above steps, each identity extension will have its own, different, ECID. The new ECIDs will get linked under a new Identity Graph for the customer.
 
