@@ -1,5 +1,79 @@
 # Configuration API reference
 
+## Version of the Configuration extension
+
+The `extensionVersion()` API returns the version of the Configuration extension.
+
+To get the version of the Configuration extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String coreExtensionVersion = MobileCore.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+**Objective C**
+
+```objectivec
+NSString *coreExtensionVersion = [ACPCore extensionVersion];
+```
+
+**Swift**
+
+```swift
+let coreExtensionVersion  = ACPCore.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.extensionVersion().then(coreExtensionVersion => console.log("AdobeExperienceSDK: ACPCore version: " + coreExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String coreExtensionVersion = await FlutterACPCore.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPCore.extensionVersion(function(version) {  
+   console.log("ACPCore version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string coreExtensionVersion = ACPCore.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string coreExtensionVersion = ACPCore.ExtensionVersion();
+```
+{% endtab %}
+{% endtabs %}
+
 ## configureWithAppID
 
 This API causes the SDK to download the configuration for the provided app ID and apply the configuration to the current session.
