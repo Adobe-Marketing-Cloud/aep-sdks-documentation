@@ -61,7 +61,7 @@ ACPAnalytics.extensionVersion(function(version) {
 ### C\#
 
 ```csharp
-string lifecycleVersion = ACPAnalytics.ExtensionVersion();
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
 ```
 {% endtab %}
 
@@ -69,7 +69,7 @@ string lifecycleVersion = ACPAnalytics.ExtensionVersion();
 ### C\#
 
 ```csharp
-string lifecycleVersion = ACPAnalytics.ExtensionVersion();
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
 ```
 {% endtab %}
 {% endtabs %}
