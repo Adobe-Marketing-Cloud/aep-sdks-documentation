@@ -8,15 +8,15 @@ To get the version of the Campaign Standard extension, use the following code sa
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public String extensionVersion()
 ```
 
-#### Example
+### Example
 
 ```java
 Campaign.extensionVersion();
@@ -24,21 +24,21 @@ Campaign.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+### Syntax
 
 ```objectivec
 + (nonnull NSString*) extensionVersion;
 ```
 
-#### Examples
+### Examples
 
-#### Objective C
+### Objective C
 
 ```objectivec
 NSLog(@"ACPCampaign version: %@", [ACPCampaign extensionVersion]);
 ```
 
-#### Swift
+### Swift
 
 ```swift
 print("ACPCampaign version: ", ACPCampaign.extensionVersion())
@@ -46,15 +46,15 @@ print("ACPCampaign version: ", ACPCampaign.extensionVersion())
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
-#### Syntax
+### Syntax
 
 ```javascript
 extensionVersion(): Promise<string>
 ```
 
-#### Example
+### Example
 
 ```javascript
 ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPCampaign version: " + version));
@@ -68,15 +68,15 @@ This method clears the cached rules from the previous download before triggering
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public static void resetLinkageFields()
 ```
 
-#### Example
+### Example
 
 ```java
 Campaign.resetLinkageFields()
@@ -84,21 +84,21 @@ Campaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+### Syntax
 
 ```objectivec
 + (void) resetLinkageFields;
 ```
 
-#### Objective C
+### Objective C
 
-#### Example
+### Example
 
 ```objectivec
 [ACPCampaign resetLinkageFields];
 ```
 
-#### Swift
+### Swift
 
 ```swift
 ACPCampaign.resetLinkageFields()
@@ -106,15 +106,15 @@ ACPCampaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
-#### Syntax
+### Syntax
 
 ```javascript
 resetLinkageFields();
 ```
 
-#### Example
+### Example
 
 ```javascript
 ACPCampaign.resetLinkageFields();
@@ -134,9 +134,9 @@ For more information about setting up linkage fields in Campaign, see [Extending
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-#### Syntax
+### Syntax
 
 ```java
 public static void setLinkageFields(final Map<String, String> linkageFields)
@@ -144,7 +144,7 @@ public static void setLinkageFields(final Map<String, String> linkageFields)
 
 * _linkageFields_ is a map that contains the linkage field key-value pairs.
 
-#### Example
+### Example
 
 ```java
 HashMap<String, String> linkageFields = new HashMap<String, String>();
@@ -156,7 +156,7 @@ Campaign.setLinkageFields(linkageFields);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+### Syntax
 
 ```objectivec
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
@@ -164,15 +164,15 @@ Campaign.setLinkageFields(linkageFields);
 
 * _linkageFields_ is a dictionary that contains the linkage field key-value pairs.
 
-#### Examples
+### Examples
 
-#### Objective C
+### Objective C
 
 ```objectivec
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
-#### Swift
+### Swift
 
 ```swift
 var linkageFields = [String: String]()
@@ -184,9 +184,9 @@ ACPCampaign.setLinkageFields(linkageFields)
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
-#### Syntax
+### Syntax
 
 ```javascript
 setLinkageFields(linkageFields: { string: string })
@@ -194,7 +194,7 @@ setLinkageFields(linkageFields: { string: string })
 
 * _linkageFields_ is a map that contains the linkage field key-value pairs.
 
-#### Example
+### Example
 
 ```javascript
 ACPCampaign.setLinkageFields({"firstName": "John"});

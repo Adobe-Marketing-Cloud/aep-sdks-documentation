@@ -61,7 +61,7 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 | [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services) | Releasing Soon |  |
 | [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPTarget.svg?color=orange&label=AEPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPTarget) | [Link](https://github.com/adobe/aepsdk-target-ios) |
 | [Adobe Campaign Standard](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard) | Releasing Soon |  |
-| [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic) | Releasing Soon |  |
+| [Adobe Campaign Classic](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic) | To Be Determined |  |
 
 ## iOS — Objective-C
 

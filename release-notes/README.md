@@ -241,7 +241,7 @@ The included features with this release are:
 * Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
-This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub. 
+This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
 
 These iOS libraries, written in Swift, are available for integration via SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications.
 

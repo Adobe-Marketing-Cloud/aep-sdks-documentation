@@ -7,7 +7,7 @@ The following documentation details how to use the extension as well as the requ
 {% hint style="warning" %}
 ### Beta
 
-Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for more details. 
+Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for more details.
 {% endhint %}
 
 ## Getting Started
