@@ -117,7 +117,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
        pod 'AEPCore'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPMessaging', :git => 'git@github.com:adobe/aepsdk-messaging-ios.git', :branch => 'main'
+       pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git', :branch => 'main'
    end
    ```
 
