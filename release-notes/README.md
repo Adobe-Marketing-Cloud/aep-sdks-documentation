@@ -16,6 +16,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fixed a crash that was caused when application did not find the required activity for requesting location permission.
 
+## April 29, 2021
+
+### iOS AEPCore 3.1.3
+
+* Update to use AEPRulesEngine 1.0.1.
+
+### iOS AEPRulesEngine 1.0.1
+* Fixed a Swift compatibility issue.
+
 ## May 5, 2021
 
 ### iOS AEPMedia 3.0.0
