@@ -35,9 +35,11 @@
   * [FAQ](using-mobile-extensions/adobe-edge-identity/edge-identity-faq.md)
 * [Offer Decisioning](using-mobile-extensions/offer-decisioning-extension/README.md)
   * [Offer Decisioning API reference](using-mobile-extensions/offer-decisioning-extension/offer-api-reference.md)
+* [Places](using-mobile-extensions/places/README.md)
+  * [Places API reference](using-mobile-extensions/places/places-usage-reference.md)
+  * [Migration from ACPPlaces](using-mobile-extensions/places/migration.md)
 * [Consent for Edge Network](using-mobile-extensions/adobe-edge-consent.md)
 
 ## Resources
 
 * [Privacy and GDPR](resources/privacy-and-gdpr.md)
-
