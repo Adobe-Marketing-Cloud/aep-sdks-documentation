@@ -16,7 +16,7 @@ Replace the (extension) dependencies in your `Podfile`, using core extensions an
 
 # replace ACPUserProfile with AEPUserProfile
 # pod 'ACPUserProfile'
-	pod 'AEPUserProfile'
+  pod 'AEPUserProfile'
 ```
 
 The supported `pod`s  to be replaced:
@@ -29,9 +29,6 @@ The supported `pod`s  to be replaced:
 | ACPTarget      | AEPTarget                                   |
 | ACPMedia       | AEPMedia                                    |
 | ACPAudience    | AEPAudience                                 |
-|                |                                             |
-|                |                                             |
-|                |                                             |
 
 Save the `Podfile` and run the install command:
 
@@ -140,12 +137,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 The following documents detail API changes between ACP SDKs and AEP SDKs.
 
-- Adobe Core extension APIs
+- [Adobe Core extension APIs](ACPCore-AEPCore.md)
 
-- Adobe Lifecycle extension APIs
+- [Adobe Lifecycle extension APIs](ACPLifecycle-AEPLifecycle.md)
 
-- Adobe Signal extension APIs
+- [Adobe Signal extension APIs](ACPSignal-AEPSignal.md)
 
-- Adobe UserProfile extension APIs
+- [Adobe UserProfile extension APIs](ACPUserProfile-AEPUserProfile.md)
 
   
