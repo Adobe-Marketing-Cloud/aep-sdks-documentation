@@ -11,7 +11,7 @@ The following information outlines the steps you'll need to follow to get starte
 
 ![](../.gitbook/assets/1-img.png)
 
-### Steps to Getting Started
+### Steps to get started
 
 1. [Setup Schemas & Datasets](setup-schemas-and-datasets.md)
 2. [Configure Datastreams](configure-datastreams.md)
@@ -24,7 +24,7 @@ The following information outlines the steps you'll need to follow to get starte
 
 ![](../.gitbook/assets/2-img.png)
 
-### Steps to Getting Started
+### Steps to get started
 
 1. Configure solutions
 2. [Setup Mobile Property](create-a-mobile-property.md)
