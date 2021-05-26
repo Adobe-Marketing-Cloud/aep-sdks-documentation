@@ -98,7 +98,10 @@
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
-* [Places Service](using-mobile-extensions/adobe-places.md)
+* [Places Service](using-mobile-extensions/places/README.md)
+  * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
+  * [Migration from ACPPlaces (iOS)](using-mobile-extensions/places/migration.md)
+  * [ACPPlaces (iOS) Reference](using-mobile-extensions/places/adobe-places.md)
 
 ## Resources
 
@@ -159,4 +162,3 @@
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
   * [Troubleshoot Project Griffon](beta/project-griffon/troubleshoot-project-griffon.md)
-
