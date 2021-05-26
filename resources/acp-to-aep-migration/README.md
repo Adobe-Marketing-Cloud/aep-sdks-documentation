@@ -71,6 +71,8 @@ The following code snippets show the difference in initialization code between A
 @end
 ```
 
+- AEP SDK
+
 ```objective-c
 #import <AEPCore/AEPCore.h>
 #import <AEPSignal/AEPSignal.h>
@@ -90,6 +92,8 @@ The following code snippets show the difference in initialization code between A
 ```
 
 ##### Swift
+
+- ACP SDK
 
 ```swift
 import ACPCore
@@ -115,6 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 @end
 ```
+
+- AEP SDK
 
 ```swift
 // AppDelegate.swift
