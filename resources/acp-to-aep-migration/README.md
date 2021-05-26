@@ -91,7 +91,7 @@ The following code snippets show the difference in initialization code between A
 }
 ```
 
-##### Swift
+#### Swift
 
 - ACP SDK
 
