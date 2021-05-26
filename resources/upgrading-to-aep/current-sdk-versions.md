@@ -9,7 +9,11 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 ## Android
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later.  The Adobe Experience Platform Edge Network extension and other **for Edge Network** extensions require Android versions 4.4 or later \(API levels 19 or later\).
+Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later. The Adobe Experience Platform Edge Network extension and other **for Edge Network** extensions require Android versions 4.4 or later \(API levels 19 or later\).
+{% endhint %}
+
+{% hint style="info" %}
+Given the sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/), our SDKs are no longer being uploaded to JCenter. Our Android libraries are now available on [MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information, see links below or find [our libraries on MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information on how to declare dependencies from Maven, please see [Declaring repositories](https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:declaring_multiple_repositories) on Gradle.
 {% endhint %}
 
 | Extension | Maven | Github |
