@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 25, 2021
+
+### Android Core 1.8.1
+
+* Added support for Event encode/decode.
+
 ## May 13, 2021
 
 ### Android Mobileservices 1.1.4
