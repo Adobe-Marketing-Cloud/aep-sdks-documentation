@@ -4,7 +4,7 @@ We suggest the following general process when migrating from ACP SDK to AEP SDK 
 
 ### Update the Podfile
 
-Replace the (extension) dependencies in your `Podfile`, using core extensions and profile extension as an example:
+Replace the dependencies in your `Podfile` for SDK extensions, using core extensions and profile extension as an example:
 
 ```ruby
 # replace ACPCore with AEPCore/AEPLifecycle/AEPIdentity/AEPSignal
@@ -19,11 +19,11 @@ Replace the (extension) dependencies in your `Podfile`, using core extensions an
   pod 'AEPUserProfile'
 ```
 
-The supported `pod`s  to be replaced:
+The supported `pod`s to be replaced:
 
 | ACP SDK        | AEP SDK                                     |
 | -------------- | ------------------------------------------- |
-| ACPCore        | AEPCore/ AEPLifecycle/AEPIdentity/AEPSignal |
+| ACPCore        | AEPCore/AEPLifecycle/AEPIdentity/AEPSignal  |
 | ACPUserProfile | AEPUserProfile                              |
 | ACPAnalytics   | AEPAnalytics                                |
 | ACPTarget      | AEPTarget                                   |
@@ -36,11 +36,13 @@ Save the `Podfile` and run the install command:
 pod install
 ```
 
-### Update initialization code
+### Update the initialization code
 
-The following code snippets show the difference in initialization code between ACP and AEP SDKs. The AEP SDK has changed the way of registering extensions and has gotten rid of calling the `start()` API.
+The following code snippets show the difference in the initialization code between ACP and AEP SDKs. The AEP SDK has changed the way of registering extensions and has gotten rid of calling the `MobileCore.start()` API.
 
-#### Objective-C
+{% tabs %} 
+
+{% tab title="Objective-C" %} 
 
 - ACP SDK
 
@@ -55,17 +57,17 @@ The following code snippets show the difference in initialization code between A
   
 @implementation AppDelegate
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-  [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
-  [ACPUserProfile registerExtension];
-  [ACPIdentity registerExtension];
-  [ACPLifecycle registerExtension];
-  [ACPSignal registerExtension];
-  [ACPCore start:^{
-    [ACPCore lifecycleStart:nil];
-  }];
-  ...
-  return YES;
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+    [ACPCore start:^{
+      [ACPCore lifecycleStart:nil];
+    }];
+    ... 
+    return YES;
 }
 ...
 @end
@@ -84,14 +86,16 @@ The following code snippets show the difference in initialization code between A
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class] completion:^{
-    [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
-    [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
-  }];
-  ...
+      [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+      [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+    }];
+    ...
 }
 ```
 
-#### Swift
+{% endtab %}
+
+{% tab title="Swift" %} 
 
 - ACP SDK
 
@@ -103,14 +107,14 @@ import ACPUserProfile
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
-		    ACPCore.setLogLevel(.debug)
+        ACPCore.setLogLevel(.debug)
         ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
-		    ACPUserProfile.registerExtension()
+	ACPUserProfile.registerExtension()
         ACPIdentity.registerExtension()
         ACPLifecycle.registerExtension()
         ACPSignal.registerExtension()
         ACPCore.start {
-        	ACPCore.lifecycleStart(nil)
+            ACPCore.lifecycleStart(nil)
         }
     ...
     return true
@@ -139,16 +143,20 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-### Update API usage for each extensions
+{% endtab %}
+
+{% endtabs %}
+
+### Update API usage for each extension
 
 The following documents detail API changes between ACP SDKs and AEP SDKs.
 
-- [Adobe Core extension APIs](ACPCore-AEPCore.md)
+- [Adobe Core extension](ACPCore-AEPCore.md)
 
-- [Adobe Lifecycle extension APIs](ACPLifecycle-AEPLifecycle.md)
+- [Adobe Lifecycle extension](ACPLifecycle-AEPLifecycle.md)
 
-- [Adobe Signal extension APIs](ACPSignal-AEPSignal.md)
+- [Adobe Signal extension](ACPSignal-AEPSignal.md)
 
-- [Adobe UserProfile extension APIs](ACPUserProfile-AEPUserProfile.md)
+- [Adobe UserProfile extension](ACPUserProfile-AEPUserProfile.md)
 
   
