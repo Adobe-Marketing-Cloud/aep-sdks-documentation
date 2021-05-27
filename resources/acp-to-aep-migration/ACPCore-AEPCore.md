@@ -20,6 +20,8 @@ The class name containing public APIs is different depending on which SDK and la
 
 ## Public APIs
 
+For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference)
+
 - [trackAction](#trackAction)
 - [trackState](#trackState)
 - [collectPii](#collectPii)
@@ -33,7 +35,7 @@ The class name containing public APIs is different depending on which SDK and la
 - [configureWithFileInPath](#configureWithFileInPath)
 - [extensionVersion](#extensionVersion)
 
-For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference)
+
 
 ### trackAction
 
