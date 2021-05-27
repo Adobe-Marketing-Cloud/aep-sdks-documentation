@@ -1,6 +1,6 @@
 # Migration from ACPCore to AEPCore
 
-## Primary Classes
+## Primary `Classes`
 
 The class name containing public APIs is different depending on which SDK and language combination being used.
 
@@ -10,7 +10,7 @@ The class name containing public APIs is different depending on which SDK and la
 | AEPCore     | Swift       | MobileCore    |
 | AEPCore     | Objective-C | AEPMobileCore |
 
-## Additional Public Classes and Enums
+## Additional public `Classes` and `Enums`
 
 | SdK VERSION | LANGUAGE    | CLASS NAME        |
 | ----------- | ----------- | ----------------- |
@@ -20,7 +20,22 @@ The class name containing public APIs is different depending on which SDK and la
 
 ## Public APIs
 
-### Track app actions
+- [trackAction](#trackAction)
+- [trackState](#trackState)
+- [collectPii](#collectPii)
+- [collectLaunchInfo](#collectLaunchInfo)
+- [getSdkIdentities](#getSdkIdentities)
+- [setLogLevel](#setLogLevel)
+- [registerURLHandler](#registerURLHandler)
+- [setAppGroup](#setAppGroup)
+- [configureWithAppId](#configureWithAppId)
+- [updateConfiguration](#updateConfiguration)
+- [configureWithFileInPath](#configureWithFileInPath)
+- [extensionVersion](#extensionVersion)
+
+For more information, please read the [mobile-core-api-reference.md](../../../foundation-extensions/mobile-core/mobile-core-api-reference.md)
+
+### trackAction
 
 - ACPCore
 
@@ -42,7 +57,7 @@ The class name containing public APIs is different depending on which SDK and la
   static func track(action: String?, data: [String: Any]?)
   ```
 
-### Track app states and views
+### trackState
 
 - ACPCore
 
@@ -65,7 +80,7 @@ The class name containing public APIs is different depending on which SDK and la
   ```
 
 
-###  Collect PII
+### collectPii
 
 - ACPCore
 
@@ -87,7 +102,7 @@ The class name containing public APIs is different depending on which SDK and la
   public static func collectPii(_ data: [String: Any])
   ```
 
-### Collect launch information
+### collectLaunchInfo
 
 - ACPCore
 
@@ -109,7 +124,7 @@ The class name containing public APIs is different depending on which SDK and la
   public static func collectLaunchInfo(_ userInfo: [String: Any])
   ```
 
-### Retrieving stored identifiers
+### getSdkIdentities
 
 - ACPCore
 
@@ -132,7 +147,7 @@ The class name containing public APIs is different depending on which SDK and la
   static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
   ```
 
-### Logging
+### setLogLevel
 
 - ACPCore
 
@@ -153,7 +168,7 @@ The class name containing public APIs is different depending on which SDK and la
   @objc(setLogLevel:)
   public static func setLogLevel(_ level: LogLevel)Void)
   ```
-### Handle open URL action
+### registerURLHandler
 
 - ACPCore
 
@@ -167,7 +182,7 @@ The class name containing public APIs is different depending on which SDK and la
   // Not supported
   ```
 
-### Set App Group
+### setAppGroup
 
 - ACPCore
 
@@ -187,7 +202,7 @@ The class name containing public APIs is different depending on which SDK and la
   public static func setAppGroup(_ group: String?)
   ```
 
-### configureWithAppID
+### configureWithAppId
 
 - ACPCore
 
