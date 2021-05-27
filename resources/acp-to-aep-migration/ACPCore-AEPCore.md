@@ -1,5 +1,7 @@
 # Migration from ACPCore to AEPCore
 
+This document is a reference comparison of ACPCore (2.x) APIs against their equivalent APIs in AEPCore (3.x).
+
 ## Primary `Classes`
 
 The class name containing public APIs is different depending on which SDK and language combination being used.
