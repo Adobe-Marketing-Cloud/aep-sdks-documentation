@@ -45,17 +45,17 @@ The class name containing public APIs is different depending on the SDK and lang
 
 {% tabs %}
 {% tab title="ACPPlaces (Objective-C)" %}
-```
+```objc
 + (void) clear;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) clear;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Swift)" %}
-```
+```swift
 static func clear()
 ```
 {% endtab %}
@@ -67,17 +67,17 @@ static func clear()
 
 {% tabs %}
 {% tab title="ACPPlaces (Objective-C)" %}
-```
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Swift)" %}
-```
+```swift
 static var extensionVersion: String
 ```
 {% endtab %}
@@ -89,17 +89,17 @@ static var extensionVersion: String
 
 {% tabs %}
 {% tab title="ACPPlaces (Objective-C)" %}
-```
+```objc
 + (void) getCurrentPointsOfInterest: (nullable void (^) (NSArray<ACPPlacesPoi*>* _Nullable userWithinPoi)) callback;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) getCurrentPointsOfInterest: ^(NSArray<AEPPlacesPoi*>* _Nonnull pois) closure;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Swift)" %}
-```
+```swift
 static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) -> Void)
 ```
 {% endtab %}
@@ -116,12 +116,12 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 If the SDK has no last known location, it will pass a `CLLocation` object with a value of `999.999` for latitude and longitude to the callback.
 {% endhint %}
 
-```
+```objc
 + (void) getLastKnownLocation: (nullable void (^) (CLLocation* _Nullable lastLocation)) callback;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) getLastKnownLocation: ^(CLLocation* _Nullable lastLocation) closure;
 ```
 {% endtab %}
@@ -131,7 +131,7 @@ If the SDK has no last known location, it will pass a `CLLocation` object with a
 If the SDK has no last known location, it will pass `nil` to the closure.
 {% endhint %}
 
-```
+```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 ```
 {% endtab %}
@@ -148,7 +148,7 @@ static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 Two `getNearbyPointsOfInterest` methods exist. The overloaded version allows the caller to provide an `errorCallback` parameter in the case of failure.
 {% endhint %}
 
-```
+```objc
 // without error handling
 + (void) getNearbyPointsOfInterest: (nonnull CLLocation*) currentLocation
                              limit: (NSUInteger) limit
@@ -162,7 +162,7 @@ Two `getNearbyPointsOfInterest` methods exist. The overloaded version allows the
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) getNearbyPointsOfInterest: (nonnull CLLocation*) currentLocation
                              limit: (NSUInteger) limit
                           callback: ^ (NSArray<AEPPlacesPoi*>* _Nonnull, AEPPlacesQueryResponseCode) closure;
@@ -174,7 +174,7 @@ Two `getNearbyPointsOfInterest` methods exist. The overloaded version allows the
 Rather than providing an overloaded method, a single method supports retrieval of nearby Points of Interest. The provided closure accepts two parameters, representing the resulting nearby points of interest (if any) and the response code.
 {% endhint %}
 
-```
+```swift
 static func getNearbyPointsOfInterest(forLocation location: CLLocation,
                                       withLimit limit: UInt,
                                       closure: @escaping ([PointOfInterest], PlacesQueryResponseCode) -> Void)
@@ -193,13 +193,13 @@ static func getNearbyPointsOfInterest(forLocation location: CLLocation,
 The order of parameters has the `CLRegion` that triggered the event first, and the `ACPRegionEventType` second.
 {% endhint %}
 
-```
+```objc
 + (void) processRegionEvent: (nonnull CLRegion*) region
          forRegionEventType: (ACPRegionEventType) eventType;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) processRegionEvent: (AEPRegionEventType) eventType
                   forRegion: (nonnull CLRegion*) region;
 ```
@@ -210,7 +210,7 @@ The order of parameters has the `CLRegion` that triggered the event first, and t
 The order of parameters has the `PlacesRegionEvent` first, and the `CLRegion` that triggered the event second. This aligns better with Swift API naming conventions.
 {% endhint %}
 
-```
+```swift
 static func processRegionEvent(_ regionEvent: PlacesRegionEvent,
                                forRegion region: CLRegion)
 ```
@@ -223,7 +223,7 @@ static func processRegionEvent(_ regionEvent: PlacesRegionEvent,
 
 {% tabs %}
 {% tab title="ACPPlaces (Objective-C)" %}
-```
+```objc
 + (void) registerExtension;
 ```
 {% endtab %}
@@ -233,7 +233,7 @@ static func processRegionEvent(_ regionEvent: PlacesRegionEvent,
 Registration occurs by passing `AEPMobilePlaces` to the `[AEPMobileCore registerExtensions:completion:]` API.
 {% endhint %}
 
-```
+```objc
 [AEPMobileCore registerExtensions:@[AEPMobilePlaces.class] completion:nil];
 ```
 {% endtab %}
@@ -243,7 +243,7 @@ Registration occurs by passing `AEPMobilePlaces` to the `[AEPMobileCore register
 Registration occurs by passing `Places` to the `MobileCore.registerExtensions` API.
 {% endhint %}
 
-```
+```swift
 MobileCore.registerExtensions([Places.self])
 ```
 {% endtab %}
@@ -255,17 +255,17 @@ MobileCore.registerExtensions([Places.self])
 
 {% tabs %}
 {% tab title="ACPPlaces (Objective-C)" %}
-```
+```objc
 + (void) setAuthorizationStatus: (CLAuthorizationStatus) status;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Objective-C)" %}
-```
+```objc
 + (void) setAuthorizationStatus: (CLAuthorizationStatus) status;
 ```
 {% endtab %}
 {% tab title="AEPPlaces (Swift)" %}
-```
+```swift
 static func setAuthorizationStatus(status: CLAuthorizationStatus)
 ```
 {% endtab %}

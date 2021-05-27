@@ -1,4 +1,4 @@
-# AEPPlaces API Reference
+# AEPPlaces API reference
 
 This document contains usage information for the public functions, classes, and enums in AEPPlaces.
 
@@ -21,22 +21,22 @@ Clears out the client-side data for Places in shared state, local storage, and i
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func clear()
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 Places.clear()
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) clear;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 [AEPMobilePlaces clear];
 ```
 {% endtab %}
@@ -50,22 +50,22 @@ Returns the running version of the AEPPlaces extension.
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static var extensionVersion: String
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 let placesVersion = Places.extensionVersion
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 NSString *placesVersion = [AEPMobilePlaces extensionVersion];
 ```
 {% endtab %}
@@ -79,24 +79,24 @@ Returns all points of interest (POI) of which the device is currently known to b
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) -> Void)
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 Places.getCurrentPointsOfInterest() { currentPois in
     print("currentPois: \(currentPois)")
 }
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) getCurrentPointsOfInterest: ^(NSArray<AEPPlacesPoi*>* _Nonnull pois) closure;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 [AEPMobilePlaces getCurrentPointsOfInterest:^(NSArray<AEPPlacesPoi *> *pois) {
     NSLog(@"currentPois: %@", pois);
 }];
@@ -114,12 +114,12 @@ If the Places Extension does not have a valid last known location for the user, 
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 Places.getLastKnownLocation() { location in
     if let location = location {
         print("location returned from closure: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
@@ -127,13 +127,13 @@ Places.getLastKnownLocation() { location in
 }
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) getLastKnownLocation: ^(CLLocation* _Nullable lastLocation) closure;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 [AEPMobilePlaces getLastKnownLocation:^(CLLocation *location) {
     if (location) {
         NSLog(@"location returned from closure: (%f, %f)", location.coordinate.latitude, location.coordinate.longitude);
@@ -151,29 +151,29 @@ Requests a list of nearby Points of Interest (POI) and returns them in a closure
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func getNearbyPointsOfInterest(forLocation location: CLLocation,
                                       withLimit limit: UInt,
                                       closure: @escaping ([PointOfInterest], PlacesQueryResponseCode) -> Void)
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 let location = CLLocation(latitude: 40.4350229, longitude: -111.8918356)
 Places.getNearbyPointsOfInterest(forLocation: location, withLimit: 10) { (nearbyPois, responseCode) in    
     print("responseCode: \(responseCode.rawValue) - nearbyPois: \(nearbyPois)")
 }
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) getNearbyPointsOfInterest: (nonnull CLLocation*) currentLocation
                              limit: (NSUInteger) limit
                           callback: ^ (NSArray<AEPPlacesPoi*>* _Nonnull, AEPPlacesQueryResponseCode) closure;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 CLLocation *location = [[CLLocation alloc] initWithLatitude:40.4350229 longitude:-111.8918356];
 
 [AEPMobilePlaces getNearbyPointsOfInterest:location
@@ -196,13 +196,13 @@ Calling this method will result in an `Event` being dispatched to the SDK's `Eve
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func processRegionEvent(_ regionEvent: PlacesRegionEvent,
                                forRegion region: CLRegion)
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 40.3886845, longitude: -111.8284979),
                               radius: 100,
                               identifier: "877677e4-3004-46dd-a8b1-a609bd65a428")
@@ -210,14 +210,14 @@ let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 40.388684
 Places.processRegionEvent(.entry, forRegion: region)
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) processRegionEvent: (AEPRegionEventType) eventType
                   forRegion: (nonnull CLRegion*) region;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(40.3886845, -111.8284979)
                                                              radius:100
                                                          identifier:@"877677e4-3004-46dd-a8b1-a609bd65a428"];
@@ -236,13 +236,13 @@ This API no longer exists in `AEPPlaces`. Instead, the extension should be regis
 {% tabs %}
 {% tab title="Swift" %}
 **Example:**
-```
+```swift
 MobileCore.registerExtensions([Places.self])
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
+{% tab title="Objective-C" %}
 **Example:**
-```
+```objc
 [AEPMobileCore registerExtensions:@[AEPMobilePlaces.class] completion:nil];
 ```
 {% endtab %}
@@ -262,12 +262,12 @@ This method should only be called from the `CLLocationManagerDelegate` protocol 
 
 {% tabs %}
 {% tab title="Swift" %}
-**Signature:**
-```
+**Signature**
+```swift
 static func setAuthorizationStatus(status: CLAuthorizationStatus)
 ```
-**Example Usage:**
-```
+**Example usage**
+```swift
 // in the class implementing CLLocationManagerDelegate:
 
 func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -275,13 +275,13 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 }
 ```
 {% endtab %}
-{% tab title="Objective-c" %}
-**Signature:**
-```
+{% tab title="Objective-C" %}
+**Signature**
+```objc
 + (void) setAuthorizationStatus: (CLAuthorizationStatus) status;
 ```
-**Example Usage:**
-```
+**Example usage**
+```objc
 // in the class implementing CLLocationManagerDelegate:
 
 - (void)locationManagerDidChangeAuthorization:(CLLocationManager *)manager {
@@ -295,7 +295,7 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 
 ## Additional classes and enums
 
-| Type | Swift | Objective-c |
+| Type | Swift | Objective-C |
 | ---- | ----- | ----------- |
 | class | `PointOfInterest` | `AEPPlacesPoi` |
 | enum | `PlacesQueryResponseCode` | `AEPlacesQueryResponseCode` |
