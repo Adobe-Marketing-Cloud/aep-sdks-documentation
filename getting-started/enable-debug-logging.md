@@ -2,19 +2,19 @@
 
 ## Debug logging
 
-Debug logging is an optional, yet a recommended and critical SDK feature.
+Debug logging is an optional, but a recommended and critical SDK feature.
 
 By enabling logging, you can ensure that the SDK is working as intended. The following table explains levels of logging available and the purpose they serve:
 
 | Log Level | Description |
 | :--- | :--- |
 | Error | This is the default log level used by SDK. This log level provides the details about unrecoverable errors that occurred during SDK implementation. |
-| Warning | In addition to the detail from _Error_ log level, _Warning_ provides error information during SDK integration. This log level might indicate that a request has been made to the SDK, but the SDK might be unable to perform the requested task. For example, this log level might be used when catching an unexpected, but recoverable, exception and printing its message. |
-| Debug | In addition to detail from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
-| Verbose | In addition to detail from the _Debug_ level, _Verbose_ provides detailed, low-level information about how SDK processes database interactions and SDK events. |
+| Warning | In addition to the details from _Error_ log level, _Warning_ provides error information during SDK integration. This log level might indicate that a request has been made to the SDK, but the SDK might be unable to perform the requested task. For example, this log level might be used when catching an unexpected, but recoverable, exception and printing its message. |
+| Debug | In addition to the details from the _Warning_ log level, _Debug_ also provides high-level information about how the SDK processes network requests/responses data. |
+| Verbose | In addition to the details from the _Debug_ level, _Verbose_ provides detailed, low-level information about how the SDK processes database interactions and SDK events. |
 
 {% hint style="warning" %}
-Note that using `Debug` or `Verbose` log levels may cause performance or security concerns. It is recommended that you use only `Error` or `Warning` log levels in production applications.
+Using `Debug` or `Verbose` log levels may cause performance or security concerns. As a result, it is recommended that you use only `Error` or `Warning` log levels in production applications.
 {% endhint %}
 
 To enable debug logging, use the following methods:
@@ -51,7 +51,7 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 ```
 {% endtab %}
 
-{% tab title="iOS - Obj C" %}
+{% tab title="iOS - Objective-C" %}
 ## Objective-C
 
 ```objectivec
@@ -96,8 +96,6 @@ FlutterACPCore.setLogLevel(ACPLoggingLevel.DEBUG);
 {% tab title="Cordova" %}
 ## Cordova
 
-Controlling the log level of the SDK
-
 ```javascript
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelError, successCallback, errorCallback);
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelWarning, successCallback, errorCallback);
@@ -108,8 +106,6 @@ ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCall
 
 {% tab title="Unity" %}
 ## C\#
-
-Controlling the log level of the SDK
 
 ```csharp
 ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
@@ -122,12 +118,12 @@ ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
 
 ## Lifecycle metrics
 
-Lifecycle metrics is an optional, yet valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. A complete list of available metrics is provided [here](../foundation-extensions/mobile-core/lifecycle/).
+Lifecycle metrics are an optional, but valuable feature provided by the Adobe Experience Platform SDK. It provides out-of-the-box, application lifecycle information about your app user. A complete list of available metrics is provided in the [lifecycle documentation](../foundation-extensions/mobile-core/lifecycle/).
 
-These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, session start and pause times, and so on. You may also set additional lifecycle metrics.
+These metrics contain information on the app user's engagement lifecycle such as device information, install or upgrade information, and session start and pause times. You may also set additional lifecycle metrics.
 
 {% hint style="warning" %}
-This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
+This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -149,7 +145,7 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you call `setApplication`in each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each activity has no negative impact and ensures that the SDK always has the necessary reference to your application. As a result, you should call `setApplication` on each of your activities.
 {% endhint %}
 
 You can use the `onPause` function to pause the lifecycle data collection:
@@ -166,13 +162,13 @@ To ensure accurate session and crash reporting, this call must be added to every
 ```
 {% endtab %}
 
-{% tab title="iOS - Obj C" %}
+{% tab title="iOS - Objective-C" %}
 ### Objective-C
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
 
 {% hint style="warning" %}
-If your iOS application supports background capabilities, your `application:didFinishLaunchingWithOptions:` method might be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
+If your iOS application supports background capabilities, you `application:didFinishLaunchingWithOptions:` method may be called when iOS launches your app in the background. If you do not want background launches to count towards your lifecycle metrics, then `lifecycleStart:` should only be called when the application state is not equal to `UIApplicationStateBackground`.
 {% endhint %}
 
 ```objectivec
@@ -190,7 +186,7 @@ If your iOS application supports background capabilities, your `application:didF
 }
 ```
 
-When launched, if your app is resuming from a backgrounded state, iOS might call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
+When launched, if your app is resuming from a backgrounded state, iOS may call your `applicationWillEnterForeground:` delegate method. You also need to call `lifecycleStart:`, but this time you do not need all of the supporting code that you used in `application:didFinishLaunchingWithOptions:`:
 
 ```objectivec
 - (void) applicationWillEnterForeground:(UIApplication *)application {
@@ -249,15 +245,17 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 {% tab title="React Native" %}
 ## JavaScript
 
-> Note: We recommend implementing Lifecycle metrics in native code, however, Lifecycle API's are available in Javascript if it fits your use case.
+{% hint style="info" %}
+You should implement Lifecycle metrics in native code. However, Lifecycle's APIs are available in Javascript if it fits your use case.
+{% endhint %}
 
-Starting a lifecycle event
+### Starting a Lifecycle event
 
 ```jsx
 ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 ```
 
-Pausing a lifecycle event
+### Pausing a Lifecycle event
 
 ```jsx
 ACPCore.lifecyclePause();
@@ -267,13 +265,18 @@ ACPCore.lifecyclePause();
 {% tab title="Flutter" %}
 ## Flutter
 
-Note: It is required to implement Lifecycle in native [Android and iOS code](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+{% hint style="info" %}
+You need to implement Lifecycle in native Android and iOS code. For more information on implementing, please read the [Lifecycle documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+{% endhint %}
+
 {% endtab %}
 
 {% tab title="Cordova" %}
 ## Cordova
 
-> Note: We recommend implementing Lifecycle in native [Android and iOS code](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+{% hint style="info" %}
+You need to implement Lifecycle in native Android and iOS code. For more information on implementing, please read the [Lifecycle documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
+{% endhint %}
 
 **Getting Lifecycle version:**
 
@@ -289,7 +292,7 @@ ACPLifecycle.extensionVersion(function(version) {
 {% tab title="Unity" %}
 ## C\#
 
-Starting and pausing a lifecycle event
+### Starting and pausing a lifecycle event
 
 ```csharp
 private void OnApplicationPause(bool pauseStatus)
@@ -313,7 +316,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 **iOS**
 
-Starting and pausing a lifecycle event
+### Starting and pausing a lifecycle event
 
 ```csharp
 public override void WillEnterForeground(UIApplication uiApplication)
@@ -331,7 +334,7 @@ public override void DidEnterBackground(UIApplication uiApplication)
 
 **Android**
 
-Starting and pausing a lifecycle event
+### Starting and pausing a lifecycle event
 
 ```csharp
 protected override void OnResume()
@@ -349,5 +352,5 @@ protected override void OnPause()
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Lifecycle Metrics](../foundation-extensions/mobile-core/lifecycle/).
+For more information, see the documentation on [Lifecycle metrics](../foundation-extensions/mobile-core/lifecycle/).
 
