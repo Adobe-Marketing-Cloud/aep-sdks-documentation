@@ -76,16 +76,18 @@ The following code snippets show the difference in the initialization code betwe
 - AEP SDK
 
 ```objective-c
-#import <AEPCore/AEPCore.h>
-#import <AEPSignal/AEPSignal.h>
-#import <AEPLifecycle/AEPLifecycle.h>
-#import <AEPIdentity/AEPIdentity.h>
-#import <AEPServices/AEPServices.h>
+@import AEPCore;
+@import AEPSignal;
+@import AEPLifecycle;
+@import AEPIdentity;
+@import AEPUserProfile;
+@import AEPServices;
 ...
   
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class] completion:^{
+      [AEPMobileCore setLogLevel: AEPLogLevelDebug];
+      [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class] completion:^{
       [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
       [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
     }];
