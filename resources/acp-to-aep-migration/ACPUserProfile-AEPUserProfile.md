@@ -1,6 +1,8 @@
 # Migration from ACPUserProfile to AEPUserProfile
 
-## Primary Classes
+This document is a reference comparison of ACPUserProfile (2.x) APIs against their equivalent APIs in AEPUserProfile (3.x).
+
+## Primary `Classes`
 
 | SdK VERSION    | LANGUAGE    | CLASS NAME           |
 | -------------- | ----------- | -------------------- |
@@ -9,6 +11,8 @@
 | AEPUserProfile | Objective-C | AEPMobileUserProfile |
 
 ## Public APIs
+
+For more information, please read the [Profile API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile/profile-api-references)
 
 ### extensionVersion
 
