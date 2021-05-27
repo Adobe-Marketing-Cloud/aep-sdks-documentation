@@ -33,10 +33,10 @@ The following steps illustrate the creation of a sample schema for mobile data c
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create an XDM Schema as follows:
-   1. From the left panel, select Schemas
+   1. From the left panel, select **Schemas**
    2. Click **Create schema**
    3. Select **XDM Experience event**
-   4. Under **Mixins**, select **Add**; search and add the `Environment Details`,`Application Details`, and other pre-created or custom _mixins_ as needed.
+   4. When **Add field groups** panel appears, search and add the `Environment Details`,`Application Details`, and other pre-created or custom _field groups_ as needed.
    5. Set a **Display Name** for this schema and click `Save`.
 
 ![Schema Creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Ffe309e8b2ebd1c7573cf23ccdab56f406b4aa822.png?alt=media)
