@@ -1,6 +1,6 @@
 # Migration from ACPLifecycle to AEPLifecycle
 
-## Primary Classes
+## Primary `Classes`
 
 | SdK VERSION  | LANGUAGE    | CLASS NAME         |
 | ------------ | ----------- | ------------------ |
@@ -9,6 +9,8 @@
 | AEPLifecycle | Objective-C | AEPMobileLifecycle |
 
 ## Public APIs
+
+For more information, please read the [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference)
 
 ### extensionVersion
 
