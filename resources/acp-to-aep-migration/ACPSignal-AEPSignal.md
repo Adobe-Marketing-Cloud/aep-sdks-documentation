@@ -1,6 +1,8 @@
 # Migration from ACPSignal to AEPSignal
 
-## Primary Classes
+This document is a reference comparison of ACPSignal (2.x) APIs against their equivalent APIs in AEPSignal (3.x).
+
+## Primary `Classes`
 
 | SdK VERSION | LANGUAGE    | CLASS NAME      |
 | ----------- | ----------- | --------------- |
@@ -9,6 +11,8 @@
 | AEPSignal   | Objective-C | AEPMobileSignal |
 
 ## Public APIs
+
+For more information, please read the [Signal API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/signals/signal-api-reference)
 
 ### extensionVersion
 
