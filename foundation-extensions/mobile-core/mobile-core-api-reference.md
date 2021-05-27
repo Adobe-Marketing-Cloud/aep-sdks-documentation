@@ -146,7 +146,50 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+**Objective-C**
+
+### trackAction
+
+**Syntax**
+
+```swift
+@objc(trackAction:data:)
+static func track(action: String?, data: [String: Any]?)
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```objectivec
+ [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
+```
+
+**Swift**
+
+### trackAction
+
+**Syntax**
+
+```swift
+static func track(action: String?, data: [String: Any]?)
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```swift
+MobileCore.track(action: "action name", data: ["key": "value"])
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 **Objective-C**
 
 ### trackAction
@@ -353,7 +396,50 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+**Objective-C**
+
+### trackState
+
+**Syntax**
+
+```swift
+@objc(trackState:data:)
+static func track(state: String?, data: [String: Any]?)
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```objectivec
+ [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
+```
+
+**Swift**
+
+### trackState
+
+**Syntax**
+
+```swift
+static func track(state: String?, data: [String: Any]?)
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```swift
+MobileCore.track(state: "state name", data: ["key": "value"])
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 **Objective-C**
 
 ### trackState
@@ -557,7 +643,46 @@ MobileCore.collectPII(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+**Objective-C**
+
+### collectPii
+
+**Syntax**
+
+```swift
+@objc(collectPii:)
+public static func collectPii(_ data: [String: Any])
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore collectPii:data:@{@"key1" : @"value1",
+                           @"key2" : @"value2"
+                           }];
+```
+
+**Swift**
+
+### collectPii
+
+**Syntax**
+
+```swift
+public static func collectPii(_ data: [String: Any])
+```
+
+**Example**
+
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 **Objective-C**
 
 ### collectPii
@@ -609,7 +734,60 @@ If the Analytics extension is enabled in your SDK, collecting this launch data r
 Coming soon
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+**Objective-C**
+
+This method should be called to support the following use cases:
+
+* Tracking Deep Link click-throughs
+  * From `application:didFinishLaunchingWithOptions`
+  * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+* Tracking Push Message click-through
+  * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+
+#### collectLaunchInfo
+
+**Syntax**
+
+```text
+@objc(collectLaunchInfo:)
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+**Example**
+
+```text
+ [AEPMobileCore collectLaunchInfo:launchOptions];
+```
+
+**Swift**
+
+This method should be called to support the following use cases:
+
+* Tracking Deep Link click-throughs
+  * From `application(_:didFinishLaunchingWithOptions:)`
+  * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+* Tracking Push Message click-through
+  * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+
+#### collectLaunchInfo
+
+**Syntax**
+
+```swift
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+**Example**
+
+```swift
+AEPCore.collectLaunchInfo(userInfo)
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 **Objective-C**
 
 This method should be called to support the following use cases:
@@ -706,7 +884,48 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+#### Objective-C
+
+### getSdkIdentities
+
+#### Syntax
+
+```objectivec
+@objc(getSdkIdentities:)
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+```
+
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+    if (error) {
+      // handle error here
+    } else {
+      // handle the retrieved identities
+    }
+}];
+```
+
+**Swift**
+
+```swift
+MobileCore.getSdkIdentities { (content, error) in
+    // handle completion
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
+
 #### Objective-C
 
 ### getSdkIdentities
@@ -859,7 +1078,44 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Swift" %}
+
+**Objective C**
+
+#### setLogLevel
+
+**Syntax**
+
+```swift
+@objc(setLogLevel:)
+public static func setLogLevel(_ level: LogLevel)
+```
+
+**Example**
+
+```text
+[AEPMobileCore setLogLevel: AEPLogLevelTrace];
+```
+
+**Swift**
+
+#### setLogLevel
+
+**Syntax**
+
+```swift
+public static func setLogLevel(_ level: LogLevel)
+```
+
+**Example**
+
+```swift
+MobileCore.setLogLevel(.trace)
+```
+
+{% endtab %}
+
+{% tab title="iOS — Obj-C" %}
 **Objective C**
 
 #### setLogLevel
