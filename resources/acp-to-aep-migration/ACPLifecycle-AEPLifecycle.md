@@ -1,5 +1,7 @@
 # Migration from ACPLifecycle to AEPLifecycle
 
+This document is a reference comparison of ACPLifecycle (2.x) APIs against their equivalent APIs in AEPLifecycle (3.x).
+
 ## Primary `Classes`
 
 | SdK VERSION  | LANGUAGE    | CLASS NAME         |
