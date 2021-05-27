@@ -38,6 +38,25 @@ public class CoreApp extends Application {
 }
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+### setApplication
+
+**Example**
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+    ACPCore.Application = this.Application;
+    ACPCore.Start(null);
+  }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ### Get the `Application` instance
@@ -69,6 +88,24 @@ if (app != null) {
 }
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+### getApplication
+
+{% hint style="warning" %}
+`ACPCore.Application` may be `null` if the `Application` object was destroyed or was not set in the Core.
+{% endhint %}
+
+**Example**
+
+```csharp
+var app = ACPCore.Application;
+if (app != null) {
+    ...
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Track app actions
@@ -92,7 +129,7 @@ If you installed and configured the Adobe Analytics extension, this method sends
 **Syntax**
 
 ```java
-public static void trackAction(final String action, final Map<String, String> contextData)
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
 ```
 
 * _action_ contains the name of the action to track.
@@ -115,7 +152,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 **Syntax**
 
 ```objc
-static func track(action: String?, data: [String: Any]?)
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
 ```
 
 * _action_ contains the name of the action to track.
@@ -124,7 +161,7 @@ static func track(action: String?, data: [String: Any]?)
 **Example**
 
 ```objc
- [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
+ [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
@@ -144,7 +181,115 @@ static func track(action: String?, data: [String: Any]?)
 **Example**
 
 ```swift
-MobileCore.track(action: "action name", data: ["key": "value"])
+ACPCore.track(action: "action name", data: ["key": "value"])
+```
+{% endtab %}
+{% tab title="React Native" %}
+
+**Javascript**
+
+### trackAction
+
+**Syntax**
+
+```jsx
+trackAction(action?: String, contextData?: { string: string });
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+```jsx
+ACPCore.trackAction("action name", {"key": "value"});
+```
+
+{% endtab %}
+{% tab title="Flutter"}
+
+**Dart**
+
+### trackAction
+
+**Syntax**
+
+```dart
+Future<void> trackAction (String action, {Map<String, String> contextData});
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+```dart
+FlutterACPCore.trackAction("action name",  data: {"key": "value"});
+```
+{% endtab %}
+{% tab title="Unity"}
+**C\#**
+
+### trackAction
+
+**Syntax**
+
+```csharp
+public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
+```
+* _name_ contains the name of the action to track.
+* _contextDataDict_ contains the context data to attach on the hit.
+
+**Example**
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "value");
+ACPCore.TrackAction("action", contextData);
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+#### C\#
+
+### trackAction
+
+**iOS Syntax**
+
+```csharp
+public static void TrackAction (string action, NSMutableDictionary<NSString, NSString> data);
+```
+
+* _action_ contains the name of the action to track.
+* _data_ contains the context data to attach on the hit.
+
+**Android Syntax**
+
+```csharp
+public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
+```swift
+static func track(state: String?, data: [String: Any]?)
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+**iOS**
+
+```csharp
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackAction("action", data);
+```
+
+**Android**
+
+```csharp
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackAction("action", data);
 ```
 {% endtab %}
 {% endtabs %}
@@ -190,9 +335,8 @@ MobileCore.trackState("homePage", additionalContextData);
 
 **Syntax**
 
-```swift
-@objc(trackState:data:)
-static func track(state: String?, data: [String: Any]?)
+```objectivec
+(void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
 
 * _state_ contains the name of the state to track.
@@ -201,7 +345,7 @@ static func track(state: String?, data: [String: Any]?)
 **Example**
 
 ```objectivec
- [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
+ [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
@@ -211,7 +355,7 @@ static func track(state: String?, data: [String: Any]?)
 **Syntax**
 
 ```swift
-static func track(state: String?, data: [String: Any]?)
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
 
 * _state_ contains the name of the state to track.
@@ -220,7 +364,132 @@ static func track(state: String?, data: [String: Any]?)
 **Example**
 
 ```swift
-MobileCore.track(state: "state name", data: ["key": "value"])
+ACPCore.trackState("state name", data: ["key": "value"])
+```
+{% endtab %}
+{% tab title="React Native" %}
+**Javascript**
+
+### trackState
+
+**Syntax**
+
+```jsx
+trackState(state?: String, contextData?: { string: string });
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+```jsx
+ACPCore.trackState("state name", {"key": "value"});
+```
+{% endtab %}
+{% tab title="Flutter" %}
+**Dart**
+
+### trackState
+
+**Syntax**
+
+```dart
+Future<void> trackState (String state, {Map<String, String> contextData});
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+```dart
+FlutterACPCore.trackState("state name",  data: {"key1: "value"})
+```
+{% endtab %}
+{% tab title="Cordova" %}
+**Cordova**
+
+### trackState
+
+**Syntax**
+
+```jsx
+ACPCore.trackState = function(state, contextData, success, fail);
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+* _success_ callback is invoked when trackState executes successfully.
+* _fail_ callback is invoked when trackState fails.
+
+**Example**
+
+```jsx
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
+```
+{% endtab %}
+{% tab title="Unity" %}
+**C\#**
+
+### trackState
+
+**Syntax**
+
+```csharp
+public static void TrackState(string name, Dictionary<string, string> contextDataDict)
+```
+
+* _state_ contains the name of the state to track.
+* _contextDataDict_ contains the context data to attach on the hit.
+
+**Example**
+
+```csharp
+var dict = new Dictionary<string, string>();
+dict.Add("key", "value");
+ACPCore.TrackState("state", dict);
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+### trackState
+
+**iOS syntax**
+
+```csharp
+public static void TrackState (string state, NSMutableDictionary<NSString, NSString> data);
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Android syntax**
+
+```csharp
+public unsafe static void TrackState (string state, IDictionary<string, string> contextData);
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**iOS example**
+
+```csharp
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackState("state", data);
+```
+
+**Android example**
+
+```csharp
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackState("state", data);
 ```
 {% endtab %}
 {% endtabs %}
@@ -402,7 +671,7 @@ static func setAdvertisingIdentifier(idfa: String?)
     if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
         idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     } 
-    [AEPMobileCore setAdvertisingIdentifier:idfa];
+    [ACPCore setAdvertisingIdentifier:idfa];
 }
 
 (void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
@@ -423,7 +692,7 @@ static func setAdvertisingIdentifier(idfa: String?)
                 //handle error
                 break;
         }
-        [AEPMobileCore setAdvertisingIdentifier:idfa];
+        [ACPCore setAdvertisingIdentifier:idfa];
     }];
 }
 ```
@@ -477,7 +746,7 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
-[AEPMobileCore setPushIdentifier:deviceToken];
+[ACPCore setPushIdentifier:deviceToken];
 ```
 
 **Swift**
@@ -541,14 +810,15 @@ MobileCore.collectPII(data);
 **Syntax**
 
 ```swift
-@objc(collectPii:)
-public static func collectPii(_ data: [String: Any])
+(void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
 ```
 
 **Example**
 
 ```objectivec
-[AEPMobileCore collectPii:data:@{@"key1" : @"value1", @"key2" : @"value2" }];
+[ACPCore collectPii:data:@{@"key1" : "@value1",
+                           @"key2" : "@value2"
+                           }];
 ```
 
 **Swift**
@@ -558,7 +828,40 @@ public static func collectPii(_ data: [String: Any])
 **Syntax**
 
 ```swift
-public static func collectPii(_ data: [String: Any])
+ACPCore.collectPii(data: [String : String])
+```
+
+**Example**
+
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+```
+{% endtab %}
+{% tab title="React Native" %}
+**Javascript**
+
+### collectPii
+
+**Syntax**
+
+```jsx
+ACPCore.collectPii(data: [String : String])
+```
+
+**Example**
+
+```jsx
+ACPCore.collectPii({"myPii": "data"});
+```
+
+**Swift**
+
+### collectPii
+
+**Syntax**
+
+```swift
+ACPCore.collectPii(data: [String : String])
 ```
 
 **Example**
@@ -601,15 +904,14 @@ The `collectLaunchInfo` method should be used in the following use cases:
 
 **Syntax**
 
-```text
-@objc(collectLaunchInfo:)
-public static func collectLaunchInfo(_ userInfo: [String: Any])
+```objectivec
+(void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 **Example**
 
 ```text
- [AEPMobileCore collectLaunchInfo:launchOptions];
+ [ACPCore collectLaunchInfo:launchOptions];
 ```
 
 **Swift**
@@ -627,7 +929,7 @@ The `collectLaunchInfo` method should be used in the following use cases:
 **Syntax**
 
 ```swift
-public static func collectLaunchInfo(_ userInfo: [String: Any])
+(void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 **Example**
@@ -694,8 +996,8 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 **Syntax**
 
 ```objectivec
-@objc(getSdkIdentities:)
-static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+(void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
+(void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
 ```
 
 * _callback_ is invoked with the SDK identities as a JSON string.
@@ -704,13 +1006,17 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 **Example**
 
 ```objectivec
-[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
-    if (error) {
-      // handle error here
-    } else {
-      // handle the retrieved identities
-    }
-}];
+[ACPCore getSdkIdentities:^(NSString * _Nullable content){
+    NSLog(content);
+
+[ACPCore getSdkIdentitiesWithCompletionHandler:^(NSString * _Nullable content, NSError * _Nullable error) {
+        if (error) {
+            // handle error here
+        } else {
+            // handle the retrieved identities
+            NSLog(content);
+        }
+    }];
 ```
 
 **Swift**
@@ -770,7 +1076,7 @@ static func resetIdentities()
 **Example**
 
 ```objectivec
-[AEPMobileCore resetIdentities];
+[ACPCore resetIdentities];
 ```
 
 **Swift**
@@ -835,6 +1141,37 @@ public static void setLargeIconResourceID(int resourceID)
  MobileCore.setLargeIconResourceID(R.mipmap.ic_launcher_round);
 ```
 {% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+### setSmallIconResourceID
+
+**Syntax**
+
+```csharp
+public unsafe static void SetSmallIconResourceID (int resourceID);
+```
+
+**Example**
+
+```csharp
+ACPCore.SetSmallIconResourceID(Resource.Mipmap.icon_round);
+```
+
+### setLargeIconResourceID
+
+**Syntax**
+
+```csharp
+public unsafe static void SetLargeIconResourceID (int resourceID);
+```
+
+**Example**
+
+```csharp
+ ACPCore.SetLargeIconResourceID(Resource.Mipmap.icon_round);
+```
+{% endtab %}
 {% endtabs %}
 
 ## Logging
@@ -891,14 +1228,15 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 **Syntax**
 
 ```swift
-@objc(setLogLevel:)
-public static func setLogLevel(_ level: LogLevel)
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
 ```
 
 **Example**
 
 ```text
-[AEPMobileCore setLogLevel: AEPLogLevelTrace];
+#import "ACPCore.h"
+
+[ACPCore setLogLevel: AEPLogLevelTrace];
 ```
 
 **Swift**
@@ -908,13 +1246,143 @@ public static func setLogLevel(_ level: LogLevel)
 **Syntax**
 
 ```swift
-public static func setLogLevel(_ level: LogLevel)
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
 ```
 
 **Example**
 
 ```swift
-MobileCore.setLogLevel(.trace)
+import ACPCore
+
+ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
+```
+{% endtab %}
+{% tab title="React Native" %}
+**Javascript**
+
+### setLogLevel
+
+**Syntax**
+
+```jsx
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```jsx
+import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+{% endtab %}
+{% tab title="Flutter" %}
+**Dart**
+
+### setLogLevel
+
+**Syntax**
+
+```dart
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
+FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
+```
+{% endtab %}
+{% tab title="Cordova" %}
+**Cordova**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
+
+* ACPCore.ACPMobileLogLevelError
+* ACPCore.ACPMobileLogLevelWarning
+* ACPCore.ACPMobileLogLevelDebug
+* ACPCore.ACPMobileLogLevelVerbose
+
+### setLogLevel
+
+**Syntax**
+
+```jsx
+ACPCore.setLogLevel = function(logLevel, success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
+ MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
+```
+{% endtab %}
+{% tab title="Unity" %}
+**C\#**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
+
+* ACPCore.ACPMobileLogLevel.ERROR
+* ACPCore.ACPMobileLogLevel.WARNING
+* ACPCore.ACPMobileLogLevel.DEBUG
+* ACPCore.ACPMobileLogLevel.VERBOSE
+
+### setLogLevel
+
+**Syntax**
+
+```csharp
+public static void SetLogLevel(ACPMobileLogLevel logLevel)
+```
+
+**Example**
+
+```csharp
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows for iOS:
+
+* ACPMobileLogLevel.Error;
+* ACPMobileLogLevel.Warning;
+* ACPMobileLogLevel.Debug;
+* ACPMobileLogLevel.Verbose;
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows for Android:
+
+* LoggingMode.Error;
+* LoggingMode.Warning;
+* LoggingMode.Debug;
+* LoggingMode.Verbose;
+
+### setLogLevel
+
+**iOS syntax**
+
+```csharp
+public static ACPMobileLogLevel LogLevel { get, set }
+```
+
+**Android syntax**
+
+```csharp
+public unsafe static LoggingMode LogLevel { get, set }
+```
+
+**iOS example**
+
+```csharp
+ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
+```
+
+**Android example**
+
+```csharp
+ACPCore.LogLevel = LoggingMode.Verbose;
 ```
 {% endtab %}
 {% endtabs %}
@@ -939,7 +1407,75 @@ LoggingMode mode = MobileCore.getLogLevel();
 {% endtab %}
 
 {% tab title="iOS" %}
-Do we have this information?
+
+**Objective-C**
+
+### getLogLevel
+
+**Syntax**
+
+```objectivec
+(ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```objectivec
+var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
+```
+
+**Swift**
+
+### getLogLevel
+
+**Syntax**
+
+```swift
+(ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```swift
+let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
+```
+
+{% endtab %}
+{% tab title="React Native" %}
+
+**Javascript**
+
+### getLogLevel
+
+**Example**
+
+```jsx
+ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
+```
+{% endtab %}
+{% tab title="Unity" %}
+
+**C\#**
+
+### getLogLevel
+
+**Example**
+
+```csharp
+ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+
+**C\#**
+
+### getLogLevel
+
+**Example**
+
+```csharp
+var logLevel = ACPCore.LogLevel;
+```
 {% endtab %}
 {% endtabs %}
 
@@ -978,7 +1514,124 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 {% endtab %}
 
 {% tab title="iOS" %}
-Do we have information for this?
+**Objective-C**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
+
+### log
+
+**Syntax**
+
+```text
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+**Example**
+
+```text
+[ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
+```
+
+**Output example**
+
+```text
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
+```
+
+**Swift**
+
+### log
+
+**Syntax**
+
+```swift
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+**Example**
+
+```swift
+ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
+```
+
+**Output example**
+
+```text
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`. 
+
+**Example**
+
+```jsx
+ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");
+```
+
+Note: `ACPMobileLogLevel` contains the following getters:
+
+```jsx
+const ERROR = "ACP_LOG_LEVEL_ERROR";
+const WARNING = "ACP_LOG_LEVEL_WARNING";
+const DEBUG = "ACP_LOG_LEVEL_DEBUG";
+const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `AdobeExperienceSDK`. 
+
+**iOS syntax**
+
+```csharp
+ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
+```
+
+```text
+[AdobeExperienceSDK ERROR <xamarin tag>]: xamarin message
+```
+
+**Android syntax**
+
+```csharp
+ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
+```
+
+```text
+[AdobeExperienceSDK] xamarin tag - xamarin message
+```
+{% endtab %}
+{% endtabs %}
+
+## Handle open URL action
+
+Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
+
+{% tabs %}
+{% tab title="iOS" %}
+**Objective C**
+
+### registerURLHandler
+
+**Syntax**
+
+```objectivec
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
+
+**Example**
+
+```objectivec
+[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
+    ...
+}];
+```
 {% endtab %}
 {% endtabs %}
 
@@ -1006,7 +1659,7 @@ public static func setAppGroup(_ group: String?)
 **Example**
 
 ```text
-[AEPMobileCore setAppGroup:@"app-group-id"];
+[ACPCore setAppGroup:@"app-group-id"];
 ```
 
 **Swift**
@@ -1022,7 +1675,24 @@ public static func setAppGroup(_ group: String?)
 **Example**
 
 ```swift
-MobileCore.setAppGroup("app-group-id")
+ACPCore.setAppGroup("app-group-id")
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+**C\#**
+
+### setAppGroup
+
+**Syntax**
+
+```csharp
+public static void SetAppGroup (string appGroup);
+```
+
+**Example**
+
+```csharp
+ACPCore.SetAppGroup("app_group");
 ```
 {% endtab %}
 {% endtabs %}
@@ -1090,36 +1760,35 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-### AEPError
+### ACPError
 
-The `AEPError` class shows the errors that can be passed to a completion handler callback from any API which uses one:
+The `ACPError` class shows the errors that can be passed to a completion handler callback from any API which uses one:
 
-* `.unexpected`: An unexpected error occurred.
-* `.callbackTimeout`: The timeout was met.
-* `.callbackNil`: The provided callback function is nil.
-* `.errorExtensionNotInitialized`: The extension is not initialized.
-* `.serverError`: There was a error on the server side.
-* `.networkError`: Network connection failed.
-* `.invalidRequest`: Invalid request parameters.
-* `.invalidResponse`: Invalid server response.
+* `ACPErrorUnexpected` - An unexpected error occurred.
+* `ACPErrorCallbackTimeout` - The timeout was met.
+* `ACPErrorCallbackNil` - The provided callback function is nil.
+* `ACPErrorExtensionNotInitialized` - The extension is not initialized.
 
 **Examples**
 
 **Objective-C**
 
 ```text
-[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+[ACPCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
   if (error) {
-    if (error.code == 1) {
+    if (error.code == ACPErrorCallbackTimeout) {
       // handle timeout error
-    } else if (error.code == 2) {
+    } else if (error.code == ACPErrorCallbackNil) {
       // handle nil callback error
-    }
+    } else if (error.code == ACPErrorExtensionNotInitialized) {
+      // handle extension not initialized error
+    } else if (error.code == ACPErrorUnexpected) {
+      // handle unexpected error
 
     ....
 
   } else {
-    // use content
+    // use privacy status
   }
 }];
 ```
@@ -1127,19 +1796,134 @@ The `AEPError` class shows the errors that can be passed to a completion handler
 **Swift**
 
 ```swift
-MobileCore.getSdkIdentities { identities, error in
-    if let error = error{
-        switch (error) {
-            case AEPError.unexpected:
-                // deal with error if needed
-                break;
-            default:
-                break;
-        }
-    } else{      
-    // use content
+ACPCore.getPrivacyStatus { (privacyStatus, error) in
+  if let error = error {
+    let callbackError: NSError = (error as NSError)
+    if (callbackError.code == ACPError.callbackTimeout.rawValue) {
+      // handle timeout error
+    } else if (callbackError.code == ACPError.callbackNil.rawValue) {
+      // handle nil callback error
+    } else if (callbackError.code == ACPError.extensionNotInitialized.rawValue) {
+      // handle extension not initialized error
+    } else if (callbackError.code == ACPError.unexpected.rawValue) {
+      // handle unexpected error
     }
+  } else {
+    // use privacyStatus
+  }
 }
+```
+{% endtab %}
+{% tab title="Xamarin" %}
+### Android
+
+**IAdobeCallback**
+
+This class provides the interface to receive results when the async APIs perform the requested action.
+
+```csharp
+public interface IAdobeCallback : IJavaObject, IDisposable, IJavaPeerable
+{
+    void Call (Java.Lang.Object p0);
+}
+```
+
+**IAdobeCallbackWithError**
+
+This class provides the interface to receive results or an error when the async APIs perform the requested action. When using this class, if the request cannot be completed within the default timeout or an unexpected error occurs, the request is aborted and the _fail_ method is called with the corresponding _AdobeError_.
+
+```csharp
+public interface IAdobeCallbackWithError : IAdobeCallback, IJavaObject, IDisposable, IJavaPeerable
+{
+    void Fail (AdobeError p0);
+}
+```
+
+**AdobeError**
+
+Errors which may be passed to an AdobeCallbackWithError:
+
+* `UnexpectedError` - An unexpected error occurred.
+* `CallbackTimeout` - The timeout was met.
+* `CallbackNull` - The provided callback function is null.
+* `ExtensionNotInitialized` - The extension is not initialized.
+
+**Example**
+
+```csharp
+ACPCore.GetPrivacyStatus(new AdobeCallbackWithError());
+class AdobeCallbackWithError : Java.Lang.Object, IAdobeCallbackWithError
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine("String callback content: " + stringContent);
+    }
+    else
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
+  public void Fail(AdobeError error)
+  {
+    if (error == AdobeError.UnexpectedError)
+    {
+      // handle unexpected error
+    }
+    else if (error == AdobeError.CallbackTimeout)
+    {
+      // handle timeout error
+    }
+    else if (error == AdobeError.CallbackNull)
+    {
+      // handle null callback error
+    }
+    else if (error == AdobeError.ExtensionNotInitialized)
+    {
+        // handle extension not initialized error
+    }
+```
+
+### iOS
+
+**ACPError**
+
+Errors which may be passed to a completion handler callback from any API which uses one:
+
+* `ACPError.Unexpected` - An unexpected error occurred.
+* `ACPError.CallbackTimeout` - The timeout was met.
+* `ACPError.CallbackNil` - The provided callback function is nil.
+* `ACPError.ExtensionNotInitialized` - The extension is not initialized.
+
+**Example**
+
+```csharp
+ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
+  if (error != null)
+  {
+    if ( error.Code == (int)ACPError.CallbackTimeout)
+    {
+      // handle timeout error
+    }
+    else if (error.Code == (int)ACPError.CallbackNil) 
+    {
+      // handle nil callback error
+    }
+    else if (error.Code == (int)ACPError.ExtensionNotInitialized)
+    {
+      // handle extension not initialized error
+    }
+    else if (error.Code == (int)ACPError.Unexpected)
+    {
+      // handle unexpected error
+    }
+  }
+  else
+  {
+    Console.WriteLine("privacy status: " + privacyStatus);
+  }
+});
 ```
 {% endtab %}
 {% endtabs %}
