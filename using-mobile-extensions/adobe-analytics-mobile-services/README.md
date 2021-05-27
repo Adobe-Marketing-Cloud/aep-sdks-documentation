@@ -120,18 +120,14 @@ import com.adobe.marketing.mobileservices.*;
 {% endtab %}
 
 {% tab title="iOS" %}
-Add the library to your project via your Podfile by adding the `ACPMobileServices`pod.
+Add the library to your project via your Podfile by adding the `AEPMobileServices` pod.
 
 #### Objective-C
 
 Import the library into your project:
 
 ```objectivec
-#import "ACPCore.h"
-#import “ACPIdentity.h”
-#import “ACPLifecycle.h”
-#import "ACPAnalytics.h"
-#import "ACPMobileServices.h"
+#import "AEPMobileServices.h"
 ```
 {% endtab %}
 {% endtabs %}
@@ -173,11 +169,9 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   [ACPAnalytics registerExtension];
-   [ACPLifecycle registerExtension];
-   [ACPIdentity registerExtension];
-   [ACPMobileServices registerExtension];
-   [ACPCore start:nil]
+    [AEPMobileCore registerExtensions:@[AEPMobileServices.class, AEPMobileLifecycle.class, AEPMobileSignal.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
+        [AEPMobileCore configureWithAppId:@"app-id"];
+    }];
    // Override point for customization after application launch.
    return YES;
 }
@@ -628,7 +622,7 @@ MobileServices.trackAdobeDeepLink
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [ACPMobileServices trackAdobeDeepLink:url]
+    [AEPMobileServices trackAdobeDeepLink:url]
     /*
      Handle deep link
      */
@@ -638,7 +632,7 @@ MobileServices.trackAdobeDeepLink
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
-    [ACPMobileServices trackAdobeDeepLink:url];
+    [AEPMobileServices trackAdobeDeepLink:url];
     /*
      Handle deep link
      */

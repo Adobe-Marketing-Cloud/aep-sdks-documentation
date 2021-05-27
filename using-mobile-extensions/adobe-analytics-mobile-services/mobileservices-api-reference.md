@@ -19,13 +19,13 @@ String mobileServicesExtensionVersion = MobileServices.extensionVersion();
 **Objective C**
 
 ```objectivec
-NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
+NSString *mobileServicesExtensionVersion = [AEPMobileServices extensionVersion];
 ```
 
 **Swift**
 
 ```swift
-let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
+let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
 ```
 {% endtab %}
 {% endtabs %}
@@ -72,14 +72,14 @@ Uri testUri = new Uri.Builder()
 ```text
 NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
 
-[ACPMobileServices trackAdobeDeepLink:url];
+[AEPMobileServices trackAdobeDeepLink:url];
 ```
 
 #### Swift
 
 ```swift
 let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
-ACPMobileServices.trackAdobeDeepLink(url)
+AEPMobileServices.trackAdobeDeepLink(url)
 ```
 {% endtab %}
 {% endtabs %}
