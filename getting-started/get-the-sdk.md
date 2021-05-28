@@ -1,11 +1,11 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
+The Adobe Experience Platform SDK is available for Apple iOS (includes iOS, iPadOS, and tvOS) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
 {% hint style="info" %}
-For iOS and Android projects, the recommended approach to integrating the SDK is to use supported dependency and package managers as listed for each platform such as Maven, Cocoapods, etc. SDKs are also available for download on [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
+For iOS and Android projects, the recommended approach for integrating the SDK is to use supported dependency and package managers as listed for each platform such as Maven and Cocoapods. SDKs are also available for download on [GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/).
 {% endhint %}
 
 {% tabs %}
@@ -13,7 +13,7 @@ For iOS and Android projects, the recommended approach to integrating the SDK is
 ### Java / Kotlin
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -21,7 +21,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
    The **Environments** tab lists the different environments where you can publish.
 
-3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
+3. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
 
    You should see a dialog box similar to the following:
 
@@ -35,20 +35,20 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS supports **iOS 10 or later.**
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later.**
 {% endhint %}
 
 {% hint style="success" %}
-### Apple M1 Compatibility
+### Apple M1 compatibility
 
-In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the AEP SDKs are now distributed using XCFrameworks.
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
 
-Please see [Release notes](../release-notes/#december-18-2020) and [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-### iOS \(Swift\) version 3.x
+### iOS (Swift) version 3.x
 
-Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, see [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
+Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
 
 ```swift
 use_frameworks!
@@ -74,14 +74,14 @@ end
 
 ### iOS version 2.x and before
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon  \(![](../.gitbook/assets/package%20%281%29.png)\).
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
 
 The necessary dependencies and initialization code can be copied from the dialog box to your app project.
 
-You should see a pop-up similar to the following \(image below shows iOS\):
+You should see a pop-up similar to the following image:
 
 ![](../.gitbook/assets/obj-c.png)
 {% endtab %}
@@ -89,10 +89,10 @@ You should see a pop-up similar to the following \(image below shows iOS\):
 {% tab title="React Native" %}
 ### React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **versions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
-For React Native, we recommend that you install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions on getting started with React Native applications, see this [tutorial](https://facebook.github.io/react-native/docs/getting-started).
+For React Native, you should install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions, see this [tutorial on getting started with React Native applications](https://facebook.github.io/react-native/docs/getting-started).
 {% endhint %}
 {% endtab %}
 
@@ -110,16 +110,16 @@ For the latest Flutter installation instructions, see the package [install tab](
 Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="info" %}
-For Cordova, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions on getting started with Cordova applications, see this [guide](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
+For Cordova, you should install [Node.js](https://nodejs.org/en/) to download packages from npm. For additional instructions, see this [guide to get started with Cordova applications](https://netbeans.apache.org/kb/docs/webclient/cordova-gettingstarted.html).
 {% endhint %}
 
-With Node.js installed, you may install the Cordova framework from terminal using the following statement:
+With Node.js installed, you can install the Cordova framework from terminal using the following statement:
 
 ```text
 sudo npm install -g cordova
 ```
 
-To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin\(s\) using the following statement:
+To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugins using the following statement:
 
 ```text
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
@@ -137,9 +137,9 @@ Adobe Experience Platform SDKs plugins for Unity supports **Unity versions 2019.
 For the latest Unity installation instructions, see the README file in the [unity-acpcore](https://github.com/adobe/unity-acpcore) repository.
 {% endhint %}
 
-To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the requisite Unity package\(s\).
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the requisite Unity packages.
 
-For instance, to add the Mobile Core extension, you may:
+For instance, to add the Mobile Core extension, you should:
 
 * Download [ACPCore-0.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-0.0.1-Unity.zip)
 * Unzip `ACPCore-0.0.1-Unity.zip`
@@ -163,7 +163,7 @@ If you cannot access the **Mobile Install Instructions** dialog box in Experienc
 
 ### 1. Add dependencies to your project
 
-Each extension needs added as a dependency to the mobile application project. The examples below will add the Mobile Core and Profile extensions.
+Each extension needs to be added as a dependency to the mobile application project. The following examples will add the Mobile Core and Profile extensions.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -200,7 +200,7 @@ If Cocoapods cannot not find the dependencies, you may need to run this command:
 pod repo update
 ```
 
-Save the Podfile and run the install:
+Save the `Podfile` and run install:
 
 ```text
 pod install
@@ -228,7 +228,7 @@ If Cocoapods cannot not find the dependencies, you may need to run this command:
 pod repo update
 ```
 
-Save the Podfile and run the install:
+Save the `Podfile` and run install:
 
 ```text
 pod install
@@ -241,7 +241,7 @@ pod install
 Next you'll need to import SDK libraries into your project and register them for initialization. Extensions are registered with Mobile Core so that they can dispatch and listen for events. 
 
 {% hint style="danger" %}
-Extension registration is **mandatory**. Attempting to make extension-specific API calls without doing so will lead to undefined behavior.
+Extension registration is **mandatory**. Attempting to make extension-specific API calls without registering the extension will lead to undefined behavior.
 {% endhint %}
 
 The following code snippets demonstrate how you may import and register the Mobile Core and Profile extensions. You may also see, for reference, Identity, Lifecycle, Signal, Profile, and other extensions imported and registered. 
