@@ -1,6 +1,6 @@
 # Migrating from ACP (Objective-C) SDK to AEP (Swift) SDK
 
-We suggest the following general process when migrating from ACP SDK to AEP SDK in a mobile app:
+The following general process is suggested when migrating from ACP SDK to AEP SDK in a mobile app:
 
 ### Update the Podfile
 
