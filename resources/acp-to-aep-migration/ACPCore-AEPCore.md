@@ -6,7 +6,7 @@ This document is a reference comparison of ACPCore (2.x) APIs against their equi
 
 The class name containing public APIs is different depending on which SDK and language combination being used.
 
-| SdK VERSION | LANGUAGE    | CLASS NAME    |
+| SDK version | Language    | Class name    |
 | ----------- | ----------- | ------------- |
 | ACPCore     | Objective-C | ACPCore       |
 | AEPCore     | Swift       | MobileCore    |
@@ -14,15 +14,15 @@ The class name containing public APIs is different depending on which SDK and la
 
 ## Additional public `Classes` and `Enums`
 
-| SdK VERSION | LANGUAGE    | CLASS NAME        |
+| SDK version | Language    | Class name        |
 | ----------- | ----------- | ----------------- |
 | ACPCore     | Objective-C | ACPMobileLogLevel |
 | AEPCore     | Swift       | LogLevel          |
 | AEPCore     | Objective-C | AEPLogLevel       |
 
-## Public APIs
+## Core extension APIs
 
-For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference)
+For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
 
 - [trackAction](#trackAction)
 - [trackState](#trackState)
@@ -36,8 +36,6 @@ For more information, please read the [Mobile Core API reference](https://aep-sd
 - [updateConfiguration](#updateConfiguration)
 - [configureWithFileInPath](#configureWithFileInPath)
 - [extensionVersion](#extensionVersion)
-
-
 
 ### trackAction
 
@@ -191,7 +189,6 @@ For more information, please read the [Mobile Core API reference](https://aep-sd
   ```objective-c
   // Not supported
   ```
-  
 ### setAppGroup
 
 - ACPCore

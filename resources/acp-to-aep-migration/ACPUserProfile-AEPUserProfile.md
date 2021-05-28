@@ -4,15 +4,15 @@ This document is a reference comparison of ACPUserProfile (2.x) APIs against the
 
 ## Primary `Classes`
 
-| SdK VERSION    | LANGUAGE    | CLASS NAME           |
+| SDK version    | Language    | Class name           |
 | -------------- | ----------- | -------------------- |
 | ACPUserProfile | Objective-C | ACPUserProfile       |
 | AEPUserProfile | Swift       | UserProfile          |
 | AEPUserProfile | Objective-C | AEPMobileUserProfile |
 
-## Public APIs
+## UserProfile extension APIs
 
-For more information, please read the [Profile API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile/profile-api-references)
+For more information, please read the [Profile API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile/profile-api-references).
 
 ### extensionVersion
 

@@ -4,15 +4,15 @@ This document is a reference comparison of ACPSignal (2.x) APIs against their eq
 
 ## Primary `Classes`
 
-| SdK VERSION | LANGUAGE    | CLASS NAME      |
+| SDK version | Language    | Class name      |
 | ----------- | ----------- | --------------- |
 | ACPSignal   | Objective-C | ACPSignal       |
 | AEPSignal   | Swift       | Signal          |
 | AEPSignal   | Objective-C | AEPMobileSignal |
 
-## Public APIs
+## Signal extension APIs
 
-For more information, please read the [Signal API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/signals/signal-api-reference)
+For more information, please read the [Signal API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/signals/signal-api-reference).
 
 ### extensionVersion
 

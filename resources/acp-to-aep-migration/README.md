@@ -1,10 +1,10 @@
 # Migrating from ACP (Objective-C) SDK to AEP (Swift) SDK
 
-The following general process is suggested when migrating from ACP SDK to AEP SDK in a mobile app:
+The following process is the suggested process for migrating from the ACP SDK to the AEP SDK in a mobile app:
 
-### Update the Podfile
+### Update the `Podfile`
 
-Replace the dependencies in your `Podfile` for SDK extensions, using core extensions and profile extension as an example:
+The following example shows you how to replace the dependencies in your `Podfile` for core extensions and the profile extension.
 
 ```ruby
 # replace ACPCore with AEPCore/AEPLifecycle/AEPIdentity/AEPSignal
@@ -19,7 +19,7 @@ Replace the dependencies in your `Podfile` for SDK extensions, using core extens
   pod 'AEPUserProfile'
 ```
 
-The supported `pod`s to be replaced:
+The following supported `pod`s can be replaced:
 
 | ACP SDK        | AEP SDK                                     |
 | -------------- | ------------------------------------------- |
@@ -151,7 +151,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Update API usage for each extension
 
-The following documents detail API changes between ACP SDKs and AEP SDKs.
+The following documents detail API changes between the ACP SDKs and the AEP SDKs.
 
 - [Adobe Core extension](ACPCore-AEPCore.md)
 

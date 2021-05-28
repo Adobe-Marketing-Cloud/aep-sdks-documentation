@@ -4,15 +4,15 @@ This document is a reference comparison of ACPLifecycle (2.x) APIs against their
 
 ## Primary `Classes`
 
-| SdK VERSION  | LANGUAGE    | CLASS NAME         |
+| SDK version  |  Language   | Class name         |
 | ------------ | ----------- | ------------------ |
 | ACPLifecycle | Objective-C | ACPLifecycle       |
 | AEPLifecycle | Swift       | Lifecycle          |
 | AEPLifecycle | Objective-C | AEPMobileLifecycle |
 
-## Public APIs
+## Lifecycle extension APIs
 
-For more information, please read the [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference)
+For more information, please read the [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference).
 
 ### extensionVersion
 
