@@ -185,7 +185,13 @@ For more information, please read the [Mobile Core API reference](https://aep-sd
   ```swift
   // Not supported
   ```
+  
+- AEPMobileCore
 
+  ```objective-c
+  // Not supported
+  ```
+  
 ### setAppGroup
 
 - ACPCore
