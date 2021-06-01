@@ -167,7 +167,7 @@ Each extension needs to be added as a dependency to the mobile application proje
 
 {% tabs %}
 {% tab title="Android" %}
-#### Android
+**Android**
 
 Add the dependencies to `build.gradle` for each extension.
 
@@ -244,11 +244,11 @@ Next you'll need to import SDK libraries into your project and register them for
 Extension registration is **mandatory**. Attempting to make extension-specific API calls without registering the extension will lead to undefined behavior.
 {% endhint %}
 
-The following code snippets demonstrate how you may import and register the Mobile Core and Profile extensions. You may also see, for reference, Identity, Lifecycle, Signal, Profile, and other extensions imported and registered. 
+The following code snippets demonstrate how you can import and register the Mobile Core and Profile extensions. You can also see, for reference, how Identity, Lifecycle, Signal, Profile, and other extensions are imported and registered. 
 
 {% tabs %}
 {% tab title="Android" %}
-After you register the extensions, call the `start` API in Core to initialize the SDK as shown below. This step is required to boot up the SDK for event processing. The following code snippet is provided as a reference example.
+After you register the extensions, call the `start` API in Mobile Core to initialize the SDK as shown below. This step is required to boot up the SDK for event processing. The following code snippet is provided as a sample reference.
 
 ### Java
 
@@ -295,10 +295,10 @@ public class MainApp extends Application {
 ### iOS version 3.x
 
 {% hint style="warning" %}
-For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start`API is no longer required.
+For iOS Swift libraries, registration is changed to a single API call (as shown in the snippets below). Calling the`MobileCore.start` API is no longer required.
 {% endhint %}
 
-#### Swift
+**Swift**
 
 ```swift
 // AppDelegate.swift
@@ -310,7 +310,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-#### Objective-C
+**Objective-C**
 
 ```text
 // AppDelegate.m
@@ -324,9 +324,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### iOS version 2.x and before
 
-Add the following initialization code. It may need to be adjusted depending on how your application is structured.
+The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
 
-#### Objective-C
+**Objective-C**
 
 ```objectivec
 #import "AppDelegate.h"
@@ -359,7 +359,7 @@ Add the following initialization code. It may need to be adjusted depending on h
 @end
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 import ACPCore
@@ -391,7 +391,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
-Initialization code is located in this Github [`README`](https://github.com/adobe/react-native-acpcore).
+The initialization code is located in the [React Native ACPCore Github README](https://github.com/adobe/react-native-acpcore).
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -399,13 +399,13 @@ Initialization code is located in this Github [`README`](https://github.com/adob
 
 For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
-Initialization code is located in this Github [`README`](https://github.com/adobe/flutter_acpcore).
+The initialization code is located in the [Flutter ACPCore Github README](https://github.com/adobe/flutter_acpcore).
 {% endtab %}
 
 {% tab title="Cordova" %}
 For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
 
-**iOS:**
+**iOS**
 
 ```text
 // Import the SDK
@@ -428,7 +428,7 @@ For Cordova apps, initialize the SDK using native code in your `AppDelegate` and
 }
 ```
 
-**Android:**
+**Android**
 
 ```java
 // Import the SDK
@@ -465,7 +465,7 @@ public void onCreate() {
 {% tab title="Unity" %}
 ### C\#
 
-For Unity apps, initialize the SDK using the following code in the start function of the MainScript
+For Unity apps, initialize the SDK using the following code in the start function of the `MainScript`.
 
 ```csharp
 using com.adobe.marketing.mobile;
@@ -500,7 +500,7 @@ public class MainScript : MonoBehaviour
 {% tab title="Xamarin" %}
 ### C\#
 
-For Xamarin Forms apps, the SDK intialization differs depending on the platform being targetted.
+For Xamarin Forms applications, the SDK initialization differs, depending on the platform being targeted.
 
 **iOS**
 
@@ -569,11 +569,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### 3. Ensure app permissions \(Android-only\)
+### 3. Ensure app permissions (Android only)
 
-The SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
-
-For Android, the SDK requires standard network connection permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
+For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
 
 To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
 
@@ -582,11 +580,11 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Watch the Video
+## Watch the Vvdeo
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
-## Additional Information
+## Additional information
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)
 * [How to use CocoaPods for iOS ](https://guides.cocoapods.org/using/using-cocoapods)
