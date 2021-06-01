@@ -70,7 +70,7 @@ You can use the `getApplication` method to get the previously set Android `Appli
 ### getApplication
 
 {% hint style="warning" %}
-`MobileCore.getApplication` may return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
+`MobileCore.getApplication` will return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
 {% endhint %}
 
 **Syntax**
@@ -113,7 +113,7 @@ if (app != null) {
 Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
 
 {% hint style="warning" %}
-You want to use the `trackAction` method when you want to track an occurring event. In addition to the action name, you can send additional context data with each track action call.
+You want to use the `trackAction` method when you want to track an occurring event. In addition to the action name, you can also send context data with each `trackAction` call.
 {% endhint %}
 
 {% hint style="info" %}
@@ -129,7 +129,7 @@ If you installed and configured the Adobe Analytics extension, this method sends
 **Syntax**
 
 ```java
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
+public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
 * _action_ contains the name of the action to track.
@@ -247,8 +247,30 @@ contextData.Add("key", "value");
 ACPCore.TrackAction("action", contextData);
 ```
 {% endtab %}
+{% tab title="Cordova" %}
+**Cordova**
+
+### trackAction
+
+**Syntax**
+
+```jsx
+ACPCore.trackAction = function(action, contextData, success, fail);
+```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+* _success_ callback is invoked when trackAction executes successfully.
+* _fail_ callback is invoked when trackAction fails.
+
+**Example**
+
+```jsx
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
+```
+{% endtab %}
 {% tab title="Xamarin" %}
-#### C\#
+**C\#**
 
 ### trackAction
 
@@ -265,8 +287,6 @@ public static void TrackAction (string action, NSMutableDictionary<NSString, NSS
 
 ```csharp
 public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
-```swift
-static func track(state: String?, data: [String: Any]?)
 ```
 
 * _action_ contains the name of the action to track.
@@ -496,208 +516,9 @@ ACPCore.TrackState("state", data);
 
 ## Set the advertising ID
 
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall. The `setAdvertisingIdentifier` method is used to set the advertising identifier for your application.
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall.
 
-{% hint style="info" %}
-If the current SDK privacy status is `optedout`, the advertising identifier is **not** set or stored.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### setAdvertisingIdentifier
-
-**Syntax**
-
-```java
-public static void setAdvertisingIdentifier(final String advertisingIdentifier);
-```
-
-* _advertisingIdentifier_ is a string that provides developers with a system to track the ads through their applications.     
-
-**Example**
-
-{% hint style="warning" %}
-This is just a sample implementation. For more information about advertising identifiers and how to handle them correctly in your mobile application, please read the [Google Play Services documentation on Advertising ID](http://www.androiddocs.com/google/play-services/id.html).
-{% endhint %}
-
-The following example requires Google Play Services to be configured in your mobile application. For instructions on how to import the Google Mobile Ads SDK and how to configure your `ApplicationManifest.xml` file, please read the documentation on [Google Mobile Ads SDK setup](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk).
-
-```java
-...
-@Override
-public void onResume() {
-    super.onResume();
-    ...
-    new Thread(new Runnable() {
-        @Override
-        public void run() {
-            String advertisingIdentifier = null;
-
-            try {
-                AdvertisingIdClient.Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
-                if (adInfo != null) {
-                    if (!adInfo.isLimitAdTrackingEnabled()) {
-                        advertisingIdentifier = adInfo.getId();
-                    } else {
-                        MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
-                    }
-                }
-
-            } catch (IOException e) {
-                // Unrecoverable error connecting to Google Play services (e.g.,
-                // the old version of the service doesn't support getting AdvertisingId).
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
-            } catch (GooglePlayServicesNotAvailableException e) {
-                // Google Play services is not available entirely.
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
-            } catch (GooglePlayServicesRepairableException e) {
-                // Google Play services is not installed, up-to-date, or enabled.
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
-            }
-
-            MobileCore.setAdvertisingIdentifier(advertisingIdentifier);
-        }
-    }).start();
-}
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-**Swift**
-
-### setAdvertisingIdentifier
-
-{% hint style="warning" %}
-Starting from iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
-
-To access IDFA and handle it correctly in your mobile application, please read the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager).
-{% endhint %}
-
-**Syntax**
-
-```swift
-@objc(setAdvertisingIdentifier:)
-public static func setAdvertisingIdentifier(_ adId: String?)
-```
-
-* _adId_ is a string that provides developers with a system to track ads in their apps.    
-
-**Example**
-
-```swift
-import AdSupport
-import AppTrackingTransparency
-...
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ...
-    if #available(iOS 14, *) {
-       setAdvertisingIdentitiferUsingTrackingManager()
-    } else {
-       // Fallback on earlier versions
-       setAdvertisingIdentifierUsingIdentifierManager()
-    }
-
-}
-
-func setAdvertisingIdentifierUsingIdentifierManager() {
-    var idfa:String = "";
-        if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
-            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
-        }
-        MobileCore.setAdvertisingIdentifier(idfa)
-}
-
-@available(iOS 14, *)
-func setAdvertisingIdentitiferUsingTrackingManager() {
-    ATTrackingManager.requestTrackingAuthorization { (status) in
-        var idfa: String = "";
-
-        switch (status) {
-        case .authorized:
-            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        case .denied:              
-             //handle error
-        case .notDetermined:     
-             //handle error
-        case .restricted:       
-             //handle error       
-        }
-
-        MobileCore.setAdvertisingIdentifier(idfa)
-    }
-}
-```
-
-**Objective-C**
-
-### setAdvertisingIdentifier
-
-{% hint style="warning" %}
-Starting from iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
-
-To access IDFA and handle it correctly in your mobile application, please read the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager).
-{% endhint %}
-
-**Syntax**
-
-```objectivec
-static func setAdvertisingIdentifier(idfa: String?)
-```
-
-* _idfa_ is a string that provides developers with a system to track ads in their apps. 
-
-**Example**
-
-```objc
-#import <AdSupport/ASIdentifierManager.h>
-#import <AppTrackingTransparency/ATTrackingManager.h>
-
-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    if (@available(iOS 14, *)) {
-        [self setAdvertisingIdentitiferUsingTrackingManager];
-    } else {
-        // fallback to earlier versions
-        [self setAdvertisingIdentifierUsingIdentifierManager];
-    }
-
-}
-
-(void) setAdvertisingIdentifierUsingIdentifierManager {
-    // setup the advertising identifier
-    NSString *idfa = nil;
-    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    } 
-    [ACPCore setAdvertisingIdentifier:idfa];
-}
-
-(void) setAdvertisingIdentitiferUsingTrackingManager API_AVAILABLE(ios(14)) {
-    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
-    ^(ATTrackingManagerAuthorizationStatus status){
-        NSString *idfa = nil;
-        switch(status) {
-            case ATTrackingManagerAuthorizationStatusAuthorized:
-                idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-                break;
-            case ATTrackingManagerAuthorizationStatusDenied:        
-                //handle error       
-                break;
-            case ATTrackingManagerAuthorizationStatusNotDetermined:   
-                //handle error
-                break;
-            case ATTrackingManagerAuthorizationStatusRestricted:  
-                //handle error
-                break;
-        }
-        [ACPCore setAdvertisingIdentifier:idfa];
-    }];
-}
-```
-{% endtab %}
-{% endtabs %}
+For more information about identity in Mobile Core, please read the documentation on the [identity APIs](identity/identity-api-reference.md).
 
 ## setPushIdentifier
 

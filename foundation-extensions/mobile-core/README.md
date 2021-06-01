@@ -14,15 +14,15 @@ For more information, please read the [Mobile Core API reference](mobile-core-ap
 
 ## Configuration
 
-The configuration extension provides different APIs to set up your application's configuration settings. For more information, please read the documentation on [configuration](configuration/).
+The Configuration extension provides different APIs to set up the SDK's configuration settings. For more information, please read the documentation on the [Configuration extension](configuration/).
 
 ## Identity
 
-The identity framework lets your app use Experience Cloud ID (ECID). Using ECIDs improves synchronization with Adobe and other customer identifiers. Please read the documentation on the [identity framework](identity/) for more information.
+The Identity framework lets your app use Experience Cloud ID (ECID). Using ECIDs improves synchronization with Adobe and other customer identifiers. Please read the documentation on the [Identity extension](identity/) for more information.
 
 ## Lifecycle
 
-The Lifecycle extension lets you access information about the app's sessions, including device information, app installation, app upgrades, session start and pause times, number of application launches, and additional context data. For more information on how to use the Lifecycle API, please read the documentation on [Lifecycle](lifecycle/).
+The Lifecycle extension lets you access information about the app's sessions, including device information, app installation, app upgrades, session start and pause times, number of application launches, and additional context data. For more information on how to use the Lifecycle API, please read the documentation on the[Lifecycle extension](lifecycle/).
 
 ## Rules Engine
 
