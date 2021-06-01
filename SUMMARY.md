@@ -98,7 +98,10 @@
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
-* [Places Service](using-mobile-extensions/adobe-places.md)
+* [Places Service](using-mobile-extensions/places/README.md)
+  * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
+  * [Migration from ACPPlaces (iOS)](using-mobile-extensions/places/migration.md)
+  * [ACPPlaces (iOS) Reference](using-mobile-extensions/places/adobe-places.md)
 
 ## Resources
 
@@ -108,6 +111,11 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
+* [Migration from ACP (Objective-C) SDK to AEP (Swift) SDK](resources/acp-to-aep-migration/README.md)
+  * [Migration from ACPCore to AEPCore](resources/acp-to-aep-migration/ACPCore-AEPCore.md)
+  * [Migration from ACPLifecycle to AEPLifecycle](resources/acp-to-aep-migration/ACPLifecycle-AEPLifecycle.md)
+  * [Migration from ACPSignal to AEPSignal](resources/acp-to-aep-migration/ACPSignal-AEPSignal.md)
+  * [Migration from ACPUserProfile to AEPUserProfile](resources/acp-to-aep-migration/ACPUserProfile-AEPUserProfile.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform/README.md)
     * [Sample XDM Implementation](resources/user-guides/getting-started-with-adobe-experience-platform/sample-xdm-implementation.md)
@@ -159,4 +167,3 @@
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
   * [Troubleshoot Project Griffon](beta/project-griffon/troubleshoot-project-griffon.md)
-

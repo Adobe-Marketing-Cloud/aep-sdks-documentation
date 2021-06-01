@@ -13,7 +13,7 @@ Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 
 {% endhint %}
 
 {% hint style="info" %}
-Given the sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/), our SDKs are no longer being uploaded to JCenter. Our Android libraries are now available on [MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information, see links below or find [our libraries on MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information on how to declare dependencies from Maven, please see [Declaring repositories](https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:declaring_multiple_repositories) on Gradle.
+Due to sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/), our SDKs are no longer being uploaded to JCenter. Android libraries are now available on [MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information, see links below or find [our libraries on MavenCentral](https://search.maven.org/search?q=g:com.adobe.marketing.mobile). For more information on how to declare dependencies from Maven, please see [Declaring repositories](https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:declaring_multiple_repositories) on Gradle.
 {% endhint %}
 
 | Extension | Maven | Github |
@@ -101,7 +101,7 @@ Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for React Native are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+Adobe Experience Platform Mobile SDK plugins for React Native are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 {% hint style="info" %}
@@ -126,7 +126,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 A sample Cordova application that uses the Adobe Experience Platform Mobile SDK can be found [here](https://github.com/adobe/cordova-acpsample).
@@ -161,7 +161,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 | Extension | pub.dev | Github | Sample App |
@@ -178,7 +178,7 @@ Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only wit
 Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 {% hint style="info" %}
@@ -198,7 +198,7 @@ The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distri
 Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 2019.3.10f1 or later**. For the latest Unity installation instructions, see the `README` file in the [`unity-acpcore`](https://github.com/adobe/unity-acpcore) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
+Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
 To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
