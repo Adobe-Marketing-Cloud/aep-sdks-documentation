@@ -6,6 +6,12 @@
 We've released Swift versions of our iOS SDKs for Core and select extensions - please [scroll down](current-sdk-versions.md#ios-swift) for available Swift extensions and reference documentation for more information.
 {% endhint %}
 
+{% hint style="warning" %}
+## Migrate to Swift
+
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../acp-to-aep-migration.md) guide for next steps.
+{% endhint %}
+
 ## Android
 
 {% hint style="warning" %}
