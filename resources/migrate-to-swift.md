@@ -17,14 +17,15 @@ At this time, the following ACP-prefix libraries may be switched out with the re
 In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure no disruption in SDK behavior.
 {% endhint %}
 
-| ACP SDK | AEP SDK |
+| Objective-C \(ACP-prefix\) | Swift \(AEP-Prefix\) |
 | :--- | :--- |
 | ACPCore | AEPCore/AEPLifecycle/AEPIdentity/AEPSignal |
 | ACPUserProfile | AEPUserProfile |
 | ACPAnalytics | AEPAnalytics |
+| ACPAudience | AEPAudience |
 | ACPTarget | AEPTarget |
 | ACPMedia | AEPMedia |
-| ACPAudience | AEPAudience |
+| ACPPlaces | AEPPlaces |
 
 ### Manual library import
 
