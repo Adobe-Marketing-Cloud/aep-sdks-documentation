@@ -97,7 +97,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:messaging:1.0.0-beta-1'
+   implementation 'com.adobe.marketing.mobile:messaging:1.0.0-beta-2'
    ```
 
 2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
