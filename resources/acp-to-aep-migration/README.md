@@ -104,6 +104,6 @@ Finally, you'll need to scan through your current implementation and replace ACP
 
 * [Adobe Core extension](../../foundation-extensions/mobile-core/acpcore-aepcore.md)
 * [Adobe Lifecycle extension](../../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md)
-* [Adobe Signal extension](acpsignal-aepsignal.md)
+* [Adobe Signal extension](../../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
 * [Adobe UserProfile extension](acpuserprofile-aepuserprofile.md)
 

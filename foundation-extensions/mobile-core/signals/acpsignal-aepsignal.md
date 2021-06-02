@@ -1,4 +1,4 @@
-# Migration from ACPSignal to AEPSignal
+# Migrating to AEPSignal
 
 This document is a reference comparison of ACPSignal \(2.x\) APIs against their equivalent APIs in AEPSignal \(3.x\).
 
