@@ -105,8 +105,9 @@ Finally, you'll need to scan through your current implementation and replace ACP
 
 | SDK Component & Extensions | Migration API Reference |
 | :--- | :--- |
-| Core | [AEPCore](../foundation-extensions/mobile-core/acpcore-aepcore.md) |
-| Lifecycle | [AEPLifecycle](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md) |
-| Signal | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
-| Profile | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
+| [Core](../foundation-extensions/mobile-core/) | [AEPCore](../foundation-extensions/mobile-core/acpcore-aepcore.md) |
+| [Lifecycle](../foundation-extensions/mobile-core/lifecycle/) | [AEPLifecycle](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md) |
+| [Signal](../foundation-extensions/mobile-core/signals/) | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
+| [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
+| [Adobe Experience Platform Places Service](../using-mobile-extensions/places/) | [AEPPlaces](../using-mobile-extensions/places/migration.md) |
 
