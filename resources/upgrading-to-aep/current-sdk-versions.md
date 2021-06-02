@@ -46,6 +46,12 @@ Due to sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintr
 Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later.
 {% endhint %}
 
+{% hint style="warning" %}
+## Migrate to Swift
+
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../acp-to-aep-migration.md) guide for next steps.
+{% endhint %}
+
 {% hint style="info" %}
 ## Swift = Open Source
 
