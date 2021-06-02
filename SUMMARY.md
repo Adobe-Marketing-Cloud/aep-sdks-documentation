@@ -65,6 +65,10 @@
   * [Release Notes](foundation-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
+* [Adobe Experience Platform Places Service](foundation-extensions/places/README.md)
+  * [Migration to AEPPlaces](foundation-extensions/places/migration.md)
+  * [Places API Reference](foundation-extensions/places/places-usage-reference.md)
+  * [ACPPlaces \(iOS\) Reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
   * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
@@ -102,10 +106,6 @@
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
-* [Adobe Experience Platform Places Service](using-mobile-extensions/places/README.md)
-  * [Migration to AEPPlaces](using-mobile-extensions/places/migration.md)
-  * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
-  * [ACPPlaces \(iOS\) Reference](using-mobile-extensions/places/adobe-places.md)
 
 ## Resources
 
