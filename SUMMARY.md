@@ -66,6 +66,7 @@
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
 * [Profile](foundation-extensions/profile/README.md)
+  * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
 
@@ -114,8 +115,7 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
-* [Migrating to Swift](resources/acp-to-aep-migration/README.md)
-  * [Migration from ACPUserProfile to AEPUserProfile](resources/acp-to-aep-migration/acpuserprofile-aepuserprofile.md)
+* [Migrating to Swift](resources/acp-to-aep-migration.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform/README.md)
     * [Sample XDM Implementation](resources/user-guides/getting-started-with-adobe-experience-platform/sample-xdm-implementation.md)

@@ -1,4 +1,4 @@
-# Migration from ACPUserProfile to AEPUserProfile
+# Migrating to AEPUserProfile
 
 This document is a reference comparison of ACPUserProfile \(2.x\) APIs against their equivalent APIs in AEPUserProfile \(3.x\).
 
