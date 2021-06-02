@@ -102,8 +102,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 Finally, you'll need to scan through your current implementation and replace ACP-prefix API calls to the new Swift-based, AEP-prefix libraries. A quick find and replace should do the trick. Detailed API changes by extension may be found at the links below.
 
-* [Adobe Core extension](../foundation-extensions/mobile-core/acpcore-aepcore.md)
-* [Adobe Lifecycle extension](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md)
-* [Adobe Signal extension](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
-* [Adobe UserProfile extension](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
+| SDK Component & Extensions | Migration API Reference |
+| :--- | :--- |
+| Core | [AEPCore](../foundation-extensions/mobile-core/acpcore-aepcore.md) |
+| Lifecycle | [AEPLifecycle](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md) |
+| Signal | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
+| Profile | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
 
