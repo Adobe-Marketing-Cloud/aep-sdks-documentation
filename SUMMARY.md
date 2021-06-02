@@ -104,8 +104,8 @@
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
 * [Places Service](using-mobile-extensions/places/README.md)
   * [Migration to AEPPlaces](using-mobile-extensions/places/migration.md)
-  * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
   * [ACPPlaces \(iOS\) Reference](using-mobile-extensions/places/adobe-places.md)
+  * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
 
 ## Resources
 
