@@ -1,4 +1,4 @@
-# Migration from ACPPlaces \(iOS\)
+# Migration to AEPPlaces
 
 This document is a reference comparison of ACPPlaces \(2.x\) APIs against their equivalent APIs in AEPPlaces \(3.x\).
 
