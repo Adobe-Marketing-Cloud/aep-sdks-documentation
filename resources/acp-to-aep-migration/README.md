@@ -1,10 +1,38 @@
-# Migrating from ACP (Objective-C) SDK to AEP (Swift) SDK
+# Migrating to Swift
 
-The following process is the suggested process for migrating from the ACP SDK to the AEP SDK in a mobile app:
+If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x or lower\), then this guide will help you understand the steps required to migrate your implementation to the latest Swift versions \(AEP-prefixed SDK libraries, 3.x or higher\). In summary, you'll need to:
 
-### Update the `Podfile`
+1. [Switch imported libraries from ACP-prefix to AEP-prefix libraries](./#switch-imported-libraries)
+2. [Update SDK initialization](./#update-sdk-initialization)
+3. [Update API references to call AEP-prefix libraries](./#update-api-usage-and-references-for-each-extension)
 
-The following example shows you how to replace the dependencies in your `Podfile` for core extensions and the profile extension.
+## Switch imported libraries
+
+At this time, the following ACP-prefix libraries may be switched out with the respective AEP-prefix SDK libraries. See instructions on proceeding further if you have:
+
+1. [Manually imported SDK libraries](./#manual-library-import) OR
+2. [Cocoapods to manage SDK dependencies](./#cocoapods)
+
+{% hint style="warning" %}
+In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure no disruption in SDK behavior.
+{% endhint %}
+
+| ACP SDK | AEP SDK |
+| :--- | :--- |
+| ACPCore | AEPCore/AEPLifecycle/AEPIdentity/AEPSignal |
+| ACPUserProfile | AEPUserProfile |
+| ACPAnalytics | AEPAnalytics |
+| ACPTarget | AEPTarget |
+| ACPMedia | AEPMedia |
+| ACPAudience | AEPAudience |
+
+### Manual library import
+
+If you are manually importing SDK libraries, ensure you identify all currently used ACP-prefix libraries and switch them over to AEP-prefix libraries. The list of current AEP-prefix SDK libraries are found [Current SDK Versions](../upgrading-to-aep/current-sdk-versions.md#ios-swift) \(in the Swift section\).
+
+### Cocoapods
+
+If you are using Cocoapods to manage your Adobe Experience Platform Mobile SDK dependencies, the following example shows you how to switch ACP-prefix libraries to AEP-prefix libraries in your `Podfile`.
 
 ```ruby
 # replace ACPCore with AEPCore/AEPLifecycle/AEPIdentity/AEPSignal
@@ -19,63 +47,17 @@ The following example shows you how to replace the dependencies in your `Podfile
   pod 'AEPUserProfile'
 ```
 
-The following supported `pod`s can be replaced:
+Save the `Podfile` and run  `pod install`or `pod update` 
 
-| ACP SDK        | AEP SDK                                     |
-| -------------- | ------------------------------------------- |
-| ACPCore        | AEPCore/AEPLifecycle/AEPIdentity/AEPSignal  |
-| ACPUserProfile | AEPUserProfile                              |
-| ACPAnalytics   | AEPAnalytics                                |
-| ACPTarget      | AEPTarget                                   |
-| ACPMedia       | AEPMedia                                    |
-| ACPAudience    | AEPAudience                                 |
+## Update SDK initialization
 
-Save the `Podfile` and run the install command:
+After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the SDK has simplified initialization and registration of extensions to where the `MobileCore.start()` API is no longer required.
 
-```shell
-pod install
-```
+The following code snippets show the new and correct initialization code required for the Swift-based, AEP-prefix SDK libraries.
 
-### Update the initialization code
-
-The following code snippets show the difference in the initialization code between ACP and AEP SDKs. The AEP SDK has changed the way of registering extensions and has gotten rid of calling the `MobileCore.start()` API.
-
-{% tabs %} 
-
-{% tab title="Objective-C" %} 
-
-- ACP SDK
-
-```objective-c
-#import "AppDelegate.h"
-#import "ACPCore.h"
-#import "ACPUserProfile.h"
-#import "ACPIdentity.h"
-#import "ACPLifecycle.h"
-#import "ACPSignal.h"
-...
-  
-@implementation AppDelegate
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
-    [ACPUserProfile registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPLifecycle registerExtension];
-    [ACPSignal registerExtension];
-    [ACPCore start:^{
-      [ACPCore lifecycleStart:nil];
-    }];
-    ... 
-    return YES;
-}
-...
-@end
-```
-
-- AEP SDK
-
-```objective-c
+{% tabs %}
+{% tab title="Objective-C" %}
+```text
 @import AEPCore;
 @import AEPSignal;
 @import AEPLifecycle;
@@ -83,7 +65,7 @@ The following code snippets show the difference in the initialization code betwe
 @import AEPUserProfile;
 @import AEPServices;
 ...
-  
+
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       [AEPMobileCore setLogLevel: AEPLogLevelDebug];
@@ -94,40 +76,9 @@ The following code snippets show the difference in the initialization code betwe
     ...
 }
 ```
-
 {% endtab %}
 
-{% tab title="Swift" %} 
-
-- ACP SDK
-
-```swift
-import ACPCore
-import ACPUserProfile
-...
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
-  func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
-        ACPCore.setLogLevel(.debug)
-        ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
-	ACPUserProfile.registerExtension()
-        ACPIdentity.registerExtension()
-        ACPLifecycle.registerExtension()
-        ACPSignal.registerExtension()
-        ACPCore.start {
-            ACPCore.lifecycleStart(nil)
-        }
-    ...
-    return true
-  }
-}
-
-@end
-```
-
-- AEP SDK
-
+{% tab title="Swift" %}
 ```swift
 // AppDelegate.swift
 import AEPCore
@@ -139,26 +90,20 @@ import AEPUserProfile
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-      	MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+          MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
   ...
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
-### Update API usage for each extension
+## Update API usage and references for each extension
 
-The following documents detail API changes between the ACP SDKs and the AEP SDKs.
+Finally, you'll need to scan through your current implementation and replace ACP-prefix API calls to the new Swift-based, AEP-prefix libraries. A quick find and replace should do the trick. Detailed API changes by extension may be found at the links below.
 
-- [Adobe Core extension](ACPCore-AEPCore.md)
+* [Adobe Core extension](acpcore-aepcore.md)
+* [Adobe Lifecycle extension](acplifecycle-aeplifecycle.md)
+* [Adobe Signal extension](acpsignal-aepsignal.md)
+* [Adobe UserProfile extension](acpuserprofile-aepuserprofile.md)
 
-- [Adobe Lifecycle extension](ACPLifecycle-AEPLifecycle.md)
-
-- [Adobe Signal extension](ACPSignal-AEPSignal.md)
-
-- [Adobe UserProfile extension](ACPUserProfile-AEPUserProfile.md)
-
-  

@@ -1,291 +1,289 @@
 # Migration from ACPCore to AEPCore
 
-This document is a reference comparison of ACPCore (2.x) APIs against their equivalent APIs in AEPCore (3.x).
+This document is a reference comparison of ACPCore \(2.x\) APIs against their equivalent APIs in AEPCore \(3.x\).
 
 ## Primary `Classes`
 
 The class name containing public APIs is different depending on which SDK and language combination being used.
 
-| SDK version | Language    | Class name    |
-| ----------- | ----------- | ------------- |
-| ACPCore     | Objective-C | ACPCore       |
-| AEPCore     | Swift       | MobileCore    |
-| AEPCore     | Objective-C | AEPMobileCore |
+| SDK version | Language | Class name |
+| :--- | :--- | :--- |
+| ACPCore | Objective-C | ACPCore |
+| AEPCore | Swift | MobileCore |
+| AEPCore | Objective-C | AEPMobileCore |
 
 ## Additional public `Classes` and `Enums`
 
-| SDK version | Language    | Class name        |
-| ----------- | ----------- | ----------------- |
-| ACPCore     | Objective-C | ACPMobileLogLevel |
-| AEPCore     | Swift       | LogLevel          |
-| AEPCore     | Objective-C | AEPLogLevel       |
+| SDK version | Language | Class name |
+| :--- | :--- | :--- |
+| ACPCore | Objective-C | ACPMobileLogLevel |
+| AEPCore | Swift | LogLevel |
+| AEPCore | Objective-C | AEPLogLevel |
 
 ## Core extension APIs
 
 For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
 
-- [trackAction](#trackAction)
-- [trackState](#trackState)
-- [collectPii](#collectPii)
-- [collectLaunchInfo](#collectLaunchInfo)
-- [getSdkIdentities](#getSdkIdentities)
-- [setLogLevel](#setLogLevel)
-- [registerURLHandler](#registerURLHandler)
-- [setAppGroup](#setAppGroup)
-- [configureWithAppId](#configureWithAppId)
-- [updateConfiguration](#updateConfiguration)
-- [configureWithFileInPath](#configureWithFileInPath)
-- [extensionVersion](#extensionVersion)
+* [trackAction](acpcore-aepcore.md#trackAction)
+* [trackState](acpcore-aepcore.md#trackState)
+* [collectPii](acpcore-aepcore.md#collectPii)
+* [collectLaunchInfo](acpcore-aepcore.md#collectLaunchInfo)
+* [getSdkIdentities](acpcore-aepcore.md#getSdkIdentities)
+* [setLogLevel](acpcore-aepcore.md#setLogLevel)
+* [registerURLHandler](acpcore-aepcore.md#registerURLHandler)
+* [setAppGroup](acpcore-aepcore.md#setAppGroup)
+* [configureWithAppId](acpcore-aepcore.md#configureWithAppId)
+* [updateConfiguration](acpcore-aepcore.md#updateConfiguration)
+* [configureWithFileInPath](acpcore-aepcore.md#configureWithFileInPath)
+* [extensionVersion](acpcore-aepcore.md#extensionVersion)
 
 ### trackAction
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData
   ```
 
-- MobileCore
+* MobileCore
 
-  ```Swift
+  ```swift
   @objc(trackAction:data:)
   static func track(action: String?, data: [String: Any]?)
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(trackAction:data:)
   static func track(action: String?, data: [String: Any]?)
   ```
 
 ### trackState
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(trackState:data:)
   static func track(state: String?, data: [String: Any]?)
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(trackState:data:)
   static func track(state: String?, data: [String: Any]?)
   ```
 
-
 ### collectPii
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(collectPii:)
   public static func collectPii(_ data: [String: Any])
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(collectPii:)
   public static func collectPii(_ data: [String: Any])
   ```
 
 ### collectLaunchInfo
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(collectLaunchInfo:)
   public static func collectLaunchInfo(_ userInfo: [String: Any])
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(collectLaunchInfo:)
   public static func collectLaunchInfo(_ userInfo: [String: Any])
   ```
 
 ### getSdkIdentities
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
   + (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(getSdkIdentities:)
   static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
+* AEPMobileCore
+
+  ```text
   @objc(getSdkIdentities:)
   static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
   ```
 
 ### setLogLevel
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) setLogLevel: (ACPMobileLogLevel) logLevel;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(setLogLevel:)
   public static func setLogLevel(_ level: LogLevel)
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(setLogLevel:)
   public static func setLogLevel(_ level: LogLevel)Void)
   ```
-### registerURLHandler
 
-- ACPCore
+  **registerURLHandler**
 
-  ```objective-c
+* ACPCore
+
+  ```text
   + (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   // Not supported
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
+* AEPMobileCore
+
+  ```text
   // Not supported
   ```
-### setAppGroup
 
-- ACPCore
+  **setAppGroup**
 
-  ```objective-c
+* ACPCore
+
+  ```text
   + (void) setAppGroup: (nullable NSString*) appGroup;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   public static func setAppGroup(_ group: String?)
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
+* AEPMobileCore
+
+  ```text
   public static func setAppGroup(_ group: String?)
   ```
 
 ### configureWithAppId
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) configureWithAppId: (NSString* __nullable) appid;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   static func configureWith(appId: String)
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
-  static func configureWith(appId: String)
+* AEPMobileCore
+
+  \`\`\`objective-c static func configureWith\(appId: String\)
 
 ### updateConfiguration
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) updateConfiguration: (NSDictionary* __nullable) config;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(updateConfiguration:)
   static func updateConfigurationWith(configDict: [String: Any])
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
-  @objc(updateConfiguration:)
-  static func updateConfigurationWith(configDict: [String: Any])
+* AEPMobileCore
+
+  \`\`\`objective-c @objc\(updateConfiguration:\) static func updateConfigurationWith\(configDict: \[String: Any\]\)
 
 ### configureWithFileInPath
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) configureWithFileInPath: (NSString* __nullable) filepath;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   static func configureWith(filePath: String)
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
+* AEPMobileCore
+
+  ```text
   static func configureWith(filePath: String)
   ```
 
 ### extensionVersion
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (nonnull NSString*) extensionVersion;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
-  @objc public static var extensionVersion: String 
+  @objc public static var extensionVersion: String
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
-  @objc public static var extensionVersion: String 
+* AEPMobileCore
+
+  ```text
+  @objc public static var extensionVersion: String
   ```
 
