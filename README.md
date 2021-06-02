@@ -13,7 +13,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 {% hint style="warning" %}
 ## Migrate to Swift
 
-If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](resources/acp-to-aep-migration.md) guide for next steps.
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](resources/migrate-to-swift.md) guide for next steps.
 {% endhint %}
 
 {% hint style="success" %}

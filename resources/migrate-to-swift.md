@@ -2,16 +2,16 @@
 
 If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x or lower\), then this guide will help you understand the steps required to migrate your implementation to the latest Swift versions \(AEP-prefixed SDK libraries, 3.x or higher\). In summary, you'll need to:
 
-1. [Switch imported libraries from ACP-prefix to AEP-prefix libraries](acp-to-aep-migration.md#switch-imported-libraries)
-2. [Update SDK initialization](acp-to-aep-migration.md#update-sdk-initialization)
-3. [Update API references to call AEP-prefix libraries](acp-to-aep-migration.md#update-api-usage-and-references-for-each-extension)
+1. [Switch imported libraries from ACP-prefix to AEP-prefix libraries](migrate-to-swift.md#switch-imported-libraries)
+2. [Update SDK initialization](migrate-to-swift.md#update-sdk-initialization)
+3. [Update API references to call AEP-prefix libraries](migrate-to-swift.md#update-api-usage-and-references-for-each-extension)
 
 ## Switch imported libraries
 
 At this time, the following ACP-prefix libraries may be switched out with the respective AEP-prefix SDK libraries. See instructions on proceeding further if you have:
 
-1. [Manually imported SDK libraries](acp-to-aep-migration.md#manual-library-import) OR
-2. [Cocoapods to manage SDK dependencies](acp-to-aep-migration.md#cocoapods)
+1. [Manually imported SDK libraries](migrate-to-swift.md#manual-library-import) OR
+2. [Cocoapods to manage SDK dependencies](migrate-to-swift.md#cocoapods)
 
 {% hint style="warning" %}
 In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure no disruption in SDK behavior.
