@@ -24,6 +24,7 @@
 ## Mobile Foundations <a id="foundation-extensions"></a>
 
 * [Mobile Core](foundation-extensions/mobile-core/README.md)
+  * [Migrating to AEPCore Reference](foundation-extensions/mobile-core/acpcore-aepcore.md)
   * [Release Notes](foundation-extensions/mobile-core/mobile-core-release-notes.md)
   * [Mobile Core API reference](foundation-extensions/mobile-core/mobile-core-api-reference.md)
   * [Mobile Core event reference](foundation-extensions/mobile-core/mobile-core-event-reference.md)
@@ -112,7 +113,6 @@
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
 * [Migrating to Swift](resources/acp-to-aep-migration/README.md)
-  * [Migration from ACPCore to AEPCore](resources/acp-to-aep-migration/acpcore-aepcore.md)
   * [Migration from ACPLifecycle to AEPLifecycle](resources/acp-to-aep-migration/acplifecycle-aeplifecycle.md)
   * [Migration from ACPSignal to AEPSignal](resources/acp-to-aep-migration/acpsignal-aepsignal.md)
   * [Migration from ACPUserProfile to AEPUserProfile](resources/acp-to-aep-migration/acpuserprofile-aepuserprofile.md)
