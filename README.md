@@ -7,7 +7,13 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 {% hint style="success" %}
 ## Swift SDKs are here!
 
-We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
+We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4). 
+{% endhint %}
+
+{% hint style="warning" %}
+## Migrate to Swift
+
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](resources/acp-to-aep-migration.md) guide for next steps.
 {% endhint %}
 
 {% hint style="success" %}
