@@ -1,4 +1,4 @@
-# Migrating to Swift
+# Migrate to Swift
 
 If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x or lower\), then this guide will help you understand the steps required to migrate your implementation to the latest Swift versions \(AEP-prefixed SDK libraries, 3.x or higher\). In summary, you'll need to:
 

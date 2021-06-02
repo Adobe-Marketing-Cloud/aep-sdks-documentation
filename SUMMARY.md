@@ -115,7 +115,7 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
-* [Migrating to Swift](resources/migrate-to-swift.md)
+* [Migrate to Swift](resources/migrate-to-swift.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform/README.md)
     * [Sample XDM Implementation](resources/user-guides/getting-started-with-adobe-experience-platform/sample-xdm-implementation.md)
