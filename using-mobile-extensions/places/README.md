@@ -1,4 +1,4 @@
-# Places Service
+# Adobe Experience Platform Places Service
 
 The Places extension allows you to act based on the location of your users. This extension is the interface to the Places Query Service APIs. By listening for events that contain GPS coordinates and geofence region events, this extension dispatches new events that are processed by the Rules Engine. The Places extension also retrieves and delivers a list of the nearest POI for the app data that retrieves from the APIs. The regions returned by the APIs are stored in cache and persistence, which allows limited offline processing.
 
@@ -11,7 +11,7 @@ The Places extension is full open-sourced. Its repository can be found on GitHub
 Click on one of the following topics to learn more about the AEPPlaces extension:
 
 * [AEPPlaces API reference](places-usage-reference.md)
-* [Migration from ACPPlaces](migration.md)
+* [Migration to AEPPlaces](../../resources/migrate-to-swift.md)
 
 {% hint style="info" %}
 To learn more general information about Places, see the [Places documentation on Experience League](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-extension/places-extension.html).

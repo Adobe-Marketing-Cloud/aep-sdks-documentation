@@ -102,7 +102,7 @@
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
-* [Places Service](using-mobile-extensions/places/README.md)
+* [Adobe Experience Platform Places Service](using-mobile-extensions/places/README.md)
   * [Migration to AEPPlaces](using-mobile-extensions/places/migration.md)
   * [Places API Reference](using-mobile-extensions/places/places-usage-reference.md)
   * [ACPPlaces \(iOS\) Reference](using-mobile-extensions/places/adobe-places.md)
