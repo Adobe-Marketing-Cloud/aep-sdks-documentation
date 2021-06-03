@@ -82,7 +82,7 @@ To deploy your configuration to a development environment for testing:
 7. On the library card, click the ellipsis (...) to see a dropdown list.
 8. Select **Submit for Approval** and then **Submit**.
 
-The library of changes are then published to the development environment and the library is displayed under the **Submitted** section of the publishing workflow.
+The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
 Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
