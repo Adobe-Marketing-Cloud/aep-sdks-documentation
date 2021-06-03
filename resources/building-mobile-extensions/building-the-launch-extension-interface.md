@@ -4,15 +4,15 @@
 
 1. Create a new company.
 
-   For more information, see [Company Setup. ](https://developer.adobelaunch.com/extensions/submissions/company-setup/)
+   For more information, see the document on [company setup](https://developer.adobelaunch.com/extensions/submissions/company-setup/).
 
-2. \(Optional\) Create a new listing in the Exchange Partner Portal.
+2. (Optional) Create a new listing in the Exchange Partner Portal.
 
-   For more information, see [Create Exchange Listing](https://developer.adobelaunch.com/extensions/submissions/create-listing/).
+   For more information, see the document on [creating an exchange listing](https://developer.adobelaunch.com/extensions/submissions/create-listing/).
 
 3. Create a new Adobe I/O integration.
 
-   For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
+   For more information, see the tutorial on [creating an Adobe I/O integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
 
 ## Build an Experience Platform Launch extension interface
 
@@ -32,7 +32,7 @@ To build the Experience Platform Launch extension interface, complete the follow
 
 4. In a terminal window, run `npx @adobe/reactor-sandbox`.
 
-   This step loads a simulated Experience Platform Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and so on.
+   This step loads a simulated Experience Platform Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and other aspects of the Launch environment.
 
 5. In a terminal window, run `npx @adobe/reactor-packager`.
 
@@ -42,5 +42,6 @@ To build the Experience Platform Launch extension interface, complete the follow
 
    This step uploads your extension to Experience Platform Launch.
 
-   **Tip**: Adobe I/O integration keys are needed before you can build the interface. For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
-
+{% hint style="info" %}
+Adobe I/O integration keys are needed before you can build the interface. For more information, see [Create an Adobe I/O Integration](https://developer.adobelaunch.com/extensions/submissions/upload-and-test/#2-create-an-adobe-io-integration).
+{% endhint %}

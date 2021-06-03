@@ -2,20 +2,22 @@
 
 Events can be used by extensions in the following scenarios:
 
-* Triggering actions in the Experience Platform SDKs. Events are used by the extensions to signal when certain actions should take place, for example, to send an Analytics hit. Extensions can send the same types of events that the Experience Platform SDKs would send internally to trigger these actions.
-* Triggering actions in another extension.  You might have multiple extensions in your application, and some of these extensions might have their own events defined that trigger actions.
+* Triggering actions in the Experience Platform SDKs. Events are used by the extensions to signal when certain actions should take place, for example, to send an Adobe Analytics hit. Extensions can send the same types of events that the Experience Platform SDKs would send internally to trigger these actions.
+* Triggering actions in another extension. You may have multiple extensions in your application, and some of these extensions might have their own events defined that trigger actions.
 
 ## Create an event for dispatching
 
-The `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class contains the event that is used by the internal Event Hub. You can construct an event after the Experience Platform SDKs has been initialized.
+The `ACPExtensionEvent` (iOS) / `Event` (Android) class contains the event that is used by the internal Event Hub. You can construct an event after the Experience Platform SDKs has been initialized.
 
-**Tip**: This event construction is usually completed in an event listener.
+{% hint style="info" %}
+This event construction is usually completed in an event listener.
+{% endhint %}
 
-When constructing an event, errors might be returned for the following reasons:
+When constructing an event, errors can be returned for the following reasons:
 
 * The data that was passed cannot be converted to a JSON representation.
 * The type or source has been deprecated by Adobe.
-* The type or source is not known. For example, _com.adobe.eventType_ prefix is used, but the type is not known.
+* The type or source is not known. For example, the `com.adobe.eventType` prefix is used, but the type is not known.
 
 In the example below, a custom event called `MyCustomEvent` is created with custom types and sources. The internal modules respond to custom events because they are not listening for it. You can add an event listener for this type and source to verify that it is working.
 
@@ -50,7 +52,7 @@ Event newEvent = new Event.Builder("MyCustomEvent",
 
 To create events in iOS, you must first import `ACPExtensionEvent.h` from the `ACPCore` framework:
 
-```text
+```objectivec
 #import "ACPExtensionEvent.h"
 ...
 NSError* error = nil;
@@ -73,9 +75,9 @@ if (error) {
 
 ### Dispatch your event
 
-After creating your event, dispatch it by using the `ACPCore` \(iOS\) / `MobileCore` \(Android\) `dispatchEvent` method. A typical place to dispatch an event is in an event listener.
+After creating your event, dispatch it by using the `ACPCore` (iOS) / `MobileCore` (Android) `dispatchEvent` method. The best place to dispatch an event is in an event listener.
 
-You might need to dispatch an event from one of your APIs or application methods to trigger an internal flow in your extension or another Adobe extension.
+You may need to dispatch an event from one of your APIs or application methods to trigger an internal flow in your extension or another Adobe extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -129,17 +131,19 @@ public void loginButtonClicked() {
 
 ### Dispatch paired events
 
-To use a request `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) as a trigger, and if you have a callback that is called when the response paired event is sent, use the `dispatchEventWithResponseCallback` API from `ACPCore` \(iOS\) / `MobileCore` \(Android\). The paired response event is sent by using the`dispatchResponseEvent` API.
+If you have a callback that is called when the response paired event is sent and you use a request `ACPExtensionEvent` (iOS) / `Event` (Android) as a trigger, use the `dispatchEventWithResponseCallback` API from `ACPCore` (iOS) / `MobileCore` (Android). The paired response event is sent by using the`dispatchResponseEvent` API.
 
-**Tip:** Paired events are usually used for set/get operations where you need to be notified about a response event outside your extension code.
+{% hint style="info" %}
+Paired events are usually used for set/get operations where you need to be notified about a response event outside your extension code.
+{% endhint %}
 
-Here is an example of how to implement paired events:
+The following example shows how to implement paired events:
 
 {% tabs %}
 {% tab title="Android" %}
 #### Android
 
-You can have this code in an application Activity or in one of your extension's API classes:
+You can have this code in an application's `Activity` or in one of your extension's API classes:
 
 ```java
 // how to dispatch a paired event with an associated response callback
@@ -213,7 +217,7 @@ public class MyListener extends ExtensionListener {
 
 You can have this code in a ViewController class or in one of your extensions public API classes:
 
-```text
+```objectivec
 // how to dispatch a paired event with an associated response callback
 NSError *eventError = nil;
 ACPExtensionEvent *event = [ACPExtensionEvent 
@@ -243,7 +247,7 @@ if ([ACPCore dispatchEventWithResponseCallback:event responseCallback:^(ACPExten
 
 Register a listener for this event type and source in MyExtension.m:
 
-```text
+```objectivec
 // register a listener for a the request event type and source
 - (instancetype) init {
     if (self = [super init]) {
@@ -262,7 +266,7 @@ Register a listener for this event type and source in MyExtension.m:
 
 Dispatch a response event when the request is received in the `hear` method of your Listener in MyListener.m:
 
-```text
+```objectivec
 - (void) hear: (nonnull ACPExtensionEvent*) event {
     NSError *dispatchError = nil;
     NSDictionary* responseData = @{@"responsekey": @"responsevalue"};
