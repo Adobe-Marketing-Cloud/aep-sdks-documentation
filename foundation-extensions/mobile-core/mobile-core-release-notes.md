@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 25, 2021
+
+### Android Core 1.8.1
+
+* Added support for Event encode/decode.
+
 ## May 6, 2021
 
 ### iOS AEPCore 3.1.3

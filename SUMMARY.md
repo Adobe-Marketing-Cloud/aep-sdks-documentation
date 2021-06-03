@@ -24,6 +24,7 @@
 ## Mobile Foundations <a id="foundation-extensions"></a>
 
 * [Mobile Core](foundation-extensions/mobile-core/README.md)
+  * [Migrating to AEPCore Reference](foundation-extensions/mobile-core/acpcore-aepcore.md)
   * [Release Notes](foundation-extensions/mobile-core/mobile-core-release-notes.md)
   * [Mobile Core API reference](foundation-extensions/mobile-core/mobile-core-api-reference.md)
   * [Mobile Core event reference](foundation-extensions/mobile-core/mobile-core-event-reference.md)
@@ -34,6 +35,7 @@
     * [Identity API reference](foundation-extensions/mobile-core/identity/identity-api-reference.md)
     * [Identity event reference](foundation-extensions/mobile-core/identity/identity-event-reference.md)
   * [Lifecycle](foundation-extensions/mobile-core/lifecycle/README.md)
+    * [Migrating to AEPLifecycle](foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md)
     * [Lifecycle extension in Android](foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android.md)
     * [Lifecycle extension in iOS](foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md)
     * [Lifecycle API reference](foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md)
@@ -41,6 +43,7 @@
     * [Lifecycle metrics](foundation-extensions/mobile-core/lifecycle/lifecycle-metrics.md)
     * [Configuration keys](foundation-extensions/mobile-core/lifecycle/configuration-keys.md)
   * [Signal](foundation-extensions/mobile-core/signals/README.md)
+    * [Migrating to AEPSignal](foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
     * [Signal API reference](foundation-extensions/mobile-core/signals/signal-api-reference.md)
     * [Signal event reference](foundation-extensions/mobile-core/signals/signal-event-reference.md)
   * [Rules Engine](foundation-extensions/mobile-core/rules-engine/README.md)
@@ -62,7 +65,12 @@
   * [Release Notes](foundation-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
+* [Adobe Experience Platform Places Service](foundation-extensions/places/README.md)
+  * [Migration to AEPPlaces](foundation-extensions/places/migration.md)
+  * [Places API Reference](foundation-extensions/places/places-usage-reference.md)
+  * [ACPPlaces \(iOS\) Reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
+  * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
 
@@ -98,7 +106,6 @@
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
-* [Places Service](using-mobile-extensions/adobe-places.md)
 
 ## Resources
 
@@ -108,6 +115,7 @@
   * [API Changelog](resources/upgrading-to-aep/api-change-log.md)
   * [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md)
   * [V4 Mobile SDKs to Experience Platform Analytics migration](resources/upgrading-to-aep/v4-analytics-to-aep-analytics.md)
+* [Migrate to Swift](resources/migrate-to-swift.md)
 * [Tutorials](resources/user-guides/README.md)
   * [Getting Started with Adobe Experience Platform](resources/user-guides/getting-started-with-adobe-experience-platform/README.md)
     * [Sample XDM Implementation](resources/user-guides/getting-started-with-adobe-experience-platform/sample-xdm-implementation.md)
