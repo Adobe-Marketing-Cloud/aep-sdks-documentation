@@ -71,7 +71,7 @@ For more information follow this [Apple's documentation](https://help.apple.com/
 Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - select mobile property and navigate to **Extensions** from the left navigation panel**:**
 
 1. Navigate to the **Catalog** tab, locate the **Adobe Journey Optimizer** extension, and select **Install**
-2. Select the pre-created **CJM Push Profile Dataset** from the **Event Dataset** dropdown.
+2. Select the pre-created **CJM Push Tracking Event Dataset** from the **Event Dataset** dropdown.
 3. Click **Save**.
 4. Follow the publishing process to update SDK configuration.
 
@@ -79,7 +79,7 @@ Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - se
 The datasets selected should use a schema that uses the Push Notification Tracking XDM mixin. The pre-created CJM Push Tracking Dataset contains this XDM mixin in its schema definition. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 {% endhint %}
 
-![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.26.46-am.png)
+![](../../.gitbook/assets/Screen-Shot-2021-05-28-at-4.04.47-PM.png)
 
 ### Implement extension in mobile app
 

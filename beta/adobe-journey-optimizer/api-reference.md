@@ -420,3 +420,98 @@ public ActionType getType()
 {% endtab %}
 {% endtabs %}
 
+### Payload Keys
+
+Description of Push Notification payload keys
+
+{% tabs %}
+{% tab title="iOS" %}
+```javascript
+{
+   "aps":{
+      "alert":{
+         "title":"Hello from CJM",
+         "body":"Stay safe, wear mask"
+      },
+      "sound":"dingDong",
+      "badge":2,
+      "mutable-content":1,
+      "category":"iosCategory",
+      "thread-id":"myGroup",
+      "content-available":1
+   },
+   "a":"x",
+   "b":"y",
+   "adb_media":"www.imageUrl.com",
+   "adb_a_type":"DEEPLINK/WEBURL/DISMISS",
+   "adb_uri":"deeplink://url / weburl",
+   "adb_act":[
+      {
+         "aid":"customId1",
+         "label":"dismiss",
+         "type":"DISMISS"
+      }
+   ]
+}
+```
+
+| Key | Description |  |
+| :--- | :--- | :--- |
+| adb\_media | URL of the rich media like image/video/gif. This url can be used to download the rich media before showing the push notification. |  |
+| adb\_uri | Web URL / Deeplink URI - Used to open appropriate webpage/app screen when notification is clicked. |  |
+| adb\_a\_type | Can be one of the following string `DEEPLINK / WEBURL / DISMISS`. Used to determine what type of action to be performed when notification is clicked. |  |
+| adb\_act | `Array` containing the Action json object. |  |
+| aid | Part of action object denoting the action ID |  |
+| label | Part of action object denoting the action name |  |
+| type | Part of action object denoting the action type. Can have one of the following value `DEEPLINK / WEBURL / DISMISS` |  |
+{% endtab %}
+
+{% tab title="Android" %}
+{% hint style="info" %}
+We recommend you use the `MessagingPushPayload` class for extracting the payload values.
+{% endhint %}
+
+```javascript
+{
+   "message":{
+      "android":{
+         "collapse_key": "new_message",
+         "priority": "HIGH",
+         "data":{
+            "adb_title":"Game Request",
+            "adb_body":"Bob wants to play poker",
+            "adb_sound" : "somesound_res",
+            "adb_n_count" : "3",
+            "." : "PRIORITY_LOW",
+            "adb_channel_id": "cid",
+            "adb_icon" : "notification_icon",
+            "adb_image": "www.imageUrl.com",           
+            "adb_a_type": "DEEPLINK/WEBURL/DISMISS",
+            "adb_uri" : "uri/weburl",
+            "adb_act" : "[\n            {\n \"label\" : \"deeplink\",\n \"uri\" : \"notificationapp://\",\n \"type\" : \"DEEPLINK\"\n },\n {\n \"label\" : \"weburl\",\n \"uri\" : \"https://www.yahoo.com\",\n \"type\" : \"WEBURL\"\n},\n{\n\"label\" : \"dismiss\",\n\"uri\" : \"\",\n \"type\" : \"DISMISS\"\n}\n]",          
+            "some_custom_data_key": "some data"
+         }
+      }
+   }
+}
+```
+
+| Key | Description |
+| :--- | :--- |
+| adb\_title | String value denoting the push notification title |
+| adb\_body | String value denoting the push notification body |
+| adb\_sound | String value denoting the push notification sound |
+| adb\_n\_count | String value denoting the push notification badge count |
+| adb\_n\_priority | String value denoting the push notification priority Check firebase [documentation](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) |
+| adb\_channel\_id | String value denoting the push notification channel id |
+| adb\_icon | String value denoting the push notification icon resource name |
+| adb\_image | URL of the image to be displayed on the notification |
+| adb\_a\_type | Can be one of the following string `DEEPLINK / WEBURL / DISMISS`. Used to determine what type of action to be performed when notification is clicked. |
+| adb\_uri | Web URL / Deeplink URI - Used to open appropriate webpage/app screen when notification is clicked. |
+| adb\_act | String value denoting the action objects with label, uri and type. |
+| label | Part of `adb_act` string denoting the action type. |
+| uri | Part of `adb_act` string denoting the uri of the action |
+| type | Part of `adb_act` string denoting the action type. Can have one of the following value `DEEPLINK / WEBURL / DISMISS` |
+{% endtab %}
+{% endtabs %}
+
