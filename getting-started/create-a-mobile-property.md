@@ -85,7 +85,7 @@ To deploy your configuration to a development environment for testing:
 The library of changes are then published to the development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
+Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
 {% endhint %}
 
 Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see tutorial on [getting the Experience Platform SDKs](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk).
