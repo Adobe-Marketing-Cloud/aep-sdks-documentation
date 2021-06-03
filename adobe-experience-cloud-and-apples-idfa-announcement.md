@@ -44,7 +44,7 @@ The Adobe SDK does not automatically collect or require sensitive user data, dev
 
 ### Adobe Audience Manager
 
-Audience Manager will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. IDs that are identified to represent an opt-out event \(i.e., an IDFA changing from a unique value to all zero values\) can be used to unlink any historic IDs associated to that device.
+Audience Manager will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. We are currently working on making the product updates to historically de-link IDFA across Adobe Experience Platform and Adobe Audience Manager.
 
 ### Adobe Advertising Cloud
 
