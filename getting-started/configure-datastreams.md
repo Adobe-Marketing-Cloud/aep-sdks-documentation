@@ -34,9 +34,8 @@ The following steps illustrate how to create a sample datastream for a mobile im
 
 In the resulting summary screen, you will see that three environments have been created for your datastream. If needed, each environment can be edited individually with different configuration parameters.
 
-Make note of the listed, Launch Datastream Environment IDs, as these values will be referenced when you setup the mobile property in the next step.
+![Environment IDs for your Datastream](../.gitbook/assets/screen-shot-2021-02-02-at-12.45.55-pm.png)
 
-![Environment IDs for your Datatstream](../.gitbook/assets/screen-shot-2021-02-02-at-12.45.55-pm.png)
+For additional information on datastreams in Experience Platform Launch, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html).
 
-For additional information on datastreams in Experience Platform Launch, see the [reference guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html).
 

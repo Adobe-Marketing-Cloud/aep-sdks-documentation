@@ -145,13 +145,13 @@ With the `onResume` function, start Lifecycle data collection:
 ```
 
 {% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each activity has no negative impact and ensures that the SDK always has the necessary reference to your application. As a result, you should call `setApplication` on each of your activities.
+Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each `Activity` has no negative impact and ensures that the SDK always has the necessary reference to your application. As a result, you should call `setApplication` on each of your activities.
 {% endhint %}
 
 You can use the `onPause` function to pause the lifecycle data collection:
 
 {% hint style="warning" %}
-To ensure accurate session and crash reporting, this call must be added to every activity.
+To ensure accurate session and crash reporting, this call must be added to every `Activity`.
 {% endhint %}
 
 ```java

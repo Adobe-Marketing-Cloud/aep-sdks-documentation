@@ -14,7 +14,7 @@ For detailed instructions on how to create groups and add users for Launch, see 
 
 ### Log in to Experience Platform Launch
 
-After Experience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to [https://launch.adobe.com](https://launch.adobe.com) or by logging in to the Experience Cloud ([https://experiencecloud.adobe.com](https://experiencecloud.adobe.com)), navigating to the Activation page, and selecting Launch.
+After Experience Platform Launch rights have been added to your Adobe ID, log in to Launch. You can do this by going to https://experience.adobe.com/#/data-collection or by logging in to the [Experience Cloud](https://experiencecloud.adobe.com), navigating to the Activation page, and selecting Launch.
 
 ## Create a mobile property
 
