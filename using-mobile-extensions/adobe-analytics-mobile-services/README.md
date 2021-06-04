@@ -256,7 +256,7 @@ After you complete [Apple's instructions](https://developer.apple.com/library/ar
 
 ### setPushIdentifier
 
-#### Swift
+#### Objective-C
 
 #### Syntax
 
