@@ -35,7 +35,7 @@ This document is a reference comparison of AEPLifecycle \(3.x\) APIs against the
 {% tabs %}
 {% tab title="Swift" %}
 
-| API name         | AEP (3.x)                                              | ACP (2.x)                       |
+| API              | AEP (3.x)                                              | ACP (2.x)                       |
 | ---------------- | ------------------------------------------------------ | ------------------------------- |
 | extensionVersion | Lifecycle.extensionVersion                             | ACPLifecycle.extensionVersion() |
 | lifecycleStart   | MobileCore.lifecycleStart(additionalContextData: data) | ACPCore.lifecycleStart(data)    |
