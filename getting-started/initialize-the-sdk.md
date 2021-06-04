@@ -1,29 +1,29 @@
 # Track events
 
-The SDK provides 3 event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
+The SDK provides three event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
 
-1. Send events to Edge Network \(requires Edge Network extension\)
-2. [Track user actions](initialize-the-sdk.md#track-user-actions) \(requires Adobe Analytics extension\)
-3. [Track app states and screens](initialize-the-sdk.md#track-app-states-and-screens) \(requires Adobe Analytics extension\)
+1. [Send events to Edge Network](#send-events-to-edge-network) (requires Edge Network extension)
+2. [Track user actions](#track-user-actions) (requires Adobe Analytics extension)
+3. [Track app states and screens](#track-app-states-and-screens) (requires Adobe Analytics extension)
 
 ## Send events to Edge Network
 
-The Edge Network extension provides an API to send an `ExperienceEvent` to Edge Network. And `ExperienceEvent` is an object that contains data conforming to an XDM `ExperienceEvent` schema definition in Adobe Experience Platform.
-
 {% hint style="info" %}
-Experience Events to track time-series-based user actions in your mobile application or cross channel.
+This step requires knowledge of Experience Data Model (XDM) in Adobe Experience Platform. For more information about XDM, please read the [XDM documentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
 {% endhint %}
 
-In the following reference examples, you'll create an ExperienceEvent and then send it using the sendEvent API.
+The Edge Network extension provides an API to send an `ExperienceEvent` to Edge Network. An Experience Event is an object that contains data conforming to the XDM `ExperienceEvent` schema definition in Adobe Experience Platform.
 
-For the XDM schema, we've added the `Environment Details` mixin and also created a custom mixin for product reviews that contain the following fields:
+In the following reference examples, you'll create an `ExperienceEvent` and then send it using the `sendEvent` API.
+
+Additionally, you'll need to add the `Environment Details` field group and create a custom field group for product reviews that contain the following fields:
 
 * productSku
 * rating
 * ratingText
 * reviewerId
 
-### Create ExperienceEvent
+### Create an Experience Event
 
 {% tabs %}
 {% tab title="Android" %}
@@ -74,9 +74,9 @@ AEPExperienceEvent *experienceEvent = [[AEPExperienceEvent alloc] initWithXdm:xd
 {% endtab %}
 {% endtabs %}
 
-### Send ExperienceEvent to Edge Network
+### Send the Experience Event to Edge Network
 
-Use the AEP Edge mobile extension to send the Experience event created in the previous step.
+Use the Adobe Experience Platform Edge Mobile Extension to send the Experience Event created in the previous step.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -102,11 +102,11 @@ Edge.sendEvent(experienceEvent: experienceEvent)
 {% endtab %}
 {% endtabs %}
 
-## Track user actions \(for Adobe Analytics\)
+## Track user actions (for Adobe Analytics)
 
-This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
+This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) or another Experience Cloud solution extensions.
 
-Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for every new subscription, every time an article is viewed, or every time a level is completed.
 
 {% hint style="warning" %}
 You must call this API when an event that you want to track occurs. In addition to the action name, you can send additional context data with each track action call.
@@ -114,17 +114,17 @@ You must call this API when an event that you want to track occurs. In addition 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java <a id="java"></a>
-
 ### trackAction <a id="trackaction"></a>
 
-#### Syntax <a id="syntax"></a>
+#### Java <a id="java"></a>
+
+**Syntax** <a id="syntax"></a>
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-#### Example <a id="example"></a>
+**Example** <a id="example"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -136,15 +136,15 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% tab title="iOS — Obj-C" %}
 ### trackAction
 
-### Objective C
+#### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```text
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```text
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
@@ -152,13 +152,13 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```text
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackAction("action name", data: ["key": "value"])
@@ -168,13 +168,13 @@ ACPCore.trackAction("action name", data: ["key": "value"])
 {% tab title="React Native" %}
 ### JavaScript
 
-#### Syntax
+**Syntax**
 
 ```jsx
 trackAction(action?: String, contextData?: { string: string });
 ```
 
-#### Example
+**Example**
 
 ```jsx
 ACPCore.trackAction("action", {"mytest": "action"});
@@ -184,13 +184,13 @@ ACPCore.trackAction("action", {"mytest": "action"});
 {% tab title="Flutter" %}
 ### Dart
 
-#### Syntax
+**Syntax**
 
 ```dart
 Future<void> trackAction(String action, {Map<String, String> data});
 ```
 
-#### Example
+**Example**
 
 ```dart
 FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});J
@@ -198,7 +198,7 @@ FlutterACPCore.trackAction("mytest",  data: {"mytest": "action"});J
 {% endtab %}
 
 {% tab title="Cordova" %}
-## Javascript
+### Javascript
 
 #### Calling trackAction
 
@@ -208,9 +208,9 @@ ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallb
 {% endtab %}
 
 {% tab title="Unity" %}
-## C\#
+### C\#
 
-#### Calling TrackAction
+#### Calling `TrackAction`
 
 ```csharp
 var contextData = new Dictionary<string, string>();
@@ -220,9 +220,9 @@ ACPCore.TrackAction("action name", contextData);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-## C\#
+### C\#
 
-#### Calling TrackAction
+#### Calling `TrackAction`
 
 **iOS**
 
@@ -244,25 +244,25 @@ ACPCore.TrackAction("action", data);
 {% endtab %}
 {% endtabs %}
 
-## Track app states and screens \(for Adobe Analytics\)
+## Track app states and screens (for Adobe Analytics)
 
-States represent screens or views in your app. Each time a new state is displayed in your application, for example, when a user navigates from the home page to the news feed, this method might be called. This method also sends an Analytics state tracking hit with optional context data.
+States represent screens or views in your app. The `trackState` method is called every time a new state is displayed in your application. For example, this method would be called when a user navigates from the home page to the news feed. This method also sends an Adobe Analytics state-tracking hit with optional context data.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
-
-In Android, `trackState` is typically called each time a new activity is loaded.
-
 ### trackState <a id="trackstate"></a>
 
-#### **Syntax** <a id="syntax-1"></a>
+On Android, `trackState` is typically called each time a new activity is loaded.
+
+#### Java
+
+**Syntax** <a id="syntax-1"></a>
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-#### Example <a id="example-1"></a>
+**Example** <a id="example-1"></a>
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
@@ -274,15 +274,15 @@ MobileCore.trackState("homePage", additionalContextData);
 {% tab title="iOS — Obj-C" %}
 ### trackState
 
-### Objective C
+#### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```text
  + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```text
  [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
@@ -290,13 +290,13 @@ MobileCore.trackState("homePage", additionalContextData);
 
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```text
 + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) data;
 ```
 
-#### Example
+**Example**
 
 ```swift
 ACPCore.trackState("state name", data: ["key": "value"])
@@ -306,13 +306,13 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% tab title="React Native" %}
 ### JavaScript
 
-#### Syntax
+**Syntax**
 
 ```jsx
 trackState(state?: String, contextData?: { string: string });
 ```
 
-#### Example
+**Example**
 
 ```jsx
 ACPCore.trackState("state", {"mytest": "state"});
@@ -322,13 +322,13 @@ ACPCore.trackState("state", {"mytest": "state"});
 {% tab title="Flutter" %}
 ### Dart
 
-#### Syntax
+**Syntax**
 
 ```dart
 Future<void> trackState(String state, {Map<String, String> data});
 ```
 
-#### Example
+**Example**
 
 ```dart
 FlutterACPCore.trackState("state",  data: {"mytest": "state"});
@@ -336,9 +336,9 @@ FlutterACPCore.trackState("state",  data: {"mytest": "state"});
 {% endtab %}
 
 {% tab title="Cordova" %}
-## Javascript
+### Javascript
 
-#### Calling track state
+#### Calling `trackState`
 
 ```javascript
 ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
@@ -346,9 +346,9 @@ ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallbac
 {% endtab %}
 
 {% tab title="Unity" %}
-## C\#
+### C\#
 
-#### Calling TrackState
+#### Calling `TrackState`
 
 ```csharp
 var dict = new Dictionary<string, string>();
@@ -358,9 +358,9 @@ ACPCore.TrackState("state", dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-## C\#
+### C\#
 
-#### Calling TrackState
+#### Calling `TrackState`
 
 **iOS**
 
@@ -382,7 +382,7 @@ ACPCore.TrackState("state", data);
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Mobile Core API Reference](../foundation-extensions/mobile-core/mobile-core-api-reference.md).
+For more information, see the [Mobile Core API Reference](../foundation-extensions/mobile-core/mobile-core-api-reference.md).
 
 ## Get help
 

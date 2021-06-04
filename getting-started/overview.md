@@ -1,21 +1,21 @@
 # Overview
 
-The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud solutions and services via one or both of the following methods:
+The Adobe Experience Platform Mobile SDKs support interaction with Adobe Experience Cloud solutions and services through one or both of the following methods:
 
 1. [Adobe Experience Platform Edge Network](overview.md#integration-via-experience-platform-edge-network)
 2. [Leveraging Experience Cloud solution / service-specific endpoints](overview.md#integration-via-solutions-specific-network-infrastructure)
 
-The following information outlines the steps you'll need to follow to get started to leverage integrations via one or both methods.
+The following information outlines the steps you'll need to follow to get started to leverage integrations using one or both of the following methods.
 
-## Integration via Experience Platform Edge Network
+## Integration using Experience Platform Edge Network
 
 ![](../.gitbook/assets/1-img.png)
 
-### Steps to Getting Started
+### Steps to getting started
 
-1. [Setup Schemas & Datasets](setup-schemas-and-datasets.md)
-2. [Configure Datastreams](configure-datastreams.md)
-3. [Setup Mobile Property](create-a-mobile-property.md)
+1. [Set up schemas and datasets](setup-schemas-and-datasets.md)
+2. [Configure datastreams](configure-datastreams.md)
+3. [Set up mobile property](create-a-mobile-property.md)
 4. [Get the Experience Platform Mobile SDK](get-the-sdk.md)
 5. [Debugging and implementing basic events](enable-debug-logging.md)
 6. [Validation and next steps](validate.md)
@@ -24,10 +24,10 @@ The following information outlines the steps you'll need to follow to get starte
 
 ![](../.gitbook/assets/2-img.png)
 
-### Steps to Getting Started
+### Steps to getting started
 
 1. Configure solutions
-2. [Setup Mobile Property](create-a-mobile-property.md)
+2. [Set up mobile property](create-a-mobile-property.md)
 3. [Get the Experience Platform Mobile SDK](get-the-sdk.md)
 4. [Debugging and implementing basic events](enable-debug-logging.md)
 5. [Validation and next steps](validate.md)
@@ -35,6 +35,6 @@ The following information outlines the steps you'll need to follow to get starte
 ## Reference
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html?lang=en)
-* [What is XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en)
+* [What is Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en)
 * [How to build a schema?](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#schema)
 
