@@ -11,6 +11,7 @@ This document contains usage information for the public functions, classes, and 
 * [getNearbyPointsOfInterest](places-usage-reference.md#getNearbyPointsOfInterest)
 * [processRegionEvent](places-usage-reference.md#processRegionEvent)
 * [registerExtension](places-usage-reference.md#registerExtension)
+* [setAccuracyAuthorization](places-usage-reference.md#setAccuracyAuthorization)
 * [setAuthorizationStatus](places-usage-reference.md#setAuthorizationStatus)
 
 ### clear
@@ -279,6 +280,47 @@ MobileCore.registerExtensions([Places.self])
 {% endtab %}
 {% endtabs %}
 
+### setAccuracyAuthorization
+
+Sets the accuracy authorization status in the Places extension.
+
+The value provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location accuracy authorization for this device.
+
+{% tabs %}
+
+{% tab title="Swift"}
+
+**Signature**
+
+```swift
+static func setAccuracyAuthorization(_ accuracy: CLAccuracyAuthorization)
+```
+
+**Example Usage**
+
+```swift
+Places.setAccuracyAuthorization(.fullAccuracy)
+```
+{% endtab %}
+
+{% tab title="Objective-C"}
+
+**Signature**
+
+```objc
++ (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
+```
+
+**Example Usage**
+
+```objc
+[AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ### setAuthorizationStatus
 
 Sets the authorization status in the Places extension.
@@ -368,4 +410,3 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 | :--- | :--- |
 | entry | 0 |
 | exit | 1 |
-
