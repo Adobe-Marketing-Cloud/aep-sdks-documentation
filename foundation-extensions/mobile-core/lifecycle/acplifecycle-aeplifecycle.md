@@ -1,13 +1,13 @@
-# Migration from ACPLifecycle to AEPLifecycle
+# Migrating to AEPLifecycle
 
-This document is a reference comparison of ACPLifecycle (2.x) APIs against their equivalent APIs in AEPLifecycle (3.x).
+This document is a reference comparison of ACPLifecycle \(2.x\) APIs against their equivalent APIs in AEPLifecycle \(3.x\).
 
 ## Primary `Classes`
 
-| SDK version  |  Language   | Class name         |
-| ------------ | ----------- | ------------------ |
-| ACPLifecycle | Objective-C | ACPLifecycle       |
-| AEPLifecycle | Swift       | Lifecycle          |
+| SDK version | Language | Class name |
+| :--- | :--- | :--- |
+| ACPLifecycle | Objective-C | ACPLifecycle |
+| AEPLifecycle | Swift | Lifecycle |
 | AEPLifecycle | Objective-C | AEPMobileLifecycle |
 
 ## Lifecycle extension APIs
@@ -16,65 +16,65 @@ For more information, please read the [Lifecycle API reference](https://aep-sdks
 
 ### extensionVersion
 
-- ACPLifecycle
+* ACPLifecycle
 
-  ```objective-c
+  ```text
   + (nonnull NSString*) extensionVersion;
   ```
 
-- Lifecycle
+* Lifecycle
 
-  ```Swift
+  ```swift
   static var extensionVersion: String
   ```
-  
-- AEPMobileCore
 
-  ```objective-c
+* AEPMobileCore
+
+  ```text
   static var extensionVersion: String
   ```
 
 ### lifecycleStart
 
-- ACPCore
+* ACPCore
 
-  ```objective-c
+  ```text
   + (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(lifecycleStart:)
   static func lifecycleStart(additionalContextData: [String: Any]?)
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(lifecycleStart:)
   static func lifecycleStart(additionalContextData: [String: Any]?)
   ```
 
+### lifecyclePause
 
-###  lifecyclePause
+* ACPCore
 
-- ACPCore
-
-  ```objective-c
+  ```text
   + (void) lifecyclePause;
   ```
 
-- MobileCore
+* MobileCore
 
   ```swift
   @objc(lifecyclePause)
   static func lifecyclePause()
   ```
 
-- AEPMobileCore
+* AEPMobileCore
 
-  ```objective-c
+  ```text
   @objc(lifecyclePause)
   static func lifecyclePause()
   ```
+

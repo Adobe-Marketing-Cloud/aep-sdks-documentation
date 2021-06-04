@@ -34,7 +34,7 @@ The changes Apple announced at WWDC 2020 concerning privacy protection may poten
 
 ### Adobe Experience Platform
 
-Experience Platform will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. IDs that are identified to represent an opt-out event \(i.e., an IDFA changing from a unique value to all zero values\) can be used to unlink any historic IDs associated to that device.
+Experience Platform will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. We are currently working on making product updates to historically de-link IDFA in Adobe Experience Platform.
 
 #### Adobe Experience Platform Mobile SDKs
 
@@ -44,7 +44,7 @@ The Adobe SDK does not automatically collect or require sensitive user data, dev
 
 ### Adobe Audience Manager
 
-Audience Manager will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. IDs that are identified to represent an opt-out event \(i.e., an IDFA changing from a unique value to all zero values\) can be used to unlink any historic IDs associated to that device.
+Audience Manager will continue to enable customers to collect, and store data using the Mobile SDK or any other form of data ingestion. We are currently working on making product updates to historically de-link IDFA in Adobe Audience Manager.
 
 ### Adobe Advertising Cloud
 
