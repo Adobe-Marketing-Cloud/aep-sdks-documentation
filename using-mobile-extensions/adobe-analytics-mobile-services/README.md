@@ -329,7 +329,7 @@ Request to `demdex.net` containing device push token has been sent:
 
 ### Set up push tracking
 
-Use the following API to track a push messaging click through in Adobe Analytics.
+Use the following API to track a push messaging click in Adobe Analytics.
 
 {% hint style="info" %}
 Using the following API does not increment page views.
@@ -341,7 +341,7 @@ No set up required. In Android, the SDK handles push tracking to Analytics.
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-Use the following API to track a push messaging click through in Adobe Analytics.
+Use the following API to track a push messaging click in Adobe Analytics.
 
 ### collectLaunchInfo
 
@@ -365,7 +365,7 @@ Use the following API to track a push messaging click through in Adobe Analytics
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-Use the following API to track a push messaging click through in Adobe Analytics.
+Use the following API to track a push messaging click in Adobe Analytics.
 
 ### collectLaunchInfo
 
