@@ -11,7 +11,7 @@ The following information outlines the steps you'll need to follow to get starte
 
 ![](../.gitbook/assets/1-img.png)
 
-### Steps to getting started
+### Steps to get started
 
 1. [Set up schemas and datasets](setup-schemas-and-datasets.md)
 2. [Configure datastreams](configure-datastreams.md)
