@@ -30,6 +30,8 @@ This document is a reference comparison of AEPLifecycle \(3.x\) APIs against the
 
 {% endtab %}
 
+{% endtabs %}
+
 ## Lifecycle extension APIs
 
 {% tabs %}
@@ -52,5 +54,7 @@ This document is a reference comparison of AEPLifecycle \(3.x\) APIs against the
 | lifecyclePause   | [AEPMobileCore lifecyclePause];        | [ACPCore lifecyclePause];        |
 
 {% endtab %}
+
+{% endtabs %}
 
 For more information, please read the [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference).
