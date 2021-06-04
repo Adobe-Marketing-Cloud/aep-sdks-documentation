@@ -1,6 +1,6 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for Apple iOS (includes iOS, iPadOS, and tvOS) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
+The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
@@ -13,7 +13,7 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 ### Java / Kotlin
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -21,7 +21,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or late
 
    The **Environments** tab lists the different environments where you can publish.
 
-3. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
+3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
 
    You should see a dialog box similar to the following:
 
@@ -46,7 +46,7 @@ In order to support the new Apple M1 architecture while maintaining support for 
 Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-### iOS (Swift) version 3.x
+### iOS \(Swift\) version 3.x
 
 Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
 
@@ -74,7 +74,7 @@ end
 
 ### iOS version 2.x and before
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -238,13 +238,13 @@ pod install
 
 ### 2. Add initialization code
 
-Next you'll need to import SDK libraries into your project and register them for initialization. Extensions are registered with Mobile Core so that they can dispatch and listen for events. 
+Next you'll need to import SDK libraries into your project and register them for initialization. Extensions are registered with Mobile Core so that they can dispatch and listen for events.
 
 {% hint style="danger" %}
 Extension registration is **mandatory**. Attempting to make extension-specific API calls without registering the extension will lead to undefined behavior.
 {% endhint %}
 
-The following code snippets demonstrate how you can import and register the Mobile Core and Profile extensions. You can also see, for reference, how Identity, Lifecycle, Signal, Profile, and other extensions are imported and registered. 
+The following code snippets demonstrate how you can import and register the Mobile Core and Profile extensions. You can also see, for reference, how Identity, Lifecycle, Signal, Profile, and other extensions are imported and registered.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -295,7 +295,7 @@ public class MainApp extends Application {
 ### iOS version 3.x
 
 {% hint style="warning" %}
-For iOS Swift libraries, registration is changed to a single API call (as shown in the snippets below). Calling the`MobileCore.start` API is no longer required.
+For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
 {% endhint %}
 
 **Swift**
@@ -569,9 +569,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### 3. Ensure app permissions (Android only)
+### 3. Ensure app permissions \(Android only\)
 
-For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls. 
+For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
 To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
 

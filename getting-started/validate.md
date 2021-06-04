@@ -18,7 +18,7 @@ The [Adobe Analytics](../beta/project-griffon/using-project-griffon/adobe-analyt
 
 ## Places Service view
 
-Project Griffon simplifies testing point of interest entries and exits. The Places event list provides a focused view showing all events related to Places Service, including user authorization level granted and requests for nearby points of interest (POIs). 
+Project Griffon simplifies testing point of interest entries and exits. The Places event list provides a focused view showing all events related to Places Service, including user authorization level granted and requests for nearby points of interest \(POIs\).
 
 While a device is connected to an active Griffon session, the map view will show a timeline of POI entries and exits. If you want to test actions or experiences triggered by geofence entries and exits, the map view will allow you to spoof or simulate your location by clicking on any area within the map.
 
@@ -30,7 +30,7 @@ To learn more about Project Griffon, please read the [Project Griffon setup guid
 
 ## Next Steps
 
-Once you have added, initialized, and validated the Experience Platform SDK for a base implementation, you can extend SDK functionality by adding in other extensions. 
+Once you have added, initialized, and validated the Experience Platform SDK for a base implementation, you can extend SDK functionality by adding in other extensions.
 
 To get started, see the **Mobile Foundations** and **Experience Cloud** sections in the left pane.
 

@@ -268,7 +268,6 @@ ACPCore.lifecyclePause();
 {% hint style="info" %}
 You need to implement Lifecycle in native Android and iOS code. For more information on implementing, please read the [Lifecycle documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle).
 {% endhint %}
-
 {% endtab %}
 
 {% tab title="Cordova" %}
