@@ -121,7 +121,7 @@ import com.adobe.marketing.mobileservices.*;
 
 {% tab title="iOS — Obj-C" %}
 
-You can add the library to your project through your `Podfile` by adding the `ACPMobileServices`pod.
+You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
 
 #### Objective-C
 
@@ -138,7 +138,7 @@ Import the library into your project:
 
 {% tab title="iOS — Swift" %}
 
-You can add the library to your project through your `Podfile` by adding the `AEPMobileServices`pod.
+You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
 
 #### Swift
 
