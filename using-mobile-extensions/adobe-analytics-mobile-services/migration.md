@@ -1,10 +1,10 @@
 # Migration to AEPMobileServices
 
-This document is a reference comparison of ACPMobileServices\(1.x\) APIs against their equivalent APIs in AEPMobileServices\(3.x\).
+This document is a reference comparison of ACPMobileServices(1.x) APIs against their equivalent APIs in AEPMobileServices(3.x).
 
 ## Primary `Classes`
 
-The class name containing public APIs is different depending on which SDK and language combination being used.
+The class name containing public APIs is different depending on which SDK and language combination is being used.
 
 | SDK version | Language | Class name |
 | :--- | :--- | :--- |

@@ -120,7 +120,8 @@ import com.adobe.marketing.mobileservices.*;
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-Add the library to your project via your Podfile by adding the `ACPMobileServices`pod.
+
+You can add the library to your project through your `Podfile` by adding the `ACPMobileServices`pod.
 
 #### Objective-C
 
@@ -136,7 +137,8 @@ Import the library into your project:
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-Add the library to your project via your Podfile by adding the `AEPMobileServices`pod.
+
+You can add the library to your project through your `Podfile` by adding the `AEPMobileServices`pod.
 
 #### Swift
 
@@ -252,7 +254,7 @@ MobileCore.setPushIdentifier(registrationID);
 iOS simulators do not support push messaging.
 {% endhint %}
 
-After you complete [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
 ### setPushIdentifier
 
@@ -287,7 +289,7 @@ ACPCore.setPushIdentifier(deviceToken)
 iOS simulators do not support push messaging.
 {% endhint %}
 
-After you complete [Apple's instructions](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1) to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
+After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
 ### setPushIdentifier
 
