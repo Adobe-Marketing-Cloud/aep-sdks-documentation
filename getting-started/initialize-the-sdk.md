@@ -133,7 +133,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 ### trackAction <a id="example"></a>
 
 #### Objective-C
@@ -271,7 +271,7 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 ### trackState <a id="example-1"></a>
 
 #### Objective-C

@@ -119,7 +119,7 @@ import com.adobe.marketing.mobileservices.*;
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 
 You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
 
@@ -186,7 +186,7 @@ Lifecycle.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 #### Objective C
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
@@ -249,7 +249,7 @@ MobileCore.setPushIdentifier(registrationID);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 {% hint style="warning" %}
 iOS simulators do not support push messaging.
 {% endhint %}
@@ -342,7 +342,7 @@ Using the following API does not increment page views.
 No set up required. In Android, the SDK handles push tracking to Analytics.
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 Use the following API to track a push messaging click in Adobe Analytics.
 
 ### collectLaunchInfo
@@ -710,7 +710,7 @@ MobileServices.trackAdobeDeepLink
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 ### trackAdobeDeepLink
 
 #### Objective C
@@ -816,11 +816,11 @@ To prepare for your migration, remember the following information:
 
 ### Configuration keys
 
-| Key | Description |
-| :--- | :--- |
+| Key                       | Description                                                                                                  |
+| :------------------------ | :----------------------------------------------------------------------------------------------------------- |
 | mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
-| mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
-| mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
+| mobile.acquisitionAppId   | App ID uniquely identifies the app on the Mobile Services acquisition server.                                |
+| mobile.messagesUrl        | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section.                      |
 
 ## Watch the video
 

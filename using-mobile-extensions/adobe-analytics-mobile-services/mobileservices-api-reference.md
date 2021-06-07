@@ -15,7 +15,7 @@ String mobileServicesExtensionVersion = MobileServices.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 **Objective-C**
 
 ```objectivec
@@ -74,7 +74,7 @@ Uri testUri = new Uri.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 #### Syntax
 
 ```objectivec

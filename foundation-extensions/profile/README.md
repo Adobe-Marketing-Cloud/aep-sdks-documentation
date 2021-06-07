@@ -47,7 +47,7 @@ To add the Profile extension to your app:
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 ### Objective C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
@@ -186,7 +186,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS — Objective-C" %}
 ### Objective C
 
 **Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
