@@ -112,8 +112,8 @@
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
   * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
-  * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
+* [Adobe Experience Platform Optimize](using-mobile-extensions/adobe-experience-platform-optimize/README.md)
+  * [API Reference](using-mobile-extensions/adobe-experience-platform-optimize/api-reference.md)
 
 ## Resources
 
