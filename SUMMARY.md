@@ -84,6 +84,7 @@
 * [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services/README.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics-mobile-services/adobe-mobile-services-release-notes.md)
   * [Mobile Services API reference](using-mobile-extensions/adobe-analytics-mobile-services/mobileservices-api-reference.md)
+  * [Migrating to AEPMobileServices](using-mobile-extensions/adobe-analytics-mobile-services/migration.md)
 * [Adobe Analytics - Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
   * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)

@@ -15,8 +15,8 @@ String mobileServicesExtensionVersion = MobileServices.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-**Objective C**
+{% tab title="iOS — Obj-C" %}
+**Objective-C**
 
 ```objectivec
 NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
@@ -28,6 +28,22 @@ NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
 let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
 ```
 {% endtab %}
+
+{% tab title="iOS — Swift" %}
+**Objective-C**
+
+```objectivec
+NSString *mobileServicesExtensionVersion = [AEPMobileServices extensionVersion];
+```
+
+**Swift**
+
+```swift
+let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Track Deep link <a id="trackdeeplink"></a>
@@ -58,10 +74,10 @@ Uri testUri = new Uri.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS — Obj-C" %}
 #### Syntax
 
-```text
+```objectivec
 + (void) trackAdobeDeepLink: (NSURL*) url;
 ```
 
@@ -69,7 +85,7 @@ Uri testUri = new Uri.Builder()
 
 #### Objective C
 
-```text
+```objectivec
 NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
 
 [ACPMobileServices trackAdobeDeepLink:url];
@@ -82,6 +98,34 @@ let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.
 ACPMobileServices.trackAdobeDeepLink(url)
 ```
 {% endtab %}
+
+{% tab title="iOS — Swift" %}
+
+#### Syntax
+
+```objectivec
++ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
+```
+
+#### Example
+
+#### Objective C
+
+```objectivec
+NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
+
+[AEPMobileServices trackAdobeDeepLink:url];
+```
+
+#### Swift
+
+```swift
+let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
+AEPMobileServices.trackAdobeDeepLink(url)
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ## Process Referrer Intent
