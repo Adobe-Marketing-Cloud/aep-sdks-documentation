@@ -361,7 +361,7 @@ You may call this API when the app launches with a url \(see code snippet below 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [AEPAssurance startSession:url];
-    return false;
+    return true;
 }
 ```
 
@@ -382,10 +382,8 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    do {
-        AEPAssurance.startSession(url)
-        return false
-    }
+    AEPAssurance.startSession(url)
+    return true
 }
 ```
 
