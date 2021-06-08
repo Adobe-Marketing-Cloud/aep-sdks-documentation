@@ -41,9 +41,7 @@ NSString *mobileServicesExtensionVersion = [AEPMobileServices extensionVersion];
 ```swift
 let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Track Deep link <a id="trackdeeplink"></a>
@@ -100,7 +98,6 @@ ACPMobileServices.trackAdobeDeepLink(url)
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-
 #### Syntax
 
 ```objectivec
@@ -123,9 +120,7 @@ NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplin
 let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
 AEPMobileServices.trackAdobeDeepLink(url)
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Process Referrer Intent

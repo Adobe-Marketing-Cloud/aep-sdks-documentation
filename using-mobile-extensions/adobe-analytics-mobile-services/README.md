@@ -120,7 +120,6 @@ import com.adobe.marketing.mobileservices.*;
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-
 You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
 
 #### Objective-C
@@ -137,7 +136,6 @@ Import the library into your project:
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-
 You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
 
 #### Swift
@@ -151,9 +149,7 @@ import AEPLifecycle
 import AEPAnalytics
 import AEPMobileServices
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Register Mobile Services with Mobile Core
@@ -205,7 +201,6 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-
 #### Swift
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
@@ -219,9 +214,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Implement Mobile Services APIs in your app
@@ -281,7 +274,6 @@ After following Apple's [configure remote notification document](https://develop
 ```swift
 ACPCore.setPushIdentifier(deviceToken)
 ```
-
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
@@ -314,9 +306,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
             MobileCore.setPushIdentifier(deviceToken)
         }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Debugging the push messaging set up
@@ -382,11 +372,7 @@ Use the following API to track a push messaging click in Adobe Analytics.
 ```objectivec
 AEPCore.collectLaunchInfo(userInfo)
 ```
-
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### Troubleshooting push messaging
@@ -525,7 +511,6 @@ Here is an example about how to include open tracking:
 
 {% tabs %}
 {% tab title="iOS" %}
-
 ```objectivec
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -614,7 +599,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    void handleGooglePlayReferrer() {
        // Google recommends only calling this API the first time you need it:
        // https://developer.android.com/google/play/installreferrer/library#install-referrer
-   
+
        // Store a boolean in SharedPreferences to ensure we only call it once.
        final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
        if (prefs != null) {
@@ -622,11 +607,11 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                return;
            }
        }
-   
+
        final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
        referrerClient.startConnection(new InstallReferrerStateListener() {
            private boolean complete = false;
-   
+
            @Override
            public void onInstallReferrerSetupFinished(int responseCode) {
                switch (responseCode) {
@@ -635,10 +620,10 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        complete();
                        try {
                            final ReferrerDetails details = referrerClient.getInstallReferrer();                        
-   
+
                            // pass the install referrer url to the SDK
                            MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
-   
+
                        } catch (final RemoteException ex) {
                            Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
                        } finally {
@@ -654,7 +639,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        break;
                }
            }
-   
+
            @Override
            public void onInstallReferrerServiceDisconnected() {
                if (!complete) {
@@ -662,7 +647,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                    referrerClient.startConnection(this);
                }
            }
-   
+
            void complete() {
                complete = true;
                SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
@@ -745,7 +730,6 @@ MobileServices.trackAdobeDeepLink
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-
 ### trackAdobeDeepLink
 
 #### Objective C
@@ -777,11 +761,7 @@ MobileServices.trackAdobeDeepLink
     return YES;
 }
 ```
-
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## Integration with Apple Search Ads \(iOS\)

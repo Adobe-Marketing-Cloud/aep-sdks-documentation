@@ -1,6 +1,6 @@
-# Migration to AEPMobileServices
+# Migrating to AEPMobileServices
 
-This document is a reference comparison of ACPMobileServices(1.x) APIs against their equivalent APIs in AEPMobileServices(3.x).
+This document is a reference comparison of ACPMobileServices\(1.x\) APIs against their equivalent APIs in AEPMobileServices\(3.x\).
 
 ## Primary `Classes`
 
@@ -20,13 +20,13 @@ For more information, please read the [Mobile Services API reference](https://ae
 
 * ACPMobileServices
 
-  ```objective-c
+  ```text
   + (void) trackAdobeDeepLink: (NSURL*) url;
   ```
 
 * AEPMobileServices
 
-  ```objective-c
+  ```text
   + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
   ```
 
