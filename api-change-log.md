@@ -130,10 +130,12 @@ For more information see [Target API reference](using-mobile-extensions/adobe-ta
 | getTntid: | Not applicable |
 | resetExperience: | targetClearCookies |
 | prefetchObjectWithName:mboxParameters: | targetPrefetchObjectWithName:mboxParameters: |
-| prefetchContent:withProfileParameters:callback: | targetPrefetchContent:withProfileParameters:callback: |
+| prefetchContent:withParameters:callback: | targetPrefetchContent:withProfileParameters:callback: |
 | prefetchClearCache: | targetPrefetchClearCache |
 | requestObjectWithName:defaultContent:mboxParameters:callback: | targetRequestObjectWithName:defaultContent:mboxParameters:callback: |
-| loadRequests:withProfileParameters: | targetLoadRequests:withProfileParameters: |
+| retrieveLocationContent:withParameters: | targetLoadRequests:withProfileParameters: |
+| locationClickedWithName:targetParameters: | locationClickedWithName:mboxParameters:productParameters:orderParameters: |
+| setPreviewRestartDeeplink: | targetPreviewRestartDeepLink: |
 
 ### Deprecated APIs
 
