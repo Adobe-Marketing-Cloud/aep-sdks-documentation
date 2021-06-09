@@ -24,7 +24,7 @@ Returns the running version of the AEPCampaign extension.
 static var extensionVersion: String
 ```
 
-**Example Usage**
+**Example usage**
 
 ```swift
 let campaignVersion = Campaign.extensionVersion
@@ -32,7 +32,7 @@ let campaignVersion = Campaign.extensionVersion
 
 {% endtab %}
 
-{% tab title="Objective-c" %}
+{% tab title="Objective-C" %}
 
 **Signature**
 
@@ -40,7 +40,7 @@ let campaignVersion = Campaign.extensionVersion
 + (nonnull NSString*) extensionVersion;
 ```
 
-**Example Usage**
+**Example usage**
 
 ```objc
 NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
@@ -54,7 +54,7 @@ NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 
 ### registerExtension
 
-This API no longer exists in `AEPCampaign`. Instead, the extension should be registered by calling the `registerExtensions` API in the `MobileCore`.
+This API no longer exists in `AEPCampaign`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -69,7 +69,7 @@ MobileCore.registerExtensions([Campaign.self, ...], {
 
 {% endtab %}
 
-{% tab title="Objective-c" %}
+{% tab title="Objective-C" %}
 
 **Example:**
 
@@ -100,7 +100,7 @@ This method unregisters any previously registered rules with the Rules Engine an
 static func resetLinkageFields()
 ```
 
-**Example Usage**
+**Example usage**
 
 ```swift
 Campaign.resetLinkageFields()
@@ -108,7 +108,7 @@ Campaign.resetLinkageFields()
 
 {% endtab %}
 
-{% tab title="Objective-c" %}
+{% tab title="Objective-C" %}
 
 **Signature**
 
@@ -116,7 +116,7 @@ Campaign.resetLinkageFields()
 + (void) resetLinkageFields;
 ```
 
-**Example Usage**
+**Example usage**
 
 ```objc
 [AEPMobileCampaign resetLinkageFields];
@@ -132,7 +132,7 @@ Campaign.resetLinkageFields()
 
 Sets the Campaign linkage fields (CRM IDs) in the mobile SDK to be used for downloading personalized messages from Campaign.
 
-The set linkage fields are stored as a base64 encoded JSON string in memory and they are sent in a custom HTTP header 'X-InApp-Auth'
+The set linkage fields are stored as a base64 encoded JSON string in memory and they are sent in a custom HTTP header `X-InApp-Auth`.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -143,7 +143,7 @@ The set linkage fields are stored as a base64 encoded JSON string in memory and 
 static func setLinkageFields(linkageFields: [String: String])
 ```
 
-**Example Usage**
+**Example usage**
 
 ```swift
 Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
@@ -151,7 +151,7 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 {% endtab %}
 
-{% tab title="Objective-c" %}
+{% tab title="Objective-C" %}
 
 **Signature**
 
@@ -159,7 +159,7 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
-**Example Usage**
+**Example usage**
 
 ```objc
 [AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];

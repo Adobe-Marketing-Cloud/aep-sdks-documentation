@@ -12,17 +12,17 @@ This is information that is important to help clarify the API.
 
 ## Pod installation
 
-| AEP \(3.x\)                    | ACPCore \(2.x\) and ACPCampaign \(1.x\) |
+| AEP (3.x)                    | ACPCore (2.x) and ACPCampaign (1.x) |
 | :----------------------------- | :-------------------------------------- |
 | pod 'AEPCampaign', '~&gt; 3.0' | pod 'ACPCampaign', '~&gt; 1.0'          |
 | pod 'AEPCore', '~&gt; 3.2.0'   | pod 'ACPCore', '~&gt; 2.0'              |
 
-## Primary Classes
+## Primary classes
 
 {% tabs %}
 {% tab title="Swift" %}
 
-| AEP \(3.x\) | ACPCore \(2.x\) and ACPCampaign \(1.x\) |
+| AEP (3.x) | ACPCore (2.x) and ACPCampaign (1.x) |
 | :---------- | :-------------------------------------- |
 | Campaign    | ACPCampaign                             |
 | MobileCore  | ACPCore                                 |
@@ -31,7 +31,7 @@ This is information that is important to help clarify the API.
 
 {% tab title="Objective-C" %}
 
-| AEP \(3.x\)       | ACPCore \(2.x\) and ACPCampaign \(1.x\) |
+| AEP (3.x)       | ACPCore (2.x) and ACPCampaign (1.x) |
 | :---------------- | :-------------------------------------- |
 | AEPMobileCampaign | ACPCampaign                             |
 | AEPMobileCore     | ACPCore                                 |
@@ -56,7 +56,7 @@ The class name containing public APIs is different depending on which SDK and la
 - [resetLinkageFields](#resetLinkageFields)
 - [setLinkageFields](#setLinkageFields)
 
-<hr />
+---
 
 ### extensionVersion
 
@@ -87,7 +87,7 @@ static var extensionVersion: String
 
 {% endtabs %}
 
-<hr />
+---
 
 ### registerExtension
 
@@ -130,7 +130,7 @@ MobileCore.registerExtensions([Campaign.self])
 
 {% endtabs %}
 
-<hr />
+---
 
 ### resetLinkageFields
 
@@ -161,7 +161,7 @@ static func resetLinkageFields()
 
 {% endtabs %}
 
-<hr />
+---
 
 ### setLinkageFields
 
@@ -192,6 +192,6 @@ static func setLinkageFields(linkageFields: [String: String])
 
 {% endtabs %}
 
-<hr />
+---
 
 For more information, please see the [Campaign API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference).
