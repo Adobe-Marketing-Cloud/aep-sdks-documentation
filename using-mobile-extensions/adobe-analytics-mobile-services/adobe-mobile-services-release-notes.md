@@ -2,7 +2,13 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
-### April 14, 2021
+## Jun 4, 2021
+
+#### iOS AEPMobileServices 3.0.0
+
+* Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
+
+## April 14, 2021
 
 #### iOS Mobile Services 1.1.1
 

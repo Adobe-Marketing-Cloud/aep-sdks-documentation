@@ -1,80 +1,51 @@
 # Migrating to AEPLifecycle
 
-This document is a reference comparison of ACPLifecycle \(2.x\) APIs against their equivalent APIs in AEPLifecycle \(3.x\).
+This document is a reference comparison of AEPLifecycle \(3.x\) APIs against their equivalent APIs in ACPLifecycle \(2.x\) for an iOS mobile application implementation.
 
-## Primary `Classes`
+## Pod installation
 
-| SDK version | Language | Class name |
-| :--- | :--- | :--- |
-| ACPLifecycle | Objective-C | ACPLifecycle |
-| AEPLifecycle | Swift | Lifecycle |
-| AEPLifecycle | Objective-C | AEPMobileLifecycle |
+| AEP \(3.x\) | ACP \(2.x\) |
+| :--- | :--- |
+| pod 'AEPLifecycle', '~&gt; 3.0' | pod 'ACPCore', '~&gt; 2.0' |
+| pod 'AEPCore', '~&gt; 3.0' | pod 'ACPCore', '~&gt; 2.0' |
+
+## Primary Classes
+
+{% tabs %}
+{% tab title="Swift" %}
+| AEP \(3.x\) | ACP \(2.x\) |
+| :--- | :--- |
+| Lifecycle | ACPLifecycle |
+| MobileCore | ACPCore |
+{% endtab %}
+
+{% tab title="Objective-C" %}
+| AEP \(3.x\) | ACP \(2.x\) |
+| :--- | :--- |
+| AEPMobileLifecycle | ACPLifecycle |
+| AEPMobileCore | ACPCore |
+{% endtab %}
+{% endtabs %}
 
 ## Lifecycle extension APIs
 
+{% tabs %}
+{% tab title="Swift" %}
+| API | AEP \(3.x\) | ACP \(2.x\) |
+| :--- | :--- | :--- |
+| extensionVersion | Lifecycle.extensionVersion | ACPLifecycle.extensionVersion\(\) |
+| lifecycleStart | MobileCore.lifecycleStart\(additionalContextData: data\) | ACPCore.lifecycleStart\(data\) |
+| lifecyclePause | MobileCore.lifecyclePause\(\) | ACPCore.lifecyclePause\(\) |
+{% endtab %}
+
+{% tab title="Objective-C" %}
+| API | AEP \(3.x\) | ACP \(2.x\) |
+| :--- | :--- | :--- |
+| extensionVersion | \[AEPMobileLifecycle extensionVersion\]; | \[ACPLifecycle extensionVersion\]; |
+| lifecycleStart | \[AEPMobileCore lifecycleStart: data\]; | \[ACPCore lifecycleStart: data\]; |
+| lifecyclePause | \[AEPMobileCore lifecyclePause\]; | \[ACPCore lifecyclePause\]; |
+{% endtab %}
+{% endtabs %}
+
 For more information, please read the [Lifecycle API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference).
-
-### extensionVersion
-
-* ACPLifecycle
-
-  ```text
-  + (nonnull NSString*) extensionVersion;
-  ```
-
-* Lifecycle
-
-  ```swift
-  static var extensionVersion: String
-  ```
-
-* AEPMobileCore
-
-  ```text
-  static var extensionVersion: String
-  ```
-
-### lifecycleStart
-
-* ACPCore
-
-  ```text
-  + (void) lifecycleStart: (nullable NSDictionary<NSString*, NSString*>*) additionalContextData;
-  ```
-
-* MobileCore
-
-  ```swift
-  @objc(lifecycleStart:)
-  static func lifecycleStart(additionalContextData: [String: Any]?)
-  ```
-
-* AEPMobileCore
-
-  ```text
-  @objc(lifecycleStart:)
-  static func lifecycleStart(additionalContextData: [String: Any]?)
-  ```
-
-### lifecyclePause
-
-* ACPCore
-
-  ```text
-  + (void) lifecyclePause;
-  ```
-
-* MobileCore
-
-  ```swift
-  @objc(lifecyclePause)
-  static func lifecyclePause()
-  ```
-
-* AEPMobileCore
-
-  ```text
-  @objc(lifecyclePause)
-  static func lifecyclePause()
-  ```
 

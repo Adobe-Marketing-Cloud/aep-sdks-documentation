@@ -4,6 +4,14 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
+{% hint style="info" %}
+## Interested in Kotlin?
+
+We're looking for feedback on how we can better support our customers using \(or planning to use\) [Kotlin](https://kotlinlang.org/) in their mobile apps.
+
+Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us know if you're interested in a Kotlin-based version of the Adobe Experience Platform Mobile SDK.
+{% endhint %}
+
 {% hint style="success" %}
 ## Swift SDKs are here!
 
