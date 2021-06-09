@@ -48,7 +48,9 @@ If you are using Cocoapods to manage your Adobe Experience Platform Mobile SDK d
   pod 'AEPUserProfile'
 ```
 
-Save the `Podfile` and run `pod repo update` to update your local Cocoapods repository, then run `pod install`or `pod update` to update the application dependencies.
+Save the `Podfile` and run `pod repo update` to update your local Cocoapods repository.
+
+Once the previous command is complete, run `pod install`or `pod update` to update the application dependencies.
 
 ## Update SDK initialization
 
