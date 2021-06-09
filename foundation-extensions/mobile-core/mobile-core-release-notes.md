@@ -28,6 +28,8 @@
 * Fixed a bug where token (~ timestampu) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
+> Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
+
 ## May 25, 2021
 
 ### Android Core 1.8.1
