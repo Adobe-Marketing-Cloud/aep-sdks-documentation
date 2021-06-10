@@ -9,7 +9,7 @@ This document contains usage information for the public functions and classes in
 - [resetLinkageFields](#resetLinkageFields)
 - [setLinkageFields](#setLinkageFields)
 
-<hr />
+---
 
 ### extensionVersion
 
@@ -50,7 +50,7 @@ NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 
 {% endtabs %}
 
-<hr />
+---
 
 ### registerExtension
 
@@ -83,7 +83,7 @@ MobileCore.registerExtensions([Campaign.self, ...], {
 
 {% endtabs %}
 
-<hr />
+---
 
 ### resetLinkageFields
 
@@ -126,7 +126,7 @@ Campaign.resetLinkageFields()
 
 {% endtabs %}
 
-<hr />
+---
 
 ### setLinkageFields
 
@@ -169,5 +169,5 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 {% endtabs %}
 
-<hr />
+---
 

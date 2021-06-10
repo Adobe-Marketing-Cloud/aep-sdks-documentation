@@ -6,15 +6,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 8, 2021
 
+### iOS Campaign Standard 3.0.0
+
+* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
+
 ### Android Core 1.8.2
 
 * Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios
 * Fixed a bug where rule tokens with "&" were not handled correctly
 * Minor change to how the SDK computes the operating system name
-
-### iOS Campaign Standard 3.0.0
-
-* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
 
 ### Android Lifecycle 1.0.8
 
