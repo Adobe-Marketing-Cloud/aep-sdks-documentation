@@ -6,9 +6,37 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 8, 2021
 
+### Android Core 1.8.2
+
+* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios
+* Fixed a bug where rule tokens with "&" were not handled correctly
+* Minor change to how the SDK computes the operating system name
+
 ### iOS Campaign Standard 3.0.0
 
 * Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
+
+### Android Lifecycle 1.0.8
+
+* Minor update to ensure compatibility with the latest Core 1.8.2
+
+## June 7, 2021
+
+### iOS AEPCore 3.2.0
+
+* Support for handling identities request `Event`'s in AEPIdentity
+* Improve public visiblity of `RuleConsequence`
+* Added `getDeviceModelNumber` to `SystemInfoService`
+* Various additions to `ThreadSafeDictionary`
+* Added the ability to make a network request with raw data that is not UTF encoded
+* Fixed a bug where condition definitions that did not contain a value were not handled correctly
+* Introduced an API to set button image data to the `FloatingButton`
+* Added `optimize` `EventType`
+* Introduced an API to hide the `FullscreenMessage`
+* Fixed a bug where token (~ timestampu) was not expanded correctly
+* Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
+
+> Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
 
 ## May 25, 2021
 

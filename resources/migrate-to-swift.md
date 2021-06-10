@@ -48,7 +48,9 @@ If you are using Cocoapods to manage your Adobe Experience Platform Mobile SDK d
   pod 'AEPUserProfile'
 ```
 
-Save the `Podfile` and run  `pod install`or `pod update` 
+Save the `Podfile` and run `pod repo update` to update your local Cocoapods repository.
+
+Once the previous command is complete, run `pod install` or `pod update` to update the application dependencies.
 
 ## Update SDK initialization
 
@@ -110,4 +112,5 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Signal](../foundation-extensions/mobile-core/signals/) | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
 | [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
 | [Adobe Experience Platform Places Service](../foundation-extensions/places/) | [AEPPlaces](../foundation-extensions/places/migration.md) |
+| [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
 
