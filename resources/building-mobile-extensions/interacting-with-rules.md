@@ -22,7 +22,8 @@ Data elements can be supported by publishing the shared state keys that you want
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
         }]
       },
-    },
+    }
+  ]
 ```
 
 ### Publishing supported conditions
@@ -53,7 +54,7 @@ Conditions can be supported by publishing the shared state keys or events that y
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
         }]
       }
-    }],
+    }]
 ```
 
 ### Publishing supported actions
@@ -73,7 +74,7 @@ Conditions can be supported by publishing the events that you want to use in a r
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/consequence"
         }]
       },
-    }],
+    }]
 ```
 
 ## Supporting rules at runtime

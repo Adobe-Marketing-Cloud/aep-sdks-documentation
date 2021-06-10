@@ -32,7 +32,7 @@ To build the Experience Platform Launch extension interface, complete the follow
 
 4. In a terminal window, run `npx @adobe/reactor-sandbox`.
 
-   This step loads a simulated Experience Platform Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and other aspects of the Launch environment.
+   This step loads a simulated Experience Platform Launch environment `@ [http://localhost:3000](http://localhost:3000)` to test configuration inputs and other aspects of the Launch extension.
 
 5. In a terminal window, run `npx @adobe/reactor-packager`.
 

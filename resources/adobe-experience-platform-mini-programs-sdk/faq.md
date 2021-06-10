@@ -39,7 +39,7 @@ Deployment through Adobe Experience Platform Launch for this SDK is not yet supp
 
 ## Can I use [Mobile Services](https://mobilemarketing.adobe.com) to configure and deploy this SDK?
 
-Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configurations (such as report suites or tracking servers) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
+Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configurations (such as a report suite or a tracking server) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
 
 ## Can I set products variables?
 
@@ -57,15 +57,15 @@ AdobeSDK.trackAction('AddToCart',
 
 ## Can I send props and eVars to Adobe Analytics instead of context data?
 
-While it is possible to send props, eVars, and events to Adobe Analytics with the SDK, you should collect and send context data variables instead. You may then use processing rules simplify data collection and manage content as sent in for reporting.
+While it is possible to send props, eVars, and events to Adobe Analytics with the SDK, you should collect and send context data variables instead. You may then use processing rules simplify data collection and to manage content as it is sent to Adobe Analytics.
 
 For more information, please see the [processing rules overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html).
 
 ## Does the SDK support tracking the "hybrid" Mini Programs?
 
-Hybrid use cases, such as embedding HTML pages in native WeChat mini-programs, are supported. Ensure that the Adobe Analytics tracking server is appropriately configured in the server domain name to correctly track the hybrid Mini Programs.
+Hybrid use cases, such as embedding HTML pages in native WeChat mini-programs, are supported. Ensure that the Adobe Analytics tracking server is appropriately configured in the **Server Domain Name** to correctly track the hybrid Mini Programs.
 
 ## Can the SDK be used for "hybrid" visitor identification use cases?
 
-Hybrid use cases, such as tracking users who move from the Mini Program to a web page or checking if web pages are embedded within a Mini Program, are not possible at this time. These use cases require the Experience Cloud Identity Service, which is not yet available for this SDK.
+Hybrid use cases, such as tracking users who move from the Mini Program to a web page or tracking web pages that are embedded within a Mini Program, are not possible at this time. These use cases require the Experience Cloud Identity Service, which is not yet available for this SDK.
 

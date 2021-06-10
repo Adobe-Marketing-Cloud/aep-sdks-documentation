@@ -64,7 +64,7 @@ AdobeSDK.setDebugLoggingEnabled(true)
 
 ### AdobeSDK.setDebugModeEnabled\(flag\)
 
-By default, the SDK hides internal exceptions and prints error message in the console log. To allow the SDK to throw those exceptions, enable debug mode.
+By default, the SDK hides internal exceptions and prints error messages in the console log. To allow the SDK to throw those exceptions, enable debug mode.
 
 ```javascript
 AdobeSDK.setDebugModeEnabled(true)
@@ -143,7 +143,7 @@ After the SDK is initialized, Lifecycle metrics are automatically sent to Adobe 
 
 ## 5. Validate requests to Adobe Analytics
 
-The following blurbs shows example of Adobe Analytics hits:
+The following blurbs shows example of Adobe Analytics events:
 
 ### Lifecycle - Install Event
 
