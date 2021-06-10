@@ -15,10 +15,10 @@ This document contains usage information for the public functions and classes in
 
 Returns the running version of the AEPCampaign extension.
 
-**Signature**
-
 {% tabs %}
 {% tab title="Swift" %}
+
+**Signature**
 
 ```swift
 static var extensionVersion: String
