@@ -72,7 +72,7 @@ The class name containing public APIs is different depending on which SDK and la
 {% tab title="AEPCampaign (Objective-C)" %}
 
 ```objc
-+ (nonnull NSString*) extensionVersion;
++ (NSString* _NonNull) extensionVersion;
 ```
 
 {% endtab %}
