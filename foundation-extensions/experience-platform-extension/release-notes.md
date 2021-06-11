@@ -1,5 +1,18 @@
 # Release Notes
 
+## June 10, 2021
+
+### iOS AEPEdge 1.1.1
+
+* Development testing enhancements for Experience Edge.
+
+### Android Edge 1.1.1
+
+* Adds support for events persistence for use-cases with low network connectivity or unexpected network errors.
+* Development testing enhancements for Experience Edge.
+
+This SDK is compatible with Android Core 1.8.2 and above.
+
 ## April 8, 2021
 
 ### iOS AEPEdge 1.1.0
