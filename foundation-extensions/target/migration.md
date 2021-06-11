@@ -119,8 +119,7 @@ The API was named `locationClicked` in the ACPTarget SDK.
 {% tab title="AEPTarget (Objective-C)" %}
 
 ```objc
-+ (void) clickedLocation: (nonnull NSString*) name
-                withTargetParameters: (nullable AEPTargetParameters*);
++ (void) clickedLocation: (NSString* _NonNull) withTargetParameters: (AEPTargetParameters* _Nullable);
 ```
 
 {% endtab %}
@@ -137,8 +136,6 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters? 
 
 ---
 
-### 
-
 ### extensionVersion
 
 {% tabs %}
@@ -153,7 +150,7 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters? 
 {% tab title="AEPTarget (Objective-C)" %}
 
 ```objc
-+ (nonnull NSString*) extensionVersion;
++ (NSString* _NonNull) extensionVersion;
 ```
 
 {% endtab %}
@@ -162,6 +159,103 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters? 
 
 ```swift
 static var extensionVersion: String
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### getThirdPartyId
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) getThirdPartyId:^(NSString* _Nullable, NSError* _Nullable) completion;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func getThirdPartyId(_ completion: @escaping (String?, Error?) -> Void)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### getTntId
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) getTntId:^(NSString* _Nullable, NSError* _Nullable) completion;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### prefetchContent
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) prefetchObjectArray
+          withParameters: (nullable ACPTargetParameters*) parameters
+                callback: (nullable void (^) (NSError* _Nullable error)) callback;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) prefetchContent: (NSArray<AEPTargetPrefetchObject*>* _NonNull)
+          withParameters: (AEPTargetParameters* _Nullable)
+                callback: ^(NSError* _Nullable) completion;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func prefetchContent(_ prefetchArray: [TargetPrefetch], with targetParameters: TargetParameters? = nil, _ completion: ((Error?) -> Void)?)
 ```
 
 {% endtab %}
@@ -191,6 +285,8 @@ Registration occurs by passing `AEPMobileTarget` to the `[AEPMobileCore register
 [AEPMobileCore registerExtensions:@[AEPMobileTarget.class] completion:nil];
 ```
 
+{% endhint %}
+
 {% endtab %}
 
 {% tab title="AEPTarget (Swift)" %}
@@ -211,5 +307,130 @@ MobileCore.registerExtensions([Target.self])
 
 ---
 
+### resetExperience
 
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
 
+```objc
++ (void) resetExperience;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) resetExperience;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func resetExperience()
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### retrieveLocationContent
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) retrieveLocationContent: (nonnull NSArray<ACPTargetRequestObject*>*) requests
+                  withParameters: (nullable ACPTargetParameters*) parameters;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) retrieveLocationContent: (NSArray<AEPTargetRequestObject*>* _NonNull)
+                  withParameters: (AEPTargetParameters* _Nullable);
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func retrieveLocationContent(_ requestArray: [TargetRequest], with targetParameters: TargetParameters? = nil)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### setPreviewRestartDeepLink
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) setPreviewRestartDeeplink: (NSURL* _NonNull);
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func setPreviewRestartDeepLink(_ deeplink: URL)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### setThirdPartyId
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) setThirdPartyId: (NSString* _Nullable) thirdPartyId;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func setThirdPartyId(_ id: String?)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### 
