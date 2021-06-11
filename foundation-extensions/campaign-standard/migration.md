@@ -106,7 +106,7 @@ static var extensionVersion: String
 
 Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore registerExtensions:completion:]` API.
 
-
+{% endhint %}
 
 ```objc
 [AEPMobileCore registerExtensions:@[AEPMobileCampaign.class] completion:nil];
@@ -177,7 +177,7 @@ static func resetLinkageFields()
 {% tab title="AEPCampaign (Objective-C)" %}
 
 ```objc
-+ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
++ (void) setLinkageFields: (NSDictionary<NSString*, NSString*>* _NonNull);
 ```
 
 {% endtab %}

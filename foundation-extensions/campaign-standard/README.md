@@ -11,5 +11,5 @@ This extension (AEPCampaign) is compatible with Adobe Experience Platform's Swif
 ## Reference
 
 * [AEPCampaign API reference](campaign-api-reference.md)
-* [Migration to AEPCampaign](acpcampaign-aepcampaign.md)
+* [Migration to AEPCampaign](migration.md)
 
