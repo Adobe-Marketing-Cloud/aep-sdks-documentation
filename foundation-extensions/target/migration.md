@@ -51,10 +51,93 @@ The class name containing public APIs is different depending on which SDK and la
 
 ## Public APIs (alphabetical)
 
+- [clearPrefetchCache](#clearPrefetchCache)
+- [clickedLocation](#clickedLocation)
+- [collectLaunchInfo (For enabling visual preview mode)](#Visual preview)
+- [displayedLocations](#displayedLocations)
 - [extensionVersion](#extensionVersion)
+- [getThirdPartyId](#getThirdPartyId)
+- [getTntId](#getTntId)
+- [prefetchContent](#prefetchContent)
 - [registerExtension](#registerExtension)
+- [resetExperience](#resetExperience)
+- [retrieveLocationContent](#retrieveLocationContent)
+- [setPreviewRestartDeepLink](#setPreviewRestartDeepLink)
+- [setThirdPartyId](#setThirdPartyId)
 
 ---
+
+### clearPrefetchCache
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+```objc
++ (void) clearPrefetchCache;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) clearPrefetchCache;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func clearPrefetchCache
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### clickedLocation
+
+{% tabs %}
+{% tab title="ACPTarget (Objective-C)" %}
+
+{% hint style="info" %}
+
+The API was named `locationClicked` in the ACPTarget SDK.
+
+{% endhint %}
+
+```objc
++ (void) locationClickedWithName: (nonnull NSString*) name
+                targetParameters: (nullable ACPTargetParameters*) parameters;
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Objective-C)" %}
+
+```objc
++ (void) clickedLocation: (nonnull NSString*) name
+                withTargetParameters: (nullable AEPTargetParameters*);
+```
+
+{% endtab %}
+
+{% tab title="AEPTarget (Swift)" %}
+
+```swift
+static func clickedLocation(_ name: String, targetParameters: TargetParameters? = nil) 
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### 
 
 ### extensionVersion
 
@@ -128,5 +211,5 @@ MobileCore.registerExtensions([Target.self])
 
 ---
 
-For more information, please see the [Target API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference).
+
 

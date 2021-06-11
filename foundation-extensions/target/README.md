@@ -9,4 +9,4 @@ This extension (AEPTarget) is compatible with Adobe Experience Platform's Swift 
 ## Reference
 
 * [AEPTarget API reference](target-api-reference.md)
-* [Migration to AEPTarget](acptarget-aeptarget.md)
+* [Migration to AEPTarget](migration.md)
