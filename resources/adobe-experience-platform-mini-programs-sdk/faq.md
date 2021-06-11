@@ -22,8 +22,8 @@ Ensure that your SDK timestamp configuration is aligned with the report suite's 
 
 The following settings explain how settings between the SDK and your report suite should be aligned:
 
-* `analytics.offlineEnabled = true` ties to timestamps required or optional
-* `analytics.offlineEnabled = false` ties to timestamps not allowed or optional       
+* `analytics.offlineEnabled = true` ties to timestamp-required or timestamp-optional report suites
+* `analytics.offlineEnabled = false` ties to timestamp-forbidden or timestamp-optional report suites
 
 ### Contact Adobe Customer Care
 
@@ -39,7 +39,7 @@ Deployment through Adobe Experience Platform Launch for this SDK is not yet supp
 
 ## Can I use [Mobile Services](https://mobilemarketing.adobe.com) to configure and deploy this SDK?
 
-Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configurations (such as a report suite or a tracking server) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
+Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configuration settings (such as a report suite or a tracking server) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
 
 ## Can I set products variables?
 

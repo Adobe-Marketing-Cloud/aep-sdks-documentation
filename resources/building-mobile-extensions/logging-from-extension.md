@@ -1,6 +1,6 @@
 # Extension logging
 
-You should use the Experience Platform SDK logging API to print a message from the extension code. The Experience Platform SDKs provide the `setLogLevel` API, which is used to set one of the following logging modes:
+It is recommended that you use the Experience Platform SDK logging API to print a message from the extension code. The Experience Platform SDKs provide the `setLogLevel` API, which is used to set one of the following logging modes:
 
 * VERBOSE
 * DEBUG

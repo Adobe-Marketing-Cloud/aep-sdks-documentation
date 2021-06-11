@@ -177,7 +177,7 @@ Registration can be completed any time after the app is launched.
 {% tab title="Android" %}
 #### Android
 
-The best place to register your extension on Android is in the `onCreate` method of your activity.
+The best place to register your extension on Android is in the `onCreate` method of your `Application` class.
 
 {% hint style="info" %}
 Some registration errors, such as sending a null extension class as parameter, are synchronous and occur immediately. Other errors, like undefined names, name conflicts, or type checking issues, might occur asynchronously and are reported through the `onUnexpectedError` callback before the extension is unregistered.

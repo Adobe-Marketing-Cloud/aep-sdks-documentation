@@ -10,7 +10,7 @@ The skeleton extension is a bare-bones, third-party extension that contains a fr
 
 ## Weather extension
 
-The weather extension example for both iOS and Android shows a complete client-side and Experience Platform Launch UI extension that uses an API to fetch weather information using the [OpenWeatherMap online service](https://openweathermap.org/). The weather conditions are published on to the Mobile Core event hub and are saved as a shared state. The Experience Platform Launch UI extension shows how an extension can be used to not only pass configuration values to the client-side extension, but to integrate with the Experience Platform Launch workflow rules engine.
+The Weather extension example for both iOS and Android shows a complete client-side and Experience Platform Launch UI extension that uses an API to fetch weather information using the [OpenWeatherMap online service](https://openweathermap.org/). The weather conditions are published on to the Mobile Core event hub and are saved as a shared state. The Experience Platform Launch UI extension shows how an extension can be used to not only pass configuration values to the client-side extension, but to integrate with the Experience Platform Launch workflow rules engine.
 
 ![](../../.gitbook/assets/screen-shot-2019-04-23-at-3.46.29-pm.png)
 

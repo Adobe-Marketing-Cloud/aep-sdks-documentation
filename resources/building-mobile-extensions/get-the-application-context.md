@@ -9,7 +9,7 @@ In Android, you can retrieve the `android.app.Application` instance by using the
 ### getApplication
 
 {% hint style="warning" %}
-`MobileCore.getApplication` will return `null` if the `android.app.Application` object was destroyed or if `MobileCore.setApplication`was not previously called.
+`MobileCore.getApplication` may return `null` if the `android.app.Application` object was destroyed or if `MobileCore.setApplication`was not previously called.
 {% endhint %}
 
 ### Syntax
