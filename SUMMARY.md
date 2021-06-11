@@ -70,10 +70,13 @@
   * [Migration to AEPPlaces v2](foundation-extensions/places/migration-v2.md)
   * [Places API Reference](foundation-extensions/places/places-usage-reference.md)
   * [ACPPlaces \(iOS\) Reference](foundation-extensions/places/adobe-places.md)
-* [Profile](foundation-extensions/profile/README.md)
-  * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
+* [Adobe Experience Platform Profile](foundation-extensions/profile/README.md)
+  * [Migration to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
+* [Adobe Experience Platform Target](foundation-extensions/target/README.md)
+  * [Migration to AEPTarget](foundation-extensions/target/migration.md)
+  * [Target API Reference](foundation-extensions/target/target-api-reference.md)
 
 ## Experience Cloud <a id="using-mobile-extensions"></a>
 
