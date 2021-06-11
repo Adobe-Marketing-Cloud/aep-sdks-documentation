@@ -56,7 +56,7 @@
   * [XDM Experience Events](foundation-extensions/experience-platform-extension/xdm-experience-events.md)
   * [Validation](foundation-extensions/experience-platform-extension/validation.md)
 * [Adobe Experience Platform Campaign Standard](foundation-extensions/campaign-standard/README.md)
-  * [Migration to AEPCampaign](foundation-extensions/campaign-standard/acpcampaign-aepcampaign.md)
+  * [Migration to AEPCampaign](foundation-extensions/campaign-standard/migration.md)
   * [Campaign API Reference](foundation-extensions/campaign-standard/campaign-api-reference.md)
 * [Consent for Edge Network](foundation-extensions/consent-for-edge-network/README.md)
   * [Release Notes](foundation-extensions/consent-for-edge-network/release-notes-1.md)
