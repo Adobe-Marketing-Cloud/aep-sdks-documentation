@@ -1,6 +1,6 @@
 # Migration to AEPPlaces
 
-This document is a reference comparison of AEPPlaces \(3.x\) APIs agains against their equivalent ACPPlaces \(2.x\) APIs.
+This document is a reference comparison of AEPPlaces \(3.x\) APIs against their equivalent ACPPlaces \(2.x\) APIs.
 
 The AEPPlaces extension is implemented purely in Swift and is compatible with the AEPCore swift SDK. To ensure a smooth transition from the ACPPlaces SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application.  If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 

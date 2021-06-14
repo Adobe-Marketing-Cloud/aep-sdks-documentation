@@ -113,4 +113,5 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
 | [Adobe Experience Platform Places Service](../foundation-extensions/places/) | [AEPPlaces](../foundation-extensions/places/migration.md) |
 | [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
+| [Adobe Experience Platform Target](../foundation-extensions/target/) | [AEPTarget](../foundation-extensions/target/migration.md) |
 

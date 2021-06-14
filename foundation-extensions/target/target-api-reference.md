@@ -397,9 +397,9 @@ static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
 **Example usage**
 
 ```swift
-Target.getTntId { id, err in
+Target.getTntId({ id, err in
 	// read target's tntId        
-}
+})
 ```
 
 {% endtab %}
