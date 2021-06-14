@@ -26,6 +26,7 @@ In addition to `ACPCore` being replaced with `AEPCore`, you will also need to ex
 | ACPTarget | AEPTarget |
 | ACPMedia | AEPMedia |
 | ACPPlaces | AEPPlaces |
+| ACPCampaign | AEPCampaign |
 
 ### Manual library import
 
@@ -113,4 +114,5 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
 | [Adobe Experience Platform Places Service](../foundation-extensions/places/) | [AEPPlaces](../foundation-extensions/places/migration.md) |
 | [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
+| [Adobe Experience Platform Campaign](../foundation-extensions/campaign/) | [AEPCampaign](../foundation-extensions/campaign/migration.md) |
 

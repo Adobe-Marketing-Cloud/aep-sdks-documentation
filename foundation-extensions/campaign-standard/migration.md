@@ -2,105 +2,28 @@
 
 This document is a reference comparison of ACPCampaign (1.x) APIs against their equivalent APIs in AEPCampaign (3.x) for an iOS mobile application implementation.
 
-If an explanation beyond showing API differences is necessary, it will be captured as a "hint" within that API's section.
+The AEPCampaign extension is implemented purely in Swift and is compatible with the AEPCore swift SDK. To ensure a smooth transition from the ACPCampaign SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application. If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
-For example:
+## Swift
 
-{% hint style="info" %}
-This is information that is important to help clarify the API.
-{% endhint %}
+### Public classes
 
-## Pod installation
+| Type                   | AEP (3.x) | ACP (1.x)   |
+| ---------------------- | :-------- | :---------- |
+| Primary Class (Module) | Campaign  | ACPCampaign |
 
-| AEP (3.x)                    | ACPCore (2.x) and ACPCampaign (1.x) |
-| :----------------------------- | :-------------------------------------- |
-| pod 'AEPCampaign', '~&gt; 3.0' | pod 'ACPCampaign', '~&gt; 1.0'          |
-| pod 'AEPCore', '~&gt; 3.2.0'   | pod 'ACPCore', '~&gt; 2.0'              |
-
-## Primary classes
+### API usages
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="AEP (3.x)" %}
 
-| AEP (3.x) | ACPCore (2.x) and ACPCampaign (1.x) |
-| :---------- | :-------------------------------------- |
-| Campaign    | ACPCampaign                             |
-| MobileCore  | ACPCore                                 |
-
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
-| AEP (3.x)       | ACPCore (2.x) and ACPCampaign (1.x) |
-| :---------------- | :-------------------------------------- |
-| AEPMobileCampaign | ACPCampaign                             |
-| AEPMobileCore     | ACPCore                                 |
-
-{% endtab %}
-{% endtabs %}
-
-## Primary class
-
-The class name containing public APIs is different depending on which SDK and language combination being used.
-
-| SDK Version | Language    | Class Name          | Example                                   |
-| ----------- | ----------- | ------------------- | ----------------------------------------- |
-| ACPCampaign | Objective-C | `ACPCampaign`       | `[ACPCampaign resetLinkageFields];`       |
-| AEPCampaign | Objective-C | `AEPMobileCampaign` | `[AEPMobileCampaign resetLinkageFields];` |
-| AEPCampaign | Swift       | `Campaign`          | `Campaign.resetLinkageFields()`           |
-
-## Public APIs (alphabetical)
-
-- [extensionVersion](#extensionVersion)
-- [registerExtension](#registerExtension)
-- [resetLinkageFields](#resetLinkageFields)
-- [setLinkageFields](#setLinkageFields)
-
----
-
-### extensionVersion
-
-{% tabs %}
-{% tab title="ACPCampaign (Objective-C)" %}
-
-```objc
-+ (nonnull NSString*) extensionVersion;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Objective-C)" %}
-
-```objc
-+ (NSString* _NonNull) extensionVersion;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Swift)" %}
+**extensionVersion**
 
 ```swift
-static var extensionVersion: String
+Campaign.extensionVersion
 ```
 
-{% endtab %}
-
-{% endtabs %}
-
----
-
-### registerExtension
-
-{% tabs %}
-{% tab title="ACPCampaign (Objective-C)" %}
-
-```objc
-+ (void) registerExtension;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Objective-C)" %}
+**registerExtension**
 
 {% hint style="info" %}
 
@@ -108,90 +31,123 @@ Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore regist
 
 {% endhint %}
 
-```objc
-[AEPMobileCore registerExtensions:@[AEPMobileCampaign.class] completion:nil];
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Swift)" %}
-
-{% hint style="info" %}
-
-Registration occurs by passing `Campaign` to the `MobileCore.registerExtensions` API.
-
-{% endhint %}
-
 ```swift
 MobileCore.registerExtensions([Campaign.self])
 ```
 
-{% endtab %}
-
-{% endtabs %}
-
----
-
-### resetLinkageFields
-
-{% tabs %}
-{% tab title="ACPCampaign (Objective-C)" %}
-
-```objc
-+ (void) resetLinkageFields;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Objective-C)" %}
-
-```objc
-+ (void) resetLinkageFields;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Swift)" %}
+**resetLinkageFields**
 
 ```swift
-static func resetLinkageFields()
+Campaign.resetLinkageFields()
 ```
 
-{% endtab %}
-
-{% endtabs %}
-
----
-
-### setLinkageFields
-
-{% tabs %}
-{% tab title="ACPCampaign (Objective-C)" %}
-
-```objc
-+ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Objective-C)" %}
-
-```objc
-+ (void) setLinkageFields: (NSDictionary<NSString*, NSString*>* _NonNull);
-```
-
-{% endtab %}
-
-{% tab title="AEPCampaign (Swift)" %}
+**setLinkageFields**
 
 ```swift
-static func setLinkageFields(linkageFields: [String: String])
+Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
 ```
 
 {% endtab %}
 
+{% tab title="ACP (1.x)" %}
+
+**extensionVersion**
+
+```swift
+ACPCampaign.extensionVersion
+```
+
+**registerExtension**
+
+```swift
+ACPCampaign.registerExtension
+```
+
+**resetLinkageFields**
+
+```swift
+ACPCampaign.resetLinkageFields()
+```
+
+**setLinkageFields**
+
+```swift
+ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```
+
+{% endtab %}
 {% endtabs %}
 
----
+## Objective-C
 
-For more information, please see the [Campaign API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference).
+### Public classes
+
+| Type          | AEP (3.x)         | ACP (1.x)   |
+| ------------- | :---------------- | :---------- |
+| Primary Class | AEPMobileCampaign | ACPCampaign |
+
+### API usages
+
+{% tabs %}
+
+{% tab title="AEP (3.x)" %}
+
+**extensionVersion**
+
+```objc
+[AEPMobileCampaign extensionVersion];
+```
+
+**registerExtension**
+{% hint style="info" %}
+Registration occurs by passing `AEPMobileCampaign.class` to the `AEPMobileCore registerExtensions` API in addition to the other extensions registered.
+{% endhint %}
+
+```objc
+[AEPMobileCore registerExtensions:@[..., AEPMobileCampaign.class] completion:^{
+	// registration complete
+}];
+```
+
+**resetLinkageFields**
+
+```objc
+[AEPMobileCampaign resetLinkageFields];
+```
+
+**setLinkageFields**
+
+```swift
+[AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
+```
+
+{% endtab %}
+
+{% tab title="ACP (1.x)" %}
+
+**extensionVersion**
+
+```objc
+[ACPCampaign extensionVersion];
+```
+
+**registerExtension**
+
+```objc
+[ACPCampaign registerExtension];
+```
+
+**resetLinkageFields**
+
+```objc
+[ACPCampaign resetLinkageFields];
+```
+
+**setLinkageFields**
+
+```swift
+[ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
+```
+
+{% endtab %}
+{% endtabs %}
