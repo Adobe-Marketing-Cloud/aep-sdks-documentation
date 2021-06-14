@@ -2,13 +2,6 @@
 
 This document contains usage information for the public functions and classes in `AEPCampaign`.
 
-## Static functions
-
-- [extensionVersion](#extensionVersion)
-- [registerExtension](#registerExtension)
-- [resetLinkageFields](#resetLinkageFields)
-- [setLinkageFields](#setLinkageFields)
-
 ---
 
 ### extensionVersion
