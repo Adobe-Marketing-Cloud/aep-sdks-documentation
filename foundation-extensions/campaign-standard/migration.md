@@ -80,7 +80,7 @@ Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore regist
 {% tab title="AEP 3.x \(Swift\)" %}
 
 ```swift
-Campaign.resetLinkageFields()
+static func resetLinkageFields()
 ```
 
 {% endtab %}
@@ -88,7 +88,7 @@ Campaign.resetLinkageFields()
 {% tab title="AEP 3.x \(Objective-C\)" %}
 
 ```objc
-[AEPMobileCampaign resetLinkageFields];
++ (void) resetLinkageFields;
 ```
 
 {% endtab %}
@@ -108,7 +108,7 @@ Campaign.resetLinkageFields()
 {% tab title="AEP 3.x \(Swift\)" %}
 
 ```swift
-Campaign.setLinkageFields(linkageFields: loginData)
+static func setLinkageFields(linkageFields: [String: String])
 ```
 
 {% endtab %}
@@ -116,7 +116,7 @@ Campaign.setLinkageFields(linkageFields: loginData)
 {% tab title="AEP 3.x \(Objective-C\)" %}
 
 ```objc
-[AEPMobileCampaign setLinkageFields: loginData];
++ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*)
 ```
 
 {% endtab %}
