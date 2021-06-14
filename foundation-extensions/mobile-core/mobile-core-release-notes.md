@@ -25,7 +25,7 @@
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token (~ timestampu) was not expanded correctly
+* Fixed a bug where token \(~ timestampu\) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.

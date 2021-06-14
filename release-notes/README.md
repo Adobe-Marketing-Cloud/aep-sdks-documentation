@@ -42,7 +42,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token (~ timestampu) was not expanded correctly
+* Fixed a bug where token \(~ timestampu\) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
