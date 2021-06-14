@@ -48,33 +48,6 @@ NSString *targetVersion = [AEPMobileTarget extensionVersion];
 
 This API no longer exists in `AEPTarget`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 
-{% tabs %}
-{% tab title="Swift" %}
-
-**Example:**
-
-```swift
-MobileCore.registerExtensions([Target.self, ...], {
-  // processing after registration
-})
-```
-
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
-**Example:**
-
-```objc
-[AEPMobileCore registerExtensions:@[AEPMobileTarget.class, ...] completion:^{
-  // processing after registration
-}];
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 ---
 ### prefetchContent
 This API sends a prefetch request to your configured Target server. The prefetch request is sent with the prefetch objects array and the specified Target parameters. 
