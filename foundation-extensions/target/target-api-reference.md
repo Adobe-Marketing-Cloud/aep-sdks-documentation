@@ -2,22 +2,6 @@
 
 This document contains usage information for the public functions and classes in `AEPTarget`.
 
-## Static functions
-
-- [extensionVersion](#extensionVersion)
-- [registerExtension](#registerExtension)
-- [prefetchContent](#prefetchContent)
-- [retrieveLocationContent](#retrieveLocationContent)
-- [setThirdPartyId](#setThirdPartyId)
-- [getThirdPartyId](#getThirdPartyId)
-- [getTntId](#getTntId)
-- [resetExperience](#resetExperience)
-- [clearPrefetchCache](#clearPrefetchCache)
-- [setPreviewRestartDeepLink](#setPreviewRestartDeepLink)
-- [displayedLocations](#displayedLocations)
-- [clickedLocation](#clickedLocation)
-- [collectLaunchInfo (For enabling visual preview mode)](#Visual preview)
-
 ---
 ### extensionVersion
 
