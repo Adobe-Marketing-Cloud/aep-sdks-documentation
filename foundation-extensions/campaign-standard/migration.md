@@ -4,149 +4,127 @@ This document is a reference comparison of ACPCampaign (1.x) APIs against their 
 
 The AEPCampaign extension is implemented purely in Swift and is compatible with the AEPCore swift SDK. To ensure a smooth transition from the ACPCampaign SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application. If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
-## Swift
-
-### Public classes
+## Public classes
 
 | Type                   | AEP (3.x) | ACP (1.x)   |
 | ---------------------- | :-------- | :---------- |
 | Primary Class (Module) | Campaign  | ACPCampaign |
 
-### API usages
+## Public APIs \(alphabetical)
+
+### extensionVersion
 
 {% tabs %}
-{% tab title="AEP (3.x)" %}
-
-**extensionVersion**
+{% tab title="AEP 3.x \(Swift\)" %}
 
 ```swift
-Campaign.extensionVersion
+static var extensionVersion: String
 ```
 
-**registerExtension**
+{% endtab %}
 
+{% tab title="AEP 3.x \(Objective-C\)" %}
+
+```objc
++ (nonnull NSString*) extensionVersion;
+```
+
+{% endtab %}
+
+{% tab title="ACP 1.x \(Objective-C\)" %}
+
+```objc
++ (nonnull NSString*) extensionVersion;
+```
+
+{% endtab %}
+{% endtabs %}
+
+### registerExtension
+
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
 {% hint style="info" %}
-
-Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore registerExtensions:completion:]` API.
-
+Registration occurs by passing `Campaign` to the `MobileCore.registerExtensions` API.
 {% endhint %}
 
 ```swift
 MobileCore.registerExtensions([Campaign.self])
 ```
 
-**resetLinkageFields**
+{% endtab %}
 
-```swift
-Campaign.resetLinkageFields()
-```
+{% tab title="AEP 3.x \(Objective-C\)" %}
+{% hint style="info" %}
+Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore registerExtensions:completion:]` API.
+{% endhint %}
 
-**setLinkageFields**
-
-```swift
-Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```objc
+[AEPMobileCore registerExtensions:@[AEPMobileCampaign.class] completion:nil];
 ```
 
 {% endtab %}
 
-{% tab title="ACP (1.x)" %}
+{% tab title="ACP 1.x \(Objective-C\)" %}
 
-**extensionVersion**
-
-```swift
-ACPCampaign.extensionVersion
-```
-
-**registerExtension**
-
-```swift
-ACPCampaign.registerExtension
-```
-
-**resetLinkageFields**
-
-```swift
-ACPCampaign.resetLinkageFields()
-```
-
-**setLinkageFields**
-
-```swift
-ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```objc
++ (void) registerExtension;
 ```
 
 {% endtab %}
 {% endtabs %}
 
-## Objective-C
-
-### Public classes
-
-| Type          | AEP (3.x)         | ACP (1.x)   |
-| ------------- | :---------------- | :---------- |
-| Primary Class | AEPMobileCampaign | ACPCampaign |
-
-### API usages
+### resetLinkageFields
 
 {% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
 
-{% tab title="AEP (3.x)" %}
-
-**extensionVersion**
-
-```objc
-[AEPMobileCampaign extensionVersion];
+```swift
+Campaign.resetLinkageFields()
 ```
 
-**registerExtension**
-{% hint style="info" %}
-Registration occurs by passing `AEPMobileCampaign.class` to the `AEPMobileCore registerExtensions` API in addition to the other extensions registered.
-{% endhint %}
+{% endtab %}
 
-```objc
-[AEPMobileCore registerExtensions:@[..., AEPMobileCampaign.class] completion:^{
-	// registration complete
-}];
-```
-
-**resetLinkageFields**
+{% tab title="AEP 3.x \(Objective-C\)" %}
 
 ```objc
 [AEPMobileCampaign resetLinkageFields];
 ```
 
-**setLinkageFields**
+{% endtab %}
+
+{% tab title="ACP 1.x \(Objective-C\)" %}
+
+```objc
++ (void) resetLinkageFields;
+```
+
+{% endtab %}
+{% endtabs %}
+
+### setLinkageFields
+
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
 
 ```swift
-[AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
+Campaign.setLinkageFields(linkageFields: loginData)
 ```
 
 {% endtab %}
 
-{% tab title="ACP (1.x)" %}
-
-**extensionVersion**
+{% tab title="AEP 3.x \(Objective-C\)" %}
 
 ```objc
-[ACPCampaign extensionVersion];
+[AEPMobileCampaign setLinkageFields: loginData];
 ```
 
-**registerExtension**
+{% endtab %}
+
+{% tab title="ACP 1.x \(Objective-C\)" %}
 
 ```objc
-[ACPCampaign registerExtension];
-```
-
-**resetLinkageFields**
-
-```objc
-[ACPCampaign resetLinkageFields];
-```
-
-**setLinkageFields**
-
-```swift
-[ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
++ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
 {% endtab %}
