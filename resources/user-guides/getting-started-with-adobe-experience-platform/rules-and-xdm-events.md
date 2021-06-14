@@ -1,8 +1,8 @@
-# Rules & XDM events
+# Rules and XDM events
 
 ## Prerequisites for this tutorial
 
-* Finish [Sample XDM Implementation](sample-xdm-implementation.md)
+Before starting this tutorial, please read and follow the steps in the [sample XDM implementation tutorial](sample-xdm-implementation.md).
 
 ### Download the sample application
 
