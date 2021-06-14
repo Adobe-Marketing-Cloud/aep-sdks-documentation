@@ -49,33 +49,6 @@ NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 
 This API no longer exists in `AEPCampaign`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 
-{% tabs %}
-{% tab title="Swift" %}
-
-**Example:**
-
-```swift
-MobileCore.registerExtensions([Campaign.self, ...], {
-  // processing after registration
-})
-```
-
-{% endtab %}
-
-{% tab title="Objective-C" %}
-
-**Example:**
-
-```objc
-[AEPMobileCore registerExtensions:@[AEPMobileCampaign.class, ...] completion:^{
-  // processing after registration
-}];
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 ---
 
 ### resetLinkageFields
