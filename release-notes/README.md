@@ -4,6 +4,19 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 10, 2021
+
+### iOS AEPEdge 1.1.1
+
+* Development testing enhancements for Experience Edge.
+
+### Android Edge 1.1.1
+
+* Adds support for events persistence for use-cases with low network connectivity or unexpected network errors.
+* Development testing enhancements for Experience Edge.
+
+This SDK is compatible with Android Core 1.8.2 and above.
+
 ## June 8, 2021
 
 ### iOS Campaign Standard 3.0.0
@@ -12,13 +25,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Core 1.8.2
 
-* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios
-* Fixed a bug where rule tokens with "&" were not handled correctly
-* Minor change to how the SDK computes the operating system name
+* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios.
+* Fixed a bug where rule tokens with "&" were not handled correctly.
+* Minor change to how the SDK computes the operating system name.
 
 ### Android Lifecycle 1.0.8
 
-* Minor update to ensure compatibility with the latest Core 1.8.2
+* Minor update to ensure compatibility with the latest Core 1.8.2.
 
 ## June 7, 2021
 
@@ -33,7 +46,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token (~ timestampu) was not expanded correctly
+* Fixed a bug where token \(~ timestampu\) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
