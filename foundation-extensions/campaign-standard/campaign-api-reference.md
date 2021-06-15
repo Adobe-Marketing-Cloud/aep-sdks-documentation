@@ -1,4 +1,4 @@
-# Campaign API Reference
+# Campaign API reference
 
 This document contains usage information for the public functions and classes in `AEPCampaign`.
 
