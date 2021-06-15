@@ -1,5 +1,11 @@
 # Release Notes
 
+## June 15, 2021
+
+### Android Target 1.1.7
+
+* Added the changes to move away from bintray and start using Sonatype to push SDK to Maven Central.
+
 ## December 18, 2020
 
 ### iOS Target 2.2.0
