@@ -1,4 +1,4 @@
-# Target API Reference
+# Target API reference
 
 This document contains usage information for the public functions and classes in `AEPTarget`.
 
