@@ -67,7 +67,6 @@
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
 * [Adobe Experience Platform Places Service](foundation-extensions/places/README.md)
   * [Migration to AEPPlaces](foundation-extensions/places/migration.md)
-  * [Migration to AEPPlaces v2](foundation-extensions/places/migration-v2.md)
   * [Places API Reference](foundation-extensions/places/places-usage-reference.md)
   * [ACPPlaces \(iOS\) Reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
@@ -101,6 +100,8 @@
   * [Release Notes](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-release-notes.md)
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
+* [Adobe Journey Optimizer](using-mobile-extensions/adobe-journey-optimizer/README.md)
+  * [API Reference](using-mobile-extensions/adobe-journey-optimizer/api-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
@@ -157,8 +158,6 @@
 
 ## BETA
 
-* [Adobe Journey Optimizer](beta/adobe-journey-optimizer/README.md)
-  * [API Reference](beta/adobe-journey-optimizer/api-reference.md)
 * [Project Griffon](beta/project-griffon/README.md)
   * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
   * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
