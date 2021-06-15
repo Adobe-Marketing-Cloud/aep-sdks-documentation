@@ -23,7 +23,7 @@ Ensure that your SDK timestamp configuration is aligned with the report suite's 
 The following settings explain how settings between the SDK and your report suite should be aligned:
 
 * `analytics.offlineEnabled = true` ties to timestamp-required or timestamp-optional report suites
-* `analytics.offlineEnabled = false` ties to timestamp-forbidden or timestamp-optional report suites
+* `analytics.offlineEnabled = false` ties to timestamp-not-allowed or timestamp-optional report suites
 
 ### Contact Adobe Customer Care
 
