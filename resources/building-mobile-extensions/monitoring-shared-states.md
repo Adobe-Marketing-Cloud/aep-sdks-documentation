@@ -6,7 +6,7 @@ In the example below, you can find the listener that is being registered in the 
 
 {% tabs %}
 {% tab title="Android" %}
-## Android
+## Java
 
 ### MyExtension.java
 
@@ -42,10 +42,10 @@ public void hear(final Event event) {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-## iOS
+{% tab title="iOS" %}
+## Objective-C
 
-### **MyExtension.m**
+### MyExtension.m
 
 ```text
 - (instancetype) init {
