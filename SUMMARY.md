@@ -66,9 +66,9 @@
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
 * [Adobe Experience Platform Places Service](foundation-extensions/places/README.md)
-  * [Migration to AEPPlaces](foundation-extensions/places/migration.md)
-  * [Places API Reference](foundation-extensions/places/places-usage-reference.md)
-  * [ACPPlaces \(iOS\) Reference](foundation-extensions/places/adobe-places.md)
+  * [Migration to AEPPlaces reference](foundation-extensions/places/migration.md)
+  * [Places API reference](foundation-extensions/places/places-usage-reference.md)
+  * [ACPPlaces \(iOS\) reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
   * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
@@ -168,4 +168,3 @@
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
   * [Troubleshoot Project Griffon](beta/project-griffon/troubleshoot-project-griffon.md)
-
