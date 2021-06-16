@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 15, 2021
+
+### Android Target 1.1.7
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+
 ## June 10, 2021
 
 ### iOS AEPEdge 1.1.1
