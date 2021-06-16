@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Target 1.1.7
 
-* Added the changes to move away from bintray and start using Sonatype to push SDK to Maven Central.
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 
 ## June 10, 2021
 
