@@ -4,7 +4,7 @@
 
 ### Android Target 1.1.7
 
-* Added the changes to move away from bintray and start using Sonatype to push SDK to Maven Central.
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 
 ## December 18, 2020
 
