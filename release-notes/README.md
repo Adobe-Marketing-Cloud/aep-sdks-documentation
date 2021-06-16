@@ -9,7 +9,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Campaign 1.0.8
 
 * Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
-* Resolved and issue with Campaign module details not being returned.
+* Resolved an issue with Campaign module details not being returned.
 
 ## June 15, 2021
 
