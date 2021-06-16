@@ -2,51 +2,17 @@
 
 ## Prerequisites for this tutorial
 
-Before starting this tutorial, please read and follow the steps in the [sample XDM implementation tutorial](sample-xdm-implementation.md).
-
-### Download the sample application
-
-**Note:** This step is not required if you already implemented the steps described in [Sample XDM Implementation]()
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-Download the Android Sample application from [https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-4](https://github.com/adobe/aepsdk-sample-app-android/archive/beta-assignment-4.zip).
-
-To get started, follow the steps described in [AEP SDK Sample App Android - Installation](https://github.com/adobe/aepsdk-sample-app-android/tree/beta-assignment-4#installation).
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Swift
-
-Download the iOS Swift Sample application from [https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-4](https://github.com/adobe/aepsdk-sample-app-ios/archive/beta-assignment-4.zip).
-
-To get started, follow the steps described in [AEP SDK Sample App Swift - Installation](https://github.com/adobe/aepsdk-sample-app-ios/tree/beta-assignment-4#installation).
-{% endtab %}
-{% endtabs %}
-
-### Set up the required fields
-
-**Note:** The steps in this section are not required if you already implemented the steps described in [Assignment 3 - XDM implementation](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-3-xdm-implementation).
-
-In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the mobile property created in Assignment 1 and click on the Development![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)icon. Find the Environment File ID at the top and copy it.
-
-Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` \(Android\) / `AppDelegate` \(iOS\) file.
-
-Set the `PRODUCT_REVIEW_DATASET_ID` to the dataset identifier for Product reviews created in Assignment 3 in the `EdgeTab` \(Android\) / `EdgeViewController` \(iOS\) file.
-
-In the same file, set the `TENANT_ID` to the org identifier as described in the Product reviews schema.
+Before starting this tutorial, please read and follow the steps in the [sample XDM implementation tutorial](sample-xdm-implementation.md), including downloading the sample application and setting up the required fields.
 
 ## Attach data to XDM events
 
 ### Update the Product reviews schema
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
-2. Update the `Product reviews` schema created in Assignment 3 by adding two new fields.
-   * From the left panel, select `Schemas` and then click on the `Product reviews` schema you have created for the previous assignment.
-   * Click on the `Product review` mixin.
-   * Click on the plus icon `+` next to the schema name and add the following fields. Click `Apply` after each field added.
+2. Update the previously created `Product reviews` schema created by adding two new fields.
+   * From the left panel, select `Schemas` and then select the `Product reviews` schema you have created for the previous assignment.
+   * Select the `Product review` field group.
+   * Select the plus icon `+` next to the schema name and add the following fields. Click `Apply` after each field added.
 
      | Field name | Display name | Type | Required |
      | :--- | :--- | :--- | :--- |
@@ -55,9 +21,9 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
 
    * Click `Save` to update the schema.
 
-### Create a mobile rule in Adobe Experience Launch
+### Create a mobile rule in Adobe Experience Platform Launch
 
-1. Navigate to [Adobe Experience Launch](https://experience.adobe.com/launch) and select the mobile property you created in the previous assignments.
+1. Navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and select the mobile property you created in the previous assignments.
 2. Click on `Extensions` from the left panel and update the `Adobe Experience Platform Edge` extension to latest version.
 3. Click on `Data elements` from the left panel and the following data elements:
    1. Create `App ID` data element:
@@ -98,7 +64,7 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
        }
     ```
 
-  * Note that the 3 data elements created in step 3 are used here to populate the `ratingDate` and `ratingSource` XDM fields.
+  * Note that the previously created three data elements are used here to populate the `ratingDate` and `ratingSource` XDM fields.
     * Click `Keep Changes`.
     * Set a name and click `Save` to keep the rule.
 * Publish the new data elements and rule created:
@@ -107,7 +73,7 @@ In the same file, set the `TENANT_ID` to the org identifier as described in the 
   * Click `Save & Build for Development`.
 
 {% hint style="info" %}
-The rules configured in Adobe Experience Launch for mobile properties are executed on the client-side mobile application by the AEP Rules Engine extension.
+The rules configured in Adobe Experience Platform Launch for mobile properties are executed on the client-side mobile application by the AEP Rules Engine extension.
 {% endhint %}
 
 ### Test with the sample application
@@ -116,7 +82,7 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 
 * In the sample app, navigate to the Edge tab.
 * Select a product, add the review information and click `Submit Review`.
-* In the console log search for this log message - `Attaching event data` \(iOS\) / `New EventData for Event` \(Android\) and check that `ratingDate` and `ratingSource` were attached correctly. 
+* In the console log search for this log message - `Attaching event data` (iOS) / `New EventData for Event` (Android) and check that `ratingDate` and `ratingSource` were attached correctly. 
 * Verify if the logging messages are intuitive and descriptive for the use-case you are testing.
 
 ### Validate the event data with AEP Assurance
