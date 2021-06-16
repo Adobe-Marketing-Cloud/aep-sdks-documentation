@@ -1,10 +1,10 @@
 # Updating the shared state
 
-Extensions set a shared state by creating an event data that the extensions save by calling `setSharedEventState` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\) interface. This interface is available through the `ACPExtension` \(iOS\) / `Extension` \(Android\) parent class. Extensions can only set their own state, so the name that is used is the same as your extension \(for example, _com.exampleCompany.extension_\). This name is also the name that other extensions need to use when requesting your shared state.
+Extensions set a shared state by creating an event data that the extensions save by calling `setSharedEventState` from the `ACPExtensionApi` (iOS) / `ExtensionApi` (Android) interface. This interface is available through the `ACPExtension` (iOS) / `Extension` (Android) parent class. Extensions can only set their own state, so the name that is used is the same as your extension (for example, `com.exampleCompany.extension`). This name is also the name that other extensions need to use when requesting your shared state.
 
 {% tabs %}
 {% tab title="Android" %}
-## Android
+## Java
 
 ```java
 @Override
@@ -29,11 +29,11 @@ public void hear(final Event event) {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-## iOS
+{% tab title="iOS" %}
+## Objective-C
 
-```text
-- (void) hear: (nonnull ACPExtensionEvent*) event {
+```objectivec
+(void) hear: (nonnull ACPExtensionEvent*) event {
     // construct the data to be shared in a JSON format
     NSDictionary* newEventData =
     @{@"customData":@{

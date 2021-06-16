@@ -3,9 +3,9 @@
 The Adobe Experience Platform SDK for WeChat Mini Programs brings Adobe Experience Cloud and Adobe Experience Platform functionality to developers who build Mini Programs. The scope for this general release contains functionality for Adobe Analytics customers who want to track behavioral usage of branded Mini Programs.
 
 {% hint style="warning" %}
-While the Adobe Experience Platform SDK for WeChat Mini Programs is complimentarily available for all Adobe customers, the SDK for the WeChat Mini Program requires _in-country_ data collection.
+While the Adobe Experience Platform SDK for WeChat Mini Programs is complimentarily available for all Adobe customers, the SDK for the WeChat Mini Program requires **in-country** data collection.
 
-Customers must purchase the _China Performance Optimization Add-On_ for Adobe Analytics in order to use the SDK. Please contact your Adobe account team for further detail.
+Customers must purchase the **China Performance Optimization Add-On** for Adobe Analytics in order to use the SDK. Please contact your Adobe account team for further detail.
 {% endhint %}
 
 ## Supported functionality
@@ -14,20 +14,20 @@ The SDK for WeChat Mini Programs provides the following functionality:
 
 {% tabs %}
 {% tab title="English" %}
-### **Configuration**
+### Configuration
 
 The SDK allows for easy configuration of app and Adobe Analytics-related settings, and developers can manage the queuing of Analytics requests. Queuing requests can ensure HTTP request ordering and potentially minimize the quota collision that is enforced by WeChat. Debug logging with multiple log levels is also provided for a more transparent implementation.
 
-### **Data collection**
+### Data collection
 
 The SDK automatically collects out-of-the-box lifecycle metrics and sends it to Adobe Analytics for reporting. Developers can also implement custom action, event, and screen tracking.
 
 ### Identity
 
-The SDK generates an Adobe Analytics Visitor ID \(aid\) to identify program users. 
+The SDK generates an Adobe Analytics Visitor ID (aid) to identify program users. 
 
 {% hint style="warning" %}
-At this time, Experience Cloud ID \(ECID or MCID\) **are not** supported.
+At this time, Experience Cloud ID (ECID or MCID) **are not** supported.
 {% endhint %}
 
 {% hint style="info" %}
