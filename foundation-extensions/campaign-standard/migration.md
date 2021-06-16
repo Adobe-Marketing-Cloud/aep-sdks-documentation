@@ -10,7 +10,7 @@ The AEPCampaign extension is implemented purely in Swift and is compatible with 
 | ---------------------- | :-------- | :---------- |
 | Primary Class (Module) | Campaign  | ACPCampaign |
 
-## AEPCampaign APIs (alphabetical)
+## AEPCampaign APIs
 
 ### extensionVersion
 
