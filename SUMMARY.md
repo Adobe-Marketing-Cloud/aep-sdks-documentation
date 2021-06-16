@@ -74,8 +74,8 @@
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
 * [Adobe Experience Platform Target](foundation-extensions/target/README.md)
-  * [Migration to AEPTarget](foundation-extensions/target/migration.md)
-  * [Target API Reference](foundation-extensions/target/target-api-reference.md)
+  * [Migrating to AEPTarget reference](foundation-extensions/target/migration.md)
+  * [Target API reference](foundation-extensions/target/target-api-reference.md)
 
 ## Experience Cloud <a id="using-mobile-extensions"></a>
 
