@@ -15,7 +15,7 @@ The AEPTarget extension is implemented purely in Swift and is compatible with th
 | Class                  | TargetParameters | ACPTargetParameters     |
 | Class                  | TargetProduct    | ACPTargetProduct        |
 
-## AEPTarget APIs (alphabetical)
+## AEPTarget APIs
 
 ### clearPrefetchCache
 
