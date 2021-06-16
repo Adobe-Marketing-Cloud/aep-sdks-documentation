@@ -1,4 +1,4 @@
-# Migrating to AEPMobileServices
+# Migrating to AEPMobileServices reference
 
 This document is a reference comparison of ACPMobileServices\(1.x\) APIs against their equivalent APIs in AEPMobileServices\(3.x\).
 

@@ -1,4 +1,4 @@
-# Migrating to AEPLifecycle
+# Migrating to AEPLifecycle reference
 
 This document is a reference comparison of AEPLifecycle \(3.x\) APIs against their equivalent APIs in ACPLifecycle \(2.x\) for an iOS mobile application implementation.
 
