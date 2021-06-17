@@ -1,5 +1,12 @@
 # Release Notes
 
+## June 16, 2021
+
+### Android Campaign 1.0.8
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+* Resolved and issue with Campaign module details not being returned.
+
 ## December 18, 2020
 
 ### iOS Campaign Standard 1.1.0

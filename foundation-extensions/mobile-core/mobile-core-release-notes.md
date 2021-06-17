@@ -1,5 +1,92 @@
 # Release Notes
 
+## June 8, 2021
+
+### Android Core 1.8.2
+
+* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios
+* Fixed a bug where rule tokens with "&" were not handled correctly
+* Minor change to how the SDK computes the operating system name
+
+### Android Lifecycle 1.0.8
+
+* Minor update to ensure compatibility with the latest Core 1.8.2
+
+## June 7, 2021
+
+### iOS AEPCore 3.2.0
+
+* Support for handling identities request `Event`'s in AEPIdentity
+* Improve public visiblity of `RuleConsequence`
+* Added `getDeviceModelNumber` to `SystemInfoService`
+* Various additions to `ThreadSafeDictionary`
+* Added the ability to make a network request with raw data that is not UTF encoded
+* Fixed a bug where condition definitions that did not contain a value were not handled correctly
+* Introduced an API to set button image data to the `FloatingButton`
+* Added `optimize` `EventType`
+* Introduced an API to hide the `FullscreenMessage`
+* Fixed a bug where token \(~ timestampu\) was not expanded correctly
+* Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
+
+> Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
+
+## May 25, 2021
+
+### Android Core 1.8.1
+
+* Added support for Event encode/decode.
+
+## May 6, 2021
+
+### iOS AEPCore 3.1.3
+
+* Update to use AEPRulesEngine 1.0.1.
+
+### iOS AEPRulesEngine 1.0.1
+
+* Fixed a Swift compatibility issue.
+
+## April 29, 2021
+
+### iOS AEPCore 3.1.2
+
+* Fixed a bug where the URL session was not reused for the same host.
+* Fixed a Swift compatibility issue.
+
+### iOS AEPIdentity 3.1.2
+
+* Fixed a bug where Identity was blocked on the first launch if the configuration was invalid.
+
+## April 8, 2021
+
+### iOS AEPCore 3.1.1
+
+* Fixed a bug where incomplete eventhub shared state was created before the event hub has been started.
+
+## April 1, 2021
+
+### iOS AEPCore 3.1.0
+
+* New API - `MobileCore.collectLaunchInfo()` - see API reference for more information.
+* New API - `MobileCore.resetIdentities()` - see API reference for more information.
+* Added multiple new values to `EventType` and `EventSource`.
+* Fixed a bug causing regular listeners to receive paired response events.
+* Fixed a bug preventing proper data migration from v4 and v5 SDK.
+* The callback method passed to `MobileCore.registerEventListener` now runs on a background thread.
+* Improved logging for dictionaries.
+* The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
+
+### iOS AEPIdentity 3.1.0
+
+* Fixed an issue where privacy status was not correctly loaded from persistence.
+* Advertising ID can now correctly be set after having an initial value of "zeroes" or empty.
+
+### iOS AEPServices 3.1.0
+
+* Added support for UI Services.
+* The Locale string used in HTTP Headers is now properly formatted.
+* Fixed a bug that would sometimes prevent downloaded files from being properly unzipped.
+
 ### March 31, 2021
 
 #### Android Core 1.8.0
@@ -58,6 +145,19 @@
 * Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
 * Fixed a bug which prevented cached configuration being loaded during app launch.
 * Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
+
+## January 19, 2021
+
+### Adobe Experience Platform iOS Core SDKs
+
+The brand new Adobe Experience Platform Core iOS swift SDKs are live! It is [open sourced on github](https://github.com/adobe/aepsdk-core-ios/), containing the following extensions:
+
+* AEPCore 3.0.0
+* AEPServices 3.0.0
+* AEPIdentity 3.0.0
+* AEPSignal 3.0.0
+* AEPLifecycle 3.0.0
+* AEPRulesEngine 1.0.0
 
 ### December 18, 2020
 

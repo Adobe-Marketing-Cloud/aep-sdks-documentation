@@ -2,44 +2,41 @@
 
 The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collects user push tokens and manages interaction measurement with Adobe Experience Platform services.
 
-{% hint style="warning" %}
-### Beta
+The following documentation details how to use the extension as well as the required configuration across Adobe Experience Platform services, app stores, and your apps to get started with push notifications for Adobe Journey Optimizer.
 
-Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for more details. 
-{% endhint %}
+## Getting Started
 
-## Update Datastream with Profile Dataset
+To get started with the Adobe Journey Optimizer extension, you'll need to follow these steps:
+
+1. [Update your app's Datastream](./#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://launch.adobe.com)
+2. Setup app for push notifications
+3. Setup an App Configuration
+
+### Update Datastream with Profile Dataset
 
 Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com), then:
 
-Select **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(found in **Adobe Experience Platform** section\) and hit **Save**.
+Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(under _Adobe Experience Platform_ section\) and select **Save**.
 
 ![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.19.31-am.png)
 
-## Configure the Journey Optimizer extension in Launch
+### Setup app for push notifications
 
-Navigate to [Experience Platform Launch](https://launch.adobe.com) - select mobile property and click on the **Extensions:**
+Before you can integrate push notifications with Adobe Journey Optimizer for Apple iOS and Google Android apps, you will need to follow steps with respective developer programs. Please see the following links:
 
-1. On the **Catalog** tab, locate the **Adobe Journey Optimizer** extension, and click on **Install**.
-2. Select the **Event Dataset** for Production, Stage and Development Environments.
-3. Click **Save**.
-4. Follow the publishing process to update SDK configuration.
+#### Apple iOS
 
-![Adobe Journey Optimizer extension configuration](../../.gitbook/assets/adobe-journey-optimizer-messaging-configuration.png)
+See [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
 
-{% hint style="info" %}
-The datasets selected should use a schema that uses the Push Notification Tracking mixin. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
-{% endhint %}
+#### Google Android
 
-![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.26.46-am.png)
+See [Setup up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client)
 
-## Configure Application Configuration
+### Setup an App Configuration
 
 1. In Experience Platform Launch, click the **App Configurations** tab on the left pane.
 2. Click the **Add App Configuration** button.
 3. Provide a **Name** and select the **Messaging Service Type**
-
-![AEP App configuration](../../.gitbook/assets/add-app-config.png)
 
 {% tabs %}
 {% tab title="Android" %}
@@ -61,23 +58,28 @@ For more information follow this [Apple's documentation](https://help.apple.com/
 {% endtab %}
 {% endtabs %}
 
-## Configure the application to allow push notification
+## Setup Adobe Journey Optimizer extension
 
-{% tabs %}
-{% tab title="Android" %}
-To add Firebase Messaging Service to your app please follow the [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client)
-{% endtab %}
+### Configure extension in Launch
 
-{% tab title="iOS" %}
-To add APNs to your app please follow the [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns)
-{% endtab %}
-{% endtabs %}
+Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - select mobile property and navigate to **Extensions** from the left navigation panel**:**
 
-## Add the AEP Messaging extension to your application
+1. Navigate to the **Catalog** tab, locate the **Adobe Journey Optimizer** extension, and select **Install**
+2. Select the pre-created **CJM Push Tracking Event Dataset** from the **Event Dataset** dropdown.
+3. Click **Save**.
+4. Follow the publishing process to update SDK configuration.
+
+{% hint style="info" %}
+The datasets selected should use a schema that uses the Push Notification Tracking XDM mixin. The pre-created CJM Push Tracking Dataset contains this XDM mixin in its schema definition. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
+{% endhint %}
+
+![](../../.gitbook/assets/aoj-launch-configuration.png)
+
+### Implement extension in mobile app
 
 After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/), [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/), and [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/) extensions, follow these steps to also integrate the Adobe Journey Optimizer extension.
 
-### Download and import the Messaging extension
+#### Import the extension
 
 {% tabs %}
 {% tab title="Android" %}
@@ -89,7 +91,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:messaging:1.0.0-beta-1'
+   implementation 'com.adobe.marketing.mobile:messaging:1.+'
    ```
 
 2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
@@ -109,7 +111,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
        pod 'AEPCore'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPMessaging', :git => 'git@github.com:adobe/aepsdk-messaging-ios.git', :branch => 'main'
+       pod 'AEPMessaging'
    end
    ```
 
@@ -137,7 +139,7 @@ import AEPMessaging
 {% endtab %}
 {% endtabs %}
 
-### Register Messaging extensions with Mobile Core
+#### Register extension with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -194,7 +196,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-## Synch user push token with Adobe
+#### Synch user push token with Adobe
 
 Use the setPushIdentifier API to sync user push token from the device with Adobe Experience Platform services.
 

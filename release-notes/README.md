@@ -4,6 +4,96 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 16, 2021
+
+### Android Campaign 1.0.8
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+* Resolved an issue with Campaign module details not being returned.
+
+## June 15, 2021
+
+### Android Target 1.1.7
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+
+## June 10, 2021
+
+### iOS AEPEdge 1.1.1
+
+* Development testing enhancements for Experience Edge.
+
+### Android Edge 1.1.1
+
+* Adds support for events persistence for use-cases with low network connectivity or unexpected network errors.
+* Development testing enhancements for Experience Edge.
+
+This SDK is compatible with Android Core 1.8.2 and above.
+
+## June 8, 2021
+
+### Android Core 1.8.2
+
+* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios.
+* Fixed a bug where rule tokens with "&" were not handled correctly.
+* Minor change to how the SDK computes the operating system name.
+
+### Android Lifecycle 1.0.8
+
+* Minor update to ensure compatibility with the latest Core 1.8.2.
+
+## June 7, 2021
+
+### iOS AEPCore 3.2.0
+
+* Support for handling identities request `Event`'s in AEPIdentity
+* Improve public visiblity of `RuleConsequence`
+* Added `getDeviceModelNumber` to `SystemInfoService`
+* Various additions to `ThreadSafeDictionary`
+* Added the ability to make a network request with raw data that is not UTF encoded
+* Fixed a bug where condition definitions that did not contain a value were not handled correctly
+* Introduced an API to set button image data to the `FloatingButton`
+* Added `optimize` `EventType`
+* Introduced an API to hide the `FullscreenMessage`
+* Fixed a bug where token \(~ timestampu\) was not expanded correctly
+* Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
+
+> Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
+
+## Jun 4, 2021
+
+### iOS AEPMobileServices 3.0.0
+
+* Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
+
+## May 25, 2021
+
+### Android Core 1.8.1
+
+* Added support for Event encode/decode.
+
+## May 13, 2021
+
+### Android Mobileservices 1.1.4
+
+* Fixed a bug that caused a crash when multiple threads were accessing InAppMessages instance.
+
+## May 10, 2021
+
+### Android PlacesMonitor 2.2.2
+
+* Fixed a crash that was caused when application did not find the required activity for requesting location permission.
+
+## May 6, 2021
+
+### iOS AEPCore 3.1.3
+
+* Update to use AEPRulesEngine 1.0.1.
+
+### iOS AEPRulesEngine 1.0.1
+
+* Fixed a Swift compatibility issue.
+
 ## May 5, 2021
 
 ### iOS AEPMedia 3.0.0
@@ -229,7 +319,7 @@ The included features with this release are:
 * Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
-This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub. 
+This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
 
 These iOS libraries, written in Swift, are available for integration via SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications.
 

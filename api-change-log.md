@@ -127,13 +127,15 @@ For more information see [Target API reference](using-mobile-extensions/adobe-ta
 | :--- | :--- |
 | getThirdPartyId: | targetThirdPartyID |
 | setThirdPartyId: | targetSetThirdPartyID |
-| getTntid: | Not applicable |
+| getTntId: | Not applicable |
 | resetExperience: | targetClearCookies |
-| prefetchObjectWithName:mboxParameters: | targetPrefetchObjectWithName:mboxParameters: |
-| prefetchContent:withProfileParameters:callback: | targetPrefetchContent:withProfileParameters:callback: |
+| targetPrefetchObjectWithName:targetParameters: | targetPrefetchObjectWithName:mboxParameters: |
+| prefetchContent:withParameters:callback: | targetPrefetchContent:withProfileParameters:callback: |
 | prefetchClearCache: | targetPrefetchClearCache |
-| requestObjectWithName:defaultContent:mboxParameters:callback: | targetRequestObjectWithName:defaultContent:mboxParameters:callback: |
-| loadRequests:withProfileParameters: | targetLoadRequests:withProfileParameters: |
+| targetRequestObjectWithName:targetParameters:defaultContent:callback: | targetRequestObjectWithName:defaultContent:mboxParameters:callback: |
+| retrieveLocationContent:withParameters: | targetLoadRequests:withProfileParameters: |
+| locationClickedWithName:targetParameters: | locationClickedWithName:mboxParameters:productParameters:orderParameters: |
+| setPreviewRestartDeeplink: | targetPreviewRestartDeepLink: |
 
 ### Deprecated APIs
 

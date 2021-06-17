@@ -4,10 +4,26 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
+{% hint style="info" %}
+## Interested in Kotlin?
+
+We're looking for feedback on how we can better support our customers using \(or planning to use\) [Kotlin](https://kotlinlang.org/) in their mobile apps.
+
+Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us know if you're interested in a Kotlin-based version of the Adobe Experience Platform Mobile SDK.
+{% endhint %}
+
 {% hint style="success" %}
 ## Swift SDKs are here!
 
-We've released Swift versions of our iOS SDKs for Core and select extensions - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation for more information. The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
+We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation. 
+
+The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4). 
+{% endhint %}
+
+{% hint style="warning" %}
+## Migrate to Swift
+
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](resources/migrate-to-swift.md) guide for next steps.
 {% endhint %}
 
 {% hint style="success" %}

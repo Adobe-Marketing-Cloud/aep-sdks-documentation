@@ -8,9 +8,9 @@ Your extension should publish the rules support that it provides to Experience P
 
 ### Publishing supported data elements
 
-Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see [Data Element Types](https://developer.adobelaunch.com/extensions/reference/data-element-types/).
+Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see the Launch documentation on [data element types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/data-element-types.html).
 
-```text
+```json
   "dataElements": [
     {
       "displayName": "My Custom Value",
@@ -22,16 +22,15 @@ Data elements can be supported by publishing the shared state keys that you want
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
         }]
       },
-    },
+    }
+  ]
 ```
 
 ### Publishing supported conditions
 
-Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see [Condition Types](https://developer.adobelaunch.com/extensions/reference/condition-types/).
+Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see the Launch documentation on [condition types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/condition-types.html).
 
-Here is an example:
-
-```text
+```json
     "events":[
     {
       "displayName": "My Custom Event",
@@ -55,16 +54,14 @@ Here is an example:
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
         }]
       }
-    }],
+    }]
 ```
 
 ### Publishing supported actions
 
-Conditions can be supported by publishing the events that you want to use in a rule. For more information, see [Action Types](https://developer.adobelaunch.com/extensions/reference/action-types/).
+Conditions can be supported by publishing the events that you want to use in a rule. For more information, see the Launch documentation on [action types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/action-types.html).
 
-Here is an example:
-
-```text
+```json
     "actions": [
     {
       "displayName": "My Custom Action",
@@ -77,7 +74,7 @@ Here is an example:
           "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/consequence"
         }]
       },
-    }],
+    }]
 ```
 
 ## Supporting rules at runtime
@@ -86,13 +83,13 @@ You should provide support for the events, actions, and conditions that you publ
 
 ### Publishing a shared state `condition` at runtime
 
-A shared state that was published by your extension can be used as a `condition` when configuring a rule in Experience Platform Launch. To learn how you can publish a shared state, see [Updating the shared state](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/updating-the-shared-state).
+A shared state that was published by your extension can be used as a `condition` when configuring a rule in Experience Platform Launch. To learn how you can publish a shared state, see the [updating the shared state document](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/updating-the-shared-state).
 
 ### Dispatching an event `condition` at runtime
 
-An event that was dispatched by your extension can be used as a `condition` when configuring a rule in Experience Platform Launch. To learn how you can dispatch an event, see [Dispatching events from your extension](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/dispatching-events-from-your-extension).
+An event that was dispatched by your extension can be used as a `condition` when configuring a rule in Experience Platform Launch. To learn how you can dispatch an event, see the [dispatching events from your extension document](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/dispatching-events-from-your-extension).
 
 ### Handling an event `action` at runtime
 
-For an event that your extension registered, a listener for can be used as an `action` when configuring a rule in Experience Platform Launch. To learn how you can register a listener for your events, see [Listening for events](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/event-listeners).
+For an event that your extension registered, a listener for can be used as an `action` when configuring a rule in Experience Platform Launch. To learn how you can register a listener for your events, see the [listening for events document](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/event-listeners).
 
