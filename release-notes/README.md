@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 17, 2021
+
+### iOS Assurance 1.1.3
+
+- Assurance state is now properly shared when reconnecting to an established session.
+
+### Android Assurance 1.0.3
+
+* Assurance state is now properly shared when reconnecting to an established session.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
