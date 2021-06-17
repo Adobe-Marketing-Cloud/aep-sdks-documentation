@@ -60,6 +60,12 @@ This SDK is compatible with Android Core 1.8.2 and above.
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
 
+## Jun 4, 2021
+
+#### iOS AEPMobileServices 3.0.0
+
+* Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
+
 ## May 25, 2021
 
 ### Android Core 1.8.1
