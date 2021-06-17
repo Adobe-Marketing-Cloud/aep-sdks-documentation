@@ -1,4 +1,4 @@
-# Migrating to AEPMedia Reference
+# Migrating to AEPMedia reference
 
 This document is a reference comparison of AEPMedia \(3.x\) APIs against their equivalent ACPMedia \(2.x\) APIs.
 
@@ -348,8 +348,6 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 {% endtab %}
 
 {% endtabs %}
-
-The rest of the AEPMedia 3.x APIs have the same syntax as ACPMedia 2.x APIs.
 
 ### trackSessionStart
 

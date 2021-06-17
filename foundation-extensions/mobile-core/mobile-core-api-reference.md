@@ -208,71 +208,42 @@ ACPCore.trackAction("action name", {"key": "value"});
 ```
 {% endtab %}
 
-{% tab %}
 {% tab title="Flutter"}
-{% endtab %}
-
-{% tab %}
 **Dart**
-{% endtab %}
 
-{% tab %}
 ### trackAction
-{% endtab %}
 
-{% tab %}
 **Syntax**
-{% endtab %}
 
-{% tab %}
 ```dart
 Future<void> trackAction (String action, {Map<String, String> contextData});
 ```
-{% endtab %}
-
-{% tab %}
 * _action_ contains the name of the action to track.
 * _contextData_ contains the context data to attach on the hit.
-{% endtab %}
 
-{% tab %}
 **Example**
-{% endtab %}
 
-{% tab %}
 ```dart
 FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
 {% endtab %}
 
-{% tab %}
-{% tab title="Unity"} **C\#**
-{% endtab %}
+{% tab title="Unity" %}
 
-{% tab %}
+ **C\#**
+
 ### trackAction
-{% endtab %}
-
-{% tab %}
 **Syntax**
-{% endtab %}
 
-{% tab %}
 ```csharp
 public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
 ```
-{% endtab %}
-
-{% tab %}
 * _name_ contains the name of the action to track.
 * _contextDataDict_ contains the context data to attach on the hit.
-{% endtab %}
 
-{% tab %}
+
 **Example**
-{% endtab %}
 
-{% tab %}
 ```csharp
 var contextData = new Dictionary<string, string>();
 contextData.Add("key", "value");
