@@ -1,4 +1,4 @@
-# Rules and XDM events
+# Rules and Experience Data Model (XDM) events
 
 ## Prerequisites for this tutorial
 
@@ -87,20 +87,20 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 
 ### Validate the event data with AEP Assurance
 
-Connect to an Assurance Session to inspect that the AEP Request Event has the correct data. To set up an Assurance session with the Sample app, follow the steps in [Using AEP Assurance](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/tutorials/tutorial-1-edge-extension-setup#using-aep-assurance).
+Connect to an Assurance Session to inspect that the Adobe Experience Platform Request Event has the correct data. To set up an Assurance session with the Sample app, follow the steps in the [using Adobe Experience Platform Assurance guide](https://aep-sdks.gitbook.io/docs/resources/user-guides/getting-started-with-adobe-experience-platform#using-aep-assurance).
 
-* Once connected to Project Griffon, search for AEP Request Event in your session.
+* Once connected to Project Griffon, search for the Adobe Experience Platform Request Event in your session.
 * Check that the XDM data for the `product.review` event is correctly updated with the two new fields  `ratingDate` and `ratingSource`.
 
 ### Extra credit: Update rule/add new rule of your choice
 
-Add a new rule in Adobe Experience Launch or update the one created in the previous steps. Then validate that the rule was correctly executed for your use-case using AEP Assurance and/or Mobile SDK logging.
+Add a new rule in Adobe Experience Platform Launch or update the one created in the previous steps. Then validate that the rule was correctly executed for your use case using Adobe Experience Platform Assurance and/or Mobile SDK logging.
 
 ### Next steps
 
-Find more details about the AEP Mobile SDK Rules Engine and the supported rule types, see [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine) and GitHub [adobe/aepsdk-rulesengine-ios](https://github.com/adobe/aepsdk-rulesengine-ios).
+Find more details about the Adobe Experience Platform Mobile SDK Rules Engine and the supported rule types, please read the [Rules Engine documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine) and the [Rules Engine GitHub](https://github.com/adobe/aepsdk-rulesengine-ios).
 
-For more rules examples in Adobe Experience Launch, see the following links:
+For more rules examples in Adobe Experience Platform Launch, see the following links:
 
 * [Attach data to SDK events](https://aep-sdks.gitbook.io/docs/resources/user-guides/attach-data)
 * [Modify data in SDK events](https://aep-sdks.gitbook.io/docs/resources/user-guides/modify-data)
