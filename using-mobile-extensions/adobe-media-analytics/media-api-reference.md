@@ -98,7 +98,7 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
 
 #### createTracker
 
-Creates a media tracker instance that tracks the playback session. The tracker created should be used to track the streaming content, and it sends periodic pings to the media analytics backend.
+Creates a media tracker instance that tracks the playback session. The tracker created should be used to track the streaming content and it sends periodic pings to the media analytics backend.
 
 {% hint style="warning" %}
  If MobileCore.resetIdentities() is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
