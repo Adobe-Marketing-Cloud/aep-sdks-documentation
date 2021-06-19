@@ -21,13 +21,13 @@ String mediaExtensionVersion = Media.extensionVersion();
 **Swift**
 
 ```swift
-let mediaExtensionVersion  = AEPMobileServices.extensionVersion()
+let mediaExtensionVersion  = Media.extensionVersion()
 ```
 
 **Objective-C**
 
 ```objectivec
-NSString *mediaExtensionVersion = [AEPMobileServices extensionVersion];
+NSString *mediaExtensionVersion = [AEPMobileMedia extensionVersion];
 ```
 
 {% endtab %}
