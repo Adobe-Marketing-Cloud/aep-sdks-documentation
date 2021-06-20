@@ -77,6 +77,7 @@
 ## Experience Cloud <a id="using-mobile-extensions"></a>
 
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
+  * [Migrating to AEPAnalytics](using-mobile-extensions/adobe-analytics/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
