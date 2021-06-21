@@ -4,9 +4,8 @@ This document is a reference comparison of ACPMobileServices\(1.x\) APIs against
 
 ## Primary `Classes`
 
-
-| Type          | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
-| ------------- | --------------- | --------------------- | --------------------- |
+| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
+| :--- | :--- | :--- | :--- |
 | Primary Class | AEPMobileServices | AEPMobileServices | ACPMobileServices |
 
 ## Mobile Services extension APIs
@@ -16,18 +15,16 @@ For more information, please read the [Mobile Services API reference](https://ae
 ### trackAdobeDeepLink
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Objective-C)" %}
-```objc
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
   + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-```objc
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
   + (void) trackAdobeDeepLink: (NSURL*) url;
 ```
 {% endtab %}
-
 {% endtabs %}
 
