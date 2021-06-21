@@ -75,10 +75,6 @@ static func clearQueue()
 
 ### getQueueSize
 
-{% hint style="info" %}
-There is no _getQueueSizeWithCompletionHandler_ in AEP 3.x.
-{% endhint %}
-
 {% tabs %}
 
 {% tab title="AEP 3.x (Swift)" %}
@@ -101,6 +97,8 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 
 ```objective-c
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
+
++ (void) getQueueSizeWithCompletionHandler: (nonnull void (^) (NSUInteger queueSize, NSError* __nullable error)) completionHandler;
 ```
 
 {% endtab %}
@@ -139,10 +137,6 @@ static func sendQueuedHits()
 
 ### getTrackingIdentifier
 
-{% hint style="info" %}
-There is no _getTrackingIdentifierWithCompletionHandler_ in AEP 3.x.
-{% endhint %}
-
 {% tabs %}
 
 {% tab title="AEP 3.x (Swift)" %}
@@ -165,6 +159,8 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 
 ```objective-c
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
+
++ (void) getTrackingIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable trackingIdentifier, NSError* __nullable error)) completionHandler;
 ```
 
 {% endtab %}
@@ -203,10 +199,6 @@ static func setVisitorIdentifier(visitorIdentifier: String)
 
 ### getVisitorIdentifier
 
-{% hint style="info" %}
-There is no _getVisitorIdentifierWithCompletionHandler_ in AEP 3.x.
-{% endhint %}
-
 {% tabs %}
 
 {% tab title="AEP 3.x (Swift)" %}
@@ -229,6 +221,8 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 
 ```objective-c
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
+
++ (void) getVisitorIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable visitorIdentifier, NSError* __nullable error)) completionHandler;
 ```
 
 {% endtab %}
