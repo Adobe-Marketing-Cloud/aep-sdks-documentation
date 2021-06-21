@@ -8,6 +8,7 @@ To get the version of the Analytics extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 ```java
@@ -98,7 +99,9 @@ Force delete, without sending to Analytics, all hits being stored or batched on 
 {% tab title="Android" %}
 ### clearQueue
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### Syntax
 
@@ -117,7 +120,9 @@ Analytics.clearQueue();
 
 ### clearQueue
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### Syntax
 
@@ -144,7 +149,9 @@ Analytics.clearQueue()
 {% tab title="iOS (ACP 2.x)" %}
 ### clearQueue
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### Syntax
 
@@ -178,7 +185,9 @@ ACPAnalytics.clearQueue()
 clearQueue();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 **Example**
 
@@ -198,7 +207,9 @@ ACPAnalytics.clearQueue();
 Future<void> clearQueue();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 **Example**
 
@@ -219,7 +230,9 @@ ACPAnalytics.clearQueue = function(success, fail);
 * _success_ is a callback containing a general success message if the clearQueue API executed without any errors.
 * _fail_ is a callback containing error information if the clearQueue API was executed with errors.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 **Example**
 
@@ -241,7 +254,9 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 public static void ClearQueue()
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 **Example**
 
@@ -259,7 +274,9 @@ ACPAnalytics.ClearQueue();
 public static void ClearQueue ();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 **Example**
 
@@ -1133,9 +1150,11 @@ Sends all queued hits to Analytics, regardless of the current hit batch settings
 {% tab title="Android" %}
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### **Syntax**
 
@@ -1154,9 +1173,11 @@ Analytics.sendQueuedHits();
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### Syntax
 
@@ -1182,9 +1203,11 @@ Analytics.sendQueuedHits()
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This process cannot be reversed.
+{% endhint %}
 
 #### Syntax
 
@@ -1212,7 +1235,7 @@ ACPAnalytics.sendQueuedHits()
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1232,7 +1255,7 @@ ACPAnalytics.sendQueuedHits();
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1252,7 +1275,7 @@ FlutterACPAnalytics.sendQueuedHits();
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1279,7 +1302,7 @@ ACPAnalytics.sendQueuedHits(function (handleCallback) {
 
 ### SendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1299,7 +1322,7 @@ ACPAnalytics.SendQueuedHits();
 
 ### SendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
