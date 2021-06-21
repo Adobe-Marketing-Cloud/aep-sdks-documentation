@@ -1,289 +1,376 @@
-# Migrating to AEPCore Reference
+# Migrating to AEPCore reference
 
 This document is a reference comparison of ACPCore \(2.x\) APIs against their equivalent APIs in AEPCore \(3.x\).
 
 ## Primary `Classes`
 
-The class name containing public APIs is different depending on which SDK and language combination being used.
 
-| SDK version | Language | Class name |
-| :--- | :--- | :--- |
-| ACPCore | Objective-C | ACPCore |
-| AEPCore | Swift | MobileCore |
-| AEPCore | Objective-C | AEPMobileCore |
 
-## Additional public `Classes` and `Enums`
-
-| SDK version | Language | Class name |
-| :--- | :--- | :--- |
-| ACPCore | Objective-C | ACPMobileLogLevel |
-| AEPCore | Swift | LogLevel |
-| AEPCore | Objective-C | AEPLogLevel |
+| Type          | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
+| ------------- | --------------- | --------------------- | --------------------- |
+| Primary Class | MobileCore      | AEPMobileCore         | ACPCore               |
+| Enum          | LogLevel        | AEPLogLevel           | ACPMobileLogLevel     |
 
 ## Core extension APIs
 
-For more information, please read the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
-
-* [trackAction](acpcore-aepcore.md#trackAction)
-* [trackState](acpcore-aepcore.md#trackState)
-* [collectPii](acpcore-aepcore.md#collectPii)
-* [collectLaunchInfo](acpcore-aepcore.md#collectLaunchInfo)
-* [getSdkIdentities](acpcore-aepcore.md#getSdkIdentities)
-* [setLogLevel](acpcore-aepcore.md#setLogLevel)
-* [registerURLHandler](acpcore-aepcore.md#registerURLHandler)
-* [setAppGroup](acpcore-aepcore.md#setAppGroup)
-* [configureWithAppId](acpcore-aepcore.md#configureWithAppId)
-* [updateConfiguration](acpcore-aepcore.md#updateConfiguration)
-* [configureWithFileInPath](acpcore-aepcore.md#configureWithFileInPath)
-* [extensionVersion](acpcore-aepcore.md#extensionVersion)
-
 ### trackAction
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func track(action: String?, data: [String: Any]?)
+```
 
-  ```swift
-  @objc(trackAction:data:)
-  static func track(action: String?, data: [String: Any]?)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(trackAction:data:)
-  static func track(action: String?, data: [String: Any]?)
-  ```
+```objc
++ (void)trackAction:(NSString * _Nullable)action data:(NSDictionary<NSString *, id> * _Nullable)data;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### trackState
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func track(state: String?, data: [String: Any]?)
+```
 
-  ```swift
-  @objc(trackState:data:)
-  static func track(state: String?, data: [String: Any]?)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(trackState:data:)
-  static func track(state: String?, data: [String: Any]?)
-  ```
+```objc
++ (void)trackState:(NSString * _Nullable)state data:(NSDictionary<NSString *, id> * _Nullable)data;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### collectPii
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+public static func collectPii(_ data: [String: Any])
+```
 
-  ```swift
-  @objc(collectPii:)
-  public static func collectPii(_ data: [String: Any])
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(collectPii:)
-  public static func collectPii(_ data: [String: Any])
-  ```
+```objc
++ (void)collectPii:(NSDictionary<NSString *, id> * _Nonnull)data;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### collectLaunchInfo
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
 
-  ```swift
-  @objc(collectLaunchInfo:)
-  public static func collectLaunchInfo(_ userInfo: [String: Any])
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(collectLaunchInfo:)
-  public static func collectLaunchInfo(_ userInfo: [String: Any])
-  ```
+```objc
++ (void)collectLaunchInfo:(NSDictionary<NSString *, id> * _Nonnull)userInfo;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### getSdkIdentities
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
-  + (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+```
 
-  ```swift
-  @objc(getSdkIdentities:)
-  static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(getSdkIdentities:)
-  static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
-  ```
+```objc
++ (void)getSdkIdentities:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) getSdkIdentities: (nullable void (^) (NSString* __nullable content)) callback;
++ (void) getSdkIdentitiesWithCompletionHandler: (nullable void (^) (NSString* __nullable content, NSError* _Nullable error)) completionHandler;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### setLogLevel
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) setLogLevel: (ACPMobileLogLevel) logLevel;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+public static func setLogLevel(_ level: LogLevel)
+```
 
-  ```swift
-  @objc(setLogLevel:)
-  public static func setLogLevel(_ level: LogLevel)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc(setLogLevel:)
-  public static func setLogLevel(_ level: LogLevel)Void)
-  ```
+```objc
++ (void)setLogLevel:(enum AEPLogLevel)level;
+```
 
-  **registerURLHandler**
+{% endtab %}
 
-* ACPCore
+{% tab title="ACP 2.x (Objective-C)" %}
 
-  ```text
-  + (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
-  ```
+```objc
++ (void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
 
-* MobileCore
+{% endtab %}
 
-  ```swift
+{% endtabs %}
+
+###  registerURLHandler
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
   // Not supported
-  ```
+```
 
-* AEPMobileCore
+{% endtab %}
 
-  ```text
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objc
   // Not supported
-  ```
+```
 
-  **setAppGroup**
+{% endtab %}
 
-* ACPCore
+{% tab title="ACP 2.x (Objective-C)" %}
 
-  ```text
-  + (void) setAppGroup: (nullable NSString*) appGroup;
-  ```
+```objc
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
 
-* MobileCore
+{% endtab %}
 
-  ```swift
-  public static func setAppGroup(_ group: String?)
-  ```
+{% endtabs %}
 
-* AEPMobileCore
 
-  ```text
-  public static func setAppGroup(_ group: String?)
-  ```
+### setAppGroup
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
+public static func setAppGroup(_ group: String?)
+```
+
+{% endtab %}
+
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objc
++ (void)setAppGroup:(NSString * _Nullable)group;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) setAppGroup: (nullable NSString*) appGroup;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### configureWithAppId
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) configureWithAppId: (NSString* __nullable) appid;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func configureWith(appId: String)
+```
 
-  ```swift
-  static func configureWith(appId: String)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  \`\`\`objective-c static func configureWith\(appId: String\)
+```objc
++ (void)configureWithAppId:(NSString * _Nonnull)appId;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) configureWithAppId: (NSString* __nullable) appid;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### updateConfiguration
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) updateConfiguration: (NSDictionary* __nullable) config;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func updateConfigurationWith(configDict: [String: Any])
+```
 
-  ```swift
-  @objc(updateConfiguration:)
-  static func updateConfigurationWith(configDict: [String: Any])
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  \`\`\`objective-c @objc\(updateConfiguration:\) static func updateConfigurationWith\(configDict: \[String: Any\]\)
+```objc
++ (void)updateConfiguration:(NSDictionary<NSString *, id> * _Nonnull)configDict;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### configureWithFileInPath
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (void) configureWithFileInPath: (NSString* __nullable) filepath;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+static func configureWith(filePath: String)
+```
 
-  ```swift
-  static func configureWith(filePath: String)
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  static func configureWith(filePath: String)
-  ```
+```objc
++ (void)configureWithFilePath:(NSString * _Nonnull)filePath;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ### extensionVersion
 
-* ACPCore
+{% tabs %}
 
-  ```text
-  + (nonnull NSString*) extensionVersion;
-  ```
+{% tab title="AEP 3.x (Swift)" %}
 
-* MobileCore
+```swift
+public static var extensionVersion: String
+```
 
-  ```swift
-  @objc public static var extensionVersion: String
-  ```
+{% endtab %}
 
-* AEPMobileCore
+{% tab title="AEP 3.x (Objective-C)" %}
 
-  ```text
-  @objc public static var extensionVersion: String
-  ```
+```objc
++ (nonnull NSString*) extensionVersion;
+```
 
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objc
++ (nonnull NSString*) extensionVersion;
+```
+
+{% endtab %}
+
+{% endtabs %}
