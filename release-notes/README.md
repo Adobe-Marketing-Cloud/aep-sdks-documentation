@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 21, 2021
+
+### iOS AEPCore 3.2.1
+
+* Update version for bundled ACPIdentity 3.2.1 release.
+
+## iOS AEPIdentity 3.2.1
+
+* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would always set authenticated state to `unknown`.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
