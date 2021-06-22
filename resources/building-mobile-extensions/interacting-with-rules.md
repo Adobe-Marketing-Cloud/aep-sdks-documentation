@@ -10,7 +10,7 @@ Your extension should publish the rules support that it provides to Experience P
 
 Data elements can be supported by publishing the shared state keys that you want to use in a rule. For more information, see the Launch documentation on [data element types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/data-element-types.html).
 
-```json
+```javascript
   "dataElements": [
     {
       "displayName": "My Custom Value",
@@ -30,7 +30,7 @@ Data elements can be supported by publishing the shared state keys that you want
 
 Conditions can be supported by publishing the shared state keys or events that you want to use in a rule. For more information, see the Launch documentation on [condition types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/condition-types.html).
 
-```json
+```javascript
     "events":[
     {
       "displayName": "My Custom Event",
@@ -61,7 +61,7 @@ Conditions can be supported by publishing the shared state keys or events that y
 
 Conditions can be supported by publishing the events that you want to use in a rule. For more information, see the Launch documentation on [action types](https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/action-types.html).
 
-```json
+```javascript
     "actions": [
     {
       "displayName": "My Custom Action",

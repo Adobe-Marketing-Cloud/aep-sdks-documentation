@@ -4,11 +4,9 @@ This document is a reference comparison of ACPUserProfile \(2.x\) APIs against t
 
 ## Primary `Classes`
 
-| SDK version | Language | Class name |
-| :--- | :--- | :--- |
-| ACPUserProfile | Objective-C | ACPUserProfile |
-| AEPUserProfile | Swift | UserProfile |
-| AEPUserProfile | Objective-C | AEPMobileUserProfile |
+| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
+| :--- | :--- | :--- | :--- |
+| Primary Class | UserProfile | AEPMobileUserProfile | ACPUserProfile |
 
 ## UserProfile extension APIs
 
@@ -16,81 +14,89 @@ For more information, please read the [Profile API reference](https://aep-sdks.g
 
 ### extensionVersion
 
-* ACPUserProfile
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
+```swift
+static var extensionVersion: String
+```
+{% endtab %}
 
-  ```text
-  + (nonnull NSString*) extensionVersion;
-  ```
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
++ (nonnull NSString*) extensionVersion;
+```
+{% endtab %}
 
-* UserProfile
-
-  ```swift
-  static var extensionVersion: String
-  ```
-
-* AEPMobileUserProfile
-
-  ```text
-  static var extensionVersion: String
-  ```
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
++ (nonnull NSString*) extensionVersion;
+```
+{% endtab %}
+{% endtabs %}
 
 ### updateUserAttributes
 
-* ACPUserProfile
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
+```swift
+public static func updateUserAttributes(attributeDict: [String: Any])
+```
+{% endtab %}
 
-  ```text
-  + (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
-  ```
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
++ (void)updateUserAttributesWithAttributeDict:(NSDictionary<NSString *, id> * _Nonnull)attributeDict;
+```
+{% endtab %}
 
-* UserProfile
-
-  ```swift
-  public static func updateUserAttributes(attributeDict: [String: Any])
-  ```
-
-* AEPMobileUserProfile
-
-  ```text
-  public static func updateUserAttributes(attributeDict: [String: Any])
-  ```
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
++ (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
+```
+{% endtab %}
+{% endtabs %}
 
 ### removeUserAttribute
 
-* ACPUserProfile
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
+```swift
+public static void removeUserAttribute(String attributeName)
+```
+{% endtab %}
 
-  ```text
-  + (void) removeUserAttribute: (nonnull NSString*) key
-  ```
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
++ (void)removeUserAttributesWithAttributeNames:(NSArray<NSString *> * _Nonnull)attributeNames;
+```
+{% endtab %}
 
-* UserProfile
-
-  ```swift
-  public static void removeUserAttribute(String attributeName)
-  ```
-
-* AEPMobileUserProfile
-
-  ```text
-  public static void removeUserAttribute(String attributeName)
-  ```
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
++ (void) removeUserAttribute: (nonnull NSString*) key
+```
+{% endtab %}
+{% endtabs %}
 
 ### getUserAttributes
 
-* ACPUserProfile
+{% tabs %}
+{% tab title="AEP 3.x \(Swift\)" %}
+```swift
+public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
+```
+{% endtab %}
 
-  ```text
-  + (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
-  ```
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
++ (void)getUserAttributesWithAttributeNames:(NSArray<NSString *> * _Nonnull)attributeNames completion:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nullable, enum AEPError))completion;
+```
+{% endtab %}
 
-* UserProfile
-
-  ```swift
-  public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
-  ```
-
-* AEPMobileUserProfile
-
-  ```text
-  public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
-  ```
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
++ (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
+```
+{% endtab %}
+{% endtabs %}
 
