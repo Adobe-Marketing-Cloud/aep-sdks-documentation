@@ -329,7 +329,7 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 **Swift**
 
 ```swift
-Analytics.getQueueSize { (queueSize, _) in
+Analytics.getQueueSize { (queueSize, error) in
     // handle queue size 
 }
 ```
@@ -363,7 +363,7 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 [ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    
-    // use queue size
+    // handle queue size
 }];
 ```
 
@@ -371,7 +371,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getQueueSize { (queueSize) in    
-     // use queue size   
+     // handle queue size   
 }
 ```
 {% endtab %}
@@ -541,7 +541,7 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 **Swift**
 
 ```swift
-Analytics.getQueueSize { (queueSize, _) in
+Analytics.getQueueSize { (queueSize, error) in
     // handle queue size 
 }
 ```
@@ -646,7 +646,7 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 **Swift**
 
 ```swift
-Analytics.getTrackingIdentifier { (trackingId, _) in
+Analytics.getTrackingIdentifier { (trackingId, error) in
    // check the trackingIdentifier value  
 }
 ```
@@ -878,7 +878,7 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 **Swift**
 
 ```swift
-Analytics.getTrackingIdentifier { (trackingId, _) in
+Analytics.getTrackingIdentifier { (trackingId, error) in
    // check the trackingIdentifier value  
 }
 ```
@@ -976,7 +976,7 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 **Swift**
 
 ```swift
-Analytics.getVisitorIdentifier { (visitorId, _) in
+Analytics.getVisitorIdentifier { (visitorId, error) in
    // check the visitorIdentifier value or handle error
 }
 ```
@@ -1192,7 +1192,7 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 **Swift**
 
 ```swift
-Analytics.getVisitorIdentifier { (visitorId, _) in
+Analytics.getVisitorIdentifier { (visitorId, error) in
    // check the visitorIdentifier value
 }
 ```
