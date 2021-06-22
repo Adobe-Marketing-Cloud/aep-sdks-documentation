@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 17, 2021
+
+### iOS & Android Messaging 1.0.0
+
+The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS and Android! This extension enables push notifications and measurement for Adobe Journey Optimizer. You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
