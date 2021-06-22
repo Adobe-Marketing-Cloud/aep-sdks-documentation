@@ -6,7 +6,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 22, 2021
 
-#### iOS Core 2.9.3
+### iOS Core 2.9.3
 
 * Fixed a Rules Engine bug affecting strings that contain the `&` token
 * Fixed a bug where JSON objects containing empty strings were not handled correctly
