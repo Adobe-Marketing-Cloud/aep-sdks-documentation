@@ -4,12 +4,6 @@ The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimi
 
 The following documentation details how to use the extension as well as the required configuration across Adobe Experience Platform services, app stores, and your apps to get started with push notifications for Adobe Journey Optimizer.
 
-{% hint style="warning" %}
-### Beta
-
-Adobe Journey Optimizer is a beta product. Your Adobe administrator may need to provide your workspace with additional permissions. Please contact your Adobe Customer Success Manager for more details.
-{% endhint %}
-
 ## Getting Started
 
 To get started with the Adobe Journey Optimizer extension, you'll need to follow these steps:

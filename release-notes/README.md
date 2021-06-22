@@ -4,6 +4,29 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 21, 2021
+
+### iOS AEPCore 3.2.1
+
+* Update version for bundled ACPIdentity 3.2.1 release.
+
+## iOS AEPIdentity 3.2.1
+
+* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
+
+## June 16, 2021
+
+### Android Campaign 1.0.8
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+* Resolved an issue with Campaign module details not being returned.
+
+## June 15, 2021
+
+### Android Target 1.1.7
+
+* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
+
 ## June 10, 2021
 
 ### iOS AEPEdge 1.1.1
@@ -50,6 +73,12 @@ This SDK is compatible with Android Core 1.8.2 and above.
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
+
+## Jun 4, 2021
+
+### iOS AEPMobileServices 3.0.0
+
+* Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
 
 ## May 25, 2021
 
