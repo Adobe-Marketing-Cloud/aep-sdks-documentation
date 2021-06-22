@@ -211,6 +211,160 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
 ## Public classes
 
 {% tabs %}
+{% tab title="Android" %}
+### DecisionScope
+
+This class encapsulates the decision `activityId`, `placementId` and `itemCount`. The `DecisionScope` object can be used to fetch offers from the offer decisioning service if it is enabled in the Experience Edge network. The default value for `itemCount` is 1, if not provided when creating the `DecisionScope` object.
+
+```java
+final public class DecisionScope {
+    final private String activityId;
+    final private String placementId;
+    final private int itemCount;
+
+    public DecisionScope(final String activityId, final String placementId) {...}
+
+    public DecisionScope(final String activityId, final String placementId, final int itemCount) {...}
+
+    public String getActivityId() {
+        return activityId;
+    }
+
+    public String getPlacementId() {
+        return placementId;
+    }
+
+    public int getItemCount() {
+        return this.itemCount;
+    }
+```
+
+### Proposition
+
+This class represents the proposition received from the offer decisioning service upon personalization query.
+
+```java
+public class Proposition {
+    final private String id;
+    final private List<Offer> offers;
+    final private String scopeString;
+    final private DecisionScope decisionScope;
+
+    Proposition(final String id, final List<Offer> offers, final String scopeString, final DecisionScope decisionScope) {...}
+
+    public String getId() {
+        return id;
+    }
+
+    List<Offer> getOffers() {
+        return offers;
+    }
+
+    public String getScopeString() {
+        return scopeString;
+    }
+```
+
+### Offer
+
+This class represents the offer option received from the offer decisioning service upon personalization query.
+
+```java
+public class Offer {
+    final private String id;
+    final private String etag;
+    final private String schema;
+    final private OfferType type;
+    final private List<String> language;
+    final private String content;
+    final private Map<String, String> characteristics;
+
+    WeakReference<Proposition> propositionReference;
+
+    Offer(final String id, final String etag, final String schema, final OfferType type, final List<String> language, final String content, final Map<String, String> characteristics) {...}
+
+    public String getId() {
+        return id;
+    }
+
+    public String getEtag() {
+        return etag;
+    }
+
+    public OfferType getType() {
+        return type;
+    }
+
+    public List<String> getLanguage() {
+        return language;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Map<String, String> getCharacteristics() {
+        return characteristics;
+    }
+
+    public Proposition getProposition() {
+        return propositionReference.get();
+    }
+```
+
+### OfferType
+
+An enum indicating the type of an offer. This is based on the offer `format` field returned in the personalization query response.
+
+```java
+public enum OfferType {
+    UNKNOWN, JSON, HTML, IMAGE, TEXT {
+        @Override
+        public String toString() {
+            return "text/plain";
+        }
+    };
+
+    static OfferType from(final String type) {...}
+}
+```
+
+### OfferExperienceEvent
+
+An instance of `OfferExperienceEvent` can be supplied in the prefetch API when additional information such as xdm data, free-form data or dataset identifier needs to be passed to the offer decisioning service. If provided, the `datasetIdentitifer` overrides the default dataset configured in the `Datastreams` on Adobe Experience Platform Launch.
+
+```java
+public class OfferExperienceEvent {
+    private final Map<String, Object> xdmData;
+    private final Map<String, Object> data;
+    private final String datasetIdentifier;
+
+    public OfferExperienceEvent(final Map<String, Object> xdmData) {
+        this.xdmData = xdmData;
+        this.data = new HashMap<>();
+        this.datasetIdentifier = "";
+    }
+
+    public OfferExperienceEvent(final Map<String, Object> xdmData, final Map<String, Object> data, final String datasetIdentifier) {
+        this.xdmData = xdmData;
+        this.data = data;
+        this.datasetIdentifier = datasetIdentifier;
+    }
+
+    public Map<String, Object> getXdmData() {
+        return xdmData;
+    }
+
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public String getDatasetIdentifier() {
+        return datasetIdentifier;
+    }
+}
+```
+{% endtab %}
 {% tab title="iOS — Swift" %}
 ### DecisionScope/**AEPDecisionScope**
 
