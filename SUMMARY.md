@@ -73,9 +73,6 @@
   * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
-* [Adobe Experience Platform Target](foundation-extensions/target/README.md)
-  * [Migrating to AEPTarget reference](foundation-extensions/target/migration.md)
-  * [Target API reference](foundation-extensions/target/target-api-reference.md)
 
 ## Experience Cloud <a id="using-mobile-extensions"></a>
 
@@ -105,6 +102,9 @@
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Journey Optimizer](using-mobile-extensions/adobe-journey-optimizer/README.md)
   * [API Reference](using-mobile-extensions/adobe-journey-optimizer/api-reference.md)
+* [Adobe Experience Platform Target](using-mobile-extensions/target/README.md)
+  * [Migrating to AEPTarget reference](using-mobile-extensions/target/migration.md)
+  * [Target API reference](using-mobile-extensions/target/target-api-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
