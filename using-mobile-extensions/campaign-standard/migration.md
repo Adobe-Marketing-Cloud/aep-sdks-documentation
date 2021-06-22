@@ -1,4 +1,4 @@
-# Migration to AEPCampaign
+# Migrating to AEPCampaign reference
 
 This document is a reference comparison of ACPCampaign (1.x) APIs against their equivalent APIs in AEPCampaign (3.x) for an iOS mobile application implementation.
 
