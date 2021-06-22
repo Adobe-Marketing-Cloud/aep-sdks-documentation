@@ -12,7 +12,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## iOS AEPIdentity 3.2.1
 
-* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would always set authenticated state to `unknown`.
+* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
 
 ## June 16, 2021
 

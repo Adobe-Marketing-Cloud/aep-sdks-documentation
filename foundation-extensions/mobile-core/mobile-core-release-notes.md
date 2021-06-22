@@ -8,7 +8,7 @@
 
 ## iOS AEPIdentity 3.2.1
 
-* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would always set authenticated state to `unknown`.
+* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
 
 ## June 8, 2021
 
