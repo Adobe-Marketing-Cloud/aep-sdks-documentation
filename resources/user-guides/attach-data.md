@@ -193,9 +193,9 @@ After you complete your configuration, verify that your rule looks like the foll
 
 The following sample shows how to add a custom mbox to prefetch in all outgoing `prefetchContent` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**.](attach-data.md#target-create-rule-prefetch)
-2. [Select the **Event** you want to trigger the rule.](attach-data.md#target-select-an-event-prefetch)
-3. [Select the **Action** to attach data and define your payload.](attach-data.md#target-define-the-action-prefetch)
+1. [Create a new rule](attach-data.md#target-create-rule-prefetch)
+2. [Select the event you want to trigger the rule](attach-data.md#target-select-an-event-prefetch)
+3. [Select the action to attach data and define your payload](attach-data.md#target-define-the-action-prefetch)
 4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-prefetch).
 
 ### Create a rule
@@ -210,7 +210,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 1. Give your rule an easily recognizable name in your list of rules.
 
-   In this example, the rule is named **Attach additional data to Target prefetch content Events**.
+   In this example, the rule is named "Attach additional data to Target prefetch content Events".
 
 2. Under the **Events** section, click **Add**.
 3. From the **Extension** drop-down list, select **Adobe Target**.
@@ -263,9 +263,9 @@ After you complete your configuration, verify that your rule looks like the foll
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationClicked` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**.](attach-data.md#target-create-rule-clicked)
-2. [Select the **Event** you want to trigger the rule.](attach-data.md#target-select-an-event-clicked)
-3. [Select the **Action** to attach data and define your payload.](attach-data.md#target-define-the-action-clicked)
+1. [Create a new rule](attach-data.md#target-create-rule-clicked)
+2. [Select the event you want to trigger the rule](attach-data.md#target-select-an-event-clicked)
+3. [Select the action to attach data and define your payload](attach-data.md#target-define-the-action-clicked)
 4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-clicked).
 
 ### Create a rule
@@ -280,7 +280,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 1. Give your rule an easily recognizable name in your list of rules.
 
-   In this example, the rule is named **Attach additional data to Target location clicked Events**.
+   In this example, the rule is named "Attach additional data to Target location clicked Events".
 
 2. Under the **Events** section, click **Add**.
 3. From the **Extension** drop-down list, select **Adobe Target**.
@@ -299,7 +299,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, custom mbox and profile parameters are added to the event before the Target extension processes it. The added mbox and profile parameters will now be added on outgoing Target location clicked requests.
 
-In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
+In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named `customMboxParameter` and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
 ![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29.png)
 
@@ -320,9 +320,9 @@ After you complete your configuration, verify that your rule looks like the foll
 
 The following sample shows how to add additional mbox and profile parameters in all outgoing `locationDisplayed` Target network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new **Rule**](attach-data.md#target-create-rule-displayed)
-2. [Select the **Event** you want to trigger the rule](attach-data.md#target-select-an-event-displayed)
-3. [Select the **Action** to attach data and define your payload](attach-data.md#target-define-the-action-displayed)
+1. [Create a new rule](attach-data.md#target-create-rule-displayed)
+2. [Select the event you want to trigger the rule](attach-data.md#target-select-an-event-displayed)
+3. [Select the action to attach data and define your payload](attach-data.md#target-define-the-action-displayed)
 4. [Save and rebuild the property](attach-data.md#target-save-the-rule-and-rebuild-your-property-displayed)
 
 ### Create a rule
@@ -337,7 +337,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 1. Give your rule an easily recognizable name in your list of rules.
 
-   In this example, the rule is named **Attach additional data to Target location displayed Events**.
+   In this example, the rule is named "Attach additional data to Target location displayed Events".
 
 2. Under the **Events** section, click **Add**.
 3. From the **Extension** drop-down list, select **Adobe Target**.
@@ -356,7 +356,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, custom mbox and profile parameters are added to the event before the Target extension processes it. The added mbox and profile parameters will now be added on outgoing Target location displayed requests.
 
-In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named **customMboxParameter** and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
+In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named `customMboxParameter` and a data element that was defined for the OS version are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
 ![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29%20%281%29.png)
 
