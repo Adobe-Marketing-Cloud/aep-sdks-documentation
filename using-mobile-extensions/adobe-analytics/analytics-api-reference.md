@@ -525,6 +525,37 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if unexpected error occures or request times out.
 
 {% tabs %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### getQueueSize
+
+#### Syntax
+
+```swift
+static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
+```
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getQueueSize { (queueSize, _) in
+    // handle queue size 
+}
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
+    // handle queue size
+ }];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 ### getQueueSizeWithCompletionHandler
@@ -607,7 +638,7 @@ Retrieves the Analytics tracking identifier.
 #### Syntax
 
 ```swift
-+ (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
+static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
 ```
 
 #### Example
@@ -829,6 +860,39 @@ If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/us
 {% endhint %}
 
 {% tabs %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+#### Syntax
+
+```swift
+static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
+```
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getTrackingIdentifier { (trackingId, _) in
+   // check the trackingIdentifier value  
+}
+```
+
+**Objective-C**
+
+```objectivec
+AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
+   // check the trackingIdentifier value  
+}];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 ### getTrackingIdentifierWithCompletionHandler
@@ -1110,6 +1174,39 @@ Before using this API, see [Identify unique visitors](https://docs.adobe.com/con
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier). Callback with NSError if an unexpected error occurs or the request times out.
 
 {% tabs %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### getVisitorIdentifier
+
+#### Syntax
+
+```swift
+static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
+```
+
+* _callback_ is invoked with the visitor identifier value.
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getVisitorIdentifier { (visitorId, _) in
+   // check the visitorIdentifier value
+}
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
+    // check the visitorIdentifier value or handle error
+}];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 ### getVisitorIdentifier

@@ -88,7 +88,7 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objective-c
-+ (void) getQueueSize:^(NSInteger, NSError * _Nullable)completion;
++ (void) getQueueSize:^(NSInteger queueSize, NSError * _Nullable error)completion;
 ```
 
 {% endtab %}
@@ -150,7 +150,7 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objective-c
-+ (void) getTrackingIdentifier:^(NSString * _Nullable, NSError * _Nullable)completion;
++ (void) getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error)completion;
 ```
 
 {% endtab %}
@@ -182,7 +182,7 @@ static func setVisitorIdentifier(visitorIdentifier: String)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objective-c
-+ (void) setVisitorIdentifier:(NSString * _Nonnull);
++ (void) setVisitorIdentifier:(NSString * _Nonnull) visitorIdentifier;
 ```
 
 {% endtab %}
@@ -212,7 +212,7 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objective-c
-+ (void) getVisitorIdentifier:^(NSString * _Nullable, NSError * _Nullable)completion;
++ (void) getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error)completion;
 ```
 
 {% endtab %}
