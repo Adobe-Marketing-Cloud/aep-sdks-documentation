@@ -1,6 +1,6 @@
 # Release Notes
 
-### June 22, 2021
+## June 22, 2021
 
 #### iOS Core 2.9.3
 

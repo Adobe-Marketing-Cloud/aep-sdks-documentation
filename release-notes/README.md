@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-### June 22, 2021
+## June 22, 2021
 
 #### iOS Core 2.9.3
 
