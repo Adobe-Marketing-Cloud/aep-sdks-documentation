@@ -2,9 +2,9 @@
 
 A common use case is to add an event listener to get notifications for events. The main location to add an event listener is in the `init` method, although you can add listeners by using other callbacks later. You can add the logic that you want executed when an event occurs, and for which you have a listener, in the `hear` method of your listener class.
 
-When handling an event in the event listener, remember that the `hear` method should take a maximum of 100ms to execute. This means that potentially long-running operations should be pushed to another thread \(for example, network or file operations\), as in the following examples.
+When handling an event in the event listener, note that the `hear` method should take a maximum of 100ms to execute. This means that potentially long-running operations should be pushed to another thread \(for example, network or file operations\), as in the following examples.
 
-Here are some additional rules to remember for event listeners:
+Here are some additional rules to note for event listeners:
 
 * You can listen to an event by registering your listener class with an event source and an event type.  The Adobe Experience Platform SDKs create an instance of your listener class and retain it as long as your extension is registered.
 * When an event that you are listening for occurs, the `hear` method on the appropriate instance of your listener class is called.
@@ -48,7 +48,9 @@ class MyListener extends ExtensionListener {
 }
 ```
 
-**Tip:** Create an executor in your `Extension` class for event processing and use it when one of your listeners is called. This way you do not have to worry about how long your event handler is taking.
+{% hint style="info" %}
+Create an executor in your `Extension` class for event processing and use it when one of your listeners is called. This way you do not have to worry about how long your event handler is taking.
+{% endhint %}
 
 ```java
 package com.test.company;
@@ -120,7 +122,7 @@ public class MyExtension extends Extension {
 {% endtab %}
 
 {% tab title="Objective-C" %}
-### **iOS**
+### iOS
 
 1. In Xcode, create a new file from the `Cocoa Touch Class` template and save it in your project.
 2. Name your class `MyExtensionListener`, and it should be a subclass to the `ACPExtensionListener` class.
@@ -129,7 +131,7 @@ public class MyExtension extends Extension {
 
 **MyExtensionListener.h**
 
-```text
+```objectivec
 #import "ACPExtensionListener.h"
 #import "ACPExtensionEvent.h"
 
@@ -138,11 +140,11 @@ public class MyExtension extends Extension {
 @end
 ```
 
-1. At a minimum, you must provide an implementation for the hear method.  
+1. At a minimum, you must provide an implementation for the `hear` method.  
 
 **MyExtensionListener.m**
 
-```text
+```objectivec
 #import "MyExtensionListener.h"
 #import "MyExtension.h"
 
@@ -176,7 +178,7 @@ public class MyExtension extends Extension {
 
 ### What can you do in your event handler?
 
-Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This allows you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore`\(iOS\) or `MobileCore` \(Android\). This reference allows you to dispatch events and receive responses.
+Your listener has a reference to the parent extension that registered it. You can use this to centralize logic into your extension class and call into it from your listener. This also means you have access to the extension services API \(`ACPExtensionApi` on iOS and `ExtensionApi` on Android\) provided to the extension. This allows you to manage your shared states or register additional listeners. You also have access to the core SDK \(`ACPCore` \(iOS\) or `MobileCore` \(Android\)\). This reference allows you to dispatch events and receive responses.
 
 ## Registering your event listener
 
@@ -186,7 +188,7 @@ The following example calls the listeners `hear` method when a change to the Ado
 
 {% tabs %}
 {% tab title="Android" %}
-### **Android**
+### Android
 
 Event listeners in Android are registered by using the `registerEventListener` method of the `ExtensionApi` interface. You can access this interface by using the `getApi` method in `Extension`. The following example shows how to register the listener from your extension constructor.
 
@@ -234,7 +236,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.h**
 
-```text
+```objectivec
 #import "ACPExtension.h"
 #import "ACPExtensionEvent.h"
 
@@ -247,7 +249,7 @@ In iOS the event listeners are registered using the `registerListener` method of
 
 **MyExtension.m**
 
-```text
+```objectivec
 #import "MyExtension.h"
 #import "MyExtensionListener.h"
 
@@ -292,17 +294,17 @@ In iOS the event listeners are registered using the `registerListener` method of
 {% endtab %}
 {% endtabs %}
 
-## Registering a Wildcard Listener
+## Registering a wildcard listener
 
 To listen for all events that are received and broadcasted by the Event Hub, register a wildcard listener by using the `registerWildcardListener` API.
 
 {% hint style="warning" %}
-**Important**: The `hear` method of this listener can be called often, and you should not do intensive processing on the same thread. We strongly recommended that you use your own thread executor for the processing that you do in this listener. This way, the Event Hub is not blocked, and the listener is not unregistered if it takes too long.
+The `hear` method of this listener can be called often, and you should not do intensive processing on the same thread. You should use your own thread executor for the processing that you do in this listener. In doing so, the Event Hub is not blocked, and the listener is not unregistered if it takes too long.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-### **Android**
+### Android
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -327,9 +329,9 @@ public class MyExtension extends Extension {
 {% endtab %}
 
 {% tab title="Objective-C" %}
-### **iOS**
+### iOS
 
-```text
+```objectivec
 #import "MyExtension.h"
 #import "MyExtensionWildcardListener.h"
 

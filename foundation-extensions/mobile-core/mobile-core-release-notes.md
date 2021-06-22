@@ -1,5 +1,15 @@
 # Release Notes
 
+## June 21, 2021
+
+### iOS AEPCore 3.2.1
+
+* Update version for bundled ACPIdentity 3.2.1 release.
+
+## iOS AEPIdentity 3.2.1
+
+* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
+
 ## June 8, 2021
 
 ### Android Core 1.8.2

@@ -10,7 +10,7 @@ To implement the Adobe Experience Platform SDK in your WeChat Mini Programs, com
 
 ## 1. Add the SDK to your project
 
-In your Mini Program's `app.js`file, reference and require the SDK, for example:
+In your Mini Program's `app.js` file, you can add the SDK by copying the following example:
 
 ```javascript
 const AdobeSDK = require('AdobeSDK.js');
@@ -18,7 +18,7 @@ const AdobeSDK = require('AdobeSDK.js');
 
 ## 2. Initialize the SDK
 
-In the `onLaunch` method of your `app.js` file, implement `AdobeSDK.init()` and pass in valid configuration values using the **.init\(configuration\)** method, for example:
+In the `onLaunch` method of your `app.js` file, implement `AdobeSDK.init()` and pass in valid configuration values using the **.init\(configuration\)** method. An example of that can be seen below:
 
 {% hint style="warning" %}
 If you need help to find the settings for your Adobe Analytics implementation, contact your Adobe Analytics administrator or Adobe consulting.
@@ -43,17 +43,15 @@ If you need help to find the settings for your Adobe Analytics implementation, c
 ```
 
 {% hint style="info" %}
-If the key`analytics.offlineEnabled` is set to true, then `timestamp(ts)` is included in Analytics request.
+If the key `analytics.offlineEnabled` is set to true, then `timestamp(ts)` is included in the Adobe Analytics request.
 
-The key`lifecycle.sessionTimeout` value, in seconds, is the period that must elapse between the time the app is launched and before the launch is considered to be a new session. This timeout also applies when your application is sent to the background and reactivated. The default value is 30 seconds.
-{% endhint %}
+The key `lifecycle.sessionTimeout` represents the period, in seconds, that must elapse between the time the app is launched and before the launch is considered to be a new session. This timeout also applies when your application is sent to the background and reactivated. The default value is 30 seconds.
 
-{% hint style="info" %}
 To send data to multiple report suites, use commas to separate RSIDs in the configuration code block. For example: `"analytics.rsids": "example.rsid1,example.rsid2"` causes the SDK to send data to the `example.rsid1` and `example.rsid2` report suites.
 {% endhint %}
 
 {% hint style="success" %}
-After being initialized, the SDK automatically collects and transmits lifecycle metrics to Adobe Analytics. For a complete list of metrics, see [Lifecycle metrics](implementation.md#lifecycle-metrics).
+After being initialized, the SDK automatically collects and transmits lifecycle metrics to Adobe Analytics. For a complete list of metrics, please read the document on [Lifecycle metrics](implementation.md#lifecycle-metrics).
 {% endhint %}
 
 ## 3. Enable debug logging
@@ -66,7 +64,7 @@ AdobeSDK.setDebugLoggingEnabled(true)
 
 ### AdobeSDK.setDebugModeEnabled\(flag\)
 
-By default, the SDK hides internal exceptions and print error message in the console log. To allow the SDK to throw those exceptions, enable debug mode.
+By default, the SDK hides internal exceptions and prints error messages in the console log. To allow the SDK to throw those exceptions, enable debug mode.
 
 ```javascript
 AdobeSDK.setDebugModeEnabled(true)
@@ -78,10 +76,10 @@ You can use the following screen and action tracking APIs to measure your user's
 
 ### AdobeSDK.trackAction\(actionName, contextData\)
 
-Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you might call this API for each new subscription each time an article is viewed, or each time a level is completed.
+Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you can call this API for every new subscription, every time an article is viewed, or every time a level is completed.
 
 {% hint style="info" %}
-`trackAction`reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
+`trackAction` reports the action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ```javascript
@@ -91,10 +89,8 @@ AdobeSDK.trackAction("action", { "example.key": "value" });
 ### AdobeSDK.trackState\(stateName, contextData\)
 
 {% hint style="info" %}
-In Analytics, `trackState` reports the View State as **Page Name**, and state views are reported as **Page View**. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
-{% endhint %}
+In Analytics, `trackState` reports the view state as the **Page Name**, and state views are reported as the **Page View**. The value is sent to Adobe Analytics by using the page name variable \(`pagename=value`\).
 
-{% hint style="info" %}
 To track when users switch to screens or pages, implement this API in the `onShow` method of the `Page`.
 {% endhint %}
 
@@ -104,7 +100,7 @@ AdobeSDK.trackState("state", { "example.key": "value" });
 
 ## Lifecycle metrics
 
-After the SDK is initialized, lifecycle metrics is automatically sent to Adobe Analytics. Here is a complete list of the metrics that are collected and sent:
+After the SDK is initialized, Lifecycle metrics are automatically sent to Adobe Analytics. A complete list of the metrics that are collected and sent can be found below:
 
 ### Install <a id="install"></a>
 
@@ -125,13 +121,13 @@ After the SDK is initialized, lifecycle metrics is automatically sent to Adobe A
 
 | **Metric** | **Key** | **Description** |
 | :--- | :--- | :--- |
-| Daily Engaged Users | `a.DailyEngUserEvent` | Triggered when the application is used on a particular day.   **Important**: This metric is not automatically stored in Analytics. You must create a processing rule that sets a custom event to capture this metric. |
-| Monthly Engaged Users | `a.MonthlyEngUserEvent` | Triggered when the application is used during a particular month.   **Important**: This metric is not automatically stored in Analytics. You must create a processing rule that sets a custom event to capture this metric. |
-| Launches | `a.LaunchEvent` | Triggered on every run, including crashes and installs. Also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
-| Previous Session Length | `a.PrevSessionLength` | Reports the number of seconds that a previous application session lasted based on how long the application was open and in the foreground. |
-| Launch Number | `a.Launches` | Number of times the application was launched or brought out of the background. |
-| Days since first use | `a.DaysSinceFirstUse` | Number of days since first run. |
-| Days since last use | `a.DaysSinceLastUse` | Number of days since last use. |
+| Daily Engaged Users | `a.DailyEngUserEvent` | Triggered when the application is used on a particular day. **Important**: This metric is **not** automatically stored in Adobe Analytics. You must create a processing rule that sets a custom event to capture this metric. |
+| Monthly Engaged Users | `a.MonthlyEngUserEvent` | Triggered when the application is used during a particular month. **Important**: This metric is **not** automatically stored in Analytics. You must create a processing rule that sets a custom event to capture this metric. |
+| Launches | `a.LaunchEvent` | Triggered on every run, including crashes and installs. This value is also triggered when the app is resumed from the background after the lifecycle session timeout is exceeded. |
+| Previous Session Length | `a.PrevSessionLength` | Reports the number of seconds that a previous application session lasted, based on how long the application was open and in the foreground. |
+| Launch Number | `a.Launches` | The number of times the application was launched or brought out of the background. |
+| Days since first use | `a.DaysSinceFirstUse` | Number of days since the first run. |
+| Days since last use | `a.DaysSinceLastUse` | Number of days since the last use. |
 | Hour of Day | `a.HourOfDay` | Measures the hour the app was launched and uses the 24-hour numerical format. Used for time parting to determine peak usage times. |
 | Day of Week | `a.DayOfWeek` | Measures the day of the week the app was launched. |
 
@@ -139,7 +135,7 @@ After the SDK is initialized, lifecycle metrics is automatically sent to Adobe A
 
 | Metric | Key | Description |
 | :--- | :--- | :--- |
-| AppID | `a.AppID` | Stores the application name and version in the `AppName BundleVersion (app version code)` format. An example of this format is `MyAppName 1.1(1)`. This value will be populated from the app id provided in SDK configuration. |
+| AppID | `a.AppID` | Stores the application name and version in the `AppName BundleVersion (app version code)` format. An example of this format is `MyAppName 1.1(1)`. This value will be populated from the app ID provided in the SDK configuration. |
 | .Device name | `a.DeviceName` | Stores the device name. |
 | Operating system version | `a.OSVersion` | Operating system name and version. |
 | Resolution | `a.Resolution` | Width x height, in pixels. |
@@ -147,7 +143,7 @@ After the SDK is initialized, lifecycle metrics is automatically sent to Adobe A
 
 ## 5. Validate requests to Adobe Analytics
 
-Here are the Analytics hits examples for manual tests:
+The following blurbs shows example of Adobe Analytics events:
 
 ### Lifecycle - Install Event
 

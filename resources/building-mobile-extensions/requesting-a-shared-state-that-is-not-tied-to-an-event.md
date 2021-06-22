@@ -2,11 +2,13 @@
 
 Extensions can skip passing the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) parameter to the `getSharedEventState` method. If no state is available, the SDK returns the latest available shared state or a null value.
 
-**Tip:** The caller must be careful to account for null values being passed back.
+{% hint style="info" %}
+The caller must be careful to account for null values being passed back.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-## Android
+## Java
 
 ```java
 @Override
@@ -25,10 +27,10 @@ public void onUnregistered() {
 ```
 {% endtab %}
 
-{% tab title="Objective-C" %}
-## iOS
+{% tab title="iOS" %}
+## Objective-C
 
-```text
+```objectivec
 - (void) onUnregister {
     NSError* error = nil;
     NSDictionary* configurationSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:nil error:&error];
