@@ -1,4 +1,4 @@
-# Migration to AEPTarget
+# Migrating to AEPTarget reference
 
 This document is a reference comparison of ACPTarget (2.x) APIs against their equivalent APIs in AEPTarget (3.x) for an iOS mobile application implementation.
 
