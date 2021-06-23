@@ -1,150 +1,271 @@
-# Adobe Campaign Standard API reference
+# Campaign API reference
 
-## Version of the Campaign Standard extension
+---
 
-The `extensionVersion()` API returns the version of the Campaign Standard extension that is registered with the Mobile Core extension.
+### extensionVersion
 
-To get the version of the Campaign Standard extension, use the following code sample:
+Returns the running version of the AEPCampaign extension.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-### Syntax
+**Syntax**
 
 ```java
 public String extensionVersion()
 ```
 
-### Example
+**Example**
 
 ```java
 Campaign.extensionVersion();
 ```
+
+{% endtab %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Syntax**
+
+```swift
+static var extensionVersion: String
+```
+
+**Example**
+
+**Objective-C**
+
+```objc
+NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
+```
+
+**Swift**
+
+```swift
+let campaignVersion = Campaign.extensionVersion
+```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-### Syntax
+{% tab title="iOS (ACP 1.x)" %}
 
-```objectivec
+**Syntax**
+
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
 
-### Examples
+**Example**
 
-### Objective C
+**Objective-C**
 
-```objectivec
-NSLog(@"ACPCampaign version: %@", [ACPCampaign extensionVersion]);
+```objc
+NSString *campaignVersion = [ACPCampaign extensionVersion];
 ```
 
-### Swift
+**Swift**
 
 ```swift
-print("ACPCampaign version: ", ACPCampaign.extensionVersion())
+let campaignVersion = ACPCampaign.extensionVersion()
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
 
-### Syntax
+**Syntax**
 
 ```javascript
 extensionVersion(): Promise<string>
 ```
 
-### Example
+**Example**
 
 ```javascript
 ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPCampaign version: " + version));
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
-## resetLinkageFields
+---
 
-This method clears the cached rules from the previous download before triggering a rule download request to the configured Campaign server. If the current SDK privacy status is not OPT\_IN, no rules download occurs.
+### registerExtension
+
+Registers the Campaign extension with the Mobile Core.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-### Syntax
+**Syntax**
+
+```java
+public static void registerExtension()
+```
+
+**Example**
+
+```java
+Campaign.registerExtension();
+```
+
+{% endtab %}
+{% tab title="iOS (AEP 3.x)" %}
+
+This API no longer exists in `AEPCampaign`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+
+{% endtab %}
+
+{% tab title="iOS (ACP 1.x)" %}
+
+**Syntax**
+
+```objc
++ (void) registerExtension;
+```
+
+**Example**
+
+**Objective-C**
+
+```objc
+[ACPCampaign registerExtension];
+```
+
+**Swift**
+
+```swift
+ACPCampaign.registerExtension()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+**Syntax**
+
+```javascript
+registerExtension()
+```
+
+**Example**
+
+```javascript
+ACPCampaign.registerExtension();
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+### resetLinkageFields
+
+Clears previously stored linkage fields in the mobile SDK and triggers a Campaign rules download request to the configured Campaign server.
+
+This method unregisters any previously registered rules with the Rules Engine and clears cached rules from the most recent rules download.
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Syntax**
 
 ```java
 public static void resetLinkageFields()
 ```
 
-### Example
+**Example**
 
 ```java
 Campaign.resetLinkageFields()
 ```
+
+{% endtab %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Syntax**
+
+```swift
+static func resetLinkageFields()
+```
+
+**Example**
+
+**Objective-C**
+
+```objc
+[AEPMobileCampaign resetLinkageFields];
+```
+
+**Swift**
+
+```swift
+Campaign.resetLinkageFields()
+```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-### Syntax
+{% tab title="iOS (ACP 1.x)" %}
 
-```objectivec
+**Syntax**
+
+```objc
 + (void) resetLinkageFields;
 ```
 
-### Objective C
+**Example**
 
-### Example
+**Objective-C**
 
-```objectivec
+```objc
 [ACPCampaign resetLinkageFields];
 ```
 
-### Swift
+**Swift**
 
 ```swift
 ACPCampaign.resetLinkageFields()
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
 
-### Syntax
+**Syntax**
 
 ```javascript
-resetLinkageFields();
+resetLinkageFields()
 ```
 
-### Example
+**Example**
 
 ```javascript
 ACPCampaign.resetLinkageFields();
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
-## setLinkageFields
+---
 
-This API sets the Campaign linkage fields \(CRM IDs\) in the Mobile SDK that are used to download personalized messages from Campaign. The set linkage fields are stored as a base64-encoded JSON string in memory, and they are sent in a custom HTTP header `X-InApp-Auth` in all future Campaign rules download requests until `resetLinkageFields` is invoked. These in-memory variables are lost in the following scenarios:
+### setLinkageFields
 
-* When an application crash event occurs.
-* After a graceful termination of the application.
-* When the privacy status is updated to `OPT_OUT`.  For more information, see [Set and Get Privacy Status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status)
+Sets the Campaign linkage fields (CRM IDs) in the mobile SDK to be used for downloading personalized messages from Campaign.
 
-For more information about setting up linkage fields in Campaign, see [Extending the subscriptions to an application resource](https://docs.adobe.com/content/help/en/campaign-standard/using/developing/use-cases--extending-resources/extending-the-subscriptions-to-an-application-resource.html).
+The set linkage fields are stored as a base64 encoded JSON string in memory and they are sent in a custom HTTP header `X-InApp-Auth`.
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
-### Syntax
+**Syntax**
 
 ```java
 public static void setLinkageFields(final Map<String, String> linkageFields)
 ```
 
-* _linkageFields_ is a map that contains the linkage field key-value pairs.
-
-### Example
+**Example**
 
 ```java
 HashMap<String, String> linkageFields = new HashMap<String, String>();
@@ -153,52 +274,73 @@ linkageFields.put("cusLastName", "Doe");
 linkageFields.put("cusEmail", "john.doe@email.com");
 Campaign.setLinkageFields(linkageFields);
 ```
+
+{% endtab %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Syntax**
+
+```swift
+static func setLinkageFields(linkageFields: [String: String])
+```
+
+**Example**
+
+**Objective-C**
+
+```objc
+[AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
+```
+
+**Swift**
+
+```swift
+Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-### Syntax
+{% tab title="iOS (ACP 1.x)" %}
 
-```objectivec
+**Syntax**
+
+```objc
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
 
-* _linkageFields_ is a dictionary that contains the linkage field key-value pairs.
+**Example**
 
-### Examples
+**Objective-C**
 
-### Objective C
-
-```objectivec
+```objc
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
-### Swift
+**Swift**
 
 ```swift
-var linkageFields = [String: String]()
-linkageFields["cusFirstName"] = "John"
-linkageFields["cusLastName"] = "Doe"
-linkageFields["cusEmail"] = "john.doe@email.com"
-ACPCampaign.setLinkageFields(linkageFields)
+ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
 
-### Syntax
+**Syntax**
 
 ```javascript
 setLinkageFields(linkageFields: { string: string })
 ```
 
-* _linkageFields_ is a map that contains the linkage field key-value pairs.
-
-### Example
+**Example**
 
 ```javascript
 ACPCampaign.setLinkageFields({"firstName": "John"});
 ```
+
 {% endtab %}
+
 {% endtabs %}
+
+---
 
