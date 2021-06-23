@@ -1,24 +1,20 @@
 # Signal extension and Rules Engine integration
 
-The rules that you set up can use the available triggers and conditions, which results in one of the following actions:
+The rules that you set up can use the available triggers and conditions, which result in one of the following actions:
 
-* Send Postback
-* Send PII
-* Open URL
+* Send a postback
+* Send Personally Identifiable Information (PII)
+* Open a URL
 
 After these actions have been configured to be triggered and published, the Signal extension carries out the requested actions.
 
-To send PII data to external destinations, the `PII` action can trigger the Rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
+To send PII data to external destinations, the `PII` action can trigger the rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
 
 ## Rules tokens <a id="rules-tokens"></a>
 
-Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is \`
+Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%TOKEN%}`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%TOKEN%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
-`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example,`
-
-`can be used in the Signal postback action, where`My Data element for ECID\` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
-
-The token can also be one of the reserved key names. For more information, see [Matching and Retrieving Values by keys](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
+The token can also be one of the reserved key names. For more information, see the [matching and retrieving values by keys tutorial](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details#matching-and-retrieving-values-by-keys).
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
