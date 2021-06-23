@@ -1,6 +1,6 @@
 # Attach data to SDK events
 
-The attach data_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS\, and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
+The attach data_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS), and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
 
 To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/). 
 
@@ -82,8 +82,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
    In this example, the rule is named "Attach Places Data to Analytics Track Action Events".
 
 2. Under the **Events** section, click **Add**.
-3. From the **Extension** drop-down list, select **Mobile Core**.
-4. From the **Event Type** drop-down list, select **Track Action**.
+3. From the **Extension** dropdown list, select **Mobile Core**.
+4. From the **Event Type** dropdown list, select **Track Action**.
 5. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/setevent.png)
@@ -91,8 +91,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
 ### Define the action
 
 1. Under the **Actions** section, click **Add**.
-2. From the **Extension** drop-down list, select **Mobile Core**.
-3. From the **Action Type** drop-down list, select **Attach Data**.
+2. From the **Extension** dropdown list, select **Mobile Core**.
+3. From the **Action Type** dropdown list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
@@ -141,8 +141,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
    In this example, the rule is named **Attach additional data to Target retrieve location Events**.
 
 2. Under the **Events** section, click **Add**.
-3. From the **Extension** drop-down list, select **Adobe Target**.
-4. From the **Event Type** drop-down list, select **Content Requested**.
+3. From the **Extension** dropdown list, select **Adobe Target**.
+4. From the **Event Type** dropdown list, select **Content Requested**.
 5. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/target-attach-data-event-setup.png)
@@ -150,8 +150,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
 ### Define the action
 
 1. Under the **Actions** section, click **Add**.
-2. From the **Extension** drop-down list, select **Mobile Core**.
-3. From the **Action Type** drop-down list, select **Attach Data**.
+2. From the **Extension** dropdown list, select **Mobile Core**.
+3. From the **Action Type** dropdown list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
@@ -213,8 +213,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
    In this example, the rule is named "Attach additional data to Target prefetch content Events".
 
 2. Under the **Events** section, click **Add**.
-3. From the **Extension** drop-down list, select **Adobe Target**.
-4. From the **Event Type** drop-down list, select **Content Prefetched**.
+3. From the **Extension** dropdown list, select **Adobe Target**.
+4. From the **Event Type** dropdown list, select **Content Prefetched**.
 5. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-prefetch.png)
@@ -222,8 +222,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
 ### Define the action
 
 1. Under the **Actions** section, click **Add**.
-2. From the **Extension** drop-down list, select **Mobile Core**.
-3. From the **Action Type** drop-down list, select **Attach Data**.
+2. From the **Extension** dropdown list, select **Mobile Core**.
+3. From the **Action Type** dropdown list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
@@ -283,8 +283,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
    In this example, the rule is named "Attach additional data to Target location clicked Events".
 
 2. Under the **Events** section, click **Add**.
-3. From the **Extension** drop-down list, select **Adobe Target**.
-4. From the **Event Type** drop-down list, select **Location Clicked**.
+3. From the **Extension** dropdown list, select **Adobe Target**.
+4. From the **Event Type** dropdown list, select **Location Clicked**.
 5. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-location-clicked.png)
@@ -292,8 +292,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
 ### Define the action
 
 1. Under the **Actions** section, click **Add**.
-2. From the **Extension** drop-down list, select **Mobile Core**.
-3. From the **Action Type** drop-down list, select **Attach Data**.
+2. From the **Extension** dropdown list, select **Mobile Core**.
+3. From the **Action Type** dropdown list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
@@ -340,8 +340,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
    In this example, the rule is named "Attach additional data to Target location displayed Events".
 
 2. Under the **Events** section, click **Add**.
-3. From the **Extension** drop-down list, select **Adobe Target**.
-4. From the **Event Type** drop-down list, select **Location Displayed**.
+3. From the **Extension** dropdown list, select **Adobe Target**.
+4. From the **Event Type** dropdown list, select **Location Displayed**.
 5. Click **Keep Changes**.
 
 ![](../../.gitbook/assets/target-attach-data-event-setup-location-displayed.png)
@@ -349,8 +349,8 @@ If you do not have existing rules for this property, the **Create New Rule** but
 ### Define the action
 
 1. Under the **Actions** section, click **Add**.
-2. From the **Extension** drop-down list, select **Mobile Core**.
-3. From the **Action Type** drop-down list, select **Attach Data**.
+2. From the **Extension** dropdown list, select **Mobile Core**.
+3. From the **Action Type** dropdown list, select **Attach Data**.
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
