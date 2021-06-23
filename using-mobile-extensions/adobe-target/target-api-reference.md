@@ -1,7 +1,5 @@
 # Target API reference
 
-This document contains usage information for the public functions and classes in `AEPTarget`.
-
 ---
 ### clearPrefetchCache
 This API clears the in-memory cache that contains the prefetched offers.
