@@ -15,7 +15,23 @@ String audienceExtensionVersion = Audience.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+```swift
+let audienceExtensionVersion  = Audience.extensionVersion()
+```
+
+**Objective C**
+
+```swift
+NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective C**
 
 ```objectivec
@@ -106,7 +122,46 @@ Audience.getVisitorProfile(visitorProfileCallback);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### getVisitorProfile
+
+This API returns the visitor profile that was most recently obtained. 
+
+#### **Syntax**
+
+```swift
+static func getVisitorProfile(completion: @escaping ([String: String]?, Error?) -> Void)
+```
+
+#### **Example**
+
+**Swift**
+
+```swift
+Audience.getVisitorProfile { (visitorProfile, error) in
+                 print("#getVisitorProfile - retrieved profile: \(String(describing: visitorProfile))")
+                 if error != nil {
+                   // handle the error here
+                   }
+                  }
+```
+
+**Objective C**
+
+```objectivec
+[AEPMobileAudience getVisitorProfile:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError * _Nullable error) {
+            if (error) {
+                // handle the error here
+              } else {
+                // handle the returned visitorProfile dictionary here
+              }
+        }];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getVisitorProfile
 
 {% hint style="info" %}
@@ -253,7 +308,35 @@ Audience.reset();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### **reset**
+
+This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
+
+#### **Syntax**
+
+```swift
+static func reset()
+```
+
+#### **Examples**
+
+**Swift**
+
+```swift
+Audience.reset()
+```
+
+**Objective C**
+
+```objectivec
+[AEPMobileAudience reset];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### **reset**
 
 This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
@@ -335,7 +418,52 @@ Audience.signalWithData(traits, visitorProfileCallback);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### signalWithData
+
+This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
+
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
+
+#### **Syntax**
+
+```swift
+static func signalWithData(data: [String: String], completion: @escaping ([String: String]?, Error?) -> Void) 
+```
+
+* `data` is the traits data for the current visitor.
+* `callback` is the void method that is invoked with the visitor's profile as a parameter.
+
+#### **Example**
+
+**Swift**
+
+```swift
+Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
+            // handle the returned visitorProfile dictionary here
+            if error != nil {
+            // handle the error here
+                 }
+             }
+```
+
+{% endtab %}
+
+**Objective-C**
+
+```objectivec
+ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
+[AEPMobileAudience signalWithData:traits completion:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError* _Nullable error) {
+        if (error) {
+            // handle the error here
+          } else {
+            // handle the returned visitorProfile dictionary here
+          }
+        }];
+```
+
+{% tab title="iOS (ACP 2.x)" %}
 ### signalWithData
 
 {% hint style="info" %}
@@ -359,22 +487,21 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 * `data` is the traits data for the current visitor.
 * `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
-#### Examples\*\*
+#### **Example**
 
 **Objective-C**
 
 ```objectivec
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
-[ACPAudience signalWithData:traits callback:^(NSDictionary* visitorProfile){
-  // handle the visitorProfile here
+[ACPAudience signalWithData:traits callback:^(NSDictionary* _Nullable visitorProfile){
+  // handle the returned visitorProfile dictionary here
 }];
 
-[ACPAudience signalWithData:(NSDictionary<NSString *,NSString *> * _Nonnull)
-          withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
+[ACPAudience signalWithData:traits withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
   if (error) {
-    // handle error here
+    // handle the error here
   } else {
-    // handle the returned visitorProfile here
+    // handle the returned visitorProfile dictionary here
   }
 }];
 ```
