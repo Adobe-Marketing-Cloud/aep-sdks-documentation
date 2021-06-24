@@ -15,7 +15,7 @@ String signalExtensionVersion = Signal.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective C**
 
 ```objectivec
