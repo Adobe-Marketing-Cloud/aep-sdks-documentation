@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 24, 2021
+
+### iOS ACPPlacesMonitor 2.1.4
+
+* Update to iOS 14 method for retrieving `CLAuthorizationStatus`.
+* Updating README.md with notice of deprecation on August 31, 2021.
+
 ## June 21, 2021
 
 ### iOS AEPCore 3.2.1
