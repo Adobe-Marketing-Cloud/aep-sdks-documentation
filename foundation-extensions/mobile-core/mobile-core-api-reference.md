@@ -231,6 +231,7 @@ ACPCore.track(action: "action name", data: ["key": "value"])
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **Javascript**
 
 ### trackAction
@@ -270,6 +271,8 @@ Future<void> trackAction (String action, {Map<String, String> contextData});
 ```dart
 FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
+{% endtab %}
+
 {% tab title="Unity"} 
 
 **C\#**
