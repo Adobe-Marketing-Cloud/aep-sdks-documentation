@@ -43,7 +43,7 @@
     * [Lifecycle metrics](foundation-extensions/mobile-core/lifecycle/lifecycle-metrics.md)
     * [Configuration keys](foundation-extensions/mobile-core/lifecycle/configuration-keys.md)
   * [Signal](foundation-extensions/mobile-core/signals/README.md)
-    * [Migrating to AEPSignal Reference](foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
+    * [Migrating to AEPSignal reference](foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
     * [Signal API reference](foundation-extensions/mobile-core/signals/signal-api-reference.md)
     * [Signal event reference](foundation-extensions/mobile-core/signals/signal-event-reference.md)
   * [Rules Engine](foundation-extensions/mobile-core/rules-engine/README.md)
