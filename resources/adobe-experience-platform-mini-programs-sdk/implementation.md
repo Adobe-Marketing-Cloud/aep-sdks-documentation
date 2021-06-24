@@ -79,17 +79,17 @@ You can use the following screen and action tracking APIs to measure your user's
 Actions are events that occur in your app. Use this API to track and measure an action, where each action has one or more corresponding metrics that increment each time the event occurs. For example, you can call this API for every new subscription, every time an article is viewed, or every time a level is completed.
 
 {% hint style="info" %}
-`trackAction` reports the action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable (`action=value`).
+`trackAction` reports the action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ```javascript
 AdobeSDK.trackAction("action", { "example.key": "value" });
 ```
 
-### AdobeSDK.trackState(stateName, contextData)
+### AdobeSDK.trackState\(stateName, contextData\)
 
 {% hint style="info" %}
-In Analytics, `trackState` reports the view state as the **Page Name**, and state views are reported as the **Page View**. The value is sent to Adobe Analytics by using the page name variable (`pagename=value`).
+In Analytics, `trackState` reports the view state as the **Page Name**, and state views are reported as the **Page View**. The value is sent to Adobe Analytics by using the page name variable \(`pagename=value`\).
 
 To track when users switch to screens or pages, implement this API in the `onShow` method of the `Page`.
 {% endhint %}
