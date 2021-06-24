@@ -123,7 +123,9 @@ If you installed and configured the Adobe Analytics extension, this method sends
 {% endhint %}
 
 {% tabs %}
+
 {% tab title="Android" %}
+
 **Java**
 
 ### trackAction
@@ -190,6 +192,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
 **Objective-C**
 
 ### trackAction
@@ -252,7 +255,7 @@ ACPCore.trackAction("action name", {"key": "value"});
 ```
 {% endtab %}
 
-{% tab title="Flutter"}
+{% tab title="Flutter" %}
 
 **Dart**
 
@@ -273,7 +276,7 @@ FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
 {% endtab %}
 
-{% tab title="Unity"} 
+{% tab title="Unity" %} 
 
 **C\#**
 
