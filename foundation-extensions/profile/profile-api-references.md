@@ -59,7 +59,7 @@ UserProfile.updateUserAttributes(profileMap);
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### updateUserAttributes
 
 Sets the user profile attributes key and value.
@@ -102,7 +102,7 @@ UserProfile.updateUserAttributes(attributeDict: profileMap)
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -434,7 +434,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### **removeUserAttribute**
 
 Removes the user profile attribute for the given key.
@@ -472,7 +472,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### removeUserAttribute
 
 Removes the user profile attribute for the given key.
@@ -728,7 +728,7 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
@@ -761,7 +761,7 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
