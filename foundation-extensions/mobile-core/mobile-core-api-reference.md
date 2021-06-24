@@ -146,7 +146,50 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Objective-C**
+
+ ### trackAction
+
+ **Syntax**
+
+ ```swift
+ @objc(trackAction:data:)
+ static func track(action: String?, data: [String: Any]?)
+ ```
+
+ * _action_ contains the name of the action to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+ **Example**
+
+ ```objectivec
+  [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
+ ```
+
+ **Swift**
+
+ ### trackAction
+
+ **Syntax**
+
+ ```swift
+ static func track(action: String?, data: [String: Any]?)
+ ```
+
+ * _action_ contains the name of the action to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+ **Example**
+
+ ```swift
+ MobileCore.track(action: "action name", data: ["key": "value"])
+ ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### trackAction
@@ -382,7 +425,51 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Objective-C**
+
+### trackState
+
+ **Syntax**
+
+ ```swift
+ @objc(trackState:data:)
+ static func track(state: String?, data: [String: Any]?)
+ ```
+
+ * _state_ contains the name of the state to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+ **Example**
+
+ ```objectivec
+  [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
+ ```
+
+ **Swift**
+
+ ### trackState
+
+ **Syntax**
+
+ ```swift
+ static func track(state: String?, data: [String: Any]?)
+ ```
+
+ * _state_ contains the name of the state to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+ **Example**
+
+ ```swift
+ MobileCore.track(state: "state name", data: ["key": "value"])
+ ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
 **Objective-C**
 
 ### trackState
@@ -589,7 +676,7 @@ MobileCore.setPushIdentifier(token);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setPushIdentifier
@@ -662,7 +749,46 @@ MobileCore.collectPII(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Objective-C**
+
+ ### collectPii
+
+ **Syntax**
+
+ ```swift
+ @objc(collectPii:)
+ public static func collectPii(_ data: [String: Any])
+ ```
+
+ **Example**
+
+ ```objectivec
+ [AEPMobileCore collectPii:data:@{@"key1" : @"value1",
+                            @"key2" : @"value2"
+                            }];
+ ```
+
+ **Swift**
+
+ ### collectPii
+
+ **Syntax**
+
+ ```swift
+ public static func collectPii(_ data: [String: Any])
+ ```
+
+ **Example**
+
+ ```objectivec
+ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+ ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### collectPii
@@ -748,9 +874,65 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 * Tracking Deep Link click-through.
 * Tracking Push Message click-through
 * Tracking Local Notification click-through
+
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Objective-C**
+
+ This method should be called to support the following use cases:
+
+ * Tracking Deep Link click-throughs
+   * From `application:didFinishLaunchingWithOptions`
+   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+ * Tracking Push Message click-through
+   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+
+ #### collectLaunchInfo
+
+ **Syntax**
+
+ ```text
+ @objc(collectLaunchInfo:)
+ public static func collectLaunchInfo(_ userInfo: [String: Any])
+ ```
+
+ **Example**
+
+ ```text
+  [AEPMobileCore collectLaunchInfo:launchOptions];
+ ```
+
+ **Swift**
+
+ This method should be called to support the following use cases:
+
+ * Tracking Deep Link click-throughs
+   * From `application(_:didFinishLaunchingWithOptions:)`
+   * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+ * Tracking Push Message click-through
+   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+
+ #### collectLaunchInfo
+
+ **Syntax**
+
+ ```swift
+ public static func collectLaunchInfo(_ userInfo: [String: Any])
+ ```
+
+ **Example**
+
+ ```swift
+ AEPCore.collectLaunchInfo(userInfo)
+ ```
+
+{% endtab %}
+
+
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 The `collectLaunchInfo` method should be used in the following use cases:
@@ -849,7 +1031,47 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Objective-C
+
+ ### getSdkIdentities
+
+ #### Syntax
+
+ ```objectivec
+ @objc(getSdkIdentities:)
+ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+ ```
+
+ * _callback_ is invoked with the SDK identities as a JSON string.
+ * _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
+
+ #### Example
+
+ **Objective-C**
+
+ ```objectivec
+ [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+     if (error) {
+       // handle error here
+     } else {
+       // handle the retrieved identities
+     }
+ }];
+ ```
+
+ **Swift**
+
+ ```swift
+ MobileCore.getSdkIdentities { (content, error) in
+     // handle completion
+ }
+ ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### getSdkIdentities
@@ -919,7 +1141,7 @@ MobileCore.resetIdentities();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 Note, this method is only available in Mobile Core v.1.8.0 and above.
@@ -1081,7 +1303,44 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Objective C**
+
+ #### setLogLevel
+
+ **Syntax**
+
+ ```swift
+ @objc(setLogLevel:)
+ public static func setLogLevel(_ level: LogLevel)
+ ```
+
+ **Example**
+
+ ```text
+ [AEPMobileCore setLogLevel: AEPLogLevelTrace];
+ ```
+
+ **Swift**
+
+ #### setLogLevel
+
+ **Syntax**
+
+ ```swift
+ public static func setLogLevel(_ level: LogLevel)
+ ```
+
+ **Example**
+
+ ```swift
+ MobileCore.setLogLevel(.trace)
+ ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setLogLevel
@@ -1272,7 +1531,7 @@ LoggingMode mode = MobileCore.getLogLevel();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### getLogLevel
@@ -1377,7 +1636,7 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
@@ -1478,7 +1737,7 @@ ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
 Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
 
 {% tabs %}
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective C**
 
 ### registerURLHandler
@@ -1508,7 +1767,7 @@ This API _must_ be called in `AppDidFinishLaunching` and before any other intera
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setAppGroup
@@ -1623,7 +1882,7 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### ACPError
 
 The `ACPError` class shows the errors that can be passed to a completion handler callback from any API which uses one:
