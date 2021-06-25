@@ -4,12 +4,19 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 24, 2021
+
+### iOS ACPPlacesMonitor 2.1.4
+
+* Update to iOS 14 method for retrieving `CLAuthorizationStatus`.
+* Updating README.md with notice of deprecation on August 31, 2021.
+
 ## June 22, 2021
 
 ### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain the `&` token
-* Fixed a bug where JSON objects containing empty strings were not handled correctly
+* Fixed a Rules Engine bug affecting strings that contain the `&` character.
+* Fixed a bug where JSON objects containing empty strings were not handled correctly.
 
 ## June 21, 2021
 
@@ -21,6 +28,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
 
+## June 17, 2021
+
+### iOS Assurance 1.1.3
+
+- Assurance state is now properly shared when reconnecting to an established session.
+
+### Android Assurance 1.0.3
+
+* Assurance state is now properly shared when reconnecting to an established session.
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
@@ -151,7 +167,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 
 ### iOS Mobile Services 1.1.1
 
-* Fixed a crash that could happen while downloading remote assets. 
+* Fixed a crash that could happen while downloading remote assets.
 
 ## April 13, 2021
 
@@ -254,7 +270,7 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 ### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types: 
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
   * Contains
   * Not Contains
   * Starts With
@@ -333,7 +349,7 @@ The included features with this release are:
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * Events persistence.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
+* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
 This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
@@ -349,7 +365,7 @@ The included features with this release are:
 * Ability to create XDM Experience Events and send them to Experience Edge Network. An optional Experience Edge response callback can be registered per event.
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
+* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
 This SDK is compatible with Android Core 1.5.7 and above.
@@ -364,4 +380,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 ### iOS Audience 2.3.0
 
 * Added TVOS support to Audience.
-
