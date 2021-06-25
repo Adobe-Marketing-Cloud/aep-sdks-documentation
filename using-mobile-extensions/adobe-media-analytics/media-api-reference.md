@@ -2241,10 +2241,11 @@ Provides a media tracker with the current media playhead. For accurate tracking,
 
 | Variable Name | Description |
 | :--- | :--- |
-| `time` | Current playhead in seconds. For video-on-demand \(VOD\), the value is specified in seconds from the beginning of the media item. For live streaming, returns the playhead position if available or the current UTC time in seconds if not available. |
+| `time` | Current playhead in seconds. For video-on-demand (VOD), the value is specified in seconds from the beginning of the media item. For live streaming, the value is specified as the number of seconds since midnight UTC on that day |
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### updateCurrentPlayhead
 
 **Syntax**
