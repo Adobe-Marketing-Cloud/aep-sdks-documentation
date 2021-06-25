@@ -848,9 +848,9 @@ If the Adobe Analytics extension is enabled in your SDK, collecting this launch 
 {% tab title="Android" %}
 The Android SDK automatically registers an `Application.ActivityLifecycleCallbacks`and listens for `onActivityResumed`. When an activity is resumed, SDK collects the data from the activity. Currently, it is being used in the following scenarios:
 
-* Tracking Deep Link click-through.
-* Tracking Push Message click-through
-* Tracking Local Notification click-through
+* Tracking deep link clickthrough.
+* Tracking push message clickthrough
+* Tracking Local Notification clickthrough
 
 {% endtab %}
 
@@ -860,10 +860,10 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 
  This method should be called to support the following use cases:
 
- * Tracking Deep Link click-throughs
+ * Tracking deep link clickthroughs
    * From `application:didFinishLaunchingWithOptions`
    * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
- * Tracking Push Message click-through
+ * Tracking push message clickthrough
    * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
  #### collectLaunchInfo
@@ -885,10 +885,10 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 
  This method should be called to support the following use cases:
 
- * Tracking Deep Link click-throughs
+ * Tracking deep link clickthroughs
    * From `application(_:didFinishLaunchingWithOptions:)`
    * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
- * Tracking Push Message click-through
+ * Tracking push message clickthrough
    * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
  #### collectLaunchInfo
@@ -914,10 +914,10 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 
 The `collectLaunchInfo` method should be used in the following use cases:
 
-* Tracking a Deep Link click-through
+* Tracking a deep link clickthrough
   * From `application:didFinishLaunchingWithOptions`
   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
-* Tracking a Push Message click-through
+* Tracking a push message clickthrough
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
 #### collectLaunchInfo
@@ -938,10 +938,10 @@ The `collectLaunchInfo` method should be used in the following use cases:
 
 The `collectLaunchInfo` method should be used in the following use cases:
 
-* Tracking a Deep Link click-through
+* Tracking a deep link clickthrough
   * From `application(_:didFinishLaunchingWithOptions:)`
   * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
-* Tracking a Push Message click-through
+* Tracking a push message clickthrough
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
 #### collectLaunchInfo

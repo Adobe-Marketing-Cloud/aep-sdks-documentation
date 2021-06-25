@@ -107,7 +107,7 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 
 #### Example
 
- #### Objective-C
+#### Objective-C
 
  ```objectivec
  [AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
@@ -229,19 +229,21 @@ MobileCore.updateConfiguration(data);
 
  #### Example
 
- #### Objective-C
+#### Swift
+
+ ```swift
+ let updatedConfig = ["global.privacy":"optedout"]
+ MobileCore.updateConfigurationWith(configDict: updatedConfig)
+ ```
+ 
+#### Objective-C
 
  ```objectivec
  NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
  [AEPMobileCore updateConfiguration:updatedConfig];
  ```
 
- #### Swift
 
- ```swift
- let updatedConfig = ["global.privacy":"optedout"]
- MobileCore.updateConfigurationWith(configDict: updatedConfig)
- ```
 
 {% endtab %}
 
@@ -375,7 +377,7 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
  **Objective-C**
 
  ```objectivec
- NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
+ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
  [AEPMobileCore configureWithFilePath:filePath];
  ```
 
