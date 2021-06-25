@@ -15,6 +15,22 @@ String coreExtensionVersion = MobileCore.extensionVersion();
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+```swift
+let version = MobileCore.extensionVersion
+```
+
+**Objective C**
+
+```objectivec
+NSString *version = [AEPMobileCore extensionVersion];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 **Objective C**
@@ -235,7 +251,7 @@ MobileCore.updateConfiguration(data);
  let updatedConfig = ["global.privacy":"optedout"]
  MobileCore.updateConfigurationWith(configDict: updatedConfig)
  ```
- 
+
 #### Objective-C
 
  ```objectivec

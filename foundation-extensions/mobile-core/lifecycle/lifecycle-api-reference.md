@@ -15,6 +15,22 @@ String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+```swift
+let version = Lifecycle.extensionVersion
+```
+
+**Objective C**
+
+```objectivec
+NSString *version = [AEPMobileLifecycle extensionVersion];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 **Objective C**
@@ -111,6 +127,11 @@ This method should be called from the Activity onResume method.
 
 {% tab title="iOS (AEP 3.x)" %}
 
+#### Swift
+
+ ```swift
+ MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+ ```
 #### Objective-C
 
  **Syntax**
@@ -130,12 +151,6 @@ This method should be called from the Activity onResume method.
 
  ```text
  [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
- ```
-
- #### Swift
-
- ```swift
- MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
  ```
 
 {% endtab %}
@@ -269,6 +284,12 @@ MobileCore.lifecyclePause();
 
 {% tab title="iOS (AEP 3.x)" %}
 
+#### Swift
+
+ ```swift
+ MobileCore.lifecyclePause()
+ ```
+
 #### Objective-C
 
  **Syntax**
@@ -282,12 +303,6 @@ MobileCore.lifecyclePause();
 
  ```text
  [AEPMobileCore lifecyclePause];
- ```
-
- #### Swift
-
- ```swift
- MobileCore.lifecyclePause()
  ```
 
 {% endtab %}
