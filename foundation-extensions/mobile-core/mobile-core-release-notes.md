@@ -4,8 +4,8 @@
 
 ### iOS Core 2.9.4
 
-* Fixed a Rules Engine bug affecting strings that contain the `&` token
-* Fixed a bug where JSON objects containing empty strings were not handled correctly
+* Fixed a Rules Engine bug affecting strings that contain the `&` character.
+* Fixed a bug where JSON objects containing empty strings were not handled correctly.
 
 ## June 21, 2021
 
