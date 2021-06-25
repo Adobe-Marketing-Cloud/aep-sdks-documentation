@@ -11,6 +11,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Update to iOS 14 method for retrieving `CLAuthorizationStatus`.
 * Updating README.md with notice of deprecation on August 31, 2021.
 
+## June 22, 2021
+
+### iOS Core 2.9.4
+
+* Fixed a Rules Engine bug affecting strings that contain the `&` character.
+* Fixed a bug where JSON objects containing empty strings were not handled correctly.
+
 ## June 21, 2021
 
 ### iOS AEPCore 3.2.1
