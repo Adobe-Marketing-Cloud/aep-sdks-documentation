@@ -150,11 +150,29 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 {% tab title="iOS (AEP 3.x)" %}
 
+**Swift**
+
+### trackAction
+
+**Syntax**
+
+ ```swift
+ static func track(action: String?, data: [String: Any]?)
+ ```
+
+ * _action_ contains the name of the action to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+ ```swift
+ MobileCore.track(action: "action name", data: ["key": "value"])
+ ```
 **Objective-C**
 
- ### trackAction
+### trackAction
 
- **Syntax**
+**Syntax**
 
  ```swift
  @objc(trackAction:data:)
@@ -164,29 +182,10 @@ MobileCore.trackAction("loginClicked", additionalContextData);
  * _action_ contains the name of the action to track.
  * _contextData_ contains the context data to attach on this hit.
 
- **Example**
+**Example**
 
  ```objectivec
   [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
- ```
-
- **Swift**
-
- ### trackAction
-
- **Syntax**
-
- ```swift
- static func track(action: String?, data: [String: Any]?)
- ```
-
- * _action_ contains the name of the action to track.
- * _contextData_ contains the context data to attach on this hit.
-
- **Example**
-
- ```swift
- MobileCore.track(action: "action name", data: ["key": "value"])
  ```
 
 {% endtab %}
@@ -404,11 +403,30 @@ MobileCore.trackState("homePage", additionalContextData);
 
 {% tab title="iOS (AEP 3.x)" %}
 
+**Swift**
+
+### trackState
+
+**Syntax**
+
+ ```swift
+ static func track(state: String?, data: [String: Any]?)
+ ```
+
+ * _state_ contains the name of the state to track.
+ * _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+ ```swift
+ MobileCore.track(state: "state name", data: ["key": "value"])
+ ```
+
 **Objective-C**
 
 ### trackState
 
- **Syntax**
+**Syntax**
 
  ```swift
  @objc(trackState:data:)
@@ -418,29 +436,10 @@ MobileCore.trackState("homePage", additionalContextData);
  * _state_ contains the name of the state to track.
  * _contextData_ contains the context data to attach on this hit.
 
- **Example**
+**Example**
 
  ```objectivec
   [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
- ```
-
- **Swift**
-
- ### trackState
-
- **Syntax**
-
- ```swift
- static func track(state: String?, data: [String: Any]?)
- ```
-
- * _state_ contains the name of the state to track.
- * _contextData_ contains the context data to attach on this hit.
-
- **Example**
-
- ```swift
- MobileCore.track(state: "state name", data: ["key": "value"])
  ```
 
 {% endtab %}
@@ -653,6 +652,43 @@ MobileCore.setPushIdentifier(token);
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+### setPushIdentifier
+
+ **Syntax**
+
+ ```swift
+public static func setPushIdentifier(_ deviceToken: Data?)
+ ```
+
+ **Example**
+
+ ```objectivec
+MobileCore.setPushIdentifier(deviceToken)
+ ```
+
+**Objective-C**
+
+### setPushIdentifier
+
+ **Syntax**
+
+ ```swift
+ @objc(setPushIdentifier:)
+ public static func setPushIdentifier(_ deviceToken: Data?)
+ ```
+
+ **Example**
+
+ ```objectivec
+ [AEPMobileCore setPushIdentifier:deviceToken];
+ ```
+
+ {% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
@@ -728,6 +764,22 @@ MobileCore.collectPII(data);
 
 {% tab title="iOS (AEP 3.x)" %}
 
+ **Swift**
+
+### collectPii
+
+ **Syntax**
+
+ ```swift
+public static func collectPii(_ data: [String: Any])
+ ```
+
+ **Example**
+
+ ```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+ ```
+
 **Objective-C**
 
  ### collectPii
@@ -745,22 +797,6 @@ MobileCore.collectPII(data);
  [AEPMobileCore collectPii:data:@{@"key1" : @"value1",
                             @"key2" : @"value2"
                             }];
- ```
-
- **Swift**
-
- ### collectPii
-
- **Syntax**
-
- ```swift
- public static func collectPii(_ data: [String: Any])
- ```
-
- **Example**
-
- ```objectivec
- MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
  ```
 
 {% endtab %}
