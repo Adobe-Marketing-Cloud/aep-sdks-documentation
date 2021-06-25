@@ -892,53 +892,52 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 
 {% tab title="iOS (AEP 3.x)" %}
 
-**Objective-C**
+**Swift**
 
- This method should be called to support the following use cases:
-
- * Tracking deep link clickthroughs
-   * From `application:didFinishLaunchingWithOptions`
-   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
- * Tracking push message clickthrough
-   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
-
- #### collectLaunchInfo
-
- **Syntax**
-
- ```text
- @objc(collectLaunchInfo:)
- public static func collectLaunchInfo(_ userInfo: [String: Any])
- ```
-
- **Example**
-
- ```text
-  [AEPMobileCore collectLaunchInfo:launchOptions];
- ```
-
- **Swift**
-
- This method should be called to support the following use cases:
-
+This method should be called to support the following use cases:
  * Tracking deep link clickthroughs
    * From `application(_:didFinishLaunchingWithOptions:)`
    * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
  * Tracking push message clickthrough
    * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
- #### collectLaunchInfo
+#### collectLaunchInfo
 
- **Syntax**
+**Syntax**
 
  ```swift
  public static func collectLaunchInfo(_ userInfo: [String: Any])
  ```
 
- **Example**
+**Example**
 
  ```swift
  AEPCore.collectLaunchInfo(userInfo)
+ ```
+
+**Objective-C**
+
+This method should be called to support the following use cases:
+
+* Tracking deep link clickthroughs
+   * From `application:didFinishLaunchingWithOptions`
+   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+ * Tracking push message clickthrough
+   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+
+#### collectLaunchInfo
+
+**Syntax**
+
+ ```text
+@objc(collectLaunchInfo:)
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+ ```
+
+**Example**
+
+ ```text
+ [AEPMobileCore collectLaunchInfo:launchOptions];
  ```
 
 {% endtab %}
@@ -1046,11 +1045,18 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 {% tab title="iOS (AEP 3.x)" %}
 
+**Swift**
+
+ ```swift
+ MobileCore.getSdkIdentities { (content, error) in
+     // handle completion
+ }
+ ```
 #### Objective-C
 
- ### getSdkIdentities
+### getSdkIdentities
 
- #### Syntax
+#### Syntax
 
  ```objectivec
  @objc(getSdkIdentities:)
@@ -1060,9 +1066,9 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
  * _callback_ is invoked with the SDK identities as a JSON string.
  * _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
 
- #### Example
+#### Example
 
- **Objective-C**
+**Objective-C**
 
  ```objectivec
  [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
@@ -1073,15 +1079,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
      }
  }];
  ```
-
- **Swift**
-
- ```swift
- MobileCore.getSdkIdentities { (content, error) in
-     // handle completion
- }
- ```
-
+ 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -1318,37 +1316,36 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 
 {% tab title="iOS (AEP 3.x)" %}
 
+**Swift**
+
+#### setLogLevel
+
+**Syntax**
+
+ ```swift
+ public static func setLogLevel(_ level: LogLevel)
+ ```
+
+**Example**
+
+ ```swift
+ MobileCore.setLogLevel(.trace)
+ ```
 **Objective C**
 
- #### setLogLevel
+#### setLogLevel
 
- **Syntax**
+**Syntax**
 
  ```swift
  @objc(setLogLevel:)
  public static func setLogLevel(_ level: LogLevel)
  ```
 
- **Example**
+**Example**
 
  ```text
  [AEPMobileCore setLogLevel: AEPLogLevelTrace];
- ```
-
- **Swift**
-
- #### setLogLevel
-
- **Syntax**
-
- ```swift
- public static func setLogLevel(_ level: LogLevel)
- ```
-
- **Example**
-
- ```swift
- MobileCore.setLogLevel(.trace)
  ```
 
 {% endtab %}
