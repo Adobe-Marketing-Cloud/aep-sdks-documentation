@@ -8,7 +8,7 @@
 
 ### Adobe Journey Optimizer Launch Extension
 
-You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
+* You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
 
 ## June 16, 2021
 
