@@ -37,12 +37,25 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Assurance 1.0.3
 
 * Assurance state is now properly shared when reconnecting to an established session.
+
+### iOS Messaging 1.0.0
+
+* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+
+### Adobe Journey Optimizer Launch Extension
+
+* You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
 
 * Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 * Resolved an issue with Campaign module details not being returned.
+
+### Android Messaging 1.0.0
+
+* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ## June 15, 2021
 

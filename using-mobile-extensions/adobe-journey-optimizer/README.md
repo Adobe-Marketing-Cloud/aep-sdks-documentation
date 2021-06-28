@@ -73,7 +73,7 @@ Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - se
 The datasets selected should use a schema that uses the Push Notification Tracking XDM mixin. The pre-created CJM Push Tracking Dataset contains this XDM mixin in its schema definition. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 {% endhint %}
 
-![](../../.gitbook/assets/Screen-Shot-2021-05-28-at-4.04.47-PM.png)
+![](../../.gitbook/assets/aoj-launch-configuration.png)
 
 ### Implement extension in mobile app
 
@@ -91,7 +91,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
-   implementation 'com.adobe.marketing.mobile:messaging:1.0.0-beta-1'
+   implementation 'com.adobe.marketing.mobile:messaging:1.+'
    ```
 
 2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
@@ -111,7 +111,7 @@ After you have integrated [Mobile Core](../../foundation-extensions/mobile-core/
        pod 'AEPCore'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
-       pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git', :branch => 'main'
+       pod 'AEPMessaging'
    end
    ```
 
