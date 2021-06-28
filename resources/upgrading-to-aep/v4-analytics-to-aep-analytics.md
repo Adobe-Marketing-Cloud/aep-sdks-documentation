@@ -20,7 +20,7 @@ dependencies {
 }
 ```
 
-Otherwise, if the v4 Mobile SDK library is linked as a jar, search for `adobeMobileLibrary` in your project and remove the jar file. 
+Alternatively, if the v4 Mobile SDK library is linked as a jar, search for `adobeMobileLibrary` in your project and remove the jar file. 
 
 {% endtab %}
 
@@ -35,7 +35,7 @@ target 'YourTarget' do
 end
 ```
 
-Otherwise, if the v4 Mobile SDK library is linked in Xcode, select the application target and go to `Build Phases`, then `Link Binary With Libraries` and remove `AdobeMobileLibrary.a`.
+Alternatively, if the v4 Mobile SDK library is linked in Xcode, select the application target and go to `Build Phases`, then `Link Binary With Libraries` and remove `AdobeMobileLibrary.a`.
 
 {% endtab %}
 {% endtabs %}
