@@ -62,6 +62,7 @@
   * [Release Notes](foundation-extensions/identity-for-edge-network/release-notes-1.md)
   * [API Reference](foundation-extensions/identity-for-edge-network/api-reference.md)
 * [Adobe Experience Platform Assurance](foundation-extensions/adobe-experience-platform-assurance/README.md)
+  * [Migrating to AEPAssurance(3.x) reference](foundation-extensions/adobe-experience-platform-assurance/migration.md)
   * [Release Notes](foundation-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)

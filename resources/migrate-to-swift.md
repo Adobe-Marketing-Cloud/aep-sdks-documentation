@@ -26,6 +26,7 @@ In addition to `ACPCore` being replaced with `AEPCore`, you will also need to ex
 | ACPTarget | AEPTarget |
 | ACPMedia | AEPMedia |
 | ACPPlaces | AEPPlaces |
+| AEPAssurance (1.x) | AEPAssurance (3.x) |
 
 ### Manual library import
 
@@ -67,12 +68,13 @@ The following code snippets show the new and correct initialization code require
 @import AEPIdentity;
 @import AEPUserProfile;
 @import AEPServices;
+@import AEPAssurance;
 ...
 
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       [AEPMobileCore setLogLevel: AEPLogLevelDebug];
-      [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class] completion:^{
+      [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class, AEPMobileAssurance.class] completion:^{
       [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
       [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
     }];
@@ -84,6 +86,7 @@ The following code snippets show the new and correct initialization code require
 {% tab title="Swift" %}
 ```swift
 // AppDelegate.swift
+import AEPAssurance
 import AEPCore
 import AEPIdentity
 import AEPLifecycle
@@ -91,7 +94,7 @@ import AEPSignal
 import AEPUserProfile
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self], {
+    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self, Assurance.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
           MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
@@ -111,6 +114,7 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Lifecycle](../foundation-extensions/mobile-core/lifecycle/) | [AEPLifecycle](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md) |
 | [Signal](../foundation-extensions/mobile-core/signals/) | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
 | [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
+| [Adobe Experience Platform Assurance](../foundation-extensions/adobe-experience-platform-assurance/) | [AEPAssurance](../foundation-extensions/adobe-experience-platform-assurance/migration.md) |
 | [Adobe Experience Platform Places Service](../foundation-extensions/places/) | [AEPPlaces](../foundation-extensions/places/migration.md) |
 | [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
-
+| [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
