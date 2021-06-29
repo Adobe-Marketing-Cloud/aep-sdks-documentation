@@ -229,6 +229,7 @@ public class DecisionScope{
     }
 }
 ```
+
 ### Proposition/AEPProposition
 
 This class represents the proposition received from the offer decisioning service.
