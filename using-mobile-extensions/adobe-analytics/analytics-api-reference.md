@@ -100,7 +100,7 @@ Force delete, without sending to Analytics, all hits being stored or batched on 
 ### clearQueue
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### Syntax
@@ -121,7 +121,7 @@ Analytics.clearQueue();
 ### clearQueue
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### Syntax
@@ -150,7 +150,7 @@ Analytics.clearQueue()
 ### clearQueue
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### Syntax
@@ -186,7 +186,7 @@ clearQueue();
 ```
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 **Example**
@@ -208,16 +208,14 @@ Future<void> clearQueue();
 ```
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 **Example**
 
 ```dart
-FlutterACPAnalytics.clearQueue();
+FlutterACPAnalytics.clearQueue();{% endtab %}
 ```
-{% endtab %}
-
 {% tab title="Cordova" %}
 #### Cordova
 
@@ -231,7 +229,7 @@ ACPAnalytics.clearQueue = function(success, fail);
 * _fail_ is a callback containing error information if the clearQueue API was executed with errors.
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 **Example**
@@ -255,7 +253,7 @@ public static void ClearQueue()
 ```
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 **Example**
@@ -275,7 +273,7 @@ public static void ClearQueue ();
 ```
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 **Example**
@@ -318,29 +316,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 ### getQueueSize
 
-#### Syntax
-
-```swift
-static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
-```
-
-#### Example
-
-**Swift**
-
-```swift
-Analytics.getQueueSize { (queueSize, error) in
-    // handle queue size 
-}
-```
-
-**Objective-C**
-
-```objectivec
-[AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
-    // handle queue size
- }];
-```
+See [getQueueSizeWithCompletionHandler](./#getQueueSizeWithCompletionHandler)
 
 {% endtab %}
 
@@ -542,7 +518,7 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 
 ```swift
 Analytics.getQueueSize { (queueSize, error) in
-    // handle queue size 
+    // Handle error (if non-nil) or use queueSize.
 }
 ```
 
@@ -550,7 +526,7 @@ Analytics.getQueueSize { (queueSize, error) in
 
 ```objectivec
 [AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
-    // handle queue size
+    // Handle error (if non-nil) or use queueSize.
  }];
 ```
 
@@ -634,30 +610,7 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
-
-#### Syntax
-
-```swift
-static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
-```
-
-#### Example
-
-**Swift**
-
-```swift
-Analytics.getTrackingIdentifier { (trackingId, error) in
-   // check the trackingIdentifier value  
-}
-```
-
-**Objective-C**
-
-```objectivec
-AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-   // check the trackingIdentifier value  
-}];
-```
+See [getTrackingIdentifierWithCompletionHandler](./#getTrackingIdentifierWithCompletionHandler)
 
 {% endtab %}
 
@@ -879,7 +832,7 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 
 ```swift
 Analytics.getTrackingIdentifier { (trackingId, error) in
-   // check the trackingIdentifier value  
+   // Handle the error (if non-nil) or use the trackingId value. 
 }
 ```
 
@@ -887,7 +840,7 @@ Analytics.getTrackingIdentifier { (trackingId, error) in
 
 ```objectivec
 AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-   // check the trackingIdentifier value  
+   // Handle the error (if non-nil) or use the trackingId value.  
 }];
 ```
 
@@ -913,7 +866,7 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 [ACPAnalytics getTrackingIdentifierWithCompletionHandler:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-    // use queue size or handle error
+    // Handle the error (if non-nil) or use the trackingId value.
 }];
 ```
 
@@ -921,7 +874,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
-     // use queue size or handle error  
+     // Handle the error (if non-nil) or use the trackingId value. 
 }
 ```
 {% endtab %}
@@ -937,6 +890,7 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### getVisitorIdentifier
 
 #### Syntax
@@ -963,31 +917,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 ### getVisitorIdentifier
 
-#### Syntax
-
-```swift
-static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
-```
-
-* _callback_ is invoked with the visitor identifier value.
-
-#### Example
-
-**Swift**
-
-```swift
-Analytics.getVisitorIdentifier { (visitorId, error) in
-   // check the visitorIdentifier value or handle error
-}
-```
-
-**Objective-C**
-
-```objectivec
-[AEPMobileAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
-    // check the visitorIdentifier value or handle error
-}];
-```
+See  [getVisitorIdentifierWithCompletionHandler](./#getVisitorIdentifierWithCompletionHandler)
 
 {% endtab %}
 
@@ -1185,15 +1115,13 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _callback_ is invoked with the visitor identifier value.
-
 #### Example
 
 **Swift**
 
 ```swift
 Analytics.getVisitorIdentifier { (visitorId, error) in
-   // check the visitorIdentifier value
+   // check the visitorIdentifier value or handle error
 }
 ```
 
@@ -1245,12 +1173,13 @@ Sends all queued hits to Analytics, regardless of the current hit batch settings
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### sendQueuedHits
 
 This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### **Syntax**
@@ -1273,7 +1202,7 @@ Analytics.sendQueuedHits();
 This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### Syntax
@@ -1303,7 +1232,7 @@ Analytics.sendQueuedHits()
 This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 {% hint style="warning" %}
-Use caution when manually clearing the queue. This process cannot be reversed.
+Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
 #### Syntax
