@@ -27,7 +27,7 @@ static var extensionVersion: String
 ```
 {% endtab %}
 
-{% tab title="AEP 2.x \(Objective-C\)" %}
+{% tab title="AEP 1.x \(Objective-C\)" %}
 ```text
 + (nonnull NSString*) extensionVersion;
 ```
@@ -49,7 +49,7 @@ static func startSession(url: URL?)
 ```
 {% endtab %}
 
-{% tab title="AEP 2.x \(Objective-C\)" %}
+{% tab title="AEP 1.x \(Objective-C\)" %}
 ```text
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
