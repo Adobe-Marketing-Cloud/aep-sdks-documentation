@@ -6,14 +6,14 @@ The AEPTarget extension is implemented purely in Swift and is compatible with th
 
 ## AEPTarget classes
 
-| Type                   | AEP (3.x)        | ACP (2.x)               |
-| ---------------------- | :--------------- | :---------------------- |
-| Primary Class (Module) | Target           | ACPTarget               |
-| Class                  | TargetRequest    | ACPTargetRequestObject  |
-| Class                  | TargetPrefetch   | ACPTargetPrefetchObject |
-| Class                  | TargetOrder      | ACPTargetOrder          |
-| Class                  | TargetParameters | ACPTargetParameters     |
-| Class                  | TargetProduct    | ACPTargetProduct        |
+| Type                   | AEP 3.x (Swift)  | AEP 3.x (Objective-C)   | ACP 2.x (Objective-C)   |
+| ---------------------- | :--------------- | ----------------------- | :---------------------- |
+| Primary Class (Module) | Target           | AEPMobileTarget         | ACPTarget               |
+| Class                  | TargetRequest    | AEPTargetRequestObject  | ACPTargetRequestObject  |
+| Class                  | TargetPrefetch   | AEPTargetPrefetchObject | ACPTargetPrefetchObject |
+| Class                  | TargetOrder      | AEPTargetOrder          | ACPTargetOrder          |
+| Class                  | TargetParameters | AEPTargetParameters     | ACPTargetParameters     |
+| Class                  | TargetProduct    | AEPTargetProduct        | ACPTargetProduct        |
 
 ## AEPTarget APIs
 

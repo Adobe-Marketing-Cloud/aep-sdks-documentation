@@ -5,35 +5,85 @@
 This API clears the in-memory cache that contains the prefetched offers.
 
 {% tabs %}
-{% tab title="Swift" %}
-**Signature**
+
+{% tab title="Android" %}
+
+**Syntax**
+
+```
+public static void clearPrefetchCache()
+```
+
+**Example**
+
+```
+Target.clearPrefetchCache();
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+**Syntax**
 
 ```swift
 static func clearPrefetchCache()
 ```
 
-**Example usage**
+**Example**
+
+**Swift**
 
 ```swift
 Target.clearPrefetchCache()
 ```
 
-{% endtab %}
-
-{% tab title="Objective-C" %}
-**Signature**
-
-```objc
-+ (void) clearPrefetchCache;
-```
-
-**Example usage**
+**Objective-C**
 
 ```objc
 [AEPMobileTarget clearPrefetchCache];
 ```
 
 {% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+**Syntax**
+
+```objc
++ (void) clearPrefetchCache;
+```
+
+**Example**
+
+**Swift**
+
+```swift
+ACPTarget.clearPrefetchCache
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget clearPrefetchCache];
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+**Signature**
+
+```
+clearPrefetchCache();
+```
+
+**Example usage**
+
+```
+ACPTarget.clearPrefetchCache();
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 ---
@@ -103,6 +153,12 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters?)
 
 **Example**
 
+**Swift**
+
+```swift
+Target.clickedLocation("aep-loc-1", targetParameters: TargetParameters(parameters: ["mbox_parameter_key": "mbox_parameter_value"], profileParameters: ["name": "Smith"], order: TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"]), product: TargetProduct(productId: "pId1", categoryId: "cId1")))
+```
+
 **Objective-C**
 
 ```objc
@@ -112,15 +168,9 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 [AEPMobileTarget clickedLocation:@"aep-loc-1" withTargetParameters:targetParams];
 ```
 
-**Swift**
-
-```swift
-Target.clickedLocation("aep-loc-1", targetParameters: TargetParameters(parameters: ["mbox_parameter_key": "mbox_parameter_value"], profileParameters: ["name": "Smith"], order: TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"]), product: TargetProduct(productId: "pId1", categoryId: "cId1")))
-```
-
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -132,34 +182,6 @@ Target.clickedLocation("aep-loc-1", targetParameters: TargetParameters(parameter
 - _parameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
-
-**Objective-C**
-
-```objc
-// Mbox parameters
-NSDictionary *mboxParameters = @{@"membership":@"prime"};
-
-// Product parameters
-NSDictionary *productParameters = @{@"id":@"CEDFJC",
-                                    @"categoryId":@"Electronics"};
-// Order parameters
-NSDictionary *orderParameters = @{@"id":@"NJJICK",
-                                    @"total":@"650",
-                                    @"purchasedProductIds":@"81, 123, 190"};
-
-// Profile parameters
-NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
-
-// Create Target parameters
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
-                                                    profileParameters:nil
-                                                              product:product
-                                                                order:order];
-
-[ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters];
-```
 
 **Swift**
 
@@ -193,6 +215,34 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: nil, product: product, order: order)
 
 ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetParameters)
+```
+
+**Objective-C**
+
+```objc
+// Mbox parameters
+NSDictionary *mboxParameters = @{@"membership":@"prime"};
+
+// Product parameters
+NSDictionary *productParameters = @{@"id":@"CEDFJC",
+                                    @"categoryId":@"Electronics"};
+// Order parameters
+NSDictionary *orderParameters = @{@"id":@"NJJICK",
+                                    @"total":@"650",
+                                    @"purchasedProductIds":@"81, 123, 190"};
+
+// Profile parameters
+NSDictionary *profileParameters = @{@"ageGroup":@"20-32"};
+
+// Create Target parameters
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:nil
+                                                    profileParameters:nil
+                                                              product:product
+                                                                order:order];
+
+[ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters];
 ```
 
 {% endtab %}
@@ -288,15 +338,6 @@ static func displayedLocations(_ names: [String], targetParameters: TargetParame
 
 **Example**
 
-**Objective-C**
-
-```objc
-AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"ADCKKBC" total:400.50 purchasedProductIds:@[@"34", @"125"]];
-AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"24D334" categoryId:@"Stationary"];
-AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:nil profileParameters:nil order:order product:product];
-[AEPMobileTarget displayedLocations:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParams];
-```
-
 **Swift**
 
 ```swift
@@ -311,9 +352,18 @@ Target.displayedLocations(
 )
 ```
 
+**Objective-C**
+
+```objc
+AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"ADCKKBC" total:400.50 purchasedProductIds:@[@"34", @"125"]];
+AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"24D334" categoryId:@"Stationary"];
+AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:nil profileParameters:nil order:order product:product];
+[AEPMobileTarget displayedLocations:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParams];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -326,6 +376,18 @@ withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 - _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
+
+**Swift**
+
+```swift
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: nil, product: product, order: order)
+
+ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
+```
 
 **Objective-C**
 
@@ -340,18 +402,6 @@ product:product
 order:order];
 
 [ACPTarget locationsDisplayed:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParameters];
-```
-
-**Swift**
-
-```swift
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-
-let targetParameters = ACPTargetParameters(parameters: nil, profileParameters: nil, product: product, order: order)
-
-ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 ```
 
 {% endtab %}
@@ -382,7 +432,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
 
 ---
 ### extensionVersion
-Returns the running version of the AEPTarget extension.
+Returns the running version of the Target extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -410,21 +460,21 @@ static var extensionVersion: String
 
 **Example**
 
-**Objective-C**
-
-```objc
-NSString *targetVersion = [AEPMobileTarget extensionVersion];
-```
-
 **Swift**
 
 ```swift
 let targetVersion = Target.extensionVersion
 ```
 
+**Objective-C**
+
+```objc
+NSString *targetVersion = [AEPMobileTarget extensionVersion];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -434,16 +484,16 @@ let targetVersion = Target.extensionVersion
 
 **Example**
 
-**Objective-C**
-
-```objc
-NSString *targetVersion = [ACPTarget extensionVersion];
-```
-
 **Swift**
 
 ```swift
 let targetVersion = ACPTarget.extensionVersion()
+```
+
+**Objective-C**
+
+```objc
+NSString *targetVersion = [ACPTarget extensionVersion];
 ```
 
 {% endtab %}
@@ -505,14 +555,6 @@ static func getThirdPartyId(_ completion: @escaping (String?, Error?) -> Void)
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileTarget getThirdPartyId:^(NSString *thirdPartyID, NSError *error){
-	// read Target thirdPartyId
-}];
-```
-
 **Swift**
 
 ```swift
@@ -521,9 +563,17 @@ Target.getThirdPartyId { (id, err) in
 }
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileTarget getThirdPartyId:^(NSString *thirdPartyID, NSError *error){
+	// read Target thirdPartyId
+}];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -535,20 +585,20 @@ Target.getThirdPartyId { (id, err) in
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
-       // read Target thirdPartyId
-}];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.getThirdPartyId({thirdPartyID in
        // read Target thirdPartyId
 })
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
+       // read Target thirdPartyId
+}];
 ```
 
 {% endtab %}
@@ -613,14 +663,6 @@ static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileTarget getTntId:^(NSString *tntID, NSError *error){
-	// read target's tntId 
-}];
-```
-
 **Swift**
 
 ```swift
@@ -629,9 +671,17 @@ Target.getTntId({ (id, err) in
 })
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileTarget getTntId:^(NSString *tntID, NSError *error){
+	// read target's tntId 
+}];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -643,20 +693,20 @@ Target.getTntId({ (id, err) in
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget getTntId:^(NSString *tntId){
-       // read target's tntId
-}];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.getTntId({tntId in
        // read target's tntId
 })
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget getTntId:^(NSString *tntId){
+       // read target's tntId
+}];
 ```
 
 {% endtab %}
@@ -755,6 +805,40 @@ static func prefetchContent(_ prefetchArray: [TargetPrefetch], with targetParame
 
 **Example**
 
+**Swift**
+
+```swift
+let TargetParameters1 = TargetParameters(
+	parameters: ["status": "platinum"],
+	profileParameters: ["age": "20"],
+	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
+	product: TargetProduct(productId: "24D3412", categoryId:"Books")
+	)
+            
+let TargetParameters2 = TargetParameters(
+	parameters: ["userType": "Paid"],
+	profileParameters: nil,
+	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
+	product: TargetProduct(productId: "764334", categoryId:"Online")
+	)
+        
+let globalTargetParameters = TargetParameters(
+	parameters: ["status": "progressive"],
+	profileParameters: ["age": "20-32"],
+	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
+	product: TargetProduct(productId: "24D334", categoryId:"Stationary")
+	)
+
+Target.prefetchContent([
+	TargetPrefetch(name: "mboxName1", targetParameters: TargetParameters1),
+	TargetPrefetch(name: "mboxName2", targetParameters: TargetParameters2),
+	],
+	with: globalTargetParameters
+	){ error in
+		// do something with the callback response
+}
+```
+
 **Objective-C**
 
 ```objc
@@ -794,43 +878,9 @@ product:product];
 }];
 ```
 
-**Swift**
-
-```swift
-let TargetParameters1 = TargetParameters(
-	parameters: ["status": "platinum"],
-	profileParameters: ["age": "20"],
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D3412", categoryId:"Books")
-	)
-            
-let TargetParameters2 = TargetParameters(
-	parameters: ["userType": "Paid"],
-	profileParameters: nil,
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
-	product: TargetProduct(productId: "764334", categoryId:"Online")
-	)
-        
-let globalTargetParameters = TargetParameters(
-	parameters: ["status": "progressive"],
-	profileParameters: ["age": "20-32"],
-	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D334", categoryId:"Stationary")
-	)
-
-Target.prefetchContent([
-	TargetPrefetch(name: "mboxName1", targetParameters: TargetParameters1),
-	TargetPrefetch(name: "mboxName2", targetParameters: TargetParameters2),
-	],
-	with: globalTargetParameters
-	){ error in
-		// do something with the callback response
-}
-```
-
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -841,6 +891,54 @@ Target.prefetchContent([
 ```
 
 **Example**
+
+**Swift**
+
+```swift
+let mboxParameters1 = [
+"status": "platinum"
+]
+let profileParameters1 = [
+"age": "20"
+]
+let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
+let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["34", "125"])
+
+let targetParameters1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: profileParameters1, product: product1, order: order1)
+
+let mboxParameters2 = [
+"userType": "Paid"
+]
+let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
+let order2 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["id1", "id2"])
+
+let targetParameters2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
+
+// Creating Prefetch Objects
+let prefetch1 = ACPTargetPrefetchObject(name: "logo", targetParameters: targetParameters1)
+
+let prefetch2 = ACPTargetPrefetchObject(name: "buttonColor", targetParameters: targetParameters2)
+
+// Creating prefetch Array
+let prefetchArray = [prefetch1, prefetch2]
+
+// Creating Target parameters
+let mboxParameters = [
+"status": "progressive"
+]
+let profileParameters = [
+"age": "20-32"
+]
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
+
+// Target API Call
+ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { error in
+// do something with the callback response
+})
+```
 
 **Objective-C**
 
@@ -889,54 +987,6 @@ order:order];
 [ACPTarget prefetchContent:prefetchArray withParameters:targetParameters callback:^(NSError * _Nullable error){
 // do something with the callback response
 }];
-```
-
-**Swift**
-
-```swift
-let mboxParameters1 = [
-"status": "platinum"
-]
-let profileParameters1 = [
-"age": "20"
-]
-let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
-let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["34", "125"])
-
-let targetParameters1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: profileParameters1, product: product1, order: order1)
-
-let mboxParameters2 = [
-"userType": "Paid"
-]
-let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
-let order2 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["id1", "id2"])
-
-let targetParameters2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
-
-// Creating Prefetch Objects
-let prefetch1 = ACPTargetPrefetchObject(name: "logo", targetParameters: targetParameters1)
-
-let prefetch2 = ACPTargetPrefetchObject(name: "buttonColor", targetParameters: targetParameters2)
-
-// Creating prefetch Array
-let prefetchArray = [prefetch1, prefetch2]
-
-// Creating Target parameters
-let mboxParameters = [
-"status": "progressive"
-]
-let profileParameters = [
-"age": "20-32"
-]
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-
-let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
-
-// Target API Call
-ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { error in
-// do something with the callback response
-})
 ```
 
 {% endtab %}
@@ -1012,11 +1062,11 @@ Target.registerExtension();
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
 
-This API no longer exists in `AEPTarget`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
+This API no longer exists in `Target`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -1026,33 +1076,23 @@ This API no longer exists in `AEPTarget`. Instead, the extension should be regis
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget registerExtension];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.registerExtension()
 ```
 
+**Objective-C**
+
+```objc
+[ACPTarget registerExtension];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 
-**Syntax**
-
-```javascript
-registerExtension()
-```
-
-**Example**
-
-```javascript
-ACPTarget.registerExtension();
-```
+When using React Native, register the Target extension with Mobile Core in native code as shown on the Android and iOS tabs.
 
 {% endtab %}
 {% endtabs %}
@@ -1088,21 +1128,21 @@ static func resetExperience()
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileTarget resetExperience];
-```
-
 **Swift**
 
 ```swift
 Target.resetExperience()
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileTarget resetExperience];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -1112,16 +1152,16 @@ Target.resetExperience()
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget resetExperience];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.resetExperience()
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget resetExperience];
 ```
 
 {% endtab %}
@@ -1233,6 +1273,40 @@ static func retrieveLocationContent(_ requestArray: [TargetRequest], with target
 
 **Example**
 
+**Swift**
+
+```swift
+let TargetParameters1 = TargetParameters(
+	parameters: ["status": "platinum"],
+	profileParameters: ["age": "20"],
+	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
+	product: TargetProduct(productId: "24D3412", categoryId: "Books")
+)
+
+let TargetParameters2 = TargetParameters(
+	parameters: ["userType": "Paid"],
+	profileParameters: nil,
+	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
+	product: TargetProduct(productId: "764334", categoryId: "Online")
+)
+
+let globalTargetParameters = TargetParameters(
+	parameters: ["status": "progressive"],
+	profileParameters: ["age": "20-32"],
+	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
+	product: TargetProduct(productId: "24D334", categoryId: "Stationary")
+)
+
+let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targetParameters: TargetParameters1) 	 { _ in
+		// do something with the received content
+	}
+let request2 = TargetRequest(mboxName: "logo", defaultContent: "red", targetParameters: TargetParameters2) 
+	{ _ in
+		// do something with the received content
+	}
+Target.retrieveLocationContent([request1, request2], with: globalTargetParameters)
+```
+
 **Objective-C**
 
 ```objc
@@ -1271,42 +1345,8 @@ AEPTargetParameters *targetParameters = [[AEPTargetParameters alloc] initWithPar
 [AEPMobileTarget retrieveLocationContent: requestArray withParameters: targetParameters];
 ```
 
-**Swift**
-
-```swift
-let TargetParameters1 = TargetParameters(
-	parameters: ["status": "platinum"],
-	profileParameters: ["age": "20"],
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D3412", categoryId: "Books")
-)
-
-let TargetParameters2 = TargetParameters(
-	parameters: ["userType": "Paid"],
-	profileParameters: nil,
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
-	product: TargetProduct(productId: "764334", categoryId: "Online")
-)
-
-let globalTargetParameters = TargetParameters(
-	parameters: ["status": "progressive"],
-	profileParameters: ["age": "20-32"],
-	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D334", categoryId: "Stationary")
-)
-
-let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targetParameters: TargetParameters1) 	 { _ in
-		// do something with the received content
-	}
-let request2 = TargetRequest(mboxName: "logo", defaultContent: "red", targetParameters: TargetParameters2) 
-	{ _ in
-		// do something with the received content
-	}
-Target.retrieveLocationContent([request1, request2], with: globalTargetParameters)
-```
-
 {% endtab %}
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -1319,6 +1359,50 @@ Target.retrieveLocationContent([request1, request2], with: globalTargetParameter
 * _parameters_ is the configured `ACPTargetParameters` for the load request.
 
 **Example**
+
+**Swift**
+
+```swift
+let mboxParameters1 = [
+"status": "platinum"
+]
+let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
+let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["a", "b"])
+
+let mboxParameters2 = [
+"userType": "Paid"
+]
+let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
+let order2 = ACPTargetOrder(id: "4t4uxksa", total: NSNumber(value: 54.90), purchasedProductIds: ["id1", "id2"])
+
+let params1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: nil, product: product1, order: order1)
+let request1 = ACPTargetRequestObject(name: "logo", targetParameters: params1, defaultContent: "BlueWhale", callback: { content in
+// do something with the received content
+})
+
+let params2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
+let request2 = ACPTargetRequestObject(name: "logo", targetParameters: params2, defaultContent: "red", callback: { content in
+// do something with the received content
+})
+
+// Create request object array
+let requestArray = [request1, request2]
+
+// Creating Target parameters
+let mboxParameters = [
+"status": "progressive"
+]
+let profileParameters = [
+"age": "20-32"
+]
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
+
+// Call the API
+ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
+```
 
 **Objective-C**
 
@@ -1364,50 +1448,6 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
                                                                 order:order];
 // Call the API
 [ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters];
-```
-
-**Swift**
-
-```swift
-let mboxParameters1 = [
-"status": "platinum"
-]
-let product1 = ACPTargetProduct(id: "24D3412", categoryId: "Books")
-let order1 = ACPTargetOrder(id: "ADCKKIM", total: NSNumber(value: 344.30), purchasedProductIds: ["a", "b"])
-
-let mboxParameters2 = [
-"userType": "Paid"
-]
-let product2 = ACPTargetProduct(id: "764334", categoryId: "Online")
-let order2 = ACPTargetOrder(id: "4t4uxksa", total: NSNumber(value: 54.90), purchasedProductIds: ["id1", "id2"])
-
-let params1 = ACPTargetParameters(parameters: mboxParameters1, profileParameters: nil, product: product1, order: order1)
-let request1 = ACPTargetRequestObject(name: "logo", targetParameters: params1, defaultContent: "BlueWhale", callback: { content in
-// do something with the received content
-})
-
-let params2 = ACPTargetParameters(parameters: mboxParameters2, profileParameters: nil, product: product2, order: order2)
-let request2 = ACPTargetRequestObject(name: "logo", targetParameters: params2, defaultContent: "red", callback: { content in
-// do something with the received content
-})
-
-// Create request object array
-let requestArray = [request1, request2]
-
-// Creating Target parameters
-let mboxParameters = [
-"status": "progressive"
-]
-let profileParameters = [
-"age": "20-32"
-]
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-
-let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
-
-// Call the API
-ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 ```
 
 {% endtab %}
@@ -1503,12 +1543,6 @@ static func setPreviewRestartDeepLink(_ deeplink: URL)
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
-```
-
 **Swift**
 
 ```swift
@@ -1517,9 +1551,15 @@ if let url = URL(string: "myapp://HomePage") {
 }
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -1531,16 +1571,16 @@ if let url = URL(string: "myapp://HomePage") {
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
 ```
 
 {% endtab %}
@@ -1598,21 +1638,21 @@ static func setThirdPartyId(_ id: String)
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileTarget setThirdPartyId:@"third-party-id"]
-```
-
 **Swift**
 
 ```swift
 Target.setThirdPartyId("third-party-id")
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileTarget setThirdPartyId:@"third-party-id"]
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -1624,16 +1664,16 @@ Target.setThirdPartyId("third-party-id")
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPTarget setThirdPartyId:@"third-party-id"];
-```
-
 **Swift**
 
 ```swift
 ACPTarget.setThirdPartyId("third-party-id")
+```
+
+**Objective-C**
+
+```objc
+[ACPTarget setThirdPartyId:@"third-party-id"];
 ```
 
 {% endtab %}
@@ -1686,21 +1726,21 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];
-```
-
 **Swift**
 
 ```swift
 MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 
+**Objective-C**
+
+```objc
+[AEPMobileCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];
+```
+
 {% endtab %}
 
-{% tab title="iOS (ACP 1.x)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
@@ -1714,17 +1754,18 @@ To enter the preview visual mode, use the `collectLaunchInfo` API to enable the 
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
-```
-
 **Swift**
 
 ```swift
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 
+**Objective-C**
+
+```objc
+[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
+```
+
 {% endtab %}
 {% endtabs %}
+
