@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 28, 2021
+
+### iOS AEPAssurance 3.0.0
+
+* Initial release to support [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-assurance-ios).
+
 ## June 24, 2021
 
 ### iOS ACPPlacesMonitor 2.1.4
