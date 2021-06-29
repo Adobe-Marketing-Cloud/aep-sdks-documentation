@@ -1,10 +1,10 @@
-# Campaign API reference
+# Adobe Campaign Standard API reference
 
 ---
 
 ### extensionVersion
 
-Returns the running version of the AEPCampaign extension.
+Returns the running version of the Campaign extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -32,16 +32,16 @@ static var extensionVersion: String
 
 **Example**
 
-**Objective-C**
-
-```objc
-NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
-```
-
 **Swift**
 
 ```swift
 let campaignVersion = Campaign.extensionVersion
+```
+
+**Objective-C**
+
+```objc
+NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 ```
 
 {% endtab %}
@@ -56,16 +56,16 @@ let campaignVersion = Campaign.extensionVersion
 
 **Example**
 
-**Objective-C**
-
-```objc
-NSString *campaignVersion = [ACPCampaign extensionVersion];
-```
-
 **Swift**
 
 ```swift
 let campaignVersion = ACPCampaign.extensionVersion()
+```
+
+**Objective-C**
+
+```objc
+NSString *campaignVersion = [ACPCampaign extensionVersion];
 ```
 
 {% endtab %}
@@ -126,33 +126,23 @@ This API no longer exists in `AEPCampaign`. Instead, the extension should be reg
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPCampaign registerExtension];
-```
-
 **Swift**
 
 ```swift
 ACPCampaign.registerExtension()
 ```
 
+**Objective-C**
+
+```objc
+[ACPCampaign registerExtension];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 
-**Syntax**
-
-```javascript
-registerExtension()
-```
-
-**Example**
-
-```javascript
-ACPCampaign.registerExtension();
-```
+When using React Native, register the Campaign extension with Mobile Core in native code as shown on the Android and iOS tabs.
 
 {% endtab %}
 
@@ -192,16 +182,16 @@ static func resetLinkageFields()
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileCampaign resetLinkageFields];
-```
-
 **Swift**
 
 ```swift
 Campaign.resetLinkageFields()
+```
+
+**Objective-C**
+
+```objc
+[AEPMobileCampaign resetLinkageFields];
 ```
 
 {% endtab %}
@@ -216,16 +206,16 @@ Campaign.resetLinkageFields()
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPCampaign resetLinkageFields];
-```
-
 **Swift**
 
 ```swift
 ACPCampaign.resetLinkageFields()
+```
+
+**Objective-C**
+
+```objc
+[ACPCampaign resetLinkageFields];
 ```
 
 {% endtab %}
@@ -286,16 +276,16 @@ static func setLinkageFields(linkageFields: [String: String])
 
 **Example**
 
-**Objective-C**
-
-```objc
-[AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
-```
-
 **Swift**
 
 ```swift
 Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```
+
+**Objective-C**
+
+```objc
+[AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
 {% endtab %}
@@ -310,16 +300,16 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 **Example**
 
-**Objective-C**
-
-```objc
-[ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
-```
-
 **Swift**
 
 ```swift
 ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
+```
+
+**Objective-C**
+
+```objc
+[ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 
 {% endtab %}
