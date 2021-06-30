@@ -12,7 +12,36 @@ The AEPAnalytics extension is implemented purely in Swift and is compatible with
 
 
 
-## AEPAnalytics APIs
+## AEPAnalytics APIs \(alphabetical\)
+
+### clearQueue
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
+static func clearQueue()
+```
+
+{% endtab %}
+
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objective-c
++ (void) clearQueue;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objective-c
++ (void) clearQueue;
+```
+
+{% endtab %}
+{% endtabs %}
 
 ### extensionVersion
 
@@ -44,35 +73,6 @@ static var extensionVersion: String
 
 {% endtabs %}
 
-### clearQueue
-
-{% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
-```swift
-static func clearQueue()
-```
-
-{% endtab %}
-
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
-+ (void) clearQueue;
-```
-
-{% endtab %}
-
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
-+ (void) clearQueue;
-```
-
-{% endtab %}
-{% endtabs %}
-
 ### getQueueSize
 
 {% tabs %}
@@ -99,36 +99,6 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 
 + (void) getQueueSizeWithCompletionHandler: (nonnull void (^) (NSUInteger queueSize, NSError* __nullable error)) completionHandler;
-```
-
-{% endtab %}
-
-{% endtabs %}
-
-### sendQueuedHits
-
-{% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
-```swift
-static func sendQueuedHits()
-```
-
-{% endtab %}
-
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
-+ (void) sendQueuedHits;
-```
-
-{% endtab %}
-
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
-+ (void) sendQueuedHits;
 ```
 
 {% endtab %}
@@ -167,36 +137,6 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 
 {% endtabs %}
 
-### setVisitorIdentifier
-
-{% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
-```swift
-static func setVisitorIdentifier(visitorIdentifier: String)
-```
-
-{% endtab %}
-
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
-+ (void) setVisitorIdentifier:(NSString * _Nonnull) visitorIdentifier;
-```
-
-{% endtab %}
-
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
-+ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 ### getVisitorIdentifier
 
 {% tabs %}
@@ -223,6 +163,66 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 
 + (void) getVisitorIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable visitorIdentifier, NSError* __nullable error)) completionHandler;
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+### sendQueuedHits
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
+static func sendQueuedHits()
+```
+
+{% endtab %}
+
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objective-c
++ (void) sendQueuedHits;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objective-c
++ (void) sendQueuedHits;
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+### setVisitorIdentifier
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
+static func setVisitorIdentifier(visitorIdentifier: String)
+```
+
+{% endtab %}
+
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objective-c
++ (void) setVisitorIdentifier:(NSString * _Nonnull) visitorIdentifier;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objective-c
++ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```
 
 {% endtab %}
