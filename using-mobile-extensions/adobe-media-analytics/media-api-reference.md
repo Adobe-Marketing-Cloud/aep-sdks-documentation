@@ -26,7 +26,7 @@ let mediaExtensionVersion  = Media.extensionVersion()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSString *mediaExtensionVersion = [AEPMobileMedia extensionVersion];
 ```
 
@@ -35,7 +35,7 @@ NSString *mediaExtensionVersion = [AEPMobileMedia extensionVersion];
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
-```objectivec
+```objective-c
 NSString *mediaExtensionVersion = [ACPMedia extensionVersion];
 ```
 
@@ -120,7 +120,7 @@ let tracker = Media.createTracker()  // Use the instance for tracking media.
 
 **Objective-C**
 
-```objectivec
+```objective-c
 id<AEPMediaTracker> tracker; 
 _tracker = [AEPMobileMedia createTracker];  // Use the instance for tracking media.
 ```
@@ -134,7 +134,7 @@ The createTracker function returns the instance of ACPMediaTracker for tracking 
 
 **Syntax**
 
-```objectivec
+```objective-c
 +(ACPMediaTracker* _Nullable) createTracker;
 
 
@@ -148,7 +148,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 ACPMediaTracker *mediaTracker = [ACPMedia createTracker];  // Use the instance for tracking media.
 
 
@@ -262,7 +262,7 @@ let tracker = Media.createTrackerWith(config: config)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 id<AEPMediaTracker> _tracker; 
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
 
@@ -281,7 +281,7 @@ Optional configuration about the tracker can be passed to this function. The cre
 
 **Syntax**
 
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigChannel;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
 
@@ -298,7 +298,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
 config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from launch
 config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Creates downloaded content tracker
@@ -414,7 +414,7 @@ let mediaObject = Media.createMediaObjectWith(name: "video-name",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
                                                                 id:@"video-id" 
                                                             length:60 
@@ -431,7 +431,7 @@ Returns an NSDictionary instance that contains information about the media.
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createMediaObjectWithName: (NSString* _Nonnull) name
                                              mediaId: (NSString* _Nonnull) mediaId
                                               length: (double) length
@@ -445,7 +445,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
                                                         mediaId: @"video-id"
                                                          length: 60
@@ -531,7 +531,7 @@ let adBreakObject = Media.createAdBreakObjectWith(name: "adbreak-name",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-name" 
                                                              position:1 
                                                             startTime:0];                                       
@@ -546,7 +546,7 @@ Returns an NSDictionary instance that contains information about the ad break.
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createAdBreakObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                              startTime: (double) startTime;
@@ -558,7 +558,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
                                                            position: 1
                                                           startTime: 0];
@@ -640,7 +640,7 @@ let adObject = Media.createObjectWith(name: "ad-name",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name" 
                                                          id:@"ad-id" 
                                                    position:0 
@@ -656,7 +656,7 @@ Returns an NSDictionary instance that contains information about the ad.
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createAdObjectWithName: (NSString* _Nonnull) name
                                              adId: (NSString* _Nonnull) adId
                                          position: (double) position
@@ -669,7 +669,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
                                                      adId: @"ad-id"
                                                  position: 1
@@ -755,7 +755,7 @@ let chapterObject = Media.createChapterObjectWith(name: "chapter_name",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *chapterObject = [AEPMobileMedia createChapterObjectWith:@"chapter_name" 
                                                              position:1 
                                                                length:60 
@@ -773,7 +773,7 @@ Returns an NSDictionary instance that contains information about the chapter.
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createChapterObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                                 length: (double) length
@@ -786,7 +786,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
                                                            position: 1
                                                              length: 60
@@ -876,7 +876,7 @@ let qoeObject = Media.createQoEObjectWith(bitrate: 500000,
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 
                                                     startTime:2 
                                                           fps:24 
@@ -892,7 +892,7 @@ Returns an NSDictionary instance that contains information about the quality of 
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createQoEObjectWithBitrate: (double) bitrate
                                           startupTime: (double) startupTime
                                                   fps: (double) fps
@@ -905,7 +905,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
                                                    startupTime: 2
                                                            fps: 23
@@ -979,7 +979,7 @@ let fullScreenState = Media.createStateObjectWith(stateName: "fullscreen")
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary* fullScreenState = [AEPMobileMedia createStateObjectWith:AEPMediaPlayerState.FULLSCREEN]
 ```
 
@@ -992,7 +992,7 @@ Returns an NSDictionary instance that contains information about the player stat
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (NSDictionary* _Nonnull) createStateObjectWithName: (NSString* _Nonnull) stateName;
 ```
 
@@ -1002,7 +1002,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscreen"];
 ```
 
@@ -1095,7 +1095,7 @@ tracker.trackSessionStart(info: mediaObject, metadata: videoMetadata)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
     
 NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
@@ -1117,7 +1117,7 @@ NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackSessionStart: (NSDictionary* _Nonnull) mediaInfo data: (NSDictionary* _Nullable) contextData;
 ```
 
@@ -1127,7 +1127,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
 
 NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
@@ -1219,7 +1219,7 @@ tracker.trackPlay()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackPlay];
 ```
 
@@ -1230,7 +1230,7 @@ tracker.trackPlay()
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackPlay;
 ```
 
@@ -1240,7 +1240,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackPlay];
 ```
 
@@ -1303,7 +1303,7 @@ tracker.trackPause()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackPause];
 ```
 
@@ -1314,7 +1314,7 @@ tracker.trackPause()
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackPause;
 ```
 
@@ -1324,7 +1324,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackPause];
 ```
 
@@ -1387,7 +1387,7 @@ tracker.trackComplete()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackComplete];
 ```
 
@@ -1398,7 +1398,7 @@ tracker.trackComplete()
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackComplete;
 ```
 
@@ -1408,7 +1408,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackComplete];
 ```
 
@@ -1473,7 +1473,7 @@ tracker.trackSessionEnd()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackSessionEnd];
 ```
 
@@ -1484,7 +1484,7 @@ tracker.trackSessionEnd()
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackSessionEnd;
 ```
 
@@ -1494,7 +1494,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackSessionEnd];
 ```
 
@@ -1561,7 +1561,7 @@ tracker.trackError(errorId: "errorId")
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackError:@"errorId"];
 ```
 
@@ -1572,7 +1572,7 @@ tracker.trackError(errorId: "errorId")
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) trackError: (NSString* _Nonnull) errorId;
 ```
 
@@ -1582,7 +1582,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackError:@"errorId"];
 ```
 
@@ -1747,7 +1747,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // StateStart
   NSDictionary* fullScreenState = [AEPMobileMedia createStateObjectWith:AEPMediaPlayerState.FULLSCREEN];
   [_tracker trackEvent:AEPMediaEventStateStart info:fullScreenState metadata:nil];
@@ -1772,7 +1772,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // AdBreakStart
   NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-name" position:1 startTime:0];
   [_tracker trackEvent:AEPMediaEventAdBreakStart info:adBreakObject metadata:nil];
@@ -1808,7 +1808,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // AdStart
   NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name" id:@"ad-id" position:0 length:30];
   NSMutableDictionary* adMetadata = [[NSMutableDictionary alloc] init];
@@ -1849,7 +1849,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // ChapterStart
   NSDictionary *chapterObject = [AEPMobileMedia createChapterObjectWith:@"chapter_name" position:1 length:60 startTime:0];
 
@@ -1885,7 +1885,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // BufferStart
   [_tracker trackEvent:AEPMediaEventBufferStart info:nil metadata:nil];
 
@@ -1914,7 +1914,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // If the new bitrate value is available provide it to the tracker.
   NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 startTime:2 fps:24 droppedFrames:10];
 
@@ -1929,7 +1929,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 
 **Syntax**
 
-```objectivec
+```objective-c
   - (void) trackEvent: (ACPMediaEvent) event
                  info: (NSDictionary* _Nullable) info
                  data: (NSDictionary* _Nullable) data;
@@ -1943,7 +1943,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // StateStart
   NSDictionary* stateObject = [ACPMedia createStateObjectWithName:@"fullscreen"];
   [_tracker trackEvent:ACPMediaEventStateStart mediaObject:stateObject data:nil];
@@ -1971,7 +1971,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // AdBreakStart
   NSDictionary* adBreakObject = [ACPMedia createAdBreakObjectWithName:@"adbreak-name" position:1 startTime:0];
   [_tracker trackEvent:ACPMediaEventAdBreakStart mediaObject:adBreakObject data:nil];
@@ -1997,7 +1997,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // AdStart
   NSDictionary* adObject = [ACPMedia createAdObjectWithName:@"ad-name" adId:@"ad-id" position:1 length:15];
   NSMutableDictionary* adMetadata = [[NSMutableDictionary alloc] init];
@@ -2043,7 +2043,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // ChapterStart
   NSDictionary* chapterObject = [ACPMedia createChapterObjectWithName:@"chapter-name" position:1 length:30 startTime:0];
 
@@ -2081,7 +2081,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // BufferStart
   [_tracker trackEvent:ACPMediaEventBufferStart info:nil data:nil];
 
@@ -2117,7 +2117,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 // If the new bitrate value is available provide it to the tracker.
   NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:2000000 startupTime:2 fps:25 droppedFrames:10];
   [_tracker updateQoEObject:qoeObject];
@@ -2309,7 +2309,7 @@ guard let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregor
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker updateCurrentPlayhead:1];
 ```
 
@@ -2320,7 +2320,7 @@ guard let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregor
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) updateCurrentPlayhead: (double) time;
 ```
 
@@ -2330,13 +2330,13 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker updateCurrentPlayhead:1];
 ```
 
 **Live streaming example**
 
-```objectivec
+```objective-c
 NSDate *currentUTC = [[NSDate alloc] init];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -2420,7 +2420,7 @@ tracker.updateQoEObject(qoe: qoeObject)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 startTime:2 fps:24 droppedFrames:10]
 [_tracker updateQoEObject:qoeObject];
 ```
@@ -2432,7 +2432,7 @@ NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 startTime:2 
 
 **Syntax**
 
-```objectivec
+```objective-c
 - (void) updateQoEObject: (NSDictionary* _Nonnull) qoeObject;
 ```
 
@@ -2442,7 +2442,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:1000000 startupTime:2 fps:25 droppedFrames:10];
 [_tracker updateQoEObject:qoeObject];
 ```
@@ -2516,14 +2516,14 @@ var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
 ```
 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 typedef NS_ENUM(NSInteger, ACPMediaType) {
     /**
     * Constant defining media type for Video streams
@@ -2627,14 +2627,14 @@ var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId",
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
 ```
 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 /**
  * Constant defining stream type for VOD streams
  */
@@ -2760,7 +2760,7 @@ tracker.trackSessionStart(info: mediaObject, metadata: videoMetadata)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
     
 NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
@@ -2774,7 +2774,7 @@ NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyEpisode;
@@ -2846,7 +2846,7 @@ public class MediaConstants {
 
 {% tab title="iOS —  Swift" %}
 
-```objectivec
+```objective-c
 public class MediaConstants: NSObject {
   @objc(AEPAudioMetadataKeys)
   public class AudioMetadataKeys: NSObject {
@@ -2877,7 +2877,7 @@ tracker.trackSessionStart(info: audioObject, metadata: audioMetadata)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *audioObject = [AEPMobileMedia createMediaObjectWith:@"audio-name" id:@"audioid" length:30 streamType:AEPMediaStreamType.AOD mediaType:AEPMediaTypeAudio];
     
 NSMutableDictionary *audioMetadata = [[NSMutableDictionary alloc] init];
@@ -2891,7 +2891,7 @@ NSMutableDictionary *audioMetadata = [[NSMutableDictionary alloc] init];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyLabel;
@@ -2941,7 +2941,7 @@ public class MediaConstants {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-```objectivec
+```objective-c
 public class MediaConstants: NSObject {
   @objc(AEPAdMetadataKeys)
   public class AdMetadataKeys: NSObject {
@@ -2971,7 +2971,7 @@ tracker.trackEvent(event: MediaEvent.AdStart, info: adObject, metadata: adMetada
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name" id:@"ad-id" position:0 length:30];
                    
 NSMutableDictionary *adMetadata = [[NSMutableDictionary alloc] init];
@@ -2986,7 +2986,7 @@ NSMutableDictionary *adMetadata = [[NSMutableDictionary alloc] init];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeId;
@@ -3059,7 +3059,7 @@ tracker.trackEvent(event: MediaEvent.StateStart, info: inFocusState, metadata: n
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary* inFocusState = [AEPMobileMedia createStateObjectWith:AEPMediaPlayerState.IN_FOCUS];
 [_tracker trackEvent:AEPMediaEventStateStart info:muteState metadata:nil];
 ```
@@ -3067,7 +3067,7 @@ NSDictionary* inFocusState = [AEPMobileMedia createStateObjectWith:AEPMediaPlaye
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateFullScreen;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStatePictureInPicture;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateClosedCaption;
@@ -3232,14 +3232,14 @@ tracker.trackEvent(event: MediaEvent.BitrateChange, info: nil, metadata: nil)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [_tracker trackEvent:AEPMediaEventBitrateChange info:nil metadata:nil];
 ```
 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-```objectivec
+```objective-c
 /**
  * These enumeration values define the type of a tracking event
  */
@@ -3397,7 +3397,7 @@ tracker.trackSessionStart(info: mediaObject, metadata: nil)
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
 
 // Attach media resumed information.    
@@ -3414,7 +3414,7 @@ NSMutableDictionary *obj  = [mediaObject mutableCopy];
 
 **Syntax**
 
-```objectivec
+```objective-c
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
 ```
 
@@ -3424,7 +3424,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
 
 // Attach media resumed information.
