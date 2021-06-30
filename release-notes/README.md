@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 30, 2021
+
+### iOS AEPCore 3.2.2
+
+* Remove double URL encoding of AEPIdentity identifiers.
+* Prevent possible crash at shutdown in EventHub.
+
 ## June 28, 2021
 
 ### iOS AEPAssurance 3.0.0
