@@ -514,7 +514,7 @@ Returns a map that contains information about the ad break.
 ```swift
 static func createAdBreakObjectWith(name: String,
                                 position: Int, 
-                               startTime: Double) -> [String: Any]?
+                                startTime: Double) -> [String: Any]?
 ```
 
 **Example**
@@ -3415,7 +3415,7 @@ NSMutableDictionary *obj  = [mediaObject mutableCopy];
 **Syntax**
 
 ```objectivec
-  FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
+FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
 ```
 
 **Example**
