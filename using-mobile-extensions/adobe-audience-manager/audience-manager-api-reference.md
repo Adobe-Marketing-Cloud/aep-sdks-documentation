@@ -25,7 +25,7 @@ let audienceExtensionVersion  = Audience.extensionVersion()
 
 **Objective-C**
 
-```swift
+```objectivec
 NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 ```
 
