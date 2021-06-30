@@ -23,7 +23,7 @@ String audienceExtensionVersion = Audience.extensionVersion();
 let audienceExtensionVersion  = Audience.extensionVersion()
 ```
 
-**Objective C**
+**Objective-C**
 
 ```swift
 NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
@@ -32,7 +32,7 @@ NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**Objective C**
+**Objective-C**
 
 ```objectivec
 NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
@@ -140,23 +140,24 @@ static func getVisitorProfile(completion: @escaping ([String: String]?, Error?) 
 
 ```swift
 Audience.getVisitorProfile { (visitorProfile, error) in
-                 print("#getVisitorProfile - retrieved profile: \(String(describing: visitorProfile))")
-                 if error != nil {
-                   // handle the error here
-                   }
-                  }
+   if error != nil {
+    // handle the error here
+   } else {
+    // handle the retrieved visitorProfile here
+   }
+  }
 ```
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [AEPMobileAudience getVisitorProfile:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError * _Nullable error) {
-            if (error) {
-                // handle the error here
-              } else {
-                // handle the returned visitorProfile dictionary here
-              }
-        }];
+   if (error) {
+    // handle the error here
+   } else {
+    // handle the returned visitorProfile dictionary here
+   }
+}];
 ```
 
 {% endtab %}
@@ -180,7 +181,7 @@ This API returns the visitor profile that was most recently obtained. For easy a
 
 #### Example
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
@@ -328,7 +329,7 @@ static func reset()
 Audience.reset()
 ```
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [AEPMobileAudience reset];
@@ -349,7 +350,7 @@ This API resets the Audience Manager UUID and purges the current visitor profile
 
 #### Examples
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 [ACPAudience reset];
@@ -441,11 +442,12 @@ static func signalWithData(data: [String: String], completion: @escaping ([Strin
 
 ```swift
 Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
-            // handle the returned visitorProfile dictionary here
-            if error != nil {
-            // handle the error here
-                 }
-             }
+  if error != nil {
+     // handle the error here
+     } else {
+     // handle the returned visitorProfile here
+     }
+}
 ```
 
 {% endtab %}
@@ -455,12 +457,12 @@ Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
 ```objectivec
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [AEPMobileAudience signalWithData:traits completion:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError* _Nullable error) {
-        if (error) {
-            // handle the error here
-          } else {
-            // handle the returned visitorProfile dictionary here
-          }
-        }];
+  if (error) {
+     // handle the error here
+     } else {
+     // handle the returned visitorProfile dictionary here
+     }
+}];
 ```
 
 {% tab title="iOS (ACP 2.x)" %}
