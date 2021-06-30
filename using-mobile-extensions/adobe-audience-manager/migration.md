@@ -75,6 +75,36 @@ static func getVisitorProfile(completion: @escaping ([String: String]?, Error?) 
 {% endtab %}
 {% endtabs %}
 
+### reset
+
+{% tabs %}
+
+{% tab title="AEP 3.x (Swift)" %}
+
+```swift
+static func reset()
+```
+
+{% endtab %}
+
+{% tab title="AEP 3.x (Objective-C)" %}
+
+```objective-c
++ (void) reset;
+```
+
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+
+```objective-c
++ (void) reset;
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ### signalWithData
 
 {% tabs %}
@@ -103,36 +133,6 @@ static func signalWithData(data: [String: String], completion: @escaping ([Strin
 
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                         withCompletionHandler:: (nullable void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
-```
-
-{% endtab %}
-
-{% endtabs %}
-
-### reset
-
-{% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
-```swift
-static func reset()
-```
-
-{% endtab %}
-
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
-+ (void) reset;
-```
-
-{% endtab %}
-
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
-+ (void) reset;
 ```
 
 {% endtab %}
