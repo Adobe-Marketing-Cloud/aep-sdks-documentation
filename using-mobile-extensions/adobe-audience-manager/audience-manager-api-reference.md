@@ -25,7 +25,7 @@ let audienceExtensionVersion  = Audience.extensionVersion()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 ```
 
@@ -34,7 +34,7 @@ NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
-```objectivec
+```objective-c
 NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
 ```
 
@@ -150,7 +150,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [AEPMobileAudience getVisitorProfile:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError * _Nullable error) {
    if (error) {
     // handle the error here
@@ -173,7 +173,7 @@ This API returns the visitor profile that was most recently obtained. For easy a
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 
 + (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
@@ -183,7 +183,7 @@ This API returns the visitor profile that was most recently obtained. For easy a
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
   // handle the visitorProfile here
 }];
@@ -251,7 +251,7 @@ Audience.registerExtension();
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (BOOL) registerExtension: (nonnull Class) extensionClass
                      error: (NSError* _Nullable* _Nullable) error;
 ```
@@ -260,7 +260,7 @@ Audience.registerExtension();
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAudience registerExtension];
 ```
 
@@ -331,7 +331,7 @@ Audience.reset()
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [AEPMobileAudience reset];
 ```
 
@@ -344,7 +344,7 @@ This API resets the Audience Manager UUID and purges the current visitor profile
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) reset;
 ```
 
@@ -352,7 +352,7 @@ This API resets the Audience Manager UUID and purges the current visitor profile
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAudience reset];
 ```
 
@@ -454,7 +454,7 @@ Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [AEPMobileAudience signalWithData:traits completion:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError* _Nullable error) {
   if (error) {
@@ -478,7 +478,7 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 
@@ -493,7 +493,7 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 
 **Objective-C**
 
-```objectivec
+```objective-c
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* _Nullable visitorProfile){
   // handle the returned visitorProfile dictionary here
