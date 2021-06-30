@@ -330,7 +330,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 ### getQueueSize
 
-See [getQueueSizeWithCompletionHandler](./#getQueueSizeWithCompletionHandler)
+See [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getQueueSizeWithCompletionHandler)
 
 {% endtab %}
 
@@ -624,7 +624,7 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
-See [getTrackingIdentifierWithCompletionHandler](./#getTrackingIdentifierWithCompletionHandler)
+See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#getTrackingIdentifierWithCompletionHandler)
 
 {% endtab %}
 
@@ -931,7 +931,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 ### getVisitorIdentifier
 
-See  [getVisitorIdentifierWithCompletionHandler](./#getVisitorIdentifierWithCompletionHandler)
+See  [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getVisitorIdentifierWithCompletionHandler)
 
 {% endtab %}
 
@@ -1239,6 +1239,8 @@ Analytics.sendQueuedHits()
 [AEPMobileAnalytics sendQueueHits];
 ```
 
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 
 ### sendQueuedHits
@@ -1378,7 +1380,7 @@ ACPAnalytics.SendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## setVisitorIdentifier <a id="setidentifier"></a>
+## setVisitorIdentifier <a id="setVisitorIdentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
@@ -1431,7 +1433,7 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 [AEPMobileAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 
-
+{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 ### setVisitorIdentifier
