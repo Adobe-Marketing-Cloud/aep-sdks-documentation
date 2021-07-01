@@ -195,7 +195,7 @@ ACPAnalytics.ClearQueue();
 {% endtab %}
 {% endtabs %}
 
-## extensionVersion <a id="extensionVersion"></a>
+## extensionVersion <a id="extensionversion"></a>
 
 The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
 
@@ -330,7 +330,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 ### getQueueSize
 
-See [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getQueueSizeWithCompletionHandler)
+See [getQueueSizeWithCompletionHandler](./#getqueuesizewithcompletionhandler)
 
 {% endtab %}
 
@@ -510,7 +510,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getQueueSizeWithCompletionHandler <a id="getQueueSizeWithCompletionHandler"></a>
+## getQueueSizeWithCompletionHandler <a id="getqueuesizewithcompletionhandler"></a>
 
 Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if unexpected error occures or request times out.
 
@@ -624,7 +624,7 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
-See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#getTrackingIdentifierWithCompletionHandler)
+See [getTrackingIdentifierWithCompletionHandler](./#gettrackingidentifierwithcompletionhandler)
 
 {% endtab %}
 
@@ -814,7 +814,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getTrackingIdentifierWithCompletionHandler <a id="getTrackingIdentifierWithCompletionHandler"></a>
+## getTrackingIdentifierWithCompletionHandler <a id="gettrackingidentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
 Before you use this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
@@ -931,7 +931,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 ### getVisitorIdentifier
 
-See  [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getVisitorIdentifierWithCompletionHandler)
+See  [getVisitorIdentifierWithCompletionHandler](./#getvisitoridentifierwithcompletionhandler)
 
 {% endtab %}
 
@@ -1109,7 +1109,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getVisitorIdentifierWithCompletionHandler <a id="getVisitorIdentifierWithCompletionHandler"></a>
+## getVisitorIdentifierWithCompletionHandler <a id="getvisitoridentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
