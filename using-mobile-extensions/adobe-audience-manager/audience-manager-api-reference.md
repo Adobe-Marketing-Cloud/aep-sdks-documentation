@@ -1,6 +1,6 @@
 # Audience Manager API reference
 
-## Version of the Audience extension
+## extensionVersion
 
 The `extensionVersion()` API returns the version of the Audience extension that is registered with the Mobile Core extension.
 
@@ -8,6 +8,7 @@ To get the version of the Audience extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 ```java
