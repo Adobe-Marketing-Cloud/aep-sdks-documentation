@@ -195,7 +195,7 @@ ACPAnalytics.ClearQueue();
 {% endtab %}
 {% endtabs %}
 
-## extensionVersion <a id="extensionVersion"></a>
+## extensionVersion <a id="extensionversion"></a>
 
 The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
 
@@ -330,7 +330,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 ### getQueueSize
 
-See [getQueueSizeWithCompletionHandler](./#getQueueSizeWithCompletionHandler)
+See [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getqueuesizewithcompletionhandler)
 
 {% endtab %}
 
@@ -510,7 +510,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getQueueSizeWithCompletionHandler <a id="getQueueSizeWithCompletionHandler"></a>
+## getQueueSizeWithCompletionHandler <a id="getqueuesizewithcompletionhandler"></a>
 
 Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if unexpected error occures or request times out.
 
@@ -583,7 +583,7 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before you use this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
@@ -624,7 +624,7 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
-See [getTrackingIdentifierWithCompletionHandler](./#getTrackingIdentifierWithCompletionHandler)
+See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#gettrackingidentifierwithcompletionhandler)
 
 {% endtab %}
 
@@ -814,10 +814,10 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getTrackingIdentifierWithCompletionHandler <a id="getTrackingIdentifierWithCompletionHandler"></a>
+## getTrackingIdentifierWithCompletionHandler <a id="gettrackingidentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
-Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before you use this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled. Invoke the callback with NSError if unexpected error occures or request times out.
@@ -897,7 +897,7 @@ ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, e
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
@@ -931,7 +931,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 ### getVisitorIdentifier
 
-See  [getVisitorIdentifierWithCompletionHandler](./#getVisitorIdentifierWithCompletionHandler)
+See  [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvisitoridentifierwithcompletionHandler)
 
 {% endtab %}
 
@@ -1109,10 +1109,10 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getVisitorIdentifierWithCompletionHandler <a id="getVisitorIdentifierWithCompletionHandler"></a>
+## getVisitorIdentifierWithCompletionHandler <a id="getvisitoridentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier). Callback with NSError if an unexpected error occurs or the request times out.
@@ -1238,6 +1238,8 @@ Analytics.sendQueuedHits()
 ```swift
 [AEPMobileAnalytics sendQueueHits];
 ```
+
+{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 
@@ -1378,13 +1380,13 @@ ACPAnalytics.SendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## setVisitorIdentifier <a id="setidentifier"></a>
+## setVisitorIdentifier <a id="setvisitoridentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
-Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
+Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1431,7 +1433,7 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 [AEPMobileAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 
-
+{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 ### setVisitorIdentifier
