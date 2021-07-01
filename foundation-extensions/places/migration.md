@@ -1,4 +1,4 @@
-# Migration to AEPPlaces
+# Migrating to AEPPlaces reference
 
 This document is a reference comparison of AEPPlaces \(3.x\) APIs agains against their equivalent ACPPlaces \(2.x\) APIs.
 
@@ -238,4 +238,3 @@ static func setAuthorizationStatus(status: CLAuthorizationStatus)
 ```
 {% endtab %}
 {% endtabs %}
-
