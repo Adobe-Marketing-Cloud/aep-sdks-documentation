@@ -330,7 +330,7 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 
 ### getQueueSize
 
-See [getQueueSizeWithCompletionHandler](./#getqueuesizewithcompletionhandler)
+See [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getqueuesizewithcompletionhandler)
 
 {% endtab %}
 
@@ -624,7 +624,7 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
-See [getTrackingIdentifierWithCompletionHandler](./#gettrackingidentifierwithcompletionhandler)
+See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#gettrackingidentifierwithcompletionhandler)
 
 {% endtab %}
 
@@ -931,7 +931,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 ### getVisitorIdentifier
 
-See  [getVisitorIdentifierWithCompletionHandler](./#getvisitoridentifierwithcompletionhandler)
+See  [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvisitoridentifierwithcompletionHandler)
 
 {% endtab %}
 
@@ -1380,7 +1380,7 @@ ACPAnalytics.SendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## setVisitorIdentifier <a id="setVisitorIdentifier"></a>
+## setVisitorIdentifier <a id="setvisitoridentifier"></a>
 
 {% hint style="warning" %}
 Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
