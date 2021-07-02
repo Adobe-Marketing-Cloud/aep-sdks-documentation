@@ -1,6 +1,6 @@
 # Media API reference
 
-## Version of the Media extension
+## extensionVersion
 
 The `extensionVersion()` API returns the version of the Media extension that is registered with the Mobile Core extension.
 
@@ -2262,10 +2262,7 @@ _tracker.updateCurrentPlayhead(1);
 **Live streaming example**
 
 ```java
-ZonedDateTime currentUTC = ZonedDateTime.now(ZoneOffset.UTC);
-Instant startOfDayUTC = currentUTC.toLocalDate().atStartOfDay().toInstant(ZoneOffset.UTC);
-Duration timeFromMidnight = Duration.between(startOfDayUTC, currentUTC);
-double timeFromMidnightInSecond = (double) timeFromMidnight.getSeconds();
+double timeFromMidnightInSecond = (System.currentTimeMillis()/1000) % 86400;
 
 _tracker.updateCurrentPlayhead(timeFromMidnightInSecond);
 ```
@@ -2293,18 +2290,10 @@ tracker.updateCurrentPlayhead(1);
 **Live streaming example**
 
 ```swift
-guard let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)  else { return }
-      calendar.timeZone = TimeZone(abbreviation: "UTC")!
-      let startOfDayUTC = calendar.startOfDay(for: NSDate() as Date)
-      let currentUTC = NSDate();
-        
-      let timeFromMidnight = Calendar.current.dateComponents([.hour, .minute, .second], from: startOfDayUTC, to: UTCTimeNow as Date)
-      let hour = timeFromMidnight.hour ?? 0
-      let minutes = timeFromMidnight.minute ?? 0
-      let seconds = timeFromMidnight.second ?? 0
-        
-      let timeFromMidnightInSecond = hour * 3600 + minutes * 60 + seconds;
-      tracker.updateCurrentPlayhead(time: timeFromMidnightInSecond)
+let secondsSince1970: TimeInterval = (Date().timeIntervalSince1970)
+let timeFromMidnightInSecond = secondsSince1970.truncatingRemainder(dividingBy: 86400)
+
+tracker.updateCurrentPlayhead(time: timeFromMidnightInSecond)
 ```
 
 **Objective-C**
@@ -2337,22 +2326,10 @@ Here are examples in Objective-C and Swift:
 **Live streaming example**
 
 ```objective-c
-NSDate *currentUTC = [[NSDate alloc] init];
+double secondsSince1970 = [[NSDate date] timeIntervalSince1970];
+double timeFromMidnightInSecond = fmod(secondsSince1970 , 86400);
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    
-    NSDateComponents * components = [calendar components:( NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:[NSDate date]];
-
-     [components setMinute:0];
-     [components setHour:0];
-     [components setSecond:0];
-
-    NSDate *startOfDayUTC = [calendar dateFromComponents:components];
-    NSTimeInterval interval = [currentUTC timeIntervalSinceDate: startOfDayUTC];
-    double timeFromMidnightInSecond = floor(interval);
-    
-    [_tracker updateCurrentPlayhead: timeFromMidnightInSecond];
+[_tracker updateCurrentPlayhead: timeFromMidnightInSecond];
 ```
 
 **Swift**
