@@ -73,6 +73,7 @@
   * [ACPPlaces \(iOS\) reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
   * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
+  * [Release Notes](foundation-extensions/profile/profile-release-notes.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
 

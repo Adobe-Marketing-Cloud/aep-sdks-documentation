@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Jul 2, 2021
+
+### iOS AEPUserProfile 3.0.1
+
+* Fixed a bug preventing proper data migration when presented with an `app group` .
+
 ## June 30, 2021
 
 ### iOS AEPCore 3.2.2
