@@ -10,7 +10,7 @@ After these actions have been configured to be triggered and published, the Sign
 
 To send PII data to external destinations, the `PII` action can trigger the rules engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data.
 
-## Rules tokens <a id="rules-tokens"></a>
+## Rules tokens
 
 Rules tokens are special strings that are used in rule actions as values and are expanded by the SDK when the action is carried out. The format of a token is `{%TOKEN%}`, where token is any data element that is defined in Experience Platform Launch for a mobile property that identifies the source of the data from which the token is expanded. For example, `{%TOKEN%}` can be used in the Signal postback action, where `My Data element for ECID` is a data element that was created using the Mobile Core extension, and the data element type is Experience Cloud ID.
 
@@ -18,13 +18,13 @@ The token can also be one of the reserved key names. For more information, see t
 
 Some tokens are modifier functions that specify the transformation that is applied to the value that was replaced by the token. An example is `urlenc`, which specifies that the value will be URL-encoded before it is replaced in the rule.
 
-### Using tokens in Postbacks and PII rule actions <a id="using-tokens-in-postbacks-and-pii-rule-actions"></a>
+### Using tokens in Postbacks and PII rule actions 
 
-The `Send Postback` and `Send PII` actions allow you to specify a `URL` field and an optional `Post Body` field. You can specify which tokens should be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration#rules-tokens).
+The `Send Postback` and `Send PII` actions allow you to specify a `URL` field and an optional `Post Body` field. You can specify which tokens should be expanded by the Experience Platform SDKs when the postback or PII network call is triggered. For more information on tokens, see the [rule tokens documentation](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration#rules-tokens).
 
-#### **Example**
+#### Example
 
-Here is an example of how to use the data that is passed to the MobileCore \(Android\) / ACPCore \(iOS\) `collectPii` API to form a token:
+The following example shows how to use the data that is passed to the MobileCore (Android) / ACPCore (iOS) `collectPii` API to form a token:
 
 1. In the mobile application, call `collectPII` to fire Event with context data.
 
@@ -71,9 +71,9 @@ Here is an example of how to use the data that is passed to the MobileCore \(And
 
    ![Send Postback action example](../../.gitbook/assets/postback_pii_token_example2%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
-For more information about `collectPii` and its usage, see `collectPii` in [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
+For more information about `collectPii` and its usage, see `collectPii` in the [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
-### Using tokens in Open URL rule actions <a id="using-tokens-in-openurl-rule-actions"></a>
+### Using tokens in Open URL rule actions
 
-Similar to the example above, `Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the Experience Platform SDKs. For more information about tokens, see [Rule Tokens](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
+Similarly to using tokens in postbacks and PII rule actions, `Open URL` actions allow you to specify a URL, which can contain the tokens that will be expanded by the Experience Platform SDKs. For more information about tokens, see the [rule tokens documentation](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals/signals-extension-and-rules-engine-integration#rules-tokens).
 
