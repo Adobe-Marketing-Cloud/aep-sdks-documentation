@@ -1,79 +1,5 @@
 # Analytics API reference
 
-## Version of the Analytics extension
-
-The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
-
-To get the version of the Analytics extension, use the following code sample:
-
-{% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-String analyticsExtensionVersion = Analytics.extensionVersion();
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-**Objective C**
-
-```objectivec
-NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
-```
-
-**Swift**
-
-```swift
-let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-```jsx
-ACPAnalytics.extensionVersion().then(analyticsExtensionVersion => console.log("AdobeExperienceSDK: ACPAnalytics version: " + analyticsExtensionVersion));
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Dart
-
-```dart
-String analyticsExtensionVersion = await FlutterACPAnalytics.extensionVersion;
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-### Cordova
-
-```jsx
-ACPAnalytics.extensionVersion(function(version) {  
-   console.log("ACPAnalytics version: " + version);
-}, function(error) {  
-   console.log(error);  
-});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-```csharp
-string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-```csharp
-string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
-```
-{% endtab %}
-{% endtabs %}
-
 ## clearQueue <a id="clearqueue"></a>
 
 Force delete, without sending to Analytics, all hits being stored or batched on the SDK.
@@ -82,7 +8,9 @@ Force delete, without sending to Analytics, all hits being stored or batched on 
 {% tab title="Android" %}
 ### clearQueue
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 #### Syntax
 
@@ -97,14 +25,46 @@ Analytics.clearQueue();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
 ### clearQueue
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 #### Syntax
 
-```objectivec
+```swift
+static func clearQueue()
+```
+
+#### Example
+
+#### Swift
+
+```swift
+Analytics.clearQueue()
+```
+
+#### Objective-C
+
+```objective-c
+[AEPMobileAnalytics clearQueue];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### clearQueue
+
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
+
+#### Syntax
+
+```objective-c
 + (void) clearQueue;
 ```
 
@@ -112,7 +72,7 @@ Analytics.clearQueue();
 
 #### Objective-C
 
-```objectivec
+```objective-c
 [ACPAnalytics clearQueue];
 ```
 
@@ -134,7 +94,9 @@ ACPAnalytics.clearQueue()
 clearQueue();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 **Example**
 
@@ -154,7 +116,9 @@ ACPAnalytics.clearQueue();
 Future<void> clearQueue();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 **Example**
 
@@ -162,8 +126,8 @@ Future<void> clearQueue();
 FlutterACPAnalytics.clearQueue();
 ```
 {% endtab %}
-
 {% tab title="Cordova" %}
+
 #### Cordova
 
 ### clearQueue
@@ -175,7 +139,9 @@ ACPAnalytics.clearQueue = function(success, fail);
 * _success_ is a callback containing a general success message if the clearQueue API executed without any errors.
 * _fail_ is a callback containing error information if the clearQueue API was executed with errors.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 **Example**
 
@@ -197,7 +163,9 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 public static void ClearQueue()
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 **Example**
 
@@ -215,13 +183,118 @@ ACPAnalytics.ClearQueue();
 public static void ClearQueue ();
 ```
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 **Example**
 
 ```csharp
 ACPAnalytics.ClearQueue();
 ```
+{% endtab %}
+{% endtabs %}
+
+## extensionVersion <a id="extensionversion"></a>
+
+The `extensionVersion()` API returns the version of the Analytics extension that is registered with the Mobile Core extension.
+
+To get the version of the Analytics extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+```java
+String analyticsExtensionVersion = Analytics.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+```swift
+let version = Analytics.extensionVersion
+```
+
+**Objective-C**
+
+```objective-c
+NSString *version = [AEPMobileAnalytics extensionVersion];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+**Objective-C**
+
+```objective-c
+NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
+```
+
+**Swift**
+
+```swift
+let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="React Native" %}
+
+### JavaScript
+
+```jsx
+ACPAnalytics.extensionVersion().then(analyticsExtensionVersion => console.log("AdobeExperienceSDK: ACPAnalytics version: " + analyticsExtensionVersion));
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+### Dart
+
+```dart
+String analyticsExtensionVersion = await FlutterACPAnalytics.extensionVersion;
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+### Cordova
+
+```jsx
+ACPAnalytics.extensionVersion(function(version) {  
+   console.log("ACPAnalytics version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+
+{% endtab %}
+
+{% tab title="Unity" %}
+
+### C\#
+
+```csharp
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+### C\#
+
+```csharp
+string analyticsExtensionVersion = ACPAnalytics.ExtensionVersion();
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -253,12 +326,20 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### getQueueSize
+
+See [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getqueuesizewithcompletionhandler)
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getQueueSize
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 ```
 
@@ -270,9 +351,9 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    
-    // use queue size
+    // handle queue size
 }];
 ```
 
@@ -280,7 +361,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getQueueSize { (queueSize) in    
-     // use queue size   
+     // handle queue size   
 }
 ```
 {% endtab %}
@@ -429,17 +510,49 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getQueueSizeWithCompletionHandler <a id="getQueueSizeWithCompletionHandler"></a>
+## getQueueSizeWithCompletionHandler <a id="getqueuesizewithcompletionhandler"></a>
 
 Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if unexpected error occures or request times out.
 
 {% tabs %}
-{% tab title="iOS" %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### getQueueSize
+
+#### Syntax
+
+```swift
+static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
+```
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getQueueSize { (queueSize, error) in
+    // Handle error (if non-nil) or use queueSize.
+}
+```
+
+**Objective-C**
+
+```objective-c
+[AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
+    // Handle error (if non-nil) or use queueSize.
+ }];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
 ### getQueueSizeWithCompletionHandler
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getQueueSizeWithCompletionHandler: (nonnull void (^) (NSUInteger queueSize, NSError* __nullable error)) completionHandler;
 ```
 
@@ -451,9 +564,9 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getQueueSizeWithCompletionHandler: ^(NSUInteger queueSize, NSError * _Nullable error) {    
-    // use queue size or handle error
+    // Handle error (if non-nil) or use queueSize.
 }];
 ```
 
@@ -461,7 +574,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in    
-     // use queue size or handle error  
+    // Handle error (if non-nil) or use queueSize.  
 }
 ```
 {% endtab %}
@@ -470,7 +583,7 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
 
 {% hint style="warning" %}
-Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before you use this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
@@ -506,14 +619,23 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#gettrackingidentifierwithcompletionhandler)
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
 ```
 
@@ -525,7 +647,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
     // check the trackingIdentifier value  
 }];
@@ -692,10 +814,10 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getTrackingIdentifierWithCompletionHandler <a id="getTrackingIdentifierWithCompletionHandler"></a>
+## getTrackingIdentifierWithCompletionHandler <a id="gettrackingidentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
-Before you use this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before you use this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled. Invoke the callback with NSError if unexpected error occures or request times out.
@@ -705,12 +827,46 @@ If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/us
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS" %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### getTrackingIdentifier
+
+Retrieves the Analytics tracking identifier.
+
+#### Syntax
+
+```swift
+static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
+```
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getTrackingIdentifier { (trackingId, error) in
+   // Handle the error (if non-nil) or use the trackingIdentifier value 
+}
+```
+
+**Objective-C**
+
+```objective-c
+AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
+   // Handle the error (if non-nil) or use the trackingIdentifier value 
+}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
 ### getTrackingIdentifierWithCompletionHandler
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getTrackingIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable trackingIdentifier, NSError* __nullable error)) completionHandler;
 ```
 
@@ -722,9 +878,9 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getTrackingIdentifierWithCompletionHandler:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-    // use queue size or handle error
+    // Handle the error (if non-nil) or use the trackingIdentifier value.
 }];
 ```
 
@@ -732,7 +888,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
-     // use queue size or handle error  
+     // Handle the error (if non-nil) or use the trackingIdentifier value. 
 }
 ```
 {% endtab %}
@@ -741,13 +897,14 @@ ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, e
 ## getVisitorIdentifier <a id="getvisitoridentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### getVisitorIdentifier
 
 #### Syntax
@@ -770,12 +927,20 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### getVisitorIdentifier
+
+See  [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvisitoridentifierwithcompletionHandler)
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getVisitorIdentifier
 
 #### Syntax
 
-```objectivec
+```objective-c
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 ```
 
@@ -785,7 +950,7 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
     // check the visitorIdentifier value   
 }];
@@ -944,21 +1109,53 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## getVisitorIdentifierWithCompletionHandler <a id="getVisitorIdentifierWithCompletionHandler"></a>
+## getVisitorIdentifierWithCompletionHandler <a id="getvisitoridentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier). Callback with NSError if an unexpected error occurs or the request times out.
 
 {% tabs %}
-{% tab title="iOS" %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
 ### getVisitorIdentifier
 
 #### Syntax
 
-```objectivec
+```swift
+static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
+```
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
+   // Handle the error (if non-nil) or use the visitorIdentifier value
+}
+```
+
+**Objective-C**
+
+```objective-c
+[AEPMobileAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
+   // Handle the error (if non-nil) or use the visitorIdentifier value
+}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### getVisitorIdentifierWithCompletionHandler
+
+#### Syntax
+
+```objective-c
 + (void) getVisitorIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable visitorIdentifier, NSError* __nullable error)) completionHandler;
 ```
 
@@ -968,9 +1165,9 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics getVisitorIdentifierWithCompletionHandler:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
-    // check the visitorIdentifier value or handle error
+    // Handle the error (if non-nil) or use the visitorIdentifier value
 }];
 ```
 
@@ -978,7 +1175,7 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 
 ```swift
 ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, error) in
-    // check the visitorIdentifier value or handle error
+    // Handle the error (if non-nil) or use the visitorIdentifier value
 }
 ```
 {% endtab %}
@@ -990,11 +1187,14 @@ Sends all queued hits to Analytics, regardless of the current hit batch settings
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 #### **Syntax**
 
@@ -1009,16 +1209,51 @@ Analytics.sendQueuedHits();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
-**Warning:** Use caution when manually clearing the queue. This process cannot be reversed.
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
 
 #### Syntax
 
-```objectivec
+```swift
+static func sendQueuedHits()
+```
+
+#### Example
+
+**Objective-C**
+
+```objective-c
+Analytics.sendQueuedHits()
+```
+
+**Swift**
+
+```swift
+[AEPMobileAnalytics sendQueueHits];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### sendQueuedHits
+
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
+
+{% hint style="warning" %}
+Use caution when manually clearing the queue. This operation cannot be reverted.
+{% endhint %}
+
+#### Syntax
+
+```objective-c
 + (void) sendQueuedHits;
 ```
 
@@ -1026,7 +1261,7 @@ Regardless of how many hits are currently queued, this method forces the library
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics sendQueuedHits];
 ```
 
@@ -1042,7 +1277,7 @@ ACPAnalytics.sendQueuedHits()
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1062,7 +1297,7 @@ ACPAnalytics.sendQueuedHits();
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1082,7 +1317,7 @@ FlutterACPAnalytics.sendQueuedHits();
 
 ### sendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1109,7 +1344,7 @@ ACPAnalytics.sendQueuedHits(function (handleCallback) {
 
 ### SendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1129,7 +1364,7 @@ ACPAnalytics.SendQueuedHits();
 
 ### SendQueuedHits
 
-Regardless of how many hits are currently queued, this method forces the library to send all hits in the offline queue.
+This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
 
 **Syntax**
 
@@ -1145,13 +1380,13 @@ ACPAnalytics.SendQueuedHits();
 {% endtab %}
 {% endtabs %}
 
-## setVisitorIdentifier <a id="setidentifier"></a>
+## setVisitorIdentifier <a id="setvisitoridentifier"></a>
 
 {% hint style="warning" %}
-Before using this API, see [Identify unique visitors](https://docs.adobe.com/content/help/en/analytics/implementation/javascript-implementation/unique-visitors/visid-overview.html).
+Before using this API, see [Identify unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
-Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://marketing.adobe.com/resources/help/en_US/sc/implement/visid_custom.html).
+Sets a custom Analytics visitor identifier. For more information, see [Custom Visitor ID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1172,12 +1407,40 @@ Analytics.setVisitorIdentifier("custom_identifier");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
 ### setVisitorIdentifier
 
 #### Syntax
 
-```objectivec
+```swift
+static func setVisitorIdentifier(visitorIdentifier: String)
+```
+
+* _visitorIdentifier_ is the new value for the visitor identifier.
+
+#### Example
+
+**Swift**
+
+```swift
+Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
+```
+
+**Objective-C**
+
+```objective-c
+[AEPMobileAnalytics setVisitorIdentifier:@"custom_identifier"];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### setVisitorIdentifier
+
+#### Syntax
+
+```objective-c
 + (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```
 
@@ -1189,7 +1452,7 @@ Here are examples in Objective-C and Swift:
 
 **Objective-C**
 
-```objectivec
+```objective-c
 [ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 
@@ -1293,7 +1556,7 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 
 **iOS Syntax**
 
-```text
+```csharp
 public static void SetVisitorIdentifier (string visitorIdentifier);
 ```
 
@@ -1301,7 +1564,7 @@ public static void SetVisitorIdentifier (string visitorIdentifier);
 
 **Android Syntax**
 
-```text
+```csharp
 public unsafe static void SetVisitorIdentifier (string visitorID);
 ```
 
@@ -1309,7 +1572,7 @@ public unsafe static void SetVisitorIdentifier (string visitorID);
 
 **Example**
 
-```text
+```csharp
 ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
 {% endtab %}

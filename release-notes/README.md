@@ -4,6 +4,19 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 30, 2021
+
+### iOS AEPCore 3.2.2
+
+* Remove double URL encoding of AEPIdentity identifiers.
+* Prevent possible crash at shutdown in EventHub.
+
+## June 28, 2021
+
+### iOS AEPAssurance 3.0.0
+
+* Initial release to support [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-assurance-ios).
+
 ## June 24, 2021
 
 ### iOS ACPPlacesMonitor 2.1.4
@@ -37,12 +50,25 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Assurance 1.0.3
 
 * Assurance state is now properly shared when reconnecting to an established session.
+
+### iOS Messaging 1.0.0
+
+* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+
+### Adobe Journey Optimizer Launch Extension
+
+* You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
 
 * Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 * Resolved an issue with Campaign module details not being returned.
+
+### Android Messaging 1.0.0
+
+* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ## June 15, 2021
 
