@@ -230,6 +230,19 @@ public class DecisionScope{
 }
 ```
 
+### Proposition/AEPProposition
+
+This class represents the proposition received from the offer decisioning service.
+
+```swift
+public class Proposition: NSObject, Codable {
+    public let id: String
+    public let scopeString: String
+    public let decisionScope: DecisionScope
+    public lazy var offers: [Offer] = {...}()
+}
+```
+
 ### Offer/AEPOffer
 
 This class represents the offer option received from the offer decisioning service.
@@ -242,6 +255,7 @@ public class Offer: NSObject, Codable {
     public let content: String?
     public let characteristics: [String: String]?
     public let schema: String
+    public weak var proposition: Proposition?
 }
 ```
 
