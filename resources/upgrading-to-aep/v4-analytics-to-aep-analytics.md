@@ -6,7 +6,7 @@ The AEP Analytics extension uses [Launch](https://launch.adobe.com/) to configur
 
 1. Create a mobile property on Launch. See [Set up a mobile property](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/getting-started/create-a-mobile-property/README.md) for more information.
 2. Configure your mobile app with the create mobile property. The AEP Mobile Core extension provides general functionality required by all the Adobe AEP extensions. The Configuration extension is built into the Mobile Core and contains the `configureWithAppId` API. This API is used to link the Launch mobile property with your mobile app. The documentation for this API can be seen at the [Configuration API Reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/using-mobile-extensions/mobile-core/configuration/configuration-api-reference/README.md#configurewithappid) page. A code sample showing the usage of this API is provided below.
-3. Once all the AEP extensions are imported and configured correctly, remove the v4 Mobile SDK dependency. This step is mandatory and a mix of v4 and AEP API calls is not supported.
+3. Once all the Adobe Experience Platform extensions are imported and configured correctly, remove the v4 Mobile SDK dependency. This step is mandatory and a mix of v4 and AEP API calls is not supported.
 
 {% tabs %}
 {% tab title="Android" %}
