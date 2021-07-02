@@ -17,7 +17,7 @@ After the SDK makes a network request with Adobe Analytics, the status will tell
 |`Delayed`|The maximum number of requests retries to fetch the post-processing information has been exceeded.|
 |`Error`|An error caused the network request to fail. More details about the error are displayed in the event details view.|
 |`Unauthorized`|The user does not have access to the Adobe Analytics report suite.|
-|`Unavailable`|The `AnalyticsTrack` or the `LifecycleStart` event have a corresponding AnalyticsResponse event|
+|`Unavailable`|The `AnalyticsTrack` or the `LifecycleStart` event does not have a corresponding AnalyticsResponse event.|
 |`Expired`|The `AnalyticsTrack` or `LifecycleStart` event is older than 24 hours.|
 
 ### Event details view
