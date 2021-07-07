@@ -1,14 +1,18 @@
-# Analytics event reference
+# Adobe Analytics event reference
 
 ## Internal events for Adobe Analytics
 
-In addition to the Analytics hits that are sent as a result of the track call, the Adobe Experience Platform SDKs also track some internal events that are based on the communication with other extensions.
+The Adobe Experience Platform SDKs also track some internal events that are based on the communication with other extensions in addition to the Analytics hits that are sent as a result of the track call.
 
-Here is a list of the events by extension:
+Adobe Analytics events are supported in the following extensions:
+- Lifecycle
+- Identity
+- Messages
+- Target
 
 ### Lifecycle extension
 
-Here are the Analytics events in the Lifecycle extension:
+The following Adobe Analytics events are supported in the Lifecycle extension:
 
 #### Install event
 
@@ -23,7 +27,7 @@ A launch is considered to be new when the following conditions are met:
 * The application is reopened from the background after the configured session timeout.
 * The application is opened after a force close.
 
-Launch data includes information about the application's number of launches, days since first run, days since last use, user daily/monthly engaged badges, and other lifecycle metrics. We also track the application version upgrades.
+Launch data includes information about the application's number of launches, days since first run, days since last use, user daily/monthly engaged badges, and other lifecycle metrics. The application version upgrades are also tracked.
 
 #### Crash event
 
@@ -31,7 +35,7 @@ If your application is terminated without having first been backgrounded, the SD
 
 #### SessionInfo
 
-This hit contains information about the previous launch session, such as the session length. This information is sent as an individual hit if the `backdateSessionInfo` flag is enabled in your configuration. If the flag is not enabled, the information is sent as part of the launch event.
+The `SessionInfo` contains information about the previously launched session, such as the session length. This information is sent as an individual hit if the `backdateSessionInfo` flag is enabled in your configuration. If the flag is not enabled, the information is sent as part of the launch event.
 
 ### Identity extension
 
@@ -39,21 +43,21 @@ The following Analytics event is triggered when the Identity extension is enable
 
 #### Push
 
-The SDK tracks changes in the user's push notifications preference, and a new hit is sent after the user opts in or out for push notifications.
+The SDK tracks changes in the user's push notifications preference, and a new hit is sent after the user opts in or opts out for push notifications.
 
 ### Messages extension
 
 The following Analytics event is triggered when the Messages extension is enabled:
 
-#### In-App message
+#### In-app message
 
 The SDK tracks the following metrics for your in-app messages:
 
-* For Full Screen and Alert style in-app messages:
+* For full screen and alert style in-app messages:
   * **Impressions**: when user triggers an in-app message.
   * **Click throughs**: when user presses the **Click-through** button.
   * **Cancels**: when user presses the **Cancel** button.
-* For local \(remote\) notifications:
+* For local (remote) notifications:
   * **Impressions**: when user triggers the notification.
   * **Opens**: when user opens app from the notification.  This will be tracked with the `trackAdobeDeepLink` method.
 
@@ -63,7 +67,7 @@ The Analytics event in the Target extension is `AnalyticsForTarget`. The SDK for
 
 ## Events handled by Analytics
 
-The following events are handled by the Analytics extension:
+The following events are handled by the Adobe Analytics extension:
 
 ### Generic track content request <a id="generic-track-content-request"></a>
 
@@ -72,7 +76,7 @@ This event is a request to complete processing on the Analytics hits queue. The 
 The Analytics extension receives and processes the following keys in a generic track content request event:
 
 * `action` - action name to attribute to the Analytics request being processed.
-* `state` - state name \(page name\) to attribute to the Analytics request being processed.
+* `state` - state name (page name) to attribute to the Analytics request being processed.
 * `contextdata` - key-value pairs that add context to the Analytics request being processed.
 
 {% hint style="info" %}
@@ -100,7 +104,7 @@ The payload definition is composed of the following:
 
 **Track request**
 
-Here is an example of event data for a track request:
+The following code sample shows an example of event data for a track request:
 
 ```javascript
 {
@@ -116,7 +120,7 @@ Here is an example of event data for a track request:
 
 ### Analytics content request <a id="analytics-content-request"></a>
 
-This event is a request to complete processing on the Analytics hits queue and can be used in one of the following situations:
+An Analytics content request is a request to complete processing on the Analytics hits queue and can be used in one of the following situations:
 
 * When a request is received to send the Analytics hits in the queue, regardless of the batching settings.
 * When a request is received to clear all unsent Analytics hits from the queue.
@@ -128,7 +132,7 @@ The Analytics extension receives this event with the following keys, and the ext
 * `forcekick` - sends all the hits in database.
 * `getqueuesize` - retrieves the current number of queued hits in the database. This is a paired event that is associated with a response callback.
 
-This event is generated by calling one fo the following Analytics APIs:
+This event is generated by calling one of the following Analytics APIs:
 
 * [sendQueuedHits](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#sendqueuedhits) 
 * [clearQueue](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#clearqueue)
@@ -142,15 +146,17 @@ This event is generated by calling one fo the following Analytics APIs:
 
 #### Data payload definition <a id="data-payload-definition"></a>
 
-The payload definition is composed of the following:
+The payload definition is composed of the following parts:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `forcekick` | Bool | Yes | Bool indicating whether this is a request for sending all Analytics hits. |
-| `clearhitsqueue` | Bool | Yes | Bool indicating whether this is a clear hits queue event. |
-| `getqueuesize` | Bool | Yes | Bool indicating whether this is a request for getting current number of queued hits. |
+| `forcekick` | Boolean | Yes | Boolean indicating whether this is a request for sending all Analytics hits. |
+| `clearhitsqueue` | Boolean | Yes | Boolean indicating whether this is a clear hits queue event. |
+| `getqueuesize` | Boolean | Yes | Boolean indicating whether this is a request for getting current number of queued hits. |
 
 #### Event data examples <a id="event-data-example"></a>
+
+The following examples show how to use event data:
 
 **Send all Analytics hits request**
 
@@ -160,8 +166,6 @@ The payload definition is composed of the following:
 }
 ```
 
-#### Event data example <a id="event-data-example-1"></a>
-
 **Clear all the Analytics hits request**
 
 ```javascript
@@ -169,8 +173,6 @@ The payload definition is composed of the following:
   "clearhitsqueue": true
 }
 ```
-
-#### Event data example <a id="event-data-example-2"></a>
 
 **Get queue size request**
 
@@ -182,7 +184,7 @@ The payload definition is composed of the following:
 
 ### Analytics request identity <a id="analytics-request-identity"></a>
 
-This event is responsible for fetching the Analytics tracking identifier \(AID\) and custom visitor identifier \(VID\) from the Analytics extension and is generated in the Analytics [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) calls.
+The Analytics request identity event is responsible for fetching the Analytics tracking identifier (AID) and custom visitor identifier (VID) from the Analytics extension and is generated in the Analytics [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) calls.
 
 After the Analytics identity request event is received, the Analytics extension completes one of the following tasks:
 
@@ -207,7 +209,7 @@ The data property in this event is used by each extension to modify its current 
 This event will be generated in the following scenarios:
 
 * Initial config requested by the customer.
-* Configuration modified \(remote update or local developer action\).
+* Configuration modified (remote update or local developer action).
 * In response to a configuration request event with the `config.getData` data key.
 
 For more information about the data payload definition for this event, see the _Configuration Keys_ topics in each extension section.
@@ -299,9 +301,9 @@ All of the key-value pairs are optional.
 
 ### Lifecycle request content
 
-This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart\(\) with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart\(\) with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) and [lifecyclePause\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
+This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart() with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart() with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) and [lifecyclePause()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
 
-The Analytics extension listens only to the Lifecycle Start Event, and the Analytics database queue should be paused for up to `DEFAULT_LIFECYCLE_RESPONSE_WAIT_TIMEOUT` which is `1000 \(ms\)`to wait for the corresponding response content event.
+The Analytics extension listens only to the Lifecycle Start Event, and the Analytics database queue should be paused for up to `DEFAULT_LIFECYCLE_RESPONSE_WAIT_TIMEOUT` which is `1000 (ms)`to wait for the corresponding response content event.
 
 #### Event details <a id="event-details-3"></a>
 
