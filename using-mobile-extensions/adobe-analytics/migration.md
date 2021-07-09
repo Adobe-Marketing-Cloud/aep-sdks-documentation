@@ -12,7 +12,7 @@ The AEPAnalytics extension is implemented purely in Swift and is compatible with
 
 
 
-## AEPAnalytics APIs \(alphabetical\)
+## AEPAnalytics APIs (alphabetical)
 
 ### clearQueue
 
