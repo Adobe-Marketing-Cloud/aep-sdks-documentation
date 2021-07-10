@@ -1,6 +1,6 @@
 # Adobe Analytics - Mobile Services
 
-This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services ](https://mobilemarketing.adobe.com)on the Experience Platform SDK.
+This extension enables in-app messaging, push notifications, and marketing links functionality from [Mobile Services](https://mobilemarketing.adobe.com) on the Experience Platform SDK.
 
 {% hint style="warning" %}
 As of **April 1, 2020**, Apple will no longer support UIWebView. To avoid any issues, ensure that you are using the iOS extension versions 1.0.3 or later. For more information, see Apple's documentation on [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
@@ -9,29 +9,29 @@ As of **April 1, 2020**, Apple will no longer support UIWebView. To avoid any is
 {% hint style="info" %}
 The Adobe Analytics Mobile Marketing Add-on SKU is required to enable Mobile Services access to mobile acquisition, deep linking, geolocation, and mobile messaging capabilities.
 
-For more information, contact your Adobe CSM.
+For more information, please contact your Adobe Customer Success Manager.
 {% endhint %}
 
 Review the following Mobile Services functionality documentation for context and set up before implementation at these links:
 
-* [Getting started with Mobile Services](https://marketing.adobe.com/resources/help/en_US/mobile/gs.html)
-* [Create and managing apps](https://marketing.adobe.com/resources/help/en_US/mobile/manage_apps.html)
-* [Acquisition and marketing links](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html)
-* [Push and in-app messaging](https://marketing.adobe.com/resources/help/en_US/mobile/in_app_messaging.html)
+* [Getting started with Mobile Services](https://experienceleague.adobe.com/docs/mobile-services/using/get-started-ug/gs.html)
+* [Create and managing apps](https://experienceleague.adobe.com/docs/mobile-services/using/manage-apps-ug/manage-apps.html?lang=en)
+* [Acquisition and marketing links](https://experienceleague.adobe.com/docs/mobile-services/using/acquisition-main-ug/acquisition-main.html?lang=en)
+* [Push and in-app messaging](https://experienceleague.adobe.com/docs/mobile-services/using/messaging-ug/in-app-messaging.html?lang=en)
 
 {% hint style="warning" %}
 Postbacks created from the Mobile Services interface are **not** supported. Please use a Launch rule with the Mobile Core extension to create a postback. [Signal extension and Rules Engine integration](../../resources/user-guides/signal-extension-and-rules-engine-integration.md).
 {% endhint %}
 
 {% hint style="warning" %}
-Before you configure the Mobile Services extension, ensure that you previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To create an app in Mobile Services, see [Add a new App](https://marketing.adobe.com/resources/help/en_US/mobile/t_new_app.html).
+Before you configure the Mobile Services extension, ensure that you previously created apps in [Mobile Services](https://mobilemarketing.adobe.com). To learn how to create an app in Mobile Services, see the [add a new App](https://experienceleague.adobe.com/docs/mobile-services/using/manage-apps-ug/t-new-app.html?lang=en) tutorial.
 {% endhint %}
 
 {% hint style="info" %}
-Looking for location functionality from Mobile Services? Try out Places Service, our point of interest management service. For more information, see [Places Service](https://docs.adobe.com/content/help/en/places/using/home.html).
+To use location functionality for Mobile Services, see the documentation on the [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en), the point of interest management service for Mobile Services.
 {% endhint %}
 
-To use the Mobile Services extension, complete these steps:
+To use the Mobile Services extension, complete the following steps:
 
 1. Configure the Mobile Services extension in Launch.
 2. If using acquisition and marketing links, update your configuration in the Analytics extension.
@@ -41,10 +41,10 @@ To use the Mobile Services extension, complete these steps:
 ## Configure the Mobile Services extension in Experience Platform Launch
 
 {% hint style="warning" %}
-The Mobile Services extension requires the Analytics extension for reporting and uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite might be sent.
+The Mobile Services extension requires the Analytics extension for reporting. It  uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite may be sent.
 {% endhint %}
 
-### Automatic configuration \(Recommended\)
+### Automatic configuration (Recommended)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
@@ -70,12 +70,9 @@ If you are sending data to multiple Analytics report suites, use the Acquisition
 To install the Mobile Services extension, complete the following steps:
 
 1. Select **Enter Custom settings**.
-2. Enter an Acquisition time out.  
-   The recommended time out is 5 seconds. To enable app acquisition,
+2. Enter an Acquisition time out. The recommended time out is 5 seconds. To enable app acquisition, this value must be greater than 0.
 
-   this value must be set to a value that is higher than 0.
-
-3. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
+3. Provide the **Acquisition App ID** (sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`).
 
    You can find the Acquisition App ID in Mobile Services.
 
@@ -83,8 +80,7 @@ To install the Mobile Services extension, complete the following steps:
 
    ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.03.42-pm-1.png)
 
-5. Provide the **Messages URL**.  
-   Here is a sample value: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
+5. Provide the **Messages URL**. This value would look something similar to: `https://assets.adobedtm.com/b213432c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5c7711bc64746d7f5800036e.json`
 
    You can find the Messages URL from your `ADBMobileConfig.json` file typically near the bottom of the file.
 
@@ -95,7 +91,7 @@ To install the Mobile Services extension, complete the following steps:
 
 ## Configure the Adobe Analytics extension
 
-1. To ensure that this extension is correctly configured and implemented, follow the steps in the [Configure the Mobile Services extension in Experience Platform Launch](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsbnKuIZ7JbOKOD9DC/using-mobile-extensions/adobe-analytics-mobile-services#configure-the-adobe-analytics-extension).
+1. To ensure that this extension is correctly configured and implemented, follow the steps in the [configure the Mobile Services extension in Experience Platform Launch](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsbnKuIZ7JbOKOD9DC/using-mobile-extensions/adobe-analytics-mobile-services#configure-the-adobe-analytics-extension) tutorial.
 2. In **Launch Hit Delay**, type a value of 5s or more to ensure that the acquisition context is sent to Analytics with your Lifecycle information.
 
 ![](../../.gitbook/assets/screen-shot-2019-04-05-at-1.50.10-pm.png)
@@ -110,7 +106,7 @@ The Mobile Services extension depends on the Core extension, which includes the 
 {% tab title="Android" %}
 Add the Mobile Services extension to your project using the app's Gradle file.
 
-#### Java
+### Java
 
 Import the Mobile Services extension in your application's main activity.
 
@@ -122,7 +118,7 @@ import com.adobe.marketing.mobileservices.*;
 {% tab title="iOS — Obj-C" %}
 You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
 
-#### Objective-C
+### Objective-C
 
 Import the library into your project:
 
@@ -138,7 +134,7 @@ Import the library into your project:
 {% tab title="iOS — Swift" %}
 You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
 
-#### Swift
+### Swift
 
 Import the library into your project:
 
@@ -156,7 +152,7 @@ import AEPMobileServices
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity. For example, your code might look like the following:
 
@@ -183,7 +179,7 @@ Lifecycle.registerExtension();
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-#### Objective C
+### Objective C
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
 
@@ -201,7 +197,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-#### Swift
+### Swift
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
 
@@ -225,17 +221,19 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 
 {% tabs %}
 {% tab title="Android" %}
-Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-### setPushIdentifier <a id="setpushidentifier"></a>
+### setPushIdentifier
 
-#### Syntax <a id="syntax"></a>
+**Syntax**
 
 ```java
 void setPushIdentifier(final String registrationID)
 ```
 
-#### Example <a id="example"></a>
+**Example**
+
+**Java**
 
 ```java
 MobileCore.setPushIdentifier(registrationID);
@@ -251,15 +249,15 @@ After following Apple's [configure remote notification document](https://develop
 
 ### setPushIdentifier
 
-#### Objective-C
-
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
 
-#### Example
+**Example**
+
+**Objective-C**
 
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -269,7 +267,7 @@ After following Apple's [configure remote notification document](https://develop
 }
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 ACPCore.setPushIdentifier(deviceToken)
@@ -285,22 +283,22 @@ After following Apple's [configure remote notification document](https://develop
 
 ### setPushIdentifier
 
-#### Swift
-
-#### Syntax
+**Syntax**
 
 ```swift
 @objc(setPushIdentifier:)
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-#### Example
+**Example**
+
+**Swift**
 
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
             let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
             let token = tokenParts.joined()
-            print("Device Token: \(token)")
+            print("Device Token: (token)")
 
             // Send push token to experience platform
             MobileCore.setPushIdentifier(deviceToken)
@@ -311,11 +309,11 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 ### Debugging the push messaging set up
 
-If everything is configured correctly, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
+If the Mobile Services API is correctly configured, after installing your app on a mobile device, verify that the following SDK debug log is displayed:
 
-Request to `demdex.net` containing device push token has been sent:
+To verify, make a request to `demdex.net`, containing the device push token has been sent:
 
-```text
+```console
 2019-01-31 18:22:35.261676-0800 DemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
 
@@ -329,7 +327,7 @@ Using the following API does not increment page views.
 
 {% tabs %}
 {% tab title="Android" %}
-No set up required. In Android, the SDK handles push tracking to Analytics.
+No set up is required. On Android, the SDK automatically handles push tracking to Analytics.
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
@@ -337,13 +335,15 @@ Use the following API to track a push messaging click in Adobe Analytics.
 
 ### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) collectLaunchInfo:(NSDictionary *)userInfo;
 ```
 
-#### Objective-C
+**Example**
+
+**Objective-C**
 
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -361,15 +361,17 @@ Use the following API to track a push messaging click in Adobe Analytics.
 
 ### collectLaunchInfo
 
-#### Syntax
+**Syntax**
 
-```objectivec
+```swift
 (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-#### Swift
+**Example**
 
-```objectivec
+**Swift**
+
+```swift
 AEPCore.collectLaunchInfo(userInfo)
 ```
 {% endtab %}
@@ -379,12 +381,12 @@ AEPCore.collectLaunchInfo(userInfo)
 
 For more information, see the following:
 
-* [Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_troubleshooting-push-messaging.html) \(Android\)
-* [Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_troubleshooting-push-messaging.html) \(iOS\)
+* [Android troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/push-messaging/c-troubleshooting-push-messaging.html)
+* [iOS troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/push-messaging/c-troubleshooting-push-messaging.html)
 
 ### Set up in-app messaging
 
-This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see [Create an in-app message](https://marketing.adobe.com/resources/help/en_US/mobile/?f=t_in_app_message).
+This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see the [create an in-app message](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/inapp-messaging/messaging.html) tutorial.
 
 To set up your app for in-app messages, implement the following instructions. You can complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they are delivered dynamically to your app and displayed without an app store update.
 
@@ -441,7 +443,7 @@ The following methods allow you to configure the small and large icons that appe
 
 {% tabs %}
 {% tab title="Android" %}
-### Config.setSmallIconResourceId\(int resourceId\)
+### Config.setSmallIconResourceId(int resourceId)
 
 This API sets the small icon that is used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
 
@@ -465,7 +467,7 @@ No setup required. Icons are automatically handled by the SDK for iOS.
 
 {% tabs %}
 {% tab title="Android" %}
-### Config.setLargeIconResourceId\(int resourceId\)
+### Config.setLargeIconResourceId(int resourceId)
 
 Set the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -499,10 +501,10 @@ For full screen and alert style in-app messages:
 
 For custom, full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
-* **Click-through** \(redirect\) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
-* **Cancel** \(close\) example tracking: `adbinapp://cancel`
+* **Click-through** (redirect) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
+* **Cancel** (close) example tracking: `adbinapp://cancel`
 
-For local \(remote\) notifications:
+For local (remote) notifications:
 
 * **Impressions**: when user triggers the notification.
 * **Opens**: when user opens app from the notification.
@@ -764,13 +766,13 @@ MobileServices.trackAdobeDeepLink
 {% endtab %}
 {% endtabs %}
 
-## Integration with Apple Search Ads \(iOS\)
+## Integration with Apple Search Ads (iOS)
 
-The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) &lt;&gt; to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see \(Apple Search Ads\)\[[https://searchads.apple.com/](https://searchads.apple.com/)\]. This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
+The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) &lt;&gt; to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see (Apple Search Ads)\[[https://searchads.apple.com/](https://searchads.apple.com/)\]. This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
 
 ### Implement Search Ads integration
 
-To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview) \(in addition to the Mobile Services extension\) to your app.
+To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview) (in addition to the Mobile Services extension) to your app.
 
 ### Reporting on Search Ads Attribution
 
@@ -791,7 +793,7 @@ To prepare for your migration, remember the following information:
 
 * Lifetime value is not supported on the Experience Platform SDK, so it might not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
-* `a.internalaction` or `action` \(from Lifecycle\) can be used to trigger in-app messages or local notifications.  We suggest using `LaunchEvent` instead.
+* `a.internalaction` or `action` (from Lifecycle) can be used to trigger in-app messages or local notifications.  We suggest using `LaunchEvent` instead.
 * Local notifications do not support Android 8.0 or higher.
 
 ### Configuration keys
@@ -800,7 +802,7 @@ To prepare for your migration, remember the following information:
 | :--- | :--- |
 | mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
-| mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
+| mobile.messagesUrl | Messages URL from your configuration (`ADBMobileConfig.json`) file's remotes section. |
 
 ## Watch the video
 
@@ -809,5 +811,5 @@ To prepare for your migration, remember the following information:
 ### Additional information
 
 * Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
-* Visit [Mobile Services \(mobilemarketing.adobe.com\)](https://mobilemarketing.adobe.com)
+* Visit [Mobile Services (mobilemarketing.adobe.com)](https://mobilemarketing.adobe.com)
 

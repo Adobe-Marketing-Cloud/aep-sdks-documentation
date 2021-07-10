@@ -60,6 +60,8 @@ public static void trackAdobeDeepLink(final Uri uri)
 
 **Example**
 
+**Java**
+
 ```java
 Uri testUri = new Uri.Builder()
         .scheme("adobelinktest")
@@ -73,15 +75,18 @@ Uri testUri = new Uri.Builder()
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-#### Syntax
+
+### trackAdobeDeepLink
+
+**Syntax**
 
 ```objectivec
 + (void) trackAdobeDeepLink: (NSURL*) url;
 ```
 
-#### Example
+**Example**
 
-#### Objective C
+**Objective C**
 
 ```objectivec
 NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
@@ -89,7 +94,7 @@ NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplin
 [ACPMobileServices trackAdobeDeepLink:url];
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
@@ -98,15 +103,17 @@ ACPMobileServices.trackAdobeDeepLink(url)
 {% endtab %}
 
 {% tab title="iOS — Swift" %}
-#### Syntax
+### trackAdobeDeepLink
+
+**Syntax**
 
 ```objectivec
 + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
 ```
 
-#### Example
+**Example**
 
-#### Objective C
+**Objective-C**
 
 ```objectivec
 NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
@@ -114,7 +121,7 @@ NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplin
 [AEPMobileServices trackAdobeDeepLink:url];
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
@@ -123,7 +130,7 @@ AEPMobileServices.trackAdobeDeepLink(url)
 {% endtab %}
 {% endtabs %}
 
-## Process Referrer Intent
+## Process referrer intent
 
 You can use this API to process the referrer intent that was received from Android.
 
@@ -133,13 +140,15 @@ This API is **only** available in Android.
 
 ### processReferrer
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void processReferrer(final Context context, final Intent intent)
 ```
 
-#### Example
+**Example**
+
+**Java**
 
 ```java
 public  void onReceive(Context context, Intent intent) {
@@ -152,18 +161,20 @@ public  void onReceive(Context context, Intent intent) {
 You can use this API to process the data you get from the Google Play Install Referrer APIs.
 
 {% hint style="warning" %}
-This API is available starting in Android version `1.1.0`.
+This API is only available starting in Android version `1.1.0`.
 {% endhint %}
 
 ### processReferrer
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void processGooglePlayInstallReferrerUrl(final Context context, final Intent intent)
 ```
 
-#### Example
+**Example**
+
+**Java**
 
 ```java
 void handleGooglePlayReferrer() {
