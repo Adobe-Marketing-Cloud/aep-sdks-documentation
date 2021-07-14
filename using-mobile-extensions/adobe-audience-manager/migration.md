@@ -67,9 +67,9 @@ static func getVisitorProfile(completion: @escaping ([String: String]?, Error?) 
 {% tab title="ACP 2.x (Objective-C)" %}
 
 ```objective-c
-+ (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
++ (void) getVisitorProfile:^(NSDictionary * _Nullable visitorProfile) callback;
 
-+ (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
++ (void) getVisitorProfileWithCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) completionHandler;
 ```
 
 {% endtab %}
@@ -128,11 +128,11 @@ static func signalWithData(data: [String: String], completion: @escaping ([Strin
 {% tab title="ACP 2.x (Objective-C)" %}
 
 ```objective-c
-+ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
-                       callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
++ (void) signalWithData: (NSDictionary<NSString *, NSString *> * _Nullable) data
+                       callback:^(NSDictionary* _Nullable visitorProfile) callback;
 
-+ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
-                        withCompletionHandler:: (nullable void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
++ (void) signalWithData: (NSDictionary<NSString *, NSString *> * _Nonnull) data
+                        withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError *         _Nullable error) completionHandler;
 ```
 
 {% endtab %}

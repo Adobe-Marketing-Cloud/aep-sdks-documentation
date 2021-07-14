@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Jul 13, 2021
+
+### iOS AEPAudience 3.0.2
+
+* Added support to handle MobileCore.resetIdentities() API.
+
 ## Jul 2, 2021
 
 ### iOS AEPUserProfile 3.0.1
