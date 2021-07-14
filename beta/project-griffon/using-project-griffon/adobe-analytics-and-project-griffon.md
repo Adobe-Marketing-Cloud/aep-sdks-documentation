@@ -6,7 +6,21 @@ The integration with Adobe Analytics provides a richer view of SDK events to use
 
 ![](../../../.gitbook/assets/aa-loop.gif)
 
-If the SDK made a network request with Adobe Analytics \(queued\), and if post-processing information is returned from Adobe Analytics about that event \(validated\), the status tells you when an SDK event is generated \(processed\).
+### Post-processed status
+
+After the SDK makes a network request with Adobe Analytics, the status will tell you if Griffon was able to retrieve the post-processing information for the Adobe Analytics request.
+
+| Status | Description |
+| :--- | :--- | 
+|`Queued`|The network request is fetching the post-processing information.|
+|`Processed`|The network request was successful, and the post-processing information is received.|
+|`Delayed`|The maximum number of requests retries to fetch the post-processing information has been exceeded.|
+|`Error`|An error caused the network request to fail. More details about the error are displayed in the event details view.|
+|`Unauthorized`|The user does not have access to the Adobe Analytics report suite.|
+|`Unavailable`|The Adobe Analytics request does not have a corresponding `AnalyticsResponse` event.|
+|`Expired`|The `AnalyticsTrack` or `LifecycleStart` event is older than 24 hours.|
+
+### Event details view
 
 For an Analytics track event, the detailed view contains the following valuable parts:
 
