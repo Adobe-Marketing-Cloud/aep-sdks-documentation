@@ -1,5 +1,24 @@
 # Release Notes
 
+## Jul 13, 2021
+
+### iOS AEPAudience 3.0.2
+
+* Added support to handle MobileCore.resetIdentities() API.
+
+## Apr 1, 2021
+
+### iOS AEPAudience 3.0.1
+
+* Updated syncedVisitorIds implementation to a map
+* Fixed access modifer for two classes
+
+## February 26, 2021
+
+### iOS AEPAnalytics 3.0.0
+
+* Initial release to support [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
+
 ## January 20, 2021
 
 ### iOS Audience 2.3.0

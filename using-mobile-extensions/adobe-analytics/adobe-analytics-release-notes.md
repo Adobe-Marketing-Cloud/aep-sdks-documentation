@@ -1,5 +1,18 @@
 # Release Notes
 
+## April 1, 2021
+
+### iOS AEPAnalytics 3.0.1
+
+* Added support to handle internal analytics track request events
+* Refactored code and updated doc comments
+
+## February 26, 2021
+
+### iOS AEPAnalytics 3.0.0
+
+* Initial release to support [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
+
 ## December 18, 2020
 
 ### iOS Analytics 2.5.0
