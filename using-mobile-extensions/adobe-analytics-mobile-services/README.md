@@ -392,13 +392,13 @@ To set up your app for in-app messages, implement the following instructions. Yo
 
 {% tabs %}
 {% tab title="Android" %}
-1. Update the `AndroidManifest.xml` file to declare the full screen activity and enable the Message Notification Handler.
+Update the `AndroidManifest.xml` file to declare the full screen activity and enable the Message Notification Handler.
 
 #### Java
 
-If you are using Fullscreen message or local notification, update the `AndroidManifest.xml` with:
+If you are using a fullscreen message or a local notification, update the `AndroidManifest.xml` with the following:
 
-```markup
+```xml
 <activity
     android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
     android:windowSoftInputMode="adjustUnspecified|stateHidden" >
@@ -414,7 +414,7 @@ If you selected a modal layout, select one of the following themes for the messa
 
 #### Example
 
-```markup
+```xml
 <activity
 android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
@@ -425,13 +425,13 @@ android:windowSoftInputMode="adjustUnspecified|stateHidden" >
 {% endtab %}
 
 {% tab title="iOS" %}
-No setup required for iOS. SDK handles in-app message support out of the box.
+No setup is required for iOS, since Mobile SDK automatically handles in-app message support.
 {% endtab %}
 {% endtabs %}
 
 #### Fallback images
 
-When creating a full-screen message, you can optionally specify a fallback image. If your message cannot retrieve its intended image from the web, the SDK attempts to load the image with the same name from your application’s assets folder. This allows you to show your message in its original form, even if the user is offline, or the predetermined image is unreachable.
+When creating a full-screen message, you can optionally specify a fallback image. If your message cannot retrieve its intended image from the web, the SDK attempts to load the image with the same name from your application’s assets folder. This allows you to show your message in its original form, even if the user is offline or the predetermined image is unreachable.
 
 {% hint style="warning" %}
 The fallback image asset name is specified when you configure the message in Mobile Services. You need to ensure that the specified resource is available.
@@ -443,17 +443,17 @@ The following methods allow you to configure the small and large icons that appe
 
 {% tabs %}
 {% tab title="Android" %}
-### Config.setSmallIconResourceId(int resourceId)
+### setSmallIconResourceId
 
 This API sets the small icon that is used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void setSmallIconResourceId(final int resourceId);
 ```
 
-#### Example
+**Example**
 
 ```java
 MobileCore.setSmallIconResourceID(R.drawable.appIcon);
@@ -461,23 +461,23 @@ MobileCore.setSmallIconResourceID(R.drawable.appIcon);
 {% endtab %}
 
 {% tab title="iOS" %}
-No setup required. Icons are automatically handled by the SDK for iOS.
+No setup is required on iOS, since icons are automatically handled by the SDK.
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
 {% tab title="Android" %}
-### Config.setLargeIconResourceId(int resourceId)
+### setLargeIconResourceId()
 
-Set the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
+This API sets the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void setLargeIconResourceId(final int resourceId);
 ```
 
-#### Example
+**Example**
 
 ```java
 MobileCore.setLargeIconResourceId(R.drawable.appIcon);
@@ -485,31 +485,31 @@ MobileCore.setLargeIconResourceId(R.drawable.appIcon);
 {% endtab %}
 
 {% tab title="iOS" %}
-No setup required. Icons are automatically handled by the SDK for iOS.
+No setup is required, since icons are automatically handled by the SDK for iOS.
 {% endtab %}
 {% endtabs %}
 
 ### Tracking in-app messages
 
-The SDK automatically tracks the following metrics for your in-app messages:
+The SDK automatically tracks metrics for your in-app messages.
 
-For full screen and alert style in-app messages:
+For full screen and alert style in-app messages, the following metrics are tracked:
 
 * **Impressions**: when user triggers an in-app message.
 * **Click throughs**: when user clicks the **Click through** button.
 * **Cancels**: when user clicks the **Cancel** button.
 
-For custom, full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
+For custom full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
 * **Click-through** (redirect) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
 * **Cancel** (close) example tracking: `adbinapp://cancel`
 
-For local (remote) notifications:
+For local (remote) notifications, the following metrics are tracked:
 
 * **Impressions**: when user triggers the notification.
 * **Opens**: when user opens app from the notification.
 
-Here is an example about how to include open tracking:
+The following example shows you how to include open tracking:
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -534,20 +534,20 @@ Here is an example about how to include open tracking:
 
 For more information, see the following:
 
-* [Android Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/android/in_apps_ts.html)
-* [iOS Troubleshooting guide](https://marketing.adobe.com/resources/help/en_US/mobile/ios/in_apps_ts.html)
+* [Android Troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/inapp-messaging/in-apps-ts.html)
+* [iOS Troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/in-app-messaging/in-apps-ts.html)
 
 ### Acquisition and marketing links
 
-Acquisition and marketing links must be created in Adobe Mobile services. For more information, see [Mobile Services acquisition](https://marketing.adobe.com/resources/help/en_US/mobile/acquisition_main.html).
+Acquisition and marketing links must be created in Adobe Mobile Services. For more information, see the documentation on [Acquisition](https://experienceleague.adobe.com/docs/mobile-services/using/acquisition-main-ug/acquisition-main.html) within the Mobile Services.
 
 {% hint style="info" %}
-The following set up collects Acquisition link context from links that were created in Mobile Services and collects referrer data from the Google Play store.
+The following configuration collects Acquisition link context from links that were created in Mobile Services and collects referrer data from the Google Play store.
 {% endhint %}
 
 When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer is collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play are name-spaced with `a.acquisition.custom`.
 
-#### Using The BroadcastReceiver
+#### Using the `BroadcastReceiver`
 
 1. Implement the `BroadcastReceiver` for the referrer.
 
@@ -566,9 +566,9 @@ When the user downloads and runs an app as the result of a Google Play store acq
    }
    ```
 
-2. Update `AndroidManifest.xml` to enable the above created `BroadcastReceiver`
+2. Update the `AndroidManifest.xml` to enable the `BroadcastReceiver` you previously created.
 
-   ```markup
+   ```xml
    <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
        <intent-filter>
            <action android:name="com.android.vending.INSTALL_REFERRER" />
@@ -576,9 +576,9 @@ When the user downloads and runs an app as the result of a Google Play store acq
    </receiver>
    ```
 
-#### Using The Google Play Install Referrer APIs
+#### Using the Google Play Install Referrer APIs
 
-Starting on March 1, 2020, Google is deprecating the install\_referrer intent broadcast mechanism. For more information, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use the Mobile Services extension version 1.1.0 or newer.
+Starting on March 1, 2020, Google is deprecating the install\_referrer intent broadcast mechanism. For more information, see the [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use the Mobile Services extension version 1.1.0 or newer.
 
 With the deprecation, instead of creating a `BroadcastReceiver`, you need to collect the install referrer URL from a new Google API and pass the resulting URL to the SDK.
 
@@ -588,10 +588,10 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    implementation 'com.android.installreferrer:installreferrer:1.1'
    ```
 
-2. To retrieve the referrer URL from the Install Referrer API, complete the steps in [Getting the install referrer ](https://developer.android.com/google/play/installreferrer/library#install-referrer).
+2. To retrieve the referrer URL from the Install Referrer API, complete the steps in the [get the install referrer](https://developer.android.com/google/play/installreferrer/library#install-referrer) tutorial.
 3. Pass the referrer URL to the SDK:
 
-   ```markup
+   ```java
    MobileServices.processGooglePlayInstallReferrerUrl(referrerUrl);
    ```
 
@@ -661,7 +661,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    ```
 
 {% hint style="info" %}
-No set up is required. Acquisition context is automatically collected and tracked by the SDK for iOS.
+No set up is required, since Acquisition context is automatically collected and tracked by the SDK.
 {% endhint %}
 
 ### Deep link tracking
@@ -682,15 +682,17 @@ Ensure that the deep link URL has the `a.deeplink.id` key in the URL string. If 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### trackAdobeDeepLink
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void trackAdobeDeepLink(final Uri uri)
 ```
 
-#### Example
+**Example**
+
+**Java**
 
 ```java
 MobileServices.trackAdobeDeepLink
@@ -700,15 +702,15 @@ MobileServices.trackAdobeDeepLink
 {% tab title="iOS — Obj-C" %}
 ### trackAdobeDeepLink
 
-#### Objective C
-
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
 ```
 
-#### Examples
+**Example**
+
+**Objective-C**
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
@@ -734,17 +736,17 @@ MobileServices.trackAdobeDeepLink
 {% tab title="iOS — Swift" %}
 ### trackAdobeDeepLink
 
-#### Objective C
+**Syntax**
 
-#### Syntax
-
-```objectivec
+```swift
 + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
 ```
 
-#### Examples
+**Example**
 
-```objectivec
+**Swift**
+
+```swift
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [AEPMobileServices trackAdobeDeepLink:url];
     /*
@@ -754,7 +756,7 @@ MobileServices.trackAdobeDeepLink
 }
 ```
 
-```objectivec
+```swift
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
 [AEPMobileServices trackAdobeDeepLink:url];
     /*
@@ -768,7 +770,7 @@ MobileServices.trackAdobeDeepLink
 
 ## Integration with Apple Search Ads (iOS)
 
-The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) &lt;&gt; to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see (Apple Search Ads)\[[https://searchads.apple.com/](https://searchads.apple.com/)\]. This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
+The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see [Apple Search Ads](https://searchads.apple.com/). This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
 
 ### Implement Search Ads integration
 
