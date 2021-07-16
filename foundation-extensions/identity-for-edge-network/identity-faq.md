@@ -1,4 +1,4 @@
-# FAQ
+# Frequently asked questions
 
 ## Q: I am using AEP Edge and Adobe Solutions extensions, which Identity Extension should I install and register?
 

@@ -1,5 +1,19 @@
 # Release Notes
 
+## June 22, 2021
+
+## June 30, 2021
+
+### iOS AEPCore 3.2.2
+
+* Remove double URL encoding of AEPIdentity identifiers.
+* Prevent possible crash at shutdown in EventHub.
+
+### iOS Core 2.9.4
+
+* Fixed a Rules Engine bug affecting strings that contain the `&` character.
+* Fixed a bug where JSON objects containing empty strings were not handled correctly.
+
 ## June 21, 2021
 
 ### iOS AEPCore 3.2.1
