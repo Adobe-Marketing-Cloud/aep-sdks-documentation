@@ -2,12 +2,10 @@
 
 ## Implementing Experience Cloud solutions in Mobile Android and iOS Swift applications
 
-This section is the starting point for mobile app developers who want to learn how to implement Experience Cloud solutions in their iOS Swift apps. Each lesson contains exercises and foundational information to help you implement the Experience Cloud and understand its value. You can complete the demo Swift app tutorial and learn the underlying techniques in a safe environment. After completing this tutorial, you should be ready to start implementing all of your Experience Cloud solutions in your iOS Swift and Android apps!
+This sections provides a starting point for mobile application developers who want to learn how to implement Adobe Experience Cloud solutions in their applications. You can complete the following sample Swift or Android tutorials to learn about implementing Experience Cloud in a controlled environment:
 
-For more information, see the following links:
-
-* [Implementing the Experience Cloud in Mobile iOS Swift Applications](https://docs.adobe.com/content/help/en/experience-cloud/implementing-in-mobile-ios-swift-apps-with-launch/index.html)
-* [Implementing the Experience Cloud in Mobile Android Applications](https://docs.adobe.com/content/help/en/experience-cloud/implementing-in-mobile-android-apps-with-launch/index.html)
+* [Implementing the Experience Cloud in Mobile iOS Swift Applications](https://experienceleague.adobe.com/docs/launch-learn/implementing-in-mobile-ios-swift-apps-with-launch/index.html)
+* [Implementing the Experience Cloud in Mobile Android Applications](https://experienceleague.adobe.com/docs/launch-learn/implementing-in-mobile-android-apps-with-launch/index.html)
 
 ## Tracking Beacons in Mobile Android and iOS applications
 
