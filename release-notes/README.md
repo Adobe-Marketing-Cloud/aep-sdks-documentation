@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Jul 16, 2021
+
+### Android Media 2.1.2
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+* Handled reset identities (MobileCore.resetIdentities()) event.
+
+### iOS AEPMedia 3.0.1 
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+
 ## Jul 2, 2021
 
 ### iOS AEPUserProfile 3.0.1
