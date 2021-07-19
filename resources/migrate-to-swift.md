@@ -98,7 +98,7 @@ import AEPUserProfile
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self, Assurance.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-          MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
   ...
 }
