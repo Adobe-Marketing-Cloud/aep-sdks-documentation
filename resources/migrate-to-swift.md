@@ -75,8 +75,8 @@ The following code snippets show the new and correct initialization code require
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       [AEPMobileCore setLogLevel: AEPLogLevelDebug];
       [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class, AEPMobileAssurance.class] completion:^{
-      	[AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
-     	  [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+        [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+        [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
     	}];
     ...
 }
