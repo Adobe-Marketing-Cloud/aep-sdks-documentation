@@ -133,10 +133,10 @@ Optimize.getPropositions(for: [decisionScope1, decisionScope2]) { propositionsDi
 #### Example
 
 ```objc
-AEPDecisionScope* decisionScope1 = [[AEPDecisionScope alloc]initWithActivityId: @"xcore:offer-activity:1111111111111111" 
+AEPDecisionScope* decisionScope1 = [[AEPDecisionScope alloc] initWithActivityId: @"xcore:offer-activity:1111111111111111" 
                                                                    placementId: @"xcore:offer-placement:1111111111111111" 
                                                                      itemCount: 2];
-AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc]initWithName: @"myScope"];
+AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc] initWithName: @"myScope"];
 
 [AEPMobileOptimize getPropositions: @[decisionScope1, decisionScope2] 
                         completion: ^(NSDictionary<AEPDecisionScope*, AEPProposition*>* propositionsDict, NSError* error) {
@@ -158,7 +158,7 @@ AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc]initWithName: @"mySc
 
 ## onPropositionsUpdate
 
-This API registers a permanent callback which is invoked whenever the Edge extension dispatches a response Event received from the Experience Edge Network upon a personalization query. The personalization query requests can be triggered by the `updatePropositions(for:with:)` API, Edge extension `sendEvent(experienceEvent:_:)` API or launch consequence rules.
+This API registers a permanent callback which is invoked whenever the Edge extension dispatches a response Event received from the Experience Edge Network upon a personalization query. The personalization query requests can be triggered by the `updatePropositions` API, Edge extension `sendEvent` API or launch consequence rules.
 
 {% tabs %}
 {% tab title="iOS — Swift" %}
@@ -283,7 +283,7 @@ MobileCore.resetIdentities()
 
 ## updatePropositions
 
-This API dispatches an Event for the Edge network extension to fetch decision propositions, for the provided decision scopes array, from the decisioning services enabled in the Experience Edge. The returned decision propositions are cached in-memory in the Optimize SDK extension and can be retrieved using `getPropositions(for:_:)` API.
+This API dispatches an Event for the Edge network extension to fetch decision propositions, for the provided decision scopes array, from the decisioning services enabled in the Experience Edge. The returned decision propositions are cached in-memory in the Optimize SDK extension and can be retrieved using `getPropositions` API.
 
 {% tabs %}
 {% tab title="iOS — Swift" %}
@@ -293,8 +293,8 @@ This API dispatches an Event for the Edge network extension to fetch decision pr
 
 ```swift
 static func updatePropositions(for decisionScopes: [DecisionScope], 
-                               with xdm: [String: Any]?,
-                               and data: [String: Any]? = nil)
+                               withXdm xdm: [String: Any]?,
+                               andData data: [String: Any]? = nil)
 ```
 
 * _decisionScopes_ is an array of decision scopes for which propositions need updating.
@@ -310,8 +310,8 @@ let decisionScope1 = DecisionScope(activityId: "xcore:offer-activity:11111111111
 let decisionScope2 = DecisionScope(name: "myScope")
 
 Optimize.updatePropositions(for: [decisionScope1, decisionScope2] 
-                            with: ["xdmKey": "xdmValue"] 
-                            and: ["dataKey": "dataValue"])
+                            withXdm: ["xdmKey": "xdmValue"] 
+                            andData: ["dataKey": "dataValue"])
 ```
 
 ### Objective-C
@@ -327,10 +327,10 @@ Optimize.updatePropositions(for: [decisionScope1, decisionScope2]
 #### Example
 
 ```objc
-AEPDecisionScope* decisionScope1 = [[AEPDecisionScope alloc]initWithActivityId: @"xcore:offer-activity:1111111111111111" 
+AEPDecisionScope* decisionScope1 = [[AEPDecisionScope alloc] initWithActivityId: @"xcore:offer-activity:1111111111111111" 
                                                                    placementId: @"xcore:offer-placement:1111111111111111" 
                                                                      itemCount: 2];
-AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc]initWithName: @"myScope"]; 
+AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc] initWithName: @"myScope"]; 
 
 [AEPMobileOptimize updatePropositions: @[decisionScope1, decisionScope2] 
                               withXdm: @{@"xdmKey": @"xdmValue"} 

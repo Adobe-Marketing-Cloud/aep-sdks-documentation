@@ -21,6 +21,8 @@ On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to
 3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration. Make sure to configure the required information like Client Code.
 4. Click **Save**.
 
+![Datastream configuration](../../.gitbook/assets/ajo-decisioning-datastream-configuration.png)
+
 ### Configure Adobe Journey Optimizer - Decisioning extension in Tag property for Mobile
 
 On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to **Data Collection** > **Tags** using the left navigation panel. Select an existing mobile Tag property or create a new property.
@@ -29,6 +31,8 @@ On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to
 2. In the extensions Catalog, search or locate the **Adobe Journey Optimizer - Decisioning** extension, and click **Install*.
 3. No extension configuration is necessary so click **Save**.
 4. Follow the publishing process to update SDK configuration. For more details, see [Publish the configuration](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
+
+![Adobe Journey Optimizer - Decisioning extension configuration](../../.gitbook/assets/ajo-decisioning-extension-configuration.png)
 
 ## Integrate Experience Platform Optimize SDK in your mobile application
 
@@ -210,7 +214,7 @@ data["__adobe"] = [
 ]
 
 let decisionScope = DecisionScope(name: "myTargetLocation") // Target location (or mbox)
-Optimize.updatePropositions(for: decisionScope with: nil and: data)
+Optimize.updatePropositions(for: decisionScope withXdm: nil andData: data)
 ```
 
 #### Objective-C
@@ -251,6 +255,8 @@ To use Target Third Party ID in the Experience Edge mobile workflows, the corres
 3. Navigate to **Adobe Target** section, specify the **Target Third Party ID Namespace**.
 4. Click **Save**.
 
+![Target Third Party ID configuration](../../.gitbook/assets/ajo-decisioning-target-tpid.png)
+
 In your mobile application, integrate the Identity for Edge Network extension to add the Target Third Party ID in the Identity Map in the personalization query request to the Edge network when calling the `updatePropositions` API. For more details see, [Identity for Edge Network - updateIdentities API](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network/api-reference#updateidentities).
  
 {% tabs %}
@@ -282,6 +288,10 @@ AEPIdentityMap *identityMap = [[AEPIdentityMap alloc] init];
 Set up the Analytics for Target (A4T) cross-solution integration, by enabling the A4T campaigns, to use Analytics as the reporting source for an activity. Subsequently, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target (A4T)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
 Once Analytics is listed as the reporting source for an activity on Target UI, A4T works out of the box in the Optimize SDK. The Experience Edge handles forwarding any Target A4T payloads to Adobe Analytics and no additional action is required on the client-side.
+
+{% hint style="warning" %}
+For this integration to work, make sure Analytics is enabled in your datastream configuration for the desired environment and Report Suite information is provided. 
+{% endhint %}
 
 ## Tracking
 
