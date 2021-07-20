@@ -11,7 +11,7 @@
 
 ### iOS Audience 3.0.0
 
-* Initial release to support [Adobe Audience](../adobe-audience/)  for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-audience-ios/).
+* Initial release to support [Adobe Audience](../adobe-audience-manager/)  for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-audience-ios/).
 
 ## January 20, 2021
 
