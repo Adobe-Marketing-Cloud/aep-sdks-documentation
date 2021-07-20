@@ -530,7 +530,7 @@ The following examples are shown in both Swift and Objective-C.
 
 ```swift
 Analytics.getQueueSize { (queueSize, error) in
-    // Handle error (if non-nil) or use queueSize.
+   guard let queueSize = queueSize else { // handle error }
 }
 ```
 
@@ -538,7 +538,11 @@ Analytics.getQueueSize { (queueSize, error) in
 
 ```objective-c
 [AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
-    // Handle error (if non-nil) or use queueSize.
+    if(queueSize) {
+    //use queueSize
+    else {
+    //handle error
+    }   
  }];
 ```
 
@@ -564,7 +568,7 @@ The following examples are shown in both Swift and Objective-C.
 
 ```swift
 ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in    
-    // Handle error (if non-nil) or use queueSize.  
+   guard let queueSize = queueSize else { // handle error } 
 }
 ```
 
@@ -572,7 +576,11 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 
 ```objective-c
 [ACPAnalytics getQueueSizeWithCompletionHandler: ^(NSUInteger queueSize, NSError * _Nullable error) {    
-    // Handle error (if non-nil) or use queueSize.
+    if(queueSize) {
+    //use queueSize
+    else {
+    //handle error
+    }    
 }];
 ```
 {% endtab %}
@@ -833,8 +841,8 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 **Swift**
 
 ```swift
-Analytics.getTrackingIdentifier { (trackingId, error) in
-   // Handle the error (if non-nil) or use the trackingIdentifier value 
+Analytics.getTrackingIdentifier { (trackingIdentifier, error) in
+   guard let trackingIdentifier = trackingIdentifier else { // handle error }
 }
 ```
 
@@ -842,7 +850,11 @@ Analytics.getTrackingIdentifier { (trackingId, error) in
 
 ```objective-c
 AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-   // Handle the error (if non-nil) or use the trackingIdentifier value 
+    if(trackingIdentifier) {
+       //use trackingIdentifier
+    else {
+       //handle error
+     }    
 }];
 ```
 
@@ -868,7 +880,11 @@ Here are examples in Objective-C and Swift:
 
 ```objectivec
 [ACPAnalytics getTrackingIdentifierWithCompletionHandler:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-    // Handle the error (if non-nil) or use the trackingIdentifier value.
+     if(trackingIdentifier) {
+       //use trackingIdentifier
+     else {
+       //handle error
+     }    
 }];
 ```
 
@@ -876,7 +892,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
-     // Handle the error (if non-nil) or use the trackingIdentifier value. 
+     guard let trackingIdentifier = trackingIdentifier else { // handle error }
 }
 ```
 {% endtab %}
@@ -1113,7 +1129,7 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 
 ```swift
 Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
-   // Handle the error (if non-nil) or use the visitorIdentifier value
+   guard let visitorIdentifier = visitorIdentifier else { // handle error }
 }
 ```
 
@@ -1121,7 +1137,11 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 
 ```objective-c
 [AEPMobileAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
-   // Handle the error (if non-nil) or use the visitorIdentifier value
+   if(visitorIdentifier) {
+       //use visitorIdentifier
+   else {
+       //handle error
+   }    
 }];
 ```
 
@@ -1145,7 +1165,11 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 
 ```objective-c
 [ACPAnalytics getVisitorIdentifierWithCompletionHandler:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
-    // Handle the error (if non-nil) or use the visitorIdentifier value
+    if(visitorIdentifier) {
+    //use visitorIdentifier
+    else {
+    //handle error
+    }    
 }];
 ```
 
@@ -1153,7 +1177,7 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 
 ```swift
 ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, error) in
-    // Handle the error (if non-nil) or use the visitorIdentifier value
+   guard let visitorIdentifier = visitorIdentifier else { // handle error }
 }
 ```
 {% endtab %}
