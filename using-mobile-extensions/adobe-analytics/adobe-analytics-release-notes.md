@@ -1,5 +1,15 @@
 # Release Notes
 
+## July 21, 2021
+
+### iOS Analytics 2.5.1
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+### Android Analytics 1.2.7
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
 ## April 1, 2021
 
 ### iOS AEPAnalytics 3.0.1
