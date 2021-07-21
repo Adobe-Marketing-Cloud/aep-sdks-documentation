@@ -11,7 +11,7 @@
 
 ### iOS AEPAnalytics 3.0.0
 
-* Initial release to support [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
+* Initial release to support [Adobe Analytics](../adobe-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
 
 ## December 18, 2020
 
