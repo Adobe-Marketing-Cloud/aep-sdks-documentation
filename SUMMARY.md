@@ -111,6 +111,7 @@
   * [Migrating to AEPTarget reference](using-mobile-extensions/adobe-target/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
+  * [Target API reference \(deprecated in 2.x\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)

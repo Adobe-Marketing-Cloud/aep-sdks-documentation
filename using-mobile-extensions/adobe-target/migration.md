@@ -1,10 +1,10 @@
 # Migrating to AEPTarget reference
 
-This document is a reference comparison of ACPTarget (2.x) APIs against their equivalent APIs in AEPTarget (3.x) for an iOS mobile application implementation.
+This document is a reference comparison of AEPTarget(3.x) APIs against their equivalent ACPTarget (2.x) APIs for an iOS mobile application implementation.
 
 The AEPTarget extension is implemented purely in Swift and is compatible with the AEPCore swift SDK. To ensure a smooth transition from the ACPTarget SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application.  If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
-## AEPTarget classes
+## Public classes
 
 | Type                   | AEP 3.x (Swift)  | AEP 3.x (Objective-C)   | ACP 2.x (Objective-C)   |
 | ---------------------- | :--------------- | ----------------------- | :---------------------- |
@@ -15,7 +15,7 @@ The AEPTarget extension is implemented purely in Swift and is compatible with th
 | Class                  | TargetParameters | AEPTargetParameters     | ACPTargetParameters     |
 | Class                  | TargetProduct    | AEPTargetProduct        | ACPTargetProduct        |
 
-## AEPTarget APIs
+## Public APIs
 
 ### clearPrefetchCache
 
@@ -59,8 +59,8 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters? 
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) clickedLocation: (NSString* _NonNull)
-                withTargetParameters: (AEPTargetParameters* _Nullable);
++ (void) clickedLocation: (NSString* _NonNull) name
+    withTargetParameters: (AEPTargetParameters* _Nullable) targetParameters;
 ```
 
 {% endtab %}
@@ -117,7 +117,7 @@ static func getThirdPartyId(_ completion: @escaping (String?, Error?) -> Void)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) getThirdPartyId:^(NSString* _Nullable, NSError* _Nullable) completion;
++ (void) getThirdPartyId: (nonnull void (^) (NSString* _Nullable thirdPartyId,  NSError* _Nullable error)) completion;
 ```
 
 {% endtab %}
@@ -145,7 +145,7 @@ static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) getTntId:^(NSString* _Nullable, NSError* _Nullable) completion;
++ (void) getTntId: (nonnull void (^) (NSString* _Nullable tntId,  NSError* _Nullable error)) completion;
 ```
 
 {% endtab %}
@@ -173,9 +173,9 @@ static func prefetchContent(_ prefetchArray: [TargetPrefetch], with targetParame
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) prefetchContent: (NSArray<AEPTargetPrefetchObject*>* _NonNull)
-          withParameters: (AEPTargetParameters* _Nullable)
-                callback: ^(NSError* _Nullable) completion;
++ (void) prefetchContent: (NSArray<AEPTargetPrefetchObject*>* _NonNull) prefetchArray
+          withParameters: (AEPTargetParameters* _Nullable) targetParameters
+                callback: (nullable void (^) (NSError* _Nullable error)) completion;
 ```
 
 {% endtab %}
@@ -219,7 +219,7 @@ Registration occurs by passing `AEPMobileTarget` to the `[AEPMobileCore register
 {% tab title="ACP 2.x (Objective-C)" %}
 
 ```objc
-+ (void) registerExtension;
+[ACPTarget registerExtension];
 ```
 
 {% endtab %}
@@ -239,8 +239,8 @@ static func retrieveLocationContent(_ requestArray: [TargetRequest], with target
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) retrieveLocationContent: (NSArray<AEPTargetRequestObject*>* _NonNull)
-                  withParameters: (AEPTargetParameters* _Nullable);
+(void) retrieveLocationContent: (NSArray<AEPTargetRequestObject*>* _NonNull) requestsArray
+                withParameters: (AEPTargetParameters* _Nullable) targetParameters;
 ```
 
 {% endtab %}
@@ -269,7 +269,7 @@ static func setPreviewRestartDeepLink(_ deeplink: URL)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objc
-+ (void) setPreviewRestartDeeplink: (NSURL* _NonNull);
++ (void) setPreviewRestartDeeplink: (NSURL* _NonNull) deeplink;
 ```
 
 {% endtab %}
