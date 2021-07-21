@@ -1,5 +1,9 @@
 # Target event reference
 
+{% hint style="warning" %}
+These event reference documents apply to ACPTarget 2.x only.
+{% endhint %}
+
 ## Events handled
 
 The following events are handled by the Target extension:

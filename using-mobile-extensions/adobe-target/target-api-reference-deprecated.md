@@ -1,5 +1,9 @@
 # Target API reference \(deprecated\)
 
+{% hint style="warning" %}
+These deprecated APIs are present in ACPTarget 2.x only.
+{% endhint %}
+
 ### Using the prefetch APIs
 
 {% hint style="warning" %}
@@ -609,4 +613,3 @@ The following method can be used to create an instance of a Target prefetch obje
 ```
 {% endtab %}
 {% endtabs %}
-
