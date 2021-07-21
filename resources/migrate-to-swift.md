@@ -117,5 +117,6 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
 | [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) | [AEPAnalytics](../using-mobile-extensions/adobe-analytics/migration.md) |
 | [Adobe Analytics - Media Analytics for Audio & Video](../using-mobile-extensions/adobe-media-analytics/) | [AEPMedia](../using-mobile-extensions/adobe-media-analytics/migration.md) |
+| [Adobe Audience](../using-mobile-extensions/adobe-audience-manager/) | [AEPAudience](../using-mobile-extensions/adobe-audience-manager/migration.md) |
 
 
