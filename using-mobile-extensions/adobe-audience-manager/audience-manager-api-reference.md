@@ -93,7 +93,7 @@ string audienceExtensionVersion = ACPAudience.ExtensionVersion();
 
 ## getVisitorProfile
 
-Returns the visitor profile that was most recently updated. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
+This API returns the most recently obtained visitor profile. The visitor profile is saved in the SDK's local storage for access across multiple launches of your app. If no audience signal has been sent before, when this API is called, a null value is returned.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -127,7 +127,7 @@ Audience.getVisitorProfile(visitorProfileCallback);
 
 ### getVisitorProfile
 
-This API returns the visitor profile that was most recently obtained. 
+This API returns the most recently obtained visitor profile.
 
 #### Syntax
 
@@ -170,7 +170,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 Method `getVisitorProfileWithCompletionHandler` was added in ACPAudience version 2.1.0.
 {% endhint %}
 
-This API returns the visitor profile that was most recently obtained. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
+This API returns the most recently obtained visitor profile. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
 
 #### Syntax
 
