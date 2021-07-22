@@ -10,9 +10,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
+### Android Analytics 1.2.8
+
+* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
+
 ### Android Analytics 1.2.7
 
 * Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
 
 ## Jul 16, 2021
 
