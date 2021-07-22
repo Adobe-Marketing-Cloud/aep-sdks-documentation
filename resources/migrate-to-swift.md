@@ -53,7 +53,7 @@ Once the previous command is complete, run `pod install` or `pod update` to upda
 
 ## Update SDK initialization
 
-After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the `MobileCore.start()` API is no longer required. The SDK has simplified initialization and registration of extensions by providing the `MobileCore.registerExtensions()` API. After the given extensions have been registered, the SDK will be initialized and the completion block will be excuted. Code which used to reside in the start() block will now reside in the `MobileCore.registerExtensions()` completion block.
+After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the `MobileCore.start()` API is no longer required. The SDK has simplified initialization and registration of extensions by providing the `MobileCore.registerExtensions()` API. After the given extensions have been registered, the SDK will be initialized and the completion block will be executed. Code which used to reside in the start() block will now reside in the `MobileCore.registerExtensions()` completion block.
 
 The following code snippets show the new and correct initialization code required for the Swift-based, AEP-prefix SDK libraries.
 
