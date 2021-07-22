@@ -774,7 +774,7 @@ The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](htt
 
 ### Implement Search Ads integration
 
-To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview) (in addition to the Mobile Services extension) to your app.
+To enable your app for Search Ad attribution, you will need to [add the iAd framework](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution#overview), in addition to the Mobile Services extension to your app.
 
 ### Reporting on Search Ads Attribution
 
@@ -789,14 +789,14 @@ If `attribution = true` , all of the `iad-*` fields will be included in a Lifecy
 
 This mapping ensures that the values are available in Adobe Analytics standard reporting.
 
-## Migration Notes
+## Migration notes
 
-To prepare for your migration, remember the following information:
+To prepare for your migration, please note the following information:
 
-* Lifetime value is not supported on the Experience Platform SDK, so it might not be used to trigger in-app messages or local notifications.
+* Lifetime value is **not** supported on the Experience Platform SDK, so it should not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
-* `a.internalaction` or `action` (from Lifecycle) can be used to trigger in-app messages or local notifications.  We suggest using `LaunchEvent` instead.
-* Local notifications do not support Android 8.0 or higher.
+* `a.internalaction` or `action` (from Lifecycle) can be used to trigger in-app messages or local notifications. You should, however, use `LaunchEvent` instead.
+* Local notifications do **not** support Android 8.0 or higher.
 
 ### Configuration keys
 
@@ -812,6 +812,6 @@ To prepare for your migration, remember the following information:
 
 ### Additional information
 
-* Visit [Mobile Services documentation](https://marketing.adobe.com/resources/help/en_US/mobile/home.html)
-* Visit [Mobile Services (mobilemarketing.adobe.com)](https://mobilemarketing.adobe.com)
+* Visit [Mobile Services documentation](https://experienceleague.adobe.com/docs/mobile-services/using/home.html?lang=en)
+* Visit [Mobile Services](https://mobilemarketing.adobe.com)
 
