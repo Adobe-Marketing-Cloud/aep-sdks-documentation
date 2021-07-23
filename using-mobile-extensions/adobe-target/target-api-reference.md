@@ -104,7 +104,7 @@ This API sends a location click notification for an mbox to the configured Targe
 public static void locationClicked(final String mboxName, final TargetParameters parameters)
 ```
 
-- _mboxName_ is a String the contains the mbox location for which the click notification will be sent to Target.
+- _mboxName_ is a String that contains the mbox location for which the click notification will be sent to Target.
 - _parameters_ is the configured `TargetParameters` for the request.
 
 **Example**
@@ -149,7 +149,7 @@ static func clickedLocation(_ name: String, targetParameters: TargetParameters?)
 ```
 
 - *name* : a `String` that contains the mbox location for which the click notification will be sent to Target.
-  - *targetParameters* : the configured `TargetParameters` for the request.
+- *targetParameters* : the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -334,7 +334,7 @@ static func displayedLocations(_ names: [String], targetParameters: TargetParame
 ```
 
 - *names* : is an `array` of the mbox locations for which the display notification will be sent to Target.
-  - *targetParameters* : is the configured `TargetParameters` for the request.
+- *targetParameters* : is the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -342,7 +342,7 @@ static func displayedLocations(_ names: [String], targetParameters: TargetParame
 
 ```swift
 Target.displayedLocations(
-  			names: ["mboxName1", "mboxName2"], 
+  			["mboxName1", "mboxName2"], 
         targetParameters: TargetParameters(
         parameters: nil,
         profileParameters: nil,
@@ -626,7 +626,7 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
 
 ---
 ### getTntId
-This API gets the Target user ID (also known as the `tntId`) from the Target service. The `tntId` is returned in the network response after a successful call to `prefetchContent`, which is then persisted in the SDK. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
+This API gets the Target user ID (also known as the `tntId`) from the Target service. The `tntId` is returned in the network response after a successful call to `prefetchContent` or `retrieveLocationContent`, which is then persisted in the SDK. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1769,3 +1769,717 @@ ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobe
 {% endtab %}
 {% endtabs %}
 
+# Public classes
+
+{% tabs %}
+{% tab title="Android" %}
+
+### TargetRequest
+
+Here is a code sample for this class in Android:
+
+```java
+public class TargetRequest extends TargetObject {
+
+    /**
+     * Instantiate a TargetRequest object
+     * @param mboxName String mbox name for this request
+     * @param targetParameters TargetParameters for this request
+     * @param defaultContent String default content for this request
+     * @param contentCallback AdobeCallback<String> which will get called with Target mbox content
+     */
+    public TargetRequest(final String mboxName,
+                         final TargetParameters targetParameters,
+                         final String defaultContent,
+                         final AdobeCallback<String> contentCallback);
+
+     /**
+     * Sets mbox parameters for the request.
+     *
+     * @param mboxParameters Map<String, String> mbox parameters
+     */
+     void setMboxParameters(final Map<String, String> mboxParameters);
+
+     /**
+     * Sets profile parameters for the request.
+     *
+     * @param profileParameters Map<String, String profile parameters
+     */
+    void setProfileParameters(final Map<String, String> profileParameters);
+
+    /**
+     * Sets order parameters for the request.
+     *
+     * @param orderParameters Map<String, Object> order parameters
+     */
+    void setOrderParameters(final Map<String, Object> orderParameters);
+
+    /**
+     * Sets product parameters for the request.
+     *
+     * @param productParameters Map<String, String> product parameters
+     */
+    void setProductParameters(final Map<String, String> productParameters);
+
+    /**
+     * Sets targetParameters for the request.
+     *
+     * @param targetParameters TargetParameters for the request.
+     */
+    void setTargetParameters(final TargetParameters targetParameters);
+}
+```
+
+### TargetPrefetch
+
+Here is a code sample for this class in Android:
+
+```java
+public class TargetPrefetch extends TargetObject {
+
+    /**
+     * Instantiate a TargetPrefetch object
+     * @param mboxName String mbox name for this prefetch request
+     * @param targetParameters TargetParameters for this prefetch request
+     */
+     public TargetPrefetch(final String mboxName, final TargetParameters targetParameters)
+
+     /**
+     * Sets mbox parameters for the request.
+     *
+     * @param mboxParameters Map<String, String> mbox parameters
+     */
+     void setMboxParameters(final Map<String, String> mboxParameters);
+
+     /**
+     * Sets profile parameters for the request.
+     *
+     * @param profileParameters Map<String, String profile parameters
+     */
+    void setProfileParameters(final Map<String, String> profileParameters);
+
+    /**
+     * Sets order parameters for the request.
+     *
+     * @param orderParameters Map<String, Object> order parameters
+     */
+    void setOrderParameters(final Map<String, Object> orderParameters);
+
+    /**
+     * Sets product parameters for the request.
+     *
+     * @param productParameters Map<String, String> product parameters
+     */
+    void setProductParameters(final Map<String, String> productParameters);
+
+    /**
+     * Sets targetParameters for the request.
+     *
+     * @param targetParameters TargetParameters for the request.
+     */
+    void setTargetParameters(final TargetParameters targetParameters);
+
+}
+```
+
+### TargetParameters
+
+Here is a code sample for this class in Android:
+
+```java
+public class TargetParameters {
+
+    private TargetParameters() {}
+
+    /**
+    * Builder used to construct a TargetParameters object
+    */
+    public static class Builder {
+        private Map<String, String> parameters;
+        private Map<String, String> profileParameters;
+        private TargetProduct product;
+        private TargetOrder order;
+
+        /**
+         * Create a TargetParameters object Builder
+         */
+        public Builder() {}
+
+        /**
+         * Create a TargetParameters object Builder
+         *
+         * @param parameters mbox parameters for the built TargetParameters
+         */
+        public Builder(final Map<String, String> parameters);
+
+        /**
+         * Set mbox parameters on the built TargetParameters
+         *
+         * @param parameters mbox parameters map
+         * @return this builder
+         */
+        public Builder parameters(final Map<String, String> parameters);
+
+        /**
+         * Set profile parameters on the built TargetParameters
+         *
+         * @param profileParameters profile parameters map
+         * @return this builder
+         */
+        public Builder profileParameters(final Map<String, String> profileParameters);
+
+        /**
+         * Set product parameters on the built TargetParameters
+         *
+         * @param product product parameters
+         * @return this builder
+         */
+        public Builder product(final TargetProduct product);
+
+        /**
+         * Set order parameters on the built TargetParameters
+         *
+         * @param order order parameters
+         * @return this builder
+         */
+        public Builder order(final TargetOrder order);
+
+        /**
+         * Build the TargetParameters object
+         *
+         * @return the built TargetParameters object
+         */
+        public TargetParameters build();
+    }
+}
+```
+
+### TargetOrder
+
+Here is a code sample for this class in Android:
+
+```java
+public class TargetOrder {
+
+    /**
+     * Initialize a TargetOrder with an order id, order total and a list of purchasedProductIds
+     *
+     * @param id String order id
+     * @param total double order total amount
+     * @param purchasedProductIds a list of purchased product ids
+     */
+    public TargetOrder(final String id, final double total, final List<String> purchasedProductIds);
+    /**
+     * Get the order id
+     *
+     * @return order id
+     */
+    public String getId();
+
+    /**
+     * Get the order total
+     *
+     * @return order total
+     */
+    public double getTotal();
+
+    /**
+     * Get the order purchasedProductIds
+     *
+     * @return a list of this order's purchased product ids
+     */
+    public List<String> getPurchasedProductIds();
+
+    /**
+     * Converts an order parameter Map to a TargetOrder
+     *
+     * @param orderParameters a Map<String, Object> of Target order parameters
+     * @return converted TargetOrder
+     */
+    static TargetOrder fromMap(final Map<String, Object> orderParameters);
+
+    /**
+     * Converts TargetOrder to an order parameters Map.
+     *
+     * @param targetOrder a TargetOrder object
+     * @return Map<String, Object> containing Target order parameters
+     */
+    static Map<String, Object> toMap(final TargetOrder targetOrder);
+
+}
+```
+
+### TargetProduct
+
+Here is a code sample for this class in Android:
+
+```java
+public class TargetProduct {
+
+    /**
+     * Initialize a TargetProduct with a product id and a productCategoryId categoryId
+     *
+     * @param id String product id
+     * @param categoryId String product category id
+     */
+     public TargetProduct(final String id, final String categoryId);
+
+    /**
+     * Get the product id
+     *
+     * @return product id
+     */
+    public String getId();
+
+    /**
+     * Get the product categoryId
+     *
+     * @return product category id
+     */
+    public String getCategoryId();
+
+    /**
+     * Converts a product parameter Map to a TargetProduct
+     *
+     * @param productParameters a Map<String, String> of Target product parameters
+     * @return converted TargetProduct
+     */
+    static TargetProduct fromMap(final Map<String, String> productParameters);
+
+    /**
+     * Converts a TargetProduct object to product parameters Map.
+     *
+     * @param targetProduct a TargetProduct object
+     * @return Map<String, String> containing Target product parameters
+     */
+     static Map<String, String> toMap(final TargetProduct targetProduct);
+}
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### TargetRequest
+
+```swift
+@objc(AEPTargetRequestObject)
+public class TargetRequest: NSObject, Codable {
+    @objc public let name: String
+    @objc public let defaultContent: String
+    @objc public let targetParameters: TargetParameters?
+    @objc let responsePairId: String
+    @objc var contentCallback: ((String?) -> Void)?
+
+    /// Instantiate a `TargetRequest` object
+    /// - Parameters:
+    ///   - name: `String` mbox name for this request
+    ///   - defaultContent: `String` default content for this request
+    ///   - targetParameters: `TargetParameters` for this request
+    ///   - contentCallback: which will get called with target mbox content
+    @objc public init(mboxName: String, defaultContent: String, targetParameters: TargetParameters? = nil, contentCallback: ((String?) -> Void)? = nil) {
+        name = mboxName
+        self.defaultContent = defaultContent
+        self.targetParameters = targetParameters
+        self.contentCallback = contentCallback
+        responsePairId = UUID().uuidString
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case defaultContent
+        case targetParameters
+        case responsePairId
+    }
+}
+```
+
+The following example shows how to create an instance of a TargetRequest object that might be used to make a batch request to the configured Target server to fetch content for mbox locations.
+
+**Swift**
+
+```swift
+let request = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentCallback: { content in
+	print(content ?? "")
+})
+```
+
+**Objective-C**
+
+```objective-c
+AEPTargetRequestObject *request = [[AEPTargetRequestObject alloc] initWithMboxName:@"mboxName" defaultContent:@"defaultContent" targetParameters:nil contentCallback:^(NSString * _Nullable content) {
+	NSLog(@"%@", content ?: @"");
+}];
+```
+
+### TargetPrefetch
+
+This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
+
+```swift
+/// `TargetPrefetch` class, used for specifying a mbox location.
+@objc(AEPTargetPrefetchObject)
+public class TargetPrefetch: NSObject, Codable {
+    @objc public let name: String
+    @objc public let targetParameters: TargetParameters?
+
+    /// Instantiate a `TargetPrefetch` object
+    /// - Parameters:
+    ///   - name: `String` mbox name for this prefetch
+    ///   - targetParameters: `TargetParameters` for this prefetch
+    @objc public init(name: String, targetParameters: TargetParameters? = nil) {
+        self.name = name
+        self.targetParameters = targetParameters
+    }
+}
+```
+
+The following example can be used to create an instance of a TargetPrefetch object that might be used to make a prefetch request to the configured Target server to prefetch content for mbox locations.
+
+**Swift**
+
+```swift
+let prefetch = TargetPrefetch(name: "mboxName", targetParameters: nil)
+```
+
+**Objective-C**
+
+```objective-c
+AEPTargetPrefetchObject *prefetch = [[AEPTargetPrefetchObject alloc] initWithName:@"mboxName" targetParameters:nil];
+```
+
+### TargetParameters
+
+This class may optionally contain the mbox parameters dictionary, the profile parameters dictionary, the TargetOrder object, as well as the TargetProduct object.
+
+```swift
+/// Target parameter class, used for specifying custom parameters to be sent in Target requests,
+/// such as location (former mbox) parameters, profile parameters, order/product parameters.
+@objc(AEPTargetParameters)
+public class TargetParameters: NSObject, Codable {
+    @objc public let parameters: [String: String]?
+    @objc public let profileParameters: [String: String]?
+    @objc public let order: TargetOrder?
+    @objc public let product: TargetProduct?
+
+    /// Initialize a `TargetParameters` with the mbox parameters, the profile parameters, the order parameters and the product parameters.
+    /// - Parameters:
+    ///   - parameters: the mbox parameters
+    ///   - profileParameters: the profile parameters
+    ///   - order: the order parameters
+    ///   - product: the product parameters
+    @objc public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil) {
+        self.parameters = parameters
+        self.profileParameters = profileParameters
+        self.order = order
+        self.product = product
+    }
+}
+```
+
+The following example can be used to create an instance of a TargetParameters object.
+
+**Swift**
+
+```swift
+let targetParameters = TargetParameters(parameters: ["mbox_parameter_key": "mbox_parameter_value"], profileParameters: ["name": "Smith"], order: TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"]), product: TargetProduct(productId: "pId1", categoryId: "cId1"))
+```
+
+**Objective-C**
+
+```objective-c
+AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
+AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
+AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:@{@"mbox_parameter_key":@"mbox_parameter_value"} profileParameters:@{@"name":@"Smith"} order:order product:product];
+```
+
+### TargetOrder
+
+This class contains orderId, total and an array for purchasedProductIds.
+
+```swift
+/// Class for specifying Target order parameters
+@objc(AEPTargetOrder)
+public class TargetOrder: NSObject, Codable {
+    @objc public let orderId: String
+    @objc public let total: Double
+    @objc public let purchasedProductIds: [String]?
+
+    /// Initialize a `TargetOrder` with an order `id`, order `total`  and a list of `purchasedProductIds`
+    /// - Parameters:
+    ///   - id: `String` order id
+    ///   - total: `Double` order total amount
+    ///   - purchasedProductIds: a list of purchased product ids
+    @objc public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil) {
+        orderId = id
+        self.total = total
+        self.purchasedProductIds = purchasedProductIds
+    }
+}
+```
+
+The following example can be used to create an instance of a TargetOrder object.
+
+**Swift**
+
+```swift
+let targetOrder = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
+```
+
+**Objective-C**
+
+```objective-c
+AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
+```
+
+### TargetProduct
+
+This class contains productId and categoryId.
+
+```objectivec
+/// Class for specifying Target product parameters
+@objc(AEPTargetProduct)
+public class TargetProduct: NSObject, Codable {
+    @objc public let productId: String
+    @objc public let categoryId: String?
+
+    /// Initialize a `TargetProduct` with a product  id and a productCategoryId.
+    /// - Parameters:
+    ///   - productId: product id
+    ///   - categoryId: product category id
+    @objc public init(productId: String, categoryId: String? = nil) {
+        self.productId = productId
+        self.categoryId = categoryId
+    }
+}
+```
+
+The following example can be used to create an instance of a TargetProduct object.
+
+**Swift**
+
+```swift
+let targetProduct = TargetProduct(productId: "pId1", categoryId: "cId1")
+```
+
+**Objective-C**
+
+```objective-c
+AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### ACPTargetRequestObject
+
+This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
+
+```objectivec
+@interface ACPTargetRequestObject : ACPTargetPrefetchObject
+
+/* The default content that will be returned if Target servers are unreachable */   
+@property(nonatomic, strong, nonnull) NSString* defaultContent;
+
+/* Optional. When batch requesting Target locations, callback will be invoked when content is available for this location. */
+@property(nonatomic, strong, nullable) void (^callback)(NSString* __nullable content);
+@end
+```
+
+The following method can be used to create an instance of ACPTargetRequestObject that might be used to make a batch request to the configured Target server to fetch content for mbox locations.
+
+```objectivec
++ (nonnull instancetype) targetRequestObjectWithName: (nonnull NSString*) name
+                                    targetParameters: (nullable ACPTargetParameters*) targetParameters
+                                      defaultContent: (nonnull NSString*) defaultContent
+                                            callback: (nullable void (^) (NSString* __nullable content)) callback;
+```
+
+### ACPTargetPrefetchObject
+
+This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
+
+```objectivec
+@interface ACPTargetPrefetchObject : NSObject
+
+/* The name of the Target location/mbox */
+@property(nonatomic, strong, nullable) NSString* name;
+
+/* Target parameters associated with the prefetch object. You can set all other parameters in this object */
+@property(nonatomic, strong, nullable) ACPTargetParameters* targetParameters;
+@end
+```
+
+The following method can be used to create an instance of ACPTargetPrefetchObject that might be used to make a prefetch request to the configured Target server to prefetch content for mbox locations.
+
+```objectivec
++ (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
+                                     targetParameters: (nullable ACPTargetParameters*) targetParameters;
+```
+
+### ACPTargetParameters
+
+This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
+
+```objectivec
+@interface ACPTargetParameters : NSObject
+
+/* Dictionary containing key-value pairs of parameters */
+@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* parameters;
+
+/* Dictionary containing key-value pairs of profile parameters */
+@property(nonatomic, strong, nullable) NSDictionary<NSString*, NSString*>* profileParameters;
+
+/* ACPTargetOrder object */
+@property(nonatomic, strong, nullable) ACPTargetOrder* order;
+
+/* ACPTargetProduct object */
+@property(nonatomic, strong, nullable) ACPTargetProduct* product;
+@end
+```
+
+The following method can be used to create an instance of ACPTargetParameters.
+
+```objectivec
++ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
+                                      profileParameters: (nullable NSDictionary*) profileParameters
+                                                product: (nullable ACPTargetProduct*) product
+                                                  order: (nullable ACPTargetOrder*) order;
+```
+
+### ACPTargetOrder
+
+This class contains orderId, total and an array for purchasedProductIds.
+
+```objectivec
+@interface ACPTargetOrder : NSObject
+
+/* Order ID */
+@property(nonatomic, strong, nonnull) NSString* orderId;
+
+/* Order total */
+@property(nonatomic, strong, nullable) NSNumber* total;
+
+/* Array of Purchased Product Ids */
+@property(nonatomic, strong, nullable) NSArray<NSString*>* purchasedProductIds;
+@end
+```
+
+The following method can be used to create an instance of ACPTargetOrder.
+
+```objectivec
++ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
+                                     total: (nullable NSNumber*) total
+                       purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
+```
+
+### ACPTargetProduct
+
+This class contains productId and categoryId.
+
+```objectivec
+@interface ACPTargetProduct : NSObject
+
+/* Product ID */
+@property(nonatomic, strong, nullable) NSString* productId;
+
+/* Category ID */
+@property(nonatomic, strong, nullable) NSString* categoryId;
+@end
+```
+
+The following method can be used to create an instance of ACPTargetProduct.
+
+```objectivec
++ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
+                                  categoryId: (nullable NSString*) categoryId;
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### ACPTargetRequestObject
+
+This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that is invoked to return mbox content from Target.
+
+```javascript
+class ACPTargetRequestObject extends ACPTargetPrefetchObject {
+  defaultContent:   string;
+
+  constructor(name: string, targetParameters: ACPTargetParameters, defaultContent: string) {
+    super(name, targetParameters);
+    this.defaultContent = defaultContent;
+  }
+}
+```
+
+### ACPTargetPrefetchObject
+
+This class contains the name of the Target location/mbox and Target parameters to be used in a prefetch request.
+
+```javascript
+class ACPTargetPrefetchObject {
+  name:   string;
+  targetParameters: ACPTargetParameters;
+
+  constructor(name?: string, targetParameters?: ACPTargetParameters) {
+      this.name = name;
+    this.targetParameters = targetParameters;
+  }
+
+}
+```
+
+### ACPTargetParameters
+
+This class contains an mbox parameters dictionary, a profile parameters dictionary, an `ACPTargetOrder` object, and an `ACPTargetProduct` object.
+
+```javascript
+class ACPTargetParameters {
+  parameters: {string: string};
+  profileParameters: {string: string};
+  order: ACPTargetOrder;
+  product: ACPTargetProduct;
+
+  constructor(parameters?: {string: string}, profileParameters?: {string: string}, product?: ACPTargetProduct, order?: ACPTargetOrder) {
+      this.parameters = parameters;
+    this.profileParameters = profileParameters;
+    this.product = product;
+    this.order = order;
+  }
+}
+```
+
+### ACPTargetOrder
+
+This class contains an `orderId`, the total, and an array, for `purchasedProductIds`.
+
+```javascript
+class ACPTargetOrder {
+  orderId:   string;
+  total:     number;
+  purchasedProductIds: Array<string>;
+
+  constructor(orderId: string, total?: number, purchasedProductIds: Array<string>) {
+      this.orderId = orderId;
+    this.total = total;
+    this.purchasedProductIds = purchasedProductIds;
+  }
+}
+```
+
+### ACPTargetProduct
+
+This class contains a productId and a categoryId.
+
+```javascript
+class ACPTargetProduct {
+  productId: string;
+  categoryId: string;
+
+  constructor(productId: string, categoryId: string) {
+      this.productId = productId;
+    this.categoryId = categoryId;
+  }
+}
+```
+{% endtab %}
+{% endtabs %}

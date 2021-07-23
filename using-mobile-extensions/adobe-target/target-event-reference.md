@@ -1,7 +1,7 @@
 # Target event reference
 
 {% hint style="warning" %}
-These event reference documents apply to ACPTarget 2.x only.
+This event reference document is applicable to ACPTarget 2.x.
 {% endhint %}
 
 ## Events handled
