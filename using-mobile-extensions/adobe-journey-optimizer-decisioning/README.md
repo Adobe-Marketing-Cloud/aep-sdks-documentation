@@ -7,14 +7,14 @@ The Adobe Journey Optimizer - Decisioning extension powers real-time personaliza
 Before starting, make sure the following steps are completed.
 
 * Your IMS organization is provisioned for Edge decisioning. 
-* If using Adobe Target, Target activities are set up in your organization/ workspace on Target UI. For more details, see [Target activities guide](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=en).
-* If using Journey Optimizer - Offer Decisions, Decisions are set up in your organization/ sandbox on Experience Platform UI. For more details, see [Create Decisions](https://experienceleague.adobe.com/docs/offer-decisioning/using/create-manage-activities/create-offer-activities.html?lang=en).
+* If using Adobe Target, Target activities are set up in your desired workspace in your organization on Target UI. For more details, see [Target activities guide](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=en).
+* If using Journey Optimizer - Offer Decisions, decisions are set up in your desired sandbox in your organization on Experience Platform UI. For more details, see the [create decisions guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/create-manage-activities/create-offer-activities.html?lang=en).
 
 ## Adobe Experience Platform Data Collection setup
 
 ### Configure the Datastream for Adobe Target and/ or Journey Optimizer - Offer Decisions
 
-On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to **Data Collection** > **Datatreams** using the left navigation panel. Select an existing datastream or create a new datastream. For more details, see [Configure datastreams](https://aep-sdks.gitbook.io/docs/getting-started/configure-datastreams).
+On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to **Data Collection** > **Datatreams** using the left navigation panel. Select an existing datastream or create a new datastream. For more details, see the [configure datastreams guide](https://aep-sdks.gitbook.io/docs/getting-started/configure-datastreams).
 
 1. In the datastream, click on the desired environment from the list. Make sure **Adobe Experience Platform** section is enabled and configured with the required information like **Sandbox** and **Event Dataset**.
 2. For Journey Optimizer - Offer Decisions, navigate to **Adobe Experience Platform** section and enable **Offer Decisioning** checkbox.
@@ -28,23 +28,23 @@ On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to
 On [Experience Platform Data Collection](https://launch.adobe.com/), navigate to **Data Collection** > **Tags** using the left navigation panel. Select an existing mobile Tag property or create a new property.
 
 1. In your mobile property, navigate to **Extensions** in the left navigation panel and click on the **Catalog** tab.
-2. In the extensions Catalog, search or locate the **Adobe Journey Optimizer - Decisioning** extension, and click **Install*.
-3. No extension configuration is necessary so click **Save**.
-4. Follow the publishing process to update SDK configuration. For more details, see [Publish the configuration](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
+2. In the extensions Catalog, search or locate the **Adobe Journey Optimizer - Decisioning** extension, and click **Install**.
+3. Since an extension configuration is not necessary, click **Save**.
+4. Follow the publishing process to update SDK configuration. For more details, see the [publish the configuration guide](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration).
 
 ![Adobe Journey Optimizer - Decisioning extension configuration](../../.gitbook/assets/ajo-decisioning-extension-configuration.png)
 
 ## Integrate Experience Platform Optimize SDK in your mobile application
 
 {% hint style="warning" %}
-For AEPOptimize APIs to work properly, it is required that you integrate Mobile Core and Edge extensions as well in your mobile app. For more details see, [Mobile Core](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core) and [Adobe Experience Platform Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension).
+For AEPOptimize APIs to work properly, it is required that you integrate Mobile Core and Edge extensions as well in your mobile app. For more details see, documentation on [Mobile Core](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core) and [Adobe Experience Platform Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension).
 {% endhint %}
 
 ### Install the Experience Platform Mobile SDK
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
-1. Configure your app target to fetch Mobile Core, Edge, Identity for Edge Network, Optimize from Cocoapods by specifying the following pod dependencies in your `Podfile`.
+Configure your app target to fetch Mobile Core, Edge, Identity for Edge Network and Optimize from Cocoapods by specifying the following pod dependencies in your `Podfile`.
 
    ```swift
    platform :ios, '10.0'
@@ -115,12 +115,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 ## Adobe Journey Optimizer - Offer Decisions
 
 {% hint style="warning" %}
-Some offer constraints are currently not supported with the mobile Experience Edge workflows, for example Capping. The Capping field value specifies the number of times an offer can be presented across all users. For more details, see [Offer eligibility rules and constraints guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
+Some offer constraints, such as Capping, are currently unsupported with the mobile Experience Edge workflows. The Capping field value specifies the number of times an offer can be presented across all users. For more details, see the [offer eligibility rules and constraints guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
 {% endhint %}
 
-### Decision Scope
+### DecisionScope
 
-The `DecisionScope` public class provides a convenience initializer to create a scope object using the activityId, placementId and optional itemCount. The Decision scope activity and placement information can be obtained from the Decision on Experience Platform UI. 
+The `DecisionScope` public class provides a constructor to create a scope object using the activityId, placementId, and optional itemCount. The decision scope activity and placement information can be obtained from the decision on the Experience Platform UI. 
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
@@ -142,7 +142,7 @@ AEPDecisionScope* decisionScope = [[AEPDecisionScope alloc] initWithActivityId:@
 {% endtab %}
 {% endtabs %}
 
-Alternately, the class's designated initializer can be used to create a scope object using the encoded decision scope. The encoded scope can also be read directly from the Decision on Experience Platform UI.
+Alternately, another of the class's constructor can be used to create a scope object using the encoded decision scope. The encoded scope can also be read directly from the decision on Experience Platform UI.
 
 {% tabs %}
 {% tab title="iOS - Swift" %}
@@ -257,7 +257,7 @@ To use Target Third Party ID in the Experience Edge mobile workflows, the corres
 
 ![Target Third Party ID configuration](../../.gitbook/assets/ajo-decisioning-target-tpid.png)
 
-In your mobile application, integrate the Identity for Edge Network extension to add the Target Third Party ID in the Identity Map in the personalization query request to the Edge network when calling the `updatePropositions` API. For more details see, [Identity for Edge Network - updateIdentities API](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network/api-reference#updateidentities).
+In your mobile application, integrate the Identity for Edge Network extension to add the Target Third Party ID in the Identity Map in the personalization query request to the Edge network when calling the `updatePropositions` API. For more details, see the [Identity for Edge Network - updateIdentities API](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network/api-reference#updateidentities).
  
 {% tabs %}
 {% tab title="iOS - Swift" %}
@@ -285,7 +285,7 @@ AEPIdentityMap *identityMap = [[AEPIdentityMap alloc] init];
 
 ### Analytics for Target (A4T)
 
-Set up the Analytics for Target (A4T) cross-solution integration, by enabling the A4T campaigns, to use Analytics as the reporting source for an activity. Subsequently, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target (A4T)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
+Set up the Analytics for Target (A4T) cross-solution integration by enabling the A4T campaigns to use Analytics as the reporting source for an activity. Subsequently, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target (A4T)](https://docs.adobe.com/content/help/en/target/using/integrate/a4t/a4t.html).
 
 Once Analytics is listed as the reporting source for an activity on Target UI, A4T works out of the box in the Optimize SDK. The Experience Edge handles forwarding any Target A4T payloads to Adobe Analytics and no additional action is required on the client-side.
 
@@ -343,7 +343,7 @@ public extension Offer {
   ///
   /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
   ///
-  /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `display`.
+  /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionDisplay`.
   /// - Returns A dictionary containing XDM data for the propositon interactions.
   func generateDisplayInteractionXdm() -> [String: Any] {...}
 
@@ -351,7 +351,7 @@ public extension Offer {
   ///
   /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
   ///
-  /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `click`.
+  /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionInteract`.
   /// - Returns A dictionary containing XDM data for the propositon interactions.
   func generateTapInteractionXdm() -> [String: Any] {...}
 }
@@ -404,14 +404,14 @@ AEPExperienceEvent* experienceEvent = [[AEPExperienceEvent alloc] initWithXdm:di
 
 ## Configuration keys
 
-To update the SDK configuration programmatically, use the following information to change the Optimize extension configuration values. For more information, see [Programmatic updates to Configuration](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/configuration/configuration-api-reference#updateconfiguration).
+To update the SDK configuration programmatically, use the following information to change the Optimize extension configuration values. For more information, see the [programmatic updates to Configuration guide](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/configuration/configuration-api-reference#updateconfiguration).
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
 | optimize.datasetId | No | Override dataset's Identifier which can be obtained from the Experience Platform UI. For more details see, [Datasets UI guide](https://experienceleague.adobe.com/docs/experience-platform/catalog/datasets/user-guide.html?lang=en) | String |
 
 {% hint style="info" %}
-If the override dataset is used for proposition tracking, make sure the corresponding schema definition contains the `Experience Event - Proposition Interaction` field group. For more information, see [Setup schemas & datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
+If the override dataset is used for proposition tracking, make sure the corresponding schema definition contains the `Experience Event - Proposition Interaction` field group. For more information, see the [setup schemas and datasets guide](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
 {% endhint %}
 
 

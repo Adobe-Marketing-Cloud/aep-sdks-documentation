@@ -127,7 +127,7 @@ Optimize.getPropositions(for: [decisionScope1, decisionScope2]) { propositionsDi
 
 ```objc
 + (void) getPropositions: (NSArray<AEPDecisionScope*>* _Nonnull) decisionScopes 
-              completion: (void (^)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable propositionsDict, NSError* _Nullable error)) completion;
+              completion: (void (^ _Nonnull)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable propositionsDict, NSError* _Nullable error)) completion;
 ```
 
 #### Example
@@ -187,7 +187,7 @@ Optimize.onPropositionsUpdate { propositionsDict in
 #### Syntax
 
 ```objc
-+ (void) onPropositionsUpdate: (void (^)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable)) action;
++ (void) onPropositionsUpdate: (void (^ _Nonnull)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable)) action;
 ```
 
 #### Example
@@ -201,7 +201,7 @@ Optimize.onPropositionsUpdate { propositionsDict in
 {% endtab %}
 {% endtabs %}
 
-## registerExtension
+## registerExtensions
 
 This `MobileCore` API can be invoked to register the Optimize extension.
 
@@ -230,7 +230,7 @@ MobileCore.registerExtensions([Optimize.self, ...]) {
 
 ```objc
 + (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
-                 completion: (void (^)(void)) completion;
+                 completion: (void (^ _Nullable)(void)) completion;
 ```
 
 #### Example
@@ -246,7 +246,7 @@ MobileCore.registerExtensions([Optimize.self, ...]) {
 
 ## resetIdentities
 
-This `MobileCore` API can also be invoked to clear out the client-side data for Optimize extension, e.g. in-memory propositions cache.
+This `MobileCore` API can also be invoked to clear out the client-side data for the Optimize extension, such as the in-memory propositions cache.
 
 {% tabs %}
 {% tab title="iOS — Swift" %}
@@ -352,7 +352,7 @@ AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc] initWithName: @"myS
 {% tab title="iOS — Swift" %}
 ### DecisionScope
 
-This class represents the decision scope which is used to fetch the decision propositions from the Edge decisioning services. The encapsulated scope name can also represent the Base64 encoded JSON string created using the provided activityId, placementId and itemCount.
+This class represents the decision scope which is used to fetch the decision propositions from the Edge decisioning services. The encapsulated scope name can also represent the Base64-encoded JSON string created using the provided activityId, placementId, and itemCount.
 
 ```swift
 /// `DecisionScope` class is used to create decision scopes for personalization query requests to Experience Edge Network.
@@ -465,7 +465,7 @@ public class Offer: NSObject, Codable {
 }
 ```
 
-The `Offer` class extension provides methods for generating XDM data for Proposition Interactions field group which can be used for proposition tracking. It also contains direct methods for  tracking proposition display and tap interactions.
+The `Offer` class extension provides methods for generating XDM data for Proposition Interactions field group which can be used for proposition tracking. It also contains direct methods for tracking proposition display and tap interactions.
 
 ```swift
 /// `Offer` extension
@@ -474,7 +474,7 @@ public extension Offer {
     ///
     /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
     ///
-    /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `display`.
+    /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionDisplay`.
     /// - Returns A dictionary containing XDM data for the propositon interactions.
     func generateDisplayInteractionXdm() -> [String: Any] {...}
 
@@ -482,7 +482,7 @@ public extension Offer {
     ///
     /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
     ///
-    /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `click`.
+    /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionInteract`.
     /// - Returns A dictionary containing XDM data for the propositon interactions.
     func generateTapInteractionXdm() -> [String: Any] {...}
 
@@ -496,7 +496,7 @@ public extension Offer {
 
 ### OfferType
 
-An enum indicating the type of an Offer, derived from the proposition item `format` field in personalization query response.
+An enum indicating the type of an offer, derived from the proposition item `format` field in personalization query response.
 
 ```swift
 /// Enum representing the supported Offer Types.
