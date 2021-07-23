@@ -722,13 +722,13 @@ Gets the user profile attributes with the given keys.
 static func getUserAttributes(attributeNames: [String], completion: @escaping ([String: Any]?, AEPError) -> Void)
 ```
 
-* _callback_ is invoked after the customer attributes are available.
+* _completion_ is the callback `function` which will be called with user attributes.
 
 #### **Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When the callback is provided, if the operation times out (5s) or an unexpected error occurs, the `completion` method is called with the appropriate `AEPError`.
 
 ```swift
 UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes, error in

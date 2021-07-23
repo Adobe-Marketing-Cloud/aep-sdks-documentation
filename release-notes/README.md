@@ -4,6 +4,32 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## July 21, 2021
+
+### iOS Analytics 2.5.1
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+### Android Analytics 1.2.8
+
+* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
+
+### Android Analytics 1.2.7
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
+
+## Jul 16, 2021
+
+### Android Media 2.1.2
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+* Handled reset identities (MobileCore.resetIdentities()) event.
+
+### iOS AEPMedia 3.0.1 
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+
 ## Jul 2, 2021
 
 ### iOS AEPUserProfile 3.0.1
