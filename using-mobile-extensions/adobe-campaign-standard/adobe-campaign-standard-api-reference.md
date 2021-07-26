@@ -4,7 +4,7 @@
 
 ### extensionVersion
 
-Returns the running version of the Campaign extension.
+Returns the running version of the Campaign Standard extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -92,7 +92,7 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ### registerExtension
 
-Registers the Campaign extension with the Mobile Core.
+Registers the Campaign Standard extension with the Mobile Core.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -112,7 +112,7 @@ Campaign.registerExtension();
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
 
-This API no longer exists in `Campaign`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This API no longer exists in the`Campaign Standard` extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
 
 {% endtab %}
 
@@ -142,7 +142,7 @@ ACPCampaign.registerExtension()
 
 {% tab title="React Native" %}
 
-When using React Native, register the Campaign extension with Mobile Core in native code as shown on the Android and iOS tabs.
+When using React Native, register the Campaign Standard extension with Mobile Core in native code as shown on the Android and iOS tabs.
 
 {% endtab %}
 
