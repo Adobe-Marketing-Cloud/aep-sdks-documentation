@@ -20,7 +20,7 @@ Here are the key-value pairs in this event:
 
 | **Key or Key Type** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `aamtraits` | String Map | No | The data payload contains the traits \(key-value pairs\) that were sent by the customer. |
+| `aamtraits` | String Map | No | The data payload contains the traits (key-value pairs) that were sent by the customer. |
 
 ### Audience Manager Identity Request
 
