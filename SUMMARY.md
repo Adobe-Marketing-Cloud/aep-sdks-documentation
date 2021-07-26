@@ -61,7 +61,9 @@
 * [Identity for Edge Network](foundation-extensions/identity-for-edge-network/README.md)
   * [Release Notes](foundation-extensions/identity-for-edge-network/release-notes-1.md)
   * [API Reference](foundation-extensions/identity-for-edge-network/api-reference.md)
+  * [Frequently Asked Questions](foundation-extensions/identity-for-edge-network/identity-faq.md)
 * [Adobe Experience Platform Assurance](foundation-extensions/adobe-experience-platform-assurance/README.md)
+  * [Migrating to AEPAssurance(3.x) reference](foundation-extensions/adobe-experience-platform-assurance/migration.md)
   * [Release Notes](foundation-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
@@ -71,12 +73,14 @@
   * [ACPPlaces \(iOS\) reference](foundation-extensions/places/adobe-places.md)
 * [Profile](foundation-extensions/profile/README.md)
   * [Migrating to AEPUserProfile](foundation-extensions/profile/acpuserprofile-aepuserprofile.md)
+  * [Release Notes](foundation-extensions/profile/profile-release-notes.md)
   * [Profile API reference](foundation-extensions/profile/profile-api-references.md)
   * [Profiles event reference](foundation-extensions/profile/profiles-event-reference.md)
 
 ## Experience Cloud <a id="using-mobile-extensions"></a>
 
 * [Adobe Analytics](using-mobile-extensions/adobe-analytics/README.md)
+  * [Migrating to AEPAnalytics](using-mobile-extensions/adobe-analytics/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics/adobe-analytics-release-notes.md)
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
@@ -86,6 +90,7 @@
   * [Release Notes](using-mobile-extensions/adobe-analytics-mobile-services/adobe-mobile-services-release-notes.md)
   * [Mobile Services API reference](using-mobile-extensions/adobe-analytics-mobile-services/mobileservices-api-reference.md)
 * [Adobe Analytics - Media Analytics for Audio and Video](using-mobile-extensions/adobe-media-analytics/README.md)
+  * [Migrating to AEPMedia reference](using-mobile-extensions/adobe-media-analytics/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)

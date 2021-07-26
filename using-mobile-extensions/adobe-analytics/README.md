@@ -1,65 +1,67 @@
 # Adobe Analytics
 
-## **Configure the Analytics extension in** Experience Platform **Launch**
+## Configure the Analytics extension in Adobe Experience Platform Launch
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and click **Install**.
-3. Type the extension settings. For more information, see [Configure the Analytics Extension](./#configure-analytics-extension).
+3. Type the extension settings. For more information, please read the [configure the Analytics Extension section](./#configure-the-analytics-extension).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ![Workflow overview for Experience Platform Launch, the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
 
-### **Configure the Analytics Extension**
+### Configure the Analytics extension
 
 ![Adobe Analytics Extension Configuration](../../.gitbook/assets/mobile-analytics-configuration.png)
 
-#### **Analytics Company**
+#### Analytics company
 
 ![Adobe Analytics Company](../../.gitbook/assets/mobile-analytics-company.png)
 
-No select menu will appear for the analytics company if the user only has access to a single company. On the other hand, a select menu will appear for users that have access to more than one analytics company. The list of report suites associated with the selected company will appear in the combo box in the report suites section.
+If you have access to more than one Analytics company, a select menu will appear, allowing you to choose which company you want to use. If you only have access to one Analytics company, this select menu will not appear. 
 
-#### **Report Suites**
+Once you select an Analytics company, the list of report suites associated with that company will appear in the report suites section.
 
-{% hint style="info" %}
-Want to know how to find report suite IDs? See [Report Suites](https://experienceleague.adobe.com/docs/analytics/admin/manage-report-suites/report-suites-admin.html).
-{% endhint %}
-
-Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see [Mobile Management](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/mobile-management.html).
-
-To narrow the search for a report suite identifier, type a string in the combo box text field. After a valid report suite identifier has been selected, this identifier appears in a tag below the combo box \(shown above\). To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
-
-#### **Tracking server**
+#### Report suites
 
 {% hint style="info" %}
-Want to know what a tracking server is and where to find it? For more information, see [Correctly populate the trackingServer and trackingServerSecure variable](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html).
+To learn how to find report suite IDs, please read the documentation on [report suites](https://experienceleague.adobe.com/docs/analytics/admin/manage-report-suites/report-suites-admin.html).
 {% endhint %}
 
-Type the tracking domain to which all Analytics requests should be made.
+Select one or more mobile-enabled report suite identifiers from the combo box to which the Analytics data should be sent. Only report suite identifiers that belong to a company and that are enabled for mobile can be selected. For information on how to enable mobile for your report suite, see the [mobile management documentation](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/mobile-management.html).
+
+To narrow the search for a report suite identifier, type a string in the combo box text field. After a valid report suite identifier has been selected, this identifier appears in a tag below the combo box. To remove a report suite ID, click on the X next to the ID you want to remove. Report suite IDs can also be configured for the Development and Staging environments.
+
+#### Tracking server
+
+{% hint style="info" %}
+To learn what a tracking server is and how to find it, please read the documentation on [tracking servers](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html).
+{% endhint %}
+
+The tracking server is the tracking domain that all the Analytics requests should be made.
 
 #### **Offline enabled**
 
 {% hint style="info" %}
-Do you need offline tracking? For more information, see [Offline tracking](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackoffline.html).
+To learn more about offline tracking, please read the documentation on [offline tracking](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackoffline.html).
 {% endhint %}
 
 When the **Offline Enabled** checkbox is selected, Analytics hits are queued when your device is offline and are sent later when your device is back online. To use offline tracking, ensure that your report suite is timestamp enabled.
 
 {% hint style="danger" %}
-If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox deselected. If this setting is not configured correctly, data will be lost.
+If your report suite is timestamp enabled, the checkbox must be selected. If your report suite is not timestamped enabled, leave the checkbox unselected. If this setting is not configured correctly, data will be lost.
 
-If you are not sure whether your report suite is timestamp enabled, contact Customer Care**.**
+If you are not sure whether your report suite is timestamp enabled, contact Customer Care.
 {% endhint %}
 
 {% hint style="info" %}
-If you currently send mobile SDK data to a report suite that also collects data from web JavaScript, you might need to set up a separate report suite for mobile data or include a custom timestamp on all JavaScript hits that use the`s.timestamp`variable. For more information, contact Customer Care.
+If you currently send Mobile SDK data to a report suite that also collects data from web JavaScript, you may need to set up a separate report suite for mobile data or include a custom timestamp on all JavaScript hits that use the `s.timestamp` variable. For more information, please contact Customer Care.
 {% endhint %}
 
 #### Audience Manager forwarding
 
 {% hint style="info" %}
-For more information about Analytics server-side forwarding to Audience Manager, see [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager).
+For more information about Analytics server-side forwarding to Audience Manager, see the documentation on [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager).
 {% endhint %}
 
 If you set up Analytics server-side forwarding to Audience Manager, select the **Audience Manager Forwarding** checkbox. When this checkbox is selected, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
@@ -70,15 +72,17 @@ If you set up Analytics server-side forwarding to Audience Manager, select the *
 Select the **Backdate Previous Session Info** checkbox **only** if you have timestamp-enabled report report suites.
 {% endhint %}
 
-When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. The SDK also backdates the session information hit to 1 second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date on which they occurred. One hit is backdated each time a new launch of the application is occurs.
+When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. 
+
+The SDK also backdates the session information hit to one second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date on which they occurred. One hit is backdated each time a new launch of the application is occurs.
 
 For example, if you select the checkbox, Lifecycle session information or crash events are backdated to one second after the last hit was sent. If you do not select the checkbox, Lifecycle data is attached to the first hit of the subsequent session.
 
-If this option is disabled, the Adobe SDK attaches the session information to the current lifecycle.
+If this option is disabled, Mobile SDK attaches the session information to the current lifecycle.
 
 #### Batch limit
 
-This setting creates a threshold number of hits to be sent in consecutive calls. For example, if you type or select **10**, each Analytics hit before the 10th hit is stored in the queue. When the 10th hit comes in, all 10 hits are sent to Analytics in the order in which they were generated.
+This setting creates a threshold number of hits to be sent in consecutive calls. For example, if you type or select "10", each Analytics hit before the 10th hit is stored in the queue. When the 10th hit comes in, all 10 hits are sent to Analytics in the order in which they were generated.
 
 {% hint style="info" %}
 If you set a value greater than 0, ensure that the **Offline Enabled** checkbox is also selected.
@@ -88,13 +92,13 @@ The default value for this setting is 0, which means that hit batching is disabl
 
 #### Launch hit delay
 
-Number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5s or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services/) extension.
+The number of seconds to wait before Analytics launch hits are sent from the SDK. Ensure that this setting is set at 5 seconds or greater when using acquisition functionality from the [Mobile Services](../adobe-analytics-mobile-services/) extension.
 
-## Add Analytics to your app
+## Add Analytics to your application
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
@@ -112,7 +116,7 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
 {% tab title="iOS" %}
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
-2. Add following pods in your `Podfile`:
+2. Add the following pods in your `Podfile`:
 
    ```ruby
     pod 'ACPCore'
@@ -123,7 +127,7 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 
    **Objective-C**
 
-   ```text
+   ```objectivec
     #import "ACPCore.h"
     #import "ACPAnalytics.h"
     #import "ACPIdentity.h"
@@ -141,37 +145,35 @@ Number of seconds to wait before Analytics launch hits are sent from the SDK. En
 {% tab title="React Native" %}
 #### JavaScript
 
-1. Install Analytics.
+1. Install Adobe Analytics.
 
    ```bash
    npm install @adobe/react-native-acpanalytics
    ```
 
-   1.1 Link
+2. Link the module and the application.
 
-   * **React Native 0.60+**
+    For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
 
-[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+    For React Native versions less than or equal to 0.59, you can use the following scripts:
 
-* **React Native &lt;= 0.59**
+    ```bash
+    react-native link @adobe/react-native-acpanalytics
+    ```
 
-```bash
-   react-native link @adobe/react-native-acpanalytics
-```
+    If you are using iOS and `cocoapods`, run:
 
-_Note_ For `iOS` using `cocoapods`, run:
+    ```bash
+    cd ios/ && pod install
+    ```
 
-```bash
-   cd ios/ && pod install
-```
-
-1. Import the extension.
+3. Import the extension.
 
    ```jsx
     import {ACPAnalytics} from '@adobe/react-native-acpanalytics';
    ```
 
-2. Get the extension version.
+4. Get the extension version.
 
    ```jsx
     ACPAnalytics.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAnalytics version: " + version));
@@ -179,11 +181,11 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Flutter
+### Flutter
 
 1. Install Analytics.
 
-   Instructions on installing the Analytics SDK in Flutter can be found [here](https://pub.dev/packages/flutter_acpanalytics#-installing-tab-).
+   Instructions on installing the Analytics SDK in Flutter can be found in the [official Flutter documentation](https://pub.dev/packages/flutter_acpanalytics#-installing-tab-).
 
 2. Import the extension.
 
@@ -199,9 +201,9 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+### Cordova
 
-1. After creating your Cordova app and adding the Android and iOS platforms, the Analytics extension for Cordova can be added with this command:
+1. After creating your Cordova app and adding the Android and iOS platforms, add the Analytics extension.
 
    ```text
    cordova plugin add https://github.com/adobe/cordova-acpanalytics.git
@@ -219,9 +221,9 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
 
-1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-0.0.1-Unity.zip), the Analytics extension for Unity can be added with following code in the MainScript
+1. After importing the [ACPAnalytics.unitypackage](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-0.0.1-Unity.zip), add the Analytics extension for Unity.
 
    ```csharp
    using com.adobe.marketing.mobile;
@@ -235,29 +237,29 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### **C\#**
+### **C\#**
 
-1. After adding the iOS or Android ACPAnalytics NuGet package, the Analytics extension can be added by this import statement
+1. After adding the iOS or Android ACPAnalytics NuGet package, add the Analytics extension.
 
-   ```text
+   ```csharp
    using Com.Adobe.Marketing.Mobile;
    ```
 
 2. Get the extension version.
 
-   ```text
+   ```csharp
    ACPAnalytics.ExtensionVersion();
    ```
 {% endtab %}
 {% endtabs %}
 
-### Register Analytics with Mobile Core
+## Register Analytics with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-To call the set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+The following sample shows how to set up methods that call the [setApplication()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -278,13 +280,15 @@ public class MobileApp extends Application {
 }
 ```
 
-**Important**: Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% hint style="info" %} 
+Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
-In your app's`application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
+In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
-#### Objective C
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -297,7 +301,7 @@ In your app's`application:didFinishLaunchingWithOptions`, register Analytics wit
  }
 ```
 
-#### Swift
+### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -310,29 +314,31 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Important**: Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% hint style="info" %} 
+Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% endhint %}
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
 When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+### Cordova
 
 When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
 
 Register the extension in the `start()` function:
 
@@ -359,7 +365,7 @@ public class MainScript : MonoBehaviour
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
 **iOS**
 
@@ -411,33 +417,33 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-## Send Lifecycle Metrics to Analytics
+## Send Lifecycle metrics to Analytics
 
-To automatically report on the application lifecycle details in Analytics, ensure that you properly configure the lifecycle data collection. For more information, see [Lifecycle Metrics.](../../foundation-extensions/mobile-core/lifecycle/)
+To automatically report on the application lifecycle details in Analytics, ensure that you properly configure the lifecycle data collection. For more information, see the documentation on [Lifecycle metrics](../../foundation-extensions/mobile-core/lifecycle/).
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see [Track app actions](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-actions) and [Track app states](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views).
+To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see the [track app actions](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-actions) and [track app states](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) tutorials.
 
 {% hint style="info" %}
-[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the View State as **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
+[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the view state as the **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable (`pagename=value`).
 
-[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
+[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable (`action=value`).
 {% endhint %}
 
-## Integrations with Experience Platform solutions and services
+## Integrations with Adobe Experience Platform solutions and services
 
-### Analytics for Target \(A4T\)
+### Analytics for Adobe Target (A4T)
 
-To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html).
+To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target (A4T) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html).
 
 ### Server-side forwarding with Audience Manager
 
 To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
 
-### Audio and Video Analytics
+### Audio and video analytics
 
-For more information about collecting audio and video analytics, see [Media Analytics for Audio and Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
+For more information about collecting audio and video analytics, please read the documentation on [Media Analytics for audio and video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
 
 ## Event serialization
 
@@ -445,15 +451,15 @@ Event serialization is not supported by processing rules. To set serialized even
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 cdata.put("&&events", "event1:12341234");
 ```
 
-#### Example
+**Example**
 
 ```java
 //create a context data dictionary
@@ -471,15 +477,15 @@ MobileCore.trackState("State Name", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective C
+### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 [contextData setObject:@"eventN:serial number" forKey:@"&&events"];
 ```
 
-#### Example
+**Example**
 
 ```objectivec
 //create a context data dictionary
@@ -497,15 +503,15 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
-#### Syntax
+**Syntax**
 
 ```jsx
 var contextData = {"eventN:serial number": "&&events"};
 ```
 
-#### Example
+**Example**
 
 ```jsx
 // create a context data dictionary and add events
@@ -520,15 +526,15 @@ ACPCore.trackState("State Name", contextData);
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
-#### Syntax
+**Syntax**
 
 ```dart
 var contextData = {"eventN:serial number": "&&events"};
 ```
 
-#### Example
+**Example**
 
 ```dart
 // create a context data dictionary and add events
@@ -543,15 +549,15 @@ FlutterACPCore.trackState("State Name",  data: contextData);
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+### Cordova
 
-#### Syntax
+**Syntax**
 
 ```jsx
 var contextData = {"eventN:serial number": "&&events"};
 ```
 
-#### Example
+**Example**
 
 ```jsx
 // create a context data dictionary and add events
@@ -574,16 +580,16 @@ ACPCore.trackState("State Name", contextData, function(handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
 
-#### Syntax
+**Syntax**
 
 ```csharp
 var contextData = new Dictionary<string, string>();
 contextData.Add("key", "trackAction");
 ```
 
-#### Example
+**Example**
 
 ```csharp
 // create a context data dictionary and add events
@@ -600,9 +606,9 @@ ACPCore.TrackState("State Name", contextData);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
-#### iOS Syntax
+**iOS syntax**
 
 ```csharp
 var contextData = new NSMutableDictionary<NSString, NSString>
@@ -611,7 +617,7 @@ var contextData = new NSMutableDictionary<NSString, NSString>
 };
 ```
 
-#### iOS Example
+**iOS example**
 
 ```csharp
 // create a context data dictionary and add events
@@ -628,14 +634,14 @@ ACPCore.TrackAction("Action Name", contextData);
 ACPCore.TrackState("State Name", contextData);
 ```
 
-#### Android Syntax
+**Android syntax**
 
 ```csharp
 var contextData = new Dictionary<string, string>();
 contextData.Add("&&events", "event1:12341234");
 ```
 
-#### Android Example
+**Android example**
 
 ```csharp
 // create a context data dictionary and add events
@@ -652,9 +658,7 @@ ACPCore.TrackState("State Name", contextData);
 {% endtab %}
 {% endtabs %}
 
-## Videos
-
-### Using [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics
+The following video shows you how to use [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics.
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
 
@@ -671,11 +675,13 @@ To update the SDK configuration programmatically, use the following information 
 | analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) | Boolean |
 | analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). | Boolean |
 
+### Update Analytics configuration
+
 {% tabs %}
 {% tab title="Android" %}
-### Update Analytics Configuration
+#### Java
 
-#### Example
+**Example**
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
@@ -689,11 +695,9 @@ MobileCore.updateConfiguration(data);
 {% endtab %}
 
 {% tab title="iOS" %}
-### Update Analytics Configuration
+#### Objective-C
 
-#### Example
-
-**Objective-C**
+**Example**
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.server",
@@ -703,7 +707,9 @@ NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-**Swift**
+#### Swift
+
+**Example**
 
 ```swift
 let updatedConfig = ["analytics.server":"sample.analytics.tracking.server", 
@@ -717,7 +723,7 @@ ACPCore.updateConfiguration(updatedConfig)
 {% tab title="React Native" %}
 #### JavaScript
 
-### Update Analytics Configuration
+**Example** 
 
 ```jsx
 ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
@@ -730,7 +736,7 @@ ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.serv
 {% tab title="Flutter" %}
 #### Dart
 
-### Update Analytics Configuration
+**Example**
 
 ```dart
 FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
@@ -743,7 +749,7 @@ FlutterACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracki
 {% tab title="Cordova" %}
 #### Cordova
 
-### Update Analytics Configuration
+**Example**
 
 ```jsx
 ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",
@@ -760,7 +766,7 @@ ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.serv
 {% tab title="Unity" %}
 #### C\#
 
-### Update Analytics Configuration
+**Example**
 
 ```csharp
 var dict = new Dictionary<string, object>();
@@ -775,9 +781,7 @@ ACPCore.UpdateConfiguration(dict);
 {% tab title="Xamarin" %}
 #### C\#
 
-### Update Analytics Configuration
-
-**iOS**
+**iOS example**
 
 ```csharp
 var config = new NSMutableDictionary<NSString, NSObject>
@@ -790,7 +794,7 @@ var config = new NSMutableDictionary<NSString, NSObject>
 ACPCore.UpdateConfiguration(config);
 ```
 
-**Android**
+**Android example**
 
 ```csharp
 var config = new Dictionary<string, Java.Lang.Object>();
@@ -803,5 +807,5 @@ ACPCore.UpdateConfiguration(config);
 {% endtab %}
 {% endtabs %}
 
-For more information, see [Configuration API Reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+For more information, see the [configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
