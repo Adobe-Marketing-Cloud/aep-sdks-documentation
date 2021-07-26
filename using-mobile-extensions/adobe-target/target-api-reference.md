@@ -39,7 +39,7 @@ Target.clearPrefetchCache()
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget clearPrefetchCache];
 ```
 
@@ -48,7 +48,7 @@ Target.clearPrefetchCache()
 {% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
-```objc
+```objective-c
 + (void) clearPrefetchCache;
 ```
 
@@ -62,7 +62,7 @@ ACPTarget.clearPrefetchCache
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget clearPrefetchCache];
 ```
 
@@ -161,7 +161,7 @@ Target.clickedLocation("aep-loc-1", targetParameters: TargetParameters(parameter
 
 **Objective-C**
 
-```objc
+```objective-c
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
 AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:@{@"mbox_parameter_key":@"mbox_parameter_value"} profileParameters:@{@"name":@"Smith"} order:order product:product];
@@ -174,7 +174,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
@@ -219,7 +219,7 @@ ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetPara
 
 **Objective-C**
 
-```objc
+```objective-c
 // Mbox parameters
 NSDictionary *mboxParameters = @{@"membership":@"prime"};
 
@@ -354,7 +354,7 @@ Target.displayedLocations(
 
 **Objective-C**
 
-```objc
+```objective-c
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"ADCKKBC" total:400.50 purchasedProductIds:@[@"34", @"125"]];
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"24D334" categoryId:@"Stationary"];
 AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:nil profileParameters:nil order:order product:product];
@@ -367,7 +367,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
 withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
@@ -391,7 +391,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 
 **Objective-C**
 
-```objc
+```objective-c
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
@@ -468,7 +468,7 @@ let targetVersion = Target.extensionVersion
 
 **Objective-C**
 
-```objc
+```objective-c
 NSString *targetVersion = [AEPMobileTarget extensionVersion];
 ```
 
@@ -478,7 +478,7 @@ NSString *targetVersion = [AEPMobileTarget extensionVersion];
 
 **Syntax**
 
-```objc
+```objective-c
 + (nonnull NSString*) extensionVersion;
 ```
 
@@ -492,7 +492,7 @@ let targetVersion = ACPTarget.extensionVersion()
 
 **Objective-C**
 
-```objc
+```objective-c
 NSString *targetVersion = [ACPTarget extensionVersion];
 ```
 
@@ -565,7 +565,7 @@ Target.getThirdPartyId { (id, err) in
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget getThirdPartyId:^(NSString *thirdPartyID, NSError *error){
 	// read Target thirdPartyId
 }];
@@ -577,7 +577,7 @@ Target.getThirdPartyId { (id, err) in
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
@@ -595,7 +595,7 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
        // read Target thirdPartyId
 }];
@@ -673,7 +673,7 @@ Target.getTntId({ (id, err) in
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget getTntId:^(NSString *tntID, NSError *error){
 	// read target's tntId 
 }];
@@ -685,7 +685,7 @@ Target.getTntId({ (id, err) in
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
 ```
 
@@ -703,7 +703,7 @@ ACPTarget.getTntId({tntId in
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget getTntId:^(NSString *tntId){
        // read target's tntId
 }];
@@ -841,7 +841,7 @@ Target.prefetchContent([
 
 **Objective-C**
 
-```objc
+```objective-c
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 AEPTargetProduct *product1 = [[AEPTargetProduct alloc] initWithProductId:@"24D3412" categoryId:@"Books"];
@@ -884,7 +884,7 @@ product:product];
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) prefetchObjectArray
           withParameters: (nullable ACPTargetParameters*) parameters
                 callback: (nullable void (^) (NSError* _Nullable error)) callback;
@@ -942,7 +942,7 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 
 **Objective-C**
 
-```objc
+```objective-c
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
@@ -1070,7 +1070,7 @@ This API no longer exists in `Target`. Instead, the extension should be register
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) registerExtension;
 ```
 
@@ -1084,7 +1084,7 @@ ACPTarget.registerExtension()
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget registerExtension];
 ```
 
@@ -1136,7 +1136,7 @@ Target.resetExperience()
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget resetExperience];
 ```
 
@@ -1146,7 +1146,7 @@ Target.resetExperience()
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) resetExperience;
 ```
 
@@ -1160,7 +1160,7 @@ ACPTarget.resetExperience()
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget resetExperience];
 ```
 
@@ -1309,7 +1309,7 @@ Target.retrieveLocationContent([request1, request2], with: globalTargetParameter
 
 **Objective-C**
 
-```objc
+```objective-c
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 AEPTargetProduct *product1 = [[AEPTargetProduct alloc] initWithProductId:@"24D3412" categoryId:@"Books"];
@@ -1350,7 +1350,7 @@ AEPTargetParameters *targetParameters = [[AEPTargetParameters alloc] initWithPar
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) retrieveLocationContent: (nonnull NSArray<ACPTargetRequestObject*>*) requests
                   withParameters: (nullable ACPTargetParameters*) parameters;
 ```
@@ -1406,7 +1406,7 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 
 **Objective-C**
 
-```objc
+```objective-c
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
 ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"a", @"b"]];
@@ -1553,7 +1553,7 @@ if let url = URL(string: "myapp://HomePage") {
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
 ```
 
@@ -1563,7 +1563,7 @@ if let url = URL(string: "myapp://HomePage") {
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
 ```
 
@@ -1579,7 +1579,7 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
 ```
 
@@ -1646,7 +1646,7 @@ Target.setThirdPartyId("third-party-id")
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileTarget setThirdPartyId:@"third-party-id"]
 ```
 
@@ -1656,7 +1656,7 @@ Target.setThirdPartyId("third-party-id")
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
@@ -1672,7 +1672,7 @@ ACPTarget.setThirdPartyId("third-party-id")
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPTarget setThirdPartyId:@"third-party-id"];
 ```
 
@@ -1734,7 +1734,7 @@ MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.ad
 
 **Objective-C**
 
-```objc
+```objective-c
 [AEPMobileCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];
 ```
 
@@ -1746,7 +1746,7 @@ To enter the preview visual mode, use the `collectLaunchInfo` API to enable the 
 
 **Syntax**
 
-```objc
+```objective-c
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
@@ -1762,7 +1762,7 @@ ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobe
 
 **Objective-C**
 
-```objc
+```objective-c
 [ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
 
@@ -1792,41 +1792,6 @@ public class TargetRequest extends TargetObject {
                          final TargetParameters targetParameters,
                          final String defaultContent,
                          final AdobeCallback<String> contentCallback);
-
-     /**
-     * Sets mbox parameters for the request.
-     *
-     * @param mboxParameters Map<String, String> mbox parameters
-     */
-     void setMboxParameters(final Map<String, String> mboxParameters);
-
-     /**
-     * Sets profile parameters for the request.
-     *
-     * @param profileParameters Map<String, String profile parameters
-     */
-    void setProfileParameters(final Map<String, String> profileParameters);
-
-    /**
-     * Sets order parameters for the request.
-     *
-     * @param orderParameters Map<String, Object> order parameters
-     */
-    void setOrderParameters(final Map<String, Object> orderParameters);
-
-    /**
-     * Sets product parameters for the request.
-     *
-     * @param productParameters Map<String, String> product parameters
-     */
-    void setProductParameters(final Map<String, String> productParameters);
-
-    /**
-     * Sets targetParameters for the request.
-     *
-     * @param targetParameters TargetParameters for the request.
-     */
-    void setTargetParameters(final TargetParameters targetParameters);
 }
 ```
 
@@ -1843,42 +1808,6 @@ public class TargetPrefetch extends TargetObject {
      * @param targetParameters TargetParameters for this prefetch request
      */
      public TargetPrefetch(final String mboxName, final TargetParameters targetParameters)
-
-     /**
-     * Sets mbox parameters for the request.
-     *
-     * @param mboxParameters Map<String, String> mbox parameters
-     */
-     void setMboxParameters(final Map<String, String> mboxParameters);
-
-     /**
-     * Sets profile parameters for the request.
-     *
-     * @param profileParameters Map<String, String profile parameters
-     */
-    void setProfileParameters(final Map<String, String> profileParameters);
-
-    /**
-     * Sets order parameters for the request.
-     *
-     * @param orderParameters Map<String, Object> order parameters
-     */
-    void setOrderParameters(final Map<String, Object> orderParameters);
-
-    /**
-     * Sets product parameters for the request.
-     *
-     * @param productParameters Map<String, String> product parameters
-     */
-    void setProductParameters(final Map<String, String> productParameters);
-
-    /**
-     * Sets targetParameters for the request.
-     *
-     * @param targetParameters TargetParameters for the request.
-     */
-    void setTargetParameters(final TargetParameters targetParameters);
-
 }
 ```
 
@@ -1989,23 +1918,6 @@ public class TargetOrder {
      * @return a list of this order's purchased product ids
      */
     public List<String> getPurchasedProductIds();
-
-    /**
-     * Converts an order parameter Map to a TargetOrder
-     *
-     * @param orderParameters a Map<String, Object> of Target order parameters
-     * @return converted TargetOrder
-     */
-    static TargetOrder fromMap(final Map<String, Object> orderParameters);
-
-    /**
-     * Converts TargetOrder to an order parameters Map.
-     *
-     * @param targetOrder a TargetOrder object
-     * @return Map<String, Object> containing Target order parameters
-     */
-    static Map<String, Object> toMap(final TargetOrder targetOrder);
-
 }
 ```
 
@@ -2022,7 +1934,7 @@ public class TargetProduct {
      * @param id String product id
      * @param categoryId String product category id
      */
-     public TargetProduct(final String id, final String categoryId);
+    public TargetProduct(final String id, final String categoryId);
 
     /**
      * Get the product id
@@ -2037,22 +1949,6 @@ public class TargetProduct {
      * @return product category id
      */
     public String getCategoryId();
-
-    /**
-     * Converts a product parameter Map to a TargetProduct
-     *
-     * @param productParameters a Map<String, String> of Target product parameters
-     * @return converted TargetProduct
-     */
-    static TargetProduct fromMap(final Map<String, String> productParameters);
-
-    /**
-     * Converts a TargetProduct object to product parameters Map.
-     *
-     * @param targetProduct a TargetProduct object
-     * @return Map<String, String> containing Target product parameters
-     */
-     static Map<String, String> toMap(final TargetProduct targetProduct);
 }
 ```
 {% endtab %}
@@ -2082,13 +1978,6 @@ public class TargetRequest: NSObject, Codable {
         self.targetParameters = targetParameters
         self.contentCallback = contentCallback
         responsePairId = UUID().uuidString
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case defaultContent
-        case targetParameters
-        case responsePairId
     }
 }
 ```
@@ -2235,7 +2124,7 @@ AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purc
 
 This class contains productId and categoryId.
 
-```objectivec
+```swift
 /// Class for specifying Target product parameters
 @objc(AEPTargetProduct)
 public class TargetProduct: NSObject, Codable {
@@ -2274,7 +2163,7 @@ AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" c
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
 
-```objectivec
+```objective-c
 @interface ACPTargetRequestObject : ACPTargetPrefetchObject
 
 /* The default content that will be returned if Target servers are unreachable */   
@@ -2287,7 +2176,7 @@ This class extends `ACPTargetPrefetchObject` by adding default content and a cal
 
 The following method can be used to create an instance of ACPTargetRequestObject that might be used to make a batch request to the configured Target server to fetch content for mbox locations.
 
-```objectivec
+```objective-c
 + (nonnull instancetype) targetRequestObjectWithName: (nonnull NSString*) name
                                     targetParameters: (nullable ACPTargetParameters*) targetParameters
                                       defaultContent: (nonnull NSString*) defaultContent
@@ -2298,7 +2187,7 @@ The following method can be used to create an instance of ACPTargetRequestObject
 
 This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
 
-```objectivec
+```objective-c
 @interface ACPTargetPrefetchObject : NSObject
 
 /* The name of the Target location/mbox */
@@ -2311,7 +2200,7 @@ This class contains the name of the Target location/mbox and target parameters t
 
 The following method can be used to create an instance of ACPTargetPrefetchObject that might be used to make a prefetch request to the configured Target server to prefetch content for mbox locations.
 
-```objectivec
+```objective-c
 + (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
                                      targetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
@@ -2320,7 +2209,7 @@ The following method can be used to create an instance of ACPTargetPrefetchObjec
 
 This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
 
-```objectivec
+```objective-c
 @interface ACPTargetParameters : NSObject
 
 /* Dictionary containing key-value pairs of parameters */
@@ -2339,7 +2228,7 @@ This class contains mbox parameters dictionary, profile parameters dictionary, A
 
 The following method can be used to create an instance of ACPTargetParameters.
 
-```objectivec
+```objective-c
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
                                       profileParameters: (nullable NSDictionary*) profileParameters
                                                 product: (nullable ACPTargetProduct*) product
@@ -2350,7 +2239,7 @@ The following method can be used to create an instance of ACPTargetParameters.
 
 This class contains orderId, total and an array for purchasedProductIds.
 
-```objectivec
+```objective-c
 @interface ACPTargetOrder : NSObject
 
 /* Order ID */
@@ -2366,7 +2255,7 @@ This class contains orderId, total and an array for purchasedProductIds.
 
 The following method can be used to create an instance of ACPTargetOrder.
 
-```objectivec
+```objective-c
 + (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
                                      total: (nullable NSNumber*) total
                        purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
@@ -2376,7 +2265,7 @@ The following method can be used to create an instance of ACPTargetOrder.
 
 This class contains productId and categoryId.
 
-```objectivec
+```objective-c
 @interface ACPTargetProduct : NSObject
 
 /* Product ID */
@@ -2389,7 +2278,7 @@ This class contains productId and categoryId.
 
 The following method can be used to create an instance of ACPTargetProduct.
 
-```objectivec
+```objective-c
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
                                   categoryId: (nullable NSString*) categoryId;
 ```
