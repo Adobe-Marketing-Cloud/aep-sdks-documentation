@@ -54,13 +54,15 @@ Once the previous command is complete, run `pod install` or `pod update` to upda
 
 ## Update SDK initialization
 
-After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the SDK has simplified initialization and registration of extensions to where the `MobileCore.start()` API is no longer required.
+After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the `MobileCore.start()` API is no longer required. The SDK has simplified initialization and registration of extensions by providing the `MobileCore.registerExtensions()` API. After the given extensions have been registered, the SDK will be initialized and the completion block will be executed. Code which used to reside in the start() block will now reside in the `MobileCore.registerExtensions()` completion block.
 
 The following code snippets show the new and correct initialization code required for the Swift-based, AEP-prefix SDK libraries.
 
 {% tabs %}
+
 {% tab title="Objective-C" %}
-```objc
+
+```objective-c
 @import AEPCore;
 @import AEPSignal;
 @import AEPLifecycle;
@@ -74,15 +76,17 @@ The following code snippets show the new and correct initialization code require
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       [AEPMobileCore setLogLevel: AEPLogLevelDebug];
       [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class, AEPMobileAssurance.class] completion:^{
-      [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
-      [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
-    }];
+        [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+        [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+    	}];
     ...
 }
 ```
+
 {% endtab %}
 
 {% tab title="Swift" %}
+
 ```swift
 // AppDelegate.swift
 import AEPAssurance
@@ -95,12 +99,14 @@ import AEPUserProfile
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self, Assurance.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-          MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
   ...
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Update API usage and references for each extension
