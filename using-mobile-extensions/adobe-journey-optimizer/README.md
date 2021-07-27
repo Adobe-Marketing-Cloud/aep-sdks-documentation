@@ -37,7 +37,7 @@ Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - se
 4. Follow the publishing process to update SDK configuration.
 
 {% hint style="info" %}
-The datasets selected should use a schema that uses the Push Notification Tracking XDM field group. The pre-created CJM Push Tracking Dataset contains this XDM field group in its schema definition. For more information, see [Set up schemas and datasets](../../getting-started/setup-schema-and-datasets.md).
+The datasets selected should use a schema that uses the Push Notification Tracking XDM field group. The pre-created CJM Push Tracking Dataset contains this XDM field group in its schema definition. For more information, see [Set up schemas and datasets](../../getting-started/setup-schemas-and-datasets.md).
 {% endhint %}
 
 ![](../../.gitbook/assets/aoj-launch-configuration.png)
