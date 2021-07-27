@@ -102,6 +102,7 @@
   * [Campaign Classic API reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference.md)
   * [Campaign Classic event reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-event-reference.md)
 * [Adobe Campaign Standard](using-mobile-extensions/adobe-campaign-standard/README.md)
+  * [Migrating to AEPCampaign reference](using-mobile-extensions/adobe-campaign-standard/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-release-notes.md)
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
