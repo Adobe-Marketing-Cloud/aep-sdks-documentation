@@ -6,13 +6,13 @@ Experience Data Model \(XDM\) schemas are a set of rules that define and validat
 
 The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html#dnl-xdm-experienceevent) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following field groups should be included in the schema:
 
-* [Application Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-application.schema.md) - Data that is related to the application that generates or is targeted by the event.
-* [Environment Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) - Data that is related to the device, location, and surrounding environment.
-* [Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) - Data that is related to buying and selling lists of products.
+* [Application Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-application.schema.json) - Data that is related to the application that generates or is targeted by the event.
+* [Environment Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-environment-details.schema.json) - Data that is related to the device, location, and surrounding environment.
+* [Commerce Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-commerce.schema.json) - Data that is related to buying and selling lists of products.
 
 ## Commerce
 
-The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) field group defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
+The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-commerce.schema.json) field group defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
 
 ### Commerce actions
 
