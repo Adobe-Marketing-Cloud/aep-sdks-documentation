@@ -332,7 +332,7 @@ Using the following API does not increment page views.
 There are 2 possible scenarios  
 
 1). Application in background: If the application is in background, no set up is required. The SDK handles push tracking to Analytics.  
-2). Application in foreground: If the application is in foreground then call onMessageReceived in FirebaseMessagingService will be called as mentioned 
+2). Application in foreground: If the application is in foreground then onMessageReceived in FirebaseMessagingService will be called as mentioned 
 in the [FCM push message handling document](https://firebase.google.com/docs/cloud-messaging/android/receive#handling_messages). In this case read the push data from received Intent and add it to the Intent Extras of the Activity as shown in this [example](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en).
 
 {% endtab %}
