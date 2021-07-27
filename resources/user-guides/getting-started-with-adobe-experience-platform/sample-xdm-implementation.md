@@ -38,21 +38,23 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
    * Select **Create schema**, followed by **XDM ExperienceEvent**
    * Set the name for this schema as "Product Reviews".
    * Select the **Add** button (+) to add field groups
+     
      * Select **Environment Details** from the "Use existing field groups" section then select **Add field group**.
    * Select the **Add** button (+) to add field groups
+     
      * Select **Create new field group** and set the name as "Product review", then select **Add field group**.
-   * In the Schema structure, select the "Product review" field group and select the plus icon (+) next to the schema name "Product Reviews".
+* In the Schema structure, select the "Product review" field group and select the plus icon (+) next to the schema name "Product Reviews".
    * Start adding fields as follows. After each, select **Apply**, then plus icon (+) to add the next field.
-
+   
      | Field name | Display name | Type | Required |
      | :--- | :--- | :--- | :--- |
      | productSku | Product SKU | String | Yes |
      | reviewText | Review Text | String | No |
-     | rating | Rating | Integer | Yes |
+  | rating | Rating | Integer | Yes |
      | reviewerId | Reviewer ID | String | Yes |
 
    * Select the `reviewerId` and enable it for Identity , enable **Primary Identity** and select Identity namespace "Email".
-
+   
    * Select **Save**.
 
 ![](../../../.gitbook/assets/xdm_product_review.png)
@@ -149,7 +151,7 @@ Use the knowledge from Assignment 1 and connect to an Assurance Session to verif
 // 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
 // shown in Adobe Experience Platform
 // Note: the Dataset identifier specified at Event level overrides the Experience Event Dataset specified in the
-// Edge configuration in Adobe Launch
+// Datastream configuration in Adobe Launch
 xdmData.put("eventType", "product.review");
 ExperienceEvent event = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData, "<DatasetIdentifier>")
@@ -170,7 +172,7 @@ Edge.sendEvent(event, new EdgeCallback() {
 // 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
 // shown in Adobe Experience Platform
 // Note: the Dataset identifier specified at Event level overrises the Experience Event Dataset specified in the
-// Edge configuration in Adobe Launch
+// Datastream configuration in Adobe Launch
 xdmData["eventType"] = "product.review"
 let experienceEvent =
 ExperienceEvent(xdm: xdmData, datasetIdentifier: "<DatasetIdentifier>")

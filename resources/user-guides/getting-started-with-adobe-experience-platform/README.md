@@ -39,16 +39,16 @@ To start collecting data in Adobe Experience Platform, you need to create an XDM
    * Select `Next`
    * Set a name for this dataset and select `Finish`.
 
-### Generate an Experience Edge environment identifier <a id="generate-an-experience-edge-environment-identifier"></a>
+### Generate a Datastream identifier <a id="generate-a-datastream-identifier"></a>
 
-The SDK requires a configuration identifier that ensures the implementation matches the server-side Edge configuration and data is routed/received to/from the correct destination.
+The SDK requires a configuration identifier that ensures the implementation matches the server-side Datastream configuration and data is routed/received to/from the correct destination.
 
 To create a configuration identifier use the following steps:
 
-1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select **Edge Configurations** from the left panel, then select **New Edge Configuration**.
-2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Experience Edge environments.
+1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select **Datastreams**  from the left panel, then select **New Datastream**.
+2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Datastream environments.
 
-![](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Faa24751ba2f7203020c25aedfeb21b461bde6a9d.png?alt=media)
+![](../../../.gitbook/assets/user-guides-create-datastream.png?alt=media)
 
 1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
    * Select `Prod` for `Sandbox`. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en)​
@@ -67,7 +67,7 @@ Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.i
 
 1. First, follow the steps in the [set up a mobile property tutorial](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 2. Install the `Adobe Experience Platform Edge` extension from the Catalog.
-3. In the configuration view, select the `Edge Configuration` you created in the `Generate an Experience Edge environment identifier` step and click `Save`.
+3. In the configuration view, for `Edge Configuration`  section select the `Datastream` configuration you created in the `Generate a Datastream identifier` step and click `Save`.
 4. Install the `AEP Assurance` extension from the Catalog.
 5. Go to the Publishing Flow menu, select the development library you created and click `Add All Changed Resources`.
 6. Click `Save & Build for Development` to publish the changes in the **Development** environment.
@@ -165,16 +165,16 @@ AEP Assurance (also known as Project Griffon) is a product from Adobe that lets 
     If you are using a real device, you can also use the `Scan QR Code` functionality. You can then skip to step 6.
     {% endhint %}
 
-   ​![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F562452794e4fd8a786f42826ad2ebf972ffa5efd.png?generation=1602553739064019&alt=media)​
+   ![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F562452794e4fd8a786f42826ad2ebf972ffa5efd.png?generation=1602553739064019&alt=media)​
 
 4. Go to the sample application that is installed on your device, and click on the `Assurance` tab.
 5. Paste the **Assurance Session URL** that you copied from Project Griffon, and click `Connect`.
 
-   ​![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F09024e871c64ab1573984d5549829675b14e37be.png?generation=1602553755640651&alt=media)​
+   ![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F09024e871c64ab1573984d5549829675b14e37be.png?generation=1602553755640651&alt=media)​
 
 6. Enter the PIN from Project Griffon and click `Connect`.
 
-   ​![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F0d2947493c84a14c50c5682fc010784e20700ba5.png?generation=1602553739950134&alt=media)​
+   ![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2F0d2947493c84a14c50c5682fc010784e20700ba5.png?generation=1602553739950134&alt=media)​
 
 7. Once connected to Assurance, you will see a Platform icon in red color on the top right corner of the app view. The color of the Platform icon becomes gray if the connectivity to Assurance server is lost for any reason. In this case, you want to reconnect to continue to see the session in the UI.
 8. In the Assurance session, you should now start seeing events populating the Events List. When clicking the `Purchase` button from the `Edge` tab, you should see the Experience events sent to Experience Edge. For more details, refer to [Event types handled by the AEP Mobile extension](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension/experience-platform-debugging).
