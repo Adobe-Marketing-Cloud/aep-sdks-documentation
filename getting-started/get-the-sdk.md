@@ -580,7 +580,7 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Watch the Vvdeo
+## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
