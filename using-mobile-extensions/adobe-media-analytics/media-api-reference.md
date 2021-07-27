@@ -70,6 +70,10 @@ Creates a media tracker instance that tracks the playback session. The tracker c
 
 The createTracker function returns the instance of MediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
+{% hint style="warning" %}
+ If MobileCore.resetIdentities() is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
+{% endhint %}
+
 **Syntax**
 
 ```java
