@@ -48,14 +48,14 @@ To create a configuration identifier use the following steps:
 1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select **Datastreams** from the left panel, then select **New Datastream**.
 2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Datastream environments.
 
-![](../../../.gitbook/assets/user-guides-create-datastream.png?alt=media)
+![](../../../.gitbook/assets/create-datastream.png?alt=media)
 
 1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
    * Select `Prod` for `Sandbox`. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en)​
    * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/resources/user-guides/tutorial-1-edge-extension-setup#initialize-adobe-experience-platform-for-data-collection).
    * Click `Save`.
 
-![](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Fd86a922030300c632ba1e083c287d7aaa3860180.png?alt=media)
+![](../../../.gitbook/assets/datastreams-enable-aep.png)
 
 ## Setup the demo app <a id="setup-the-demo-app"></a>
 
