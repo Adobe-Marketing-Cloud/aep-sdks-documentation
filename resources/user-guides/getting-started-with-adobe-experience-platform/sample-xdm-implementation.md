@@ -98,7 +98,7 @@ identityMap.put("Email", new ArrayList<Object>() {{
 }});
 xdmData.put("identityMap", identityMap);
 
-// 2. Add product review details in the custom mixin
+// 2. Add product review details in the custom field group
 // Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
 xdmData.put("_tenantId", new HashMap<String, Object>() {{
     put("productSku", product.sku);
@@ -122,7 +122,7 @@ var xdmData : [String: Any] = [:]
 xdmData["identityMap"] = ["Email": [["id": reviewerEmail,
                                      "authenticatedState": "ambiguous"]]]
 
-// 2. Add product review details in the custom mixin
+// 2. Add product review details in the custom field group
 // Note: use your _tenantId here as specified in the Product Reviews Schema in Adobe Experience Platform
 xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
                          "rating": reviewRating,
@@ -132,7 +132,7 @@ xdmData["_tenantId"] = ["productSku": products[productIndex].sku,
 {% endtab %}
 {% endtabs %}
 
-**Note:** When sending XDM data for custom mixins, use your **\_tenantId** as shown in the schema.
+**Note:** When sending XDM data for custom field groups, use your **\_tenantId** as shown in the schema.
 
 {% hint style="info" %}
 Use the knowledge from Assignment 1 and connect to an Assurance Session to verify if the XDM data sent from the sample app is in the correct format.

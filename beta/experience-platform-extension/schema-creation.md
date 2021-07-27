@@ -1,10 +1,10 @@
 # Mobile extension schema
 
-Experience Data Model \(XDM\) schemas are a set of rules that define and validate the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more mixins. For more information about XDM Schemas, see [XDM System overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html) and [Basics of schema composition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html). For information about creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
+Experience Data Model \(XDM\) schemas are a set of rules that define and validate the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more field groups. For more information about XDM Schemas, see [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) and [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html). For information about creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html).
 
 ## Sample schema for mobile extension
 
-The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html#dnl-xdm-experienceevent) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following mixins should be included in the schema:
+The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html#dnl-xdm-experienceevent) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following field groups should be included in the schema:
 
 * [Application Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-application.schema.md) - Data that is related to the application that generates or is targeted by the event.
 * [Environment Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-environment-details.schema.md) - Data that is related to the device, location, and surrounding environment.
@@ -12,7 +12,7 @@ The XDM schema for the AEP Edge extension should extend from the [XDM Experience
 
 ## Commerce
 
-The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) mixin defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
+The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) field group defines a `Commerce` object and a `ProductListItemsItem` object. The `Commerce` object lets you specify which actions are happening in a list of `ProductListItemsItem`s.
 
 ### Commerce actions
 

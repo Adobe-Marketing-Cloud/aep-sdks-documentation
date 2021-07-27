@@ -23,7 +23,7 @@ To start collecting data in Adobe Experience Platform, you need to create an XDM
    * From the left panel, select Schemas
    * Click `Create schema`
    * Select `XDM Experience event`
-   * Add the following existing mixins:
+   * Add the following existing field groups:
      * Environment Details
      * Commerce Details
    * Set a name for this schema and click `Save`.
@@ -94,11 +94,11 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
 This application uses the Adobe Experience Platform Edge extension for sending XDM formatted data to the Adobe Experience Edge Network and so to Adobe Experience Platform. The XDM data is modelled based on the XDM Schemas you have configured in Adobe Experience Platform.
 
-The sample app includes automatically generated source classes for the XDM Objects that define the commerce mixin configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` class and its usages in `EdgeViewController.swift` (iOS) / `EdgeTab.java` (Android`.
+The sample app includes automatically generated source classes for the XDM Objects that define the commerce field group configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` class and its usages in `EdgeViewController.swift` (iOS) / `EdgeTab.java` (Android`.
 
 ### Commerce events <a id="commerce-events"></a>
 
-In the sample app, click on the `Edge` tab that demonstrates the Commerce mixin usage. In the `XDM Commerce Example` section there are two buttons:
+In the sample app, click on the `Edge` tab that demonstrates the Commerce field group usage. In the `XDM Commerce Example` section there are two buttons:
 
 * Add to cart
 * Purchase
