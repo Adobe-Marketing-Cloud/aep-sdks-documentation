@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Jul 29, 2021
+
+### iOS AEPCore 3.2.3
+
+* Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
+* Fixed an issue in the `PersistentHitQueue` where the Database errors would cause the hit processing to go in endless loop.
+
 ## July 21, 2021
 
 ### iOS Analytics 2.5.1
