@@ -224,7 +224,7 @@ Audience.registerExtension();
                      error: (NSError* _Nullable* _Nullable) error;
 ```
 
-**Objective-C**
+**Example**
 
 ```objectivec
 [ACPAudience registerExtension];
@@ -240,9 +240,11 @@ ACPAudience.registerExtension()
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
-
 ### registerExtension
+
+**JavaScript**
+
+**Example**
 
 ```jsx
 ACPAudience.registerExtension();
@@ -260,17 +262,19 @@ For more information about the UUID, the DPID, the DPUUID and other Audience Man
 
 {% tabs %}
 {% tab title="Android" %}
-### **reset**
+### reset
 
 This API resets the Audience Manager UUID and purges the current visitor profile from `android.content.SharedPreferences`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
-#### **Syntax**
+#### Java
+
+**Syntax**
 
 ```java
 public static void reset()
 ```
 
-#### **Example**
+**Example**
 
 ```java
 Audience.reset();
@@ -278,25 +282,33 @@ Audience.reset();
 {% endtab %}
 
 {% tab title="iOS" %}
-### **reset**
+### reset
 
 This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
-#### **Syntax**
+#### Objective-C
+
+**Syntax**
 
 ```objectivec
 + (void) reset;
 ```
 
-#### **Examples**
-
-**Objective C**
+**Example**
 
 ```objectivec
 [ACPAudience reset];
 ```
 
-**Swift**
+#### Swift
+
+**Syntax**
+
+```objectivec
++ (void) reset;
+```
+
+**Example**
 
 ```swift
 ACPAudience.reset()
@@ -304,9 +316,11 @@ ACPAudience.reset()
 {% endtab %}
 
 {% tab title="React Native" %}
-#### **JavaScript**
+### reset
 
-### **reset**
+#### JavaScript
+
+**Example**
 
 ```jsx
 ACPAudience.reset();
@@ -316,25 +330,27 @@ ACPAudience.reset();
 
 ## signalWithData
 
-Use this method to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience manager sends the UUID in response to an initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
+This method is used to send a signal with traits to Audience Manager and get the matching segments returned in a block callback. Audience Manager sends the UUID in response to an initial signal call. The UUID is persisted on local SDK storage and is sent by the SDK to Audience Manager in all subsequent signal requests.
 
 If you are using the Experience Cloud ID (ECID) Service (formerly MCID), the ECID and other custom identifiers for the same visitor are sent with each signal request. The visitor profile that is returned by Audience Manager is saved in SDK local storage and is updated with subsequent signal calls.
 
 {% hint style="info" %}
-For more information about the UUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+For more information about the UUID and other Audience Manager identifiers, see the [index of IDs in Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-### **signalWithData**
+### signalWithData
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `SharedPreferences` and is sent by the SDK in all subsequent signal requests. If available, the ECID is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `SharedPreferences` and is updated with every signal call.
 
-When an AdobeCallbackWithError is provided, an AdobeError can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
+When an `AdobeCallbackWithError` is provided, an `AdobeError` can be returned in the eventuality of an unexpected error or if the default timeout (5000ms) is met before the callback is returned with the visitor profile.
 
-#### **Syntax**
+#### Java
+
+**Syntax**
 
 ```java
 public static void signalWithData(final Map<String, String> data, final AdobeCallback<Map<String, String>> callback)
@@ -343,7 +359,7 @@ public static void signalWithData(final Map<String, String> data, final AdobeCal
 * `data` is the traits data for the current visitor.
 * `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
-#### **Example**
+**Example**
 
 ```java
 AdobeCallback<Map<String, String>> visitorProfileCallback = new AdobeCallback<Map<String, String>>() {
@@ -363,14 +379,14 @@ Audience.signalWithData(traits, visitorProfileCallback);
 ### signalWithData
 
 {% hint style="info" %}
-Method `signalWithData:withCompletionHandler` was added in ACPAudience version 2.1.0.
+The `signalWithData:withCompletionHandler` method was added in ACPAudience version 2.1.0.
 {% endhint %}
 
 This API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
-Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults`ß and is updated with every signal call.
+Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults` and is updated with every signal call.
 
-#### **Syntax**
+**Syntax**
 
 ```objectivec
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
@@ -383,9 +399,9 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 * `data` is the traits data for the current visitor.
 * `callback` is the void method that is invoked with the visitor's profile as a parameter.
 
-#### Examples\*\*
+#### Objective-C
 
-**Objective-C**
+**Example**
 
 ```objectivec
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
@@ -403,7 +419,9 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 }];
 ```
 
-**Swift**
+#### Swift
+
+**Example**
 
 ```swift
 ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], callback: { (visitorProfile) in
@@ -421,9 +439,11 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], withCompletio
 {% endtab %}
 
 {% tab title="React Native" %}
+### signalWithData
+
 #### JavaScript
 
-### **signalWithData**
+**Example**
 
 ```jsx
 ACPAudience.signalWithData({"yourDataKey": "yourDataValue"}).then(profile => console.log("AdobeExperienceSDK: Visitor Profile: " + profile));
