@@ -9,7 +9,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### iOS AEPCore 3.2.3
 
 * Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
-* Fixed an issue in the `PersistentHitQueue` where the Database errors would cause the hit processing to go in endless loop.
+* Improved handling of database errors in the `PersistentHitQueue`.
 
 ## July 21, 2021
 
