@@ -1,6 +1,11 @@
 # Release Notes
 
-## June 22, 2021
+## Jul 29, 2021
+
+### iOS AEPCore 3.2.3
+
+* Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
+* Improved handling of database errors in the `PersistentHitQueue`.
 
 ## June 30, 2021
 
