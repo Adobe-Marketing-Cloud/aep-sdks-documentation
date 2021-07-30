@@ -286,7 +286,7 @@ The value provided is stored in the Places shared state, and is for reference on
 static func setAccuracyAuthorization(_ accuracy: CLAccuracyAuthorization)
 ```
 
-**Example Usage**
+**Example**
 
 ```swift
 Places.setAccuracyAuthorization(.fullAccuracy)
@@ -301,7 +301,7 @@ Places.setAccuracyAuthorization(.fullAccuracy)
 + (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
 ```
 
-**Example Usage**
+**Example**
 
 ```objc
 [AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
