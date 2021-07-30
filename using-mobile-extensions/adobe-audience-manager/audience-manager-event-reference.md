@@ -12,7 +12,7 @@ This event updates the profile for Audience Manager and is generated when the`au
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestContent` | Yes | ​[Audience Manager Content Response](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension/events/adobe-audience-manager/events-dispatched-by-adobe-audience-manager#audience-manager-content-response)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestContent` | Yes | ​[Audience Manager Content Response](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1)​ |
 
 #### Data payload definition
 
@@ -30,7 +30,7 @@ This event is a request to retrieve the visitor profile from Audience Manager an
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestIdentity` | Yes | ​[Audience Manager Identity Response](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension/events/adobe-audience-manager/events-dispatched-by-adobe-audience-manager#audience-manager-identity-response)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestIdentity` | Yes | ​[Audience Manager Identity Response](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-identity-response)​ |
 
 #### Data payload definition
 
@@ -92,7 +92,7 @@ The event is generated when a request is made to:
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseContent` | Yes | ​[Audience Manager Content Request](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension/events/adobe-audience-manager/events-handled-by-adobe-audience-manager#audience-manager-content-request)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseContent` | Yes | ​[Audience Manager Content Request](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-request)​ |
 
 #### Data payload definition
 
@@ -115,7 +115,7 @@ The event is generated when a request is made to update the Audience manager pro
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseIdentity` | Yes | ​[Audience Manager Identity Request](https://docs.adobelaunch.com/extension-reference/mobile/build-your-own-extension/events/adobe-audience-manager/events-handled-by-adobe-audience-manager#audience-manager-identity-request)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseIdentity` | Yes | ​[Audience Manager Identity Request](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-identity-request)​ |
 
 #### Data payload definition
 
