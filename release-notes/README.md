@@ -4,6 +4,28 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Jul 29, 2021
+
+### iOS AEPCore 3.2.3
+
+* Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
+* Improved handling of database errors in the `PersistentHitQueue`.
+
+## July 21, 2021
+
+### iOS Analytics 2.5.1
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+### Android Analytics 1.2.8
+
+* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
+
+### Android Analytics 1.2.7
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
+
 ## Jul 16, 2021
 
 ### Android Media 2.1.2
@@ -113,6 +135,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 This SDK is compatible with Android Core 1.8.2 and above.
 
 ## June 8, 2021
+
+### iOS Campaign Standard 3.0.0
+
+* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
 
 ### Android Core 1.8.2
 
