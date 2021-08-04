@@ -94,7 +94,7 @@ Adobe Experience Platform Mobile SDK plugin for React Native supports React Nati
 
 {% hint style="info" %}
 
-The plugins start from v2.0.0 use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native depdencies automatically. After installing the SDK plugins from npm, the extra step is needed on iOS:
+The plugins start from v2.0.0 use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. After installing the SDK plugins from npm, the extra step is needed on iOS:
 
 `cd ios && pod install && cd ..`
 
@@ -450,7 +450,7 @@ import com.adobe.marketing.mobile.UserProfile;
 ...
 import android.app.Application;
 ...
-public class MainApp extends Application {
+public class MainApplication extends Application implements ReactApplication {
   ...
   @Override
   public void on Create(){
