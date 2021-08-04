@@ -4,6 +4,22 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 4, 2021
+
+### Adobe Experience Platform Mobile SDK plugins for React Native
+
+This major release introduces breaking changes that will bring:
+
+- Supports React Native version 0.60.+
+- Removed the bundled SDK binaries (xcframework) from the React Native module.
+- Declares the native dependencies with a dynamic version to load the latest SDK.
+- Removed several deprecated APIs.
+
+For more detailed information, please see the release notes of the following changed plugins:
+
+* [@adobe/react-native-acpcore  2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
+* [@adobe/react-native-acpuserprofile  2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)
+
 ## Jul 29, 2021
 
 ### iOS AEPCore 3.2.3
@@ -33,7 +49,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
 * Handled reset identities (MobileCore.resetIdentities()) event.
 
-### iOS AEPMedia 3.0.1 
+### iOS AEPMedia 3.0.1
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
 
