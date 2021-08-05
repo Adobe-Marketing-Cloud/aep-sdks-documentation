@@ -1250,14 +1250,21 @@ TargetRequest request2 = new TargetRequest("mboxName2", parameters2, "defaultCon
                                                         // do something with the target content.
                                                     }
 
-                                                    // Read the data Map containing one or more of response tokens, analytics payload and click metric analytics payload, if available
+                                                    // Read the data Map containing one or more of response tokens, analytics payload 
+                                                    // and click metric analytics payload, if available
                                                     if (data != null && !data.isEmpty()) {
 
-                                                        Map<String, String> responseTokens = data.containsKey("responseTokens") ? (Map<String, String>) data.get("responseTokens") : null;
+                                                        Map<String, String> responseTokens = data.containsKey("responseTokens") ? 
+                                                                                            (Map<String, String>) data.get("responseTokens") : 
+                                                                                            null;
 
-                                                        Map<String, String> analyticsPayload = data.containsKey("analytics.payload") ? (Map<String, String>) data.get("analytics.payload") : null;
+                                                        Map<String, String> analyticsPayload = data.containsKey("analytics.payload") ? 
+                                                                                              (Map<String, String>) data.get("analytics.payload") : 
+                                                                                              null;
 
-                                                        Map<String, String> clickMetricAnalyticsPayload = data.containsKey("clickmetric.analytics.payload") ? (Map<String, String>) data.get("clickmetric.analytics.payload") : null;
+                                                        Map<String, String> clickMetricAnalyticsPayload = data.containsKey("clickmetric.analytics.payload") ? 
+                                                                                                          (Map<String, String>) data.get("clickmetric.analytics.payload") : 
+                                                                                                          null;
 
                                                         ...
                                                     }
