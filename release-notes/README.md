@@ -4,6 +4,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## August 5, 2021
+
+### Android Target 1.2.7
+
+`TargetRequest` class now provides a constructor with a new `AdobeTargetDetailedCallback`. This callback, when implemented, is invoked with the Target content and a data payload map containing one or more of response tokens, analytics payload and click metric analytics payload, if available in the Target retrieve location content response with or without a prior prefetch call.
+
+**Note**: Adobe Target SDK will continue sending analytics for target payload to Analytics client-side if Adobe Analytics SDK is integrated and registered in the mobile app.
+
+### iOS Target 3.1.0
+
+`TargetRequest` class now provides a constructor with a new `contentWithDataCallback`. This callback, when implemented, is invoked with the Target content and a data payload map containing one or more of response tokens, analytics payload and click metric analytics payload, if available in the Target retrieve location content response with or without a prior prefetch call.
+
+**Note**: Adobe Target SDK will continue sending analytics for target payload to Analytics client-side if Adobe Analytics SDK is integrated and registered in the mobile app.
+
 ## Jul 29, 2021
 
 ### iOS AEPCore 3.2.3
