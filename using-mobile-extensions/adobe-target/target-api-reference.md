@@ -2029,7 +2029,7 @@ public class TargetProduct {
 
 ### AdobeTargetDetailedCallback
 
-Here is a code for this interface in Android:
+A sample of this interface on Android can be seen below:
 
 ```java
 public interface AdobeTargetDetailedCallback {
