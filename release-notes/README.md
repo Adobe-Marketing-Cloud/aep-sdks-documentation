@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## Aug 4, 2021
+## Aug 6, 2021
 
 ### Adobe Experience Platform Mobile SDK plugins for React Native
 
@@ -15,10 +15,13 @@ This major release introduces breaking changes that will bring:
 - Declares the native dependencies with a dynamic version to load the latest SDK.
 - Removed several deprecated APIs.
 
-For more detailed information, please see the release notes of the following changed plugins:
+For more detailed information, please see the release notes of the following plugins:
 
 * [@adobe/react-native-acpcore  2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
 * [@adobe/react-native-acpuserprofile  2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)
+* [@adobe/react-native-acpaudience 2.0.0](https://github.com/adobe/react-native-acpaudience/releases/tag/v2.0.0)
+* [@adobe/react-native-acpanalytics 2.0.0](https://github.com/adobe/react-native-acpanalytics/releases/tag/v2.0.0)
+* [@adobe/react-native-acpmedia 3.0.0](https://github.com/adobe/react-native-acpmedia/releases/tag/v3.0.0)
 
 ## Jul 29, 2021
 
