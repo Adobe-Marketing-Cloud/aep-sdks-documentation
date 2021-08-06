@@ -1193,8 +1193,8 @@ A request will be sent to the configured Target server for mbox locations in the
 When using `contentWithData` callback to instantiate TargetRequest object, the following keys can be used to read response tokens and Analytics for Target (A4T) info from the data payload, if available in the Target response.
 
  - responseTokens (Response tokens)
- - analytics.payload (A4T Analytics Payload)
- - clickmetric.analytics.payload (Click tracking A4T Analytics payload)
+ - analytics.payload (A4T payload)
+ - clickmetric.analytics.payload (Click tracking A4T payload)
 
 {% tabs %}
 {% tab title="Android" %}
