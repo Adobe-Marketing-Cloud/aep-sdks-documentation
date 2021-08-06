@@ -1,5 +1,25 @@
 # Release Notes
 
+## August 5, 2021
+
+### Android Target 1.2.7
+
+* `TargetRequest` class now provides a constructor with a new callback interface named `AdobeTargetDetailedCallback`. When implemented, the callback method provides:
+  * Target content; AND
+  * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
+
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
+
+### iOS AEPTarget 3.1.0
+
+* `TargetRequest` class now provides a constructor with a new callback function named `contentWithDataCallback`. When implemented, this callback provides:
+  * Target content; AND
+  * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
+
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
+
+* Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
+
 ## June 15, 2021
 
 ### Android Target 1.1.7
