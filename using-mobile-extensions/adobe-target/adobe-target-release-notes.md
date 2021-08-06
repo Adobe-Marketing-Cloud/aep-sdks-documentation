@@ -4,7 +4,7 @@
 
 ### Android Target 1.2.7
 
-* `TargetRequest` class now provides a constructor with a new `AdobeTargetDetailedCallback`. When implemented, this callback provides:
+* `TargetRequest` class now provides a constructor with a new callback interface named `AdobeTargetDetailedCallback`. When implemented, the callback method provides:
   * Target content; AND
   * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
 
@@ -12,7 +12,7 @@
 
 ### iOS AEPTarget 3.1.0
 
-* `TargetRequest` class now provides a constructor with a new `AdobeTargetDetailedCallback`. When implemented, this callback provides:
+* `TargetRequest` class now provides a constructor with a new callback function named `contentWithDataCallback`. When implemented, this callback provides:
   * Target content; AND
   * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
 
