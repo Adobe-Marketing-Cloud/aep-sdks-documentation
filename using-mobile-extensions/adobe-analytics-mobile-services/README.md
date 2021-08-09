@@ -329,8 +329,8 @@ Using the following API does not increment page views.
 
 {% tabs %}
 {% tab title="Android" %}
-In Android, the SDK handles push tracking to analytics and no additional set up is required.  
-If the applcation has implemented FirebaseMessaginService class and plan to handle push notifications when the application is in foreground then read the push data from received Intent and add it to the Intent Extras of the Activity as shown in this [example](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en). 
+On Android, the SDK handles push tracking to analytics without any additional set up.
+If the application has implemented the `FirebaseMessaginService` class and will handle the push notifications when the application is in foreground, read the push data from the received Intent and add it to the intent extras of the Activity to be launched. An example can be found in [the Mobile Services implement push messaging tutorial](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en). 
 
 {% endtab %}
 
