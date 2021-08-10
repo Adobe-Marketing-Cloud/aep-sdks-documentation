@@ -4,6 +4,28 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 6, 2021
+
+### Adobe Experience Platform Mobile SDK plugins for React Native
+
+This major release introduces support for the following:
+
+- React Native version 0.60.+
+- Autolinking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of several deprecated APIs.
+
+Please note that this release introduces breaking changes. For more details, see the release notes of the following plugins:
+
+* [@adobe/react-native-acpcore 2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
+* [@adobe/react-native-acpuserprofile 2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)
+* [@adobe/react-native-acpaudience 2.0.0](https://github.com/adobe/react-native-acpaudience/releases/tag/v2.0.0)
+* [@adobe/react-native-acpanalytics 2.0.0](https://github.com/adobe/react-native-acpanalytics/releases/tag/v2.0.0)
+* [@adobe/react-native-acpmedia 3.0.0](https://github.com/adobe/react-native-acpmedia/releases/tag/v3.0.0)
+* [@adobe/react-native-acptarget 2.0.0](https://github.com/adobe/react-native-acptarget/releases/tag/v2.0.0)
+* [@adobe/react-native-acpcampaign 2.0.0](https://github.com/adobe/react-native-acpcampaign/releases/tag/v2.0.0)
+* [@adobe/react-native-acpplaces 2.0.0](https://github.com/adobe/react-native-acpplaces/releases/tag/v2.0.0)
+
 ## August 5, 2021
 
 ### Android Target 1.2.7
@@ -53,7 +75,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
 * Handled reset identities (MobileCore.resetIdentities()) event.
 
-### iOS AEPMedia 3.0.1 
+### iOS AEPMedia 3.0.1
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
 
