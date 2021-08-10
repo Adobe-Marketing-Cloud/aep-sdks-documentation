@@ -8,14 +8,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Adobe Experience Platform Mobile SDK plugins for React Native
 
-This major release introduces breaking changes that will bring:
+This major release introduces support for the following:
 
-- Supports React Native version 0.60.+
-- Removed the bundled SDK binaries (xcframework) from the React Native module.
-- Declares the native dependencies with a dynamic version to load the latest SDK.
-- Removed several deprecated APIs.
+- React Native version 0.60.+
+- Autolinking for native dependencies and removal of the bundled SDK binaries (xcframework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of several deprecated APIs.
 
-For more detailed information, please see the release notes of the following plugins:
+Please note that this release introduces breaking changes. For more details, see the release notes of the following plugins:
 
 * [@adobe/react-native-acpcore  2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
 * [@adobe/react-native-acpuserprofile  2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)

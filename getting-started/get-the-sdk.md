@@ -90,15 +90,15 @@ You should see a pop-up similar to the following image:
 {% tab title="React Native" %}
 ### React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **versions 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
 
-The plugins start from v2.0.0 use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. After installing the SDK plugins from npm, the extra step is needed on iOS:
+v2.0.0 and above of the AEP Mobile SDK React Native plugins use the [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. For iOS development, after installing the plugins from npm, download the pod dependencies by running the following command:
 
 `cd ios && pod install && cd ..`
 
-To update native dependencies on iOS, use pod update command:
+To update native dependencies to latest available versions, run the following command:
 
 `cd ios && pod update && cd ..`
 
