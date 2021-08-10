@@ -1190,6 +1190,12 @@ This API sends a batch request to the configured Target server for multiple mbox
 
 A request will be sent to the configured Target server for mbox locations in the requests array for Target requests that have not been previously prefetched. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each Target request object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
+When using `contentWithData` callback to instantiate TargetRequest object, the following keys can be used to read response tokens and Analytics for Target (A4T) info from the data payload, if available in the Target response.
+
+ - responseTokens (Response tokens)
+ - analytics.payload (A4T payload)
+ - clickmetric.analytics.payload (Click tracking A4T payload)
+
 {% tabs %}
 {% tab title="Android" %}
 
@@ -1237,10 +1243,36 @@ TargetParameters parameters2 = new TargetParameters.Builder()
                                .build();
 
 TargetRequest request2 = new TargetRequest("mboxName2", parameters2, "defaultContent2",
-                                            new AdobeCallback<String>() {
+                                            new AdobeTargetDetailedCallback() {
                                                 @Override
-                                                public void call(String value) {
-                                                    // do something with target content.
+                                                public void call(final String content, final Map<String, Object> data) {
+                                                    if (content != null && !content.isEmpty()) {
+                                                        // do something with the target content.
+                                                    }
+
+                                                    // Read the data Map containing one or more of response tokens, analytics payload 
+                                                    // and click metric analytics payload, if available
+                                                    if (data != null && !data.isEmpty()) {
+
+                                                        Map<String, String> responseTokens = data.containsKey("responseTokens") ? 
+                                                                                            (Map<String, String>) data.get("responseTokens") : 
+                                                                                            null;
+
+                                                        Map<String, String> analyticsPayload = data.containsKey("analytics.payload") ? 
+                                                                                              (Map<String, String>) data.get("analytics.payload") : 
+                                                                                              null;
+
+                                                        Map<String, String> clickMetricAnalyticsPayload = data.containsKey("clickmetric.analytics.payload") ? 
+                                                                                                          (Map<String, String>) data.get("clickmetric.analytics.payload") : 
+                                                                                                          null;
+
+                                                        ...
+                                                    }
+                                                }
+
+                                                @Overrides
+                                                void fail(final AdobeError error) {
+                                                    // take appropriate action upon error.
                                                 }
                                             });
 
@@ -1297,13 +1329,26 @@ let globalTargetParameters = TargetParameters(
 	product: TargetProduct(productId: "24D334", categoryId: "Stationary")
 )
 
-let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targetParameters: TargetParameters1) 	 { _ in
-		// do something with the received content
-	}
-let request2 = TargetRequest(mboxName: "logo", defaultContent: "red", targetParameters: TargetParameters2) 
-	{ _ in
-		// do something with the received content
-	}
+let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targetParameters: TargetParameters1) { content in
+    if let content = content {
+        // do something with the target content.
+    }
+}
+let request2 = TargetRequest(mboxName: "logo", defaultContent: "red", targetParameters: TargetParameters2) { content, data in
+		if let content = content {
+        // do something with the target content.
+    }
+
+    // Read the data dictionary containing one or more of response tokens, analytics payload and click-tracking analytics payload, if available.
+    if let data = data {
+        let responseTokens = data["responseTokens"] as? [String: String] ?? [:]
+
+        let analyticsPayload = data["analytics.payload"] as? [String: String] ?? [:]
+
+        let clickMetricAnalyticsPayload = data["clickmetric.analytics.payload"] as? [String: String] ?? [:]
+        ...
+    }
+}
 Target.retrieveLocationContent([request1, request2], with: globalTargetParameters)
 ```
 
@@ -1323,10 +1368,27 @@ AEPTargetOrder *order2 = [[AEPTargetOrder alloc] initWithId:@"ADCKKIM" total:[@(
 AEPTargetParameters *targetParameters2 = [[AEPTargetParameters alloc] initWithParameters:mboxParameters2 profileParameters:nil order:order2 product:product2 ];
     
 AEPTargetRequestObject *request1 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"BlueWhale" targetParameters: targetParameters1 contentCallback:^(NSString * _Nullable content) {
-        // do something with the received content
+    // do something with the received content
+    NSString *targetContent = content ?: @"";
 }];
-AEPTargetRequestObject *request2 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"red" targetParameters: targetParameters2 contentCallback:^(NSString * _Nullable content) {
-        // do something with the received content
+AEPTargetRequestObject *request2 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"red" targetParameters: targetParameters2 contentWithDataCallback:^(NSString * _Nullable content, NSDictionary<NSString *,id> * _Nullable data) {
+    // do something with the target content.
+    NSString *targetContent = content ?: @"";
+
+    // Read the data dictionary containing one or more of response tokens, analytics payload and click-tracking analytics payload, if available.      
+    if ([data count] > 0) {
+        if ([data objectForKey:@"responseTokens"]) {
+            // read response tokens
+        }
+
+        if ([data objectForKey:@"analytics.payload"]) {
+          // read analytics payload
+        }
+
+        if ([data objectForKey:@"clickmetric.analytics.payload"]) {
+          // read click-tracking analytics payload
+        }
+    }   
 }];
 
 // Create request object array
@@ -1792,6 +1854,19 @@ public class TargetRequest extends TargetObject {
                          final TargetParameters targetParameters,
                          final String defaultContent,
                          final AdobeCallback<String> contentCallback);
+
+    /**
+    * Instantiate a TargetRequest object.
+    *
+    * @param mboxName String mbox name for this request.
+    * @param targetParameters TargetParameters for this request.
+    * @param defaultContent String default content for this request.
+    * @param contentWithDataCallback AdobeTargetDetailedCallback which will get called with Target mbox content and other optional data such as Target response tokens, analytics payload, click metric analytics payload if available.
+    */
+    public TargetRequest(final String mboxName, 
+                         final TargetParameters targetParameters, 
+                         final String defaultContent,
+                         final AdobeTargetDetailedCallback contentWithDataCallback);
 }
 ```
 
@@ -1951,6 +2026,30 @@ public class TargetProduct {
     public String getCategoryId();
 }
 ```
+
+### AdobeTargetDetailedCallback
+
+A sample of this interface on Android can be seen below:
+
+```java
+public interface AdobeTargetDetailedCallback {
+
+	/**
+	 * Callback function to pass the mbox content and other mbox payload values.
+	 *
+	 * @param content {@code String} mox content
+	 * @param data A {@code Map<String, Object>} of mbox payload values. It will be null if neither response tokens nor analytics payload is available.
+	 */
+	void call(final String content, final Map<String, Object> data);
+
+	/**
+	 * Callback function for notifying about the internal error in getting mbox details.
+	 *
+	 * @param error {@link AdobeError} represents the internal error occurred.
+	 */
+	void fail(final AdobeError error);
+}
+```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -1977,6 +2076,22 @@ public class TargetRequest: NSObject, Codable {
         self.defaultContent = defaultContent
         self.targetParameters = targetParameters
         self.contentCallback = contentCallback
+        contentWithDataCallback = nil
+        responsePairId = UUID().uuidString
+    }
+
+    /// Instantiate a `TargetRequest` object
+    /// - Parameters:
+    ///   - name: `String` mbox name for this request
+    ///   - defaultContent: `String` default content for this request
+    ///   - targetParameters: `TargetParameters` for this request
+    ///   - contentWithDataCallback: which will get called with target mbox content, and an optional dictionary containing one or more of response tokens, analytics payload, and click metric analytics payload, if available.
+    @objc public init(mboxName: String, defaultContent: String, targetParameters: TargetParameters? = nil, contentWithDataCallback: ((String?, [String: Any]?) -> Void)? = nil) {
+        name = mboxName
+        self.defaultContent = defaultContent
+        self.targetParameters = targetParameters
+        self.contentWithDataCallback = contentWithDataCallback
+        contentCallback = nil
         responsePairId = UUID().uuidString
     }
 }
@@ -1987,16 +2102,49 @@ The following example shows how to create an instance of a TargetRequest object 
 **Swift**
 
 ```swift
-let request = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentCallback: { content in
+let request1 = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentCallback: { content in
 	print(content ?? "")
+})
+
+let request2 = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentwithDataCallback: { content, data in
+	print(content ?? "")
+
+  if let data = data {
+      // read response tokens
+      let responseTokens = data["responseTokens"] as? [String: String] ?? [:]
+
+      // read analytics payload
+      let analyticsPayload = data["analytics.payload"] as? [String: String] ?? [:]
+
+      // read click-tracking analytics payload
+      let clickMetricAnalyticsPayload = data["clickmetric.analytics.payload"] as? [String: String] ?? [:]
+  }
 })
 ```
 
 **Objective-C**
 
 ```objective-c
-AEPTargetRequestObject *request = [[AEPTargetRequestObject alloc] initWithMboxName:@"mboxName" defaultContent:@"defaultContent" targetParameters:nil contentCallback:^(NSString * _Nullable content) {
-	NSLog(@"%@", content ?: @"");
+AEPTargetRequestObject *request1 = [[AEPTargetRequestObject alloc] initWithMboxName:@"mboxName" defaultContent:@"defaultContent" targetParameters:nil contentCallback:^(NSString * _Nullable content) {
+	  NSLog(@"%@", content ?: @"");
+}];
+
+AEPTargetRequestObject *request2 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"red" targetParameters: targetParameters2 contentWithDataCallback:^(NSString * _Nullable content, NSDictionary<NSString *,id> * _Nullable data) {
+    NSLog(@"%@", content ?: @"");
+
+    if ([data count] > 0) {
+        if ([data objectForKey:@"responseTokens"]) {
+            // read response tokens
+        }
+
+        if ([data objectForKey:@"analytics.payload"]) {
+          // read analytics payload
+        }
+
+        if ([data objectForKey:@"clickmetric.analytics.payload"]) {
+          // read click-tracking analytics payload
+        }
+    }   
 }];
 ```
 
