@@ -1,5 +1,11 @@
 # Release Notes
 
+## Jul 13, 2021
+
+### iOS AEPAudience 3.0.2
+
+* Added support to handle the MobileCore.resetIdentities() API.
+
 ## April 1, 2021
 
 ### iOS AEPAudience 3.0.1

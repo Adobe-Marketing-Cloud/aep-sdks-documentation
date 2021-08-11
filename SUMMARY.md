@@ -94,6 +94,7 @@
   * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
+  * [Migrating to AEPAudience](using-mobile-extensions/adobe-audience-manager/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-audience-manager/adobe-audience-manager-release-notes.md)
   * [Audience Manager API reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
   * [Audience Manager event reference](using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md)
