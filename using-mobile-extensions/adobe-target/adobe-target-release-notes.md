@@ -20,7 +20,7 @@
 
 * Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
 
-* Added support for sending click conversion A4T payload to Adobe Analytics for A4T enabled Target activities upon the `clickedLocation` API call.
+* Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
 
 ## June 15, 2021
 
