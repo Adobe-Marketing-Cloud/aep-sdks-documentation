@@ -19,7 +19,7 @@ The AEP Edge extension exposes public APIs so that you can create custom events 
 | Event type | _\(Required\)_ The event type, for example `commerce:orderDetails`. Refer to [xdm:eventType Known Values](https://github.com/adobe/xdm/blob/master/docs/reference/classes/experienceevent.schema.md#xdmeventtype-known-values) for more examples. |
 | XDM data | _\(Required\)_ Data following the XDM schema that is defined in the Schema Editor. |
 | Data | _\(Optional\)_ The JSON-formatted, free-form data that can be associated with an event. |
-| Dataset ID | _\(Optional\)_ Using the AEP Edge extension, you can send data to multiple datasets based on your needs and configuration in Adobe Experience Platform. When sending an Experience event and providing a dataset identifier, the dataset ID will be used for redirecting the data to the specified AEP Dataset instead of the default dataset set in the Experience Edge Configuration. |
+| Dataset ID | _\(Optional\)_ Using the AEP Edge extension, you can send data to multiple datasets based on your needs and configuration in Adobe Experience Platform. When sending an Experience event and providing a dataset identifier, the dataset ID will be used for redirecting the data to the specified AEP Dataset instead of the default dataset set in the Datastream configuration. |
 
 {% hint style="info" %}
 This extension provides public APIs to build the Experience events; these events **should not** be confused with the events that are built by using the `Mobile Core` extension, as they are built based on XDM schemas.

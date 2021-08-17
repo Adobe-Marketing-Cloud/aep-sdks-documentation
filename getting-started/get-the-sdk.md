@@ -10,6 +10,7 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java / Kotlin
 
 {% hint style="warning" %}
@@ -89,11 +90,22 @@ You should see a pop-up similar to the following image:
 {% tab title="React Native" %}
 ### React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **versions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
+
 For React Native, you should install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions, see this [tutorial on getting started with React Native applications](https://facebook.github.io/react-native/docs/getting-started).
+
+v2.0.0 and above of the AEP Mobile SDK React Native plugins use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. For iOS development, after installing the plugins from npm, download the pod dependencies by running the following command:
+
+`cd ios && pod install && cd ..`
+
+To update native dependencies to latest available versions, run the following command:
+
+`cd ios && pod update && cd ..`
+
 {% endhint %}
+
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -387,11 +399,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-### Javascript
 
-For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+For React Native apps, initialize the SDK using native code in your `AppDelegate` (iOS) and `MainApplication` (Android).
 
-The initialization code is located in the [React Native ACPCore Github README](https://github.com/adobe/react-native-acpcore).
+### iOS
+
+```objectivec
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+### Android
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApplication extends Application implements ReactApplication {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    ...
+    MobileCore.setApplication(this);
+    MobileCore.setLogLevel(LoggingMode.DEBUG);
+    MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
+    try {
+      UserProfile.registerExtension();
+      Identity.registerExtension();
+      Lifecycle.registerExtension();
+      Signal.registerExtension();
+      MobileCore.start(new AdobeCallback () {
+          @Override
+          public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+         }
+      });
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
+
 {% endtab %}
 
 {% tab title="Flutter" %}

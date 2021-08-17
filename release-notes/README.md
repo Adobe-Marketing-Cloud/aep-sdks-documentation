@@ -4,26 +4,88 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 6, 2021
+
+### Adobe Experience Platform Mobile SDK plugins for React Native
+
+This major release introduces support for the following:
+
+- React Native version 0.60.+
+- Autolinking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of several deprecated APIs.
+
+Please note that this release introduces breaking changes. For more details, see the release notes of the following plugins:
+
+* [@adobe/react-native-acpcore 2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
+* [@adobe/react-native-acpuserprofile 2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)
+* [@adobe/react-native-acpaudience 2.0.0](https://github.com/adobe/react-native-acpaudience/releases/tag/v2.0.0)
+* [@adobe/react-native-acpanalytics 2.0.0](https://github.com/adobe/react-native-acpanalytics/releases/tag/v2.0.0)
+* [@adobe/react-native-acpmedia 3.0.0](https://github.com/adobe/react-native-acpmedia/releases/tag/v3.0.0)
+* [@adobe/react-native-acptarget 2.0.0](https://github.com/adobe/react-native-acptarget/releases/tag/v2.0.0)
+* [@adobe/react-native-acpcampaign 2.0.0](https://github.com/adobe/react-native-acpcampaign/releases/tag/v2.0.0)
+* [@adobe/react-native-acpplaces 2.0.0](https://github.com/adobe/react-native-acpplaces/releases/tag/v2.0.0)
+
+## August 5, 2021
+
+### Android Target 1.2.7
+
+* `TargetRequest` class now provides a constructor with a new callback interface named `AdobeTargetDetailedCallback`. When implemented, the callback method provides:
+  * Target content; AND
+  * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
+
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
+
+### iOS AEPTarget 3.1.0
+
+* `TargetRequest` class now provides a constructor with a new callback function named `contentWithDataCallback`. When implemented, this callback provides:
+  * Target content; AND
+  * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
+
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
+
+* Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
+
+* Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
+
+## Jul 29, 2021
+
+### iOS AEPCore 3.2.3
+
+* Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
+* Improved handling of database errors in the `PersistentHitQueue`.
+
 ## July 21, 2021
 
 ### iOS Analytics 2.5.1
 
 * Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
+### Android Analytics 1.2.8
+
+* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
+
 ### Android Analytics 1.2.7
 
 * Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
 
 ## Jul 16, 2021
 
 ### Android Media 2.1.2
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
-* Handled reset identities (MobileCore.resetIdentities()) event.
+* Added support to handle the MobileCore.resetIdentities() API.
 
-### iOS AEPMedia 3.0.1 
+### iOS AEPMedia 3.0.1
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
+
+## Jul 13, 2021
+
+### iOS AEPAudience 3.0.2
+
+* Added support to handle the MobileCore.resetIdentities() API.
 
 ## Jul 2, 2021
 
@@ -117,6 +179,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 This SDK is compatible with Android Core 1.8.2 and above.
 
 ## June 8, 2021
+
+### iOS Campaign Standard 3.0.0
+
+* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
 
 ### Android Core 1.8.2
 
