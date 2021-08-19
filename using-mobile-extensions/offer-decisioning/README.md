@@ -13,13 +13,13 @@
 
 Some offer constraints are currently not supported with the mobile Experience Edge workflows, for example `Capping`. The `Capping` field value specifies the number of times an offer can be presented across all users. For more details, see [Offer eligibility rules and constraints guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
 
-## Enable Offer Decisioning in Edge configuration
+## Enable Offer Decisioning in Datastream configuration
 
 To enable Offer Decisioning, you need to perform the following steps:
 
-1. In Adobe Experience Platform Launch, navigate to the Edge Configurations from the left panel, then select the configuration that needs to be updated.
+1. In Adobe Experience Platform Launch, navigate to the `Datastreams` from the left panel, then select the configuration that needs to be updated.
 
-   Enable Adobe Experience Platform in your [edge configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en) and check the `Offer Decisioning` box
+   Enable Adobe Experience Platform in your [datastream configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html) and check the `Offer Decisioning` box.
 
 ![](../../.gitbook/assets/offer-decisioning-edge-config.png)
 
@@ -206,6 +206,7 @@ Once the offers have been prefetched, use the `retrievePrefetchedOffers` API to 
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 ```java

@@ -1,5 +1,22 @@
 # Release Notes
 
+## Jul 16, 2021
+
+### Android Media 2.1.2
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+* Added support to handle the MobileCore.resetIdentities() API.
+
+### iOS AEPMedia 3.0.1 
+
+* Enabled debugging post processed data in Media Analytics Assurance workflow.
+
+## May 5, 2021
+
+### iOS AEPMedia 3.0.0
+
+* Initial release to support [Adobe Analytics - Media Analytics workflows](../adobe-media-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-media-ios/).
+
 ## March 29, 2021
 
 ### Android Media 2.1.1

@@ -1,23 +1,21 @@
 # Migrate to Swift
 
-If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x or lower\), then this guide will help you understand the steps required to migrate your implementation to the latest Swift versions \(AEP-prefixed SDK libraries, 3.x or higher\). In summary, you'll need to:
+If you have implemented Objective-C versions (ACP-prefixed SDK libraries, 2.x or lower), then this guide will help you understand the steps required to migrate your implementation to the latest Swift versions (AEP-prefixed SDK libraries, 3.x or higher). In summary, you'll need to:
 
-1. [Switch imported libraries from ACP-prefix to AEP-prefix libraries](migrate-to-swift.md#switch-imported-libraries)
-2. [Update SDK initialization](migrate-to-swift.md#update-sdk-initialization)
-3. [Update API references to call AEP-prefix libraries](migrate-to-swift.md#update-api-usage-and-references-for-each-extension)
+1. [Switch imported libraries from ACP-prefix to AEP-prefix libraries](#switch-imported-libraries)
+2. [Update SDK initialization](#update-sdk-initialization)
+3. [Update API references to call AEP-prefix libraries](#update-api-usage-and-references-for-each-extension)
 
 ## Switch imported libraries
 
-At this time, the following ACP-prefix libraries may be switched out with the respective AEP-prefix SDK libraries. See instructions on proceeding further if you have:
-
-1. [Manually imported SDK libraries](migrate-to-swift.md#manual-library-import) OR
-2. [Cocoapods to manage SDK dependencies](migrate-to-swift.md#cocoapods)
+At this time, the following ACP-prefix libraries may be switched out with their respective AEP-prefix SDK libraries. See instructions on proceeding further if you have [manually imported SDK libraries](#manual-library-import) or have used [Cocoapods to manage SDK dependencies](#cocoapods)
 
 {% hint style="warning" %}
-In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure no disruption in SDK behavior.
+In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure there is no disruption in SDK behavior.
+
 {% endhint %}
 
-| Objective-C \(ACP-prefix\) | Swift \(AEP-prefix\) |
+| Objective-C (ACP-prefix) | Swift (AEP-prefix) |
 | :--- | :--- |
 | ACPCore | AEPCore/AEPLifecycle/AEPIdentity/AEPSignal |
 | ACPUserProfile | AEPUserProfile |
@@ -27,10 +25,11 @@ In addition to `ACPCore` being replaced with `AEPCore`, you will also need to ex
 | ACPMedia | AEPMedia |
 | ACPPlaces | AEPPlaces |
 | AEPAssurance (1.x) | AEPAssurance (3.x) |
+| ACPCampaign | AEPCampaign |
 
 ### Manual library import
 
-If you are manually importing SDK libraries, ensure you identify all currently used ACP-prefix libraries and switch them over to AEP-prefix libraries. The list of current AEP-prefix SDK libraries are found [Current SDK Versions](upgrading-to-aep/current-sdk-versions.md#ios-swift) \(in the Swift section\).
+If you are manually importing SDK libraries, ensure you identify all currently used ACP-prefix libraries and switch them over to AEP-prefix libraries. The list of current AEP-prefix SDK libraries can be found in the [current SDK versions document](upgrading-to-aep/current-sdk-versions.md#ios-swift) (in the Swift section).
 
 ### Cocoapods
 
@@ -55,13 +54,15 @@ Once the previous command is complete, run `pod install` or `pod update` to upda
 
 ## Update SDK initialization
 
-After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the SDK has simplified initialization and registration of extensions to where the `MobileCore.start()` API is no longer required.
+After you have imported the new Swift-based AEP-prefix libraries, you'll need to update SDK initialization code as described below. With Swift, the `MobileCore.start()` API is no longer required. The SDK has simplified initialization and registration of extensions by providing the `MobileCore.registerExtensions()` API. After the given extensions have been registered, the SDK will be initialized and the completion block will be executed. Code which used to reside in the start() block will now reside in the `MobileCore.registerExtensions()` completion block.
 
 The following code snippets show the new and correct initialization code required for the Swift-based, AEP-prefix SDK libraries.
 
 {% tabs %}
+
 {% tab title="Objective-C" %}
-```text
+
+```objective-c
 @import AEPCore;
 @import AEPSignal;
 @import AEPLifecycle;
@@ -75,15 +76,17 @@ The following code snippets show the new and correct initialization code require
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       [AEPMobileCore setLogLevel: AEPLogLevelDebug];
       [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileIdentity.class, AEPMobileAssurance.class] completion:^{
-      [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
-      [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
-    }];
+        [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+        [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+    	}];
     ...
 }
 ```
+
 {% endtab %}
 
 {% tab title="Swift" %}
+
 ```swift
 // AppDelegate.swift
 import AEPAssurance
@@ -96,12 +99,14 @@ import AEPUserProfile
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Identity.self, Assurance.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-          MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
   ...
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Update API usage and references for each extension
@@ -119,5 +124,6 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | [Adobe Analytics - Mobile Services](../using-mobile-extensions/adobe-analytics-mobile-services/) | [AEPMobileService](../using-mobile-extensions/adobe-analytics-mobile-services/migration.md) |
 | [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) | [AEPAnalytics](../using-mobile-extensions/adobe-analytics/migration.md) |
 | [Adobe Analytics - Media Analytics for Audio & Video](../using-mobile-extensions/adobe-media-analytics/) | [AEPMedia](../using-mobile-extensions/adobe-media-analytics/migration.md) |
-
-
+| [Adobe Audience](../using-mobile-extensions/adobe-audience-manager/) | [AEPAudience](../using-mobile-extensions/adobe-audience-manager/migration.md) |
+| [Adobe Experience Platform Target](../using-mobile-extensions/adobe-target/) | [AEPTarget](../using-mobile-extensions/adobe-target/migration.md) |
+| [Adobe Experience Platform Campaign](../using-mobile-extensions/adobe-campaign-standard/) | [AEPCampaign](../using-mobile-extensions/adobe-campaign-standard/migration.md) |
