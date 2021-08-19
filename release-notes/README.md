@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 18, 2021
+
+### iOS AEPCore 3.2.4
+
+* Fixed data race in `Event` and `ExtensionContainer` classes.
+* Fixed a memory leak in `EventHub.registerResponseListener`.
+
 ## Aug 6, 2021
 
 ### Adobe Experience Platform Mobile SDK plugins for React Native
