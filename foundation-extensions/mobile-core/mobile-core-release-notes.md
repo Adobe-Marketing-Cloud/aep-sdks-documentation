@@ -1,5 +1,12 @@
 # Release Notes
 
+## Aug 18, 2021
+
+### iOS AEPCore 3.2.4
+
+* Fixed data race in `Event` and `ExtensionContainer` classes.
+* Fixed a memory leak in `EventHub.registerResponseListener`.
+
 ## Jul 29, 2021
 
 ### iOS AEPCore 3.2.3
