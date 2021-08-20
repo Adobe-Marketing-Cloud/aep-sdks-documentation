@@ -23,18 +23,18 @@ The following steps illustrate how to create a sample datastream for a mobile im
 3. Click **New Datastream** \(located on top right\)
 4. Set a name for the configuration and click **Save**.
 
-![Creating a datastream in Adobe Experience Platform Launch](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5fd970061cf67de43ebef7c58bf343dcdcb882c6/.gitbook/assets/create-a-datastream.png)
+![Creating a datastream in Adobe Experience Platform Launch](../.gitbook/assets/create-datastream.png?alt=media)
 
 1. In the next screen, toggle on **Adobe Experience Platform** and:
    1. Select the appropriate **Sandbox** from the dropdown
    2. Choose the appropriate **Event Dataset** as previously created
 2. Once you have made your selections click `Save`.
 
-![Configuring your datastream in Adobe Experience Platform Launch](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5fd970061cf67de43ebef7c58bf343dcdcb882c6/.gitbook/assets/create-an-environment.png)
+![Configuring your datastream in Adobe Experience Platform Launch](../.gitbook/assets/datastreams-enable-aep.png)
 
 In the resulting summary screen, you will see that three environments have been created for your datastream. If needed, each environment can be edited individually with different configuration parameters.
 
-![Environment IDs for your Datastream](../.gitbook/assets/screen-shot-2021-02-02-at-12.45.55-pm.png)
+![Environment IDs for your Datastream](../.gitbook/assets/datastreams-environments.png)
 
 For additional information on datastreams in Experience Platform Launch, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html).
 

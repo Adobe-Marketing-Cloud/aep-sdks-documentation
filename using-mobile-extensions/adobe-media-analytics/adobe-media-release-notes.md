@@ -5,7 +5,7 @@
 ### Android Media 2.1.2
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
-* Handled reset identities (MobileCore.resetIdentities()) event.
+* Added support to handle the MobileCore.resetIdentities() API.
 
 ### iOS AEPMedia 3.0.1 
 

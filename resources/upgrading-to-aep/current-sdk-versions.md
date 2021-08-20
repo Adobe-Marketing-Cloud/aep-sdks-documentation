@@ -114,7 +114,7 @@ Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later 
 
 ## React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native v**ersions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="danger" %}
 Adobe Experience Platform Mobile SDK plugins for React Native are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.

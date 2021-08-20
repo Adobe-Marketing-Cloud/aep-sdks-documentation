@@ -420,6 +420,7 @@ The `Proposition` class extension provides a method for generating XDM data for 
 
 ```swift
 /// `Proposition` extension
+@objc
 public extension Proposition {
     /// Creates a dictionary containing XDM formatted data for `Experience Event - Proposition Reference` field group from the given proposition.
     ///
@@ -469,22 +470,25 @@ The `Offer` class extension provides methods for generating XDM data for Proposi
 
 ```swift
 /// `Offer` extension
+@objc
 public extension Offer {
     /// Creates a dictionary containing XDM formatted data for `Experience Event - Proposition Interactions` field group from the given proposition option.
     ///
     /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
+    /// If the proposition reference within the option is released and no longer valid, the method returns `nil`.
     ///
     /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionDisplay`.
     /// - Returns A dictionary containing XDM data for the propositon interactions.
-    func generateDisplayInteractionXdm() -> [String: Any] {...}
+    func generateDisplayInteractionXdm() -> [String: Any]? {...}
 
     /// Creates a dictionary containing XDM formatted data for `Experience Event - Proposition Interactions` field group from the given proposition option.
     ///
     /// The Edge `sendEvent(experienceEvent:_:)` API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, or override dataset identifier.
+    /// If the proposition reference within the option is released and no longer valid, the method returns `nil`.
     ///
     /// - Note: The returned XDM data also contains the `eventType` for the Experience Event with value `decisioning.propositionInteract`.
     /// - Returns A dictionary containing XDM data for the propositon interactions.
-    func generateTapInteractionXdm() -> [String: Any] {...}
+    func generateTapInteractionXdm() -> [String: Any]? {...}
 
     /// Dispatches an event for the Edge extension to send an Experience Event to the Edge network with the display interaction data for the given proposition item.
     func displayed() {...}

@@ -13,7 +13,7 @@
 ## Getting Started
 
 * [Overview](getting-started/overview.md)
-* [Setup schemas & datasets](getting-started/setup-schemas-and-datasets.md)
+* [Set up schemas and datasets](getting-started/setup-schemas-and-datasets.md)
 * [Configure datastreams](getting-started/configure-datastreams.md)
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
@@ -94,6 +94,7 @@
   * [Release Notes](using-mobile-extensions/adobe-media-analytics/adobe-media-release-notes.md)
   * [Media API reference](using-mobile-extensions/adobe-media-analytics/media-api-reference.md)
 * [Adobe Audience Manager](using-mobile-extensions/adobe-audience-manager/README.md)
+  * [Migrating to AEPAudience](using-mobile-extensions/adobe-audience-manager/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-audience-manager/adobe-audience-manager-release-notes.md)
   * [Audience Manager API reference](using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md)
   * [Audience Manager event reference](using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md)
@@ -102,18 +103,20 @@
   * [Campaign Classic API reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference.md)
   * [Campaign Classic event reference](using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-event-reference.md)
 * [Adobe Campaign Standard](using-mobile-extensions/adobe-campaign-standard/README.md)
+  * [Migrating to AEPCampaign reference](using-mobile-extensions/adobe-campaign-standard/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-release-notes.md)
   * [Adobe Campaign Standard API reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-api-reference.md)
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Journey Optimizer](using-mobile-extensions/adobe-journey-optimizer/README.md)
   * [API Reference](using-mobile-extensions/adobe-journey-optimizer/api-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
+  * [Migrating to AEPTarget reference](using-mobile-extensions/adobe-target/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
-  * [Target API reference \(deprecated\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
+  * [Target API reference (deprecated in 2.x)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
-* [Adobe Experience Platform Optimize](using-mobile-extensions/adobe-experience-platform-optimize/README.md)
-  * [API Reference](using-mobile-extensions/adobe-experience-platform-optimize/api-reference.md)
+* [Adobe Journey Optimizer - Decisioning](using-mobile-extensions/adobe-journey-optimizer-decisioning/README.md)
+  * [API Reference](using-mobile-extensions/adobe-journey-optimizer-decisioning/api-reference.md)
 
 ## Resources
 
