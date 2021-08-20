@@ -28,7 +28,7 @@ Before you configure the Mobile Services extension, ensure that you previously c
 {% endhint %}
 
 {% hint style="info" %}
-To use location functionality for Mobile Services, see the documentation on the [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en), the point of interest management service for Mobile Services.
+To use location-based functionality for Mobile Services, see the documentation on the [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en).
 {% endhint %}
 
 To use the Mobile Services extension, complete the following steps:
@@ -148,7 +148,7 @@ import AEPMobileServices
 {% endtab %}
 {% endtabs %}
 
-### Register Mobile Services with Mobile Core
+## Register Mobile Services with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -179,7 +179,7 @@ Lifecycle.registerExtension();
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-### Objective C
+### Objective-C
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
 
@@ -223,7 +223,7 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 {% tab title="Android" %}
 Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-### setPushIdentifier
+### Java
 
 **Syntax**
 
@@ -232,8 +232,6 @@ void setPushIdentifier(final String registrationID)
 ```
 
 **Example**
-
-**Java**
 
 ```java
 MobileCore.setPushIdentifier(registrationID);
@@ -247,7 +245,7 @@ iOS simulators do not support push messaging.
 
 After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
-### setPushIdentifier
+### Objective-C
 
 **Syntax**
 
@@ -257,8 +255,6 @@ After following Apple's [configure remote notification document](https://develop
 
 **Example**
 
-**Objective-C**
-
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   // Set the deviceToken that the APNS has assigned to the device
@@ -267,7 +263,9 @@ After following Apple's [configure remote notification document](https://develop
 }
 ```
 
-**Swift**
+### Swift
+
+**Example**
 
 ```swift
 ACPCore.setPushIdentifier(deviceToken)
@@ -281,7 +279,7 @@ iOS simulators do not support push messaging.
 
 After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
-### setPushIdentifier
+### Swift
 
 **Syntax**
 
@@ -291,8 +289,6 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
 **Example**
-
-**Swift**
 
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -334,7 +330,7 @@ If the application has implemented the `FirebaseMessaginService` class and will 
 {% tab title="iOS — Obj-C" %}
 Use the following API to track a push messaging click in Adobe Analytics.
 
-### collectLaunchInfo
+### Objective-C
 
 **Syntax**
 
@@ -343,8 +339,6 @@ Use the following API to track a push messaging click in Adobe Analytics.
 ```
 
 **Example**
-
-**Objective-C**
 
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -360,7 +354,7 @@ Use the following API to track a push messaging click in Adobe Analytics.
 {% tab title="iOS — Swift" %}
 Use the following API to track a push messaging click in Adobe Analytics.
 
-### collectLaunchInfo
+### Swift
 
 **Syntax**
 
@@ -370,22 +364,20 @@ Use the following API to track a push messaging click in Adobe Analytics.
 
 **Example**
 
-**Swift**
-
 ```swift
 AEPCore.collectLaunchInfo(userInfo)
 ```
 {% endtab %}
 {% endtabs %}
 
-### Troubleshooting push messaging
+## Troubleshooting push messaging
 
 For more information, see the following:
 
 * [Android troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/push-messaging/c-troubleshooting-push-messaging.html)
 * [iOS troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/push-messaging/c-troubleshooting-push-messaging.html)
 
-### Set up in-app messaging
+## Set up in-app messaging
 
 This feature allows you to deliver in-app messages that are triggered from any analytics data or event. After the implementation, messages are dynamically delivered to the app and do not require a code update. In-app messages are created in Mobile Services. For more information, see the [create an in-app message](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/inapp-messaging/messaging.html) tutorial.
 
@@ -395,9 +387,9 @@ To set up your app for in-app messages, implement the following instructions. Yo
 {% tab title="Android" %}
 Update the `AndroidManifest.xml` file to declare the full screen activity and enable the Message Notification Handler.
 
-#### Java
+### Java
 
-If you are using a fullscreen message or a local notification, update the `AndroidManifest.xml` with the following:
+If you are using either fullscreen message or local notification functionality, update the `AndroidManifest.xml` with the following:
 
 ```xml
 <activity
@@ -413,7 +405,7 @@ If you selected a modal layout, select one of the following themes for the messa
 * `Theme.Translucent.NoTitleBar`
 * `Theme.Translucent`
 
-#### Example
+**Example**
 
 ```xml
 <activity
@@ -430,7 +422,7 @@ No setup is required for iOS, since Mobile SDK automatically handles in-app mess
 {% endtab %}
 {% endtabs %}
 
-#### Fallback images
+## Fallback images
 
 When creating a full-screen message, you can optionally specify a fallback image. If your message cannot retrieve its intended image from the web, the SDK attempts to load the image with the same name from your application’s assets folder. This allows you to show your message in its original form, even if the user is offline or the predetermined image is unreachable.
 
@@ -438,7 +430,7 @@ When creating a full-screen message, you can optionally specify a fallback image
 The fallback image asset name is specified when you configure the message in Mobile Services. You need to ensure that the specified resource is available.
 {% endhint %}
 
-#### Configuring notification icons
+## Configuring notification icons
 
 The following methods allow you to configure the small and large icons that appear in the notification area, and the large icon that is displayed when notifications appear in the notification drawer.
 
@@ -662,7 +654,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    ```
 
 {% hint style="info" %}
-No set up is required, since Acquisition context is automatically collected and tracked by the SDK.
+No setup is required, since Acquisition context is automatically collected and tracked by the SDK.
 {% endhint %}
 
 ### Deep link tracking
