@@ -2,12 +2,13 @@
 
 ---
 
-### extensionVersion
+## extensionVersion
 
 Returns the running version of the Campaign Standard extension.
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
 **Syntax**
 
@@ -23,22 +24,22 @@ Campaign.extensionVersion();
 
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
+### Swift 
 
 **Syntax**
 
 ```swift
 static var extensionVersion: String
 ```
-
 **Example**
-
-**Swift**
 
 ```swift
 let campaignVersion = Campaign.extensionVersion
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
@@ -47,6 +48,7 @@ NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 {% endtab %}
 
 {% tab title="iOS (ACP 1.x)" %}
+### Swift
 
 **Syntax**
 
@@ -56,13 +58,13 @@ NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 
 **Example**
 
-**Swift**
-
 ```swift
 let campaignVersion = ACPCampaign.extensionVersion()
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 NSString *campaignVersion = [ACPCampaign extensionVersion];
@@ -71,6 +73,7 @@ NSString *campaignVersion = [ACPCampaign extensionVersion];
 {% endtab %}
 
 {% tab title="React Native" %}
+### JavaScript
 
 **Syntax**
 
@@ -90,12 +93,13 @@ ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 
 ---
 
-### registerExtension
+## registerExtension
 
 Registers the Campaign Standard extension with the Mobile Core.
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
 **Syntax**
 
@@ -112,11 +116,12 @@ Campaign.registerExtension();
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
 
-This API no longer exists in the`Campaign Standard` extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This API no longer exists in the Adobe Campaign Standard extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
 
 {% endtab %}
 
 {% tab title="iOS (ACP 1.x)" %}
+### Swift
 
 **Syntax**
 
@@ -126,13 +131,13 @@ This API no longer exists in the`Campaign Standard` extension. Instead, the exte
 
 **Example**
 
-**Swift**
-
 ```swift
 ACPCampaign.registerExtension()
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 [ACPCampaign registerExtension];
@@ -142,7 +147,7 @@ ACPCampaign.registerExtension()
 
 {% tab title="React Native" %}
 
-When using React Native, register the Campaign Standard extension with Mobile Core in native code as shown on the Android and iOS tabs.
+When using React Native, register the Adobe Campaign Standard extension with Mobile Core in native code as shown on the Android and iOS tabs.
 
 {% endtab %}
 
@@ -150,7 +155,7 @@ When using React Native, register the Campaign Standard extension with Mobile Co
 
 ---
 
-### resetLinkageFields
+## resetLinkageFields
 
 Clears previously stored linkage fields in the mobile SDK and triggers a Campaign rules download request to the configured Campaign server.
 
@@ -158,6 +163,7 @@ This method unregisters any previously registered rules with the Rules Engine an
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
 **Syntax**
 
@@ -173,6 +179,7 @@ Campaign.resetLinkageFields()
 
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
+### Swift
 
 **Syntax**
 
@@ -182,13 +189,13 @@ static func resetLinkageFields()
 
 **Example**
 
-**Swift**
-
 ```swift
 Campaign.resetLinkageFields()
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 [AEPMobileCampaign resetLinkageFields];
@@ -197,6 +204,7 @@ Campaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="iOS (ACP 1.x)" %}
+### Swift
 
 **Syntax**
 
@@ -206,13 +214,13 @@ Campaign.resetLinkageFields()
 
 **Example**
 
-**Swift**
-
 ```swift
 ACPCampaign.resetLinkageFields()
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 [ACPCampaign resetLinkageFields];
@@ -221,6 +229,7 @@ ACPCampaign.resetLinkageFields()
 {% endtab %}
 
 {% tab title="React Native" %}
+### JavaScript
 
 **Syntax**
 
@@ -240,7 +249,7 @@ ACPCampaign.resetLinkageFields();
 
 ---
 
-### setLinkageFields
+## setLinkageFields
 
 Sets the Campaign linkage fields (CRM IDs) in the mobile SDK to be used for downloading personalized messages from Campaign.
 
