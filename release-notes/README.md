@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 23, 2021
+
+### Android Target 1.2.8
+
+* Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4
