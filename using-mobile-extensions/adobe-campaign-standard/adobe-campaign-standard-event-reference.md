@@ -2,25 +2,25 @@
 
 ## Events handled
 
-The following events are handled by the Campaign Standard extension:
+The following events are handled by the Adobe Campaign Standard extension:
 
-### Campaign Request Content <a id="campaign-request-content"></a>
+### Campaign request
 
-This event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the _"User has launched the app"_ rule is found to be true. A triggered consequences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
+The Campaign request event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the "User has launched the app" rule will be true. A triggered consequences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
 
-#### Data payload definition <a id="data-payload-definition-1"></a>
+#### Payload definition
 
-Here are the key-value pairs in this event:
+The following key-value pairs are present in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `triggeredconsequence` | Map | No | The triggered Campaign rule consquence. |
+| `triggeredconsequence` | Map | No | The triggered Campaign rule consequence. |
 
-#### Event data example
+#### Example
 
-triggered consequence data
+The following example shows triggered consequence data.
 
-```text
+```json
 {
   "triggeredconsequence": {
     "assetsPath": "assets/path/",
@@ -40,13 +40,13 @@ triggered consequence data
 }
 ```
 
-### Configuration Response Content <a id="configuration-response-content"></a>
+### Configuration response
 
-The data property in this event is used by each extension to modify its current settings. Each extension is responsible for reading out the part of the data property for which it is concerned.
+The data property in the configuration response event is used by each extension to modify its current settings. Each extension is responsible for parsing the relevant part of the data property.
 
-#### Data payload definition <a id="data-payload-definition-3"></a>
+#### Payload definition
 
-The Adobe Campaign Standard extension reads the following key from the configuration event:
+The following key value pairs are supported for Adobe Campaign Standard extension when reading from the configuration event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -86,7 +86,7 @@ The configuration setting to pause registration requests is provided for specifi
 }
 ```
 
-### Request Identity <a id="request-identity"></a>
+### Request identity
 
 This event is dispatched by the API to setLinkageFields, which sets the linkage fields. It is used to download personalized in-app messages.
 

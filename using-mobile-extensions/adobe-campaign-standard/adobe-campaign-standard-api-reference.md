@@ -257,6 +257,7 @@ The set linkage fields are stored as a base64 encoded JSON string in memory and 
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
 **Syntax**
 
@@ -276,6 +277,7 @@ Campaign.setLinkageFields(linkageFields);
 
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
+### Swift
 
 **Syntax**
 
@@ -285,13 +287,13 @@ static func setLinkageFields(linkageFields: [String: String])
 
 **Example**
 
-**Swift**
-
 ```swift
 Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 [AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
@@ -300,6 +302,7 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 {% endtab %}
 
 {% tab title="iOS (ACP 1.x)" %}
+### Swift
 
 **Syntax**
 
@@ -309,13 +312,13 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 **Example**
 
-**Swift**
-
 ```swift
 ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
 ```
 
-**Objective-C**
+### Objective-C
+
+**Example**
 
 ```objc
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
@@ -324,6 +327,7 @@ ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cus
 {% endtab %}
 
 {% tab title="React Native" %}
+### JavaScript
 
 **Syntax**
 
