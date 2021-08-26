@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Aug 26, 2021
+
+### Android Core 1.8.3
+
+- Fixed an issue which caused some extensions to not be registered correctly when using code shrinking
+
 ## Aug 23, 2021
 
 ### Android Target 1.2.8

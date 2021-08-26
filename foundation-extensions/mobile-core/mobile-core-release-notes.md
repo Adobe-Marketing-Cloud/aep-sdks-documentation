@@ -1,5 +1,11 @@
 # Release Notes
 
+## Aug 26, 2021
+
+### Android Core 1.8.3
+
+- Fixed an issue which caused some extensions to not be registered correctly when using code shrinking
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4
