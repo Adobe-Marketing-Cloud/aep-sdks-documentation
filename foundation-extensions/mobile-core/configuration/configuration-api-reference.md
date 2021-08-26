@@ -15,8 +15,7 @@ String coreExtensionVersion = MobileCore.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
 ```swift
@@ -28,11 +27,9 @@ let version = MobileCore.extensionVersion
 ```objectivec
 NSString *version = [AEPMobileCore extensionVersion];
 ```
-
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
-
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
 ```objectivec
@@ -97,7 +94,6 @@ This API causes the SDK to download the configuration for the provided app ID an
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Syntax
 
 ```java
@@ -113,8 +109,7 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 #### Syntax
 
 ```swift
@@ -125,20 +120,18 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 
 #### Objective-C
 
- ```objectivec
+```objectivec
  [AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
- ```
+```
 
- #### Swift
+#### Swift
 
- ```swift
+```swift
  MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
- ```
-
+```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
-
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec
@@ -232,39 +225,34 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 ### updateConfiguration
 
- #### Syntax
+#### Syntax
 
- ```objectivec
+```objectivec
  @objc(updateConfiguration:)
  static func updateConfigurationWith(configDict: [String: Any])
- ```
+```
 
- #### Example
+#### Example
 
 #### Swift
 
- ```swift
+```swift
  let updatedConfig = ["global.privacy":"optedout"]
  MobileCore.updateConfigurationWith(configDict: updatedConfig)
- ```
+```
 
 #### Objective-C
 
- ```objectivec
+```objectivec
  NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
  [AEPMobileCore updateConfiguration:updatedConfig];
- ```
-
-
-
+```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
-
+{% tab title="iOS \(ACP 2.x\)" %}
 ### updateConfiguration
 
 #### Syntax
@@ -380,34 +368,31 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 #### Syntax
 
- ```swift
+```swift
  static func configureWith(filePath: String)
- ```
+```
 
- #### Example
+#### Example
 
- **Objective-C**
+**Objective-C**
 
- ```objectivec
+```objectivec
  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
  [AEPMobileCore configureWithFilePath:filePath];
- ```
+```
 
- **Swift**
+**Swift**
 
- ```swift
+```swift
  let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
  MobileCore.configureWith(filePath: filePath)
- ```
-
+```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
-
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec

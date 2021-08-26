@@ -10,7 +10,6 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### Java / Kotlin
 
 {% hint style="warning" %}
@@ -36,7 +35,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; ****requires **Swift 5.1 or newer;** and **Xcode 11.0 or newer**.
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
 {% endhint %}
 
 {% hint style="success" %}
@@ -93,7 +92,6 @@ You should see a pop-up similar to the following image:
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
-
 For React Native, you should install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions, see this [tutorial on getting started with React Native applications](https://facebook.github.io/react-native/docs/getting-started).
 
 v2.0.0 and above of the AEP Mobile SDK React Native plugins use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. For iOS development, after installing the plugins from npm, download the pod dependencies by running the following command:
@@ -103,9 +101,7 @@ v2.0.0 and above of the AEP Mobile SDK React Native plugins use [autolinking](ht
 To update native dependencies to latest available versions, run the following command:
 
 `cd ios && pod update && cd ..`
-
 {% endhint %}
-
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -399,8 +395,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-
-For React Native apps, initialize the SDK using native code in your `AppDelegate` (iOS) and `MainApplication` (Android).
+For React Native apps, initialize the SDK using native code in your `AppDelegate` \(iOS\) and `MainApplication` \(Android\).
 
 ### iOS
 
@@ -475,7 +470,6 @@ public class MainApplication extends Application implements ReactApplication {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Flutter" %}

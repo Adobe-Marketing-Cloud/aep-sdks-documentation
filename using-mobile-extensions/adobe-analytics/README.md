@@ -18,7 +18,7 @@
 
 ![Adobe Analytics Company](../../.gitbook/assets/mobile-analytics-company.png)
 
-If you have access to more than one Analytics company, a select menu will appear, allowing you to choose which company you want to use. If you only have access to one Analytics company, this select menu will not appear. 
+If you have access to more than one Analytics company, a select menu will appear, allowing you to choose which company you want to use. If you only have access to one Analytics company, this select menu will not appear.
 
 Once you select an Analytics company, the list of report suites associated with that company will appear in the report suites section.
 
@@ -72,7 +72,7 @@ If you set up Analytics server-side forwarding to Audience Manager, select the *
 Select the **Backdate Previous Session Info** checkbox **only** if you have timestamp-enabled report report suites.
 {% endhint %}
 
-When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. 
+When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length.
 
 The SDK also backdates the session information hit to one second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date on which they occurred. One hit is backdated each time a new launch of the application is occurs.
 
@@ -153,19 +153,19 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 
 2. Link the module and the application.
 
-    For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
+   For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
 
-    For React Native versions less than or equal to 0.59, you can use the following scripts:
+   For React Native versions less than or equal to 0.59, you can use the following scripts:
 
-    ```bash
+   ```bash
     react-native link @adobe/react-native-acpanalytics
-    ```
+   ```
 
-    If you are using iOS and `cocoapods`, run:
+   If you are using iOS and `cocoapods`, run:
 
-    ```bash
+   ```bash
     cd ios/ && pod install
-    ```
+   ```
 
 3. Import the extension.
 
@@ -259,7 +259,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 {% tab title="Android" %}
 ### Java
 
-The following sample shows how to set up methods that call the [setApplication()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+The following sample shows how to set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -280,7 +280,7 @@ public class MobileApp extends Application {
 }
 ```
 
-{% hint style="info" %} 
+{% hint style="info" %}
 Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endhint %}
 {% endtab %}
@@ -314,7 +314,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-{% hint style="info" %} 
+{% hint style="info" %}
 Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endhint %}
 {% endtab %}
@@ -426,16 +426,16 @@ To automatically report on the application lifecycle details in Analytics, ensur
 To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see the [track app actions](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-actions) and [track app states](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) tutorials.
 
 {% hint style="info" %}
-[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the view state as the **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable (`pagename=value`).
+[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the view state as the **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
 
-[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable (`action=value`).
+[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ## Integrations with Adobe Experience Platform solutions and services
 
-### Analytics for Adobe Target (A4T)
+### Analytics for Adobe Target \(A4T\)
 
-To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target (A4T) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html).
+To see the performance of your Target activities for some segments, you can set up the Analytics extension for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html).
 
 ### Server-side forwarding with Audience Manager
 
@@ -723,7 +723,7 @@ ACPCore.updateConfiguration(updatedConfig)
 {% tab title="React Native" %}
 #### JavaScript
 
-**Example** 
+**Example**
 
 ```jsx
 ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",

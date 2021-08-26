@@ -206,7 +206,6 @@ Once the offers have been prefetched, use the `retrievePrefetchedOffers` API to 
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java

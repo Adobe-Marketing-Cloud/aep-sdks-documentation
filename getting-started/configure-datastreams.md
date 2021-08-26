@@ -23,7 +23,7 @@ The following steps illustrate how to create a sample datastream for a mobile im
 3. Click **New Datastream** \(located on top right\)
 4. Set a name for the configuration and click **Save**.
 
-![Creating a datastream in Adobe Experience Platform Launch](../.gitbook/assets/create-datastream.png?alt=media)
+![Creating a datastream in Adobe Experience Platform Launch](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/246853d4cb8bc473495a38d8b99df6e3f68c409c/.gitbook/assets/create-datastream.png?alt=media)
 
 1. In the next screen, toggle on **Adobe Experience Platform** and:
    1. Select the appropriate **Sandbox** from the dropdown

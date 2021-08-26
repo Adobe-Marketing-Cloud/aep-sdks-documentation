@@ -59,7 +59,7 @@ UserProfile.updateUserAttributes(profileMap);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### updateUserAttributes
 
 Sets the user profile attributes key and value.
@@ -102,7 +102,7 @@ UserProfile.updateUserAttributes(attributeDict: profileMap)
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -434,8 +434,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 ### **removeUserAttributes**
 
 Removes the user profile attributes for the given keys.
@@ -455,7 +454,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### removeUserAttribute
 
 Removes the user profile attribute for the given key.
@@ -711,7 +710,7 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
@@ -728,7 +727,7 @@ static func getUserAttributes(attributeNames: [String], completion: @escaping ([
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-When the callback is provided, if the operation times out (5s) or an unexpected error occurs, the `completion` method is called with the appropriate `AEPError`.
+When the callback is provided, if the operation times out \(5s\) or an unexpected error occurs, the `completion` method is called with the appropriate `AEPError`.
 
 ```swift
 UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes, error in
@@ -737,7 +736,7 @@ UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.

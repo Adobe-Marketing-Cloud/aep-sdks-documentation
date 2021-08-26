@@ -1,4 +1,4 @@
-# Places API Reference
+# Places API reference
 
 This document contains usage information for the public functions, classes, and enums in AEPPlaces.
 
@@ -277,38 +277,53 @@ Sets the accuracy authorization status in the Places extension.
 The value provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location accuracy authorization for this device.
 
 {% tabs %}
-
+{% tab %}
 {% tab title="Swift"}
+{% endtab %}
 
+{% tab %}
 **Syntax**
+{% endtab %}
 
+{% tab %}
 ```swift
 static func setAccuracyAuthorization(_ accuracy: CLAccuracyAuthorization)
 ```
+{% endtab %}
 
+{% tab %}
 **Example**
+{% endtab %}
 
+{% tab %}
 ```swift
 Places.setAccuracyAuthorization(.fullAccuracy)
 ```
 {% endtab %}
 
+{% tab %}
 {% tab title="Objective-C"}
-
-**Syntax**
-
-```objc
-+ (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
-```
-
-**Example**
-
-```objc
-[AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
-```
-
 {% endtab %}
 
+{% tab %}
+**Syntax**
+{% endtab %}
+
+{% tab %}
+```text
++ (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
+```
+{% endtab %}
+
+{% tab %}
+**Example**
+{% endtab %}
+
+{% tab %}
+```text
+[AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
+```
+{% endtab %}
 {% endtabs %}
 
 ### setAuthorizationStatus
@@ -400,3 +415,4 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 | :--- | :--- |
 | entry | 0 |
 | exit | 1 |
+

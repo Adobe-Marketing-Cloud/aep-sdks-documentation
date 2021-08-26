@@ -63,7 +63,7 @@
   * [API Reference](foundation-extensions/identity-for-edge-network/api-reference.md)
   * [Frequently Asked Questions](foundation-extensions/identity-for-edge-network/identity-faq.md)
 * [Adobe Experience Platform Assurance](foundation-extensions/adobe-experience-platform-assurance/README.md)
-  * [Migrating to AEPAssurance(3.x) reference](foundation-extensions/adobe-experience-platform-assurance/migration.md)
+  * [Migrating to AEPAssurance\(3.x\) reference](foundation-extensions/adobe-experience-platform-assurance/migration.md)
   * [Release Notes](foundation-extensions/adobe-experience-platform-assurance/adobe-experience-platform-assurance-release-notes.md)
   * [Assurance API reference](foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference.md)
   * [Resolving Common Issues](foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md)
@@ -113,7 +113,7 @@
   * [Migrating to AEPTarget reference](using-mobile-extensions/adobe-target/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
   * [Target API reference](using-mobile-extensions/adobe-target/target-api-reference.md)
-  * [Target API reference (deprecated in 2.x)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
+  * [Target API reference \(deprecated in 2.x\)](using-mobile-extensions/adobe-target/target-api-reference-deprecated.md)
   * [Target event reference](using-mobile-extensions/adobe-target/target-event-reference.md)
 * [Adobe Experience Platform Offer Decisioning](using-mobile-extensions/offer-decisioning/README.md)
   * [API Reference](using-mobile-extensions/offer-decisioning/api-reference.md)
@@ -176,3 +176,4 @@
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
   * [Troubleshoot Project Griffon](beta/project-griffon/troubleshoot-project-griffon.md)
+

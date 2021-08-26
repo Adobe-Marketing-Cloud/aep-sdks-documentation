@@ -1,316 +1,243 @@
 # Migrating to AEPMedia reference
 
-This document is a reference comparison of AEPMedia (3.x) APIs against their equivalent ACPMedia (2.x) APIs.
+This document is a reference comparison of AEPMedia \(3.x\) APIs against their equivalent ACPMedia \(2.x\) APIs.
 
-The AEPMedia extension is implemented purely in Swift and is compatible with the AEPCore Swift SDK. To ensure a smooth transition from the ACPMedia SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application.  If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
+The AEPMedia extension is implemented purely in Swift and is compatible with the AEPCore Swift SDK. To ensure a smooth transition from the ACPMedia SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application. If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
 ## AEPMedia classes
 
-| Type          | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
-| ------------- | :-------------- | --------------------- | --------------------- |
-| Primary Class | Media           | AEPMobileMedia        | ACPMedia              |
-
-
+| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
+| :--- | :--- | :--- | :--- |
+| Primary Class | Media | AEPMobileMedia | ACPMedia |
 
 ## AEPMedia APIs
 
 ### extensionVersion
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static var extensionVersion: String
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (nonnull NSString*) extensionVersion;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (nonnull NSString*) extensionVersion;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createTracker
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createTracker()
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (id<AEPMediaTracker> _Nonnull) createTracker;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 +(ACPMediaTracker* _Nullable) createTracker;
 ```
-
 {% endtab %}
 {% endtabs %}
 
 ### createTrackerWithConfig
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createTrackerWith(config: [String: Any]?)
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (id<AEPMobileMediaTracker> _Nonnull) createTrackerWithConfig:(NSDictionary<NSString *,id) * _Nullable) config;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (ACPMediaTracker* _Nullable) createTrackerWithConfig: (NSDictionary* _Nullable) config;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createMediaObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createMediaObjectWith(name: String, id: String, length: Double, streamType: String, mediaType: MediaType) -> [String: Any]?
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary*<NSString *,id> *_Nullable) createMediaObjectWith: (NSString *, _Nonnull) name 
                                                                id: (NSString * _Nonnull) id
                                                            length: (double) length
                                                        streamType: (NSString * _Nonnull) streamType
                                                         mediaType: (enum AEPMediaType) mediaType;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createMediaObjectWithName: (NSString* _Nonnull) name
                                              mediaId: (NSString* _Nonnull) mediaId
                                               length: (double) length
                                           streamType: (NSString* _Nonnull) streamType
                                            mediaType: (ACPMediaType) mediaType;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createAdBreakObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createAdBreakObjectWith(name: String, position: Int, startTime: Double) -> [String: Any]?
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary<NSString * ,id> * _Nullable) createAdBreakObjectWith: (NSString * _Nonnull) name
                                                              position: (NSInteger) position
                                                             startTime: (double) startTime,
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createAdBreakObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                              startTime: (double) startTime;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createAdObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createAdObjectWith(name: String, id: String, position: Int, length: Double) -> [String: Any]?
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary<NSString * ,id>) * _Nullable) createAdObjectWith: (NSString * _Nonnull) name
                                                               id: (NSString * _Nonnull) id
                                                         position: (NSInteger) position
                                                           length: (double) length;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createAdObjectWithName: (NSString* _Nonnull) name
                                              adId: (NSString* _Nonnull) adId
                                          position: (double) position
                                            length: (double) length;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createChapterObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createChapterObjectWith(name: String, position: Int, length: Double, startTime: Double) -> [String: Any]?
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary<NSString * ,id>) * _Nullable) createChapterObjectWith: (NSString * _Nonnull) name
                                                              position: (NSInteger) position
                                                                length: (double) length
                                                             startTime: (double) startTime;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createChapterObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                                 length: (double) length
                                              startTime: (double) startTime;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createQoEObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createQoEObjectWith(bitrate: Double, startupTime: Double, fps: Double, droppedFrames: Double) -> [String: Any]?
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary<NSString * ,id>) * _Nullable) createQoEObjectWith: (double) bitrate
                                                         startTime: (double) startTime
                                                               fps: (double) fps 
                                                     droppedFrames: (double) droppedFrames;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createQoEObjectWithBitrate: (double) bitrate
                                           startupTime: (double) startupTime
                                                   fps: (double) fps
                                         droppedFrames: (double) droppedFrames;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### createStateObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func createStateObjectWith(stateName: String) -> [String: Any]
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 + (NSDictionary<NSString * ,id>) * _Nullable) createStateObjectWith: (NSString * _Nonnull) stateName;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 + (NSDictionary* _Nonnull) createStateObjectWithName: (NSString* _Nonnull) stateName;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Media tracker API reference
@@ -318,275 +245,203 @@ static func createStateObjectWith(stateName: String) -> [String: Any]
 ### trackEvent
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: String]?)
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackEvent: (enum AEPMediaEvent) event
                info: (NSDictionary* <NSString *,id> * _Nullable) info
                data: (NSDictionary* <NSString *,NSString> * _Nullable) data;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
   - (void) trackEvent: (ACPMediaEvent) event
                  info: (NSDictionary* _Nullable) info
                  data: (NSDictionary* _Nullable) data;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackSessionStart
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public func trackSessionStart(info: [String: Any], metadata: [String: String]? = nil)
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackSessionStart:(NSDictionary<NSString *,id> * _Nonnull) mediaInfo metadata:(NSDictionary<NSString *,NSString *> * _Nullable) data;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackSessionStart: (NSDictionary* _Nonnull) mediaInfo data: (NSDictionary* _Nullable) contextData;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackPlay
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackPlay()
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackPlay;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackPlay;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackPause
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackPause()
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackPause;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackPause;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackComplete
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackComplete()
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackComplete;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackComplete;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackSessionEnd
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackSessionEnd()
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackSessionEnd;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackSessionEnd;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### trackError
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func trackError(errorId: String)
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) trackError: (NSString* _Nonnull) errorId;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) trackError: (NSString* _Nonnull) errorId;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### updateCurrentPlayhead
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func updateCurrentPlayhead(time: Double)
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) updateCurrentPlayhead: (double) time;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) updateCurrentPlayhead: (double) time;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### updateQoEObject
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 func updateQoEObject(qoe: [String: Any])
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 - (void) updateQoEObject: (NSDictionary*<NSString *,id> _Nonnull) qoeObject;
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 - (void) updateQoEObject: (NSDictionary* _Nonnull) qoeObject;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## Media constants
@@ -594,9 +449,7 @@ func updateQoEObject(qoe: [String: Any])
 ### Media type
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public enum MediaType: Int, RawRepresentable {
  //Constant defining media type for Video streams
@@ -605,12 +458,10 @@ public enum MediaType: Int, RawRepresentable {
  case Video
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 @objc(AEPMediaType)
 public enum MediaType: Int, RawRepresentable {
  //Constant defining media type for Video streams
@@ -619,12 +470,10 @@ public enum MediaType: Int, RawRepresentable {
  case Video
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 typedef NS_ENUM(NSInteger, ACPMediaType) {
     /**
     * Constant defining media type for Video streams
@@ -637,29 +486,23 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
     ACPMediaTypeAudio
 };
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ### Stream type
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public class StreamType: NSObject {
      // Constant defining stream type for VOD streams.
         public static let VOD = "vod"
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
   @objc(AEPMediaStreamType)
   public class StreamType: NSObject {
@@ -668,44 +511,35 @@ public class MediaConstants: NSObject {
   }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 /**
  * Constant defining stream type for VOD streams
  */
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeVod;
-
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference]((media-api-reference#stream-type)).
+For the full list of constant type, refer to \[Media API reference\]\(\(media-api-reference\#stream-type\)\).
 {% endhint %}
 
 ### Standard video constants
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public class VideoMetadataKeys: NSObject {
         public static let SHOW = "a.media.show"
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
   @objc(AEPVideoMetadataKeys)
   public class VideoMetadataKeys: NSObject {
@@ -713,40 +547,32 @@ public class MediaConstants: NSObject {
   }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference](media-api-reference#standard-video-constants).
+For the full list of constant type, refer to [Media API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5ae97c5e29d8446f9126d3c750c83e93d9e58ab8/using-mobile-extensions/adobe-media-analytics/media-api-reference/README.md#standard-video-constants).
 {% endhint %}
 
 ### Standard audio constants
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public class AudioMetadataKeys: NSObject {
         public static let ARTIST = "a.media.artist"
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
   @objc(AEPAudioMetadataKeys)
   public class AudioMetadataKeys: NSObject {
@@ -754,40 +580,32 @@ public class MediaConstants: NSObject {
   }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference](media-api-reference#standard-audio-constants).
+For the full list of constant type, refer to [Media API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5ae97c5e29d8446f9126d3c750c83e93d9e58ab8/using-mobile-extensions/adobe-media-analytics/media-api-reference/README.md#standard-audio-constants).
 {% endhint %}
 
 ### Standard ad constants
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
  public class AdMetadataKeys: NSObject {
         public static let ADVERTISER = "a.media.ad.advertiser"
  }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
   @objc(AEPAdMetadataKeys)
   public class AdMetadataKeys: NSObject {
@@ -795,40 +613,32 @@ public class MediaConstants: NSObject {
  }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference](media-api-reference#standard-ad-constants).
+For the full list of constant type, refer to [Media API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5ae97c5e29d8446f9126d3c750c83e93d9e58ab8/using-mobile-extensions/adobe-media-analytics/media-api-reference/README.md#standard-ad-constants).
 {% endhint %}
 
 ### Player State constants
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public class PlayerState: NSObject {
         public static let FULLSCREEN = "fullscreen"
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
   @objc(AEPMediaPlayerState)
   public class PlayerState: NSObject {
@@ -836,53 +646,43 @@ public class MediaConstants: NSObject {
   }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateFullScreen;
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference](media-api-reference#player-state-constants).
+For the full list of constant type, refer to [Media API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5ae97c5e29d8446f9126d3c750c83e93d9e58ab8/using-mobile-extensions/adobe-media-analytics/media-api-reference/README.md#player-state-constants).
 {% endhint %}
 
 ### Media events
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 public enum MediaEvent: Int, RawRepresentable {
  // event type for AdBreak start
     case AdBreakStart
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 @objc(AEPMediaEvent)
 public enum MediaEvent: Int, RawRepresentable {
 // event type for AdBreak start
     case AdBreakStart
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 typedef NS_ENUM(NSInteger, ACPMediaEvent) {
     /**
      * Constant defining event type for AdBreak start
@@ -890,33 +690,27 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
     ACPMediaEventAdBreakStart,
 }
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}
-For the full list of constant type, refer to [Media API reference](media-api-reference#media-events).
+For the full list of constant type, refer to [Media API reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/5ae97c5e29d8446f9126d3c750c83e93d9e58ab8/using-mobile-extensions/adobe-media-analytics/media-api-reference/README.md#media-events).
 {% endhint %}
 
 ### Media resume
 
 {% tabs %}
-
-{% tab title="AEP 3.x (Swift)" %}
-
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
  public class MediaObjectKey: NSObject {
         public static let RESUMED = "media.resumed"
     }
 }
 ```
-
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
-
-```objective-c
+{% tab title="AEP 3.x \(Objective-C\)" %}
+```text
 public class MediaConstants: NSObject {
  @objc(AEPMediaObjectKey)
  public class MediaObjectKey: NSObject {
@@ -924,24 +718,12 @@ public class MediaConstants: NSObject {
     }
 }
 ```
-
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
-
-```objective-c
+{% tab title="ACP 2.x \(Objective-C\)" %}
+```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
 ```
-
 {% endtab %}
-
 {% endtabs %}
-
-
-
-
-
-
-
-
 

@@ -10,7 +10,6 @@ The AEP Analytics extension uses [Launch](https://launch.adobe.com/) to configur
 
 {% tabs %}
 {% tab title="Android" %}
-
 If using Gradle, remove the v4 Mobile SDK dependency:
 
 ```java
@@ -20,23 +19,20 @@ dependencies {
 }
 ```
 
-Alternatively, if the v4 Mobile SDK library is linked as a jar, search for `adobeMobileLibrary` in your project and remove the jar file. 
-
+Alternatively, if the v4 Mobile SDK library is linked as a jar, search for `adobeMobileLibrary` in your project and remove the jar file.
 {% endtab %}
 
 {% tab title="iOS" %}
-
 If using Cocoapods, remove the v4 Mobile SDK dependency from the Podfile:
 
 ```bash
 target 'YourTarget' do
-	pod 'AdobeMobileSDK'
-	...
+    pod 'AdobeMobileSDK'
+    ...
 end
 ```
 
 Alternatively, if the v4 Mobile SDK library is linked in Xcode, select the application target and go to `Build Phases`, then `Link Binary With Libraries` and remove `AdobeMobileLibrary.a`.
-
 {% endtab %}
 {% endtabs %}
 
@@ -66,7 +62,6 @@ In your App's Application class add the AEP extension registration and configura
 
 {% tabs %}
 {% tab title="Android" %}
-
 ```java
 import com.adobe.marketing.mobile.MobileCore;
 import com.adobe.marketing.mobile.Analytics;

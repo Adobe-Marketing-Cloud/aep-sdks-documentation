@@ -11,3 +11,4 @@
 ### iOS AEPUserProfile 3.0.0
 
 * Released the brand new Adobe Experience Platform User Profile Swift SDK. It is [open sourced on Github](https://github.com/adobe/aepsdk-userprofile-ios).
+
