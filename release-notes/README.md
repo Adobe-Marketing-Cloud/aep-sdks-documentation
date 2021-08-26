@@ -10,12 +10,31 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `locationClicked` API is called.
 
+### React Native Assurance 2.0.0
+
+This major release introduces support for following:
+
+- Support for React Native version 0.60.+
+- Auto linking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of registerExtension Javascript API.
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4
 
 * Fixed data race in `Event` and `ExtensionContainer` classes.
 * Fixed a memory leak in `EventHub.registerResponseListener`.
+
+### Flutter Assurance 2.0.0
+
+- Upgrade plugin to Flutter 2 and Null-safety support.
+
+## Aug 17, 2021
+
+### Flutter Analytics 2.0.1
+
+- Update to reference the Analytics Android library from mavenCentral.
 
 ## Aug 6, 2021
 
@@ -155,7 +174,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ### Adobe Journey Optimizer Launch Extension
 
@@ -190,6 +209,19 @@ Please note that this release introduces breaking changes. For more details, see
 * Development testing enhancements for Experience Edge.
 
 This SDK is compatible with Android Core 1.8.2 and above.
+
+## June 9, 2021
+
+### Flutter
+
+- Upgrade to Flutter 2 and Null-safety support for following packages:
+
+* [flutter_acpcore](https://pub.dev/packages/flutter_acpcore/versions/2.0.0)
+* [flutter_acpuserprofile](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.0)
+* [flutter_acpanalytics](https://pub.dev/packages/flutter_acpanalytics/versions/2.0.0)
+* [flutter_acpplaces](https://pub.dev/packages/flutter_acpplaces/versions/2.0.0)
+* [flutter_acpplaces_monitor](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.0)
+
 
 ## June 8, 2021
 
