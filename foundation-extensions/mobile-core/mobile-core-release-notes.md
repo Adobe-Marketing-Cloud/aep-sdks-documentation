@@ -4,7 +4,7 @@
 
 ### Android Core 1.8.3
 
-- Fixed an issue which caused some extensions to not be registered correctly when using minification.
+- Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
 
 ## Aug 18, 2021
 
