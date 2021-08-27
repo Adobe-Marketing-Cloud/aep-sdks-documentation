@@ -1,10 +1,10 @@
 # Release Notes
 
-## Aug 26, 2021
+## Aug 27, 2021
 
 ### Android Core 1.8.3
 
-- Fixed an issue which caused some extensions to not be registered correctly when using code shrinking
+- Fixed an issue which caused some extensions to not be registered correctly when using minification.
 
 ## Aug 18, 2021
 
