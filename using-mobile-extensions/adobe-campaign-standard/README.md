@@ -1,16 +1,16 @@
 # Adobe Campaign Standard
 
 {% hint style="info" %}
-**Before** you install or configure the Campaign Standard extension, read [_Getting Started_](../../getting-started/create-a-mobile-property.md) and [Configuring a mobile application using Adobe Experience Platform SDKs](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html).
+**Before** you install or configure the Campaign Standard extension, please read the [getting started guide](../../getting-started/create-a-mobile-property.md) and the [configuring a mobile application using Adobe Experience Platform SDKs guide](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html).
 {% endhint %}
 
 {% hint style="danger" %}
-If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to [launch.adobe.com](https://launch.adobe.com), instead of the Experience Platform Launch integration environment, .
+If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to the [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/data-collection/), instead of the Experience Platform Data Collection integration environment.
 {% endhint %}
 
-## Configure the Campaign Standard extension in Experience Platform Launch
+## Configure the Campaign Standard extension in Experience Platform Data Collection
 
-1. In Experience Platform Launch, click the **Extensions** tab.
+1. In the Experience Platform Data Collection UI, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension, and click **Install**.
 3. Provide the extension settings.
 4. Click **Save**.
@@ -22,32 +22,32 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 #### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaign.adobe.com`.
+Provide endpoint URL(s) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
-For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
+For this extension, these endpoint URLs **does not** contain the `http://` or `https://.`and **cannot** end with a forward slash.
 {% endhint %}
 
 #### pKey
 
-A unique, auto-generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in Experience Platform Launch, configure your Launch mobile property in Campaign Standard. For more information, see [Setting up your Adobe Launch application in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#SettingupyourAdobeExperiencePlatformLaunchapplicationinAdobeCampaign).
+A unique, automatically generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in Experience Platform Data Collection UI, configure your mobile property in Campaign Standard. For more information, please read the tutorial on [configuring a mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html).
 
-After the configuration is successful in Campaign, the pKey is automatically generated and configured in Experience Platform Launch Campaign extension for a successful validation.
+After the configuration is successful in Campaign, the pKey is automatically generated and configured in Experience Platform Data Collection Campaign extension for a successful validation.
 
 #### MCIAS region
 
 Select an MCIAS region based on your customer's location or enter a custom endpoint. The SDK retrieves all in-app messaging rules and definition payloads from this endpoint.
 
 {% hint style="warning" %}
-For this extension, the custom MCIAS endpoint URL should be typed in **without** the `http://` or `https://` and **cannot** end with a forward slash.
+For this extension, the custom MCIAS endpoint URL **does not** contain the `http://` or `https://` and **cannot** end with a forward slash.
 {% endhint %}
 
 #### Request timeout
 
-Time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
+The request timeout is the time in seconds to wait for a response from the in-app messaging service before timing out. The default timeout value is 5 seconds, and the minimum timeout value is 1 second.
 
 {% hint style="warning" %}
-The **Request Timeout** value must be a non-zero number.
+The request timeout value must be a non-zero number.
 {% endhint %}
 
 ## Add the Campaign Standard extension to your app
@@ -56,38 +56,16 @@ Remember the following information when you add the Campaign extension to your a
 
 | Extension | Information |
 | :--- | :--- |
-
-
 | Campaign Standard | This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
 | :--- | :--- |
-
-
-| Profile | The Profile extension is required for In-App trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
+| Profile | The Profile extension is required for in-app trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
 | :--- | :--- |
-
-
 | Signal | The Signal extension is required for all postback rules to work. For more information, see [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals). |
 | :--- | :--- |
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Lifecycle</th>
-      <th style="text-align:left">
-        <p>Lifecycle extension is required for a profile to get registered in Campaign.
-          You also need to implement Lifecycle APIs. For more information, see</p>
-        <p><a href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android">Lifecycle extension in Android</a> or
-          <a
-          href="https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios">Lifecycle extension in iOS</a>.</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+| Lifecycle | The Lifecycle extension is required for a profile to be registered in Campaign. In order to do this, you will need to implement the Lifecycle APIs. For more information, please read either the [Lifecycle API (Android)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android) or the [Lifecycle API (iOS)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios) documentation. |
 
 {% hint style="info" %}
-The instructions to add these extensions to your mobile app are also available in Experience Platform Launch. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
+The instructions to add these extensions to your mobile app are also available in Experience Platform Data Collection. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
 
 {% tabs %}
@@ -113,7 +91,7 @@ The instructions to add these extensions to your mobile app are also available i
    ```
 
 {% hint style="info" %}
-To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
+To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
 {% endhint %}
 {% endtab %}
 
@@ -122,7 +100,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 
    ![](../../.gitbook/assets/acs-pods.png)
 
-   To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [Manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
+   To complete a manual installation, go to the [Adobe Experience Platform SDKs for iOS GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation-1) section.
 
 2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
@@ -149,22 +127,20 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% tab title="React Native" %}
 You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../../foundation-extensions/mobile-core/) extension. Follow these steps to get started:
 
-#### Create React Native Project
+1. Create a React Native project.
 
 ```bash
 react-native init MyReactApp
 ```
 
-#### Install JavaScript packages
-
-Install and link the @adobe/react-native-acpcampaign package:
+2. Install and link the `@adobe/react-native-acpcampaign` package.
 
 ```bash
 npm install @adobe/react-native-acpcampaign
 react-native link @adobe/react-native-acpcampaign
 ```
 
-#### Import the extension
+3. Import the extension from `@adobe/react-native-acpcampaign`.
 
 ```bash
 import {ACPCampaign} from '@adobe/react-native-acpcampaign';
@@ -176,7 +152,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 {% tabs %}
 {% tab title="Android" %}
-#### **Java**
+**Java**
 
 1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
@@ -303,7 +279,7 @@ No additional setup is needed for iOS in-app messaging and local notifications.
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -539,7 +515,7 @@ A destination URL can be added to in-app messages that are delivered from Adobe 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
 * `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button \(`data-destination-url`\)
+* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
 * `adb_deeplink` key present in the local notification payload
 * `uri` key present in the push notification payload
 
@@ -573,7 +549,7 @@ Android app links were introduced with Android OS 6.0. They are similar to deep 
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
 * `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button \(`data-destination-url`\)
+* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
 * `adb_deeplink` key present in the local notification payload
 * `uri` key present in the push notification payload
 
@@ -599,7 +575,7 @@ When a deep link is opened in Safari, this does not allow the app to directly ha
 
 ```swift
 ACPCore.registerURLHandler({ url in
-    print("Inside registerURLHandler callback, clickthrough url is: \(url ?? "")")
+    print("Inside registerURLHandler callback, clickthrough url is: (url ?? "")")
     if url?.contains("campaigndemoapp://") ?? false {
         // handle the deep link (parse any data present in the deep link and/or redirect to a desired area within the app)
        return true
@@ -640,7 +616,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
         if (urlString?.count ?? 0) != 0 {
             if let url = URL(string: urlString ?? "") {
                 UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                    print("Open \(urlString ?? ""): \(success)")
+                    print("Open (urlString ?? ""): (success)")
                 })
             }
         }
@@ -679,7 +655,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
         if (urlString?.count ?? 0) != 0 {
             if let url = URL(string: urlString ?? "") {
                 UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                    print("Open \(urlString ?? ""): \(success)")
+                    print("Open (urlString ?? ""): (success)")
                 })
             }
         }
@@ -795,7 +771,7 @@ To update SDK configuration programmatically, use the following information to c
 | `campaign.mcias` | Yes | Sets the in-app messaging service URL endpoint. | String |
 | `campaign.server` | Yes | Sets the endpoint URL for the production environment in the Adobe Campaign Standard instance. | String |
 | `campaign.pkey` | Yes | Sets the identifier for a mobile app that was configured in the production environment in the Adobe Campaign Standard. | String |
-| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration information. | String |
+| `build.environment` | Yes | Specifies which environment to use (prod, dev, or staging) when sending registration information. | String |
 | `__dev__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the development environment in Adobe Campaign Standard. | String |
 | `__dev__campaign.server` | No | Sets the endpoint URL for the development environment in the Adobe Campaign Standard instance. | String |
 | `__stage__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. | String |
