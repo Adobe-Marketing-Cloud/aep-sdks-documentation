@@ -10,6 +10,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 - Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
 
+## Aug 25, 2021
+
+### iOS AEPMobileServices 3.0.1
+
+* Fixed a bug where shared state was not being read correctly in response to some events.
+
 ## Aug 23, 2021
 
 ### Android Target 1.2.8
