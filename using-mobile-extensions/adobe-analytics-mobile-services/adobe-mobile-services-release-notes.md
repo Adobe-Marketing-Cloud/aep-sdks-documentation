@@ -6,7 +6,7 @@ Release notes and change logs for the Adobe Mobile Services extension
 
 ### iOS AEPMobileServices 3.0.1
 
-* Fixed a bug where shared state was not read correctly in response to some events.
+* Fixed a bug where shared state was not being read correctly in response to some events.
 
 ## Jun 4, 2021
 
