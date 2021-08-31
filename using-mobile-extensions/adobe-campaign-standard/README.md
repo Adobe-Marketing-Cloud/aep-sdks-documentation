@@ -104,7 +104,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 
 2. In Xcode, import the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal extensions:
 
-   **Objective C**
+   **Objective-C**
 
    ```objectivec
     #import "ACPCore.h"
@@ -125,7 +125,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% endtab %}
 
 {% tab title="React Native" %}
-You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core](../../foundation-extensions/mobile-core/) extension. Follow these steps to get started:
+You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure the native Android/iOS project in your react native project. Before installing the Campaign Standard extension, you'll need to install the [Core extension](../../foundation-extensions/mobile-core/). Follow these steps to get started:
 
 1. Create a React Native project.
 
@@ -154,7 +154,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 {% tab title="Android" %}
 **Java**
 
-1. In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
+In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
    ```java
     public class CampaignTestApp extends Application {
@@ -185,13 +185,13 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
     }
    ```
 
-For more information about starting Lifecycle, see [Lifecycle extension in Android](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
+For more information about starting Lifecycle, see the [Lifecycle extension in Android guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
 
 {% tab title="iOS" %}
-1. In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
+In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-   **Objective C**
+   **Objective-C**
 
    ```objectivec
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -231,13 +231,13 @@ For more information about starting Lifecycle, see [Lifecycle extension in Andro
     }
    ```
 
-For more information about starting Lifecycle, see [Lifecycle extension in iOS](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
+For more information about starting Lifecycle, see the [Lifecycle extension in iOS guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
 
 {% tab title="React Native" %}
 To register the Campaign Standard with Core, use the following API:
 
-#### JavaScript
+**JavaScript**
 
 ```javascript
 ACPCampaign.registerExtension();
@@ -247,15 +247,13 @@ ACPCampaign.registerExtension();
 
 ### Initialize the SDK and set up tracking
 
-To initialize the SDK and set up tracking, see [Initialize the SDK and set up tracking](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
+To initialize the SDK and set up tracking, see the[initialize the SDK and set up tracking tutorial](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
 {% tabs %}
 {% tab title="Android" %}
 ### Set up in-app messaging
 
-{% hint style="info" %}
-Need help creating an in-app message using Adobe Campaign? For more information, see [Preparing and sending an In-App message](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-an-in-app-message.html).
-{% endhint %}
+To learn how to create an in-app message using Adobe Campaign, see the [tutorial on preparing and sending an in-app message](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/in-app-messaging/preparing-and-sending-an-in-app-message.html).
 
 {% hint style="warning" %}
 If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
@@ -264,12 +262,12 @@ If you are developing an Android application, to correctly display fullscreen in
 <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
 ```
 
-In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see [Implementing Global Lifecycle Callbacks](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks).
+In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see the [implementing global lifecycle callbacks section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks) within the Lifecycle documentation.
 {% endhint %}
 
 ### Set up local notifications
 
-To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see [Configuring notification icons](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons).
+To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see the [configuring notification icons section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons) within the Adobe Analytics - Mobile Services documentation.
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -279,17 +277,19 @@ No additional setup is needed for iOS in-app messaging and local notifications.
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see the [setPushIdentifier section of the Adobe Identity API guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
-For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
+For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see the tutorial on [registering your app with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see the tutorial on [setting up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 {% hint style="info" %}
-Need help creating a push notification using Adobe Campaign? For more information, see [Preparing and sending a push notification](https://helpx.adobe.com/campaign/standard/channels/using/preparing-and-sending-a-push-notification.html).
+To learn more about creating a push notification using Adobe Campaign, see the tutorial on [preparing and sending a push notification](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Example
+### Java
+
+**Example**
 
 ```java
 FirebaseInstanceId.getInstance().getInstanceId()
@@ -312,12 +312,12 @@ FirebaseInstanceId.getInstance().getInstanceId()
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-iOS simulators do not support push messaging.
+iOS simulators do **not** support push messaging.
 {% endhint %}
 
-#### Objective C
+### Objective-C
 
-#### Example
+**Example**
 
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -327,9 +327,9 @@ iOS simulators do not support push messaging.
 }
 ```
 
-#### Swift
+### Swift
 
-#### Example
+**Example**
 
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -356,12 +356,14 @@ ACPCore.setPushIdentifier("pushID");
 User interactions with local or push notifications can be tracked by invoking the `collectMessageInfo` API. After the API is invoked, a network request is made to Campaign that contains the message interaction event.
 
 {% hint style="warning" %}
-The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. The Campaign documents on local and push notification tracking are the recommended source for the proper implementation of local and push notification message tracking. The Campaign document about local notification tracking is [Implementing local notification tracking](https://helpx.adobe.com/campaign/kb/local-notification-tracking.html#Description) and the Campaign document about push notification tracking is [Push Tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html).
+The code samples below are provided as examples on how to correctly invoke the `collectMessageInfo` API. For more specific details, please read the tutorials on [implementing local notification tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/local-tracking.html) and [configuring push tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html) within the Adobe Campaign documentation.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+### Java
+
+**Syntax**
 
 ```java
 public static void collectMessageInfo(final Map<String, Object> messageInfo)
@@ -369,9 +371,7 @@ public static void collectMessageInfo(final Map<String, Object> messageInfo)
 
 * _messageInfo_ is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
-#### Java
-
-#### Example
+**Example**
 
 ```java
 @Override
@@ -418,7 +418,9 @@ private void handleTracking() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Syntax
+### Objective-C
+
+**Syntax**
 
 ```objectivec
 + (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
@@ -426,9 +428,7 @@ private void handleTracking() {
 
 * _messageInfo_ is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
 
-#### Objective C
-
-#### Example
+**Example**
 
 ```objectivec
 // Handle notification interaction from background or closed
@@ -457,9 +457,17 @@ private void handleTracking() {
 }
 ```
 
-#### Swift
+### Swift
 
-#### Example
+**Syntax**
+
+```swift
++ (void) collectMessageInfo: (nonnull NSDictionary*) messageInfo;
+```
+
+* _messageInfo_ is a dictionary that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
+
+**Example**
 
 ```swift
 // Handle notification interaction from background or closed
@@ -490,18 +498,18 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 {% endtab %}
 {% endtabs %}
 
-### Deleting mobile properties in Experience Platform Launch
+### Deleting mobile properties in Experience Platform Data Collection UI
 
 {% hint style="danger" %}
-Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
+Deleting your property in the Experience Platform Data Connection UI might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-In Experience Platform Launch, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
+In the Experience Platform Data Collection UI, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in ???** status. For more information about deleting a property, please read the [delete a property](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property) section within the Experience Platform Data Collection UI documentation.
 
-To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeExperiencePlatformLaunchapplication).
+To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see the section on [deleting your ??? mobile application](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en#delete-app).
 
 {% hint style="warning" %}
-Deleting your mobile property in Experience Platform Launch does not automatically delete your Campaign Standard mobile app.
+Deleting your mobile property in Experience Platform Data Collection UI does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 
 ### Handling clickthrough destinations included in Campaign In-App messages
