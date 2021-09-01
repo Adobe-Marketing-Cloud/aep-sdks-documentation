@@ -1,5 +1,11 @@
 # Release Notes
 
+## Aug 27, 2021
+
+### Android Core 1.8.3
+
+- Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4

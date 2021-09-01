@@ -1,4 +1,4 @@
-# Tracking beacons
+# Tracking Beacons
 
 ## Emulate the trackBeacon call from the v4 SDKs
 
@@ -262,12 +262,12 @@ In the code samples above, attributes are set in the client-side user profile. Y
 
 In conditions, you can mix and match beacon data to determine the specific audience for your action. You can use the following beacon-related variables:
 
-* UUID (`a.beacon.uuid`)
-* Major ID (`a.beacon.major`)
-* Minor ID (`a.beacon.minor`)
-* User Proximity (`a.beacon.prox`)
+* UUID \(`a.beacon.uuid`\)
+* Major ID \(`a.beacon.major`\)
+* Minor ID \(`a.beacon.minor`\)
+* User Proximity \(`a.beacon.prox`\)
 
-Configure your condition by selecting the **Profile** extension, selecting **Profile Value** as the condition type, and typing the variable. The following graphic shows an example of a condition that passes when the Major ID (`a.beacon.major`) of the beacon is equal to 12:
+Configure your condition by selecting the **Profile** extension, selecting **Profile Value** as the condition type, and typing the variable. The following graphic shows an example of a condition that passes when the Major ID \(`a.beacon.major`\) of the beacon is equal to 12:
 
 ![](../../.gitbook/assets/beacon-condition.png)
 

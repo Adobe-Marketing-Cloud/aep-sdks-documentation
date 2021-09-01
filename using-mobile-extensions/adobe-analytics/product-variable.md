@@ -10,13 +10,13 @@ To set the products variable, set a context data key to `&&products`, and set th
 {% tab title="Android" %}
 ### Java <a id="java-2"></a>
 
-**Syntax** <a id="syntax"></a>
+**Syntax** 
 
 ```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
-**Example** <a id="example"></a>
+**Example** 
 
 ```java
 //create a context data dictionary
@@ -35,7 +35,7 @@ MobileCore.trackState("Order Confirmation", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+### Objective-C <a id="example"></a>
 
 **Syntax**
 
