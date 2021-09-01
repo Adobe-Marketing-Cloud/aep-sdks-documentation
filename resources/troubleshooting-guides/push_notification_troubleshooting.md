@@ -127,7 +127,7 @@ You can verify the push notification tracking in Project Griffon.
 1. Connect your app to a Griffon session.  
 2. Send a push notification to app from your Campaign instance.
 
-   To know more about how to send push notification, see [Preparing and sending a push notification](https://docs.adobe.com/content/help/en/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html).
+   To know more about how to send push notification, see [Preparing and sending a push notification](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html?lang=en).
 
 3. Receive a push notification in the device.
 4. Click on the push notification to launch the app.  

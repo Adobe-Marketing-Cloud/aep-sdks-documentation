@@ -12,7 +12,7 @@ To get started with Signal extension, complete the following steps:
 2. Define the necessary rules in Experience Platform Launch. 
 3. \(Optional\) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
 
-For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html).
+For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
 
 ## Watch the Video
 

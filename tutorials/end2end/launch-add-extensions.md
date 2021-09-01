@@ -16,7 +16,7 @@ An extension is a packaged set of code that extends the Launch interface and the
 
 ## Prerequisites
 
-Your Launch user account needs permission to "Manage Extensions in order to complete this lesson. If you are unable to complete any of these steps because the user interface options are not available to you, reach out to your Experience Cloud Administrator for access. For more information on Launch permissions, see [the documentation](https://docs.adobelaunch.com/administration/user-permissions).
+Your Launch user account needs permission to "Manage Extensions in order to complete this lesson. If you are unable to complete any of these steps because the user interface options are not available to you, reach out to your Experience Cloud Administrator for access. For more information on Launch permissions, see [the documentation](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/manage-permissions.html?lang=en).
 
 You will need the following solution details:
 

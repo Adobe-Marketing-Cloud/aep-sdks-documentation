@@ -9,7 +9,7 @@ To create a datastream, your organization must be provisioned for this feature i
 {% hint style="info" %}
 The Datastreams tool is available to customers on the _allow list_ regardless whether they use Experience Platform Launch for web tag management or to manage mobile app configuration.
 
-Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) article in the Experience Platform Launch documentation for more details.
+Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en) article in the Experience Platform Launch documentation for more details.
 {% endhint %}
 
 ## What is a datastream?

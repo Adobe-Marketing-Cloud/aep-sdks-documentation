@@ -4,9 +4,9 @@
 
 The Adobe Experience Platform Edge extension can send events that follow a previously defined XDM schema to Adobe Experience Platform.
 
-For more information about the Experience Data Model \(XDM\), see [XDM System overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html).
+For more information about the Experience Data Model \(XDM\), see [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en).
 
-To learn how to create a schema, see [Create a schema using the Schema Editor](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
+To learn how to create a schema, see [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
 
 ## XDM events
 

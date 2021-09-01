@@ -59,7 +59,7 @@ AdobeSDK.trackAction('AddToCart',
 
 While it is possible to send props, eVars, and events to Adobe Analytics with the SDK, you should collect and send context data variables instead. You may then use processing rules simplify data collection and to manage content as it is sent to Adobe Analytics.
 
-For more information, please see the [processing rules overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html).
+For more information, please see the [processing rules overview](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=en).
 
 ## Does the SDK support tracking the "hybrid" Mini Programs?
 

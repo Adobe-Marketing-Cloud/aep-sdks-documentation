@@ -34,7 +34,7 @@ There are several new features and benefits of using the Experience Platform Mob
 
 ## Do I need additional permissions to create a mobile property in Experience Platform Launch?
 
-If you need access to Experience Platform Launch, see the [user permissions document](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html). If you create a web property, you can also create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
+If you need access to Experience Platform Launch, see the [user permissions document](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en). If you create a web property, you can also create a mobile property. If you do not see the option to create a mobile property, turn off your ad blocker, and refresh the page.
 
 ## Should I create one property per app or multiple properties per app platform?
 
@@ -42,7 +42,7 @@ If your apps send data to the same Adobe Analytics report suites, use the same e
 
 ## How do I delete a mobile property in Adobe Experience Platform Launch?
 
-To delete a mobile property from Adobe Experience Platform Launch, please read the [delete a property tutorial](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
+To delete a mobile property from Adobe Experience Platform Launch, please read the [delete a property tutorial](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property).
 
 {% hint style="warning" %}
 If you delete a mobile property, you cannot undo this action!
@@ -138,7 +138,7 @@ Lifecycle metrics are out-of-the-box metrics that are automatically collected wh
 
 ### How can I set up, configure, or troubleshoot processing rules?
 
-To learn about processing rules please read the [processing rules tips and tricks guide](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html).
+To learn about processing rules please read the [processing rules tips and tricks guide](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html?lang=en).
 
 ### How are mobile visits different from launches?
 

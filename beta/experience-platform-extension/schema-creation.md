@@ -4,7 +4,7 @@ Experience Data Model \(XDM\) schemas are a set of rules that define and validat
 
 ## Sample schema for mobile extension
 
-The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html#dnl-xdm-experienceevent) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following field groups should be included in the schema:
+The XDM schema for the AEP Edge extension should extend from the [XDM Experience Event](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en#xdm-experience-event) class, which is a time-series based class and captures the state of the system when an event, or events, occurred. The following field groups should be included in the schema:
 
 * [Application Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-application.schema.json) - Data that is related to the application that generates or is targeted by the event.
 * [Environment Details](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-environment-details.schema.json) - Data that is related to the device, location, and surrounding environment.

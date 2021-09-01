@@ -520,7 +520,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 Deleting your property in Experience Platform Launch might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-In Experience Platform Launch, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#delete-a-property).
+In Experience Platform Launch, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in Launch** status. For more information about deleting a property, see [Delete a Property](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property).
 
 To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see [Deleting your Adobe Launch mobile application](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#DeletingyourAdobeExperiencePlatformLaunchapplication).
 

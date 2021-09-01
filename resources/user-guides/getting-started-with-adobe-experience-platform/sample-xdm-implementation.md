@@ -33,7 +33,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 ## Create schema and dataset for product reviews
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
-2. Create an [XDM Schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html) as follows:
+2. Create an [XDM Schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en) as follows:
    * From the left panel, select **Schemas**
    * Select **Create schema**, followed by **XDM ExperienceEvent**
    * Set the name for this schema as "Product Reviews".
