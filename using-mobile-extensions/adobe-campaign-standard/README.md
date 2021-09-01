@@ -20,7 +20,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ![](../../.gitbook/assets/campaign-extension-config-v5.png)
 
-#### Campaign Standard endpoints
+### Campaign Standard endpoints
 
 Provide endpoint URL(s) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
 
@@ -56,12 +56,9 @@ Remember the following information when you add the Campaign extension to your a
 
 | Extension | Information |
 | :--- | :--- |
-| Campaign Standard | This Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
-| :--- | :--- |
+| Campaign Standard | The Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extension. |
 | Profile | The Profile extension is required for in-app trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
-| :--- | :--- |
 | Signal | The Signal extension is required for all postback rules to work. For more information, see [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals). |
-| :--- | :--- |
 | Lifecycle | The Lifecycle extension is required for a profile to be registered in Campaign. In order to do this, you will need to implement the Lifecycle APIs. For more information, please read either the [Lifecycle API (Android)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android) or the [Lifecycle API (iOS)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios) documentation. |
 
 {% hint style="info" %}
@@ -506,7 +503,7 @@ Deleting your property in the Experience Platform Data Connection UI might cause
 
 In the Experience Platform Data Collection UI, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in ???** status. For more information about deleting a property, please read the [delete a property](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property) section within the Experience Platform Data Collection UI documentation.
 
-To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see the section on [deleting your ??? mobile application](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en#delete-app).
+To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see the section on [deleting your tags-enabled mobile application](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en#delete-app).
 
 {% hint style="warning" %}
 Deleting your mobile property in Experience Platform Data Collection UI does not automatically delete your Campaign Standard mobile app.
@@ -514,7 +511,7 @@ Deleting your mobile property in Experience Platform Data Collection UI does not
 
 ### Handling clickthrough destinations included in Campaign In-App messages
 
-A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as [https://www.adobe.com](https://www.adobe.com) or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true`, which can be used to direct the user to a specific area of your app.
+A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as [https://www.adobe.com](https://www.adobe.com) or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true` which can be used to direct the user to a specific area of your app.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -522,14 +519,14 @@ A destination URL can be added to in-app messages that are delivered from Adobe 
 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
-* `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
-* `adb_deeplink` key present in the local notification payload
-* `uri` key present in the push notification payload
+* The `url` key is present in the alert message payload
+* The `url` is present in the query parameters of a fullscreen message button (`data-destination-url`)
+* The `adb_deeplink` key is present in the local notification payload
+* The `uri` key is present in the push notification payload
 
 #### Handling in-app message deep links on Android
 
-To handle deep links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, see [Create Deep Links to App Content](https://developer.android.com/training/app-links/deep-linking). Once the desired activity is started by the newly added intent filter, the data present in the deep link can be retrieved. Any further actions based on the data present in the deep link can then be made.
+To handle deep links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, please read the tutorial on [creating deep links to app content](https://developer.android.com/training/app-links/deep-linking). Once the desired activity is started by the newly added intent filter, the data present in the deep link can be retrieved. After that point, any further actions based on the data present in the deep link can be made.
 
 #### Java
 
@@ -548,7 +545,9 @@ public void onCreate(Bundle savedInstanceState) {
 
 #### Handling in-app message app links on Android
 
-Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality although they have the appearance of a standard website URL. The intent filter previously setup for deep links is modified to handle `http` schemes and verification of the app link needs to be setup on [Google Search Console](https://support.google.com/webmasters/answer/9008080). For more information on the additional verification setup needed, see [Verify Android App Links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if it is installed or redirect to your app's website if it isn't. For more information on Android app links, see [Handling Android App Links](https://developer.android.com/training/app-links/index.html#add-app-links).
+Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality, although they have the appearance of a standard website URL. The intent filter previously set up for deep links is modified to handle `http` schemes and verification of the app link needs to be set up on [Google Search Console](https://support.google.com/webmasters/answer/9008080). 
+
+For more information on the additional verification setup needed, please read the tutorial on [verifying Android app links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information on Android app links, please read the guide on [handling Android app links](https://developer.android.com/training/app-links/index.html#add-app-links).
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -556,18 +555,18 @@ Android app links were introduced with Android OS 6.0. They are similar to deep 
 
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
-* `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
-* `adb_deeplink` key present in the local notification payload
-* `uri` key present in the push notification payload
+* The `url` key is present in the alert message payload
+* The `url` is present in the query parameters of a fullscreen message button (`data-destination-url`)
+* The `adb_deeplink` key is present in the local notification payload
+* The `uri` key is present in the push notification payload
 
 #### Handling alert or fullscreen notification deep links on iOS
 
 When a deep link is opened in Safari, this does not allow the app to directly handle the link. To provide a better customer experience, the Experience Platform SDK provides a URL handler that you can use with alert or fullscreen notification deep links.
 
-#### Objective-C
+**Objective-C**
 
-```text
+```objc
 [ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
     NSLog(@"Inside registerURLHandler callback, clickthrough url is: %@", url);
   if([url containsString:@"campaigndemoapp://"]){
@@ -579,7 +578,7 @@ When a deep link is opened in Safari, this does not allow the app to directly ha
 }];
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 ACPCore.registerURLHandler({ url in
@@ -599,7 +598,7 @@ The website URL in the local notification response can be loaded using the [open
 
 #### Objective-C
 
-```text
+```objc
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     dispatch_async(dispatch_get_main_queue(), ^{
       NSDictionary *userInfo = response.notification.request.content.userInfo;
@@ -639,7 +638,7 @@ The website URL in the push notification can be loaded using the [openURL:option
 
 #### Objective-C
 
-```text
+```objc
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -676,11 +675,11 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
 
-The deep link URL can be retrieved from the response object passed into the handler method. An example for retrieving the deep link URL and loading web links is provided below. The retrieved URL can then be parsed to aid with app navigation decision making. For more information about handling deep links and setting URL schemes for iOS, see [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc).
+The deep link URL can be retrieved from the response object passed into the handler method. An example for retrieving the deep link URL and loading web links is provided below. The retrieved URL can then be parsed to aid with app navigation decision making. For more information about handling deep links and setting URL schemes for iOS, see the tutorial on [defining a custom URL scheme for your app](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app?preferredLanguage=occ).
 
-#### Objective-C
+**Objective-C**
 
-```text
+```objc
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     dispatch_async(dispatch_get_main_queue(), ^{
       NSDictionary *userInfo = response.notification.request.content.userInfo;
@@ -696,7 +695,7 @@ The deep link URL can be retrieved from the response object passed into the hand
 }
 ```
 
-#### Swift
+**Swift**
 
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -716,21 +715,25 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 #### Handling in-app message universal links on iOS
 
-Universal links are available for iOS 9.0 devices or later. They can be used to redirect to specific areas of your app if it is installed or redirect to your app's website if it isn't. For more information, see [Allowing Apps and Websites to Link to Your Content](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content). Universal links are typically used from outside your installed app, for example, from a link present on a website or a link included in an email message. iOS will not open a universal link if it determines that the link is being opened from within the app it links to. For more information on this limitation, see the section titled "_Preparing Your App to Handle Universal Links_" at [Support Universal Links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2). If a universal link is included as a Campaign clickthrough destination, the link must be handled by the app developer in a similar fashion as a deep link. More information can be seen at [Handling alert or fullscreen notification deep links on iOS](./#Handling%20alert%20or%20fullscreen%20notification%20deep%20links%20on%20iOS) and [Handling local or push notification deep links on iOS](./#Handling%20local%20or%20push%20notification%20deep%20links%20on%20iOS).
+Universal links are available for devices on iOS 9.0 or later. They can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information, see the guide on [allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content). 
+
+Universal links are typically used from outside your installed app. For example, a universal link would be used from a link present on a website or a link included in an email message. iOS will **not** open a universal link if it determines that the link is being opened from within the app it links to. For more information on this limitation, see the "Preparing Your App to Handle Universal Links" section within the documentation on [supporting universal links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2). If a universal link is included as a Campaign clickthrough destination, the link must be handled by the app developer in a similar fashion as a deep link. More information can be seen in the [handling alert or fullscreen notification deep links on iOS](#handling-alert-or-fullscreen-notification-deep-links-on-ios) and [handling local or push notification deep links on iOS](#handling-local-or-push-notification-deep-links-on-ios) sections.
 {% endtab %}
 {% endtabs %}
 
 ### Customizing the frequency of registration requests sent to Campaign
 
-The frequency of registration requests sent to Campaign are reduced starting with Campaign Standard Android extension 1.0.7 and iOS extension 1.0.6. The default registration delay is 7 days since the last successful registration. This registration delay can be configured to provide more flexibility on when to send a registration request.
+The frequency of registration requests sent to Campaign are reduced starting with Campaign Standard Android extension version 1.0.7 and iOS extension version 1.0.6. The default registration delay is seven days since the last successful registration. This registration delay can be configured to provide more flexibility on when to send a registration request.
 
 {% hint style="danger" %}
-The configuration setting to pause registration requests is provided for specific use cases only. The use of this configuration setting should be avoided when possible.
+The configuration setting to pause registration requests is provided for specific use cases only. The use of this configuration setting should be **avoided** when possible.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
-#### Example
+#### Java
+
+**Example**
 
 ```java
 MobileCore.updateConfiguration(new HashMap<String, Object>() {
@@ -743,9 +746,9 @@ MobileCore.updateConfiguration(new HashMap<String, Object>() {
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective C
+#### Objective-C
 
-#### Example
+**Example**
 
 ```objectivec
 NSMutableDictionary *config = [@{} mutableCopy];
@@ -756,7 +759,7 @@ config[@"campaign.registrationPaused"] = [NSNumber numberWithBool:NO]; // boolea
 
 #### Swift
 
-#### Example
+**Example**
 
 ```swift
 var config = [AnyHashable: Any]()
@@ -771,7 +774,7 @@ Giving a value of `0` when setting `campaign.registrationDelay` will send a regi
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Campaign Standard configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update SDK configuration programmatically, use the following information to change your Campaign Standard configuration values. For more information, see the [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
@@ -785,5 +788,5 @@ To update SDK configuration programmatically, use the following information to c
 | `__stage__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. | String |
 | `__stage__campaign.server` | No | Sets the endpoint URL for the staging environment in the Adobe Campaign Standard instance. | String |
 | `campaign.registrationDelay` | No | Sets the number of days to delay the sending of the next Adobe Campaign Standard registration request. | Integer |
-| `campaign.registrationPaused` | No | Sets the Adobe Campaign Standartd registration request paused status. | Boolean |
+| `campaign.registrationPaused` | No | Sets the Adobe Campaign Standard registration request paused status. | Boolean |
 
