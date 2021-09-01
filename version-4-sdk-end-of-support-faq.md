@@ -22,7 +22,7 @@ We recommend that you migrate to the new Experience Platform Mobile SDK when fea
 
 Here are end-of-support considerations for the version 4 SDKs:
 
-* [4x SDKs](https://github.com/Adobe-Marketing-Cloud/mobile-services) will have continued [Adobe Customer Support](https://helpx.adobe.com/contact/enterprise-support.ec.html) and [access to forums](https://github.com/Adobe-Marketing-Cloud/mobile-services/issues) until **August 31, 2021.**
+* [4x SDKs](https://github.com/Adobe-Marketing-Cloud/mobile-services) will have continued [Adobe Customer Support](https://experienceleague.adobe.com/?support-solution=General#support) and [access to forums](https://github.com/Adobe-Marketing-Cloud/mobile-services/issues) until **August 31, 2021.**
 * Adobe will release final updates for version 4 SDKs \(as needed\) to facilitate compatibility with upcoming OS releases including iOS 14 and Android 11.
 * Customer issues will continue to be addressed by impact through **September 30, 2020,** after which Adobe may, in its sole discretion, develop new fixes for problems of high technical impact or business exposure for customers. Based on the customer input, Adobe will determine the degree of impact and exposure and the consequent activities.
 * Starting **September 2021**, no new fixes, OS-related updates, or support for 4x SDKs will be provided.  Customers will be expected to use the new [Experience Platform Mobile SDKs](./).
@@ -55,5 +55,5 @@ SDK downloads through GitHub and other locations will be available through **Aug
 
 ### Whom do I contact for more information the end-of-support for Version 4 SDKs?
 
-To discuss your specific situation and receive advice on the best next steps, contact [Adobe Customer Support](https://helpx.adobe.com/contact/enterprise-support.ec.html) .
+To discuss your specific situation and receive advice on the best next steps, contact [Adobe Customer Support](https://experienceleague.adobe.com/?support-solution=General#support).
 

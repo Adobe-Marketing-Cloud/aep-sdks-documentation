@@ -124,7 +124,7 @@ Add the following rule to your custom ProGuard rules file, typically labeled `pr
 
 Implementing push notification tracking and measurement with the SDK depends on the Experience Cloud solution being used.
 
-* For the Adobe Campaign Standard extension, please read the [Adobe Campaign standard push tracking tutorial](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+* For the Adobe Campaign Standard extension, please read the [Adobe Campaign standard push tracking tutorial](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html?lang=en).
 * For the Adobe Campaign Classic extension, please read the [Adobe Campaign Classic push notifications tracking tutorial](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-campaignclassic/adobe-campaignclassic-api-reference#tracknotification-api).
 * For the Adobe Analytics - Mobile Services extension, please read the [set up tracking for Mobile Services push notifications tutorial](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#set-up-push-tracking).
 
@@ -169,10 +169,10 @@ The following settings explain how settings between the SDK and your report suit
 
 #### Contact Adobe Customer Care <a id="contact-adobe-customer-care"></a>
 
-If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance.
+If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
 
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 

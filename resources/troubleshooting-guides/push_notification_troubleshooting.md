@@ -38,7 +38,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 {% endtab %}
 {% endtabs %}
 
-For more information about configuration, see [Channel specific application configuration in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).
+For more information about configuration, see [Channel specific application configuration in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en).
 
 ## Set up an Android or iOS app to receive push notifications
 
@@ -118,7 +118,7 @@ The following events are related to the tracked push notifications:
 * Click \(User clicked the notification.\)
 * Open \(App opened in response to user's click on notification.\)
 
-  For more information about implementing the tracking of push notification events, see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+  For more information about implementing the tracking of push notification events, see [Push Tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html?lang=en).
 
 ### Troubleshooting using Project Griffon
 

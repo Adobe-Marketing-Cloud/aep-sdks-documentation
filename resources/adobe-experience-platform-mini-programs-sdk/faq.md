@@ -27,7 +27,7 @@ The following settings explain how settings between the SDK and your report suit
 
 ### Contact Adobe Customer Care
 
-If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance.
+If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
 
 ## Do Adobe Analytics-provided tracking servers have an ICP?
 
