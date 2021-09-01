@@ -1,5 +1,15 @@
 # Release Notes
 
+## Sept 1, 2021
+
+### iOS AEPEdge 1.1.2
+
+* Now honors timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+
+### Android Edge 1.1.2
+
+* Now honors timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+
 ## June 10, 2021
 
 ### iOS AEPEdge 1.1.1
