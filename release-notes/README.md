@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## Sept 1, 2021
+## Sept 2, 2021
 
 ### iOS AEPEdge 1.1.2
 
