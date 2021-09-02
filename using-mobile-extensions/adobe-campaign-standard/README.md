@@ -5,12 +5,12 @@
 {% endhint %}
 
 {% hint style="danger" %}
-If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to the [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/data-collection/), instead of the Experience Platform Data Collection integration environment.
+If you participated in the Campaign Standard beta, to use the new Campaign Standard extension, go to the [Data Collection UI](https://experience.adobe.com/data-collection/), instead of the Data Collection integration environment.
 {% endhint %}
 
-## Configure the Campaign Standard extension in Experience Platform Data Collection
+## Configure the Campaign Standard extension in the Data Collection UI
 
-1. In the Experience Platform Data Collection UI, click the **Extensions** tab.
+1. In the Data Collection UI, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Campaign Standard** extension, and click **Install**.
 3. Provide the extension settings.
 4. Click **Save**.
@@ -30,9 +30,9 @@ For this extension, these endpoint URLs **does not** contain the `http://` or `h
 
 #### pKey
 
-A unique, automatically generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in Experience Platform Data Collection UI, configure your mobile property in Campaign Standard. For more information, please read the tutorial on [configuring a mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html).
+A unique, automatically generated identifier for a mobile app that was configured in Adobe Campaign Standard. After you configure this extension in the Data Collection UI, configure your mobile property in Campaign Standard. For more information, please read the tutorial on [configuring a mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html).
 
-After the configuration is successful in Campaign, the pKey is automatically generated and configured in Experience Platform Data Collection Campaign extension for a successful validation.
+After the configuration is successful in Campaign, the pKey is automatically generated and configured in the Campaign extension for a successful validation.
 
 #### MCIAS region
 
@@ -62,7 +62,7 @@ Remember the following information when you add the Campaign extension to your a
 | Lifecycle | The Lifecycle extension is required for a profile to be registered in Campaign. In order to do this, you will need to implement the Lifecycle APIs. For more information, please read either the [Lifecycle API (Android)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android) or the [Lifecycle API (iOS)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios) documentation. |
 
 {% hint style="info" %}
-The instructions to add these extensions to your mobile app are also available in Experience Platform Data Collection. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
+The instructions to add these extensions to your mobile app are also available in the Data Collection UI. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
 {% endhint %}
 
 {% tabs %}
@@ -495,21 +495,21 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 {% endtab %}
 {% endtabs %}
 
-### Deleting mobile properties in Experience Platform Data Collection UI
+### Deleting mobile properties in the Data Collection UI
 
 {% hint style="danger" %}
 Deleting your property in the Experience Platform Data Connection UI might cause disruption to your recurring push and in-app messaging activities.
 {% endhint %}
 
-In the Experience Platform Data Collection UI, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in ???** status. For more information about deleting a property, please read the [delete a property](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property) section within the Experience Platform Data Collection UI documentation.
+In the Data Collection UI, if you delete your mobile property, review your mobile property status in the Campaign Standard extension and ensure that the property displays an updated **Deleted in ???** status. For more information about deleting a property, please read the [delete a property](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/companies-and-properties.html?lang=en#delete-a-property) section within the Data Collection UI documentation.
 
 To remove the corresponding mobile app in Campaign Standard, click **Remove from ACS**. For more information, see the section on [deleting your tags-enabled mobile application](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en#delete-app).
 
 {% hint style="warning" %}
-Deleting your mobile property in Experience Platform Data Collection UI does not automatically delete your Campaign Standard mobile app.
+Deleting your mobile property in the Data Collection UI does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 
-### Handling clickthrough destinations included in Campaign In-App messages
+### Handling clickthrough destinations included in Campaign in-app messages
 
 A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as [https://www.adobe.com](https://www.adobe.com) or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true` which can be used to direct the user to a specific area of your app.
 
