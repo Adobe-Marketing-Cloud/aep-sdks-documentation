@@ -2045,5 +2045,5 @@ ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
 
 ## Additional information
 
-To learn what context data is, please read the [documentation on context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html).
+To learn what context data is, please read the [documentation on context data](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en).
 

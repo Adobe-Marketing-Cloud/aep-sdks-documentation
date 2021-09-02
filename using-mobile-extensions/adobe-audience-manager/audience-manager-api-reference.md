@@ -303,7 +303,7 @@ ACPAudience.registerExtension();
 This API helps you reset the Audience Manager UUID and purges the current visitor profile.
 
 {% hint style="info" %}
-For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en).
 {% endhint %}
 
 {% tabs %}
