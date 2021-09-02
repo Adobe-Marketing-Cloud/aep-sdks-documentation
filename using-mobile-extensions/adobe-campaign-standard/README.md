@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 #### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaign.adobe.com`.
+Provide endpoint URL(s) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, for example, `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs should be typed in **without** the `http://` or `https://.`and **cannot** end with a forward slash.
@@ -303,7 +303,7 @@ No additional setup is needed for iOS in-app messaging and local notifications.
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see [setPushIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setPushIdentifierTitle).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see [Registering Your App with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -539,7 +539,7 @@ A destination URL can be added to in-app messages that are delivered from Adobe 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
 * `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button \(`data-destination-url`\)
+* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
 * `adb_deeplink` key present in the local notification payload
 * `uri` key present in the push notification payload
 
@@ -573,7 +573,7 @@ Android app links were introduced with Android OS 6.0. They are similar to deep 
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
 * `url` key present in the alert message payload
-* `url` present in the query parameters of a fullscreen message button \(`data-destination-url`\)
+* `url` present in the query parameters of a fullscreen message button (`data-destination-url`)
 * `adb_deeplink` key present in the local notification payload
 * `uri` key present in the push notification payload
 
@@ -599,7 +599,7 @@ When a deep link is opened in Safari, this does not allow the app to directly ha
 
 ```swift
 ACPCore.registerURLHandler({ url in
-    print("Inside registerURLHandler callback, clickthrough url is: \(url ?? "")")
+    print("Inside registerURLHandler callback, clickthrough url is: (url ?? "")")
     if url?.contains("campaigndemoapp://") ?? false {
         // handle the deep link (parse any data present in the deep link and/or redirect to a desired area within the app)
        return true
@@ -640,7 +640,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
         if (urlString?.count ?? 0) != 0 {
             if let url = URL(string: urlString ?? "") {
                 UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                    print("Open \(urlString ?? ""): \(success)")
+                    print("Open (urlString ?? ""): (success)")
                 })
             }
         }
@@ -679,7 +679,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
         if (urlString?.count ?? 0) != 0 {
             if let url = URL(string: urlString ?? "") {
                 UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                    print("Open \(urlString ?? ""): \(success)")
+                    print("Open (urlString ?? ""): (success)")
                 })
             }
         }
@@ -795,7 +795,7 @@ To update SDK configuration programmatically, use the following information to c
 | `campaign.mcias` | Yes | Sets the in-app messaging service URL endpoint. | String |
 | `campaign.server` | Yes | Sets the endpoint URL for the production environment in the Adobe Campaign Standard instance. | String |
 | `campaign.pkey` | Yes | Sets the identifier for a mobile app that was configured in the production environment in the Adobe Campaign Standard. | String |
-| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration information. | String |
+| `build.environment` | Yes | Specifies which environment to use (prod, dev, or staging) when sending registration information. | String |
 | `__dev__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the development environment in Adobe Campaign Standard. | String |
 | `__dev__campaign.server` | No | Sets the endpoint URL for the development environment in the Adobe Campaign Standard instance. | String |
 | `__stage__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. | String |

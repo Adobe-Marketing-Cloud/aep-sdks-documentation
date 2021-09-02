@@ -32,7 +32,7 @@ Type the channel name property.
 
 ### **Player name**
 
-Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+Type the name of the media player in use (for example, _AVPlayer_, _Native Player_, or _Custom Player_).
 
 ### **Application Version**
 
@@ -255,5 +255,5 @@ To update your SDK configuration programmatically, use the following information
 | :--- | :--- |
 | Android | Supported |
 | Apple iOS​ | Supported |
-| React Native \(iOS & Android\) | Supported |
+| React Native (iOS & Android) | Supported |
 

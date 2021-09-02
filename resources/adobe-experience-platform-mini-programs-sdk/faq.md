@@ -14,7 +14,7 @@ If you have followed the documentation and are unable to see reporting data in y
 
 You can use the debug tools in [WeChat DevTools](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/devtools.html) or in a network proxy monitor, such as [Charles](https://www.charlesproxy.com/) or [Fiddler](https://www.telerik.com/fiddler), to ensure that your Mini Program is sending network requests to Adobe Analytics.
 
-For example, network hits to Adobe Analytics will contain values from your SDK configuration block such as tracking server and report suite\(s\) values; context variables; or `s` parameters.
+For example, network hits to Adobe Analytics will contain values from your SDK configuration block such as tracking server and report suite(s) values; context variables; or `s` parameters.
 
 ### Ensure appropriate timestamp configuration
 
@@ -31,7 +31,7 @@ If you are unable to resolve your concerns through resources provided here, plea
 
 ## Do Adobe Analytics-provided tracking servers have an ICP?
 
-As Tencent requires ICP on all the domains requested by WeChat Mini Programs, Adobe Analytics tracking servers have a wildcard ICP \(`*.adobedc.cn`\), which means that your tracking server \(typically of the format `yourcompany.adobedc.cn`\) has an ICP. You do not need to separately apply for an ICP for subdomain of `yourcompany.adobedc.cn`.
+As Tencent requires ICP on all the domains requested by WeChat Mini Programs, Adobe Analytics tracking servers have a wildcard ICP (`*.adobedc.cn`), which means that your tracking server (typically of the format `yourcompany.adobedc.cn`) has an ICP. You do not need to separately apply for an ICP for subdomain of `yourcompany.adobedc.cn`.
 
 ## Can I use [Adobe Experience Platform Launch](https://launch.adobe.com) to configure and deploy this SDK?
 
@@ -39,7 +39,7 @@ Deployment through Adobe Experience Platform Launch for this SDK is not yet supp
 
 ## Can I use [Mobile Services](https://mobilemarketing.adobe.com) to configure and deploy this SDK?
 
-Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configuration settings \(such as a report suite or a tracking server\) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
+Deployment through Mobile Services for this SDK is not yet supported. However, you may use related configuration settings (such as a report suite or a tracking server) with an app created in Mobile Services. Additionally, variable mapping associated with an app in Mobile Services will apply to data sent to Adobe Analytics through the SDK.
 
 ## Can I set products variables?
 

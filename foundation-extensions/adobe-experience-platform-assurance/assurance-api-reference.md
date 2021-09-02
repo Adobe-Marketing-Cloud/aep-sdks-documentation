@@ -119,7 +119,7 @@ Console.WriteLine("AEPAssurance version installed is: " + version);
 The `startSession` API needs to be called to begin a AEP Assurance session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-You may call this API when the app launches with a url \(see code snippet below for sample usage\)
+You may call this API when the app launches with a url (see code snippet below for sample usage)
 {% endhint %}
 
 {% tabs %}

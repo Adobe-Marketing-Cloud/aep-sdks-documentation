@@ -2,7 +2,7 @@
 
 The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
 
-The Signal extension is bundled with the [MobileCore \(Android\)/ACPCore \(iOS\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
+The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. \(Optional\) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
+3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
 

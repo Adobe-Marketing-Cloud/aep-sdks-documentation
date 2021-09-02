@@ -242,7 +242,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Platform and is a 38-character ID.
+Previously known as MCID, the Experience Cloud ID (ECID) uniquely identifies each visitor in the Adobe Experience Platform and is a 38-character ID.
 {% endhint %}
 
 After the configuration is complete, an ECID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -332,7 +332,7 @@ If your app opens mobile web content, you need to ensure that visitors are not i
 The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-out.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
@@ -367,7 +367,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting in SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-java) and build your own URL:
+Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -396,7 +396,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    

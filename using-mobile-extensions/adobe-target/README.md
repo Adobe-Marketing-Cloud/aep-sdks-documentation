@@ -400,7 +400,7 @@ When merging, the new keys in the mbox parameters or the profile parameters are 
 
 ## Target sessions
 
-The Target extension \(version 2.1.4 for iOS\) and \(version 1.1.3 for Android\) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes.
+The Target extension (version 2.1.4 for iOS) and (version 1.1.3 for Android) now supports persistent sessions. When a Target request is received, if a session ID does not exist, a new ID is generated and is sent in the request. This ID, with the Edge Host that is returned from Target, is kept in persistent storage for the configured `target.sessionTimeout` period. If the timeout value is not configured, the default value is 30 minutes.
 
 If no Target request is received during the configured `target.sessionTimeout` or if the [resetExperience](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#resetExperience) API is called, these variables are reset and removed from persistent storage.
 
@@ -464,16 +464,16 @@ Prefetched offer content does not persist across application launches. The prefe
 Offer prefetch is not available while visual preview mode is enabled.
 {% endhint %}
 
-## Target with Analytics \(A4T\) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
+## Target with Analytics (A4T) <a id="integrating-adobe-target-with-analytics-a-4-t"></a>
 
-To track the performance of your Target activities for certain segments, set up the Analytics for Target \(A4T\) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target \(A4T\)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=en).
+To track the performance of your Target activities for certain segments, set up the Analytics for Target (A4T) cross-solution integration by enabling the A4T campaigns. This integration allows you to use Analytics reports to examine your results. If you use Analytics as the reporting source for an activity, all reporting and segmentation for that activity is based on Analytics data collection. For more information, see [Adobe Analytics for Adobe Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=en).
 
 Once Analytics is listed as the reporting source for an activity on Target UI, A4T works out of the box in the Target SDK. The Target SDK extension extracts the A4T payload from the Target server response, dispatches an event for Analytics SDK extension to send an internal track action request to the configured Analytics server.
 
 The A4T payload returned from Target servers is sent to Adobe Analytics in the following cases:
 
 * When one or more locations are retrieved using [retrieveLocationContent](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#retrievelocationcontent) API call.
-* When one or more prefetched locations are loaded and a subsequent [locationsDisplayed](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#locationsdisplayed) API call is made for the location\(s\).
+* When one or more prefetched locations are loaded and a subsequent [locationsDisplayed](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target/target-api-reference#locationsdisplayed) API call is made for the location(s).
 
 {% hint style="warning" %}
 For A4T data to be sent to Adobe Analytics client-side, make sure Analytics SDK extension is installed and registered in your mobile application. For more information, see [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
@@ -493,7 +493,7 @@ For more information, see [Programmatic updates to Configuration](https://aep-sd
 | target.propertyToken | `at_property` token value, which is generated from the Target UI. If this value is left blank, no token is sent in the Target network calls. | String |
 | target.previewEnabled | Boolean parameter, which can be used to enable/disable Target Preview. If not specified, then Preview will be enabled by default. | Boolean |
 | target.sessionTimeout | The duration, in seconds, during which the Target session ID and Edge Host are persisted. If this value is not specified, the default timeout value is 30 minutes. | Integer |
-| target.server | _Optional_. If provided, all Target requests will be sent to this host. Available since v2.1.7 \(iOS\), v1.1.6 \(Android\). e.g. - `mytargetdomain.com` | String |
+| target.server | _Optional_. If provided, all Target requests will be sent to this host. Available since v2.1.7 (iOS), v1.1.6 (Android). e.g. - `mytargetdomain.com` | String |
 
 {% hint style="warning" %}
 We recommend that, instead of passing the property token as a mbox parameter, you use an Experience Platform Launch configuration so that Target can pass the token. If the token is passed both in an Experience Platform Launch configuration, and as a mbox parameter, the token that was provided as the mbox parameter is discarded.
@@ -507,5 +507,5 @@ Currently, the `target.sessiontimeout` value can only be configured programmatic
 
 * Want to get your Target client code? See the **Client** row in [Configure mbox.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/implement-target-for-client-side-web.html?lang=en).
 * What is an mbox? See [How Target works in mobile apps](https://experienceleague.adobe.com/docs/target/using/implement-target/mobile-apps/mobile-how-target-works-mobile-apps.html?lang=en).
-* What is Analytics for Target \(A4T\)? See [Adobe Analytics as the reporting source for Adobe Target \(A4T\)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=en).
+* What is Analytics for Target (A4T)? See [Adobe Analytics as the reporting source for Adobe Target (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=en).
 

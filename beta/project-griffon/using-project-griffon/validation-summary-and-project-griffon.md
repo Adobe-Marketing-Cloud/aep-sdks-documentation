@@ -36,7 +36,7 @@ After you have tested your function, you can click **Upload** to save your valid
 | `uuid` | String | Universally unique identifier for the event. |
 | `timestamp` | Number | Timestamp from the client when the event was sent to Project Griffon. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
-| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
+| `vendor` | String | Vendor identification string in the reverse domain name format (for example, com.adobe.griffon). |
 | `type` | String | Used to denote the type of event. |
 | `payload` | Object | Defines the data for the event and contains unique and common properties. Some common properties include `ACPExtensionEventSource and ACPExtensionEventType`. |
 | `annotations` | Array | An array of annotation objects. |
@@ -46,7 +46,7 @@ After you have tested your function, you can click **Upload** to save your valid
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `uuid` | String | Universally unique identifier for the annotation. |
-| `type` | String | Used to denote the type of annotation and is usually the name of the plugin \(for example, analytics\). |
+| `type` | String | Used to denote the type of annotation and is usually the name of the plugin (for example, analytics). |
 | `payload` | Object | Defines the data that should supplement the event. For Adobe Analytics, this is where the post-processed hit data is contained. |
 
 ### Returning Validation Results

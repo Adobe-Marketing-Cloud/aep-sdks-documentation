@@ -9,7 +9,7 @@ When implementing push messaging via the Adobe Experience Platform Mobile SDK, y
 1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk).
 2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event).
 3. [Ensure user opt in for push in Adobe Analytics](troubleshooting-push.md#validate-analytics-request-with-push-optin).
-4. [Confirm user ID is correctly set \(and is same from steps 2 and 3, above](troubleshooting-push.md#validate-the-user-id-is-correct)\).
+4. [Confirm user ID is correctly set (and is same from steps 2 and 3, above](troubleshooting-push.md#validate-the-user-id-is-correct)).
 
 ## Pass the Push Identifier to the SDK
 

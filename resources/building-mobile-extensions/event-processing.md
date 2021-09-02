@@ -9,7 +9,7 @@ An event is composed of the following components:
 * Versioning information, which is used to synchronize a group of events with the associated shared data, is not directly exposed to extensions. This information is implicitly used when getting shared states
 
 {% hint style="info" %}
-Extensions use the `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class to create events and dispatch them to the Mobile SDK event hub to trigger the extension business logic or to retrieve data.
+Extensions use the `ACPExtensionEvent` (iOS) / `Event` (Android) class to create events and dispatch them to the Mobile SDK event hub to trigger the extension business logic or to retrieve data.
 {% endhint %}
 
 The event type and event source that are associated with the received event can be in lower case because the Mobile SDK compares the type and the source as case insensitive values. When you check the event type and event source of the event, you should use the ignore case string comparison.

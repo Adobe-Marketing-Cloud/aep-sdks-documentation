@@ -1,6 +1,6 @@
 # Mobile extension schema
 
-Experience Data Model \(XDM\) schemas are a set of rules that define and validate the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more field groups. For more information about XDM Schemas, see [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) and [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html). For information about creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html).
+Experience Data Model (XDM) schemas are a set of rules that define and validate the customer experience data format in Adobe Experience Platform. XDM schemas are composed of one class and zero or more field groups. For more information about XDM Schemas, see [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) and [Basics of schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html). For information about creating your own schema, see the tutorial on [Create a schema using the Schema Editor](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html).
 
 ## Sample schema for mobile extension
 
@@ -18,12 +18,12 @@ The [Experience Event Commerce Details](https://github.com/adobe/xdm/blob/master
 
 Each action object that is defined in the `Commerce` object takes a value, typically set to 1, which indicates that action occurred.
 
-* CartAbandons - A product list has been identified as no longer accessible \(for example, purchasable\) by the user.
+* CartAbandons - A product list has been identified as no longer accessible (for example, purchasable) by the user.
 * Checkouts - An action during a checkout process of a product list.
 * ProductListAdds - Addition of a product to the product list.
 * ProductListOpens - Initializations of a new product list.
 * ProductListRemovals - Removal of a product entry from a product list.
-* ProductListReopens - A product list that was not accessible\(abandoned\) and has been reactivated by the user.
+* ProductListReopens - A product list that was not accessible(abandoned) and has been reactivated by the user.
 * ProductListViews - Views of a product-list has occurred.
 * ProductViews - Views of a product have occurred.
 * Purchases - An order that has been accepted.

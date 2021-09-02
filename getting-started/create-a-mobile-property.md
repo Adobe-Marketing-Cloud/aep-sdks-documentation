@@ -54,11 +54,11 @@ The Mobile Core extension provides a robust default set of functionality, includ
 
    By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
-4. \(Optional\) Provide your Experience Cloud ID Server.
+4. (Optional) Provide your Experience Cloud ID Server.
 
    This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
-5. \(Optional\) Change the **Session Timeout** value.
+5. (Optional) Change the **Session Timeout** value.
 
    A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
@@ -79,7 +79,7 @@ To deploy your configuration to a development environment for testing:
 
    The library builds and is displayed under the **Development** section of the publishing workflow.
 
-7. On the library card, click the ellipsis \(...\) to see a dropdown list.
+7. On the library card, click the ellipsis (...) to see a dropdown list.
 8. Select **Submit for Approval** and then **Submit**.
 
 The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.

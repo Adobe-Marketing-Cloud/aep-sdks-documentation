@@ -267,7 +267,7 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 This API is used to updated the push notification pending intent with necessary customer journey information.
 
 {% hint style="warning" %}
-Call to this API is necessary to ensure that all the important information \(messageId, Customer journey information\) are added to the pending intent so that they can be used while tracking the push notification interactions.
+Call to this API is necessary to ensure that all the important information (messageId, Customer journey information) are added to the pending intent so that they can be used while tracking the push notification interactions.
 {% endhint %}
 
 {% tabs %}
@@ -283,7 +283,7 @@ public static boolean addPushTrackingDetails(final Intent intent, final String m
 * _intent_ - `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
 * _messageId_ - `String` message ID of the push notification
 * _data_ - `Map` which represents the data part of the remoteMessage.
-* Returns `boolean` indicating whether the intent was updated with necessary information \(messageId and customer journey data\).
+* Returns `boolean` indicating whether the intent was updated with necessary information (messageId and customer journey data).
 
 #### Examples
 
