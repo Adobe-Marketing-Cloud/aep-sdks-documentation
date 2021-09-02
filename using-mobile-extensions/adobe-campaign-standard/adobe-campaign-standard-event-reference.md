@@ -113,7 +113,7 @@ The following key-value pairs are supported in this event:
 
 ### Request reset
 
-The request reset event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Adobe Campaign deletes all personalized messages and will only download generic messages.
+The request reset event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Adobe Campaign Standard deletes all personalized messages and will only download generic messages.
 
 #### Data payload
 
