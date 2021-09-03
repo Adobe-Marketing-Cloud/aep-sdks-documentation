@@ -8,11 +8,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPEdge 1.1.2
 
-* Edge Network Extension now honors timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
 
 ### Android Edge 1.1.2
 
-* Edge Network Extension now honors timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
 
 ## Aug 27, 2021
 
