@@ -10,36 +10,36 @@ For more information, see [Mobile Core API reference](../../foundation-extension
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| extensionVersion | version/getVersion \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [getPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | privacyStatus \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [setPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | setPrivacyStatus: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [setLogLevel](../../getting-started/initialize-the-sdk.md#enable-debug-logging) | setDebugLogging: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [configureWithFileInPath:](api-change-log.md) | overrideConfigPath: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| extensionVersion | version/getVersion ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [getPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | privacyStatus ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [setPrivacyStatus](../privacy-and-gdpr.md#set-and-get-privacy-status) | setPrivacyStatus: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [setLogLevel](../../getting-started/initialize-the-sdk.md#enable-debug-logging) | setDebugLogging: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [configureWithFileInPath:](api-change-log.md) | overrideConfigPath: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
 | [configureWithAppId:](api-change-log.md) | Not applicable |
 | [updateConfiguration:](api-change-log.md) | Not applicable |
-| setAppGroup: | setAppGroup: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ios_ext.html)\) |
-| [trackState:data:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/states.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/states.html)\) |
-| [trackAction:data:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) |
-| [collectPII:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_pii-postbacks.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_pii-postbacks.html)\) |
-| [getSdkIdentities:](../../foundation-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/c_mob_gdpr_ret-stored-ids-ios.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_mob_gdpr_ret-stored-ids-android.html)\) |
+| setAppGroup: | setAppGroup: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/ios-ext/ios-ext.html?lang=en)) |
+| [trackState:data:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackState:data: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/states.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/states.html?lang=en)) |
+| [trackAction:data:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) | trackAction:data: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/actions.html?lang=en)) |
+| [collectPII:](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#collect-pii) | collectPII: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/postbacks/c-pii-postbacks.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/postbacks/c-pii-postbacks.html?lang=en)) |
+| [getSdkIdentities:](../../foundation-extensions/mobile-core/identity/identity-api-reference.md#get-identifiers) | getAllIdentifiersAsync: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/privacy-gdpr-ios/c-mob-gdpr-ret-stored-ids-ios.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/gdpr-privacy-android/c-mob-gdpr-ret-stored-ids-android.html?lang=en)) |
 
 ### Deprecated APIs and functionality
 
 | 4x SDK | Notes |
 | :--- | :--- |
-| trackActionFromBackground \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/actions.html)\) | Deprecated |
-| trackLocation:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/geo_poi.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/geo_poi.html)\) | Deprecated |
-| trackBeacon:Data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Support modified, [see guide](../user-guides/track-beacon.md) |
-| trackingClearCurrentBeacon \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/ibeacon.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/beacon.html)\) | Deprecated |
-| registerAdobeDataCallback: \([Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
-| lifetimeValue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/lifetime_value.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/lifetime_value.html)\) | Deprecated |
-| trackLifetimeValueIncrease:data: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/lifetime_value.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/lifetime_value.html)\) |  |
-| trackTimedActionStart: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
-| trackTimedActionUpdate: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
-| trackTimedActionEnd: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
-| trackTimedActionExists: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/timed_actions.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/timed_actions.html)\) | Deprecated |
-| trackPushMessageClickThrough:userInfo\([iOS](https://docs.adobe.com/content/help/en/mobile-services/ios/messaging-ios/push-messaging/push-messaging.html) \| [Android](https://docs.adobe.com/content/help/en/mobile-services/android/messaging-android/push-messaging/push-messaging.html)\) | Support modified, [see guide](https://aep-sdks.gitbook.io/docs/resources/frequently-asked-questions#how-can-i-track-user-engagement-of-push-notifications-using-the-experience-platform-mobile-sdk) |
-| Tracking App Crash \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/crashes.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/crashes.html)\) | Deprecated |
+| trackActionFromBackground ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/actions.html?lang=en)) | Deprecated |
+| trackLocation:data: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/geo-poi.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/geo-poi.html?lang=en)) | Deprecated |
+| trackBeacon:Data: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)) | Support modified, [see guide](../user-guides/track-beacon.md) |
+| trackingClearCurrentBeacon ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)) | Deprecated |
+| registerAdobeDataCallback: ([Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) | Deprecated |
+| lifetimeValue ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/lifetime-value.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/lifetime-value.html?lang=en)) | Deprecated |
+| trackLifetimeValueIncrease:data: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/lifetime-value.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/lifetime-value.html?lang=en)) |  |
+| trackTimedActionStart: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)) | Deprecated |
+| trackTimedActionUpdate: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)) | Deprecated |
+| trackTimedActionEnd: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)) | Deprecated |
+| trackTimedActionExists: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)) | Deprecated |
+| trackPushMessageClickThrough:userInfo([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/push-messaging/push-messaging.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/push-messaging/push-messaging.html?lang=en)) | Support modified, [see guide](https://aep-sdks.gitbook.io/docs/resources/frequently-asked-questions#how-can-i-track-user-engagement-of-push-notifications-using-the-experience-platform-mobile-sdk) |
+| Tracking App Crash ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/crashes.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/crashes.html?lang=en)) | Deprecated |
 
 ## Lifecycle extension APIs
 
@@ -53,15 +53,15 @@ For more information, see [Lifecycle API reference](../../foundation-extensions/
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| [lifecycleStart:](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStart:](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [lifecycleStop](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | pauseCollectingLifecycleData \([Android only](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
+| [lifecycleStart:](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | collectLifecycleData ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [lifecycleStart:](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#collect-additional-data-with-lifecycle) | collectLifecycleWithAdditionalData ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [lifecycleStop](../../foundation-extensions/mobile-core/lifecycle/lifecycle-api-reference.md#lifecycle-start-and-pause) | pauseCollectingLifecycleData ([Android only](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
 
 ### Deprecated APIs
 
 | 4x SDK | Notes |
 | :--- | :--- |
-| keepLifecycleSessionAlive \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) | Deprecated |
+| keepLifecycleSessionAlive ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) | Deprecated |
 
 ## Identity extension APIs
 
@@ -71,15 +71,15 @@ For more information, see [Identity API reference](../../foundation-extensions/m
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| [setPushIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setpushidentifier) | setPushIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [setAdvertisingIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setadvertisingidentifier) | setAdvertisingIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [getExperienceCloudId:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getexperiencecloudid) | visitorMarketingCloudID \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifiers:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers) | visitorSyncIdentifiers \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifiers:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers-overloaded) | visitorSyncIdentifiers:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [syncIdentifier:identifier:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifier) | visitorSyncIdentifiersWithType:identifier:authenticationState: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [getIdentifiers](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getidentifiers) | visitorGetIDs \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [appendToURL:withCallback:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl) | visitorAppendToURL: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/mc_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/mc_methods.html)\) |
-| [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables) | visitorGetUrlVariablesAsync: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/hybrid_app.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/hybrid_app.html)\) |
+| [setPushIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setpushidentifier) | setPushIdentifier ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [setAdvertisingIdentifier:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setadvertisingidentifier) | setAdvertisingIdentifier ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [getExperienceCloudId:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getexperiencecloudid) | visitorMarketingCloudID ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [syncIdentifiers:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers) | visitorSyncIdentifiers ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [syncIdentifiers:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifiers-overloaded) | visitorSyncIdentifiers:authenticationState: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [syncIdentifier:identifier:authentication:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#syncidentifier) | visitorSyncIdentifiersWithType:identifier:authenticationState: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [getIdentifiers](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getidentifiers) | visitorGetIDs ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [appendToURL:withCallback:](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl) | visitorAppendToURL: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/exp-cloud-ios/mc-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/experience-cloud-android/mc-methods.html?lang=en)) |
+| [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables) | visitorGetUrlVariablesAsync: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/sdk-reference-android/hybrid-app.html?lang=en)) |
 
 ## Adobe Analytics extension APIs <a id="audience-manager-extension-apis"></a>
 
@@ -89,12 +89,12 @@ For more information, see [Analytics API reference](../../using-mobile-extension
 
 | Experience Platform SDK | 4x SDK |
 | :--- | :--- |
-| [getVisitorIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#getvisitoridentifier) | getUserIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [setVisitorIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier) | setUserIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [getTrackingIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#gettrackingidentifier) | trackingIdentifier \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/sdk_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/methods.html)\) |
-| [sendQueuedHits:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits) | trackingSendQueuedHits \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
-| clearQueue | trackingClearQueue \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
-| [getQueueSize](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits-1) | trackingGetQueueSize \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/ios/analytics_methods.html)\) |
+| [getVisitorIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#getvisitoridentifier) | getUserIdentifier ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [setVisitorIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier) | setUserIdentifier ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [getTrackingIdentifier:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#gettrackingidentifier) | trackingIdentifier ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/config-ios/sdk-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/configuration-android/methods.html?lang=en)) |
+| [sendQueuedHits:](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits) | trackingSendQueuedHits ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/analytics-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/analytics-methods.html?lang=en)) |
+| clearQueue | trackingClearQueue ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/analytics-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/analytics-methods.html?lang=en)) |
+| [getQueueSize](../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#sendqueuedhits-1) | trackingGetQueueSize ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/analytics-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/analytics-methods.html?lang=en)) |
 
 ## Adobe Audience Manager extension APIs <a id="audience-manager-extension-apis"></a>
 
@@ -102,7 +102,7 @@ For more information, see [Audience Manager Extension API Reference](../../using
 
 ### Supported APIs <a id="supported-apis"></a>
 
-| Experience Platform SDK | 4x SDK \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) |
+| Experience Platform SDK | 4x SDK ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/aam-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/audience-manager-android/c-audience-manager-methods.html?lang=en)) |
 | :--- | :--- |
 | extensionVersion | Not applicable |
 | [​getVisitorProfile​](../../using-mobile-extensions/adobe-audience-manager/audience-manager-api-reference.md#get-visitor-profile) | audienceVisitorProfile |
@@ -113,9 +113,9 @@ For more information, see [Audience Manager Extension API Reference](../../using
 
 | 4x SDK | Notes |
 | :--- | :--- |
-| audienceSetDpid:dpuuid: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
-| audienceDpid: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
-| audienceDpuuid: \([iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/aam_methods.html) \| [Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/c_audience_manager_methods.html)\) | Replaced - See [Link](https://marketing.adobe.com/resources/help/en_US/aam/cid.html)​ |
+| audienceSetDpid:dpuuid: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/aam-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/audience-manager-android/c-audience-manager-methods.html?lang=en)) | Replaced - See [Link](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/cid.html?lang=en)​ |
+| audienceDpid: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/aam-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/audience-manager-android/c-audience-manager-methods.html?lang=en)) | Replaced - See [Link](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/cid.html?lang=en)​ |
+| audienceDpuuid: ([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/aam-methods.html?lang=en) \| [Android](https://experienceleague.adobe.com/docs/mobile-services/android/audience-manager-android/c-audience-manager-methods.html?lang=en)) | Replaced - See [Link](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/cid.html?lang=en)​ |
 
 ## Adobe Target extension APIs
 
@@ -123,7 +123,7 @@ For more information see [Target API reference](../../using-mobile-extensions/ad
 
 ### Supported APIs
 
-| Experience Platform SDK | 4x SDK \(iOS \| Android\) |
+| Experience Platform SDK | 4x SDK (iOS \| Android) |
 | :--- | :--- |
 | getThirdPartyId: | targetThirdPartyID |
 | setThirdPartyId: | targetSetThirdPartyID |

@@ -10,7 +10,7 @@ solution: Experience Cloud
 
 In this lesson, we will enable the Target Visual Experience Composer (VEC) for Mobile apps.
 
-[Adobe Target](https://marketing.adobe.com/resources/help/en_US/target/) is the Adobe Experience Cloud solution that provides everything you need to tailor and personalize your customers' experience, so you can maximize revenue on your web and mobile sites, apps, social media, and other digital channels.
+[Adobe Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en) is the Adobe Experience Cloud solution that provides everything you need to tailor and personalize your customers' experience, so you can maximize revenue on your web and mobile sites, apps, social media, and other digital channels.
 
 The Visual Experience Composer (VEC) for Native Mobile Apps lets you create activities and personalize content on native mobile apps in a do-it-yourself fashion without continuous development dependencies and app-release cycles.
 

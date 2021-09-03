@@ -39,7 +39,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 
 ### iOS AEPEdge 1.0.0
 
-The Adobe Experience Platform Edge Network \(AEPEdge\) mobile extension is now available in iOS! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+The Adobe Experience Platform Edge Network (AEPEdge) mobile extension is now available in iOS! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
 
 The included features with this release are:
 
@@ -54,7 +54,7 @@ Learn more about the AEP Edge extension in the open sourced [adobe/aepsdk-edge-i
 
 ### Android Edge 1.0.0
 
-The Adobe Experience Platform Edge Network \(Edge\) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+The Adobe Experience Platform Edge Network (Edge) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
 
 The included features with this release are:
 

@@ -15,7 +15,7 @@ String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ```swift
@@ -29,7 +29,7 @@ NSString *version = [AEPMobileLifecycle extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective C**
 
 ```objectivec
@@ -122,7 +122,7 @@ This method should be called from the Activity onResume method.
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### Swift
 
 ```swift
@@ -151,7 +151,7 @@ If you need to collect additional lifecycle data:
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
 
 **Syntax**
@@ -277,7 +277,7 @@ MobileCore.lifecyclePause();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### Swift
 
 ```swift
@@ -300,7 +300,7 @@ MobileCore.lifecyclePause();
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
 
 **Syntax**

@@ -46,7 +46,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 This major release introduces support for the following:
 
 * React Native version 0.60.+
-* Autolinking for native dependencies and removal of the bundled SDK binaries \(XCFramework\) from the React Native module.
+* Autolinking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
 * Dynamic versions for native dependencies to always load the latest SDK.
 * Removal of several deprecated APIs.
 
@@ -67,17 +67,17 @@ Please note that this release introduces breaking changes. For more details, see
 
 * `TargetRequest` class now provides a constructor with a new callback interface named `AdobeTargetDetailedCallback`. When implemented, the callback method provides:
   * Target content; AND
-  * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload \(if available in the Target retrieve location content response with/ without a prior prefetch call\)
+  * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
 
-**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics \(if the Adobe Analytics extension is also implemented\) with appropriate Target payloads for A4T functionality.
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
 
 ### iOS AEPTarget 3.1.0
 
 * `TargetRequest` class now provides a constructor with a new callback function named `contentWithDataCallback`. When implemented, this callback provides:
   * Target content; AND
-  * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload \(if available in the Target retrieve location content response with/ without a prior prefetch call\)
+  * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload (if available in the Target retrieve location content response with/ without a prior prefetch call)
 
-**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics \(if the Adobe Analytics extension is also implemented\) with appropriate Target payloads for A4T functionality.
+**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
 
 * Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
 * Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
@@ -93,7 +93,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Analytics 2.5.1
 
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
 ### Android Analytics 1.2.8
 
@@ -101,7 +101,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### Android Analytics 1.2.7
 
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 * **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
 
 ## Jul 16, 2021
@@ -109,7 +109,7 @@ Please note that this release introduces breaking changes. For more details, see
 ### Android Media 2.1.2
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
-* Added support to handle the MobileCore.resetIdentities\(\) API.
+* Added support to handle the MobileCore.resetIdentities() API.
 
 ### iOS AEPMedia 3.0.1
 
@@ -119,7 +119,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS AEPAudience 3.0.2
 
-* Added support to handle the MobileCore.resetIdentities\(\) API.
+* Added support to handle the MobileCore.resetIdentities() API.
 
 ## Jul 2, 2021
 
@@ -176,7 +176,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
 
 ### Adobe Journey Optimizer Launch Extension
 
@@ -191,7 +191,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### Android Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ## June 15, 2021
 
@@ -241,7 +241,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token \(~ timestampu\) was not expanded correctly
+* Fixed a bug where token (~ timestampu) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
@@ -352,13 +352,13 @@ You can now find the Consent for Edge Network extension in the Launch extensions
 
 ### iOS & Android Identity 1.0.0
 
-The Adobe Experience Platform Identity \(AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
+The Adobe Experience Platform Identity (AEPEdgeIdentity) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
 
 ## April 5, 2021
 
 ### iOS & Android Consent 1.0.0
 
-The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
+The Adobe Experience Platform Consent (AEPEdgeConsent) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
 
 ## April 1, 2021
 
@@ -423,7 +423,7 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 ### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types:
   * Contains
   * Not Contains
   * Starts With
@@ -505,13 +505,13 @@ The included features with this release are:
 * Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
-This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
+This extension library is available as an open sourced project ([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)) on GitHub.
 
 These iOS libraries, written in Swift, are available for integration via SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications.
 
 ### Android Edge 1.0.0
 
-The Adobe Experience Platform Edge Network \(Edge\) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+The Adobe Experience Platform Edge Network (Edge) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
 
 The included features with this release are:
 

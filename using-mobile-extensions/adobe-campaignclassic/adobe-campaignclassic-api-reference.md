@@ -252,6 +252,7 @@ public void onResume() {
 You can pass the `launchOptions` that was received before opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
 
+
 ### Objective-C
 
 **Syntax**

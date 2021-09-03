@@ -1,6 +1,6 @@
 # Modify data in SDK events
 
-The modify data rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.14 \(Launch\), version 2.7.0 \(iOS\), and 1.5.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
+The modify data rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.14 (Launch), version 2.7.0 (iOS), and 1.5.5 (Android). This action is powerful, complex, and enables advanced use cases.
 
 To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/).
 
@@ -37,7 +37,7 @@ The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the 
 | Action | The resulting action if the evaluation of the rule is positive. |
 
 {% hint style="info" %}
-A rule might be read out in the following way: If the SDK **Event** occurs and **Condition\(s\)** are met, then perform the **Action\(s\)**.
+A rule might be read out in the following way: If the SDK **Event** occurs and **Condition(s)** are met, then perform the **Action(s)**.
 {% endhint %}
 
 ## Using the modify data action

@@ -389,7 +389,7 @@ private void OnApplicationPause(bool pauseStatus)
    }
    ```
 
-   Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you set the application \(`ACPCore.Application = this.Application;`\) in each of your activities.
+   Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you set the application (`ACPCore.Application = this.Application;`) in each of your activities.
 
 3. In the `onPause` function, pause the lifecycle data collection:
 

@@ -18,7 +18,7 @@ The Configuration extension provides different APIs to set up the SDK's configur
 
 ## Identity
 
-The Identity framework lets your app use Experience Cloud ID \(ECID\). Using ECIDs improves synchronization with Adobe and other customer identifiers. For more information, please read the documentation on the [Identity extension](identity/).
+The Identity framework lets your app use Experience Cloud ID (ECID). Using ECIDs improves synchronization with Adobe and other customer identifiers. For more information, please read the documentation on the [Identity extension](identity/).
 
 ## Lifecycle
 
