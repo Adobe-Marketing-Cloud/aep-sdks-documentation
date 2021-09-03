@@ -77,7 +77,7 @@ A configuration in the Adobe Analytics Admin Console is required to start forwar
 
 >[!NOTE] Since SSF needs to be enabled per report suite, don't forget to repeat this step for your real report suites when you are deploying SSF on your actual site's report suite.
 >
->Also, if the SSF option is grayed out, you will need to "map the report suite(s) to your Experience Cloud Org in order to enable the option. This is explained in [the documentation](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/server-side-forwarding/ssf.html?lang=en).
+>Also, if the SSF option is grayed out, you will need to map the report suite(s) to your Experience Cloud Org in order to enable the option. This is explained in [the documentation](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/server-side-forwarding/ssf.html?lang=en).
 
 Once this step has been completed, and if you have the Experience Cloud ID Service enabled, data will be forwarded from Analytics to AAM. However, to complete the process so that the response comes back correctly from AAM to the page (and also to Analytics via the Audience Analytics feature), you must complete the following step in Launch as well. Don't worry, it's super easy.
 

@@ -31,7 +31,7 @@ At this time, Experience Cloud ID (ECID or MCID) **are not** supported.
 {% endhint %}
 
 {% hint style="info" %}
-To learn more about Analytics Visitor ID, see the [Adobe Analytics implementation guide](https://experienceleague.adobe.com/docs/analytics/implementation/js/xdevice-visid/xdevice-connecting.html?lang=en).
+To learn more about Analytics Visitor ID, see the [Adobe Analytics implementation guide](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=en).
 {% endhint %}
 
 ### **Licensing**
@@ -57,7 +57,7 @@ The SDK is available as read-only open source and is distributed with an Apache 
 * 从服务器端获取或者小程序端自动生成
 
 {% hint style="info" %}
-有关Analytics Visitor ID的信息，请参阅 [Adobe Analytics implementation guide](https://experienceleague.adobe.com/docs/analytics/implementation/js/xdevice-visid/xdevice-connecting.html?lang=en)
+有关Analytics Visitor ID的信息，请参阅 [Adobe Analytics implementation guide](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=en)
 {% endhint %}
 
 ### 文档与授权

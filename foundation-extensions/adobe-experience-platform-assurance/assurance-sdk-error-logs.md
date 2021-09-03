@@ -61,7 +61,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Copy link or open QR code from Project Griffon
 
-The PIN screen may not show if the link or QR code is incorrect (or doesn't contain the query parameter `adb_validation_sessionid`. You may detect this error by seeing console logs with the following strings:
+The PIN screen may not show if the link or QR code is incorrect (or doesn't contain the query parameter `adb_validation_sessionid`). You may detect this error by seeing console logs with the following strings:
 
 {% tabs %}
 {% tab title="Android" %}
