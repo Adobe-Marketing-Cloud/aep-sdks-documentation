@@ -2,25 +2,25 @@
 
 ## Events handled
 
-The following events are handled by the Campaign Standard extension:
+The following events are handled by the Adobe Campaign Standard extension:
 
-### Campaign Request Content <a id="campaign-request-content"></a>
+### Campaign request
 
-This event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the _"User has launched the app"_ rule is found to be true. A triggered consequences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
+The Campaign request event is dispatched from the Event Hub when a Campaign rule is found to be true. For example, after the user launches the app, the "User has launched the app" rule will be true. A triggered consequences event is dispatched, which contains the data of the displayed local, alert, or full-screen message.
 
-#### Data payload definition <a id="data-payload-definition-1"></a>
+#### Payload definition
 
-Here are the key-value pairs in this event:
+The following key-value pairs are present in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `triggeredconsequence` | Map | No | The triggered Campaign rule consquence. |
+| `triggeredconsequence` | Map | No | The triggered Campaign rule consequence. |
 
-#### Event data example
+#### Example
 
-triggered consequence data
+The following example shows triggered consequence data.
 
-```text
+```json
 {
   "triggeredconsequence": {
     "assetsPath": "assets/path/",
@@ -40,13 +40,13 @@ triggered consequence data
 }
 ```
 
-### Configuration Response Content <a id="configuration-response-content"></a>
+### Configuration response
 
-The data property in this event is used by each extension to modify its current settings. Each extension is responsible for reading out the part of the data property for which it is concerned.
+The data property in the configuration response event is used by each extension to modify its current settings. Each extension is responsible for parsing the relevant part of the data property.
 
-#### Data payload definition <a id="data-payload-definition-3"></a>
+#### Payload definition
 
-The Adobe Campaign Standard extension reads the following key from the configuration event:
+The following key value pairs are supported for Adobe Campaign Standard extension when reading from the configuration event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -59,7 +59,7 @@ The Adobe Campaign Standard extension reads the following key from the configura
 | `campaign.mcias` | String | No | This contains the in-app messaging service URL endpoint. |
 | `campaign.timeout` | Integer | No | This contains the amount of time to wait for a response from the in-app messaging service. |
 | `global.privacy` | Boolean | Yes | This contains the mobile privacy status settings. |
-| `campaign.registrationDelay` | Integer | Yes | This contains the number of days to delay the sending of the next Adobe Campaign Standrd registration request. |
+| `campaign.registrationDelay` | Integer | Yes | This contains the number of days to delay the sending of the next Adobe Campaign Standard registration request. |
 | `campaign.registrationPaused` | Boolean | Yes | This contains the Adobe Campaign Standard registration request paused status. |
 
 {% hint style="info" %}
@@ -70,9 +70,9 @@ After `global.privacy` is changed to **optout**, the linkage fields are reset. A
 The configuration setting to pause registration requests is provided for specific use cases only. The use of this configuration setting should be avoided when possible.
 {% endhint %}
 
-#### Event data example
+#### Example
 
-```text
+```json
 {
     "global.privacy":"optedin",
     "campaign.timeout":1,
@@ -86,21 +86,21 @@ The configuration setting to pause registration requests is provided for specifi
 }
 ```
 
-### Request Identity <a id="request-identity"></a>
+### Request identity
 
-This event is dispatched by the API to setLinkageFields, which sets the linkage fields. It is used to download personalized in-app messages.
+The request identity event is dispatched by the API to set linkageFields, which sets the linkage fields. It is used to download personalized in-app messages.
 
-#### Data payload definition <a id="data-payload-definition-4"></a>
+#### Payload definition
 
-Here are the key-value pairs in this event:
+The following key-value pairs are supported in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `linkagefields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the user who is logged in. |
+| `linkagefields` | Map | No | This map contains at least one of the linkage fields that are used to personally identify the logged in user. |
 
-#### Event data example
+#### Example
 
-```text
+```json
 { 
     "linkagefields": 
     { 
@@ -111,29 +111,29 @@ Here are the key-value pairs in this event:
 }
 ```
 
-### Request Reset <a id="request-reset"></a>
+### Request reset
 
-This event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Campaign deletes all personalized messages and downloads only generic messages again.
+The request reset event is dispatched when users no longer want to use personalized in-app messages. After this event is received, Adobe Campaign Standard deletes all personalized messages and will only download generic messages.
 
-#### Data payload definition <a id="data-payload-definition-5"></a>
+#### Data payload
 
 This event has no event data.
 
-### Lifecycle Response Content <a id="lifecycle-response-content"></a>
+### Lifecycle response
 
-This event is a response from the Lifecycle extension to notify a client/extension about lifecycle context data in which the extension/client might be interested. The event is generated by the Lifecycle extension, and the API is called after a lifecycle start, stop, or pause.
+The lifecycle response event is a response from the Lifecycle extension that notifies a client or extension about lifecycle context data in which the client or extension might be interested. The event is generated by the Lifecycle extension, and the API is called after a lifecycle start, stop, or pause.
 
-#### Data payload definition <a id="data-payload-definition-6"></a>
+#### Payload definition
 
-Here are the key-value pairs in this event:
+The following key-value pairs are used in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `lifecyclecontextdata` | Map | No | The map that contains the stored lifecycle metrics. |
 
-#### Event data example
+#### Example
 
-```text
+```json
 {    "lifecyclecontextdata": 
     {
         "installdate":"22/05/2014",        
@@ -154,13 +154,13 @@ Here are the key-value pairs in this event:
 }
 ```
 
-### Generic Data OS <a id="generic-data-os"></a>
+### Generic data OS
 
-This event is dispatched by the Core extension to the Event Hub when the `collectMessageInfo` API is invoked by the app developer to track local and push notification interactions.
+The generic data OS event is dispatched by the Core extension to the Event Hub when the `collectMessageInfo` API is invoked by the app developer to track local and push notification interactions.
 
-#### Data payload definition <a id="data-payload-definition-7"></a>
+#### Payload definition 
 
-Here are the key-value pairs in this event:
+The following key-value pairs are used in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
@@ -170,11 +170,11 @@ Here are the key-value pairs in this event:
 
 #### Event data example
 
-```javascript
+```json
 {
-  "deliveryId": "1442de4",
-  "action": "2",
-  "broadlogId": "h1c1380"
+    "deliveryId": "1442de4",
+    "action": "2",
+    "broadlogId": "h1c1380"
 }
 ```
 
@@ -182,9 +182,9 @@ Here are the key-value pairs in this event:
 
 The following events are dispatched by the Campaign Standard extension:
 
-### Campaign Response Content
+### Campaign response
 
-This event is a response from the Adobe Campaign Standard extension and contains the message interaction details (Viewed, Triggered or Clicked).
+The Campaign response event is a response from the Adobe Campaign Standard extension and contains the message interaction details: Viewed, Triggered or Clicked.
 
 #### Event details
 
@@ -192,20 +192,20 @@ This event is a response from the Adobe Campaign Standard extension and contains
 | :--- | :--- | :--- |
 | `com.adobe.eventType.campaign` | `com.adobe.eventSource.responseContent` | Yes |
 
-#### Data payload definition
+#### Payload definition
 
-Here is the definition of the key-value pairs in this event:
+The following key-value pairs are used in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `a.message.id` | String | No | Message ID of the message that was triggered. |
-| `a.message.triggered` | String ("1") | No | Flag that specifies a message triggered event. Only one type of message interaction exists in each Campaign response content event. |
-| `a.message.viewed` | String ("1") | No | Flag that specifies a message viewed event. |
-| `a.message.clicked` | String ("1") | No | Flag that specifies a message clicked event. |
+| `a.message.id` | String | No | The message ID of the message that was triggered. |
+| `a.message.triggered` | String ("1") | No | A flag that specifies a message triggered event. Only one type of message interaction exists in each Campaign response content event. |
+| `a.message.viewed` | String ("1") | No | A flag that specifies a message viewed event. |
+| `a.message.clicked` | String ("1") | No | A flag that specifies a message clicked event. |
 
 #### Event data example
 
-```text
+```json
 { "a.message.id": "12345678", "a.message.triggered": "1" }
 { "a.message.id": "12345678", "a.message.viewed": "1" }
 { "a.message.id": "12345678", "a.message.clicked": "1" }

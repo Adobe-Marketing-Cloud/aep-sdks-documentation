@@ -6,9 +6,9 @@ The AEPCampaign extension is implemented purely in Swift and is compatible with 
 
 ## AEPCampaign classes
 
-| Type | AEP (3.x) | AEP 3.x (Objective-C) | ACP (1.x) |
-| :--- | :--- | :--- | :--- |
-| Primary Class (Module) | Campaign | AEPMobileCampaign | ACPCampaign |
+| Type | AEP (3.x) | AEP 3.x (Objective-C) | ACP (1.x)   |
+| ---- | :-------- | :-------------------- | ----------- |
+| Primary Class (Module) | Campaign | AEPMobileCampaign  | ACPCampaign |
 
 ## AEPCampaign APIs
 
