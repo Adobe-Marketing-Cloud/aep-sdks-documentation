@@ -49,7 +49,7 @@ Release notes and change logs for the Adobe Experience Platform Assurance extens
 
 ### Android Assurance 1.0.1
 
-* Fixed a bug that triggered ANR \(Application not responsive\) error while initializing webview.
+* Fixed a bug that triggered ANR (Application not responsive) error while initializing webview.
 
 ## November 23, 2020
 

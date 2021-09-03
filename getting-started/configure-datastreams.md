@@ -1,15 +1,15 @@
 # Configure datastreams
 
-After you've created a schema and its associated dataset, you may now configure datastreams \(also referred to as Edge configurations or Edge Network configurations\).
+After you've created a schema and its associated dataset, you may now configure datastreams (also referred to as Edge configurations or Edge Network configurations).
 
 {% hint style="warning" %}
-To create a datastream, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.
+To create a datastream, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager (CSM) to be added to the _allow list_.
 {% endhint %}
 
 {% hint style="info" %}
 The Datastreams tool is available to customers on the _allow list_ regardless whether they use Experience Platform Launch for web tag management or to manage mobile app configuration.
 
-Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) article in the Experience Platform Launch documentation for more details.
+Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en) article in the Experience Platform Launch documentation for more details.
 {% endhint %}
 
 ## What is a datastream?
@@ -19,8 +19,8 @@ A datastream is a configured instance of the Edge Network that contains settings
 The following steps illustrate how to create a sample datastream for a mobile implementation:
 
 1. In the browser, navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and login with your credentials.
-2. From the left panel, choose **Datastreams** from the dropdown \(instead of **Client Side**\).
-3. Click **New Datastream** \(located on top right\)
+2. From the left panel, choose **Datastreams** from the dropdown (instead of **Client Side**).
+3. Click **New Datastream** (located on top right)
 4. Set a name for the configuration and click **Save**.
 
 ![Creating a datastream in Adobe Experience Platform Launch](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/246853d4cb8bc473495a38d8b99df6e3f68c409c/.gitbook/assets/create-datastream.png?alt=media)

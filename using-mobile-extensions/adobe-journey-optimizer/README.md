@@ -17,7 +17,7 @@ The following documentation details how to use the extension as well as the requ
 
 Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com), then:
 
-Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(under _Adobe Experience Platform_ section\) and select **Save**.
+Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown (under _Adobe Experience Platform_ section) and select **Save**.
 
 ![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.19.31-am.png)
 

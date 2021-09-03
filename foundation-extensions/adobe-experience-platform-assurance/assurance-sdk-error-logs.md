@@ -18,7 +18,7 @@ Follow [Apple developer](https://developer.apple.com/documentation/uikit/inter-p
 
 ## P**IN** screen does not appear
 
-When the generated link or QR code from Project Griffon is opened on device, it should launch your app and show a PIN screen to establish a Project Griffon session \(as shown below\). If this screen does not appear, ensure the following:
+When the generated link or QR code from Project Griffon is opened on device, it should launch your app and show a PIN screen to establish a Project Griffon session (as shown below). If this screen does not appear, ensure the following:
 
 ### Register Assurance SDK extension with Mobile Core
 
@@ -61,7 +61,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Copy link or open QR code from Project Griffon
 
-The PIN screen may not show if the link or QR code is incorrect \(or doesn't contain the query parameter `adb_validation_sessionid`. You may detect this error by seeing console logs with the following strings:
+The PIN screen may not show if the link or QR code is incorrect (or doesn't contain the query parameter `adb_validation_sessionid`). You may detect this error by seeing console logs with the following strings:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -93,7 +93,7 @@ Or ensuring internet connectivity on the device/simulator.
 
 ## Invalid Launch & SDK configuration
 
-If you see a Invalid Launch & SDK Configuration error \(see screenshot below\), verify the following:
+If you see a Invalid Launch & SDK Configuration error (see screenshot below), verify the following:
 
 1. Mobile Core is [configured](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference)
 2. Configuration in Experience Platform Launch is [published](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property#publish-the-configuration)

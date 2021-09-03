@@ -1,6 +1,6 @@
 # Attach data to SDK events
 
-The attach data\_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 \(Launch\), 2.3.5 \(iOS\), and 1.4.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
+The attach data\_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS), and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
 
 To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/).
 
@@ -37,7 +37,7 @@ The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the 
 | Action | The resulting action if the evaluation of the rule is positive. |
 
 {% hint style="info" %}
-A rule might be read out in the following way: If the SDK **Event** occurs and **Condition\(s\)** are met, then perform the **Action\(s\)**.
+A rule might be read out in the following way: If the SDK **Event** occurs and **Condition(s)** are met, then perform the **Action(s)**.
 {% endhint %}
 
 ## Using the attach data action

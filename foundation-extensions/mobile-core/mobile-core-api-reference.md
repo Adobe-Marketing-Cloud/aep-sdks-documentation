@@ -1,6 +1,6 @@
 # Mobile Core API reference
 
-## Application reference \(Android only\)
+## Application reference (Android only)
 
 When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
@@ -146,7 +146,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ### trackAction
@@ -187,7 +187,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### trackAction
@@ -395,7 +395,7 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ### trackState
@@ -436,7 +436,7 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### trackState
@@ -643,7 +643,7 @@ MobileCore.setPushIdentifier(token);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ### setPushIdentifier
@@ -678,7 +678,7 @@ MobileCore.setPushIdentifier(deviceToken)
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setPushIdentifier
@@ -722,7 +722,7 @@ MobileCore.setPushIdentifier(deviceToken)
 
 ## Collect personally identifiable information
 
-The `collectPii` method lets the SDK to collect sensitive or personally identifiable information \(PII\).
+The `collectPii` method lets the SDK to collect sensitive or personally identifiable information (PII).
 
 {% hint style="warning" %}
 Although this method enables the collection of sensitive data, no data is sent to any Adobe or other third-party endpoints. To send the data to an endpoint, use a PII type postback.
@@ -751,7 +751,7 @@ MobileCore.collectPII(data);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ### collectPii
@@ -788,7 +788,7 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### collectPii
@@ -876,7 +876,7 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 * Tracking Local Notification clickthrough
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 This method should be called to support the following use cases:
@@ -927,7 +927,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 The `collectLaunchInfo` method should be used in the following use cases:
@@ -983,13 +983,13 @@ AEPCore.collectLaunchInfo(userInfo)
 The following SDK identities, as applicable, are locally stored:
 
 * Company Context - IMS Org IDs
-* Experience Cloud ID \(MID\)
+* Experience Cloud ID (MID)
 * User IDs
-* Integration codes \(ADID, push IDs\)
-* Data source IDs \(DPID, DPUUID\)
-* Analytics IDs \(AVID, AID, VID, and associated RSIDs\)
-* Target legacy IDs \(TNTID, TNT3rdpartyID\)
-* Audience Manager ID \(UUID\)
+* Integration codes (ADID, push IDs)
+* Data source IDs (DPID, DPUUID)
+* Analytics IDs (AVID, AID, VID, and associated RSIDs)
+* Target legacy IDs (TNTID, TNT3rdpartyID)
+* Audience Manager ID (UUID)
 
 To retrieve data as a JSON string from the SDKs and send this data to your servers, use the `getSdkIdentities` method:
 
@@ -1026,7 +1026,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 ```swift
@@ -1064,7 +1064,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### getSdkIdentities
@@ -1134,7 +1134,7 @@ MobileCore.resetIdentities();
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 Note, this method is only available in Mobile Core v.1.8.0 and above.
@@ -1176,7 +1176,7 @@ _since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}
 
-## Set icons for local notification \(Android only\)
+## Set icons for local notification (Android only)
 
 You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -1296,7 +1296,7 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
 #### setLogLevel
@@ -1331,7 +1331,7 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setLogLevel
@@ -1522,7 +1522,7 @@ LoggingMode mode = MobileCore.getLogLevel();
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### getLogLevel
@@ -1627,7 +1627,7 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
@@ -1728,7 +1728,7 @@ ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
 Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
 
 {% tabs %}
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective C**
 
 ### registerURLHandler
@@ -1749,7 +1749,7 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 {% endtab %}
 {% endtabs %}
 
-## Set app group \(iOS only\)
+## Set app group (iOS only)
 
 You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
 
@@ -1758,7 +1758,7 @@ This API _must_ be called in `AppDidFinishLaunching` and before any other intera
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
 ### setAppGroup
@@ -1873,7 +1873,7 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### ACPError
 
 The `ACPError` class shows the errors that can be passed to a completion handler callback from any API which uses one:
@@ -2045,5 +2045,5 @@ ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
 
 ## Additional information
 
-To learn what context data is, please read the [documentation on context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html).
+To learn what context data is, please read the [documentation on context data](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en).
 

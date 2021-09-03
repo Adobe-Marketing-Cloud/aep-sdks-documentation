@@ -105,11 +105,9 @@ Campaign.registerExtension();
 ```
 {% endtab %}
 
+{% tab title="iOS (ACP 1.x)" %}
 This API no longer exists in the Adobe Campaign Standard extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
 
-{% endtab %}
-
-{% tab title="iOS (ACP 1.x)" %}
 ### Swift
 
 **Syntax**
@@ -229,7 +227,7 @@ ACPCampaign.resetLinkageFields();
 
 ## setLinkageFields
 
-Sets the Campaign linkage fields \(CRM IDs\) in the mobile SDK to be used for downloading personalized messages from Campaign.
+Sets the Campaign linkage fields (CRM IDs) in the mobile SDK to be used for downloading personalized messages from Campaign.
 
 The set linkage fields are stored as a base64 encoded JSON string in memory and they are sent in a custom HTTP header `X-InApp-Auth`.
 

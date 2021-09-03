@@ -10,7 +10,7 @@ solution: Experience Cloud
 
 In this lesson, you will enable Adobe Analytics tracking in your app. This will include "Lifecycle" metrics (environment-based information), as well as tracking screen loads and user actions.
 
-[Adobe Analytics](https://marketing.adobe.com/resources/help/en_US/reference/) is an industry-leading solution that empowers you to understand your customers as people and steer your business with customer intelligence.
+[Adobe Analytics](https://experienceleague.adobe.com/docs/analytics.html?lang=en) is an industry-leading solution that empowers you to understand your customers as people and steer your business with customer intelligence.
 
 In the lesson [Add Extensions](launch-add-extensions.md), you added the analytics extension to your Launch property. In the lesson [Install the Mobile SDK](launch-install-the-mobile-sdk.md) you imported the extension into the sample application. These steps have prepared you to track your app in Adobe Analytics. Now all you have to do is identify the screens and actions in your app that you want to send to Analytics, and you are ready to go.
 
@@ -30,7 +30,7 @@ You should have already completed the lessons in the [Configure Launch](launch-c
 
 ## Lifecycle Metrics
 
-Lifecycle metrics are environment-based metrics and dimensions that can be easily enabled in an app using the Experience Platform SDK. A quick line of code nets you a host of information, as shown in the [documentation](https://marketing.adobe.com/resources/help/en_US/mobile/ios/metrics.html) (this link going to iOS docs - of course the Android equivalent is available as well).
+Lifecycle metrics are environment-based metrics and dimensions that can be easily enabled in an app using the Experience Platform SDK. A quick line of code nets you a host of information, as shown in the [documentation](https://experienceleague.adobe.com/docs/mobile-services/ios/metrics.html?lang=en) (this link going to iOS docs - of course the Android equivalent is available as well).
 
 In the [Configure Launch](launch-create-a-property.md) section of this tutorial, you copied code from your Adobe Launch mobile property, and you pasted it into your sample project. This enabled Lifecycle metrics. But let's take a look at exactly which part does the magic.
 

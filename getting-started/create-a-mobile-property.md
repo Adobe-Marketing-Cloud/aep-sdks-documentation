@@ -10,7 +10,7 @@ Before you can set up your mobile property, complete the following prerequisites
 
 Launch is fully integrated with your Adobe ID. User permissions are managed through the Admin Console with other Adobe products and solutions from the Creative Cloud, Document Cloud, and Experience Cloud.
 
-For detailed instructions on how to create groups and add users for Launch, see [user permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html).
+For detailed instructions on how to create groups and add users for Launch, see [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en).
 
 ### Log in to Experience Platform Launch
 
@@ -38,7 +38,7 @@ The default privacy status is set to _opted in_ and might impact data collection
 
 An extension is an integration built by Adobe or an Adobe partner that adds new options you can use in your apps. By default, all new mobile properties come with the Mobile Core and Profile extensions installed.
 
-The Mobile Core extension provides a robust default set of functionality, including lifecycle events and conditions. The Profile extension allows storing of data into a client-side profile. Additional functionality for Analytics, Target, and so on will come from extensions that you install from the catalog. For more information, see the document on [adding a new extension](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension).
+The Mobile Core extension provides a robust default set of functionality, including lifecycle events and conditions. The Profile extension allows storing of data into a client-side profile. Additional functionality for Analytics, Target, and so on will come from extensions that you install from the catalog. For more information, see the document on [adding a new extension](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/overview.html?lang=en#add-a-new-extension).
 
 ## Set up your extensions
 
@@ -54,11 +54,11 @@ The Mobile Core extension provides a robust default set of functionality, includ
 
    By default, this value is auto-populated using the currently signed-in Organization ID. This is a required identifier for your Experience Cloud Organization and is typically a 24-character, alphanumeric string followed by _@AdobeOrg_. If you need help finding it, contact your Adobe CSM or Customer Care.
 
-4. \(Optional\) Provide your Experience Cloud ID Server.
+4. (Optional) Provide your Experience Cloud ID Server.
 
    This is an optional server value that is used to send Visitor ID Service network requests to a custom endpoint. If this property is not set, the visitor identifiers sync requests are sent to _dpm.demdex.net_ when the `Identity` extension is registered.
 
-5. \(Optional\) Change the **Session Timeout** value.
+5. (Optional) Change the **Session Timeout** value.
 
    A default value of 300 seconds is already set. This timeout value indicates the number of seconds that must pass after a user backgrounds the app before a launch is considered to be a new Lifecycle session.
 
@@ -79,13 +79,13 @@ To deploy your configuration to a development environment for testing:
 
    The library builds and is displayed under the **Development** section of the publishing workflow.
 
-7. On the library card, click the ellipsis \(...\) to see a dropdown list.
+7. On the library card, click the ellipsis (...) to see a dropdown list.
 8. Select **Submit for Approval** and then **Submit**.
 
 The library of changes are then published to the Development environment and the library is displayed under the **Submitted** section of the publishing workflow.
 
 {% hint style="info" %}
-Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html).
+Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://experienceleague.adobe.com/docs/experience-platform/tags/publish/overview.html?lang=en).
 {% endhint %}
 
 Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see tutorial on [getting the Experience Platform SDKs](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk).
@@ -96,11 +96,11 @@ Now that you published your configuration, get the Adobe Experience Platform SDK
 
 ## Additional information
 
-* To learn more about getting access to Launch, see the [user permissions](https://docs.adobelaunch.com/launch-reference/administration/user-permissions) document.
+* To learn more about getting access to Launch, see the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/manage-permissions.html) document.
 * To learn more about Experience Platform Launch's publishing workflows, watch this [video](https://www.youtube.com/embed/Pe-YSn26_xI).
 
 ## Get help
 
 * To ask questions, visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk).
-* For immediate assistance, contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html).
+* For immediate assistance, contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support).
 

@@ -1,6 +1,6 @@
 # Getting Started with Adobe Experience Platform
 
-This tutorial illustrates how you may send Experience Data Model \(XDM\) commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS \(Swift\) and Android.
+This tutorial illustrates how you may send Experience Data Model (XDM) commerce events to Adobe Experience Platform via Experience Edge using the AEP Edge extension in a sample application, provided to you in iOS (Swift) and Android.
 
 The demo mobile application has multiple tabs. For this exercise, the `Edge` and `Assurance` tabs will be used, demonstrating XDM commerce events in a mobile application.
 
@@ -63,7 +63,7 @@ To create a configuration identifier use the following steps:
 
 As a prerequisite, the Adobe Experience Platform Edge extension requires the successful implementation of the Adobe Experience Platform Mobile SDK - [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core).
 
-Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) for the transmission of events, managing identity \(ECID\), and triggering client-side rules based on XDM.
+Experience Edge extension relies on the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) for the transmission of events, managing identity (ECID), and triggering client-side rules based on XDM.
 
 1. First, follow the steps in the [set up a mobile property tutorial](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) in Adobe Experience Platform Launch.
 2. Install the `Adobe Experience Platform Edge` extension from the Catalog.
@@ -84,9 +84,9 @@ Download the iOS Swift Sample application from [GitHub - beta-assignment-1](http
 
 ### Set up the configuration <a id="set-up-the-configuration"></a>
 
-In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the previously created mobile property created in [the previous step](./#configure-the-launch-mobile-property) and click on the Development \(![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)\) icon. Find the **Environment File ID** at the top and copy it.
+In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the previously created mobile property created in [the previous step](./#configure-the-launch-mobile-property) and click on the Development (![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)) icon. Find the **Environment File ID** at the top and copy it.
 
-Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` \(Android\) / `AppDelegate` \(iOS\) class.
+Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` (Android) / `AppDelegate` (iOS) class.
 
 ## Use the sample application <a id="use-the-sample-application"></a>
 
@@ -94,7 +94,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
 This application uses the Adobe Experience Platform Edge extension for sending XDM formatted data to the Adobe Experience Edge Network and so to Adobe Experience Platform. The XDM data is modelled based on the XDM Schemas you have configured in Adobe Experience Platform.
 
-The sample app includes automatically generated source classes for the XDM Objects that define the commerce field group configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` class and its usages in `EdgeViewController.swift` \(iOS\) / `EdgeTab.java` \(Android\`.
+The sample app includes automatically generated source classes for the XDM Objects that define the commerce field group configured in the previous step. To explore these, check the `MobileSDKCommerceSchema` class and its usages in `EdgeViewController.swift` (iOS) / `EdgeTab.java` (Android)`.
 
 ### Commerce events <a id="commerce-events"></a>
 
@@ -152,7 +152,7 @@ When the `Purchase` button is clicked, a new XDM Commerce Purchase Experience Ev
 
 ### Using AEP Assurance <a id="using-aep-assurance"></a>
 
-AEP Assurance \(also known as Project Griffon\) is a product from Adobe that lets you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is set up to use the AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
+AEP Assurance (also known as Project Griffon) is a product from Adobe that lets you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is set up to use the AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
 1. Visit [Project Griffon](https://experience.adobe.com/griffon) and login with your Adobe credentials.
 2. Create a new Session:
@@ -208,7 +208,7 @@ You can save this query and run it later when needed.
 
 ### Implement Add to cart XDM events <a id="implement-add-to-cart-xdm-events"></a>
 
-For this exercise, implement the "Add to cart functionality" in the sample application. Navigate to `EdgeViewController.swift` \(iOS\) / `EdgeTab.java`\(Android\) and implement the `sendAddToCartXDMEvent` function. The recommended eventType is `commerce.productListAdds`.
+For this exercise, implement the "Add to cart functionality" in the sample application. Navigate to `EdgeViewController.swift` (iOS) / `EdgeTab.java`(Android) and implement the `sendAddToCartXDMEvent` function. The recommended eventType is `commerce.productListAdds`.
 
 {% hint style="info" %}
 Use the `sendPurchaseXDMEvent` as an example and Project Griffon to validate that the XDM Experience Event is properly formatted.
@@ -218,7 +218,7 @@ Use the `sendPurchaseXDMEvent` as an example and Project Griffon to validate tha
 
 If you would like to explore other XDM schemas for your mobile use-case, find more details in the [Adobe Experience Platform - Experience Edge](https://aep-sdks.gitbook.io/docs/beta/experience-platform-extension) page.
 
-To learn more about Experience Data Model \(XDM\), schemas, datasets, and field groups, read [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
+To learn more about Experience Data Model (XDM), schemas, datasets, and field groups, read [XDM System overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
 
 ## Other tutorials
 

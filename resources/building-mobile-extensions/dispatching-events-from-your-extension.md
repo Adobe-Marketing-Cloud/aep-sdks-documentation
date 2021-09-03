@@ -7,7 +7,7 @@ Events can be used by extensions in the following scenarios:
 
 ## Create an event for dispatching
 
-The `ACPExtensionEvent` \(iOS\) / `Event` \(Android\) class contains the event that is used by the internal Event Hub. You can construct an event after the Experience Platform SDKs has been initialized.
+The `ACPExtensionEvent` (iOS) / `Event` (Android) class contains the event that is used by the internal Event Hub. You can construct an event after the Experience Platform SDKs has been initialized.
 
 {% hint style="info" %}
 This event construction is usually completed in an event listener.
@@ -75,7 +75,7 @@ if (error) {
 
 ### Dispatch your event
 
-After creating your event, dispatch it by using the `ACPCore` \(iOS\) / `MobileCore` \(Android\) `dispatchEvent` method.
+After creating your event, dispatch it by using the `ACPCore` (iOS) / `MobileCore` (Android) `dispatchEvent` method.
 
 You may need to dispatch an event from one of your APIs or application methods to trigger an internal flow in your extension or another Adobe extension.
 
@@ -131,7 +131,7 @@ public void loginButtonClicked() {
 
 ### Dispatch paired events
 
-In order to be notified when an event is being dispatched in the response of an `ACPExtensionEvent` \(iOS\) / `Event` \(Android\), use the `dispatchEventWithResponseCallback` API from `ACPCore` \(iOS\) / `MobileCore` \(Android\) with a non-null callback. The paired response event is sent by using the `dispatchResponseEvent` API.
+In order to be notified when an event is being dispatched in the response of an `ACPExtensionEvent` (iOS) / `Event` (Android), use the `dispatchEventWithResponseCallback` API from `ACPCore` (iOS) / `MobileCore` (Android) with a non-null callback. The paired response event is sent by using the `dispatchResponseEvent` API.
 
 {% hint style="info" %}
 Paired events are usually used for set/get operations where you need to be notified about a response event outside your extension code.

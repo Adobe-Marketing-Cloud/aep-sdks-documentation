@@ -1,4 +1,4 @@
-# Target API reference \(deprecated in 2.x\)
+# Target API reference (deprecated in 2.x)
 
 {% hint style="warning" %}
 These deprecated APIs are present in ACPTarget 2.x only.

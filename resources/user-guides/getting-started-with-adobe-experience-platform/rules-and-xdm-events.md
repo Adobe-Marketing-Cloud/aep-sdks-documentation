@@ -82,7 +82,7 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 
 * In the sample app, navigate to the Edge tab.
 * Select a product, add the review information and click `Submit Review`.
-* In the console log search for this log message - `Attaching event data` \(iOS\) / `New EventData for Event` \(Android\) and check that `ratingDate` and `ratingSource` were attached correctly. 
+* In the console log search for this log message - `Attaching event data` (iOS) / `New EventData for Event` (Android) and check that `ratingDate` and `ratingSource` were attached correctly. 
 * Verify if the logging messages are intuitive and descriptive for the use-case you are testing.
 
 ### Validate the event data with AEP Assurance
