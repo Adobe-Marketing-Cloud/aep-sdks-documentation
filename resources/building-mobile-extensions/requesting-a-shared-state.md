@@ -57,3 +57,4 @@ A shared state can be `nil` at some point in time, which means that it is in a p
 {% hint style="warning" %}
 Do not request and rely on shared states that are not documented, because their implementation might change.
 {% endhint %}
+

@@ -3,8 +3,8 @@
 ## Key definitions
 
 * A condition is a boolean equation that evaluates to `true` or `false`.
-* A consequence is the action to be performed when the trigger is met and the condition\(s\) evaluates to `true`.
-* A rule is a set of conditions and the associated consequence\(s\).
+* A consequence is the action to be performed when the trigger is met and the condition(s) evaluates to `true`.
+* A rule is a set of conditions and the associated consequence(s).
 * A triggering event is the event that started the rule evaluation.
 
   The Adobe Experience Platform Mobile SDK evaluates each rule configured in Experience Platform Launch for the current event that is processed by the Event Hub.
@@ -24,15 +24,15 @@ Rules are delivered as a standard ZIP archive, which contains a `rules.json` fil
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Version | `version` | number | _\(Required\)_ Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
-| Rules | `rules` | array | _\(Required\)_ An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
+| Version | `version` | number | _(Required)_ Version number of the `rules.json` file format. Should be an integer that increments by 1 for each format change, and the initial version is 1. |
+| Rules | `rules` | array | _(Required)_ An array of rules objects. For more information, see [Rule object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#rule-object-definition). |
 
 ## Rule object definition
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Condition | `condition` | object | _\(Required\)_ Holds the definition for the base Condition object for this rule. Each Condition object can be a Group or a Matcher condition type. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and a matcher type.   There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
-| Action | `consequences` | array | _\(Required\)_ Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Condition | `condition` | object | _(Required)_ Holds the definition for the base Condition object for this rule. Each Condition object can be a Group or a Matcher condition type. Group conditions contain a logic type and an array of condition objects. Matcher conditions contain a key, value, and a matcher type.   There is one root-level condition for a rule, and this condition can have any number of nested conditions by using the group construct. For more information, see [Condition object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
+| Action | `consequences` | array | _(Required)_ Array of consequence objects, where each object contains the details for the associated consequence that are executed when the associated condition evaluates to `true`. For more information, see [Consequence object definition](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-object-definition). |
 
 ## Condition object definition
 
@@ -73,7 +73,7 @@ The keys that are used here are different than those used for In-App message mat
 | :--- | :--- | :--- | :--- | :--- |
 | Key | `key` | `string` | `"key":"key1"` | Key to get the value from the dictionary that is passed as a parameter to the rules processor. |
 | Matches | `matcher` | `string` | `"matcher":"eq"` | Matcher type that determines the kind of evaluation to use between the two values. |
-| Values | `values` | `array` | `"values":["value0", "value1"]` | List of values that are compared \(using OR\) against the value in the parameter dictionary for the `"key"` key. |
+| Values | `values` | `array` | `"values":["value0", "value1"]` | List of values that are compared (using OR) against the value in the parameter dictionary for the `"key"` key. |
 
 ### Logic types
 
@@ -103,14 +103,14 @@ The keys that are used here are different than those used for In-App message mat
 
 By default, keys and the associated values are sourced from the current event that is being processed by the Rules Engine. There are also some special key prefixes that can cause the values to be sourced from other locations that are known to the Experience Platform SDKs.
 
-To avoid collisions, special key prefixes always start with a `~` \(tilde\) to differentiate them from the standard event key names.
+To avoid collisions, special key prefixes always start with a `~` (tilde) to differentiate them from the standard event key names.
 
 | **Key prefix** | **Example** | **Description** |
 | :--- | :--- | :--- |
 | `~state.` | `~state.sharedStateName/keyName` | Reads the `keyName` from the shared state of the module that is stored in `sharedStateName`. |
 | `~type` | `~type` | Reads `eventType` from the triggering event. |
 | `~source` | `~source` | Reads `eventSource` from the triggering event. |
-| `~timestampu` | `~timestampu` | Reads the current device time in epoch format \(seconds since epoch\). |
+| `~timestampu` | `~timestampu` | Reads the current device time in epoch format (seconds since epoch). |
 | `~timestampz` | `~timestampz` | Reads the current device time in ISO 8601 data elements and interchange format. |
 | `~sdkver` | `~sdkver` | Reads the current Adobe Experience Platform SDKs version string. |
 | `~cachebust` | `~cachebust` | Generates a random number to be used for cache busting. |
@@ -197,9 +197,9 @@ The consequences section of a rule lists the file names of each consequence obje
 
 | **Friendly name** | **Key** | **Type** | **Description** |
 | :--- | :--- | :--- | :--- |
-| Identifier | `id` | string | _\(Required\)_ String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
-| Consequence type | `type` | string | _\(Required\)_ A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
-| Consequence details | `detail` | object | _\(Required\)_ JSON object that contains the details that are necessary to perform a consequence of the given type. |
+| Identifier | `id` | string | _(Required)_ String that contains a unique identifier for this consequence.  `sha1`, or another guaranteed random value with a near-impossible chance of collisions, is recommended. |
+| Consequence type | `type` | string | _(Required)_ A Consequence Type from the [Consequences Type](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) table. |
+| Consequence details | `detail` | object | _(Required)_ JSON object that contains the details that are necessary to perform a consequence of the given type. |
 
 ## Consequence types
 
@@ -207,7 +207,7 @@ The consequences section of a rule lists the file names of each consequence obje
 | :--- | :--- | :--- | :--- |
 | Analytics | `an` | Sends data to Analytics | [Analytics consequence detail definition](rules-engine-consequence-details.md#analytics-consequence) |
 | In-App Message | `iam` | In-App Message | [In-App consequence detail definition](rules-engine-consequence-details.md#in-app-message-consequence) |
-| Postback | `pb` | Send Postback\(s\) to a third-party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence) |
+| Postback | `pb` | Send Postback(s) to a third-party URL | [Postback consequence detail definition](rules-engine-consequence-details.md#postback-consequence) |
 | PII | `pii` | Sync PII with an https URL | [Sync PII consequence detail definition](rules-engine-consequence-details.md#sync-pii-consequence) |
 | Open URL | `url` | Passes the provided URL to be opened by the platform that is most commonly used for app deep linking. | [Open URL consequence detail definition](rules-engine-consequence-details.md#open-url-consequence) |
 | Client Side Profile | `csp` | Create or delete operations against the client-side profile. | [Profile consequence detail definition](rules-engine-consequence-details.md#profile-consequence) |
@@ -313,7 +313,7 @@ If the conditions pass, an in-app message triggered:
 
 `((key3 == value5 || key3 == value6) && (~state.com.adobe.module.userProfile/userprofiledata.48181acd22b3edaebc8a447868a7df7ce629920a-seen does not exist))`
 
-If the conditions pass, the in-app message is displayed \(first consequence\), and future displays of the message are prevented by writing/incrementing value to the client-side profile:`(~state.com.adobe.module.userProfile/userprofiledata.48181acd22b3edaebc8a447868a7df7ce629920a-seen)` \(Second consequence\) prevents the conditions from evaluating to `true` for future evaluations.
+If the conditions pass, the in-app message is displayed (first consequence), and future displays of the message are prevented by writing/incrementing value to the client-side profile:`(~state.com.adobe.module.userProfile/userprofiledata.48181acd22b3edaebc8a447868a7df7ce629920a-seen)` (Second consequence) prevents the conditions from evaluating to `true` for future evaluations.
 
 **Important**: In a production environment, attach the profile write consequence to an IAM result event, not to the show event. IAM consequences are _first-one-wins_, so multiple in-app messages are not displayed when multiple conditions are met across messages. The other consequences are still performed.
 

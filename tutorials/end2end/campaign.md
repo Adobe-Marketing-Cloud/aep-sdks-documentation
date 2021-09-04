@@ -8,9 +8,9 @@ solution: Experience Cloud
 
 # Add Adobe Campaign
 
-This lesson will guide your through the steps required to implement the [Adobe Campaign Standard](https://docs.adobelaunch.com/extension-reference/web/experience-cloud-id-service-extension) in your mobile app.
+This lesson will guide your through the steps required to implement the [Adobe Campaign Standard](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/id-service/overview.html?lang=en) in your mobile app.
 
-[Adobe Campaign Standard](https://marketing.adobe.com/resources/help/en_US/mcvid/) is great because of XYZ.
+[Adobe Campaign Standard](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en) is great because of XYZ.
 
 ## Learning Objectives
 

@@ -8,7 +8,7 @@
 4. Click **Save**.
 5. Complete the publishing process to update the SDK configuration.
 
-   For more information about publishing, see [Publishing](https://docs.adobelaunch.com/publishing).
+   For more information about publishing, see [Publishing](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html).
 
 ### Configure Campaign Classic extension
 
@@ -20,7 +20,7 @@ Trying to find your Campaign Classic registration or tracking endpoint URLs? You
 
 #### Registration endpoints
 
-Type the registration endpoint URL\(s\) for your Campaign Classic instances. You can specify up to three unique endpoints for your development, staging, and production environments.
+Type the registration endpoint URL(s) for your Campaign Classic instances. You can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 For this extension, the registration endpoint URLs should be entered **without** a prefixing `https://.`
@@ -28,19 +28,19 @@ For this extension, the registration endpoint URLs should be entered **without**
 
 #### Tracking endpoints
 
-Type the tracking endpoint URL\(s\) for your Campaign Classic instances. Like the registration URLs, you can specify up to three unique endpoints for your development, staging, and production environments.
+Type the tracking endpoint URL(s) for your Campaign Classic instances. Like the registration URLs, you can specify up to three unique endpoints for your development, staging, and production environments.
 
 {% hint style="warning" %}
 For this extension, the tracking endpoint URLs should be entered **without** a prefixing `https://.`
 {% endhint %}
 
-#### Integration key \(iOS\)
+#### Integration key (iOS)
 
-You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Campaign Classic [client console](https://experienceleague.adobe.com/docs/campaign-classic/using/installing-campaign-classic/connect-to-campaign/installing-the-client-console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-classic/using/sending-messages/sending-push-notifications/configure-the-mobile-app/configuring-the-mobile-application.html).
 
-#### Integration key \(Android\)
+#### Integration key (Android)
 
-Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Campaign Classic [client console](https://docs.campaign.adobe.com/doc/AC/en/INS_Installing_Campaign_in_Windows__Installing_the_client_console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://docs.campaign.adobe.com/doc/AC/en/DLV_Sending_push_notifications_Setting_up_mobile_app_channel.html#Configuring_the_mobile_application_in_Adobe_Campaign).
+Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Campaign Classic [client console](https://experienceleague.adobe.com/docs/campaign-classic/using/installing-campaign-classic/connect-to-campaign/installing-the-client-console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-classic/using/sending-messages/sending-push-notifications/configure-the-mobile-app/configuring-the-mobile-application-android.html).
 
 #### Request timeout
 
@@ -160,7 +160,7 @@ To update SDK configuration programmatically, use the following information to c
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. | String |
+| `build.environment` | Yes | Specifies which environment to use (prod, dev, or staging) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. | String |
 | `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Campaign Classic registration or tracking server. | Integer |
 | `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. | String |
 | `__dev__campaignclassic.trackingServer` | No | Sets the development environment tracking server, which receives tracking requests. | String |

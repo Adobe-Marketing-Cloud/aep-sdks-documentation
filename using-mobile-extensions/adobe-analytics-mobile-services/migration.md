@@ -1,16 +1,12 @@
-# Migrating to AEPMobileServices
+# Migrating to AEPMobileServices reference
 
-This document is a reference comparison of ACPMobileServices\(1.x\) APIs against their equivalent APIs in AEPMobileServices\(3.x\).
+This document is a reference comparison of ACPMobileServices(1.x) APIs against their equivalent APIs in AEPMobileServices(3.x).
 
 ## Primary `Classes`
 
-The class name containing public APIs is different depending on which SDK and language combination is being used.
-
-| SDK version | Language | Class name |
-| :--- | :--- | :--- |
-| ACPMobileServices | Objective-C | ACPMobileServices |
-| AEPMobileServices | Swift | AEPMobileServices |
-| AEPMobileServices | Objective-C | AEPMobileServices |
+| Type | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
+| :--- | :--- | :--- | :--- |
+| Primary Class | AEPMobileServices | AEPMobileServices | ACPMobileServices |
 
 ## Mobile Services extension APIs
 
@@ -18,15 +14,17 @@ For more information, please read the [Mobile Services API reference](https://ae
 
 ### trackAdobeDeepLink
 
-* ACPMobileServices
-
-  ```text
-  + (void) trackAdobeDeepLink: (NSURL*) url;
-  ```
-
-* AEPMobileServices
-
-  ```text
+{% tabs %}
+{% tab title="AEP 3.x (Objective-C)" %}
+```text
   + (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
-  ```
+```
+{% endtab %}
+
+{% tab title="ACP 2.x (Objective-C)" %}
+```text
+  + (void) trackAdobeDeepLink: (NSURL*) url;
+```
+{% endtab %}
+{% endtabs %}
 

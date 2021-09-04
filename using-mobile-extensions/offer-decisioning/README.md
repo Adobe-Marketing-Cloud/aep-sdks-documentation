@@ -1,6 +1,6 @@
 # Adobe Experience Platform Offer Decisioning
 
-[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface \(UI\) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
+[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface (UI) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
 
 ## Prerequisites
 
@@ -10,15 +10,16 @@
 * Launch UI config is published
 
 ## Limitations
+
 Some offer constraints are currently not supported with the mobile Experience Edge workflows, for example `Capping`. The `Capping` field value specifies the number of times an offer can be presented across all users. For more details, see [Offer eligibility rules and constraints guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
 
-## Enable Offer Decisioning in Edge configuration
+## Enable Offer Decisioning in Datastream configuration
 
 To enable Offer Decisioning, you need to perform the following steps:
 
-1. In Adobe Experience Platform Launch, navigate to the Edge Configurations from the left panel, then select the configuration that needs to be updated.
+1. In Adobe Experience Platform Launch, navigate to the `Datastreams` from the left panel, then select the configuration that needs to be updated.
 
-   Enable Adobe Experience Platform in your [edge configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/edge-configuration.html?lang=en) and check the `Offer Decisioning` box
+   Enable Adobe Experience Platform in your [datastream configuration](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html) and check the `Offer Decisioning` box.
 
 ![](../../.gitbook/assets/offer-decisioning-edge-config.png)
 
@@ -255,7 +256,7 @@ The app can register a listener for offer update, so it is notified whenever the
 ```swift
 OfferDecisioning.onOfferUpdate { offersDict in
       // handle offers
-      print("\(propositions as AnyObject)")
+      print("(propositions as AnyObject)")
 }
 ```
 {% endtab %}

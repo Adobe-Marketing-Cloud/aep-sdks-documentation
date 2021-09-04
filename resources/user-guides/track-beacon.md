@@ -2,13 +2,13 @@
 
 ## Emulate the trackBeacon call from the v4 SDKs
 
-The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile](../../foundation-extensions/profile/) extension to generate beacon-related rules.
+The `trackBeacon` call is no longer available in the Experience Platform SDKs. Now, you need to manually send beacon tracking data to your Adobe Analytics server and create the rules based on a user's proximity to your beacons. This solution relies on the [Profile extension](../../foundation-extensions/profile/) to generate beacon-related rules.
 
 This topic contains sample code to help you implement your own `trackBeacon` calls.
 
 ### Track a beacon
 
-When your user comes within the range of a beacon, call this method to send beacon data to [Analytics](../../using-mobile-extensions/adobe-analytics/). This code also saves all beacon-related data in the client-side Profile for use with the Rules Engine.
+When your user comes within the range of a beacon, call this method to send beacon data to [Adobe Analytics](../../using-mobile-extensions/adobe-analytics/). This code also saves all beacon-related data in the client-side Profile for use with the Rules Engine.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -204,7 +204,7 @@ do {
 
 ### Clear the current beacon
 
-The `clearCurrentBeacon` code removes the user attributes that were previously set in the Profile extension. To keep Rules working as expected, this method should be called when the user is no longer within range of your beacon.
+The `clearCurrentBeacon` code removes the user attributes that were previously set in the Profile extension. To keep rules working as expected, this method should be called when the user is no longer within range of your beacon.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -256,18 +256,18 @@ do {
 
 ## Use beacon values in Experience Platform Launch rules
 
-In the code samples above, attributes are set in the client-side user profile. We can use these attributes when creating a rule in Experience Platform Launch to provide a custom experience or to take a specific action when the user is near a beacon.
+In the code samples above, attributes are set in the client-side user profile. You can use these attributes when creating a rule in Experience Platform Launch to provide a custom experience or to take a specific action when the user is near a beacon.
 
 ### Beacon data in rule conditions
 
-In conditions, you can mix-and-match beacon data to determine the specific audience for your action. You can use the following beacon-related variables:
+In conditions, you can mix and match beacon data to determine the specific audience for your action. You can use the following beacon-related variables:
 
-* UUID \(`a.beacon.uuid`\)
-* Major ID \(`a.beacon.major`\)
-* Minor ID \(`a.beacon.minor`\)
-* User Proximity \(`a.beacon.prox`\)
+* UUID (`a.beacon.uuid`)
+* Major ID (`a.beacon.major`)
+* Minor ID (`a.beacon.minor`)
+* User Proximity (`a.beacon.prox`)
 
-Configure your condition by selecting the `Profile` extension, selecting `Profile Value` as the condition type, and typing the variable. The following graphic shows an example of a condition that passes when the Major ID \(`a.beacon.major`\) of the beacon is equal to `12`:
+Configure your condition by selecting the **Profile** extension, selecting **Profile Value** as the condition type, and typing the variable. The following graphic shows an example of a condition that passes when the Major ID (`a.beacon.major`) of the beacon is equal to 12:
 
 ![](../../.gitbook/assets/beacon-condition.png)
 
@@ -279,7 +279,7 @@ Before you can use beacon data in your actions, create a data element for each v
 
 ![](../../.gitbook/assets/beacon-data-element.png)
 
-After creating a data element, we can use this data element as a token replacement in our actions. The graphic below shows an action that sends data to Analytics and attaches the `beacon.major` data element as additional context data:
+After creating a data element, you can use this data element as a token replacement in our actions. The graphic below shows an action that sends data to Adobe Analytics and attaches the `beacon.major` data element as additional context data:
 
 ![](../../.gitbook/assets/beacon-token-replacement.png)
 

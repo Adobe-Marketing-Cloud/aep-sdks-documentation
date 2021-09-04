@@ -8,7 +8,7 @@
 
 2. (Optional) Create a new listing in the Exchange Partner Portal.
 
-   For more information, see the document on [creating an exchange listing](https://experienceleague.adobe.com/docs/launch/using/extension-dev/submit/create-listing.html.
+   For more information, see the document on [creating an exchange listing](https://experienceleague.adobe.com/docs/launch/using/extension-dev/submit/create-listing.html).
 
 3. Create a new Adobe I/O integration.
 
@@ -45,3 +45,4 @@ To build the Experience Platform Launch extension interface, complete the follow
 {% hint style="info" %}
 Adobe I/O integration keys are needed before you can build the interface. For more information, see [Create an Adobe I/O Integration](https://experienceleague.adobe.com/docs/launch/using/extension-dev/submit/upload-and-test.html?lang=en#integration).
 {% endhint %}
+

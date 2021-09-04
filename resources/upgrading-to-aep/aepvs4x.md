@@ -29,7 +29,7 @@ The following tables provide information about the differences between the new E
 | Video heartbeats | Yes | Yes |
 | Lifetime value | Yes | Yes, use Profile extension |
 | Server-side forwarding - Audience Manager | Yes | Yes |
-| Set/get custom visitor ID \(vid or s.vid\) | Yes | Yes |
+| Set/get custom visitor ID (vid or s.vid) | Yes | Yes |
 
 ### Adobe Analytics - Mobile Services / Mobile Add-on
 
@@ -74,12 +74,12 @@ Although synching with integration codes is fully supported, the Experience Clou
 | Apple iOS​ | Supported | Supported |
 | Apple WatchOS​ | Supported | _Support coming_ |
 | Apple tvOS​ | Supported | Supported |
-| React Native \(iOS & Android\) | Supported | Supported |
-| Flutter \(iOS & Android\) | Unupported | Supported |
-| Unity \(iOS & Android\)​ | Supported | Supported |
-| Xamarin \(iOS & Android\)​ | Supported | Supported |
-| Cordova \(iOS & Android\)​ | Supported | Supported |
-| Universal Windows Platform \(UWP\) / Win 10 | Unsupported | _Not supported_ |
+| React Native (iOS & Android) | Supported | Supported |
+| Flutter (iOS & Android) | Unupported | Supported |
+| Unity (iOS & Android)​ | Supported | Supported |
+| Xamarin (iOS & Android)​ | Supported | Supported |
+| Cordova (iOS & Android)​ | Supported | Supported |
+| Universal Windows Platform (UWP) / Win 10 | Unsupported | _Not supported_ |
 | Windows 8​ | Supported | _Not supported_ |
 | Blackberry​ | Supported | _Not supported_ |
 

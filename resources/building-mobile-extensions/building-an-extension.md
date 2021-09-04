@@ -31,7 +31,7 @@ To create a simple extension, complete the following procedures in the order in 
 
 ### Create an extension class
 
-The `ACPExtension`(iOS) or `Extension` (Android) class is the base class from which extensions must be derived. The `init` method (iOS) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
+The `ACPExtension`(iOS) or `Extension` (Android) class is the base class from which extensions must be derived. The `init` method (iOS) or the base `constructor` (Android) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
 
 #### Android
 
@@ -93,10 +93,8 @@ The `ACPExtension` class has the following method that you must override:
 
 * `name`: Returns the name of the extension.  
   Extension developers must prefix their extension names with the company name (for example, `com.myCompany.myExtension`). For more information about the naming constraints, please read the [namespace conventions section](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
-  
-  {% hint style="info" %}
+
   All Adobe module names are prefixed with `com.adobe.module` and are considered reserved.
-  {% endhint %}
 
 The `ACPExtension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
 
@@ -254,10 +252,12 @@ Some registration errors, such as undefined names, name conflicts, or type check
 
 #### Unregistering your extension
 
-If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` (iOS\ / `ExtensionApi` (Android). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
+If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` (iOS) / `ExtensionApi` (Android). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
 {% hint style="info" %}
+
 If you retained a reference to the extension instance (for example by storing `self` or `this` in a static variable), this is where you should clean it up.
+
 {% hint style="info" %}
 
 {% tabs %}

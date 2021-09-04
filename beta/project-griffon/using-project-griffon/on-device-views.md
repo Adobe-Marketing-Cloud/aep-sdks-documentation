@@ -14,5 +14,5 @@
 
 ## Disconnected
 
-![](../../../.gitbook/assets/image%20%283%29.png)
+![](../../../.gitbook/assets/on-device-view-assurance-disconnected.png)
 

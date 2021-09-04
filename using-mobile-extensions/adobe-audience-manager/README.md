@@ -1,17 +1,8 @@
 # Adobe Audience Manager
 
-Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://www.adobe.com/analytics/audience-manager.html).
+Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://business.adobe.com/products/audience-manager/adobe-audience-manager.html).
 
-To get started with Audience Manager, complete these steps:
-
-1. Configure the Audience Manager extension in Launch.
-2. Add the Audience Manager extension to your app
-3. Implement the Audience Manager APIs to:
-   * Get the user profile.
-   * Send signals to Audience Manager.
-   * Reset the Audience Manager identifiers and visitor profiles.
-
-## Configuring the Audience Manager extension in Experience Platform Launch <a id="configuring-the-audience-manager-extension-in-adobe-launch"></a>
+## Configuring the Audience Manager extension in Experience Platform Launch
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm-1.png)
 
@@ -22,27 +13,29 @@ To get started with Audience Manager, complete these steps:
 5. Click **Save**.
 6. Follow the publishing process to update the SDK configuration.
 
-### Add Audience Manager to your app
+## Add Audience Manager to your app
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
+
 1. Add the library to your project.
-2. Import the library:
+2. Import the library.
 
-#### Java
-
-```text
+```java
 import com.adobe.marketing.mobile.*;
 ```
 
-**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% hint style="info" %}
+Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
-2. Import the Audience and Identity library:
+2. Import the Audience and Identity library, using the respective language: 
 
-#### Objective-C
+### Objective-C
 
 ```objectivec
   #import "ACPCore.h"
@@ -50,33 +43,35 @@ import com.adobe.marketing.mobile.*;
   #import "ACPIdentity.h"
 ```
 
-#### Swift
+### Swift
 
 ```swift
    import ACPCore
    import ACPAudience
 ```
 
-**Important**: Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% hint style="info" %}
+Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
+{% endhint %}
 {% endtab %}
 
 {% tab title="React Native" %}
 #### JavaScript
 
-Install Audience Manager
+1. Install Audience Manager in your project.
 
 ```jsx
 npm install @adobe/react-native-acpaudience
 react-native link @adobe/react-native-acpaudience
 ```
 
-Importing the extension
+1. Import the extension.
 
 ```jsx
 import {ACPAudience} from '@adobe/react-native-acpaudience';
 ```
 
-Getting the extension version
+1. Ensure the extension version is correct.
 
 ```jsx
 ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAudience version: " + version));
@@ -84,11 +79,11 @@ ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 {% endtab %}
 {% endtabs %}
 
-### Register Audience Manager with Mobile Core
+## Register Audience Manager with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity.
 
@@ -117,7 +112,7 @@ public void onCreate() {
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
-#### Objective-C
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -130,7 +125,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 }
 ```
 
-#### Swift
+### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
@@ -145,7 +140,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 ```jsx
 import {ACPAudience} from '@adobe/react-native-acpcore';
@@ -159,11 +154,11 @@ initSDK() {
 
 ## Implement Audience Manager APIs
 
-For more information about implementing Audience Manager APIs, see [Audience Manager API reference](audience-manager-api-reference.md).
+For more information about implementing Audience Manager APIs, please read the [Audience Manager API reference](audience-manager-api-reference.md).
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update SDK configuration programmatically, use the following information to change your Audience Manager configuration values. For more information, see the [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
@@ -174,6 +169,6 @@ To update SDK configuration programmatically, use the following information to c
 
 * How do you find your Audience Manager server?
 * Want to know more about setting up Adobe Analytics server-side forwarding to Audience Manager?
-  * [Server-side forwarding overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
-  * [Set up Server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
+  * [Server-side forwarding overview](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/server-side-forwarding/ssf.html)
+  * [Set up server-side forwarding with Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#server-side-forwarding-with-audience-manager) 
 

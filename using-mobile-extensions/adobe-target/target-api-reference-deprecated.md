@@ -1,9 +1,13 @@
-# Target API reference \(deprecated\)
+# Target API reference (deprecated in 2.x)
+
+{% hint style="warning" %}
+These deprecated APIs are present in ACPTarget 2.x only.
+{% endhint %}
 
 ### Using the prefetch APIs
 
 {% hint style="warning" %}
-The `prefetchContent` API signature has changed. We recommend that you  use parameters encapsulated in `TargetParameters`.
+The `prefetchContent` API signature has changed. We recommend that you use parameters encapsulated in `TargetParameters`.
 {% endhint %}
 
 {% tabs %}

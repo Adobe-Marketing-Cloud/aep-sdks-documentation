@@ -1,6 +1,6 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
+The Adobe Experience Platform SDK is available for Apple iOS (includes iOS, iPadOS, and tvOS) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
@@ -13,7 +13,7 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 ### Java / Kotlin
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -21,7 +21,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
    The **Environments** tab lists the different environments where you can publish.
 
-3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
+3. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
 
    You should see a dialog box similar to the following:
 
@@ -35,7 +35,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; ****requires **Swift 5.1 or newer;** and **Xcode 11.0 or newer**.
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
 {% endhint %}
 
 {% hint style="success" %}
@@ -46,7 +46,7 @@ In order to support the new Apple M1 architecture while maintaining support for 
 Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-### iOS \(Swift\) version 3.x
+### iOS (Swift) version 3.x
 
 Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
 
@@ -74,7 +74,7 @@ end
 
 ### iOS version 2.x and before
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -89,10 +89,18 @@ You should see a pop-up similar to the following image:
 {% tab title="React Native" %}
 ### React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **versions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
 For React Native, you should install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions, see this [tutorial on getting started with React Native applications](https://facebook.github.io/react-native/docs/getting-started).
+
+v2.0.0 and above of the AEP Mobile SDK React Native plugins use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. For iOS development, after installing the plugins from npm, download the pod dependencies by running the following command:
+
+`cd ios && pod install && cd ..`
+
+To update native dependencies to latest available versions, run the following command:
+
+`cd ios && pod update && cd ..`
 {% endhint %}
 {% endtab %}
 
@@ -295,7 +303,7 @@ public class MainApp extends Application {
 ### iOS version 3.x
 
 {% hint style="warning" %}
-For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
+For iOS Swift libraries, registration is changed to a single API call (as shown in the snippets below). Calling the`MobileCore.start` API is no longer required.
 {% endhint %}
 
 **Swift**
@@ -387,11 +395,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-### Javascript
+For React Native apps, initialize the SDK using native code in your `AppDelegate` (iOS) and `MainApplication` (Android).
 
-For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+### iOS
 
-The initialization code is located in the [React Native ACPCore Github README](https://github.com/adobe/react-native-acpcore).
+```objectivec
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+### Android
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApplication extends Application implements ReactApplication {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    ...
+    MobileCore.setApplication(this);
+    MobileCore.setLogLevel(LoggingMode.DEBUG);
+    MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
+    try {
+      UserProfile.registerExtension();
+      Identity.registerExtension();
+      Lifecycle.registerExtension();
+      Signal.registerExtension();
+      MobileCore.start(new AdobeCallback () {
+          @Override
+          public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+         }
+      });
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -569,7 +647,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### 3. Ensure app permissions \(Android only\)
+### 3. Ensure app permissions (Android only)
 
 For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 
@@ -580,7 +658,7 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Watch the Vvdeo
+## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
@@ -593,5 +671,5 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 

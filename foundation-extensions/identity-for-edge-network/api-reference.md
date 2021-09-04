@@ -8,9 +8,9 @@
 
 This API retrieves the ECID that was generated when the app was initially launched.
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback]().
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
 
-When [AdobeCallbackWithError]() is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError]().
+When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
 
 **Java**
 
@@ -82,7 +82,7 @@ Identity.getExperienceCloudId { (ecid, error) in
 
 Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
-When [AdobeCallbackWithError]() is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError]().
+When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes) is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
 
 **Java**
 
@@ -92,7 +92,7 @@ When [AdobeCallbackWithError]() is provided, and you are fetching the identities
 public static void getIdentities(final AdobeCallback<IdentityMap> callback);
 ```
 
-* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](). The callback may be invoked on a different thread.
+* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](api-reference.md#identitymap). The callback may be invoked on a different thread.
 
 **Example**
 
@@ -118,7 +118,7 @@ Get all identities in the Identity for Egde Network extension, including custome
 static func getIdentities(completion: @escaping (IdentityMap?, Error?) -> Void)
 ```
 
-* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap]()
+* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](api-reference.md#identitymap)
 
 **Examples**
 
@@ -225,7 +225,7 @@ Identity.updateIdentities(with: identityMap)
 {% tab title="Android" %}
 ### removeIdentity
 
-Remove the identity from the stored client-side [IdentityMap](). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
+Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
@@ -254,7 +254,7 @@ Identity.removeIdentity(item, "Email");
 {% tab title="iOS — Swift" %}
 ### removeIdentity
 
-Remove the identity from the stored client-side [IdentityMap](). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
+Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
@@ -290,13 +290,13 @@ Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespac
 
 ## resetIdentities
 
-Clears all identities stored in the Identity extension and generates a new Experience Cloud ID \(ECID\) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
+Clears all identities stored in the Identity extension and generates a new Experience Cloud ID (ECID) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
 {% hint style="warning" %}
 The Identity for Edge Network extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Identity for Edge Network extension.
 {% endhint %}
 
-See [MobileCore.resetIdentities]() for more details.
+See [MobileCore.resetIdentities](api-reference.md) for more details.
 
 ## Public Classes
 
@@ -421,7 +421,7 @@ let hasNoIdentities: Bool = identityMap.isEmpty
 
 ### IdentityItem
 
-Defines an identity to be included in an [IdentityMap]().
+Defines an identity to be included in an [IdentityMap](api-reference.md#identitymap).
 
 The format of the IdentityItem class is defined by the [XDM Identity Item Schema](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/identityitem.schema.md).
 
@@ -484,7 +484,7 @@ let primary: Bool = item.primary
 
 ### AuthenticatedState
 
-Defines the state an [Identity Item]() is authenticated for.
+Defines the state an [Identity Item](api-reference.md#identityitem) is authenticated for.
 
 The possible authenticated states are:
 

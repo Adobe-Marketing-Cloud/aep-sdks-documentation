@@ -1,5 +1,33 @@
 # Release Notes
 
+## July 21, 2021
+
+### iOS Analytics 2.5.1
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+### Android Analytics 1.2.8
+
+* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
+
+### Android Analytics 1.2.7
+
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
+
+## April 1, 2021
+
+### iOS AEPAnalytics 3.0.1
+
+* Added support to handle internal analytics track request events
+* Refactored code and updated doc comments
+
+## February 26, 2021
+
+### iOS AEPAnalytics 3.0.0
+
+* Initial release to support [Adobe Analytics](./) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
+
 ## December 18, 2020
 
 ### iOS Analytics 2.5.0
@@ -72,7 +100,7 @@ The following updates were made in this release:
 
 ### Android Analytics 1.2.3 and iOS Analytics 2.2.2
 
-* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
 
 ## October 28, 2019
 

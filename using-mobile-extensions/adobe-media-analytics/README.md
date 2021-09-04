@@ -1,7 +1,7 @@
 # Adobe Analytics - Media Analytics for Audio and Video
 
 {% hint style="warning" %}
-This extension requires the [Adobe Analytics for Media](https://docs.adobe.com/content/help/en/media-analytics/using/media-overview.html) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
+This extension requires the [Adobe Analytics for Media](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
 {% endhint %}
 
 ## Configure Media Analytics extension in Experience Platform Launch
@@ -32,7 +32,7 @@ Type the channel name property.
 
 ### **Player name**
 
-Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+Type the name of the media player in use (for example, _AVPlayer_, _Native Player_, or _Custom Player_).
 
 ### **Application Version**
 
@@ -255,5 +255,5 @@ To update your SDK configuration programmatically, use the following information
 | :--- | :--- |
 | Android | Supported |
 | Apple iOS​ | Supported |
-| React Native \(iOS & Android\) | Supported |
+| React Native (iOS & Android) | Supported |
 

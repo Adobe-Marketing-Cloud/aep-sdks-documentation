@@ -1,6 +1,6 @@
-# Setup schemas & datasets
+# Set up schemas and datasets
 
-To standardize data collection for use across applications that leverage Adobe Experience Platform, Adobe has created the open and publicly documented standard, [Experience Data Model \(XDM\)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
+To standardize data collection for use across applications that leverage Adobe Experience Platform, Adobe has created the open and publicly documented standard, [Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
 
 XDM provides a foundational framework to allow [Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/home.html) services and Adobe Experience Cloud solutions to interoperate for reliable marketing and experience delivery use cases.
 
@@ -43,7 +43,7 @@ The following steps illustrate the creation of a sample schema for mobile data c
 
 ## Create and configure a dataset <a id="create-and-configure-a-dataset"></a>
 
-Data ingested into Adobe Experience Platform is stored \(in the Data Lake\) as datasets that conform to the aforementioned mentioned XDM schema \(setup in the step above\).
+Data ingested into Adobe Experience Platform is stored (in the Data Lake) as datasets that conform to the aforementioned mentioned XDM schema (setup in the step above).
 
 {% hint style="info" %}
 To learn more about datasets in Adobe Experience Platform, please read the [datasets overview](https://experienceleague.adobe.com/docs/experience-platform/catalog/datasets/overview.html).

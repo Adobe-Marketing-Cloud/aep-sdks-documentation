@@ -46,9 +46,9 @@ The Adobe Analytics &gt; Analytics Events view is a focused view that shows even
 
 ### Adobe Analytics for Streaming Media
 
-The Adobe Analytics &gt; Media Analytics Events view shows events for your audio and video analytics implementation. The events detail view shows standard and custom metadata that is tracked for each playback session.
+The Adobe Analytics &gt; Media Analytics Events view shows events for your audio and video analytics implementation. The events detail view shows standard and custom metadata that is tracked for each playback session. In addition, you can view post-processed status and post-processed media analytics data such as media time spent or total buffer duration.
 
-### Places \(Location Services\)
+### Places (Location Services)
 
 The Location Services view is an on-device view that shows the user location entry and exit events for easy validation. This handy view provides a convenient interface to view location specific data points for inspection on the client for in-context debugging.
 
