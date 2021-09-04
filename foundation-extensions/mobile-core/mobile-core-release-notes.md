@@ -4,7 +4,7 @@
 
 ### iOS AEPCore 3.3.0
 
-* Enables dispatch rules for event data forwarding.
+* Added support for dispatch event rules consequence.
 
 ### iOS AEPLifecycle 3.3.0
 
@@ -14,7 +14,7 @@
 ### Android Core 1.9.0
 
 * Enables dispatch rules for event data forwarding.
-* Adds getFriendlyName API for third party extensions. 
+* Added getFriendlyName API for third party extensions. 
 * Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
 
 ### Android Lifecycle 1.1.0

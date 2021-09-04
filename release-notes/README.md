@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPCore 3.3.0
 
-* Enables dispatch rules for event data forwarding.
+* Added support for dispatch event rules consequence.
 
 ### iOS AEPLifecycle 3.3.0
 
