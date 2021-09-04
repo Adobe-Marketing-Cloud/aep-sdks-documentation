@@ -23,7 +23,7 @@
 
 ### Mobile Core Launch extension v2.1.20
 
-- New `Forward` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
 
 ## Aug 27, 2021
 
