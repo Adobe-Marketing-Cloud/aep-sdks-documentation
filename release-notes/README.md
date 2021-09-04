@@ -4,6 +4,27 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sept 3, 2021
+
+### iOS AEPCore 3.3.0
+
+* Enables dispatch rules for event data forwarding.
+
+### iOS AEPLifecycle 3.3.0
+
+* Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
+* Fixed compare on full build version instead of short version on application upgrades.
+
+### Android Core 1.9.0
+
+* Enables dispatch rules for event data forwarding.
+* Adds getFriendlyName API for third party extensions. 
+* Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
+
+### Android Lifecycle 1.1.0
+
+* Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
+
 ## Sept 2, 2021
 
 ### iOS AEPEdge 1.1.2
