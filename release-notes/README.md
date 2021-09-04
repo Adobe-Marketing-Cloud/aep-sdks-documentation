@@ -25,6 +25,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
 
+### Mobile Core Launch extension v2.1.20
+
+- New `Forward` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+
+### Adobe Experience Platform Edge Network Launch extension v1.0.12
+
+- New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+
 ## Sept 2, 2021
 
 ### iOS AEPEdge 1.1.2

@@ -21,6 +21,10 @@
 
 * Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
 
+### Mobile Core Launch extension v2.1.20
+
+- New `Forward` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+
 ## Aug 27, 2021
 
 ### Android Core 1.8.3
