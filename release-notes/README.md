@@ -12,7 +12,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPLifecycle 3.3.0
 
-* Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
 * Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
 
 ### Android Core 1.9.0
@@ -23,7 +23,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Lifecycle 1.1.0
 
-* Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
 
 ### Mobile Core Launch extension v2.1.20
 
