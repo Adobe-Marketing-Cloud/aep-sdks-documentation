@@ -13,7 +13,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### iOS AEPLifecycle 3.3.0
 
 * Lifecyle extension now supports Mobile Lifecycle metrics in XDM format that can be forwarded to the Edge Network when using Adobe Launch rules.
-* Fixed compare on full build version instead of short version on application upgrades.
+* Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
 
 ### Android Core 1.9.0
 
