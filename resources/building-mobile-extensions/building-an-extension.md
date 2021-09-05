@@ -49,6 +49,7 @@ All Adobe module names are prefixed with `com.adobe.module` and are considered r
 
 The `Extension` class has the following methods that you can optionally override and a member that provides access to the Event Hub:
 
+* `getFriendlyName`: Returns a friendly name for your extension, usually referenced in logs.
 * `getVersion`: Returns a version string for your extension.  The version string is only used for logging and is currently not validated for formatting.
 * `onUnregistered`: Allows your extension to complete the cleanup that is required when the Adobe Experience Platform SDK unregisters your extension. Unregistration typically happens when you shutdown the app, but it can also occur when an extension is behaving badly. Examples of the extension behaving badly include taking too long to handle a callback or throwing an exception.
 * `onUnexpectedError`: Allows you log additional information when the Adobe Experience  Platform SDK encounters an error that could not be returned immediately from a call into the Adobe Experience Platform SDK.   An example is an exception that is thrown on a worker thread. The exceptions are rare after your extension has been correctly implemented, but the exceptions might occur during development.
@@ -71,6 +72,11 @@ class MyExtension extends Extension {
     @Override
     public String getName() {
         return "my.company.com";
+    }
+    
+    @Override
+    public String getFriendlyName() {
+        return "My Extension";
     }
 
     @Override
