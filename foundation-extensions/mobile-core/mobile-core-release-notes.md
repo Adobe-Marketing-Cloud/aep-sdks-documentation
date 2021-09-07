@@ -13,7 +13,7 @@
 
 ### Android Core 1.9.0
 
-* Enables dispatch rules for event data forwarding.
+* Added support for dispatch event rules consequence.
 * Added getFriendlyName API for third party extensions. 
 * Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
 
