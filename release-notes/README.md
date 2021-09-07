@@ -4,6 +4,35 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sept 3, 2021
+
+### iOS AEPCore 3.3.0
+
+* Added support for dispatch event rules consequence.
+
+### iOS AEPLifecycle 3.3.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+* Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
+
+### Android Core 1.9.0
+
+* Enables dispatch rules for event data forwarding.
+* Adds getFriendlyName API for third party extensions. 
+* Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
+
+### Android Lifecycle 1.1.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+
+### Mobile Core Launch extension v2.1.20
+
+- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+
+### Adobe Experience Platform Edge Network Launch extension v1.0.12
+
+- New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+
 ## Sept 2, 2021
 
 ### iOS AEPEdge 1.1.2

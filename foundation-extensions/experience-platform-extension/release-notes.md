@@ -1,5 +1,11 @@
 # Release Notes
 
+## Sept 3, 2021
+
+### Adobe Experience Platform Edge Network Launch extension v1.0.12
+
+- New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+
 ## Sept 2, 2021
 
 ### iOS AEPEdge 1.1.2
