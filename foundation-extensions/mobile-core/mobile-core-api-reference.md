@@ -1029,6 +1029,18 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
+### getSDKIdentities
+
+#### Syntax
+```swift
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+```
+
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
+
+#### Example
+
 ```swift
  MobileCore.getSdkIdentities { (content, error) in
      // handle completion
@@ -1132,6 +1144,42 @@ void resetIdentities();
 ```java
 MobileCore.resetIdentities();
 ```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+**Swift**
+
+### resetIdentities
+
+**Syntax**
+
+```swift
+static func resetIdentities()
+```
+
+**Example**
+
+```swift
+MobileCore.resetIdentities()
+```
+
+**Objective-C**
+
+### resetIdentities
+
+**Syntax**
+
+```objectivec
+@objc(resetIdentities)
+static func resetIdentities()
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore resetIdentities];
+```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -1522,6 +1570,47 @@ LoggingMode mode = MobileCore.getLogLevel();
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+**Swift**
+
+Note, the logLevel getter has been deprecated. There is a new API to get the log level in the Swift AEP 3.x SDKs:
+
+### Log.logFilter
+
+**Syntax**
+
+```swift
+public static var logFilter: LogLevel
+```
+
+This variable is part of the `Log` class within `AEPServices`.
+
+**Example**
+
+```swift
+var logLevel = Log.logFilter
+```
+
+**Objective-C**
+
+Note, the logLevel getter has been deprecated. There is a new API to get the log level in the Swift AEP 3.x SDKs:
+
+### Log.logFilter
+
+**Syntax**
+
+```objectivec
+@objc public static var logFilter: LogLevel
+```
+
+**Example**
+
+```objectivec
+AEPLogLevel logLevel = [AEPLog logFilter];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
@@ -1758,6 +1847,42 @@ This API _must_ be called in `AppDidFinishLaunching` and before any other intera
 {% endhint %}
 
 {% tabs %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+### setAppGroup
+
+**Syntax**
+
+```swift
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```swift
+MobileCore.setAppGroup("appGroupId")
+```
+
+**Objective-C**
+
+### setAppGroup
+
+**Syntax**
+```swift
+@objc(setAppGroup:)
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore setAppGroup:@"app-group-id"];
+```
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
