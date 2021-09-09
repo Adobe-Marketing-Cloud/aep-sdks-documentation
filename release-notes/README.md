@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## September 8, 2021
+
+### iOS AEPAnalytics 3.0.2
+
+* Fixed an issue where entire context data dictionary in track request was dropped if any of its key had non string value.
+
 ## Sept 3, 2021
 
 ### iOS AEPCore 3.3.0

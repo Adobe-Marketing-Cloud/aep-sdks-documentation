@@ -1,5 +1,11 @@
 # Release Notes
 
+## September 8, 2021
+
+### iOS AEPAnalytics 3.0.2
+
+* Fixed an issue where entire context data dictionary in track request was dropped if any of its key had non string value.
+
 ## July 21, 2021
 
 ### iOS Analytics 2.5.1
