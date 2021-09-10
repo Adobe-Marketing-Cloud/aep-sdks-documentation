@@ -83,7 +83,7 @@ To forward this event to the Adobe Experience Platform Edge Network, follow the 
 {% endhint %}
 
 {% hint style="info" %}
-In Android, there is a two (2) second timeout between consecutive `lifecycleStart` and `lifecyclePause` events to prevent dispatching of events due to switching between Android Activities.
+In Android, there is a 500 millisecond timeout between consecutive `lifecycleStart` and `lifecyclePause` events to prevent dispatching of events due to switching between Android Activities.
 {% endhint %}
 
 #### Event details
@@ -107,7 +107,7 @@ To forward this event to the Adobe Experience Platform Edge Network, follow the 
 {% endhint %}
 
 {% hint style="info" %}
-In Android, there is a two (2) second timeout between consecutive `lifecycleStart` and `lifecyclePause` events to prevent dispatching of events due to switching between Android Activities.
+In Android, there is a 500 millisecond timeout between consecutive `lifecycleStart` and `lifecyclePause` events to prevent dispatching of events due to switching between Android Activities.
 {% endhint %}
 
 #### Event details
