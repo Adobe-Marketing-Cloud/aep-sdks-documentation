@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sep 14, 2021
+
+### Xamarin Assurance iOS 1.0.0
+
+* iOS Assurance framework updated to 1.1.3
+
+### Xamarin Assurance Android 1.0.0
+
+* Android Assurance framework updated to 1.0.3
+
 ## Aug 23, 2021
 
 ### Android Target 1.2.8
