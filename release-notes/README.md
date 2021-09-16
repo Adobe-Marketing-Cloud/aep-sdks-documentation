@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sep 14, 2021
+
+### Xamarin Assurance iOS 1.0.0
+
+* iOS Assurance framework updated to 1.1.3
+
+### Xamarin Assurance Android 1.0.0
+
+* Android Assurance framework updated to 1.0.3
+
 ## September 8, 2021
 
 ### iOS AEPAnalytics 3.0.2
@@ -24,7 +34,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Core 1.9.0
 
 * Added support for dispatch event rules consequence.
-* Adds getFriendlyName API for third party extensions. 
+* Adds getFriendlyName API for third party extensions.
 * Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
 
 ### Android Lifecycle 1.1.0
@@ -33,7 +43,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Mobile Core Launch extension v2.1.20
 
-- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events.
 
 ### Adobe Experience Platform Edge Network Launch extension v1.0.12
 
@@ -67,12 +77,31 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `locationClicked` API is called.
 
+### React Native Assurance 2.0.0
+
+This major release introduces support for following:
+
+- Support for React Native version 0.60.+
+- Auto linking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of registerExtension Javascript API.
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4
 
 * Fixed data race in `Event` and `ExtensionContainer` classes.
 * Fixed a memory leak in `EventHub.registerResponseListener`.
+
+### Flutter Assurance 2.0.0
+
+- Upgrade plugin to support Flutter 2.0 and null safety support.
+
+## Aug 17, 2021
+
+### Flutter Analytics 2.0.1
+
+- Update to reference the Analytics Android library from mavenCentral.
 
 ## Aug 6, 2021
 
@@ -211,7 +240,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ### Adobe Journey Optimizer Launch Extension
 
@@ -246,6 +275,19 @@ Please note that this release introduces breaking changes. For more details, see
 * Development testing enhancements for Experience Edge.
 
 This SDK is compatible with Android Core 1.8.2 and above.
+
+## June 9, 2021
+
+### Flutter
+
+- Upgrade plugin to support Flutter 2.0 and null safety support for following packages:
+
+* [flutter_acpcore](https://pub.dev/packages/flutter_acpcore/versions/2.0.0)
+* [flutter_acpuserprofile](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.0)
+* [flutter_acpanalytics](https://pub.dev/packages/flutter_acpanalytics/versions/2.0.0)
+* [flutter_acpplaces](https://pub.dev/packages/flutter_acpplaces/versions/2.0.0)
+* [flutter_acpplaces_monitor](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.0)
+
 
 ## June 8, 2021
 
@@ -568,4 +610,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 ### iOS Audience 2.3.0
 
 * Added TVOS support to Audience.
-
