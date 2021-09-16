@@ -18,7 +18,7 @@
 
 ![Adobe Analytics Company](../../.gitbook/assets/mobile-analytics-company.png)
 
-If you have access to more than one Analytics company, a select menu will appear, allowing you to choose which company you want to use. If you only have access to one Analytics company, this select menu will not appear. 
+If you have access to more than one Analytics company, a select menu will appear, allowing you to choose which company you want to use. If you only have access to one Analytics company, this select menu will not appear.
 
 Once you select an Analytics company, the list of report suites associated with that company will appear in the report suites section.
 
@@ -72,7 +72,7 @@ If you set up Analytics server-side forwarding to Audience Manager, select the *
 Select the **Backdate Previous Session Info** checkbox **only** if you have timestamp-enabled report report suites.
 {% endhint %}
 
-When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length. 
+When you select this checkbox, the SDK backdates the end-of-session lifecycle information so that this information can be attributed into its correct session. Session information currently consists of crashes and session length.
 
 The SDK also backdates the session information hit to one second after the last hit of the previous session. This means that crashes and session data will correlate with the correct date on which they occurred. One hit is backdated each time a new launch of the application is occurs.
 
@@ -153,19 +153,19 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 
 2. Link the module and the application.
 
-    For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
+   For React Native versions 0.6 and above, you can use the [CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) to link the module while building the app.
 
-    For React Native versions less than or equal to 0.59, you can use the following scripts:
+   For React Native versions less than or equal to 0.59, you can use the following scripts:
 
-    ```bash
+   ```bash
     react-native link @adobe/react-native-acpanalytics
-    ```
+   ```
 
-    If you are using iOS and `cocoapods`, run:
+   If you are using iOS and `cocoapods`, run:
 
-    ```bash
+   ```bash
     cd ios/ && pod install
-    ```
+   ```
 
 3. Import the extension.
 
@@ -280,7 +280,7 @@ public class MobileApp extends Application {
 }
 ```
 
-{% hint style="info" %} 
+{% hint style="info" %}
 Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endhint %}
 {% endtab %}
@@ -314,7 +314,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-{% hint style="info" %} 
+{% hint style="info" %}
 Analytics depends on the Identity extension and is automatically included in the Core pod. When installing the Analytics extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
 {% endhint %}
 {% endtab %}
@@ -723,7 +723,7 @@ ACPCore.updateConfiguration(updatedConfig)
 {% tab title="React Native" %}
 #### JavaScript
 
-**Example** 
+**Example**
 
 ```jsx
 ACPCore.updateConfiguration({"analytics.server": "sample.analytics.tracking.server",

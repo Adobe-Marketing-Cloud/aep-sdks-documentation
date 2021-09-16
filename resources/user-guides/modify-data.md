@@ -52,7 +52,7 @@ If there is a conflict between the data that is defined in your rule and the dat
 
 ### Defining a payload for the modify data action
 
-When defining a payload for the modify data action, the payload must match the format of the triggering event. For example, if you want to modify context data in an Adobe Analytics event, you need to know where the context data is defined on that event and match the format in your rule. 
+When defining a payload for the modify data action, the payload must match the format of the triggering event. For example, if you want to modify context data in an Adobe Analytics event, you need to know where the context data is defined on that event and match the format in your rule.
 
 For this reason, it is highly recommended that you use the **Template** if it is available. If not, please enable verbose logging in the SDK and carefully study the format of the event to which you will modify the data. If the format does not match, most likely the expected results will not be received.
 
@@ -60,10 +60,10 @@ For this reason, it is highly recommended that you use the **Template** if it is
 
 The following sample shows how to modify data to all outgoing `TrackAction` Adobe Analytics network requests. To create this type of rule, select your property in Experience Platform Launch and complete the following steps:
 
-1. [Create a new rule](#create-a-rule)
-2. [Select the event you want to trigger the rule](#select-an-event)
-3. [Select the action to modify data and define your payload](#define-the-action-using-freeform-json)
-4. [Save and rebuild the property](#save-the-rule-and-rebuild-your-property)
+1. [Create a new rule](modify-data.md#create-a-rule)
+2. [Select the event you want to trigger the rule](modify-data.md#select-an-event)
+3. [Select the action to modify data and define your payload](modify-data.md#define-the-action-using-freeform-json)
+4. [Save and rebuild the property](modify-data.md#save-the-rule-and-rebuild-your-property)
 
 ### Create a rule
 

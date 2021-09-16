@@ -2,7 +2,7 @@
 
 Data elements are the building blocks for your data dictionary and are used to collect, organize, and deliver data across marketing and ad technology.
 
-A data element is a variable where the value can be mapped to data in the Experience Platform Mobile SDK such as the visitor ID, the device name, the user profile, or the number of launches. In Experience Platform Launch, you can reference this value by its variable name. 
+A data element is a variable where the value can be mapped to data in the Experience Platform Mobile SDK such as the visitor ID, the device name, the user profile, or the number of launches. In Experience Platform Launch, you can reference this value by its variable name.
 
 This collection of data elements becomes the dictionary of defined data that you can use to build rules for your application, and this dictionary is shared across Experience Platform Launch where it can be used with any extension that is added to your property.
 
@@ -48,25 +48,9 @@ In the following example, a rule is created to send a postback that contains the
 
 1. On the property page for your mobile property, click the **Rules** tab, and then click **Create New Rule**.
 2. Type a unique name for the the rule.
-3. In the **Events** section, click **Add**. 
-   1. In the **Extension** drop-down list, select **Mobile Core**.
-   2. In the **Event Type** drop-down list, select **Launched**.
-   3. Click **Keep Changes**.
-
-4. In the **Condition** section, click **Add**.
-   1. In the **Extension** drop-down list, select **Mobile Core**.
-   2. In the **Condition Type** drop-down list, select **Data Element**.
-   3. Enter a name for the condition.
-   4. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section. 
-
-5. In the **Action** section, click **Add**. 
-   1. In the **Extension** drop-down list, select Mobile Core.
-   2. In the **Action Type** drop-down list, select **Send Postback**.
-   3. In the **URL** text field, type a sample URL, for example,  
-    `https://my.company.com/launch?ecid=`.
-   4. Enter a name for the action.
-   5. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
-
+3. In the **Events** section, click **Add**. 1. In the **Extension** drop-down list, select **Mobile Core**. 2. In the **Event Type** drop-down list, select **Launched**. 3. Click **Keep Changes**.
+4. In the **Condition** section, click **Add**. 1. In the **Extension** drop-down list, select **Mobile Core**. 2. In the **Condition Type** drop-down list, select **Data Element**. 3. Enter a name for the condition. 4. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
+5. In the **Action** section, click **Add**. 1. In the **Extension** drop-down list, select Mobile Core. 2. In the **Action Type** drop-down list, select **Send Postback**. 3. In the **URL** text field, type a sample URL, for example, `https://my.company.com/launch?ecid=`. 4. Enter a name for the action. 5. Next to the **Data Element** text field, click the cylinder icon and select the ECID that was created in the previous section.
 6. Click **Save**.
 
 ![create rule](../../.gitbook/assets/data-elements-create-rule.png)

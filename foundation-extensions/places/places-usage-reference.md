@@ -1,4 +1,4 @@
-# Places API Reference
+# Places API reference
 
 This document contains usage information for the public functions, classes, and enums in AEPPlaces.
 
@@ -74,7 +74,7 @@ NSString *placesVersion = [AEPMobilePlaces extensionVersion];
 
 ### getCurrentPointsOfInterest
 
-Returns all points of interest \(POI\) of which the device is currently known to be within.
+Returns all points of interest (POI) of which the device is currently known to be within.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -88,7 +88,7 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 
 ```swift
 Places.getCurrentPointsOfInterest() { currentPois in
-    print("currentPois: \(currentPois)")
+    print("currentPois: (currentPois)")
 }
 ```
 {% endtab %}
@@ -129,7 +129,7 @@ static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 ```swift
 Places.getLastKnownLocation() { location in
     if let location = location {
-        print("location returned from closure: (\(location.coordinate.latitude), \(location.coordinate.longitude))")
+        print("location returned from closure: ((location.coordinate.latitude), (location.coordinate.longitude))")
     }
 }
 ```
@@ -156,7 +156,7 @@ Places.getLastKnownLocation() { location in
 
 ### getNearbyPointsOfInterest
 
-Requests a list of nearby Points of Interest \(POI\) and returns them in a closure.
+Requests a list of nearby Points of Interest (POI) and returns them in a closure.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -173,7 +173,7 @@ static func getNearbyPointsOfInterest(forLocation location: CLLocation,
 ```swift
 let location = CLLocation(latitude: 40.4350229, longitude: -111.8918356)
 Places.getNearbyPointsOfInterest(forLocation: location, withLimit: 10) { (nearbyPois, responseCode) in    
-    print("responseCode: \(responseCode.rawValue) - nearbyPois: \(nearbyPois)")
+    print("responseCode: (responseCode.rawValue) - nearbyPois: (nearbyPois)")
 }
 ```
 {% endtab %}
@@ -277,38 +277,53 @@ Sets the accuracy authorization status in the Places extension.
 The value provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location accuracy authorization for this device.
 
 {% tabs %}
-
+{% tab %}
 {% tab title="Swift"}
+{% endtab %}
 
+{% tab %}
 **Syntax**
+{% endtab %}
 
+{% tab %}
 ```swift
 static func setAccuracyAuthorization(_ accuracy: CLAccuracyAuthorization)
 ```
+{% endtab %}
 
+{% tab %}
 **Example**
+{% endtab %}
 
+{% tab %}
 ```swift
 Places.setAccuracyAuthorization(.fullAccuracy)
 ```
 {% endtab %}
 
+{% tab %}
 {% tab title="Objective-C"}
-
-**Syntax**
-
-```objc
-+ (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
-```
-
-**Example**
-
-```objc
-[AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
-```
-
 {% endtab %}
 
+{% tab %}
+**Syntax**
+{% endtab %}
+
+{% tab %}
+```text
++ (void) setAccuracyAuthorization: (CLAccuracyAuthorization) accuracy;
+```
+{% endtab %}
+
+{% tab %}
+**Example**
+{% endtab %}
+
+{% tab %}
+```text
+[AEPMobilePlaces setAccuracyAuthorization:CLAccuracyAuthorizationFullAccuracy];
+```
+{% endtab %}
 {% endtabs %}
 
 ### setAuthorizationStatus
@@ -318,7 +333,7 @@ Sets the authorization status in the Places extension.
 The status provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location authorization status for this device.
 
 {% hint style="info" %}
-This method should only be called from the `CLLocationManagerDelegate` protocol method [locationManagerDidChangeAuthorization\(\_:\)](https://developer.apple.com/documentation/corelocation/cllocationmanagerdelegate/3563956-locationmanagerdidchangeauthoriz).
+This method should only be called from the `CLLocationManagerDelegate` protocol method [locationManagerDidChangeAuthorization(\_:)](https://developer.apple.com/documentation/corelocation/cllocationmanagerdelegate/3563956-locationmanagerdidchangeauthoriz).
 {% endhint %}
 
 {% tabs %}
@@ -400,3 +415,4 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 | :--- | :--- |
 | entry | 0 |
 | exit | 1 |
+

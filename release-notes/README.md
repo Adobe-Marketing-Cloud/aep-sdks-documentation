@@ -14,6 +14,63 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Android Assurance framework updated to 1.0.3
 
+## September 8, 2021
+
+### iOS AEPAnalytics 3.0.2
+
+* Fixed an issue where entire context data dictionary in track request was dropped if any of its key had non string value.
+
+## Sept 3, 2021
+
+### iOS AEPCore 3.3.0
+
+* Added support for dispatch event rules consequence.
+
+### iOS AEPLifecycle 3.3.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+* Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
+
+### Android Core 1.9.0
+
+* Added support for dispatch event rules consequence.
+* Adds getFriendlyName API for third party extensions.
+* Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
+
+### Android Lifecycle 1.1.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+
+### Mobile Core Launch extension v2.1.20
+
+- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events.
+
+### Adobe Experience Platform Edge Network Launch extension v1.0.12
+
+- New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+
+## Sept 2, 2021
+
+### iOS AEPEdge 1.1.2
+
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+
+### Android Edge 1.1.2
+
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+
+## Aug 27, 2021
+
+### Android Core 1.8.3
+
+- Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
+
+## Aug 25, 2021
+
+### iOS AEPMobileServices 3.0.1
+
+* Fixed a bug where shared state was not being read correctly in response to some events.
+
 ## Aug 23, 2021
 
 ### Android Target 1.2.8
@@ -38,7 +95,7 @@ This major release introduces support for following:
 
 ### Flutter Assurance 2.0.0
 
-- Upgrade plugin to Flutter 2 and Null-safety support.
+- Upgrade plugin to support Flutter 2.0 and null safety support.
 
 ## Aug 17, 2021
 
@@ -52,10 +109,10 @@ This major release introduces support for following:
 
 This major release introduces support for the following:
 
-- React Native version 0.60.+
-- Autolinking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
-- Dynamic versions for native dependencies to always load the latest SDK.
-- Removal of several deprecated APIs.
+* React Native version 0.60.+
+* Autolinking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+* Dynamic versions for native dependencies to always load the latest SDK.
+* Removal of several deprecated APIs.
 
 Please note that this release introduces breaking changes. For more details, see the release notes of the following plugins:
 
@@ -87,7 +144,6 @@ Please note that this release introduces breaking changes. For more details, see
 **Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics (if the Adobe Analytics extension is also implemented) with appropriate Target payloads for A4T functionality.
 
 * Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
-
 * Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
 
 ## Jul 29, 2021
@@ -176,7 +232,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Assurance 1.1.3
 
-- Assurance state is now properly shared when reconnecting to an established session.
+* Assurance state is now properly shared when reconnecting to an established session.
 
 ### Android Assurance 1.0.3
 
@@ -184,7 +240,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### iOS Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ### Adobe Journey Optimizer Launch Extension
 
@@ -199,7 +255,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 ### Android Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
 ## June 15, 2021
 
@@ -224,7 +280,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 
 ### Flutter
 
-- Upgrade to Flutter 2 and Null-safety support for following packages:
+- Upgrade plugin to support Flutter 2.0 and null safety support for following packages:
 
 * [flutter_acpcore](https://pub.dev/packages/flutter_acpcore/versions/2.0.0)
 * [flutter_acpuserprofile](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.0)
@@ -262,7 +318,7 @@ This SDK is compatible with Android Core 1.8.2 and above.
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token \(~ timestampu\) was not expanded correctly
+* Fixed a bug where token (~ timestampu) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
@@ -373,13 +429,13 @@ You can now find the Consent for Edge Network extension in the Launch extensions
 
 ### iOS & Android Identity 1.0.0
 
-The Adobe Experience Platform Identity \(AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
+The Adobe Experience Platform Identity (AEPEdgeIdentity) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
 
 ## April 5, 2021
 
 ### iOS & Android Consent 1.0.0
 
-The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
+The Adobe Experience Platform Consent (AEPEdgeConsent) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
 
 ## April 1, 2021
 
@@ -444,7 +500,7 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 ### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types:
   * Contains
   * Not Contains
   * Starts With
@@ -526,13 +582,13 @@ The included features with this release are:
 * Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
-This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
+This extension library is available as an open sourced project ([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)) on GitHub.
 
 These iOS libraries, written in Swift, are available for integration via SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications.
 
 ### Android Edge 1.0.0
 
-The Adobe Experience Platform Edge Network \(Edge\) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
+The Adobe Experience Platform Edge Network (Edge) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
 
 The included features with this release are:
 

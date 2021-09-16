@@ -2,15 +2,21 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## Aug 25, 2021
+
+### iOS AEPMobileServices 3.0.1
+
+* Fixed a bug where shared state was not being read correctly in response to some events.
+
 ## Jun 4, 2021
 
-#### iOS AEPMobileServices 3.0.0
+### iOS AEPMobileServices 3.0.0
 
 * Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
 
 ## April 14, 2021
 
-#### iOS Mobile Services 1.1.1
+### iOS Mobile Services 1.1.1
 
 * Fixed a crash that could happen while downloading remote assets.
 
@@ -101,5 +107,5 @@ The following updates were made in this release:
 
 ### iOS Mobile Services 1.0.0
 
-* Mobile Services \(mobilemarketing.adobe.com\) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
+* Mobile Services (mobilemarketing.adobe.com) messaging and acquisition links is now supported through the new Mobile Services extension for the Adobe Experience Platform SDK.
 

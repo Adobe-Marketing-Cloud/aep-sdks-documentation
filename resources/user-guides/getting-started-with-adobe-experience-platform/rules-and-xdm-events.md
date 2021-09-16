@@ -1,4 +1,4 @@
-# Rules and Experience Data Model (XDM) events
+# Rules & XDM events
 
 ## Prerequisites for this tutorial
 

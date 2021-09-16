@@ -1,14 +1,15 @@
-# Adobe Analytics event reference
+# Analytics event reference
 
 ## Internal events for Adobe Analytics
 
 The Adobe Experience Platform SDKs also track some internal events that are based on the communication with other extensions in addition to the Analytics hits that are sent as a result of the track call.
 
 Adobe Analytics events are supported in the following extensions:
-- Lifecycle
-- Identity
-- Messages
-- Target
+
+* Lifecycle
+* Identity
+* Messages
+* Target
 
 ### Lifecycle extension
 
@@ -160,7 +161,7 @@ The following examples show how to use the event data:
 
 **Send all Analytics hits request**
 
-```json
+```javascript
 {
   "forcekick": true
 }
@@ -168,7 +169,7 @@ The following examples show how to use the event data:
 
 **Clear all the Analytics hits request**
 
-```json
+```javascript
 {
   "clearhitsqueue": true
 }
@@ -176,7 +177,7 @@ The following examples show how to use the event data:
 
 **Get queue size request**
 
-```json
+```javascript
 {
   "getqueuesize": true
 }
@@ -232,7 +233,7 @@ The Analytics extension will read the following keys from the configuration even
 
 #### Event data example <a id="event-data-example-3"></a>
 
-```json
+```javascript
 {
   "experienceCloud.org": "orgsample@AdobeOrg",
   "analytics.rsids": "mobilesamplersid",
@@ -283,7 +284,7 @@ All of the key-value pairs listed above are optional.
 
 #### Sample event payload <a id="sample-event-payload"></a>
 
-```json
+```javascript
 {
   "contextdata": {
     "campaign": "testCampaign",
@@ -320,7 +321,7 @@ The payload definition is composed of hte following elements:
 | `type` | String | No | Can be one of these values: Start, Stop, or Pause |
 | `contextdata` | Map | Yes | Map that contains the user-supplied context data. |
 
-```json
+```javascript
 {
   "type": "start",
   "contextData": {
@@ -352,7 +353,7 @@ The payload definition is composed of the following elements:
 | `previoussessionpausetimestampmillis` | Long | No | ​ |
 | `maxsessionlength` | Long | No | ​ |
 
-```json
+```javascript
 {
   "lifecyclecontextdata": {
     "installdate": "22/05/2014",
@@ -377,7 +378,7 @@ The payload definition is composed of the following elements:
 
 After Lifecycle is enabled, the SDK tracks the application install details, which includes the install date and the daily engaged/monthly engaged user badges.
 
-```json
+```javascript
 {
   "lifecyclecontextdata": {
     "installevent": "InstallEvent",
@@ -399,7 +400,7 @@ A launch is considered new when either of the following conditions are met:
 
 Launch data includes information about the application's number of launches, days since first run, days since last use, user daily/monthly engaged badges, and other lifecycle metrics. Application version upgrades are also tracked.
 
-```json
+```javascript
 {
   "lifecyclecontextdata": {
     "launchevent": "LaunchEvent",
@@ -417,7 +418,7 @@ Launch data includes information about the application's number of launches, day
 
 If your application is terminated without having first been backgrounded, the SDK reports a crash the next time your app is launched. If the `backdateSessionInfo` flag is enabled in your configuration, this information is sent as an individual hit. For more information, please read the [backdate previous session info tutorial](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics#backdate-previous-session-info). If the flag is not enabled, the information is sent as part of the launch event.
 
-```json
+```javascript
 {
   "lifecyclecontextdata": {
     "crashevent": "CrashEvent",
@@ -472,7 +473,7 @@ The following examples show how event data is used by the Analytics response con
 
 **Forwarding the Analytics server response**
 
-```json
+```javascript
 { 
     "analyticsserverresponse": "example response to be forwarded",
     "hitHost": "the sever for the analytics hit",
@@ -482,7 +483,7 @@ The following examples show how event data is used by the Analytics response con
 
 **Analytics queue size**
 
-```json
+```javascript
 {
   "queuesize": 42
 }
@@ -490,7 +491,7 @@ The following examples show how event data is used by the Analytics response con
 
 ### Analytics response identity
 
-This event is a response from the Analytics extension that contains the unique tracking identifier. This value may be `null` if the Identity extension is enabled and a valid MID was generated. This event is generated as a paired response for the [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) APIs. 
+This event is a response from the Analytics extension that contains the unique tracking identifier. This value may be `null` if the Identity extension is enabled and a valid MID was generated. This event is generated as a paired response for the [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) APIs.
 
 #### Event details
 
@@ -509,7 +510,7 @@ The payload definition is composed of the following elements:
 
 #### Event data example
 
-```json
+```javascript
 {
   "aid" : "aidValue", "vid": "vidValue"
 }

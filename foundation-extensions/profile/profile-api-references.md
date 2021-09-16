@@ -435,7 +435,6 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 ### **removeUserAttributes**
 
 Removes the user profile attributes for the given keys.
@@ -695,7 +694,7 @@ public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When `AdobeCallbackWithError` is provided, if the operation times out (5s) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
 
 ```java
 UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {

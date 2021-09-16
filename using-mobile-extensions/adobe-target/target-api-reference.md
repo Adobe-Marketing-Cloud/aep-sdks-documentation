@@ -1,25 +1,24 @@
 # Target API reference
 
----
+## Target API reference
+
 ### clearPrefetchCache
+
 This API clears the in-memory cache that contains the prefetched offers.
 
 {% tabs %}
-
 {% tab title="Android" %}
-
 **Syntax**
 
-```
+```text
 public static void clearPrefetchCache()
 ```
 
 **Example**
 
-```
+```text
 Target.clearPrefetchCache();
 ```
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -39,16 +38,15 @@ Target.clearPrefetchCache()
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget clearPrefetchCache];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
-```objective-c
+```text
 + (void) clearPrefetchCache;
 ```
 
@@ -62,50 +60,43 @@ ACPTarget.clearPrefetchCache
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget clearPrefetchCache];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Signature**
 
-```
+```text
 clearPrefetchCache();
 ```
 
 **Example usage**
 
-```
+```text
 ACPTarget.clearPrefetchCache();
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
----
 ### clickedLocation
 
 This API sends a location click notification for an mbox to the configured Target server and can be invoked in the following cases:
 
-- For a prefetched mbox, after the mbox content is retrieved using the `retrieveLocationContent` API.
-
-- For a regular mbox, where no previous prefetch request is made, and the mbox content is retrieved using the `retrieveLocationContent` API.
+* For a prefetched mbox, after the mbox content is retrieved using the `retrieveLocationContent` API.
+* For a regular mbox, where no previous prefetch request is made, and the mbox content is retrieved using the `retrieveLocationContent` API.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void locationClicked(final String mboxName, final TargetParameters parameters)
 ```
 
-- _mboxName_ is a String that contains the mbox location for which the click notification will be sent to Target.
-- _parameters_ is the configured `TargetParameters` for the request.
+* _mboxName_ is a String that contains the mbox location for which the click notification will be sent to Target.
+* _parameters_ is the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -138,18 +129,17 @@ TargetParameters targetParameters = new TargetParameters.Builder(mboxParameters)
 
 Target.locationClicked("cartLocation", targetParameters);
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func clickedLocation(_ name: String, targetParameters: TargetParameters?)
 ```
 
-- *name* : a `String` that contains the mbox location for which the click notification will be sent to Target.
-- *targetParameters* : the configured `TargetParameters` for the request.
+* _name_ : a `String` that contains the mbox location for which the click notification will be sent to Target.
+* _targetParameters_ : the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -161,25 +151,23 @@ Target.clickedLocation("aep-loc-1", targetParameters: TargetParameters(parameter
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
 AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:@{@"mbox_parameter_key":@"mbox_parameter_value"} profileParameters:@{@"name":@"Smith"} order:order product:product];
 [AEPMobileTarget clickedLocation:@"aep-loc-1" withTargetParameters:targetParams];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) locationClickedWithName: (nonnull NSString*) name targetParameters: (nullable ACPTargetParameters*) parameters;
 ```
 
-- _name_ is an NSString that contains the mbox location for which the click notification will be sent to Target.
-- _parameters_ is the configured `ACPTargetParameters` for the request.
+* _name_ is an NSString that contains the mbox location for which the click notification will be sent to Target.
+* _parameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
 
@@ -219,7 +207,7 @@ ACPTarget.locationClicked(withName: "cartLocation", targetParameters: targetPara
 
 **Objective-C**
 
-```objective-c
+```text
 // Mbox parameters
 NSDictionary *mboxParameters = @{@"membership":@"prime"};
 
@@ -244,19 +232,17 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 
 [ACPTarget locationClickedWithName:@"cartLocation" targetParameters:targetParameters];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 locationClickedWithName(name: string, parameters?: ACPTargetParameters)
 ```
 
-- _name_ is a string that contains the mbox location for which the click notification will be sent to Target.
-- _parameters_ is the configured `ACPTargetParameters` for the request.
+* _name_ is a string that contains the mbox location for which the click notification will be sent to Target.
+* _parameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
 
@@ -280,26 +266,23 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationClickedWithName("cartLocation", targetParameters);
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### displayedLocations
 
 This API sends a location display notification for an mbox to the configured Target server. The API should be invoked for a prefetched mbox after the mbox content is retrieved using the `retrieveLocationContent` API. If no previous prefetch request is made, and the mbox content is retrieved using the `retrieveLocationContent` API, calling this API does not trigger a notification request to the Target server.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void locationsDisplayed(final List<String> mboxNames, final TargetParameters targetParameters)
 ```
 
-- _mboxNames_ is a list of the mbox locations for which the display notification will be sent to Target.
-- _targetParameters_ is the configured `TargetParameters` for the request.
+* _mboxNames_ is a list of the mbox locations for which the display notification will be sent to Target.
+* _targetParameters_ is the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -323,18 +306,17 @@ mboxList.add("mboxName1");
 
 Target.locationsDisplayed(mboxList, targetParameters);
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func displayedLocations(_ names: [String], targetParameters: TargetParameters?)
 ```
 
-- *names* : is an `array` of the mbox locations for which the display notification will be sent to Target.
-- *targetParameters* : is the configured `TargetParameters` for the request.
+* _names_ : is an `array` of the mbox locations for which the display notification will be sent to Target.
+* _targetParameters_ : is the configured `TargetParameters` for the request.
 
 **Example**
 
@@ -342,7 +324,7 @@ static func displayedLocations(_ names: [String], targetParameters: TargetParame
 
 ```swift
 Target.displayedLocations(
-  			["mboxName1", "mboxName2"], 
+              ["mboxName1", "mboxName2"], 
         targetParameters: TargetParameters(
         parameters: nil,
         profileParameters: nil,
@@ -354,26 +336,24 @@ Target.displayedLocations(
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"ADCKKBC" total:400.50 purchasedProductIds:@[@"34", @"125"]];
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"24D334" categoryId:@"Stationary"];
 AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:nil profileParameters:nil order:order product:product];
 [AEPMobileTarget displayedLocations:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParams];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) locationsDisplayed: (nonnull NSArray<NSString*>*) mboxNames 
 withTargetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
 
-- _mboxNames_ is an NSArray of the mbox locations for which the display notification will be sent to Target.
-- _targetParameters_ is the configured `ACPTargetParameters` for the request.
+* _mboxNames_ is an NSArray of the mbox locations for which the display notification will be sent to Target.
+* _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
 
@@ -391,7 +371,7 @@ ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], with: targetParameters)
 
 **Objective-C**
 
-```objective-c
+```text
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
@@ -403,19 +383,17 @@ order:order];
 
 [ACPTarget locationsDisplayed:@[@"mboxName1", @"mboxName2"] withTargetParameters:targetParameters];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 locationsDisplayed(mboxNames: Array<string>, parameters?: ACPTargetParameters)
 ```
 
-- _mboxNames_ is an Array of the mbox locations for which the display notification will be sent to Target.
-- _targetParameters_ is the configured `ACPTargetParameters` for the request.
+* _mboxNames_ is an Array of the mbox locations for which the display notification will be sent to Target.
+* _targetParameters_ is the configured `ACPTargetParameters` for the request.
 
 **Example**
 
@@ -426,17 +404,15 @@ var targetParameters = new ACPTargetParameters(null, null, product, order);
 
 ACPTarget.locationsDisplayed(["mboxName1", "mboxName2"], targetParameters);
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### extensionVersion
+
 Returns the running version of the Target extension.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
@@ -448,10 +424,9 @@ public String extensionVersion()
 ```java
 Target.extensionVersion();
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -468,17 +443,15 @@ let targetVersion = Target.extensionVersion
 
 **Objective-C**
 
-```objective-c
+```text
 NSString *targetVersion = [AEPMobileTarget extensionVersion];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (nonnull NSString*) extensionVersion;
 ```
 
@@ -492,14 +465,12 @@ let targetVersion = ACPTarget.extensionVersion()
 
 **Objective-C**
 
-```objective-c
+```text
 NSString *targetVersion = [ACPTarget extensionVersion];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
@@ -516,20 +487,19 @@ ACPTarget.extensionVersion().then(version => {
 {% endtab %}
 {% endtabs %}
 
----
 ### getThirdPartyId
+
 This API gets the custom visitor ID for Target. If no `third-party` ID was previously set, or if the ID was reset by calling resetExperience API, it will have a `nil` value.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void getThirdPartyId(final AdobeCallback<String> callback)
 ```
 
-- _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `null`.
+* _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `null`.
 
 **Example**
 
@@ -541,17 +511,16 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
     }
 });
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func getThirdPartyId(_ completion: @escaping (String?, Error?) -> Void)
 ```
 
-- *completion* : invoked with the `thirdPartyId` value. If no `third-party` ID was set, this value will be `nil`.
+* _completion_ : invoked with the `thirdPartyId` value. If no `third-party` ID was set, this value will be `nil`.
 
 **Example**
 
@@ -559,29 +528,27 @@ static func getThirdPartyId(_ completion: @escaping (String?, Error?) -> Void)
 
 ```swift
 Target.getThirdPartyId { (id, err) in
-	// read Target thirdPartyId
+    // read Target thirdPartyId
 }
 ```
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget getThirdPartyId:^(NSString *thirdPartyID, NSError *error){
-	// read Target thirdPartyId
+    // read Target thirdPartyId
 }];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) getThirdPartyId: (nonnull void (^) (NSString* __nullable thirdPartyId)) callback;
 ```
 
-- _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `nil`.
+* _callback_ is invoked with the `thirdPartyId` value. If no third-party ID was set, this value will be `nil`.
 
 **Example**
 
@@ -595,23 +562,21 @@ ACPTarget.getThirdPartyId({thirdPartyID in
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget getThirdPartyId:^(NSString *thirdPartyId){
        // read Target thirdPartyId
 }];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 getThirdPartyId(): Promise<string>
 ```
 
-- A _Promise_ object is returned and is resolved with the `thirdPartyId` value.
+* A _Promise_ object is returned and is resolved with the `thirdPartyId` value.
 
 **Example**
 
@@ -620,24 +585,22 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
             // read Target thirdPartyId 
 });
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### getTntId
+
 This API gets the Target user ID (also known as the `tntId`) from the Target service. The `tntId` is returned in the network response after a successful call to `prefetchContent` or `retrieveLocationContent`, which is then persisted in the SDK. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void getTntId(final AdobeCallback<String> callback)
 ```
 
-- _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `null`. 
+* _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `null`. 
 
 **Example**
 
@@ -649,17 +612,16 @@ Target.getTntId(new AdobeCallback<String>() {
     }
 });
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
 ```
 
-- *completion* : invoked with the `tntId` value. If no Target ID was set, this value will be `nil`.
+* _completion_ : invoked with the `tntId` value. If no Target ID was set, this value will be `nil`.
 
 **Example**
 
@@ -667,29 +629,27 @@ static func getTntId(_ completion: @escaping (String?, Error?) -> Void)
 
 ```swift
 Target.getTntId({ (id, err) in
-	// read target's tntId        
+    // read target's tntId        
 })
 ```
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget getTntId:^(NSString *tntID, NSError *error){
-	// read target's tntId 
+    // read target's tntId 
 }];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) getTntId: (nonnull void (^) (NSString* __nullable tntId)) callback;
 ```
 
-- _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `nil`.
+* _callback_ is invoked with the `tntId` value. If no Target ID was set, this value will be `nil`.
 
 **Example**
 
@@ -703,23 +663,21 @@ ACPTarget.getTntId({tntId in
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget getTntId:^(NSString *tntId){
        // read target's tntId
 }];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 getTntId(): Promise<string>
 ```
 
-- A _Promise_ object is returned and is resolved with the `thirdPartyId` value.
+* A _Promise_ object is returned and is resolved with the `thirdPartyId` value.
 
 **Example**
 
@@ -728,17 +686,15 @@ ACPTarget.getTntId().then(tntId => {
             // read target's tntId                         
 });
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### prefetchContent
-This API sends a prefetch request to your configured Target server. The prefetch request is sent with the prefetch objects array and the specified Target parameters. 
+
+This API sends a prefetch request to your configured Target server. The prefetch request is sent with the prefetch objects array and the specified Target parameters.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
@@ -789,19 +745,18 @@ prefetchMboxesList.add(prefetchRequest2);
 TargetParamters targetParameters = null;
 Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallback);
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func prefetchContent(_ prefetchArray: [TargetPrefetch], with targetParameters: TargetParameters? = nil, _ completion: ((Error?) -> Void)?)
 ```
 
-- *prefetchArray* - is an array of `TargetPrefetch` objects for various mbox locations.
-- *targetParameters* - is the configured `TargetParameters` for the prefetch request.
-- If the prefetch is successful, `completion` is invoked with a nil value. If the prefetch is not successful, an error message is returned.
+* _prefetchArray_ - is an array of `TargetPrefetch` objects for various mbox locations.
+* _targetParameters_ - is the configured `TargetParameters` for the prefetch request.
+* If the prefetch is successful, `completion` is invoked with a nil value. If the prefetch is not successful, an error message is returned.
 
 **Example**
 
@@ -809,39 +764,39 @@ static func prefetchContent(_ prefetchArray: [TargetPrefetch], with targetParame
 
 ```swift
 let TargetParameters1 = TargetParameters(
-	parameters: ["status": "platinum"],
-	profileParameters: ["age": "20"],
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D3412", categoryId:"Books")
-	)
-            
+    parameters: ["status": "platinum"],
+    profileParameters: ["age": "20"],
+    order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
+    product: TargetProduct(productId: "24D3412", categoryId:"Books")
+    )
+
 let TargetParameters2 = TargetParameters(
-	parameters: ["userType": "Paid"],
-	profileParameters: nil,
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
-	product: TargetProduct(productId: "764334", categoryId:"Online")
-	)
-        
+    parameters: ["userType": "Paid"],
+    profileParameters: nil,
+    order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
+    product: TargetProduct(productId: "764334", categoryId:"Online")
+    )
+
 let globalTargetParameters = TargetParameters(
-	parameters: ["status": "progressive"],
-	profileParameters: ["age": "20-32"],
-	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D334", categoryId:"Stationary")
-	)
+    parameters: ["status": "progressive"],
+    profileParameters: ["age": "20-32"],
+    order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
+    product: TargetProduct(productId: "24D334", categoryId:"Stationary")
+    )
 
 Target.prefetchContent([
-	TargetPrefetch(name: "mboxName1", targetParameters: TargetParameters1),
-	TargetPrefetch(name: "mboxName2", targetParameters: TargetParameters2),
-	],
-	with: globalTargetParameters
-	){ error in
-		// do something with the callback response
+    TargetPrefetch(name: "mboxName1", targetParameters: TargetParameters1),
+    TargetPrefetch(name: "mboxName2", targetParameters: TargetParameters2),
+    ],
+    with: globalTargetParameters
+    ){ error in
+        // do something with the callback response
 }
 ```
 
 **Objective-C**
 
-```objective-c
+```text
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 AEPTargetProduct *product1 = [[AEPTargetProduct alloc] initWithProductId:@"24D3412" categoryId:@"Books"];
@@ -857,7 +812,7 @@ AEPTargetParameters *targetParameters2 = [[AEPTargetParameters alloc] initWithPa
 // Creating Prefetch Objects
 AEPTargetPrefetchObject *prefetch1 = [[AEPTargetPrefetchObject alloc] initWithName: @"logo" targetParameters:targetParameters1];
 AEPTargetPrefetchObject *prefetch2 = [[AEPTargetPrefetchObject alloc] initWithName: @"buttonColor" targetParameters:targetParameters2];
-    
+
 // Creating prefetch Array
 NSArray *prefetchArray = @[prefetch1,prefetch2];
 
@@ -877,14 +832,12 @@ product:product];
 // do something with the callback response
 }];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) prefetchContent: (nonnull NSArray<ACPTargetPrefetchObject*>*) prefetchObjectArray
           withParameters: (nullable ACPTargetParameters*) parameters
                 callback: (nullable void (^) (NSError* _Nullable error)) callback;
@@ -942,7 +895,7 @@ ACPTarget.prefetchContent(prefetchArray, with: targetParameters, callback: { err
 
 **Objective-C**
 
-```objective-c
+```text
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
@@ -988,11 +941,9 @@ order:order];
 // do something with the callback response
 }];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
@@ -1034,11 +985,8 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => console.log(success)).catch(err => console.log(err));
 ```
-
 {% endtab %}
 {% endtabs %}
-
----
 
 ### registerExtension
 
@@ -1046,7 +994,6 @@ Registers the Target extension with the Mobile Core.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
@@ -1058,19 +1005,16 @@ public static void registerExtension()
 ```java
 Target.registerExtension();
 ```
-
 {% endtab %}
+
 {% tab title="iOS (AEP 3.x)" %}
-
 This API no longer exists in `Target`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) registerExtension;
 ```
 
@@ -1084,27 +1028,22 @@ ACPTarget.registerExtension()
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget registerExtension];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 When using React Native, register the Target extension with Mobile Core in native code as shown on the Android and iOS tabs.
-
 {% endtab %}
 {% endtabs %}
 
----
 ### resetExperience
 
 This API resets the user's experience by removing the visitor identifiers and resetting the Target session. Invoking this API also removes previously set Target user ID and custom visitor IDs, Target Edge Host, and the session information from persistent storage.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
@@ -1116,10 +1055,9 @@ public static void resetExperience()
 ```java
 Target.resetExperience();
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
@@ -1136,17 +1074,15 @@ Target.resetExperience()
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget resetExperience];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) resetExperience;
 ```
 
@@ -1160,14 +1096,12 @@ ACPTarget.resetExperience()
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget resetExperience];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
@@ -1179,11 +1113,9 @@ resetExperience()
 ```javascript
 ACPTarget.resetExperience();
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### retrieveLocationContent
 
 This API sends a batch request to the configured Target server for multiple mbox locations.
@@ -1192,13 +1124,12 @@ A request will be sent to the configured Target server for mbox locations in the
 
 When using `contentWithData` callback to instantiate TargetRequest object, the following keys can be used to read response tokens and Analytics for Target (A4T) info from the data payload, if available in the Target response.
 
- - responseTokens (Response tokens)
- - analytics.payload (A4T payload)
- - clickmetric.analytics.payload (Click tracking A4T payload)
+* responseTokens (Response tokens)
+* analytics.payload (A4T payload)
+* clickmetric.analytics.payload (Click tracking A4T payload)
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
@@ -1290,18 +1221,17 @@ TargetParameters parameters = new TargetParameters.Builder().profileParameters(p
 // Call the targetRetrieveLocationContent API.
 Target.retrieveLocationContent(locationRequests, parameters);
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func retrieveLocationContent(_ requestArray: [TargetRequest], with targetParameters: TargetParameters? = nil)
 ```
 
-- *requestArray* - an array of `TargetRequest` objects to retrieve content
-- *targetParameters* - a `TargetParameters` object containing parameters for all locations in the requests array
+* _requestArray_ - an array of `TargetRequest` objects to retrieve content
+* _targetParameters_ - a `TargetParameters` object containing parameters for all locations in the requests array
 
 **Example**
 
@@ -1309,24 +1239,24 @@ static func retrieveLocationContent(_ requestArray: [TargetRequest], with target
 
 ```swift
 let TargetParameters1 = TargetParameters(
-	parameters: ["status": "platinum"],
-	profileParameters: ["age": "20"],
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D3412", categoryId: "Books")
+    parameters: ["status": "platinum"],
+    profileParameters: ["age": "20"],
+    order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["34", "125"]),
+    product: TargetProduct(productId: "24D3412", categoryId: "Books")
 )
 
 let TargetParameters2 = TargetParameters(
-	parameters: ["userType": "Paid"],
-	profileParameters: nil,
-	order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
-	product: TargetProduct(productId: "764334", categoryId: "Online")
+    parameters: ["userType": "Paid"],
+    profileParameters: nil,
+    order: TargetOrder(id: "ADCKKIM", total: 344.30, purchasedProductIds: ["id1", "id2"]),
+    product: TargetProduct(productId: "764334", categoryId: "Online")
 )
 
 let globalTargetParameters = TargetParameters(
-	parameters: ["status": "progressive"],
-	profileParameters: ["age": "20-32"],
-	order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
-	product: TargetProduct(productId: "24D334", categoryId: "Stationary")
+    parameters: ["status": "progressive"],
+    profileParameters: ["age": "20-32"],
+    order: TargetOrder(id: "ADCKKBC", total: 400.50, purchasedProductIds: ["34", "125"]),
+    product: TargetProduct(productId: "24D334", categoryId: "Stationary")
 )
 
 let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targetParameters: TargetParameters1) { content in
@@ -1335,7 +1265,7 @@ let request1 = TargetRequest(mboxName: "logo", defaultContent: "BlueWhale", targ
     }
 }
 let request2 = TargetRequest(mboxName: "logo", defaultContent: "red", targetParameters: TargetParameters2) { content, data in
-		if let content = content {
+        if let content = content {
         // do something with the target content.
     }
 
@@ -1354,7 +1284,7 @@ Target.retrieveLocationContent([request1, request2], with: globalTargetParameter
 
 **Objective-C**
 
-```objective-c
+```text
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 NSDictionary *profileParameters1 = @{@"age":@"20"};
 AEPTargetProduct *product1 = [[AEPTargetProduct alloc] initWithProductId:@"24D3412" categoryId:@"Books"];
@@ -1366,7 +1296,7 @@ NSDictionary *mboxParameters2 = @{@"userType":@"Paid"};
 AEPTargetProduct *product2 = [[AEPTargetProduct alloc] initWithProductId:@"764334" categoryId:@"Online"];
 AEPTargetOrder *order2 = [[AEPTargetOrder alloc] initWithId:@"ADCKKIM" total:[@(344.30) doubleValue] purchasedProductIds:@[@"id1",@"id2"]];
 AEPTargetParameters *targetParameters2 = [[AEPTargetParameters alloc] initWithParameters:mboxParameters2 profileParameters:nil order:order2 product:product2 ];
-    
+
 AEPTargetRequestObject *request1 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"BlueWhale" targetParameters: targetParameters1 contentCallback:^(NSString * _Nullable content) {
     // do something with the received content
     NSString *targetContent = content ?: @"";
@@ -1406,13 +1336,12 @@ AEPTargetParameters *targetParameters = [[AEPTargetParameters alloc] initWithPar
                                                                                 product:product];
 [AEPMobileTarget retrieveLocationContent: requestArray withParameters: targetParameters];
 ```
-
 {% endtab %}
-{% tab title="iOS (ACP 2.x)" %}
 
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
-```objective-c
+```text
 + (void) retrieveLocationContent: (nonnull NSArray<ACPTargetRequestObject*>*) requests
                   withParameters: (nullable ACPTargetParameters*) parameters;
 ```
@@ -1468,7 +1397,7 @@ ACPTarget.retrieveLocationContent(requestArray, with: targetParameters)
 
 **Objective-C**
 
-```objective-c
+```text
 NSDictionary *mboxParameters1 = @{@"status":@"platinum"};
 ACPTargetProduct *product1 = [ACPTargetProduct targetProductWithId:@"24D3412" categoryId:@"Books"];
 ACPTargetOrder *order1 = [ACPTargetOrder targetOrderWithId:@"ADCKKIM" total:@(344.30) purchasedProductIds:@[@"a", @"b"]];
@@ -1511,10 +1440,9 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 // Call the API
 [ACPTarget retrieveLocationContent:requestArray withParameters:targetParameters];
 ```
-
 {% endtab %}
-{% tab title="React Native" %}
 
+{% tab title="React Native" %}
 **Syntax**
 
 ```javascript
@@ -1566,42 +1494,38 @@ var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters
 // Target API Call
 ACPTarget.retrieveLocationContent(requestArray, targetParameters);
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### setPreviewRestartDeepLink
 
 This API sets a specific location in the app to be displayed when preview mode selections have been confirmed.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void setPreviewRestartDeepLink(final Uri deepLink)
 ```
 
-- _deeplink_ is a Uri that contains the preview restart deeplink.
+* _deeplink_ is a Uri that contains the preview restart deeplink.
 
 **Example**
 
 ```java
 Target.setPreviewRestartDeepLink("myapp://HomePage");
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func setPreviewRestartDeepLink(_ deeplink: URL)
 ```
 
-- *deeplink* : a `URL` that contains the preview restart deeplink.
+* _deeplink_ : a `URL` that contains the preview restart deeplink.
 
 **Example**
 
@@ -1609,27 +1533,25 @@ static func setPreviewRestartDeepLink(_ deeplink: URL)
 
 ```swift
 if let url = URL(string: "myapp://HomePage") {
-	Target.setPreviewRestartDeepLink(url)
+    Target.setPreviewRestartDeepLink(url)
 }
 ```
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) setPreviewRestartDeeplink: (nonnull NSURL*) deeplink;
 ```
 
-- _deeplink_ is an NSURL that contains the preview restart deeplink.
+* _deeplink_ is an NSURL that contains the preview restart deeplink.
 
 **Example**
 
@@ -1641,62 +1563,57 @@ ACPTarget.setPreviewRestartDeepLink("myapp://HomePage")
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget setPreviewRestartDeepLink:@"myapp://HomePage"];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 setPreviewRestartDeeplink(deepLink: string)
 ```
 
-- _deepLink_ is a string that contains the preview restart deeplink.
+* _deepLink_ is a string that contains the preview restart deeplink.
 
 **Example**
 
 ```javascript
 ACPTarget.setPreviewRestartDeeplink("myapp://HomePage");
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### setThirdPartyId
+
 This API sets the custom visitor ID for Target. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the resetExperience API is used.
 
 {% tabs %}
 {% tab title="Android" %}
-
 **Syntax**
 
 ```java
 public static void setThirdPartyId(final String thirdPartyId)
 ```
 
-- _thirdPartyId_ is a String that contains the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a String that contains the custom visitor ID to be set in Target.
 
 **Example**
 
 ```java
 Target.setThirdPartyId("third-party-id");
 ```
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 **Syntax**
 
 ```swift
 static func setThirdPartyId(_ id: String)
 ```
 
-- *id* : a `String` that contains the custom visitor ID to be set in Target.
+* _id_ : a `String` that contains the custom visitor ID to be set in Target.
 
 **Example**
 
@@ -1708,21 +1625,19 @@ Target.setThirdPartyId("third-party-id")
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileTarget setThirdPartyId:@"third-party-id"]
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Syntax**
 
-```objective-c
+```text
 + (void) setThirdPartyId: (nullable NSString*) thirdPartyId;
 ```
 
-- _thirdPartyId_ is a NSString that contains the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a NSString that contains the custom visitor ID to be set in Target.
 
 **Example**
 
@@ -1734,48 +1649,42 @@ ACPTarget.setThirdPartyId("third-party-id")
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPTarget setThirdPartyId:@"third-party-id"];
 ```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Syntax**
 
 ```javascript
 setThirdPartyId(thirdPartyId: string)
 ```
 
-- _thirdPartyId_ is a string that contains the custom visitor ID to be set in Target.
+* _thirdPartyId_ is a string that contains the custom visitor ID to be set in Target.
 
 **Example**
 
 ```javascript
 ACPTarget.setThirdPartyId("third-party-id");
 ```
-
 {% endtab %}
 {% endtabs %}
 
----
 ### Visual preview
 
 Target visual preview mode allows you to easily perform end-to-end QA activities by enrolling and previewing these activities on your device. This mode does not require a specialized testing set up. To get started, set up a URL scheme and generate the preview links.
 
 {% tabs %}
 {% tab title="Android" %}
-
 On Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target activity and deep link information is extracted from the Intent extras.
 
 {% hint style="info" %}
 The SDK can only collect information from the launching Activity if [`setApplication`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference-android-only) has been called. Setting the Application is only necessary on an Activity that is also an entry point for your application. However, setting the Application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your Application. We recommend that you call `setApplication` in each of your Activities.
 {% endhint %}
-
 {% endtab %}
-{% tab title="iOS (AEP 3.x)" %}
 
+{% tab title="iOS (AEP 3.x)" %}
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
@@ -1784,7 +1693,7 @@ To enter the preview visual mode, use the `collectLaunchInfo` API to enable the 
 public static func collectLaunchInfo(_ userInfo: [String: Any])
 ```
 
-- *userInfo* : Dictionary of data relevant to the expected use case.
+* _userInfo_ : Dictionary of data relevant to the expected use case.
 
 **Example**
 
@@ -1796,23 +1705,21 @@ MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.ad
 
 **Objective-C**
 
-```objective-c
+```text
 [AEPMobileCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
 
-```objective-c
+```text
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
-- *userInfo* : NSDictionary of data relevant to the expected use case.
+* _userInfo_ : NSDictionary of data relevant to the expected use case.
 
 **Example**
 
@@ -1824,18 +1731,16 @@ ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobe
 
 **Objective-C**
 
-```objective-c
+```text
 [ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
-
 {% endtab %}
 {% endtabs %}
 
-# Public classes
+## Public classes
 
 {% tabs %}
 {% tab title="Android" %}
-
 ### TargetRequest
 
 Here is a code sample for this class in Android:
@@ -2034,26 +1939,25 @@ A sample of this interface on Android can be seen below:
 ```java
 public interface AdobeTargetDetailedCallback {
 
-	/**
-	 * Callback function to pass the mbox content and other mbox payload values.
-	 *
-	 * @param content {@code String} mox content
-	 * @param data A {@code Map<String, Object>} of mbox payload values. It will be null if neither response tokens nor analytics payload is available.
-	 */
-	void call(final String content, final Map<String, Object> data);
+    /**
+     * Callback function to pass the mbox content and other mbox payload values.
+     *
+     * @param content {@code String} mox content
+     * @param data A {@code Map<String, Object>} of mbox payload values. It will be null if neither response tokens nor analytics payload is available.
+     */
+    void call(final String content, final Map<String, Object> data);
 
-	/**
-	 * Callback function for notifying about the internal error in getting mbox details.
-	 *
-	 * @param error {@link AdobeError} represents the internal error occurred.
-	 */
-	void fail(final AdobeError error);
+    /**
+     * Callback function for notifying about the internal error in getting mbox details.
+     *
+     * @param error {@link AdobeError} represents the internal error occurred.
+     */
+    void fail(final AdobeError error);
 }
 ```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 ### TargetRequest
 
 ```swift
@@ -2103,11 +2007,11 @@ The following example shows how to create an instance of a TargetRequest object 
 
 ```swift
 let request1 = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentCallback: { content in
-	print(content ?? "")
+    print(content ?? "")
 })
 
 let request2 = TargetRequest(mboxName: "mboxName", defaultContent: "default content", targetParameters: nil, contentwithDataCallback: { content, data in
-	print(content ?? "")
+    print(content ?? "")
 
   if let data = data {
       // read response tokens
@@ -2124,9 +2028,9 @@ let request2 = TargetRequest(mboxName: "mboxName", defaultContent: "default cont
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetRequestObject *request1 = [[AEPTargetRequestObject alloc] initWithMboxName:@"mboxName" defaultContent:@"defaultContent" targetParameters:nil contentCallback:^(NSString * _Nullable content) {
-	  NSLog(@"%@", content ?: @"");
+      NSLog(@"%@", content ?: @"");
 }];
 
 AEPTargetRequestObject *request2 = [[AEPTargetRequestObject alloc] initWithMboxName: @"logo" defaultContent: @"red" targetParameters: targetParameters2 contentWithDataCallback:^(NSString * _Nullable content, NSDictionary<NSString *,id> * _Nullable data) {
@@ -2180,7 +2084,7 @@ let prefetch = TargetPrefetch(name: "mboxName", targetParameters: nil)
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetPrefetchObject *prefetch = [[AEPTargetPrefetchObject alloc] initWithName:@"mboxName" targetParameters:nil];
 ```
 
@@ -2223,7 +2127,7 @@ let targetParameters = TargetParameters(parameters: ["mbox_parameter_key": "mbox
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
 AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:@{@"mbox_parameter_key":@"mbox_parameter_value"} profileParameters:@{@"name":@"Smith"} order:order product:product];
@@ -2264,7 +2168,7 @@ let targetOrder = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
 ```
 
@@ -2300,10 +2204,9 @@ let targetProduct = TargetProduct(productId: "pId1", categoryId: "cId1")
 
 **Objective-C**
 
-```objective-c
+```text
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -2311,7 +2214,7 @@ AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" c
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.
 
-```objective-c
+```text
 @interface ACPTargetRequestObject : ACPTargetPrefetchObject
 
 /* The default content that will be returned if Target servers are unreachable */   
@@ -2324,7 +2227,7 @@ This class extends `ACPTargetPrefetchObject` by adding default content and a cal
 
 The following method can be used to create an instance of ACPTargetRequestObject that might be used to make a batch request to the configured Target server to fetch content for mbox locations.
 
-```objective-c
+```text
 + (nonnull instancetype) targetRequestObjectWithName: (nonnull NSString*) name
                                     targetParameters: (nullable ACPTargetParameters*) targetParameters
                                       defaultContent: (nonnull NSString*) defaultContent
@@ -2335,7 +2238,7 @@ The following method can be used to create an instance of ACPTargetRequestObject
 
 This class contains the name of the Target location/mbox and target parameters to be used in a prefetch request.
 
-```objective-c
+```text
 @interface ACPTargetPrefetchObject : NSObject
 
 /* The name of the Target location/mbox */
@@ -2348,7 +2251,7 @@ This class contains the name of the Target location/mbox and target parameters t
 
 The following method can be used to create an instance of ACPTargetPrefetchObject that might be used to make a prefetch request to the configured Target server to prefetch content for mbox locations.
 
-```objective-c
+```text
 + (nonnull instancetype) targetPrefetchObjectWithName: (nonnull NSString*) name
                                      targetParameters: (nullable ACPTargetParameters*) targetParameters;
 ```
@@ -2357,7 +2260,7 @@ The following method can be used to create an instance of ACPTargetPrefetchObjec
 
 This class contains mbox parameters dictionary, profile parameters dictionary, ACPTargetOrder object as well as ACPTargetProduct object.
 
-```objective-c
+```text
 @interface ACPTargetParameters : NSObject
 
 /* Dictionary containing key-value pairs of parameters */
@@ -2376,7 +2279,7 @@ This class contains mbox parameters dictionary, profile parameters dictionary, A
 
 The following method can be used to create an instance of ACPTargetParameters.
 
-```objective-c
+```text
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
                                       profileParameters: (nullable NSDictionary*) profileParameters
                                                 product: (nullable ACPTargetProduct*) product
@@ -2387,7 +2290,7 @@ The following method can be used to create an instance of ACPTargetParameters.
 
 This class contains orderId, total and an array for purchasedProductIds.
 
-```objective-c
+```text
 @interface ACPTargetOrder : NSObject
 
 /* Order ID */
@@ -2403,7 +2306,7 @@ This class contains orderId, total and an array for purchasedProductIds.
 
 The following method can be used to create an instance of ACPTargetOrder.
 
-```objective-c
+```text
 + (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
                                      total: (nullable NSNumber*) total
                        purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
@@ -2413,7 +2316,7 @@ The following method can be used to create an instance of ACPTargetOrder.
 
 This class contains productId and categoryId.
 
-```objective-c
+```text
 @interface ACPTargetProduct : NSObject
 
 /* Product ID */
@@ -2426,7 +2329,7 @@ This class contains productId and categoryId.
 
 The following method can be used to create an instance of ACPTargetProduct.
 
-```objective-c
+```text
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
                                   categoryId: (nullable NSString*) categoryId;
 ```
@@ -2520,3 +2423,4 @@ class ACPTargetProduct {
 ```
 {% endtab %}
 {% endtabs %}
+

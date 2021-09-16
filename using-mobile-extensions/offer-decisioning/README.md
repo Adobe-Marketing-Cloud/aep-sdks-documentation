@@ -1,6 +1,6 @@
 # Adobe Experience Platform Offer Decisioning
 
-[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface \(UI\) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
+[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface (UI) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
 
 ## Prerequisites
 
@@ -206,7 +206,6 @@ Once the offers have been prefetched, use the `retrievePrefetchedOffers` API to 
 
 {% tabs %}
 {% tab title="Android" %}
-
 #### Java
 
 ```java
@@ -257,7 +256,7 @@ The app can register a listener for offer update, so it is notified whenever the
 ```swift
 OfferDecisioning.onOfferUpdate { offersDict in
       // handle offers
-      print("\(propositions as AnyObject)")
+      print("(propositions as AnyObject)")
 }
 ```
 {% endtab %}

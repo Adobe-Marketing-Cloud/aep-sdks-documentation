@@ -1,8 +1,8 @@
 # Attach data to SDK events
 
-The attach data_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS), and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
+The attach data\_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS), and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
 
-To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/). 
+To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/).
 
 ## Context
 
@@ -52,7 +52,7 @@ If there is a conflict between the data that is defined in your rule and the dat
 
 ### Defining a payload for the attach data action
 
-When defining a payload for the attach data action, the payload must match the format of the triggering event. For example, if you want to add context data to an Adobe Analytics event, you need to know where the context data is defined on that event and match the format in your rule. 
+When defining a payload for the attach data action, the payload must match the format of the triggering event. For example, if you want to add context data to an Adobe Analytics event, you need to know where the context data is defined on that event and match the format in your rule.
 
 As a result, it is highly recommended to enable verbose logging in the SDK and carefully study the format of the event to which you will attach the data. If the format does not match, most likely the expected results will not be received.
 
@@ -155,7 +155,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event. 
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event.
 
 In this example, a custom mbox with custom mbox parameters is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target retrieve location requests.
 
@@ -301,7 +301,7 @@ On the right pane, you can add a freeform JSON payload that adds data to an SDK 
 
 In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named `customMboxParameter` and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
-![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29.png)
+![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29%20%281%29.png)
 
 The following example shows how the data element for this OS version was created.
 
@@ -358,7 +358,7 @@ On the right pane, you can add a freeform JSON payload that adds data to an SDK 
 
 In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named `customMboxParameter` and a data element that was defined for the OS version are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
-![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29.png)
 
 ### Save the rule and rebuild your property
 

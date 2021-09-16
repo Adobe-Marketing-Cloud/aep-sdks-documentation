@@ -41,7 +41,7 @@ To use the Mobile Services extension, complete the following steps:
 ## Configure the Mobile Services extension in Experience Platform Launch
 
 {% hint style="warning" %}
-The Mobile Services extension requires the Analytics extension for reporting. It  uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite may be sent.
+The Mobile Services extension requires the Analytics extension for reporting. It uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite may be sent.
 {% endhint %}
 
 ### Automatic configuration (Recommended)
@@ -71,7 +71,6 @@ To install the Mobile Services extension, complete the following steps:
 
 1. Select **Enter Custom settings**.
 2. Enter an Acquisition time out. The recommended time out is 5 seconds. To enable app acquisition, this value must be greater than 0.
-
 3. Provide the **Acquisition App ID** (sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`).
 
    You can find the Acquisition App ID in Mobile Services.
@@ -309,7 +308,7 @@ If the Mobile Services API is correctly configured, after installing your app on
 
 To verify, make a request to `demdex.net`, containing the device push token has been sent:
 
-```console
+```text
 2019-01-31 18:22:35.261676-0800 DemoApp[935:156015] [AMSDK DEBUG <com.adobe.module.identity>]: Sending request (https://dpm.demdex.net/id?d_rtbd=json&d_ver=2&d_orgid=B1F855165B4C9EA50A495E06@AdobeOrg&d_mid=43583282444503123217621782542046274680&d_blob=j8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI&dcs_region=9)
 ```
 
@@ -323,8 +322,7 @@ Using the following API does not increment page views.
 
 {% tabs %}
 {% tab title="Android" %}
-On Android, the SDK handles push tracking to analytics without any additional set up.
-If the application has implemented the `FirebaseMessaginService` class and will handle the push notifications when the application is in foreground, read the push data from the received Intent and add it to the intent extras of the Activity to be launched. An example can be found in [the Mobile Services implement push messaging tutorial](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en). 
+On Android, the SDK handles push tracking to analytics without any additional set up. If the application has implemented the `FirebaseMessaginService` class and will handle the push notifications when the application is in foreground, read the push data from the received Intent and add it to the intent extras of the Activity to be launched. An example can be found in [the Mobile Services implement push messaging tutorial](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en).
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
@@ -391,7 +389,7 @@ Update the `AndroidManifest.xml` file to declare the full screen activity and en
 
 If you are using either fullscreen message or local notification functionality, update the `AndroidManifest.xml` with the following:
 
-```xml
+```markup
 <activity
     android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
     android:windowSoftInputMode="adjustUnspecified|stateHidden" >
@@ -407,7 +405,7 @@ If you selected a modal layout, select one of the following themes for the messa
 
 **Example**
 
-```xml
+```markup
 <activity
 android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
 android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
@@ -561,7 +559,7 @@ When the user downloads and runs an app as the result of a Google Play store acq
 
 2. Update the `AndroidManifest.xml` to enable the `BroadcastReceiver` you previously created.
 
-   ```xml
+   ```markup
    <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
        <intent-filter>
            <action android:name="com.android.vending.INSTALL_REFERRER" />

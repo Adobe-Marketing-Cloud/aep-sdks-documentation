@@ -18,7 +18,6 @@ String audienceExtensionVersion = Audience.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 ### Swift
 
 **Example**
@@ -26,14 +25,14 @@ String audienceExtensionVersion = Audience.extensionVersion();
 ```swift
 let audienceExtensionVersion  = Audience.extensionVersion()
 ```
+
 ### Objective-C
 
 **Example**
 
-```objective-c
+```text
 NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -41,7 +40,7 @@ NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 
 **Example**
 
-```objective-c
+```text
 NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
 ```
 
@@ -168,7 +167,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 
 **Example**
 
-```objective-c
+```text
 [AEPMobileAudience getVisitorProfile:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError * _Nullable error) {
    if (error) {
     // handle the error here
@@ -177,7 +176,6 @@ Audience.getVisitorProfile { (visitorProfile, error) in
    }
 }];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -191,7 +189,7 @@ The `getVisitorProfileWithCompletionHandler` method was added in ACPAudience ver
 
 **Syntax**
 
-```objective-c
+```text
 + (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
 
 + (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
@@ -199,7 +197,7 @@ The `getVisitorProfileWithCompletionHandler` method was added in ACPAudience ver
 
 **Example**
 
-```objective-c
+```text
 [ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
   // handle the visitorProfile here
 }];
@@ -256,6 +254,7 @@ This API registers an extension class that was derived from `ACPExtension` with 
 ```java
 public  static void registerExtension() throws InvalidInitException
 ```
+
 **Example**
 
 ```java
@@ -268,14 +267,14 @@ Audience.registerExtension();
 
 **Syntax**
 
-```objective-c
+```text
 + (BOOL) registerExtension: (nonnull Class) extensionClass
                      error: (NSError* _Nullable* _Nullable) error;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPAudience registerExtension];
 ```
 
@@ -304,7 +303,7 @@ ACPAudience.registerExtension();
 This API helps you reset the Audience Manager UUID and purges the current visitor profile.
 
 {% hint style="info" %}
-For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://marketing.adobe.com/resources/help/en_US/aam/ids-in-aam.html).
+For more information about the UUID, the DPID, the DPUUID and other Audience Manager identifiers, see [Index of IDs in Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/ids-in-aam.html?lang=en).
 {% endhint %}
 
 {% tabs %}
@@ -347,10 +346,9 @@ Audience.reset()
 
 **Example**
 
-```objective-c
+```text
 [AEPMobileAudience reset];
 ```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -360,13 +358,13 @@ The `reset` API resets the Audience Manager UUID and purges the current visitor 
 
 **Syntax**
 
-```objective-c
+```text
 + (void) reset;
 ```
 
 **Example**
 
-```objective-c
+```text
 [ACPAudience reset];
 ```
 
@@ -451,7 +449,7 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 **Syntax**
 
 ```swift
-static func signalWithData(data: [String: String], completion: @escaping ([String: String]?, Error?) -> Void) 
+static func signalWithData(data: [String: String], completion: @escaping ([String: String]?, Error?) -> Void)
 ```
 
 * `data` is the traits data for the current visitor.
@@ -473,7 +471,7 @@ Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
 
 **Example**
 
-```objective-c
+```text
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [AEPMobileAudience signalWithData:traits completion:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError* _Nullable error) {
   if (error) {
@@ -486,7 +484,6 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 The `signalWithData` API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID (MID) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults` and is updated with every signal call.
@@ -499,7 +496,7 @@ The `signalWithData:withCompletionHandler` method was added in ACPAudience versi
 
 **Syntax**
 
-```objective-c
+```text
 + (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
                        callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
 
@@ -512,7 +509,7 @@ The `signalWithData:withCompletionHandler` method was added in ACPAudience versi
 
 **Example**
 
-```objective-c
+```text
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [ACPAudience signalWithData:traits callback:^(NSDictionary* _Nullable visitorProfile){
   // handle the returned visitorProfile dictionary here

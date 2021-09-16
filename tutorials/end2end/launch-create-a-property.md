@@ -14,7 +14,7 @@ A property is basically a container that you fill with extensions, rules, data e
 
 ## Prerequisites
 
-In order to complete the next few lessons, you must have permission to Develop, Approve, Publish, Manage Extensions, and Manage Environments in Launch. If you are unable to complete any of these steps because the user interface options are not available to you, reach out to your Experience Cloud Administrator to request access. For more information on Launch permissions, see [the documentation](https://docs.adobelaunch.com/administration/user-permissions).
+In order to complete the next few lessons, you must have permission to Develop, Approve, Publish, Manage Extensions, and Manage Environments in Launch. If you are unable to complete any of these steps because the user interface options are not available to you, reach out to your Experience Cloud Administrator to request access. For more information on Launch permissions, see [the documentation](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/manage-permissions.html?lang=en).
 
 ## Learning Objectives
 

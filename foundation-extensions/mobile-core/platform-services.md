@@ -1,6 +1,6 @@
 # Platform Services
 
-Currently, the AEP SDK only provides the capability for overriding the Adobe-provided network stack \(for all Adobe extensions\).
+Currently, the AEP SDK only provides the capability for overriding the Adobe-provided network stack (for all Adobe extensions).
 
 ## Override network stack
 
@@ -14,7 +14,7 @@ This feature is only available in Android Core version 2.5.0 or later and iOS Co
 {% tab title="Android" %}
 ### 1. Create custom HTTPConnectionPerformer implementation
 
-The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect`, which must be overridden. Optionally, it's possible to override the `shouldOverride` method if you want to conditionally override network requests \(if you do not override this method, all requests will be overridden by default\).
+The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect`, which must be overridden. Optionally, it's possible to override the `shouldOverride` method if you want to conditionally override network requests (if you do not override this method, all requests will be overridden by default).
 
 #### Example
 
@@ -126,7 +126,7 @@ class SampleHTTPConnectionPerformer extends HTTPConnectionPerformer {
 ```
 
 {% hint style="info" %}
-Your implementation must return an object conforming to the `Connection` interface when the connection has succeded. If the connection does not succeed, you will need to return these constants \(depending on the scenario\):
+Your implementation must return an object conforming to the `Connection` interface when the connection has succeded. If the connection does not succeed, you will need to return these constants (depending on the scenario):
 
 * For all URL parsing / malformed URL issues, return `HTTPConnectionPerformer.CONNECTION_ERROR_URL`. 
 * For any IOExceptions or any other errors, return `HTTPConnectionPerformer.CONNECTION_ERROR_IO`.

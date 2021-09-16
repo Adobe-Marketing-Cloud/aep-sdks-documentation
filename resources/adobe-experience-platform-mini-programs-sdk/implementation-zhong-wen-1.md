@@ -39,7 +39,7 @@ const AdobeSDK = require('AdobeSDK.js');
 ```
 
 {% hint style="info" %}
-如果在上述配置中将`analytics.offlineEnabled`配置为True，那么向Analytics发出的请求中会包含timestamps\(ts\).
+如果在上述配置中将`analytics.offlineEnabled`配置为True，那么向Analytics发出的请求中会包含timestamps(ts).
 
 `session.timeout`这个配置的单位是秒，指的是从App初始化完成开始，到一个新的session之间所经过的时间。这个timeout时间在小程序进入后台，之后被重新激活进入前台运行的场景下同样适用。该配置的缺省值是30秒。
 {% endhint %}
@@ -54,7 +54,7 @@ SDK初始化完成之后，会自动开始收集数据，并向Adobe Analytics�
 
 ## 启用调试日志功能 <a id="life-cyclecn"></a>
 
-### AdobeSDK.setDebugLoggingEnabled\(flag\)
+### AdobeSDK.setDebugLoggingEnabled(flag)
 
 用如下代码可以启用调试日志功能
 
@@ -62,7 +62,7 @@ SDK初始化完成之后，会自动开始收集数据，并向Adobe Analytics�
 AdobeSDK.setDebugLoggingEnabled(true)
 ```
 
-### AdobeSDK.setDebugModeEnabled\(flag\)
+### AdobeSDK.setDebugModeEnabled(flag)
 
 确实设置下，本SDK会隐藏异常错误信息。在调试模式下，会将异常错误信息打印在控制台中。用如下代码可以打开调试模式：
 
@@ -74,19 +74,19 @@ AdobeSDK.setDebugModeEnabled(true)
 
 下面介绍在小程序中用来追踪和监测用户行为的API。
 
-### AdobeSDK.trackAction\(actionName, contextData\)
+### AdobeSDK.trackAction(actionName, contextData)
 
 可以使用这个API来追踪和监测用户行为。每一次用户行为会触发事件，进而增加一个或多个相应指标的值。例如，可以用这个API来追踪用户订阅，用户浏览了一篇文章，或者用户升级到新级别。
 
 {% hint style="info" %}
-发送给Analytics的`trackAction`请求会被当做一个事件\(**event**\)来处理，这个请求不会增加page view。在发送给Analytics中，会用action这个变量来传送值。
+发送给Analytics的`trackAction`请求会被当做一个事件(**event**)来处理，这个请求不会增加page view。在发送给Analytics中，会用action这个变量来传送值。
 {% endhint %}
 
 ```javascript
 AdobeSDK.trackAction("action", { "example.key": "value" });
 ```
 
-### AdobeSDK.trackState\(stateName, contextData\)
+### AdobeSDK.trackState(stateName, contextData)
 
 {% hint style="info" %}
 Analytics会把`trackState`请求当做Page View来处理。`stateName`参数的值会作为Page Name。在发送给Analytics中，会用page name变量来传送值。

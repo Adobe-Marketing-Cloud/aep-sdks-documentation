@@ -1,5 +1,36 @@
 # Release Notes
 
+## Sept 3, 2021
+
+### iOS AEPCore 3.3.0
+
+* Added support for dispatch event rules consequence.
+
+### iOS AEPLifecycle 3.3.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+* Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
+
+### Android Core 1.9.0
+
+* Added support for dispatch event rules consequence.
+* Added getFriendlyName API for third party extensions. 
+* Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
+
+### Android Lifecycle 1.1.0
+
+* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+
+### Mobile Core Launch extension v2.1.20
+
+- New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events. 
+
+## Aug 27, 2021
+
+### Android Core 1.8.3
+
+- Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
+
 ## Aug 18, 2021
 
 ### iOS AEPCore 3.2.4
@@ -61,7 +92,7 @@
 * Introduced an API to set button image data to the `FloatingButton`
 * Added `optimize` `EventType`
 * Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token \(~ timestampu\) was not expanded correctly
+* Fixed a bug where token (~ timestampu) was not expanded correctly
 * Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
 
 > Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
@@ -140,7 +171,7 @@
 
 #### iOS Core 2.9.3
 
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
+* Fixed a Rules Engine bug affecting strings that contain regex escaping characters (one of `*?+{`) in the following matcher types:
   * Contains
   * Not Contains
   * Starts With
@@ -270,7 +301,7 @@ The brand new Adobe Experience Platform Core iOS swift SDKs are live! It is [ope
 
 * Report extension details to Mobile Core for improved logging and Griffon support.
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
-* In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
+* In order to improve the Analytics push tracking reports, the push notification preferences (`a.push.optin`) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved existing log messages and added additional logging to assist with debugging.
 
 ### Android Lifecycle 1.0.6
@@ -279,7 +310,7 @@ The brand new Adobe Experience Platform Core iOS swift SDKs are live! It is [ope
 
 ## Aug 10, 2020
 
-### iOS Core 2.7.2 \(Released with ACPCore version 2.7.3 on Cocoapods\)
+### iOS Core 2.7.2 (Released with ACPCore version 2.7.3 on Cocoapods)
 
 * Fixed a crash happening on `AdobeMarketingMobile::RulesEngine::ProcessEventForRules()`.
 * Fixed an issue where null values in rules consequences were not respected.
@@ -287,7 +318,7 @@ The brand new Adobe Experience Platform Core iOS swift SDKs are live! It is [ope
 ### iOS Identity 2.3.2
 
 * Identity shared state now gets updated in current session on server response changes for blob or locationHint.
-* In order to improve the Analytics push tracking reports, the push notification preferences \(`a.push.optin`\) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
+* In order to improve the Analytics push tracking reports, the push notification preferences (`a.push.optin`) are now forwarded to Analytics whenever the value passed to `setPushIdentifier` is different than the previous time it was called.
 * Improved safety checks for the Identity APIs with completion handler.
 
 ### iOS Lifecycle 2.1.1
@@ -515,8 +546,8 @@ The following updates were made in this release:
 
 ### iOS Identity 2.1.3
 
-* Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID \(ECID\) Service.
-* Fixed a threading issue where the Experience Cloud ID \(ECID\) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
+* Synced custom and advertising identifiers with nil or empty values are now cleared from Identity shared state and local storage. They are also not synced with the Experience Cloud ID (ECID) Service.
+* Fixed a threading issue where the Experience Cloud ID (ECID) Service response was handled on an incorrect thread potentially causing a memory corruption crash.
 
 These changes were released as part of ACPCore CocoaPod v2.3.6.
 

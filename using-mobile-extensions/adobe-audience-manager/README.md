@@ -65,13 +65,13 @@ npm install @adobe/react-native-acpaudience
 react-native link @adobe/react-native-acpaudience
 ```
 
-2. Import the extension.
+1. Import the extension.
 
 ```jsx
 import {ACPAudience} from '@adobe/react-native-acpaudience';
 ```
 
-3. Ensure the extension version is correct.
+1. Ensure the extension version is correct.
 
 ```jsx
 ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAudience version: " + version));

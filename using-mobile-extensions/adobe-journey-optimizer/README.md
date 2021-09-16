@@ -6,24 +6,20 @@ The following documentation details how to use the extension as well as the requ
 
 ## Before starting
 
-1. Follow the steps in [this page](https://experienceleague-review.corp.adobe.com/docs/journey-optimizer/using/get-started/configuration/push-config/push-configuration.html?lang=en) to configure push channel in Adobe Journey Optimizer.
+1. Follow the steps in [this page](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/configuration/push-config/push-gs.html?lang=en) to configure push channel in Adobe Journey Optimizer.
 2. [Update your app's Datastream](./#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://launch.adobe.com)
 3. Integrate with following extensions:
-   -  [Mobile Core](../../foundation-extensions/mobile-core/)
-   - [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
-   - [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/)
-
-
+   * [Mobile Core](../../foundation-extensions/mobile-core/)
+   * [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
+   * [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/)
 
 ### Update Datastream with Profile Dataset
 
 Navigate to a previously configured Datastream by following [Configure datastreams](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com), then:
 
-Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(under _Adobe Experience Platform_ section\) and select **Save**.
+Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown (under _Adobe Experience Platform_ section) and select **Save**.
 
 ![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.19.31-am.png)
-
-
 
 ## Setup Adobe Journey Optimizer extension
 

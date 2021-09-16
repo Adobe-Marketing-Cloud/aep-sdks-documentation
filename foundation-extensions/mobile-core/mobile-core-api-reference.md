@@ -1,6 +1,6 @@
 # Mobile Core API reference
 
-## Application reference \(Android only\)
+## Application reference (Android only)
 
 When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
@@ -123,9 +123,7 @@ If you installed and configured the Adobe Analytics extension, this method sends
 {% endhint %}
 
 {% tabs %}
-
 {% tab title="Android" %}
-
 **Java**
 
 ### trackAction
@@ -149,49 +147,47 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
 ### trackAction
 
 **Syntax**
 
- ```swift
+```swift
  static func track(action: String?, data: [String: Any]?)
- ```
+```
 
- * _action_ contains the name of the action to track.
- * _contextData_ contains the context data to attach on this hit.
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
- ```swift
+```swift
  MobileCore.track(action: "action name", data: ["key": "value"])
- ```
+```
+
 **Objective-C**
 
 ### trackAction
 
 **Syntax**
 
- ```swift
+```swift
  @objc(trackAction:data:)
  static func track(action: String?, data: [String: Any]?)
- ```
+```
 
- * _action_ contains the name of the action to track.
- * _contextData_ contains the context data to attach on this hit.
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
- ```objectivec
+```objectivec
   [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
- ```
-
+```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Objective-C**
 
 ### trackAction
@@ -233,7 +229,6 @@ ACPCore.track(action: "action name", data: ["key": "value"])
 {% endtab %}
 
 {% tab title="React Native" %}
-
 **Javascript**
 
 ### trackAction
@@ -255,7 +250,6 @@ ACPCore.trackAction("action name", {"key": "value"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-
 **Dart**
 
 ### trackAction
@@ -265,6 +259,7 @@ ACPCore.trackAction("action name", {"key": "value"});
 ```dart
 Future<void> trackAction (String action, {Map<String, String> contextData});
 ```
+
 * _action_ contains the name of the action to track.
 * _contextData_ contains the context data to attach on the hit.
 
@@ -275,8 +270,7 @@ FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 ```
 {% endtab %}
 
-{% tab title="Unity" %} 
-
+{% tab title="Unity" %}
 **C\#**
 
 ### trackAction
@@ -402,25 +396,24 @@ MobileCore.trackState("homePage", additionalContextData);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
 ### trackState
 
 **Syntax**
 
- ```swift
+```swift
  static func track(state: String?, data: [String: Any]?)
- ```
+```
 
- * _state_ contains the name of the state to track.
- * _contextData_ contains the context data to attach on this hit.
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
- ```swift
+```swift
  MobileCore.track(state: "state name", data: ["key": "value"])
- ```
+```
 
 **Objective-C**
 
@@ -428,24 +421,22 @@ MobileCore.trackState("homePage", additionalContextData);
 
 **Syntax**
 
- ```swift
+```swift
  @objc(trackState:data:)
  static func track(state: String?, data: [String: Any]?)
- ```
+```
 
- * _state_ contains the name of the state to track.
- * _contextData_ contains the context data to attach on this hit.
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
- ```objectivec
+```objectivec
   [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
- ```
-
+```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-
 **Objective-C**
 
 ### trackState
@@ -653,41 +644,39 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
 ### setPushIdentifier
 
- **Syntax**
+**Syntax**
 
- ```swift
+```swift
 public static func setPushIdentifier(_ deviceToken: Data?)
- ```
+```
 
- **Example**
+**Example**
 
- ```objectivec
+```objectivec
 MobileCore.setPushIdentifier(deviceToken)
- ```
+```
 
 **Objective-C**
 
 ### setPushIdentifier
 
- **Syntax**
+**Syntax**
 
- ```swift
+```swift
  @objc(setPushIdentifier:)
  public static func setPushIdentifier(_ deviceToken: Data?)
- ```
+```
 
- **Example**
+**Example**
 
- ```objectivec
+```objectivec
  [AEPMobileCore setPushIdentifier:deviceToken];
- ```
-
- {% endtab %}
+```
+{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
@@ -733,7 +722,7 @@ MobileCore.setPushIdentifier(deviceToken)
 
 ## Collect personally identifiable information
 
-The `collectPii` method lets the SDK to collect sensitive or personally identifiable information \(PII\).
+The `collectPii` method lets the SDK to collect sensitive or personally identifiable information (PII).
 
 {% hint style="warning" %}
 Although this method enables the collection of sensitive data, no data is sent to any Adobe or other third-party endpoints. To send the data to an endpoint, use a PII type postback.
@@ -763,42 +752,40 @@ MobileCore.collectPII(data);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
- **Swift**
+**Swift**
 
 ### collectPii
 
- **Syntax**
+**Syntax**
 
- ```swift
+```swift
 public static func collectPii(_ data: [String: Any])
- ```
+```
 
- **Example**
+**Example**
 
- ```objectivec
+```objectivec
 MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
- ```
+```
 
 **Objective-C**
 
- ### collectPii
+### collectPii
 
- **Syntax**
+**Syntax**
 
- ```swift
+```swift
  @objc(collectPii:)
  public static func collectPii(_ data: [String: Any])
- ```
+```
 
- **Example**
+**Example**
 
- ```objectivec
+```objectivec
  [AEPMobileCore collectPii:data:@{@"key1" : @"value1",
                             @"key2" : @"value2"
                             }];
- ```
-
+```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -887,62 +874,58 @@ The Android SDK automatically registers an `Application.ActivityLifecycleCallbac
 * Tracking deep link clickthrough
 * Tracking push message clickthrough
 * Tracking Local Notification clickthrough
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
 This method should be called to support the following use cases:
- * Tracking deep link clickthroughs
-   * From `application(_:didFinishLaunchingWithOptions:)`
-   * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
- * Tracking push message clickthrough
-   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
+
+* Tracking deep link clickthroughs
+  * From `application(_:didFinishLaunchingWithOptions:)`
+  * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
+* Tracking push message clickthrough
+  * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
 #### collectLaunchInfo
 
 **Syntax**
 
- ```swift
+```swift
  public static func collectLaunchInfo(_ userInfo: [String: Any])
- ```
+```
 
 **Example**
 
- ```swift
+```swift
  AEPCore.collectLaunchInfo(userInfo)
- ```
+```
 
 **Objective-C**
 
 This method should be called to support the following use cases:
 
 * Tracking deep link clickthroughs
-   * From `application:didFinishLaunchingWithOptions`
-   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
- * Tracking push message clickthrough
-   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
+  * From `application:didFinishLaunchingWithOptions`
+  * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
+    * Tracking push message clickthrough
+  * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
 #### collectLaunchInfo
 
 **Syntax**
 
- ```text
+```text
 @objc(collectLaunchInfo:)
 public static func collectLaunchInfo(_ userInfo: [String: Any])
- ```
+```
 
 **Example**
 
- ```text
+```text
  [AEPMobileCore collectLaunchInfo:launchOptions];
- ```
-
+```
 {% endtab %}
-
-
 
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
@@ -1000,13 +983,13 @@ AEPCore.collectLaunchInfo(userInfo)
 The following SDK identities, as applicable, are locally stored:
 
 * Company Context - IMS Org IDs
-* Experience Cloud ID \(MID\)
+* Experience Cloud ID (MID)
 * User IDs
-* Integration codes \(ADID, push IDs\)
-* Data source IDs \(DPID, DPUUID\)
-* Analytics IDs \(AVID, AID, VID, and associated RSIDs\)
-* Target legacy IDs \(TNTID, TNT3rdpartyID\)
-* Audience Manager ID \(UUID\)
+* Integration codes (ADID, push IDs)
+* Data source IDs (DPID, DPUUID)
+* Analytics IDs (AVID, AID, VID, and associated RSIDs)
+* Target legacy IDs (TNTID, TNT3rdpartyID)
+* Audience Manager ID (UUID)
 
 To retrieve data as a JSON string from the SDKs and send this data to your servers, use the `getSdkIdentities` method:
 
@@ -1044,33 +1027,33 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
- ```swift
+```swift
  MobileCore.getSdkIdentities { (content, error) in
      // handle completion
  }
- ```
+```
+
 #### Objective-C
 
 ### getSdkIdentities
 
 #### Syntax
 
- ```objectivec
+```objectivec
  @objc(getSdkIdentities:)
  static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
- ```
+```
 
- * _callback_ is invoked with the SDK identities as a JSON string.
- * _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
 
 #### Example
 
 **Objective-C**
 
- ```objectivec
+```objectivec
  [AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
      if (error) {
        // handle error here
@@ -1078,8 +1061,7 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
        // handle the retrieved identities
      }
  }];
- ```
- 
+```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -1194,7 +1176,7 @@ _since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}
 
-## Set icons for local notification \(Android only\)
+## Set icons for local notification (Android only)
 
 You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -1315,39 +1297,38 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
 **Swift**
 
 #### setLogLevel
 
 **Syntax**
 
- ```swift
+```swift
  public static func setLogLevel(_ level: LogLevel)
- ```
+```
 
 **Example**
 
- ```swift
+```swift
  MobileCore.setLogLevel(.trace)
- ```
+```
+
 **Objective C**
 
 #### setLogLevel
 
 **Syntax**
 
- ```swift
+```swift
  @objc(setLogLevel:)
  public static func setLogLevel(_ level: LogLevel)
- ```
+```
 
 **Example**
 
- ```text
+```text
  [AEPMobileCore setLogLevel: AEPLogLevelTrace];
- ```
-
+```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -1768,7 +1749,7 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 {% endtab %}
 {% endtabs %}
 
-## Set app group \(iOS only\)
+## Set app group (iOS only)
 
 You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
 
@@ -2064,5 +2045,5 @@ ACPCore.GetPrivacyStatusWithCompletionHandler((privacyStatus, error) => {
 
 ## Additional information
 
-To learn what context data is, please read the [documentation on context data](https://marketing.adobe.com/resources/help/en_US/sc/implement/context_data_variables.html).
+To learn what context data is, please read the [documentation on context data](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en).
 

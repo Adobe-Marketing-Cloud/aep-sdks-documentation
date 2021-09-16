@@ -256,7 +256,7 @@ public interface Property {
 }
 ```
 
-When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
+When defining your custom XDM Schema(s), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
 
 #### EdgeEventHandle
 

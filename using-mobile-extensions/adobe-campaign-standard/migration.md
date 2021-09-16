@@ -6,9 +6,9 @@ The AEPCampaign extension is implemented purely in Swift and is compatible with 
 
 ## AEPCampaign classes
 
-| Type                   | AEP (3.x) | AEP 3.x (Objective-C) | ACP (1.x)   |
-| ---------------------- | :-------- | :-------------------- | ----------- |
-| Primary Class (Module) | Campaign  | AEPMobileCampaign     | ACPCampaign |
+| Type | AEP (3.x) | AEP 3.x (Objective-C) | ACP (1.x)   |
+| ---- | :-------- | :-------------------- | ----------- |
+| Primary Class (Module) | Campaign | AEPMobileCampaign  | ACPCampaign |
 
 ## AEPCampaign APIs
 
@@ -16,27 +16,21 @@ The AEPCampaign extension is implemented purely in Swift and is compatible with 
 
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
-
 ```swift
 static var extensionVersion: String
 ```
-
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
-
-```objc
+```text
 + (nonnull NSString*) extensionVersion;
 ```
-
 {% endtab %}
 
 {% tab title="ACP 1.x (Objective-C)" %}
-
-```objc
+```text
 + (nonnull NSString*) extensionVersion;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -51,7 +45,6 @@ Registration occurs by passing `Campaign` to the `MobileCore.registerExtensions`
 ```swift
 MobileCore.registerExtensions([Campaign.self])
 ```
-
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
@@ -59,18 +52,15 @@ MobileCore.registerExtensions([Campaign.self])
 Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore registerExtensions:completion:]` API.
 {% endhint %}
 
-```objc
+```text
 [AEPMobileCore registerExtensions:@[AEPMobileCampaign.class] completion:nil];
 ```
-
 {% endtab %}
 
 {% tab title="ACP 1.x (Objective-C)" %}
-
-```objc
+```text
 + (void) registerExtension;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -78,27 +68,21 @@ Registration occurs by passing `AEPMobileCampaign` to the `[AEPMobileCore regist
 
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
-
 ```swift
 static func resetLinkageFields()
 ```
-
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
-
-```objc
+```text
 + (void) resetLinkageFields;
 ```
-
 {% endtab %}
 
 {% tab title="ACP 1.x (Objective-C)" %}
-
-```objc
+```text
 + (void) resetLinkageFields;
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -106,26 +90,21 @@ static func resetLinkageFields()
 
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
-
 ```swift
 static func setLinkageFields(linkageFields: [String: String])
 ```
-
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
-
-```objc
+```text
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*)
 ```
-
 {% endtab %}
 
 {% tab title="ACP 1.x (Objective-C)" %}
-
-```objc
+```text
 + (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
 ```
-
 {% endtab %}
 {% endtabs %}
+
