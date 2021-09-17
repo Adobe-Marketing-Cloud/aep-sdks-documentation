@@ -1,6 +1,116 @@
 # Platform Services
 
-Currently, the AEP SDK only provides the capability for overriding the Adobe-provided network stack (for all Adobe extensions).
+The Platform Services are provided by the Adobe Experience Platform Mobile SDKs as part of the Mobile Core extension. These services provide shared functionality throughout the SDK that can be shared by extensions. For example, services provide shared functionality for networking, data queuing, caching, and more.
+
+{% hint style="info" %}
+This feature is only available in [Android Core 1.8.0](https://aep-sdks.gitbook.io/docs/release-notes#android-core-1-8-0) or later and [iOS Core 3.0.0](https://aep-sdks.gitbook.io/docs/release-notes#adobe-experience-platform-ios-core-sdks) or later.
+{% endhint %}
+
+## Accessing Services
+
+The MobileCore extension provides a shared `ServicesProvider`, responsible for accessing the current set of provided services.
+
+### Networking
+
+The `Networking` service provides shared functionality to make asynchronous network requests and handle their responses.
+
+The following code snippet details how to make a simple network request and handle the response.
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+AndroidNetworkService androidNetworkService = new AndroidNetworkService(ServiceProvider.getInstance().getNetworkService());
+androidNetworkService.connectUrlAsync(url,
+											  POST, payload,
+		null, 10000, 10000, new NetworkService.Callback() {
+			@Override
+			public void call(NetworkService.HttpConnection connection) {
+				// handle `httpConnection`
+			}
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS(AEP 3.x)" %}
+
+```swift
+// Create your `NetworkRequest`, for more details see `NetworkRequest.swift`
+let networkRequest = NetworkRequest(url: url, httpMethod: .get, httpHeaders: headers)
+
+// Get an instance of the current network service
+let networkService = ServiceProvider.shared.networkService
+
+// Make a request
+networkService.connectAsync(networkRequest: networkRequest) { httpConnection in
+  // handle `httpConnection`
+}
+```
+
+{% endtab %}
+{% endtabs %}
+
+### DataQueuing
+
+The `DataQueuing` service provides access to FIFO queues. This service is particularly useful when used in conjunction with a `PersistentHitQueue`.
+
+The following code snippet shows how to create a `DataQueue` and add a `DataEntity` to the queue.
+
+{% tabs %}
+{% tab title="Android" %}
+
+{% endtab %}
+
+{% tab title="iOS(AEP 3.x)" %}
+
+```swift
+// Create a `DataQueue`
+guard let dataQueue = ServiceProvider.shared.dataQueueService.getDataQueue(label: name) else {
+  Log.error(label: "\(name):\(#function)", "Failed to create Data Queue")
+  return
+}
+
+// Create a `DataEntity`
+let entity = DataEntity(data: myData)
+
+// Add entity to `dataQueue`
+dataQueue.add(entity)
+```
+
+{% endtab %}
+{% endtabs %}
+
+### SystemInfoService (iOS) & DeviceInforming (Android)
+
+The `SystemInfoService` (iOS) and the `DeviceInforming`(Android) service let you access critical pieces of information related to the user's device, such as carrier name, device name, locale, and more. 
+
+The following code snippet shows how to invoke the API to retrieve the user's active locale.
+
+{% tabs %}
+{% tab title="Android" %}
+
+```java
+DeviceInforming deviceInfoService = ServiceProvider.getInstance().getDeviceInfoService();
+String localName = deviceInfoService.getLocaleString();
+```
+
+{% endtab %}
+
+{% tab title="iOS(AEP 3.x)" %}
+
+```swift
+// Add a computed variable to your type or use it direclty in the function where required
+private var systemInfoService: SystemInfoService {
+  return ServiceProvider.shared.systemInfoService
+}
+
+// ...
+let locale = systemInfoService.getActiveLocaleName()
+```
+
+{% endtab %}
+{% endtabs %}
 
 ## Override network stack
 
@@ -12,6 +122,7 @@ This feature is only available in Android Core version 2.5.0 or later and iOS Co
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### 1. Create custom HTTPConnectionPerformer implementation
 
 The `HTTPConnectionPerformer` class is an abstract base class that must be subclassed. This class contains one required method, `connect`, which must be overridden. Optionally, it's possible to override the `shouldOverride` method if you want to conditionally override network requests (if you do not override this method, all requests will be overridden by default).
