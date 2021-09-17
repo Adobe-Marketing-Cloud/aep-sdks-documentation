@@ -60,6 +60,12 @@ The following code snippet shows how to create a `DataQueue` and add a `DataEnti
 {% tabs %}
 {% tab title="Android" %}
 
+```java
+DataQueue dataQueue = ServiceProvider.getInstance().getDataQueueService().getDataQueue(name);
+DataEntity dataEntity = new DataEntity(mydata);
+dataQueue.add(dataEntity);
+```
+
 {% endtab %}
 
 {% tab title="iOS(AEP 3.x)" %}
