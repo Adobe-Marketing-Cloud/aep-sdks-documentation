@@ -1,5 +1,11 @@
 # Release Notes
 
+## Sep 17, 2021
+
+### iOS Media 2.3.2
+
+* Bug fixes to improve SDK stability.
+
 ## Jul 16, 2021
 
 ### Android Media 2.1.2
