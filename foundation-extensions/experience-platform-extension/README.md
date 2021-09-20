@@ -1,8 +1,8 @@
 # Adobe Experience Platform Edge Network
 
-## Configure the Edge Network extension in Launch
+## Configure the Edge Network extension in Platform
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
+1. In Experience Platform, in your tags mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
 3. Type in the extension settings
    1. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
