@@ -221,7 +221,7 @@ To update the SDK configuration, programmatically, use the following information
 
 | Key | Description |
 | :--- | :--- |
-| `global.privacy` | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
+| `global.privacy` | Setting to control privacy opt status; values may include `optedin`, `optedout`, `optunknown` |
 
 ## Video
 
