@@ -9,9 +9,9 @@
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the AEP Edge Network extension
+### Configure the Edge Network extension
 
-![Adobe Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
+![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
@@ -25,7 +25,7 @@ The Edge configuration used by the client-side implementation is one of the foll
 * the`Staging Environment` configuration when the Launch library is published to staging (in the Submitted column in the Launch publishing flow).
 * the `Developement Environment` configuration when the Launch library is in development.
 
-## Add the AEP Edge extension to your app
+## Add the Edge Network extension to your app
 
 ### Download and import the Edge extension
 
