@@ -205,13 +205,13 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 {% tab title="Cordova" %}
 #### Cordova
 
-When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, the `lifecycleStart` method call must be made in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause` method.
+When using Unity, the `LifecycleStart` method call must be made from the `OnApplicationPause` method.
 
 ```csharp
 private void OnApplicationPause(bool pauseStatus)
@@ -235,7 +235,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 **iOS**
 
-When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
+When using iOS, the `LifecycleStart` method call must be made from the `OnActivated` method.
 
 ```csharp
 public override void OnActivated(UIApplication uiApplication)
@@ -247,7 +247,7 @@ public override void OnActivated(UIApplication uiApplication)
 
 **Android**
 
-When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
+When using Android, the `LifecycleStart` method call must be made from the `OnResume` method.
 
 ```csharp
 protected override void OnResume()
@@ -352,13 +352,13 @@ ACPCore.lifecyclePause();
 {% tab title="Cordova" %}
 #### Cordova
 
-When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, the `lifecyclePause` method call must be made in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause` method.
+When using Unity, the `LifecyclePause` method call must be made from the `OnApplicationPause` method.
 
 ```csharp
 private void OnApplicationPause(bool pauseStatus)
@@ -382,7 +382,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 **iOS**
 
-When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
+When using iOS, the `LifecyclePause` method call must be made from the `OnResignActivation` method.
 
 ```csharp
 public override void OnResignActivation(UIApplication uiApplication)
@@ -394,7 +394,7 @@ public override void OnResignActivation(UIApplication uiApplication)
 
 **Android**
 
-When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
+When using Android, the `LifecyclePause` method call must be made from the `OnPause` method.
 
 ```csharp
 protected override void OnPause()
