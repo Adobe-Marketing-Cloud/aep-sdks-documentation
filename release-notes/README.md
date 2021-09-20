@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sep 17, 2021
+
+### iOS Media 2.3.2
+
+* Bug fixes to improve SDK stability.
+
 ## Sep 14, 2021
 
 ### Xamarin Assurance iOS 1.0.0
