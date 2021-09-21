@@ -1,6 +1,7 @@
 # Lifecycle metrics
 
 ## Lifecycle data content response metrics
+
 The following metrics are collected on each [Lifecycle data content response](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-data-content-response) event.
 
 ### Install
@@ -95,9 +96,9 @@ The following metrics are collected on each [Lifecycle data content response](ht
   </tbody>
 </table>
 
-
 ## Lifecycle Application Foreground metrics
-The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics are defined in the Experience Data Model (XDM) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
+
+The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics are defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
 
 ### Application
 
@@ -106,14 +107,15 @@ The following metrics are collected on each [Lifecycle Application Foreground](h
 | xdm:id | String | Identifier of the application. |
 | xdm:name | String | Name of the application. |
 | xdm:version | String | Version of the application. |
-| xdm:isLaunch | boolean | Launch of an application. Every application foreground event sets `isLaunch` to `true`.|
-| xdm:isInstall | boolean | Install of an application. If `true`, signifies the first launch of the application. The Experience Event's timestamp property can be used as the application's install date.|
-| xdm:isUpgrade | boolean | Upgrade of an application. If `true`, signifies the first launch of the application after an upgrade.|
+| xdm:isLaunch | boolean | Launch of an application. Every application foreground event sets `isLaunch` to `true`. |
+| xdm:isInstall | boolean | Install of an application. If `true`, signifies the first launch of the application. The Experience Event's timestamp property can be used as the application's install date. |
+| xdm:isUpgrade | boolean | Upgrade of an application. If `true`, signifies the first launch of the application after an upgrade. |
 
 ### Device
+
 | **Property** | **Type** | **DescriptIon** |
 | :--- | :--- | :--- |
-| xdm:type | String |Type of device being tracked. |
+| xdm:type | String | Type of device being tracked. |
 | xdm:manufacturer | String | The name of the organization who owns the design and creation of the device. |
 | xdm:model | String | he name of the model for the device. |
 | xdm:modelNumber | String | The unique model number designation assigned by the manufacturer for this device. |
@@ -121,22 +123,24 @@ The following metrics are collected on each [Lifecycle Application Foreground](h
 | xdm:screenWidth | integer | The number of horizontal pixels of the device's active display in the default orientation. |
 
 ### Environment
+
 | **Property** | **Type** | **DescriptIon** |
 | :--- | :--- | :--- |
-| xdm:type | String |The type of the application environment.|
+| xdm:type | String | The type of the application environment. |
 | xdm:carrier | String | A mobile network carrier or MNO, also known as a wireless service provider, wireless carrier, cellular company, or mobile network carrier. |
-| xdm:operatingSystem | String |The name of the operating system used when the observation was made.| 
-| xdm:operatingsystemVersion | String |The full version identifier for the operating system used when the observation was made. |
+| xdm:operatingSystem | String | The name of the operating system used when the observation was made. |
+| xdm:operatingsystemVersion | String | The full version identifier for the operating system used when the observation was made. |
 | dc:language | String | The language of the environment to represent the user's linguistic, geographical, or cultural preferences for data presentation. |
 
 ## Lifecycle Application Background metrics
-The following metrics are collected on each [Lifecycle Application Background](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-background) event. The structure of these metrics are defined in the Experience Data Model (XDM) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
+
+The following metrics are collected on each [Lifecycle Application Background](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-background) event. The structure of these metrics are defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
 
 ### Application
 
 | **Property** | **Type** | **DescriptIon** |
 | :--- | :--- | :--- |
-| xdm:isClose | boolean | Close of an application. Every application background event sets `isClose` to `true`.|
-| xdm:closeType | String | Type of application close, sent on application isClose. Type is "close" on graceful termination of an application, or "unknown" when application termination source is unknown.|
-| xdm:sessionLength | integer | Length of the application session in seconds. Usually referred as the time the application was in foreground. Will not be less than zero.|
+| xdm:isClose | boolean | Close of an application. Every application background event sets `isClose` to `true`. |
+| xdm:closeType | String | Type of application close, sent on application isClose. Type is "close" on graceful termination of an application, or "unknown" when application termination source is unknown. |
+| xdm:sessionLength | integer | Length of the application session in seconds. Usually referred as the time the application was in foreground. Will not be less than zero. |
 

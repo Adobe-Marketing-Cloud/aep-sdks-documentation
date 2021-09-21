@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ### Campaign Standard endpoints
 
-Provide endpoint URL(s) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
+Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs **do not** contain the `http://` or `https://` and **cannot** end with a forward slash.
@@ -59,7 +59,7 @@ Remember the following information when you add the Campaign extension to your a
 | Campaign Standard | The Campaign Standard extension requires the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions. You should always ensure that you get the latest version of the extensions. |
 | Profile | The Profile extension is required for in-app trigger frequencies to work accurately. For more information, see [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile). |
 | Signal | The Signal extension is required for all postback rules to work. For more information, see [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals). |
-| Lifecycle | The Lifecycle extension is required for a profile to be registered in Campaign. In order to do this, you will need to implement the Lifecycle APIs. For more information, please read either the [Lifecycle API (Android)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android) or the [Lifecycle API (iOS)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios) documentation. |
+| Lifecycle | The Lifecycle extension is required for a profile to be registered in Campaign. In order to do this, you will need to implement the Lifecycle APIs. For more information, please read either the [Lifecycle API \(Android\)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android) or the [Lifecycle API \(iOS\)](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios) documentation. |
 
 {% hint style="info" %}
 The instructions to add these extensions to your mobile app are also available in the Data Collection UI. To access the installation dialog box, open your mobile property, click the **Environments** tab, and click **Install**.
@@ -130,14 +130,14 @@ You'll need to install the SDK with [npm](https://www.npmjs.com/) and configure 
 react-native init MyReactApp
 ```
 
-2. Install and link the `@adobe/react-native-acpcampaign` package.
+1. Install and link the `@adobe/react-native-acpcampaign` package.
 
 ```bash
 npm install @adobe/react-native-acpcampaign
 react-native link @adobe/react-native-acpcampaign
 ```
 
-3. Import the extension from `@adobe/react-native-acpcampaign`.
+1. Import the extension from `@adobe/react-native-acpcampaign`.
 
 ```bash
 import {ACPCampaign} from '@adobe/react-native-acpcampaign';
@@ -153,7 +153,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 
 In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-   ```java
+```java
     public class CampaignTestApp extends Application {
 
         @Override
@@ -180,7 +180,7 @@ In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Li
 
         }
     }
-   ```
+```
 
 For more information about starting Lifecycle, see the [Lifecycle extension in Android guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
 {% endtab %}
@@ -188,9 +188,9 @@ For more information about starting Lifecycle, see the [Lifecycle extension in A
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
-   **Objective-C**
+**Objective-C**
 
-   ```objectivec
+```objectivec
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         [ACPCore setLogLevel:ACPMobileLogLevelDebug];
         [ACPCore configureWithAppId:@"launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging"];
@@ -206,11 +206,11 @@ In your app's `application:didFinishLaunchingWithOptions:` method, register the 
       // Override point for customization after application launch.
       return YES;
     }
-   ```
+```
 
-   **Swift**
+**Swift**
 
-   ```swift
+```swift
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
            ACPCore.setLogLevel(.debug)
         ACPCore.configure(withAppId: "launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging")
@@ -226,7 +226,7 @@ In your app's `application:didFinishLaunchingWithOptions:` method, register the 
 
       return true;
     }
-   ```
+```
 
 For more information about starting Lifecycle, see the [Lifecycle extension in iOS guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios).
 {% endtab %}
@@ -274,7 +274,7 @@ No additional setup is needed for iOS in-app messaging and local notifications.
 
 ### Set up push messaging
 
-To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service (APNS) or Firebase Cloud Messaging Platform (FCM) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see the [setPushIdentifier section of the Adobe Identity API guide](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/identity/identity-api-reference#setpushidentifier).
+To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see the [setPushIdentifier section of the Adobe Identity API guide](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/identity/identity-api-reference#setpushidentifier).
 
 For more information about setting up your iOS app to connect to APNS and retrieve a device token that will be used as a push identifier, see the tutorial on [registering your app with APNs](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc). For more information about setting up your Android app to connect to FCM and retrieve a device registration token that will be used as a push identifier, see the tutorial on [setting up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client).
 
@@ -520,7 +520,7 @@ A destination URL can be added to in-app messages that are delivered from Adobe 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
 * The `url` key is present in the alert message payload
-* The `url` is present in the query parameters of a fullscreen message button (`data-destination-url`)
+* The `url` is present in the query parameters of a fullscreen message button \(`data-destination-url`\)
 * The `adb_deeplink` key is present in the local notification payload
 * The `uri` key is present in the push notification payload
 
@@ -545,7 +545,7 @@ public void onCreate(Bundle savedInstanceState) {
 
 #### Handling in-app message app links on Android
 
-Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality, although they have the appearance of a standard website URL. The intent filter previously set up for deep links is modified to handle `http` schemes and verification of the app link needs to be set up on [Google Search Console](https://support.google.com/webmasters/answer/9008080). 
+Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality, although they have the appearance of a standard website URL. The intent filter previously set up for deep links is modified to handle `http` schemes and verification of the app link needs to be set up on [Google Search Console](https://support.google.com/webmasters/answer/9008080).
 
 For more information on the additional verification setup needed, please read the tutorial on [verifying Android app links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information on Android app links, please read the guide on [handling Android app links](https://developer.android.com/training/app-links/index.html#add-app-links).
 {% endtab %}
@@ -556,7 +556,7 @@ For more information on the additional verification setup needed, please read th
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
 * The `url` key is present in the alert message payload
-* The `url` is present in the query parameters of a fullscreen message button (`data-destination-url`)
+* The `url` is present in the query parameters of a fullscreen message button \(`data-destination-url`\)
 * The `adb_deeplink` key is present in the local notification payload
 * The `uri` key is present in the push notification payload
 
@@ -566,7 +566,7 @@ When a deep link is opened in Safari, this does not allow the app to directly ha
 
 **Objective-C**
 
-```objc
+```text
 [ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
     NSLog(@"Inside registerURLHandler callback, clickthrough url is: %@", url);
   if([url containsString:@"campaigndemoapp://"]){
@@ -598,7 +598,7 @@ The website URL in the local notification response can be loaded using the [open
 
 #### Objective-C
 
-```objc
+```text
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     dispatch_async(dispatch_get_main_queue(), ^{
       NSDictionary *userInfo = response.notification.request.content.userInfo;
@@ -638,7 +638,7 @@ The website URL in the push notification can be loaded using the [openURL:option
 
 #### Objective-C
 
-```objc
+```text
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -679,7 +679,7 @@ The deep link URL can be retrieved from the response object passed into the hand
 
 **Objective-C**
 
-```objc
+```text
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
     dispatch_async(dispatch_get_main_queue(), ^{
       NSDictionary *userInfo = response.notification.request.content.userInfo;
@@ -715,9 +715,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 #### Handling in-app message universal links on iOS
 
-Universal links are available for devices on iOS 9.0 or later. They can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information, see the guide on [allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content). 
+Universal links are available for devices on iOS 9.0 or later. They can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information, see the guide on [allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content).
 
-Universal links are typically used from outside your installed app. For example, a universal link would be used from a link present on a website or a link included in an email message. iOS will **not** open a universal link if it determines that the link is being opened from within the app it links to. For more information on this limitation, see the "Preparing Your App to Handle Universal Links" section within the documentation on [supporting universal links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2). If a universal link is included as a Campaign clickthrough destination, the link must be handled by the app developer in a similar fashion as a deep link. More information can be seen in the [handling alert or fullscreen notification deep links on iOS](#handling-alert-or-fullscreen-notification-deep-links-on-ios) and [handling local or push notification deep links on iOS](#handling-local-or-push-notification-deep-links-on-ios) sections.
+Universal links are typically used from outside your installed app. For example, a universal link would be used from a link present on a website or a link included in an email message. iOS will **not** open a universal link if it determines that the link is being opened from within the app it links to. For more information on this limitation, see the "Preparing Your App to Handle Universal Links" section within the documentation on [supporting universal links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2). If a universal link is included as a Campaign clickthrough destination, the link must be handled by the app developer in a similar fashion as a deep link. More information can be seen in the [handling alert or fullscreen notification deep links on iOS](./#handling-alert-or-fullscreen-notification-deep-links-on-ios) and [handling local or push notification deep links on iOS](./#handling-local-or-push-notification-deep-links-on-ios) sections.
 {% endtab %}
 {% endtabs %}
 
@@ -782,7 +782,7 @@ To update SDK configuration programmatically, use the following information to c
 | `campaign.mcias` | Yes | Sets the in-app messaging service URL endpoint. | String |
 | `campaign.server` | Yes | Sets the endpoint URL for the production environment in the Adobe Campaign Standard instance. | String |
 | `campaign.pkey` | Yes | Sets the identifier for a mobile app that was configured in the production environment in the Adobe Campaign Standard. | String |
-| `build.environment` | Yes | Specifies which environment to use (prod, dev, or staging) when sending registration information. | String |
+| `build.environment` | Yes | Specifies which environment to use \(prod, dev, or staging\) when sending registration information. | String |
 | `__dev__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the development environment in Adobe Campaign Standard. | String |
 | `__dev__campaign.server` | No | Sets the endpoint URL for the development environment in the Adobe Campaign Standard instance. | String |
 | `__stage__campaign.pkey` | No | Sets the identifier for a mobile app that was configured in the staging environment in Adobe Campaign Standard. | String |

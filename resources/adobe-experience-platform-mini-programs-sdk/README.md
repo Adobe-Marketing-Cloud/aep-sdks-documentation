@@ -24,10 +24,10 @@ The SDK automatically collects out-of-the-box lifecycle metrics and sends it to 
 
 ### Identity
 
-The SDK generates an Adobe Analytics Visitor ID (aid) to identify program users.
+The SDK generates an Adobe Analytics Visitor ID \(aid\) to identify program users.
 
 {% hint style="warning" %}
-At this time, Experience Cloud ID (ECID or MCID) **are not** supported.
+At this time, Experience Cloud ID \(ECID or MCID\) **are not** supported.
 {% endhint %}
 
 {% hint style="info" %}

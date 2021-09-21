@@ -106,7 +106,7 @@ Here is a code sample for the `USER_PROFILE : RESPONSE_PROFILE` event:
 The shared state for the Profile extension is created in the following situations:
 
 * At initialization After the extension is initialized, the extension updates the shared state by reading the previously set value from persistence.
-* Each time a UserProfile attribute is created or updated The shared state is updated when there is a change in the user attribute data from the API or by other triggers (Rules Engine).
+* Each time a UserProfile attribute is created or updated The shared state is updated when there is a change in the user attribute data from the API or by other triggers \(Rules Engine\).
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |

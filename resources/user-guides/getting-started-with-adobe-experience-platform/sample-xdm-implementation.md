@@ -26,9 +26,9 @@ To get started, follow the steps described in the installation section of the [A
 
 ### Set up the configuration
 
-In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the previously created mobile property and click on the Development icon (![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)). Find the Environment File ID at the top and copy it.
+In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), go to the **Environments** tab in the previously created mobile property and click on the Development icon \(![img](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N3-ofPO9fLFT1edw%2Fscreen-shot-2018-10-18-at-11.22.17-am.png?generation=1558039279051937&alt=media)\). Find the Environment File ID at the top and copy it.
 
-Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` (Android) / `AppDelegate` (iOS) class.
+Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `MainApp` \(Android\) / `AppDelegate` \(iOS\) class.
 
 ## Create schema and dataset for product reviews
 
@@ -37,12 +37,12 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
    * From the left panel, select **Schemas**
    * Select **Create schema**, followed by **XDM ExperienceEvent**
    * Set the name for this schema as "Product Reviews".
-   * Select the **Add** button (+) to add field groups
+   * Select the **Add** button \(+\) to add field groups
      * Select **Environment Details** from the "Use existing field groups" section then select **Add field group**.
-   * Select the **Add** button (+) to add field groups
+   * Select the **Add** button \(+\) to add field groups
      * Select **Create new field group** and set the name as "Product review", then select **Add field group**.
-   * In the Schema structure, select the "Product review" field group and select the plus icon (+) next to the schema name "Product Reviews".
-   * Start adding fields as follows. After each, select **Apply**, then plus icon (+) to add the next field.
+   * In the Schema structure, select the "Product review" field group and select the plus icon \(+\) next to the schema name "Product Reviews".
+   * Start adding fields as follows. After each, select **Apply**, then plus icon \(+\) to add the next field.
 
      | Field name | Display name | Type | Required |
      | :--- | :--- | :--- | :--- |
@@ -71,7 +71,7 @@ Set the `LAUNCH_ENVIRONMENT_FILE_ID` to the copied Environment File ID in the `M
 
 ### Build XDM objects
 
-You can now implement the product review functionality in the sample application. Navigate to `EdgeViewController.swift` (iOS) / `EdgeTab.java` (Android) and implement the `sendProductReviewXdmEvent` function.
+You can now implement the product review functionality in the sample application. Navigate to `EdgeViewController.swift` \(iOS\) / `EdgeTab.java` \(Android\) and implement the `sendProductReviewXdmEvent` function.
 
 1. Create the XDM Experience Event using the `XDM IdentityMap` containing the reviewer `Email` and the review information.
 
@@ -223,8 +223,8 @@ The customer profile can be viewed in [Adobe Experience Platform](https://experi
    * For the identity value, enter the same email as you sent from the app.
    * Select the Profile ID found in the table.
 3. Inspect the customer profile.
-   * Notice that the client-side ECID and the email(s) you sent in XDM format using the Edge extension are now displayed in the Detail view, under the **Linked identities** section, as well as in the **Attributes** view.
-   * In the **Events** tab you can view the events sent to the dataset(s) enabled for Profile for the selected customer profile.
+   * Notice that the client-side ECID and the email\(s\) you sent in XDM format using the Edge extension are now displayed in the Detail view, under the **Linked identities** section, as well as in the **Attributes** view.
+   * In the **Events** tab you can view the events sent to the dataset\(s\) enabled for Profile for the selected customer profile.
 
 To learn more about the Adobe Customer Profile, see the [Identity Service overview](https://experienceleague.adobe.com/docs/experience-platform/identity/home.html) and the [Identity namespace overview](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html).
 

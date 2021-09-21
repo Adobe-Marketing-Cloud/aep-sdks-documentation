@@ -4,10 +4,16 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
+{% hint style="success" %}
+## Good for iOS 15
+
+Adobe Experience Platform Mobile SDKs have been functionally tested on iOS 15 release candidate versions. Please make sure you use [current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure compatibility.
+{% endhint %}
+
 {% hint style="info" %}
 ## Interested in Kotlin?
 
-We're looking for feedback on how we can better support our customers using (or planning to use) [Kotlin](https://kotlinlang.org/) in their mobile apps.
+We're looking for feedback on how we can better support our customers using \(or planning to use\) [Kotlin](https://kotlinlang.org/) in their mobile apps.
 
 Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us know if you're interested in a Kotlin-based version of the Adobe Experience Platform Mobile SDK.
 {% endhint %}
@@ -15,15 +21,9 @@ Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us kno
 {% hint style="success" %}
 ## Swift SDKs are here!
 
-We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation. 
+We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation.
 
-The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4). 
-{% endhint %}
-
-{% hint style="warning" %}
-## Migrate to Swift
-
-If you are currently using our Objective-C (ACP-prefix libraries), please see our [Migrating to Swift](resources/migrate-to-swift.md) guide for next steps.
+The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
 {% hint style="success" %}
@@ -48,15 +48,15 @@ Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](
 
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
-* Android (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links)
-* iOS - Swift (New! - see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for repos, download links)
-* iOS - Objective C (includes iOS, iPadOS, and tvOS) (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links)
-* Cordova (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links)
-* React Native (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links)
-* Flutter (in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links)
-* Unity (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) for download links)
+* Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
+* iOS - Swift \(New! - see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for repos, download links\)
+* iOS - Objective C \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
+* Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
+* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
+* Unity \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
-* Xamarin (see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#xamarin) for download links)
+* Xamarin \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#xamarin) for download links\)
 
 ## Quick Links
 

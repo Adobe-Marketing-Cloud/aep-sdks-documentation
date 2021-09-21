@@ -2,10 +2,9 @@
 
 The Adobe Experience Platform Mobile SDK Lifecycle extension enables application lifecycle data collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the [Edge Network extension](../experience-platform-extension/). The following steps will setup an application to forward Lifecycle extension metrics to the Adobe Experience Platform.
 
-
 ## Add AEP Mobile Lifecycle Details field group to your XDM Schema in Adobe Experience Platform
 
-Include the AEP Mobile Lifecycle Details field group to the schema defined in your Edge configuration data stream. The AEP Mobile Lifecycle field group defines all the metrics auto-collected by the Lifecycle for Edge Network extension. 
+Include the AEP Mobile Lifecycle Details field group to the schema defined in your Edge configuration data stream. The AEP Mobile Lifecycle field group defines all the metrics auto-collected by the Lifecycle for Edge Network extension.
 
 1. In Adobe Experience Platform, log into your organization.
 2. Under **Schemas** section, select the **Browse** tab and search for the schema used in the application's Edge configuration.
@@ -14,7 +13,6 @@ Include the AEP Mobile Lifecycle Details field group to the schema defined in yo
 5. Click **Save**
 
 ![](../../.gitbook/assets/xdm-schema-add-mobile-lifecycle-details.png)
-
 
 ## Configure the Adobe Experience Platform Lifecycle extension in Experience Platform Launch
 
@@ -37,6 +35,7 @@ In addition, use the following steps to [Configure the AEP Edge Network extensio
 ![AEP Mobile Core extension configuration](../../.gitbook/assets/mobile-core-launch-configuration.png)
 
 ## Configure a Rule in Launch to forward Lifecycle metrics to Platform
+
 The Lifecycle for Edge Network extension dispatches application foreground and background events to the Mobile SDK. Create a rule to forward these events to the Adobe Experience Platform Edge Network.
 
 ### Create a rule
@@ -83,11 +82,7 @@ After you complete your configuration, verify that your rule looks like the foll
 
 ## Add the AEP Lifecycle extension to your app
 
-For implementation details, please reference:
-1. [Add Lifecycle to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#add-lifecycle-to-your-app)
-2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls)
+For implementation details, please reference: 1. [Add Lifecycle to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#add-lifecycle-to-your-app) 2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls)
 
 In addition, use the following steps to [add the AEP Edge extension to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#add-the-aep-edge-extension-to-your-app).
-
-
 
