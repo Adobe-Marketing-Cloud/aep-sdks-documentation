@@ -2,7 +2,7 @@
 
 ## Configure the Edge Network extension in Platform
 
-1. In Experience Platform, in your tags mobile property, click the **Extensions** tab.
+1. In Experience Platform, in your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
 3. Type in the extension settings
    1. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
@@ -23,7 +23,7 @@ The Edge configuration used by the client-side implementation is one of the foll
 
 * the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
 * the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
-* the `Developement Environment` configuration when the Launch library is in development.
+* the `Development Environment` configuration when the Launch library is in development.
 
 ## Add the Edge Network extension to your app
 
