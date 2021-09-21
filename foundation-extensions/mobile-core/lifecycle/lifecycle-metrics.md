@@ -97,8 +97,7 @@ The following metrics are collected on each [Lifecycle data content response](ht
 </table>
 
 ## Lifecycle Application Foreground metrics
-
-The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics are defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
+The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics is defined in the Experience Data Model (XDM) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
 
 ### Application
 
@@ -117,7 +116,7 @@ The following metrics are collected on each [Lifecycle Application Foreground](h
 | :--- | :--- | :--- |
 | xdm:type | String | Type of device being tracked. |
 | xdm:manufacturer | String | The name of the organization who owns the design and creation of the device. |
-| xdm:model | String | he name of the model for the device. |
+| xdm:model | String | The name of the model for the device. |
 | xdm:modelNumber | String | The unique model number designation assigned by the manufacturer for this device. |
 | xdm:screenHeight | integer | The number of vertical pixels of the device's active display in the default orientation. |
 | xdm:screenWidth | integer | The number of horizontal pixels of the device's active display in the default orientation. |
@@ -134,7 +133,7 @@ The following metrics are collected on each [Lifecycle Application Foreground](h
 
 ## Lifecycle Application Background metrics
 
-The following metrics are collected on each [Lifecycle Application Background](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-background) event. The structure of these metrics are defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
+The following metrics are collected on each [Lifecycle Application Background](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-background) event. The structure of these metrics is defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
 
 ### Application
 
