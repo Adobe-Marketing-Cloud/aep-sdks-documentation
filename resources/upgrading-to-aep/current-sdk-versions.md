@@ -9,13 +9,13 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 {% hint style="warning" %}
 ## Migrate to Swift
 
-If you are currently using our Objective-C (ACP-prefix libraries), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
 {% endhint %}
 
 ## Android
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 (Ice Cream Sandwich) or later. The Adobe Experience Platform Edge Network extension and other **for Edge Network** extensions require Android versions 4.4 or later (API levels 19 or later).
+Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later. The Adobe Experience Platform Edge Network extension and other **for Edge Network** extensions require Android versions 4.4 or later \(API levels 19 or later\).
 {% endhint %}
 
 {% hint style="info" %}
@@ -53,7 +53,7 @@ Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later;
 {% hint style="warning" %}
 ## Migrate to Swift
 
-If you are currently using our Objective-C (ACP-prefix libraries), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
 {% endhint %}
 
 {% hint style="info" %}
@@ -87,12 +87,12 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 ## iOS — Objective-C
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later (includes support for iOS, iPadOS, and tvOS)
+Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
 {% endhint %}
 
 | Extension | Cocoapods | Github |
 | :--- | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) (supports tvOS) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
+| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
 | [Profile](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile) |
 | [Identity](../../foundation-extensions/mobile-core/identity/) | Bundled in Mobile Core | — |
 | [Signal](../../foundation-extensions/mobile-core/signals/) | Bundled in Mobile Core | — |
@@ -104,8 +104,8 @@ Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later 
 | [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) | [![Cocoapods](https://img.shields.io/badge/AEPAssurance-v1.1.3-orange?logo=apple&style=flat-square)](https://cocoapods.org/pods/AEPAssurance) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance) |
 | [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&label=ACPPlaces&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlaces) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces) |
 | [Places Monitor](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html?lang=en) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&label=ACPPlacesMonitor&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlacesMonitor) | [Link](https://github.com/adobe/places-monitor-ios) |
-| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) (supports tvOS) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics) |
-| [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) (supports tvOS) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia) |
+| [Adobe Analytics](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAnalytics) |
+| [Adobe Analytics - Media Analytics for Audio & Video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPMedia) |
 | [Adobe Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAudience.svg?color=orange&label=ACPAudience&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAudience) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPAudience) |
 | [Adobe Analytics - Mobile Services](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMobileServices.svg?color=orange&label=ACPMobileServices&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMobileServices) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPMobileServices) |
 | [Adobe Target](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-target) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPTarget.svg?color=orange&label=ACPTarget&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPTarget) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPTarget) |
@@ -157,7 +157,7 @@ With Node.js installed, you may install the Cordova framework from terminal usin
 sudo npm install -g cordova
 ```
 
-To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin(s) using the following statement:
+To start using the Adobe Experience Platform Mobile SDK plugin for Cordova, navigate to the directory of your Cordova app and install the plugin\(s\) using the following statement:
 
 ```text
 cordova plugin add https://github.com/adobe/cordova-acpcore.git
@@ -217,7 +217,7 @@ Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 
 Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Objective-C](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-objective-c) libraries, at this time.
 {% endhint %}
 
-To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package(s):
+To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
 
 | Extension | Github | Sample App |
 | :--- | :--- | :--- |

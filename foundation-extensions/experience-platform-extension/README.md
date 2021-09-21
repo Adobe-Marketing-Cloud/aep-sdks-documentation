@@ -21,8 +21,8 @@ If you use multiple Development configurations, select the desired one from the 
 
 The Edge configuration used by the client-side implementation is one of the followings:
 
-* the `Production Environment` configuration when the Launch library is published to production (in the Published column in the Launch publishing flow).
-* the`Staging Environment` configuration when the Launch library is published to staging (in the Submitted column in the Launch publishing flow).
+* the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
+* the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
 * the `Developement Environment` configuration when the Launch library is in development.
 
 ## Add the Edge Network extension to your app

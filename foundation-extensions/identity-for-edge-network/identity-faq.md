@@ -129,7 +129,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-## Q: Will an existing Experience Cloud ID (ECID) migrate to the Identity for Edge Network extension?
+## Q: Will an existing Experience Cloud ID \(ECID\) migrate to the Identity for Edge Network extension?
 
 ### A: Yes
 
@@ -137,7 +137,7 @@ If the application previously installed the Identity for Experience Cloud ID Ser
 
 Note, however, if the Mobile SDK's privacy status was set to `optedOut` at the time the application is upgraded, the Identity for Experience Cloud ID Service extension will not have an ECID, as it was cleared. In this case, the Identity for Edge Network extension will generate a new ECID.
 
-## Q: What is the Experience Cloud ID (ECID) used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
+## Q: What is the Experience Cloud ID \(ECID\) used by the SDK when using both AEP Edge extensions and Adobe Solutions extensions?
 
 ### A: The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID. However, the two ECIDs are synced as part of the XDM IdentityMap.
 
@@ -196,7 +196,7 @@ To clear the identifiers used by the Adobe Solutions extensions, call [setPrivac
 
 To clear the identifiers used by the AEP Edge extensions, call [resetIdentities](../mobile-core/mobile-core-api-reference.md#reset-identities)
 
-## Q: What steps are needed to generate a new Experience Cloud ID (ECID) for a user when using both AEP Edge extensions and Adobe Solutions extensions?
+## Q: What steps are needed to generate a new Experience Cloud ID \(ECID\) for a user when using both AEP Edge extensions and Adobe Solutions extensions?
 
 ### A: Both identity extensions' ECID must be regenerated in sequence to avoid linking the old and new ECIDs in Adobe Experience Platform.
 

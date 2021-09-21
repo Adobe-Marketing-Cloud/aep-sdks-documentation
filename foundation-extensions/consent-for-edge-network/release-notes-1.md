@@ -10,5 +10,5 @@ You can now find the `Consent` extension in the Launch extensions catalog for mo
 
 ### iOS & Android Consent 1.0.0
 
-The Adobe Experience Platform Consent (AEPEdgeConsent) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension.
+The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension.
 

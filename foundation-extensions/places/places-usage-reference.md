@@ -74,7 +74,7 @@ NSString *placesVersion = [AEPMobilePlaces extensionVersion];
 
 ### getCurrentPointsOfInterest
 
-Returns all points of interest (POI) of which the device is currently known to be within.
+Returns all points of interest \(POI\) of which the device is currently known to be within.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -156,7 +156,7 @@ Places.getLastKnownLocation() { location in
 
 ### getNearbyPointsOfInterest
 
-Requests a list of nearby Points of Interest (POI) and returns them in a closure.
+Requests a list of nearby Points of Interest \(POI\) and returns them in a closure.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -333,7 +333,7 @@ Sets the authorization status in the Places extension.
 The status provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location authorization status for this device.
 
 {% hint style="info" %}
-This method should only be called from the `CLLocationManagerDelegate` protocol method [locationManagerDidChangeAuthorization(\_:)](https://developer.apple.com/documentation/corelocation/cllocationmanagerdelegate/3563956-locationmanagerdidchangeauthoriz).
+This method should only be called from the `CLLocationManagerDelegate` protocol method [locationManagerDidChangeAuthorization\(\_:\)](https://developer.apple.com/documentation/corelocation/cllocationmanagerdelegate/3563956-locationmanagerdidchangeauthoriz).
 {% endhint %}
 
 {% tabs %}

@@ -20,7 +20,7 @@ The following key-value pairs are present in this event:
 
 The following example shows triggered consequence data.
 
-```json
+```javascript
 {
   "triggeredconsequence": {
     "assetsPath": "assets/path/",
@@ -72,7 +72,7 @@ The configuration setting to pause registration requests is provided for specifi
 
 #### Example
 
-```json
+```javascript
 {
     "global.privacy":"optedin",
     "campaign.timeout":1,
@@ -100,7 +100,7 @@ The following key-value pairs are supported in this event:
 
 #### Example
 
-```json
+```javascript
 { 
     "linkagefields": 
     { 
@@ -133,7 +133,7 @@ The following key-value pairs are used in this event:
 
 #### Example
 
-```json
+```javascript
 {    "lifecyclecontextdata": 
     {
         "installdate":"22/05/2014",        
@@ -158,7 +158,7 @@ The following key-value pairs are used in this event:
 
 The generic data OS event is dispatched by the Core extension to the Event Hub when the `collectMessageInfo` API is invoked by the app developer to track local and push notification interactions.
 
-#### Payload definition 
+#### Payload definition
 
 The following key-value pairs are used in this event:
 
@@ -170,7 +170,7 @@ The following key-value pairs are used in this event:
 
 #### Event data example
 
-```json
+```javascript
 {
     "deliveryId": "1442de4",
     "action": "2",
@@ -199,13 +199,13 @@ The following key-value pairs are used in this event:
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
 | `a.message.id` | String | No | The message ID of the message that was triggered. |
-| `a.message.triggered` | String ("1") | No | A flag that specifies a message triggered event. Only one type of message interaction exists in each Campaign response content event. |
-| `a.message.viewed` | String ("1") | No | A flag that specifies a message viewed event. |
-| `a.message.clicked` | String ("1") | No | A flag that specifies a message clicked event. |
+| `a.message.triggered` | String \("1"\) | No | A flag that specifies a message triggered event. Only one type of message interaction exists in each Campaign response content event. |
+| `a.message.viewed` | String \("1"\) | No | A flag that specifies a message viewed event. |
+| `a.message.clicked` | String \("1"\) | No | A flag that specifies a message clicked event. |
 
 #### Event data example
 
-```json
+```javascript
 { "a.message.id": "12345678", "a.message.triggered": "1" }
 { "a.message.id": "12345678", "a.message.viewed": "1" }
 { "a.message.id": "12345678", "a.message.clicked": "1" }

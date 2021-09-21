@@ -33,7 +33,7 @@ For an Analytics track event, the detailed view contains the following valuable 
 To get started, complete the following steps:
 
 1. Ensure that you implemented the latest versions of the [Project Griffon](../set-up-project-griffon.md) and [Adobe Analytics](../../../using-mobile-extensions/adobe-analytics/) extensions.
-2. Go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) (**not** griffon.adobe.com).
+2. Go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) \(**not** griffon.adobe.com\).
 3. Connect your app to a Project Griffon session. For more information, see [Connect your device](https://app.gitbook.com/@aep-sdks/s/docs/beta/project-griffon/using-project-griffon#2-connect-your-device).
 4. To view your events, select the **Adobe Analytics** view.
 
