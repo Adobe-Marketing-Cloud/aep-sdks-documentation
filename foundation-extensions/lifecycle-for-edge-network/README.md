@@ -26,7 +26,7 @@ The Lifecycle for Edge Network extension is part of the Mobile Core extension. T
 The configuration setting "Session Timeout" in the Mobile Core extension configuration is used when collecting Lifecycle session data for Analytics and is not used for the Lifecycle for Edge Network extension.
 {% endhint %}
 
-1. In Experience Platform, in your tags mobile property, click the **Extensions** tab.
+1. In Platform, from your tag property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Mobile Core** extension, and click **Install**.
 3. There are no configuration settings for **Lifecycle for Edge Network**.
 4. Click **Save**.
@@ -79,7 +79,7 @@ After you complete your configuration, verify that your rule looks like the foll
 ![](../../.gitbook/assets/rulecomplete-forward-lifecycle-to-edge-network.png)
 
 1. Click **Save**.
-2. Rebuild your Experience Platform tags property and deploy it to the correct environment.
+2. Rebuild your tag property and deploy it to the correct environment.
 
 ## Add the Lifecycle extension to your app
 
