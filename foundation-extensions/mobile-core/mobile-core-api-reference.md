@@ -110,6 +110,410 @@ if (app != null) {
 {% endtab %}
 {% endtabs %}
 
+### Initializing the SDK
+
+Extensions are registered with Mobile Core so that they can dispatch and listen for events.
+
+{% hint style="danger" %}
+Extension registration is **mandatory**. Attempting to make extension-specific API calls without registering the extension will lead to undefined behavior.
+{% endhint %}
+
+The following code snippets demonstrate how you can import and register the Mobile Core and Profile extensions. You can also see, for reference, how Identity, Lifecycle, Signal, Profile, and other extensions are imported and registered.
+
+{% tabs %}
+{% tab title="Android" %}
+After you register the extensions, call the `start` API in Mobile Core to initialize the SDK as shown below. This step is required to boot up the SDK for event processing. The following code snippet is provided as a sample reference.
+
+### Java
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApp extends Application {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
+    ...
+    try {
+      UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+            MobileCore.start(new AdobeCallback () {
+            @Override
+            public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+    }
+});
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+{% hint style="warning" %}
+For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
+{% endhint %}
+
+**Swift**
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Edge.self, AEPEdgeIdentity.Identity.self, Consent.self, AEPIdentity.Identity.self, Analytics.self], {
+        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+    })
+  ...
+}
+```
+
+**Objective-C**
+
+```objectivec
+// AppDelegate.m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+  }];
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### iOS version 2.x and before
+
+The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
+
+**Objective-C**
+
+```objectivec
+#import "AppDelegate.h"
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+  [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    ...
+  [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+**Swift**
+
+```swift
+import ACPCore
+import ACPUserProfile
+...
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
+  func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
+    ACPCore.setLogLevel(.debug)
+        ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
+    ...
+    ACPUserProfile.registerExtension()
+        ACPIdentity.registerExtension()
+        ACPLifecycle.registerExtension()
+        ACPSignal.registerExtension()
+        ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+        }
+    ...
+    return true
+  }
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+For React Native apps, initialize the SDK using native code in your `AppDelegate` \(iOS\) and `MainApplication` \(Android\).
+
+### iOS
+
+```objectivec
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+### Android
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApplication extends Application implements ReactApplication {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    ...
+    MobileCore.setApplication(this);
+    MobileCore.setLogLevel(LoggingMode.DEBUG);
+    MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
+    try {
+      UserProfile.registerExtension();
+      Identity.registerExtension();
+      Lifecycle.registerExtension();
+      Signal.registerExtension();
+      MobileCore.start(new AdobeCallback () {
+          @Override
+          public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+         }
+      });
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+The initialization code is located in the [Flutter ACPCore Github README](https://github.com/adobe/flutter_acpcore).
+{% endtab %}
+
+{% tab title="Cordova" %}
+For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+**iOS**
+
+```text
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {  
+  // make sure to set the wrapper type at the beginning of initialization
+  [ACPCore setWrapperType:ACPMobileWrapperTypeCordova];
+
+  //...
+  [ACPCore configureWithAppId:@"yourAppId"];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+  // Register any additional extensions
+
+  [ACPCore start:nil];
+}
+```
+
+**Android**
+
+```java
+// Import the SDK
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.WrapperType;
+
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("yourAppId");
+
+  // make sure to set the wrapper type at the beginning of initialization
+  MobileCore.setWrapperType(WrapperType.CORDOVA);
+
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+
+    // Register any additional extensions
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+For Unity apps, initialize the SDK using the following code in the start function of the `MainScript`.
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        if (Application.platform == RuntimePlatform.Android) {
+            ACPCore.SetApplication();
+        }
+
+        ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+        ACPCore.SetWrapperType();
+        ACPIdentity.registerExtension();
+        ACPLifecycle.registerExtension();
+        ACPSignal.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+For Xamarin Forms applications, the SDK initialization differs, depending on the platform being targeted.
+
+**iOS**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Register("AppDelegate")]
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+  //
+  // This method is invoked when the application has loaded and is ready to run. In this
+  // method you should instantiate the window, load the UI into it and then make the window
+  // visible.
+  //
+  // You have 17 seconds to return from this method, or iOS will terminate your application.
+  //
+  public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+  {
+    global::Xamarin.Forms.Forms.Init();
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
+
+    // set launch config
+    ACPCore.ConfigureWithAppID("your-app-id");
+
+    // register SDK extensions
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+  }
+```
+
+**Android**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(WrapperType.Xamarin);
+
+    // register SDK extensions
+    ACPCore.Application = this.Application;
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ## Track app actions
 
 Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
@@ -1570,7 +1974,6 @@ LoggingMode mode = MobileCore.getLogLevel();
 ```
 {% endtab %}
 
-<<<<<<< HEAD
 {% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
@@ -1613,9 +2016,6 @@ AEPLogLevel logLevel = [AEPLog logFilter];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-=======
-{% tab title="iOS \(ACP 2.x\)" %}
->>>>>>> upstream/master
 **Objective-C**
 
 ### getLogLevel
@@ -1851,7 +2251,6 @@ This API _must_ be called in `AppDidFinishLaunching` and before any other intera
 {% endhint %}
 
 {% tabs %}
-<<<<<<< HEAD
 {% tab title="iOS (AEP 3.x)" %}
 
 **Swift**
@@ -1889,9 +2288,6 @@ public static func setAppGroup(_ group: String?)
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-=======
-{% tab title="iOS \(ACP 2.x\)" %}
->>>>>>> upstream/master
 **Objective-C**
 
 ### setAppGroup
