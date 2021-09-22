@@ -144,7 +144,7 @@ let locale = systemInfoService.getActiveLocaleName()
 {% endtab %}
 {% endtabs %}
 
-#### Pulibc Interfaces
+#### Public Interfaces
 
 {% tabs %}
 {% tab title="Android" %}
