@@ -31,7 +31,7 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 ```
 {% endtab %}
 
-{% tab title="iOS - Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ## Swift
 
 ```swift
@@ -51,7 +51,7 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 ```
 {% endtab %}
 
-{% tab title="iOS - Objective-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ## Objective-C
 
 ```objectivec

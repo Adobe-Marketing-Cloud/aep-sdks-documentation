@@ -33,7 +33,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or late
    The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
 {% endhint %}
@@ -45,8 +45,6 @@ In order to support the new Apple M1 architecture while maintaining support for 
 
 Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
-
-### iOS (Swift) version 3.x
 
 Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
 
@@ -72,7 +70,21 @@ target 'YourTargetApp' do
 end
 ```
 
-### iOS version 2.x and before
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
+{% endhint %}
+
+{% hint style="success" %}
+### Apple M1 compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
+
+Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+{% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
@@ -185,8 +197,7 @@ implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### iOS version 3.x
+{% tab title="iOS (AEP 3.x)" %}
 
 Create a `Podfile` if you do not already have one:
 
@@ -214,7 +225,8 @@ Save the `Podfile` and run install:
 pod install
 ```
 
-### iOS version 2.x and before
+{% endtab %}
+{% tab title="iOS (ACP 2.x)" %}
 
 Create a `Podfile` if you do not already have one:
 
@@ -299,8 +311,7 @@ public class MainApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### iOS version 3.x
+{% tab title="iOS (AEP 3.x)" %}
 
 {% hint style="warning" %}
 For iOS Swift libraries, registration is changed to a single API call (as shown in the snippets below). Calling the`MobileCore.start` API is no longer required.
@@ -320,7 +331,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 **Objective-C**
 
-```text
+```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
@@ -329,7 +340,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 }
 ```
+{% endtab %}
 
+{% tab title="iOS (ACP 2.x)" %}
 ### iOS version 2.x and before
 
 The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.

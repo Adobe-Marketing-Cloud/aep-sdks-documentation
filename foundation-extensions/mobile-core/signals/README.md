@@ -37,8 +37,38 @@ import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-​ Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+{% tab title="iOS (AEP 3.x)" %}
+​Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+
+Add following pods in your `Podfile`:
+
+```text
+pod 'AEPCore'
+pod 'AEPServices'
+pod 'AEPRulesEngine'
+pod 'AEPSignal'
+```
+
+Import the Signal libraries:
+
+#### Swift
+
+```text
+import AEPCore
+import AEPSignal
+```
+
+#### Objective-C
+
+```text
+@import AEPCore;
+@import AEPSignal;
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+​Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
 
 Add following pods in your `Podfile`:
 
@@ -148,7 +178,34 @@ public class MobileApp extends Application {
 **Important**: The Signal extension is automatically included in Core by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+In your app's `application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     MobileCore.registerExtensions([Signal.self, ...]) {
+       MobileCore.configureWith(appId: "yourAppId")
+       // Any other post registration processing
+     }
+     return true;
+}
+```
+
+#### Objective-C
+
+```objectivec
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, ...] completion:^{
+        [AEPMobileCore configureWithAppId: @"yourAppId"];
+        // Any other post registration processing
+    }];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 In your app's`application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
 
 #### Objective-C

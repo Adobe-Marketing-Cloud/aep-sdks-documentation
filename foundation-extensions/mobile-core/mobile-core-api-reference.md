@@ -898,7 +898,7 @@ This method should be called to support the following use cases:
 **Example**
 
 ```swift
- AEPCore.collectLaunchInfo(userInfo)
+ MobileCore.collectLaunchInfo(userInfo)
 ```
 
 **Objective-C**
