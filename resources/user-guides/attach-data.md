@@ -1,6 +1,6 @@
 # Attach data to SDK events
 
-The attach data\_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 (Launch), 2.3.5 (iOS), and 1.4.5 (Android). This action is powerful, complex, and enables advanced use cases.
+The attach data\_rule action is supported in [Mobile Core](../../foundation-extensions/mobile-core/) starting from version 2.1.8 \(Launch\), 2.3.5 \(iOS\), and 1.4.5 \(Android\). This action is powerful, complex, and enables advanced use cases.
 
 To use this action, you need to learn how events flow in the Adobe Experience Platform Mobile SDK and how they interact with the [rules engine](../../foundation-extensions/mobile-core/rules-engine/).
 
@@ -37,7 +37,7 @@ The Rules Engine lives in the SDK Event Hub. Before listeners are notified, the 
 | Action | The resulting action if the evaluation of the rule is positive. |
 
 {% hint style="info" %}
-A rule might be read out in the following way: If the SDK **Event** occurs and **Condition(s)** are met, then perform the **Action(s)**.
+A rule might be read out in the following way: If the SDK **Event** occurs and **Condition\(s\)** are met, then perform the **Action\(s\)**.
 {% endhint %}
 
 ## Using the attach data action
@@ -301,7 +301,7 @@ On the right pane, you can add a freeform JSON payload that adds data to an SDK 
 
 In the following example, **extraKey** and **extraKey2** are added to the profile parameters. A key named `customMboxParameter` and a data element that was defined for the **OS version** are added to the mbox parameters of the Target event. Values for the new keys can either be hardcoded in the rule or be dynamically determined by the SDK when this event processes by using data elements.
 
-![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/target-attach-data-json-example-location-clicked%20%281%29%20%281%29%20%286%29%20%281%29%20%288%29.png)
 
 The following example shows how the data element for this OS version was created.
 

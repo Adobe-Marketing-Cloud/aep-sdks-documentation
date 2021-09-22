@@ -12,7 +12,7 @@ You can use data elements during rule creation to consolidate the definition of 
 As a best practice, you should reuse data elements.
 {% endhint %}
 
-Data elements are building blocks for rules and allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate (shared state, event data) or which extension creates them. Data elements are populated with data when they are processed in the [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine).
+Data elements are building blocks for rules and allow you create a data dictionary of commonly used data in the Experience Platform Mobile SDK, regardless of where they originate \(shared state, event data\) or which extension creates them. Data elements are populated with data when they are processed in the [Rules Engine](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine).
 
 To use data elements at a high level, complete the following steps:
 
@@ -34,7 +34,7 @@ When a new extension is added to your property, new data elements might become a
 
 5. Click **Save**.
 
-For example, to create a data element that maps to an Experience Cloud ID (ECID), on the Create New Data Element page, type **ECID** as the name, select the **Mobile Core** extension, and select the **Experience Cloud ID** data type.
+For example, to create a data element that maps to an Experience Cloud ID \(ECID\), on the Create New Data Element page, type **ECID** as the name, select the **Mobile Core** extension, and select the **Experience Cloud ID** data type.
 
 ![create ECID data element](../../.gitbook/assets/data-elements-create-data-element-ecid.png)
 

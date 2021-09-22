@@ -290,7 +290,7 @@ Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespac
 
 ## resetIdentities
 
-Clears all identities stored in the Identity extension and generates a new Experience Cloud ID (ECID) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
+Clears all identities stored in the Identity extension and generates a new Experience Cloud ID \(ECID\) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
 {% hint style="warning" %}
 The Identity for Edge Network extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Identity for Edge Network extension.

@@ -58,7 +58,7 @@ The SDK tracks the following metrics for your in-app messages:
   * **Impressions**: when user triggers an in-app message.
   * **Click throughs**: when user presses the **Click-through** button.
   * **Cancels**: when user presses the **Cancel** button.
-* For local (remote) notifications:
+* For local \(remote\) notifications:
   * **Impressions**: when user triggers the notification.
   * **Opens**: when user opens app from the notification.  This will be tracked with the `trackAdobeDeepLink` method.
 
@@ -77,7 +77,7 @@ This event is a request to complete processing on the Analytics hits queue. The 
 The Analytics extension receives and processes the following keys in a generic track content request event:
 
 * `action` - action name to attribute to the Analytics request being processed.
-* `state` - state name (page name) to attribute to the Analytics request being processed.
+* `state` - state name \(page name\) to attribute to the Analytics request being processed.
 * `contextdata` - key-value pairs that add context to the Analytics request being processed.
 
 {% hint style="info" %}
@@ -185,7 +185,7 @@ The following examples show how to use the event data:
 
 ### Analytics request identity <a id="analytics-request-identity"></a>
 
-The Analytics request identity event is responsible for fetching the Analytics tracking identifier (AID) and custom visitor identifier (VID) from the Analytics extension and is generated in the Analytics [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) calls.
+The Analytics request identity event is responsible for fetching the Analytics tracking identifier \(AID\) and custom visitor identifier \(VID\) from the Analytics extension and is generated in the Analytics [getTrackingIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier) and [getCustomVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#get-the-custom-visitor-identifier) calls.
 
 After the Analytics identity request event is received, the Analytics extension completes one of the following tasks:
 
@@ -210,7 +210,7 @@ The data property in this event is used by each extension to modify its current 
 This event will be generated in the following scenarios:
 
 * Initial config requested by the customer.
-* Configuration modified (remote update or local developer action).
+* Configuration modified \(remote update or local developer action\).
 * In response to a configuration request event with the `config.getData` data key.
 
 For more information about the data payload definition for this event, see the **Data payload definition** section for each extension.
@@ -302,7 +302,7 @@ All of the key-value pairs listed above are optional.
 
 ### Lifecycle request content
 
-This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart() with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart() with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) or [lifecyclePause()](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
+This event represents a request to the Lifecycle extension to start or stop collecting data and is generated when [lifecycleStart\(\) with null context data](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause), [lifecycleStart\(\) with contextData](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#collect-additional-data-with-lifecycle) or [lifecyclePause\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-api-reference#lifecycle-start-and-pause) are used.
 
 The Analytics extension only listens for the Lifecycle start event, and the Analytics database queue should be paused for up to 1000 milliseconds, which is the default value for `DEFAULT_LIFECYCLE_RESPONSE_WAIT_TIMEOUT`.
 

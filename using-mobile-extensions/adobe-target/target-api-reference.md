@@ -21,7 +21,7 @@ Target.clearPrefetchCache();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -43,7 +43,7 @@ Target.clearPrefetchCache()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -131,7 +131,7 @@ Target.locationClicked("cartLocation", targetParameters);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -159,7 +159,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -308,7 +308,7 @@ Target.locationsDisplayed(mboxList, targetParameters);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -344,7 +344,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -426,7 +426,7 @@ Target.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -448,7 +448,7 @@ NSString *targetVersion = [AEPMobileTarget extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -513,7 +513,7 @@ Target.getThirdPartyId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -541,7 +541,7 @@ Target.getThirdPartyId { (id, err) in
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -590,7 +590,7 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
 
 ### getTntId
 
-This API gets the Target user ID (also known as the `tntId`) from the Target service. The `tntId` is returned in the network response after a successful call to `prefetchContent` or `retrieveLocationContent`, which is then persisted in the SDK. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
+This API gets the Target user ID \(also known as the `tntId`\) from the Target service. The `tntId` is returned in the network response after a successful call to `prefetchContent` or `retrieveLocationContent`, which is then persisted in the SDK. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall or when the `resetExperience` API is used.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -614,7 +614,7 @@ Target.getTntId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -642,7 +642,7 @@ Target.getTntId({ (id, err) in
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -747,7 +747,7 @@ Target.prefetchContent(prefetchMboxesList, targetParameters, prefetchStatusCallb
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -834,7 +834,7 @@ product:product];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1007,11 +1007,11 @@ Target.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 This API no longer exists in `Target`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1057,7 +1057,7 @@ Target.resetExperience();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -1079,7 +1079,7 @@ Target.resetExperience()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1122,11 +1122,11 @@ This API sends a batch request to the configured Target server for multiple mbox
 
 A request will be sent to the configured Target server for mbox locations in the requests array for Target requests that have not been previously prefetched. The content for the mbox locations that have been prefetched in a previous request are returned from the SDK, and no additional network request is made. Each Target request object in the list contains a callback function, which is invoked when content is available for its given mbox location.
 
-When using `contentWithData` callback to instantiate TargetRequest object, the following keys can be used to read response tokens and Analytics for Target (A4T) info from the data payload, if available in the Target response.
+When using `contentWithData` callback to instantiate TargetRequest object, the following keys can be used to read response tokens and Analytics for Target \(A4T\) info from the data payload, if available in the Target response.
 
-* responseTokens (Response tokens)
-* analytics.payload (A4T payload)
-* clickmetric.analytics.payload (Click tracking A4T payload)
+* responseTokens \(Response tokens\)
+* analytics.payload \(A4T payload\)
+* clickmetric.analytics.payload \(Click tracking A4T payload\)
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1223,7 +1223,7 @@ Target.retrieveLocationContent(locationRequests, parameters);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -1338,7 +1338,7 @@ AEPTargetParameters *targetParameters = [[AEPTargetParameters alloc] initWithPar
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1518,7 +1518,7 @@ Target.setPreviewRestartDeepLink("myapp://HomePage");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -1544,7 +1544,7 @@ if let url = URL(string: "myapp://HomePage") {
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1606,7 +1606,7 @@ Target.setThirdPartyId("third-party-id");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Syntax**
 
 ```swift
@@ -1630,7 +1630,7 @@ Target.setThirdPartyId("third-party-id")
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
 ```text
@@ -1684,7 +1684,7 @@ The SDK can only collect information from the launching Activity if [`setApplica
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
@@ -1710,7 +1710,7 @@ MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.ad
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 To enter the preview visual mode, use the `collectLaunchInfo` API to enable the mode and click the red floating button that appears on the app screen.
 
 **Syntax**
@@ -1957,7 +1957,7 @@ public interface AdobeTargetDetailedCallback {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### TargetRequest
 
 ```swift
@@ -2209,7 +2209,7 @@ AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" c
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### ACPTargetRequestObject
 
 This class extends `ACPTargetPrefetchObject` by adding default content and a callback block that will be invoked to return mbox content from Target.

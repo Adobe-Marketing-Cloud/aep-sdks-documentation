@@ -15,7 +15,7 @@ String coreExtensionVersion = MobileCore.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
 ```swift
@@ -29,7 +29,7 @@ NSString *version = [AEPMobileCore extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
 ```objectivec
@@ -109,7 +109,7 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### Syntax
 
 ```swift
@@ -131,7 +131,7 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec
@@ -225,7 +225,7 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### updateConfiguration
 
 #### Syntax
@@ -252,7 +252,7 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### updateConfiguration
 
 #### Syntax
@@ -368,7 +368,7 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### Syntax
 
 ```swift
@@ -392,7 +392,7 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec
@@ -439,7 +439,7 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 {% endtab %}
 {% endtabs %}
 
-## configureWithFileInAssets (Android Only)
+## configureWithFileInAssets \(Android Only\)
 
 You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
 

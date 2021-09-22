@@ -1,10 +1,16 @@
 # Release Notes
 
+## September 8, 2021
+
+### iOS AEPAnalytics 3.0.2
+
+* Fixed an issue where entire context data dictionary in track request was dropped if any of its key had non string value.
+
 ## July 21, 2021
 
 ### iOS Analytics 2.5.1
 
-* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
 ### Android Analytics 1.2.8
 
@@ -12,7 +18,7 @@
 
 ### Android Analytics 1.2.7
 
-* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 * **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
 
 ## April 1, 2021
@@ -100,7 +106,7 @@ The following updates were made in this release:
 
 ### Android Analytics 1.2.3 and iOS Analytics 2.2.2
 
-* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle (or other extension events that are sent to Analytics) can be viewed with rich detail in Project Griffon.
+* `requestEventIdentifier` is now appended to all non-track events so that Lifecycle \(or other extension events that are sent to Analytics\) can be viewed with rich detail in Project Griffon.
 
 ## October 28, 2019
 
