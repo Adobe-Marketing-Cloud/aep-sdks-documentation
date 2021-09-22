@@ -97,7 +97,8 @@ The following metrics are collected on each [Lifecycle data content response](ht
 </table>
 
 ## Lifecycle Application Foreground metrics
-The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics is defined in the Experience Data Model (XDM) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
+
+The following metrics are collected on each [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event. The structure of these metrics is defined in the Experience Data Model \(XDM\) field group [AEP Mobile Lifecycle Details](https://github.com/adobe/xdm/blob/master/docs/reference/adobe/experience/aep-mobile-lifecycle-details.schema.md).
 
 ### Application
 

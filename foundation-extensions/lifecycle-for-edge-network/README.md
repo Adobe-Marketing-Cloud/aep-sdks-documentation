@@ -4,7 +4,7 @@ The Adobe Experience Platform Mobile SDK Lifecycle extension enables application
 
 ## Add AEP Mobile Lifecycle Details field group to your XDM Schema in Adobe Experience Platform
 
-Include the "AEP Mobile Lifecycle Details" field group to the schema defined in your Edge configuration data stream. This field group defines all the metrics auto-collected by the Lifecycle for Edge Network extension. 
+Include the "AEP Mobile Lifecycle Details" field group to the schema defined in your Edge configuration data stream. This field group defines all the metrics auto-collected by the Lifecycle for Edge Network extension.
 
 1. In Adobe Experience Platform, log in to your organization.
 2. Under **Schemas** section, select the **Browse** tab and search for the schema used in the application's Edge configuration.
@@ -13,7 +13,6 @@ Include the "AEP Mobile Lifecycle Details" field group to the schema defined in 
 5. Click **Save**.
 
 ![](../../.gitbook/assets/xdm-schema-add-mobile-lifecycle-details.png)
-
 
 ## Configure the Adobe Experience Platform Lifecycle extension in Experience Platform
 
@@ -83,9 +82,7 @@ After you complete your configuration, verify that your rule looks like the foll
 
 ## Add the Lifecycle extension to your app
 
-For implementation details, please reference:
-1. [Add Lifecycle to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#add-lifecycle-to-your-app).
-2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference: 1. [Add Lifecycle to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#add-lifecycle-to-your-app). 2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
 In addition, use the following steps to [add the Edge Network extension to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#add-the-edge-network-extension-to-your-app).
 
