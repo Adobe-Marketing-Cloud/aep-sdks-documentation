@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Sep 20, 2021
+
+### iOS 15 Compatibility
+
+* All Adobe Experience Platform Mobile SDKs for iOS have been functionally validated to be compatible with iOS 15.
+
 ## Sep 17, 2021
 
 ### iOS Media 2.3.2
