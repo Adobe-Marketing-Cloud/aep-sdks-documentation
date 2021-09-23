@@ -704,16 +704,6 @@ MobileServices.trackAdobeDeepLink
 **Objective-C**
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [ACPMobileServices trackAdobeDeepLink:url]
-    /*
-     Handle deep link
-     */
-    return YES;
-}
-```
-
-```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
     [ACPMobileServices trackAdobeDeepLink:url];
     /*
@@ -749,16 +739,6 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 **Example**
 
 **Swift**
-
-```swift
-func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-    AEPMobileServices.trackAdobeDeepLink(url)
-    /*
-     Handle deep link
-     */
-    return true
-}
-```
 
 ```swift
 func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
