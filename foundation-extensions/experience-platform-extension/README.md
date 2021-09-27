@@ -1,17 +1,17 @@
 # Adobe Experience Platform Edge Network
 
-## Configure the Edge Network extension in Launch
+## Configure the Edge Network extension in Platform
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
+1. In Experience Platform, in your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
 3. Type in the extension settings
    1. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the AEP Edge Network extension
+### Configure the Edge Network extension
 
-![Adobe Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
+![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
@@ -21,11 +21,11 @@ If you use multiple Development configurations, select the desired one from the 
 
 The Edge configuration used by the client-side implementation is one of the followings:
 
-* the `Production Environment` configuration when the Launch library is published to production (in the Published column in the Launch publishing flow).
-* the`Staging Environment` configuration when the Launch library is published to staging (in the Submitted column in the Launch publishing flow).
-* the `Developement Environment` configuration when the Launch library is in development.
+* the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
+* the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
+* the `Development Environment` configuration when the Launch library is in development.
 
-## Add the AEP Edge extension to your app
+## Add the Edge Network extension to your app
 
 ### Download and import the Edge extension
 

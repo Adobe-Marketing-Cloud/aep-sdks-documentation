@@ -18,7 +18,7 @@ To use this view, complete the following steps:
 
 This feature allows you to write a function to validate events in your Project Griffon session. The function should expect an array of Project Griffon events and should return:
 
-* A boolean (true or false) OR
+* A boolean \(true or false\) OR
 * An object that contains a `status` property with an _optional_ array of event UUIDs may also
 
 ### Event Definition
@@ -28,7 +28,7 @@ This feature allows you to write a function to validate events in your Project G
 | `uuid` | String | Universally unique identifier for the event. |
 | `timestamp` | Number | Timestamp from the device when the event was sent from the SDK. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
-| `vendor` | String | Vendor identification string in the reverse domain name format (for example, com.adobe.griffon). |
+| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
 | `type` | String | Used to denote the type of event. |
 | `payload` | Object | Defines the data for the event and contains unique and common properties. Some common properties include `ACPExtensionEventSource and ACPExtensionEventType`. |
 | `annotations` | Array | An array of annotation objects. |
@@ -38,17 +38,17 @@ This feature allows you to write a function to validate events in your Project G
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `uuid` | String | Universally unique identifier for the annotation. |
-| `type` | String | Used to denote the type of annotation and is usually the name of the plugin (for example, analytics). |
+| `type` | String | Used to denote the type of annotation and is usually the name of the plugin \(for example, analytics\). |
 | `payload` | Object | Defines the data that should supplement the event. For Adobe Analytics, this is where the post-processed hit data is contained. |
 
 ### Returning Validation Results
 
-To execute the code in the code editor, click **Validate**. The function should return a boolean (true or false) or an object that contains a status property and optionally an array of event UUIDs.
+To execute the code in the code editor, click **Validate**. The function should return a boolean \(true or false\) or an object that contains a status property and optionally an array of event UUIDs.
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `status` | boolean | Indicates whether the events being evaluated are valid (true) or invalid (false). |
-| `events` | Array | (Optional) An array of event UUIDs. If provided with an invalid status, an event list displays the relevant events. |
+| `status` | boolean | Indicates whether the events being evaluated are valid \(true\) or invalid \(false\). |
+| `events` | Array | \(Optional\) An array of event UUIDs. If provided with an invalid status, an event list displays the relevant events. |
 
 ![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 

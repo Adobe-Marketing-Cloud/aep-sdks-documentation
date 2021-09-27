@@ -44,7 +44,7 @@ To use the Mobile Services extension, complete the following steps:
 The Mobile Services extension requires the Analytics extension for reporting. It uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite may be sent.
 {% endhint %}
 
-### Automatic configuration (Recommended)
+### Automatic configuration \(Recommended\)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
@@ -71,7 +71,7 @@ To install the Mobile Services extension, complete the following steps:
 
 1. Select **Enter Custom settings**.
 2. Enter an Acquisition time out. The recommended time out is 5 seconds. To enable app acquisition, this value must be greater than 0.
-3. Provide the **Acquisition App ID** (sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`).
+3. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
    You can find the Acquisition App ID in Mobile Services.
 
@@ -220,7 +220,7 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 
 {% tabs %}
 {% tab title="Android" %}
-Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 ### Java
 
@@ -458,7 +458,7 @@ No setup is required on iOS, since icons are automatically handled by the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
-### setLargeIconResourceId()
+### setLargeIconResourceId\(\)
 
 This API sets the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -492,10 +492,10 @@ For full screen and alert style in-app messages, the following metrics are track
 
 For custom full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
-* **Click-through** (redirect) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
-* **Cancel** (close) example tracking: `adbinapp://cancel`
+* **Click-through** \(redirect\) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
+* **Cancel** \(close\) example tracking: `adbinapp://cancel`
 
-For local (remote) notifications, the following metrics are tracked:
+For local \(remote\) notifications, the following metrics are tracked:
 
 * **Impressions**: when user triggers the notification.
 * **Opens**: when user opens app from the notification.
@@ -759,7 +759,7 @@ MobileServices.trackAdobeDeepLink
 {% endtab %}
 {% endtabs %}
 
-## Integration with Apple Search Ads (iOS)
+## Integration with Apple Search Ads \(iOS\)
 
 The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see [Apple Search Ads](https://searchads.apple.com/). This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
 
@@ -786,7 +786,7 @@ To prepare for your migration, please note the following information:
 
 * Lifetime value is **not** supported on the Experience Platform SDK, so it should not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
-* `a.internalaction` or `action` (from Lifecycle) can be used to trigger in-app messages or local notifications. You should, however, use `LaunchEvent` instead.
+* `a.internalaction` or `action` \(from Lifecycle\) can be used to trigger in-app messages or local notifications. You should, however, use `LaunchEvent` instead.
 * Local notifications do **not** support Android 8.0 or higher.
 
 ### Configuration keys
@@ -795,7 +795,7 @@ To prepare for your migration, please note the following information:
 | :--- | :--- |
 | mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
-| mobile.messagesUrl | Messages URL from your configuration (`ADBMobileConfig.json`) file's remotes section. |
+| mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
 ## Watch the video
 

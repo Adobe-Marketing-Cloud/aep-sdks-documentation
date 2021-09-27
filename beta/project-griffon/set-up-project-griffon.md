@@ -19,7 +19,7 @@ Beta products are not supported by Adobe customer care or Adobe Experience Cloud
 Please fill out [this form](https://forms.office.com/r/Q1gJ0aqFU1) to request access for Project Griffon.
 
 {% hint style="info" %}
-Beta participation requires a valid, active Adobe Experience Cloud contract. Beta participation is subject to terms (as listed above). Project Griffon team do their best to respond on your participation request within 48-72 hours after form submission.
+Beta participation requires a valid, active Adobe Experience Cloud contract. Beta participation is subject to terms \(as listed above\). Project Griffon team do their best to respond on your participation request within 48-72 hours after form submission.
 {% endhint %}
 
 You may access Project Griffon by visiting [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).

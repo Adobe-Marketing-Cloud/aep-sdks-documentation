@@ -15,7 +15,7 @@ String mediaExtensionVersion = Media.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
 ```swift
@@ -29,7 +29,7 @@ NSString *mediaExtensionVersion = [AEPMobileMedia extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
 ```text
@@ -67,7 +67,7 @@ Creates a media tracker instance that tracks the playback session. The tracker c
 The createTracker function returns the instance of MediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
 
 {% hint style="warning" %}
-If MobileCore.resetIdentities() is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
+If MobileCore.resetIdentities\(\) is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
 {% endhint %}
 
 **Syntax**
@@ -94,13 +94,13 @@ Media.createTracker(new AdobeCallback<MediaTracker>() {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createTracker
 
 Creates a media tracker instance that tracks the playback session. The tracker created should be used to track the streaming content and it sends periodic pings to the media analytics backend.
 
 {% hint style="warning" %}
-If MobileCore.resetIdentities() is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
+If MobileCore.resetIdentities\(\) is called in the implementation, the existing tracker will stop sending pings. You will need to create a new tracker to generate a new media session.
 {% endhint %}
 
 **Syntax**
@@ -125,7 +125,7 @@ _tracker = [AEPMobileMedia createTracker];  // Use the instance for tracking med
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createTracker
 
 The createTracker function returns the instance of ACPMediaTracker for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
@@ -234,7 +234,7 @@ Media.createTracker(config, new AdobeCallback<MediaTracker>() {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createTrackerWithConfig
 
 Creates a media tracker instance based on the configuration to track the playback session.
@@ -270,7 +270,7 @@ _tracker = [AEPMobileMedia createTrackerWithConfig:config];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createTrackerWithConfig
 
 Optional configuration about the tracker can be passed to this function. The createTracker function returns the instance of ACPMediaTracker with the configuration for tracking a media session. The createTracker function with callback as a parameter has been deprecated.
@@ -379,7 +379,7 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createMediaObject
 
 Returns a map that contains information about the media.
@@ -417,7 +417,7 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createMediaObjectWithName
 
 Returns an NSDictionary instance that contains information about the media.
@@ -496,7 +496,7 @@ HashMap<String, Object> adBreakObject = Media.createAdBreakObject("adbreak-name"
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createAdBreakObject
 
 Returns a map that contains information about the ad break.
@@ -528,7 +528,7 @@ NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createAdBreakObjectWithName
 
 Returns an NSDictionary instance that contains information about the ad break.
@@ -601,7 +601,7 @@ HashMap<String, Object> adInfo = Media.createAdObject("ad-name", "ad-id", 1L, 15
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createAdObject
 
 Returns a map that contains information about the ad.
@@ -636,7 +636,7 @@ NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name"
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createAdObjectWithName
 
 Returns an NSDictionary instance that contains information about the ad.
@@ -714,7 +714,7 @@ HashMap<String, Object> chapterInfo = Media.createChapterObject("chapter-name", 
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createChapterObject
 
 Returns a map that contains information about the chapter.
@@ -749,7 +749,7 @@ NSDictionary *chapterObject = [AEPMobileMedia createChapterObjectWith:@"chapter_
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createChapterObjectWithName
 
 Returns an NSDictionary instance that contains information about the chapter.
@@ -831,7 +831,7 @@ HashMap<String, Object> qoeInfo = Media.createQoEObject(10000000L, 2D, 23D, 10D)
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createQoEObject
 
 Returns a map that contains information about the quality of experience.
@@ -866,7 +866,7 @@ NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createQoEObjectWithBitrate
 
 Returns an NSDictionary instance that contains information about the quality of experience.
@@ -917,7 +917,7 @@ Creates an instance of the Player State object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | State name(Use [Player State constants](media-api-reference.md#player-state-constants) to track standard player states) | Yes |
+| `name` | State name\(Use [Player State constants](media-api-reference.md#player-state-constants) to track standard player states\) | Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -938,7 +938,7 @@ HashMap<String, Object> playerStateInfo = Media.createStateObject("fullscreen");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### createStateObject
 
 Returns a map that contains information about the player state.
@@ -964,7 +964,7 @@ NSDictionary* fullScreenState = [AEPMobileMedia createStateObjectWith:AEPMediaPl
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### createStateObjectWithName
 
 Returns an NSDictionary instance that contains information about the player state.
@@ -1042,7 +1042,7 @@ _tracker.trackSessionStart(mediaInfo, mediaMetadata);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackSessionStart
 
 **Syntax**
@@ -1088,7 +1088,7 @@ NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackSessionStart
 
 **Syntax**
@@ -1175,7 +1175,7 @@ _tracker.trackPlay();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackPlay
 
 **Syntax**
@@ -1199,7 +1199,7 @@ tracker.trackPlay()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackPlay
 
 **Syntax**
@@ -1257,7 +1257,7 @@ _tracker.trackPause();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackPause
 
 **Syntax**
@@ -1281,7 +1281,7 @@ tracker.trackPause()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackPause
 
 **Syntax**
@@ -1339,7 +1339,7 @@ _tracker.trackComplete();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackComplete
 
 **Syntax**
@@ -1363,7 +1363,7 @@ tracker.trackComplete()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackComplete
 
 **Syntax**
@@ -1421,7 +1421,7 @@ _tracker.trackSessionEnd();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackSessionEnd
 
 **Syntax**
@@ -1447,7 +1447,7 @@ tracker.trackSessionEnd()
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackSessionEnd
 
 **Syntax**
@@ -1509,7 +1509,7 @@ _tracker.trackError("errorId");
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackError
 
 **Syntax**
@@ -1533,7 +1533,7 @@ tracker.trackError(errorId: "errorId")
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackError
 
 **Syntax**
@@ -1685,7 +1685,7 @@ Tracks media events.
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### trackEvent
 
 **Syntax**
@@ -1888,7 +1888,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### trackEvent
 
 **Syntax**
@@ -2205,7 +2205,7 @@ Provides a media tracker with the current media playhead. For accurate tracking,
 
 | Variable Name | Description |
 | :--- | :--- |
-| `time` | Current playhead in seconds. For video-on-demand (VOD), the value is specified in seconds from the beginning of the media item. For live streaming, the value is specified as the number of seconds since midnight UTC on that day. |
+| `time` | Current playhead in seconds. For video-on-demand \(VOD\), the value is specified in seconds from the beginning of the media item. For live streaming, the value is specified as the number of seconds since midnight UTC on that day. |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -2232,7 +2232,7 @@ _tracker.updateCurrentPlayhead(timeFromMidnightInSecond);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### updateCurrentPlayhead
 
 **Syntax**
@@ -2265,7 +2265,7 @@ tracker.updateCurrentPlayhead(time: timeFromMidnightInSecond)
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### updateCurrentPlayhead
 
 **Syntax**
@@ -2337,7 +2337,7 @@ _tracker.updateQoEObject(qoeObject);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### updateQoEObject
 
 **Syntax**
@@ -2363,7 +2363,7 @@ NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 startTime:2 
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### updateQoEObject
 
 **Syntax**
@@ -2430,7 +2430,7 @@ public class Media {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```swift
 @objc(AEPMediaType)
 public enum MediaType: Int, RawRepresentable {
@@ -2456,7 +2456,7 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" 
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 typedef NS_ENUM(NSInteger, ACPMediaType) {
     /**
@@ -2529,7 +2529,7 @@ public class MediaConstants {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPMediaStreamType)
@@ -2565,7 +2565,7 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" 
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 /**
  * Constant defining stream type for VOD streams
@@ -2648,7 +2648,7 @@ public class MediaConstants {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPVideoMetadataKeys)
@@ -2703,7 +2703,7 @@ NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
@@ -2818,7 +2818,7 @@ NSMutableDictionary *audioMetadata = [[NSMutableDictionary alloc] init];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
@@ -2867,7 +2867,7 @@ public class MediaConstants {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```text
 public class MediaConstants: NSObject {
   @objc(AEPAdMetadataKeys)
@@ -2911,7 +2911,7 @@ NSMutableDictionary *adMetadata = [[NSMutableDictionary alloc] init];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
@@ -2959,7 +2959,7 @@ public class MediaConstants {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPMediaPlayerState)
@@ -2990,7 +2990,7 @@ NSDictionary* inFocusState = [AEPMobileMedia createStateObjectWith:AEPMediaPlaye
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateFullScreen;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStatePictureInPicture;
@@ -3108,7 +3108,7 @@ public class Media {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ```swift
 @objc(AEPMediaEvent)
 public enum MediaEvent: Int, RawRepresentable {
@@ -3160,7 +3160,7 @@ tracker.trackEvent(event: MediaEvent.BitrateChange, info: nil, metadata: nil)
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ```text
 /**
  * These enumeration values define the type of a tracking event
@@ -3291,7 +3291,7 @@ _tracker.trackSessionStart(mediaObject, null);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 #### Media resume
 
 **Syntax**
@@ -3329,7 +3329,7 @@ NSMutableDictionary *obj  = [mediaObject mutableCopy];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Media resume
 
 **Syntax**

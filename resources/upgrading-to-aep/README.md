@@ -37,7 +37,7 @@ Review the following checklist to understand some of the changes and what is req
 
    For more information, see [Experience Platform SDKs vs. the 4x SDK](aepvs4x.md)s.
 
-   **Tip**: The Experience Platform SDK supports iOS versions 10+, Android 4+ (API 14+).
+   **Tip**: The Experience Platform SDK supports iOS versions 10+, Android 4+ \(API 14+\).
 
 3. If you are implementing Analytics, see [Processing rules overview](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=en) to map the variables and rules.
 4. In the Experience Platform SDK, you need to manually implement your Lifecycle calls. For more information, see [Manual Lifecycle Implementation](manual-lifecycle-implementation.md).

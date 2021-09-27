@@ -31,7 +31,7 @@ To create a simple extension, complete the following procedures in the order in 
 
 ### Create an extension class
 
-The `ACPExtension`(iOS) or `Extension` (Android) class is the base class from which extensions must be derived. The `init` method (iOS) or the base `constructor` (Android) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
+The `ACPExtension`\(iOS\) or `Extension` \(Android\) class is the base class from which extensions must be derived. The `init` method \(iOS\) or the base `constructor` \(Android\) of your extension class is where you can extend the Adobe Experience Platform SDKs functionality by registering event listeners or by setting a default shared state that other modules can access.
 
 #### Android
 
@@ -39,7 +39,7 @@ The `Extension` class has the following method that you must override:
 
 * `getName`, which returns the name of the extension.
 
-  Extension developers must prefix their extension names with the company name (for example, `com.myCompany.myExtension`). For more information about the naming constraints, see the [namespace conventions section](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
+  Extension developers must prefix their extension names with the company name \(for example, `com.myCompany.myExtension`\). For more information about the naming constraints, see the [namespace conventions section](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
 
 The name that you use to register cannot conflict with other registered extensions or Adobe internal modules. The extension name is considered case insensitive by the Mobile SDK.
 
@@ -73,7 +73,7 @@ class MyExtension extends Extension {
     public String getName() {
         return "my.company.com";
     }
-    
+
     @Override
     public String getFriendlyName() {
         return "My Extension";
@@ -92,7 +92,7 @@ class MyExtension extends Extension {
 The `ACPExtension` class has the following method that you must override:
 
 * `name`: Returns the name of the extension.  
-  Extension developers must prefix their extension names with the company name (for example, `com.myCompany.myExtension`). For more information about the naming constraints, please read the [namespace conventions section](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
+  Extension developers must prefix their extension names with the company name \(for example, `com.myCompany.myExtension`\). For more information about the naming constraints, please read the [namespace conventions section](./#namespace-conventions). The name that you use to register **cannot** conflict with other registered extensions or Adobe internal modules.
 
   All Adobe module names are prefixed with `com.adobe.module` and are considered reserved.
 
@@ -171,7 +171,7 @@ The methods that are available for overriding are displayed in the following exa
 
 ### Registering your extension
 
-After creating your extension class, you can register it by using the `ACPCore` (iOS) or `MobileCore` (Android) method `registerExtension`. During registration, the extension class that you passed will be used by the Adobe Experience Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
+After creating your extension class, you can register it by using the `ACPCore` \(iOS\) or `MobileCore` \(Android\) method `registerExtension`. During registration, the extension class that you passed will be used by the Adobe Experience Platform SDKs to create an instance of your extension that will be retained until your extension is unregistered.
 
 {% hint style="info" %}
 Registration can be completed any time after the app is launched.
@@ -252,11 +252,11 @@ Some registration errors, such as undefined names, name conflicts, or type check
 
 #### Unregistering your extension
 
-If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` (iOS) / `ExtensionApi` (Android). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
+If your extension does not need to be active at all times, you can unregister your extension by using `unregisterExtension` from the `ACPExtensionApi` \(iOS\) / `ExtensionApi` \(Android\). This process allows you to have more granular resource control, but the listeners that you registered will be unregistered. If you overrode `onUnregister`, you should see a call into your implementation that allows you to clean up resources before the instance is released.
 
 {% hint style="info" %}
 
-If you retained a reference to the extension instance (for example by storing `self` or `this` in a static variable), this is where you should clean it up.
+If you retained a reference to the extension instance \(for example by storing `self` or `this` in a static variable\), this is where you should clean it up.
 
 {% hint style="info" %}
 
