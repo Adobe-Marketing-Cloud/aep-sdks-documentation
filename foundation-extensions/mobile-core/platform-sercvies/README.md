@@ -33,8 +33,6 @@ Networking networkService = ServiceProvider.getInstance().getNetworkService();
 
 {% tab title="iOS(AEP 3.x)" %}
 
-- Swift
-
 ```swift
 import AEPServices
 
