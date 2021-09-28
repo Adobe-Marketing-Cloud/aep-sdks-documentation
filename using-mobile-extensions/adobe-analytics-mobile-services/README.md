@@ -592,7 +592,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    void handleGooglePlayReferrer() {
        // Google recommends only calling this API the first time you need it:
        // https://developer.android.com/google/play/installreferrer/library#install-referrer
-
+   
        // Store a boolean in SharedPreferences to ensure we only call it once.
        final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
        if (prefs != null) {
@@ -600,11 +600,11 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                return;
            }
        }
-
+   
        final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
        referrerClient.startConnection(new InstallReferrerStateListener() {
            private boolean complete = false;
-
+   
            @Override
            public void onInstallReferrerSetupFinished(int responseCode) {
                switch (responseCode) {
@@ -613,10 +613,10 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        complete();
                        try {
                            final ReferrerDetails details = referrerClient.getInstallReferrer();                        
-
+   
                            // pass the install referrer url to the SDK
                            MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
-
+   
                        } catch (final RemoteException ex) {
                            Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
                        } finally {
@@ -632,7 +632,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        break;
                }
            }
-
+   
            @Override
            public void onInstallReferrerServiceDisconnected() {
                if (!complete) {
@@ -640,7 +640,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                    referrerClient.startConnection(this);
                }
            }
-
+   
            void complete() {
                complete = true;
                SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
@@ -704,22 +704,25 @@ MobileServices.trackAdobeDeepLink
 **Objective-C**
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [ACPMobileServices trackAdobeDeepLink:url]
-    /*
-     Handle deep link
-     */
-    return YES;
-}
-```
-
-```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
     [ACPMobileServices trackAdobeDeepLink:url];
     /*
      Handle deep link
      */
     return YES;
+}
+```
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```objectivec
+- (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    UIOpenURLContext * urlContext = URLContexts.anyObject;
+    if (urlContext != nil) {
+        [ACPMobileServices trackAdobeDeepLink:url];
+        /*
+         Handle deep link
+         */
+    }
 }
 ```
 {% endtab %}
@@ -738,24 +741,27 @@ MobileServices.trackAdobeDeepLink
 **Swift**
 
 ```swift
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [AEPMobileServices trackAdobeDeepLink:url];
+func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    AEPMobileServices.trackAdobeDeepLink(url)
     /*
      Handle deep link
      */
-    return YES;
+    return true
 }
 ```
 
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
 ```swift
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
-[AEPMobileServices trackAdobeDeepLink:url];
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let urlContexts = URLContexts.first else { return }
+    AEPMobileServices.trackAdobeDeepLink(urlContexts.url)
     /*
      Handle deep link
      */
-    return YES;
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
