@@ -8,10 +8,9 @@ This feature is only available in [Android Core 1.8.0](https://aep-sdks.gitbook.
 
 | Service  | Android SDK | iOS SDK |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :---------------------------------------------------------- |
-| **Networking** | Core 1.8.0 + | AEPCore 3.0.0 + |
-| **DataQueue** | Core 1.8.0 + | AEPCore 3.0.0 + |
-| **SystemInfoService/DeviceInforming** | Core 1.8.0 + | AEPCore 3.0.0 + |
-|  |  |  |
+| [Networking](./network-servcie.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
+| [DataQueue](./data-queue-service.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
+| [SystemInfoService/DeviceInforming](./system-device-info-service.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
 
 ## Accessing Services
 
