@@ -15,7 +15,7 @@ String mobileServicesExtensionVersion = MobileServices.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### Objective-C
 
 ```objectivec
@@ -29,7 +29,7 @@ let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Objective-C
 
 ```objectivec
@@ -74,7 +74,7 @@ Uri testUri = new Uri.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### trackAdobeDeepLink
 
 **Syntax**
@@ -101,7 +101,7 @@ ACPMobileServices.trackAdobeDeepLink(url)
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### trackAdobeDeepLink
 
 **Syntax**
