@@ -1,6 +1,6 @@
 # Mobile Core API reference
 
-## Application reference \(Android only\)
+## setApplication \(Android only\)
 
 When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
 
@@ -8,7 +8,7 @@ When building Android applications, the `android.app.Application` reference must
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
 
-### Set the `Application` instance
+### setApplication
 
 You can use the `setApplication` method to pass the Android `Application` instance to Mobile SDK.
 
@@ -60,7 +60,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### Get the `Application` instance
+## getApplication \(Android only\)
 
 You can use the `getApplication` method to get the previously set Android `Application` instance. The `Application` instance is mainly provided for third-party extensions.
 
@@ -110,7 +110,7 @@ if (app != null) {
 {% endtab %}
 {% endtabs %}
 
-### Initializing the SDK
+## registerExtension(s)
 
 Extensions are registered with Mobile Core so that they can dispatch and listen for events.
 
@@ -514,7 +514,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-## Track app actions
+## trackAction
 
 Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
 
@@ -765,7 +765,7 @@ ACPCore.TrackAction("action", data);
 {% endtab %}
 {% endtabs %}
 
-## Track application states and views
+## trackState
 
 States represent screens or views in your application. The `trackState` method needs to be called every time a new state is displayed in your application. For example, this method should be called when a user navigates from the home page to the news feed. This method sends an Adobe Analytics state tracking hit with optional context data.
 
@@ -1011,7 +1011,7 @@ ACPCore.TrackState("state", data);
 {% endtab %}
 {% endtabs %}
 
-## Set the advertising ID
+## setAdvertisingIdentifier
 
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall.
 
@@ -1124,7 +1124,7 @@ MobileCore.setPushIdentifier(deviceToken)
 {% endtab %}
 {% endtabs %}
 
-## Collect personally identifiable information
+## collectPii
 
 The `collectPii` method lets the SDK to collect sensitive or personally identifiable information \(PII\).
 
@@ -1263,7 +1263,7 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 {% endtab %}
 {% endtabs %}
 
-## Collect launch information
+## collectLaunchInfo
 
 You can provide the user information to the SDK from various launch points in your application.
 
@@ -1382,7 +1382,7 @@ AEPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Retrieving stored identifiers
+## getSdkIdentities
 
 The following SDK identities, as applicable, are locally stored:
 
@@ -1521,7 +1521,7 @@ MobileCore.getSdkIdentities { (content, error) in
 {% endtab %}
 {% endtabs %}
 
-## Reset identities
+## resetIdentities
 
 The `resetIdentities` method requests that each extension resets the identities it owns. Each extension responds to this request uniquely.
 
@@ -1628,7 +1628,7 @@ _since AEPCore v3.1.0_
 {% endtab %}
 {% endtabs %}
 
-## Set icons for local notification \(Android only\)
+## setSmallIconResourceID / setLargeIconResourceID \(Android only\)
 
 You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -1702,7 +1702,7 @@ public unsafe static void SetLargeIconResourceID (int resourceID);
 {% endtab %}
 {% endtabs %}
 
-## Logging
+## setLogLevel
 
 The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. This allows application developers to filter the logged messages based on the current logging mode.
 
@@ -1955,11 +1955,15 @@ ACPCore.LogLevel = LoggingMode.Verbose;
 {% endtab %}
 {% endtabs %}
 
+## getLogLevel
+
+This API gets the current log level being used in the SDK.
+
 {% tabs %}
 {% tab title="Android" %}
 **Java**
 
-### getLogLevel
+## getLogLevel
 
 **Syntax**
 
@@ -2086,6 +2090,10 @@ var logLevel = ACPCore.LogLevel;
 {% endtab %}
 {% endtabs %}
 
+## log
+
+This is the API used to log from the SDK.
+
 {% tabs %}
 {% tab title="Android" %}
 **Java**
@@ -2120,28 +2128,83 @@ D/AdobeExperienceSDK: MyClassName - Provided data was null
 ```
 {% endtab %}
 
+{% tab title="iOS \(AEP 3.x\)" %}
+
+**Swift**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AEP SDK`. For example, if logging an error message using `Log.error(label:_ message:_)`, the printed output looks like `[AEP SDK ERROR <label>]: message`.
+
+**Syntax**
+
+```swift
+public static func trace(label: String, _ message: String) {
+public static func debug(label: String, _ message: String)
+public static func warning(label: String, _ message: String) {
+public static func error(label: String, _ message: String) {
+```
+**Example**
+
+```swift
+Log.trace(label: "testLabel", "Test message")
+Log.debug(label: "testLabel", "Test message")
+Log.warning(label: "testLabel", "Test message")
+Log.error(label: "testLabel", "Test message")
+```
+
+**Objective-C**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AEP SDK`. For example, if logging an error message using `[AEPLog errorWithLabel: _ message:_]`, the printed output looks like `[AEP SDK ERROR <label>]: message`.
+
+**Syntax**
+
+```swift
+@objc(traceWithLabel:message:)
+public static func trace(label: String, _ message: String) 
+
+@objc(debugWithLabel:message:)
+public static func debug(label: String, _ message: String) 
+
+@objc(warningWithLabel:message:)
+public static func warning(label: String, _ message: String) 
+
+@objc(errorWithLabel:message:)
+public static func error(label: String, _ message: String) 
+```
+
+**Example**
+
+```objectivec
+[AEPLog traceWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog debugWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog warningWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog errorWithLabel:@"testLabel" message:@"testMessage"];
+```
+
+
+{% endtab %}
+
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message[AEP SDK ERROR - <testLabel>] Test message`.
 
 ### log
 
 **Syntax**
 
-```text
+```objectivec
 + (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
 ```
 
 **Example**
 
-```text
+```objectivec
 [ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
 ```
 
 **Output example**
 
-```text
+```objectivec
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 
@@ -2163,7 +2226,7 @@ ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data
 
 **Output example**
 
-```text
+```objectivec
 [AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
 ```
 {% endtab %}
@@ -2216,7 +2279,7 @@ ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
 {% endtab %}
 {% endtabs %}
 
-## Handle open URL action
+## registerURLHandler 
 
 Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
 
@@ -2242,7 +2305,7 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 {% endtab %}
 {% endtabs %}
 
-## Set app group \(iOS only\)
+## setAppGroup \(iOS only\)
 
 You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
 

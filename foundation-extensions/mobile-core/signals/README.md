@@ -38,14 +38,12 @@ import com.adobe.marketing.mobile.*;
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-​Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+​Add the AEPSignal extension and it's dependency, the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
 
 Add following pods in your `Podfile`:
 
 ```text
 pod 'AEPCore'
-pod 'AEPServices'
-pod 'AEPRulesEngine'
 pod 'AEPSignal'
 ```
 
@@ -68,7 +66,7 @@ import AEPSignal
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-​Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+​The Signal extension is included in the Mobile Core extension. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
 
 Add following pods in your `Podfile`:
 
