@@ -6,14 +6,12 @@ The following documentation details how to use the extension as well as the requ
 
 ## Before starting
 
-1. Follow the steps in [this page](https://experienceleague-review.corp.adobe.com/docs/journey-optimizer/using/get-started/configuration/push-config/push-configuration.html?lang=en) to configure push channel in Adobe Journey Optimizer.
+1. Follow the steps in [this page](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/configuration/push-config/push-gs.html?lang=en) to configure push channel in Adobe Journey Optimizer.
 2. [Update your app's Datastream](./#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://launch.adobe.com)
 3. Integrate with following extensions:
-   -  [Mobile Core](../../foundation-extensions/mobile-core/)
-   - [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
-   - [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/)
-
-
+   * [Mobile Core](../../foundation-extensions/mobile-core/)
+   * [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
+   * [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/)
 
 ### Update Datastream with Profile Dataset
 
@@ -22,8 +20,6 @@ Navigate to a previously configured Datastream by following [Configure datastrea
 Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown \(under _Adobe Experience Platform_ section\) and select **Save**.
 
 ![](../../.gitbook/assets/screen-shot-2021-05-12-at-9.19.31-am.png)
-
-
 
 ## Setup Adobe Journey Optimizer extension
 
@@ -37,7 +33,7 @@ Navigate to [Experience Platform Data Collection](https://launch.adobe.com) - se
 4. Follow the publishing process to update SDK configuration.
 
 {% hint style="info" %}
-The datasets selected should use a schema that uses the Push Notification Tracking XDM mixin. The pre-created CJM Push Tracking Dataset contains this XDM mixin in its schema definition. For more information, see [Setup Schemas & Datasets](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/62a861aec745af2d8237c287656c68d8f8cdd5ed/getting-started/configure-schema-and-dataset.md).
+The datasets selected should use a schema that uses the Push Notification Tracking XDM field group. The pre-created CJM Push Tracking Dataset contains this XDM field group in its schema definition. For more information, see [Set up schemas and datasets](../../getting-started/setup-schemas-and-datasets.md).
 {% endhint %}
 
 ![](../../.gitbook/assets/aoj-launch-configuration.png)

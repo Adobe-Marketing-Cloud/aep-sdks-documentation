@@ -1,16 +1,16 @@
 # Privacy and GDPR
 
-The Experience Platform SDKs give you controls to manage consent and privacy obligations under the European Union's General Data Protection Regulation \(GDPR\). Developers can retrieve locally stored identities and set opt status flags for data collection and transmission.
+The Adobe Experience Platform SDKs give you controls to manage consent and privacy obligations, such as the European Union's General Data Protection Regulation \(GDPR\). Developers can retrieve locally stored identities and set opt status flags for data collection and transmission.
 
-Before implementing these controls, read Adobe's [GDPR documentation](https://www.adobe.io/apis/cloudplatform/gdpr.html).
+Before implementing these controls, read the [Adobe Experience Platform Privacy Service documentation](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html).
 
-When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support GDPR retrieve and delete requests from your mobile apps.
+When Adobe provides software and services to an enterprise, Adobe acts as a data processor for any personal data it processes and stores as part of providing these services. As a data processor, Adobe processes personal data in accordance with your company’s permission and instructions, as set out in your agreement with Adobe. As a data controller, you can use the Experience Platform SDKs to support privacy retrieve and delete requests from your mobile apps.
 
 ## Set and get privacy status
 
 You can set a privacy status to ensure collection of data suits your user's preferences.
 
-| Exp**ected Behavior** | Opt In | Opt Out | Opt Unknown |
+| **Expected Behavior** | Opt In | Opt Out | Opt Unknown |
 | :--- | :--- | :--- | :--- |
 | **Analytics** | Hits are sent | Hits not sent | Hits queued |
 | **Audience** **Manager** | Signals, ID syncs are sent | Signals, ID syncs not sent | Syncs queued |
@@ -36,7 +36,7 @@ You can set the privacy status to one of the following values:
 * `MobilePrivacyStatus.OPT_OUT`
 * `MobilePrivacyStatus.UNKNOWN`
 
-To understand the expected behavior, see the _Set and get privacy status_ table above.
+To understand the expected behavior, see the "Set and get privacy status" table above.
 
 #### Syntax <a id="syntax-4"></a>
 
@@ -80,14 +80,14 @@ To understand the expected behavior, see the _Set and get privacy status_ table 
 
 #### Syntax
 
-```objectivec
+```swift
 class func setPrivacyStatus(_ status: ACPMobilePrivacyStatus) {
 }
 ```
 
 #### Example
 
-```objectivec
+```swift
 ACPCore.privacyStatus = ACPMobilePrivacyStatusOptIn
 ```
 {% endtab %}
@@ -221,7 +221,7 @@ To update the SDK configuration, programmatically, use the following information
 
 | Key | Description |
 | :--- | :--- |
-| `global.privacy` | Setting to control privacy opt status; values may include `optedid`, `optedout`, `optunknown` |
+| `global.privacy` | Setting to control privacy opt status; values may include `optedin`, `optedout`, `optunknown` |
 
 ## Video
 
@@ -230,5 +230,5 @@ To update the SDK configuration, programmatically, use the following information
 ## Additional information
 
 * For more information about GDPR, see [GDPR and Your Business](https://www.adobe.com/privacy/general-data-protection-regulation.html)
-* To see the GDPR API documentation, go to [General Data Protection Regulation API](https://adobe.io/apis/cloudplatform/gdpr.html)
+* To see the Privacy Service API documentation, go to [Privacy Service API](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html)
 

@@ -38,7 +38,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 {% endtab %}
 {% endtabs %}
 
-For more information about configuration, see [Channel specific application configuration in Adobe Campaign](https://helpx.adobe.com/campaign/kb/configuring-app-sdk.html#ChannelspecificapplicationconfigurationinAdobeCampaign).
+For more information about configuration, see [Channel specific application configuration in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-channels/configuring-a-mobile-application.html?lang=en).
 
 ## Set up an Android or iOS app to receive push notifications
 
@@ -118,7 +118,7 @@ The following events are related to the tracked push notifications:
 * Click \(User clicked the notification.\)
 * Open \(App opened in response to user's click on notification.\)
 
-  For more information about implementing the tracking of push notification events, see [Push Tracking](https://helpx.adobe.com/campaign/kb/push-tracking.html).
+  For more information about implementing the tracking of push notification events, see [Push Tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html?lang=en).
 
 ### Troubleshooting using Project Griffon
 
@@ -127,7 +127,7 @@ You can verify the push notification tracking in Project Griffon.
 1. Connect your app to a Griffon session.  
 2. Send a push notification to app from your Campaign instance.
 
-   To know more about how to send push notification, see [Preparing and sending a push notification](https://docs.adobe.com/content/help/en/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html).
+   To know more about how to send push notification, see [Preparing and sending a push notification](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html?lang=en).
 
 3. Receive a push notification in the device.
 4. Click on the push notification to launch the app.  

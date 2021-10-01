@@ -1,4 +1,4 @@
-# Migrating to AEPAssurance \(3.x\) reference
+# Migrating to AEPAssurance\(3.x\) reference
 
 This document is a reference comparison of AEPAssurance \(3.x\) APIs agains against their equivalent AEPAssurance \(1.x\) APIs.
 
@@ -56,5 +56,5 @@ static func startSession(url: URL?)
 {% endtab %}
 {% endtabs %}
 
-
 Follow this link for step by step migration to AEPAssurance 3.x for [Swift](https://github.com/adobe/aepsdk-assurance-ios/blob/dev/Documentation/MIGRATIONSWIFT.md) and [Objective-C](https://github.com/adobe/aepsdk-assurance-ios/blob/dev/Documentation/MIGRATIONObjC.md) iOS applications.
+

@@ -35,7 +35,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or la
 
 {% tab title="iOS" %}
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; ****requires **Swift 5.1 or newer;** and **Xcode 11.0 or newer**.
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
 {% endhint %}
 
 {% hint style="success" %}
@@ -89,10 +89,18 @@ You should see a pop-up similar to the following image:
 {% tab title="React Native" %}
 ### React Native
 
-Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **versions 0.44.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
+Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`react-native-acpcore`](https://github.com/adobe/react-native-acpcore) repository.
 
 {% hint style="info" %}
 For React Native, you should install [Node.js](https://nodejs.org) to download packages from [npm](https://npmjs.com). For additional instructions, see this [tutorial on getting started with React Native applications](https://facebook.github.io/react-native/docs/getting-started).
+
+v2.0.0 and above of the AEP Mobile SDK React Native plugins use [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), which links plugins' native dependencies automatically. For iOS development, after installing the plugins from npm, download the pod dependencies by running the following command:
+
+`cd ios && pod install && cd ..`
+
+To update native dependencies to latest available versions, run the following command:
+
+`cd ios && pod update && cd ..`
 {% endhint %}
 {% endtab %}
 
@@ -387,11 +395,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-### Javascript
+For React Native apps, initialize the SDK using native code in your `AppDelegate` \(iOS\) and `MainApplication` \(Android\).
 
-For React Native apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+### iOS
 
-The initialization code is located in the [React Native ACPCore Github README](https://github.com/adobe/react-native-acpcore).
+```objectivec
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+### Android
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApplication extends Application implements ReactApplication {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    ...
+    MobileCore.setApplication(this);
+    MobileCore.setLogLevel(LoggingMode.DEBUG);
+    MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
+    try {
+      UserProfile.registerExtension();
+      Identity.registerExtension();
+      Lifecycle.registerExtension();
+      Signal.registerExtension();
+      MobileCore.start(new AdobeCallback () {
+          @Override
+          public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+         }
+      });
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
 {% endtab %}
 
 {% tab title="Flutter" %}
@@ -580,7 +658,7 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Watch the Vvdeo
+## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
 
@@ -593,5 +671,5 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 

@@ -59,7 +59,7 @@ UserProfile.updateUserAttributes(profileMap);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### updateUserAttributes
 
 Sets the user profile attributes key and value.
@@ -102,7 +102,7 @@ UserProfile.updateUserAttributes(attributeDict: profileMap)
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### updateUserAttribute
 
 Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
@@ -434,25 +434,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-### **removeUserAttribute**
-
-Removes the user profile attribute for the given key.
-
-#### **Syntax**
-
-```java
-public static void removeUserAttribute(String attributeName)
-```
-
-#### **Example**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-```java
-UserProfile.removeUserAttribute("itemsAddedToCart");
-```
-
+{% tab title="iOS \(AEP 3.x\)" %}
 ### **removeUserAttributes**
 
 Removes the user profile attributes for the given keys.
@@ -472,7 +454,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### removeUserAttribute
 
 Removes the user profile attribute for the given key.
@@ -728,40 +710,33 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
+{% tab title="iOS \(AEP 3.x\)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.
 
 #### **Syntax**
 
-```java
-public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
+```swift
+static func getUserAttributes(attributeNames: [String], completion: @escaping ([String: Any]?, AEPError) -> Void)
 ```
 
-* _callback_ is invoked after the customer attributes are available.
+* _completion_ is the callback `function` which will be called with user attributes.
 
 #### **Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-When `AdobeCallbackWithError` is provided, if the operation times out \(5s\) or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+When the callback is provided, if the operation times out \(5s\) or an unexpected error occurs, the `completion` method is called with the appropriate `AEPError`.
 
-```java
-UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallbackWithError<Map<String, Object>>() {
-            @Override
-            public void fail(AdobeError adobeError) {
-                // your customized code
-            }
-            @Override
-            public void call(Map<String, Object> stringObjectMap) {
-                     // your customized code
-            }
-        });
+```swift
+UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes, error in
+// your customized code
+}
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 ### **getUserAttributes**
 
 Gets the user profile attributes with the given keys.

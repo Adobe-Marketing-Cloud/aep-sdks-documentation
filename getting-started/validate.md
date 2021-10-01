@@ -22,7 +22,7 @@ Project Griffon simplifies testing point of interest entries and exits. The Plac
 
 While a device is connected to an active Griffon session, the map view will show a timeline of POI entries and exits. If you want to test actions or experiences triggered by geofence entries and exits, the map view will allow you to spoof or simulate your location by clicking on any area within the map.
 
-To learn more about the Places Service, please read the [Places Service overview](https://docs.adobe.com/content/help/en/places/using/home.html)
+To learn more about the Places Service, please read the [Places Service overview](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en)
 
 ![Project Griffon Places Service Location Simulation](../.gitbook/assets/GriffonPlaces.png)
 
@@ -37,5 +37,5 @@ To get started, see the **Mobile Foundations** and **Experience Cloud** sections
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 

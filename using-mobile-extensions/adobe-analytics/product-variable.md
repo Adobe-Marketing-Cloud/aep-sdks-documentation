@@ -2,21 +2,21 @@
 
 ## Set the products variable
 
-As _products_ variable cannot be set by processing rules, you need the syntax below in context data parameters to set serialized events directly on the hits that are sent to Analytics.
+Since the products variable cannot be set by processing rules, you need to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value by using the syntax that is defined for the products or merchandising variable. For more information, see [Implementing a Merchandising Variable](https://docs.adobe.com/content/help/en/analytics/components/variables/merchandising-variables/var-merchandising.html).
+To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en).
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java <a id="java-2"></a>
+### Java <a id="java-2"></a>
 
-#### Syntax <a id="syntax"></a>
+**Syntax**
 
 ```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
-#### Example <a id="example"></a>
+**Example**
 
 ```java
 //create a context data dictionary
@@ -35,15 +35,15 @@ MobileCore.trackState("Order Confirmation", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-#### Objective C
+### Objective-C <a id="example"></a>
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 [contextData setObject:@"Category;Product;Quantity;Price[,Category;Product;Quantity;Price]" forKey:@"&&products"];
 ```
 
-#### Example
+**Example**
 
 ```objectivec
 //create a context data dictionary
@@ -62,15 +62,15 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
 
-#### Swift
+### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
 contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]"
 ```
 
-#### Example
+**Example**
 
 ```swift
 //create a context data dictionary
@@ -91,15 +91,15 @@ ACPCore.trackState("Order Confirmation", data: contextData)
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
-#### Syntax
+**Syntax**
 
 ```jsx
 contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
 ```
 
-#### Example
+**Example**
 
 ```jsx
 //create a context data dictionary
@@ -120,15 +120,15 @@ ACPCore.trackState("Order Confirmation", contextData);
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
-#### Syntax
+**Syntax**
 
 ```dart
 contextData["&&products"] = "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]";
 ```
 
-#### Example
+**Example**
 
 ```dart
 //create a context data dictionary
@@ -149,7 +149,7 @@ FlutterACPCore.trackState("Order Confirmation", data: contextData);
 {% endtab %}
 {% endtabs %}
 
-Here is a sample network request:
+A sample network request can be seen in the image below:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lf1Mc1caFdNCK_mBwhe%2F-Lf1N06T8hdv0-r5jPPN%2F-Lf1N9cAUiiQNZvVBMFC%2Fproducts-bloodhound.png?generation=1558039282074316&alt=media)
 
@@ -157,17 +157,17 @@ _`products`_ is set directly on the image request, and the other variables are s
 
 ![](../../.gitbook/assets/map-products.png)
 
-You do not need to map the _`products`_ variable using processing rules because it is set directly on the image request by the SDK.
+You do **not** need to map the `products` variable using processing rules because it is set directly on the image request by the SDK.
 
 ## Products variable with merchandising eVars and product-specific events <a id="products-variable-with-merchandising-evars-and-product-specific-events"></a>
 
-Here is an example of the products variable with Merchandising eVars and product-specific events.
+The following code samples show an example of the products variable with merchandising eVars and product-specific events.
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
-### **Example**
+**Example**
 
 ```java
 //create a context data dictionary 
@@ -189,9 +189,9 @@ MobileCore.trackState("Order Confirmation", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-**Objective-C**
+### Objective-C
 
-### **Example**
+**Example**
 
 ```objectivec
 //create a context data dictionary 
@@ -211,7 +211,9 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
 
-**Swift**
+### Swift
+
+**Example**
 
 ```swift
 //create a context data dictionary
@@ -233,7 +235,9 @@ ACPCore.trackState("Order Confirmation", data: contextData)
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
+
+**Example**
 
 ```jsx
 //create a context data dictionary
@@ -255,7 +259,9 @@ ACPCore.trackState("Order Confirmation", contextData);
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
+
+**Example**
 
 ```dart
 //create a context data dictionary
