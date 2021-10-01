@@ -439,14 +439,14 @@ public class OfferExperienceEvent: NSObject {
     /// Optional free-form data associated with this event
     @objc public let data: [String: Any]?
 
-    /// Adobe Experience Platform dataset identifier, if not set the default dataset identifier set in the Edge Configuration is used
+    /// Adobe Experience Platform dataset identifier, if not set the default dataset identifier set in the Datastream configuration is used
     @objc public let datasetIdentifier: String?
 
     /// Initialize an Experience Event with the provided event data
     /// - Parameters:
     ///   - xdm:  XDM formatted data for this event, passed as a raw XDM Schema data dictionary.
     ///   - data: Any free form data in a [String : Any] dictionary structure.
-    ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Edge configuration is used
+    ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Datastream configuration is used
     @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {
         self.xdm = xdm
         self.data = data

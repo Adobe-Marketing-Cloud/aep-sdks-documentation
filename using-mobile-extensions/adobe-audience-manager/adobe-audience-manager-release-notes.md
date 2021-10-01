@@ -1,5 +1,24 @@
 # Release Notes
 
+## Jul 13, 2021
+
+### iOS AEPAudience 3.0.2
+
+* Added support to handle the MobileCore.resetIdentities\(\) API.
+
+## April 1, 2021
+
+### iOS AEPAudience 3.0.1
+
+* Updated syncedVisitorIds implementation to a map
+* Fixed access modifer for two classes
+
+## January 29, 2021
+
+### iOS Audience 3.0.0
+
+* Initial release to support [Adobe Audience](./)  for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-audience-ios/).
+
 ## January 20, 2021
 
 ### iOS Audience 2.3.0

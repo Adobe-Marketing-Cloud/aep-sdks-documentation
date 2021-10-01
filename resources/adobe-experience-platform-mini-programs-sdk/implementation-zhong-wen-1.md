@@ -8,7 +8,7 @@
 
 小程序SDK下载到本地之后，可以将该SDK添加到项目路径下。然后在小程序项目的app.js文件中，引用下载到本地的SDK。例如：
 
-```
+```text
 const AdobeSDK = require('AdobeSDK.js');
 ```
 
@@ -17,7 +17,7 @@ const AdobeSDK = require('AdobeSDK.js');
 在app.js文件中的`onLaunch`方法中，调用`AdobeSDK.init()`，并且注意配置上正确的参数值，例如：
 
 {% hint style="warning" %}
- 请联系贵公司的Adobe Analytics管理员或者Adobe咨询顾问来确定这些配置参数。
+请联系贵公司的Adobe Analytics管理员或者Adobe咨询顾问来确定这些配置参数。
 {% endhint %}
 
 ```javascript
@@ -348,7 +348,5 @@ ndh=1&c.&a.&OSVersion=Android%205.0&DeviceName=Nexus%206&Resolution=610x412&RunM
 
 ## 观看视频
 
-{% embed url="https://video.tv.adobe.com/v/28355t1/?quality=9" %}
-
-### 
+{% embed url="https://video.tv.adobe.com/v/28355t1/?quality=9" caption="" %}
 

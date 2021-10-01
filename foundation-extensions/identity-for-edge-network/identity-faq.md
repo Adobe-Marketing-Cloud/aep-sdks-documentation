@@ -1,4 +1,4 @@
-# FAQ
+# Frequently Asked Questions
 
 ## Q: I am using AEP Edge and Adobe Solutions extensions, which Identity Extension should I install and register?
 
@@ -176,7 +176,7 @@ The following example shows an IdentityMap containing the ECIDs from both Identi
 The Identity for Edge Network extension and the Identity for Experience Cloud ID Service extension each manage their own ECID value and are generated independently of each other.
 {% endhint %}
 
-The Identity for Edge Network extension does not clear its stored identities or regenerate the ECID due to privacy status changes. Instead, use the [resetIdentities](edge-identity-api-reference.md#resetidentities) API. Note this API does not clear the ECID but instead generates a new ECID.
+The Identity for Edge Network extension does not clear its stored identities or regenerate the ECID due to privacy status changes. Instead, use the [resetIdentities](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/c3d40d004f1c93200e38bf102175769dae08b55d/foundation-extensions/identity-for-edge-network/edge-identity-api-reference.md#resetidentities) API. Note this API does not clear the ECID but instead generates a new ECID.
 
 Each identity extension has its own API to retrieve their respective ECIDs as well. Use [Identity.getExperienceCloudId](api-reference.md#getexperiencecloudid) to get the Identity for Edge Network extension's ECID, and [Identity.getExperienceCloudId](../mobile-core/identity/identity-api-reference.md#getexperiencecloudid) to get the Identity for Experience Cloud ID Service extension's ECID.
 
@@ -202,7 +202,7 @@ To clear the identifiers used by the AEP Edge extensions, call [resetIdentities]
 
 When using Real-time Customer Profile and Identity Service, the ECIDs from both identity extensions are linked together in the customer's Identity Graph. Care must be taken when regenerating new ECIDs such that the old and new ECIDs are not linked within the same Identity Graph.
 
-Perform the following API calls to regenerate the ECIDs in sequence: 
+Perform the following API calls to regenerate the ECIDs in sequence:
 
 1. Set [privacy status](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr#set-and-get-privacy-status) to `optedOut` to clear the ECID from the AEP Identity direct service extension. 
 2. Call [resetIdentities](api-reference.md#resetidentities) to regenerate a new ECID in the Identity for Edge Network extension. 

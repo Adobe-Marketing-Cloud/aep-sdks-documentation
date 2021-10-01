@@ -7,9 +7,9 @@ This troubleshooting guide requires [Project Griffon](../../beta/project-griffon
 When implementing push messaging via the Adobe Experience Platform Mobile SDK, you can validate the client-side implementation by verifying that you completed the following steps:
 
 1. [Pass the device's push token to the SDK](troubleshooting-push.md#pass-the-push-identifier-to-the-sdk).
-2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-setpushidentifier-event).
-3. [Ensure user opt in for push in Adobe Analytics](troubleshooting-push.md#validate-analytics-request-with-push-optin).
-4. [Confirm user ID is correctly set \(and is same from steps 2 and 3, above](troubleshooting-push.md#validate-the-user-id-is-correct)\).
+2. [Verify push token sync with the Experience Cloud Identity service](troubleshooting-push.md#validate-push-token-sync-with-the-experience-cloud-identity-service).
+3. [Ensure user opt in for push in Adobe Analytics](troubleshooting-push.md#ensure-user-opt-in-for-push-in-adobe-analytics).
+4. [Confirm user ID is correctly set \(and is same from steps 2 and 3, above](troubleshooting-push.md#confirm-that-the-user-id-is-correctly-set).
 
 ## Pass the Push Identifier to the SDK
 

@@ -7,6 +7,12 @@
 * Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 * Resolved and issue with Campaign module details not being returned.
 
+## June 8, 2021
+
+### iOS Campaign Standard 3.0.0
+
+* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios).
+
 ## December 18, 2020
 
 ### iOS Campaign Standard 1.1.0

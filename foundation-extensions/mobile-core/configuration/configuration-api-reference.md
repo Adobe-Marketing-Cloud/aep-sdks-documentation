@@ -15,7 +15,21 @@ String coreExtensionVersion = MobileCore.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+```swift
+let version = MobileCore.extensionVersion
+```
+
+**Objective C**
+
+```objectivec
+NSString *version = [AEPMobileCore extensionVersion];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
 ```objectivec
@@ -95,7 +109,29 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+#### Syntax
+
+```swift
+ static func configureWith(appId: String)
+```
+
+#### Example
+
+#### Objective-C
+
+```objectivec
+ [AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
+```
+
+#### Swift
+
+```swift
+ MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec
@@ -189,7 +225,34 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+### updateConfiguration
+
+#### Syntax
+
+```objectivec
+ @objc(updateConfiguration:)
+ static func updateConfigurationWith(configDict: [String: Any])
+```
+
+#### Example
+
+#### Swift
+
+```swift
+ let updatedConfig = ["global.privacy":"optedout"]
+ MobileCore.updateConfigurationWith(configDict: updatedConfig)
+```
+
+#### Objective-C
+
+```objectivec
+ NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
+ [AEPMobileCore updateConfiguration:updatedConfig];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 ### updateConfiguration
 
 #### Syntax
@@ -305,7 +368,31 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+#### Syntax
+
+```swift
+ static func configureWith(filePath: String)
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
+ [AEPMobileCore configureWithFilePath:filePath];
+```
+
+**Swift**
+
+```swift
+ let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ MobileCore.configureWith(filePath: filePath)
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Syntax
 
 ```objectivec

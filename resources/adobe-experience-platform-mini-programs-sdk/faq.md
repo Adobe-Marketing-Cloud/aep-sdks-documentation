@@ -27,7 +27,7 @@ The following settings explain how settings between the SDK and your report suit
 
 ### Contact Adobe Customer Care
 
-If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance.
+If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
 
 ## Do Adobe Analytics-provided tracking servers have an ICP?
 
@@ -59,7 +59,7 @@ AdobeSDK.trackAction('AddToCart',
 
 While it is possible to send props, eVars, and events to Adobe Analytics with the SDK, you should collect and send context data variables instead. You may then use processing rules simplify data collection and to manage content as it is sent to Adobe Analytics.
 
-For more information, please see the [processing rules overview](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/processing-rules/processing-rules.html).
+For more information, please see the [processing rules overview](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=en).
 
 ## Does the SDK support tracking the "hybrid" Mini Programs?
 

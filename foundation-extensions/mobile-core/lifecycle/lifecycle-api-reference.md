@@ -15,7 +15,21 @@ String lifecycleExtensionVersion = Lifecycle.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+```swift
+let version = Lifecycle.extensionVersion
+```
+
+**Objective C**
+
+```objectivec
+NSString *version = [AEPMobileLifecycle extensionVersion];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
 ```objectivec
@@ -76,7 +90,11 @@ string lifecycleVersion = ACPLifecycle.ExtensionVersion();
 
 ## Lifecycle Start
 
-You can use this API to start a new lifecycle session or resume a previously paused lifecycle session. If a previously paused session timed out, then a new session is created. If a current session is running, then calling this method does nothing.
+Starts the collection of lifecycle data.
+
+**For Analytics use case:** Use this API to start a new lifecycle session or resume a previously paused lifecycle session. If a previously paused session timed out, then a new session is created. If a current session is running, then calling this method does nothing.
+
+**For Platform use case:** Use this API to dispatch a [Lifecycle Application Foreground](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-foreground) event when the application is launched.
 
 ### lifecycleStart <a id="lifecycleStart"></a>
 
@@ -108,7 +126,36 @@ This method should be called from the Activity onResume method.
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+#### Swift
+
+```swift
+ MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+```
+
+#### Objective-C
+
+**Syntax**
+
+```swift
+ @objc(lifecycleStart:)
+ static func lifecycleStart(additionalContextData: [String: Any]?)
+```
+
+**Example**
+
+```text
+ [AEPMobileCore lifecycleStart:nil];
+```
+
+If you need to collect additional lifecycle data:
+
+```text
+ [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Objective-C
 
 **Syntax**
@@ -157,13 +204,13 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 {% tab title="Cordova" %}
 #### Cordova
 
-When using Cordova, the `lifecycleStart` method call must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, the `lifecycleStart` method call must be made in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-When using Unity, the `LifecycleStart` method call must be done from the `OnApplicationPause`method.
+When using Unity, the `LifecycleStart` method call must be made from the `OnApplicationPause` method.
 
 ```csharp
 private void OnApplicationPause(bool pauseStatus)
@@ -187,7 +234,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 **iOS**
 
-When using iOS, the `LifecycleStart` method call must be done from the `OnActivated` method.
+When using iOS, the `LifecycleStart` method call must be made from the `OnActivated` method.
 
 ```csharp
 public override void OnActivated(UIApplication uiApplication)
@@ -199,7 +246,7 @@ public override void OnActivated(UIApplication uiApplication)
 
 **Android**
 
-When using Android, the `LifecycleStart` method call must be done from the `OnResume` method.
+When using Android, the `LifecycleStart` method call must be made from the `OnResume` method.
 
 ```csharp
 protected override void OnResume()
@@ -213,7 +260,11 @@ protected override void OnResume()
 
 ### Lifecycle Pause
 
-Use this API to pause or stop the collection of lifecycle data.
+Pauses the collection of lifecycle data.
+
+**For Analytics use case:** Use this API to pause the collection of lifecycle data.
+
+**For Platform use case:** Use this API to dispatch a [Lifecycle Application Background](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle/lifecycle-event-reference#lifecycle-application-background) event when the application closes.
 
 ### lifecyclePause <a id="lifecyclePause"></a>
 
@@ -234,7 +285,30 @@ MobileCore.lifecyclePause();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS \(AEP 3.x\)" %}
+#### Swift
+
+```swift
+ MobileCore.lifecyclePause()
+```
+
+#### Objective-C
+
+**Syntax**
+
+```swift
+ @objc(lifecyclePause)
+ static func lifecyclePause()
+```
+
+**Example**
+
+```text
+ [AEPMobileCore lifecyclePause];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
 #### Objective-C
 
 **Syntax**
@@ -277,13 +351,13 @@ ACPCore.lifecyclePause();
 {% tab title="Cordova" %}
 #### Cordova
 
-When using Cordova, the `lifecyclePause` method call must be done in native code which is shown under the Android and iOS tabs.
+When using Cordova, the `lifecyclePause` method call must be made in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
 #### C\#
 
-When using Unity, the `LifecyclePause` method call must be done from the `OnApplicationPause`method.
+When using Unity, the `LifecyclePause` method call must be made from the `OnApplicationPause` method.
 
 ```csharp
 private void OnApplicationPause(bool pauseStatus)
@@ -307,7 +381,7 @@ private void OnApplicationPause(bool pauseStatus)
 
 **iOS**
 
-When using iOS, the `LifecyclePause` method call must be done from the `OnResignActivation` method.
+When using iOS, the `LifecyclePause` method call must be made from the `OnResignActivation` method.
 
 ```csharp
 public override void OnResignActivation(UIApplication uiApplication)
@@ -319,7 +393,7 @@ public override void OnResignActivation(UIApplication uiApplication)
 
 **Android**
 
-When using Android, the `LifecyclePause` method call must be done from the `OnPause` method.
+When using Android, the `LifecyclePause` method call must be made from the `OnPause` method.
 
 ```csharp
 protected override void OnPause()

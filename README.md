@@ -4,6 +4,12 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
+{% hint style="success" %}
+## Good to go for iOS 15
+
+Adobe Experience Platform Mobile SDKs have been functionally tested on iOS 15 release candidate versions. Please make sure you use [current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure compatibility.
+{% endhint %}
+
 {% hint style="info" %}
 ## Interested in Kotlin?
 
@@ -15,15 +21,9 @@ Please take a [quick survey ](https://forms.office.com/r/5E5d7pJivG)a let us kno
 {% hint style="success" %}
 ## Swift SDKs are here!
 
-We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation. 
+We've released Swift versions for our iOS SDKs - please see [Current SDK Versions](resources/upgrading-to-aep/current-sdk-versions.md) for available Swift extensions and reference documentation.
 
-The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4). 
-{% endhint %}
-
-{% hint style="warning" %}
-## Migrate to Swift
-
-If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](resources/migrate-to-swift.md) guide for next steps.
+The Swift iOS SDKs are open source! Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
 {% endhint %}
 
 {% hint style="success" %}
@@ -68,5 +68,5 @@ The Adobe Experience Platform Mobile SDK provides support for the following plat
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 

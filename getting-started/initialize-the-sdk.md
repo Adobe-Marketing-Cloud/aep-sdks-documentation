@@ -118,13 +118,13 @@ You must call this API when an event that you want to track occurs. In addition 
 
 #### Java <a id="java"></a>
 
-**Syntax** 
+**Syntax**
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-**Example** 
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -256,13 +256,13 @@ On Android, `trackState` is typically called each time a new activity is loaded.
 
 #### Java
 
-**Syntax** 
+**Syntax**
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-**Example** 
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
@@ -387,5 +387,5 @@ For more information, see the [Mobile Core API Reference](../foundation-extensio
 ## Get help
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
-* Contact [Adobe Experience Cloud customer care](https://helpx.adobe.com/contact/enterprise-support.ec.html) for immediate assistance
+* Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
 
