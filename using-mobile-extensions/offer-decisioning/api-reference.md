@@ -214,7 +214,7 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
 {% tab title="Android" %}
 ### DecisionScope
 
-This class encapsulates the decision `activityId`, `placementId` and `itemCount`. The `DecisionScope` object can be used to fetch offers from the offer decisioning service if it is enabled in the Experience Edge network. The default value for `itemCount` is 1, if not provided when creating the `DecisionScope` object.
+This class encapsulates the decision `activityId`, `placementId` and `itemCount`. The `DecisionScope` object can be used to fetch offers from the Offer Decisioning service when it is enabled in the `Datastreams` on the Data collection UI. The default value for `itemCount` is 1, if not provided when creating the `DecisionScope` object.
 
 ```java
 final public class DecisionScope {
@@ -331,7 +331,7 @@ public enum OfferType {
 
 ### OfferExperienceEvent
 
-An instance of `OfferExperienceEvent` can be supplied in the prefetch API when additional information such as xdm data, free-form data or dataset identifier needs to be passed to the offer decisioning service. If provided, the `datasetIdentitifer` overrides the default dataset configured in the `Datastreams` on Adobe Experience Platform Launch.
+An instance of `OfferExperienceEvent` can be supplied in the prefetch API when additional information such as xdm data, free-form data or dataset identifier needs to be passed to the Offer Decisioning service. If provided, the `datasetIdentitifer` overrides the default dataset configured in the `Datastreams` on the Data Collection UI.
 
 ```java
 public class OfferExperienceEvent {
