@@ -75,7 +75,6 @@ Uri testUri = new Uri.Builder()
 {% endtab %}
 
 {% tab title="iOS — Obj-C" %}
-
 ### trackAdobeDeepLink
 
 **Syntax**

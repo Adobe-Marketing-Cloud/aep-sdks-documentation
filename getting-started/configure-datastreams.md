@@ -9,7 +9,7 @@ To create a datastream, your organization must be provisioned for this feature i
 {% hint style="info" %}
 The Datastreams tool is available to customers on the _allow list_ regardless whether they use Experience Platform Launch for web tag management or to manage mobile app configuration.
 
-Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://docs.adobe.com/content/help/en/launch/using/reference/admin/user-permissions.html) article in the Experience Platform Launch documentation for more details.
+Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en) article in the Experience Platform Launch documentation for more details.
 {% endhint %}
 
 ## What is a datastream?
@@ -23,7 +23,7 @@ The following steps illustrate how to create a sample datastream for a mobile im
 3. Click **New Datastream** \(located on top right\)
 4. Set a name for the configuration and click **Save**.
 
-![Creating a datastream in Adobe Experience Platform Launch](../.gitbook/assets/create-datastream.png?alt=media)
+![Creating a datastream in Adobe Experience Platform Launch](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/246853d4cb8bc473495a38d8b99df6e3f68c409c/.gitbook/assets/create-datastream.png?alt=media)
 
 1. In the next screen, toggle on **Adobe Experience Platform** and:
    1. Select the appropriate **Sandbox** from the dropdown

@@ -1,5 +1,21 @@
 # Release Notes
 
+## Sept 3, 2021
+
+### Adobe Experience Platform Edge Network Launch extension v1.0.12
+
+* New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+
+## Sept 2, 2021
+
+### iOS AEPEdge 1.1.2
+
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set, then timestamp of `Edge.sendEvent()` API call is used.
+
+### Android Edge 1.1.2
+
+* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set, then timestamp of `Edge.sendEvent()` API call is used.
+
 ## June 10, 2021
 
 ### iOS AEPEdge 1.1.1

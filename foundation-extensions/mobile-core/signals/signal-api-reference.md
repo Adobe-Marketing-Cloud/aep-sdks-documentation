@@ -15,8 +15,7 @@ String signalExtensionVersion = Signal.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x)" %}
-
+{% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
 ```swift
@@ -28,10 +27,9 @@ let version = Signal.extensionVersion
 ```objectivec
 NSString *version = [AEPMobileSignal extensionVersion];
 ```
-
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
 ```objectivec

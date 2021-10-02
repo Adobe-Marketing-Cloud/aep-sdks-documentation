@@ -4,19 +4,19 @@
 
 Since the products variable cannot be set by processing rules, you need to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://docs.adobe.com/content/help/en/analytics/components/variables/merchandising-variables/var-merchandising.html).
+To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en).
 
 {% tabs %}
 {% tab title="Android" %}
 ### Java <a id="java-2"></a>
 
-**Syntax** <a id="syntax"></a>
+**Syntax**
 
 ```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
-**Example** <a id="example"></a>
+**Example**
 
 ```java
 //create a context data dictionary
@@ -35,7 +35,7 @@ MobileCore.trackState("Order Confirmation", cdata);
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
+### Objective-C <a id="example"></a>
 
 **Syntax**
 
