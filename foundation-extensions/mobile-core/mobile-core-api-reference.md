@@ -1266,47 +1266,6 @@ static func resetIdentities()
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-**Objective-C**
-
-Note, this method is only available in Mobile Core v.1.8.0 and above.
-
-### resetIdentities
-
-**Syntax**
-
-```swift
-@objc(resetIdentities)
-static func resetIdentities()
-```
-
-**Example**
-
-```objectivec
-[ACPCore resetIdentities];
-```
-
-**Swift**
-
-Note, this method is only available in Mobile Core v.1.8.0 and above.
-
-### resetIdentities
-
-**Syntax**
-
-```swift
-static func resetIdentities()
-```
-
-**Example**
-
-```swift
-MobileCore.resetIdentities()
-```
-
-_since AEPCore v3.1.0_
-{% endtab %}
 {% endtabs %}
 
 ## setAdvertisingIdentifier
