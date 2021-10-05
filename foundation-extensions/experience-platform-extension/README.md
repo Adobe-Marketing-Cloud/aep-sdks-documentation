@@ -92,7 +92,7 @@ import AEPEdgeIdentity
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built based on the AEPCore, please follow [the guide for migrating to Swift](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
 
 {% endtab %}
 
