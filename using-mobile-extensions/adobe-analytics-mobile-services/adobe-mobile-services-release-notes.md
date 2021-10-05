@@ -6,7 +6,7 @@ Release notes and change logs for the Adobe Mobile Services extension
 
 ### Android MobileServices 1.1.5
 
-* Specifies mutability of each PendingIntent object [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
+* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
 
 ## Aug 25, 2021
 
