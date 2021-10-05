@@ -2,6 +2,12 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## Oct 05, 2021
+
+### Android MobileServices 1.1.5
+
+* Specifies mutability of each PendingIntent object [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
+
 ## Aug 25, 2021
 
 ### iOS AEPMobileServices 3.0.1
