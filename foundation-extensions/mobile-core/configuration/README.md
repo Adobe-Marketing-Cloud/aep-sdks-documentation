@@ -36,7 +36,7 @@ static func configureWith(appId: String)
 **Example**
 
 ```swift
-MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d")
+MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 
 #### Objective-C

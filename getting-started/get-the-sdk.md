@@ -85,7 +85,7 @@ Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requir
 
 In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
 
-Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see the [release notes](../release-notes/2020#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
@@ -345,7 +345,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### iOS version 2.x and before
 
 The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
 

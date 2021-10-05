@@ -28,8 +28,6 @@ This method should be called to support the following use cases:
 * Tracking push message clickthrough
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
-#### collectLaunchInfo
-
 **Syntax**
 
 ```swift
@@ -51,8 +49,6 @@ This method should be called to support the following use cases:
   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
     * Tracking push message clickthrough
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
-
-#### collectLaunchInfo
 
 **Syntax**
 
@@ -79,8 +75,6 @@ The `collectLaunchInfo` method should be used in the following use cases:
 * Tracking a push message clickthrough
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
-#### collectLaunchInfo
-
 **Syntax**
 
 ```objectivec
@@ -102,8 +96,6 @@ The `collectLaunchInfo` method should be used in the following use cases:
   * Extract `userInfo` from `url: UIApplication.LaunchOptionsKey`
 * Tracking a push message clickthrough
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
-
-#### collectLaunchInfo
 
 **Syntax**
 
@@ -132,8 +124,6 @@ Although this method enables the collection of sensitive data, no data is sent t
 {% tab title="Android" %}
 **Java**
 
-### collectPii
-
 **Syntax**
 
 ```java
@@ -154,8 +144,6 @@ MobileCore.collectPII(data);
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-### collectPii
-
 **Syntax**
 
 ```swift
@@ -169,8 +157,6 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 ```
 
 **Objective-C**
-
-### collectPii
 
 **Syntax**
 
@@ -191,8 +177,6 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### collectPii
-
 **Syntax**
 
 ```swift
@@ -208,8 +192,6 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 ```
 
 **Swift**
-
-### collectPii
 
 **Syntax**
 
@@ -227,8 +209,6 @@ MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
 {% tab title="React Native" %}
 **Javascript**
 
-### collectPii
-
 **Syntax**
 
 ```jsx
@@ -242,8 +222,6 @@ ACPCore.collectPii({"myPii": "data"});
 ```
 
 **Swift**
-
-### collectPii
 
 **Syntax**
 
@@ -266,8 +244,6 @@ You can use the `getApplication` method to get the previously set Android `Appli
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### getApplication
 
 {% hint style="warning" %}
 `MobileCore.getApplication` will return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
@@ -292,8 +268,6 @@ if (app != null) {
 {% tab title="Xamarin" %}
 **C\#**
 
-### getApplication
-
 {% hint style="warning" %}
 `ACPCore.Application` may be `null` if the `Application` object was destroyed or was not set in the Core.
 {% endhint %}
@@ -316,8 +290,6 @@ This API gets the current log level being used in the SDK.
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### getLogLevel
 
 **Syntax**
 
@@ -469,8 +441,6 @@ This API does **not** include the identities stored in the Edge Identity extensi
 {% tab title="Android" %}
 **Java**
 
-### getSdkIdentities
-
 **Syntax**
 
 ```java
@@ -495,8 +465,6 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-### getSDKIdentities
-
 #### Syntax
 ```swift
 static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
@@ -514,8 +482,6 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 ```
 
 #### Objective-C
-
-### getSdkIdentities
 
 #### Syntax
 
@@ -544,8 +510,6 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
-
-### getSdkIdentities
 
 **Syntax**
 
@@ -599,8 +563,6 @@ The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to
 * `LoggingMode.ERROR` uses `android.util.Log.e`
 
 All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
-
-### log
 
 **Syntax**
 
@@ -681,8 +643,6 @@ public static func error(label: String, _ message: String)
 
 The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message[AEP SDK ERROR - <testLabel>] Test message`.
 
-### log
-
 **Syntax**
 
 ```objectivec
@@ -702,8 +662,6 @@ The log messages from the Adobe Experience SDK are printed to the Apple System L
 ```
 
 **Swift**
-
-### log
 
 **Syntax**
 
@@ -829,7 +787,7 @@ public class MainApp extends Application {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
 {% endhint %}
 
@@ -859,7 +817,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### iOS version 2.x and before
 
 The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
 
@@ -1184,8 +1141,6 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
 
-### registerURLHandler
-
 **Syntax**
 
 ```objectivec
@@ -1204,17 +1159,11 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 
 ## resetIdentities
 
-The `resetIdentities` method requests that each extension resets the identities it owns. Each extension responds to this request uniquely.
-
-{% hint style="warning" %}
-This API is only handled by the [Edge](mobile-core-api-reference.md) and [Edge Identity](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/de62274f59c14b23acae8992352ec63fbb16411b/foundation-extensions/adobe-edge-identity/README.md) extensions. Calling `resetIdentities` does **not** clear identities in non-edge extensions, such as [Identity](identity/).
-{% endhint %}
+The `resetIdentities` method requests that each extension resets the identities it owns and each extension responds to this request uniquely. For more details, check the `resetIdentities` API reference on each of the extensions you use.
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### resetIdentities
 
 Note, this method is only available in Mobile Core v.1.8.0 and above.
 
@@ -1234,8 +1183,6 @@ MobileCore.resetIdentities();
 {% tab title="iOS (AEP 3.x)" %}
 **Swift**
 
-### resetIdentities
-
 **Syntax**
 
 ```swift
@@ -1249,8 +1196,6 @@ MobileCore.resetIdentities()
 ```
 
 **Objective-C**
-
-### resetIdentities
 
 **Syntax**
 
@@ -1272,7 +1217,7 @@ static func resetIdentities()
 
 The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall.
 
-For more information about identity in Mobile Core, please read the documentation on the [identity APIs](identity/identity-api-reference.md).
+For more information about identity in Mobile Core, please read the documentation on the [identity APIs](identity/identity-api-reference.md#setadvertisingidentifier).
 
 ## setAppGroup \(iOS only\)
 
@@ -1287,8 +1232,6 @@ This API _must_ be called in `AppDidFinishLaunching` and before any other intera
 
 **Swift**
 
-### setAppGroup
-
 **Syntax**
 
 ```swift
@@ -1302,8 +1245,6 @@ MobileCore.setAppGroup("appGroupId")
 ```
 
 **Objective-C**
-
-### setAppGroup
 
 **Syntax**
 ```swift
@@ -1322,8 +1263,6 @@ public static func setAppGroup(_ group: String?)
 {% tab title="iOS (ACP 2.x)" %}
 **Objective-C**
 
-### setAppGroup
-
 **Syntax**
 
 ```swift
@@ -1337,8 +1276,6 @@ public static func setAppGroup(_ group: String?)
 ```
 
 **Swift**
-
-### setAppGroup
 
 **Syntax**
 
@@ -1355,8 +1292,6 @@ ACPCore.setAppGroup("app-group-id")
 
 {% tab title="Xamarin" %}
 **C\#**
-
-### setAppGroup
 
 **Syntax**
 
@@ -1380,15 +1315,11 @@ When building Android applications, the `android.app.Application` reference must
 Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
 {% endhint %}
 
-### setApplication
-
 You can use the `setApplication` method to pass the Android `Application` instance to Mobile SDK.
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### setApplication
 
 **Syntax**
 
@@ -1413,8 +1344,6 @@ public class CoreApp extends Application {
 
 {% tab title="Xamarin" %}
 **C\#**
-
-### setApplication
 
 **Example**
 
@@ -1450,7 +1379,7 @@ From least to most verbose, the order of Mobile SDK logging modes is as follows:
 * ERROR
 * WARNING
 * DEBUG
-* VERBOSE
+* VERBOSE / TRACE 
 
 When debugging on iOS, you can use `LogLevel.verbose` to enable all the logging messages that are coming from Mobile SDK and partner extensions. Similarly, on Android, you can use `LoggingMode.VERBOSE` to enable all the logging messages that are coming from Mobile SDK and partner extensions.
 
@@ -1466,8 +1395,6 @@ By default, Mobile SDK logging mode is set to `LoggingMode.ERROR` for Android an
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### setLogLevel
 
 **Syntax**
 
@@ -1488,8 +1415,6 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-#### setLogLevel
-
 **Syntax**
 
 ```swift
@@ -1499,12 +1424,13 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 **Example**
 
 ```swift
- MobileCore.setLogLevel(.trace)
+import AEPCore
+import AEPServices
+
+  MobileCore.setLogLevel(.trace)
 ```
 
 **Objective C**
-
-#### setLogLevel
 
 **Syntax**
 
@@ -1515,15 +1441,16 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 
 **Example**
 
-```text
+```objectivec
+@import AEPCore;
+@import AEPServices;
+
  [AEPMobileCore setLogLevel: AEPLogLevelTrace];
 ```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
-
-### setLogLevel
 
 **Syntax**
 
@@ -1540,8 +1467,6 @@ MobileCore.setLogLevel(LoggingMode.VERBOSE);
 ```
 
 **Swift**
-
-### setLogLevel
 
 **Syntax**
 
@@ -1561,8 +1486,6 @@ ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
 {% tab title="React Native" %}
 **Javascript**
 
-### setLogLevel
-
 **Syntax**
 
 ```jsx
@@ -1579,8 +1502,6 @@ ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
 
 {% tab title="Flutter" %}
 **Dart**
-
-### setLogLevel
 
 **Syntax**
 
@@ -1606,8 +1527,6 @@ From least to most verbose, the order of Mobile SDK logging modes is as follows:
 * ACPCore.ACPMobileLogLevelDebug
 * ACPCore.ACPMobileLogLevelVerbose
 
-### setLogLevel
-
 **Syntax**
 
 ```jsx
@@ -1631,8 +1550,6 @@ From least to most verbose, the order of Mobile SDK logging modes is as follows:
 * ACPCore.ACPMobileLogLevel.WARNING
 * ACPCore.ACPMobileLogLevel.DEBUG
 * ACPCore.ACPMobileLogLevel.VERBOSE
-
-### setLogLevel
 
 **Syntax**
 
@@ -1663,8 +1580,6 @@ From least to most verbose, the order of Mobile SDK logging modes is as follows 
 * LoggingMode.Warning;
 * LoggingMode.Debug;
 * LoggingMode.Verbose;
-
-### setLogLevel
 
 **iOS syntax**
 
@@ -1704,8 +1619,6 @@ It is recommended to call `setPushIdentifier` on each application launch to ensu
 {% tab title="Android" %}
 **Java**
 
-### setPushIdentifier
-
 **Syntax**
 
 ```java
@@ -1725,8 +1638,6 @@ MobileCore.setPushIdentifier(token);
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-### setPushIdentifier
-
 **Syntax**
 
 ```swift
@@ -1740,8 +1651,6 @@ MobileCore.setPushIdentifier(deviceToken)
 ```
 
 **Objective-C**
-
-### setPushIdentifier
 
 **Syntax**
 
@@ -1760,8 +1669,6 @@ MobileCore.setPushIdentifier(deviceToken)
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### setPushIdentifier
-
 **Syntax**
 
 ```text
@@ -1778,8 +1685,6 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
 **Swift**
-
-### setPushIdentifier
 
 **Syntax**
 
@@ -1889,8 +1794,6 @@ If you installed and configured the Adobe Analytics extension, this method sends
 {% tab title="Android" %}
 **Java**
 
-### trackAction
-
 **Syntax**
 
 ```java
@@ -1912,8 +1815,6 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-### trackAction
-
 **Syntax**
 
 ```swift
@@ -1930,8 +1831,6 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 
 **Objective-C**
-
-### trackAction
 
 **Syntax**
 
@@ -1953,8 +1852,6 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### trackAction
-
 **Syntax**
 
 ```text
@@ -1971,8 +1868,6 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 
 **Swift**
-
-### trackAction
 
 **Syntax**
 
@@ -1994,8 +1889,6 @@ ACPCore.track(action: "action name", data: ["key": "value"])
 {% tab title="React Native" %}
 **Javascript**
 
-### trackAction
-
 **Syntax**
 
 ```jsx
@@ -2015,8 +1908,6 @@ ACPCore.trackAction("action name", {"key": "value"});
 {% tab title="Flutter" %}
 **Dart**
 
-### trackAction
-
 **Syntax**
 
 ```dart
@@ -2035,8 +1926,6 @@ FlutterACPCore.trackAction("action name",  data: {"key": "value"});
 
 {% tab title="Unity" %}
 **C\#**
-
-### trackAction
 
 **Syntax**
 
@@ -2059,8 +1948,6 @@ ACPCore.TrackAction("action", contextData);
 {% tab title="Cordova" %}
 **Cordova**
 
-### trackAction
-
 **Syntax**
 
 ```jsx
@@ -2081,8 +1968,6 @@ ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallb
 
 {% tab title="Xamarin" %}
 **C\#**
-
-### trackAction
 
 **iOS Syntax**
 
@@ -2138,8 +2023,6 @@ If you installed and configured the Adobe Analytics extension, the `trackState` 
 
 In Android, `trackState` is typically called every time a new `Activity` is loaded.
 
-### trackState
-
 **Syntax**
 
 ```java
@@ -2161,8 +2044,6 @@ MobileCore.trackState("homePage", additionalContextData);
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-### trackState
-
 **Syntax**
 
 ```swift
@@ -2179,8 +2060,6 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 
 **Objective-C**
-
-### trackState
 
 **Syntax**
 
@@ -2202,8 +2081,6 @@ MobileCore.trackState("homePage", additionalContextData);
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### trackState
-
 **Syntax**
 
 ```objectivec
@@ -2220,8 +2097,6 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 
 **Swift**
-
-### trackState
 
 **Syntax**
 
@@ -2242,8 +2117,6 @@ ACPCore.trackState("state name", data: ["key": "value"])
 {% tab title="React Native" %}
 **Javascript**
 
-### trackState
-
 **Syntax**
 
 ```jsx
@@ -2263,8 +2136,6 @@ ACPCore.trackState("state name", {"key": "value"});
 {% tab title="Flutter" %}
 **Dart**
 
-### trackState
-
 **Syntax**
 
 ```dart
@@ -2283,8 +2154,6 @@ FlutterACPCore.trackState("state name",  data: {"key1: "value"})
 
 {% tab title="Cordova" %}
 **Cordova**
-
-### trackState
 
 **Syntax**
 
@@ -2307,8 +2176,6 @@ ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallbac
 {% tab title="Unity" %}
 **C\#**
 
-### trackState
-
 **Syntax**
 
 ```csharp
@@ -2329,8 +2196,6 @@ ACPCore.TrackState("state", dict);
 
 {% tab title="Xamarin" %}
 **C\#**
-
-### trackState
 
 **iOS syntax**
 
@@ -2452,6 +2317,86 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
   }
 });
 ```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+
+The `AEPError` enum shows the errors that can be passed to a completion handler callback from any API which uses one:
+
+* `case unexpected` - An unexpected error occured.
+* `case callbackTimeout` - The timeout was met.
+* `case callbackNil` -  The provided callback function is nil.
+* `case none` -  There was no error, used when an error return type is required but there was no error.
+* `case serverError` - There was a server error.
+* `case networkError` - There was a network error.
+* `case invalidRequest` - There was an invalid request.
+* `case invalidResponse` - There was an invalid response.
+* `case errorExtensionNotInitialized` - The extension is not initialized.
+
+**Examples**
+
+**Swift**
+
+```swift
+MobileCore.getSdkIdentities { (content, error) in
+    if let error = error, let aepError = error as? AEPError {
+        switch aepError {
+        case .unexpected:
+          // Handle unexpected error
+        case .callbackTimeout:
+          // Handle callback timeout error
+        case .callbackNil:
+          // Handle callback being nil error
+        case .none:
+          // no error
+        case .serverError:
+          // handle server error
+        case .networkError:
+          // handle network error
+        case .invalidRequest:
+          // handle invalid request error
+        case .invalidResponse:
+          // handle invalid response error
+        case .errorExtensionNotInitialized:
+          // handle extension not initialized error
+        @unknown default:
+          // handle unknown error
+        }
+    }
+    ...
+}
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+    if (error) {
+        if (error.code == AEPErrorUnexpected) {
+          // Handle unexpected error
+        } else if (error.code == AEPErrorCallbackTimeout) {
+          // Handle callback timeout error
+        } else if (error.code == AEPErrorCallbackNil) {
+          // Handle callback being nil error
+        } else if (error.code == AEPErrorNone) {
+          // no error     
+        } else if (error.code == AEPErrorServerError) {
+          // handle server error
+        } else if (error.code == AEPErrorNetworkError) {
+          // handle network error 
+        } else if (error.code == AEPErrorInvalidRequest) {
+          // handle invalid request error
+        } else if (error.code == AEPErrorInvalidResponse) {
+          // handle invalid response error  
+        } else if (error.code == AEPErrorErrorExtensionNotInitialized) {
+          // handle extension not intialized error  
+        }
+    }
+
+    ...
+}];
+```
+
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}

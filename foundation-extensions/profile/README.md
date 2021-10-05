@@ -34,17 +34,18 @@ To add the Profile extension to your app:
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'AEPUserProfile'`.
 2. Import the UserProfile library.  
 
+### Swift
+
+```swift
+   import AEPUserProfile
+```
+
 ### Objective C
 
 ```text
   @import AEPUserProfile;
 ```
 
-### Swift
-
-```swift
-   import AEPUserProfile
-```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}

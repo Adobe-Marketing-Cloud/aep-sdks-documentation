@@ -35,19 +35,19 @@ MobileCore.setLogLevel(LoggingMode.DEBUG);
 ## Swift
 
 ```swift
-// AEPCore.setLogLevel(AEPMobileLogLevel.debug)
-// AEPCore.setLogLevel(AEPMobileLogLevel.verbose)
-// AEPCore.setLogLevel(AEPMobileLogLevel.warning)
-// AEPCore.setLogLevel(AEPMobileLogLevel.error)
+MobileCore.setLogLevel(.debug)
+// MobileCore.setLogLevel(.trace)
+// MobileCore.setLogLevel(.warning)
+// MobileCore.setLogLevel(.error)
 ```
 
 ## Objective-C
 
 ```objectivec
-// [AEPCore setLogLevel:AEPMobileLogLevelDebug];
-// [AEPCore setLogLevel:AEPMobileLogLevelVerbose];
-// [AEPCore setLogLevel:AEPMobileLogLevelWarning];
-// [AEPCore setLogLevel:AEPMobileLogLevelError];
+[AEPMobileCore setLogLevel:AEPMobileLogLevelDebug];
+// [AEPMobileCore setLogLevel:AEPLogLevelTrace];
+// [AEPMobileCore setLogLevel:AEPLogLevelWarning];
+// [AEPMobileCore setLogLevel:AEPLogLevelError];
 ```
 {% endtab %}
 
