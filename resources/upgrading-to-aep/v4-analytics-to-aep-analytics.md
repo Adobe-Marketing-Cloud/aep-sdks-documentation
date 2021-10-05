@@ -131,7 +131,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-In-depth instructions can be seen at the [Analytics Readme](../../using-mobile-extensions/adobe-analytics/README.md#add-analytics-to-your-application).
+For more details, see [Add analytics to Your Application](../../using-mobile-extensions/adobe-analytics/README.md#add-analytics-to-your-application).
 
 ## API changes
 
