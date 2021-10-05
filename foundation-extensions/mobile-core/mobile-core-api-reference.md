@@ -1,865 +1,6 @@
 # Mobile Core API reference
 
-## Application reference \(Android only\)
-
-When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
-
-{% hint style="warning" %}
-Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
-{% endhint %}
-
-### Set the `Application` instance
-
-You can use the `setApplication` method to pass the Android `Application` instance to Mobile SDK.
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### setApplication
-
-**Syntax**
-
-```java
-public static void setApplication(final Application app)
-```
-
-**Example**
-
-```java
-public class CoreApp extends Application {
-
-   @Override
-   public void onCreate() {
-      super.onCreate();
-      MobileCore.setApplication(this);
-      MobileCore.start(null);
-   }
-}
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### setApplication
-
-**Example**
-
-```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-{
-  protected override void OnCreate(Bundle savedInstanceState)
-  {
-    base.OnCreate(savedInstanceState);
-    ACPCore.Application = this.Application;
-    ACPCore.Start(null);
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-### Get the `Application` instance
-
-You can use the `getApplication` method to get the previously set Android `Application` instance. The `Application` instance is mainly provided for third-party extensions.
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### getApplication
-
-{% hint style="warning" %}
-`MobileCore.getApplication` will return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
-{% endhint %}
-
-**Syntax**
-
-```java
-public static Application getApplication()
-```
-
-**Example**
-
-```java
-Application app = MobileCore.getApplication();
-if (app != null) {
-    ...
-}
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### getApplication
-
-{% hint style="warning" %}
-`ACPCore.Application` may be `null` if the `Application` object was destroyed or was not set in the Core.
-{% endhint %}
-
-**Example**
-
-```csharp
-var app = ACPCore.Application;
-if (app != null) {
-    ...
-}
-```
-{% endtab %}
-{% endtabs %}
-
-## Track app actions
-
-Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
-
-{% hint style="warning" %}
-You want to use the `trackAction` method when you want to track an occurring event. In addition to the action name, you can also send context data with each `trackAction` call.
-{% endhint %}
-
-{% hint style="info" %}
-If you installed and configured the Adobe Analytics extension, this method sends an Adobe Analytics action tracking hit with the provided optional context data.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### trackAction
-
-**Syntax**
-
-```java
-public static void trackAction(final String action, final Map<String, String> contextData)
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```java
-Map<String, String> additionalContextData = new HashMap<String, String>();
-additionalContextData.put("customKey", "value");
-MobileCore.trackAction("loginClicked", additionalContextData);
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
-
-### trackAction
-
-**Syntax**
-
-```swift
- static func track(action: String?, data: [String: Any]?)
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```swift
- MobileCore.track(action: "action name", data: ["key": "value"])
-```
-
-**Objective-C**
-
-### trackAction
-
-**Syntax**
-
-```swift
- @objc(trackAction:data:)
- static func track(action: String?, data: [String: Any]?)
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```objectivec
-  [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-### trackAction
-
-**Syntax**
-
-```text
-+ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```text
- [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
-```
-
-**Swift**
-
-### trackAction
-
-**Syntax**
-
-```swift
-@objc(trackAction:data:)
-static func track(action: String?, data: [String: Any]?)
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```swift
-ACPCore.track(action: "action name", data: ["key": "value"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**Javascript**
-
-### trackAction
-
-**Syntax**
-
-```jsx
-trackAction(action?: String, contextData?: { string: string });
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```jsx
-ACPCore.trackAction("action name", {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-**Dart**
-
-### trackAction
-
-**Syntax**
-
-```dart
-Future<void> trackAction (String action, {Map<String, String> contextData});
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```dart
-FlutterACPCore.trackAction("action name",  data: {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-**C\#**
-
-### trackAction
-
-**Syntax**
-
-```csharp
-public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
-```
-
-* * _name_ contains the name of the action to track.
-* _contextDataDict_ contains the context data to attach on the hit.
-
-**Example**
-
-```csharp
-var contextData = new Dictionary<string, string>();
-contextData.Add("key", "value");
-ACPCore.TrackAction("action", contextData);
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-**Cordova**
-
-### trackAction
-
-**Syntax**
-
-```jsx
-ACPCore.trackAction = function(action, contextData, success, fail);
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on this hit.
-* _success_ callback is invoked when trackAction executes successfully.
-* _fail_ callback is invoked when trackAction fails.
-
-**Example**
-
-```jsx
-ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### trackAction
-
-**iOS Syntax**
-
-```csharp
-public static void TrackAction (string action, NSMutableDictionary<NSString, NSString> data);
-```
-
-* _action_ contains the name of the action to track.
-* _data_ contains the context data to attach on the hit.
-
-**Android Syntax**
-
-```csharp
-public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
-```
-
-* _action_ contains the name of the action to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-**iOS**
-
-```csharp
-var data = new NSMutableDictionary<NSString, NSString>
-{
-  ["key"] = new NSString("value")
-};
-ACPCore.TrackAction("action", data);
-```
-
-**Android**
-
-```csharp
-var data = new Dictionary<string, string>();
-data.Add("key", "value");
-ACPCore.TrackAction("action", data);
-```
-{% endtab %}
-{% endtabs %}
-
-## Track application states and views
-
-States represent screens or views in your application. The `trackState` method needs to be called every time a new state is displayed in your application. For example, this method should be called when a user navigates from the home page to the news feed. This method sends an Adobe Analytics state tracking hit with optional context data.
-
-{% hint style="info" %}
-If you installed and configured the Adobe Analytics extension, the `trackState` method increments page views and an Adobe Analytics state tracking hit with the provided optional context data.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-In Android, `trackState` is typically called every time a new `Activity` is loaded.
-
-### trackState
-
-**Syntax**
-
-```java
-public static void trackState(final String state, final Map<String, String> contextData)
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```java
-Map<String, String> additionalContextData = new HashMap<String, String>();        
-additionalContextData.put("customKey", "value");
-MobileCore.trackState("homePage", additionalContextData);
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
-
-### trackState
-
-**Syntax**
-
-```swift
- static func track(state: String?, data: [String: Any]?)
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```swift
- MobileCore.track(state: "state name", data: ["key": "value"])
-```
-
-**Objective-C**
-
-### trackState
-
-**Syntax**
-
-```swift
- @objc(trackState:data:)
- static func track(state: String?, data: [String: Any]?)
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on this hit.
-
-**Example**
-
-```objectivec
-  [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-### trackState
-
-**Syntax**
-
-```objectivec
-(void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```objectivec
- [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
-```
-
-**Swift**
-
-### trackState
-
-**Syntax**
-
-```swift
-+ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```swift
-ACPCore.trackState("state name", data: ["key": "value"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**Javascript**
-
-### trackState
-
-**Syntax**
-
-```jsx
-trackState(state?: String, contextData?: { string: string });
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```jsx
-ACPCore.trackState("state name", {"key": "value"});
-```
-{% endtab %}
-
-{% tab title="Flutter" %}
-**Dart**
-
-### trackState
-
-**Syntax**
-
-```dart
-Future<void> trackState (String state, {Map<String, String> contextData});
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Example**
-
-```dart
-FlutterACPCore.trackState("state name",  data: {"key1: "value"})
-```
-{% endtab %}
-
-{% tab title="Cordova" %}
-**Cordova**
-
-### trackState
-
-**Syntax**
-
-```jsx
-ACPCore.trackState = function(state, contextData, success, fail);
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-* _success_ callback is invoked when trackState executes successfully.
-* _fail_ callback is invoked when trackState fails.
-
-**Example**
-
-```jsx
-ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-**C\#**
-
-### trackState
-
-**Syntax**
-
-```csharp
-public static void TrackState(string name, Dictionary<string, string> contextDataDict)
-```
-
-* _state_ contains the name of the state to track.
-* _contextDataDict_ contains the context data to attach on the hit.
-
-**Example**
-
-```csharp
-var dict = new Dictionary<string, string>();
-dict.Add("key", "value");
-ACPCore.TrackState("state", dict);
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### trackState
-
-**iOS syntax**
-
-```csharp
-public static void TrackState (string state, NSMutableDictionary<NSString, NSString> data);
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**Android syntax**
-
-```csharp
-public unsafe static void TrackState (string state, IDictionary<string, string> contextData);
-```
-
-* _state_ contains the name of the state to track.
-* _contextData_ contains the context data to attach on the hit.
-
-**iOS example**
-
-```csharp
-var data = new NSMutableDictionary<NSString, NSString>
-{
-  ["key"] = new NSString("value")
-};
-ACPCore.TrackState("state", data);
-```
-
-**Android example**
-
-```csharp
-var data = new Dictionary<string, string>();
-data.Add("key", "value");
-ACPCore.TrackState("state", data);
-```
-{% endtab %}
-{% endtabs %}
-
-## Set the advertising ID
-
-The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall.
-
-For more information about identity in Mobile Core, please read the documentation on the [identity APIs](identity/identity-api-reference.md).
-
-## setPushIdentifier
-
-This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
-
-{% hint style="info" %}
-It is recommended to call `setPushIdentifier` on each application launch to ensure the most up-to-date device token is set to the SDK. If no device token is available, `null`/`nil` should be passed.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### setPushIdentifier
-
-**Syntax**
-
-```java
-public static void setPushIdentifier(final String pushIdentifier);
-```
-
-* _pushIdentifier_  is a string that contains the device token for push notifications.
-
-**Example**
-
-```java
-//Retrieve the token from either GCM or FCM, and pass it to the SDK
-MobileCore.setPushIdentifier(token);
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
-
-### setPushIdentifier
-
-**Syntax**
-
-```swift
-public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-**Example**
-
-```objectivec
-MobileCore.setPushIdentifier(deviceToken)
-```
-
-**Objective-C**
-
-### setPushIdentifier
-
-**Syntax**
-
-```swift
- @objc(setPushIdentifier:)
- public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-**Example**
-
-```objectivec
- [AEPMobileCore setPushIdentifier:deviceToken];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-### setPushIdentifier
-
-**Syntax**
-
-```text
-public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-* _deviceToken_  is a string that contains the device token for push notifications.
-
-**Example**
-
-```objectivec
-// Set the deviceToken that the APNS has assigned to the device
-[ACPCore setPushIdentifier:deviceToken];
-```
-
-**Swift**
-
-### setPushIdentifier
-
-**Syntax**
-
-```swift
-@objc(setPushIdentifier:)
-public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-* _deviceToken_  is a string that contains the device token for push notifications.
-
-**Example**
-
-```swift
-// Set the deviceToken that the APNs has assigned to the device
-MobileCore.setPushIdentifier(deviceToken)
-```
-{% endtab %}
-{% endtabs %}
-
-## Collect personally identifiable information
-
-The `collectPii` method lets the SDK to collect sensitive or personally identifiable information \(PII\).
-
-{% hint style="warning" %}
-Although this method enables the collection of sensitive data, no data is sent to any Adobe or other third-party endpoints. To send the data to an endpoint, use a PII type postback.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-### collectPii
-
-**Syntax**
-
-```java
-public static void collectPII(final Map<String, String> piiData);
-```
-
-**Example**
-
-```java
-Map<String, String> data = new HashMap<String, String>();
-data.put("firstname", "customer");
-//The rule to trigger a PII needs to be setup for this call
-//to result in a network send
-MobileCore.collectPII(data);
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
-
-### collectPii
-
-**Syntax**
-
-```swift
-public static func collectPii(_ data: [String: Any])
-```
-
-**Example**
-
-```objectivec
-MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
-```
-
-**Objective-C**
-
-### collectPii
-
-**Syntax**
-
-```swift
- @objc(collectPii:)
- public static func collectPii(_ data: [String: Any])
-```
-
-**Example**
-
-```objectivec
- [AEPMobileCore collectPii:data:@{@"key1" : @"value1",
-                            @"key2" : @"value2"
-                            }];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-### collectPii
-
-**Syntax**
-
-```swift
-(void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
-```
-
-**Example**
-
-```objectivec
-[ACPCore collectPii:data:@{@"key1" : "@value1",
-                           @"key2" : "@value2"
-                           }];
-```
-
-**Swift**
-
-### collectPii
-
-**Syntax**
-
-```swift
-ACPCore.collectPii(data: [String : String])
-```
-
-**Example**
-
-```objectivec
-MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**Javascript**
-
-### collectPii
-
-**Syntax**
-
-```jsx
-ACPCore.collectPii(data: [String : String])
-```
-
-**Example**
-
-```jsx
-ACPCore.collectPii({"myPii": "data"});
-```
-
-**Swift**
-
-### collectPii
-
-**Syntax**
-
-```swift
-ACPCore.collectPii(data: [String : String])
-```
-
-**Example**
-
-```objectivec
-MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
-```
-{% endtab %}
-{% endtabs %}
-
-## Collect launch information
+## collectLaunchInfo
 
 You can provide the user information to the SDK from various launch points in your application.
 
@@ -887,8 +28,6 @@ This method should be called to support the following use cases:
 * Tracking push message clickthrough
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
-#### collectLaunchInfo
-
 **Syntax**
 
 ```swift
@@ -898,7 +37,7 @@ This method should be called to support the following use cases:
 **Example**
 
 ```swift
- AEPCore.collectLaunchInfo(userInfo)
+ MobileCore.collectLaunchInfo(userInfo)
 ```
 
 **Objective-C**
@@ -910,8 +49,6 @@ This method should be called to support the following use cases:
   * Extract `userInfo` from `UIApplicationLaunchOptionsURLKey`
     * Tracking push message clickthrough
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
-
-#### collectLaunchInfo
 
 **Syntax**
 
@@ -938,8 +75,6 @@ The `collectLaunchInfo` method should be used in the following use cases:
 * Tracking a push message clickthrough
   * From `application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
-#### collectLaunchInfo
-
 **Syntax**
 
 ```objectivec
@@ -962,8 +97,6 @@ The `collectLaunchInfo` method should be used in the following use cases:
 * Tracking a push message clickthrough
   * From `application(_:didReceiveRemoteNotification:fetchCompletionHandler:)`
 
-#### collectLaunchInfo
-
 **Syntax**
 
 ```swift
@@ -978,7 +111,312 @@ AEPCore.collectLaunchInfo(userInfo)
 {% endtab %}
 {% endtabs %}
 
-## Retrieving stored identifiers
+
+## collectPii
+
+The `collectPii` method lets the SDK to collect sensitive or personally identifiable information \(PII\).
+
+{% hint style="warning" %}
+Although this method enables the collection of sensitive data, no data is sent to any Adobe or other third-party endpoints. To send the data to an endpoint, use a PII type postback.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+**Syntax**
+
+```java
+public static void collectPII(final Map<String, String> piiData);
+```
+
+**Example**
+
+```java
+Map<String, String> data = new HashMap<String, String>();
+data.put("firstname", "customer");
+//The rule to trigger a PII needs to be setup for this call
+//to result in a network send
+MobileCore.collectPII(data);
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+**Syntax**
+
+```swift
+public static func collectPii(_ data: [String: Any])
+```
+
+**Example**
+
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+```
+
+**Objective-C**
+
+**Syntax**
+
+```swift
+ @objc(collectPii:)
+ public static func collectPii(_ data: [String: Any])
+```
+
+**Example**
+
+```objectivec
+ [AEPMobileCore collectPii:data:@{@"key1" : @"value1",
+                            @"key2" : @"value2"
+                            }];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective-C**
+
+**Syntax**
+
+```swift
+(void) collectPii: (nonnull NSDictionary<NSString*, NSString*>*) data;
+```
+
+**Example**
+
+```objectivec
+[ACPCore collectPii:data:@{@"key1" : "@value1",
+                           @"key2" : "@value2"
+                           }];
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
+ACPCore.collectPii(data: [String : String])
+```
+
+**Example**
+
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**Javascript**
+
+**Syntax**
+
+```jsx
+ACPCore.collectPii(data: [String : String])
+```
+
+**Example**
+
+```jsx
+ACPCore.collectPii({"myPii": "data"});
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
+ACPCore.collectPii(data: [String : String])
+```
+
+**Example**
+
+```objectivec
+MobileCore.collectPii(["key1" : "value1","key2" : "value2"]);
+```
+{% endtab %}
+{% endtabs %}
+
+## getApplication \(Android only\)
+
+You can use the `getApplication` method to get the previously set Android `Application` instance. The `Application` instance is mainly provided for third-party extensions.
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+{% hint style="warning" %}
+`MobileCore.getApplication` will return `null` if the `Application` object was destroyed or if `MobileCore.setApplication` was not previously called.
+{% endhint %}
+
+**Syntax**
+
+```java
+public static Application getApplication()
+```
+
+**Example**
+
+```java
+Application app = MobileCore.getApplication();
+if (app != null) {
+    ...
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+{% hint style="warning" %}
+`ACPCore.Application` may be `null` if the `Application` object was destroyed or was not set in the Core.
+{% endhint %}
+
+**Example**
+
+```csharp
+var app = ACPCore.Application;
+if (app != null) {
+    ...
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## getLogLevel
+
+This API gets the current log level being used in the SDK.
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+**Syntax**
+
+```java
+public static LoggingMode getLogLevel()
+```
+
+**Example**
+
+```java
+LoggingMode mode = MobileCore.getLogLevel();
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+**Swift**
+
+Note, the logLevel getter has been deprecated. There is a new API to get the log level in the Swift AEP 3.x SDKs:
+
+### Log.logFilter
+
+**Syntax**
+
+```swift
+public static var logFilter: LogLevel
+```
+
+This variable is part of the `Log` class within `AEPServices`.
+
+**Example**
+
+```swift
+var logLevel = Log.logFilter
+```
+
+**Objective-C**
+
+Note, the logLevel getter has been deprecated. There is a new API to get the log level in the Swift AEP 3.x SDKs:
+
+### Log.logFilter
+
+**Syntax**
+
+```objectivec
+@objc public static var logFilter: LogLevel
+```
+
+**Example**
+
+```objectivec
+AEPLogLevel logLevel = [AEPLog logFilter];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+**Objective-C**
+
+### getLogLevel
+
+**Syntax**
+
+```objectivec
+(ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```objectivec
+var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
+```
+
+**Swift**
+
+### getLogLevel
+
+**Syntax**
+
+```swift
+(ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```swift
+let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**Javascript**
+
+### getLogLevel
+
+**Example**
+
+```jsx
+ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+**C\#**
+
+### getLogLevel
+
+**Example**
+
+```csharp
+ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+### getLogLevel
+
+**Example**
+
+```csharp
+var logLevel = ACPCore.LogLevel;
+```
+{% endtab %}
+{% endtabs %}
+
+## getSdkIdentities
 
 The following SDK identities, as applicable, are locally stored:
 
@@ -1002,8 +440,6 @@ This API does **not** include the identities stored in the Edge Identity extensi
 {% tabs %}
 {% tab title="Android" %}
 **Java**
-
-### getSdkIdentities
 
 **Syntax**
 
@@ -1029,6 +465,16 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
+#### Syntax
+```swift
+static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
+```
+
+* _callback_ is invoked with the SDK identities as a JSON string.
+* _completionHandler_ is invoked with the SDK identities as a JSON string, or _error_ if an unexpected error occurs or the request times out. The default timeout is 1000ms.
+
+#### Example
+
 ```swift
  MobileCore.getSdkIdentities { (content, error) in
      // handle completion
@@ -1036,8 +482,6 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 ```
 
 #### Objective-C
-
-### getSdkIdentities
 
 #### Syntax
 
@@ -1066,8 +510,6 @@ MobileCore.getSdkIdentities(new AdobeCallback<String>() {
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
-
-### getSdkIdentities
 
 **Syntax**
 
@@ -1105,19 +547,623 @@ MobileCore.getSdkIdentities { (content, error) in
 {% endtab %}
 {% endtabs %}
 
-## Reset identities
+## log
 
-The `resetIdentities` method requests that each extension resets the identities it owns. Each extension responds to this request uniquely.
-
-{% hint style="warning" %}
-This API is only handled by the [Edge](mobile-core-api-reference.md) and [Edge Identity](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/de62274f59c14b23acae8992352ec63fbb16411b/foundation-extensions/adobe-edge-identity/README.md) extensions. Calling `resetIdentities` does **not** clear identities in non-edge extensions, such as [Identity](identity/).
-{% endhint %}
+This is the API used to log from the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
 
-### resetIdentities
+The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` that is passed to `MobileCore.log()`, the following Android method is called:
+
+* `LoggingMode.VERBOSE` uses `android.util.Log.v`
+* `LoggingMode.DEBUG` uses `android.util.Log.d`
+* `LoggingMode.WARNING` uses `android.util.Log.w`
+* `LoggingMode.ERROR` uses `android.util.Log.e`
+
+All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
+
+**Syntax**
+
+```java
+public static void log(final LoggingMode mode, final String tag, final String message)
+```
+
+**Example**
+
+```java
+MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
+```
+
+**Output**
+
+```text
+D/AdobeExperienceSDK: MyClassName - Provided data was null
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+
+**Swift**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AEP SDK`. For example, if logging an error message using `Log.error(label:_ message:_)`, the printed output looks like `[AEP SDK ERROR <label>]: message`.
+
+**Syntax**
+
+```swift
+public static func trace(label: String, _ message: String) {
+public static func debug(label: String, _ message: String)
+public static func warning(label: String, _ message: String) {
+public static func error(label: String, _ message: String) {
+```
+**Example**
+
+```swift
+Log.trace(label: "testLabel", "Test message")
+Log.debug(label: "testLabel", "Test message")
+Log.warning(label: "testLabel", "Test message")
+Log.error(label: "testLabel", "Test message")
+```
+
+**Objective-C**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AEP SDK`. For example, if logging an error message using `[AEPLog errorWithLabel: _ message:_]`, the printed output looks like `[AEP SDK ERROR <label>]: message`.
+
+**Syntax**
+
+```swift
+@objc(traceWithLabel:message:)
+public static func trace(label: String, _ message: String) 
+
+@objc(debugWithLabel:message:)
+public static func debug(label: String, _ message: String) 
+
+@objc(warningWithLabel:message:)
+public static func warning(label: String, _ message: String) 
+
+@objc(errorWithLabel:message:)
+public static func error(label: String, _ message: String) 
+```
+
+**Example**
+
+```objectivec
+[AEPLog traceWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog debugWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog warningWithLabel:@"testLabel" message:@"testMessage"];
+[AEPLog errorWithLabel:@"testLabel" message:@"testMessage"];
+```
+
+
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective-C**
+
+The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message[AEP SDK ERROR - <testLabel>] Test message`.
+
+**Syntax**
+
+```objectivec
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+**Example**
+
+```objectivec
+[ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
+```
+
+**Output example**
+
+```objectivec
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
++ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
+```
+
+**Example**
+
+```swift
+ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
+```
+
+**Output example**
+
+```objectivec
+[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`.
+
+**Example**
+
+```jsx
+ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");
+```
+
+Note: `ACPMobileLogLevel` contains the following getters:
+
+```jsx
+const ERROR = "ACP_LOG_LEVEL_ERROR";
+const WARNING = "ACP_LOG_LEVEL_WARNING";
+const DEBUG = "ACP_LOG_LEVEL_DEBUG";
+const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `AdobeExperienceSDK`.
+
+**iOS syntax**
+
+```csharp
+ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
+```
+
+```text
+[AdobeExperienceSDK ERROR <xamarin tag>]: xamarin message
+```
+
+**Android syntax**
+
+```csharp
+ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
+```
+
+```text
+[AdobeExperienceSDK] xamarin tag - xamarin message
+```
+{% endtab %}
+{% endtabs %}
+
+## registerExtension(s)
+
+Extensions are registered with Mobile Core so that they can dispatch and listen for events.
+
+{% hint style="danger" %}
+Extension registration is **mandatory**. Attempting to make extension-specific API calls without registering the extension will lead to undefined behavior.
+{% endhint %}
+
+The following code snippets demonstrate how you can import and register the Mobile Core and Profile extensions. You can also see, for reference, how Identity, Lifecycle, Signal, Profile, and other extensions are imported and registered.
+
+{% tabs %}
+{% tab title="Android" %}
+After you register the extensions, call the `start` API in Mobile Core to initialize the SDK as shown below. This step is required to boot up the SDK for event processing. The following code snippet is provided as a sample reference.
+
+### Java
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApp extends Application {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.DEBUG);
+    ...
+    try {
+      UserProfile.registerExtension();
+            Identity.registerExtension();
+            Lifecycle.registerExtension();
+            Signal.registerExtension();
+            MobileCore.start(new AdobeCallback () {
+            @Override
+            public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+    }
+});
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+{% hint style="info" %}
+For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
+{% endhint %}
+
+**Swift**
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([Signal.self, Lifecycle.self, UserProfile.self, Edge.self, AEPEdgeIdentity.Identity.self, Consent.self, AEPIdentity.Identity.self, Analytics.self], {
+        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+    })
+  ...
+}
+```
+
+**Objective-C**
+
+```objectivec
+// AppDelegate.m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+  }];
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
+
+**Objective-C**
+
+```objectivec
+#import "AppDelegate.h"
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+  [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    ...
+  [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+**Swift**
+
+```swift
+import ACPCore
+import ACPUserProfile
+...
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
+  func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
+    ACPCore.setLogLevel(.debug)
+        ACPCore.configure(withAppId: "<your_environment_id_from_Launch>")
+    ...
+    ACPUserProfile.registerExtension()
+        ACPIdentity.registerExtension()
+        ACPLifecycle.registerExtension()
+        ACPSignal.registerExtension()
+        ACPCore.start {
+        ACPCore.lifecycleStart(nil)
+        }
+    ...
+    return true
+  }
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+For React Native apps, initialize the SDK using native code in your `AppDelegate` \(iOS\) and `MainApplication` \(Android\).
+
+### iOS
+
+```objectivec
+#import "ACPCore.h"
+#import "ACPUserProfile.h"
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
+#import "ACPSignal.h"
+...
+@implementation AppDelegate
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"<your_environment_id_from_Launch>"];
+    [ACPUserProfile registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPLifecycle registerExtension];
+    [ACPSignal registerExtension];
+
+    const UIApplicationState appState = application.applicationState;
+    [ACPCore start:^{
+      // only start lifecycle if the application is not in the background
+      if (appState != UIApplicationStateBackground) {
+        [ACPCore lifecycleStart:nil];
+      }
+    }];
+    ...
+  return YES;
+}
+
+@end
+```
+
+### Android
+
+```java
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.InvalidInitException;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.UserProfile;
+...
+import android.app.Application;
+...
+public class MainApplication extends Application implements ReactApplication {
+  ...
+  @Override
+  public void on Create(){
+    super.onCreate();
+    ...
+    MobileCore.setApplication(this);
+    MobileCore.setLogLevel(LoggingMode.DEBUG);
+    MobileCore.setWrapperType(WrapperType.REACT_NATIVE);
+
+    try {
+      UserProfile.registerExtension();
+      Identity.registerExtension();
+      Lifecycle.registerExtension();
+      Signal.registerExtension();
+      MobileCore.start(new AdobeCallback () {
+          @Override
+          public void call(Object o) {
+            MobileCore.configureWithAppID("<your_environment_id_from_Launch>");
+         }
+      });
+    } catch (InvalidInitException e) {
+      ...
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+For Flutter apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+The initialization code is located in the [Flutter ACPCore Github README](https://github.com/adobe/flutter_acpcore).
+{% endtab %}
+
+{% tab title="Cordova" %}
+For Cordova apps, initialize the SDK using native code in your `AppDelegate` and `MainApplication` in iOS and Android, respectively.
+
+**iOS**
+
+```text
+// Import the SDK
+#import "ACPCore.h"
+#import "ACPLifecycle.h"
+#import "ACPIdentity.h"
+#import "ACPSignal.h"
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {  
+  // make sure to set the wrapper type at the beginning of initialization
+  [ACPCore setWrapperType:ACPMobileWrapperTypeCordova];
+
+  //...
+  [ACPCore configureWithAppId:@"yourAppId"];
+  [ACPIdentity registerExtension];
+  [ACPLifecycle registerExtension];
+  [ACPSignal registerExtension];
+  // Register any additional extensions
+
+  [ACPCore start:nil];
+}
+```
+
+**Android**
+
+```java
+// Import the SDK
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Identity;
+import com.adobe.marketing.mobile.Lifecycle;
+import com.adobe.marketing.mobile.Signal;
+import com.adobe.marketing.mobile.WrapperType;
+
+@Override
+public void onCreate() {
+  //...
+  MobileCore.setApplication(this);
+  MobileCore.configureWithAppID("yourAppId");
+
+  // make sure to set the wrapper type at the beginning of initialization
+  MobileCore.setWrapperType(WrapperType.CORDOVA);
+
+  try {
+    Identity.registerExtension();
+    Lifecycle.registerExtension();
+    Signal.registerExtension();
+
+    // Register any additional extensions
+  } catch (Exception e) {
+    // handle exception
+  }
+
+  MobileCore.start(null);
+}
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+For Unity apps, initialize the SDK using the following code in the start function of the `MainScript`.
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        if (Application.platform == RuntimePlatform.Android) {
+            ACPCore.SetApplication();
+        }
+
+        ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.VERBOSE);
+        ACPCore.SetWrapperType();
+        ACPIdentity.registerExtension();
+        ACPLifecycle.registerExtension();
+        ACPSignal.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+For Xamarin Forms applications, the SDK initialization differs, depending on the platform being targeted.
+
+**iOS**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Register("AppDelegate")]
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+  //
+  // This method is invoked when the application has loaded and is ready to run. In this
+  // method you should instantiate the window, load the UI into it and then make the window
+  // visible.
+  //
+  // You have 17 seconds to return from this method, or iOS will terminate your application.
+  //
+  public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+  {
+    global::Xamarin.Forms.Forms.Init();
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(ACPMobileWrapperType.Xamarin);
+
+    // set launch config
+    ACPCore.ConfigureWithAppID("your-app-id");
+
+    // register SDK extensions
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+  }
+```
+
+**Android**
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+
+[Activity(Label = "TestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    LoadApplication(new App());
+
+    // set the wrapper type
+    ACPCore.SetWrapperType(WrapperType.Xamarin);
+
+    // register SDK extensions
+    ACPCore.Application = this.Application;
+    ACPIdentity.RegisterExtension();
+    ACPLifecycle.RegisterExtension();
+    ACPSignal.RegisterExtension();
+
+    // start core
+    ACPCore.Start(null);
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## registerURLHandler 
+
+Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
+
+{% tabs %}
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective C**
+
+**Syntax**
+
+```objectivec
++ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+```
+
+**Example**
+
+```objectivec
+[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
+    ...
+}];
+```
+{% endtab %}
+{% endtabs %}
+
+## resetIdentities
+
+The `resetIdentities` method requests that each extension resets the identities it owns and each extension responds to this request uniquely. For more details, check the `resetIdentities` API reference on each of the extensions you use.
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
 
 Note, this method is only available in Mobile Core v.1.8.0 and above.
 
@@ -1134,31 +1180,8 @@ MobileCore.resetIdentities();
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-Note, this method is only available in Mobile Core v.1.8.0 and above.
-
-### resetIdentities
-
-**Syntax**
-
-```swift
-@objc(resetIdentities)
-static func resetIdentities()
-```
-
-**Example**
-
-```objectivec
-[ACPCore resetIdentities];
-```
-
+{% tab title="iOS (AEP 3.x)" %}
 **Swift**
-
-Note, this method is only available in Mobile Core v.1.8.0 and above.
-
-### resetIdentities
 
 **Syntax**
 
@@ -1172,11 +1195,516 @@ static func resetIdentities()
 MobileCore.resetIdentities()
 ```
 
-_since AEPCore v3.1.0_
+**Objective-C**
+
+**Syntax**
+
+```objectivec
+@objc(resetIdentities)
+static func resetIdentities()
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore resetIdentities];
+```
+
 {% endtab %}
 {% endtabs %}
 
-## Set icons for local notification \(Android only\)
+## setAdvertisingIdentifier
+
+The advertising ID is preserved between app upgrades, is saved and restored during the standard application backup process, available via [Signals](signals/), and is removed at uninstall.
+
+For more information about identity in Mobile Core, please read the documentation on the [identity APIs](identity/identity-api-reference.md#setadvertisingidentifier).
+
+## setAppGroup \(iOS only\)
+
+You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
+
+{% hint style="info" %}
+This API _must_ be called in `AppDidFinishLaunching` and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
+{% endhint %}
+
+{% tabs %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
+**Syntax**
+
+```swift
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```swift
+MobileCore.setAppGroup("appGroupId")
+```
+
+**Objective-C**
+
+**Syntax**
+```swift
+@objc(setAppGroup:)
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore setAppGroup:@"app-group-id"];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+**Objective-C**
+
+**Syntax**
+
+```swift
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```text
+[ACPCore setAppGroup:@"app-group-id"];
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
+public static func setAppGroup(_ group: String?)
+```
+
+**Example**
+
+```swift
+ACPCore.setAppGroup("app-group-id")
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+**Syntax**
+
+```csharp
+public static void SetAppGroup (string appGroup);
+```
+
+**Example**
+
+```csharp
+ACPCore.SetAppGroup("app_group");
+```
+{% endtab %}
+{% endtabs %}
+
+## setApplication \(Android only\)
+
+When building Android applications, the `android.app.Application` reference must be passed to Mobile SDK, which allows Mobile SDK to access the `android.app.Context` and monitor the lifecycle of the Android application.
+
+{% hint style="warning" %}
+Android applications must call `MobileCore.setApplication()` before calling any other Mobile SDK API.
+{% endhint %}
+
+You can use the `setApplication` method to pass the Android `Application` instance to Mobile SDK.
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+**Syntax**
+
+```java
+public static void setApplication(final Application app)
+```
+
+**Example**
+
+```java
+public class CoreApp extends Application {
+
+   @Override
+   public void onCreate() {
+      super.onCreate();
+      MobileCore.setApplication(this);
+      MobileCore.start(null);
+   }
+}
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+**Example**
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+    ACPCore.Application = this.Application;
+    ACPCore.Start(null);
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
+
+
+
+## setLogLevel
+
+The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. This allows application developers to filter the logged messages based on the current logging mode.
+
+Application developers can use the `setLogLevel` method to filter the log messages that are coming from the Mobile SDK.
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
+
+* ERROR
+* WARNING
+* DEBUG
+* VERBOSE / TRACE 
+
+When debugging on iOS, you can use `LogLevel.verbose` to enable all the logging messages that are coming from Mobile SDK and partner extensions. Similarly, on Android, you can use `LoggingMode.VERBOSE` to enable all the logging messages that are coming from Mobile SDK and partner extensions.
+
+In a production application, you should use a less verbose logging mode, such as error-level logging.
+
+By default, Mobile SDK logging mode is set to `LoggingMode.ERROR` for Android and `LogLevel.error`on iOS.
+
+{% hint style="info" %}
+* On **Android**, Mobile SDK uses the `android.util.Log` class to log messages.
+* On **iOS**, Mobile SDK uses `NSLog` to messages to Apple System Log facility.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+**Syntax**
+
+```java
+public static void setLogLevel(LoggingMode mode)
+```
+
+**Example**
+
+```java
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.MobileCore;
+
+MobileCore.setLogLevel(LoggingMode.VERBOSE);
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+**Syntax**
+
+```swift
+ public static func setLogLevel(_ level: LogLevel)
+```
+
+**Example**
+
+```swift
+import AEPCore
+import AEPServices
+
+  MobileCore.setLogLevel(.trace)
+```
+
+**Objective C**
+
+**Syntax**
+
+```swift
+ @objc(setLogLevel:)
+ public static func setLogLevel(_ level: LogLevel)
+```
+
+**Example**
+
+```objectivec
+@import AEPCore;
+@import AEPServices;
+
+ [AEPMobileCore setLogLevel: AEPLogLevelTrace];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective-C**
+
+**Syntax**
+
+```swift
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```text
+#import "ACPCore.h"
+
+[ACPCore setLogLevel: AEPLogLevelTrace];
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```swift
+import ACPCore
+
+ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**Javascript**
+
+**Syntax**
+
+```jsx
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```jsx
+import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
+ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+**Dart**
+
+**Syntax**
+
+```dart
+(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```
+
+**Example**
+
+```dart
+import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
+FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+**Cordova**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
+
+* ACPCore.ACPMobileLogLevelError
+* ACPCore.ACPMobileLogLevelWarning
+* ACPCore.ACPMobileLogLevelDebug
+* ACPCore.ACPMobileLogLevelVerbose
+
+**Syntax**
+
+```jsx
+ACPCore.setLogLevel = function(logLevel, success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
+ MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+**C\#**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows:
+
+* ACPCore.ACPMobileLogLevel.ERROR
+* ACPCore.ACPMobileLogLevel.WARNING
+* ACPCore.ACPMobileLogLevel.DEBUG
+* ACPCore.ACPMobileLogLevel.VERBOSE
+
+**Syntax**
+
+```csharp
+public static void SetLogLevel(ACPMobileLogLevel logLevel)
+```
+
+**Example**
+
+```csharp
+ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows for iOS:
+
+* ACPMobileLogLevel.Error;
+* ACPMobileLogLevel.Warning;
+* ACPMobileLogLevel.Debug;
+* ACPMobileLogLevel.Verbose;
+
+From least to most verbose, the order of Mobile SDK logging modes is as follows for Android:
+
+* LoggingMode.Error;
+* LoggingMode.Warning;
+* LoggingMode.Debug;
+* LoggingMode.Verbose;
+
+**iOS syntax**
+
+```csharp
+public static ACPMobileLogLevel LogLevel { get, set }
+```
+
+**Android syntax**
+
+```csharp
+public unsafe static LoggingMode LogLevel { get, set }
+```
+
+**iOS example**
+
+```csharp
+ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
+```
+
+**Android example**
+
+```csharp
+ACPCore.LogLevel = LoggingMode.Verbose;
+```
+{% endtab %}
+{% endtabs %}
+
+## setPushIdentifier
+
+This API sets the device token for push notifications in the SDK. If the current SDK privacy status is `optedout`, the push identifier is not set.
+
+{% hint style="info" %}
+It is recommended to call `setPushIdentifier` on each application launch to ensure the most up-to-date device token is set to the SDK. If no device token is available, `null`/`nil` should be passed.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+**Java**
+
+**Syntax**
+
+```java
+public static void setPushIdentifier(final String pushIdentifier);
+```
+
+* _pushIdentifier_  is a string that contains the device token for push notifications.
+
+**Example**
+
+```java
+//Retrieve the token from either GCM or FCM, and pass it to the SDK
+MobileCore.setPushIdentifier(token);
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+**Syntax**
+
+```swift
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+**Example**
+
+```objectivec
+MobileCore.setPushIdentifier(deviceToken)
+```
+
+**Objective-C**
+
+**Syntax**
+
+```swift
+ @objc(setPushIdentifier:)
+ public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+**Example**
+
+```objectivec
+ [AEPMobileCore setPushIdentifier:deviceToken];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective-C**
+
+**Syntax**
+
+```text
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_  is a string that contains the device token for push notifications.
+
+**Example**
+
+```objectivec
+// Set the deviceToken that the APNS has assigned to the device
+[ACPCore setPushIdentifier:deviceToken];
+```
+
+**Swift**
+
+**Syntax**
+
+```swift
+@objc(setPushIdentifier:)
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_  is a string that contains the device token for push notifications.
+
+**Example**
+
+```swift
+// Set the deviceToken that the APNs has assigned to the device
+MobileCore.setPushIdentifier(deviceToken)
+```
+{% endtab %}
+{% endtabs %}
+
+## setSmallIconResourceID / setLargeIconResourceID \(Android only\)
 
 You can set the small and large icons that will be used for notifications that are created by the SDK. The small icon appears in the status bar and is the secondary image that is displayed when the user sees the complete notification in the notification center. The large icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -1250,566 +1778,484 @@ public unsafe static void SetLargeIconResourceID (int resourceID);
 {% endtab %}
 {% endtabs %}
 
-## Logging
+## trackAction
 
-The logging APIs allow log messages to be tagged and filtered with the Mobile SDK log messages. This allows application developers to filter the logged messages based on the current logging mode.
+Actions are events that occur in your application. You can use the `trackAction` method to track and measure an action. Each action has one or more corresponding metrics that are incremented each time the event occurs. For example, you can use an action to track new subscriptions, every time an article is viewed, or every time a level is completed.
 
-Application developers can use the `setLogLevel` method to filter the log messages that are coming from the Mobile SDK.
-
-From least to most verbose, the order of Mobile SDK logging modes is as follows:
-
-* ERROR
-* WARNING
-* DEBUG
-* VERBOSE
-
-When debugging on iOS, you can use `LogLevel.verbose` to enable all the logging messages that are coming from Mobile SDK and partner extensions. Similarly, on Android, you can use `LoggingMode.VERBOSE` to enable all the logging messages that are coming from Mobile SDK and partner extensions.
-
-In a production application, you should use a less verbose logging mode, such as error-level logging.
-
-By default, Mobile SDK logging mode is set to `LoggingMode.ERROR` for Android and `LogLevel.error`on iOS.
+{% hint style="warning" %}
+You want to use the `trackAction` method when you want to track an occurring event. In addition to the action name, you can also send context data with each `trackAction` call.
+{% endhint %}
 
 {% hint style="info" %}
-* On **Android**, Mobile SDK uses the `android.util.Log` class to log messages.
-* On **iOS**, Mobile SDK uses `NSLog` to messages to Apple System Log facility.
+If you installed and configured the Adobe Analytics extension, this method sends an Adobe Analytics action tracking hit with the provided optional context data.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
 
-### setLogLevel
-
 **Syntax**
 
 ```java
-public static void setLogLevel(LoggingMode mode)
+public static void trackAction(final String action, final Map<String, String> contextData)
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```java
-import com.adobe.marketing.mobile.LoggingMode;
-import com.adobe.marketing.mobile.MobileCore;
-
-MobileCore.setLogLevel(LoggingMode.VERBOSE);
+Map<String, String> additionalContextData = new HashMap<String, String>();
+additionalContextData.put("customKey", "value");
+MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
 **Swift**
 
-#### setLogLevel
-
 **Syntax**
 
 ```swift
- public static func setLogLevel(_ level: LogLevel)
+ static func track(action: String?, data: [String: Any]?)
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
 ```swift
- MobileCore.setLogLevel(.trace)
+ MobileCore.track(action: "action name", data: ["key": "value"])
 ```
 
-**Objective C**
-
-#### setLogLevel
+**Objective-C**
 
 **Syntax**
 
 ```swift
- @objc(setLogLevel:)
- public static func setLogLevel(_ level: LogLevel)
+ @objc(trackAction:data:)
+ static func track(action: String?, data: [String: Any]?)
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
 
 **Example**
 
-```text
- [AEPMobileCore setLogLevel: AEPLogLevelTrace];
+```objectivec
+  [AEPMobileCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### setLogLevel
-
 **Syntax**
 
-```swift
-(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+```text
++ (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) contextData;
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```text
-#import "ACPCore.h"
-
-[ACPCore setLogLevel: AEPLogLevelTrace];
+ [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
 
-### setLogLevel
-
 **Syntax**
 
 ```swift
-(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+@objc(trackAction:data:)
+static func track(action: String?, data: [String: Any]?)
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```swift
-import ACPCore
-
-ACPCore.setLogLevel(ACPMobileLogLevel.verbose);
+ACPCore.track(action: "action name", data: ["key": "value"])
 ```
 {% endtab %}
 
 {% tab title="React Native" %}
 **Javascript**
 
-### setLogLevel
-
 **Syntax**
 
 ```jsx
-(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+trackAction(action?: String, contextData?: { string: string });
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```jsx
-import {ACPMobileLogLevel} from '@adobe/react-native-acpcore';
-ACPCore.setLogLevel(ACPMobileLogLevel.VERBOSE);
+ACPCore.trackAction("action name", {"key": "value"});
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
 **Dart**
 
-### setLogLevel
-
 **Syntax**
 
 ```dart
-(void) setLogLevel: (ACPMobileLogLevel) logLevel;
+Future<void> trackAction (String action, {Map<String, String> contextData});
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```dart
-import 'package:flutter_acpcore/src/acpmobile_logging_level.dart';
-FlutterACPCore.setLogLevel(ACPLoggingLevel.VERBOSE);
+FlutterACPCore.trackAction("action name",  data: {"key": "value"});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+**C\#**
+
+**Syntax**
+
+```csharp
+public static void TrackAction(string name, Dictionary<string, string> contextDataDict)
+```
+
+* * _name_ contains the name of the action to track.
+* _contextDataDict_ contains the context data to attach on the hit.
+
+**Example**
+
+```csharp
+var contextData = new Dictionary<string, string>();
+contextData.Add("key", "value");
+ACPCore.TrackAction("action", contextData);
 ```
 {% endtab %}
 
 {% tab title="Cordova" %}
 **Cordova**
 
-From least to most verbose, the order of Mobile SDK logging modes is as follows:
-
-* ACPCore.ACPMobileLogLevelError
-* ACPCore.ACPMobileLogLevelWarning
-* ACPCore.ACPMobileLogLevelDebug
-* ACPCore.ACPMobileLogLevelVerbose
-
-### setLogLevel
-
 **Syntax**
 
 ```jsx
-ACPCore.setLogLevel = function(logLevel, success, fail);
+ACPCore.trackAction = function(action, contextData, success, fail);
 ```
+
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on this hit.
+* _success_ callback is invoked when trackAction executes successfully.
+* _fail_ callback is invoked when trackAction fails.
 
 **Example**
 
 ```jsx
-ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
- MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-**C\#**
-
-From least to most verbose, the order of Mobile SDK logging modes is as follows:
-
-* ACPCore.ACPMobileLogLevel.ERROR
-* ACPCore.ACPMobileLogLevel.WARNING
-* ACPCore.ACPMobileLogLevel.DEBUG
-* ACPCore.ACPMobileLogLevel.VERBOSE
-
-### setLogLevel
-
-**Syntax**
-
-```csharp
-public static void SetLogLevel(ACPMobileLogLevel logLevel)
-```
-
-**Example**
-
-```csharp
-ACPCore.SetLogLevel(ACPCore.ACPMobileLogLevel.ERROR);
+ACPCore.trackAction("cordovaAction", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
 
 {% tab title="Xamarin" %}
 **C\#**
 
-From least to most verbose, the order of Mobile SDK logging modes is as follows for iOS:
-
-* ACPMobileLogLevel.Error;
-* ACPMobileLogLevel.Warning;
-* ACPMobileLogLevel.Debug;
-* ACPMobileLogLevel.Verbose;
-
-From least to most verbose, the order of Mobile SDK logging modes is as follows for Android:
-
-* LoggingMode.Error;
-* LoggingMode.Warning;
-* LoggingMode.Debug;
-* LoggingMode.Verbose;
-
-### setLogLevel
-
-**iOS syntax**
+**iOS Syntax**
 
 ```csharp
-public static ACPMobileLogLevel LogLevel { get, set }
+public static void TrackAction (string action, NSMutableDictionary<NSString, NSString> data);
 ```
 
-**Android syntax**
+* _action_ contains the name of the action to track.
+* _data_ contains the context data to attach on the hit.
+
+**Android Syntax**
 
 ```csharp
-public unsafe static LoggingMode LogLevel { get, set }
+public unsafe static void TrackAction (string action, IDictionary<string, string> contextData);
 ```
 
-**iOS example**
+* _action_ contains the name of the action to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+**iOS**
 
 ```csharp
-ACPCore.LogLevel = ACPMobileLogLevel.Verbose;
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackAction("action", data);
 ```
 
-**Android example**
+**Android**
 
 ```csharp
-ACPCore.LogLevel = LoggingMode.Verbose;
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackAction("action", data);
 ```
 {% endtab %}
 {% endtabs %}
+
+## trackState
+
+States represent screens or views in your application. The `trackState` method needs to be called every time a new state is displayed in your application. For example, this method should be called when a user navigates from the home page to the news feed. This method sends an Adobe Analytics state tracking hit with optional context data.
+
+{% hint style="info" %}
+If you installed and configured the Adobe Analytics extension, the `trackState` method increments page views and an Adobe Analytics state tracking hit with the provided optional context data.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
 **Java**
 
-### getLogLevel
+In Android, `trackState` is typically called every time a new `Activity` is loaded.
 
 **Syntax**
 
 ```java
-public static LoggingMode getLogLevel()
+public static void trackState(final String state, final Map<String, String> contextData)
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```java
-LoggingMode mode = MobileCore.getLogLevel();
+Map<String, String> additionalContextData = new HashMap<String, String>();        
+additionalContextData.put("customKey", "value");
+MobileCore.trackState("homePage", additionalContextData);
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+**Syntax**
+
+```swift
+ static func track(state: String?, data: [String: Any]?)
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```swift
+ MobileCore.track(state: "state name", data: ["key": "value"])
+```
+
+**Objective-C**
+
+**Syntax**
+
+```swift
+ @objc(trackState:data:)
+ static func track(state: String?, data: [String: Any]?)
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on this hit.
+
+**Example**
+
+```objectivec
+  [AEPMobileCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective-C**
 
-### getLogLevel
-
 **Syntax**
 
 ```objectivec
-(ACPMobileLogLevel) logLevel;
+(void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```objectivec
-var logLevel:ACPMobileLogLevel = [ACPCore logLevel];
+ [ACPCore trackState:@"state name" data:@{@"key":@"value"}];
 ```
 
 **Swift**
 
-### getLogLevel
-
 **Syntax**
 
 ```swift
-(ACPMobileLogLevel) logLevel;
++ (void) trackState: (nullable NSString*) state data: (nullable NSDictionary*) contextData;
 ```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```swift
-let logLevel:ACPMobileLogLevel = ACPCore.logLevel();
+ACPCore.trackState("state name", data: ["key": "value"])
 ```
 {% endtab %}
 
 {% tab title="React Native" %}
 **Javascript**
 
-### getLogLevel
+**Syntax**
+
+```jsx
+trackState(state?: String, contextData?: { string: string });
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Example**
 
 ```jsx
-ACPCore.getLogLevel().then(level => console.log("AdobeExperienceSDK: Log Level = " + level));
+ACPCore.trackState("state name", {"key": "value"});
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+**Dart**
+
+**Syntax**
+
+```dart
+Future<void> trackState (String state, {Map<String, String> contextData});
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+
+**Example**
+
+```dart
+FlutterACPCore.trackState("state name",  data: {"key1: "value"})
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+**Cordova**
+
+**Syntax**
+
+```jsx
+ACPCore.trackState = function(state, contextData, success, fail);
+```
+
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
+* _success_ callback is invoked when trackState executes successfully.
+* _fail_ callback is invoked when trackState fails.
+
+**Example**
+
+```jsx
+ACPCore.trackState("cordovaState", {"cordovaKey":"cordovaValue"}, successCallback, errorCallback);
 ```
 {% endtab %}
 
 {% tab title="Unity" %}
 **C\#**
 
-### getLogLevel
+**Syntax**
+
+```csharp
+public static void TrackState(string name, Dictionary<string, string> contextDataDict)
+```
+
+* _state_ contains the name of the state to track.
+* _contextDataDict_ contains the context data to attach on the hit.
 
 **Example**
 
 ```csharp
-ACPCore.ACPMobileLogLevel logLevel = ACPCore.GetLogLevel();
+var dict = new Dictionary<string, string>();
+dict.Add("key", "value");
+ACPCore.TrackState("state", dict);
 ```
 {% endtab %}
 
 {% tab title="Xamarin" %}
 **C\#**
-
-### getLogLevel
-
-**Example**
-
-```csharp
-var logLevel = ACPCore.LogLevel;
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="Android" %}
-**Java**
-
-The `MobileCore` logging APIs use the `android.util.Log` APIs to log messages to Android. Based on the `LoggingMode` that is passed to `MobileCore.log()`, the following Android method is called:
-
-* `LoggingMode.VERBOSE` uses `android.util.Log.v`
-* `LoggingMode.DEBUG` uses `android.util.Log.d`
-* `LoggingMode.WARNING` uses `android.util.Log.w`
-* `LoggingMode.ERROR` uses `android.util.Log.e`
-
-All log messages from the Adobe Experience SDK to Android use the same log tag of `AdobeExperienceSDK`. For example, if logging an error message is using `MobileCore.log()`, the call to `android.util.Log.e` looks like `Log.e("AdobeExperienceSDK", tag + " - " + message)`.
-
-### log
-
-**Syntax**
-
-```java
-public static void log(final LoggingMode mode, final String tag, final String message)
-```
-
-**Example**
-
-```java
-MobileCore.log(LoggingMode.DEBUG, "MyClassName", "Provided data was null");
-```
-
-**Output**
-
-```text
-D/AdobeExperienceSDK: MyClassName - Provided data was null
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-The log messages from the Adobe Experience SDK are printed to the Apple System Log facility and use a common format that contains the tag `AdobeExperienceSDK`. For example, if logging an error message using `ACPCore.log()`, the printed output looks like `[AdobeExperienceSDK ERROR <tag>]: message`.
-
-### log
-
-**Syntax**
-
-```text
-+ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
-```
-
-**Example**
-
-```text
-[ACPCore log: ACPMobileLogLevelDebug, tag:@"MyClassName", message:@"Provided data was nil"];
-```
-
-**Output example**
-
-```text
-[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
-```
-
-**Swift**
-
-### log
-
-**Syntax**
-
-```swift
-+ (void) log: (ACPMobileLogLevel) logLevel tag: (nonnull NSString*) tag message: (nonnull NSString*) message;
-```
-
-**Example**
-
-```swift
-ACPCore.log(ACPMobileLogLevel.debug, tag: "MyClassName", message: "Provided data was nil");
-```
-
-**Output example**
-
-```text
-[AdobeExperienceSDK DEBUG <MyClassName>]: Provided data was nil
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `ACPMobileLogLevel`.
-
-**Example**
-
-```jsx
-ACPCore.log(ACPMobileLogLevel.ERROR, "React Native Tag", "React Native Message");
-```
-
-Note: `ACPMobileLogLevel` contains the following getters:
-
-```jsx
-const ERROR = "ACP_LOG_LEVEL_ERROR";
-const WARNING = "ACP_LOG_LEVEL_WARNING";
-const DEBUG = "ACP_LOG_LEVEL_DEBUG";
-const VERBOSE = "ACP_LOG_LEVEL_VERBOSE";
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-The log messages from the Adobe Experience SDK are printed to the Log facility and use a common format that contains the tag `AdobeExperienceSDK`.
 
 **iOS syntax**
 
 ```csharp
-ACPCore.Log(ACPMobileLogLevel.Error, "xamarin tag", "xamarin message");
+public static void TrackState (string state, NSMutableDictionary<NSString, NSString> data);
 ```
 
-```text
-[AdobeExperienceSDK ERROR <xamarin tag>]: xamarin message
-```
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
 **Android syntax**
 
 ```csharp
-ACPCore.Log(LoggingMode.Error, "xamarin tag", "xamarin message");
+public unsafe static void TrackState (string state, IDictionary<string, string> contextData);
 ```
 
-```text
-[AdobeExperienceSDK] xamarin tag - xamarin message
-```
-{% endtab %}
-{% endtabs %}
+* _state_ contains the name of the state to track.
+* _contextData_ contains the context data to attach on the hit.
 
-## Handle open URL action
-
-Mobile SDK allows you to add a callback function that is triggered before the [`open url`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine#consequence-types) action occurs. If the callback function returns **Yes**, the SDK does not complete the `open url` action. If the callback function returns **No**, the SDK completes the `open url` action.
-
-{% tabs %}
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective C**
-
-### registerURLHandler
-
-**Syntax**
-
-```objectivec
-+ (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
-```
-
-**Example**
-
-```objectivec
-[ACPCore registerURLHandler:^BOOL(NSString * _Nullable url) {
-    ...
-}];
-```
-{% endtab %}
-{% endtabs %}
-
-## Set app group \(iOS only\)
-
-You can use the `setAppGroup` method to set the app group, which is used to share user defaults and files among the containing app and the extension apps.
-
-{% hint style="info" %}
-This API _must_ be called in `AppDidFinishLaunching` and before any other interactions with the Adobe Experience SDK have happened. Only the first call to this function will have any effect.
-{% endhint %}
-
-{% tabs %}
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-### setAppGroup
-
-**Syntax**
-
-```swift
-public static func setAppGroup(_ group: String?)
-```
-
-**Example**
-
-```text
-[ACPCore setAppGroup:@"app-group-id"];
-```
-
-**Swift**
-
-### setAppGroup
-
-**Syntax**
-
-```swift
-public static func setAppGroup(_ group: String?)
-```
-
-**Example**
-
-```swift
-ACPCore.setAppGroup("app-group-id")
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-**C\#**
-
-### setAppGroup
-
-**Syntax**
+**iOS example**
 
 ```csharp
-public static void SetAppGroup (string appGroup);
+var data = new NSMutableDictionary<NSString, NSString>
+{
+  ["key"] = new NSString("value")
+};
+ACPCore.TrackState("state", data);
 ```
 
-**Example**
+**Android example**
 
 ```csharp
-ACPCore.SetAppGroup("app_group");
+var data = new Dictionary<string, string>();
+data.Add("key", "value");
+ACPCore.TrackState("state", data);
 ```
 {% endtab %}
 {% endtabs %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Public classes
 
@@ -1871,6 +2317,86 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
   }
 });
 ```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+
+The `AEPError` enum shows the errors that can be passed to a completion handler callback from any API which uses one:
+
+* `case unexpected` - An unexpected error occured.
+* `case callbackTimeout` - The timeout was met.
+* `case callbackNil` -  The provided callback function is nil.
+* `case none` -  There was no error, used when an error return type is required but there was no error.
+* `case serverError` - There was a server error.
+* `case networkError` - There was a network error.
+* `case invalidRequest` - There was an invalid request.
+* `case invalidResponse` - There was an invalid response.
+* `case errorExtensionNotInitialized` - The extension is not initialized.
+
+**Examples**
+
+**Swift**
+
+```swift
+MobileCore.getSdkIdentities { (content, error) in
+    if let error = error, let aepError = error as? AEPError {
+        switch aepError {
+        case .unexpected:
+          // Handle unexpected error
+        case .callbackTimeout:
+          // Handle callback timeout error
+        case .callbackNil:
+          // Handle callback being nil error
+        case .none:
+          // no error
+        case .serverError:
+          // handle server error
+        case .networkError:
+          // handle network error
+        case .invalidRequest:
+          // handle invalid request error
+        case .invalidResponse:
+          // handle invalid response error
+        case .errorExtensionNotInitialized:
+          // handle extension not initialized error
+        @unknown default:
+          // handle unknown error
+        }
+    }
+    ...
+}
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileCore getSdkIdentities:^(NSString * _Nullable content, NSError * _Nullable error) {
+    if (error) {
+        if (error.code == AEPErrorUnexpected) {
+          // Handle unexpected error
+        } else if (error.code == AEPErrorCallbackTimeout) {
+          // Handle callback timeout error
+        } else if (error.code == AEPErrorCallbackNil) {
+          // Handle callback being nil error
+        } else if (error.code == AEPErrorNone) {
+          // no error     
+        } else if (error.code == AEPErrorServerError) {
+          // handle server error
+        } else if (error.code == AEPErrorNetworkError) {
+          // handle network error 
+        } else if (error.code == AEPErrorInvalidRequest) {
+          // handle invalid request error
+        } else if (error.code == AEPErrorInvalidResponse) {
+          // handle invalid response error  
+        } else if (error.code == AEPErrorErrorExtensionNotInitialized) {
+          // handle extension not intialized error  
+        }
+    }
+
+    ...
+}];
+```
+
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}

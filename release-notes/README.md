@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Oct 05, 2021
+
+### Android MobileServices 1.1.5
+
+* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
+
 ## Sep 20, 2021
 
 ### iOS 15 Compatibility
