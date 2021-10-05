@@ -218,25 +218,16 @@ This class encapsulates the decision `activityId`, `placementId` and `itemCount`
 
 ```java
 final public class DecisionScope {
-    final private String activityId;
-    final private String placementId;
-    final private int itemCount;
-
+    
     public DecisionScope(final String activityId, final String placementId) {...}
 
     public DecisionScope(final String activityId, final String placementId, final int itemCount) {...}
 
-    public String getActivityId() {
-        return activityId;
-    }
+    public String getActivityId() {...}
 
-    public String getPlacementId() {
-        return placementId;
-    }
+    public String getPlacementId() {...}
 
-    public int getItemCount() {
-        return this.itemCount;
-    }
+    public int getItemCount() {...}
 ```
 
 ### Proposition
@@ -245,24 +236,14 @@ This class represents the proposition received from the offer decisioning servic
 
 ```java
 public class Proposition {
-    final private String id;
-    final private List<Offer> offers;
-    final private String scopeString;
-    final private DecisionScope decisionScope;
 
     Proposition(final String id, final List<Offer> offers, final String scopeString, final DecisionScope decisionScope) {...}
 
-    public String getId() {
-        return id;
-    }
+    public String getId() {...}
 
-    List<Offer> getOffers() {
-        return offers;
-    }
+    List<Offer> getOffers() {...}
 
-    public String getScopeString() {
-        return scopeString;
-    }
+    public String getScopeString() {...}
 ```
 
 ### Offer
@@ -271,45 +252,22 @@ This class represents the offer option received from the offer decisioning servi
 
 ```java
 public class Offer {
-    final private String id;
-    final private String etag;
-    final private String schema;
-    final private OfferType type;
-    final private List<String> language;
-    final private String content;
-    final private Map<String, String> characteristics;
-
-    WeakReference<Proposition> propositionReference;
 
     Offer(final String id, final String etag, final String schema, final OfferType type, final List<String> language, final String content, final Map<String, String> characteristics) {...}
 
-    public String getId() {
-        return id;
-    }
+    public String getId() {...}
 
-    public String getEtag() {
-        return etag;
-    }
+    public String getEtag() {...}
 
-    public OfferType getType() {
-        return type;
-    }
+    public OfferType getType() {...}
 
-    public List<String> getLanguage() {
-        return language;
-    }
+    public List<String> getLanguage() {...}
 
-    public String getContent() {
-        return content;
-    }
+    public String getContent() {...}
 
-    public Map<String, String> getCharacteristics() {
-        return characteristics;
-    }
+    public Map<String, String> getCharacteristics() {...}
 
-    public Proposition getProposition() {
-        return propositionReference.get();
-    }
+    public Proposition getProposition() {...}
 ```
 
 ### OfferType
@@ -335,33 +293,16 @@ An instance of `OfferExperienceEvent` can be supplied in the prefetch API when a
 
 ```java
 public class OfferExperienceEvent {
-    private final Map<String, Object> xdmData;
-    private final Map<String, Object> data;
-    private final String datasetIdentifier;
+    
+    public OfferExperienceEvent(final Map<String, Object> xdmData) {...}
 
-    public OfferExperienceEvent(final Map<String, Object> xdmData) {
-        this.xdmData = xdmData;
-        this.data = new HashMap<>();
-        this.datasetIdentifier = "";
-    }
+    public OfferExperienceEvent(final Map<String, Object> xdmData, final Map<String, Object> data, final String datasetIdentifier) {...}
 
-    public OfferExperienceEvent(final Map<String, Object> xdmData, final Map<String, Object> data, final String datasetIdentifier) {
-        this.xdmData = xdmData;
-        this.data = data;
-        this.datasetIdentifier = datasetIdentifier;
-    }
+    public Map<String, Object> getXdmData() {...}
 
-    public Map<String, Object> getXdmData() {
-        return xdmData;
-    }
+    public Map<String, Object> getData() {...}
 
-    public Map<String, Object> getData() {
-        return data;
-    }
-
-    public String getDatasetIdentifier() {
-        return datasetIdentifier;
-    }
+    public String getDatasetIdentifier() {...}
 }
 ```
 {% endtab %}
@@ -376,11 +317,7 @@ public class DecisionScope{
     public let placementId: String
     public let itemCount: Int
 
-    public init(activityId: String, placementId: String, itemCount: Int = 1) {
-        self.activityId = activityId
-        self.placementId = placementId
-        self.itemCount = itemCount
-    }
+    public init(activityId: String, placementId: String, itemCount: Int = 1) {...}
 }
 ```
 
@@ -447,11 +384,7 @@ public class OfferExperienceEvent: NSObject {
     ///   - xdm:  XDM formatted data for this event, passed as a raw XDM Schema data dictionary.
     ///   - data: Any free form data in a [String : Any] dictionary structure.
     ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Datastream configuration is used
-    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {
-        self.xdm = xdm
-        self.data = data
-        self.datasetIdentifier = datasetIdentifier
-    }
+    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {...}
 }
 ```
 {% endtab %}
