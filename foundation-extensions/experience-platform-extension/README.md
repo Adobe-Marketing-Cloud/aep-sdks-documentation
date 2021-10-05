@@ -63,9 +63,9 @@ The Edge configuration used by the client-side implementation is one of the foll
    ```swift
    use_frameworks!
    target 'YourTargetApp' do
-       pod 'AEPCore'
-       pod 'AEPEdge'
-   		pod 'AEPEdgeIdentity'
+   	pod 'AEPCore'
+   	pod 'AEPEdge'
+   	pod 'AEPEdgeIdentity'
    end
    ```
    
@@ -110,7 +110,7 @@ public class MobileApp extends Application {
 
     @Override
     public void onCreate() {
-    	super.onCreate();
+      super.onCreate();
       MobileCore.setApplication(this);
       MobileCore.configureWithAppID("yourAppId");
 
@@ -164,7 +164,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Install other extensions based on your use-case:
 
 1. If your application requires user consent preferences collection and enforcement, install and configure the [Consent for Edge Network](../consent-for-edge-network) extension.
-
 2. Lifecycle extension now supports application lifecycle metrics collection for Edge Network. If you would like to start collecting this type of data, follow the installation instruction for [Lifecycle for Edge Network](../lifecycle-for-edge-network).
 3. If your application uses push notifications, see also the [Adobe Journey Optimizer](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-journey-optimizer) extension.
 
