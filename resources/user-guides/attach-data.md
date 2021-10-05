@@ -155,15 +155,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event.
-
-In this example, a custom mbox with custom mbox parameters is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target retrieve location requests.
-
-In the following example, an additional `TargetRequest` object for the given `custom_mbox`, which contains the provided Target parameters, is added to the Target event.
-
-![](../../.gitbook/assets/target-attach-data-json-example.png)
-
-In the above example, the JSON payload adds custom mbox parameters only for the custom mbox that was added. You can also add custom parameters to each of the Target retrieve location objects. The following example contains a valid JSON payload for this use case:
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. 
 
 ```javascript
 {
@@ -179,6 +171,8 @@ In the above example, the JSON payload adds custom mbox parameters only for the 
     }
 }
 ```
+
+In the above example,  the JSON payload adds custom parameters to each of the Target retrieve location objects. 
 
 ### Save the rule and rebuild your property
 
@@ -227,13 +221,7 @@ If you do not have existing rules for this property, the **Create New Rule** but
 4. On the right pane, in the **JSON Payload** field, type the data that will be added to this event.
 5. Click **Keep Changes**.
 
-On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. In this example, a custom mbox with custom mbox parameters is added to the event before the Target extension processes it. The added custom mbox will now be added on outgoing Target prefetch requests.
-
-In the following example, an additional `TargetPrefetch` object for the given mbox `custom_mbox` containing the provided Target parameters is added to the Target event.
-
-![](../../.gitbook/assets/target-attach-data-json-example-prefetch.png)
-
-In the above example, the JSON payload adds custom mbox parameters only for the custom mbox that was added. You can also add custom parameters to each of the Target prefetch objects. The following example contains a valid JSON payload for this use case:
+On the right pane, you can add a freeform JSON payload that adds data to an SDK event before an extension that is listening for this event can hear the event. 
 
 ```javascript
 {
@@ -249,6 +237,8 @@ In the above example, the JSON payload adds custom mbox parameters only for the 
     }
 }
 ```
+
+In the above example, the JSON payload adds custom mbox parameters to each of the Target prefetch objects. 
 
 ### Save the rule and rebuild your property
 
