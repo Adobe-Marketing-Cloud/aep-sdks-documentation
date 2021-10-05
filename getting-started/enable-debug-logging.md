@@ -44,7 +44,7 @@ MobileCore.setLogLevel(.debug)
 ## Objective-C
 
 ```objectivec
-[AEPMobileCore setLogLevel:AEPMobileLogLevelDebug];
+[AEPMobileCore setLogLevel:AEPLogLevelDebug];
 // [AEPMobileCore setLogLevel:AEPLogLevelTrace];
 // [AEPMobileCore setLogLevel:AEPLogLevelWarning];
 // [AEPMobileCore setLogLevel:AEPLogLevelError];
