@@ -479,7 +479,6 @@ This class represents the decision scope which is used to fetch the decision pro
  * {@code DecisionScope} class represents a scope used to fetch personalized offers from the Experience Edge network.
  */
 public class DecisionScope {
-    final private String name;
 
     /**
      * Constructor creates a {@code DecisionScope} using the provided {@code name}.
@@ -512,9 +511,7 @@ public class DecisionScope {
      *
      * @return {@link String} containing the scope name.
      */
-    public String getName() {
-        return name;
-    }
+    public String getName() {...}
 }
 ```
 {% endtab %}
@@ -567,10 +564,6 @@ This class represents the decision propositions received from the decisioning se
 
 ```java
 public class Proposition {
-    final private String id;
-    final private List<Offer> offers;
-    final private String scope;
-    final private Map<String, Object> scopeDetails;
 
     /**
      * Constructor creates a {@code Proposition} using the provided propostion {@code id}, {@code offers}, {@code scope} and {@code scopeDetails}.
@@ -587,36 +580,28 @@ public class Proposition {
      *
      * @return {@link String} containing the {@link Proposition} identifier.
      */
-    public String getId() {
-        return id;
-    }
+    public String getId() {...}
 
     /**
      * Gets the {@code Proposition} items.
      *
      * @return {@code List<Offer>} containing the {@link Proposition} items.
      */
-    public List<Offer> getOffers() {
-        return offers;
-    }
+    public List<Offer> getOffers() {...}
 
     /**
      * Gets the {@code Proposition} scope.
      *
      * @return {@link String} containing the encoded {@link Proposition} scope.
      */
-    public String getScope() {
-        return scope;
-    }
+    public String getScope() {...}
 
     /**
      * Gets the {@code Proposition} scope details.
      *
      * @return {@code Map<String, Object>} containing the {@link Proposition} scope details.
      */
-    public Map<String, Object> getScopeDetails() {
-        return scopeDetails;
-    }
+    public Map<String, Object> getScopeDetails() {...}
 
     /**
      * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Reference} field group from this {@code Proposition}.
@@ -637,7 +622,6 @@ public class Proposition {
 /// `Proposition` class
 @objc(AEPProposition)
 public class Proposition: NSObject, Codable {
-    private let items: [Offer]
 
     /// Unique proposition identifier
     @objc public let id: String
@@ -684,29 +668,12 @@ This class represents the proposition option received from the decisioning servi
 
 ```java
 public class Offer {
-    private String id;
-    private String etag;
-    private String schema;
-    private OfferType type;
-    private List<String> language;
-    private String content;
-    private Map<String, String> characteristics;
-    SoftReference<Proposition> propositionReference;
-
-    /**
-     * Private constructor.
-     * <p>
-     * Use {@link Builder} to create {@link Offer} object.
-     */
-    private Offer() {}
 
     /**
      * {@code Offer} Builder.
      */
     public static class Builder {
-        private Offer offer;
-        private boolean didBuild;
-    
+        
         /**
         * Builder constructor with required {@code Offer} attributes as parameters.
         * <p>
@@ -768,72 +735,56 @@ public class Offer {
      *
      * @return {@link String} containing the {@link Offer} identifier.
      */
-    public String getId() {
-        return id;
-    }
+    public String getId() {...}
 
     /**
      * Gets the {@code Offer} etag.
      *
      * @return {@link String} containing the {@link Offer} etag.
      */
-    public String getEtag() {
-        return etag;
-    }
+    public String getEtag() {...}
 
     /**
      * Gets the {@code Offer} schema.
      *
      * @return {@link String} containing the {@link Offer} schema.
      */
-    public String getSchema() {
-        return schema;
-    }
+    public String getSchema() {...}
 
     /**
      * Gets the {@code Offer} type.
      *
      * @return {@link OfferType} indicating the {@link Offer} type.
      */
-    public OfferType getType() {
-        return type;
-    }
+    public OfferType getType() {...}
 
     /**
      * Gets the {@code Offer} language.
      *
      * @return {@code List<String>} containing the supported {@link Offer} language.
      */
-    public List<String> getLanguage() {
-        return language;
-    }
+    public List<String> getLanguage() {...}
 
     /**
      * Gets the {@code Offer} content.
      *
      * @return {@link String} containing the {@link Offer} content.
      */
-    public String getContent() {
-        return content;
-    }
+    public String getContent() {...}
 
     /**
      * Gets the {@code Offer} characteristics.
      *
      * @return {@code Map<String, String>} containing the {@link Offer} characteristics.
      */
-    public Map<String, String> getCharacteristics() {
-        return characteristics;
-    }
+    public Map<String, String> getCharacteristics() {...}
 
     /**
      * Gets the containing {@code Proposition} for this {@code Offer}.
      *
      * @return {@link Proposition} instance.
      */
-    public Proposition getProposition() {
-        return propositionReference.get();
-    }
+    public Proposition getProposition() {...}
 
     /**
      * Dispatches an event for the Edge network extension to send an Experience Event to the Edge network with the display interaction data for the
@@ -856,7 +807,6 @@ public class Offer {
      * dataset identifier.
      *
      * @return {@code Map<String, Object>} containing the XDM data for the proposition interaction.
-     * @see Offer#generateInteractionXdm(String)
      */
     public Map<String, Object> generateDisplayInteractionXdm() {...}
 
@@ -869,7 +819,6 @@ public class Offer {
      * dataset identifier.
      *
      * @return {@code Map<String, Object>} containing the XDM data for the proposition interaction.
-     * @see Offer#generateInteractionXdm(String)
      */
     public Map<String, Object> generateTapInteractionXdm() {...}
 
@@ -904,9 +853,6 @@ public class Offer: NSObject, Codable {
 
     /// Optional Offer characteristics dictionary
     @objc public let characteristics: [String: String]?
-
-    /// Weak reference to Proposition instance
-    @objc weak var proposition: Proposition?
 }
 ```
 
@@ -968,29 +914,7 @@ public enum OfferType {
      * @param format {@link String} containing the {@link Offer} format.
      * @return {@link OfferType} indicating the {@code Offer} format.
      */
-    public static OfferType from(final String format) {
-        if (OptimizeUtils.isNullOrEmpty(format)) {
-            return OfferType.UNKNOWN;
-        }
-
-        final String lowerCaseType = format.toLowerCase();
-        switch (lowerCaseType) {
-            case "application/json":
-                return JSON;
-
-            case "text/plain":
-                return TEXT;
-
-            case "text/html":
-                return HTML;
-
-            default:
-                if (lowerCaseType.startsWith("image/")) {
-                    return IMAGE;
-                }
-                return UNKNOWN;
-        }
-    }
+    public static OfferType from(final String format) {...}
 }
 ```
 {% endtab %}
@@ -1019,21 +943,7 @@ public enum OfferType: Int, Codable {
 
     /// Initializes OfferType with the provided format string.
     /// - Parameter format: Offer format string
-    init(from format: String) {
-        switch format {
-        case "application/json":
-            self = .json
-
-        case "text/plain":
-            self = .text
-
-        case "text/html":
-            self = .html
-
-        default:
-            self = format.starts(with: "image/") ? .image : .unknown
-        }
-    }
+    init(from format: String) {...}
 }
 ```
 
