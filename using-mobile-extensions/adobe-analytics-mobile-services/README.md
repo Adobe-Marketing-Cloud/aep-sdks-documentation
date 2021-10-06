@@ -123,6 +123,7 @@ Import the library into your project:
 
 ```swift
 import AEPCore
+import AEPServices
 import AEPIdentity
 import AEPLifecycle
 import AEPAnalytics
@@ -210,7 +211,7 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Signal.self, Lifecycle.self, Analytics.self, Identity.self, AEPMobileServices.self ], {
+    MobileCore.registerExtensions([Identity.self, Lifecycle.self, Analytics.self,  AEPMobileServices.self], {
         MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
         MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
     })
