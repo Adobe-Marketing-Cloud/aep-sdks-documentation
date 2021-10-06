@@ -312,12 +312,13 @@ public class OfferExperienceEvent {
 This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for. For advanced use case you can also assign the value of `itemCount`, if not, a default value of 1 will be used.
 
 ```swift
+@objc(AEPDecisionScope)
 public class DecisionScope{
-    public let activityId: String
-    public let placementId: String
-    public let itemCount: Int
+    @objc public let activityId: String
+    @objc public let placementId: String
+    @objc public let itemCount: Int
 
-    public init(activityId: String, placementId: String, itemCount: Int = 1) {...}
+    @objc public init(activityId: String, placementId: String, itemCount: Int = 1) {...}
 }
 ```
 
@@ -326,11 +327,12 @@ public class DecisionScope{
 This class represents the proposition received from the offer decisioning service.
 
 ```swift
+@objc(AEPProposition)
 public class Proposition: NSObject, Codable {
-    public let id: String
-    public let scopeString: String
-    public let decisionScope: DecisionScope
-    public lazy var offers: [Offer] = {...}()
+    @objc public let id: String
+    @objc public let scopeString: String
+    @objc public let decisionScope: DecisionScope
+    @objc public lazy var offers: [Offer] = {...}()
 }
 ```
 
@@ -339,14 +341,15 @@ public class Proposition: NSObject, Codable {
 This class represents the offer option received from the offer decisioning service.
 
 ```swift
+@objc(AEPOffer)
 public class Offer: NSObject, Codable {
-    public let id: String
-    public let type: OfferType
-    public let language: [String]?
-    public let content: String?
-    public let characteristics: [String: String]?
-    public let schema: String
-    public weak var proposition: Proposition?
+    @objc public let id: String
+    @objc public let etag: String
+    @objc public let type: OfferType
+    @objc public let language: [String]?
+    @objc public let content: String?
+    @objc public let characteristics: [String: String]?
+    @objc public weak var proposition: Proposition?
 }
 ```
 
