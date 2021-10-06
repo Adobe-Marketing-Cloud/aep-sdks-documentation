@@ -1,14 +1,63 @@
 # Mobile Services API reference
 
-## Process referrer intent
+## extensionVersion
+
+The `extensionVersion()` API returns the version of the Mobile Services extension that is registered with the Mobile Core extension.
+
+To get the version of the Mobile Services extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+```java
+String mobileServicesExtensionVersion = MobileServices.extensionVersion();
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### Objective-C
+
+```objectivec
+NSString *mobileServicesExtensionVersion = [AEPMobileServices extensionVersion];
+```
+
+### Swift
+
+```swift
+let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### Objective-C
+
+```objectivec
+NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
+```
+
+### Swift
+
+```swift
+let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+## processReferrer
 
 You can use this API to process the referrer intent that was received from Android.
 
 {% hint style="warning" %}
 This API is **only** available in Android.
 {% endhint %}
-
-### processReferrer
 
 **Syntax**
 
@@ -26,7 +75,7 @@ public  void onReceive(Context context, Intent intent) {
 }
 ```
 
-## Process the Google Play Install Referrer
+## processGooglePlayInstallReferrerUrl
 
 You can use this API to process the data you get from the Google Play Install Referrer APIs.
 
@@ -189,57 +238,6 @@ NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplin
 ```swift
 let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
 ACPMobileServices.trackAdobeDeepLink(url)
-```
-
-{% endtab %}
-
-{% endtabs %}
-
-## extensionVersion
-
-The `extensionVersion()` API returns the version of the Mobile Services extension that is registered with the Mobile Core extension.
-
-To get the version of the Mobile Services extension, use the following code sample:
-
-{% tabs %}
-{% tab title="Android" %}
-
-### Java
-
-```java
-String mobileServicesExtensionVersion = MobileServices.extensionVersion();
-```
-
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-### Objective-C
-
-```objectivec
-NSString *mobileServicesExtensionVersion = [AEPMobileServices extensionVersion];
-```
-
-### Swift
-
-```swift
-let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
-```
-
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-### Objective-C
-
-```objectivec
-NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
-```
-
-### Swift
-
-```swift
-let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
 ```
 
 {% endtab %}
