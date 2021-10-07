@@ -8,7 +8,7 @@ This feature is only available in [Android Core 1.8.0](https://aep-sdks.gitbook.
 
 | Service  | Android SDK | iOS SDK |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :---------------------------------------------------------- |
-| [Networking](./network-servcie.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
+| [Networking](./network-service.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
 | [DataQueue](./data-queue-service.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
 | [SystemInfoService/DeviceInforming](./system-device-info-service.md) | Core 1.8.0 + | AEPCore 3.0.0 + |
 
@@ -22,7 +22,7 @@ The following code snippet shows how to access `Network Service`  as an example.
 {% tab title="Android" %}
 
 ```java
-import com.adobe.marketing.mobile.services.ServiceProvider;
+import com.adobe.marketing.mobile.services.*;
 
 // Get an instance of the current network service
 Networking networkService = ServiceProvider.getInstance().getNetworkService();
@@ -30,7 +30,7 @@ Networking networkService = ServiceProvider.getInstance().getNetworkService();
 
 {% endtab %}
 
-{% tab title="iOS(AEP 3.x)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 ```swift
 import AEPServices

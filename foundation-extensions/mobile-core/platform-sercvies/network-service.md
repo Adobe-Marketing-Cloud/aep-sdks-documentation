@@ -12,6 +12,8 @@ The following code snippet details how to make a simple network request and hand
 {% tab title="Android" %}
 
 ```java
+import com.adobe.marketing.mobile.services.*;
+
 AndroidNetworkService androidNetworkService = new AndroidNetworkService(ServiceProvider.getInstance().getNetworkService());
 androidNetworkService.connectUrlAsync(url,
 											  POST, payload,
@@ -28,6 +30,8 @@ androidNetworkService.connectUrlAsync(url,
 {% tab title="iOS(AEP 3.x)" %}
 
 ```swift
+import AEPServices
+
 // Create your `NetworkRequest`, for more details see `NetworkRequest.swift`
 let networkRequest = NetworkRequest(url: url, httpMethod: .get, httpHeaders: headers)
 

@@ -6,12 +6,14 @@ The `SystemInfo Service` (iOS) and the `DeviceInfo Service`(Android) let you acc
 
 ## Usage
 
-The following code snippet shows how to invoke the API to retrieve the user's active locale.
+The following code snippet shows how to retrieve the active locale.
 
 {% tabs %}
 {% tab title="Android" %}
 
 ```java
+import com.adobe.marketing.mobile.services.*;
+
 DeviceInforming deviceInfoService = ServiceProvider.getInstance().getDeviceInfoService();
 String localName = deviceInfoService.getLocaleString();
 ```
@@ -21,6 +23,8 @@ String localName = deviceInfoService.getLocaleString();
 {% tab title="iOS(AEP 3.x)" %}
 
 ```swift
+import AEPServices
+
 // Add a computed variable to your type or use it directly in the function where required
 private var systemInfoService: SystemInfoService {
   return ServiceProvider.shared.systemInfoService
