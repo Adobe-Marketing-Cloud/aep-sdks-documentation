@@ -18,7 +18,7 @@ Depending on the mobile extensions you use, there are two ways of collecting and
 The two options are documented in detail below.
 
 {% hint style="info" %}
-If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both Consent and privacy status settings.
+If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both consent and privacy status settings.
 {% endhint %}
 
 ## Using Experience Platform SDKs for Edge Network
@@ -27,9 +27,9 @@ If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensi
 
 You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension        | Collect \(y\) | Collect \(n\) | Collect \(pending\) |
-| :--------------- | :------------ | :------------ | :------------------ |
-| **Edge Network** | Hits are sent | Hits not sent | Hits queued         |
+| Extension        | Collect (y)   | Collect (n)   | Collect (pending) |
+| :--------------- | :------------ | :------------ | :---------------- |
+| **Edge Network** | Hits are sent | Hits not sent | Hits queued       |
 
 > **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes \(y\) for collect consent.
 
@@ -37,6 +37,7 @@ You can set the collect consent status to ensure collection of data suits your u
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 You can set the collect consent to one of the following values:
@@ -68,11 +69,7 @@ To understand the expected behavior, see the _Update and get collect consent pre
 
 ### getConsents <a id="getconsents"></a>
 
-You can also programmatically view the current collect consent preferences status by using the following:
-
-{% hint style="info" %}
-The following API can be used to programmatically retrieve the current collect consent preferences for the user in a dictionary representation.
-{% endhint %}
+You can programmatically view the current collect consent preferences status in a dictionary representation by using the following API.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -81,7 +78,7 @@ The following API can be used to programmatically retrieve the current collect c
 
 **Syntax**
 
-```objectivec
+```java
 public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
 ```
 
@@ -89,7 +86,7 @@ public static void getConsents(final AdobeCallback<Map<String, Object>> callback
 
 **Example**
 
-```objectivec
+```java
 Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
     @Override
     public void call(Map<String, Object> currentConsents) {
@@ -298,7 +295,48 @@ MobileCore.setPrivacyStatus(MobilePrivacyStatus.OPT_OUT);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 3.x)" %}
+
+You can set privacy status to one of the following values:
+
+* `PrivacyStatus.optedIn`
+* `PrivacyStatus.optedOut`
+* `PrivacyStatus.unknown`
+
+To understand the expected behavior, see the _Set and get privacy status_ table above.
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func setPrivacyStatus(_ status: PrivacyStatus)
+```
+
+**Example**
+
+```swift
+MobileCore.setPrivacyStatus(.optedIn)
+```
+
+#### Objective-C
+
+**Syntax**
+
+```objective-c
+@objc(setPrivacyStatus:)
+static func setPrivacyStatus(_ status: PrivacyStatus)
+```
+
+**Example**
+
+```objective-c
+[AEPMobileCore setPrivacyStatus:AEPPrivacyStatusOptedIn];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 
 You can set privacy status to one of the following values:
 
@@ -307,20 +345,6 @@ You can set privacy status to one of the following values:
 * `ACPMobilePrivacyStatusUnknown`
 
 To understand the expected behavior, see the _Set and get privacy status_ table above.
-
-#### Objective-C
-
-**Syntax**
-
-```objectivec
-+ (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
-```
-
-**Example**
-
-```objectivec
-[ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn];
-```
 
 #### Swift
 
@@ -336,6 +360,20 @@ class func setPrivacyStatus(_ status: ACPMobilePrivacyStatus) {
 ```swift
 ACPCore.privacyStatus = ACPMobilePrivacyStatusOptIn
 ```
+#### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) setPrivacyStatus: (ACPMobilePrivacyStatus) status;
+```
+
+**Example**
+
+```objectivec
+[ACPCore setPrivacyStatus:ACPMobilePrivacyStatusOptIn];
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -356,7 +394,7 @@ The enum representation of the privacy status that corresponds to the following 
 
 **Syntax**
 
-```objectivec
+```java
 void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
 ```
 
@@ -365,7 +403,7 @@ void getPrivacyStatus(AdobeCallback<MobilePrivacyStatus> callback);
 
 **Example**
 
-```objectivec
+```java
 MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
     @Override
     public void call(MobilePrivacyStatus value) {
@@ -375,7 +413,70 @@ MobileCore.getPrivacyStatus(new AdobeCallback<MobilePrivacyStatus>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+The enum representation of the privacy status that corresponds to the following statuses:
+
+* `PrivacyStatus.optedIn`
+* `PrivacyStatus.optedOut`
+* `PrivacyStatus.unknown`
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
+```
+
+* _completion_ is invoked with the current `PrivacyStatus`.
+
+**Example**
+
+```swift
+MobileCore.getPrivacyStatus { privacyStatus in
+	switch privacyStatus {
+ 	case .optedIn:
+    print("Privacy Status: Opted in")
+ 	case .optedOut:
+  	print("Privacy Status: Opted out")
+ 	case .unknown:
+ 		print("Privacy Status: Unknown")
+}
+```
+
+#### Objective-C
+
+**Syntax**
+
+```objective-c
+@objc(getPrivacyStatus:)
+static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
+```
+
+* _completion_ is invoked with the current `PrivacyStatus`.
+
+**Example**
+
+```objectivec
+[AEPMobileCore getPrivacyStatus:^(AEPPrivacyStatus status) {
+	switch (status) {
+    case AEPPrivacyStatusOptedIn:
+    	NSLog(@"Privacy status: Opted in");
+      break;
+    case AEPPrivacyStatusOptedOut:
+      NSLog(@"Privacy status: Opted out");
+      break;
+    case AEPPrivacyStatusUnknown:
+      NSLog(@"Privacy status: Unknown");
+      break;
+  }
+}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 
 The enum representation of the privacy status that corresponds to the following statuses:
 
@@ -383,6 +484,41 @@ The enum representation of the privacy status that corresponds to the following 
 * `ACPMobilePrivacyStatusOptOut`
 * `ACPMobilePrivacyStatusUnknown`
 
+#### Swift
+
+**Syntax**
+
+```swift
+class func getPrivacyStatus(_ callback: @escaping (_ status: ACPMobilePrivacyStatus) -> Void) {//}
+
+class func getPrivacyStatus(withCompletionHandler completionHandler: @escaping (_ status: ACPMobilePrivacyStatus, _ error: Error?) -> Void) {//}
+```
+
+* _callback_ is invoked after the privacy status is available.
+* _completionHandler_ is invoked with the current privacy status, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
+
+**Example**
+
+```swift
+ACPCore.getPrivacyStatus(
+    { status in
+        switch status {
+            case ACPMobilePrivacyStatusOptIn:
+                print("Privacy Status: Opt-In")
+            default:
+                break
+        }
+    })
+
+
+ACPCore.getPrivacyStatus(withCompletionHandler: { status, error in
+    if error != nil {
+        // handle error here
+    } else {
+        // handle the retrieved privacy status
+    }
+})
+```
 #### Objective-C
 
 **Syntax**
@@ -415,47 +551,12 @@ getPrivacyStatus:^(ACPMobilePrivacyStatus status) {
     }];
 ```
 
-#### Swift
-
-**Syntax**
-
-```java
-class func getPrivacyStatus(_ callback: @escaping (_ status: ACPMobilePrivacyStatus) -> Void) {//}
-
-class func getPrivacyStatus(withCompletionHandler completionHandler: @escaping (_ status: ACPMobilePrivacyStatus, _ error: Error?) -> Void) {//}
-```
-
-* _callback_ is invoked after the privacy status is available.
-* _completionHandler_ is invoked with the current privacy status, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5000ms.
-
-**Example**
-
-```objectivec
-ACPCore.getPrivacyStatus(
-    { status in
-        switch status {
-            case ACPMobilePrivacyStatusOptIn:
-                print("Privacy Status: Opt-In")
-            default:
-                break
-        }
-    })
-
-
-ACPCore.getPrivacyStatus(withCompletionHandler: { status, error in
-    if error != nil {
-        // handle error here
-    } else {
-        // handle the retrieved privacy status
-    }
-})
-```
 {% endtab %}
 {% endtabs %}
 
 ### getSdkIdentities
 
-To retrieve all the identifier data stored locally by the SDK as a JSON string, and send this data to your servers, use the [getSdkIdentities](../foundation-extensions/mobile-core/mobile-core-api-reference.md#getsdkidentities) API from the Mobile Core extension.
+To retrieve all the identifier data stored locally by the SDK as a JSON string, use the [getSdkIdentities](../foundation-extensions/mobile-core/mobile-core-api-reference.md#getsdkidentities) API from the Mobile Core extension.
 
 {% hint style="info" %}
 When using both Edge Network and Adobe Solutions extensions, use both [Identity.getIdentities](../foundation-extensions/identity-for-edge-network/api-reference.md#getidentities) API and [MobileCore.getSdkIdentities](../foundation-extensions/mobile-core/mobile-core-api-reference.md#getsdkidentities) APIs to retrieve all the identifier data stored locally by the SDK.
