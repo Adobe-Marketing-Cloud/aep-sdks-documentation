@@ -18,7 +18,7 @@ Depending on the mobile extensions you use, there are two ways of collecting and
 The two options are documented in detail below.
 
 {% hint style="info" %}
-If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both consent and privacy status settings. See also the [frequently asked questions about privacy settings and identities](../foundation-extensions/identity-for-edge-network/identity-faq.md).
+If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both consent and privacy status settings. See also the [frequently asked questions](../foundation-extensions/identity-for-edge-network/identity-faq.md) about consent and privacy settings or identities.
 {% endhint %}
 
 ## Using Experience Platform SDKs for Edge Network
