@@ -113,11 +113,11 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 ```swift
 Consent.getConsents { currentConsents, error in
-    guard error == nil else { return }
-    guard let consents = currentConsents["consents"] as? [String: Any] else { return }
-    guard let collectConsent = consents["collect"] as? [String: Any] else { return }
-    let collectConsentStatus = collectConsent["val"] as? String
-  // inspect collectConsentStatus
+	guard error == nil else { return }
+	guard let consents = currentConsents["consents"] as? [String: Any] else { return }
+	guard let collectConsent = consents["collect"] as? [String: Any] else { return }
+	let collectConsentStatus = collectConsent["val"] as? String
+	// inspect collectConsentStatus
 }
 ```
 
@@ -125,19 +125,19 @@ Consent.getConsents { currentConsents, error in
 
 **Syntax**
 
-```text
+```objective-c
 static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 ```
 
 **Example**
 
-```text
+```objective-c
 [AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error) {
-    if (error) { return; }
-    NSDictionary *consents = currentConsents[@"consents"];
-  NSDictionary *collectConsent = currentConsents[@"collect"];
-  NSString *collectConsentStatus = collectConsent[@"val"];
-  // inspect collectConsentStatus
+	if (error) { return; }
+	NSDictionary *consents = currentConsents[@"consents"];
+	NSDictionary *collectConsent = currentConsents[@"collect"];
+	NSString *collectConsentStatus = collectConsent[@"val"];
+	// inspect collectConsentStatus
 }];
 ```
 {% endtab %}
@@ -145,7 +145,7 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 ### updateConsents <a id="updateconsent"></a>
 
-To programmatically update the consent collect for the application user:
+Use this example to programmatically update the consent collect for the application user.
 
 > **Note:** After a user has selected collect consent no \(n\), the SDK will not allow you to set the users collect consent to yes \(y\).
 
@@ -241,7 +241,7 @@ When using the Edge Network extensions, use the [Identity.getIdentities](../foun
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../using-mobile-extensions/mobile-core/configuration/configuration-api-reference.md).
+To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../foundation-extensions/mobile-core/configuration/configuration-api-reference).
 
 | Key               | Description                                                  |
 | :---------------- | :----------------------------------------------------------- |
@@ -436,12 +436,12 @@ static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
 ```swift
 MobileCore.getPrivacyStatus { privacyStatus in
 	switch privacyStatus {
- 	case .optedIn:
-    print("Privacy Status: Opted in")
- 	case .optedOut:
-  	print("Privacy Status: Opted out")
- 	case .unknown:
- 		print("Privacy Status: Unknown")
+	case .optedIn:
+		print("Privacy Status: Opted in")
+	case .optedOut:
+		print("Privacy Status: Opted out")
+	case .unknown:
+		print("Privacy Status: Unknown")
 }
 ```
 
@@ -461,15 +461,15 @@ static func getPrivacyStatus(completion: @escaping (PrivacyStatus) -> Void)
 ```objectivec
 [AEPMobileCore getPrivacyStatus:^(AEPPrivacyStatus status) {
 	switch (status) {
-    case AEPPrivacyStatusOptedIn:
-    	NSLog(@"Privacy status: Opted in");
-      break;
-    case AEPPrivacyStatusOptedOut:
-      NSLog(@"Privacy status: Opted out");
-      break;
-    case AEPPrivacyStatusUnknown:
-      NSLog(@"Privacy status: Unknown");
-      break;
+		case AEPPrivacyStatusOptedIn:
+			NSLog(@"Privacy status: Opted in");
+			break;
+		case AEPPrivacyStatusOptedOut:
+			NSLog(@"Privacy status: Opted out");
+			break;
+		case AEPPrivacyStatusUnknown:
+			NSLog(@"Privacy status: Unknown");
+			break;
   }
 }];
 ```
@@ -489,9 +489,9 @@ The enum representation of the privacy status that corresponds to the following 
 **Syntax**
 
 ```swift
-class func getPrivacyStatus(_ callback: @escaping (_ status: ACPMobilePrivacyStatus) -> Void) {//}
+class func getPrivacyStatus(_ callback: @escaping (_ status: ACPMobilePrivacyStatus) -> Void)
 
-class func getPrivacyStatus(withCompletionHandler completionHandler: @escaping (_ status: ACPMobilePrivacyStatus, _ error: Error?) -> Void) {//}
+class func getPrivacyStatus(withCompletionHandler completionHandler: @escaping (_ status: ACPMobilePrivacyStatus, _ error: Error?) -> Void)
 ```
 
 * _callback_ is invoked after the privacy status is available.
