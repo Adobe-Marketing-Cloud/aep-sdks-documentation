@@ -10,7 +10,7 @@ When Adobe provides software and services to an enterprise, Adobe acts as a data
 
 The following sections provide details on how you can collect consent and privacy status to ensure collection of data suits your user's preferences.
 
-Depending on the mobile extensions you use, there are two ways of collecting and enforcing consent preferences when using the Experience Platform SDKs as follows:
+Depending on the mobile extensions you use, there are two ways of collecting and enforcing consent preferences when using the Experience Platform SDKs:
 
 1. When using the **Edge Network** mobile extensions, you should use the [Consent for Edge Network](../foundation-extensions/consent-for-edge-network) extension.
 2. When using **Adobe Experience Cloud** mobile extensions, you should use privacy status settings.
@@ -27,13 +27,13 @@ If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensi
 
 You can set the collect consent status to ensure collection of data suits your user's preferences.
 
-| Extension        | Collect (y)   | Collect (n)   | Collect (pending) |
-| :--------------- | :------------ | :------------ | :---------------- |
-| **Edge Network** | Hits are sent | Hits not sent | Hits queued       |
+| Extension        | Collect (y)   | Collect (n)       | Collect (pending) |
+| :--------------- | :------------ | :---------------- | :---------------- |
+| **Edge Network** | Hits are sent | Hits are not sent | Hits are queued   |
 
-> **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes \(y\) for collect consent.
+> **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes (y) for collect consent.
 
-### Collect Consent settings
+### Collect consent settings
 
 {% tabs %}
 {% tab title="Android" %}
@@ -67,7 +67,7 @@ To understand the expected behavior, see the _Update and get collect consent pre
 {% endtab %}
 {% endtabs %}
 
-### getConsents <a id="getconsents"></a>
+### getConsents
 
 You can programmatically view the current collect consent preferences status in a dictionary representation by using the following API.
 
@@ -143,11 +143,11 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 {% endtab %}
 {% endtabs %}
 
-### updateConsents <a id="updateconsent"></a>
+### updateConsents
 
 Use this example to programmatically update the consent collect for the application user.
 
-> **Note:** After a user has selected collect consent no \(n\), the SDK will not allow you to set the users collect consent to yes \(y\).
+> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -241,11 +241,11 @@ When using the Edge Network extensions, use the [Identity.getIdentities](../foun
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
+To programmatically update the SDK configuration, use the following information to change your default consent values. For more information, see the [configuration API reference](../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
 
 | Key               | Description                                                  |
 | :---------------- | :----------------------------------------------------------- |
-| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences \(Consents\) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). |
+| `consent.default` | Defines the set of default consent preferences for the SDK in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). |
 
 
 
@@ -257,17 +257,17 @@ You can set a privacy status to ensure collection of data suits your user's pref
 
 | **Expected Behavior** | Opt In | Opt Out | Opt Unknown |
 | :--- | :--- | :--- | :--- |
-| **Analytics** | Hits are sent | Hits not sent | Hits queued |
-| **Audience** **Manager** | Signals, ID syncs are sent | Signals, ID syncs not sent | Syncs queued |
-| **Campaign Classic** | User data stored, calls are sent | User data cleared, calls not sent | User data stored, calls not sent |
-| **Target** | Mbox requests are sent | Mbox requests not sent | Mbox requests queued |
-| **Campaign Standard** | User data stored, calls are sent | User data cleared, calls not sent | User data stored, calls are queued |
+| **Analytics** | Hits are sent | Hits are not sent | Hits are queued |
+| **Audience** **Manager** | Signals, ID syncs are sent | Signals, ID syncs are not sent | Syncs are queued |
+| **Campaign Classic** | User data is stored, calls are sent | User data is cleared, calls are not sent | User data is stored, calls are not sent |
+| **Target** | Mbox requests are sent | Mbox requests are not sent | Mbox requests are queued |
+| **Campaign Standard** | User data is stored, calls are sent | User data is cleared, calls are not sent | User data is stored, calls are queued |
 
 {% hint style="info" %}
 **Analytics users**: If your report suite is not timestamp enabled, hits are discarded until the privacy status changes to `opt in`.
 {% endhint %}
 
-### setPrivacyStatus <a id="setprivacystatus"></a>
+### setPrivacyStatus
 
 {% tabs %}
 {% tab title="Android" %}
