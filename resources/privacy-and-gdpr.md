@@ -12,7 +12,7 @@ The following sections provide details on how you can collect consent and privac
 
 Depending on the mobile extensions you use, there are two ways of collecting and enforcing consent preferences when using the Experience Platform SDKs as follows:
 
-1. When using the **Edge Network** mobile extensions, you should use the [Consent for Edge Network](../foundation-extensions/consent-for-edge-networ) extension.
+1. When using the **Edge Network** mobile extensions, you should use the [Consent for Edge Network](../foundation-extensions/consent-for-edge-network) extension.
 2. When using **Adobe Experience Cloud** mobile extensions, you should use privacy status settings.
 
 The two options are documented in detail below.
@@ -241,7 +241,7 @@ When using the Edge Network extensions, use the [Identity.getIdentities](../foun
 
 ## Configuration keys
 
-To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../foundation-extensions/mobile-core/configuration/configuration-api-reference).
+To update the SDK configuration, programmatically, use the following information to change your default consent values. For more information, see [Configuration API reference](../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
 
 | Key               | Description                                                  |
 | :---------------- | :----------------------------------------------------------- |
