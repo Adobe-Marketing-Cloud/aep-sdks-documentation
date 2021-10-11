@@ -34,7 +34,7 @@ You can set the collect consent status to ensure collection of data suits your u
 > **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes (y) for collect consent.
 
 {% hint style="warning" %}
-Updating the collect consent status to No (n) does not reset or clear the identities of the current user. If you need to reset all current identities, use the [MobileCore.resetIdenties()](../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API.
+Updating the collect consent status to No (n) does not reset or clear the identities of the current user. If you need to reset all current identities, use the [MobileCore.resetIdentities()](../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API.
 {% endhint %}
 
 ### Collect consent settings
