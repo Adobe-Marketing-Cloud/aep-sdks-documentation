@@ -32,7 +32,7 @@ The following instructions are for configuring an application using Adobe Experi
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
    ```
 
-2. Import the Mobile Core and Edge extensions in your application class.
+2. Import the Mobile Core and Edge extensions in your Application class.
 
    ```java
     import com.adobe.marketing.mobile.MobileCore;
