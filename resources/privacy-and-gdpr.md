@@ -18,7 +18,7 @@ Depending on the mobile extensions you use, there are two ways of collecting and
 The two options are documented in detail below.
 
 {% hint style="info" %}
-If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both consent and privacy status settings.
+If you are using a mix of Edge Network and Adobe Experience Cloud mobile extensions, please follow the steps for configuring both consent and privacy status settings. See also the [frequently asked questions](../foundation-extensions/identity-for-edge-network/identity-faq.md) about consent and privacy settings or identities.
 {% endhint %}
 
 ## Using Experience Platform SDKs for Edge Network
@@ -32,6 +32,10 @@ You can set the collect consent status to ensure collection of data suits your u
 | **Edge Network** | Hits are sent | Hits are not sent | Hits are queued   |
 
 > **Note:** When no default collect consent value is defined in configuration, the SDK defaults to Yes (y) for collect consent.
+
+{% hint style="warning" %}
+Updating the collect consent status to No (n) does not reset or clear the identities of the current user. If you need to reset all current identities, use the [MobileCore.resetIdentities()](../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API.
+{% endhint %}
 
 ### Collect consent settings
 

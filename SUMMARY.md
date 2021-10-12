@@ -61,7 +61,7 @@
 * [Identity for Edge Network](foundation-extensions/identity-for-edge-network/README.md)
   * [Release Notes](foundation-extensions/identity-for-edge-network/release-notes-1.md)
   * [API Reference](foundation-extensions/identity-for-edge-network/api-reference.md)
-  * [Frequently Asked Questions](foundation-extensions/identity-for-edge-network/identity-faq.md)
+  * [Frequently asked questions](foundation-extensions/identity-for-edge-network/identity-faq.md)
 * [Lifecycle for Edge Network](foundation-extensions/lifecycle-for-edge-network/README.md)
   * [API Reference](foundation-extensions/lifecycle-for-edge-network/lifecycle-api-reference.md)
   * [Event Reference](foundation-extensions/lifecycle-for-edge-network/lifecycle-event-reference.md)
