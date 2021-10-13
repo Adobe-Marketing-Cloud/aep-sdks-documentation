@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `SystemInfo Service` (iOS) and the `DeviceInfo Service`(Android) let you access critical pieces of information related to the user's device, such as carrier name, device name, locale, and more. 
+The `SystemInfo Service` (iOS) / `DeviceInfo Service` (Android) provides a set of APIs for retrieving device information, such as carrier name, device name, locale, and more. 
 
 ## Usage
 
