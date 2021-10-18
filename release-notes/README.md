@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
  ### iOS AEPMobileServices 3.0.2
 
- * Includes deferred link info to Acquisition response event when available
+ * Includes deferred link info to Acquisition response event when available.
 
 
 ## Oct 05, 2021
