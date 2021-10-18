@@ -2,6 +2,12 @@
 
 Release notes and change logs for the Adobe Mobile Services extension
 
+## Oct 18, 2021
+
+ ### iOS AEPMobileServices 3.0.2
+
+ * Includes deferred link info to Acquisition response event when available
+
 ## Oct 05, 2021
 
 ### Android MobileServices 1.1.5
