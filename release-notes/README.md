@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Oct 18, 2021
+
+ ### iOS AEPMobileServices 3.0.2
+
+ * Includes deferred link info to Acquisition response event when available.
+
+
 ## Oct 05, 2021
 
 ### Android MobileServices 1.1.5
