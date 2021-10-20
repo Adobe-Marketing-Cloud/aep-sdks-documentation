@@ -504,15 +504,17 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 
 ## getExperienceCloudId
 
+This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
+
+This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
 {% tabs %}
 {% tab title="Android" %}
 ### getExperienceCloudId
 
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
+The values are returned via the [AdobeCallback](../mobile-core-api-reference#adobecallback).
 
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback).
-
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Java**
 
@@ -542,10 +544,6 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% hint style="info" %}
 Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the callback.
 
 **Syntax**
 
@@ -595,10 +593,6 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
 {% tab title="React Native" %}
 ### getExperienceCloudId
 
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
-
 #### JavaScript
 
 #### Syntax
@@ -616,10 +610,6 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 
 {% tab title="Flutter" %}
 ### getExperienceCloudId
-
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
 #### Dart
 
@@ -644,10 +634,6 @@ try {
 
 {% tab title="Cordova" %}
 ### getExperienceCloudId
-
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
 #### Cordova
 
@@ -674,10 +660,6 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
 {% tab title="Unity" %}
 ### getExperienceCloudId
 
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
-
 #### C\#
 
 #### Syntax
@@ -702,10 +684,6 @@ ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 
 {% tab title="Xamarin" %}
 ### getExperienceCloudId
-
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
 #### C\#
 
