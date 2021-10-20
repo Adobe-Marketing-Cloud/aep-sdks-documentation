@@ -1,50 +1,18 @@
 # Identity API reference
 
 ## appendVisitorInfoForURL
+## appendToURL
 
-{% tabs %}
-{% tab title="Android" %}
 This API appends Adobe visitor information to the query component of the specified URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback) instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](../mobile-core-api-reference#adobecallback) instance:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
   * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
   * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
-
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate \[AdobeError\]\(\([https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference\#adobeerror](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror)\).
-
-#### Java
-
-### appendVisitorInfoForURL
-
-**Syntax**
-
-```java
-public static void appendVisitorInfoForURL(final String baseURL, final AdobeCallback<String> callback);
-```
-
-* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _callback_ is invoked after the updated URL is available.
-
-**Example**
-
-```java
-Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
-    @Override    
-    public void call(String urlWithAdobeVisitorInfo) {        
-        //handle the new URL here        
-        //For example, open the URL on the device browser        
-        //        
-        Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        
-        startActivity(i);    
-    }
-});
-```
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 {% hint style="info" %}
 This API is designed to handle the following URL formats:
@@ -71,27 +39,52 @@ The Adobe visitor data is appended as:
 scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
 ```
 
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-java).
+If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables).
 {% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+
+
+#### Java
+
+### appendVisitorInfoForURL
+
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+
+**Syntax**
+
+```java
+public static void appendVisitorInfoForURL(final String baseURL, final AdobeCallback<String> callback);
+```
+
+* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+* _callback_ is invoked after the updated URL is available.
+
+**Example**
+
+```java
+Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
+    @Override    
+    public void call(String urlWithAdobeVisitorInfo) {        
+        //handle the new URL here        
+        //For example, open the URL on the device browser        
+        //        
+        Intent i = new Intent(Intent.ACTION_VIEW);        
+        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        
+        startActivity(i);    
+    }
+});
+```
+
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### appendToURL
 
 {% hint style="info" %}
 Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the provided URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL string and is returned via the callback:
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### iOS
 
@@ -104,7 +97,7 @@ If the provided URL is nil or empty, it is returned as is. Otherwise, the follow
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
 
@@ -172,49 +165,10 @@ ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler
   }
 })
 ```
-
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```text
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```text
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-ios).
-{% endhint %}
 {% endtab %}
 
 {% tab title="React Native" %}
 ### appendVisitorInfoForURL
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### JavaScript
 
@@ -231,49 +185,10 @@ appendVisitorInfoForURL(baseURL?: String): Promise<?string>;
 ```jsx
 ACPIdentity.appendVisitorInfoForURL("https://example.com").then(urlWithVistorData => console.log("AdobeExperenceSDK: Url with Visitor Data = " + urlWithVisitorData));
 ```
-
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```text
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```text
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-js).
-{% endhint %}
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### appendVisitorInfoForURL
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### Dart
 
@@ -297,48 +212,10 @@ try {
 }
 ```
 
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```text
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```text
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs, such as Angular URLs, we recommend that you use getUrlVariables.
-{% endhint %}
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### appendVisitorInfoForURL
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### Cordova
 
@@ -362,48 +239,10 @@ ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallba
 });
 ```
 
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```text
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```text
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs we recommend that you use [getUrlVariables](identity-api-reference.md#geturlvariables-cordova).
-{% endhint %}
 {% endtab %}
 
 {% tab title="Unity" %}
 ### AppendToUrl
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### C\#
 
@@ -427,48 +266,10 @@ public static void HandleAdobeIdentityAppendToUrlCallback(string url)
 ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlCallback);
 ```
 
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```text
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```text
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```text
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-unity).
-{% endhint %}
 {% endtab %}
 
 {% tab title="Xamarin" %}
 ### AppendToUrl
-
-This API appends Adobe visitor information to the query component of the specified URL.
-
-If the specified URL is nil or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL.
-
-* The `adobe_mc` attribute is a URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 #### C\#
 
@@ -519,33 +320,6 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 }
 ```
 
-{% hint style="info" %}
-This API is designed to handle the following URL formats:
-
-```csharp
-scheme://authority/path?query=param#fragment
-```
-
-In this example, the Adobe visitor data is appended as:
-
-```csharp
-scheme://authority/path?query=param&TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-Similarly, URLs without a query component:
-
-```csharp
-scheme://authority/path#fragment
-```
-
-The Adobe visitor data is appended as:
-
-```csharp
-scheme://authority/path?TS=timestamp&MCMID=ecid&MCORGID=ecorgid@AdobeOrg#fragment
-```
-
-If your application uses more complicated URLs we recommend that you use [GetUrlVariables](identity-api-reference.md#geturlvariables-xamarin).
-{% endhint %}
 {% endtab %}
 {% endtabs %}
 
