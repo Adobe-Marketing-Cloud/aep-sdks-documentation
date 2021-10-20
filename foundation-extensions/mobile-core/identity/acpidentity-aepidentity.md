@@ -26,7 +26,7 @@ Identity.appendTo(url:completion:)
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
 
-```objective-c
+```objectivec
 [AEPMobileIdentity appendToUrl:completion:];
 ```
 
@@ -34,7 +34,7 @@ Identity.appendTo(url:completion:)
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
 
-```objective-c
+```objectivec
 [ACPMobileIdentity appendToUrl:withCallback:];
 [ACPMobileIdentity appendToUrl:withCompletionHandler:];
 ```
@@ -52,13 +52,13 @@ Identity.extensionVersion
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity extensionVersion];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity extensionVersion];
 ```
 {% endtab %}
@@ -74,13 +74,13 @@ Identity.getExperienceCloudId(completion:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity getExperienceCloudId:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity getExperienceCloudId:];
 [ACPIdentity getExperienceCloudIdWithCompletionHandler:];
 ```
@@ -97,13 +97,13 @@ Identity.getIdentifiers(completion:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity getIdentifiers:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity getIdentifiers:];
 [ACPIdentity getIdentifiersWithCompletionHandler:];
 ```
@@ -120,13 +120,13 @@ Identity.getUrlVariables(completion:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity getUrlVariables:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity getUrlVariables:];
 [ACPIdentity getUrlVariablesWithCompletionHandler:];
 ```
@@ -143,13 +143,13 @@ MobileCore.setAdvertisingIdentifier(_ identifier:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileCore setAdvertisingIdentifier:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPCore setAdvertisingIdentifier:];
 ```
 {% endtab %}
@@ -165,13 +165,13 @@ MobileCore.setPushIdentifier(_ deviceToken:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileCore setPushIdentifier:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPCore setPushIdentifier:];
 ```
 {% endtab %}
@@ -187,13 +187,13 @@ Identity.syncIdentifier(identifierType:identifier:authenticationState:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity syncIdentifierWithType:identifier:authenticationState:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity syncIdentifier:identifier:authentication:];
 ```
 {% endtab %}
@@ -209,14 +209,14 @@ Identity.syncIdentifiers(identifierType:identifier:authenticationState:)
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [AEPMobileIdentity syncIdentifiers:];
 [AEPMobileIdentity syncIdentifiers:authenticationState:];
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x \(Objective-C\)" %}
-```objective-c
+```objectivec
 [ACPIdentity syncIdentifiers:];
 [ACPIdentity syncIdentifiers:authentication:];
 ```
