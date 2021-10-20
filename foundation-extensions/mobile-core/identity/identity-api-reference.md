@@ -117,7 +117,7 @@ Identity.appendTo(url: URL(string: "https://example.com")) { appendedURL, error 
 
 **Objective-C**
 
-```objective-c
+```objectivec
 NSURL* url = [NSURL URLWithString:@"https://example.com"];
 [AEPMobileIdentity appendToUrl:url completion:^(NSURL * _Nullable urlWithVisitorData, NSError * _Nullable error) {
   if (error) {
@@ -149,7 +149,7 @@ Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 an
 
 **Syntax**
 
-```objective-c
+```objectivec
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
 + (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
 ```
@@ -194,7 +194,7 @@ ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler
 
 **Objective-C**
 
-```objective-c
+```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
   // handle the appended url here
@@ -409,7 +409,7 @@ let identityExtensionVersion  = Identity.extensionVersion
 
 **Objective-C**
 
-```objective-c
+```objectivec
 NSString *identityVersion = [AEPMobileIdentity extensionVersion];
 ```
 {% endtab %}
@@ -425,7 +425,7 @@ let identityVersion  = ACPIdentity.extensionVersion()
 
 **Objective-C**
 
-```objective-c
+```objectivec
 NSString *identityVersion = [ACPIdentity extensionVersion];
 ```
 {% endtab %}
@@ -538,7 +538,47 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+### getExperienceCloudId
+
+**Syntax**
+
+```swift
+@objc(getExperienceCloudId:)
+static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
+```
+
+* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+
+**Examples**
+
+**Swift**
+
+```swift
+Identity.getExperienceCloudId { ecid, error in
+  if let error = error {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
+}
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileIdentity getExperienceCloudId:^(NSString * _Nullable ecid, NSError *error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
+}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getExperienceCloudId
 
 {% hint style="info" %}
@@ -547,15 +587,31 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 
 **Syntax**
 
-```objectivec
+```objective-c
 + (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
 + (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
 ```
 
 * _callback_ is invoked after the ECID is available.
-* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
+
+**Swift**
+
+```swift
+ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
+    // handle the retrieved ID here    
+}
+
+ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
+  if let error = error {
+    // handle error here
+  } else {
+    // handle the retrieved ID here
+  }
+}
+```
 
 **Objective-C**
 
@@ -573,21 +629,6 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 }];
 ```
 
-**Swift**
-
-```swift
-ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
-    // handle the retrieved ID here    
-}
-
-ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
-  if let error = error {
-    // handle error here
-  } else {
-    // handle the retrieved ID here
-  }
-}
-```
 {% endtab %}
 
 {% tab title="React Native" %}
