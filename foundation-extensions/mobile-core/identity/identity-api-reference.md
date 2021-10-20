@@ -398,19 +398,35 @@ String identityExtensionVersion = Identity.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### iOS
-
-**Objective-C**
-
-```objectivec
-NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
-```
 
 **Swift**
 
 ```swift
-var identityExtensionVersion  = ACPIdentity.extensionVersion()
+let identityExtensionVersion  = Identity.extensionVersion
+```
+
+**Objective-C**
+
+```objective-c
+NSString *identityVersion = [AEPMobileIdentity extensionVersion];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### iOS
+
+**Swift**
+
+```swift
+let identityVersion  = ACPIdentity.extensionVersion()
+```
+
+**Objective-C**
+
+```objective-c
+NSString *identityVersion = [ACPIdentity extensionVersion];
 ```
 {% endtab %}
 
