@@ -1,7 +1,7 @@
 # Identity API reference
 
-## appendVisitorInfoForURL
 ## appendToURL
+## appendVisitorInfoForURL
 
 This API appends Adobe visitor information to the query component of the specified URL.
 
@@ -79,45 +79,47 @@ Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String
 
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### appendToURL
-
-{% hint style="info" %}
-Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
-{% endhint %}
 
 #### iOS
 
 **Syntax**
 
-```objectivec
-+ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
-+ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
+```swift
+static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
-* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
 
 **Examples**
 
+**Swift**
+
+```swift
+Identity.appendTo(url: URL(string: "https://example.com")) { appendedURL, error in
+  if let error = error {
+    // handle error
+  } else {
+    // handle the appended url here
+    if let appendedURL = appendedURL {
+      // APIs which update the UI must be called from main thread
+      DispatchQueue.main.async {
+        self.webView.load(URLRequest(url: appendedURL!))
+      }
+    } else {
+      // handle error, nil appendedURL
+    }
+  }
+})
+```
+
 **Objective-C**
 
-```objectivec
-NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
-[ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
-  // handle the appended url here
-  if (urlWithVisitorData) {
-    // APIs which update the UI must be called from main thread
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
-    }
-  } else {
-    // handle error, nil urlWithVisitorData
-  }
-}];
-
-[ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
+```objective-c
+NSURL* url = [NSURL URLWithString:@"https://example.com"];
+[AEPMobileIdentity appendToUrl:url completion:^(NSURL * _Nullable urlWithVisitorData, NSError * _Nullable error) {
   if (error) {
     // handle error here
   } else {
@@ -133,6 +135,30 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
   }
 }];
 ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### appendToURL
+
+{% hint style="info" %}
+Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
+{% endhint %}
+
+#### iOS
+
+**Syntax**
+
+```objective-c
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
+```
+
+* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+* _callback_ is invoked after the updated URL is available.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+
+**Examples**
 
 **Swift**
 
@@ -165,6 +191,40 @@ ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler
   }
 })
 ```
+
+**Objective-C**
+
+```objective-c
+NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
+[ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
+  // handle the appended url here
+  if (urlWithVisitorData) {
+    // APIs which update the UI must be called from main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+    }
+  } else {
+    // handle error, nil urlWithVisitorData
+  }
+}];
+
+[ACPIdentity appendToUrl:url withCompletionHandler:^(NSURL * _Nullable urlWithVersionData, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the appended url here
+    if (urlWithVisitorData) {
+      // APIs which update the UI must be called from main thread
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+      }
+    } else {
+      // handle error, nil urlWithVisitorData
+    }
+  }
+}];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
