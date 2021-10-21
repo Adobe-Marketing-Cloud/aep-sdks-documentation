@@ -777,13 +777,14 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 
 ## getIdentifiers
 
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
+
 {% tabs %}
 {% tab title="Android" %}
+
 ### getIdentifiers
 
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud through the [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback).
-
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -808,14 +809,54 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+### getIdentifiers
+
+#### iOS
+
+**Syntax**
+
+```swift
+@objc(getIdentifiers:)
+static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
+```
+
+* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+
+**Examples**
+
+**Swift**
+
+```swift
+Identity.getIdentifiers { identifiers, error in
+  if let error = error {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
+}
+```
+
+**Objective-C**
+
+```objectivec
+[[AEPMobileIdentity getIdentifiers:^(NSArray<id<AEPIdentifiable>> * _Nullable identifiers, NSError *error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
+}];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### getIdentifiers
 
 {% hint style="info" %}
 Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-This `getIdentifiers` API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### iOS
 
@@ -827,9 +868,24 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
-* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
+**Swift**
+
+```swift
+ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
+   // handle the retrieved identifiers here        
+}
+
+ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
+  if let error = error {
+    // handle error here
+  } else {
+    // handle the retrieved identifiers here
+  }
+}
+```
 
 **Objective-C**
 
@@ -846,28 +902,10 @@ This `getIdentifiers` API returns all customer identifiers that were previously 
   }
 }];
 ```
-
-**Swift**
-
-```swift
-ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
-   // handle the retrieved identifiers here        
-}
-
-ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) in
-  if let error = error {
-    // handle error here
-  } else {
-    // handle the retrieved identifiers here
-  }
-}
-```
 {% endtab %}
 
 {% tab title="React Native" %}
 ### getIdentifiers
-
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### JavaScript
 
@@ -886,8 +924,6 @@ ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK
 
 {% tab title="Flutter" %}
 ### getIdentifiers
-
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### Dart
 
@@ -912,8 +948,6 @@ try {
 
 {% tab title="Cordova" %}
 ### getIdentifiers
-
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### Cordova
 
@@ -940,8 +974,6 @@ ACPIdentity.getIdentifiers(function (handleCallback) {
 {% tab title="Unity" %}
 ### getIdentifiers
 
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
-
 #### C\#
 
 **Syntax**
@@ -966,8 +998,6 @@ ACPIdentity.GetIdentifiers(HandleAdobeGetIdentifiersCallback);
 
 {% tab title="Xamarin" %}
 ### getIdentifiers
-
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
 
 #### C\#
 
@@ -2657,8 +2687,42 @@ public class VisitorID {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-#### iOS
+{% tab title="iOS (AEP 3.x)" %}
+### iOS (AEP 3.x)
+
+**MobileVisitorAuthenticationState**
+
+This is used to indicate the authentication state for the current `Identifiable`.
+
+```swift
+@objc(AEPMobileVisitorAuthState) public enum MobileVisitorAuthenticationState: Int, Codable {
+    case unknown = 0
+    case authenticated = 1
+    case loggedOut = 2
+}
+```
+
+**Identifiable**
+
+```swift
+@objc(AEPIdentifiable) public protocol Identifiable {
+    /// Origin of the identifier
+    var origin: String? { get }
+
+    /// Type of the identifier
+    var type: String? { get }
+
+    /// The identifier
+    var identifier: String? { get }
+
+    /// The authentication state for the identifier
+    var authenticationState: MobileVisitorAuthenticationState { get }
+}
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### iOS (ACP 2.x)
 
 **ACPMobileVisitorAuthenticationState**
 
