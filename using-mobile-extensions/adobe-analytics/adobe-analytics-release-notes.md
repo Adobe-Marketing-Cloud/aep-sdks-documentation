@@ -1,5 +1,11 @@
 # Release Notes
 
+## October 21, 2021
+### Android Analytics 1.2.9
+
+* Add support for [MobileCore.resetIdentities()](../foundation-extensions/mobile-core/mobile-core-api-reference#resetIdentities) API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Bug fixes to improve SDK stability.
+
 ## September 8, 2021
 
 ### iOS AEPAnalytics 3.0.2

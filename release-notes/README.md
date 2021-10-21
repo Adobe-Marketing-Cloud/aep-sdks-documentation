@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## October 21, 2021
+
+### Android Analytics 1.2.9
+
+* Add support for [MobileCore.resetIdentities()](../foundation-extensions/mobile-core/mobile-core-api-reference#resetIdentities) API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Bug fixes to improve SDK stability.
+
 ## Oct 18, 2021
 
  ### iOS AEPMobileServices 3.0.2
