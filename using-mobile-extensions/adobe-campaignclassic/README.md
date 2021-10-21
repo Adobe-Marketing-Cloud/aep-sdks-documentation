@@ -72,9 +72,9 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
    You can add the following pods to your `Podfile`:
 
    ```text
-   pod 'ACPCampaignClassic', '2.0.0'
-   pod 'ACPLifecycle', '2.0.0'
-   pod 'ACPCore', '2.0.0'
+   pod 'ACPCampaignClassic', '~> 2.0' 
+   pod 'ACPLifecycle', '~> 2.0' 
+   pod 'ACPCore', '~> 2.0'
    ```
 
    or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
