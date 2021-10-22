@@ -1,6 +1,12 @@
 # Release Notes
 
-## Aug 23, 2021
+## October 22, 2021
+
+### iOS AEPTarget 3.1.1
+
+* Fixed an issue where Target session Id was not being persisted in the local storage if the app was closed before session expiry.
+
+## August 23, 2021
 
 ### Android Target 1.2.8
 
