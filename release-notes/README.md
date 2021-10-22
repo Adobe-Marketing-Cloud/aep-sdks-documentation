@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPTarget 3.1.1
 
-* Fixed an issue where Target session Id was not being persisted in the local storage if the app was closed before session expiry.
+* Fixed an issue where the Target session ID was not being persisted in the local storage if the app was closed before session expiry.
 
 ## October 21, 2021
 
