@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## October 22, 2021
+
+### iOS AEPTarget 3.1.1
+
+* Fixed an issue where the Target session ID was not being persisted in the local storage if the app was closed before session expiry.
+
 ## October 21, 2021
 
 ### Android Analytics 1.2.9
