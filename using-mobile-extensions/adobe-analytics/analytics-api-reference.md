@@ -554,6 +554,9 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
+{% hint style="warning" %}
+Analytics extension will no longer generate/retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID value previously generated will continue retrieve AID value with this API. New users will use the ECID value as the primary identity [Identity](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/identity#visitor-ids-in-apps).
+{% endhint %}
 
 {% hint style="warning" %}
 Before you use this API, see the documentation on identifying [unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
@@ -804,7 +807,7 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 
 ```swift
 Analytics.getTrackingIdentifier { (trackingId, error) in
-   // Handle the error (if non-nil) or use the trackingIdentifier value 
+   // Handle the error (if non-nil) or use the trackingIdentifier value
 }
 ```
 
@@ -812,7 +815,7 @@ Analytics.getTrackingIdentifier { (trackingId, error) in
 
 ```text
 AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
-   // Handle the error (if non-nil) or use the trackingIdentifier value 
+   // Handle the error (if non-nil) or use the trackingIdentifier value
 }];
 ```
 {% endtab %}
@@ -844,7 +847,7 @@ Here are examples in Objective-C and Swift:
 
 ```swift
 ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
-     // Handle the error (if non-nil) or use the trackingIdentifier value. 
+     // Handle the error (if non-nil) or use the trackingIdentifier value.
 }
 ```
 {% endtab %}
@@ -1492,4 +1495,3 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 ```
 {% endtab %}
 {% endtabs %}
-
