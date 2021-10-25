@@ -14,7 +14,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Analytics 1.2.9
 
-* Add support for [MobileCore.resetIdentities()](../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Add support for MobileCore.resetIdentities() API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
 * Bug fixes to improve SDK stability.
 
 ## Oct 18, 2021
