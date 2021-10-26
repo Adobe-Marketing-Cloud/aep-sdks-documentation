@@ -296,7 +296,7 @@ Clears all identities stored in the Identity extension and generates a new Exper
 The Identity for Edge Network extension does not read the Mobile SDK's privacy status and therefor setting the SDK's privacy status to opt-out will not clear the identities from the Identity for Edge Network extension.
 {% endhint %}
 
-See [MobileCore.resetIdentities](api-reference.md) for more details.
+See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
 ## Public Classes
 
