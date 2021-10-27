@@ -1,17 +1,17 @@
 # Release Notes
 
-## October 22, 2021
+## October 25, 2021
 
 ### iOS AEPAnalytics 3.0.3
 
-* Add support for [MobileCore.resetIdentities()](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#resetidentities) API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
 ## October 21, 2021
 
 ### Android Analytics 1.2.9
 
-* Add support for [MobileCore.resetIdentities()](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#resetidentities) API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
 * Bug fixes to improve SDK stability.
 
 ## September 8, 2021

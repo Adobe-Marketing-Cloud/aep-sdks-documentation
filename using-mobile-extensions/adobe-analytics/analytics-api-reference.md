@@ -1123,6 +1123,21 @@ ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, err
 {% endtab %}
 {% endtabs %}
 
+## resetIdentities
+
+Clears all identities stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
+
+{% hint style="info" %}
+Support for this API was added in:
+
+* Android Analytics version 1.2.9
+
+* iOS AEPAnalytics version 3.0.3
+
+{% endhint %}
+
+See [MobileCore.resetIdentities](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
+
 ## sendQueuedHits <a id="sendqueuedhits"></a>
 
 Sends all queued hits to Analytics, regardless of the current hit batch settings.
