@@ -555,10 +555,10 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
 
-Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled as well as on [MobileCore.resetIdentities](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API call or on privacy status opt out.
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled as well as on [MobileCore.resetIdentities](analytics-api-reference.md#resetidentities) API call or on privacy status opt out.
 
 {% hint style="warning" %}
-Starting with v1.2.9 (Android) / v3.0.3(iOS AEPAnalytics) / v2.5.1 (iOS ACPAnalytics) this API does not generate or retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID value previously generated will continue retrieve AID value with this API, and new users will use the ECID (MID) value as the primary identity.
+Starting with v1.2.9 (Android) / v3.0.3(iOS AEPAnalytics) / v2.5.1 (iOS ACPAnalytics) this API does not generate or retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID previously generated will continue retrieve the AID value with this API, and new users will use the ECID (MID) value as the primary identity.
 Before using this API, see the documentation on identifying [unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
@@ -1117,9 +1117,9 @@ ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, err
 {% endtab %}
 {% endtabs %}
 
-## resetIdentities
+## resetIdentities <a id="resetidentities"></a>
 
-Clears all identities [`Advertising ID (AID)`, `Visitor ID (VID)`] stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
+Clears the identities stored in the Analytics extension - `tracking identifier (AID)` and the `custom visitor identifiers (VID)` stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
 
 
 {% hint style="info" %}
