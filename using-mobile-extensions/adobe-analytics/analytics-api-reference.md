@@ -554,18 +554,12 @@ ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in
 {% endtabs %}
 
 ## getTrackingIdentifier <a id="gettrackingidentifier"></a>
-{% hint style="warning" %}
-Analytics extension will no longer generate/retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID value previously generated will continue retrieve AID value with this API. New users will use the ECID value as the primary identity [Identity](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/identity#visitor-ids-in-apps).
-{% endhint %}
+
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled as well as on [MobileCore.resetIdentities](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#resetidentities) API call or on privacy status opt out.
 
 {% hint style="warning" %}
-Before you use this API, see the documentation on identifying [unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
-{% endhint %}
-
-Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled.
-
-{% hint style="info" %}
-If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#get-experience-cloud-ids) and have not yet configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
+Starting with v1.2.9 (Android) / v3.0.3(iOS AEPAnalytics) / v2.5.1 (iOS ACPAnalytics) this API does not generate or retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID value previously generated will continue retrieve AID value with this API, and new users will use the ECID (MID) value as the primary identity.
+Before using this API, see the documentation on identifying [unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
 {% tabs %}
@@ -1125,7 +1119,8 @@ ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, err
 
 ## resetIdentities
 
-Clears all identities stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
+Clears all identities [`Advertising ID (AID)`, `Visitor ID (VID)`] stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
+
 
 {% hint style="info" %}
 Support for this API was added in:
