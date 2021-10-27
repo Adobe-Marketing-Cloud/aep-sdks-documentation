@@ -1117,7 +1117,7 @@ ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, err
 {% endtab %}
 {% endtabs %}
 
-## resetIdentities <a id="resetidentities"></a>
+## resetIdentities
 
 Clears the identities stored in the Analytics extension - `tracking identifier (AID)` and the `custom visitor identifiers (VID)` stored in the Analytics extension and force deletes, without sending to Analytics, all hits being stored or batched on the SDK.
 
