@@ -1069,26 +1069,27 @@ class GetIdentifiersCallback : Java.Lang.Object, IAdobeCallback
 
 ## getUrlVariables
 
+This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting URL in the correct location.
+
+If an error occurs while retrieving the URL string, the callback handler will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
+
+* The `adobe_mc` attribute is an URL encoded list that contains:
+  * `MCMID` - Experience Cloud ID \(ECID\)
+  * `MCORGID` - Experience Cloud Org ID
+  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics)
+  * `TS` - A timestamp taken when this request was made
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](../../../using-mobile-extensions/adobe-analytics).
+
 {% tabs %}
 {% tab title="Android" %}
+
 ### getUrlVariables
 
 {% hint style="info" %}
 This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 {% endhint %}
 
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback as an [AdobeCallback](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallback) instance:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
-
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -1123,17 +1124,6 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% hint style="info" %}
 Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0. Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 #### iOS
 
@@ -1229,17 +1219,6 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 This method was added in react-native-acpcore v1.0.5.
 {% endhint %}
 
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
-
 **Syntax**
 
 ```jsx
@@ -1257,17 +1236,6 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 ### getUrlVariables
 
 #### Dart
-
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 **Syntax**
 
@@ -1292,17 +1260,6 @@ try {
 ### [getUrlVariables](identity-api-reference.md)
 
 #### Cordova
-
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 **Syntax**
 
@@ -1329,17 +1286,6 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 
 #### C\#
 
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
-
 **Syntax**
 
 ```csharp
@@ -1364,17 +1310,6 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 ### [GetUrlVariables](identity-api-reference.md)
 
 #### C\#
-
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading \(&\) or \(?\) punctuation because the caller is responsible for placing the variables in their resulting java.net.URI in the correct location.
-
-If an error occurs while retrieving the URL string, _callback_ will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
-
-* The `adobe_mc` attribute is an URL encoded list that contains:
-  * `MCMID` - Experience Cloud ID \(ECID\)
-  * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID \(AID\), if available from the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics)
-  * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID \(VID\), if previously set in the [Analytics extension](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics).
 
 **iOS Syntax**
 
