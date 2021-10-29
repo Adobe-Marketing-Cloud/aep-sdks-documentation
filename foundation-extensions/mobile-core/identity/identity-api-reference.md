@@ -1448,10 +1448,53 @@ super.onCreate();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+#### iOS
+
+{% hint style="info" %}
+For iOS AEP libraries, registration is changed to a single API call. Calling the MobileCore.start API is no longer required. See [MobileCore.registerExtensions()](../mobile-core-api-reference.md#registerextension-s) for more information.
+{% endhint %}
+
+**Swift**
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([AEPIdentity.Identity.self, Lifecycle.self, Analytics.self], {
+        MobileCore.configureWith(appId: "mobilePropertyEnvironmentID")
+    })
+  ...
+}
+```
+
+**Objective-C**
+
+```objectivec
+// AppDelegate.m
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@[AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileAnalytics.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"mobilePropertyEnvironmentID"];
+  }];
+  ...
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 #### iOS
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
+
+**Swift**
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  ACPIdentity.registerExtension()
+  // Override point for customization after application launch.
+  return true;
+}
+```
 
 **Objective-C**
 
@@ -1463,15 +1506,6 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 }
 ```
 
-**Swift**
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  ACPIdentity.registerExtension()
-  // Override point for customization after application launch.
-  return true;
-}
-```
 {% endtab %}
 
 {% tab title="React Native" %}
