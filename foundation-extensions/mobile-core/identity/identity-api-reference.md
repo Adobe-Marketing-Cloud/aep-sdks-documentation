@@ -2468,7 +2468,41 @@ Identity.syncIdentifiers(identifiers);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+### iOS
+
+**Syntax**
+
+```swift
+@objc(syncIdentifiers:)
+static func syncIdentifiers(identifiers: [String: String]?)
+```
+
+* The _identifiers_ dictionary contains identifier type as the key and identifier as the value, both identifier type and identifier should be non empty and non nil values.
+
+**Examples**
+
+**Swift**
+
+```swift
+let ids : [String: String] = ["idType1":"idValue1",
+                              "idType2":"idValue2",
+                              "idType3":"idValue3"];
+Identity.syncIdentifiers(identifiers: ids)
+```
+
+**Objective-C**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1", 
+                      @"idType2":@"idValue2", 
+                      @"idType3":@"idValue3"};
+[AEPMobileIdentity syncIdentifiers:ids];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### iOS
 
 **Syntax**
@@ -2483,6 +2517,15 @@ Identity.syncIdentifiers(identifiers);
 
 **Examples**
 
+**Swift**
+
+```swift
+let identifiers : [String: String] = ["idType1":"idValue1",
+                                      "idType2":"idValue2",
+                                      "idType3":"idValue3"];
+ACPIdentity.syncIdentifiers(identifiers)
+```
+
 **Objective-C**
 
 ```objectivec
@@ -2492,14 +2535,6 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 [ACPIdentity syncIdentifiers:ids];
 ```
 
-**Swift**
-
-```swift
-let identifiers : [String: String] = ["idType1":"idValue1",
-                                      "idType2":"idValue2",
-                                      "idType3":"idValue3"];
-ACPIdentity.syncIdentifiers(identifiers)
-```
 {% endtab %}
 
 {% tab title="React Native" %}
