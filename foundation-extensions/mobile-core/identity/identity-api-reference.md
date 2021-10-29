@@ -2079,7 +2079,37 @@ MobileCore.setPushIdentifier(token);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+### setPushIdentifier
+
+#### iOS
+
+```swift
+@objc(setPushIdentifier:)
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+* _deviceToken_  is a string that contains the device token for push notifications.
+
+**Example**
+
+**Swift**
+
+```swift
+// Set the deviceToken that the APNs has assigned to the device
+MobileCore.setPushIdentifier(deviceToken)
+```
+
+**Objective-C**
+
+```objectivec
+// Set the deviceToken that the APNS has assigned to the device
+[AEPMobileCore setPushIdentifier:deviceToken];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### setPushIdentifier
 
 #### iOS
@@ -2092,6 +2122,13 @@ MobileCore.setPushIdentifier(token);
 
 **Example**
 
+**Swift**
+
+```swift
+// Set the deviceToken that the APNs has assigned to the device
+ACPCore.setPushIdentifier(deviceToken)
+```
+
 **Objective-C**
 
 ```objectivec
@@ -2099,12 +2136,6 @@ MobileCore.setPushIdentifier(token);
 [ACPCore setPushIdentifier:deviceToken];
 ```
 
-**Swift**
-
-```swift
-// Set the deviceToken that the APNs has assigned to the device
-ACPCore.setPushIdentifier(deviceToken)
-```
 {% endtab %}
 
 {% tab title="React Native" %}
