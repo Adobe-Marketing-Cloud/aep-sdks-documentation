@@ -5,7 +5,7 @@
 
 This API appends Adobe visitor information to the query component of the specified URL.
 
-If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the [AdobeCallback](../mobile-core-api-reference#adobecallback) instance:
+If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the callback function:
 
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID \(ECID\)
@@ -50,7 +50,7 @@ If your application uses more complicated URLs, such as Angular URLs, we recomme
 
 ### appendVisitorInfoForURL
 
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -512,9 +512,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 ### getExperienceCloudId
 
-The values are returned via the [AdobeCallback](../mobile-core-api-reference#adobecallback).
-
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Java**
 
