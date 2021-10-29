@@ -109,6 +109,7 @@ Finally, you'll need to scan through your current implementation and replace ACP
 | SDK Component & Extensions | Migration API Reference |
 | :--- | :--- |
 | [Core](../foundation-extensions/mobile-core/) | [AEPCore](../foundation-extensions/mobile-core/acpcore-aepcore.md) |
+| [Identity](../foundation-extensions/mobile-core/identity/) | [AEPIdentity](../foundation-extensions/mobile-core/identity/acpidentity-aepidentity.md) |
 | [Lifecycle](../foundation-extensions/mobile-core/lifecycle/) | [AEPLifecycle](../foundation-extensions/mobile-core/lifecycle/acplifecycle-aeplifecycle.md) |
 | [Signal](../foundation-extensions/mobile-core/signals/) | [AEPSignal](../foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md) |
 | [Profile](../foundation-extensions/profile/) | [AEPUserProfile](../foundation-extensions/profile/acpuserprofile-aepuserprofile.md) |
