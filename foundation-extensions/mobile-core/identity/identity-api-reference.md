@@ -2201,7 +2201,46 @@ Identity.syncIdentifier("idType",
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+#### iOS
+
+**Syntax**
+
+```swift
+@objc(syncIdentifierWithType:identifier:authenticationState:)
+static func syncIdentifier(identifierType: String, identifier: String, authenticationState: MobileVisitorAuthenticationState)
+```
+
+* The _identifierType \(String\)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifier \(String\)_ contains the `identifier` value, and this parameter should not be null or empty.
+
+  If either the `identifierType` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
+
+* The _authenticationState \(MobileVisitorAuthenticationState\)_ value indicates the authentication state for the user and contains one of the following `MobileVisitorAuthenticationState` values:
+  * `MobileVisitorAuthenticationState.authenticated`
+  * `MobileVisitorAuthenticationState.loggedOut`
+  * `MobileVisitorAuthenticationState.unknown`
+
+**Examples**
+
+**Swift**
+
+```swift
+Identity.syncIdentifier(identifierType: "idType", 
+                            identifier: "idValue", 
+                        authentication: .unknown)
+```
+
+**Objective-C**
+
+```objectivec
+[AEPMobileIdentity syncIdentifierWithType:@"idType"
+                               identifier:@"idValue"
+                      authenticationState:AEPMobileVisitorAuthStateUnknown];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 #### iOS
 
 **Syntax**
@@ -2224,16 +2263,16 @@ Identity.syncIdentifier("idType",
 
 **Examples**
 
-**Objective-C**
-
-```objectivec
-[ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
-```
-
 **Swift**
 
 ```swift
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
+```
+
+**Objective-C**
+
+```objectivec
+[ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
 ```
 {% endtab %}
 
