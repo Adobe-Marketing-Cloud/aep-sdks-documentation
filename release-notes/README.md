@@ -6,6 +6,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## October 22, 2021
 
+### iOS AEPAnalytics 3.0.3
+
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Removed retrieval and generation of `Analytics tracking identifier (AID)`. Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+## October 22, 2021
+
 ### iOS AEPTarget 3.1.1
 
 * Fixed an issue where the Target session ID was not being persisted in the local storage if the app was closed before session expiry.
@@ -14,7 +21,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Analytics 1.2.9
 
-* Add support for MobileCore.resetIdentities() API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
 * Bug fixes to improve SDK stability.
 
 ## Oct 18, 2021
@@ -28,7 +35,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android MobileServices 1.1.5
 
-* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
+* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability)
 
 ## Sep 20, 2021
 
@@ -646,4 +653,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 ### iOS Audience 2.3.0
 
 * Added TVOS support to Audience.
-

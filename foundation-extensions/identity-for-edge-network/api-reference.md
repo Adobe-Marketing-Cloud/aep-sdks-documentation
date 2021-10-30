@@ -518,4 +518,3 @@ public enum AuthenticatedState: Int, RawRepresentable, Codable {
 ```
 {% endtab %}
 {% endtabs %}
-
