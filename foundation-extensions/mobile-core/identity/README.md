@@ -1,14 +1,14 @@
 # Identity
 
-The Identity framework is bundled with [Mobile Core](../README.md) and enables your app with the ECID. This service helps with the synchronization of Adobe and other customer identifiers.
+The Identity extension is bundled with [Mobile Core](../README.md) and enables your app with the Experience Cloud ID (ECID). This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="danger" %}
-On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
+On web or other platforms, there might situations where this extension might not be required, and the implementation of this SDK extension on mobile apps is required.
 {% endhint %}
 
 To get started with Identity, complete the following steps:
 
-1. Add the **Identity** framework to your app.
+1. Add the **Identity** extension to your app.
 2. Implement the SDK APIs to complete the following tasks:
    * Update customer IDs.
    * Append Adobe visitor data to a URL string.
@@ -17,7 +17,7 @@ To get started with Identity, complete the following steps:
    * Set advertising IDs.
    * Set the device notification for push notifications.
 
-## Add the Identity framework to your app
+## Add the Identity extension to your app
 
 {% tabs %}
 {% tab title="Android" %}
