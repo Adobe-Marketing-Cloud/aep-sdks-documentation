@@ -1097,7 +1097,7 @@ When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherro
 public static void getUrlVariables(final AdobeCallback<String> callback);
 ```
 
-* _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
+* _callback_ has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
 
 **Example**
 
@@ -1193,7 +1193,7 @@ Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity vers
 + (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
 ```
 
-* _callback_ has an NSString value that contains the visitor identifiers as a querystring after the service request is complete.
+* _callback_ has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
 * _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
 
 **Examples**
@@ -1327,7 +1327,7 @@ try {
 ACPIdentity.getUrlVariables(success, fail);
 ```
 
-* _success_ is a callback containing the url varaibles in query parameter form if the `getUrlVariables` API executed without any errors.
+* _success_ is a callback containing the url variables in query parameter form if the `getUrlVariables` API executed without any errors.
 * _fail_ is a callback containing error information if the `getUrlVariables` API was executed with errors.
 
 **Example**
@@ -1352,7 +1352,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 public static void GetUrlVariables(AdobeGetUrlVariables callback)
 ```
 
-* _callback_ is a callback containing the url varaibles in query parameter form if the `GetUrlVariables` API executed without any errors.
+* _callback_ is a callback containing the url variables in query parameter form if the `GetUrlVariables` API executed without any errors.
 
 **Example**
 
@@ -1377,7 +1377,7 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 public unsafe static void GetUrlVariables (Action<NSString> callback);
 ```
 
-* _callback_ is a callback containing the url varaibles in query parameter form if the `GetUrlVariables` API executed without any errors.
+* _callback_ is a callback containing the url variables in query parameter form if the `GetUrlVariables` API executed without any errors.
 
 **Android Syntax**
 
@@ -1385,7 +1385,7 @@ public unsafe static void GetUrlVariables (Action<NSString> callback);
 public unsafe static void GetUrlVariables (IAdobeCallback callback);
 ```
 
-* _callback_ is a callback containing the url varaibles in query parameter form if the `GetUrlVariables` API executed without any errors.
+* _callback_ is a callback containing the url variables in query parameter form if the `GetUrlVariables` API executed without any errors.
 
 **iOS Example**
 
@@ -2691,7 +2691,7 @@ Starting with _ACPIdentity v2.1.3 \(iOS\)_ and _Identity v1.1.2 \(Android\)_ if 
 public static void syncIdentifiers(final Map<String, String> identifiers, final VisitorID.AuthenticationState authState)
 ```
 
-* _identifiers_ ia a map that contains IDs with the identifier type as the key, and the string identifier as the value.
+* _identifiers_ is a map that contains IDs with the identifier type as the key, and the string identifier as the value.
 * _authState_ indicates the authentication state for the user, which contains one of the following `VisitorID.AuthenticationState` values:
   * `VisitorID.AuthenticationState.AUTHENTICATED`
   * `VisitorID.AuthenticationState.LOGGED_OUT`
