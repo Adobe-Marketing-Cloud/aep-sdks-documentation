@@ -122,13 +122,13 @@ Set the Push Identifier request
 
 Identity Extension listens to Analytics Identity Response Event to retrieve the value of the Analytics tracking identifier \(AID\) that is returned as part of the visitor information for the appendToURL and getUrlVariables API calls.
 
-For more details see [Analytics response identity Document](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-identity).
+For more details see [Analytics response identity Document](../../../using-mobile-extensions/adobe-analytics/analytics-event-reference.md#analytics-response-identity).
 
 ### Audience Manager Content Response
 
 The Identity extension listens for the Audience extension response content event for any user opt-out updates. If this response contains `optedouthitsent: false` an opt-out network call is sent to the Experience Cloud Identity Service.
 
-For more details see [Audience Manager Content Response Document](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1).
+For more details see [Audience Manager Content Response Document](../../../using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1).
 
 ### Configuration Response Content
 
@@ -266,14 +266,14 @@ The result for the `getUrlVariables` request:
 ```
 
 {% hint style="warning" %}
-The Analytics Custom VID is no longer included in the Identity event data payload. If needed, it may be retrieved from the [Analytics extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/987092ee0fd2699ae5898755cd72255802628107/using-mobile-extensions/adobe-analytics/analytics-api-reference/README.md#get-the-custom-visitor-identifier).
+The Analytics Custom VID is no longer included in the Identity event data payload. If needed, it may be retrieved from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#get-the-custom-visitor-identifier).
 {% endhint %}
 
 ### Configuration content request
 
 The Identity extension dispatches a new Configuration Content Request event when a privacy change is detected in the response that is received from the ECID Service. This event is handled by the Core extension, and the new privacy status is broadcasted to other extensions.
 
-For more details about this event, see the [Mobile Core](https://app.gitbook.com/@aep-sdks/s/docs/~/drafts/-LzsATEkeUMSPZRDl_O0/using-mobile-extensions/mobile-core) section.
+For more details about this event, see the [Mobile Core Configuration event reference](../configuration/configuration-event-reference) section.
 
 ### Analytics content request
 
