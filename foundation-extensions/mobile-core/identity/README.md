@@ -21,6 +21,7 @@ To get started with Identity, complete the following steps:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 Import the library:
@@ -159,7 +160,7 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 **Swift**
 
 {% hint style="warning" %}
-When including both Identity and Identity for Edge Network extensions, registers the extensions using their full Swift module names.
+When including both Identity and Identity for Edge Network extensions, register the extensions using their full Swift module names.
 ```swift
 MobileCore.registerExtensions([AEPIdentity.Identity.self, AEPEdgeIdentity.Identity.self, ...], { ... })
 ```
