@@ -1,10 +1,10 @@
 # Migrating to AEPIdentity reference
 
-This document is a reference comparison of AEPIdentity \(3.x\) APIs against their equivalent APIs in ACPIdentity \(2.x\) for an iOS mobile application implementation.
+This document is a reference comparison of AEPIdentity (3.x) APIs against their equivalent APIs in ACPIdentity (2.x) for an iOS mobile application implementation.
 
 ## Public Classes
 
-| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
+| Type | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
 | :--- | :--- | :--- | :--- |
 | Primary Class | Identity | AEPMobileIdentity | ACPIdentity |
 | Class | MobileCore | AEPMobileCore | ACPCore |
@@ -16,7 +16,7 @@ For more information, please read the [Identity API reference](identity-api-refe
 ### appendVisitorInfoForURL
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 
 ```swift
 Identity.appendTo(url:completion:)
@@ -24,7 +24,7 @@ Identity.appendTo(url:completion:)
 
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 
 ```objectivec
 [AEPMobileIdentity appendToUrl:completion:];
@@ -32,7 +32,7 @@ Identity.appendTo(url:completion:)
 
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 
 ```objectivec
 [ACPMobileIdentity appendToUrl:withCallback:];
@@ -45,19 +45,19 @@ Identity.appendTo(url:completion:)
 ### extensionVersion
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.extensionVersion
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity extensionVersion];
 ```
@@ -67,19 +67,19 @@ Identity.extensionVersion
 ### getExperienceCloudId
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.getExperienceCloudId(completion:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity getExperienceCloudId:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity getExperienceCloudId:];
 [ACPIdentity getExperienceCloudIdWithCompletionHandler:];
@@ -90,19 +90,19 @@ Identity.getExperienceCloudId(completion:)
 ### getIdentifiers
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.getIdentifiers(completion:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity getIdentifiers:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity getIdentifiers:];
 [ACPIdentity getIdentifiersWithCompletionHandler:];
@@ -113,19 +113,19 @@ Identity.getIdentifiers(completion:)
 ### getUrlVariables
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.getUrlVariables(completion:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity getUrlVariables:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity getUrlVariables:];
 [ACPIdentity getUrlVariablesWithCompletionHandler:];
@@ -136,19 +136,19 @@ Identity.getUrlVariables(completion:)
 ### setAdvertisingIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 MobileCore.setAdvertisingIdentifier(_ identifier:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileCore setAdvertisingIdentifier:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPCore setAdvertisingIdentifier:];
 ```
@@ -158,19 +158,19 @@ MobileCore.setAdvertisingIdentifier(_ identifier:)
 ### setPushIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 MobileCore.setPushIdentifier(_ deviceToken:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileCore setPushIdentifier:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPCore setPushIdentifier:];
 ```
@@ -180,19 +180,19 @@ MobileCore.setPushIdentifier(_ deviceToken:)
 ### syncIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.syncIdentifier(identifierType:identifier:authenticationState:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity syncIdentifierWithType:identifier:authenticationState:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity syncIdentifier:identifier:authentication:];
 ```
@@ -202,20 +202,20 @@ Identity.syncIdentifier(identifierType:identifier:authenticationState:)
 ### syncIdentifiers
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
 Identity.syncIdentifiers(identifierType:identifier:authenticationState:)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
+{% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 [AEPMobileIdentity syncIdentifiers:];
 [AEPMobileIdentity syncIdentifiers:authenticationState:];
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
+{% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
 [ACPIdentity syncIdentifiers:];
 [ACPIdentity syncIdentifiers:authentication:];
