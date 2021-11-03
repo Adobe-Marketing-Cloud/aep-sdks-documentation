@@ -59,7 +59,7 @@ Import the Identity extension:
 
 **Swift**
 
-In swift, the ACPCore includes ACPIdentity :
+In Swift, the ACPCore includes ACPIdentity :
 
 ```swift
 import ACPCore
@@ -405,7 +405,7 @@ If your app opens mobile web content, you need to ensure that visitors are not i
 The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-out.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to Opt-In.
 {% endhint %}
 
 {% hint style="info" %}
@@ -440,7 +440,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting in SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-java) and build your own URL:
+Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-java) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -462,6 +462,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendToUrl-1):
 
 #### Swift
+
 ```swift
 let url = URL(string: "https://example.com")
 Identity.appendTo(url: url) { appendedUrl, error in
@@ -473,6 +474,7 @@ Identity.appendTo(url: url) { appendedUrl, error in
 }
 ```
 #### Objective-C
+
 ```objectivec
 NSURL *sampleUrl = [NSURL URLWithString:@"https://example.com"];
 [AEPMobileIdentity appendToUrl:sampleUrl completion:^(NSURL * _Nullable appendedUrl, NSError *error) {
@@ -487,6 +489,7 @@ NSURL *sampleUrl = [NSURL URLWithString:@"https://example.com"];
 Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-2) and build your own URL:
 
 #### Swift
+
 ```swift
 Identity.getUrlVariables { urlVariables, error in
     if error != nil {
@@ -502,6 +505,7 @@ Identity.getUrlVariables { urlVariables, error in
 ```
 
 #### Objective-C
+
 ```objectivec
 [AEPMobileIdentity getUrlVariables:^(NSString * _Nullable urlVariables, NSError *error) {
     NSString *sampleURLString = @"https://example.com";
@@ -531,7 +535,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.example.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-3) and build your own URL:
+Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-3) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
