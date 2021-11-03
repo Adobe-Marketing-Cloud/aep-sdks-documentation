@@ -50,7 +50,7 @@ If your application uses more complicated URLs, such as Angular URLs, you should
 
 ### appendVisitorInfoForURL
 
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -512,7 +512,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 ### getExperienceCloudId
 
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Java**
 
@@ -782,7 +782,7 @@ This API returns all customer identifiers that were previously synced with the A
 
 ### getIdentifiers
 
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the custom identifiers from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 #### Java
 
@@ -1087,7 +1087,7 @@ If an error occurs while retrieving the URL string, the callback handler will be
 This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 {% endhint %}
 
-When [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) is provided in replace of [AdobeCallback](../mobile-core-api-reference#adobecallback), and you are fetching the attributes from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 #### Java
 
