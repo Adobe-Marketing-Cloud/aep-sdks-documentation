@@ -29,6 +29,25 @@ For Android, the`startSession` API does not need to be explicitly called. For iO
 ### Authentication overlay appears, but app fails to connect
 
 * Ensure internet connectivity of the device through the device web browser.
+
 * If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See instructions on installing the [Adobe Experience Platform Assurance](../../foundation-extensions/adobe-experience-platform-assurance/#install-the-assurance-extension-in-experience-platform-launch) SDK library.
+
 * Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](../../foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md#orgid-information-is-not-available) (this is uncommon and relevant only if you have access to more than one ORG instance).
+
+  
+
+### Adobe Analytics Debugging
+
+1. **Post Processing Status - No Debug Flag**
+
+In your Anayltics Events view, if your events fail with the Post-Processed Status "No Debug Flag". This is becuase your current Adobe Analytics or Assurance SDK version might not support Analytics Debugging feature. 
+
+Please upgrade SDK to the latest version to overcome this problem. Below given are the minimum version requirements.
+
+|                 | iOS     | Android |
+| --------------- | ------- | ------- |
+| Adobe Analytics | > 2.4.0 | > 1.2.6 |
+| Assurance       | > 1.0.0 | > 1.0.0 |
+
+
 
