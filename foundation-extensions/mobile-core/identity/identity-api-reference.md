@@ -1653,7 +1653,7 @@ public void onResume() {
 ### setAdvertisingIdentifier
 
 {% hint style="info" %}
-To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
+To access IDFA and handle it correctly in your mobile application, see the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
 {% endhint %}
 
 {% hint style="warning" %}
