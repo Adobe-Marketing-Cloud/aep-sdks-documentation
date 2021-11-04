@@ -161,6 +161,8 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 
 {% hint style="warning" %}
 When including both Identity and Identity for Edge Network extensions, register the extensions using their full Swift module names.
+{% endhint %}
+
 ```swift
 MobileCore.registerExtensions([AEPIdentity.Identity.self, AEPEdgeIdentity.Identity.self, ...], { ... })
 ```
@@ -177,7 +179,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // register the lifecycle extension
  [AEPMobileCore registerExtensions:@[AEPMobileIdentity.class, ...] completion:^{
    ...
  }];
@@ -427,7 +428,7 @@ To use the same visitor ID in the app and mobile web and pass the visitor ID to 
 To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendToUrl-java):
 
 ```java
-Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
+Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
     @Override    
     public void call(String urlWithAdobeVisitorInfo) {        
         //handle the new URL here        
@@ -450,7 +451,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
         //For example, open the URL on the device browser        
         //        
         Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse("http://examplel.com?" + urlWithAdobeVisitorInfo));        
+        i.setData(Uri.parse("https://example.com?" + urlWithAdobeVisitorInfo));        
         startActivity(i);    
     }
 });
@@ -495,7 +496,7 @@ Identity.getUrlVariables { urlVariables, error in
     if error != nil {
         // handle error here
     } else {
-        if let url = URL(string: "http://example.com?\(urlVariables ?? "")") {
+        if let url = URL(string: "https://example.com?\(urlVariables ?? "")") {
             DispatchQueue.main.async {
                 UIApplication.shared.open(url)
             }
@@ -540,7 +541,7 @@ Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you ca
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
   // handle the URL query parameter string here
-  NSString* urlString = @"http://example.com";
+  NSString* urlString = @"https://example.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
   [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
