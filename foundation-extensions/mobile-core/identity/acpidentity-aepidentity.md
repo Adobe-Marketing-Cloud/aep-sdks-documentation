@@ -35,8 +35,8 @@ Identity.appendTo(url:completion:)
 {% tab title="ACP 2.x (Objective-C)" %}
 
 ```objectivec
-[ACPMobileIdentity appendToUrl:withCallback:];
-[ACPMobileIdentity appendToUrl:withCompletionHandler:];
+[ACPIdentity appendToUrl:withCallback:];
+[ACPIdentity appendToUrl:withCompletionHandler:];
 ```
 
 {% endtab %}
