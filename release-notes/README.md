@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## November 5, 2021
+
+ ### iOS AEPMobileServices 3.0.3
+
+ * Fixes crash using an immutable dictionary when handling attribution data.
+
 ## October 22, 2021
 
 ### iOS AEPAnalytics 3.0.3
