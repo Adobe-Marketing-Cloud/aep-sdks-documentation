@@ -6,7 +6,7 @@ Release notes and change logs for the Adobe Mobile Services extension
 
  ### iOS AEPMobileServices 3.0.3
 
- * Fixes crash using an immutable dictionary when handling attribution data.
+ * Fixes crash when using an immutable dictionary for handling attribution data.
 
 ## Oct 18, 2021
 
