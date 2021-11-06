@@ -401,6 +401,12 @@ String identityExtensionVersion = Identity.extensionVersion();
 {% tab title="iOS (AEP 3.x)" %}
 #### iOS
 
+**Syntax**
+
+```swift
+static var extensionVersion: String
+```
+
 **Swift**
 
 ```swift
@@ -416,6 +422,12 @@ NSString *identityVersion = [AEPMobileIdentity extensionVersion];
 
 {% tab title="iOS (ACP 2.x)" %}
 #### iOS
+
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
 
 **Swift**
 

@@ -13,13 +13,13 @@ This document is a reference comparison of AEPIdentity (3.x) APIs against their 
 
 For more information, please read the [Identity API reference](identity-api-reference.md).
 
-### appendVisitorInfoForURL
+### appendToUrl
 
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 
 ```swift
-Identity.appendTo(url:completion:)
+static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
 {% endtab %}
@@ -27,7 +27,8 @@ Identity.appendTo(url:completion:)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objectivec
-[AEPMobileIdentity appendToUrl:completion:];
++ (void) appendToUrl: (NSURL * _Nullable baseUrl) 
+					completion: ^(NSURL * _Nullable urlWithVisitorData, NSError * _Nullable error) completion;
 ```
 
 {% endtab %}
@@ -35,8 +36,8 @@ Identity.appendTo(url:completion:)
 {% tab title="ACP 2.x (Objective-C)" %}
 
 ```objectivec
-[ACPIdentity appendToUrl:withCallback:];
-[ACPIdentity appendToUrl:withCompletionHandler:];
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
 ```
 
 {% endtab %}
@@ -47,19 +48,19 @@ Identity.appendTo(url:completion:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-Identity.extensionVersion
+static var extensionVersion: String
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity extensionVersion];
++ (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity extensionVersion];
++ (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 {% endtabs %}
@@ -69,20 +70,20 @@ Identity.extensionVersion
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-Identity.getExperienceCloudId(completion:)
+static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity getExperienceCloudId:];
++ (void) getExperienceCloudId: ^(NSString * _Nullable ecid, NSError * _Nullable error) completion;
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity getExperienceCloudId:];
-[ACPIdentity getExperienceCloudIdWithCompletionHandler:];
++ (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
++ (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
 ```
 {% endtab %}
 {% endtabs %}
@@ -92,20 +93,20 @@ Identity.getExperienceCloudId(completion:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-Identity.getIdentifiers(completion:)
+static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity getIdentifiers:];
++ (void) getIdentifiers: ^(NSArray<id<AEPIdentifiables>> * _Nullable identifiers, NSError * _Nullable error) completion;
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity getIdentifiers:];
-[ACPIdentity getIdentifiersWithCompletionHandler:];
++ (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
++ (void) getIdentifiersWithCompletionHandler: (nonnull void (^) (NSArray<ACPMobileVisitorId*>* __nullable visitorIDs, NSError* __nullable error)) completionHandler;
 ```
 {% endtab %}
 {% endtabs %}
@@ -115,20 +116,20 @@ Identity.getIdentifiers(completion:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-Identity.getUrlVariables(completion:)
+static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity getUrlVariables:];
++ (void) getUrlVariables: ^(NSString * _Nullable urlVariables, NSError * _Nullable error) completion:
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity getUrlVariables:];
-[ACPIdentity getUrlVariablesWithCompletionHandler:];
++ (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
++ (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
 ```
 {% endtab %}
 {% endtabs %}
@@ -138,19 +139,19 @@ Identity.getUrlVariables(completion:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-MobileCore.setAdvertisingIdentifier(_ identifier:)
+public static func setAdvertisingIdentifier(_ identifier: String?)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileCore setAdvertisingIdentifier:];
++ (void) setAdvertisingIdentifier: (NSString * _Nullable identifier);
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPCore setAdvertisingIdentifier:];
++ (void) setAdvertisingIdentifier: (nullable NSString*) adId;
 ```
 {% endtab %}
 {% endtabs %}
@@ -160,19 +161,19 @@ MobileCore.setAdvertisingIdentifier(_ identifier:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-MobileCore.setPushIdentifier(_ deviceToken:)
+public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileCore setPushIdentifier:];
++ (void) setPushIdentifier: (NSString * _Nullable deviceToken);
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPCore setPushIdentifier:];
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
 ```
 {% endtab %}
 {% endtabs %}
@@ -182,19 +183,23 @@ MobileCore.setPushIdentifier(_ deviceToken:)
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
 ```swift
-Identity.syncIdentifier(identifierType:identifier:authenticationState:)
+static func syncIdentifier(identifierType: String, identifier: String, authenticationState: MobileVisitorAuthenticationState)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity syncIdentifierWithType:identifier:authenticationState:];
++ (void) syncIdentifierWithType: (NSString * _Nonnull identifierType) 
+										 identifier: (NSString * _Nonnul identifier) 
+								 authentication: (enum AEPAuthenticationState authenticationState);
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity syncIdentifier:identifier:authentication:];
++ (void) syncIdentifier: (nonnull NSString*) identifierType             
+             identifier: (nonnull NSString*) identifier
+         authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
 ```
 {% endtab %}
 {% endtabs %}
@@ -203,22 +208,25 @@ Identity.syncIdentifier(identifierType:identifier:authenticationState:)
 
 {% tabs %}
 {% tab title="AEP 3.x (Swift)" %}
+
 ```swift
-Identity.syncIdentifiers(identifierType:identifier:authenticationState:)
+static func syncIdentifiers(identifiers: [String: String]?)
+static func syncIdentifiers(identifiers: [String: String]?, authenticationState: MobileVisitorAuthenticationState)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-[AEPMobileIdentity syncIdentifiers:];
-[AEPMobileIdentity syncIdentifiers:authenticationState:];
++ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers);
++ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers) 
+					authentication: (enum AEPAuthenticationState authenticationState);
 ```
 {% endtab %}
 
 {% tab title="ACP 2.x (Objective-C)" %}
 ```objectivec
-[ACPIdentity syncIdentifiers:];
-[ACPIdentity syncIdentifiers:authentication:];
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
 ```
 {% endtab %}
 {% endtabs %}
