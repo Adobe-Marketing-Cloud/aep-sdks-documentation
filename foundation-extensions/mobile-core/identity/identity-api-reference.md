@@ -1,8 +1,6 @@
 # Identity API reference
 
-## appendToURL
-## appendVisitorInfoForURL
-
+## appendToURL / appendVisitorInfoForURL
 This API appends Adobe visitor information to the query component of the specified URL.
 
 If the provided URL is null or empty, it is returned as is. Otherwise, the following information is added to the query component of the specified URL and is returned in the callback function:
