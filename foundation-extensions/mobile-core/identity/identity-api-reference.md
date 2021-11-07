@@ -512,7 +512,7 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 
 ## getExperienceCloudId
 
-This API retrieves the ECID that was generated when the app was initially launched and is stored in the ECID Service.
+This API retrieves the Adobe Experience Cloud ID (ECID) that was generated when the app was initially launched and is stored in the Adobe Experience Cloud Identity Service.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
@@ -783,7 +783,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 
 ## getIdentifiers
 
-This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud.
+This API returns all customer identifiers that were previously synced with the Adobe Experience Cloud Identity Service.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1075,7 +1075,7 @@ class GetIdentifiersCallback : Java.Lang.Object, IAdobeCallback
 
 ## getUrlVariables
 
-This API gets the Visitor ID Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Visitor ID Service URL variables. There will be no leading (&) or (?) punctuation because the caller is responsible for placing the variables in their resulting URL in the correct location.
+This API gets the Adobe Experience Cloud Identity Service variables in URL query parameter form, and these variables will be consumed by the hybrid app. This method returns an appropriately formed string that contains the Experience Cloud Identity Service URL variables. There will be no leading (&) or (?) punctuation because the caller is responsible for placing the variables in their resulting URL in the correct location.
 
 If an error occurs while retrieving the URL string, the callback handler will be called with a null value. Otherwise, the following information is added to the string that is returned in the callback:
 
@@ -2167,17 +2167,17 @@ ACPCore.setPushIdentifier("pushID");
 
 ## syncIdentifier
 
-The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud ID (ECID) Service.
+The `syncIdentifier()` and `syncIdentifiers()` APIs update the specified customer IDs with the Adobe Experience Cloud Identity Service.
 
-These APIs synchronize the provided customer identifier type key and value with the authentication state to the ECID Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
+These APIs synchronize the provided customer identifier type key and value with the authentication state to the Experience Cloud Identity Service. If the specified customer ID type exists in the service, this ID type is updated with the new ID and the authentication state. Otherwise, a new customer ID is added.
 
-Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
+Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Experience Cloud Identity Service.
 
 These IDs are preserved between app upgrades, are saved and restored during the standard application backup process, and are removed at uninstall.
 
 If the current SDK privacy status is `MobilePrivacyStatus.OPT_OUT`, calling this method results in no operations being performed.
 
-This API updates or appends the provided customer identifier type key and value with the given authentication state to the ECID Service. If the specified customer ID type exists in the service, the ID is updated with the new ID and authentication state. Otherwise a new customer ID is added.
+This API updates or appends the provided customer identifier type key and value with the given authentication state to the Experience Cloud Identity Service. If the specified customer ID type exists in the service, the ID is updated with the new ID and authentication state. Otherwise a new customer ID is added.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -2687,7 +2687,7 @@ ACPIdentity.SyncIdentifiers(ids);
 
 The function of this API is the same as the `syncIdentifier` API. This API passes a list of identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value. In each identifier pair, if the `identifier type` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe ECID Service.
+Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the new `identifier` value is null or empty, this ID type is removed from the local storage, Identity shared state and not synced with the Adobe Experience Cloud ID (ECID) Service.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -2989,7 +2989,7 @@ public enum AuthenticationState {
 
 **VisitorID**
 
-This class is an identifier to be used with the Experience Cloud Visitor ID Service.
+This class is an identifier to be used with the Adobe Experience Cloud Identity Service.
 
 ```java
 public class VisitorID {    
@@ -3059,7 +3059,7 @@ typedef NS_ENUM(NSUInteger,
 
 **ACPMobileVisitorId**
 
-This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
+This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
 
 ```objectivec
 @interface ACPMobileVisitorId : NSObject
@@ -3078,7 +3078,7 @@ This is an identifier to be used with the Experience Cloud Visitor ID Service an
 
 **ACPVisitorID**
 
-This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
+This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
 ```jsx
 import {ACPVisitorID} from '@adobe/react-native-acpcore';
@@ -3104,7 +3104,7 @@ var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
 
 **ACPVisitorID**
 
-This is an identifier to be used with the Experience Cloud Visitor ID Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
+This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
 ```dart
 import 'package:flutter_acpcore/src/acpmobile_visitor_id.dart';
