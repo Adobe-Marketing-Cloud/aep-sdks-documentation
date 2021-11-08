@@ -1,6 +1,6 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for Apple iOS (includes iOS, iPadOS, and tvOS) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
+The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
@@ -13,7 +13,7 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 ### Java / Kotlin
 
 {% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or later.
+Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
 {% endhint %}
 
 1. Open the mobile property you created earlier in Experience Platform Launch.
@@ -21,7 +21,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or late
 
    The **Environments** tab lists the different environments where you can publish.
 
-3. In the row for the **Development** environment, click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
+3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
 
    You should see a dialog box similar to the following:
 
@@ -33,7 +33,7 @@ Adobe Experience Platform SDKs for Android supports Android 4.0 (API 14) or late
    The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 {% hint style="warning" %}
 Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
 {% endhint %}
@@ -46,7 +46,7 @@ In order to support the new Apple M1 architecture while maintaining support for 
 Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
-### iOS (Swift) version 3.x
+### iOS \(Swift\) version 3.x
 
 Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
 
@@ -72,9 +72,23 @@ target 'YourTargetApp' do
 end
 ```
 
-### iOS version 2.x and before
+{% endtab %}
 
-1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon (![](../.gitbook/assets/package%20%281%29.png)).
+{% tab title="iOS (ACP 2.x)" %}
+
+{% hint style="warning" %}
+Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
+{% endhint %}
+
+{% hint style="success" %}
+### Apple M1 compatibility
+
+In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
+
+Please see the [release notes](../release-notes/2020#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+{% endhint %}
+
+1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
 2. On the **Mobile Install Instructions** dialog box, select **iOS**.
 3. Follow the instructions for using CocoaPods with iOS.
 4. Under the initialization code, choose Objective C or Swift.
@@ -185,8 +199,7 @@ implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### iOS version 3.x
+{% tab title="iOS (AEP 3.x)" %}
 
 Create a `Podfile` if you do not already have one:
 
@@ -214,7 +227,8 @@ Save the `Podfile` and run install:
 pod install
 ```
 
-### iOS version 2.x and before
+{% endtab %}
+{% tab title="iOS (ACP 2.x)" %}
 
 Create a `Podfile` if you do not already have one:
 
@@ -299,11 +313,10 @@ public class MainApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### iOS version 3.x
+{% tab title="iOS (AEP 3.x)" %}
 
 {% hint style="warning" %}
-For iOS Swift libraries, registration is changed to a single API call (as shown in the snippets below). Calling the`MobileCore.start` API is no longer required.
+For iOS Swift libraries, registration is changed to a single API call \(as shown in the snippets below\). Calling the`MobileCore.start` API is no longer required.
 {% endhint %}
 
 **Swift**
@@ -320,7 +333,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 **Objective-C**
 
-```text
+```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, AEPMobileLifecycle.class, AEPMobileUserProfile.class, AEPMobileEdge.class, AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileIdentity.class, AEPMobileAnalytics.class] completion:^{
@@ -329,8 +342,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ...
 }
 ```
+{% endtab %}
 
-### iOS version 2.x and before
+{% tab title="iOS (ACP 2.x)" %}
 
 The following snippet shows an example of how to add the initialization code. Note that this may need to be adjusted, depending on how your application is structured.
 
@@ -395,7 +409,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="React Native" %}
-For React Native apps, initialize the SDK using native code in your `AppDelegate` (iOS) and `MainApplication` (Android).
+For React Native apps, initialize the SDK using native code in your `AppDelegate` \(iOS\) and `MainApplication` \(Android\).
 
 ### iOS
 
@@ -647,7 +661,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### 3. Ensure app permissions (Android only)
+### 3. Ensure app permissions \(Android only\)
 
 For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
 

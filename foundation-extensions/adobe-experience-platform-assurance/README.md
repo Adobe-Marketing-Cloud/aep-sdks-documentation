@@ -336,12 +336,12 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtab %}
 {% endtabs %}
 
-### Implement AEP Assurance session start APIs (iOS only)
+### Implement AEP Assurance session start APIs \(iOS only\)
 
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-You may call this API when the app launches with a url (see code snippet below for sample usage)
+You may call this API when the app launches with a url \(see code snippet below for sample usage\)
 {% endhint %}
 
 {% tabs %}

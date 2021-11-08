@@ -9,14 +9,14 @@ description: 'Last Updated September 2, 2020'
 Apple recently announced [new changes](https://developer.apple.com/app-store/user-privacy-and-data-use/) to iOS 14, which are scheduled to take effect later in 2020/2021. Among the highlights of the changes:
 
 1. Apple will ask app developers to self-report data types collected and how they may be used by the brand. 
-2. Beginning iOS 14, apps will need to ask & receive user’s permission to be tracked (specifically referring to accessing the device’s advertising identifier or IDFA). 
+2. Beginning iOS 14, apps will need to ask & receive user’s permission to be tracked \(specifically referring to accessing the device’s advertising identifier or IDFA\). 
 3. Apple is introducing a new variant of device location signal labelled “reduced” or “Approximate Location”.
 
 ## Next Steps & Industry Reaction
 
 Apple continues to release new details regarding these changes, and fuller business, legal, and technical impact assessments will follow accordingly. On the legal and technical sides, these changes raise questions as to how to best effectuate consumer rights and choices under laws like GDPR, CCPA, and the like.
 
-In terms of early reactions, the US ad trades are still evaluating and further preparing responses. [The Association of National Advertisers (ANA)](https://www.ana.net/content/show/id/60948) expressed concerns about the impact these changes would have on personalization, measurement and marketing communications, underscoring the importance of having a coordinated ecosystem wide solution not determined by a single company.
+In terms of early reactions, the US ad trades are still evaluating and further preparing responses. [The Association of National Advertisers \(ANA\)](https://www.ana.net/content/show/id/60948) expressed concerns about the impact these changes would have on personalization, measurement and marketing communications, underscoring the importance of having a coordinated ecosystem wide solution not determined by a single company.
 
 IAB Europe released a [letter to Tim Cook](https://iabeurope.eu/all-news/marketing-professionals-urge-apple-to-adopt-standards-promoting-interoperability-and-more-predictable-user-privacy/) on July 2,
 
@@ -24,7 +24,7 @@ IAB Europe released a [letter to Tim Cook](https://iabeurope.eu/all-news/marketi
 
 along with concerns about developers’ abilities to continue to meet their legal obligations under the announced guidelines.
 
-Given that these developments are taking place against the backdrop of broader changes to addressable communications in the wider ecosystem (e.g., browser changes) Adobe is engaged in the appropriate policy and technical forums to work on these important issues.
+Given that these developments are taking place against the backdrop of broader changes to addressable communications in the wider ecosystem \(e.g., browser changes\) Adobe is engaged in the appropriate policy and technical forums to work on these important issues.
 
 Adobe is proud to join the Partnership for Responsible Addressable Media as a founding member. We support the partnership’s principles and objectives to develop common standards, technologies, and practices for addressability. This cross-industry approach is critical to building consumer trust, powering exceptional digital experiences designed to delight consumers, and driving innovation that supports continued growth of the digital economy in a responsible and transparent way.
 
@@ -48,7 +48,7 @@ Audience Manager will continue to enable customers to collect, and store data us
 
 ### Adobe Advertising Cloud
 
-Advertising Cloud will enable its customers to continue to deliver digital advertising campaigns on app inventory against targeted audiences provided by customers (via standard data onboarding processes). Customers should work with their data providers to only include user IDs they deem appropriate (e.g. opted-in IDFAs) in any segments that are provided to Advertising Cloud for purposes such as targeting, frequency capping, and measurement, etc.
+Advertising Cloud will enable its customers to continue to deliver digital advertising campaigns on app inventory against targeted audiences provided by customers \(via standard data onboarding processes\). Customers should work with their data providers to only include user IDs they deem appropriate \(e.g. opted-in IDFAs\) in any segments that are provided to Advertising Cloud for purposes such as targeting, frequency capping, and measurement, etc.
 
 Please contact your Adobe Customer Success Manager or account representatives for further detail.
 

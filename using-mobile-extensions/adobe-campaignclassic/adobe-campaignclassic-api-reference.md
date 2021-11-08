@@ -36,7 +36,7 @@ let campaignClassicExtensionVersion  = ACPCampaignClassic.extensionVersion()
 
 {% tabs %}
 {% tab title="Android" %}
-To prepare your app to handle push notifications, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the Firebase Cloud Messaging (FCM) SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
+To prepare your app to handle push notifications, see [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the Firebase Cloud Messaging \(FCM\) SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
 
 ### registerDevice
 
@@ -127,7 +127,7 @@ Adobe Campaign Classic has the following APIs to track push message receive and 
 {% tab title="Android" %}
 ### trackNotificationReceive
 
-The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
+The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Java
 
@@ -163,7 +163,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 {% tab title="iOS" %}
 ### trackNotificationReceive
 
-The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. You might pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
+The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. You might pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Objective-C
 
@@ -200,7 +200,7 @@ ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
 {% tab title="Android" %}
 ### trackNotificationClick
 
-The `trackNotificationClick` API sends the clicked push notification's tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked, which may result in the application being opened. If `trackInfo` is null, or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
+The `trackNotificationClick` API sends the clicked push notification's tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked, which may result in the application being opened. If `trackInfo` is null, or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Java
 
@@ -242,7 +242,7 @@ public void onResume() {
 {% tab title="iOS" %}
 ### trackNotificationClick
 
-The `trackNotificationClick` API sends the clicked push notification's tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked, which may result in the application being opened. You might pass the `launchOptions` that was received before opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
+The `trackNotificationClick` API sends the clicked push notification's tracking information to the configured Adobe Campaign Classic server. This API might be used to send tracking information when the notification is clicked, which may result in the application being opened. You might pass the `launchOptions` that was received before opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 #### Objective-C
 

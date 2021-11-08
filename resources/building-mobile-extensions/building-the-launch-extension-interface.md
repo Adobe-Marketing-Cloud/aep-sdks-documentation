@@ -6,7 +6,7 @@
 
    For more information, see the document on [company setup](https://experienceleague.adobe.com/docs/launch/using/extension-dev/submit/setup.html).
 
-2. (Optional) Create a new listing in the Exchange Partner Portal.
+2. \(Optional\) Create a new listing in the Exchange Partner Portal.
 
    For more information, see the document on [creating an exchange listing](https://experienceleague.adobe.com/docs/launch/using/extension-dev/submit/create-listing.html).
 

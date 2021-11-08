@@ -1,11 +1,17 @@
 # Release Notes
 
+## Sep 17, 2021
+
+### iOS Media 2.3.2
+
+* Bug fixes to improve SDK stability.
+
 ## Jul 16, 2021
 
 ### Android Media 2.1.2
 
 * Enabled debugging post processed data in Media Analytics Assurance workflow.
-* Added support to handle the MobileCore.resetIdentities() API.
+* Added support to handle the MobileCore.resetIdentities\(\) API.
 
 ### iOS AEPMedia 3.0.1
 

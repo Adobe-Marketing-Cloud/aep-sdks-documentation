@@ -44,7 +44,7 @@ To use the Mobile Services extension, complete the following steps:
 The Mobile Services extension requires the Analytics extension for reporting. It uses the report suite that is specified in the Analytics extension for reporting. However, the Mobile Services extension uses the report suite that is configured for the app in Mobile Services for push and in-app messaging, acquisition, marketing links, and app management. If the report suite in the two locations do not match, a push message from the wrong report suite may be sent.
 {% endhint %}
 
-### Automatic configuration (Recommended)
+### Automatic configuration \(Recommended\)
 
 1. In Experience Platform Launch, click the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Analytics – Mobile Services** extension, and click **Install**.
@@ -71,7 +71,7 @@ To install the Mobile Services extension, complete the following steps:
 
 1. Select **Enter Custom settings**.
 2. Enter an Acquisition time out. The recommended time out is 5 seconds. To enable app acquisition, this value must be greater than 0.
-3. Provide the **Acquisition App ID** (sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`).
+3. Provide the **Acquisition App ID** \(sample value: `0eb9f2791f0880623f91e41e5309d2ae25066e513054a4cb59168dc886b526da)`\).
 
    You can find the Acquisition App ID in Mobile Services.
 
@@ -114,12 +114,41 @@ import com.adobe.marketing.mobileservices.*;
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
+{% tab title="iOS (AEP 3.x)" %}
+You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
+
+Import the library into your project:
+
+### Swift
+
+```swift
+import AEPCore
+import AEPServices
+import AEPIdentity
+import AEPLifecycle
+import AEPAnalytics
+import AEPMobileServices
+```
 
 ### Objective-C
 
+```objectivec
+@import AEPCore
+@import AEPServices;
+@import AEPIdentity
+@import AEPLifecycle
+@import AEPAnalytics
+@import AEPMobileServices
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
+
 Import the library into your project:
+
+### Objective-C
 
 ```objectivec
 #import "ACPCore.h"
@@ -128,29 +157,26 @@ Import the library into your project:
 #import "ACPAnalytics.h"
 #import "ACPMobileServices.h"
 ```
-{% endtab %}
-
-{% tab title="iOS — Swift" %}
-You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
-
 ### Swift
 
-Import the library into your project:
-
-```objectivec
-import AEPCore
-import AEPIdentity
-import AEPLifecycle
-import AEPAnalytics
-import AEPMobileServices
+```swift
+import ACPCore
+import ACPIdentity
+import ACPLifecycle
+import ACPAnalytics
+import ACPMobileServices
 ```
+
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Register Mobile Services with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 Call the `setApplication()` method once in the `onCreate()` method of your main activity. For example, your code might look like the following:
@@ -165,8 +191,8 @@ public void onCreate() {
 
      try {
              Analytics.registerExtension();
-MobileServices.registerExtension(); //Register Mobile Services with Mobile Core
-Lifecycle.registerExtension();
+             MobileServices.registerExtension(); //Register Mobile Services with Mobile Core
+             Lifecycle.registerExtension();
              Identity.registerExtension();
              MobileCore.start(null);
      } catch (Exception e) {
@@ -177,10 +203,44 @@ Lifecycle.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### Objective-C
+{% tab title="iOS (AEP 3.x)" %}
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
+
+### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([Identity.self, Lifecycle.self, Analytics.self,  AEPMobileServices.self], {
+        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
+        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
+    })
+  ...
+}
+```
+
+### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSArray *extensionsToRegister = @[AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileAnalytics.class, AEPMobileServices.class];
+    [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
+        // Use the App id assigned to this application via Adobe Launch
+        [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
+        [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
+    }];
+    ....
+}
+```
+
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
+
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -193,23 +253,24 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
    return YES;
 }
 ```
-{% endtab %}
-
-{% tab title="iOS — Swift" %}
 ### Swift
 
-In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
-
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Signal.self, Lifecycle.self, Analytics.self, Identity.self, AEPMobileServices.self ], {
-        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-          MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
-    })
-  ...
-}
+func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
+        ACPAnalytics.registerExtension()
+        ACPIdentity.registerExtension()
+        ACPLifecycle.registerExtension()
+        ACPMobileServices.registerExtension()
+        ACPCore.start {
+        	ACPCore.lifecycleStart(nil)
+        }
+    ...
+    return true
+  }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Implement Mobile Services APIs in your app
@@ -220,7 +281,7 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 
 {% tabs %}
 {% tab title="Android" %}
-Obtain the registration ID/token by using the [Firebase Cloud Messaging (FCM) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
+Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
 
 ### Java
 
@@ -237,14 +298,63 @@ MobileCore.setPushIdentifier(registrationID);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (AEP 3.x)" %}
 {% hint style="warning" %}
 iOS simulators do not support push messaging.
 {% endhint %}
 
 After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
+
+**Syntax**
+
+```swift
+@objc(setPushIdentifier:)
+public static func setPushIdentifier(_ deviceToken: Data?)
+```
+
+**Example**
+
+### Swift
+
+```swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+    let token = tokenParts.joined()
+    print("Device Token: (token)")
+
+    // Send push token to experience platform
+    MobileCore.setPushIdentifier(deviceToken)
+}
+```
 ### Objective-C
+
+```objective-c
+- (void)application:(UIApplication *)app
+        didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    // Forward the token to your provider, using a custom method.
+    NSUInteger len = devToken.length;
+    if (len == 0) {
+        return;
+    }
+    const unsigned char *buffer = devToken.bytes;
+    NSMutableString *hexString  = [NSMutableString stringWithCapacity:(len * 2)];
+    for (int i = 0; i < len; ++i) {
+        [hexString appendFormat:@"%02x", buffer[i]];
+    }
+    NSString *token = [hexString copy];
+    [AEPMobileCore setPushIdentifier:token];
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+{% hint style="warning" %}
+iOS simulators do not support push messaging.
+{% endhint %}
+
+After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
 
 **Syntax**
 
@@ -253,6 +363,8 @@ After following Apple's [configure remote notification document](https://develop
 ```
 
 **Example**
+
+### Objective-C
 
 ```objectivec
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -264,42 +376,19 @@ After following Apple's [configure remote notification document](https://develop
 
 ### Swift
 
-**Example**
-
-```swift
-ACPCore.setPushIdentifier(deviceToken)
-```
-{% endtab %}
-
-{% tab title="iOS — Swift" %}
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
-
-After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#set-the-push-identifier) API:
-
-### Swift
-
-**Syntax**
-
-```swift
-@objc(setPushIdentifier:)
-public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-**Example**
-
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-            let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-            let token = tokenParts.joined()
-            print("Device Token: (token)")
+    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+    let token = tokenParts.joined()
+    print("Device Token: (token)")
 
-            // Send push token to experience platform
-            MobileCore.setPushIdentifier(deviceToken)
-        }
+    // Send push token to experience platform
+    ACPCore.setPushIdentifier(deviceToken)
+}
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ### Debugging the push messaging set up
@@ -325,10 +414,34 @@ Using the following API does not increment page views.
 On Android, the SDK handles push tracking to analytics without any additional set up. If the application has implemented the `FirebaseMessaginService` class and will handle the push notifications when the application is in foreground, read the push data from the received Intent and add it to the intent extras of the Activity to be launched. An example can be found in [the Mobile Services implement push messaging tutorial](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en).
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (AEP 3.x)" %}
 Use the following API to track a push messaging click in Adobe Analytics.
 
+
+**Syntax**
+
+```swift
+@objc(collectLaunchInfo:)
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+**Example**
+
+### Swift
+
+```swift
+AEPCore.collectLaunchInfo(userInfo)
+```
 ### Objective-C
+
+```objectivec
+[AEPMobileCore collectLaunchInfo:userInfo];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+Use the following API to track a push messaging click in Adobe Analytics.
 
 **Syntax**
 
@@ -338,34 +451,19 @@ Use the following API to track a push messaging click in Adobe Analytics.
 
 **Example**
 
+### Objective-C
+
 ```objectivec
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    // only send the hit if the app is not active
-    if (application.applicationState != UIApplicationStateActive) {
-        [ACPCore collectLaunchInfo:userInfo];
-    }
-    completionHandler(UIBackgroundFetchResultNoData);
-}
+[ACPCore collectLaunchInfo:userInfo];
 ```
-{% endtab %}
-
-{% tab title="iOS — Swift" %}
-Use the following API to track a push messaging click in Adobe Analytics.
-
 ### Swift
 
-**Syntax**
-
 ```swift
-(void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+ACPCore.collectLaunchInfo(userInfo)
 ```
 
-**Example**
-
-```swift
-AEPCore.collectLaunchInfo(userInfo)
-```
 {% endtab %}
+
 {% endtabs %}
 
 ## Troubleshooting push messaging
@@ -458,7 +556,7 @@ No setup is required on iOS, since icons are automatically handled by the SDK.
 
 {% tabs %}
 {% tab title="Android" %}
-### setLargeIconResourceId()
+### setLargeIconResourceId\(\)
 
 This API sets the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
 
@@ -492,10 +590,10 @@ For full screen and alert style in-app messages, the following metrics are track
 
 For custom full screen in-app messages, the HTML content in the message needs to include the correct code to notify the SDK tracking about the following buttons:
 
-* **Click-through** (redirect) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
-* **Cancel** (close) example tracking: `adbinapp://cancel`
+* **Click-through** \(redirect\) example tracking: `adbinapp://confirm/?url=http://www.yoursite.com`
+* **Cancel** \(close\) example tracking: `adbinapp://cancel`
 
-For local (remote) notifications, the following metrics are tracked:
+For local \(remote\) notifications, the following metrics are tracked:
 
 * **Impressions**: when user triggers the notification.
 * **Opens**: when user opens app from the notification.
@@ -592,7 +690,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
    void handleGooglePlayReferrer() {
        // Google recommends only calling this API the first time you need it:
        // https://developer.android.com/google/play/installreferrer/library#install-referrer
-
+   
        // Store a boolean in SharedPreferences to ensure we only call it once.
        final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
        if (prefs != null) {
@@ -600,11 +698,11 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                return;
            }
        }
-
+   
        final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
        referrerClient.startConnection(new InstallReferrerStateListener() {
            private boolean complete = false;
-
+   
            @Override
            public void onInstallReferrerSetupFinished(int responseCode) {
                switch (responseCode) {
@@ -613,10 +711,10 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        complete();
                        try {
                            final ReferrerDetails details = referrerClient.getInstallReferrer();                        
-
+   
                            // pass the install referrer url to the SDK
                            MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
-
+   
                        } catch (final RemoteException ex) {
                            Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
                        } finally {
@@ -632,7 +730,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                        break;
                }
            }
-
+   
            @Override
            public void onInstallReferrerServiceDisconnected() {
                if (!complete) {
@@ -640,7 +738,7 @@ With the deprecation, instead of creating a `BroadcastReceiver`, you need to col
                    referrerClient.startConnection(this);
                }
            }
-
+   
            void complete() {
                complete = true;
                SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
@@ -690,7 +788,62 @@ MobileServices.trackAdobeDeepLink
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
+{% tab title="iOS (AEP 3.x)" %}
+### trackAdobeDeepLink
+
+**Syntax**
+
+```objective-c
++ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
+```
+
+**Example**
+
+**Swift**
+
+```swift
+func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    AEPMobileServices.trackAdobeDeepLink(url)
+    /*
+     Handle deep link
+     */
+    return true
+}
+```
+**Objective-C**
+
+```objective-c
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    [AEPMobileServices trackAdobeDeepLink:url];
+    ....
+}
+```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+**Swift**
+```swift
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let urlContexts = URLContexts.first else { return }
+    AEPMobileServices.trackAdobeDeepLink(urlContexts.url)
+    /*
+     Handle deep link
+     */
+}
+```
+**Objective-C**
+
+```objective-c
+- (void)scene:(UIScene *)scene openURLContexts:(nonnull NSSet<UIOpenURLContext *> *)URLContexts {
+    NSURL *url = [[URLContexts allObjects] firstObject].URL;
+    [AEPMobileServices trackAdobeDeepLink:url];
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
 ### trackAdobeDeepLink
 
 **Syntax**
@@ -704,16 +857,6 @@ MobileServices.trackAdobeDeepLink
 **Objective-C**
 
 ```objectivec
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [ACPMobileServices trackAdobeDeepLink:url]
-    /*
-     Handle deep link
-     */
-    return YES;
-}
-```
-
-```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
     [ACPMobileServices trackAdobeDeepLink:url];
     /*
@@ -722,44 +865,52 @@ MobileServices.trackAdobeDeepLink
     return YES;
 }
 ```
-{% endtab %}
-
-{% tab title="iOS — Swift" %}
-### trackAdobeDeepLink
-
-**Syntax**
-
-```swift
-+ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
-```
-
-**Example**
 
 **Swift**
 
 ```swift
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [AEPMobileServices trackAdobeDeepLink:url];
+func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    ACPMobileServices.trackAdobeDeepLink(url)
     /*
      Handle deep link
      */
-    return YES;
+    return true
 }
 ```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+**Objective-C**
+
+```objectivec
+- (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    UIOpenURLContext * urlContext = URLContexts.anyObject;
+    if (urlContext != nil) {
+        [ACPMobileServices trackAdobeDeepLink:url];
+        /*
+         Handle deep link
+         */
+    }
+}
+```
+
+**Swift**
 
 ```swift
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
-[AEPMobileServices trackAdobeDeepLink:url];
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let urlContexts = URLContexts.first else { return }
+    ACPMobileServices.trackAdobeDeepLink(urlContexts.url)
     /*
      Handle deep link
      */
-    return YES;
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
-## Integration with Apple Search Ads (iOS)
+## Integration with Apple Search Ads \(iOS\)
 
 The Adobe Experience Platform SDK leverages [Apple's Search Ads attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution) to attribute app downloads that originate from Search Ads campaigns in the Apple App Store. For more information about Search Ad campaigns, see [Apple Search Ads](https://searchads.apple.com/). This optional feature helps you easily measure the effectiveness of your Search Ads app download campaigns by adding a few lines of code to your app.
 
@@ -786,7 +937,7 @@ To prepare for your migration, please note the following information:
 
 * Lifetime value is **not** supported on the Experience Platform SDK, so it should not be used to trigger in-app messages or local notifications.
 * `ce` is no longer supported as a trigger for in-app messages or local notifications.
-* `a.internalaction` or `action` (from Lifecycle) can be used to trigger in-app messages or local notifications. You should, however, use `LaunchEvent` instead.
+* `a.internalaction` or `action` \(from Lifecycle\) can be used to trigger in-app messages or local notifications. You should, however, use `LaunchEvent` instead.
 * Local notifications do **not** support Android 8.0 or higher.
 
 ### Configuration keys
@@ -795,7 +946,7 @@ To prepare for your migration, please note the following information:
 | :--- | :--- |
 | mobile.acquisitionTimeout | Amount of time, in seconds, to wait for acquisition information from the Mobile Services acquisition server. |
 | mobile.acquisitionAppId | App ID uniquely identifies the app on the Mobile Services acquisition server. |
-| mobile.messagesUrl | Messages URL from your configuration (`ADBMobileConfig.json`) file's remotes section. |
+| mobile.messagesUrl | Messages URL from your configuration \(`ADBMobileConfig.json`\) file's remotes section. |
 
 ## Watch the video
 

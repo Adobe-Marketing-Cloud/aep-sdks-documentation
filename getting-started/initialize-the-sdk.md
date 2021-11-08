@@ -2,14 +2,14 @@
 
 The SDK provides three event tracking APIs to log events for reporting, segmentation, and various other data collection use cases:
 
-1. [Send events to Edge Network](initialize-the-sdk.md#send-events-to-edge-network) (requires Edge Network extension)
-2. [Track user actions](initialize-the-sdk.md#track-user-actions) (requires Adobe Analytics extension)
-3. [Track app states and screens](initialize-the-sdk.md#track-app-states-and-screens) (requires Adobe Analytics extension)
+1. [Send events to Edge Network](initialize-the-sdk.md#send-events-to-edge-network) \(requires Edge Network extension\)
+2. [Track user actions](initialize-the-sdk.md#track-user-actions) \(requires Adobe Analytics extension\)
+3. [Track app states and screens](initialize-the-sdk.md#track-app-states-and-screens) \(requires Adobe Analytics extension\)
 
 ## Send events to Edge Network
 
 {% hint style="info" %}
-This step requires knowledge of Experience Data Model (XDM) in Adobe Experience Platform. For more information about XDM, please read the [XDM documentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
+This step requires knowledge of Experience Data Model \(XDM\) in Adobe Experience Platform. For more information about XDM, please read the [XDM documentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html).
 {% endhint %}
 
 The Edge Network extension provides an API to send an `ExperienceEvent` to Edge Network. An Experience Event is an object that contains data conforming to the XDM `ExperienceEvent` schema definition in Adobe Experience Platform.
@@ -46,7 +46,7 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 ```swift
@@ -87,7 +87,7 @@ Edge.sendEvent(experienceEvent, null);
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 ```swift
@@ -102,7 +102,7 @@ Edge.sendEvent(experienceEvent: experienceEvent)
 {% endtab %}
 {% endtabs %}
 
-## Track user actions (for Adobe Analytics)
+## Track user actions \(for Adobe Analytics\)
 
 This section shows you how to start track user actions in your mobile app. To view and report on this data in those respective solutions, set up [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) or another Experience Cloud solution extensions.
 
@@ -118,13 +118,13 @@ You must call this API when an event that you want to track occurs. In addition 
 
 #### Java <a id="java"></a>
 
-**Syntax** 
+**Syntax**
 
 ```java
 public static void trackAction(final String action, final Map<String, String> contextData)
 ```
 
-**Example** 
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();
@@ -133,20 +133,55 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### trackAction <a id="example"></a>
+{% tab title="iOS (AEP 3.x)" %}
+
+### trackAction <a id="AEPExample"></a>
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func track(action: String?, data: [String: Any]?)
+```
+
+**Example**
+
+```swift
+MobileCore.track(action: "actionName", data: ["key": "value"])
+```
 
 #### Objective-C
 
 **Syntax**
 
-```text
+```swift
+@objc(trackAction:data:)
+static func track(action: String?, data: [String: Any]?)
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore trackAction:@"action name" data:@{@"key": @"value"}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### trackAction <a id="ACPExample"></a>
+
+#### Objective-C
+
+**Syntax**
+
+```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 **Example**
 
-```text
+```objectivec
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
@@ -154,7 +189,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 **Syntax**
 
-```text
+```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
@@ -244,7 +279,7 @@ ACPCore.TrackAction("action", data);
 {% endtab %}
 {% endtabs %}
 
-## Track app states and screens (for Adobe Analytics)
+## Track app states and screens \(for Adobe Analytics\)
 
 States represent screens or views in your app. The `trackState` method is called every time a new state is displayed in your application. For example, this method would be called when a user navigates from the home page to the news feed. This method also sends an Adobe Analytics state-tracking hit with optional context data.
 
@@ -256,13 +291,13 @@ On Android, `trackState` is typically called each time a new activity is loaded.
 
 #### Java
 
-**Syntax** 
+**Syntax**
 
 ```java
 public static void trackState(final String state, final Map<String, String> contextData)
 ```
 
-**Example** 
+**Example**
 
 ```java
 Map<String, String> additionalContextData = new HashMap<String, String>();         
@@ -271,8 +306,41 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### trackState <a id="example-1"></a>
+{% tab title="iOS (AEP 3.x)" %}
+
+### trackState <a id="aepExample"></a>
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func track(state: String?, data: [String: Any]?) 
+```
+**Example**
+
+```swift
+MobileCore.track(state: "state name", data: ["key": "value"])
+```
+
+#### Objective-C
+
+**Syntax**
+
+```swift
+@objc(trackState:data:)
+static func track(state: String?, data: [String: Any]?) 
+```
+**Example**
+
+```objectivec
+[AEPMobileCore trackState:@"state name" data:@{@"key": @"value"}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### trackState <a id="acpExample"></a>
 
 #### Objective-C
 

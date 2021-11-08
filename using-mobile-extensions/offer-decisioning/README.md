@@ -1,6 +1,6 @@
 # Adobe Experience Platform Offer Decisioning
 
-[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface (UI) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
+[Adobe Experience Platform Offer Decisioning](https://business.adobe.com/products/experience-platform/offer-decisioning.html) mobile extension can deliver personalized offers that are managed in Offer Decisioning. You can create your offers and other related objects using the Offer Decisioning user interface \(UI\) or APIs. To learn more about Offer Decisioning, please refer to [Offer Decisioning product documentation](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en).
 
 ## Prerequisites
 
