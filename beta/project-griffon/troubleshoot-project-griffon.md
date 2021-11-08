@@ -40,13 +40,13 @@ For Android, the`startSession` API does not need to be explicitly called. For iO
 
 1. **Post Processing Status - No Debug Flag**
 
-In your Analytics Events view, if your events fail with the Post-Processed Status "No Debug Flag". This is because your current Adobe Analytics or Assurance SDK version might not support the Analytics Debugging feature. 
-Please upgrade SDK to the latest version to overcome this problem. Below given are the minimum version requirements.
+In your Analytics Events view, if events fail with the Post-Processed Status "No Debug Flag", your current Adobe Analytics or Assurance SDK version might not support the Analytics Debugging feature.
+Please upgrade the Adobe Analytics and Assurance SDK extensions to the latest versions to resolve this problem.
 
-|                 | iOS     | Android |
-| --------------- | ------- | ------- |
-| Adobe Analytics | > 2.4.0 | > 1.2.6 |
-| Assurance       | > 1.0.0 | > 1.0.0 |
+| Minimum Version Requirement | iOS     | Android |
+| --------------------------- | ------- | ------- |
+| Adobe Analytics             | > 2.4.0 | > 1.2.6 |
+| Assurance                   | > 1.0.0 | > 1.0.0 |
 
 
 
