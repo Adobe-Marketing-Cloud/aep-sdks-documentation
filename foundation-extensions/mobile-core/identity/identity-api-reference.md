@@ -1043,7 +1043,7 @@ If an error occurs while retrieving the URL string, the callback handler will be
 **Java** <a id="geturlvariables-android"></a>
 
 {% hint style="info" %}
-This method was added in Core version 1.4.0 and Identity version 1.1.0_._
+This method was added in Core version 1.4.0 and Identity version 1.1.0.
 {% endhint %}
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
