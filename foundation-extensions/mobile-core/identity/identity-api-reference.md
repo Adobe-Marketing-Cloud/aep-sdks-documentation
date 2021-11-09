@@ -81,7 +81,7 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
 * _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
+* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error.
 
 **Examples**
 
@@ -534,7 +534,7 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
+* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. 
 
 **Examples**
 
@@ -792,7 +792,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
+* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. 
 
 **Examples**
 
