@@ -42,7 +42,7 @@ If your application uses more complicated URLs, such as Angular URLs, you should
 {% tab title="Android" %}
 **Java** <a id="appendvisitorinfoforurl-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -81,7 +81,7 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
 * _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
 
 **Examples**
 
@@ -144,7 +144,7 @@ Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 an
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -502,7 +502,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 **Java** <a id="getexperiencecloudid-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -534,7 +534,7 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
 
 **Examples**
 
@@ -579,7 +579,7 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 ```
 
 * _callback_ is invoked after the ECID is available.
-* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -759,7 +759,7 @@ This API returns all customer identifiers that were previously synced with the A
 {% tab title="Android" %}
 **Java** <a id="getidentifiers-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -792,7 +792,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 1000ms.
 
 **Examples**
 
@@ -836,7 +836,7 @@ Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
-* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 **Swift**
@@ -1046,7 +1046,7 @@ If an error occurs while retrieving the URL string, the callback handler will be
 This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 {% endhint %}
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
 
@@ -1083,7 +1083,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ containing the visitor identifiers as a query string, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 500ms.
+* _completion_ is invoked with _String_ containing the visitor identifiers as a query string, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -1147,7 +1147,7 @@ Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity vers
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
-* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout is 500ms.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
