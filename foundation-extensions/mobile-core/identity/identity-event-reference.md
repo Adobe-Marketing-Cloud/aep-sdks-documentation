@@ -266,7 +266,7 @@ The result for the `getUrlVariables` request:
 ```
 
 {% hint style="warning" %}
-The Analytics Custom VID is no longer included in the Identity event data payload. If needed, it may be retrieved from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#get-the-custom-visitor-identifier).
+The Analytics Custom VID is no longer included in the Identity event data payload. If needed, it may be retrieved from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#getvisitoridentifier).
 {% endhint %}
 
 ### Configuration content request
