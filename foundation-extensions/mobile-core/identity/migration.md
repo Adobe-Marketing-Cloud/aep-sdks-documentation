@@ -190,7 +190,7 @@ static func syncIdentifier(identifierType: String, identifier: String, authentic
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 + (void) syncIdentifierWithType: (NSString * _Nonnull identifierType) 
-										 identifier: (NSString * _Nonnul identifier) 
+										 identifier: (NSString * _Nonnull identifier) 
 								 authentication: (enum AEPAuthenticationState authenticationState);
 ```
 {% endtab %}
