@@ -425,7 +425,7 @@ To use the same visitor ID in the app and mobile web and pass the visitor ID to 
 {% tab title="Android" %}
 #### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendvisitorinfoforurl-android):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```java
 Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
@@ -441,7 +441,7 @@ Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String
 });
 ```
 
-Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-android) and build your own URL:
+Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -460,7 +460,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-ios-aep):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 #### Swift
 
@@ -487,7 +487,7 @@ NSURL *sampleUrl = [NSURL URLWithString:@"https://example.com"];
 }];
 ```
 
-Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-ios-aep) and build your own URL:
+Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 #### Swift
 
@@ -527,7 +527,7 @@ Identity.getUrlVariables { urlVariables, error in
 {% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-ios-acp):
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"www.example.com"];
@@ -536,7 +536,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"www.example.com"];
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables-ios-acp) and build your own URL:
+Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -554,13 +554,13 @@ Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you ca
 {% tab title="React Native" %}
 #### JavaScript
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendvisitorinfoforurl-react):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```jsx
 ACPIdentity.appendVisitorInfoForURL("www.example.com").then(urlWithVistorData => console.log("Url with Visitor Data = " + urlWithVisitorData));
 ```
 
-Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-react) and build your own URL:
+Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```jsx
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("query params = " + urlVariables));
@@ -570,7 +570,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("query params = "
 {% tab title="Flutter" %}
 #### Dart
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendvisitorinfoforurl-flutter):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```dart
 String result = "";
@@ -582,7 +582,7 @@ try {
 }
 ```
 
-Alternately, starting with SDK version 1.0.0-beta.1, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-flutter) and build your own URL:
+Alternately, starting with SDK version 1.0.0-beta.1, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```dart
 String result = "";
@@ -598,7 +598,7 @@ try {
 {% tab title="Cordova" %}
 #### Cordova
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendvisitorinfoforurl-cordova):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```jsx
 ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
@@ -608,7 +608,7 @@ ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallba
 });
 ```
 
-Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables-cordova) and build your own URL:
+Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```jsx
 ACPIdentity.getUrlVariables(function (handleCallback) {
@@ -622,7 +622,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% tab title="Unity" %}
 #### C\#
 
-To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-unity):
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```csharp
 [MonoPInvokeCallback(typeof(AdobeIdentityAppendToUrlCallback))]
@@ -633,7 +633,7 @@ public static void HandleAdobeIdentityAppendToUrlCallback(string url)
 ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlCallback);
 ```
 
-Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables-unity) and build your own URL:
+Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```csharp
 [MonoPInvokeCallback(typeof(AdobeGetUrlVariables))]
@@ -648,7 +648,7 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 {% tab title="Xamarin" %}
 #### C\#
 
-To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-xamarin):
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 **iOS**
 
@@ -658,7 +658,7 @@ ACPIdentity.AppendToUrl(url, callback => {
 });
 ```
 
-To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](identity-api-reference.md#appendtourl-xamarin):
+To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 **Android**
 
@@ -681,7 +681,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 }
 ```
 
-Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables-xamarin) and build your own URL:
+Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 **iOS**
 
