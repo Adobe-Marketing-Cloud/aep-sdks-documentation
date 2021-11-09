@@ -2193,10 +2193,7 @@ public static void syncIdentifier(final String identifierType,
 
 * _identifierType (String)_ contains`the identifier type`, and this parameter should not be null or empty.
 * _identifier (String)_ contains the `identifier value`, and this parameter should not be null or empty.
-* _authenticationState_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.AUTHENTICATED`
-  * `VisitorID.AuthenticationState.LOGGED_OUT`
-  * `VisitorID.AuthenticationState.UNKNOWN`
+* _authenticationState (AuthenticationState)_ indicates the authentication state of the user and contains one of the [`VisitorID.AuthenticationState`](identity-api-reference#android-authenticationstate) values.
 
 **Example**
 
@@ -2222,10 +2219,7 @@ static func syncIdentifier(identifierType: String, identifier: String, authentic
 
   If either the `identifierType` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* The _authenticationState (MobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the following `MobileVisitorAuthenticationState` values:
-  * `MobileVisitorAuthenticationState.authenticated`
-  * `MobileVisitorAuthenticationState.loggedOut`
-  * `MobileVisitorAuthenticationState.unknown`
+* The _authenticationState (MobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [`MobileVisitorAuthenticationState`](identity-api-reference#ios-aepmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2262,10 +2256,7 @@ Identity.syncIdentifier(identifierType: "idType",
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* The _authenticationState (VisitorIDAuthenticationState)_ value indicates the authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationStateAuthenticated`
-  * `ACPMobileVisitorAuthenticationStateLoggedOut`
-  * `ACPMobileVisitorAuthenticationStateUnknown`
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [`ACPMobileVisitorAuthenticationState`](identity-api-reference#ios-acpmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2296,10 +2287,7 @@ syncIdentifier(identifierType: String, identifier: String, authenticationState: 
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState (VisitorIDAuthenticationState)_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-* `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-* `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-* `ACPMobileVisitorAuthenticationState.UNKNOWN`
+* _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [`ACPMobileVisitorAuthenticationState`](identity-api-reference#react-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2324,10 +2312,7 @@ Future<void> syncIdentifier(String identifierType, String identifier, ACPMobileV
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-* `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-* `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-* `ACPMobileVisitorAuthenticationState.UNKNOWN`
+* _authState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [`ACPMobileVisitorAuthenticationState`](identity-api-reference#flutter-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2352,10 +2337,7 @@ ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, suc
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
+* _authState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [`ACPMobileVisitorAuthenticationState`](identity-api-reference#cordova-acpmobilevisitorauthenticationstate) values.
 * _success_ is a callback containing the visitor id type, value, and authentication state if the `syncIdentifier` API executed without any errors.
 * _fail_ is a callback containing error information if the `syncIdentifier` API was executed with errors.
 
@@ -2384,10 +2366,7 @@ public static void SyncIdentifier(string identifierType, string identifier, ACPA
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState_ value indicating authentication state for the user and contains one of the following `ACPAuthenticationState` values:
-  * `ACPIdentity.ACPAuthenticationState.AUTHENTICATED`
-  * `ACPIdentity.ACPAuthenticationState.UNKNOWN`
-  * `ACPIdentity.ACPAuthenticationState.LOGGED_OUT`
+* _authState (ACPAuthenticationState)_ value indicating authentication state for the user and contains one of the following [`ACPAuthenticationState`](identity-api-reference#unity-acpauthenticationstate) values.
 
 **Example**
 
@@ -2410,10 +2389,7 @@ public static void SyncIdentifier (string identifierType, string identifier, ACP
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.Authenticated`
-  * `ACPMobileVisitorAuthenticationState.Unknown`
-  * `ACPMobileVisitorAuthenticationState.LoggedOut`
+* _authenticationState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [`ACPMobileVisitorAuthenticationState`](identity-api-reference#xamarin-acpmobilevisitorauthenticationstate) values.
 
 **Android Syntax**
 
@@ -2426,10 +2402,7 @@ public unsafe static void SyncIdentifier (string identifierType, string identifi
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.Authenticated`
-  * `VisitorID.AuthenticationState.Unknown`
-  * `VisitorID.AuthenticationState.LoggedOut`
+* _authenticationState (AuthenticationState)_ value indicating authentication state for the user and contains one of the following [`VisitorID.AuthenticationState`](identity-api-reference#xamarin-visitoridauthenticationstate) values.
 
 **iOS Example**
 
@@ -2700,10 +2673,7 @@ public static void syncIdentifiers(final Map<String, String> identifiers, final 
 ```
 
 * _identifiers_ is a map that contains IDs with the identifier type as the key, and the string identifier as the value.
-* _authState_ indicates the authentication state for the user, which contains one of the following `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.AUTHENTICATED`
-  * `VisitorID.AuthenticationState.LOGGED_OUT`
-  * `VisitorID.AuthenticationState.UNKNOWN`
+* _authState_ indicates the authentication state for the user, which contains one of the following [`VisitorID.AuthenticationState`](identity-api-reference#android-authenticationstate) values.
 
 **Example**
 
@@ -2728,10 +2698,7 @@ static func syncIdentifiers(identifiers: [String: String]?, authenticationState:
 
 * The _identifiers_ dictionary contains identifier type as the key and identifier as the value, both identifier type and identifier should be non empty and non nil values.
 
-* The _authenticationState (MobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the `MobileVisitorAuthenticationState` values:
-  * `MobileVisitorAuthenticationState.authenticated`
-  * `MobileVisitorAuthenticationState.loggedOut`
-  * `MobileVisitorAuthenticationState.unknown`
+* The _authenticationState (MobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [`MobileVisitorAuthenticationState`](identity-api-reference#ios-aepmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2768,10 +2735,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authenticationState (VisitorIDAuthenticationState)_ indicates the authentication state of the user and contains one of the `VisitorID.AuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [`ACPMobileVisitorAuthenticationState`](identity-api-reference#ios-acpmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2809,10 +2773,7 @@ syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [`ACPMobileVisitorAuthenticationState`](identity-api-reference#react-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2836,10 +2797,7 @@ Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPM
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authState_ (ACPMobileVisitorAuthenticationState)\_ indicates the authentication state of the user and contains one of the `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.AUTHENTICATED`
-  * `ACPMobileVisitorAuthenticationState.LOGGED_OUT`
-  * `ACPMobileVisitorAuthenticationState.UNKNOWN`
+* The _authState_ (ACPMobileVisitorAuthenticationState)\_ indicates the authentication state of the user and contains one of the [`ACPMobileVisitorAuthenticationState`](identity-api-reference#flutter-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2863,10 +2821,7 @@ ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authState_ value indicating authentication state for the identifiers to be synced and contains one of the `ACPMobileVisitorAuthenticationState` values:
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateAuthenticated`
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut`
-  * `ACPIdentity.ACPMobileVisitorAuthenticationStateUnknown`
+* _authState_ value indicating authentication state for the identifiers to be synced and contains one of the [`ACPMobileVisitorAuthenticationState`](identity-api-reference#cordova-acpmobilevisitorauthenticationstate) values.
 * _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
 * _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
 
@@ -2894,10 +2849,7 @@ public static void SyncIdentifiers(Dictionary<string, string> ids, ACPAuthentica
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the identifiers to be synced and contains one of the `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.AUTHENTICATED`
-  * `VisitorID.AuthenticationState.LOGGED_OUT`
-  * `VisitorID.AuthenticationState.UNKNOWN`
+* _authenticationState_ value indicating authentication state for the identifiers to be synced and contains one of the [`ACPAuthenticationState`](identity-api-reference#unity-acpauthenticationstate) values.
 
 **Example**
 
@@ -2925,10 +2877,7 @@ public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAu
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following `ACPMobileVisitorAuthenticationState` values:
-  * `ACPMobileVisitorAuthenticationState.Authenticated`
-  * `ACPMobileVisitorAuthenticationState.Unknown`
-  * `ACPMobileVisitorAuthenticationState.LoggedOut`
+* _authenticationState_ value indicating authentication state for the user and contains one of the following [`ACPMobileVisitorAuthenticationState`](identity-api-reference#xamarin-acpmobilevisitorauthenticationstate) values.
 
 **Android Syntax**
 
@@ -2940,10 +2889,7 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following `VisitorID.AuthenticationState` values:
-  * `VisitorID.AuthenticationState.Authenticated`
-  * `VisitorID.AuthenticationState.Unknown`
-  * `VisitorID.AuthenticationState.LoggedOut`
+* _authenticationState_ value indicating authentication state for the user and contains one of the following [`VisitorID.AuthenticationState`](identity-api-reference#xamarin-visitoridauthenticationstate) values.
 
 **iOS Example**
 
@@ -2973,9 +2919,10 @@ ACPIdentity.SyncIdentifiers(ids, VisitorID.AuthenticationState.LoggedOut);
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Android
 
-**AuthenticationState**
+**AuthenticationState**<a id="android-authenticationstate"></a>
 
 This class is used to indicate the authentication state for the current `VisitorID`.
 
@@ -2987,7 +2934,7 @@ public enum AuthenticationState {
 }
 ```
 
-**VisitorID**
+**VisitorID**<a id="android-visitorid"></a>
 
 This class is an identifier to be used with the Adobe Experience Cloud Identity Service.
 
@@ -3011,7 +2958,7 @@ public class VisitorID {
 {% tab title="iOS (AEP 3.x)" %}
 ### iOS (AEP 3.x)
 
-**MobileVisitorAuthenticationState**
+**MobileVisitorAuthenticationState**<a id="ios-aepmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `Identifiable`.
 
@@ -3023,7 +2970,7 @@ This is used to indicate the authentication state for the current `Identifiable`
 }
 ```
 
-**Identifiable**
+**Identifiable**<a id="ios-aepidentifiable"></a>
 
 ```swift
 @objc(AEPIdentifiable) public protocol Identifiable {
@@ -3045,21 +2992,21 @@ This is used to indicate the authentication state for the current `Identifiable`
 {% tab title="iOS (ACP 2.x)" %}
 #### iOS (ACP 2.x)
 
-**ACPMobileVisitorAuthenticationState**
+**ACPMobileVisitorAuthenticationState**<a id="ios-acpmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
 ```objectivec
 typedef NS_ENUM(NSUInteger,
-    ADBMobileVisitorAuthenticationState) {    
+    ACPMobileVisitorAuthenticationState) {    
     ACPMobileVisitorAuthenticationStateUnknown          = 0,    
     ACPMobileVisitorAuthenticationStateAuthenticated    = 1,    
     ACPMobileVisitorAuthenticationStateLoggedOut        = 2  };
 ```
 
-**ACPMobileVisitorId**
+**ACPMobileVisitorId**<a id="ios-acpmobilevisitorid"></a>
 
-This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier,, and the authentication state of the visitor ID.
+This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
 ```objectivec
 @interface ACPMobileVisitorId : NSObject
@@ -3076,7 +3023,7 @@ This is an identifier to be used with the Adobe Experience Cloud Identity Servic
 {% tab title="React Native" %}
 #### JavaScript
 
-**ACPVisitorID**
+**ACPVisitorID**<a id="react-acpvisitorid"></a>
 
 This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
@@ -3086,7 +3033,7 @@ import {ACPVisitorID} from '@adobe/react-native-acpcore';
 var visitorId = new ACPVisitorID(idOrigin?: string, idType: string, id?: string, authenticationState?: ACPMobileVisitorAuthenticationState);
 ```
 
-**ACPMobileVisitorAuthenticationState**
+**ACPMobileVisitorAuthenticationState**<a id="react-acpmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
@@ -3102,7 +3049,7 @@ var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
 {% tab title="Flutter" %}
 #### Dart
 
-**ACPVisitorID**
+**ACPVisitorID**<a id="flutter-acpvisitorid"></a>
 
 This is an identifier to be used with the Adobe Experience Cloud Identity Service and it contains the origin, the identifier type, the identifier, and the authentication state of the visitor ID.
 
@@ -3118,7 +3065,7 @@ class ACPMobileVisitorId {
 };
 ```
 
-**ACPMobileVisitorAuthenticationState**
+**ACPMobileVisitorAuthenticationState**<a id="flutter-acpmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
@@ -3132,7 +3079,7 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 {% tab title="Cordova" %}
 #### Cordova
 
-**ACPMobileVisitorAuthenticationState**
+**ACPMobileVisitorAuthenticationState**<a id="cordova-acpmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
@@ -3146,7 +3093,7 @@ ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 {% tab title="Unity" %}
 #### C\#
 
-**ACPAuthenticationState**
+**ACPAuthenticationState**<a id="unity-acpauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
@@ -3162,7 +3109,7 @@ ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 
 **iOS**
 
-**ACPMobileVisitorAuthenticationState**
+**ACPMobileVisitorAuthenticationState**<a id="xamarin-acpmobilevisitorauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `ACPMobileVisitorId`.
 
@@ -3174,7 +3121,7 @@ ACPMobileVisitorAuthenticationState.LoggedOut = 2;
 
 **Android**
 
-**VisitorID.AuthenticationState**
+**VisitorID.AuthenticationState**<a id="xamarin-visitoridauthenticationstate"></a>
 
 This is used to indicate the authentication state for the current `VisitorID`.
 
