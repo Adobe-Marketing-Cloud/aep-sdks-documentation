@@ -664,7 +664,7 @@ try {
 ACPIdentity.getExperienceCloudId(success, fail);
 ```
 
-* _success_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
+* _success_ is a callback containing the ECID if the `getExperienceCloudId` API executed without any errors.
 * _fail_ is a callback containing error information if the `getExperienceCloudId` API was executed with errors.
 
 **Example**
@@ -687,7 +687,7 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
 public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callback)
 ```
 
-* _callback_ is a callback containing the experience cloud id if the `GetExperienceCloudId` API executed without any errors.
+* _callback_ is a callback containing the ECID if the `GetExperienceCloudId` API executed without any errors.
 
 **Example**
 
@@ -710,7 +710,7 @@ ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 ```
 
-* _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
+* _callback_ is a callback containing the ECID if the `getExperienceCloudId` API executed without any errors.
 
 **Android Syntax**
 
@@ -718,13 +718,13 @@ public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 ```
 
-* _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
+* _callback_ is a callback containing the ECID if the `getExperienceCloudId` API executed without any errors.
 
 **iOS Example**
 
 ```csharp
 ACPIdentity.GetExperienceCloudId(callback => {
-  Console.WriteLine("Experience cloud id: " + callback);
+  Console.WriteLine("Experience Cloud Id: " + callback);
 });
 ```
 
@@ -739,7 +739,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
   {
     if (stringContent != null)
     {
-      Console.WriteLine("Experience cloud id: " + stringContent);
+      Console.WriteLine("Experience Cloud Id: " + stringContent);
     } 
     else 
     {
