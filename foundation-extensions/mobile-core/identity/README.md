@@ -161,11 +161,11 @@ Register the Identity extension in your app's `didFinishLaunchingWithOptions` fu
 
 {% hint style="warning" %}
 When including both Identity and Identity for Edge Network extensions, register the extensions using their full Swift module names.
-{% endhint %}
 
 ```swift
 MobileCore.registerExtensions([AEPIdentity.Identity.self, AEPEdgeIdentity.Identity.self, ...], { ... })
 ```
+{% endhint %}
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
