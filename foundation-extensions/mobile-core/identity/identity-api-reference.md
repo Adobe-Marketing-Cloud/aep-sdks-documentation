@@ -502,7 +502,6 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 **Java** <a id="getexperiencecloudid-android"></a>
 
-<a id="getexperiencecloudid-android"></a>
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
 **Syntax**
@@ -912,7 +911,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-** Cordova** <a id="getidentifiers-cordova"></a>
+**Cordova** <a id="getidentifiers-cordova"></a>
 
 **Syntax**
 
@@ -1869,7 +1868,7 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="React Native" %}
-** JavaScript** <a id="setadvertisingidentifier-react"></a>
+**JavaScript** <a id="setadvertisingidentifier-react"></a>
 
 **Syntax**
 
@@ -2101,7 +2100,7 @@ public static void syncIdentifier(final String identifierType,
                                       final VisitorID.AuthenticationState authenticationState);
 ```
 
-* _identifierType (String)_ contains`the identifier type`, and this parameter should not be null or empty.
+* _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
 * _identifier (String)_ contains the `identifier value`, and this parameter should not be null or empty.
 * _authenticationState (AuthenticationState)_ indicates the authentication state of the user and contains one of the [`VisitorID.AuthenticationState`](identity-api-reference#android-authenticationstate) values.
 
