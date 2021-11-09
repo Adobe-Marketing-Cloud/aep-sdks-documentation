@@ -40,11 +40,7 @@ If your application uses more complicated URLs, such as Angular URLs, you should
 
 {% tabs %}
 {% tab title="Android" %}
-
-
-#### Java
-
-### appendVisitorInfoForURL
+**Java** <a id="appendvisitorinfoforurl-android"></a>
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
 
@@ -76,9 +72,7 @@ Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### appendToURL
-
-#### iOS
+**iOS** <a id="appendtourl-ios-aep"></a>
 
 **Syntax**
 
@@ -135,13 +129,11 @@ NSURL* url = [NSURL URLWithString:@"https://example.com"];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### appendToURL
+**iOS** <a id="appendtourl-ios-acp"></a>
 
 {% hint style="info" %}
 Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-#### iOS
 
 **Syntax**
 
@@ -224,9 +216,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 {% endtab %}
 
 {% tab title="React Native" %}
-### appendVisitorInfoForURL
-
-#### JavaScript
+**JavaScript** <a id="appendvisitorinfoforurl-react"></a>
 
 **Syntax**
 
@@ -244,9 +234,7 @@ ACPIdentity.appendVisitorInfoForURL("https://example.com").then(urlWithVistorDat
 {% endtab %}
 
 {% tab title="Flutter" %}
-### appendVisitorInfoForURL
-
-#### Dart
+**Dart** <a id="appendvisitorinfoforurl-flutter"></a>
 
 **Syntax**
 
@@ -271,9 +259,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-### appendVisitorInfoForURL
-
-#### Cordova
+**Cordova** <a id="appendvisitorinfoforurl-cordova"></a>
 
 **Syntax**
 
@@ -298,9 +284,7 @@ ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallba
 {% endtab %}
 
 {% tab title="Unity" %}
-### AppendToUrl
-
-#### C\#
+**C\#** <a id="appendtourl-unity"></a>
 
 **Syntax**
 
@@ -325,9 +309,7 @@ ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlC
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### AppendToUrl
-
-#### C\#
+**C\#** <a id="appendtourl-xamarin"></a>
 
 **iOS Syntax**
 
@@ -387,7 +369,7 @@ To get the version of the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java** <a id="extensionversion-android"></a>
 
 ```java
 String identityExtensionVersion = Identity.extensionVersion();
@@ -395,7 +377,7 @@ String identityExtensionVersion = Identity.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### iOS
+**iOS** <a id="extensionversion-ios-aep"></a>
 
 **Syntax**
 
@@ -417,7 +399,7 @@ NSString *identityVersion = [AEPMobileIdentity extensionVersion];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### iOS
+**iOS** <a id="extensionversion-ios-acp"></a>
 
 **Syntax**
 
@@ -439,7 +421,7 @@ NSString *identityVersion = [ACPIdentity extensionVersion];
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript** <a id="extensionversion-react"></a>
 
 ```jsx
 ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
@@ -447,7 +429,7 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ado
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart** <a id="extensionversion-flutter"></a>
 
 ```dart
 String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
@@ -455,7 +437,7 @@ String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+**Cordova** <a id="extensionversion-cordova"></a>
 
 **Syntax**
 
@@ -478,7 +460,7 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+**C\#** <a id="extensionversion-unity"></a>
 
 **Syntax**
 
@@ -494,7 +476,7 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+**C\#** <a id="extensionversion-xamarin"></a>
 
 **Syntax**
 
@@ -518,11 +500,10 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 {% tabs %}
 {% tab title="Android" %}
-### getExperienceCloudId
+**Java** <a id="getexperiencecloudid-android"></a>
 
+<a id="getexperiencecloudid-android"></a>
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
-
-**Java**
 
 **Syntax**
 
@@ -545,7 +526,7 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### getExperienceCloudId
+**iOS** <a id="getexperiencecloudid-ios-aep"></a>
 
 **Syntax**
 
@@ -585,7 +566,7 @@ Identity.getExperienceCloudId { ecid, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### getExperienceCloudId
+**iOS** <a id="getexperiencecloudid-ios-acp"></a>
 
 {% hint style="info" %}
 Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
@@ -638,17 +619,15 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-### getExperienceCloudId
+**JavaScript** <a id="getexperiencecloudid-react"></a>
 
-#### JavaScript
-
-#### Syntax
+**Syntax**
 
 ```jsx
 getExperienceCloudId(): Promise<?string>;
 ```
 
-#### Example
+**Example**
 
 ```jsx
 ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceSDK: CloudID = " + cloudId));
@@ -656,17 +635,15 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 {% endtab %}
 
 {% tab title="Flutter" %}
-### getExperienceCloudId
+**Dart** <a id="getexperiencecloudid-flutter"></a>
 
-#### Dart
-
-#### Syntax
+**Syntax**
 
 ```dart
 Future<String> experienceCloudId;
 ```
 
-#### Example
+**Example**
 
 ```dart
 String result = "";
@@ -680,11 +657,9 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-### getExperienceCloudId
+**Cordova** <a id="getexperiencecloudid-cordova"></a>
 
-#### Cordova
-
-#### Syntax
+**Syntax**
 
 ```jsx
 ACPIdentity.getExperienceCloudId(success, fail);
@@ -693,7 +668,7 @@ ACPIdentity.getExperienceCloudId(success, fail);
 * _success_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
 * _fail_ is a callback containing error information if the `getExperienceCloudId` API was executed with errors.
 
-#### Example
+**Example**
 
 ```jsx
 ACPIdentity.getExperienceCloudId(function (handleCallback) {
@@ -705,11 +680,9 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### getExperienceCloudId
+**C\#** <a id="getexperiencecloudid-unity"></a>
 
-#### C\#
-
-#### Syntax
+**Syntax**
 
 ```csharp
 public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callback)
@@ -717,7 +690,7 @@ public static void GetExperienceCloudId(AdobeGetExperienceCloudIdCallback callba
 
 * _callback_ is a callback containing the experience cloud id if the `GetExperienceCloudId` API executed without any errors.
 
-#### Example
+**Example**
 
 ```csharp
 [MonoPInvokeCallback(typeof(AdobeGetExperienceCloudIdCallback))]
@@ -730,11 +703,9 @@ ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### getExperienceCloudId
+**C\#** <a id="getexperiencecloudid-xamarin"></a>
 
-#### C\#
-
-#### iOS Syntax
+**iOS Syntax**
 
 ```csharp
 public unsafe static void GetExperienceCloudId (Action<NSString> callback);
@@ -742,7 +713,7 @@ public unsafe static void GetExperienceCloudId (Action<NSString> callback);
 
 * _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
 
-#### Android Syntax
+**Android Syntax**
 
 ```csharp
 public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
@@ -750,7 +721,7 @@ public unsafe static void GetExperienceCloudId (IAdobeCallback callback);
 
 * _callback_ is a callback containing the experience cloud id if the `getExperienceCloudId` API executed without any errors.
 
-#### iOS Example
+**iOS Example**
 
 ```csharp
 ACPIdentity.GetExperienceCloudId(callback => {
@@ -758,7 +729,7 @@ ACPIdentity.GetExperienceCloudId(callback => {
 });
 ```
 
-#### Android Example
+**Android Example**
 
 ```csharp
 ACPIdentity.GetExperienceCloudId(new StringCallback());
@@ -787,12 +758,9 @@ This API returns all customer identifiers that were previously synced with the A
 
 {% tabs %}
 {% tab title="Android" %}
-
-### getIdentifiers
+**Java** <a id="getidentifiers-android"></a>
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
-
-#### Java
 
 **Syntax**
 
@@ -816,10 +784,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
-### getIdentifiers
-
-#### iOS
+** iOS** <a id="getidentifiers-ios-aep"></a>
 
 **Syntax**
 
@@ -858,13 +823,11 @@ Identity.getIdentifiers { identifiers, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### getIdentifiers
+**iOS** <a id="getidentifiers-ios-acp"></a>
 
 {% hint style="info" %}
 Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-#### iOS
 
 **Syntax**
 
@@ -911,9 +874,7 @@ ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) i
 {% endtab %}
 
 {% tab title="React Native" %}
-### getIdentifiers
-
-#### JavaScript
+**JavaScript** <a id="getidentifiers-react"></a>
 
 **Syntax**
 
@@ -929,9 +890,7 @@ ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK
 {% endtab %}
 
 {% tab title="Flutter" %}
-### getIdentifiers
-
-#### Dart
+**Dart** <a id="getidentifiers-flutter"></a>
 
 **Syntax**
 
@@ -953,9 +912,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-### getIdentifiers
-
-#### Cordova
+** Cordova** <a id="getidentifiers-cordova"></a>
 
 **Syntax**
 
@@ -978,9 +935,7 @@ ACPIdentity.getIdentifiers(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### getIdentifiers
-
-#### C\#
+**C\#** <a id="getidentifiers-unity"></a>
 
 **Syntax**
 
@@ -1003,9 +958,7 @@ ACPIdentity.GetIdentifiers(HandleAdobeGetIdentifiersCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### getIdentifiers
-
-#### C\#
+**C\#** <a id="getidentifiers-xamarin"></a>
 
 **iOS Syntax**
 
@@ -1088,16 +1041,13 @@ If an error occurs while retrieving the URL string, the callback handler will be
 
 {% tabs %}
 {% tab title="Android" %}
-
-### getUrlVariables
+**Java** <a id="geturlvariables-android"></a>
 
 {% hint style="info" %}
 This method was added in Core version 1.4.0 and Identity version 1.1.0_._
 {% endhint %}
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
-
-#### Java
 
 **Syntax**
 
@@ -1125,9 +1075,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### getUrlVariables
-
-#### iOS
+** iOS** <a id="geturlvariables-ios-aep"></a>
 
 **Syntax**
 
@@ -1186,13 +1134,11 @@ Identity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### getUrlVariables
+**iOS** <a id="geturlvariables-ios-acp"></a>
 
 {% hint style="info" %}
 Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0. Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
-
-#### iOS
 
 **Syntax**
 
@@ -1279,9 +1225,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-### [getUrlVariables](identity-api-reference.md)
-
-#### JavaScript
+**JavaScript** <a id="geturlvariables-react"></a>
 
 {% hint style="info" %}
 This method was added in react-native-acpcore v1.0.5.
@@ -1301,9 +1245,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 
 {% tab title="Flutter" %}
-### getUrlVariables
-
-#### Dart
+**Dart** <a id="geturlvariables-flutter"></a>
 
 **Syntax**
 
@@ -1325,9 +1267,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-### [getUrlVariables](identity-api-reference.md)
-
-#### Cordova
+**Cordova** <a id="geturlvariables-cordova"></a>
 
 **Syntax**
 
@@ -1350,9 +1290,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### [GetUrlVariables](identity-api-reference.md)
-
-#### C\#
+**C\#** <a id="geturlvariables-unity"></a>
 
 **Syntax**
 
@@ -1375,9 +1313,7 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### [GetUrlVariables](identity-api-reference.md)
-
-#### C\#
+**C\#** <a id="geturlvariables-xamarin"></a>
 
 **iOS Syntax**
 
@@ -1434,9 +1370,9 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
+**Java** <a id="registerextension-android"></a>
 
-#### Java
+After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
 ```java
 public class MobileApp extends Application {
@@ -1455,7 +1391,7 @@ super.onCreate();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### iOS
+**iOS** <a id="registerextension-ios-aep"></a>
 
 {% hint style="info" %}
 For iOS AEP libraries, registration is changed to a single API call. Calling the MobileCore.start API is no longer required. See [MobileCore.registerExtensions()](../mobile-core-api-reference.md#registerextension-s) for more information.
@@ -1488,7 +1424,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### iOS
+**iOS** <a id="registerextension-ios-acp"></a>
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
@@ -1515,25 +1451,25 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript** <a id="registerextension-react"></a>
 
 When using React Native, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart** <a id="registerextension-flutter"></a>
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
-## Cordova
+**Cordova** <a id="registerextension-cordova"></a>
 
 When using Cordova, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
-## C\#
+**C\#** <a id="registerextension-unity"></a>
 
 Register the Identity extension in your app's `Start()` function:
 
@@ -1545,7 +1481,7 @@ void Start() {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-## C\#
+**C\#** <a id="registerextension-xamarin"></a>
 
 **iOS**
 
@@ -1595,11 +1531,7 @@ If the current SDK privacy status is `optedout`, the advertising identifier is n
 
 {% tabs %}
 {% tab title="Android" %}
-### setAdvertisingIdentifier
-
-This API sets the provided advertising identifier.
-
-#### Java
+**Java** <a id="setadvertisingidentifier-android"></a>
 
 **Syntax**
 
@@ -1658,7 +1590,7 @@ public void onResume() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### setAdvertisingIdentifier
+**iOS** <a id="setadvertisingidentifier-ios-aep"></a>
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1667,8 +1599,6 @@ To access IDFA and handle it correctly in your mobile application, see the [Appl
 {% hint style="warning" %}
 Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 {% endhint %}
-
-#### iOS
 
 **Syntax**
 
@@ -1796,7 +1726,7 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### setAdvertisingIdentifier
+**iOS** <a id="setadvertisingidentifier-ios-acp"></a>
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1805,8 +1735,6 @@ To access IDFA and handle it correctly in your mobile application, see [Apple de
 {% hint style="warning" %}
 Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 {% endhint %}
-
-#### iOS
 
 **Syntax**
 
@@ -1941,9 +1869,7 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="React Native" %}
-### setAdvertisingIdentifier
-
-#### JavaScript
+** JavaScript** <a id="setadvertisingidentifier-react"></a>
 
 **Syntax**
 
@@ -1961,9 +1887,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Flutter" %}
-### setAdvertisingIdentifier
-
-#### Dart
+**Dart** <a id="setadvertisingidentifier-flutter"></a>
 
 **Syntax**
 
@@ -1981,9 +1905,7 @@ FlutterACPCore.setAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Cordova" %}
-### setAdvertisingIdentifier
-
-#### Cordova
+**Cordova** <a id="setadvertisingidentifier-cordova"></a>
 
 **Syntax**
 
@@ -2007,9 +1929,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### SetAdvertisingIdentifier
-
-#### C\#
+**C\#** <a id="setadvertisingidentifier-unity"></a>
 
 **Syntax**
 
@@ -2027,9 +1947,7 @@ ACPCore.SetAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### SetAdvertisingIdentifier
-
-#### C\#
+**C\#** <a id="setadvertisingidentifier-xamarin"></a>
 
 **iOS Syntax**
 
@@ -2065,9 +1983,7 @@ It is recommended to call `setPushIdentifier` on each application launch to ensu
 
 {% tabs %}
 {% tab title="Android" %}
-### setPushIdentifier
-
-#### Java
+**Java** <a id="setpushidentifier-android"></a>
 
 **Syntax**
 
@@ -2086,9 +2002,7 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### setPushIdentifier
-
-#### iOS
+**iOS** <a id="setpushidentifier-ios-aep"></a>
 
 ```swift
 @objc(setPushIdentifier:)
@@ -2116,9 +2030,7 @@ MobileCore.setPushIdentifier(deviceToken)
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### setPushIdentifier
-
-#### iOS
+**iOS** <a id="setpushidentifier-ios-acp"></a>
 
 ```objectivec
 + (void) setPushIdentifier: (nullable NSData*) deviceToken;
@@ -2145,9 +2057,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 
 {% tab title="React Native" %}
-### setPushIdentifier
-
-#### JavaScript
+**JavaScript** <a id="setpushidentifier-react"></a>
 
 **Syntax**
 
@@ -2181,7 +2091,7 @@ This API updates or appends the provided customer identifier type key and value 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java** <a id="syncidentifier-android"></a>
 
 **Syntax**
 
@@ -2205,7 +2115,7 @@ Identity.syncIdentifier("idType",
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### iOS
+**iOS** <a id="syncidentifier-ios-aep"></a>
 
 **Syntax**
 
@@ -2241,7 +2151,7 @@ Identity.syncIdentifier(identifierType: "idType",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### iOS
+**iOS** <a id="syncidentifier-ios-acp"></a>
 
 **Syntax**
 
@@ -2274,7 +2184,7 @@ ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPM
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript** <a id="syncidentifier-react"></a>
 
 **Syntax**
 
@@ -2299,7 +2209,7 @@ ACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthe
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart** <a id="syncidentifier-flutter"></a>
 
 **Syntax**
 
@@ -2324,7 +2234,7 @@ FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisit
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+**Cordova** <a id="syncidentifier-cordova"></a>
 
 **Syntax**
 
@@ -2353,7 +2263,7 @@ ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenti
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+**C\#** <a id="syncidentifier-unity"></a>
 
 **Syntax**
 
@@ -2376,7 +2286,7 @@ ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationS
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+**C\#** <a id="syncidentifier-xamarin"></a>
 
 **iOS Syntax**
 
@@ -2424,7 +2334,7 @@ This API is an overloaded version, which does not include the parameter for the 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java** <a id="syncidentifiers-android"></a>
 
 **Syntax**
 
@@ -2448,7 +2358,7 @@ Identity.syncIdentifiers(identifiers);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### iOS
+**iOS** <a id="syncidentifiers-ios-aep"></a>
 
 **Syntax**
 
@@ -2482,7 +2392,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### iOS
+**iOS** <a id="syncidentifiers-ios-acp"></a>
 
 **Syntax**
 
@@ -2517,7 +2427,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript** <a id="syncidentifiers-react"></a>
 
 **Syntax**
 
@@ -2537,7 +2447,7 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart** <a id="syncidentifiers-flutter"></a>
 
 **Syntax**
 
@@ -2559,7 +2469,7 @@ FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+**Cordova** <a id="syncidentifiers-cordova"></a>
 
 **Syntax**
 
@@ -2586,7 +2496,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+**C\#** <a id="syncidentifiers-unity"></a>
 
 **Syntax**
 
@@ -2610,7 +2520,7 @@ ACPIdentity.SyncIdentifiers(ids);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+**C\#** <a id="syncidentifiers-xamarin"></a>
 
 **iOS Syntax**
 
@@ -2664,7 +2574,7 @@ Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the 
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+**Java** <a id="syncidentifiers-overloaded-android"></a>
 
 **Syntax**
 
@@ -2687,7 +2597,7 @@ Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATE
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### iOS
+**iOS** <a id="syncidentifiers-overloaded-ios-aep"></a>
 
 **Syntax**
 
@@ -2723,7 +2633,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### iOS
+**iOS** <a id="syncidentifiers-overloaded-ios-acp"></a>
 
 **Syntax**
 
@@ -2761,7 +2671,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript** <a id="syncidentifiers-overloaded-react"></a>
 
 **Syntax**
 
@@ -2785,7 +2695,7 @@ ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisito
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart** <a id="syncidentifiers-overloaded-flutter"></a>
 
 **Syntax**
 
@@ -2809,7 +2719,7 @@ FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2"
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+**Cordova** <a id="syncidentifiers-overloaded-cordova"></a>
 
 **Syntax**
 
@@ -2837,7 +2747,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+**C\#** <a id="syncidentifiers-overloaded-unity"></a>
 
 **Syntax**
 
@@ -2865,7 +2775,7 @@ ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.UNKNOWN);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+**C\#** <a id="syncidentifiers-overloaded-xamarin"></a>
 
 **iOS Syntax**
 
@@ -2919,8 +2829,7 @@ ACPIdentity.SyncIdentifiers(ids, VisitorID.AuthenticationState.LoggedOut);
 
 {% tabs %}
 {% tab title="Android" %}
-
-#### Android
+**Android**
 
 **AuthenticationState**<a id="android-authenticationstate"></a>
 
@@ -2956,7 +2865,7 @@ public class VisitorID {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### iOS (AEP 3.x)
+**iOS (AEP 3.x)**
 
 **MobileVisitorAuthenticationState**<a id="ios-aepmobilevisitorauthenticationstate"></a>
 
@@ -2990,7 +2899,7 @@ This is used to indicate the authentication state for the current `Identifiable`
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### iOS (ACP 2.x)
+**iOS (ACP 2.x)**
 
 **ACPMobileVisitorAuthenticationState**<a id="ios-acpmobilevisitorauthenticationstate"></a>
 
@@ -3021,7 +2930,7 @@ This is an identifier to be used with the Adobe Experience Cloud Identity Servic
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+**JavaScript**
 
 **ACPVisitorID**<a id="react-acpvisitorid"></a>
 
@@ -3047,7 +2956,7 @@ var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+**Dart**
 
 **ACPVisitorID**<a id="flutter-acpvisitorid"></a>
 
@@ -3077,7 +2986,7 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+**Cordova**
 
 **ACPMobileVisitorAuthenticationState**<a id="cordova-acpmobilevisitorauthenticationstate"></a>
 
@@ -3091,7 +3000,7 @@ ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+**C\#**
 
 **ACPAuthenticationState**<a id="unity-acpauthenticationstate"></a>
 
@@ -3105,7 +3014,7 @@ ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+**C\#**
 
 **iOS**
 
