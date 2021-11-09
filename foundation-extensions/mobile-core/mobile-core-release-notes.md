@@ -1,5 +1,19 @@
 # Release Notes
 
+## November 9, 2021 
+
+### iOS AEPCore 3.3.1 
+
+* Fixed a bug where Date was not persisted correctly in iOS versions less than 13. 
+
+### iOS AEPLifecycle 3.3.1
+
+* Added session start time to Lifecycle shared state. 
+
+### iOS AEPIdentity 3.3.1 
+
+* Fixed a bug where default identity server URL was not used if the SDK configuration parameter `experienceCloud.server` was an empty string.
+
 ## Sept 3, 2021
 
 ### iOS AEPCore 3.3.0
