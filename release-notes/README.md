@@ -4,9 +4,23 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## November 9, 2021 
+
+### iOS AEPCore 3.3.1 
+
+* Fixed a bug where Date was not persisted correctly in iOS versions less than 13. 
+
+### iOS AEPLifecycle 3.3.1
+
+* Added session start time to Lifecycle shared state. 
+
+### iOS AEPIdentity 3.3.1 
+
+* Fixed a bug where the default Experience Cloud ID server URL was not used when the `experienceCloud.server` configuration parameter was an empty string.
+
 ## November 5, 2021
 
- ### iOS AEPMobileServices 3.0.3
+### iOS AEPMobileServices 3.0.3
 
  * Fixes crash when using an immutable dictionary for handling attribution data.
 
