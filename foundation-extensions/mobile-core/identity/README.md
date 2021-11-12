@@ -403,10 +403,10 @@ If your app opens mobile web content, you need to ensure that visitors are not i
 
 ### Visitor IDs in apps
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to `optedout`.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to `optedout`, and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to `optedin`.
 {% endhint %}
 
 {% hint style="info" %}
