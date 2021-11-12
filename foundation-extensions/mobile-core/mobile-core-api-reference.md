@@ -2320,6 +2320,7 @@ MobileCore.getPrivacyStatus(new AdobeCallbackWithError<MobilePrivacyStatus>() {
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
+### AEPError
 
 The `AEPError` enum shows the errors that can be passed to a completion handler callback from any API which uses one:
 

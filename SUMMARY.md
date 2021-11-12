@@ -32,6 +32,7 @@
     * [Configuration API reference](foundation-extensions/mobile-core/configuration/configuration-api-reference.md)
     * [Configuration event reference](foundation-extensions/mobile-core/configuration/configuration-event-reference.md)
   * [Identity](foundation-extensions/mobile-core/identity/README.md)
+    * [Migrating to AEPIdentity reference](foundation-extensions/mobile-core/identity/migration.md)
     * [Identity API reference](foundation-extensions/mobile-core/identity/identity-api-reference.md)
     * [Identity event reference](foundation-extensions/mobile-core/identity/identity-event-reference.md)
   * [Lifecycle](foundation-extensions/mobile-core/lifecycle/README.md)
