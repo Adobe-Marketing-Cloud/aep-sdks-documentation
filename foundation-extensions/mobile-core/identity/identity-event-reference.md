@@ -128,7 +128,7 @@ For more details see [Analytics response identity Document](../../../using-mobil
 
 The Identity extension listens for the Audience extension response content event for any user opt-out updates. If this response contains `optedouthitsent: false` an opt-out network call is sent to the Experience Cloud Identity Service.
 
-For more details see [Audience Manager Content Response Document](../../../using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1).
+For more details see [Audience Manager Content Response Document](../../../using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference.md#audience-manager-content-response-1).
 
 ### Configuration Response Content
 
@@ -273,7 +273,7 @@ The Analytics Custom VID is no longer included in the Identity event data payloa
 
 The Identity extension dispatches a new Configuration Content Request event when a privacy change is detected in the response that is received from the ECID Service. This event is handled by the Core extension, and the new privacy status is broadcasted to other extensions.
 
-For more details about this event, see the [Mobile Core Configuration event reference](../configuration/configuration-event-reference) section.
+For more details about this event, see the [Mobile Core Configuration event reference](../configuration/configuration-event-reference.md) section.
 
 ### Analytics content request
 
