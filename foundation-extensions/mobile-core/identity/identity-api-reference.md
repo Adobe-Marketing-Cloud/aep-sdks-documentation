@@ -8,9 +8,9 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID (ECID)
   * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID (AID), if available from the [Analytics extension](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
+  * `MCAID` - Analytics Tracking ID (AID), if available from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
   * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
 
 This API is designed to handle the following URL formats:
 
@@ -42,7 +42,7 @@ If your application uses more complicated URLs, such as Angular URLs, you should
 {% tab title="Android" %}
 **Java** <a id="appendvisitorinfoforurl-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
 **Syntax**
 
@@ -81,7 +81,7 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 ```
 
 * _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error.
+* _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error.
 
 **Examples**
 
@@ -144,7 +144,7 @@ Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 an
 
 * _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../../using-mobile-extensions/mobile-core/mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -502,7 +502,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 {% tab title="Android" %}
 **Java** <a id="getexperiencecloudid-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
 **Syntax**
 
@@ -534,7 +534,7 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. 
+* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. 
 
 **Examples**
 
@@ -579,7 +579,7 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 ```
 
 * _callback_ is invoked after the ECID is available.
-* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
+* _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -759,7 +759,7 @@ This API returns all customer identifiers that were previously synced with the A
 {% tab title="Android" %}
 **Java** <a id="getidentifiers-android"></a>
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
 **Syntax**
 
@@ -792,7 +792,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. 
+* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. 
 
 **Examples**
 
@@ -836,7 +836,7 @@ Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
-* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
+* _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 **Swift**
@@ -1046,7 +1046,7 @@ If an error occurs while retrieving the URL string, the callback handler will be
 This method was added in Core version 1.4.0 and Identity version 1.1.0.
 {% endhint %}
 
-This API can be called with [AdobeCallback](../mobile-core-api-reference#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference#adobeerror).
+This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
 **Syntax**
 
@@ -1083,7 +1083,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ containing the visitor identifiers as a query string, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference#aeperror) code of the specific error. The default timeout of 500ms.
+* _completion_ is invoked with _String_ containing the visitor identifiers as a query string, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -1147,7 +1147,7 @@ Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity vers
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
-* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference#acperror) code of the specific error. The default timeout of 500ms.
+* _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
 **Examples**
 
@@ -2102,7 +2102,7 @@ public static void syncIdentifier(final String identifierType,
 
 * _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
 * _identifier (String)_ contains the `identifier value`, and this parameter should not be null or empty.
-* _authenticationState (AuthenticationState)_ indicates the authentication state of the user and contains one of the [VisitorID.AuthenticationState](identity-api-reference#android-authenticationstate) values.
+* _authenticationState (AuthenticationState)_ indicates the authentication state of the user and contains one of the [VisitorID.AuthenticationState](identity-api-reference.md#android-authenticationstate) values.
 
 **Example**
 
@@ -2128,7 +2128,7 @@ static func syncIdentifier(identifierType: String, identifier: String, authentic
 
   If either the `identifierType` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* The _authenticationState (MobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [MobileVisitorAuthenticationState](identity-api-reference#ios-aepmobilevisitorauthenticationstate) values.
+* The _authenticationState (MobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [MobileVisitorAuthenticationState](identity-api-reference.md#ios-aepmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2165,7 +2165,7 @@ Identity.syncIdentifier(identifierType: "idType",
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* The _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference#ios-acpmobilevisitorauthenticationstate) values.
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference.md#ios-acpmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2196,7 +2196,7 @@ syncIdentifier(identifierType: String, identifier: String, authenticationState: 
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference#react-acpmobilevisitorauthenticationstate) values.
+* _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference.md#react-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2221,7 +2221,7 @@ Future<void> syncIdentifier(String identifierType, String identifier, ACPMobileV
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference#flutter-acpmobilevisitorauthenticationstate) values.
+* _authState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference.md#flutter-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2246,7 +2246,7 @@ ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, suc
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference#cordova-acpmobilevisitorauthenticationstate) values.
+* _authState (ACPMobileVisitorAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference.md#cordova-acpmobilevisitorauthenticationstate) values.
 * _success_ is a callback containing the visitor id type, value, and authentication state if the `syncIdentifier` API executed without any errors.
 * _fail_ is a callback containing error information if the `syncIdentifier` API was executed with errors.
 
@@ -2275,7 +2275,7 @@ public static void SyncIdentifier(string identifierType, string identifier, ACPA
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authState (ACPAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPAuthenticationState](identity-api-reference#unity-acpauthenticationstate) values.
+* _authState (ACPAuthenticationState)_ value indicating authentication state for the user and contains one of the following [ACPAuthenticationState](identity-api-reference.md#unity-acpauthenticationstate) values.
 
 **Example**
 
@@ -2298,7 +2298,7 @@ public static void SyncIdentifier (string identifierType, string identifier, ACP
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference#xamarin-acpmobilevisitorauthenticationstate) values.
+* _authenticationState (ACPMobileVisitorAuthenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference.md#xamarin-acpmobilevisitorauthenticationstate) values.
 
 **Android Syntax**
 
@@ -2311,7 +2311,7 @@ public unsafe static void SyncIdentifier (string identifierType, string identifi
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
 
-* _authenticationState (AuthenticationState)_ value indicating authentication state for the user and contains one of the following [VisitorID.AuthenticationState](identity-api-reference#xamarin-visitoridauthenticationstate) values.
+* _authenticationState (AuthenticationState)_ value indicating authentication state for the user and contains one of the following [VisitorID.AuthenticationState](identity-api-reference.md#xamarin-visitoridauthenticationstate) values.
 
 **iOS Example**
 
@@ -2582,7 +2582,7 @@ public static void syncIdentifiers(final Map<String, String> identifiers, final 
 ```
 
 * _identifiers_ is a map that contains IDs with the identifier type as the key, and the string identifier as the value.
-* _authState_ indicates the authentication state for the user, which contains one of the following [VisitorID.AuthenticationState](identity-api-reference#android-authenticationstate) values.
+* _authState_ indicates the authentication state for the user, which contains one of the following [VisitorID.AuthenticationState](identity-api-reference.md#android-authenticationstate) values.
 
 **Example**
 
@@ -2607,7 +2607,7 @@ static func syncIdentifiers(identifiers: [String: String]?, authenticationState:
 
 * The _identifiers_ dictionary contains identifier type as the key and identifier as the value, both identifier type and identifier should be non empty and non nil values.
 
-* The _authenticationState (MobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [MobileVisitorAuthenticationState](identity-api-reference#ios-aepmobilevisitorauthenticationstate) values.
+* The _authenticationState (MobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [MobileVisitorAuthenticationState](identity-api-reference.md#ios-aepmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2644,7 +2644,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference#ios-acpmobilevisitorauthenticationstate) values.
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference.md#ios-acpmobilevisitorauthenticationstate) values.
 
 **Examples**
 
@@ -2682,7 +2682,7 @@ syncIdentifiersWithAuthState(identifiers?: {string: string}, authenticationState
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference#react-acpmobilevisitorauthenticationstate) values.
+* The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference.md#react-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2706,7 +2706,7 @@ Future<void> syncIdentifiersWithAuthState (Map<String, String> identifiers, ACPM
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* The _authState_ (ACPMobileVisitorAuthenticationState)\_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference#flutter-acpmobilevisitorauthenticationstate) values.
+* The _authState_ (ACPMobileVisitorAuthenticationState)\_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference.md#flutter-acpmobilevisitorauthenticationstate) values.
 
 **Example**
 
@@ -2730,7 +2730,7 @@ ACPIdentity.syncIdentifiers = function(identifiers, authState, success, fail);
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authState_ value indicating authentication state for the identifiers to be synced and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference#cordova-acpmobilevisitorauthenticationstate) values.
+* _authState_ value indicating authentication state for the identifiers to be synced and contains one of the [ACPMobileVisitorAuthenticationState](identity-api-reference.md#cordova-acpmobilevisitorauthenticationstate) values.
 * _success_ is a callback containing the synced identifiers if the `syncIdentifiers` API executed without any errors.
 * _fail_ is a callback containing error information if the `syncIdentifiers` API was executed with errors.
 
@@ -2758,7 +2758,7 @@ public static void SyncIdentifiers(Dictionary<string, string> ids, ACPAuthentica
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the identifiers to be synced and contains one of the [ACPAuthenticationState](identity-api-reference#unity-acpauthenticationstate) values.
+* _authenticationState_ value indicating authentication state for the identifiers to be synced and contains one of the [ACPAuthenticationState](identity-api-reference.md#unity-acpauthenticationstate) values.
 
 **Example**
 
@@ -2786,7 +2786,7 @@ public static void SyncIdentifiers (NSDictionary identifiers, ACPMobileVisitorAu
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference#xamarin-acpmobilevisitorauthenticationstate) values.
+* _authenticationState_ value indicating authentication state for the user and contains one of the following [ACPMobileVisitorAuthenticationState](identity-api-reference.md#xamarin-acpmobilevisitorauthenticationstate) values.
 
 **Android Syntax**
 
@@ -2798,7 +2798,7 @@ public unsafe static void SyncIdentifiers (IDictionary<string, string> identifie
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-* _authenticationState_ value indicating authentication state for the user and contains one of the following [VisitorID.AuthenticationState](identity-api-reference#xamarin-visitoridauthenticationstate) values.
+* _authenticationState_ value indicating authentication state for the user and contains one of the following [VisitorID.AuthenticationState](identity-api-reference.md#xamarin-visitoridauthenticationstate) values.
 
 **iOS Example**
 
