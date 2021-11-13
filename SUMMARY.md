@@ -7,17 +7,6 @@
   * [2019](release-notes/2019.md)
   * [2018](release-notes/2018.md)
 
-## Getting Started
-
-* [Overview](getting-started/overview.md)
-* [Set up schemas and datasets](getting-started/setup-schemas-and-datasets.md)
-* [Configure datastreams](getting-started/configure-datastreams.md)
-* [Set up a mobile property](getting-started/create-a-mobile-property.md)
-* [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
-* [Debugging & lifecycle metrics](getting-started/enable-debug-logging.md)
-* [Track events](getting-started/initialize-the-sdk.md)
-* [Validation and next steps](getting-started/validate.md)
-
 ## Mobile Foundations <a id="foundation-extensions"></a>
 
 * [Mobile Core](foundation-extensions/mobile-core/README.md)
