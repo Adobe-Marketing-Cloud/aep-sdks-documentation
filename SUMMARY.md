@@ -1,14 +1,11 @@
 # Table of contents
 
 * [Home](README.md)
-* [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+* [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes/README.md)
   * [2020](release-notes/2020.md)
   * [2019](release-notes/2019.md)
   * [2018](release-notes/2018.md)
-* [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
-* [Version 4 API Changelog](api-change-log.md)
-* [Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
 
 ## Getting Started
 
