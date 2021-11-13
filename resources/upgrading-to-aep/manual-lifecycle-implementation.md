@@ -11,35 +11,6 @@ When upgrading to the Experience Platform SDK, you must add code to continue col
 ## Importing and registering the Lifecycle extension
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-Import the Lifecycle framework:
-
-```java
-import com.adobe.marketing.mobile.*;
-```
-
-Register the framework with Mobile Core:
-
-```java
-public class MyApp extends Application {​
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-
-        try {
-            Lifecycle.registerExtension();
-        } catch (Exception e) {
-            // Log the exception
-        }
-    }
-}
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -98,32 +69,6 @@ ACPLifecycle.registerExtension();
 You can start collecting Lifecycle information at any time in your app, but we recommend that you start as soon as your app enters the foreground. This allows Lifecycle metrics to be correctly attributed to all of your users' activities for their current session.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-{% hint style="danger" %}
-Do not start or stop Lifecycle in a Fragment.
-{% endhint %}
-
-In the `onResume` function of each of your Activities, start Lifecycle data collection:
-
-```java
-@Override  
-public void onResume() {  
-    MobileCore.setApplication(getApplication());
-    MobileCore.lifecycleStart(null);
-}
-```
-
-{% hint style="warning" %}
-To ensure accurate session and crash reporting, this call must be added to every Activity.
-{% endhint %}
-
-{% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your application. We recommend that you call `setApplication` in each of your Activities.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -204,27 +149,6 @@ ACPCore.lifecycleStart({"lifecycleStart": "myData"});
 You should pause Lifecycle collection when the user stops using your app. The best time to do this is usually when your app has entered the background.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-{% hint style="danger" %}
-Do not start or stop Lifecycle in a Fragment.
-{% endhint %}
-
-We recommend pausing Lifecycle from the `onPause` function in your Activities:
-
-```java
-@Override
-public void onPause() {
-    MobileCore.lifecyclePause();
-}
-```
-
-{% hint style="warning" %}
-To ensure accurate session and crash reporting, this call must be added to every Activity.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 

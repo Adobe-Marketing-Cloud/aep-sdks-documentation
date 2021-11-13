@@ -97,23 +97,6 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 ## Add Analytics to your application
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
-
-   ```java
-    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-    implementation 'com.adobe.marketing.mobile:analytics:1.+'
-   ```
-
-2. Import the Analytics extension in your application's main activity.
-
-   ```java
-    import com.adobe.marketing.mobile.*;
-   ```
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
@@ -256,35 +239,6 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 ## Register Analytics with Mobile Core
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-The following sample shows how to set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
-
-```java
-public class MobileApp extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-        MobileCore.configureWithAppID("yourAppId");
-        try {
-            Analytics.registerExtension(); //Register Analytics with Mobile Core
-            Identity.registerExtension();
-            MobileCore.start(null);
-        } catch (Exception e) {
-            //Log the exception
-         }
-    }
-}
-```
-
-{% hint style="info" %}
-Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
@@ -450,32 +404,6 @@ For more information about collecting audio and video analytics, please read the
 Event serialization is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Syntax**
-
-```java
-cdata.put("&&events", "event1:12341234");
-```
-
-**Example**
-
-```java
-//create a context data dictionary
-HashMap cdata = new HashMap<String, Object>();
-
-// add events
-cdata.put("&&events", "event1:12341234");
-
-// send a tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-MobileCore.trackAction("Action Name", cdata);
-// trackState example:
-MobileCore.trackState("State Name", cdata);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -678,22 +606,6 @@ To update the SDK configuration programmatically, use the following information 
 ### Update Analytics configuration
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Example**
-
-```java
-HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("analytics.server", "sample.analytics.tracking.server");
-data.put("analytics.rsids", "rsid1,rsid2");
-data.put("analytics.batchLimit", 10);
-data.put("analytics.offlineEnabled", true);
-
-MobileCore.updateConfiguration(data);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Objective-C
 

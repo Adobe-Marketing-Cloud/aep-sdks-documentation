@@ -38,10 +38,6 @@ For this extension, the tracking endpoint URLs should be entered **without** a p
 
 You can specify up to three unique iOS integration keys for your development, staging, and production environments. iOS integration keys are generated after creating a service that contains iOS applications using the Campaign Classic [client console](https://experienceleague.adobe.com/docs/campaign-classic/using/installing-campaign-classic/connect-to-campaign/installing-the-client-console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-classic/using/sending-messages/sending-push-notifications/configure-the-mobile-app/configuring-the-mobile-application.html).
 
-#### Integration key \(Android\)
-
-Specify up to three unique Android integration keys for your development, staging, and production environments. Like iOS, the Android integration keys are generated after creating a service that contains Android applications using the Campaign Classic [client console](https://experienceleague.adobe.com/docs/campaign-classic/using/installing-campaign-classic/connect-to-campaign/installing-the-client-console.html). For more information on where to find the integration key, see [Configuring the mobile application in Adobe Campaign](https://experienceleague.adobe.com/docs/campaign-classic/using/sending-messages/sending-push-notifications/configure-the-mobile-app/configuring-the-mobile-application-android.html).
-
 #### Request timeout
 
 Time, in seconds, to wait for a response from the registration or tracking endpoint before timing out. The SDK default timeout value is 30 seconds.
@@ -49,23 +45,6 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 ## Add Campaign Classic to your app
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-1. Add the Campaign Classic extension to your project using the app's Gradle file.
-
-   ```java
-   implementation 'com.adobe.marketing.mobile:campaignclassic:1.+'
-   ```
-
-2. Import the Campaign Classic and Lifecycle extensions in your application's main activity.
-
-   ```java
-   import com.adobe.marketing.mobile.CampaignClassic;
-   import com.adobe.marketing.mobile.Lifecycle;
-   ```
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the Campaign Classic and [Mobile Core](../../foundation-extensions/mobile-core/) libraries to your project.
 
@@ -102,31 +81,6 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 ### Register Campaign Classic with Mobile Core
 
 {% tabs %}
-{% tab title="Android" %}
-In your app's `OnCreate` method, register the Campaign Classic and Lifecycle extensions:
-
-```java
-public class CampaignClassicTestApp extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-        MobileCore.setLogLevel(LoggingMode.VERBOSE);
-
-        try {
-            CampaignClassic.registerExtension();
-            Lifecycle.registerExtension();
-            MobileCore.start(null);
-        } catch (Exception e) {
-            Log.e("CampaignClassicTestApp", e.getMessage());
-        }
-
-    }
-}
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 In your App's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
 

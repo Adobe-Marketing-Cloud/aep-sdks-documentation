@@ -102,47 +102,6 @@ The Mobile Services extension depends on the Core extension, which includes the 
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-Add the Mobile Services extension to your project using the app's Gradle file.
-
-### Java
-
-Import the Mobile Services extension in your application's main activity.
-
-```java
-import com.adobe.marketing.mobileservices.*;
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-You can add the library to your project through your `Podfile` by adding the `AEPMobileServices` pod.
-
-Import the library into your project:
-
-### Swift
-
-```swift
-import AEPCore
-import AEPServices
-import AEPIdentity
-import AEPLifecycle
-import AEPAnalytics
-import AEPMobileServices
-```
-
-### Objective-C
-
-```objectivec
-@import AEPCore
-@import AEPServices;
-@import AEPIdentity
-@import AEPLifecycle
-@import AEPAnalytics
-@import AEPMobileServices
-```
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
 
@@ -175,67 +134,6 @@ import ACPMobileServices
 ## Register Mobile Services with Mobile Core
 
 {% tabs %}
-{% tab title="Android" %}
-
-### Java
-
-Call the `setApplication()` method once in the `onCreate()` method of your main activity. For example, your code might look like the following:
-
-```java
-public class MobileServicesApp extends Application {
-
-@Override
-public void onCreate() {
-     super.onCreate();
-     MobileCore.setApplication(this);
-
-     try {
-             Analytics.registerExtension();
-             MobileServices.registerExtension(); //Register Mobile Services with Mobile Core
-             Lifecycle.registerExtension();
-             Identity.registerExtension();
-             MobileCore.start(null);
-     } catch (Exception e) {
-     //Log the exception
-     }
-  }
-}
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
-
-### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Identity.self, Lifecycle.self, Analytics.self,  AEPMobileServices.self], {
-        MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
-        MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
-    })
-  ...
-}
-```
-
-### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSArray *extensionsToRegister = @[AEPMobileIdentity.class, AEPMobileLifecycle.class, AEPMobileAnalytics.class, AEPMobileServices.class];
-    [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
-        // Use the App id assigned to this application via Adobe Launch
-        [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
-        [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
-    }];
-    ....
-}
-```
-
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 
 In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
@@ -280,75 +178,6 @@ To use your Android or iOS extension with the Experience Platform SDKs, implemen
 ### Set up push messaging
 
 {% tabs %}
-{% tab title="Android" %}
-Obtain the registration ID/token by using the [Firebase Cloud Messaging \(FCM\) APIs](https://firebase.google.com/docs/cloud-messaging/android/client).
-
-### Java
-
-**Syntax**
-
-```java
-void setPushIdentifier(final String registrationID)
-```
-
-**Example**
-
-```java
-MobileCore.setPushIdentifier(registrationID);
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
-
-After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setpushidentifier) API:
-
-
-**Syntax**
-
-```swift
-@objc(setPushIdentifier:)
-public static func setPushIdentifier(_ deviceToken: Data?)
-```
-
-**Example**
-
-### Swift
-
-```swift
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-    let token = tokenParts.joined()
-    print("Device Token: (token)")
-
-    // Send push token to experience platform
-    MobileCore.setPushIdentifier(deviceToken)
-}
-```
-### Objective-C
-
-```objective-c
-- (void)application:(UIApplication *)app
-        didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
-    // Forward the token to your provider, using a custom method.
-    NSUInteger len = devToken.length;
-    if (len == 0) {
-        return;
-    }
-    const unsigned char *buffer = devToken.bytes;
-    NSMutableString *hexString  = [NSMutableString stringWithCapacity:(len * 2)];
-    for (int i = 0; i < len; ++i) {
-        [hexString appendFormat:@"%02x", buffer[i]];
-    }
-    NSString *token = [hexString copy];
-    [AEPMobileCore setPushIdentifier:token];
-}
-```
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 {% hint style="warning" %}
 iOS simulators do not support push messaging.
@@ -410,36 +239,6 @@ Using the following API does not increment page views.
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-On Android, the SDK handles push tracking to analytics without any additional set up. If the application has implemented the `FirebaseMessaginService` class and will handle the push notifications when the application is in foreground, read the push data from the received Intent and add it to the intent extras of the Activity to be launched. An example can be found in [the Mobile Services implement push messaging tutorial](https://experienceleague.adobe.com/docs/mobile-services_en/android/messaging-android/push-messaging/t-mob-impl-push-deeplinking-android-4x.html?lang=en).
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-Use the following API to track a push messaging click in Adobe Analytics.
-
-
-**Syntax**
-
-```swift
-@objc(collectLaunchInfo:)
-public static func collectLaunchInfo(_ userInfo: [String: Any])
-```
-
-**Example**
-
-### Swift
-
-```swift
-AEPCore.collectLaunchInfo(userInfo)
-```
-### Objective-C
-
-```objectivec
-[AEPMobileCore collectLaunchInfo:userInfo];
-```
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 Use the following API to track a push messaging click in Adobe Analytics.
 
@@ -470,7 +269,6 @@ ACPCore.collectLaunchInfo(userInfo)
 
 For more information, see the following:
 
-* [Android troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/push-messaging/c-troubleshooting-push-messaging.html)
 * [iOS troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/push-messaging/c-troubleshooting-push-messaging.html)
 
 ## Set up in-app messaging
@@ -480,39 +278,6 @@ This feature allows you to deliver in-app messages that are triggered from any a
 To set up your app for in-app messages, implement the following instructions. You can complete these steps even if you have not yet defined any messages in Mobile Services. After you define messages, they are delivered dynamically to your app and displayed without an app store update.
 
 {% tabs %}
-{% tab title="Android" %}
-Update the `AndroidManifest.xml` file to declare the full screen activity and enable the Message Notification Handler.
-
-### Java
-
-If you are using either fullscreen message or local notification functionality, update the `AndroidManifest.xml` with the following:
-
-```markup
-<activity
-    android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
-    android:windowSoftInputMode="adjustUnspecified|stateHidden" >
-</activity>
-<receiver android:name="com.adobe.marketing.mobile.MessageNotificationHandler" />
-```
-
-If you selected a modal layout, select one of the following themes for the message:
-
-* `Theme.Translucent.NoTitleBar.Fullscreen`
-* `Theme.Translucent.NoTitleBar`
-* `Theme.Translucent`
-
-**Example**
-
-```markup
-<activity
-android:name="com.adobe.marketing.mobile.MessageFullScreenActivity"
-android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-android:windowSoftInputMode="adjustUnspecified|stateHidden" >
-</activity>
-<receiver android:name="com.adobe.marketing.mobile.MessageNotificationHandler" />
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 No setup is required for iOS, since Mobile SDK automatically handles in-app message support.
 {% endtab %}
@@ -531,48 +296,12 @@ The fallback image asset name is specified when you configure the message in Mob
 The following methods allow you to configure the small and large icons that appear in the notification area, and the large icon that is displayed when notifications appear in the notification drawer.
 
 {% tabs %}
-{% tab title="Android" %}
-### setSmallIconResourceId
-
-This API sets the small icon that is used for notifications that are created by the SDK. This icon appears in the status bar and is the secondary image that is displayed shown when the user sees the complete notification in the notification center.
-
-**Syntax**
-
-```java
-public static void setSmallIconResourceId(final int resourceId);
-```
-
-**Example**
-
-```java
-MobileCore.setSmallIconResourceID(R.drawable.appIcon);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 No setup is required on iOS, since icons are automatically handled by the SDK.
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="Android" %}
-### setLargeIconResourceId\(\)
-
-This API sets the large icon that is used for notifications that are created by the SDK. This icon is the primary image that is displayed when the user sees the complete notification in the notification center.
-
-**Syntax**
-
-```java
-public static void setLargeIconResourceId(final int resourceId);
-```
-
-**Example**
-
-```java
-MobileCore.setLargeIconResourceId(R.drawable.appIcon);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 No setup is required, since icons are automatically handled by the SDK for iOS.
 {% endtab %}
@@ -623,135 +352,11 @@ The following example shows you how to include open tracking:
 
 For more information, see the following:
 
-* [Android Troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/android/messaging-android/inapp-messaging/in-apps-ts.html)
 * [iOS Troubleshooting guide](https://experienceleague.adobe.com/docs/mobile-services/ios/messaging-ios/in-app-messaging/in-apps-ts.html)
 
 ### Acquisition and marketing links
 
 Acquisition and marketing links must be created in Adobe Mobile Services. For more information, see the documentation on [Acquisition](https://experienceleague.adobe.com/docs/mobile-services/using/acquisition-main-ug/acquisition-main.html) within the Mobile Services.
-
-{% hint style="info" %}
-The following configuration collects Acquisition link context from links that were created in Mobile Services and collects referrer data from the Google Play store.
-{% endhint %}
-
-When the user downloads and runs an app as the result of a Google Play store acquisition, the data from the referrer is collected and sent to Adobe Mobile Services. Custom keys that were part of the acquisition data from Google Play are name-spaced with `a.acquisition.custom`.
-
-#### Using the `BroadcastReceiver`
-
-1. Implement the `BroadcastReceiver` for the referrer.
-
-   ```java
-   package com.your.package.name;  // replace with your app package name
-
-   import android.content.BroadcastReceiver;
-   import android.content.Context;
-   import android.content.Intent;
-
-   public class GPBroadcastReceiver extends BroadcastReceiver {
-     @Override
-     public void onReceive(Context c, Intent i) {
-         com.adobe.marketing.mobile.MobileServices.processReferrer(c, i);
-     }
-   }
-   ```
-
-2. Update the `AndroidManifest.xml` to enable the `BroadcastReceiver` you previously created.
-
-   ```markup
-   <receiver android:name="com.your.package.name.GPBroadcastReceiver" android:exported="true">
-       <intent-filter>
-           <action android:name="com.android.vending.INSTALL_REFERRER" />
-       </intent-filter>
-   </receiver>
-   ```
-
-#### Using the Google Play Install Referrer APIs
-
-Starting on March 1, 2020, Google is deprecating the install\_referrer intent broadcast mechanism. For more information, see the [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020 ](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html). To continue collecting install referrer information from the Google Play store, update your application to use the Mobile Services extension version 1.1.0 or newer.
-
-With the deprecation, instead of creating a `BroadcastReceiver`, you need to collect the install referrer URL from a new Google API and pass the resulting URL to the SDK.
-
-1. Add the Google Play Install Referrer package to your gradle file's dependencies:
-
-   ```java
-   implementation 'com.android.installreferrer:installreferrer:1.1'
-   ```
-
-2. To retrieve the referrer URL from the Install Referrer API, complete the steps in the [get the install referrer](https://developer.android.com/google/play/installreferrer/library#install-referrer) tutorial.
-3. Pass the referrer URL to the SDK:
-
-   ```java
-   MobileServices.processGooglePlayInstallReferrerUrl(referrerUrl);
-   ```
-
-   To decide the best way to use the Google Play Install Referrer APIs in your app, see Google's documentation. Here is an example of how to use the Adobe SDK with the Google Play Install Referrer APIs:
-
-   ```java
-   void handleGooglePlayReferrer() {
-       // Google recommends only calling this API the first time you need it:
-       // https://developer.android.com/google/play/installreferrer/library#install-referrer
-   
-       // Store a boolean in SharedPreferences to ensure we only call it once.
-       final SharedPreferences prefs = getSharedPreferences("acquisition", 0);
-       if (prefs != null) {
-           if (prefs.getBoolean("referrerHasBeenProcessed", false)) {
-               return;
-           }
-       }
-   
-       final InstallReferrerClient referrerClient = InstallReferrerClient.newBuilder(getApplicationContext()).build();
-       referrerClient.startConnection(new InstallReferrerStateListener() {
-           private boolean complete = false;
-   
-           @Override
-           public void onInstallReferrerSetupFinished(int responseCode) {
-               switch (responseCode) {
-                   case InstallReferrerClient.InstallReferrerResponse.OK:
-                       // connection is established
-                       complete();
-                       try {
-                           final ReferrerDetails details = referrerClient.getInstallReferrer();                        
-   
-                           // pass the install referrer url to the SDK
-                           MobileServices.processGooglePlayInstallReferrerUrl(details.getInstallReferrer());
-   
-                       } catch (final RemoteException ex) {
-                           Log.w("Acquisition - RemoteException while retrieving referrer information (%s)", ex.getLocalizedMessage() == null ? "unknown" : ex.getLocalizedMessage());
-                       } finally {
-                           referrerClient.endConnection();
-                       }
-                       break;
-                   case InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
-                   case InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE:
-                   default:
-                       // API not available in the Play Store app - nothing to do here
-                       complete();
-                       referrerClient.endConnection();
-                       break;
-               }
-           }
-   
-           @Override
-           public void onInstallReferrerServiceDisconnected() {
-               if (!complete) {
-                   // something went wrong trying to get a connection, try again
-                   referrerClient.startConnection(this);
-               }
-           }
-   
-           void complete() {
-               complete = true;
-               SharedPreferences.Editor editor = getSharedPreferences("acquisition", 0).edit();
-               editor.putBoolean("referrerHasBeenProcessed", true);
-               editor.apply();
-           }
-       });
-   }
-   ```
-
-{% hint style="info" %}
-No setup is required, since Acquisition context is automatically collected and tracked by the SDK.
-{% endhint %}
 
 ### Deep link tracking
 
@@ -770,78 +375,6 @@ Ensure that the deep link URL has the `a.deeplink.id` key in the URL string. If 
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-### trackAdobeDeepLink
-
-**Syntax**
-
-```java
-public static void trackAdobeDeepLink(final Uri uri)
-```
-
-**Example**
-
-**Java**
-
-```java
-MobileServices.trackAdobeDeepLink
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-### trackAdobeDeepLink
-
-**Syntax**
-
-```objective-c
-+ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
-```
-
-**Example**
-
-**Swift**
-
-```swift
-func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    AEPMobileServices.trackAdobeDeepLink(url)
-    /*
-     Handle deep link
-     */
-    return true
-}
-```
-**Objective-C**
-
-```objective-c
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    [AEPMobileServices trackAdobeDeepLink:url];
-    ....
-}
-```
-
-In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
-
-**Swift**
-```swift
-func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    guard let urlContexts = URLContexts.first else { return }
-    AEPMobileServices.trackAdobeDeepLink(urlContexts.url)
-    /*
-     Handle deep link
-     */
-}
-```
-**Objective-C**
-
-```objective-c
-- (void)scene:(UIScene *)scene openURLContexts:(nonnull NSSet<UIOpenURLContext *> *)URLContexts {
-    NSURL *url = [[URLContexts allObjects] firstObject].URL;
-    [AEPMobileServices trackAdobeDeepLink:url];
-}
-```
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 
 ### trackAdobeDeepLink

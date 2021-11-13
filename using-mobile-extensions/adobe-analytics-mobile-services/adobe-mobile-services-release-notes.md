@@ -14,12 +14,6 @@ Release notes and change logs for the Adobe Mobile Services extension
 
  * Includes deferred link info to Acquisition response event when available.
 
-## Oct 05, 2021
-
-### Android MobileServices 1.1.5
-
-* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability) 
-
 ## Aug 25, 2021
 
 ### iOS AEPMobileServices 3.0.1
@@ -46,12 +40,6 @@ Release notes and change logs for the Adobe Mobile Services extension
   * **IMPORTANT**: Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
   * **IMPORTANT**: If using Cocoapods, upgrading to the XCFrameworks distribution requires Cocoapods 1.10.0 or newer
 
-## July 31, 2020
-
-### Android Mobile Services 1.0.5
-
-* Fixed an issue where acquisition data may not be correctly processed.
-
 ## April 17, 2020
 
 The following updates were made in this release:
@@ -60,34 +48,19 @@ The following updates were made in this release:
 
 * Fixed a bug where the modal fullscreen message was shown with a white space at the top of the image.
 
-## February 4, 2020
-
-The following updates were made in this release:
-
-**Android Mobile Services 1.1.1**
-
-* Improved existing log messages and added additional logging to assist with debugging.
-
 ## January 23, 2020
 
 The following updates were made in this release:
 
-**iOS Mobile Services 1.0.5**
+### iOS Mobile Services 1.0.5
 
 * The shared state of the Profile extension can now be used as the traits for In-App Messaging.
-
-**Android Mobile Services 1.1.0**
-
-* The shared state of the Profile extension can now be used as the traits for In-App Messaging.
-* Added a new API, `MobileServices.processGooglePlayInstallReferrerUrl(final String url)`, to support Google Play Install Referrer APIs.
-
-  For more information about the Install Referrer APIs, see [Still Using InstallBroadcast? Switch to the Play Referrer API by March 1, 2020](https://android-developers.googleblog.com/2019/11/still-using-installbroadcast-switch-to.html).
 
 ## November 8, 2019
 
 The following update was made in this release:
 
-**iOS Mobile Servies 1.0.4**
+### iOS Mobile Services 1.0.4
 
 * Fixed a bug where the iOS fullscreen message was unable to load cached images.
 
@@ -106,10 +79,6 @@ The following updates were made in this release:
 The following updates were made in this release:
 
 ### iOS Mobile Services 1.0.2
-
-* Added the ability to trigger an In-App message that is based on Analytics rules consequences.
-
-### Android Mobile Services 1.0.1
 
 * Added the ability to trigger an In-App message that is based on Analytics rules consequences.
 

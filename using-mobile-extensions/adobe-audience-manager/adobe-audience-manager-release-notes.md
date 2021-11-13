@@ -41,17 +41,7 @@
 * Added changes to publish Audience shared state on EventHub boot.
 * Fixed an issue to handle Analytics response only if AAMForwarding is enabled.
 
-### Android Audience 1.1.0
-
-* Added support for AdobeCallbackWithError for APIs getVisitorProfile, signalWithData.
-* Added changes to publish Audience shared state on EventHub boot.
-
 ## July 17, 2020
-
-### Android Audience 1.0.2
-
-* Fixed an issue where UUID was not returned in getSdkIdentities API response.
-* Fixed an issue where customer visitor IDs were missing from Audience signals.
 
 ### @adobe/react-native-acpaudience@1.1.2
 
