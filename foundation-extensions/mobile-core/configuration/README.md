@@ -15,49 +15,6 @@ After the configuration is retrieved when the app is initially launched, the con
 The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-#### Swift
-
-**Syntax**
-
-```swift
-static func configureWith(appId: String)
-```
-
-**Example**
-
-```swift
-MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
-```
-
-#### Objective-C
-
-**Syntax**
-
-```swift
-static func configureWith(appId: String)
-```
-
-**Example**
-
-```objectivec
-[AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
-```
-
-{% hint style="info" %}
-Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
-{% endhint %}
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
@@ -125,50 +82,6 @@ Do not use this API to update the build.environment or any key with an environme
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("global.privacy", "optedout");
-MobileCore.updateConfiguration(data);
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-#### Swift
-
-**Syntax**
-
-```swift
-@objc(updateConfiguration:)
-static func updateConfigurationWith(configDict: [String: Any])
-```
-
-**Example**
-
-```swift
-let updatedConfig = ["global.privacy":"optedout"]
-MobileCore.updateConfigurationWith(configDict: updatedConfig)
-```
-#### Objective-C
-
-**Syntax**
-
-```swift
-@objc(updateConfiguration:)
-static func updateConfigurationWith(configDict: [String: Any])
-```
-
-**Example**
-
-```objectivec
-NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
-[AEPMobileCore updateConfiguration:updatedConfig];
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
@@ -279,53 +192,6 @@ You can also load a different `ADBMobileConfig.json` file by using the `Configur
 To pass in a bundled path and file name:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-// Case 1: to use ADBMobileConfig.json in the assets folder
-// No code is needed
-
-// Case 2: to use a config json from a absolute path:
-MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
-
-// Case 3: to use a config json in Assets folder
-MobileCore.configureWithFileInAssets("exampleJSONfile.json");
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-#### Swift
-
-**Syntax**
-```swift
-static func configureWith(filePath: String)
-```
-
-**Example**
-
-```swift
-let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-if let filePath = filePath {
-    MobileCore.configureWith(filePath: filePath)
-}
-```
-
-#### Objective-C
-**Syntax**
-```swift
-static func configureWith(filePath: String)
-```
-
-**Example**
-
-```objectivec
-NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
-[AEPMobileCore configureWithFilePath: filePath];
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
