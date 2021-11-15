@@ -2,12 +2,6 @@
 
 Release notes and change logs for the Adobe Experience Platform Assurance extension
 
-## June 28, 2021
-
-### iOS AEPAssurance 3.0.0
-
-* Initial release to support [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-assurance-ios).
-
 ## June 17, 2021
 
 ### iOS Assurance 1.1.3
