@@ -43,7 +43,6 @@
   * [Signal](foundation-extensions/mobile-core/signals/README.md)
     * [Migrating to AEPSignal reference](foundation-extensions/mobile-core/signals/acpsignal-aepsignal.md)
     * [Signal API reference](foundation-extensions/mobile-core/signals/signal-api-reference.md)
-    * [Signal event reference](foundation-extensions/mobile-core/signals/signal-event-reference.md)
   * [Rules Engine](foundation-extensions/mobile-core/rules-engine/README.md)
     * [Rules Engine technical details](foundation-extensions/mobile-core/rules-engine/rules-engine-details.md)
     * [Rules Engine consequence details](foundation-extensions/mobile-core/rules-engine/rules-engine-consequence-details.md)

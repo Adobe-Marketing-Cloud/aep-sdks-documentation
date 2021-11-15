@@ -21,49 +21,6 @@ For more information about creating and configuring a rule in Experience Platfor
 ## Add the Signal extension to your app
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using the app's Gradle file.
-
-```java
-implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-```
-
-Import the Signal extension in your application's main activity.
-
-```java
-import com.adobe.marketing.mobile.*;
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-​Add the AEPSignal extension and it's dependency, the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
-
-Add following pods in your `Podfile`:
-
-```text
-pod 'AEPCore'
-pod 'AEPSignal'
-```
-
-Import the Signal libraries:
-
-#### Swift
-
-```text
-import AEPCore
-import AEPSignal
-```
-
-#### Objective-C
-
-```text
-@import AEPCore;
-@import AEPSignal;
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 ​The Signal extension is included in the Mobile Core extension. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
@@ -151,6 +108,7 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register the Signal extension. If the registration was not successful, an `InvalidInitException` is thrown.
@@ -174,33 +132,6 @@ public class MobileApp extends Application {
 ```
 
 **Important**: The Signal extension is automatically included in Core by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-In your app's `application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
-
-#### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     MobileCore.registerExtensions([Signal.self, ...]) {
-       MobileCore.configureWith(appId: "yourAppId")
-       // Any other post registration processing
-     }
-     return true;
-}
-```
-
-#### Objective-C
-
-```objectivec
-    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, ...] completion:^{
-        [AEPMobileCore configureWithAppId: @"yourAppId"];
-        // Any other post registration processing
-    }];
-```
-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
