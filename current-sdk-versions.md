@@ -14,7 +14,7 @@ The iOS Adobe Experience Platform Mobile SDKs support iOS 10 or later \(includes
 
 | Extension | Cocoapods | Github |
 | :--- | :--- | :--- |
-| [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
+| [Mobile Core](./foundation-extensions/mobile-core) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
 | [Profile](./foundation-extensions/profile) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile) |
 | [Identity](./foundation-extensions/mobile-core/identity/) | Bundled in Mobile Core | — |
 | [Signal](./foundation-extensions/mobile-core/signals/) | Bundled in Mobile Core | — |
@@ -37,7 +37,7 @@ The iOS Adobe Experience Platform Mobile SDKs support iOS 10 or later \(includes
 ## React Native
 
 {% hint style="warning" %}
-ACP Mobile SDK plugins for React Native are compatible only with [Android](current-sdk-versions.md#android) and [iOS (ACP)](current-sdk-versions.md#iOS-(ACP)) libraries.
+ACP Mobile SDK plugins for React Native are compatible only with Android and iOS (ACP) libraries.
 {% endhint %}
 
 For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from [npm](https://npm.io/). For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
@@ -60,7 +60,7 @@ For React Native, we recommend that you first install [Node.js](https://nodejs.o
 Adobe Experience Platform Mobile SDK plugins for Cordova supports Cordova **versions 9.0.0 or later**. For the latest Cordova installation instructions, see the `README` file in the [`cordova-acpcore`](https://github.com/adobe/cordova-acpcore) repository.
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with [Android](current-sdk-versions.md#android) and [iOS (ACP)](current-sdk-versions.md#iOS-(ACP)) libraries.
+Adobe Experience Platform Mobile SDK plugins for Cordova are compatible only with Android and iOS (ACP) libraries.
 {% endhint %}
 
 A sample Cordova application that uses the Adobe Experience Platform Mobile SDK can be found [here](https://github.com/adobe/cordova-acpsample).
@@ -93,7 +93,7 @@ cordova plugin add https://github.com/adobe/cordova-acpcore.git
 Adobe Experience Platform Mobile SDK plugin for Flutter supports Flutter **versions 1.10.0 or later**.
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with [Android](current-sdk-versions.md#android) and [iOS (ACP)](current-sdk-versions.md#iOS-(ACP)) libraries.
+Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only with Android and iOS (ACP) libraries.
 {% endhint %}
 
 | Extension | pub.dev | Github | Sample App |
@@ -110,7 +110,7 @@ Adobe Experience Platform Mobile SDK plugins for Flutter are compatible only wit
 Adobe Experience Platform Mobile SDK plugins for Xamarin require **MonoAndroid 9.0+ and Xamarin.iOS 1.0+**. For the latest Xamarin installation instructions, see the `README` file in the [`xamarin-acpcore`](https://github.com/adobe/xamarin-acpcore) repository.
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with [Android](current-sdk-versions.md#android) and [iOS (ACP)](current-sdk-versions.md#iOS-(ACP)) libraries.
+Adobe Experience Platform Mobile SDK plugins for Xamarin are compatible only with Android and iOS (ACP) libraries.
 {% endhint %}
 
 The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distributed via [nuget](https://www.nuget.org/packages). NuGet packages can be added to projects within a [Visual Studio](https://visualstudio.microsoft.com/downloads/) solution. The NuGet packages can also be generated locally via the included Makefile located in each of the Xamarin repositories.
@@ -128,7 +128,7 @@ The Adobe Experience Platform Mobile SDK plugins for Xamarin are packages distri
 Adobe Experience Platform Mobile SDK plugin for Unity supports Unity **versions 2019.3.10f1 or later**. For the latest Unity installation instructions, see the `README` file in the [`unity-acpcore`](https://github.com/adobe/unity-acpcore) repository.
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with [Android](current-sdk-versions.md#android) and [iOS (ACP)](current-sdk-versions.md#iOS-(ACP)) libraries.
+Adobe Experience Platform Mobile SDK plugins for Unity are compatible only with Android and iOS (ACP) libraries.
 {% endhint %}
 
 To start using the Adobe Experience Platform Mobile SDK for Unity, open your application and import the following Unity package\(s\):
