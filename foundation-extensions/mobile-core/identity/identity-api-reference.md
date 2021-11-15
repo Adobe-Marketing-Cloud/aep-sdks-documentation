@@ -8,9 +8,9 @@ If the provided URL is null or empty, it is returned as is. Otherwise, the follo
 * The `adobe_mc` attribute is a URL encoded list that contains:
   * `MCMID` - Experience Cloud ID (ECID)
   * `MCORGID` - Experience Cloud Org ID
-  * `MCAID` - Analytics Tracking ID (AID), if available from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference#gettrackingidentifier)
+  * `MCAID` - Analytics Tracking ID (AID), if available from the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#gettrackingidentifier)
   * `TS` - A timestamp taken when this request was made
-* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference#setidentifier).
+* The optional `adobe_aa_vid` attribute is the URL-encoded Analytics Custom Visitor ID (VID), if previously set in the [Analytics extension](../../../using-mobile-extensions/adobe-analytics/analytics-api-reference.md#setidentifier).
 
 This API is designed to handle the following URL formats:
 
