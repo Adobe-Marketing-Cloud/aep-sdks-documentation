@@ -7,27 +7,6 @@ The `extensionVersion()` API returns the version of the Lifecycle extension that
 To get the version of the Lifecycle extension, use the following code sample:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-String lifecycleExtensionVersion = Lifecycle.extensionVersion();
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
-
-```swift
-let version = Lifecycle.extensionVersion
-```
-
-**Objective C**
-
-```objectivec
-NSString *version = [AEPMobileLifecycle extensionVersion];
-```
-{% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 **Objective C**
@@ -99,61 +78,6 @@ Starts the collection of lifecycle data.
 ### lifecycleStart <a id="lifecycleStart"></a>
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Syntax**
-
-```java
-public static void lifecycleStart(final Map<String, String> additionalContextData);
-```
-
-**Example**
-
-```java
-MobileCore.lifecycleStart(null);
-```
-
-If you need to collect additional lifecycle data:
-
-```text
-contextData.put("myapp.category", "Game");
-MobileCore.lifecycleStart(additionalContextData);
-```
-
-{% hint style="warning" %}
-This method should be called from the Activity onResume method.
-{% endhint %}
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-#### Swift
-
-```swift
- MobileCore.lifecycleStart(additionalContextData: ["contextDataKey": "contextDataVal"])
-```
-
-#### Objective-C
-
-**Syntax**
-
-```swift
- @objc(lifecycleStart:)
- static func lifecycleStart(additionalContextData: [String: Any]?)
-```
-
-**Example**
-
-```text
- [AEPMobileCore lifecycleStart:nil];
-```
-
-If you need to collect additional lifecycle data:
-
-```text
- [AEPMobileCore lifecycleStart:@{@"contextDataKey": @"contextDataVal"}];
-```
-{% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 #### Objective-C
@@ -269,44 +193,6 @@ Pauses the collection of lifecycle data.
 ### lifecyclePause <a id="lifecyclePause"></a>
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Syntax**
-
-```java
-public static void lifecyclePause()
-```
-
-**Example**
-
-```java
-MobileCore.lifecyclePause();
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-#### Swift
-
-```swift
- MobileCore.lifecyclePause()
-```
-
-#### Objective-C
-
-**Syntax**
-
-```swift
- @objc(lifecyclePause)
- static func lifecyclePause()
-```
-
-**Example**
-
-```text
- [AEPMobileCore lifecyclePause];
-```
-{% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
 #### Objective-C
