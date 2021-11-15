@@ -10,7 +10,9 @@ We are excited to announce that the Adobe Experience Platform Swift mobile exten
 
 Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4) and how you can [start migrating to the AEP Mobile SDKs](resources/migrate-to-swift.md) today.
 
-If you are looking for the ACPCore 2.x based extensions documentation, find the supported platforms bellow.
+If you are migrating from version 4 of the Adobe Mobile SDK, we strongly recommend that you [migrate to the AEP Mobile SDKs](resources/migrate-to-swift.md), which are based on AEPCore 3.x mobile extension. Please contact your Adobe Customer Success Manager if you have questions.
+
+If you are still looking for the ACPCore 2.x based extensions documentation, find the supported platforms bellow.
 
 ## Supported platforms based on ACPCore 2.x
 
