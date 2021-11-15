@@ -783,7 +783,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-** iOS** <a id="getidentifiers-ios-aep"></a>
+**iOS** <a id="getidentifiers-ios-aep"></a>
 
 **Syntax**
 
@@ -1074,7 +1074,7 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-** iOS** <a id="geturlvariables-ios-aep"></a>
+**iOS** <a id="geturlvariables-ios-aep"></a>
 
 **Syntax**
 
