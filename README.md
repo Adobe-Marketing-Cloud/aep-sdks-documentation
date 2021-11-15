@@ -8,7 +8,7 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 We are excited to announce that the Adobe Experience Platform Swift mobile extensions are here! In addition to the Adobe Experience Cloud Solution extensions, the AEP Mobile SDKs enable features for AEP Edge Network and AEP Data Collection, support for SPM and many more. These extensions are based on the latest AEPCore 3.x mobile extension. 
 
-Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4) and how you [start migrating to the AEP Mobile SDKs](resources/migrate-to-swift.md) starting today.
+Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4) and how you can [start migrating to the AEP Mobile SDKs](resources/migrate-to-swift.md) today.
 
 If you are looking for the ACPCore 2.x based extensions documentation, find the supported platforms bellow.
 
