@@ -18,6 +18,7 @@ After the SDK makes a network request with Adobe Analytics, the status will tell
 | `Error` | An error caused the network request to fail. More details about the error are displayed in the event details view. |
 | `Unauthorized` | The user does not have access to the Adobe Analytics report suite. |
 | `Unavailable` | The Adobe Analytics request does not have a corresponding `AnalyticsResponse` event. |
+| `No Debug Flag` | The current Adobe Analytics or Assurance SDK version might not support the Analytics Debugging feature. For more information, please read the [Troubleshooting guide](../troubleshoot-project-griffon.md#Adobe Analytics Debugging). |
 | `Expired` | The `AnalyticsTrack` or `LifecycleStart` event is older than 24 hours. |
 
 ### Event details view
@@ -33,7 +34,7 @@ For an Analytics track event, the detailed view contains the following valuable 
 To get started, complete the following steps:
 
 1. Ensure that you implemented the latest versions of the [Project Griffon](../set-up-project-griffon.md) and [Adobe Analytics](../../../using-mobile-extensions/adobe-analytics/) extensions.
-2. Go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) (**not** griffon.adobe.com).
+2. Go to [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon) \(**not** griffon.adobe.com\).
 3. Connect your app to a Project Griffon session. For more information, see [Connect your device](https://app.gitbook.com/@aep-sdks/s/docs/beta/project-griffon/using-project-griffon#2-connect-your-device).
 4. To view your events, select the **Adobe Analytics** view.
 

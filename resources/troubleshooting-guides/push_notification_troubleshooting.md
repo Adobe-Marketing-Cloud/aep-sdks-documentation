@@ -15,7 +15,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 
    For more information, see [Add Firebase to your Android project](https://firebase.google.com/docs/android/setup#console).
 
-4. Verify that Firebase server key is configured in the Campaign instance by clicking **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App (AEP SDK)**.
+4. Verify that Firebase server key is configured in the Campaign instance by clicking **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
 5. Select the mobile app from the list and verify that the push channel settings status for Android is _Android key set up success_.
 
    ![Server key configuration in Android](../../.gitbook/assets/android_server_key.png)
@@ -32,7 +32,7 @@ To set up server key/APNS server certificate in the Campaign instance, complete 
 
    For more information, see [Establishing a Certificate-Based Connection to APNs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns?language=objc).
 
-3. Verify that the APNS server certificate is configured in the Campaign instance by clicking **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App (AEP SDK)**.
+3. Verify that the APNS server certificate is configured in the Campaign instance by clicking **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
 4. Select the mobile app from the list and verify that push channel settings status for iOS is _iOS certificate with filename \*.pem is successfully uploaded_.
 5. Verify that you are using production certificate for production environment and development certificate for development environment. ![Configured push certificate in Campaign](../../.gitbook/assets/campaign_ios_cert_configured.png)
 {% endtab %}
@@ -61,15 +61,15 @@ For more information about configuration, see [Channel specific application conf
 If SDK privacy status is `optedout`, the push identifier will not be set.
 {% endhint %}
 
-1. Verify the push token sync with the Experience Cloud ID service (ECID).  
+1. Verify the push token sync with the Experience Cloud ID service \(ECID\).  
 2. To verify, launch your app connected to a Project Griffon session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device. The value in pushIdentifier is the same value that is sent to the ECID service. ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png)
-5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App (AEP SDK)**.
+5. To verify that app’s push token is mapped to the correct Experience cloud ID\(ECID\) in the Campaign instance, click **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
 6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed. ![App subscriber list, verify mid and push token](../../.gitbook/assets/subscriber_list_android.png)
 7. If you are using Charles, verify that the push token has successfully synced with the ECID service.
 8. Check for the _demdex request_, which is marked with the red line in the screenshot below.  
-9. Verify the successful response(200) for this network call.
+9. Verify the successful response\(200\) for this network call.
 
    ![ECID network request for push token sync](../../.gitbook/assets/push_identifier.png)
 {% endtab %}
@@ -93,18 +93,18 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 If SDK privacy status is `optedout`, the push identifier will not be set.
 {% endhint %}
 
-1. Verify the push token sync with the Experience Cloud ID service (ECID).  
+1. Verify the push token sync with the Experience Cloud ID service \(ECID\).  
 2. To verify, launch your app connected to a Project Griffon session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device.
 
    The value in pushIdentifier is the same value that is sent to the ECID service. ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png)
 
-5. To verify that app’s push token is mapped to the correct Experience cloud ID(ECID) in the Campaign instance, click **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App (AEP SDK)**.
+5. To verify that app’s push token is mapped to the correct Experience cloud ID\(ECID\) in the Campaign instance, click **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
 6. Select your app, under the mobile application subscribers verify that the Experience Cloud ID and the Registration token for the user is displayed. ![App subscriber list, verify mid and Registration token](../../.gitbook/assets/subscriber_list_ios.png)
 7. If you are using Charles, verify that the push token has successfully synced with the ECID service.
 8. Check for the **demdex request**, which is marked with the red line in the screenshot below.  
-9. Verify the successful response(200) for this network call.
+9. Verify the successful response\(200\) for this network call.
 
    ![ECID network request for push token sync](../../.gitbook/assets/charles_demdex_call_ios.png)
 {% endtab %}
@@ -114,9 +114,9 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 
 The following events are related to the tracked push notifications:
 
-* Impression (Notification is delivered.)
-* Click (User clicked the notification.)
-* Open (App opened in response to user's click on notification.)
+* Impression \(Notification is delivered.\)
+* Click \(User clicked the notification.\)
+* Open \(App opened in response to user's click on notification.\)
 
   For more information about implementing the tracking of push notification events, see [Push Tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html?lang=en).
 
@@ -135,15 +135,15 @@ You can verify the push notification tracking in Project Griffon.
 6. In the Details panel on the right, verify the value of the action.  
    The value of the action should be 7 for impression, 2 for the click, and 1 for open.
 
-   Impression event tracking (action value 7)
+   Impression event tracking \(action value 7\)
 
    ![Shows Push notification impression tracking](../../.gitbook/assets/push_tracking_impression.png)
 
-Click event tracking (action value 2)
+Click event tracking \(action value 2\)
 
 ![Shows Push notification click tracking](../../.gitbook/assets/push_tracking_click.png)
 
-Open event tracking (action value 1)
+Open event tracking \(action value 1\)
 
 ![Shows Push notification open tracking](../../.gitbook/assets/push_tracking_open.png)
 
@@ -151,15 +151,15 @@ Open event tracking (action value 1)
 
 To verify that a successful network call is made to track the push notification interaction event, look for the GET request with the query string `id=broadlogID,deliveryID,action` to the Campaign server, see screenshots below for more details about what to look.
 
-Impression event tracking(action value 7)
+Impression event tracking\(action value 7\)
 
 ![Impression event tracking for notification](../../.gitbook/assets/tracking_impression.png)
 
-Click event tracking(action value 2)
+Click event tracking\(action value 2\)
 
 ![Click event tracking for notification](../../.gitbook/assets/tracking_click.png)
 
-Open event tracking(action value 1)
+Open event tracking\(action value 1\)
 
 ![Open event tracking for notification](../../.gitbook/assets/tracking_open.png)
 

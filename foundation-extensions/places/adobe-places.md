@@ -1,4 +1,4 @@
-# ACPPlaces (iOS) reference
+# ACPPlaces \(iOS\) reference
 
 Places is now generally available for all customers. For more information about implementing and using Places, see the following documentation links:
 

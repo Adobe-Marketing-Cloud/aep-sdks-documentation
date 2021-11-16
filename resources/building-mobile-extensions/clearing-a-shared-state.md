@@ -9,7 +9,7 @@ Shared states persist for the life of the application context, which results in 
 You cannot store a user’s personally identifiable information in the shared state.
 {% endhint %}
 
-To manage identifiers, an API is available that clears the existing shared state for your extension without impacting other extensions. The following examples show you how to call this API in your `onUnregister` (iOS) / `onUnregistered` (Android) method.
+To manage identifiers, an API is available that clears the existing shared state for your extension without impacting other extensions. The following examples show you how to call this API in your `onUnregister` \(iOS\) / `onUnregistered` \(Android\) method.
 
 {% tabs %}
 {% tab title="Android" %}

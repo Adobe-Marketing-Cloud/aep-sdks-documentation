@@ -126,9 +126,7 @@ The `trackNotificationReceive` API sends the received push notification's tracki
 {% tabs %}
 {% tab title="Android" %}
 
-{% hint style="info" %}
-If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
-{% endhint %}
+The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 ### Java
 
@@ -162,9 +160,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 {% endtab %}
 
 {% tab title="iOS" %}
-{% hint style="info" %}
-When using this API, you can pass the `launchOptions` that were received before opening the application or pass the `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
-{% endhint %}
+### trackNotificationReceive
+
+The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. You might pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
 
 ### Objective-C
 

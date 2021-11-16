@@ -10,13 +10,13 @@ To set the products variable, set a context data key to `&&products`, and set th
 {% tab title="Android" %}
 ### Java <a id="java-2"></a>
 
-**Syntax** 
+**Syntax**
 
 ```java
 cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
 ```
 
-**Example** 
+**Example**
 
 ```java
 //create a context data dictionary

@@ -1,33 +1,33 @@
 # Migrating to AEPAnalytics
 
-This document is a reference comparison of AEPAnalytics (3.x) APIs against their equivalent ACPAnalytics (2.x) APIs.
+This document is a reference comparison of AEPAnalytics \(3.x\) APIs against their equivalent ACPAnalytics \(2.x\) APIs.
 
 The AEPAnalytics extension is implemented purely in Swift and is compatible with the AEPCore Swift SDK. To ensure a smooth transition from the ACPAnalytics SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application. If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
 ## AEPAnalytics classes
 
-| Type | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
+| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
 | :--- | :--- | :--- | :--- |
 | Primary Class | Analytics | AEPMobileAnalytics | ACPAnalytics |
 
-## AEPAnalytics APIs (alphabetical)
+## AEPAnalytics APIs \(alphabetical\)
 
 ### clearQueue
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func clearQueue()
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) clearQueue;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) clearQueue;
 ```
@@ -37,19 +37,19 @@ static func clearQueue()
 ### extensionVersion
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static var extensionVersion: String
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (nonnull NSString*) extensionVersion;
 ```
@@ -59,19 +59,19 @@ static var extensionVersion: String
 ### getQueueSize
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) getQueueSize:^(NSInteger queueSize, NSError * _Nullable error)completion;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 
@@ -83,19 +83,19 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 ### getTrackingIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error)completion;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
 
@@ -107,19 +107,19 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 ### getVisitorIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error)completion;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
 
@@ -131,19 +131,19 @@ static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void
 ### sendQueuedHits
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func sendQueuedHits()
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) sendQueuedHits;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) sendQueuedHits;
 ```
@@ -153,19 +153,19 @@ static func sendQueuedHits()
 ### setVisitorIdentifier
 
 {% tabs %}
-{% tab title="AEP 3.x (Swift)" %}
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func setVisitorIdentifier(visitorIdentifier: String)
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x (Objective-C)" %}
+{% tab title="AEP 3.x \(Objective-C\)" %}
 ```text
 + (void) setVisitorIdentifier:(NSString * _Nonnull) visitorIdentifier;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x (Objective-C)" %}
+{% tab title="ACP 2.x \(Objective-C\)" %}
 ```text
 + (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```

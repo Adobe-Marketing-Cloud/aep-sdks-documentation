@@ -3,7 +3,7 @@
 The rules that you set up can use the available triggers and conditions, which result in one of the following actions:
 
 * Send a postback
-* Send Personally Identifiable Information (PII)
+* Send Personally Identifiable Information \(PII\)
 * Open a URL
 
 After these actions have been configured to be triggered and published, the Signal extension carries out the requested actions.
@@ -28,7 +28,7 @@ The `Send Postback` and `Send PII` actions allow you to specify a `URL` field an
 
 #### Example
 
-The following example shows how to use the data that is passed to the MobileCore (Android) / ACPCore (iOS) `collectPii` API to form a token:
+The following example shows how to use the data that is passed to the MobileCore \(Android\) / ACPCore \(iOS\) `collectPii` API to form a token:
 
 1. In the mobile application, call `collectPII` to fire Event with context data.
 

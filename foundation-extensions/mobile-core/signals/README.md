@@ -2,7 +2,7 @@
 
 The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
 
-The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
+The Signal extension is bundled with the [MobileCore \(Android\)/ACPCore \(iOS\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
@@ -10,7 +10,7 @@ To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
 2. Define the necessary rules in Experience Platform Launch. 
-3. (Optional) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
+3. \(Optional\) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
 
 For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
 
@@ -37,8 +37,36 @@ import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-​ Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+{% tab title="iOS (AEP 3.x)" %}
+​Add the AEPSignal extension and it's dependency, the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+
+Add following pods in your `Podfile`:
+
+```text
+pod 'AEPCore'
+pod 'AEPSignal'
+```
+
+Import the Signal libraries:
+
+#### Swift
+
+```text
+import AEPCore
+import AEPSignal
+```
+
+#### Objective-C
+
+```text
+@import AEPCore;
+@import AEPSignal;
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+​The Signal extension is included in the Mobile Core extension. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
 
 Add following pods in your `Podfile`:
 
@@ -148,7 +176,34 @@ public class MobileApp extends Application {
 **Important**: The Signal extension is automatically included in Core by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+In your app's `application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     MobileCore.registerExtensions([Signal.self, ...]) {
+       MobileCore.configureWith(appId: "yourAppId")
+       // Any other post registration processing
+     }
+     return true;
+}
+```
+
+#### Objective-C
+
+```objectivec
+    [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, ...] completion:^{
+        [AEPMobileCore configureWithAppId: @"yourAppId"];
+        // Any other post registration processing
+    }];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 In your app's`application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
 
 #### Objective-C

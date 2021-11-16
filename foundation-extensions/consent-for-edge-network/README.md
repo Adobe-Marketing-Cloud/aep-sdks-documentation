@@ -29,14 +29,17 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
    implementation 'com.adobe.marketing.mobile:edgeconsent:1.+'
    ```
 
-2. Import the Mobile Core and Edge extensions in your application class.
+2. Import the Mobile Core and Edge extensions in your Application class.
 
    ```java
-    import com.adobe.marketing.mobile.*;
+    import com.adobe.marketing.mobile.MobileCore;
+    import com.adobe.marketing.mobile.Edge;
+    import com.adobe.marketing.mobile.edge.identity.Identity;
+    import com.adobe.marketing.mobile.edge.consent.Consent;
    ```
-{% endtab %}
+   {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
 
    ```swift
@@ -71,6 +74,13 @@ import AEPEdgeConsent
 @import AEPEdgeConsent;
 ```
 {% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register Edge extensions with Mobile Core
@@ -105,7 +115,7 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS AEP(3.x)" %}
 ### Swift
 
 ```swift
@@ -138,5 +148,5 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| consent.default | No | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences (Consents) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). | Map |
+| consent.default | No | Consents in XDM format. For more details, see [Privacy/Personalization/Marketing Preferences \(Consents\) Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md). | Map |
 

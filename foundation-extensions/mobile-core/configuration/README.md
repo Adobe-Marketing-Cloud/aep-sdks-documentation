@@ -23,15 +23,63 @@ MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func configureWith(appId: String)
+```
+
+**Example**
+
+```swift
+MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
+```
+
 #### Objective-C
 
+**Syntax**
+
+```swift
+static func configureWith(appId: String)
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
+```
+
+{% hint style="info" %}
+Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
+{% endhint %}
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
+**Syntax**
+```objectivec
++ (void) configureWithAppId: (NSString* __nullable) appid;
+```
+
+**Example**
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
 #### Swift
 
+**Syntax**
+```objectivec
++ (void) configureWithAppId: (NSString* __nullable) appid;
+```
+
+**Example**
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
@@ -87,8 +135,51 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Swift
+
+**Syntax**
+
+```swift
+@objc(updateConfiguration:)
+static func updateConfigurationWith(configDict: [String: Any])
+```
+
+**Example**
+
+```swift
+let updatedConfig = ["global.privacy":"optedout"]
+MobileCore.updateConfigurationWith(configDict: updatedConfig)
+```
 #### Objective-C
+
+**Syntax**
+
+```swift
+@objc(updateConfiguration:)
+static func updateConfigurationWith(configDict: [String: Any])
+```
+
+**Example**
+
+```objectivec
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
+[AEPMobileCore updateConfiguration:updatedConfig];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+**Example**
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
@@ -96,6 +187,14 @@ NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 ```
 
 #### Swift
+
+**Syntax**
+
+```objectivec
++ (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+**Example**
 
 ```swift
 let updatedConfig = ["global.privacy":"optedout"]
@@ -195,8 +294,49 @@ MobileCore.configureWithFileInAssets("exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Swift
+
+**Syntax**
+```swift
+static func configureWith(filePath: String)
+```
+
+**Example**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+if let filePath = filePath {
+    MobileCore.configureWith(filePath: filePath)
+}
+```
+
 #### Objective-C
+**Syntax**
+```swift
+static func configureWith(filePath: String)
+```
+
+**Example**
+
+```objectivec
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
+[AEPMobileCore configureWithFilePath: filePath];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+**Example**
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
@@ -204,6 +344,14 @@ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"of
 ```
 
 #### Swift
+
+**Syntax**
+
+```objectivec
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+**Example**
 
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
@@ -223,7 +371,7 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ## Environment-aware configuration properties
 
 {% hint style="info" %}
-This feature is only available in iOS ACPCore version 2.0.3 or later.
+This feature is only available in iOS ACPCore version 2.0.3 or later, and iOS AEPCore version 3.0.0 and above.
 {% endhint %}
 
 Some extension developers might use different configuration values based on their environment, and the generated configuration might have several entries for the same property. For example, the Adobe Campaign Standard extension has different endpoints for development, staging, and production servers. Here is an example of a raw configuration that supports multiple build environments:
