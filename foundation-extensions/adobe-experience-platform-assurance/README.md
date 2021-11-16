@@ -33,7 +33,7 @@ Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/
 
 ```text
 pod 'ACPCore'
-pod 'AEPAssurance', '~> 1.0.0
+pod 'AEPAssurance', '~> 1.0
 ```
 
 Import the Project Griffon libraries along with other SDK libraries:
@@ -169,6 +169,31 @@ _Note_ For `iOS` using `cocoapods`, run:
 ### Register AEPAssurance with Mobile Core
 
 {% tabs %}
+{% tab title="Android" %}
+Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+
+#### Java
+
+1. Register the extension when you register other extensions.
+
+   ```java
+     public class MobileApp extends Application {
+      @Override
+      public void onCreate() {
+         super.onCreate();
+         MobileCore.setApplication(this);
+         MobileCore.configureWithAppId("yourAppId");
+         try {
+            Assurance.registerExtension();
+            MobileCore.start(null);
+         } catch (Exception e) {
+            // Log the exception
+         }
+      }
+     }
+   ```
+
+   {% endtab %}
 
 {% tab title="iOS" %}
 Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
