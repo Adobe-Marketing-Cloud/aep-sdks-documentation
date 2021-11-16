@@ -170,7 +170,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tabs %}
 {% tab title="Android" %}
-Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core) extension.
 
 #### Java
 
@@ -196,7 +196,7 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
    {% endtab %}
 
 {% tab title="iOS" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core) extension.
 
 #### Objective-C
 
