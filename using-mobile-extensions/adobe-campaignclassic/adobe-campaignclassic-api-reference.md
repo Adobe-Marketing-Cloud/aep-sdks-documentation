@@ -16,20 +16,20 @@ String campaignClassicExtensionVersion = CampaignClassic.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
-
-**Example**
-
-```objectivec
-NSString *campaignClassicExtensionVersion = [ACPCampaignClassic extensionVersion];
-```
-
 ### Swift
 
 **Example**
 
 ```swift
 let campaignClassicExtensionVersion  = ACPCampaignClassic.extensionVersion()
+```
+
+### Objective-C
+
+**Example**
+
+```objectivec
+NSString *campaignClassicExtensionVersion = [ACPCampaignClassic extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
@@ -42,7 +42,7 @@ The `registerDevice` API lets you register a user device with Campaign Classic.
 {% tab title="Android" %}
 ### Java
 
-To prepare your app to handle push notifications, see the tutorial on [setting up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the Firebase Cloud Messaging \(FCM\) SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
+To prepare your app to handle push notifications, see the tutorial on [setting up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client). After you receive the Firebase Cloud Messaging (FCM) SDK registration token, send this token and the device information to Campaign Classic by using the `registerDevice` API.
 
 The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the FCM registration token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
 
@@ -82,9 +82,21 @@ public void onNewToken(String token) {
 {% endtab %}
 
 {% tab title="iOS" %}
+{% hint style="info"}
 To get your app ready to handle push notifications, see the tutorial on [configuring remote notification support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1). After you receive the Apple Push Notification service (APNs) token, send this token and the device information to Campaign Classic using the `registerDevice` API.
 
 The `registerDevice` API registers a device with your Campaign Classic registration server. It takes the APNS token as a parameter with a user key that identifies a user, such as an email address or a login name. You can also provide a map of the custom key-value pairs that you want to associate with the registration. A boolean value is returned in the callback, which signals whether the registration was successful.
+{% endhint %}
+
+### Swift
+
+**Example**
+
+```swift
+ACPCampaignClassic.registerDevice(deviceToken, userKey: userKey, additionalParams: additionalParams, callback: {(_ success: Bool?) -> Void in
+            NSLog("Registration Status: %d", success)
+})
+```
 
 ### Objective-C
 
@@ -107,15 +119,6 @@ The `registerDevice` API registers a device with your Campaign Classic registrat
     NSLog(@"Registration Status: %d", success);
 }
 ```
-
-### Swift
-
-**Example**
-
-```swift
-ACPCampaignClassic.registerDevice(deviceToken, userKey: userKey, additionalParams: additionalParams, callback: {(_ success: Bool?) -> Void in
-            NSLog("Registration Status: %d", success)})
-```
 {% endtab %}
 {% endtabs %}
 
@@ -125,10 +128,9 @@ The `trackNotificationReceive` API sends the received push notification's tracki
 
 {% tabs %}
 {% tab title="Android" %}
-
-The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
-
 ### Java
+
+If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
 
 **Syntax**
 
@@ -160,9 +162,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 {% endtab %}
 
 {% tab title="iOS" %}
-### trackNotificationReceive
 
-The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server. You might pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` \(`_mId`\) and `deliveryId` \(`_dId`\), no track request is sent.
+{% hint style="info" %}
+Please note that you can pass the `launchOptions` that were received before opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), no track request is sent.
+{% endhint %}
+
+### Swift
+
+**Example**
+
+```swift
+ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
+```
 
 ### Objective-C
 
@@ -187,13 +198,6 @@ The `trackNotificationReceive` API sends the received push notification's tracki
 }
 ```
 
-### Swift
-
-**Example**
-
-```swift
-ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
-```
 {% endtab %}
 {% endtabs %}
 
@@ -203,12 +207,11 @@ The `trackNotificationClick` API sends the clicked push notification's tracking 
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
 {% hint style="info" %}
 If `trackInfo` is null, or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
-
-### Java
 
 **Syntax**
 
@@ -250,6 +253,13 @@ public void onResume() {
 You can pass the `launchOptions` that was received before opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
 
+### Swift
+
+**Example**
+
+```swift
+ACPCampaignClassic.trackNotificationClick(trackInfo[String:String])
+```
 
 ### Objective-C
 
@@ -269,14 +279,6 @@ You can pass the `launchOptions` that was received before opening the applicatio
     [ACPCampaignClassic             trackNotificationClick:response.notification.request.content.userInfo];
 completionHandler();
 }
-```
-
-### Swift
-
-**Example**
-
-```swift
-ACPCampaignClassic.trackNotificationClick(trackInfo[String:String])
 ```
 {% endtab %}
 {% endtabs %}
