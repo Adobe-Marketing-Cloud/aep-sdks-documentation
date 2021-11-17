@@ -5,22 +5,6 @@
 Returns the current version of the AEP Assurance extension
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-### Syntax
-
-```java
-public static String extensionVersion()
-```
-
-### Example
-
-```java
-Assurance.extensionVersion()
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -123,25 +107,6 @@ You may call this API when the app launches with a url \(see code snippet below 
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-This API is optional for Android.
-
-Android does not require this API to be called. When the `registerExtension` API is called, AEP Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
-
-### Java
-
-### Syntax
-
-```java
-public static void startSession(final String url)
-```
-
-### Example
-
-```java
- Assurance.startSession(url);
-```
-{% endtab %}
 
 {% tab title="iOS" %}
 ### Objective-C

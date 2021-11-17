@@ -8,6 +8,5 @@ To get started with implementing Adobe Experience Platform Places Service on you
 
 ## Reference
 
-* [AEPPlaces API reference](places-usage-reference.md)
 * [Migration to AEPPlaces](../../resources/migrate-to-swift.md) - Migrate your current Objective-C implementation to Swift-based SDK libraries
 

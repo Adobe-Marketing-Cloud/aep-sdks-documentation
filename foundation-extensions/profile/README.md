@@ -19,36 +19,8 @@ To get started with the Profile extension:
 To add the Profile extension to your app:
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-1. Add the `UserProfile` library to your project using the app's gradle file.
-2. Import the `UserProfile` library and any other SDK library in your application's main activity.
-
-   ```text
-   import com.adobe.marketing.mobile.*;
-   ```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'AEPUserProfile'`.
-2. Import the UserProfile library.  
-
-### Swift
-
-```swift
-   import AEPUserProfile
-```
-
-### Objective C
-
-```text
-  @import AEPUserProfile;
-```
-
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
+
 ### Objective C
 
 1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
@@ -130,63 +102,6 @@ flutter pub get
 ## Register the extension
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Required:** The `setApplication()` method must be called once in the `onCreate()` method of your main activity.
-
-1. The `UserProfile` extension must be registered with Mobile Core before calling an `UserProfile` API.
-
-   This can be done after calling `setApplication()` in the `onCreate()` method. Here is a code sample, which calls these set up methods:
-
-```java
-public class MobileApp extends Application {
-​
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-​
-        try {
-            UserProfile.registerExtension();
-        } catch (Exception e) {
-            //Log the exception
-        }
-    }
-   }
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-### Objective C
-
-**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
-
-1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@AEPMobileUserProfile.class] completion:^{
-    ...
-  }];
-  ...
-  // Override point for customization after application launch.
-  return YES;
-}
-```
-
-### Swift
-
-```swift
-// AppDelegate.swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([UserProfile.self], {
-  })
-  ...
-}
-```
-{% endtab %}
-
 {% tab title="iOS (ACP 2.x)" %}
 ### Objective C
 

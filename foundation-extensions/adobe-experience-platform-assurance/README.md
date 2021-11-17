@@ -28,30 +28,12 @@ Follow these steps to add the install the extension in Experience Platform Launc
 ### Import the library to your app code
 
 {% tabs %}
-{% tab title="Android" %}
-**Java**
-
-1. Add the following libraries in your project's `build.gradle` file:
-
-   ```java
-   implementation 'com.adobe.marketing.mobile:core:1+'
-   implementation 'com.adobe.marketing.mobile:assurance:1+'
-   ```
-
-2. Import the Project Griffon libraries with the other SDK libraries:
-
-   ```java
-   import com.adobe.marketing.mobile.Assurance; 
-   import com.adobe.marketing.mobile.MobileCore;
-   ```
-{% endtab %}
-
 {% tab title="iOS" %}
 Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
 
 ```text
 pod 'ACPCore'
-pod 'AEPAssurance'
+pod 'AEPAssurance', '~> 1.0
 ```
 
 Import the Project Griffon libraries along with other SDK libraries:
@@ -188,7 +170,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tabs %}
 {% tab title="Android" %}
-Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core) extension.
 
 #### Java
 
@@ -210,10 +192,11 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
       }
      }
    ```
-{% endtab %}
+
+   {% endtab %}
 
 {% tab title="iOS" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core) extension.
 
 #### Objective-C
 
