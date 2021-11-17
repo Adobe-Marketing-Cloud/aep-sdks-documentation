@@ -860,7 +860,7 @@ By default, Mobile SDK logging mode is set to `LoggingMode.ERROR` for Android an
 
 {% hint style="info" %}
 * On **Android**, Mobile SDK uses the `android.util.Log` class to log messages.
-* On **iOS**, Mobile SDK uses `NSLog` to messages to Apple System Log facility.
+* On **iOS**, Mobile SDK uses `NSLog` to log messages to Apple System Log facility.
 {% endhint %}
 
 {% tabs %}
