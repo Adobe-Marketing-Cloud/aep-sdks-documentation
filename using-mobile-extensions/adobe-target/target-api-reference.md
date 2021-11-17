@@ -542,6 +542,20 @@ ACPTarget.prefetchContent(prefetchList, targetParameters).then(success => consol
 Registers the Target extension with the Mobile Core.
 
 {% tabs %}
+{% tab title="Android" %}
+**Syntax**
+ 
+```java
+public static void registerExtension()
+```
+
+**Example**
+
+```java
+Target.registerExtension();
+```
+{% endtab %}
+
 {% tab title="iOS \(ACP 2.x\)" %}
 **Syntax**
 
