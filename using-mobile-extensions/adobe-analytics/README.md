@@ -239,6 +239,35 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 ## Register Analytics with Mobile Core
 
 {% tabs %}
+{% tab title="Android" %}
+### Java
+
+The following sample shows how to set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+
+```java
+public class MobileApp extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MobileCore.setApplication(this);
+        MobileCore.configureWithAppID("yourAppId");
+        try {
+            Analytics.registerExtension(); //Register Analytics with Mobile Core
+            Identity.registerExtension();
+            MobileCore.start(null);
+        } catch (Exception e) {
+            //Log the exception
+         }
+    }
+}
+```
+
+{% hint style="info" %}
+Analytics depends on the Identity extension and is automatically included in Core by Maven. When manually installing the Analytics extension, ensure that you add the `identity-1.x.x.aar` library to your project.
+{% endhint %}
+{% endtab %}
+
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
