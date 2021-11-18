@@ -16,21 +16,6 @@ Adobe Audience Manager is a versatile audience data management platform. With th
 ## Add Audience Manager to your app
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-1. Add the library to your project.
-2. Import the library.
-
-```java
-import com.adobe.marketing.mobile.*;
-```
-
-{% hint style="info" %}
-Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
 2. Import the Audience and Identity library, using the respective language: 
@@ -82,33 +67,6 @@ ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: 
 ## Register Audience Manager with Mobile Core
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-Call the `setApplication()` method once in the `onCreate()` method of your main activity.
-
-For example, your code might look like the following:
-
-```java
-public class AudiencetApp extends Application {
-
-@Override
-public void onCreate() {
-     super.onCreate();
-     MobileCore.setApplication(this);
-
-     try {
-         Audience.registerExtension(); //Register Audience Manager with Mobile Core
-         Identity.registerExtension();
-         MobileCore.start(null);
-     } catch (Exception e) {
-     //Log the exception
-     }
-  }
-}
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 

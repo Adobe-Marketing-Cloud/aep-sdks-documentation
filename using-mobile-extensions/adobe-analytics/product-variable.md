@@ -7,33 +7,6 @@ Since the products variable cannot be set by processing rules, you need to set s
 To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en).
 
 {% tabs %}
-{% tab title="Android" %}
-### Java <a id="java-2"></a>
-
-**Syntax**
-
-```java
-cdata.put("&&products", "Category;Product;Quantity;Price[,Category;Product;Quantity;Price]");
-```
-
-**Example**
-
-```java
-//create a context data dictionary
-HashMap cdata = new HashMap<String, String>();
-// add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
-cdata.put("&&products", ";Running Shoes;1;69.95,;Running Socks;10;29.99");
-cdata.put("myapp.purchase", "1");
-cdata.put("myapp.purchaseid", "1234567890");
-// send the tracking call - use either a trackAction or trackState call.
-// trackAction example:
-MobileCore.trackAction("purchase", cdata);
-// trackState example:
-MobileCore.trackState("Order Confirmation", cdata);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C <a id="example"></a>
 
@@ -164,30 +137,6 @@ You do **not** need to map the `products` variable using processing rules becaus
 The following code samples show an example of the products variable with merchandising eVars and product-specific events.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Example**
-
-```java
-//create a context data dictionary 
-HashMap cdata = new HashMap<String, String>(); 
-
-// add products, a purchase id, a purchase context data key, and any other data you want to collect. 
-// Note the special syntax for products 
-cdata.put("&&events", "event1"); 
-cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"); 
-cdata.put("myapp.purchase", "1"); 
-cdata.put("myapp.purchaseid", "1234567890"); 
-
-// send the tracking call - use either a trackAction or trackState call. 
-// trackAction example: 
-MobileCore.trackAction("purchase", cdata); 
-// trackState example: 
-MobileCore.trackState("Order Confirmation", cdata);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 

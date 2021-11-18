@@ -30,23 +30,6 @@ To get started with Target, follow these steps:
 To add Target to your app:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-1. Add the Mobile Core and Target extensions to your project using the app's Gradle file.
-
-   ```java
-    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-    implementation 'com.adobe.marketing.mobile:target:1.+'
-   ```
-
-2. Import the Target extension to your application's main activity.
-
-   ```java
-   import com.adobe.marketing.mobile.*;
-   ```
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
 
@@ -105,34 +88,6 @@ To add Target to your app:
 To register Target with Mobile Core:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-In your application's `onCreate()` method, after calling the `setApplication()` method, register Target with Mobile Core.
-
-Here is code sample that calls these set up methods:
-
-```java
-public class TargetApp extends Application {
-
- @Override
- public void onCreate() {
-     super.onCreate();
-     MobileCore.setApplication(this);
-     MobileCore.configureWithAppId("yourAppId");
-
-     try {
-         Target.registerExtension();
-         Identity.registerExtension();
-         MobileCore.start(null);
-     } catch (Exception e) {
-         //Log the exception
-     }
- }
-}
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Objective C
 
@@ -183,23 +138,6 @@ Here is some information about the parameters in a Target request:
 The `TargetOrder` class encapsulates the order ID, the order total, and the purchased product IDs. You can instantiate this class to create order parameters. For more information about Target Order parameters, see [Create an Order Confirmation mbox - mbox.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/implement-target-for-client-side-web.html?lang=en).
 
 {% tabs %}
-{% tab title="Android" %}
-#### Syntax
-
-```java
-public TargetOrder(final String id, final double total, final List<String> purchasedProductIds)
-```
-
-#### Example
-
-```java
-List<String> purchasedProductIds = new ArrayList<String>();
-purchasedProductIds.add("34");
-purchasedProductIds.add("125");
-TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Syntax
 
@@ -240,20 +178,6 @@ var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
 The `TargetProduct` class encapsulates the product ID and the product category ID, and you can instantiate this class to create order parameters. For more information about Target Product parameters, see [Entity attributes](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=en)
 
 {% tabs %}
-{% tab title="Android" %}
-#### Syntax
-
-```java
-public TargetProduct(final String id, final String categoryId)
-```
-
-#### Example
-
-```java
-TargetProduct targetProduct = new TargetProduct("123", "Books");
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Syntax
 
@@ -293,43 +217,6 @@ var targetProduct = new ACPTargetProduct("24D334", "Stationary");
 `TargetParameters` encapsulates `mboxParameters`, `profileParameters`, `orderParameters`, and `productParameters` and allows you easily pass these parameters in a Target request.
 
 {% tabs %}
-{% tab title="Android" %}
-#### Syntax
-
-```java
-TargetParameters targetParameters = new TargetParameters.Builder()
-.parameters(new HashMap<String, String>())
-.profileParameters(new HashMap<String, String>())
-.product(new TargetProduct("productId", "productCategoryId"))
-.order(new TargetOrder("orderId", 0.0, new ArrayList<String>()))
-.build();
-```
-
-#### Example
-
-```java
-List<String> purchasedProductIds = new ArrayList<String>();
-purchasedProductIds.add("34");
-purchasedProductIds.add("125");
-TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
-
-TargetProduct targetProduct = new TargetProduct("123", "Books");
-
-Map<String, String> mboxParameters = new HashMap<String, String>();
-mboxParameters1.put("status", "platinum");
-
-Map<String, String> profileParameters = new HashMap<String, String>();
-profileParameters1.put("gender", "male");
-
-TargetParameters targetParameters = new TargetParameters.Builder()
-.parameters(mboxParameters)
-.profileParameters(profileParameters)
-.product(targetProduct)
-.order(targetOrder)
-.build();
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Syntax
 
@@ -419,14 +306,6 @@ The mbox request that failed can be retried to successfully retrieve the test of
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-On Android, when the application is launched as a result of a deep link, the `collectLaunchInfo` API is internally invoked, and the Target activity and deep link information is extracted from the Intent extras.
-
-{% hint style="info" %}
-The SDK can only collect information from the launching Activity if [`setApplication`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference-android-only) has been called. Setting the Application is only necessary on an Activity that is also an entry point for your application. However, setting the Application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your Application. We recommend that you call `setApplication` in each of your Activities.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Syntax
 

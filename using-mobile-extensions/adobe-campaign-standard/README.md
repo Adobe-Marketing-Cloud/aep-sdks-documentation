@@ -66,32 +66,6 @@ The instructions to add these extensions to your mobile app are also available i
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using the app's Gradle file.
-
-   ```java
-    implementation 'com.adobe.marketing.mobile:campaign:1.+'
-    implementation 'com.adobe.marketing.mobile:userprofile:1.+'
-    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-   ```
-
-2. Import the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile), [Lifecycle](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle), and [Signal](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/signals) extensions in your application's main activity.
-
-   ```java
-    import com.adobe.marketing.mobile.AdobeCallback;
-    import com.adobe.marketing.mobile.Campaign;
-    import com.adobe.marketing.mobile.Identity;
-    import com.adobe.marketing.mobile.Lifecycle;
-    import com.adobe.marketing.mobile.MobileCore;
-    import com.adobe.marketing.mobile.Signal;
-    import com.adobe.marketing.mobile.UserProfile;
-   ```
-
-{% hint style="info" %}
-To complete a manual installation, go to the [Adobe Experience Platform SDKs for Android GitHub](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android) repo, fetch the Mobile Core, Campaign Standard, Profile, Lifecycle, and Signal artifacts, and complete the steps in the [manual installation](https://github.com/Adobe-Marketing-Cloud/acp-sdks/blob/master/README.md#manual-installation) section.
-{% endhint %}
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
 
@@ -148,43 +122,6 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 ### Register the Campaign Standard extension with Mobile Core
 
 {% tabs %}
-{% tab title="Android" %}
-**Java**
-
-In your app's `OnCreate` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
-
-```java
-    public class CampaignTestApp extends Application {
-
-        @Override
-        public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-        MobileCore.setLogLevel(LoggingMode.DEBUG);
-
-        try {
-            Campaign.registerExtension();
-            UserProfile.registerExtension();
-            Identity.registerExtension();
-            Lifecycle.registerExtension();
-            Signal.registerExtension();
-            MobileCore.start(new AdobeCallback () {
-            @Override
-            public void call(Object o) {
-                MobileCore.configureWithAppID("launch-EN2c0ccd3a457a4c47b65a6b085e269c91-staging");
-            }
-            });
-        } catch (InvalidInitException e) {
-            Log.e("CampaignTestApp", e.getMessage());
-        }
-
-        }
-    }
-```
-
-For more information about starting Lifecycle, see the [Lifecycle extension in Android guide](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android).
-{% endtab %}
-
 {% tab title="iOS" %}
 In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign, Identity, Signal, and Lifecycle extensions:
 
@@ -247,26 +184,6 @@ ACPCampaign.registerExtension();
 To initialize the SDK and set up tracking, see the [initialize the SDK and set up tracking tutorial](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
 {% tabs %}
-{% tab title="Android" %}
-### Set up in-app messaging
-
-To learn how to create an in-app message using Adobe Campaign, see the [tutorial on preparing and sending an in-app message](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/in-app-messaging/preparing-and-sending-an-in-app-message.html).
-
-{% hint style="warning" %}
-If you are developing an Android application, to correctly display fullscreen in-app messages, add the Campaign Standard extension's `FullscreenMessageActivity` to your AndroidManifest.xml file:
-
-```markup
-<activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
-```
-
-In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see the [implementing global lifecycle callbacks section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks) within the Lifecycle documentation.
-{% endhint %}
-
-### Set up local notifications
-
-To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see the [configuring notification icons section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons) within the Adobe Analytics - Mobile Services documentation.
-{% endtab %}
-
 {% tab title="iOS" %}
 No additional setup is needed for iOS in-app messaging and local notifications.
 {% endtab %}
@@ -283,30 +200,6 @@ To learn more about creating a push notification using Adobe Campaign, see the t
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Example**
-
-```java
-FirebaseInstanceId.getInstance().getInstanceId()
-        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-            @Override
-            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                if (!task.isSuccessful()) {
-                    return;
-                }
-                // Get new Instance ID token
-                String registrationID = task.getResult().getToken();
-                // Log and toast
-                System.out.println("Received new registration token: " + registrationID);
-                // invoke the API to send the push identifier to the Identity Service
-                MobileCore.setPushIdentifier(registrationID);
-            }
-});
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 {% hint style="warning" %}
 iOS simulators do **not** support push messaging.
@@ -357,63 +250,6 @@ The code samples below are provided as examples on how to correctly invoke the `
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Syntax**
-
-```java
-public static void collectMessageInfo(final Map<String, Object> messageInfo)
-```
-
-* _messageInfo_ is a map that contains the delivery ID, message ID, and action type for a local or push notification for which there were interactions. The delivery and message IDs are extracted from the notification payload.
-
-**Example**
-
-```java
-@Override
-protected void onResume() {
-  super.onResume();
-  handleTracking();
-}
-
-// handle notification open and click tracking
-private void handleTracking() {
-  Intent intent = getIntent();
-  Bundle data = intent.getExtras();
-  HashMap<String, Object> userInfo = null;
-
-  if (data != null) {
-    userInfo = (HashMap)data.get("NOTIFICATION_USER_INFO");
-  } else {
-    return;
-  }
-
-  // Check if we have notification user info.
-  // If it is present, this view was opened based on a notification.
-  if (userInfo != null) {
-    String deliveryId = (String)userInfo.get("deliveryId");
-    String broadlogId = (String)userInfo.get("broadlogId");
-
-    HashMap<String, Object> contextData = new HashMap<>();
-
-    if (deliveryId != null && broadlogId != null) {
-      contextData.put("deliveryId", deliveryId);
-      contextData.put("broadlogId", broadlogId);
-
-      // Send Click Tracking since the user did click on the notification
-      contextData.put("action", "2");
-      MobileCore.collectMessageInfo(contextData);
-
-      // Send Open Tracking since the user opened the app
-      contextData.put("action", "1");
-      MobileCore.collectMessageInfo(contextData);
-    }
-  }
-}
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -514,42 +350,6 @@ Deleting your mobile property in the Data Collection UI does not automatically d
 A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as [https://www.adobe.com](https://www.adobe.com) or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true` which can be used to direct the user to a specific area of your app.
 
 {% tabs %}
-{% tab title="Android" %}
-#### Handling in-app message website URLs on Android
-
-Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
-
-* The `url` key is present in the alert message payload
-* The `url` is present in the query parameters of a fullscreen message button \(`data-destination-url`\)
-* The `adb_deeplink` key is present in the local notification payload
-* The `uri` key is present in the push notification payload
-
-#### Handling in-app message deep links on Android
-
-To handle deep links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, please read the tutorial on [creating deep links to app content](https://developer.android.com/training/app-links/deep-linking). Once the desired activity is started by the newly added intent filter, the data present in the deep link can be retrieved. After that point, any further actions based on the data present in the deep link can be made.
-
-#### Java
-
-```java
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.main);
-
-    Intent intent = getIntent();
-    String action = intent.getAction();
-    Uri data = intent.getData();
-      // parse any data present in the deep link
-}
-```
-
-#### Handling in-app message app links on Android
-
-Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality, although they have the appearance of a standard website URL. The intent filter previously set up for deep links is modified to handle `http` schemes and verification of the app link needs to be set up on [Google Search Console](https://support.google.com/webmasters/answer/9008080).
-
-For more information on the additional verification setup needed, please read the tutorial on [verifying Android app links](https://developer.android.com/training/app-links/verify-site-associations.html). The resulting app link can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information on Android app links, please read the guide on [handling Android app links](https://developer.android.com/training/app-links/index.html#add-app-links).
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Handling alert or fullscreen notification website URLs on iOS
 
@@ -730,21 +530,6 @@ The configuration setting to pause registration requests is provided for specifi
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Example**
-
-```java
-MobileCore.updateConfiguration(new HashMap<String, Object>() {
-  {
-    put("campaign.registrationDelay", 30); // number of days to delay sending a registration request.
-    put("campaign.registrationPaused", false); // boolean signaling if registration requests should be paused
-  }
-});
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Objective-C
 

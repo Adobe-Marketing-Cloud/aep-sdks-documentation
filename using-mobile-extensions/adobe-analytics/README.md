@@ -97,23 +97,6 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 ## Add Analytics to your application
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
-
-   ```java
-    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
-    implementation 'com.adobe.marketing.mobile:analytics:1.+'
-   ```
-
-2. Import the Analytics extension in your application's main activity.
-
-   ```java
-    import com.adobe.marketing.mobile.*;
-   ```
-{% endtab %}
-
 {% tab title="iOS" %}
 1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
@@ -450,32 +433,6 @@ For more information about collecting audio and video analytics, please read the
 Event serialization is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
-
-**Syntax**
-
-```java
-cdata.put("&&events", "event1:12341234");
-```
-
-**Example**
-
-```java
-//create a context data dictionary
-HashMap cdata = new HashMap<String, Object>();
-
-// add events
-cdata.put("&&events", "event1:12341234");
-
-// send a tracking call - use either a trackAction or TrackState call.
-// trackAction example:
-MobileCore.trackAction("Action Name", cdata);
-// trackState example:
-MobileCore.trackState("State Name", cdata);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 ### Objective-C
 
@@ -678,22 +635,6 @@ To update the SDK configuration programmatically, use the following information 
 ### Update Analytics configuration
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-**Example**
-
-```java
-HashMap<String, Object> data = new HashMap<String, Object>();
-data.put("analytics.server", "sample.analytics.tracking.server");
-data.put("analytics.rsids", "rsid1,rsid2");
-data.put("analytics.batchLimit", 10);
-data.put("analytics.offlineEnabled", true);
-
-MobileCore.updateConfiguration(data);
-```
-{% endtab %}
-
 {% tab title="iOS" %}
 #### Objective-C
 
