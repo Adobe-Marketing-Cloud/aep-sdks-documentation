@@ -12,49 +12,82 @@ This event is a request to make a registration or a track (receive or click) cal
 * When a track receive request needs to be sent (`trackNotificationReceive`).
 * When a track click request needs to be sent (`trackNotificationClick`).
 
-#### Data payload definition
+#### registerDevice
 
-The following key-value pair is used in this event:
+The following key-value pairs are used in this event:
 
-| **Key** | **Value Type** | **Optional** | **Description** |
+| **Key** | **Value Type** | **Required** | **Description** |
 | :--- | :--- | :--- | :--- |
-| registerdevice | Boolean | No | Populated when `registerDevice` API is called. |
+| `additionalParameters` | VariantMap | No | An optional map that contains additional key/value pairs to be sent with the registration event. |
+| `deviceToken` | String | Yes | The device token retrieved from Firebase Cloud Messaging. |
+| `registerDevice` | Boolean | Yes | This value is populated when `registerDevice` API is called. |
+| `deviceInfo` | StringMap | Yes | A map that contains the device information, including the device name, brand, manufacturer, and UUID. |
+| `userKey` | String | Yes | A string that identifies the user, such as an email address. |
 
 The `registerDevice` API parameters are also sent in the event, as described below. The `deviceinfo` map is internally populated.
 
 ```json
 {
-    "registerdevice": "<Boolean>",
-    "devicetoken": "<String>",
-    "userkey": "<String>",
-    "additionalparameters": "<VariantMap>",
-    "deviceinfo": "<StringMap>"
+    "additionalParameters": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "zipCode": 94403,
+        "testId": "11000.1110002321321",
+        "region": "US",
+        "userId": "123999333",
+        "age": 28
+    },
+    "deviceToken": "d6x4Bu6pxDg:APA91bG9jZb6oQ3-sExUZRbaYP_LjA6POO0NXMaUaxcBQj9GF5ZBGlFo76raIabLziMMt2mLhLafBW9kYqiZ3Nemwjox3Hg6muTPyLeMOuGj24mCitVt73_KML184meqLYXCqhvg53MI",
+    "registerDevice": true,
+    "deviceInfo": {
+        "deviceName": "generic_x86",
+        "deviceBrand": "Android",
+        "deviceManufacturer": "unknown",
+        "deviceUuid": "00000000-3398-7b70-0000-000033987b70"
+    },
+    "userKey": "john.doe@adobe.com"
 }
 ```
 
-| Key | Value Type | Optional | Description |
+#### trackNotificationReceive
+
+The following key-value pairs are used in this event:
+
+| Key | Value Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `trackreceive` | Boolean | No | Populated when `trackNotificationReceive` API is called. |
+| `trackReceive` | Boolean | Yes | This value is populated when `trackNotificationReceive` API is called. |
+| `trackInfo` | StringMap | Yes | A map containing the tracking identifiers received in the message payload. |
 
 The `trackNotificationReceive` parameters are also sent in the event, as described below:
 
 ```json
 {
-    "trackreceive": "<Boolean>",
-    "trackinfo": "<StringMap>"
+    "trackReceive": true,
+    "trackInfo": {
+        "_mId": "12345",
+        "_dId": "f0190"
+    }
 }
 ```
 
-| Key | Value Type | Optional | Description |
+#### trackNotificationClick
+
+The following key-value pairs are used in this event:
+
+| Key | Value Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `trackclick` | Boolean | No | Populated when `trackNotificationClick` API is called. |
+| `trackClick` | Boolean | Yes | Populated when `trackNotificationClick` API is called. |
+| `trackInfo` | StringMap | Yes | A map containing tracking identifiers that were received in the message payload. |
 
 The `trackNotificationClick` parameters are also sent in the event, as described below:
 
 ```json
 {
-    "trackclick": "<Boolean>",
-    "trackinfo": "<StringMap>"
+    "trackClick": true,
+    "trackInfo": {
+        "_mId": "12345",
+        "_dId": "f0190"
+    }
 }
 ```
 
@@ -64,7 +97,7 @@ The data property in this event is used by each extension to modify its settings
 
 #### Data payload definition <a id="data-payload-definition-2"></a>
 
-The following key/value pairs is used by the Adobe Campaign Classic extension from the configuration event.
+The following key/value pair is used by the Adobe Campaign Classic extension from the configuration event.
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
