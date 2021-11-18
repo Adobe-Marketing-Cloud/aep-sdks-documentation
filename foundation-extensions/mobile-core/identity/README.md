@@ -20,37 +20,6 @@ To get started with Identity, complete the following steps:
 ## Add the Identity extension to your app
 
 {% tabs %}
-{% tab title="Android" %}
-
-#### Java
-
-Import the library:
-
-```java
-import com.adobe.marketing.mobile.*;
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-#### iOS
-
-Import the Identity extension:
-
-**Swift**
-
-```swift
-import AEPCore
-import AEPIdentity
-```
-
-**Objective-C**
-
-```objectivec
-@import AEPCore;
-@import AEPIdentity;
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### iOS
@@ -148,41 +117,6 @@ super.onCreate();
          //Log the exception
      }
   }
-}
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-#### iOS
-
-Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
-
-**Swift**
-
-{% hint style="warning" %}
-When including both Identity and Identity for Edge Network extensions, register the extensions using their full Swift module names.
-
-```swift
-MobileCore.registerExtensions([AEPIdentity.Identity.self, AEPEdgeIdentity.Identity.self, ...], { ... })
-```
-{% endhint %}
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     MobileCore.registerExtensions([Identity.self, ...], {
-       ...
-     })
-}
-```
-
-**Objective-C**
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
- [AEPMobileCore registerExtensions:@[AEPMobileIdentity.class, ...] completion:^{
-   ...
- }];
- return YES;
 }
 ```
 {% endtab %}
@@ -312,29 +246,6 @@ The `extensionVersion()` API returns the version of the Identity extension that 
 To get the version of the Identity extension, use the following code sample:
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-```java
-String identityExtensionVersion = Identity.extensionVersion();
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-#### iOS
-
-**Swift**
-
-```swift
-var identityExtensionVersion  = Identity.extensionVersion
-```
-
-**Objective-C**
-
-```objectivec
-NSString *identityExtensionVersion = [AEPMobileIdentity extensionVersion];
-```
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### iOS
@@ -422,107 +333,6 @@ To use the same visitor ID in the app and mobile web and pass the visitor ID to 
 ### Implementing visitor tracking between an app and the mobile web
 
 {% tabs %}
-{% tab title="Android" %}
-#### Java
-
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
-
-```java
-Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
-    @Override    
-    public void call(String urlWithAdobeVisitorInfo) {        
-        //handle the new URL here        
-        //For example, open the URL on the device browser        
-        //        
-        Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse(urlWithAdobeVisitorInfo));        
-        startActivity(i);    
-    }
-});
-```
-
-Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
-
-```java
-Identity.getUrlVariables(new AdobeCallback<String>() {    
-    @Override    
-    public void call(String stringWithAdobeVisitorInfo) {        
-        //handle the URL query parameter string here 
-        //For example, open the URL on the device browser        
-        //        
-        Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse("https://example.com?" + urlWithAdobeVisitorInfo));        
-        startActivity(i);    
-    }
-});
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
-
-#### Swift
-
-```swift
-let url = URL(string: "https://example.com")
-Identity.appendTo(url: url) { appendedUrl, error in
-    if error != nil {
-        // handle error here
-    } else {
-        // handle appended url here
-    }
-}
-```
-#### Objective-C
-
-```objectivec
-NSURL *sampleUrl = [NSURL URLWithString:@"https://example.com"];
-[AEPMobileIdentity appendToUrl:sampleUrl completion:^(NSURL * _Nullable appendedUrl, NSError *error) {
-    if (error != nil) {
-        // Handle error here
-    } else {
-        // Handle appended url here
-    }
-}];
-```
-
-Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
-
-#### Swift
-
-```swift
-Identity.getUrlVariables { urlVariables, error in
-    if error != nil {
-        // handle error here
-    } else {
-        if let url = URL(string: "https://example.com?\(urlVariables ?? "")") {
-            DispatchQueue.main.async {
-                UIApplication.shared.open(url)
-            }
-        }
-    }
-}
-```
-
-#### Objective-C
-
-```objectivec
-[AEPMobileIdentity getUrlVariables:^(NSString * _Nullable urlVariables, NSError *error) {
-    NSString *sampleURLString = @"https://example.com";
-    if (error != nil) {
-        // Handle variables being nil
-    } else {
-        NSString *stringWithData = [NSString stringWithFormat:@"%@?%@", sampleURLString, urlVariables];
-        NSURL *appendedUrl = [NSURL URLWithString:stringWithData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication] openURL:appendedUrl options:@{} completionHandler:nil];
-        });
-    }
-}];
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### Objective-C
