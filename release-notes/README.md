@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## November 19, 2021
+
+### iOS AEPTarget 3.1.2
+
+* Fixed an issue where the Target qaMode parameters were not being attached to the `retrieveLocationContent` API requests, once the Target preview selections were confirmed.
+
 ## November 9, 2021 
 
 ### iOS AEPCore 3.3.1 
