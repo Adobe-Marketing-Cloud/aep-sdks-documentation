@@ -1,8 +1,8 @@
-# API Reference
+# Adobe Journey Optimizer API reference
 
 ## extensionVersion <a id="extensionversion"></a>
 
-Returns the library version.
+The extensionVersion API returns the library version.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -54,7 +54,7 @@ public static let extensionVersion
 
 ## handleNotificationResponse <a id="handlenotificationresponse"></a>
 
-Transmits the push notification interactions feedback.
+The handleNotificationResponse function transmits the push notification interactions' feedback.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -66,9 +66,9 @@ Transmits the push notification interactions feedback.
 public static void handleNotificationResponse(final Intent intent, final boolean applicationOpened, final String customActionId);
 ```
 
-* _intent_ - Intent which contains information related to messageId and data.
-* _applicationOpened_ - boolean values denoting whether the application was opened or not. 
-* _actionId_ - String values denoting the id of the custom action.
+* _intent_ - An object which contains information related to messageId and data.
+* _applicationOpened_ - A boolean value that denotes whether the application was opened or not. 
+* _actionId_ - A string value that denotes the ID of the custom action.
 
 #### Example
 
@@ -88,9 +88,9 @@ Messaging.handleNotificationResponse(intent, true, "customActionId");
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
-* _response_ - UNNotificationResponse response object containing push notification details 
-* _applicationOpened_ - Bool values denoting whether the application was opened or not. 
-* _customActionId_ - Option String values denoting the id of the custom action.
+* _response_ - An object containing information about the push notification details.
+* _applicationOpened_ - A boolean that denotes whether the application was opened. 
+* _customActionId_ - (Optional) A string that denotes the ID of the custom action.
 
 #### Example
 
@@ -107,14 +107,14 @@ func userNotificationCenter(_: UNUserNotificationCenter,
 
 #### Syntax
 
-```text
+```objc
 @objc(handleNotificationResponse:applicationOpened:withCustomActionId:)
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
 #### Example
 
-```text
+```objc
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)())completionHandler {
@@ -128,7 +128,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 ## registerExtension <a id="registerextension"></a>
 
-Registers the extension with the [Mobile Core](../../foundation-extensions/mobile-core/).
+The registerExtension API lets you register your extension with the [Mobile Core](../../foundation-extensions/mobile-core/).
 
 {% tabs %}
 {% tab title="Android" %}
@@ -150,7 +150,7 @@ Messaging.registerExtension();
 {% tab title="iOS" %}
 ### Swift
 
-Use the MobileCore API to register the Messaging extension.
+You can use the MobileCore API to register the Messaging extension.
 
 #### Syntax
 
@@ -168,17 +168,17 @@ MobileCore.registerExtensions([Messaging.self, ...], {
 
 ### Objective-C
 
-Use the AEPMobileCore API to register the Messaging extension.
+You can use the AEPMobileCore API to register the Messaging extension.
 
 #### Syntax
 
-```swift
+```objc
 public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
 ```
 
 #### Example
 
-```text
+```objc
 [AEPMobileCore registerExtensions:@[AEPMobileMessaging.class, ...] completion:^{
   // processing after registration
 }];
@@ -188,11 +188,19 @@ public static func registerExtensions(_ extensions: [NSObject.Type], _ completio
 
 ## setPushIdentifier <a id="setpushidentifier"></a>
 
+{% hint style="info" %}
+
 Although this API is provided in Mobile Core, the use of this API is required and leveraged by the Adobe Journey Optimizer extension to sync provided push tokens with Adobe Experience Platform services.
+
+{% endhint %}
+
+The setPushIdentifier API sets the push token, allowing you to sync it with Profile in Adobe Experience Platform.
 
 {% tabs %}
 {% tab title="Android" %}
-To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). After retrieving the push token use the below core API to sync it with profile in platform.
+{% hint style="info" %}
+To retrieve the push token from Firebase Messaging Service, please follow the tutorial within the [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). 
+{% endhint %}
 
 ### Java
 
@@ -202,7 +210,7 @@ To retrieve the push token from Firebase Messaging Service follow this [Firebase
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-* _pushIdentifier_ - A `String` value denoting the push token.
+* _pushIdentifier_ - A string value that denotes the push token
 
 #### Examples
 
@@ -221,10 +229,9 @@ FirebaseMessaging.getInstance().getToken()
 {% endtab %}
 
 {% tab title="iOS" %}
-### Swift
+To retrieve the push token in iOS, please read the tutorial within [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
 
-To retrieve the push token in iOS, checkout the apple documentation [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
-After retrieving the push token use the below core API to sync it with profile in platform.
+### Swift
 
 #### Syntax
 
@@ -232,9 +239,9 @@ After retrieving the push token use the below core API to sync it with profile i
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* _deviceToken_ - A `Data` value denoting the push token.
+* _deviceToken_ - A `Data` value that denotes the push token.
 
-#### Examples
+#### Example
 
 ```swift
 func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -246,15 +253,15 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 
 #### Syntax
 
-```text
+```objc
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* _deviceToken_ - A `Data` value denoting the push token.
+* _deviceToken_ - A `Data` value that denotes the push token.
 
-#### Examples
+#### Example
 
-```text
+```objc
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
     [AEPMobileCore setPushIdentifier:deviceToken];
 }
@@ -264,11 +271,7 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 ## addPushTrackingDetails <a id="addpushtrackingdetails"></a>
 
-This API is used to updated the push notification pending intent with necessary customer journey information.
-
-{% hint style="warning" %}
-Call to this API is necessary to ensure that all the important information \(messageId, Customer journey information\) are added to the pending intent so that they can be used while tracking the push notification interactions.
-{% endhint %}
+The addPushTrackingDetails API is used to update a pending intent with important information, such as messageId and Customer Journey information. Please note that calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -280,12 +283,13 @@ Call to this API is necessary to ensure that all the important information \(mes
 public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
 ```
 
-* _intent_ - `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
-* _messageId_ - `String` message ID of the push notification
-* _data_ - `Map` which represents the data part of the remoteMessage.
-* Returns `boolean` indicating whether the intent was updated with necessary information \(messageId and customer journey data\).
+* _intent_ - An `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
+* _messageId_ - A string that contains the message ID of the push notification
+* _data_ - A map which represents the data part of the remoteMessage.
 
-#### Examples
+This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
+
+#### Example
 
 ```java
 boolean success = addPushTrackingDetails(intent, messageId, data)
