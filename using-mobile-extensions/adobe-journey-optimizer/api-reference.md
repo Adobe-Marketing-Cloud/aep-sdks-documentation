@@ -283,9 +283,11 @@ The addPushTrackingDetails API is used to update a pending intent with important
 public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
 ```
 
-* _intent_ - An `Intent` which is added to the pending intent so that it can be used when user interacts with the notification.
-* _messageId_ - A string that contains the message ID of the push notification
-* _data_ - A map which represents the data part of the remoteMessage.
+| Variable | Value type | Description |
+| -------- | ---------- | ----------- |
+| `intent` | `Intent` | The pending intent that needs to be updated so it can be used when the user interacts with the notification. |
+| `messageId` | `String` | The message ID for the push notification. |
+| `data` | `Map<String, String>` | The data of the remoteMessage. |
 
 This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
 
@@ -297,13 +299,11 @@ boolean success = addPushTrackingDetails(intent, messageId, data)
 {% endtab %}
 {% endtabs %}
 
-## Public Classes
+## Public classes
 
 ### MessagingPushPayload
 
-This is a helper class for extracting the data payload attributes from `RemoteMessage` which are used while creating the push notification. Create the instance of `MessagingPushPayload` in the `onMessageReceived` method using the below constructors.
-
-### Constructor
+`MessagePushPayload` is a helper class for extracting the data payload attributes from `RemoteMessage`, which are used while creating the push notification. 
 
 {% tabs %}
 {% tab title="Android" %}
@@ -315,13 +315,17 @@ This is a helper class for extracting the data payload attributes from `RemoteMe
 public MessagingPushPayload(RemoteMessage message)
 ```
 
-* _message_ - `RemoteMessage` message containing the payload data with the necessary attributes for creating push notification
+| Variable | Value type | Description |
+| -------- | ---------- | ----------- |
+| `message` | `RemoteMessage` | A message that contains the necessary attributes for creating a push notification. |
 
 ```java
 public MessagingPushPayload(Map<String, String> data)
 ```
 
-* _data_ - `Map<String, String>` data payload containing the necessary attributes for creating push notification
+| Variable | Value type | Description |
+| -------- | ---------- | ----------- |
+| `data` | `Map<String, String>` | A data payload that contains the necessary attributes for creating a push notification. |
 
 #### Examples
 
@@ -343,7 +347,7 @@ public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
 
 ### Public APIs
 
-Public APIs for getting attributes from push payload which are used while creating the push notification.
+Public APIs are used to get attributes from the push payload, which are used while creating the push notification.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -366,35 +370,35 @@ public String getSound()
 public int getBadgeCount()
 
 // Returns the notification priority from the remote message. 
-// Check out the firebase documentation here (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) 
+// For more information, please read the Firebase documentation (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) 
 public int getNotificationPriority()
 
-// Returns the channel Id from the remote message. 
+// Returns the channel ID from the remote message. 
 public String getChannelId()
 
 // Returns the icon string from the remote message.
 // The icon string represents the drawable resource name in the app.
 public String getIcon()
 
-// Returns the image url from the remote message.
-// The icon string represents the drawable resource name in the app.
+// Returns the image URL from the remote message.
+// The image URL represents the ??? in the app.
 public String getImageUrl()
 
 // Returns the data map from the remote message.
 public Map<String, String> getData()
 
 // Returns an ActionType object which represents the type of action which needs to be performed on push notification interaction.
-// Check the ActionType enum definition below.
+// More information about the ActionType enum definition can be found in the ActionType section below.
 public ActionType getActionType()
 
-// Returns a String action uri which is used to direct the push notification interaction.
+// Returns the action URI as a string. The action URI is used to direct the push notification interaction.
 public String getActionUri()
 
-// Returns a list of ActionButtons. Check the ActionButtons class definition below
+// Returns a list of ActionButtons. More information about the ActionButtons class definition can be found in the ActionButtons section below.
 public List<ActionButton> getActionButtons()
 ```
 
-**Internal Classes and Enums**
+**Internal classes and enums**
 
 **ActionType**
 
@@ -424,13 +428,13 @@ public ActionType getType()
 {% endtab %}
 {% endtabs %}
 
-### Payload Keys
+### Payload keys
 
-Description of Push Notification payload keys
+Description of Push Notification payload keys - ???????? (I need this.)
 
 {% tabs %}
 {% tab title="iOS" %}
-```javascript
+```json
 {
    "aps":{
       "alert":{
@@ -459,23 +463,23 @@ Description of Push Notification payload keys
 }
 ```
 
-| Key | Description |  |
+| Key | Type | Description |
 | :--- | :--- | :--- |
-| adb\_media | URL of the rich media like image/video/gif. This url can be used to download the rich media before showing the push notification. |  |
-| adb\_uri | Web URL / Deeplink URI - Used to open appropriate webpage/app screen when notification is clicked. |  |
-| adb\_a\_type | Can be one of the following string `DEEPLINK / WEBURL / DISMISS`. Used to determine what type of action to be performed when notification is clicked. |  |
-| adb\_act | `Array` containing the Action json object. |  |
-| aid | Part of action object denoting the action ID |  |
-| label | Part of action object denoting the action name |  |
-| type | Part of action object denoting the action type. Can have one of the following value `DEEPLINK / WEBURL / DISMISS` |  |
+| `adb_media` | String | The URL of the media. In this situation, media refers to either an image or a video. This URL can be used to download the rich media before showing the push notification. |
+| `adb_uri` | String | The URI used for deeplinking. The deeplink is used to open appropriate webpage or app screen when the notification is clicked. |
+| `adb_a_type` | enum | An enum that determines what type of action will be performed when the notification is selected. It can be one of the following string values: `DEEPLINK / WEBURL / DISMISS`. |
+| `adb_act` | `Array` | An array that contains the Action JSON object. |
+| `adb_act.aid` | String | A string that denotes the action ID |
+| `adb_act.label` | String | A string that denotes the action name |
+| `adb_act.type` | String | A string that denotes the action type. It can be one of the following string values: `DEEPLINK / WEBURL / DISMISS` |
 {% endtab %}
 
 {% tab title="Android" %}
 {% hint style="info" %}
-We recommend you use the `MessagingPushPayload` class for extracting the payload values.
+You should use the `MessagingPushPayload` class to extract the payload values.
 {% endhint %}
 
-```javascript
+```json
 {
    "message":{
       "android":{
@@ -500,22 +504,22 @@ We recommend you use the `MessagingPushPayload` class for extracting the payload
 }
 ```
 
-| Key | Description |
-| :--- | :--- |
-| adb\_title | String value denoting the push notification title |
-| adb\_body | String value denoting the push notification body |
-| adb\_sound | String value denoting the push notification sound |
-| adb\_n\_count | String value denoting the push notification badge count |
-| adb\_n\_priority | String value denoting the push notification priority Check firebase [documentation](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) |
-| adb\_channel\_id | String value denoting the push notification channel id |
-| adb\_icon | String value denoting the push notification icon resource name |
-| adb\_image | URL of the image to be displayed on the notification |
-| adb\_a\_type | Can be one of the following string `DEEPLINK / WEBURL / DISMISS`. Used to determine what type of action to be performed when notification is clicked. |
-| adb\_uri | Web URL / Deeplink URI - Used to open appropriate webpage/app screen when notification is clicked. |
-| adb\_act | String value denoting the action objects with label, uri and type. |
-| label | Part of `adb_act` string denoting the action type. |
-| uri | Part of `adb_act` string denoting the uri of the action |
-| type | Part of `adb_act` string denoting the action type. Can have one of the following value `DEEPLINK / WEBURL / DISMISS` |
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `adb_title` | String | A value that denotes the push notification's title |
+| `adb_body` | String | A value that denotes the push notification's body |
+| `adb_sound` | String | A value that denotes the push notification's sound |
+| `adb_n_count` | String | A value that denotes the push notification badge count |
+| `adb_n_priority` | String | A value that denotes the push notification's priority. For more information, please read the [Firebase documentation](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) |
+| `adb_channel_id` | String | value denoting the push notification channel id |
+| `adb_icon` | String | value denoting the push notification icon resource name |
+| `adb_image` | String | URL of the image to be displayed on the notification |
+| `adb_a_type` | enum | Can be one of the following string `DEEPLINK / WEBURL / DISMISS`. Used to determine what type of action to be performed when notification is clicked. |
+| `adb_uri` | String | Web URL / Deeplink URI - Used to open appropriate webpage/app screen when notification is clicked. |
+| `adb_act` | String | value denoting the action objects with label, uri and type. |
+| `label` | String | Part of `adb_act` string denoting the action type. |
+| `uri` | String | Part of `adb_act` string denoting the uri of the action |
+| `type` | enum | Part of `adb_act` string denoting the action type. Can have one of the following value `DEEPLINK / WEBURL / DISMISS` |
 {% endtab %}
 {% endtabs %}
 
