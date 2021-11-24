@@ -20,9 +20,6 @@ The iOS Adobe Experience Platform Mobile SDKs support iOS 10 or later \(includes
 | [Signal](./foundation-extensions/mobile-core/signals/) | Bundled in Mobile Core | — |
 | [Lifecycle](./foundation-extensions/mobile-core/lifecycle/) | Bundled in Mobile Core | — |
 | [Rules Engine](./foundation-extensions/mobile-core/rules-engine) | Bundled in Mobile Core | — |
-| [Adobe Experience Platform Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension) | Not Available | — |
-| [Identity for Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network/) | Not Available | — |
-| [Consent for Edge Network](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network/) | Not Available | — |
 | [Adobe Experience Platform Assurance](./foundation-extensions/adobe-experience-platform-assurance) | [![Cocoapods](https://img.shields.io/badge/AEPAssurance-v1.1.3-orange?logo=apple&style=flat-square)](https://cocoapods.org/pods/AEPAssurance) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/AEPAssurance) |
 | [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlaces.svg?color=orange&label=ACPPlaces&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlaces) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPPlaces) |
 | [Places Monitor](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-monitor-extension/places-monitor-extension.html?lang=en) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPPlacesMonitor.svg?color=orange&label=ACPPlacesMonitor&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPPlacesMonitor) | [Link](https://github.com/adobe/places-monitor-ios) |
