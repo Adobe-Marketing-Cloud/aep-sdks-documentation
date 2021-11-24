@@ -33,7 +33,7 @@ If you are unable to resolve your concerns through resources provided here, plea
 
 As Tencent requires ICP on all the domains requested by WeChat Mini Programs, Adobe Analytics tracking servers have a wildcard ICP \(`*.adobedc.cn`\), which means that your tracking server \(typically of the format `yourcompany.adobedc.cn`\) has an ICP. You do not need to separately apply for an ICP for subdomain of `yourcompany.adobedc.cn`.
 
-## Can I use [Adobe Experience Platform Launch](https://launch.adobe.com) to configure and deploy this SDK?
+## Can I use [Adobe Experience Platform Launch](https://experience.adobe.com/#/data-collection/) to configure and deploy this SDK?
 
 Deployment through Adobe Experience Platform Launch for this SDK is not yet supported.
 

@@ -7,7 +7,7 @@ The following documentation details how to use the extension and required config
 ## Before starting
 
 1. Read the tutorial on [getting started with push configuration](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/configuration/push-config/push-gs.html?lang=en) to learn how to configure push channels in Adobe Journey Optimizer.
-2. [Update your app's Datastream](#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://launch.adobe.com)
+2. [Update your app's Datastream](#update-datastream-with-profile-dataset) in [Adobe Experience Platform Data Collection](https://experience.adobe.com/#/data-collection/)
 3. Integrate with following extensions:
    * [Mobile Core](../../foundation-extensions/mobile-core/)
    * [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
@@ -15,7 +15,7 @@ The following documentation details how to use the extension and required config
 
 ### Update Datastream with Profile Dataset
 
-Navigate to a previously configured Datastream by following the instructions in the [configure datastreams tutorial](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://launch.adobe.com).
+Navigate to a previously configured Datastream by following the instructions in the [configure datastreams tutorial](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://experience.adobe.com/#/data-collection/).
 
 Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropdown (under the **Adobe Experience Platform** section) and select **Save**.
 
@@ -25,7 +25,7 @@ Select the pre-created **CJM Push Profile Dataset** in **Profile Dataset** dropd
 
 ### Configure extension in the Data Collection UI
 
-Go to the [Experience Platform Data Collection UI](https://launch.adobe.com),, select mobile property and navigate to **Extensions** from the left navigation panel:
+Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection/), select mobile property and navigate to **Extensions** from the left navigation panel:
 
 1. Navigate to the **Catalog** tab, locate the **Adobe Journey Optimizer** extension, and select **Install**
 2. Select the pre-created **CJM Push Tracking Event Dataset** from the **Event Dataset** dropdown.
@@ -48,7 +48,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
 {% tab title="Android" %}
 ### Java
 
-1. Add the Mobile Core, Edge, EdgeIdentity and Messaging extensions to your project using the app's Gradle file.
+1. Add the Mobile Core, Edge, Edge Identity, and Messaging extensions to your project using the app's Gradle file.
 
    ```java
    implementation 'com.adobe.marketing.mobile:core:1.+'
@@ -57,7 +57,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
    implementation 'com.adobe.marketing.mobile:messaging:1.+'
    ```
 
-2. Import the Mobile Core, Edge, EdgeIdentity and Messaging extensions in your application class.
+2. Import the Mobile Core, Edge, Edge Identity, and Messaging extensions in your application class.
 
    ```java
     import com.adobe.marketing.mobile.*;
@@ -66,7 +66,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
 {% endtab %}
 
 {% tab title="iOS" %}
-1. Add the Mobile Core, Edge, EdgeIdentity and Messaging extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core, Edge, Edge Identity, and Messaging extensions to your project using Cocoapods. Add the following pods to your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -78,7 +78,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
    end
    ```
 
-2. Import the Mobile Core, Edge, EdgeIdentity and Messaging libraries:
+2. Import the Mobile Core, Edge, Edge Identity, and Messaging libraries:
 
 ### Swift
 
@@ -92,7 +92,7 @@ import AEPMessaging
 
 ### Objective-C
 
-```text
+```objc
 // AppDelegate.h
 @import AEPCore;
 @import AEPEdge;
@@ -102,7 +102,7 @@ import AEPMessaging
 {% endtab %}
 {% endtabs %}
 
-#### Register extension with Mobile Core
+#### Register the extension with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -147,7 +147,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Objective-C
 
-```text
+```objc
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class, AEPMobileMessaging.class] completion:^{
@@ -159,13 +159,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-#### Synch user push token with Adobe
+#### Sync the user push token with Adobe
 
-Use the setPushIdentifier API to sync user push token from the device with Adobe Experience Platform services.
+After importing and registering the extensions with your application, you need to sync the push token with Adobe Experience Platform, by using the setPushIdentifier API.
 
 {% tabs %}
 {% tab title="Android" %}
-To retrieve the push token from Firebase Messaging Service follow this [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). After retrieving the push token use the below core API to sync it with profile in platform.
+To retrieve the push token from Firebase Messaging Service, please read the tutorial on [retrieving the registration token] within the Firebase documentation(https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). After retrieving the push token, you can use the following API to sync it with Profile in Platform.
 
 ### Java
 
@@ -175,9 +175,11 @@ To retrieve the push token from Firebase Messaging Service follow this [Firebase
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-* _pushIdentifier_ - A `String` value denoting the push token.
+| **Variable** | **Type** | **Description** |
+| :----------- | :------- | :-------------- |
+| `pushIdentifier` | String | The push token value. |
 
-#### Examples
+#### Example
 
 ```java
 FirebaseMessaging.getInstance().getToken()
@@ -196,8 +198,7 @@ FirebaseMessaging.getInstance().getToken()
 {% tab title="iOS" %}
 ### Swift
 
-To retrieve the push token in iOS, checkout the apple documentation [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
-After retrieving the push token use the below core API to sync it with profile in platform.
+To retrieve the push token in iOS, please read the tutorial on [registering your application](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns) within Apple's documentation. After retrieving the push token, you can use the following API to sync it with Profile in Platform.
 
 #### Syntax
 
@@ -205,9 +206,11 @@ After retrieving the push token use the below core API to sync it with profile i
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* _deviceToken_ - A `Data` value denoting the push token.
+| **Variable** | **Type** | **Description** |
+| :----------- | :------- | :-------------- |
+| `deviceToken` | Data | The push token value. |
 
-#### Examples
+#### Example
 
 ```swift
 func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -219,15 +222,17 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 
 #### Syntax
 
-```text
+```objc
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-* _deviceToken_ - A `Data` value denoting the push token.
+| **Variable** | **Type** | **Description** |
+| :----------- | :------- | :-------------- |
+| `deviceToken` | Data | The push token value. |
 
-#### Examples
+#### Example
 
-```text
+```objc
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
     [AEPMobileCore setPushIdentifier:deviceToken];
 }
@@ -235,16 +240,16 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 {% endtab %}
 {% endtabs %}
 
-## Next Steps
+## Next steps
 
 * [Track Push Interactions](api-reference.md#addpushtrackingdetails)
 
 ## Configuration keys
 
-To update the SDK configuration programmatically, use the following information to change the Messaging configuration values.
+You can update the SDK configuration, including the Messaging configuration values, programatically by using the following information.
 
-| Key | Required | Description | Data Type | Platform |
+| Key | Required | Description | Data Type | Operating System |
 | :--- | :--- | :--- | :--- | :--- |
-| messaging.eventDataset | Yes | Experience Event Dataset Id which can be found from experience platform | String | Android/iOS |
-| messaging.useSandbox | No | See more details in the [Messaging documentation](https://github.com/adobe/aepsdk-messaging-ios/blob/dev/Documentation/SetupSDK.md#using-apnssandbox-environment-for-push-notification) | Boolean | iOS |
+| messaging.eventDataset | Yes | Experience Event Dataset ID which can be found from Experience Platform | String | Android/iOS |
+| messaging.useSandbox | No | A variable that lets the `apnsSandbox` environment be used for receiving push notifications. More details can be found in the [messaging documentation](https://github.com/adobe/aepsdk-messaging-ios/blob/dev/Documentation/SetupSDK.md#using-apnssandbox-environment-for-push-notification) | Boolean | iOS |
 

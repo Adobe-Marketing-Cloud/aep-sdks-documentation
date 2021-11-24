@@ -14,7 +14,7 @@ There are several new features and benefits of using the Experience Platform Mob
 | :--- | :--- | :--- |
 | Server-side, dynamic configuration | ✔️ |  |
 | Programmatic configuration | ✔️ | ✔️ |
-| Configuration UI | [Launch](https://launch.adobe.com) | [Mobile Services](https://mobilemarketing.adobe.com) |
+| Configuration UI | [Launch](https://experience.adobe.com/#/data-collection/) | [Mobile Services](https://mobilemarketing.adobe.com) |
 | Partner SDK extensions | ✔️ |  |
 | Lifecycle metrics | ✔️ | ✔️ |
 | GET/POST postbacks | ✔️ | ✔️ |
