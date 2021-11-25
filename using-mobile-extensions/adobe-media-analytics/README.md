@@ -1,38 +1,38 @@
 # Adobe Analytics - Media Analytics for Audio and Video
 
 {% hint style="warning" %}
-This extension requires the [Adobe Analytics for Media](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
+This extension requires the [Adobe Analytics for Media](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en) add-on SKU. To learn more, please contact your Adobe Customer Success Manager.
 {% endhint %}
 
-## Configure Media Analytics extension in Experience Platform Launch
+## Configure Media Analytics extension in the Data Collection UI
 
-1. In Experience Platform Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
-3. Type the extension settings.   For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
-4. Click **Save**.
+1. In the Data Collection UI, select the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and select **Install**.
+3. Type the extension settings. For more information, please read the section on [configuring the Media Analytics extension](#configure-media-analytics-extension).
+4. Select **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
 ## Configure the Media Analytics extension
 
 {% hint style="info" %}
-If you update the Adobe Media Analytics for Audio and Video launch extension to v2.x in your launch property, you must make sure to update and use AEP SDK Media extension v2.0.0 and higher.
+If you update the Adobe Media Analytics for Audio and Video launch extension to v2.x in your ??? property, you update and use AEP SDK Media extension v2.0.0 and higher.
 {% endhint %}
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
 
 To configure the Media Analytics extension, complete the following steps:
 
-### **Collection API Server**
+### Collection API Server
 
 Type the name of the media collection API server. This is the server where the downloaded media tracking data is sent. Important: You need to contact your Adobe account representative for this information.
 
-### **Channel**
+### Channel
 
 Type the channel name property.
 
-### **Player name**
+### Player name
 
-Type the name of the media player in use \(for example, _AVPlayer_, _Native Player_, or _Custom Player_\).
+Type the name of the media player in use (for example, _AVPlayer_, _Native Player_, or _Custom Player_).
 
 ### **Application Version**
 
@@ -255,5 +255,5 @@ To update your SDK configuration programmatically, use the following information
 | :--- | :--- |
 | Android | Supported |
 | Apple iOS​ | Supported |
-| React Native \(iOS & Android\) | Supported |
+| React Native (iOS & Android) | Supported |
 
