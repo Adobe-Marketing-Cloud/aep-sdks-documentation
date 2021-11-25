@@ -15,7 +15,7 @@ This extension requires the [Adobe Analytics for Media](https://experienceleague
 ## Configure the Media Analytics extension
 
 {% hint style="info" %}
-If you update the Adobe Media Analytics for Audio and Video launch extension to v2.x in your ??? property, you update and use AEP SDK Media extension v2.0.0 and higher.
+If you update the Adobe Media Analytics for Audio and Video tag extension to v2.x in your mobile property, ensure you update and use AEP SDK Media extension v2.0.0 and higher.
 {% endhint %}
 
 ![Adobe Media Analytics Extension Configuration](../../.gitbook/assets/ext-ma-configuration.png)
@@ -24,7 +24,11 @@ To configure the Media Analytics extension, complete the following steps:
 
 ### Collection API Server
 
-Type the name of the media collection API server. This is the server where the downloaded media tracking data is sent. Important: You need to contact your Adobe account representative for this information.
+Type the name of the media collection API server. This is the server where the downloaded media tracking data is sent. 
+
+{% hint style="warning" %}
+You **must** contact your Adobe account representative for this information.
+{% endhint %}
 
 ### Channel
 
@@ -32,22 +36,22 @@ Type the channel name property.
 
 ### Player name
 
-Type the name of the media player in use (for example, _AVPlayer_, _Native Player_, or _Custom Player_).
+Type the name of the media player in use (for example `AVPlayer`, `Native Player`, or `Custom Player`).
 
-### **Application Version**
+### Application Version
 
-Type the version of the media player application/SDK.
+Type the version of the media player application or SDK.
 
 {% hint style="info" %}
-Legacy settings should not be configured for Media Extension v2.x and higher. Those settings are only for backwards compatibility.
-{% endhint %}
+Legacy settings should **not** be configured for Media Extension v2.x and higher. Those settings are only for backwards compatibility.
 
-If you are using Media Extension v1.x, then go to Legacy settings section 1. Enable the `Use Tracking Server` checkbox. 2. In **Tracking Server**, Type the name of the tracking server to which all media tracking data should be sent.
+If you are using Media Extension v1.x, go to the legacy settings section, enable the `Use Tracking Server` checkbox, and type the name of the tracking server in the provided area. The tracking server represents the server to which all media tracking data should be sent.
+{% endhint %}
 
 ## Add Media Analytics to your app
 
-{% hint style="info" %}
-This extension requires the [Adobe Analytics extension](../adobe-analytics/). You must add the Analytics extension to your Launch property and make sure the extension is correctly configured.
+{% hint style="warning" %}
+This extension requires the [Adobe Analytics extension](../adobe-analytics/README.md). You must add the Analytics extension to your mobile property and make sure the extension is correctly configured.
 {% endhint %}
 
 {% tabs %}
@@ -56,13 +60,13 @@ Latest Android SDK versions - [![Maven Central](https://img.shields.io/maven-cen
 
 1. Add the Media extension and its dependencies to your project using the app's Gradle file.
 
-   ```text
+   ```gradle
    implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
    implementation 'com.adobe.marketing.mobile:analytics:1.+'
    implementation 'com.adobe.marketing.mobile:media:2.+'
    ```
 
-   You can also manually include the libraries. Get `.aar` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android).
+   You can also manually include the libraries. Get the `.aar` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/android).
 
 2. Import the Media extension in your application's main activity.
 
@@ -76,15 +80,15 @@ Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCo
 
 1. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
-   ```text
+   ```pod
    pod 'ACPCore', '~> 2.0'
    pod 'ACPAnalytics', '~> 2.0'
    pod 'ACPMedia', '~> 2.0'
    ```
 
-You can also manually include the libraries. Get `.a` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS).
+You can also manually include the libraries. Get the `.a` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS).
 
-1. In Xcode project, import Media extension:
+1. In your Xcode project, import the Media extension:
 
    **Objective C**
 
@@ -110,7 +114,7 @@ Latest React Native Wrapper versions - [![npm version](https://img.shields.io/np
    npm install @adobe/react-native-acpmedia
 ```
 
-1.1 Link
+2. Link the module.
 
 * **React Native 0.60+**
 
@@ -122,11 +126,13 @@ Latest React Native Wrapper versions - [![npm version](https://img.shields.io/np
    react-native link @adobe/react-native-acpmedia
 ```
 
-_Note_ For `iOS` using `cocoapods`, run:
+{% hint style="info" %}
+For `iOS` using `cocoapods`, run:
 
 ```bash
    cd ios/ && pod install
 ```
+{% endhint %}
 
 1. Import the extension.
 
@@ -148,7 +154,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% tab title="Android" %}
 ### Java
 
-To register media with Mobile Core, call the `setApplication()` method in `onCreate()` and call set up methods, as shown in this sample:
+To register media with Mobile Core, call the `setApplication()` method in `onCreate()` and call set up methods, as shown in the example below:
 
 ```java
 import com.adobe.marketing.mobile.*;
@@ -234,24 +240,24 @@ func application(_ application: UIApplication,
 {% tab title="React Native" %}
 #### JavaScript
 
-When using React Native, registering Media with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using React Native, registering Media with Mobile Core should be done in native code. Examples for doing this are  shown under the Android and iOS tabs.
 {% endtab %}
 {% endtabs %}
 
 ## Configuration keys
 
-To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see the [configuration API reference](../../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
 
-| Key | Required | Description | Data Type |
+| **Key** | **Required** | **Description** | **Data type** |
 | :--- | :--- | :--- | :--- |
-| `media.collectionServer` | Yes | Media Collection Server endpoint to which all the media tracking data is sent. For more information, see [Collection Server](./#collection-api-server). | String |
-| `media.channel` | No | Channel name. For more information, see [Channel](./#channel). | String |
-| `media.playerName` | No | Name of the media player in use, i.e., "AVPlayer", "HTML5 Player", "My Custom Player". For more information, see [Player Name](./#player-name). | String |
-| `media.appVersion` | No | Version of the media player app/SDK. For more information, see [Application Version](./#application-version). | String |
+| `media.collectionServer` | Yes | The Media Collection server endpoint to which all the media tracking data is sent. For more information, see the [collection server section](.#collection-api-server). | String |
+| `media.channel` | No | Channel name. For more information, see the [channel section](.#channel). | String |
+| `media.playerName` | No | Name of the media player in use (For example: "AVPlayer", "HTML5 Player", "My Custom Player"). For more information, see the [player name section](.#player-name). | String |
+| `media.appVersion` | No | Version of the media player app/SDK. For more information, see the [application version section](.#application-version). | String |
 
-## Platform Support
+## Platform support
 
-| Platform | Support Status |
+| **Platform** | **Support status** |
 | :--- | :--- |
 | Android | Supported |
 | Apple iOS​ | Supported |
