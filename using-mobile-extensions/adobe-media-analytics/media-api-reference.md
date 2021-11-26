@@ -359,14 +359,6 @@ ACPMedia.createTrackerWithConfig(config).then(tracker =>
 
 Creates an instance of the Media object.
 
-| Variable | Required | Type | Description |
-| :--- | :--- | :---: |
-| `name` | Yes | String | Media name |
-| `mediaId` | Yes | String |Media unique identifier |
-| `length` | Yes | Double | Media length |
-| `streamType` | Yes | String | [Stream type](media-api-reference.md#stream-type) |
-| `mediaType` | Yes | MediaType | [Media type](media-api-reference.md#media-type) |
-
 {% tabs %}
 {% tab title="Android" %}
 Returns a HashMap instance that contains information about the media.
@@ -381,6 +373,14 @@ public static HashMap<String, Object> createMediaObject(
 );
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | The media's name |
+| `mediaId` | Yes | String | The media's unique identifier |
+| `length` | Yes | Double | The media's length |
+| `streamType` | Yes | String | An enum that represents the media's stream type. More information, including possible values, can be found in the [stream type section](#stream-type). |
+| `mediaType` | Yes | MediaType | An enum that represents the media's type. More information, including possible values, can be found in the [media type section](#media-type). |
+
 **Example**
 
 ```java
@@ -393,9 +393,9 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createMediaObject
-
 Returns a map that contains information about the media.
+
+#### Swift
 
 **Syntax**
 
@@ -407,9 +407,15 @@ static func createMediaObjectWith(name: String,
                              mediaType: MediaType) -> [String: Any]?
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | The media's name |
+| `id` | Yes | String | The media's unique identifier |
+| `length` | Yes | Double | The media's length |
+| `streamType` | Yes | String | An enum that represents the media's stream type. More information, including possible values, can be found in the [stream type section](#stream-type). |
+| `mediaType` | Yes | MediaType | An enum that represents the media's type. More information, including possible values, can be found in the [media type section](#media-type). |
 
-**Swift**
+**Example**
 
 ```swift
 let mediaObject = Media.createMediaObjectWith(name: "video-name",
@@ -419,9 +425,11 @@ let mediaObject = Media.createMediaObjectWith(name: "video-name",
                                          mediaType: MediaType.Video)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Example**
+
+```objc
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
                                                                 id:@"video-id" 
                                                             length:60 
@@ -431,13 +439,13 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createMediaObjectWithName
-
 Returns an NSDictionary instance that contains information about the media.
+
+#### Objective-C
 
 **Syntax**
 
-```text
+```objc
 + (NSDictionary* _Nonnull) createMediaObjectWithName: (NSString* _Nonnull) name
                                              mediaId: (NSString* _Nonnull) mediaId
                                               length: (double) length
@@ -445,13 +453,17 @@ Returns an NSDictionary instance that contains information about the media.
                                            mediaType: (ACPMediaType) mediaType;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | The media's name |
+| `mediaId` | Yes | String | The media's unique identifier |
+| `length` | Yes | Double | The media's length |
+| `streamType` | Yes | String | An enum that represents the media's stream type. More information, including possible values, can be found in the [stream type section](#stream-type). |
+| `mediaType` | Yes | MediaType | An enum that represents the media's type. More information, including possible values, can be found in the [media type section](#media-type). |
+
 **Example**
 
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
+```objc
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
                                                         mediaId: @"video-id"
                                                          length: 60
@@ -470,9 +482,23 @@ let mediaObject = ACPMedia.createMediaObject(withName: "video-name", mediaId: "v
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
-#### createMediaObject
+**Syntax**
+
+```js
+createMediaObject(String mediaName, String mediaId, int length, String streamType, String mediaType);
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | The media's name |
+| `id` | Yes | String | The media's unique identifier |
+| `length` | Yes | Double | The media's length |
+| `streamType` | Yes | String | An enum that represents the media's stream type. More information, including possible values, can be found in the [stream type section](#stream-type). |
+| `mediaType` | Yes | MediaType | An enum that represents the media's type. More information, including possible values, can be found in the [media type section](#media-type). |
+
+**Example**
 
 ```jsx
 let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
@@ -484,23 +510,24 @@ let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMe
 
 Creates an instance of the AdBreak object.
 
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `name` | Ad break name such as pre-roll, mid-roll, and post-roll. | Yes |
-| `position` | The number position of the ad break within the content, starting with 1. | Yes |
-| `startTime` | Playhead value at the start of the ad break. | Yes |
-
 {% tabs %}
 {% tab title="Android" %}
-#### createAdBreakObject
-
 Returns a HashMap instance that contains information about the ad break.
+
+#### Java
 
 **Syntax**
 
 ```java
 public static HashMap<String, Object> createAdBreakObject(String name, Long position, Double startTime);
 ```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Ad break name such as pre-roll, mid-roll, and post-roll. |
+| `position` | Yes | Long |The number position of the ad break within the content, starting with 1. |
+| `startTime` | Yes | Double | Playhead value at the start of the ad break. |
+
 
 **Example**
 
@@ -510,9 +537,9 @@ HashMap<String, Object> adBreakObject = Media.createAdBreakObject("adbreak-name"
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createAdBreakObject
-
 Returns a map that contains information about the ad break.
+
+#### Swift
 
 **Syntax**
 
@@ -522,9 +549,13 @@ static func createAdBreakObjectWith(name: String,
                                 startTime: Double) -> [String: Any]?
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Ad break name such as pre-roll, mid-roll, and post-roll. |
+| `position` | Yes | Int |The number position of the ad break within the content, starting with 1. |
+| `startTime` | Yes | Double | Playhead value at the start of the ad break. |
 
-**Swift**
+**Example**
 
 ```swift
 let adBreakObject = Media.createAdBreakObjectWith(name: "adbreak-name", 
@@ -532,9 +563,11 @@ let adBreakObject = Media.createAdBreakObjectWith(name: "adbreak-name",
                                              startTime: 0)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Example**
+
+```objc
 NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-name" 
                                                              position:1 
                                                             startTime:0];
@@ -542,23 +575,25 @@ NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createAdBreakObjectWithName
-
 Returns an NSDictionary instance that contains information about the ad break.
+
+#### Objective-C
 
 **Syntax**
 
-```text
+```objc
 + (NSDictionary* _Nonnull) createAdBreakObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                              startTime: (double) startTime;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Ad break name such as pre-roll, mid-roll, and post-roll. |
+| `position` | Yes | Double |The number position of the ad break within the content, starting with 1. |
+| `startTime` | Yes | Double | Playhead value at the start of the ad break. |
+
 **Example**
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
 
 ```text
 NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
@@ -566,7 +601,9 @@ NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-n
                                                           startTime: 0];
 ```
 
-**Swift**
+#### Swift
+
+**Example**
 
 ```swift
 let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
@@ -574,9 +611,9 @@ let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", posit
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
-#### createAdBreakObject
+**Example**
 
 ```jsx
 let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
@@ -588,18 +625,18 @@ let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
 
 Creates an instance of the Ad object.
 
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `name` | Friendly name of the ad. | Yes |
-| `adId` | Unique identifier for the ad. | Yes |
-| `position` | The number position of the ad within the ad break, starting with 1. | Yes |
-| `length` | Ad length | Yes |
+| **Variable** | **Required** | **Description** |
+| :----------- | :----------- | :-------------- |
+| `name` | Yes | Friendly name of the ad. |
+| `adId` | Yes | Unique identifier for the ad. |
+| `position` | Yes | The number position of the ad within the ad break, starting with 1. |
+| `length` | Yes | Ad length |
 
 {% tabs %}
 {% tab title="Android" %}
-#### createAdObject
-
 Returns a HashMap instance that contains information about the ad.
+
+#### Java
 
 **Syntax**
 
