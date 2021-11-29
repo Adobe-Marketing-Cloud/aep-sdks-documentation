@@ -142,34 +142,6 @@ import AEPMobileServices
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-You can add the library to your project through your `Podfile` by adding the `ACPMobileServices` pod.
-
-Import the library into your project:
-
-### Objective-C
-
-```objectivec
-#import "ACPCore.h"
-#import “ACPIdentity.h”
-#import “ACPLifecycle.h”
-#import "ACPAnalytics.h"
-#import "ACPMobileServices.h"
-```
-### Swift
-
-```swift
-import ACPCore
-import ACPIdentity
-import ACPLifecycle
-import ACPAnalytics
-import ACPMobileServices
-```
-
-
-{% endtab %}
-
 {% endtabs %}
 
 ## Register Mobile Services with Mobile Core
@@ -235,42 +207,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-In your app's `application:didFinishLaunchingWithOptions` function, register the Mobile Services extension with the Mobile Core:
-
-### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   [ACPAnalytics registerExtension];
-   [ACPLifecycle registerExtension];
-   [ACPIdentity registerExtension];
-   [ACPMobileServices registerExtension];
-   [ACPCore start:nil]
-   // Override point for customization after application launch.
-   return YES;
-}
-```
-### Swift
-
-```swift
-func application(_application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
-        ACPAnalytics.registerExtension()
-        ACPIdentity.registerExtension()
-        ACPLifecycle.registerExtension()
-        ACPMobileServices.registerExtension()
-        ACPCore.start {
-        	ACPCore.lifecycleStart(nil)
-        }
-    ...
-    return true
-  }
-```
-
-{% endtab %}
-
 {% endtabs %}
 
 ## Implement Mobile Services APIs in your app
@@ -348,47 +284,6 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-{% hint style="warning" %}
-iOS simulators do not support push messaging.
-{% endhint %}
-
-After following Apple's [configure remote notification document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1), to get your app ready to handle push notifications, set the push token by using the [`setPushIdentifier`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#setpushidentifier) API:
-
-**Syntax**
-
-```objectivec
-+ (void) setPushIdentifier: (nullable NSData*) deviceToken;
-```
-
-**Example**
-
-### Objective-C
-
-```objectivec
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  // Set the deviceToken that the APNS has assigned to the device
-  [ACPCore setPushIdentifier:deviceToken];
-  //...
-}
-```
-
-### Swift
-
-```swift
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-    let token = tokenParts.joined()
-    print("Device Token: (token)")
-
-    // Send push token to experience platform
-    ACPCore.setPushIdentifier(deviceToken)
-}
-```
-
-{% endtab %}
-
 {% endtabs %}
 
 ### Debugging the push messaging set up
@@ -439,31 +334,6 @@ AEPCore.collectLaunchInfo(userInfo)
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-Use the following API to track a push messaging click in Adobe Analytics.
-
-**Syntax**
-
-```objectivec
-+ (void) collectLaunchInfo:(NSDictionary *)userInfo;
-```
-
-**Example**
-
-### Objective-C
-
-```objectivec
-[ACPCore collectLaunchInfo:userInfo];
-```
-### Swift
-
-```swift
-ACPCore.collectLaunchInfo(userInfo)
-```
-
-{% endtab %}
-
 {% endtabs %}
 
 ## Troubleshooting push messaging
@@ -601,22 +471,6 @@ For local \(remote\) notifications, the following metrics are tracked:
 The following example shows you how to include open tracking:
 
 {% tabs %}
-{% tab title="iOS" %}
-```objectivec
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-  // handle local notification click-throughs for iOS 10 and older
-  NSDictionary *localNotificationDictionary = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
-  if ([localNotificationDictionary isKindOfClass:[NSDictionary class]]) {
-       [ACPCore collectLaunchInfo:localNotificationDictionary];
-  }
-
-}
-- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-   [ACPCore collectLaunchInfo:notification.userInfo];
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### Troubleshooting in-app messaging
@@ -841,73 +695,6 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-### trackAdobeDeepLink
-
-**Syntax**
-
-```objectivec
-+ (void) trackAdobeDeepLink: (NSURL* _Nonnull) deeplink;
-```
-
-**Example**
-
-**Objective-C**
-
-```objectivec
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options {
-    [ACPMobileServices trackAdobeDeepLink:url];
-    /*
-     Handle deep link
-     */
-    return YES;
-}
-```
-
-**Swift**
-
-```swift
-func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    ACPMobileServices.trackAdobeDeepLink(url)
-    /*
-     Handle deep link
-     */
-    return true
-}
-```
-
-In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
-
-**Objective-C**
-
-```objectivec
-- (void) scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
-    UIOpenURLContext * urlContext = URLContexts.anyObject;
-    if (urlContext != nil) {
-        [ACPMobileServices trackAdobeDeepLink:url];
-        /*
-         Handle deep link
-         */
-    }
-}
-```
-
-**Swift**
-
-```swift
-func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    guard let urlContexts = URLContexts.first else { return }
-    ACPMobileServices.trackAdobeDeepLink(urlContexts.url)
-    /*
-     Handle deep link
-     */
-}
-```
-
-{% endtab %}
-
 {% endtabs %}
 
 ## Integration with Apple Search Ads \(iOS\)

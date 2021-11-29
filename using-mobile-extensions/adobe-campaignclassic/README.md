@@ -65,38 +65,6 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
    import com.adobe.marketing.mobile.Lifecycle;
    ```
 {% endtab %}
-
-{% tab title="iOS" %}
-1. Add the Campaign Classic and [Mobile Core](../../foundation-extensions/mobile-core/) libraries to your project.
-
-   You can add the following pods to your `Podfile`:
-
-   ```text
-   pod 'ACPCampaignClassic'
-   pod 'ACPLifecycle'
-   pod 'ACPCore'
-   ```
-
-   or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
-
-2. In Xcode project, import the Mobile Core and Campaign Classic extensions:
-
-**Objective C**
-
-```objectivec
-   #import "ACPCore.h"
-   #import "ACPCampaignClassic.h"
-   #import "ACPLifecycle.h"
-```
-
-**Swift**
-
-```swift
-   import ACPCore
-   import ACPCampaignClassic
-   import ACPLifecycle
-```
-{% endtab %}
 {% endtabs %}
 
 ### Register Campaign Classic with Mobile Core
@@ -123,32 +91,6 @@ public class CampaignClassicTestApp extends Application {
         }
 
     }
-}
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-In your App's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
-
-#### Objective C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCampaignClassic registerExtension];
-    [ACPLifecycle registerExtension];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
-
-#### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   ACPCampaignClassic.registerExtension();
-   ACPLifecycle.registerExtension();
-  // Override point for customization after application launch.
-  return true;
 }
 ```
 {% endtab %}

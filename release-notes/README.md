@@ -69,12 +69,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * All Adobe Experience Platform Mobile SDKs for iOS have been functionally validated to be compatible with iOS 15.
 
-## Sep 17, 2021
-
-### iOS Media 2.3.2
-
-* Bug fixes to improve SDK stability.
-
 ## Sep 14, 2021
 
 ### Xamarin Assurance iOS 1.0.0
@@ -168,12 +162,6 @@ This major release introduces support for following:
 
 * Upgrade plugin to support Flutter 2.0 and null safety support.
 
-## Aug 17, 2021
-
-### Flutter Analytics 2.0.1
-
-* Update to reference the Analytics Android library from mavenCentral.
-
 ## Aug 6, 2021
 
 ### Adobe Experience Platform Mobile SDK plugins for React Native
@@ -225,10 +213,6 @@ Please note that this release introduces breaking changes. For more details, see
 * Improved handling of database errors in the `PersistentHitQueue`.
 
 ## July 21, 2021
-
-### iOS Analytics 2.5.1
-
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
 
 ### Android Analytics 1.2.8
 
@@ -309,7 +293,7 @@ Please note that this release introduces breaking changes. For more details, see
 
 * Assurance state is now properly shared when reconnecting to an established session.
 
-### iOS Messaging 1.0.0
+### iOS AEPMessaging 1.0.0
 
 * The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
 
@@ -347,20 +331,9 @@ Please note that this release introduces breaking changes. For more details, see
 
 This SDK is compatible with Android Core 1.8.2 and above.
 
-## June 9, 2021
-
-### Flutter
-
-* Upgrade plugin to support Flutter 2.0 and null safety support for following packages:
-* [flutter\_acpcore](https://pub.dev/packages/flutter_acpcore/versions/2.0.0)
-* [flutter\_acpuserprofile](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.0)
-* [flutter\_acpanalytics](https://pub.dev/packages/flutter_acpanalytics/versions/2.0.0)
-* [flutter\_acpplaces](https://pub.dev/packages/flutter_acpplaces/versions/2.0.0)
-* [flutter\_acpplaces\_monitor](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.0)
-
 ## June 8, 2021
 
-### iOS Campaign Standard 3.0.0
+### iOS AEPCampaign 3.0.0
 
 * Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
 
@@ -462,12 +435,6 @@ This SDK is compatible with Android Core 1.8.2 and above.
 * Better error handling when reaching activity or Griffon session limits.
 * Various security fixes.
 
-## April 14, 2021
-
-### iOS Mobile Services 1.1.1
-
-* Fixed a crash that could happen while downloading remote assets.
-
 ## April 13, 2021
 
 ### Identity for Edge Network
@@ -559,12 +526,6 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 * Updated "Content-Type" header to “application/json” in Media Collection API requests.
 
-## March 26, 2021
-
-### iOS Media 2.3.1
-
-* Updated "Content-Type" header to “application/json” in Media Collection API requests.
-
 ## March 16, 2021
 
 ### iOS Core 2.9.3
@@ -619,7 +580,7 @@ The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now
 
 ## January 29, 2021
 
-### iOS Audience 3.0.0
+### iOS AEPAudience 3.0.0
 
 * Initial release to support Adobe Audience for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-audience-ios/).
 
@@ -673,9 +634,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 
 * Selector for the Edge Configuration.
 * AEP Request Event with optional XDM event type is available for Launch rules.
-
-## January 20, 2021
-
-### iOS Audience 2.3.0
-
-* Added TVOS support to Audience.

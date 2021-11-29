@@ -44,46 +44,6 @@ let campaignVersion = Campaign.extensionVersion
 NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 ```
 {% endtab %}
-
-{% tab title="iOS \(ACP 1.x\)" %}
-### Swift
-
-**Syntax**
-
-```text
-+ (nonnull NSString*) extensionVersion;
-```
-
-**Example**
-
-```swift
-let campaignVersion = ACPCampaign.extensionVersion()
-```
-
-### Objective-C
-
-**Example**
-
-```text
-NSString *campaignVersion = [ACPCampaign extensionVersion];
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-**Syntax**
-
-```javascript
-extensionVersion(): Promise<string>
-```
-
-**Example**
-
-```javascript
-ACPCampaign.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPCampaign version: " + version));
-```
-{% endtab %}
 {% endtabs %}
 
 ## registerExtension
@@ -105,36 +65,6 @@ public static void registerExtension()
 ```java
 Campaign.registerExtension();
 ```
-{% endtab %}
-
-{% tab title="iOS \(ACP 1.x\)" %}
-This API no longer exists in the Adobe Campaign Standard extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
-
-### Swift
-
-**Syntax**
-
-```text
-+ (void) registerExtension;
-```
-
-**Example**
-
-```swift
-ACPCampaign.registerExtension()
-```
-
-### Objective-C
-
-**Example**
-
-```text
-[ACPCampaign registerExtension];
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-When using React Native, register the Adobe Campaign Standard extension with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 {% endtabs %}
 
@@ -182,46 +112,6 @@ Campaign.resetLinkageFields()
 
 ```text
 [AEPMobileCampaign resetLinkageFields];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 1.x\)" %}
-### Swift
-
-**Syntax**
-
-```text
-+ (void) resetLinkageFields;
-```
-
-**Example**
-
-```swift
-ACPCampaign.resetLinkageFields()
-```
-
-### Objective-C
-
-**Example**
-
-```text
-[ACPCampaign resetLinkageFields];
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-**Syntax**
-
-```javascript
-resetLinkageFields()
-```
-
-**Example**
-
-```javascript
-ACPCampaign.resetLinkageFields();
 ```
 {% endtab %}
 {% endtabs %}
@@ -274,46 +164,6 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 ```text
 [AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 1.x\)" %}
-### Swift
-
-**Syntax**
-
-```text
-+ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
-```
-
-**Example**
-
-```swift
-ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cusEmail": "john.doe@email.com"])
-```
-
-### Objective-C
-
-**Example**
-
-```text
-[ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-**Syntax**
-
-```javascript
-setLinkageFields(linkageFields: { string: string })
-```
-
-**Example**
-
-```javascript
-ACPCampaign.setLinkageFields({"firstName": "John"});
 ```
 {% endtab %}
 {% endtabs %}

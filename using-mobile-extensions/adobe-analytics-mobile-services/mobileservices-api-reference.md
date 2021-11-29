@@ -32,23 +32,6 @@ let mobileServicesExtensionVersion  = AEPMobileServices.extensionVersion()
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-### Objective-C
-
-```objectivec
-NSString *mobileServicesExtensionVersion = [ACPMobileServices extensionVersion];
-```
-
-### Swift
-
-```swift
-let mobileServicesExtensionVersion  = ACPMobileServices.extensionVersion()
-```
-
-{% endtab %}
-
 {% endtabs %}
 
 ## processReferrer
@@ -214,32 +197,4 @@ AEPMobileServices.trackAdobeDeepLink(url)
 ```
 
 {% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-**Syntax**
-
-```objectivec
-+ (void) trackAdobeDeepLink: (NSURL*) url;
-```
-
-**Example**
-
-**Objective C**
-
-```objectivec
-NSURL* url = [NSURL URLWithString:@"adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value"];
-
-[ACPMobileServices trackAdobeDeepLink:url];
-```
-
-**Swift**
-
-```swift
-let url = URL(string: "adobelinktest://x?a.deeplink.id=test_deeplinkId&a.launch.campaign.trackingcode=code&test_key=test_value")!
-ACPMobileServices.trackAdobeDeepLink(url)
-```
-
-{% endtab %}
-
 {% endtabs %}

@@ -30,53 +30,6 @@ import com.adobe.marketing.mobile.*;
 Audience Manager depends on the Identity extension and is automatically included in the Core pod. When manually installing the Audience Manager extension, ensure that you add the `identity-1.x.x.aar` library to your project.
 {% endhint %}
 {% endtab %}
-
-{% tab title="iOS" %}
-1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
-2. Import the Audience and Identity library, using the respective language: 
-
-### Objective-C
-
-```objectivec
-  #import "ACPCore.h"
-  #import "ACPAudience.h"
-  #import "ACPIdentity.h"
-```
-
-### Swift
-
-```swift
-   import ACPCore
-   import ACPAudience
-```
-
-{% hint style="info" %}
-Audience Manager depends on the Identity extension and is automatically included in the Core pod. When installing the Audience Manager extension manually, ensure that you added the `libACPIdentity_iOS.a` library to your project.
-{% endhint %}
-{% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-1. Install Audience Manager in your project.
-
-```jsx
-npm install @adobe/react-native-acpaudience
-react-native link @adobe/react-native-acpaudience
-```
-
-1. Import the extension.
-
-```jsx
-import {ACPAudience} from '@adobe/react-native-acpaudience';
-```
-
-1. Ensure the extension version is correct.
-
-```jsx
-ACPAudience.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPAudience version: " + version));
-```
-{% endtab %}
 {% endtabs %}
 
 ## Register Audience Manager with Mobile Core
@@ -105,48 +58,6 @@ public void onCreate() {
      //Log the exception
      }
   }
-}
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
-
-### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   [ACPIdentity registerExtension];
-   [ACPAudience registerExtension];
-   [ACPCore start:nil]
-
-   // Override point for customization after application launch.
-   return YES;
-}
-```
-
-### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
- ACPIdentity.registerExtension()
- ACPAudience.registerExtension()
- ACPCore.start(nil)
-
- // Override point for customization after application launch.
- return true;
-}
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-### JavaScript
-
-```jsx
-import {ACPAudience} from '@adobe/react-native-acpcore';
-
-initSDK() {
-    ACPAudience.registerExtension();
 }
 ```
 {% endtab %}

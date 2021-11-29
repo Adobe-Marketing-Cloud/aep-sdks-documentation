@@ -75,29 +75,6 @@ To add Target to your app:
        #import ACPIdentity
    ```
 {% endtab %}
-
-{% tab title="React Native" %}
-#### JavaScript
-
-1. Install Target.
-
-   ```javascript
-    npm install @adobe/react-native-acptarget
-    react-native link @adobe/react-native-acptarget
-   ```
-
-2. Import the extension and related libraries.
-
-   ```javascript
-    import {ACPTarget, ACPTargetPrefetchObject, ACPTargetRequestObject, ACPTargetOrder, ACPTargetProduct, ACPTargetParameters} from '@adobe/react-native-acptarget';
-   ```
-
-3. Get the extension version.
-
-   ```javascript
-    ACPTarget.extensionVersion().then(version => console.log("AdobeExperienceSDK: ACPTarget version: " + version));
-   ```
-{% endtab %}
 {% endtabs %}
 
 ### Register Target with Mobile Core
@@ -132,46 +109,6 @@ public class TargetApp extends Application {
 }
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-#### Objective C
-
-In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPCore configureWithAppId:@"yourAppId"];
-  [ACPTarget registerExtension];
-  [ACPIdentity registerExtension];
-  [ACPCore start:nil];
-  // Override point for customization after application launch.
-  return YES;
-}
-```
-
-#### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  ACPCore.configure(withAppId: "yourAppId")   
-  ACPTarget.registerExtension()
-  ACPIdentity.registerExtension()
-  ACPCore.start(nil)
-  // Override point for customization after application launch.
-  return true;
-}
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-To register the Target extension with the Mobile Core extension, use the following API:
-
-#### JavaScript
-
-```javascript
-ACPTarget.registerExtension();
-```
-{% endtab %}
 {% endtabs %}
 
 ## Parameters in a Target request
@@ -199,40 +136,6 @@ purchasedProductIds.add("125");
 TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
-total: (nullable NSNumber*) total
-purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
-```
-
-#### Examples
-
-Here are some examples in Objective C and Swift:
-
-**Objective C**
-
-```objectivec
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-```
-
-**Swift**
-
-```swift
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**JavaScript**
-
-```javascript
-var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, ["34","125"]);
-```
-{% endtab %}
 {% endtabs %}
 
 ### Target Product class
@@ -251,39 +154,6 @@ public TargetProduct(final String id, final String categoryId)
 
 ```java
 TargetProduct targetProduct = new TargetProduct("123", "Books");
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
-categoryId: (nullable NSString*) categoryId;
-```
-
-#### Examples
-
-Here are some examples in Objective C and Swift:
-
-**Objective C**
-
-```objectivec
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-```
-
-**Swift**
-
-```swift
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**JavaScript**
-
-```javascript
-var targetProduct = new ACPTargetProduct("24D334", "Stationary");
 ```
 {% endtab %}
 {% endtabs %}
@@ -329,67 +199,6 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 .build();
 ```
 {% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```objectivec
-+ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters
-profileParameters: (nullable NSDictionary*) profileParameters
-product: (nullable ACPTargetProduct*) product
-order: (nullable ACPTargetOrder*) order;
-```
-
-#### Examples
-
-Here are some examples in Objective C and Swift:
-
-**Objective C**
-
-```objectivec
-NSDictionary *mboxParameters = @{@"status":@"Platinum"};
-NSDictionary *profileParameters = @{@"gender":@"female"};
-
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-
-ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
-profileParameters:profileParameters
-product:product
-order:order];
-```
-
-**Swift**
-
-```objectivec
-let mboxParameters = [
-"status": "Platinum"
-]
-let profileParameters = [
-"gender": "female"
-]
-
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-
-let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
-```
-{% endtab %}
-
-{% tab title="React Native" %}
-**JavaScript**
-
-```javascript
-var mboxParameters = {"status": "platinum"};
-var profileParameters = {"gender": "female"};
-var targetProduct = new ACPTargetProduct("24D334", "Stationary");
-var purchaseIDs = ["34","125"];
-var targetOrder = new ACPTargetOrder("ADCKKBC", 400.50, purchaseIDs);
-var targetParameters = new ACPTargetParameters(mboxParameters, profileParameters, targetProduct, targetOrder);
-```
-{% endtab %}
 {% endtabs %}
 
 ### Merge behavior of Target parameters
@@ -425,30 +234,6 @@ On Android, when the application is launched as a result of a deep link, the `co
 {% hint style="info" %}
 The SDK can only collect information from the launching Activity if [`setApplication`](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#application-reference-android-only) has been called. Setting the Application is only necessary on an Activity that is also an entry point for your application. However, setting the Application on each Activity has no negative impact and ensures that the SDK always has the necessary reference to your Application. We recommend that you call `setApplication` in each of your Activities.
 {% endhint %}
-{% endtab %}
-
-{% tab title="iOS" %}
-#### Syntax
-
-```text
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
-```
-
-#### Examples
-
-Here are some examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
-[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
-```
-
-**Swift**
-
-```swift
-ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
-```
 {% endtab %}
 {% endtabs %}
 
