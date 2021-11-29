@@ -625,13 +625,6 @@ let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
 
 Creates an instance of the Ad object.
 
-| **Variable** | **Required** | **Description** |
-| :----------- | :----------- | :-------------- |
-| `name` | Yes | Friendly name of the ad. |
-| `adId` | Yes | Unique identifier for the ad. |
-| `position` | Yes | The number position of the ad within the ad break, starting with 1. |
-| `length` | Yes | Ad length |
-
 {% tabs %}
 {% tab title="Android" %}
 Returns a HashMap instance that contains information about the ad.
@@ -644,6 +637,13 @@ Returns a HashMap instance that contains information about the ad.
 public static HashMap<String, Object> createAdObject(String name, String adId, Long position, Double length);
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Friendly name of the ad. |
+| `adId` | Yes | String | Unique identifier for the ad. |
+| `position` | Yes | Long | The number position of the ad within the ad break, starting with 1. |
+| `length` | Yes | Double | Ad length |
+
 **Example**
 
 ```java
@@ -652,9 +652,9 @@ HashMap<String, Object> adInfo = Media.createAdObject("ad-name", "ad-id", 1L, 15
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createAdObject
-
 Returns a map that contains information about the ad.
+
+#### Swift
 
 **Syntax**
 
@@ -665,9 +665,15 @@ static func createAdObjectWith(name: String,
                              length: Double) -> [String: Any]?
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Friendly name of the ad. |
+| `adId` | Yes | String | Unique identifier for the ad. |
+| `position` | Yes | Int | The number position of the ad within the ad break, starting with 1. |
+| `length` | Yes | Double | Ad length |
 
-**Swift**
+
+**Example**
 
 ```swift
 let adObject = Media.createObjectWith(name: "ad-name", 
@@ -676,9 +682,11 @@ let adObject = Media.createObjectWith(name: "ad-name",
                                     length: 30)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Example**
+
+```objc
 NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name" 
                                                          id:@"ad-id" 
                                                    position:0 
@@ -687,9 +695,9 @@ NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name"
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createAdObjectWithName
-
 Returns an NSDictionary instance that contains information about the ad.
+
+#### Objective-C
 
 **Syntax**
 
@@ -700,20 +708,25 @@ Returns an NSDictionary instance that contains information about the ad.
                                            length: (double) length;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Friendly name of the ad. |
+| `adId` | Yes | String | Unique identifier for the ad. |
+| `position` | Yes | Double | The number position of the ad within the ad break, starting with 1. |
+| `length` | Yes | Double | Ad length |
+
 **Example**
 
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
+```objc
 NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
                                                      adId: @"ad-id"
                                                  position: 1
                                                    length: 15];
 ```
 
-**Swift**
+#### Swift
+
+**Example**
 
 ```swift
 let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
@@ -721,9 +734,22 @@ let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", posit
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
-#### createAdObject
+**Syntax**
+
+```js
+createAdObject(String name, String adId, Number position, Number length);
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Friendly name of the ad. |
+| `adId` | Yes | String | Unique identifier for the ad. |
+| `position` | Yes | Number | The number position of the ad within the ad break, starting with 1. |
+| `length` | Yes | Number | Ad length |
+
+**Example**
 
 ```jsx
 let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
@@ -735,18 +761,11 @@ let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
 
 Creates an instance of the Chapter object.
 
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `name` | Chapter name | Yes |
-| `position` | The number position of the chapter within the content, starting with 1. | Yes |
-| `length` | Chapter length | Yes |
-| `startTime` | Playhead value at the start of the chapter | Yes |
-
 {% tabs %}
 {% tab title="Android" %}
-#### createChapterObject
-
 Returns a HashMap instance that contains information about the chapter.
+
+#### Java
 
 **Syntax**
 
@@ -757,6 +776,13 @@ public static HashMap<String, Object> createChapterObject(String name,
                                                           Double startTime);
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Chapter name |
+| `position` | Yes | Long | The number position of the chapter within the content, starting with 1. |
+| `length` | Yes | Double | Chapter length |
+| `startTime` | Yes | Double | Playhead value at the start of the chapter |
+
 **Example**
 
 ```java
@@ -765,9 +791,9 @@ HashMap<String, Object> chapterInfo = Media.createChapterObject("chapter-name", 
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createChapterObject
-
 Returns a map that contains information about the chapter.
+
+#### Swift
 
 **Syntax**
 
@@ -778,9 +804,14 @@ static func createChapterObjectWith(name: String,
                                startTime: Double) -> [String: Any]?
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Chapter name |
+| `position` | Yes | Int | The number position of the chapter within the content, starting with 1. |
+| `length` | Yes | Double | Chapter length |
+| `startTime` | Yes | Double | Playhead value at the start of the chapter |
 
-**Swift**
+**Example**
 
 ```swift
 let chapterObject = Media.createChapterObjectWith(name: "chapter_name", 
@@ -789,9 +820,11 @@ let chapterObject = Media.createChapterObjectWith(name: "chapter_name",
                                              startTime: 0)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Example**
+
+```objc
 NSDictionary *chapterObject = [AEPMobileMedia createChapterObjectWith:@"chapter_name" 
                                                              position:1 
                                                                length:60 
@@ -800,33 +833,38 @@ NSDictionary *chapterObject = [AEPMobileMedia createChapterObjectWith:@"chapter_
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createChapterObjectWithName
-
 Returns an NSDictionary instance that contains information about the chapter.
+
+#### Objective-C
 
 **Syntax**
 
-```text
+```objc
 + (NSDictionary* _Nonnull) createChapterObjectWithName: (NSString* _Nonnull) name
                                               position: (double) position
                                                 length: (double) length
                                              startTime: (double) startTime;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Chapter name |
+| `position` | Yes | Double | The number position of the chapter within the content, starting with 1. |
+| `length` | Yes | Double | Chapter length |
+| `startTime` | Yes | Double | Playhead value at the start of the chapter |
+
 **Example**
 
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
+```objc
 NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-name"
                                                            position: 1
                                                              length: 60
                                                           startTime: 0];
 ```
 
-**Swift**
+#### Swift
+
+**Example**
 
 ```swift
 let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", position: 1, length: 60, startTime: 0)
@@ -834,9 +872,22 @@ let chapterObject = ACPMedia.createChapterObject(withName: "chapter-name", posit
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
-#### createChapterObject
+**Syntax**
+
+```js
+createChapterObject(String name, Number position, Number length, Number startTime);
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | Chapter name |
+| `position` | Yes | Number | The number position of the chapter within the content, starting with 1. |
+| `length` | Yes | Number | Chapter length |
+| `startTime` | Yes | Number | Playhead value at the start of the chapter |
+
+**Example**
 
 ```jsx
 let chapterObject = ACPMedia.createChapterObject('chapter-name', 1, 60, 0);
@@ -846,14 +897,8 @@ let chapterObject = ACPMedia.createChapterObject('chapter-name', 1, 60, 0);
 
 ### createQoEObject
 
-Creates an instance of the QoE object.
+Creates an instance of the quality of experience (QoE) object.
 
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `bitrate` | Current bitrate | Yes |
-| `startupTime` | Startup time | Yes |
-| `fps` | FPS value | Yes |
-| `droppedFrames` | Number of dropped frames | Yes |
 
 {% hint style="info" %}
 All the QoE values `bitrate`, `startupTime`, `fps`, `droppedFrames` would be converted to `long` for reporting purposes.
@@ -861,9 +906,9 @@ All the QoE values `bitrate`, `startupTime`, `fps`, `droppedFrames` would be con
 
 {% tabs %}
 {% tab title="Android" %}
-#### createQoEObject
-
 Returns a HashMap instance that contains information about the quality of experience.
+
+#### Java
 
 **Syntax**
 
@@ -874,6 +919,13 @@ public static HashMap<String, Object> createQoEObject(Long bitrate,
                                                       Long droppedFrames);
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Long | Current bitrate |
+| `startupTime` | Yes | Double | Startup time |
+| `fps` | Yes | Double | FPS value |
+| `droppedFrames` | Yes | Long | Number of dropped frames |
+
 **Example**
 
 ```java
@@ -882,9 +934,9 @@ HashMap<String, Object> qoeInfo = Media.createQoEObject(10000000L, 2D, 23D, 10D)
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createQoEObject
-
 Returns a map that contains information about the quality of experience.
+
+#### Swift
 
 **Syntax**
 
@@ -895,9 +947,14 @@ static func createQoEObjectWith(bitrate: Double,
                           droppedFrames: Double) -> [String: Any]?
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Double | Current bitrate |
+| `startupTime` | Yes | Double | Startup time |
+| `fps` | Yes | Double | FPS value |
+| `droppedFrames` | Yes | Double | Number of dropped frames |
 
-**Swift**
+**Example**
 
 ```swift
 let qoeObject = Media.createQoEObjectWith(bitrate: 500000, 
@@ -906,9 +963,27 @@ let qoeObject = Media.createQoEObjectWith(bitrate: 500000,
                                     droppedFrames: 10)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Syntax**
+
+```objc
++ (NSDictionary* _Nonnull) createQoEObjectWith: (double) bitrate
+                                          startupTime: (double) startupTime
+                                                  fps: (double) fps
+                                        droppedFrames: (double) droppedFrames;
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Double | Current bitrate |
+| `startupTime` | Yes | Double | Startup time |
+| `fps` | Yes | Double | FPS value |
+| `droppedFrames` | Yes | Double | Number of dropped frames |
+
+**Example**
+
+```objc
 NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 
                                                     startTime:2 
                                                           fps:24 
@@ -917,24 +992,27 @@ NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createQoEObjectWithBitrate
-
 Returns an NSDictionary instance that contains information about the quality of experience.
+
+#### Objective-C
 
 **Syntax**
 
-```text
+```objc
 + (NSDictionary* _Nonnull) createQoEObjectWithBitrate: (double) bitrate
                                           startupTime: (double) startupTime
                                                   fps: (double) fps
                                         droppedFrames: (double) droppedFrames;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Double | Current bitrate |
+| `startupTime` | Yes | Double | Startup time |
+| `fps` | Yes | Double | FPS value |
+| `droppedFrames` | Yes | Double | Number of dropped frames |
+
 **Example**
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
 
 ```text
 NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
@@ -943,7 +1021,25 @@ NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
                                                  droppedFrames: 10];
 ```
 
-**Swift**
+#### Swift
+
+**Syntax**
+
+```swift
+static func createQoEObjectWithBitrate(bitrate: Double, 
+                            startupTime: Double, 
+                                    fps: Double, 
+                          droppedFrames: Double) -> [String: Any]?
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Double | Current bitrate |
+| `startupTime` | Yes | Double | Startup time |
+| `fps` | Yes | Double | FPS value |
+| `droppedFrames` | Yes | Double | Number of dropped frames |
+
+**Example**
 
 ```swift
 let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, fps: 23, droppedFrames: 10)
@@ -951,9 +1047,22 @@ let qoeObject = ACPMedia.createQoEObject(withBitrate: 10000000, startupTime: 2, 
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
-#### createQoEObject
+**Syntax**
+
+```js
+createQoEObject(Number bitrate, Number startupTime, Number fps, Number droppedFrames);
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `bitrate` | Yes | Number | Current bitrate |
+| `startupTime` | Yes | Number | Startup time |
+| `fps` | Yes | Number | FPS value |
+| `droppedFrames` | Yes | Number | Number of dropped frames |
+
+**Example**
 
 ```jsx
 let qoeObject = ACPMedia.createQoEObject(1000000, 2, 23, 10);
@@ -963,23 +1072,23 @@ let qoeObject = ACPMedia.createQoEObject(1000000, 2, 23, 10);
 
 ### createStateObject
 
-Creates an instance of the Player State object.
-
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `name` | State name(Use [Player State constants](media-api-reference.md#player-state-constants) to track standard player states) | Yes |
+Creates an instance of the player state object.
 
 {% tabs %}
 {% tab title="Android" %}
-#### createStateObject
-
 Returns a HashMap instance that contains information about the State.
+
+#### Java
 
 **Syntax**
 
 ```java
 public static HashMap<String, Object> createStateObject(String stateName);
 ```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `stateName` | Yes | String | The name of the state. More information, including the supported values, can be found in the [player state constants section](#player-state-constants). | Yes |
 
 **Example**
 
@@ -989,9 +1098,9 @@ HashMap<String, Object> playerStateInfo = Media.createStateObject("fullscreen");
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### createStateObject
-
 Returns a map that contains information about the player state.
+
+#### Swift
 
 **Syntax**
 
@@ -999,43 +1108,70 @@ Returns a map that contains information about the player state.
 static func createStateObjectWith(stateName: String) -> [String: Any]
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `stateName` | Yes | String | The name of the state. More information, including the supported values, can be found in the [player state constants section](#player-state-constants). | Yes |
 
-**Swift**
+
+**Example**
 
 ```swift
 let fullScreenState = Media.createStateObjectWith(stateName: "fullscreen")
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Syntax**
+
+```objc
++ (NSDictionary* _Nonnull) createStateObjectWithName: (NSString* _Nonnull) stateName;
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `stateName` | Yes | String | The name of the state. More information, including the supported values, can be found in the [player state constants section](#player-state-constants). | Yes |
+
+**Example**
+
+```objc
 NSDictionary* fullScreenState = [AEPMobileMedia createStateObjectWith:AEPMediaPlayerState.FULLSCREEN]
 ```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### createStateObjectWithName
-
 Returns an NSDictionary instance that contains information about the player state.
+
+#### Objective-C
 
 **Syntax**
 
-```text
+```objc
 + (NSDictionary* _Nonnull) createStateObjectWithName: (NSString* _Nonnull) stateName;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `stateName` | Yes | String | The name of the state. More information, including the supported values, can be found in the [player state constants section](#player-state-constants). | Yes |
+
 **Example**
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
 
 ```text
 NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscreen"];
 ```
 
-**Swift**
+#### Swift
+
+**Syntax**
+
+```swift
+static func createStateObjectWith(stateName: String) -> [String: Any]
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `stateName` | Yes | String | The name of the state. More information, including the supported values, can be found in the [player state constants section](#player-state-constants). | Yes |
+
+**Example**
 
 ```swift
 let playerStateObject = ACPMedia.createStateObject(withName: "fullscreen")
@@ -1059,14 +1195,9 @@ let playerStateObject = ACPMedia.createStateObject("fullscreen");
 
 Tracks the intention to start playback. This starts a tracking session on the media tracker instance. To learn how to resume a previously closed session, please read the [media resume guide](media-api-reference.md#media-resume)
 
-| Variable Name | Description | Required |
-| :--- | :--- | :---: |
-| `mediaInfo` | Media information created using the [createMediaObject](media-api-reference.md#createmediaobject) method. | Yes |
-| `contextData` | Optional Media context data. For standard metadata keys, use [standard video constants](media-api-reference.md#standard-video-constants) or [standard audio constants](media-api-reference.md#standard-audio-constants). | No |
-
 {% tabs %}
 {% tab title="Android" %}
-#### trackSessionStart
+#### Java
 
 **Syntax**
 
@@ -1074,13 +1205,18 @@ Tracks the intention to start playback. This starts a tracking session on the me
 public void trackSessionStart(Map<String, Object> mediaInfo, Map<String, String> contextData);
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `mediaInfo` | Yes | Map<String, Object> | Media information created using the [createMediaObject](#createmediaobject) method. |
+| `contextData` | No | Map<String, String> | Optional media context data. For standard metadata keys, use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants). |
+
 **Example**
 
 ```java
 HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
 
 HashMap<String, String> mediaMetadata = new HashMap<String, String>();
-// Standard metadata keys provided by adobe.
+// Standard metadata keys provided by Adobe.
 mediaMetadata.put(MediaConstants.VideoMetadataKeys.EPISODE, "Sample Episode");
 mediaMetadata.put(MediaConstants.VideoMetadataKeys.SHOW, "Sample Show");
 
@@ -1093,7 +1229,7 @@ _tracker.trackSessionStart(mediaInfo, mediaMetadata);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### trackSessionStart
+#### Swift
 
 **Syntax**
 
@@ -1101,9 +1237,12 @@ _tracker.trackSessionStart(mediaInfo, mediaMetadata);
 public func trackSessionStart(info: [String: Any], metadata: [String: String]? = nil)
 ```
 
-**Example**
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `info` | Yes | Dictionary<String, Object> | Media information created using the [createMediaObject](#createmediaobject) method. |
+| `contextData` | No | Dictionary<String, String> | Optional media context data. For standard metadata keys, use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants). |
 
-**Swift**
+**Example**
 
 ```swift
 let mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: 60, streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
@@ -1120,9 +1259,22 @@ videoMetadata["tvStation"] = "Sample TV station"
 tracker.trackSessionStart(info: mediaObject, metadata: videoMetadata)
 ```
 
-**Objective-C**
+#### Objective-C
 
-```text
+**Syntax**
+
+```objc
+- (void) trackSessionStart: (NSDictionary* _Nonnull) mediaInfo data: (NSDictionary* _Nullable) contextData;
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `info` | Yes | Dictionary<String, Object> | Media information created using the [createMediaObject](#createmediaobject) method. |
+| `contextData` | No | Dictionary<String, String> | Optional media context data. For standard metadata keys, use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants). |
+
+**Example**
+
+```objc
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
 
 NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
@@ -1143,17 +1295,18 @@ NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
 
 **Syntax**
 
-```text
+```objc
 - (void) trackSessionStart: (NSDictionary* _Nonnull) mediaInfo data: (NSDictionary* _Nullable) contextData;
 ```
 
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `info` | Yes | Dictionary<String, Object> | Media information created using the [createMediaObject](#createmediaobject) method. |
+| `contextData` | No | Dictionary<String, String> | Optional media context data. For standard metadata keys, use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants). |
+
 **Example**
 
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
+```objc
 NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
 
 NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
@@ -1168,7 +1321,20 @@ NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
 [_tracker trackSessionStart:mediaObject data:mediaMetadata];
 ```
 
-**Swift**
+#### Swift
+
+**Syntax**
+
+```swift
+public func trackSessionStart(info: [String: Any], metadata: [String: String]? = nil)
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `info` | Yes | Dictionary<String, Object> | Media information created using the [createMediaObject](#createmediaobject) method. |
+| `contextData` | No | Dictionary<String, String> | Optional media context data. For standard metadata keys, use [standard video constants](#standard-video-constants) or [standard audio constants](#standard-audio-constants). |
+
+**Example**
 
 ```swift
 let mediaObject = ACPMedia.createMediaObject(withName: "media-name", mediaId: "media-id", length: 60, streamType: ACPMediaStreamTypeVod, mediaType:ACPMediaType.video)
@@ -2990,7 +3156,7 @@ ACPMediaConstants.ACPAdMetadataKeyCreativeUrl
 
 ### Player state constants
 
-Defines some common Player State constants.
+The following section defines some common player state constants:
 
 {% tabs %}
 {% tab title="Android" %}
