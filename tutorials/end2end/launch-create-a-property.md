@@ -42,7 +42,7 @@ You should now see the `Properties` screen (if no properties have ever been crea
 
 ![Properties Screen](images/web-launch-propertiesScreen.png)
 
-If you use Launch frequently, you can also bookmark the following URL and log in directly [https://launch.adobe.com](https://launch.adobe.com)
+If you use Launch frequently, you can also bookmark the following URL and log in directly [https://experience.adobe.com/#/data-collection/](https://experience.adobe.com/#/data-collection/)
 
 ## Create a Property
 
