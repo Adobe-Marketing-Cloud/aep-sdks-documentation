@@ -4,7 +4,7 @@
 
 ### iOS Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available on iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer. 
 
 ### Adobe Journey Optimizer Launch Extension
 
@@ -14,4 +14,4 @@
 
 ### Android Messaging 1.0.0
 
-* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
+* The Adobe Experience Platform Messaging (AEPMessaging) mobile extension is now available on Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
