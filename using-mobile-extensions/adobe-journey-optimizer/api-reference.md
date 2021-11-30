@@ -281,7 +281,9 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 ## addPushTrackingDetails <a id="addpushtrackingdetails"></a>
 
-The addPushTrackingDetails API is used to update a pending intent with important information, such as messageId and Customer Journey information. Please note that calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
+The addPushTrackingDetails API is used to update a pending intent with important information, such as messageId and Customer Journey information. 
+
+**Note:** Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
 
 {% tabs %}
 {% tab title="Android" %}

@@ -13,7 +13,7 @@ The following documentation details how to use the extension and required config
    * [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/)
    * [Identity for Edge Network](../../foundation-extensions/identity-for-edge-network/)
 
-### Update Datastream with Profile Dataset
+### Update Datastream with a Profile dataset
 
 Navigate to a previously configured Datastream by following the instructions in the [configure datastreams tutorial](../../getting-started/configure-datastreams.md) in [Adobe Experience Platform Data Collection](https://experience.adobe.com/#/data-collection/).
 
