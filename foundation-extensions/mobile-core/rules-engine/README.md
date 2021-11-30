@@ -4,7 +4,7 @@ The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as par
 
 In the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
 
-The Rules Engine, with [Experience Platform Launch](https://experience.adobe.com/#/data-collection//)'s tag management system, allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
+The Rules Engine, with [Experience Platform Launch](https://experience.adobe.com/#/data-collection/)'s tag management system, allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
 
 ### **Data elements**
 
@@ -14,7 +14,7 @@ A data element is a variable where the value can be mapped to a Visitor ID, a Ca
 
 ### **Rules**
 
-You can define a set of rules in the [Experience Platform Launch](https://experience.adobe.com/#/data-collection//) interface to find specific events or conditions and specify what actions should be triggered when those conditions are met.
+You can define a set of rules in the [Experience Platform Launch](https://experience.adobe.com/#/data-collection/) interface to find specific events or conditions and specify what actions should be triggered when those conditions are met.
 
 ![](../../../.gitbook/assets/rule_example.png)
 

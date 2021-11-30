@@ -54,7 +54,7 @@ public static let extensionVersion
 
 ## handleNotificationResponse <a id="handlenotificationresponse"></a>
 
-The handleNotificationResponse function transmits the push notification interactions' feedback.
+The handleNotificationResponse function transmits the push notification interaction feedback.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -391,7 +391,6 @@ public String getChannelId()
 public String getIcon()
 
 // Returns the image URL from the remote message.
-// The image URL represents the ??? in the app.
 public String getImageUrl()
 
 // Returns the data map from the remote message.
@@ -439,8 +438,6 @@ public ActionType getType()
 {% endtabs %}
 
 ### Payload keys
-
-Description of Push Notification payload keys - ???????? (I need this.)
 
 {% tabs %}
 {% tab title="iOS" %}
