@@ -109,7 +109,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 
 ## registerExtension
 
-This API registers an extension class that was derived from `ACPExtension` with a unique name. This call validates the parameters to ensure that the name is not empty, the name is unique, and that the parent class is `ACPExtension`.
+This API registers the Audience extension with the Mobile Core.
 
 {% tabs %}
 {% tab title="Android" %}

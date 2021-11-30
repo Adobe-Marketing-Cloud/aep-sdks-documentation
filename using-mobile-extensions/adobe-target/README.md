@@ -46,35 +46,6 @@ To add Target to your app:
    import com.adobe.marketing.mobile.*;
    ```
 {% endtab %}
-
-{% tab title="iOS" %}
-1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
-
-   ```text
-    pod 'ACPCore'
-    pod 'ACPTarget'
-   ```
-
-2. Import the Target and Identity libraries.
-
-   **Objective C**
-
-   ```objectivec
-       #import "ACPCore.h"
-       #import "ACPTarget.h"
-       #import "ACPIdentity.h"
-       #import "ACPTargetRequestObject.h"
-       #import "ACPTargetPrefetchObject.h"
-   ```
-
-   **Swift**
-
-   ```swift
-       #import ACPCore
-       #import ACPTarget
-       #import ACPIdentity
-   ```
-{% endtab %}
 {% endtabs %}
 
 ### Register Target with Mobile Core
