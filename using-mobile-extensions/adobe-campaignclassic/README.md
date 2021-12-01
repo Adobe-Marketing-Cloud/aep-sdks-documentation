@@ -15,7 +15,7 @@
 ![Configuring the Campaign Classic extension](../../.gitbook/assets/acc-configure-extension.png)
 
 {% hint style="info" %}
-You can retrieve your Campaign Classic registration or tracking endpoint URLS in the Campaign Classic interface under the **Tools > Advanced > Deployment wizard** menu. The endpoint for push notifications is usually the same as the URL that is used for web forms and surveys.
+You can retrieve your Campaign Classic registration or tracking endpoint URLs in the Campaign Classic interface under the **Tools > Advanced > Deployment wizard** menu. The endpoint for push notifications is usually the same as the URL that is used for web forms and surveys.
 {% endhint %}
 
 #### Registration endpoints
@@ -44,7 +44,7 @@ You can specify up to three unique Android integration keys for your development
 
 #### Request timeout
 
-The response timeout is the amount of time, in seconds, to wait for a response from the registration or tracking endpoint before timing out. The SDK default timeout value is 30 seconds.
+The request timeout is the amount of time, in seconds, to wait for a response from the registration or tracking endpoint before timing out. The SDK default timeout value is 30 seconds.
 
 ## Add Campaign Classic to your app
 
