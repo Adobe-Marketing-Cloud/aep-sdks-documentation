@@ -352,7 +352,7 @@ Giving a value of `0` when setting `campaign.registrationDelay` will send a regi
 
 ## Configuration keys
 
-To update SDK configuration programmatically, use the following information to change your Campaign Standard configuration values. For more information, see the [Configuration API reference](../..//foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
+To update SDK configuration programmatically, use the following information to change your Campaign Standard configuration values. For more information, see the [Configuration API reference](../../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
