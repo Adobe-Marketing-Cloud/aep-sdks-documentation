@@ -596,12 +596,18 @@ Returns an NSDictionary instance that contains information about the ad break.
 **Example**
 
 ```objc
-NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-name"
+NSDictionary *adBreakObject = [AEPMedia createAdBreakObjectWithName: @"adbreak-name"
                                                            position: 1
                                                           startTime: 0];
 ```
 
 #### Swift
+
+**Syntax**
+
+```swift
+Put syntax in
+```
 
 **Example**
 
@@ -683,6 +689,12 @@ let adObject = Media.createObjectWith(name: "ad-name",
 ```
 
 #### Objective-C
+
+**Syntax**
+
+```objc
+Put syntax in
+```
 
 **Example**
 
@@ -822,6 +834,12 @@ let chapterObject = Media.createChapterObjectWith(name: "chapter_name",
 
 #### Objective-C
 
+**Syntax**
+
+```objc
+Put syntax in
+```
+
 **Example**
 
 ```objc
@@ -863,6 +881,12 @@ NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-n
 ```
 
 #### Swift
+
+**Syntax**
+
+```swift
+Put syntax in
+```
 
 **Example**
 
@@ -2121,7 +2145,7 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 **Syntax**
 
 ```objc
-  - (void) trackEvent: (ACPMediaEvent) event
+  - (void) trackEvent: (AEPMediaEvent) event
                  info: (NSDictionary* _Nullable) info
                  data: (NSDictionary* _Nullable) data;
 ```
@@ -2869,26 +2893,41 @@ Defines the type of a media that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
+**Syntax**
+
 ```java
 public class Media {
 
   public enum MediaType {
       /**
-      * Constant defining media type for Video streams
+      * A constant defining the media type for Video streams
       */
       Video,
 
       /**
-      * Constant defining media type for Audio streams
+      * A constant defining the media type for Audio streams
       */
       Audio
   }
 
 }
 ```
+
+**Example**
+
+```java
+Do we have an example we can put in?
+```
+
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+#### Swift
+
+**Syntax**
+
 ```swift
 @objc(AEPMediaType)
 public enum MediaType: Int, RawRepresentable {
@@ -2901,13 +2940,29 @@ public enum MediaType: Int, RawRepresentable {
 
 **Example**
 
-**Swift**
-
 ```swift
 var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
 ```
 
-**Objective-C**
+#### Objective-C
+
+**Syntax**
+
+```objc
+typedef NS_ENUM(NSInteger, AEPMediaType) {
+    /**
+    * Constant defining media type for Video streams
+    */
+    AEPMediaTypeVideo,
+
+    /**
+    * Constant defining media type for Audio streams
+    */
+    AEPMediaTypeAudio
+};
+```
+
+**Example**
 
 ```objc
 NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
@@ -2915,6 +2970,30 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+#### Swift
+
+**Syntax**
+
+```swift
+@objc(ACPMediaType)
+public enum MediaType: Int, RawRepresentable {
+ //Constant defining media type for Video streams
+ case Audio
+ //Constant defining media type for Audio streams
+ case Video
+}
+```
+
+**Example**
+
+```swift
+var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
+```
+
+#### Objective-C
+
+**Syntax**
+
 ```objc
 typedef NS_ENUM(NSInteger, ACPMediaType) {
     /**
@@ -2928,16 +3007,31 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
     ACPMediaTypeAudio
 };
 ```
+
+**Example**
+
+```objc
+NSDictionary *mediaObject = [ACPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:ACPMediaStreamType.VOD mediaType:ACPMediaTypeVideo];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 **JavaScript**
+
+**Syntax**
 
 ```jsx
 import {ACPMediaType} from '@adobe/react-native-acpmedia';
 
 ACPMediaType.Video
 ACPMediaType.Audio
+```
+
+**Example**
+
+```js
+let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
 ```
 {% endtab %}
 {% endtabs %}
