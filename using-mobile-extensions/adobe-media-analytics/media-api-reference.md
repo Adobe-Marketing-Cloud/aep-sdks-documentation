@@ -384,11 +384,7 @@ public static HashMap<String, Object> createMediaObject(
 **Example**
 
 ```java
-HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
-                                                            "video-id",
-                                                            60D,
-                                                            MediaConstants.StreamType.VOD,
-                                                            Media.MediaType.Video);
+HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name","video-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
 ```
 {% endtab %}
 
@@ -418,23 +414,34 @@ static func createMediaObjectWith(name: String,
 **Example**
 
 ```swift
-let mediaObject = Media.createMediaObjectWith(name: "video-name",
-                                                id: "videoId", 
-                                            length: 60,
-                                        streamType: MediaConstants.StreamType.VOD, 
-                                         mediaType: MediaType.Video)
+let mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", 
+ length: 60, streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
 ```
 
 #### Objective-C
 
+**Syntax**
+
+```objc
++ (NSDictionary* _Nonnull) createMediaObjectWithName: (NSString* _Nonnull) name
+                                             mediaId: (NSString* _Nonnull) mediaId
+                                              length: (double) length
+                                          streamType: (NSString* _Nonnull) streamType
+                                           mediaType: (ACPMediaType) mediaType;
+```
+
+| **Variable** | **Required** | **Type** | **Description** |
+| :----------- | :----------- | :------- | :-------------- |
+| `name` | Yes | String | The media's name |
+| `mediaId` | Yes | String | The media's unique identifier |
+| `length` | Yes | Double | The media's length |
+| `streamType` | Yes | String | An enum that represents the media's stream type. More information, including possible values, can be found in the [stream type section](#stream-type). |
+| `mediaType` | Yes | MediaType | An enum that represents the media's type. More information, including possible values, can be found in the [media type section](#media-type). |
+
 **Example**
 
 ```objc
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
-                                                                id:@"video-id" 
-                                                            length:60 
-                                                        streamType:AEPMediaStreamType.VOD
-                                                         mediaType:AEPMediaTypeVideo];
+NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name", id:@"video-id", length:60, streamType:AEPMediaStreamType.VOD, mediaType:AEPMediaTypeVideo];
 ```
 {% endtab %}
 
@@ -464,11 +471,7 @@ Returns an NSDictionary instance that contains information about the media.
 **Example**
 
 ```objc
-NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
-                                                        mediaId: @"video-id"
-                                                         length: 60
-                                                     streamType: ACPMediaStreamTypeVod
-                                                      mediaType: ACPMediaTypeVideo];
+NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name", mediaId: @"video-id", length: 60, streamType: ACPMediaStreamTypeVod, mediaType: ACPMediaTypeVideo];
 ```
 
 **Swift**
@@ -2895,8 +2898,6 @@ Defines the type of a media that is currently tracked.
 {% tab title="Android" %}
 #### Java
 
-**Syntax**
-
 ```java
 public class Media {
 
@@ -2914,39 +2915,22 @@ public class Media {
 
 }
 ```
-
-**Example**
-
-```java
-Do we have an example we can put in?
-```
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
 #### Swift
 
-**Syntax**
-
 ```swift
 @objc(AEPMediaType)
 public enum MediaType: Int, RawRepresentable {
  //Constant defining media type for Video streams
- case Audio
- //Constant defining media type for Audio streams
  case Video
+ //Constant defining media type for Audio streams
+ case Audio
 }
 ```
 
-**Example**
-
-```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
-```
-
 #### Objective-C
-
-**Syntax**
 
 ```objc
 typedef NS_ENUM(NSInteger, AEPMediaType) {
@@ -2961,38 +2945,22 @@ typedef NS_ENUM(NSInteger, AEPMediaType) {
     AEPMediaTypeAudio
 };
 ```
-
-**Example**
-
-```objc
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
-```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 #### Swift
 
-**Syntax**
-
 ```swift
 @objc(ACPMediaType)
 public enum MediaType: Int, RawRepresentable {
  //Constant defining media type for Video streams
- case Audio
- //Constant defining media type for Audio streams
  case Video
+ //Constant defining media type for Audio streams
+ case Audio
 }
 ```
 
-**Example**
-
-```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
-```
-
 #### Objective-C
-
-**Syntax**
 
 ```objc
 typedef NS_ENUM(NSInteger, ACPMediaType) {
@@ -3007,19 +2975,10 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
     ACPMediaTypeAudio
 };
 ```
-
-**Example**
-
-```objc
-NSDictionary *mediaObject = [ACPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:ACPMediaStreamType.VOD mediaType:ACPMediaTypeVideo];
-```
-
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
-
-**Syntax**
+#### JavaScript
 
 ```jsx
 import {ACPMediaType} from '@adobe/react-native-acpmedia';
@@ -3028,11 +2987,6 @@ ACPMediaType.Video
 ACPMediaType.Audio
 ```
 
-**Example**
-
-```js
-let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
-```
 {% endtab %}
 {% endtabs %}
 
@@ -3042,6 +2996,8 @@ Defines the stream type of the content that is currently tracked.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class MediaConstants {
 
@@ -3082,6 +3038,8 @@ public class MediaConstants {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+#### Swift
+
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPMediaStreamType)
@@ -3102,22 +3060,45 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
+/**
+ * Constant defining stream type for VOD streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypeVod;
+
+/**
+ * Constant defining stream type for Live streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypeLive;
+
+/**
+ * Constant defining stream type for Linear streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypeLinear;
+
+/**
+ * Constant defining stream type for Podcast streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypePodcast;
+
+/**
+ * Constant defining stream type for Audiobook streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypeAudiobook;
+
+/**
+ * Constant defining stream type for AOD streams
+ */
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaStreamTypeAod;
 ```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
 ```objc
 /**
  * Constant defining stream type for VOD streams
@@ -3149,10 +3130,33 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAudiobook;
  */
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 ```
+
+#### Swift
+
+```swift
+public class MediaConstants: NSObject {
+  @objc(AEPMediaStreamType)
+  public class StreamType: NSObject {
+     // Constant defining stream type for VOD streams.
+        public static let VOD = "vod"
+     // Constant defining stream type for Live streams.
+        public static let LIVE = "live"
+     // Constant defining stream type for Linear streams.
+        public static let LINEAR = "linear"
+     // Constant defining stream type for Podcast streams.
+        public static let PODCAST = "podcast"
+     // Constant defining stream type for Audiobook streams.
+        public static let AUDIOBOOK = "audiobook"
+     // Constant defining stream type for AOD streams.
+        public static let AOD = "aod"
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
@@ -3173,6 +3177,8 @@ Defines the standard metadata keys for video streams.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class MediaConstants {
 
@@ -3201,6 +3207,8 @@ public class MediaConstants {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+#### Swift
+
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPVideoMetadataKeys)
@@ -3226,36 +3234,34 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
-
-var videoMetadata: [String: String] = [:]
-// Standard Video Metadata
-videoMetadata[MediaConstants.VideoMetadataKeys.SHOW] = "Sample show"
-videoMetadata[MediaConstants.VideoMetadataKeys.SEASON] = "Sample season"
-
-tracker.trackSessionStart(info: mediaObject, metadata: videoMetadata)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
-
-NSMutableDictionary *videoMetadata = [[NSMutableDictionary alloc] init];
-// Standard Video Metadata
-[videoMetadata setObject:@"Sample show" forKey:AEPVideoMetadataKeys.SHOW];
-[videoMetadata setObject:@"Sample Season" forKey:AEPVideoMetadataKeys.SEASON];
-
-[_tracker trackSessionStart:mediaObject metadata:videoMetadata];
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyShow;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeySeason;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyEpisode;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyAssetId;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyGenre;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyFirstAirDate;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyFirstDigitalDate;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyRating;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyOriginator;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyNetwork;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyShowType;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyAdLoad;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyMvpd;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyAuthorized;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyDayPart;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyFeed;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPVideoMetadataKeyStreamFormat;
 ```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
+#### Objective-C
+
 ```objc
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyShow;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeySeason;
@@ -3275,10 +3281,38 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyDayPart;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyFeed;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 ```
+
+#### Swift
+
+```swift
+public class MediaConstants: NSObject {
+  @objc(ACPVideoMetadataKeys)
+  public class VideoMetadataKeys: NSObject {
+        public static let SHOW = "a.media.show"
+        public static let SEASON = "a.media.season"
+        public static let EPISODE = "a.media.episode"
+        public static let ASSET_ID = "a.media.asset"
+        public static let GENRE = "a.media.genre"
+        public static let FIRST_AIR_DATE = "a.media.airDate"
+        public static let FIRST_DIGITAL_DATE = "a.media.digitalDate"
+        public static let RATING = "a.media.rating"
+        public static let ORIGINATOR = "a.media.originator"
+        public static let NETWORK = "a.media.network"
+        public static let SHOW_TYPE = "a.media.type"
+        public static let AD_LOAD = "a.media.adLoad"
+        public static let MVPD = "a.media.pass.mvpd"
+        public static let AUTHORIZED = "a.media.pass.auth"
+        public static let DAY_PART = "a.media.dayPart"
+        public static let FEED = "a.media.feed"
+        public static let STREAM_FORMAT = "a.media.format"
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
@@ -3310,6 +3344,8 @@ Defines the standard metadata keys for audio streams.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class MediaConstants {
 
@@ -3326,8 +3362,11 @@ public class MediaConstants {
 ```
 {% endtab %}
 
-{% tab title="iOS —  Swift" %}
-```objc
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Swift
+
+```swift
 public class MediaConstants: NSObject {
   @objc(AEPAudioMetadataKeys)
   public class AudioMetadataKeys: NSObject {
@@ -3341,36 +3380,23 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-var audioObject = Media.createMediaObjectWith(name: "audio-name", id: "audioId", length: 30, streamType: MediaConstants.StreamType.AOD, mediaType: MediaType.AUDIO)
-
-var audioMetadata: [String: String] = [:]
-// Standard Audio Metadata
-audioMetadata[MediaConstants.AudioMetadataKeys.ARTIST] = "Sample artist"
-audioMetadata[MediaConstants.AudioMetadataKeys.ALBUM] = "Sample album"
-
-tracker.trackSessionStart(info: audioObject, metadata: audioMetadata)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary *audioObject = [AEPMobileMedia createMediaObjectWith:@"audio-name" id:@"audioid" length:30 streamType:AEPMediaStreamType.AOD mediaType:AEPMediaTypeAudio];
-
-NSMutableDictionary *audioMetadata = [[NSMutableDictionary alloc] init];
-// Standard Audio Metadata
-[audioMetadata setObject:@"Sample artist" forKey:AEPAudioMetadataKeys.ARTIST];
-[audioMetadata setObject:@"Sample album" forKey:AEPAudioMetadataKeys.ALBUM];
-
-[_tracker trackSessionStart:audioObject metadata:audioMetadata];
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyArtist;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyAlbum;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyLabel;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyAuthor;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyStation;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAudioMetadataKeyPublisher;
 ```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
+#### Objective-C
+
 ```objc
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyArtist;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAlbum;
@@ -3379,10 +3405,27 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyAuthor;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyStation;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 ```
+
+#### Swift
+
+```swift
+public class MediaConstants: NSObject {
+  @objc(ACPAudioMetadataKeys)
+  public class AudioMetadataKeys: NSObject {
+        public static let ARTIST = "a.media.artist"
+        public static let ALBUM = "a.media.album"
+        public static let LABEL = "a.media.label"
+        public static let AUTHOR = "a.media.author"
+        public static let STATION = "a.media.station"
+        public static let PUBLISHER = "a.media.publisher"
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
@@ -3403,6 +3446,8 @@ Defines the standard metadata keys for ads.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class MediaConstants {
 
@@ -3420,7 +3465,9 @@ public class MediaConstants {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-```objc
+#### Swift
+
+```swift
 public class MediaConstants: NSObject {
   @objc(AEPAdMetadataKeys)
   public class AdMetadataKeys: NSObject {
@@ -3434,36 +3481,22 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-let adObject = Media.createObjectWith(name: "adbreak-name", id: "ad-id", position: 0, length: 30)
-var adMetadata: [String: String] = [:]
-// Standard Ad Metadata
-adMetadata[MediaConstants.AdMetadataKeys.ADVERTISER] = "Sample Advertiser"
-adMetadata[MediaConstants.AdMetadataKeys.CAMPAIGN_ID] = "Sample Campaign"
-
-tracker.trackEvent(event: MediaEvent.AdStart, info: adObject, metadata: adMetadata)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary *adObject = [AEPMobileMedia createAdObjectWith:@"ad-name" id:@"ad-id" position:0 length:30];
-
-NSMutableDictionary *adMetadata = [[NSMutableDictionary alloc] init];
-// Standard Ad Metadata
-[adMetadata setObject:@"Sample Advertiser" forKey:AEPAdMetadataKeys.ADVERTISER];
-[adMetadata setObject:@"Sample Campaign" forKey:AEPAdMetadataKeys.CAMPAIGN_ID];
-
-[_tracker trackEvent:AEPMediaEventAdStart info:adObject metadata:adMetadata];
-}
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeyAdvertiser;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeyCampaignId;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeyCreativeId;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeyPlacementId;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeySiteId;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPAdMetadataKeyCreativeUrl;
 ```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
+#### Objective-C
+
 ```objc
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyAdvertiser;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCampaignId;
@@ -3472,10 +3505,27 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyPlacementId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeySiteId;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 ```
+
+#### Swift
+
+```swift
+public class MediaConstants: NSObject {
+  @objc(ACPAdMetadataKeys)
+  public class AdMetadataKeys: NSObject {
+        public static let ADVERTISER = "a.media.ad.advertiser"
+        public static let CAMPAIGN_ID = "a.media.ad.campaign"
+        public static let CREATIVE_ID = "a.media.ad.creative"
+        public static let PLACEMENT_ID = "a.media.ad.placement"
+        public static let SITE_ID = "a.media.ad.site"
+        public static let CREATIVE_URL = "a.media.ad.creativeURL"
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
@@ -3496,6 +3546,8 @@ The following section defines some common player state constants:
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class MediaConstants {
 
@@ -3512,6 +3564,8 @@ public class MediaConstants {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+#### Swift
+
 ```swift
 public class MediaConstants: NSObject {
   @objc(AEPMediaPlayerState)
@@ -3525,24 +3579,22 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-let inFocusState = Media.createStateObjectWith(stateName: MediaConstants.PlayerState.IN_FOCUS)
-tracker.trackEvent(event: MediaEvent.StateStart, info: inFocusState, metadata: nil)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary* inFocusState = [AEPMobileMedia createStateObjectWith:AEPMediaPlayerState.IN_FOCUS];
-[_tracker trackEvent:AEPMediaEventStateStart info:muteState metadata:nil];
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaPlayerStateFullScreen;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaPlayerStatePictureInPicture;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaPlayerStateClosedCaption;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaPlayerStateInFocus;
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaPlayerStateMute;
 ```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
+#### Objective-C
+
 ```objc
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateFullScreen;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStatePictureInPicture;
@@ -3550,10 +3602,26 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateClosedCaption;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateInFocus;
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateMute;
 ```
+
+#### Swift
+
+```swift
+public class MediaConstants: NSObject {
+  @objc(ACPMediaPlayerState)
+  public class PlayerState: NSObject {
+        public static let FULLSCREEN = "fullscreen"
+        public static let PICTURE_IN_PICTURE = "pictureInPicture"
+        public static let CLOSED_CAPTION = "closedCaptioning"
+        public static let IN_FOCUS = "inFocus"
+        public static let MUTE = "mute"
+    }
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaConstants} from '@adobe/react-native-acpmedia';
@@ -3573,6 +3641,8 @@ Defines the type of a tracking event.
 
 {% tabs %}
 {% tab title="Android" %}
+#### Java
+
 ```java
 public class Media {
 
@@ -3661,6 +3731,8 @@ public class Media {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+#### Swift
+
 ```swift
 @objc(AEPMediaEvent)
 public enum MediaEvent: Int, RawRepresentable {
@@ -3697,22 +3769,80 @@ public enum MediaEvent: Int, RawRepresentable {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-tracker.trackEvent(event: MediaEvent.BitrateChange, info: nil, metadata: nil)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-[_tracker trackEvent:AEPMediaEventBitrateChange info:nil metadata:nil];
+/**
+ * These enumeration values define the type of a tracking event
+ */
+typedef NS_ENUM(NSInteger, AEPMediaEvent) {
+    /**
+     * Constant defining event type for AdBreak start
+     */
+    AEPMediaEventAdBreakStart,
+    /**
+     * Constant defining event type for AdBreak complete
+     */
+    AEPMediaEventAdBreakComplete,
+    /**
+     * Constant defining event type for Ad start
+     */
+    AEPMediaEventAdStart,
+    /**
+     * Constant defining event type for Ad complete
+     */
+    AEPMediaEventAdComplete,
+    /**
+     * Constant defining event type for Ad skip
+     */
+    AEPMediaEventAdSkip,
+    /**
+     * Constant defining event type for Chapter start
+     */
+    AEPMediaEventChapterStart,
+    /**
+     * Constant defining event type for Chapter complete
+     */
+    AEPMediaEventChapterComplete,
+    /**
+     * Constant defining event type for Chapter skip
+     */
+    AEPMediaEventChapterSkip,
+    /**
+     * Constant defining event type for Seek start
+     */
+    AEPMediaEventSeekStart,
+    /**
+     * Constant defining event type for Seek complete
+     */
+    AEPMediaEventSeekComplete,
+    /**
+     * Constant defining event type for Buffer start
+     */
+    AEPMediaEventBufferStart,
+    /**
+     * Constant defining event type for Buffer complete
+     */
+    AEPMediaEventBufferComplete,
+    /**
+     * Constant defining event type for change in Bitrate
+     */
+    AEPMediaEventBitrateChange,
+    /**
+     * Constant defining event type for State start
+     */
+    AEPMediaEventStateStart
+    /**
+     * Constant defining event type for State end
+     */
+    AEPMediaEventStateEnd
+};
 ```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
 ```objc
 /**
  * These enumeration values define the type of a tracking event
@@ -3780,10 +3910,49 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
     ACPMediaEventStateEnd
 };
 ```
+
+#### Swift
+
+```swift
+@objc(ACPMediaEvent)
+public enum MediaEvent: Int, RawRepresentable {
+ // event type for AdBreak start
+    case AdBreakStart
+ // event type for AdBreak Complete
+    case AdBreakComplete
+ // event type for Ad Start
+    case AdStart
+ // event type for Ad Complete
+    case AdComplete
+ // event type for Ad Skip
+    case AdSkip
+ // event type for Chapter Start
+    case ChapterStart
+ // event type for Chapter Complete
+    case ChapterComplete
+ // event type for Chapter Skip
+    case ChapterSkip
+ // event type for Seek Start
+    case SeekStart
+ // event type for Seek Complete
+    case SeekComplete
+ // event type for Buffer Start
+    case BufferStart
+ // event type for Buffer Complete
+    case BufferComplete
+ // event type for change in Bitrate
+    case BitrateChange
+ // event type for Player State Start
+    case StateStart
+ // event type for Player State End
+    case StateEnd
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+#### JavaScript
 
 ```jsx
 import {ACPMediaEvent} from '@adobe/react-native-acpmedia';
@@ -3813,9 +3982,7 @@ Constant to denote that the current tracking session is resuming a previously cl
 
 {% tabs %}
 {% tab title="Android" %}
-#### Media resume
-
-**Syntax**
+#### Java
 
 ```java
 public class MediaConstants {
@@ -3830,23 +3997,10 @@ public class MediaConstants {
 
 }
 ```
-
-**Example**
-
-```java
-HashMap<String, Object> mediaObject = Media.createMediaObject("media-name", "media-id", 60D, MediaConstants.StreamType.VOD, Media.MediaType.Video);
-
-// Attach media resumed information.
-mediaObject.put(MediaConstants.MediaObjectKey.RESUMED, true);
-
-_tracker.trackSessionStart(mediaObject, null);
-```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Media resume
-
-**Syntax**
+#### Swift
 
 ```swift
 public class MediaConstants: NSObject {
@@ -3857,71 +4011,36 @@ public class MediaConstants: NSObject {
 }
 ```
 
-**Example**
-
-**Swift**
-
-```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
-mediaObject[MediaConstants.MediaObjectKey.RESUMED] = true
-
-tracker.trackSessionStart(info: mediaObject, metadata: nil)
-```
-
-**Objective-C**
+#### Objective-C
 
 ```objc
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
-
-// Attach media resumed information.    
-NSMutableDictionary *obj  = [mediaObject mutableCopy];
-[obj setObject:@YES forKey:AEPMediaObjectKey.RESUMED];
-
-[_tracker trackSessionStart:obj metadata:nil];
+FOUNDATION_EXPORT NSString* _Nonnull const AEPMediaKeyMediaResumed;
 ```
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### Media resume
-
-**Syntax**
+#### Objective-C
 
 ```objc
 FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyMediaResumed;
 ```
 
-**Example**
-
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```objc
-NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName:@"media-name" mediaId:@"media-id" length:60 streamType:ACPMediaStreamTypeVod mediaType:ACPMediaTypeVideo];
-
-// Attach media resumed information.
-NSMutableDictionary *obj  = [mediaObject mutableCopy];
-[obj setObject:@YES forKey:ACPMediaKeyMediaResumed];
-
-[_tracker trackSessionStart:obj data:nil];
-```
-
-**Swift**
+#### Swift
 
 ```swift
-var mediaObject = ACPMedia.createMediaObject(withName: "media-name", mediaId: "media-id", length: 60, streamType: ACPMediaStreamTypeVod, mediaType:ACPMediaType.video)
-
-// Attach media resumed information.
-mediaObject[ACPMediaKeyMediaResumed] = true
-
-_tracker.trackSessionStart(mediaObject, data: nil)
+public class MediaConstants: NSObject {
+ @objc(ACPMediaObjectKey)
+ public class MediaObjectKey: NSObject {
+        public static let RESUMED = "media.resumed"
+    }
+}
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
-
-#### Media resume
+#### JavaScript
 
 ```jsx
 let mediaObject = ACPMedia.createMediaObject("media-name", "media-id", 60, ACPMediaConstants.ACPMediaStreamTypeVod, ACPMediaType.Video);
