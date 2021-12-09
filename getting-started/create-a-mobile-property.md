@@ -88,7 +88,7 @@ The library of changes are then published to the Development environment and the
 Testing can be done using the configuration in the Development environment. The library can later be deployed to the **Staging** and **Production** environments by using the rest of the publishing workflow. For more information, see the documentation on [publishing in Launch](https://experienceleague.adobe.com/docs/experience-platform/tags/publish/overview.html?lang=en).
 {% endhint %}
 
-Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see tutorial on [getting the Experience Platform SDKs](https://aep-sdks.gitbook.io/docs/getting-started/get-the-sdk).
+Now that you published your configuration, get the Adobe Experience Platform SDK for your application. For more information, see tutorial on [getting the Experience Platform SDKs](get-the-sdk.md).
 
 ## Watch the video
 

@@ -1,24 +1,18 @@
 # Table of contents
 
 * [Home](README.md)
-* [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
+* [Current SDK Versions](current-sdk-versions.md)
 * [Release notes](release-notes/README.md)
   * [2020](release-notes/2020.md)
   * [2019](release-notes/2019.md)
   * [2018](release-notes/2018.md)
-* [Version 4 Mobile SDKs end-of-support FAQ](version-4-sdk-end-of-support-faq.md)
-* [Version 4 API Changelog](api-change-log.md)
-* [Adobe Experience Cloud & Apple’s IDFA, Privacy Announcements](adobe-experience-cloud-and-apples-idfa-announcement.md)
 
 ## Getting Started
 
 * [Overview](getting-started/overview.md)
-* [Set up schemas and datasets](getting-started/setup-schemas-and-datasets.md)
-* [Configure datastreams](getting-started/configure-datastreams.md)
 * [Set up a mobile property](getting-started/create-a-mobile-property.md)
 * [Get the Experience Platform SDK](getting-started/get-the-sdk.md)
 * [Debugging & lifecycle metrics](getting-started/enable-debug-logging.md)
-* [Track events](getting-started/initialize-the-sdk.md)
 * [Validation and next steps](getting-started/validate.md)
 
 ## Mobile Foundations <a id="foundation-extensions"></a>

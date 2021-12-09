@@ -20,36 +20,6 @@ Using `Debug` or `Verbose` log levels may cause performance or security concerns
 To enable debug logging, use the following methods:
 
 {% tabs %}
-{% tab title="Android" %}
-## Java
-
-```java
-MobileCore.setLogLevel(LoggingMode.DEBUG);
-// MobileCore.setLogLevel(LoggingMode.VERBOSE);
-// MobileCore.setLogLevel(LoggingMode.WARNING);
-// MobileCore.setLogLevel(LoggingMode.ERROR);
-```
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-## Swift
-
-```swift
-MobileCore.setLogLevel(.debug)
-// MobileCore.setLogLevel(.trace)
-// MobileCore.setLogLevel(.warning)
-// MobileCore.setLogLevel(.error)
-```
-
-## Objective-C
-
-```objectivec
-[AEPMobileCore setLogLevel:AEPLogLevelDebug];
-// [AEPMobileCore setLogLevel:AEPLogLevelTrace];
-// [AEPMobileCore setLogLevel:AEPLogLevelWarning];
-// [AEPMobileCore setLogLevel:AEPLogLevelError];
-```
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 ## Objective-C
@@ -131,38 +101,8 @@ Lifecycle metrics are not available for Edge Network at this time. Check back so
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-With the `onResume` function, start Lifecycle data collection:
-
-```java
-@Override  
-   public void onResume() {  
-      MobileCore.setApplication(getApplication());
-      MobileCore.lifecycleStart(null);
-   }
-```
-
-{% hint style="info" %}
-Setting the application is only necessary on activities that are entry points for your application. However, setting the application on each `Activity` has no negative impact and ensures that the SDK always has the necessary reference to your application. As a result, you should call `setApplication` on each of your activities.
-{% endhint %}
-
-You can use the `onPause` function to pause the lifecycle data collection:
-
-{% hint style="warning" %}
-To ensure accurate session and crash reporting, this call must be added to every `Activity`.
-{% endhint %}
-
-```java
-@Override
-   public void onPause() {
-      MobileCore.lifecyclePause();
-   }
-```
-{% endtab %}
-
-{% tab title="iOS - Objective-C" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### Objective-C
 
 Start Lifecycle data collection by calling `lifecycleStart:` from within the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.

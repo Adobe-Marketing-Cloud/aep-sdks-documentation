@@ -1,6 +1,6 @@
 # Get the Experience Platform SDK
 
-The Adobe Experience Platform SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
+The Adobe Experience Platform Mobile SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
 Follow the directions below to include the SDK into your mobile application.
 
@@ -9,70 +9,6 @@ For iOS and Android projects, the recommended approach for integrating the SDK i
 {% endhint %}
 
 {% tabs %}
-{% tab title="Android" %}
-### Java / Kotlin
-
-{% hint style="warning" %}
-Adobe Experience Platform SDKs for Android supports Android 4.0 \(API 14\) or later.
-{% endhint %}
-
-1. Open the mobile property you created earlier in Experience Platform Launch.
-2. On your mobile property's details page, click on the **Environments** tab.
-
-   The **Environments** tab lists the different environments where you can publish.
-
-3. In the row for the **Development** environment, click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
-
-   You should see a dialog box similar to the following:
-
-   ![](../.gitbook/assets/android.png)
-
-4. On the **Mobile Install Instructions** dialog box, make sure you are on the **Android** tab.
-5. Follow the instructions for using Gradle with Android.
-
-   The necessary dependencies and initialization code can be copied from the dialog box to your mobile application project.
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-{% hint style="warning" %}
-Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requires** Swift 5.1 or newer; **and** Xcode 11.0 or newer\*\*.
-{% endhint %}
-
-{% hint style="success" %}
-### Apple M1 compatibility
-
-In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
-
-Please see the [release notes](../release-notes/#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
-{% endhint %}
-
-### iOS \(Swift\) version 3.x
-
-Add the dependencies to your `Podfile` for each extension. For a complete list of available SDK extension libraries, please read the documentation on [current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md).
-
-```swift
-use_frameworks!
-target 'YourTargetApp' do
-    // Mobile Core and dependents
-    pod 'AEPCore'
-    pod 'AEPSignal'
-    pod 'AEPLifecycle'
-
-    // Client-side user profile
-    pod 'AEPUserProfile'
-
-    // Edge Network and dependents
-    pod 'AEPEdge'
-    pod 'AEPEdgeIdentity'
-    pod 'AEPEdgeConsent'
-
-    // Adobe Analytics and dependents
-    pod 'AEPIdentity'
-    pod 'AEPAnalytics'
-end
-```
-
-{% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 
@@ -85,7 +21,7 @@ Adobe Experience Platform SDKs for iOS support **iOS 10 or later**; **\*\*requir
 
 In order to support the new Apple M1 architecture while maintaining support for existing Intel architecture, the Adobe Experience Platform SDKs are now distributed using XCFrameworks.
 
-Please see the [release notes](../release-notes/2020#december-18-2020) and the document on [current SDK versions](../resources/upgrading-to-aep/current-sdk-versions.md) for more information on the latest extension versions.
+Please see the [release notes](../release-notes/2020#december-18-2020) and the document on [current SDK versions](../current-sdk-versions.md) for more information on the latest extension versions.
 {% endhint %}
 
 1. Open a previously created and configured **Mobile** property in Launch, and click on the **Environments** tab, and then click on the install package icon \(![](../.gitbook/assets/package%20%281%29.png)\).
@@ -661,17 +597,6 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {% endtab %}
 {% endtabs %}
 
-### 3. Ensure app permissions \(Android only\)
-
-For Android, the SDK requires standard [network connection](https://developer.android.com/training/basics/network-ops/connecting) permissions in your manifest to send data, collect cellular provider, and record offline tracking calls.
-
-To enable these permissions, add the following lines to your `AndroidManifest.xml` file, located in your app's application project directory:
-
-```markup
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
 ## Watch the Video
 
 {% embed url="https://www.youtube.com/watch?v=K99NwR6Y08E" caption="Video: How to use Cocoapods and Gradle with SDK extensions & dependencies" %}
@@ -680,7 +605,7 @@ To enable these permissions, add the following lines to your `AndroidManifest.xm
 
 * [How to use Gradle for Android](https://docs.gradle.org/current/userguide/userguide.html)
 * [How to use CocoaPods for iOS ](https://guides.cocoapods.org/using/using-cocoapods)
-* [Current SDK Versions](../resources/upgrading-to-aep/current-sdk-versions.md)
+* [Current SDK Versions](current-sdk-versions.md)
 
 ## Get help
 
