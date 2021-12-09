@@ -1,4 +1,4 @@
-# Get the Experience Platform ACP Mobile SDK
+# Get the Experience Platform SDK
 
 The Adobe Experience Platform Mobile SDK is available for Apple iOS \(includes iOS, iPadOS, and tvOS\) via [Cocoapods](https://cocoapods.org/), for Google Android via [Gradle](https://gradle.org), and for various cross-platform platforms such as Cordova, Flutter, React Native, Unity, and Xamarin.
 
