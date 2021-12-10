@@ -56,7 +56,7 @@ The Location Services view is an on-device view that shows the user location ent
 
 Project Griffon has the following security measures in place:
 
-* AEP Assurance and Project Griffon web UI have a secure, PIN-based handshake for a connection. User has to explicitly create a handshake so no allowance for “accidental” Project Griffon connections from end-consumer usage.
+* AEP Assurance and Project Griffon web UI have a secure, PIN-based handshake for a connection. The user has to explicitly create a handshake, which prevents "accidental" Project Griffon connections to be created by an end-user.
 * Only connections between AEP Assurance and the Project Griffon web UI belonging to the same Adobe Experience Cloud Organization ID are supported.
 * Adobe Experience Platform Mobile SDKs events are transported over HTTPs. 
 * Project Griffon and Adobe Experience Platform Mobile SDKs use TLS 1.2
