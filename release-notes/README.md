@@ -10,6 +10,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fixed an issue which caused the duplicate qurey parameters in the deep link to be removed. 
 
+### Android Signal 1.0.4
+
+* Bug fix to improve Signal stability
+
 
 ## November 19, 2021
 
