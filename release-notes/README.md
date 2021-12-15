@@ -12,7 +12,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Signal 1.0.4
 
-* Bug fix to improve Signal stability
+* Bug fix to improve Signal stability.
 
 
 ## November 19, 2021
