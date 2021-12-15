@@ -4,6 +4,65 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## November 19, 2021
+
+### iOS AEPTarget 3.1.2
+
+* Fixed an issue where the Target qaMode parameters were not being attached to the `retrieveLocationContent` API requests, once the Target preview selections were confirmed.
+
+## November 9, 2021 
+
+### iOS AEPCore 3.3.1 
+
+* Fixed a bug where Date was not persisted correctly in iOS versions less than 13. 
+
+### iOS AEPLifecycle 3.3.1
+
+* Added session start time to Lifecycle shared state. 
+
+### iOS AEPIdentity 3.3.1 
+
+* Fixed a bug where the default Experience Cloud ID server URL was not used when the `experienceCloud.server` configuration parameter was an empty string.
+
+## November 5, 2021
+
+### iOS AEPMobileServices 3.0.3
+
+ * Fixes crash when using an immutable dictionary for handling attribution data.
+
+## October 22, 2021
+
+### iOS AEPAnalytics 3.0.3
+
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Removed retrieval and generation of `Analytics tracking identifier (AID)`. Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+## October 22, 2021
+
+### iOS AEPTarget 3.1.1
+
+* Fixed an issue where the Target session ID was not being persisted in the local storage if the app was closed before session expiry.
+
+## October 21, 2021
+
+### Android Analytics 1.2.9
+
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Bug fixes to improve SDK stability.
+
+## Oct 18, 2021
+
+ ### iOS AEPMobileServices 3.0.2
+
+ * Includes deferred link info to Acquisition response event when available.
+
+
+## Oct 05, 2021
+
+### Android MobileServices 1.1.5
+
+* Specifies mutability of each PendingIntent object that the SDK creates [for Android 12 changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability)
+
 ## Sep 20, 2021
 
 ### iOS 15 Compatibility
@@ -620,4 +679,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 ### iOS Audience 2.3.0
 
 * Added TVOS support to Audience.
-

@@ -52,6 +52,17 @@ The Adobe Analytics &gt; Media Analytics Events view shows events for your audio
 
 The Location Services view is an on-device view that shows the user location entry and exit events for easy validation. This handy view provides a convenient interface to view location specific data points for inspection on the client for in-context debugging.
 
+## Is Project Griffon Secure?
+
+Project Griffon has the following security measures in place:
+
+* AEP Assurance and Project Griffon web UI have a secure, PIN-based handshake for a connection. The user has to explicitly create a handshake, which prevents "accidental" Project Griffon connections to be created by an end-user.
+* Only connections between AEP Assurance and the Project Griffon web UI belonging to the same Adobe Experience Cloud Organization ID are supported.
+* Adobe Experience Platform Mobile SDKs events are transported over HTTPs. 
+* Project Griffon and Adobe Experience Platform Mobile SDKs use TLS 1.2
+* Project Griffon sessions are deleted after 30 days.
+* Preojct Griffon session data is encrypted at rest, following storage best practices.
+
 ## Getting Started
 
 To get started with Project Griffon, see the following:

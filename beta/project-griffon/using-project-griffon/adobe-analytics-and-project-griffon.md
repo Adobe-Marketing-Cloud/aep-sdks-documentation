@@ -18,6 +18,7 @@ After the SDK makes a network request with Adobe Analytics, the status will tell
 | `Error` | An error caused the network request to fail. More details about the error are displayed in the event details view. |
 | `Unauthorized` | The user does not have access to the Adobe Analytics report suite. |
 | `Unavailable` | The Adobe Analytics request does not have a corresponding `AnalyticsResponse` event. |
+| `No Debug Flag` | The current Adobe Analytics or Assurance SDK version might not support the Analytics Debugging feature. For more information, please read the [Troubleshooting guide](../troubleshoot-project-griffon.md#Adobe Analytics Debugging). |
 | `Expired` | The `AnalyticsTrack` or `LifecycleStart` event is older than 24 hours. |
 
 ### Event details view

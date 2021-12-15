@@ -2,10 +2,10 @@
 
 ## Configuration
 
-The AEP Analytics extension uses [Launch](https://launch.adobe.com/) to configure the AEP SDK's. This replaces the ADBMobileConfig.json which the Mobile Services SDK used for configuration. To get started with the AEP SDK's:
+The AEP Analytics extension uses [Launch](https://experience.adobe.com/#/data-collection/) to configure the AEP SDK's. This replaces the ADBMobileConfig.json which the Mobile Services SDK used for configuration. To get started with the AEP SDK's:
 
-1. Create a mobile property on Launch. See [Set up a mobile property](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/getting-started/create-a-mobile-property/README.md) for more information.
-2. Configure your mobile app with the create mobile property. The AEP Mobile Core extension provides general functionality required by all the Adobe AEP extensions. The Configuration extension is built into the Mobile Core and contains the `configureWithAppId` API. This API is used to link the Launch mobile property with your mobile app. The documentation for this API can be seen at the [Configuration API Reference](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/using-mobile-extensions/mobile-core/configuration/configuration-api-reference/README.md#configurewithappid) page. A code sample showing the usage of this API is provided below.
+1. Create a mobile property on Launch. See [Set up a mobile property](../../getting-started/create-a-mobile-property.md) for more information.
+2. Configure your mobile app with the create mobile property. The AEP Mobile Core extension provides general functionality required by all the Adobe AEP extensions. The Configuration extension is built into the Mobile Core and contains the `configureWithAppId` API. This API is used to link the Launch mobile property with your mobile app. The documentation for this API can be seen at the [Configuration API Reference](../../foundation-extensions/mobile-core/configuration/configuration-api-reference.md#configurewithappid) page. A code sample showing the usage of this API is provided below.
 3. Once all the AEP extensions are imported and configured correctly, remove the v4 Mobile SDK dependency. This step is mandatory and a mix of v4 and AEP API calls is not supported.
 
 {% tabs %}
@@ -38,21 +38,21 @@ Alternatively, if the v4 Mobile SDK library is linked in Xcode, select the appli
 
 ## Analytics Migration Overview
 
-For an overview of the API mapping between the Mobile Services SDK and AEP SDK's, see the [API Change Log](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/resources/upgrading-to-aep/api-change-log/README.md). This section will go over the Analytics specific changes made with the AEP Analytics extension.
+For an overview of the API mapping between the Mobile Services SDK and AEP SDK's, see the [API Change Log](./api-change-log.md). This section will go over the Analytics specific changes made with the AEP Analytics extension.
 
 ### Deprecated API
 
 | API | Notes |
 | :--- | :--- |
 | trackActionFromBackground \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/actions.html?lang=en)\) | Deprecated |
-| trackLocation:data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/geo-poi.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/geo-poi.html?lang=en)\) | This functionality is available in the [Places extension](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/using-mobile-extensions/adobe-places/README.md). |
-| trackBeacon:Data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)\) | Support modified, [see guide](https://aep-sdks.gitbook.io/docs/resources/user-guides/track-beacon) |
-| trackingClearCurrentBeacon \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)\) | Support modified, [see guide](https://aep-sdks.gitbook.io/docs/resources/user-guides/track-beacon) |
-| trackLifetimeValueIncrease:data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/lifetime-value.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/lifetime-value.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/) and [User Profile](../../foundation-extensions/profile/) extensions. |
-| trackTimedActionStart: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/) and [User Profile](../../foundation-extensions/profile/) extensions. |
-| trackTimedActionUpdate: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/) and [User Profile](../../foundation-extensions/profile/) extensions. |
-| trackTimedActionEnd: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/) and [User Profile](../../foundation-extensions/profile/) extensions. |
-| trackTimedActionExists: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/) and [User Profile](../../foundation-extensions/profile/) extensions. |
+| trackLocation:data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/geo-poi.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/geo-poi.html?lang=en)\) | This functionality is available in the [Places extension](../../foundation-extensions/places/README.md). |
+| trackBeacon:Data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)\) | Support modified, [see guide](../user-guides/track-beacon.md) |
+| trackingClearCurrentBeacon \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/location-ios/ibeacon.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/location/beacon.html?lang=en)\) | Support modified, [see guide](../user-guides/track-beacon.md) |
+| trackLifetimeValueIncrease:data: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/lifetime-value.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/lifetime-value.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/README.md) and [User Profile](../../foundation-extensions/profile/README.md) extensions. |
+| trackTimedActionStart: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/README.md) and [User Profile](../../foundation-extensions/profile/README.md) extensions. |
+| trackTimedActionUpdate: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/README.md) and [User Profile](../../foundation-extensions/profile/README.md) extensions. |
+| trackTimedActionEnd: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/README.md) and [User Profile](../../foundation-extensions/profile/README.md) extensions. |
+| trackTimedActionExists: \([iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/analytics-ios/timed-actions.html?lang=en), [Android](https://experienceleague.adobe.com/docs/mobile-services/android/analytics-android/timed-actions.html?lang=en)\) | This functionality can be recreated using the [Analytics](../../using-mobile-extensions/adobe-analytics/README.md) and [User Profile](../../foundation-extensions/profile/README.md) extensions. |
 
 ## AEP SDK Installation and Setup
 
@@ -131,7 +131,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-In-depth instructions can be seen at the [Analytics Readme](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/b7706ec53f082a5385a6eb5870418af7c116f0b1/using-mobile-extensions/adobe-analytics/readme.md#add-analytics-to-your-app).
+For more details, see [Add Analytics to your application](../../using-mobile-extensions/adobe-analytics/README.md#add-analytics-to-your-application).
 
 ## API changes
 

@@ -211,22 +211,114 @@ OfferDecisioning.retrievePrefetchedOffers(decisionScopes: [homeDecisionScope]) {
 ## Public classes
 
 {% tabs %}
+{% tab title="Android" %}
+### DecisionScope
+
+This class encapsulates the decision `activityId`, `placementId` and `itemCount`. The `DecisionScope` object can be used to fetch offers from the Offer Decisioning service when it is enabled in the `Datastreams` on the Data collection UI. The default value for `itemCount` is 1, if not provided when creating the `DecisionScope` object.
+
+```java
+final public class DecisionScope {
+    
+    public DecisionScope(final String activityId, final String placementId) {...}
+
+    public DecisionScope(final String activityId, final String placementId, final int itemCount) {...}
+
+    public String getActivityId() {...}
+
+    public String getPlacementId() {...}
+
+    public int getItemCount() {...}
+```
+
+### Proposition
+
+This class represents the proposition received from the offer decisioning service upon personalization query.
+
+```java
+public class Proposition {
+
+    Proposition(final String id, final List<Offer> offers, final String scopeString, final DecisionScope decisionScope) {...}
+
+    public String getId() {...}
+
+    List<Offer> getOffers() {...}
+
+    public String getScopeString() {...}
+```
+
+### Offer
+
+This class represents the offer option received from the offer decisioning service upon personalization query.
+
+```java
+public class Offer {
+
+    Offer(final String id, final String etag, final String schema, final OfferType type, final List<String> language, final String content, final Map<String, String> characteristics) {...}
+
+    public String getId() {...}
+
+    public String getEtag() {...}
+
+    public OfferType getType() {...}
+
+    public List<String> getLanguage() {...}
+
+    public String getContent() {...}
+
+    public Map<String, String> getCharacteristics() {...}
+
+    public Proposition getProposition() {...}
+```
+
+### OfferType
+
+An enum indicating the type of an offer. This is based on the offer `format` field returned in the personalization query response.
+
+```java
+public enum OfferType {
+    UNKNOWN, JSON, HTML, IMAGE, TEXT {
+        @Override
+        public String toString() {
+            return "text/plain";
+        }
+    };
+
+    static OfferType from(final String type) {...}
+}
+```
+
+### OfferExperienceEvent
+
+An instance of `OfferExperienceEvent` can be supplied in the prefetch API when additional information such as xdm data, free-form data or dataset identifier needs to be passed to the Offer Decisioning service. If provided, the `datasetIdentitifer` overrides the default dataset configured in the `Datastreams` on the Data Collection UI.
+
+```java
+public class OfferExperienceEvent {
+    
+    public OfferExperienceEvent(final Map<String, Object> xdmData) {...}
+
+    public OfferExperienceEvent(final Map<String, Object> xdmData, final Map<String, Object> data, final String datasetIdentifier) {...}
+
+    public Map<String, Object> getXdmData() {...}
+
+    public Map<String, Object> getData() {...}
+
+    public String getDatasetIdentifier() {...}
+}
+```
+{% endtab %}
 {% tab title="iOS — Swift" %}
 ### DecisionScope/**AEPDecisionScope**
 
 This class contains the id of activity and placement, which is used by the offer decisioning service to propose offers for. For advanced use case you can also assign the value of `itemCount`, if not, a default value of 1 will be used.
 
 ```swift
+@objc(AEPDecisionScope)
 public class DecisionScope{
-    public let activityId: String
-    public let placementId: String
-    public let itemCount: Int
+    @objc public let activityId: String
+    @objc public let placementId: String
+    @objc public let itemCount: Int
 
-    public init(activityId: String, placementId: String, itemCount: Int = 1) {
-        self.activityId = activityId
-        self.placementId = placementId
-        self.itemCount = itemCount
-    }
+    @objc public init(activityId: String, placementId: String, itemCount: Int = 1) {...}
 }
 ```
 
@@ -235,11 +327,12 @@ public class DecisionScope{
 This class represents the proposition received from the offer decisioning service.
 
 ```swift
+@objc(AEPProposition)
 public class Proposition: NSObject, Codable {
-    public let id: String
-    public let scopeString: String
-    public let decisionScope: DecisionScope
-    public lazy var offers: [Offer] = {...}()
+    @objc public let id: String
+    @objc public let scopeString: String
+    @objc public let decisionScope: DecisionScope
+    @objc public lazy var offers: [Offer] = {...}()
 }
 ```
 
@@ -248,14 +341,15 @@ public class Proposition: NSObject, Codable {
 This class represents the offer option received from the offer decisioning service.
 
 ```swift
+@objc(AEPOffer)
 public class Offer: NSObject, Codable {
-    public let id: String
-    public let type: OfferType
-    public let language: [String]?
-    public let content: String?
-    public let characteristics: [String: String]?
-    public let schema: String
-    public weak var proposition: Proposition?
+    @objc public let id: String
+    @objc public let etag: String
+    @objc public let type: OfferType
+    @objc public let language: [String]?
+    @objc public let content: String?
+    @objc public let characteristics: [String: String]?
+    @objc public weak var proposition: Proposition?
 }
 ```
 
@@ -293,11 +387,7 @@ public class OfferExperienceEvent: NSObject {
     ///   - xdm:  XDM formatted data for this event, passed as a raw XDM Schema data dictionary.
     ///   - data: Any free form data in a [String : Any] dictionary structure.
     ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Datastream configuration is used
-    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {
-        self.xdm = xdm
-        self.data = data
-        self.datasetIdentifier = datasetIdentifier
-    }
+    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {...}
 }
 ```
 {% endtab %}

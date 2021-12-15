@@ -55,7 +55,7 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
 1. Add the Campaign Classic extension to your project using the app's Gradle file.
 
    ```java
-   implementation "com.adobe.marketing.mobile:campaignclassic:1.0.0"
+   implementation 'com.adobe.marketing.mobile:campaignclassic:1.+'
    ```
 
 2. Import the Campaign Classic and Lifecycle extensions in your application's main activity.
@@ -72,9 +72,9 @@ Time, in seconds, to wait for a response from the registration or tracking endpo
    You can add the following pods to your `Podfile`:
 
    ```text
-   pod 'ACPCampaignClassic', '2.0.0'
-   pod 'ACPLifecycle', '2.0.0'
-   pod 'ACPCore', '2.0.0'
+   pod 'ACPCampaignClassic'
+   pod 'ACPLifecycle'
+   pod 'ACPCore'
    ```
 
    or you can manually include the [Mobile Core](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.1-ACPCore) and [Campaign Classic](https://github.com/Adobe-Marketing-Cloud/acp-sdks/releases/tag/v1.0.0-ACPCampaignClassic) libraries found in Github.
