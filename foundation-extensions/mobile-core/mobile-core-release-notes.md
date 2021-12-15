@@ -4,7 +4,7 @@
 
 ### Android Core 1.9.1
 
-* Fixed an issue which caused the duplicate qurey parameters in the deep link to be removed. 
+* Fixed an issue which caused the duplicate query parameters in the deep link to be removed. 
 
 ### Android Signal 1.0.4
 
