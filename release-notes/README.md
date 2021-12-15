@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 15, 2021
+
+### Android Core 1.9.1
+
+* Fixed an issue that was causing duplicate query parameters in a deep link to be removed.
+
+### Android Signal 1.0.4
+
+* Bug fix to improve Signal stability.
+
+
 ## November 19, 2021
 
 ### iOS AEPTarget 3.1.2
