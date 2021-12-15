@@ -4,6 +4,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 15, 2021
+
+### Android Core 1.9.1
+
+* Fixed an issue which caused the duplicate qurey parameters in the deep link to be removed. 
+
+
 ## November 19, 2021
 
 ### iOS AEPTarget 3.1.2
