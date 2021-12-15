@@ -1,5 +1,15 @@
 # Release Notes
 
+## December 15, 2021
+
+### Android Core 1.9.1
+
+* Fixed an issue which caused the duplicate qurey parameters in the deep link to be removed. 
+
+### Android Signal 1.0.4
+
+* Bug fix to improve Signal stability
+
 ## November 9, 2021 
 
 ### iOS AEPCore 3.3.1 
