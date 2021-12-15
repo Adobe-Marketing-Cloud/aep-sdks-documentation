@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Core 1.9.1
 
-* Fixed an issue which caused the duplicate query parameters in the deep link to be removed. 
+* Fixed an issue that was causing duplicate question parameters in a deep link to be removed.
 
 ### Android Signal 1.0.4
 
