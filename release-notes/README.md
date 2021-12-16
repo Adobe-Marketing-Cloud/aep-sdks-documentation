@@ -6,6 +6,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## December 15, 2021
 
+### iOS AEPRulesEngine 1.1.0
+
+* Add support for opperand function types.
+
 ### Android Core 1.9.1
 
 * Fixed an issue that was causing duplicate query parameters in a deep link to be removed.
