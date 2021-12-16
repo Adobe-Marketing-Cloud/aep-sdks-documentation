@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 16, 2021
+
+### iOS AEPRulesEngine 1.1.0
+
+* Add support for opperand function types.
+
 ## December 15, 2021
 
 ### Android Core 1.9.1
