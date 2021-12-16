@@ -46,7 +46,32 @@ Follow these steps to add the install the extension in Experience Platform Launc
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
+
+```text
+pod 'AEPCore'
+pod 'AEPAssurance'
+```
+
+Import the Project Griffon libraries along with other SDK libraries:
+
+#### Objective-C
+
+```objectivec
+@import AEPCore;
+@import AEPAssurance; // <-- import the AEPAssurance library
+```
+
+#### Swift
+
+```swift
+import AEPCore
+import AEPAssurance // <-- import the AEPAssurance library
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 1.x)" %}
 Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
 
 ```text
@@ -69,6 +94,7 @@ Import the Project Griffon libraries along with other SDK libraries:
 import ACPCore
 import AEPAssurance // <-- import the AEPAssurance library
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -212,7 +238,41 @@ Registering the extension with Core, sends Experience Platform SDK events to an 
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+
+#### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    NSArray *extensionsToRegister = @[AEPMobileLifecycle.class, AEPMobileAssurance.class];
+    [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
+				[AEPMobileCore configureWithAppId: @"yourAppId"];
+    }];
+        
+    return YES;
+}
+
+```
+
+#### Swift
+
+```swift
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        let extensions = [Lifecycle.self, Assurance.self]
+        MobileCore.registerExtensions(extensions, {
+		        MobileCore.configureWith(appId: "yourAppId")          
+        })
+
+        return true
+    }
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 1.x)" %}
 Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Objective-C
@@ -238,6 +298,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      return true;
 }
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -345,7 +406,77 @@ You may call this API when the app launches with a url \(see code snippet below 
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS" %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### startSession
+
+#### Objective-C
+
+#### Syntax
+
+```objectivec
+static func startSession(url: URL?)
+```
+
+#### Example
+
+```objectivec
+- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [AEPMobileAssurance startSessionWithUrl:url];
+    return true;
+}
+```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```objectivec
+
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {    
+    NSURL *deepLinkURL = connectionOptions.URLContexts.allObjects.firstObject.URL;
+    [AEPMobileAssurance startSessionWithUrl:deepLinkURL];
+}
+
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    [AEPMobileAssurance startSessionWithUrl:URLContexts.allObjects.firstObject.URL];
+}
+
+```
+
+#### Swift
+
+#### Example
+
+```swift
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        Assurance.startSession(url: url)
+        return true
+    }
+```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```swift
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        // Called when the app in background is opened with a deep link.
+        if let deepLinkURL = URLContexts.first?.url {
+            Assurance.startSession(url: deepLinkURL)
+        }
+    }
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Called when the app launches with the deep link
+        if let deepLinkURL = connectionOptions.urlContexts.first?.url {
+            Assurance.startSession(url: deepLinkURL)
+        }
+    }
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 1.x)" %}
+
 ### startSession
 
 #### Objective-C
