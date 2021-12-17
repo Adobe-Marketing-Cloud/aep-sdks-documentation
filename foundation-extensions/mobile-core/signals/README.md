@@ -1,18 +1,18 @@
 # Signal
 
-The Signal extension allows marketers to send a "signal" to their apps through the Experience Platform SDKs. This signal might tell the SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Experience Platform Launch.
+The Signal extension allows marketers to send a "signal" to their apps through the Adobe Experience Platform Mobile SDKs. This signal might tell the Mobile SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Data Collection UI.
 
-The Signal extension is bundled with the [MobileCore \(Android\)/ACPCore \(iOS\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Experience Platform Launch.
+The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Data Collection UI.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
 To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
-2. Define the necessary rules in Experience Platform Launch. 
-3. \(Optional\) When using Send PII actions in Experience Platform Launch, implement the APIs to collect PII data and send it to the configured third party destination.
+2. Define the necessary rules in Data Collection UI. 
+3. (Optional) When using Send PII actions in Data Collection UI, implement the APIs to collect PII data and send it to the configured third party destination.
 
-For more information about creating and configuring a rule in Experience Platform Launch, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
+For more information about creating and configuring a rule in Data Collection UI, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
 
 ## Watch the Video
 
@@ -42,23 +42,23 @@ import com.adobe.marketing.mobile.*;
 
 Add following pods in your `Podfile`:
 
-```text
-pod 'AEPCore'
-pod 'AEPSignal'
+```pod
+pod 'AEPCore','~>3.0'
+pod 'AEPSignal','~>3.0'
 ```
 
 Import the Signal libraries:
 
 #### Swift
 
-```text
+```swift
 import AEPCore
 import AEPSignal
 ```
 
 #### Objective-C
 
-```text
+```objectivec
 @import AEPCore;
 @import AEPSignal;
 ```
@@ -70,18 +70,11 @@ import AEPSignal
 
 Add following pods in your `Podfile`:
 
-```text
-pod 'ACPCore'
+```pod
+pod 'ACPCore', '~> 2.0'
 ```
 
 Import the Signal libraries:
-
-#### Objective-C
-
-```text
-#import "ACPCore.h"
-#import "ACPSignal.h"
-```
 
 #### Swift
 
@@ -90,6 +83,14 @@ In Swift, the ACPCore includes ACPSignal:
 ```swift
 import ACPCore
 ```
+
+#### Objective-C
+
+```objectivec
+#import "ACPCore.h"
+#import "ACPSignal.h"
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -173,7 +174,7 @@ public class MobileApp extends Application {
 }
 ```
 
-**Important**: The Signal extension is automatically included in Core by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
+**Important**: The Signal extension is automatically included in Mobile Core extension by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -195,28 +196,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### Objective-C
 
 ```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileSignal.class, ...] completion:^{
         [AEPMobileCore configureWithAppId: @"yourAppId"];
         // Any other post registration processing
     }];
+    return YES;
+ }
 ```
 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
 In your app's`application:didFinishLaunchingWithOptions`, register the Signal extension with Mobile Core:
-
-#### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore configureWithAppId:@"yourAppId"];
-    [ACPSignal registerExtension];
-    [ACPCore start:nil];
-    // Override point for customization after application launch.
-    return YES;
- }
-```
 
 #### Swift
 
@@ -230,7 +222,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Important**: The Signal extension is automatically included in the Core pod. When you manually install the Signal extension, ensure that you add the `libACPSignal_iOS.a` library to your project.
+#### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"yourAppId"];
+    [ACPSignal registerExtension];
+    [ACPCore start:nil];
+    // Override point for customization after application launch.
+    return YES;
+ }
+```
+
+**Important**: The Signal extension is automatically included in the Mobile Core pod. When you manually install the Signal extension, ensure that you add the `libACPSignal_iOS.a` library to your project.
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -256,7 +260,7 @@ When using Cordova, registering Signal with Mobile Core must be done in native c
 
 Register the extension in the `start()` function:
 
-```text
+```csharp
 void Start()
 {   
   ACPSignal.RegisterExtension();
@@ -269,13 +273,13 @@ void Start()
 
 **iOS**
 
-Register the Signal extension with the SDK Core by adding the following to your app's `FinishedLaunching:` delegate method:
+Register the Signal extension with the Mobile Core by adding the following to your app's `FinishedLaunching:` delegate method:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
   ACPSignal.RegisterExtension();
-  // start core
+  // start Mobile Core
   ACPCore.Start(startCallback);
 
   return base.FinishedLaunching(app, options);
@@ -283,14 +287,14 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 private void startCallback()
 {
-  // set launch config
+  // set app id from Data Collection UI
   ACPCore.ConfigureWithAppID("yourAppId");
 }
 ```
 
 **Android**
 
-Register the Signal extension with the SDK Core by adding the following to your app's `OnCreate:` method:
+Register the Signal extension with the Mobile Core by adding the following to your app's `OnCreate:` method:
 
 ```csharp
 protected override void OnCreate(Bundle savedInstanceState)
@@ -299,7 +303,7 @@ protected override void OnCreate(Bundle savedInstanceState)
     LoadApplication(new App());
   ACPCore.Application = this.Application;
   ACPSignal.RegisterExtension();
-  // start core
+  // start Mobile Core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
 
@@ -307,7 +311,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {
   public void Call(Java.Lang.Object callback)
   {
-    // set launch config
+  // set app id from Data Collection UI
     ACPCore.ConfigureWithAppID("yourAppId");
   }
 }
@@ -321,5 +325,5 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 For more information about `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
-For more information about how to configure the Signal postbacks in Experience Platform Launch, see [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
+For more information about how to configure the Signal postbacks in Data Collection UI, see [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
 

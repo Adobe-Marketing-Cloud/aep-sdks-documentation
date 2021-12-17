@@ -1,34 +1,34 @@
 # Migrating to AEPSignal reference
 
-This document is a reference comparison of ACPSignal \(2.x\) APIs against their equivalent APIs in AEPSignal \(3.x\).
+This document is a reference comparison of AEPSignal (3.x) APIs against their equivalent ACPSignal (2.x) APIs.
 
-## Primary `Classes`
+The AEPSignal extension is implemented purely in Swift and is compatible with the AEPCore swift SDK. To ensure a smooth transition from the ACPSignal SDK, there are no major changes on the API names or definition. For more details, follow the migration guide below for your Swift or Objective-C mobile application. If explanation beyond showing API differences is necessary, it will be captured as an info hint within that API's section.
 
-| Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
+## Public classes
+
+| Type | AEP 3.x (Swift) | AEP 3.x (Objective-C) | ACP 2.x (Objective-C) |
 | :--- | :--- | :--- | :--- |
 | Primary Class | Signal | AEPMobileSignal | ACPSignal |
 
-## Signal extension APIs
-
-For more information, please read the [Signal API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/signals/signal-api-reference).
+## Public APIs (alphabetical)
 
 ### extensionVersion
 
 {% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
+{% tab title="AEP 3.x (Swift)" %}
 ```swift
-public static var extensionVersion: String
+static var extensionVersion: String
 ```
 {% endtab %}
 
-{% tab title="AEP 3.x \(Objective-C\)" %}
-```text
+{% tab title="AEP 3.x (Objective-C)" %}
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 
-{% tab title="ACP 2.x \(Objective-C\)" %}
-```text
+{% tab title="ACP 2.x (Objective-C)" %}
+```objc
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
