@@ -51,10 +51,10 @@ Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/
 
 ```text
 pod 'AEPCore'
-pod 'AEPAssurance'
+pod 'AEPAssurance', '3'
 ```
 
-Import the Project Griffon libraries along with other SDK libraries:
+Import the Assurance extension along with the other Adobe Mobile extensions::
 
 #### Objective-C
 
@@ -76,7 +76,7 @@ Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/
 
 ```text
 pod 'ACPCore'
-pod 'AEPAssurance'
+pod 'AEPAssurance','~> 1.0'
 ```
 
 Import the Project Griffon libraries along with other SDK libraries:
@@ -214,7 +214,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tabs %}
 {% tab title="Android" %}
-Registering the extension with Core, sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Java
 
@@ -487,7 +487,7 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
 
-#### Example
+**Example**
 
 ```objectivec
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {

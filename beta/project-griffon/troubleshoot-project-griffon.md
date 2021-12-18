@@ -55,7 +55,7 @@ Please upgrade the Adobe Analytics and Assurance SDK extensions to the latest ve
 | react-native-aepassurance v2.x.x | [react-native-acpcore](https://www.npmjs.com/package/@adobe/react-native-acpcore) | npm install @adobe/react-native-aepassurance@^2.0.0 <br/>npm install @adobe/react-native-acpcore |
 | react-native-aepassurance v3.x.x | [react-native-aepcore](https://www.npmjs.com/package/@adobe/react-native-aepcore) | npm install @adobe/react-native-aepassurance@^3.0.0 <br/>npm install @adobe/react-native-aepcore |
 
-In case your ReactNative application fails to build because of following error message and your are using `react-native-acpcore` with Assurance.
+In case you are using `react-native-acpcore` with Assurance and the React Native application fails to build with one of the following error messages:
 
 ```
 RCTAEPAssurance:  Fatal error: Module 'AEPAssurance' not found
@@ -67,11 +67,10 @@ or
 AppDelegate: AEPAssurance.h file not found
 ```
 
-**Solution : Downgrade your AEPAssurance package**
+**Solution**
 
 react-native-acpcore is only compatible with react-native-aepassurance 2.x.x and below. Please downgrade your react-native-aepassurance using the npm command:
 
 ```
 npm install @adobe/react-native-aepassurance@^2.0.0
 ```
-
