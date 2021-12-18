@@ -240,14 +240,15 @@ To start using the extension library, you must first register the extension with
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+
+To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Swift
 
 ```swift
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let extensions = [Lifecycle.self, Assurance.self]
+        let extensions = [Assurance.self, ...]
         MobileCore.registerExtensions(extensions, {
 		        MobileCore.configureWith(appId: "yourAppId")          
         })
@@ -261,7 +262,7 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    NSArray *extensionsToRegister = @[AEPMobileLifecycle.class, AEPMobileAssurance.class];
+    NSArray *extensionsToRegister = @[AEPMobileAssurance.class, ...];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
 				[AEPMobileCore configureWithAppId: @"yourAppId"];
     }];
@@ -274,7 +275,8 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 {% endtab %}
 
 {% tab title="iOS (AEP 1.x)" %}
-Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+
+To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
 #### Swift
 
