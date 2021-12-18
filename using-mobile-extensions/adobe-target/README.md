@@ -27,7 +27,7 @@ To get started with Target, follow these steps:
 
 ## Add Target to your app
 
-To add Target to your app:
+To add the Target extension to your app:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -47,8 +47,36 @@ To add Target to your app:
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
-1. Add the Mobile Core and Target CocoaPods to your project via your `Podfile`.
+{% tab title="iOS (AEP 3.x)" %}
+1. Add the Mobile Core and AEPTarget CocoaPods to your project via your `Podfile`.
+
+   ```text
+    pod 'AEPCore'
+    pod 'AEPTarget'
+   ```
+
+2. Import the Target and Identity libraries.
+
+  **Swift**
+
+   ```swift
+       import AEPCore
+       import AEPTarget
+       import AEPIdentity
+   ```
+
+   **Objective C**
+
+   ```objectivec
+       @import AEPCore
+       @import AEPTarget
+       @import AEPIdentity
+   ```
+   
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+1. Add the ACPCore and ACPTarget CocoaPods to your project via your `Podfile`.
 
    ```text
     pod 'ACPCore'
@@ -56,6 +84,14 @@ To add Target to your app:
    ```
 
 2. Import the Target and Identity libraries.
+
+  **Swift**
+
+   ```swift
+       #import ACPCore
+       #import ACPTarget
+       #import ACPIdentity
+   ```
 
    **Objective C**
 
@@ -67,13 +103,7 @@ To add Target to your app:
        #import "ACPTargetPrefetchObject.h"
    ```
 
-   **Swift**
 
-   ```swift
-       #import ACPCore
-       #import ACPTarget
-       #import ACPIdentity
-   ```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -102,7 +132,7 @@ To add Target to your app:
 
 ### Register Target with Mobile Core
 
-To register Target with Mobile Core:
+To register the Target extension with Mobile Core:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -133,7 +163,45 @@ public class TargetApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+#### Swift
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
+  MobileCore.configureWith(appId: "yourAppId")
+  MobileCore.registerExtensions([Target.self, Identity.self])  
+  return true
+}
+```
+#### Objective C
+
+In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions: @[AEPMobileIdentity.class, AEPMobileTarget.class] completion:^{
+        //Completion callback
+    }];
+
+    // Use the App id assigned to this application via Adobe Launch
+    [AEPMobileCore configureWithAppId: @"yourAppId"];
+    return YES;
+}
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+#### Swift
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  ACPCore.configure(withAppId: "yourAppId")   
+  ACPTarget.registerExtension()
+  ACPIdentity.registerExtension()
+  ACPCore.start(nil)
+  // Override point for customization after application launch.
+  return true;
+}
+```
 #### Objective C
 
 In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
@@ -146,19 +214,6 @@ In your app's `didFinishLaunchingWithOptions` function, register the Target exte
   [ACPCore start:nil];
   // Override point for customization after application launch.
   return YES;
-}
-```
-
-#### Swift
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  ACPCore.configure(withAppId: "yourAppId")   
-  ACPTarget.registerExtension()
-  ACPIdentity.registerExtension()
-  ACPCore.start(nil)
-  // Override point for customization after application launch.
-  return true;
 }
 ```
 {% endtab %}
@@ -200,7 +255,32 @@ TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+#### Syntax
+
+```swift
+@objc public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
+```
+
+#### Examples
+
+Here are examples in Swift and Objective C:
+
+**Swift**
+
+```swift
+let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
+```
+
+**Objective C**
+
+```objectivec
+AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 #### Syntax
 
 ```objectivec
@@ -211,18 +291,18 @@ purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
-
-**Objective C**
-
-```objectivec
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-```
+Here are some examples in Swift and Objective C:
 
 **Swift**
 
 ```swift
 let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+```
+
+**Objective C**
+
+```objectivec
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
 ```
 {% endtab %}
 
