@@ -56,6 +56,13 @@ pod 'AEPAssurance', '3'
 
 Import the Assurance extension along with the other Adobe Mobile extensions::
 
+#### Swift
+
+```swift
+import AEPCore
+import AEPAssurance // <-- import the AEPAssurance library
+```
+
 #### Objective-C
 
 ```objectivec
@@ -63,12 +70,6 @@ Import the Assurance extension along with the other Adobe Mobile extensions::
 @import AEPAssurance; // <-- import the AEPAssurance library
 ```
 
-#### Swift
-
-```swift
-import AEPCore
-import AEPAssurance // <-- import the AEPAssurance library
-```
 {% endtab %}
 
 {% tab title="iOS (AEP 1.x)" %}
@@ -81,18 +82,18 @@ pod 'AEPAssurance','~> 1.0'
 
 Import the Project Griffon libraries along with other SDK libraries:
 
-#### Objective-C
-
-```objectivec
-#import "ACPCore.h"
-#import "AEPAssurance.h" // <-- import the AEPAssurance library
-```
-
 #### Swift
 
 ```swift
 import ACPCore
 import AEPAssurance // <-- import the AEPAssurance library
+```
+
+#### Objective-C
+
+```objectivec
+#import "ACPCore.h"
+#import "AEPAssurance.h" // <-- import the AEPAssurance library
 ```
 
 {% endtab %}
@@ -241,6 +242,20 @@ To start using the extension library, you must first register the extension with
 {% tab title="iOS (AEP 3.x)" %}
 Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
 
+#### Swift
+
+```swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        let extensions = [Lifecycle.self, Assurance.self]
+        MobileCore.registerExtensions(extensions, {
+		        MobileCore.configureWith(appId: "yourAppId")          
+        })
+
+        return true
+    }
+```
+
 #### Objective-C
 
 ```objectivec
@@ -256,36 +271,10 @@ Registering the extension with Core sends Experience Platform SDK events to an a
 
 ```
 
-#### Swift
-
-```swift
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let extensions = [Lifecycle.self, Assurance.self]
-        MobileCore.registerExtensions(extensions, {
-		        MobileCore.configureWith(appId: "yourAppId")          
-        })
-
-        return true
-    }
-```
 {% endtab %}
 
 {% tab title="iOS (AEP 1.x)" %}
 Registering the extension with Core sends Experience Platform SDK events to an active Project Griffon session. To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
-
-#### Objective-C
-
-```objectivec
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore configureWithAppId:@"yourAppId"];
-    [AEPAssurance registerExtension]; // <-- register AEPAssurance with Core
-    [ACPCore start:nil];
-    // Override point for customization after application launch.
-    return YES;
- }
-```
 
 #### Swift
 
@@ -297,6 +286,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      // Override point for customization after application launch. 
      return true;
 }
+```
+
+#### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"yourAppId"];
+    [AEPAssurance registerExtension]; // <-- register AEPAssurance with Core
+    [ACPCore start:nil];
+    // Override point for customization after application launch.
+    return YES;
+ }
 ```
 
 {% endtab %}
@@ -411,42 +412,9 @@ You may call this API when the app launches with a url \(see code snippet below 
 
 ### startSession
 
-#### Objective-C
-
-#### Syntax
-
-```objectivec
-static func startSession(url: URL?)
-```
-
-#### Example
-
-```objectivec
-- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [AEPMobileAssurance startSessionWithUrl:url];
-    return true;
-}
-```
-
-In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
-
-```objectivec
-
-- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {    
-    NSURL *deepLinkURL = connectionOptions.URLContexts.allObjects.firstObject.URL;
-    [AEPMobileAssurance startSessionWithUrl:deepLinkURL];
-}
-
-
-- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
-    [AEPMobileAssurance startSessionWithUrl:URLContexts.allObjects.firstObject.URL];
-}
-
-```
-
 #### Swift
 
-#### Example
+**Example**
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -473,15 +441,68 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
     }
 ```
 
+
+
+#### Objective-C
+
+**Syntax**
+
+```objectivec
+static func startSession(url: URL?)
+```
+
+**Example**
+
+```objectivec
+- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [AEPMobileAssurance startSessionWithUrl:url];
+    return true;
+}
+```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```objectivec
+
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {    
+    NSURL *deepLinkURL = connectionOptions.URLContexts.allObjects.firstObject.URL;
+    [AEPMobileAssurance startSessionWithUrl:deepLinkURL];
+}
+
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+    [AEPMobileAssurance startSessionWithUrl:URLContexts.allObjects.firstObject.URL];
+}
+
+```
+
 {% endtab %}
 
 {% tab title="iOS (AEP 1.x)" %}
 
 ### startSession
 
+#### Swift
+
+**Example**
+
+```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    AEPAssurance.startSession(url)
+    return true
+}
+```
+
+In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
+
+```swift
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        AEPAssurance.startSession((URLContexts.first!).url)
+}
+```
 #### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```objectivec
 + (void) startSession: (NSURL* _Nonnull) url;
@@ -507,24 +528,6 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 }
 ```
 
-#### Swift
-
-#### Example
-
-```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    AEPAssurance.startSession(url)
-    return true
-}
-```
-
-In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s `scene(_:openURLContexts:)` method as follows:
-
-```swift
-func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        AEPAssurance.startSession((URLContexts.first!).url)
-}
-```
 {% endtab %}
 {% endtabs %}
 
