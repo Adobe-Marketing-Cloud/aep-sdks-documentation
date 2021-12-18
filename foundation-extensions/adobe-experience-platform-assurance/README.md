@@ -51,7 +51,7 @@ Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/
 
 ```text
 pod 'AEPCore'
-pod 'AEPAssurance', '3'
+pod 'AEPAssurance'
 ```
 
 Import the Assurance extension along with the other Adobe Mobile extensions::
