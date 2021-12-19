@@ -334,7 +334,29 @@ TargetProduct targetProduct = new TargetProduct("123", "Books");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 3.x)" %}
+```swift
+@objc public init(productId: String, categoryId: String? = nil)
+```
+
+#### Examples
+
+Here are some examples in Swift and Objective C:
+
+**Swift**
+
+```swift
+let product = TargetProduct(productId: "pId1", categoryId: "cId1")
+```
+
+**Objective C**
+
+```objectivec
+AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 #### Syntax
 
 ```objectivec
@@ -344,18 +366,18 @@ categoryId: (nullable NSString*) categoryId;
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
-
-**Objective C**
-
-```objectivec
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-```
+Here are some examples in Swift and Objective C:
 
 **Swift**
 
 ```swift
 let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+```
+
+**Objective C**
+
+```objectivec
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
 ```
 {% endtab %}
 
@@ -410,7 +432,50 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (ACP 3.x)" %}
+#### Syntax
+
+```swift
+@objc public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
+```
+
+#### Examples
+
+Here are some examples in Swift and Objective C:
+
+**Swift**
+
+```swift
+let mboxParameters = [
+"status": "Platinum"
+]
+let profileParameters = [
+"gender": "female"
+]
+
+let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
+
+let product = TargetProduct(productId: "pId1", categoryId: "cId1")
+
+let targetParameters = TargetParameters(parameters: mboxParameters, profileParameters: profileParameters, order: order, product: product))
+```
+
+**Objective C**
+
+```objectivec
+NSDictionary *mboxParameters = @{@"status":@"Platinum"};
+NSDictionary *profileParameters = @{@"gender":@"female"};
+
+AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
+
+AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
+
+AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:mboxParameters profileParameters:profileParameters order:order product:product];
+```
+{% endtab %}
+
+
+{% tab title="iOS (ACP 2.x)" %}
 #### Syntax
 
 ```objectivec
@@ -422,7 +487,25 @@ order: (nullable ACPTargetOrder*) order;
 
 #### Examples
 
-Here are some examples in Objective C and Swift:
+Here are some examples in Swift and Objective C:
+
+**Swift**
+
+```swift
+let mboxParameters = [
+"status": "Platinum"
+]
+let profileParameters = [
+"gender": "female"
+]
+
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+
+let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
+```
+
 
 **Objective C**
 
@@ -438,23 +521,6 @@ ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWit
 profileParameters:profileParameters
 product:product
 order:order];
-```
-
-**Swift**
-
-```objectivec
-let mboxParameters = [
-"status": "Platinum"
-]
-let profileParameters = [
-"gender": "female"
-]
-
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
-
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-
-let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 {% endtab %}
 
