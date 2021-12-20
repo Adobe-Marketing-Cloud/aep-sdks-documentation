@@ -1,18 +1,18 @@
 # Signal
 
-The Signal extension allows marketers to send a "signal" to their apps through the Adobe Experience Platform Mobile SDKs. This signal might tell the Mobile SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in Data Collection UI.
+The Signal extension allows marketers to send a "signal" to their apps through the Adobe Experience Platform Mobile SDKs. This signal might tell the Mobile SDKs or the apps to complete tasks, such as send PII-labeled data, to trigger a postback to a third-party ad-network and open an app deep link or URL. To ensure that signals are sent or are activated, the marketers need to configure triggers and traits in the Data Collection UI.
 
-The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in Data Collection UI.
+The Signal extension is bundled with the [MobileCore (Android)/ACPCore (iOS)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) extension and allows you to send postbacks to third-party endpoints and open URLs, such as web URLs or application deep links, when using rules actions in the Data Collection UI.
 
 To send PII data to external destinations, the `PII` action can trigger the Rules Engine when certain triggers and traits match. When setting a rule, you can also set the `PII` action for a Signal event. The `collectPii` API can then be used to trigger the rule and send the PII data to a remote server.
 
 To get started with Signal extension, complete the following steps:
 
 1. Add the **Signal** extension to your app.
-2. Define the necessary rules in Data Collection UI. 
-3. (Optional) When using Send PII actions in Data Collection UI, implement the APIs to collect PII data and send it to the configured third party destination.
+2. Define the necessary rules in the Data Collection UI. 
+3. (Optional) When using Send PII actions in the Data Collection UI, implement the APIs to collect PII data and send it to the configured third party destination.
 
-For more information about creating and configuring a rule in Data Collection UI, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
+For more information about creating and configuring a rule in the Data Collection UI, see [Rules](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html?lang=en).
 
 ## Watch the Video
 
@@ -174,7 +174,7 @@ public class MobileApp extends Application {
 }
 ```
 
-**Important**: The Signal extension is automatically included in Mobile Core extension by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
+**Important**: The Signal extension is automatically included in the Mobile Core extension by Maven. When you manually install the Signal extension, ensure that you add the `signal-1.x.x.aar` library to your project.
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -287,7 +287,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
 private void startCallback()
 {
-  // set app id from Data Collection UI
+  // set app id from the Data Collection UI
   ACPCore.ConfigureWithAppID("yourAppId");
 }
 ```
@@ -311,7 +311,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {
   public void Call(Java.Lang.Object callback)
   {
-  // set app id from Data Collection UI
+  // set app id from the Data Collection UI
     ACPCore.ConfigureWithAppID("yourAppId");
   }
 }
@@ -325,5 +325,5 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 For more information about `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
-For more information about how to configure the Signal postbacks in Data Collection UI, see [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
+For more information about how to configure the Signal postbacks in the Data Collection UI, see [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
 
