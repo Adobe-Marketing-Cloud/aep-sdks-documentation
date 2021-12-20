@@ -1,5 +1,61 @@
 # API Reference
 
+## extensionVersion
+
+{% tabs %}
+{% tab title="Android" %}
+### extensionVersion
+
+The extensionVersion() API returns the version of the identity for edge network extension that is registered with the Mobile Core extension.
+
+**Java**
+
+**Syntax**
+
+```java
+public static String extensionVersion()
+```
+**Example**
+
+```java
+String extensionVersion = Identity.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+### extensionVersion
+
+The extensionVersion() API returns the version of the identity for edge network extension that is registered with the Mobile Core extension.
+
+**Swift**
+
+**Syntax**
+
+```swift
+static var extensionVersion: String
+```
+**Examples**
+
+```swift
+let extensionVersion = EdgeIdentity.extensionVersion
+```
+
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+
+**Examples**
+
+```objectivec
+NSString *extensionVersion = [AEPEdgeIdentity extensionVersion];
+```
+{% endtab %}
+{% endtabs %}
+
 ## getExperienceCloudId
 
 {% tabs %}
@@ -34,33 +90,24 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getExperienceCloudId
 
 This API retrieves the ECID that was generated when the app was initially launched.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the callback.
 
+**Swift**
+
 **Syntax**
 
 ```swift
-@objc(getExperienceCloudId:)
 static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
 * _completion_ is invoked after the ECID is available.  The default timeout is 1000ms.
 
 **Examples**
-
-**Objective-C**
-
-```objectivec
-[AEPEdgeIdentity getExperienceCloudId:^(NSString * _Nullable ecid, NSError * error) {   
-    // handle the retrieved ID here    
-}];
-```
-
-**Swift**
 
 ```swift
 Identity.getExperienceCloudId { (ecid, error) in
@@ -71,6 +118,21 @@ Identity.getExperienceCloudId { (ecid, error) in
   }
 }
 ```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) getExperienceCloudId:^(NSString * _Nullable ecid, NSError * _Nullable error)completion
+```
+**Examples**
+
+```objectivec
+[AEPEdgeIdentity getExperienceCloudId:^(NSString * _Nullable ecid, NSError * error) {   
+    // handle the retrieved ID here    
+}];
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -106,31 +168,22 @@ Identity.getIdentities(new AdobeCallback<IdentityMap>() {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getIdentities
 
-Get all identities in the Identity for Egde Network extension, including customer identifiers which were previously added.
+Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
+
+**Swift**
 
 **Syntax**
 
 ```swift
-@objc(getIdentities:)
 static func getIdentities(completion: @escaping (IdentityMap?, Error?) -> Void)
 ```
 
 * _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](api-reference.md#identitymap)
 
 **Examples**
-
-**Objective-C**
-
-```objectivec
-[AEPEdgeIdentity getIdentities:^(AEPIdentityMap *map, NSError * error) {   
-    // handle the retrieved identities here    
-}];
-```
-
-**Swift**
 
 ```swift
 Identity.getIdentities { (identityMap, error) in
@@ -141,81 +194,96 @@ Identity.getIdentities { (identityMap, error) in
   }
 }
 ```
+
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) getIdentities:^(AEPIdentityMap * _Nullable map, NSError * _Nullable error)completion
+```
+
+**Examples**
+
+```objectivec
+[AEPEdgeIdentity getIdentities:^(AEPIdentityMap *map, NSError * error) {   
+    // handle the retrieved identities here    
+}];
+```
+
 {% endtab %}
 {% endtabs %}
 
-## updateIdentities
+
+## registerExtension
 
 {% tabs %}
 {% tab title="Android" %}
-### updateIdentities
+### registerExtension
 
-Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
-
-Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
-
-Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
-
-* ECID
-* IDFA
-* GAID
+Registration occurs by passing identity for edge network extension to the MobileCore.registerExtensions API.
 
 **Java**
 
 **Syntax**
 
 ```java
-public static void updateIdentities(final IdentityMap identityMap);
+public static void registerExtension()
 ```
 
 **Example**
-
 ```java
-IdentityItem item = new IdentityItem("user@example.com");
-IdentityMap identityMap = new IdentityMap();
-identityMap.addItem(item, "Email")
-Identity.updateIdentities(identityMap);
+import com.adobe.marketing.mobile.edge.identity.Identity
+
+...
+Identity.registerExtension();
 ```
+{% hint style="info" %}
+If your use-case covers both Edge Network and Adobe Experience Cloud Solutions extensions, you need to register Identity for Edge Network and Identity from Mobile Core for Experience Cloud Identity Service extensions. For more details, see the [Frequently asked questions](identity-faq.md#q-i-am-using-aep-edge-and-adobe-solutions-extensions-which-identity-extension-should-i-install-and-register).
+
+{% endhint %}
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
-### updateIdentities
+{% tab title="iOS (AEP 3.x)" %}
+### registerExtension
 
-Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Registration occurs by passing identity for edge network extension to the MobileCore.registerExtensions API.
 
-Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
-
-Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
-
-* ECID
-* IDFA
-* GAID
+**Swift**
 
 **Syntax**
 
 ```swift
-@objc(updateIdentities:)
-static func updateIdentities(with map: IdentityMap)
+static func registerExtensions(_ extensions: [NSObject.Type], 
+                               _ completion: (() -> Void)? = nil)
 ```
 
 **Examples**
 
+```swift
+import AEPEdgeIdentity
+
+...
+MobileCore.registerExtensions([Identity.self])
+```
+
 **Objective-C**
 
+**Syntax**
+
 ```objectivec
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
-AEPIdentityMap *map = [[AEPIdentityMap alloc] init];
-[map addItem:item withNamespace:@"Email"];
-[AEPMobileEdgeIdentity updateIdentities:map];
++ (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
+                 completion: (void (^ _Nullable)(void)) completion;
+```
+**Examples**
+
+```objectivec
+@import AEPEdgeIdentity;
+
+...
+[AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class] completion:nil];
 ```
 
-**Swift**
-
-```swift
-let identityMap = IdentityMap()
-map.addItem(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
-Identity.updateIdentities(with: identityMap)
-```
 {% endtab %}
 {% endtabs %}
 
@@ -251,7 +319,7 @@ Identity.removeIdentity(item, "Email");
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### removeIdentity
 
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
@@ -264,27 +332,36 @@ Removing identities using a reserved namespace is not allowed using this API. Th
 * IDFA
 * GAID
 
+**Swift**
+
 **Syntax**
 
 ```swift
-@objc(removeIdentityItem:withNamespace:)
 static func removeIdentity(item: IdentityItem, withNamespace: String)
 ```
 
 **Examples**
 
+```swift
+Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
+```
+
 **Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) removeIdentityItem:(AEPIdentityItem * _Nonnull) item 
+                             withNamespace: (NSString * _Nonnull) namespace
+```
+
+**Examples**
 
 ```objectivec
 AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
 [AEPMobileEdgeIdentity removeIdentityItem:item withNamespace:@"Email"];
 ```
 
-**Swift**
-
-```swift
-Identity.removeIdentity(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
-```
 {% endtab %}
 {% endtabs %}
 
@@ -297,6 +374,89 @@ The Identity for Edge Network extension does not read the Mobile SDK's privacy s
 {% endhint %}
 
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
+
+## updateIdentities
+
+{% tabs %}
+{% tab title="Android" %}
+### updateIdentities
+
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+
+Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
+
+Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
+
+* ECID
+* IDFA
+* GAID
+
+**Java**
+
+**Syntax**
+
+```java
+public static void updateIdentities(final IdentityMap identityMap);
+```
+
+**Example**
+
+```java
+IdentityItem item = new IdentityItem("user@example.com");
+IdentityMap identityMap = new IdentityMap();
+identityMap.addItem(item, "Email")
+Identity.updateIdentities(identityMap);
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+### updateIdentities
+
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+
+Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
+
+Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
+
+* ECID
+* IDFA
+* GAID
+
+**Swift**
+
+**Syntax**
+
+```swift
+static func updateIdentities(with map: IdentityMap)
+```
+
+**Examples**
+
+```swift
+let identityMap = IdentityMap()
+map.addItem(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
+Identity.updateIdentities(with: identityMap)
+```
+
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) updateIdentities:(AEPIdentityMap * _Nonnull)map
+```
+
+**Examples**
+
+```objectivec
+AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
+AEPIdentityMap *map = [[AEPIdentityMap alloc] init];
+[map addItem:item withNamespace:@"Email"];
+[AEPMobileEdgeIdentity updateIdentities:map];
+```
+
+{% endtab %}
+{% endtabs %}
 
 ## Public Classes
 
@@ -368,9 +528,30 @@ boolean hasNotIdentities = identityMap.isEmpty();
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Examples**
 
+**Swift**
+
+```swift
+// Initialize
+let identityMap: IdentityMap = IdentityMap()
+
+// Add an item
+identityMap.add(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
+
+// Remove an item
+identityMap.remove(item: IdentityItem(id: "user@example.com", withNamespace: "Email"))
+
+// Get a list of items for a given namespace
+let items: [IdentityItem] = identityMap.getItems(withNamespace: "Email")
+
+// Get a list of all namespaces used in current IdentityMap
+let namespaces: [String] = identityMap.namespaces
+
+// Check if IdentityMap has no identities
+let hasNoIdentities: Bool = identityMap.isEmpty
+```
 **Objective-C**
 
 ```objectivec
@@ -395,27 +576,6 @@ NSArray* namespaces = identityMap.namespaces;
 bool hasNoIdentities = identityMap.isEmpty;
 ```
 
-**Swift**
-
-```swift
-// Initialize
-let identityMap: IdentityMap = IdentityMap()
-
-// Add an item
-identityMap.add(item: IdentityItem(id: "user@example.com"), withNamespace: "Email")
-
-// Remove an item
-identityMap.remove(item: IdentityItem(id: "user@example.com", withNamespace: "Email"))
-
-// Get a list of items for a given namespace
-let items: [IdentityItem] = identityMap.getItems(withNamespace: "Email")
-
-// Get a list of all namespaces used in current IdentityMap
-let namespaces: [String] = identityMap.namespaces
-
-// Check if IdentityMap has no identities
-let hasNoIdentities: Bool = identityMap.isEmpty
-```
 {% endtab %}
 {% endtabs %}
 
@@ -447,22 +607,8 @@ boolean primary = item.isPrimary();
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 **Examples**
-
-**Objective-C**
-
-```objectivec
-// Initialize
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
-
-// Getters
-NSString *id = primaryEmail.id;
-
-long state = primaryEmail.authenticatedState;
-
-bool primary = primaryEmail.primary;
-```
 
 **Swift**
 
@@ -479,6 +625,20 @@ let state: AuthenticatedState = item.authenticatedState
 
 let primary: Bool = item.primary
 ```
+**Objective-C**
+
+```objectivec
+// Initialize
+AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
+
+// Getters
+NSString *id = primaryEmail.id;
+
+long state = primaryEmail.authenticatedState;
+
+bool primary = primaryEmail.primary;
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -505,16 +665,31 @@ public enum AuthenticatedState {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+**Swift**
+
 **Syntax**
 
 ```swift
-@objc(AEPAuthenticatedState)
 public enum AuthenticatedState: Int, RawRepresentable, Codable {
     case ambiguous = 0
     case authenticated = 1
     case loggedOut = 2
 }
 ```
+**Objective-C**
+
+**Syntax**
+
+```swift
+public enum AuthenticatedState: Int, RawRepresentable, Codable {
+    case ambiguous = 0
+    case authenticated = 1
+    case loggedOut = 2
+}
+```
+
 {% endtab %}
 {% endtabs %}
+
