@@ -625,20 +625,6 @@ let state: AuthenticatedState = item.authenticatedState
 
 let primary: Bool = item.primary
 ```
-**Objective-C**
-
-```objectivec
-// Initialize
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
-
-// Getters
-NSString *id = primaryEmail.id;
-
-long state = primaryEmail.authenticatedState;
-
-bool primary = primaryEmail.primary;
-```
-
 {% endtab %}
 {% endtabs %}
 
@@ -678,18 +664,6 @@ public enum AuthenticatedState: Int, RawRepresentable, Codable {
     case loggedOut = 2
 }
 ```
-**Objective-C**
-
-**Syntax**
-
-```swift
-public enum AuthenticatedState: Int, RawRepresentable, Codable {
-    case ambiguous = 0
-    case authenticated = 1
-    case loggedOut = 2
-}
-```
-
 {% endtab %}
 {% endtabs %}
 
