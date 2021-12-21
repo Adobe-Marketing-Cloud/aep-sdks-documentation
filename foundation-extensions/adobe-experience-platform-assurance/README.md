@@ -54,7 +54,7 @@ pod 'AEPCore'
 pod 'AEPAssurance'
 ```
 
-Import the Assurance extension along with the other Adobe Mobile extensions::
+Import the Assurance extension along with the other Adobe Mobile extensions:
 
 #### Swift
 
@@ -73,7 +73,7 @@ import AEPAssurance // <-- import the AEPAssurance library
 {% endtab %}
 
 {% tab title="iOS (AEP 1.x)" %}
-Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
+Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`:
 
 ```text
 pod 'ACPCore'
@@ -215,7 +215,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tabs %}
 {% tab title="Android" %}
-To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core/README.md) extension.
 
 #### Java
 
@@ -241,7 +241,7 @@ To start using the extension library, you must first register the extension with
 
 {% tab title="iOS (AEP 3.x)" %}
 
-To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core/README.md) extension.
 
 #### Swift
 
@@ -276,7 +276,7 @@ To start using the extension library, you must first register the extension with
 
 {% tab title="iOS (AEP 1.x)" %}
 
-To start using the extension library, you must first register the extension with the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension.
+To start using the extension library, you must first register the extension with the [Mobile Core](../mobile-core/README.md) extension.
 
 #### Swift
 
