@@ -4,6 +4,23 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 20, 2021
+
+### React Native Plugins with Swift SDKs (Beta)
+
+The following Adobe Experience Platform React Native plugins are integrated with Android SDKs and iOS **Swift** SDKs. 
+
+- https://www.npmjs.com/package/@adobe/react-native-aepcore
+- https://www.npmjs.com/package/@adobe/react-native-aepuserprofile
+- https://www.npmjs.com/package/@adobe/react-native-aepedge
+- https://www.npmjs.com/package/@adobe/react-native-aepedgeidentity
+- https://www.npmjs.com/package/@adobe/react-native-aepedgeconsent
+- https://www.npmjs.com/package/@adobe/react-native-aepmessaging
+- https://www.npmjs.com/package/@adobe/react-native-aepassurance
+
+For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
+
+
 ## December 16, 2021
 
 ### iOS AEPRulesEngine 1.1.0
