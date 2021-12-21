@@ -1463,7 +1463,7 @@ import AEPServices
 ```text
 #import "ACPCore.h"
 
-[ACPCore setLogLevel: AEPLogLevelTrace];
+[ACPCore setLogLevel: ACPMobileLogLevelVerbose];
 ```
 
 **Swift**
