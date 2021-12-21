@@ -18,7 +18,7 @@ The following Adobe Experience Platform React Native plugins are integrated with
 - https://www.npmjs.com/package/@adobe/react-native-aepmessaging
 - https://www.npmjs.com/package/@adobe/react-native-aepassurance
 
-For more details, see the public documentations on [Github repository](https://github.com/adobe/aepsdk-react-native)
+For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
 
 
 ## December 16, 2021
