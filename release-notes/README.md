@@ -7,10 +7,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2
-* The Event hub shares wrapper type in its shared state.
+* Stability improvements for Configuration extension and full screen messages.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * Logging improvements for extensions registration flow.
-* Other stability improvements for Configuration extension and full screen messages.
+* The Event hub shares wrapper type in its shared state.
 * Adds new messaging event type and sources.
 * Deprecates SystemInfoService getApplicationVersion API.
 
