@@ -17,7 +17,7 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 ### Download and import the Identity extension
 
 {% hint style="info" %}
-The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [Frequently Asked Questions](identity-faq.md) page.
+The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [frequently asked questions](identity-faq.md).
 {% endhint %}
 
 {% tabs %}
@@ -78,7 +78,7 @@ import AEPEdgeIdentity
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift.md).
 
 {% endtab %}
 
@@ -138,8 +138,3 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-If your use-case covers both Edge Network and Adobe Experience Cloud Solutions extensions, you need to register Identity for Edge Network and Identity from Mobile Core for Experience Cloud Identity Service extensions. For more details, see the [Frequently asked questions](identity-faq.md#q-i-am-using-aep-edge-and-adobe-solutions-extensions-which-identity-extension-should-i-install-and-register).
-{% endhint %}
-

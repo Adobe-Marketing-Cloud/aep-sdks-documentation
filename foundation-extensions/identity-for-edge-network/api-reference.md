@@ -2,11 +2,10 @@
 
 ## extensionVersion
 
+The extensionVersion() API returns the version of the Identity for Edge Network extension.
+
 {% tabs %}
 {% tab title="Android" %}
-### extensionVersion
-
-The extensionVersion() API returns the version of the identity for edge network extension that is registered with the Mobile Core extension.
 
 **Java**
 
@@ -23,9 +22,6 @@ String extensionVersion = Identity.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### extensionVersion
-
-The extensionVersion() API returns the version of the identity for edge network extension that is registered with the Mobile Core extension.
 
 **Swift**
 
@@ -58,15 +54,12 @@ NSString *extensionVersion = [AEPEdgeIdentity extensionVersion];
 
 ## getExperienceCloudId
 
+This API retrieves the Experience Cloud ID (ECID) that was generated when the app was initially launched. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
 {% tabs %}
 {% tab title="Android" %}
-### getExperienceCloudId
 
-This API retrieves the ECID that was generated when the app was initially launched.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the [AdobeCallback](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
-
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes) is provided, and you are fetching the ECID from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
+The ECID value is returned via the [AdobeCallback](../mobile-core/mobile-core-api-reference.md#public-classes). When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public-classes) is provided to this API, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core/mobile-core-api-reference.md#public-classes).
 
 **Java**
 
@@ -91,11 +84,6 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### getExperienceCloudId
-
-This API retrieves the ECID that was generated when the app was initially launched.
-
-This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall. The values are returned via the callback.
 
 **Swift**
 
@@ -138,11 +126,10 @@ Identity.getExperienceCloudId { (ecid, error) in
 
 ## getIdentities
 
+Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
+
 {% tabs %}
 {% tab title="Android" %}
-### getIdentities
-
-Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
 When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes) is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
 
@@ -154,7 +141,7 @@ When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extens
 public static void getIdentities(final AdobeCallback<IdentityMap> callback);
 ```
 
-* _call_ is invoked after the identities are available. The return format is an instance of [IdentityMap](api-reference.md#identitymap). The callback may be invoked on a different thread.
+* _callback_ is invoked after the identities are available. The return format is an instance of [IdentityMap](api-reference.md#identitymap). The callback may be invoked on a different thread.
 
 **Example**
 
@@ -169,9 +156,6 @@ Identity.getIdentities(new AdobeCallback<IdentityMap>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### getIdentities
-
-Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
 **Swift**
 
@@ -217,11 +201,15 @@ Identity.getIdentities { (identityMap, error) in
 
 ## registerExtension
 
+Registers the Identity for Edge Network extension with the Mobile Core extension.
+
+{% hint style="info" %}
+If your use-case covers both Edge Network and Adobe Experience Cloud Solutions extensions, you need to register Identity for Edge Network and Identity for Experience Cloud Identity Service from Mobile Core extensions. For more details, see the [frequently asked questions](identity-faq.md#q-i-am-using-aep-edge-and-adobe-solutions-extensions-which-identity-extension-should-i-install-and-register).
+
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
-### registerExtension
-
-Registration occurs by passing identity for edge network extension to the MobileCore.registerExtensions API.
 
 **Java**
 
@@ -238,16 +226,12 @@ import com.adobe.marketing.mobile.edge.identity.Identity
 ...
 Identity.registerExtension();
 ```
-{% hint style="info" %}
-If your use-case covers both Edge Network and Adobe Experience Cloud Solutions extensions, you need to register Identity for Edge Network and Identity from Mobile Core for Experience Cloud Identity Service extensions. For more details, see the [Frequently asked questions](identity-faq.md#q-i-am-using-aep-edge-and-adobe-solutions-extensions-which-identity-extension-should-i-install-and-register).
 
-{% endhint %}
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### registerExtension
 
-Registration occurs by passing identity for edge network extension to the MobileCore.registerExtensions API.
+In iOS, the registration occurs by passing Identity for Edge Network extension to the [MobileCore.registerExtensions API](../mobile-core/mobile-core-api-reference.md#registerextensions).
 
 **Swift**
 
@@ -291,7 +275,6 @@ MobileCore.registerExtensions([Identity.self])
 
 {% tabs %}
 {% tab title="Android" %}
-### removeIdentity
 
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
@@ -320,7 +303,6 @@ Identity.removeIdentity(item, "Email");
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### removeIdentity
 
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
@@ -377,10 +359,6 @@ See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#res
 
 ## updateIdentities
 
-{% tabs %}
-{% tab title="Android" %}
-### updateIdentities
-
 Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
@@ -390,6 +368,9 @@ Updating identities using a reserved namespace is not allowed using this API. Th
 * ECID
 * IDFA
 * GAID
+
+{% tabs %}
+{% tab title="Android" %}
 
 **Java**
 
@@ -410,17 +391,6 @@ Identity.updateIdentities(identityMap);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### updateIdentities
-
-Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
-
-Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
-
-Updating identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
-
-* ECID
-* IDFA
-* GAID
 
 **Swift**
 
