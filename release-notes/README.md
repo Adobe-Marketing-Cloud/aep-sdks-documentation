@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## Dec 22, 2021
+
+### iOS AEPEdge 1.2.0
+
+* Adds XDM Imeplementation Details to each Experience Event sent to the Edge Network.
+* Fixes generic network error format to conform to EdgeEventError type so they are dispatched back to the caller correctly.
+
+### Android Edge 1.2.0
+
+* Adds XDM Imeplementation Details to each Experience Event sent to the Edge Network.
+
 ## December 20, 2021
 
 ### React Native Plugins with Swift SDKs (Beta)
