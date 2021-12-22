@@ -4,6 +4,22 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 22, 2021
+
+### iOS AEPCore 3.3.2
+
+* A fix to Identity.getIdentifiers API
+* A fix to configureWithAppId API
+* An update to configureWithAppId to support removing appID from persistence when passing empty app id
+* A fix to FullScreenMessage
+* Rename wrapper type to names defined in XDM implementation details
+* Logging improvments
+* Update archive command to include pod install
+* A fix for an intermittently failing unit test
+* Deprecate SystemInfoService's getApplicationVersion
+* Wait for Analytics shared state when registered, for GetUrlVariables and AppendToUrls APIs
+* Add messaging event type and sources
+
 ## December 20, 2021
 
 ### React Native Plugins with Swift SDKs (Beta)
