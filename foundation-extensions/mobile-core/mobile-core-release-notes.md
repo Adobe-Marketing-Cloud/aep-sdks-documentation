@@ -6,7 +6,7 @@
 * Stability improvements for Configuration extension and full screen messages.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * Logging improvements for extensions registration flow.
-* The Event hub shares wrapper type in its shared state.
+* The Event Hub shares wrapper type in its shared state.
 * Adds new messaging event type and sources.
 * Deprecates SystemInfoService getApplicationVersion API.
 
@@ -19,7 +19,7 @@
 
 * Stability improvements for Configuration extension.
 * Configuration now allows for empty appId to reset the previously set appId value.
-* The Event hub shares wrapper type in its shared state.
+* The Event Hub shares wrapper type in its shared state.
 
 ## December 15, 2021
 
