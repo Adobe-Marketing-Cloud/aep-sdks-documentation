@@ -34,7 +34,7 @@ Implementation details are automatically collected by the Edge Network extension
 | Property | Description |
 | :--- | :--- |
 | Version | The version string is a concatenation of the AEP Mobile Core extension version plus the Edge Network extension version. For example, `3.3.2+1.2.0`. |
-| Name | The name is a unique URI identifier for the Mobile SDK on each supported platform. For example, `https://ns.adobe.com/experience/mobilesdk/ios` for the Mobile SDK on iOS, or `https://ns.adobe.com/experience/mobilesdk/android/reactnative` for the Mobile SDK on Android using the React Native wrapper. |
+| Name | The name is a unique URI identifier for the AEP Mobile SDK on each supported platform. For example, `https://ns.adobe.com/experience/mobilesdk/ios` for the Mobile SDK on iOS, or `https://ns.adobe.com/experience/mobilesdk/android/reactnative` for the Mobile SDK on Android using the React Native wrapper. |
 | Environment | For a mobile application the environment is always `app`.|
 
 If you would like to include this information in your dataset, add the "Implementation Details" field group to the schema tied to your dataset.
