@@ -1,5 +1,20 @@
 # Release Notes
 
+## December 22, 2021
+
+### iOS AEPCore 3.3.2
+* The Event hub shares wrapper type in its shared state.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* Logging improvements for extensions registration flow.
+* Other stability improvements for Configuration extension and full screen messages.
+* Adds new messaging event type and sources.
+* Deprecates SystemInfoService getApplicationVersion API.
+
+### iOS AEPIdentity 3.3.2
+
+* Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
 ## December 15, 2021
 
 ### Android Core 1.9.1
