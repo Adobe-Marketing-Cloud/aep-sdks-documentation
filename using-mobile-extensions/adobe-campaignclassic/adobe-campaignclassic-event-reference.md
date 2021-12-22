@@ -45,7 +45,7 @@ The `registerDevice` API parameters are also sent in the event, as described bel
         "deviceManufacturer": "unknown",
         "deviceUuid": "00000000-3398-7b70-0000-000033987b70"
     },
-    "userKey": "john.doe@adobe.com"
+    "userKey": "john@example.com"
 }
 ```
 

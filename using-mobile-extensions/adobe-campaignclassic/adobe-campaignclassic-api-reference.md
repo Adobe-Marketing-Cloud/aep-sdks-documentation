@@ -90,7 +90,7 @@ public void onNewToken(String token) {
                 additionalParams.put("serial", 12345);
                 additionalParams.put("premium", true);
                 // Send the registration info
-                CampaignClassic.registerDevice(token, "johndoe@gmail.com",additionalParams,new AdobeCallback<Boolean>() {
+                CampaignClassic.registerDevice(token, "john@example.com",additionalParams,new AdobeCallback<Boolean>() {
                     @Override
                     public void call(final Boolean status) {
                         Log.d("TestApp", "Registration Status: " + status);
@@ -125,7 +125,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
             "serial": 12345,
             "premium": true
         ]
-        ACPCampaignClassic.registerDevice(deviceToken, userKey: "johndoe@gmail.com", additionalParams: params) { result in
+        ACPCampaignClassic.registerDevice(deviceToken, userKey: "john@example.com", additionalParams: params) { result in
             print("Registration status: \(result)")
         }
 }
@@ -148,7 +148,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
   [params setObject: [NSNumber numberWithInt:12345] forKey: @"serial"];
   [params setObject: [NSNumber numberWithBool:YES]  forKey: @"premium"];
 
-[ACPCampaignClassic registerDevice:deviceToken userKey:@"johndoe@gmail.com" additionalParams:params callback:^(BOOL success) {
+[ACPCampaignClassic registerDevice:deviceToken userKey:@"john@example.com" additionalParams:params callback:^(BOOL success) {
     NSLog(@"Registration Status: %d", success);
 }
 ```
@@ -305,10 +305,10 @@ func trackNotificationClick(_ trackInfo: [String: String])
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
       guard let userInfo = response.notification.request.content.userInfo as? [String: String] else {
-          return
+          return;
       }
-      ACPCampaignClassic.trackNotificationClick(userInfo)
-      completionHandler()
+      ACPCampaignClassic.trackNotificationClick(userInfo);
+      completionHandler();
 }
 ```
 
