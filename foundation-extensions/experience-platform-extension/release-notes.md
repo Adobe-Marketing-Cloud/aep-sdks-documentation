@@ -4,12 +4,12 @@
 
 ### iOS AEPEdge 1.2.0
 
-* Adds XDM Imeplementation Details to each Experience Event sent to the Edge Network.
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
 * Fixes generic network error format to conform to EdgeEventError type so they are dispatched back to the caller correctly.
 
 ### Android Edge 1.2.0
 
-* Adds XDM Imeplementation Details to each Experience Event sent to the Edge Network.
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
 
 
 ## Sept 3, 2021
