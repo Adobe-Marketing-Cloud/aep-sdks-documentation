@@ -15,6 +15,12 @@
 * Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
 * Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
 
+### Android Core 1.9.2
+
+* Stability improvements for Configuration extension.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* The Event hub shares wrapper type in its shared state.
+
 ## December 15, 2021
 
 ### Android Core 1.9.1
