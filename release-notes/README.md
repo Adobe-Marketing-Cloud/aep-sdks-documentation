@@ -7,18 +7,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2
+* The Event hub shares wrapper type in its shared state.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* Logging improvements for extensions registration flow.
+* Other stability improvements for Configuration extension and full screen messages.
+* Adds new messaging event type and sources.
+* Deprecates SystemInfoService getApplicationVersion API.
 
-* A fix to Identity.getIdentifiers API
-* A fix to configureWithAppId API
-* An update to configureWithAppId to support removing appID from persistence when passing empty app id
-* A fix to FullScreenMessage
-* Rename wrapper type to names defined in XDM implementation details
-* Logging improvments
-* Update archive command to include pod install
-* A fix for an intermittently failing unit test
-* Deprecate SystemInfoService's getApplicationVersion
-* Wait for Analytics shared state when registered, for GetUrlVariables and AppendToUrls APIs
-* Add messaging event type and sources
+### iOS AEPIdentity 3.3.2
+
+* Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
 
 ## December 20, 2021
 
