@@ -107,7 +107,7 @@ The following key/value pair is used by the Adobe Campaign Classic extension fro
 
 The following events are dispatched by the Campaign Classic extension:
 
-### Campaign response
+### Campaign response content
 
 This event is a response from the Campaign Classic extension to notify the result of the registration request that is sent to the Campaign Classic marketing server.
 
