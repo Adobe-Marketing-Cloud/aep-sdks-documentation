@@ -1,6 +1,6 @@
 # Release Notes
 
-## Dec 22, 2021
+## December 22, 2021
 
 ### iOS AEPEdge 1.2.0
 

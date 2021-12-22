@@ -4,7 +4,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## Dec 22, 2021
+## December 22, 2021
+
+### iOS AEPCore 3.3.2
+* Stability improvements for Configuration extension and full screen messages.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* Logging improvements for extensions registration flow.
+* The Event hub shares wrapper type in its shared state.
+* Adds new messaging event type and sources.
+* Deprecates SystemInfoService getApplicationVersion API.
+
+### iOS AEPIdentity 3.3.2
+
+* Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
 
 ### iOS AEPEdge 1.2.0
 
