@@ -615,25 +615,73 @@ The SDK can only collect information from the launching Activity if [`setApplica
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x Swift)" %}
 #### Syntax
 
-```text
+```swift
+public static func collectLaunchInfo(_ userInfo: [String: Any])
+```
+
+#### Examples
+
+Here are some examples in Swift:
+
+**Swift**
+
+```swift
+   let launchInfo = [
+       "key_str":"stringValue",
+       "adb_deeplink":"abc://myawesomeapp?some=param&some=other_param",
+       "adb_m_id":"awesomePushMessage",
+       "adb_m_l_id":"happyBirthdayNotification"]
+    MobileCore.collectLaunchInfo(launchInfo)
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x Objective-C)" %}
+
+#### Examples
+
+Here are some examples of calling `collectLaunchInfo` in Objective C:
+
+**Objective C**
+
+```objectivec
+ NSDictionary<NSString *, id> * launchInfo = @{@"key_str":@"stringValue", @"adb_deeplink":@"abc://myawesomeapp?some=param&some=other_param", @"adb_m_id":@"awesomePushMessage", @"adb_m_l_id":@"happyBirthdayNotification"};
+ [AEPMobileCore collectLaunchInfo:launchInfo];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x Objective-C)" %}
+#### Syntax
+
+```objectivec
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
 ```
 
 #### Examples
 
-Here are some examples in Objective-C and Swift:
+Here are some examples in Objective-C:
 
 **Objective-C**
 
 ```text
 [ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x Swift)" %}
+#### Syntax
+
+```objectivec
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+#### Examples
+
+Here are some examples in Swift:
 
 **Swift**
-
 ```swift
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
