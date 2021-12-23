@@ -6,7 +6,7 @@
 * Stability improvements for Configuration extension and full screen messages.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * Logging improvements for extensions registration flow.
-* The Event hub shares wrapper type in its shared state.
+* The Event Hub shares wrapper type in its shared state.
 * Adds new messaging event type and sources.
 * Deprecates SystemInfoService getApplicationVersion API.
 
@@ -14,6 +14,13 @@
 
 * Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
 * Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+### Android Core 1.9.2
+
+* Fixed a bug where event number was not incremented correctly for shared states.
+* Stability improvements for Configuration extension.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* The Event Hub shares wrapper type in its shared state.
 
 ## December 15, 2021
 

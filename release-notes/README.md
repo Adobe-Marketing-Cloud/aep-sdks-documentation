@@ -10,7 +10,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Stability improvements for Configuration extension and full screen messages.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * Logging improvements for extensions registration flow.
-* The Event hub shares wrapper type in its shared state.
+* The Event Hub shares wrapper type in its shared state.
 * Adds new messaging event type and sources.
 * Deprecates SystemInfoService getApplicationVersion API.
 
@@ -23,6 +23,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
 * Fixes generic network error format to conform to EdgeEventError type so they are dispatched back to the caller correctly.
+
+### Android Core 1.9.2
+
+* Fixed a bug where event number was not incremented correctly for shared states.
+* Stability improvements for Configuration extension.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* The Event Hub shares wrapper type in its shared state.
 
 ### Android Edge 1.2.0
 
