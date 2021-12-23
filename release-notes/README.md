@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 23, 2021
+
+### Android Edge 1.2.0
+
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
+
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2
@@ -30,10 +36,6 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Stability improvements for Configuration extension.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * The Event Hub shares wrapper type in its shared state.
-
-### Android Edge 1.2.0
-
-* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
 
 ## December 20, 2021
 
