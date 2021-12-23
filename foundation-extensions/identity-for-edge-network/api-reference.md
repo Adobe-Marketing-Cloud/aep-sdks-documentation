@@ -116,8 +116,8 @@ Identity.getExperienceCloudId { (ecid, error) in
 **Examples**
 
 ```objectivec
-[AEPEdgeIdentity getExperienceCloudId:^(NSString * _Nullable ecid, NSError * error) {   
-    // handle the retrieved ID here    
+[AEPMobileEdgeIdentity getExperienceCloudId:^(NSString *ecid, NSError *error) {   
+    // handle the error and the retrieved ID here    
 }];
 ```
 
@@ -190,8 +190,8 @@ Identity.getIdentities { (identityMap, error) in
 **Examples**
 
 ```objectivec
-[AEPEdgeIdentity getIdentities:^(AEPIdentityMap *map, NSError * error) {   
-    // handle the retrieved identities here    
+[AEPMobileEdgeIdentity getIdentities:^(AEPIdentityMap *map, NSError *error) {   
+    // handle the error and the retrieved ID here
 }];
 ```
 
@@ -273,9 +273,6 @@ MobileCore.registerExtensions([Identity.self])
 
 ## removeIdentity
 
-{% tabs %}
-{% tab title="Android" %}
-
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
@@ -285,6 +282,9 @@ Removing identities using a reserved namespace is not allowed using this API. Th
 * ECID
 * IDFA
 * GAID
+
+{% tabs %}
+{% tab title="Android" %}
 
 ### Java
 
@@ -303,16 +303,6 @@ Identity.removeIdentity(item, "Email");
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
-Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
-
-Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
-
-Removing identities using a reserved namespace is not allowed using this API. The reserved namespaces are:
-
-* ECID
-* IDFA
-* GAID
 
 ### Swift
 
@@ -531,21 +521,21 @@ let hasNoIdentities: Bool = identityMap.isEmpty
 
 ```objectivec
 // Initialize
-AEPIdentityMap *identityMap = [[AEPIdentityMap alloc] init];
+AEPIdentityMap* identityMap = [[AEPIdentityMap alloc] init];
 
 // Add an item
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
+AEPIdentityItem* item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
 [identityMap addItem:item withNamespace:@"Email"];
 
 // Remove an item
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
+AEPIdentityItem* item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
 [identityMap removeItem:item withNamespace:@"Email"];
 
 // Get a list of items for a given namespace
-NSArray* items = [identityMap getItemsWithNamespace:@"Email"];
+NSArray<AEPIdentityItem*>* items = [identityMap getItemsWithNamespace:@"Email"];
 
 // Get a list of all namespaces used in current IdentityMap
-NSArray* namespaces = identityMap.namespaces;
+NSArray<NSString*>* namespaces = identityMap.namespaces;
 
 // Check if IdentityMap has no identities
 bool hasNoIdentities = identityMap.isEmpty;
@@ -608,10 +598,10 @@ let primary: Bool = item.primary
 
 ```objectivec
 // Initialize
-AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
+AEPIdentityItem* item = [[AEPIdentityItem alloc] initWithId:@"identity" authenticatedState:AEPAuthenticatedStateAuthenticated primary:false];
 
 // Getters
-NSString *id = primaryEmail.id;
+NSString* id = primaryEmail.id;
 
 long state = primaryEmail.authenticatedState;
 
