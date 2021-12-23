@@ -131,7 +131,7 @@ Get all identities in the Identity for Edge Network extension, including custome
 {% tabs %}
 {% tab title="Android" %}
 
-When [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes) is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#public-classes).
+When [AdobeCallbackWithError](../mobile-core/mobile-core-api-reference.md#public-classes) is provided, and you are fetching the identities from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core/mobile-core-api-reference.md#public-classes).
 
 ### Java
 
@@ -165,7 +165,7 @@ Identity.getIdentities(new AdobeCallback<IdentityMap>() {
 static func getIdentities(completion: @escaping (IdentityMap?, Error?) -> Void)
 ```
 
-* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](api-reference.md#identitymap)
+* _completion_ is invoked after the identities are available.  The default timeout is 1000ms. The return format is an instance of [IdentityMap](api-reference.md#identitymap).
 
 **Examples**
 
@@ -231,7 +231,7 @@ Identity.registerExtension();
 
 {% tab title="iOS (AEP 3.x)" %}
 
-In iOS, the registration occurs by passing Identity for Edge Network extension to the [MobileCore.registerExtensions API](../mobile-core/mobile-core-api-reference.md#registerextensions).
+In iOS, the registration occurs by passing Identity for Edge Network extension to the [MobileCore.registerExtensions API](../mobile-core/mobile-core-api-reference.md#registerextension-s).
 
 ### Swift
 
