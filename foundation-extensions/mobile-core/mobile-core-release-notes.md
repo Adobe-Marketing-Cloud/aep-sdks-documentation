@@ -17,6 +17,7 @@
 
 ### Android Core 1.9.2
 
+* Fixed a bug where event number was not incremented correctly for shared states.
 * Stability improvements for Configuration extension.
 * Configuration now allows for empty appId to reset the previously set appId value.
 * The Event Hub shares wrapper type in its shared state.
