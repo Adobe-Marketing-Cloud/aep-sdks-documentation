@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## December 23, 2021
+
+### Android Edge 1.2.0
+
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
+
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2
@@ -18,6 +24,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
 * Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+### iOS AEPEdge 1.2.0
+
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
+* Fixes generic network error format to conform to EdgeEventError type so they are dispatched back to the caller correctly.
 
 ### Android Core 1.9.2
 
