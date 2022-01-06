@@ -20,16 +20,25 @@ Sessions contain information about the app's current lifecycle, such as the devi
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+
+Add the AEPLifecycle extension and it's dependency, the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+
+Add the following pods in your `Podfile`:
+
+```text
+pod 'AEPCore'
+pod 'AEPLifecycle'
+```
+Import the Lifecycle library:
+
 #### Swift
 
-1. Import the library:
 ```swift
 import AEPCore
 import AEPLifecycle
 ```
 #### Objective-C
 
-1. Import the library:
 ```objectivec
 @import AEPCore;
 @import AEPLifecycle;
@@ -38,9 +47,17 @@ import AEPLifecycle
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### Objective-C
 
-1. Import the library:
+The Lifecycle extension is included in the Mobile Core extension. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+
+Add the following pod in your `Podfile`:
+
+```text
+pod 'ACPCore'
+```
+Import the Lifecycle library:
+
+### Objective-C
 
 ```objectivec
  #import "ACPLifecycle.h"
@@ -49,7 +66,7 @@ import AEPLifecycle
 
 ### Swift
 
-1. In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
+In Swift, importing `ACPCore` also imports the necessary Lifecycle APIs:
 
 ```swift
 import ACPCore
