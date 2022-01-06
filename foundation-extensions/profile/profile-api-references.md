@@ -83,6 +83,15 @@ public static func updateUserAttributes(attributeDict: [String: Any])
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
+**Swift**
+
+```swift
+var profileMap = [AnyHashable: Any]()
+profileMap["username"] = "will_smith"
+profileMap["usertype"] = "Actor"
+UserProfile.updateUserAttributes(attributeDict: profileMap)
+```
+
 **Objective C**
 
 ```objectivec
@@ -92,14 +101,7 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 [AEPMobileUserProfile updateUserAttributes:profileMap];
 ```
 
-**Swift**
 
-```swift
-var profileMap = [AnyHashable: Any]()
-profileMap["username"] = "will_smith"
-profileMap["usertype"] = "Actor"
-UserProfile.updateUserAttributes(attributeDict: profileMap)
-```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
@@ -115,7 +117,7 @@ Remember the following information:
 
 #### **Syntax**
 
-```java
+```objectivec
 + (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
 ```
 
@@ -123,16 +125,16 @@ Remember the following information:
 
 You want to update `username` of a user obtained in the log in page:
 
-**Objective-C**
-
-```text
-[ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
-```
-
 **Swift**
 
-```java
+```swift
 ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
+```
+
+**Objective-C**
+
+```objectivec
+[ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
 ```
 
 ### updateUserAttributes
@@ -150,13 +152,22 @@ A null attribute value will remove the attribute.
 
 #### **Syntax**
 
-```text
+```objectivec
 + (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
 ```
 
 #### **Examples**
 
 You want to update `username, usertype` of a user obtained in the log in page :
+
+**Swift**
+
+```swift
+var profileMap = [AnyHashable: Any]()
+profileMap["username"] = "will_smith"
+profileMap["usertype"] = "Actor"
+ACPUserProfile.updateUserAttributes(profileMap)
+```
 
 **Objective C**
 
@@ -167,14 +178,6 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 [ACPUserProfile updateUserAttributes:profileMap];
 ```
 
-**Swift**
-
-```swift
-var profileMap = [AnyHashable: Any]()
-profileMap["username"] = "will_smith"
-profileMap["usertype"] = "Actor"
-ACPUserProfile.updateUserAttributes(profileMap)
-```
 {% endtab %}
 
 {% tab title="Cordova" %}
@@ -441,7 +444,7 @@ Removes the user profile attributes for the given keys.
 
 #### **Syntax**
 
-```java
+```swift
 public static void removeUserAttributes(List<String> attributeNames)
 ```
 
@@ -449,9 +452,16 @@ public static void removeUserAttributes(List<String> attributeNames)
 
 You want to remove `username`, `usertype` user data when session timeout occurs.
 
-```java
+```swift
 UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
+
+**Objective C**
+
+```objectivec
+[AEPMobileUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+```
+
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
@@ -469,16 +479,16 @@ Removes the user profile attribute for the given key.
 
 A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
-**Objective C**
-
-```objectivec
-[ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
-```
-
 **Swift**
 
 ```swift
 ACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
 ```
 
 ### removeUserAttributes
@@ -495,17 +505,19 @@ Removes the user profile attributes for the given keys.
 
 You want to remove `username`, `usertype` user data when session timeout occurs.
 
-**Objective C**
-
-```objectivec
-[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
-```
 
 **Swift**
 
 ```swift
 ACPUserProfile.removeUserAttributes(["username","usertype"]);
 ```
+
+**Objective C**
+
+```objectivec
+[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+```
+
 {% endtab %}
 
 {% tab title="Cordova" %}
@@ -753,6 +765,14 @@ Gets the user profile attributes with the given keys.
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
+**Swift**
+
+```swift
+ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
+              // your customized code
+})
+```
+
 **Objective C**
 
 ```objectivec
@@ -761,13 +781,6 @@ A retail application wants to get the `itemsAddedToCart` user data when processi
     }];
 ```
 
-**Swift**
-
-```swift
-ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
-              // your customized code
-})
-```
 {% endtab %}
 
 {% tab title="Cordova" %}

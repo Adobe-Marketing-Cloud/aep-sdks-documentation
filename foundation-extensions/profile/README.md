@@ -14,7 +14,19 @@ To get started with the Profile extension:
    * Update user attributes.
    * Remove user attributes.
 
-## Add Profile to your App
+## Install the Adobe Experience Platform Profile extension in Experience Platform Launch
+
+1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Profile** extension, and click **Install**.
+3. There are no configuration settings for **Profile**.
+4. Click **Save**.
+5. Follow the publishing process to update SDK configuration.
+
+
+![AEP Profile extension configuration](../../.gitbook/assets/mobile-profile-launch-configuration.png)
+
+
+## Add the Profile extension to your App
 
 To add the Profile extension to your app:
 
@@ -31,19 +43,28 @@ To add the Profile extension to your app:
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'AEPUserProfile'`.
+1. Add the Mobile Core and Profile extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+```ruby
+use_frameworks!
+target 'YourTargetApp' do
+    pod 'AEPCore', '~> 3.0'
+    pod 'AEPUserProfile', '~> 3.0'
+end
+```
 2. Import the UserProfile library.  
 
 ### Swift
 
 ```swift
+   import AEPCore
    import AEPUserProfile
 ```
 
 ### Objective C
 
-```text
-  @import AEPUserProfile;
+```objectivec
+   @import AEPCore;
+   @import AEPUserProfile;
 ```
 
 {% endtab %}
@@ -51,13 +72,15 @@ To add the Profile extension to your app:
 {% tab title="iOS (ACP 2.x)" %}
 ### Objective C
 
-1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
-2. Import the UserProfile and Identity library.   
-
-```text
-   #import "ACPCore.h"
-   #import "ACPUserProfile.h"
+1. Add the Mobile Core and Profile extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+```ruby
+use_frameworks!
+target 'YourTargetApp' do
+    pod 'ACPCore'
+    pod 'ACPUserProfile'
+end
 ```
+2. Import the UserProfile library.   
 
 ### Swift
 
@@ -66,6 +89,13 @@ To add the Profile extension to your app:
    import ACPUserProfile
 ```
 {% endtab %}
+
+### Objective C
+
+```objectivec
+   #import "ACPCore.h"
+   #import "ACPUserProfile.h"
+```
 
 {% tab title="Cordova" %}
 ### Cordova
@@ -158,11 +188,19 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
+
+### Swift
+
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([UserProfile.self], {
+  })
+  ...
+}
+```
+
 ### Objective C
-
-**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
-
-1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -175,24 +213,23 @@ public class MobileApp extends Application {
 }
 ```
 
-### Swift
-
-```swift
-// AppDelegate.swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([UserProfile.self], {
-  })
-  ...
-}
-```
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
+
+#### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     ACPCore.configure(withAppId: "yourAppId")   
+     ACPUserProfile.registerExtension() 
+     ACPCore.start(nil)
+     // Override point for customization after application launch. 
+     return true;
+}
+```
+
 ### Objective C
-
-**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
-
-1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
