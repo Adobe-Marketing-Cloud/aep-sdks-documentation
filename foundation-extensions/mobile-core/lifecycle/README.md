@@ -21,7 +21,7 @@ Sessions contain information about the app's current lifecycle, such as the devi
 
 {% tab title="iOS (AEP 3.x)" %}
 
-Add the AEPLifecycle extension and it's dependency, the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) extension to your project using Cocoapods.
+Add the AEPLifecycle extension and it's dependency, the [Mobile Core](../../mobile-core) extension, to your project using Cocoapods.
 
 Add the following pods in your `Podfile`:
 
