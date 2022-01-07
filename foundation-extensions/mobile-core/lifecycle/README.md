@@ -53,7 +53,7 @@ The Lifecycle extension is included in the Mobile Core extension. Add the [Mobil
 Add the following pod in your `Podfile`:
 
 ```text
-pod 'ACPCore'
+pod 'ACPCore','~>2.0'
 ```
 Import the Lifecycle library:
 
