@@ -10,19 +10,35 @@ To get the version of the Signal extension, use the following code sample:
 {% tab title="Android" %}
 #### Java
 
+**Syntax**
+
+```java
+public static String extensionVersion();
+```
+
+**Example**
+
 ```java
 String signalExtensionVersion = Signal.extensionVersion();
 ```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-### Swift
+**Syntax**
+
+```swift
+public static let extensionVersion
+```
+
+**Examples**
+
+**Swift**
 
 ```swift
 let version = Signal.extensionVersion
 ```
 
-### Objective-C
+**Objective-C**
 
 ```objectivec
 NSString *version = [AEPMobileSignal extensionVersion];
@@ -30,13 +46,21 @@ NSString *version = [AEPMobileSignal extensionVersion];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-### Swift
+**Syntax**
+
+```objectivec
+(nonnull NSString*) extensionVersion;
+```
+
+**Examples**
+
+**Swift**
 
 ```swift
 var signalExtensionVersion  = ACPSignal.extensionVersion()
 ```
 
-### Objective-C
+**Objective-C**
 
 ```objectivec
 NSString *signalExtensionVersion = [ACPSignal extensionVersion];

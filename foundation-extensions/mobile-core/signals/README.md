@@ -325,5 +325,5 @@ To send PII data to external destinations, the `PII` action can trigger the Rule
 
 For more information about `collectPii` and its usage, see [collectPii](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii).
 
-For more information about how to configure the Signal postbacks in the Data Collection UI, see [Signal extension and Rules Engine integration](https://aep-sdks.gitbook.io/docs/resources/user-guides/signal-extension-and-rules-engine-integration).
+For more information about how to configure the Signal postbacks in the Data Collection UI, see [Signal extension and Rules Engine integration](../../../resources/user-guides/signal-extension-and-rules-engine-integration).
 
