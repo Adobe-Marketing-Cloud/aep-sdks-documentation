@@ -1,6 +1,6 @@
 # API Reference
 
-## extensionVersion
+## extensionVersion <a id="extensionversion"></a>
 
 The extensionVersion() API returns the version of the Identity for Edge Network extension.
 
@@ -47,12 +47,12 @@ let extensionVersion = EdgeIdentity.extensionVersion
 **Examples**
 
 ```objectivec
-NSString *extensionVersion = [AEPEdgeIdentity extensionVersion];
+NSString *extensionVersion = [AEPMobileEdgeIdentity extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
 
-## getExperienceCloudId
+## getExperienceCloudId <a id="getExperienceCloudId"></a>
 
 This API retrieves the Experience Cloud ID (ECID) that was generated when the app was initially launched. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
@@ -124,7 +124,7 @@ Identity.getExperienceCloudId { (ecid, error) in
 {% endtab %}
 {% endtabs %}
 
-## getIdentities
+## getIdentities <a id="getIdentities"></a>
 
 Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
@@ -199,7 +199,7 @@ Identity.getIdentities { (identityMap, error) in
 {% endtabs %}
 
 
-## registerExtension
+## registerExtension <a id="registerExtension"></a>
 
 Registers the Identity for Edge Network extension with the Mobile Core extension.
 
@@ -271,7 +271,7 @@ MobileCore.registerExtensions([Identity.self])
 {% endtab %}
 {% endtabs %}
 
-## removeIdentity
+## removeIdentity <a id="removeIdentity"></a>
 
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
@@ -337,7 +337,7 @@ AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" 
 {% endtab %}
 {% endtabs %}
 
-## resetIdentities
+## resetIdentities <a id="resetIdentities"></a>
 
 Clears all identities stored in the Identity extension and generates a new Experience Cloud ID \(ECID\) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
@@ -347,7 +347,7 @@ The Identity for Edge Network extension does not read the Mobile SDK's privacy s
 
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
-## updateIdentities
+## updateIdentities <a id="updateIdentities"></a>
 
 Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 

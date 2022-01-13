@@ -1,6 +1,6 @@
 # Consent for Edge Network
 
-The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/mobile-core) and the [Edge Network extension](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge).
+The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](../../using-mobile-extensions/mobile-core) and the [Edge Network extension](../experience-platform-extension).
 
 ## Configure the Adobe Experience Platform Consent extension in Experience Platform Launch
 
@@ -66,7 +66,7 @@ import AEPEdgeConsent
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.h
 @import AEPCore;
 @import AEPEdge;
@@ -130,7 +130,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Objective-C
 
-```text
+```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class, AEPMobileEdgeConsent.class] completion:^{

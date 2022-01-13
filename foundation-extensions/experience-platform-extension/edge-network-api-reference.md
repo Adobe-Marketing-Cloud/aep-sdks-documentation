@@ -8,47 +8,46 @@ Returns the version of the client-side Edge extension.
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static String extensionVersion();
 ```
 
-#### Example
+**Example**
 
 ```java
-Edge.extensionVersion();
+String extensionVersion = Edge.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
-public static let extensionVersion
+static let extensionVersion
 ```
 
-#### Example
+**Example**
 
 ```swift
-Edge.extensionVersion
+let extensionVersion = Edge.extensionVersion
 ```
 
 ### Objective-C
 
-#### Syntax
+**Syntax**
 
-```text
-// Swift Edge
-public static let extensionVersion
+```objectivec
++ (nonnull NSString*) extensionVersion;
 ```
 
-#### Example
+**Example**
 
-```text
-[AEPMobileEdge extensionVersion];
+```objectivec
+NSString *extensionVersion = [AEPMobileEdge extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
@@ -61,7 +60,7 @@ Sends an Experience event to Adobe Experience Edge Network.
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback callback);
@@ -70,7 +69,7 @@ public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCa
 * _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
 * _callback_ - optional callback to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
-#### Example
+**Example**
 
 ```java
 // example 1 - send the experience event without handling the Edge Network response
@@ -86,10 +85,10 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
@@ -98,7 +97,7 @@ static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEve
 * _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
 * _completion_ - optional completion handler to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
-#### Example
+**Example**
 
 ```swift
 // example 1 - send the experience event without handling the Edge Network response
@@ -112,16 +111,15 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
 
 ### Objective-C
 
-#### Syntax
+**Syntax**
 
-```text
-// Swift Edge
-static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
+```objectivec
++ (void) sendExperienceEvent:(AEPExperienceEvent * _Nonnull)> completion:^(NSArray<AEPEdgeEventHandle *> * _Nonnull)completion>
 ```
 
-#### Example
+**Example**
 
-```text
+```objectivec
 // example 1 - send the experience event without handling the Edge Network response
 [AEPMobileEdge sendExperienceEvent:event completion:nil];
 
@@ -141,34 +139,37 @@ Registers the Edge extension with the Mobile Core SDK.
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void registerExtension();
 ```
 
-#### Example
+**Example**
 
 ```java
 Edge.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 Use the MobileCore API to register the Edge extension.
 
-#### Syntax
+**Syntax**
 
 ```swift
 // MobileCore
 public static func registerExtensions(_ extensions: [Extension.Type], _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+**Example**
 
 ```swift
+import AEPEdge
+
+...
 MobileCore.registerExtensions([Edge.self, ...], {
   // processing after registration
 })
@@ -178,20 +179,22 @@ MobileCore.registerExtensions([Edge.self, ...], {
 
 Use the AEPMobileCore API to register the Edge extension.
 
-#### Syntax
+**Syntax**
 
-```text
-// Swift MobileCore
-public static func registerExtensions(_ extensions: [Extension.Type], _ completion: (() -> Void)? = nil)
+```objectivec
++ (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
+                  completion: (void (^ _Nullable)(void)) completion;
 ```
 
-#### Example
+**Example**
 
-```text
-[AEPMobileCore registerExtensions:@[AEPMobileEdge.class, ...] completion:^{
-  // processing after registration
-}];
+```objectivec
+@import AEPEdge;
+
+[AEPMobileCore registerExtensions:@[AEPMobileEdge.class] completion:nil];...
+
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -279,6 +282,58 @@ public class EdgeEventHandle {
 ```
 
 Use this class when calling the sendEvent API with EdgeCallback.
+
+
+{% tab title="iOS (AEP 3.x)" %}
+### iOS
+#### XDMSchema interface
+
+The Edge extension provides the following interface:
+
+* XDMSchema
+
+By using the Edge extension, the **XDMSchema** interface can be used to define the classes that are associated with your defined schema in Adobe Experience Platform.
+
+```swift
+/// An interface representing a Platform XDM Event Data schema.
+public protocol XDMSchema: Encodable {
+
+    /// Returns the version of this schema as defined in the Adobe Experience Platform.
+    /// - Returns: The version of this schema
+    var schemaVersion: String { get }
+
+    /// Returns the identifier for this schema as defined in the Adobe Experience Platform.
+    /// The identifier is a URI where this schema is defined.
+    /// - Returns: The URI identifier for this schema
+    var schemaIdentifier: String { get }
+
+    /// Returns the identifier for this dataset as defined in the Adobe Experience Platform.
+    /// This is a system generated identifier for the Dataset the event belongs to.
+    /// - Returns: The  identifier as a String for this dataset
+    var datasetIdentifier: String { get }
+}
+```
+
+#### EdgeEventHandle
+
+The `EdgeEventHandle` is a response fragment from Adobe Experience Edge Service for a sent XDM Experience Event.
+One event can receive none, one or multiple `EdgeEventHandle`(s) as response.
+
+```swift
+@objc(AEPEdgeEventHandle)
+public class EdgeEventHandle: NSObject, Codable {
+
+    /// Encodes the event to which this handle is attached as the index in the events array in EdgeRequest
+    internal let eventIndex: Int?
+
+    /// Payload type
+    @objc public let type: String?
+
+    /// Event payload values
+    @objc public let payload: [[String: Any]]?
+}
+
+```
 {% endtab %}
 {% endtabs %}
 
