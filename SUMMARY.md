@@ -3,6 +3,7 @@
 * [Home](README.md)
 * [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions)
 * [Release notes](release-notes/README.md)
+  * [2021](release-notes/2021.md)
   * [2020](release-notes/2020.md)
   * [2019](release-notes/2019.md)
   * [2018](release-notes/2018.md)
