@@ -319,6 +319,10 @@ Please note that this release introduces breaking changes. For more details, see
 
 ## Jul 13, 2021
 
+### iOS AEPPlaces 3.0.1
+
+* Fix podspec and SPM configurations.
+
 ### iOS AEPAudience 3.0.2
 
 * Added support to handle the MobileCore.resetIdentities\(\) API.
@@ -464,6 +468,12 @@ This SDK is compatible with Android Core 1.8.2 and above.
 ### iOS AEPMobileServices 3.0.0
 
 * Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
+
+## Jun 1, 2021
+
+### iOS AEPPlaces 3.0.0
+
+* Initial release of AEPPlaces.
 
 ## May 25, 2021
 
