@@ -300,73 +300,72 @@ Use this class when calling the sendEvent API with EdgeCallback.
 #### ExperienceEvent
 
 Experience Event is the event to be sent to Adobe Experience Edge Network.
-The XDM data is required for any Experience Event being sent using the AEP Edge mobile extension.
+The XDM data is required for any Experience Event being sent using the Edge extension.
 
 ```Java
 public final class ExperienceEvent {
 
   
 public Builder() {...}
-		}
 
-		/**
-		 * Sets free form data associated with this event to be passed to Adobe Experience Edge.
-		 *
-		 * @param data free form data, JSON like types are accepted
-		 * @return instance of current builder
-		 * @throws UnsupportedOperationException if this instance was already built
-		 */
-		public Builder setData(final Map<String, Object> data) {...}
-	
-		/**
-		 * Solution specific XDM event data for this event.
-		 * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Map)},
-		 * the value will be overwritten and only the last changes are applied.
-		 * Setting {@code xdm} to null clears the value.
-		 *
-		 * This event is sent to the Experience Platform dataset defined by {@link Schema#getDatasetIdentifier()}.
-		 *
-		 * @param xdm {@link Schema} information
-		 * @return instance of current builder
-		 * @throws UnsupportedOperationException if this instance was already built
-		 */
-		public Builder setXdmSchema(final Schema xdm) {...}
+  /**
+    * Sets free form data associated with this event to be passed to Adobe Experience Edge.
+    *
+    * @param data free form data, JSON like types are accepted
+    * @return instance of current builder
+    * @throws UnsupportedOperationException if this instance was already built
+    */
+  public Builder setData(final Map<String, Object> data) {...}
 
-		/**
-		 * Solution specific XDM event data for this event, passed as raw mapping of keys and
-		 * Object values.
-		 * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
-		 * the value will be overwritten and only the last changes are applied.
-		 * Setting {@code xdm} to null clears the value.
-		 *
-		 * When using {@link Edge#sendEvent}
-		 * this event is sent to the Experience Platform {@code datasetIdentifier} if provided,
-		 * or to the default Experience Platform dataset defined when generating the Experience Edge
-		 * configuration ID if {@code datasetIdentifier} is null.
-		 *
-		 * @param xdm {@code Map<String, Object>} of raw XDM schema data
-		 * @param datasetIdentifier The Experience Platform dataset identifier where this event is sent.
-		 *                          If not provided, the default dataset defined in the configuration ID is used
-		 * @return instance of current builder
-		 * @throws UnsupportedOperationException if this instance was already built
-		 */
-		public Builder setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier) {...}
+  /**
+    * Solution specific XDM event data for this event.
+    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Map)},
+    * the value will be overwritten and only the last changes are applied.
+    * Setting {@code xdm} to null clears the value.
+    *
+    * This event is sent to the Experience Platform dataset defined by {@link Schema#getDatasetIdentifier()}.
+    *
+    * @param xdm {@link Schema} information
+    * @return instance of current builder
+    * @throws UnsupportedOperationException if this instance was already built
+    */
+  public Builder setXdmSchema(final Schema xdm) {...}
 
-		/**
-		 * Solution specific XDM event data for this event, passed as raw mapping of keys and
-		 * Object values.
-		 * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
-		 * the value will be overwritten and only the last changes are applied.
-		 * Setting {@code xdm} to null clears the value.
-		 *
-		 * When using {@link Edge#sendEvent} this event is sent to the default
-		 * Experience Platform dataset defined when generating the Experience Edge configuration ID.
-		 *
-		 * @param xdm {@code Map<String, Object>} of raw XDM schema data
-		 * @return instance of current builder
-		 * @throws UnsupportedOperationException if this instance was already built
-		 */
-		public Builder setXdmSchema(final Map<String, Object> xdm) {...}
+  /**
+    * Solution specific XDM event data for this event, passed as raw mapping of keys and
+    * Object values.
+    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
+    * the value will be overwritten and only the last changes are applied.
+    * Setting {@code xdm} to null clears the value.
+    *
+    * When using {@link Edge#sendEvent}
+    * this event is sent to the Experience Platform {@code datasetIdentifier} if provided,
+    * or to the default Experience Platform dataset defined when generating the Experience Edge
+    * configuration ID if {@code datasetIdentifier} is null.
+    *
+    * @param xdm {@code Map<String, Object>} of raw XDM schema data
+    * @param datasetIdentifier The Experience Platform dataset identifier where this event is sent.
+    *                          If not provided, the default dataset defined in the configuration ID is used
+    * @return instance of current builder
+    * @throws UnsupportedOperationException if this instance was already built
+    */
+  public Builder setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier) {...}
+
+  /**
+    * Solution specific XDM event data for this event, passed as raw mapping of keys and
+    * Object values.
+    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
+    * the value will be overwritten and only the last changes are applied.
+    * Setting {@code xdm} to null clears the value.
+    *
+    * When using {@link Edge#sendEvent} this event is sent to the default
+    * Experience Platform dataset defined when generating the Experience Edge configuration ID.
+    *
+    * @param xdm {@code Map<String, Object>} of raw XDM schema data
+    * @return instance of current builder
+    * @throws UnsupportedOperationException if this instance was already built
+    */
+  public Builder setXdmSchema(final Map<String, Object> xdm) {...}
 /**
     * Builds and returns a new instance of {@code ExperienceEvent}.
     *
@@ -374,7 +373,7 @@ public Builder() {...}
     * @throws UnsupportedOperationException if this instance was already built
     */
   public ExperienceEvent build() {...}
-
+}
 ```
 See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
 
@@ -432,7 +431,7 @@ public class EdgeEventHandle: NSObject, Codable {
 #### ExperienceEvent
 
 Experience Event is the event to be sent to Adobe Experience Edge Network.
-The XDM data is required for any Experience Event being sent using the AEP Edge mobile extension.
+The XDM data is required for any Experience Event being sent using the Edge extension.
 
 ```swift
 @objc(AEPExperienceEvent)
