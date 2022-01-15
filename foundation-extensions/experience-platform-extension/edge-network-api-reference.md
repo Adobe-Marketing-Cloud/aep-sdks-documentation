@@ -66,7 +66,7 @@ Sends an Experience event to Adobe Experience Edge Network.
 public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback callback);
 ```
 
-* _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
+* [_experienceEvent_](edge-network-api-reference.md#experienceevent-2) - the XDM Experience Event to be sent to Adobe Experience Edge Network
 * _callback_ - optional callback to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
 **Example**
@@ -103,7 +103,7 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
 ```
 
-* _experienceEvent_ - the XDM Experience Event to be sent to Adobe Experience Edge Network
+* [_experienceEvent_](edge-network-api-reference.md#experienceevent-1) - the XDM Experience Event to be sent to Adobe Experience Edge Network
 * _completion_ - optional completion handler to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
 **Example**
