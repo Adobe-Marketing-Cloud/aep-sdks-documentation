@@ -389,6 +389,8 @@ The XDM data is required for any Experience Event being sent using the Edge exte
 {% tabs %}
 {% tab title="Android" %}
 
+### Java
+
 ```Java
 public final class ExperienceEvent {
 
@@ -468,7 +470,7 @@ See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/do
 
 {% tab title="iOS (AEP 3.x)" %}
 
-#### ExperienceEvent
+### Swift
 
 Experience Event is the event to be sent to Adobe Experience Edge Network.
 The XDM data is required for any Experience Event being sent using the Edge extension.
