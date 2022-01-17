@@ -1,6 +1,6 @@
 # Consent for Edge Network
 
-The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](../../using-mobile-extensions/mobile-core) and the [Edge Network extension](../experience-platform-extension).
+The Adobe Experience Platform Consent mobile extension enables consent preferences collection from your mobile app when using the [Adobe Experience Platform Mobile SDK](../../foundation-extensions/mobile-core) and the [Edge Network extension](../experience-platform-extension).
 
 ## Configure the Adobe Experience Platform Consent extension in Experience Platform Launch
 

@@ -1,6 +1,6 @@
 # API Reference
 
-## extensionVersion <a id="extensionversion"></a>
+## extensionVersion
 
 The extensionVersion() API returns the version of the client-side Consent extension.
 
@@ -53,7 +53,7 @@ NSString *extensionVersion = [AEPMobileEdgeConsent extensionVersion];
 {% endtab %}
 {% endtabs %}
 
-## getConsents <a id="getconsents"></a>
+## getConsents
 
 Retrieves the current consent preferences stored in the Consent extension.
 
@@ -67,7 +67,7 @@ Retrieves the current consent preferences stored in the Consent extension.
 public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
 ```
 
-* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be retruned in the eventuality of any error that occured while getting the user consents. The callback may be invoked on a different thread.
+* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be returned in the eventuality of any error that occurred while getting the user consents. The callback may be invoked on a different thread.
 
 **Example**
 
@@ -105,7 +105,7 @@ Consent.getConsents { currentConsents, error in
 **Syntax**
 
 ```objectivec
-+ (void) getConsents:^ (NSDictionary<NSString *,id> * _Nullable, NSError * _Nullabl)
++ (void) getConsents:^ (NSDictionary<NSString *,id> * _Nullable, NSError * _Nullable)
 ```
 
 **Example**
@@ -118,7 +118,7 @@ Consent.getConsents { currentConsents, error in
 {% endtab %}
 {% endtabs %}
 
-## registerExtension <a id="registerextension"></a>
+## registerExtension
 
 Registers the Edge Consent extension with the Mobile Core SDK.
 
@@ -273,7 +273,7 @@ NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
 
 // example 2, updating users collect consent to 'no'
 NSDictionary *collectConsent = @{ @"collect": @{@"val": @"n"};
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConse}];
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 ```
 {% endtab %}
 {% endtabs %}

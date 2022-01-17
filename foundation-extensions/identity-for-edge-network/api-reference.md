@@ -1,6 +1,6 @@
 # API Reference
 
-## extensionVersion <a id="extensionversion"></a>
+## extensionVersion
 
 The extensionVersion() API returns the version of the Identity for Edge Network extension.
 
@@ -52,7 +52,7 @@ NSString *extensionVersion = [AEPMobileEdgeIdentity extensionVersion];
 {% endtab %}
 {% endtabs %}
 
-## getExperienceCloudId <a id="getExperienceCloudId"></a>
+## getExperienceCloudId
 
 This API retrieves the Experience Cloud ID (ECID) that was generated when the app was initially launched. This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
 
@@ -124,7 +124,7 @@ Identity.getExperienceCloudId { (ecid, error) in
 {% endtab %}
 {% endtabs %}
 
-## getIdentities <a id="getIdentities"></a>
+## getIdentities
 
 Get all identities in the Identity for Edge Network extension, including customer identifiers which were previously added.
 
@@ -199,7 +199,7 @@ Identity.getIdentities { (identityMap, error) in
 {% endtabs %}
 
 
-## registerExtension <a id="registerExtension"></a>
+## registerExtension
 
 Registers the Identity for Edge Network extension with the Mobile Core extension.
 
@@ -271,7 +271,7 @@ MobileCore.registerExtensions([Identity.self])
 {% endtab %}
 {% endtabs %}
 
-## removeIdentity <a id="removeIdentity"></a>
+## removeIdentity
 
 Remove the identity from the stored client-side [IdentityMap](api-reference.md#identitymap). The Identity extension will stop sending the identifier to the Edge Network. Using this API does not remove the identifier from the server-side User Profile Graph or Identity Graph.
 
@@ -337,7 +337,7 @@ AEPIdentityItem *item = [[AEPIdentityItem alloc] initWithId:@"user@example.com" 
 {% endtab %}
 {% endtabs %}
 
-## resetIdentities <a id="resetIdentities"></a>
+## resetIdentities
 
 Clears all identities stored in the Identity extension and generates a new Experience Cloud ID \(ECID\) . Using this API does not remove the identifiers from the server-side User Profile Graph or Identity Graph.
 
