@@ -65,14 +65,13 @@ Sends an Experience event to Adobe Experience Edge Network.
 ```java
 public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback callback);
 ```
-
-* [_experienceEvent_](edge-network-api-reference.md#experienceevent) - the XDM Experience Event to be sent to Adobe Experience Edge Network
-* [_callback_](edge-network-api-reference.md#edgeeventhandle) - optional callback to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Edge Network
+* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
 **Example**
 
 ```java
-// create experience event from Dictionary
+// create experience event from Map
 Map<String, Object> xdmData = new HashMap<>();
 xdmData.put("eventType", "SampleXDMEvent");
 xdmData.put("sample", "data");
@@ -103,8 +102,8 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
 ```
 
-* [_experienceEvent_](edge-network-api-reference.md#experienceevent) - the XDM Experience Event to be sent to Adobe Experience Edge Network
-* [_completion_](edge-network-api-reference.md#edgeeventhandle) - optional completion handler to be invoked when the request is complete, returning the associated response handles received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Edge Network
+* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Edge Network. It may be invoked on a different thread.
 
 **Example**
 
@@ -286,9 +285,6 @@ public interface Property {
 
 When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
 
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
-
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -320,7 +316,6 @@ public protocol XDMSchema: Encodable {
     var datasetIdentifier: String { get }
 }
 ```
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
 {% endtab %}
 {% endtabs %}
 
@@ -353,8 +348,6 @@ public class EdgeEventHandle {
 
 Use this class when calling the sendEvent API with EdgeCallback.
 
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -375,15 +368,12 @@ public class EdgeEventHandle: NSObject, Codable {
     @objc public let payload: [[String: Any]]?
 }
 ```
-
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
-
 {% endtab %}
 {% endtabs %}
 
 ### ExperienceEvent
 
-Experience Event is the event to be sent to Adobe Experience Edge Network.
+Experience Event is the event to be sent to Adobe Experience Platform Edge Network.
 The XDM data is required for any Experience Event being sent using the Edge extension.
 
 {% tabs %}
@@ -464,8 +454,102 @@ public Builder() {...}
   public ExperienceEvent build() {...}
 }
 ```
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
 
+**Example**
+
+```java
+//Example 1
+// set freeform data to the Experience event
+Map<String, Object> data = new HashMap<>();
+data.put("free", "form");
+data.put("data", "example");
+
+ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+  .setXdmSchema(xdmData)
+  .setData(data)
+  .build();
+
+//Example 2
+// Create Experience Event from XDM Schema implementations
+public class XDMSchemaExample implements com.adobe.marketing.mobile.xdm.Schema {
+  private String eventType;
+  private String otherField;
+
+  public XDMSchemaExample() {}
+
+      /**
+        * Returns the version number of this schema.
+        */
+      @Override
+      public String getSchemaVersion() { ... }
+
+      /**
+        * Returns the unique schema identifier.
+        */
+      @Override
+      public String getSchemaIdentifier() { ... }
+
+      /**
+        * Returns the unique dataset identifier. When this value is set the default Adobe Experience Platform Experience dataset configured in your Edge Configuration is overwritten.
+        */
+      @Override
+      public String getDatasetIdentifier() { ... }
+
+      @Override
+      public Map<String, Object> serializeToXdm() { 
+        Map<String, Object> map = new HashMap<>();
+        if (this.eventType != null) {
+          map.put("eventType", this.eventType);
+        }
+        
+        if (this.otherField != null) {
+          map.put("otherField", this.otherField);
+        }
+      }
+
+      ...
+
+      public String getEventType() {
+        return this.eventType;
+      }
+
+      public void setEventType(final String newValue) {
+        this.eventType = newValue;
+      }
+
+      public String getOtherField() {
+        return this.otherField;
+      }
+
+      public void setOtherField(final String newValue) {
+        this.otherField = newValue;
+      }
+      }
+
+// Create Experience Event from Schema
+XDMSchemaExample xdmData = new XDMSchemaExample();
+xdmData.setEventType("SampleXDMEvent");
+xdmData.setOtherField("OtherFieldValue");
+
+ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+
+
+//Example 3
+// Set the destination Dataset identifier to the current Experience event:
+ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+  .setXdmSchema(xdmData, "datasetIdExample")
+  .build();
+
+//Example 4
+//Create Experience Event from Dictionary:
+Map<String, Object> xdmData = new HashMap<>();
+xdmData.put("eventType", "SampleXDMEvent");
+xdmData.put("sample", "data");
+		
+ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+  .setXdmSchema(xdmData)
+  .build();
+```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -516,9 +600,63 @@ public class ExperienceEvent: NSObject {
         self.datasetIdentifier = xdm.datasetIdentifier
     }
 }
+
+**Example**
+
+```swift
+//Example 1
+// set freeform data to the Experience event
+let experienceEvent = ExperienceEvent(xdm: xdmData, data: ["free": "form", "data": "example"])
+
+//Example 2
+// Create Experience Event from XDM Schema implementations
+import AEPEdge
+
+public struct XDMSchemaExample : XDMSchema {
+    public let schemaVersion = "1.0" // Returns the version of this schema as defined in the Adobe Experience Platform.
+    public let schemaIdentifier = "" // The URI identifier for this schema
+    public let datasetIdentifier = "" // The identifier for the Dataset this event belongs to.
+
+    public init() {}
+
+    public var eventType: String?
+    public var otherField: String?
+
+    enum CodingKeys: String, CodingKey {
+    case eventType = "eventType"
+    case otherField = "otherField"
+    }		
+}
+
+extension XDMSchemaExample {
+    public func encode(to encoder: Encoder) throws {
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      if let unwrapped = eventType { try container.encode(unwrapped, forKey: .eventType) }
+      if let unwrapped = otherField { try container.encode(unwrapped, forKey: .otherField) }
+    }
+}
+
+...
+
+// Create Experience Event from XDMSchema
+var xdmData = XDMSchemaExample()
+xdmData.eventType = "SampleXDMEvent"
+xdm.otherField = "OtherFieldValue"
+let event = ExperienceEvent(xdm: xdmData)
+
+
+//Example 3
+// Set the destination Dataset identifier to the current Experience event:
+let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetIdExample")
+
+//Example 4
+//Create Experience Event from Dictionary:
+var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
+                              "sample": "data"]
+let experienceEvent = ExperienceEvent(xdm: xdmData)
 ```
-See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.
 
 {% endtab %}
 {% endtabs %}
 
+See [Edge Extension Usage](https://github.com/adobe/aepsdk-edge-ios/blob/main/docs/ExtensionUsage.md) for more examples.

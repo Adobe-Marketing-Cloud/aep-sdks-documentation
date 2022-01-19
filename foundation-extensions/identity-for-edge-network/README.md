@@ -2,10 +2,10 @@
 
 The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the Adobe Experience Platform Mobile SDK and the [Edge Network extension](../experience-platform-extension/).
 
-## Configure the Adobe Experience Platform Identity extension in Experience Platform Launch
+## Configure the Adobe Experience Platform Identity extension in the Data Collection UI
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Identity** extension, and click **Install**.
+1. In Experience Platform Launch, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Identity** extension, and select **Install**.
 3. There are no configuration settings for **Identity**.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
