@@ -11,11 +11,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 Upgrade the following flutter package to reference Android libraries from mavenCentral :
 
 * [Flutter ACPCore v2.0.1](https://pub.dev/packages/flutter_acpcore/versions/2.0.1)
-
 * [Flutter ACPUserProfile v2.0.1](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.1)
-
 * [Flutter ACPPlaces v2.0.1](https://pub.dev/packages/flutter_acpplaces/versions/2.0.1)
-
 * [Flutter ACPPlacesMonitor v2.0.1](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.1)
 
-  
+### Flutter Assurance 2.0.1
+
+- Migrate Android build from jcenter to mavenCentral
+- Migrate to the new Android APIs based on [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html).
+
