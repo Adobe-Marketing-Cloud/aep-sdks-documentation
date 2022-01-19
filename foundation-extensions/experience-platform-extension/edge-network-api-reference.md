@@ -127,7 +127,7 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
 **Syntax**
 
 ```objectivec
-+ (void) sendExperienceEvent:(AEPExperienceEvent * _Nonnull)> completion:^(NSArray<AEPEdgeEventHandle *> * _Nonnull)completion>
++ (void) sendExperienceEvent:(AEPExperienceEvent * _Nonnull) completion:^(NSArray<AEPEdgeEventHandle *> * _Nonnull)completion
 ```
 
 **Example**
