@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Flutter
 
-Upgrade the following flutter packages to reference Android libraries from Maven Central Repository :
+Updated the following flutter packages to reference Android libraries from Maven Central Repository :
 
 * [Flutter ACPCore v2.0.1](https://pub.dev/packages/flutter_acpcore/versions/2.0.1)
 * [Flutter ACPUserProfile v2.0.1](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.1)
