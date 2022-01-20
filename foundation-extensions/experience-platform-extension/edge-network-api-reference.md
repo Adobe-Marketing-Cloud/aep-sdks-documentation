@@ -54,7 +54,7 @@ NSString *extensionVersion = [AEPMobileEdge extensionVersion];
 
 ## sendEvent
 
-Sends an Experience event to Adobe Experience Edge Network.
+Sends an Experience event to Adobe Experience Platform Edge Network.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -65,8 +65,8 @@ Sends an Experience event to Adobe Experience Edge Network.
 ```java
 public static void sendEvent(final ExperienceEvent experienceEvent, final EdgeCallback callback);
 ```
-* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Edge Network
-* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Platform Edge Network
+* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Platform Edge Network. It may be invoked on a different thread.
 
 **Example**
 
@@ -79,10 +79,14 @@ xdmData.put("sample", "data");
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 	.setXdmSchema(xdmData)
 	.build();
+```
 
+```java
 // example 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent, null);
+```
 
+```java
 // example 2 - send the experience event and handle the Edge Network response onComplete
 Edge.sendEvent(experienceEvent, new EdgeCallback() {
   @Override
@@ -102,8 +106,8 @@ Edge.sendEvent(experienceEvent, new EdgeCallback() {
 static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEventHandle]) -> Void)? = nil)
 ```
 
-* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Edge Network
-* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Edge Network. It may be invoked on a different thread.
+* _experienceEvent_ - the XDM [Experience Event](edge-network-api-reference.md#experienceevent) to be sent to Adobe Experience Platform Edge Network
+* _completion_ - optional callback to be invoked when the request is complete, returning the associated [EdgeEventHandle(s)](edge-network-api-reference.md#edgeeventhandle) received from the Adobe Experience Platform Edge Network. It may be invoked on a different thread.
 
 **Example**
 
@@ -283,7 +287,7 @@ public interface Property {
 }
 ```
 
-When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Edge Network.
+When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Platform Edge Network.
 
 {% endtab %}
 
@@ -321,7 +325,7 @@ public protocol XDMSchema: Encodable {
 
 ### EdgeEventHandle
 
-The `EdgeEventHandle` is a response fragment from Adobe Experience Edge Service for a sent XDM Experience Event.
+The `EdgeEventHandle` is a response fragment from Adobe Experience Platform Edge Service for a sent XDM Experience Event.
 One event can receive none, one or multiple `EdgeEventHandle`(s) as response.
 
 {% tabs %}
@@ -521,7 +525,7 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 
 ```java
 //Example 4
-//Create Experience Event from Dictionary:
+//Create Experience Event from Map:
 Map<String, Object> xdmData = new HashMap<>();
 xdmData.put("eventType", "SampleXDMEvent");
 xdmData.put("sample", "data");
@@ -535,7 +539,7 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 
 {% tab title="iOS (AEP 3.x)" %}
 
-Experience Event is the event to be sent to Adobe Experience Edge Network.
+Experience Event is the event to be sent to Adobe Experience Platform Edge Network.
 The XDM data is required for any Experience Event being sent using the Edge extension.
 
 ```swift
