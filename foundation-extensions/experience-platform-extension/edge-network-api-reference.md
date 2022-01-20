@@ -346,7 +346,7 @@ public class EdgeEventHandle {
 }
 ```
 
-Use this class when calling the sendEvent API with EdgeCallback.
+Use this class when calling the [sendEvent](edge-network-api-reference.md#sendevent) API with EdgeCallback.
 
 {% endtab %}
 
@@ -455,7 +455,7 @@ public Builder() {...}
 }
 ```
 
-**Example**
+**Examples**
 
 ```java
 //Example 1
@@ -468,45 +468,14 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData)
   .setData(data)
   .build();
+```
 
+```java
 //Example 2
 // Create Experience Event from XDM Schema implementations
 public class XDMSchemaExample implements com.adobe.marketing.mobile.xdm.Schema {
   private String eventType;
   private String otherField;
-
-  public XDMSchemaExample() {}
-
-      /**
-        * Returns the version number of this schema.
-        */
-      @Override
-      public String getSchemaVersion() { ... }
-
-      /**
-        * Returns the unique schema identifier.
-        */
-      @Override
-      public String getSchemaIdentifier() { ... }
-
-      /**
-        * Returns the unique dataset identifier. When this value is set the default Adobe Experience Platform Experience dataset configured in your Edge Configuration is overwritten.
-        */
-      @Override
-      public String getDatasetIdentifier() { ... }
-
-      @Override
-      public Map<String, Object> serializeToXdm() { 
-        Map<String, Object> map = new HashMap<>();
-        if (this.eventType != null) {
-          map.put("eventType", this.eventType);
-        }
-        
-        if (this.otherField != null) {
-          map.put("otherField", this.otherField);
-        }
-      }
-
       ...
 
       public String getEventType() {
@@ -532,14 +501,17 @@ xdmData.setEventType("SampleXDMEvent");
 xdmData.setOtherField("OtherFieldValue");
 
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+```
 
-
+```java
 //Example 3
 // Set the destination Dataset identifier to the current Experience event:
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData, "datasetIdExample")
   .build();
+```
 
+```java
 //Example 4
 //Create Experience Event from Dictionary:
 Map<String, Object> xdmData = new HashMap<>();
@@ -550,6 +522,7 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData)
   .build();
 ```
+
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -580,35 +553,26 @@ public class ExperienceEvent: NSObject {
     ///   - xdm:  XDM formatted data for this event, passed as a raw XDM Schema data dictionary.
     ///   - data: Any free form data in a [String : Any] dictionary structure.
     ///   - datasetIdentifier: The Experience Platform dataset identifier where this event should be sent to; if not provided, the default dataset identifier set in the Edge configuration is used
-    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {
-        self.xdm = xdm
-        self.data = data
-        self.datasetIdentifier = datasetIdentifier
-    }
+    @objc public init(xdm: [String: Any], data: [String: Any]? = nil, datasetIdentifier: String? = nil) {...}
 
     /// Initialize an Experience Event with the provided event data
     /// - Parameters:
     ///   - xdm: XDM formatted event data passed as an XDMSchema
     ///   - data: Any free form data in a [String : Any] dictionary structure.
-    public init(xdm: XDMSchema, data: [String: Any]? = nil) {
-        if let jsonXdm = xdm.toJSONData() {
-            self.xdm = try? JSONSerialization.jsonObject(with: jsonXdm, options: []) as? [String: Any]
-        } else {
-            self.xdm = nil
-        }
-        self.data = data
-        self.datasetIdentifier = xdm.datasetIdentifier
-    }
+    public init(xdm: XDMSchema, data: [String: Any]? = nil) {...}
 }
 
 ```
-**Example**
+
+**Examples**
 
 ```swift
 //Example 1
 // set freeform data to the Experience event
 let experienceEvent = ExperienceEvent(xdm: xdmData, data: ["free": "form", "data": "example"])
+```
 
+```swift
 //Example 2
 // Create Experience Event from XDM Schema implementations
 import AEPEdge
@@ -644,12 +608,15 @@ var xdmData = XDMSchemaExample()
 xdmData.eventType = "SampleXDMEvent"
 xdm.otherField = "OtherFieldValue"
 let event = ExperienceEvent(xdm: xdmData)
+```
 
-
+```swift
 //Example 3
 // Set the destination Dataset identifier to the current Experience event:
 let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetIdExample")
+```
 
+```swift
 //Example 4
 //Create Experience Event from Dictionary:
 var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
