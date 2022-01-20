@@ -346,8 +346,6 @@ public class EdgeEventHandle {
 }
 ```
 
-Use this class when calling the [sendEvent](edge-network-api-reference.md#sendevent) API with EdgeCallback.
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
@@ -370,6 +368,8 @@ public class EdgeEventHandle: NSObject, Codable {
 ```
 {% endtab %}
 {% endtabs %}
+
+Use this class when calling the [sendEvent](edge-network-api-reference.md#sendevent) API with EdgeCallback.
 
 ### ExperienceEvent
 
@@ -460,6 +460,10 @@ public Builder() {...}
 ```java
 //Example 1
 // set freeform data to the Experience event
+Map<String, Object> xdmData = new HashMap<>();
+xdmData.put("eventType", "SampleXDMEvent");
+xdmData.put("sample", "data");
+
 Map<String, Object> data = new HashMap<>();
 data.put("free", "form");
 data.put("data", "example");
@@ -506,6 +510,10 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 ```java
 //Example 3
 // Set the destination Dataset identifier to the current Experience event:
+Map<String, Object> xdmData = new HashMap<>();
+xdmData.put("eventType", "SampleXDMEvent");
+xdmData.put("sample", "data");
+
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData, "datasetIdExample")
   .build();
@@ -527,8 +535,6 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 
 {% tab title="iOS (AEP 3.x)" %}
 
-### Swift
-
 Experience Event is the event to be sent to Adobe Experience Edge Network.
 The XDM data is required for any Experience Event being sent using the Edge extension.
 
@@ -541,9 +547,6 @@ public class ExperienceEvent: NSObject {
 
     /// Optional free-form data associated with this event
     @objc public let data: [String: Any]?
-
-    /// Optional free-form query data associated with this event
-    @objc public var query: [String: Any]?
 
     /// Adobe Experience Platform dataset identifier, if not set the default dataset identifier set in the Edge Configuration is used
     @objc public let datasetIdentifier: String?
@@ -563,12 +566,16 @@ public class ExperienceEvent: NSObject {
 }
 
 ```
+### Swift
 
 **Examples**
 
 ```swift
 //Example 1
 // set freeform data to the Experience event
+var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
+                              "sample": "data"]
+
 let experienceEvent = ExperienceEvent(xdm: xdmData, data: ["free": "form", "data": "example"])
 ```
 
@@ -613,6 +620,9 @@ let event = ExperienceEvent(xdm: xdmData)
 ```swift
 //Example 3
 // Set the destination Dataset identifier to the current Experience event:
+var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
+                              "sample": "data"]
+
 let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetIdExample")
 ```
 
@@ -622,6 +632,36 @@ let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetI
 var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
                               "sample": "data"]
 let experienceEvent = ExperienceEvent(xdm: xdmData)
+```
+
+{% endtab %}
+
+### Objective-C
+
+**Examples**
+
+```objectivec
+//Example 1
+// set freeform data to the Experience event
+NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
+NSDictionary *data = @{ @"sample" : @"data"};
+    
+    AEPExperienceEvent *event = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:data datasetIdentifier:nil];
+```
+```objectivec
+//Example 2
+// Set the destination Dataset identifier to the current Experience event:
+NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
+   
+AEPExperienceEvent *event = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:@"datasetIdExample"];
+```
+
+```objectivec
+//Example 3
+//Create Experience Event from Dictionary:
+NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
+   
+AEPExperienceEvent *event = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:nil];
 ```
 
 {% endtab %}

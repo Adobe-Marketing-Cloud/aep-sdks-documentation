@@ -4,7 +4,7 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 
 ## Configure the Adobe Experience Platform Identity extension in the Data Collection UI
 
-1. In Experience Platform Launch, in your mobile property, select the **Extensions** tab.
+1. In Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Identity** extension, and select **Install**.
 3. There are no configuration settings for **Identity**.
 4. Click **Save**.
