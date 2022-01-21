@@ -88,7 +88,7 @@ If you are currently using our Objective-C (ACP-prefix) libraries, please see th
 ## iOS — Objective-C
 
 {% hint style="info" %}
-Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\).
+Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later (includes support for iOS, iPadOS, and tvOS).
 {% endhint %}
 
 | Extension | CocoaPods | GitHub |
