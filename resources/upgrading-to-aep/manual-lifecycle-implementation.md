@@ -156,6 +156,16 @@ When your app is launched, if it is resuming from a backgrounded state, iOS migh
 }
 ```
 
+If your app is a SceneDelegate based iOS application, then use:
+
+```objective-c
+- (void) sceneWillEnterForeground:(UIScene *)scene {
+    [ACPCore lifecycleStart:nil];
+}
+```
+
+
+
 ### Swift
 
 Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
@@ -186,6 +196,14 @@ func applicationWillEnterForeground(_ application: UIApplication) {
     ACPCore.lifecycleStart(nil)
 }
 ```
+If your app is a SceneDelegate based iOS application, then use:
+
+```swift
+ func sceneWillEnterForeground(_ scene:UIScene) {
+      ACPCore.lifecycleStart(nil)
+ }
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -236,6 +254,14 @@ When the app enters the background, pause Lifecycle data collection from your ap
  }
 ```
 
+If your app is a SceneDelegate based iOS application, then use:
+
+```objective-c
+- (void) sceneDidEnterBackground:(UIScene *)scene {
+    [ACPCore lifecyclePause];
+}
+```
+
 ### Swift
 
 When the app enters the background, pause Lifecycle data collection from your app's `applicationDidEnterBackground:` delegate method:
@@ -245,6 +271,14 @@ func applicationDidEnterBackground(_ application: UIApplication) {
     ACPCore.lifecyclePause()
 }
 ```
+If your app is a SceneDelegate based iOS application, then use:
+
+```swift
+func sceneDidEnterBackground(_ scene: UIScene) {
+     ACPCore.lifecyclePause()
+ }
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
