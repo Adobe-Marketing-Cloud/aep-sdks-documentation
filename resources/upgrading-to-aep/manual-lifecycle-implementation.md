@@ -197,7 +197,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 If your app is a SceneDelegate based iOS application, then use:
 
 ```swift
- func sceneWillEnterForeground(_ scene:UIScene) {
+ func sceneWillEnterForeground(_ scene: UIScene) {
       ACPCore.lifecycleStart(nil)
  }
 ```
