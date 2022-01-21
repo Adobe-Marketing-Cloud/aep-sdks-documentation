@@ -32,7 +32,7 @@ The Datastream used by the client-side implementation is one of the followings:
 
 ### Edge Network domain
 
-If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocal or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
+If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocol or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
 
 Entering an Edge Network domain will add an `edge.domain` key in the mobile property. 
 
@@ -62,7 +62,7 @@ Entering an Edge Network domain will add an `edge.domain` key in the mobile prop
 
 {% tab title="iOS (AEP 3.x)" %}
 
-1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -177,5 +177,6 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| edge.configId | Yes | See [datastreams](./#datastreams) | String |
+| edge.configId | Yes | See [datastreams](./#datastreams). | String |
+| edge.domain   | No  | A custom first-party domain mapped to the Adobe provisioned Edge Network domain. | String |
 
