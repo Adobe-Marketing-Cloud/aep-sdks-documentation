@@ -26,15 +26,13 @@ If you use multiple Development configurations, select the desired one from the 
 
 The Datastream used by the client-side implementation is one of the followings:
 
-* the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
-* the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
-* the `Development Environment` configuration when the Launch library is in development.
+* the `Production environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
+* the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
+* the `Development environment` configuration when the Launch library is in development.
 
 ### Edge Network domain
 
 If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocol or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
-
-Entering an Edge Network domain will add an `edge.domain` key in the mobile property. 
 
 ## Add the Edge Network extension to your app
 
