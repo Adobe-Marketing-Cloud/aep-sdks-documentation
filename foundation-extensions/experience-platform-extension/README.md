@@ -16,21 +16,25 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the Edge Network extension
-
 ![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
-Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
 If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
 
-The Edge configuration used by the client-side implementation is one of the followings:
+The Datastream used by the client-side implementation is one of the followings:
 
 * the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
 * the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
 * the `Development Environment` configuration when the Launch library is in development.
+
+### Edge Network domain
+
+If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocal or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
+
+Entering an Edge Network domain will add an `edge.domain` key in the mobile property. 
 
 ## Add the Edge Network extension to your app
 
