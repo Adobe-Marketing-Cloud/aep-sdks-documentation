@@ -164,8 +164,6 @@ If your app is a SceneDelegate based iOS application, then use:
 }
 ```
 
-
-
 ### Swift
 
 Start Lifecycle data collection by calling `lifecycleStart:` from the callback of the `ACPCore::start:` method in your app's `application:didFinishLaunchingWithOptions:` delegate method.
