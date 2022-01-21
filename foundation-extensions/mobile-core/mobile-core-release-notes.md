@@ -1,5 +1,16 @@
 # Release Notes
 
+## January 20, 2022
+
+### iOS AEPCore 3.4.0
+* New API - `MobileCore.clearUpdatedConfiguration()` - see API reference for more information.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
+
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2
