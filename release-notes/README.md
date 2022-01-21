@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## January 21, 2022
+
+### iOS AEPEdge 1.3.0
+
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
+
+### Android AEPEdge 1.3.0
+
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
+
+
 ## January 14, 2022
 
 ### Flutter
