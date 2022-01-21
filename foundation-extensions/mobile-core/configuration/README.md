@@ -263,6 +263,48 @@ ACPCore.UpdateConfiguration(config);
 {% endtab %}
 {% endtabs %}
 
+## Clearing programmatic updates to configuration (iOS 3.x.x Only)
+
+You can clear any programmatic updates made to configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
+
+Here are some examples of scenarios:
+
+`configureWith(appId:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` = You end up with the initial configuration set via `configureWith(appId:)`
+
+`configureWith(filePath:)` -> `updateConfigurationWith(configDict)` -> `clearUpdatedConfiguration()` = You end up with the initial configuration set via `configureWith(filePath:)`
+
+`configureWith(appId:)` or `configureWith(filePath:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` -> `updateConfigurationWith(configDictL:)` = The configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
+
+`configureWith(appId:)` or `configureWith(filePath:)` -> `setPrivacyStatus(_ status:)` -> `clearUpdatedConfiguration()` = Your configuration will have the initial `PrivacyStatus` set via `configureWith(appId:)` or `configureWith(filePath:)`
+
+{% tabs %}
+{% tab title="iOS (AEP 3.x.x)" %}
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func clearUpdatedConfiguration()
+```
+
+**Example**
+```swift
+MobileCore.clearUpdatedConfiguration()
+```
+
+#### Objective-C
+
+**Syntax**
+```swift
+static func clearUpdatedConfiguration()
+```
+
+**Example**
+```objectivec
+[AEPMobileCore clearUpdatedConfiguration];
+```
+
 ## Using a bundled file configuration
 
 You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
