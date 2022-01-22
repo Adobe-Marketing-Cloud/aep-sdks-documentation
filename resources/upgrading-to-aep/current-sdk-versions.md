@@ -14,7 +14,7 @@ If you are currently using our Objective-C \(ACP-prefix libraries\), please see 
 
 ## Android
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Adobe Experience Platform Mobile SDK for Android supports Google Android API 14 \(Ice Cream Sandwich\) or later. The Adobe Experience Platform Edge Network extension and other **for Edge Network** extensions require Android versions 4.4 or later \(API levels 19 or later\).
 {% endhint %}
 
@@ -46,22 +46,15 @@ Due to sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintr
 
 ## iOS — Swift
 
-{% hint style="info" %}
-
-The latest versions of the Adobe Experience Platform Mobile SDKs are now open source! They are written in Swift and they can be installed in your Swift or Objective-C application. The AEP Mobile SDKs support for iOS 10 or later; require Swift 5.1 or newer and Xcode 11.0 or newer. 
-
-Read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
-
-{% endhint %}
-
-### Installation
-
-- Supported dependency managers: **CocoaPods**, **Swift Package Manager (SPM)**.
-- Manual installation: import the **XCFramework** directly in your app by following the installation instructions at the GitHub links below.
+{% hint style="warning" %}
 
 ### Migrate to Swift
 
 If you are currently using our Objective-C (ACP-prefix) libraries, please see the [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+
+Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later; requires Swift 5.1 or newer and Xcode 11.0 or newer. In addition to **CocoaPods**, **Swift Package Manager (SPM)** installation option is supported with the latest iOS Swift SDKs! Find more details at the GitHub links below.
+
+{% endhint %}
 
 | Extension | CocoaPods | GitHub |
 | :--- | :--- | :--- |
@@ -87,7 +80,7 @@ If you are currently using our Objective-C (ACP-prefix) libraries, please see th
 
 ## iOS — Objective-C
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later (includes support for iOS, iPadOS, and tvOS).
 {% endhint %}
 

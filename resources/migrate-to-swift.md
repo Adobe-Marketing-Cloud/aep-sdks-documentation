@@ -8,7 +8,7 @@ If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x o
 
 ## Switch imported libraries
 
-At this time, the following ACP-prefix libraries may be switched out with their respective AEP-prefix SDK libraries. See instructions on proceeding further if you have [manually imported SDK libraries](migrate-to-swift.md#manual-library-import) or have used [Cocoapods to manage SDK dependencies](migrate-to-swift.md#cocoapods)
+At this time, the following ACP-prefix libraries may be switched out with their respective AEP-prefix SDK libraries. See instructions on proceeding further if you have [manually imported SDK libraries](migrate-to-swift.md#manual-library-import) , if you used [CocoaPods to manage SDK dependencies](migrate-to-swift.md#cocoapods) or [Swift Package Manager](migrate-to-swift.md#spm).
 
 {% hint style="warning" %}
 In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure there is no disruption in SDK behavior.
@@ -30,9 +30,9 @@ In addition to `ACPCore` being replaced with `AEPCore`, you will also need to ex
 
 If you are manually importing SDK libraries, ensure you identify all currently used ACP-prefix libraries and switch them over to AEP-prefix libraries. The list of current AEP-prefix SDK libraries can be found in the [current SDK versions document](upgrading-to-aep/current-sdk-versions.md#ios-swift) \(in the Swift section\).
 
-### Cocoapods
+### CocoaPods
 
-If you are using Cocoapods to manage your Adobe Experience Platform Mobile SDK dependencies, the following example shows you how to switch ACP-prefix libraries to AEP-prefix libraries in your `Podfile`.
+If you are using CocoaPods to manage your Adobe Experience Platform Mobile SDK dependencies, the following example shows you how to switch ACP-prefix libraries to AEP-prefix libraries in your `Podfile`.
 
 ```ruby
 # replace ACPCore with AEPCore/AEPLifecycle/AEPIdentity/AEPSignal
@@ -47,9 +47,33 @@ If you are using Cocoapods to manage your Adobe Experience Platform Mobile SDK d
   pod 'AEPUserProfile'
 ```
 
-Save the `Podfile` and run `pod repo update` to update your local Cocoapods repository.
+Save the `Podfile` and run `pod repo update` to update your local CocoaPods repository.
 
 Once the previous command is complete, run `pod install` or `pod update` to update the application dependencies.
+
+### SPM
+
+You can now also use SPM to manage your Adobe Experience Platform Mobile SDK dependencies. To add the AEP Packages to your application, from the Xcode menu select:
+
+```
+File > Swift Packages > Add Package Dependency...
+```
+
+Enter the URL for the AEP package repositories: 
+
+- AEPCore package: `https://github.com/adobe/aepsdk-core-ios.git`
+- AEPUserProfile package: `https://github.com/adobe/aepsdk-userprofile-ios.git`
+
+When prompted, input a specific version or a range of versions, and choose all the `AEP*` libraries.
+
+Alternatively, if your project has a `Package.swift` file, you can add AEPCore and AEPUserProfile directly to your dependencies:
+
+```ruby
+dependencies: [
+    .package(url: "https://github.com/adobe/aepsdk-core-ios.git", .upToNextMajor(from: "3.0.0")),
+    .package(url: "https://github.com/adobe/aepsdk-userprofile-ios.git", .upToNextMajor(from: "3.0.0")),
+]
+```
 
 ## Update SDK initialization
 
