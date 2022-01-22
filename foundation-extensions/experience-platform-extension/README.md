@@ -18,13 +18,13 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 ![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
-### Datastreams
+### Datastream
 
-Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
 If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
 
-The Datastream used by the client-side implementation is one of the followings:
+The datastream used by the client-side implementation is one of the followings:
 
 * the `Production environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
 * the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
