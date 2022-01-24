@@ -8,23 +8,23 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 
 
-## Configure the Edge Network extension in Platform
+## Configure the Edge Network extension in Data Collection UI
 
-1. In Experience Platform, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
+1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
 3. Type in the extension settings. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
-Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development environments will be automatically prefilled. If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
-If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
+If you use multiple Development configurations, select the desired one from the `Development environment` drop-down.
 
-The Datastream used by the client-side implementation is one of the followings:
+The datastream used by the client-side implementation is one of the followings:
 
 * the `Production environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
 * the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
