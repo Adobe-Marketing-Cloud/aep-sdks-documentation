@@ -4,6 +4,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## January 24, 2022
+
+### All Unity packages
+
+The ACP Unity packages now use XCFrameworks in order to support hardware with the new Apple M1 architecture while maintaining support for existing Intel architecture. See the respective GitHub repositories for the updated installation instructions.
+
+**IMPORTANT:** Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer
+
+Below is a list of the new versions for each Unity package:
+
+* [Unity ACPCore v1.0.1](https://github.com/adobe/unity-acpcore/blob/master/bin/ACPCore-1.0.1-Unity.zip)
+* [Unity ACPAnalytics v1.0.0](https://github.com/adobe/unity-acpanalytics/blob/master/bin/ACPAnalytics-1.0.0-Unity.zip)
+* [Unity ACPUserProfile v1.0.0](https://github.com/adobe/unity-aepassurance/blob/master/bin/AEPAssurance-1.0.0-Unity.zip)
+* [Unity AEPAssurance v1.0.0](https://github.com/adobe/unity_acpuserprofile/blob/master/bin/ACPUserProfile-1.0.0-Unity.zip)
+
 ## January 21, 2022
 
 ### iOS AEPEdge 1.3.0
