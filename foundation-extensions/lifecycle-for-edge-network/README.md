@@ -9,8 +9,8 @@ Include the "AEP Mobile Lifecycle Details" field group to the schema defined in 
 1. In Adobe Experience Platform, log in to your organization.
 2. Under **Schemas** section, select the **Browse** tab and search for the schema used in the application's Edge configuration.
 3. In the **Field groups** section, select **Add**.
-4. Search for **AEP Mobile Lifecycle Details**. Select it, then click **Add field groups**.
-5. Click **Save**.
+4. Search for **AEP Mobile Lifecycle Details**. Select it, then select **Add field groups**.
+5. Select **Save**.
 
 ![](../../.gitbook/assets/xdm-schema-add-mobile-lifecycle-details.png)
 
@@ -24,10 +24,10 @@ The Lifecycle for Edge Network extension is part of the Mobile Core extension. T
 The configuration setting "Session Timeout" in the Mobile Core extension configuration is used when collecting Lifecycle session data for Analytics and is not used for the Lifecycle for Edge Network extension.
 {% endhint %}
 
-1. In the Data Collection UI, from your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Mobile Core** extension, and click **Install**.
+1. In the Data Collection UI, from your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Mobile Core** extension, and select **Install**.
 3. There are no configuration settings for **Lifecycle for Edge Network**.
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 In addition, use the following steps to [Configure the Edge Network extension](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#configure-edge-network-extension).
@@ -40,7 +40,7 @@ The Lifecycle for Edge Network extension dispatches application foreground and b
 
 ### Create a rule
 
-1. On the **Rules** tab, click **Create New Rule**.
+1. On the **Rules** tab, select **Create New Rule**.
 2. Give your rule an easily recognizable name in your list of rules.
 
    In this example, the rule is named "Forward Lifecycle XDM events to Edge Network".
@@ -51,23 +51,23 @@ If you do not have existing rules for this property, the **Create New Rule** but
 
 ### Select an event
 
-1. Under the **Events** section, click **Add**.
+1. Under the **Events** section, select **Add**.
 2. From the **Extension** dropdown list, select **Mobile Core**.
 3. From the **Event Type** dropdown list, select **Foreground**.
-4. Click **Keep Changes**.
-5. Under the **Events** section again, click the plus icon to add another Event.
+4. Select **Keep Changes**.
+5. Under the **Events** section again, select the plus icon to add another Event.
 6. From the **Extension** dropdown list, select **Mobile Core**.
 7. From the **Event Type** dropdown list, select **Background**.
-8. Click **Keep Changes**.
+8. Select **Keep Changes**.
 
 ![](../../.gitbook/assets/setevent-foreground-background.png)
 
 ### Define the action
 
-1. Under the **Actions** section, click **Add**.
+1. Under the **Actions** section, select **Add**.
 2. From the **Extension** dropdown list, select **Adobe Experience Platform Edge Network**.
 3. From the **Action Type** dropdown list, select **Forward event to Edge Network**.
-4. Click **Keep Changes**.
+4. Select **Keep Changes**.
 
 ![](../../.gitbook/assets/setaction-forward-to-edge-network.png)
 
@@ -77,7 +77,7 @@ After you complete your configuration, verify that your rule looks like the foll
 
 ![](../../.gitbook/assets/rulecomplete-forward-lifecycle-to-edge-network.png)
 
-1. Click **Save**.
+1. Select **Save**.
 2. Rebuild your mobile property and deploy it to the correct environment.
 
 ## Add the Lifecycle extension to your app
