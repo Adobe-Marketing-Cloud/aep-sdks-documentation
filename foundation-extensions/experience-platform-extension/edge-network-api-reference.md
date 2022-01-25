@@ -116,10 +116,14 @@ static func sendEvent(experienceEvent: ExperienceEvent, _ completion: (([EdgeEve
 var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
                               "sample": "data"]
 let experienceEvent = ExperienceEvent(xdm: xdmData)
+```
 
+```swift
 // example 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent: experienceEvent)
+```
 
+```swift
 // example 2 - send the experience event and handle the Edge Network response onComplete
 Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
             // handle the Edge Network response
@@ -135,11 +139,17 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
 ```
 
 **Example**
+```objectivec
+//create experience event from dictionary:
+NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
+NSDictionary *data = @{ @"sample" : @"data"};
+```
 
 ```objectivec
 // example 1 - send the experience event without handling the Edge Network response
 [AEPMobileEdge sendExperienceEvent:event completion:nil];
-
+```
+```objectivec
 // example 2 - send the experience event and handle the Edge Network response onComplete
 [AEPMobileEdge sendExperienceEvent:event completion:^(NSArray<AEPEdgeEventHandle *> * _Nonnull handles) {
   // handle the Edge Network response
@@ -217,29 +227,20 @@ Use the AEPMobileCore API to register the Edge extension.
 
 ## resetIdentities
 
-Clears all the states stored in the Edge extension.
+Resets current state of the AEP Edge extension and clears previously cached content related to current identity, if any.
 
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
 ## Public classes
 
-### Schema interface
+### XDM Schema
 
+The AEP Edge extension provides the Schema and Property interfaces (Android) / XDMSchema protocol (iOS) that can be used to define the classes associated with your XDM schema in Adobe Experience Platform.
 
 {% tabs %}
 {% tab title="Android" %}
 
 ### Java
-
-**Schema and property interface**
-
-The Edge extension provides the following interfaces:
-
-* Schema
-
-* Property
-
-By using the Edge extension, the **Schema** interface can be used to define the classes that are associated with your defined schema in Adobe Experience Platform.
 
 ```java
 /**
@@ -286,20 +287,13 @@ public interface Property {
     Map<String, Object> serializeToXdm();
 }
 ```
-
-When defining your custom XDM Schema\(s\), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Platform Edge Network.
+When defining your custom XDM schema(s), implement these interfaces to ensure that the AEP Edge extension successfully serializes the provided data before sending it to Adobe Experience Platform Edge Network.
 
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
 
 ### Swift
-
-The Edge extension provides the following interface:
-
-* XDMSchema
-
-By using the Edge extension, the **XDMSchema** interface can be used to define the classes that are associated with your defined schema in Adobe Experience Platform.
 
 ```swift
 /// An interface representing a Platform XDM Event Data schema.
@@ -325,7 +319,7 @@ public protocol XDMSchema: Encodable {
 
 ### EdgeEventHandle
 
-The `EdgeEventHandle` is a response fragment from Adobe Experience Platform Edge Service for a sent XDM Experience Event.
+The `EdgeEventHandle` is a response fragment from Adobe Experience Platform Edge Network for a sent XDM Experience Event.
 One event can receive none, one or multiple `EdgeEventHandle`(s) as response.
 
 {% tabs %}
@@ -359,10 +353,6 @@ public class EdgeEventHandle {
 ```swift
 @objc(AEPEdgeEventHandle)
 public class EdgeEventHandle: NSObject, Codable {
-
-    /// Encodes the event to which this handle is attached as the index in the events array in EdgeRequest
-    internal let eventIndex: Int?
-
     /// Payload type
     @objc public let type: String?
 
@@ -390,7 +380,6 @@ public final class ExperienceEvent {
 
   
 public Builder() {...}
-
   /**
     * Sets free form data associated with this event to be passed to Adobe Experience Edge.
     *
@@ -402,11 +391,6 @@ public Builder() {...}
 
   /**
     * Solution specific XDM event data for this event.
-    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Map)},
-    * the value will be overwritten and only the last changes are applied.
-    * Setting {@code xdm} to null clears the value.
-    *
-    * This event is sent to the Experience Platform dataset defined by {@link Schema#getDatasetIdentifier()}.
     *
     * @param xdm {@link Schema} information
     * @return instance of current builder
@@ -415,16 +399,7 @@ public Builder() {...}
   public Builder setXdmSchema(final Schema xdm) {...}
 
   /**
-    * Solution specific XDM event data for this event, passed as raw mapping of keys and
-    * Object values.
-    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
-    * the value will be overwritten and only the last changes are applied.
-    * Setting {@code xdm} to null clears the value.
-    *
-    * When using {@link Edge#sendEvent}
-    * this event is sent to the Experience Platform {@code datasetIdentifier} if provided,
-    * or to the default Experience Platform dataset defined when generating the Experience Edge
-    * configuration ID if {@code datasetIdentifier} is null.
+    * Solution specific XDM event data and dataset identifier for this event.
     *
     * @param xdm {@code Map<String, Object>} of raw XDM schema data
     * @param datasetIdentifier The Experience Platform dataset identifier where this event is sent.
@@ -437,19 +412,14 @@ public Builder() {...}
   /**
     * Solution specific XDM event data for this event, passed as raw mapping of keys and
     * Object values.
-    * If XDM schema is set multiple times using either this API or {@link #setXdmSchema(Schema)},
-    * the value will be overwritten and only the last changes are applied.
-    * Setting {@code xdm} to null clears the value.
-    *
-    * When using {@link Edge#sendEvent} this event is sent to the default
-    * Experience Platform dataset defined when generating the Experience Edge configuration ID.
     *
     * @param xdm {@code Map<String, Object>} of raw XDM schema data
     * @return instance of current builder
     * @throws UnsupportedOperationException if this instance was already built
     */
   public Builder setXdmSchema(final Map<String, Object> xdm) {...}
-/**
+
+  /**
     * Builds and returns a new instance of {@code ExperienceEvent}.
     *
     * @return a new instance of {@code ExperienceEvent} or null if one of the required parameters is missing
@@ -509,6 +479,8 @@ xdmData.setEventType("SampleXDMEvent");
 xdmData.setOtherField("OtherFieldValue");
 
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
+  .setXdmSchema(xdmData);
+  .build();
 ```
 
 ```java
@@ -522,31 +494,15 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData, "datasetIdExample")
   .build();
 ```
-
-```java
-//Example 4
-//Create Experience Event from Map:
-Map<String, Object> xdmData = new HashMap<>();
-xdmData.put("eventType", "SampleXDMEvent");
-xdmData.put("sample", "data");
-		
-ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
-  .setXdmSchema(xdmData)
-  .build();
-```
-
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
-Experience Event is the event to be sent to Adobe Experience Platform Edge Network.
-The XDM data is required for any Experience Event being sent using the Edge extension.
 
 ```swift
 @objc(AEPExperienceEvent)
 public class ExperienceEvent: NSObject {
 
-    /// XDM formatted data, use an `XDMSchema` implementation for a better XDM data injestion and format control
+    /// XDM formatted data, use an `XDMSchema` implementation for a better XDM data injection and format control
     @objc public let xdm: [String: Any]?
 
     /// Optional free-form data associated with this event
@@ -629,15 +585,6 @@ var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
 
 let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetIdExample")
 ```
-
-```swift
-//Example 4
-//Create Experience Event from Dictionary:
-var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
-                              "sample": "data"]
-let experienceEvent = ExperienceEvent(xdm: xdmData)
-```
-
 {% endtab %}
 
 ### Objective-C
@@ -659,15 +606,6 @@ NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
    
 AEPExperienceEvent *event = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:@"datasetIdExample"];
 ```
-
-```objectivec
-//Example 3
-//Create Experience Event from Dictionary:
-NSDictionary *xdmData = @{ @"eventType" : @"SampleXDMEvent"};
-   
-AEPExperienceEvent *event = [[AEPExperienceEvent alloc] initWithXdm:xdmData data:nil datasetIdentifier:nil];
-```
-
 {% endtab %}
 {% endtabs %}
 

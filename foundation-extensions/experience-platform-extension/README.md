@@ -11,7 +11,7 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 1. In Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
 3. Type in the extension settings. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ### Configure the Edge Network extension

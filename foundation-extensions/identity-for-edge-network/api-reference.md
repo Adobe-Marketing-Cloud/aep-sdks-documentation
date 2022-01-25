@@ -347,7 +347,7 @@ The Identity for Edge Network extension does not read the Mobile SDK's privacy s
 
 See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
-## updateIdentities <a id="updateIdentities"></a>
+## updateIdentities
 
 Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
 

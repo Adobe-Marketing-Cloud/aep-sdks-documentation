@@ -7,7 +7,7 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 1. In Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Identity** extension, and select **Install**.
 3. There are no configuration settings for **Identity**.
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ![AEP Identity for Edge Network extension configuration](../../.gitbook/assets/mobile-edge-identity-launch-configuration.png)
