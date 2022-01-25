@@ -14,6 +14,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
 
+## January 20, 2022
+
+### iOS AEPCore 3.4.0
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
 
 ## January 14, 2022
 
