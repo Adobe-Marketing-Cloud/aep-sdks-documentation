@@ -14,7 +14,7 @@ Include the "AEP Mobile Lifecycle Details" field group to the schema defined in 
 
 ![](../../.gitbook/assets/xdm-schema-add-mobile-lifecycle-details.png)
 
-## Configure the Adobe Experience Platform Lifecycle extension in Experience Platform
+## Configure the Adobe Experience Platform Lifecycle extension in Data Collection UI
 
 {% hint style="info" %}
 The Lifecycle for Edge Network extension is part of the Mobile Core extension. There is no separate card for the Lifecycle for Edge Network extension in the Extensions Catalog.
@@ -24,17 +24,17 @@ The Lifecycle for Edge Network extension is part of the Mobile Core extension. T
 The configuration setting "Session Timeout" in the Mobile Core extension configuration is used when collecting Lifecycle session data for Analytics and is not used for the Lifecycle for Edge Network extension.
 {% endhint %}
 
-1. In Platform, from your mobile property, click the **Extensions** tab.
+1. In the Data Collection UI, from your mobile property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Mobile Core** extension, and click **Install**.
 3. There are no configuration settings for **Lifecycle for Edge Network**.
 4. Click **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-In addition, use the following steps to [Configure the Edge Network extension in Platform](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#configure-the-edge-network-extension-in-platform).
+In addition, use the following steps to [Configure the Edge Network extension](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#configure-edge-network-extension).
 
 ![Mobile Core extension configuration](../../.gitbook/assets/mobile-core-launch-configuration.png)
 
-## Configure a Rule to forward Lifecycle metrics to Platform
+## Configure a Rule to forward Lifecycle metrics in Data Collection UI
 
 The Lifecycle for Edge Network extension dispatches application foreground and background events to the Mobile SDK. Create a rule to forward these events to the Adobe Experience Platform Edge Network.
 
