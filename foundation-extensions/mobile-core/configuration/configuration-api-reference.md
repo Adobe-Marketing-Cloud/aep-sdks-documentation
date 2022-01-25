@@ -467,17 +467,17 @@ MobileCore.configureWithFileInAssets("exampleJSONfile.json");
 
 ## clearUpdatedConfiguration (iOS 3.x.x Only)
 
-You can clear any programmatic updates made to configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
+You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to the configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
 
 Here are some examples of scenarios:
 
-`configureWith(appId:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` = You end up with the initial configuration set via `configureWith(appId:)`
+`configureWith(appId:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(appId:)`
 
-`configureWith(filePath:)` -> `updateConfigurationWith(configDict)` -> `clearUpdatedConfiguration()` = You end up with the initial configuration set via `configureWith(filePath:)`
+`configureWith(filePath:)` -> `updateConfigurationWith(configDict)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(filePath:)`
 
-`configureWith(appId:)` or `configureWith(filePath:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` -> `updateConfigurationWith(configDictL:)` = The configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
+`configureWith(appId:)` or `configureWith(filePath:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` -> `updateConfigurationWith(configDictL:)`: In this example, the configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
 
-`configureWith(appId:)` or `configureWith(filePath:)` -> `setPrivacyStatus(_ status:)` -> `clearUpdatedConfiguration()` = Your configuration will have the initial `PrivacyStatus` set via `configureWith(appId:)` or `configureWith(filePath:)`
+`configureWith(appId:)` or `configureWith(filePath:)` -> `setPrivacyStatus(_ status:)` -> `clearUpdatedConfiguration()`: In this example, the configuration will have the initial `PrivacyStatus` set via `configureWith(appId:)` or `configureWith(filePath:)`
 
 {% tabs %}
 {% tab title="iOS (AEP 3.x.x)" %}
