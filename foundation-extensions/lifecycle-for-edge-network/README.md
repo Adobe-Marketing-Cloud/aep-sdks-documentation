@@ -30,7 +30,7 @@ The configuration setting "Session Timeout" in the Mobile Core extension configu
 4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-In addition, use the following steps to [Configure the Edge Network extension](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#configure-edge-network-extension).
+In addition, use the following steps to [Configure the Edge Network extension](../experience-platform-extension#configure-edge-network-extension).
 
 ![Mobile Core extension configuration](../../.gitbook/assets/mobile-core-launch-configuration.png)
 
@@ -82,7 +82,7 @@ After you complete your configuration, verify that your rule looks like the foll
 
 ## Add the Lifecycle extension to your app
 
-For implementation details, please reference: 1. [Add Lifecycle to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#add-lifecycle-to-your-app). 2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
+For implementation details, please reference: 1. [Add Lifecycle to your app](../mobile-core/lifecycle#add-lifecycle-to-your-app). 2. [Register Lifecycle with Mobile Core and add appropriate Start/Pause calls](../mobile-core/lifecycle#register-lifecycle-with-mobile-core-and-add-appropriate-start-pause-calls).
 
-In addition, use the following steps to [add the Edge Network extension to your app](https://aep-sdks.gitbook.io/docs/foundation-extensions/experience-platform-extension#add-the-edge-network-extension-to-your-app).
+In addition, use the following steps to [add the Edge Network extension to your app](../experience-platform-extension#add-the-edge-network-extension-to-your-app).
 
