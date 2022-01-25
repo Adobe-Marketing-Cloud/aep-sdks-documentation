@@ -8,8 +8,8 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the AEP Assurance extension in the Data Collection UI. 
-2. Add Assurance SDK extension library to your app
+1. Install the AEP Assurance extension in the Data Collection UI.
+2. Add the Assurance extension to your app
    1. Import AEP Assurance into your app
    2. Register and implement extension APIs
 
@@ -40,7 +40,7 @@ Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/
 2. Import the Assurance library with the other Mobile SDK libraries:
 
    ```java
-   import com.adobe.marketing.mobile.Assurance; 
+   import com.adobe.marketing.mobile.Assurance;
    import com.adobe.marketing.mobile.MobileCore;
    ```
 {% endtab %}
@@ -59,14 +59,14 @@ Import the Assurance extension along with the other Adobe Mobile extensions:
 
 ```swift
 import AEPCore
-import AEPAssurance 
+import AEPAssurance
 ```
 
 #### Objective-C
 
 ```objectivec
 @import AEPCore;
-@import AEPAssurance; 
+@import AEPAssurance;
 ```
 
 {% endtab %}
@@ -137,7 +137,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tab title="Flutter" %}
 
-#### JavaScript 
+#### JavaScript
 
 1. Install the AEP Assurance package.
 
@@ -158,7 +158,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 {% tab title="Cordova" %}
 
-#### JavaScript 
+#### JavaScript
 
 1. After creating your Cordova app and adding the Android and iOS platforms, the AEPAssurance extension for Cordova can be added with this command:
 
@@ -265,9 +265,9 @@ To start using the extension library, you must first register the extension with
     NSArray *extensionsToRegister = @[AEPMobileAssurance.class, ...];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
         // set app id from the Data Collection UI
-				[AEPMobileCore configureWithAppId: @"yourAppId"]; 
+				[AEPMobileCore configureWithAppId: @"yourAppId"];
     }];
-        
+
     return YES;
 }
 
@@ -284,7 +284,7 @@ To start using the extension library, you must first register the extension with
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 	   // set app id from the Data Collection UI
-     ACPCore.configure(withAppId: "yourAppId") 
+     ACPCore.configure(withAppId: "yourAppId")
      AEPAssurance.registerExtension()
      ACPCore.start(nil)
      return true;
@@ -337,7 +337,7 @@ public class MainScript : MonoBehaviour
     public static void HandleStartAdobeCallback()
     {   
         // set app id from the Data Collection UI
-        ACPCore.ConfigureWithAppID("yourAppId"); 
+        ACPCore.ConfigureWithAppID("yourAppId");
     }
 
     // Start is called before the first frame update
@@ -533,4 +533,3 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 {% endtab %}
 {% endtabs %}
-
