@@ -8,27 +8,32 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 ## Configure the Edge Network extension in the Data Collection UI
 
-1. In Data Collection UI, in your mobile property, select the **Extensions** tab.
+
+## Configure the Edge Network extension in Data Collection UI <a id="configure-edge-network-extension"></a>
+
+1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
 3. Type in the extension settings. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
 4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-### Configure the Edge Network extension
-
 ![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
-Select the `Edge Configuration` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Edge configuration was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development environments will be automatically prefilled. If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
-If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
+If you use multiple Development configurations, select the desired one from the `Development environment` drop-down.
 
-The Edge configuration used by the client-side implementation is one of the followings:
+The datastream used by the client-side implementation is one of the followings:
 
-* the `Production Environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
-* the`Staging Environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
-* the `Development Environment` configuration when the Launch library is in development.
+* the `Production environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
+* the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
+* the `Development environment` configuration when the Launch library is in development.
+
+### Edge Network domain
+
+If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocol or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
 
 ## Add the Edge Network extension to your app
 
@@ -57,7 +62,7 @@ The Edge configuration used by the client-side implementation is one of the foll
 
 {% tab title="iOS (AEP 3.x)" %}
 
-1. Add the Mobile Core and Edge extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+1. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -172,5 +177,6 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| edge.configId | Yes | See [datastreams](./#datastreams) | String |
+| edge.configId | Yes | See [datastreams](./#datastreams). | String |
+| edge.domain   | No  | A custom first-party domain mapped to the Adobe provisioned Edge Network domain. | String |
 

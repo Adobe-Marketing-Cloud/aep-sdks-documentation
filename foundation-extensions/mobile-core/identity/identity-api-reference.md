@@ -2100,7 +2100,7 @@ public static void syncIdentifier(final String identifierType,
                                       final VisitorID.AuthenticationState authenticationState);
 ```
 
-* _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * _identifier (String)_ contains the `identifier value`, and this parameter should not be null or empty.
 * _authenticationState (AuthenticationState)_ indicates the authentication state of the user and contains one of the [VisitorID.AuthenticationState](#public-classes) values.
 
@@ -2123,7 +2123,7 @@ Identity.syncIdentifier("idType",
 static func syncIdentifier(identifierType: String, identifier: String, authenticationState: MobileVisitorAuthenticationState)
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifierType` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2160,7 +2160,7 @@ Identity.syncIdentifier(identifierType: "idType",
          authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2191,7 +2191,7 @@ ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPM
 syncIdentifier(identifierType: String, identifier: String, authenticationState: string);
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2216,7 +2216,7 @@ ACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthe
 Future<void> syncIdentifier(String identifierType, String identifier, ACPMobileVisitorAuthenticationState authState);
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2241,7 +2241,7 @@ FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisit
 ACPIdentity.syncIdentifier = function(identifierType, identifier, authState, success, fail);
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2270,7 +2270,7 @@ ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenti
 public static void SyncIdentifier(string identifierType, string identifier, ACPAuthenticationState authState)
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2293,7 +2293,7 @@ ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationS
 public static void SyncIdentifier (string identifierType, string identifier, ACPMobileVisitorAuthenticationState authenticationState);
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
@@ -2306,7 +2306,7 @@ public static void SyncIdentifier (string identifierType, string identifier, ACP
 public unsafe static void SyncIdentifier (string identifierType, string identifier, VisitorID.AuthenticationState authenticationState);
 ```
 
-* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty.
+* The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
 * The _identifier (String)_ contains the `identifier` value, and this parameter should not be null or empty.
 
   If either the `identifier type` or `identifier` contains a null or an empty string, the identifier is ignored by the Identity extension.
