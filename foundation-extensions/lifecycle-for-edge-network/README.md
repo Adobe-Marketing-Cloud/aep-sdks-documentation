@@ -34,7 +34,7 @@ In addition, use the following steps to [Configure the Edge Network extension](.
 
 ![Mobile Core extension configuration](../../.gitbook/assets/mobile-core-launch-configuration.png)
 
-## Configure a Rule to forward Lifecycle metrics in Data Collection UI
+## Configure a Rule to forward Lifecycle metrics to Platform
 
 The Lifecycle for Edge Network extension dispatches application foreground and background events to the Mobile SDK. Create a rule to forward these events to the Adobe Experience Platform Edge Network.
 
