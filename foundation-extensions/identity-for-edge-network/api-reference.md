@@ -47,7 +47,7 @@ let extensionVersion = EdgeIdentity.extensionVersion
 **Examples**
 
 ```objectivec
-NSString *extensionVersion = [AEPEdgeIdentity extensionVersion];
+NSString *extensionVersion = [AEPMobileEdgeIdentity extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
