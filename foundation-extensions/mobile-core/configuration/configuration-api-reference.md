@@ -465,3 +465,44 @@ MobileCore.configureWithFileInAssets("exampleJSONfile.json");
 {% endtab %}
 {% endtabs %}
 
+## clearUpdatedConfiguration (iOS 3.x.x Only)
+
+You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to the configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
+
+Here are some examples of scenarios:
+
+`configureWith(appId:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(appId:)`
+
+`configureWith(filePath:)` -> `updateConfigurationWith(configDict)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(filePath:)`
+
+`configureWith(appId:)` or `configureWith(filePath:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` -> `updateConfigurationWith(configDictL:)`: In this example, the configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
+
+`configureWith(appId:)` or `configureWith(filePath:)` -> `setPrivacyStatus(_ status:)` -> `clearUpdatedConfiguration()`: In this example, the configuration will have the initial `PrivacyStatus` set via `configureWith(appId:)` or `configureWith(filePath:)`
+
+{% tabs %}
+{% tab title="iOS (AEP 3.x.x)" %}
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func clearUpdatedConfiguration()
+```
+
+**Example**
+```swift
+MobileCore.clearUpdatedConfiguration()
+```
+
+#### Objective-C
+
+**Syntax**
+```swift
+static func clearUpdatedConfiguration()
+```
+
+**Example**
+```objectivec
+[AEPMobileCore clearUpdatedConfiguration];
+```
