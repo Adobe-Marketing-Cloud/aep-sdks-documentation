@@ -80,12 +80,10 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 	.setXdmSchema(xdmData)
 	.build();
 ```
-
 ```java
 // example 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent, null);
 ```
-
 ```java
 // example 2 - send the experience event and handle the Edge Network response onComplete
 Edge.sendEvent(experienceEvent, new EdgeCallback() {
@@ -117,7 +115,6 @@ var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
                               "sample": "data"]
 let experienceEvent = ExperienceEvent(xdm: xdmData)
 ```
-
 ```swift
 // example 1 - send the experience event without handling the Edge Network response
 Edge.sendEvent(experienceEvent: experienceEvent)
@@ -378,55 +375,65 @@ The XDM data is required for any Experience Event being sent using the Edge exte
 ```Java
 public final class ExperienceEvent {
 
-  
-public Builder() {...}
-  /**
-    * Sets free form data associated with this event to be passed to Adobe Experience Edge.
-    *
-    * @param data free form data, JSON like types are accepted
-    * @return instance of current builder
-    * @throws UnsupportedOperationException if this instance was already built
-    */
-  public Builder setData(final Map<String, Object> data) {...}
+  public static class Builder {
+    ...
 
-  /**
-    * Solution specific XDM event data for this event.
-    *
-    * @param xdm {@link Schema} information
-    * @return instance of current builder
-    * @throws UnsupportedOperationException if this instance was already built
-    */
-  public Builder setXdmSchema(final Schema xdm) {...}
+    public Builder() {
+      ...
+    }
 
-  /**
-    * Solution specific XDM event data and dataset identifier for this event.
-    *
-    * @param xdm {@code Map<String, Object>} of raw XDM schema data
-    * @param datasetIdentifier The Experience Platform dataset identifier where this event is sent.
-    *                          If not provided, the default dataset defined in the configuration ID is used
-    * @return instance of current builder
-    * @throws UnsupportedOperationException if this instance was already built
-    */
-  public Builder setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier) {...}
+    /**
+      * Sets free form data associated with this event to be passed to Adobe Experience Edge.
+      *
+      * @param data free form data, JSON like types are accepted
+      * @return instance of current builder
+      * @throws UnsupportedOperationException if this instance was already built
+      */
+    public Builder setData(final Map<String, Object> data) {...}
 
-  /**
-    * Solution specific XDM event data for this event, passed as raw mapping of keys and
-    * Object values.
-    *
-    * @param xdm {@code Map<String, Object>} of raw XDM schema data
-    * @return instance of current builder
-    * @throws UnsupportedOperationException if this instance was already built
-    */
-  public Builder setXdmSchema(final Map<String, Object> xdm) {...}
+    /**
+      * Solution specific XDM event data for this event.
+      *
+      * @param xdm {@link Schema} information
+      * @return instance of current builder
+      * @throws UnsupportedOperationException if this instance was already built
+      */
+    public Builder setXdmSchema(final Schema xdm) {...}
 
-  /**
-    * Builds and returns a new instance of {@code ExperienceEvent}.
-    *
-    * @return a new instance of {@code ExperienceEvent} or null if one of the required parameters is missing
-    * @throws UnsupportedOperationException if this instance was already built
-    */
-  public ExperienceEvent build() {...}
-}
+    /**
+      * Solution specific XDM event data and dataset identifier for this event.
+      *
+      * @param xdm {@code Map<String, Object>} of raw XDM schema data
+      * @param datasetIdentifier The Experience Platform dataset identifier where this event is sent.
+      *                          If not provided, the default dataset defined in the configuration ID is used
+      * @return instance of current builder
+      * @throws UnsupportedOperationException if this instance was already built
+      */
+    public Builder setXdmSchema(final Map<String, Object> xdm, final String datasetIdentifier) {...}
+
+    /**
+      * Solution specific XDM event data for this event, passed as raw mapping of keys and
+      * Object values.
+      *
+      * @param xdm {@code Map<String, Object>} of raw XDM schema data
+      * @return instance of current builder
+      * @throws UnsupportedOperationException if this instance was already built
+      */
+    public Builder setXdmSchema(final Map<String, Object> xdm) {...}
+
+    /**
+      * Builds and returns a new instance of {@code ExperienceEvent}.
+      *
+      * @return a new instance of {@code ExperienceEvent} or null if one of the required parameters is missing
+      * @throws UnsupportedOperationException if this instance was already built
+      */
+    public ExperienceEvent build() {...}
+  }
+
+  public Map<String, Object> getData() {...}
+
+  public Map<String, Object> getXdmSchema() {...} 
+}  
 ```
 
 **Examples**
