@@ -486,7 +486,7 @@ xdmData.setEventType("SampleXDMEvent");
 xdmData.setOtherField("OtherFieldValue");
 
 ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
-  .setXdmSchema(xdmData);
+  .setXdmSchema(xdmData)
   .build();
 ```
 
