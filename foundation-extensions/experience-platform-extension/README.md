@@ -6,7 +6,7 @@
 
 The Adobe Experience Platform Edge Network extension requires the Identity for Edge Network extension in order to operate. As a first step install and configure the [Identity for Edge Network](../identity-for-edge-network) extension, then continue with the steps below.
 
-## Configure the Edge Network extension in the Data Collection UI
+## Configure the Edge Network extension in Data Collection UI <a id="configure-edge-network-extension"></a>
 
 1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
