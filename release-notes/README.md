@@ -4,7 +4,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## January 24, 2022
+## January 26, 2022
 
 ### ACP Unity packages
 
