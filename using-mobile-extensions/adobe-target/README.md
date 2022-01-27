@@ -16,7 +16,7 @@ To get started with Target, follow these steps:
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
-1. In Experience Platform Launch, click the **Extensions** tab.
+1. In Data Collection UI, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the Adobe Target extension, and click **Install**.
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
@@ -31,7 +31,7 @@ To add the Target extension to your app:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 1. Add the Mobile Core and Target extensions to your project using the app's Gradle file.
 
@@ -107,7 +107,7 @@ To add the Target extension to your app:
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 1. Install Target.
 
@@ -136,7 +136,7 @@ To register the Target extension with Mobile Core:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 In your Application's `onCreate()` method, after calling the `setApplication()` method, register Target with Mobile Core.
 
@@ -164,7 +164,7 @@ public class TargetApp extends Application {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Swift
+### Swift
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {    
   MobileCore.registerExtensions([Target.self, Identity.self]) {
@@ -175,7 +175,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
-#### Objective C
+### Objective C
 
 In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
@@ -194,7 +194,7 @@ In your app's `didFinishLaunchingWithOptions` function, register the Target exte
 
 {% tab title="iOS (ACP 2.x)" %}
 
-#### Swift
+### Swift
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   ACPCore.configure(withAppId: "yourAppId")   
@@ -205,7 +205,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
-#### Objective C
+### Objective C
 
 In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
@@ -224,7 +224,7 @@ In your app's `didFinishLaunchingWithOptions` function, register the Target exte
 {% tab title="React Native" %}
 To register the Target extension with the Mobile Core extension, use the following API:
 
-#### JavaScript
+### JavaScript
 
 ```javascript
 ACPTarget.registerExtension();
@@ -259,7 +259,7 @@ TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Swift
+### Swift
 **Syntax**
 
 ```swift
@@ -271,7 +271,7 @@ public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
 let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
 ```
 
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) id: (nonnull NSString*) id total: (nullable NSNumber*) total purchasedProductIds: (nullable NSArray <NSString*>*)  purchasedProductIds;
@@ -285,7 +285,7 @@ AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purc
 
 {% tab title="iOS (ACP 2.x)" %}
 
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
@@ -295,7 +295,7 @@ public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
 ```swift
 let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
 ```
-#### Objective C
+### Objective C
 **Syntax**
 
 ```objectivec
@@ -338,7 +338,7 @@ TargetProduct targetProduct = new TargetProduct("123", "Books");
 {% endtab %}
 
 {% tab title="iOS (ACP 3.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public init(productId: String, categoryId: String? = nil)
@@ -348,7 +348,7 @@ public init(productId: String, categoryId: String? = nil)
 ```swift
 let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 ```
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) productId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
@@ -360,7 +360,7 @@ AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" c
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public init(id productId: String, categoryId: String? = nil)
@@ -370,7 +370,7 @@ public init(id productId: String, categoryId: String? = nil)
 ```swift
 let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 ```
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
@@ -434,7 +434,7 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
@@ -456,7 +456,7 @@ let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 let targetParameters = TargetParameters(parameters: mboxParameters, profileParameters: profileParameters, order: order, product: product))
 ```
 
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) parameters: (nullable NSDictionary*) parameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
@@ -476,7 +476,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
@@ -498,7 +498,7 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
@@ -570,7 +570,7 @@ The SDK can only collect information from the launching Activity if [`setApplica
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public static func collectLaunchInfo(_ userInfo: [String: Any])
@@ -586,7 +586,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
     MobileCore.collectLaunchInfo(launchInfo)
 ```
 
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
@@ -599,7 +599,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-#### Swift
+### Swift
 **Syntax**
 ```swift
 public static func collectLaunchInfo(_ userInfo: [String: Any])
@@ -610,7 +610,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 
-#### Objective C
+### Objective C
 **Syntax**
 ```objectivec
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
