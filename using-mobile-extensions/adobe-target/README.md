@@ -4,7 +4,7 @@ Adobe Target helps test, personalize, and optimize mobile app experiences based 
 
 To get started with Target, follow these steps:
 
-1. Configure the Target extension in Experience Platform Launch.
+1. Configure the Target extension in Data Collection UI.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
    * Request mbox offers.
@@ -12,7 +12,7 @@ To get started with Target, follow these steps:
    * Track mboxes.
    * Enter visual preview mode.
 
-## Configure the Target extension in Experience Platform Launch
+## Configure the Target extension in Data Collection UI
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
@@ -48,12 +48,11 @@ To add the Target extension to your app:
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-1. Add the AEPCore, AEPIdentity and AEPTarget CocoaPods to your project via your `Podfile`.
+1. Add the AEPCore and AEPTarget CocoaPods to your project via your `Podfile`.
 
    ```text
-    pod 'AEPCore','~>3.0.0'
-    pod 'AEPIdentity','~>3.0.0'
-    pod 'AEPTarget','~>3.0.0'
+    pod 'AEPCore','~>3.0'    
+    pod 'AEPTarget','~>3.0'
    ```
 
 2. Import the Target and Identity libraries.
@@ -77,12 +76,11 @@ To add the Target extension to your app:
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-1. Add the ACPCore, ACPIdentity and ACPTarget CocoaPods to your project via your `Podfile`.
+1. Add the ACPCore and ACPTarget CocoaPods to your project via your `Podfile`.
 
    ```text
-    pod 'ACPCore','~>2.0.0'
-    pod 'ACPIdentity','~>2.0.0'
-    pod 'ACPTarget','~>2.0.0'
+    pod 'ACPCore','~>2.0'
+    pod 'ACPTarget','~>2.0'
    ```
 
 2. Import the Target and Identity libraries.
@@ -185,12 +183,10 @@ In your app's `didFinishLaunchingWithOptions` function, register the Target exte
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [AEPMobileCore registerExtensions: @[AEPMobileIdentity.class, AEPMobileTarget.class] completion:^{
         //Completion callback
-        // Use the App id assigned to this application via Adobe Launch
+        // Use the app ID assigned to this application via Data Collection UI
         [AEPMobileCore configureWithAppId: @"yourAppId"];
     }];
 
-    // Use the App id assigned to this application via Adobe Launch
-    [AEPMobileCore configureWithAppId: @"yourAppId"];
     return YES;
 }
 ```
@@ -262,67 +258,56 @@ TargetOrder targetOrder = new TargetOrder("123", 567.89, purchasedProductIds);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x Swift)" %}
-#### Syntax
+{% tab title="iOS (AEP 3.x)" %}
+#### Swift
+**Syntax**
 
 ```swift
 public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
 ```
 
-#### Examples
-
-Here are examples in Swift:
-
-**Swift**
-
+**Examples**
 ```swift
 let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
 ```
-{% endtab %}
 
-{% tab title="iOS (AEP 3.x Objective-C)" %}
+#### Objective C
+**Syntax**
+```objectivec
++ (nonnull instancetype) id: (nonnull NSString*) id total: (nullable NSNumber*) total purchasedProductIds: (nullable NSArray <NSString*>*)  purchasedProductIds;
+```
 
-#### Examples
-
-Here are examples of creating TargetOrder in Objective C:
-
-**Objective C**
-
+**Examples**
 ```objectivec
 AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
 ```
 {% endtab %}
 
+{% tab title="iOS (ACP 2.x)" %}
 
-{% tab title="iOS (ACP 2.x) Objective-C" %}
-#### Syntax
+#### Swift
+**Syntax**
+```swift
+public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
+```
+
+**Examples**
+```swift
+let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
+```
+#### Objective C
+**Syntax**
 
 ```objectivec
 + (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId total: (nullable NSNumber*) total purchasedProductIds: (nullable NSArray <NSString*>*)  purchasedProductIds;
 ```
 
-#### Examples
-
-Here are some examples in Objective C:
-
-**Objective C**
-
+**Examples**
 ```objectivec
 ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x) Swift" %}
-
-#### Examples
-
-Here are some examples of creating ACPTargetOrder in Swift:
-
-**Swift**
-
-```swift
-let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
-```
 
 {% tab title="React Native" %}
 **JavaScript**
@@ -352,63 +337,48 @@ TargetProduct targetProduct = new TargetProduct("123", "Books");
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 3.x Swift)" %}
+{% tab title="iOS (ACP 3.x)" %}
+#### Swift
+**Syntax**
 ```swift
 public init(productId: String, categoryId: String? = nil)
 ```
 
-#### Examples
-
-Here are some examples in Swift:
-
-**Swift**
-
+**Examples**
 ```swift
 let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 ```
-{% endtab %}
-
-{% tab title="iOS (ACP 3.x Objective-C)" %}
-
-#### Examples
-
-Here are some examples of creating TargetProduct in Objective-C:
-
-**Objective C**
-
+#### Objective C
+**Syntax**
+```objectivec
++ (nonnull instancetype) productId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
+```
+**Examples**
 ```objectivec
 AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x) Objective-C" %}
-#### Syntax
+{% tab title="iOS (ACP 2.x)" %}
+#### Swift
+**Syntax**
+```swift
+public init(id productId: String, categoryId: String? = nil)
+```
 
+**Examples**
+```swift
+let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
+```
+#### Objective C
+**Syntax**
 ```objectivec
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
 ```
 
-#### Examples
-
-Here are some examples in Objective C:
-
-**Objective C**
-
+**Examples**
 ```objectivec
 ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-```
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x) Swift" %}
-
-#### Examples
-
-Here are some examples of creating ACPTargetProduct in Swift:
-
-**Swift**
-
-```swift
-let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 ```
 {% endtab %}
 
@@ -463,19 +433,14 @@ TargetParameters targetParameters = new TargetParameters.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x Swift)" %}
-#### Syntax
-
+{% tab title="iOS (AEP 3.x)" %}
+#### Swift
+**Syntax**
 ```swift
 public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
 ```
 
-#### Examples
-
-Here are some examples in Swift:
-
-**Swift**
-
+**Examples**
 ```swift
 let mboxParameters = [
 "status": "Platinum"
@@ -490,16 +455,14 @@ let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 
 let targetParameters = TargetParameters(parameters: mboxParameters, profileParameters: profileParameters, order: order, product: product))
 ```
-{% endtab %}
 
-{% tab title="iOS (AEP 3.x Objective-C)" %}
+#### Objective C
+**Syntax**
+```objectivec
++ (nonnull instancetype) parameters: (nullable NSDictionary*) parameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
+```
 
-#### Examples
-
-Here are some examples of creating TargetParameters in Objective C:
-
-**Objective C**
-
+**Examples**
 ```objectivec
 NSDictionary *mboxParameters = @{@"status":@"Platinum"};
 NSDictionary *profileParameters = @{@"gender":@"female"};
@@ -512,43 +475,14 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ```
 {% endtab %}
 
-
-{% tab title="iOS (ACP 2.x) Objective-C" %}
-#### Syntax
-
-```objectivec
-+ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
+{% tab title="iOS (ACP 2.x)" %}
+#### Swift
+**Syntax**
+```swift
+public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
 ```
 
-#### Examples
-
-Here are some examples in Objective C:
-
-**Objective C**
-
-```objectivec
-NSDictionary *mboxParameters = @{@"status":@"Platinum"};
-NSDictionary *profileParameters = @{@"gender":@"female"};
-
-ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
-
-ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
-
-ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
-profileParameters:profileParameters
-product:product
-order:order];
-```
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x) Swift" %}
-
-#### Examples
-
-Here are some examples of creating ACPTargetParameters in Swift:
-
-**Swift**
-
+**Examples**
 ```swift
 let mboxParameters = [
 "status": "Platinum"
@@ -564,6 +498,26 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 
+#### Objective C
+**Syntax**
+```objectivec
++ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
+```
+
+**Examples**
+```objectivec
+NSDictionary *mboxParameters = @{@"status":@"Platinum"};
+NSDictionary *profileParameters = @{@"gender":@"female"};
+
+ACPTargetProduct *product = [ACPTargetProduct targetProductWithId:@"24D334" categoryId:@"Stationary"];
+
+ACPTargetOrder *order = [ACPTargetOrder targetOrderWithId:@"ADCKKBC" total:@(400.50) purchasedProductIds:@[@"34", @"125"]];
+
+ACPTargetParameters *targetParameters = [ACPTargetParameters targetParametersWithParameters:mboxParameters
+profileParameters:profileParameters
+product:product
+order:order];
+```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -615,19 +569,14 @@ The SDK can only collect information from the launching Activity if [`setApplica
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x Swift)" %}
-#### Syntax
-
+{% tab title="iOS (AEP 3.x)" %}
+#### Swift
+**Syntax**
 ```swift
 public static func collectLaunchInfo(_ userInfo: [String: Any])
 ```
 
-#### Examples
-
-Here are some examples in Swift:
-
-**Swift**
-
+**Examples**
 ```swift
    let launchInfo = [
        "key_str":"stringValue",
@@ -636,54 +585,40 @@ Here are some examples in Swift:
        "adb_m_l_id":"happyBirthdayNotification"]
     MobileCore.collectLaunchInfo(launchInfo)
 ```
-{% endtab %}
 
-{% tab title="iOS (AEP 3.x Objective-C)" %}
-
-#### Examples
-
-Here are some examples of calling `collectLaunchInfo` in Objective C:
-
-**Objective C**
-
+#### Objective C
+**Syntax**
+```objectivec
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+**Examples**
 ```objectivec
  NSDictionary<NSString *, id> * launchInfo = @{@"key_str":@"stringValue", @"adb_deeplink":@"abc://myawesomeapp?some=param&some=other_param", @"adb_m_id":@"awesomePushMessage", @"adb_m_l_id":@"happyBirthdayNotification"};
  [AEPMobileCore collectLaunchInfo:launchInfo];
-```
+ ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x Objective-C)" %}
-#### Syntax
-
-```objectivec
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+{% tab title="iOS (ACP 2.x)" %}
+#### Swift
+**Syntax**
+```swift
+public static func collectLaunchInfo(_ userInfo: [String: Any])
 ```
 
-#### Examples
-
-Here are some examples in Objective-C:
-
-**Objective-C**
-
-```text
-[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
-```
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x Swift)" %}
-#### Syntax
-
-```objectivec
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
-```
-
-#### Examples
-
-Here are some examples in Swift:
-
-**Swift**
+**Examples**
 ```swift
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
+```
+
+#### Objective C
+**Syntax**
+```objectivec
++ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
+```
+
+**Examples**
+```objectivec
+[ACPCore collectLaunchInfo: @{@"adb_deeplink":@"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];`
 ```
 {% endtab %}
 {% endtabs %}
