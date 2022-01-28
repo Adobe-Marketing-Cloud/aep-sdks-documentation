@@ -78,9 +78,9 @@ dependencies: [
     .package(url: "https://github.com/adobe/aepsdk-userprofile-ios.git", .upToNextMajor(from: "3.0.0")),
 ],
 targets: [
-		.target(name: "YourTarget",
-  					dependencies: ["AEPCore", "AEPUserProfile"],
-      			path: "your/path"),
+    .target(name: "YourTarget",
+            dependencies: ["AEPCore", "AEPUserProfile"],
+            path: "your/path"),
 ]
 ```
 
