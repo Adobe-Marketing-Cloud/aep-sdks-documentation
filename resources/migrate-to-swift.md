@@ -79,7 +79,14 @@ dependencies: [
 ],
 targets: [
     .target(name: "YourTarget",
-            dependencies: ["AEPCore", "AEPUserProfile"],
+            dependencies: [
+                .product(name: "AEPCore", package: "AEPCore"),
+                .product(name: "AEPIdentity", package: "AEPCore"),
+                .product(name: "AEPSignal", package: "AEPCore"),
+                .product(name: "AEPLifecycle", package: "AEPCore"),
+                .product(name: "AEPServices", package: "AEPCore"),
+                .product(name: "AEPUserProfile", package: "AEPUserProfile"),
+            ],
             path: "your/path"),
 ]
 ```
