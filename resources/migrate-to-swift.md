@@ -8,7 +8,7 @@ If you have implemented Objective-C versions \(ACP-prefixed SDK libraries, 2.x o
 
 ## Switch imported libraries
 
-At this time, the following ACP-prefix libraries may be switched out with their respective AEP-prefix SDK libraries. See instructions on proceeding further if you have [manually imported SDK libraries](migrate-to-swift.md#manual-library-import) , if you used [CocoaPods to manage SDK dependencies](migrate-to-swift.md#cocoapods) or [Swift Package Manager](migrate-to-swift.md#spm).
+At this time, the following ACP-prefix libraries may be switched out with their respective AEP-prefix SDK libraries. See instructions on proceeding further if you have [manually imported SDK libraries](migrate-to-swift.md#manual-library-import) , if you used [CocoaPods to manage SDK dependencies](migrate-to-swift.md#cocoapods), or you used [Swift Package Manager](migrate-to-swift.md#swift-package-manager).
 
 {% hint style="warning" %}
 In addition to `ACPCore` being replaced with `AEPCore`, you will also need to explicitly import `AEPLifecycle`, `AEPIdentity`, and `AEPSignal` libraries to ensure there is no disruption in SDK behavior.
@@ -51,20 +51,24 @@ Save the `Podfile` and run `pod repo update` to update your local CocoaPods repo
 
 Once the previous command is complete, run `pod install` or `pod update` to update the application dependencies.
 
-### SPM
+### Swift Package Manager
 
-You can now also use SPM to manage your Adobe Experience Platform Mobile SDK dependencies. To add the AEP Packages to your application, from the Xcode menu select:
+You can now also use Swift Package Manager (SPM) to manage your Adobe Experience Platform Mobile SDK dependencies. To add the AEP SDK Packages to your application, from the Xcode 13 menu select:
 
 ```
-File > Swift Packages > Add Package Dependency...
+File > Add Packages...
 ```
 
-Enter the URL for the AEP package repositories: 
+Enter the Package URL for the AEP SDK repositories: 
 
-- AEPCore package: `https://github.com/adobe/aepsdk-core-ios.git`
-- AEPUserProfile package: `https://github.com/adobe/aepsdk-userprofile-ios.git`
+- AEPCore: `https://github.com/adobe/aepsdk-core-ios.git`
+- AEPUserProfile: `https://github.com/adobe/aepsdk-userprofile-ios.git`
 
-When prompted, input a specific version or a range of versions, and choose all the `AEP*` libraries.
+For each package, specify the Dependency rule as a specific version or a range of versions and select the Project. 
+
+When prompted, select all the `AEP*` libraries, then click `Add Package`.
+
+
 
 Alternatively, if your project has a `Package.swift` file, you can add AEPCore and AEPUserProfile directly to your dependencies:
 
@@ -72,6 +76,11 @@ Alternatively, if your project has a `Package.swift` file, you can add AEPCore a
 dependencies: [
     .package(url: "https://github.com/adobe/aepsdk-core-ios.git", .upToNextMajor(from: "3.0.0")),
     .package(url: "https://github.com/adobe/aepsdk-userprofile-ios.git", .upToNextMajor(from: "3.0.0")),
+],
+targets: [
+		.target(name: "YourTarget",
+  					dependencies: ["AEPCore", "AEPUserProfile"],
+      			path: "your/path"),
 ]
 ```
 
