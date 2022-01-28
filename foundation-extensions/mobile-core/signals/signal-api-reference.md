@@ -132,11 +132,11 @@ Signal.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 This API no longer exists in `Signal`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 **Syntax**
 
 ```text
@@ -165,5 +165,5 @@ When using React Native, register the Signal extension with Mobile Core in nativ
 
 ## CollectPII API
 
-The Signal extension can be used to handle `collectPII` rules. For more information, see the [collectPII](../mobile-core-api-reference#collect-pii) API.
+The Signal extension can be used to handle `collectPII` rules. For more information, see the [collectPII](../mobile-core-api-reference.md#collectpii) API.
 
