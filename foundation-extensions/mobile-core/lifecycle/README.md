@@ -446,21 +446,10 @@ using Com.Adobe.Marketing.Mobile;
 {% tab title="React Native" %}
 **Registering the extension with Core:**
 
-When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
+When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS(ACP 2.x) tabs.
 
-> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
+> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. 
 
-**Starting a lifecycle event:**
-
-```jsx
-ACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
-
-**Pausing a lifecycle event:**
-
-```jsx
-ACPCore.lifecyclePause();
-```
 {% endtab %}
 
 {% tab title="Cordova" %}
