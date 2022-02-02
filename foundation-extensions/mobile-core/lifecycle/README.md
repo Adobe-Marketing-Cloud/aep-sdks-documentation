@@ -448,8 +448,6 @@ using Com.Adobe.Marketing.Mobile;
 
 When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS(ACP 2.x) tabs.
 
-> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. 
-
 {% endtab %}
 
 {% tab title="Cordova" %}
