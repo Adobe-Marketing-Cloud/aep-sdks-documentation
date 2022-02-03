@@ -4,7 +4,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## February 3, 2022
+
+### iOS AEPServices 3.4.2
+* Add `@objc` attribute to `messageSettings` in `FullscreenMessage`
+
 ## January 26, 2022
+
+### iOS AEPCore 3.4.1
+* Fixed AEPRulesEngine dependency in Package.swift
 
 ### ACP Unity packages
 
