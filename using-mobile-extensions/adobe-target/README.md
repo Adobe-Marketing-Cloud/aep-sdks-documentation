@@ -78,7 +78,7 @@ To add the Target extension to your app:
 {% tab title="iOS (ACP 2.x)" %}
 1. Add the ACPCore and ACPTarget CocoaPods to your project via your `Podfile`.
 
-   ```text
+   ```ruby
     pod 'ACPCore','~>2.0'
     pod 'ACPTarget','~>2.0'
    ```
