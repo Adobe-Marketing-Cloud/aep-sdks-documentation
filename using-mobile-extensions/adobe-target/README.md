@@ -4,7 +4,7 @@ Adobe Target helps test, personalize, and optimize mobile app experiences based 
 
 To get started with Target, follow these steps:
 
-1. Configure the Target extension in Data Collection UI.
+1. Configure the Target extension in the Data Collection UI.
 2. Add the Target Extension to your app.
 3. Implement Target APIs to:
    * Request mbox offers.
@@ -12,11 +12,11 @@ To get started with Target, follow these steps:
    * Track mboxes.
    * Enter visual preview mode.
 
-## Configure the Target extension in Data Collection UI
+## Configure the Target extension in the Data Collection UI
 
 ![Adobe Target Extension Configuration](../../.gitbook/assets/adobe-target-launch-options.png)
 
-1. In Data Collection UI, click the **Extensions** tab.
+1. In the Data Collection UI, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the Adobe Target extension, and click **Install**.
 3. Your **Target** client code will be detected automatically.
 4. Optionally, provide your Environment ID.
@@ -65,7 +65,7 @@ To add the Target extension to your app:
        import AEPIdentity
    ```
 
-   **Objective C**
+   **Objective-C**
 
    ```objectivec
        @import AEPCore
@@ -93,7 +93,7 @@ To add the Target extension to your app:
        import ACPIdentity
    ```
 
-   **Objective C**
+   **Objective-C**
 
    ```objectivec
        #import "ACPCore.h"
@@ -175,7 +175,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
-### Objective C
+### Objective-C
 
 In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
@@ -205,7 +205,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
-### Objective C
+### Objective-C
 
 In your app's `didFinishLaunchingWithOptions` function, register the Target extension with Mobile Core:
 
@@ -271,7 +271,7 @@ public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
 let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
 ```
 
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) id: (nonnull NSString*) id total: (nullable NSNumber*) total purchasedProductIds: (nullable NSArray <NSString*>*)  purchasedProductIds;
@@ -295,7 +295,7 @@ public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
 ```swift
 let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purchasedProductIds: ["34", "125"])
 ```
-### Objective C
+### Objective-C
 **Syntax**
 
 ```objectivec
@@ -348,7 +348,7 @@ public init(productId: String, categoryId: String? = nil)
 ```swift
 let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 ```
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) productId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
@@ -370,7 +370,7 @@ public init(id productId: String, categoryId: String? = nil)
 ```swift
 let product = ACPTargetProduct(id: "24D334", categoryId: "Stationary")
 ```
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
@@ -456,7 +456,7 @@ let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 let targetParameters = TargetParameters(parameters: mboxParameters, profileParameters: profileParameters, order: order, product: product))
 ```
 
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) parameters: (nullable NSDictionary*) parameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
@@ -498,7 +498,7 @@ let order = ACPTargetOrder(id: "ADCKKBC", total: NSNumber(value: 400.50), purcha
 let targetParameters = ACPTargetParameters(parameters: mboxParameters, profileParameters: profileParameters, product: product, order: order)
 ```
 
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) targetParameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
@@ -610,7 +610,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 ACPCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
