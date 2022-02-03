@@ -50,7 +50,7 @@ To add the Target extension to your app:
 {% tab title="iOS (AEP 3.x)" %}
 1. Add the AEPCore and AEPTarget CocoaPods to your project via your `Podfile`.
 
-   ```text
+   ```ruby
     pod 'AEPCore','~>3.0'    
     pod 'AEPTarget','~>3.0'
    ```
