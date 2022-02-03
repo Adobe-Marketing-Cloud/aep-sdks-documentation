@@ -26,7 +26,7 @@ To get started with the Profile extension:
 ![AEP Profile extension configuration](../../.gitbook/assets/mobile-profile-launch-configuration.png)
 
 
-## Add the Profile extension to your App
+## Add the Profile extension to your app
 
 To add the Profile extension to your app:
 
@@ -37,7 +37,7 @@ To add the Profile extension to your app:
 1. Add the `UserProfile` library to your project using the app's gradle file.
 2. Import the `UserProfile` library and any other SDK library in your application's main activity.
 
-   ```text
+   ```java
    import com.adobe.marketing.mobile.*;
    ```
 {% endtab %}
@@ -104,7 +104,7 @@ end
 
 After creating your Cordova app and adding the Android and iOS platforms, the UserProfile extension for Cordova can be added with this command:
 
-```text
+```bash
 cordova plugin add https://github.com/adobe/cordova-acpuserprofile.git
 ```
 {% endtab %}
