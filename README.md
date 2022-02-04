@@ -52,7 +52,9 @@ The Adobe Experience Platform Mobile SDK provides support for the following plat
 * iOS - Swift \(New! - see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for repos, download links\)
 * iOS - Objective C \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
 * Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
-* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* React Native (ACP 2.x) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native-(acp-2.x)) for download links\)
+* React Native (AEP 1.x) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native-(aep-1.x)) for download links\)
+
 * Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
 * Unity \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)
