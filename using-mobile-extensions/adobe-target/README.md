@@ -586,7 +586,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
     MobileCore.collectLaunchInfo(launchInfo)
 ```
 
-### Objective C
+### Objective-C
 **Syntax**
 ```objectivec
 + (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
