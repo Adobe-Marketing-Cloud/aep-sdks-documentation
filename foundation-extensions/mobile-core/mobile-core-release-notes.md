@@ -1,5 +1,16 @@
 # Release Notes
 
+## February 8, 2022
+
+### Android Identity 1.3.0
+
+- Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+- Added support to handle the MobileCore.resetIdentities() API.
+- Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+- Stability impovements for network connections.
+
+Released with sdk-core version 1.10.0
+
 ## February 3, 2022
 
 ### iOS AEPServices 3.4.2
