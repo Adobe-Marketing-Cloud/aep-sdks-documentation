@@ -9,7 +9,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Identity 1.3.0
 
 - Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
-- Added support to handle the MobileCore.resetIdentities\(\) API.
+- Added support to handle the MobileCore.resetIdentities() API.
 - Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
 - Stability impovements for network connections.
 
