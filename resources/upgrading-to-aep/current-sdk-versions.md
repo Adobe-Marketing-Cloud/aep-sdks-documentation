@@ -124,6 +124,10 @@ Adobe Experience Platform Mobile SDK plugins (AEP 1.x) for React Native are comp
 For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from [npm](https://npm.io/). For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
 {% endhint %}
 
+{% hint style="info" %}
+If you are currently using our ACP-prefix React Native libraries, please see our [Migrate to the Experience Platform SDK libraries (AEP 1.x) for React Native](https://github.com/adobe/aepsdk-react-native/blob/main/docs/migration.md) guide for next steps.
+{% endhint %}
+
 | Extension Package | Latest Version |
 | ---- | ---- |
 | @adobe/react-native-aepcore|   [![npm version](https://badge.fury.io/js/%40adobe%2Freact-native-aepcore.svg)](https://www.npmjs.com/package/@adobe/react-native-aepcore) [![npm downloads](https://img.shields.io/npm/dm/@adobe/react-native-aepcore)](https://www.npmjs.com/package/@adobe/react-native-aepcore) |
