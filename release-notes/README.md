@@ -15,6 +15,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 Released with sdk-core version 1.10.0
 
+## February 7, 2022
+
+### Android Core 1.10.0
+
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+* Added public platform support for datastore and UI services.
+
 ## February 3, 2022
 
 ### iOS AEPServices 3.4.2
