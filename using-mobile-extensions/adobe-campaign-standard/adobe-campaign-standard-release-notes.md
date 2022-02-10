@@ -1,5 +1,11 @@
 # Release Notes
 
+## February 9, 2022
+
+### iOS Campaign Standard 3.0.1
+
+* Fixed an issue with the Campaign message tracking URL being incorrectly built.
+
 ## June 16, 2021
 
 ### Android Campaign 1.0.8
