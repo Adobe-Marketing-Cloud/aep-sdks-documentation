@@ -217,19 +217,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 ### JavaScript
 
-When using React Native, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+When using React Native, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### Cordova
 
-When using Cordova, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Cordova, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Flutter
 
-When using Flutter, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Flutter, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
