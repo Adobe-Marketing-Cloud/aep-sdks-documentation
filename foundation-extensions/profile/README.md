@@ -14,7 +14,7 @@ To get started with the Profile extension:
    * Update user attributes.
    * Remove user attributes.
 
-## Install the Adobe Experience Platform Profile extension in the Data Collection UI
+## Install the Profile extension in the Data Collection UI
 
 1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Profile** extension, and select **Install**.
@@ -217,19 +217,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab title="React Native" %}
 ### JavaScript
 
-When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using React Native, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### Cordova
 
-When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Cordova, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Flutter
 
-When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Flutter, register AEP Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}

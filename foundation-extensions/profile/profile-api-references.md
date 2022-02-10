@@ -20,7 +20,7 @@ String extensionVersion = UserProfile.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 ### Swift
 
@@ -50,7 +50,7 @@ NSString *extensionVersion = [AEPMobileUserProfile extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 ### Objective-C
 
@@ -150,7 +150,7 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 **Syntax**
 
@@ -173,7 +173,7 @@ UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -361,7 +361,7 @@ UserProfile.removeUserAttribute("itemsAddedToCart");
 
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -483,7 +483,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 **Syntax**
 
@@ -507,7 +507,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -652,7 +652,7 @@ UserProfile.updateUserAttribute("username", "Will Smith");
 {% endtab %}
 
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
@@ -788,7 +788,7 @@ UserProfile.updateUserAttributes(profileMap);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 **Syntax**
 
@@ -821,7 +821,7 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Syntax**
 
