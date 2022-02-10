@@ -7,7 +7,7 @@
 - Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
 - Added support to handle the MobileCore.resetIdentities() API.
 - Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
-- Stability impovements for network connections.
+- Stability improvements for network connections.
 
 Released with sdk-core version 1.10.0
 
