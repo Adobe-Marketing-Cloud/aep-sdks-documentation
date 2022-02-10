@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## February 9, 2022
+
+### iOS Campaign Standard 3.0.1
+
+* Fixed an issue with the Campaign message tracking URL being incorrectly built.
+
 ## February 8, 2022
 
 ### Android Identity 1.3.0
