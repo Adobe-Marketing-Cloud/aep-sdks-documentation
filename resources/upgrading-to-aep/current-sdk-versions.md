@@ -117,18 +117,14 @@ Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later 
 Adobe Experience Platform Mobile SDK plugin for React Native supports React Native **version 0.60.0 or later**. For the latest installation instructions, see the `README` file in the [`aepsdk-react-native`](https://github.com/adobe/aepsdk-react-native#installation) repository.
 
 {% hint style="danger" %}
-Adobe Experience Platform Mobile SDK plugins (AEP 1.x) for React Native are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Swift](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift) libraries.
+Adobe Experience Platform Mobile SDK plugins (AEP 1.x) for React Native are compatible only with [Android](current-sdk-versions.md#android) and [iOS — Swift](current-sdk-versions#ios-swift) libraries.
 {% endhint %}
 
 {% hint style="info" %}
-For React Native, we recommend that you first install [Node.js](https://nodejs.org/en/) to download packages from [npm](https://npm.io/). For additional instructions on getting started with React Native applications, see this [tutorial](https://reactnative.dev/docs/getting-started).
+If you are currently using our ACP-prefix React Native libraries, please see [the guide to migrate to the Experience Platform SDK libraries (AEP 1.x)](https://github.com/adobe/aepsdk-react-native/blob/main/docs/migration.md) for React Native.
 {% endhint %}
 
-{% hint style="info" %}
-If you are currently using our ACP-prefix React Native libraries, please see our [Migrate to the Experience Platform SDK libraries (AEP 1.x) for React Native](https://github.com/adobe/aepsdk-react-native/blob/main/docs/migration.md) guide for next steps.
-{% endhint %}
-
-| Extension Package | Latest Version |
+| Extension | npmjs |
 | ---- | ---- |
 | @adobe/react-native-aepcore|   [![npm version](https://badge.fury.io/js/%40adobe%2Freact-native-aepcore.svg)](https://www.npmjs.com/package/@adobe/react-native-aepcore) [![npm downloads](https://img.shields.io/npm/dm/@adobe/react-native-aepcore)](https://www.npmjs.com/package/@adobe/react-native-aepcore) |
 |  @adobe/react-native-aepuserprofile    |   [![npm version](https://badge.fury.io/js/%40adobe%2Freact-native-aepuserprofile.svg)](https://www.npmjs.com/package/@adobe/react-native-aepuserprofile) [![npm downloads](https://img.shields.io/npm/dm/@adobe/react-native-aepuserprofile)](https://www.npmjs.com/package/@adobe/react-native-aepuserprofile)   
