@@ -11,7 +11,9 @@ By default, the SDK will automatically fetch in-app message definitions from the
 Some use cases may require the client to request an update from the remote more frequently. Calling the following API will force the Messaging extension to get an updated definition of messages from the remote:
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 Messaging.refreshInAppMessages()
@@ -19,7 +21,7 @@ Messaging.refreshInAppMessages()
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}

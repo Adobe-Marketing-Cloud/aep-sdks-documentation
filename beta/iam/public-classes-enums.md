@@ -8,10 +8,12 @@ The `Message` class contains the definition of an in-app message and controls it
 
 ### id
 
-Identifier of the `Message`. This value matches the Message Execution ID assigned by AJO Campaign.
+Identifier of the `Message`. This value matches the Message Execution ID assigned by Adobe Journey Optimizer (AJO) Campaign.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public var id: String
@@ -19,7 +21,7 @@ public var id: String
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -29,7 +31,9 @@ public var id: String
 If set to `true` (default), Experience Edge events will automatically be generated when this `Message` is triggered, displayed, and dismissed.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public var autoTrack: Bool = true
@@ -37,7 +41,7 @@ public var autoTrack: Bool = true
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -47,7 +51,9 @@ public var autoTrack: Bool = true
 Holds a reference to the message's `WKWebView` (iOS) or `WebView` (Android) instance, if it exists.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public var view: UIView? {
@@ -57,7 +63,7 @@ public var view: UIView? {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -71,7 +77,9 @@ Signals to the UIService (in `AEPServices`) that the message should be shown.
 If `autoTrack` is true, calling this method will result in an "inapp.trigger" Edge Event being dispatched.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public func show()
@@ -79,7 +87,7 @@ public func show()
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -91,7 +99,9 @@ Signals to the UIService that the message should be removed from the UI.
 If `autoTrack` is true, calling this method will result in an "inapp.dismiss" Edge Event being dispatched.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public func dismiss(suppressAutoTrack: Bool? = false)
@@ -103,7 +113,7 @@ public func dismiss(suppressAutoTrack: Bool? = false)
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -113,7 +123,9 @@ public func dismiss(suppressAutoTrack: Bool? = false)
 Generates and dispatches an Edge Event for the provided `interaction` and `eventType`.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public func track(_ interaction: String?, withEdgeEventType eventType: MessagingEdgeEventType)
@@ -126,21 +138,23 @@ public func track(_ interaction: String?, withEdgeEventType eventType: Messaging
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
 
 ### handleJavascriptMessage(_:withHandler:)
 
-Adds a handler for named Javascript messages sent from the message's `WKWebView`.
+Adds a handler for named JavaScript messages sent from the message's `WKWebView`.
 
-The parameter passed to `handler` will contain the body of the message passed from the `WKWebView`'s Javascript.
+The parameter passed to `handler` will contain the body of the message passed from the `WKWebView`'s JavaScript.
 
 For a full guide on how to use `handleJavascriptMessage`, read [Call native code from the Javascript of an in-app message](./guides/how-to-call-native-from-javascript.md).
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 public func handleJavascriptMessage(_ name: String, withHandler handler: @escaping (Any?) -> Void)
@@ -149,11 +163,11 @@ public func handleJavascriptMessage(_ name: String, withHandler handler: @escapi
 ###### Parameters
 
 * *name* - the name of the message that should be handled by `handler`
-* *handler* - the method or closure to be called with the body of the message created in Message's Javascript
+* *handler* - the method or closure to be called with the body of the message created in Message's JavaScript
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -167,7 +181,9 @@ This enum is used in conjunction with the [`track(_:withEdgeEventType:)`](#track
 ### Definition
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 @objc(AEPMessagingEdgeEventType)
@@ -200,7 +216,7 @@ public enum MessagingEdgeEventType: Int {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}

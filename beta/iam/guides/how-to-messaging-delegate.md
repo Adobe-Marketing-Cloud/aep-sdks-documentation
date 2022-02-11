@@ -7,7 +7,9 @@ App developers can now implement a `MessagingDelegate` in order to be alerted wh
 The `MobileCore` framework maintains an optional property that holds reference to the `MessagingDelegate`.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 /// defined in MobileCore.swift
@@ -15,6 +17,8 @@ The `MobileCore` framework maintains an optional property that holds reference t
 ```
 
 Assuming that `InAppMessagingHandler` is a class that implements `MessagingDelegate`, execute the following code to set the delegate in `MobileCore`:
+
+Swift
 
 ```swift
 let myMessagingDelegate = InAppMessagingHandler()   
@@ -24,7 +28,7 @@ MobileCore.messagingDelegate = myMessagingDelegate
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -32,9 +36,11 @@ MobileCore.messagingDelegate = myMessagingDelegate
 ### MessagingDelegate protocol
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 The `MessagingDelegate` protocol, which is implemented in the `AEPServices` framework, is defined below:
+
+Swift
 
 ```swift
 /// UI Message delegate which is used to listen for current message lifecycle events
@@ -70,7 +76,7 @@ public protocol MessagingDelegate {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -78,7 +84,7 @@ public protocol MessagingDelegate {
 ### Using the Showable object in the protocol methods
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object.  In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, which is the primary way for the developer to interact with the message.
 
@@ -88,6 +94,8 @@ To get a reference to the `Message` object:
 1. Access the `parent` variable (note that `parent` is variable defined in `FullscreenMessage+Message.swift`, an extension in the AEPMessaging framework)
 
 Below is an example of how to access the `Message` in the `onShow` delegate method:
+
+Swift
 
 ```swift
 func onShow(message: Showable) {
@@ -99,7 +107,7 @@ func onShow(message: Showable) {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -107,11 +115,13 @@ func onShow(message: Showable) {
 ### Controlling when a message should be shown to the end user
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 If a `MessagingDelegate` has been provided to `MobileCore`, the delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. The developer is responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
 
 Below is an example of when the developer may choose to suppress an in-app message due to the status of some other workflow within the app:
+
+Swift
 
 ```swift
 func shouldShowMessage(message: Showable) -> Bool {
@@ -126,6 +136,8 @@ func shouldShowMessage(message: Showable) -> Bool {
 Another option for the developer is to store a reference to the `Message` object, and call the `show()` method on it at a later time.
 
 Continuing with the above example, the developer has stored the message that was triggered initially, and chooses to show it upon completion of the other workflow:
+
+Swift
 
 ```swift
 var currentMessage: Message?
@@ -151,7 +163,7 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -159,11 +171,13 @@ func shouldShowMessage(message: Showable) -> Bool {
 ### Integrating the message into an existing UI
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 If the developer would like to manually integrate the `View` that contains the UI for an in-app message, they can do so by accessing the `WKWebView` directly in a `MessagingDelegate` method.  
 
 In the below example, the developer decides whether or not the in-app message should be directly integrated into their existing UI.  If so, they capture a reference to the message's `WKWebView` and return `false` to prevent the message from being shown by the SDK:
+
+Swift
 
 ```swift
 var inAppMessageView: WKWebView?
@@ -184,7 +198,7 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -192,5 +206,5 @@ func shouldShowMessage(message: Showable) -> Bool {
 #### Further reading
 
 * [More information on how to use the Message object](./../public-classes-enums.md)
-* [Call native code from the Javascript of an in-app message](./how-to-call-native-from-javascript.md)
-* [Execute Javascript code in an in-app message from native code](./how-to-call-javascript-from-native.md)
+* [Call native code from the JavaScript of an in-app message](./how-to-call-native-from-javascript.md)
+* [Execute JavaScript code in an in-app message from native code](./how-to-call-javascript-from-native.md)

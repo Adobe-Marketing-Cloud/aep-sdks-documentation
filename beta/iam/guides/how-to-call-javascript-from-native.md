@@ -1,6 +1,6 @@
 # Execute JavaScript code in an in-app message from native code
 
-It is possible to execute JavaScript in an in-app message from native code.  To do this, complete the following steps:
+You can execute JavaScript in an in-app message from native code by completing the following steps:
 
 * [Implement and assign a `MessagingDelegate`](#implement-and-assign-a-messagingdelegate)
 * [Obtain a reference to the `WKWebView`](#obtain-a-reference-to-the-wkwebview)
@@ -8,16 +8,18 @@ It is possible to execute JavaScript in an in-app message from native code.  To 
 
 ### Implement and assign a `MessagingDelegate`
 
-To register a JavaScript event handler with a `Message` object, the developer will first need to implement and set a `MessagingDelegate`.
+To register a JavaScript event handler with a `Message` object, you will first need to implement and set a `MessagingDelegate`.
 
-[This page describes how to implement and use a MessagingDelegate](./how-to-messaging-delegate.md).
+For more detailed instructions on implementing and using a MessagingDelegate, please read the [tutorial on using MessagingDelegate](./how-to-messaging-delegate.md).
 
 ### Obtain a reference to the `WKWebView`
 
 In the `shouldShowMessage` function of the `MessagingDelegate`, get a reference to the `WKWebView` (iOS) or `WebView` (Android) used by the message.  
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
+
+Swift
 
 ```swift
 func shouldShowMessage(message: Showable) -> Bool {
@@ -33,7 +35,7 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
@@ -41,11 +43,13 @@ func shouldShowMessage(message: Showable) -> Bool {
 ### Call the JavaScript method
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 With a reference to the `WKWebView`, the instance method `evaluateJavaScript(_:completionHandler:)` can now be leveraged to call a JavaScript method.
 
 Further details of this API are explained in the [Apple documentation](https://developer.apple.com/documentation/webkit/wkwebview/1415017-evaluateJavaScript) - the example below is provided for the purpose of demonstration:
+
+Swift
 
 ```swift
 func shouldShowMessage(message: Showable) -> Bool {
@@ -71,7 +75,7 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}

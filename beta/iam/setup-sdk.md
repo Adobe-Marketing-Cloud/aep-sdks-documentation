@@ -1,6 +1,6 @@
-#  Setup AEPMessaging SDK
+#  Set up AEPMessaging SDK
 
-## BETA instructions
+## Beta instructions
 
 While the in-app messaging feature is in beta, the developer will need to use the Messaging extension on the `staging` branch of this repo.
 
@@ -25,9 +25,11 @@ pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git',
 Import the AEPMessaging framework and its dependencies, then register the Messaging extension and dependencies.
 
 {% tabs %}
-{% tab title="Swift" %}
+{% tab title="iOS" %}
 
 In the `application(_: didFinishLaunchingWithOptions:)` method in the `AppDelegate`:
+
+Swift
 
 ```swift
 import AEPMessaging
@@ -60,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 {% endtab %}
 
-{% tab title="Java" %}
+{% tab title="Android" %}
 
 {% endtab %}
 {% endtabs %}
