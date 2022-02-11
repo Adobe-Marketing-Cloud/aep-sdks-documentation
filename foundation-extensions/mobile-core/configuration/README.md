@@ -263,7 +263,7 @@ ACPCore.UpdateConfiguration(config);
 {% endtab %}
 {% endtabs %}
 
-## Clearing programmatic updates to the configuration (Android and iOS 3.x.x Only)
+## Clearing programmatic updates to the configuration (Android and iOS (AEP 3.x) Only)
 
 {% tabs %}
 {% tab title="Android" %}
@@ -297,7 +297,7 @@ MobileCore.clearUpdatedConfiguration()
 
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x.x)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
 
