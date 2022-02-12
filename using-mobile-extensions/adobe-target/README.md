@@ -48,10 +48,11 @@ To add the Target extension to your app:
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-1. Add the AEPCore and AEPTarget CocoaPods to your project via your `Podfile`.
+1. Add the AEPCore, AEPIdentity, and AEPTarget CocoaPods to your project via your `Podfile`.
 
    ```ruby
     pod 'AEPCore','~>3.0'    
+    pod 'AEPIdentity','~>3.0'
     pod 'AEPTarget','~>3.0'
    ```
 
@@ -169,7 +170,7 @@ public class TargetApp extends Application {
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {    
   MobileCore.registerExtensions([Target.self, Identity.self]) {
        //Completion callback
-       // Use the App id assigned to this application via Adobe Launch
+       // Use the App id assigned to this application via Adobe Data Collection UI
        MobileCore.configureWith(appId: "yourAppId")
   }
   return true
@@ -274,7 +275,7 @@ let order = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
 ### Objective-C
 **Syntax**
 ```objectivec
-+ (nonnull instancetype) id: (nonnull NSString*) id total: (nullable NSNumber*) total purchasedProductIds: (nullable NSArray <NSString*>*)  purchasedProductIds;
+- (nonnull instancetype) initWithId: (nonnull NSString*) id total: (double) total purchasedProductIds: (nullable NSArray<NSString*>*) purchasedProductIds;
 ```
 
 **Examples**
@@ -288,7 +289,7 @@ AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purc
 ### Swift
 **Syntax**
 ```swift
-public init(id: String, total: Double = 0, purchasedProductIds: [String]? = nil)
+public convenience init(id orderId: String, total: NSNumber?, purchasedProductIds: [String]?)
 ```
 
 **Examples**
@@ -351,7 +352,7 @@ let product = TargetProduct(productId: "pId1", categoryId: "cId1")
 ### Objective-C
 **Syntax**
 ```objectivec
-+ (nonnull instancetype) productId: (nonnull NSString*) productId categoryId: (nullable NSString*) categoryId;
+- (nonnull instancetype) initWithProductId:(nonnull NSString*) productId categoryId:(nullable NSString*) categoryId;
 ```
 **Examples**
 ```objectivec
@@ -363,7 +364,7 @@ AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" c
 ### Swift
 **Syntax**
 ```swift
-public init(id productId: String, categoryId: String? = nil)
+public convenience init(id productId: String, categoryId: String?)
 ```
 
 **Examples**
@@ -459,7 +460,7 @@ let targetParameters = TargetParameters(parameters: mboxParameters, profileParam
 ### Objective-C
 **Syntax**
 ```objectivec
-+ (nonnull instancetype) parameters: (nullable NSDictionary*) parameters profileParameters: (nullable NSDictionary*) profileParameters product: (nullable ACPTargetProduct*) product order: (nullable ACPTargetOrder*) order;
+- (nonnull instancetype) initWithParameters:(nullable NSDictionary<NSString*, NSString*>*) parameters profileParameters:(nullable NSDictionary<NSString*, NSString*>*) profileParameters order:(nullable AEPTargetOrder*) order product:(nullable AEPTargetProduct*) product;
 ```
 
 **Examples**
@@ -479,7 +480,7 @@ AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParame
 ### Swift
 **Syntax**
 ```swift
-public init(parameters: [String: String]? = nil, profileParameters: [String: String]? = nil, order: TargetOrder? = nil, product: TargetProduct? = nil)
+public convenience init(parameters: [AnyHashable: Any]?, profileParameters: [AnyHashable: Any]?, order: ACPTargetOrder?, product: ACPTargetProduct?)
 ```
 
 **Examples**
@@ -578,23 +579,17 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 
 **Examples**
 ```swift
-   let launchInfo = [
-       "key_str":"stringValue",
-       "adb_deeplink":"abc://myawesomeapp?some=param&some=other_param",
-       "adb_m_id":"awesomePushMessage",
-       "adb_m_l_id":"happyBirthdayNotification"]
-    MobileCore.collectLaunchInfo(launchInfo)
+    MobileCore.collectLaunchInfo(["adb_deeplink" : "com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"])
 ```
 
 ### Objective-C
 **Syntax**
 ```objectivec
-+ (void) collectLaunchInfo: (nonnull NSDictionary*) userInfo;
++ (void)collectLaunchInfo:(nonnull NSDictionary<NSString*, id>*) userInfo;
 ```
 **Examples**
 ```objectivec
- NSDictionary<NSString *, id> * launchInfo = @{@"key_str":@"stringValue", @"adb_deeplink":@"abc://myawesomeapp?some=param&some=other_param", @"adb_m_id":@"awesomePushMessage", @"adb_m_l_id":@"happyBirthdayNotification"};
- [AEPMobileCore collectLaunchInfo:launchInfo];
+ [AEPMobileCore collectLaunchInfo:@{@"adb_deeplink" : @"com.adobe.targetpreview://app.adobetarget.com?at_preview_token=tokenFromTarget"}];
  ```
 {% endtab %}
 
@@ -602,7 +597,7 @@ public static func collectLaunchInfo(_ userInfo: [String: Any])
 ### Swift
 **Syntax**
 ```swift
-public static func collectLaunchInfo(_ userInfo: [String: Any])
+open class func collectLaunchInfo(_ userinfo: [AnyHashable: Any])
 ```
 
 **Examples**
