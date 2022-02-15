@@ -4,6 +4,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Update version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
 ## February 9, 2022
 
 ### iOS Campaign Standard 3.0.1

@@ -1,5 +1,13 @@
 # Release Notes
 
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Update version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
 ## February 8, 2022
 
 ### Android Identity 1.3.0
