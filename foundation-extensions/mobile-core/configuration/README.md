@@ -263,81 +263,15 @@ ACPCore.UpdateConfiguration(config);
 {% endtab %}
 {% endtabs %}
 
-## Clearing programmatic updates to the configuration (Android and iOS (AEP 3.x) Only)
+## Clearing programmatic updates to the configuration
 
-{% tabs %}
-{% tab title="Android" %}
+{% hint style="info" %}
+This API is only available in Android and iOS (AEP 3.x).
+{% endhint %}
 
-You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfiguration(configMap)` API. It will also clear any updates to the `MobilePrivacyStatus` made via `setPrivacyStatus(privacyStatus)`.
+You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict:)`(iOS) API. It will also clear any updates to the `MobilePrivacyStatus`(Android)/ `PrivacyStatus`(iOS)  made via `setPrivacyStatus(privacyStatus)`(Android)/ `setPrivacyStatus(_ status:)`(iOS).
 
-Here are some examples of scenarios:
-
-`configureWithAppId(appId)` -> `updateConfiguration(configMap)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithAppId(appId)`
-
-`configureWithFileInPath(filePath)` -> `updateConfiguration(configMap)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithFileInPath(filePath)`
-
-`configureWithFileInAssets(fileName)` -> `updateConfiguration(configMap)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithFileInAssets(fileName)`
-
-`configureWithAppId(appId)` or `configureWithFileInPath(filePath)` or `configureWithFileInAssets(fileName)` -> `updateConfiguration(configMap)` -> `clearUpdatedConfiguration()` -> `updateConfiguration(configMap)`: In this example, the configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
-
-`configureWithAppId(appId)` or `configureWithFileInPath(filePath)` or `configureWithFileInAssets(fileName)` -> `setPrivacyStatus(privacyStatus)` -> `clearUpdatedConfiguration()`: In this example, the configuration will have the initial `PrivacyStatus` set via `configureWithAppId(appId)` or `configureWithFileInPath(filePath)` or `configureWithFileInAssets(fileName)`
-
-#### Java
-
-**Syntax**
-
-```java
-public static void clearUpdatedConfiguration()
-```
-
-**Example**
-```java
-MobileCore.clearUpdatedConfiguration()
-```
-
-{% endtab %}
-
-{% tab title="iOS (AEP 3.x)" %}
-
-You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfigurationWith(configDict:)` API. It will also clear any updates to the `PrivacyStatus` made via `setPrivacyStatus(_ status:)`. 
-
-Here are some examples of scenarios:
-
-`configureWith(appId:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(appId:)`
-
-`configureWith(filePath:)` -> `updateConfigurationWith(configDict)` -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWith(filePath:)`
-
-`configureWith(appId:)` or `configureWith(filePath:)` -> `updateConfigurationWith(configDict:)` -> `clearUpdatedConfiguration()` -> `updateConfigurationWith(configDictL:)`: In this example, the configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
-
-`configureWith(appId:)` or `configureWith(filePath:)` -> `setPrivacyStatus(_ status:)` -> `clearUpdatedConfiguration()`: In this example, the configuration will have the initial `PrivacyStatus` set via `configureWith(appId:)` or `configureWith(filePath:)`
-
-#### Swift
-
-**Syntax**
-
-```swift
-static func clearUpdatedConfiguration()
-```
-
-**Example**
-```swift
-MobileCore.clearUpdatedConfiguration()
-```
-
-#### Objective-C
-
-**Syntax**
-```swift
-static func clearUpdatedConfiguration()
-```
-
-**Example**
-```objectivec
-[AEPMobileCore clearUpdatedConfiguration];
-```
-
-{% endtab %}
-{% endtabs %}
+For implementation details, please refer to [Configuration API reference](../configuration-api-reference.md#clearUpdatedConfiguration).
 
 ## Using a bundled file configuration
 
