@@ -115,7 +115,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
    ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x) %}
+{% tab title="iOS (AEP 3.x)" %}
 1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
 
@@ -800,7 +800,7 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x) %}
+{% tab title="iOS (AEP 3.x)" %}
 #### Swift
 
 **Example**
@@ -827,7 +827,7 @@ NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.
 
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x) %}
+{% tab title="iOS (ACP 2.x)" %}
 
 #### Swift
 

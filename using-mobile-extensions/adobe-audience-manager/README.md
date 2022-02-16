@@ -33,7 +33,7 @@ Audience Manager depends on the Identity extension and is automatically included
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x) %}
+{% tab title="iOS (AEP 3.x)" %}
 1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Audience extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
 
@@ -63,7 +63,7 @@ Audience Manager depends on the Identity extension.
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x) %}
+{% tab title="iOS (ACP 2.x)" %}
 1. Add the library to your project via your `Podfile` by adding `pod 'ACPAudience'`
 2. Import the Audience and Identity library, using the respective language: 
 
@@ -142,7 +142,7 @@ public void onCreate() {
 ```
 {% endtab %}
 
-{% tab title="iOS (AEP 3.x) %}
+{% tab title="iOS (AEP 3.x)" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ### Swift
@@ -168,7 +168,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 
-{% tab title="iOS (ACP 2.x) %}
+{% tab title="iOS (ACP 2.x)" %}
 In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ### Swift
