@@ -9,7 +9,7 @@ We've released Swift versions of our iOS SDKs for Core and select extensions - p
 {% hint style="warning" %}
 ## Migrate to Swift
 
-If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+If you are currently using our Objective-C \(ACP-prefix libraries\), please see the [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
 {% endhint %}
 
 ## Android
@@ -47,22 +47,24 @@ Due to sunset of [JCenter by JFrog](https://jfrog.com/blog/into-the-sunset-bintr
 ## iOS — Swift
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later; requires Swift 5.1 or newer and Xcode 11.0 or newer.
-{% endhint %}
 
-{% hint style="warning" %}
 ## Migrate to Swift
 
-If you are currently using our Objective-C \(ACP-prefix libraries\), please see our [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+If you are currently using our Objective-C (ACP-prefix) libraries, please see the [Migrating to Swift](../migrate-to-swift.md) guide for next steps.
+
+Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later; requires Swift 5.1 or newer and Xcode 11.0 or newer. In addition to **CocoaPods**, **Swift Package Manager (SPM)** installation option is supported with the latest iOS Swift SDKs! Find more details at the GitHub links below.
+
 {% endhint %}
 
 {% hint style="info" %}
+
 ## Swift = Open Source
 
 The Swift iOS SDKs are open source - read more about [our move to Swift and open source](https://medium.com/adobetech/adobe-experience-platform-mobile-sdks-move-to-swift-for-ios-6aa67b67b4d4).
+
 {% endhint %}
 
-| Extension | Swift | Github |
+| Extension | CocoaPods | GitHub |
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&label=AEPCore&logo=apple&logoColor=white&style=flat-square)​](https://cocoapods.org/pods/AEPCore) | [Link](https://github.com/adobe/aepsdk-core-ios) |
 | [Profile](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile) | [![Cocoapods](https://img.shields.io/cocoapods/v/AEPUserProfile.svg?color=orange&label=AEPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPUserProfile) | [Link](https://github.com/adobe/aepsdk-userprofile-ios) |
@@ -87,10 +89,10 @@ The Swift iOS SDKs are open source - read more about [our move to Swift and open
 ## iOS — Objective-C
 
 {% hint style="warning" %}
-Adobe Experience Platform Mobile SDK for Android supports Apple iOS 10 or later \(includes support for iOS, iPadOS, and tvOS\)
+Adobe Experience Platform Mobile SDK for iOS supports iOS 10 or later (includes support for iOS, iPadOS, and tvOS).
 {% endhint %}
 
-| Extension | Cocoapods | Github |
+| Extension | CocoaPods | GitHub |
 | :--- | :--- | :--- |
 | [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) \(supports tvOS\) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPCore) |
 | [Profile](https://aep-sdks.gitbook.io/docs/foundation-extensions/profile) | [![Cocoapods](https://img.shields.io/cocoapods/v/ACPUserProfile.svg?color=orange&label=ACPUserProfile&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPUserProfile) | [Link](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS/ACPUserProfile) |
