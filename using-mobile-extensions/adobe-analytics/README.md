@@ -1,14 +1,14 @@
 # Adobe Analytics
 
-## Configure the Analytics extension in Adobe Experience Platform Launch
+## Configure the Analytics extension in Adobe Data Collection UI
 
-1. In Experience Platform Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and click **Install**.
+1. In Data Collection UI, select the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and select **Install**.
 3. Type the extension settings. For more information, please read the [configure the Analytics Extension section](./#configure-the-analytics-extension).
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-![Workflow overview for Experience Platform Launch, the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
+![Workflow overview for Data Collection UI (previously AEP Launch), the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
 
 ### Configure the Analytics extension
 
@@ -61,7 +61,7 @@ If you currently send Mobile SDK data to a report suite that also collects data 
 #### Audience Manager forwarding
 
 {% hint style="info" %}
-For more information about Analytics server-side forwarding to Audience Manager, see the documentation on [Analytics sever-side forwarding](./#server-side-forwarding-with-audience-manager).
+For more information about Analytics server-side forwarding to Audience Manager, see the documentation on [Analytics sever-side forwarding](#server-side-forwarding-with-audience-manager).
 {% endhint %}
 
 If you set up Analytics server-side forwarding to Audience Manager, select the **Audience Manager Forwarding** checkbox. When this checkbox is selected, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
@@ -100,7 +100,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 {% tab title="Android" %}
 ### Java
 
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
+1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Analytics extensions to your project using the app's Gradle file.
 
    ```java
     implementation 'com.adobe.marketing.mobile:sdk-core:1.+'
@@ -110,12 +110,42 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 2. Import the Analytics extension in your application's main activity.
 
    ```java
-    import com.adobe.marketing.mobile.*;
+    import com.adobe.marketing.mobile.MobileCore;
+    import com.adobe.marketing.mobile.Analytics;
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
-1. Add the [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+{% tab title="iOS (AEP 3.x) %}
+1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
+2. Add the following pods in your `Podfile`:
+
+   ```ruby
+    pod 'AEPCore'
+    pod 'AEPAnalytics'
+    pod 'AEPIdentity'
+   ```
+
+3. Import the Analytics and Identity libraries:
+
+   **Swift**
+
+   ```swift
+    import AEPCore
+    import AEPAnalytics
+    import AEPIdentity
+   ```
+
+   **Objective-C**
+
+   ```objectivec
+    @import AEPCore;
+    @import AEPAnalytics;
+    @import AEPIdentity;
+   ``` 
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Analytics extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
 
    ```ruby
@@ -124,21 +154,19 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
    ```
 
 3. Import the Analytics and Identity libraries:
-
-   **Objective-C**
-
-   ```objectivec
-    #import "ACPCore.h"
-    #import "ACPAnalytics.h"
-    #import "ACPIdentity.h"
-   ```
-
    **Swift**
 
    ```swift
     import ACPCore
     import ACPAnalytics
     import ACPIdentity
+   ```
+   **Objective-C**
+
+   ```objectivec
+    #import "ACPCore.h"
+    #import "ACPAnalytics.h"
+    #import "ACPIdentity.h"
    ```
 {% endtab %}
 
@@ -259,7 +287,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
 {% tab title="Android" %}
 ### Java
 
-The following sample shows how to set up methods that call the [setApplication\(\)](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#setapplication) method in the `onCreate()` method:
+The following sample shows how to set up methods that call the [setApplication\(\)](../../foundation-extensions/mobile-core/mobile-core-api-reference#setapplication-android-only) method in the `onCreate()` method:
 
 ```java
 public class MobileApp extends Application {
@@ -285,21 +313,33 @@ Analytics depends on the Identity extension and is automatically included in Cor
 {% endhint %}
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
+### Swift
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   MobileCore.registerExtensions([Analytics.self, Identity.self], {
+   MobileCore.configureWith(appId: "yourAppId") 
+ })  
+ ...
+}
+```
 ### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore configureWithAppId:@"yourAppId"];
-    [ACPAnalytics registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPCore start:nil];
-    // Override point for customization after application launch.
-    return YES;
- }
+    [AEPMobileCore registerExtensions:@[AEPMobileAnalytics.class, AEPMobileIdentity.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourAppId"];
+  }];
+  ...
+}
 ```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
 ### Swift
 
@@ -312,6 +352,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
      // Override point for customization after application launch.
      return true;
 }
+```
+
+### Objective-C
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore configureWithAppId:@"yourAppId"];
+    [ACPAnalytics registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPCore start:nil];
+    // Override point for customization after application launch.
+    return YES;
+ }
 ```
 
 {% hint style="info" %}
@@ -423,12 +476,12 @@ To automatically report on the application lifecycle details in Analytics, ensur
 
 ## Send app states and actions to Analytics
 
-To track mobile app states and actions in Adobe Analytics, implement the [trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) and [trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) APIs from the Mobile Core extension. For more information, see the [track app actions](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-actions) and [track app states](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) tutorials.
+To track mobile app states and actions in Adobe Analytics, implement the [trackAction](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackaction) and [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackstate) APIs from the Mobile Core extension.
 
 {% hint style="info" %}
-[trackState](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackstate) reports the view state as the **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
+[trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackstate) reports the view state as the **Page Name**, and state views are reported as **Page View** in Analytics. The value is sent to Analytics by using the page name variable \(`pagename=value`\).
 
-[trackAction](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
+[trackAction](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackaction) reports the Action as an **event** and does not increment your page views in Analytics. The value is sent to Analytics by using the action variable \(`action=value`\).
 {% endhint %}
 
 ## Integrations with Adobe Experience Platform solutions and services
@@ -439,15 +492,15 @@ To see the performance of your Target activities for some segments, you can set 
 
 ### Server-side forwarding with Audience Manager
 
-To enable the ability to share Analytics data with Audience Manager, in the Experience Platform Launch UI, select the **Audience Manager Forwarding** checkbox. For more information, go to [Audience Manager](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager).
+To enable the ability to share Analytics data with Audience Manager, in the Data Collection UI, select the **Audience Manager Forwarding** checkbox. For more information, go to [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-other-solutions/audience-management-module.html?lang=en).
 
 ### Audio and video analytics
 
-For more information about collecting audio and video analytics, please read the documentation on [Media Analytics for audio and video](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-media-analytics/).
+For more information about collecting audio and video analytics, please read the documentation on [Media Analytics for audio and video](../../using-mobile-extensions/adobe-media-analytics/).
 
 ## Event serialization
 
-Event serialization is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
+[Event serialization](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html?lang=en) is not supported by processing rules. To set serialized events directly on the hits sent to Analytics, use the following syntax in context data parameters:
 
 {% tabs %}
 {% tab title="Android" %}
@@ -476,7 +529,57 @@ MobileCore.trackState("State Name", cdata);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+### Swift
+
+**Syntax**
+
+```swift
+contextdata["&&events"] = "event1:12341234"
+```
+
+**Example**
+
+```swift
+//create a context data dictionary
+var contextData = [String: Any]()
+
+// add events
+contextData["&&events"] = "event1:12341234"
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+MobileCore.track(action: "Action Name" as String, data: contextData)
+
+// trackState example:
+MobileCore.track(state: "State Name" as String, data: contextData)
+```
+### Objective-C
+
+**Syntax**
+
+```objectivec
+[contextData setObject:@"eventN:serial number" forKey:@"&&events"];
+```
+
+**Example**
+
+```objectivec
+//create a context data dictionary
+NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
+
+// add events
+[contextData setObject:@"event1:12341234" forKey:@"&&events"];
+
+// send the tracking call - use either a trackAction or trackState call.
+// trackAction example:
+[AEPMobileCore trackAction:@"Action Name" data:contextData];
+// trackState example:
+[AEPMobileCore trackState:@"State Name" data:contextData];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 ### Objective-C
 
 **Syntax**
@@ -658,9 +761,12 @@ ACPCore.TrackState("State Name", contextData);
 {% endtab %}
 {% endtabs %}
 
-The following video shows you how to use [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#track-app-states-and-views) APIs to send data to Adobe Analytics.
+The following video shows you how to use [trackState](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#trackstate) APIs to send data to Adobe Analytics. 
+
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
+{% hint style="info" %} Video is demonstrated with ACP2.x, latest iOS version  is AEP 3.x. {% endhint %}
+
 
 ## Configuration keys
 
@@ -668,12 +774,12 @@ To update the SDK configuration programmatically, use the following information 
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| analytics.server | Yes | See [Tracking Server](./#tracking-server) | String |
-| analytics.rsids | Yes | See [Report Suites](./#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" | String |
-| analytics.batchLimit | No | See [Batch Limit](./#batch-limit) | Integer |
-| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](./#audience-manager-forwarding) | Boolean |
-| analytics.offlineEnabled | No | See [Offline Enabled](./#offline-enabled) | Boolean |
-| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](./#backdate-previous-session-info). | Boolean |
+| analytics.server | Yes | See [Tracking Server](#tracking-server) | String |
+| analytics.rsids | Yes | See [Report Suites](#report-suites). Multiple report suite IDs can be comma separated with no space in- between. For example: "rsids" : "rsid" "rsids" : "rsid1,rsid2" | String |
+| analytics.batchLimit | No | See [Batch Limit](#batch-limit) | Integer |
+| analytics.aamForwardingEnabled | No | See [Audience Manager Forwarding](#audience-manager-forwarding) | Boolean |
+| analytics.offlineEnabled | No | See [Offline Enabled](#offline-enabled) | Boolean |
+| analytics.backdatePreviousSessionInfo | No | See [Backdate Previous Session Info](#backdate-previous-session-info). | Boolean |
 
 ### Update Analytics configuration
 
@@ -694,7 +800,19 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x) %}
+#### Swift
+
+**Example**
+
+```swift
+let updatedConfig = ["analytics.server":"sample.analytics.tracking.server",
+                     "analytics.rsids":"rsid1,rsid2",
+                     "analytics.batchLimit":10,
+                     "analytics.offlineEnabled":true] as [String : Any] as [String : Any]
+MobileCore.updateConfigurationWith(configDict: updatedConfig)
+```
+
 #### Objective-C
 
 **Example**
@@ -704,8 +822,12 @@ NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.
                                 @"analytics.rsids":@"rsid1,rsid2",
                                 @"analytics.batchLimit":@(10),
                                 @"analytics.offlineEnabled":@YES};
-[ACPCore updateConfiguration:updatedConfig];
+[AEPMobileCore updateConfiguration:updatedConfig];
 ```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x) %}
 
 #### Swift
 
@@ -717,6 +839,17 @@ let updatedConfig = ["analytics.server":"sample.analytics.tracking.server",
                      "analytics.batchLimit":10, 
                      "analytics.offlineEnabled":true]
 ACPCore.updateConfiguration(updatedConfig)
+```
+#### Objective-C
+
+**Example**
+
+```objectivec
+NSDictionary *updatedConfig = @{@"analytics.server":@"sample.analytics.tracking.server",
+                                @"analytics.rsids":@"rsid1,rsid2",
+                                @"analytics.batchLimit":@(10),
+                                @"analytics.offlineEnabled":@YES};
+[ACPCore updateConfiguration:updatedConfig];
 ```
 {% endtab %}
 
@@ -808,4 +941,3 @@ ACPCore.UpdateConfiguration(config);
 {% endtabs %}
 
 For more information, see the [configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
-
