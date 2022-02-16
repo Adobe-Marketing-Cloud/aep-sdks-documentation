@@ -126,12 +126,13 @@ These metrics contain information on the app user's engagement lifecycle such as
 This section shows you how to collect lifecycle metrics. To view, and report on this data in those respective solutions, you need to set up [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) or other Experience Cloud solution extensions.
 {% endhint %}
 
-{% hint style="danger" %}
-Lifecycle metrics are not available for Edge Network at this time. Check back soon on support for XDM-based lifecycle metrics for Edge Network implementations.
+{% hint style="success" %}
+Lifecycle metrics are now available for Edge Network implementations. For more details about the XDM-based lifecycle metrics, see [Lifecycle for Edge Network](../foundation-extensions/lifecycle-for-edge-network/README.md).
 {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 With the `onResume` function, start Lifecycle data collection:
