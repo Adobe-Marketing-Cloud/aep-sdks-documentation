@@ -209,53 +209,26 @@ public class MobileApp extends Application {
 
 {% tab title="iOS (AEP 3.x)" %}
 In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
+
 ### Swift
 
 ```swift
-import AEPCore
-import AEPAnalytics
-import AEPIdentity
-import AEPMedia
-
-func application(_ application: UIApplication,
-                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ACPCore.setLogLevel(.debug)
-    ACPCore.configure(withAppId: "your-launch-app-id")
-
-    ACPAnalytics.registerExtension()
-    ACPIdentity.registerExtension()
-    ACPMedia.registerExtension()
-
-    ACPCore.start {
-
-    }
-
-    return true;
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   MobileCore.registerExtensions([Media.self, Analytics.self, Identity.self], {
+   MobileCore.configureWith(appId: "yourAppId") 
+ })  
+ ...
 }
 ```
-
 ### Objective-C
 
 ```objectivec
-#import "ACPCore.h"
-#import "ACPAnalytics.h"
-#import "ACPIdentity.h"
-#import "ACPMedia.h"
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-    [ACPCore configureWithAppId:@"your-launch-app-id"];
-
-    [ACPAnalytics registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPMedia registerExtension];
-
-    [ACPCore start:^{
-
-    }];
-
-    return YES;
-  }
+    [AEPMobileCore registerExtensions:@[AEPMobileMedia.class, AEPMobileAnalytics.class, AEPMobileIdentity.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourAppId"];
+  }];
+  ...
+}
 ```
 {% endtab %}
 

@@ -61,7 +61,7 @@ If you currently send Mobile SDK data to a report suite that also collects data 
 #### Audience Manager forwarding
 
 {% hint style="info" %}
-For more information about Analytics server-side forwarding to Audience Manager, see the documentation on [Analytics sever-side forwarding](#server-side-forwarding-with-audience-manager).
+For more information about Analytics server-side forwarding to Audience Manager, see the documentation on [Analytics server-side forwarding](#server-side-forwarding-with-audience-manager).
 {% endhint %}
 
 If you set up Analytics server-side forwarding to Audience Manager, select the **Audience Manager Forwarding** checkbox. When this checkbox is selected, all SDK requests to Analytics servers are sent with an expected response code of **10**. This step ensures that Analytics traffic is forwarded to Audience Manager and that the Audience Manager User Profile is correctly updated in the SDK.
@@ -765,7 +765,7 @@ The following video shows you how to use [trackState](../../foundation-extension
 
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
-{% hint style="info" %} Video is demonstrated with ACP2.x, latest iOS version  is AEP 3.x. {% endhint %}
+{% hint style="info" %} Video is demonstrated with ACP2.x, latest iOS version is AEP 3.x. {% endhint %}
 
 
 ## Configuration keys
