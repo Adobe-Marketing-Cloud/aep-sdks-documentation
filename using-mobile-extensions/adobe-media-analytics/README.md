@@ -4,9 +4,9 @@
 This extension requires the [Adobe Analytics for Media](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
 {% endhint %}
 
-## Configure Media Analytics extension in Data Collection UI
+## Configure Media Analytics extension in the Data Collection UI
 
-1. In Data Collection UI, select the **Extensions** tab.
+1. In the Data Collection UI, select the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and select **Install**.
 3. Type the extension settings.   For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
 4. Select **Save**.
@@ -76,12 +76,12 @@ Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/AEPCo
 
 1. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
 
-   ```text
+   ```ruby
    pod 'AEPCore
    pod 'AEPAnalytics
    pod 'AEPMedia'
    ```
-1. In Xcode project, import Media extension:
+1. In Xcode project, import the Media extension:
    
    **Swift**
 
@@ -114,7 +114,7 @@ Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCo
 
 You can also manually include the libraries. Get `.a` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS).
 
-1. In Xcode project, import Media extension:
+1. In Xcode project, import the Media extension:
 
    **Swift**
 

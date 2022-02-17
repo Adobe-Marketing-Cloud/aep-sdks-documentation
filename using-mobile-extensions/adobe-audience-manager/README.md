@@ -2,15 +2,15 @@
 
 Adobe Audience Manager is a versatile audience data management platform. With the SDK, you can update audience profiles for users and retrieve user segment information from your mobile app. For more information, see [Adobe Audience Manager](https://business.adobe.com/products/audience-manager/adobe-audience-manager.html).
 
-## Configuring the Audience Manager extension in Data Collection UI
+## Configuring the Audience Manager extension in the Data Collection UI
 
 ![Adobe Audience Manager Extension Configuration](../../.gitbook/assets/screen-shot-2018-10-04-at-7.51.32-pm-1.png)
 
-1. In Data Collection UI, select the **Extensions** tab.
+1. In the Data Collection UI, select the **Extensions** tab.
 2. Choose **Catalog**, locate the **Adobe Audience Manager** extension, and select **Install**.
 3. Type your Audience Manager server.
 4. Type a timeout value. This value is the period, in seconds, to wait for a response from Audience Manager before timing out. We recommend a default value of 2s.
-5. select **Save**.
+5. Select **Save**.
 6. Follow the publishing process to update the SDK configuration.
 
 ## Add Audience Manager to your app
@@ -37,7 +37,7 @@ Audience Manager depends on the Identity extension and is automatically included
 1. Add the [Mobile Core](../../foundation-extensions/mobile-core) and Audience extensions to your project using Cocoapods.
 2. Add the following pods in your `Podfile`:
 
-   ```bash
+   ```ruby
     pod 'AEPCore'
     pod 'AEPAudience'
     pod 'AEPIdentity'

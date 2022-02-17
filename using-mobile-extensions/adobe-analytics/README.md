@@ -1,14 +1,14 @@
 # Adobe Analytics
 
-## Configure the Analytics extension in Adobe Data Collection UI
+## Configure the Analytics extension in the Data Collection UI
 
-1. In Data Collection UI, select the **Extensions** tab.
+1. In the Data Collection UI, select the **Extensions** tab.
 2. On the **Catalog** tab, locate the **Adobe Analytics** extension, and select **Install**.
 3. Type the extension settings. For more information, please read the [configure the Analytics Extension section](./#configure-the-analytics-extension).
 4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
-![Workflow overview for Data Collection UI (previously AEP Launch), the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
+![Workflow overview for Data Collection UI (previously Adobe Experience Platform Launch), the Mobile SDK, and Adobe Analytics](../../.gitbook/assets/group-7.png)
 
 ### Configure the Analytics extension
 
@@ -765,7 +765,7 @@ The following video shows you how to use [trackState](../../foundation-extension
 
 
 {% embed url="https://video.tv.adobe.com/v/26260/?quality=12" caption="" %}
-{% hint style="info" %} Video is demonstrated with ACP2.x, latest iOS version is AEP 3.x. {% endhint %}
+{% hint style="info" %} This video is demonstrated with ACP 2.x. Please note that the latest iOS version is AEP 3.x.{% endhint %}
 
 
 ## Configuration keys
@@ -809,7 +809,7 @@ MobileCore.updateConfiguration(data);
 let updatedConfig = ["analytics.server":"sample.analytics.tracking.server",
                      "analytics.rsids":"rsid1,rsid2",
                      "analytics.batchLimit":10,
-                     "analytics.offlineEnabled":true] as [String : Any] as [String : Any]
+                     "analytics.offlineEnabled":true] as [String: Any]
 MobileCore.updateConfigurationWith(configDict: updatedConfig)
 ```
 
