@@ -2117,7 +2117,7 @@ public class TargetParameters: NSObject, Codable {
 }
 ```
 
-Examples for creating instances of TargetParameter can be seen [here](./README.md#target-parameters)
+Examples for creating instances of TargetParameters can be seen [here](./README.md#target-parameters)
 
 ### TargetOrder
 
