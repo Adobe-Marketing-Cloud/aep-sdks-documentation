@@ -314,9 +314,10 @@ Analytics depends on the Identity extension and is automatically included in Cor
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-In your app's `application:didFinishLaunchingWithOptions`, register Analytics with Mobile Core:
 
 ### Swift
+
+In your app's `_:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -327,6 +328,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 ### Objective-C
+
+In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
