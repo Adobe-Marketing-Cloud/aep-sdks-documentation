@@ -171,9 +171,10 @@ In your app's `application:didFinishLaunchingWithOptions` function, register the
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ### Swift
+
+In your app's `_:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {  
@@ -186,6 +187,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 ### Objective-C
+
+In your app's `application:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

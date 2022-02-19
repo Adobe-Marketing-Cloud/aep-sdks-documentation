@@ -237,9 +237,10 @@ In your app's `application:didFinishLaunchingWithOptions`, register Media with M
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
 
 ### Swift
+
+In your app's `_:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ```swift
 import ACPCore
@@ -265,6 +266,8 @@ func application(_ application: UIApplication,
 ```
 
 ### Objective-C
+
+In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
 
 ```objectivec
 #import "ACPCore.h"
