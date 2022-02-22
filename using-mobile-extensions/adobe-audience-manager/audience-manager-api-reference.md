@@ -20,6 +20,12 @@ String audienceExtensionVersion = Audience.extensionVersion();
 {% tab title="iOS \(AEP 3.x\)" %}
 ### Swift
 
+**Syntax**
+
+```swift
+static var extensionVersion: String
+```
+
 **Example**
 
 ```swift
@@ -28,29 +34,48 @@ let audienceExtensionVersion  = Audience.extensionVersion()
 
 ### Objective-C
 
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+
 **Example**
 
-```text
+```objectivec
 NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 ```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-### Objective-C
-
-**Example**
-
-```text
-NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
-```
-
 ### Swift
+
+**Syntax**
+
+```swift
+add
+```
 
 **Example**
 
 ```swift
 let audienceExtensionVersion  = ACPAudience.extensionVersion()
 ```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
+add
+```
+
+**Example**
+
+```objectivec
+NSString *audienceExtensionVersion = [ACPAudience extensionVersion];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -165,6 +190,12 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 
 ### Objective-C
 
+**Syntax**
+
+```objectivec
+add
+```
+
 **Example**
 
 ```text
@@ -185,33 +216,13 @@ The `getVisitorProfile` API returns the most recently obtained visitor profile. 
 The `getVisitorProfileWithCompletionHandler` method was added in ACPAudience version 2.1.0.
 {% endhint %}
 
-### Objective-C
+### Swift
 
 **Syntax**
 
-```text
-+ (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
-
-+ (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
+```swift
+add
 ```
-
-**Example**
-
-```text
-[ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
-  // handle the visitorProfile here
-}];
-
-[ACPAudience getVisitorProfileWithCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
-  if (error) {
-    // handle error here
-  } else {
-    // handle the returned visitorProfile here
-  }
-}];
-```
-
-### Swift
 
 **Example**
 
@@ -228,6 +239,33 @@ ACPAudience.getVisitorProfile { (visitorProfile, error) in
   }
 }
 ```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getVisitorProfile: (nonnull void (^) (NSDictionary* __nullable visitorProfile)) callback;
+
++ (void) getVisitorProfileWithCompletionHandler: (nonnull void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
+```
+
+**Example**
+
+```objectivec
+[ACPAudience getVisitorProfile:^(NSDictionary* visitorProfile){
+  // handle the visitorProfile here
+}];
+
+[ACPAudience getVisitorProfileWithCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
+  if (error) {
+    // handle error here
+  } else {
+    // handle the returned visitorProfile here
+  }
+}];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -262,28 +300,66 @@ Audience.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+### Swift
+
+**Syntax**
+
+```swift
+static func registerExtensions(_ extensions: [NSObject.Type], 
+                               _ completion: (() -> Void)? = nil)
+```
+
+**Example**
+
+```swift
+MobileCore.registerExtension([Audience.self])
+```
+
 ### Objective-C
 
 **Syntax**
 
-```text
+```objectivec
++ (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
+                 completion: (void (^ _Nullable)(void)) completion;
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore registerExtensions:@[AEPMobileAudience.class] completion:nil];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### Swift
+
+**Syntax**
+
+```swift
+add
+```
+
+**Example**
+
+```swift
+ACPAudience.registerExtension()
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
 + (BOOL) registerExtension: (nonnull Class) extensionClass
                      error: (NSError* _Nullable* _Nullable) error;
 ```
 
 **Example**
 
-```text
+```objectivec
 [ACPAudience registerExtension];
-```
-
-### Swift
-
-**Example**
-
-```swift
-ACPAudience.registerExtension()
 ```
 {% endtab %}
 
@@ -344,9 +420,15 @@ Audience.reset()
 
 ### Objective-C
 
+**Syntax**
+
+```objectivec
+add
+```
+
 **Example**
 
-```text
+```objectivec
 [AEPMobileAudience reset];
 ```
 {% endtab %}
@@ -354,21 +436,21 @@ Audience.reset()
 {% tab title="iOS \(ACP 2.x\)" %}
 The `reset` API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
-### Objective-C
+### Swift
 
 **Syntax**
 
-```text
-+ (void) reset;
+```swift
+add
 ```
 
 **Example**
 
-```text
-[ACPAudience reset];
+```swift
+ACPAudience.reset()
 ```
 
-### Swift
+### Objective-C
 
 **Syntax**
 
@@ -378,8 +460,8 @@ The `reset` API resets the Audience Manager UUID and purges the current visitor 
 
 **Example**
 
-```swift
-ACPAudience.reset()
+```objectivec
+[ACPAudience reset];
 ```
 {% endtab %}
 
@@ -469,9 +551,15 @@ Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
 
 ### Objective-C
 
+**Syntax**
+
+```objectivec
+add
+```
+
 **Example**
 
-```text
+```objectivec
 NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 [AEPMobileAudience signalWithData:traits completion:^(NSDictionary<NSString *,NSString *> * _Nullable visitorProfile, NSError* _Nullable error) {
   if (error) {
@@ -492,39 +580,13 @@ Audience Manager sends the AAM UUID in response in initial signal call. The AAM 
 The `signalWithData:withCompletionHandler` method was added in ACPAudience version 2.1.0.
 {% endhint %}
 
-### Objective-C
+### Swift
 
 **Syntax**
 
-```text
-+ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
-                       callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
-
-+ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
-                        withCompletionHandler:: (nullable void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
+```swift
+add
 ```
-
-* `data` is the traits data for the current visitor.
-* `callback` is the void method that is invoked with the visitor's profile as a parameter.
-
-**Example**
-
-```text
-NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
-[ACPAudience signalWithData:traits callback:^(NSDictionary* _Nullable visitorProfile){
-  // handle the returned visitorProfile dictionary here
-}];
-
-[ACPAudience signalWithData:traits withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
-  if (error) {
-    // handle the error here
-  } else {
-    // handle the returned visitorProfile dictionary here
-  }
-}];
-```
-
-### Swift
 
 **Example**
 
@@ -540,6 +602,38 @@ ACPAudience.signal(withData: ["key1": "value1", "key2": "value2"], withCompletio
     // handle the returned visitorProfile here
   }    
 })
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
+                       callback: (nullable void (^) (NSDictionary* __nullable visitorProfile)) callback;
+
++ (void) signalWithData: (NSDictionary<NSString*, NSString*>* __nullable) data
+                        withCompletionHandler:: (nullable void (^) (NSDictionary* __nullable visitorProfile, NSError* __nullable error)) completionHandler;
+```
+
+* `data` is the traits data for the current visitor.
+* `callback` is the void method that is invoked with the visitor's profile as a parameter.
+
+**Example**
+
+```objectivec
+NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
+[ACPAudience signalWithData:traits callback:^(NSDictionary* _Nullable visitorProfile){
+  // handle the returned visitorProfile dictionary here
+}];
+
+[ACPAudience signalWithData:traits withCompletionHandler:^(NSDictionary * _Nullable visitorProfile, NSError * _Nullable error) {
+  if (error) {
+    // handle the error here
+  } else {
+    // handle the returned visitorProfile dictionary here
+  }
+}];
 ```
 {% endtab %}
 

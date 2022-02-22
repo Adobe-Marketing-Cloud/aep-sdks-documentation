@@ -32,23 +32,29 @@ Analytics.clearQueue();
 Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
+**Swift**
+
 **Syntax**
 
 ```swift
 static func clearQueue()
 ```
-
 **Example**
-
-**Swift**
-
 ```swift
 Analytics.clearQueue()
 ```
 
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
+add
+```
+
+**Example**
+
+```objectivec
 [AEPMobileAnalytics clearQueue];
 ```
 {% endtab %}
@@ -60,24 +66,29 @@ Analytics.clearQueue()
 Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
+**Swift**
+
 **Syntax**
 
-```text
-+ (void) clearQueue;
+```objectivec
+add
 ```
-
 **Example**
-
-**Objective-C**
-
-```text
-[ACPAnalytics clearQueue];
-```
-
-**Swift**
 
 ```swift
 ACPAnalytics.clearQueue()
+```
+**objectivec**
+
+**Syntax**
+
+```objectivec
++ (void) clearQueue;
+```
+**Example**
+
+```text
+[ACPAnalytics clearQueue];
 ```
 {% endtab %}
 
@@ -211,30 +222,57 @@ String analyticsExtensionVersion = Analytics.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
+
 **Swift**
+
+**Syntax**
+
+```swift
+static var extensionVersion: String
+```
+**Examples**
 
 ```swift
 let version = Analytics.extensionVersion
 ```
-
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+**Examples**
+```objectivec
 NSString *version = [AEPMobileAnalytics extensionVersion];
 ```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-**Objective-C**
-
-```text
-NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
-```
 
 **Swift**
 
+**Syntax**
+
+```swift
+add
+```
+**Examples**
 ```swift
 let analyticsExtensionVersion  = ACPAnalytics.extensionVersion()
+```
+
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+
+**Examples**
+```objectivec
+NSString *analyticsExtensionVersion = [ACPAnalytics extensionVersion];
 ```
 {% endtab %}
 
@@ -320,6 +358,22 @@ Please use the [getQueueSizeWithCompletionHandler](analytics-api-reference.md#ge
 {% tab title="iOS \(ACP 2.x\)" %}
 ### getQueueSize
 
+**Swift**
+
+**Syntax**
+
+```text
+add
+```
+**Example**
+```swift
+ACPAnalytics.getQueueSize { (queueSize) in    
+     // handle queue size   
+}
+```
+
+**Objective-C**
+
 **Syntax**
 
 ```text
@@ -330,22 +384,11 @@ Please use the [getQueueSizeWithCompletionHandler](analytics-api-reference.md#ge
 
 **Example**
 
-Here are examples in Objective-C and Swift:
 
-**Objective-C**
-
-```text
+```objectivec
 [ACPAnalytics getQueueSize: ^(NSUInteger queueSize) {    
     // handle queue size
 }];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getQueueSize { (queueSize) in    
-     // handle queue size   
-}
 ```
 {% endtab %}
 
@@ -492,6 +535,7 @@ Retrieves the total number of Analytics hits in the tracking queue. Invoke the c
 {% tabs %}
 {% tab title="iOS \(AEP 3.x\)" %}
 ### getQueueSize
+**Swift**
 
 **Syntax**
 
@@ -501,19 +545,22 @@ static func getQueueSize(completion: @escaping (Int, Error?) -> Void)
 
 **Example**
 
-The following examples are shown in both Swift and Objective-C.
-
-**Swift**
-
 ```swift
 Analytics.getQueueSize { (queueSize, error) in
     // Handle error (if non-nil) or use queueSize.
 }
 ```
-
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
+
+```
+
+**Example**
+
+```objectivec
 [AEPMobileAnalytics getQueueSize:^(NSInteger queueSize, NSError * _Nullable error) {
     // Handle error (if non-nil) or use queueSize.
  }];
@@ -523,9 +570,25 @@ Analytics.getQueueSize { (queueSize, error) in
 {% tab title="iOS \(ACP 2.x\)" %}
 ### getQueueSizeWithCompletionHandler
 
+**Swift**
+
 **Syntax**
 
-```text
+```swift
+add
+```
+**Example**
+
+```swift
+ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in    
+    // Handle error (if non-nil) or use queueSize.  
+}
+```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
 + (void) getQueueSizeWithCompletionHandler: (nonnull void (^) (NSUInteger queueSize, NSError* __nullable error)) completionHandler;
 ```
 
@@ -533,19 +596,7 @@ Analytics.getQueueSize { (queueSize, error) in
 
 **Example**
 
-The following examples are shown in both Swift and Objective-C.
-
-**Swift**
-
-```swift
-ACPAnalytics.getQueueSizeWithCompletionHandler { (queueSize, error) in    
-    // Handle error (if non-nil) or use queueSize.  
-}
-```
-
-**Objective-C**
-
-```text
+```objectivec
 [ACPAnalytics getQueueSizeWithCompletionHandler: ^(NSUInteger queueSize, NSError * _Nullable error) {    
     // Handle error (if non-nil) or use queueSize.
 }];
@@ -600,9 +651,26 @@ Retrieves the Analytics tracking identifier. See [getTrackingIdentifierWithCompl
 
 Retrieves the Analytics tracking identifier.
 
+**Swift**
+
 **Syntax**
 
-```text
+```swift
+add
+```
+
+**Example**
+
+```swift
+ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
+    // check the trackingIdentifier value  
+}
+```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
 + (void) getTrackingIdentifier: (nonnull void (^) (NSString* __nullable trackingIdentifier)) callback;
 ```
 
@@ -610,22 +678,10 @@ Retrieves the Analytics tracking identifier.
 
 **Example**
 
-Here are examples in Objective-C and Swift:
-
-**Objective-C**
-
-```text
+```objectivec
 [ACPAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier) {
     // check the trackingIdentifier value  
 }];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getTrackingIdentifier { (trackingIdentifier) in
-    // check the trackingIdentifier value  
-}
 ```
 {% endtab %}
 
@@ -774,10 +830,11 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 ## getTrackingIdentifierWithCompletionHandler <a id="gettrackingidentifierwithcompletionhandler"></a>
 
 {% hint style="warning" %}
+Starting with v1.2.9 (Android) / v3.0.3(iOS AEPAnalytics) / v2.5.1 (iOS ACPAnalytics) this API does not generate or retrieve a new tracking identifier (AID) for new visitors. For the visitors which have an AID previously generated will continue retrieve the AID value with this API, and new users will use the ECID (MID) value as the primary identity.
 Before you use this API, please read the documentation on [identifying unique visitors](https://experienceleague.adobe.com/docs/analytics/components/metrics/unique-visitors.html).
 {% endhint %}
 
-Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled. Invoke the callback with NSError if an unexpected error occurs or the request times out.
+Retrieves the Analytics tracking identifier that is generated for this app/device instance. This identifier is an app-specific, unique visitor ID that is generated at the initial launch and is stored and used after the initial launch. The ID is preserved between app upgrades and is removed when the app is uninstalled as well as on [MobileCore.resetIdentities](analytics-api-reference.md#resetidentities) API call or on privacy status opt out. Invoke the callback with NSError if an unexpected error occurs or the request times out.
 
 {% hint style="info" %}
 If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#getexperiencecloudid) and have not yet configured a visitor ID grace period, the value returned by `getTrackingIdentifier` might be null.
@@ -789,6 +846,8 @@ If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/us
 
 Retrieves the Analytics tracking identifier.
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -797,17 +856,21 @@ static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Voi
 
 **Example**
 
-**Swift**
-
 ```swift
 Analytics.getTrackingIdentifier { (trackingId, error) in
    // Handle the error (if non-nil) or use the trackingIdentifier value
 }
 ```
-
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
+static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
+```
+
+**Example**
+```objectivec
 AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
    // Handle the error (if non-nil) or use the trackingIdentifier value
 }];
@@ -817,32 +880,37 @@ AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifi
 {% tab title="iOS \(ACP 2.x\)" %}
 ### getTrackingIdentifierWithCompletionHandler
 
+**Swift**
+
 **Syntax**
 
-```text
-+ (void) getTrackingIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable trackingIdentifier, NSError* __nullable error)) completionHandler;
+```swift
+add
 ```
 
 * _completionHandler_ is invoked with the tracking Identifier string value. or an NSError if an unexpected error occurs or the request times out.
 
 **Example**
 
-Here are examples in Objective-C and Swift:
-
+```swift
+ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
+     // Handle the error (if non-nil) or use the trackingIdentifier value.
+}
+```
 **Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) getTrackingIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable trackingIdentifier, NSError* __nullable error)) completionHandler;
+```
+
+**Example**
 
 ```objectivec
 [ACPAnalytics getTrackingIdentifierWithCompletionHandler:^(NSString * _Nullable trackingIdentifier, NSError * _Nullable error) {
     // Handle the error (if non-nil) or use the trackingIdentifier value.
 }];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getTrackingIdentifierWithCompletionHandler { (trackingIdentifier, error) in    
-     // Handle the error (if non-nil) or use the trackingIdentifier value.
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -888,30 +956,35 @@ See [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvi
 {% tab title="iOS \(ACP 2.x\)" %}
 ### getVisitorIdentifier
 
+**Swift**
+
 **Syntax**
 
-```text
-+ (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
+```swift
+add
 ```
-
 * _callback_ is invoked with the visitor identifier value.
 
 **Example**
-
-**Objective-C**
-
-```text
-[ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
-    // check the visitorIdentifier value   
-}];
-```
-
-**Swift**
 
 ```swift
 ACPAnalytics.getVisitorIdentifier { (visitorIdentifier) in
     // check the visitorIdentifier value  
 }
+```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) getVisitorIdentifier: (nonnull void (^) (NSString* __nullable visitorIdentifier)) callback;
+```
+
+**Example**
+```objectivec
+[ACPAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier) {
+    // check the visitorIdentifier value   
+}];
 ```
 {% endtab %}
 
@@ -1061,15 +1134,14 @@ This API gets a custom Analytics visitor identifier, which has been set previous
 {% tab title="iOS \(AEP 3.x\)" %}
 ### getVisitorIdentifier
 
+**Swift**
+
 **Syntax**
 
 ```swift
 static func getVisitorIdentifier(completion: @escaping (String?, Error?) -> Void)
 ```
-
 **Example**
-
-**Swift**
 
 ```swift
 Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
@@ -1079,7 +1151,14 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
+add
+```
+
+**Example**
+```objectivec
 [AEPMobileAnalytics getVisitorIdentifier:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
    // Handle the error (if non-nil) or use the visitorIdentifier value
 }];
@@ -1089,30 +1168,33 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 {% tab title="iOS \(ACP 2.x\)" %}
 ### getVisitorIdentifierWithCompletionHandler
 
+**Swift**
+
+**Syntax**
+
+```swift
+add
+```
+* _completionHandler_ is invoked with the visitor identifier value or an NSError if an unexpected error occurs or the request times out.
+
+**Example**
+```swift
+ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, error) in
+    // Handle the error (if non-nil) or use the visitorIdentifier value
+}
+```
+**Objective-C**
+
 **Syntax**
 
 ```text
 + (void) getVisitorIdentifierWithCompletionHandler: (nonnull void (^) (NSString* __nullable visitorIdentifier, NSError* __nullable error)) completionHandler;
 ```
-
-* _completionHandler_ is invoked with the visitor identifier value or an NSError if an unexpected error occurs or the request times out.
-
 **Example**
-
-**Objective-C**
-
 ```text
 [ACPAnalytics getVisitorIdentifierWithCompletionHandler:^(NSString * _Nullable visitorIdentifier, NSError * _Nullable error) {
     // Handle the error (if non-nil) or use the visitorIdentifier value
 }];
-```
-
-**Swift**
-
-```swift
-ACPAnalytics.getVisitorIdentifierWithCompletionHandler { (visitorIdentifier, error) in
-    // Handle the error (if non-nil) or use the visitorIdentifier value
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -1169,6 +1251,8 @@ This method forces the library to send all hits in the offline queue, regardless
 Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -1177,16 +1261,20 @@ static func sendQueuedHits()
 
 **Example**
 
-**Objective-C**
-
-```text
-Analytics.sendQueuedHits()
-```
-
-**Swift**
-
 ```swift
 [AEPMobileAnalytics sendQueueHits];
+```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
+add
+```
+**Example**
+
+```objectivec
+Analytics.sendQueuedHits()
 ```
 {% endtab %}
 
@@ -1199,24 +1287,29 @@ This method forces the library to send all hits in the offline queue, regardless
 Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
+**Swift**
+
 **Syntax**
 
-```text
-+ (void) sendQueuedHits;
+```swift
+add
 ```
-
 **Example**
-
-**Objective-C**
-
-```text
-[ACPAnalytics sendQueuedHits];
-```
-
-**Swift**
 
 ```swift
 ACPAnalytics.sendQueuedHits()
+```
+**Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) sendQueuedHits;
+```
+**Example**
+
+```objectivec
+[ACPAnalytics sendQueuedHits];
 ```
 {% endtab %}
 
@@ -1350,6 +1443,8 @@ Analytics.setVisitorIdentifier("custom_identifier");
 {% tab title="iOS \(AEP 3.x\)" %}
 ### setVisitorIdentifier
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -1360,15 +1455,19 @@ static func setVisitorIdentifier(visitorIdentifier: String)
 
 **Example**
 
-**Swift**
-
 ```swift
 Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 ```
 
 **Objective-C**
 
-```text
+**Syntax**
+
+```objectivec
+add
+```
+**Example**
+```objectivec
 [AEPMobileAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 {% endtab %}
@@ -1376,28 +1475,33 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 {% tab title="iOS \(ACP 2.x\)" %}
 ### setVisitorIdentifier
 
+**Swift**
+
 **Syntax**
 
-```text
-+ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
+```swift
+add
 ```
 
 * _visitorIdentifier_ is the new value for the visitor identifier.
 
 **Example**
 
-Here are examples in Objective-C and Swift:
+```swift
+ACPAnalytics.setVisitorIdentifier("custom_identifier")
+```
 
 **Objective-C**
 
-```text
-[ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
+**Syntax**
+
+```objectivec
++ (void) setVisitorIdentifier: (nonnull NSString*) visitorIdentifier;
 ```
 
-**Swift**
-
-```swift
-ACPAnalytics.setVisitorIdentifier("custom_identifier")
+**Example**
+```objectivec
+[ACPAnalytics setVisitorIdentifier:@"custom_identifier"];
 ```
 {% endtab %}
 
