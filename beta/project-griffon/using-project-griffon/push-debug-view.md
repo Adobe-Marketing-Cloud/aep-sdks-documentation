@@ -4,7 +4,7 @@
 
 The Push Debug View provides the ability to validate the Push setup for your app and send a test message to your device. To get us started, here is a screen shot of the complete view when everything is working as expected:
 
-![Happy Path](../../../.gitbook/assets/push-happy-path)
+![Happy Path](../../../.gitbook/assets/push-happy-path.png)
 
 ## Guide
 
@@ -14,7 +14,7 @@ This guide will cover the view from top to bottom.
 
 At the very top of the window you'll find a clients dropdown:
 
-![Client Dropdown](../../../.gitbook/assets/push-clients)
+![Client Dropdown](../../../.gitbook/assets/push-clients.png)
 
 Inside the dropdown you'll find a list of each unique client that has connected to this Griffon session. A client is either a unique device or a unique app install for a device. So for example, if I connect an Android device and an iOS device to my session, I'd see those in the Clients dropdown. If I reinstall my iOS app and reconnect to the same Griffon session, I'd see a third client (usually my device name with a #2).
 
@@ -26,7 +26,7 @@ This section will validate and provide additional details about your push setup.
 
 If something is not working as expected, you will see an alert with details on how to fix that problem:
 
-![Invalid State](../../../.gitbook/assets/push-invalid-state)
+![Invalid State](../../../.gitbook/assets/push-invalid-state.png)
 
 #### Client Details
 
@@ -40,7 +40,7 @@ Once your client is set up correctly, this will check to see if the device is wr
 
 If valid, the panel will show the Ecid for the device, the Push Token, the App ID of your application, the messaging platform, and whether the push token has been deny listed. The token can be deny listed for various reasons like the user has uninstalled the app or the user has disabled push messaging for the app.
 
-![Blocked](../../../.gitbook/assets/push-deny-list-blocked)
+![Blocked](../../../.gitbook/assets/push-deny-list-blocked.png)
 
 Finally, at the bottom of the panel is a link that will open this specific profile in a new tab.
 
@@ -61,18 +61,18 @@ If everything is set up correctly, you can send a test message to your device. T
 
 If you are looking to make sure everything is set up correctly and that your push credentials are valid, you'll simply set a title and a body for your message and send it:
 
-![Send Test](../../../.gitbook/assets/push-send-test)
+![Send Test](../../../.gitbook/assets/push-send-test.png)
 
 In the test results section a new entry will appear. This is showing the message as it is passed through the Adobe Messaging Services and onto the push credential's messaging service. If everything goes according to plan, you'll see the message popup on your device:
 
-![Test Results](../../../.gitbook/assets/push-test-results)
+![Test Results](../../../.gitbook/assets/push-test-results.png)
 
 If something went wrong, the Test Results section should show an error of some sort for more information:
 
-![Test Results Error](../../../.gitbook/assets/push-test-error)
+![Test Results Error](../../../.gitbook/assets/push-test-error.png)
 
 #### Use Case: Developing/Testing Advanced Message Features
 
 Several of the advanced message features like click behaviors and rich media will require additional setup steps from your developers. The additional tabs in the Testing section can help the developer test that these features are working.
 
-![Rich Media](../../../.gitbook/assets/push-rich-media)
+![Rich Media](../../../.gitbook/assets/push-rich-media.png)
