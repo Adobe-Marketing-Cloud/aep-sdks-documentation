@@ -66,7 +66,13 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 1. Add the Campaign Classic and [Mobile Core](../../foundation-extensions/mobile-core/) libraries to your project.
 
    You can add the following pods to your `Podfile`:
@@ -81,6 +87,14 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
 
 2. In the Xcode project, import the Mobile Core and Campaign Classic extensions:
 
+**Swift**
+
+```swift
+   import ACPCore
+   import ACPCampaignClassic
+   import ACPLifecycle
+```
+
 **Objective-C**
 
 ```objectivec
@@ -89,13 +103,6 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
    #import "ACPLifecycle.h"
 ```
 
-**Swift**
-
-```swift
-   import ACPCore
-   import ACPCampaignClassic
-   import ACPLifecycle
-```
 {% endtab %}
 {% endtabs %}
 
@@ -127,7 +134,13 @@ public class CampaignClassicTestApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
+{% endtab %}
+
+{% tab title=" iOS (ACP 2.x)" %}
 In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
 
 #### Swift

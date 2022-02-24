@@ -49,27 +49,6 @@ The `registerDevice` API parameters are also sent in the event, as described bel
 }
 ```
 
-#### trackNotificationReceive
-
-The following key-value pairs are used in this event:
-
-| Key | Value Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| `trackReceive` | Boolean | Yes | This value is populated when `trackNotificationReceive` API is called. |
-| `trackInfo` | StringMap | Yes | A map containing the tracking identifiers received in the message payload. |
-
-The `trackNotificationReceive` parameters are also sent in the event, as described below:
-
-```json
-{
-    "trackReceive": true,
-    "trackInfo": {
-        "_mId": "12345",
-        "_dId": "f0190"
-    }
-}
-```
-
 #### trackNotificationClick
 
 The following key-value pairs are used in this event:
@@ -84,6 +63,27 @@ The `trackNotificationClick` parameters are also sent in the event, as described
 ```json
 {
     "trackClick": true,
+    "trackInfo": {
+        "_mId": "12345",
+        "_dId": "f0190"
+    }
+}
+```
+
+#### trackNotificationReceive
+
+The following key-value pairs are used in this event:
+
+| Key            | Value Type | Required | Description                                                  |
+| :------------- | :--------- | :------- | :----------------------------------------------------------- |
+| `trackReceive` | Boolean    | Yes      | This value is populated when `trackNotificationReceive` API is called. |
+| `trackInfo`    | StringMap  | Yes      | A map containing the tracking identifiers received in the message payload. |
+
+The `trackNotificationReceive` parameters are also sent in the event, as described below:
+
+```json
+{
+    "trackReceive": true,
     "trackInfo": {
         "_mId": "12345",
         "_dId": "f0190"

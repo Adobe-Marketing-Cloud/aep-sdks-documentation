@@ -21,6 +21,12 @@ String campaignClassicExtensionVersion = CampaignClassic.extensionVersion();
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 ### Swift
 
@@ -101,6 +107,12 @@ public void onNewToken(String token) {
 ```
 {% endtab %}
 
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
+{% endtab %}
+
 {% tab title="iOS (ACP 2.x)" %}
 {% hint style="info" %}
 To get your app ready to handle push notifications, see the tutorial on [configuring remote notification support](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1). After you receive the Apple Push Notification service (APNs) token, send this token and the device information to Campaign Classic using the `registerDevice` API.
@@ -155,97 +167,13 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 {% endtab %}
 {% endtabs %}
 
-## trackNotificationReceive
-
-The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server.
-
-{% tabs %}
-{% tab title="Android" %}
-### Java
-
-If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
-
-**Syntax**
-
-```java
-public static void trackNotificationReceive(final Map<String, String> trackInfo)
-```
-
-**Example**
-
-```java
-public class MyFirebaseMessagingService extends FirebaseMessagingService {
-    @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d("TestApp", "Receive message from: " + remoteMessage.getFrom());
-        Map<String,String> payloadData = message.getData();
-
-        // Check if message contains data payload.
-        if (payloadData.size() > 0) {
-            Map<String,String> trackInfo = new HashMap<>();
-            trackInfo.put("_mId", payloadData.get("_mId"));
-            trackInfo.put("_dId", payloadData.get("_dId"));
-
-            // Send the tracking information for message received
-            CampaignClassic.trackNotificationReceive(trackInfo);
-        }
-    }
-}
-```
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-
-{% hint style="info" %}
-You can pass the `launchOptions` that were received upon opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
-{% endhint %}
-
-### Swift
-
-**Syntax**
-
-```swift
-func trackNotificationReceive(_ trackInfo: [String: String])
-```
-
-**Example**
-
-```swift
-ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
-```
-
-### Objective-C
-
-**Syntax**
-
-```objectivec
-+ (void) trackNotificationReceive: (nonnull NSDictionary<NSString*, NSString*>*) trackInfo;
-```
-
-**Example**
-
-```objectivec
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)launchOptions fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
-{
-    if ( launchOptions) NSLog(@"launchOptions: %@", [launchOptions description]);
-    // Tracking silent push notification receive
-    if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
-        NSLog(@"Silent Push Notification");
-        [ACPCampaignClassic trackNotificationReceive:launchOptions];
-        completionHandler(UIBackgroundFetchResultNoData);
-    }
-}
-```
-
-{% endtab %}
-{% endtabs %}
-
 ## trackNotificationClick
 
 The `trackNotificationClick` API sends the clicked push notification's tracking information to the configured Adobe Campaign Classic server. This API can be used to send tracking information when the notification is clicked, which may result in the application being opened. 
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
 {% hint style="info" %}
@@ -285,6 +213,13 @@ public void onResume() {
     }
 }
 ```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
@@ -331,6 +266,99 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 completionHandler();
 }
 ```
+
+{% endtab %}
+{% endtabs %}
+
+## trackNotificationReceive
+
+The `trackNotificationReceive` API sends the received push notification's tracking information to the configured Adobe Campaign Classic server.
+
+{% tabs %}
+{% tab title="Android" %}
+
+### Java
+
+If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
+
+**Syntax**
+
+```java
+public static void trackNotificationReceive(final Map<String, String> trackInfo)
+```
+
+**Example**
+
+```java
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.d("TestApp", "Receive message from: " + remoteMessage.getFrom());
+        Map<String,String> payloadData = message.getData();
+
+        // Check if message contains data payload.
+        if (payloadData.size() > 0) {
+            Map<String,String> trackInfo = new HashMap<>();
+            trackInfo.put("_mId", payloadData.get("_mId"));
+            trackInfo.put("_dId", payloadData.get("_dId"));
+
+            // Send the tracking information for message received
+            CampaignClassic.trackNotificationReceive(trackInfo);
+        }
+    }
+}
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+{% hint style="info" %}
+You can pass the `launchOptions` that were received upon opening the application or `userInfo` , which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
+{% endhint %}
+
+### Swift
+
+**Syntax**
+
+```swift
+func trackNotificationReceive(_ trackInfo: [String: String])
+```
+
+**Example**
+
+```swift
+ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) trackNotificationReceive: (nonnull NSDictionary<NSString*, NSString*>*) trackInfo;
+```
+
+**Example**
+
+```objectivec
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)launchOptions fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
+{
+    if ( launchOptions) NSLog(@"launchOptions: %@", [launchOptions description]);
+    // Tracking silent push notification receive
+    if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
+        NSLog(@"Silent Push Notification");
+        [ACPCampaignClassic trackNotificationReceive:launchOptions];
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
