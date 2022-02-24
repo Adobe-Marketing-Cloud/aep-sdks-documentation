@@ -1145,6 +1145,7 @@ Mobile SDK allows you to add a callback function that is triggered before the [`
 
 ```objectivec
 + (void) registerURLHandler: (nonnull BOOL (^) (NSString* __nullable url)) callback;
+
 ```
 
 **Example**

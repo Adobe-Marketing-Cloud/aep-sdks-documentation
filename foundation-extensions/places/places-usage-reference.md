@@ -278,7 +278,7 @@ The value provided is stored in the Places shared state, and is for reference on
 
 {% tabs %}
 {% tab %}
-{% tab title="Swift"}
+{% tab title="Swift" %}
 {% endtab %}
 
 {% tab %}
@@ -302,7 +302,7 @@ Places.setAccuracyAuthorization(.fullAccuracy)
 {% endtab %}
 
 {% tab %}
-{% tab title="Objective-C"}
+{% tab title="Objective-C" %}
 {% endtab %}
 
 {% tab %}

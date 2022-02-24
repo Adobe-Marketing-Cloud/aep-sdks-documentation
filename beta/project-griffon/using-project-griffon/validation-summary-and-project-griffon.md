@@ -57,7 +57,7 @@ To execute the function in the code editor, click **Test**. The function is expe
 | :--- | :--- | :--- | :--- | :--- |
 | `message` | String | The validation message to display in the summary results. |  |  |
 | `events` | Array | An array of event uuids to be reported as matched or not matched. |  |  |
-| `result` | 'matched' | 'not matched' | 'unknown' | This is the validation result and is expected to be one of the enumerated strings. |
+| `result` | String (matched, not matched, unknown) | This is the validation result and is expected to be one of the enumerated strings. |
 
 ![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 

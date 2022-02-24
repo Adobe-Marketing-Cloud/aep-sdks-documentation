@@ -8,7 +8,7 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the AEP Assurance extension in Experience Platform Launch
+1. Install the AEP Assurance extension in [Experience Platform Launch](https://launch.adobe.com/)
 2. Add AEP Assurance SDK extension library to your app
    1. Import AEP Assurance into your app
    2. Register and implement extension APIs
@@ -17,7 +17,7 @@ To get started with [Project Griffon](../../beta/project-griffon/) in your app, 
 
 Follow these steps to add the install the extension in Experience Platform Launch:
 
-1. In Experience Platform Launch, click the **Extensions** tab.
+1. In Experience Platform Launch, while inside your Launch Property, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
 3. Follow the publishing process to update SDK configuration.
 
@@ -220,6 +220,9 @@ To start using the extension library, you must first register the extension with
 #### Java
 
 1. Register the extension when you register other extensions.
+   - "yourAppId", mentioned below, is found in Launch "Mobile Install Instructions". When inside of "Publishing Flow", click on the small gray box next to "Environment" dropdown.
+
+![](../../.gitbook/assets/Screen Shot 2022-02-24 at 10.29.47 AM.png)
 
    ```java
      public class MobileApp extends Application {
@@ -401,6 +404,8 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtabs %}
 
 ### Implement AEP Assurance session start APIs \(iOS only\)
+
+(session start APIs for other platforms listed [here](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference) )
 
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
