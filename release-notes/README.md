@@ -4,6 +4,20 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## February 22, 2022
+
+### iOS Assurance 3.0.1
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
+### Android Assurance 1.0.4
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
 ## February 14, 2022
 
 ### iOS Core 2.9.5
