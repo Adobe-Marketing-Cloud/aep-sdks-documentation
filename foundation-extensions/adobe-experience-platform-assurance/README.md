@@ -53,7 +53,7 @@ pod 'AEPCore','~>3.0'
 pod 'AEPAssurance','~>3.0'
 ```
 
-Import the Assurance extension along with the other Adobe Mobile extensions:
+Import the Assurance extension along with the other Adobe Mobile SDK extensions:
 
 #### Swift
 
@@ -141,7 +141,7 @@ _Note_ For `iOS` using `cocoapods`, run:
 
 1. Install the AEP Assurance package.
 
-   Install instructions can be found [here](https://pub.dev/packages/flutter_assurance/install).
+   Installation instructions can be found in the [Flutter documentation](https://pub.dev/packages/flutter_assurance/install).
 
 2. Import the extension.
 
