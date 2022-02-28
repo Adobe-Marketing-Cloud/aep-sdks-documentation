@@ -8,7 +8,7 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the AEP Assurance extension in [Experience Platform Launch](https://launch.adobe.com/)
+1. Install the AEP Assurance extension in [Experience Platform Data Collection](https://launch.adobe.com/)
 2. Add AEP Assurance SDK extension library to your app
    1. Import AEP Assurance into your app
    2. Register and implement extension APIs
@@ -222,7 +222,7 @@ To start using the extension library, you must first register the extension with
 1. Register the extension when you register other extensions.
    - "yourAppId", mentioned below, is found in Launch "Mobile Install Instructions". When inside of "Publishing Flow", click on the small gray box next to "Environment" dropdown.
 
-![](../../.gitbook/assets/Screen Shot 2022-02-24 at 10.29.47 AM.png)
+![](../../.gitbook/assets/install_instructions.png)
 
    ```java
      public class MobileApp extends Application {

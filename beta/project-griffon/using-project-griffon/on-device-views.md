@@ -1,6 +1,7 @@
 # On-device views
 
-## Connected 
+## Connected
+
 (indicated by red Adobe "A")
 ![](../../../.gitbook/assets/iphonexspacegrey_landscape.png)
 
