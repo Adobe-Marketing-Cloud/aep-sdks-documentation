@@ -265,6 +265,30 @@ if (app != null) {
 ```
 {% endtab %}
 
+{% tab title="Unity" %}
+**C\#**
+
+{% hint style="warning" %}
+`ACPCore.GetApplication` will return `null` if the `Application` object was destroyed or if `ACPCore.SetApplication` was not previously called.
+{% endhint %}
+
+**Syntax**
+
+```csharp
+public static AndroidJavaObject GetApplication() 
+```
+
+**Example**
+
+```csharp
+if (Application.platform == RuntimePlatform.Android) {
+AndroidJavaObject app = ACPCore.GetApplication();
+if (app != null) {
+    ...
+}
+```
+{% endtab %}
+
 {% tab title="Xamarin" %}
 **C\#**
 
@@ -542,6 +566,138 @@ static func getSdkIdentities(completion: @escaping (String?, Error?) -> Void)
 ```swift
 MobileCore.getSdkIdentities { (content, error) in
     // handle completion
+}
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+**Javascript**
+
+**Syntax**
+
+```jsx
+getSdkIdentities(): Promise<?string>;
+```
+
+**Example**
+
+```jsx
+ACPCore.getSdkIdentities().then(identities => console.log("AdobeExperienceSDK: Identities = " + identities));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+**Dart**
+
+**Syntax**
+
+```dart
+Future<String> get sdkIdentities;
+```
+
+**Example**
+
+```dart
+String result = "";
+
+try {
+  result = await FlutterACPCore.sdkIdentities;
+} on PlatformException {
+  log("Failed to get sdk identities");
+}
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+**Cordova**
+
+**Syntax**
+
+```jsx
+ACPCore.getSdkIdentities = function(success, fail);
+```
+
+**Example**
+
+```jsx
+ACPCore.getSdkIdentities(function(sdkIdentities) {
+    console.log(sdkIdentities);
+}, function(error) {
+    console.log(error);
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+**C\#**
+
+**Syntax**
+
+```csharp
+public static void GetSdkIdentities(AdobeIdentitiesCallback callback)
+```
+
+**Example**
+
+```csharp
+[MonoPInvokeCallback(typeof(AdobeIdentitiesCallback))]
+public static void HandleGetIdentitiesAdobeCallback(string ids)
+{
+    if (ids is string)
+    {
+        print("Ids are : " + ids);
+    }
+}
+
+ACPCore.GetSdkIdentities(HandleGetIdentitiesAdobeCallback);
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+**C\#**
+
+**iOS syntax**
+
+```csharp
+public unsafe static void GetSdkIdentities (Action<NSString> callback);
+```
+
+**iOS example**
+
+```csharp
+var callback = new Action<NSString>(handleCallback);
+ACPCore.GetSdkIdentities(callback);
+
+private void handleCallback(NSString content)
+{
+  Console.WriteLine("String callback: " + content);
+}
+```
+
+**Android syntax**
+
+```csharp
+public unsafe static void GetSdkIdentities (IAdobeCallback callback);
+```
+
+**Android example**
+
+```csharp
+ACPCore.GetSdkIdentities(new StringCallback());
+
+class StringCallback : Java.Lang.Object, IAdobeCallback
+{
+  public void Call(Java.Lang.Object stringContent)
+  {
+    if (stringContent != null)
+    {
+      Console.WriteLine(stringContent);
+    } 
+    else 
+    {
+      Console.WriteLine("null content in string callback");
+    }
+  }
 }
 ```
 {% endtab %}
@@ -1342,6 +1498,24 @@ public class CoreApp extends Application {
 ```
 {% endtab %}
 
+{% tab title="Unity" %}
+**C\#**
+
+**Syntax**
+
+```csharp
+public static void SetApplication() 
+```
+
+**Example**
+
+```csharp
+if (Application.platform == RuntimePlatform.Android) {
+    ACPCore.SetApplication();
+}
+```
+{% endtab %}
+
 {% tab title="Xamarin" %}
 **C\#**
 
@@ -1537,7 +1711,6 @@ ACPCore.setLogLevel = function(logLevel, success, fail);
 
 ```jsx
 ACPCore.setLogLevel(ACPCore.ACPMobileLogLevelVerbose, successCallback, errorCallback);
- MobileCore.setSmallIconResourceID(R.mipmap.ic_launcher_round);
 ```
 {% endtab %}
 
