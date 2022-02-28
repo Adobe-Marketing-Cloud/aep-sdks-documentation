@@ -1,5 +1,54 @@
 # Release Notes
 
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Updates version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+## February 8, 2022
+
+### Android Identity 1.3.0
+
+- Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+- Added support to handle the MobileCore.resetIdentities() API.
+- Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+- Stability improvements for network connections.
+
+Released with sdk-core version 1.10.0
+
+## February 7, 2022
+
+### Android Core 1.10.0
+
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+* Added public platform support for datastore and UI services.
+
+## February 3, 2022
+
+### iOS AEPServices 3.4.2
+* Add `@objc` attribute to `messageSettings` in `FullscreenMessage`
+
+## January 26, 2022
+
+### iOS AEPCore 3.4.1
+* Fixed AEPRulesEngine dependency in Package.swift
+
+## January 20, 2022
+
+### iOS AEPCore 3.4.0
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
+
 ## December 22, 2021
 
 ### iOS AEPCore 3.3.2

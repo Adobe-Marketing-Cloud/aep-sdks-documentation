@@ -1,90 +1,70 @@
 # Configuration API reference
 
-## Version of the Configuration extension
+## clearUpdatedConfiguration
 
-The `extensionVersion()` API returns the version of the Configuration extension.
+{% hint style="info" %}
+This API is only available in Android and iOS (AEP 3.x).
+{% endhint %}
 
-To get the version of the Configuration extension, use the following code sample:
+You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict:)`(iOS) API. It will also clear any updates to the `MobilePrivacyStatus`(Android)/ `PrivacyStatus`(iOS)  made via `setPrivacyStatus(privacyStatus)`(Android)/ `setPrivacyStatus(_ status:)`(iOS).
+
+ Here are some examples of scenarios:
+
+* `configureWithAppId(appId)`(Android)/`configureWith(appId:)`(iOS) -> `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict:)`(iOS) -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithAppId(appId)`(Android)/ `configureWith(appId:)`(iOS)
+
+* `configureWithFileInPath(filePath)`(Android)/ `configureWith(filePath:)`(iOS) -> `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict)`(iOS) -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithFileInPath(filePath)`(Android)/ `configureWith(filePath:)`(iOS)
+
+* `configureWithFileInAssets(fileName)`(Android) -> `updateConfiguration(configMap)`(Android) -> `clearUpdatedConfiguration()`: In this example, you end up with the initial configuration set via `configureWithFileInAssets(fileName)`(Android)
+
+* `configureWithAppId(appId)`(Android)/`configureWith(appId:)`(iOS) or `configureWithFileInPath(filePath)`(Android)/ `configureWith(filePath:)`(iOS) or `configureWithFileInAssets(fileName)`(Android) -> `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict)`(iOS) -> `clearUpdatedConfiguration()` -> `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict)`(iOS): In this example, the configuration will be the most recently updated configuration and will not have any keys from the first update unless they are included in the most recent update.
+
+* `configureWithAppId(appId)`(Android)/`configureWith(appId:)`(iOS) or `configureWithFileInPath(filePath)`(Android)/ `configureWith(filePath:)`(iOS) or `configureWithFileInAssets(fileName)`(Android) -> `setPrivacyStatus(privacyStatus)`(Android)/ `setPrivacyStatus(_ status:)`(iOS) -> `clearUpdatedConfiguration()`: In this example, the configuration will have the initial `MobilePrivacyStatus`(Android)/ `PrivacyStatus`(iOS) set via `configureWithAppId(appId)`(Android)/`configureWith(appId:)`(iOS) or `configureWithFileInPath(filePath)`(Android)/ `configureWith(filePath:)`(iOS) or `configureWithFileInAssets(fileName)`(Android).
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
+**Syntax**
+
 ```java
-String coreExtensionVersion = MobileCore.extensionVersion();
+public static void clearUpdatedConfiguration()
 ```
+
+**Example**
+```java
+MobileCore.clearUpdatedConfiguration()
+```
+
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
+{% tab title="iOS (AEP 3.x)" %}
+
+#### Swift
+
+**Syntax**
 
 ```swift
-let version = MobileCore.extensionVersion
+static func clearUpdatedConfiguration()
 ```
 
-**Objective C**
-
-```objectivec
-NSString *version = [AEPMobileCore extensionVersion];
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective C**
-
-```objectivec
-NSString *coreExtensionVersion = [ACPCore extensionVersion];
-```
-
-**Swift**
-
+**Example**
 ```swift
-let coreExtensionVersion  = ACPCore.extensionVersion()
+MobileCore.clearUpdatedConfiguration()
 ```
-{% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
+#### Objective-C
 
-```jsx
-ACPCore.extensionVersion().then(coreExtensionVersion => console.log("AdobeExperienceSDK: ACPCore version: " + coreExtensionVersion));
+**Syntax**
+```swift
+static func clearUpdatedConfiguration()
 ```
-{% endtab %}
 
-{% tab title="Flutter" %}
-### Dart
-
-```dart
-String coreExtensionVersion = await FlutterACPCore.extensionVersion;
+**Example**
+```objectivec
+[AEPMobileCore clearUpdatedConfiguration];
 ```
-{% endtab %}
 
-{% tab title="Cordova" %}
-### Cordova
-
-```jsx
-ACPCore.extensionVersion(function(version) {  
-   console.log("ACPCore version: " + version);
-}, function(error) {  
-   console.log(error);  
-});
-```
-{% endtab %}
-
-{% tab title="Unity" %}
-### C\#
-
-```csharp
-string coreExtensionVersion = ACPCore.ExtensionVersion();
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### C\#
-
-```csharp
-string coreExtensionVersion = ACPCore.ExtensionVersion();
-```
 {% endtab %}
 {% endtabs %}
 
@@ -188,6 +168,215 @@ public static void ConfigureWithAppID (string appid);
 
 ```text
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
+```
+{% endtab %}
+{% endtabs %}
+
+## configureWithFileInAssets
+
+{% hint style="info" %}
+This API is only available in Android and was added in Android was added in Android Core version 1.7.0.
+{% endhint %}
+
+You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+
+
+{% tabs %}
+{% tab title="Android" %}
+#### Syntax
+
+```java
+public static void configureWithFileInAssets(final String fileName);
+```
+
+#### Example
+
+#### Java
+
+```java
+MobileCore.configureWithFileInAssets("exampleJSONfile.json");
+```
+{% endtab %}
+{% endtabs %}
+
+## configureWithFileInPath
+
+You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+
+To pass in a bundled path and file name:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Syntax
+
+```java
+public static void configureWithFileInPath(final String filePath);
+```
+
+#### Example
+
+#### Java
+
+```java
+MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+#### Syntax
+
+```swift
+ static func configureWith(filePath: String)
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+ NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
+ [AEPMobileCore configureWithFilePath:filePath];
+```
+
+**Swift**
+
+```swift
+ let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ MobileCore.configureWith(filePath: filePath)
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+#### Syntax
+
+```objectivec
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+#### Example
+
+**Objective-C**
+
+```objectivec
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
+[ACPCore configureWithFileInPath:filePath];
+```
+
+**Swift**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ACPCore.configureWithFile(inPath: filePath)
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+#### Android Syntax
+
+```csharp
+public unsafe static void ConfigureWithFileInPath (string filepath);
+```
+
+#### iOS Syntax
+
+```csharp
+public static void ConfigureWithFileInPath (string filepath);
+```
+
+#### Example
+
+#### C\#
+
+```csharp
+ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
+```
+{% endtab %}
+{% endtabs %}
+
+## extensionVersion
+
+The `extensionVersion()` API returns the version of the Configuration extension.
+
+To get the version of the Configuration extension, use the following code sample:
+
+{% tabs %}
+{% tab title="Android" %}
+#### Java
+
+```java
+String coreExtensionVersion = MobileCore.extensionVersion();
+```
+{% endtab %}
+
+{% tab title="iOS \(AEP 3.x\)" %}
+**Swift**
+
+```swift
+let version = MobileCore.extensionVersion
+```
+
+**Objective C**
+
+```objectivec
+NSString *version = [AEPMobileCore extensionVersion];
+```
+{% endtab %}
+
+{% tab title="iOS \(ACP 2.x\)" %}
+**Objective C**
+
+```objectivec
+NSString *coreExtensionVersion = [ACPCore extensionVersion];
+```
+
+**Swift**
+
+```swift
+let coreExtensionVersion  = ACPCore.extensionVersion()
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+### JavaScript
+
+```jsx
+ACPCore.extensionVersion().then(coreExtensionVersion => console.log("AdobeExperienceSDK: ACPCore version: " + coreExtensionVersion));
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+### Dart
+
+```dart
+String coreExtensionVersion = await FlutterACPCore.extensionVersion;
+```
+{% endtab %}
+
+{% tab title="Cordova" %}
+### Cordova
+
+```jsx
+ACPCore.extensionVersion(function(version) {  
+   console.log("ACPCore version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
+```
+{% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+```csharp
+string coreExtensionVersion = ACPCore.ExtensionVersion();
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+```csharp
+string coreExtensionVersion = ACPCore.ExtensionVersion();
 ```
 {% endtab %}
 {% endtabs %}
@@ -344,124 +533,3 @@ ACPCore.UpdateConfiguration(config);
 ```
 {% endtab %}
 {% endtabs %}
-
-## configureWithFileInPath
-
-You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
-
-To pass in a bundled path and file name:
-
-{% tabs %}
-{% tab title="Android" %}
-#### Syntax
-
-```java
-public static void configureWithFileInPath(final String filePath);
-```
-
-#### Example
-
-#### Java
-
-```java
-MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-#### Syntax
-
-```swift
- static func configureWith(filePath: String)
-```
-
-#### Example
-
-**Objective-C**
-
-```objectivec
- NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
- [AEPMobileCore configureWithFilePath:filePath];
-```
-
-**Swift**
-
-```swift
- let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
- MobileCore.configureWith(filePath: filePath)
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-#### Syntax
-
-```objectivec
-+ (void) configureWithFileInPath: (NSString* __nullable) filepath;
-```
-
-#### Example
-
-**Objective-C**
-
-```objectivec
-NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
-[ACPCore configureWithFileInPath:filePath];
-```
-
-**Swift**
-
-```swift
-let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-ACPCore.configureWithFile(inPath: filePath)
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-#### Android Syntax
-
-```csharp
-public unsafe static void ConfigureWithFileInPath (string filepath);
-```
-
-#### iOS Syntax
-
-```csharp
-public static void ConfigureWithFileInPath (string filepath);
-```
-
-#### Example
-
-#### C\#
-
-```csharp
-ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
-```
-{% endtab %}
-{% endtabs %}
-
-## configureWithFileInAssets \(Android Only\)
-
-You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
-
-{% hint style="info" %}
-Method `configureWithFileInAssets` was added in Android Core version 1.7.0.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-#### Syntax
-
-```java
-public static void configureWithFileInAssets(final String fileName);
-```
-
-#### Example
-
-#### Java
-
-```java
-MobileCore.configureWithFileInAssets("exampleJSONfile.json");
-```
-{% endtab %}
-{% endtabs %}
-

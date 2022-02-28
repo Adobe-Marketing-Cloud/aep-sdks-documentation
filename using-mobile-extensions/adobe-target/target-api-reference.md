@@ -2117,21 +2117,7 @@ public class TargetParameters: NSObject, Codable {
 }
 ```
 
-The following example can be used to create an instance of a TargetParameters object.
-
-**Swift**
-
-```swift
-let targetParameters = TargetParameters(parameters: ["mbox_parameter_key": "mbox_parameter_value"], profileParameters: ["name": "Smith"], order: TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"]), product: TargetProduct(productId: "pId1", categoryId: "cId1"))
-```
-
-**Objective-C**
-
-```text
-AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
-AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
-AEPTargetParameters * targetParams = [[AEPTargetParameters alloc] initWithParameters:@{@"mbox_parameter_key":@"mbox_parameter_value"} profileParameters:@{@"name":@"Smith"} order:order product:product];
-```
+Examples for creating instances of TargetParameters can be seen [here](./README.md#target-parameters)
 
 ### TargetOrder
 
@@ -2158,19 +2144,7 @@ public class TargetOrder: NSObject, Codable {
 }
 ```
 
-The following example can be used to create an instance of a TargetOrder object.
-
-**Swift**
-
-```swift
-let targetOrder = TargetOrder(id: "id1", total: 1.0, purchasedProductIds: ["ppId1"])
-```
-
-**Objective-C**
-
-```text
-AEPTargetOrder *order = [[AEPTargetOrder alloc] initWithId:@"id1" total:1.0 purchasedProductIds:@[@"ppId1"]];
-```
+Examples for creating instances of TargetOrder can be seen [here](./README.md#target-order-class)
 
 ### TargetProduct
 
@@ -2194,19 +2168,7 @@ public class TargetProduct: NSObject, Codable {
 }
 ```
 
-The following example can be used to create an instance of a TargetProduct object.
-
-**Swift**
-
-```swift
-let targetProduct = TargetProduct(productId: "pId1", categoryId: "cId1")
-```
-
-**Objective-C**
-
-```text
-AEPTargetProduct *product =[[AEPTargetProduct alloc] initWithProductId:@"pId1" categoryId:@"cId1"];
-```
+Examples for creating instances of TargetProduct can be seen [here](./README.md#target-product-class)
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
@@ -2277,14 +2239,7 @@ This class contains mbox parameters dictionary, profile parameters dictionary, A
 @end
 ```
 
-The following method can be used to create an instance of ACPTargetParameters.
-
-```text
-+ (nonnull instancetype) targetParametersWithParameters: (nullable NSDictionary*) parameters
-                                      profileParameters: (nullable NSDictionary*) profileParameters
-                                                product: (nullable ACPTargetProduct*) product
-                                                  order: (nullable ACPTargetOrder*) order;
-```
+Examples for creating instances of ACPTargetParameters can be seen [here](./README.md#target-parameters)
 
 ### ACPTargetOrder
 
@@ -2304,13 +2259,7 @@ This class contains orderId, total and an array for purchasedProductIds.
 @end
 ```
 
-The following method can be used to create an instance of ACPTargetOrder.
-
-```text
-+ (nonnull instancetype) targetOrderWithId: (nonnull NSString*) orderId
-                                     total: (nullable NSNumber*) total
-                       purchasedProductIds: (nullable NSArray <NSString*>*) purchasedProductIds;
-```
+Examples for creating instances of ACPTargetOrder can be seen [here](./README.md#target-order-class)
 
 ### ACPTargetProduct
 
@@ -2327,12 +2276,8 @@ This class contains productId and categoryId.
 @end
 ```
 
-The following method can be used to create an instance of ACPTargetProduct.
+Examples for creating instances of ACPTargetProduct can be seen [here](./README.md#target-product-class)
 
-```text
-+ (nonnull instancetype) targetProductWithId: (nonnull NSString*) productId
-                                  categoryId: (nullable NSString*) categoryId;
-```
 {% endtab %}
 
 {% tab title="React Native" %}

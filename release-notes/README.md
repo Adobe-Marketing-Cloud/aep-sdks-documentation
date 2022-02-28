@@ -4,6 +4,77 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## February 22, 2022
+
+### iOS Assurance 3.0.1
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
+### Android Assurance 1.0.4
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Updates version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+## February 9, 2022
+
+### iOS Campaign Standard 3.0.1
+
+* Fixed an issue with the Campaign message tracking URL being incorrectly built.
+
+## February 8, 2022
+
+### Android Identity 1.3.0
+
+- Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+- Added support to handle the MobileCore.resetIdentities() API.
+- Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+- Stability improvements for network connections.
+
+Released with sdk-core version 1.10.0
+
+## February 7, 2022
+
+### Android Core 1.10.0
+
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+* Added public platform support for datastore and UI services.
+
+## February 3, 2022
+
+### iOS AEPServices 3.4.2
+* Add `@objc` attribute to `messageSettings` in `FullscreenMessage`
+
+## January 26, 2022
+
+### iOS AEPCore 3.4.1
+* Fixed AEPRulesEngine dependency in Package.swift
+
+### ACP Unity packages
+
+The ACP Unity packages now use XCFrameworks in order to support hardware with the new Apple M1 architecture, while maintaining support for existing Intel architecture. See the respective GitHub repositories for the updated installation instructions.
+
+**IMPORTANT:** Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer.
+
+Below is a list of the new versions for each Unity package:
+
+* [Unity ACPCore v1.0.1](https://github.com/adobe/unity-acpcore/releases/tag/v1.0.1)
+* [Unity ACPAnalytics v1.0.0](https://github.com/adobe/unity-acpanalytics/releases/tag/v1.0.0)
+* [Unity ACPUserProfile v1.0.0](https://github.com/adobe/unity-aepassurance/releases/tag/v1.0.0)
+* [Unity AEPAssurance v1.0.0](https://github.com/adobe/unity_acpuserprofile/releases/tag/v1.0.0)
+
 ## January 21, 2022
 
 ### iOS AEPEdge 1.3.0
@@ -14,6 +85,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
 
+## January 20, 2022
+
+### iOS AEPCore 3.4.0
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
 
 ## January 14, 2022
 

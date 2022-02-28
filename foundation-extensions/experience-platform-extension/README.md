@@ -6,25 +6,23 @@
 
 The Adobe Experience Platform Edge Network extension requires the Identity for Edge Network extension in order to operate. As a first step install and configure the [Identity for Edge Network](../identity-for-edge-network) extension, then continue with the steps below.
 
+## Configure the Edge Network extension in Data Collection UI <a id="configure-edge-network-extension"></a>
 
-
-## Configure the Edge Network extension in Platform
-
-1. In Experience Platform, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and click **Install**.
+1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
 3. Type in the extension settings. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
 
 ### Datastreams
 
-Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development Environments will be automatically prefilled. If no Datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development environments will be automatically prefilled. If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
-If you use multiple Development configurations, select the desired one from the `Development Environment` drop-down.
+If you use multiple Development configurations, select the desired one from the `Development environment` drop-down.
 
-The Datastream used by the client-side implementation is one of the followings:
+The datastream used by the client-side implementation is one of the followings:
 
 * the `Production environment` configuration when the Launch library is published to production \(in the Published column in the Launch publishing flow\).
 * the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
@@ -40,7 +38,7 @@ If you have a first-party domain mapped to the Adobe-provisioned Edge Network do
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
 
@@ -53,7 +51,8 @@ If you have a first-party domain mapped to the Adobe-provisioned Edge Network do
 2. Import the Mobile Core and Edge extensions in your application class.
 
    ```java
-    import com.adobe.marketing.mobile.*;
+    import com.adobe.marketing.mobile.MobileCore;
+    import com.adobe.marketing.mobile.Edge;
    ```
 
 {% endtab %}
@@ -73,7 +72,7 @@ If you have a first-party domain mapped to the Adobe-provisioned Edge Network do
    
 2. Import the Mobile Core and Edge libraries:
 
-#### Swift
+### Swift
 
 ```swift
 // AppDelegate.swift
@@ -82,9 +81,9 @@ import AEPEdge
 import AEPEdgeIdentity
 ```
 
-#### Objective-C
+### Objective-C
 
-```objective-c
+```objectivec
 // AppDelegate.h
 @import AEPCore;
 @import AEPEdge;
@@ -94,7 +93,7 @@ import AEPEdgeIdentity
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift.md).
 
 {% endtab %}
 
@@ -105,7 +104,7 @@ This extension is built on the AEPCore (3.x) and it is not compatible with ACPCo
 {% tabs %}
 {% tab title="Android" %}
 
-#### Java
+### Java
 
 ```java
 public class MobileApp extends Application {
@@ -133,7 +132,7 @@ public class MobileApp extends Application {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-#### Swift
+### Swift
 
 ```swift
 // AppDelegate.swift
@@ -145,7 +144,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-#### Objective-C
+### Objective-C
 
 ```objective-c
 // AppDelegate.m
@@ -167,7 +166,7 @@ Install other extensions based on your use-case:
 
 1. If your application requires user consent preferences collection and enforcement, install and configure the [Consent for Edge Network](../consent-for-edge-network) extension.
 2. Lifecycle extension now supports application lifecycle metrics collection for Edge Network. If you would like to start collecting this type of data, follow the installation instruction for [Lifecycle for Edge Network](../lifecycle-for-edge-network).
-3. If your application uses push notifications, see also the [Adobe Journey Optimizer](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-journey-optimizer) extension.
+3. If your application uses push notifications, see also the [Adobe Journey Optimizer](../../using-mobile-extensions/adobe-journey-optimizer) extension.
 
 ## Configuration keys
 

@@ -2,6 +2,20 @@
 
 Release notes and change logs for the Adobe Experience Platform Assurance extension
 
+## February 22, 2022
+
+### iOS Assurance 3.0.1
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
+### Android Assurance 1.0.4
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
+
 ## January 14, 2022
 
 ### Flutter Assurance 2.0.1
@@ -117,4 +131,3 @@ This major release introduces support for following:
 ### Android Assurance 1.0.0
 
 * General availability and release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
