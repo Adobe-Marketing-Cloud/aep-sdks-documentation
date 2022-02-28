@@ -178,7 +178,7 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 This API is only available in Android and was added in Android was added in Android Core version 1.7.0.
 {% endhint %}
 
-You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You can bundle a JSON configuration file in the app's Assets folder to replace or complement the configuration that was downloaded by using the [Configure with App ID per environment](./#configure-with-app-id-per-environment) approach.
 
 
 {% tabs %}
@@ -201,7 +201,7 @@ MobileCore.configureWithFileInAssets("exampleJSONfile.json");
 
 ## configureWithFileInPath
 
-You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with App ID per environment](./#configure-with-app-id-per-environment) approach.
 
 To pass in a bundled path and file name:
 
@@ -231,14 +231,14 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
  [AEPMobileCore configureWithFilePath:filePath];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
  let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
@@ -255,14 +255,14 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 
 #### Example
 
-**Objective-C**
+#### Objective-C
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
 [ACPCore configureWithFileInPath:filePath];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
@@ -309,13 +309,13 @@ String coreExtensionVersion = MobileCore.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
-**Swift**
+#### Swift
 
 ```swift
 let version = MobileCore.extensionVersion
 ```
 
-**Objective C**
+#### Objective C
 
 ```objectivec
 NSString *version = [AEPMobileCore extensionVersion];
@@ -323,13 +323,13 @@ NSString *version = [AEPMobileCore extensionVersion];
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-**Objective C**
+#### Objective C
 
 ```objectivec
 NSString *coreExtensionVersion = [ACPCore extensionVersion];
 ```
 
-**Swift**
+#### Swift
 
 ```swift
 let coreExtensionVersion  = ACPCore.extensionVersion()
@@ -395,7 +395,6 @@ Do not use this API to update the `build.environment` key or any key with an env
 
 {% tabs %}
 {% tab title="Android" %}
-### updateConfiguration <a id="updateConfiguration"></a>
 
 #### Syntax
 
@@ -415,7 +414,6 @@ MobileCore.updateConfiguration(data);
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
-### updateConfiguration
 
 #### Syntax
 
@@ -442,7 +440,6 @@ MobileCore.updateConfiguration(data);
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-### updateConfiguration
 
 #### Syntax
 
@@ -470,7 +467,6 @@ ACPCore.updateConfiguration(updatedConfig)
 {% tab title="React Native" %}
 #### JavaScript
 
-### updateConfiguration
 
 ```jsx
 ACPCore.updateConfiguration({"global.privacy":"optedout"});
@@ -480,17 +476,13 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"});
 {% tab title="Flutter" %}
 #### Dart
 
-### updateConfiguration
-
 ```dart
 FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 
 {% tab title="Cordova" %}
-## Javascript
-
-Update SDK configuration
+#### Javascript
 
 ```javascript
 ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
@@ -498,9 +490,7 @@ ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, 
 {% endtab %}
 
 {% tab title="Unity" %}
-## C\#
-
-Update SDK configuration
+#### C\#
 
 ```csharp
 var dict = new Dictionary<string, object>();
@@ -510,9 +500,7 @@ ACPCore.UpdateConfiguration(dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-## C\#
-
-Update SDK configuration
+#### C\#
 
 **iOS**
 
@@ -532,8 +520,4 @@ config.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(config);
 ```
 {% endtab %}
-<<<<<<< HEAD
 {% endtabs %}
-=======
-{% endtabs %}
->>>>>>> upstream/master
