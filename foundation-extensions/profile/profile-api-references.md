@@ -29,7 +29,7 @@ String extensionVersion = UserProfile.extensionVersion();
 ```swift
 static var extensionVersion: String
 ```
-**Examples**
+**Example**
 
 ```swift
 let extensionVersion = UserProfile.extensionVersion
@@ -43,7 +43,7 @@ let extensionVersion = UserProfile.extensionVersion
 + (nonnull NSString*) extensionVersion;
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 NSString *extensionVersion = [AEPMobileUserProfile extensionVersion];
@@ -59,7 +59,7 @@ NSString *extensionVersion = [AEPMobileUserProfile extensionVersion];
 ```swift
 static var extensionVersion: String
 ```
-**Examples**
+**Example**
 
 ```swift
 let extensionVersion  = ACPUserProfile.extensionVersion()
@@ -73,7 +73,7 @@ let extensionVersion  = ACPUserProfile.extensionVersion()
 + (nonnull NSString*) extensionVersion;
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 NSString *extensionVersion = [ACPUserProfile extensionVersion];
@@ -177,7 +177,7 @@ static func getUserAttributes(attributeNames: [String], completion: @escaping ([
 ```
 * _completion_ is the callback `function` which will be called with user attributes.
 
-**Examples**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -196,7 +196,7 @@ UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes
 + (void)getUserAttributesWithAttributeNames:(NSArray<NSString *> * _Nonnull) comletion:^(NSDictionary<NSString *,id> * _Nullable, enum AEPError)
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 NSArray *attributes = @[@"itemsAddedToCart"];
@@ -218,7 +218,7 @@ static func getUserAttributes(_ attributeNames: [String]?, withCompletionHandler
 ```
 * _completionHandler_ is invoked after the customer attributes are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5s.
 
-**Examples**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -236,7 +236,7 @@ ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(
 + (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 [ACPUserProfile getUserAttributes:attributes withCompletionHandler:^(NSDictionary* dict, NSError* error){
@@ -418,7 +418,7 @@ static func registerExtensions(_ extensions: [NSObject.Type],
                                _ completion: (() -> Void)? = nil)
 ```
 
-**Examples**
+**Example**
 
 ```swift
 import AEPUserProfile
@@ -435,7 +435,7 @@ MobileCore.registerExtensions([UserProfile.self])
 + (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
                  completion: (void (^ _Nullable)(void)) completion;
 ```
-**Examples**
+**Example**
 
 ```objectivec
 @import AEPUserProfile;
@@ -457,7 +457,7 @@ Register the Identity extension in your app's didFinishLaunchingWithOptions func
 static func registerExtensions()
 ```
 
-**Examples**
+**Example**
 
 ```swift
 
@@ -475,7 +475,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```objectivec
 + (void) registerExtension;
 ```
-**Examples**
+**Example**
 
 ```objectivec
 
@@ -522,7 +522,7 @@ UserProfile.removeUserAttribute("itemsAddedToCart");
 ```swift
 static func removeUserAttribute(_ attributeName: String)
 ```
-**Examples**
+**Example**
 
 A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
 
@@ -538,7 +538,7 @@ ACPUserProfile.removeUserAttribute("itemsAddedToCart");
 + (void) removeUserAttribute: (nonnull NSString*) key
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 [ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
@@ -653,7 +653,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 public static void removeUserAttributes(List<String> attributeNames)
 ```
 
-**Examples**
+**Example**
 
 You want to remove `username`, `usertype` user data when session timeout occurs.
 
@@ -669,7 +669,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 + (void) removeUserAttributesWithAttributeNames:(NSArray<NSString *> * _Nonnull)
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 [AEPMobileUserProfile removeUserAttributes:@[@"username", @"usertype"]]
@@ -687,7 +687,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 ```swift
 static func removeUserAttributes(_ attributeNames: [String]?)
 ```
-**Examples**
+**Example**
 
 You want to remove `username`, `usertype` user data when session timeout occurs.
 
@@ -703,7 +703,7 @@ ACPUserProfile.removeUserAttributes(["username","usertype"]);
 + (void) removeUserAttributes: (nonnull NSArray <NSString*>*) attributeNames
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 [ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
@@ -839,7 +839,7 @@ UserProfile.updateUserAttribute("username", "Will Smith");
 ```swift
 static func updateUserAttribute(_ attributeName: String, withValue attributeValue: String?)
 ```
-**Examples**
+**Example**
 
 You want to update `username` of a user obtained in the log in page:
 
@@ -855,7 +855,7 @@ ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
 + (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 [ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
@@ -982,7 +982,7 @@ UserProfile.updateUserAttributes(profileMap);
 ```swift
 public static func updateUserAttributes(attributeDict: [String: Any])
 ```
-**Examples**
+**Example**
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
@@ -1001,7 +1001,7 @@ UserProfile.updateUserAttributes(attributeDict: profileMap)
 + (void)updateUserAttributesWithAttributeDict:(NSDictionary<NSString *,id> * _Nonnull)
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
@@ -1021,7 +1021,7 @@ NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 ```swift
 static func updateUserAttributes(_ attributeMap: [AnyHashble: Any])
 ```
-**Examples**
+**Example**
 
 You want to update `username, usertype` of a user obtained in the log in page :
 
@@ -1040,7 +1040,7 @@ ACPUserProfile.updateUserAttributes(profileMap)
 + (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
 ```
 
-**Examples**
+**Example**
 
 ```objectivec
 NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
