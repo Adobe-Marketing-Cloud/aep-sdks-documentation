@@ -1,688 +1,128 @@
 # Profile API reference
 
-## Update user attributes
+
+## extensionVersion
+
+The `extensionVersion()` API returns the version of the Profile extension.
 
 {% tabs %}
 {% tab title="Android" %}
-### **updateUserAttribute**
 
-Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
-
-Remember the following information:
-
-* If the attribute does not exist, it will be created.
-* If the attribute exists, the value will be updated.
-* A null attribute value removes the attribute.
-
-#### **Syntax**
+**Syntax**
 
 ```java
-public static void updateUserAttribute(String attributeName, 
-                                       Object attributeValue)
+public static String extensionVersion()
 ```
-
-#### **Example**
-
-You want to update `username` of a user obtained in the log in page :
+**Example**
 
 ```java
-UserProfile.updateUserAttribute("username", "Will Smith");
-```
-
-### updateUserAttributes
-
-Sets the user profile attributes key and value.
-
-Allows you to create/update a batch of user profile attributes:
-
-* String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
-* Custom objects cannot be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it is created.
-* If the attribute already exists, the value is updated.
-* A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-```java
-public static void updateUserAttributes(Map<String, Object> attributeMap)
-```
-
-#### **Example**
-
-You want to update `username, usertype` of a user obtained in the log in page :
-
-```java
-HashMap<String, Object> profileMap = new HashMap<>();
-profileMap.put("username","Will Smith");
-profileMap.put("usertype","Actor");
-UserProfile.updateUserAttributes(profileMap);
+String extensionVersion = UserProfile.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
-### updateUserAttributes
+{% tab title="iOS (AEP 3.x)" %}
 
-Sets the user profile attributes key and value.
+### Swift
 
-Allows to create/update a batch of user profile attributes:
-
-* String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
-* We do not allow custom objects to be saved as a `UserProfile` attribute.
-* If the attribute already exists, then the value will be updated.
-* If the attribute does not exist, it will be created.
-
-A null attribute value will remove the attribute.
-
-#### **Syntax**
+**Syntax**
 
 ```swift
-public static func updateUserAttributes(attributeDict: [String: Any])
+static var extensionVersion: String
+```
+**Examples**
+
+```swift
+let extensionVersion = UserProfile.extensionVersion
 ```
 
-#### **Examples**
+### Objective-C
 
-You want to update `username, usertype` of a user obtained in the log in page :
-
-**Objective C**
+**Syntax**
 
 ```objectivec
-NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
-[profileMap setObject:@"username" forKey:@"will_smith"];
-[profileMap setObject:@"usertype" forKey:@"Actor"];
-[AEPMobileUserProfile updateUserAttributes:profileMap];
++ (nonnull NSString*) extensionVersion;
 ```
 
-**Swift**
-
-```swift
-var profileMap = [AnyHashable: Any]()
-profileMap["username"] = "will_smith"
-profileMap["usertype"] = "Actor"
-UserProfile.updateUserAttributes(attributeDict: profileMap)
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-### updateUserAttribute
-
-Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
-
-Remember the following information:
-
-* If the attribute does not exist, it will be created.
-* If the attribute already exists, then the value will be updated.
-* A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-```java
-+ (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
-```
-
-#### **Examples**
-
-You want to update `username` of a user obtained in the log in page:
-
-**Objective-C**
-
-```text
-[ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
-```
-
-**Swift**
-
-```java
-ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
-```
-
-### updateUserAttributes
-
-Sets the user profile attributes key and value.
-
-Allows to create/update a batch of user profile attributes:
-
-* String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
-* We do not allow custom objects to be saved as a `UserProfile` attribute.
-* If the attribute already exists, then the value will be updated.
-* If the attribute does not exist, it will be created.
-
-A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-```text
-+ (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
-```
-
-#### **Examples**
-
-You want to update `username, usertype` of a user obtained in the log in page :
-
-**Objective C**
+**Examples**
 
 ```objectivec
-NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
-[profileMap setObject:@"username" forKey:@"will_smith"];
-[profileMap setObject:@"usertype" forKey:@"Actor"];
-[ACPUserProfile updateUserAttributes:profileMap];
-```
-
-**Swift**
-
-```swift
-var profileMap = [AnyHashable: Any]()
-profileMap["username"] = "will_smith"
-profileMap["usertype"] = "Actor"
-ACPUserProfile.updateUserAttributes(profileMap)
+NSString *extensionVersion = [AEPMobileUserProfile extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="Cordova" %}
-### **updateUserAttribute**
+{% tab title="iOS (ACP 2.x)" %}
 
-Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
+### Objective-C
 
-Remember the following information:
-
-* If the attribute does not exist, it will be created.
-* If the attribute exists, the value will be updated.
-* A null attribute value removes the attribute.
-
-#### **Syntax**
-
-```javascript
-ACPUserProfile.updateUserAttribute = function(attributeName, attributeValue, success, fail);
+```objectivec
+NSString *extensionVersion = [ACPUserProfile extensionVersion];
 ```
 
-* _attributeName_ is a string containing the name of the user profile attribute to create or update.
-* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
-* _success_ is a callback containing a general success message if the updateUserAttribute API executed without any errors.
-* _fail_ is a callback containing error information if the updateUserAttribute API was executed with errors.
+### Swift
 
-#### **Example**
-
-You want to update `username` of a user obtained in the log in page :
-
-```javascript
-ACPUserProfile.updateUserAttribute("username", "Will Smith", handleCallback, handleError);
+```swift
+let extensionVersion  = ACPUserProfile.extensionVersion()
 ```
+{% endtab %}
 
-### updateUserAttributes
+{% tab title="React Native" %}
 
-Sets the user profile attributes key and value.
+### JavaScript
 
-Allows you to create/update a batch of user profile attributes:
-
-* String, Number, and Array are valid types of user profile attributes.
-* Custom objects cannot be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it is created.
-* If the attribute already exists, the value is updated.
-* A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-```javascript
-ACPUserProfile.updateUserAttributes = function(attributes, success, fail);
-```
-
-* _attributes_ is a object containing a batch of user profile attributes to create or update.
-* _success_ is a callback containing a general success message if the updateUserAttributes API executed without any errors.
-* _fail_ is a callback containing error information if the updateUserAttributes API was executed with errors.
-
-#### **Example**
-
-You want to update `username, usertype` of a user obtained in the log in page :
-
-```javascript
-var username = "will_smith";
-var usertype = "Actor";
-var attributes = {"username":username, "usertype":usertype};
-ACPUserProfile.updateUserAttributes(attributes, handleCallback, handleError);
+```jsx
+ACPUserProfile.extensionVersion().then(extensionVersion => console.log("AdobeExperienceSDK: ACPUserProfile version: " + extensionVersion));
 ```
 {% endtab %}
 
 {% tab title="Flutter" %}
-### **updateUserAttribute**
 
-Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
-
-Remember the following information:
-
-* If the attribute does not exist, it will be created.
-* If the attribute exists, the value will be updated.
-* A null attribute value removes the attribute.
-
-#### **Syntax**
+### Dart
 
 ```dart
-static Future<void> updateUserAttribute(String attributeName, String attributeValue) async
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to create or update.
-* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
-
-#### **Example**
-
-You want to update `username` of a user obtained in the log in page :
-
-```dart
-FlutterACPUserProfile.updateUserAttribute("username", "Will Smith");
-```
-
-### updateUserAttributes
-
-Sets the user profile attributes key and value.
-
-Allows you to create/update a batch of user profile attributes:
-
-* String, Number, and Array are valid types of user profile attributes.
-* Custom objects cannot be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it is created.
-* If the attribute already exists, the value is updated.
-* A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-```dart
-static Future<void> updateUserAttributes(Map<String, Object> attributeMap) async
-```
-
-* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
-
-#### **Example**
-
-You want to update `username, usertype` of a user obtained in the log in page :
-
-```dart
-FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":"Actor"});
-```
-{% endtab %}
-
-{% tab title="Xamarin" %}
-### **updateUserAttribute**
-
-Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
-
-Remember the following information:
-
-* If the attribute does not exist, it will be created.
-* If the attribute exists, the value will be updated.
-* A null attribute value removes the attribute.
-
-#### **Syntax**
-
-**Android**
-
-```csharp
-public unsafe static void UpdateUserAttribute (string attributeName, Java.Lang.Object attributeValue);
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to create or update.
-* _attributeValue_ must be a String, Integer, Boolean, Double, Array, or Map containing the user profile attribute value. Custom objects cannot be saved as a `UserProfile` attribute.
-
-**iOS**
-
-```csharp
-public static void UpdateUserAttribute (string attributeName, string attributeValue);
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to create or update.
-* _attributeValue_ is a string containing the user profile attribute value.
-
-#### **Example**
-
-You want to update `username` of a user obtained in the log in page :
-
-```csharp
-ACPUserProfile.updateUserAttribute("username", "Will Smith");
-```
-
-### updateUserAttributes
-
-Sets the user profile attributes key and value.
-
-Allows you to create/update a batch of user profile attributes:
-
-* String, Integer, Boolean, Double, Array, or Map are valid types of user profile attributes.
-* Custom objects cannot be saved as a `UserProfile` attribute.
-* If the attribute does not exist, it is created.
-* If the attribute already exists, the value is updated.
-* A null attribute value will remove the attribute.
-
-#### **Syntax**
-
-**Android**
-
-```csharp
-public unsafe static void UpdateUserAttributes (IDictionary<string, Java.Lang.Object> attributeMap);
-```
-
-* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
-
-**iOS**
-
-```csharp
-public static void UpdateUserAttributes (NSDictionary attributeMap);
-```
-
-* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
-
-#### **Example**
-
-You want to update `username, usertype` of a user obtained in the log in page :
-
-**Android**
-
-```csharp
-var attributes = new Dictionary<string, Java.Lang.Object>();
-attributes.Add("username", "will_smith");
-attributes.Add("usertype", "Actor");
-ACPUserProfile.UpdateUserAttributes(attributes);
-```
-
-**iOS**
-
-```csharp
- var attributes = new NSMutableDictionary<NSString, NSString>
- {
-   ["username"] = new NSString("will_smith"),
-   ["usertype"] = new NSString("Actor")
- };
-ACPUserProfile.updateUserAttributes(attributes);
-```
-{% endtab %}
-{% endtabs %}
-
-## **Remove user attributes**
-
-{% tabs %}
-{% tab title="Android" %}
-### **removeUserAttribute**
-
-Removes the user profile attribute for the given key.
-
-#### **Syntax**
-
-```java
-public static void removeUserAttribute(String attributeName)
-```
-
-#### **Example**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-```java
-UserProfile.removeUserAttribute("itemsAddedToCart");
-```
-
-### **removeUserAttributes**
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-```java
-public static void removeUserAttributes(List<String> attributeNames)
-```
-
-#### **Example**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-```java
-UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
-```
-{% endtab %}
-
-{% tab title="iOS \(AEP 3.x\)" %}
-### **removeUserAttributes**
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-```java
-public static void removeUserAttributes(List<String> attributeNames)
-```
-
-#### **Example**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-```java
-UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
-```
-{% endtab %}
-
-{% tab title="iOS \(ACP 2.x\)" %}
-### removeUserAttribute
-
-Removes the user profile attribute for the given key.
-
-#### **Syntax**
-
-```objectivec
-+ (void) removeUserAttribute: (nonnull NSString*) key
-```
-
-#### **Examples**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-**Objective C**
-
-```objectivec
-[ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
-```
-
-**Swift**
-
-```swift
-ACPUserProfile.removeUserAttribute("itemsAddedToCart");
-```
-
-### removeUserAttributes
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-```objectivec
-+ (void) removeUserAttributes: (nonnull NSArray <NSString*>*) attributeNames
-```
-
-#### **Examples**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-**Objective C**
-
-```objectivec
-[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
-```
-
-**Swift**
-
-```swift
-ACPUserProfile.removeUserAttributes(["username","usertype"]);
+String extensionVersion = await FlutterACPUserProfile.extensionVersion;
 ```
 {% endtab %}
 
 {% tab title="Cordova" %}
-### **removeUserAttribute**
 
-Removes the user profile attribute for the given key.
+### Cordova
 
-#### **Syntax**
-
-```javascript
-ACPUserProfile.removeUserAttribute = function(attributeName, success, fail);
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to remove.
-* _success_ is a callback containing a general success message if the removeUserAttribute API executed without any errors.
-* _fail_ is a callback containing error information if the removeUserAttribute API was executed with errors.
-
-#### **Example**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-```javascript
-ACPUserProfile.removeUserAttribute("itemsAddedToCart", handleCallback, handleError);
-```
-
-### **removeUserAttributes**
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-```javascript
-ACPUserProfile.removeUserAttributes = function(attributeNames, success, fail);
-```
-
-* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
-* _success_ is a callback containing a general success message if the removeUserAttributes API executed without any errors.
-* _fail_ is a callback containing error information if the removeUserAttributes API was executed with errors.
-
-#### **Example**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-```javascript
-var attributeNames = new Array();
-attributeNames.push("username");
-attributeNames.push("usertype");
-ACPUserProfile.removeUserAttributes(attributeNames, handleCallback, handleError);
+```jsx
+ACPUserProfile.extensionVersion(function(version) {  
+   console.log("ACPUserProfile version: " + version);
+}, function(error) {  
+   console.log(error);  
+});
 ```
 {% endtab %}
 
-{% tab title="Flutter" %}
-### **removeUserAttribute**
+{% tab title="Unity" %}
 
-Removes the user profile attribute for the given key.
+### C\#
 
-#### **Syntax**
-
-```dart
-static Future<void> removeUserAttribute(String attributeName) async
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to remove.
-
-#### **Example**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-```dart
-FlutterACPUserProfile.removeUserAttribute("itemsAddedToCart");
-```
-
-### **removeUserAttributes**
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-```dart
-static Future<void> removeUserAttributes(List<String> attributeName) async
-```
-
-* _attributeName_ is an array of strings containing the names of user profile attributes to remove.
-
-#### **Example**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-```dart
-FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
+```csharp
+string extensionVersion = ACPUserProfile.ExtensionVersion();
 ```
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### **removeUserAttribute**
 
-Removes the user profile attribute for the given key.
-
-#### **Syntax**
-
-**Android**
+### C\#
 
 ```csharp
-public unsafe static void RemoveUserAttribute (string attributeName);
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to remove.
-
-**iOS**
-
-```csharp
-public static void RemoveUserAttribute (string attributeName);
-```
-
-* _attributeName_ is a string containing the name of the user profile attribute to remove.
-
-#### **Example**
-
-A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
-
-```csharp
-ACPUserProfile.RemoveUserAttribute("itemsAddedToCart");
-```
-
-### **removeUserAttributes**
-
-Removes the user profile attributes for the given keys.
-
-#### **Syntax**
-
-**Android**
-
-```csharp
-public unsafe static void RemoveUserAttributes (IList<string> attributeNames);
-```
-
-* _attributeNames_ is an IList containing the names of user profile attributes to remove.
-
-**iOS**
-
-```csharp
-public static void RemoveUserAttributes (string[] attributeNames);
-```
-
-* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
-
-#### **Example**
-
-You want to remove `username`, `usertype` user data when session timeout occurs.
-
-**Android**
-
-```csharp
-var attributes = new List<string>();
-attributes.Add("username");
-attributes.Add("usertype");
-ACPUserProfile.RemoveUserAttributes(attributes);
-```
-
-**iOS**
-
-```csharp
-string[] attributes = new string[] { "username", "usertype" };
-ACPUserProfile.RemoveUserAttributes(attributes);
+string extensionVersion = ACPUserProfile.ExtensionVersion();
 ```
 {% endtab %}
 {% endtabs %}
 
-## **Get user attributes**
+## getUserAttributes
+
+The `getUserAttributes()` API gets the user profile attributes with the given keys.
 
 {% tabs %}
 {% tab title="Android" %}
-### **getUserAttributes**
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 ```java
 public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String, Object>> callback)
@@ -690,7 +130,7 @@ public static void getUserAttributes(List<String> keys, AdobeCallback<Map<String
 
 * _callback_ is invoked after the customer attributes are available.
 
-#### **Example**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -710,12 +150,9 @@ UserProfile.getUserAttributes(Arrays.asList("itemsAddedToCart"), new AdobeCallba
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
-### **getUserAttributes**
+{% tab title="iOS (AEP 3.x)" %}
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 ```swift
 static func getUserAttributes(attributeNames: [String], completion: @escaping ([String: Any]?, AEPError) -> Void)
@@ -723,7 +160,7 @@ static func getUserAttributes(attributeNames: [String], completion: @escaping ([
 
 * _completion_ is the callback `function` which will be called with user attributes.
 
-#### **Example**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -736,12 +173,9 @@ UserProfile.getUserAttributes(attributeNames: ["itemsAddedToCart"]) { attributes
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
-### **getUserAttributes**
+{% tab title="iOS (ACP 2.x)" %}
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 ```objectivec
 + (void) getUserAttributes: (nullable NSArray <NSString*>*) attributNames withCompletionHandler: (nonnull void (^) (NSDictionary* __nullable userAttributes, NSError* _Nullable error)) completionHandler
@@ -749,11 +183,19 @@ Gets the user profile attributes with the given keys.
 
 * _completionHandler_ is invoked after the customer attributes are available, or _error_ if an unexpected error occurs or the request times out. The default timeout is 5s.
 
-#### **Examples**
+**Examples**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
-**Objective C**
+### Swift
+
+```swift
+ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
+              // your customized code
+})
+```
+
+### Objective-C
 
 ```objectivec
 [ACPUserProfile getUserAttributes:attributes withCompletionHandler:^(NSDictionary* dict, NSError* error){
@@ -761,21 +203,11 @@ A retail application wants to get the `itemsAddedToCart` user data when processi
     }];
 ```
 
-**Swift**
-
-```swift
-ACPUserProfile.getUserAttributes(["itemsAddedToCart"], withCompletionHandler: {(dict: [AnyHashable: Any]?, error: Error?) -> Void in
-              // your customized code
-})
-```
 {% endtab %}
 
 {% tab title="Cordova" %}
-### **getUserAttributes**
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 ```javascript
 ACPUserProfile.getUserAttributes = function(attributeNames, success, fail);
@@ -785,7 +217,7 @@ ACPUserProfile.getUserAttributes = function(attributeNames, success, fail);
 * _success_ is a callback containing the retrieved user profile attributes.
 * _fail_ is a callback containing error information if the getUserAttributes API was executed with errors.
 
-#### **Example**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -797,11 +229,8 @@ ACPUserProfile.getUserAttributes(attributeNames, handleCallback, handleError);
 {% endtab %}
 
 {% tab title="Flutter" %}
-### **getUserAttributes**
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 ```dart
 static Future<String> getUserAttributes(List<String> attributeKeys) async
@@ -809,7 +238,7 @@ static Future<String> getUserAttributes(List<String> attributeKeys) async
 
 * _attributeKeys_ is an array of strings containing the names of user profile attributes to retrieve.
 
-#### **Example**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -823,11 +252,8 @@ try {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### **getUserAttributes**
 
-Gets the user profile attributes with the given keys.
-
-#### **Syntax**
+**Syntax**
 
 **Android**
 
@@ -845,7 +271,7 @@ public unsafe static void GetUserAttributes (string[] attributNames, [BlockProxy
 
 * _attributNames_ is an array of strings containing the names of user profile attributes to remove.
 
-#### **Example**
+**Example**
 
 A retail application wants to get the `itemsAddedToCart` user data when processing checkout.
 
@@ -911,3 +337,607 @@ private void handleCallback(NSDictionary content, NSError error)
 {% endtab %}
 {% endtabs %}
 
+
+## removeUserAttribute
+
+Removes the user profile attribute for the given key.
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Syntax**
+
+```java
+public static void removeUserAttribute(String attributeName)
+```
+
+**Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```java
+UserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+**Syntax**
+
+```objectivec
++ (void) removeUserAttribute: (nonnull NSString*) key
+```
+
+**Examples**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+### Swift
+
+```swift
+ACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+### Objective-C
+
+```objectivec
+[ACPUserProfile removeUserAttribute:@"itemsAddedToCart"];
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+**Syntax**
+
+```javascript
+ACPUserProfile.removeUserAttribute = function(attributeName, success, fail);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+* _success_ is a callback containing a general success message if the removeUserAttribute API executed without any errors.
+* _fail_ is a callback containing error information if the removeUserAttribute API was executed with errors.
+
+**Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```javascript
+ACPUserProfile.removeUserAttribute("itemsAddedToCart", handleCallback, handleError);
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Syntax**
+
+```dart
+static Future<void> removeUserAttribute(String attributeName) async
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+**Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```dart
+FlutterACPUserProfile.removeUserAttribute("itemsAddedToCart");
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+**Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void RemoveUserAttribute (string attributeName);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+**iOS**
+
+```csharp
+public static void RemoveUserAttribute (string attributeName);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to remove.
+
+**Example**
+
+A retail application wants to remove the `itemsAddedToCart` user data after the product is purchased.
+
+```csharp
+ACPUserProfile.RemoveUserAttribute("itemsAddedToCart");
+```
+
+{% endtab %}
+{% endtabs %}
+
+
+## removeUserAttributes
+
+Removes the user profile attributes for the given keys.
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Syntax**
+
+```java
+public static void removeUserAttributes(List<String> attributeNames)
+```
+
+**Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```java
+UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+**Syntax**
+
+```swift
+public static void removeUserAttributes(List<String> attributeNames)
+```
+
+**Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```swift
+UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
+```
+
+### Objective-C
+
+```objectivec
+[AEPMobileUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+**Syntax**
+
+```objectivec
++ (void) removeUserAttributes: (nonnull NSArray <NSString*>*) attributeNames
+```
+
+**Examples**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+
+### Swift
+
+```swift
+ACPUserProfile.removeUserAttributes(["username","usertype"]);
+```
+
+### Objective-C
+
+```objectivec
+[ACPUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+**Syntax**
+
+```javascript
+ACPUserProfile.removeUserAttributes = function(attributeNames, success, fail);
+```
+
+* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
+* _success_ is a callback containing a general success message if the removeUserAttributes API executed without any errors.
+* _fail_ is a callback containing error information if the removeUserAttributes API was executed with errors.
+
+**Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```javascript
+var attributeNames = new Array();
+attributeNames.push("username");
+attributeNames.push("usertype");
+ACPUserProfile.removeUserAttributes(attributeNames, handleCallback, handleError);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Syntax**
+
+```dart
+static Future<void> removeUserAttributes(List<String> attributeName) async
+```
+
+* _attributeName_ is an array of strings containing the names of user profile attributes to remove.
+
+**Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+```dart
+FlutterACPUserProfile.removeUserAttributes(["username", "usertype"])
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+**Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void RemoveUserAttributes (IList<string> attributeNames);
+```
+
+* _attributeNames_ is an IList containing the names of user profile attributes to remove.
+
+**iOS**
+
+```csharp
+public static void RemoveUserAttributes (string[] attributeNames);
+```
+
+* _attributeNames_ is an array of strings containing the names of user profile attributes to remove.
+
+**Example**
+
+You want to remove `username`, `usertype` user data when session timeout occurs.
+
+**Android**
+
+```csharp
+var attributes = new List<string>();
+attributes.Add("username");
+attributes.Add("usertype");
+ACPUserProfile.RemoveUserAttributes(attributes);
+```
+
+**iOS**
+
+```csharp
+string[] attributes = new string[] { "username", "usertype" };
+ACPUserProfile.RemoveUserAttributes(attributes);
+```
+{% endtab %}
+{% endtabs %}
+
+
+## updateUserAttribute
+
+Sets the user profile attributes key and value and allows you to create or update a user profile attribute.
+
+Remember the following information:
+
+* If the attribute does not exist, it will be created.
+* If the attribute exists, the value will be updated.
+* A null attribute value removes the attribute.
+
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Syntax**
+
+```java
+public static void updateUserAttribute(String attributeName, 
+                                       Object attributeValue)
+```
+
+**Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```java
+UserProfile.updateUserAttribute("username", "Will Smith");
+```
+
+{% endtab %}
+
+
+{% tab title="iOS (ACP 2.x)" %}
+
+**Syntax**
+
+```objectivec
++ (void) updateUserAttribute: (nonnull NSString*) attributeName withValue: (nullable NSString*) attributeValue;
+```
+
+**Examples**
+
+You want to update `username` of a user obtained in the log in page:
+
+### Swift
+
+```swift
+ACPUserProfile.updateUserAttribute("username", withValue: "Will Smith");
+```
+
+### Objective-C
+
+```objectivec
+[ACPUserProfile updateUserAttribute:@"username" withValue:@"Will Smith"];
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+**Syntax**
+
+```javascript
+ACPUserProfile.updateUserAttribute = function(attributeName, attributeValue, success, fail);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
+* _success_ is a callback containing a general success message if the updateUserAttribute API executed without any errors.
+* _fail_ is a callback containing error information if the updateUserAttribute API was executed with errors.
+
+**Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```javascript
+ACPUserProfile.updateUserAttribute("username", "Will Smith", handleCallback, handleError);
+```
+
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Syntax**
+
+```dart
+static Future<void> updateUserAttribute(String attributeName, String attributeValue) async
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a string, number, or array containing the user profile attribute value.
+
+**Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```dart
+FlutterACPUserProfile.updateUserAttribute("username", "Will Smith");
+```
+
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+**Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void UpdateUserAttribute (string attributeName, Java.Lang.Object attributeValue);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ must be a String, Integer, Boolean, Double, Array, or Map containing the user profile attribute value. Custom objects cannot be saved as a `UserProfile` attribute.
+
+**iOS**
+
+```csharp
+public static void UpdateUserAttribute (string attributeName, string attributeValue);
+```
+
+* _attributeName_ is a string containing the name of the user profile attribute to create or update.
+* _attributeValue_ is a string containing the user profile attribute value.
+
+**Example**
+
+You want to update `username` of a user obtained in the log in page :
+
+```csharp
+ACPUserProfile.updateUserAttribute("username", "Will Smith");
+```
+
+{% endtab %}
+{% endtabs %}
+
+## updateUserAttributes
+
+Sets the user profile attributes key and value.
+
+Allows you to create/update a batch of user profile attributes:
+
+* String, Integer, Boolean, Double, Array, Map are valid type of user profile attributes.
+* Custom objects cannot be saved as a `UserProfile` attribute.
+* If the attribute does not exist, it is created.
+* If the attribute already exists, the value is updated.
+* A null attribute value will remove the attribute.
+
+{% tabs %}
+{% tab title="Android" %}
+
+**Syntax**
+
+```java
+public static void updateUserAttributes(Map<String, Object> attributeMap)
+```
+
+**Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+```java
+HashMap<String, Object> profileMap = new HashMap<>();
+profileMap.put("username","Will Smith");
+profileMap.put("usertype","Actor");
+UserProfile.updateUserAttributes(profileMap);
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+**Syntax**
+
+```swift
+public static func updateUserAttributes(attributeDict: [String: Any])
+```
+
+**Examples**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+### Swift
+
+```swift
+var profileMap = [AnyHashable: Any]()
+profileMap["username"] = "will_smith"
+profileMap["usertype"] = "Actor"
+UserProfile.updateUserAttributes(attributeDict: profileMap)
+```
+
+### Objective-C
+
+```objectivec
+NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
+[profileMap setObject:@"username" forKey:@"will_smith"];
+[profileMap setObject:@"usertype" forKey:@"Actor"];
+[AEPMobileUserProfile updateUserAttributes:profileMap];
+```
+
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+**Syntax**
+
+```objectivec
++ (void) updateUserAttributes: (nonnull NSDictionary*) attributeMap
+```
+
+**Examples**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+### Swift
+
+```swift
+var profileMap = [AnyHashable: Any]()
+profileMap["username"] = "will_smith"
+profileMap["usertype"] = "Actor"
+ACPUserProfile.updateUserAttributes(profileMap)
+```
+
+### Objective-C
+
+```objectivec
+NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
+[profileMap setObject:@"username" forKey:@"will_smith"];
+[profileMap setObject:@"usertype" forKey:@"Actor"];
+[ACPUserProfile updateUserAttributes:profileMap];
+```
+
+{% endtab %}
+
+{% tab title="Cordova" %}
+
+**Syntax**
+
+```javascript
+ACPUserProfile.updateUserAttributes = function(attributes, success, fail);
+```
+
+* _attributes_ is a object containing a batch of user profile attributes to create or update.
+* _success_ is a callback containing a general success message if the updateUserAttributes API executed without any errors.
+* _fail_ is a callback containing error information if the updateUserAttributes API was executed with errors.
+
+**Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+```javascript
+var username = "will_smith";
+var usertype = "Actor";
+var attributes = {"username":username, "usertype":usertype};
+ACPUserProfile.updateUserAttributes(attributes, handleCallback, handleError);
+```
+{% endtab %}
+
+{% tab title="Flutter" %}
+
+**Syntax**
+
+```dart
+static Future<void> updateUserAttributes(Map<String, Object> attributeMap) async
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+**Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+```dart
+FlutterACPUserProfile.updateUserAttributes({"username":"will_smith", "usertype":"Actor"});
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+
+**Syntax**
+
+**Android**
+
+```csharp
+public unsafe static void UpdateUserAttributes (IDictionary<string, Java.Lang.Object> attributeMap);
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+**iOS**
+
+```csharp
+public static void UpdateUserAttributes (NSDictionary attributeMap);
+```
+
+* _attributeMap_ is a object containing a batch of user profile attributes to create or update.
+
+**Example**
+
+You want to update `username, usertype` of a user obtained in the log in page :
+
+**Android**
+
+```csharp
+var attributes = new Dictionary<string, Java.Lang.Object>();
+attributes.Add("username", "will_smith");
+attributes.Add("usertype", "Actor");
+ACPUserProfile.UpdateUserAttributes(attributes);
+```
+
+**iOS**
+
+```csharp
+ var attributes = new NSMutableDictionary<NSString, NSString>
+ {
+   ["username"] = new NSString("will_smith"),
+   ["usertype"] = new NSString("Actor")
+ };
+ACPUserProfile.updateUserAttributes(attributes);
+```
+{% endtab %}
+{% endtabs %}

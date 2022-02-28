@@ -532,4 +532,8 @@ config.Add("newConfigKey", "newConfigValue");
 ACPCore.UpdateConfiguration(config);
 ```
 {% endtab %}
+<<<<<<< HEAD
 {% endtabs %}
+=======
+{% endtabs %}
+>>>>>>> upstream/master

@@ -1,58 +1,59 @@
 # API Reference
 
-## extensionVersion <a id="extensionversion"></a>
+## extensionVersion
 
-Returns the version of the client-side Consent extension.
+The extensionVersion() API returns the version of the client-side Consent extension.
 
 {% tabs %}
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static String extensionVersion();
 ```
 
-#### Example
+**Example**
 
 ```java
-Consent.extensionVersion();
+String extensionVersion = Consent.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
+
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
-public static let extensionVersion
+static var extensionVersion: String
 ```
 
-#### Example
+**Example**
 
 ```swift
-Consent.extensionVersion
+let extensionVersion = Consent.extensionVersion
 ```
 
 ### Objective-C
 
-#### Syntax
+**Syntax**
 
-```swift
-public static let extensionVersion
+```objectivec
++ (nonnull NSString*) extensionVersion;
 ```
 
-#### Example
+**Example**
 
-```text
-[AEPMobileEdgeConsent extensionVersion];
+```objectivec
+NSString *extensionVersion = [AEPMobileEdgeConsent extensionVersion];
 ```
 {% endtab %}
 {% endtabs %}
 
-## getConsents <a id="getconsents"></a>
+## getConsents
 
 Retrieves the current consent preferences stored in the Consent extension.
 
@@ -60,15 +61,15 @@ Retrieves the current consent preferences stored in the Consent extension.
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void getConsents(final AdobeCallback<Map<String, Object>> callback);
 ```
 
-* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be retruned in the eventuality of any error that occured while getting the user consents. The callback may be invoked on a different thread.
+* _callback_ - callback invoked with the current consents of the extension. If an `AdobeCallbackWithError` is provided, an `AdobeError`, can be returned in the eventuality of any error that occurred while getting the user consents. The callback may be invoked on a different thread.
 
-#### Example
+**Example**
 
 ```java
 Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
@@ -80,10 +81,10 @@ Consent.getConsents(new AdobeCallback<Map<String, Object>>() {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
 static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
@@ -91,7 +92,7 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 * _completion_ - Invoked with the current consent preferences or an `AEPError` if an unexpected error occurs or the request timed out. It may be invoked on a different thread.
 
-#### Example
+**Example**
 
 ```swift
 Consent.getConsents { currentConsents, error in
@@ -101,15 +102,15 @@ Consent.getConsents { currentConsents, error in
 
 ### Objective-C
 
-#### Syntax
+**Syntax**
 
-```text
-static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
+```objectivec
++ (void) getConsents:^ (NSDictionary<NSString *,id> * _Nullable, NSError * _Nullable)
 ```
 
-#### Example
+**Example**
 
-```text
+```objectivec
 [AEPMobileEdgeConsent getConsents:^(NSDictionary *currentConsents, NSError *error){
     // handle currentConsents
 }];
@@ -117,7 +118,7 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 {% endtab %}
 {% endtabs %}
 
-## registerExtension <a id="registerextension"></a>
+## registerExtension
 
 Registers the Edge Consent extension with the Mobile Core SDK.
 
@@ -125,54 +126,58 @@ Registers the Edge Consent extension with the Mobile Core SDK.
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void registerExtension();
 ```
 
-#### Example
+**Example**
 
 ```java
 Consent.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 Use the MobileCore API to register the Edge Consent extension.
 
-#### Syntax
+**Syntax**
 
 ```swift
-public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
+static func registerExtensions(_ extensions: [NSObject.Type], 
+                               _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+**Example**
 
 ```swift
-MobileCore.registerExtensions([Consent.self, ...], {
-  // processing after registration
-})
+import AEPEdgeConsent
+
+...
+MobileCore.registerExtensions([Consent.self])
 ```
 
 ### Objective-C
 
 Use the AEPMobileCore API to register the Edge Consent extension.
 
-#### Syntax
+**Syntax**
 
-```swift
-public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
+```objectivec
++ (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
+                  completion: (void (^ _Nullable)(void)) completion;
 ```
 
-#### Example
+**Example**
 
-```text
-[AEPMobileCore registerExtensions:@[AEPMobileEdgeConsent.class, ...] completion:^{
-  // processing after registration
-}];
+```objectivec
+@import AEPEdgeConsent;
+
+...
+[AEPMobileCore registerExtensions:@[AEPMobileEdgeConsent.class] completion:nil];
 ```
 {% endtab %}
 {% endtabs %}
@@ -187,7 +192,7 @@ Merges the existing consents with the given consents. Duplicate keys will take t
 {% tab title="Android" %}
 ### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void update(final Map<String, Object> consents);
@@ -195,7 +200,7 @@ public static void update(final Map<String, Object> consents);
 
 * _consents_ - A `Map` of consents defined based on [Privacy/Personalization/Marketing Preferences \(Consents\) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
-#### Examples
+**Example**
 
 ```java
 // example 1, updating users collect consent to 'yes'
@@ -226,10 +231,10 @@ Consent.update(consents);
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
 static func update(with consents: [String: Any])
@@ -237,7 +242,7 @@ static func update(with consents: [String: Any])
 
 * _consents_ - A `[String: Any]` of consents defined based on [Privacy/Personalization/Marketing Preferences \(Consents\) XDM Schema](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-consents.schema.md).
 
-#### Examples
+**Example**
 
 ```swift
 // example 1, updating users collect consent to 'yes'
@@ -253,13 +258,13 @@ Consent.update(with: currentConsents)
 
 ### Objective-C
 
-#### Syntax
+**Syntax**
 
-```text
-static func update(with consents: [String: Any])
+```objectivec
++ (void) updateWithConsents:(NSDictionary<NSString *,id> * _Nonnull)
 ```
 
-#### Examples
+**Example**
 
 ```text
 // example 1, updating users collect consent to 'yes'
@@ -268,7 +273,7 @@ NSDictionary *collectConsent = @{ @"collect": @{@"val": @"y"};
 
 // example 2, updating users collect consent to 'no'
 NSDictionary *collectConsent = @{ @"collect": @{@"val": @"n"};
-[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConse}];
+[AEPMobileEdgeConsent updateWithConsents:@{@"consents": collectConsent}];
 ```
 {% endtab %}
 {% endtabs %}
