@@ -22,7 +22,7 @@ If you participated in the Campaign Standard beta, to use the new Campaign Stand
 
 ### Campaign Standard endpoints
 
-Provide endpoint URL\(s\) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
+Provide endpoint URL(s) for your Campaign Standard instances. You can specify up to three unique endpoints for your development, staging, and production environments. In most cases, the server endpoint is the root URL address, such as `companyname.campaign.adobe.com`.
 
 {% hint style="warning" %}
 For this extension, these endpoint URLs **do not** contain the `http://` or `https://` and **cannot** end with a forward slash.
@@ -93,7 +93,7 @@ To complete a manual installation, go to the [Adobe Experience Platform SDKs for
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core) and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
+1. Add the Campaign Standard, [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core), and [Profile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile) extensions to your project using Cocoapods.
 
    ![](../../.gitbook/assets/aep-acs-pods.png)
 
@@ -180,7 +180,7 @@ import {ACPCampaign} from '@adobe/react-native-acpcampaign';
 {% endtab %}
 {% endtabs %}
 
-### Register the Campaign Standard extension with Mobile Core
+## Register the Campaign Standard extension with Mobile Core
 
 {% tabs %}
 {% tab title="Android" %}
@@ -329,14 +329,14 @@ ACPCampaign.registerExtension();
 {% endtab %}
 {% endtabs %}
 
-### Initialize the SDK and set up tracking
+## Initialize the SDK and set up tracking
 
 To initialize the SDK and set up tracking, see the [initialize the SDK and set up tracking tutorial](https://aep-sdks.gitbook.io/docs/getting-started/initialize-the-sdk).
 
 {% tabs %}
 {% tab title="Android" %}
 
-### Set up in-app messaging
+## Set up in-app messaging
 
 To learn how to create an in-app message using Adobe Campaign, see the [tutorial on preparing and sending an in-app message](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/in-app-messaging/preparing-and-sending-an-in-app-message.html).
 
@@ -350,7 +350,7 @@ If you are developing an Android application, to correctly display fullscreen in
 In addition to adding the `FullscreenMessageActivity`, a global lifecycle callback must be defined in your app's MainActivity to ensure the proper display of fullscreen in-app messages. To define the global lifecycle callback, see the [implementing global lifecycle callbacks section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle/lifecycle-extension-in-android#implementing-global-lifecycle-callbacks) within the Lifecycle documentation.
 {% endhint %}
 
-### Set up local notifications
+## Set up local notifications
 
 To set up local notifications in Android, update the AndroidManifest.xml file with `<receiver android:name="com.adobe.marketing.mobile.LocalNotificationHandler"/>`. To configure the notification icons that the local notification will use, see the [configuring notification icons section](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics-mobile-services#configuring-notification-icons) within the Adobe Analytics - Mobile Services documentation.
 {% endtab %}
@@ -365,7 +365,7 @@ No additional setup is needed for iOS in-app messaging and local notifications.
 
 {% endtabs %}
 
-### Set up push messaging
+## Set up push messaging
 
 To enable push messaging with Adobe Campaign, call `setPushIdentifer` to send the push identifier that is received from the Apple Push Notification Service \(APNS\) or Firebase Cloud Messaging Platform \(FCM\) to the Adobe Identity service. For more information about the `setPushIdentifer` API, see the [setPushIdentifier section of the Adobe Identity API guide](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/identity/identity-api-reference#setpushidentifier).
 
@@ -704,7 +704,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 {% endtab %}
 {% endtabs %}
 
-### Deleting mobile properties in the Data Collection UI
+## Deleting mobile properties in the Data Collection UI
 
 {% hint style="danger" %}
 Deleting your property in the Experience Platform Data Connection UI might cause disruption to your recurring push and in-app messaging activities.
@@ -718,13 +718,13 @@ To remove the corresponding mobile app in Campaign Standard, click **Remove from
 Deleting your mobile property in the Data Collection UI does not automatically delete your Campaign Standard mobile app.
 {% endhint %}
 
-### Handling clickthrough destinations included in Campaign in-app messages
+## Handling clickthrough destinations included in Campaign in-app messages
 
 A destination URL can be added to in-app messages that are delivered from Adobe Campaign. The destination can be a website URL such as [https://www.adobe.com](https://www.adobe.com) or a deep link such as `campaigndemoapp://signupactivity?paidaccount=true` which can be used to direct the user to a specific area of your app.
 
 {% tabs %}
 {% tab title="Android" %}
-#### Handling in-app message website URLs on Android
+## Handling in-app message website URLs on Android
 
 Website URL's are handled without any additional action by the app developer. If an in-app message is clicked through and contains a valid URL, the device's default web browser will redirect to the URL contained in the in-app notification payload. The location of the URL differs for each notification type:
 
@@ -733,7 +733,7 @@ Website URL's are handled without any additional action by the app developer. If
 * The `adb_deeplink` key is present in the local notification payload
 * The `uri` key is present in the push notification payload
 
-#### Handling in-app message deep links on Android
+## Handling in-app message deep links on Android
 
 To handle deep links in the notification payload, you need to set up URL schemes in the app. For more information about setting URL schemes for Android, please read the tutorial on [creating deep links to app content](https://developer.android.com/training/app-links/deep-linking). Once the desired activity is started by the newly added intent filter, the data present in the deep link can be retrieved. After that point, any further actions based on the data present in the deep link can be made.
 
@@ -752,7 +752,7 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-#### Handling in-app message app links on Android
+## Handling in-app message app links on Android
 
 Android app links were introduced with Android OS 6.0. They are similar to deep links in functionality, although they have the appearance of a standard website URL. The intent filter previously set up for deep links is modified to handle `http` schemes and verification of the app link needs to be set up on [Google Search Console](https://support.google.com/webmasters/answer/9008080).
 
@@ -761,7 +761,7 @@ For more information on the additional verification setup needed, please read th
 
 {% tab title="iOS (AEP 3.x)" %}
 
-#### Handling alert or fullscreen notification website URLs on iOS
+## Handling alert or fullscreen notification website URLs on iOS
 
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
@@ -770,7 +770,7 @@ Website URL's included in alert or fullscreen messages are handled without any a
 * The `adb_deeplink` key is present in the local notification payload
 * The `uri` key is present in the push notification payload
 
-#### Handling local notification website URLs on iOS
+## Handling local notification website URLs on iOS
 
 ### Swift
 
@@ -810,7 +810,7 @@ The website URL in the local notification response can be loaded using the [open
 }
 ```
 
-#### Handling push notification website URLs on iOS
+## Handling push notification website URLs on iOS
 
 ### Swift
 
@@ -849,7 +849,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 }
 ```
 
-#### Handling local or push notification deep links on iOS
+## Handling local or push notification deep links on iOS
 
 When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
 
@@ -891,7 +891,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 ```
 
-#### Handling in-app message universal links on iOS
+## Handling in-app message universal links on iOS
 
 Universal links are available for devices on iOS 9.0 or later. They can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information, see the guide on [allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content).
 
@@ -899,7 +899,7 @@ Universal links are typically used from outside your installed app. For example,
 {% endtab %}
 
 {% tab title="iOS (ACP 1.x)" %}
-#### Handling alert or fullscreen notification website URLs on iOS
+## Handling alert or fullscreen notification website URLs on iOS
 
 Website URL's included in alert or fullscreen messages are handled without any additional action by the app developer. If an alert of fullscreen message is clicked through and contains a valid URL, the Safari browser will be used to load the URL contained in the notification payload. The location of the URL differs for each notification type:
 
@@ -908,7 +908,7 @@ Website URL's included in alert or fullscreen messages are handled without any a
 * The `adb_deeplink` key is present in the local notification payload
 * The `uri` key is present in the push notification payload
 
-#### Handling alert or fullscreen notification deep links on iOS
+## Handling alert or fullscreen notification deep links on iOS
 
 When a deep link is opened in Safari, this does not allow the app to directly handle the link. To provide a better customer experience, the Experience Platform SDK provides a URL handler that you can use with alert or fullscreen notification deep links.
 
@@ -940,7 +940,7 @@ ACPCore.registerURLHandler({ url in
 }];
 ```
 
-#### Handling local notification website URLs on iOS
+## Handling local notification website URLs on iOS
 
 The website URL in the local notification response can be loaded using the [openURL:options:completionHandler:](https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl?language=objc) instance method.
 
@@ -980,7 +980,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 ```
 
-#### Handling push notification website URLs on iOS
+## Handling push notification website URLs on iOS
 
 The website URL in the push notification can be loaded using the [openURL:options:completionHandler:](https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl?language=objc) instance method.
 
@@ -1019,7 +1019,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 }
 ```
 
-#### Handling local or push notification deep links on iOS
+## Handling local or push notification deep links on iOS
 
 When a local or push notification is clicked through, the `didReceiveNotificationResponse` instance method is called with the notification response being passed in as a parameter. For more information, see the Apple developer docs at [userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter?language=objc).
 
@@ -1061,7 +1061,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 ```
 
-#### Handling in-app message universal links on iOS
+## Handling in-app message universal links on iOS
 
 Universal links are available for devices on iOS 9.0 or later. They can be used to redirect to specific areas of your app if the app is installed or redirect to your app's website if the app isn't installed. For more information, see the guide on [allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content).
 
@@ -1069,7 +1069,7 @@ Universal links are typically used from outside your installed app. For example,
 {% endtab %}
 {% endtabs %}
 
-### Customizing the frequency of registration requests sent to Campaign
+## Customizing the frequency of registration requests sent to Campaign
 
 The frequency of registration requests sent to Campaign are reduced starting with Campaign Standard Android extension version 1.0.7 and iOS extension version 1.0.6. The default registration delay is seven days since the last successful registration. This registration delay can be configured to provide more flexibility on when to send a registration request.
 
