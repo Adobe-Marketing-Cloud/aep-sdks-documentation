@@ -423,8 +423,13 @@ static func registerExtensions(_ extensions: [NSObject.Type],
 ```swift
 import AEPUserProfile
 
-...
-MobileCore.registerExtensions([UserProfile.self])
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  
+  MobileCore.registerExtensions([UserProfile.self])
+  // Override point for customization after application launch.
+  return true;
+}
+
 ```
 
 ### Objective-C
@@ -440,8 +445,13 @@ MobileCore.registerExtensions([UserProfile.self])
 ```objectivec
 @import AEPUserProfile;
 
-...
-[AEPMobileCore registerExtensions:@[AEPMobileUserProfile.class] completion:nil];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  
+  [AEPMobileCore registerExtensions:@[AEPMobileUserProfile.class] completion:nil];
+  // Override point for customization after application launch.
+  return YES;
+}
+
 ```
 
 {% endtab %}
@@ -672,7 +682,7 @@ UserProfile.removeUserAttributes(Arrays.asList("username", "usertype"));
 **Example**
 
 ```objectivec
-[AEPMobileUserProfile removeUserAttributes:@[@"username", @"usertype"]]
+[AEPMobileUserProfile removeUserAttributesWithAttributeNames:@[@"username", @"usertype"]]
 ```
 
 {% endtab %}
@@ -1007,7 +1017,7 @@ UserProfile.updateUserAttributes(attributeDict: profileMap)
 NSMutableDictionary *profileMap = [NSMutableDictionary dictionary];
 [profileMap setObject:@"username" forKey:@"will_smith"];
 [profileMap setObject:@"usertype" forKey:@"Actor"];
-[AEPMobileUserProfile updateUserAttributes:profileMap];
+[AEPMobileUserProfile updateUserAttributesWithAttributeDict:profileMap];
 ```
 
 {% endtab %}
