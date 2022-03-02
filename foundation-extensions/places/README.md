@@ -6,6 +6,16 @@ The SDK extension listens for events that contain GPS coordinates and geofence r
 
 `Places` is the mobile SDK supporting the Location Service.
 
+## Configure the Places extension in Data Collection UI
+
+1. In the Data Collection UI, from your mobile property, select the **Extensions** tab.
+1. On the **Catalog** tab, locate or search for the **Places** extension, and select **Install**.
+1. Select the **POI Library (or libraries)** you wish to use in the app.
+1. Select **Save**.
+1. Follow the publishing process to update SDK configuration.
+
+![Places extension configuration](../../.gitbook/assets/places_extension_config.png)
+
 ## Add the AEP Places extension to your app
 
 ### Download and import the Places extension
@@ -108,7 +118,7 @@ public class MobileApp extends Application {
     public void onCreate() {
       super.onCreate();
       MobileCore.setApplication(this);
-      MobileCore.configureWithAppID("yourLaunchEnvironmentID");
+      MobileCore.configureWithAppID("yourAppID");
 
       Places.registerExtension();
 
