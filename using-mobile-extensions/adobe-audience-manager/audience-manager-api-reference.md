@@ -17,7 +17,7 @@ String audienceExtensionVersion = Audience.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 **Syntax**
@@ -47,7 +47,7 @@ NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### Swift
 
 **Syntax**
@@ -165,7 +165,7 @@ Audience.getVisitorProfile(visitorProfileCallback);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 This API returns the most recently obtained visitor profile.
 
 ### Swift
@@ -209,7 +209,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 The `getVisitorProfile` API returns the most recently obtained visitor profile. For easy access across multiple launches of your app, the visitor profile is saved in `NSUserDefaults`. If no signal has been submitted, nil is returned.
 
 {% hint style="info" %}
@@ -404,7 +404,7 @@ Audience.reset();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 This API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
 ### Swift
@@ -436,7 +436,7 @@ Audience.reset()
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 The `reset` API resets the Audience Manager UUID and purges the current visitor profile from `UserDefaults`. The Audience reset also clears the current in-memory DPID and DPUUID variables.
 
 ### Swift
@@ -524,7 +524,7 @@ Audience.signalWithData(traits, visitorProfileCallback);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 The `signalWithData` API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a closure.
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults` and is updated with every signal call.
@@ -574,7 +574,7 @@ NSDictionary *traits = @{@"key1":@"value1",@"key2":@"value2"};
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 The `signalWithData` API sends Audience Manager a signal with traits and returns the matching segments for the visitor in a callback.
 
 Audience Manager sends the AAM UUID in response in initial signal call. The AAM UUID is persisted in `NSUserDefaults` and is sent by the SDK in all subsequent signal requests. If available, the Experience Cloud ID \(MID\) is also sent in each signal request with the DPID and the DPUUID. The visitor profile that Audience Manager returns is saved in `NSUserDefaults` and is updated with every signal call.

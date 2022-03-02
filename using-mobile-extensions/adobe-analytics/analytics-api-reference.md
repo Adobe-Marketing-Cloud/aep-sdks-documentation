@@ -25,7 +25,7 @@ Analytics.clearQueue();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### clearQueue
 
 {% hint style="warning" %}
@@ -60,7 +60,7 @@ Analytics.clearQueue()
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### clearQueue
 
 {% hint style="warning" %}
@@ -223,7 +223,7 @@ String analyticsExtensionVersion = Analytics.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 
 **Swift**
 
@@ -251,7 +251,7 @@ NSString *version = [AEPMobileAnalytics extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 
 **Swift**
 
@@ -352,13 +352,13 @@ Analytics.getQueueSize(new AdobeCallback<Long>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getQueueSize
 
 Please use the [getQueueSizeWithCompletionHandler](analytics-api-reference.md#getqueuesizewithcompletionhandler) API instead.
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getQueueSize
 
 **Swift**
@@ -539,7 +539,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 Retrieves the total number of Analytics hits in the tracking queue. Invoke the callback with NSError if an unexpected error occurs or the request times out.
 
 {% tabs %}
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getQueueSize
 **Swift**
 
@@ -573,7 +573,7 @@ Analytics.getQueueSize { (queueSize, error) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getQueueSizeWithCompletionHandler
 
 **Swift**
@@ -646,13 +646,13 @@ Analytics.getTrackingIdentifier(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier. See [getTrackingIdentifierWithCompletionHandler](analytics-api-reference.md#gettrackingidentifierwithcompletionhandler)
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
@@ -847,7 +847,7 @@ If you have an [Experience Cloud ID](https://app.gitbook.com/@aep-sdks/s/docs/us
 {% endhint %}
 
 {% tabs %}
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getTrackingIdentifier
 
 Retrieves the Analytics tracking identifier.
@@ -883,7 +883,7 @@ AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifi
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getTrackingIdentifierWithCompletionHandler
 
 **Swift**
@@ -953,13 +953,13 @@ Analytics.getVisitorIdentifier(new AdobeCallback<String>() {
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getVisitorIdentifier
 
 See [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvisitoridentifierwithcompletionHandler)
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getVisitorIdentifier
 
 **Swift**
@@ -1137,7 +1137,7 @@ Before using this API, see [Identify unique visitors](https://experienceleague.a
 This API gets a custom Analytics visitor identifier, which has been set previously using [setVisitorIdentifier](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-api-reference#setvisitoridentifier). Callback with NSError if an unexpected error occurs or the request times out.
 
 {% tabs %}
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### getVisitorIdentifier
 
 **Swift**
@@ -1171,7 +1171,7 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### getVisitorIdentifierWithCompletionHandler
 
 **Swift**
@@ -1248,7 +1248,7 @@ Analytics.sendQueuedHits();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### sendQueuedHits
 
 This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
@@ -1284,7 +1284,7 @@ Analytics.sendQueuedHits()
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### sendQueuedHits
 
 This method forces the library to send all hits in the offline queue, regardless of how many hits are currently queued.
@@ -1446,7 +1446,7 @@ Analytics.setVisitorIdentifier("custom_identifier");
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### setVisitorIdentifier
 
 **Swift**
@@ -1478,7 +1478,7 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
+{% tab title="iOS (ACP 2.x)" %}
 ### setVisitorIdentifier
 
 **Swift**
