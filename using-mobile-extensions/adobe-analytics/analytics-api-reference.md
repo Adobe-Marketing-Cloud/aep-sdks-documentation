@@ -80,7 +80,7 @@ func clearQueue()
 ```swift
 ACPAnalytics.clearQueue()
 ```
-**objectivec**
+**Objective-C**
 
 **Syntax**
 
@@ -398,7 +398,8 @@ ACPAnalytics.getQueueSize { (queueSize) in
 {% endtab %}
 
 {% tab title="React Native" %}
-\*\*JavaScript
+
+**JavaScript**
 
 ### getQueueSize
 

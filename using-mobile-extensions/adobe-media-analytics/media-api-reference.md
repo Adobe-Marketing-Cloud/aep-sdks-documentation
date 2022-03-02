@@ -75,6 +75,7 @@ NSString *mediaExtensionVersion = [ACPMedia extensionVersion];
 {% endtab %}
 
 {% tab title="React Native" %}
+
 ### JavaScript
 
 ```jsx
@@ -209,6 +210,7 @@ ACPMediaTracker *mediaTracker = [ACPMedia createTracker];  // Use the instance f
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createTracker
@@ -377,6 +379,7 @@ ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Us
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createTracker
@@ -406,6 +409,7 @@ Creates an instance of the Media object.
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### createMediaObject
 
 Returns a HashMap instance that contains information about the media.
@@ -432,6 +436,7 @@ HashMap<String, Object> mediaInfo = Media.createMediaObject("video-name",
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
+
 #### createMediaObject
 
 Returns a map that contains information about the media.
@@ -477,6 +482,7 @@ NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
+
 #### createMediaObjectWithName
 
 Returns an NSDictionary instance that contains information about the media.
@@ -522,6 +528,7 @@ NSDictionary *mediaObject = [ACPMedia createMediaObjectWithName: @"video-name"
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createMediaObject
@@ -592,6 +599,7 @@ let adBreakObject = Media.createAdBreakObjectWith(name: "adbreak-name",
 + (NSDictionary  <NSString *, id> * _Nullable) createAdBreakObjectWith:(NSString * _Nonnull)position:(NSInteger) startTime:(double)
 ```
 
+**Example**
 ```objectivec
 NSDictionary *adBreakObject = [AEPMobileMedia createAdBreakObjectWith:@"adbreak-name" 
                                                              position:1 
@@ -638,6 +646,7 @@ NSDictionary *adBreakObject = [ACPMedia createAdBreakObjectWithName: @"adbreak-n
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createAdBreakObject
@@ -708,7 +717,10 @@ let adObject = Media.createObjectWith(name: "ad-name",
 **Syntax**
 
 ```objectivec
-+ (NSDictionary  <NSString *, id> * _Nullable) createAdObjectWith: (NSString * _Nonnull) id:(NSString * _Nonnull) position:(NSInteger) length:(double)
++ (NSDictionary  <NSString *, id> * _Nullable) createAdObjectWith: (NSString * _Nonnull
+                                                               id:(NSString * _Nonnull) 
+                                                         position:(NSInteger) 
+                                                           length:(double)
 ```
 
 **Example**
@@ -759,6 +771,7 @@ NSDictionary *adObject = [ACPMedia createAdObjectWithName: @"ad-name"
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createAdObject
@@ -888,6 +901,7 @@ NSDictionary *chapterObject = [ACPMedia createChapterObjectWithName: @"chapter-n
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createChapterObject
@@ -965,7 +979,10 @@ let qoeObject = Media.createQoEObjectWith(bitrate: 500000,
 **Syntax**
 
 ```objectivec
-+ (NSDictionary  <NSString *, id> * _Nullable) createQoEObjectWith:(double) startTime:(double) fps:(double) droppedFrames:(double)
++ (NSDictionary  <NSString *, id> * _Nullable) createQoEObjectWith:(double) 
+                                                         startTime:(double) 
+                                                               fps:(double) 
+                                                     droppedFrames:(double)
 ```
 
 **Example**
@@ -1019,6 +1036,7 @@ NSDictionary *qoeObject = [ACPMedia createQoEObjectWithBitrate: 10000000
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createQoEObject
@@ -1125,6 +1143,7 @@ NSDictionary *playerStateObject = [ACPMedia createStateObjectWithName: @"fullscr
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### createStateObject
@@ -1281,6 +1300,7 @@ NSMutableDictionary *mediaMetadata = [[NSMutableDictionary alloc] init];
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackSessionStart
@@ -1385,6 +1405,7 @@ _tracker.trackPlay()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackPlay
@@ -1479,6 +1500,7 @@ _tracker.trackPause()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackPause
@@ -1544,6 +1566,8 @@ tracker.trackComplete()
 {% tab title="iOS \(ACP 2.x\)" %}
 #### trackComplete
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -1551,8 +1575,6 @@ func trackComplete()
 ```
 
 **Example**
-
-**Swift**
 
 ```swift
 _tracker.trackComplete()
@@ -1565,6 +1587,7 @@ _tracker.trackComplete()
 ```objectivec
 - (void) trackComplete;
 ```
+**Example**
 
 ```objectivec
 [_tracker trackComplete];
@@ -1572,6 +1595,7 @@ _tracker.trackComplete()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackComplete
@@ -1666,6 +1690,7 @@ _tracker.trackSessionEnd()
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackSessionEnd
@@ -1766,6 +1791,7 @@ _tracker.trackError("errorId")
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackError
@@ -2094,6 +2120,8 @@ func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: Stri
 {% tab title="iOS \(ACP 2.x\)" %}
 #### trackEvent
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -2290,6 +2318,7 @@ func trackEvent(_ event: ACPMediaEvent, info: [AnyHashable : Any]?, data: [AnyHa
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### trackEvent
@@ -2465,6 +2494,8 @@ tracker.updateCurrentPlayhead(time: timeFromMidnightInSecond)
 {% tab title="iOS \(ACP 2.x\)" %}
 #### updateCurrentPlayhead
 
+**Swift**
+
 **Syntax**
 
 ```swift
@@ -2502,6 +2533,7 @@ double timeFromMidnightInSecond = fmod(secondsSince1970 , 86400);
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### updateCurrentPlayhead
@@ -2606,6 +2638,7 @@ NSDictionary* qoeObject = [ACPMedia createQoEObjectWithBitrate:1000000 startupTi
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### updateQoEObject
@@ -2660,13 +2693,19 @@ public enum MediaType: Int, RawRepresentable {
 **Swift**
 
 ```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
+var mediaObject = Media.createMediaObjectWith(name: "video-name", 
+                                                id: "videoId", 
+                                                length: "60", 
+                                                streamType: MediaConstants.StreamType.VOD, 
+                                                mediaType: MediaType.Video)
 ```
 
 **Objective-C**
 
 ```text
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
+NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name"   
+                                                               id:@"video-id" 
+                                                               length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
 ```
 {% endtab %}
 
@@ -2687,6 +2726,7 @@ typedef NS_ENUM(NSInteger, ACPMediaType) {
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -2769,13 +2809,21 @@ public class MediaConstants: NSObject {
 **Swift**
 
 ```swift
-var mediaObject = Media.createMediaObjectWith(name: "video-name", id: "videoId", length: "60", streamType: MediaConstants.StreamType.VOD, mediaType: MediaType.Video)
+var mediaObject = Media.createMediaObjectWith(name: "video-name", 
+                                                id: "videoId", 
+                                            length: "60", 
+                                        streamType: MediaConstants.StreamType.VOD,    
+                                         mediaType: MediaType.Video)
 ```
 
 **Objective-C**
 
 ```text
-NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" id:@"video-id" length:60 streamType:AEPMediaStreamType.VOD mediaType:AEPMediaTypeVideo];
+NSDictionary *mediaObject = [AEPMobileMedia createMediaObjectWith:@"video-name" 
+                                                               id:@"video-id" 
+                                                           length:60
+                                                       streamType:AEPMediaStreamType.VOD      
+                                                        mediaType:AEPMediaTypeVideo];
 ```
 {% endtab %}
 
@@ -2814,6 +2862,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaStreamTypeAod;
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -2940,6 +2989,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPVideoMetadataKeyStreamFormat;
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -3044,6 +3094,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAudioMetadataKeyPublisher;
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -3137,6 +3188,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPAdMetadataKeyCreativeUrl;
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -3215,6 +3267,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaPlayerStateMute;
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -3445,6 +3498,7 @@ typedef NS_ENUM(NSInteger, ACPMediaEvent) {
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 ```jsx
@@ -3594,6 +3648,7 @@ NSMutableDictionary *obj  = [mediaObject mutableCopy];
 {% endtab %}
 
 {% tab title="React Native" %}
+
 **JavaScript**
 
 #### Media resume
