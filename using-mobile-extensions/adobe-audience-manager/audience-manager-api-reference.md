@@ -53,7 +53,7 @@ NSString *audienceExtensionVersion = [AEPMobileAudience extensionVersion];
 **Syntax**
 
 ```swift
-add
++ (nonnull NSString*) extensionVersion;
 ```
 
 **Example**
@@ -193,7 +193,7 @@ Audience.getVisitorProfile { (visitorProfile, error) in
 **Syntax**
 
 ```objectivec
-add
++  (void) getVisitorProfile:^(NSDictionary<NSString *,NSString *> * _Nullable, NSError * _Nullable)completion
 ```
 
 **Example**
@@ -221,7 +221,10 @@ The `getVisitorProfileWithCompletionHandler` method was added in ACPAudience ver
 **Syntax**
 
 ```swift
-add
+func getVisitorProfile(_ callback: @escaping ([AnyHashable : Any]?) -> Void)
+
+func getVisitorProfile(completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
+
 ```
 
 **Example**
@@ -338,7 +341,7 @@ MobileCore.registerExtension([Audience.self])
 **Syntax**
 
 ```swift
-add
+func registerExtension()
 ```
 
 **Example**
@@ -423,7 +426,7 @@ Audience.reset()
 **Syntax**
 
 ```objectivec
-add
++ (void) reset
 ```
 
 **Example**
@@ -441,7 +444,7 @@ The `reset` API resets the Audience Manager UUID and purges the current visitor 
 **Syntax**
 
 ```swift
-add
+func reset()
 ```
 
 **Example**
@@ -554,7 +557,7 @@ Audience.signalWithData(data: ["trait": "trait value"]) { (traits, error) in
 **Syntax**
 
 ```objectivec
-add
++ (void) signalWithData:(NSDictionary<NSString *,NSString *> * _Nonnull) completion:^(NSDictionary<NSString *,NSString *> * _Nullable, NSError * _Nullable)completion
 ```
 
 **Example**
@@ -585,7 +588,9 @@ The `signalWithData:withCompletionHandler` method was added in ACPAudience versi
 **Syntax**
 
 ```swift
-add
+func signal(withData data: [String : String]?, callback: (([AnyHashable : Any]?) -> Void)? = nil)
+
+func signal(withData data: [String : String], withCompletionHandler completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
 ```
 
 **Example**

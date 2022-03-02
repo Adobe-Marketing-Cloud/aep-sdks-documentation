@@ -40,6 +40,7 @@ Use caution when manually clearing the queue. This operation cannot be reverted.
 static func clearQueue()
 ```
 **Example**
+
 ```swift
 Analytics.clearQueue()
 ```
@@ -49,7 +50,7 @@ Analytics.clearQueue()
 **Syntax**
 
 ```objectivec
-add
++ (void) clearQueue
 ```
 
 **Example**
@@ -70,9 +71,10 @@ Use caution when manually clearing the queue. This operation cannot be reverted.
 
 **Syntax**
 
-```objectivec
-add
+```swift
+func clearQueue()
 ```
+
 **Example**
 
 ```swift
@@ -87,7 +89,7 @@ ACPAnalytics.clearQueue()
 ```
 **Example**
 
-```text
+```objectivec
 [ACPAnalytics clearQueue];
 ```
 {% endtab %}
@@ -243,6 +245,7 @@ let version = Analytics.extensionVersion
 + (nonnull NSString*) extensionVersion;
 ```
 **Examples**
+
 ```objectivec
 NSString *version = [AEPMobileAnalytics extensionVersion];
 ```
@@ -255,7 +258,7 @@ NSString *version = [AEPMobileAnalytics extensionVersion];
 **Syntax**
 
 ```swift
-add
+func extensionVersion()
 ```
 **Examples**
 ```swift
@@ -362,10 +365,12 @@ Please use the [getQueueSizeWithCompletionHandler](analytics-api-reference.md#ge
 
 **Syntax**
 
-```text
-add
+```swift
+func getQueueSize(_ callback: @escaping (UInt) -> Void)
 ```
+
 **Example**
+
 ```swift
 ACPAnalytics.getQueueSize { (queueSize) in    
      // handle queue size   
@@ -376,7 +381,7 @@ ACPAnalytics.getQueueSize { (queueSize) in
 
 **Syntax**
 
-```text
+```objectivec
 + (void) getQueueSize: (nonnull void (^) (NSUInteger queueSize)) callback;
 ```
 
@@ -555,7 +560,7 @@ Analytics.getQueueSize { (queueSize, error) in
 **Syntax**
 
 ```objectivec
-
++ (void)getQueueSize:^(NSInteger, NSError * _Nullable)completion
 ```
 
 **Example**
@@ -575,7 +580,7 @@ Analytics.getQueueSize { (queueSize, error) in
 **Syntax**
 
 ```swift
-add
+func getQueueSize(completionHandler: @escaping (UInt, Error?) -> Void)
 ```
 **Example**
 
@@ -656,7 +661,7 @@ Retrieves the Analytics tracking identifier.
 **Syntax**
 
 ```swift
-add
+func getTrackingIdentifier(_ callback: @escaping (String?) -> Void)
 ```
 
 **Example**
@@ -866,7 +871,7 @@ Analytics.getTrackingIdentifier { (trackingId, error) in
 **Syntax**
 
 ```objectivec
-static func getTrackingIdentifier(completion: @escaping (String?, Error?) -> Void)
++ (void) getTrackingIdentifier:^(NSString * _Nullable, NSError * _Nullable)completion
 ```
 
 **Example**
@@ -885,7 +890,7 @@ AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifi
 **Syntax**
 
 ```swift
-add
+func getTrackingIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 
 * _completionHandler_ is invoked with the tracking Identifier string value. or an NSError if an unexpected error occurs or the request times out.
@@ -961,7 +966,7 @@ See [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvi
 **Syntax**
 
 ```swift
-add
+func getVisitorIdentifier(_ callback: @escaping (String?) -> Void)
 ```
 * _callback_ is invoked with the visitor identifier value.
 
@@ -1154,7 +1159,7 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 **Syntax**
 
 ```objectivec
-add
++ (void) getVisitorIdentifier:^(NSString * _Nullable, NSError * _Nullable)completion
 ```
 
 **Example**
@@ -1173,7 +1178,7 @@ add
 **Syntax**
 
 ```swift
-add
+func getVisitorIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 * _completionHandler_ is invoked with the visitor identifier value or an NSError if an unexpected error occurs or the request times out.
 
@@ -1269,7 +1274,7 @@ static func sendQueuedHits()
 **Syntax**
 
 ```objectivec
-add
++ (void) sendQueueHits
 ```
 **Example**
 
@@ -1292,7 +1297,7 @@ Use caution when manually clearing the queue. This operation cannot be reverted.
 **Syntax**
 
 ```swift
-add
+func sendQueuedHits()
 ```
 **Example**
 
@@ -1464,7 +1469,7 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 **Syntax**
 
 ```objectivec
-add
++ (void) setVisitorIdentifier:(NSString * _Nonnull)
 ```
 **Example**
 ```objectivec
@@ -1480,7 +1485,7 @@ add
 **Syntax**
 
 ```swift
-add
+func setVisitorIdentifier(_ visitorIdentifier: String)
 ```
 
 * _visitorIdentifier_ is the new value for the visitor identifier.
