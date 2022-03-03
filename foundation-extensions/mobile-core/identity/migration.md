@@ -27,7 +27,7 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 {% tab title="AEP 3.x (Objective-C)" %}
 
 ```objectivec
-+ (void) appendToUrl: (NSURL * _Nullable baseUrl) 
++ (void) appendToUrl: (NSURL * _Nullable baseUrl)
 					completion: ^(NSURL * _Nullable urlWithVisitorData, NSError * _Nullable error) completion;
 ```
 
@@ -122,7 +122,7 @@ static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-+ (void) getUrlVariables: ^(NSString * _Nullable urlVariables, NSError * _Nullable error) completion:
++ (void) getUrlVariables: ^(NSString * _Nullable urlVariables, NSError * _Nullable error) completion;
 ```
 {% endtab %}
 
@@ -189,8 +189,8 @@ static func syncIdentifier(identifierType: String, identifier: String, authentic
 
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
-+ (void) syncIdentifierWithType: (NSString * _Nonnull identifierType) 
-										 identifier: (NSString * _Nonnull identifier) 
++ (void) syncIdentifierWithType: (NSString * _Nonnull identifierType)
+										 identifier: (NSString * _Nonnull identifier)
 								 authentication: (enum AEPAuthenticationState authenticationState);
 ```
 {% endtab %}
@@ -218,7 +218,7 @@ static func syncIdentifiers(identifiers: [String: String]?, authenticationState:
 {% tab title="AEP 3.x (Objective-C)" %}
 ```objectivec
 + (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers);
-+ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers) 
++ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers)
 					authentication: (enum AEPAuthenticationState authenticationState);
 ```
 {% endtab %}
