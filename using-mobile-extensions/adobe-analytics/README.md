@@ -154,6 +154,7 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
    ```
 
 3. Import the Analytics and Identity libraries:
+
    **Swift**
 
    ```swift
