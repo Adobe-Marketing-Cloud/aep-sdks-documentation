@@ -918,10 +918,10 @@ Creates an instance of the QoE object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `bitrate` | Current bitrate | Yes |
-| `startupTime` | Startup time | Yes |
-| `fps` | FPS value | Yes |
-| `droppedFrames` | Number of dropped frames | Yes |
+| `bitrate` | The bitrate of media in bits per second | Yes |
+| `startupTime` | The start up time of media in seconds | Yes |
+| `fps` | The current frames per second information | Yes |
+| `droppedFrames` | The number of dropped frames so far | Yes |
 
 {% hint style="info" %}
 All the QoE values `bitrate`, `startupTime`, `fps`, `droppedFrames` would be converted to `long` for reporting purposes.
@@ -988,7 +988,7 @@ let qoeObject = Media.createQoEObjectWith(bitrate: 500000,
 **Example**
 
 ```objectivec
-NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:50000 
+NSDictionary *qoeObject = [AEPMobileMedia createQoEObjectWith:500000 
                                                     startTime:2 
                                                           fps:24 
                                                 droppedFrames:10];
