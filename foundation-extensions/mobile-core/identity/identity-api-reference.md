@@ -72,8 +72,6 @@ Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -137,7 +135,6 @@ NSURL* url = [NSURL URLWithString:@"https://example.com"];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
@@ -395,8 +392,6 @@ String identityExtensionVersion = Identity.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -425,8 +420,6 @@ NSString *identityVersion = [AEPMobileIdentity extensionVersion];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -561,8 +554,6 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -607,7 +598,6 @@ Identity.getExperienceCloudId { ecid, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
@@ -617,6 +607,7 @@ Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 
 
 **Syntax**
 ```swift
+static func getExperienceCloudId(_ callback: @escaping (String?) -> Void)
 static func getExperienceCloudId(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 
@@ -832,8 +823,6 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -879,7 +868,6 @@ Identity.getIdentifiers { identifiers, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
@@ -1207,7 +1195,6 @@ Identity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0. Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
@@ -1473,7 +1460,6 @@ super.onCreate();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
 
 {% hint style="info" %}
 For iOS AEP libraries, registration is changed to a single API call. Calling the MobileCore.start API is no longer required. See [MobileCore.registerExtensions()](../mobile-core-api-reference.md#registerextension-s) for more information.
@@ -1506,7 +1492,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
@@ -1672,7 +1657,6 @@ public void onResume() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1814,7 +1798,6 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1828,7 +1811,7 @@ Starting iOS 14+, applications must use the [App Tracking Transparency](https://
 
 **Syntax**
 ```Swift
-static func setAdvertisingIdentifier(String?)
+static func setAdvertisingIdentifier(adId: String?)
 ```
 
 * _adId_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
@@ -2097,8 +2080,6 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -2135,17 +2116,18 @@ MobileCore.setPushIdentifier(deviceToken)
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
-```objectivec
-+ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+**Swift**
+
+**Syntax**
+
+```swift
+static func setPushIdentifier(deviceToken: NSData?)
 ```
 
 * _deviceToken_  is a string that contains the device token for push notifications.
 
 **Example**
-
-**Swift**
 
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
@@ -2153,6 +2135,14 @@ ACPCore.setPushIdentifier(deviceToken)
 ```
 
 **Objective-C**
+
+**Syntax**
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+**Example**
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
@@ -2480,8 +2470,6 @@ Identity.syncIdentifiers(identifiers);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -2521,8 +2509,6 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -2530,6 +2516,10 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 ```swift
 static func syncIdentifiers(_ identifiers: [AnyHashable : Any]?)
 ```
+
+* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
+
+  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Example**
 
@@ -2547,10 +2537,6 @@ ACPIdentity.syncIdentifiers(identifiers)
 ```objectivec
 + (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
 ```
-
-* The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
-
-  If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
 **Example**
 
@@ -2734,8 +2720,6 @@ Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATE
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -2779,8 +2763,6 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
