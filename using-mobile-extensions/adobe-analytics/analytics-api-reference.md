@@ -72,7 +72,7 @@ Use caution when manually clearing the queue. This operation cannot be reverted.
 **Syntax**
 
 ```swift
-func clearQueue()
+static func clearQueue()
 ```
 
 **Example**
@@ -258,7 +258,7 @@ NSString *version = [AEPMobileAnalytics extensionVersion];
 **Syntax**
 
 ```swift
-func extensionVersion()
+static func extensionVersion()
 ```
 **Examples**
 ```swift
@@ -366,7 +366,7 @@ Please use the [getQueueSizeWithCompletionHandler](analytics-api-reference.md#ge
 **Syntax**
 
 ```swift
-func getQueueSize(_ callback: @escaping (UInt) -> Void)
+static func getQueueSize(_ callback: @escaping (UInt) -> Void)
 ```
 
 **Example**
@@ -581,7 +581,7 @@ Analytics.getQueueSize { (queueSize, error) in
 **Syntax**
 
 ```swift
-func getQueueSize(completionHandler: @escaping (UInt, Error?) -> Void)
+static func getQueueSize(completionHandler: @escaping (UInt, Error?) -> Void)
 ```
 **Example**
 
@@ -662,7 +662,7 @@ Retrieves the Analytics tracking identifier.
 **Syntax**
 
 ```swift
-func getTrackingIdentifier(_ callback: @escaping (String?) -> Void)
+static func getTrackingIdentifier(_ callback: @escaping (String?) -> Void)
 ```
 
 **Example**
@@ -891,7 +891,7 @@ AEPMobileAnalytics getTrackingIdentifier:^(NSString * _Nullable trackingIdentifi
 **Syntax**
 
 ```swift
-func getTrackingIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
+static func getTrackingIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 
 * _completionHandler_ is invoked with the tracking Identifier string value. or an NSError if an unexpected error occurs or the request times out.
@@ -967,7 +967,7 @@ See [getVisitorIdentifierWithCompletionHandler](analytics-api-reference.md#getvi
 **Syntax**
 
 ```swift
-func getVisitorIdentifier(_ callback: @escaping (String?) -> Void)
+static func getVisitorIdentifier(_ callback: @escaping (String?) -> Void)
 ```
 * _callback_ is invoked with the visitor identifier value.
 
@@ -1179,7 +1179,7 @@ Analytics.getVisitorIdentifier { (visitorIdentifier, error) in
 **Syntax**
 
 ```swift
-func getVisitorIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
+static func getVisitorIdentifier(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 * _completionHandler_ is invoked with the visitor identifier value or an NSError if an unexpected error occurs or the request times out.
 
@@ -1298,7 +1298,7 @@ Use caution when manually clearing the queue. This operation cannot be reverted.
 **Syntax**
 
 ```swift
-func sendQueuedHits()
+static func sendQueuedHits()
 ```
 **Example**
 
@@ -1486,7 +1486,7 @@ Analytics.setVisitorIdentifier(visitorIdentifier:"custom_identifier")
 **Syntax**
 
 ```swift
-func setVisitorIdentifier(_ visitorIdentifier: String)
+static func setVisitorIdentifier(_ visitorIdentifier: String)
 ```
 
 * _visitorIdentifier_ is the new value for the visitor identifier.

@@ -172,7 +172,7 @@ The createTracker function returns the instance of ACPMediaTracker for tracking 
 **Syntax**
 
 ```swift
-func createTracker()
+static func createTracker()
 ```
 
 **Example**
@@ -229,7 +229,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 
 | Key | Description | Value | Required |
 | :--- | :--- | :--- | :---: |
-| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from launch for media tracked with this tracker instance. | String | No |
+| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from Data Collection UI for media tracked with this tracker instance. | String | No |
 | `config.downloadedcontent` | Creates a tracker instance to track downloaded media. Instead of sending periodic pings, the tracker only sends one ping for the entire content. | Boolean | No |
 
 {% tabs %}
@@ -260,7 +260,7 @@ public static void createTracker(Map<String, Object> config, final AdobeCallback
 
 ```java
 HashMap<String, Object> config = new HashMap<String, Object>();
-config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from launch
+config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from Data Collection UI
 config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
 
 
@@ -293,7 +293,7 @@ static func createTrackerWith(config: [String: Any]?)
 
 ```swift
 var config: [String: Any] = [:]
-config[MediaConstants.TrackerConfig.CHANNEL] = "custom-channel" // Overrides channel configured from launch
+config[MediaConstants.TrackerConfig.CHANNEL] = "custom-channel" // Overrides channel configured from Data Collection UI
 config[MediaConstants.TrackerConfig.DOWNLOADED_CONTENT] = true    // Creates downloaded content tracker
 
 let tracker = Media.createTrackerWith(config: config)
@@ -312,7 +312,7 @@ let tracker = Media.createTrackerWith(config: config)
 id<AEPMediaTracker> _tracker; 
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
 
-config[AEPMediaTrackerConfig.CHANNEL] = @"custom-channel"; // Overrides channel configured from launch
+config[AEPMediaTrackerConfig.CHANNEL] = @"custom-channel"; // Overrides channel configured from Data Collection UI
 config[AEPMediaTrackerConfig.DOWNLOADED_CONTENT] = [NSNumber numberWithBool:true]; // Creates downloaded content tracker
 
 _tracker = [AEPMobileMedia createTrackerWithConfig:config];
@@ -329,14 +329,14 @@ Optional configuration about the tracker can be passed to this function. The cre
 **Syntax**
 
 ```swift
-func createTracker(withConfig config: [AnyHashable : Any]?)
+static func createTracker(withConfig config: [AnyHashable : Any]?)
 ```
 
 **Examples**
 
 ```swift
 var config: [String: Any] = [:]
-config[ACPMediaKeyConfigChannel] = "custom-channel"  // Override channel configured from launch
+config[ACPMediaKeyConfigChannel] = "custom-channel"  // Override channel configured from Data Collection UI
 config[ACPMediaKeyConfigDownloadedContent] = true    // Creates downloaded content tracker
 
 let mediaTracker = ACPMedia.createTrackerWithConfig(config); // Use the instance for tracking media.
@@ -365,7 +365,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
 
 ```objectivec
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
-config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from launch
+config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from Data Collection UI
 config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Creates downloaded content tracker
 
 ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Use the instance for tracking media.
@@ -386,7 +386,7 @@ ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Us
 
 ```jsx
 var config = new Object();
-config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";  // Override channel configured from launch
+config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";  // Override channel configured from Data Collection UI
 config[ACPMediaConstants.ACPMediaKeyConfigDownloadedContent] = true;  // Creates downloaded content tracker
 ACPMedia.createTrackerWithConfig(config).then(tracker =>
   this.setState({currentTracker: tracker})
@@ -401,9 +401,9 @@ Creates an instance of the Media object.
 
 | Variable Name | Description | Required |
 | :--- | :--- | :---: |
-| `name` | Media name | Yes |
-| `mediaId` | Media unique identifier | Yes |
-| `length` | Media length | Yes |
+| `name` | The name of the media | Yes |
+| `mediaId` | The unqiue identifier for the media | Yes |
+| `length` | The length of the media in seconds | Yes |
 | `streamType` | [Stream type](media-api-reference.md#stream-type) | Yes |
 | `mediaType` | [Media type](media-api-reference.md#media-type) | Yes |
 
@@ -492,7 +492,7 @@ Returns an NSDictionary instance that contains information about the media.
 **Syntax**
 
 ```swift
-func createMediaObject(withName name: String, mediaId: String, length: Double, streamType: String, mediaType: ACPMediaType)
+static func createMediaObject(withName name: String, mediaId: String, length: Double, streamType: String, mediaType: ACPMediaType)
 ```
 
 **Example**
@@ -617,13 +617,16 @@ Returns an NSDictionary instance that contains information about the ad break.
 **Syntax**
 
 ```swift
-func createAdBreakObject(withName name: String, position: Double, startTime: Double)
+static func createAdBreakObject(withName name: String, 
+                                     position: Double, tartTime: Double)
 ```
 
 **Example**
 
 ```swift
-let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", position: 1, startTime: 0)
+let adBreakObject = ACPMedia.createAdBreakObject(withName: "adbreak-name", 
+                                                 position: 1, 
+                                                startTime: 0)
 ```
 
 **Objective-C**
@@ -666,7 +669,7 @@ Creates an instance of the Ad object.
 | `name` | Friendly name of the ad. | Yes |
 | `adId` | Unique identifier for the ad. | Yes |
 | `position` | The number position of the ad within the ad break, starting with 1. | Yes |
-| `length` | Ad length | Yes |
+| `length` | Ad length in seconds| Yes |
 
 {% tabs %}
 {% tab title="Android" %}
@@ -742,12 +745,18 @@ Returns an NSDictionary instance that contains information about the ad.
 **Syntax**
 
 ```swift
-func createAdObject(withName name: String, adId: String, position: Double, length: Double)
+static func createAdObject(withName name: String, 
+                                    adId: String, 
+                                position: Double, 
+                                  length: Double)
 ```
 **Example**
 
 ```swift
-let adObject = ACPMedia.createAdObject(withName: "ad-name", adId: "ad-id", position: 1, length: 15)
+let adObject = ACPMedia.createAdObject(withName: "ad-name", 
+                                           adId: "ad-id", 
+                                       position: 1, 
+                                         length: 15)
 ```
 
 **Objective-C**
@@ -790,7 +799,7 @@ Creates an instance of the Chapter object.
 | :--- | :--- | :---: |
 | `name` | Chapter name | Yes |
 | `position` | The number position of the chapter within the content, starting with 1. | Yes |
-| `length` | Chapter length | Yes |
+| `length` | Chapter length in seconds | Yes |
 | `startTime` | Playhead value at the start of the chapter | Yes |
 
 {% tabs %}
@@ -870,7 +879,10 @@ Returns an NSDictionary instance that contains information about the chapter.
 **Syntax**
 
 ```swift
-func createChapterObject(withName name: String, position: Double, length: Double, startTime: Double)
+static func createChapterObject(withName name: String, 
+                                     position: Double, 
+                                       length: Double, 
+                                    startTime: Double)
 ```
 
 **Example**
@@ -1005,7 +1017,10 @@ Returns an NSDictionary instance that contains information about the quality of 
 **Syntax**
 
 ```swift
-func createQoEObject(withBitrate bitrate: Double, startupTime: Double, fps: Double, droppedFrames: Double)
+static func createQoEObject(withBitrate bitrate: Double, 
+                                    startupTime: Double, 
+                                            fps: Double, 
+                                  droppedFrames: Double)
 ```
 
 **Example**
@@ -1118,7 +1133,7 @@ Returns an NSDictionary instance that contains information about the player stat
 **Syntax**
 
 ```swift
-func createStateObject(withName stateName: String)
+static func createStateObject(withName stateName: String)
 ```
 
 **Example**
@@ -1540,7 +1555,7 @@ _tracker.trackComplete();
 **Syntax**
 
 ```swift
-func trackComplete()
+public func trackComplete()
 ```
 
 **Example**
@@ -1635,7 +1650,7 @@ _tracker.trackSessionEnd();
 **Syntax**
 
 ```swift
-func trackSessionEnd()
+public func trackSessionEnd()
 ```
 
 **Example**
@@ -1809,7 +1824,7 @@ Tracks media events.
 | Variable Name | Description |
 | :--- | :--- |
 | `event` | [Media event](media-api-reference.md#media-events) |
-| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#createadbreakobject) method.   For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#createadobject) method.   For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#createchapterobject) method.  For `StateStart` and `StateEnd` event, the State information is created by using the [createStateObject](media-api-reference.md#createstateobject) method. |
+| `info` | For an `AdBreakStart` event, the `adBreak` information is created by using the [createAdBreakObject](media-api-reference.md#createadbreakobject) method. <br />  For an `AdStart` event, the Ad information is created by using the [createAdObject](media-api-reference.md#createadobject) method. <br />  For `ChapterStart` event, the Chapter information is created by using the [createChapterObject](media-api-reference.md#createchapterobject) method. <br />  For `StateStart` and `StateEnd` event, the State information is created by using the [createStateObject](media-api-reference.md#createstateobject) method. |
 | `data` | Optional context data can be provided for `AdStart` and `ChapterStart` events. This is not required for other events. |
 
 {% tabs %}
@@ -1925,7 +1940,7 @@ Tracks media events.
 **Syntax**
 
 ```swift
-func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: String]?)
+public func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: String]?)
 ```
 
 **Examples**
@@ -2457,7 +2472,7 @@ _tracker.updateCurrentPlayhead(timeFromMidnightInSecond);
 **Syntax**
 
 ```swift
-func updateCurrentPlayhead(time: Double)
+public func updateCurrentPlayhead(time: Double)
 ```
 
 **Example**
@@ -2499,7 +2514,7 @@ tracker.updateCurrentPlayhead(time: timeFromMidnightInSecond)
 **Syntax**
 
 ```swift
-- (void) updateCurrentPlayhead: (double) time;
+func updateCurrentPlayhead(_ time: Double)
 ```
 
 **Example**
@@ -3172,7 +3187,6 @@ NSMutableDictionary *adMetadata = [[NSMutableDictionary alloc] init];
 [adMetadata setObject:@"Sample Campaign" forKey:AEPAdMetadataKeys.CAMPAIGN_ID];
 
 [_tracker trackEvent:AEPMediaEventAdStart info:adObject metadata:adMetadata];
-}
 ```
 {% endtab %}
 
@@ -3206,7 +3220,7 @@ ACPMediaConstants.ACPAdMetadataKeyCreativeUrl
 
 ### Player state constants
 
-Defines some common Player State constants.
+Defines standard values for Player State constants.
 
 {% tabs %}
 {% tab title="Android" %}
