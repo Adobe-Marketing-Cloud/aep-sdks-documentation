@@ -147,7 +147,7 @@ Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 an
 ```swift
 static func appendToUrl(baseUrl: NSURL, )
 func append(to: URL?, withCallback: ((URL?) -> Void)?)
-fun append(to: URL?, withCompletionHandler: ((URL?, Error?)-> Void)?)
+func append(to: URL?, withCompletionHandler: ((URL?, Error?)-> Void)?)
 ```
 
 **Example**
@@ -410,7 +410,9 @@ let identityExtensionVersion  = Identity.extensionVersion
 
 **Syntax**
 
+```objectivec
 + (nonnull NSString*) extensionVersion;
+```
 
 **Example**
 
@@ -581,7 +583,9 @@ Identity.getExperienceCloudId { ecid, error in
 
 **Syntax**
 
+```objectivec
 + (void) getExperienceCloudId: ^(NSString * _Nullable ecid, NSError * _Nullable error) completion;
+```
 
 **Example**
 
@@ -1128,7 +1132,6 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
 
 **Swift**
 
@@ -1665,6 +1668,7 @@ To access IDFA and handle it correctly in your mobile application, see the [Appl
 {% hint style="warning" %}
 Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 {% endhint %}
+
 **Swift**
 
 **Syntax**
@@ -2210,8 +2214,6 @@ Identity.syncIdentifier("idType",
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
@@ -2256,8 +2258,6 @@ Identity.syncIdentifier(identifierType: "idType",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
-
 **Swift**
 
 **Syntax**
