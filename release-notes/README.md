@@ -4,7 +4,36 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## March 3, 2021
+## March 4, 2022
+
+### Xamarin Analytics Android 1.0.1
+* Android Analytics framework updated to 1.2.10
+
+### Xamarin Analytics iOS 1.0.1
+* iOS Analytics framework updated to 2.5.1
+
+### Xamarin Analytics tvOS 1.0.1
+* tvOS Analytics framework updated to 2.5.1
+
+## March 3, 2022
+
+### Xamarin Core Android 1.1.0
+* Android Core framework updated to 1.10.0
+
+### Xamarin Identity Android 1.1.0
+* Android Identity framework updated to 1.3.0
+
+### Xamarin Lifecycle Android 1.1.0
+* Android Lifecycle framework updated to 1.1.0
+
+### Xamarin Signal Android 1.0.1
+* Android Signal framework updated to 1.0.4
+
+### Xamarin Core iOS 1.0.1
+* iOS Core framework updated to 2.9.5
+
+### Xamarin Core tvOS 1.0.1
+* tvOS Core framework updated to 2.9.5
 
 ### Android Analytics 1.2.10
 
