@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## March 3, 2021
+
+### Android Analytics 1.2.10
+
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
+
 ## February 22, 2022
 
 ### iOS Assurance 3.0.1
