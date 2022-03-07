@@ -1,6 +1,6 @@
 # Media API reference
 
-## extensionVersion
+### extensionVersion
 
 The `extensionVersion()` API returns the version of the Media extension that is registered with the Mobile Core extension.
 
