@@ -1555,7 +1555,7 @@ _tracker.trackComplete();
 **Syntax**
 
 ```swift
-public func trackComplete()
+func trackComplete()
 ```
 
 **Example**
@@ -1650,7 +1650,7 @@ _tracker.trackSessionEnd();
 **Syntax**
 
 ```swift
-public func trackSessionEnd()
+func trackSessionEnd()
 ```
 
 **Example**
@@ -1940,7 +1940,7 @@ Tracks media events.
 **Syntax**
 
 ```swift
-public func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: String]?)
+func trackEvent(event: MediaEvent, info: [String: Any]?, metadata: [String: String]?)
 ```
 
 **Examples**
@@ -2472,7 +2472,7 @@ _tracker.updateCurrentPlayhead(timeFromMidnightInSecond);
 **Syntax**
 
 ```swift
-public func updateCurrentPlayhead(time: Double)
+func updateCurrentPlayhead(time: Double)
 ```
 
 **Example**
