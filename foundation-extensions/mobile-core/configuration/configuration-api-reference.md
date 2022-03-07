@@ -23,24 +23,25 @@ You can clear any programmatic updates made to the configuration via the `clearU
 {% tabs %}
 {% tab title="Android" %}
 
-#### Java
+### Java
 
 **Syntax**
 
 ```java
-public static void clearUpdatedConfiguration()
+public static void clearUpdatedConfiguration();
 ```
 
 **Example**
+
 ```java
-MobileCore.clearUpdatedConfiguration()
+MobileCore.clearUpdatedConfiguration();
 ```
 
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
 
-#### Swift
+### Swift
 
 **Syntax**
 
@@ -49,18 +50,21 @@ static func clearUpdatedConfiguration()
 ```
 
 **Example**
+
 ```swift
 MobileCore.clearUpdatedConfiguration()
 ```
 
-#### Objective-C
+### Objective-C
 
 **Syntax**
-```swift
-static func clearUpdatedConfiguration()
+
+```objectivec
++ (void) clearUpdatedConfiguration(); 
 ```
 
 **Example**
+
 ```objectivec
 [AEPMobileCore clearUpdatedConfiguration];
 ```
@@ -74,15 +78,15 @@ This API causes the SDK to download the configuration for the provided app ID an
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+### Java
+
+**Syntax**
 
 ```java
 public static void configureWithAppID(final String appId);
 ```
 
-#### Example
-
-#### Java
+**Example**
 
 ```java
 MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
@@ -90,59 +94,80 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
-#### Syntax
+
+### Swift
+
+**Syntax**
 
 ```swift
  static func configureWith(appId: String)
 ```
 
-#### Example
+**Example**
 
-#### Objective-C
+```swift
+ MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
+```
+
+### Objective-C
+
+**Syntax**
+
+```swift
+ static func configureWith(appId: String)
+```
+
+**Example**
 
 ```objectivec
  [AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-#### Swift
-
-```swift
- MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
-```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-#### Syntax
+
+### Swift
+
+**Syntax**
+
+```swift
+static func configure(withAppId: String)
+```
+
+**Example**
+
+```swift
+ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
+```
+
+### Objective-C
+
+**Syntax**
 
 ```objectivec
 + (void) configureWithAppId: (NSString* __nullable) appid;
 ```
 
-#### Example
-
-#### Objective-C
+**Example**
 
 ```objectivec
 [ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
 ```
 
-#### Swift
-
-```swift
-ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
-```
 {% endtab %}
 
 {% tab title="Unity" %}
-#### Syntax
+
+### C\#
+
+**Syntax**
 
 ```csharp
 public static void ConfigureWithAppID(string appId)
 ```
 
-#### Example
-
-#### C\#
+**Example**
 
 ```csharp
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
@@ -150,21 +175,22 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### Android Syntax
+
+### C\#
+
+**Android Syntax**
 
 ```csharp
 public unsafe static void ConfigureWithAppID (string appId);
 ```
 
-#### iOS Syntax
+**iOS Syntax**
 
 ```csharp
 public static void ConfigureWithAppID (string appid);
 ```
 
-#### Example
-
-#### C\#
+**Example**
 
 ```text
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
@@ -183,15 +209,15 @@ You can bundle a JSON configuration file in the app's Assets folder to replace o
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+### Java
+
+**Syntax**
 
 ```java
 public static void configureWithFileInAssets(final String fileName);
 ```
 
-#### Example
-
-#### Java
+**Example**
 
 ```java
 MobileCore.configureWithFileInAssets("exampleJSONfile.json");
@@ -207,15 +233,16 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Syntax
+
+### Java
+
+**Syntax**
 
 ```java
 public static void configureWithFileInPath(final String filePath);
 ```
 
-#### Example
-
-#### Java
+**Example**
 
 ```java
 MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
@@ -223,69 +250,90 @@ MobileCore.configureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 {% endtab %}
 
 {% tab title="iOS \(AEP 3.x\)" %}
-#### Syntax
+
+### Swift
+
+**Syntax**
 
 ```swift
  static func configureWith(filePath: String)
 ```
 
-#### Example
+**Example**
 
-#### Objective-C
+```swift
+ let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ MobileCore.configureWith(filePath: filePath)
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+**Example**
 
 ```objectivec
  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
  [AEPMobileCore configureWithFilePath:filePath];
 ```
 
-#### Swift
-
-```swift
- let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
- MobileCore.configureWith(filePath: filePath)
-```
 {% endtab %}
 
 {% tab title="iOS \(ACP 2.x\)" %}
-#### Syntax
+
+### Swift
+
+**Syntax**
+
+```swift
+static func configureWithFile(inPath: String)
+```
+
+**Example**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ACPCore.configureWithFile(inPath: filePath)
+```
+
+### Objective-C
+
+**Syntax**
 
 ```objectivec
 + (void) configureWithFileInPath: (NSString* __nullable) filepath;
 ```
 
-#### Example
-
-#### Objective-C
+**Example**
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
 [ACPCore configureWithFileInPath:filePath];
 ```
 
-#### Swift
-
-```swift
-let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-ACPCore.configureWithFile(inPath: filePath)
-```
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### Android Syntax
+
+### C\#
+
+**Android Syntax** 
 
 ```csharp
 public unsafe static void ConfigureWithFileInPath (string filepath);
 ```
 
-#### iOS Syntax
+**iOS Syntax**
 
 ```csharp
 public static void ConfigureWithFileInPath (string filepath);
 ```
 
-#### Example
-
-#### C\#
+**Example**
 
 ```csharp
 ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
@@ -395,16 +443,15 @@ Do not use this API to update the `build.environment` key or any key with an env
 
 {% tabs %}
 {% tab title="Android" %}
+### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void updateConfiguration(final Map configMap);
 ```
 
-#### Example
-
-#### Java
+**Example**
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
@@ -415,23 +462,31 @@ MobileCore.updateConfiguration(data);
 
 {% tab title="iOS \(AEP 3.x\)" %}
 
-#### Syntax
+### Swift
 
-```objectivec
- @objc(updateConfiguration:)
- static func updateConfigurationWith(configDict: [String: Any])
+**Syntax**
+
+```swift
+@objc(updateConfiguration:)
+static func updateConfigurationWith(configDict: [String: Any])
 ```
 
-#### Example
-
-#### Swift
+**Example**
 
 ```swift
  let updatedConfig = ["global.privacy":"optedout"]
  MobileCore.updateConfigurationWith(configDict: updatedConfig)
 ```
 
-#### Objective-C
+### Objective-C
+
+**Syntax**
+
+```objectivec
+ + (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+**Example**
 
 ```objectivec
  NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
@@ -441,32 +496,48 @@ MobileCore.updateConfiguration(data);
 
 {% tab title="iOS \(ACP 2.x\)" %}
 
-#### Syntax
+### Swift
+
+**Syntax**
+
+```swift
+static func updateConfiguration(_: [String: Any])
+```
+
+**Example**
+
+```swift
+let updatedConfig = ["global.privacy":"optedout"]
+ACPCore.updateConfiguration(updatedConfig)
+```
+
+### Objective-C
+
+**Syntax**
 
 ```objectivec
 + (void) updateConfiguration: (NSDictionary* __nullable) config;
 ```
 
-#### Example
-
-#### Objective-C
+**Example**
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-#### Swift
-
-```swift
-let updatedConfig = ["global.privacy":"optedout"]
-ACPCore.updateConfiguration(updatedConfig)
-```
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
+**Syntax**
+
+```javascript
+updateConfiguration(configMap?: { string: any })
+```
+
+**Example**
 
 ```jsx
 ACPCore.updateConfiguration({"global.privacy":"optedout"});
@@ -474,7 +545,15 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
+
+**Syntax**
+
+```dart
+static Future<void> updateConfiguration(Map<String, Object> configMap);
+```
+
+**Example**
 
 ```dart
 FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
@@ -482,7 +561,7 @@ FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Javascript
+### Javascript
 
 ```javascript
 ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, errorCallback);
@@ -490,7 +569,15 @@ ACPCore.updateConfiguration({"newConfigKey":"newConfigValue"}, successCallback, 
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
+
+**Syntax**
+
+```csharp
+public static void UpdateConfiguration(Dictionary<string, object> config);
+```
+
+**Example**
 
 ```csharp
 var dict = new Dictionary<string, object>();
@@ -500,9 +587,15 @@ ACPCore.UpdateConfiguration(dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
-**iOS**
+**Syntax**
+
+```csharp
+void UpdateConfiguration([NullAllowed] NSDictionary config);
+```
+
+**iOS Example**
 
 ```csharp
  var config = new NSMutableDictionary<NSString, NSObject>
@@ -512,7 +605,7 @@ ACPCore.UpdateConfiguration(dict);
 ACPCore.UpdateConfiguration(config);
 ```
 
-**Android**
+**Android Example**
 
 ```csharp
 var config = new Dictionary<string, Java.Lang.Object>();
