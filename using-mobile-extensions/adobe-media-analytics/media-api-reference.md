@@ -229,7 +229,7 @@ Creates a media tracker instance based on the configuration to track the playbac
 
 | Key | Description | Value | Required |
 | :--- | :--- | :--- | :---: |
-| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from Data Collection UI for media tracked with this tracker instance. | String | No |
+| `config.channel` | Channel name for media. Set this to overwrite the channel name configured from the Data Collection UI for media tracked with this tracker instance. | String | No |
 | `config.downloadedcontent` | Creates a tracker instance to track downloaded media. Instead of sending periodic pings, the tracker only sends one ping for the entire content. | Boolean | No |
 
 {% tabs %}
@@ -260,7 +260,7 @@ public static void createTracker(Map<String, Object> config, final AdobeCallback
 
 ```java
 HashMap<String, Object> config = new HashMap<String, Object>();
-config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from Data Collection UI
+config.put(MediaConstants.Config.CHANNEL, "custom-channel");  // Override channel configured from the Data Collection UI
 config.put(MediaConstants.Config.DOWNLOADED_CONTENT, true);   // Creates downloaded content tracker
 
 
@@ -293,7 +293,7 @@ static func createTrackerWith(config: [String: Any]?)
 
 ```swift
 var config: [String: Any] = [:]
-config[MediaConstants.TrackerConfig.CHANNEL] = "custom-channel" // Overrides channel configured from Data Collection UI
+config[MediaConstants.TrackerConfig.CHANNEL] = "custom-channel" // Overrides channel configured from the Data Collection UI
 config[MediaConstants.TrackerConfig.DOWNLOADED_CONTENT] = true    // Creates downloaded content tracker
 
 let tracker = Media.createTrackerWith(config: config)
@@ -312,7 +312,7 @@ let tracker = Media.createTrackerWith(config: config)
 id<AEPMediaTracker> _tracker; 
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
 
-config[AEPMediaTrackerConfig.CHANNEL] = @"custom-channel"; // Overrides channel configured from Data Collection UI
+config[AEPMediaTrackerConfig.CHANNEL] = @"custom-channel"; // Overrides channel configured from the Data Collection UI
 config[AEPMediaTrackerConfig.DOWNLOADED_CONTENT] = [NSNumber numberWithBool:true]; // Creates downloaded content tracker
 
 _tracker = [AEPMobileMedia createTrackerWithConfig:config];
@@ -336,7 +336,7 @@ static func createTracker(withConfig config: [AnyHashable : Any]?)
 
 ```swift
 var config: [String: Any] = [:]
-config[ACPMediaKeyConfigChannel] = "custom-channel"  // Override channel configured from Data Collection UI
+config[ACPMediaKeyConfigChannel] = "custom-channel"  // Override channel configured from the Data Collection UI
 config[ACPMediaKeyConfigDownloadedContent] = true    // Creates downloaded content tracker
 
 let mediaTracker = ACPMedia.createTrackerWithConfig(config); // Use the instance for tracking media.
@@ -365,7 +365,7 @@ FOUNDATION_EXPORT NSString* _Nonnull const ACPMediaKeyConfigDownloadedContent;
 
 ```objectivec
 NSMutableDictionary* config = [NSMutableDictionary dictionary];
-config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from Data Collection UI
+config[ACPMediaKeyConfigChannel] = @"custom-channel"; // Override channel configured from the Data Collection UI
 config[ACPMediaKeyConfigDownloadedContent] = @YES;    // Creates downloaded content tracker
 
 ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Use the instance for tracking media.
@@ -386,7 +386,7 @@ ACPMediaTracker *mediaTracker = [ACPMedia createTrackerWithConfig:config]; // Us
 
 ```jsx
 var config = new Object();
-config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";  // Override channel configured from Data Collection UI
+config[ACPMediaConstants.ACPMediaKeyConfigChannel] = "customer-channel";  // Override channel configured from the Data Collection UI
 config[ACPMediaConstants.ACPMediaKeyConfigDownloadedContent] = true;  // Creates downloaded content tracker
 ACPMedia.createTrackerWithConfig(config).then(tracker =>
   this.setState({currentTracker: tracker})
