@@ -145,9 +145,8 @@ Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 an
 **Syntax**
 
 ```swift
-static func appendToUrl(baseUrl: NSURL, )
-func append(to: URL?, withCallback: ((URL?) -> Void)?)
-func append(to: URL?, withCompletionHandler: ((URL?, Error?)-> Void)?)
+static func append(to: URL?, withCallback: ((URL?) -> Void)?)
+static func append(to: URL?, withCompletionHandler: ((URL?, Error?)-> Void)?)
 ```
 
 **Example**
@@ -2748,7 +2747,7 @@ Identity.syncIdentifiers(identifiers: ids, authenticationState: .authenticated)
 
 ```objectivec
 + (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers)
-					authentication: (enum AEPAuthenticationState authenticationState);
+				  authentication: (enum AEPAuthenticationState authenticationState);
 ```
 
 **Example**
