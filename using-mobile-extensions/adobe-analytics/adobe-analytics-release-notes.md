@@ -1,6 +1,6 @@
 # Release Notes
 
-## March 3, 2021
+## March 3, 2022
 
 ### Android Analytics 1.2.10
 
