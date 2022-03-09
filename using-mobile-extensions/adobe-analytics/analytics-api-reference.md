@@ -169,7 +169,7 @@ ACPAnalytics.clearQueue(function (handleCallback) {
 Use caution when manually clearing the queue. This operation cannot be reverted.
 {% endhint %}
 
-C\#
+### C\#
 
 **Syntax**
 
@@ -482,7 +482,7 @@ ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 {% tab title="Xamarin" %}
 ### C\#
 
-**iOS syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetQueueSize (Action<nuint> callback);
@@ -490,7 +490,7 @@ public unsafe static void GetQueueSize (Action<nuint> callback);
 
 * _callback_ is a callback containing the `queue size` if the GetQueueSize API executed without any errors.
 
-**iOS example**
+**example**
 
 ```csharp
 ACPAnalytics.GetQueueSize(callback => {
@@ -499,7 +499,7 @@ ACPAnalytics.GetQueueSize(callback => {
 ```
 ### Android
 
-**Android syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetQueueSize (IAdobeCallback callback);
@@ -507,7 +507,7 @@ public unsafe static void GetQueueSize (IAdobeCallback callback);
 
 * _callback_ is a callback containing the `queue size` if the GetQueueSize API executed without any errors.
 
-**Android example**
+**example**
 
 ```csharp
 ACPAnalytics.GetQueueSize(new StringCallback());
@@ -780,7 +780,7 @@ ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
 
 Retrieves the Analytics tracking identifier.
 
-**iOS syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
@@ -788,15 +788,16 @@ public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
 
 * _callback_ is a callback containing the tracking Identifier string value.
 
-**iOS example**
+**example**
 
 ```csharp
 ACPAnalytics.GetTrackingIdentifier(callback => {
   Console.WriteLine("Tracking identifier: " + callback);
 });
 ```
+### Android
 
-**Android syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
@@ -804,7 +805,7 @@ public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
 
 * _callback_ is a callback containing the tracking Identifier string value.
 
-**Android example**
+**example**
 
 ```csharp
 ACPAnalytics.GetTrackingIdentifier(new StringCallback());
@@ -1072,7 +1073,7 @@ ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 {% tab title="Xamarin" %}
 ### C\#
 
-**iOS syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
@@ -1080,7 +1081,7 @@ public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
 
 * _callback_ is a callback containing the visitor Identifier string value.
 
-**iOS example**
+**example**
 
 ```csharp
 ACPAnalytics.GetVisitorIdentifier(callback => {
@@ -1088,7 +1089,7 @@ ACPAnalytics.GetVisitorIdentifier(callback => {
 });
 ```
 
-**Android syntax**
+**syntax**
 
 ```csharp
 public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
@@ -1096,7 +1097,7 @@ public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
 
 * _callback_ is a callback containing the visitor Identifier string value.
 
-**Android example**
+**example**
 
 ```csharp
 ACPAnalytics.GetVisitorIdentifier(new StringCallback());
@@ -1580,7 +1581,7 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 {% tab title="Xamarin" %}
 ### C\#
 
-**iOS syntax**
+**syntax**
 
 ```csharp
 public static void SetVisitorIdentifier (string visitorIdentifier);
@@ -1588,7 +1589,9 @@ public static void SetVisitorIdentifier (string visitorIdentifier);
 
 * _visitorIdentifier_ is the new value for the visitor identifier.
 
-**Android syntax**
+### Android
+
+**syntax**
 
 ```csharp
 public unsafe static void SetVisitorIdentifier (string visitorID);
