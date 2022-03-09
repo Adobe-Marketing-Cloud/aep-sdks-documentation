@@ -1,6 +1,6 @@
 # Media API reference
 
-### extensionVersion
+## extensionVersion
 
 The `extensionVersion()` API returns the version of the Media extension that is registered with the Mobile Core extension.
 
@@ -84,7 +84,7 @@ ACPMedia.extensionVersion().then(mediaExtensionVersion => console.log("AdobeExpe
 {% endtab %}
 {% endtabs %}
 
-### createTracker
+## createTracker
 
 {% hint style="warning" %}
 The API createTracker with callback has been deprecated for the synchronous version
@@ -220,7 +220,7 @@ ACPMedia.createTracker().then(tracker =>
 {% endtab %}
 {% endtabs %}
 
-### createTrackerWithConfig
+## createTrackerWithConfig
 
 Creates a media tracker instance based on the configuration to track the playback session.
 
@@ -388,7 +388,7 @@ ACPMedia.createTrackerWithConfig(config).then(tracker =>
 {% endtab %}
 {% endtabs %}
 
-### createMediaObject
+## createMediaObject
 
 Creates an instance of the Media object.
 
@@ -526,7 +526,7 @@ let mediaObject = ACPMedia.createMediaObject("video-name", "video-id", 60, ACPMe
 {% endtab %}
 {% endtabs %}
 
-### createAdBreakObject
+## createAdBreakObject
 
 Creates an instance of the AdBreak object.
 
@@ -644,7 +644,7 @@ let adBreakObject = ACPMedia.createAdBreakObject("adbreak-name", 1, 0);
 {% endtab %}
 {% endtabs %}
 
-### createAdObject
+## createAdObject
 
 Creates an instance of the Ad object.
 
@@ -772,7 +772,7 @@ let adObject = ACPMedia.createAdObject("ad-name", "ad-id", 1, 15);
 {% endtab %}
 {% endtabs %}
 
-### createChapterObject
+## createChapterObject
 
 Creates an instance of the Chapter object.
 
@@ -902,7 +902,7 @@ let chapterObject = ACPMedia.createChapterObject('chapter-name', 1, 60, 0);
 {% endtab %}
 {% endtabs %}
 
-### createQoEObject
+## createQoEObject
 
 Creates an instance of the QoE object.
 
@@ -1037,7 +1037,7 @@ let qoeObject = ACPMedia.createQoEObject(1000000, 2, 23, 10);
 {% endtab %}
 {% endtabs %}
 
-### createStateObject
+## createStateObject
 
 Creates an instance of the Player State object.
 
