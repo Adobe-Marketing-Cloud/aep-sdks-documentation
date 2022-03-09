@@ -482,7 +482,7 @@ ACPAnalytics.GetQueueSize(HandleAdobeGetQueueSizeCallback);
 {% tab title="Xamarin" %}
 ### C\#
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetQueueSize (Action<nuint> callback);
@@ -499,7 +499,7 @@ ACPAnalytics.GetQueueSize(callback => {
 ```
 ### Android
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetQueueSize (IAdobeCallback callback);
@@ -780,7 +780,7 @@ ACPAnalytics.GetTrackingIdentifier(HandleAdobeGetTrackingIdentifierCallback);
 
 Retrieves the Analytics tracking identifier.
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetTrackingIdentifier (Action<NSString> callback);
@@ -797,7 +797,7 @@ ACPAnalytics.GetTrackingIdentifier(callback => {
 ```
 ### Android
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetTrackingIdentifier (IAdobeCallback callback);
@@ -1073,7 +1073,7 @@ ACPAnalytics.GetVisitorIdentifier(HandleAdobeGetVisitorIdentifierCallback);
 {% tab title="Xamarin" %}
 ### C\#
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetVisitorIdentifier (Action<NSString> callback);
@@ -1089,7 +1089,7 @@ ACPAnalytics.GetVisitorIdentifier(callback => {
 });
 ```
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void GetVisitorIdentifier (IAdobeCallback callback);
@@ -1581,7 +1581,7 @@ ACPAnalytics.SetVisitorIdentifier("VisitorIdentifier");
 {% tab title="Xamarin" %}
 ### C\#
 
-**syntax**
+**Syntax**
 
 ```csharp
 public static void SetVisitorIdentifier (string visitorIdentifier);
@@ -1591,7 +1591,7 @@ public static void SetVisitorIdentifier (string visitorIdentifier);
 
 ### Android
 
-**syntax**
+**Syntax**
 
 ```csharp
 public unsafe static void SetVisitorIdentifier (string visitorID);
