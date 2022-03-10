@@ -186,7 +186,7 @@ ACPCore.lifecycleStart(["state": "appResume"])
 {% tab title="React Native" %}
 #### JavaScript
 
-When using React Native, starting to collect lifecycle data should be done in native code which is shown under the Android and iOS(ACP 2.x) tabs.
+When using React Native, starting to collect lifecycle data should be done in native code which is shown under the Android and iOS (ACP 2.x) tabs.
 
 {% endtab %}
 
@@ -322,7 +322,7 @@ ACPCore.lifecyclePause()
 {% tab title="React Native" %}
 #### JavaScript
 
-When using React Native, pausing the collection of lifecycle data should be done in native code which is shown under the Android and iOS(ACP 2.x) tabs.
+When using React Native, pausing the collection of lifecycle data should be done in native code which is shown under the Android and iOS (ACP 2.x) tabs.
 
 {% endtab %}
 
