@@ -19,7 +19,7 @@ For more detailed instructions on implementing and using a MessagingDelegate, pl
 
 In the `shouldShowMessage` function of the `MessagingDelegate`, call [`handleJavascriptMessage(_:withHandler)`](./class-message.md#handlejavascriptmessage_withhandler) to register your handler.
 
-The name of the message you intend to pass from the Javascript side should be specified in the first parameter.
+The name of the message you intend to pass from the JavaScript side should be specified in the first parameter.
 
 The below example shows a handler that dispatches an `inapp.interact` Experience Event natively when the JavaScript of the in-app message posts a `myInappCallback` message:
 

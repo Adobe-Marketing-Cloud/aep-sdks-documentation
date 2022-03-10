@@ -46,13 +46,13 @@ Swift
 /// UI Message delegate which is used to listen for current message lifecycle events
 @objc(AEPMessagingDelegate)
 public protocol MessagingDelegate {
-    /// Invoked when the any message is displayed
+    /// Invoked when any message is displayed
     /// - Parameters:
     ///     - message: UIMessaging message that is being displayed
     @objc
     func onShow(message: Showable)
 
-    /// Invoked when the any message is dismissed
+    /// Invoked when any message is dismissed
     /// - Parameters:
     ///     - message: UIMessaging message that is being dismissed
     @objc
@@ -86,7 +86,7 @@ public protocol MessagingDelegate {
 {% tabs %}
 {% tab title="iOS" %}
 
-Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object.  In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, which is the primary way for the developer to interact with the message.
+Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object. In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, which is the primary way for the developer to interact with the message.
 
 To get a reference to the `Message` object:
 

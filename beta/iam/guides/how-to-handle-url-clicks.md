@@ -4,7 +4,7 @@ When a link is clicked in an in-app message, the `FullscreenMessageDelegate` is 
 
 If the scheme used in the link **is not** `adbinapp://`, the link will open in the containing WebView (default behavior).
 
-If the scheme used in the link **is** `adbinapp://`, the link following behavior may occur:
+If the scheme used in the link **is** `adbinapp://`, the following behavior may occur:
 
 * The in-app message is dismissed
 * An interaction event is sent to Experience Edge
@@ -24,7 +24,7 @@ adbinapp://dismiss
 
 ### Send a message interaction event to Experience Edge
 
-Adding a URL variable named `interaction` will cause the SDK to send an experience event to the Adobe Experience Edge.
+Adding a URL variable named `interaction` will cause the SDK to send an Experience Event to the Adobe Experience Edge.
 
 The example below will dismiss the current in-app message and send an `inapp.interact` event to edge with an action of `imageLiked`:
 

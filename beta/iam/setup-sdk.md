@@ -39,7 +39,7 @@ import AEPEdgeIdentity
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // optionally enable debug logging
+        // optionally enable trace logging
         MobileCore.setLogLevel(.trace)
 
         // create a list of extensions that will be registered

@@ -3,7 +3,7 @@
 ### Configure the datastream
 
 * To create the datastream, please follow the [tutorial on creating a datastream](./../../getting-started/configure-datastreams.md)
-* In the screenshot below select the dataset containing the `pushNotificationTracking` field group in the `Profile Dataset` dropdown
+* In the `Profile Dataset` dropdown, select a profile-enabled dataset based on the XDM ExperienceEvent schema that contains the `pushNotificationTracking` field group
 
 ![Datastream](./../../.gitbook/assets/edge-config.png)
 
