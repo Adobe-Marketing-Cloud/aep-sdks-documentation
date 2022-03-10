@@ -446,7 +446,7 @@ using Com.Adobe.Marketing.Mobile;
 {% tab title="React Native" %}
 **Registering the extension with Core:**
 
-When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS(ACP 2.x) tabs.
+When using React Native, registering Lifecycle with Mobile Core should be done in native code which is shown under the Android and iOS (ACP 2.x) tabs.
 
 {% endtab %}
 
