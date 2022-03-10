@@ -1,8 +1,8 @@
 # Tutorials
 
-## Implementing Experience Cloud solutions in Mobile Android and iOS Swift applications
+## Implement Experience Cloud in mobile applications
 
-This sections provides a starting point for mobile application developers who want to learn how to implement Adobe Experience Cloud solutions in their applications. You can complete the following sample Swift or Android tutorials to learn about implementing Experience Cloud in a controlled environment:
+This tutorial guides you through the implementation of the Platform Mobile SDK in a sample retail app called Luma. The Luma app has functionality that lets you build a realistic implementation. The lessons are designed for iOS and written in Swift, but many of the concepts also apply to Android.
 
 * [Implement the Experience Cloud in mobile apps](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/overview.html)
 
