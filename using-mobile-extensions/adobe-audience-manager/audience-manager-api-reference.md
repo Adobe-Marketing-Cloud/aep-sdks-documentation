@@ -221,9 +221,9 @@ The `getVisitorProfileWithCompletionHandler` method was added in ACPAudience ver
 **Syntax**
 
 ```swift
-func getVisitorProfile(_ callback: @escaping ([AnyHashable : Any]?) -> Void)
+static func getVisitorProfile(_ callback: @escaping ([AnyHashable : Any]?) -> Void)
 
-func getVisitorProfile(completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
+static func getVisitorProfile(completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
 
 ```
 
@@ -341,7 +341,7 @@ MobileCore.registerExtension([Audience.self])
 **Syntax**
 
 ```swift
-func registerExtension()
+static func registerExtension()
 ```
 
 **Example**
@@ -444,7 +444,7 @@ The `reset` API resets the Audience Manager UUID and purges the current visitor 
 **Syntax**
 
 ```swift
-func reset()
+static func reset()
 ```
 
 **Example**
@@ -588,9 +588,9 @@ The `signalWithData:withCompletionHandler` method was added in ACPAudience versi
 **Syntax**
 
 ```swift
-func signal(withData data: [String : String]?, callback: (([AnyHashable : Any]?) -> Void)? = nil)
+static func signal(withData data: [String : String]?, callback: (([AnyHashable : Any]?) -> Void)? = nil)
 
-func signal(withData data: [String : String], withCompletionHandler completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
+static func signal(withData data: [String : String], withCompletionHandler completionHandler: @escaping ([AnyHashable : Any]?, Error?) -> Void)
 ```
 
 **Example**
