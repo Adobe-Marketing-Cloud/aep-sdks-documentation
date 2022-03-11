@@ -1,5 +1,11 @@
 # Release Notes
 
+## March 11, 2022
+
+### Android Edge 1.3.1
+
+* Updates timestamp in Experience Events to use fractional seconds. 
+
 ## January 21, 2022
 
 ### iOS AEPEdge 1.3.0

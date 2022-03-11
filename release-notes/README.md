@@ -4,6 +4,24 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## March 11, 2022
+
+### Android Core 1.10.1
+
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
+
+### Android Lifecycle 1.1.1
+
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
+
+### Android Edge 1.3.1
+
+* Updates timestamp in Experience Events to use fractional seconds. 
+
+### Android Consent 1.0.1
+
+* Updates timestamp in Consent requests to use fractional seconds.
+
 ## March 4, 2022
 
 ### ACP Xamarin frameworks
