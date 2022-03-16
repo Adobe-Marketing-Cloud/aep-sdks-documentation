@@ -408,7 +408,7 @@ The `startSession` API needs to be called to begin a Project Griffon session. Wh
 {% hint style="info" %}
 The AEP Assurance Android extension does not require this API to be called since it registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
-For AEP Assurance iOS extension, you should call this API when the app launches with a url \(see code snippet below for sample usage\).
+When using the AEP Assurance iOS extension, you should call this API when the app launches with a url (see code snippet below for sample usage).
 {% endhint %}
 
 {% tabs %}

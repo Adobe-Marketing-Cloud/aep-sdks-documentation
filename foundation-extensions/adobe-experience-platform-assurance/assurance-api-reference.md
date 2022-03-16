@@ -7,7 +7,7 @@ Returns the current version of the AEP Assurance extension
 {% tabs %}
 {% tab title="Android" %}
 
-#### Java
+### Java
 
 **Syntax**
 
@@ -24,7 +24,7 @@ Assurance.extensionVersion()
 
 {% tab title="iOS" %}
 
-#### Swift
+### Swift
 
 **Example**
 
@@ -32,7 +32,7 @@ Assurance.extensionVersion()
 AEPAssurance.extensionVersion()
 ```
 
-#### Objective-C
+### Objective-C
 
 **Syntax**
 
@@ -49,7 +49,7 @@ AEPAssurance.extensionVersion()
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 **Example**
 
@@ -59,7 +59,8 @@ AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+
+### Dart
 
 **Syntax**
 
@@ -95,7 +96,7 @@ AEPAssurance.extensionVersion(function(version) {
 
 {% tab title="Unity" %}
 
-#### C\#
+### C\#
 
 **Syntax**
 
@@ -112,7 +113,7 @@ print(LOG_TAG + "Assurance version: "+version);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
 **Example**
 
@@ -137,7 +138,7 @@ This API is optional for Android.
 
 Android does not require this API to be called. When the `registerExtension` API is called, AEP Assurance extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
-#### Java
+### Java
 
 **Syntax**
 
@@ -154,7 +155,7 @@ public static void startSession(final String url)
 
 {% tab title="iOS" %}
 
-#### Swift
+### Swift
 
 **Example**
 
@@ -175,7 +176,7 @@ For SceneDelegate based applications
     }
 ```
 
-#### Objective-C
+### Objective-C
 
 **Syntax**
 
@@ -195,7 +196,7 @@ For SceneDelegate based applications
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
 
 **Example**
 
@@ -205,7 +206,7 @@ AEPAssurance.startSession("your-griffon-session-url");
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
 **Syntax**
 
@@ -241,7 +242,7 @@ AEPAssurance.startSession(url,function(result) {
 
 {% tab title="Unity" %}
 
-#### C#
+### C#
 
 **Syntax**
 
@@ -257,7 +258,7 @@ AEPAssurance.StartSession(url);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C#
+### C#
 
 ```text
 AEPAssurance.StartSession(url);
