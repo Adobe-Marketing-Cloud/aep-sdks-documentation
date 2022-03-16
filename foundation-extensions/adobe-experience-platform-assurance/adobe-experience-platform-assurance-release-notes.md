@@ -16,6 +16,40 @@ Release notes and change logs for the Adobe Experience Platform Assurance extens
 * Improved logging for troubleshooting.
 * Fixed an issue to ensure that event collection stops on session disconnection.
 
+## January 14, 2022
+
+### Flutter Assurance 2.0.1
+
+- Updated the package to reference the Android library from Maven Central Repository.
+- Migrated to the new Android APIs based on [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html).
+
+## September 14, 2021
+
+### Xamarin Assurance iOS 1.0.0
+
+- iOS Assurance framework updated to 1.1.3
+
+### Xamarin Assurance Android 1.0.0
+
+- Android Assurance framework updated to 1.0.3
+
+## August 23, 2021
+
+### React Native Assurance 2.0.0
+
+This major release introduces support for following:
+
+- Support for React Native version 0.60.+
+- Auto linking for native dependencies and removal of the bundled SDK binaries (XCFramework) from the React Native module.
+- Dynamic versions for native dependencies to always load the latest SDK.
+- Removal of registerExtension Javascript API.
+
+## August 18, 2021
+
+### Flutter Assurance 2.0.0
+
+- Updated to support Flutter 2.0 and null safety.
+
 ## June 28, 2021
 
 ### iOS AEPAssurance 3.0.0
@@ -97,4 +131,3 @@ Release notes and change logs for the Adobe Experience Platform Assurance extens
 ### Android Assurance 1.0.0
 
 * General availability and release of [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) that enables capabilities of [Project Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
-
