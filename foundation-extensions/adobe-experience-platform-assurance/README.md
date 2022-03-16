@@ -15,7 +15,7 @@ To get started with [Project Griffon](../../beta/project-griffon/) in your app, 
 
 ## Install the AEP Assurance extension in the Data Collection UI
 
-Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection/) and select mobile property:
+Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection/) and select your mobile property:
 
 1. In the Data Collection UI, click the **Extensions** tab.
 2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
@@ -37,7 +37,7 @@ Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/
    implementation 'com.adobe.marketing.mobile:assurance:1+'
    ```
 
-2. Import the Assurance library with the other Mobile SDK libraries:
+2. Import the Assurance library along with the other Mobile SDK libraries:
 
    ```java
    import com.adobe.marketing.mobile.Assurance;
@@ -49,8 +49,8 @@ Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/
 Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
 
 ```pod
-pod 'AEPCore','~>3.0'
-pod 'AEPAssurance','~>3.0'
+pod 'AEPCore','~> 3.0'
+pod 'AEPAssurance','~> 3.0'
 ```
 
 Import the Assurance extension along with the other Adobe Mobile SDK extensions:
@@ -265,7 +265,7 @@ To start using the extension library, you must first register the extension with
     NSArray *extensionsToRegister = @[AEPMobileAssurance.class, ...];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
         // set app id from the Data Collection UI
-				[AEPMobileCore configureWithAppId: @"yourAppId"];
+        [AEPMobileCore configureWithAppId: @"yourAppId"];
     }];
 
     return YES;
@@ -406,11 +406,9 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-Android does not require this API to be called. The AEP Assurance Android extension registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
-{% endhint %}
+The AEP Assurance Android extension does not require this API to be called since it registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
-{% hint style="info" %}
-You may call this API when the app launches with a url \(see code snippet below for sample usage\)
+For AEP Assurance iOS extension, you should call this API when the app launches with a url \(see code snippet below for sample usage\).
 {% endhint %}
 
 {% tabs %}
@@ -500,7 +498,7 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        AEPAssurance.startSession((URLContexts.first!).url)
+    AEPAssurance.startSession((URLContexts.first!).url)
 }
 ```
 #### Objective-C
