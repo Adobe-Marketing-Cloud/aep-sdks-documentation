@@ -349,7 +349,7 @@ Some example use cases for this API are:
 
 This API is not recommended for:
 * Resetting a user's consent and privacy settings; see [Privacy and GDPR](../../resources/privacy-and-gdpr.md).
-* Removing existing custom identifiers, use [`removeIdentity`](#removeidentity) API instead.
+* Removing existing custom identifiers; use [`removeIdentity`](#removeidentity) API instead.
 * Removing a previously synced advertising identifier after the advertising tracking settings were changed by the user; use [`setAdvertisingIdentifier`](../mobile-core/identity/identity-api-reference.md#setadvertisingidentifier) API instead.
 
 
