@@ -357,7 +357,7 @@ This API is not recommended for:
 The Identity for Edge Network extension does not read the Mobile SDK's privacy status, and therefore setting the SDK's privacy status to opt-out will not automatically clear the identities from the Identity for Edge Network extension.
 {% endhint %}
 
-See [MobileCore.resetIdentities](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
+See [`MobileCore.resetIdentities`](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
 ## updateIdentities
 
