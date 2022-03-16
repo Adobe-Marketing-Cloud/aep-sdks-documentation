@@ -113,8 +113,8 @@ MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 
 **Syntax**
 
-```swift
- static func configureWith(appId: String)
+```objectivec
++ (void) configureWithAppId: (NSString* appId);
 ```
 
 **Example**
