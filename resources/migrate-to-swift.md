@@ -55,24 +55,13 @@ Once the previous command is complete, run `pod install` or `pod update` to upda
 
 #### Swift Package Collection
 
-In Swift 5.5, the Swift Package Manager (SPM) adds support for [package collections](https://www.swift.org/blog/package-collections). You can configure package collection in Xcode 13 for easy installation of AEP SDKs. 
+In Swift 5.5, the Swift Package Manager (SPM) adds support for [package collections](https://www.swift.org/blog/package-collections). You can configure package collection in Xcode 13 for easy installation of AEP SDKs. The Swift package collection for the Adobe Experience Platform SDKs is available at the [Adobe Open Source site](https://opensource.adobe.com/aepsdk-core-ios/swift/packages/aep.json).
 
-Swift Package Collection for AEP SDKs is available at 
-```
-  https://opensource.adobe.com/aepsdk-core-ios/swift/packages/aep.json
-```
-
-To add Swift Package Collection, from the Xcode 13 menu select: 
-
-```
-File > Add Packages...
-```
-
-Now, click on the plus sign on the bottom left and click "Add Swift Package Collection".
+To add the Swift package collection in Xcode 13, select File followed by Add Packages", selecting the plus sign on the bottom left and choosing "Add Swift Package Collection"
 
 ![](../.gitbook/assets/spm-add-package-collection.png)
 
-Next, enter the package collection url and click "Load". After the package collection has loaded, click "Add Collection" to add the collection.
+Next, enter the package collection URL and click "Load". After the package collection has loaded, click "Add Collection" to add the collection.
 
 ![](../.gitbook/assets/spm-add-package-collection-load.png)
 
@@ -89,7 +78,7 @@ To add the AEP SDK Packages to your application, from the Xcode 13 menu select:
 File > Add Packages...
 ```
 
-If you have configured package collection as mentioned above, simply select each package you would like to add to your project and click "Add Package" on the bottom right.
+If you have configured package collection as mentioned above, select each package you would like to add to your project and click "Add Package" on the bottom right.
 
 If not, enter the Package URL for the AEP SDK repositories: 
 
