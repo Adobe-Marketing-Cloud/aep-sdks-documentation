@@ -23,7 +23,7 @@ String campaignClassicExtensionVersion = CampaignClassic.extensionVersion();
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
 
 {% endtab %}
 
@@ -85,31 +85,31 @@ public static void registerDevice(final String token, final String userKey, fina
 public void onNewToken(String token) {
     Log.d("TestApp", "Refreshed token: " + token);
 
-    // If you want to send messages to this application instance or
-    // manage this app's subscriptions on the server side, send the
-    // Instance ID token to your app server.
-    if (token != null) {
-                Log.d("TestApp", "FCM SDK registration token received : " + token);
-                // Create a map of additional parameters
-                Map<String, Object> additionalParams = new HashMap<String, Object>();
-                additionalParams.put("name", "John");
-                additionalParams.put("serial", 12345);
-                additionalParams.put("premium", true);
-                // Send the registration info
-                CampaignClassic.registerDevice(token, "john@example.com",additionalParams,new AdobeCallback<Boolean>() {
-                    @Override
-                    public void call(final Boolean status) {
-                        Log.d("TestApp", "Registration Status: " + status);
-                    }
-                });
+  // If you want to send messages to this application instance or
+  // manage this app's subscriptions on the server side, send the
+  // Instance ID token to your app server.
+  if (token != null) {
+    Log.d("TestApp", "FCM SDK registration token received : " + token);
+    // Create a map of additional parameters
+    Map<String, Object> additionalParams = new HashMap<String, Object>();
+    additionalParams.put("name", "John");
+    additionalParams.put("serial", 12345);
+    additionalParams.put("premium", true);
+    // Send the registration info
+    CampaignClassic.registerDevice(token, "john@example.com", additionalParams,new AdobeCallback<Boolean>() {
+      @Override
+      public void call(final Boolean status) {
+        Log.d("TestApp", "Registration Status: " + status);
       }
+    });
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
 
 {% endtab %}
 
@@ -132,14 +132,15 @@ func registerDevice(_ token: Data, userKey: String?, additionalParams: [String: 
 
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let params: [String: Any] = [
-            "name": "John",
-            "serial": 12345,
-            "premium": true
-        ]
-        ACPCampaignClassic.registerDevice(deviceToken, userKey: "john@example.com", additionalParams: params) { result in
-            print("Registration status: \(result)")
-        }
+  let params: [String: Any] = [
+    "name": "John",
+    "serial": 12345,
+    "premium": true
+  ]
+  ACPCampaignClassic.registerDevice(deviceToken, userKey: "john@example.com", additionalParams: params) { 
+    result in
+    print("Registration status: \(result)")
+  }
 }
 ```
 
@@ -191,26 +192,26 @@ public static void trackNotificationClick(final Map<String, String> trackInfo)
 ```java
 @Override
 public void onResume() {
-    super.onResume();
-    // Perform any other app related tasks 
-    // The messageId (_mId) and deliveryId (_dId) can be passed in the intent extras.
-    // This is assuming you extract the messageId and deliveryId from the
-    // received push message and are including it in the intent (intent.putExtra())
-    // of the displayed notification.
+  super.onResume();
+  // Perform any other app related tasks 
+  // The messageId (_mId) and deliveryId (_dId) can be passed in the intent extras.
+  // This is assuming you extract the messageId and deliveryId from the
+  // received push message and are including it in the intent (intent.putExtra())
+  // of the displayed notification.
 
-    Bundle extras = getIntent().getExtras();
-    if (extras != null) {
-        String deliveryId = extras.getString("_dId");
-        String messageId = extras.getString("_mId");
-        if (deliveryId != null && messageId != null) {
-            Map<String,String> trackInfo = new HashMap<>();
-            trackInfo.put("_mId", messageId);
-            trackInfo.put("_dId", deliveryId);
+  Bundle extras = getIntent().getExtras();
+  if (extras != null) {
+    String deliveryId = extras.getString("_dId");
+    String messageId = extras.getString("_mId");
+    if (deliveryId != null && messageId != null) {
+      Map<String,String> trackInfo = new HashMap<>();
+      trackInfo.put("_mId", messageId);
+      trackInfo.put("_dId", deliveryId);
 
-            // Send the tracking information for message opening
-            CampaignClassic.trackNotificationClick(trackInfo);
-        }
+      // Send the tracking information for message opening
+      CampaignClassic.trackNotificationClick(trackInfo);
     }
+  }
 }
 ```
 
@@ -218,12 +219,12 @@ public void onResume() {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
 
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-{% hint style="info"}
+{% hint style="info" %}
 You can pass the `launchOptions` that were received upon opening the application or `userInfo`, which contains the received push payload in `trackInfo`. If `trackInfo` is null or does not contain the necessary tracking identifiers, `broadlogId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
 {% endhint %}
 
@@ -239,11 +240,11 @@ func trackNotificationClick(_ trackInfo: [String: String])
 
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-      guard let userInfo = response.notification.request.content.userInfo as? [String: String] else {
-          return;
-      }
-      ACPCampaignClassic.trackNotificationClick(userInfo);
-      completionHandler();
+  guard let userInfo = response.notification.request.content.userInfo as? [String: String] else {
+    return;
+  }
+  ACPCampaignClassic.trackNotificationClick(userInfo);
+  completionHandler();
 }
 ```
 
@@ -260,10 +261,10 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 ```objectivec
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler
 {
-    NSLog(@"User Info : %@",response.notification.request.content.userInfo);
-    // Track action selected by the user for a given notification
-    [ACPCampaignClassic             trackNotificationClick:response.notification.request.content.userInfo];
-completionHandler();
+  NSLog(@"User Info : %@",response.notification.request.content.userInfo);
+  // Track action selected by the user for a given notification
+  [ACPCampaignClassic trackNotificationClick:response.notification.request.content.userInfo];
+  completionHandler();
 }
 ```
 
@@ -291,28 +292,28 @@ public static void trackNotificationReceive(final Map<String, String> trackInfo)
 
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-    @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d("TestApp", "Receive message from: " + remoteMessage.getFrom());
-        Map<String,String> payloadData = message.getData();
+  @Override
+  public void onMessageReceived(RemoteMessage remoteMessage) {
+    Log.d("TestApp", "Receive message from: " + remoteMessage.getFrom());
+    Map<String,String> payloadData = message.getData();
 
-        // Check if message contains data payload.
-        if (payloadData.size() > 0) {
-            Map<String,String> trackInfo = new HashMap<>();
-            trackInfo.put("_mId", payloadData.get("_mId"));
-            trackInfo.put("_dId", payloadData.get("_dId"));
+    // Check if message contains data payload.
+    if (payloadData.size() > 0) {
+      Map<String,String> trackInfo = new HashMap<>();
+      trackInfo.put("_mId", payloadData.get("_mId"));
+      trackInfo.put("_dId", payloadData.get("_dId"));
 
-            // Send the tracking information for message received
-            CampaignClassic.trackNotificationReceive(trackInfo);
-        }
+      // Send the tracking information for message received
+      CampaignClassic.trackNotificationReceive(trackInfo);
     }
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
 
 {% endtab %}
 
@@ -333,7 +334,17 @@ func trackNotificationReceive(_ trackInfo: [String: String])
 **Example**
 
 ```swift
-ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
+func application(_ application: UIApplication, didReceiveRemoteNotification launchOptions: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+  if launchOptions != nil {
+    print("launchOptions: \(launchOptions.description)")
+  }
+  // Tracking silent push notification receive
+  if (launchOptions["aps"]["content-available"] as? NSNumber).intValue == 1 {
+    print("Silent Push Notification")
+    ACPCampaignClassic.trackNotificationReceive(launchOptions)
+    completionHandler(UIBackgroundFetchResultNoData)
+  }
+}
 ```
 
 ### Objective-C
@@ -349,13 +360,13 @@ ACPCampaignClassic.trackNotificationReceive(trackInfo[String:String])
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)launchOptions fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
 {
-    if ( launchOptions) NSLog(@"launchOptions: %@", [launchOptions description]);
-    // Tracking silent push notification receive
-    if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
-        NSLog(@"Silent Push Notification");
-        [ACPCampaignClassic trackNotificationReceive:launchOptions];
-        completionHandler(UIBackgroundFetchResultNoData);
-    }
+  if ( launchOptions) NSLog(@"launchOptions: %@", [launchOptions description]);
+  // Tracking silent push notification receive
+  if ( [launchOptions[@"aps"][@"content-available"] intValue] == 1 ) {
+    NSLog(@"Silent Push Notification");
+    [ACPCampaignClassic trackNotificationReceive:launchOptions];
+    completionHandler(UIBackgroundFetchResultNoData);
+  }
 }
 ```
 

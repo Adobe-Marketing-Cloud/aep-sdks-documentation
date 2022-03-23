@@ -55,7 +55,7 @@ The following key-value pairs are used in this event:
 
 | Key | Value Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `trackClick` | Boolean | Yes | Populated when `trackNotificationClick` API is called. |
+| `trackClick` | Boolean | Yes | A boolean value populated when `trackNotificationClick` API is called. |
 | `trackInfo` | StringMap | Yes | A map containing tracking identifiers that were received in the message payload. |
 
 The `trackNotificationClick` parameters are also sent in the event, as described below:
@@ -76,7 +76,7 @@ The following key-value pairs are used in this event:
 
 | Key            | Value Type | Required | Description                                                  |
 | :------------- | :--------- | :------- | :----------------------------------------------------------- |
-| `trackReceive` | Boolean    | Yes      | This value is populated when `trackNotificationReceive` API is called. |
+| `trackReceive` | Boolean    | Yes      | A boolean value populated when `trackNotificationReceive` API is called. |
 | `trackInfo`    | StringMap  | Yes      | A map containing the tracking identifiers received in the message payload. |
 
 The `trackNotificationReceive` parameters are also sent in the event, as described below:
@@ -125,7 +125,7 @@ The following key-value pair is used in this event:
 
 | **Key** | **Value Type** | **Optional** | **Description** |
 | :--- | :--- | :--- | :--- |
-| `registrationstatus` | Boolean | Yes | A boolean containing the registration request success status |
+| `registrationstatus` | Boolean | Yes | A boolean value containing the registration request success status |
 
 #### Event data example
 
