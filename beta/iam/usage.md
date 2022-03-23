@@ -23,5 +23,11 @@ Messaging.refreshInAppMessages()
 
 {% tab title="Android" %}
 
+Java
+
+```java
+Messaging.refreshInAppMessages();
+```
+
 {% endtab %}
 {% endtabs %}

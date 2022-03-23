@@ -2,12 +2,12 @@
 
 App developers can now implement a `MessagingDelegate` in order to be alerted when specific events occur during the lifecycle of an in-app message.
 
+{% tabs %}
+{% tab title="iOS" %}
+
 ### Register the delegate with MobileCore
 
 The `MobileCore` framework maintains an optional property that holds reference to the `MessagingDelegate`.
-
-{% tabs %}
-{% tab title="iOS" %}
 
 Swift
 
@@ -30,13 +30,31 @@ MobileCore.messagingDelegate = myMessagingDelegate
 
 {% tab title="Android" %}
 
+### Register the delegate with the Adobe Service Provider
+
+The `ServiceProvider` class maintains an optional property that holds reference to the `FullscreenMessaageDelegate`.
+
+Java
+
+```java
+// defined in public class ServiceProvider 
+public void setMessageDelegate(FullscreenMessageDelegate messageDelegate)
+```
+
+Java
+
+```java
+CustomDelegate myMessagingDelegate = new CustomDelegate();
+ServiceProvider.getInstance().setMessageDelegate(myMessagingDelegate);
+```
+
 {% endtab %}
 {% endtabs %}
 
-### MessagingDelegate protocol
-
 {% tabs %}
 {% tab title="iOS" %}
+
+### MessagingDelegate protocol (iOS)
 
 The `MessagingDelegate` protocol, which is implemented in the `AEPServices` framework, is defined below:
 
@@ -78,13 +96,62 @@ public protocol MessagingDelegate {
 
 {% tab title="Android" %}
 
+### FullscreenMessageDelegate interface (Android)
+
+The `FullscreenMessageDelegate` interface, which is implemented in the Android Messaging extension in the `MessagingDelegate` class, is defined below:
+
+Java
+
+```java
+/**
+ * Delegate for Messaging extension in-app message events.
+ */
+public interface FullscreenMessageDelegate {
+	/**
+	 * Invoked when the in-app message is displayed.
+	 *
+	 * @param message FullscreenMessage the in-app message being displayed
+	 */
+	void onShow(final FullscreenMessage message);
+
+	/**
+	 * Invoked when the in-app message is dismissed.
+	 *
+	 * @param message FullscreenMessage the in-app message being dismissed
+	 */
+	void onDismiss(final FullscreenMessage message);
+
+	/**
+	 * Used to determine if the in-app message should be shown.
+	 *
+	 * @param message FullscreenMessage the in-app message that is about to get displayed
+	 */
+	boolean shouldShowMessage(final FullscreenMessage message);
+
+	/**
+	 * Invoked when the in-app message is attempting to load a url.
+	 *
+	 * @param message FullscreenMessage the in-app message attempting to load the url
+	 * @param url     String the url being loaded by the message
+	 *
+	 * @return True if the core wants to handle the URL (and not the fullscreen message view implementation)
+	 */
+	boolean overrideUrlLoad(final FullscreenMessage message, final String url);
+
+	/**
+	 * Invoked when the in-app message failed to be displayed.
+	 */
+	void onShowFailure();
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
-### Using the Showable object in the protocol methods
-
 {% tabs %}
 {% tab title="iOS" %}
+
+### Using the Showable object in the protocol methods
 
 Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object. In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, which is the primary way for the developer to interact with the message.
 
@@ -108,6 +175,22 @@ func onShow(message: Showable) {
 {% endtab %}
 
 {% tab title="Android" %}
+
+### Retrieving the Message object from the implemented interface methods
+
+The user interface methods (except for `onShowFailure()`) in a `FullscreenMessageDelegate` implementation will be passed an `AEPMessage` object. An `AEPMessage` object is the Android Core implementation of the  `FullscreenMessage` interface. It contains a reference to the parent `Message` class and is the primary way for the developer to interact with the message.
+
+A reference to the `AEPMessage` object can be obtained by calling `fullscreenMessage.getParent()` . Below is an example of how to access the `Message` in the `onShow` delegate method:
+
+Java
+
+```java
+@Override
+public void onShow(FullscreenMessage fullscreenMessage) {
+  Message message = (Message) fullscreenMessage.getParent();
+  System.out.println("message was shown: " + message.id);
+}
+```
 
 {% endtab %}
 {% endtabs %}
@@ -165,6 +248,49 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% tab title="Android" %}
 
+If a custom  `FullscreenMessageDelegate` has been set in the `ServiceProvider`, this delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. The developer is responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
+
+Below is an example of when the developer may choose to suppress an in-app message due to the status of some other workflow within the app:
+
+Java
+
+```java
+@Override
+public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
+   if (someOtherWorkflowStatus == "inProgress") {
+        return false;
+    }
+    return true;
+}
+```
+
+Another option for the developer is to store a reference to the `FullscreenMessage` object, and call the `show()` method on it at a later time.
+
+Continuing with the above example, the developer has stored the message that was triggered initially, and chooses to show it upon completion of the other workflow:
+
+Java
+
+```java
+FullscreenMessage currentMessage = null;
+String anotherWorkflowStatus;
+
+public void otherWorkflowFinished() {
+    anotherWorkflowStatus = "complete";
+    currentMessage.show();
+}
+
+@Override
+public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
+   if (someOtherWorkflowStatus.equals("inProgress")) {
+     // store the current message for later use
+     currentMessage = fullscreenMessage;
+     return false
+   }
+  
+  return true
+}
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -199,6 +325,8 @@ func shouldShowMessage(message: Showable) -> Bool {
 {% endtab %}
 
 {% tab title="Android" %}
+
+Feature not yet available.
 
 {% endtab %}
 {% endtabs %}

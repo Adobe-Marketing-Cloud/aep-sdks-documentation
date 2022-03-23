@@ -17,6 +17,15 @@ pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git',
 
 {% tab title="Android (gradle)" %}
 
+In-app messages are enabled in Messaging SDK version `1.1.0` or newer. Libraries built from the staging branch will contain `beta` in the artifact name.
+
+The Messaging extension has a dependency on the Optimize extension. The Optimize extension aar can be placed in your app's `libs` directory and imported in the gradle file.
+
+```groovy
+implementation "com.adobe.marketing.mobile:messaging:1.1.0-beta-1"
+implementation fileTree(include: ['*.aar'], dir: 'libs')
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -63,6 +72,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 
 {% tab title="Android" %}
+
+Java
+
+```java
+import android.app.Application;
+
+import com.adobe.marketing.mobile.AdobeCallback;
+import com.adobe.marketing.mobile.Edge;
+import com.adobe.marketing.mobile.LoggingMode;
+import com.adobe.marketing.mobile.Messaging;
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.edge.identity.Identity;
+import com.adobe.marketing.mobile.optimize.Optimize;
+
+public class MainApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        MobileCore.setApplication(this);
+        MobileCore.setLogLevel(LoggingMode.VERBOSE);
+
+        try {
+            Messaging.registerExtension();
+            Optimize.registerExtension();
+            Identity.registerExtension();
+            Edge.registerExtension();
+
+            MobileCore.start(new AdobeCallback() {
+                @Override
+                public void call(Object o) {
+                    MobileCore.configureWithAppID("MY_APP_ID");
+                }
+            });
+        } catch (Exception e) {
+            //Log the exception
+        }
+    }
+}
+```
 
 {% endtab %}
 {% endtabs %}
