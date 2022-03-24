@@ -112,10 +112,16 @@ public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
   Message message = (Message) fullscreenMessage.getParent();
       
   WebView webView = message.view;
-  webView.evaluateJavascript("startTimer()", new ValueCallback<String>() {
+  // webview operations must be run on the ui thread
+  webView.post(new Runnable() {
     @Override
-    public void onReceiveValue(String s) {
-      // do something with the content
+    public void run() {
+      webView.evaluateJavascript("startTimer()", new ValueCallback<String>() {
+        @Override
+        public void onReceiveValue(String s) {
+          // do something with the content
+        }
+      });
     }
   });
   
