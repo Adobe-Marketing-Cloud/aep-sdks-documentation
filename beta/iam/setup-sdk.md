@@ -38,7 +38,7 @@ Import the AEPMessaging framework and its dependencies, then register the Messag
 
 In the `application(_: didFinishLaunchingWithOptions:)` method in the `AppDelegate`:
 
-Swift
+#### Swift
 
 ```swift
 import AEPMessaging
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 import android.app.Application;

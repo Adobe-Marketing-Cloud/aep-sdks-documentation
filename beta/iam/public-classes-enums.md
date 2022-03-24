@@ -13,7 +13,7 @@ Identifier of the `Message`. This value matches the Message Execution ID assigne
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public var id: String
@@ -23,7 +23,7 @@ public var id: String
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public String id;
@@ -39,7 +39,7 @@ If set to `true` (default), Experience Edge events will automatically be generat
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public var autoTrack: Bool = true
@@ -49,7 +49,7 @@ public var autoTrack: Bool = true
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public boolean autoTrack = true;
@@ -65,7 +65,7 @@ Holds a reference to the message's `WKWebView` (iOS) or `WebView` (Android) inst
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public var view: UIView? {
@@ -77,7 +77,7 @@ public var view: UIView? {
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public WebView view;
@@ -97,7 +97,7 @@ If `autoTrack` is true, calling this method will result in an "inapp.trigger" Ed
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public func show()
@@ -107,7 +107,7 @@ public func show()
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public void show()
@@ -125,7 +125,7 @@ If `autoTrack` is true, calling this method will result in an "inapp.dismiss" Ed
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public func dismiss(suppressAutoTrack: Bool? = false)
@@ -139,7 +139,7 @@ public func dismiss(suppressAutoTrack: Bool? = false)
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public void dismiss(final boolean suppressAutoTrack)
@@ -159,7 +159,7 @@ Generates and dispatches an Edge Event for the provided `interaction` and `event
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public func track(_ interaction: String?, withEdgeEventType eventType: MessagingEdgeEventType)
@@ -174,7 +174,7 @@ public func track(_ interaction: String?, withEdgeEventType eventType: Messaging
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public void track(final String interaction, final MessagingEdgeEventType eventType)
@@ -199,7 +199,7 @@ For a full guide on how to use `handleJavascriptMessage`, read [Call native code
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 public func handleJavascriptMessage(_ name: String, withHandler handler: @escaping (Any?) -> Void)
@@ -214,7 +214,7 @@ public func handleJavascriptMessage(_ name: String, withHandler handler: @escapi
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public void handleJavascriptMessage(final String name, final AdobeCallback<String> callback)
@@ -239,7 +239,7 @@ This enum is used in conjunction with the [`track(_:withEdgeEventType:)`](#track
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 @objc(AEPMessagingEdgeEventType)
@@ -274,7 +274,7 @@ public enum MessagingEdgeEventType: Int {
 
 {% tab title="Android" %}
 
-Java
+#### Java
 
 ```java
 public enum MessagingEdgeEventType {

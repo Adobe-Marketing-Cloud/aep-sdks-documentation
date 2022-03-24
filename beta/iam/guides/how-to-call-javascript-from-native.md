@@ -19,7 +19,7 @@ For more detailed instructions on implementing and using a MessagingDelegate, pl
 
 In the `shouldShowMessage` function of the `MessagingDelegate`, get a reference to the `WKWebView` used by the message.  
 
-Swift
+#### Swift
 
 ```swift
 func shouldShowMessage(message: Showable) -> Bool {
@@ -39,7 +39,7 @@ With a reference to the `WKWebView`, the instance method `evaluateJavaScript(_:c
 
 Further details of this API are explained in the [Apple documentation](https://developer.apple.com/documentation/webkit/wkwebview/1415017-evaluateJavaScript) - the example below is provided for the purpose of demonstration:
 
-Swift
+#### Swift
 
 ```swift
 func shouldShowMessage(message: Showable) -> Bool {
@@ -83,7 +83,7 @@ For more detailed instructions on implementing and using a MessagingDelegate, pl
 
 In the `shouldShowMessage` function of the `MessagingDelegate`, get a reference to the  `WebView` created for Javascript interactions.  
 
-Java
+#### Java
 
 ```java
 @Override
@@ -104,7 +104,7 @@ With a reference to the `WebView`, the instance method `public void evaluateJava
 
 Further details of this API are explained in the [Android documentation](https://developer.android.com/reference/android/webkit/WebView#evaluateJavascript(java.lang.String,%20android.webkit.ValueCallback%3Cjava.lang.String%3E)) - the example below is provided for the purpose of demonstration:
 
-Java
+#### Java
 
 ```java
 @Override
