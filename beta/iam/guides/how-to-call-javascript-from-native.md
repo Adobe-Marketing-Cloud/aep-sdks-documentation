@@ -89,7 +89,6 @@ In the `shouldShowMessage` function of the `MessagingDelegate`, get a reference 
 @Override
 public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
   // access to the whole message from the parent
-  this.currentMessage = fullscreenMessage;
   Message message = (Message) fullscreenMessage.getParent();
       
   WebView webView = message.view;
@@ -110,7 +109,6 @@ Further details of this API are explained in the [Android documentation](https:/
 @Override
 public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
   // access to the whole message from the parent
-  this.currentMessage = fullscreenMessage;
   Message message = (Message) fullscreenMessage.getParent();
       
   WebView webView = message.view;

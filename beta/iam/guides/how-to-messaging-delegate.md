@@ -271,7 +271,7 @@ Continuing with the above example, the developer has stored the message that was
 #### Java
 
 ```java
-FullscreenMessage currentMessage = null;
+Message currentMessage = null;
 String anotherWorkflowStatus;
 
 public void otherWorkflowFinished() {
@@ -283,11 +283,11 @@ public void otherWorkflowFinished() {
 public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
    if (someOtherWorkflowStatus.equals("inProgress")) {
      // store the current message for later use
-     currentMessage = fullscreenMessage;
-     return false
+     currentMessage = (Message) fullscreenMessage.getParent();
+     return false;
    }
   
-  return true
+  return true;
 }
 ```
 

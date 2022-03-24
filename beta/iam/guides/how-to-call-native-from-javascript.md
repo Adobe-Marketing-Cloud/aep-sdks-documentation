@@ -71,7 +71,6 @@ The following example shows a handler that dispatches an `inapp.interact` Experi
 ```java
 @Override
 public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
-  this.currentMessage = fullscreenMessage;
   Message message = (Message) fullscreenMessage.getParent();
   
   // in-line handling of JavaScript calls
