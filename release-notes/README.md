@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## March 30, 2022
+
+## End of support for Adobe Experience Platform Mobile SDK plugins for Unity
+
+* Effective March 30, 2022, support for Adobe Experience Platform Mobile SDKs on Unity is no longer active. While you may continue using our libraries, Adobe no longer plans to update, modify, or provide support for these libraries. Please contact your Adobe CSM for detail.
+
 ## March 11, 2022
 
 ### Android Core 1.10.1
