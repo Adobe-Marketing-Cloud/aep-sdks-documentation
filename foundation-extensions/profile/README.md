@@ -14,7 +14,19 @@ To get started with the Profile extension:
    * Update user attributes.
    * Remove user attributes.
 
-## Add Profile to your App
+## Install the Profile extension in the Data Collection UI
+
+1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Profile** extension, and select **Install**.
+3. There are no configuration settings for **Profile**.
+4. Select **Save**.
+5. Follow the publishing process to update SDK configuration.
+
+
+![AEP Profile extension configuration](../../.gitbook/assets/mobile-profile-launch-configuration.png)
+
+
+## Add the Profile extension to your app
 
 To add the Profile extension to your app:
 
@@ -25,38 +37,51 @@ To add the Profile extension to your app:
 1. Add the `UserProfile` library to your project using the app's gradle file.
 2. Import the `UserProfile` library and any other SDK library in your application's main activity.
 
-   ```text
+   ```java
    import com.adobe.marketing.mobile.*;
    ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
-1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'AEPUserProfile'`.
-2. Import the UserProfile library.  
-
-### Objective C
-
-```text
-  @import AEPUserProfile;
+{% tab title="iOS (AEP 3.x)" %}
+1. Add the Mobile Core and Profile extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+```ruby
+use_frameworks!
+target 'YourTargetApp' do
+    pod 'AEPCore', '~> 3.0'
+    pod 'AEPUserProfile', '~> 3.0'
+end
 ```
+2. Import the UserProfile library.  
 
 ### Swift
 
 ```swift
+   import AEPCore
    import AEPUserProfile
 ```
+
+### Objective-C
+
+```objectivec
+   @import AEPCore;
+   @import AEPUserProfile;
+```
+
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### Objective C
+{% tab title="iOS (ACP 2.x)" %}
 
-1. Add the UserProfile library to your project via your `Podfile` by adding `pod 'ACPUserProfile'`.
-2. Import the UserProfile and Identity library.   
+### Objective-C
 
-```text
-   #import "ACPCore.h"
-   #import "ACPUserProfile.h"
+1. Add the Mobile Core and Profile extensions to your project using Cocoapods. Add following pods in your `Podfile`:
+```ruby
+use_frameworks!
+target 'YourTargetApp' do
+    pod 'ACPCore'
+    pod 'ACPUserProfile'
+end
 ```
+2. Import the UserProfile library.   
 
 ### Swift
 
@@ -64,66 +89,46 @@ To add the Profile extension to your app:
    import ACPCore
    import ACPUserProfile
 ```
+
+### Objective-C
+
+```objectivec
+   #import "ACPCore.h"
+   #import "ACPUserProfile.h"
+```
+
 {% endtab %}
 
 {% tab title="Cordova" %}
 ### Cordova
 
-1. After creating your Cordova app and adding the Android and iOS platforms, the User Profile extension for Cordova can be added with this command:
-
-   ```text
-   cordova plugin add https://github.com/adobe/cordova-acpuserprofile.git
-   ```
-
-2. Get the extension version.
-
-   ```javascript
-   ACPUserProfile.extensionVersion(function(version) {  
-      console.log("ACPUserProfile version: " + version);
-   }, function(error) {  
-      console.log(error);  
-   });
-   ```
-{% endtab %}
-
-{% tab title="Flutter" %}
-### Flutter
-
-1. After creating your Flutter app and adding the Android and iOS platforms, the User Profile extension for flutter can be added in the `pubspec.yaml`:
-
-   ```yaml
-    dependencies:
-      flutter_acpcore: ">= 1.0.0"
-      flutter_acpuserprofile: ">= 1.0.0"
-   ```
-
-Then fetch the packages with:
+After creating your Cordova app and adding the Android and iOS platforms, the UserProfile extension for Cordova can be added with this command:
 
 ```bash
-flutter pub get
+cordova plugin add https://github.com/adobe/cordova-acpuserprofile.git
 ```
-
-1. Get the extension version.
-
-   ```dart
-   import 'package:flutter_acpuserprofile/flutter_acpuserprofile.dart';
-   String version = FlutterACPUserProfile.extensionVersion;
-   ```
-
-### Xamarin
-
-1. After adding the iOS or Android ACPUserProfile NuGet package, the User Profile extension for Xamarin can be added by this import statement:
-
-   ```csharp
-   using Com.Adobe.Marketing.Mobile;
-   ```
-
-2. Get the extension version.
-
-   ```csharp
-   ACPUserProfile.ExtensionVersion();
-   ```
 {% endtab %}
+
+{% tab title="Unity" %}
+### C\#
+
+After importing the [ACPUserProfile.unitypackage](https://github.com/adobe/unity-acpuserprofile/blob/master/bin/ACPUserProfile-0.0.1-Unity.zip), the UserProfile extension for Unity can be added with following code in the MainScript
+
+```csharp
+using com.adobe.marketing.mobile;
+```
+{% endtab %}
+
+{% tab title="Xamarin" %}
+### C\#
+
+After adding the iOS ACPUserProfile NuGet package or the Android ACPUserProfile NuGet package, the UserProfile extension can be added by this import statement
+
+```csharp
+using Com.Adobe.Marketing.Mobile;
+```
+{% endtab %}
+
 {% endtabs %}
 
 ## Register the extension
@@ -156,12 +161,20 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
-### Objective C
+{% tab title="iOS (AEP 3.x)" %}
 
-**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
+### Swift
 
-1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
+```swift
+// AppDelegate.swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    MobileCore.registerExtensions([UserProfile.self], {
+  })
+  ...
+}
+```
+
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -174,24 +187,23 @@ public class MobileApp extends Application {
 }
 ```
 
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
 ### Swift
 
 ```swift
-// AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([UserProfile.self], {
-  })
-  ...
+     ACPCore.configure(withAppId: "yourAppId")   
+     ACPUserProfile.registerExtension() 
+     ACPCore.start(nil)
+     // Override point for customization after application launch. 
+     return true;
 }
 ```
-{% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### Objective C
-
-**Required**: You must complete the following steps in the app before calling other `UserProfile` APIs.
-
-1. In your app's `didFinishLaunchingWithOptions` function register the `UserProfile` extension.
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -202,22 +214,55 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 
+{% tab title="React Native" %}
+### JavaScript
+
+When using React Native, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+{% endtab %}
+
 {% tab title="Cordova" %}
 ### Cordova
 
-When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Cordova, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
 ### Flutter
 
-When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
+When using Flutter, register Profile with Mobile Core in native code as shown on the Android and iOS tabs.
+{% endtab %}
+
+{% tab title="Unity" %}
+
+### C\#
+
+Register the extension in the `start()` function:
+
+```csharp
+using com.adobe.marketing.mobile;
+using using AOT;
+
+public class MainScript : MonoBehaviour
+{
+    [MonoPInvokeCallback(typeof(AdobeStartCallback))]
+    public static void HandleStartAdobeCallback()
+    {   
+        ACPCore.ConfigureWithAppID("yourAppId"); 
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {   
+        ACPUserProfile.registerExtension();
+        ACPCore.Start(HandleStartAdobeCallback);
+    }
+}
+```
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### Xamarin
 
-#### C\#
+### C\#
 
 **iOS**
 

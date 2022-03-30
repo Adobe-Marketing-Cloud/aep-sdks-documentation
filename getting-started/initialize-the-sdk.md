@@ -46,7 +46,7 @@ ExperienceEvent experienceEvent = new ExperienceEvent.Builder()
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 ```swift
@@ -87,7 +87,7 @@ Edge.sendEvent(experienceEvent, null);
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 ```swift
@@ -133,20 +133,55 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### trackAction <a id="example"></a>
+{% tab title="iOS (AEP 3.x)" %}
+
+### trackAction <a id="AEPExample"></a>
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func track(action: String?, data: [String: Any]?)
+```
+
+**Example**
+
+```swift
+MobileCore.track(action: "actionName", data: ["key": "value"])
+```
 
 #### Objective-C
 
 **Syntax**
 
-```text
+```swift
+@objc(trackAction:data:)
+static func track(action: String?, data: [String: Any]?)
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore trackAction:@"action name" data:@{@"key": @"value"}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### trackAction <a id="ACPExample"></a>
+
+#### Objective-C
+
+**Syntax**
+
+```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
 **Example**
 
-```text
+```objectivec
  [ACPCore trackAction:@"action name" data:@{@"key":@"value"}];
 ```
 
@@ -154,7 +189,7 @@ MobileCore.trackAction("loginClicked", additionalContextData);
 
 **Syntax**
 
-```text
+```objectivec
 + (void) trackAction: (nullable NSString*) action data: (nullable NSDictionary*) data;
 ```
 
@@ -271,8 +306,41 @@ MobileCore.trackState("homePage", additionalContextData);
 ```
 {% endtab %}
 
-{% tab title="iOS — Obj-C" %}
-### trackState <a id="example-1"></a>
+{% tab title="iOS (AEP 3.x)" %}
+
+### trackState <a id="aepExample"></a>
+
+#### Swift
+
+**Syntax**
+
+```swift
+static func track(state: String?, data: [String: Any]?) 
+```
+**Example**
+
+```swift
+MobileCore.track(state: "state name", data: ["key": "value"])
+```
+
+#### Objective-C
+
+**Syntax**
+
+```swift
+@objc(trackState:data:)
+static func track(state: String?, data: [String: Any]?) 
+```
+**Example**
+
+```objectivec
+[AEPMobileCore trackState:@"state name" data:@{@"key": @"value"}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### trackState <a id="acpExample"></a>
 
 #### Objective-C
 

@@ -1,43 +1,105 @@
 # Configuration
 
-The Configuration extension is built into the Mobile Core extension. It provides several different APIs for you to setup the configuration either remotely on Experience Platform Launch or locally.
+The Configuration extension is built into the Mobile Core extension. It provides several different APIs for you to setup the configuration either remotely in the Data Collection UI or locally.
 
-## Configure with the Experience Platform Launch App ID
+## Configure with App ID per environment
 
-Experience Platform Launch generates a unique environment ID that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
+When you configure a mobile property, a unique environment ID is generated that the SDK uses to retrieve your configuration. This ID is generated when an app configuration is created and published to a given environment. The app is first launched and then the SDK retrieves and uses this Adobe-hosted configuration.
 
 {% hint style="success" %}
-We strongly recommend that you configure the SDK with the Experience Platform Launch environment ID. Follow the steps in [Set up a mobile property](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/50f1aec2d1ab7760583a7ba8dcd97f3c265309f6/getting-started/create-a-mobile-property/README.md) if you need to create a new Experience Platform Launch App.
+As best practice, you should configure a mobile property in the Data Collection UI and use environment IDs to configure your application. Follow the steps in [Set up a mobile property](https://aep-sdks.gitbook.io/docs/getting-started/create-a-mobile-property) if you need to create a new Experience Platform App.
 {% endhint %}
 
 After the configuration is retrieved when the app is initially launched, the configuration is stored in local cache. The SDK tries to refresh the configuration every cold launch or when a new session is detected. If there is no change or a network request error occurs while downloading the configuration file, the cached configuration will be used.
 
-The unique environment ID provided by Experience Platform Launch can be configured with the SDK using the following:
+The unique environment ID from the Data Collection UI can be configured with the SDK using the following:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
+
+**Syntax**
 
 ```java
-MobileCore.ConfigureWithAppId("1423ae38-8385-8963-8693-28375403491d");
+public static void configureWithAppID(final String appId);
+```
+
+**Example**
+
+```java
+MobileCore.configureWithAppId("1423ae38-8385-8963-8693-28375403491d");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-#### Objective-C
+{% tab title="iOS (AEP 3.x)" %}
 
-```objectivec
-[ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
+### Swift
+
+**Syntax**
+
+```swift
+static func configureWith(appId: String)
 ```
 
-#### Swift
+**Example**
+
+```swift
+MobileCore.configureWith(appId: "1423ae38-8385-8963-8693-28375403491d")
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithAppId: (NSString* appId);
+```
+
+**Example**
+
+```objectivec
+[AEPMobileCore configureWithAppId: @"1423ae38-8385-8963-8693-28375403491d"];
+```
+
+{% hint style="info" %}
+Alternatively, you can also place the environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
+{% endhint %}
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+static func configure(withAppId: String)
+```
+
+**Example**
 
 ```swift
 ACPCore.configure(withAppId: "1423ae38-8385-8963-8693-28375403491d")
 ```
 
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithAppId: (NSString* __nullable) appid;
+```
+
+**Example**
+
+```objectivec
+[ACPCore configureWithAppId:@"1423ae38-8385-8963-8693-28375403491d"];
+```
+
+
 {% hint style="info" %}
-Alternatively, you can also place the Launch environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
+Alternatively, you can also place the environment ID in your iOS project's _Info.plist_ with the `ADBMobileAppID` key. When the SDK is initialized, the environment ID is automatically read from the _Info.plist_ file and the associated configuration.
 {% endhint %}
 {% endtab %}
 
@@ -48,7 +110,15 @@ When using Cordova, the `configureWithAppId` method call must be done in native 
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
+
+**Syntax**
+
+```csharp
+void ConfigureWithAppID([NullAllowed] string appid);
+```
+
+**Example**
 
 ```csharp
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
@@ -56,7 +126,15 @@ ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
+
+**Syntax**
+
+```csharp
+public static void ConfigureWithAppID(string appId);
+```
+
+**Example**
 
 ```csharp
 ACPCore.ConfigureWithAppID("1423ae38-8385-8963-8693-28375403491d");
@@ -78,7 +156,15 @@ Do not use this API to update the build.environment or any key with an environme
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
+
+**Syntax**
+
+```java
+public static void updateConfiguration(final Map<String, Object> configMap);
+```
+
+**Example**
 
 ```java
 HashMap<String, Object> data = new HashMap<String, Object>();
@@ -87,24 +173,83 @@ MobileCore.updateConfiguration(data);
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-#### Objective-C
+{% tab title="iOS (AEP 3.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+@objc(updateConfiguration:)
+static func updateConfigurationWith(configDict: [String: Any])
+```
+
+**Example**
+
+```swift
+let updatedConfig = ["global.privacy":"optedout"]
+MobileCore.updateConfigurationWith(configDict: updatedConfig)
+```
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+**Example**
+
+```objectivec
+NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
+[AEPMobileCore updateConfiguration:updatedConfig];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### Swift
+
+**Syntax**
+
+```swift
+static func updateConfiguration(_: [String: Any])
+```
+
+**Example**
+
+```swift
+let updatedConfig = ["global.privacy":"optedout"]
+ACPCore.updateConfiguration(updatedConfig)
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) updateConfiguration: (NSDictionary* __nullable) config;
+```
+
+**Example**
 
 ```objectivec
 NSDictionary *updatedConfig = @{@"global.privacy":@"optedout"};
 [ACPCore updateConfiguration:updatedConfig];
 ```
 
-#### Swift
-
-```swift
-let updatedConfig = ["global.privacy":"optedout"]
-ACPCore.updateConfiguration(updatedConfig)
-```
 {% endtab %}
 
 {% tab title="React Native" %}
-#### JavaScript
+### JavaScript
+
+**Syntax**
+
+```jsx
+updateConfiguration(configMap?: { string: any })
+```
+
+**Example**
 
 ```jsx
 ACPCore.updateConfiguration({"global.privacy":"optedout"});
@@ -112,15 +257,22 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Dart
+### Dart
 
+**Syntax**
+
+```dart
+static Future<void> updateConfiguration(Map<String, Object> configMap);
+```
+
+**Example**
 ```dart
 FlutterACPCore.updateConfiguration({"global.privacy":"optedout"});
 ```
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+### Cordova
 
 ```jsx
 ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallback) {
@@ -132,7 +284,15 @@ ACPCore.updateConfiguration({"global.privacy":"optedout"}, function(handleCallba
 {% endtab %}
 
 {% tab title="Unity" %}
-#### C\#
+### C\#
+
+**Syntax**
+
+```csharp
+public static void UpdateConfiguration(Dictionary<string, object> config);
+```
+
+**Example**
 
 ```csharp
 var dict = new Dictionary<string, object>();
@@ -142,9 +302,15 @@ ACPCore.UpdateConfiguration(dict);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
 
-**iOS**
+**Syntax**
+
+```csharp
+void UpdateConfiguration([NullAllowed] NSDictionary config);
+```
+
+**iOS Example**
 
 ```csharp
  var config = new NSMutableDictionary<NSString, NSObject>
@@ -154,7 +320,7 @@ ACPCore.UpdateConfiguration(dict);
 ACPCore.UpdateConfiguration(config);
 ```
 
-**Android**
+**Android Example**
 
 ```csharp
 var config = new Dictionary<string, Java.Lang.Object>();
@@ -164,13 +330,23 @@ ACPCore.UpdateConfiguration(config);
 {% endtab %}
 {% endtabs %}
 
+## Clearing programmatic updates to the configuration
+
+{% hint style="info" %}
+This API is only available in Android and iOS (AEP 3.x).
+{% endhint %}
+
+You can clear any programmatic updates made to the configuration via the `clearUpdatedConfiguration` API. This will clear programmatic updates to configuration made via the `updateConfiguration(configMap)`(Android)/ `updateConfigurationWith(configDict:)`(iOS) API. It will also clear any updates to the `MobilePrivacyStatus`(Android)/ `PrivacyStatus`(iOS)  made via `setPrivacyStatus(privacyStatus)`(Android)/ `setPrivacyStatus(_ status:)`(iOS).
+
+For implementation details, please refer to [Configuration API reference](../configuration-api-reference.md#clearUpdatedConfiguration).
+
 ## Using a bundled file configuration
 
-You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with Launch App ID](./#configure-with-launch-app-id) approach.
+You can include a bundled JSON configuration file in your app package to replace or complement the configuration that was downloaded by using the [Configure with App ID per environment](./#configure-with-app-id-per-environment) approach.
 
 To download the JSON configuration file, use the following URL:
 
-`https://assets.adobedtm.com/PASTE-LAUNCH-ENVIRONMENT-ID.json`
+`https://assets.adobedtm.com/PASTE-ENVIRONMENT-ID.json`
 
 * In iOS, the `ADBMobileConfig.json` file can be placed anywhere that it is accessible in your bundle.
 * In Android, the `ADBMobileConfig.json` file must be placed in the assets folder.
@@ -181,7 +357,7 @@ To pass in a bundled path and file name:
 
 {% tabs %}
 {% tab title="Android" %}
-#### Java
+### Java
 
 ```java
 // Case 1: to use ADBMobileConfig.json in the assets folder
@@ -195,24 +371,86 @@ MobileCore.configureWithFileInAssets("exampleJSONfile.json");
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-#### Objective-C
+{% tab title="iOS (AEP 3.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+static func configureWith(filePath: String)
+```
+
+**Example**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+if let filePath = filePath {
+    MobileCore.configureWith(filePath: filePath)
+}
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithFilePath: (NSString* __nullable) filepath;
+```
+
+**Example**
+
+```objectivec
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile" ofType:@"json"];
+[AEPMobileCore configureWithFilePath: filePath];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+static func configureWithFile(inPath: String)
+```
+
+**Example**
+
+```swift
+let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
+ACPCore.configureWithFile(inPath: filePath)
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) configureWithFileInPath: (NSString* __nullable) filepath;
+```
+
+**Example**
 
 ```objectivec
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ExampleJSONFile"ofType:@"json"];
 [ACPCore configureWithFileInPath:filePath];
 ```
 
-#### Swift
-
-```swift
-let filePath = Bundle.main.path(forResource: "ExampleJSONFile", ofType: "json")
-ACPCore.configureWithFile(inPath: filePath)
-```
 {% endtab %}
 
 {% tab title="Xamarin" %}
-#### C\#
+### C\#
+
+**Syntax**
+
+```csharp
+void ConfigureWithFileInPath([NullAllowed] string filepath);
+```
+
+**Example**
 
 ```csharp
 ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
@@ -223,7 +461,7 @@ ACPCore.ConfigureWithFileInPath("absolute/path/to/exampleJSONfile.json");
 ## Environment-aware configuration properties
 
 {% hint style="info" %}
-This feature is only available in iOS ACPCore version 2.0.3 or later.
+This feature is only available in iOS ACPCore version 2.0.3 or later, and iOS AEPCore version 3.0.0 and above.
 {% endhint %}
 
 Some extension developers might use different configuration values based on their environment, and the generated configuration might have several entries for the same property. For example, the Adobe Campaign Standard extension has different endpoints for development, staging, and production servers. Here is an example of a raw configuration that supports multiple build environments:
@@ -239,7 +477,7 @@ Some extension developers might use different configuration values based on thei
 ```
 
 {% hint style="success" %}
-Each time a remote configuration is generated by Experience Platform Launch, a `build.environment` value is set. This value is based on the environment that you are publishing. When the remote configuration is downloaded, the Configuration extension considers the value in `build.environment` and provides **only** the non-prefixed version for the current environment in the shared state.
+Each time a remote configuration is generated in the Data Collection UI, a `build.environment` value is set. This value is based on the environment that you are publishing. When the remote configuration is downloaded, the Configuration extension considers the value in `build.environment` and provides **only** the non-prefixed version for the current environment in the shared state.
 {% endhint %}
 
 Here is a modification of the previous example, which now includes `build.environment`:
@@ -284,4 +522,3 @@ Here's a sample JSON file for the SDK:
     "rules.url": "https://link.to.rules/test.zip"
 }
 ```
-

@@ -4,12 +4,12 @@
 This extension requires the [Adobe Analytics for Media](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en) add-on SKU. To learn more, contact your Adobe Customer Success Manager.
 {% endhint %}
 
-## Configure Media Analytics extension in Experience Platform Launch
+## Configure Media Analytics extension in the Data Collection UI
 
-1. In Experience Platform Launch, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and click **Install**.
+1. In the Data Collection UI, select the **Extensions** tab.
+2. On the **Catalog** tab, locate the **Adobe Media Analytics for Audio and Video** extension, and select **Install**.
 3. Type the extension settings.   For more information, see [Configure Media Analytics Extension](./#configure-media-analytics-extension).
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update your SDK configuration.
 
 ## Configure the Media Analytics extension
@@ -71,7 +71,37 @@ Latest Android SDK versions - [![Maven Central](https://img.shields.io/maven-cen
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/AEPCore.svg?color=orange&label=AEPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPCore) [![Cocoapods](https://img.shields.io/cocoapods/v/AEPAnalytics.svg?color=orange&label=AEPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPAnalytics) [![Cocoapods](https://img.shields.io/cocoapods/v/AEPMedia.svg?color=orange&label=AEPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/AEPMedia)
+
+1. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
+
+   ```ruby
+   pod 'AEPCore
+   pod 'AEPAnalytics
+   pod 'AEPMedia'
+   ```
+1. In Xcode project, import the Media extension:
+   
+   **Swift**
+
+   ```swift
+   import AEPMedia
+   import AEPCore
+   import AEPIdentity
+   import AEPAnalytics
+   ```
+   **Objective C**
+
+   ```objectivec
+    @import AEPCore;
+    @import AEPMedia;
+    @import AEPAnalytics;
+    @import AEPIdentity;
+   ```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCore.svg?color=orange&label=ACPCore&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPCore) [![Cocoapods](https://img.shields.io/cocoapods/v/ACPAnalytics.svg?color=orange&label=ACPAnalytics&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPAnalytics) [![Cocoapods](https://img.shields.io/cocoapods/v/ACPMedia.svg?color=orange&label=ACPMedia&logo=apple&logoColor=white&style=flat-square)](https://cocoapods.org/pods/ACPMedia)
 
 1. To add the Media library and its dependencies to your project, add the following pods to your `Podfile`:
@@ -84,18 +114,17 @@ Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/ACPCo
 
 You can also manually include the libraries. Get `.a` libraries from [Github](https://github.com/Adobe-Marketing-Cloud/acp-sdks/tree/master/iOS).
 
-1. In Xcode project, import Media extension:
-
-   **Objective C**
-
-   ```objectivec
-    #import "ACPMedia.h"
-   ```
+1. In Xcode project, import the Media extension:
 
    **Swift**
 
    ```swift
    import ACPMedia
+   ```
+   **Objective C**
+
+   ```objectivec
+    #import "ACPMedia.h"
    ```
 {% endtab %}
 
@@ -178,34 +207,40 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
+{% tab title="iOS (AEP 3.x)" %}
 
-### Objective-C
-
-```objectivec
-#import "ACPCore.h"
-#import "ACPAnalytics.h"
-#import "ACPIdentity.h"
-#import "ACPMedia.h"
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
-    [ACPCore configureWithAppId:@"your-launch-app-id"];
-
-    [ACPAnalytics registerExtension];
-    [ACPIdentity registerExtension];
-    [ACPMedia registerExtension];
-
-    [ACPCore start:^{
-
-    }];
-
-    return YES;
-  }
-```
 
 ### Swift
+
+In your app's `_:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+   MobileCore.registerExtensions([Media.self, Analytics.self, Identity.self], {
+   MobileCore.configureWith(appId: "yourAppId") 
+ })  
+ ...
+}
+```
+### Objective-C
+
+In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [AEPMobileCore registerExtensions:@[AEPMobileMedia.class, AEPMobileAnalytics.class, AEPMobileIdentity.class] completion:^{
+    [AEPMobileCore configureWithAppId: @"yourAppId"];
+  }];
+  ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+### Swift
+
+In your app's `_:didFinishLaunchingWithOptions` function, register the Audience Manager extension with the Mobile Core:
 
 ```swift
 import ACPCore
@@ -229,6 +264,32 @@ func application(_ application: UIApplication,
     return true;
 }
 ```
+
+### Objective-C
+
+In your app's `application:didFinishLaunchingWithOptions`, register Media with Mobile Core:
+
+```objectivec
+#import "ACPCore.h"
+#import "ACPAnalytics.h"
+#import "ACPIdentity.h"
+#import "ACPMedia.h"
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ACPCore setLogLevel:ACPMobileLogLevelDebug];
+    [ACPCore configureWithAppId:@"your-launch-app-id"];
+
+    [ACPAnalytics registerExtension];
+    [ACPIdentity registerExtension];
+    [ACPMedia registerExtension];
+
+    [ACPCore start:^{
+
+    }];
+
+    return YES;
+  }
+```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -240,14 +301,14 @@ When using React Native, registering Media with Mobile Core should be done in na
 
 ## Configuration keys
 
-To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/configuration/configuration-api-reference).
+To update your SDK configuration programmatically, use the following information to change your Media configuration values. For more information, see [Configuration API reference](../../foundation-extensions/mobile-core/configuration/configuration-api-reference.md).
 
 | Key | Required | Description | Data Type |
 | :--- | :--- | :--- | :--- |
-| `media.collectionServer` | Yes | Media Collection Server endpoint to which all the media tracking data is sent. For more information, see [Collection Server](./#collection-api-server). | String |
-| `media.channel` | No | Channel name. For more information, see [Channel](./#channel). | String |
-| `media.playerName` | No | Name of the media player in use, i.e., "AVPlayer", "HTML5 Player", "My Custom Player". For more information, see [Player Name](./#player-name). | String |
-| `media.appVersion` | No | Version of the media player app/SDK. For more information, see [Application Version](./#application-version). | String |
+| `media.collectionServer` | Yes | Media Collection Server endpoint to which all the media tracking data is sent. For more information, see [Collection Server](#collection-api-server). | String |
+| `media.channel` | No | Channel name. For more information, see [Channel](#channel). | String |
+| `media.playerName` | No | Name of the media player in use, i.e., "AVPlayer", "HTML5 Player", "My Custom Player". For more information, see [Player Name](#player-name). | String |
+| `media.appVersion` | No | Version of the media player app/SDK. For more information, see [Application Version](#application-version). | String |
 
 ## Platform Support
 

@@ -1,5 +1,110 @@
 # Release Notes
 
+## March 11, 2022
+
+### Android Core 1.10.1
+
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
+
+### Android Lifecycle 1.1.1
+
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
+
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Updates version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+## February 8, 2022
+
+### Android Identity 1.3.0
+
+- Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+- Added support to handle the MobileCore.resetIdentities() API.
+- Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+- Stability improvements for network connections.
+
+Released with sdk-core version 1.10.0
+
+## February 7, 2022
+
+### Android Core 1.10.0
+
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+* Added public platform support for datastore and UI services.
+
+## February 3, 2022
+
+### iOS AEPServices 3.4.2
+* Add `@objc` attribute to `messageSettings` in `FullscreenMessage`
+
+## January 26, 2022
+
+### iOS AEPCore 3.4.1
+* Fixed AEPRulesEngine dependency in Package.swift
+
+## January 20, 2022
+
+### iOS AEPCore 3.4.0
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
+
+## December 22, 2021
+
+### iOS AEPCore 3.3.2
+* Stability improvements for Configuration extension and full screen messages.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* Logging improvements for extensions registration flow.
+* The Event Hub shares wrapper type in its shared state.
+* Adds new messaging event type and sources.
+* Deprecates SystemInfoService getApplicationVersion API.
+
+### iOS AEPIdentity 3.3.2
+
+* Fixes a bug where Identity.getIdentifiers API failed to encode the identifiers.
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
+### Android Core 1.9.2
+
+* Fixed a bug where event number was not incremented correctly for shared states.
+* Stability improvements for Configuration extension.
+* Configuration now allows for empty appId to reset the previously set appId value.
+* The Event Hub shares wrapper type in its shared state.
+
+## December 15, 2021
+
+### Android Core 1.9.1
+
+* Fixed an issue that was causing duplicate query parameters in a deep link to be removed.
+
+### Android Signal 1.0.4
+
+* Bug fix to improve Signal stability.
+
+## November 9, 2021 
+
+### iOS AEPCore 3.3.1 
+
+* Fixed a bug where Date was not persisted correctly in iOS versions less than 13. 
+
+### iOS AEPLifecycle 3.3.1
+
+* Added session start time to Lifecycle shared state. 
+
+### iOS AEPIdentity 3.3.1 
+
+* Fixed a bug where the default Experience Cloud ID server URL was not used when the `experienceCloud.server` configuration parameter was an empty string.
+
 ## Sept 3, 2021
 
 ### iOS AEPCore 3.3.0

@@ -1,14 +1,14 @@
 # Identity
 
-The Identity framework is bundled with [Mobile Core](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/) and enables your app with the ECID. This service helps with the synchronization of Adobe and other customer identifiers.
+The Identity extension is bundled with [Mobile Core](../README.md) and enables your app with the Experience Cloud ID (ECID). This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="danger" %}
-On web or other platforms, there might situations where this framework might not be required, and the implementation of this SDK framework on mobile apps is required.
+On web or other platforms, there might situations where this extension might not be required, and the implementation of this SDK extension on mobile apps is required.
 {% endhint %}
 
 To get started with Identity, complete the following steps:
 
-1. Add the **Identity** framework to your app.
+1. Add the **Identity** extension to your app.
 2. Implement the SDK APIs to complete the following tasks:
    * Update customer IDs.
    * Append Adobe visitor data to a URL string.
@@ -17,10 +17,11 @@ To get started with Identity, complete the following steps:
    * Set advertising IDs.
    * Set the device notification for push notifications.
 
-## Add the Identity framework to your app
+## Add the Identity extension to your app
 
 {% tabs %}
 {% tab title="Android" %}
+
 #### Java
 
 Import the library:
@@ -30,10 +31,39 @@ import com.adobe.marketing.mobile.*;
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### iOS
 
 Import the Identity extension:
+
+**Swift**
+
+```swift
+import AEPCore
+import AEPIdentity
+```
+
+**Objective-C**
+
+```objectivec
+@import AEPCore;
+@import AEPIdentity;
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### iOS
+
+Import the Identity extension:
+
+**Swift**
+
+In Swift, the ACPCore includes ACPIdentity :
+
+```swift
+import ACPCore
+```
 
 **Objective-C**
 
@@ -41,13 +71,6 @@ Import the Identity extension:
 #import  "ACPIdentity.h"
 ```
 
-**Swift**
-
-In swift, the ACPCore includes ACPIdentity :
-
-```swift
-import ACPCore
-```
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -129,20 +152,45 @@ super.onCreate();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### iOS
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
+
+**Swift**
+
+{% hint style="warning" %}
+When including both Identity and Identity for Edge Network extensions, register the extensions using their full Swift module names.
+
+```swift
+MobileCore.registerExtensions([AEPIdentity.Identity.self, AEPEdgeIdentity.Identity.self, ...], { ... })
+```
+{% endhint %}
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     MobileCore.registerExtensions([Identity.self, ...], {
+       ...
+     })
+}
+```
 
 **Objective-C**
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [ACPIdentity registerExtension];
-  // Override point for customization after application launch.
-  return YES;
+ [AEPMobileCore registerExtensions:@[AEPMobileIdentity.class, ...] completion:^{
+   ...
+ }];
+ return YES;
 }
 ```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### iOS
+
+Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
 **Swift**
 
@@ -151,6 +199,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   ACPIdentity.registerExtension();
   // Override point for customization after application launch.
   return true;
+}
+```
+
+**Objective-C**
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [ACPIdentity registerExtension];
+  // Override point for customization after application launch.
+  return YES;
 }
 ```
 {% endtab %}
@@ -242,7 +300,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {% endtabs %}
 
 {% hint style="info" %}
-Previously known as MCID, the Experience Cloud ID \(ECID\) uniquely identifies each visitor in the Adobe Experience Platform and is a 38-character ID.
+Previously known as MCID, the Experience Cloud ID (ECID) uniquely identifies each visitor in the Adobe Experience Platform and is a 38-character ID.
 {% endhint %}
 
 After the configuration is complete, an ECID is generated and, where applicable, is included on all Analytics and Audience Manager hits. Other IDs, such as custom and automatically-generated IDs, continue to be sent with each hit.
@@ -262,19 +320,35 @@ String identityExtensionVersion = Identity.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
 #### iOS
+
+**Swift**
+
+```swift
+var identityExtensionVersion  = Identity.extensionVersion
+```
 
 **Objective-C**
 
 ```objectivec
-NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
+NSString *identityExtensionVersion = [AEPMobileIdentity extensionVersion];
 ```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### iOS
 
 **Swift**
 
 ```swift
 var identityExtensionVersion  = ACPIdentity.extensionVersion()
+```
+
+**Objective-C**
+
+```objectivec
+NSString *identityExtensionVersion = [ACPIdentity extensionVersion];
 ```
 {% endtab %}
 
@@ -329,10 +403,10 @@ If your app opens mobile web content, you need to ensure that visitors are not i
 
 ### Visitor IDs in apps
 
-The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to Opt-out.
+The Mobile SDK generates a unique visitor ID when the app is installed. This ECID is stored in persistent memory on the mobile device and is sent with every hit. The ECID is removed when the user uninstalls the app or when the user sets the Mobile SDK global privacy status to `optedout`.
 
 {% hint style="info" %}
-When the Mobile SDK privacy status is set to Opt-out, and the ECID is removed, a new unique visitor ID \(ECID\) is generated when the user sets the global privacy status to Opt-In.
+When the Mobile SDK privacy status is set to `optedout`, and the ECID is removed, a new unique visitor ID (ECID) is generated when the user sets the global privacy status to `optedin`.
 {% endhint %}
 
 {% hint style="info" %}
@@ -351,10 +425,10 @@ To use the same visitor ID in the app and mobile web and pass the visitor ID to 
 {% tab title="Android" %}
 #### Java
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-java):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```java
-Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>() {    
+Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String>() {    
     @Override    
     public void call(String urlWithAdobeVisitorInfo) {        
         //handle the new URL here        
@@ -367,7 +441,7 @@ Identity.appendVisitorInfoForURL("http://myurl.com", new AdobeCallback<String>()
 });
 ```
 
-Alternately, starting in SDK version 1.4.0 \(Identity version 1.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-java) and build your own URL:
+Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```java
 Identity.getUrlVariables(new AdobeCallback<String>() {    
@@ -377,31 +451,97 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
         //For example, open the URL on the device browser        
         //        
         Intent i = new Intent(Intent.ACTION_VIEW);        
-        i.setData(Uri.parse("http://myUrl.com?" + urlWithAdobeVisitorInfo));        
+        i.setData(Uri.parse("https://example.com?" + urlWithAdobeVisitorInfo));        
         startActivity(i);    
     }
 });
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
+
+#### Swift
+
+```swift
+let url = URL(string: "https://example.com")
+Identity.appendTo(url: url) { appendedUrl, error in
+    if error != nil {
+        // handle error here
+    } else {
+        // handle appended url here
+    }
+}
+```
 #### Objective-C
 
-To append visitor information to the URL that is being used to open the web view, call [appendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-ios):
+```objectivec
+NSURL *sampleUrl = [NSURL URLWithString:@"https://example.com"];
+[AEPMobileIdentity appendToUrl:sampleUrl completion:^(NSURL * _Nullable appendedUrl, NSError *error) {
+    if (error != nil) {
+        // Handle error here
+    } else {
+        // Handle appended url here
+    }
+}];
+```
+
+Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
+
+#### Swift
+
+```swift
+Identity.getUrlVariables { urlVariables, error in
+    if error != nil {
+        // handle error here
+    } else {
+        if let url = URL(string: "https://example.com?\(urlVariables ?? "")") {
+            DispatchQueue.main.async {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+}
+```
+
+#### Objective-C
 
 ```objectivec
-NSURL* url = [[NSURL alloc] initWithString:@"www.myUrl.com"];
+[AEPMobileIdentity getUrlVariables:^(NSString * _Nullable urlVariables, NSError *error) {
+    NSString *sampleURLString = @"https://example.com";
+    if (error != nil) {
+        // Handle variables being nil
+    } else {
+        NSString *stringWithData = [NSString stringWithFormat:@"%@?%@", sampleURLString, urlVariables];
+        NSURL *appendedUrl = [NSURL URLWithString:stringWithData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] openURL:appendedUrl options:@{} completionHandler:nil];
+        });
+    }
+}];
+```
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+#### Objective-C
+
+To append visitor information to the URL that is being used to open the web view, call [appendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
+
+```objectivec
+NSURL* url = [[NSURL alloc] initWithString:@"www.example.com"];
 [ACPIdentity appendToUrl:url withCallback:^(NSURL * _Nullable urlWithVisitorData) {    
 // handle the appended url here
 }];
 ```
 
-Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-ios) and build your own URL:
+Alternately, starting with SDK version 2.3.0 (ACPIdentity version 2.1.0), you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
   // handle the URL query parameter string here
-  NSString* urlString = @"http://myUrl.com";
+  NSString* urlString = @"https://example.com";
   NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
   NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
   [[UIApplication sharedApplication] openURL:urlWithVisitorData options:@{} completionHandler:^(BOOL success) {
@@ -414,13 +554,13 @@ Alternately, starting with SDK version 2.3.0 \(ACPIdentity version 2.1.0\), you 
 {% tab title="React Native" %}
 #### JavaScript
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendToUrl-js):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```jsx
-ACPIdentity.appendVisitorInfoForURL("www.myUrl.com").then(urlWithVistorData => console.log("Url with Visitor Data = " + urlWithVisitorData));
+ACPIdentity.appendVisitorInfoForURL("www.example.com").then(urlWithVistorData => console.log("Url with Visitor Data = " + urlWithVisitorData));
 ```
 
-Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-js) and build your own URL:
+Alternately, starting with SDK version 1.0.5, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```jsx
 ACPIdentity.getUrlVariables().then(urlVariables => console.log("query params = " + urlVariables));
@@ -430,19 +570,19 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("query params = "
 {% tab title="Flutter" %}
 #### Dart
 
-To append visitor information to the URL that is being used to open the web view, call appendVisitorInfoForUrl:
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```dart
 String result = "";
 
 try {
-  result = await FlutterACPIdentity.appendToUrl("www.myUrl.com");
+  result = await FlutterACPIdentity.appendToUrl("www.example.com");
 } on PlatformException {
   log("Failed to append URL");
 }
 ```
 
-Alternately, starting with SDK version 1.0.0-beta.1, you can call getUrlVariables and build your own URL:
+Alternately, starting with SDK version 1.0.0-beta.1, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```dart
 String result = "";
@@ -458,7 +598,7 @@ try {
 {% tab title="Cordova" %}
 #### Cordova
 
-To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+To append visitor information to the URL that is being used to open the web view, call [appendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```jsx
 ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallback) {
@@ -468,7 +608,7 @@ ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallba
 });
 ```
 
-Alternately, you can call [getUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+Alternately, you can call [getUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```jsx
 ACPIdentity.getUrlVariables(function (handleCallback) {
@@ -482,7 +622,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% tab title="Unity" %}
 #### C\#
 
-To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 ```csharp
 [MonoPInvokeCallback(typeof(AdobeIdentityAppendToUrlCallback))]
@@ -493,7 +633,7 @@ public static void HandleAdobeIdentityAppendToUrlCallback(string url)
 ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlCallback);
 ```
 
-Alternately, you can call [GetUrlVariables](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#geturlvariables-5) and build your own URL:
+Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 ```csharp
 [MonoPInvokeCallback(typeof(AdobeGetUrlVariables))]
@@ -508,7 +648,7 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 {% tab title="Xamarin" %}
 #### C\#
 
-To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+To append visitor information to the URL that is being used to open the web view, call [AppendToUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 **iOS**
 
@@ -518,7 +658,7 @@ ACPIdentity.AppendToUrl(url, callback => {
 });
 ```
 
-To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/identity/identity-api-reference#appendvisitorinfoforurl-4):
+To append visitor information to the URL that is being used to open the web view, call [AppendVisitorInfoForUrl](identity-api-reference.md#appendtourl-appendvisitorinfoforurl):
 
 **Android**
 
@@ -541,7 +681,7 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 }
 ```
 
-**Alternately, you can call GetUrlVariables and build your own URL:**
+Alternately, you can call [GetUrlVariables](identity-api-reference.md#geturlvariables) and build your own URL:
 
 **iOS**
 

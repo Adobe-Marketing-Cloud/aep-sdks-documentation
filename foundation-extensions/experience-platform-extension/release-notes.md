@@ -1,5 +1,34 @@
 # Release Notes
 
+## March 11, 2022
+
+### Android Edge 1.3.1
+
+* Updates timestamp in Experience Events to use fractional seconds. 
+
+## January 21, 2022
+
+### iOS AEPEdge 1.3.0
+
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
+
+### Android AEPEdge 1.3.0
+
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
+
+## December 23, 2021
+
+### Android Edge 1.2.0
+
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
+
+## December 22, 2021
+
+### iOS AEPEdge 1.2.0
+
+* Adds XDM Implementation Details to each Experience Event sent to the Edge Network.
+* Fixes generic network error format to conform to EdgeEventError type so they are dispatched back to the caller correctly.
+
 ## Sept 3, 2021
 
 ### Adobe Experience Platform Edge Network Launch extension v1.0.12

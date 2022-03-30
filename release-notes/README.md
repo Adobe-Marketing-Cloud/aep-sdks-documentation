@@ -4,620 +4,151 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## Sep 20, 2021
+## March 11, 2022
 
-### iOS 15 Compatibility
+### Android Core 1.10.1
 
-* All Adobe Experience Platform Mobile SDKs for iOS have been functionally validated to be compatible with iOS 15.
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
 
-## Sep 17, 2021
+### Android Lifecycle 1.1.1
 
-### iOS Media 2.3.2
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
 
-* Bug fixes to improve SDK stability.
+### Android Edge 1.3.1
 
-## Sep 14, 2021
+* Updates timestamp in Experience Events to use fractional seconds. 
 
-### Xamarin Assurance iOS 1.0.0
+### Android Consent 1.0.1
 
-* iOS Assurance framework updated to 1.1.3
+* Updates timestamp in Consent requests to use fractional seconds.
 
-### Xamarin Assurance Android 1.0.0
+## March 4, 2022
 
-* Android Assurance framework updated to 1.0.3
+### ACP Xamarin frameworks
 
-## September 8, 2021
+Updated the Android and iOS native libraries for the [ACPCore](https://github.com/adobe/xamarin-acpcore) and [ACPAnalytics](https://github.com/adobe/xamarin-acpanalytics) Xamarin frameworks:
 
-### iOS AEPAnalytics 3.0.2
+* [Xamarin Core Android 1.1.0](https://www.nuget.org/packages/Adobe.ACPCore.Android/1.1.0): Android Core updated to 1.10.0
+* [Xamarin Identity Android 1.1.0](https://www.nuget.org/packages/Adobe.ACPIdentity.Android/1.1.0): Android Identity updated to 1.3.0
+* [Xamarin Lifecycle Android 1.1.0](https://www.nuget.org/packages/Adobe.ACPLifecycle.Android/1.1.0): Android Lifecycle updated to 1.1.0
+* [Xamarin Signal Android 1.0.1](https://www.nuget.org/packages/Adobe.ACPSignal.Android/1.0.1): Android Signal updated to 1.0.4
+* [Xamarin Core iOS 1.0.1](https://www.nuget.org/packages/Adobe.ACPCore.iOS/1.0.1): iOS Core updated to 2.9.5
+* [Xamarin Core tvOS 1.0.1](https://www.nuget.org/packages/Adobe.ACPCore.tvOS/1.0.1): tvOS Core updated to 2.9.5
+* [Xamarin Analytics Android 1.0.1](https://www.nuget.org/packages/Adobe.ACPAnalytics.Android/1.0.1): Android Analytics updated to 1.2.10
+* [Xamarin Analytics iOS 1.0.1](https://www.nuget.org/packages/Adobe.ACPAnalytics.iOS/1.0.1): iOS Analytics updated to 2.5.1
+* [Xamarin Analytics tvOS 1.0.1](https://www.nuget.org/packages/Adobe.ACPAnalytics.tvOS/1.0.1): tvOS Analytics updated to 2.5.1
 
-* Fixed an issue where entire context data dictionary in track request was dropped if any of its key had non string value.
+## March 3, 2022
 
-## Sept 3, 2021
+### Android Analytics 1.2.10
 
-### iOS AEPCore 3.3.0
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
 
-* Added support for dispatch event rules consequence.
+## February 22, 2022
 
-### iOS AEPLifecycle 3.3.0
+### iOS Assurance 3.0.1
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
 
-* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
-* Fixed an issue where application upgrades were detected based on changes in `CFBundleShortVersionString` instead of `CFBundleVersion`.
+### Android Assurance 1.0.4
+* Add support for transmitting large events.
+* Assurance extension now prompts an error message when attempting to connect to a deleted session.
+* Improved logging for troubleshooting.
+* Fixed an issue to ensure that event collection stops on session disconnection.
 
-### Android Core 1.9.0
+## February 14, 2022
 
-* Added support for dispatch event rules consequence.
-* Adds getFriendlyName API for third party extensions.
-* Specifies mutability for PendingIntent in the UIService in preparation for Android 12 changes.
+### iOS Core 2.9.5
+* Updates version for bundled ACPIdentity 2.5.2 release.
 
-### Android Lifecycle 1.1.0
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
 
-* Lifecycle extension now dispatches two new events `applicationLaunch` and `applicationClose` which contain Mobile Lifecycle metrics in XDM format.
+## February 9, 2022
 
-### Mobile Core Launch extension v2.1.20
+### iOS Campaign Standard 3.0.1
 
-* New `Foreground` and `Background` event types to be used in rules for triggering actions based on Mobile Application Lifecycle XDM events.
+* Fixed an issue with the Campaign message tracking URL being incorrectly built.
 
-### Adobe Experience Platform Edge Network Launch extension v1.0.12
+## February 8, 2022
 
-* New `Forward to Edge Network` action to be used with Mobile Core Application Lifecycle events.
+### Android Identity 1.3.0
 
-## Sept 2, 2021
+- Added a `device_consent` status parameter when `setAdvertisingIdentifier` is called after ad tracking is enabled/disabled.
+- Added support to handle the MobileCore.resetIdentities() API.
+- Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+- Stability improvements for network connections.
 
-### iOS AEPEdge 1.1.2
+Released with sdk-core version 1.10.0
 
-* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+## February 7, 2022
 
-### Android Edge 1.1.2
+### Android Core 1.10.0
 
-* Edge Network Extension now honors the timestamp set in XDM payload of Experience Event. If no timestamp is set then timestamp of `Edge.sendEvent()` API call is used.
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
+* Added public platform support for datastore and UI services.
 
-## Aug 27, 2021
+## February 3, 2022
 
-### Android Core 1.8.3
+### iOS AEPServices 3.4.2
+* Add `@objc` attribute to `messageSettings` in `FullscreenMessage`
 
-* Updated proguard rules to fix an issue which caused some extensions to not be registered correctly when using minification.
+## January 26, 2022
 
-## Aug 25, 2021
+### iOS AEPCore 3.4.1
+* Fixed AEPRulesEngine dependency in Package.swift
 
-### iOS AEPMobileServices 3.0.1
+### ACP Unity packages
 
-* Fixed a bug where shared state was not being read correctly in response to some events.
+The ACP Unity packages now use XCFrameworks in order to support hardware with the new Apple M1 architecture, while maintaining support for existing Intel architecture. See the respective GitHub repositories for the updated installation instructions.
 
-## Aug 23, 2021
+**IMPORTANT:** Upgrading to XCFrameworks distribution requires Xcode 12.0 or newer.
 
-### Android Target 1.2.8
+Below is a list of the new versions for each Unity package:
 
-* Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `locationClicked` API is called.
+* [Unity ACPCore v1.0.1](https://github.com/adobe/unity-acpcore/releases/tag/v1.0.1)
+* [Unity ACPAnalytics v1.0.0](https://github.com/adobe/unity-acpanalytics/releases/tag/v1.0.0)
+* [Unity ACPUserProfile v1.0.0](https://github.com/adobe/unity-aepassurance/releases/tag/v1.0.0)
+* [Unity AEPAssurance v1.0.0](https://github.com/adobe/unity_acpuserprofile/releases/tag/v1.0.0)
 
-### React Native Assurance 2.0.0
+## January 21, 2022
 
-This major release introduces support for following:
+### iOS AEPEdge 1.3.0
 
-* Support for React Native version 0.60.+
-* Auto linking for native dependencies and removal of the bundled SDK binaries \(XCFramework\) from the React Native module.
-* Dynamic versions for native dependencies to always load the latest SDK.
-* Removal of registerExtension Javascript API.
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
 
-## Aug 18, 2021
+### Android AEPEdge 1.3.0
 
-### iOS AEPCore 3.2.4
+* Allows setting a custom first-party domain that is used to interact with the mapped Adobe-provisioned Edge Network domain.
 
-* Fixed data race in `Event` and `ExtensionContainer` classes.
-* Fixed a memory leak in `EventHub.registerResponseListener`.
+## January 20, 2022
 
-### Flutter Assurance 2.0.0
+### iOS AEPCore 3.4.0
+* Added support for a new API `clearUpdatedConfiguration()`, see Configuration API reference for more details.
+* Added support for optionally capturing event history on the device.
+* Added support for triggering rules engine conditions based on event history.
 
-* Upgrade plugin to support Flutter 2.0 and null safety support.
+### iOS AEPServices 3.4.0
+* Expanded configuration options for Fullscreen Messages.
+* Added support for delegating in-app message delivery.
 
-## Aug 17, 2021
-
-### Flutter Analytics 2.0.1
-
-* Update to reference the Analytics Android library from mavenCentral.
-
-## Aug 6, 2021
-
-### Adobe Experience Platform Mobile SDK plugins for React Native
-
-This major release introduces support for the following:
-
-* React Native version 0.60.+
-* Autolinking for native dependencies and removal of the bundled SDK binaries \(XCFramework\) from the React Native module.
-* Dynamic versions for native dependencies to always load the latest SDK.
-* Removal of several deprecated APIs.
-
-Please note that this release introduces breaking changes. For more details, see the release notes of the following plugins:
-
-* [@adobe/react-native-acpcore 2.0.0](https://github.com/adobe/react-native-acpcore/releases/tag/v2.0.0)
-* [@adobe/react-native-acpuserprofile 2.0.0](https://github.com/adobe/react-native-acpuserprofile/releases/tag/v2.0.0)
-* [@adobe/react-native-acpaudience 2.0.0](https://github.com/adobe/react-native-acpaudience/releases/tag/v2.0.0)
-* [@adobe/react-native-acpanalytics 2.0.0](https://github.com/adobe/react-native-acpanalytics/releases/tag/v2.0.0)
-* [@adobe/react-native-acpmedia 3.0.0](https://github.com/adobe/react-native-acpmedia/releases/tag/v3.0.0)
-* [@adobe/react-native-acptarget 2.0.0](https://github.com/adobe/react-native-acptarget/releases/tag/v2.0.0)
-* [@adobe/react-native-acpcampaign 2.0.0](https://github.com/adobe/react-native-acpcampaign/releases/tag/v2.0.0)
-* [@adobe/react-native-acpplaces 2.0.0](https://github.com/adobe/react-native-acpplaces/releases/tag/v2.0.0)
-
-## August 5, 2021
-
-### Android Target 1.2.7
-
-* `TargetRequest` class now provides a constructor with a new callback interface named `AdobeTargetDetailedCallback`. When implemented, the callback method provides:
-  * Target content; AND
-  * Data payload map containing one or more of response tokens, Analytics payload, click metric Analytics payload \(if available in the Target retrieve location content response with/ without a prior prefetch call\)
-
-**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics \(if the Adobe Analytics extension is also implemented\) with appropriate Target payloads for A4T functionality.
-
-### iOS AEPTarget 3.1.0
-
-* `TargetRequest` class now provides a constructor with a new callback function named `contentWithDataCallback`. When implemented, this callback provides:
-  * Target content; AND
-  * Data payload dictionary containing one or more of response tokens, Analytics payload, click metric Analytics payload \(if available in the Target retrieve location content response with/ without a prior prefetch call\)
-
-**Note**: This SDK extension, per previous behavior, will make requests to Adobe Analytics \(if the Adobe Analytics extension is also implemented\) with appropriate Target payloads for A4T functionality.
-
-* Fixed an issue where the click notification was not being sent to Adobe Target for a retrieved mbox location upon the `clickedLocation` API call.
-* Added support for sending the click conversion A4T payload to Adobe Analytics for A4T-enabled Target activities when the `clickedLocation` API is called.
-
-## Jul 29, 2021
-
-### iOS AEPCore 3.2.3
-
-* Fixed an issue in the `PersistentHitQueue` where new hits can cause additional scheduled tasks.
-* Improved handling of database errors in the `PersistentHitQueue`.
-
-## July 21, 2021
-
-### iOS Analytics 2.5.1
-
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
-
-### Android Analytics 1.2.8
-
-* Fixed undefined dependencies in .pom file, preventing developers from including the v1.2.7 analytics library through Gradle.
-
-### Android Analytics 1.2.7
-
-* Removed retrieval and generation of Analytics tracking identifier \(AID\). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
-* **IMPORTANT**: If you encounter issues including this dependency through Gradle, 1.2.8 fixes the error.
-
-## Jul 16, 2021
-
-### Android Media 2.1.2
-
-* Enabled debugging post processed data in Media Analytics Assurance workflow.
-* Added support to handle the MobileCore.resetIdentities\(\) API.
-
-### iOS AEPMedia 3.0.1
-
-* Enabled debugging post processed data in Media Analytics Assurance workflow.
-
-## Jul 13, 2021
-
-### iOS AEPAudience 3.0.2
-
-* Added support to handle the MobileCore.resetIdentities\(\) API.
-
-## Jul 2, 2021
-
-### iOS AEPUserProfile 3.0.1
-
-* Fixed a bug preventing proper data migration when presented with an `app group` .
-
-## June 30, 2021
-
-### iOS AEPCore 3.2.2
-
-* Remove double URL encoding of AEPIdentity identifiers.
-* Prevent possible crash at shutdown in EventHub.
-
-## June 28, 2021
-
-### iOS AEPAssurance 3.0.0
-
-* Initial release to support [Adobe Experience Platform Assurance](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-experience-platform-assurance) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-assurance-ios).
-
-## June 24, 2021
-
-### iOS ACPPlacesMonitor 2.1.4
-
-* Update to iOS 14 method for retrieving `CLAuthorizationStatus`.
-* Updating README.md with notice of deprecation on August 31, 2021.
-
-## June 22, 2021
-
-### iOS Core 2.9.4
-
-* Fixed a Rules Engine bug affecting strings that contain the `&` character.
-* Fixed a bug where JSON objects containing empty strings were not handled correctly.
-
-## June 21, 2021
-
-### iOS AEPCore 3.2.1
-
-* Update version for bundled ACPIdentity 3.2.1 release.
-
-## iOS AEPIdentity 3.2.1
-
-* Fixed a bug where `Identity.syncIdentifier` and `Identity.syncIdentifiers` APIs would ignore the authentication state settings.
-
-## June 17, 2021
-
-### iOS Assurance 1.1.3
-
-* Assurance state is now properly shared when reconnecting to an established session.
-
-### Android Assurance 1.0.3
-
-* Assurance state is now properly shared when reconnecting to an established session.
-
-### iOS Messaging 1.0.0
-
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in iOS! This extension enables push notifications and measurement for Adobe Journey Optimizer.
-
-### Adobe Journey Optimizer Launch Extension
-
-* You can now find the `Adobe Journey Optimizer` extension in the Launch extensions catalog for mobile properties.
-
-## June 16, 2021
-
-### Android Campaign 1.0.8
-
-* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
-* Resolved an issue with Campaign module details not being returned.
-
-### Android Messaging 1.0.0
-
-* The Adobe Experience Platform Messaging \(AEPMessaging\) mobile extension is now available in Android! This extension enables push notifications and measurement for Adobe Journey Optimizer.
-
-## June 15, 2021
-
-### Android Target 1.1.7
-
-* Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
-
-## June 10, 2021
-
-### iOS AEPEdge 1.1.1
-
-* Development testing enhancements for Experience Edge.
-
-### Android Edge 1.1.1
-
-* Adds support for events persistence for use-cases with low network connectivity or unexpected network errors.
-* Development testing enhancements for Experience Edge.
-
-This SDK is compatible with Android Core 1.8.2 and above.
-
-## June 9, 2021
+## January 14, 2022
 
 ### Flutter
 
-* Upgrade plugin to support Flutter 2.0 and null safety support for following packages:
-* [flutter\_acpcore](https://pub.dev/packages/flutter_acpcore/versions/2.0.0)
-* [flutter\_acpuserprofile](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.0)
-* [flutter\_acpanalytics](https://pub.dev/packages/flutter_acpanalytics/versions/2.0.0)
-* [flutter\_acpplaces](https://pub.dev/packages/flutter_acpplaces/versions/2.0.0)
-* [flutter\_acpplaces\_monitor](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.0)
+Updated the following flutter packages to reference Android libraries from Maven Central Repository:
 
-## June 8, 2021
+* [Flutter ACPCore v2.0.1](https://pub.dev/packages/flutter_acpcore/versions/2.0.1)
+* [Flutter ACPUserProfile v2.0.1](https://pub.dev/packages/flutter_acpuserprofile/versions/2.0.1)
+* [Flutter ACPPlaces v2.0.1](https://pub.dev/packages/flutter_acpplaces/versions/2.0.1)
+* [Flutter ACPPlacesMonitor v2.0.1](https://pub.dev/packages/flutter_acpplaces_monitor/versions/2.0.1)
 
-### iOS Campaign Standard 3.0.0
+### Flutter Assurance 2.0.1
 
-* Initial release to support [Adobe Campaign Standard workflows](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/master/using-mobile-extensions/adobe-campaign-standard) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-campaign-ios/).
-
-### Android Core 1.8.2
-
-* Fixed a bug in the `PersistentHitQueue` where hits would be retried earlier than desired in certain scenarios.
-* Fixed a bug where rule tokens with "&" were not handled correctly.
-* Minor change to how the SDK computes the operating system name.
-
-### Android Lifecycle 1.0.8
-
-* Minor update to ensure compatibility with the latest Core 1.8.2.
-
-## June 7, 2021
-
-### iOS AEPCore 3.2.0
-
-* Support for handling identities request `Event`'s in AEPIdentity
-* Improve public visiblity of `RuleConsequence`
-* Added `getDeviceModelNumber` to `SystemInfoService`
-* Various additions to `ThreadSafeDictionary`
-* Added the ability to make a network request with raw data that is not UTF encoded
-* Fixed a bug where condition definitions that did not contain a value were not handled correctly
-* Introduced an API to set button image data to the `FloatingButton`
-* Added `optimize` `EventType`
-* Introduced an API to hide the `FullscreenMessage`
-* Fixed a bug where token \(~ timestampu\) was not expanded correctly
-* Introduced `webViewDidFinishLoading` to `FullScreenMessageDelegate`
-
-> Note: This release introduces breaking changes to the `NetworkService` and the `SystemInfoService`.
-
-## Jun 4, 2021
-
-### iOS AEPMobileServices 3.0.0
-
-* Released the brand new Adobe Experience Platform Mobile Services iOS Swift SDK.
-
-## May 25, 2021
-
-### Android Core 1.8.1
-
-* Added support for Event encode/decode.
-
-## May 13, 2021
-
-### Android Mobileservices 1.1.4
-
-* Fixed a bug that caused a crash when multiple threads were accessing InAppMessages instance.
-
-## May 10, 2021
-
-### Android PlacesMonitor 2.2.2
-
-* Fixed a crash that was caused when application did not find the required activity for requesting location permission.
-
-## May 6, 2021
-
-### iOS AEPCore 3.1.3
-
-* Update to use AEPRulesEngine 1.0.1.
-
-### iOS AEPRulesEngine 1.0.1
-
-* Fixed a Swift compatibility issue.
-
-## May 5, 2021
-
-### iOS AEPMedia 3.0.0
-
-* Initial release to support [Adobe Analytics - Media Analytics workflows](../using-mobile-extensions/adobe-media-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is [available as an open source project on Github](https://github.com/adobe/aepsdk-media-ios/).
-
-## April 29, 2021
-
-### iOS AEPCore 3.1.2
-
-* Fixed a bug where the URL session was not reused for the same host.
-* Fixed a Swift compatibility issue.
-
-### iOS AEPIdentity 3.1.2
-
-* Fixed a bug where Identity was blocked on the first launch if the configuration was invalid.
-
-## April 21, 2021
-
-### iOS Assurance 1.1.1
-
-* Support for Shared States in XDM format when using the AEPEdge extension.
-* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
-* Sends extension-specific state events when connecting to a Griffon session.
-* Better error handling when reaching activity or Griffon session limits.
-* Bug fix that ensures the Griffon UI will always correctly show the number of connected devices.
-* Various security fixes.
-
-### Android Assurance 1.0.2
-
-* Support for Shared States in XDM format when using the AEPEdge extension.
-* Lifecycle install and launch hits are now captured for Adobe Analytics debugging.
-* Sends extension-specific state events when connecting to a Griffon session.
-* Better error handling when reaching activity or Griffon session limits.
-* Various security fixes.
-
-## April 14, 2021
-
-### iOS Mobile Services 1.1.1
-
-* Fixed a crash that could happen while downloading remote assets.
-
-## April 13, 2021
-
-### Identity for Edge Network
-
-You can now find the Identity for Edge Network extension in the Launch extensions catalog for mobile properties.
-
-## April 12, 2021
-
-### Consent for Edge Network
-
-You can now find the Consent for Edge Network extension in the Launch extensions catalog for mobile properties.
-
-## April 8, 2021
-
-### iOS AEPCore 3.1.1
-
-* Fixed a bug where incomplete event hub shared state was created before the event hub has been started.
-
-### iOS AEPEdge 1.1.0
-
-* Integration with AEPEdgeConsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
-* Adds required dependency on AEPEdgeIdentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
-
-### Android Edge 1.1.0
-
-* Integration with EdgeConsent 1.0.0 and collect consent preferences enforcement on requests to AEP Edge Network.
-* Adds required dependency on EdgeIdentity 1.0.0 that brings XDM IdentityMap support for custom identifiers.
-
-### iOS & Android Identity 1.0.0
-
-The Adobe Experience Platform Identity \(AEPEdgeIdentity\) mobile extension is now available on iOS and Android! This extension enables handling of user identity data from a mobile app when using the Adobe Experience Platform SDK and the Edge Network extension.
-
-## April 5, 2021
-
-### iOS & Android Consent 1.0.0
-
-The Adobe Experience Platform Consent \(AEPEdgeConsent\) mobile extension is now available in iOS and Android! This extension enables consent preferences collection from your mobile app when using the Adobe Experience Platform Mobile SDK and the Edge Network extension. You can now find the `Consent` extension in the Launch extensions catalog for mobile properties.
-
-## April 1, 2021
-
-### iOS AEPCore 3.1.0
-
-* New API - `MobileCore.collectLaunchInfo()` - see API reference for more information.
-* New API - `MobileCore.resetIdentities()` - see API reference for more information.
-* Added multiple new values to `EventType` and `EventSource`.
-* Fixed a bug causing regular listeners to receive paired response events.
-* Fixed a bug preventing proper data migration from v4 and v5 SDK.
-* The callback method passed to `MobileCore.registerEventListener` now runs on a background thread.
-* Improved logging for dictionaries.
-* The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
-
-### iOS AEPIdentity 3.1.0
-
-* Fixed an issue where privacy status was not correctly loaded from persistence.
-* Advertising ID can now correctly be set after having an initial value of "zeroes" or empty.
-
-### iOS AEPServices 3.1.0
-
-* Added support for UI Services.
-* The Locale string used in HTTP Headers is now properly formatted.
-* Fixed a bug that would sometimes prevent downloaded files from being properly unzipped.
-
-### iOS AEPAnalytics 3.0.1
-
-* Added support to handle internal analytics track request events
-* Refactored code and updated doc comments
-
-### iOS AEPAudience 3.0.1
-
-* Updated syncedVisitorIds implementation to a map
-* Fixed access modifer for two classes
-
-## March 31, 2021
-
-### Android Core 1.8.0
-
-* New API - Public platform services for network, data queue, device info.
-* New API - `MobileCore.resetIdentities()` - See API Reference for more information
-* New API - `MobileCore.dispatchEventWithResponseCallback()` - See API Reference for more information.
-* The EventHub's shared state dictionary now uses the full name of each registered extension as its key.
-
-### Android Lifecycle 1.0.7
-
-* No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
-
-## March 29, 2021
-
-### Android Media 2.1.1
-
-* Updated "Content-Type" header to “application/json” in Media Collection API requests.
-
-## March 26, 2021
-
-### iOS Media 2.3.1
-
-* Updated "Content-Type" header to “application/json” in Media Collection API requests.
-
-## March 16, 2021
-
-### iOS Core 2.9.3
-
-* Fixed a Rules Engine bug affecting strings that contain regex escaping characters \(one of `*?+{`\) in the following matcher types:
-  * Contains
-  * Not Contains
-  * Starts With
-  * Ends With
-
-## March 9, 2021
-
-### iOS Core 2.9.2
-
-* Update version for bundled ACPIdentity 2.5.1 and ACPLifecycle 2.2.1 release.
-
-### iOS Identity 2.5.1
-
-* Fixed a bug where the visitor URL variables was using a TS in milliseconds instead of seconds.
-
-### iOS Lifecycle 2.2.1
-
-* No longer generate invalid values for `Days Since Last Use`, `Days Since First Use` and `Days Since Last Upgrade` metrics when the time setting on the device is off.
-
-## February 26, 2021
-
-### iOS AEPAnalytics 3.0.0
-
-* Initial release to support [Adobe Analytics](../using-mobile-extensions/adobe-analytics/) for Adobe Experience Platform Mobile SDKs for iOS in Swift. This library as available as an [open sourced project on Github](https://github.com/adobe/aepsdk-analytics-ios/).
-
-## February 24, 2021
-
-### Android Core 1.7.0
-
-* Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
-* Added new public APIs to set XDM shared state.
-* Added a new API `MobileCore.configureWithFileInAssets()` which allows the app to use a config file in the app's Assets folder.
-
-## February 11, 2021
-
-### iOS Core 2.9.1
-
-* Fixed a crash which happened in `AdobeMarketingMobile::StringUtils`
-
-## February 2, 2021
-
-### Android Core 1.6.0
-
-* Added a new API `MobileCore.registerEventListener` which can be used to register a permanent event listener.
-* Fixed a bug which prevented cached configuration being loaded during app launch.
-* Fixed a crash which was caused by the exception thrown from the Android `okhttp` library.
-
-## January 29, 2021
-
-### iOS Audience 3.0.0
-
-* Initial release to support Adobe Audience for Adobe Experience Platform Mobile SDKs for iOS in Swift. This extension library is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-audience-ios/).
-
-## January 19, 2021
-
-### Adobe Experience Platform iOS Core SDKs
-
-Adobe Experience Platform Mobile SDKs for iOS are now being made available on Swift. Mobile Core in Swift is available as an [open sourced project on Github](https://github.com/adobe/aepsdk-core-ios/) and contains the following extensions:
-
-* AEPCore 3.0.0
-* AEPServices 3.0.0
-* AEPIdentity 3.0.0
-* AEPSignal 3.0.0
-* AEPLifecycle 3.0.0
-* AEPRulesEngine 1.0.0
-
-### iOS AEPEdge 1.0.0
-
-Initial release of Adobe Experience Platform Edge Network mobile extension iOS in Swift.
-
-This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Edge Network capabilities.
-
-The included features with this release are:
-
-* Ability to create XDM Experience Events and send them to Experience Edge Network. An optional Experience Edge response callback can be registered per event.
-* The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
-* Events persistence.
-* ECID is automatically attached on each XDM Experience Event request.
-* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
-* Detailed warning/error messages are available through Project Griffon UI and logs.
-
-This extension library is available as an open sourced project \([adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios)\) on GitHub.
-
-These iOS libraries, written in Swift, are available for integration via SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications.
-
-### Android Edge 1.0.0
-
-The Adobe Experience Platform Edge Network \(Edge\) mobile extension is now available in Android! This extension allows for sending XDM formatted data to Adobe Experience Platform and Adobe Experience Cloud solutions, by leveraging Experience Edge capabilities.
-
-The included features with this release are:
-
-* Ability to create XDM Experience Events and send them to Experience Edge Network. An optional Experience Edge response callback can be registered per event.
-* The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
-* ECID is automatically attached on each XDM Experience Event request.
-* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
-* Detailed warning/error messages are available through Project Griffon UI and logs.
-
-This SDK is compatible with Android Core 1.5.7 and above.
-
-### Adobe Experience Platform Edge Network Launch Extension 1.0.2
-
-* Selector for the Edge Configuration.
-* AEP Request Event with optional XDM event type is available for Launch rules.
-
-## January 20, 2021
-
-### iOS Audience 2.3.0
-
-* Added TVOS support to Audience.
+- Updated the package to reference the Android library from Maven Central Repository.
+- Migrated to the new Android APIs based on [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html).
 

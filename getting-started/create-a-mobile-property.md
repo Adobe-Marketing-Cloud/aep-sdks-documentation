@@ -1,6 +1,6 @@
 # Set up a mobile property
 
-A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Adobe Experience Platform Launch](https://launch.adobe.com). You will typically create a mobile property for each mobile application you want to manage.
+A property is a container that you fill with extensions, rules, data elements, and libraries. To use these resources, you need to create and configure a mobile property in [Adobe Experience Platform Launch](https://experience.adobe.com/#/data-collection/). You will typically create a mobile property for each mobile application you want to manage.
 
 ## Before you start
 

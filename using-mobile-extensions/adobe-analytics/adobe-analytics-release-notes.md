@@ -1,5 +1,25 @@
 # Release Notes
 
+## March 3, 2022
+
+### Android Analytics 1.2.10
+
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
+
+## October 25, 2021
+
+### iOS AEPAnalytics 3.0.3
+
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Removed retrieval and generation of Analytics tracking identifier (AID). Existing AID values stored on the device will continue to be loaded and used, however new visitors will not be assigned an AID value.
+
+## October 21, 2021
+
+### Android Analytics 1.2.9
+
+* Add support for `MobileCore.resetIdentities()` API. When this API is called, the Analytics identifiers and the Analytics hits queue are cleared.
+* Bug fixes to improve SDK stability.
+
 ## September 8, 2021
 
 ### iOS AEPAnalytics 3.0.2
@@ -161,4 +181,3 @@ The following updates were made in this release:
 
 * ACPAnalytics now correctly identifies Acquisition link event types.
 * Fixes a compile-time error when using the “-all\_load” linker flag.
-

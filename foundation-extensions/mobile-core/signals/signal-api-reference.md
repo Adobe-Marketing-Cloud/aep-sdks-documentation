@@ -1,6 +1,6 @@
 # Signal API reference
 
-## Version of the Signal extension
+## extensionVersion
 
 The `extensionVersion()` API returns the version of the Signal extension that is registered with the Mobile Core extension.
 
@@ -10,37 +10,62 @@ To get the version of the Signal extension, use the following code sample:
 {% tab title="Android" %}
 #### Java
 
+**Syntax**
+
+```java
+public static String extensionVersion();
+```
+
+**Example**
+
 ```java
 String signalExtensionVersion = Signal.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
+**Syntax**
+
+```swift
+public static let extensionVersion
+```
+
+**Examples**
+
 **Swift**
 
 ```swift
 let version = Signal.extensionVersion
 ```
 
-**Objective C**
+**Objective-C**
 
 ```objectivec
 NSString *version = [AEPMobileSignal extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 2.x\)" %}
-**Objective C**
+{% tab title="iOS (ACP 2.x)" %}
+**Syntax**
 
 ```objectivec
-NSString *signalExtensionVersion = [ACPSignal extensionVersion];
+(nonnull NSString*) extensionVersion;
 ```
+
+**Examples**
 
 **Swift**
 
 ```swift
 var signalExtensionVersion  = ACPSignal.extensionVersion()
 ```
+
+**Objective-C**
+
+```objectivec
+NSString *signalExtensionVersion = [ACPSignal extensionVersion];
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -88,7 +113,57 @@ string signalVersion = ACPSignal.ExtensionVersion();
 {% endtab %}
 {% endtabs %}
 
+## registerExtension
+
+Registers the Signal extension with the Mobile Core.
+
+{% tabs %}
+{% tab title="Android" %}
+**Syntax**
+
+```java
+public static void registerExtension()
+```
+
+**Example**
+
+```java
+Signal.registerExtension();
+```
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+This API no longer exists in `Signal`. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial.](../../resources/migrate-to-swift.md#update-sdk-initialization)
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+**Syntax**
+
+```text
++ (void) registerExtension;
+```
+
+**Example**
+
+**Swift**
+
+```swift
+ACPSignal.registerExtension()
+```
+
+**Objective-C**
+
+```text
+[ACPSignal registerExtension];
+```
+{% endtab %}
+
+{% tab title="React Native" %}
+When using React Native, register the Signal extension with Mobile Core in native code as shown on the Android and iOS tabs.
+{% endtab %}
+{% endtabs %}
+
 ## CollectPII API
 
-The Signal extension can be used to handle `collectPII` rules. For more information, see the [collectPII](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/mobile-core-api-reference#collect-pii) API.
+The Signal extension can be used to handle `collectPII` rules. For more information, see the [collectPII](../mobile-core-api-reference.md#collectpii) API.
 

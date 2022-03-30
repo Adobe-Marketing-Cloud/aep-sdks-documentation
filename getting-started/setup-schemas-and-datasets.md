@@ -36,7 +36,7 @@ The following steps illustrate the creation of a sample schema for mobile data c
    1. From the left panel, select Schemas
    2. Select **Create schema**
    3. Select **XDM Experience event**
-   4. Under **Field Groups**, select **Add**; search and add the `Environment Details`,`Application Details`, and other pre-created or custom field groups as needed.
+   4. Under **Field Groups**, select **Add**; search and add the `Adobe Experience Edge Autofilled Environment Details`, `AEP Mobile Lifecycle Details` and other pre-created or custom field groups as needed.
    5. Set a **Display Name** for this schema and select `Save`.
 
 ![Schema creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Ffe309e8b2ebd1c7573cf23ccdab56f406b4aa822.png?alt=media)

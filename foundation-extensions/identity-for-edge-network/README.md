@@ -2,12 +2,12 @@
 
 The Adobe Experience Platform Identity mobile extension enables identity management from your mobile app when using the Adobe Experience Platform Mobile SDK and the [Edge Network extension](../experience-platform-extension/).
 
-## Configure the Adobe Experience Platform Identity extension in Experience Platform Launch
+## Configure the Adobe Experience Platform Identity extension in the Data Collection UI
 
-1. In Experience Platform Launch, in your mobile property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate or search for the **Identity** extension, and click **Install**.
+1. In Data Collection UI, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate or search for the **Identity** extension, and select **Install**.
 3. There are no configuration settings for **Identity**.
-4. Click **Save**.
+4. Select **Save**.
 5. Follow the publishing process to update SDK configuration.
 
 ![AEP Identity for Edge Network extension configuration](../../.gitbook/assets/mobile-edge-identity-launch-configuration.png)
@@ -17,7 +17,7 @@ The Adobe Experience Platform Identity mobile extension enables identity managem
 ### Download and import the Identity extension
 
 {% hint style="info" %}
-The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [Frequently Asked Questions](identity-faq.md) page.
+The following instructions are for configuring an application using Adobe Experience Platform Edge mobile extensions. If an application will include both Edge Network and Adobe Solution extensions, both the Identity for Edge Network and Identity for Experience Cloud ID Service extensions are required. Find more details in the [frequently asked questions](identity-faq.md).
 {% endhint %}
 
 {% tabs %}
@@ -32,13 +32,19 @@ The following instructions are for configuring an application using Adobe Experi
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
    ```
 
-2. Import the Mobile Core and Edge extensions in your application class.
+2. Import the Mobile Core and Edge extensions in your Application class.
 
    ```java
-    import com.adobe.marketing.mobile.*;
+    import com.adobe.marketing.mobile.MobileCore;
+    import com.adobe.marketing.mobile.Edge;
+    import com.adobe.marketing.mobile.edge.identity.Identity;
    ```
 
-3. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+1. Add the Mobile Core and Edge extensions to your project using CocoaPods. Add following pods in your `Podfile`:
 
    ```swift
    use_frameworks!
@@ -49,10 +55,8 @@ The following instructions are for configuring an application using Adobe Experi
    end
    ```
 
-4. Import the Mobile Core and Edge libraries:
-{% endtab %}
+2. Import the Mobile Core and Edge libraries:
 
-{% tab title="iOS — Swift" %}
 ### Swift
 
 ```swift
@@ -71,6 +75,13 @@ import AEPEdgeIdentity
 @import AEPEdgeIdentity;
 ```
 {% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift.md).
+
+{% endtab %}
+
 {% endtabs %}
 
 ### Register the Identity extension with Mobile Core
@@ -100,7 +111,7 @@ public class MobileApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS — Swift" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 ```swift
@@ -127,4 +138,3 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -1,6 +1,18 @@
 # Release Notes
 
-## Aug 23, 2021
+## November 19, 2021
+
+### iOS AEPTarget 3.1.2
+
+* Fixed an issue where the Target qaMode parameters were not being attached to the `retrieveLocationContent` API requests, once the Target preview selections were confirmed.
+
+## October 22, 2021
+
+### iOS AEPTarget 3.1.1
+
+* Fixed an issue where the Target session ID was not being persisted in the local storage if the app was closed before session expiry.
+
+## August 23, 2021
 
 ### Android Target 1.2.8
 

@@ -1,11 +1,5 @@
 # Frequently asked questions
 
-## Swift developer preview
-
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
-
-[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
 There are several new features and benefits of using the Experience Platform Mobile SDK. These SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The following table highlights some of the improvements in the Experience Platform Mobile SDK:
@@ -14,7 +8,7 @@ There are several new features and benefits of using the Experience Platform Mob
 | :--- | :--- | :--- |
 | Server-side, dynamic configuration | ✔️ |  |
 | Programmatic configuration | ✔️ | ✔️ |
-| Configuration UI | [Launch](https://launch.adobe.com) | [Mobile Services](https://mobilemarketing.adobe.com) |
+| Configuration UI | [Launch](https://experience.adobe.com/#/data-collection/) | [Mobile Services](https://mobilemarketing.adobe.com) |
 | Partner SDK extensions | ✔️ |  |
 | Lifecycle metrics | ✔️ | ✔️ |
 | GET/POST postbacks | ✔️ | ✔️ |
