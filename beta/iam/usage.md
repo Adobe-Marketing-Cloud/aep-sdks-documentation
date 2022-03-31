@@ -13,7 +13,7 @@ Some use cases may require the client to request an update from the remote more 
 {% tabs %}
 {% tab title="iOS" %}
 
-Swift
+#### Swift
 
 ```swift
 Messaging.refreshInAppMessages()
@@ -22,6 +22,12 @@ Messaging.refreshInAppMessages()
 {% endtab %}
 
 {% tab title="Android" %}
+
+#### Java
+
+```java
+Messaging.refreshInAppMessages();
+```
 
 {% endtab %}
 {% endtabs %}
