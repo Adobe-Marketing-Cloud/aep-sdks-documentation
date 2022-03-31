@@ -5,51 +5,55 @@
 The extensionVersion API returns the library version.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 public static String extensionVersion();
 ```
 
-#### Example
+**Example**
 
 ```java
 Messaging.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
-### Swift
+{% tab title="iOS (AEP 3.x)" %}
 
-#### Syntax
+#### Swift
+
+**Syntax**
 
 ```swift
 public static let extensionVersion
 ```
 
-#### Example
+**Example**
 
 ```swift
 Messaging.extensionVersion
 ```
 
-### Objective-C
+#### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```swift
 public static let extensionVersion
 ```
 
-#### Example
+**Example**
 
 ```text
 [AEPMobileMessaging extensionVersion];
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## handleNotificationResponse <a id="handlenotificationresponse"></a>
@@ -57,46 +61,50 @@ public static let extensionVersion
 The handleNotificationResponse function transmits the push notification interaction feedback.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 public static void handleNotificationResponse(final Intent intent, final boolean applicationOpened, final String customActionId);
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `intent` | Intent | The intent contains information related to the messageId and the data. |
 | `applicationOpened` | Boolean | Shows whether the application has been opened or not. |
 | `actionId` | String | The ID of the custom action. |
 
-#### Example
+**Example**
 
 ```java
-// Intent can be retrieved from the Activity/BroadcastReceiver using the getIntent() method. 
+// Intent can be retrieved from the Activity/BroadcastReceiver using the getIntent() method.
 Intent intent = getIntent();
 Messaging.handleNotificationResponse(intent, true, "customActionId");
 ```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-### Swift
+{% tab title="iOS (AEP 3.x)" %}
 
-#### Syntax
+#### Swift
+
+**Syntax**
 
 ```swift
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `response` | UNNotificationResponse | An object containing information about the push notification details. |
 | `applicationOpened` | Boolean | Shows whether the application has been opened or not. |
 | `customActionId` | String | The ID of the custom action. |
 
-#### Example
+**Example**
 
 ```swift
 func userNotificationCenter(_: UNUserNotificationCenter,
@@ -107,27 +115,28 @@ func userNotificationCenter(_: UNUserNotificationCenter,
 }
 ```
 
-### Objective-C
+#### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```objc
 @objc(handleNotificationResponse:applicationOpened:withCustomActionId:)
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
-#### Example
+**Example**
 
 ```objc
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(void (^)())completionHandler {
-    // Your code
-    [AEPMobileMessaging handleNotificationResponse:response applicationOpened:true withCustomActionId:@"customActionId"]
+         withCompletionHandler:(void (^)())completionHandler {    
+    [AEPMobileMessaging handleNotificationResponse:response applicationOpened:YES withCustomActionId:@"customActionId"];
     completionHandler();
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## registerExtension <a id="registerextension"></a>
@@ -135,66 +144,72 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 The registerExtension API lets you register your extension with the [Mobile Core](../../foundation-extensions/mobile-core/).
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 public static void registerExtension();
 ```
 
-#### Example
+**Example**
 
 ```java
 Messaging.registerExtension();
 ```
+
 {% endtab %}
 
-{% tab title="iOS" %}
-### Swift
+{% tab title="iOS (AEP 3.x)" %}
 
-You can use the MobileCore API to register the Messaging extension.
+#### Swift
 
-#### Syntax
+Use the MobileCore API `registerExtensions` to register the Messaging extension.
+
+**Syntax**
 
 ```swift
 public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+**Example**
 
 ```swift
 MobileCore.registerExtensions([Messaging.self, ...], {
-  // processing after registration
+    // processing after registration
 })
 ```
 
-### Objective-C
+#### Objective-C
 
-You can use the AEPMobileCore API to register the Messaging extension.
+Use the AEPMobileCore API `registerExtensions` to register the Messaging extension.
 
-#### Syntax
+**Syntax**
 
 ```objc
 public static func registerExtensions(_ extensions: [NSObject.Type], _ completion: (() -> Void)? = nil)
 ```
 
-#### Example
+**Example**
 
 ```objc
 [AEPMobileCore registerExtensions:@[AEPMobileMessaging.class, ...] completion:^{
-  // processing after registration
+    // processing after registration
 }];
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## setPushIdentifier <a id="setpushidentifier"></a>
 
 {% hint style="info" %}
 
-Although this API is provided in Mobile Core, the use of this API is required and leveraged by the Adobe Journey Optimizer extension to sync provided push tokens with Adobe Experience Platform services.
+Although this API is provided in Mobile Core, its use is required when implementing AJO for the purposes of syncing push tokens to Adobe Experience Platform services.
 
 {% endhint %}
 
@@ -203,53 +218,54 @@ The setPushIdentifier API sets the push token, allowing you to sync it with Prof
 {% tabs %}
 {% tab title="Android" %}
 {% hint style="info" %}
-To retrieve the push token from Firebase Messaging Service, please follow the tutorial within the [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token). 
+To retrieve the push token from Firebase Messaging Service, please follow the tutorial within the [Firebase documentation](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token).
 {% endhint %}
 
-### Java
+#### Java
 
-#### Syntax
+**Syntax**
 
 ```java
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `pushIdentifier` | String | The push token that is synced with Adobe Experience Platform. |
 
-#### Example
+**Example**
 
 ```java
-FirebaseMessaging.getInstance().getToken()
-        .addOnCompleteListener(new OnCompleteListener<String>() {
-            @Override
-            public void onComplete(@NonNull Task<String> task) {
-                if (task.isSuccessful()) {
-                    String token = task.getResult();
-                    MobileCore.setPushIdentifier(token);
-                }
-            }
-        });
+FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+    @Override
+    public void onComplete(@NonNull Task<String> task) {
+        if (task.isSuccessful()) {
+            String token = task.getResult();
+            MobileCore.setPushIdentifier(token);
+        }
+    }
+});
 ```
+
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
 To retrieve the push token in iOS, please read the tutorial within [Apple's documentation](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns).  
 
-### Swift
+#### Swift
 
-#### Syntax
+**Syntax**
 
 ```swift
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `deviceToken` | Data | The push token that is synced with Adobe Experience Platform. |
 
-#### Example
+**Example**
 
 ```swift
 func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -257,45 +273,49 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 }
 ```
 
-### Objective-C
+#### Objective-C
 
-#### Syntax
+**Syntax**
 
 ```objc
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `deviceToken` | Data | The push token that is synced with Adobe Experience Platform. |
 
-#### Example
+**Example**
 
 ```objc
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [AEPMobileCore setPushIdentifier:deviceToken];
 }
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
-## addPushTrackingDetails <a id="addpushtrackingdetails"></a>
+## addPushTrackingDetails (Android only) <a id="addpushtrackingdetails"></a>
 
-The addPushTrackingDetails API is used to update a pending intent with important information, such as messageId and Customer Journey information. 
+The `addPushTrackingDetails` API is used to update a pending intent with important information, such as messageId and Customer Journey information.
 
 **Note:** Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
 ```
 
-| **Variable** | **Type** | **Description** |
+| Variable | Type | Description |
 | :----------- | :------- | :-------------- |
 | `intent` | `Intent` | The pending intent that needs to be updated so it can be used when the user interacts with the notification. |
 | `messageId` | `String` | The message ID for the push notification. |
@@ -303,25 +323,29 @@ public static boolean addPushTrackingDetails(final Intent intent, final String m
 
 This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
 
-#### Example
+**Example**
 
 ```java
 boolean success = addPushTrackingDetails(intent, messageId, data)
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Public classes
 
-### MessagingPushPayload
+### MessagingPushPayload (Android only)
 
-`MessagePushPayload` is a helper class for extracting the data payload attributes from `RemoteMessage`, which are used while creating the push notification. 
+`MessagePushPayload` is a helper class for extracting the data payload attributes from `RemoteMessage`, which are used while creating the push notification.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 public MessagingPushPayload(RemoteMessage message)
@@ -339,7 +363,7 @@ public MessagingPushPayload(Map<String, String> data)
 | :----------- | :------- | :-------------- |
 | `data` | `Map<String, String>` | A data payload that contains the necessary attributes for creating a push notification. |
 
-#### Examples
+**Examples**
 
 ```java
 // Using the remote message
@@ -362,30 +386,32 @@ public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
 Public APIs are used to get attributes from the push payload, which are used while creating the push notification.
 
 {% tabs %}
-{% tab title="Android" %}
-### Java
 
-#### Syntax
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
 
 ```java
 // Returns the title from the remote message
 public String getTitle()
 
-// Returns the body from the remote message 
+// Returns the body from the remote message
 public String getBody()
 
-// Returns the sound from the remote message 
+// Returns the sound from the remote message
 // The sound string represents the filename of a sound resource bundled in the app.
 public String getSound()
 
-// Returns the notification badge count from the remote message 
+// Returns the notification badge count from the remote message
 public int getBadgeCount()
 
-// Returns the notification priority from the remote message. 
-// For more information, please read the Firebase documentation (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority) 
+// Returns the notification priority from the remote message.
+// For more information, please read the Firebase documentation (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#notificationpriority)
 public int getNotificationPriority()
 
-// Returns the channel ID from the remote message. 
+// Returns the channel ID from the remote message.
 public String getChannelId()
 
 // Returns the icon string from the remote message.
@@ -436,57 +462,22 @@ public String getLink()
 // Returns the ActionType for the action button
 public ActionType getType()
 ```
+
 {% endtab %}
+
 {% endtabs %}
 
 ### Payload keys
 
 {% tabs %}
-{% tab title="iOS" %}
-```json
-{
-   "aps":{
-      "alert":{
-         "title":"Hello from CJM",
-         "body":"Stay safe, wear mask"
-      },
-      "sound":"dingDong",
-      "badge":2,
-      "mutable-content":1,
-      "category":"iosCategory",
-      "thread-id":"myGroup",
-      "content-available":1
-   },
-   "a":"x",
-   "b":"y",
-   "adb_media":"www.imageUrl.com",
-   "adb_a_type":"DEEPLINK/WEBURL/DISMISS",
-   "adb_uri":"deeplink://url / weburl",
-   "adb_act":[
-      {
-         "aid":"customId1",
-         "label":"dismiss",
-         "type":"DISMISS"
-      }
-   ]
-}
-```
-
-| **Key** | **Type** | **Description** |
-| :------ | :------- | :-------------- |
-| `adb_media` | String | The URL of the media. In this situation, media refers to either an image or a video. This URL can be used to download the rich media before showing the push notification. |
-| `adb_uri` | String | The URI used for deeplinking. The deeplink is used to open appropriate webpage or app screen when the notification is clicked. |
-| `adb_a_type` | enum | An enum that determines what type of action will be performed when the notification is selected. It can be one of the following string values: `DEEPLINK`, `WEBURL`, `DISMISS`. |
-| `adb_act` | Array | An array that contains the action object(s). |
-| `adb_act.aid` | String | The ID for the action object. |
-| `adb_act.label` | String | The name for the action object |
-| `adb_act.type` | String | The type for the action object. It can be one of the following string values: `DEEPLINK`, `WEBURL`, `DISMISS` |
-{% endtab %}
 
 {% tab title="Android" %}
+
 {% hint style="info" %}
 You should use the `MessagingPushPayload` class to extract the payload values.
 {% endhint %}
+
+**FCM Payload Example**
 
 ```json
 {
@@ -529,7 +520,7 @@ You should use the `MessagingPushPayload` class to extract the payload values.
 }
 ```
 
-| **Key** | **Type** | **Description** |
+| Key | Type | Description |
 | :------ | :------- | :-------------- |
 | `adb_title` | String | The push notification's title |
 | `adb_body` | String | The push notification's body |
@@ -545,6 +536,52 @@ You should use the `MessagingPushPayload` class to extract the payload values.
 | `adb_act.label` | String | The label for the action object |
 | `adb_act.uri` | String | The URI for the action object |
 | `adb_act.type` | enum | The action type for the action object. It can be one of the following values: `DEEPLINK`, `WEBURL`, `DISMISS` |
-{% endtab %}
-{% endtabs %}
 
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+**APNS Payload Example**
+
+```json
+{
+   "aps":{
+      "alert":{
+         "title":"Hello from CJM",
+         "body":"Have a good day!"
+      },
+      "sound":"dingDong",
+      "badge":2,
+      "mutable-content":1,
+      "category":"iosCategory",
+      "thread-id":"myGroup",
+      "content-available":1
+   },
+   "a":"x",
+   "b":"y",
+   "adb_media":"www.imageUrl.com",
+   "adb_a_type":"DEEPLINK/WEBURL/DISMISS",
+   "adb_uri":"deeplink://url / weburl",
+   "adb_act":[
+      {
+         "aid":"customId1",
+         "label":"dismiss",
+         "type":"DISMISS"
+      }
+   ]
+}
+```
+
+| Key | Type | Description |
+| :------ | :------- | :-------------- |
+| `adb_media` | String | The URL of the media. In this situation, media refers to either an image or a video. This URL can be used to download the rich media before showing the push notification. |
+| `adb_uri` | String | The URI used for deeplinking. The deeplink is used to open appropriate webpage or app screen when the notification is clicked. |
+| `adb_a_type` | enum | An enum that determines what type of action will be performed when the notification is selected. It can be one of the following string values: `DEEPLINK`, `WEBURL`, `DISMISS`. |
+| `adb_act` | Array | An array that contains the action object(s). |
+| `adb_act.aid` | String | The ID for the action object. |
+| `adb_act.label` | String | The name for the action object |
+| `adb_act.type` | String | The type for the action object. It can be one of the following string values: `DEEPLINK`, `WEBURL`, `DISMISS` |
+
+{% endtab %}
+
+{% endtabs %}
