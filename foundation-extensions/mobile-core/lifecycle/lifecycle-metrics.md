@@ -129,7 +129,7 @@ The following metrics are collected on each [Lifecycle Application Foreground](h
 | xdm:type | String | The type of the application environment. |
 | xdm:carrier | String | A mobile network carrier or MNO, also known as a wireless service provider, wireless carrier, cellular company, or mobile network carrier. |
 | xdm:operatingSystem | String | The name of the operating system used when the observation was made. |
-| xdm:operatingsystemVersion | String | The full version identifier for the operating system used when the observation was made. |
+| xdm:operatingSystemVersion | String | The full version identifier for the operating system used when the observation was made. |
 | dc:language | String | The language of the environment to represent the user's linguistic, geographical, or cultural preferences for data presentation. |
 
 ## Lifecycle Application Background metrics

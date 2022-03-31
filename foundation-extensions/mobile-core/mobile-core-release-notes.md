@@ -1,5 +1,23 @@
 # Release Notes
 
+## March 11, 2022
+
+### Android Core 1.10.1
+
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
+
+### Android Lifecycle 1.1.1
+
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
+
+## February 14, 2022
+
+### iOS Core 2.9.5
+* Updates version for bundled ACPIdentity 2.5.2 release.
+
+### iOS Identity 2.5.2
+* Fixes intermittent issue for GetUrlVariables and AppendToUrl APIs when custom Analytics identifiers are being used.
+
 ## February 8, 2022
 
 ### Android Identity 1.3.0

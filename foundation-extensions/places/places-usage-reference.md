@@ -2,6 +2,12 @@
 
 This document contains usage information for the public functions, classes, and enums in AEPPlaces.
 
+{% hint style="info" %}
+This page only contains information about the 3.x `AEPPlaces` extension for iOS.
+
+A full API reference for the Android `Places` extension and 2.x `ACPPlaces` extension for iOS can be found [here](https://experienceleague.adobe.com/docs/places/using/places-ext-aep-sdks/places-extension/places-api-reference.html?lang=en).
+{% endhint %}
+
 ## Static functions
 
 ### clear
@@ -278,7 +284,7 @@ The value provided is stored in the Places shared state, and is for reference on
 
 {% tabs %}
 {% tab %}
-{% tab title="Swift"}
+{% tab title="Swift" %}
 {% endtab %}
 
 {% tab %}
@@ -302,7 +308,7 @@ Places.setAccuracyAuthorization(.fullAccuracy)
 {% endtab %}
 
 {% tab %}
-{% tab title="Objective-C"}
+{% tab title="Objective-C" %}
 {% endtab %}
 
 {% tab %}
@@ -415,4 +421,3 @@ func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 | :--- | :--- |
 | entry | 0 |
 | exit | 1 |
-

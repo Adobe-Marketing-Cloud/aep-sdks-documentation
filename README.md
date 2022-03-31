@@ -46,6 +46,12 @@ Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](
 
 ## Supported Platforms
 
+{% hint style="warning" %}
+## End of support for Adobe Experience Platform Mobile SDK plugins for Unity
+
+Effective March 30, 2022, support for Adobe Experience Platform Mobile SDKs on Unity is no longer active. While you may continue using our libraries, Adobe no longer plans to update, modify, or provide support for these libraries. Please contact your Adobe CSM for details.
+{% endhint %}
+
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
 * Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)

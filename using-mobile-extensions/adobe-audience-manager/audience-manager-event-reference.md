@@ -12,7 +12,7 @@ This event updates the profile for Audience Manager and is generated when the`au
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestContent` | Yes | ​[Audience Manager Content Response](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-response-1)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestContent` | Yes | ​[Audience Manager Content Response](../adobe-audience-manager/audience-manager-event-reference.md#audience-manager-content-response)​ |
 
 #### Data payload definition
 
@@ -30,7 +30,7 @@ This event is a request to retrieve the visitor profile from Audience Manager an
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestIdentity` | Yes | ​[Audience Manager Identity Response](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-identity-response)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.requestIdentity` | Yes | ​[Audience Manager Identity Response](../adobe-audience-manager/audience-manager-event-reference.md#audience-manager-identity-response)​ |
 
 #### Data payload definition
 
@@ -52,25 +52,25 @@ There are no key-value pairs for this event.
 
 #### Hub shared state
 
-Audience Manager listens for the configuration shared state events. For more information about shared state events, see the [shared states and events guide](https://aep-sdks.gitbook.io/docs/resources/building-mobile-extensions/shared-states-and-events).​
+Audience Manager listens for the configuration shared state events. For more information about shared state events, see the [shared states and events guide](../../building-mobile-extensions/shared-states-and-events).​
 
 ### Configuration Response Content
 
 The Audience Manager extension listens for Configuration Content Response events to detect whether the privacy status was changed or the audience configuration was updated.
 
-For more information about the this event, see the configuration response content section of the [Adobe Analytics event reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#configuration-response-content)​.
+For more information about the this event, see the configuration response content section of the [Adobe Analytics event reference](../adobe-analytics/analytics-event-reference.md#configuration-response-content)​.
 
 ### Lifecycle Response Content
 
 This event is generated when there is a lifecycle session update such as a launch event or upgrade. The Audience Manager extension listens for the event and sends a new signal to Audience Manager with the lifecycle context data.
 
-For more information about the this event, see the lifecycle response content section of the [Adobe Analytics event reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#lifecycle-response-content).
+For more information about the this event, see the lifecycle response content section of the [Adobe Analytics event reference](../adobe-analytics/analytics-event-reference.md#lifecycle-response-content).
 
 ### Analytics Response Content
 
 Audience Manager listens for Analytics Response events, which are sent when audience forwarding is enabled, processes the events, and extracts the destinations where the new signals will be sent.
 
-For more information about this event, see the Analytics response content section of the [Adobe Analytics event reference](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-analytics/analytics-event-reference#analytics-response-content).
+For more information about this event, see the Analytics response content section of the [Adobe Analytics event reference](../adobe-analytics/analytics-event-reference.md#analytics-response-content).
 
 ## Events dispatched <a id="audience-manager-content-response"></a>
 
@@ -92,7 +92,7 @@ The event is generated when a request is made to:
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseContent` | Yes | ​[Audience Manager Content Request](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-content-request)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseContent` | Yes | ​[Audience Manager Content Request](../adobe-audience-manager/audience-manager-event-reference.md#audience-manager-content-request)​ |
 
 #### Data payload definition
 
@@ -115,7 +115,7 @@ The event is generated when a request is made to update the Audience manager pro
 
 | **Event Type** | **Event Source** | **Paired** | **Paired Event** |
 | :--- | :--- | :--- | :--- |
-| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseIdentity` | Yes | ​[Audience Manager Identity Request](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-audience-manager/audience-manager-event-reference#audience-manager-identity-request)​ |
+| `com.adobe.eventType.audienceManager` | `com.adobe.eventSource.responseIdentity` | Yes | ​[Audience Manager Identity Request](../adobe-audience-manager/audience-manager-event-reference#audience-manager-identity-request)​ |
 
 #### Data payload definition
 
