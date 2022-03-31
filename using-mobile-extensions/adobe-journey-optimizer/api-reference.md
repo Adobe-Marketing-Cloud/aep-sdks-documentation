@@ -8,7 +8,7 @@ The extensionVersion API returns the library version.
 
 {% tab title="Android" %}
 
-##### Java
+#### Java
 
 **Syntax**
 

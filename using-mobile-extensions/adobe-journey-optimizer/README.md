@@ -1,8 +1,8 @@
 # Adobe Journey Optimizer
 
-The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html)(AJO) extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collect user push tokens and manages interaction measurement with Adobe Experience Platform services.
+The [Adobe Journey Optimizer](https://business.adobe.com/products/journey-optimizer/adobe-journey-optimizer.html) (AJO) extension for Adobe Experience Platform Mobile SDKs powers push notifications for your mobile apps. This extension helps you collect user push tokens and manages interaction measurement with Adobe Experience Platform services.
 
-The following documentation details configuration requirements and explains how to use the AJO extension. It also includes steps for implementing AJO powered push notifications in your app.
+The following documentation details configuration requirements and explains how to use the AJO extension. It also includes steps for implementing AJO-powered push notifications in your app.
 
 ## Before starting
 
@@ -113,7 +113,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift).
 
 {% endtab %}
 
@@ -133,7 +133,7 @@ public class MobileApp extends Application {
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
-        MobileCore.configureWithAppID("yourLaunchEnvironmentID");
+        MobileCore.configureWithAppID("YOUR_APP_ID");
         try {
             Edge.registerExtension();
             Identity.registerExtension();
@@ -184,7 +184,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift).
 
 {% endtab %}
 
@@ -198,7 +198,7 @@ After importing and registering the extensions with your application, you need t
 
 {% tab title="Android" %}
 
-To retrieve the push token from Firebase Messaging Service, read the tutorial on [retrieving the registration token](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token) within the Firebase documentation. After retrieving the push token, use the following API to sync it with the Profile in AEP.
+To retrieve the push token from Firebase Messaging Service, read the tutorial on [retrieving the registration token](https://firebase.google.com/docs/cloud-messaging/android/client#retrieve-the-current-registration-token) within the Firebase documentation. After retrieving the push token, use the following API to sync it with the Profile in Platform.
 
 #### Java
 
@@ -229,7 +229,7 @@ FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteL
 
 {% tab title="iOS (AEP 3.x)" %}
 
-To retrieve the push token in iOS, read the tutorial on [registering your application](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns) within Apple's documentation. After retrieving the push token, use the following API to sync it with the Profile in AEP.
+To retrieve the push token in iOS, read the tutorial on [registering your application](https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns) within Apple's documentation. After retrieving the push token, use the following API to sync it with the Profile in Platform.
 
 #### Swift
 
@@ -276,7 +276,7 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 {% tab title="iOS (ACP 2.x)" %}
 
-This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+This extension is built on the AEPCore (3.x) and it is not compatible with ACPCore (2.x). Please follow [the guide for migrating to the Swift AEPCore](../../resources/migrate-to-swift).
 
 {% endtab %}
 
