@@ -1,11 +1,5 @@
 # Frequently asked questions
 
-## Swift developer preview
-
-The Adobe Experience Platform Mobile SDK will soon be available in Swift as an initial, beta release.
-
-[Sign up](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4UJN9zAhIEhJr3PBfyMf9wdUQTI2S0pMVEVYS1k3UUNJVDNDWlRUTFk4Qi4u) for a free developer preview.
-
 ## What's new in the Adobe Experience Platform Mobile SDK?
 
 There are several new features and benefits of using the Experience Platform Mobile SDK. These SDKs offer extensions to augment core SDK functionality, server-side configuration, and new Adobe Experience Cloud solution functionality. The following table highlights some of the improvements in the Experience Platform Mobile SDK:
@@ -158,9 +152,9 @@ If you have followed the documentation and are unable to see reporting data in y
 
 You can use [Project Griffon](../../beta/project-griffon/) to verify events are being sent to Adobe Analytics.
 
-#### Ensure appropriate time-stamp configuration <a id="ensure-appropriate-time-stamp-configuration"></a>
+#### Ensure appropriate timestamp configuration <a id="ensure-appropriate-time-stamp-configuration"></a>
 
-Ensure that your SDK timestamp configuration is aligned with the report suite's time stamp settings. That is, `analytics.offlineEnabled` in the SDK configuration block for the Launch mobile property is aligned with the setting of Timestamp Configuration in your report suite. You may find Timestamp at Analytics &gt; Admin &gt; Report Suites &gt; General &gt; Timestamp Configuration.
+Ensure that your SDK timestamp configuration is aligned with the report suite's timestamp settings. That is, `analytics.offlineEnabled` in the SDK configuration block for the Launch mobile property is aligned with the setting of Timestamp Configuration in your report suite. You may find Timestamp at Analytics &gt; Admin &gt; Report Suites &gt; General &gt; Timestamp Configuration.
 
 The following settings explain how settings between the SDK and your report suite should be aligned:
 
@@ -170,6 +164,12 @@ The following settings explain how settings between the SDK and your report suit
 #### Contact Adobe Customer Care <a id="contact-adobe-customer-care"></a>
 
 If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
+
+## Adobe Experience Platform Edge Network
+
+### Does AEP Edge Network extension support offline tracking?
+
+Yes, offline tracking is supported by default when sending XDM Experience events since these events have a required timestamp, and there is no separate setting for this as it used to be in the Adobe Analytics extension. The events are backed up in the persistence layer and then sent to the Edge Network in current session if possible, or queued until the next session when a network connection is available. 
 
 ## Get help
 

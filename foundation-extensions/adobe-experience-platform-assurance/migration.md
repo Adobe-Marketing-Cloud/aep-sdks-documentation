@@ -22,13 +22,13 @@ static var extensionVersion: String
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```text
+```objective-c
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
 
 {% tab title="AEP 1.x \(Objective-C\)" %}
-```text
+```objective-c
 + (nonnull NSString*) extensionVersion;
 ```
 {% endtab %}
@@ -38,19 +38,20 @@ static var extensionVersion: String
 
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
+
 ```swift
 static func startSession(url: URL?)
 ```
 {% endtab %}
 
 {% tab title="AEP 3.x \(Objective-C\)" %}
-```text
+```objective-c
 + (void) startSessionWithUrl:(NSURL* _Nonnull) url;
 ```
 {% endtab %}
 
 {% tab title="AEP 1.x \(Objective-C\)" %}
-```text
+```objective-c
 + (void) startSession: (NSURL* _Nonnull) url;
 ```
 {% endtab %}

@@ -1,5 +1,11 @@
 # Release Notes
 
+## March 3, 2022
+
+### Android Analytics 1.2.10
+
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
+
 ## October 25, 2021
 
 ### iOS AEPAnalytics 3.0.3
