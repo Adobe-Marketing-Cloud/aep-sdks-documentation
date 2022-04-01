@@ -4,11 +4,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## March 31, 2022
+## April 1, 2022
+
+### iOS AEPEdgeIdentity 1.0.1
+
+* Synchronized updates and reads on the Identity for Edge Network shared state to avoid any race conditions.
 
 ### iOS AEPAnalytics 3.0.4
 
-* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` and not `AEPError.unexpected` error when AID/VID values are not found in persistence.
+* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` instead of `AEPError.unexpected` error when AID/VID values are not found in persistence.
 
 ## March 30, 2022
 

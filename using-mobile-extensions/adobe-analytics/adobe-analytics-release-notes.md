@@ -4,7 +4,7 @@
 
 ### iOS AEPAnalytics 3.0.4
 
-* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` and not `AEPError.unexpected` error when AID/VID values are not found in persistence.
+* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` instead of `AEPError.unexpected` error when AID/VID values are not found in persistence.
 
 ## March 3, 2022
 
