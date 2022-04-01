@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## March 31, 2022
+
+### iOS AEPAnalytics 3.0.4
+
+* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` and not `AEPError.unexpected` error when AID/VID values are not found in persistence.
+
 ## March 30, 2022
 
 ## End of support for Adobe Experience Platform Mobile SDK plugins for Unity
@@ -14,15 +20,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Core 1.10.1
 
-* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp".
 
 ### Android Lifecycle 1.1.1
 
-* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone.
 
 ### Android Edge 1.3.1
 
-* Updates timestamp in Experience Events to use fractional seconds. 
+* Updates timestamp in Experience Events to use fractional seconds.
 
 ### Android Consent 1.0.1
 
@@ -157,4 +163,3 @@ Updated the following flutter packages to reference Android libraries from Maven
 
 - Updated the package to reference the Android library from Maven Central Repository.
 - Migrated to the new Android APIs based on [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html).
-
