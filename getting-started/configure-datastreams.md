@@ -19,6 +19,7 @@ A datastream is a configured instance of the Edge Network that contains settings
 The following steps illustrate how to create a sample datastream for a mobile implementation:
 
 1. In the browser, navigate to [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection) and login with your credentials.
+2. If your organization is enabled for multiple sandboxes, first select the sandbox from the top right corner. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html).
 2. From the left panel, select **Datastreams**.
 3. Select **New Datastream** \(located on top right\).
 4. Set a name for the datastream and select **Save**.
@@ -37,5 +38,5 @@ The following steps illustrate how to create a sample datastream for a mobile im
 
 Your datastream is ready to be used now. If different settings are required per environment, create new datastreams with the respective configuration settings.
 
-For additional information on datastreams in AEP Data Collection UI, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/initial-configuration/create-datastream.html).
+For additional information on datastreams in Experience Platform Data Collection UI, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/initial-configuration/create-datastream.html).
 

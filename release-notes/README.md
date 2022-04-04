@@ -12,7 +12,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Adobe Experience Platform Edge Network Launch extension v1.1.9
 
-- UI updates for the Datastream configuration section to enable the new datastreams support. If more than one sandbox is used, a sandbox picker is displayed to allow for datastreams selection across sandboxes.
+- UI updates for the Datastream configuration section to enable the sandbox aware datastreams support. If more than one sandbox is used, a sandbox picker is displayed to allow for datastreams selection across sandboxes.
 - Auto-complete in the UI for default third party domain based on company name for Edge Network data collection. The domain configuration is now required, while existing configurations will continue to use the default edge.adobedc.net domain.
 
 ### Adobe Journey Optimizer Launch extension v0.0.16

@@ -10,17 +10,22 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
-3. Type in the extension settings. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
+3. Select the Datastream you would like to use per environment. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
+4. Set up the Domain configuration by either using the automatically populated domain, or a first party domain mapped to an Adobe-provisioned Edge network domain. For more information, see [domain configuration](./#domain-configuration) below.
 4. Select **Save**.
-5. Follow the publishing process to update SDK configuration.
+5. Follow the [publishing process](../../getting-started/create-a-mobile-property.md#publish-the-configuration) to update SDK configuration.
 
-![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-launch-configuration.png)
+![Edge Network extension configuration](../../.gitbook/assets/mobile-edge-ui-configuration.png)
 
 ### Datastreams
 
-Select the `Datastream` from the drop-down list. Once you do that, the Production, Staging and Development environments will be automatically prefilled. If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+Select the `Datastream` from the drop-down list, or if no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
 
-If you use multiple Development configurations, select the desired one from the `Development environment` drop-down.
+If you want to use different datastreams per environment, select the desired ones from the corresponding drop-down lists. 
+
+{% hint style="info" %}
+If your organization uses multiple sandboxes, select the **Sandbox** first, then select the **Datastream** for each environment.
+{% endhint %}
 
 The datastream used by the client-side implementation is one of the followings:
 
@@ -30,11 +35,11 @@ The datastream used by the client-side implementation is one of the followings:
 
 ### Domain configuration
 
-The domain used for data collection a required filed and it usually follows the format `<company>.edge.adobedc.net`, where `<company>` is the unique name associated with your Adobe organization.
+The domain used for data collection a required filed and it usually follows the format `<company>.edge.adobedc.net`, where `<company>` is the unique namespace associated to your Adobe organization.
 
 If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. For more details about how to configure or maintain a first-party domain, see [Adobe-Managed Certificate Program](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en#adobe-managed-certificate-program).
 
-The domain name is expected to be just the domain without any protocol or trailing slash.
+**Note:** The domain name is expected to be just the domain without any protocol or trailing slashes.
 
 ## Add the Edge Network extension to your app
 

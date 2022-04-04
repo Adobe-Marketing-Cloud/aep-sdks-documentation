@@ -39,13 +39,13 @@ To start collecting data in Adobe Experience Platform, you need to create an XDM
    * Select `Next`
    * Set a name for this dataset and select `Finish`.
 
-### Generate a Datastream identifier <a id="generate-a-datastream-identifier"></a>
+### Generate a Datastream identifier
 
 The SDK requires a configuration identifier that ensures the implementation matches the server-side Datastream configuration and data is routed/received to/from the correct destination.
 
-To create a configuration identifier in the desired sandbox use the following steps:
+To create a configuration identifier use the following steps:
 
-1. In [Adobe Data Collection UI](https://experience.adobe.com/#/data-collection), if your organization is enabled for multiple sandboxes, first select the sandbox from the top right corner. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html).
+1. If your organization is enabled for multiple sandboxes, in [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection) first select the sandbox from the top right corner. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html).
 1. From the left panel select `Datastreams`, then select `New Datastream`.
 2. Provide a name and description, select `Save` and then proceed to next step to set up the services. 
 
