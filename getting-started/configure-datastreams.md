@@ -3,13 +3,13 @@
 After you've created a schema and its associated dataset, you may now configure datastreams \(also referred to as Edge configurations or Edge Network configurations\).
 
 {% hint style="warning" %}
-To create a datastream, your organization must be provisioned for this feature in Adobe Experience Platform Launch. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.
+To create a datastream, your organization must be provisioned for this feature in Adobe Experience Platform Data Collection UI. Please contact your Adobe Customer Success Manager \(CSM\) to be added to the _allow list_.
 {% endhint %}
 
 {% hint style="info" %}
-The Datastreams tool is available to customers on the _allow list_ regardless whether they use Experience Platform Launch for web tag management or to manage mobile app configuration.
+The Datastreams tool is available to customers on the _allow list_ regardless whether they use Experience Platform Data Collection UI for web tag management or to manage mobile app configuration.
 
-Users will require _Develop_ permissions in Experience Platform Launch. See the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html?lang=en) article in the Experience Platform Launch documentation for more details.
+Users will require _Develop_ permissions for Experience Platform Data Collection. See the [user permissions](https://experienceleague.adobe.com/docs/experience-platform/tags/admin/user-permissions.html) article for more details.
 {% endhint %}
 
 ## What is a datastream?
@@ -18,23 +18,24 @@ A datastream is a configured instance of the Edge Network that contains settings
 
 The following steps illustrate how to create a sample datastream for a mobile implementation:
 
-1. In the browser, navigate to [Adobe Experience Platform Launch](https://experience.adobe.com/launch) and login with your credentials.
-2. From the left panel, choose **Datastreams** from the dropdown \(instead of **Client Side**\).
-3. Click **New Datastream** \(located on top right\)
-4. Set a name for the configuration and click **Save**.
+1. In the browser, navigate to [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection) and login with your credentials.
+2. From the left panel, select **Datastreams**.
+3. Select **New Datastream** \(located on top right\).
+4. Set a name for the datastream and select **Save**.
 
-![Creating a datastream in Adobe Experience Platform Launch](../.gitbook/assets/create-datastream.png)
+![Creating a datastream](../.gitbook/assets/create-datastream.png)
 
-1. In the next screen, toggle on **Adobe Experience Platform** and:
-   1. Select the appropriate **Sandbox** from the dropdown
-   2. Choose the appropriate **Event Dataset** as previously created
-2. Once you have made your selections click `Save`.
+1. In the next screen, select **Add Service**.
 
-![Configuring your datastream in Adobe Experience Platform Launch](../.gitbook/assets/datastreams-enable-aep.png)
+1. From the Service drop-down, select **Adobe Experience Platform** and:
+   
+   - Make sure the service toggle is **Enabled**.
+   
+   - Choose the appropriate **Event Dataset** as previously created, then select **Save**.
 
-In the resulting summary screen, you will see that three environments have been created for your datastream. If needed, each environment can be edited individually with different configuration parameters.
+![Configuring your datastream with Adobe Experience Platform](../.gitbook/assets/datastreams-enable-aep.png)
 
-![Environment IDs for your Datastream](../.gitbook/assets/datastreams-environments.png)
+Your datastream is ready to be used now. If different settings are required per environment, create new datastreams with the respective configuration settings.
 
-For additional information on datastreams in Experience Platform Launch, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html).
+For additional information on datastreams in AEP Data Collection UI, see the [configuring a datastream guide](https://experienceleague.adobe.com/docs/platform-learn/implement-mobile-sdk/initial-configuration/create-datastream.html).
 

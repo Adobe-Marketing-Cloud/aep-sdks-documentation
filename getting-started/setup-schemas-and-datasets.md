@@ -15,7 +15,7 @@ In order to begin sending XDM data from your mobile application to Edge Network,
 1. [Create and configure your XDM schema](setup-schemas-and-datasets.md#create-and-configure-your-xdm-schema)
 2. [Create and configure your dataset based on the previously created schema](setup-schemas-and-datasets.md#create-and-configure-a-dataset)
 
-## Create and configure your XDM schema <a id="create-and-configure-your-xdm-schema"></a>
+## Create and configure your XDM schema
 
 ### What is an XDM schema?
 
@@ -41,7 +41,7 @@ The following steps illustrate the creation of a sample schema for mobile data c
 
 ![Schema creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Ffe309e8b2ebd1c7573cf23ccdab56f406b4aa822.png?alt=media)
 
-## Create and configure a dataset <a id="create-and-configure-a-dataset"></a>
+## Create and configure a dataset
 
 Data ingested into Adobe Experience Platform is stored \(in the Data Lake\) as datasets that conform to the aforementioned mentioned XDM schema \(setup in the step above\).
 

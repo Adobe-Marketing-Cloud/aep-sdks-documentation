@@ -28,9 +28,13 @@ The datastream used by the client-side implementation is one of the followings:
 * the `Staging environment` configuration when the Launch library is published to staging \(in the Submitted column in the Launch publishing flow\).
 * the `Development environment` configuration when the Launch library is in development.
 
-### Edge Network domain
+### Domain configuration
 
-If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. The domain name is expected to be just the domain without any protocol or trailing slash. To use the default Adobe Edge Network domain, leave this field blank.
+The domain used for data collection a required filed and it usually follows the format `<company>.edge.adobedc.net`, where `<company>` is the unique name associated with your Adobe organization.
+
+If you have a first-party domain mapped to the Adobe-provisioned Edge Network domain, enter it here. For more details about how to configure or maintain a first-party domain, see [Adobe-Managed Certificate Program](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en#adobe-managed-certificate-program).
+
+The domain name is expected to be just the domain without any protocol or trailing slash.
 
 ## Add the Edge Network extension to your app
 
