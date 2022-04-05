@@ -34,12 +34,12 @@ The following steps illustrate the creation of a sample schema for mobile data c
 1. In your browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create an XDM Schema as follows:
    1. From the left panel, select Schemas
-   2. Select **Create schema**
-   3. Select **XDM Experience event**
+   2. Select **Create schema**.
+   3. Select **XDM Experience event.**
    4. Under **Field Groups**, select **Add**; search and add the `Adobe Experience Edge Autofilled Environment Details`, `AEP Mobile Lifecycle Details` and other pre-created or custom field groups as needed.
    5. Set a **Display Name** for this schema and select `Save`.
 
-![Schema creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Ffe309e8b2ebd1c7573cf23ccdab56f406b4aa822.png?alt=media)
+![Schema creation in Adobe Experience Platform](../.gitbook/assets/aep-create-schema.png)
 
 ## Create and configure a dataset
 
@@ -53,10 +53,10 @@ The following steps illustrate the creation of a sample dataset for mobile data 
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create a new dataset as follows:
-   1. From the left navigation panel, under **Data Management**, select **Datasets**
-   2. Select **Create dataset from schema**
+   1. From the left navigation panel, under **Data Management**, select **Datasets**.
+   2. Select **Create dataset from schema**.
    3. Select the XDM schema previously created and select **Next**.
    4. Set a name for the dataset and select **Finish**.
 
-![Dataset creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Feb712f9b357538dfc425d5af67a0663d044d6087.png?alt=media)
+![Dataset creation in Adobe Experience Platform](../.gitbook/assets/aep-create-dataset.png)
 
