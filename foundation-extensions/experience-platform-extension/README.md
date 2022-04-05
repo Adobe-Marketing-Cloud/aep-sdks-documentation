@@ -10,8 +10,8 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
 2. On the **Catalog** tab, locate or search for the **Adobe Experience Platform Edge Network** extension, and select **Install**.
-3. Select the Datastream you would like to use per environment. For more information, see [Configure datastreams](../../getting-started/configure-datastreams.md) and [datastreams](./#datastreams).
-4. Set up the Domain configuration by either using the automatically populated domain, or a first party domain mapped to an Adobe-provisioned Edge network domain. For more information, see [domain configuration](./#domain-configuration) below.
+3. Select the **Datastream** you would like to use per environment. Read more about [datastreams](./#datastreams) below.
+4. Set up the **Domain configuration** by either using the automatically populated domain, or a first party domain mapped to an Adobe-provisioned Edge network domain. For more information, see [domain configuration](./#domain-configuration) below.
 4. Select **Save**.
 5. Follow the [publishing process](../../getting-started/create-a-mobile-property.md#publish-the-configuration) to update SDK configuration.
 
@@ -19,9 +19,9 @@ The Adobe Experience Platform Edge Network extension requires the Identity for E
 
 ### Datastreams
 
-Select the `Datastream` from the drop-down list, or if no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md).
+If no datastream was previously created, see [Configure datastreams](../../getting-started/configure-datastreams.md) before moving to the next step.
 
-If you want to use different datastreams per environment, select the desired ones from the corresponding drop-down lists. 
+You may configure only the required datastream for the production environment, and by default the staging and development environments will use the same datastream. Alternatively, if you want to use different datastreams per each environment, select the desired ones from the corresponding drop-down lists.
 
 {% hint style="info" %}
 If your organization uses multiple sandboxes, select the **Sandbox** first, then select the **Datastream** for each environment.
