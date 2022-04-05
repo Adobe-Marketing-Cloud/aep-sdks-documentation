@@ -26,13 +26,13 @@ The following steps illustrate how to create a sample datastream for a mobile im
 
 ![Creating a datastream](../.gitbook/assets/create-datastream.png)
 
-1. In the next screen, select **Add Service**.
+6. In the next screen, select **Add Service**.
 
-1. From the Service drop-down, select **Adobe Experience Platform** and:
-   
-   - Make sure the service toggle is **Enabled**.
-   
-   - Choose the appropriate **Event Dataset** as previously created, then select **Save**.
+7. From the Service drop-down, select **Adobe Experience Platform** and:
+
+   * Make sure the service toggle is **Enabled**.
+
+   * Choose the appropriate **Event Dataset** as previously created, then select **Save**.
 
 ![Configuring your datastream with Adobe Experience Platform](../.gitbook/assets/datastreams-enable-aep.png)
 
