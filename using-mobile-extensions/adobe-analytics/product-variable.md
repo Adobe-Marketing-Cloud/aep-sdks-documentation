@@ -254,7 +254,7 @@ var contextData = [String: Any]()
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -265,7 +265,6 @@ MobileCore.track(action: "purchase" as String, data: contextData)
 // trackState example:
 MobileCore.track(state: "Order Confirmation" as String, data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -288,7 +287,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [AEPMobileCore trackState:@"Order Confirmation" data:contextData];
 ```
-
+{% endtab %}
 
 {% tab title="iOS (2.x)" %}
 ### Swift
@@ -302,7 +301,7 @@ var contextData:[String:String]=[:]
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -312,7 +311,6 @@ ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -335,6 +333,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
 
 {% tab title="React Native" %}
 ### JavaScript
@@ -348,7 +347,7 @@ var contextData = {};
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
@@ -372,7 +371,7 @@ var contextData = {};
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
