@@ -326,7 +326,30 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% tab title="Android" %}
 
-Feature not yet available.
+If the developer would like to manually integrate the `View` that contains the UI for an in-app message, they can do so by accessing the `WebView` directly in a `MessagingDelegate` method.  
+
+In the example below, the developer decides whether or not the in-app message should be directly integrated into their existing UI.  If so, they capture a reference to the message's `WebView` and return `false` to prevent the message from being shown by the SDK:
+
+#### Java
+
+```java
+private Message currentMessage = null;
+private boolean shouldIntegrateMessageDirectly = true;
+private WebView inAppMessageView;
+
+@Override
+public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
+  if (shouldIntegrateMessageDirectly) {
+    this.currentMessage = (Message) fullscreenMessage.getParent();
+    
+    inAppMessageView = currentMessage.getWebView();
+    
+    return false;
+  }
+  
+  return true;
+}
+```
 
 {% endtab %}
 {% endtabs %}
