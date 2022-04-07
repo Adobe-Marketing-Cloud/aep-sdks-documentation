@@ -148,7 +148,7 @@ Use the knowledge from Assignment 1 and connect to an Assurance Session to verif
 // 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
 // shown in Adobe Experience Platform
 // Note: the Dataset identifier specified at Event level overrides the Experience Event Dataset specified in the
-// Datastream configuration in Adobe Launch
+// Datastream configuration
 xdmData.put("eventType", "product.review");
 ExperienceEvent event = new ExperienceEvent.Builder()
   .setXdmSchema(xdmData, "<DatasetIdentifier>")
@@ -169,7 +169,7 @@ Edge.sendEvent(event, new EdgeCallback() {
 // 3. Send the XDM data using the Edge extension, by specifying Product Reviews Dataset identifiers as
 // shown in Adobe Experience Platform
 // Note: the Dataset identifier specified at Event level overrises the Experience Event Dataset specified in the
-// Datastream configuration in Adobe Launch
+// Datastream configuration
 xdmData["eventType"] = "product.review"
 let experienceEvent =
 ExperienceEvent(xdm: xdmData, datasetIdentifier: "<DatasetIdentifier>")

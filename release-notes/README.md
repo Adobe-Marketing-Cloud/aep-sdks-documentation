@@ -10,6 +10,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Synchronized updates and reads on the Identity for Edge Network shared state to avoid any race conditions.
 
+### Adobe Experience Platform Edge Network Launch extension v1.1.9
+
+* UI updates for the Datastream configuration section to enable the sandbox aware datastreams support. If more than one sandbox is used, a sandbox picker is displayed to allow for datastreams selection across sandboxes.
+
+* Auto-complete in the UI for default third party domain based on company name for Edge Network data collection. The domain configuration is now required, while existing configurations will continue to use the default edge.adobedc.net domain.
+
+### Adobe Journey Optimizer Launch extension v0.0.16
+
+* UI updates to support the new datastream selections in the AEP Edge Network extension.
+
 ## March 31, 2022
 
 ### iOS AEPAnalytics 3.0.4
