@@ -265,7 +265,6 @@ MobileCore.track(action: "purchase" as String, data: contextData)
 // trackState example:
 MobileCore.track(state: "Order Confirmation" as String, data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -288,7 +287,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [AEPMobileCore trackState:@"Order Confirmation" data:contextData];
 ```
-
+{% endtab %}
 
 {% tab title="iOS (2.x)" %}
 ### Swift
@@ -312,7 +311,6 @@ ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -335,6 +333,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
 
 {% tab title="React Native" %}
 ### JavaScript
