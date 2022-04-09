@@ -4,6 +4,26 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 8, 2022
+
+### iOS AEPCore 3.5.0
+
+* Adds two APIs to `Date+Format` class. Method `getISO8601UTCDateWithMilliseconds` formats a Date to string as with fractional seconds and UTC time zone, while `getISO8601FullDate` formats a Date to string with date without time using the local time zone.
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone.
+* Updates the timestamp format for rule token `~timestampp` with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp".
+* Improves Signal logging by treating all 2xx network responses as success.
+* Fixes bug where dispatched events failed due to use of single quotes in name.
+* Fixes format of push token string by uppercasing characters.
+
+### iOS AEPEdge 1.4.0
+
+* Updates timestamp in Experience Events to use fractional seconds.
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+
+### iOS AEPEdgeConsent 1.0.1
+
+* Updates timestamp in Consent requests to use fractional seconds.
+
 ## April 1, 2022
 
 ### iOS AEPEdgeIdentity 1.0.1

@@ -1,5 +1,12 @@
 # Release Notes
 
+## April 8, 2022
+
+### iOS AEPEdge 1.4.0
+
+* Updates timestamp in Experience Events to use fractional seconds.
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+
 ## April 1, 2022
 
 ### Adobe Experience Platform Edge Network Launch extension v1.1.9
