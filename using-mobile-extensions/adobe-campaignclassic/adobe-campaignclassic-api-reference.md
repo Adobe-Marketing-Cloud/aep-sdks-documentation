@@ -23,7 +23,7 @@ String campaignClassicExtensionVersion = CampaignClassic.extensionVersion();
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
@@ -109,7 +109,7 @@ public void onNewToken(String token) {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
@@ -219,7 +219,7 @@ public void onResume() {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
@@ -280,7 +280,11 @@ The `trackNotificationReceive` API sends the received push notification's tracki
 
 ### Java
 
+{% hint style="info" %}
+
 If `trackInfo` is null or does not contain the necessary tracking identifiers, `messageId` (`_mId`) and `deliveryId` (`_dId`), a track request is **not** sent.
+
+{% endhint %}
 
 **Syntax**
 
@@ -313,7 +317,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](../../resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
@@ -334,15 +338,16 @@ func trackNotificationReceive(_ trackInfo: [String: String])
 **Example**
 
 ```swift
-func application(_ application: UIApplication, didReceiveRemoteNotification launchOptions: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-  if launchOptions != nil {
-    print("launchOptions: \(launchOptions.description)")
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    
+  guard let aps = userInfo["aps"] as? [String: Any] else {
+    completionHandler(.failed)
+    return
   }
-  // Tracking silent push notification receive
-  if (launchOptions["aps"]["content-available"] as? NSNumber).intValue == 1 {
-    print("Silent Push Notification")
-    ACPCampaignClassic.trackNotificationReceive(launchOptions)
-    completionHandler(UIBackgroundFetchResultNoData)
+  if aps["content-available"] as? Int == 1 {
+    // Track silent push notification receive
+    ACPCampaignClassic.trackNotificationReceive(userInfo)
+    completionHandler(.noData)
   }
 }
 ```

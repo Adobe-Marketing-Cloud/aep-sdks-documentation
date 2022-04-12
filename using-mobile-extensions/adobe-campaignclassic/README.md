@@ -68,7 +68,7 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
@@ -136,7 +136,7 @@ public class CampaignClassicTestApp extends Application {
 
 {% tab title="iOS (AEP 3.x)" %}
 
-This extension is not compatible with the AEPCore extension at this time, for more details see [Current SDK Versions](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift)
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
 
 {% endtab %}
 
