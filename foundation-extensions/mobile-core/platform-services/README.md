@@ -47,7 +47,7 @@ let networkService = ServiceProvider.shared.networkService
 This section walks through the steps necessary to create a custom network override, and register it with the SDK.
 
 {% hint style="info" %}
-This feature is only available in Android Core version 2.5.0 or later and iOS Core version 2.6.0 or later.
+This feature is only available in Android Core version 1.8.0 or later and iOS Core version 2.6.0 or later.
 {% endhint %}
 
 {% tabs %}
@@ -75,7 +75,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import com.adobe.marketing.mobile.AndroidNetworkServiceOverrider.HTTPConnectionPerformer;
-import com.adobe.marketing.mobile.AndroidNetworkServiceOverrider.Connection;
+import com.adobe.marketing.mobile.AndroidNetworkServiceOverrider.Connecting;
 
 // Sample implementation of HTTPConnectionPerformer for AEP SDK Network Override.
 class SampleHTTPConnectionPerformer extends HTTPConnectionPerformer {        
@@ -105,6 +105,7 @@ class SampleHTTPConnectionPerformer extends HTTPConnectionPerformer {
       }
 
       if (method.equals("POST") && payload != null) {
+        con.setDoOutput(true);
         con.setFixedLengthStreamingMode(payload.length);
       }
 
