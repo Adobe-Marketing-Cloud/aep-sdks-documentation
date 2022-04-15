@@ -592,7 +592,6 @@ var xdmData : [String: Any] = ["eventType" : "SampleXDMEvent",
 
 let experienceEvent = ExperienceEvent(xdm: xdmData, datasetIdentifier: "datasetIdExample")
 ```
-{% endtab %}
 
 ### Objective-C
 
