@@ -4,6 +4,22 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 12, 2022
+
+### AEP React Native plugins 
+
+The following AEP SDK React Native plugins have been published:
+
+ - @adobe/react-native-aepcore@1.0.0
+ - @adobe/react-native-aepuserprofile@1.0.0
+ - @adobe/react-native-aepassurance@3.0.0
+ - @adobe/react-native-aepedge@1.0.0
+ - @adobe/react-native-aepedgeconsent@1.0.0
+ - @adobe/react-native-aepedgeidentity@1.0.0
+ 
+ For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
+ 
+
 ## April 8, 2022
 
 ### iOS AEPCore 3.5.0
