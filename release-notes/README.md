@@ -17,7 +17,7 @@ The following AEP SDK React Native plugins have been published:
  - @adobe/react-native-aepedgeconsent@1.0.0
  - @adobe/react-native-aepedgeidentity@1.0.0
  
- For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
+For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
  
 
 ## April 8, 2022
