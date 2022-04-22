@@ -1,5 +1,15 @@
 # Release Notes
 
+## April 21, 2022
+
+### Android Core 1.11.0
+
+* Internal fixes to support In-App Messaging with the AEPMessaging extension.
+
+### Android Identity 1.3.1
+
+* Improved extension stability by adding additional error checks when processing sync identifier requests.
+
 ## April 8, 2022
 
 ### iOS AEPCore 3.5.0
