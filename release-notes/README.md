@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 21, 2022
+
+### Android Core 1.11.0
+
+* Internal fixes to support In-App Messaging with the AEPMessaging extension.
+
+### Android Identity 1.3.1
+
+* Improved extension stability by adding additional error checks when processing sync identifier requests.
+
 ## April 12, 2022
 
 ### AEP React Native plugins 
@@ -16,9 +26,9 @@ The following AEP SDK React Native plugins have been published:
  - @adobe/react-native-aepedge@1.0.0
  - @adobe/react-native-aepedgeconsent@1.0.0
  - @adobe/react-native-aepedgeidentity@1.0.0
- 
+
 For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
- 
+
 
 ## April 8, 2022
 
