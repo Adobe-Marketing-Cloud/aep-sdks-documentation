@@ -335,7 +335,7 @@ In the example below, you can decide whether or not the in-app message should be
 ```java
 private Message currentMessage = null;
 private boolean shouldIntegrateMessageDirectly = true;
-private MessageWebView webView;
+private MessageWebView inAppMessageView;
 
 @Override
 public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
@@ -343,7 +343,7 @@ public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
     this.currentMessage = (Message) fullscreenMessage.getParent();
     
     // cast to MessageWebView to access the startInAppMessage function
-    webView = (MessageWebView) currentMessage.getWebView();
+    inAppMessageView = (MessageWebView) currentMessage.getWebView();
     
     return false;
   }
