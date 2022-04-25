@@ -9,6 +9,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Core 1.11.0
 
 * Internal fixes to support In-App Messaging with the AEPMessaging extension.
+* Fixed a crash that could happen while initializing event history database.
 
 ### Android Identity 1.3.1
 
