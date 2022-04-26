@@ -4,7 +4,7 @@
 
 Since the products variable cannot be set by processing rules, you need to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en).
+To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en) and the [products](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html) variable documentation.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -230,6 +230,7 @@ HashMap cdata = new HashMap<String, String>();
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
 // Note the special syntax for products 
 cdata.put("&&events", "event1"); 
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
 cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"); 
 cdata.put("myapp.purchase", "1"); 
 cdata.put("myapp.purchaseid", "1234567890"); 
@@ -254,7 +255,8 @@ var contextData = [String: Any]()
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -277,6 +279,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
 // Note the special syntax for products 
 [contextData setObject:@"event1" forKey:@"&&events"]; 
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"]; 
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
 [contextData setObject:@"1" forKey:@"m.purchase"]; 
@@ -301,7 +304,8 @@ var contextData:[String:String]=[:]
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -323,6 +327,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
 // Note the special syntax for products 
 [contextData setObject:@"event1" forKey:@"&&events"]; 
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"]; 
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
 [contextData setObject:@"1" forKey:@"m.purchase"]; 
@@ -347,7 +352,8 @@ var contextData = {};
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
@@ -371,7 +377,8 @@ var contextData = {};
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
 // Note the special syntax for products
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+// Attributes event1 only to product 1 - Running Shoes and not product 2 - Running Socks
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
