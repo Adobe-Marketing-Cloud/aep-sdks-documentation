@@ -186,19 +186,8 @@ ACPCore.lifecycleStart(["state": "appResume"])
 {% tab title="React Native" %}
 #### JavaScript
 
-Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
+When using React Native, starting to collect lifecycle data should be done in native code which is shown under the Android and iOS (ACP 2.x) tabs.
 
-**Syntax**
-
-```jsx
-lifecycleStart(additionalContextData?: { string: string });
-```
-
-**Example**
-
-```jsx
-ACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
 {% endtab %}
 
 {% tab title="Cordova" %}
@@ -333,19 +322,8 @@ ACPCore.lifecyclePause()
 {% tab title="React Native" %}
 #### JavaScript
 
-> Note: Implementing Lifecycle via JavaScript may lead to inaccurate Lifecycle metrics, therefore we recommend implementing Lifecycle in native Android and iOS code. However, these APIs are still provided in JavaScript to support flexible Lifecycle implementations.
+When using React Native, pausing the collection of lifecycle data should be done in native code which is shown under the Android and iOS (ACP 2.x) tabs.
 
-**Syntax**
-
-```jsx
-lifecyclePause();
-```
-
-**Example**
-
-```jsx
-ACPCore.lifecyclePause();
-```
 {% endtab %}
 
 {% tab title="Cordova" %}
