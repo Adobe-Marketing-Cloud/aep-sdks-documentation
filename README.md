@@ -46,13 +46,20 @@ Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](
 
 ## Supported Platforms
 
+{% hint style="warning" %}
+## End of support for Adobe Experience Platform Mobile SDK plugins for Unity
+
+Effective March 30, 2022, support for Adobe Experience Platform Mobile SDKs on Unity is no longer active. While you may continue using our libraries, Adobe no longer plans to update, modify, or provide support for these libraries. Please contact your Adobe CSM for details.
+{% endhint %}
+
 The Adobe Experience Platform Mobile SDK provides support for the following platforms:
 
 * Android \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for download links\)
 * iOS - Swift \(New! - see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#android) for repos, download links\)
 * iOS - Objective C \(includes iOS, iPadOS, and tvOS\) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#ios) for download links\)
 * Cordova \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#cordova) for download links\)
-* React Native \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native) for download links\)
+* React Native (AEP 1.x) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native-aep) for download links\)
+* React Native (ACP 2.x) \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#react-native-acp) for download links\)
 * Flutter \(in beta, see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md#flutter-beta) for download links\)
 * Unity \(see [Current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) for download links\)
 * [WeChat Mini Programs](resources/adobe-experience-platform-mini-programs-sdk/)

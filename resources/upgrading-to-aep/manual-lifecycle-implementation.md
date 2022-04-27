@@ -76,21 +76,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
-
-Import the Lifecycle extension:
-
-```jsx
-import {ACPLifecycle} from '@adobe/react-native-acpcore';
-```
-
-Register the extension with Core:
-
-```jsx
-ACPLifecycle.registerExtension();
-```
-{% endtab %}
 {% endtabs %}
 
 ## Start collecting Lifecycle information
@@ -204,15 +189,6 @@ If your app is a SceneDelegate based iOS application, then use:
 
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
-
-Starting Lifecycle collection:
-
-```jsx
-ACPCore.lifecycleStart({"lifecycleStart": "myData"});
-```
-{% endtab %}
 {% endtabs %}
 
 ## Pause Lifecycle Collection
@@ -279,15 +255,6 @@ func sceneDidEnterBackground(_ scene: UIScene) {
 
 {% endtab %}
 
-{% tab title="React Native" %}
-### JavaScript
-
-Pausing Lifecycle collection:
-
-```jsx
-ACPCore.lifecyclePause();
-```
-{% endtab %}
 {% endtabs %}
 
 For more information, see [Lifecycle Metrics](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/87ccee59e0aeb622ec110a51820006b4a688a059/resources/using-mobile-extensions/mobile-core/lifecycle/README.md).

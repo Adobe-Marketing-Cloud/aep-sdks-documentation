@@ -4,19 +4,94 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## April 21, 2022
+
+### Android Core 1.11.0
+
+* Internal fixes to support In-App Messaging with the AEPMessaging extension.
+* Fixed a crash that could happen while initializing event history database.
+
+### Android Identity 1.3.1
+
+* Improved extension stability by adding additional error checks when processing sync identifier requests.
+
+## April 12, 2022
+
+### AEP React Native plugins 
+
+The following AEP SDK React Native plugins have been published:
+
+ - @adobe/react-native-aepcore@1.0.0
+ - @adobe/react-native-aepuserprofile@1.0.0
+ - @adobe/react-native-aepassurance@3.0.0
+ - @adobe/react-native-aepedge@1.0.0
+ - @adobe/react-native-aepedgeconsent@1.0.0
+ - @adobe/react-native-aepedgeidentity@1.0.0
+
+For more details, see the documentation and release notes in the [aepsdk-react-native repository](https://github.com/adobe/aepsdk-react-native).
+
+
+## April 8, 2022
+
+### iOS AEPCore 3.5.0
+
+* Adds two APIs to `Date+Format` class. Method `getISO8601UTCDateWithMilliseconds` formats a Date to string as with fractional seconds and UTC time zone, while `getISO8601FullDate` formats a Date to string with date without time using the local time zone.
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone.
+* Updates the timestamp format for rule token `~timestampp` with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp".
+* Improves Signal logging by treating all 2xx network responses as success.
+* Fixes bug where dispatched events failed due to use of single quotes in name.
+* Fixes format of push token string by uppercasing characters.
+
+### iOS AEPEdge 1.4.0
+
+* Updates timestamp in Experience Events to use fractional seconds.
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+
+### iOS AEPEdgeConsent 1.0.1
+
+* Updates timestamp in Consent requests to use fractional seconds.
+
+## April 1, 2022
+
+### iOS AEPEdgeIdentity 1.0.1
+
+* Synchronized updates and reads on the Identity for Edge Network shared state to avoid any race conditions.
+
+### Adobe Experience Platform Edge Network Launch extension v1.1.9
+
+* UI updates for the Datastream configuration section to enable the sandbox aware datastreams support. If more than one sandbox is used, a sandbox picker is displayed to allow for datastreams selection across sandboxes.
+
+* Auto-complete in the UI for default third party domain based on company name for Edge Network data collection. The domain configuration is now required, while existing configurations will continue to use the default edge.adobedc.net domain.
+
+### Adobe Journey Optimizer Launch extension v0.0.16
+
+* UI updates to support the new datastream selections in the AEP Edge Network extension.
+
+## March 31, 2022
+
+### iOS AEPAnalytics 3.0.4
+
+* Fixed `getTrackingIdentifier` and `getVisitorIdentifier` APIs to `return nil` instead of `AEPError.unexpected` error when AID/VID values are not found in persistence.
+
+## March 30, 2022
+
+## End of support for Adobe Experience Platform Mobile SDK plugins for Unity
+
+* Effective March 30, 2022, support for Adobe Experience Platform Mobile SDKs on Unity is no longer active. While you may continue using our libraries, Adobe no longer plans to update, modify, or provide support for these libraries. Please contact your Adobe CSM for details.
+
 ## March 11, 2022
 
 ### Android Core 1.10.1
 
-* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp". 
+* Updates the timestamp format for rule token `~timestampp`  with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp".
 
 ### Android Lifecycle 1.1.1
 
-* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone. 
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone.
 
 ### Android Edge 1.3.1
 
-* Updates timestamp in Experience Events to use fractional seconds. 
+* Updates timestamp in Experience Events to use fractional seconds.
 
 ### Android Consent 1.0.1
 
@@ -151,4 +226,3 @@ Updated the following flutter packages to reference Android libraries from Maven
 
 - Updated the package to reference the Android library from Maven Central Repository.
 - Migrated to the new Android APIs based on [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html).
-

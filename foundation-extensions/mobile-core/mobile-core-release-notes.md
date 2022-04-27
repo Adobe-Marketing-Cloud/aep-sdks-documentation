@@ -1,5 +1,26 @@
 # Release Notes
 
+## April 21, 2022
+
+### Android Core 1.11.0
+
+* Internal fixes to support In-App Messaging with the AEPMessaging extension.
+
+### Android Identity 1.3.1
+
+* Improved extension stability by adding additional error checks when processing sync identifier requests.
+
+## April 8, 2022
+
+### iOS AEPCore 3.5.0
+
+* Adds two APIs to `Date+Format` class. Method `getISO8601UTCDateWithMilliseconds` formats a Date to string as with fractional seconds and UTC time zone, while `getISO8601FullDate` formats a Date to string with date without time using the local time zone.
+* Lifecycle foreground and background events for Edge Network now format timestamps with fractional seconds and UTC time zone.
+* Updates the timestamp format for rule token `~timestampp` with fractional seconds and UTC time zone. This rule token is used to set the mobile property data element "Adobe Experience Platform Timestamp".
+* Improves Signal logging by treating all 2xx network responses as success.
+* Fixes bug where dispatched events failed due to use of single quotes in name.
+* Fixes format of push token string by uppercasing characters.
+
 ## March 11, 2022
 
 ### Android Core 1.10.1

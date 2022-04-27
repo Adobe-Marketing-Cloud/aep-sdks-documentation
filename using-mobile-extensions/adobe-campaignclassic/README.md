@@ -66,7 +66,13 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
    ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
+
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
 1. Add the Campaign Classic and [Mobile Core](../../foundation-extensions/mobile-core/) libraries to your project.
 
    You can add the following pods to your `Podfile`:
@@ -81,6 +87,14 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
 
 2. In the Xcode project, import the Mobile Core and Campaign Classic extensions:
 
+**Swift**
+
+```swift
+   import ACPCore
+   import ACPCampaignClassic
+   import ACPLifecycle
+```
+
 **Objective-C**
 
 ```objectivec
@@ -89,13 +103,6 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
    #import "ACPLifecycle.h"
 ```
 
-**Swift**
-
-```swift
-   import ACPCore
-   import ACPCampaignClassic
-   import ACPLifecycle
-```
 {% endtab %}
 {% endtabs %}
 
@@ -127,7 +134,13 @@ public class CampaignClassicTestApp extends Application {
 ```
 {% endtab %}
 
-{% tab title="iOS" %}
+{% tab title="iOS (AEP 3.x)" %}
+
+Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. Please reach out to your Adobe customer account manager if you have any questions or would like to express interest in the AEP 3.x Campaign Classic extension.
+
+{% endtab %}
+
+{% tab title=" iOS (ACP 2.x)" %}
 In your app's `application:didFinishLaunchingWithOptions:` method, register the Campaign Classic and Lifecycle extensions:
 
 #### Swift
@@ -162,16 +175,8 @@ To update SDK configuration programmatically, use the following information to c
 | :--- | :--- | :--- | :--- |
 | `build.environment` | Yes | Specifies which environment to use (prod, dev, or staging) when sending registration and tracking information. It is also used to specify which mobile app integration key to use. | String |
 | `campaignclassic.timeout` | No | Specifies the amount of time to wait for a response from the Campaign Classic registration or tracking server. | Integer |
-| `__dev__campaignclassic.marketingServer` | No | Sets the development environment marketing server, which receives registration requests. | String |
-| `__dev__campaignclassic.trackingServer` | No | Sets the development environment tracking server, which receives tracking requests. | String |
-| `__dev__campaignclassic.ios.integrationKey` | No | Sets the development environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
-| `__dev__campaignclassic.android.integrationKey` | No | Sets the development environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
-| `__stage__campaignclassic.marketingServer` | No | Sets the staging environment marketing server, which receives registration requests. | String |
-| `__stage__campaignclassic.trackingServer` | No | Sets the staging environment tracking server, which receives tracking requests. | String |
-| `__stage__campaignclassic.ios.integrationKey` | No | Sets the staging environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
-| `__stage__campaignclassic.android.integrationKey` | No | Sets the staging environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
-| `campaignclassic.marketingServer` | Yes | Sets the production environment marketing server, which receives registration requests. | String |
-| `campaignclassic.trackingServer` | Yes | Sets the production environment tracking server, which receives tracking requests. | String |
-| `campaignclassic.ios.integrationKey` | Yes | Sets the production environment iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
-| `campaignclassic.android.integrationKey` | Yes | Sets the production environment Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
+| `campaignclassic.marketingServer` | Yes | Sets the marketing server, which receives registration requests. | String |
+| `campaignclassic.trackingServer` | Yes | Sets the tracking server, which receives tracking requests. | String |
+| `campaignclassic.ios.integrationKey` | Yes | Sets the iOS mobile app integration key, which links the app to an iOS application campaign in Campaign Classic. | String |
+| `campaignclassic.android.integrationKey` | Yes | Sets the Android mobile app integration key, which links the app to an Android application campaign in Campaign Classic. | String |
 

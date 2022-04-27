@@ -151,8 +151,6 @@ static func getConsents(completion: @escaping ([String: Any]?, Error?) -> Void)
 
 Use this example to programmatically update the consent collect for the application user.
 
-> **Note:** After a user has selected collect consent no (n), the SDK will not allow you to set the users collect consent to yes (y).
-
 {% tabs %}
 {% tab title="Android" %}
 #### Java

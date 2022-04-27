@@ -4,7 +4,7 @@
 
 Since the products variable cannot be set by processing rules, you need to set serialized events directly on the hits that are sent to Analytics.
 
-To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en).
+To set the products variable, set a context data key to `&&products`, and set the value to the products or merchandising variable. For more information, see the [implementing a merchandising variable tutorial](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar-merchandising.html?lang=en) and the [products](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/products.html) variable documentation.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -228,13 +228,15 @@ The following code samples show an example of the products variable with merchan
 HashMap cdata = new HashMap<String, String>(); 
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
-// Note the special syntax for products 
+// Note the special syntax for products. 
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 cdata.put("&&events", "event1"); 
 cdata.put("&&products", ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"); 
 cdata.put("myapp.purchase", "1"); 
 cdata.put("myapp.purchaseid", "1234567890"); 
 
-// send the tracking call - use either a trackAction or trackState call. 
+// send the tracking call - use either a trackAction or trackState call.
 // trackAction example: 
 MobileCore.trackAction("purchase", cdata); 
 // trackState example: 
@@ -252,9 +254,11 @@ MobileCore.trackState("Order Confirmation", cdata);
 var contextData = [String: Any]()
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
+// Note the special syntax for products.
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -265,7 +269,6 @@ MobileCore.track(action: "purchase" as String, data: contextData)
 // trackState example:
 MobileCore.track(state: "Order Confirmation" as String, data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -276,7 +279,9 @@ MobileCore.track(state: "Order Confirmation" as String, data: contextData)
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary]; 
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
-// Note the special syntax for products 
+// Note the special syntax for products. 
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 [contextData setObject:@"event1" forKey:@"&&events"]; 
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"]; 
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
@@ -288,7 +293,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [AEPMobileCore trackState:@"Order Confirmation" data:contextData];
 ```
-
+{% endtab %}
 
 {% tab title="iOS (2.x)" %}
 ### Swift
@@ -300,9 +305,11 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 var contextData:[String:String]=[:] 
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
+// Note the special syntax for products.
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 contextData["&&events"] = "event1"
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99"
 contextData["m.purchaseid"] = "1234567890"
 contextData["m.purchase"] = "1"
 
@@ -312,7 +319,6 @@ ACPCore.trackAction("purchase", data: contextData)
 // trackState example:
 ACPCore.trackState("Order Confirmation", data: contextData)
 ```
-{% endtab %}
 
 ### Objective-C
 
@@ -323,7 +329,9 @@ ACPCore.trackState("Order Confirmation", data: contextData)
 NSMutableDictionary *contextData = [NSMutableDictionary dictionary]; 
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect. 
-// Note the special syntax for products 
+// Note the special syntax for products.
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes. 
 [contextData setObject:@"event1" forKey:@"&&events"]; 
 [contextData setObject:@";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99" forKey:@"&&products"]; 
 [contextData setObject:@"1234567890" forKey:@"m.purchaseid"]; 
@@ -335,6 +343,7 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 // trackState example: 
 [ACPCore trackState:@"Order Confirmation" data:contextData];
 ```
+{% endtab %}
 
 {% tab title="React Native" %}
 ### JavaScript
@@ -346,9 +355,11 @@ NSMutableDictionary *contextData = [NSMutableDictionary dictionary];
 var contextData = {};
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
+// Note the special syntax for products.
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
@@ -370,9 +381,11 @@ ACPCore.trackState("Order Confirmation", contextData);
 var contextData = {};
 
 // add products, a purchase id, a purchase context data key, and any other data you want to collect.
-// Note the special syntax for products
+// Note the special syntax for products.
+// There are two products in this example: Running shoes and Running Socks, they are separated by a comma.
+// Attributes event1 and eVar1 only apply to Running Shoes.
 contextData["&&events"] = "event1";
-contextData["&&products"] = ";Running Shoes;1;69.95,;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
+contextData["&&products"] = ";Running Shoes;1;69.95;event1=5.5;eVar1=Merchandising,;Running Socks;10;29.99";
 contextData["m.purchaseid"] = "1234567890";
 contextData["m.purchase"] = "1";
 
