@@ -8,17 +8,17 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the AEP Assurance extension in [Experience Platform Data Collection](https://launch.adobe.com/)
+1. Install the AEP Assurance extension in [Data Collection UI](https://experience.adobe.com/#/data-collection)
 2. Add AEP Assurance SDK extension library to your app
    1. Import AEP Assurance into your app
    2. Register and implement extension APIs
 
-## Install the AEP Assurance extension in Experience Platform Launch
+## Install the AEP Assurance extension in the Data Collection UI
 
-Follow these steps to add the install the extension in Experience Platform Launch:
+Follow these steps to add the install the extension in the Data Collection UI:
 
-1. In Experience Platform Launch, while inside your Launch Property, click the **Extensions** tab.
-2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
+1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
+2. On the **Catalog** tab, locate the **AEP Assurance** extension, and select **Install**.
 3. Follow the publishing process to update SDK configuration.
 
 ![](../../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
@@ -220,8 +220,10 @@ To start using the extension library, you must first register the extension with
 #### Java
 
 1. Register the extension when you register other extensions.
-   - "yourAppId", mentioned below, is found in Launch "Mobile Install Instructions". When inside of "Publishing Flow", click on the small gray box next to "Environment" dropdown.
-
+   {% hint style="info" %}
+   "yourAppId", mentioned below, is found in Launch "[Mobile Install Instructions](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/configuration#configure-with-the-experience-platform-launch-app-id)". When inside of "Publishing Flow", select on the small gray box next to "Environment" dropdown.
+   {% endhint %}
+   
 ![](../../.gitbook/assets/install_instructions.png)
 
    ```java
@@ -407,10 +409,10 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 
 (session start APIs for other platforms listed [here](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference) )
 
-The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+The [startSession](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/pull/721/assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-You may call this API when the app launches with a url \(see code snippet below for sample usage\)
+You may call this API when the app launches with a url (see code snippet below for sample usage)
 {% endhint %}
 
 {% tabs %}
