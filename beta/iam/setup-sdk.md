@@ -11,6 +11,7 @@ The example below shows how to point to the `staging` branch in a Cocoapods `Pod
 
 ```
 pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git', :branch => 'staging'
+pod 'AEPOptimize', :git => 'https://github.com/adobe/aepsdk-optimize-ios.git', :branch => 'staging'
 ```
 
 {% endtab %}
@@ -45,6 +46,7 @@ import AEPMessaging
 import AEPCore
 import AEPEdge
 import AEPEdgeIdentity
+import AEPOptimize
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
