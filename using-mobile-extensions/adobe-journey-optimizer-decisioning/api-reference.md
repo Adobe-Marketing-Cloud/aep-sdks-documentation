@@ -118,7 +118,7 @@ This API retrieves the previously fetched propositions, for the provided decisio
 public static void getPropositions(final List<DecisionScope> decisionScopes, final AdobeCallback<Map<DecisionScope, Proposition>> callback)
 ```
 
-* _decisionScopes_ is a List of decision scopes for which propositions are requested.
+* _decisionScopes_ is a list of decision scopes for which propositions are requested.
 * _callback_ `call` method is invoked with propositions map of type `Map<DecisionScope, Proposition>`. If callback is an instance of [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror), and if the operation times out or an error occurs in retrieving propositions, `fail` method is invoked with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobeerror).
 
 #### Example
@@ -245,7 +245,7 @@ This API registers a permanent callback which is invoked whenever the Edge exten
 public static void onPropositionsUpdate(final AdobeCallback<Map<DecisionScope, Proposition>> callback)
 ```
 
-* _callback_ `call` method is invoked with propositions map of type `Map<DecisionScope, Proposition>`. If callback is an instance of `AdobeCallbackWithError`, and if the operation times out or an error occurs in retrieving propositions, `fail` method is invoked with the appropriate `AdobeError`.
+* _callback_ `call` method is invoked with propositions map of type `Map<DecisionScope, Proposition>`. If the callback is an instance of `AdobeCallbackWithError`, and if the operation times out or an error occurs in retrieving propositions, the `fail` method is invoked with the appropriate `AdobeError`.
 
 #### Example
 
@@ -366,7 +366,7 @@ MobileCore.registerExtensions([Optimize.self, ...]) {
 ## resetIdentities
 
 This `MobileCore` API can also be invoked to clear out the client-side data for the Optimize extension, such as the in-memory propositions cache.
-For details on syntax, usage and availability, refer to [Mobile Core - Reset identities](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#reset-identities).
+For details on syntax, usage and availability, refer to [Mobile Core - Reset identities](../../foundation-extensions/mobile-core/mobile-core-api-reference.md#reset-identities).
 
 ## updatePropositions
 
@@ -489,7 +489,7 @@ public class DecisionScope {
 
     /**
      * Constructor creates a {@code DecisionScope} using the provided {@code activityId} and {@code placementId}.
-     * <p>
+     *
      * This constructor assumes the item count for the given scope to be {@value #DEFAULT_ITEM_COUNT}.
      *
      * @param activityId {@link String} containing activity identifier for the given scope.
@@ -605,7 +605,7 @@ public class Proposition {
 
     /**
      * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Reference} field group from this {@code Proposition}.
-     * <p>
+     *
      * The returned XDM data does not contain {@code eventType} for the Experience Event.
      *
      * @return {@code Map<String, Object>} containing the XDM data for the proposition reference.
@@ -676,7 +676,7 @@ public class Offer {
         
         /**
         * Builder constructor with required {@code Offer} attributes as parameters.
-        * <p>
+        *
         * It sets default values for remaining {@link Offer} attributes.
         *
         * @param id required {@link String} containing {@code Offer} identifier.
@@ -800,9 +800,9 @@ public class Offer {
 
     /**
      * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Interactions} field group from this {@code Proposition} item.
-     * <p>
+     *
      * The returned XDM data does contain the {@code eventType} for the Experience Event with value {@code decisioning.propositionDisplay}.
-     * <p>
+     *
      * Note: The Edge sendEvent API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, and override
      * dataset identifier.
      *
@@ -812,9 +812,9 @@ public class Offer {
 
     /**
      * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Interactions} field group from this {@code Proposition} offer.
-     * <p>
+     *
      * The returned XDM data contains the {@code eventType} for the Experience Event with value {@code decisioning.propositionInteract}.
-     * <p>
+     *
      * Note: The Edge sendEvent API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, and override
      * dataset identifier.
      *
