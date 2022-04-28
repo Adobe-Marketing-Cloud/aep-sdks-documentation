@@ -710,6 +710,15 @@ public class Offer {
         public Builder setEtag(final String etag) {...}
 
         /**
+         * Sets the score for this {@code Offer}.
+         *
+         * @param score {@code int} containing {@link Offer} score.
+         * @return this Offer {@link Builder}
+         * @throws UnsupportedOperationException if this method is invoked after {@link Builder#build()}.
+         */
+        public Builder setScore(final int score) {...}
+
+        /**
         * Sets the schema for this {@code Offer}.
         *
         * @param schema {@link String} containing {@link Offer} schema.
@@ -717,6 +726,15 @@ public class Offer {
         * @throws UnsupportedOperationException if this method is invoked after {@link Builder#build()}.
         */
         public Builder setSchema(final String schema) {...} 
+
+        /**
+         * Sets the metadata for this {@code Offer}.
+         *
+         * @param meta {@code Map<String, Object>} containing {@link Offer} metadata.
+         * @return this Offer {@link Builder}
+         * @throws UnsupportedOperationException if this method is invoked after {@link Builder#build()}.
+         */
+        public Builder setMeta(final Map<String, Object> meta) {...}
 
         /**
         * Sets the language for this {@code Offer}.
@@ -760,11 +778,25 @@ public class Offer {
     public String getEtag() {...}
 
     /**
+     * Gets the {@code Offer} score.
+     *
+     * @return {@code int} containing the {@link Offer} score.
+     */
+    public int getScore() {...}
+
+    /**
      * Gets the {@code Offer} schema.
      *
      * @return {@link String} containing the {@link Offer} schema.
      */
     public String getSchema() {...}
+
+    /**
+     * Gets the {@code Offer} metadata.
+     *
+     * @return {@code Map<String, Object>} containing the {@link Offer} metadata.
+     */
+    public Map<String, Object> getMeta() {...}
 
     /**
      * Gets the {@code Offer} type.
@@ -854,9 +886,15 @@ public class Offer: NSObject, Codable {
     /// Offer revision detail at the time of the request
     @objc public let etag: String
 
+    /// Offer priority score
+    @objc public let score: Int
+
     /// Offer schema string
     @objc public let schema: String
 
+    /// Offer metadata
+    @objc public let meta: [String: Any]?
+    
     /// Offer type as represented in enum `OfferType`
     @objc public let type: OfferType
 

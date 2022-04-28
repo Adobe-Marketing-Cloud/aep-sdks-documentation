@@ -1,6 +1,6 @@
 # Adobe Journey Optimizer - Decisioning Extension
 
-The Adobe Journey Optimizer - Decisioning extension powers real-time personalization workflows using Adobe Journey Optimizer - Offer Decisions or Adobe Target in mobile apps via the Edge Network. It helps deliver personalized decisions to your app and enables tracking user interactions with the proposed decisions.
+The Adobe Journey Optimizer - Decisioning extension powers real-time personalization workflows using Adobe Journey Optimizer - Offer Decisioning or Adobe Target in mobile apps via the Edge Network. It helps deliver personalized decisions to your app and enables tracking user interactions with the proposed decisions.
 
 ## Prerequisites
 
@@ -8,20 +8,26 @@ Before starting, make sure the following steps are completed.
 
 * Your IMS organization is provisioned for edge decisioning. 
 * If using Adobe Target, Target activities are set up in your desired workspace in your organization on Target UI. For more details, see the [Target activities guide](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=en).
-* If using Journey Optimizer - Offer Decisions, decisions are set up in your desired sandbox in your organization on Experience Platform UI. For more details, see the [create decisions guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/create-manage-activities/create-offer-activities.html?lang=en).
+* If using Journey Optimizer - Offer Decisioning, decisions are set up in your desired sandbox in your organization on Experience Platform UI. For more details, see the [create decisions guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/create-manage-activities/create-offer-activities.html?lang=en).
 
 ## Adobe Experience Platform Data Collection setup
 
-### Configure the Datastream for Adobe Target and/ or Journey Optimizer - Offer Decisions
+### Configure the Datastream for Adobe Target and/ or Journey Optimizer - Offer Decisioning
 
 On [Experience Platform Data Collection](https://experience.adobe.com/#/data-collection/), navigate to **Data Collection** > **Datatreams** using the left navigation panel. Select an existing datastream or create a new datastream. For more details, see the [configure datastreams guide](../../getting-started/configure-datastreams.md).
 
 1. In the datastream, click on the desired environment from the list. Make sure **Adobe Experience Platform** section is enabled and configured with the required information like **Sandbox** and **Event Dataset**.
-2. For Journey Optimizer - Offer Decisions, navigate to **Adobe Experience Platform** section and enable **Offer Decisioning** checkbox.
+2. For Journey Optimizer - Offer Decisioning, navigate to **Adobe Experience Platform** section and enable **Offer Decisioning** checkbox.
+
+![Datastream configuration - Offer Decisioning](../../.gitbook/assets/ajo-decisioning-datastream-configuration-od.png)
+
 3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration. Make sure to configure the required information like Client Code.
+
+![Datastream configuration - Adobe Target](../../.gitbook/assets/ajo-decisioning-datastream-configuration-at.png)
+
 4. Click **Save**.
 
-![Datastream configuration](../../.gitbook/assets/ajo-decisioning-datastream-configuration.png)
+
 
 ### Configure Adobe Journey Optimizer - Decisioning extension in Tag property for Mobile
 
@@ -152,7 +158,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endtab %}
 {% endtabs %}
 
-## Adobe Journey Optimizer - Offer Decisions
+## Adobe Journey Optimizer - Offer Decisioning
 
 {% hint style="warning" %}
 Some offer constraints, such as Capping, are currently unsupported with the mobile Experience Edge workflows. The Capping field value specifies the number of times an offer can be presented across all users. For more details, see the [offer eligibility rules and constraints guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
