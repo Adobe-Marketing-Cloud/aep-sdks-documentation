@@ -205,6 +205,9 @@ Optimize.getPropositions(for: [decisionScope1, decisionScope2]) { propositionsDi
               completion: (void (^ _Nonnull)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable propositionsDict, NSError* _Nullable error)) completion;
 ```
 
+* _decisionScopes_ is an array of decision scopes for which propositions are requested.
+* _completion_ is invoked with propositions dictionary of type `NSDictionary<AEPDecisionScope*, AEPProposition*>`. An `NSError` is returned if SDK fails to retrieve the propositions.
+
 #### Example
 
 ```objc
@@ -274,7 +277,7 @@ Optimize.onPropositionsUpdate(new AdobeCallbackWithError<Map<DecisionScope, Prop
 static func onPropositionsUpdate(perform action: @escaping ([DecisionScope: Proposition]?) -> Void)
 ```
 
-* _action_ is invoked with propositions dictionary of type `[DecisionScope: Proposition]`
+* _action_ is invoked with propositions dictionary of type `[DecisionScope: Proposition]`.
 
 #### Example
 
@@ -293,6 +296,8 @@ Optimize.onPropositionsUpdate { propositionsDict in
 ```objc
 + (void) onPropositionsUpdate: (void (^ _Nonnull)(NSDictionary<AEPDecisionScope*, AEPProposition*>* _Nullable)) action;
 ```
+
+* _action_ is invoked with propositions dictionary of type `NSDictionary<AEPDecisionScope*, AEPProposition*>`.
 
 #### Example
 
@@ -335,6 +340,9 @@ static func registerExtensions(_ extensions: [NSObject.Type],
                                _ completion: (() -> Void)? = nil)
 ```
 
+* _extensions_ is an array of metatype of NSObject class from which all SDK extensions inherit.
+* _completion_ is invoked when all the given extensions have been successfully registered with the SDK.
+
 #### Example
 
 ```swift
@@ -351,6 +359,9 @@ MobileCore.registerExtensions([Optimize.self, ...]) {
 + (void) registerExtensions: (NSArray<Class*>* _Nonnull) extensions 
                  completion: (void (^ _Nullable)(void)) completion;
 ```
+
+* _extensions_ is an array of opaque type that represents an SDK extension class.
+* _completion_ is invoked when all the given extensions have been successfully registered with the SDK.
 
 #### Example
 
@@ -441,6 +452,10 @@ Optimize.updatePropositions(for: [decisionScope1, decisionScope2]
                     withXdm: (NSDictionary<NSString*, id>* _Nullable) xdm
                     andData: (NSDictionary<NSString*, id>* _Nullable) data;
 ```
+
+* _decisionScopes_ is an array of decision scopes for which propositions need updating.
+* _xdm_ additional xdm formatted data to be attached to the Experience Event.
+* _data_ additional freeform data to be attached to the Experience Event.
 
 #### Example
 
