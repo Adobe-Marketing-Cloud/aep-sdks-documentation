@@ -17,8 +17,6 @@ The AEPPlaces extension is implemented purely in Swift and is compatible with th
 
 ### clear
 
-Clears out the client-side data for Places in shared state, local storage, and in-memory.
-
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 ```swift
@@ -40,8 +38,6 @@ static func clear()
 {% endtabs %}
 
 ### extensionVersion
-
-Returns the running version of the AEPPlaces extension.
 
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
@@ -65,8 +61,6 @@ static var extensionVersion: String
 
 ### getCurrentPointsOfInterest
 
-Returns all points of interest \(POI\) of which the device is currently known to be within.
-
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 ```swift
@@ -88,16 +82,6 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 {% endtabs %}
 
 ### getLastKnownLocation
-
-Returns the last latitude and longitude provided to the AEPPlaces Extension.
-
-If the Places Extension does not have a valid last known location for the user, the parameter passed in the closure will be `nil`. The `CLLocation` object returned by this method will only contain a valid coordinate. Other properties on the `CLLocation` object should not be considered valid.
-
-{% tabs %}
-{% tab title="AEP 3.x \(Swift\)" %}
-{% hint style="info" %}
-If the SDK has no last known location, it will pass `nil` to the closure.
-{% endhint %}
 
 ```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
@@ -122,8 +106,6 @@ If the SDK has no last known location, it will pass a `CLLocation` object with a
 {% endtabs %}
 
 ### getNearbyPointsOfInterest
-
-Requests a list of nearby Points of Interest \(POI\) and returns them in a closure.
 
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
@@ -168,10 +150,6 @@ Two `getNearbyPointsOfInterest` methods exist. The overloaded version allows the
 
 ### processRegionEvent
 
-Passes a `CLRegion` and a `PlacesRegionEvent` to be processed by the Places extension.
-
-Calling this method will result in an `Event` being dispatched to the SDK's `EventHub`. This enables rule processing based on the triggering region event.
-
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 {% hint style="info" %}
@@ -205,8 +183,6 @@ The order of parameters has the `CLRegion` that triggered the event first, and t
 
 ### registerExtension
 
-This API no longer exists in `AEPPlaces`. Instead, the extension should be registered by calling the `registerExtensions` API in the `MobileCore`.
-
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 {% hint style="info" %}
@@ -237,10 +213,6 @@ Registration occurs by passing `AEPMobilePlaces` to the `[AEPMobileCore register
 
 ### setAuthorizationStatus
 
-Sets the authorization status in the Places extension.
-
-The status provided is stored in the Places shared state, and is for reference only. Calling this method does not impact the actual location authorization status for this device.
-
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 ```swift
@@ -260,4 +232,8 @@ static func setAuthorizationStatus(status: CLAuthorizationStatus)
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+For additional details see also [MobileCore API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
+{% endhint %}
 
