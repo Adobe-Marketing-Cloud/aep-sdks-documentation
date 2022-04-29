@@ -83,6 +83,7 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 
 ### getLastKnownLocation
 
+{% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 ```
@@ -234,6 +235,6 @@ static func setAuthorizationStatus(status: CLAuthorizationStatus)
 {% endtabs %}
 
 {% hint style="info" %}
-For additional details see also [MobileCore API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
+For additional details see also [Places API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/places/places-usage-reference).
 {% endhint %}
 

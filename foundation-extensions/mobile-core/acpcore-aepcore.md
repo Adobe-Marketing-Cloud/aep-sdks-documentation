@@ -277,6 +277,6 @@ public static var extensionVersion: String
 {% endtabs %}
 
 {% hint style="info" %}
-For additional details see also [MobileCore API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
+For additional details see also [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
 {% endhint %}
 

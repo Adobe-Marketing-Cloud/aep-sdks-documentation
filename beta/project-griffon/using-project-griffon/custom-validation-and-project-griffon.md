@@ -10,7 +10,7 @@ To use this view, complete the following steps:
 
 1. [Setup Project Griffon](../set-up-project-griffon.md)
 2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
-3. In the **Home** view, select **Validation Scripts** (to be deprecated for **Validation Summary**)
+3. In the **Home** view, select **Validation Scripts**
 
 ![Custom Validation](../../../.gitbook/assets/validation_menu.png)
 

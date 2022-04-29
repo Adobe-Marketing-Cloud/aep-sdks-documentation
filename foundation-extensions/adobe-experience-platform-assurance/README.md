@@ -409,7 +409,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 
 (session start APIs for other platforms listed [here](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference) )
 
-The [startSession](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/pull/721/assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
 You may call this API when the app launches with a url (see code snippet below for sample usage)
