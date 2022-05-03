@@ -186,8 +186,6 @@ Use the AEPMobileCore API to register the Edge Consent extension.
 
 Merges the existing consents with the given consents. Duplicate keys will take the value of those passed in the API.
 
-> **Note:** After a user has selected collect consent no \(n\), the SDK will not allow you to set the users collect consent to yes \(y\).
-
 {% tabs %}
 {% tab title="Android" %}
 ### Java

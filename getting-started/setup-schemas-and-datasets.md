@@ -15,7 +15,7 @@ In order to begin sending XDM data from your mobile application to Edge Network,
 1. [Create and configure your XDM schema](setup-schemas-and-datasets.md#create-and-configure-your-xdm-schema)
 2. [Create and configure your dataset based on the previously created schema](setup-schemas-and-datasets.md#create-and-configure-a-dataset)
 
-## Create and configure your XDM schema <a id="create-and-configure-your-xdm-schema"></a>
+## Create and configure your XDM schema
 
 ### What is an XDM schema?
 
@@ -34,14 +34,14 @@ The following steps illustrate the creation of a sample schema for mobile data c
 1. In your browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create an XDM Schema as follows:
    1. From the left panel, select Schemas
-   2. Select **Create schema**
-   3. Select **XDM Experience event**
+   2. Select **Create schema**.
+   3. Select **XDM Experience event.**
    4. Under **Field Groups**, select **Add**; search and add the `Adobe Experience Edge Autofilled Environment Details`, `AEP Mobile Lifecycle Details` and other pre-created or custom field groups as needed.
    5. Set a **Display Name** for this schema and select `Save`.
 
-![Schema creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Ffe309e8b2ebd1c7573cf23ccdab56f406b4aa822.png?alt=media)
+![Schema creation in Adobe Experience Platform](../.gitbook/assets/aep-create-schema.png)
 
-## Create and configure a dataset <a id="create-and-configure-a-dataset"></a>
+## Create and configure a dataset
 
 Data ingested into Adobe Experience Platform is stored \(in the Data Lake\) as datasets that conform to the aforementioned mentioned XDM schema \(setup in the step above\).
 
@@ -53,10 +53,10 @@ The following steps illustrate the creation of a sample dataset for mobile data 
 
 1. In the browser, navigate to [Adobe Experience Platform](https://experience.adobe.com/platform) and login with your credentials.
 2. Create a new dataset as follows:
-   1. From the left navigation panel, under **Data Management**, select **Datasets**
-   2. Select **Create dataset from schema**
+   1. From the left navigation panel, under **Data Management**, select **Datasets**.
+   2. Select **Create dataset from schema**.
    3. Select the XDM schema previously created and select **Next**.
    4. Set a name for the dataset and select **Finish**.
 
-![Dataset creation in Adobe Experience Platform](https://gblobscdn.gitbook.com/assets%2F-Lf1Mc1caFdNCK_mBwhe%2Fsync%2Feb712f9b357538dfc425d5af67a0663d044d6087.png?alt=media)
+![Dataset creation in Adobe Experience Platform](../.gitbook/assets/aep-create-dataset.png)
 

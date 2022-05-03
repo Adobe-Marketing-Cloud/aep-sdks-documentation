@@ -1,5 +1,17 @@
 # Release Notes
 
+## April 8, 2022
+
+### iOS AEPEdgeConsent 1.0.1
+
+* Updates timestamp in Consent requests to use fractional seconds.
+
+## March 11, 2022
+
+### Android Consent 1.0.1
+
+* Updates timestamp in Consent requests to use fractional seconds.
+
 ## April 12, 2021
 
 ### Consent Launch Extension

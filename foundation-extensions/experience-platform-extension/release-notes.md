@@ -1,5 +1,26 @@
 # Release Notes
 
+## April 8, 2022
+
+### iOS AEPEdge 1.4.0
+
+* Updates timestamp in Experience Events to use fractional seconds.
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+
+## April 1, 2022
+
+### Adobe Experience Platform Edge Network Launch extension v1.1.9
+
+* UI updates for the `Datastream configuration` section to enable the new sandbox aware datastreams. If more than one sandbox is used, a sandbox picker is displayed to allow for datastreams selection across sandboxes.
+
+* Auto-complete in the UI for default third party domain based on company name for Edge Network data collection. The domain configuration is now required, while existing configurations will continue to use the default edge.adobedc.net domain.
+
+## March 11, 2022
+
+### Android Edge 1.3.1
+
+* Updates timestamp in Experience Events to use fractional seconds. 
+
 ## January 21, 2022
 
 ### iOS AEPEdge 1.3.0

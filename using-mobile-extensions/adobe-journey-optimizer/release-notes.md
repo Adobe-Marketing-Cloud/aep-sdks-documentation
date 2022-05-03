@@ -1,5 +1,11 @@
 # Release Notes
 
+## April 1, 2022
+
+### Adobe Journey Optimizer Launch extension v0.0.16
+
+* UI updates to support the new datastream selections in the AEP Edge Network extension.
+
 ## June 17, 2021
 
 ### iOS Messaging 1.0.0

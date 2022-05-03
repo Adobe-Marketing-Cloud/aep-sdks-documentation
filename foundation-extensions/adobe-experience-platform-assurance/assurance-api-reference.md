@@ -6,15 +6,16 @@ Returns the current version of the AEP Assurance extension
 
 {% tabs %}
 {% tab title="Android" %}
+
 ### Java
 
-### Syntax
+**Syntax**
 
 ```java
 public static String extensionVersion()
 ```
 
-### Example
+**Example**
 
 ```java
 Assurance.extensionVersion()
@@ -22,33 +23,35 @@ Assurance.extensionVersion()
 {% endtab %}
 
 {% tab title="iOS" %}
+
+### Swift
+
+**Example**
+
+```swift
+AEPAssurance.extensionVersion()
+```
+
 ### Objective-C
 
-### Syntax
+**Syntax**
 
 ```objectivec
 + (nonnull NSString*) extensionVersion;
 ```
 
-### Example
+**Example**
 
 ```objectivec
 [AEPAssurance extensionVersion];
 ```
 
-### Swift
-
-### Example
-
-```swift
-AEPAssurance.extensionVersion()
-```
 {% endtab %}
 
 {% tab title="React Native" %}
 ### JavaScript
 
-### Example
+**Example**
 
 ```objectivec
 AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK: AEP Assurance version: " + version));
@@ -56,15 +59,16 @@ AEPAssurance.extensionVersion().then(version => console.log("AdobeExperienceSDK:
 {% endtab %}
 
 {% tab title="Flutter" %}
+
 ### Dart
 
-### Syntax
+**Syntax**
 
 ```dart
 static Future<String> get extensionVersion async
 ```
 
-### Example
+**Example**
 
 ```dart
 assuranceVersion = await FlutterAssurance.extensionVersion;
@@ -72,13 +76,14 @@ assuranceVersion = await FlutterAssurance.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-### Syntax
+
+**Syntax**
 
 ```javascript
 AEPAssurance.extensionVersion = function(success, fail);
 ```
 
-### Example
+**Example**
 
 ```javascript
 AEPAssurance.extensionVersion(function(version) {  
@@ -90,13 +95,16 @@ AEPAssurance.extensionVersion(function(version) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### Syntax
+
+### C\#
+
+**Syntax**
 
 ```text
 public static string ExtensionVersion()
 ```
 
-### Example in C\#
+**Example**
 
 ```text
 string version = AEPAssurance.ExtensionVersion();
@@ -105,7 +113,9 @@ print(LOG_TAG + "Assurance version: "+version);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### Example in C\#
+### C\#
+
+**Example**
 
 ```text
 string version = AEPAssurance.ExtensionVersion()  
@@ -116,7 +126,7 @@ Console.WriteLine("AEPAssurance version installed is: " + version);
 
 ## startSession
 
-The `startSession` API needs to be called to begin a AEP Assurance session. When called, SDK displays a PIN authentication overlay to begin a session.
+The `startSession` API needs to be called to begin a AEP Assurance session. When called, the Mobile SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
 You may call this API when the app launches with a url \(see code snippet below for sample usage\)
@@ -130,13 +140,13 @@ Android does not require this API to be called. When the `registerExtension` API
 
 ### Java
 
-### Syntax
+**Syntax**
 
 ```java
 public static void startSession(final String url)
 ```
 
-### Example
+**Example**
 
 ```java
  Assurance.startSession(url);
@@ -144,26 +154,10 @@ public static void startSession(final String url)
 {% endtab %}
 
 {% tab title="iOS" %}
-### Objective-C
-
-### Syntax
-
-```objectivec
-+ (void) startSession: (NSURL* _Nonnull) url;
-```
-
-### Example
-
-```objectivec
-- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [AEPAssurance startSession:url];
-    return false;
-}
-```
 
 ### Swift
 
-### Example
+**Example**
 
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -181,12 +175,30 @@ For SceneDelegate based applications
         AEPAssurance.startSession(URLContexts.first!.url)
     }
 ```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) startSession: (NSURL* _Nonnull) url;
+```
+
+**Example**
+
+```objectivec
+- (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [AEPAssurance startSession:url];
+    return false;
+}
+```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 ### JavaScript
 
-### Example
+**Example**
 
 ```javascript
 AEPAssurance.startSession("your-griffon-session-url");
@@ -196,13 +208,13 @@ AEPAssurance.startSession("your-griffon-session-url");
 {% tab title="Flutter" %}
 ### Dart
 
-### Syntax
+**Syntax**
 
 ```dart
 static Future<void> startSession(String url);
 ```
 
-### Example
+**Example**
 
 ```dart
 FlutterAssurance.startSession(url);
@@ -210,13 +222,14 @@ FlutterAssurance.startSession(url);
 {% endtab %}
 
 {% tab title="Cordova" %}
-### Syntax
+
+**Syntax**
 
 ```javascript
 AEPAssurance.startSession = function(sessionurl,success, fail);
 ```
 
-### Example
+**Example**
 
 ```javascript
 AEPAssurance.startSession(url,function(result) {  
@@ -228,13 +241,16 @@ AEPAssurance.startSession(url,function(result) {
 {% endtab %}
 
 {% tab title="Unity" %}
-### Syntax
+
+### C#
+
+**Syntax**
 
 ```text
 public static void StartSession(string url)
 ```
 
-### Example in C\#
+**Example**
 
 ```text
 AEPAssurance.StartSession(url);
@@ -242,7 +258,7 @@ AEPAssurance.StartSession(url);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-### Example in C\#
+### C#
 
 ```text
 AEPAssurance.StartSession(url);

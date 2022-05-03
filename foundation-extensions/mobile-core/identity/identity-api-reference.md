@@ -40,7 +40,7 @@ If your application uses more complicated URLs, such as Angular URLs, you should
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the attributes from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
@@ -72,7 +72,7 @@ Identity.appendVisitorInfoForURL("https://example.com", new AdobeCallback<String
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -83,9 +83,7 @@ static func appendTo(url: URL?, completion: @escaping (URL?, Error?) -> Void)
 * _url_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
 * _completion_ is invoked after the updated _URL_ is available or _Error_ if an unexpected exception occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 Identity.appendTo(url: URL(string: "https://example.com")) { appendedURL, error in
@@ -105,7 +103,15 @@ Identity.appendTo(url: URL(string: "https://example.com")) { appendedURL, error 
 })
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) appendToUrl: (NSURL * _Nullable baseUrl) completion: ^(NSURL * _Nullable urlWithVisitorData, NSError * _Nullable error) completion;
+```
+
+**Example**
 
 ```objectivec
 NSURL* url = [NSURL URLWithString:@"https://example.com"];
@@ -129,26 +135,21 @@ NSURL* url = [NSURL URLWithString:@"https://example.com"];
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `appendToUrl:withCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
+### Swift
+
 **Syntax**
 
-```objectivec
-+ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
-+ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
+```swift
+static func append(to: URL?, withCallback: ((URL?) -> Void)?)
+static func append(to: URL?, withCompletionHandler: ((URL?, Error?)-> Void)?)
 ```
 
-* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
-* _callback_ is invoked after the updated URL is available.
-* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
-
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 ACPIdentity.append(to:URL(string: "https://example.com"), withCallback: {(appendedURL) in    
@@ -180,7 +181,20 @@ ACPIdentity.append(to: URL(string: "https://example.com"), withCompletionHandler
 })
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCallback: (nullable void (^) (NSURL* __nullable urlWithVisitorData)) callback;
++ (void) appendToUrl: (nullable NSURL*) baseUrl withCompletionHandler: (nullable void (^) (NSURL* __nullable urlWithVersionData, NSError* __nullable error)) completionHandler;
+```
+
+* _baseUrl_ is the URL to which the visitor information needs to be appended. If the visitor information is nil or empty, the URL is returned as is.
+* _callback_ is invoked after the updated URL is available.
+* _completionHandler_ is invoked with _urlWithVersionData_ after the updated URL is available or _error_ if an unexpected exception occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
+
+**Example**
 
 ```objectivec
 NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
@@ -216,7 +230,7 @@ NSURL* url = [[NSURL alloc] initWithString:@"https://example.com"];
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -234,7 +248,7 @@ ACPIdentity.appendVisitorInfoForURL("https://example.com").then(urlWithVistorDat
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -259,7 +273,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -284,7 +298,7 @@ ACPIdentity.appendVisitorInfoForUrl("https://example.com", function(handleCallba
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -309,7 +323,7 @@ ACPIdentity.AppendToUrl("https://www.adobe.com", HandleAdobeIdentityAppendToUrlC
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -349,8 +363,8 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
     if (stringContent != null)
     {
       Console.WriteLine("Appended url: " + stringContent);
-    } 
-    else 
+    }
+    else
     {
       Console.WriteLine("null content in string callback");
     }
@@ -369,7 +383,7 @@ To get the version of the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 ```java
 String identityExtensionVersion = Identity.extensionVersion();
@@ -377,7 +391,7 @@ String identityExtensionVersion = Identity.extensionVersion();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -385,21 +399,13 @@ String identityExtensionVersion = Identity.extensionVersion();
 static var extensionVersion: String
 ```
 
-**Swift**
+**Example**
 
 ```swift
 let identityExtensionVersion  = Identity.extensionVersion
 ```
 
-**Objective-C**
-
-```objectivec
-NSString *identityVersion = [AEPMobileIdentity extensionVersion];
-```
-{% endtab %}
-
-{% tab title="iOS (ACP 2.x)" %}
-**iOS**
+### Objective-C
 
 **Syntax**
 
@@ -407,13 +413,37 @@ NSString *identityVersion = [AEPMobileIdentity extensionVersion];
 + (nonnull NSString*) extensionVersion;
 ```
 
-**Swift**
+**Example**
+
+```objectivec
+NSString *identityVersion = [AEPMobileIdentity extensionVersion];
+```
+{% endtab %}
+
+{% tab title="iOS (ACP 2.x)" %}
+### Swift
+
+**Syntax**
+
+```swift
+static func extensionVersion() -> String
+```
+
+**Example**
 
 ```swift
 let identityVersion  = ACPIdentity.extensionVersion()
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (nonnull NSString*) extensionVersion;
+```
+
+**Example**
 
 ```objectivec
 NSString *identityVersion = [ACPIdentity extensionVersion];
@@ -421,7 +451,7 @@ NSString *identityVersion = [ACPIdentity extensionVersion];
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 ```jsx
 ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("AdobeExperienceSDK: ACPIdentity version: " + identityExtensionVersion));
@@ -429,7 +459,7 @@ ACPIdentity.extensionVersion().then(identityExtensionVersion => console.log("Ado
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 ```dart
 String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
@@ -437,7 +467,7 @@ String identityExtensionVersion = FlutterACPIdentity.extensionVersion;
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -460,7 +490,7 @@ ACPIdentity.extensionVersion(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -476,7 +506,7 @@ string identityVersion = ACPIdentity.ExtensionVersion();
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -500,7 +530,7 @@ This ID is preserved between app upgrades, is saved and restored during the stan
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the ECID from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
@@ -525,7 +555,7 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -534,11 +564,9 @@ Identity.getExperienceCloudId(new AdobeCallback<String>() {
 static func getExperienceCloudId(completion: @escaping (String?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. 
+* _completion_ is invoked with _String_ after the ECID is available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 Identity.getExperienceCloudId { ecid, error in
@@ -550,7 +578,15 @@ Identity.getExperienceCloudId { ecid, error in
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getExperienceCloudId: ^(NSString * _Nullable ecid, NSError * _Nullable error) completion;
+```
+
+**Example**
 
 ```objectivec
 [AEPMobileIdentity getExperienceCloudId:^(NSString * _Nullable ecid, NSError *error) {
@@ -565,25 +601,23 @@ Identity.getExperienceCloudId { ecid, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getExperienceCloudIdWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
-**Syntax**
+### Swift
 
-```objective-c
-+ (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
-+ (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
+**Syntax**
+```swift
+static func getExperienceCloudId(_ callback: @escaping (String?) -> Void)
+static func getExperienceCloudId(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 
 * _callback_ is invoked after the ECID is available.
 * _completionHandler_ is invoked with _experienceCloudId_ after the ECID is available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
-**Examples**
-
-**Swift**
+**Sample**
 
 ```swift
 ACPIdentity.getExperienceCloudId { (retrievedCloudId) in    
@@ -599,7 +633,16 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getExperienceCloudId: (nonnull void (^) (NSString* __nullable experienceCloudId)) callback;
++ (void) getExperienceCloudIdWithCompletionHandler: (nonnull void (^) (NSString* __nullable experienceCloudId, NSError* __nullable error)) completionHandler;
+```
+
+**Example**
 
 ```objectivec
 [ACPIdentity getExperienceCloudId:^(NSString * _Nullable retrievedCloudId) {    
@@ -618,7 +661,7 @@ ACPIdentity.getExperienceCloudId { (retrievedCloudId, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -634,7 +677,7 @@ ACPIdentity.getExperienceCloudId().then(cloudId => console.log("AdobeExperienceS
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -656,7 +699,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -679,7 +722,7 @@ ACPIdentity.getExperienceCloudId(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -702,7 +745,7 @@ ACPIdentity.GetExperienceCloudId(HandleAdobeGetExperienceCloudIdCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -740,8 +783,8 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
     if (stringContent != null)
     {
       Console.WriteLine("Experience Cloud Id: " + stringContent);
-    } 
-    else 
+    }
+    else
     {
       Console.WriteLine("null content in string callback");
     }
@@ -757,7 +800,7 @@ This API returns all customer identifiers that were previously synced with the A
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 This API can be called with [AdobeCallback](../mobile-core-api-reference.md#adobecallback) or [AdobeCallbackWithError](../mobile-core-api-reference.md#adobecallbackwitherror) for retrieving the custom identifiers from the Mobile SDK. When `AdobeCallbackWithError` is provided, this API uses a default timeout of 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate [AdobeError](../mobile-core-api-reference.md#adobeerror).
 
@@ -783,7 +826,7 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -792,11 +835,9 @@ Identity.getIdentifiers(new AdobeCallback<List<VisitorID>>() {
 static func getIdentifiers(completion: @escaping ([Identifiable]?, Error?) -> Void)
 ```
 
-* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. 
+* _completion_ is invoked with a list of  _Identifiable_ objects after the customer identifiers are available, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 Identity.getIdentifiers { identifiers, error in
@@ -808,7 +849,15 @@ Identity.getIdentifiers { identifiers, error in
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getIdentifiers: ^(NSArray<id<AEPIdentifiables>> * _Nullable identifiers, NSError * _Nullable error) completion;
+```
+
+**Example**
 
 ```objectivec
 [[AEPMobileIdentity getIdentifiers:^(NSArray<id<AEPIdentifiable>> * _Nullable identifiers, NSError *error) {
@@ -822,24 +871,23 @@ Identity.getIdentifiers { identifiers, error in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getIdentifiersWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
-**Syntax**
+### Swift
 
-```objectivec
-+ (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
-+ (void) getIdentifiersWithCompletionHandler: (nonnull void (^) (NSArray<ACPMobileVisitorId*>* __nullable visitorIDs, NSError* __nullable error)) completionHandler;
+**Syntax**
+```swift
+static func getIdentifiers(_ callback: @escaping ([ACPMobileVisitorId]?) -> Void)
+static func getIdentifiersWithCompletionHandler(_ completionHandler: @escaping ([ACPMobileVisitorId]?, Error?) -> Void)
 ```
 
 * _callback_ is invoked after the customer identifiers are available.
 * _completionHandler_ is invoked with _visitorIDs_ after the customer identifiers are available, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
-**Examples**
-**Swift**
+**Example**
 
 ```swift
 ACPIdentity.getIdentifiers { (retrievedVisitorIds) in    
@@ -855,7 +903,16 @@ ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) i
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getIdentifiers: (nonnull void (^) (NSArray<ADBMobileVisitorId*>* __nullable visitorIDs)) callback;
++ (void) getIdentifiersWithCompletionHandler: (nonnull void (^) (NSArray<ACPMobileVisitorId*>* __nullable visitorIDs, NSError* __nullable error)) completionHandler;
+```
+
+**Example**
 
 ```objectivec
 [ACPIdentity getIdentifiers:^(NSArray<ACPMobileVisitorId *> * _Nullable retrievedVisitorIds) {    
@@ -873,7 +930,7 @@ ACPIdentity.getIdentifiersWithCompletionHandler { (retrievedVisitorIds, error) i
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -889,7 +946,7 @@ ACPIdentity.getIdentifiers().then(identifiers => console.log("AdobeExperienceSDK
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -911,7 +968,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -934,7 +991,7 @@ ACPIdentity.getIdentifiers(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -957,7 +1014,7 @@ ACPIdentity.GetIdentifiers(HandleAdobeGetIdentifiersCallback);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -1040,7 +1097,7 @@ If an error occurs while retrieving the URL string, the callback handler will be
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 {% hint style="info" %}
 This method was added in Core version 1.4.0 and Identity version 1.1.0.
@@ -1062,7 +1119,7 @@ public static void getUrlVariables(final AdobeCallback<String> callback);
 Identity.getUrlVariables(new AdobeCallback<String>() {    
     @Override    
     public void call(String stringWithAdobeVisitorInfo) {        
-        //handle the URL query parameter string here 
+        //handle the URL query parameter string here
         //For example, open the URL on the device browser        
         //        
         Intent i = new Intent(Intent.ACTION_VIEW);        
@@ -1074,7 +1131,8 @@ Identity.getUrlVariables(new AdobeCallback<String>() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+
+### Swift
 
 **Syntax**
 
@@ -1085,9 +1143,7 @@ static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
 
 * _completion_ is invoked with _String_ containing the visitor identifiers as a query string, or _Error_ if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core-api-reference.md#aeperror) code of the specific error. The default timeout of 500ms.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 Identity.getUrlVariables { (urlVariables, error) in
@@ -1111,7 +1167,15 @@ Identity.getUrlVariables { (urlVariables, error) in
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getUrlVariables: ^(NSString * _Nullable urlVariables, NSError * _Nullable error) completion;
+```
+
+**Example**
 
 ```objectivec
 [AEPMobileIdentity getUrlVariables:^(NSString * _Nullable urlVariables, NSError *error) {
@@ -1133,25 +1197,24 @@ Identity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 Method `getUrlVariables` was added in ACPCore version 2.3.0 and ACPIdentity version 2.1.0. Method `getUrlVariablesWithCompletionHandler` was added in ACPCore version 2.5.0 and ACPIdentity version 2.2.0.
 {% endhint %}
 
+### Swift
+
 **Syntax**
 
-```objectivec
-+ (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
-+ (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
+```swift
+static func getUrlVariables(_ callback: @escaping (String?) -> Void)
+static func getUrlVariables(completionHandler: @escaping (String?, Error?) -> Void)
 ```
 
 * _callback_ has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
 * _completionHandler_ is invoked with _urlVariables_ containing the visitor identifiers as a query string, or _error_ if an unexpected error occurs or the request times out. The returned `NSError` contains the [ACPError](../mobile-core-api-reference.md#acperror) code of the specific error. The default timeout of 500ms.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 ACPIdentity.getUrlVariables {(urlVariables) in
@@ -1191,7 +1254,16 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getUrlVariables: (nonnull void (^) (NSString* __nullable urlVariables)) callback;
++ (void) getUrlVariablesWithCompletionHandler: (nonnull void (^) (NSString* __nullable urlVariables, NSError* __nullable error)) completionHandler;
+```
+
+**Example**
 
 ```objectivec
 [ACPIdentity getUrlVariables:^(NSString * _Nullable urlVariables) {    
@@ -1224,7 +1296,7 @@ ACPIdentity.getUrlVariables { (urlVariables, error) in
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 {% hint style="info" %}
 This method was added in react-native-acpcore v1.0.5.
@@ -1244,7 +1316,7 @@ ACPIdentity.getUrlVariables().then(urlVariables => console.log("AdobeExperenceSD
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -1266,7 +1338,7 @@ try {
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -1289,7 +1361,7 @@ ACPIdentity.getUrlVariables(function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -1312,7 +1384,7 @@ ACPIdentity.GetUrlVariables(HandleAdobeGetUrlVariables);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -1350,8 +1422,8 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
     if (stringContent != null)
     {
       Console.WriteLine("Url variables: " + stringContent);
-    } 
-    else 
+    }
+    else
     {
       Console.WriteLine("null content in string callback");
     }
@@ -1369,7 +1441,7 @@ To register the Identity extension, use the following code sample:
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 After calling the `setApplication()` method in the `onCreate()` method, register the extension. If the registration was not successful, an `InvalidInitException` is thrown.
 
@@ -1390,13 +1462,12 @@ super.onCreate();
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
 
 {% hint style="info" %}
 For iOS AEP libraries, registration is changed to a single API call. Calling the MobileCore.start API is no longer required. See [MobileCore.registerExtensions()](../mobile-core-api-reference.md#registerextension-s) for more information.
 {% endhint %}
 
-**Swift**
+### Swift
 
 ```swift
 // AppDelegate.swift
@@ -1408,7 +1479,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Objective-C**
+### Objective-C
 
 ```objectivec
 // AppDelegate.m
@@ -1423,11 +1494,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 Register the Identity extension in your app's `didFinishLaunchingWithOptions` function:
 
-**Swift**
+### Swift
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -1437,7 +1507,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-**Objective-C**
+### Objective-C
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -1450,25 +1520,25 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 When using React Native, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 When using Flutter, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 When using Cordova, registering Identity with Mobile Core should be done in native code which is shown under the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 Register the Identity extension in your app's `Start()` function:
 
@@ -1480,7 +1550,7 @@ void Start() {
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS**
 
@@ -1530,7 +1600,7 @@ If the current SDK privacy status is `optedout`, the advertising identifier is n
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 **Syntax**
 
@@ -1589,7 +1659,6 @@ public void onResume() {
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1599,6 +1668,8 @@ To access IDFA and handle it correctly in your mobile application, see the [Appl
 Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 {% endhint %}
 
+### Swift
+
 **Syntax**
 
 ```swift
@@ -1606,11 +1677,9 @@ Starting iOS 14+, applications must use the [App Tracking Transparency](https://
 public static func setAdvertisingIdentifier(_ identifier: String?)
 ```
 
-* _identifier_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps. 
+* _identifier_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
 
 **Example**
-
-**Swift**
 
 ```swift
 import AdSupport
@@ -1663,7 +1732,14 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+```objectivec
++ (void) setAdvertisingIdentifier: (NSString * _Nullable identifier);
+```
+
+**Example**
 
 ```objectivec
 #import <AdSupport/ASIdentifierManager.h>
@@ -1725,7 +1801,6 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
 {% hint style="info" %}
 To access IDFA and handle it correctly in your mobile application, see [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)
@@ -1735,17 +1810,16 @@ To access IDFA and handle it correctly in your mobile application, see [Apple de
 Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA).
 {% endhint %}
 
-**Syntax**
+### Swift
 
-```objectivec
-+ (void) setAdvertisingIdentifier: (nullable NSString*) adId;
+**Syntax**
+```Swift
+static func setAdvertisingIdentifier(adId: String?)
 ```
 
-* _adId_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.    
+* _adId_ is a string that provides developers with a simple, standard system to continue to track the Ads through their apps.
 
 **Example**
-
-**Swift**
 
 ```swift
 import AdSupport
@@ -1802,7 +1876,15 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 }
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) setAdvertisingIdentifier: (nullable NSString*) adId;
+```   
+
+**Example**
 
 ```objectivec
 #import <AdSupport/ASIdentifierManager.h>
@@ -1868,7 +1950,7 @@ func setAdvertisingIdentiferUsingTrackingManager() {
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -1886,7 +1968,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -1904,7 +1986,7 @@ FlutterACPCore.setAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -1928,7 +2010,7 @@ ACPCore.setAdvertisingIdentifier("ADVTID", function (handleCallback) {
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -1946,7 +2028,7 @@ ACPCore.SetAdvertisingIdentifier("ADVTID");
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -1982,7 +2064,7 @@ It is recommended to call `setPushIdentifier` on each application launch to ensu
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 **Syntax**
 
@@ -2001,7 +2083,9 @@ MobileCore.setPushIdentifier(token);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
+
+**Syntax**
 
 ```swift
 @objc(setPushIdentifier:)
@@ -2012,14 +2096,20 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 **Example**
 
-**Swift**
-
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
 MobileCore.setPushIdentifier(deviceToken)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) setPushIdentifier: (NSString * _Nullable deviceToken);
+```
+
+**Example**
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
@@ -2029,24 +2119,33 @@ MobileCore.setPushIdentifier(deviceToken)
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
 
-```objectivec
-+ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+### Swift
+
+**Syntax**
+
+```swift
+static func setPushIdentifier(deviceToken: NSData?)
 ```
 
 * _deviceToken_  is a string that contains the device token for push notifications.
 
 **Example**
 
-**Swift**
-
 ```swift
 // Set the deviceToken that the APNs has assigned to the device
 ACPCore.setPushIdentifier(deviceToken)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) setPushIdentifier: (nullable NSData*) deviceToken;
+```
+
+**Example**
 
 ```objectivec
 // Set the deviceToken that the APNS has assigned to the device
@@ -2056,7 +2155,7 @@ ACPCore.setPushIdentifier(deviceToken)
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -2090,14 +2189,14 @@ This API updates or appends the provided customer identifier type key and value 
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 **Syntax**
 
 ```java
 public static void syncIdentifier(final String identifierType,
-                                      final String identifier,
-                                      final VisitorID.AuthenticationState authenticationState);
+                                  final String identifier,
+                                  final VisitorID.AuthenticationState authenticationState);
 ```
 
 * _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
@@ -2107,14 +2206,14 @@ public static void syncIdentifier(final String identifierType,
 **Example**
 
 ```java
-Identity.syncIdentifier("idType", 
-                        "idValue", 
+Identity.syncIdentifier("idType",
+                        "idValue",
                         VisitorID.AuthenticationState.AUTHENTICATED);
 ```
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -2130,17 +2229,25 @@ static func syncIdentifier(identifierType: String, identifier: String, authentic
 
 * The _authenticationState (MobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [MobileVisitorAuthenticationState](#public-classes) values.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
-Identity.syncIdentifier(identifierType: "idType", 
-                            identifier: "idValue", 
+Identity.syncIdentifier(identifierType: "idType",
+                            identifier: "idValue",
                         authentication: .unknown)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) syncIdentifierWithType: (NSString * _Nonnull identifierType)
+										 identifier: (NSString * _Nonnull identifier)
+								 authentication: (enum AEPAuthenticationState authenticationState);
+```
+
+**Example**
 
 ```objectivec
 [AEPMobileIdentity syncIdentifierWithType:@"idType"
@@ -2150,14 +2257,11 @@ Identity.syncIdentifier(identifierType: "idType",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
-
-```objectivec
-+ (void) syncIdentifier: (nonnull NSString*) identifierType             
-             identifier: (nonnull NSString*) identifier
-         authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
+```swift
+static func syncIdentifier(_ identifierType: String, identifier: String, authentication authenticationState: ACPMobileVisitorAuthenticationState)
 ```
 
 * The _identifierType (String)_ contains the `identifier type`, and this parameter should not be null or empty. The allowed characters are [A-Za-z0-9_.]
@@ -2167,15 +2271,23 @@ Identity.syncIdentifier(identifierType: "idType",
 
 * The _authenticationState (ACPMobileVisitorAuthenticationState)_ value indicates the authentication state for the user and contains one of the [ACPMobileVisitorAuthenticationState](#public-classes) values.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPMobileVisitorAuthenticationState.unknown)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) syncIdentifier: (nonnull NSString*) identifierType             
+             identifier: (nonnull NSString*) identifier
+         authentication: (ADBMobileVisitorAuthenticationState) authenticationState;
+```
+
+**Example**
 
 ```objectivec
 [ACPIdentity syncIdentifier:@"idType" identifier:@"idValue" authentication:ACPMobileVisitorAuthenticationStateUnknown];
@@ -2183,7 +2295,7 @@ ACPIdentity.syncIdentifier("idType", identifier: "idValue", authentication: ACPM
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -2208,7 +2320,7 @@ ACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisitorAuthe
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -2233,7 +2345,7 @@ FlutterACPIdentity.syncIdentifier("identifierType", "identifier", ACPMobileVisit
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -2262,7 +2374,7 @@ ACPIdentity.syncIdentifier("id1", "value1", ACPIdentity.ACPMobileVisitorAuthenti
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -2285,7 +2397,7 @@ ACPIdentity.SyncIdentifier("idType1", "idValue1", ACPIdentity.ACPAuthenticationS
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -2333,7 +2445,7 @@ This API is an overloaded version, which does not include the parameter for the 
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 **Syntax**
 
@@ -2357,7 +2469,7 @@ Identity.syncIdentifiers(identifiers);
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -2368,9 +2480,7 @@ static func syncIdentifiers(identifiers: [String: String]?)
 
 * The _identifiers_ dictionary contains identifier type as the key and identifier as the value, both identifier type and identifier should be non empty and non nil values.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 let ids : [String: String] = ["idType1":"idValue1",
@@ -2379,11 +2489,18 @@ let ids : [String: String] = ["idType1":"idValue1",
 Identity.syncIdentifiers(identifiers: ids)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
+```objectivec
++ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers);
+```
+
+**Example**
 
 ```objectivec
-NSDictionary *ids = @{@"idType1":@"idValue1", 
-                      @"idType2":@"idValue2", 
+NSDictionary *ids = @{@"idType1":@"idValue1",
+                      @"idType2":@"idValue2",
                       @"idType3":@"idValue3"};
 [AEPMobileIdentity syncIdentifiers:ids];
 ```
@@ -2391,21 +2508,19 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
-```objectivec
-+ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
+```swift
+static func syncIdentifiers(_ identifiers: [AnyHashable : Any]?)
 ```
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
 
   If any of the identifier pairs contains an empty or null value as the `identifier type`, then it will be ignored.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 let identifiers : [String: String] = ["idType1":"idValue1",
@@ -2414,11 +2529,19 @@ let identifiers : [String: String] = ["idType1":"idValue1",
 ACPIdentity.syncIdentifiers(identifiers)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
 
 ```objectivec
-NSDictionary *ids = @{@"idType1":@"idValue1", 
-                      @"idType2":@"idValue2", 
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
+```
+
+**Example**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1",
+                      @"idType2":@"idValue2",
                       @"idType3":@"idValue3"};
 [ACPIdentity syncIdentifiers:ids];
 ```
@@ -2426,7 +2549,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -2446,7 +2569,7 @@ ACPIdentity.syncIdentifiers({"id1": "identifier1"});
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -2468,7 +2591,7 @@ FlutterACPIdentity.syncIdentifiers({"idType1":"idValue1",
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -2495,7 +2618,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -2519,7 +2642,7 @@ ACPIdentity.SyncIdentifiers(ids);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -2573,7 +2696,7 @@ Starting with _ACPIdentity v2.1.3 (iOS)_ and _Identity v1.1.2 (Android)_ if the 
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
+### Java
 
 **Syntax**
 
@@ -2596,7 +2719,7 @@ Identity.syncIdentifiers(identifiers, VisitorID.AuthenticationState.AUTHENTICATE
 {% endtab %}
 
 {% tab title="iOS (AEP 3.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
 
@@ -2609,9 +2732,7 @@ static func syncIdentifiers(identifiers: [String: String]?, authenticationState:
 
 * The _authenticationState (MobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [MobileVisitorAuthenticationState](#public-classes) values.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 let ids : [String: String] = ["idType1":"idValue1",
@@ -2620,11 +2741,20 @@ let ids : [String: String] = ["idType1":"idValue1",
 Identity.syncIdentifiers(identifiers: ids, authenticationState: .authenticated)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
 
 ```objectivec
-NSDictionary *ids = @{@"idType1":@"idValue1", 
-                      @"idType2":@"idValue2", 
++ (void) syncIdentifiers: (NSDictionary<NSString *, NSString *> * _Nullable identifiers)
+				  authentication: (enum AEPAuthenticationState authenticationState);
+```
+
+**Example**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1",
+                      @"idType2":@"idValue2",
                       @"idType3":@"idValue3"};
 [AEPMobileIdentity syncIdentifiers:ids authenticationState:AEPMobileVisitorAuthStateAuthenticated];
 ```
@@ -2632,12 +2762,11 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="iOS (ACP 2.x)" %}
-**iOS**
+### Swift
 
 **Syntax**
-
-```objectivec
-+ (void) syncIdentifiers: (nullable NSDictionary*) identifiers authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
+```swift
+static func syncIdentifiers(_ identifiers: [AnyHashable : Any]?, authentication authenticationState: ACPMobileVisitorAuthenticationState)
 ```
 
 * The _identifiers_ dictionary contains identifiers, and each identifier contains an `identifier type` as the key and an `identifier` as the value.
@@ -2646,9 +2775,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 
 * The _authenticationState (ACPMobileVisitorAuthenticationState)_ indicates the authentication state of the user and contains one of the [ACPMobileVisitorAuthenticationState](#public-classes) values.
 
-**Examples**
-
-**Swift**
+**Example**
 
 ```swift
 let ids : [String: String] = ["idType1":"idValue1",
@@ -2658,11 +2785,19 @@ ACPIdentity.syncIdentifiers(identifiers, authentication:
 ACPMobileVisitorAuthenticationState.authenticated)
 ```
 
-**Objective-C**
+### Objective-C
+
+**Syntax**
 
 ```objectivec
-NSDictionary *ids = @{@"idType1":@"idValue1", 
-                      @"idType2":@"idValue2", 
++ (void) syncIdentifiers: (nullable NSDictionary*) identifiers authentication: (ACPMobileVisitorAuthenticationState) authenticationState;
+```
+
+**Example**
+
+```objectivec
+NSDictionary *ids = @{@"idType1":@"idValue1",
+                      @"idType2":@"idValue2",
                       @"idType3":@"idValue3"};
 [ACPIdentity syncIdentifiers:ids authentication:ACPMobileVisitorAuthenticationStateAuthenticated];
 ```
@@ -2670,7 +2805,7 @@ NSDictionary *ids = @{@"idType1":@"idValue1",
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **Syntax**
 
@@ -2694,7 +2829,7 @@ ACPIdentity.syncIdentifiersWithAuthState({"id1": "identifier1"}, ACPMobileVisito
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **Syntax**
 
@@ -2718,7 +2853,7 @@ FlutterACPIdentity.syncIdentifiersWithAuthState({"idType1":"idValue1", "idType2"
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **Syntax**
 
@@ -2746,7 +2881,7 @@ ACPIdentity.syncIdentifiers({"idType1":"idValue1", "idType2":"idValue2", "idType
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **Syntax**
 
@@ -2774,7 +2909,7 @@ ACPIdentity.SyncIdentifiers(ids, ACPIdentity.ACPAuthenticationState.UNKNOWN);
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS Syntax**
 
@@ -2929,7 +3064,7 @@ This is an identifier to be used with the Adobe Experience Cloud Identity Servic
 {% endtab %}
 
 {% tab title="React Native" %}
-**JavaScript**
+### JavaScript
 
 **ACPVisitorID**
 
@@ -2955,7 +3090,7 @@ var state = ACPMobileVisitorAuthenticationState.AUTHENTICATED;
 {% endtab %}
 
 {% tab title="Flutter" %}
-**Dart**
+### Dart
 
 **ACPVisitorID**
 
@@ -2985,7 +3120,7 @@ enum ACPMobileVisitorAuthenticationState {UNKNOWN, AUTHENTICATED, LOGGED_OUT};
 {% endtab %}
 
 {% tab title="Cordova" %}
-**Cordova**
+### Cordova
 
 **ACPMobileVisitorAuthenticationState**
 
@@ -2999,7 +3134,7 @@ ACPIdentity.ACPMobileVisitorAuthenticationStateLoggedOut = 2;
 {% endtab %}
 
 {% tab title="Unity" %}
-**C\#**
+### C\#
 
 **ACPAuthenticationState**
 
@@ -3013,7 +3148,7 @@ ACPIdentity.ACPAuthenticationState.LOGGED_OUT = 2;
 {% endtab %}
 
 {% tab title="Xamarin" %}
-**C\#**
+### C\#
 
 **iOS**
 
@@ -3040,4 +3175,3 @@ VisitorID.AuthenticationState.LoggedOut = 2;
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -15,21 +15,20 @@ To get started with [Project Griffon](../../beta/project-griffon/) in your app, 
 
 ## Install the AEP Assurance extension in the Data Collection UI
 
-Follow these steps to add the install the extension in the Data Collection UI:
+Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection/) and select your mobile property:
 
-1. In the Data Collection UI, in your mobile property, select the **Extensions** tab.
-2. On the **Catalog** tab, locate the **AEP Assurance** extension, and select **Install**.
-3. Follow the publishing process to update SDK configuration.
+1. In the Data Collection UI, click the **Extensions** tab.
+2. On the **Catalog** tab, locate the **AEP Assurance** extension, and click **Install**.
+3. Follow the publishing process to update the Mobile SDK configuration.
 
 ![](../../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
 
-## Add AEPAssurance to your app
+## Add the Assurance extension to your app
 
 ### Import the library to your app code
 
 {% tabs %}
 {% tab title="Android" %}
-**Java**
 
 1. Add the following libraries in your project's `build.gradle` file:
 
@@ -38,10 +37,10 @@ Follow these steps to add the install the extension in the Data Collection UI:
    implementation 'com.adobe.marketing.mobile:assurance:1+'
    ```
 
-2. Import the Project Griffon libraries with the other SDK libraries:
+2. Import the Assurance library along with the other Mobile SDK libraries:
 
    ```java
-   import com.adobe.marketing.mobile.Assurance; 
+   import com.adobe.marketing.mobile.Assurance;
    import com.adobe.marketing.mobile.MobileCore;
    ```
 {% endtab %}
@@ -49,25 +48,25 @@ Follow these steps to add the install the extension in the Data Collection UI:
 {% tab title="iOS (AEP 3.x)" %}
 Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`
 
-```text
-pod 'AEPCore'
-pod 'AEPAssurance'
+```pod
+pod 'AEPCore','~> 3.0'
+pod 'AEPAssurance','~> 3.0'
 ```
 
-Import the Assurance extension along with the other Adobe Mobile extensions:
+Import the Assurance extension along with the other Adobe Mobile SDK extensions:
 
 #### Swift
 
 ```swift
 import AEPCore
-import AEPAssurance // <-- import the AEPAssurance library
+import AEPAssurance
 ```
 
 #### Objective-C
 
 ```objectivec
 @import AEPCore;
-@import AEPAssurance; // <-- import the AEPAssurance library
+@import AEPAssurance;
 ```
 
 {% endtab %}
@@ -75,33 +74,31 @@ import AEPAssurance // <-- import the AEPAssurance library
 {% tab title="iOS (AEP 1.x)" %}
 Add the library to your project via your [Cocoapods](https://cocoapods.org/pods/AEPAssurance) `Podfile`:
 
-```text
+```pod
 pod 'ACPCore'
 pod 'AEPAssurance','~> 1.0'
 ```
 
-Import the Project Griffon libraries along with other SDK libraries:
+Import the Assurance extension along with the other Adobe Mobile extensions:
 
 #### Swift
 
 ```swift
 import ACPCore
-import AEPAssurance // <-- import the AEPAssurance library
+import AEPAssurance
 ```
 
 #### Objective-C
 
 ```objectivec
 #import "ACPCore.h"
-#import "AEPAssurance.h" // <-- import the AEPAssurance library
+#import "AEPAssurance.h"
 ```
 
 {% endtab %}
 
 {% tab title="React Native" %}
-#### React Native
-
-1. Install AEP Assurance.
+1. Install the AEP Assurance package.
 
    ```bash
    npm install @adobe/react-native-aepassurance
@@ -139,11 +136,12 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Flutter" %}
-#### Flutter
 
-1. Install AEP Assurance.
+#### JavaScript
 
-   Flutter install instructions for AEP Assurance can be found [here](https://pub.dev/packages/flutter_assurance/install).
+1. Install the AEP Assurance package.
+
+   Installation instructions can be found in the [Flutter documentation](https://pub.dev/packages/flutter_assurance/install).
 
 2. Import the extension.
 
@@ -159,7 +157,8 @@ _Note_ For `iOS` using `cocoapods`, run:
 {% endtab %}
 
 {% tab title="Cordova" %}
-#### Cordova
+
+#### JavaScript
 
 1. After creating your Cordova app and adding the Android and iOS platforms, the AEPAssurance extension for Cordova can be added with this command:
 
@@ -255,7 +254,8 @@ To start using the extension library, you must first register the extension with
 
         let extensions = [Assurance.self, ...]
         MobileCore.registerExtensions(extensions, {
-		        MobileCore.configureWith(appId: "yourAppId")          
+            // set app id from the Data Collection UI    
+		        MobileCore.configureWith(appId: "yourAppId")  
         })
 
         return true
@@ -269,9 +269,10 @@ To start using the extension library, you must first register the extension with
 
     NSArray *extensionsToRegister = @[AEPMobileAssurance.class, ...];
     [AEPMobileCore registerExtensions:extensionsToRegister completion:^{
-				[AEPMobileCore configureWithAppId: @"yourAppId"];
+        // set app id from the Data Collection UI
+        [AEPMobileCore configureWithAppId: @"yourAppId"];
     }];
-        
+
     return YES;
 }
 
@@ -287,10 +288,10 @@ To start using the extension library, you must first register the extension with
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     ACPCore.configure(withAppId: "yourAppId")   
-     AEPAssurance.registerExtension() // <-- register AEPAssurance with Core
+	   // set app id from the Data Collection UI
+     ACPCore.configure(withAppId: "yourAppId")
+     AEPAssurance.registerExtension()
      ACPCore.start(nil)
-     // Override point for customization after application launch. 
      return true;
 }
 ```
@@ -299,10 +300,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ACPCore configureWithAppId:@"yourAppId"];
-    [AEPAssurance registerExtension]; // <-- register AEPAssurance with Core
+    [ACPCore configureWithAppId:@"yourAppId"]; // set app id from the Data Collection UI
+    [AEPAssurance registerExtension];
     [ACPCore start:nil];
-    // Override point for customization after application launch.
     return YES;
  }
 ```
@@ -310,19 +310,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 
 {% tab title="React Native" %}
-### JavaScript
+#### JavaScript
 
 When using React Native, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Flutter" %}
-### Dart
+#### Dart
 
 When using Flutter, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
 
 {% tab title="Cordova" %}
-### Cordova
+#### JavaScript
 
 When using Cordova, register AEP Assurance with Mobile Core in native code as shown on the Android and iOS tabs.
 {% endtab %}
@@ -341,7 +341,8 @@ public class MainScript : MonoBehaviour
     [MonoPInvokeCallback(typeof(AdobeStartCallback))]
     public static void HandleStartAdobeCallback()
     {   
-        ACPCore.ConfigureWithAppID("yourAppId"); 
+        // set app id from the Data Collection UI
+        ACPCore.ConfigureWithAppID("yourAppId");
     }
 
     // Start is called before the first frame update
@@ -365,14 +366,14 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
   global::Xamarin.Forms.Forms.Init();
   LoadApplication(new App());
   AEPAssurance.RegisterExtension();
-  // start core
+  // start Mobile Core
   ACPCore.Start(startCallback);
   return base.FinishedLaunching(app, options);
 }
 
 private void startCallback()
 {
-  // set launch config
+  // set app id from the Data Collection UI
   ACPCore.ConfigureWithAppID("yourAppId");
 }
 ```
@@ -389,7 +390,7 @@ protected override void OnCreate(Bundle savedInstanceState)
   LoadApplication(new App());
   AEPAssurance.RegisterExtension();
 
-  // start core
+  // start Mobile Core
   ACPCore.Start(new CoreStartCompletionCallback());
 }
 
@@ -397,7 +398,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 {
   public void Call(Java.Lang.Object callback)
   {
-    // set launch config
+    // set app id from the Data Collection UI
     ACPCore.ConfigureWithAppID("yourAppId");
   }
 }
@@ -412,14 +413,18 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
+<<<<<<< HEAD
 You may call this API when the app launches with a url (see code snippet below for sample usage)
+=======
+The AEP Assurance Android extension does not require this API to be called since it registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
+
+When using the AEP Assurance iOS extension, you should call this API when the app launches with a url (see code snippet below for sample usage).
+>>>>>>> 07944957686b267a7744c803e262d07c960847fd
 {% endhint %}
 
 {% tabs %}
 
 {% tab title="iOS (AEP 3.x)" %}
-
-### startSession
 
 #### Swift
 
@@ -489,8 +494,6 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 {% tab title="iOS (AEP 1.x)" %}
 
-### startSession
-
 #### Swift
 
 **Example**
@@ -506,7 +509,7 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 ```swift
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        AEPAssurance.startSession((URLContexts.first!).url)
+    AEPAssurance.startSession((URLContexts.first!).url)
 }
 ```
 #### Objective-C
@@ -539,4 +542,3 @@ In iOS 13 and later, for a scene-based application, use the `UISceneDelegate`'s 
 
 {% endtab %}
 {% endtabs %}
-

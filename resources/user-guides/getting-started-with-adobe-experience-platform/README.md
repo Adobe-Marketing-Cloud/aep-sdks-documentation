@@ -39,19 +39,22 @@ To start collecting data in Adobe Experience Platform, you need to create an XDM
    * Select `Next`
    * Set a name for this dataset and select `Finish`.
 
-### Generate a Datastream identifier <a id="generate-a-datastream-identifier"></a>
+### Generate a Datastream identifier
 
 The SDK requires a configuration identifier that ensures the implementation matches the server-side Datastream configuration and data is routed/received to/from the correct destination.
 
 To create a configuration identifier use the following steps:
 
-1. In [Adobe Experience Platform Launch](https://experience.adobe.com/launch), navigate to your mobile property and select **Datastreams** from the left panel, then select **New Datastream**.
-2. Provide a name and description and then proceed to set up the default environment settings. These settings are used as defaults across the Datastream environments.
+1. If your organization is enabled for multiple sandboxes, in [Adobe Experience Platform Data Collection UI](https://experience.adobe.com/#/data-collection) first select the sandbox from the top right corner. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html).
+1. From the left panel select `Datastreams`, then select `New Datastream`.
+2. Provide a name and description, select `Save` and then proceed to next step to set up the services. 
 
-![](https://github.com/Adobe-Marketing-Cloud/aep-sdks-documentation/tree/246853d4cb8bc473495a38d8b99df6e3f68c409c/.gitbook/assets/create-datastream.png?alt=media)
+![](../../../.gitbook/assets/create-datastream.png?alt=media)
 
 1. To send events to Adobe Experience Platform, enable the `Adobe Experience Platform` section as shown below:
-   * Select `Prod` for `Sandbox`. For more details about sandboxes, please read the [sandboxes overview](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en)​
+   
+   - Select `Add service` and from the drop-down select `Adobe Experience Platform`.
+   
    * For the `Event Dataset`, select the XDM dataset you created in [Initialize Adobe Experience Platform for data collection](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/resources/user-guides/tutorial-1-edge-extension-setup#initialize-adobe-experience-platform-for-data-collection).
    * Click `Save`.
 
