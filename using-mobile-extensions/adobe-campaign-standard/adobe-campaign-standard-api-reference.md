@@ -21,7 +21,7 @@ Campaign.extensionVersion();
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 **Syntax**
@@ -38,19 +38,25 @@ let campaignVersion = Campaign.extensionVersion
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (NSString * _Nonnull)extensionVersion
+```
+
 **Example**
 
-```text
+```objective-c
 NSString *campaignVersion = [AEPMobileCampaign extensionVersion];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 1.x\)" %}
+{% tab title="iOS (ACP 1.x)" %}
 ### Swift
 
 **Syntax**
 
-```text
+```swift
 + (nonnull NSString*) extensionVersion;
 ```
 
@@ -62,9 +68,15 @@ let campaignVersion = ACPCampaign.extensionVersion()
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (NSString * _Nonnull)extensionVersion
+```
+
 **Example**
 
-```text
+```objective-c
 NSString *campaignVersion = [ACPCampaign extensionVersion];
 ```
 {% endtab %}
@@ -107,15 +119,20 @@ Campaign.registerExtension();
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 1.x\)" %}
-This API no longer exists in the Adobe Campaign Standard extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+{% tab title="iOS (AEP 3.x)" %}
+
+This API no longer exists in the AEP 3.x Adobe Campaign Standard extension. Instead, the extension should be registered by calling the `registerExtensions` API in the MobileCore. Please see the updated SDK initialization steps at the [migrate to Swift tutorial](https://aep-sdks.gitbook.io/docs/resources/migrate-to-swift).
+
+{% endtab %}
+
+{% tab title="iOS (ACP 1.x)" %}
 
 ### Swift
 
 **Syntax**
 
-```text
-+ (void) registerExtension;
+```swift
++ (void) registerExtension
 ```
 
 **Example**
@@ -126,9 +143,15 @@ ACPCampaign.registerExtension()
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (void) registerExtension
+```
+
 **Example**
 
-```text
+```objective-c
 [ACPCampaign registerExtension];
 ```
 {% endtab %}
@@ -161,7 +184,7 @@ Campaign.resetLinkageFields()
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 **Syntax**
@@ -178,20 +201,26 @@ Campaign.resetLinkageFields()
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (void) resetLinkageFields
+```
+
 **Example**
 
-```text
+```objective-c
 [AEPMobileCampaign resetLinkageFields];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 1.x\)" %}
+{% tab title="iOS (ACP 1.x)" %}
 ### Swift
 
 **Syntax**
 
-```text
-+ (void) resetLinkageFields;
+```swift
++ (void) resetLinkageFields
 ```
 
 **Example**
@@ -202,9 +231,15 @@ ACPCampaign.resetLinkageFields()
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (void) resetLinkageFields
+```
+
 **Example**
 
-```text
+```objective-c
 [ACPCampaign resetLinkageFields];
 ```
 {% endtab %}
@@ -228,7 +263,7 @@ ACPCampaign.resetLinkageFields();
 
 ## setLinkageFields
 
-Sets the Campaign linkage fields \(CRM IDs\) in the mobile SDK to be used for downloading personalized messages from Campaign.
+Sets the Campaign linkage fields (CRM IDs) in the mobile SDK to be used for downloading personalized messages from Campaign.
 
 The set linkage fields are stored as a base64 encoded JSON string in memory and they are sent in a custom HTTP header `X-InApp-Auth`.
 
@@ -253,13 +288,13 @@ Campaign.setLinkageFields(linkageFields);
 ```
 {% endtab %}
 
-{% tab title="iOS \(AEP 3.x\)" %}
+{% tab title="iOS (AEP 3.x)" %}
 ### Swift
 
 **Syntax**
 
 ```swift
-static func setLinkageFields(linkageFields: [String: String])
+static func setLinkageFields(_ linkageFields: [String: String])
 ```
 
 **Example**
@@ -270,20 +305,26 @@ Campaign.setLinkageFields(linkageFields: ["cusFirstName": "John", "cusLastName":
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (void) setLinkageFields:(NSDictionary<NSString *,NSString *> * _Nonnull)
+```
+
 **Example**
 
-```text
+```objective-c
 [AEPMobileCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 {% endtab %}
 
-{% tab title="iOS \(ACP 1.x\)" %}
+{% tab title="iOS (ACP 1.x)" %}
 ### Swift
 
 **Syntax**
 
-```text
-+ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields;
+```swift
++ (void) setLinkageFields: (nonnull NSDictionary<NSString*, NSString*>*) linkageFields
 ```
 
 **Example**
@@ -294,9 +335,15 @@ ACPCampaign.setLinkageFields(["cusFirstName": "John", "cusLastName": "Doe", "cus
 
 ### Objective-C
 
+**Syntax**
+
+```objective-c
++ (void) setLinkageFields: (NSDictionary<NSString*, NSString*>*) linkageFields
+```
+
 **Example**
 
-```text
+```objective-c
 [ACPCampaign setLinkageFields:@{@"cusFirstName" : @"John", @"cusLastName": @"Doe", @"cusEmail": @"john.doe@email.com"}];
 ```
 {% endtab %}
