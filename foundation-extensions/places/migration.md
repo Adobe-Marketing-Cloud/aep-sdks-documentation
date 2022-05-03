@@ -83,6 +83,7 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 
 ### getLastKnownLocation
 
+{% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
 ```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)

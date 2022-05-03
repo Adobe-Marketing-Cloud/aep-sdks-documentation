@@ -413,13 +413,13 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
-<<<<<<< HEAD
+
 You may call this API when the app launches with a url (see code snippet below for sample usage)
-=======
+
 The AEP Assurance Android extension does not require this API to be called since it registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 When using the AEP Assurance iOS extension, you should call this API when the app launches with a url (see code snippet below for sample usage).
->>>>>>> 07944957686b267a7744c803e262d07c960847fd
+
 {% endhint %}
 
 {% tabs %}
