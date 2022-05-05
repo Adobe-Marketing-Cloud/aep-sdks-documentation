@@ -45,13 +45,13 @@ adbinapp://dismiss?animate=right
 
 Below is a list of valid values for `animate`:
 
-| Value  | Description                                                |
-| ------ | ---------------------------------------------------------- |
-| none   | Message is removed with no animation                       |
-| left   | Message animates off the screen to the left when dismissed |
-| right  | Message animates off the screen to the left when dismissed |
-| top    | Message animates off the screen to the left when dismissed |
-| bottom | Message animates off the screen to the left when dismissed |
+| Value  | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
+| none   | Message is removed with no animation                             |
+| left   | Message animates off the screen to the **left** when dismissed   |
+| right  | Message animates off the screen to the **right** when dismissed  |
+| top    | Message animates off the screen to the **top** when dismissed    |
+| bottom | Message animates off the screen to the **bottom** when dismissed |
 
 If the value for `animate` is empty, or if it doesn't match one of the above valid values, an animation of `none` will be used.
 
