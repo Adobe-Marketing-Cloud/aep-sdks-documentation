@@ -8,6 +8,7 @@ If the scheme used in the link **is** `adbinapp://`, the following behavior may 
 
 * The in-app message is dismissed
 * An interaction event is sent to Experience Edge
+* The default animation is overridden
 * The URL will be opened by the OS, potentially resulting in:
   * The link being opened by the device's default web browser
   * Opening of a deeplink
@@ -31,6 +32,28 @@ The example below will dismiss the current in-app message and send an `inapp.int
 ```
 adbinapp://dismiss?interaction=imageLiked
 ```
+
+### Override the default dismiss animation
+
+Adding a URL variable named `animate` will cause the SDK to override the dismiss animation for the message.
+
+The example below will dismiss the current in-app message, and override the animation so the message exits to the right side of the screen:
+
+```
+adbinapp://dismiss?animate=right
+```
+
+Below is a list of valid values for `animate`:
+
+| Value  | Description                                                |
+| ------ | ---------------------------------------------------------- |
+| none   | Message is removed with no animation                       |
+| left   | Message animates off the screen to the left when dismissed |
+| right  | Message animates off the screen to the left when dismissed |
+| top    | Message animates off the screen to the left when dismissed |
+| bottom | Message animates off the screen to the left when dismissed |
+
+If the value for `animate` is empty, or if it doesn't match one of the above valid values, an animation of `none` will be used.
 
 ### Open a link from the URL
 
