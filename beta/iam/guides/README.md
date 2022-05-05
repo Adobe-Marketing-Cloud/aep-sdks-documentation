@@ -7,4 +7,4 @@
 
 ### Troubleshooting
 
-- [Validate in-app messaging using AEPAssurance SDK extension and the Assurance UI](./validate-messages-in-griffon.md)
+* [Validate in-app messaging using AEPAssurance SDK extension and the Assurance UI](./validate-messages-in-griffon.md)

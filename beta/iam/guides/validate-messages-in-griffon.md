@@ -117,7 +117,7 @@ Using the IAM plugin you can do the following for each message downloaded by the
 ## FAQs
 
 **Q:** What do I do when one of the required extensions is missing? <br />
-**A:** Ensure that each required extension is linked to your project and registered by `MobileCore`. Ref: [registerExtensions](./../../../foundation-extensions/mobile-core/mobile-core-api-reference#registerextension-s)
+**A:** Ensure that each required extension is linked to your project and registered by `MobileCore`. Ref: [registerExtensions](./../../../foundation-extensions/mobile-core/mobile-core-api-reference.md#registerextension-s)
 
 **Q:** Why can't I find an event named `Edge Optimize Personalization Request`? <br />
 **A:** Check to ensure each required extensions is on a version that meets its minimum requirement.
