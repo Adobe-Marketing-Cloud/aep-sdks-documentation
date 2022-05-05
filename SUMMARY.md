@@ -192,4 +192,5 @@
     * [Implement a MessagingDelegate](beta/iam/guides/how-to-messaging-delegate.md)
     * [Native handling of JavaScript events](beta/iam/guides/how-to-call-native-from-javascript.md)
     * [Execute JavaScript methods from native code](beta/iam/guides/how-to-call-javascript-from-native.md)
-    * [Handle URL clicks from an in-app message](beta/iam/guides/how-to-handle-url-clicks.md)
+    * [Handle URL clicks from an in-app message](beta/iam/guides/how-to-handle-url-clicks.md)    
+    * [Validate in-app messaging using Adobe Assurance](beta/iam/guides/validate-messages-in-griffon.md)
