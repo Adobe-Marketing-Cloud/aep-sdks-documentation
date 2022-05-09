@@ -4,6 +4,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 9, 2022
+
+### iOS AEPCore 3.6.0
+
+* App Extension Support
+* Add a new API to the Extension protocol for getting latest non pending shared state
+* Bundled Rules support
+* Use cached images for FullScreen Messages
+* Fix a bug preventing Fullscreen Messages from being dismissed in certain conditions
+
 ## April 28, 2022
 
 ### ACP React Native plugins
