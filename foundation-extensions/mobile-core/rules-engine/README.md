@@ -6,6 +6,13 @@ In the Experience Platform Mobile SDKs, the Rules Engine enables you to integrat
 
 The Rules Engine, with [Experience Platform Launch](https://experience.adobe.com/#/data-collection/)'s tag management system, allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
 
+### **Using Bundled Rules** (iOS AEP 3.x Only)
+
+You can include a bundled zip rules file in your app bundle to be used by the SDK before rules have been downloaded from launch. To add bundled rules to your app, follow these steps:
+1. Download the rules zip file using the following URL: https://assets.adobedtm.com/PASTE-ENVIRONMENT-ID-rules.zip replacing "PASTE-ENVIRONMENT-ID" with your launch environment ID. 
+2. Rename the zip file to "ADBMobileConfig-rules.zip"
+3. Place the zip anywhere that it is accessible in your app bundle.
+
 ### **Data elements**
 
 Data elements are the building blocks for the applications data dictionary and are used to collect, organize, and deliver data across marketing and ad technology.
