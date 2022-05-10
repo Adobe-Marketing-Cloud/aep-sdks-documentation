@@ -1,6 +1,6 @@
 # Programmatically control the display of in-app messages
 
-App developers can now implement a `MessagingDelegate` in order to be alerted when specific events occur during the lifecycle of an in-app message.
+You can now implement a `MessagingDelegate` in order to be alerted when specific events occur during the lifecycle of an in-app message.
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -153,7 +153,7 @@ public interface FullscreenMessageDelegate {
 
 ### Using the Showable object in the protocol methods
 
-Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object. In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, which is the primary way for the developer to interact with the message.
+Each of the methods implemented in the `MessagingDelegate` will be passed a [`Showable`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/Showable.swift) object. In the AEPMessaging SDK, the class implementing `Showable` is [`FullscreenMessage`](https://github.com/adobe/aepsdk-core-ios/blob/main/AEPServices/Sources/ui/fullscreen/FullscreenMessage.swift). A `FullscreenMessage` object is wrapped in the [`Message`](./../public-classes-enums.md) class, and is your primary way to interact with the message.
 
 To get a reference to the `Message` object:
 
@@ -178,7 +178,7 @@ func onShow(message: Showable) {
 
 ### Retrieving the Message object from the implemented interface methods
 
-The user interface methods (except for `onShowFailure()`) in a `FullscreenMessageDelegate` implementation will be passed an `AEPMessage` object. An `AEPMessage` object is the Android Core implementation of the `FullscreenMessage` interface. It contains a reference to the parent `Message` class and is the primary way for the developer to interact with the message.
+The user interface methods (except for `onShowFailure()`) in a `FullscreenMessageDelegate` implementation will be passed an `AEPMessage` object. An `AEPMessage` object is the Android Core implementation of the `FullscreenMessage` interface. It contains a reference to the parent `Message` class and is your primary way to interact with the message.
 
 A reference to the `AEPMessage` object can be obtained by calling `fullscreenMessage.getParent()` . An example of how to access the `Message` in the `onShow` delegate method can be seen below:
 
@@ -200,9 +200,9 @@ public void onShow(FullscreenMessage fullscreenMessage) {
 {% tabs %}
 {% tab title="iOS" %}
 
-If a `MessagingDelegate` has been provided to `MobileCore`, the delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. The developer is responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
+If a `MessagingDelegate` has been provided to `MobileCore`, the delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. You are responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
 
-An example of when a developer may choose to suppress an in-app message due to the status of some other workflow within the app can be seen below:
+An example of when you may choose to suppress an in-app message due to the status of some other workflow within the app can be seen below:
 
 #### Swift
 
@@ -216,9 +216,9 @@ func shouldShowMessage(message: Showable) -> Bool {
 }
 ```
 
-Another option for the developer is to store a reference to the `Message` object, and call the `show()` method on it at a later time.
+Another option is to store a reference to the `Message` object, and call the `show()` method on it at a later time.
 
-Continuing with the above example, the developer has stored the message that was triggered initially, and chooses to show it upon completion of the other workflow:
+Continuing with the above example, after you have stored the message that was triggered initially, you can choose to show it upon completion of the other workflow:
 
 #### Swift
 
@@ -248,9 +248,9 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% tab title="Android" %}
 
-If a custom  `FullscreenMessageDelegate` has been set in the `ServiceProvider`, this delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. The developer is responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
+If a custom  `FullscreenMessageDelegate` has been set in the `ServiceProvider`, this delegate's `shouldShowMessage` method will be called prior to displaying an in-app message for which the end user has qualified. You are responsible for returning `true` if the message should be shown, or `false` if the message should be suppressed.
 
-An example of when a developer may choose to suppress an in-app message due to the status of some other workflow within the app can be seen below:
+An example of when you may choose to suppress an in-app message due to the status of some other workflow within the app can be seen below:
 
 #### Java
 
@@ -264,9 +264,9 @@ public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
 }
 ```
 
-Another option for the developer is to store a reference to the `FullscreenMessage` object, and call the `show()` method on it at a later time.
+Another option is to store a reference to the  `FullscreenMessage` object, and call the `show()` method on it at a later time.
 
-Continuing with the above example, the developer has stored the message that was triggered initially, and chooses to show it upon completion of the other workflow:
+Continuing with the above example, after you have stored the message that was triggered initially, you can choose to show it upon completion of the other workflow:
 
 #### Java
 
@@ -299,9 +299,9 @@ public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
 {% tabs %}
 {% tab title="iOS" %}
 
-If the developer would like to manually integrate the `View` that contains the UI for an in-app message, they can do so by accessing the `WKWebView` directly in a `MessagingDelegate` method.  
+If you would like to manually integrate the `View` that contains the UI for an in-app message, you can do so by accessing the `WKWebView` directly in a `MessagingDelegate` method.  
 
-In the example below, the developer decides whether or not the in-app message should be directly integrated into their existing UI.  If so, they capture a reference to the message's `WKWebView` and return `false` to prevent the message from being shown by the SDK:
+In the example below, you can decide whether or not the in-app message should be directly integrated into your existing UI. If so, you capture a reference to the message's `WKWebView` and return `false` to prevent the message from being shown by the SDK:
 
 #### Swift
 
@@ -326,7 +326,31 @@ func shouldShowMessage(message: Showable) -> Bool {
 
 {% tab title="Android" %}
 
-Feature not yet available.
+If you would like to manually integrate the `View` that contains the UI for an in-app message, you can do so by accessing the `WebView` directly in a `MessagingDelegate` method.  
+
+In the example below, you can decide whether or not the in-app message should be directly integrated into your existing UI. If so, you capture a reference to the message's `WebView` and return `false` to prevent the message from being shown by the SDK:
+
+#### Java
+
+```java
+private Message currentMessage = null;
+private boolean shouldIntegrateMessageDirectly = true;
+private MessageWebView inAppMessageView;
+
+@Override
+public boolean shouldShowMessage(FullscreenMessage fullscreenMessage) {
+  if (shouldIntegrateMessageDirectly) {
+    this.currentMessage = (Message) fullscreenMessage.getParent();
+    
+    // cast to MessageWebView to access the startInAppMessage function
+    inAppMessageView = (MessageWebView) currentMessage.getWebView();
+    
+    return false;
+  }
+  
+  return true;
+}
+```
 
 {% endtab %}
 {% endtabs %}

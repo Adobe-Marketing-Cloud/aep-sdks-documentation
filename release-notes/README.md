@@ -4,11 +4,33 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 9, 2022
+
+### iOS AEPAudience 3.0.3
+
+- Fixed integration with Lifecycle extension to send lifecycle metrics when a new app session is started.
+
+## April 28, 2022
+
+### ACP React Native plugins
+
+Updated the following ACP React Native packages to remove the usage of deprecated Jcenter() repository:
+- [@adobe/react-native-acpcore v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpcore/v/2.0.1)
+- [@adobe/react-native-acpuserprofile v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpuserprofile/v/2.0.1)
+- [@adobe/react-native-aepassurance v2.0.1](https://www.npmjs.com/package/@adobe/react-native-aepassurance/v/2.0.1)
+- [@adobe/react-native-acpmedia v3.0.1](https://www.npmjs.com/package/@adobe/react-native-acpmedia/v/3.0.1)
+- [@adobe/react-native-acptarget v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acptarget/v/2.0.1)
+- [@adobe/react-native-acpcampaign v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpcampaign/v/2.0.1)
+- [@adobe/react-native-acpplaces v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpplaces/v/2.0.1)
+- [@adobe/react-native-acpaudience v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpaudience/v/2.0.1)
+- [@adobe/react-native-acpanalytics v2.0.1](https://www.npmjs.com/package/@adobe/react-native-acpanalytics/v/2.0.1)
+
 ## April 21, 2022
 
 ### Android Core 1.11.0
 
 * Internal fixes to support In-App Messaging with the AEPMessaging extension.
+* Fixed a crash that could happen while initializing event history database.
 
 ### Android Identity 1.3.1
 

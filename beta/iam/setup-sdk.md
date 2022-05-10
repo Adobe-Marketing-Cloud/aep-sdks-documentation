@@ -11,6 +11,7 @@ The example below shows how to point to the `staging` branch in a Cocoapods `Pod
 
 ```
 pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git', :branch => 'staging'
+pod 'AEPOptimize', :git => 'https://github.com/adobe/aepsdk-optimize-ios.git', :branch => 'staging'
 ```
 
 {% endtab %}
@@ -19,11 +20,11 @@ pod 'AEPMessaging', :git => 'https://github.com/adobe/aepsdk-messaging-ios.git',
 
 In-app messages are enabled in Messaging SDK version `1.1.0` or newer. Libraries built from the staging branch will contain `beta` in the artifact name.
 
-The Messaging extension has a dependency on the Optimize extension. The Optimize extension aar can be placed in your app's `libs` directory and imported in the gradle file.
+The Messaging extension has a dependency on the Optimize extension. The Optimize extension must be added as a dependency in the gradle file.
 
 ```groovy
-implementation "com.adobe.marketing.mobile:messaging:1.1.0-beta-1"
-implementation fileTree(include: ['*.aar'], dir: 'libs')
+implementation('com.adobe.marketing.mobile:messaging:1.1.0-beta-1-SNAPSHOT')
+implementation('com.adobe.marketing.mobile:optimize:1.0.0-SNAPSHOT')
 ```
 
 {% endtab %}
@@ -45,6 +46,7 @@ import AEPMessaging
 import AEPCore
 import AEPEdge
 import AEPEdgeIdentity
+import AEPOptimize
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
