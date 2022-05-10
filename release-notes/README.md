@@ -14,6 +14,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Use cached images for FullScreen Messages
 * Fix a bug preventing Fullscreen Messages from being dismissed in certain conditions
 
+### iOS AEPAudience 3.0.3
+
+- Fixed integration with Lifecycle extension to send lifecycle metrics when a new app session is started.
+
 ## April 28, 2022
 
 ### ACP React Native plugins
