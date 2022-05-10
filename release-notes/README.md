@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 9, 2022
+
+### iOS AEPAudience 3.0.3
+
+- Fixed integration with Lifecycle extension to send lifecycle metrics when a new app session is started.
+
 ## April 28, 2022
 
 ### ACP React Native plugins
