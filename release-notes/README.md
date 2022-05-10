@@ -76,7 +76,7 @@ For more details, see the documentation and release notes in the [aepsdk-react-n
 
 ### iOS AEPAssurance 1.1.4
 
-* Fixed a bug that caused Assurance to not connect to a session if your iOS app's info.plist contains property of type date.
+* Fixed a bug that caused Assurance to not connect to a session if your iOS app's `info.plist` contains a property of type `date`.
 
 Note: This release pertains to Assurance mobile extension that works with ACPCore
 
