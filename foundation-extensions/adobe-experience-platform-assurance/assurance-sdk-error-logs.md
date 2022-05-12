@@ -20,6 +20,8 @@ Follow [Apple developer](https://developer.apple.com/documentation/uikit/inter-p
 
 When the generated link or QR code from Project Griffon is opened on device, it should launch your app and show a PIN screen to establish a Project Griffon session \(as shown below\). If this screen does not appear, ensure the following:
 
+![Connection error](../../.gitbook/assets/Commerce_Griffon_Connection.png)
+
 ### Register Assurance SDK extension with Mobile Core
 
 {% tabs %}

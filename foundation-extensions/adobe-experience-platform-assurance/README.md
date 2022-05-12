@@ -8,8 +8,8 @@ Project Griffon is a beta product. To use it, you must accept the terms on [http
 
 To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
 
-1. Install the AEP Assurance extension in the Data Collection UI.
-2. Add the Assurance extension to your app
+1. Install the AEP Assurance extension in [Data Collection UI](https://experience.adobe.com/#/data-collection)
+2. Add AEP Assurance SDK extension library to your app
    1. Import AEP Assurance into your app
    2. Register and implement extension APIs
 
@@ -219,6 +219,11 @@ To start using the extension library, you must first register the extension with
 #### Java
 
 1. Register the extension when you register other extensions.
+   {% hint style="info" %}
+   "yourAppId", mentioned below, is found in Launch "[Mobile Install Instructions](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/configuration#configure-with-the-experience-platform-launch-app-id)". When inside of "Publishing Flow", select on the small gray box next to "Environment" dropdown.
+   {% endhint %}
+   
+![](../../.gitbook/assets/install_instructions.png)
 
    ```java
      public class MobileApp extends Application {
@@ -403,12 +408,18 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 
 ### Implement AEP Assurance session start APIs \(iOS only\)
 
-The `startSession` API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+(session start APIs for other platforms listed [here](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference) )
+
+The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
+
+You may call this API when the app launches with a url (see code snippet below for sample usage)
+
 The AEP Assurance Android extension does not require this API to be called since it registers the app lifecycle handlers which automatically pick up any deep links and use them to start the session.
 
 When using the AEP Assurance iOS extension, you should call this API when the app launches with a url (see code snippet below for sample usage).
+
 {% endhint %}
 
 {% tabs %}

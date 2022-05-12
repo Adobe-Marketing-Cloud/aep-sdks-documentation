@@ -22,7 +22,7 @@ The Identity framework lets your app use Experience Cloud ID \(ECID\). Using ECI
 
 ## Lifecycle
 
-The Lifecycle extension lets you access information about the app's sessions, including device information, app installation, app upgrades, session start and pause times, number of application launches, and additional context data. For more information on how to use the Lifecycle API, please read the documentation on the[Lifecycle extension](lifecycle/).
+The Lifecycle extension lets you access information about the app's sessions, including device information, app installation, app upgrades, session start and pause times, number of application launches, and additional context data. For more information on how to use the Lifecycle API, please read the documentation on the [Lifecycle extension](lifecycle/).
 
 ## Rules Engine
 
@@ -30,7 +30,7 @@ Rules Engine looks for the interactions between users and their associated data 
 
 ## Signal
 
-The Signal extension allows you to send data third-party endpoints via GET and POST requests. Signals are configured by using rules in Experience Platform Launch. For more information, please read the documentation on the [Signal extension](signals/).
+The Signal extension allows you to send data to third-party endpoints via GET and POST requests. Signals are configured by using rules in Experience Platform Launch. For more information, please read the documentation on the [Signal extension](signals/).
 
 ## Platform Services
 

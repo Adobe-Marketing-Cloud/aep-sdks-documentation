@@ -137,7 +137,7 @@ After calling the `setApplication()` method in the `onCreate()` method, register
 #### Java
 
 ```java
-public class MobiletApp extends Application {
+public class MobileApp extends Application {
 @Override
 public void onCreate() {
 super.onCreate();
