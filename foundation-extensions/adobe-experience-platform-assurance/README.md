@@ -231,10 +231,15 @@ To start using the extension library, you must first register the extension with
       public void onCreate() {
          super.onCreate();
          MobileCore.setApplication(this);
-         MobileCore.configureWithAppId("yourAppId");
+
          try {
-            Assurance.registerExtension();
-            MobileCore.start(null);
+            // register other necessary extensions
+            Assurance.registerExtension();            
+            MobileCore.start(new AdobeCallback() {
+              @Override
+              public void call(final Object o) {
+                 MobileCore.configureWithAppID("yourAppId");
+              }});
          } catch (Exception e) {
             // Log the exception
          }

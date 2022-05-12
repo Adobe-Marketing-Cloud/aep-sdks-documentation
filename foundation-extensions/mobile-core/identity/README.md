@@ -142,8 +142,15 @@ public class MobileApp extends Application {
 public void onCreate() {
 super.onCreate();
      MobileCore.setApplication(this);
-     try {
+     try {         
          Identity.registerExtension();
+         // register other extensions
+         MobileCore.start(new AdobeCallback () {
+             @Override
+             public void call(Object o) {
+                 MobileCore.configureWithAppID("yourAppId");
+             }
+         });    
      } catch (Exception e) {
          //Log the exception
      }
