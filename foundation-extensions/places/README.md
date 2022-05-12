@@ -116,17 +116,20 @@ public class MobileApp extends Application {
 
     @Override
     public void onCreate() {
-      super.onCreate();
-      MobileCore.setApplication(this);
-      MobileCore.configureWithAppID("yourAppID");
-
-      Places.registerExtension();
-
-      MobileCore.start(new AdobeCallback() {
-        @Override
-        public void call(final Object o) {
-          // processing after start
-        }});
+        super.onCreate();
+        MobileCore.setApplication(this);
+        try {            
+            Places.registerExtension();
+            // register other extensions
+            MobileCore.start(new AdobeCallback () {
+                @Override
+                public void call(Object o) {
+                    MobileCore.configureWithAppID("yourAppId");
+                }
+            });    
+        } catch (Exception e) {
+            //Log the exception
+         }
     }
 }
 ```

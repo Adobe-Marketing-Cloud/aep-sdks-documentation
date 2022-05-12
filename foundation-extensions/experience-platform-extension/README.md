@@ -122,15 +122,15 @@ public class MobileApp extends Application {
     public void onCreate() {
       super.onCreate();
       MobileCore.setApplication(this);
-      MobileCore.configureWithAppID("yourAppId");
 
       try {
         Edge.registerExtension();
         com.adobe.marketing.mobile.edge.identity.Identity.registerExtension();
+        // register other extensions
         MobileCore.start(new AdobeCallback() {
           @Override
           public void call(final Object o) {
-            // processing after start
+            MobileCore.configureWithAppID("yourAppId");
           }});
       } catch (Exception e) {
         //Log the exception

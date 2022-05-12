@@ -97,15 +97,22 @@ public class MobileApp extends Application {
     public void onCreate() {
       super.onCreate();
       MobileCore.setApplication(this);
-      MobileCore.configureWithAppID("yourLaunchEnvironmentID");
+      try {
+        Edge.registerExtension();
+        Identity.registerExtension();
+        // register other extensions
+        MobileCore.start(new AdobeCallback () {
+            @Override
+            public void call(Object o) {
+                MobileCore.configureWithAppID("yourAppId");
+            }
+        });      
 
-      Edge.registerExtension();
-      Identity.registerExtension();
-      MobileCore.start(new AdobeCallback() {
-        @Override
-        public void call(final Object o) {
-          // processing after start
-        }});
+      } catch (Exception e) {
+        ...
+      }
+
+
     }
 }
 ```

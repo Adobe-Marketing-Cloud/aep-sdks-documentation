@@ -2,6 +2,14 @@
 
 Release notes and change logs for the Adobe Experience Platform Assurance extension
 
+## April 2, 2022
+
+### iOS AEPAssurance 1.1.4
+
+* Fixed a bug that caused Assurance to not connect to a session if your iOS app's `info.plist` contains a property of type `date`.
+
+Note: This release pertains to Assurance mobile extension that works with ACPCore
+
 ## February 22, 2022
 
 ### iOS Assurance 3.0.1

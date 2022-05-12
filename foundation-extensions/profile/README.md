@@ -144,19 +144,25 @@ using Com.Adobe.Marketing.Mobile;
    This can be done after calling `setApplication()` in the `onCreate()` method. Here is a code sample, which calls these set up methods:
 
 ```java
-public class MobileApp extends Application {
-​
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        MobileCore.setApplication(this);
-​
-        try {
-            UserProfile.registerExtension();
-        } catch (Exception e) {
-            //Log the exception
-        }
-    }
+   public class MobileApp extends Application {
+
+       @Override
+       public void onCreate() {
+           super.onCreate();
+           MobileCore.setApplication(this);
+           try {
+               // register other extensions
+               UserProfile.registerExtension();
+               MobileCore.start(new AdobeCallback () {
+                   @Override
+                   public void call(Object o) {
+                       MobileCore.configureWithAppID("yourAppId");
+                   }
+               });    
+           } catch (Exception e) {
+               //Log the exception
+            }
+       }
    }
 ```
 {% endtab %}

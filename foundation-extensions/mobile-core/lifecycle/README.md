@@ -141,6 +141,13 @@ using Com.Adobe.Marketing.Mobile;
 
         try {
             Lifecycle.registerExtension();
+            // register other extensions
+            MobileCore.start(new AdobeCallback () {
+                @Override
+                public void call(Object o) {
+                    MobileCore.configureWithAppID("yourAppId");
+                }
+            });    
         } catch (Exception e) {
             //Log the exception
         }

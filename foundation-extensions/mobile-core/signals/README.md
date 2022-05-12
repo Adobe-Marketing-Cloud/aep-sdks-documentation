@@ -163,10 +163,15 @@ public class MobileApp extends Application {
     public void onCreate() {
         super.onCreate();
         MobileCore.setApplication(this);
-        MobileCore.configureWithAppId("yourAppId");
         try {
-            Signal.registerExtension(); //Register Signal extension with Mobile Core
-            MobileCore.start(null);
+            Signal.registerExtension();
+            // register other extensions
+            MobileCore.start(new AdobeCallback () {
+                @Override
+                public void call(Object o) {
+                    MobileCore.configureWithAppID("yourAppId");
+                }
+            });    
         } catch (Exception e) {
             //Log the exception
          }
