@@ -20,7 +20,7 @@ pod 'AEPOptimize', :git => 'https://github.com/adobe/aepsdk-optimize-ios.git', :
 
 In-app messages are enabled in Messaging SDK version `1.1.0` or newer. Libraries built from the staging branch will contain `beta` in the artifact name.
 
-The Messaging SDK is available from the Sonatype snapshot repository while it is in beta. In your app's top level gradle file, add a reference to the repository:
+The Messaging SDK is available from the Sonatype snapshot repository while it is in beta. In your app's top level Gradle file, add a reference to the repository:
 
 ```groovy
 allprojects {
@@ -32,7 +32,7 @@ allprojects {
 } 
 ```
 
-The Messaging extension has a dependency on the Optimize extension. The Optimize extension must be added as a dependency in the app level gradle file.
+The Messaging extension has a dependency on the Optimize extension. The Optimize extension must be added as a dependency in the app level Gradle file.
 
 ```groovy
 implementation('com.adobe.marketing.mobile:messaging:1.1.0-beta-1-SNAPSHOT')
