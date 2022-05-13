@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 12, 2022
+
+### iOS AEPAnalytics 3.1.0
+
+* Added support for using the Analytics Extension in [App Extensions](https://developer.apple.com/app-extensions/)
+
 ## May 9, 2022
 
 ### iOS AEPCore 3.6.0
