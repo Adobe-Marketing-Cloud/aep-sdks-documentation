@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 17, 2022
+
+### iOS Campaign Classic 2.1.1
+
+* ACPCampaignClassic iOS SDK is now ACC v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
+
 ## May 9, 2022
 
 ### iOS AEPAudience 3.0.3
