@@ -4,7 +4,7 @@
 
 ### iOS Campaign Classic 2.1.1
 
-* ACPCampaignClassic iOS SDK is now ACC v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
+* ACPCampaignClassic iOS SDK is now Adobe Campaign Classic (ACC) v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
 
 ## December 18, 2020
 
