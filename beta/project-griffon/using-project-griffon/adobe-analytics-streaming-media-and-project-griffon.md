@@ -5,7 +5,7 @@
 With the Streaming Media Analytics integration, you can now validate your AEP Mobile SDK - Media Analytics implementation. Views include what is tracked in the media session such as:
 
 * Session start event that contains all content core, standard metadata and custom metadata properties, also session end and complete.
-* Ad break Start and Ad start event will all ad properties attached, also skip and complete event for both
+* Ad break Start and Ad start event with all ad properties attached, also skip and complete event for both
 * Chapter Start with all properties and chapter skip and complete events
 * All playback changes \(play, pause, buffer, errors, bitrate change\)
 * All player state tracking changes \(start, end\) 

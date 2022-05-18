@@ -53,11 +53,11 @@ After you have tested your function, you can click **Upload** to save your valid
 
 To execute the function in the code editor, click **Test**. The function is expected to return an object that contains the following:
 
-| Key | Type | Description |  |  |
-| :--- | :--- | :--- | :--- | :--- |
-| `message` | String | The validation message to display in the summary results. |  |  |
-| `events` | Array | An array of event uuids to be reported as matched or not matched. |  |  |
-| `result` | 'matched' | 'not matched' | 'unknown' | This is the validation result and is expected to be one of the enumerated strings. |
+| Key | Type | Description |
+| :--- | :--- | :--- | 
+| `message` | String | The validation message to display in the summary results. |
+| `events` | Array | An array of event uuids to be reported as matched or not matched. |
+| `result` | String | This is the validation result and is expected to be one of the enumerated strings: "matched", "not matched", "unknown" |
 
 ![](../../../.gitbook/assets/griffon-custom-validation-invalid.png)
 

@@ -2,6 +2,7 @@
 
 ## Connected
 
+(indicated by red Adobe "A")
 ![](../../../.gitbook/assets/iphonexspacegrey_landscape.png)
 
 ## Open logs panel

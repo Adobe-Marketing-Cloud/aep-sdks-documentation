@@ -2,7 +2,7 @@
 
 This document is a reference comparison of ACPCore \(2.x\) APIs against their equivalent APIs in AEPCore \(3.x\).
 
-## Primary `Classes`
+## Primary Classes
 
 | Type | AEP 3.x \(Swift\) | AEP 3.x \(Objective-C\) | ACP 2.x \(Objective-C\) |
 | :--- | :--- | :--- | :--- |
@@ -275,4 +275,8 @@ public static var extensionVersion: String
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+For additional details see also [Mobile Core API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference).
+{% endhint %}
 

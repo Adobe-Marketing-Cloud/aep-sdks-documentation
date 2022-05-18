@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 17, 2022
+
+### iOS Campaign Classic 2.1.1
+
+* ACPCampaignClassic iOS SDK is now Adobe Campaign Classic (ACC) v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
+
 ## May 12, 2022
 
 ### iOS AEPAnalytics 3.1.0
@@ -52,7 +58,7 @@ Updated the following ACP React Native packages to remove the usage of deprecate
 
 ## April 12, 2022
 
-### AEP React Native plugins 
+### AEP React Native plugins
 
 The following AEP SDK React Native plugins have been published:
 
@@ -80,11 +86,19 @@ For more details, see the documentation and release notes in the [aepsdk-react-n
 ### iOS AEPEdge 1.4.0
 
 * Updates timestamp in Experience Events to use fractional seconds.
-* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension.
 
 ### iOS AEPEdgeConsent 1.0.1
 
 * Updates timestamp in Consent requests to use fractional seconds.
+
+## April 2, 2022
+
+### iOS AEPAssurance 1.1.4
+
+* Fixed a bug that caused Assurance to not connect to a session if your iOS app's `info.plist` contains a property of type `date`.
+
+Note: This release pertains to Assurance mobile extension that works with ACPCore
 
 ## April 1, 2022
 

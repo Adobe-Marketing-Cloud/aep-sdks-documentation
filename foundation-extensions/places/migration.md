@@ -85,10 +85,6 @@ static func getCurrentPointsOfInterest(_ closure: @escaping ([PointOfInterest]) 
 
 {% tabs %}
 {% tab title="AEP 3.x \(Swift\)" %}
-{% hint style="info" %}
-If the SDK has no last known location, it will pass `nil` to the closure.
-{% endhint %}
-
 ```swift
 static func getLastKnownLocation(_ closure: @escaping (CLLocation?) -> Void)
 ```
@@ -238,4 +234,8 @@ static func setAuthorizationStatus(status: CLAuthorizationStatus)
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+For additional details see also [Places API reference](https://aep-sdks.gitbook.io/docs/foundation-extensions/places/places-usage-reference).
+{% endhint %}
 

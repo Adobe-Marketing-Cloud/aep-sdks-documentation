@@ -10,16 +10,16 @@ To use this view, complete the following steps:
 
 1. [Setup Project Griffon](../set-up-project-griffon.md)
 2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
-3. In the **Home** view, select **Custom Validation**
+3. In the **Home** view, select **Validation Scripts**
 
-![Custom Validation](../../../.gitbook/assets/screen-shot-2020-02-12-at-9.17.25-am.png)
+![Custom Validation](../../../.gitbook/assets/validation_menu.png)
 
 ## Writing a Validation Function
 
 This feature allows you to write a function to validate events in your Project Griffon session. The function should expect an array of Project Griffon events and should return:
 
 * A boolean \(true or false\) OR
-* An object that contains a `status` property with an _optional_ array of event UUIDs may also
+* An object that contains a `status` property with an _optional_ array of event UUIDs
 
 ### Event Definition
 

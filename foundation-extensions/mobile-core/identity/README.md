@@ -137,13 +137,20 @@ After calling the `setApplication()` method in the `onCreate()` method, register
 #### Java
 
 ```java
-public class MobiletApp extends Application {
+public class MobileApp extends Application {
 @Override
 public void onCreate() {
 super.onCreate();
      MobileCore.setApplication(this);
-     try {
+     try {         
          Identity.registerExtension();
+         // register other extensions
+         MobileCore.start(new AdobeCallback () {
+             @Override
+             public void call(Object o) {
+                 MobileCore.configureWithAppID("yourAppId");
+             }
+         });    
      } catch (Exception e) {
          //Log the exception
      }
