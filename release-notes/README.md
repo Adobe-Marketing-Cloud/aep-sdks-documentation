@@ -8,13 +8,13 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Campaign Classic 1.0.2
 
-* Android CampaignClassic SDK is now Adobe Campaign Classic (ACC) v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
+* Android Campaign Classic SDK is now Adobe Campaign Classic (ACC) v8 compatible! Broadlog ID can be provided in the UUID format in the notification tracking APIs.
 
 ## May 17, 2022
 
 ### iOS Campaign Classic 2.1.1
 
-* ACPCampaignClassic iOS SDK is now Adobe Campaign Classic (ACC) v8 compatible! BroadlogId can be provided in the UUID format in the notification tracking APIs.
+* ACPCampaignClassic iOS SDK is now Adobe Campaign Classic (ACC) v8 compatible! Broadlog ID can be provided in the UUID format in the notification tracking APIs.
 
 ## May 9, 2022
 
