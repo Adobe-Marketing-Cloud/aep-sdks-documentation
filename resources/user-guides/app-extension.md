@@ -1,14 +1,13 @@
 # iOS App Extension Implementation
 
-You can use supported AEP extensions in your App Extensions to collect usage data. Supported Adobe Extensions are shown [here](https://aep-sdks.gitbook.io/docs/resources/upgrading-to-aep/current-sdk-versions#ios-swift). This tutorial assumes a basic understanding of how to use the iOS SDK in applications.
+You can use supported Platform extensions in your App Extensions to collect usage data. Supported Adobe Extensions are shown [here](../../upgrading-to-aep/current-sdk-versions#ios-swift). This tutorial assumes a basic understanding of how to use the iOS SDK in applications.
 
 ## Adding the SDK
 
-Getting the Mobile SDK in your App Extension works the same way as for your application. For this tutorial we will go over Cocoapods as the method of installing the SDK.
+Adding the Mobile SDK to your App Extension works the same way as adding the Mobile SDK to your application. This tutorial explains installing the SDK using Cocoapods.
 
-1. First, simply add a new target in your podfile for your app extension, then add the Adobe pods to the newly added App Extension target in the podfile.
+1. Add a new target in your podfile for your app extension, then add the Adobe pods to the newly added App Extension target in the podfile.
 
-E.g:
 ```
 target 'YourApp' do
   pod 'AEPServices'
@@ -31,10 +30,9 @@ end
 
 ## Registering Extensions
 
-Depending on the type of App Extension you are using, the registration and usage of the SDK will look different. Make sure you understand the lifecycle of your App Extension in order to know where best to register the SDK and call lifecycle start/pause. For this tutorial we will be using the ShareExtension as the example.
+Depending on the type of App Extension you are using, the registration and usage of the SDK will look different. Make sure you understand the lifecycle of your App Extension in order to know where best to register the SDK and call lifecycle start/pause. This tutorial will use the `ShareExtension` as the example.
 
 1. Make sure that your `ShareViewController` has the proper imports for the SDK. 
-E.g:
 
 ```
 import UIKit
@@ -70,5 +68,5 @@ Please note that in order to register AEPAnalytics, you must use the `AnalyticsA
     }
 ```
 
-You are now ready to use the SDK in your App Extension
+You are now ready to use the SDK in your App Extension.
 
