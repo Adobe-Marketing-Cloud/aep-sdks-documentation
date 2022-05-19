@@ -4,7 +4,7 @@
 
 ### iOS AEPAudience 3.0.4
 
-- Fixed an issue where lifecycle data was included in signalWithData requests.
+* Fixed an issue where lifecycle data was included in signalWithData requests.
 
 ## May 9, 2022
 
