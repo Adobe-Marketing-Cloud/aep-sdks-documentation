@@ -20,7 +20,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * ACPCampaignClassic iOS SDK is now Adobe Campaign Classic (ACC) v8 compatible! Broadlog ID can be provided in the UUID format in the notification tracking APIs.
 
+## May 12, 2022
+
+### iOS AEPAnalytics 3.1.0
+
+* Added support for using the Analytics Extension in [App Extensions](https://developer.apple.com/app-extensions/)
+
 ## May 9, 2022
+
+### iOS AEPCore 3.6.0
+
+* Added support for using the Core SDK in [App Extensions.](https://developer.apple.com/app-extensions/)
+* Added a new API to the Extension protocol for getting the latest non-pending shared state.
+* Added support for using Bundled Rules.
+* Added support for cached images for Fullscreen Messages.
+* Fixed a bug preventing Fullscreen Messages from being dismissed in certain conditions.
 
 ### iOS AEPAudience 3.0.3
 
