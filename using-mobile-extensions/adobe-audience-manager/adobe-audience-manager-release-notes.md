@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 18, 2022
+
+### iOS AEPAudience 3.0.4
+
+* Fixed an issue where lifecycle data was included in signalWithData requests.
+
 ## May 9, 2022
 
 ### iOS AEPAudience 3.0.3
