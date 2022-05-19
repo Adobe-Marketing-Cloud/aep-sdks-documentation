@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPAudience 3.0.4
 
-- Internal fixes to clear cached lifecycle data from signalWithData requests.
+- Fixed an issue where lifecycle data was included in signalWithData requests.
 
 ## May 17, 2022
 
