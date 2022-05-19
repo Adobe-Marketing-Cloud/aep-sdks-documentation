@@ -20,11 +20,11 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### iOS AEPCore 3.6.0
 
-* Added support for using the Core SDK in [App Extensions](https://developer.apple.com/app-extensions/)
+* Added support for using the Core SDK in [App Extensions.](https://developer.apple.com/app-extensions/)
 * Added a new API to the Extension protocol for getting the latest non-pending shared state.
-* Added support for using Bundled Rules
-* Use cached images for FullScreen Messages
-* Fix a bug preventing Fullscreen Messages from being dismissed in certain conditions
+* Added support for using Bundled Rules.
+* Added support for cached images for FullScreen Messages.
+* Fixed a bug preventing Fullscreen Messages from being dismissed in certain conditions.
 
 ### iOS AEPAudience 3.0.3
 
