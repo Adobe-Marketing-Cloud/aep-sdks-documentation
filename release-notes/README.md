@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 24, 2022
+
+### iOS Analytics 2.5.2
+
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
+
 ## May 18, 2022
 
 ### iOS AEPAudience 3.0.4
