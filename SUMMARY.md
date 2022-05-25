@@ -143,7 +143,7 @@
   * [Modify data in SDK events](resources/user-guides/modify-data.md)
   * [Using data elements to define dynamic data in rules](resources/user-guides/launch-data-elements.md)
   * [Signal extension and Rules Engine integration](resources/user-guides/signal-extension-and-rules-engine-integration.md)
-  * [iOS App Extension integration](resources/user-guides/app-extension.md)
+  * [iOS App Extension implementation](resources/user-guides/app-extension.md)
 * [Troubleshooting Guides](resources/troubleshooting-guides/README.md)
   * [Push Messaging](resources/troubleshooting-guides/troubleshooting-push.md)
   * [Campaign Push Notifications](resources/troubleshooting-guides/push_notification_troubleshooting.md)
