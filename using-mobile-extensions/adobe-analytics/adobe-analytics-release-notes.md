@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 24, 2022
+
+### iOS Analytics 2.5.2
+
+* Fixed a bug for the integration with Assurance where "No Debug Flag" was showing in the UI for some events.
+
 ## March 31, 2022
 
 ### iOS AEPAnalytics 3.0.4
