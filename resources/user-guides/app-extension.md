@@ -1,12 +1,17 @@
-# iOS App Extension Implementation
+# iOS App Extension implementation
 
-You can use supported Platform extensions in your App Extensions to collect usage data. Supported Adobe Extensions are shown [here](../../upgrading-to-aep/current-sdk-versions#ios-swift). This tutorial assumes a basic understanding of how to use the iOS SDK in applications.
+You can use supported Adobe Experience Platform mobile extensions in your App Extensions to collect usage data. The supported AEP mobile Extensions are listed [here](../upgrading-to-aep/current-sdk-versions.md#ios--swift). 
 
-## Adding the SDK
+## Prerequisites
+
+- This tutorial assumes a basic understanding of how to use the iOS AEP Mobile SDK in applications. For more details see [Getting Started](../../getting-started/overview.md).
+- You should have CocoaPods installed.
+
+## Adding the AEP mobile extensions
 
 Adding the Mobile SDK to your App Extension works the same way as adding the Mobile SDK to your application. This tutorial explains installing the SDK using Cocoapods.
 
-1. Add a new target in your podfile for your app extension, then add the Adobe pods to the newly added App Extension target in the podfile.
+1. Add a new target in your podfile for your app extension, then add the Adobe pods to the newly added App Extension target in the Podfile.
 
 ```
 target 'YourApp' do
@@ -30,7 +35,11 @@ end
 
 ## Registering Extensions
 
-Depending on the type of App Extension you are using, the registration and usage of the SDK will look different. Make sure you understand the lifecycle of your App Extension in order to know where best to register the SDK and call lifecycle start/pause. This tutorial will use the `ShareExtension` as the example.
+This tutorial uses the `ShareExtension` as the example.
+
+{% hint style="info" %}
+Depending on the type of App Extension you are using, the registration and usage of the SDK will look different. Make sure you understand the lifecycle of your App Extension in order to know where best to register the SDK and call lifecycle start/pause. 
+{% endhint %}
 
 1. Make sure that your `ShareViewController` has the proper imports for the SDK. 
 
@@ -45,7 +54,9 @@ import AEPLifecycle
 
 2. Register the SDK in the `ShareViewController`'s `presentationAnimationDidFinish` method:
 
-```
+### Swift
+
+```swift
 override func presentationAnimationDidFinish() {
         MobileCore.registerExtensions([Identity.self, Lifecycle.self, AnalyticsAppExtension.self], {
             MobileCore.configureWith(appId: "your-app-id")
@@ -53,11 +64,16 @@ override func presentationAnimationDidFinish() {
         })
     }
 ```
+
+{% hint style="info" %}
 Please note that in order to register AEPAnalytics, you must use the `AnalyticsAppExtension` class instead of the `Analytics` class used when registering from an application.
+{% endhint %}
 
 3. Managing lifeycle from a Share Extension should be done in the `didSelectCancel` and `didSelectPost` methods which are the delegate methods called when the ShareViewController is dismissed.
 
-```
+### Swift
+
+```swift
     override func didSelectCancel() {
         MobileCore.lifecyclePause()
     }
