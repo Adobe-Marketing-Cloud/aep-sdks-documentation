@@ -198,6 +198,125 @@ Identity.getIdentities { (identityMap, error) in
 {% endtab %}
 {% endtabs %}
 
+## getUrlVariables
+
+{% hint style="info" %}
+This API is available with version 1.1.0 and above.
+{% endhint %}
+
+Returns the identifiers in a URL's query parameters for consumption in **hybrid mobile applications**. The response will **not** return any leading `&` or `?`, since the caller is responsible for placing the variables in the resulting URL in the correct locations. If an error occurs while retrieving the URL variables, the callback handler will return a `null` value. Otherwise, the encoded string is returned.
+
+An example of an encoded string is as follows: `"adobe_mc=TS%3DTIMESTAMP_VALUE%7CMCMID%3DYOUR_ECID%7CMCORGID%3D9YOUR_EXPERIENCE_CLOUD_ID"`
+
+- `MCID`: This is also known as the Experience Cloud ID (ECID).
+- `MCORGID`: This is also known as the Experience Cloud Organization ID.
+- `TS`: The timestamp that is taken when the request was made.
+
+{% tabs %}
+{% tab title="Android" %}
+
+{% hint style="info" %}
+
+When `AdobeCallbackWithError` is provided and you are fetching the URL variables from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
+{% endhint %}
+
+### Java
+
+**Syntax**
+
+```java
+public static void getUrlVariables(final AdobeCallback<String> callback);
+```
+
+- `callback` has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
+
+**Example**
+
+```java
+Identity.getUrlVariables(new AdobeCallback<String>() {    
+    @Override    
+    public void call(String urlVariablesString) {        
+        //handle the URL query parameter string here
+        //For example, open the URL in a webView  
+        WebView webView;
+        webView = (WebView)findViewById(R.id.your_webview); // initialize with your webView
+        webview.loadUrl("https://example.com?" + urlVariablesString);
+    }
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
+```
+
+- `completion` is invoked with `urlVariables` containing the visitor identifiers as a query string, or with `error` if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core/mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+
+**Example**
+
+```swift
+Identity.getUrlVariables { (urlVariables, error) in
+  if let error = error {
+    // handle error here
+  } else {
+    var urlStringWithVisitorData: String = "https://example.com"
+    if let urlVariables: String = urlVariables {
+      urlStringWithVisitorData.append("?" + urlVariables)
+    }
+
+    guard let urlWithVisitorData: URL = URL(string: urlStringWithVisitorData) else {
+      // handle error, unable to construct URL
+      return
+    }
+
+    // handle the retrieved urlVariables encoded string here
+    // APIs which update the UI must be called from main thread
+    DispatchQueue.main.async {
+    self.webView.load(URLRequest(url: urlWithVisitorData))
+    }
+  }
+}
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getUrlVariables:^(NSString * _Nullable urlVariables, NSError * _Nullable error)completion
+```
+
+**Example**
+
+```objectivec
+[AEPMobileEdgeIdentity getUrlVariables:^(NSString *urlVariables, NSError *error){
+  if (error) {
+  // handle error here
+  } else {
+    // handle the URL query parameter string here
+    NSString* urlString = @"https://example.com";
+    NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
+    NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+
+    // APIs which update the UI must be called from main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+    }
+  }
+}];
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ## registerExtension
 
@@ -220,6 +339,7 @@ public static void registerExtension()
 ```
 
 **Example**
+
 ```java
 import com.adobe.marketing.mobile.edge.identity.Identity
 
