@@ -25,14 +25,14 @@ Ensure that your app has registered all necessary AEP SDK extensions by doing th
 
 1. Open the **extensions** object and validate that each of the required extensions exist, ensuring it meets the minimum version requirements. The table below shows the minimum versions required for in-app messaging dependencies:
 
-    | Extension Name (iOS) | Min. Version (iOS) | Extension Name (Android) | Min. Version (Android) |
-    | -------------------- | -----------------: | ------------------------ | ---------------------: |
-    | AEPCore              | 3.4.2              | core                     | 1.11.0                 |
-    | AEPEdge              | 1.3.0              | edge                     | 1.1.1                  |
-    | AEPEdgeConsent       | 1.0.0              | edgeconsent              | 1.0.1                  |
-    | AEPEdgeIdentity      | 1.0.1              | edgeidentity             | 1.0.0                  |
-    | AEPMessaging         | 1.1.0              | messaging                | 1.2.0                  |
-    | AEPOptimize          | 1.0.0              | optimize                 | 1.0.0                  |
+    | Extension (iOS) | Min. Version (iOS) | Extension (Android) | Min. Version (Android) |
+    | --------------- | -----------------: | ------------------- | ---------------------: |
+    | AEPCore         | 3.4.2              | core                | 1.11.0                 |
+    | AEPEdge         | 1.3.0              | edge                | 1.1.1                  |
+    | AEPEdgeConsent  | 1.0.0              | edgeconsent         | 1.0.1                  |
+    | AEPEdgeIdentity | 1.0.1              | edgeidentity        | 1.0.0                  |
+    | AEPMessaging    | 1.1.0              | messaging           | 1.2.0                  |
+    | AEPOptimize     | 1.0.0              | optimize            | 1.0.0                  |
 
 A sample view in the Assurance UI can be seen below:
 
@@ -132,9 +132,8 @@ Using the IAM plugin you can do the following for each message downloaded by the
 
 * Make sure that messages have been published in the AJO Campaigns UI for your app surface
 * Make sure that the bundle identifier (iOS) or package name (Android) matches the value used for your app surface
-* Make sure you are using the same environment and sandbox in AJO as are being used in the app (datastream)
-* Make sure that your Adobe organization is provisioned for Offers on Edge
-
+* Make sure that the **environment** and **sandbox** being used in AJO matches those being used to configure the app
+* Make sure that your Adobe organization is provisioned for Offers on Edge (this may require contacting your account manager)
 
 ### Q: Why don't I see any messages in my `AEP Response Event Handle` event?
 
