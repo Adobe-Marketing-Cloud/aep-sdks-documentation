@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 27, 2022
+
+### Android Campaign Standard 1.0.9
+
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging IAM beta extensions in the same app.
+
 ## May 26, 2022
 
 ### iOS AEPTarget 3.1.3
