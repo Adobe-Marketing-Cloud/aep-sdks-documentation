@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## May 26, 2022
+
+### iOS AEPTarget 3.1.3
+
+* Fixed an issue where the Target display notification was not being sent to the server, upon invoking `displayedLocations` API, if a prior prefetch call did not return profile state token for the mbox.
+
 ## May 24, 2022
 
 ### iOS Analytics 2.5.2
