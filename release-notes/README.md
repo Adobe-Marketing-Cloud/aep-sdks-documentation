@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Campaign Standard 1.0.9
 
-* Fixed a compatibility issue seen when using the Campaign Standard and Messaging IAM beta extensions in the same app.
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging In-App beta extensions in the same mobile app.
 
 ## May 26, 2022
 

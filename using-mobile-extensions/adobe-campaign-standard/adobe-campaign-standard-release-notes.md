@@ -4,7 +4,7 @@
 
 ### Android Campaign Standard 1.0.9
 
-* Fixed a compatibility issue seen when using the Campaign Standard and Messaging IAM beta extensions in the same app.
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging In-App beta extensions in the same mobile app.
 
 ## February 9, 2022
 

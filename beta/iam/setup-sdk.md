@@ -39,10 +39,10 @@ implementation('com.adobe.marketing.mobile:messaging:1.2.0-beta-1-SNAPSHOT')
 implementation('com.adobe.marketing.mobile:optimize:1.0.0-SNAPSHOT')
 ```
 
-If you use the Messaging IAM beta extension alongside the Campaign Standard extension, the latest Campaign Standard extension must be used to resolve a compatibility issue:
+If you use the Messaging extension (In-App beta) alongside the Campaign Standard extension, Campaign Standard extension version 1.0.9 or newer must be used to resolve a compatibility issue:
 
 ```groovy
-implementation ('com.adobe.marketing.mobile:campaign:1.0.9')
+implementation ('com.adobe.marketing.mobile:campaign:[1.0.9,)')
 ```
 
 {% endtab %}
