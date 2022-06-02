@@ -4,6 +4,18 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 2, 2022
+
+### iOS AEPEdge 1.4.1
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use URLComponents builder for Edge endpoints.
+
+### Android Edge 1.3.2
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use ServiceProvider Network Service, reducing overall extension code size.
+
 ## May 26, 2022
 
 ### iOS AEPTarget 3.1.3

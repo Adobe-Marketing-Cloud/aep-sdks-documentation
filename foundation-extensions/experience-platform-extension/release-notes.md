@@ -1,11 +1,23 @@
 # Release Notes
 
+## June 2, 2022
+
+### iOS AEPEdge 1.4.1
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use URLComponents builder for Edge endpoints.
+
+### Android Edge 1.3.2
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use ServiceProvider Network Service, reducing overall extension code size.
+
 ## April 8, 2022
 
 ### iOS AEPEdge 1.4.0
 
 * Updates timestamp in Experience Events to use fractional seconds.
-* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension. 
+* Deprecates APIs `XDMFormatters.dateToISO8601String` and `XDMFormatters.dateToFullDateString`. Use the `Date` extension methods `getISO8601UTCDateWithMilliseconds` and `getISO8601FullDate` instead, provided by the AEPServices module within the AEPCore extension.
 
 ## April 1, 2022
 
@@ -19,7 +31,7 @@
 
 ### Android Edge 1.3.1
 
-* Updates timestamp in Experience Events to use fractional seconds. 
+* Updates timestamp in Experience Events to use fractional seconds.
 
 ## January 21, 2022
 
@@ -97,7 +109,7 @@ The included features with this release are:
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * Events persistence.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
+* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
 Learn more about the AEP Edge extension in the open sourced [adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios) GitHub repository. The iOS SDK is available for installation through SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications. This SDK is compatible with latest swift AEPCore 1.0.0.
@@ -111,7 +123,7 @@ The included features with this release are:
 * Ability to create XDM Experience Events and send them to Experience Edge Network. An optional Experience Edge response callback can be registered per event.
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience. 
+* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
 * Detailed warning/error messages are available through Project Griffon UI and logs.
 
 This SDK is compatible with Android Core 1.5.7 and above.
@@ -120,4 +132,3 @@ This SDK is compatible with Android Core 1.5.7 and above.
 
 * Selector for the Edge Configuration.
 * AEP Request Event with optional XDM event type is available for Launch rules.
-
