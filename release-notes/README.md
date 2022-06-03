@@ -14,7 +14,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 ### Android Edge 1.3.2
 
 * Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
-* Internal updates to use ServiceProvider Network Service, reducing overall extension code size.
+* Updates internal network stack to use Mobile Core's ServiceProvider Network Service, reducing overall extension code size.
 
 ## May 26, 2022
 
