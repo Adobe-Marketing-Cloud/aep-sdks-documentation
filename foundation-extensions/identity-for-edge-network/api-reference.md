@@ -361,7 +361,7 @@ See [`MobileCore.resetIdentities`](../mobile-core/mobile-core-api-reference.md#r
 
 ## updateIdentities
 
-Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner; no identities are removed through this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
