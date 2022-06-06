@@ -22,7 +22,6 @@ The following instructions are for configuring an application using Adobe Experi
 
 {% tabs %}
 {% tab title="Android" %}
-### Java
 
 1. Add the Mobile Core and Edge extensions to your project using the app's Gradle file.
 
@@ -30,15 +29,28 @@ The following instructions are for configuring an application using Adobe Experi
    implementation 'com.adobe.marketing.mobile:core:1.+'
    implementation 'com.adobe.marketing.mobile:edge:1.+'
    implementation 'com.adobe.marketing.mobile:edgeidentity:1.+'
+   implementation 'com.adobe.marketing.mobile:edgeconsent:1.+' // Recommended when using the setAdvertisingIdentifier API
    ```
 
 2. Import the Mobile Core and Edge extensions in your Application class.
 
-   ```java
-    import com.adobe.marketing.mobile.MobileCore;
-    import com.adobe.marketing.mobile.Edge;
-    import com.adobe.marketing.mobile.edge.identity.Identity;
-   ```
+### Java
+
+```java
+import com.adobe.marketing.mobile.MobileCore;
+import com.adobe.marketing.mobile.Edge;
+import com.adobe.marketing.mobile.edge.identity.Identity;
+import com.adobe.marketing.mobile.edge.consent.Consent;
+```
+
+### Kotlin
+
+```kotlin
+import com.adobe.marketing.mobile.MobileCore
+import com.adobe.marketing.mobile.Edge
+import com.adobe.marketing.mobile.edge.identity.Identity
+import com.adobe.marketing.mobile.edge.consent.Consent
+```
 
 {% endtab %}
 
@@ -52,6 +64,7 @@ The following instructions are for configuring an application using Adobe Experi
        pod 'AEPCore'
        pod 'AEPEdge'
        pod 'AEPEdgeIdentity'
+       pod 'AEPEdgeConsent' // Recommended when using the setAdvertisingIdentifier API
    end
    ```
 
@@ -64,6 +77,7 @@ The following instructions are for configuring an application using Adobe Experi
 import AEPCore
 import AEPEdge
 import AEPEdgeIdentity
+import AEPEdgeConsent
 ```
 
 ### Objective-C
@@ -73,6 +87,7 @@ import AEPEdgeIdentity
 @import AEPCore;
 @import AEPEdge;
 @import AEPEdgeIdentity;
+@import AEPEdgeConsent;
 ```
 {% endtab %}
 
@@ -100,7 +115,8 @@ public class MobileApp extends Application {
       try {
         Edge.registerExtension();
         Identity.registerExtension();
-        // register other extensions
+        Consent.registerExtension();
+        // Register other extensions here
         MobileCore.start(new AdobeCallback () {
             @Override
             public void call(Object o) {
@@ -124,7 +140,7 @@ public class MobileApp extends Application {
 ```swift
 // AppDelegate.swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    MobileCore.registerExtensions([Identity.self, Edge.self], {
+    MobileCore.registerExtensions([Identity.self, Consent.self, Edge.self], {
     MobileCore.configureWith(appId: "yourLaunchEnvironmentID")
   })
   ...
@@ -136,7 +152,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```objectivec
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdge.class] completion:^{
+    [AEPMobileCore registerExtensions:@[AEPMobileEdgeIdentity.class, AEPMobileEdgeConsent.class, AEPMobileEdge.class] completion:^{
     ...
   }];
   [AEPMobileCore configureWithAppId: @"yourLaunchEnvironmentID"];
