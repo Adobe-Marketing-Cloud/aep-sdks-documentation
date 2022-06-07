@@ -4,11 +4,33 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## June 1, 2022
+## June 7, 2022
 
 ### iOS & Android Identity 1.1.0
 
 - Added the getUrlVariable API to support passing the visitor ID from a mobile app to a web view.
+
+### iOS ACPAnalytics 2.5.3
+
+* Fix crash in AnalyticsHitDatabase caused by unprotected shared access of AnalyticsState object.
+
+## June 2, 2022
+
+### iOS AEPEdge 1.4.1
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use URLComponents builder for Edge endpoints.
+
+### Android Edge 1.3.2
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Updates internal network stack to use Mobile Core's ServiceProvider Network Service, reducing overall extension code size.
+
+## May 26, 2022
+
+### iOS AEPTarget 3.1.3
+
+* Fixed an issue where the Target display notification was not being sent to the server, upon invoking `displayedLocations` API, if a prior prefetch call did not return profile state token for the mbox.
 
 ## May 24, 2022
 

@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 26, 2022
+
+### iOS AEPTarget 3.1.3
+
+* Fixed an issue where the Target display notification was not being sent to the server, upon invoking `displayedLocations` API, if a prior prefetch call did not return profile state token for the mbox.
+
 ## November 19, 2021
 
 ### iOS AEPTarget 3.1.2

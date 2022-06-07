@@ -4,7 +4,7 @@ The Rules Engine is provided by the Adobe Experience Platform Mobile SDKs as par
 
 In the Experience Platform Mobile SDKs, the Rules Engine enables you to integrate the data and functionality of marketing and ad tech to help disparate products communicate. The Rules Engine looks for the user interaction and associated data, and when the criteria that you defined in the rules are met, the actions that you specified are triggered.
 
-The Rules Engine, with [Experience Platform Launch](https://experience.adobe.com/#/data-collection/)'s tag management system, allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
+The Rules Engine, when implemented through tags in the [Data Collection UI](https://experience.adobe.com/#/data-collection/), allows for complex if/then/else workflows that can combine multiple solution and extension related behaviors. You can define and capture the necessary user data and orchestrate how each solution contributes to the user's experience.
 
 ### **Data elements**
 
@@ -48,6 +48,12 @@ At the start of a new application session that includes the Experience Platform 
 ### **Re-evaluating events**
 
 On older versions of Experience Platform Mobile SDKs \(prior to iOS version 1.6.2, Android version 1.5.4\), after the first launch of the app, it always takes some time to download the rules from the remote servers. During this time, Rules Engine won't be able to evaluate the first several events until the rules are loaded. Starting from iOS version 1.6.2 and Android version 1.5.4, we add the capability to cache the events before the rules are downloaded and will re-evaluate those events afterward. This change is mainly to enable the trigger of Posback based on the install event.
+
+### Using Bundled Rules (iOS AEP 3.x Only)
+
+In addition to the remote configuration, you can also include a rules zip file in your app bundle to be used by the SDK before rules have been downloaded from the Data Collection UI. To add bundled rules to your app, follow these steps:
+1. Download the rules zip file using the following URL: `https://assets.adobedtm.com/PASTE-ENVIRONMENT-ID-rules.zip` replacing `PASTE-ENVIRONMENT-ID` with your mobile property environment ID. 
+2. Rename the zip file to "ADBMobileConfig-rules.zip" and place the zip anywhere that it is accessible in your app bundle.
 
 For more information about the technical details of the Rules Engine, see [Rules Engine technical details](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/rules-engine/rules-engine-details).
 

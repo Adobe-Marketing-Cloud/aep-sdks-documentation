@@ -1,5 +1,12 @@
 # Release Notes
 
+## June 7, 2022
+
+### iOS ACPAnalytics 2.5.3
+
+* Fix crash in AnalyticsHitDatabase caused by unprotected shared access of AnalyticsState object.
+
+
 ## May 24, 2022
 
 ### iOS Analytics 2.5.2

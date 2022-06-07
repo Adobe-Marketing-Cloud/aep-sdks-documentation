@@ -25,14 +25,14 @@ Ensure that your app has registered all necessary AEP SDK extensions by doing th
 
 1. Open the **extensions** object and validate that each of the required extensions exist, ensuring it meets the minimum version requirements. The table below shows the minimum versions required for in-app messaging dependencies:
 
-    | Extension       | Minimum version |
-    | --------------- | --------------: |
-    | AEPCore         | 3.4.2           |
-    | AEPEdge         | 1.3.0           |
-    | AEPEdgeConsent  | 1.0.0           |
-    | AEPEdgeIdentity | 1.0.1           |
-    | AEPMessaging    | 1.1.0           |
-    | AEPOptimize     | 1.0.0           |
+    | Extension (iOS) | Min. Version (iOS) | Extension (Android) | Min. Version (Android) |
+    | --------------- | -----------------: | ------------------- | ---------------------: |
+    | AEPCore         | 3.4.2              | core                | 1.11.0                 |
+    | AEPEdge         | 1.3.0              | edge                | 1.1.1                  |
+    | AEPEdgeConsent  | 1.0.0              | edgeconsent         | 1.0.1                  |
+    | AEPEdgeIdentity | 1.0.1              | edgeidentity        | 1.0.0                  |
+    | AEPMessaging    | 1.1.0              | messaging           | 1.2.0                  |
+    | AEPOptimize     | 1.0.0              | optimize            | 1.0.0                  |
 
 A sample view in the Assurance UI can be seen below:
 
@@ -125,6 +125,15 @@ Using the IAM plugin you can do the following for each message downloaded by the
 ### Q: Why can't I find an event named `Edge Optimize Personalization Request`?
 
 **A:** Ensure that each of the required extensions is at the minimum required version.
+
+### Q: I see an `AEP Error Response` event, is that a problem?
+
+**A:** If you open the EventData and the `detail` key has a value of "The Decisioning Package was not found.", this likely means the Messaging extension was unable to find the messages for your app. Check the below items to try and resolve the issue:
+
+* Make sure that messages have been published in the AJO Campaigns UI for your app surface
+* Make sure that the bundle identifier (iOS) or package name (Android) matches the value used for your app surface
+* Make sure that the **environment** and **sandbox** being used in AJO matches those being used to configure the app
+* Make sure that your Adobe organization is provisioned for Offers on Edge (this may require contacting your account manager)
 
 ### Q: Why don't I see any messages in my `AEP Response Event Handle` event?
 
