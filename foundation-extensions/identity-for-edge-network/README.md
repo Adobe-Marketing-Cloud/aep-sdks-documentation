@@ -21,7 +21,7 @@ The following instructions are for configuring an application using Adobe Experi
 {% endhint %}
 
 {% hint style="info" %}
-When using AEP Consent for Edge do we currently specify what field group you need to include to your profile schema for consent in our docs?
+See the setup guide for [Adobe Experience Platform Consent](../consent-for-edge-network/README.md) for instructions on setting up the extension and profile schema for proper usage.
 {% endhint %}
 
 {% tabs %}

@@ -12,6 +12,10 @@ The Adobe Experience Platform Consent mobile extension enables consent preferenc
 
 ![AEP Consent extension configuration](../../.gitbook/assets/mobile-edge-consent-launch-configuration.png)
 
+{% hint style="info" %}
+In order to collect and use the Consents and Preferences data type collected by this extension, follow the guide on [creating a schema and dataset for ingestion](https://experienceleague.adobe.com/docs/experience-platform/xdm/data-types/consents.html#ingest).
+{% endhint %}
+
 ## Add the AEP Consent extension to your app
 
 ### Download and import the Consent extension
