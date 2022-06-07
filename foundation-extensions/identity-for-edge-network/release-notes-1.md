@@ -1,6 +1,6 @@
 # Release Notes
 
-## June 1, 2022
+## June 7, 2022
 
 ### iOS & Android Identity 1.1.0
 

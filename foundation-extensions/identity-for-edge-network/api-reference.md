@@ -229,7 +229,7 @@ When `AdobeCallbackWithError` is provided and you are fetching the URL variables
 public static void getUrlVariables(final AdobeCallback<String> callback);
 ```
 
-- `callback` has an NSString value that contains the visitor identifiers as a query string after the service request is complete.
+- `callback` has a String value that contains the visitor identifiers as a query string after the service request is complete.
 
 **Example**
 
@@ -280,7 +280,7 @@ Identity.getUrlVariables { (urlVariables, error) in
     // handle the retrieved urlVariables encoded string here
     // APIs which update the UI must be called from main thread
     DispatchQueue.main.async {
-    self.webView.load(URLRequest(url: urlWithVisitorData))
+        self.webView.load(URLRequest(url: urlWithVisitorData))
     }
   }
 }
