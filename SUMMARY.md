@@ -118,6 +118,7 @@
   * [Adobe Campaign Standard event reference](using-mobile-extensions/adobe-campaign-standard/adobe-campaign-standard-event-reference.md)
 * [Adobe Journey Optimizer](using-mobile-extensions/adobe-journey-optimizer/README.md)
   * [API Reference](using-mobile-extensions/adobe-journey-optimizer/api-reference.md)
+  * [Android Messaging 1.1.0 Push Improvements](using-mobile-extensions/adobe-journey-optimizer/android-messaging-1.1.0.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Migrating to AEPTarget reference](using-mobile-extensions/adobe-target/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)
