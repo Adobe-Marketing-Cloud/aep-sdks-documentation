@@ -6,6 +6,10 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 7, 2022
 
+### iOS & Android Identity 1.1.0
+
+- Added the getUrlVariable API to support passing the visitor ID from a mobile app to a web view.
+
 ### iOS ACPAnalytics 2.5.3
 
 * Fix crash in AnalyticsHitDatabase caused by unprotected shared access of AnalyticsState object.
