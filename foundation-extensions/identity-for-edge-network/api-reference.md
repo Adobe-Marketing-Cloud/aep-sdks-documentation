@@ -407,22 +407,20 @@ public void onResume() {
                     if (!adInfo.isLimitAdTrackingEnabled()) {
                         advertisingIdentifier = adInfo.getId();
                     } else {
-                        MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
+                        Log.d("ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
                     }
                 }
-
             } catch (IOException e) {
                 // Unrecoverable error connecting to Google Play services (e.g.,
                 // the old version of the service doesn't support getting AdvertisingId).
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
+                Log.d("ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
             } catch (GooglePlayServicesNotAvailableException e) {
                 // Google Play services is not available entirely.
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+                Log.d("ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
             } catch (GooglePlayServicesRepairableException e) {
                 // Google Play services is not installed, up-to-date, or enabled.
-                MobileCore.log(LoggingMode.DEBUG, "ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+                Log.d("ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
             }
-
             MobileCore.setAdvertisingIdentifier(advertisingIdentifier);
         }
     }).start();
