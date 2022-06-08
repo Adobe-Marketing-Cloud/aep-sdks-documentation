@@ -176,7 +176,7 @@ Process:
 1. Updates the client side XDM `IdentityMap` with the new value for IDFA/GAID, and it will be sent with any future [XDM Experience events](../experience-platform-extension/xdm-experience-events.md). For more details on these namespaces see the [standard Identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#standard). 
 2. Sends a [consent update event](https://experienceleague.adobe.com/docs/experience-platform/xdm/data-types/consents.html) with ad ID consent preferences set to `yes` (only when a valid ad ID is absent from the `IdentityMap` and the Edge Consent extension is registered and properly configured).
 
-Ad tracking disabled - Given a valid ad ID already exists in the `IdentityMap`, and the new value  sent to the API is: 
+Ad tracking disabled - Given a valid ad ID already exists in the `IdentityMap`, and the new value sent to the API is: 
 - `null`/`nil`
 - Empty string (`""`)
 - All-zeros string (`"00000000-0000-0000-0000-000000000000"`)  
