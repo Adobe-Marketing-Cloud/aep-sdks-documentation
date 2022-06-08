@@ -6,9 +6,16 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 7, 2022
 
-### iOS & Android Identity 1.1.0
+### iOS AEPEdgeIdentity 1.1.0
 
-- Added the getUrlVariable API to support passing the visitor ID from a mobile app to a web view.
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+
+### Android EdgeIdentity 1.1.0
+
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+* Internal fixes for IdentityMap deserialization.
 
 ### iOS ACPAnalytics 2.5.3
 
