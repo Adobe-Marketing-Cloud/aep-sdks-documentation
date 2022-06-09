@@ -4,6 +4,35 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 7, 2022
+
+### iOS AEPEdgeIdentity 1.1.0
+
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+
+### Android EdgeIdentity 1.1.0
+
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+* Internal fixes for IdentityMap deserialization.
+
+### iOS ACPAnalytics 2.5.3
+
+* Fix crash in AnalyticsHitDatabase caused by unprotected shared access of AnalyticsState object.
+
+## June 2, 2022
+
+### iOS AEPEdge 1.4.1
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Internal updates to use URLComponents builder for Edge endpoints.
+
+### Android Edge 1.3.2
+
+* Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
+* Updates internal network stack to use Mobile Core's ServiceProvider Network Service, reducing overall extension code size.
+
 ## May 27, 2022
 
 ### Android Campaign Standard 1.0.9

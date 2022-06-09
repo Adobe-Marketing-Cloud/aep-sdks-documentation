@@ -198,6 +198,125 @@ Identity.getIdentities { (identityMap, error) in
 {% endtab %}
 {% endtabs %}
 
+## getUrlVariables
+
+{% hint style="info" %}
+This API is available with version 1.1.0 and above.
+{% endhint %}
+
+Returns the identifiers in a URL's query parameters for consumption in **hybrid mobile applications**. The response will **not** return any leading `&` or `?`, since the caller is responsible for placing the variables in the resulting URL in the correct locations. If an error occurs while retrieving the URL variables, the callback handler will return a `null` value. Otherwise, the encoded string is returned.
+
+An example of an encoded string is as follows: `"adobe_mc=TS%3DTIMESTAMP_VALUE%7CMCMID%3DYOUR_ECID%7CMCORGID%3D9YOUR_EXPERIENCE_CLOUD_ID"`
+
+- `MCID`: This is also known as the Experience Cloud ID (ECID).
+- `MCORGID`: This is also known as the Experience Cloud Organization ID.
+- `TS`: The timestamp that is taken when the request was made.
+
+{% tabs %}
+{% tab title="Android" %}
+
+{% hint style="info" %}
+
+When `AdobeCallbackWithError` is provided and you are fetching the URL variables from the Mobile SDK, the timeout value is 500ms. If the operation times out or an unexpected error occurs, the `fail` method is called with the appropriate `AdobeError`.
+
+{% endhint %}
+
+### Java
+
+**Syntax**
+
+```java
+public static void getUrlVariables(final AdobeCallback<String> callback);
+```
+
+- `callback` has a String value that contains the visitor identifiers as a query string after the service request is complete.
+
+**Example**
+
+```java
+Identity.getUrlVariables(new AdobeCallback<String>() {    
+    @Override    
+    public void call(String urlVariablesString) {        
+        //handle the URL query parameter string here
+        //For example, open the URL in a webView  
+        WebView webView;
+        webView = (WebView)findViewById(R.id.your_webview); // initialize with your webView
+        webview.loadUrl("https://example.com?" + urlVariablesString);
+    }
+});
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+### Swift
+
+**Syntax**
+
+```swift
+static func getUrlVariables(completion: @escaping (String?, Error?) -> Void)
+```
+
+- `completion` is invoked with `urlVariables` containing the visitor identifiers as a query string, or with `error` if an unexpected error occurs or the request times out. The returned `Error` contains the [AEPError](../mobile-core/mobile-core-api-reference#aeperror) code of the specific error. The default timeout is 1000ms.
+
+**Example**
+
+```swift
+Identity.getUrlVariables { (urlVariables, error) in
+  if let error = error {
+    // handle error here
+  } else {
+    var urlStringWithVisitorData: String = "https://example.com"
+    if let urlVariables: String = urlVariables {
+      urlStringWithVisitorData.append("?" + urlVariables)
+    }
+
+    guard let urlWithVisitorData: URL = URL(string: urlStringWithVisitorData) else {
+      // handle error, unable to construct URL
+      return
+    }
+
+    // handle the retrieved urlVariables encoded string here
+    // APIs which update the UI must be called from main thread
+    DispatchQueue.main.async {
+        self.webView.load(URLRequest(url: urlWithVisitorData))
+    }
+  }
+}
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) getUrlVariables:^(NSString * _Nullable urlVariables, NSError * _Nullable error)completion
+```
+
+**Example**
+
+```objectivec
+[AEPMobileEdgeIdentity getUrlVariables:^(NSString *urlVariables, NSError *error){
+  if (error) {
+  // handle error here
+  } else {
+    // handle the URL query parameter string here
+    NSString* urlString = @"https://example.com";
+    NSString* urlStringWithVisitorData = [NSString stringWithFormat:@"%@?%@", urlString, urlVariables];
+    NSURL* urlWithVisitorData = [NSURL URLWithString:urlStringWithVisitorData];
+
+    // APIs which update the UI must be called from main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[self webView] loadRequest:[NSURLRequest requestWithURL:urlWithVisitorData]];
+    }
+  }
+}];
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ## registerExtension
 
@@ -220,6 +339,7 @@ public static void registerExtension()
 ```
 
 **Example**
+
 ```java
 import com.adobe.marketing.mobile.edge.identity.Identity
 
@@ -359,9 +479,282 @@ The Identity for Edge Network extension does not read the Mobile SDK's privacy s
 
 See [`MobileCore.resetIdentities`](../mobile-core/mobile-core-api-reference.md#resetidentities) for more details.
 
+## setAdvertisingIdentifier
+When this API is called with a valid advertising identifier, the Identity for Edge Network extension includes the advertising identifier in the XDM Identity Map using the namespace `GAID` (Google Advertising ID) in Android and `IDFA` (Identifier for Advertisers) in iOS. If the API is called with the empty string (`""`), `null`/`nil`, or the all-zeros UUID string values, the advertising identifier is removed from the XDM Identity Map (if previously set).
+
+The advertising identifier is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall.
+
+{% tabs %}
+{% tab title="Android" %}
+
+{% hint style="warning" %}
+In order to enable collection of the user's current advertising tracking authorization selection for the provided advertising identifier, you need to install and register the [AEPEdgeConsent](../consent-for-edge-network/README.md) extension and update the [AEPEdge](../experience-platform-extension/README.md) dependency to minimum 1.3.2.
+{% endhint %}
+
+{% hint style="info" %}
+These examples require Google Play Services to be configured in your mobile application and use the Google Mobile Ads Lite SDK. For instructions on how to import the SDK and configure your `ApplicationManifest.xml` file see [Google Mobile Ads Lite SDK setup](https://developers.google.com/admob/android/lite-sdk).
+{% endhint %}
+
+{% hint style="info" %}
+These are just implementation examples. For more information about advertising identifiers and how to handle them correctly in your mobile application see [Google Play Services documentation about AdvertisingIdClient](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient).
+{% endhint %}
+
+### Java
+
+**Syntax**
+
+```java
+public static void setAdvertisingIdentifier(final String advertisingIdentifier);
+```
+- _advertisingIdentifier_ is an ID string that provides developers with a simple, standard system to continue to track ads throughout their apps.
+
+**Example**
+
+```java
+...
+@Override
+public void onResume() {
+    super.onResume();
+    ...
+    new Thread(new Runnable() {
+        @Override
+        public void run() {
+            String advertisingIdentifier = null;
+
+            try {
+                AdvertisingIdClient.Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                if (adInfo != null) {
+                    if (!adInfo.isLimitAdTrackingEnabled()) {
+                        advertisingIdentifier = adInfo.getId();
+                    } else {
+                        Log.d("ExampleActivity", "Limit Ad Tracking is enabled by the user, cannot process the advertising identifier");
+                    }
+                }
+            } catch (IOException e) {
+                // Unrecoverable error connecting to Google Play services (e.g.,
+                // the old version of the service doesn't support getting AdvertisingId).
+                Log.d("ExampleActivity", "IOException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesNotAvailableException e) {
+                // Google Play services is not available entirely.
+                Log.d("ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            } catch (GooglePlayServicesRepairableException e) {
+                // Google Play services is not installed, up-to-date, or enabled.
+                Log.d("ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier " + e.getLocalizedMessage());
+            }
+            MobileCore.setAdvertisingIdentifier(advertisingIdentifier);
+        }
+    }).start();
+}
+```
+
+### Kotlin
+
+**Syntax**
+
+```kotlin
+public fun setAdvertisingIdentifier(advertisingIdentifier: String)
+```
+- _advertisingIdentifier_ is an ID string that provides developers with a simple, standard system to continue to track ads throughout their apps.
+
+**Example**
+  
+```kotlin
+import android.content.Context
+import android.util.Log
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException
+import com.google.android.gms.common.GooglePlayServicesRepairableException
+import java.io.IOException
+...
+
+suspend fun getGAID(applicationContext: Context): String {
+    var adID = ""
+    try {
+        val idInfo = AdvertisingIdClient.getAdvertisingIdInfo(applicationContext)
+        if (idInfo.isLimitAdTrackingEnabled) {
+            Log.d("ExampleActivity", "Limit Ad Tracking is enabled by the user, setting ad ID to \"\"")
+            return adID
+        }
+        Log.d("ExampleActivity", "Limit Ad Tracking disabled; ad ID value: ${idInfo.id}")
+        adID = idInfo.id
+    } catch (e: GooglePlayServicesNotAvailableException) {
+        Log.d("ExampleActivity", "GooglePlayServicesNotAvailableException while retrieving the advertising identifier ${e.localizedMessage}")
+    } catch (e: GooglePlayServicesRepairableException) {
+        Log.d("ExampleActivity", "GooglePlayServicesRepairableException while retrieving the advertising identifier ${e.localizedMessage}")
+    } catch (e: IOException) {
+        Log.d("ExampleActivity", "IOException while retrieving the advertising identifier ${e.localizedMessage}")
+    }
+    Log.d("ExampleActivity", "Returning ad ID value: $adID")
+    return adID
+}
+```
+
+Call site:
+
+```kotlin
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+...
+
+ // Create background coroutine scope to fetch ad ID value
+val scope = CoroutineScope(Dispatchers.IO).launch {
+    val adID = sharedViewModel.getGAID(context.applicationContext)
+    Log.d("ExampleActivity", "Sending ad ID value: $adID to MobileCore.setAdvertisingIdentifier")
+    MobileCore.setAdvertisingIdentifier(adID)
+}
+```
+
+{% endtab %}
+
+{% tab title="iOS (AEP 3.x)" %}
+
+{% hint style="warning" %}
+In order to enable the collection of current advertising tracking user's selection based on the provided advertising identifier, you need to install and register the [AEPEdgeConsent](../consent-for-edge-network/README.md) extension and update the [AEPEdge](../experience-platform-extension/README.md) dependency to minimum 1.4.1. 
+{% endhint %}
+
+{% hint style="warning" %}
+Starting iOS 14+, applications must use the [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) framework to request user authorization before using the Identifier for Advertising (IDFA). To access IDFA and handle it correctly in your mobile application, see the [Apple developer documentation about IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager). 
+{% endhint %}
+
+### Swift
+
+**Syntax**
+
+```swift
+@objc(setAdvertisingIdentifier:)
+public static func setAdvertisingIdentifier(_ identifier: String?)
+```
+- _identifier_ is an ID string that provides developers with a simple, standard system to continue to track ads throughout their apps.
+
+**Example**
+
+```swift
+import AdSupport
+import AppTrackingTransparency
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    ...
+    if #available(iOS 14, *) {
+       setAdvertisingIdentifierUsingTrackingManager()
+    } else {
+       // Fallback on earlier versions
+       setAdvertisingIdentifierUsingIdentifierManager()
+    }
+
+}
+
+func setAdvertisingIdentifierUsingIdentifierManager() {
+    var idfa:String = "";
+        if (ASIdentifierManager.shared().isAdvertisingTrackingEnabled) {
+            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString;
+        } else {
+            Log.debug(label: "AppDelegateExample",
+                      "Advertising Tracking is disabled by the user, cannot process the advertising identifier.");
+        }
+        MobileCore.setAdvertisingIdentifier(idfa);
+}
+
+@available(iOS 14, *)
+func setAdvertisingIdentifierUsingTrackingManager() {
+    ATTrackingManager.requestTrackingAuthorization { (status) in
+        var idfa: String = "";
+
+        switch (status) {
+        case .authorized:
+            idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        case .denied:
+            Log.debug(label: "AppDelegateExample",
+                      "Advertising Tracking is denied by the user, cannot process the advertising identifier.")
+        case .notDetermined:
+            Log.debug(label: "AppDelegateExample",
+                      "Advertising Tracking is not determined, cannot process the advertising identifier.")
+        case .restricted:
+            Log.debug(label: "AppDelegateExample",
+                      "Advertising Tracking is restricted by the user, cannot process the advertising identifier.")
+        }
+
+        MobileCore.setAdvertisingIdentifier(idfa)
+    }
+}
+```
+
+### Objective-C
+
+**Syntax**
+
+```objectivec
++ (void) setAdvertisingIdentifier: (NSString * _Nullable identifier);
+```
+
+- _identifier_ is an ID string that provides developers with a simple, standard system to continue to track ads throughout their apps.
+
+**Example**
+
+```objectivec
+#import <AdSupport/ASIdentifierManager.h>
+#import <AppTrackingTransparency/ATTrackingManager.h>
+...
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+-   ...
+-   
+    if (@available(iOS 14, *)) {
+        [self setAdvertisingIdentifierUsingTrackingManager];
+    } else {
+        // fallback to earlier versions
+        [self setAdvertisingIdentifierUsingIdentifierManager];
+    }
+
+}
+
+- (void) setAdvertisingIdentifierUsingIdentifierManager {
+    // setup the advertising identifier
+    NSString *idfa = nil;
+    if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    } else {
+        [AEPLog debugWithLabel:@"AppDelegateExample"
+                       message:@"Advertising Tracking is disabled by the user, cannot process the advertising identifier"];
+    }
+    [AEPMobileCore setAdvertisingIdentifier:idfa];
+
+}
+
+- (void) setAdvertisingIdentifierUsingTrackingManager API_AVAILABLE(ios(14)) {
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:
+    ^(ATTrackingManagerAuthorizationStatus status){
+        NSString *idfa = nil;
+        switch(status) {
+            case ATTrackingManagerAuthorizationStatusAuthorized:
+                idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                break;
+            case ATTrackingManagerAuthorizationStatusDenied:
+                [AEPLog debugWithLabel:@"AppDelegateExample"
+                               message:@"Advertising Tracking is denied by the user, cannot process the advertising identifier"];
+                break;
+            case ATTrackingManagerAuthorizationStatusNotDetermined:
+                [AEPLog debugWithLabel:@"AppDelegateExample"
+                               message:@"Advertising Tracking is not determined, cannot process the advertising identifier"];
+                break;
+            case ATTrackingManagerAuthorizationStatusRestricted:
+                [AEPLog debugWithLabel:@"AppDelegateExample"
+                               message:@"Advertising Tracking is restricted by the user, cannot process the advertising identifier"];
+                break;
+        }
+
+        [AEPMobileCore setAdvertisingIdentifier:idfa];
+    }];
+}
+```
+
+{% endtab %}
+{% endtabs %}
+
 ## updateIdentities
 
-Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner, no identities are removed from this API.
+Update the currently known identities within the SDK. The Identity extension will merge the received identifiers with the previously saved ones in an additive manner; no identities are removed by this API.
 
 Identities with an empty _id_ or _namespace_ are not allowed and are ignored.
 
