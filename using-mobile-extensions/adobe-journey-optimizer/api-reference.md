@@ -1,5 +1,41 @@
 # Adobe Journey Optimizer API reference
 
+## addPushTrackingDetails (Android only) <a id="addpushtrackingdetails"></a>
+
+The `addPushTrackingDetails` API is used to update a pending intent with important information, such as messageId and Customer Journey information.
+
+**Note:** Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
+
+{% tabs %}
+
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
+
+```java
+public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
+```
+
+| Variable    | Type                  | Description                                                  |
+| :---------- | :-------------------- | :----------------------------------------------------------- |
+| `intent`    | `Intent`              | The pending intent that needs to be updated so it can be used when the user interacts with the notification. |
+| `messageId` | `String`              | The message ID for the push notification.                    |
+| `data`      | `Map<String, String>` | The data of the remoteMessage.                               |
+
+This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
+
+**Example**
+
+```java
+boolean success = addPushTrackingDetails(intent, messageId, data)
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ## extensionVersion <a id="extensionversion"></a>
 
 The extensionVersion API returns the library version.
@@ -137,6 +173,36 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 {% endtab %}
 
+{% endtabs %}
+
+## handlePushNotificationWithRemoteMessage (Android only)<a id="handlePushNotificationWithRemoteMessage"></a>
+
+In the `FirebaseMessagingService#onMessageReceived` function of your app, invoke `handlePushNotificationWithRemoteMessage` with the `RemoteMessage` received from Firebase Cloud Messaging. Additionally, a boolean flag enabling AEPMessaging push notification interaction tracking is required when invoking the API.
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
+
+```java
+public static boolean handlePushNotificationWithRemoteMessage(final RemoteMessage remoteMessage, final boolean shouldHandleTracking);
+```
+
+| Variable             | Type          | Description                                                  |
+| -------------------- | ------------- | ------------------------------------------------------------ |
+| remoteMessage        | RemoteMessage | Remote message received from FCM containing an AJO push data notification |
+| shouldHandleTracking | Boolean       | If true, the Messaging extension should handle push notification tracking |
+
+**Example**
+
+```java
+public void onMessageReceived(RemoteMessage message) {
+  super.onMessageReceived(message);
+  Messaging.handlePushNotificationWithRemoteMessage(message, true);
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## registerExtension <a id="registerextension"></a>
@@ -297,14 +363,11 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 {% endtabs %}
 
-## addPushTrackingDetails (Android only) <a id="addpushtrackingdetails"></a>
+## setPushImageDownloader (Android only)<a id="setPushImageDownloader"></a>
 
-The `addPushTrackingDetails` API is used to update a pending intent with important information, such as messageId and Customer Journey information.
-
-**Note:** Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
+The Messaging extension defines `IMessagingImageDownloader` which can be implemented to customize the downloading of push notification image assets. This API can then be invoked to set an instance of the custom ``IMessagingImageDownloader` in the Messaging extension.
 
 {% tabs %}
-
 {% tab title="Android" %}
 
 #### Java
@@ -312,25 +375,42 @@ The `addPushTrackingDetails` API is used to update a pending intent with importa
 **Syntax**
 
 ```java
-public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
+public static void setPushImageDownloader(final IMessagingImageDownloader downloader);
 ```
-
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `intent` | `Intent` | The pending intent that needs to be updated so it can be used when the user interacts with the notification. |
-| `messageId` | `String` | The message ID for the push notification. |
-| `data` | `Map<String, String>` | The data of the remoteMessage. |
-
-This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
 
 **Example**
 
 ```java
-boolean success = addPushTrackingDetails(intent, messageId, data)
+// customImageDownloader is an instance of a class which implements IMessagingImageDownloader
+Messaging.setPushImageDownloader(customImageDownloader);
 ```
 
 {% endtab %}
+{% endtabs %}
 
+## setPushNotificationFactory (Android only)<a id="setPushNotificationFactory"></a>
+
+The Messaging extension defines `IMessagingPushNotificationFactory` which can be implemented to customize the Messaging extension's creation of push notifications. This API can then be invoked to set an instance of the custom ``IMessagingPushNotificationFactory` in the Messaging extension.
+
+{% tabs %}
+{% tab title="Android" %}
+
+#### Java
+
+**Syntax**
+
+```java
+public static void setPushNotificationFactory(final IMessagingPushNotificationFactory factory);
+```
+
+**Example**
+
+```java
+// customFactory is an instance of a class which implements IMessagingPushNotificationFactory
+Messaging.setPushNotificationFactory(customFactory);
+```
+
+{% endtab %}
 {% endtabs %}
 
 ## Public classes

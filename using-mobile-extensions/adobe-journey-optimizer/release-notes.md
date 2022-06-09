@@ -1,5 +1,11 @@
 # Release Notes
 
+## June 9, 2022
+
+### Android Messaging 1.1.0
+
+* Add support for Android Messaging extension handled push notification creation and tracking.
+
 ## April 1, 2022
 
 ### Adobe Journey Optimizer Launch extension v0.0.16

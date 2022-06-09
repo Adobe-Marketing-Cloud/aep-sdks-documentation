@@ -91,7 +91,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
 
     ```swift
     // AppDelegate.swift
-
+   
     import AEPCore
     import AEPEdge
     import AEPEdgeIdentity
@@ -102,7 +102,7 @@ Follow these steps to integrate the Adobe Journey Optimizer extension.
 
     ```objc
     // AppDelegate.h
-
+   
     @import AEPCore;
     @import AEPEdge;
     @import AEPEdgeIdentity;
@@ -285,6 +285,7 @@ This extension is built on the AEPCore (3.x) and it is not compatible with ACPCo
 ## Next steps
 
 * [Track Push Interactions](api-reference.md#addpushtrackingdetails)
+* [Implement Android Messaging Push Improvements](./android-messaging-push-improvements.md)
 
 ## Configuration keys
 
