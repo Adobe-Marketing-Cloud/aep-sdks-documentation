@@ -6,7 +6,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ## June 10, 2022
 
-### Adobe Journey Optimizer - Decisioning Launch extension 1.0.0
+### Adobe Journey Optimizer - Decisioning extension 1.0.0
 
 `Adobe Journey Optimizer - Decisioning` extension is now available in the extensions catalog on the Data Collection UI for mobile Tag Properties. No configuration is necessary for this extension.  
 
