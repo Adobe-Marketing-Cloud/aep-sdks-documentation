@@ -52,9 +52,9 @@ With this release, the extension provides APIs that you can use to:
 
 ### iOS AEPOptimize 1.0.0
 
-The `Adobe Experience Platform Optimize` mobile extension is now available on iOS! 
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for iOS! 
 
-This extension enables real-time personalization workflows in your mobile applications when using Adobe Target or Adobe Journey Optimizer Offer Decisioning. 
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning. 
 
 **Key Features**
 
