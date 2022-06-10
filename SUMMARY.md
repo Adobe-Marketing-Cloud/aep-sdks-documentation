@@ -120,6 +120,8 @@
   * [Release Notes](using-mobile-extensions/adobe-journey-optimizer/release-notes.md)
   * [API Reference](using-mobile-extensions/adobe-journey-optimizer/api-reference.md)
   * [Android Messaging Push Improvements](using-mobile-extensions/adobe-journey-optimizer/android-messaging-push-improvements.md)
+* [Adobe Journey Optimizer - Decisioning](using-mobile-extensions/adobe-journey-optimizer-decisioning/README.md)
+  * [API Reference](using-mobile-extensions/adobe-journey-optimizer-decisioning/api-reference.md)
 * [Adobe Target](using-mobile-extensions/adobe-target/README.md)
   * [Migrating to AEPTarget reference](using-mobile-extensions/adobe-target/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-target/adobe-target-release-notes.md)

@@ -4,11 +4,43 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
-## June 9, 2022
+## June 10, 2022
 
 ### Android Messaging 1.1.0
 
-* Add support for Android Messaging extension handled push notification creation and tracking.
+* Add support for Messaging extension handled push notification creation and tracking.
+
+## June 9, 2022
+
+### Android Optimize 1.0.0
+
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for Android! 
+
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning.
+
+**Key Features**
+
+With this release, the extension provides APIs that you can use to:
+
+* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning. 
+* Track user interactions with those offers.
+
+## June 7, 2022
+
+### iOS AEPEdgeIdentity 1.1.0
+
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+
+### Android EdgeIdentity 1.1.0
+
+* Added the `getUrlVariables` API to support passing the visitor ID from a mobile app to a web view.
+* Added support for advertising identifier and ad tracking consent collection.
+* Internal fixes for IdentityMap deserialization.
+
+### iOS ACPAnalytics 2.5.3
+
+* Fix crash in AnalyticsHitDatabase caused by unprotected shared access of AnalyticsState object.
 
 ## June 2, 2022
 
@@ -21,6 +53,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Updates the consent request to use "update" query operation in order to allow for incremental consent preferences changes.
 * Updates internal network stack to use Mobile Core's ServiceProvider Network Service, reducing overall extension code size.
+
+## May 27, 2022
+
+### iOS AEPOptimize 1.0.0
+
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for iOS! 
+
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning. 
+
+**Key Features**
+
+With this release, the extension provides APIs that you can use to:
+
+* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning.
+* Track user interactions with those offers.
 
 ## May 26, 2022
 
