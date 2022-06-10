@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Messaging 1.1.0
 
-* Add support for Messaging extension handled push notification creation and tracking.
+* Add support for Messaging-extension-handled push notification creation and tracking.
 
 ## June 9, 2022
 

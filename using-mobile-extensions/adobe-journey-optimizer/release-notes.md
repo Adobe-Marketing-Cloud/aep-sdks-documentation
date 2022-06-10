@@ -4,7 +4,7 @@
 
 ### Android Messaging 1.1.0
 
-* Add support for Messaging extension handled push notification creation and tracking.
+* Add support for Messaging-extension-handled push notification creation and tracking.
 
 ## April 1, 2022
 

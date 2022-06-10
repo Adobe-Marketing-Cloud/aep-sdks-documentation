@@ -4,7 +4,11 @@
 
 The `addPushTrackingDetails` API is used to update a pending intent with important information, such as messageId and Customer Journey information.
 
-**Note:** Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
+{% hint style="info" %}
+
+Calling this API is mandatory, so the pending intent can be used while tracking push notification interactions.
+
+{% endhint %}
 
 {% tabs %}
 
@@ -18,11 +22,9 @@ The `addPushTrackingDetails` API is used to update a pending intent with importa
 public static boolean addPushTrackingDetails(final Intent intent, final String messageId, final Map<String, String> data)
 ```
 
-| Variable    | Type                  | Description                                                  |
-| :---------- | :-------------------- | :----------------------------------------------------------- |
-| `intent`    | `Intent`              | The pending intent that needs to be updated so it can be used when the user interacts with the notification. |
-| `messageId` | `String`              | The message ID for the push notification.                    |
-| `data`      | `Map<String, String>` | The data of the remoteMessage.                               |
+- _intent_ is the pending intent that needs to be updated so it can be used when the user interacts with the notification.
+- _messageId_ is the id of the push notification.
+- _data_ is the payload of the remote message.
 
 This API returns a boolean, indicating whether the intent was updated with necessary information (messageId and Customer Journey data).
 
@@ -108,11 +110,9 @@ The handleNotificationResponse function transmits the push notification interact
 public static void handleNotificationResponse(final Intent intent, final boolean applicationOpened, final String customActionId);
 ```
 
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `intent` | Intent | The intent contains information related to the messageId and the data. |
-| `applicationOpened` | Boolean | Shows whether the application has been opened or not. |
-| `actionId` | String | The ID of the custom action. |
+- _intent_ contains information related to the messageId and the data.
+- _applicationOpened_ shows whether the application has been opened or not.
+- _actionId_ is the ID of the custom action.
 
 **Example**
 
@@ -134,11 +134,9 @@ Messaging.handleNotificationResponse(intent, true, "customActionId");
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `response` | UNNotificationResponse | An object containing information about the push notification details. |
-| `applicationOpened` | Boolean | Shows whether the application has been opened or not. |
-| `customActionId` | String | The ID of the custom action. |
+- _response_ is an object containing information about the push notification details.
+- _applicationOpened_ shows whether the application has been opened or not.
+- _actionId_ is the ID of the custom action.
 
 **Example**
 
@@ -160,6 +158,10 @@ func userNotificationCenter(_: UNUserNotificationCenter,
 static func handleNotificationResponse(_ response: UNNotificationResponse, applicationOpened: Bool, customActionId: String?)
 ```
 
+- _response_ is an object containing information about the push notification details.
+- _applicationOpened_ shows whether the application has been opened or not.
+- _actionId_ is the ID of the custom action.
+
 **Example**
 
 ```objc
@@ -175,7 +177,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 {% endtabs %}
 
-## handlePushNotificationWithRemoteMessage (Android only)<a id="handlePushNotificationWithRemoteMessage"></a>
+## handlePushNotificationWithRemoteMessage (Android only) <a id="handlePushNotificationWithRemoteMessage"></a>
 
 In the `FirebaseMessagingService#onMessageReceived` function of your app, invoke `handlePushNotificationWithRemoteMessage` with the `RemoteMessage` received from Firebase Cloud Messaging. Additionally, a boolean flag enabling AEPMessaging push notification interaction tracking is required when invoking the API.
 {% tabs %}
@@ -189,10 +191,8 @@ In the `FirebaseMessagingService#onMessageReceived` function of your app, invoke
 public static boolean handlePushNotificationWithRemoteMessage(final RemoteMessage remoteMessage, final boolean shouldHandleTracking);
 ```
 
-| Variable             | Type          | Description                                                  |
-| -------------------- | ------------- | ------------------------------------------------------------ |
-| remoteMessage        | RemoteMessage | Remote message received from FCM containing an AJO push data notification |
-| shouldHandleTracking | Boolean       | If true, the Messaging extension should handle push notification tracking |
+- _remoteMessage_ is the remote message received from FCM containing an AJO push data notification
+- _shouldHandleTracking_ signals if the Messaging extension should handle push notification tracking
 
 **Example**
 
@@ -295,9 +295,7 @@ To retrieve the push token from Firebase Messaging Service, please follow the tu
 public static void setPushIdentifier(final String pushIdentifier);
 ```
 
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `pushIdentifier` | String | The push token that is synced with Adobe Experience Platform. |
+- _pushIdentifier_ is the push token to be synced with the Adobe Experience Platform.
 
 **Example**
 
@@ -327,9 +325,7 @@ To retrieve the push token in iOS, please read the tutorial within [Apple's docu
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `deviceToken` | Data | The push token that is synced with Adobe Experience Platform. |
+- _deviceToken_ is the push token to be synced with the Adobe Experience Platform.
 
 **Example**
 
@@ -347,9 +343,7 @@ func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceTo
 public static func setPushIdentifier(_ deviceToken: Data?)
 ```
 
-| Variable | Type | Description |
-| :----------- | :------- | :-------------- |
-| `deviceToken` | Data | The push token that is synced with Adobe Experience Platform. |
+- _deviceToken_ is the push token to be synced with the Adobe Experience Platform.
 
 **Example**
 
@@ -363,7 +357,7 @@ public static func setPushIdentifier(_ deviceToken: Data?)
 
 {% endtabs %}
 
-## setPushImageDownloader (Android only)<a id="setPushImageDownloader"></a>
+## setPushImageDownloader (Android only) <a id="setPushImageDownloader"></a>
 
 The Messaging extension defines `IMessagingImageDownloader` which can be implemented to customize the downloading of push notification image assets. This API can then be invoked to set an instance of the custom ``IMessagingImageDownloader` in the Messaging extension.
 
@@ -378,6 +372,8 @@ The Messaging extension defines `IMessagingImageDownloader` which can be impleme
 public static void setPushImageDownloader(final IMessagingImageDownloader downloader);
 ```
 
+- _downloader_ is the Messaging image downloader instance to use for downloading push notification images.
+
 **Example**
 
 ```java
@@ -388,7 +384,7 @@ Messaging.setPushImageDownloader(customImageDownloader);
 {% endtab %}
 {% endtabs %}
 
-## setPushNotificationFactory (Android only)<a id="setPushNotificationFactory"></a>
+## setPushNotificationFactory (Android only) <a id="setPushNotificationFactory"></a>
 
 The Messaging extension defines `IMessagingPushNotificationFactory` which can be implemented to customize the Messaging extension's creation of push notifications. This API can then be invoked to set an instance of the custom ``IMessagingPushNotificationFactory` in the Messaging extension.
 
@@ -402,6 +398,8 @@ The Messaging extension defines `IMessagingPushNotificationFactory` which can be
 ```java
 public static void setPushNotificationFactory(final IMessagingPushNotificationFactory factory);
 ```
+
+- _factory_ is the Messaging push notification factory instance to use for creating a `Notification`.
 
 **Example**
 
@@ -431,17 +429,13 @@ Messaging.setPushNotificationFactory(customFactory);
 public MessagingPushPayload(RemoteMessage message)
 ```
 
-| **Variable** | **Type** | **Description** |
-| :----------- | :------- | :-------------- |
-| `message` | `RemoteMessage` | A message that contains the necessary attributes for creating a push notification. |
+- _message_ is a `RemoteMessage` object that contains the necessary attributes for creating a push notification.
 
 ```java
 public MessagingPushPayload(Map<String, String> data)
 ```
 
-| **Variable** | **Type** | **Description** |
-| :----------- | :------- | :-------------- |
-| `data` | `Map<String, String>` | A data payload that contains the necessary attributes for creating a push notification. |
+- _data_ is a map that contains the necessary attributes for creating a push notification.
 
 **Examples**
 
