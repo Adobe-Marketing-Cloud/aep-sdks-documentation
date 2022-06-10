@@ -1,4 +1,4 @@
-# API Reference
+# API reference
 
 ## clearPropositions
 
@@ -54,7 +54,7 @@ Optimize.clearCachedPropositions()
 
 ## extensionVersion
 
-The `extensionVersion()` method (on Android) or the `extensionVersion` property (on iOS) return the version information for currently installed AEPOptimize extension.
+The `extensionVersion()` method (on Android) or the `extensionVersion` property (on iOS) returns the version information for currently installed AEPOptimize extension.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -119,7 +119,7 @@ public static void getPropositions(final List<DecisionScope> decisionScopes, fin
 ```
 
 * _decisionScopes_ is a list of decision scopes for which propositions are requested.
-* _callback_ `call` method is invoked with propositions map of type `Map<DecisionScope, Proposition>`. If callback is an instance of [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror), and if the operation times out or an error occurs in retrieving propositions, `fail` method is invoked with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobeerror).
+* _callback_ `call` method is invoked with propositions map of type `Map<DecisionScope, Proposition>`. If the callback is an instance of [AdobeCallbackWithError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobecallbackwitherror), and if the operation times out or an error occurs in retrieving propositions, the `fail` method is invoked with the appropriate [AdobeError](https://aep-sdks.gitbook.io/docs/foundation-extensions/mobile-core/mobile-core-api-reference#adobeerror).
 
 #### Example
 
@@ -393,9 +393,9 @@ This API dispatches an Event for the Edge network extension to fetch decision pr
 public static void updatePropositions(final List<DecisionScope> decisionScopes, final Map<String, Object> xdm, final Map<String, Object> data)
 ```
 
-* _decisionScopes_ is a List of decision scopes for which propositions need updating.
-* _xdm_ additional xdm formatted data to be attached to the Experience Event.
-* _data_ additional freeform data to be attached to the Experience Event.
+* _decisionScopes_ is a list of decision scopes for which propositions need updating.
+* _xdm_ is a map containing additional xdm formatted data to be attached to the Experience Event.
+* _data_ is a map containing additional freeform data to be attached to the Experience Event.
 
 #### Example
 
@@ -427,8 +427,8 @@ static func updatePropositions(for decisionScopes: [DecisionScope],
 ```
 
 * _decisionScopes_ is an array of decision scopes for which propositions need updating.
-* _xdm_ additional xdm formatted data to be attached to the Experience Event.
-* _data_ additional freeform data to be attached to the Experience Event.
+* _xdm_ is a dictionary containing additional xdm formatted data to be attached to the Experience Event.
+* _data_ is a dictionary containing additional freeform data to be attached to the Experience Event.
 
 #### Example
 
@@ -454,8 +454,8 @@ Optimize.updatePropositions(for: [decisionScope1, decisionScope2]
 ```
 
 * _decisionScopes_ is an array of decision scopes for which propositions need updating.
-* _xdm_ additional xdm formatted data to be attached to the Experience Event.
-* _data_ additional freeform data to be attached to the Experience Event.
+* _xdm_ is a dictionary containing additional xdm formatted data to be attached to the Experience Event.
+* _data_ is a dictionary containing additional freeform data to be attached to the Experience Event.
 
 #### Example
 
@@ -477,7 +477,7 @@ AEPDecisionScope* decisionScope2 = [[AEPDecisionScope alloc] initWithName: @"myS
 
 | Type | Android | (AEP 3.x) Swift | (AEP 3.x) Objective-C |
 | :--- | :--- | :--- | :--- |
-| class | `DecisionScope` | `AEPDecisionScope` |
+| class | `DecisionScope` | `DecisionScope` | `AEPDecisionScope` |
 | class | `Proposition` | `Proposition` | `AEPProposition` |
 | class | `Offer` | `Offer` | `AEPOffer` |
 

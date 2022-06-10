@@ -6,13 +6,13 @@ The Adobe Journey Optimizer - Decisioning extension powers real-time personaliza
 
 Before starting, make sure the following steps are completed.
 
-* Your IMS organization is provisioned for edge decisioning. 
+* Your organization is provisioned for edge decisioning. 
 * If using Adobe Target, Target activities are set up in your desired workspace in your organization on Target UI. For more details, see the [Target activities guide](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=en).
 * If using Journey Optimizer - Offer Decisioning, decisions are set up in your desired sandbox in your organization on Experience Platform UI. For more details, see the [create decisions guide](https://experienceleague.adobe.com/docs/offer-decisioning/using/create-manage-activities/create-offer-activities.html?lang=en).
 
 ## Adobe Experience Platform Data Collection setup
 
-### Configure the Datastream for Adobe Target and/ or Journey Optimizer - Offer Decisioning
+### Configure the Datastream for Adobe Target and/or Journey Optimizer - Offer Decisioning
 
 On [Experience Platform Data Collection](https://experience.adobe.com/#/data-collection/), navigate to **Data Collection** > **Datatreams** using the left navigation panel. Select an existing datastream or create a new datastream. For more details, see the [configure datastreams guide](../../getting-started/configure-datastreams.md).
 
@@ -26,8 +26,6 @@ On [Experience Platform Data Collection](https://experience.adobe.com/#/data-col
 ![Datastream configuration - Adobe Target](../../.gitbook/assets/ajo-decisioning-datastream-configuration-at.png)
 
 4. Click **Save**.
-
-
 
 ### Configure Adobe Journey Optimizer - Decisioning extension in Tag property for Mobile
 
@@ -43,7 +41,7 @@ On [Experience Platform Data Collection](https://experience.adobe.com/#/data-col
 ## Integrate Experience Platform Optimize SDK in your mobile application
 
 {% hint style="warning" %}
-For AEPOptimize APIs to work properly, you need to integrate Mobile Core and Edge extensions in your mobile app. For more details see, documentation on [Mobile Core](../../foundation-extensions/mobile-core/README.md) and [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/README.md).
+For the AEPOptimize APIs to work properly, you need to integrate Mobile Core and Edge extensions in your mobile app. For more details see, documentation on [Mobile Core](../../foundation-extensions/mobile-core/README.md) and [Adobe Experience Platform Edge Network](../../foundation-extensions/experience-platform-extension/README.md).
 {% endhint %}
 
 ### Install the Experience Platform Mobile SDK
@@ -397,7 +395,7 @@ AEPIdentityMap *identityMap = [[AEPIdentityMap alloc] init];
 
 To send mobile Lifecycle metrics to Target for creating audiences, a rule needs to be set up on Experience Platform Data Collection to attach these metrics to the Edge personalization query requests. Follow the link to learn [how to target visitors using Custom Parameters in Adobe Target](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html?lang=en).
 
-#### Create a Rule
+#### Create a rule
 
 On Experience Platform Data Collection, navigate to **Data Collection** > **Tags** using the left navigation panel. Select an existing mobile tag property or create a new property.
 
@@ -558,9 +556,9 @@ public class Offer {
   ...
   /**
     * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Interactions} field group from this {@code Proposition} item.
-    * <p>
+    *
     * The returned XDM data does contain the {@code eventType} for the Experience Event with value {@code decisioning.propositionDisplay}.
-    * <p>
+    *
     * Note: The Edge sendEvent API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, and override
     * dataset identifier.
     *
@@ -570,9 +568,9 @@ public class Offer {
 
   /**
     * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Interactions} field group from this {@code Proposition} offer.
-    * <p>
+    *
     * The returned XDM data contains the {@code eventType} for the Experience Event with value {@code decisioning.propositionInteract}.
-    * <p>
+    *
     * Note: The Edge sendEvent API can be used to dispatch this data in an Experience Event along with any additional XDM, free-form data, and override
     * dataset identifier.
     *
@@ -586,7 +584,7 @@ public class Proposition {
   ...
   /**
     * Generates a map containing XDM formatted data for {@code Experience Event - Proposition Reference} field group from this {@code Proposition}.
-    * <p>
+    *
     * The returned XDM data does not contain {@code eventType} for the Experience Event.
     *
     * @return {@code Map<String, Object>} containing the XDM data for the proposition reference.
