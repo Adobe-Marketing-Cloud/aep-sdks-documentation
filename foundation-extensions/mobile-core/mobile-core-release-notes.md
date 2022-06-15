@@ -1,5 +1,11 @@
 # Release Notes
 
+## June 15, 2022
+
+### Android Core 1.11.1
+
+* Fixed a crash which was caused by the exception thrown from the Android Activity class. 
+
 ## April 21, 2022
 
 ### Android Core 1.11.0
