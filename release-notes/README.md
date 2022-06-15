@@ -4,6 +4,12 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 15, 2022
+
+### Android Core 1.11.1
+
+* Fixed a crash which was caused by the exception thrown from the Android Activity class. 
+
 ## June 10, 2022
 
 ### Adobe Journey Optimizer - Decisioning extension 1.0.0
