@@ -551,6 +551,10 @@ public ActionType getType()
 You should use the `MessagingPushPayload` class to extract the payload values.
 {% endhint %}
 
+{% hint style="info" %}
+Adobe Journey Optimizer delivers push notifications to a device as data messages. More information on data messages can be seen at [the Firebase messages documentation](https://firebase.google.com/docs/cloud-messaging/concept-options#data_messages).
+{% endhint %}
+
 **FCM Payload Example**
 
 ```json
