@@ -10,7 +10,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 * Added tvOS support.
 * Fixed a few race conditions in the EventHub and MobileCore.
-* Retrieve last set configuration shared state to speed up Identity boot and forceSync on subsequent launch.
+* Made changes in AEPIdentity to speed up boot.
 
 ## June 10, 2022
 
