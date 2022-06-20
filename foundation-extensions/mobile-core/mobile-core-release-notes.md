@@ -1,5 +1,23 @@
 # Release Notes
 
+## June 16, 2022
+
+### iOS AEPCore 3.7.0
+
+* Added tvOS support.
+* Fixed a few race conditions in the EventHub and MobileCore.
+* Made changes in AEPIdentity to speed up boot.
+
+## May 9, 2022
+
+### iOS AEPCore 3.6.0
+
+* Added support for using the Core SDK in [App Extensions.](https://developer.apple.com/app-extensions/)
+* Added a new API to the Extension protocol for getting the latest non-pending shared state.
+* Added support for using Bundled Rules.
+* Added support for cached images for Fullscreen Messages.
+* Fixed a bug preventing Fullscreen Messages from being dismissed in certain conditions.
+
 ## April 21, 2022
 
 ### Android Core 1.11.0

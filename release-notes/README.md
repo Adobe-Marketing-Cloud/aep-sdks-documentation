@@ -4,6 +4,14 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 16, 2022
+
+### iOS AEPCore 3.7.0
+
+* Added tvOS support.
+* Fixed a few race conditions in the EventHub and MobileCore.
+* Made changes in AEPIdentity to speed up boot.
+
 ## June 10, 2022
 
 ### Adobe Journey Optimizer - Decisioning extension 1.0.0
