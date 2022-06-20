@@ -134,6 +134,14 @@ Lifecycle metrics are out-of-the-box metrics that are automatically collected wh
 
 To learn about processing rules please read the [processing rules tips and tricks guide](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html?lang=en).
 
+### Why are my Analytics identifiers (AID / MID) changing?
+
+If you see SDK identifiers unexpectedly change, try the following fixes to address the issue. If none of these work, contact Customer Care at your earliest convenience for resolution:
+
+* Ensure that no other versions of the SDK are running - for instance, if you are upgrading SDK versions from 4x to Experience Platform Mobile SDKs - remove all references to 4x SDKs. For 4x SDKs you may look (and remove) for the adobeMobileLibrary/AdobeMobile/AdobeMobileSDK dependency or lib in the project or if the verbose logs indicate ADBMobile prefixed entries.
+* Examine app code for logic clearing app user defaults and/or shared preferences. SDK identifiers are stored in app user defaults and shared preferences and may not be cleared for proper functioning of the SDK.
+* APIs such as setPrivacyStatus / resetIdentities clear SDK-stored identifiers - ensure that you are appropriately calling these APIs to avoid resetting SDK identifiers.
+
 ### How are mobile visits different from launches?
 
 A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in the [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting.
