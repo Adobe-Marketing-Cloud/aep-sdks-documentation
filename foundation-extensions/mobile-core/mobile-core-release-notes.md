@@ -8,6 +8,12 @@
 * Fixed a few race conditions in the EventHub and MobileCore.
 * Made changes in AEPIdentity to speed up boot.
 
+## June 15, 2022
+
+### Android Core 1.11.1
+
+* Fixed a crash which was caused by an exception thrown from the Android Activity class. 
+
 ## May 9, 2022
 
 ### iOS AEPCore 3.6.0
