@@ -8,7 +8,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Core 1.11.1
 
-* Fixed a crash which was caused by the exception thrown from the Android Activity class. 
+* Fixed a crash which was caused by an exception thrown from the Android Activity class. 
 
 ## June 10, 2022
 
