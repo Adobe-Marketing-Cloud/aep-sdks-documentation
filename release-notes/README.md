@@ -4,6 +4,42 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+
+## June 16, 2022
+
+### iOS AEPCore 3.7.0
+
+* Added tvOS support.
+* Fixed a few race conditions in the EventHub and MobileCore.
+* Made changes in AEPIdentity to speed up boot.
+
+## June 15, 2022
+
+### Android Core 1.11.1
+
+* Fixed a crash which was caused by an exception thrown from the Android Activity class. 
+
+## June 10, 2022
+
+### Adobe Journey Optimizer - Decisioning extension 1.0.0
+
+`Adobe Journey Optimizer - Decisioning` extension is now available in the extensions catalog on the Data Collection UI for mobile Tag Properties. No configuration is necessary for this extension.  
+
+## June 9, 2022
+
+### Android Optimize 1.0.0
+
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for Android! 
+
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning.
+
+**Key Features**
+
+With this release, the extension provides APIs that you can use to:
+
+* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning. 
+* Track user interactions with those offers.
+
 ## June 7, 2022
 
 ### iOS AEPEdgeIdentity 1.1.0
@@ -34,6 +70,19 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 * Updates internal network stack to use Mobile Core's ServiceProvider Network Service, reducing overall extension code size.
 
 ## May 27, 2022
+
+### iOS AEPOptimize 1.0.0
+
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for iOS! 
+
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning. 
+
+**Key Features**
+
+With this release, the extension provides APIs that you can use to:
+
+* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning.
+* Track user interactions with those offers.
 
 ### Android Campaign Standard 1.0.9
 
