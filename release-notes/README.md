@@ -84,6 +84,10 @@ With this release, the extension provides APIs that you can use to:
 * Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning.
 * Track user interactions with those offers.
 
+### Android Campaign Standard 1.0.9
+
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging In-App beta extensions in the same mobile app.
+
 ## May 26, 2022
 
 ### iOS AEPTarget 3.1.3
