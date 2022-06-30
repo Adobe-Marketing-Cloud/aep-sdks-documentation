@@ -400,19 +400,24 @@ public static void updatePropositions(final List<DecisionScope> decisionScopes, 
 #### Example
 
 ```java
-Optimize.updatePropositions(new AdobeCallbackWithError<Map<DecisionScope, Proposition>>() {
-    @Override
-    public void fail(final AdobeError adobeError) {
-        // handle error
-    }
+final DecisionScope decisionScope1 = DecisionScope("xcore:offer-activity:1111111111111111", "xcore:offer-placement:1111111111111111", 2);
+final DecisionScope decisionScope2 = new DecisionScope("myScope");
 
-    @Override
-    public void call(final Map<DecisionScope, Proposition> propositionsMap) {
-        if (propositionsMap != null && !propositionsMap.isEmpty()) {
-            // handle propositions
-        }
-    }
-});
+final List<DecisionScope> decisionScopes = new ArrayList<>();
+decisionScopes.add(decisionScope1);
+decisionScopes.add(decisionScope2);
+
+Optimize.updatePropositions(decisionScopes, 
+                            new HashMap<String, Object>() {
+                                {
+                                    put("xdmKey", "xdmValue");
+                                }
+                            },
+                            new HashMap<String, Object>() {
+                                {
+                                    put("dataKey", "dataValue");
+                                }
+                            });
 ```
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
