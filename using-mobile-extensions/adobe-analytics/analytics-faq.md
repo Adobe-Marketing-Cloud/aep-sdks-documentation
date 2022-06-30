@@ -14,7 +14,7 @@ If you see SDK identifiers unexpectedly change, try the following fixes to addre
 
 ### Why are Crashes inflated in the Analytics report
 
-The mobile metrics Crashes is computed based on the Lifecycle start and pause API calls implemented in your mobile application. How can you verify if the implementation is correct:
+The metric `Crashes` is computed based on the Lifecycle start and pause API calls implemented in your mobile application. How can you verify if the implementation is correct:
 
 * Ensure that the Lifecycle extension is registered.
 * Verify that both MobileCore APIs `lifecycleStart` and `lifecyclePause` are implemented in the application based on the recommended settings for each platform. See the [guide for registering Lifecycle with MobileCore and adding appropriate start/pause calls](../../foundation-extensions/mobile-core/lifecycle).
