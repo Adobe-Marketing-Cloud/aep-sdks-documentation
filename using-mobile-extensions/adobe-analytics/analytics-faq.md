@@ -68,24 +68,3 @@ In the mobile property (tag) in the Data Collection UI, select the property from
 #### Contact Adobe Customer Care <a id="contact-adobe-customer-care"></a>
 
 If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
-
-----
-
-### __ is unavailable in application extension for tvOS
-
-This is an issue with the Xcode. When using the AEP SDK from a tvOS app target, there is a compilation error which says "__ is unavailable in application extension for tvOS" even when not building for a tvOS app extension target/app, which is not an intended behavior. We have filed a bug with Apple to get this issue resolved. In the meantime, the workaround for this issue is to mark the classes or functions with the attribute: `@available(tvOSApplicationExtension, unavailable)` to suppress the error.
-
-#### Sample
-```Swift
-@available(tvOSApplicationExtension, unavailable)
-class ErrorThrowingClass {
-  ...
-}
-```
-
-```Swift
-@available(tvOSApplicationExtension, unavailable)
-func errorThrowingFunction() {
-  ...
-}
-```
