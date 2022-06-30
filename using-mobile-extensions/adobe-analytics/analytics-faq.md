@@ -75,7 +75,7 @@ If you are unable to resolve your concerns through resources provided here, plea
 
 This is an issue with the Xcode. When using the AEP SDK from a tvOS app target, there is a compilation error which says "__ is unavailable in application extension for tvOS" even when not building for a tvOS app extension target/app, which is not an intended behavior. We have filed a bug with Apple to get this issue resolved. In the meantime, the workaround for this issue is to mark the classes or functions with the attribute: `@available(tvOSApplicationExtension, unavailable)` to suppress the error.
 
-####Sample
+#### Sample
 ```Swift
 @available(tvOSApplicationExtension, unavailable)
 class ErrorThrowingClass {
