@@ -18,7 +18,7 @@ The mobile metrics Crashes is computed based on the Lifecycle start and pause AP
 
 * Ensure that the Lifecycle extension is registered.
 * Verify that both MobileCore APIs `lifecycleStart` and `lifecyclePause` are implemented in the application based on the recommended settings for each platform. See the [guide for registering Lifecycle with MobileCore and adding appropriate start/pause calls](../../foundation-extensions/mobile-core/lifecycle).
-* For more details, see also [Tracking app crashes in iOS](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios#tracking-app-crashes-in-ios) and [Android](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios#tracking-app-crashes-in-android).
+* For more details, see also [Tracking app crashes in iOS](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md#tracking-app-crashes-in-ios) and [Android](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android.md#tracking-app-crashes-in-android).
 
 
 ### How are mobile visits different from launches?
