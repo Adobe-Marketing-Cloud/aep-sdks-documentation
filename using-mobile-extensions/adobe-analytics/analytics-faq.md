@@ -12,6 +12,15 @@ If you see SDK identifiers unexpectedly change, try the following fixes to addre
 * Examine app code for logic clearing app user defaults and/or shared preferences. SDK identifiers are stored in app user defaults and shared preferences and may not be cleared for proper functioning of the SDK.
 * APIs such as setPrivacyStatus / resetIdentities clear SDK-stored identifiers - ensure that you are appropriately calling these APIs to avoid resetting SDK identifiers.
 
+### Why are Crashes inflated in the Analytics report
+
+The mobile metrics Crashes is computed based on the Lifecycle start and pause API calls implemented in your mobile application. How can you verify if the implementation is correct:
+
+* Ensure that the Lifecycle extension is registered.
+* Verify that both MobileCore APIs `lifecycleStart` and `lifecyclePause` are implemented in the application based on the recommended settings for each platform. See the [guide for registering Lifecycle with MobileCore and adding appropriate start/pause calls](../../foundation-extensions/mobile-core/lifecycle).
+* For more details, see also [Tracking app crashes in iOS](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios#tracking-app-crashes-in-ios) and [Android](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios#tracking-app-crashes-in-android).
+
+
 ### How are mobile visits different from launches?
 
 A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes \(300 seconds\) in the [lifecycleTimeout](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/mobile-core/lifecycle#configuration-keys) configuration setting.
