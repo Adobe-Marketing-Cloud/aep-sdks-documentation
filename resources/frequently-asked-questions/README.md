@@ -147,7 +147,8 @@ Yes, offline tracking is supported by default when sending XDM Experience events
 
 ### 'X' is unavailable in application extension for tvOS
 
-When using the Adobe Experience Platform SDK from a tvOS app target, there is a compilation error which says: "'X' is unavailable in application extension for tvOS", even when you are not building for a tvOS app extension target. This is not intended behavior, and we have filed a bug with Apple to get this issue resolved. In the meantime, the workaround for this issue is to mark the classes or functions with the attribute: `@available(tvOSApplicationExtension, unavailable)` to suppress the error.
+You may encounter this error when using the AEP SDK for a tvOS app target, with the following message "'X' is unavailable in application extension for tvOS". This behavior is unexpected for tvOS targets and it seems to be an issue in Xcode where it apples additional checks for tvOSApplicationExtension API compatibility.
+Until this issue is resolved in the future Xcode versions, a workaround is to mark the classes or functions with the attribute: @available(tvOSApplicationExtension, unavailable) to suppress the error as in the examples below:
 
 #### Sample
 ```Swift
