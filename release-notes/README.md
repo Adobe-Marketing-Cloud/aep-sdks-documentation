@@ -4,6 +4,21 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+
+## June 16, 2022
+
+### iOS AEPCore 3.7.0
+
+* Added tvOS support.
+* Fixed a few race conditions in the EventHub and MobileCore.
+* Made changes in AEPIdentity to speed up boot.
+
+## June 15, 2022
+
+### Android Core 1.11.1
+
+* Fixed a crash which was caused by an exception thrown from the Android Activity class. 
+
 ## June 10, 2022
 
 ### Adobe Journey Optimizer - Decisioning extension 1.0.0
@@ -68,6 +83,10 @@ With this release, the extension provides APIs that you can use to:
 
 * Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning.
 * Track user interactions with those offers.
+
+### Android Campaign Standard 1.0.9
+
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging In-App beta extensions in the same mobile app.
 
 ## May 26, 2022
 

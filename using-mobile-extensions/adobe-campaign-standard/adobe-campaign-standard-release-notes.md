@@ -1,5 +1,11 @@
 # Release Notes
 
+## May 27, 2022
+
+### Android Campaign Standard 1.0.9
+
+* Fixed a compatibility issue seen when using the Campaign Standard and Messaging In-App beta extensions in the same mobile app.
+
 ## February 9, 2022
 
 ### iOS Campaign Standard 3.0.1
@@ -8,7 +14,7 @@
 
 ## June 16, 2021
 
-### Android Campaign 1.0.8
+### Android Campaign Standard 1.0.8
 
 * Added the changes to move away from bintray and start using Sonatype to push the SDK to Maven Central.
 * Resolved and issue with Campaign module details not being returned.
