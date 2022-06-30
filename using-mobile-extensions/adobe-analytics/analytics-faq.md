@@ -23,7 +23,7 @@ The mobile metrics Crashes is computed based on the Lifecycle start and pause AP
 
 ### How are mobile visits different from launches?
 
-A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes (300 seconds) in the [lifecycleTimeout](../../using-mobile-extensions/mobile-core/lifecycle/README.md#configuration-keys) configuration setting.
+A launch is measured by the SDK when a user opens the app for the first time or returns to the app after having been out of the app for longer than the specified timeout value. The typical timeout is 5 minutes (300 seconds) in the [lifecycleTimeout](../../foundation-extensions/mobile-core/lifecycle/README.md#configuration-keys) configuration setting.
 
 A visit is a server-side calculation by Adobe Analytics and is based on the first and last data hits that are sent by the SDK without exceeding a visit timeout. Typically, session timeouts are set at 30 minutes for a report suite. Although visits come from traditional web analytics, these hits still provide valuable insights into how users enter and exit from your app.
 
