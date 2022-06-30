@@ -4,6 +4,8 @@
 
 To learn about processing rules please read the [processing rules tips and tricks guide](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-tips.html?lang=en).
 
+----
+
 ### Why are my Analytics identifiers (AID / MID) changing?
 
 If you see SDK identifiers unexpectedly change, try the following fixes to address the issue. If none of these work, contact Customer Care at your earliest convenience for resolution:
@@ -11,6 +13,8 @@ If you see SDK identifiers unexpectedly change, try the following fixes to addre
 * Ensure that no other versions of the SDK are running - for instance, if you are upgrading SDK versions from 4x to Experience Platform Mobile SDKs - remove all references to 4x SDKs. For 4x SDKs you may look (and remove) for the adobeMobileLibrary/AdobeMobile/AdobeMobileSDK dependency or lib in the project or if the verbose logs indicate ADBMobile prefixed entries.
 * Examine app code for logic clearing app user defaults and/or shared preferences. SDK identifiers are stored in app user defaults and shared preferences and may not be cleared for proper functioning of the SDK.
 * APIs such as setPrivacyStatus / resetIdentities clear SDK-stored identifiers - ensure that you are appropriately calling these APIs to avoid resetting SDK identifiers.
+
+----
 
 ### Why are Crashes inflated in the Analytics report
 
@@ -20,6 +24,7 @@ The metric `Crashes` is computed based on the Lifecycle start and pause API call
 * Verify that both MobileCore APIs `lifecycleStart` and `lifecyclePause` are implemented in the application based on the recommended settings for each platform. See the [guide for registering Lifecycle with MobileCore and adding appropriate start/pause calls](../../foundation-extensions/mobile-core/lifecycle).
 * For more details, see also [Tracking app crashes in iOS](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-ios.md#tracking-app-crashes-in-ios) and [Android](../../foundation-extensions/mobile-core/lifecycle/lifecycle-extension-in-android.md#tracking-app-crashes-in-android).
 
+----
 
 ### How are mobile visits different from launches?
 
@@ -27,9 +32,13 @@ A launch is measured by the SDK when a user opens the app for the first time or 
 
 A visit is a server-side calculation by Adobe Analytics and is based on the first and last data hits that are sent by the SDK without exceeding a visit timeout. Typically, session timeouts are set at 30 minutes for a report suite. Although visits come from traditional web analytics, these hits still provide valuable insights into how users enter and exit from your app.
 
+----
+
 ### Can I send my analytics data to multiple report suites?
 
 Yes. To capture data in multiple report suites, please read the [report suites guide](./README.md#report-suites).
+
+----
 
 ### I don't see data in my Adobe Analytics report suite - what can I do? <a id="i-dont-see-data-in-my-adobe-analytics-report-suite-what-can-i-do"></a>
 
@@ -59,6 +68,8 @@ In the mobile property (tag) in the Data Collection UI, select the property from
 #### Contact Adobe Customer Care <a id="contact-adobe-customer-care"></a>
 
 If you are unable to resolve your concerns through resources provided here, please contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance.
+
+----
 
 ### __ is unavailable in application extension for tvOS
 
