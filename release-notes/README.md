@@ -4,6 +4,15 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## June 30, 2022
+
+### iOS AEPAnalytics 3.2.0
+
+* Added tvOS support.
+
+### iOS AEPMedia 3.1.0
+
+* Added tvOS support.
 
 ## June 16, 2022
 
@@ -17,7 +26,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Core 1.11.1
 
-* Fixed a crash which was caused by an exception thrown from the Android Activity class. 
+* Fixed a crash which was caused by an exception thrown from the Android Activity class.
 
 ## June 10, 2022
 
@@ -29,7 +38,7 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 ### Android Optimize 1.0.0
 
-The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for Android! 
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for Android!
 
 This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning.
 
@@ -37,7 +46,7 @@ This extension enables real-time personalization workflows in your mobile applic
 
 With this release, the extension provides APIs that you can use to:
 
-* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning. 
+* Fetch personalized offers from the decisioning services enabled in the datastreams e.g. Adobe Target, Adobe Journey Optimizer Offer Decisioning.
 * Track user interactions with those offers.
 
 ## June 7, 2022
@@ -73,9 +82,9 @@ With this release, the extension provides APIs that you can use to:
 
 ### iOS AEPOptimize 1.0.0
 
-The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for iOS! 
+The `Adobe Experience Platform Mobile SDK - Optimize` extension is now available for iOS!
 
-This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning. 
+This extension enables real-time personalization workflows in your mobile applications when using Adobe Target and/or Adobe Journey Optimizer Offer Decisioning.
 
 **Key Features**
 

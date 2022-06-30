@@ -1,5 +1,11 @@
 # Release Notes
 
+## June 30, 2022
+
+### iOS AEPMedia 3.1.0
+
+* Added tvOS support.
+
 ## Sep 17, 2021
 
 ### iOS Media 2.3.2
@@ -188,4 +194,3 @@ The following updates were made in this release:
 ### Android Media 1.0.0
 
 * First version of Media Android Extension.
-
