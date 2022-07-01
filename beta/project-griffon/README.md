@@ -1,8 +1,14 @@
 # Adobe Experience Platform Assurance
 
-Adobe Experience Platform Assurance (Assurance) is a new, innovative beta product from [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) to help you inspect, proof, simulate, and validate how you collect data or serve experiences in your mobile app.
+Adobe Experience Platform Assurance is a new, innovative beta product from [Adobe Experience Cloud](https://www.adobe.com/experience-cloud.html) to help you inspect, proof, simulate, and validate how you collect data or serve experiences in your mobile app.
 
 We're building Assurance to do the heavy lifting of getting your app implementation right, while you focus on creating engaging experiences.
+
+{% hint style="warning" %}
+Assurance is a beta product.
+
+To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
+{% endhint %}
 
 ## What can Assurance do for you?
 
