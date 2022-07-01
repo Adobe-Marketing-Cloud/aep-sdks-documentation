@@ -102,7 +102,7 @@ The Mobile Services extension depends on the Core extension, which includes the 
 {% endhint %}
 
 {% hint style="warning" %} 
-iOS AEP (3.x) Mobile Services extension only supports Cocoapods and does not work with Swift Package Manager or when included in your app as XCFramework dependency. {% endhint %}
+iOS AEP (3.x) Mobile Services extension only supports Cocoapods. It does not work with Swift Package Manager or when included in your app as XCFramework dependency. {% endhint %}
 
 {% tabs %}
 {% tab title="Android" %}
