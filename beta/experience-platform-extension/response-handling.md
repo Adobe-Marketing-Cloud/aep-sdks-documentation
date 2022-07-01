@@ -6,7 +6,7 @@ For each Experience event that is sent through the AEP Edge extension, there can
 
 Each event handle that is returned by the Experience Edge Network is handled by the AEP Edge extension and it is dispatched as a new mobile SDK event.
 
-To see these events in a [Project Griffon session](https://experience.adobe.com/griffon%20), in **Search Events** type `Response event`.
+To see these events in an [Adobe Experience Platform Assurance session](https://experience.adobe.com/griffon%20), in **Search Events** type `Response event`.
 
 ## Error handling
 
@@ -22,5 +22,5 @@ E/AdobeExperienceSDK: NetworkResponseHandler - Received event error for request 
 
 The message is also dispatched as a new error response event for the mobile extensions to handle.
 
-To see these events in a [Project Griffon session](https://experience.adobe.com/griffon%20), in **Search Events** type `Error response event`.
+To see these events in an [Assurance session](https://experience.adobe.com/griffon%20), in **Search Events** type `Error response event`.
 

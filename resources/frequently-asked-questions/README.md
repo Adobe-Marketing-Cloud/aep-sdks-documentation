@@ -24,7 +24,7 @@ There are several new features and benefits of using the Experience Platform Mob
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
 | Places Service | ✔️ |  |
-| Project Griffon \(BETA\) | ✔️ |  |
+| Adobe Experience Platform Assurance \(BETA\) | ✔️ |  |
 
 ## Do I need additional permissions to create a mobile property in Experience Platform Launch?
 
@@ -158,7 +158,7 @@ If you have followed the documentation and are unable to see reporting data in y
 
 #### Verify that network requests are sent to Adobe Analytics <a id="verify-that-network-requests-are-sent-to-adobe-analytics"></a>
 
-You can use [Project Griffon](../../beta/project-griffon/) to verify events are being sent to Adobe Analytics.
+You can use [Adobe Experience Platform Assurance](../../beta/project-griffon/) to verify events are being sent to Adobe Analytics.
 
 #### Ensure appropriate timestamp configuration <a id="ensure-appropriate-time-stamp-configuration"></a>
 

@@ -2,21 +2,21 @@
 
 ## Overview
 
-You may use the Custom Validation feature to quickly and easily write a JavaScript function to validate events in a Project Griffon session.
+You may use the Custom Validation feature to quickly and easily write a JavaScript function to validate events in an Adobe Experience Platform Assurance session.
 
 ## Getting Started
 
 To use this view, complete the following steps:
 
-1. [Setup Project Griffon](../set-up-project-griffon.md)
-2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
+1. [Setup Assurance](../set-up-project-griffon.md)
+2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to an Assurance session
 3. In the **Home** view, select **Validation Scripts**
 
 ![Custom Validation](../../../.gitbook/assets/validation_menu.png)
 
 ## Writing a Validation Function
 
-This feature allows you to write a function to validate events in your Project Griffon session. The function should expect an array of Project Griffon events and should return:
+This feature allows you to write a function to validate events in your Assurance session. The function should expect an array of Assurance events and should return:
 
 * A boolean \(true or false\) OR
 * An object that contains a `status` property with an _optional_ array of event UUIDs
@@ -28,7 +28,7 @@ This feature allows you to write a function to validate events in your Project G
 | `uuid` | String | Universally unique identifier for the event. |
 | `timestamp` | Number | Timestamp from the device when the event was sent from the SDK. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
-| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
+| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.assurance\). |
 | `type` | String | Used to denote the type of event. |
 | `payload` | Object | Defines the data for the event and contains unique and common properties. Some common properties include `ACPExtensionEventSource and ACPExtensionEventType`. |
 | `annotations` | Array | An array of annotation objects. |

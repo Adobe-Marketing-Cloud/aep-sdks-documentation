@@ -2,7 +2,7 @@
 
 ## Overview
 
-With the Streaming Media Analytics integration, you can now validate your AEP Mobile SDK - Media Analytics implementation. Views include what is tracked in the media session such as:
+With the integration between Streaming Media Analytics and Adobe Experience Platform Assurance, you can now validate your AEP Mobile SDK - Media Analytics implementation. Views include what is tracked in the media session such as:
 
 * Session start event that contains all content core, standard metadata and custom metadata properties, also session end and complete.
 * Ad break Start and Ad start event with all ad properties attached, also skip and complete event for both
@@ -12,7 +12,7 @@ With the Streaming Media Analytics integration, you can now validate your AEP Mo
 
 Once data is processed in Analytics, post-processed status and data, such as media time spent and total pause duration, are also available in the event detail view.
 
-## Using Project Griffon for Adobe Analytics for Streaming Media
+## Using Adobe Experience Platform Assurance for Adobe Analytics for Streaming Media
 
 After you have connected and [set up](../set-up-project-griffon.md) your app for Adobe Analytics, you are ready to configure it for Streaming Media Analytics. At the bottom of the left panel, click **Configure** to add the Media Analytics Events view and **Save** it.
 

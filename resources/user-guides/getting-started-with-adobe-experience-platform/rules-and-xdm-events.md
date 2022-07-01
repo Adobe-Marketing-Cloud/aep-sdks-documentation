@@ -89,7 +89,7 @@ Run the Sample app in a simulator or a device and generate product review XDM ev
 
 Connect to an Assurance Session to inspect that the Adobe Experience Platform Request Event has the correct data. To set up an Assurance session with the Sample app, follow the steps in the [using Adobe Experience Platform Assurance guide](https://aep-sdks.gitbook.io/docs/resources/user-guides/getting-started-with-adobe-experience-platform#using-aep-assurance).
 
-* Once connected to Project Griffon, search for the Adobe Experience Platform Request Event in your session.
+* Once connected to Adobe Experience Platform Assurance, search for the Adobe Experience Platform Request Event in your session.
 * Check that the XDM data for the `product.review` event is correctly updated with the two new fields  `ratingDate` and `ratingSource`.
 
 ### Extra credit: Update rule/add new rule of your choice
