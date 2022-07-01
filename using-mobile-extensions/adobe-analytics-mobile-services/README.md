@@ -101,6 +101,9 @@ To install the Mobile Services extension, complete the following steps:
 The Mobile Services extension depends on the Core extension, which includes the Identity and Lifecycle frameworks and the Analytics extension.
 {% endhint %}
 
+{% hint style="warning" %} 
+iOS AEP (3.x) Mobile Services extension only supports Cocoapods. It does not work with Swift Package Manager or when included in your app as XCFramework dependency. {% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 Add the Mobile Services extension to your project using the app's Gradle file.
