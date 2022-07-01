@@ -94,6 +94,7 @@
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
   * [Products variable](using-mobile-extensions/adobe-analytics/product-variable.md)
+    * [Frequently asked questions](using-mobile-extensions/adobe-analytics/analytics-faq.md)
 * [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services/README.md)
   * [Migrating to AEPMobileServices reference](using-mobile-extensions/adobe-analytics-mobile-services/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics-mobile-services/adobe-mobile-services-release-notes.md)
@@ -177,16 +178,16 @@
 
 ## BETA
 
-* [Project Griffon](beta/project-griffon/README.md)
-  * [Set up Project Griffon](beta/project-griffon/set-up-project-griffon.md)
-  * [Use Project Griffon](beta/project-griffon/using-project-griffon/README.md)
+* [Adobe Experience Platform Assurance](beta/project-griffon/README.md)
+  * [Set up Assurance](beta/project-griffon/set-up-project-griffon.md)
+  * [Use Assurance](beta/project-griffon/using-project-griffon/README.md)
     * [Adobe Analytics](beta/project-griffon/using-project-griffon/adobe-analytics-and-project-griffon.md)
     * [Adobe Analytics for Streaming Media](beta/project-griffon/using-project-griffon/adobe-analytics-streaming-media-and-project-griffon.md)
     * [Places Service](beta/project-griffon/using-project-griffon/location-service-and-project-griffon.md)
     * [Custom Validation](beta/project-griffon/using-project-griffon/custom-validation-and-project-griffon.md)
     * [Validation Summary](beta/project-griffon/using-project-griffon/validation-summary-and-project-griffon.md)
     * [On-device views](beta/project-griffon/using-project-griffon/on-device-views.md)
-  * [Troubleshoot Project Griffon](beta/project-griffon/troubleshoot-project-griffon.md)
+  * [Troubleshoot Assurance](beta/project-griffon/troubleshoot-project-griffon.md)
 * [Adobe Journey Optimizer - In-app messaging](beta/iam/README.md)
   * [Prerequisites](beta/iam/edge-and-launch-configuration.md)
   * [SDK Setup](beta/iam/setup-sdk.md)

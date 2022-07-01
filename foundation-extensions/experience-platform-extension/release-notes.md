@@ -109,8 +109,8 @@ The included features with this release are:
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * Events persistence.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with AEPAssurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
-* Detailed warning/error messages are available through Project Griffon UI and logs.
+* Integration with AEPAssurance extension enabling new insights in Adobe Experience Platform Assurance about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
+* Detailed warning/error messages are available through Assurance UI and logs.
 
 Learn more about the AEP Edge extension in the open sourced [adobe/aepsdk-edge-ios](https://github.com/adobe/aepsdk-edge-ios) GitHub repository. The iOS SDK is available for installation through SPM, XCFramework and Cocoapods and can be used in Swift and Objective-C applications. This SDK is compatible with latest swift AEPCore 1.0.0.
 
@@ -123,8 +123,8 @@ The included features with this release are:
 * Ability to create XDM Experience Events and send them to Experience Edge Network. An optional Experience Edge response callback can be registered per event.
 * The XDM Experience Events can be sent to individual Adobe Experience Platform datasets when a custom dataset identifier is set at event level.
 * ECID is automatically attached on each XDM Experience Event request.
-* Integration with Assurance extension enabling new insights in Project Griffon about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
-* Detailed warning/error messages are available through Project Griffon UI and logs.
+* Integration with Assurance extension enabling new insights in Adobe Experience Platform Assurance about the XDM Experience Event processing and XDM data validation for an improved validation and debugging experience.
+* Detailed warning/error messages are available through Assurance UI and logs.
 
 This SDK is compatible with Android Core 1.5.7 and above.
 

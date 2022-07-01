@@ -200,7 +200,7 @@ using Com.Adobe.Marketing.Mobile;
         let appState = application.applicationState            
         MobileCore.registerExtensions([Lifecycle.self, ...], {
           if appState != .background {
-            // only start lifecycle if the application is not in the background 
+            // only start lifecycle if the application is not in the background
             MobileCore.lifecycleStart(additionalContextData: nil)
           }
         }
@@ -379,7 +379,7 @@ using Com.Adobe.Marketing.Mobile;
    ```
 
    For more information on handling backgrounding applications with Scenes, refer to Apple's documentation [here](https://developer.apple.com/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background)
-   
+
 #### Objective-C
 
 1. Register the Lifecycle extension with the SDK Core by adding the following to your app's `application:didFinishLaunchingWithOptions:` delegate method:
@@ -731,6 +731,8 @@ The following is a complete list of all of the metrics provided on your user's a
   </tbody>
 </table>
 
+## Configuration keys
+
 If you need to programmatically update your SDK configuration, use the following information to change your Lifecycle configuration values:
 
 {% hint style="warning" %}
@@ -757,4 +759,3 @@ The time that your app spends in the background is not included in the session l
     </tr>
   </tbody>
 </table>
-

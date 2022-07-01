@@ -18,7 +18,7 @@ Follow [Apple developer](https://developer.apple.com/documentation/uikit/inter-p
 
 ## P**IN** screen does not appear
 
-When the generated link or QR code from Assurance is opened on device, it should launch your app and show a PIN screen to establish a Assurance session \(as shown below\). If this screen does not appear, ensure the following:
+When the generated link or QR code from Adobe Experience Platform Assurance is opened on device, it should launch your app and show a PIN screen to establish a Assurance session \(as shown below\). If this screen does not appear, ensure the following:
 
 ![Connection error](../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
@@ -61,7 +61,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
-### Copy link or open QR code from Assurance
+### Copy link or open QR code from Adobe Experience Platform Assurance
 
 The PIN screen may not show if the link or QR code is incorrect \(or doesn't contain the query parameter `adb_validation_sessionid`\). You may detect this error by seeing console logs with the following strings:
 
@@ -121,7 +121,7 @@ W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Invalid L
 
 ## Unauthorized access
 
-This error may happen when you have access to multiple organizations in your Adobe Experience Cloud interface. To resolve, ensure the organization which houses the Experience Platform Launch mobile property is the same one as that where you are using Assurance.
+This error may happen when you have access to multiple organizations in your Adobe Experience Cloud interface. To resolve, ensure the organization which houses the Experience Platform Launch mobile property is the same one as that where you are using Adobe Experience Platform Assurance.
 
 ![Unauthorized access](../../.gitbook/assets/assurance_unauthorized_access_error.png)
 
@@ -143,7 +143,7 @@ W/AdobeExperienceSDK: Assurance - Assurance connection closed. Reason: Unauthori
 
 ## Timeout
 
-This SDK log message is not an error and is displayed during the routine course of SDK initialization. This message is expected if the app was not launched with a Assurance deep link. You may ignore this message if Assurance works as expected.
+This SDK log message is not an error and is displayed during the routine course of SDK initialization. This message is expected if the app was not launched with an Adobe Experience Platform Assurance deep link. You may ignore this message if Assurance works as expected.
 
 #### Sample log messages
 
@@ -156,7 +156,7 @@ D/AdobeExperienceSDK: Assurance - Timeout - Assurance did not receive deeplink t
 
 {% tab title="iOS" %}
 ```text
-[AdobeExperienceSDK DEBUG <AEPAssurance>]: Timeout - Griffon didnot receive deeplink to start griffon session. Shutting down griffon extension
+[AdobeExperienceSDK DEBUG <AEPAssurance>]: Timeout - Assurance did not receive deeplink to start Assurance session. Shutting down Assurance extension
 ```
 {% endtab %}
 {% endtabs %}

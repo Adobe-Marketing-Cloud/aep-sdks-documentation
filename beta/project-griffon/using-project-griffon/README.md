@@ -11,7 +11,7 @@
 
 1. Click **Create Session** in the top right.
 2. In the **Create New Session** dialog, review instructions, and proceed by selecting **Start**
-3. Enter a name to identify the session, then provide a **Base URL** (deep linking URL for your app) Click **Next**.
+3. Enter a name to identify the session, then provide a **Base URL** \(deep linking URL for your app\) Click **Next**.
 
 ![Creating a new session](../../../.gitbook/assets/assets_-m-julgvpg09f1jttuu__-m-kn_scoqogv3uegkzo_-m-koebjg71pqlppuurb_creat-new-session.gif)
 
