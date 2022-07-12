@@ -94,7 +94,7 @@
   * [Analytics API reference](using-mobile-extensions/adobe-analytics/analytics-api-reference.md)
   * [Analytics event reference](using-mobile-extensions/adobe-analytics/analytics-event-reference.md)
   * [Products variable](using-mobile-extensions/adobe-analytics/product-variable.md)
-    * [Frequently asked questions](using-mobile-extensions/adobe-analytics/analytics-faq.md)
+  * [Frequently asked questions](using-mobile-extensions/adobe-analytics/analytics-faq.md)
 * [Adobe Analytics - Mobile Services](using-mobile-extensions/adobe-analytics-mobile-services/README.md)
   * [Migrating to AEPMobileServices reference](using-mobile-extensions/adobe-analytics-mobile-services/migration.md)
   * [Release Notes](using-mobile-extensions/adobe-analytics-mobile-services/adobe-mobile-services-release-notes.md)
