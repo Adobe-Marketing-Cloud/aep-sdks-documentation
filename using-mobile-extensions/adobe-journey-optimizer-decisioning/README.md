@@ -21,7 +21,7 @@ On [Experience Platform Data Collection](https://experience.adobe.com/#/data-col
 
 ![Datastream configuration - Offer Decisioning](../../.gitbook/assets/ajo-decisioning-datastream-configuration-od.png)
 
-3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration. Make sure to configure the required information like Client Code.
+3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration.
 
 ![Datastream configuration - Adobe Target](../../.gitbook/assets/ajo-decisioning-datastream-configuration-at.png)
 
