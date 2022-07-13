@@ -142,3 +142,25 @@ Yes, offline tracking is supported by default when sending XDM Experience events
 
 * Visit the SDK [community forum](https://forums.adobe.com/community/experience-cloud/platform/launch/sdk) to ask questions
 * Contact [Adobe Experience Cloud customer care](https://experienceleague.adobe.com/?support-solution=General#support) for immediate assistance
+
+## Using AEP Swift SDKs with tvOS
+
+### 'X' is unavailable in application extension for tvOS
+
+You may encounter this error when using the AEP SDK for a tvOS app target, with the following message "'X' is unavailable in application extension for tvOS". This behavior is unexpected for tvOS targets and it seems to be an issue in Xcode where it apples additional checks for tvOSApplicationExtension API compatibility.
+Until this issue is resolved in the future Xcode versions, a workaround is to mark the classes or functions with the attribute: @available(tvOSApplicationExtension, unavailable) to suppress the error as in the examples below:
+
+#### Sample
+```Swift
+@available(tvOSApplicationExtension, unavailable)
+class ErrorThrowingClass {
+  ...
+}
+```
+
+```Swift
+@available(tvOSApplicationExtension, unavailable)
+func errorThrowingFunction() {
+  ...
+}
+```

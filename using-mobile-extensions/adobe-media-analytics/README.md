@@ -82,7 +82,7 @@ Latest iOS SDK versions - [![Cocoapods](https://img.shields.io/cocoapods/v/AEPCo
    pod 'AEPMedia'
    ```
 1. In Xcode project, import the Media extension:
-   
+
    **Swift**
 
    ```swift
@@ -217,7 +217,7 @@ In your app's `_:didFinishLaunchingWithOptions` function, register the Audience 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
    MobileCore.registerExtensions([Media.self, Analytics.self, Identity.self], {
-   MobileCore.configureWith(appId: "yourAppId") 
+   MobileCore.configureWith(appId: "yourAppId")
  })  
  ...
 }
@@ -316,5 +316,5 @@ To update your SDK configuration programmatically, use the following information
 | :--- | :--- |
 | Android | Supported |
 | Apple iOS​ | Supported |
+| Apple tvOS​ | Supported |
 | React Native \(iOS & Android\) | Supported |
-
