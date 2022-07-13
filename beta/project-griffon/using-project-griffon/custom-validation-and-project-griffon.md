@@ -28,7 +28,7 @@ This feature allows you to write a function to validate events in your Assurance
 | `uuid` | String | Universally unique identifier for the event. |
 | `timestamp` | Number | Timestamp from the device when the event was sent from the SDK. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
-| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.assurance\). |
+| `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
 | `type` | String | Used to denote the type of event. |
 | `payload` | Object | Defines the data for the event and contains unique and common properties. Some common properties include `ACPExtensionEventSource and ACPExtensionEventType`. |
 | `annotations` | Array | An array of annotation objects. |

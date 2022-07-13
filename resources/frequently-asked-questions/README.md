@@ -24,7 +24,7 @@ There are several new features and benefits of using the Experience Platform Mob
 | Adobe Campaign Standard | Push and in-app messaging | Push only |
 | Adobe Target | ✔️ | ✔️ |
 | Places Service | ✔️ |  |
-| Adobe Experience Platform Assurance \(BETA\) | ✔️ |  |
+| Adobe Experience Platform Assurance | ✔️ |  |
 
 ## Do I need additional permissions to create a mobile property in Experience Platform Launch?
 
