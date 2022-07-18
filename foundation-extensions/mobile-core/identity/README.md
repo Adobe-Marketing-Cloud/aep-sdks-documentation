@@ -2,8 +2,8 @@
 
 The Identity extension is bundled with [Mobile Core](../README.md) and enables your app with the Experience Cloud ID (ECID). This service helps with the synchronization of Adobe and other customer identifiers.
 
-{% hint style="danger" %}
-On web or other platforms, there might situations where this extension might not be required, and the implementation of this SDK extension on mobile apps is required.
+{% hint style="warning" %}
+The implementation of this SDK extension on mobile apps is required. On web or other platforms, there might be situations where this extension might not be required.
 {% endhint %}
 
 To get started with Identity, complete the following steps:
@@ -454,7 +454,7 @@ Alternately, starting in SDK version 1.4.0 (Identity version 1.1.0), you can cal
 Identity.getUrlVariables(new AdobeCallback<String>() {    
     @Override    
     public void call(String stringWithAdobeVisitorInfo) {        
-        //handle the URL query parameter string here 
+        //handle the URL query parameter string here
         //For example, open the URL on the device browser        
         //        
         Intent i = new Intent(Intent.ACTION_VIEW);        
@@ -679,8 +679,8 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
     if (stringContent != null)
     {
       Console.WriteLine("Appended url: " + stringContent);
-    } 
-    else 
+    }
+    else
     {
       Console.WriteLine("null content in string callback");
     }
@@ -710,8 +710,8 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
     if (stringContent != null)
     {
       Console.WriteLine("Url variables: " + stringContent);
-    } 
-    else 
+    }
+    else
     {
       Console.WriteLine("null content in string callback");
     }
@@ -722,4 +722,3 @@ class StringCallback : Java.Lang.Object, IAdobeCallback
 {% endtabs %}
 
 The ID service code on the destination domain extracts the ECID from the URL instead of sending a request to Adobe for a new ID. The ID service code on the destination page uses this ECID to track the visitor. On hits from the mobile web content, verify that the `mid` parameter exists on each hit, and that this value matches the `mid`value that is being sent by the app code.
-
