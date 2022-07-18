@@ -10,6 +10,8 @@ The integration with Adobe Analytics provides a richer view of SDK events to use
 
 After the SDK makes a network request with Adobe Analytics, the status will tell you if Griffon was able to retrieve the post-processing information for the Adobe Analytics request.
 
+Please note that in order to retrieve post-processing information, the logged-in user must have access to the corresponding report suite.
+
 | Status | Description |
 | :--- | :--- |
 | `Queued` | The network request is fetching the post-processing information. |

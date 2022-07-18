@@ -21,7 +21,7 @@ On [Experience Platform Data Collection](https://experience.adobe.com/#/data-col
 
 ![Datastream configuration - Offer Decisioning](../../.gitbook/assets/ajo-decisioning-datastream-configuration-od.png)
 
-3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration. Make sure to configure the required information like Client Code.
+3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration.
 
 ![Datastream configuration - Adobe Target](../../.gitbook/assets/ajo-decisioning-datastream-configuration-at.png)
 
@@ -282,7 +282,11 @@ data.put("__adobe", new HashMap<String, Object>() {
 
 
 final DecisionScope decisionScope = DecisionScope("myTargetLocation") // Target location (or mbox)
-Optimize.updatePropositions(decisionScope, null, data);
+
+final List<DecisionScope> decisionScopes = new ArrayList<>();
+decisionScopes.add(decisionScope);
+
+Optimize.updatePropositions(decisionScopes, null, data);
 ```
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
@@ -312,7 +316,7 @@ data["__adobe"] = [
 ]
 
 let decisionScope = DecisionScope(name: "myTargetLocation") // Target location (or mbox)
-Optimize.updatePropositions(for: decisionScope withXdm: nil andData: data)
+Optimize.updatePropositions(for: [decisionScope] withXdm: nil andData: data)
 ```
 
 #### Objective-C

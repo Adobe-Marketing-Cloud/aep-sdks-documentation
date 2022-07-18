@@ -1,5 +1,11 @@
 # Release Notes
 
+## June 30, 2022
+
+### iOS AEPAnalytics 3.2.0
+
+* Added tvOS support.
+
 ## June 7, 2022
 
 ### iOS ACPAnalytics 2.5.3
