@@ -18,13 +18,9 @@ On [Experience Platform Data Collection](https://experience.adobe.com/#/data-col
 
 1. In the datastream, click on the desired environment from the list. Make sure **Adobe Experience Platform** section is enabled and configured with the required information like **Sandbox** and **Event Dataset**.
 2. For Journey Optimizer - Offer Decisioning, navigate to **Adobe Experience Platform** section and enable **Offer Decisioning** checkbox.
-
 ![Datastream configuration - Offer Decisioning](../../.gitbook/assets/ajo-decisioning-datastream-configuration-od.png)
-
-3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration.
-
+3. For Adobe Target, navigate to **Adobe Target** section and enable it. Specify the configuration. For more information on the configuration settings, refer to the [Administer Target Overview](https://experienceleague.adobe.com/docs/target/using/administer/administrating-target.html?lang=en).
 ![Datastream configuration - Adobe Target](../../.gitbook/assets/ajo-decisioning-datastream-configuration-at.png)
-
 4. Click **Save**.
 
 ### Configure Adobe Journey Optimizer - Decisioning extension in Tag property for Mobile
@@ -282,7 +278,11 @@ data.put("__adobe", new HashMap<String, Object>() {
 
 
 final DecisionScope decisionScope = DecisionScope("myTargetLocation") // Target location (or mbox)
-Optimize.updatePropositions(decisionScope, null, data);
+
+final List<DecisionScope> decisionScopes = new ArrayList<>();
+decisionScopes.add(decisionScope);
+
+Optimize.updatePropositions(decisionScopes, null, data);
 ```
 {% endtab %}
 {% tab title="iOS (AEP 3.x)" %}
@@ -312,7 +312,7 @@ data["__adobe"] = [
 ]
 
 let decisionScope = DecisionScope(name: "myTargetLocation") // Target location (or mbox)
-Optimize.updatePropositions(for: decisionScope withXdm: nil andData: data)
+Optimize.updatePropositions(for: [decisionScope] withXdm: nil andData: data)
 ```
 
 #### Objective-C
