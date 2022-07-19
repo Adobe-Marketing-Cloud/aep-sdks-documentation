@@ -18,7 +18,7 @@ If you see SDK identifiers unexpectedly change, try the following fixes to addre
 
 ### What identifier types does the AEP Mobile SDK use for Analytics implementations
 
-The Analytics mobile extension uses the ECID as the main identifier type for mobile visitors,and so it requires the Identity extension to operate. The Identity extension preserves the ECID for current visitor, respectively generates a new ECID when the application is first installed. For more details, see the [Identity extension](../../foundation-extensions/mobile-core/identity) documentation.
+The Analytics mobile extension uses the ECID as the main identifier type for mobile visitors, so it requires the Identity extension to operate. The Identity extension preserves the ECID for the current visitor and generates a new ECID when the application is first installed. For more details, see the [Identity extension](../../foundation-extensions/mobile-core/identity) documentation.
 
 In the case where your mobile implementation used AID (Analytics tracking identifier) or VID (custom visitor identifier) for existing users, these identifiers are preserved when migrating to AEP Mobile SDK and continue to be sent to Adobe Analytics along with the ECID. Read more about the [order of operations for Analytics IDs](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html).
 

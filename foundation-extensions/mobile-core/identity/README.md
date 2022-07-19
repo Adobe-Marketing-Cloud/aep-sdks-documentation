@@ -3,7 +3,7 @@
 The Identity extension is bundled with [Mobile Core](../README.md) and enables your app with the Experience Cloud ID (ECID). This service helps with the synchronization of Adobe and other customer identifiers.
 
 {% hint style="warning" %}
-The implementation of this SDK extension on mobile apps is required. On web or other platforms, there might be situations where this extension might not be required.
+The implementation of this SDK extension on mobile apps is required. On web or other platforms, there may be situations where this extension is not required.
 {% endhint %}
 
 To get started with Identity, complete the following steps:
