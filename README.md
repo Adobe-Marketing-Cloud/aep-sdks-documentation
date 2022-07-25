@@ -4,12 +4,6 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
-{% hint style="success" %}
-## Good to go for iOS 15
-
-Adobe Experience Platform Mobile SDKs have been functionally tested on iOS 15 release candidate versions. Please make sure you use [current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure compatibility.
-{% endhint %}
-
 {% hint style="info" %}
 ## Interested in Kotlin?
 
