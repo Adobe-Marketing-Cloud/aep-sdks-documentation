@@ -36,8 +36,6 @@ The SDK is comprised of the Mobile Core and a series of modular Adobe Experience
 
 Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](./#supported-platforms) of cross-platform development frameworks. SDKs configuration is managed via Adobe Experience Platform Launch for flexible configuration and extensible, rules-based integrations.
 
-{% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
-
 ## Supported Platforms
 
 {% hint style="warning" %}
