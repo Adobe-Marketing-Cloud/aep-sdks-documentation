@@ -59,9 +59,9 @@ The request timeout is the amount of time, in seconds, to wait for a response fr
    implementation 'com.adobe.marketing.mobile:campaignclassic:1.+'
    ```
 
-   or you can manually include the binaries found in [acp-sdks](https://github.com/Adobe-Marketing-Cloud/acp-sdks/) repo on GitHub.
+   or you can manually include the binaries found in the [acp-sdks](https://github.com/Adobe-Marketing-Cloud/acp-sdks/) repo on GitHub.
 
-2. Import the Campaign Classic, Mobile Core and Lifecycle extensions in your application's main activity.
+2. Import the Campaign Classic, Mobile Core, and Lifecycle extensions in your application's main activity.
 
    ```java
    import com.adobe.marketing.mobile.MobileCore;
@@ -86,7 +86,7 @@ Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. 
    pod 'ACPCampaignClassic'
    ```
 
-   or you can manually include the XCFrameworks found in [acp-sdks](https://github.com/Adobe-Marketing-Cloud/acp-sdks/) repo on GitHub.
+   or you can manually include the XCFrameworks found in the [acp-sdks](https://github.com/Adobe-Marketing-Cloud/acp-sdks/) repo on GitHub.
 
 2. In the Xcode project, import the Mobile Core and Campaign Classic extensions:
 
