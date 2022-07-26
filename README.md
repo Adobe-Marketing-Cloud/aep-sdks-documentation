@@ -4,12 +4,6 @@ description: Welcome to the home of Adobe Experience Platform Mobile SDK documen
 
 # Home
 
-{% hint style="success" %}
-## Good to go for iOS 15
-
-Adobe Experience Platform Mobile SDKs have been functionally tested on iOS 15 release candidate versions. Please make sure you use [current SDK versions](resources/upgrading-to-aep/current-sdk-versions.md) to ensure compatibility.
-{% endhint %}
-
 {% hint style="info" %}
 ## Interested in Kotlin?
 
@@ -41,8 +35,6 @@ The Adobe Experience Platform Mobile SDK helps power Adobe's Experience Cloud so
 The SDK is comprised of the Mobile Core and a series of modular Adobe Experience Cloud solutions or third-party vendor extensions that depend on the Mobile Core. Extensions interact with the Mobile Core to provide features specific to the solution or service they represent.
 
 Experience Platform Mobile SDKs are available for Android, iOS, and a [variety](./#supported-platforms) of cross-platform development frameworks. SDKs configuration is managed via Adobe Experience Platform Launch for flexible configuration and extensible, rules-based integrations.
-
-{% embed url="https://www.youtube.com/watch?v=p\_TZ6\_z2D0E" caption="" %}
 
 ## Supported Platforms
 
