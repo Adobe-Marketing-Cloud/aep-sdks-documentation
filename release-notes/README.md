@@ -4,6 +4,17 @@ description: Release notes and change logs for the Adobe Experience Platform Mob
 
 # Release notes
 
+## July 25, 2022
+
+### ACP React Native Core 2.0.2
+
+* Targeting Android 12 (API 31) for the Android implementation.
+
+### AEP React Native Core 1.0.1
+
+* Targeting Android 12 (API 31) for the Android implementation.
+
+
 ## June 30, 2022
 
 ### iOS AEPAnalytics 3.2.0
