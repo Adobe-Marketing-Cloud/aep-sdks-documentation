@@ -1,12 +1,8 @@
-# Adobe Experience Platform Assurance
+# Adobe Experience Platform (AEP) Assurance Extension
 
-This extension enables capabilities for [Project Griffon](../../beta/project-griffon/).
+This extension enables capabilities for [Adobe Experience Platform Assurance](../../beta/project-griffon/).
 
-{% hint style="info" %}
-Project Griffon is a beta product. To use it, you must accept the terms on [https://experience.adobe.com/griffon](https://experience.adobe.com/griffon).
-{% endhint %}
-
-To get started with [Project Griffon](../../beta/project-griffon/) in your app, you'll need to:
+To get started with [Assurance](../../beta/project-griffon/) in your app, you'll need to:
 
 1. Install the AEP Assurance extension in [Data Collection UI](https://experience.adobe.com/#/data-collection)
 2. Add AEP Assurance SDK extension library to your app
@@ -23,7 +19,7 @@ Go to the [Experience Platform Data Collection UI](https://experience.adobe.com/
 
 ![](../../.gitbook/assets/screen-shot-2020-10-07-at-11.15.47-am.png)
 
-## Add the Assurance extension to your app
+## Add the AEP Assurance extension to your app
 
 ### Import the library to your app code
 
@@ -415,7 +411,7 @@ class CoreStartCompletionCallback : Java.Lang.Object, IAdobeCallback
 
 (session start APIs for other platforms listed [here](https://aep-sdks.gitbook.io/docs/foundation-extensions/adobe-experience-platform-assurance/assurance-api-reference) )
 
-The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin a Project Griffon session. When called, SDK displays a PIN authentication overlay to begin a session.
+The [startSession](./assurance-api-reference.md#startsession) API needs to be called to begin an Adobe Experience Platform Assurance session. When called, SDK displays a PIN authentication overlay to begin a session.
 
 {% hint style="info" %}
 

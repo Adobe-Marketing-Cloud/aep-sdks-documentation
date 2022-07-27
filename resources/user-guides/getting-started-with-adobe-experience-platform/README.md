@@ -8,7 +8,7 @@ The demo mobile application has multiple tabs. For this exercise, the `Edge` and
 
 * Access to Adobe Experience Platform
 * Access to Adobe Experience Launch dashboard
-* Access to Project Griffon
+* Access to Adobe Experience Platform Assurance
 * Minimal Swift/Android development knowledge
 * General knowledge about the Adobe Experience Platform Mobile SDKs
 
@@ -153,27 +153,27 @@ When the `Purchase` button is clicked, a new XDM Commerce Purchase Experience Ev
 }
 ```
 
-### Using AEP Assurance <a id="using-aep-assurance"></a>
+### Using Adobe Experience Platform Assurance <a id="using-aep-assurance"></a>
 
-AEP Assurance \(also known as Project Griffon\) is a product from Adobe that lets you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is set up to use the AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
+Adobe Experience Platform Assurance \(formerly known as Project Griffon\) is a product from Adobe that lets you inspect, validate, and debug data collection and experiences for your mobile application. The demo app is set up to use the AEP Assurance mobile extension, which allows you to view the events being sent through the AEP Mobile SDK.
 
-1. Visit [Project Griffon](https://experience.adobe.com/griffon) and login with your Adobe credentials.
+1. Visit [Assurance](https://experience.adobe.com/griffon) and login with your Adobe credentials.
 2. Create a new Session:
    * Click `Create Session` in the top right.
    * In the `Create New Session` dialog, review the instructions, and then select `Start`.
    * When asked for the **Base URL**, enter `sampleapp://` , then click `Next`.
-3. After starting an Assurance session, click on the the Session Details button on the right corner of the Project Griffon page and copy the session link.
+3. After starting an Assurance session, click on the the Session Details button on the right corner of the Assurance page and copy the session link.
 
    If you are using a real device, you can also use the `Scan QR Code` functionality. You can then skip to step 6.
 
    ![](../../../.gitbook/assets/Commerce_Session_Details.png)
 
 4. Go to the sample application that is installed on your device, and click on the `Assurance` tab.
-5. Paste the **Assurance Session URL** that you copied from Project Griffon, and click `Connect`.
+5. Paste the **Assurance Session URL** that you copied from Assurance, and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Login.png)
 
-6. Enter the PIN from Project Griffon and click `Connect`.
+6. Enter the PIN from Assurance and click `Connect`.
 
    ![](../../../.gitbook/assets/Commerce_Griffon_Connection.png)
 
@@ -214,7 +214,7 @@ You can save this query and run it later when needed.
 For this exercise, implement the "Add to cart functionality" in the sample application. Navigate to `EdgeViewController.swift` \(iOS\) / `EdgeTab.java`\(Android\) and implement the `sendAddToCartXDMEvent` function. The recommended eventType is `commerce.productListAdds`.
 
 {% hint style="info" %}
-Use the `sendPurchaseXDMEvent` as an example and Project Griffon to validate that the XDM Experience Event is properly formatted.
+Use the `sendPurchaseXDMEvent` as an example and Adobe Experience Platform Assurance to validate that the XDM Experience Event is properly formatted.
 {% endhint %}
 
 ### Next steps <a id="next-steps"></a>

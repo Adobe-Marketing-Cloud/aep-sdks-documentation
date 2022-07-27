@@ -62,7 +62,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 {% endhint %}
 
 1. Verify the push token sync with the Experience Cloud ID service \(ECID\).  
-2. To verify, launch your app connected to a Project Griffon session.   
+2. To verify, launch your app connected to an Adobe Experience Platform Assurance session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device. The value in pushIdentifier is the same value that is sent to the ECID service. ![Verify SetPushIdentifier event](../../.gitbook/assets/push_token_to_identity.png)
 5. To verify that app’s push token is mapped to the correct Experience cloud ID\(ECID\) in the Campaign instance, click **Adobe Campaign &gt; Administrator &gt; Channels &gt; Mobile App \(AEP SDK\)**.
@@ -94,7 +94,7 @@ If SDK privacy status is `optedout`, the push identifier will not be set.
 {% endhint %}
 
 1. Verify the push token sync with the Experience Cloud ID service \(ECID\).  
-2. To verify, launch your app connected to a Project Griffon session.   
+2. To verify, launch your app connected to an Adobe Experience Platform Assurance session.   
 3. In the list of events, verify that you have an event with type _SetPushIdentifier_.
 4. In the details panel on the right, verify the value of the push token for this device.
 
@@ -120,11 +120,11 @@ The following events are related to the tracked push notifications:
 
   For more information about implementing the tracking of push notification events, see [Push Tracking](https://experienceleague.adobe.com/docs/campaign-standard/using/administrating/configuring-mobile/push-tracking.html?lang=en).
 
-### Troubleshooting using Project Griffon
+### Troubleshooting using Adobe Experience Platform Assurance
 
-You can verify the push notification tracking in Project Griffon.
+You can verify the push notification tracking in Assurance.
 
-1. Connect your app to a Griffon session.  
+1. Connect your app to an Assurance session.  
 2. Send a push notification to app from your Campaign instance.
 
    To know more about how to send push notification, see [Preparing and sending a push notification](https://experienceleague.adobe.com/docs/campaign-standard/using/communication-channels/push-notifications/preparing-and-sending-a-push-notification.html?lang=en).
