@@ -95,7 +95,6 @@ Adobe Campaign Classic has not yet been released as an AEP 3.x Swift extension. 
 ```swift
    import ACPCore
    import ACPCampaignClassic
-   import ACPLifecycle
 ```
 
 **Objective-C**
