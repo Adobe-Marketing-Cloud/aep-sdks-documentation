@@ -91,7 +91,6 @@ To add the Target extension to your app:
    ```swift
        import ACPCore
        import ACPTarget
-       import ACPIdentity
    ```
 
    **Objective-C**
