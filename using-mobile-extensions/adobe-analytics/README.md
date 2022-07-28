@@ -160,7 +160,6 @@ The number of seconds to wait before Analytics launch hits are sent from the SDK
    ```swift
     import ACPCore
     import ACPAnalytics
-    import ACPIdentity
    ```
    **Objective-C**
 

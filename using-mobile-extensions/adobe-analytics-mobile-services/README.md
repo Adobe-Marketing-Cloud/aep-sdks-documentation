@@ -155,8 +155,8 @@ Import the library into your project:
 
 ```objectivec
 #import "ACPCore.h"
-#import “ACPIdentity.h”
-#import “ACPLifecycle.h”
+#import "ACPIdentity.h"
+#import "ACPLifecycle.h"
 #import "ACPAnalytics.h"
 #import "ACPMobileServices.h"
 ```
@@ -164,8 +164,6 @@ Import the library into your project:
 
 ```swift
 import ACPCore
-import ACPIdentity
-import ACPLifecycle
 import ACPAnalytics
 import ACPMobileServices
 ```
