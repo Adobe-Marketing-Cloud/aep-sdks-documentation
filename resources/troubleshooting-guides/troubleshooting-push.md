@@ -1,7 +1,7 @@
 # Push Messaging
 
 {% hint style="warning" %}
-This troubleshooting guide requires [Project Griffon](../../beta/project-griffon/). For more information about access and how to set up Project Griffon, see the [documentation](../../beta/project-griffon/).
+This troubleshooting guide requires [Adobe Experience Platform Assurance](../../beta/project-griffon/). For more information about access and how to set up Assurance, see the [documentation](../../beta/project-griffon/).
 {% endhint %}
 
 When implementing push messaging via the Adobe Experience Platform Mobile SDK, you can validate the client-side implementation by verifying that you completed the following steps:
@@ -84,7 +84,7 @@ ACPCore.setPushIdentifier("pushIdentifier");
 
 ## Verify push token sync with the Experience Cloud Identity service
 
-Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
+Launch your app with the device connected to an [Adobe Experience Platform Assurance session](../../beta/project-griffon/).
 
 In the list of events, verify that you have an event with type `SetPushIdentifier`. In the details panel on the right, verify the value of the push token for this device. The value in `pushIdentifier` is the same value that is sent to the Adobe servers.
 
@@ -92,7 +92,7 @@ In the list of events, verify that you have an event with type `SetPushIdentifie
 
 ## Ensure user opt-in for push in Adobe Analytics
 
-Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
+Launch your app with the device connected to an [Assurance session](../../beta/project-griffon/).
 
 In the resulting list of events, verify that you have an event with type `AnalyticsForIdentityRequest`. In the details panel on the right, you can see that there is a value that was sent to Analytics that opts this user in to receive push notifications.
 
@@ -100,7 +100,7 @@ In the resulting list of events, verify that you have an event with type `Analyt
 
 ## Confirm that the user ID is correctly set
 
-Launch your app with the device connected to a [Project Griffon session](../../beta/project-griffon/).
+Launch your app with the device connected to an [Adobe Experience Platform Assurance session](../../beta/project-griffon/).
 
 In the list of events, verify that you have an event with type `UPDATED_IDENTITY_RESPONSE`. In the details panel on the right, confirm that the following values are correct:
 

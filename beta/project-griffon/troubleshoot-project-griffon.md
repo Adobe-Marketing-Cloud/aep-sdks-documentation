@@ -1,6 +1,6 @@
-# Troubleshoot Project Griffon
+# Troubleshoot Adobe Experience Platform Assurance
 
-If you are having trouble getting Project Griffon to work, please see suggestions under the following issue topics to resolve commonly encountered issues.
+If you are having trouble getting Assurance to work, please see suggestions under the following issue topics to resolve commonly encountered issues.
 
 To enable smoother implementation and to discover any potential issues, ensure you have SDK logging turned on per [Enable Debug Logging](https://aep-sdks.gitbook.io/docs/getting-started/enable-debug-logging) in the Getting Started section.
 
@@ -29,8 +29,8 @@ For Android, the`startSession` API does not need to be explicitly called. For iO
 ### Authentication overlay appears, but app fails to connect
 
 * Ensure internet connectivity of the device through the device web browser.
-* If the app has never successfully connected to the Griffon service, ensure it is setup for Project Griffon correctly. See instructions on installing the [Adobe Experience Platform Assurance](../../foundation-extensions/adobe-experience-platform-assurance/#install-the-assurance-extension-in-experience-platform-launch) SDK library.
-* Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](../../foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md#orgid-information-is-not-available) \(this is uncommon and relevant only if you have access to more than one ORG instance\).
+* If the app has never successfully connected to the Assurance service, ensure it is set up for Assurance correctly. See instructions on installing the [Adobe Experience Platform Assurance](../../foundation-extensions/adobe-experience-platform-assurance/#install-the-assurance-extension-in-experience-platform-launch) SDK library.
+* Verify the session matches the link and is input correctly for the expected session. See [Log message "OrgID information is not available"](../../foundation-extensions/adobe-experience-platform-assurance/assurance-sdk-error-logs.md#orgid-information-is-not-available) (this is uncommon and relevant only if you have access to more than one ORG instance).
 
 
 

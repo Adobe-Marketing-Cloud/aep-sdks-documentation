@@ -31,7 +31,7 @@ The version 4 SDKs were first released in September 2013 to support mobile app i
 
 Spurred by customer feedback for more control, performance, and functionality over the years; and to support future product enhancements, we released the re-architected [Adobe Experience Platform Mobile SDKs](./) in September 2018. The new Experience Platform Mobile SDKs replaces the version 4 SDKs and provide support for new features such as flexible configuration through Experience Platform Launch, modular Adobe and partner extensions.
 
-Solutions such as [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) and [Project Griffon](beta/project-griffon/) are exclusively available on Experience Platform Mobile SDKs.
+Solutions such as [Places Service](https://experienceleague.adobe.com/docs/places/using/home.html?lang=en) and [Adobe Experience Platform Assurance](beta/project-griffon/) are exclusively available on Experience Platform Mobile SDKs.
 
 ### Where do I learn more about upgrading/migrating to the Experience Platform Mobile SDKs?
 

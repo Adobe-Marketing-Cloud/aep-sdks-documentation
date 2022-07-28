@@ -2,14 +2,14 @@
 
 ## Overview
 
-You may use the Validation Summary feature to quickly and easily manage JavaScript functions to validate events in a Project Griffon session. Each function receives the events in a Project Griffon session. You can write functions to validate your client configuration, event conditions, tests and use cases.
+You may use the Validation Summary feature to quickly and easily manage JavaScript functions to validate events in an Adobe Experience Platform Assurance session. Each function receives the events in an Assurance session. You can write functions to validate your client configuration, event conditions, tests and use cases.
 
 ## Getting Started
 
 To use this view, complete the following steps:
 
-1. [Setup Project Griffon](../set-up-project-griffon.md)
-2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Project Griffon session
+1. [Setup Adobe Experience Platform Assurance](../set-up-project-griffon.md)
+2. [Create](./#creating-sessions) and [connect](./#connecting-to-a-session) to a Assurance session
 3. In the **Home** view, select **Validation Summary**
 
 ![Validation Summary](../../../.gitbook/assets/screen-shot-2021-02-08-at-2.49.28-pm.png)
@@ -20,11 +20,11 @@ When the view is loaded, it provides a panel on the left that contains a categor
 
 ## Writing a Validation Function
 
-This feature allows you to create, edit, or delete validation functions for your Project Griffon sessions.
+This feature allows you to create, edit, or delete validation functions for your Adobe Experience Platform Assurance sessions.
 
 1. Select **Create a New Validation**.
 2. Enter a **name** to identify the validation, then provide a **category** and a **description**.
-3. Edit the code in the editor to validate the events for your Project Griffon session.
+3. Edit the code in the editor to validate the events for your Assurance session.
 4. Click **Test** to preview the results of the function in the left panel.
 
 After you have tested your function, you can click **Upload** to save your validation.
@@ -34,7 +34,7 @@ After you have tested your function, you can click **Upload** to save your valid
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `uuid` | String | Universally unique identifier for the event. |
-| `timestamp` | Number | Timestamp from the client when the event was sent to Project Griffon. |
+| `timestamp` | Number | Timestamp from the client when the event was sent to Assurance. |
 | `eventNumber` | Number | Used to order when the event was sent. This key is useful when events have the same timestamp. |
 | `vendor` | String | Vendor identification string in the reverse domain name format \(for example, com.adobe.griffon\). |
 | `type` | String | Used to denote the type of event. |
@@ -75,5 +75,5 @@ If an error occurs in the JavaScript code editor, an `ERROR` status is displayed
 
 Additionally, you can also reach out to our team on our Slack Channel at [https://projectgriffon.slack.com/](https://projectgriffon.slack.com/).
 
-To learn more about validations, you can visit the [Project Griffon Validations](https://github.com/adobe/griffon-validation-plugins) GitHub. There you can find examples from validations owned by Adobe, as well as the [wiki](https://github.com/adobe/griffon-validation-plugins/wiki) that describes validations in more detail.
+To learn more about validations, you can visit the [Adobe Experience Platform Assurance Validations](https://github.com/adobe/griffon-validation-plugins) GitHub. There you can find examples from validations owned by Adobe, as well as the [wiki](https://github.com/adobe/griffon-validation-plugins/wiki) that describes validations in more detail.
 
