@@ -653,7 +653,7 @@ ACPTarget.getThirdPartyId().then(thirdPartyId => {
 
 This API gets the Target user identifier \(also known as the `tntId`\). 
 
-The `tntId` is returned in the network response from Target after a successful call to `prefetchContent` API or `retrieveLocationContent` API, which is then persisted in the SDK. The persisted tntId is used in subsequent Target requests until a different tntId is returned from Target, or a new tntId is set using `setTntId` API.
+The tnt Id is returned in the network response from Target after a successful call to `prefetchContent` API or `retrieveLocationContent` API, which is then persisted in the SDK. The persisted tnt Id is used in subsequent Target requests until a different tnt Id is returned from Target, or a new tnt Id is set using `setTntId` API.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -1792,7 +1792,7 @@ ACPTarget.setThirdPartyId("third-party-id");
 
 This API sets the Target user identifier.
 
-The provided Tnt Id is persisted in the SDK and attached to subsequent Target requests. It is used to derive the edge host value in the SDK, which is also persisted and used in future Target requests. If the provided Tnt Id is nil/null or empty, or if the privacy status is opted out, the SDK will remove the Tnt Id and edge host values from the persistence.
+The provided tnt Id is persisted in the SDK and attached to subsequent Target requests. It is used to derive the edge host value in the SDK, which is also persisted and used in future Target requests. If the provided tnt Id is nil/null or empty, or if the privacy status is opted out, the SDK will remove the tnt Id and edge host values from the persistence.
 
 This ID is preserved between app upgrades, is saved and restored during the standard application backup process, and is removed at uninstall, upon privacy status update to opted out, or when the `resetExperience` API is used.
 
